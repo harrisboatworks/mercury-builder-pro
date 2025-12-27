@@ -306,7 +306,7 @@ export default function VoiceTest() {
   const runPlaybackTest = async (): Promise<boolean> => {
     updateStep('playback', { status: 'running', details: 'Connecting to AI for voice test...' });
     
-    // Diagnostic state
+    // Enhanced diagnostic state
     const diagnostics = {
       tokenReceived: false,
       dataChannelOpen: false,
@@ -317,8 +317,17 @@ export default function VoiceTest() {
       autoplayError: null as string | null,
       receivedAudioDelta: false,
       receivedTextOnly: false,
+      responseCreated: false,
+      responseDone: false,
+      errorMessage: null as string | null,
       pcConnectionState: 'new',
       iceConnectionState: 'new',
+      // NEW: WebRTC stats
+      inboundAudioBytes: 0,
+      inboundAudioBytesStart: 0,
+      inboundAudioPackets: 0,
+      // NEW: WebAudio output RMS
+      outputRMS: 0,
     };
     
     const updateDiagnosticDetails = () => {
@@ -327,9 +336,14 @@ export default function VoiceTest() {
         `DataChannel: ${diagnostics.dataChannelOpen ? '✓' : '✗'}`,
         `Session: ${diagnostics.sessionCreated ? 'created' : 'waiting'}${diagnostics.sessionUpdated ? '/updated' : ''}`,
         `Track: ${diagnostics.trackReceived ? '✓' : '✗'}`,
-        `Audio: ${diagnostics.audioElementPlaying ? 'playing' : diagnostics.autoplayError ? `blocked: ${diagnostics.autoplayError}` : 'waiting'}`,
+        `Response: ${diagnostics.responseCreated ? 'started' : '-'}/${diagnostics.responseDone ? 'done' : '-'}`,
+        `InboundBytes: ${diagnostics.inboundAudioBytes}`,
+        `OutRMS: ${diagnostics.outputRMS.toFixed(3)}`,
         `PC: ${diagnostics.pcConnectionState}`,
       ];
+      if (diagnostics.errorMessage) {
+        parts.push(`Error: ${diagnostics.errorMessage}`);
+      }
       return parts.join(' | ');
     };
     
@@ -370,6 +384,15 @@ export default function VoiceTest() {
       // Ensure audio output is unlocked (helps on Safari/iOS)
       await unlockAudioOutput();
 
+      // Create AudioContext for WebAudio fallback + RMS monitoring
+      let audioContext: AudioContext | null = null;
+      let analyserNode: AnalyserNode | null = null;
+      let webAudioSource: MediaStreamAudioSourceNode | null = null;
+      
+      // Stats polling interval
+      let statsInterval: ReturnType<typeof setInterval> | null = null;
+      let rmsInterval: ReturnType<typeof setInterval> | null = null;
+
       let connectionTimeout: ReturnType<typeof setTimeout>;
 
       // Track connection state changes
@@ -388,14 +411,15 @@ export default function VoiceTest() {
         console.log('[VoiceTest] Audio element is playing');
       };
 
-      // Set up remote audio track
+      // Set up remote audio track with WebAudio fallback
       pc.ontrack = (e) => {
         diagnostics.trackReceived = true;
         console.log('[VoiceTest] Received audio track:', e.track.kind, 'streams:', e.streams.length);
         
         const stream = e.streams[0] ?? new MediaStream([e.track]);
+        
+        // Route 1: HTMLAudioElement (existing)
         audioEl.srcObject = stream;
-
         const playPromise = audioEl.play();
         if (playPromise) {
           playPromise.catch((err) => {
@@ -403,6 +427,62 @@ export default function VoiceTest() {
             console.warn('[VoiceTest] audioEl.play() failed:', diagnostics.autoplayError);
           });
         }
+        
+        // Route 2: WebAudio fallback + AnalyserNode for RMS monitoring
+        try {
+          audioContext = new AudioContext({ sampleRate: 24000 });
+          audioContext.resume().then(() => {
+            console.log('[VoiceTest] AudioContext resumed');
+          });
+          
+          webAudioSource = audioContext.createMediaStreamSource(stream);
+          analyserNode = audioContext.createAnalyser();
+          analyserNode.fftSize = 256;
+          
+          // Connect: source -> analyser -> destination (speakers)
+          webAudioSource.connect(analyserNode);
+          analyserNode.connect(audioContext.destination);
+          
+          console.log('[VoiceTest] WebAudio fallback route established');
+          
+          // Start RMS monitoring
+          const dataArray = new Float32Array(analyserNode.frequencyBinCount);
+          rmsInterval = setInterval(() => {
+            if (analyserNode) {
+              analyserNode.getFloatTimeDomainData(dataArray);
+              let sum = 0;
+              for (let i = 0; i < dataArray.length; i++) {
+                sum += dataArray[i] * dataArray[i];
+              }
+              diagnostics.outputRMS = Math.sqrt(sum / dataArray.length);
+            }
+          }, 100);
+        } catch (err) {
+          console.warn('[VoiceTest] Failed to create WebAudio fallback:', err);
+        }
+        
+        // Start WebRTC stats polling
+        statsInterval = setInterval(async () => {
+          try {
+            const stats = await pc.getStats();
+            stats.forEach((report) => {
+              if (report.type === 'inbound-rtp' && report.kind === 'audio') {
+                const bytes = (report as any).bytesReceived || 0;
+                const packets = (report as any).packetsReceived || 0;
+                
+                // Store initial value
+                if (diagnostics.inboundAudioBytesStart === 0 && bytes > 0) {
+                  diagnostics.inboundAudioBytesStart = bytes;
+                }
+                
+                diagnostics.inboundAudioBytes = bytes;
+                diagnostics.inboundAudioPackets = packets;
+              }
+            });
+          } catch (err) {
+            console.warn('[VoiceTest] Stats polling error:', err);
+          }
+        }, 500);
       };
       
       // Add local audio track (required for bidirectional)
@@ -412,12 +492,21 @@ export default function VoiceTest() {
       // Create data channel for sending messages
       const dc = pc.createDataChannel('oai-events');
       
+      const cleanup = () => {
+        if (statsInterval) clearInterval(statsInterval);
+        if (rmsInterval) clearInterval(rmsInterval);
+        if (audioContext) {
+          audioContext.close().catch(() => {});
+        }
+        pc.close();
+        ms.getTracks().forEach(t => t.stop());
+        audioEl.srcObject = null;
+        audioEl.remove();
+      };
+      
       return new Promise((resolve) => {
         connectionTimeout = setTimeout(() => {
-          pc.close();
-          ms.getTracks().forEach(t => t.stop());
-          audioEl.srcObject = null;
-          audioEl.remove();
+          cleanup();
           updateStep('playback', { 
             status: 'failed',
             details: `Timeout after 20s. ${updateDiagnosticDetails()}`,
@@ -429,7 +518,6 @@ export default function VoiceTest() {
           diagnostics.dataChannelOpen = true;
           console.log('[VoiceTest] Data channel open, waiting for session.created...');
           updateStep('playback', { status: 'running', details: 'Data channel open, waiting for session...' });
-          // DON'T send messages here - wait for session.created first!
         });
         
         dc.addEventListener('message', (e) => {
@@ -437,17 +525,39 @@ export default function VoiceTest() {
             const event = JSON.parse(e.data);
             console.log('[VoiceTest] Event:', event.type);
             
-            // CRITICAL: Wait for session.created, then send session.update
+            // Handle session.created - send session.update
             if (event.type === 'session.created') {
               diagnostics.sessionCreated = true;
-              console.log('[VoiceTest] Session created, session is pre-configured by server');
-              updateStep('playback', { status: 'running', details: 'Session ready, sending test message...' });
+              console.log('[VoiceTest] Session created, sending session.update...');
+              updateStep('playback', { status: 'running', details: 'Session created, configuring audio...' });
               
-              // DON'T send session.update! The /realtime-session endpoint 
-              // already configured the session with voice, modalities, etc.
-              // Sending session.update here would OVERRIDE that config.
+              // Send session.update to ensure audio is enabled
+              dc.send(JSON.stringify({
+                type: 'session.update',
+                session: {
+                  modalities: ['text', 'audio'],
+                  voice: 'alloy',
+                  input_audio_format: 'pcm16',
+                  output_audio_format: 'pcm16',
+                  input_audio_transcription: {
+                    model: 'whisper-1'
+                  },
+                  turn_detection: {
+                    type: 'server_vad',
+                    threshold: 0.5,
+                    prefix_padding_ms: 300,
+                    silence_duration_ms: 1000
+                  }
+                }
+              }));
+            }
+            
+            // Handle session.updated - now send test message
+            if (event.type === 'session.updated') {
+              diagnostics.sessionUpdated = true;
+              console.log('[VoiceTest] Session updated, sending test message...');
+              updateStep('playback', { status: 'running', details: 'Session configured, sending test message...' });
               
-              // Instead, go straight to sending the test message
               dc.send(JSON.stringify({
                 type: 'conversation.item.create',
                 item: {
@@ -471,7 +581,11 @@ export default function VoiceTest() {
               updateStep('playback', { status: 'running', details: 'Waiting for AI voice response...' });
             }
             
-            // session.updated is no longer sent, so remove this handler
+            // Track response events
+            if (event.type === 'response.created') {
+              diagnostics.responseCreated = true;
+              console.log('[VoiceTest] Response created');
+            }
             
             // Detect text-only response (no audio)
             if (event.type === 'response.text.delta' || event.type === 'response.audio_transcript.delta') {
@@ -483,30 +597,53 @@ export default function VoiceTest() {
             if (event.type === 'response.audio.delta') {
               diagnostics.receivedAudioDelta = true;
               diagnostics.receivedTextOnly = false;
-              updateStep('playback', { status: 'running', details: 'Receiving AI audio stream...' });
+              updateStep('playback', { 
+                status: 'running', 
+                details: `Receiving AI audio... InboundBytes: ${diagnostics.inboundAudioBytes}, OutRMS: ${diagnostics.outputRMS.toFixed(3)}` 
+              });
             }
             
             if (event.type === 'response.done') {
+              diagnostics.responseDone = true;
               clearTimeout(connectionTimeout);
               
-              // Give time for audio to finish playing
+              console.log('[VoiceTest] Response done. Final diagnostics:', updateDiagnosticDetails());
+              
+              // Give time for audio to finish playing, keep polling stats
               setTimeout(() => {
-                pc.close();
-                ms.getTracks().forEach(t => t.stop());
-                audioEl.srcObject = null;
-                audioEl.remove();
+                console.log('[VoiceTest] Final stats check:', {
+                  inboundBytes: diagnostics.inboundAudioBytes,
+                  outputRMS: diagnostics.outputRMS,
+                  receivedAudioDelta: diagnostics.receivedAudioDelta,
+                });
                 
-                // Success = we actually received audio data from AI
-                if (diagnostics.receivedAudioDelta) {
-                  updateStep('playback', { 
-                    status: 'passed',
-                    details: 'AI voice response played successfully!',
-                  });
-                  resolve(true);
-                  return;
+                cleanup();
+                
+                // NEW SUCCESS CRITERIA: Inbound audio bytes increased significantly
+                const bytesReceived = diagnostics.inboundAudioBytes - diagnostics.inboundAudioBytesStart;
+                const significantBytes = bytesReceived > 5000; // > 5KB of audio data
+                const heardAudio = diagnostics.outputRMS > 0.01; // Non-zero output RMS
+                
+                if (significantBytes) {
+                  if (heardAudio) {
+                    updateStep('playback', { 
+                      status: 'passed',
+                      details: `AI voice received! Bytes: ${bytesReceived}, Peak RMS: ${diagnostics.outputRMS.toFixed(3)}`,
+                    });
+                    resolve(true);
+                    return;
+                  } else {
+                    // Bytes came through but no sound heard
+                    updateStep('playback', {
+                      status: 'failed',
+                      details: `Audio data received (${bytesReceived} bytes) but output silent. Check: volume, mute, output device, iOS silent switch.`,
+                    });
+                    resolve(false);
+                    return;
+                  }
                 }
 
-                // Diagnose specific failure modes with detailed info
+                // Diagnose specific failure modes
                 if (!diagnostics.sessionCreated) {
                   updateStep('playback', {
                     status: 'failed',
@@ -515,11 +652,29 @@ export default function VoiceTest() {
                   resolve(false);
                   return;
                 }
+                
+                if (!diagnostics.sessionUpdated) {
+                  updateStep('playback', {
+                    status: 'failed',
+                    details: `session.update not acknowledged. ${updateDiagnosticDetails()}`,
+                  });
+                  resolve(false);
+                  return;
+                }
+                
+                if (!diagnostics.responseCreated) {
+                  updateStep('playback', {
+                    status: 'failed',
+                    details: `No response.created - request may not have been accepted. ${updateDiagnosticDetails()}`,
+                  });
+                  resolve(false);
+                  return;
+                }
 
                 if (!diagnostics.receivedAudioDelta && diagnostics.receivedTextOnly) {
                   updateStep('playback', {
                     status: 'failed',
-                    details: `AI responded with text only (no audio). Session may not have audio enabled. ${updateDiagnosticDetails()}`,
+                    details: `AI responded with text only (no audio). Audio may be disabled in session. ${updateDiagnosticDetails()}`,
                   });
                   resolve(false);
                   return;
@@ -529,15 +684,6 @@ export default function VoiceTest() {
                   updateStep('playback', {
                     status: 'failed',
                     details: `Autoplay blocked: ${diagnostics.autoplayError}. Try tapping screen first.`,
-                  });
-                  resolve(false);
-                  return;
-                }
-
-                if (diagnostics.receivedAudioDelta && diagnostics.trackReceived) {
-                  updateStep('playback', { 
-                    status: 'failed',
-                    details: 'Audio received but not playing. Check: volume, mute, output device, iOS silent switch.',
                   });
                   resolve(false);
                   return;
@@ -554,21 +700,20 @@ export default function VoiceTest() {
 
                 updateStep('playback', { 
                   status: 'failed',
-                  details: `No audio response. ${updateDiagnosticDetails()}`,
+                  details: `No audio response (0 inbound bytes). ${updateDiagnosticDetails()}`,
                 });
                 resolve(false);
               }, 3000);
             }
             
             if (event.type === 'error') {
+              diagnostics.errorMessage = event.error?.message || 'Unknown error';
+              console.error('[VoiceTest] Error event:', event.error);
               clearTimeout(connectionTimeout);
-              pc.close();
-              ms.getTracks().forEach(t => t.stop());
-              audioEl.srcObject = null;
-              audioEl.remove();
+              cleanup();
               updateStep('playback', { 
                 status: 'failed',
-                details: `AI error: ${event.error?.message || 'Unknown error'}`,
+                details: `AI error: ${diagnostics.errorMessage}`,
               });
               resolve(false);
             }
@@ -577,13 +722,13 @@ export default function VoiceTest() {
           }
         });
         
-        // Start WebRTC handshake via edge function proxy (matches RealtimeVoice.ts)
+        // Start WebRTC handshake via edge function proxy
         (async () => {
           try {
             const offer = await pc.createOffer();
             await pc.setLocalDescription(offer);
             
-            // Wait for ICE gathering (helps on some networks)
+            // Wait for ICE gathering
             await new Promise<void>((resolveIce) => {
               if (pc.iceGatheringState === 'complete') return resolveIce();
               
@@ -595,7 +740,6 @@ export default function VoiceTest() {
               };
               pc.addEventListener('icegatheringstatechange', onGatheringChange);
               
-              // Timeout after 2s
               setTimeout(() => {
                 pc.removeEventListener('icegatheringstatechange', onGatheringChange);
                 resolveIce();
@@ -607,7 +751,6 @@ export default function VoiceTest() {
             
             updateStep('playback', { status: 'running', details: 'Exchanging SDP via proxy...' });
             
-            // Use the SDP proxy edge function (not direct OpenAI call)
             const sdpResponse = await fetch(
               'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/realtime-sdp-exchange',
               {
@@ -632,8 +775,7 @@ export default function VoiceTest() {
             updateStep('playback', { status: 'running', details: 'Connected, waiting for session.created...' });
           } catch (err) {
             clearTimeout(connectionTimeout);
-            pc.close();
-            ms.getTracks().forEach(t => t.stop());
+            cleanup();
             updateStep('playback', { 
               status: 'failed',
               details: err instanceof Error ? err.message : 'Connection failed',
