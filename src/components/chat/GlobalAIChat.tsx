@@ -1,4 +1,4 @@
-import React, { useState, useRef, createContext, useContext, useCallback } from 'react';
+import React, { useState, useRef, createContext, useContext, useCallback, useEffect } from 'react';
 import { AIChatButton } from './AIChatButton';
 import { EnhancedChatWidget, EnhancedChatWidgetHandle } from './EnhancedChatWidget';
 import { InlineChatDrawer } from './InlineChatDrawer';
@@ -71,6 +71,17 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
       setChatMinimizedAt(null);
     }, 30000);
   }, []);
+
+  // Listen for voice agent requests to trigger text chat search
+  useEffect(() => {
+    const handleVoiceSearch = (e: CustomEvent<{ query: string }>) => {
+      console.log('[Voice→Chat] Received search trigger:', e.detail.query);
+      openChat(e.detail.query);
+    };
+    
+    window.addEventListener('voice-trigger-text-search', handleVoiceSearch as EventListener);
+    return () => window.removeEventListener('voice-trigger-text-search', handleVoiceSearch as EventListener);
+  }, [openChat]);
 
   return (
     <VoiceProvider>

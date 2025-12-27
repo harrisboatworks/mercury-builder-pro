@@ -156,6 +156,14 @@ async function handleSendFollowUpSMS(params: {
   }
 }
 
+// Helper to trigger text chat search for complex queries
+function triggerTextChatSearch(query: string) {
+  console.log('[Voice→Chat] Dispatching search event:', query);
+  window.dispatchEvent(new CustomEvent('voice-trigger-text-search', { 
+    detail: { query } 
+  }));
+}
+
 // Client tool handler for Perplexity spec verification
 // NOTE: ElevenLabs has hard 10s timeout. Perplexity takes 20s+. Return helpful fallback immediately.
 function handleVerifySpecs(params: {
@@ -296,8 +304,9 @@ function handleVerifySpecs(params: {
     return "Mercury hydraulic steering systems use Mercury or Quicksilver Power Steering Fluid. Check the level in the helm pump reservoir periodically. If you notice hard steering or leaks, have the system inspected. Low fluid can damage the pump.";
   }
   
-  // === DEFAULT FALLBACK ===
-  return `That's a great question about ${params.category || 'your motor'}. For the most accurate information, I'd recommend checking the Mercury Marine website or speaking with our parts and service team who can look up the exact specifications for your engine.`;
+  // === DEFAULT FALLBACK - Trigger text chat for deep search ===
+  triggerTextChatSearch(params.query);
+  return "That's a great question! I'm searching that for you now - check the chat on your screen in just a moment for the detailed answer.";
 }
 
 // Client tool handler for setting purchase path
