@@ -9,6 +9,11 @@ const corsHeaders = {
 function detectCategory(query: string): string {
   const lowerQuery = query.toLowerCase();
   
+  // Check for accessories/boat equipment first (non-Mercury products)
+  if (/trolling\s*motor|minn\s*kota|motorguide|fish\s*finder|depth\s*finder|gps|chartplotter|garmin|lowrance|humminbird|rod\s*holder|livewell|trailer|anchor|dock|mooring|life\s*jacket|pfd|seat|pedestal|bimini|cover|fender|bilge\s*pump|electronics/.test(lowerQuery)) {
+    return 'accessories';
+  }
+  
   if (/part\s*number|part\s*#|filter|spark\s*plug|prop|propeller|impeller|thermostat|gasket|seal|oil\s*filter|fuel\s*filter/.test(lowerQuery)) {
     return 'parts';
   }
@@ -33,6 +38,14 @@ function buildPrompt(query: string, category: string, motorContext?: string): st
   const motorRef = motorContext ? `for a ${motorContext}` : 'for Mercury outboard motors';
   
   const categoryPrompts: Record<string, string> = {
+    accessories: `Search Harris Boat Works marine catalogue (marinecatalogue.ca) for boat accessories and equipment. Include:
+- Product name and description
+- Price if available (CAD)
+- Catalogue section/page reference if possible
+- Available brands/options
+Keep response conversational and under 75 words.
+Query: ${query}`,
+
     parts: `Find the exact Mercury Marine part number ${motorRef}. Include:
 - Part number (e.g., 35-877769K01)
 - OEM vs aftermarket options if relevant
@@ -102,7 +115,16 @@ serve(async (req) => {
     // Build optimized prompt
     const prompt = buildPrompt(query, category, motor_context);
 
-    // Call Perplexity API with search focused on Mercury/boating
+    // Determine search domains based on category
+    const searchDomains = category === 'accessories' 
+      ? ['marinecatalogue.ca', 'mercurymarine.com']
+      : ['mercurymarine.com'];
+    
+    const systemPrompt = category === 'accessories'
+      ? `You are a helpful marine accessories expert for Harris Boat Works. Search their catalogue at marinecatalogue.ca. Give short, conversational answers for voice. Under 75 words. Include pricing and where to find items when available.`
+      : `You are a Mercury Marine expert. Give short, direct answers for voice. Under 50 words. Include part numbers when asked. If unsure, say so.`;
+
+    // Call Perplexity API with search focused on appropriate domains
     const response = await fetch('https://api.perplexity.ai/chat/completions', {
       method: 'POST',
       headers: {
@@ -114,16 +136,16 @@ serve(async (req) => {
         messages: [
           {
             role: 'system',
-            content: `You are a Mercury Marine expert. Give short, direct answers for voice. Under 50 words. Include part numbers when asked. If unsure, say so.`
+            content: systemPrompt
           },
           {
             role: 'user',
             content: prompt
           }
         ],
-        max_tokens: 150,
+        max_tokens: category === 'accessories' ? 200 : 150,
         temperature: 0.1,
-        search_domain_filter: ['mercurymarine.com'],
+        search_domain_filter: searchDomains,
         search_recency_filter: 'year'
       }),
     });
