@@ -167,3 +167,6 @@ verify_jwt = false
 
 [functions.voice-perplexity-lookup]
 verify_jwt = false
+
+[functions.locally-inventory]
+verify_jwt = false

@@ -164,6 +164,51 @@ function triggerTextChatSearch(query: string) {
   }));
 }
 
+// Client tool handler for real-time parts inventory via Locally API
+async function handleLocallyInventoryLookup(params: {
+  part_number?: string;
+  upc?: string;
+  search_query?: string;
+}): Promise<string> {
+  console.log('[ClientTool] locally_inventory_lookup:', params);
+  
+  try {
+    const { data, error } = await supabase.functions.invoke('locally-inventory', {
+      body: { 
+        query: params.search_query,
+        upc: params.upc,
+        part_number: params.part_number
+      }
+    });
+
+    if (error) {
+      console.error('[ClientTool] Locally API error:', error);
+      return "I'm having trouble checking our parts inventory right now. Let me check with our parts department and get back to you.";
+    }
+
+    console.log('[ClientTool] Locally result:', data);
+    
+    if (data?.inventory?.products?.length > 0) {
+      const product = data.inventory.products[0];
+      const inStock = product.in_stock || product.quantity > 0;
+      const price = product.price ? `$${product.price.toFixed(2)}` : '';
+      const qty = product.quantity ? ` (${product.quantity} in stock)` : '';
+      
+      if (inStock) {
+        return `Yes! We have ${product.name || params.search_query} in stock${qty}${price ? ` at ${price}` : ''}. Would you like me to add it to a quote or check for more details?`;
+      } else {
+        return `${product.name || params.search_query} is currently out of stock. I can check on availability or help you find an alternative. Would you like me to have our parts team follow up with you?`;
+      }
+    }
+    
+    // No specific product found - suggest text chat for deeper search
+    return "I couldn't find that specific part in our system. Let me search for more details - check the chat on your screen in just a moment.";
+  } catch (err) {
+    console.error('[ClientTool] Locally exception:', err);
+    return "I'm having trouble checking our inventory right now. Our parts team can help you find what you need.";
+  }
+}
+
 // Client tool handler for Perplexity spec verification
 // NOTE: ElevenLabs has hard 10s timeout. Perplexity takes 20s+. Return helpful fallback immediately.
 function handleVerifySpecs(params: {
@@ -512,6 +557,14 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         motor_context?: string;
       }) => {
         return await handleVerifySpecs(params);
+      },
+      // Check parts and accessories inventory via Locally API
+      check_parts_inventory: async (params: {
+        part_number?: string;
+        upc?: string;
+        search_query?: string;
+      }) => {
+        return await handleLocallyInventoryLookup(params);
       },
     },
   });
