@@ -1,12 +1,12 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { corsHeaders } from "../_shared/cors.ts";
+import { KB_DOCUMENTS } from "../_shared/format-kb-documents.ts";
 
 const ELEVENLABS_API_KEY = Deno.env.get("ELEVENLABS_API_KEY");
-const ELEVENLABS_AGENT_ID = "agent_0501kdexvsfkfx8a240g7ts27dy1"; // Same as conversation-token
+const ELEVENLABS_AGENT_ID = "agent_0501kdexvsfkfx8a240g7ts27dy1";
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
-
 interface Motor {
   id: string;
   model: string;
@@ -225,31 +225,50 @@ async function deleteKnowledgeBaseDocument(documentId: string): Promise<boolean>
   return true;
 }
 
-// Update agent to use new KB document
-// Based on ElevenLabs SDK, the knowledge_base is nested under conversation_config.agent.prompt.knowledge_base
-async function updateAgentKnowledgeBase(agentId: string, documentId: string, documentName: string): Promise<boolean> {
-  console.log(`Updating agent ${agentId} with KB document ${documentId}`);
-  
-  // First, get current agent config to see structure
-  const getResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, {
+// Get current agent configuration
+async function getAgentConfig(): Promise<any> {
+  const response = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${ELEVENLABS_AGENT_ID}`, {
     method: "GET",
     headers: {
       "xi-api-key": ELEVENLABS_API_KEY!,
     },
   });
 
-  if (!getResponse.ok) {
-    const error = await getResponse.text();
-    console.error("Failed to get agent config:", error);
+  if (!response.ok) {
+    const error = await response.text();
     throw new Error(`Failed to get agent config: ${error}`);
   }
 
-  const agentConfig = await getResponse.json();
-  console.log("Current agent config structure:", JSON.stringify(agentConfig, null, 2).slice(0, 500));
+  return await response.json();
+}
 
-  // Update agent with new document in knowledge base
-  // The structure is: conversation_config.agent.prompt.knowledge_base
-  const updateResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${agentId}`, {
+// Update agent with all KB documents (inventory + static)
+async function updateAgentKnowledgeBase(
+  inventoryDocId: string, 
+  inventoryDocName: string,
+  staticDocs: Array<{ id: string; name: string }>
+): Promise<boolean> {
+  console.log(`Updating agent with inventory doc + ${staticDocs.length} static docs`);
+  
+  // Build the complete knowledge base array
+  const knowledgeBase = [
+    // Inventory document first
+    {
+      type: "text",
+      name: inventoryDocName,
+      id: inventoryDocId,
+    },
+    // Then all static documents
+    ...staticDocs.map(d => ({
+      type: "text",
+      name: d.name,
+      id: d.id,
+    })),
+  ];
+
+  console.log(`Total KB documents: ${knowledgeBase.length}`);
+
+  const updateResponse = await fetch(`https://api.elevenlabs.io/v1/convai/agents/${ELEVENLABS_AGENT_ID}`, {
     method: "PATCH",
     headers: {
       "xi-api-key": ELEVENLABS_API_KEY!,
@@ -259,16 +278,10 @@ async function updateAgentKnowledgeBase(agentId: string, documentId: string, doc
       conversation_config: {
         agent: {
           prompt: {
-            knowledge_base: [
-              {
-                type: "text",
-                name: documentName,
-                id: documentId,
-              }
-            ]
-          }
-        }
-      }
+            knowledge_base: knowledgeBase,
+          },
+        },
+      },
     }),
   });
 
@@ -278,8 +291,39 @@ async function updateAgentKnowledgeBase(agentId: string, documentId: string, doc
     throw new Error(`Failed to update agent: ${error}`);
   }
 
-  console.log("Agent updated successfully");
+  console.log("Agent updated successfully with all KB documents");
   return true;
+}
+
+// Sync static KB documents and return their IDs
+async function syncStaticDocuments(): Promise<{ docs: Array<{ id: string; name: string }>; results: any[] }> {
+  console.log("Syncing static KB documents...");
+  
+  const results: any[] = [];
+  const createdDocs: Array<{ id: string; name: string }> = [];
+
+  for (const [key, docConfig] of Object.entries(KB_DOCUMENTS)) {
+    try {
+      console.log(`Processing static doc: ${docConfig.name}`);
+      const content = docConfig.generator();
+      
+      // Create new document (we'll replace old ones via agent update)
+      const docId = await createKnowledgeBaseDocument(content, docConfig.name);
+      
+      if (docId) {
+        createdDocs.push({ id: docId, name: docConfig.name });
+        results.push({ name: docConfig.name, success: true, id: docId });
+      } else {
+        results.push({ name: docConfig.name, success: false, error: "No ID returned" });
+      }
+    } catch (error) {
+      console.error(`Error syncing ${docConfig.name}:`, error);
+      results.push({ name: docConfig.name, success: false, error: error.message });
+    }
+  }
+
+  console.log(`Static docs synced: ${createdDocs.length} success, ${results.filter(r => !r.success).length} failed`);
+  return { docs: createdDocs, results };
 }
 
 serve(async (req) => {
@@ -332,17 +376,25 @@ serve(async (req) => {
       await deleteKnowledgeBaseDocument(syncState.document_id);
     }
 
-    // Create new document
-    console.log("Creating new KB document...");
+    // Create new inventory document
+    console.log("Creating new inventory KB document...");
     const newDocumentId = await createKnowledgeBaseDocument(inventoryDoc, docName);
 
     if (!newDocumentId) {
-      throw new Error("Failed to create new KB document - no ID returned");
+      throw new Error("Failed to create inventory KB document - no ID returned");
     }
 
-    // Update agent to use new document
-    console.log("Updating agent with new KB document...");
-    await updateAgentKnowledgeBase(ELEVENLABS_AGENT_ID, newDocumentId, docName);
+    // Sync static documents
+    console.log("Syncing static KB documents...");
+    const { docs: staticDocs, results: staticResults } = await syncStaticDocuments();
+    
+    const staticSuccessCount = staticResults.filter(r => r.success).length;
+    const staticFailCount = staticResults.filter(r => !r.success).length;
+    console.log(`Static docs: ${staticSuccessCount} success, ${staticFailCount} failed`);
+
+    // Update agent with ALL documents (inventory + static)
+    console.log("Updating agent with all KB documents...");
+    await updateAgentKnowledgeBase(newDocumentId, docName, staticDocs);
 
     // Calculate stats
     const inStockCount = motors?.filter(m => m.in_stock && (m.stock_quantity || 0) > 0).length || 0;
@@ -370,7 +422,7 @@ serve(async (req) => {
         .insert(syncData);
     }
 
-    console.log("KB sync completed successfully!");
+    console.log("Full KB sync completed successfully!");
 
     return new Response(
       JSON.stringify({
@@ -379,7 +431,10 @@ serve(async (req) => {
         documentName: docName,
         motorCount: motors?.length || 0,
         inStockCount,
-        message: "Knowledge base synced successfully",
+        staticDocsCount: staticSuccessCount,
+        staticDocsFailed: staticFailCount,
+        staticResults,
+        message: `Synced inventory + ${staticSuccessCount} static documents`,
       }),
       {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
