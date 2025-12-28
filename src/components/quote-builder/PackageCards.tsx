@@ -73,7 +73,7 @@ export function PackageCards({
             key={p.id}
             variants={packageItemVariants}
             onClick={() => {
-              triggerHaptic('light');
+              triggerHaptic('packageChanged');
               onSelect(p.id);
             }}
             className={cn(

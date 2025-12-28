@@ -581,6 +581,18 @@ html {
   }
 }
 
+/* ===== Blur-Up LQIP Image Loading ===== */
+.blur-up-placeholder {
+  filter: blur(20px);
+  transform: scale(1.1);
+}
+
+.blur-up-loaded {
+  filter: blur(0);
+  transform: scale(1);
+  transition: filter 0.5s ease-out, transform 0.5s ease-out;
+}
+
 /* Premium Card Hover Effects */
 .premium-card-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
