@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { User, LogOut, Menu, Bell, Settings, Search } from 'lucide-react';
+import { User, LogOut, Menu, Bell, Settings, Search, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
@@ -156,6 +156,10 @@ export function LuxuryHeader({
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-48 bg-white border border-gray-200">
+                      <DropdownMenuItem onClick={() => navigate('/my-quotes')} className="cursor-pointer">
+                        <FileText className="mr-2 h-4 w-4" />
+                        My Quotes
+                      </DropdownMenuItem>
                       <DropdownMenuItem onClick={() => navigate('/dashboard')} className="cursor-pointer">
                         <User className="mr-2 h-4 w-4" />
                         Dashboard

@@ -44,7 +44,7 @@ const QuoteSummaryPage = lazy(() => import("@/pages/quote/QuoteSummaryPage"));
 const SchedulePage = lazy(() => import("@/pages/quote/SchedulePage"));
 const SavedQuotePage = lazy(() => import("@/pages/quote/SavedQuotePage"));
 const QuoteSuccessPage = lazy(() => import("@/pages/quote/QuoteSuccessPage"));
-const MyQuotes = lazy(() => import("@/pages/MyQuotes"));
+const MyQuotes = lazy(() => import("@/pages/account/MyQuotesPage"));
 
 // Admin pages
 const AdminPromotions = lazy(() => import("./pages/AdminPromotions"));

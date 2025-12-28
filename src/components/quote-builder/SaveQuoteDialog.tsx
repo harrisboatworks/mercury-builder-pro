@@ -3,11 +3,12 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Loader2 } from "lucide-react";
+import { Loader2, CheckCircle, Mail } from "lucide-react";
 import { saveLead } from "@/lib/leadCapture";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { generateSocialProofMessage } from "@/lib/activityGenerator";
+import { useAuth } from "@/components/auth/AuthProvider";
 
 interface SaveQuoteDialogProps {
   open: boolean;
@@ -28,7 +29,9 @@ export function SaveQuoteDialog({
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
   const { toast } = useToast();
+  const { user } = useAuth();
 
   const [emailError, setEmailError] = useState("");
 
@@ -74,7 +77,7 @@ export function SaveQuoteDialog({
           email: email,
           resume_token: resumeToken,
           quote_state: quoteData, // Full QuoteContext state
-          user_id: null, // Anonymous for now
+          user_id: user?.id || null, // Link to user if logged in
           expires_at: expiresAt.toISOString(),
         })
         .select()
@@ -89,17 +92,38 @@ export function SaveQuoteDialog({
         console.log('Saved quote ID for QR code:', savedQuote.id);
       }
 
+      // If user is not logged in, send magic link for account creation
+      if (!user) {
+        const siteUrl = window.location.origin;
+        const { error: otpError } = await supabase.auth.signInWithOtp({
+          email: email,
+          options: {
+            emailRedirectTo: `${siteUrl}/my-quotes`,
+            data: {
+              full_name: name || undefined,
+              phone: phone || undefined,
+            }
+          }
+        });
+
+        if (otpError) {
+          console.error('Error sending magic link:', otpError);
+          // Don't fail the save if magic link fails
+        }
+      }
+
       // Send email with quote link
       const { error: emailError } = await supabase.functions.invoke('send-saved-quote-email', {
         body: {
           customerEmail: email,
           customerName: name || 'Valued Customer',
           quoteId: leadRecord.id,
-          savedQuoteId: savedQuote?.id, // NEW: Full restoration ID
-          resumeToken: resumeToken, // NEW: Security token
+          savedQuoteId: savedQuote?.id,
+          resumeToken: resumeToken,
           motorModel: motorModel || 'Mercury Motor',
           finalPrice: finalPrice || 0,
           quoteData: quoteData,
+          includeAccountInfo: !user, // Flag to include account access info
         }
       });
 
@@ -108,11 +132,8 @@ export function SaveQuoteDialog({
         // Don't fail the save if email fails
       }
 
-      // Silent success - dialog closes
-      onOpenChange(false);
-      setEmail("");
-      setName("");
-      setPhone("");
+      // Show success state
+      setIsSaved(true);
     } catch (error) {
       console.error('Error saving quote:', error);
       toast({
@@ -124,6 +145,52 @@ export function SaveQuoteDialog({
       setIsLoading(false);
     }
   };
+
+  const handleClose = () => {
+    onOpenChange(false);
+    // Reset state after dialog closes
+    setTimeout(() => {
+      setIsSaved(false);
+      setEmail("");
+      setName("");
+      setPhone("");
+    }, 300);
+  };
+
+  // Success state after saving
+  if (isSaved) {
+    return (
+      <Dialog open={open} onOpenChange={handleClose}>
+        <DialogContent className="sm:max-w-[425px]">
+          <div className="flex flex-col items-center text-center py-6 space-y-4">
+            <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
+              <CheckCircle className="h-8 w-8 text-green-600" />
+            </div>
+            <DialogTitle className="text-xl">Quote Saved!</DialogTitle>
+            <DialogDescription className="space-y-3">
+              <p>We've saved your configuration and sent details to <strong>{email}</strong>.</p>
+              {!user && (
+                <div className="bg-muted/50 rounded-lg p-4 mt-4 text-left">
+                  <div className="flex items-start gap-3">
+                    <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <div className="text-sm">
+                      <p className="font-medium text-foreground">Check your email</p>
+                      <p className="text-muted-foreground mt-1">
+                        Click the link in your email to access your account and view all your saved quotes anytime.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </DialogDescription>
+            <Button onClick={handleClose} className="mt-4">
+              Continue
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+    );
+  }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -179,9 +246,9 @@ export function SaveQuoteDialog({
             />
           </div>
           
-              <p className="text-sm text-muted-foreground">
-                {generateSocialProofMessage()}
-              </p>
+          <p className="text-sm text-muted-foreground">
+            {generateSocialProofMessage()}
+          </p>
         </div>
 
         <DialogFooter>

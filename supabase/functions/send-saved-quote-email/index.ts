@@ -8,9 +8,12 @@ interface SavedQuoteEmailRequest {
   customerEmail: string;
   customerName: string;
   quoteId: string;
+  savedQuoteId?: string;
+  resumeToken?: string;
   motorModel: string;
   finalPrice: number;
   quoteData?: any;
+  includeAccountInfo?: boolean;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -23,20 +26,48 @@ const handler = async (req: Request): Promise<Response> => {
     const { 
       customerEmail, 
       customerName, 
-      quoteId, 
+      quoteId,
+      savedQuoteId,
       motorModel, 
-      finalPrice 
+      finalPrice,
+      includeAccountInfo = false
     }: SavedQuoteEmailRequest = await req.json();
 
     console.log('Sending saved quote email to:', customerEmail);
 
-    const quoteLink = `${Deno.env.get("SITE_URL") || "https://eutsoqdpjurknjsshxes.supabase.co"}/quote/saved/${quoteId}`;
+    const siteUrl = Deno.env.get("SITE_URL") || "https://hbwsales.ca";
+    
+    // Use savedQuoteId for full quote restoration if available
+    const quoteLink = savedQuoteId 
+      ? `${siteUrl}/quote/saved/${savedQuoteId}`
+      : `${siteUrl}/quote/saved/${quoteId}`;
+    
+    const myQuotesLink = `${siteUrl}/my-quotes`;
     
     const formattedPrice = new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
       minimumFractionDigits: 2,
     }).format(finalPrice);
+
+    // Build the account access section only if user doesn't have an account
+    const accountSection = includeAccountInfo ? `
+      <div style="background: #e8f4fd; border: 1px solid #0066cc; border-radius: 8px; padding: 20px; margin: 25px 0;">
+        <h3 style="margin: 0 0 12px 0; color: #0066cc; font-size: 16px;">🔐 Access Your Account</h3>
+        <p style="margin: 0 0 15px 0; color: #555; font-size: 14px; line-height: 1.5;">
+          We've created an account for you! Click the button below to sign in and access all your saved quotes anytime.
+        </p>
+        <div style="text-align: center;">
+          <a href="${myQuotesLink}" 
+             style="display: inline-block; background: #0066cc; color: white; text-decoration: none; padding: 12px 24px; border-radius: 5px; font-weight: bold; font-size: 14px;">
+            View My Quotes
+          </a>
+        </div>
+        <p style="margin: 15px 0 0 0; color: #888; font-size: 12px; text-align: center;">
+          Check your inbox for a separate sign-in link to access your account
+        </p>
+      </div>
+    ` : '';
 
     const emailResponse = await resend.emails.send({
       from: "Harris Boat Works <quotes@hbwsales.ca>",
@@ -69,6 +100,8 @@ const handler = async (req: Request): Promise<Response> => {
             </a>
           </div>
           
+          ${accountSection}
+          
           <div style="background: #fffbf0; border: 1px solid #ffd700; border-radius: 5px; padding: 15px; margin: 20px 0;">
             <h3 style="margin: 0 0 10px 0; color: #333; font-size: 16px;">🎁 Special Offers Available</h3>
             <p style="margin: 5px 0; color: #555; font-size: 14px;">
@@ -79,13 +112,13 @@ const handler = async (req: Request): Promise<Response> => {
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
             <h3 style="color: #333; font-size: 16px; margin-bottom: 10px;">Questions? We're Here to Help!</h3>
             <p style="color: #555; font-size: 14px; margin: 5px 0;">
-              📧 Email: sales@mercurymotors.com
+              📧 Email: sales@hbwsales.ca
             </p>
             <p style="color: #555; font-size: 14px; margin: 5px 0;">
-              📞 Phone: (555) 123-4567
+              📞 Phone: (705) 327-2002
             </p>
             <p style="color: #555; font-size: 14px; margin: 5px 0;">
-              ⏰ Hours: Mon-Fri 9AM-6PM, Sat 10AM-4PM
+              ⏰ Hours: Mon-Fri 9AM-5PM, Sat 9AM-3PM
             </p>
           </div>
           
