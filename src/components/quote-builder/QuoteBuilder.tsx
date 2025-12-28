@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { HamburgerMenu } from "@/components/ui/hamburger-menu";
 import mercuryPng from "@/assets/mercury-logo.png";
+import { useSound } from '@/contexts/SoundContext';
 
 export default function QuoteBuilder() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -44,6 +45,7 @@ export default function QuoteBuilder() {
   const [showQuoteForm, setShowQuoteForm] = useState(false);
 
   const { user, loading, signOut } = useAuth();
+  const { playSwoosh, playSuccess } = useSound();
 
   // Helper function to check if motor is small tiller (2.5-6 HP)
   const isSmallTillerMotor = (motor: any) => {
@@ -68,6 +70,7 @@ export default function QuoteBuilder() {
   }, [currentStep]);
   const handleMotorSelect = (motor: any) => {
     setSelectedMotor(motor);
+    playSwoosh(); // Sound on step transition
     setCurrentStep(2);
     
     // Add XP for motor selection
@@ -83,6 +86,7 @@ export default function QuoteBuilder() {
 
   const handlePathSelect = (path: 'loose' | 'installed') => {
     setPurchasePath(path);
+    playSwoosh(); // Sound on step transition
     const xpEarned = path === 'installed' ? 50 : 30;
     setTotalXP(prev => prev + xpEarned);
     
@@ -100,6 +104,7 @@ export default function QuoteBuilder() {
 
   const handleConfigComplete = (config: any) => {
     setInstallConfig(config);
+    playSuccess(); // Sound on config complete
     setCurrentStep(6); // Go to quote display (installed path)
     
     // Big celebration!
@@ -112,6 +117,7 @@ export default function QuoteBuilder() {
 
   const handleFuelTankConfigComplete = (config: any) => {
     setFuelTankConfig(config);
+    playSwoosh(); // Sound on step transition
     setCurrentStep(4); // Go to trade-in for small tiller motors
     setTotalXP(prev => prev + 25); // Award XP for configuration
   };

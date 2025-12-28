@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award } from "lucide-react";
+import { useSound } from '@/contexts/SoundContext';
 
 export type Choice = {
   id: string;
@@ -27,8 +28,10 @@ export default function OptionGallery({
   title, choices, value, onChange
 }: OptionGalleryProps) {
   const [hover, setHover] = useState<string | null>(null);
+  const { playTick } = useSound();
 
   const handleSelect = (choice: Choice) => {
+    playTick();
     onChange(choice.value);
   };
 

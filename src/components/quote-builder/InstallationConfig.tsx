@@ -5,6 +5,7 @@ import OptionGallery from "../OptionGallery";
 import { controlChoices, steeringChoices, gaugeChoices, tillerMountingChoices } from "@/config/visualChoices";
 import confetti from "canvas-confetti";
 import { isTillerMotor } from "@/lib/utils";
+import { useSound } from '@/contexts/SoundContext';
 
 interface InstallationConfigProps {
   selectedMotor: any;
@@ -14,6 +15,7 @@ interface InstallationConfigProps {
 export default function InstallationConfig({ selectedMotor, onComplete }: InstallationConfigProps) {
   const [step, setStep] = useState(1);
   const isTiller = isTillerMotor(selectedMotor?.model || '');
+  const { playSwoosh, playCelebration } = useSound();
   const [config, setConfig] = useState({
     controls: '',
     steering: '',
@@ -51,6 +53,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
       spread: 70,
       origin: { y: 0.6 }
     });
+    playCelebration();
     
     // Pass installation cost and recommended package to parent
     onComplete({
@@ -76,6 +79,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
           // Final step - auto-complete
           triggerComplete(updatedConfig);
         } else if (step < 3) {
+          playSwoosh(); // Play swoosh on step transition
           setStep(step + 1);
         }
       }, 400);
