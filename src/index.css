@@ -1,9 +1,9 @@
+/* ===== Premium Polish & Animations ===== */
+@import './styles/premium-motor.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* ===== Premium Polish & Animations ===== */
-@import './styles/premium-motor.css';
 
 /* ===== Force Light Mode Globally ===== */
 html {
@@ -41,23 +41,19 @@ body {
   }
 }
 
-/* ===== iOS Animation Safety - Prevent Faded Content ===== */
+/* ===== iOS Animation Safety - Targeted Fix ===== */
 @supports (-webkit-touch-callout: none) {
-  /* iOS-specific: Force opacity on animated content */
-  .quote-content,
-  [class*="motion"],
-  [data-state="open"],
-  section,
-  main,
-  article {
-    opacity: 1 !important;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+  /* Only force visibility on static containers, not animated elements */
+  .quote-content > section,
+  main > article {
+    opacity: 1;
   }
   
-  /* Ensure package cards are always visible */
-  section[aria-label="Packages"] > * {
-    opacity: 1 !important;
+  /* Hardware acceleration for package cards */
+  section[aria-label="Packages"] button {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    pointer-events: auto !important;
   }
 }
 

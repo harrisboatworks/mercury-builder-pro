@@ -81,6 +81,7 @@ export function PackageCards({
             className={cn(
               "group relative flex flex-col rounded-2xl border p-6 text-left transition-all duration-300",
               "hover:shadow-xl hover:-translate-y-2 active:scale-[0.98]",
+              "cursor-pointer pointer-events-auto touch-manipulation",
               isSelected
                 ? "border-primary ring-2 ring-primary/20 glass-card-primary premium-selected"
                 : "border-border/50 glass-card",

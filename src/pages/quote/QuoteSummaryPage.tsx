@@ -285,8 +285,8 @@ export default function QuoteSummaryPage() {
   // Calculate base subtotal (motor + base accessories + selected options, NO battery)
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost + selectedOptionsTotal - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
 
-  // Package options with ACTUAL warranty costs included
-  const packages: PackageOption[] = [
+  // Package options with ACTUAL warranty costs included - MEMOIZED to prevent infinite loops
+  const packages: PackageOption[] = useMemo(() => [
     { 
       id: "good", 
       label: "Essential • Best Value", 
@@ -333,7 +333,7 @@ export default function QuoteSummaryPage() {
       coverageYears: PREMIUM_TARGET_YEARS,
       targetWarrantyYears: PREMIUM_TARGET_YEARS
     },
-  ];
+  ], [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank]);
   
   // Auto-select package based on tiller mounting type
   useEffect(() => {
