@@ -839,17 +839,17 @@ export default function QuoteSummaryPage() {
                   specSheetUrl={specSheetUrl}
                   onBack={handleBack}
                 />
-                {/* Subtle replay intro button */}
+                {/* Replay intro button - more visible */}
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="absolute top-2 right-2 h-8 w-8 text-muted-foreground/50 hover:text-primary hover:bg-muted/50 transition-colors"
+                  className="absolute top-4 right-4 h-9 w-9 bg-muted/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors rounded-full shadow-sm border border-border/30"
                   onClick={() => {
                     sessionStorage.removeItem('quote-reveal-seen');
                     setShowCinematic(true);
                     setRevealComplete(false);
                   }}
-                  title="Replay intro"
+                  title="Replay intro animation"
                 >
                   <RotateCcw className="h-4 w-4" />
                 </Button>
