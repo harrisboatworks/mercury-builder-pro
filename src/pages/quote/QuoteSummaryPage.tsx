@@ -772,6 +772,15 @@ export default function QuoteSummaryPage() {
   const monthlyDeltaToComplete = completeMonthly - essentialMonthly;
   const coverageGainToComplete = (completePackage.coverageYears || COMPLETE_TARGET_YEARS) - (essentialPackage.coverageYears || currentCoverageYears);
 
+  // Calculate Complete → Premium upgrade delta
+  const premiumPackage = packages.find(p => p.id === 'best') || packages[2];
+  const premiumMonthly = calculateMonthlyPayment(
+    (premiumPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
+    promo?.rate || null
+  ).payment;
+  const monthlyDeltaToPremium = premiumMonthly - completeMonthly;
+  const coverageGainToPremium = (premiumPackage.coverageYears || PREMIUM_TARGET_YEARS) - (completePackage.coverageYears || COMPLETE_TARGET_YEARS);
+
   // Calculate totals for the SELECTED PACKAGE (not just base motor)
   const packageSpecificTotals = calculateQuotePricing({
     motorMSRP,
@@ -881,14 +890,25 @@ export default function QuoteSummaryPage() {
                   revealComplete={revealComplete}
                 />
                 
-                {/* Upgrade Nudge Bar - shown when Essential is selected */}
-                <UpgradeNudgeBar
-                  isVisible={selectedPackage === 'good'}
-                  coverageGain={coverageGainToComplete}
-                  monthlyDelta={monthlyDeltaToComplete}
-                  upgradeToLabel="Complete"
-                  onUpgrade={() => handlePackageSelect('better')}
-                />
+                {/* Dynamic Upgrade Nudge Bar - shows next tier upgrade */}
+                {selectedPackage === 'good' && (
+                  <UpgradeNudgeBar
+                    isVisible={true}
+                    coverageGain={coverageGainToComplete}
+                    monthlyDelta={monthlyDeltaToComplete}
+                    upgradeToLabel="Complete"
+                    onUpgrade={() => handlePackageSelect('better')}
+                  />
+                )}
+                {selectedPackage === 'better' && (
+                  <UpgradeNudgeBar
+                    isVisible={true}
+                    coverageGain={coverageGainToPremium}
+                    monthlyDelta={monthlyDeltaToPremium}
+                    upgradeToLabel="Premium"
+                    onUpgrade={() => handlePackageSelect('best')}
+                  />
+                )}
               </motion.div>
 
               {/* Detailed Pricing Breakdown */}
