@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useSoundEffects } from '@/hooks/useSoundEffects';
+import { useSound } from '@/contexts/SoundContext';
 import { money } from '@/lib/quote-utils';
 import { X } from 'lucide-react';
 
@@ -25,15 +25,20 @@ export function QuoteRevealCinematic({
 }: QuoteRevealCinematicProps) {
   const [stage, setStage] = useState<'spotlight' | 'motor' | 'price' | 'details' | 'complete'>('spotlight');
   const [displayPrice, setDisplayPrice] = useState(0);
-  const { playReveal, playSwoosh, playTick, playComplete } = useSoundEffects();
+  const [priceComplete, setPriceComplete] = useState(false);
+  const { playReveal, playSwoosh, playTick, playComplete, playAmbientPad } = useSound();
   const priceIntervalRef = useRef<NodeJS.Timeout>();
 
   useEffect(() => {
     if (!isVisible) {
       setStage('spotlight');
       setDisplayPrice(0);
+      setPriceComplete(false);
       return;
     }
+
+    // Play ambient pad at start for immersive atmosphere
+    playAmbientPad();
 
     // Slower, more deliberate timeline for luxury feel
     const timeline = [
@@ -62,7 +67,7 @@ export function QuoteRevealCinematic({
       timeouts.forEach(clearTimeout);
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
-  }, [isVisible, onComplete, playReveal, playSwoosh, playComplete]);
+  }, [isVisible, onComplete, playReveal, playSwoosh, playComplete, playAmbientPad]);
 
   // Smoother price counting animation
   useEffect(() => {
@@ -77,6 +82,7 @@ export function QuoteRevealCinematic({
       current += increment;
       if (current >= finalPrice) {
         setDisplayPrice(finalPrice);
+        setPriceComplete(true);
         if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
       } else {
         setDisplayPrice(Math.floor(current));
@@ -132,14 +138,14 @@ export function QuoteRevealCinematic({
           }}
         />
 
-        {/* Motor Image */}
+        {/* Motor Image - Refined entrance */}
         <AnimatePresence>
           {(stage === 'motor' || stage === 'price' || stage === 'details' || stage === 'complete') && (
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 40, scale: 0.9, filter: 'blur(8px)' }}
+              animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
               exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="absolute top-[12%] z-10"
             >
               {imageUrl ? (
@@ -165,13 +171,13 @@ export function QuoteRevealCinematic({
           )}
         </AnimatePresence>
 
-        {/* Motor Name - Luxury serif typography */}
+        {/* Motor Name - Luxury serif typography with refined blur entrance */}
         <AnimatePresence>
           {(stage === 'motor' || stage === 'price' || stage === 'details' || stage === 'complete') && (
             <motion.h2
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+              initial={{ opacity: 0, y: 20, filter: 'blur(4px)', scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               className="absolute top-[36%] md:top-[38%] font-playfair text-xl md:text-2xl font-normal tracking-wide text-center px-4"
               style={{ color: '#F5F5F5' }}
             >
@@ -180,32 +186,43 @@ export function QuoteRevealCinematic({
           )}
         </AnimatePresence>
 
-        {/* Price Display - Elegant serif with muted label */}
+        {/* Price Display - Elegant serif with glow pulse on completion */}
         <AnimatePresence>
           {(stage === 'price' || stage === 'details' || stage === 'complete') && (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
               className="absolute top-[44%] md:top-[46%] flex flex-col items-center"
             >
-              <span 
+              <motion.span 
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
                 className="text-[10px] md:text-xs uppercase tracking-[0.25em] mb-3"
                 style={{ color: '#6B7280' }}
               >
                 Your Price
-              </span>
-              <span 
+              </motion.span>
+              <motion.span 
                 className="font-playfair text-4xl md:text-6xl font-medium tabular-nums tracking-tight"
                 style={{ color: '#FAFAFA' }}
+                animate={priceComplete ? {
+                  textShadow: [
+                    '0 0 0px rgba(255,255,255,0)',
+                    '0 0 30px rgba(255,255,255,0.25)',
+                    '0 0 0px rgba(255,255,255,0)',
+                  ],
+                } : {}}
+                transition={{ duration: 1.5, ease: 'easeOut' }}
               >
                 {money(displayPrice)}
-              </span>
+              </motion.span>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Details - Minimal elegant lines */}
+        {/* Details - Minimal elegant lines with refined stagger */}
         <AnimatePresence>
           {(stage === 'details' || stage === 'complete') && (
             <motion.div
@@ -216,17 +233,20 @@ export function QuoteRevealCinematic({
             >
               {savings > 0 && (
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
+                  initial={{ opacity: 0, y: 15, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 0.3, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
                   className="text-center"
                 >
-                  <span 
+                  <motion.span 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.4 }}
                     className="block text-[10px] uppercase tracking-[0.2em] mb-2"
                     style={{ color: '#6B7280' }}
                   >
                     Savings
-                  </span>
+                  </motion.span>
                   <span 
                     className="font-playfair text-lg md:text-xl"
                     style={{ color: '#E5E7EB' }}
@@ -237,17 +257,20 @@ export function QuoteRevealCinematic({
               )}
               
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
+                initial={{ opacity: 0, y: 15, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 0.5, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
                 className="text-center"
               >
-                <span 
+                <motion.span 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.7, duration: 0.4 }}
                   className="block text-[10px] uppercase tracking-[0.2em] mb-2"
                   style={{ color: '#6B7280' }}
                 >
                   Coverage
-                </span>
+                </motion.span>
                 <span 
                   className="font-playfair text-lg md:text-xl"
                   style={{ color: '#E5E7EB' }}
@@ -273,13 +296,13 @@ export function QuoteRevealCinematic({
           <X className="h-5 w-5" />
         </motion.button>
 
-        {/* Subtle horizontal line accent */}
+        {/* Subtle horizontal line accent with refined animation */}
         <AnimatePresence>
           {(stage === 'details' || stage === 'complete') && (
             <motion.div
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+              transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               className="absolute top-[56%] md:top-[59%] w-24 h-px origin-center"
               style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)' }}
             />

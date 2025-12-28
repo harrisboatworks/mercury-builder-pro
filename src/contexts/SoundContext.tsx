@@ -13,6 +13,8 @@ interface SoundContextValue {
   playTick: () => void;
   playComplete: () => void;
   playPackageSelect: () => void;
+  playAmbientPad: () => void;
+  playCelebration: () => void;
 }
 
 const SoundContext = createContext<SoundContextValue | null>(null);
@@ -54,6 +56,8 @@ export function SoundProvider({ children }: { children: ReactNode }) {
         playTick: sounds.playTick,
         playComplete: sounds.playComplete,
         playPackageSelect: sounds.playPackageSelect,
+        playAmbientPad: sounds.playAmbientPad,
+        playCelebration: sounds.playCelebration,
       }}
     >
       {children}
@@ -77,6 +81,8 @@ export function useSound() {
       playTick: () => {},
       playComplete: () => {},
       playPackageSelect: () => {},
+      playAmbientPad: () => {},
+      playCelebration: () => {},
     };
   }
   return context;

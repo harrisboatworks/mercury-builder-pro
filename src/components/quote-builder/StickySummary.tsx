@@ -1,10 +1,12 @@
 "use client";
-import { useState } from 'react';
+import { useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
 import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
 import { Button } from "@/components/ui/button";
 import { Download, CreditCard, ArrowUp, Sparkles } from "lucide-react";
+import confetti from 'canvas-confetti';
+import { useSound } from '@/contexts/SoundContext';
 
 type StickySummaryProps = {
   packageLabel: string;
@@ -61,6 +63,24 @@ export default function StickySummary({
   onTextQuote,
   onBookConsult,
 }: StickySummaryProps) {
+  const { playCelebration } = useSound();
+
+  const handleReserveClick = useCallback(() => {
+    // Trigger celebration confetti burst
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#3B82F6', '#60A5FA', '#93C5FD', '#DBEAFE', '#1D4ED8'],
+    });
+    
+    // Play celebration sound
+    playCelebration();
+    
+    // Call original handler
+    onReserve();
+  }, [onReserve, playCelebration]);
+
   return (
     <>
       {/* Desktop sticky card - Premium glassmorphism */}
@@ -183,7 +203,7 @@ export default function StickySummary({
           )}
 
           <button
-            onClick={onReserve}
+            onClick={handleReserveClick}
             className="w-full rounded-xl bg-blue-600 px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             Reserve with {money(depositAmount)} refundable deposit

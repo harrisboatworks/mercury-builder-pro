@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Badge } from '@/components/ui/badge';
 import { CreditCard, ChevronUp, Check, Mail, MessageSquare, Calendar } from 'lucide-react';
 import { money, calculateMonthly, type PricingBreakdown } from '@/lib/quote-utils';
 import { useIsMobile } from '@/hooks/use-mobile';
+import confetti from 'canvas-confetti';
+import { useSound } from '@/contexts/SoundContext';
 
 interface MobileSummaryBarProps {
   pricing: PricingBreakdown;
@@ -32,6 +34,23 @@ export function MobileSummaryBar({
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const monthlyPayment = calculateMonthly(pricing.total, rate);
+  const { playCelebration } = useSound();
+
+  const handleReserveClick = useCallback(() => {
+    // Trigger celebration confetti burst
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.8 }, // Lower origin for mobile bottom bar
+      colors: ['#3B82F6', '#60A5FA', '#93C5FD', '#DBEAFE', '#1D4ED8'],
+    });
+    
+    // Play celebration sound
+    playCelebration();
+    
+    // Call original handler
+    onReserveDeposit();
+  }, [onReserveDeposit, playCelebration]);
 
   // Only render on mobile
   if (!isMobile) return null;
@@ -108,7 +127,7 @@ export function MobileSummaryBar({
                 <Button 
                   onClick={() => {
                     setIsOpen(false);
-                    onReserveDeposit();
+                    handleReserveClick();
                   }}
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                   size="lg"
@@ -165,7 +184,7 @@ export function MobileSummaryBar({
 
           {/* Primary CTA Button */}
           <Button 
-            onClick={onReserveDeposit}
+            onClick={handleReserveClick}
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
             size="lg"
           >
