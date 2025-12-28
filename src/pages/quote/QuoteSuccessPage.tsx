@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, ArrowRight, Phone, Mail } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Phone, Mail, MessageSquare } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 
@@ -123,19 +123,27 @@ export default function QuoteSuccessPage() {
             {/* Contact Information */}
             <div className="border-t border-border pt-6">
               <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                <Phone className="h-5 w-5 text-primary" />
+                <MessageSquare className="h-5 w-5 text-primary" />
                 Questions?
               </h3>
               <p className="text-muted-foreground text-sm mb-2">
                 Our team is here to help:
               </p>
               <div className="flex flex-col gap-2">
+                {/* SMS - Primary option */}
+                <a 
+                  href={`sms:${COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '')}`}
+                  className="text-primary hover:underline flex items-center gap-2 font-medium"
+                >
+                  <MessageSquare className="h-4 w-4" />
+                  Text Us: {COMPANY_INFO.contact.phone}
+                </a>
                 <a 
                   href={`tel:${COMPANY_INFO.contact.phone}`}
                   className="text-primary hover:underline flex items-center gap-2 font-medium"
                 >
                   <Phone className="h-4 w-4" />
-                  {COMPANY_INFO.contact.phone}
+                  Call: {COMPANY_INFO.contact.phone}
                 </a>
                 <a 
                   href={`mailto:${COMPANY_INFO.contact.email}`}

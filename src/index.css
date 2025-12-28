@@ -357,31 +357,65 @@ a, button, [role="button"], .cursor-pointer {
 
   /* Typography Standards - Match Quote Summary Page */
   .heading-1 {
-    @apply text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 dark:text-white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(222 47% 11%);
+  }
+  @media (min-width: 768px) {
+    .heading-1 {
+      font-size: 1.875rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .heading-1 {
+      font-size: 2.25rem;
+    }
   }
 
   .heading-2 {
-    @apply text-xl md:text-2xl font-semibold text-slate-900 dark:text-white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: hsl(222 47% 11%);
+  }
+  @media (min-width: 768px) {
+    .heading-2 {
+      font-size: 1.5rem;
+    }
   }
 
   .heading-3 {
-    @apply text-lg md:text-xl font-medium text-slate-900 dark:text-white;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: hsl(222 47% 11%);
+  }
+  @media (min-width: 768px) {
+    .heading-3 {
+      font-size: 1.25rem;
+    }
   }
 
   .body-large {
-    @apply text-lg font-normal text-slate-700 dark:text-slate-300;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: hsl(215 16% 47%);
   }
 
   .body-normal {
-    @apply text-base font-normal text-slate-700 dark:text-slate-300;
+    font-size: 1rem;
+    font-weight: 400;
+    color: hsl(215 16% 47%);
   }
 
   .body-small {
-    @apply text-sm font-normal text-slate-600 dark:text-slate-400;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: hsl(215 14% 34%);
   }
 
   .caption {
-    @apply text-xs font-normal text-muted-foreground;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: hsl(var(--muted-foreground));
   }
 }
 
@@ -389,11 +423,12 @@ a, button, [role="button"], .cursor-pointer {
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     /* Mobile-first font sizing - prevent horizontal scroll */
     font-size: 16px;
