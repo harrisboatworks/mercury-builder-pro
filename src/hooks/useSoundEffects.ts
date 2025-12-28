@@ -9,7 +9,9 @@ type SoundType =
   | 'reveal'
   | 'tick'
   | 'complete'
-  | 'packageSelect';
+  | 'packageSelect'
+  | 'ambientPad'
+  | 'celebration';
 
 interface SoundEffectsOptions {
   enabled?: boolean;
@@ -229,6 +231,53 @@ export function useSoundEffects(options: SoundEffectsOptions = {}) {
           osc2.stop(now + 0.15);
           break;
         }
+
+        case 'ambientPad': {
+          // Luxurious ambient pad - soft evolving Cmaj7 drone
+          const frequencies = [130.81, 164.81, 196, 246.94]; // C3, E3, G3, B3
+          frequencies.forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.connect(gain);
+            gain.connect(masterGain);
+            
+            osc.frequency.value = freq + (Math.random() * 2 - 1); // Slight detune for warmth
+            osc.type = 'sine';
+            
+            // Slow attack, sustain, slow release for luxury feel
+            gain.gain.setValueAtTime(0, now);
+            gain.gain.linearRampToValueAtTime(0.06 - i * 0.01, now + 1.5); // 1.5s attack, decreasing volume for higher notes
+            gain.gain.setValueAtTime(0.06 - i * 0.01, now + 4);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 6); // 2s release
+            
+            osc.start(now);
+            osc.stop(now + 6.5);
+          });
+          break;
+        }
+
+        case 'celebration': {
+          // Triumphant celebration - ascending arpeggio
+          const notes = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
+          notes.forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.connect(gain);
+            gain.connect(masterGain);
+            
+            osc.frequency.value = freq;
+            osc.type = 'sine';
+            
+            const startTime = now + i * 0.1;
+            gain.gain.setValueAtTime(0, startTime);
+            gain.gain.linearRampToValueAtTime(0.35, startTime + 0.04);
+            gain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.35);
+            
+            osc.start(startTime);
+            osc.stop(startTime + 0.4);
+          });
+          break;
+        }
       }
     } catch (e) {
       // Silently fail if audio context not available
@@ -246,6 +295,8 @@ export function useSoundEffects(options: SoundEffectsOptions = {}) {
     playNotification: useCallback(() => playSound('notification'), [playSound]),
     playError: useCallback(() => playSound('error'), [playSound]),
     playPackageSelect: useCallback(() => playSound('packageSelect'), [playSound]),
+    playAmbientPad: useCallback(() => playSound('ambientPad'), [playSound]),
+    playCelebration: useCallback(() => playSound('celebration'), [playSound]),
     playSound,
   };
 }
