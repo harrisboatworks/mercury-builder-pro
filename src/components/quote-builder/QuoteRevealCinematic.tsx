@@ -16,6 +16,22 @@ interface QuoteRevealCinematicProps {
   imageUrl?: string;
 }
 
+// Haptic feedback utility for mobile devices
+const triggerHaptic = (pattern: 'light' | 'medium' | 'success' = 'light') => {
+  if ('vibrate' in navigator) {
+    const patterns = {
+      light: [10],
+      medium: [25],
+      success: [15, 50, 15], // Double tap celebration
+    };
+    try {
+      navigator.vibrate(patterns[pattern]);
+    } catch {
+      // Silently fail if vibration not supported
+    }
+  }
+};
+
 // Premium gold/silver confetti burst
 const triggerPremiumConfetti = () => {
   const defaults = {
@@ -83,6 +99,7 @@ export function QuoteRevealCinematic({
   const [displayPrice, setDisplayPrice] = useState(0);
   const [priceComplete, setPriceComplete] = useState(false);
   const [showSavingsBadge, setShowSavingsBadge] = useState(false);
+  const [isSkipping, setIsSkipping] = useState(false);
   const { playReveal, playSwoosh, playTick, playComplete, playAmbientPad, playCelebration } = useSound();
   const priceIntervalRef = useRef<NodeJS.Timeout>();
   
@@ -92,12 +109,35 @@ export function QuoteRevealCinematic({
   // Calculate monthly payment
   const monthlyPayment = calculateMonthly(finalPrice);
 
+  // Smooth skip handler with fade-out animation
+  const handleSkip = () => {
+    if (isSkipping) return;
+    setIsSkipping(true);
+    // Fade out over 500ms, then complete
+    setTimeout(onComplete, 500);
+  };
+
+  // Haptic feedback when price completes
+  useEffect(() => {
+    if (priceComplete) {
+      triggerHaptic('medium');
+    }
+  }, [priceComplete]);
+
+  // Haptic feedback when savings badge appears
+  useEffect(() => {
+    if (showSavingsBadge) {
+      triggerHaptic('success');
+    }
+  }, [showSavingsBadge]);
+
   useEffect(() => {
     if (!isVisible) {
       setStage('spotlight');
       setDisplayPrice(0);
       setPriceComplete(false);
       setShowSavingsBadge(false);
+      setIsSkipping(false);
       return;
     }
 
@@ -172,8 +212,9 @@ export function QuoteRevealCinematic({
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        animate={{ opacity: isSkipping ? 0 : 1 }}
         exit={{ opacity: 0 }}
+        transition={{ duration: isSkipping ? 0.5 : 0.3 }}
         className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
       >
         {/* Near-black background with subtle vignette */}
@@ -291,7 +332,7 @@ export function QuoteRevealCinematic({
           )}
         </AnimatePresence>
 
-        {/* Price Display - Elegant serif with gradient and glow pulse on completion */}
+        {/* Price Display - Elegant serif with separate glow layer (fixes gold box bug) */}
         <AnimatePresence>
           {(stage === 'price' || stage === 'savings' || stage === 'details' || stage === 'complete') && (
             <motion.div
@@ -305,15 +346,29 @@ export function QuoteRevealCinematic({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="text-[10px] md:text-xs uppercase tracking-[0.25em] mb-3"
-                style={{ color: '#D4AF37' }} // Gold label
+                style={{ color: '#D4AF37' }}
               >
                 Your Price
               </motion.span>
               
               {/* Price with savings badge */}
               <div className="relative">
+                {/* Pulsing glow BEHIND the price text - separate layer to avoid gold box bug */}
+                {priceComplete && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0.3, 0.5, 0.3] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                    className="absolute inset-0 -m-6 blur-2xl pointer-events-none"
+                    style={{
+                      background: 'radial-gradient(circle, rgba(212,175,55,0.4) 0%, transparent 70%)',
+                    }}
+                  />
+                )}
+                
+                {/* Price text - NO textShadow animation to avoid gold box bug */}
                 <motion.span 
-                  className="font-playfair text-4xl md:text-6xl font-medium tabular-nums tracking-tight"
+                  className="relative z-10 font-playfair text-4xl md:text-6xl font-medium tabular-nums tracking-tight"
                   style={{ 
                     background: priceComplete 
                       ? 'linear-gradient(135deg, #FAFAFA 0%, #D4AF37 50%, #FAFAFA 100%)'
@@ -322,14 +377,6 @@ export function QuoteRevealCinematic({
                     WebkitTextFillColor: 'transparent',
                     backgroundClip: 'text',
                   }}
-                  animate={priceComplete ? {
-                    textShadow: [
-                      '0 0 0px rgba(212,175,55,0)',
-                      '0 0 40px rgba(212,175,55,0.4)',
-                      '0 0 20px rgba(212,175,55,0.2)',
-                    ],
-                  } : {}}
-                  transition={{ duration: 1.5, ease: 'easeOut' }}
                 >
                   {money(displayPrice)}
                 </motion.span>
@@ -445,18 +492,20 @@ export function QuoteRevealCinematic({
           )}
         </AnimatePresence>
 
-        {/* Subtle dismiss button - appears after 2s */}
+        {/* Skip Intro button with label - smooth fade transition */}
         <motion.button
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.4 }}
-          whileHover={{ opacity: 0.8 }}
-          transition={{ delay: 2, duration: 0.5 }}
-          onClick={onComplete}
-          className="absolute top-6 right-6 p-2 rounded-full transition-colors"
+          animate={{ opacity: isSkipping ? 0 : 0.5 }}
+          whileHover={{ opacity: isSkipping ? 0 : 0.9 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+          onClick={handleSkip}
+          disabled={isSkipping}
+          className="absolute top-6 right-6 flex items-center gap-2 px-3 py-2 rounded-full transition-colors hover:bg-white/5"
           style={{ color: '#9CA3AF' }}
           aria-label="Skip intro"
         >
-          <X className="h-5 w-5" />
+          <span className="text-xs font-medium tracking-wide">Skip Intro</span>
+          <X className="h-4 w-4" />
         </motion.button>
 
         {/* Subtle horizontal line accent with refined animation */}
