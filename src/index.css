@@ -354,69 +354,69 @@ a, button, [role="button"], .cursor-pointer {
   }
 
   /* Dark mode disabled - light theme only */
+}
 
-  /* Typography Standards - Match Quote Summary Page */
+/* Typography Standards - Match Quote Summary Page */
+.heading-1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(222 47% 11%);
+}
+@media (min-width: 768px) {
   .heading-1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: hsl(222 47% 11%);
+    font-size: 1.875rem;
   }
-  @media (min-width: 768px) {
-    .heading-1 {
-      font-size: 1.875rem;
-    }
+}
+@media (min-width: 1024px) {
+  .heading-1 {
+    font-size: 2.25rem;
   }
-  @media (min-width: 1024px) {
-    .heading-1 {
-      font-size: 2.25rem;
-    }
-  }
+}
 
+.heading-2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(222 47% 11%);
+}
+@media (min-width: 768px) {
   .heading-2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: hsl(222 47% 11%);
+    font-size: 1.5rem;
   }
-  @media (min-width: 768px) {
-    .heading-2 {
-      font-size: 1.5rem;
-    }
-  }
+}
 
+.heading-3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: hsl(222 47% 11%);
+}
+@media (min-width: 768px) {
   .heading-3 {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: hsl(222 47% 11%);
+    font-size: 1.25rem;
   }
-  @media (min-width: 768px) {
-    .heading-3 {
-      font-size: 1.25rem;
-    }
-  }
+}
 
-  .body-large {
-    font-size: 1.125rem;
-    font-weight: 400;
-    color: hsl(215 16% 47%);
-  }
+.body-large {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: hsl(215 16% 47%);
+}
 
-  .body-normal {
-    font-size: 1rem;
-    font-weight: 400;
-    color: hsl(215 16% 47%);
-  }
+.body-normal {
+  font-size: 1rem;
+  font-weight: 400;
+  color: hsl(215 16% 47%);
+}
 
-  .body-small {
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: hsl(215 14% 34%);
-  }
+.body-small {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: hsl(215 14% 34%);
+}
 
-  .caption {
-    font-size: 0.75rem;
-    font-weight: 400;
-    color: hsl(var(--muted-foreground));
-  }
+.caption {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: hsl(var(--muted-foreground));
 }
 
 /* Dark mode logo fixes - handled in components with proper backgrounds */

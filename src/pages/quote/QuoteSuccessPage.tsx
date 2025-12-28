@@ -132,11 +132,11 @@ export default function QuoteSuccessPage() {
               <div className="flex flex-col gap-2">
                 {/* SMS - Primary option */}
                 <a 
-                  href={`sms:${COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '')}`}
+                  href={`sms:${COMPANY_INFO.contact.sms.replace(/[^0-9]/g, '')}`}
                   className="text-primary hover:underline flex items-center gap-2 font-medium"
                 >
                   <MessageSquare className="h-4 w-4" />
-                  Text Us: {COMPANY_INFO.contact.phone}
+                  Text Us: {COMPANY_INFO.contact.sms}
                 </a>
                 <a 
                   href={`tel:${COMPANY_INFO.contact.phone}`}

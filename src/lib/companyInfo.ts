@@ -15,6 +15,7 @@ export const COMPANY_INFO = {
   },
   contact: {
     phone: "(905) 342-2153",
+    sms: "(647) 952-2153",
     email: "info@harrisboatworks.ca",
     website: "quote.harrisboatworks.ca"
   },
