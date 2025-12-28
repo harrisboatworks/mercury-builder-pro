@@ -20,7 +20,7 @@ import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExtern
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, CreditCard } from 'lucide-react';
+import { ArrowLeft, CreditCard, RotateCcw } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
 import { calculateQuotePricing } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
@@ -826,6 +826,7 @@ export default function QuoteSummaryPage() {
                 initial="hidden"
                 animate="visible"
                 variants={sectionVariants}
+                className="relative"
               >
                 <MotorHeader
                   name={motorName}
@@ -838,6 +839,20 @@ export default function QuoteSummaryPage() {
                   specSheetUrl={specSheetUrl}
                   onBack={handleBack}
                 />
+                {/* Subtle replay intro button */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="absolute top-2 right-2 h-8 w-8 text-muted-foreground/50 hover:text-primary hover:bg-muted/50 transition-colors"
+                  onClick={() => {
+                    sessionStorage.removeItem('quote-reveal-seen');
+                    setShowCinematic(true);
+                    setRevealComplete(false);
+                  }}
+                  title="Replay intro"
+                >
+                  <RotateCcw className="h-4 w-4" />
+                </Button>
               </motion.div>
 
               {/* Trust Badge */}

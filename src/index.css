@@ -1004,35 +1004,82 @@ html {
     color: hsl(var(--primary-foreground));
     border-color: hsl(0 0% 100% / 0.2);
   }
-  @keyframes subtle-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
+}
 
-  /* Green glow pulse for Repower badge */
-  @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 2px 4px hsl(var(--badge-green-1) / 0.3); }
-    50% { box-shadow: 0 2px 10px hsl(var(--badge-green-1) / 0.6); }
-  }
+/* Keyframes moved outside @layer for CSS minifier compatibility */
+@keyframes subtle-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
 
-  /* AI Chat tab pulse animation */
-  @keyframes ai-tab-pulse {
-    0%, 100% { box-shadow: 0 0 0 0 hsl(217 91% 60% / 0); }
-    50% { box-shadow: 0 0 8px 2px hsl(217 91% 60% / 0.3); }
-  }
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 2px 4px hsl(var(--badge-green-1) / 0.3); }
+  50% { box-shadow: 0 2px 10px hsl(var(--badge-green-1) / 0.6); }
+}
 
-  /* Subtle shimmer sweep for power-up effect */
-  @keyframes shimmer {
-    0% { transform: translateX(-100%) translateY(-100%); }
-    100% { transform: translateX(100%) translateY(100%); }
-  }
+@keyframes ai-tab-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(217 91% 60% / 0); }
+  50% { box-shadow: 0 0 8px 2px hsl(217 91% 60% / 0.3); }
+}
 
-  /* Sparkle wiggle for icon */
-  @keyframes sparkle {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.2); }
-  }
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%); }
+  100% { transform: translateX(100%) translateY(100%); }
+}
 
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+@keyframes ticker {
+  0%, 33% { transform: translateY(0); }
+  33.33%, 66% { transform: translateY(-30px); }
+  66.66%, 100% { transform: translateY(-60px); }
+}
+
+@keyframes achievement-entrance {
+  0% { transform: scale(0.3) rotate(45deg); opacity: 0; }
+  50% { transform: scale(1.1) rotate(-5deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes bounce-rotate {
+  0% { transform: scale(0) rotate(0); }
+  50% { transform: scale(1.2) rotate(180deg); }
+  75% { transform: scale(0.9) rotate(270deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+@keyframes text-glow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+@keyframes fill-progress {
+  0% { width: 75%; }
+  100% { width: 100%; }
+}
+
+@keyframes hbw-shimmer { to { transform: translateX(100%); } }
+
+@media (prefers-color-scheme: dark) {
+  .product-card .badge--shimmer {
+    color: hsl(0 0% 100%);
+    background: hsl(var(--primary));
+    border-color: hsl(var(--primary));
+  }
+  .product-card .badge--shimmer::after {
+    background: linear-gradient(120deg, transparent 0%, hsl(0 0% 100% / 0.25) 40%, transparent 80%);
+  }
+}
+
+@layer components {
   /* Repower banner pulse */
   .repower-rebate-banner {
     animation: subtle-pulse 3s ease-in-out infinite;
@@ -1072,11 +1119,6 @@ html {
     line-height: 30px;
     animation: ticker 9s linear infinite;
   }
-  @keyframes ticker {
-    0%, 33% { transform: translateY(0); }
-    33.33%, 66% { transform: translateY(-30px); }
-    66.66%, 100% { transform: translateY(-60px); }
-  }
 
   /* Achievement Overlay & Animations */
   .achievement-overlay {
@@ -1102,11 +1144,6 @@ html {
   .animate-in {
     animation: achievement-entrance 0.6s ease;
   }
-  @keyframes achievement-entrance {
-    0% { transform: scale(0.3) rotate(45deg); opacity: 0; }
-    50% { transform: scale(1.1) rotate(-5deg); }
-    100% { transform: scale(1) rotate(0); opacity: 1; }
-  }
   .achievement-icon-container {
     position: relative;
     width: 120px;
@@ -1124,16 +1161,6 @@ html {
     border-radius: 9999px;
     animation: pulse-ring 1s ease-out;
   }
-  @keyframes pulse-ring {
-    0% { transform: scale(0.5); opacity: 1; }
-    100% { transform: scale(1.5); opacity: 0; }
-  }
-  @keyframes bounce-rotate {
-    0% { transform: scale(0) rotate(0); }
-    50% { transform: scale(1.2) rotate(180deg); }
-    75% { transform: scale(0.9) rotate(270deg); }
-    100% { transform: scale(1) rotate(360deg); }
-  }
   .achievement-title {
     font-size: 32px;
     font-weight: 900;
@@ -1147,10 +1174,6 @@ html {
     font-size: 18px;
     font-weight: 600;
     color: hsl(var(--muted-foreground));
-  }
-  @keyframes text-glow {
-    0%, 100% { filter: brightness(1); }
-    50% { filter: brightness(1.2); }
   }
   .achievement-stats {
     background: hsl(var(--muted));
@@ -1177,10 +1200,6 @@ html {
     width: 100%;
     animation: fill-progress 1s ease-out;
     margin-bottom: 6px;
-  }
-  @keyframes fill-progress {
-    0% { width: 75%; }
-    100% { width: 100%; }
   }
   .btn-continue-epic {
     position: relative;
@@ -1238,17 +1257,6 @@ html {
     background: linear-gradient(120deg, transparent 0%, hsl(0 0% 100% / 0.6) 40%, transparent 80%);
     transform: translateX(-100%);
     animation: hbw-shimmer 2.5s linear infinite;
-  }
-  @keyframes hbw-shimmer { to { transform: translateX(100%); } }
-  @media (prefers-color-scheme: dark) {
-    .product-card .badge--shimmer {
-      color: hsl(0 0% 100%);
-      background: hsl(var(--primary));
-      border-color: hsl(var(--primary));
-    }
-    .product-card .badge--shimmer::after {
-      background: linear-gradient(120deg, transparent 0%, hsl(0 0% 100% / 0.25) 40%, transparent 80%);
-    }
   }
 
   /* Repower badge (enhanced) */
