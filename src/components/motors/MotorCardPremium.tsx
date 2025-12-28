@@ -13,6 +13,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { getFinancingDisplay } from '@/lib/finance';
 import { getPriceDisplayState } from '@/lib/pricing';
+import { getCompactMotorName } from '@/lib/motor-title-helpers';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 export default function MotorCardPremium({ 
@@ -288,9 +289,10 @@ export default function MotorCardPremium({
           
           {/* Content Section - Premium Mobile Layout */}
           <div className="p-4 space-y-4">
-            {/* Model Name - Prominent */}
+            {/* Model Name - Responsive: compact on mobile */}
             <h3 className="text-2xl font-light tracking-wide text-black">
-              {title}
+              <span className="hidden sm:inline">{title}</span>
+              <span className="sm:hidden">{getCompactMotorName(title)}</span>
             </h3>
             
             {/* Model Number - Subtle */}
