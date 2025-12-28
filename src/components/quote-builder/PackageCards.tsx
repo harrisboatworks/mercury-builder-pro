@@ -4,6 +4,7 @@ import { money } from "@/lib/money";
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from "@/lib/finance";
 import { cn } from "@/lib/utils";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { useSound } from '@/contexts/SoundContext';
 import { TrendingUp, Shield, Check } from 'lucide-react';
 
 // Safe animation that starts visible and only animates transform (not opacity)
@@ -49,6 +50,7 @@ export function PackageCards({
   basePackageId,
 }: PackageCardsProps) {
   const { triggerHaptic } = useHapticFeedback();
+  const { playClick } = useSound();
   
   // Find base package for comparison (default to first/Essential)
   const basePackage = options.find(p => p.id === (basePackageId || 'good')) || options[0];
@@ -76,6 +78,7 @@ export function PackageCards({
             transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
             onClick={() => {
               triggerHaptic('packageChanged');
+              playClick();
               onSelect(p.id);
             }}
             className={cn(
