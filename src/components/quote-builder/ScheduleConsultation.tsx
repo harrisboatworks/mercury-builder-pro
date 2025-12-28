@@ -955,28 +955,33 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       {/* Contact Information */}
       <Card className="p-6 border-gray-200 rounded-sm">
         <h3 className="text-xl font-light tracking-wide mb-4">Harris Boat Works</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="flex items-center gap-3">
+        <div className="grid grid-cols-3 gap-2 md:gap-6">
+          <a 
+            href="tel:9053422153"
+            className="flex flex-col items-center text-center gap-1 p-2 rounded-md hover:bg-muted/50 transition-colors"
+          >
             <Phone className="w-5 h-5 text-gray-700" />
-            <div>
-              <p className="font-light tracking-wide">Phone</p>
-              <p className="text-muted-foreground dark:text-gray-400 font-light">(905) 342-2153</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
+            <p className="text-xs md:text-sm font-light tracking-wide">Phone</p>
+            <p className="text-xs text-muted-foreground dark:text-gray-400 font-light hidden md:block">(905) 342-2153</p>
+          </a>
+          <a 
+            href="mailto:info@harrisboatworks.ca"
+            className="flex flex-col items-center text-center gap-1 p-2 rounded-md hover:bg-muted/50 transition-colors"
+          >
             <Mail className="w-5 h-5 text-gray-700" />
-            <div>
-              <p className="font-light tracking-wide">Email</p>
-              <p className="text-muted-foreground dark:text-gray-400 font-light">info@harrisboatworks.ca</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
+            <p className="text-xs md:text-sm font-light tracking-wide">Email</p>
+            <p className="text-xs text-muted-foreground dark:text-gray-400 font-light hidden md:block">info@harrisboatworks.ca</p>
+          </a>
+          <a 
+            href="https://maps.google.com/?q=5369+Harris+Boat+Works+Rd,+Gores+Landing,+ON"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center text-center gap-1 p-2 rounded-md hover:bg-muted/50 transition-colors"
+          >
             <MapPin className="w-5 h-5 text-gray-700" />
-            <div>
-              <p className="font-light tracking-wide">Location</p>
-              <p className="text-muted-foreground dark:text-gray-400 font-light">5369 Harris Boat Works Rd, Gores Landing, ON</p>
-            </div>
-          </div>
+            <p className="text-xs md:text-sm font-light tracking-wide">Location</p>
+            <p className="text-xs text-muted-foreground dark:text-gray-400 font-light hidden md:block">Gores Landing, ON</p>
+          </a>
         </div>
         
         <div className="mt-6 p-4 bg-stone-50 rounded-sm border border-gray-200">
