@@ -45,7 +45,7 @@ export const NoMicrophoneDialog: React.FC<NoMicrophoneDialogProps> = ({
 
   return (
     <AlertDialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
-      <AlertDialogContent className="max-w-md">
+      <AlertDialogContent className="max-w-md w-[calc(100vw-2rem)]">
         <AlertDialogHeader>
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10">
             <MicOff className="h-6 w-6 text-destructive" />

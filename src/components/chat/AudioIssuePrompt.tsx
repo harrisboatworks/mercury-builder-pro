@@ -23,7 +23,7 @@ export const AudioIssuePrompt: React.FC<AudioIssuePromptProps> = ({
           initial={{ opacity: 0, y: 20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 10, scale: 0.95 }}
-          className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-background rounded-xl shadow-xl border border-border p-4 max-w-sm w-[calc(100%-2rem)]"
+          className="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-background rounded-xl shadow-xl border border-border p-4 max-w-sm w-[calc(100%-2rem)] pb-[calc(1rem+env(safe-area-inset-bottom))]"
         >
           <button
             onClick={onDismiss}
