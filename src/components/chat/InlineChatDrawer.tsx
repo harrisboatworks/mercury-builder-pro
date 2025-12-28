@@ -793,29 +793,28 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
               </motion.div>
 
 
-              {/* Suggested Prompts - HP-aware, rotates every 45s when idle, hides after selection */}
+              {/* Suggested Prompts - auto-hide after first exchange (3+ messages), compact on mobile */}
               <AnimatePresence mode="wait">
-                {(messages.length <= 2 || shouldShowMotorPrompts) && !isLoading && !promptSelected && smartPrompts.length > 0 && (
+                {messages.length <= 2 && !isLoading && !promptSelected && smartPrompts.length > 0 && (
                   <motion.div
                     key={`prompts-${currentMotorId || 'default'}-${smartPrompts.join(',')}`}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: promptsRotating ? 0.5 : 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
                     transition={{ duration: 0.25, ease: 'easeOut' }}
-                    className="px-4 py-2 border-t border-gray-100 bg-white shrink-0"
+                    className="px-3 py-1.5 border-t border-gray-100 bg-white shrink-0"
                   >
-                    <p className="text-[10px] text-gray-400 mb-1.5 uppercase tracking-wide">
-                      {currentMotorLabel ? 'Common Questions' : 'Suggested'}
+                    <p className="text-[9px] text-gray-400 mb-1 uppercase tracking-wide">
+                      {currentMotorLabel ? 'Quick Questions' : 'Suggested'}
                     </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {smartPrompts.slice(0, 4).map((prompt, index) => (
+                    <div className="flex gap-1.5 overflow-x-auto scrollbar-hide -mx-1 px-1 pb-0.5">
+                      {smartPrompts.slice(0, 3).map((prompt, index) => (
                         <motion.button
                           key={`${prompt}-${index}`}
                           initial={{ opacity: 0, scale: 0.95 }}
                           animate={{ opacity: 1, scale: 1 }}
                           transition={{ delay: index * 0.05, duration: 0.2 }}
                           onClick={() => {
-                            // Hide prompts after selection for more reading space
                             setPromptSelected(true);
                             if (currentMotorId) setInteractedMotorId(currentMotorId);
                             if (prompt.includes('Help me find the right motor') && setShowQuiz) {
@@ -825,8 +824,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                               handleSend(prompt);
                             }
                           }}
-                          className="px-2.5 py-1.5 text-xs bg-gray-100 hover:bg-gray-200 
-                            text-gray-700 rounded-full transition-all font-light hover:scale-[1.02]"
+                          className="px-2 py-1 text-[11px] bg-gray-100 hover:bg-gray-200 
+                            text-gray-700 rounded-full transition-all font-light 
+                            whitespace-nowrap shrink-0"
                         >
                           {prompt}
                         </motion.button>
