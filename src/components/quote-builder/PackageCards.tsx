@@ -7,15 +7,32 @@ import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useSound } from '@/contexts/SoundContext';
 import { TrendingUp, Shield, Check } from 'lucide-react';
 
-// Safe animation that starts visible and only animates transform (not opacity)
-const packageItemVariants = {
-  hidden: { y: 15, scale: 0.98 },
+// Container variants for staggered entrance
+const containerVariants = {
+  hidden: {},
   visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1
+    }
+  }
+};
+
+// Card variants with spring animation
+const cardVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 24, 
+    scale: 0.96 
+  },
+  visible: {
+    opacity: 1,
     y: 0,
     scale: 1,
     transition: {
-      duration: 0.3,
-      ease: "easeOut"
+      type: "spring",
+      stiffness: 280,
+      damping: 22
     }
   }
 };
@@ -39,6 +56,7 @@ type PackageCardsProps = {
   promoRate?: number | null; // Promotional financing rate (null = use tiered defaults)
   showUpgradeDeltas?: boolean; // Enable comparison mode
   basePackageId?: string; // Package to compare against (default: first package)
+  revealComplete?: boolean; // Whether cinematic reveal has completed (triggers stagger animation)
 };
 
 export function PackageCards({
@@ -48,9 +66,10 @@ export function PackageCards({
   promoRate = null,
   showUpgradeDeltas = true,
   basePackageId,
+  revealComplete = true,
 }: PackageCardsProps) {
   const { triggerHaptic } = useHapticFeedback();
-  const { playClick } = useSound();
+  const { playPackageSelect } = useSound();
   
   // Find base package for comparison (default to first/Essential)
   const basePackage = options.find(p => p.id === (basePackageId || 'good')) || options[0];
@@ -59,8 +78,14 @@ export function PackageCards({
   const baseCoverageYears = basePackage.coverageYears || 3;
 
   return (
-    <section aria-label="Packages" className="grid gap-3 sm:grid-cols-3">
-      {options.map((p, index) => {
+    <motion.section 
+      aria-label="Packages" 
+      className="grid gap-3 sm:grid-cols-3"
+      variants={containerVariants}
+      initial="hidden"
+      animate={revealComplete ? "visible" : "hidden"}
+    >
+      {options.map((p) => {
         const amountToFinance = (p.priceBeforeTax * 1.13) + DEALERPLAN_FEE;
         const monthly = p.monthly ?? calculateMonthlyPayment(amountToFinance, promoRate).payment;
         const isSelected = selectedId === p.id;
@@ -73,17 +98,22 @@ export function PackageCards({
         return (
           <motion.button
             key={p.id}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
+            variants={cardVariants}
             onClick={() => {
               triggerHaptic('packageChanged');
-              playClick();
+              playPackageSelect();
               onSelect(p.id);
             }}
             className={cn(
-              "group relative flex flex-col rounded-2xl border p-6 text-left transition-all duration-300",
-              "hover:shadow-xl hover:-translate-y-2 active:scale-[0.98]",
+              "group relative flex flex-col rounded-2xl border p-6 text-left",
+              // Smooth premium transitions
+              "transition-all duration-300 ease-out",
+              // Micro-interaction: scale + lift + shadow on hover
+              "hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl",
+              // Active press feedback
+              "active:scale-[0.98] active:translate-y-0",
+              // Premium effects
+              "premium-lift premium-glow-hover",
               "cursor-pointer pointer-events-auto touch-manipulation",
               isSelected
                 ? "border-primary ring-2 ring-primary/20 glass-card-primary premium-selected"
@@ -196,7 +226,7 @@ export function PackageCards({
           </motion.button>
         );
       })}
-    </section>
+    </motion.section>
   );
 }
 

@@ -12,6 +12,7 @@ interface SoundContextValue {
   playReveal: () => void;
   playTick: () => void;
   playComplete: () => void;
+  playPackageSelect: () => void;
 }
 
 const SoundContext = createContext<SoundContextValue | null>(null);
@@ -52,6 +53,7 @@ export function SoundProvider({ children }: { children: ReactNode }) {
         playReveal: sounds.playReveal,
         playTick: sounds.playTick,
         playComplete: sounds.playComplete,
+        playPackageSelect: sounds.playPackageSelect,
       }}
     >
       {children}
@@ -74,6 +76,7 @@ export function useSound() {
       playReveal: () => {},
       playTick: () => {},
       playComplete: () => {},
+      playPackageSelect: () => {},
     };
   }
   return context;

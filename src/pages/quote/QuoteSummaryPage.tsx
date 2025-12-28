@@ -92,9 +92,16 @@ export default function QuoteSummaryPage() {
     return !hasSeenReveal;
   });
   
+  // Track when reveal completes to trigger staggered card animations
+  const [revealComplete, setRevealComplete] = useState(() => {
+    // If already seen before, cards should animate immediately
+    return !!sessionStorage.getItem('quote-reveal-seen');
+  });
+  
   const handleCinematicComplete = () => {
     sessionStorage.setItem('quote-reveal-seen', 'true');
     setShowCinematic(false);
+    setRevealComplete(true); // Trigger staggered package card entrance
   };
 
   // Ensure minimum mount time before running accessibility checks
@@ -857,6 +864,7 @@ export default function QuoteSummaryPage() {
                   onSelect={handlePackageSelect}
                   promoRate={promo?.rate || null}
                   showUpgradeDeltas={true}
+                  revealComplete={revealComplete}
                 />
                 
                 {/* Upgrade Nudge Bar - shown when Essential is selected */}

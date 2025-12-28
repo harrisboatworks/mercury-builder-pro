@@ -8,7 +8,8 @@ type SoundType =
   | 'swoosh'
   | 'reveal'
   | 'tick'
-  | 'complete';
+  | 'complete'
+  | 'packageSelect';
 
 interface SoundEffectsOptions {
   enabled?: boolean;
@@ -203,6 +204,31 @@ export function useSoundEffects(options: SoundEffectsOptions = {}) {
           osc.stop(now + 0.15);
           break;
         }
+
+        case 'packageSelect': {
+          // Satisfying harmonic chord (A4 + C#5) for package selection
+          const osc1 = ctx.createOscillator();
+          const osc2 = ctx.createOscillator();
+          const gain = ctx.createGain();
+          
+          osc1.connect(gain);
+          osc2.connect(gain);
+          gain.connect(masterGain);
+          
+          osc1.frequency.value = 440;     // A4
+          osc2.frequency.value = 554.37;  // C#5 (major third)
+          osc1.type = 'sine';
+          osc2.type = 'sine';
+          
+          gain.gain.setValueAtTime(0.35, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+          
+          osc1.start(now);
+          osc2.start(now);
+          osc1.stop(now + 0.15);
+          osc2.stop(now + 0.15);
+          break;
+        }
       }
     } catch (e) {
       // Silently fail if audio context not available
@@ -219,6 +245,7 @@ export function useSoundEffects(options: SoundEffectsOptions = {}) {
     playComplete: useCallback(() => playSound('complete'), [playSound]),
     playNotification: useCallback(() => playSound('notification'), [playSound]),
     playError: useCallback(() => playSound('error'), [playSound]),
+    playPackageSelect: useCallback(() => playSound('packageSelect'), [playSound]),
     playSound,
   };
 }
