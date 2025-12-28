@@ -22,7 +22,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CreditCard, RotateCcw } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
-import { calculateQuotePricing } from '@/lib/quote-utils';
+import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -270,8 +270,6 @@ export default function QuoteSummaryPage() {
   // Fetch real warranty extension costs from database
   useEffect(() => {
     async function fetchWarrantyCosts() {
-      const { calculateWarrantyExtensionCost } = await import('@/lib/quote-utils');
-      
       const completeCost = await calculateWarrantyExtensionCost(
         motorHP,
         currentCoverageYears,
