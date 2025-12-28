@@ -90,35 +90,38 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
            (Math.pow(1 + monthlyRate, numPayments) - 1);
   };
 
-  // Calculate pricing dynamically (same logic as GlobalStickyQuoteBar)
+  // Calculate pricing dynamically (matching QuoteSummaryPage.tsx exactly)
   const motorPrice = quoteData.motor?.price || 0;
   const motorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || motorPrice;
   const motorDiscount = motorMSRP - motorPrice;
   
-  // Calculate accessories dynamically
+  // Calculate accessories dynamically - MUST match QuoteSummaryPage.tsx
   let accessoryTotal = 0;
   
-  // Controls cost from boat info
+  // 1. Selected options from package selection (battery, propeller, etc.)
+  const selectedOptionsTotal = (quoteData.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
+  accessoryTotal += selectedOptionsTotal;
+  
+  // 2. Controls cost from boat info
   if (quoteData.boatInfo?.controlsOption === 'none') accessoryTotal += 1200;
   else if (quoteData.boatInfo?.controlsOption === 'adapter') accessoryTotal += 125;
   
-  // Installation labor for remote motors (only if installed path)
+  // 3. Installation labor for remote motors (only if installed path)
   const isTiller = quoteData.motor?.model?.includes('TLR') || quoteData.motor?.model?.includes('MH');
-  if ((purchasePath === 'installed' || quoteData.purchasePath === 'installed') && !isTiller) {
-    accessoryTotal += 450; // Professional installation labor
-  }
+  const installationLaborCost = ((purchasePath === 'installed' || quoteData.purchasePath === 'installed') && !isTiller) ? 450 : 0;
+  accessoryTotal += installationLaborCost;
   
-  // Add mounting hardware for tillers (installConfig)
+  // 4. Add mounting hardware for tillers (installConfig)
   if (quoteData.installConfig?.installationCost) {
     accessoryTotal += quoteData.installConfig.installationCost;
   }
   
-  // Add fuel tank for small tillers (fuelTankConfig)
+  // 5. Add fuel tank for small tillers (fuelTankConfig)
   if (quoteData.fuelTankConfig?.tankCost) {
     accessoryTotal += quoteData.fuelTankConfig.tankCost;
   }
   
-  // Warranty
+  // 6. Warranty
   const warrantyPrice = quoteData.warrantyConfig?.warrantyPrice || 0;
   accessoryTotal += warrantyPrice;
   
@@ -130,12 +133,13 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
   const hst = subtotalAfterTrade * 0.13;
   const totalCashPrice = subtotalAfterTrade + hst;
   
-  // Create pricing data object for use throughout component
+  // Create pricing data object - MSRP is just motor MSRP, not including accessories
   const data = {
-    msrp: motorMSRP + accessoryTotal,
+    msrp: motorMSRP, // Motor MSRP only (not adding accessories)
     discount: motorDiscount,
     promoValue: 0,
     motorSubtotal: motorPrice,
+    accessoryTotal: accessoryTotal,
     subtotal: subtotal,
     savings: motorDiscount
   };

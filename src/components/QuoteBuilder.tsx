@@ -111,6 +111,21 @@ export interface BoatInfo {
   };
 }
 
+export interface SelectedOption {
+  optionId: string;
+  name: string;
+  price: number;
+  category: string;
+  assignmentType: 'required' | 'recommended' | 'available';
+  isIncluded: boolean;
+}
+
+export interface SelectedPackage {
+  id: string;
+  label: string;
+  priceBeforeTax: number;
+}
+
 export interface QuoteData {
   motor: Motor | null;
   boatInfo: BoatInfo | null;
@@ -129,6 +144,8 @@ export interface QuoteData {
   installConfig?: any | null;
   fuelTankConfig?: any | null;
   tradeInInfo?: any | null;
+  selectedOptions?: SelectedOption[];
+  selectedPackage?: SelectedPackage | null;
 }
 
 const QuoteBuilder = () => {

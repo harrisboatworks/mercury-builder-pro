@@ -451,7 +451,9 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     purchasePath: state.purchasePath,
     installConfig: state.installConfig,
     fuelTankConfig: state.fuelTankConfig,
-    tradeInInfo: state.tradeInInfo
+    tradeInInfo: state.tradeInInfo,
+    selectedOptions: state.selectedOptions,
+    selectedPackage: state.selectedPackage
   });
 
   const clearQuote = () => {
