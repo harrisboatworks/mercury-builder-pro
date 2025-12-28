@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSound } from '@/contexts/SoundContext';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { money, calculateMonthly } from '@/lib/quote-utils';
 import { X, Shield, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -17,22 +18,6 @@ interface QuoteRevealCinematicProps {
   coverageYears: number;
   imageUrl?: string;
 }
-
-// Haptic feedback utility for mobile devices
-const triggerHaptic = (pattern: 'light' | 'medium' | 'success' = 'light') => {
-  if ('vibrate' in navigator) {
-    const patterns = {
-      light: [10],
-      medium: [25],
-      success: [15, 50, 15], // Double tap celebration
-    };
-    try {
-      navigator.vibrate(patterns[pattern]);
-    } catch {
-      // Silently fail if vibration not supported
-    }
-  }
-};
 
 // Premium gold/silver confetti burst
 const triggerPremiumConfetti = () => {
@@ -104,6 +89,7 @@ export function QuoteRevealCinematic({
   const [isSkipping, setIsSkipping] = useState(false);
   const [progress, setProgress] = useState(0);
   const { playReveal, playSwoosh, playTick, playComplete, playAmbientPad, playCelebration } = useSound();
+  const { triggerHaptic } = useHapticFeedback();
   const priceIntervalRef = useRef<NodeJS.Timeout>();
   const startTimeRef = useRef<number>(0);
   
@@ -126,16 +112,16 @@ export function QuoteRevealCinematic({
   // Haptic feedback when price completes
   useEffect(() => {
     if (priceComplete) {
-      triggerHaptic('medium');
+      triggerHaptic('motorSelected');
     }
-  }, [priceComplete]);
+  }, [priceComplete, triggerHaptic]);
 
   // Haptic feedback when savings badge appears
   useEffect(() => {
     if (showSavingsBadge) {
-      triggerHaptic('success');
+      triggerHaptic('addedToQuote');
     }
-  }, [showSavingsBadge]);
+  }, [showSavingsBadge, triggerHaptic]);
 
   // Progress bar countdown
   useEffect(() => {
