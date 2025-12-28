@@ -4,6 +4,8 @@ import { useSound } from '@/contexts/SoundContext';
 import { money, calculateMonthly } from '@/lib/quote-utils';
 import { X, Shield, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import harrisLogo from '@/assets/harris-logo.png';
+import mercuryLogo from '@/assets/mercury-logo.png';
 
 interface QuoteRevealCinematicProps {
   isVisible: boolean;
@@ -273,14 +275,15 @@ export function QuoteRevealCinematic({
                   }}
                 />
               ) : (
-                <div 
-                  className="h-32 md:h-44 w-32 md:w-44 rounded-full flex items-center justify-center"
+                <img 
+                  src={harrisLogo}
+                  alt="Harris Boat Works"
+                  className="h-24 md:h-32 w-auto object-contain"
                   style={{
-                    background: 'radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)',
+                    filter: 'drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5)) brightness(1.1)',
+                    opacity: 0.95,
                   }}
-                >
-                  <span className="text-5xl text-white/20">⚓</span>
-                </div>
+                />
               )}
             </motion.div>
           )}
@@ -523,6 +526,34 @@ export function QuoteRevealCinematic({
               className="absolute top-[64%] md:top-[68%] w-24 h-px origin-center"
               style={{ background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent)' }}
             />
+          )}
+        </AnimatePresence>
+
+        {/* Mercury Marine Authorized Dealer Badge - Premium bottom placement */}
+        <AnimatePresence>
+          {(stage === 'details' || stage === 'complete') && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 0.7, y: 0 }}
+              transition={{ duration: 0.8, delay: 1, ease: [0.25, 0.1, 0.25, 1] }}
+              className="absolute bottom-8 md:bottom-12 flex flex-col items-center gap-2"
+            >
+              <span 
+                className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] font-medium"
+                style={{ color: '#9CA3AF' }}
+              >
+                Authorized Dealer
+              </span>
+              <img 
+                src={mercuryLogo}
+                alt="Mercury Marine"
+                className="h-5 md:h-7 w-auto"
+                style={{ 
+                  filter: 'brightness(0.9) contrast(0.95)',
+                  opacity: 0.8,
+                }}
+              />
+            </motion.div>
           )}
         </AnimatePresence>
       </motion.div>
