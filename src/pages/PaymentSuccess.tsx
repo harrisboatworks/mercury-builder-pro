@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Download, Home, Phone, Mail, Clock, Package, Wrench, Truck } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { useHapticFeedback } from "@/hooks/useHapticFeedback";
 import confetti from "canvas-confetti";
 
 const timelineSteps = [
@@ -21,9 +22,13 @@ export default function PaymentSuccess() {
   const [loading, setLoading] = useState(true);
   const [quoteData, setQuoteData] = useState<any>(null);
   const [visibleSteps, setVisibleSteps] = useState(0);
+  const { triggerHaptic } = useHapticFeedback();
 
   useEffect(() => {
     document.title = "Payment Successful - Harris Boat Works";
+    
+    // Celebration haptic pattern for payment success
+    triggerHaptic('addedToQuote');
     
     // Trigger celebration confetti
     const duration = 3000;
