@@ -1424,55 +1424,55 @@ html {
     background: white;
     position: relative;
   }
+}
 
-  /* DESKTOP ONLY - Motor card layout with proper spacing */
-  @media (min-width: 769px) {
-    .motor-card {
-      min-height: 450px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      justify-content: space-between !important;
-    }
-    
-    /* Image section - takes available space and centers image */
-    .motor-card-image-container {
-      flex: 1 !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      padding: 20px !important;
-      min-height: 250px !important;
-    }
-    
-    .motor-card-image {
-      max-height: 180px !important;
-      width: auto !important;
-      object-fit: contain !important;
-    }
-    
-    /* Details section - fixed at bottom with visual separation */
-    .motor-card > div:last-child {
-      padding: 16px !important;
-      background: hsl(var(--muted)) !important;
-      border-top: 1px solid hsl(var(--border)) !important;
-      margin-top: 0 !important;
-    }
-    
-    /* Spacing between elements in details section */
-    .motor-card h3 {
-      margin-bottom: 8px !important;
-    }
-    
-    .motor-card .text-2xl {
-      margin-bottom: 12px !important;
-      font-size: 24px !important;
-      font-weight: bold !important;
-    }
-    
-    /* Badge spacing */
-    .motor-card .flex.flex-wrap {
-      gap: 8px !important;
-    }
+/* DESKTOP ONLY - Motor card layout with proper spacing */
+@media (min-width: 769px) {
+  .motor-card {
+    min-height: 450px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+  
+  /* Image section - takes available space and centers image */
+  .motor-card-image-container {
+    flex: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
+    min-height: 250px !important;
+  }
+  
+  .motor-card-image {
+    max-height: 180px !important;
+    width: auto !important;
+    object-fit: contain !important;
+  }
+  
+  /* Details section - fixed at bottom with visual separation */
+  .motor-card > div:last-child {
+    padding: 16px !important;
+    background: hsl(var(--muted)) !important;
+    border-top: 1px solid hsl(var(--border)) !important;
+    margin-top: 0 !important;
+  }
+  
+  /* Spacing between elements in details section */
+  .motor-card h3 {
+    margin-bottom: 8px !important;
+  }
+  
+  .motor-card .text-2xl {
+    margin-bottom: 12px !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+  }
+  
+  /* Badge spacing */
+  .motor-card .flex.flex-wrap {
+    gap: 8px !important;
   }
 }
 
