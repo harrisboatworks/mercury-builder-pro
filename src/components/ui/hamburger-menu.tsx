@@ -1,4 +1,4 @@
-import { X, Sparkles, User, Phone, MessageSquare } from "lucide-react";
+import { X, Sparkles, User, Phone, MessageSquare, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -92,6 +92,12 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
             {!loading && (
               user ? (
                 <div className="space-y-2">
+                  <Link to="/my-quotes" onClick={onClose}>
+                    <Button variant="outline" className="w-full justify-start">
+                      <FileText className="mr-2 h-4 w-4" />
+                      My Quotes
+                    </Button>
+                  </Link>
                   <Link to="/admin/quotes" onClick={onClose}>
                     <Button variant="secondary" className="w-full">Admin Dashboard</Button>
                   </Link>
@@ -104,7 +110,7 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
                 </div>
               ) : (
                 <Link to="/auth" onClick={onClose}>
-                  <Button className="w-full">Admin Sign In</Button>
+                  <Button className="w-full">Sign In</Button>
                 </Link>
               )
             )}
