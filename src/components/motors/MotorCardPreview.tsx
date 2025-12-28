@@ -336,7 +336,7 @@ export default function MotorCardPreview({
     <>
       <div 
         className="group bg-white rounded-2xl border border-gray-100/80 overflow-hidden cursor-pointer touch-action-manipulation
-          transition-all duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)]
+          transition-all duration-500 ease-out
           hover:shadow-[0_25px_80px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.03)] 
           hover:-translate-y-1.5 hover:border-gray-200/90
           active:scale-[0.98] active:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)]"

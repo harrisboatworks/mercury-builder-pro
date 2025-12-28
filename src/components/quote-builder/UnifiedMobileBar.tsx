@@ -1100,28 +1100,29 @@ export const UnifiedMobileBar: React.FC = () => {
                     Previewing
                   </span>
                 )}
-                {/* Line 1: HP + Motor Family */}
-                <span className="text-xs min-[375px]:text-sm font-semibold text-gray-900 truncate max-w-full">
+                {/* Line 1: Motor name - aggressive truncation */}
+                <span className="text-xs min-[375px]:text-sm font-semibold text-gray-900 truncate max-w-[100px] min-[375px]:max-w-[130px] min-[428px]:max-w-[160px]">
                   {compactMotorName || 'Motor Selected'}
                 </span>
-                {/* Line 2: Animated Price + Monthly */}
-                <div className="flex items-center gap-1 min-[375px]:gap-1.5 text-[10px] min-[375px]:text-xs">
-                  <motion.span 
-                    key={displayTotal}
-                    initial={{ scale: 1.15, color: '#22c55e' }}
-                    animate={{ scale: 1, color: '#111827' }}
-                    transition={{ duration: 0.4 }}
-                    className="font-semibold"
-                  >
-                    {money(displayTotal)}
-                  </motion.span>
+                {/* Line 2: Price stacked with monthly below */}
+                <div className="flex flex-col items-center text-[10px] min-[375px]:text-xs">
+                  <div className="flex items-center gap-1">
+                    <motion.span 
+                      key={displayTotal}
+                      initial={{ scale: 1.15, color: '#22c55e' }}
+                      animate={{ scale: 1, color: '#111827' }}
+                      transition={{ duration: 0.4 }}
+                      className="font-semibold"
+                    >
+                      {money(displayTotal)}
+                    </motion.span>
+                    <ChevronUp className={`h-3 w-3 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
+                  </div>
                   {monthlyPayment > 0 && (
-                    <>
-                      <span className="text-gray-300 hidden min-[375px]:inline">•</span>
-                      <span className="text-gray-500 hidden min-[375px]:inline">≈{money(monthlyPayment)}/mo</span>
-                    </>
+                    <span className="text-gray-500 text-[9px] min-[375px]:text-[10px]">
+                      ≈{money(monthlyPayment)}/mo
+                    </span>
                   )}
-                  <ChevronUp className={`h-3 w-3 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
                 </div>
               </>
             ) : (
