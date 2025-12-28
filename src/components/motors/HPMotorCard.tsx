@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { MotorGroup } from '@/hooks/useGroupedMotors';
 import { StockBadge } from '@/components/inventory/StockBadge';
+import { BlurUpImage } from '@/components/ui/BlurUpImage';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import proXSLogo from '@/assets/pro-xs-logo.png';
 import { useSmartImageScale } from '@/hooks/useSmartImageScale';
@@ -13,6 +15,7 @@ interface HPMotorCardProps {
 export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   const { hp, variants, priceRange, features, families, inStockCount, heroImage } = group;
   const [imageLoaded, setImageLoaded] = useState(false);
+  const { triggerHaptic } = useHapticFeedback();
   
   // Smart image scaling - moderate scaling for card thumbnails
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
@@ -25,6 +28,17 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   const onImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
     handleImageLoad(e);
     setImageLoaded(true);
+  };
+  
+  const handleCardClick = () => {
+    triggerHaptic('light');
+    onConfigure(group);
+  };
+  
+  const handleConfigureClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    triggerHaptic('motorSelected');
+    onConfigure(group);
   };
   
   // Check if Pro XS variants are available
@@ -78,7 +92,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   return (
     <div 
       className="group bg-white shadow-sm rounded-lg border border-gray-100 overflow-hidden transition-all duration-200 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer active:scale-[0.98] active:opacity-95"
-      onClick={() => onConfigure(group)}
+      onClick={handleCardClick}
     >
       {/* Image Section */}
       <div className="relative bg-white p-6 overflow-hidden">
@@ -184,10 +198,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
         {/* CTA Button */}
         <button 
           className="w-full border-2 border-black text-black py-4 text-xs tracking-widest uppercase font-medium rounded-sm hover:bg-black hover:text-white transition-all duration-500 ease-out mt-6"
-          onClick={(e) => {
-            e.stopPropagation();
-            onConfigure(group);
-          }}
+          onClick={handleConfigureClick}
         >
           Configure Your Motor
         </button>

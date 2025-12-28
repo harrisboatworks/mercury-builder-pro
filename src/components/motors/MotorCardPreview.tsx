@@ -16,6 +16,7 @@ import { AskQuestionButton } from './AskQuestionButton';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
 import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import type { Motor } from '../../lib/motor-helpers';
 import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeModelName, cleanMotorName } from '../../lib/motor-helpers';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -84,6 +85,7 @@ export default function MotorCardPreview({
   const { toggleComparison, isInComparison, count: comparisonCount, isFull: comparisonFull } = useMotorComparison();
   const { toggleFavorite, isFavorite } = useFavoriteMotors();
   const { addToRecentlyViewed } = useRecentlyViewed();
+  const { triggerHaptic } = useHapticFeedback();
   
   // Smart image scaling - moderate scaling for card thumbnails
   const { scale: imageScale, handleImageLoad } = useSmartImageScale({
@@ -163,11 +165,13 @@ export default function MotorCardPreview({
   const hasValidImage = imageUrl && !imageError;
 
   const handleCardClick = () => {
+    triggerHaptic('light');
     setShowDetailsSheet(true);
   };
 
   const handleMoreInfoClick = (e: React.MouseEvent) => {
     e.stopPropagation();
+    triggerHaptic('motorSelected');
     setShowDetailsSheet(true);
   };
 

@@ -5,6 +5,7 @@ import { ScrollToTop } from '@/components/ui/ScrollToTop';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
+import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
 import { UpgradeNudgeBar } from '@/components/quote-builder/UpgradeNudgeBar';
 import { PromoPanel } from '@/components/quote-builder/PromoPanel';
@@ -768,12 +769,7 @@ export default function QuoteSummaryPage() {
       <PageTransition>
         <QuoteLayout showProgress={false}>
           {!isMounted ? (
-            <div className="flex items-center justify-center min-h-screen">
-              <div className="text-center space-y-4">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-                <p className="text-slate-600">Loading your quote...</p>
-              </div>
-            </div>
+            <QuoteSummarySkeleton />
           ) : (
           <div className="max-w-7xl mx-auto space-y-8">
           <div className="grid lg:grid-cols-[1fr_360px] gap-8">
