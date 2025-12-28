@@ -102,8 +102,12 @@ export function QuoteRevealCinematic({
   const [priceComplete, setPriceComplete] = useState(false);
   const [showSavingsBadge, setShowSavingsBadge] = useState(false);
   const [isSkipping, setIsSkipping] = useState(false);
+  const [progress, setProgress] = useState(0);
   const { playReveal, playSwoosh, playTick, playComplete, playAmbientPad, playCelebration } = useSound();
   const priceIntervalRef = useRef<NodeJS.Timeout>();
+  const startTimeRef = useRef<number>(0);
+  
+  const TOTAL_DURATION = 12500; // Match the auto-close timing
   
   // Calculate savings percentage
   const savingsPercent = msrp && msrp > 0 ? Math.round((savings / msrp) * 100) : 0;
@@ -133,6 +137,20 @@ export function QuoteRevealCinematic({
     }
   }, [showSavingsBadge]);
 
+  // Progress bar countdown
+  useEffect(() => {
+    if (!isVisible) return;
+    
+    startTimeRef.current = Date.now();
+    const interval = setInterval(() => {
+      const elapsed = Date.now() - startTimeRef.current;
+      const newProgress = Math.min((elapsed / TOTAL_DURATION) * 100, 100);
+      setProgress(newProgress);
+    }, 50);
+    
+    return () => clearInterval(interval);
+  }, [isVisible]);
+
   useEffect(() => {
     if (!isVisible) {
       setStage('spotlight');
@@ -140,6 +158,7 @@ export function QuoteRevealCinematic({
       setPriceComplete(false);
       setShowSavingsBadge(false);
       setIsSkipping(false);
+      setProgress(0);
       return;
     }
 
@@ -356,20 +375,23 @@ export function QuoteRevealCinematic({
               
               {/* Price with savings badge */}
               <div className="relative">
-                {/* Pulsing glow BEHIND the price text - separate layer to avoid gold box bug */}
+              {/* Pulsing glow BEHIND the price text - enhanced breathing */}
                 {priceComplete && (
                   <motion.div
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: [0.3, 0.5, 0.3] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                    className="absolute inset-0 -m-6 blur-2xl pointer-events-none"
+                    animate={{ 
+                      opacity: [0.2, 0.5, 0.2],
+                      scale: [1, 1.1, 1],
+                    }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
+                    className="absolute inset-0 -m-8 blur-2xl pointer-events-none"
                     style={{
-                      background: 'radial-gradient(circle, rgba(212,175,55,0.4) 0%, transparent 70%)',
+                      background: 'radial-gradient(circle, rgba(212,175,55,0.5) 0%, transparent 70%)',
                     }}
                   />
                 )}
                 
-                {/* Price text - Safari-safe solid color (no background-clip/text-fill) */}
+                {/* Price text - with enhanced breathing animation */}
                 <motion.span
                   className="relative z-10 font-playfair text-4xl md:text-6xl font-medium tabular-nums tracking-tight"
                   style={{
@@ -377,12 +399,15 @@ export function QuoteRevealCinematic({
                   }}
                   animate={
                     priceComplete
-                      ? { filter: ['brightness(1)', 'brightness(1.18)', 'brightness(1)'] }
-                      : { filter: 'brightness(1)' }
+                      ? { 
+                          filter: ['brightness(1)', 'brightness(1.2)', 'brightness(1)'],
+                          scale: [1, 1.02, 1],
+                        }
+                      : { filter: 'brightness(1)', scale: 1 }
                   }
                   transition={
                     priceComplete
-                      ? { duration: 2, repeat: Infinity, ease: 'easeInOut' }
+                      ? { duration: 2.5, repeat: Infinity, ease: 'easeInOut' }
                       : undefined
                   }
                 >
@@ -556,6 +581,22 @@ export function QuoteRevealCinematic({
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Auto-close countdown progress bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/10"
+        >
+          <motion.div
+            className="h-full"
+            style={{
+              width: `${progress}%`,
+              background: 'linear-gradient(90deg, hsl(var(--promo-gold-1)), rgba(212,175,55,0.5))',
+            }}
+          />
+        </motion.div>
       </motion.div>
     </AnimatePresence>
   );
