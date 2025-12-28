@@ -87,7 +87,7 @@ export function PackageCards({
           >
             {/* Mobile Selected Checkmark Badge */}
             {isSelected && (
-              <span className="absolute left-3 top-3 flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white sm:hidden">
+              <span className="absolute right-3 bottom-3 flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white sm:hidden">
                 <Check className="w-4 h-4" />
               </span>
             )}
