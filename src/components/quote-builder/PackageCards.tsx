@@ -58,7 +58,7 @@ export function PackageCards({
 
   return (
     <section aria-label="Packages" className="grid gap-3 sm:grid-cols-3">
-      {options.map((p) => {
+      {options.map((p, index) => {
         const amountToFinance = (p.priceBeforeTax * 1.13) + DEALERPLAN_FEE;
         const monthly = p.monthly ?? calculateMonthlyPayment(amountToFinance, promoRate).payment;
         const isSelected = selectedId === p.id;
@@ -71,16 +71,18 @@ export function PackageCards({
         return (
           <motion.button
             key={p.id}
-            variants={packageItemVariants}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
             onClick={() => {
               triggerHaptic('packageChanged');
               onSelect(p.id);
             }}
             className={cn(
-              "group relative flex flex-col rounded-2xl border p-6 text-left transition",
-              "hover:shadow-md hover:scale-[1.02] active:scale-[0.98]",
+              "group relative flex flex-col rounded-2xl border p-6 text-left transition-all duration-300",
+              "hover:shadow-xl hover:-translate-y-2 active:scale-[0.98]",
               isSelected
-                ? "border-blue-600 ring-2 ring-blue-600/20 bg-blue-50/50 sm:bg-transparent"
+                ? "border-blue-600 ring-2 ring-blue-600/20 bg-blue-50/50 sm:bg-transparent premium-glow-hover"
                 : "border-slate-200"
             )}
             aria-pressed={isSelected}
@@ -94,7 +96,7 @@ export function PackageCards({
             
             {p.recommended && (
               <span className={cn(
-                "absolute right-3 top-3 rounded-full bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-200",
+                "absolute right-3 top-3 rounded-full bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-200 premium-pulse",
                 isSelected && "sm:right-3"
               )}>
                 Recommended
@@ -156,7 +158,14 @@ export function PackageCards({
 
             <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-700">
               {p.features.slice(0, 4).map((f, i) => (
-                <li key={i} className="flex items-center gap-2.5">
+                <li 
+                  key={i} 
+                  className={cn(
+                    "flex items-center gap-2.5",
+                    isSelected && "spec-row-animate",
+                    isSelected && `stagger-${i + 1}`
+                  )}
+                >
                   <svg 
                     className="h-4 w-4 flex-shrink-0 text-blue-600" 
                     fill="currentColor" 
