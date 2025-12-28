@@ -1,17 +1,72 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSound } from '@/contexts/SoundContext';
-import { money } from '@/lib/quote-utils';
-import { X } from 'lucide-react';
+import { money, calculateMonthly } from '@/lib/quote-utils';
+import { X, Shield, Sparkles } from 'lucide-react';
+import confetti from 'canvas-confetti';
 
 interface QuoteRevealCinematicProps {
   isVisible: boolean;
   onComplete: () => void;
   motorName: string;
   finalPrice: number;
+  msrp?: number;
   savings: number;
   coverageYears: number;
   imageUrl?: string;
+}
+
+// Premium gold/silver confetti burst
+const triggerPremiumConfetti = () => {
+  const defaults = {
+    origin: { y: 0.6 },
+    zIndex: 10000,
+    disableForReducedMotion: true,
+  };
+  
+  // Gold/silver premium burst - subtle
+  confetti({
+    ...defaults,
+    particleCount: 25,
+    spread: 50,
+    startVelocity: 30,
+    colors: ['#D4AF37', '#C0C0C0', '#FFD700', '#E8E8E8'],
+    scalar: 0.8,
+  });
+};
+
+// Golden shimmer particles component
+function GoldenShimmer({ isActive }: { isActive: boolean }) {
+  if (!isActive) return null;
+  
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {[...Array(12)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(212,175,55,0.8) 0%, transparent 70%)',
+            left: `${15 + Math.random() * 70}%`,
+            top: `${10 + Math.random() * 60}%`,
+          }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{
+            opacity: [0, 0.7, 0],
+            scale: [0, 1.5, 0],
+            y: [0, -30, -60],
+          }}
+          transition={{
+            duration: 2.5 + Math.random() * 1.5,
+            delay: 0.5 + i * 0.15,
+            repeat: Infinity,
+            repeatDelay: Math.random() * 2,
+            ease: 'easeOut',
+          }}
+        />
+      ))}
+    </div>
+  );
 }
 
 export function QuoteRevealCinematic({
@@ -19,34 +74,45 @@ export function QuoteRevealCinematic({
   onComplete,
   motorName,
   finalPrice,
+  msrp,
   savings,
   coverageYears,
   imageUrl
 }: QuoteRevealCinematicProps) {
-  const [stage, setStage] = useState<'spotlight' | 'motor' | 'price' | 'details' | 'complete'>('spotlight');
+  const [stage, setStage] = useState<'spotlight' | 'motor' | 'msrp' | 'price' | 'savings' | 'details' | 'complete'>('spotlight');
   const [displayPrice, setDisplayPrice] = useState(0);
   const [priceComplete, setPriceComplete] = useState(false);
-  const { playReveal, playSwoosh, playTick, playComplete, playAmbientPad } = useSound();
+  const [showSavingsBadge, setShowSavingsBadge] = useState(false);
+  const { playReveal, playSwoosh, playTick, playComplete, playAmbientPad, playCelebration } = useSound();
   const priceIntervalRef = useRef<NodeJS.Timeout>();
+  
+  // Calculate savings percentage
+  const savingsPercent = msrp && msrp > 0 ? Math.round((savings / msrp) * 100) : 0;
+  
+  // Calculate monthly payment
+  const monthlyPayment = calculateMonthly(finalPrice);
 
   useEffect(() => {
     if (!isVisible) {
       setStage('spotlight');
       setDisplayPrice(0);
       setPriceComplete(false);
+      setShowSavingsBadge(false);
       return;
     }
 
     // Play ambient pad at start for immersive atmosphere
     playAmbientPad();
 
-    // Slower, more deliberate timeline for luxury feel
+    // Extended luxury timeline with MSRP flash
     const timeline = [
       { stage: 'spotlight' as const, delay: 0, sound: playReveal },
       { stage: 'motor' as const, delay: 1000, sound: playSwoosh },
-      { stage: 'price' as const, delay: 2200, sound: null },
-      { stage: 'details' as const, delay: 4500, sound: playComplete },
-      { stage: 'complete' as const, delay: 6000, sound: null },
+      { stage: 'msrp' as const, delay: 2500, sound: null }, // MSRP flash
+      { stage: 'price' as const, delay: 3500, sound: null }, // Price countdown
+      { stage: 'savings' as const, delay: 5800, sound: () => { playCelebration?.(); triggerPremiumConfetti(); } }, // Savings celebration
+      { stage: 'details' as const, delay: 7200, sound: playComplete },
+      { stage: 'complete' as const, delay: 8800, sound: null },
     ];
 
     const timeouts: NodeJS.Timeout[] = [];
@@ -59,19 +125,24 @@ export function QuoteRevealCinematic({
       timeouts.push(timeout);
     });
 
+    // Show savings badge with delay
+    const badgeTimeout = setTimeout(() => setShowSavingsBadge(true), 6200);
+    timeouts.push(badgeTimeout);
+
     // Complete callback
-    const completeTimeout = setTimeout(onComplete, 6500);
+    const completeTimeout = setTimeout(onComplete, 9500);
     timeouts.push(completeTimeout);
 
     return () => {
       timeouts.forEach(clearTimeout);
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
-  }, [isVisible, onComplete, playReveal, playSwoosh, playComplete, playAmbientPad]);
+  }, [isVisible, onComplete, playReveal, playSwoosh, playComplete, playAmbientPad, playCelebration]);
 
   // Smoother price counting animation
   useEffect(() => {
-    if (stage !== 'price') return;
+    if (stage !== 'price' && stage !== 'savings' && stage !== 'details' && stage !== 'complete') return;
+    if (priceComplete) return;
 
     const duration = 2000;
     const steps = 50;
@@ -93,7 +164,7 @@ export function QuoteRevealCinematic({
     return () => {
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
-  }, [stage, finalPrice, playTick]);
+  }, [stage, finalPrice, playTick, priceComplete]);
 
   if (!isVisible) return null;
 
@@ -130,6 +201,9 @@ export function QuoteRevealCinematic({
           }}
         />
 
+        {/* Golden shimmer particles - active during price reveal */}
+        <GoldenShimmer isActive={stage === 'price' || stage === 'savings' || stage === 'details'} />
+
         {/* Soft edge vignette for cinematic framing */}
         <div 
           className="absolute inset-0 pointer-events-none"
@@ -140,26 +214,26 @@ export function QuoteRevealCinematic({
 
         {/* Motor Image - Refined entrance */}
         <AnimatePresence>
-          {(stage === 'motor' || stage === 'price' || stage === 'details' || stage === 'complete') && (
+          {(stage !== 'spotlight') && (
             <motion.div
               initial={{ opacity: 0, y: 40, scale: 0.9, filter: 'blur(8px)' }}
               animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[12%] z-10"
+              className="absolute top-[10%] z-10"
             >
               {imageUrl ? (
                 <img 
                   src={imageUrl} 
                   alt={motorName}
-                  className="h-36 md:h-52 object-contain"
+                  className="h-32 md:h-44 object-contain"
                   style={{
                     filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.6))',
                   }}
                 />
               ) : (
                 <div 
-                  className="h-36 md:h-52 w-36 md:w-52 rounded-full flex items-center justify-center"
+                  className="h-32 md:h-44 w-32 md:w-44 rounded-full flex items-center justify-center"
                   style={{
                     background: 'radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)',
                   }}
@@ -173,12 +247,12 @@ export function QuoteRevealCinematic({
 
         {/* Motor Name - Luxury serif typography with refined blur entrance */}
         <AnimatePresence>
-          {(stage === 'motor' || stage === 'price' || stage === 'details' || stage === 'complete') && (
+          {(stage !== 'spotlight') && (
             <motion.h2
               initial={{ opacity: 0, y: 20, filter: 'blur(4px)', scale: 0.95 }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[36%] md:top-[38%] font-playfair text-xl md:text-2xl font-normal tracking-wide text-center px-4"
+              className="absolute top-[32%] md:top-[34%] font-playfair text-lg md:text-2xl font-normal tracking-wide text-center px-4"
               style={{ color: '#F5F5F5' }}
             >
               {motorName}
@@ -186,37 +260,124 @@ export function QuoteRevealCinematic({
           )}
         </AnimatePresence>
 
-        {/* Price Display - Elegant serif with glow pulse on completion */}
+        {/* MSRP Display - Shows briefly with strikethrough */}
         <AnimatePresence>
-          {(stage === 'price' || stage === 'details' || stage === 'complete') && (
+          {(stage === 'msrp' || stage === 'price' || stage === 'savings' || stage === 'details' || stage === 'complete') && msrp && msrp > finalPrice && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: stage === 'msrp' ? 1 : 0.4, y: 0 }}
+              transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="absolute top-[38%] md:top-[40%] flex flex-col items-center"
+            >
+              <motion.span 
+                className="text-[10px] md:text-xs uppercase tracking-[0.25em] mb-1"
+                style={{ color: '#6B7280' }}
+              >
+                MSRP
+              </motion.span>
+              <motion.span 
+                className="font-playfair text-xl md:text-2xl tabular-nums relative"
+                style={{ color: '#6B7280' }}
+              >
+                {money(msrp)}
+                <motion.div
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  className="absolute top-1/2 left-0 right-0 h-0.5 bg-red-500/70 origin-left"
+                />
+              </motion.span>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Price Display - Elegant serif with gradient and glow pulse on completion */}
+        <AnimatePresence>
+          {(stage === 'price' || stage === 'savings' || stage === 'details' || stage === 'complete') && (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[44%] md:top-[46%] flex flex-col items-center"
+              className="absolute top-[46%] md:top-[48%] flex flex-col items-center"
             >
               <motion.span 
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="text-[10px] md:text-xs uppercase tracking-[0.25em] mb-3"
-                style={{ color: '#6B7280' }}
+                style={{ color: '#D4AF37' }} // Gold label
               >
                 Your Price
               </motion.span>
-              <motion.span 
-                className="font-playfair text-4xl md:text-6xl font-medium tabular-nums tracking-tight"
-                style={{ color: '#FAFAFA' }}
-                animate={priceComplete ? {
-                  textShadow: [
-                    '0 0 0px rgba(255,255,255,0)',
-                    '0 0 30px rgba(255,255,255,0.25)',
-                    '0 0 0px rgba(255,255,255,0)',
-                  ],
-                } : {}}
-                transition={{ duration: 1.5, ease: 'easeOut' }}
+              
+              {/* Price with savings badge */}
+              <div className="relative">
+                <motion.span 
+                  className="font-playfair text-4xl md:text-6xl font-medium tabular-nums tracking-tight"
+                  style={{ 
+                    background: priceComplete 
+                      ? 'linear-gradient(135deg, #FAFAFA 0%, #D4AF37 50%, #FAFAFA 100%)'
+                      : '#FAFAFA',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                  animate={priceComplete ? {
+                    textShadow: [
+                      '0 0 0px rgba(212,175,55,0)',
+                      '0 0 40px rgba(212,175,55,0.4)',
+                      '0 0 20px rgba(212,175,55,0.2)',
+                    ],
+                  } : {}}
+                  transition={{ duration: 1.5, ease: 'easeOut' }}
+                >
+                  {money(displayPrice)}
+                </motion.span>
+                
+                {/* Pulsing glow ring around price when complete */}
+                {priceComplete && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: [0, 0.3, 0], scale: [1, 1.3, 1.5] }}
+                    transition={{ duration: 1.5, repeat: 1 }}
+                    className="absolute inset-0 -m-4 rounded-full pointer-events-none"
+                    style={{
+                      background: 'radial-gradient(circle, rgba(212,175,55,0.3) 0%, transparent 70%)',
+                    }}
+                  />
+                )}
+                
+                {/* Savings percentage badge */}
+                <AnimatePresence>
+                  {showSavingsBadge && savingsPercent > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.5, x: 20 }}
+                      animate={{ opacity: 1, scale: 1, x: 0 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                      className="absolute -top-3 -right-3 md:-top-4 md:-right-4 flex items-center gap-1 px-2 py-1 rounded-full text-xs md:text-sm font-semibold shadow-lg"
+                      style={{
+                        background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+                        color: '#FFFFFF',
+                        boxShadow: '0 4px 15px rgba(16, 185, 129, 0.4)',
+                      }}
+                    >
+                      <Sparkles className="w-3 h-3" />
+                      Save {savingsPercent}%
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              
+              {/* Monthly payment teaser */}
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 0.7, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.5 }}
+                className="mt-3 text-sm md:text-base"
+                style={{ color: '#9CA3AF' }}
               >
-                {money(displayPrice)}
+                Or just {money(monthlyPayment.amount)}/mo
               </motion.span>
             </motion.div>
           )}
@@ -229,7 +390,7 @@ export function QuoteRevealCinematic({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute top-[60%] md:top-[64%] flex gap-12 md:gap-20 items-start"
+              className="absolute top-[68%] md:top-[72%] flex gap-10 md:gap-16 items-start"
             >
               {savings > 0 && (
                 <motion.div
@@ -242,14 +403,15 @@ export function QuoteRevealCinematic({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5, duration: 0.4 }}
-                    className="block text-[10px] uppercase tracking-[0.2em] mb-2"
-                    style={{ color: '#6B7280' }}
+                    className="flex items-center justify-center gap-1 text-[10px] uppercase tracking-[0.2em] mb-2"
+                    style={{ color: '#10B981' }}
                   >
-                    Savings
+                    <Sparkles className="w-3 h-3" />
+                    Total Savings
                   </motion.span>
                   <span 
-                    className="font-playfair text-lg md:text-xl"
-                    style={{ color: '#E5E7EB' }}
+                    className="font-playfair text-lg md:text-xl font-medium"
+                    style={{ color: '#10B981' }}
                   >
                     {money(savings)}
                   </span>
@@ -266,9 +428,10 @@ export function QuoteRevealCinematic({
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.7, duration: 0.4 }}
-                  className="block text-[10px] uppercase tracking-[0.2em] mb-2"
+                  className="flex items-center justify-center gap-1 text-[10px] uppercase tracking-[0.2em] mb-2"
                   style={{ color: '#6B7280' }}
                 >
+                  <Shield className="w-3 h-3" />
                   Coverage
                 </motion.span>
                 <span 
@@ -303,8 +466,8 @@ export function QuoteRevealCinematic({
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[56%] md:top-[59%] w-24 h-px origin-center"
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)' }}
+              className="absolute top-[64%] md:top-[68%] w-24 h-px origin-center"
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent)' }}
             />
           )}
         </AnimatePresence>
