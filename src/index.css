@@ -1371,7 +1371,8 @@ html {
   .product-card {
     padding: 8px;
   }
-  
+}
+
 /* Premium Mobile Styling */
 @media (max-width: 768px) {
   /* Mobile text sizing - Visual hierarchy */
@@ -1473,90 +1474,91 @@ html {
       gap: 8px !important;
     }
   }
+}
 
-  /* Desktop-specific image styling for consistent heights */
-  @media (min-width: 1024px) {
-    .motor-card-image-container {
-      height: 200px; /* Fixed height for all desktop cards */
-      min-height: 200px;
-    }
-    
-    .motor-card-image {
-      max-width: 85%;
-      max-height: 160px; /* Ensure image fits within container with padding */
-      height: auto;
-      width: auto;
-      margin: auto 0;
-      display: block;
-      transform-origin: center center; /* Ensure hover zoom scales from center */
-      transition: transform 0.2s ease-out;
-    }
-    
-    .motor-card:hover .motor-card-image {
-      transform: scale(1.05);
-    }
+/* Desktop-specific image styling for consistent heights */
+@media (min-width: 1024px) {
+  .motor-card-image-container {
+    height: 200px; /* Fixed height for all desktop cards */
+    min-height: 200px;
   }
-
-  /* Mobile styling - unchanged behavior */
-  @media (max-width: 1023px) {
-    .motor-card img,
-    .motor-card-image {
-      max-width: 80%;
-      height: auto;
-      margin: 0 auto;
-      display: block;
-    }
+  
+  .motor-card-image {
+    max-width: 85%;
+    max-height: 160px; /* Ensure image fits within container with padding */
+    height: auto;
+    width: auto;
+    margin: auto 0;
+    display: block;
+    transform-origin: center center; /* Ensure hover zoom scales from center */
+    transition: transform 0.2s ease-out;
   }
+  
+  .motor-card:hover .motor-card-image {
+    transform: scale(1.05);
+  }
+}
 
-  /* HP Range buttons - give them room */
-  .hp-filter-buttons {
+/* Mobile styling - unchanged behavior */
+@media (max-width: 1023px) {
+  .motor-card img,
+  .motor-card-image {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* HP Range buttons - give them room */
+.hp-filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+.hp-filter-button {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Mobile only - single row, compact */
+@media (max-width: 768px) {
+  .mobile-search-bar {
     display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    padding: 0.5rem 0;
+    align-items: center;
+    gap: 4px;
+    padding: 8px;
   }
-
-  .hp-filter-button {
-    padding: 0.5rem 1rem;
-    white-space: nowrap;
-    flex-shrink: 0;
+  
+  /* Search takes 50% */
+  .search-input {
+    flex: 0 0 50%;
+    font-size: 14px;
+    padding: 6px 8px;
   }
-
-  /* Mobile only - single row, compact */
-  @media (max-width: 768px) {
-    .mobile-search-bar {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 8px;
-    }
-    
-    /* Search takes 50% */
-    .search-input {
-      flex: 0 0 50%;
-      font-size: 14px;
-      padding: 6px 8px;
-    }
-    
-    /* Stock toggle - just checkbox + "Stock" */
-    .stock-toggle-label {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 14px;
-    }
-    
-    /* Hide filter text, show icon only */
-    .filter-button-text {
-      display: none;
-    }
-    
-    .filter-button {
-      padding: 6px;
-      width: 32px;
-      height: 32px;
-    }
+  
+  /* Stock toggle - just checkbox + "Stock" */
+  .stock-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
   }
+  
+  /* Hide filter text, show icon only */
+  .filter-button-text {
+    display: none;
+  }
+  
+  .filter-button {
+    padding: 6px;
+    width: 32px;
+    height: 32px;
+  }
+  
   button {
     transition: all 0.15s ease !important;
   }
@@ -1609,7 +1611,6 @@ html {
     opacity: 0.8; 
   }
 }
-}
 
 /* Floating CTA safe area handling */
 .mobile-sticky-cta {
@@ -1636,13 +1637,13 @@ html {
   .promo-badges > .tooltip-trigger:not(:first-child) {
     display: none; /* Hide additional badges on mobile */
   }
+}
 
-  /* Fix tooltip positioning on mobile to avoid blocking inventory badges */
-  @media (max-width: 768px) {
-    [data-radix-tooltip-content] {
-      transform: translateY(20px) !important;
-      margin-top: 20px !important;
-    }
+/* Fix tooltip positioning on mobile to avoid blocking inventory badges */
+@media (max-width: 768px) {
+  [data-radix-tooltip-content] {
+    transform: translateY(20px) !important;
+    margin-top: 20px !important;
   }
 }
 
