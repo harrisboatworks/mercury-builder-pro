@@ -20,6 +20,7 @@ import { UnifiedMobileBar } from "@/components/quote-builder/UnifiedMobileBar";
 import { ComparisonDesktopButton } from "@/components/motors/ComparisonDesktopButton";
 import { GoogleRatingBadge } from "@/components/business/GoogleRatingBadge";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { SoundProvider } from "@/contexts/SoundContext";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -406,10 +407,11 @@ function AnimatedRoutes() {
 const App = () => (
   <ErrorBoundary>
     <AuthProvider>
-      <FinancingProvider>
-        <QuoteProvider>
-          <MotorComparisonProvider>
-            <TooltipProvider>
+      <SoundProvider>
+        <FinancingProvider>
+          <QuoteProvider>
+            <MotorComparisonProvider>
+              <TooltipProvider>
             <Toaster />
             <Sonner />
             <BrowserRouter>
@@ -437,9 +439,10 @@ const App = () => (
               </GlobalAIChat>
             </BrowserRouter>
             </TooltipProvider>
-          </MotorComparisonProvider>
-        </QuoteProvider>
-      </FinancingProvider>
+            </MotorComparisonProvider>
+          </QuoteProvider>
+        </FinancingProvider>
+      </SoundProvider>
     </AuthProvider>
   </ErrorBoundary>
 );

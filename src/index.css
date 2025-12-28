@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Premium Polish & Animations ===== */
+@import './styles/premium-motor.css';
+
 /* ===== Force Light Mode Globally ===== */
 html {
   color-scheme: light !important;
@@ -58,12 +61,10 @@ body {
   }
 }
 
-/* Fallback for all mobile browsers */
+/* Mobile animations: ensure they complete properly without blocking */
 @media (max-width: 768px) {
-  /* Force animated elements to be visible */
-  [class*="animate-"],
-  [style*="opacity"] {
-    opacity: 1 !important;
+  [class*="animate-"] {
+    animation-fill-mode: forwards !important;
   }
 }
 
