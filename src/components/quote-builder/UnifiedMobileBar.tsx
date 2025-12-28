@@ -11,7 +11,6 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
-import { getCompactMotorName } from '@/lib/motor-title-helpers';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { cn } from '@/lib/utils';
@@ -716,7 +715,15 @@ export const UnifiedMobileBar: React.FC = () => {
 
   if (!shouldShow) return null;
 
-  // Use shared helper for compact motor names on mobile
+  // Shorten motor name for mobile - remove "FourStroke" suffix
+  const getCompactMotorName = (model?: string): string => {
+    if (!model) return '';
+    return model
+      .replace(/\s*FourStroke\s*/gi, ' ')
+      .replace(/\s*4-Stroke\s*/gi, ' ')
+      .replace(/\s*Four\s*Stroke\s*/gi, ' ')
+      .trim();
+  };
   const compactMotorName = getCompactMotorName(displayMotor?.model);
   
   const displayTotal = runningTotal || displayMotor?.price || displayMotor?.basePrice || displayMotor?.msrp || 0;

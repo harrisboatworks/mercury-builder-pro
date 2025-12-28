@@ -1,13 +1,11 @@
 "use client";
-import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from "@/lib/finance";
 import { cn } from "@/lib/utils";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useSound } from '@/contexts/SoundContext';
-import { TrendingUp, Shield, Check, Info } from 'lucide-react';
-import { PricingBreakdownModal } from './PricingBreakdownModal';
+import { TrendingUp, Shield, Check } from 'lucide-react';
 
 // Container variants for staggered entrance
 const containerVariants = {
@@ -72,8 +70,6 @@ export function PackageCards({
 }: PackageCardsProps) {
   const { triggerHaptic } = useHapticFeedback();
   const { playPackageSelect } = useSound();
-  const [breakdownOpen, setBreakdownOpen] = useState(false);
-  const [breakdownPackage, setBreakdownPackage] = useState<PackageOption | null>(null);
   
   // Find base package for comparison (default to first/Essential)
   const basePackage = options.find(p => p.id === (basePackageId || 'good')) || options[0];
@@ -81,14 +77,7 @@ export function PackageCards({
   const baseMonthly = basePackage.monthly ?? calculateMonthlyPayment(baseAmountToFinance, promoRate).payment;
   const baseCoverageYears = basePackage.coverageYears || 3;
 
-  const handleOpenBreakdown = (pkg: PackageOption, e: React.MouseEvent) => {
-    e.stopPropagation();
-    setBreakdownPackage(pkg);
-    setBreakdownOpen(true);
-  };
-
   return (
-    <>
     <motion.section 
       aria-label="Packages" 
       className="grid gap-3 sm:grid-cols-3"
@@ -164,15 +153,8 @@ export function PackageCards({
               {money(p.priceBeforeTax)}
             </div>
 
-            <div className="mt-1 flex items-center gap-1.5 text-sm text-slate-600">
-              <span>From <span className="font-semibold">{money(Math.round(monthly))}/mo</span></span>
-              <button
-                onClick={(e) => handleOpenBreakdown(p, e)}
-                className="inline-flex items-center justify-center rounded-full p-0.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
-                aria-label="View pricing breakdown"
-              >
-                <Info className="h-3.5 w-3.5" />
-              </button>
+            <div className="mt-1 text-sm text-slate-600">
+              From <span className="font-semibold">{money(Math.round(monthly))}/mo</span>
             </div>
 
             {/* Upgrade delta badges - show for non-base packages */}
@@ -245,20 +227,6 @@ export function PackageCards({
         );
       })}
     </motion.section>
-    
-    {/* Pricing Breakdown Modal */}
-    {breakdownPackage && (
-      <PricingBreakdownModal
-        open={breakdownOpen}
-        onOpenChange={setBreakdownOpen}
-        priceBeforeTax={breakdownPackage.priceBeforeTax}
-        promoRate={promoRate}
-        basePackagePrice={breakdownPackage.id !== basePackage.id ? basePackage.priceBeforeTax : undefined}
-        packageName={breakdownPackage.label.split(' • ')[0]}
-        basePackageName={basePackage.label.split(' • ')[0]}
-      />
-    )}
-  </>
   );
 }
 
