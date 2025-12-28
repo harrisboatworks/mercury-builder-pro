@@ -294,6 +294,32 @@ export function getLakeInfo(lakeName: string): string | null {
   return null;
 }
 
+// Harris Philosophy - Why buy from us (honest, emotional, not salesy)
+export const HARRIS_PHILOSOPHY = {
+  core_belief: "We don't approach business as profit being our main priority. We believe if you take care of people, the rest takes care of itself. That's not marketing - that's actually how we do things.",
+  
+  honest_truths: [
+    "We live here. Our kids go to school here. Our boats are on this lake. We're not corporate - we're your neighbors who happen to know motors.",
+    "We've turned down sales when the motor wasn't right for the customer. Might sound crazy, but we'd rather you come back in 10 years than regret a purchase.",
+    "When you call us on a Saturday with a problem, you're not getting a call center. You're probably getting Brad or one of the guys who was about to go fishing themselves.",
+    "We remember your name. We remember your boat. We remember that your kid caught their first bass off the back of it.",
+    "Three generations of our family have lived and worked on this lake. This isn't a job - it's who we are."
+  ],
+  
+  what_we_wont_do: [
+    "We won't sell you more motor than you need just to make a bigger sale.",
+    "We won't disappear after the sale is done.",
+    "We won't give you corporate runaround when something goes wrong.",
+    "We won't pretend a motor is perfect for you when it isn't."
+  ],
+  
+  real_talk: {
+    on_price: "Are we the cheapest? Probably not. But we'll be here when you need us. The guy selling motors out of his garage for $500 less won't answer his phone in February when you have a question.",
+    on_online: "You can buy online. You can probably save a few bucks. But when something goes wrong - and motors are machines, eventually something will - you'll be shipping it across the country and waiting weeks. Or you can bring it to us and probably have coffee while we sort it out.",
+    on_trust: "We've been here since 1947. We'll be here when your grandkids need a motor. That's not marketing - that's just the truth."
+  }
+};
+
 // Partner programs and referrals
 export const HARRIS_PARTNERS = {
   boat_license: {
