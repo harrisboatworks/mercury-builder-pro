@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSoundEffects } from '@/hooks/useSoundEffects';
 import { money } from '@/lib/quote-utils';
-import { Shield, Award, Sparkles, Check } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface QuoteRevealCinematicProps {
   isVisible: boolean;
@@ -35,13 +35,13 @@ export function QuoteRevealCinematic({
       return;
     }
 
-    // Stage progression with sound
+    // Slower, more deliberate timeline for luxury feel
     const timeline = [
       { stage: 'spotlight' as const, delay: 0, sound: playReveal },
-      { stage: 'motor' as const, delay: 600, sound: playSwoosh },
-      { stage: 'price' as const, delay: 1400, sound: null },
-      { stage: 'details' as const, delay: 3200, sound: playComplete },
-      { stage: 'complete' as const, delay: 4500, sound: null },
+      { stage: 'motor' as const, delay: 1000, sound: playSwoosh },
+      { stage: 'price' as const, delay: 2200, sound: null },
+      { stage: 'details' as const, delay: 4500, sound: playComplete },
+      { stage: 'complete' as const, delay: 6000, sound: null },
     ];
 
     const timeouts: NodeJS.Timeout[] = [];
@@ -55,7 +55,7 @@ export function QuoteRevealCinematic({
     });
 
     // Complete callback
-    const completeTimeout = setTimeout(onComplete, 5000);
+    const completeTimeout = setTimeout(onComplete, 6500);
     timeouts.push(completeTimeout);
 
     return () => {
@@ -64,12 +64,12 @@ export function QuoteRevealCinematic({
     };
   }, [isVisible, onComplete, playReveal, playSwoosh, playComplete]);
 
-  // Price counting animation
+  // Smoother price counting animation
   useEffect(() => {
     if (stage !== 'price') return;
 
-    const duration = 1500;
-    const steps = 30;
+    const duration = 2000;
+    const steps = 50;
     const increment = finalPrice / steps;
     let current = 0;
 
@@ -99,25 +99,36 @@ export function QuoteRevealCinematic({
         exit={{ opacity: 0 }}
         className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
       >
-        {/* Dark overlay with spotlight */}
+        {/* Near-black background with subtle vignette */}
         <motion.div 
-          className="absolute inset-0 bg-black/95"
+          className="absolute inset-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8 }}
+          style={{
+            background: 'radial-gradient(ellipse at center, #0F0F0F 0%, #0A0A0A 50%, #050505 100%)',
+          }}
         />
         
-        {/* Animated spotlight gradient */}
+        {/* Subtle warm spotlight - barely visible */}
         <motion.div
           className="absolute inset-0"
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{ 
-            opacity: stage !== 'spotlight' ? 0.8 : 0.3,
+            opacity: stage !== 'spotlight' ? 0.4 : 0.15,
             scale: 1 
           }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
           style={{
-            background: 'radial-gradient(circle at 50% 40%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)',
+            background: 'radial-gradient(ellipse 60% 50% at 50% 35%, rgba(255, 252, 245, 0.06) 0%, transparent 70%)',
+          }}
+        />
+
+        {/* Soft edge vignette for cinematic framing */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 80% 70% at 50% 50%, transparent 40%, rgba(0,0,0,0.4) 100%)',
           }}
         />
 
@@ -125,130 +136,155 @@ export function QuoteRevealCinematic({
         <AnimatePresence>
           {(stage === 'motor' || stage === 'price' || stage === 'details' || stage === 'complete') && (
             <motion.div
-              initial={{ opacity: 0, y: 50, scale: 0.8 }}
+              initial={{ opacity: 0, y: 40, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.6, ease: [0.34, 1.56, 0.64, 1] }}
-              className="absolute top-[15%] z-10"
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+              className="absolute top-[12%] z-10"
             >
               {imageUrl ? (
                 <img 
                   src={imageUrl} 
                   alt={motorName}
-                  className="h-40 md:h-56 object-contain drop-shadow-2xl"
+                  className="h-36 md:h-52 object-contain"
+                  style={{
+                    filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.6))',
+                  }}
                 />
               ) : (
-                <div className="h-40 md:h-56 w-40 md:w-56 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                  <Sparkles className="h-16 w-16 text-primary/50" />
+                <div 
+                  className="h-36 md:h-52 w-36 md:w-52 rounded-full flex items-center justify-center"
+                  style={{
+                    background: 'radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%)',
+                  }}
+                >
+                  <span className="text-5xl text-white/20">⚓</span>
                 </div>
               )}
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Motor Name */}
+        {/* Motor Name - Luxury serif typography */}
         <AnimatePresence>
           {(stage === 'motor' || stage === 'price' || stage === 'details' || stage === 'complete') && (
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="absolute top-[38%] md:top-[42%] text-xl md:text-2xl font-medium text-white/90 text-center px-4"
+              transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+              className="absolute top-[36%] md:top-[38%] font-playfair text-xl md:text-2xl font-normal tracking-wide text-center px-4"
+              style={{ color: '#F5F5F5' }}
             >
               {motorName}
             </motion.h2>
           )}
         </AnimatePresence>
 
-        {/* Price Display */}
+        {/* Price Display - Elegant serif with muted label */}
         <AnimatePresence>
           {(stage === 'price' || stage === 'details' || stage === 'complete') && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, ease: [0.34, 1.56, 0.64, 1] }}
-              className="absolute top-[46%] md:top-[50%] flex flex-col items-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              className="absolute top-[44%] md:top-[46%] flex flex-col items-center"
             >
-              <span className="text-sm text-white/60 mb-2">Your Price</span>
-              <span className="text-5xl md:text-7xl font-bold text-white tabular-nums tracking-tight">
+              <span 
+                className="text-[10px] md:text-xs uppercase tracking-[0.25em] mb-3"
+                style={{ color: '#6B7280' }}
+              >
+                Your Price
+              </span>
+              <span 
+                className="font-playfair text-4xl md:text-6xl font-medium tabular-nums tracking-tight"
+                style={{ color: '#FAFAFA' }}
+              >
                 {money(displayPrice)}
               </span>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Details */}
+        {/* Details - Minimal elegant lines */}
         <AnimatePresence>
           {(stage === 'details' || stage === 'complete') && (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="absolute top-[64%] md:top-[68%] flex flex-col md:flex-row gap-4 md:gap-8 items-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="absolute top-[60%] md:top-[64%] flex gap-12 md:gap-20 items-start"
             >
               {savings > 0 && (
                 <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-                  className="flex items-center gap-2 bg-emerald-500/20 text-emerald-400 px-4 py-2 rounded-full"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="text-center"
                 >
-                  <Check className="h-4 w-4" />
-                  <span className="font-semibold">You Save {money(savings)}</span>
+                  <span 
+                    className="block text-[10px] uppercase tracking-[0.2em] mb-2"
+                    style={{ color: '#6B7280' }}
+                  >
+                    Savings
+                  </span>
+                  <span 
+                    className="font-playfair text-lg md:text-xl"
+                    style={{ color: '#E5E7EB' }}
+                  >
+                    {money(savings)}
+                  </span>
                 </motion.div>
               )}
               
               <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
-                className="flex items-center gap-2 bg-blue-500/20 text-blue-400 px-4 py-2 rounded-full"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-center"
               >
-                <Shield className="h-4 w-4" />
-                <span className="font-semibold">{coverageYears} Year Coverage</span>
+                <span 
+                  className="block text-[10px] uppercase tracking-[0.2em] mb-2"
+                  style={{ color: '#6B7280' }}
+                >
+                  Coverage
+                </span>
+                <span 
+                  className="font-playfair text-lg md:text-xl"
+                  style={{ color: '#E5E7EB' }}
+                >
+                  {coverageYears} Years
+                </span>
               </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
 
-        {/* Skip button */}
+        {/* Subtle dismiss button - appears after 2s */}
         <motion.button
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.6 }}
-          whileHover={{ opacity: 1 }}
-          transition={{ delay: 1 }}
+          animate={{ opacity: 0.4 }}
+          whileHover={{ opacity: 0.8 }}
+          transition={{ delay: 2, duration: 0.5 }}
           onClick={onComplete}
-          className="absolute bottom-8 text-white/50 hover:text-white text-sm underline underline-offset-4"
+          className="absolute top-6 right-6 p-2 rounded-full transition-colors"
+          style={{ color: '#9CA3AF' }}
+          aria-label="Skip intro"
         >
-          Skip intro
+          <X className="h-5 w-5" />
         </motion.button>
 
-        {/* Particle effects */}
-        {stage === 'details' && (
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-1 h-1 bg-primary/50 rounded-full"
-                initial={{
-                  x: '50%',
-                  y: '50%',
-                  opacity: 0,
-                }}
-                animate={{
-                  x: `${50 + (Math.random() - 0.5) * 100}%`,
-                  y: `${50 + (Math.random() - 0.5) * 100}%`,
-                  opacity: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  delay: i * 0.05,
-                  ease: 'easeOut',
-                }}
-              />
-            ))}
-          </div>
-        )}
+        {/* Subtle horizontal line accent */}
+        <AnimatePresence>
+          {(stage === 'details' || stage === 'complete') && (
+            <motion.div
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={{ scaleX: 1, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.5, ease: 'easeOut' }}
+              className="absolute top-[56%] md:top-[59%] w-24 h-px origin-center"
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)' }}
+            />
+          )}
+        </AnimatePresence>
       </motion.div>
     </AnimatePresence>
   );

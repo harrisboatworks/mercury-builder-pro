@@ -18,10 +18,11 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				'inter': ['Inter', 'sans-serif'],
-				'sans': ['Inter', 'system-ui', 'sans-serif'],
-			},
+		fontFamily: {
+			'inter': ['Inter', 'sans-serif'],
+			'sans': ['Inter', 'system-ui', 'sans-serif'],
+			'playfair': ['Playfair Display', 'Georgia', 'serif'],
+		},
 			colors: {
 				border: 'hsl(var(--border))',
 				// Luxury Header System Colors
