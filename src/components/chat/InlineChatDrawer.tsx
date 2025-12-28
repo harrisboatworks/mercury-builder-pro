@@ -12,7 +12,7 @@ import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
 import { getMotorSpecificPrompts, refreshMotorPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
-import { MessageReactions } from './MessageReactions';
+
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
@@ -776,16 +776,6 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                         </div>
                       )}
 
-                      {/* Reactions for AI messages */}
-                      {!message.isUser && !message.isStreaming && message.id !== 'welcome' && (
-                        <div className="mt-1">
-                          <MessageReactions
-                            messageId={message.id}
-                            currentReaction={message.reaction || null}
-                            onReact={handleReaction}
-                          />
-                        </div>
-                      )}
                     </motion.div>
                   ))}
                 </AnimatePresence>

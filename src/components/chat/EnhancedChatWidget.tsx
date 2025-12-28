@@ -11,7 +11,7 @@ import { getContextualPrompts } from './getContextualPrompts';
 import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
-import { MessageReactions } from './MessageReactions';
+
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { VoiceButton } from './VoiceButton';
 import { useVoice } from '@/contexts/VoiceContext';
@@ -646,14 +646,6 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                           )}
                         </div>
                         
-                        {/* Reactions for AI messages */}
-                        {!message.isUser && !message.isStreaming && message.id !== 'welcome' && (
-                          <MessageReactions
-                            messageId={message.id}
-                            currentReaction={message.reaction || null}
-                            onReact={handleReaction}
-                          />
-                        )}
                       </motion.div>
                     ))}
                   </AnimatePresence>

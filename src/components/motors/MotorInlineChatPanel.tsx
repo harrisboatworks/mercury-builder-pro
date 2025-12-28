@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { streamChat } from '@/lib/streamParser';
 import { useChatPersistence } from '@/hooks/useChatPersistence';
 import { parseMessageText, ParsedSegment } from '@/lib/textParser';
-import { MessageReactions } from '../chat/MessageReactions';
+
 import { getMotorSpecificPrompts } from '../chat/getMotorSpecificPrompts';
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
 import { useVoice } from '@/contexts/VoiceContext';
@@ -402,16 +402,6 @@ export function MotorInlineChatPanel({
                 )}
               </div>
               
-              {/* Reactions for AI messages */}
-              {!msg.isUser && !msg.isStreaming && !msg.id.startsWith('inline_welcome_') && (
-                <div className="mt-1">
-                  <MessageReactions
-                    messageId={msg.id}
-                    currentReaction={msg.reaction || null}
-                    onReact={handleReaction}
-                  />
-                </div>
-              )}
             </div>
           </div>
         ))}
