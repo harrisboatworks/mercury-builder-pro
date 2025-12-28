@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Sparkles, ArrowRight, Shield } from 'lucide-react';
 import { money } from "@/lib/money";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { useSound } from '@/contexts/SoundContext';
 
 interface UpgradeNudgeBarProps {
   isVisible: boolean;
@@ -20,9 +21,11 @@ export function UpgradeNudgeBar({
   onUpgrade,
 }: UpgradeNudgeBarProps) {
   const { triggerHaptic } = useHapticFeedback();
+  const { playPackageSelect } = useSound();
 
   const handleUpgrade = () => {
     triggerHaptic('medium');
+    playPackageSelect();
     onUpgrade();
   };
 
