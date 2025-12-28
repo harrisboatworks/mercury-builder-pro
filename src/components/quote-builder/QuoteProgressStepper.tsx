@@ -118,14 +118,15 @@ export const QuoteProgressStepper = () => {
                   {/* Step Circle */}
                   <div
                     className={cn(
-                      "flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all duration-200",
+                      "flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all duration-200 premium-focus-ring",
                       completed && "bg-primary border-primary text-primary-foreground",
                       current && !completed && "border-primary text-primary bg-primary/10",
-                      !completed && !current && "border-border text-muted-foreground bg-background"
+                      !completed && !current && "border-border text-muted-foreground bg-background",
+                      accessible && !completed && !current && "hover:scale-110 hover:border-primary/50"
                     )}
                   >
                     {completed ? (
-                      <Check className="w-5 h-5" />
+                      <Check className="w-5 h-5 animate-check-pop" />
                     ) : (
                       <span className="text-sm font-medium">{index + 1}</span>
                     )}
@@ -174,7 +175,7 @@ export const QuoteProgressStepper = () => {
           {/* Progress Bar */}
           <div className="w-full h-2 bg-muted rounded-full overflow-hidden">
             <div
-              className="h-full bg-primary transition-all duration-300"
+              className="h-full bg-primary transition-all duration-300 progress-shimmer"
               style={{ width: `${((currentStepIndex + 1) / visibleSteps.length) * 100}%` }}
             />
           </div>

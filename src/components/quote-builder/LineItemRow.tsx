@@ -9,6 +9,7 @@ interface LineItemRowProps {
   isTotal?: boolean;
   isSubtotal?: boolean;
   className?: string;
+  staggerIndex?: number;
 }
 
 export function LineItemRow({ 
@@ -18,11 +19,15 @@ export function LineItemRow({
   isDiscount = false,
   isTotal = false,
   isSubtotal = false,
-  className 
+  className,
+  staggerIndex
 }: LineItemRowProps) {
+  const staggerClass = staggerIndex !== undefined ? `stagger-${Math.min(staggerIndex, 8)}` : '';
+  
   return (
     <div className={cn(
-      "flex items-center justify-between py-2",
+      "flex items-center justify-between py-2 spec-row-animate opacity-0",
+      staggerClass,
       isTotal && "border-t border-border font-semibold text-lg",
       isSubtotal && "border-t border-border/50 font-medium",
       className
