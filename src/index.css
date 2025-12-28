@@ -805,29 +805,6 @@ html {
     font-size: 13px;
   }
 
-  /* Responsive Button Scaling */
-  @media (max-width: 768px) {
-    .btn-primary {
-      padding: 10px 20px;
-      font-size: 15px;
-      height: 42px;
-    }
-    
-    .btn-primary.full-width {
-      width: 100%;
-    }
-    
-    .btn-primary.inline {
-      width: auto;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .btn-primary {
-      max-width: 200px;
-    }
-  }
-
   /* Enhanced Quote Summary Animations */
   .hero-price-enter {
     animation: slideInUp 0.5s ease-out, fadeIn 0.3s ease-out;
@@ -918,6 +895,29 @@ html {
 @keyframes condition-card-enter {
   0% { opacity: 0; transform: scale(0.9); }
   100% { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive Button Scaling - moved outside @layer */
+@media (max-width: 768px) {
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 15px;
+    height: 42px;
+  }
+  
+  .btn-primary.full-width {
+    width: 100%;
+  }
+  
+  .btn-primary.inline {
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn-primary {
+    max-width: 200px;
+  }
 }
 
 /* Tablet media query moved outside @layer */
