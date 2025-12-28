@@ -4,7 +4,7 @@ import { money } from "@/lib/money";
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from "@/lib/finance";
 import { cn } from "@/lib/utils";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
-import { TrendingUp, Shield } from 'lucide-react';
+import { TrendingUp, Shield, Check } from 'lucide-react';
 
 // Safe animation that starts visible and only animates transform (not opacity)
 const packageItemVariants = {
@@ -80,13 +80,23 @@ export function PackageCards({
               "group relative flex flex-col rounded-2xl border p-6 text-left transition",
               "hover:shadow-md hover:scale-[1.02] active:scale-[0.98]",
               isSelected
-                ? "border-blue-600 ring-2 ring-blue-600/20"
+                ? "border-blue-600 ring-2 ring-blue-600/20 bg-blue-50/50 sm:bg-transparent"
                 : "border-slate-200"
             )}
             aria-pressed={isSelected}
           >
+            {/* Mobile Selected Checkmark Badge */}
+            {isSelected && (
+              <span className="absolute left-3 top-3 flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white sm:hidden">
+                <Check className="w-4 h-4" />
+              </span>
+            )}
+            
             {p.recommended && (
-              <span className="absolute right-3 top-3 rounded-full bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-200">
+              <span className={cn(
+                "absolute right-3 top-3 rounded-full bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-200",
+                isSelected && "sm:right-3"
+              )}>
                 Recommended
               </span>
             )}
@@ -162,6 +172,13 @@ export function PackageCards({
                 </li>
               ))}
             </ul>
+            
+            {/* Mobile "Tap to select" hint for unselected packages */}
+            {!isSelected && (
+              <span className="mt-3 text-center text-xs text-slate-400 sm:hidden">
+                Tap to select
+              </span>
+            )}
           </motion.button>
         );
       })}
