@@ -671,7 +671,7 @@ html {
   50% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
 }
 
-@layer components {
+/* @layer components (consolidated below) */
   .motor-selected {
     animation: motor-selection 0.5s ease-out;
   }
@@ -841,7 +841,7 @@ html {
     animation: slideUpEnter 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-}
+/* end consolidated components block marker */
 
 /* More keyframes moved outside @layer */
 @keyframes slideUpEnter {
@@ -928,7 +928,7 @@ html {
   }
 }
 
-@layer components {
+/* @layer components (consolidated below) */
   /* Sticky bar slide animation */
   .sticky-bar-enter {
     animation: slideUpEnter 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1004,7 +1004,7 @@ html {
     color: hsl(var(--primary-foreground));
     border-color: hsl(0 0% 100% / 0.2);
   }
-}
+/* end consolidated components block marker */
 
 /* Keyframes moved outside @layer for CSS minifier compatibility */
 @keyframes subtle-pulse {
@@ -1695,3 +1695,5 @@ html {
 .animate-loading-bar {
   animation: loading-bar 1.5s ease-in-out infinite;
 }
+
+

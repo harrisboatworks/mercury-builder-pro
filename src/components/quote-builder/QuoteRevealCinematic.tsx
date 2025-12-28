@@ -346,7 +346,7 @@ export function QuoteRevealCinematic({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="text-[10px] md:text-xs uppercase tracking-[0.25em] mb-3"
-                style={{ color: '#D4AF37' }}
+                style={{ color: 'hsl(var(--promo-gold-1))' }}
               >
                 Your Price
               </motion.span>
@@ -366,17 +366,22 @@ export function QuoteRevealCinematic({
                   />
                 )}
                 
-                {/* Price text - NO textShadow animation to avoid gold box bug */}
-                <motion.span 
+                {/* Price text - Safari-safe solid color (no background-clip/text-fill) */}
+                <motion.span
                   className="relative z-10 font-playfair text-4xl md:text-6xl font-medium tabular-nums tracking-tight"
-                  style={{ 
-                    background: priceComplete 
-                      ? 'linear-gradient(135deg, #FAFAFA 0%, #D4AF37 50%, #FAFAFA 100%)'
-                      : '#FAFAFA',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
+                  style={{
+                    color: priceComplete ? 'hsl(var(--promo-gold-1))' : 'hsl(0 0% 98%)',
                   }}
+                  animate={
+                    priceComplete
+                      ? { filter: ['brightness(1)', 'brightness(1.18)', 'brightness(1)'] }
+                      : { filter: 'brightness(1)' }
+                  }
+                  transition={
+                    priceComplete
+                      ? { duration: 2, repeat: Infinity, ease: 'easeInOut' }
+                      : undefined
+                  }
                 >
                   {money(displayPrice)}
                 </motion.span>
