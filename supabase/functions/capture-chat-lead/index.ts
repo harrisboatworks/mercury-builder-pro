@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -10,17 +11,27 @@ const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-interface ChatLeadData {
-  name: string;
-  phone: string;
-  email?: string;
-  conversationContext?: string;
-  currentPage?: string;
-  motorContext?: {
-    model?: string;
-    hp?: number;
-    price?: number;
-  };
+// Input validation schema
+const chatLeadSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100, "Name too long"),
+  phone: z.string().trim().min(7, "Phone is required").max(20, "Phone too long"),
+  email: z.string().trim().email("Invalid email").max(255).optional().or(z.literal("")),
+  conversationContext: z.string().max(2000, "Context too long").optional(),
+  currentPage: z.string().max(500, "Page URL too long").optional(),
+  motorContext: z.object({
+    model: z.string().max(100).optional(),
+    hp: z.number().min(0).max(1000).optional(),
+    price: z.number().min(0).max(1000000).optional(),
+  }).optional(),
+});
+
+type ChatLeadData = z.infer<typeof chatLeadSchema>;
+
+// Generate cryptographically secure session ID
+function generateSecureSessionId(): string {
+  const array = new Uint8Array(16);
+  crypto.getRandomValues(array);
+  return `chat_${Array.from(array, b => b.toString(16).padStart(2, '0')).join('')}`;
 }
 
 // Calculate lead score based on available data
@@ -42,18 +53,32 @@ serve(async (req) => {
   }
 
   try {
-    const leadData: ChatLeadData = await req.json();
+    const rawData = await req.json();
     
-    if (!leadData.name || !leadData.phone) {
-      throw new Error('Name and phone are required');
+    // Validate input data
+    const validationResult = chatLeadSchema.safeParse(rawData);
+    if (!validationResult.success) {
+      console.log('[capture-chat-lead] Validation failed:', validationResult.error.errors);
+      return new Response(JSON.stringify({
+        success: false,
+        error: 'Invalid input data',
+        details: validationResult.error.errors.map(e => ({
+          field: e.path.join('.'),
+          message: e.message
+        }))
+      }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
-    console.log('[capture-chat-lead] Processing lead:', leadData.name, leadData.phone);
+    const leadData = validationResult.data;
+    console.log('[capture-chat-lead] Processing lead:', leadData.name);
 
     const leadScore = calculateLeadScore(leadData);
-    const sessionId = `chat_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    const sessionId = generateSecureSessionId();
 
-    // Build notes from conversation context
+    // Build notes from conversation context (sanitized via Zod validation)
     const notes = [
       leadData.conversationContext || 'Requested callback from AI chat',
       leadData.motorContext?.model ? `Interested in: ${leadData.motorContext.model}` : null,
@@ -167,7 +192,7 @@ serve(async (req) => {
     console.error('[capture-chat-lead] Error:', error);
     return new Response(JSON.stringify({
       success: false,
-      error: error.message
+      error: error instanceof Error ? error.message : 'An unexpected error occurred'
     }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

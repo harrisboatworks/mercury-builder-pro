@@ -68,7 +68,10 @@ export function SaveQuoteDialog({
       });
 
       // Save complete quote state to saved_quotes table for full restoration
-      const resumeToken = `quote_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      // Generate cryptographically secure resume token
+      const tokenArray = new Uint8Array(24);
+      crypto.getRandomValues(tokenArray);
+      const resumeToken = `quote_${Array.from(tokenArray, b => b.toString(16).padStart(2, '0')).join('')}`;
       const expiresAt = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days
 
       const { data: savedQuote, error: savedQuoteError } = await supabase

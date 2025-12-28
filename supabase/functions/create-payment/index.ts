@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.57.2";
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -8,13 +9,40 @@ const corsHeaders = {
 };
 
 // Motor deposit price mapping
-const DEPOSIT_PRICES = {
+const DEPOSIT_PRICES: Record<string, string> = {
   "500": "price_1S71kJHhVKClVQCpoZsxgqar",    // $500 - Small motors (under 50HP)
   "1000": "price_1S71kbHhVKClVQCpHM7Xg9FJ",   // $1000 - Mid-range motors (50-150HP)
   "2500": "price_1S71kmHhVKClVQCp20TxHSET"    // $2500 - High-performance motors (150HP+)
 };
 
-const logStep = (step: string, details?: any) => {
+// Input validation schemas
+const customerInfoSchema = z.object({
+  name: z.string().trim().min(1).max(100).optional(),
+  email: z.string().trim().email().max(255).optional(),
+  phone: z.string().max(20).optional(),
+}).optional();
+
+const quoteDataSchema = z.object({
+  motorId: z.string().uuid().optional(),
+  motorModel: z.string().max(200).optional(),
+  horsepower: z.number().min(0).max(1000).optional(),
+  motorPrice: z.number().min(0).max(1000000).optional(),
+  accessoryCosts: z.number().min(0).max(100000).optional(),
+  installationCost: z.number().min(0).max(50000).optional(),
+  tradeInCredit: z.number().min(0).max(500000).optional(),
+  totalPrice: z.number().min(0).max(2000000).optional(),
+  customerName: z.string().max(100).optional(),
+  customerPhone: z.string().max(20).optional(),
+}).optional();
+
+const paymentRequestSchema = z.object({
+  quoteData: quoteDataSchema,
+  depositAmount: z.enum(["500", "1000", "2500"]).optional(),
+  customerInfo: customerInfoSchema,
+  paymentType: z.enum(["deposit", "quote"]).optional(),
+});
+
+const logStep = (step: string, details?: unknown) => {
   const detailsStr = details ? ` - ${JSON.stringify(details)}` : '';
   console.log(`[CREATE-PAYMENT] ${step}${detailsStr}`);
 };
@@ -38,11 +66,27 @@ serve(async (req) => {
       Deno.env.get("SUPABASE_ANON_KEY") ?? ""
     );
 
-    // Parse request body first to determine payment type
-    const requestBody = await req.json();
-    const { quoteData, depositAmount, customerInfo, paymentType } = requestBody;
+    // Parse and validate request body
+    const rawBody = await req.json();
+    const validationResult = paymentRequestSchema.safeParse(rawBody);
     
-    logStep("Request received", { paymentType: paymentType || "quote", depositAmount });
+    if (!validationResult.success) {
+      logStep("Validation failed", validationResult.error.errors);
+      return new Response(JSON.stringify({
+        error: "Invalid input data",
+        details: validationResult.error.errors.map(e => ({
+          field: e.path.join('.'),
+          message: e.message
+        }))
+      }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    const { quoteData, depositAmount, customerInfo, paymentType } = validationResult.data;
+    
+    logStep("Request validated", { paymentType: paymentType || "quote", depositAmount });
 
     // Handle authentication - required for quote payments, optional for deposits
     let user = null;
@@ -59,7 +103,7 @@ serve(async (req) => {
           logStep("User authenticated", { userId: user.id, email: user.email });
         }
       } catch (error) {
-        logStep("Auth failed, proceeding as guest", { error: error.message });
+        logStep("Auth failed, proceeding as guest", { error: error instanceof Error ? error.message : 'Unknown' });
       }
     }
 
@@ -83,15 +127,14 @@ serve(async (req) => {
 
     // Handle deposit payments vs quote payments
     if (paymentType === "deposit" || depositAmount) {
-      // Deposit payment flow
-      if (!DEPOSIT_PRICES[depositAmount]) {
+      if (!depositAmount || !DEPOSIT_PRICES[depositAmount]) {
         throw new Error(`Invalid deposit amount. Available: ${Object.keys(DEPOSIT_PRICES).join(", ")}`);
       }
 
       const priceId = DEPOSIT_PRICES[depositAmount];
       logStep("Processing deposit payment", { depositAmount, priceId });
 
-      const sessionData: any = {
+      const sessionData: Stripe.Checkout.SessionCreateParams = {
         line_items: [{ price: priceId, quantity: 1 }],
         mode: "payment",
         success_url: `${req.headers.get("origin")}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
@@ -109,6 +152,7 @@ serve(async (req) => {
       }
 
       if (customerInfo?.name) {
+        sessionData.metadata = sessionData.metadata || {};
         sessionData.metadata.customer_name = customerInfo.name;
       }
 
@@ -176,7 +220,7 @@ serve(async (req) => {
     }
 
     // Create line items using validated prices
-    const lineItems = [];
+    const lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = [];
     
     // Main motor item with validated price
     if (validatedMotorPrice > 0) {
@@ -184,8 +228,8 @@ serve(async (req) => {
         price_data: {
           currency: "cad",
           product_data: { 
-            name: `${quoteData.motorModel} Motor`,
-            description: `${quoteData.horsepower}HP Mercury Motor`
+            name: `${quoteData.motorModel || 'Motor'} Motor`,
+            description: `${quoteData.horsepower || 0}HP Mercury Motor`
           },
           unit_amount: Math.round(validatedMotorPrice * 100), // Convert to cents
         },
@@ -194,7 +238,7 @@ serve(async (req) => {
     }
 
     // Accessories (server-validated in future iterations)
-    if (quoteData.accessoryCosts > 0) {
+    if (quoteData.accessoryCosts && quoteData.accessoryCosts > 0) {
       lineItems.push({
         price_data: {
           currency: "cad",
@@ -209,7 +253,7 @@ serve(async (req) => {
     }
 
     // Installation (server-validated in future iterations)
-    if (quoteData.installationCost > 0) {
+    if (quoteData.installationCost && quoteData.installationCost > 0) {
       lineItems.push({
         price_data: {
           currency: "cad",
@@ -224,7 +268,7 @@ serve(async (req) => {
     }
 
     // Trade-in credit (negative amount)
-    if (quoteData.tradeInCredit > 0) {
+    if (quoteData.tradeInCredit && quoteData.tradeInCredit > 0) {
       lineItems.push({
         price_data: {
           currency: "cad",

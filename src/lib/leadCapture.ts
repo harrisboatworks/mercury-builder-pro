@@ -16,11 +16,18 @@ export interface LeadData {
   quote_data?: any;
 }
 
+// Generate cryptographically secure session ID
+function generateSecureSessionId(): string {
+  const array = new Uint8Array(16);
+  crypto.getRandomValues(array);
+  return `anon_${Array.from(array, b => b.toString(16).padStart(2, '0')).join('')}`;
+}
+
 export async function saveLead(leadData: LeadData) {
   const { data: { user } } = await supabase.auth.getUser();
   
-  // Generate anonymous session ID if user not authenticated
-  const sessionId = user ? undefined : `anon_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+  // Generate cryptographically secure anonymous session ID if user not authenticated
+  const sessionId = user ? undefined : generateSecureSessionId();
   
   // Calculate enhanced lead score
   const leadScore = calculateEnhancedLeadScore(leadData);
