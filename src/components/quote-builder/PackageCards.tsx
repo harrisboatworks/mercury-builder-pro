@@ -171,10 +171,10 @@ export function PackageCards({
                       +{coverageDelta}yr coverage
                     </span>
                   )}
-                  {monthlyDelta > 0 && (
+                  {Math.ceil(monthlyDelta) >= 1 && (
                     <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-200">
                       <TrendingUp className="h-3 w-3" />
-                      +{money(Math.round(monthlyDelta))}/mo
+                      +{money(Math.ceil(monthlyDelta))}/mo
                     </span>
                   )}
                 </motion.div>
