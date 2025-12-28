@@ -1,7 +1,7 @@
 "use client";
 import { money } from "@/lib/money";
 import { calculateMonthlyPayment, getFinancingDisplay } from "@/lib/finance";
-import { useEffect, useState } from "react";
+import { AnimatedPrice } from "@/components/ui/AnimatedPrice";
 
 type HeroPriceProps = {
   yourPriceBeforeTax: number;   // after discounts/promos, before tax
@@ -24,29 +24,22 @@ export default function HeroPrice({
 }: HeroPriceProps) {
   const savings = (discount || 0) + (promoValue || 0);
 
-  const [animSavings, setAnimSavings] = useState(0);
-  useEffect(() => {
-    const duration = 600;
-    const start = performance.now();
-    const step = (t: number) => {
-      const p = Math.min(1, (t - start) / duration);
-      setAnimSavings(Math.round(savings * p));
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }, [savings]);
-
   const { payment: monthly } = calculateMonthlyPayment(yourPriceBeforeTax, rate !== 7.99 ? rate : null);
 
   return (
     <section 
       aria-label="Your price summary" 
-      className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm premium-glow-hover animate-card-entrance"
+      className="rounded-2xl glass-card-primary p-5 premium-glow-hover animate-card-entrance"
     >
       <div className="flex flex-col gap-1">
-        <h2 className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Your Price</h2>
+        <h2 className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Your Price</h2>
         <div className="flex flex-wrap items-end gap-x-3">
-          <div className="text-3xl font-semibold tracking-tight text-slate-900">{money(yourPriceBeforeTax)}</div>
+          <AnimatedPrice 
+            value={yourPriceBeforeTax} 
+            className="text-3xl font-semibold tracking-tight text-foreground"
+            withGlow
+            duration={0.8}
+          />
           {totalWithTax != null && (
             <div className="text-sm text-slate-500">
               inc. tax: <span className="font-medium">{money(totalWithTax)}</span>
@@ -54,16 +47,16 @@ export default function HeroPrice({
           )}
         </div>
 
-        <div className="mt-1 text-sm text-slate-600">
+        <div className="mt-1 text-sm text-muted-foreground">
           MSRP − Dealer Savings − Promo Value
         </div>
 
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <span
             aria-live="polite"
-            className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-200 premium-pulse"
+            className="inline-flex items-center rounded-full bg-emerald-50 dark:bg-emerald-950/50 px-3 py-1 text-sm font-semibold text-emerald-700 dark:text-emerald-400 ring-1 ring-inset ring-emerald-200 dark:ring-emerald-800 premium-pulse"
           >
-            You save {money(animSavings)}
+            You save <AnimatedPrice value={savings} className="ml-1" duration={0.6} />
           </span>
 
           {showMonthly && (

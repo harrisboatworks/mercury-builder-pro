@@ -82,8 +82,9 @@ export function PackageCards({
               "group relative flex flex-col rounded-2xl border p-6 text-left transition-all duration-300",
               "hover:shadow-xl hover:-translate-y-2 active:scale-[0.98]",
               isSelected
-                ? "border-blue-600 ring-2 ring-blue-600/20 bg-blue-50/50 sm:bg-transparent premium-glow-hover"
-                : "border-slate-200"
+                ? "border-primary ring-2 ring-primary/20 glass-card-primary premium-selected"
+                : "border-border/50 glass-card",
+              "dark:border-border"
             )}
             aria-pressed={isSelected}
           >

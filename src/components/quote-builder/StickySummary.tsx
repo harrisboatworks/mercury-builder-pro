@@ -63,10 +63,10 @@ export default function StickySummary({
 }: StickySummaryProps) {
   return (
     <>
-      {/* Desktop sticky card */}
+      {/* Desktop sticky card - Premium glassmorphism */}
       <aside
         aria-label="Summary"
-        className="sticky top-28 hidden h-fit rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900 lg:block"
+        className="sticky top-28 hidden h-fit rounded-2xl glass-card p-5 lg:block animate-card-entrance premium-glow-hover"
       >
         <div className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
           {packageLabel}
