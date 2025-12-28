@@ -154,7 +154,7 @@ export function QuoteRevealCinematic({
       { stage: 'price' as const, delay: 3500, sound: null }, // Price countdown
       { stage: 'savings' as const, delay: 5800, sound: () => { playCelebration?.(); triggerPremiumConfetti(); } }, // Savings celebration
       { stage: 'details' as const, delay: 7200, sound: playComplete },
-      { stage: 'complete' as const, delay: 8800, sound: null },
+      { stage: 'complete' as const, delay: 9800, sound: null },
     ];
 
     const timeouts: NodeJS.Timeout[] = [];
@@ -171,8 +171,8 @@ export function QuoteRevealCinematic({
     const badgeTimeout = setTimeout(() => setShowSavingsBadge(true), 6200);
     timeouts.push(badgeTimeout);
 
-    // Complete callback
-    const completeTimeout = setTimeout(onComplete, 9500);
+    // Complete callback - extended by 3 seconds for final reveal
+    const completeTimeout = setTimeout(onComplete, 12500);
     timeouts.push(completeTimeout);
 
     return () => {
