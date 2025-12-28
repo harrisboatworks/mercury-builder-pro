@@ -824,6 +824,17 @@ export default function QuoteSummaryPage() {
                 animate="visible"
                 className="space-y-4"
               >
+                {/* Section Header with Mobile Instructions */}
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h2 className="text-lg font-semibold text-slate-900">Choose Your Package</h2>
+                    <p className="text-sm text-slate-500 sm:hidden">Tap to select a coverage option</p>
+                  </div>
+                  <span className="text-xs text-blue-600 font-medium sm:hidden">
+                    {selectedPackageData.label.split(' • ')[0]} selected
+                  </span>
+                </div>
+                
                 <PackageCards
                   options={packages}
                   selectedId={selectedPackage}
