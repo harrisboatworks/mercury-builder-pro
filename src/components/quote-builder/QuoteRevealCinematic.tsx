@@ -280,8 +280,8 @@ export function QuoteRevealCinematic({
                   alt="Harris Boat Works"
                   className="h-24 md:h-32 w-auto object-contain"
                   style={{
-                    filter: 'drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5)) brightness(1.1)',
-                    opacity: 0.95,
+                    filter: 'brightness(0) invert(1) drop-shadow(0 4px 20px rgba(255, 255, 255, 0.15))',
+                    opacity: 0.9,
                   }}
                 />
               )}
@@ -549,8 +549,8 @@ export function QuoteRevealCinematic({
                 alt="Mercury Marine"
                 className="h-5 md:h-7 w-auto"
                 style={{ 
-                  filter: 'brightness(0.9) contrast(0.95)',
-                  opacity: 0.8,
+                  filter: 'brightness(0) invert(1)',
+                  opacity: 0.7,
                 }}
               />
             </motion.div>
