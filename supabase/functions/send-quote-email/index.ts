@@ -1,6 +1,7 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.47.10';
 import { Resend } from 'npm:resend@2.0.0';
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -9,23 +10,28 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-interface QuoteEmailRequest {
-  customerEmail: string;
-  customerName: string;
-  quoteNumber: string;
-  motorModel: string;
-  totalPrice: number;
-  pdfUrl?: string;
-  emailType: 'quote_delivery' | 'follow_up' | 'reminder' | 'admin_quote_notification';
-  leadData?: {
-    customerName?: string;
-    customerEmail?: string;
-    customerPhone?: string;
-    contactMethod?: string;
-    leadScore?: number;
-    quoteId?: string;
-  };
-}
+// Input validation schema
+const leadDataSchema = z.object({
+  customerName: z.string().max(100).optional(),
+  customerEmail: z.string().email().max(255).optional(),
+  customerPhone: z.string().max(20).optional(),
+  contactMethod: z.string().max(50).optional(),
+  leadScore: z.number().min(0).max(100).optional(),
+  quoteId: z.string().uuid().optional(),
+}).optional();
+
+const quoteEmailSchema = z.object({
+  customerEmail: z.string().trim().email("Invalid email").max(255),
+  customerName: z.string().trim().min(1).max(100),
+  quoteNumber: z.string().max(50),
+  motorModel: z.string().max(200),
+  totalPrice: z.number().min(0).max(2000000),
+  pdfUrl: z.string().url().max(2000).optional(),
+  emailType: z.enum(['quote_delivery', 'follow_up', 'reminder', 'admin_quote_notification']),
+  leadData: leadDataSchema,
+});
+
+type QuoteEmailRequest = z.infer<typeof quoteEmailSchema>;
 
 // Replace template variables with actual data
 function replaceTemplateVariables(template: string, data: QuoteEmailRequest): string {
@@ -279,14 +285,28 @@ serve(async (req) => {
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    const emailData: QuoteEmailRequest = await req.json();
+    const rawData = await req.json();
     
-    console.log('Sending email:', emailData);
-
-    // Validate required fields
-    if (!emailData.customerEmail || !emailData.customerName || !emailData.emailType) {
-      throw new Error('Missing required email data');
+    // Validate input data
+    const validationResult = quoteEmailSchema.safeParse(rawData);
+    if (!validationResult.success) {
+      console.log('Validation failed:', validationResult.error.errors);
+      return new Response(JSON.stringify({
+        success: false,
+        error: 'Invalid email data',
+        details: validationResult.error.errors.map(e => ({
+          field: e.path.join('.'),
+          message: e.message
+        }))
+      }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
     }
+
+    const emailData = validationResult.data;
+    
+    console.log('Sending email:', emailData.emailType, 'to:', emailData.customerEmail);
 
     // Try to get template from database first
     let subject: string;
@@ -333,7 +353,14 @@ serve(async (req) => {
     }
 
     // Prepare email options
-    const emailOptions: any = {
+    const emailOptions: {
+      from: string;
+      to: string[];
+      replyTo: string;
+      subject: string;
+      html: string;
+      attachments?: Array<{ filename: string; content: string }>;
+    } = {
       from: 'Harris Boat Works - Mercury Marine <noreply@hbwsales.ca>',
       to: [emailData.customerEmail],
       replyTo: 'info@harrisboatworks.ca',

@@ -1,10 +1,42 @@
 import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.47.10';
+import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
+
+// Input validation schemas
+const leadDataSchema = z.object({
+  id: z.string().uuid().optional(),
+  customer_name: z.string().max(100).optional(),
+  customer_email: z.string().email().max(255).optional(),
+  customer_phone: z.string().max(20).optional(),
+  lead_score: z.number().min(0).max(100).optional(),
+  final_price: z.number().min(0).max(2000000).optional(),
+  motor_model_id: z.string().uuid().optional().nullable(),
+  created_at: z.string().optional(),
+  lead_source: z.string().max(50).optional(),
+}).optional();
+
+const quoteDataSchema = z.object({
+  id: z.string().uuid().optional(),
+  quote_number: z.number().or(z.string()).optional(),
+  customer_name: z.string().max(100).optional(),
+  customer_email: z.string().email().max(255).optional(),
+  total_price: z.number().min(0).max(2000000).optional(),
+  motor_model: z.string().max(200).optional(),
+  pdf_url: z.string().url().max(2000).optional(),
+  created_at: z.string().optional(),
+}).optional();
+
+const webhookRequestSchema = z.object({
+  webhook_type: z.enum(['hot_lead', 'quote_delivery', 'follow_up_reminder', 'manual_trigger']),
+  lead_data: leadDataSchema,
+  quote_data: quoteDataSchema,
+  test_mode: z.boolean().optional().default(false),
+});
 
 serve(async (req) => {
   // Handle CORS preflight requests
@@ -18,13 +50,28 @@ serve(async (req) => {
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    const { webhook_type, lead_data, quote_data, test_mode = false } = await req.json();
+    const rawData = await req.json();
+    
+    // Validate input data
+    const validationResult = webhookRequestSchema.safeParse(rawData);
+    if (!validationResult.success) {
+      console.log('Validation failed:', validationResult.error.errors);
+      return new Response(JSON.stringify({
+        success: false,
+        error: 'Invalid input data',
+        details: validationResult.error.errors.map(e => ({
+          field: e.path.join('.'),
+          message: e.message
+        }))
+      }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    const { webhook_type, lead_data, quote_data, test_mode } = validationResult.data;
     
     console.log('Triggering webhooks for type:', webhook_type, { test_mode });
-
-    if (!webhook_type) {
-      throw new Error('webhook_type is required');
-    }
 
     // Get active webhooks for the specified type
     const { data: webhooks, error: webhookError } = await supabase
@@ -50,7 +97,7 @@ serve(async (req) => {
     }
 
     // Prepare payload based on webhook type
-    let payload: any = {
+    const payload: Record<string, unknown> = {
       type: webhook_type,
       timestamp: new Date().toISOString(),
       test_mode,
@@ -173,7 +220,7 @@ serve(async (req) => {
       })
     );
 
-    const successCount = results.filter(r => r.status === 'fulfilled' && r.value.success).length;
+    const successCount = results.filter(r => r.status === 'fulfilled' && (r.value as { success: boolean }).success).length;
     const failureCount = results.length - successCount;
 
     console.log(`Webhook trigger results: ${successCount} success, ${failureCount} failed`);
@@ -184,7 +231,7 @@ serve(async (req) => {
         webhooks_triggered: webhooks.length,
         successful_triggers: successCount,
         failed_triggers: failureCount,
-        results: results.map(r => r.status === 'fulfilled' ? r.value : { error: r.reason }),
+        results: results.map(r => r.status === 'fulfilled' ? r.value : { error: String(r.reason) }),
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
