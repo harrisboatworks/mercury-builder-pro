@@ -17,6 +17,8 @@ export function GlobalStickyQuoteBar() {
   const hideOnPages = [
     '/quote/motor-selection',
     '/quote/summary',
+    '/quote/trade-in',
+    '/quote/boat-info',
     '/financing',
     '/login',
     '/auth',
