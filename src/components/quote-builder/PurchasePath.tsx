@@ -65,9 +65,9 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto items-stretch">
         <motion.div variants={cardVariants}>
-          <Card className="relative bg-white hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
+          <Card className="relative bg-white hover:shadow-xl transition-all duration-300 cursor-pointer group border-2 hover:border-primary/50 flex flex-col premium-lift" 
                 onClick={handleLooseMotorSelect}>
-          <Badge className="absolute -top-2 -right-2 bg-foreground hover:bg-foreground text-background text-[10px] tracking-[0.15em] uppercase font-light">
+          <Badge className="absolute -top-2 -right-2 bg-foreground hover:bg-foreground text-background text-[10px] tracking-[0.15em] uppercase font-light premium-pulse">
             Quick & Easy
           </Badge>
           
@@ -117,7 +117,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             
             <Button 
               variant="outline"
-              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-foreground hover:text-background transition-all duration-500"
+              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-foreground hover:text-background transition-all duration-500 premium-btn-hover"
             >
               Select Loose Motor
             </Button>
@@ -126,9 +126,9 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
         </motion.div>
         
         <motion.div variants={cardVariants}>
-          <Card className="relative bg-white hover:shadow-lg transition-all duration-200 cursor-pointer group border-2 hover:border-primary/50 flex flex-col" 
+          <Card className="relative bg-white hover:shadow-xl transition-all duration-300 cursor-pointer group border-2 hover:border-primary/50 flex flex-col premium-lift" 
                 onClick={handleInstalledSelect}>
-          <Badge className="absolute -top-2 -right-2 bg-foreground hover:bg-foreground text-background text-[10px] tracking-[0.15em] uppercase font-light">
+          <Badge className="absolute -top-2 -right-2 bg-foreground hover:bg-foreground text-background text-[10px] tracking-[0.15em] uppercase font-light premium-pulse">
             Full Service
           </Badge>
           
@@ -172,7 +172,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             
             <Button 
               variant="outline"
-              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-foreground hover:text-background transition-all duration-500"
+              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-foreground hover:text-background transition-all duration-500 premium-btn-hover"
             >
               Select Installation
             </Button>

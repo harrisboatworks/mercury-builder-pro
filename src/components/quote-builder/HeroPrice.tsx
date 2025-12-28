@@ -39,7 +39,10 @@ export default function HeroPrice({
   const { payment: monthly } = calculateMonthlyPayment(yourPriceBeforeTax, rate !== 7.99 ? rate : null);
 
   return (
-    <section aria-label="Your price summary" className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm">
+    <section 
+      aria-label="Your price summary" 
+      className="rounded-2xl border border-slate-200/70 bg-white p-5 shadow-sm premium-glow-hover animate-card-entrance"
+    >
       <div className="flex flex-col gap-1">
         <h2 className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Your Price</h2>
         <div className="flex flex-wrap items-end gap-x-3">
@@ -58,7 +61,7 @@ export default function HeroPrice({
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <span
             aria-live="polite"
-            className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-200"
+            className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-200 premium-pulse"
           >
             You save {money(animSavings)}
           </span>

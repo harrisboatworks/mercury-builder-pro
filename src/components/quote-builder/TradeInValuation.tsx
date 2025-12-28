@@ -147,7 +147,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
               <p className="text-lg font-light text-gray-900">Do you have a motor to trade?</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.02, y: -4 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
                     triggerHaptic('light');
@@ -164,21 +164,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     });
                   }}
                   aria-pressed={tradeInInfo.hasTradeIn}
-                  className={`relative p-6 border-2 rounded-sm transition-all bg-white text-left group ${
+                  className={`relative p-6 border-2 rounded-sm transition-all duration-300 bg-white text-left group premium-lift ${
                     tradeInInfo.hasTradeIn 
-                      ? 'border-gray-900 shadow-lg' 
-                      : 'border-gray-300 hover:border-gray-900 hover:shadow-lg'
+                      ? 'border-gray-900 shadow-xl premium-selected' 
+                      : 'border-gray-300 hover:border-gray-900 hover:shadow-xl'
                   }`}
                   type="button"
                 >
                   <CheckCircle2 className={`w-6 h-6 mb-3 transition-transform ${
-                    tradeInInfo.hasTradeIn ? 'text-gray-900' : 'text-gray-400'
+                    tradeInInfo.hasTradeIn ? 'text-gray-900 animate-check-pop' : 'text-gray-400'
                   }`} />
                   <div className="font-light text-lg text-gray-900 tracking-wide">Yes, I have a trade-in</div>
                   <div className="text-sm font-light text-gray-600 mt-1">We'll estimate your value instantly</div>
                 </motion.button>
                 <motion.button
-                  whileHover={{ scale: 1.02 }}
+                  whileHover={{ scale: 1.02, y: -4 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
                     triggerHaptic('light');
@@ -226,10 +226,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     console.log('🚀 onAutoAdvance called');
                   }}
                   aria-pressed={!tradeInInfo.hasTradeIn}
-                  className={`relative p-6 border-2 rounded-sm transition-all bg-white text-left group ${
+                  className={`relative p-6 border-2 rounded-sm transition-all duration-300 bg-white text-left group premium-lift ${
                     !tradeInInfo.hasTradeIn 
-                      ? 'border-gray-900 shadow-lg' 
-                      : 'border-gray-300 hover:border-gray-900 hover:shadow-lg'
+                      ? 'border-gray-900 shadow-xl premium-selected' 
+                      : 'border-gray-300 hover:border-gray-900 hover:shadow-xl'
                   }`}
                   type="button"
                 >
@@ -380,12 +380,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   {conditionOptions.map((option) => (
                     <motion.div
                       key={option.value}
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{ scale: 1.02, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className={`cursor-pointer border-2 rounded-sm p-4 text-center transition-all duration-300 ${
+                      className={`cursor-pointer border-2 rounded-sm p-4 text-center transition-all duration-300 premium-lift ${
                         tradeInInfo.condition === option.value 
-                          ? 'border-gray-900 bg-gray-50 shadow-md' 
-                          : 'border-gray-300 hover:border-gray-900'
+                          ? 'border-gray-900 bg-gray-50 shadow-lg premium-selected' 
+                          : 'border-gray-300 hover:border-gray-900 hover:shadow-md'
                       }`}
                       onClick={() => onTradeInChange({ ...tradeInInfo, condition: option.value as any })}
                     >

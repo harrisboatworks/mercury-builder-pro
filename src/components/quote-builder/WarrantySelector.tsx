@@ -6,6 +6,7 @@ import { Shield, CheckCircle2, Clock, Star } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { supabase } from '@/integrations/supabase/client';
+import { cn } from '@/lib/utils';
 
 interface WarrantyPricing {
   hp_min: number;
@@ -153,7 +154,7 @@ export function WarrantySelector() {
   };
 
   return (
-    <Card className="border-accent">
+    <Card className="border-accent premium-glow-hover animate-card-entrance">
       <CardHeader className="pb-4">
         <div className="flex items-center gap-3">
           <div className="p-2 bg-primary/10 rounded-lg">
@@ -223,11 +224,17 @@ export function WarrantySelector() {
             </Button>
 
             {/* Extended Warranty Options */}
-            {warrantyOptions.map((option) => (
+            {warrantyOptions.map((option, index) => (
               <Button
                 key={option.years}
                 variant={state.warrantyConfig?.extendedYears === option.years ? "default" : "outline"}
-                className="h-auto p-4 text-left justify-between"
+                className={cn(
+                  "h-auto p-4 text-left justify-between transition-all duration-300",
+                  state.warrantyConfig?.extendedYears === option.years 
+                    ? "premium-selected" 
+                    : "hover:shadow-lg hover:-translate-y-1",
+                  `stagger-${index + 1} spec-row-animate opacity-0`
+                )}
                 onClick={() => handleWarrantySelect(option)}
               >
                 <div>
