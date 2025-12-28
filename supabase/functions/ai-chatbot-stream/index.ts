@@ -23,6 +23,7 @@ import {
   HARRIS_PERSONALITY,
   HARRIS_CONTACT,
   HARRIS_PARTNERS,
+  HARRIS_PHILOSOPHY,
   ONTARIO_LAKES,
   SEASONAL_CONTEXT,
   getCurrentSeason,
@@ -71,6 +72,23 @@ function detectTopics(message: string): string[] {
   if (/\b(2\.5|3\.5|4|5|6|8|9\.9|portable)\b/.test(lowerMsg)) topics.push('small_motor');
   
   return topics;
+}
+
+// Detect "why buy from us" type questions
+function detectWhyBuyQuestion(message: string): boolean {
+  const lowerMsg = message.toLowerCase();
+  const patterns = [
+    /why (should i |would i |)buy (from you|from harris|here|local)/i,
+    /what makes (you|harris) (different|special)/i,
+    /why not (online|amazon|somewhere else|the other guy)/i,
+    /why (choose|pick|go with) (you|harris)/i,
+    /what('s| is) the (difference|advantage)/i,
+    /convince me|why should i/i,
+    /why (buy|shop|come) (here|from you|local)/i,
+    /what sets you apart/i,
+    /why you (guys|instead)/i,
+  ];
+  return patterns.some(p => p.test(lowerMsg));
 }
 
 // Get motors for comparison
@@ -724,7 +742,8 @@ function buildSystemPrompt(
   motors: any[], 
   promotions: any[], 
   context: any,
-  detectedTopics: string[]
+  detectedTopics: string[],
+  isWhyBuyQuestion: boolean = false
 ) {
   const season = getCurrentSeason();
   const seasonInfo = SEASONAL_CONTEXT[season];
@@ -1293,6 +1312,22 @@ When customers ask "do you have X?" they mean "does Harris Boat Works have X?"
 - Mercury dealer since 1965
 - CSI Award winner (top 5% of Mercury dealers)
 ${topicHint ? `\n💡 ${topicHint}` : ''}
+${isWhyBuyQuestion ? `
+## WHY BUY FROM US - SPEAK FROM THE HEART
+Someone is asking why they should buy from Harris. This is personal. Answer honestly and emotionally - don't be salesy or cheesy.
+
+**Our Core Belief**: "${HARRIS_PHILOSOPHY.core_belief}"
+
+**Honest Truths You Can Share** (pick 2-3 that feel right):
+${HARRIS_PHILOSOPHY.honest_truths.map(t => `- ${t}`).join('\n')}
+
+**Real Talk**:
+- On price: ${HARRIS_PHILOSOPHY.real_talk.on_price}
+- On online: ${HARRIS_PHILOSOPHY.real_talk.on_online}  
+- On trust: ${HARRIS_PHILOSOPHY.real_talk.on_trust}
+
+Speak from experience. Be genuine. Don't list bullet points - weave it naturally into a conversational response. This isn't a sales pitch, it's who we are.
+` : ''}
 
 ## OUR FACILITIES (Gores Landing, Rice Lake) - ALWAYS PROVIDE LINKS!
 - **Address**: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
@@ -1445,6 +1480,7 @@ serve(async (req) => {
     // Detect topics, comparisons, categories, and HP-specific queries
     const detectedTopics = detectTopics(message);
     const comparison = detectComparisonQuery(message);
+    const isWhyBuyQuestion = detectWhyBuyQuestion(message);
     let queryCategory = detectQueryCategory(message);
     const detectedHP = detectHPQuery(message);
     
@@ -1550,7 +1586,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     ]);
     
     // Build the rich system prompt
-    let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics);
+    let systemPrompt = buildSystemPrompt(motors, promotions, context, detectedTopics, isWhyBuyQuestion);
     if (comparisonContext) systemPrompt += comparisonContext;
     if (hpSpecificContext) systemPrompt += hpSpecificContext;
     if (perplexityContext) systemPrompt += perplexityContext;
