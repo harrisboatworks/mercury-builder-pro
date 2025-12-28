@@ -15,6 +15,7 @@ import CurrentPromotions from '@/components/quote-builder/BonusOffersBadge';
 import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
+import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 
 import { useQuote } from '@/contexts/QuoteContext';
@@ -27,7 +28,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
-import confetti from 'canvas-confetti';
+// confetti import removed - now using QuoteRevealCinematic
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
@@ -84,6 +85,17 @@ export default function QuoteSummaryPage() {
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
   const [showSaveDialog, setShowSaveDialog] = useState(false);
+  
+  // Cinematic reveal - only show once per session
+  const [showCinematic, setShowCinematic] = useState(() => {
+    const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
+    return !hasSeenReveal;
+  });
+  
+  const handleCinematicComplete = () => {
+    sessionStorage.setItem('quote-reveal-seen', 'true');
+    setShowCinematic(false);
+  };
 
   // Ensure minimum mount time before running accessibility checks
   useEffect(() => {
@@ -109,14 +121,7 @@ export default function QuoteSummaryPage() {
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
   }, []);
 
-  // Celebration animation on first load
-  useEffect(() => {
-    confetti({
-      particleCount: 200,
-      spread: 100,
-      origin: { y: 0.6 }
-    });
-  }, []);
+  // NOTE: Celebration animation moved to QuoteRevealCinematic component
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
@@ -765,6 +770,17 @@ export default function QuoteSummaryPage() {
 
   return (
     <>
+      {/* Cinematic Quote Reveal - shows once per session */}
+      <QuoteRevealCinematic
+        isVisible={showCinematic && isMounted}
+        onComplete={handleCinematicComplete}
+        motorName={motorName}
+        finalPrice={packageSpecificTotals.subtotal}
+        savings={totals.savings}
+        coverageYears={selectedPackageData?.coverageYears || currentCoverageYears}
+        imageUrl={imageUrl}
+      />
+      
       <ScrollToTop />
       <PageTransition>
         <QuoteLayout showProgress={false}>
