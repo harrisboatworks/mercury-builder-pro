@@ -103,6 +103,20 @@ export default function QuoteSummaryPage() {
     setShowCinematic(false);
     setRevealComplete(true); // Trigger staggered package card entrance
   };
+  // Keyboard shortcut to replay cinematic (Ctrl/Cmd + Shift + R)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'R') {
+        e.preventDefault();
+        sessionStorage.removeItem('quote-reveal-seen');
+        setShowCinematic(true);
+        setRevealComplete(false);
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Ensure minimum mount time before running accessibility checks
   useEffect(() => {
