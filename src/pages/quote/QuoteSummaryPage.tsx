@@ -806,6 +806,7 @@ export default function QuoteSummaryPage() {
         onComplete={handleCinematicComplete}
         motorName={motorName}
         finalPrice={packageSpecificTotals.subtotal}
+        msrp={motorMSRP}
         savings={totals.savings}
         coverageYears={selectedPackageData?.coverageYears || currentCoverageYears}
         imageUrl={imageUrl}
