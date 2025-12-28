@@ -7,7 +7,7 @@ interface SecureRouteProps {
 }
 
 export const SecureRoute = ({ children, requireAdmin }: SecureRouteProps) => {
-  const { user, loading } = useAuth();
+  const { user, loading, isAdmin } = useAuth();
   const location = useLocation();
 
   if (loading) {
@@ -22,6 +22,10 @@ export const SecureRoute = ({ children, requireAdmin }: SecureRouteProps) => {
     return <Navigate to="/login" replace state={{ from: location.pathname }} />;
   }
 
-  // For now, skip complex admin checks - just basic auth
+  // Enforce admin authorization for protected routes
+  if (requireAdmin && !isAdmin) {
+    return <Navigate to="/" replace />;
+  }
+
   return <>{children}</>;
 };
