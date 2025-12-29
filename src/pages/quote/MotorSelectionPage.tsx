@@ -208,7 +208,7 @@ function MotorSelectionContent() {
     const handleVoiceNavigation = (e: CustomEvent<VoiceNavigationEvent>) => {
       const event = e.detail;
       
-      if (event.type === 'filter_motors') {
+if (event.type === 'filter_motors') {
         const { horsepower, model, inStock, startType, controlType, shaftLength } = event.payload;
         
         // Set HP/model as search query (fuzzy search handles this well)
@@ -259,6 +259,28 @@ function MotorSelectionContent() {
         toast({
           title: "Motors filtered",
           description: `Showing ${filterDesc}`,
+        });
+      }
+      
+      // Handle clear_filters event
+      if (event.type === 'clear_filters') {
+        setSearchQuery('');
+        setConfigFilters(null);
+        
+        // Scroll to top of motor grid
+        setTimeout(() => {
+          const gridSection = document.querySelector('.motor-grid-section');
+          if (gridSection) {
+            const headerOffset = 180;
+            const elementPosition = gridSection.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({ top: Math.max(0, offsetPosition), behavior: 'smooth' });
+          }
+        }, 100);
+        
+        toast({
+          title: "Filters cleared",
+          description: "Now showing all available motors",
         });
       }
     };

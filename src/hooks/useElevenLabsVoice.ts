@@ -1470,6 +1470,16 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           hint: "Now call get_visible_motors() to describe the motors on screen"
         });
       },
+      // Clear all filters and show all motors
+      clear_filters: () => {
+        console.log('[ClientTool] clear_filters - resetting all filters');
+        dispatchVoiceNavigation({ type: 'clear_filters', payload: {} });
+        return JSON.stringify({ 
+          success: true, 
+          message: "All filters cleared. Screen now showing all motors.",
+          hint: "Call get_visible_motors() to see the full inventory"
+        });
+      },
       // Get the motors currently visible on screen (INSTANT - reads from frontend state)
       get_visible_motors: () => {
         console.log('[ClientTool] get_visible_motors - reading from frontend state');
