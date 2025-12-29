@@ -413,27 +413,28 @@ export function QuoteRevealCinematic({
                   />
                 )}
                 
-                {/* Savings percentage badge */}
-                <AnimatePresence>
-                  {showSavingsBadge && savingsPercent > 0 && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.5, x: 20 }}
-                      animate={{ opacity: 1, scale: 1, x: 0 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
-                      transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                      className="absolute -top-3 -right-3 md:-top-4 md:-right-4 flex items-center gap-1 px-2 py-1 rounded-full text-xs md:text-sm font-semibold shadow-lg"
-                      style={{
-                        background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
-                        color: '#FFFFFF',
-                        boxShadow: '0 4px 15px rgba(16, 185, 129, 0.4)',
-                      }}
-                    >
-                      <Sparkles className="w-3 h-3" />
-                      Save {savingsPercent}%
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </div>
+              
+              {/* Savings percentage badge - positioned below price */}
+              <AnimatePresence>
+                {showSavingsBadge && savingsPercent > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5, y: -10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                    className="mt-3 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-semibold"
+                    style={{
+                      background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+                      color: '#FFFFFF',
+                      boxShadow: '0 4px 15px rgba(16, 185, 129, 0.4)',
+                    }}
+                  >
+                    <Sparkles className="w-3.5 h-3.5" />
+                    Save {savingsPercent}%
+                  </motion.div>
+                )}
+              </AnimatePresence>
               
               {/* Monthly payment teaser */}
               <motion.span
