@@ -1382,11 +1382,17 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         horsepower?: number | string | boolean;
         model_search?: string;
         in_stock_only?: boolean;
-        start_type?: 'electric' | 'manual';
-        control_type?: 'tiller' | 'remote';
-        shaft_length?: 'short' | 'long' | 'xl' | 'xxl';
+        start_type?: string;
+        control_type?: string;
+        shaft_length?: string;
       }) => {
-        console.log('[ClientTool] navigate_to_motors received:', params);
+        // === ENHANCED DEBUG LOGGING ===
+        console.log('%c🔍 navigate_to_motors RAW PARAMS', 'background: #673AB7; color: white; padding: 2px 6px; border-radius: 4px;');
+        console.log('  horsepower:', params.horsepower, '(type:', typeof params.horsepower, ')');
+        console.log('  start_type:', params.start_type, '(type:', typeof params.start_type, ')');
+        console.log('  control_type:', params.control_type, '(type:', typeof params.control_type, ')');
+        console.log('  shaft_length:', params.shaft_length, '(type:', typeof params.shaft_length, ')');
+        console.log('  Full params:', JSON.stringify(params));
         
         // ROBUST PARAM HANDLING: ElevenLabs may send horsepower as wrong type
         let hpValue: number | undefined = undefined;
@@ -1412,21 +1418,67 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           console.warn('[ClientTool] navigate_to_motors: horsepower was boolean, ignoring');
         }
         
+        // === NORMALIZE start_type (handle ElevenLabs variations) ===
+        let startType: 'electric' | 'manual' | undefined = undefined;
+        if (params.start_type && typeof params.start_type === 'string') {
+          const normalized = params.start_type.toLowerCase().trim();
+          if (normalized === 'electric' || normalized === 'e' || normalized === 'electric start') {
+            startType = 'electric';
+          } else if (normalized === 'manual' || normalized === 'm' || normalized === 'pull' || 
+                     normalized === 'pull start' || normalized === 'pull-start' || normalized === 'rope') {
+            startType = 'manual';
+          }
+          console.log(`[ClientTool] start_type normalized: "${params.start_type}" → "${startType}"`);
+        }
+        
+        // === NORMALIZE control_type (handle ElevenLabs variations) ===
+        let controlType: 'tiller' | 'remote' | undefined = undefined;
+        if (params.control_type && typeof params.control_type === 'string') {
+          const normalized = params.control_type.toLowerCase().trim();
+          if (normalized === 'tiller' || normalized === 'tiller handle' || normalized === 'tiller steering' || normalized === 'handle') {
+            controlType = 'tiller';
+          } else if (normalized === 'remote' || normalized === 'remote steering' || normalized === 'console' || normalized === 'steering wheel') {
+            controlType = 'remote';
+          }
+          console.log(`[ClientTool] control_type normalized: "${params.control_type}" → "${controlType}"`);
+        }
+        
+        // === NORMALIZE shaft_length (handle ElevenLabs variations) ===
+        let shaftLength: 'short' | 'long' | 'xl' | 'xxl' | undefined = undefined;
+        if (params.shaft_length && typeof params.shaft_length === 'string') {
+          const normalized = params.shaft_length.toLowerCase().trim();
+          if (normalized === 'short' || normalized === 's' || normalized === '15' || normalized === '15 inch' || normalized === '15"') {
+            shaftLength = 'short';
+          } else if (normalized === 'long' || normalized === 'l' || normalized === '20' || normalized === '20 inch' || normalized === '20"') {
+            shaftLength = 'long';
+          } else if (normalized === 'xl' || normalized === 'extra long' || normalized === 'extra-long' || 
+                     normalized === '25' || normalized === '25 inch' || normalized === '25"') {
+            shaftLength = 'xl';
+          } else if (normalized === 'xxl' || normalized === '30' || normalized === '30 inch' || normalized === '30"') {
+            shaftLength = 'xxl';
+          }
+          console.log(`[ClientTool] shaft_length normalized: "${params.shaft_length}" → "${shaftLength}"`);
+        }
+        
+        // === LOG FINAL NORMALIZED VALUES ===
+        console.log('%c✅ NORMALIZED FILTER VALUES', 'background: #4CAF50; color: white; padding: 2px 6px; border-radius: 4px;');
+        console.log('  HP:', hpValue, '| Start:', startType, '| Control:', controlType, '| Shaft:', shaftLength);
+        
         // Build filter description based on what's being applied
         const filterParts: string[] = [];
         if (hpValue) filterParts.push(`${hpValue}HP`);
-        if (params.start_type) filterParts.push(params.start_type === 'electric' ? 'electric start' : 'pull-start');
-        if (params.shaft_length) filterParts.push(`${params.shaft_length} shaft`);
-        if (params.control_type) filterParts.push(params.control_type);
+        if (startType) filterParts.push(startType === 'electric' ? 'electric start' : 'pull-start');
+        if (shaftLength) filterParts.push(`${shaftLength} shaft`);
+        if (controlType) filterParts.push(controlType);
         
         // Actually navigate to the page AND apply filters (including config options)
         navigateToMotorsWithFilter({
           horsepower: hpValue,
           model: modelSearch,
           inStock: params.in_stock_only,
-          startType: params.start_type,
-          controlType: params.control_type,
-          shaftLength: params.shaft_length,
+          startType: startType,
+          controlType: controlType,
+          shaftLength: shaftLength,
         });
         
         const filterDesc = filterParts.length > 0 
@@ -1442,9 +1494,9 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           navigated: true,
           activeFilters: { 
             hp: hpValue || null, 
-            startType: params.start_type || null, 
-            controlType: params.control_type || null, 
-            shaftLength: params.shaft_length || null,
+            startType: startType || null, 
+            controlType: controlType || null, 
+            shaftLength: shaftLength || null,
             inStock: params.in_stock_only || false
           },
           hint: "Now call get_visible_motors() to describe the motors on screen"
