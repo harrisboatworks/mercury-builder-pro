@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, useCallback } from 'react';
+import { useEffect, useState, useMemo, useCallback, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -161,6 +161,9 @@ function MotorSelectionContent() {
   // Config filter state - shared by UI pills and voice commands
   const [configFilters, setConfigFilters] = useState<ConfigFiltersState | null>(null);
   
+  // Lock to prevent voice-set filters from being cleared by HP change handlers
+  const voiceFilterLockRef = useRef(false);
+  
   // Exit intent for promo reminder
   const { showExitIntent, dismiss: dismissExitIntent } = useExitIntent({
     delay: 10000, // Show after 10 seconds on page
@@ -215,6 +218,10 @@ if (event.type === 'filter_motors') {
         const { horsepower, model, inStock, startType, controlType, shaftLength } = event.payload;
         
         console.log('  Extracted values → HP:', horsepower, '| Start:', startType, '| Control:', controlType, '| Shaft:', shaftLength);
+        
+        // LOCK filters so HP change handlers don't clear them
+        voiceFilterLockRef.current = true;
+        setTimeout(() => { voiceFilterLockRef.current = false; }, 500);
         
         // Set HP/model as search query (fuzzy search handles this well)
         if (horsepower) {
@@ -723,13 +730,25 @@ if (event.type === 'filter_motors') {
 
   const handleHpSuggestionSelect = (hp: number) => {
     setSearchQuery(hp.toString());
-    setConfigFilters(null); // Clear config filters when user manually changes search
+    // Only clear config filters if NOT locked by voice
+    if (!voiceFilterLockRef.current) {
+      setConfigFilters(null);
+    }
   };
   
-  // Clear config filters when user types in search
+  // Handler for HP filter changes from ConfigFilterSheet (doesn't clear config filters)
+  const handleHpFilterChange = (query: string) => {
+    setSearchQuery(query);
+    // Don't clear configFilters - user is using the filter sheet alongside config filters
+  };
+  
+  // Clear config filters when user types in search (manual typing only)
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
-    setConfigFilters(null);
+    // Only clear if NOT locked by voice
+    if (!voiceFilterLockRef.current) {
+      setConfigFilters(null);
+    }
   };
   
   // Handle recently viewed click - open motor details
@@ -829,7 +848,7 @@ if (event.type === 'filter_motors') {
                 <ConfigFilterSheet
                   motors={processedMotors}
                   activeHpFilter={searchQuery}
-                  onHpFilterChange={handleSearchChange}
+                  onHpFilterChange={handleHpFilterChange}
                   filters={configFilters}
                   onFilterChange={setConfigFilters}
                 />

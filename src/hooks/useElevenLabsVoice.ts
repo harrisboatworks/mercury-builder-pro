@@ -1712,14 +1712,23 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     });
   }, [conversation.isSpeaking]);
   
-  // Reset inactivity timer and clear thinking watchdog when agent starts speaking
+  // Manage inactivity timer based on agent speaking state
+  // Timer should start AFTER agent finishes speaking, not when it starts
   const isSpeakingRef = useRef(conversation.isSpeaking);
   useEffect(() => {
     if (conversation.isSpeaking && !isSpeakingRef.current) {
-      // Agent just started speaking - reset timer and clear thinking watchdog
-      console.log('[Voice] Agent started speaking - clearing watchdogs');
-      resetInactivityTimer();
+      // Agent just STARTED speaking - clear thinking watchdog but DON'T reset idle timer
+      console.log('[Voice] Agent started speaking - clearing thinking watchdog only');
       markAgentResponded();
+      // Clear idle timer while agent is speaking (we'll restart it when they stop)
+      if (inactivityTimerRef.current) {
+        clearTimeout(inactivityTimerRef.current);
+        inactivityTimerRef.current = null;
+      }
+    } else if (!conversation.isSpeaking && isSpeakingRef.current) {
+      // Agent just STOPPED speaking - NOW start the idle timer
+      console.log('[Voice] Agent finished speaking - starting inactivity timer');
+      resetInactivityTimer();
     }
     isSpeakingRef.current = conversation.isSpeaking;
   }, [conversation.isSpeaking, resetInactivityTimer, markAgentResponded]);
