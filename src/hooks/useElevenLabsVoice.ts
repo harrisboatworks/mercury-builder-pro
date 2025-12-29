@@ -1458,9 +1458,16 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         // No toast - screen navigation IS the feedback
         return JSON.stringify({ 
           success: true, 
-          message: `Showing ${filterDesc} on screen now.`,
+          message: `Screen now showing ${filterDesc}. Call get_visible_motors to see what's displayed.`,
           navigated: true,
-          filters: { hp: hpValue, startType: params.start_type, controlType: params.control_type, shaftLength: params.shaft_length }
+          activeFilters: { 
+            hp: hpValue || null, 
+            startType: params.start_type || null, 
+            controlType: params.control_type || null, 
+            shaftLength: params.shaft_length || null,
+            inStock: params.in_stock_only || false
+          },
+          hint: "Now call get_visible_motors() to describe the motors on screen"
         });
       },
       // Get the motors currently visible on screen (INSTANT - reads from frontend state)
