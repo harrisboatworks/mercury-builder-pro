@@ -239,7 +239,7 @@ export default function MotorCardPremium({
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
-            <div className="relative bg-gray-50 p-4 overflow-hidden">
+            <div className="relative bg-white p-4 overflow-hidden">
               <img 
                 src={imageUrl} 
                 alt={title} 

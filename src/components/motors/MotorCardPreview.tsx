@@ -347,7 +347,7 @@ export default function MotorCardPreview({
         onMouseEnter={preloadConfiguratorImagesHighPriority}
         onTouchStart={preloadConfiguratorImagesHighPriority}
       >
-        <div className="relative bg-gradient-to-b from-gray-50 to-white p-8 overflow-hidden">
+        <div className="relative bg-white p-8 overflow-hidden">
               {/* Shimmer loading overlay */}
               {!imageLoaded && (
                 <div className="absolute inset-0 bg-gray-50 animate-shimmer z-10" />
