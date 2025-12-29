@@ -6,6 +6,7 @@ import type { VoiceDiagnostics } from '@/lib/RealtimeVoice';
 import { dispatchVoiceNavigation, navigateToMotorsWithFilter, type MotorForQuote } from '@/lib/voiceNavigation';
 import { dispatchVoiceActivity, showTradeInEstimate, showCallbackConfirmation, showMotorComparison, showCurrentDeals, showLeadCaptureCard } from '@/lib/voiceActivityFeed';
 import { useVoiceSessionPersistence } from './useVoiceSessionPersistence';
+import { formatMotorsForVoice } from '@/lib/visibleMotorsStore';
 
 // Timeout configuration (in milliseconds)
 const INACTIVITY_WARNING_MS = 30000; // 30 seconds of silence before warning
@@ -1415,6 +1416,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           message: `Showing ${filterDesc} on screen now.`,
           navigated: true
         });
+      },
+      // Get the motors currently visible on screen (INSTANT - reads from frontend state)
+      get_visible_motors: () => {
+        console.log('[ClientTool] get_visible_motors - reading from frontend state');
+        const result = formatMotorsForVoice(8);
+        console.log('[ClientTool] get_visible_motors result:', result);
+        return result;
       },
       // Add motor to customer's quote
       add_motor_to_quote: async (params: { motor_model?: string; use_current_motor?: boolean }) => {
