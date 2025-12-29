@@ -5,6 +5,7 @@ import { ImageIcon } from "lucide-react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
 import { useQuote } from '@/contexts/QuoteContext';
+import { useAIChat } from '@/components/chat/GlobalAIChat';
 import { Button } from '@/components/ui/button';
 import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import { StockBadge } from '@/components/inventory/StockBadge';
@@ -75,6 +76,7 @@ export default function MotorCardPreview({
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
   const { promotions } = useActivePromotions();
   const { dispatch } = useQuote();
+  const { openChat } = useAIChat();
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
   const [galleryImages, setGalleryImages] = useState<string[]>([]);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -499,6 +501,7 @@ export default function MotorCardPreview({
                 shaft={shaft}
                 features={features}
                 motor={motor}
+                openChat={openChat}
               />
             </Suspense>
           )}
