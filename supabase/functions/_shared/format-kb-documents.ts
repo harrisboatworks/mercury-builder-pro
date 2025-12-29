@@ -35,6 +35,7 @@ import {
   REPOWER_VALUE_PROPS,
   CUSTOMER_STORIES,
   SMARTCRAFT_BENEFITS,
+  SHAFT_LENGTH_GUIDE,
 } from "./mercury-knowledge.ts";
 
 // ========== HARRIS BOAT WORKS GUIDE ==========
@@ -644,6 +645,103 @@ ${LOCAL_RECOMMENDATIONS.riceLake.topPick}
 `;
 }
 
+// ========== SHAFT LENGTH GUIDE (CRITICAL EDUCATION) ==========
+export function formatShaftLengthGuide(): string {
+  const now = new Date().toISOString().split('T')[0];
+  
+  return `# Shaft Length & Transom Height Guide
+Updated: ${now}
+
+## Why This Matters - Customer Education Critical
+
+**This is one of the most commonly misunderstood aspects of buying an outboard motor.** Many customers incorrectly believe they can simply buy a longer shaft "to be safe" or that it's "no big deal if the motor sits deeper." Both are wrong.
+
+## What is Shaft Length?
+
+${SHAFT_LENGTH_GUIDE.overview.what_it_is}
+
+**Critical Point:** ${SHAFT_LENGTH_GUIDE.overview.why_critical}
+
+**Common Misconception to Correct:** ${SHAFT_LENGTH_GUIDE.overview.common_misconception}
+
+## Shaft Length Options
+
+| Shaft | Code | Transom Height | Typical Boats |
+|-------|------|----------------|---------------|
+| Short | S | 13-16" | ${SHAFT_LENGTH_GUIDE.shaft_lengths.short.typical_boats} |
+| Long | L | 17-21" | ${SHAFT_LENGTH_GUIDE.shaft_lengths.long.typical_boats} |
+| Extra-Long | XL | 22-27" | ${SHAFT_LENGTH_GUIDE.shaft_lengths.extra_long.typical_boats} |
+| XXL | XXL | 28+" | ${SHAFT_LENGTH_GUIDE.shaft_lengths.extra_extra_long.typical_boats} |
+
+**Most Common:** Long shaft (20") fits the majority of recreational boats.
+
+## Problems When Shaft is TOO SHORT (Motor Too High)
+
+${SHAFT_LENGTH_GUIDE.problems_too_short.headline}
+
+${SHAFT_LENGTH_GUIDE.problems_too_short.issues.map(i => `- ${i}`).join('\n')}
+
+**What the customer experiences:** ${SHAFT_LENGTH_GUIDE.problems_too_short.customer_experience}
+
+## Problems When Shaft is TOO LONG (Motor Too Low)
+
+${SHAFT_LENGTH_GUIDE.problems_too_long.headline}
+
+**MYTH TO BUST:** ${SHAFT_LENGTH_GUIDE.problems_too_long.myth_to_bust}
+
+${SHAFT_LENGTH_GUIDE.problems_too_long.issues.map(i => `- ${i}`).join('\n')}
+
+**What the customer experiences:** ${SHAFT_LENGTH_GUIDE.problems_too_long.customer_experience}
+
+## How to Measure Transom Height
+
+1. ${SHAFT_LENGTH_GUIDE.how_to_measure.step1}
+2. ${SHAFT_LENGTH_GUIDE.how_to_measure.step2}
+3. ${SHAFT_LENGTH_GUIDE.how_to_measure.step3}
+4. ${SHAFT_LENGTH_GUIDE.how_to_measure.step4}
+
+**Pro Tip:** ${SHAFT_LENGTH_GUIDE.how_to_measure.pro_tip}
+
+**Tool:** ${SHAFT_LENGTH_GUIDE.how_to_measure.tool_reference}
+
+## Quick Reference Chart
+
+| Transom Height | Recommended Shaft |
+|----------------|-------------------|
+${Object.entries(SHAFT_LENGTH_GUIDE.quick_reference).map(([height, shaft]) => `| ${height} | ${shaft} |`).join('\n')}
+
+## Sales Guidance
+
+### When Customer Says "I'll Just Get the Longer One"
+${SHAFT_LENGTH_GUIDE.sales_guidance.when_customer_says_longer}
+
+### When Customer Doesn't Know Their Transom Height
+${SHAFT_LENGTH_GUIDE.sales_guidance.when_unsure}
+
+### Key Message
+${SHAFT_LENGTH_GUIDE.sales_guidance.key_message}
+
+## Common Customer Objections & Responses
+
+### "I don't mind if it sits a bit deeper"
+**Response:** "I understand the thinking, but here's why that matters - when the motor sits too deep, the exhaust is underwater too far which creates backpressure. You'll notice sluggish steering, burn more fuel, and the motor works harder than it should. It's not just looks - it affects performance every time you go out."
+
+### "Longer is safer, right?"
+**Response:** "Actually, both too short AND too long cause problems. The motor is engineered to work at a specific height relative to the water. Too high and it cavitates; too low and you get backpressure and drag. The right answer is to match it properly."
+
+### "My buddy has a longer shaft on his boat"
+**Response:** "Different boats have different transom heights. What matters is YOUR boat's transom. Let's measure it properly so we get you the right shaft length. Saves headaches later."
+
+## When in Doubt
+
+- Have the customer measure their transom
+- Invite them to bring the boat in
+- Offer to look at photos
+- Use the Transom Height Calculator on the website
+- NEVER guess - getting this wrong is a real problem
+`;
+}
+
 // Export all document generators
 export const KB_DOCUMENTS = {
   harris_guide: {
@@ -670,5 +768,10 @@ export const KB_DOCUMENTS = {
     name: "Mercury Expert Tips & FAQs",
     generator: formatBlogKnowledge,
     description: "Expert advice from blog: motor selection, maintenance, repowering, local tips"
+  },
+  shaft_length_guide: {
+    name: "Shaft Length & Transom Height Guide",
+    generator: formatShaftLengthGuide,
+    description: "Critical education on shaft length matching, common misconceptions, measurement guide"
   }
 };
