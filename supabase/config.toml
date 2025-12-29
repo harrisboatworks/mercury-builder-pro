@@ -179,3 +179,6 @@ verify_jwt = false
 
 [functions.elevenlabs-mcp-server]
 verify_jwt = false
+
+[functions.perplexity-prefetch]
+verify_jwt = false
