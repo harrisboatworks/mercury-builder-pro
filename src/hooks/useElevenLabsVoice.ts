@@ -3,7 +3,8 @@ import { useConversation } from '@elevenlabs/react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import type { VoiceDiagnostics } from '@/lib/RealtimeVoice';
-import { dispatchVoiceNavigation, type MotorForQuote } from '@/lib/voiceNavigation';
+import { dispatchVoiceNavigation, navigateToMotorsWithFilter, type MotorForQuote } from '@/lib/voiceNavigation';
+import { dispatchVoiceActivity, showTradeInEstimate, showCallbackConfirmation, showMotorComparison, showCurrentDeals } from '@/lib/voiceActivityFeed';
 import { useVoiceSessionPersistence } from './useVoiceSessionPersistence';
 
 // Timeout configuration (in milliseconds)
@@ -632,11 +633,22 @@ function handleTradeInEstimate(params: {
   const estimatedValue = baseValue * brandMult * condMult * depreciation;
   const lowValue = Math.round(estimatedValue * 0.85 / 100) * 100;
   const highValue = Math.round(estimatedValue * 1.15 / 100) * 100;
+  const midValue = Math.round((lowValue + highValue) / 2 / 100) * 100;
+  
+  // Show activity card in chat with "Apply to Quote" button
+  showTradeInEstimate({
+    brand: params.brand,
+    year: params.year,
+    horsepower: params.horsepower,
+    condition,
+    estimatedValue: Math.max(midValue, 350),
+    valueRange: { low: Math.max(lowValue, 200), high: Math.max(highValue, 500) },
+  });
   
   return JSON.stringify({
     success: true,
     estimate: { lowValue: Math.max(lowValue, 200), highValue: Math.max(highValue, 500) },
-    message: `A ${params.year} ${params.brand} ${params.horsepower} horsepower in ${condition} condition typically trades around $${Math.max(lowValue, 200).toLocaleString()} to $${Math.max(highValue, 500).toLocaleString()}. Final value depends on inspection, but that's a solid ballpark. Want me to add that to your quote?`
+    message: `A ${params.year} ${params.brand} ${params.horsepower} horsepower in ${condition} condition typically trades around $${Math.max(lowValue, 200).toLocaleString()} to $${Math.max(highValue, 500).toLocaleString()}. I've added a card to your chat where you can apply that to your quote with one tap.`
   });
 }
 
@@ -1298,7 +1310,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       }) => {
         return await handleSendFollowUpSMS(params);
       },
-      // Navigate to motors page with filters applied
+      // Navigate to motors page with filters applied (SILENT - screen changes, no chat card)
       navigate_to_motors: async (params: {
         horsepower?: number;
         model_search?: string;
@@ -1306,24 +1318,24 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       }) => {
         console.log('[ClientTool] navigate_to_motors', params);
         
-        dispatchVoiceNavigation({
-          type: 'filter_motors',
-          payload: {
-            horsepower: params.horsepower,
-            model: params.model_search,
-            inStock: params.in_stock_only
-          }
+        // Actually navigate to the page AND apply filters
+        navigateToMotorsWithFilter({
+          horsepower: params.horsepower,
+          model: params.model_search,
+          inStock: params.in_stock_only
         });
         
         const filterDesc = params.horsepower 
           ? `${params.horsepower}HP motors` 
           : params.model_search 
             ? `"${params.model_search}" motors`
-            : 'filtered motors';
+            : 'all motors';
         
+        // No toast - screen navigation IS the feedback
         return JSON.stringify({ 
           success: true, 
-          message: `Now showing ${filterDesc} on screen.` 
+          message: `Showing ${filterDesc} on screen now.`,
+          navigated: true
         });
       },
       // Add motor to customer's quote

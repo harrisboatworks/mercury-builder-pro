@@ -19,6 +19,8 @@ import { VoiceButton } from './VoiceButton';
 import { useVoice } from '@/contexts/VoiceContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { VoiceActivityCard } from './VoiceActivityCard';
+import { VOICE_ACTIVITY_EVENT, type VoiceActivityEvent } from '@/lib/voiceActivityFeed';
 
 interface Message {
   id: string;
@@ -32,6 +34,7 @@ interface Message {
     motor2: { model: string; hp: number; price: number };
     recommendation?: string;
   };
+  activityData?: VoiceActivityEvent;
 }
 
 export interface EnhancedChatWidgetHandle {
@@ -116,6 +119,24 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     useEffect(() => {
       scrollToBottom();
     }, [messages]);
+
+    // Listen for voice activity events and add them to messages
+    useEffect(() => {
+      const handleVoiceActivity = (e: CustomEvent<VoiceActivityEvent>) => {
+        const activity = e.detail;
+        const activityMessage: Message = {
+          id: activity.id,
+          text: '',
+          isUser: false,
+          timestamp: activity.timestamp,
+          activityData: activity,
+        };
+        setMessages(prev => [...prev, activityMessage]);
+      };
+      
+      window.addEventListener(VOICE_ACTIVITY_EVENT, handleVoiceActivity as EventListener);
+      return () => window.removeEventListener(VOICE_ACTIVITY_EVENT, handleVoiceActivity as EventListener);
+    }, []);
 
     // Scroll to bottom when chat opens
     useEffect(() => {
