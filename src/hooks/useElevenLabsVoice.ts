@@ -1243,11 +1243,15 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           }
           
           // Only auto-navigate if user is asking about motors (not just mentioning HP in passing)
-          const isMotorQuery = /motor|outboard|have|got|stock|show|looking|need/i.test(userTranscript);
+          // Expanded keywords for better detection of motor queries
+          const isMotorQuery = /motor|outboard|have|got|stock|show|looking|need|do you|any|sell|carry|available|want|interest/i.test(userTranscript);
           
           if (detectedHp && isMotorQuery) {
             console.log(`%c🚀 NAVIGATE-FIRST: Detected ${detectedHp}HP motor query - auto-navigating`, 'background: #4CAF50; color: white; padding: 2px 6px; border-radius: 4px;');
+            console.log('[Navigate-First] Transcript:', userTranscript, '| HP:', detectedHp, '| isMotorQuery:', isMotorQuery);
             navigateToMotorsWithFilter({ horsepower: detectedHp });
+          } else if (detectedHp) {
+            console.log('[Navigate-First] HP detected but not motor query:', userTranscript);
           }
           // === END NAVIGATE-FIRST SAFETY NET ===
 
