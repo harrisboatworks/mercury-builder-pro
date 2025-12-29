@@ -204,13 +204,26 @@ function MotorSelectionContent() {
       const event = e.detail;
       
       if (event.type === 'filter_motors') {
-        const { horsepower, model, inStock } = event.payload;
+        const { horsepower, model, inStock, startType, controlType, shaftLength } = event.payload;
         
-        // Set search query based on the filter type
-        if (horsepower) {
-          setSearchQuery(String(horsepower));
-        } else if (model) {
-          setSearchQuery(model);
+        // Build a comprehensive search query that includes config options
+        const queryParts: string[] = [];
+        if (horsepower) queryParts.push(String(horsepower));
+        if (model) queryParts.push(model);
+        
+        // Add config filters as search terms that fuzzySearch will match
+        // These map to model name patterns: E=electric, M=manual, H=tiller, L=long, etc.
+        if (startType === 'electric') queryParts.push('E'); // Electric start motors have 'E' in model
+        if (startType === 'manual') queryParts.push('M');   // Manual start motors have 'M' in model
+        if (controlType === 'tiller') queryParts.push('H'); // Tiller handle = 'H' in model
+        if (shaftLength === 'long') queryParts.push('L');   // Long shaft = 'L' in model
+        if (shaftLength === 'short') queryParts.push('S');  // Short shaft = 'S' in model (rare)
+        if (shaftLength === 'xl') queryParts.push('XL');    // Extra long = 'XL'
+        if (shaftLength === 'xxl') queryParts.push('XXL');  // Extra extra long = 'XXL'
+        
+        // Set combined search query
+        if (queryParts.length > 0) {
+          setSearchQuery(queryParts.join(' '));
         } else if (inStock) {
           setSearchQuery('stock');
         }
@@ -226,12 +239,19 @@ function MotorSelectionContent() {
           }
         }, 100);
         
-        // Show toast notification
-        const filterDesc = horsepower 
-          ? `${horsepower}HP motors` 
+        // Build descriptive toast message
+        const descParts: string[] = [];
+        if (horsepower) descParts.push(`${horsepower}HP`);
+        if (startType) descParts.push(startType === 'electric' ? 'electric start' : 'pull-start');
+        if (shaftLength) descParts.push(`${shaftLength} shaft`);
+        if (controlType) descParts.push(controlType);
+        
+        const filterDesc = descParts.length > 0 
+          ? descParts.join(', ') + ' motors'
           : model 
             ? `"${model}" motors`
             : 'in-stock motors';
+            
         toast({
           title: "Motors filtered",
           description: `Showing ${filterDesc}`,
