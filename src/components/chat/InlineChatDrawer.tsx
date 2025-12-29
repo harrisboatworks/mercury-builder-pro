@@ -10,7 +10,7 @@ import { useMotorViewSafe } from '@/contexts/MotorViewContext';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
-import { getMotorSpecificPrompts, refreshMotorPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
+import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
 
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
@@ -188,7 +188,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   }, [state.previewMotor, state.motor, state.boatInfo, location.pathname]);
 
   // Get contextual welcome message - friendly and conversational
-  const getWelcomeMessage = (): string => {
+  const getWelcomeMessage = useCallback((): string => {
     const path = location.pathname;
     const activeMotor = state.previewMotor || state.motor;
     
@@ -229,7 +229,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     
     // Default friendly greeting
     return "Hey! I'm here to help you find the perfect Mercury motor. What are you looking for?";
-  };
+  }, [location.pathname, state.previewMotor, state.motor]);
 
   // Convert persisted messages to UI format
   const convertPersistedMessages = useCallback((persisted: PersistedMessage[]): Message[] => {
@@ -354,7 +354,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         return prev;
       });
     }
-  }, [state.previewMotor, state.motor, hasInitialized, isOpen]);
+  }, [state.previewMotor, state.motor, hasInitialized, isOpen, getWelcomeMessage]);
 
   // Handle new initial messages (when chat reopens with a REAL question from search bar)
   const initialMessageSentRef = useRef<string | null>(null);
