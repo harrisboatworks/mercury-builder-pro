@@ -741,13 +741,13 @@ export const UnifiedMobileBar: React.FC = () => {
     const path = location.pathname;
     
     if (path === '/' || path === '/motors') {
-      return hasMotor 
-        ? `Ask about your ${displayMotor?.hp || ''}HP motor →`
+      return hasMotor && displayMotor?.hp
+        ? `Ask about your ${displayMotor.hp}HP motor →`
         : 'Ask about Mercury motors or get help choosing →';
     }
     if (path.includes('/motor-selection')) {
-      return hasMotor 
-        ? `Ask about ${displayMotor?.hp}HP specs or compare motors →`
+      return hasMotor && displayMotor?.hp
+        ? `Ask about ${displayMotor.hp}HP specs or compare motors →`
         : 'Need help choosing? Ask me anything →';
     }
     if (path.includes('/options')) {
