@@ -88,7 +88,7 @@ export function QuoteRevealCinematic({
   const [showSavingsBadge, setShowSavingsBadge] = useState(false);
   const [isSkipping, setIsSkipping] = useState(false);
   const [progress, setProgress] = useState(0);
-  const { playReveal, playSwoosh, playTick, playComplete, playAmbientPad, playCelebration } = useSound();
+  const { playReveal, playSwoosh, playTick, playComplete, playAmbientPad, playCelebration, playMotorNameReveal } = useSound();
   const { triggerHaptic } = useHapticFeedback();
   const priceIntervalRef = useRef<NodeJS.Timeout>();
   const startTimeRef = useRef<number>(0);
@@ -122,6 +122,16 @@ export function QuoteRevealCinematic({
       triggerHaptic('addedToQuote');
     }
   }, [showSavingsBadge, triggerHaptic]);
+
+  // Play motor name reveal sound with the animation delay
+  useEffect(() => {
+    if (stage === 'motor') {
+      const soundTimeout = setTimeout(() => {
+        playMotorNameReveal();
+      }, 400); // Match the 0.4s animation delay
+      return () => clearTimeout(soundTimeout);
+    }
+  }, [stage, playMotorNameReveal]);
 
   // Progress bar countdown
   useEffect(() => {
@@ -264,10 +274,14 @@ export function QuoteRevealCinematic({
         <AnimatePresence>
           {(stage !== 'spotlight') && (
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.9, filter: 'blur(8px)' }}
+              initial={{ opacity: 0, y: 60, scale: 0.7, filter: 'blur(12px)' }}
               animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
               exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{ 
+                duration: 1.8, 
+                ease: [0.16, 1, 0.3, 1],
+                scale: { duration: 2.2, ease: [0.16, 1, 0.3, 1] }
+              }}
               className="absolute top-[10%] z-10"
             >
               {imageUrl ? (

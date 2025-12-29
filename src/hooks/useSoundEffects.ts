@@ -11,7 +11,8 @@ type SoundType =
   | 'complete'
   | 'packageSelect'
   | 'ambientPad'
-  | 'celebration';
+  | 'celebration'
+  | 'motorNameReveal';
 
 interface SoundEffectsOptions {
   enabled?: boolean;
@@ -278,6 +279,51 @@ export function useSoundEffects(options: SoundEffectsOptions = {}) {
           });
           break;
         }
+
+        case 'motorNameReveal': {
+          // Premium shimmer sound - filtered noise with rising chime
+          const bufferSize = ctx.sampleRate * 0.3;
+          const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+          const data = buffer.getChannelData(0);
+          
+          // Generate soft shimmer noise
+          for (let i = 0; i < bufferSize; i++) {
+            data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 2);
+          }
+          
+          const source = ctx.createBufferSource();
+          source.buffer = buffer;
+          
+          const filter = ctx.createBiquadFilter();
+          filter.type = 'bandpass';
+          filter.frequency.setValueAtTime(2000, now);
+          filter.frequency.exponentialRampToValueAtTime(4000, now + 0.25);
+          filter.Q.value = 2;
+          
+          const shGain = ctx.createGain();
+          shGain.gain.setValueAtTime(0.12, now);
+          shGain.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+          
+          source.connect(filter);
+          filter.connect(shGain);
+          shGain.connect(masterGain);
+          source.start(now);
+          
+          // Add a gentle rising chime on top
+          const osc = ctx.createOscillator();
+          const chimeGain = ctx.createGain();
+          osc.connect(chimeGain);
+          chimeGain.connect(masterGain);
+          osc.frequency.setValueAtTime(800, now + 0.05);
+          osc.frequency.exponentialRampToValueAtTime(1200, now + 0.2);
+          osc.type = 'sine';
+          chimeGain.gain.setValueAtTime(0, now + 0.05);
+          chimeGain.gain.linearRampToValueAtTime(0.15, now + 0.1);
+          chimeGain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+          osc.start(now + 0.05);
+          osc.stop(now + 0.4);
+          break;
+        }
       }
     } catch (e) {
       // Silently fail if audio context not available
@@ -297,6 +343,7 @@ export function useSoundEffects(options: SoundEffectsOptions = {}) {
     playPackageSelect: useCallback(() => playSound('packageSelect'), [playSound]),
     playAmbientPad: useCallback(() => playSound('ambientPad'), [playSound]),
     playCelebration: useCallback(() => playSound('celebration'), [playSound]),
+    playMotorNameReveal: useCallback(() => playSound('motorNameReveal'), [playSound]),
     playSound,
   };
 }
