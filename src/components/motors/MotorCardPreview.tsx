@@ -12,10 +12,11 @@ import { StockBadge } from '@/components/inventory/StockBadge';
 import { ModalSkeleton } from '@/components/ui/ModalSkeleton';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { CompareButton } from './CompareButton';
-import { FavoriteButton } from './FavoriteButton';
+import { VoiceChatButton } from './VoiceChatButton';
+import { VoiceChatCoachMark } from './VoiceChatCoachMark';
 import { AskQuestionButton } from './AskQuestionButton';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
-import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
+import { useFeatureDiscovery } from '@/hooks/useFeatureDiscovery';
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import type { Motor } from '../../lib/motor-helpers';
@@ -85,7 +86,7 @@ export default function MotorCardPreview({
   
   // UX feature hooks
   const { toggleComparison, isInComparison, count: comparisonCount, isFull: comparisonFull } = useMotorComparison();
-  const { toggleFavorite, isFavorite } = useFavoriteMotors();
+  const { hasSeen: hasSeenVoiceCoachMark, markAsSeen: markVoiceCoachMarkSeen } = useFeatureDiscovery('harris-voice-coachmark');
   const { addToRecentlyViewed } = useRecentlyViewed();
   const { triggerHaptic } = useHapticFeedback();
   
@@ -414,10 +415,16 @@ export default function MotorCardPreview({
                     onToggle={() => toggleComparison(motor as any)}
                     count={comparisonCount}
                   />
-                  <FavoriteButton 
-                    isFavorite={isFavorite(motor.id)}
-                    onToggle={() => toggleFavorite(motor.id)}
-                  />
+                  <div className="relative">
+                    <VoiceChatCoachMark 
+                      show={!hasSeenVoiceCoachMark}
+                      onDismiss={markVoiceCoachMarkSeen}
+                    />
+                    <VoiceChatButton 
+                      motor={motor as any}
+                      onInteraction={markVoiceCoachMarkSeen}
+                    />
+                  </div>
                   <AskQuestionButton motor={motor} />
                 </div>
               )}
