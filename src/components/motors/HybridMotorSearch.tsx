@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import { Search, Sparkles, X, MessageCircle, Mic, History } from 'lucide-react';
+import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { useHpSuggestions, HpSuggestion } from '@/hooks/useHpSuggestions';
@@ -69,6 +70,7 @@ interface HybridMotorSearchProps {
   motors: Motor[];
   onHpSelect: (hp: number) => void;
   className?: string;
+  filterSlot?: React.ReactNode;
 }
 
 const RECENT_SEARCHES_KEY = 'motor-search-recent';
@@ -117,7 +119,8 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   onQueryChange,
   motors,
   onHpSelect,
-  className = ''
+  className = '',
+  filterSlot
 }) => {
   const [isFocused, setIsFocused] = useState(false);
   const [showHpSuggestions, setShowHpSuggestions] = useState(false);
@@ -629,6 +632,13 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           `}
         />
         
+        {/* Filter Slot - Integrated inside search bar */}
+        {filterSlot && (
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10">
+            {filterSlot}
+          </div>
+        )}
+
         {/* Keyboard Shortcut Hint & Voice Search */}
         <AnimatePresence>
           {!isFocused && !query && !isListening && (
@@ -636,7 +646,10 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2"
+              className={cn(
+                "absolute top-1/2 -translate-y-1/2 flex items-center gap-2",
+                filterSlot ? "right-14" : "right-4"
+              )}
             >
               {/* Voice Search Button - Mobile Only */}
               {speechSupported && (
