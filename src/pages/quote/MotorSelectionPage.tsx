@@ -195,7 +195,7 @@ function MotorSelectionContent() {
         const headerOffset = 180;
         const elementPosition = gridSection.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({ top: Math.max(0, offsetPosition), behavior: 'instant' });
+        window.scrollTo({ top: Math.max(0, offsetPosition), behavior: 'auto' });
       }
     }
   }, [searchQuery, hasInitiallyLoaded]);
