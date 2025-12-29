@@ -187,11 +187,28 @@ serve(async (req) => {
           .select("id, model, model_display, horsepower, family, in_stock, stock_quantity, msrp, dealer_price, availability")
           .order("horsepower", { ascending: true });
 
-        if (params?.horsepower) {
-          query = query.eq("horsepower", params.horsepower);
+        // ROBUST PARAM PARSING: Handle cases where ElevenLabs sends params incorrectly
+        // e.g., { horsepower: "FourStroke" } instead of { family: "FourStroke" }
+        let hpValue = params?.horsepower;
+        let familyValue = params?.family;
+        
+        // If horsepower looks like a family name, swap it
+        if (typeof hpValue === 'string' && /^(FourStroke|Verado|Pro\s*XS|SeaPro|ProKicker)$/i.test(hpValue)) {
+          console.log(`[Param Fix] horsepower="${hpValue}" looks like a family name, treating as family`);
+          familyValue = familyValue || hpValue;
+          hpValue = null;
         }
-        if (params?.family) {
-          query = query.ilike("family", `%${params.family}%`);
+        
+        // Parse horsepower to number if it's a string number
+        if (typeof hpValue === 'string' && /^\d+(\.\d+)?$/.test(hpValue)) {
+          hpValue = parseFloat(hpValue);
+        }
+        
+        if (hpValue && typeof hpValue === 'number') {
+          query = query.eq("horsepower", hpValue);
+        }
+        if (familyValue) {
+          query = query.ilike("family", `%${familyValue}%`);
         }
         if (params?.in_stock === true) {
           query = query.eq("in_stock", true).gt("stock_quantity", 0);
