@@ -9,6 +9,7 @@ import { useAIChat } from '@/components/chat/GlobalAIChat';
 import { Button } from '@/components/ui/button';
 import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import { StockBadge } from '@/components/inventory/StockBadge';
+import { PopularityBadge, getMotorPopularity } from './PopularityBadge';
 import { ModalSkeleton } from '@/components/ui/ModalSkeleton';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { CompareButton } from './CompareButton';
@@ -376,8 +377,8 @@ export default function MotorCardPreview({
                 )}
               </div>
               
-              {/* Stock Badge - Top Left */}
-              <div className="absolute top-4 left-4">
+              {/* Stock Badge & Popularity Badge - Top Left */}
+              <div className="absolute top-4 left-4 flex flex-col gap-1.5">
                 <StockBadge 
                   motor={{
                     in_stock: inStock,
@@ -386,6 +387,9 @@ export default function MotorCardPreview({
                   }}
                   variant="default"
                 />
+                {motor && getMotorPopularity(motor) && (
+                  <PopularityBadge type={getMotorPopularity(motor)!} />
+                )}
               </div>
               
               {/* HP Badge - Premium pill style */}
