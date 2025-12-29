@@ -864,7 +864,7 @@ export const BoatInformation = ({
                       </>}
 
 
-                    {compatibility && <Alert className={compatibility.type === 'warning' ? 'border-orange-500 bg-orange-50 dark:bg-orange-950/20' : 'border-blue-500 bg-blue-50 dark:bg-blue-950/20'}>
+                    {compatibility && !isSelectedTillerMotor && <Alert className={compatibility.type === 'warning' ? 'border-orange-500 bg-orange-50 dark:bg-orange-950/20' : 'border-blue-500 bg-blue-50 dark:bg-blue-950/20'}>
                         <div className="flex items-center gap-2">
                           {compatibility.icon}
                           <AlertDescription className={compatibility.type === 'warning' ? 'text-orange-800 dark:text-orange-200' : 'text-blue-800 dark:text-blue-200'}>
