@@ -84,7 +84,6 @@ const styles = StyleSheet.create({
     padding: 12,
     marginVertical: 12,
     backgroundColor: 'transparent',
-    borderRadius: 0,
   },
   
   priceLabel: {
@@ -200,7 +199,6 @@ const styles = StyleSheet.create({
     width: '48%',
     padding: 6,
     backgroundColor: colors.tableBg,
-    borderRadius: 0,
     borderLeft: '2 solid #cccccc',
   },
   featureCode: {
@@ -217,7 +215,6 @@ const styles = StyleSheet.create({
     marginTop: 12,
     padding: 10,
     backgroundColor: colors.infoBg,
-    borderRadius: 0,
     borderLeft: '2 solid #cccccc',
   },
   warrantyContent: {
