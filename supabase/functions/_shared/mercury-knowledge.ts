@@ -325,6 +325,96 @@ export const SMARTCRAFT_BENEFITS = {
   }
 };
 
+// ========== SHAFT LENGTH GUIDE (CRITICAL CUSTOMER EDUCATION) ==========
+
+export const SHAFT_LENGTH_GUIDE = {
+  overview: {
+    what_it_is: "Shaft length is the distance from the mounting bracket to the cavitation plate (anti-ventilation plate). It MUST match your boat's transom height.",
+    why_critical: "Wrong shaft length causes serious problems - this isn't cosmetic, it's functional.",
+    common_misconception: "Many customers think 'longer is safer' or 'I don't mind it deeper' - this is WRONG. Both too short AND too long cause real problems."
+  },
+  
+  shaft_lengths: {
+    short: { 
+      code: "S", 
+      inches: 15, 
+      transom_range: "13-16 inches",
+      typical_boats: "Small dinghies, inflatables, some aluminum boats",
+      notes: "Least common - most small boats use long shaft now"
+    },
+    long: { 
+      code: "L", 
+      inches: 20, 
+      transom_range: "17-21 inches",
+      typical_boats: "Most aluminum fishing boats, bass boats, runabouts, small pontoons",
+      notes: "Most popular size - fits majority of recreational boats"
+    },
+    extra_long: { 
+      code: "XL", 
+      inches: 25, 
+      transom_range: "22-27 inches",
+      typical_boats: "Deep-V hulls, offshore boats, larger pontoons, performance boats",
+      notes: "Common for offshore and larger vessels"
+    },
+    extra_extra_long: { 
+      code: "XXL", 
+      inches: 30, 
+      transom_range: "28+ inches",
+      typical_boats: "High-performance offshore, tall transoms, jackplate applications",
+      notes: "Specialty applications only"
+    }
+  },
+
+  problems_too_short: {
+    headline: "Motor Sits TOO HIGH - Serious Problems",
+    issues: [
+      "Propeller breaks water surface causing cavitation",
+      "Loss of thrust and control",
+      "Water intake ports above waterline = overheating risk",
+      "Propeller and gearcase damage from running in air",
+      "Dangerous in rough water - prop comes out of water"
+    ],
+    customer_experience: "The motor screams, you lose power, prop spins in air. Feels like the motor is slipping."
+  },
+
+  problems_too_long: {
+    headline: "Motor Sits TOO LOW - Also Serious Problems",
+    myth_to_bust: "'I don't mind it deeper' or 'longer is safer' - this is NOT OK!",
+    issues: [
+      "Exhaust underwater too deep = backpressure reduces performance",
+      "Increased drag = slower top speed, worse fuel economy",
+      "Steering becomes heavy and unresponsive",
+      "Water pickup and cooling system issues at speed",
+      "Anti-ventilation plate positioned wrong",
+      "Motor works harder, runs hotter, wears faster",
+      "Can't trim properly - always fighting the wrong height"
+    ],
+    customer_experience: "The boat feels sluggish, steering is heavy, you burn more fuel, and the motor works harder than it should. It's not 'fine' - it's costing you performance and motor life."
+  },
+
+  how_to_measure: {
+    step1: "Find the center of your transom (back of boat)",
+    step2: "Measure from the TOP of the transom straight down to the BOTTOM",
+    step3: "This is your transom height - measure in inches",
+    step4: "Match to the appropriate shaft length (see chart)",
+    pro_tip: "If you're between sizes or unsure, bring the boat in or send photos. We'll help you get it right.",
+    tool_reference: "Use the Transom Height Calculator on our website for guidance"
+  },
+
+  quick_reference: {
+    "13-16 inches": "Short shaft (15\")",
+    "17-21 inches": "Long shaft (20\") - most common",
+    "22-27 inches": "Extra-long shaft (25\")",
+    "28+ inches": "Extra-extra-long shaft (30\")"
+  },
+
+  sales_guidance: {
+    when_customer_says_longer: "Never recommend a longer shaft 'to be safe.' If they're unsure, recommend they measure properly or bring the boat in. Wrong is wrong in either direction.",
+    when_unsure: "If a customer doesn't know their transom height, don't guess. Have them measure or come in with the boat. Getting this wrong is a big problem.",
+    key_message: "The shaft length isn't a preference - it's a specification. Match it correctly and the motor performs as designed. Get it wrong and you're fighting problems every time you go out."
+  }
+};
+
 export function getMotorFamilyInfo(familyName: string): string {
   const normalizedName = familyName?.toLowerCase().replace(/[^a-z]/g, '') || '';
   
@@ -367,4 +457,18 @@ export function getRepowerValueProp(): { headline: string; message: string } {
 // Get a customer story for social proof
 export function getCustomerStory(): typeof CUSTOMER_STORIES[0] {
   return CUSTOMER_STORIES[Math.floor(Math.random() * CUSTOMER_STORIES.length)];
+}
+
+// Get shaft length recommendation from transom height
+export function getShaftRecommendation(transomInches: number): { shaft: string; code: string; notes: string } {
+  if (transomInches <= 16) {
+    return { shaft: "Short (15\")", code: "S", notes: "For transoms 13-16 inches" };
+  }
+  if (transomInches <= 21) {
+    return { shaft: "Long (20\")", code: "L", notes: "Most common - for transoms 17-21 inches" };
+  }
+  if (transomInches <= 27) {
+    return { shaft: "Extra-Long (25\")", code: "XL", notes: "For transoms 22-27 inches" };
+  }
+  return { shaft: "Extra-Extra-Long (30\")", code: "XXL", notes: "For transoms 28+ inches" };
 }

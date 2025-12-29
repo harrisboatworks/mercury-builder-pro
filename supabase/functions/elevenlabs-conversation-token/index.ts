@@ -41,9 +41,37 @@ async function getActivePromotions() {
 const MODEL_SUFFIX_GUIDE = `
 ## MODEL SUFFIX DECODER:
 - M = Manual pull-start, E = Electric start
-- H = Short shaft (15"), L = Long (20"), XL = Extra-long (25"), XXL = 30"
+- S = Short shaft (15"), L = Long (20"), XL = Extra-long (25"), XXL = 30"
+- H = Tiller Handle (steering handle on the motor)
 - PT = Power Trim, CT = Command Thrust (for heavy boats/pontoons)
 - Example: 9.9ELH = 9.9HP Electric start, Long shaft, tiller Handle
+`;
+
+// Critical shaft length education - common customer misconception
+const SHAFT_LENGTH_CRITICAL = `
+## SHAFT LENGTH MATCHING (CRITICAL - Common Customer Mistake):
+Shaft length MUST match the boat's transom height - this isn't optional or a preference.
+
+**WRONG SHAFT = REAL PROBLEMS:**
+- Too SHORT: Motor cavitates, prop spins in air, loses power, overheats, damages gearcase
+- Too LONG: NOT "fine" - causes exhaust backpressure, steering problems, increased drag, worse fuel economy, motor works harder
+
+**Common Customer Myths to Correct:**
+- "I don't mind it deeper" → WRONG! Extra length causes exhaust, steering, and performance issues
+- "Longer is safer" → WRONG! Both too short AND too long cause problems
+- "I'll just buy a longer one" → Ask: Have you measured your transom? Match is required.
+
+**Quick Reference:**
+- Short (15"): Transom 13-16" - dinghies, small inflatables
+- Long (20"): Transom 17-21" - MOST boats, aluminum, small pontoons
+- XL (25"): Transom 22-27" - deep-V, offshore, larger pontoons
+- XXL (30"): Transom 28+" - specialty offshore only
+
+**What to Tell Customers:**
+- If unsure: "Measure your transom height from top to bottom at the center, or bring the boat in"
+- Never recommend longer "to be safe" - recommend they measure properly
+- Direct them to the Transom Height Calculator on the website
+- This isn't preference - it's a specification. Getting it wrong hurts performance every trip.
 `;
 
 // Format promotion data - kept minimal
@@ -239,6 +267,7 @@ WRONG - NEVER DO THIS:
 You have tools to check motors, prices, and availability. Use them when customers ask about specific motors.
 ${currentMotorContext}
 ${MODEL_SUFFIX_GUIDE}
+${SHAFT_LENGTH_CRITICAL}
 ${promotionData}
 ${quoteContextPrompt}
 ${returningCustomerPrompt}
