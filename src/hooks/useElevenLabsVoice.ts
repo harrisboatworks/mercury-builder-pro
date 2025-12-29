@@ -1207,11 +1207,19 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       // Reset inactivity timer on any message (user or agent activity)
       resetInactivityTimer();
       
-      // Handle transcript events
+      // Handle transcript events - support multiple message formats from ElevenLabs
+      let userTranscript: string | undefined;
+      
       if (msg.type === 'user_transcript') {
+        // Format 1: Standard ElevenLabs transcript event
         const event = msg.user_transcription_event as Record<string, unknown> | undefined;
-        const userTranscript = event?.user_transcript as string | undefined;
-        if (userTranscript) {
+        userTranscript = event?.user_transcript as string | undefined;
+      } else if (msg.source === 'user' && msg.message) {
+        // Format 2: Alternative format with source/message
+        userTranscript = msg.message as string;
+      }
+      
+      if (userTranscript) {
           const now = performance.now();
           console.log('%c🎤 User said:', 'color: #9C27B0; font-weight: bold;', userTranscript);
           transcriptRef.current = userTranscript;
@@ -1306,7 +1314,6 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           // Start the thinking watchdog - if agent doesn't respond quickly, nudge it
           startThinkingWatchdog();
         }
-      }
       
       // Agent response received - mark as responded and clear watchdog
       if (msg.type === 'agent_response') {
@@ -1756,25 +1763,11 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
             });
           }
           
-          // Enable user_transcript events via overrides for HP detection fallback
-          const sessionOptions: any = {
+          // Start session - client_events must be configured in ElevenLabs dashboard, not here
+          await conversation.startSession({
             conversationToken: tokenData.token,
             connectionType: 'webrtc',
-            overrides: {
-              conversation: {
-                client_events: [
-                  'user_transcript',
-                  'agent_response',
-                  'agent_response_correction', 
-                  'client_tool_call',
-                  'interruption',
-                  'conversation_initiation_metadata',
-                ]
-              }
-            }
-          };
-          
-          await conversation.startSession(sessionOptions);
+          });
           
           console.log('WebRTC connection successful!');
           
