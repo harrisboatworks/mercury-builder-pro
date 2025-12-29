@@ -118,22 +118,49 @@ export function showMotorComparison(comparison: {
 }
 
 /**
- * Helper: Show callback confirmation
+ * Helper: Show callback/lead capture confirmation
  */
 export function showCallbackConfirmation(data: {
   customerName: string;
   preferredTime: string;
   phone: string;
+  motorInterest?: string;
 }): void {
   dispatchVoiceActivity({
     type: 'action',
     icon: '📞',
     title: 'Callback Scheduled',
-    description: `We'll call ${data.customerName} ${data.preferredTime}`,
+    description: `We'll call ${data.customerName} ${data.preferredTime}${data.motorInterest ? ` about ${data.motorInterest}` : ''}`,
     data,
     actions: [
       { label: 'View Contact Info', path: '/contact', variant: 'secondary' },
     ],
+  });
+}
+
+/**
+ * Helper: Show lead capture card (after collecting contact info)
+ */
+export function showLeadCaptureCard(data: {
+  customerName: string;
+  phone: string;
+  email?: string;
+  context?: string;
+  scheduledTime?: string;
+}): void {
+  const description = data.scheduledTime 
+    ? `${data.customerName} • Call scheduled ${data.scheduledTime}`
+    : `${data.customerName} • We'll be in touch soon`;
+    
+  dispatchVoiceActivity({
+    type: 'action',
+    icon: '✅',
+    title: 'Contact Info Saved',
+    description,
+    data,
+    actions: data.context?.includes('service') || data.context?.includes('parts')
+      ? [{ label: 'View Service Hours', path: '/service', variant: 'secondary' }]
+      : [{ label: 'Continue Browsing', path: '/motors', variant: 'secondary' }],
   });
 }
 

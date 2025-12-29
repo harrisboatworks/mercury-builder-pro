@@ -22,6 +22,7 @@ const iconMap: Record<string, React.ReactNode> = {
   '⚖️': <Scale className="w-4 h-4" />,
   '⭐': <Star className="w-4 h-4" />,
   '🎉': <PartyPopper className="w-4 h-4" />,
+  '✅': <Check className="w-4 h-4" />,
 };
 
 const typeIconMap: Record<string, React.ReactNode> = {
