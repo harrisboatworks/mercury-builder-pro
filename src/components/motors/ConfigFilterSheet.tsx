@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -21,18 +21,8 @@ export interface ConfigFiltersState {
   inStock?: boolean;
 }
 
-// HP filter options with popular flag
-const HP_FILTERS = [
-  { label: 'All', value: '', popular: false },
-  { label: '2.5', value: '2.5', popular: false },
-  { label: '9.9', value: '9.9', popular: false },
-  { label: '25', value: '25', popular: true },
-  { label: '40', value: '40', popular: true },
-  { label: '60', value: '60', popular: true },
-  { label: '115', value: '115', popular: false },
-  { label: '150', value: '150', popular: false },
-  { label: '300+', value: 'hp:>299', popular: false }
-];
+// Popular HP values based on common motor recommendations
+const POPULAR_HPS = new Set([25, 40, 60]);
 
 interface ConfigFilterSheetProps {
   filters: ConfigFiltersState | null;
@@ -70,6 +60,33 @@ export function ConfigFilterSheet({
     }
     prevCountRef.current = activeCount;
   }, [activeCount]);
+
+  // Generate HP filters dynamically from available motors
+  const hpFilters = useMemo(() => {
+    const hpSet = new Set<number>();
+    motors.forEach(m => hpSet.add(m.hp));
+    const uniqueHps = Array.from(hpSet).sort((a, b) => a - b);
+    
+    const filters: { label: string; value: string; popular: boolean }[] = [
+      { label: 'All', value: '', popular: false }
+    ];
+    
+    // Add each unique HP (excluding 300+ which goes in bucket)
+    uniqueHps.filter(hp => hp < 300).forEach(hp => {
+      filters.push({
+        label: String(hp),
+        value: String(hp),
+        popular: POPULAR_HPS.has(hp)
+      });
+    });
+    
+    // Add 300+ bucket if any motors have HP >= 300
+    if (uniqueHps.some(hp => hp >= 300)) {
+      filters.push({ label: '300+', value: 'hp:>299', popular: false });
+    }
+    
+    return filters;
+  }, [motors]);
 
   // Calculate counts for each HP filter
   const getHpCount = (filter: string): number => {
@@ -158,7 +175,7 @@ export function ConfigFilterSheet({
           <div>
             <h4 className="text-sm font-medium text-muted-foreground mb-2">Horsepower</h4>
             <div className="flex flex-wrap gap-1.5">
-              {HP_FILTERS.map(({ label, value, popular }) => {
+              {hpFilters.map(({ label, value, popular }) => {
                 const isActive = activeHpFilter === value || (value === '' && !activeHpFilter);
                 const hasStock = hasMotors(value);
                 
