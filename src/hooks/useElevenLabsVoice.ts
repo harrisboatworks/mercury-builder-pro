@@ -998,9 +998,25 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     }
   }, []);
 
+  // State ref for checking isSpeaking in triggerGracefulClose
+  const stateRef = useRef(state);
+  useEffect(() => {
+    stateRef.current = state;
+  }, [state]);
+  
   // Handle graceful goodbye and auto-disconnect after idle timeout
   const triggerGracefulClose = useCallback(async () => {
     console.log('[Voice] Triggering graceful close after idle timeout');
+    
+    // If agent is currently speaking, wait for it to finish before disconnecting
+    if (stateRef.current.isSpeaking) {
+      console.log('[Voice] Agent is speaking - waiting 3s before retry');
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      // Check again - if still speaking, give up and disconnect anyway
+      if (stateRef.current.isSpeaking) {
+        console.log('[Voice] Agent still speaking after wait - disconnecting anyway');
+      }
+    }
     
     // Send graceful close message to agent
     if (conversationRef.current?.status === 'connected') {
@@ -1147,7 +1163,6 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         isConnecting: false,
         isListening: true,
         diagnostics: createDiagnostics(true),
-        inactivityWarningShown: false,
         currentPhase: 'listening',
         turnTiming: initialTurnTiming,
       }));
@@ -1167,7 +1182,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         isConnected: false,
         isListening: false,
         isSpeaking: false,
-        inactivityWarningShown: false,
+        currentPhase: 'idle',
       }));
     },
     onMessage: (message: unknown) => {
@@ -1180,12 +1195,15 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         console.log('%c🔧 ELEVENLABS TOOL MESSAGE RECEIVED', 'background: #FF9800; color: white; font-size: 14px; padding: 4px 8px; border-radius: 4px;');
         console.log('%c Full message:', 'color: #FF9800; font-weight: bold;', message);
       } else {
-        console.log(`[ElevenLabs] ${msgType}:`, message);
+        // Skip noisy VAD score messages for cleaner logs
+        if (msgType !== 'vad_score') {
+          console.log(`[ElevenLabs] ${msgType}:`, message);
+        }
       }
       // ===============================================
       
-      // Reset inactivity timer on any message (user or agent activity)
-      resetInactivityTimer();
+      // IMPORTANT: Only reset inactivity timer on MEANINGFUL user activity
+      // NOT on every message (VAD, keepalives, etc.) - that prevents auto-close from ever triggering
       
       // Handle transcript events - support multiple message formats from ElevenLabs
       let userTranscript: string | undefined;
@@ -1203,6 +1221,9 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           const now = performance.now();
           console.log('%c🎤 User said:', 'color: #9C27B0; font-weight: bold;', userTranscript);
           transcriptRef.current = userTranscript;
+          
+          // Reset inactivity timer ONLY when user actually speaks (not on every message)
+          resetInactivityTimer();
 
           // === NAVIGATE-FIRST SAFETY NET ===
           // Detect HP intent and auto-navigate BEFORE the agent responds
@@ -1418,43 +1439,68 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           console.warn('[ClientTool] navigate_to_motors: horsepower was boolean, ignoring');
         }
         
-        // === NORMALIZE start_type (handle ElevenLabs variations) ===
+        // === NORMALIZE start_type (handle ALL ElevenLabs variations) ===
         let startType: 'electric' | 'manual' | undefined = undefined;
         if (params.start_type && typeof params.start_type === 'string') {
-          const normalized = params.start_type.toLowerCase().trim();
-          if (normalized === 'electric' || normalized === 'e' || normalized === 'electric start') {
+          const normalized = params.start_type.toLowerCase().trim().replace(/[_\-\s]+/g, '');
+          // Electric variations
+          if (normalized === 'electric' || normalized === 'e' || normalized === 'electricstart' || 
+              normalized === 'estart' || normalized === 'key' || normalized === 'keystart' ||
+              normalized.includes('electric')) {
             startType = 'electric';
-          } else if (normalized === 'manual' || normalized === 'm' || normalized === 'pull' || 
-                     normalized === 'pull start' || normalized === 'pull-start' || normalized === 'rope') {
+          }
+          // Manual variations
+          else if (normalized === 'manual' || normalized === 'm' || normalized === 'pull' || 
+                   normalized === 'pullstart' || normalized === 'rope' || normalized === 'ropestart' ||
+                   normalized === 'hand' || normalized === 'handstart' || normalized.includes('pull') || 
+                   normalized.includes('manual')) {
             startType = 'manual';
           }
           console.log(`[ClientTool] start_type normalized: "${params.start_type}" → "${startType}"`);
         }
         
-        // === NORMALIZE control_type (handle ElevenLabs variations) ===
+        // === NORMALIZE control_type (handle ALL ElevenLabs variations) ===
         let controlType: 'tiller' | 'remote' | undefined = undefined;
         if (params.control_type && typeof params.control_type === 'string') {
-          const normalized = params.control_type.toLowerCase().trim();
-          if (normalized === 'tiller' || normalized === 'tiller handle' || normalized === 'tiller steering' || normalized === 'handle') {
+          const normalized = params.control_type.toLowerCase().trim().replace(/[_\-\s]+/g, '');
+          // Tiller variations
+          if (normalized === 'tiller' || normalized === 'tillerhandle' || normalized === 'tillersteering' || 
+              normalized === 'handle' || normalized.includes('tiller')) {
             controlType = 'tiller';
-          } else if (normalized === 'remote' || normalized === 'remote steering' || normalized === 'console' || normalized === 'steering wheel') {
+          }
+          // Remote variations
+          else if (normalized === 'remote' || normalized === 'remotesteering' || normalized === 'console' || 
+                   normalized === 'steeringwheel' || normalized === 'wheel' || normalized.includes('remote')) {
             controlType = 'remote';
           }
           console.log(`[ClientTool] control_type normalized: "${params.control_type}" → "${controlType}"`);
         }
         
-        // === NORMALIZE shaft_length (handle ElevenLabs variations) ===
+        // === NORMALIZE shaft_length (handle ALL ElevenLabs variations) ===
         let shaftLength: 'short' | 'long' | 'xl' | 'xxl' | undefined = undefined;
         if (params.shaft_length && typeof params.shaft_length === 'string') {
-          const normalized = params.shaft_length.toLowerCase().trim();
-          if (normalized === 'short' || normalized === 's' || normalized === '15' || normalized === '15 inch' || normalized === '15"') {
+          const normalized = params.shaft_length.toLowerCase().trim().replace(/[_\-\s]+/g, '');
+          // Short variations (15")
+          if (normalized === 'short' || normalized === 's' || normalized === '15' || 
+              normalized === '15inch' || normalized === '15in' || normalized === '15"' ||
+              normalized === 'shortshaft' || normalized.includes('short')) {
             shaftLength = 'short';
-          } else if (normalized === 'long' || normalized === 'l' || normalized === '20' || normalized === '20 inch' || normalized === '20"') {
+          }
+          // Long variations (20")
+          else if (normalized === 'long' || normalized === 'l' || normalized === '20' || 
+                   normalized === '20inch' || normalized === '20in' || normalized === '20"' ||
+                   normalized === 'longshaft' || (normalized.includes('long') && !normalized.includes('extra'))) {
             shaftLength = 'long';
-          } else if (normalized === 'xl' || normalized === 'extra long' || normalized === 'extra-long' || 
-                     normalized === '25' || normalized === '25 inch' || normalized === '25"') {
+          }
+          // XL variations (25")
+          else if (normalized === 'xl' || normalized === 'extralong' || normalized === 'extralongshaft' ||
+                   normalized === '25' || normalized === '25inch' || normalized === '25in' || normalized === '25"' ||
+                   normalized.includes('extra') || normalized.includes('xl')) {
             shaftLength = 'xl';
-          } else if (normalized === 'xxl' || normalized === '30' || normalized === '30 inch' || normalized === '30"') {
+          }
+          // XXL variations (30")
+          else if (normalized === 'xxl' || normalized === '30' || normalized === '30inch' || 
+                   normalized === '30in' || normalized === '30"') {
             shaftLength = 'xxl';
           }
           console.log(`[ClientTool] shaft_length normalized: "${params.shaft_length}" → "${shaftLength}"`);
