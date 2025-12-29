@@ -15,6 +15,7 @@ interface SoundContextValue {
   playPackageSelect: () => void;
   playAmbientPad: () => void;
   playCelebration: () => void;
+  playMotorNameReveal: () => void;
 }
 
 const SoundContext = createContext<SoundContextValue | null>(null);
@@ -58,6 +59,7 @@ export function SoundProvider({ children }: { children: ReactNode }) {
         playPackageSelect: sounds.playPackageSelect,
         playAmbientPad: sounds.playAmbientPad,
         playCelebration: sounds.playCelebration,
+        playMotorNameReveal: sounds.playMotorNameReveal,
       }}
     >
       {children}
@@ -83,6 +85,7 @@ export function useSound() {
       playPackageSelect: () => {},
       playAmbientPad: () => {},
       playCelebration: () => {},
+      playMotorNameReveal: () => {},
     };
   }
   return context;
