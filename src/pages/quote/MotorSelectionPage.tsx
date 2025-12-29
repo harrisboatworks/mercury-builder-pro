@@ -24,7 +24,6 @@ import { HPMotorCard } from '@/components/motors/HPMotorCard';
 // ViewModeToggle removed - using expert view only
 import { MotorConfiguratorModal } from '@/components/motors/MotorConfiguratorModal';
 import { ConfigFilterSheet, type ConfigFiltersState } from '@/components/motors/ConfigFilterSheet';
-import { SortDropdown, type SortOption } from '@/components/motors/SortDropdown';
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
@@ -161,9 +160,6 @@ function MotorSelectionContent() {
   
   // Config filter state - shared by UI pills and voice commands
   const [configFilters, setConfigFilters] = useState<ConfigFiltersState | null>(null);
-  
-  // Sort state
-  const [sortBy, setSortBy] = useState<SortOption>('featured');
   
   // Exit intent for promo reminder
   const { showExitIntent, dismiss: dismissExitIntent } = useExitIntent({
@@ -609,25 +605,6 @@ function MotorSelectionContent() {
     });
   }, [filteredMotors, configFilters]);
 
-  // Apply sorting AFTER filtering
-  const sortedMotors = useMemo(() => {
-    const motors = [...finalFilteredMotors];
-    switch (sortBy) {
-      case 'price-asc':
-        return motors.sort((a, b) => (a.price || 0) - (b.price || 0));
-      case 'price-desc':
-        return motors.sort((a, b) => (b.price || 0) - (a.price || 0));
-      case 'hp-asc':
-        return motors.sort((a, b) => a.hp - b.hp);
-      case 'hp-desc':
-        return motors.sort((a, b) => b.hp - a.hp);
-      case 'stock':
-        return motors.sort((a, b) => (b.in_stock ? 1 : 0) - (a.in_stock ? 1 : 0));
-      default:
-        return motors;
-    }
-  }, [finalFilteredMotors, sortBy]);
-
   // Update the visible motors store for voice agent access
   useEffect(() => {
     // Parse HP from search query if numeric
@@ -635,7 +612,7 @@ function MotorSelectionContent() {
     const filterHP = queryNum && !isNaN(queryNum) ? queryNum : null;
     
     // Map to VisibleMotor format for the store
-    const visibleMotors: VisibleMotor[] = sortedMotors.map(m => ({
+    const visibleMotors: VisibleMotor[] = finalFilteredMotors.map(m => ({
       id: m.id,
       model: m.model_number || m.model,
       model_display: m.model,
@@ -647,7 +624,7 @@ function MotorSelectionContent() {
     }));
     
     setVisibleMotors(visibleMotors, filterHP, searchQuery || null);
-  }, [sortedMotors, searchQuery]);
+  }, [finalFilteredMotors, searchQuery]);
 
   // Group motors by HP for simple view
   const groupedMotors = useGroupedMotors(processedMotors);
@@ -819,22 +796,19 @@ function MotorSelectionContent() {
               onHpSelect={handleHpSuggestionSelect}
               className="w-full"
               filterSlot={
-                <div className="flex items-center gap-2">
-                  <SortDropdown value={sortBy} onChange={setSortBy} />
-                  <ConfigFilterSheet
-                    motors={processedMotors}
-                    activeHpFilter={searchQuery}
-                    onHpFilterChange={handleSearchChange}
-                    filters={configFilters}
-                    onFilterChange={setConfigFilters}
-                  />
-                </div>
+                <ConfigFilterSheet
+                  motors={processedMotors}
+                  activeHpFilter={searchQuery}
+                  onHpFilterChange={handleSearchChange}
+                  filters={configFilters}
+                  onFilterChange={setConfigFilters}
+                />
               }
             />
             
             {(searchQuery || configFilters) && (
               <div className="text-center mt-2 text-xs text-luxury-gray">
-                {sortedMotors.length} results{sortBy !== 'featured' && ` · sorted by ${sortBy.replace('-', ' ').replace('asc', '↑').replace('desc', '↓')}`}
+                {finalFilteredMotors.length} results
                 {configFilters && (
                   <span className="ml-2 text-primary">
                     (filtered by: {[
@@ -871,7 +845,7 @@ function MotorSelectionContent() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Motors Grid - Expert View Only */}
-          {sortedMotors.length > 0 ? (
+          {finalFilteredMotors.length > 0 ? (
             <motion.div 
               className="grid gap-8 sm:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
               initial={hasInitiallyLoaded ? false : "hidden"}
@@ -887,7 +861,7 @@ function MotorSelectionContent() {
                 }
               }}
             >
-              {sortedMotors.map(motor => {
+              {finalFilteredMotors.map(motor => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
                 const specs = dbMotor?.specifications || {};
