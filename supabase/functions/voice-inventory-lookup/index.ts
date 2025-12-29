@@ -192,6 +192,16 @@ serve(async (req) => {
         let hpValue = params?.horsepower;
         let familyValue = params?.family;
         
+        // Common spoken number to actual number mapping
+        const spokenNumbers: Record<string, number> = {
+          'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'eight': 8, 'nine': 9, 'ten': 10,
+          'fifteen': 15, 'twenty': 20, 'twenty-five': 25, 'twentyfive': 25, 'thirty': 30,
+          'forty': 40, 'fifty': 50, 'sixty': 60, 'seventy': 70, 'seventy-five': 75, 'seventyfive': 75,
+          'eighty': 80, 'ninety': 90, 'hundred': 100, 'one-fifteen': 115, 'onefifteen': 115,
+          'one-fifty': 150, 'onefifty': 150, 'two-hundred': 200, 'twohundred': 200,
+          'two-fifty': 250, 'twofifty': 250, 'three-hundred': 300, 'threehundred': 300
+        };
+        
         // If horsepower looks like a family name, swap it
         if (typeof hpValue === 'string' && /^(FourStroke|Verado|Pro\s*XS|SeaPro|ProKicker)$/i.test(hpValue)) {
           console.log(`[Param Fix] horsepower="${hpValue}" looks like a family name, treating as family`);
@@ -199,9 +209,26 @@ serve(async (req) => {
           hpValue = null;
         }
         
-        // Parse horsepower to number if it's a string number
-        if (typeof hpValue === 'string' && /^\d+(\.\d+)?$/.test(hpValue)) {
-          hpValue = parseFloat(hpValue);
+        // Try to parse spoken numbers to actual numbers
+        if (typeof hpValue === 'string') {
+          const normalizedHp = hpValue.toLowerCase().replace(/\s+/g, '-');
+          if (spokenNumbers[normalizedHp]) {
+            console.log(`[Param Fix] Converting spoken "${hpValue}" to number ${spokenNumbers[normalizedHp]}`);
+            hpValue = spokenNumbers[normalizedHp];
+          } else if (/^\d+(\.\d+)?$/.test(hpValue)) {
+            // Parse numeric string
+            hpValue = parseFloat(hpValue);
+          } else {
+            // Try to extract any number from the string
+            const numMatch = hpValue.match(/(\d+)/);
+            if (numMatch) {
+              console.log(`[Param Fix] Extracted number ${numMatch[1]} from "${hpValue}"`);
+              hpValue = parseInt(numMatch[1], 10);
+            } else {
+              console.log(`[Param Fix] Could not parse HP from "${hpValue}", ignoring`);
+              hpValue = null;
+            }
+          }
         }
         
         if (hpValue && typeof hpValue === 'number') {
