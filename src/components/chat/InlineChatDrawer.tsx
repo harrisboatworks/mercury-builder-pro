@@ -256,6 +256,21 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     return 'general';
   };
 
+  // Reset initialization when page category changes (so chat restarts fresh on new context)
+  const currentCategoryRef = useRef<string | null>(null);
+  
+  useEffect(() => {
+    const newCategory = getPageCategory(location.pathname);
+    
+    // If category changed since last check, reset initialization
+    if (currentCategoryRef.current !== null && currentCategoryRef.current !== newCategory) {
+      console.log(`[Chat] Page category changed from ${currentCategoryRef.current} to ${newCategory}, resetting initialization`);
+      setHasInitialized(false);
+    }
+    
+    currentCategoryRef.current = newCategory;
+  }, [location.pathname]);
+
   // Track which motor the welcome message was generated for
   const welcomeMotorIdRef = useRef<string | null>(null);
 
