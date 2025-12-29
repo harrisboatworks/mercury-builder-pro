@@ -44,6 +44,8 @@ import { getMotorImages } from '@/lib/mercury-product-images';
 import { VOICE_NAVIGATION_EVENT, type VoiceNavigationEvent } from '@/lib/voiceNavigation';
 import { setVisibleMotors, type VisibleMotor } from '@/lib/visibleMotorsStore';
 import type { MotorGroup } from '@/hooks/useGroupedMotors';
+import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
+import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
 // Database types
 interface DbMotor {
@@ -156,6 +158,13 @@ function MotorSelectionContent() {
   // Quiz state - local state since we removed the view mode toggle
   const [showQuiz, setShowQuiz] = useState(false);
   
+  // Voice filter state - structured filters separate from text search
+  const [voiceFilters, setVoiceFilters] = useState<{
+    startType?: 'electric' | 'manual';
+    controlType?: 'tiller' | 'remote';
+    shaftLength?: 'short' | 'long' | 'xl' | 'xxl';
+  } | null>(null);
+  
   // Exit intent for promo reminder
   const { showExitIntent, dismiss: dismissExitIntent } = useExitIntent({
     delay: 10000, // Show after 10 seconds on page
@@ -206,26 +215,24 @@ function MotorSelectionContent() {
       if (event.type === 'filter_motors') {
         const { horsepower, model, inStock, startType, controlType, shaftLength } = event.payload;
         
-        // Build a comprehensive search query that includes config options
-        const queryParts: string[] = [];
-        if (horsepower) queryParts.push(String(horsepower));
-        if (model) queryParts.push(model);
-        
-        // Add config filters as search terms that fuzzySearch will match
-        // These map to model name patterns: E=electric, M=manual, H=tiller, L=long, etc.
-        if (startType === 'electric') queryParts.push('E'); // Electric start motors have 'E' in model
-        if (startType === 'manual') queryParts.push('M');   // Manual start motors have 'M' in model
-        if (controlType === 'tiller') queryParts.push('H'); // Tiller handle = 'H' in model
-        if (shaftLength === 'long') queryParts.push('L');   // Long shaft = 'L' in model
-        if (shaftLength === 'short') queryParts.push('S');  // Short shaft = 'S' in model (rare)
-        if (shaftLength === 'xl') queryParts.push('XL');    // Extra long = 'XL'
-        if (shaftLength === 'xxl') queryParts.push('XXL');  // Extra extra long = 'XXL'
-        
-        // Set combined search query
-        if (queryParts.length > 0) {
-          setSearchQuery(queryParts.join(' '));
+        // Set HP/model as search query (fuzzy search handles this well)
+        if (horsepower) {
+          setSearchQuery(String(horsepower));
+        } else if (model) {
+          setSearchQuery(model);
         } else if (inStock) {
           setSearchQuery('stock');
+        }
+        
+        // Store structured filters separately for real filtering
+        if (startType || controlType || shaftLength) {
+          setVoiceFilters({
+            startType: startType as 'electric' | 'manual' | undefined,
+            controlType: controlType as 'tiller' | 'remote' | undefined,
+            shaftLength: shaftLength as 'short' | 'long' | 'xl' | 'xxl' | undefined,
+          });
+        } else {
+          setVoiceFilters(null);
         }
         
         // Scroll to the motor grid
@@ -545,6 +552,57 @@ function MotorSelectionContent() {
     return fuzzyResults.map(r => r.item);
   }, [processedMotors, searchQuery]);
 
+  // Apply structured voice filters AFTER fuzzy search
+  const finalFilteredMotors = useMemo(() => {
+    if (!voiceFilters) return filteredMotors;
+    
+    return filteredMotors.filter(motor => {
+      const modelName = motor.model || '';
+      const hp = motor.hp;
+      
+      // Start type filter using robust extraction
+      if (voiceFilters.startType === 'electric') {
+        // Large motors (>=40HP) are always electric - no code needed
+        if (hp < 40 && !hasElectricStart(modelName)) return false;
+      }
+      if (voiceFilters.startType === 'manual') {
+        // Large motors can't be manual start
+        if (hp >= 40) return false;
+        if (!hasManualStart(modelName)) return false;
+      }
+      
+      // Control type filter
+      if (voiceFilters.controlType === 'tiller') {
+        // Large motors don't have tiller
+        if (hp >= 40) return false;
+        if (!hasTillerControl(modelName)) return false;
+      }
+      if (voiceFilters.controlType === 'remote') {
+        if (!hasRemoteControl(modelName)) return false;
+      }
+      
+      // Shaft length filter using parseMercuryRigCodes
+      if (voiceFilters.shaftLength) {
+        const rig = parseMercuryRigCodes(modelName);
+        const shaftMap: Record<string, string> = { 
+          short: 'S', 
+          long: 'L', 
+          xl: 'XL', 
+          xxl: 'XXL' 
+        };
+        const targetCode = shaftMap[voiceFilters.shaftLength];
+        // Short shaft is detected by ABSENCE of L/XL/XXL in the rig code
+        if (voiceFilters.shaftLength === 'short') {
+          if (rig.shaft_code && ['L', 'XL', 'XXL'].includes(rig.shaft_code)) return false;
+        } else {
+          if (rig.shaft_code !== targetCode) return false;
+        }
+      }
+      
+      return true;
+    });
+  }, [filteredMotors, voiceFilters]);
+
   // Update the visible motors store for voice agent access
   useEffect(() => {
     // Parse HP from search query if numeric
@@ -552,7 +610,7 @@ function MotorSelectionContent() {
     const filterHP = queryNum && !isNaN(queryNum) ? queryNum : null;
     
     // Map to VisibleMotor format for the store
-    const visibleMotors: VisibleMotor[] = filteredMotors.map(m => ({
+    const visibleMotors: VisibleMotor[] = finalFilteredMotors.map(m => ({
       id: m.id,
       model: m.model_number || m.model,
       model_display: m.model,
@@ -564,7 +622,7 @@ function MotorSelectionContent() {
     }));
     
     setVisibleMotors(visibleMotors, filterHP, searchQuery || null);
-  }, [filteredMotors, searchQuery]);
+  }, [finalFilteredMotors, searchQuery]);
 
   // Group motors by HP for simple view
   const groupedMotors = useGroupedMotors(processedMotors);
@@ -633,6 +691,13 @@ function MotorSelectionContent() {
 
   const handleHpSuggestionSelect = (hp: number) => {
     setSearchQuery(hp.toString());
+    setVoiceFilters(null); // Clear voice filters when user manually changes search
+  };
+  
+  // Clear voice filters when user types in search
+  const handleSearchChange = (query: string) => {
+    setSearchQuery(query);
+    setVoiceFilters(null);
   };
   
   // Handle recently viewed click - open motor details
@@ -724,7 +789,7 @@ function MotorSelectionContent() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
             <HybridMotorSearch
               query={searchQuery}
-              onQueryChange={setSearchQuery}
+              onQueryChange={handleSearchChange}
               motors={processedMotors}
               onHpSelect={handleHpSuggestionSelect}
               className="w-full"
@@ -735,13 +800,22 @@ function MotorSelectionContent() {
               <QuickHPFilters 
                 motors={processedMotors}
                 activeFilter={searchQuery}
-                onFilterChange={setSearchQuery}
+                onFilterChange={handleSearchChange}
               />
             </div>
             
-            {searchQuery && (
+            {(searchQuery || voiceFilters) && (
               <div className="text-center mt-2 text-xs text-luxury-gray">
-                {filteredMotors.length} results
+                {finalFilteredMotors.length} results
+                {voiceFilters && (
+                  <span className="ml-2 text-primary">
+                    (filtered by: {[
+                      voiceFilters.startType,
+                      voiceFilters.controlType,
+                      voiceFilters.shaftLength && `${voiceFilters.shaftLength} shaft`
+                    ].filter(Boolean).join(', ')})
+                  </span>
+                )}
               </div>
             )}
           </div>
@@ -752,7 +826,7 @@ function MotorSelectionContent() {
           isOpen={showSearchOverlay}
           onClose={() => setShowSearchOverlay(false)}
           searchQuery={searchQuery}
-          onQueryChange={setSearchQuery}
+          onQueryChange={handleSearchChange}
           motors={processedMotors}
           onHpSelect={handleHpSuggestionSelect}
         />
@@ -768,7 +842,7 @@ function MotorSelectionContent() {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Motors Grid - Expert View Only */}
-          {filteredMotors.length > 0 ? (
+          {finalFilteredMotors.length > 0 ? (
             <motion.div 
               className="grid gap-8 sm:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
               initial={hasInitiallyLoaded ? false : "hidden"}
@@ -784,7 +858,7 @@ function MotorSelectionContent() {
                 }
               }}
             >
-              {filteredMotors.map(motor => {
+              {finalFilteredMotors.map(motor => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
                 const specs = dbMotor?.specifications || {};
@@ -862,7 +936,7 @@ function MotorSelectionContent() {
           )}
           
           {/* Financing Disclaimer */}
-          {filteredMotors.length > 0 && (
+          {finalFilteredMotors.length > 0 && (
             <div className="mt-12 pt-8 border-t border-gray-200">
               <p className="text-xs font-light text-gray-500 text-center max-w-3xl mx-auto">
                 * Monthly payment estimates based on recommended financing term at {currentFinancingRate}% APR with $0 down, 
