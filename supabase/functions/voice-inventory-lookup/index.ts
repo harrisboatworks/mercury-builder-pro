@@ -234,9 +234,38 @@ serve(async (req) => {
 
         // ROBUST PARAM PARSING: Handle cases where ElevenLabs sends params incorrectly
         // e.g., { horsepower: "FourStroke" } instead of { family: "FourStroke" }
+        // or { horsepower: true } instead of { horsepower: 150 }
         let hpValue = params?.horsepower;
         let familyValue = params?.family;
         const userMessage = params?.user_message || params?.originalRequest || '';
+        
+        // Handle boolean misinterpretation: ElevenLabs sometimes sends horsepower as true/false instead of a number
+        if (typeof hpValue === 'boolean') {
+          console.warn(`[Param Fix] MISINTERPRETATION: horsepower received as boolean (${hpValue}) instead of number`);
+          // Try to recover from user message
+          if (userMessage) {
+            const recoveredHP = extractHPFromText(userMessage);
+            if (recoveredHP) {
+              console.log(`[Param Fix] Recovered HP=${recoveredHP} from user message: "${userMessage}"`);
+              hpValue = recoveredHP;
+            } else {
+              console.log(`[Param Fix] Could not recover HP from user message`);
+              hpValue = null;
+            }
+          } else {
+            hpValue = null;
+          }
+          
+          // If we still have no HP and no other filters, ask for clarification
+          if (!hpValue && !familyValue && !params?.in_stock && !params?.min_hp && !params?.max_hp) {
+            result = {
+              found: false,
+              error: true,
+              message: "I didn't catch the horsepower. Could you say that again? For example: 'Do you have any 150 horsepower motors?'"
+            };
+            break;
+          }
+        }
         
         // If horsepower looks like a family name, swap it and try to recover HP from user message
         if (typeof hpValue === 'string' && /^(FourStroke|Verado|Pro\s*XS|SeaPro|ProKicker)$/i.test(hpValue)) {
