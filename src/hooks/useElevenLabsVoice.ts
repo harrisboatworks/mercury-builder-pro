@@ -9,10 +9,9 @@ import { useVoiceSessionPersistence } from './useVoiceSessionPersistence';
 import { formatMotorsForVoice } from '@/lib/visibleMotorsStore';
 
 // Timeout configuration (in milliseconds)
-const INACTIVITY_WARNING_MS = 30000; // 30 seconds of silence before warning
-const FINAL_TIMEOUT_MS = 15000; // 15 more seconds after warning to disconnect
-const WARNING_SYSTEM_MESSAGE = "[SYSTEM: The user has been silent for a while. Gently check if they're still there with something brief like 'Still there? I'm here if you need anything.']";
-const GOODBYE_SYSTEM_MESSAGE = "[SYSTEM: The user hasn't responded. Say a friendly goodbye like 'Alright, if you need anything, just tap the voice button. Talk soon!' and end naturally.]";
+// Single graceful close after silence - no "still there?" warning
+const IDLE_TIMEOUT_MS = 25000; // 25 seconds of silence before graceful close
+const GRACEFUL_CLOSE_MESSAGE = "[SYSTEM: Natural pause in conversation. Say ONE brief, friendly sign-off like 'I'll let you browse - just tap the mic if you need me!' then stop talking. No questions, just a warm goodbye.]";
 
 // Thinking watchdog - prompt agent to acknowledge if no response within this time after user speaks
 const THINKING_WATCHDOG_MS = 600; // 0.6s (reduce perceived "dead air")
@@ -72,7 +71,7 @@ interface VoiceState {
   diagnostics: VoiceDiagnostics | null;
   textOnlyMode: boolean;
   audioFailCount: number;
-  inactivityWarningShown: boolean;
+  
   turnTiming: TurnTiming;
   currentPhase: VoicePhase;
 }
@@ -908,7 +907,6 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     diagnostics: null,
     textOnlyMode: false,
     audioFailCount: 0,
-    inactivityWarningShown: false,
     turnTiming: initialTurnTiming,
     currentPhase: 'idle',
   });
@@ -919,9 +917,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const setStateRef = useRef(setState);
   setStateRef.current = setState;
   
-  // Inactivity timeout refs
+  // Inactivity timeout ref (single timer for graceful close)
   const inactivityTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const warningTimerRef = useRef<NodeJS.Timeout | null>(null);
   const conversationRef = useRef<ReturnType<typeof useConversation> | null>(null);
   
   // Thinking watchdog refs - detect when agent is slow to respond
@@ -993,30 +990,26 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     };
   }, []);
 
-  // Clear all inactivity timers
+  // Clear inactivity timer
   const clearInactivityTimers = useCallback(() => {
     if (inactivityTimerRef.current) {
       clearTimeout(inactivityTimerRef.current);
       inactivityTimerRef.current = null;
     }
-    if (warningTimerRef.current) {
-      clearTimeout(warningTimerRef.current);
-      warningTimerRef.current = null;
-    }
   }, []);
 
-  // Handle goodbye and auto-disconnect
-  const triggerGoodbyeAndDisconnect = useCallback(async () => {
-    console.log('[Voice] Triggering goodbye due to inactivity timeout');
+  // Handle graceful goodbye and auto-disconnect after idle timeout
+  const triggerGracefulClose = useCallback(async () => {
+    console.log('[Voice] Triggering graceful close after idle timeout');
     
-    // Send goodbye message to agent
+    // Send graceful close message to agent
     if (conversationRef.current?.status === 'connected') {
       try {
-        conversationRef.current.sendUserMessage(GOODBYE_SYSTEM_MESSAGE);
-        // Give agent time to say goodbye (max 5 seconds)
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        conversationRef.current.sendUserMessage(GRACEFUL_CLOSE_MESSAGE);
+        // Give agent 3.5 seconds to say its brief goodbye
+        await new Promise(resolve => setTimeout(resolve, 3500));
       } catch (e) {
-        console.log('[Voice] Could not send goodbye message:', e);
+        console.log('[Voice] Could not send graceful close message:', e);
       }
     }
     
@@ -1046,37 +1039,24 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       diagnostics: null,
       textOnlyMode: false,
       audioFailCount: 0,
-      inactivityWarningShown: false,
       turnTiming: initialTurnTiming,
       currentPhase: 'idle',
     });
   }, [voiceSession]);
 
-  // Start or reset the inactivity timer
+  // Start or reset the inactivity timer - single graceful close after 25s silence
   const resetInactivityTimer = useCallback(() => {
     clearInactivityTimers();
     
-    // Only set timers if connected
+    // Only set timer if connected
     if (conversationRef.current?.status !== 'connected') return;
     
-    // Set warning timer (30s)
+    // Set single idle timeout (25s) - no warning, just graceful close
     inactivityTimerRef.current = setTimeout(() => {
-      console.log('[Voice] Inactivity warning - checking if user is still there');
-      setState(prev => ({ ...prev, inactivityWarningShown: true }));
-      
-      // Send warning message to agent
-      if (conversationRef.current?.status === 'connected') {
-        conversationRef.current.sendUserMessage(WARNING_SYSTEM_MESSAGE);
-      }
-      
-      // Set final timeout (15s after warning)
-      warningTimerRef.current = setTimeout(() => {
-        console.log('[Voice] Final timeout reached - triggering goodbye');
-        triggerGoodbyeAndDisconnect();
-      }, FINAL_TIMEOUT_MS);
-      
-    }, INACTIVITY_WARNING_MS);
-  }, [clearInactivityTimers, triggerGoodbyeAndDisconnect]);
+      console.log('[Voice] Idle timeout reached - triggering graceful close');
+      triggerGracefulClose();
+    }, IDLE_TIMEOUT_MS);
+  }, [clearInactivityTimers, triggerGracefulClose]);
 
   // Clear the thinking watchdog timer
   const clearThinkingWatchdog = useCallback(() => {
@@ -1665,7 +1645,6 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   useEffect(() => {
     return () => {
       if (inactivityTimerRef.current) clearTimeout(inactivityTimerRef.current);
-      if (warningTimerRef.current) clearTimeout(warningTimerRef.current);
     };
   }, []);
 
@@ -1853,10 +1832,6 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       clearTimeout(inactivityTimerRef.current);
       inactivityTimerRef.current = null;
     }
-    if (warningTimerRef.current) {
-      clearTimeout(warningTimerRef.current);
-      warningTimerRef.current = null;
-    }
     if (thinkingWatchdogRef.current) {
       clearTimeout(thinkingWatchdogRef.current);
       thinkingWatchdogRef.current = null;
@@ -1884,7 +1859,6 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       diagnostics: null,
       textOnlyMode: false,
       audioFailCount: 0,
-      inactivityWarningShown: false,
       turnTiming: initialTurnTiming,
       currentPhase: 'idle',
     });
