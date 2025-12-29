@@ -784,9 +784,22 @@ export default function MotorDetailsPremiumModal({
                   {/* RESOURCES TAB */}
                   <TabsContent value="resources" className="space-y-5 mt-0">
                     <div className="p-6 pt-8 pb-12 space-y-8">
-                      {/* Documents Section */}
+                      {/* Videos Section - First for engagement */}
                       {motor?.id && (
                         <div>
+                          <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
+                            Videos & Demonstrations
+                          </h3>
+                          <MotorVideosSection 
+                            motorId={motor.id} 
+                            motorFamily={motor.family || motor.model} 
+                          />
+                        </div>
+                      )}
+                      
+                      {/* Documents Section */}
+                      {motor?.id && (
+                        <div className="border-t border-gray-100 pt-6">
                           <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
                             Downloads & Documentation
                           </h3>
@@ -817,19 +830,6 @@ export default function MotorDetailsPremiumModal({
                           )}
                         </PDFDownloadLink>
                       </div>
-                      
-                      {/* Videos Section */}
-                      {motor?.id && (
-                        <div className="border-t border-gray-100 pt-6">
-                          <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
-                            Videos & Demonstrations
-                          </h3>
-                          <MotorVideosSection 
-                            motorId={motor.id} 
-                            motorFamily={motor.family || motor.model} 
-                          />
-                        </div>
-                      )}
                     </div>
                   </TabsContent>
                 </div>
