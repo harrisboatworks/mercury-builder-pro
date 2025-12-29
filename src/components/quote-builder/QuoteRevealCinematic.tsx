@@ -379,7 +379,7 @@ export function QuoteRevealCinematic({
                 
                 {/* Price text - with enhanced breathing animation */}
                 <motion.span
-                  className="relative z-10 font-playfair text-4xl md:text-6xl font-medium tabular-nums tracking-tight"
+                  className="relative z-10 font-outfit text-4xl md:text-6xl font-semibold tabular-nums tracking-tight"
                   style={{
                     color: priceComplete ? 'hsl(var(--promo-gold-1))' : 'hsl(0 0% 98%)',
                   }}
@@ -457,7 +457,7 @@ export function QuoteRevealCinematic({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute top-[68%] md:top-[72%] flex gap-10 md:gap-16 items-start"
+              className="absolute top-[75%] md:top-[78%] flex gap-10 md:gap-16 items-start"
             >
               {savings > 0 && (
                 <motion.div
@@ -477,7 +477,7 @@ export function QuoteRevealCinematic({
                     Total Savings
                   </motion.span>
                   <span 
-                    className="font-playfair text-lg md:text-xl font-medium"
+                    className="font-outfit text-lg md:text-xl font-semibold"
                     style={{ color: '#10B981' }}
                   >
                     {money(savings)}
@@ -502,7 +502,7 @@ export function QuoteRevealCinematic({
                   Coverage
                 </motion.span>
                 <span 
-                  className="font-playfair text-lg md:text-xl"
+                  className="font-outfit text-lg md:text-xl font-semibold"
                   style={{ color: '#E5E7EB' }}
                 >
                   {coverageYears} Years
@@ -535,7 +535,7 @@ export function QuoteRevealCinematic({
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[64%] md:top-[68%] w-24 h-px origin-center"
+              className="absolute top-[71%] md:top-[74%] w-24 h-px origin-center"
               style={{ background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent)' }}
             />
           )}
