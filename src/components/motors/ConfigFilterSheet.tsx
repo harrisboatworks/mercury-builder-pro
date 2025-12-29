@@ -96,6 +96,38 @@ export function ConfigFilterSheet({
     return motors.filter(m => m.hp === hp).length;
   };
 
+  // Calculate filter counts for config filters
+  const filterCounts = useMemo(() => {
+    const parseStartType = (model: string, hp: number): 'electric' | 'manual' => {
+      if (hp >= 150) return 'electric';
+      return model.includes('E') ? 'electric' : 'manual';
+    };
+    
+    const parseControlType = (model: string, hp: number): 'tiller' | 'remote' => {
+      if (hp >= 150) return 'remote';
+      return model.includes('M') ? 'tiller' : 'remote';
+    };
+    
+    const parseShaftLength = (model: string): 'short' | 'long' | 'xl' | 'xxl' => {
+      if (model.includes('XXL')) return 'xxl';
+      if (model.includes('XL')) return 'xl';
+      if (model.includes('L')) return 'long';
+      return 'short';
+    };
+    
+    return {
+      inStock: motors.filter(m => m.inStock).length,
+      electric: motors.filter(m => parseStartType(m.model, m.hp) === 'electric').length,
+      manual: motors.filter(m => parseStartType(m.model, m.hp) === 'manual').length,
+      tiller: motors.filter(m => parseControlType(m.model, m.hp) === 'tiller').length,
+      remote: motors.filter(m => parseControlType(m.model, m.hp) === 'remote').length,
+      short: motors.filter(m => parseShaftLength(m.model) === 'short').length,
+      long: motors.filter(m => parseShaftLength(m.model) === 'long').length,
+      xl: motors.filter(m => parseShaftLength(m.model) === 'xl').length,
+      xxl: motors.filter(m => parseShaftLength(m.model) === 'xxl').length,
+    };
+  }, [motors]);
+
   const hasMotors = (filter: string): boolean => getHpCount(filter) > 0;
 
   const handleClearAll = () => {
@@ -123,17 +155,21 @@ export function ConfigFilterSheet({
 
   const FilterPill = ({ 
     label, 
+    count,
     isActive, 
     onClick 
   }: { 
     label: string; 
+    count?: number;
     isActive: boolean; 
     onClick: () => void;
   }) => (
     <button
       onClick={onClick}
+      style={{ width: 'auto', display: 'inline-flex' }}
       className={cn(
-        'inline-flex items-center w-fit px-3 py-1.5 rounded-full text-sm font-light shrink-0',
+        'inline-flex items-center gap-1.5 w-auto max-w-fit px-3 py-1.5 rounded-full text-sm font-light',
+        'shrink-0 whitespace-nowrap',
         'transition-all duration-200',
         isActive 
           ? 'bg-primary text-primary-foreground' 
@@ -141,6 +177,14 @@ export function ConfigFilterSheet({
       )}
     >
       {label}
+      {count !== undefined && (
+        <span className={cn(
+          'text-xs',
+          isActive ? 'text-primary-foreground/70' : 'text-muted-foreground/60'
+        )}>
+          ({count})
+        </span>
+      )}
     </button>
   );
 
@@ -168,7 +212,17 @@ export function ConfigFilterSheet({
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
-          <DrawerTitle>Filter Motors</DrawerTitle>
+          <div className="flex items-center justify-between">
+            <DrawerTitle>Filter Motors</DrawerTitle>
+            {activeCount > 0 && (
+              <button
+                onClick={handleClearAll}
+                className="text-sm text-primary hover:underline font-medium"
+              >
+                Reset all
+              </button>
+            )}
+          </div>
         </DrawerHeader>
         <div className="px-4 pb-4 space-y-5 overflow-y-auto max-h-[60vh]">
           {/* HP Filter Section */}
@@ -209,9 +263,10 @@ export function ConfigFilterSheet({
           {/* Availability */}
           <div>
             <h4 className="text-sm font-medium text-muted-foreground mb-2">Availability</h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-row flex-wrap gap-2">
               <FilterPill 
                 label="In Stock" 
+                count={filterCounts.inStock}
                 isActive={filters?.inStock === true}
                 onClick={() => toggleFilter('inStock', true)}
               />
@@ -223,14 +278,16 @@ export function ConfigFilterSheet({
           {/* Start Type */}
           <div>
             <h4 className="text-sm font-medium text-muted-foreground mb-2">Start Type</h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-row flex-wrap gap-2">
               <FilterPill 
                 label="Electric" 
+                count={filterCounts.electric}
                 isActive={filters?.startType === 'electric'}
                 onClick={() => toggleFilter('startType', 'electric')}
               />
               <FilterPill 
                 label="Pull-Start" 
+                count={filterCounts.manual}
                 isActive={filters?.startType === 'manual'}
                 onClick={() => toggleFilter('startType', 'manual')}
               />
@@ -242,14 +299,16 @@ export function ConfigFilterSheet({
           {/* Control Type */}
           <div>
             <h4 className="text-sm font-medium text-muted-foreground mb-2">Control</h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-row flex-wrap gap-2">
               <FilterPill 
                 label="Tiller" 
+                count={filterCounts.tiller}
                 isActive={filters?.controlType === 'tiller'}
                 onClick={() => toggleFilter('controlType', 'tiller')}
               />
               <FilterPill 
                 label="Remote" 
+                count={filterCounts.remote}
                 isActive={filters?.controlType === 'remote'}
                 onClick={() => toggleFilter('controlType', 'remote')}
               />
@@ -261,19 +320,22 @@ export function ConfigFilterSheet({
           {/* Shaft Length */}
           <div>
             <h4 className="text-sm font-medium text-muted-foreground mb-2">Shaft Length</h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-row flex-wrap gap-2">
               <FilterPill 
                 label="15&quot; Short" 
+                count={filterCounts.short}
                 isActive={filters?.shaftLength === 'short'}
                 onClick={() => toggleFilter('shaftLength', 'short')}
               />
               <FilterPill 
                 label="20&quot; Long" 
+                count={filterCounts.long}
                 isActive={filters?.shaftLength === 'long'}
                 onClick={() => toggleFilter('shaftLength', 'long')}
               />
               <FilterPill 
                 label="25&quot; XL" 
+                count={filterCounts.xl}
                 isActive={filters?.shaftLength === 'xl'}
                 onClick={() => toggleFilter('shaftLength', 'xl')}
               />
