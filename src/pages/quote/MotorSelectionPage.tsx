@@ -789,24 +789,22 @@ function MotorSelectionContent() {
 {/* Search Bar - Scrolls naturally with content */}
         <div className="bg-stone-50 border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-            <div className="flex items-center gap-2">
-              <div className="flex-1 min-w-0">
-                <HybridMotorSearch
-                  query={searchQuery}
-                  onQueryChange={handleSearchChange}
+            <HybridMotorSearch
+              query={searchQuery}
+              onQueryChange={handleSearchChange}
+              motors={processedMotors}
+              onHpSelect={handleHpSuggestionSelect}
+              className="w-full"
+              filterSlot={
+                <ConfigFilterSheet
                   motors={processedMotors}
-                  onHpSelect={handleHpSuggestionSelect}
-                  className="w-full"
+                  activeHpFilter={searchQuery}
+                  onHpFilterChange={handleSearchChange}
+                  filters={configFilters}
+                  onFilterChange={setConfigFilters}
                 />
-              </div>
-              <ConfigFilterSheet
-                motors={processedMotors}
-                activeHpFilter={searchQuery}
-                onHpFilterChange={handleSearchChange}
-                filters={configFilters}
-                onFilterChange={setConfigFilters}
-              />
-            </div>
+              }
+            />
             
             {(searchQuery || configFilters) && (
               <div className="text-center mt-2 text-xs text-luxury-gray">

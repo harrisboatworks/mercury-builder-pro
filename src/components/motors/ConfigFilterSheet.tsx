@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SlidersHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -21,17 +21,17 @@ export interface ConfigFiltersState {
   inStock?: boolean;
 }
 
-// HP filter options
+// HP filter options with popular flag
 const HP_FILTERS = [
-  { label: 'All', value: '' },
-  { label: '2.5', value: '2.5' },
-  { label: '9.9', value: '9.9' },
-  { label: '25', value: '25' },
-  { label: '40', value: '40' },
-  { label: '60', value: '60' },
-  { label: '115', value: '115' },
-  { label: '150', value: '150' },
-  { label: '300+', value: 'hp:>299' }
+  { label: 'All', value: '', popular: false },
+  { label: '2.5', value: '2.5', popular: false },
+  { label: '9.9', value: '9.9', popular: false },
+  { label: '25', value: '25', popular: true },
+  { label: '40', value: '40', popular: true },
+  { label: '60', value: '60', popular: true },
+  { label: '115', value: '115', popular: false },
+  { label: '150', value: '150', popular: false },
+  { label: '300+', value: 'hp:>299', popular: false }
 ];
 
 interface ConfigFilterSheetProps {
@@ -52,11 +52,24 @@ export function ConfigFilterSheet({
   className 
 }: ConfigFilterSheetProps) {
   const [open, setOpen] = useState(false);
+  const [badgePulse, setBadgePulse] = useState(false);
+  const prevCountRef = useRef(0);
 
   // Count HP as 1 if active, plus config filter keys
   const hpActive = activeHpFilter ? 1 : 0;
   const configActive = filters ? Object.keys(filters).length : 0;
   const activeCount = hpActive + configActive;
+
+  // Pulse animation when filter count changes
+  useEffect(() => {
+    if (activeCount !== prevCountRef.current && activeCount > 0) {
+      setBadgePulse(true);
+      const timeout = setTimeout(() => setBadgePulse(false), 400);
+      prevCountRef.current = activeCount;
+      return () => clearTimeout(timeout);
+    }
+    prevCountRef.current = activeCount;
+  }, [activeCount]);
 
   // Calculate counts for each HP filter
   const getHpCount = (filter: string): number => {
@@ -103,7 +116,7 @@ export function ConfigFilterSheet({
     <button
       onClick={onClick}
       className={cn(
-        'px-3 py-1.5 rounded-full text-sm font-light shrink-0',
+        'inline-flex items-center w-fit px-3 py-1.5 rounded-full text-sm font-light shrink-0',
         'transition-all duration-200',
         isActive 
           ? 'bg-primary text-primary-foreground' 
@@ -126,7 +139,10 @@ export function ConfigFilterSheet({
           {activeCount > 0 && (
             <Badge 
               variant="secondary" 
-              className="absolute -top-1.5 -right-1.5 h-5 min-w-5 px-1.5 text-xs bg-primary text-primary-foreground"
+              className={cn(
+                "absolute -top-1.5 -right-1.5 h-5 min-w-5 px-1.5 text-xs bg-primary text-primary-foreground transition-transform",
+                badgePulse && "animate-[pulse_0.4s_ease-out] scale-110"
+              )}
             >
               {activeCount}
             </Badge>
@@ -141,8 +157,8 @@ export function ConfigFilterSheet({
           {/* HP Filter Section */}
           <div>
             <h4 className="text-sm font-medium text-muted-foreground mb-2">Horsepower</h4>
-            <div className="flex flex-wrap gap-2">
-              {HP_FILTERS.map(({ label, value }) => {
+            <div className="flex flex-wrap gap-1.5">
+              {HP_FILTERS.map(({ label, value, popular }) => {
                 const isActive = activeHpFilter === value || (value === '' && !activeHpFilter);
                 const hasStock = hasMotors(value);
                 
@@ -152,7 +168,7 @@ export function ConfigFilterSheet({
                     onClick={() => onHpFilterChange(value)}
                     disabled={!hasStock && value !== ''}
                     className={cn(
-                      'px-3 py-1.5 rounded-full text-sm font-light shrink-0',
+                      'inline-flex items-center gap-1 w-fit px-3 py-1.5 rounded-full text-sm font-light shrink-0',
                       'transition-all duration-200',
                       isActive 
                         ? 'bg-primary text-primary-foreground' 
@@ -162,6 +178,9 @@ export function ConfigFilterSheet({
                     )}
                   >
                     {label === 'All' ? 'All' : `${label} HP`}
+                    {popular && !isActive && (
+                      <span className="text-[10px] text-amber-600 font-medium">Popular</span>
+                    )}
                   </button>
                 );
               })}
