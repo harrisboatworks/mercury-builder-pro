@@ -75,6 +75,7 @@ export type Database = {
           session_id: string | null
           updated_at: string
           user_id: string | null
+          voice_summary: string | null
         }
         Insert: {
           context?: Json | null
@@ -85,6 +86,7 @@ export type Database = {
           session_id?: string | null
           updated_at?: string
           user_id?: string | null
+          voice_summary?: string | null
         }
         Update: {
           context?: Json | null
@@ -95,6 +97,7 @@ export type Database = {
           session_id?: string | null
           updated_at?: string
           user_id?: string | null
+          voice_summary?: string | null
         }
         Relationships: []
       }
