@@ -20,6 +20,8 @@ import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
 import { cn } from '@/lib/utils';
 import { VoiceButton } from './VoiceButton';
 import { useVoice } from '@/contexts/VoiceContext';
+import { VoiceActivityCard } from './VoiceActivityCard';
+import { VOICE_ACTIVITY_EVENT, type VoiceActivityEvent } from '@/lib/voiceActivityFeed';
 
 interface Message {
   id: string;
@@ -33,6 +35,7 @@ interface Message {
     motor2: { model: string; hp: number; price: number };
     recommendation?: string;
   };
+  activityData?: VoiceActivityEvent;
 }
 
 interface InlineChatDrawerProps {
@@ -148,6 +151,24 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
+
+  // Listen for voice activity events and add them to messages
+  useEffect(() => {
+    const handleVoiceActivity = (e: CustomEvent<VoiceActivityEvent>) => {
+      const activity = e.detail;
+      const activityMessage: Message = {
+        id: activity.id,
+        text: '',
+        isUser: false,
+        timestamp: activity.timestamp,
+        activityData: activity,
+      };
+      setMessages(prev => [...prev, activityMessage]);
+    };
+    
+    window.addEventListener(VOICE_ACTIVITY_EVENT, handleVoiceActivity as EventListener);
+    return () => window.removeEventListener(VOICE_ACTIVITY_EVENT, handleVoiceActivity as EventListener);
+  }, []);
 
   // Scroll to bottom when chat opens to show latest messages
   useEffect(() => {

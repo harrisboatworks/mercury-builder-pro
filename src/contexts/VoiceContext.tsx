@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useMemo, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useElevenLabsVoice, type TurnTiming, type VoicePhase } from '@/hooks/useElevenLabsVoice';
 import { useQuote } from '@/contexts/QuoteContext';
 import { MicrophonePermissionDialog } from '@/components/chat/MicrophonePermissionDialog';
@@ -49,6 +49,7 @@ export const useVoiceSafe = () => {
 
 export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { state, dispatch } = useQuote();
   const { toast } = useToast();
   const prevMotorIdRef = useRef<string | null>(null);
@@ -122,6 +123,14 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     const handleVoiceNav = (e: CustomEvent<{ type: string; payload: Record<string, unknown> }>) => {
       const { type, payload } = e.detail;
+      
+      // Handle actual page navigation (silent - no toast, just do it)
+      if (type === 'navigate' && payload?.path) {
+        const path = payload.path as string;
+        console.log('[VoiceContext] Navigating to:', path);
+        navigate(path);
+        return; // Don't show toast - screen change IS the feedback
+      }
       
       // Handle add motor to quote
       if (type === 'add_motor_to_quote' && payload?.motor) {
@@ -266,7 +275,7 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     
     window.addEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNav as EventListener);
     return () => window.removeEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNav as EventListener);
-  }, [dispatch, toast]);
+  }, [dispatch, toast, navigate, state.boatInfo]);
 
   // Create the context value without dialog-specific fields
   const contextValue: VoiceContextType = {

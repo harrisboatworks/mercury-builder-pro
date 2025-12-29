@@ -47,10 +47,27 @@ export function filterMotors(options: {
 }
 
 /**
- * Helper to navigate to a specific path
+ * Helper to navigate to a specific path (uses React Router via VoiceContext)
  */
 export function navigateToPath(path: string): void {
   dispatchVoiceNavigation({ type: 'navigate', payload: { path } });
+}
+
+/**
+ * Helper to navigate AND then filter motors (for voice commands like "show me 60HP motors")
+ */
+export function navigateToMotorsWithFilter(options: { 
+  horsepower?: number; 
+  model?: string; 
+  inStock?: boolean 
+}): void {
+  // First navigate to the motors page
+  dispatchVoiceNavigation({ type: 'navigate', payload: { path: '/quote/motor-selection' } });
+  
+  // Then apply filters after a short delay to let navigation complete
+  setTimeout(() => {
+    dispatchVoiceNavigation({ type: 'filter_motors', payload: options });
+  }, 300);
 }
 
 /**
