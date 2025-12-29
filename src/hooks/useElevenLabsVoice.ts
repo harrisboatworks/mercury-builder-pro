@@ -1322,23 +1322,47 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       },
       // Navigate to motors page with filters applied (SILENT - screen changes, no chat card)
       navigate_to_motors: async (params: {
-        horsepower?: number;
+        horsepower?: number | string | boolean;
         model_search?: string;
         in_stock_only?: boolean;
       }) => {
-        console.log('[ClientTool] navigate_to_motors', params);
+        console.log('[ClientTool] navigate_to_motors received:', params);
+        
+        // ROBUST PARAM HANDLING: ElevenLabs may send horsepower as wrong type
+        let hpValue: number | undefined = undefined;
+        let modelSearch = params.model_search;
+        
+        if (typeof params.horsepower === 'string') {
+          // Check if it's actually a family name misrouted to horsepower
+          if (/^(FourStroke|Verado|Pro\s*XS|SeaPro|ProKicker)$/i.test(params.horsepower)) {
+            console.warn('[ClientTool] navigate_to_motors: horsepower was family name, using as model_search');
+            modelSearch = params.horsepower;
+          } else {
+            // Try to parse as number
+            const parsed = parseInt(params.horsepower, 10);
+            if (!isNaN(parsed)) {
+              hpValue = parsed;
+              console.log(`[ClientTool] navigate_to_motors: Parsed string HP to ${hpValue}`);
+            }
+          }
+        } else if (typeof params.horsepower === 'number') {
+          hpValue = params.horsepower;
+        } else if (typeof params.horsepower === 'boolean') {
+          // Boolean means ElevenLabs misinterpreted - can't recover HP here
+          console.warn('[ClientTool] navigate_to_motors: horsepower was boolean, ignoring');
+        }
         
         // Actually navigate to the page AND apply filters
         navigateToMotorsWithFilter({
-          horsepower: params.horsepower,
-          model: params.model_search,
+          horsepower: hpValue,
+          model: modelSearch,
           inStock: params.in_stock_only
         });
         
-        const filterDesc = params.horsepower 
-          ? `${params.horsepower}HP motors` 
-          : params.model_search 
-            ? `"${params.model_search}" motors`
+        const filterDesc = hpValue 
+          ? `${hpValue}HP motors` 
+          : modelSearch 
+            ? `"${modelSearch}" motors`
             : 'all motors';
         
         // No toast - screen navigation IS the feedback
