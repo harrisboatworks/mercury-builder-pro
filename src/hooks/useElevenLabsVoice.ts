@@ -4,7 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import type { VoiceDiagnostics } from '@/lib/RealtimeVoice';
 import { dispatchVoiceNavigation, navigateToMotorsWithFilter, type MotorForQuote } from '@/lib/voiceNavigation';
-import { dispatchVoiceActivity, showTradeInEstimate, showCallbackConfirmation, showMotorComparison, showCurrentDeals } from '@/lib/voiceActivityFeed';
+import { dispatchVoiceActivity, showTradeInEstimate, showCallbackConfirmation, showMotorComparison, showCurrentDeals, showLeadCaptureCard } from '@/lib/voiceActivityFeed';
 import { useVoiceSessionPersistence } from './useVoiceSessionPersistence';
 
 // Timeout configuration (in milliseconds)
@@ -494,6 +494,16 @@ async function handleScheduleCallback(params: {
     if (error) {
       console.error('[ClientTool] Schedule callback error:', error);
       return JSON.stringify({ error: 'Failed to schedule callback. Please try again.' });
+    }
+    
+    // Dispatch activity card to show confirmation in chat
+    if (data?.success) {
+      showCallbackConfirmation({
+        customerName: params.customer_name,
+        preferredTime: data.scheduledDescription || params.preferred_time || 'soon',
+        phone: params.customer_phone,
+        motorInterest: params.motor_interest,
+      });
     }
     
     return JSON.stringify(data);

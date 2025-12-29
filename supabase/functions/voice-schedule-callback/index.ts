@@ -13,10 +13,6 @@ function parsePreferredTime(timeStr: string): { scheduledFor: Date | null; descr
   const now = new Date();
   const lowerTime = (timeStr || '').toLowerCase().trim();
   
-  // Default business hours
-  const businessStart = 9;
-  const businessEnd = 17;
-  
   // Parse relative times
   if (lowerTime.includes('tomorrow')) {
     const tomorrow = new Date(now);
@@ -104,6 +100,13 @@ function getNextDayOfWeek(dayOfWeek: number, timeStr: string): { scheduledFor: D
   }
 }
 
+/**
+ * Generate a unique user ID for anonymous voice leads
+ */
+function generateAnonymousUserId(): string {
+  return 'voice_' + crypto.randomUUID();
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -131,8 +134,8 @@ serve(async (req) => {
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
     
-    // Insert callback request
-    const { data, error } = await supabase
+    // Insert callback request to voice_callbacks table
+    const { data: callbackData, error: callbackError } = await supabase
       .from('voice_callbacks')
       .insert({
         customer_name: customer_name || 'Voice Customer',
@@ -147,14 +150,51 @@ serve(async (req) => {
       .select()
       .single();
     
-    if (error) {
-      console.error('Database error:', error);
+    if (callbackError) {
+      console.error('Voice callback insert error:', callbackError);
       throw new Error('Failed to schedule callback');
     }
     
-    console.log('Callback scheduled:', data.id);
+    console.log('Voice callback scheduled:', callbackData.id);
     
-    // Send confirmation SMS if Twilio is configured
+    // ALSO insert into customer_quotes for unified lead tracking
+    const anonymousUserId = generateAnonymousUserId();
+    const leadNotes = [
+      `Voice callback request - ${description}`,
+      motor_interest ? `Interested in: ${motor_interest}` : '',
+      notes ? `Notes: ${notes}` : ''
+    ].filter(Boolean).join('\n');
+    
+    const { data: quoteData, error: quoteError } = await supabase
+      .from('customer_quotes')
+      .insert({
+        customer_name: customer_name || 'Voice Customer',
+        customer_phone: cleanPhone,
+        customer_email: '', // Voice leads may not have email
+        user_id: anonymousUserId,
+        lead_source: 'voice_chat',
+        lead_status: 'new',
+        lead_score: 75, // High intent - they requested a callback
+        notes: leadNotes,
+        base_price: motor_context?.price || 0,
+        final_price: motor_context?.price || 0,
+        deposit_amount: 0,
+        loan_amount: 0,
+        monthly_payment: 0,
+        term_months: 0,
+        total_cost: 0,
+      })
+      .select()
+      .single();
+    
+    if (quoteError) {
+      console.error('Customer quote insert error (non-blocking):', quoteError);
+      // Don't fail the whole request - voice_callbacks is the primary
+    } else {
+      console.log('Customer quote created:', quoteData?.id);
+    }
+    
+    // Send confirmation SMS to customer if Twilio is configured
     const twilioSid = Deno.env.get('TWILIO_ACCOUNT_SID');
     const twilioToken = Deno.env.get('TWILIO_AUTH_TOKEN');
     const twilioFrom = Deno.env.get('TWILIO_FROM_NUMBER');
@@ -181,16 +221,49 @@ serve(async (req) => {
             body: formData.toString()
           }
         );
-        console.log('Confirmation SMS sent');
+        console.log('Customer confirmation SMS sent');
       } catch (smsError) {
-        console.error('SMS failed (non-blocking):', smsError);
+        console.error('Customer SMS failed (non-blocking):', smsError);
+      }
+      
+      // Send admin notification SMS
+      const adminPhone = Deno.env.get('ADMIN_PHONE');
+      if (adminPhone) {
+        try {
+          const adminMessage = `🔔 NEW VOICE LEAD\n` +
+            `${customer_name || 'Unknown'}\n` +
+            `📞 ${cleanPhone}\n` +
+            `⏰ Wants call: ${description}\n` +
+            `${motor_interest ? `🚤 Interest: ${motor_interest}` : ''}`;
+          
+          const adminFormData = new URLSearchParams();
+          adminFormData.append('To', adminPhone.startsWith('+') ? adminPhone : '+1' + adminPhone);
+          adminFormData.append('From', twilioFrom);
+          adminFormData.append('Body', adminMessage);
+          
+          await fetch(
+            `https://api.twilio.com/2010-04-01/Accounts/${twilioSid}/Messages.json`,
+            {
+              method: 'POST',
+              headers: {
+                'Authorization': 'Basic ' + btoa(`${twilioSid}:${twilioToken}`),
+                'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              body: adminFormData.toString()
+            }
+          );
+          console.log('Admin notification SMS sent');
+        } catch (adminSmsError) {
+          console.error('Admin SMS failed (non-blocking):', adminSmsError);
+        }
       }
     }
     
     return new Response(
       JSON.stringify({ 
         success: true, 
-        callbackId: data.id,
+        callbackId: callbackData.id,
+        quoteId: quoteData?.id,
         scheduledDescription: description,
         message: `Got it! Someone from our team will call you ${description}. I've sent a confirmation to your phone.`
       }),
@@ -204,4 +277,5 @@ serve(async (req) => {
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
+});
 });
