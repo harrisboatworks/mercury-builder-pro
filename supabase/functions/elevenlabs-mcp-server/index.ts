@@ -529,6 +529,21 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
     }
     
     case "send_motor_photos": {
+      // Check if SMS is configured before attempting
+      const twilioSid = Deno.env.get("TWILIO_ACCOUNT_SID");
+      const twilioToken = Deno.env.get("TWILIO_AUTH_TOKEN");
+      const twilioPhone = Deno.env.get("TWILIO_PHONE_NUMBER");
+      
+      if (!twilioSid || !twilioToken || !twilioPhone) {
+        console.log('[send_motor_photos] SMS not configured - directing to website');
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `All motor photos and details are available on our website at harrisboatworks.ca. Just search for the ${args.motor_model} and you'll find everything there!` 
+          }] 
+        };
+      }
+      
       const response = await fetch(
         `${Deno.env.get("SUPABASE_URL")}/functions/v1/voice-send-follow-up`,
         {
