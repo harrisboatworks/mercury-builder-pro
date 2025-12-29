@@ -903,6 +903,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const thinkingNudgeSentRef = useRef<boolean>(false);
   
   // Wrap a tool handler to show searching state and play instant feedback
+  // ENHANCED LOGGING: This wrapper detects when ElevenLabs triggers a client tool call
   const withSearchingFeedback = useCallback(<T extends unknown[], R>(
     toolName: string,
     handler: (...args: T) => Promise<R> | R,
@@ -910,7 +911,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   ) => {
     return async (...args: T): Promise<R> => {
       const startTime = performance.now();
-      console.log(`[Tool] ${toolName} starting...`);
+      
+      // ========== ENHANCED TOOL CALL LOGGING ==========
+      console.log('%c🔧 ELEVENLABS CLIENT TOOL TRIGGERED', 'background: #4CAF50; color: white; font-size: 14px; padding: 4px 8px; border-radius: 4px;');
+      console.log(`%c Tool: ${toolName}`, 'color: #4CAF50; font-weight: bold; font-size: 12px;');
+      console.log('%c Parameters:', 'color: #2196F3; font-weight: bold;', args);
+      console.log('%c Timestamp:', 'color: #9E9E9E;', new Date().toISOString());
+      // ================================================
       
       // Set searching state and record tool start time
       setStateRef.current(prev => ({ 
@@ -927,8 +934,21 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       try {
         const result = await handler(...args);
         const endTime = performance.now();
-        console.log(`[Tool] ${toolName} completed in ${(endTime - startTime).toFixed(0)}ms`);
+        
+        // ========== ENHANCED TOOL COMPLETION LOGGING ==========
+        console.log('%c✅ TOOL COMPLETED', 'background: #2196F3; color: white; font-size: 12px; padding: 2px 6px; border-radius: 4px;');
+        console.log(`%c Tool: ${toolName} | Duration: ${(endTime - startTime).toFixed(0)}ms`, 'color: #2196F3;');
+        console.log('%c Result:', 'color: #4CAF50;', result);
+        // ======================================================
+        
         return result;
+      } catch (error) {
+        // ========== ENHANCED ERROR LOGGING ==========
+        console.log('%c❌ TOOL ERROR', 'background: #f44336; color: white; font-size: 12px; padding: 2px 6px; border-radius: 4px;');
+        console.log(`%c Tool: ${toolName}`, 'color: #f44336;');
+        console.error('Error details:', error);
+        // ============================================
+        throw error;
       } finally {
         // Clear searching state and record tool end time
         const toolEndTime = performance.now();
@@ -1144,19 +1164,29 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       }));
     },
     onMessage: (message: unknown) => {
-      console.log('ElevenLabs message:', message);
+      // ========== ENHANCED MESSAGE LOGGING ==========
+      const msg = message as Record<string, unknown>;
+      const msgType = msg.type as string || 'unknown';
+      
+      // Highlight tool-related messages specially
+      if (msgType.includes('tool') || msgType.includes('function') || msgType.includes('client_tool')) {
+        console.log('%c🔧 ELEVENLABS TOOL MESSAGE RECEIVED', 'background: #FF9800; color: white; font-size: 14px; padding: 4px 8px; border-radius: 4px;');
+        console.log('%c Full message:', 'color: #FF9800; font-weight: bold;', message);
+      } else {
+        console.log(`[ElevenLabs] ${msgType}:`, message);
+      }
+      // ===============================================
       
       // Reset inactivity timer on any message (user or agent activity)
       resetInactivityTimer();
       
       // Handle transcript events
-      const msg = message as Record<string, unknown>;
       if (msg.type === 'user_transcript') {
         const event = msg.user_transcription_event as Record<string, unknown> | undefined;
         const userTranscript = event?.user_transcript as string | undefined;
         if (userTranscript) {
           const now = performance.now();
-          console.log('[Voice] User transcript received:', userTranscript.substring(0, 50));
+          console.log('%c🎤 User said:', 'color: #9C27B0; font-weight: bold;', userTranscript);
           transcriptRef.current = userTranscript;
 
           // Immediate on-screen acknowledgement (covers the "dead air" period)
@@ -1188,7 +1218,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       
       // Agent response received - mark as responded and clear watchdog
       if (msg.type === 'agent_response') {
-        console.log('[Voice] Agent response received');
+        console.log('%c🤖 Agent response received', 'color: #4CAF50; font-weight: bold;');
         markAgentResponded();
         voiceSession.incrementMessageCount();
       }
