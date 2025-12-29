@@ -5,6 +5,9 @@ import { streamChat } from '@/lib/streamParser';
 import { useChatPersistence } from '@/hooks/useChatPersistence';
 import { parseMessageText, ParsedSegment } from '@/lib/textParser';
 import { FinancingCTACard, parseFinancingCTA } from '../chat/FinancingCTACard';
+import { TradeInCTACard, parseTradeInCTA } from '../chat/TradeInCTACard';
+import { ServiceCTACard, parseServiceCTA } from '../chat/ServiceCTACard';
+import { RepowerCTACard, parseRepowerCTA } from '../chat/RepowerCTACard';
 
 import { getMotorSpecificPrompts } from '../chat/getMotorSpecificPrompts';
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
@@ -21,6 +24,9 @@ interface Message {
   isStreaming?: boolean;
   reaction?: 'thumbs_up' | 'thumbs_down' | null;
   financingCTA?: import('../chat/FinancingCTACard').FinancingCTAData | null;
+  tradeInCTA?: import('../chat/TradeInCTACard').TradeInCTAData | null;
+  serviceCTA?: import('../chat/ServiceCTACard').ServiceCTAData | null;
+  repowerCTA?: import('../chat/RepowerCTACard').RepowerCTAData | null;
 }
 
 interface MotorInlineChatPanelProps {
@@ -291,13 +297,16 @@ export function MotorInlineChatPanel({
           // Parse lead capture marker
           let displayResponse = finalResponse.replace(/\[LEAD_CAPTURE:\s*\{[^}]+\}\]/, '').trim();
           
-          // Parse financing CTA
-          const { displayText, ctaData } = parseFinancingCTA(displayResponse);
-          displayResponse = displayText;
+          // Parse all CTA types
+          const { displayText: afterFinancing, ctaData: financingCTA } = parseFinancingCTA(displayResponse);
+          const { displayText: afterTradeIn, ctaData: tradeInCTA } = parseTradeInCTA(afterFinancing);
+          const { displayText: afterService, ctaData: serviceCTA } = parseServiceCTA(afterTradeIn);
+          const { displayText: afterRepower, ctaData: repowerCTA } = parseRepowerCTA(afterService);
+          displayResponse = afterRepower;
           
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
-              ? { ...msg, text: displayResponse, isStreaming: false, financingCTA: ctaData }
+              ? { ...msg, text: displayResponse, isStreaming: false, financingCTA, tradeInCTA, serviceCTA, repowerCTA }
               : msg
           ));
           
@@ -409,9 +418,18 @@ export function MotorInlineChatPanel({
                 )}
               </div>
               
-              {/* Financing CTA Card - renders below the message bubble */}
+              {/* CTA Cards - render below the message bubble */}
               {!msg.isUser && msg.financingCTA && (
                 <FinancingCTACard data={msg.financingCTA} />
+              )}
+              {!msg.isUser && msg.tradeInCTA && (
+                <TradeInCTACard data={msg.tradeInCTA} />
+              )}
+              {!msg.isUser && msg.serviceCTA && (
+                <ServiceCTACard data={msg.serviceCTA} />
+              )}
+              {!msg.isUser && msg.repowerCTA && (
+                <RepowerCTACard data={msg.repowerCTA} />
               )}
             </div>
           </div>
