@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 import MotorQuickInfo from "./MotorQuickInfo";
 import MotorDetailsSheet from './MotorDetailsSheet';
 import { StockBadge } from '@/components/inventory/StockBadge';
+import { PopularityBadge, getMotorPopularity } from './PopularityBadge';
 import { LuxuryPriceDisplay } from '@/components/pricing/LuxuryPriceDisplay';
 import type { Motor } from '../../lib/motor-helpers';
-import { getHPDescriptor, getPopularityIndicator, getBadgeColor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, buildModelKey, extractHpAndCode, decodeModelName } from '../../lib/motor-helpers';
+import { getHPDescriptor, requiresMercuryControls, isTillerMotor, getMotorImageByPriority, getMotorImageGallery, buildModelKey, extractHpAndCode, decodeModelName } from '../../lib/motor-helpers';
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { getFinancingDisplay } from '@/lib/finance';
@@ -60,7 +61,8 @@ export default function MotorCardPremium({
   const navigate = useNavigate();
   const [showTooltip, setShowTooltip] = useState(false);
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
-  const [motorBadge, setMotorBadge] = useState<string | null>(null);
+  // Get popularity type for this motor (rule-based)
+  const popularityType = motor ? getMotorPopularity(motor) : null;
   const [scrollPosition, setScrollPosition] = useState(0);
   
   // Get the best available image URL and count total images using priority logic
@@ -113,20 +115,7 @@ export default function MotorCardPremium({
   const { promo } = useActiveFinancingPromo();
   const financingDisplay = getFinancingDisplay((price || 0) * 1.13, promo?.rate || null);
   
-  // Generate badge once when component mounts and optionally rotate
-  useEffect(() => {
-    // Generate badge once when component mounts
-    const badge = getPopularityIndicator(title, inStock);
-    setMotorBadge(badge);
-    
-    // Optional: Rotate badges every 30 seconds for fresh feel
-    const interval = setInterval(() => {
-      const newBadge = getPopularityIndicator(title, inStock);
-      setMotorBadge(newBadge);
-    }, 30000); // 30 seconds
-    
-    return () => clearInterval(interval);
-  }, [title, inStock]);
+  // Popularity badge is now handled by getMotorPopularity (rule-based, no state needed)
   
   // Check if device has fine pointer (mouse) for hover
   const hasHover = typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches;
@@ -252,8 +241,8 @@ export default function MotorCardPremium({
                 }}
               />
               
-              {/* Stock Badge - Top Left */}
-              <div className="absolute top-4 left-4">
+              {/* Stock Badge & Popularity Badge - Top Left */}
+              <div className="absolute top-4 left-4 flex flex-col gap-1.5">
                 <StockBadge 
                   motor={{
                     in_stock: inStock,
@@ -262,6 +251,9 @@ export default function MotorCardPremium({
                   }}
                   variant="default"
                 />
+                {popularityType && (
+                  <PopularityBadge type={popularityType} />
+                )}
               </div>
               
               {/* HP Badge */}
