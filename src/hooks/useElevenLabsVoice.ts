@@ -1756,10 +1756,25 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
             });
           }
           
-          await conversation.startSession({
+          // Enable user_transcript events via overrides for HP detection fallback
+          const sessionOptions: any = {
             conversationToken: tokenData.token,
             connectionType: 'webrtc',
-          });
+            overrides: {
+              conversation: {
+                client_events: [
+                  'user_transcript',
+                  'agent_response',
+                  'agent_response_correction', 
+                  'client_tool_call',
+                  'interruption',
+                  'conversation_initiation_metadata',
+                ]
+              }
+            }
+          };
+          
+          await conversation.startSession(sessionOptions);
           
           console.log('WebRTC connection successful!');
           
