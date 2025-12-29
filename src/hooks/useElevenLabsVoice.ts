@@ -1402,6 +1402,9 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         horsepower?: number | string | boolean;
         model_search?: string;
         in_stock_only?: boolean;
+        start_type?: 'electric' | 'manual';
+        control_type?: 'tiller' | 'remote';
+        shaft_length?: 'short' | 'long' | 'xl' | 'xxl';
       }) => {
         console.log('[ClientTool] navigate_to_motors received:', params);
         
@@ -1429,15 +1432,25 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           console.warn('[ClientTool] navigate_to_motors: horsepower was boolean, ignoring');
         }
         
-        // Actually navigate to the page AND apply filters
+        // Build filter description based on what's being applied
+        const filterParts: string[] = [];
+        if (hpValue) filterParts.push(`${hpValue}HP`);
+        if (params.start_type) filterParts.push(params.start_type === 'electric' ? 'electric start' : 'pull-start');
+        if (params.shaft_length) filterParts.push(`${params.shaft_length} shaft`);
+        if (params.control_type) filterParts.push(params.control_type);
+        
+        // Actually navigate to the page AND apply filters (including config options)
         navigateToMotorsWithFilter({
           horsepower: hpValue,
           model: modelSearch,
-          inStock: params.in_stock_only
+          inStock: params.in_stock_only,
+          startType: params.start_type,
+          controlType: params.control_type,
+          shaftLength: params.shaft_length,
         });
         
-        const filterDesc = hpValue 
-          ? `${hpValue}HP motors` 
+        const filterDesc = filterParts.length > 0 
+          ? filterParts.join(', ') + ' motors'
           : modelSearch 
             ? `"${modelSearch}" motors`
             : 'all motors';
@@ -1446,7 +1459,8 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         return JSON.stringify({ 
           success: true, 
           message: `Showing ${filterDesc} on screen now.`,
-          navigated: true
+          navigated: true,
+          filters: { hp: hpValue, startType: params.start_type, controlType: params.control_type, shaftLength: params.shaft_length }
         });
       },
       // Get the motors currently visible on screen (INSTANT - reads from frontend state)

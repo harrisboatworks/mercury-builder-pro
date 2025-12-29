@@ -4,7 +4,14 @@
  */
 
 export type VoiceNavigationEvent = 
-  | { type: 'filter_motors'; payload: { horsepower?: number; model?: string; inStock?: boolean } }
+  | { type: 'filter_motors'; payload: { 
+      horsepower?: number; 
+      model?: string; 
+      inStock?: boolean;
+      startType?: 'electric' | 'manual';
+      controlType?: 'tiller' | 'remote';
+      shaftLength?: 'short' | 'long' | 'xl' | 'xxl';
+    } }
   | { type: 'navigate'; payload: { path: string } }
   | { type: 'show_motor'; payload: { motorId: string } }
   | { type: 'add_motor_to_quote'; payload: { motor: MotorForQuote } }
@@ -41,7 +48,10 @@ export function dispatchVoiceNavigation(event: VoiceNavigationEvent): void {
 export function filterMotors(options: { 
   horsepower?: number; 
   model?: string; 
-  inStock?: boolean 
+  inStock?: boolean;
+  startType?: 'electric' | 'manual';
+  controlType?: 'tiller' | 'remote';
+  shaftLength?: 'short' | 'long' | 'xl' | 'xxl';
 }): void {
   dispatchVoiceNavigation({ type: 'filter_motors', payload: options });
 }
@@ -59,7 +69,10 @@ export function navigateToPath(path: string): void {
 export function navigateToMotorsWithFilter(options: { 
   horsepower?: number; 
   model?: string; 
-  inStock?: boolean 
+  inStock?: boolean;
+  startType?: 'electric' | 'manual';
+  controlType?: 'tiller' | 'remote';
+  shaftLength?: 'short' | 'long' | 'xl' | 'xxl';
 }): void {
   // First navigate to the motors page
   dispatchVoiceNavigation({ type: 'navigate', payload: { path: '/quote/motor-selection' } });
