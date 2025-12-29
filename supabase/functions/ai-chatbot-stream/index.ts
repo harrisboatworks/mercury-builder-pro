@@ -750,6 +750,8 @@ function buildSystemPrompt(
   
   // Build motor context if viewing specific motor
   let currentMotorContext = '';
+  let prefetchedInsightsContext = '';
+  
   if (context?.currentMotor) {
     const m = context.currentMotor;
     const familyInfo = getMotorFamilyInfo(m.family || m.model || '');
@@ -757,6 +759,22 @@ function buildSystemPrompt(
 ## MOTOR THEY'RE VIEWING
 **${m.model || m.model_display}** - ${m.horsepower || m.hp}HP @ $${(m.sale_price || m.msrp || m.price || 0).toLocaleString()} CAD
 ${familyInfo ? `${familyInfo}` : ''}`;
+
+    // Add prefetched insights if available
+    if (context?.prefetchedInsights && Array.isArray(context.prefetchedInsights) && context.prefetchedInsights.length > 0) {
+      prefetchedInsightsContext = `
+## MOTOR INSIGHTS YOU CAN SHARE (Perplexity-verified facts)
+Use these naturally when relevant - share as "Did you know..." or weave into your answers:
+${context.prefetchedInsights.map((insight: string, i: number) => `${i + 1}. ${insight}`).join('\n')}
+
+PROACTIVE KNOWLEDGE RULES:
+- If the conversation has fewer than 3 exchanges, feel free to VOLUNTEER one insight naturally
+- Don't dump all facts at once - pick the most relevant one
+- Frame as helpful tips: "Quick thought..." or "One thing worth knowing..." or "By the way..."
+- If they ask about specs/features, reference these insights as context
+- Never make the customer feel like they're being lectured - keep it conversational`;
+    }
+  }
   }
 
   // Build quote progress context
@@ -1349,6 +1367,7 @@ When facility questions come up, give the answer AND the link. For directions, a
 ${seasonInfo.context}
 ${pageContext}
 ${currentMotorContext}
+${prefetchedInsightsContext}
 ${quoteContext}
 
 ## COMPLETE INVENTORY BY HP (${motors.length} models, ${hpRange})

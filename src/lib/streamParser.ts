@@ -23,6 +23,8 @@ export interface StreamChatParams {
       selectedPackage?: string | null;
       tradeInValue?: number | null;
     };
+    // Prefetched motor insights from Perplexity for proactive knowledge sharing
+    prefetchedInsights?: string[];
   };
   onDelta: (chunk: string) => void;
   onDone: (fullResponse: string) => void;

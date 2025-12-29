@@ -10,6 +10,7 @@ import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
 import { getContextualPrompts } from './getContextualPrompts';
 import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
+import { usePrefetchedInsights } from '@/hooks/usePrefetchedInsights';
 import { MotorComparisonCard } from './MotorComparisonCard';
 
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
@@ -291,6 +292,19 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       return null;
     }, [motorContext, state.motor]);
 
+    // Prefetch motor-specific insights from Perplexity
+    const activeMotorForInsights = useMemo(() => {
+      const activeMotor = state.previewMotor || state.motor;
+      if (!activeMotor) return null;
+      return {
+        hp: activeMotor.hp || (activeMotor as any).horsepower || 0,
+        model: activeMotor.model || (activeMotor as any).model_display || '',
+        family: (activeMotor as any).family
+      };
+    }, [state.previewMotor, state.motor]);
+    
+    const { insights: prefetchedInsights } = usePrefetchedInsights(activeMotorForInsights);
+
     // Use rotating prompts hook
     const { prompts: rotatingPrompts, isRotating: promptsRotating } = useRotatingPrompts({
       context: motorPromptContext,
@@ -401,7 +415,9 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             } : null,
             currentPage: location.pathname,
             boatInfo: state.boatInfo,
-            quoteProgress
+            quoteProgress,
+            // Pass prefetched Perplexity insights for proactive knowledge sharing
+            prefetchedInsights: prefetchedInsights.length > 0 ? prefetchedInsights : undefined
           },
           onDelta: (chunk) => {
             fullResponse += chunk;
