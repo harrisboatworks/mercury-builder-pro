@@ -14,6 +14,7 @@ import { getMotorSpecificPrompts, refreshMotorPrompts, getMotorContextLabel } fr
 import { MotorComparisonCard } from './MotorComparisonCard';
 
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
+import { useCrossChannelContext, VoiceContextForText } from '@/hooks/useCrossChannelContext';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
 import { cn } from '@/lib/utils';
@@ -132,6 +133,10 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     updateReaction,
     clearConversation,
   } = useChatPersistence();
+
+  // Cross-channel context for voice-text handoff
+  const { loadVoiceContextForText } = useCrossChannelContext();
+  const [voiceContext, setVoiceContext] = useState<VoiceContextForText | null>(null);
 
   // Voice chat integration - use global context for persistence
   const voice = useVoice();
@@ -513,7 +518,14 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
           } : null,
           currentPage: location.pathname,
           boatInfo: state.boatInfo,
-          quoteProgress
+          quoteProgress,
+          // Voice-to-text context handoff
+          voiceContext: voiceContext?.hasRecentVoice ? {
+            summary: voiceContext.summary,
+            motorsDiscussed: voiceContext.motorsDiscussed,
+            lastVoiceAt: voiceContext.lastVoiceAt,
+            messageCount: voiceContext.messageCount,
+          } : undefined
         },
         onDelta: (chunk) => {
           fullResponse += chunk;

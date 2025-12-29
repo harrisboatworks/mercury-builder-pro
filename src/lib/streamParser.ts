@@ -25,6 +25,13 @@ export interface StreamChatParams {
     };
     // Prefetched motor insights from Perplexity for proactive knowledge sharing
     prefetchedInsights?: string[];
+    // Voice-to-text context handoff - recent voice session summary
+    voiceContext?: {
+      summary: string | null;
+      motorsDiscussed: string[];
+      lastVoiceAt: string | null;
+      messageCount: number;
+    };
   };
   onDelta: (chunk: string) => void;
   onDone: (fullResponse: string) => void;

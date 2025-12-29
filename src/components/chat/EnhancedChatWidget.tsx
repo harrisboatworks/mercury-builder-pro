@@ -14,6 +14,7 @@ import { usePrefetchedInsights } from '@/hooks/usePrefetchedInsights';
 import { MotorComparisonCard } from './MotorComparisonCard';
 
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
+import { useCrossChannelContext, VoiceContextForText } from '@/hooks/useCrossChannelContext';
 import { VoiceButton } from './VoiceButton';
 import { useVoice } from '@/contexts/VoiceContext';
 import { supabase } from '@/integrations/supabase/client';
@@ -101,6 +102,10 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       clearConversation,
     } = useChatPersistence();
 
+    // Cross-channel context for voice-text handoff
+    const { loadVoiceContextForText } = useCrossChannelContext();
+    const [voiceContext, setVoiceContext] = useState<VoiceContextForText | null>(null);
+
     // Voice chat integration - use global context for persistence
     const voice = useVoice();
 
@@ -185,10 +190,17 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       return 'general';
     };
 
-    // Load history and initialize - with context-aware reset
+    // Load history and initialize - with context-aware reset and voice context loading
     useEffect(() => {
       const initChat = async () => {
         if (!isOpen || hasInitialized || isPersistenceLoading) return;
+        
+        // Load voice context for cross-channel handoff
+        const voiceCtx = await loadVoiceContextForText();
+        setVoiceContext(voiceCtx);
+        if (voiceCtx?.hasRecentVoice) {
+          console.log('[Chat] Voice context loaded:', voiceCtx);
+        }
         
         const currentCategory = getPageCategory(location.pathname);
         const storedCategory = localStorage.getItem('chat_page_category');
@@ -204,9 +216,14 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
           await clearConversation();
           localStorage.setItem('chat_page_category', currentCategory);
           
+          // Include voice context in welcome if available
+          const welcomeText = voiceCtx?.hasRecentVoice
+            ? `${getWelcomeMessage()} I remember we were chatting earlier${voiceCtx.motorsDiscussed.length > 0 ? ` about the ${voiceCtx.motorsDiscussed[0]}` : ''} - feel free to continue here or ask me something new!`
+            : getWelcomeMessage();
+          
           const welcomeMessage: Message = {
             id: 'welcome_' + Date.now(),
-            text: getWelcomeMessage(),
+            text: welcomeText,
             isUser: false,
             timestamp: new Date(),
           };
@@ -232,11 +249,16 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
           }));
           setConversationHistory(history);
         } else {
-          // No history - show welcome
+          // No history - show welcome (with voice context if available)
           localStorage.setItem('chat_page_category', currentCategory);
+          
+          const welcomeText = voiceCtx?.hasRecentVoice
+            ? `${getWelcomeMessage()} I remember we were chatting earlier${voiceCtx.motorsDiscussed.length > 0 ? ` about the ${voiceCtx.motorsDiscussed[0]}` : ''} - feel free to continue here!`
+            : getWelcomeMessage();
+          
           const welcomeMessage: Message = {
             id: 'welcome',
-            text: getWelcomeMessage(),
+            text: welcomeText,
             isUser: false,
             timestamp: new Date(),
           };
@@ -251,7 +273,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       };
       
       initChat();
-    }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage, clearConversation, location.pathname]);
+    }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage, clearConversation, location.pathname, loadVoiceContextForText]);
 
     // Parse motor context from initialMessage (if it's a context marker, not a question)
     const motorContext = useMemo(() => {
@@ -417,7 +439,14 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
             boatInfo: state.boatInfo,
             quoteProgress,
             // Pass prefetched Perplexity insights for proactive knowledge sharing
-            prefetchedInsights: prefetchedInsights.length > 0 ? prefetchedInsights : undefined
+            prefetchedInsights: prefetchedInsights.length > 0 ? prefetchedInsights : undefined,
+            // Voice-to-text context handoff - include recent voice session info
+            voiceContext: voiceContext?.hasRecentVoice ? {
+              summary: voiceContext.summary,
+              motorsDiscussed: voiceContext.motorsDiscussed,
+              lastVoiceAt: voiceContext.lastVoiceAt,
+              messageCount: voiceContext.messageCount,
+            } : undefined
           },
           onDelta: (chunk) => {
             fullResponse += chunk;
