@@ -42,6 +42,7 @@ import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
 import { getMotorImages } from '@/lib/mercury-product-images';
 import { VOICE_NAVIGATION_EVENT, type VoiceNavigationEvent } from '@/lib/voiceNavigation';
+import { setVisibleMotors, type VisibleMotor } from '@/lib/visibleMotorsStore';
 import type { MotorGroup } from '@/hooks/useGroupedMotors';
 
 // Database types
@@ -523,6 +524,27 @@ function MotorSelectionContent() {
     
     return fuzzyResults.map(r => r.item);
   }, [processedMotors, searchQuery]);
+
+  // Update the visible motors store for voice agent access
+  useEffect(() => {
+    // Parse HP from search query if numeric
+    const queryNum = searchQuery ? parseFloat(searchQuery) : null;
+    const filterHP = queryNum && !isNaN(queryNum) ? queryNum : null;
+    
+    // Map to VisibleMotor format for the store
+    const visibleMotors: VisibleMotor[] = filteredMotors.map(m => ({
+      id: m.id,
+      model: m.model_number || m.model,
+      model_display: m.model,
+      horsepower: m.hp,
+      price: m.price,
+      msrp: m.msrp,
+      in_stock: m.in_stock,
+      type: m.type,
+    }));
+    
+    setVisibleMotors(visibleMotors, filterHP, searchQuery || null);
+  }, [filteredMotors, searchQuery]);
 
   // Group motors by HP for simple view
   const groupedMotors = useGroupedMotors(processedMotors);
