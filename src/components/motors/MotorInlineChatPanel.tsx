@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { streamChat } from '@/lib/streamParser';
 import { useChatPersistence } from '@/hooks/useChatPersistence';
 import { parseMessageText, ParsedSegment } from '@/lib/textParser';
+import { FinancingCTACard, parseFinancingCTA } from '../chat/FinancingCTACard';
 
 import { getMotorSpecificPrompts } from '../chat/getMotorSpecificPrompts';
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
@@ -19,6 +20,7 @@ interface Message {
   timestamp: Date;
   isStreaming?: boolean;
   reaction?: 'thumbs_up' | 'thumbs_down' | null;
+  financingCTA?: import('../chat/FinancingCTACard').FinancingCTAData | null;
 }
 
 interface MotorInlineChatPanelProps {
@@ -286,11 +288,16 @@ export function MotorInlineChatPanel({
           scrollToBottom();
         },
         onDone: async (finalResponse) => {
-          const displayResponse = finalResponse.replace(/\[LEAD_CAPTURE:\s*\{[^}]+\}\]/, '').trim();
+          // Parse lead capture marker
+          let displayResponse = finalResponse.replace(/\[LEAD_CAPTURE:\s*\{[^}]+\}\]/, '').trim();
+          
+          // Parse financing CTA
+          const { displayText, ctaData } = parseFinancingCTA(displayResponse);
+          displayResponse = displayText;
           
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
-              ? { ...msg, text: displayResponse, isStreaming: false }
+              ? { ...msg, text: displayResponse, isStreaming: false, financingCTA: ctaData }
               : msg
           ));
           
@@ -378,9 +385,9 @@ export function MotorInlineChatPanel({
         {messages.map((msg) => (
           <div
             key={msg.id}
-            className={`flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}
+            className={`flex flex-col ${msg.isUser ? 'items-end' : 'items-start'}`}
           >
-            <div className={`max-w-[85%] ${msg.isUser ? 'order-1' : 'order-1'}`}>
+            <div className={`max-w-[85%]`}>
               <div
                 className={`px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
                   msg.isUser
@@ -402,6 +409,10 @@ export function MotorInlineChatPanel({
                 )}
               </div>
               
+              {/* Financing CTA Card - renders below the message bubble */}
+              {!msg.isUser && msg.financingCTA && (
+                <FinancingCTACard data={msg.financingCTA} />
+              )}
             </div>
           </div>
         ))}
