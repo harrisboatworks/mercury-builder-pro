@@ -301,8 +301,11 @@ export function QuoteRevealCinematic({
               initial={{ opacity: 0, y: 20, filter: 'blur(4px)', scale: 0.95 }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[32%] md:top-[34%] font-playfair text-lg md:text-2xl font-normal tracking-wide text-center px-4"
-              style={{ color: '#F5F5F5' }}
+              className="absolute top-[32%] md:top-[34%] font-outfit text-xl md:text-3xl font-medium tracking-wide text-center px-4"
+              style={{ 
+                color: '#F5F5F5',
+                textShadow: '0 0 30px rgba(212, 175, 55, 0.3), 0 2px 10px rgba(0, 0, 0, 0.5)'
+              }}
             >
               {motorName}
             </motion.h2>
@@ -325,7 +328,7 @@ export function QuoteRevealCinematic({
                 MSRP
               </motion.span>
               <motion.span 
-                className="font-playfair text-xl md:text-2xl tabular-nums relative"
+                className="font-outfit text-xl md:text-2xl tabular-nums relative"
                 style={{ color: '#6B7280' }}
               >
                 {money(msrp)}
