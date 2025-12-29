@@ -143,12 +143,20 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       return getContextualPrompts(motor, state.boatInfo, location.pathname);
     }, [state.motor, state.boatInfo, location.pathname]);
 
-    // Get contextual welcome message
-    const getWelcomeMessage = (): string => {
+    // Track which motor the welcome message was generated for
+    const welcomeMotorIdRef = useRef<string | null>(null);
+
+    // Get contextual welcome message - use previewMotor (from AskQuestionButton) or selected motor
+    const getWelcomeMessage = useCallback((): string => {
       const path = location.pathname;
+      const activeMotor = state.previewMotor || state.motor;
       
-      if (state.motor) {
-        return `Hi! I see you're looking at the ${state.motor.model} (${state.motor.hp}HP). How can I help you with this motor?`;
+      if (activeMotor) {
+        const hp = activeMotor.hp || 0;
+        const family = activeMotor.model?.toLowerCase().includes('verado') ? 'Verado' :
+                       activeMotor.model?.toLowerCase().includes('pro xs') ? 'Pro XS' :
+                       'FourStroke';
+        return `Hey! Checking out the ${hp}HP ${family}? Solid choice — what do you want to know about it?`;
       }
       if (path.includes('/quote/summary')) {
         return "Hi! I see you're reviewing your quote. Do you have any questions about pricing, financing, or your motor selection?";
@@ -163,7 +171,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
         return "Hi! I can help you figure out if repowering makes sense for your boat. What kind of boat do you have, and what motor is on it now?";
       }
       return "Hi there! I'm your Mercury Marine expert. I can help you find the perfect outboard motor, answer technical questions, or explain our current promotions. What can I help you with?";
-    };
+    }, [location.pathname, state.previewMotor, state.motor]);
 
     // Convert persisted messages to UI format
     const convertPersistedMessages = useCallback((persisted: PersistedMessage[]): Message[] => {
@@ -209,6 +217,10 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
         const contextChanged = storedCategory && storedCategory !== currentCategory;
         
         const persistedMessages = await loadMessages();
+        
+        // Track which motor we're initializing with
+        const activeMotor = state.previewMotor || state.motor;
+        welcomeMotorIdRef.current = (activeMotor as any)?.id || null;
         
         // If context changed significantly and we have old history, start fresh
         if (contextChanged && persistedMessages.length > 0) {
@@ -273,7 +285,36 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       };
       
       initChat();
-    }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage, clearConversation, location.pathname, loadVoiceContextForText]);
+    }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage, clearConversation, location.pathname, loadVoiceContextForText, getWelcomeMessage, state.previewMotor, state.motor]);
+
+    // Re-generate welcome message when motor context changes AFTER initialization
+    useEffect(() => {
+      const activeMotor = state.previewMotor || state.motor;
+      const currentMotorId = (activeMotor as any)?.id || null;
+      
+      // Only update if we've initialized, chat is open, and motor actually changed
+      if (hasInitialized && isOpen && !isMinimized && currentMotorId && currentMotorId !== welcomeMotorIdRef.current) {
+        console.log('[Chat] Motor context changed, updating welcome message');
+        welcomeMotorIdRef.current = currentMotorId;
+        
+        // Generate new welcome for this motor
+        const newWelcome: Message = {
+          id: 'welcome_' + Date.now(),
+          text: getWelcomeMessage(),
+          isUser: false,
+          timestamp: new Date(),
+        };
+        
+        // Replace the first message if it's a welcome (non-user message)
+        setMessages(prev => {
+          const firstIsWelcome = prev[0] && !prev[0].isUser && prev[0].id.startsWith('welcome');
+          if (firstIsWelcome) {
+            return [newWelcome, ...prev.slice(1)];
+          }
+          return prev;
+        });
+      }
+    }, [state.previewMotor, state.motor, hasInitialized, isOpen, isMinimized, getWelcomeMessage]);
 
     // Parse motor context from initialMessage (if it's a context marker, not a question)
     const motorContext = useMemo(() => {

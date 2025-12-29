@@ -256,6 +256,9 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     return 'general';
   };
 
+  // Track which motor the welcome message was generated for
+  const welcomeMotorIdRef = useRef<string | null>(null);
+
   // Load history and initialize - with context-aware reset
   useEffect(() => {
     const initChat = async () => {
@@ -268,6 +271,10 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
       const contextChanged = storedCategory && storedCategory !== currentCategory;
       
       const persistedMessages = await loadMessages();
+      
+      // Track which motor we're initializing with
+      const activeMotor = state.previewMotor || state.motor;
+      welcomeMotorIdRef.current = (activeMotor as any)?.id || null;
       
       // If context changed significantly and we have old history, start fresh
       if (contextChanged && persistedMessages.length > 0) {
@@ -318,7 +325,36 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     };
     
     initChat();
-  }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage, clearConversation, location.pathname]);
+  }, [isOpen, hasInitialized, isPersistenceLoading, loadMessages, convertPersistedMessages, saveMessage, clearConversation, location.pathname, state.previewMotor, state.motor]);
+
+  // Re-generate welcome message when motor context changes AFTER initialization
+  useEffect(() => {
+    const activeMotor = state.previewMotor || state.motor;
+    const currentMotorId = (activeMotor as any)?.id || null;
+    
+    // Only update if we've initialized, chat is open, and motor actually changed
+    if (hasInitialized && isOpen && currentMotorId && currentMotorId !== welcomeMotorIdRef.current) {
+      console.log('[Chat] Motor context changed, updating welcome message');
+      welcomeMotorIdRef.current = currentMotorId;
+      
+      // Generate new welcome for this motor
+      const newWelcome: Message = {
+        id: 'welcome_' + Date.now(),
+        text: getWelcomeMessage(),
+        isUser: false,
+        timestamp: new Date(),
+      };
+      
+      // Replace the first message if it's a welcome (non-user message)
+      setMessages(prev => {
+        const firstIsWelcome = prev[0] && !prev[0].isUser && prev[0].id.startsWith('welcome');
+        if (firstIsWelcome) {
+          return [newWelcome, ...prev.slice(1)];
+        }
+        return prev;
+      });
+    }
+  }, [state.previewMotor, state.motor, hasInitialized, isOpen]);
 
   // Handle new initial messages (when chat reopens with a REAL question from search bar)
   const initialMessageSentRef = useRef<string | null>(null);
