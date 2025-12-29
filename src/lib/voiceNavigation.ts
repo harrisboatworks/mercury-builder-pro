@@ -21,7 +21,8 @@ export type VoiceNavigationEvent =
   | { type: 'navigate_quote_step'; payload: { step: 'motor' | 'path' | 'boat' | 'trade-in' | 'summary' | 'schedule' } }
   | { type: 'apply_trade_in'; payload: { brand: string; year: number; horsepower: number; condition?: string } }
   | { type: 'compare_motors'; payload: { motorIds: string[] } }
-  | { type: 'send_motor_photos'; payload: { phone: string; motorModel: string } };
+  | { type: 'send_motor_photos'; payload: { phone: string; motorModel: string } }
+  | { type: 'clear_filters'; payload: Record<string, never> };
 
 // Motor data structure for adding to quote
 export interface MotorForQuote {
@@ -95,4 +96,11 @@ export function showMotor(motorId: string): void {
  */
 export function setPurchasePath(path: 'loose' | 'installed'): void {
   dispatchVoiceNavigation({ type: 'set_purchase_path', payload: { path } });
+}
+
+/**
+ * Helper to clear all filters and show all motors
+ */
+export function clearAllFilters(): void {
+  dispatchVoiceNavigation({ type: 'clear_filters', payload: {} });
 }
