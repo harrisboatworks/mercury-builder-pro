@@ -334,12 +334,21 @@ Customer: "Long shaft"
 - "What pull-start motors are in stock?" → navigate_to_motors({ start_type: "manual", in_stock_only: true })
 - "Short shaft portables" → navigate_to_motors({ shaft_length: "short" })
 
-**FILTER PARAMETERS (use exactly these values):**
-- start_type: "electric" or "manual" 
-- control_type: "tiller" or "remote"
-- shaft_length: "short", "long", "xl", or "xxl"
-- in_stock_only: true or false
-- horsepower: number (20, 40, 60, 115, etc.)
+**FILTER PARAMETERS (CRITICAL - USE EXACTLY THESE STRING VALUES):**
+
+| Customer says                          | Parameter to use                |
+|----------------------------------------|---------------------------------|
+| "electric start" / "electric"          | start_type: "electric"          |
+| "pull start" / "manual" / "rope start" | start_type: "manual"            |
+| "tiller" / "tiller handle"             | control_type: "tiller"          |
+| "remote" / "remote steering" / "console" | control_type: "remote"        |
+| "short shaft" / "15 inch"              | shaft_length: "short"           |
+| "long shaft" / "20 inch"               | shaft_length: "long"            |
+| "extra long" / "25 inch"               | shaft_length: "xl"              |
+| "30 inch shaft"                        | shaft_length: "xxl"             |
+
+IMPORTANT: Always use lowercase strings exactly as shown: "electric", "manual", "tiller", "remote", "short", "long", "xl", "xxl"
+Do NOT use variations like "Electric" or "pull-start" - use exact values above.
 
 ## INVENTORY APPROACH:
 - Show them the models they asked about - don't focus on stock status

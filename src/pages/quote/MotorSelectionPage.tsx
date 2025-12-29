@@ -209,7 +209,12 @@ function MotorSelectionContent() {
       const event = e.detail;
       
 if (event.type === 'filter_motors') {
+        console.log('%c🎯 VOICE filter_motors received', 'background: #2196F3; color: white; padding: 2px 6px; border-radius: 4px;');
+        console.log('  Payload:', JSON.stringify(event.payload));
+        
         const { horsepower, model, inStock, startType, controlType, shaftLength } = event.payload;
+        
+        console.log('  Extracted values → HP:', horsepower, '| Start:', startType, '| Control:', controlType, '| Shaft:', shaftLength);
         
         // Set HP/model as search query (fuzzy search handles this well)
         if (horsepower) {
@@ -222,13 +227,16 @@ if (event.type === 'filter_motors') {
         
         // Store structured filters separately for real filtering
         if (startType || controlType || shaftLength || inStock) {
-          setConfigFilters({
+          const newFilters = {
             startType: startType as 'electric' | 'manual' | undefined,
             controlType: controlType as 'tiller' | 'remote' | undefined,
             shaftLength: shaftLength as 'short' | 'long' | 'xl' | 'xxl' | undefined,
             inStock: inStock ? true : undefined,
-          });
+          };
+          console.log('%c📋 Setting configFilters:', 'color: #4CAF50; font-weight: bold;', newFilters);
+          setConfigFilters(newFilters);
         } else {
+          console.log('%c📋 Clearing configFilters (no filters)', 'color: #FF9800;');
           setConfigFilters(null);
         }
         
