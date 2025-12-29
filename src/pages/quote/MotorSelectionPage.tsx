@@ -24,7 +24,8 @@ import { HPMotorCard } from '@/components/motors/HPMotorCard';
 // ViewModeToggle removed - using expert view only
 import { MotorConfiguratorModal } from '@/components/motors/MotorConfiguratorModal';
 import { QuickHPFilters } from '@/components/motors/QuickHPFilters';
-import { ConfigFilterPills, type ConfigFiltersState } from '@/components/motors/ConfigFilterPills';
+import { type ConfigFiltersState } from '@/components/motors/ConfigFilterPills';
+import { ConfigFilterSheet } from '@/components/motors/ConfigFilterSheet';
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
@@ -798,18 +799,16 @@ function MotorSelectionContent() {
               className="w-full"
             />
             
-            {/* Quick HP Filters */}
-            <div className="mt-3">
-              <QuickHPFilters 
-                motors={processedMotors}
-                activeFilter={searchQuery}
-                onFilterChange={handleSearchChange}
-              />
-            </div>
-            
-            {/* Config Filter Pills */}
-            <div className="mt-3">
-              <ConfigFilterPills
+            {/* Quick HP Filters + Config Filter Button */}
+            <div className="mt-3 flex items-center gap-2">
+              <div className="flex-1 overflow-x-auto">
+                <QuickHPFilters 
+                  motors={processedMotors}
+                  activeFilter={searchQuery}
+                  onFilterChange={handleSearchChange}
+                />
+              </div>
+              <ConfigFilterSheet
                 filters={configFilters}
                 onFilterChange={setConfigFilters}
               />
