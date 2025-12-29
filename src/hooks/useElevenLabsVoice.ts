@@ -1251,6 +1251,31 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
             console.log(`%c🚀 NAVIGATE-FIRST: Detected ${detectedHp}HP motor query - auto-navigating`, 'background: #4CAF50; color: white; padding: 2px 6px; border-radius: 4px;');
             console.log('[Navigate-First] Transcript:', userTranscript, '| HP:', detectedHp, '| isMotorQuery:', isMotorQuery);
             navigateToMotorsWithFilter({ horsepower: detectedHp });
+            
+            // FALLBACK: After navigation + filter, automatically send visible motors to agent
+            // This ensures agent gets data even if it doesn't call get_visible_motors tool
+            setTimeout(() => {
+              const summary = formatMotorsForVoice(8);
+              console.log('%c📤 FALLBACK: Auto-sending visible motors to agent', 'background: #2196F3; color: white; padding: 2px 6px; border-radius: 4px;');
+              console.log('[Fallback] Visible motors summary:', summary);
+              
+              // Send as contextual update so agent knows what's on screen
+              if (conversationRef.current?.status === 'connected') {
+                try {
+                  // Use sendContextualUpdate if available, otherwise inject via user message
+                  const contextMsg = `[SCREEN CONTEXT] The customer's screen now shows: ${summary}. Describe the ${detectedHp}HP motors you see - mention count, configurations (start types, shafts), and price range. Ask what configuration they need.`;
+                  if (typeof (conversationRef.current as any).sendContextualUpdate === 'function') {
+                    (conversationRef.current as any).sendContextualUpdate(contextMsg);
+                  } else {
+                    // Fallback: inject as system-style message
+                    conversationRef.current.sendUserMessage(contextMsg);
+                  }
+                  console.log('[Fallback] Context sent to agent successfully');
+                } catch (e) {
+                  console.warn('[Fallback] Could not send context to agent:', e);
+                }
+              }
+            }, 600); // Wait for navigation + filter + store update
           } else if (detectedHp) {
             console.log('[Navigate-First] HP detected but not motor query:', userTranscript);
           }
