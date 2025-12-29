@@ -3,7 +3,8 @@ import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles, ChevronDown, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useAIChat } from '../chat/GlobalAIChat';
+// Note: useAIChat is NOT used here because this component is rendered via portal
+// The openChat function is passed as a prop from the parent component
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
 import { supabase } from "../../integrations/supabase/client";
@@ -71,6 +72,7 @@ interface MotorDetailsPremiumModalProps {
   shaft?: string;
   features?: string[];
   motor?: Motor;
+  openChat?: () => void; // Passed from parent to avoid context issues with portals
 }
 
 export default function MotorDetailsPremiumModal({
@@ -86,7 +88,8 @@ export default function MotorDetailsPremiumModal({
   hp,
   shaft,
   features = [],
-  motor
+  motor,
+  openChat: openChatProp
 }: MotorDetailsPremiumModalProps) {
   const navigate = useNavigate();
   const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
@@ -258,7 +261,7 @@ export default function MotorDetailsPremiumModal({
   const [promoReminderOpen, setPromoReminderOpen] = useState(false);
   const [inlineChatOpen, setInlineChatOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
-  const { openChat } = useAIChat();
+  // openChat comes from props (openChatProp) since this component is portaled outside the context tree
 
   const handleCalculatePayment = () => {
     setCalculatorOpen(true);
@@ -271,9 +274,9 @@ export default function MotorDetailsPremiumModal({
     if (isDesktopWithInlineChat) {
       // Desktop: open inline chat panel (visible in right column)
       setInlineChatOpen(true);
-    } else {
+    } else if (openChatProp) {
       // Mobile/tablet: open chat drawer - motor context flows through QuoteContext.previewMotor
-      openChat();
+      openChatProp();
       onClose();
     }
   };
