@@ -179,6 +179,51 @@ serve(async (req) => {
 
     let result: unknown;
 
+    // Common spoken number to actual number mapping - shared across actions
+    const spokenNumbers: Record<string, number> = {
+      'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'eight': 8, 'nine': 9, 'ten': 10,
+      'fifteen': 15, 'twenty': 20, 'twenty-five': 25, 'twentyfive': 25, 'thirty': 30,
+      'forty': 40, 'fifty': 50, 'sixty': 60, 'seventy': 70, 'seventy-five': 75, 'seventyfive': 75,
+      'eighty': 80, 'ninety': 90, 'hundred': 100, 'one-fifteen': 115, 'onefifteen': 115,
+      'one fifteen': 115, 'one-fifty': 150, 'onefifty': 150, 'one fifty': 150,
+      'two-hundred': 200, 'twohundred': 200, 'two hundred': 200,
+      'two-fifty': 250, 'twofifty': 250, 'two fifty': 250,
+      'three-hundred': 300, 'threehundred': 300, 'three hundred': 300,
+      '9.9': 9.9, 'nine point nine': 9.9, '3.5': 3.5, 'three point five': 3.5
+    };
+
+    // Helper function to extract HP from any string (user message, etc.)
+    function extractHPFromText(text: string): number | null {
+      if (!text) return null;
+      const normalized = text.toLowerCase().trim();
+      
+      // Try spoken numbers first
+      for (const [key, value] of Object.entries(spokenNumbers)) {
+        if (normalized.includes(key)) {
+          console.log(`[HP Extract] Found spoken number "${key}" = ${value}`);
+          return value;
+        }
+      }
+      
+      // Try patterns like "20 HP", "20hp", "20 horsepower", "20-hp"
+      const patterns = [
+        /(\d+(?:\.\d+)?)\s*(?:hp|horse\s*power)/i,
+        /(\d+(?:\.\d+)?)\s*-?\s*hp/i,
+        /(\d+(?:\.\d+)?)\s+(?:outboard|motor|engine)/i
+      ];
+      
+      for (const pattern of patterns) {
+        const match = normalized.match(pattern);
+        if (match) {
+          const hp = parseFloat(match[1]);
+          console.log(`[HP Extract] Pattern matched: "${match[0]}" = ${hp}`);
+          return hp;
+        }
+      }
+      
+      return null;
+    }
+
     switch (action) {
       case "check_inventory": {
         // Search inventory by horsepower, family, stock status
@@ -191,22 +236,27 @@ serve(async (req) => {
         // e.g., { horsepower: "FourStroke" } instead of { family: "FourStroke" }
         let hpValue = params?.horsepower;
         let familyValue = params?.family;
+        const userMessage = params?.user_message || params?.originalRequest || '';
         
-        // Common spoken number to actual number mapping
-        const spokenNumbers: Record<string, number> = {
-          'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'eight': 8, 'nine': 9, 'ten': 10,
-          'fifteen': 15, 'twenty': 20, 'twenty-five': 25, 'twentyfive': 25, 'thirty': 30,
-          'forty': 40, 'fifty': 50, 'sixty': 60, 'seventy': 70, 'seventy-five': 75, 'seventyfive': 75,
-          'eighty': 80, 'ninety': 90, 'hundred': 100, 'one-fifteen': 115, 'onefifteen': 115,
-          'one-fifty': 150, 'onefifty': 150, 'two-hundred': 200, 'twohundred': 200,
-          'two-fifty': 250, 'twofifty': 250, 'three-hundred': 300, 'threehundred': 300
-        };
-        
-        // If horsepower looks like a family name, swap it
+        // If horsepower looks like a family name, swap it and try to recover HP from user message
         if (typeof hpValue === 'string' && /^(FourStroke|Verado|Pro\s*XS|SeaPro|ProKicker)$/i.test(hpValue)) {
-          console.log(`[Param Fix] horsepower="${hpValue}" looks like a family name, treating as family`);
+          console.warn(`[Param Fix] MISINTERPRETATION DETECTED: horsepower="${hpValue}" is a family name!`);
           familyValue = familyValue || hpValue;
-          hpValue = null;
+          
+          // Try to recover the actual HP from user message if provided
+          if (userMessage) {
+            const recoveredHP = extractHPFromText(userMessage);
+            if (recoveredHP) {
+              console.log(`[Param Fix] Recovered HP=${recoveredHP} from user message: "${userMessage}"`);
+              hpValue = recoveredHP;
+            } else {
+              console.log(`[Param Fix] Could not recover HP from user message, proceeding with family-only search`);
+              hpValue = null;
+            }
+          } else {
+            console.log(`[Param Fix] No user message provided for HP recovery`);
+            hpValue = null;
+          }
         }
         
         // Try to parse spoken numbers to actual numbers
@@ -220,10 +270,10 @@ serve(async (req) => {
             hpValue = parseFloat(hpValue);
           } else {
             // Try to extract any number from the string
-            const numMatch = hpValue.match(/(\d+)/);
+            const numMatch = hpValue.match(/(\d+(?:\.\d+)?)/);
             if (numMatch) {
               console.log(`[Param Fix] Extracted number ${numMatch[1]} from "${hpValue}"`);
-              hpValue = parseInt(numMatch[1], 10);
+              hpValue = parseFloat(numMatch[1]);
             } else {
               console.log(`[Param Fix] Could not parse HP from "${hpValue}", ignoring`);
               hpValue = null;
@@ -253,7 +303,14 @@ serve(async (req) => {
         if (error) throw error;
 
         if (!data || data.length === 0) {
-          result = { found: false, message: "No motors found matching your criteria." };
+          // Provide helpful response based on what was searched
+          const searchedFor = hpValue ? `${hpValue} HP` : familyValue ? `${familyValue} motors` : 'your criteria';
+          result = { 
+            found: false, 
+            message: `No motors found matching ${searchedFor}.`,
+            searchedHP: hpValue,
+            searchedFamily: familyValue
+          };
         } else {
           // Build motor objects with config and apply config filters
           let motors = data
@@ -275,6 +332,8 @@ serve(async (req) => {
               found: true, 
               count: motors.length,
               motors,
+              searchedHP: hpValue,
+              searchedFamily: familyValue,
               summary: `Found ${motors.length} motor${motors.length > 1 ? 's' : ''} matching your criteria.`
             };
           }
