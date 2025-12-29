@@ -23,7 +23,6 @@ import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
 import { HPMotorCard } from '@/components/motors/HPMotorCard';
 // ViewModeToggle removed - using expert view only
 import { MotorConfiguratorModal } from '@/components/motors/MotorConfiguratorModal';
-import { QuickHPFilters } from '@/components/motors/QuickHPFilters';
 import { type ConfigFiltersState } from '@/components/motors/ConfigFilterPills';
 import { ConfigFilterSheet } from '@/components/motors/ConfigFilterSheet';
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
@@ -788,27 +787,23 @@ function MotorSelectionContent() {
 
         <VoiceStatusBanner />
         
-        {/* Search Bar - Scrolls naturally with content */}
+{/* Search Bar - Scrolls naturally with content */}
         <div className="bg-stone-50 border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-            <HybridMotorSearch
-              query={searchQuery}
-              onQueryChange={handleSearchChange}
-              motors={processedMotors}
-              onHpSelect={handleHpSuggestionSelect}
-              className="w-full"
-            />
-            
-            {/* Quick HP Filters + Config Filter Button */}
-            <div className="mt-3 flex items-center gap-2">
-              <div className="flex-1 overflow-x-auto">
-                <QuickHPFilters 
+            <div className="flex items-center gap-2">
+              <div className="flex-1">
+                <HybridMotorSearch
+                  query={searchQuery}
+                  onQueryChange={handleSearchChange}
                   motors={processedMotors}
-                  activeFilter={searchQuery}
-                  onFilterChange={handleSearchChange}
+                  onHpSelect={handleHpSuggestionSelect}
+                  className="w-full"
                 />
               </div>
               <ConfigFilterSheet
+                motors={processedMotors}
+                activeHpFilter={searchQuery}
+                onHpFilterChange={handleSearchChange}
                 filters={configFilters}
                 onFilterChange={setConfigFilters}
               />
