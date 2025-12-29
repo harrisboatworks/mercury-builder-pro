@@ -24,6 +24,7 @@ import { HPMotorCard } from '@/components/motors/HPMotorCard';
 // ViewModeToggle removed - using expert view only
 import { MotorConfiguratorModal } from '@/components/motors/MotorConfiguratorModal';
 import { QuickHPFilters } from '@/components/motors/QuickHPFilters';
+import { ConfigFilterPills, type ConfigFiltersState } from '@/components/motors/ConfigFilterPills';
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
@@ -158,12 +159,8 @@ function MotorSelectionContent() {
   // Quiz state - local state since we removed the view mode toggle
   const [showQuiz, setShowQuiz] = useState(false);
   
-  // Voice filter state - structured filters separate from text search
-  const [voiceFilters, setVoiceFilters] = useState<{
-    startType?: 'electric' | 'manual';
-    controlType?: 'tiller' | 'remote';
-    shaftLength?: 'short' | 'long' | 'xl' | 'xxl';
-  } | null>(null);
+  // Config filter state - shared by UI pills and voice commands
+  const [configFilters, setConfigFilters] = useState<ConfigFiltersState | null>(null);
   
   // Exit intent for promo reminder
   const { showExitIntent, dismiss: dismissExitIntent } = useExitIntent({
@@ -225,14 +222,15 @@ function MotorSelectionContent() {
         }
         
         // Store structured filters separately for real filtering
-        if (startType || controlType || shaftLength) {
-          setVoiceFilters({
+        if (startType || controlType || shaftLength || inStock) {
+          setConfigFilters({
             startType: startType as 'electric' | 'manual' | undefined,
             controlType: controlType as 'tiller' | 'remote' | undefined,
             shaftLength: shaftLength as 'short' | 'long' | 'xl' | 'xxl' | undefined,
+            inStock: inStock ? true : undefined,
           });
         } else {
-          setVoiceFilters(null);
+          setConfigFilters(null);
         }
         
         // Scroll to the motor grid
@@ -552,37 +550,42 @@ function MotorSelectionContent() {
     return fuzzyResults.map(r => r.item);
   }, [processedMotors, searchQuery]);
 
-  // Apply structured voice filters AFTER fuzzy search
+  // Apply structured config filters AFTER fuzzy search
   const finalFilteredMotors = useMemo(() => {
-    if (!voiceFilters) return filteredMotors;
+    if (!configFilters) return filteredMotors;
     
     return filteredMotors.filter(motor => {
       const modelName = motor.model || '';
       const hp = motor.hp;
       
+      // In stock filter
+      if (configFilters.inStock && motor.in_stock !== true) {
+        return false;
+      }
+      
       // Start type filter using robust extraction
-      if (voiceFilters.startType === 'electric') {
+      if (configFilters.startType === 'electric') {
         // Large motors (>=40HP) are always electric - no code needed
         if (hp < 40 && !hasElectricStart(modelName)) return false;
       }
-      if (voiceFilters.startType === 'manual') {
+      if (configFilters.startType === 'manual') {
         // Large motors can't be manual start
         if (hp >= 40) return false;
         if (!hasManualStart(modelName)) return false;
       }
       
       // Control type filter
-      if (voiceFilters.controlType === 'tiller') {
+      if (configFilters.controlType === 'tiller') {
         // Large motors don't have tiller
         if (hp >= 40) return false;
         if (!hasTillerControl(modelName)) return false;
       }
-      if (voiceFilters.controlType === 'remote') {
+      if (configFilters.controlType === 'remote') {
         if (!hasRemoteControl(modelName)) return false;
       }
       
       // Shaft length filter using parseMercuryRigCodes
-      if (voiceFilters.shaftLength) {
+      if (configFilters.shaftLength) {
         const rig = parseMercuryRigCodes(modelName);
         const shaftMap: Record<string, string> = { 
           short: 'S', 
@@ -590,9 +593,9 @@ function MotorSelectionContent() {
           xl: 'XL', 
           xxl: 'XXL' 
         };
-        const targetCode = shaftMap[voiceFilters.shaftLength];
+        const targetCode = shaftMap[configFilters.shaftLength];
         // Short shaft is detected by ABSENCE of L/XL/XXL in the rig code
-        if (voiceFilters.shaftLength === 'short') {
+        if (configFilters.shaftLength === 'short') {
           if (rig.shaft_code && ['L', 'XL', 'XXL'].includes(rig.shaft_code)) return false;
         } else {
           if (rig.shaft_code !== targetCode) return false;
@@ -601,7 +604,7 @@ function MotorSelectionContent() {
       
       return true;
     });
-  }, [filteredMotors, voiceFilters]);
+  }, [filteredMotors, configFilters]);
 
   // Update the visible motors store for voice agent access
   useEffect(() => {
@@ -691,13 +694,13 @@ function MotorSelectionContent() {
 
   const handleHpSuggestionSelect = (hp: number) => {
     setSearchQuery(hp.toString());
-    setVoiceFilters(null); // Clear voice filters when user manually changes search
+    setConfigFilters(null); // Clear config filters when user manually changes search
   };
   
-  // Clear voice filters when user types in search
+  // Clear config filters when user types in search
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
-    setVoiceFilters(null);
+    setConfigFilters(null);
   };
   
   // Handle recently viewed click - open motor details
@@ -804,15 +807,24 @@ function MotorSelectionContent() {
               />
             </div>
             
-            {(searchQuery || voiceFilters) && (
+            {/* Config Filter Pills */}
+            <div className="mt-3">
+              <ConfigFilterPills
+                filters={configFilters}
+                onFilterChange={setConfigFilters}
+              />
+            </div>
+            
+            {(searchQuery || configFilters) && (
               <div className="text-center mt-2 text-xs text-luxury-gray">
                 {finalFilteredMotors.length} results
-                {voiceFilters && (
+                {configFilters && (
                   <span className="ml-2 text-primary">
                     (filtered by: {[
-                      voiceFilters.startType,
-                      voiceFilters.controlType,
-                      voiceFilters.shaftLength && `${voiceFilters.shaftLength} shaft`
+                      configFilters.inStock && 'in stock',
+                      configFilters.startType,
+                      configFilters.controlType,
+                      configFilters.shaftLength && `${configFilters.shaftLength} shaft`
                     ].filter(Boolean).join(', ')})
                   </span>
                 )}
