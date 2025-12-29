@@ -325,6 +325,66 @@ Go to **Agent Settings** → **Tools** → **Add Tool** → **Client Tool**
 
 ---
 
+### 12. Navigate to Motors (CRITICAL - Screen Control)
+**Name:** `navigate_to_motors`  
+**Description:** Navigate to the motor selection page and apply filters based on customer preferences. Use this to SHOW the customer motors on their screen. ALWAYS call this first when discussing motors, then call get_visible_motors to see what's displayed.
+
+**Parameters:**
+```json
+{
+  "type": "object",
+  "properties": {
+    "horsepower": {
+      "type": "number",
+      "description": "Filter by specific horsepower (e.g., 20, 60, 115)"
+    },
+    "model_search": {
+      "type": "string",
+      "description": "Search by model name or family (FourStroke, Verado, Pro XS, SeaPro)"
+    },
+    "in_stock_only": {
+      "type": "boolean",
+      "description": "Only show motors currently in stock"
+    },
+    "start_type": {
+      "type": "string",
+      "enum": ["electric", "manual"],
+      "description": "Filter by start type - electric start or manual pull-start"
+    },
+    "control_type": {
+      "type": "string",
+      "enum": ["tiller", "remote"],
+      "description": "Filter by steering/control type - tiller handle or remote console"
+    },
+    "shaft_length": {
+      "type": "string",
+      "enum": ["short", "long", "xl", "xxl"],
+      "description": "Filter by shaft length - short (15\"), long (20\"), xl (25\"), xxl (30\")"
+    }
+  },
+  "required": []
+}
+```
+
+---
+
+### 13. Get Visible Motors (CRITICAL - Read Screen State)
+**Name:** `get_visible_motors`  
+**Description:** Read the motors currently visible on the customer's screen. Call this AFTER navigate_to_motors to know exactly what to describe. This is INSTANT (no API call) - reads directly from their browser state. Returns count, price range, and motor details.
+
+**Wait for response:** ✅ ENABLED (Critical - you need the response!)
+
+**Parameters:**
+```json
+{
+  "type": "object",
+  "properties": {},
+  "required": []
+}
+```
+
+---
+
 ## Existing Server Tools (Already Configured)
 
 These tools call the edge functions we've already set up:
