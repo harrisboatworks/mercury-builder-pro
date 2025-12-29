@@ -23,8 +23,7 @@ import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
 import { HPMotorCard } from '@/components/motors/HPMotorCard';
 // ViewModeToggle removed - using expert view only
 import { MotorConfiguratorModal } from '@/components/motors/MotorConfiguratorModal';
-import { type ConfigFiltersState } from '@/components/motors/ConfigFilterPills';
-import { ConfigFilterSheet } from '@/components/motors/ConfigFilterSheet';
+import { ConfigFilterSheet, type ConfigFiltersState } from '@/components/motors/ConfigFilterSheet';
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
@@ -791,7 +790,7 @@ function MotorSelectionContent() {
         <div className="bg-stone-50 border-b border-gray-200">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
             <div className="flex items-center gap-2">
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <HybridMotorSearch
                   query={searchQuery}
                   onQueryChange={handleSearchChange}

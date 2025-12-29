@@ -10,9 +10,16 @@ import {
   DrawerTrigger,
   DrawerFooter,
 } from '@/components/ui/drawer';
-import { ConfigFilterPills, ConfigFiltersState } from './ConfigFilterPills';
 import { cn } from '@/lib/utils';
 import type { Motor } from '@/lib/motor-helpers';
+
+// Re-export the type for consumers
+export interface ConfigFiltersState {
+  startType?: 'electric' | 'manual';
+  controlType?: 'tiller' | 'remote';
+  shaftLength?: 'short' | 'long' | 'xl' | 'xxl';
+  inStock?: boolean;
+}
 
 // HP filter options
 const HP_FILTERS = [
@@ -70,20 +77,56 @@ export function ConfigFilterSheet({
     setOpen(false);
   };
 
+  // Toggle a config filter value
+  const toggleFilter = <K extends keyof ConfigFiltersState>(key: K, value: ConfigFiltersState[K]) => {
+    const current = filters?.[key];
+    if (current === value) {
+      // Remove the filter
+      const newFilters = { ...filters };
+      delete newFilters[key];
+      onFilterChange(Object.keys(newFilters).length > 0 ? newFilters : null);
+    } else {
+      // Set the filter
+      onFilterChange({ ...filters, [key]: value });
+    }
+  };
+
+  const FilterPill = ({ 
+    label, 
+    isActive, 
+    onClick 
+  }: { 
+    label: string; 
+    isActive: boolean; 
+    onClick: () => void;
+  }) => (
+    <button
+      onClick={onClick}
+      className={cn(
+        'px-3 py-1.5 rounded-full text-sm font-light shrink-0',
+        'transition-all duration-200',
+        isActive 
+          ? 'bg-primary text-primary-foreground' 
+          : 'bg-muted text-muted-foreground hover:bg-muted/80'
+      )}
+    >
+      {label}
+    </button>
+  );
+
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <Button 
           variant="outline" 
-          size="sm" 
-          className={cn("gap-2 h-8", className)}
+          size="icon"
+          className={cn("h-10 w-10 shrink-0", className)}
         >
-          <SlidersHorizontal className="h-3.5 w-3.5" />
-          <span className="hidden sm:inline">Filters</span>
+          <SlidersHorizontal className="h-4 w-4" />
           {activeCount > 0 && (
             <Badge 
               variant="secondary" 
-              className="h-5 min-w-5 px-1.5 text-xs bg-primary text-primary-foreground"
+              className="absolute -top-1.5 -right-1.5 h-5 min-w-5 px-1.5 text-xs bg-primary text-primary-foreground"
             >
               {activeCount}
             </Badge>
@@ -94,10 +137,10 @@ export function ConfigFilterSheet({
         <DrawerHeader className="text-left">
           <DrawerTitle>Filter Motors</DrawerTitle>
         </DrawerHeader>
-        <div className="px-4 pb-4 space-y-6">
+        <div className="px-4 pb-4 space-y-5 overflow-y-auto max-h-[60vh]">
           {/* HP Filter Section */}
           <div>
-            <h4 className="text-sm font-medium text-muted-foreground mb-3">Horsepower</h4>
+            <h4 className="text-sm font-medium text-muted-foreground mb-2">Horsepower</h4>
             <div className="flex flex-wrap gap-2">
               {HP_FILTERS.map(({ label, value }) => {
                 const isActive = activeHpFilter === value || (value === '' && !activeHpFilter);
@@ -109,7 +152,7 @@ export function ConfigFilterSheet({
                     onClick={() => onHpFilterChange(value)}
                     disabled={!hasStock && value !== ''}
                     className={cn(
-                      'px-3 py-1.5 rounded-full text-sm font-light',
+                      'px-3 py-1.5 rounded-full text-sm font-light shrink-0',
                       'transition-all duration-200',
                       isActive 
                         ? 'bg-primary text-primary-foreground' 
@@ -125,14 +168,81 @@ export function ConfigFilterSheet({
             </div>
           </div>
 
-          {/* Divider */}
           <div className="border-t border-border" />
 
-          {/* Config Filters Section */}
-          <ConfigFilterPills 
-            filters={filters} 
-            onFilterChange={onFilterChange}
-          />
+          {/* Availability */}
+          <div>
+            <h4 className="text-sm font-medium text-muted-foreground mb-2">Availability</h4>
+            <div className="flex flex-wrap gap-2">
+              <FilterPill 
+                label="In Stock" 
+                isActive={filters?.inStock === true}
+                onClick={() => toggleFilter('inStock', true)}
+              />
+            </div>
+          </div>
+
+          <div className="border-t border-border" />
+
+          {/* Start Type */}
+          <div>
+            <h4 className="text-sm font-medium text-muted-foreground mb-2">Start Type</h4>
+            <div className="flex flex-wrap gap-2">
+              <FilterPill 
+                label="Electric" 
+                isActive={filters?.startType === 'electric'}
+                onClick={() => toggleFilter('startType', 'electric')}
+              />
+              <FilterPill 
+                label="Pull-Start" 
+                isActive={filters?.startType === 'manual'}
+                onClick={() => toggleFilter('startType', 'manual')}
+              />
+            </div>
+          </div>
+
+          <div className="border-t border-border" />
+
+          {/* Control Type */}
+          <div>
+            <h4 className="text-sm font-medium text-muted-foreground mb-2">Control</h4>
+            <div className="flex flex-wrap gap-2">
+              <FilterPill 
+                label="Tiller" 
+                isActive={filters?.controlType === 'tiller'}
+                onClick={() => toggleFilter('controlType', 'tiller')}
+              />
+              <FilterPill 
+                label="Remote" 
+                isActive={filters?.controlType === 'remote'}
+                onClick={() => toggleFilter('controlType', 'remote')}
+              />
+            </div>
+          </div>
+
+          <div className="border-t border-border" />
+
+          {/* Shaft Length */}
+          <div>
+            <h4 className="text-sm font-medium text-muted-foreground mb-2">Shaft Length</h4>
+            <div className="flex flex-wrap gap-2">
+              <FilterPill 
+                label="15&quot; Short" 
+                isActive={filters?.shaftLength === 'short'}
+                onClick={() => toggleFilter('shaftLength', 'short')}
+              />
+              <FilterPill 
+                label="20&quot; Long" 
+                isActive={filters?.shaftLength === 'long'}
+                onClick={() => toggleFilter('shaftLength', 'long')}
+              />
+              <FilterPill 
+                label="25&quot; XL" 
+                isActive={filters?.shaftLength === 'xl'}
+                onClick={() => toggleFilter('shaftLength', 'xl')}
+              />
+            </div>
+          </div>
         </div>
         <DrawerFooter className="flex-row gap-2 pt-2">
           <Button 
