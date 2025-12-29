@@ -810,56 +810,62 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                       transition={{ duration: 0.15 }}
                       className={`flex flex-col ${message.isUser ? 'items-end' : 'items-start'}`}
                     >
-                      <div
-                        className={cn(
-                          "max-w-[85%] px-3.5 py-2.5 text-[14px]",
-                          message.isUser
-                            ? 'bg-gray-900 text-white rounded-2xl rounded-br-md shadow-sm'
-                            : 'bg-white text-gray-800 rounded-2xl rounded-bl-md shadow-[0_1px_4px_-1px_rgba(0,0,0,0.08)] border border-gray-100'
-                        )}
-                      >
-                        {message.isStreaming && message.text === '' ? (
-                          <TypingIndicator />
-                        ) : (
-                          <p className="whitespace-pre-wrap leading-relaxed font-light">
-                            {parseMessageText(message.text).map((segment, idx) => {
-                              if (segment.type === 'text') {
-                                return <span key={idx}>{segment.content}</span>;
-                              }
-                              return (
-                                <a
-                                  key={idx}
-                                  href={segment.href}
-                                  className="underline text-blue-600 hover:text-blue-800 transition-colors"
-                                  target={segment.type === 'url' ? '_blank' : undefined}
-                                  rel={segment.type === 'url' ? 'noopener noreferrer' : undefined}
-                                >
-                                  {segment.content}
-                                </a>
-                              );
-                            })}
-                            {message.isStreaming && (
-                              <motion.span 
-                                className="inline-block w-0.5 h-4 bg-current ml-0.5"
-                                animate={{ opacity: [1, 0] }}
-                                transition={{ duration: 0.5, repeat: Infinity }}
-                              />
+                      {/* Voice Activity Card */}
+                      {message.activityData ? (
+                        <VoiceActivityCard activity={message.activityData} className="max-w-[90%]" />
+                      ) : (
+                        <>
+                          <div
+                            className={cn(
+                              "max-w-[85%] px-3.5 py-2.5 text-[14px]",
+                              message.isUser
+                                ? 'bg-gray-900 text-white rounded-2xl rounded-br-md shadow-sm'
+                                : 'bg-white text-gray-800 rounded-2xl rounded-bl-md shadow-[0_1px_4px_-1px_rgba(0,0,0,0.08)] border border-gray-100'
                             )}
-                          </p>
-                        )}
-                      </div>
+                          >
+                            {message.isStreaming && message.text === '' ? (
+                              <TypingIndicator />
+                            ) : (
+                              <p className="whitespace-pre-wrap leading-relaxed font-light">
+                                {parseMessageText(message.text).map((segment, idx) => {
+                                  if (segment.type === 'text') {
+                                    return <span key={idx}>{segment.content}</span>;
+                                  }
+                                  return (
+                                    <a
+                                      key={idx}
+                                      href={segment.href}
+                                      className="underline text-blue-600 hover:text-blue-800 transition-colors"
+                                      target={segment.type === 'url' ? '_blank' : undefined}
+                                      rel={segment.type === 'url' ? 'noopener noreferrer' : undefined}
+                                    >
+                                      {segment.content}
+                                    </a>
+                                  );
+                                })}
+                                {message.isStreaming && (
+                                  <motion.span 
+                                    className="inline-block w-0.5 h-4 bg-current ml-0.5"
+                                    animate={{ opacity: [1, 0] }}
+                                    transition={{ duration: 0.5, repeat: Infinity }}
+                                  />
+                                )}
+                              </p>
+                            )}
+                          </div>
 
-                      {/* Comparison Card */}
-                      {message.comparisonData && (
-                        <div className="mt-2 max-w-[85%]">
-                          <MotorComparisonCard 
-                            motor1={message.comparisonData.motor1}
-                            motor2={message.comparisonData.motor2}
-                            recommendation={message.comparisonData.recommendation}
-                          />
-                        </div>
+                          {/* Comparison Card */}
+                          {message.comparisonData && (
+                            <div className="mt-2 max-w-[85%]">
+                              <MotorComparisonCard 
+                                motor1={message.comparisonData.motor1}
+                                motor2={message.comparisonData.motor2}
+                                recommendation={message.comparisonData.recommendation}
+                              />
+                            </div>
+                          )}
+                        </>
                       )}
-
                     </motion.div>
                   ))}
                 </AnimatePresence>
