@@ -81,7 +81,7 @@ export function VoiceChatButton({
     if (isConnected) {
       return 'bg-blue-50 text-blue-600 border-blue-200';
     }
-    return 'bg-white/90 backdrop-blur-sm text-gray-600 hover:bg-gray-100 border border-gray-200';
+    return 'bg-white/90 backdrop-blur-sm text-gray-600 hover:bg-gray-100 border border-gray-200 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30';
   };
 
   const getTooltipText = () => {
@@ -112,6 +112,7 @@ export function VoiceChatButton({
             className={cn(
               buttonSize,
               'relative rounded-full flex items-center justify-center transition-all duration-200',
+              'focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2',
               getStateStyles(),
               'active:scale-90',
               className

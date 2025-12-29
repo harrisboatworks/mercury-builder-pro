@@ -1,5 +1,4 @@
 import { MessageCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -58,31 +57,29 @@ export function AskQuestionButton({ motor, className = '', variant = 'icon' }: A
 
   if (variant === 'text') {
     return (
-      <Button
-        variant="ghost"
-        size="sm"
+      <button
         onClick={handleClick}
-        className={`text-muted-foreground hover:text-primary gap-1.5 ${className}`}
+        className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-muted-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-md ${className}`}
+        aria-label={`Ask a question about ${motor.model_display || motor.model}`}
       >
         <MessageCircle className="h-4 w-4" />
         Ask a Question
-      </Button>
+      </button>
     );
   }
 
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
+        <button
           onClick={handleClick}
-          className={`h-8 w-8 rounded-full bg-background/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all ${className}`}
+          className={`h-8 w-8 rounded-full flex items-center justify-center transition-all duration-200 bg-white/90 backdrop-blur-sm text-gray-600 border border-gray-200 hover:bg-gray-100 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 ${className}`}
+          aria-label={`Ask a question about ${motor.model_display || motor.model}`}
         >
           <MessageCircle className="h-4 w-4" />
-        </Button>
+        </button>
       </TooltipTrigger>
-      <TooltipContent side="left">
+      <TooltipContent side="left" className="text-xs">
         <p>Ask about this motor</p>
       </TooltipContent>
     </Tooltip>
