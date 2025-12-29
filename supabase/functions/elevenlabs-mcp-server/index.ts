@@ -178,20 +178,38 @@ const TOOLS = [
       required: ["step"]
     }
   },
-  // ===== NEW TOOLS =====
+  // ===== INVENTORY TOOLS - PAY ATTENTION TO PARAMETER TYPES =====
   {
     name: "check_inventory",
-    description: "Search motor inventory. Use when customers ask about what motors are in stock, available, or looking for specific configurations.",
+    description: `Search motor inventory by HP and/or family.
+
+CRITICAL PARAMETER RULES:
+- "horsepower" = NUMBER (the HP rating). Examples: 20, 75, 115, 150, 200
+- "family" = STRING (product line name). ONLY use: "FourStroke", "ProXS", "SeaPro", "Verado"
+
+CORRECT EXAMPLES:
+- User says "20 HP motors" → { horsepower: 20 }
+- User says "twenty horsepower" → { horsepower: 20 }
+- User says "FourStroke motors" → { family: "FourStroke" }
+- User says "20 HP FourStroke" → { horsepower: 20, family: "FourStroke" }
+
+WRONG - NEVER DO THIS:
+- { horsepower: "FourStroke" } ← WRONG! FourStroke goes in family
+- { horsepower: "twenty" } ← WRONG! Use the number 20
+- { family: 20 } ← WRONG! Numbers go in horsepower`,
     inputSchema: {
       type: "object",
       properties: {
-        horsepower: { type: "number", description: "Specific HP to search for" },
-        min_hp: { type: "number", description: "Minimum HP (for range search)" },
-        max_hp: { type: "number", description: "Maximum HP (for range search)" },
+        horsepower: { 
+          type: "number", 
+          description: "Motor HP as a NUMBER (e.g., 20, 75, 115, 150). Convert spoken numbers: 'twenty'=20, 'seventy-five'=75, 'one-fifteen'=115. NEVER put family names here!" 
+        },
+        min_hp: { type: "number", description: "Minimum HP for range search (number)" },
+        max_hp: { type: "number", description: "Maximum HP for range search (number)" },
         family: { 
           type: "string", 
           enum: ["FourStroke", "ProXS", "SeaPro", "Verado"],
-          description: "Motor family" 
+          description: "Motor product line. ONLY use when user specifically asks for a family by name. Do NOT put HP numbers here!" 
         },
         in_stock_only: { type: "boolean", description: "Only show motors in stock (default true)" }
       }
