@@ -150,7 +150,7 @@ export default function MotorCardPremium({
     setTimeout(() => {
       window.scrollTo({
         top: scrollPosition,
-        behavior: 'instant' // Use 'instant' not 'smooth' for immediate return
+        behavior: 'auto' // Use 'auto' not 'smooth' for immediate return
       });
     }, 10); // Small delay to ensure DOM updates
   };

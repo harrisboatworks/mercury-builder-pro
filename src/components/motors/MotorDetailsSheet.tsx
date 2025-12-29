@@ -161,7 +161,7 @@ export default function MotorDetailsSheet({
           window.scrollTo(0, targetScrollY);
           
           setTimeout(() => {
-            window.scrollTo({ top: targetScrollY, behavior: 'instant' });
+            window.scrollTo({ top: targetScrollY, behavior: 'auto' });
             
             setTimeout(() => {
               const actualScrollY = window.scrollY;
