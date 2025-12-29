@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSound } from '@/contexts/SoundContext';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { useIsMobile } from '@/hooks/use-mobile';
 import { money, calculateMonthly } from '@/lib/quote-utils';
 import { X, Shield, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -38,13 +39,15 @@ const triggerPremiumConfetti = () => {
   });
 };
 
-// Golden shimmer particles component
-function GoldenShimmer({ isActive }: { isActive: boolean }) {
+// Golden shimmer particles component - reduced count on mobile
+function GoldenShimmer({ isActive, isMobile }: { isActive: boolean; isMobile: boolean }) {
   if (!isActive) return null;
+  
+  const particleCount = isMobile ? 6 : 12;
   
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(12)].map((_, i) => (
+      {[...Array(particleCount)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute w-1 h-1 rounded-full"
@@ -88,10 +91,13 @@ export function QuoteRevealCinematic({
   const [showSavingsBadge, setShowSavingsBadge] = useState(false);
   const [isSkipping, setIsSkipping] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [canTapToSkip, setCanTapToSkip] = useState(false);
+  const [showTapHint, setShowTapHint] = useState(false);
   const { playReveal, playSwoosh, playTick, playComplete, playAmbientPad, playCelebration, playMotorNameReveal } = useSound();
   const { triggerHaptic } = useHapticFeedback();
   const priceIntervalRef = useRef<NodeJS.Timeout>();
   const startTimeRef = useRef<number>(0);
+  const isMobile = useIsMobile();
   
   const TOTAL_DURATION = 12500; // Match the auto-close timing
   
@@ -105,9 +111,31 @@ export function QuoteRevealCinematic({
   const handleSkip = () => {
     if (isSkipping) return;
     setIsSkipping(true);
+    triggerHaptic('light');
     // Fade out over 500ms, then complete
     setTimeout(onComplete, 500);
   };
+
+  // Handle tap-to-skip for mobile
+  const handleTapToSkip = (e: React.MouseEvent | React.TouchEvent) => {
+    if (!canTapToSkip || !isMobile) return;
+    // Ignore if tapping the skip button area
+    const target = e.target as HTMLElement;
+    if (target.closest('button')) return;
+    handleSkip();
+  };
+
+  // Enable tap-to-skip after 3 seconds on mobile
+  useEffect(() => {
+    if (isVisible && isMobile) {
+      const tapTimeout = setTimeout(() => setCanTapToSkip(true), 3000);
+      const hintTimeout = setTimeout(() => setShowTapHint(true), 5000);
+      return () => {
+        clearTimeout(tapTimeout);
+        clearTimeout(hintTimeout);
+      };
+    }
+  }, [isVisible, isMobile]);
 
   // Haptic feedback when price completes
   useEffect(() => {
@@ -155,6 +183,8 @@ export function QuoteRevealCinematic({
       setShowSavingsBadge(false);
       setIsSkipping(false);
       setProgress(0);
+      setCanTapToSkip(false);
+      setShowTapHint(false);
       return;
     }
 
@@ -233,6 +263,8 @@ export function QuoteRevealCinematic({
         exit={{ opacity: 0 }}
         transition={{ duration: isSkipping ? 0.5 : 0.3 }}
         className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
+        onClick={handleTapToSkip}
+        onTouchEnd={handleTapToSkip}
       >
         {/* Near-black background with subtle vignette */}
         <motion.div 
@@ -260,7 +292,7 @@ export function QuoteRevealCinematic({
         />
 
         {/* Golden shimmer particles - active during price reveal */}
-        <GoldenShimmer isActive={stage === 'price' || stage === 'savings' || stage === 'details'} />
+        <GoldenShimmer isActive={stage === 'price' || stage === 'savings' || stage === 'details'} isMobile={isMobile} />
 
         {/* Soft edge vignette for cinematic framing */}
         <div 
@@ -270,11 +302,11 @@ export function QuoteRevealCinematic({
           }}
         />
 
-        {/* Motor Image - Refined entrance */}
+        {/* Motor Image - Refined entrance with mobile positioning */}
         <AnimatePresence>
           {(stage !== 'spotlight') && (
             <motion.div
-              initial={{ opacity: 0, y: 60, scale: 0.7, filter: 'blur(12px)' }}
+              initial={{ opacity: 0, y: 60, scale: 0.7, filter: isMobile ? 'blur(8px)' : 'blur(12px)' }}
               animate={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ 
@@ -282,13 +314,13 @@ export function QuoteRevealCinematic({
                 ease: [0.16, 1, 0.3, 1],
                 scale: { duration: 2.2, ease: [0.16, 1, 0.3, 1] }
               }}
-              className="absolute top-[10%] z-10"
+              className="absolute top-[8%] md:top-[10%] z-10"
             >
               {imageUrl ? (
                 <img 
                   src={imageUrl} 
                   alt={motorName}
-                  className="h-32 md:h-44 object-contain"
+                  className="h-28 md:h-44 object-contain"
                   style={{
                     filter: 'drop-shadow(0 25px 50px rgba(0, 0, 0, 0.6))',
                   }}
@@ -297,7 +329,7 @@ export function QuoteRevealCinematic({
                 <img 
                   src={harrisLogo}
                   alt="Harris Boat Works"
-                  className="h-24 md:h-32 w-auto object-contain"
+                  className="h-20 md:h-32 w-auto object-contain"
                   style={{
                     filter: 'brightness(0) invert(1) drop-shadow(0 4px 20px rgba(255, 255, 255, 0.15))',
                     opacity: 0.9,
@@ -315,7 +347,7 @@ export function QuoteRevealCinematic({
               initial={{ opacity: 0, y: 20, filter: 'blur(4px)', scale: 0.95 }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
               transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[32%] md:top-[34%] font-outfit text-xl md:text-3xl font-medium tracking-wide text-center px-4"
+              className="absolute top-[26%] md:top-[34%] font-outfit text-xl md:text-3xl font-medium tracking-wide text-center px-4"
               style={{ 
                 color: '#F5F5F5',
                 textShadow: '0 0 30px rgba(212, 175, 55, 0.3), 0 2px 10px rgba(0, 0, 0, 0.5)'
@@ -333,10 +365,10 @@ export function QuoteRevealCinematic({
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: stage === 'msrp' ? 1 : 0.4, y: 0 }}
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[38%] md:top-[40%] flex flex-col items-center"
+              className="absolute top-[32%] md:top-[40%] flex flex-col items-center"
             >
               <motion.span 
-                className="text-[10px] md:text-xs uppercase tracking-[0.25em] mb-1"
+                className="text-xs md:text-xs uppercase tracking-[0.25em] mb-1"
                 style={{ color: '#6B7280' }}
               >
                 MSRP
@@ -364,13 +396,13 @@ export function QuoteRevealCinematic({
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[46%] md:top-[48%] flex flex-col items-center"
+              className="absolute top-[38%] md:top-[48%] flex flex-col items-center"
             >
               <motion.span 
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="text-[10px] md:text-xs uppercase tracking-[0.25em] mb-3"
+                className="text-xs md:text-xs uppercase tracking-[0.25em] mb-3"
                 style={{ color: 'hsl(var(--promo-gold-1))' }}
               >
                 Your Price
@@ -474,7 +506,7 @@ export function QuoteRevealCinematic({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute top-[75%] md:top-[78%] flex gap-10 md:gap-16 items-start"
+              className="absolute top-[68%] md:top-[78%] flex gap-10 md:gap-16 items-start"
             >
               {savings > 0 && (
                 <motion.div
@@ -529,7 +561,7 @@ export function QuoteRevealCinematic({
           )}
         </AnimatePresence>
 
-        {/* Skip Intro button with label - smooth fade transition */}
+        {/* Skip Intro button with label - smooth fade transition, better touch target */}
         <motion.button
           initial={{ opacity: 0 }}
           animate={{ opacity: isSkipping ? 0 : 0.5 }}
@@ -537,13 +569,30 @@ export function QuoteRevealCinematic({
           transition={{ delay: 1.5, duration: 0.5 }}
           onClick={handleSkip}
           disabled={isSkipping}
-          className="absolute top-6 right-6 flex items-center gap-2 px-3 py-2 rounded-full transition-colors hover:bg-white/5"
-          style={{ color: '#9CA3AF' }}
+          className="absolute top-4 right-4 md:top-6 md:right-6 flex items-center gap-2 px-4 py-3 md:px-3 md:py-2 min-h-[44px] min-w-[44px] rounded-full transition-colors hover:bg-white/5"
+          style={{ 
+            color: '#9CA3AF',
+            paddingTop: 'max(0.75rem, env(safe-area-inset-top))',
+          }}
           aria-label="Skip intro"
         >
           <span className="text-xs font-medium tracking-wide">Skip Intro</span>
           <X className="h-4 w-4" />
         </motion.button>
+
+        {/* Tap to skip hint - mobile only */}
+        <AnimatePresence>
+          {isMobile && showTapHint && canTapToSkip && !isSkipping && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.4 }}
+              exit={{ opacity: 0 }}
+              className="absolute bottom-16 text-xs text-gray-400"
+            >
+              Tap anywhere to continue
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Subtle horizontal line accent with refined animation */}
         <AnimatePresence>
@@ -552,7 +601,7 @@ export function QuoteRevealCinematic({
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute top-[71%] md:top-[74%] w-24 h-px origin-center"
+              className="absolute top-[64%] md:top-[74%] w-24 h-px origin-center"
               style={{ background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.3), transparent)' }}
             />
           )}
@@ -565,7 +614,8 @@ export function QuoteRevealCinematic({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 0.7, y: 0 }}
               transition={{ duration: 0.8, delay: 1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="absolute bottom-8 md:bottom-12 flex flex-col items-center gap-2"
+              className="absolute bottom-10 md:bottom-12 flex flex-col items-center gap-2"
+              style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
             >
               <span 
                 className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] font-medium"
@@ -586,12 +636,13 @@ export function QuoteRevealCinematic({
           )}
         </AnimatePresence>
 
-        {/* Auto-close countdown progress bar */}
+        {/* Auto-close countdown progress bar with safe area */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.5 }}
           transition={{ delay: 1.5, duration: 0.5 }}
           className="absolute bottom-0 left-0 right-0 h-0.5 bg-white/10"
+          style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
         >
           <motion.div
             className="h-full"
