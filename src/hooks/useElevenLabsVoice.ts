@@ -405,9 +405,12 @@ function handleVerifySpecs(params: {
     return "Mercury hydraulic steering systems use Mercury or Quicksilver Power Steering Fluid. Check the level in the helm pump reservoir periodically. If you notice hard steering or leaks, have the system inspected. Low fluid can damage the pump.";
   }
   
-  // === DEFAULT FALLBACK - Trigger text chat for deep search ===
-  triggerTextChatSearch(params.query);
-  return "That's a great question! I'm searching that for you now - check the chat on your screen in just a moment for the detailed answer.";
+  // === DEFAULT FALLBACK ===
+  // DON'T auto-open chat for informational questions - voice can answer most things.
+  // Only suggest chat if user explicitly asks for a link or needs an action.
+  // Return a helpful voice-only response for unknown questions.
+  console.log('[verify_specs] No hardcoded answer found, providing generic guidance');
+  return "I don't have that specific information handy, but our service team would know for sure. Want me to have someone give you a call, or you can check the Mercury Marine website for detailed specs?";
 }
 
 // Client tool handler for non-Mercury accessories/boat parts via catalogue search
@@ -432,9 +435,10 @@ async function handleAccessoriesCatalogueSearch(params: {
   else if (/fuel tank|fuel line|vent|primer/.test(query)) section = 'fuel systems';
   else if (/cover|bimini|canvas|enclosure/.test(query)) section = 'covers and canvas';
   
-  // Always auto-search for accessories - customers want quick answers
-  if (params.auto_search !== false) {
-    // Trigger text chat to do the deep Perplexity search
+  // DON'T auto-open chat for simple accessory questions - voice can handle most
+  // Only open chat if user explicitly asks for links or product details
+  if (params.auto_search === true) {
+    // User explicitly asked to see something in chat
     triggerTextChatSearch(`accessories: ${params.query}`);
     
     return `Great question! I'm searching our marine accessories catalogue for ${params.query} right now. ` +
@@ -1210,6 +1214,42 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           const now = performance.now();
           console.log('%c🎤 User said:', 'color: #9C27B0; font-weight: bold;', userTranscript);
           transcriptRef.current = userTranscript;
+
+          // === NAVIGATE-FIRST SAFETY NET ===
+          // Detect HP intent and auto-navigate BEFORE the agent responds
+          // This ensures the screen changes even if the agent forgets to call navigate_to_motors
+          const hpMatch = userTranscript.match(/(\d+(?:\.\d+)?)\s*(?:hp|horse\s*power|horsepower)/i);
+          const spokenHpPatterns: Record<string, number> = {
+            'twenty hp': 20, 'twenty horsepower': 20,
+            'twenty-five hp': 25, 'twenty five hp': 25,
+            'thirty hp': 30, 'forty hp': 40,
+            'fifty hp': 50, 'sixty hp': 60,
+            'seventy-five hp': 75, 'seventy five hp': 75,
+            'hundred hp': 100, 'one-fifteen hp': 115, 'one fifteen hp': 115,
+            'one-fifty hp': 150, 'one fifty hp': 150,
+          };
+          
+          let detectedHp: number | null = null;
+          if (hpMatch) {
+            detectedHp = parseFloat(hpMatch[1]);
+          } else {
+            const lowerTranscript = userTranscript.toLowerCase();
+            for (const [pattern, hp] of Object.entries(spokenHpPatterns)) {
+              if (lowerTranscript.includes(pattern)) {
+                detectedHp = hp;
+                break;
+              }
+            }
+          }
+          
+          // Only auto-navigate if user is asking about motors (not just mentioning HP in passing)
+          const isMotorQuery = /motor|outboard|have|got|stock|show|looking|need/i.test(userTranscript);
+          
+          if (detectedHp && isMotorQuery) {
+            console.log(`%c🚀 NAVIGATE-FIRST: Detected ${detectedHp}HP motor query - auto-navigating`, 'background: #4CAF50; color: white; padding: 2px 6px; border-radius: 4px;');
+            navigateToMotorsWithFilter({ horsepower: detectedHp });
+          }
+          // === END NAVIGATE-FIRST SAFETY NET ===
 
           // Immediate on-screen acknowledgement (covers the "dead air" period)
           // Also start new turn timing
