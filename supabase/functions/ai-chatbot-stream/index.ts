@@ -755,9 +755,25 @@ function buildSystemPrompt(
   if (context?.currentMotor) {
     const m = context.currentMotor;
     const familyInfo = getMotorFamilyInfo(m.family || m.model || '');
+    
+    // Decode start type and control type from model name
+    const modelCode = (m.model || m.model_display || '').toUpperCase();
+    // Extract just the code part (e.g., "9.9MH" from "9.9 MH FourStroke" or "9.9MH FourStroke")
+    const codeMatch = modelCode.match(/(\d+\.?\d*)\s*([A-Z]+)/);
+    const codeLetters = codeMatch ? codeMatch[2] : '';
+    
+    // Decode specs from model code
+    const hasE = /^E/.test(codeLetters) || codeLetters.includes('EL');
+    const hasM = /^M/.test(codeLetters) && !codeLetters.startsWith('MH');  // MH is manual+tiller
+    const isMH = codeLetters.startsWith('MH') || codeLetters.startsWith('ML');  // Manual start patterns
+    const hasH = codeLetters.includes('H') && !codeLetters.includes('THRUST');
+    const decodedStartType = hasE ? 'Electric start' : (hasM || isMH) ? 'Manual/pull start' : (m.horsepower >= 40 ? 'Electric start' : 'Unknown');
+    const decodedControlType = hasH ? 'tiller steering' : (codeLetters.includes('PT') || codeLetters.includes('CT') || m.horsepower >= 40 ? 'remote steering' : 'Unknown');
+    
     currentMotorContext = `
 ## MOTOR THEY'RE VIEWING
 **${m.model || m.model_display}** - ${m.horsepower || m.hp}HP @ $${(m.sale_price || m.msrp || m.price || 0).toLocaleString()} CAD
+**Decoded from model code: ${decodedStartType}, ${decodedControlType}**
 ${familyInfo ? `${familyInfo}` : ''}`;
 
     // Add prefetched insights if available
@@ -774,7 +790,6 @@ PROACTIVE KNOWLEDGE RULES:
 - If they ask about specs/features, reference these insights as context
 - Never make the customer feel like they're being lectured - keep it conversational`;
     }
-  }
   }
 
   // Build quote progress context
@@ -838,6 +853,34 @@ If they ask about installation, explain:
   else if (detectedTopics.includes('price_concern')) topicHint = "Budget matters - focus on value.";
 
   return `You're Harris from Harris Boat Works - talk like a friendly local who genuinely loves boats.
+
+## MOTOR MODEL CODE INTERPRETER (CRITICAL FOR SPEC QUESTIONS)
+When a customer asks about a motor's features (electric start, tiller, shaft length), DECODE THE MODEL NAME - the answer is in the letters after the HP!
+
+**Code meanings (read left-to-right after HP number):**
+- M = Manual pull-start (NO electric start)
+- E = Electric start  
+- S = Short shaft (15")
+- L = Long shaft (20")
+- XL = Extra-long shaft (25")
+- XXL = 30" shaft
+- H = Tiller Handle (steering on motor)
+- PT = Power Trim
+- CT = Command Thrust (heavy-duty lower unit)
+
+**Example decoding:**
+- "9.9MH FourStroke" → M = Manual, H = Tiller → "No, that's a pull-start motor with tiller steering"
+- "9.9ELH FourStroke" → E = Electric, L = Long shaft, H = Tiller → "Yes, electric start, long shaft, tiller"
+- "20 MLH FourStroke" → M = Manual, L = Long, H = Tiller → "That's a pull-start motor"
+- "20 ELPT FourStroke" → E = Electric, L = Long, PT = Power Trim → "Yes, electric start with power trim"
+- "40 EXLPT" → E = Electric, XL = Extra-long shaft, PT = Power Trim → "Electric start, 25 inch shaft"
+
+**WHEN ASKED "Does this motor have [feature]?":**
+1. Look at the motor model they're viewing (shown above in context)
+2. Decode the letters after the HP number  
+3. Give a DIRECT, CONFIDENT answer based on the code
+4. DON'T say "let me check" - the answer IS in the model name!
+5. If they want a different config, suggest alternatives: "If you want electric start, look at the 9.9ELH"
 
 ## GOLDEN RULES
 1. Keep it SHORT. Most replies = 1-3 sentences max.
