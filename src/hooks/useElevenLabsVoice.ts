@@ -1290,6 +1290,54 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           }
           // === END NAVIGATE-FIRST SAFETY NET ===
 
+          // === SPEC QUESTION GUARDRAIL ===
+          // Detect questions about the CURRENT motor's specs (electric start, tiller, etc.)
+          // and inject the decoded answer so the agent doesn't fumble
+          const lowerTranscript = userTranscript.toLowerCase();
+          const isSpecQuestion = /electric\s*start|pull\s*start|manual\s*start|e-?start|tiller|remote|shaft|long\s*shaft|short\s*shaft|power\s*trim|does\s*(this|it)\s*have|is\s*(this|it)\s*(a|an)?/i.test(lowerTranscript);
+          
+          if (isSpecQuestion && options.motorContext?.model) {
+            const model = options.motorContext.model.toUpperCase();
+            console.log('%c🔍 SPEC QUESTION DETECTED - injecting decoded answer', 'background: #9C27B0; color: white; padding: 2px 6px; border-radius: 4px;');
+            console.log('[Spec Guard] Question:', userTranscript, '| Motor:', model);
+            
+            // Decode the model suffix
+            const hasElectricStart = /\bE[SLFX]|\bELPT|\bEXLPT|\bEL\b/i.test(model) && !/\bM[SLFHX]/i.test(model);
+            const hasManualStart = /\bM[SLFHX]|\bMH\b|\bMLH\b/i.test(model);
+            const hasTiller = /H\b|TILLER/i.test(model);
+            const hasLongShaft = /\bL\b|LONG/i.test(model) && !/\bXL\b/i.test(model);
+            const hasXLShaft = /\bXL\b|EXTRA.?LONG/i.test(model);
+            const hasPowerTrim = /PT\b|POWER.?TRIM/i.test(model);
+            
+            // Build the decoded specs string
+            const specs: string[] = [];
+            if (hasElectricStart) specs.push('ELECTRIC start');
+            if (hasManualStart) specs.push('MANUAL/pull start (NO electric)');
+            if (hasTiller) specs.push('TILLER handle');
+            if (!hasTiller && !hasManualStart) specs.push('REMOTE steering');
+            if (hasLongShaft) specs.push('LONG shaft (20")');
+            if (hasXLShaft) specs.push('XL shaft (25")');
+            if (hasPowerTrim) specs.push('POWER TRIM');
+            
+            const specsString = specs.join(', ') || 'standard configuration';
+            
+            // Inject contextual update to agent with the answer
+            setTimeout(() => {
+              if (conversationRef.current?.status === 'connected') {
+                try {
+                  const specContext = `[SPEC ANSWER - USE THIS] The ${options.motorContext?.model} has: ${specsString}. Answer the customer directly using this info. Do NOT say "let me check" - the answer is right here. Keep it to 1 sentence.`;
+                  if (typeof (conversationRef.current as any).sendContextualUpdate === 'function') {
+                    (conversationRef.current as any).sendContextualUpdate(specContext);
+                  }
+                  console.log('[Spec Guard] Injected spec answer:', specContext);
+                } catch (e) {
+                  console.warn('[Spec Guard] Could not inject spec answer:', e);
+                }
+              }
+            }, 100); // Inject quickly before agent starts thinking
+          }
+          // === END SPEC QUESTION GUARDRAIL ===
+
           // Immediate on-screen acknowledgement (covers the "dead air" period)
           // Also start new turn timing
           setState(prev => ({
