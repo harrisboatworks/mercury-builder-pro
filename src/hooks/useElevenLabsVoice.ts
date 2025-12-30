@@ -15,7 +15,7 @@ const GRACEFUL_CLOSE_MESSAGE = "[SYSTEM: Natural pause in conversation. Say ONE 
 
 // Thinking watchdog - prompt agent to acknowledge if no response within this time after user speaks
 const THINKING_WATCHDOG_MS = 600; // 0.6s (reduce perceived "dead air")
-const THINKING_NUDGE_MESSAGE = "[SYSTEM: You haven't started responding yet. Give a VERY quick acknowledgement like 'One sec...' or 'Let me check...' - just 2-3 words - then continue processing.]";
+const THINKING_NUDGE_MESSAGE = "[SYSTEM: You haven't started responding yet. Give a VERY quick acknowledgement like 'Got it—' or 'Yep—' or 'Right—' - just 1-2 words - then continue with your answer. Do NOT say 'let me check' or mention inventory.]";
 
 // Pre-warm edge functions to eliminate cold start on first question
 // Export so VoiceButton can call it on hover/visibility
