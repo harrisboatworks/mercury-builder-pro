@@ -9,8 +9,8 @@ import { useVoiceSessionPersistence } from './useVoiceSessionPersistence';
 import { formatMotorsForVoice } from '@/lib/visibleMotorsStore';
 
 // Timeout configuration (in milliseconds)
-// Single graceful close after silence - no "still there?" warning
-const IDLE_TIMEOUT_MS = 25000; // 25 seconds of silence before graceful close
+// Single graceful close after silence - triggers BEFORE ElevenLabs' turn timeout
+const IDLE_TIMEOUT_MS = 18000; // 18 seconds - ensures graceful close happens before ElevenLabs prompts
 const GRACEFUL_CLOSE_MESSAGE = "[SYSTEM: Natural pause in conversation. Say ONE brief, friendly sign-off like 'I'll let you browse - just tap the mic if you need me!' then stop talking. No questions, just a warm goodbye.]";
 
 // Thinking watchdog - prompt agent to acknowledge if no response within this time after user speaks
