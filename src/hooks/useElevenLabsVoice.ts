@@ -265,13 +265,24 @@ async function handleLocallyInventoryLookup(params: {
   }
 }
 
+// Helper to detect spec category for Perplexity
+function detectSpecCategory(query: string): string {
+  const q = query.toLowerCase();
+  if (/part\s*number|part\s*#|filter|plug|impeller|gasket|seal/.test(q)) return 'parts';
+  if (/weight|dimension|fuel|displacement|bore|stroke|rpm|compression/.test(q)) return 'specs';
+  if (/warranty|coverage|extended|protection/.test(q)) return 'warranty';
+  if (/maintenance|service|interval|oil\s*change|winteriz|flush/.test(q)) return 'maintenance';
+  if (/problem|issue|won't|doesn't|error|alarm|overheat|stall/.test(q)) return 'troubleshooting';
+  return 'general';
+}
+
 // Client tool handler for Perplexity spec verification
-// NOTE: ElevenLabs has hard 10s timeout. Perplexity takes 20s+. Return helpful fallback immediately.
-function handleVerifySpecs(params: {
+// Uses hardcoded answers for common questions, falls back to Perplexity for unknown ones
+async function handleVerifySpecs(params: {
   query: string;
   category?: 'specs' | 'parts' | 'warranty' | 'maintenance' | 'troubleshooting';
   motor_context?: string;
-}): string {
+}): Promise<string> {
   console.log('[ClientTool] verify_specs called with:', params);
   
   const query = params.query.toLowerCase();
@@ -443,12 +454,45 @@ function handleVerifySpecs(params: {
     return "Motor weight varies by horsepower. What HP are you looking at? For example, a 20 HP runs about 200 pounds, and a 115 HP is around 400 pounds.";
   }
 
-  // === DEFAULT FALLBACK ===
-  // DON'T auto-open chat for informational questions - voice can answer most things.
-  // Only suggest chat if user explicitly asks for a link or needs an action.
-  // Return a helpful voice-only response for unknown questions.
-  console.log('[verify_specs] No hardcoded answer found, providing generic guidance');
-  return "I don't have that specific information handy, but our service team would know for sure. Want me to have someone give you a call, or you can check the Mercury Marine website for detailed specs?";
+  // === DEFAULT FALLBACK - CALL PERPLEXITY ===
+  // No hardcoded answer found - search Perplexity for technical info
+  console.log('[verify_specs] No hardcoded answer, calling Perplexity...');
+  
+  try {
+    // Race against 7s timeout (ElevenLabs has ~10s limit)
+    const perplexityPromise = supabase.functions.invoke('voice-perplexity-lookup', {
+      body: {
+        query: params.query,
+        category: params.category || detectSpecCategory(query),
+        motor_context: motor || undefined
+      }
+    });
+    
+    const timeoutPromise = new Promise<never>((_, reject) => 
+      setTimeout(() => reject(new Error('timeout')), 7000)
+    );
+    
+    const { data, error } = await Promise.race([perplexityPromise, timeoutPromise]) as { data: any; error: any };
+    
+    if (error) {
+      console.error('[verify_specs] Perplexity error:', error);
+      throw error;
+    }
+    
+    if (data?.success && data?.answer) {
+      console.log('[verify_specs] Perplexity success:', data.answer.substring(0, 100));
+      return data.answer;
+    }
+    
+    throw new Error('No answer from Perplexity');
+    
+  } catch (err) {
+    console.warn('[verify_specs] Perplexity failed/timeout:', err);
+    
+    // Graceful fallback - offer human assistance
+    return "I couldn't pull up that specific information right now. " +
+           "Our service team would know for sure - want me to have someone give you a call?";
+  }
 }
 
 // Client tool handler for non-Mercury accessories/boat parts via catalogue search
