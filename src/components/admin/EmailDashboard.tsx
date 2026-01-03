@@ -629,7 +629,12 @@ export function EmailDashboard() {
           
           <div className="border rounded-lg p-4 max-h-[60vh] overflow-y-auto">
             <div 
-              dangerouslySetInnerHTML={{ __html: getPreviewContent() }}
+              dangerouslySetInnerHTML={{ 
+                __html: DOMPurify.sanitize(getPreviewContent(), {
+                  ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'b', 'i', 'u', 'h1', 'h2', 'h3', 'h4', 'ul', 'ol', 'li', 'a', 'div', 'span', 'table', 'tr', 'td', 'th', 'thead', 'tbody', 'img', 'hr'],
+                  ALLOWED_ATTR: ['href', 'class', 'style', 'src', 'alt', 'width', 'height', 'target', 'rel']
+                })
+              }}
               className="prose max-w-none"
             />
           </div>
