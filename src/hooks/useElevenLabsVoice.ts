@@ -1225,40 +1225,63 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           // Reset inactivity timer ONLY when user actually speaks (not on every message)
           resetInactivityTimer();
 
-          // === NAVIGATE-FIRST SAFETY NET ===
+          // === NAVIGATE-FIRST SAFETY NET (AGGRESSIVE) ===
           // Detect HP intent and auto-navigate BEFORE the agent responds
           // This ensures the screen changes even if the agent forgets to call navigate_to_motors
+          
+          // Pattern 1: Numeric HP like "20 HP", "20hp", "20 horsepower"
           const hpMatch = userTranscript.match(/(\d+(?:\.\d+)?)\s*(?:hp|horse\s*power|horsepower)/i);
+          // Pattern 2: Just a number followed by optional HP context in same sentence
+          const looseHpMatch = userTranscript.match(/\b(2\.5|3\.5|4|5|6|8|9\.9|10|15|20|25|30|40|50|60|75|90|100|115|150|175|200|225|250|300)\b/);
+          
+          // Expanded spoken HP patterns for voice recognition
           const spokenHpPatterns: Record<string, number> = {
-            'twenty hp': 20, 'twenty horsepower': 20,
-            'twenty-five hp': 25, 'twenty five hp': 25,
-            'thirty hp': 30, 'forty hp': 40,
-            'fifty hp': 50, 'sixty hp': 60,
-            'seventy-five hp': 75, 'seventy five hp': 75,
-            'hundred hp': 100, 'one-fifteen hp': 115, 'one fifteen hp': 115,
-            'one-fifty hp': 150, 'one fifty hp': 150,
+            'twenty hp': 20, 'twenty horsepower': 20, '20 hp': 20, '20hp': 20,
+            'twenty-five hp': 25, 'twenty five hp': 25, 'twenty-five': 25,
+            'thirty hp': 30, 'thirty': 30, 'forty hp': 40, 'forty': 40,
+            'fifty hp': 50, 'fifty': 50, 'sixty hp': 60, 'sixty': 60,
+            'seventy-five hp': 75, 'seventy five hp': 75, 'seventy five': 75,
+            'hundred hp': 100, 'one hundred': 100,
+            'one-fifteen hp': 115, 'one fifteen hp': 115, 'one fifteen': 115, 'one-fifteen': 115,
+            'one-fifty hp': 150, 'one fifty hp': 150, 'one fifty': 150, 'one-fifty': 150,
+            'twenny': 20, 'twenny hp': 20, // Common mispronunciation
           };
           
           let detectedHp: number | null = null;
+          
+          // Priority 1: Exact numeric match with HP suffix
           if (hpMatch) {
             detectedHp = parseFloat(hpMatch[1]);
-          } else {
+            console.log('[Navigate-First] Detected HP via numeric pattern:', detectedHp);
+          } 
+          // Priority 2: Spoken word patterns
+          else {
             const lowerTranscript = userTranscript.toLowerCase();
             for (const [pattern, hp] of Object.entries(spokenHpPatterns)) {
               if (lowerTranscript.includes(pattern)) {
                 detectedHp = hp;
+                console.log('[Navigate-First] Detected HP via spoken pattern:', pattern, '→', hp);
                 break;
               }
             }
           }
           
-          // Only auto-navigate if user is asking about motors (not just mentioning HP in passing)
-          // Expanded keywords for better detection of motor queries
-          const isMotorQuery = /motor|outboard|have|got|stock|show|looking|need|do you|any|sell|carry|available|want|interest/i.test(userTranscript);
+          // Priority 3: Loose number in motor-related context (more aggressive)
+          if (!detectedHp && looseHpMatch) {
+            const looseHp = parseFloat(looseHpMatch[1]);
+            // Only use loose match if there's motor context in the sentence
+            const hasMotorContext = /motor|outboard|have|got|stock|show|looking|need|do you|any|sell|carry|available|want|interest|hp|horsepower/i.test(userTranscript);
+            if (hasMotorContext) {
+              detectedHp = looseHp;
+              console.log('[Navigate-First] Detected HP via loose match with motor context:', looseHp);
+            }
+          }
           
-          if (detectedHp && isMotorQuery) {
-            console.log(`%c🚀 NAVIGATE-FIRST: Detected ${detectedHp}HP motor query - auto-navigating`, 'background: #4CAF50; color: white; padding: 2px 6px; border-radius: 4px;');
-            console.log('[Navigate-First] Transcript:', userTranscript, '| HP:', detectedHp, '| isMotorQuery:', isMotorQuery);
+          // AGGRESSIVE: Auto-navigate on ANY HP detection in a motor-related conversation
+          // Voice conversation implies motor shopping context, so be liberal with navigation
+          if (detectedHp) {
+            console.log(`%c🚀 NAVIGATE-FIRST: Detected ${detectedHp}HP - auto-navigating NOW`, 'background: #4CAF50; color: white; font-size: 14px; padding: 4px 8px; border-radius: 4px;');
+            console.log('[Navigate-First] Full transcript:', userTranscript);
             navigateToMotorsWithFilter({ horsepower: detectedHp });
             
             // FALLBACK: After navigation + filter, automatically send visible motors to agent
@@ -1271,12 +1294,10 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
               // Send as contextual update so agent knows what's on screen
               if (conversationRef.current?.status === 'connected') {
                 try {
-                  // Use sendContextualUpdate if available, otherwise inject via user message
-                  const contextMsg = `[SCREEN CONTEXT] The customer's screen now shows: ${summary}. Describe the ${detectedHp}HP motors you see - mention count, configurations (start types, shafts), and price range. Ask what configuration they need.`;
+                  const contextMsg = `[SCREEN UPDATE] Now showing ${detectedHp}HP motors: ${summary}. Briefly describe these options (count, configurations, price range) and ask about their preferences.`;
                   if (typeof (conversationRef.current as any).sendContextualUpdate === 'function') {
                     (conversationRef.current as any).sendContextualUpdate(contextMsg);
                   } else {
-                    // Fallback: inject as system-style message
                     conversationRef.current.sendUserMessage(contextMsg);
                   }
                   console.log('[Fallback] Context sent to agent successfully');
@@ -1285,8 +1306,6 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
                 }
               }
             }, 600); // Wait for navigation + filter + store update
-          } else if (detectedHp) {
-            console.log('[Navigate-First] HP detected but not motor query:', userTranscript);
           }
           // === END NAVIGATE-FIRST SAFETY NET ===
 
