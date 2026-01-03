@@ -405,6 +405,44 @@ function handleVerifySpecs(params: {
     return "Mercury hydraulic steering systems use Mercury or Quicksilver Power Steering Fluid. Check the level in the helm pump reservoir periodically. If you notice hard steering or leaks, have the system inspected. Low fluid can damage the pump.";
   }
   
+  // === WEIGHT ===
+  if (query.includes('weight') || query.includes('how heavy') || query.includes('weigh') || query.includes('pounds') || query.includes('lbs')) {
+    // Extract HP from query or motor context
+    const hpMatch = query.match(/(\d+)/);
+    const hp = hpMatch ? parseInt(hpMatch[1]) : (motor.match(/(\d+)/) ? parseInt(motor.match(/(\d+)/)![1]) : 0);
+    
+    if (hp > 0) {
+      // Approximate weights for Mercury FourStroke outboards (based on real specs)
+      let weight: number;
+      let description: string;
+      
+      if (hp <= 6) {
+        weight = Math.round(hp * 5 + 45); // 2.5HP ~57lbs, 6HP ~75lbs
+        description = `Around ${weight} pounds - super light and easy to carry. Great for car-topping.`;
+      } else if (hp <= 15) {
+        weight = Math.round(hp * 5.5 + 35); // 9.9HP ~90lbs, 15HP ~118lbs
+        description = `About ${weight} pounds. One person can manage it, but two makes it easier.`;
+      } else if (hp <= 30) {
+        weight = Math.round(hp * 5 + 100); // 20HP ~200lbs, 30HP ~250lbs
+        description = `Roughly ${weight} pounds. Definitely a two-person lift.`;
+      } else if (hp <= 60) {
+        weight = Math.round(hp * 4.5 + 150); // 40HP ~330lbs, 60HP ~420lbs
+        description = `Around ${weight} pounds. You'll want a hoist or extra hands for this one.`;
+      } else if (hp <= 115) {
+        weight = Math.round(hp * 3.8 + 180); // 75HP ~465lbs, 115HP ~617lbs
+        description = `Approximately ${weight} pounds. These need proper lifting equipment.`;
+      } else {
+        weight = Math.round(hp * 3 + 280); // 150HP ~730lbs, 300HP ~1180lbs
+        description = `These big boys run about ${weight} pounds. Definitely need a hoist.`;
+      }
+      
+      const motorRef = motor || `${hp} horsepower motor`;
+      return `The ${motorRef} weighs ${description}`;
+    }
+    
+    return "Motor weight varies by horsepower. What HP are you looking at? For example, a 20 HP runs about 200 pounds, and a 115 HP is around 400 pounds.";
+  }
+
   // === DEFAULT FALLBACK ===
   // DON'T auto-open chat for informational questions - voice can answer most things.
   // Only suggest chat if user explicitly asks for a link or needs an action.
@@ -1215,6 +1253,20 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       } else if (msg.source === 'user' && msg.message) {
         // Format 2: Alternative format with source/message
         userTranscript = msg.message as string;
+      } else if (msg.type === 'transcript' && typeof msg.text === 'string') {
+        // Format 3: Simple transcript type with text field
+        userTranscript = msg.text;
+      } else if (typeof msg.transcript === 'string') {
+        // Format 4: Direct transcript field
+        userTranscript = msg.transcript;
+      } else if (msg.transcript_event && typeof (msg.transcript_event as Record<string, unknown>).transcript === 'string') {
+        // Format 5: Nested transcript_event object
+        userTranscript = (msg.transcript_event as Record<string, unknown>).transcript as string;
+      }
+      
+      // Debug: log all message types to help identify formats
+      if (msgType !== 'vad_score' && !userTranscript && msg.type !== 'agent_response' && msg.type !== 'response.audio.delta') {
+        console.log('[Transcript Debug] Unhandled message format:', msgType, msg);
       }
       
       if (userTranscript) {
