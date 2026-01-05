@@ -41,11 +41,18 @@ Deno.serve(async (req) => {
 
     console.log('🔄 Starting Google Sheets sync:', sheetUrl);
 
-    // Convert pubhtml URL to CSV format for direct parsing
+    // Convert various Google Sheets URL formats to CSV export format
     let csvUrl = sheetUrl;
-    if (sheetUrl.includes('/pubhtml')) {
+    
+    // Handle /edit URLs (most common when sharing from Google Sheets)
+    if (sheetUrl.includes('/edit')) {
+      // Extract the spreadsheet ID
+      const match = sheetUrl.match(/\/d\/([a-zA-Z0-9-_]+)/);
+      if (match) {
+        csvUrl = `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv`;
+      }
+    } else if (sheetUrl.includes('/pubhtml')) {
       csvUrl = sheetUrl.replace('/pubhtml', '/pub');
-      // Replace any existing parameters with output=csv
       if (csvUrl.includes('?')) {
         const baseUrl = csvUrl.split('?')[0];
         const urlParams = new URLSearchParams(csvUrl.split('?')[1]);
@@ -53,6 +60,12 @@ Deno.serve(async (req) => {
         csvUrl = `${baseUrl}?gid=${gid}&output=csv`;
       } else {
         csvUrl = `${csvUrl}?output=csv`;
+      }
+    } else if (!sheetUrl.includes('/export')) {
+      // Generic fallback - try to convert to export URL
+      const match = sheetUrl.match(/\/d\/([a-zA-Z0-9-_]+)/);
+      if (match) {
+        csvUrl = `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv`;
       }
     }
 
@@ -68,26 +81,73 @@ Deno.serve(async (req) => {
     const csvText = await csvResponse.text();
     console.log('📄 CSV content length:', csvText.length);
 
-    // Parse CSV to extract motor names from Column B (index 1)
+    // Parse CSV with proper handling of quoted fields
+    function parseCSVLine(line: string): string[] {
+      const result: string[] = [];
+      let current = '';
+      let inQuotes = false;
+      
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        
+        if (char === '"') {
+          if (inQuotes && line[i + 1] === '"') {
+            current += '"';
+            i++; // Skip next quote
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim());
+          current = '';
+        } else {
+          current += char;
+        }
+      }
+      result.push(current.trim());
+      return result;
+    }
+
+    // Parse CSV to extract Mercury motors only
+    // Expected columns: A1(ID), Name, Type, Brand, Model, Year, Price, Condition, Details, URL, Last Updated
+    // Indices:           0      1     2     3      4      5     6      7          8        9    10
     const lines = csvText.split('\n');
     const motorNames: string[] = [];
+    let totalRows = 0;
+    let mercuryMotorsFound = 0;
 
     for (let i = 1; i < lines.length; i++) { // Skip header row (i=0)
       if (!lines[i].trim()) continue; // Skip empty lines
+      totalRows++;
       
-      // Split by comma, handle quoted values
-      const columns = lines[i].split(',').map(col => col.trim().replace(/^["']|["']$/g, ''));
-      const modelName = columns[1]; // Column B has the motor model names
+      const columns = parseCSVLine(lines[i]);
       
-      // Filter out years, empty values, and non-motor entries
-      if (modelName && modelName.length > 2 && !modelName.match(/^\d{4}$/) && modelName !== 'Model') {
-        motorNames.push(modelName);
-        console.log(`📄 Raw Column B [row ${i}]:`, modelName); // Better logging
+      // Column indices based on the sheet structure:
+      // 0: ID, 1: Name, 2: Type, 3: Brand, 4: Model, 5: Year, 6: Price, 7: Condition
+      const name = columns[1] || '';
+      const type = columns[2] || '';
+      const brand = columns[3] || '';
+      const model = columns[4] || '';
+      const condition = columns[7] || '';
+      
+      // Filter: Only NEW MERCURY OUTBOARD MOTORS
+      const isMercury = brand.toLowerCase().trim() === 'mercury';
+      const isOutboard = type.toLowerCase().includes('outboard') || type.toLowerCase().includes('motor');
+      const isNew = condition.toLowerCase().trim() === 'new';
+      
+      if (isMercury && isOutboard && isNew) {
+        mercuryMotorsFound++;
+        // Use the Model column (more precise) or fall back to Name
+        const motorName = model || name;
+        if (motorName && motorName.length > 2) {
+          motorNames.push(motorName);
+          console.log(`✅ New Mercury motor [row ${i}]: ${motorName}`);
+        }
       }
     }
 
-    console.log('📋 Total extracted motor names:', motorNames.length);
-    console.log('📋 Sample motor names:', motorNames.slice(0, 5));
+    console.log(`📋 Sheet stats: ${totalRows} total rows, ${mercuryMotorsFound} new Mercury motors found`);
+    console.log('📋 Motor names to match:', motorNames);
 
     // Reset all motors to out of stock first
     const { error: resetError } = await supabase
@@ -122,12 +182,12 @@ Deno.serve(async (req) => {
       const hpMatch = normalized.match(/(\d+(?:\.\d+)?)\s*HP|\b(\d+(?:\.\d+)?)\b/i);
       const hp = hpMatch ? parseFloat(hpMatch[1] || hpMatch[2]) : null;
 
-      // Extract rigging codes (common patterns) - Added MRC
+      // Extract rigging codes (common patterns)
       const riggingMatch = normalized.match(/\b(EXLPT|ELHPT|ELPT|ELH|MRC|MXXL|MXL|MLH|MH|XXL|XL|CT)\b/i);
       const riggingCode = riggingMatch ? riggingMatch[1].toUpperCase() : null;
 
       // Check for Command Thrust
-      const hasCommandThrust = /\bCT\b/i.test(normalized);
+      const hasCommandThrust = /command\s*thrust|\bCT\b/i.test(normalized);
 
       // Extract family
       let family: string | null = null;
@@ -287,6 +347,7 @@ Deno.serve(async (req) => {
           matched: matchedMotors,
           unmatched: unmatchedModels,
           sheet_url: sheetUrl,
+          filter: 'New Mercury Outboard Motors only',
         },
         completed_at: new Date().toISOString(),
       });
@@ -306,14 +367,14 @@ Deno.serve(async (req) => {
         try {
           const emailHtml = `
             <h2>🔍 Google Sheets Sync - Unmatched Motors Detected</h2>
-            <p>The following <strong>${unmatchedModels.length}</strong> motor(s) from your Google Sheet could not be matched to motors in the database:</p>
+            <p>The following <strong>${unmatchedModels.length}</strong> new Mercury motor(s) from your Google Sheet could not be matched to motors in the database:</p>
             <ul>
               ${unmatchedModels.map(motor => `<li><strong>${motor}</strong></li>`).join('')}
             </ul>
             <hr />
             <p><strong>Summary:</strong></p>
             <ul>
-              <li>Total motors in sheet: ${motorNames.length}</li>
+              <li>New Mercury motors in sheet: ${motorNames.length}</li>
               <li>Successfully matched: ${matchedMotors.length}</li>
               <li>Unmatched: ${unmatchedModels.length}</li>
             </ul>
@@ -360,6 +421,7 @@ Deno.serve(async (req) => {
         motorsUnmatched: unmatchedModels.length,
         matched: matchedMotors,
         unmatched: unmatchedModels,
+        filter: 'New Mercury Outboard Motors only',
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
