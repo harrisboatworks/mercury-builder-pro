@@ -154,7 +154,7 @@ Deno.serve(async (req) => {
       .from('motor_models')
       .update({
         in_stock: false,
-        availability: 'Brochure',
+        availability: null,
         stock_quantity: 0,
       })
       .neq('id', '00000000-0000-0000-0000-000000000000'); // Update all
