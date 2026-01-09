@@ -292,7 +292,7 @@ export default function Promotions() {
   const promotionFaqs = [
     { question: "How do I claim a Mercury promotion?", answer: "Mercury promotions are automatically applied when you build your quote on our website. Simply select your motor, and any applicable promotions will be shown in your quote summary." },
     { question: "Can I combine multiple Mercury promotions?", answer: "Some Mercury promotions can be stacked, while others cannot. Stackable promotions will automatically combine in your quote. Our sales team can help identify all eligible promotions." },
-    { question: "What is the Mercury Get 5 Extended Warranty?", answer: "The Mercury Get 5 promotion extends your factory warranty to 5 years of coverage at no additional cost when you purchase qualifying Mercury outboard motors." },
+    { question: "What is the Mercury Get 7 Extended Warranty?", answer: "The Mercury Get 7 promotion extends your factory warranty to 7 years of coverage at no additional cost when you purchase qualifying Mercury outboard motors." },
     { question: "Do promotions apply to all Mercury motors?", answer: "Promotions vary by motor model and horsepower range. Most apply to specific motor families like FourStroke, Pro XS, or Verado. Check our quote builder to see which promotions apply." },
     { question: "How long do Mercury promotions last?", answer: "Mercury runs seasonal promotions that typically last 1-3 months. We display countdown timers so you know exactly how long each deal is available." },
     { question: "Are there financing promotions available?", answer: "Yes! Mercury and our financing partners offer promotional financing rates as low as 6.99% APR* on qualifying purchases. *Promotional rates subject to availability and credit approval." }

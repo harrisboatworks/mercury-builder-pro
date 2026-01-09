@@ -21,8 +21,8 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
       answer: "Some Mercury promotions can be stacked, while others cannot. Stackable promotions will automatically combine in your quote. Our sales team can help identify all eligible promotions for your specific motor purchase."
     },
     {
-      question: "What is the Mercury Get 5 Extended Warranty promotion?",
-      answer: "The Mercury Get 5 promotion extends your factory warranty to 5 years of coverage at no additional cost when you purchase qualifying Mercury outboard motors. This includes comprehensive coverage for parts and labor."
+      question: "What is the Mercury Get 7 Extended Warranty promotion?",
+      answer: "The Mercury Get 7 promotion extends your factory warranty to 7 years of coverage at no additional cost when you purchase qualifying Mercury outboard motors. This includes comprehensive coverage for parts and labor."
     },
     {
       question: "Do promotions apply to all Mercury motors?",
@@ -116,9 +116,9 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
 
   return (
     <Helmet>
-      <title>Mercury Outboard Promotions & Rebates 2024 | Harris Boat Works</title>
-      <meta name="description" content="Save on Mercury outboard motors with current promotions, rebates, and extended warranty offers. Get 5 years warranty FREE on qualifying motors. Ontario's trusted Mercury dealer since 1965." />
-      <meta name="keywords" content="Mercury promotions, Mercury rebates, outboard motor deals, Mercury Get 5, extended warranty, Mercury dealer Ontario, boat motor promotions" />
+      <title>Mercury Outboard Promotions & Rebates 2025 | Harris Boat Works</title>
+      <meta name="description" content="Save on Mercury outboard motors with current promotions, rebates, and extended warranty offers. Get 7 years warranty FREE on qualifying motors. Ontario's trusted Mercury dealer since 1965." />
+      <meta name="keywords" content="Mercury promotions, Mercury rebates, outboard motor deals, Mercury Get 7, extended warranty, Mercury dealer Ontario, boat motor promotions" />
       <link rel="canonical" href="https://quote.harrisboatworks.ca/promotions" />
       
       {/* Open Graph */}
