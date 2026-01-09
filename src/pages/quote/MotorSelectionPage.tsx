@@ -15,7 +15,8 @@ import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { daysUntil } from '@/lib/finance';
-import { Clock } from 'lucide-react';
+import { Clock, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
@@ -170,6 +171,16 @@ function MotorSelectionContent() {
     triggerOnce: true,
     storageKey: 'promo_reminder_motor_selection'
   });
+  
+  // Get 7 promotional banner state
+  const [dismissedGet7Banner, setDismissedGet7Banner] = useState(() => {
+    return localStorage.getItem('get7_banner_dismissed') === 'true';
+  });
+  
+  const dismissGet7Banner = useCallback(() => {
+    localStorage.setItem('get7_banner_dismissed', 'true');
+    setDismissedGet7Banner(true);
+  }, []);
   
   // Get the currently viewed motor for the promo modal
   const exitIntentMotor = useMemo(() => {
@@ -882,6 +893,45 @@ if (event.type === 'filter_motors') {
           motors={processedMotors}
           onHpSelect={handleHpSuggestionSelect}
         />
+        
+        {/* Mercury Get 7 Promotional Banner */}
+        {!dismissedGet7Banner && (
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="max-w-4xl mx-auto px-4 mb-4"
+          >
+            <div className="bg-gradient-to-r from-red-900 to-red-800 rounded-lg p-3 flex items-center justify-between gap-4 text-white shadow-lg">
+              <div className="flex items-center gap-3 min-w-0">
+                <img 
+                  src="/images/promotions/mercury-get-7-promo.png" 
+                  alt="Mercury Get 7" 
+                  className="h-10 w-auto rounded hidden sm:block"
+                />
+                <div className="min-w-0">
+                  <p className="font-semibold text-sm truncate">Mercury Get 7 — 7 Years Factory Coverage</p>
+                  <p className="text-xs opacity-80">Ends March 31, 2026</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <Link 
+                  to="/promotions" 
+                  className="text-sm underline underline-offset-2 hover:opacity-80 transition-opacity whitespace-nowrap"
+                >
+                  Learn More
+                </Link>
+                <button 
+                  onClick={dismissGet7Banner}
+                  className="p-1 hover:bg-white/10 rounded transition-colors"
+                  aria-label="Dismiss banner"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        )}
         
         {/* Recently Viewed Bar */}
         <RecentlyViewedBar 
