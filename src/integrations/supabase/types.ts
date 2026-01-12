@@ -1889,6 +1889,7 @@ export type Database = {
           kind: string
           name: string
           priority: number
+          promo_options: Json | null
           stackable: boolean
           start_date: string | null
           terms_url: string | null
@@ -1911,6 +1912,7 @@ export type Database = {
           kind?: string
           name: string
           priority?: number
+          promo_options?: Json | null
           stackable?: boolean
           start_date?: string | null
           terms_url?: string | null
@@ -1933,6 +1935,7 @@ export type Database = {
           kind?: string
           name?: string
           priority?: number
+          promo_options?: Json | null
           stackable?: boolean
           start_date?: string | null
           terms_url?: string | null

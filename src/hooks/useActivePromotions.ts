@@ -1,6 +1,16 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
+export interface PromoOption {
+  id: string;
+  title: string;
+  description: string;
+  icon?: string;
+  rates?: Array<{ months: number; rate: number }>;
+  minimum_amount?: number;
+  matrix?: Array<{ hp_min: number; hp_max: number; rebate: number }>;
+}
+
 export interface ActivePromotion {
   id: string;
   name: string;
@@ -10,6 +20,10 @@ export interface ActivePromotion {
   bonus_title: string | null;
   bonus_description: string | null;
   end_date: string | null;
+  promo_options?: {
+    type: 'choose_one';
+    options: PromoOption[];
+  } | null;
 }
 
 // Simple in-memory cache
@@ -43,7 +57,8 @@ export function useActivePromotions() {
             warranty_extra_years,
             bonus_title,
             bonus_description,
-            end_date
+            end_date,
+            promo_options
           `)
           .eq('is_active', true)
           .or('end_date.is.null,end_date.gte.now()')
@@ -95,12 +110,38 @@ export function useActivePromotions() {
     }, 0);
   };
 
+  // Helper function to get the "Choose One" promotion options
+  const getChooseOneOptions = (): PromoOption[] => {
+    const chooseOnePromo = promotions.find(p => p.promo_options?.type === 'choose_one');
+    return chooseOnePromo?.promo_options?.options || [];
+  };
+
+  // Helper function to get rebate amount for a given HP
+  const getRebateForHP = (hp: number): number | null => {
+    const options = getChooseOneOptions();
+    const rebateOption = options.find(o => o.id === 'cash_rebate');
+    if (!rebateOption?.matrix) return null;
+    
+    const match = rebateOption.matrix.find(row => hp >= row.hp_min && hp <= row.hp_max);
+    return match ? match.rebate : null;
+  };
+
+  // Helper function to get special financing rates
+  const getSpecialFinancingRates = () => {
+    const options = getChooseOneOptions();
+    const financingOption = options.find(o => o.id === 'special_financing');
+    return financingOption?.rates || null;
+  };
+
   return {
     promotions,
     loading,
     error,
     getTotalWarrantyBonusYears,
     getWarrantyPromotions,
-    getTotalPromotionalSavings
+    getTotalPromotionalSavings,
+    getChooseOneOptions,
+    getRebateForHP,
+    getSpecialFinancingRates,
   };
 }
