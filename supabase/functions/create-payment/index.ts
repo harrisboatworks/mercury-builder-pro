@@ -8,11 +8,11 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// Motor deposit price mapping
+// Motor deposit price mapping - CAD prices (Canadian dollars)
 const DEPOSIT_PRICES: Record<string, string> = {
-  "500": "price_1S71kJHhVKClVQCpoZsxgqar",    // $500 - Small motors (under 50HP)
-  "1000": "price_1S71kbHhVKClVQCpHM7Xg9FJ",   // $1000 - Mid-range motors (50-150HP)
-  "2500": "price_1S71kmHhVKClVQCp20TxHSET"    // $2500 - High-performance motors (150HP+)
+  "500": "price_1SocofHhVKClVQCpsdCfdG7e",    // $500 CAD - Small motors (under 50HP)
+  "1000": "price_1SocogHhVKClVQCpEDslYPR3",   // $1,000 CAD - Mid-range motors (50-150HP)
+  "2500": "price_1SocoiHhVKClVQCptRAWryya"    // $2,500 CAD - High-performance motors (150HP+)
 };
 
 // Input validation schemas
@@ -134,11 +134,13 @@ serve(async (req) => {
       const priceId = DEPOSIT_PRICES[depositAmount];
       logStep("Processing deposit payment", { depositAmount, priceId });
 
+      const origin = req.headers.get("origin") || "https://eutsoqdpjurknjsshxes.lovableproject.com";
+      
       const sessionData: Stripe.Checkout.SessionCreateParams = {
         line_items: [{ price: priceId, quantity: 1 }],
         mode: "payment",
-        success_url: `${req.headers.get("origin")}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.get("origin")}/payment-canceled`,
+        success_url: `${origin}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${origin}/payment-canceled`,
         metadata: {
           deposit_amount: depositAmount,
           payment_type: "motor_deposit"
@@ -285,13 +287,14 @@ serve(async (req) => {
     logStep("Line items created", { itemCount: lineItems.length });
 
     // Create a one-time payment session
+    const origin = req.headers.get("origin") || "https://eutsoqdpjurknjsshxes.lovableproject.com";
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
       customer_email: customerId ? undefined : userEmail,
       line_items: lineItems,
       mode: "payment",
-      success_url: `${req.headers.get("origin")}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.get("origin")}/payment-canceled`,
+      success_url: `${origin}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/payment-canceled`,
       metadata: {
         user_id: user?.id || "guest",
         quote_data: JSON.stringify(quoteData),

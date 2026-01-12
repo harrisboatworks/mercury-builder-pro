@@ -18,18 +18,18 @@ interface DepositOption {
 const DEPOSIT_OPTIONS: DepositOption[] = [
   {
     amount: "500",
-    label: "$500",
+    label: "$500 CAD",
     description: "Small motors (under 50HP)",
   },
   {
     amount: "1000", 
-    label: "$1,000",
+    label: "$1,000 CAD",
     description: "Mid-range motors (50-150HP)",
     recommended: true,
   },
   {
     amount: "2500",
-    label: "$2,500", 
+    label: "$2,500 CAD", 
     description: "High-performance motors (150HP+)",
   }
 ];
