@@ -1,5 +1,13 @@
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from '@/components/ui/drawer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -8,6 +16,7 @@ import { useAuth } from './AuthProvider';
 import { Loader2, Mail, Lock, User } from 'lucide-react';
 import { PasswordStrength, validatePasswordStrength } from '@/components/ui/password-strength';
 import { authSchema } from '@/lib/validation';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface AuthModalProps {
   open: boolean;
@@ -26,6 +35,7 @@ export const AuthModal = ({
   title,
   description 
 }: AuthModalProps) => {
+  const isMobile = useIsMobile();
   const [mode, setMode] = useState<'signin' | 'signup'>(initialMode);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -101,116 +111,137 @@ export const AuthModal = ({
     setValidationErrors({});
   };
 
+  const headerTitle = title || (mode === 'signin' ? 'Sign In' : 'Create Account');
+  const headerDescription = description || (mode === 'signin' 
+    ? 'Sign in to your account to save and manage your quotes.' 
+    : 'Create an account to save your quotes and access them anytime.'
+  );
+
+  // Shared form content
+  const formContent = (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      {mode === 'signup' && (
+        <div className="space-y-2">
+          <Label htmlFor="displayName">Full Name</Label>
+          <div className="relative">
+            <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+            <Input
+              id="displayName"
+              type="text"
+              placeholder="Enter your full name"
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+              className="pl-10"
+              required
+            />
+          </div>
+          {validationErrors.displayName && (
+            <p className="text-sm text-destructive">{validationErrors.displayName}</p>
+          )}
+        </div>
+      )}
+
+      <div className="space-y-2">
+        <Label htmlFor="email">Email</Label>
+        <div className="relative">
+          <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+          <Input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="pl-10"
+            required
+          />
+        </div>
+        {validationErrors.email && (
+          <p className="text-sm text-destructive">{validationErrors.email}</p>
+        )}
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="password">Password</Label>
+        <div className="relative">
+          <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+          <Input
+            id="password"
+            type="password"
+            placeholder={mode === 'signup' ? 'Create a strong password' : 'Enter your password'}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="pl-10"
+            required
+            minLength={mode === 'signup' ? 12 : 6}
+          />
+        </div>
+        {validationErrors.password && (
+          <p className="text-sm text-destructive">{validationErrors.password}</p>
+        )}
+        {mode === 'signup' && (
+          <PasswordStrength password={password} />
+        )}
+      </div>
+
+      {error && (
+        <Alert variant="destructive">
+          <AlertDescription>{error}</AlertDescription>
+        </Alert>
+      )}
+
+      <Button type="submit" className="w-full" disabled={loading}>
+        {loading ? (
+          <>
+            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+            {mode === 'signin' ? 'Signing In...' : 'Creating Account...'}
+          </>
+        ) : (
+          mode === 'signin' ? 'Sign In' : 'Create Account'
+        )}
+      </Button>
+
+      <div className="text-center">
+        <Button
+          type="button"
+          variant="ghost"
+          onClick={toggleMode}
+          className="text-sm"
+        >
+          {mode === 'signin' 
+            ? "Don't have an account? Sign up" 
+            : 'Already have an account? Sign in'
+          }
+        </Button>
+      </div>
+    </form>
+  );
+
+  // Mobile: Bottom drawer
+  if (isMobile) {
+    return (
+      <Drawer open={open} onOpenChange={onOpenChange}>
+        <DrawerContent className="px-4 pb-8">
+          <DrawerHeader className="text-left">
+            <DrawerTitle>{headerTitle}</DrawerTitle>
+            <DrawerDescription>{headerDescription}</DrawerDescription>
+          </DrawerHeader>
+          <div className="px-4">
+            {formContent}
+          </div>
+        </DrawerContent>
+      </Drawer>
+    );
+  }
+
+  // Desktop: Centered dialog
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>
-            {title || (mode === 'signin' ? 'Sign In' : 'Create Account')}
-          </DialogTitle>
-          <DialogDescription>
-            {description || (mode === 'signin' 
-              ? 'Sign in to your account to save and manage your quotes.' 
-              : 'Create an account to save your quotes and access them anytime.'
-            )}
-          </DialogDescription>
+          <DialogTitle>{headerTitle}</DialogTitle>
+          <DialogDescription>{headerDescription}</DialogDescription>
         </DialogHeader>
-
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {mode === 'signup' && (
-            <div className="space-y-2">
-              <Label htmlFor="displayName">Full Name</Label>
-              <div className="relative">
-                <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                <Input
-                  id="displayName"
-                  type="text"
-                  placeholder="Enter your full name"
-                  value={displayName}
-                  onChange={(e) => setDisplayName(e.target.value)}
-                  className="pl-10"
-                  required
-                />
-              </div>
-              {validationErrors.displayName && (
-                <p className="text-sm text-destructive">{validationErrors.displayName}</p>
-              )}
-            </div>
-          )}
-
-          <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
-            <div className="relative">
-              <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-              <Input
-                id="email"
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="pl-10"
-                required
-              />
-            </div>
-            {validationErrors.email && (
-              <p className="text-sm text-destructive">{validationErrors.email}</p>
-            )}
-          </div>
-
-          <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
-            <div className="relative">
-              <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-              <Input
-                id="password"
-                type="password"
-                placeholder={mode === 'signup' ? 'Create a strong password' : 'Enter your password'}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="pl-10"
-                required
-                minLength={mode === 'signup' ? 12 : 6}
-              />
-            </div>
-            {validationErrors.password && (
-              <p className="text-sm text-destructive">{validationErrors.password}</p>
-            )}
-            {mode === 'signup' && (
-              <PasswordStrength password={password} />
-            )}
-          </div>
-
-          {error && (
-            <Alert variant="destructive">
-              <AlertDescription>{error}</AlertDescription>
-            </Alert>
-          )}
-
-          <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? (
-              <>
-                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                {mode === 'signin' ? 'Signing In...' : 'Creating Account...'}
-              </>
-            ) : (
-              mode === 'signin' ? 'Sign In' : 'Create Account'
-            )}
-          </Button>
-
-          <div className="text-center">
-            <Button
-              type="button"
-              variant="ghost"
-              onClick={toggleMode}
-              className="text-sm"
-            >
-              {mode === 'signin' 
-                ? "Don't have an account? Sign up" 
-                : 'Already have an account? Sign in'
-              }
-            </Button>
-          </div>
-        </form>
+        {formContent}
       </DialogContent>
     </Dialog>
   );

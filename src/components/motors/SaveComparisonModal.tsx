@@ -1,11 +1,20 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Save, Loader2 } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from '@/components/ui/drawer';
+import { Save, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface SaveComparisonModalProps {
   isOpen: boolean;
@@ -20,6 +29,7 @@ export function SaveComparisonModal({
   motorIds,
   onSaved 
 }: SaveComparisonModalProps) {
+  const isMobile = useIsMobile();
   const [name, setName] = useState('');
   const [saving, setSaving] = useState(false);
 
@@ -53,82 +63,88 @@ export function SaveComparisonModal({
     }
   };
 
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <>
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-50"
-            onClick={onClose}
-          />
-          
-          {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
-              {/* Header */}
-              <div className="flex items-center justify-between p-4 border-b border-border">
-                <div className="flex items-center gap-2">
-                  <Save className="text-primary" size={20} />
-                  <h3 className="font-semibold text-lg">Save Comparison</h3>
-                </div>
-                <button 
-                  onClick={onClose}
-                  className="p-2 hover:bg-muted rounded-full transition-colors"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-              
-              {/* Content */}
-              <div className="p-6 space-y-4">
-                <p className="text-sm text-muted-foreground">
-                  Save this comparison to your account for later reference.
-                </p>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="comparison-name">Name (optional)</Label>
-                  <Input 
-                    id="comparison-name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="e.g., Bass Boat Options"
-                    className="w-full"
-                  />
-                </div>
-              </div>
-              
-              {/* Footer */}
-              <div className="p-4 bg-muted/30 border-t border-border flex gap-3">
-                <Button onClick={onClose} variant="ghost" className="flex-1">
-                  Cancel
-                </Button>
-                <Button 
-                  onClick={handleSave} 
-                  className="flex-1 gap-2"
-                  disabled={saving}
-                >
-                  {saving ? (
-                    <Loader2 size={16} className="animate-spin" />
-                  ) : (
-                    <Save size={16} />
-                  )}
-                  Save
-                </Button>
-              </div>
+  const descriptionText = "Save this comparison to your account for later reference.";
+
+  // Shared form content
+  const formContent = (
+    <div className="space-y-2">
+      <Label htmlFor="comparison-name">Name (optional)</Label>
+      <Input 
+        id="comparison-name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="e.g., Bass Boat Options"
+        className="w-full"
+      />
+    </div>
+  );
+
+  // Shared buttons
+  const formButtons = (
+    <div className="flex gap-3">
+      <Button onClick={onClose} variant="ghost" className="flex-1">
+        Cancel
+      </Button>
+      <Button 
+        onClick={handleSave} 
+        className="flex-1 gap-2"
+        disabled={saving}
+      >
+        {saving ? (
+          <Loader2 size={16} className="animate-spin" />
+        ) : (
+          <Save size={16} />
+        )}
+        Save
+      </Button>
+    </div>
+  );
+
+  // Mobile: Bottom drawer
+  if (isMobile) {
+    return (
+      <Drawer open={isOpen} onOpenChange={onClose}>
+        <DrawerContent className="px-4 pb-8">
+          <DrawerHeader className="text-left">
+            <div className="flex items-center gap-2">
+              <Save className="text-primary" size={20} />
+              <DrawerTitle>Save Comparison</DrawerTitle>
             </div>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+            <DrawerDescription>{descriptionText}</DrawerDescription>
+          </DrawerHeader>
+
+          <div className="px-4">
+            {formContent}
+          </div>
+
+          <DrawerFooter className="pt-4">
+            {formButtons}
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    );
+  }
+
+  // Desktop: Centered dialog
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <div className="flex items-center gap-2">
+            <Save className="text-primary" size={20} />
+            <DialogTitle>Save Comparison</DialogTitle>
+          </div>
+          <DialogDescription>{descriptionText}</DialogDescription>
+        </DialogHeader>
+
+        <div className="py-4">
+          {formContent}
+        </div>
+
+        <div className="bg-muted/30 -mx-6 -mb-6 px-6 py-4 border-t border-border rounded-b-lg">
+          {formButtons}
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
