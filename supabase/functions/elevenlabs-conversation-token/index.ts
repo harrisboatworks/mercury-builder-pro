@@ -19,7 +19,7 @@ async function getActivePromotions() {
     const today = new Date().toISOString().split('T')[0];
     const { data: promotions, error } = await supabase
       .from('promotions')
-      .select('name, discount_percentage, discount_fixed_amount, bonus_title, end_date')
+      .select('name, discount_percentage, discount_fixed_amount, bonus_title, bonus_description, warranty_extra_years, end_date, promo_options')
       .eq('is_active', true)
       .or(`start_date.is.null,start_date.lte.${today}`)
       .or(`end_date.is.null,end_date.gte.${today}`)
@@ -102,18 +102,78 @@ Shaft length MUST match the boat's transom height - this isn't optional or a pre
 - This isn't preference - it's a specification. Getting it wrong hurts performance every trip.
 `;
 
-// Format promotion data - kept minimal
+// Format promotion data with full "Choose One" details
 function formatPromotionData(promotions: any[]) {
   if (!promotions.length) return "";
   
-  let formatted = "\n## CURRENT PROMOTIONS:\n";
+  let formatted = "\n## CURRENT PROMOTIONS & SPECIAL OFFERS:\n\n";
+  
   promotions.forEach(promo => {
-    const discount = promo.discount_percentage > 0 ? `${promo.discount_percentage}% off` : 
-                     promo.discount_fixed_amount > 0 ? `$${promo.discount_fixed_amount} off` : '';
-    const bonus = promo.bonus_title ? ` + ${promo.bonus_title}` : '';
-    const endDate = promo.end_date ? ` (until ${promo.end_date})` : '';
-    formatted += `- ${promo.name}: ${discount}${bonus}${endDate}\n`;
+    formatted += `**${promo.name}**\n`;
+    
+    if (promo.discount_percentage > 0) {
+      formatted += `- ${promo.discount_percentage}% off qualifying motors\n`;
+    }
+    if (promo.discount_fixed_amount > 0) {
+      formatted += `- $${promo.discount_fixed_amount} instant discount\n`;
+    }
+    if (promo.bonus_title) {
+      formatted += `- Bonus: ${promo.bonus_title}\n`;
+    }
+    if (promo.bonus_description) {
+      formatted += `- ${promo.bonus_description}\n`;
+    }
+    if (promo.warranty_extra_years) {
+      formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years of coverage (total 7 years!)\n`;
+    }
+    
+    // Handle "Choose One" promo_options (Get 7 + Choose One structure)
+    if (promo.promo_options && Array.isArray(promo.promo_options) && promo.promo_options.length > 0) {
+      formatted += `\n**CUSTOMER CHOOSES ONE BONUS (explain these options when asked):**\n`;
+      
+      promo.promo_options.forEach((option: any, idx: number) => {
+        formatted += `\n${idx + 1}. **${option.title || 'Option'}**`;
+        if (option.description) formatted += ` — ${option.description}`;
+        formatted += `\n`;
+        
+        // Special financing rates detail
+        if (option.rates && Array.isArray(option.rates)) {
+          formatted += `   FINANCING RATES:\n`;
+          option.rates.forEach((rate: any) => {
+            const minText = rate.minAmount ? ` (min finance amount $${rate.minAmount.toLocaleString()})` : '';
+            formatted += `   - ${rate.months} months at ${rate.rate}% APR${minText}\n`;
+          });
+        }
+        
+        // Rebate matrix detail
+        if (option.matrix && Array.isArray(option.matrix)) {
+          formatted += `   FACTORY REBATE BY HORSEPOWER:\n`;
+          option.matrix.forEach((tier: any) => {
+            formatted += `   - ${tier.hp}: $${tier.amount} cash back\n`;
+          });
+        }
+      });
+    }
+    
+    if (promo.end_date) {
+      const endDate = new Date(promo.end_date);
+      formatted += `\n⏰ PROMOTION ENDS: ${endDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}\n`;
+    }
+    formatted += "\n";
   });
+  
+  formatted += `
+**HOW TO EXPLAIN THE CHOOSE ONE OPTIONS:**
+1. "6 Months No Payments" - Great for customers who want the motor NOW but want to defer payments. They get the motor, use it all season, first payment in 6 months.
+2. "Special Financing" - Best for customers financing larger amounts. Lower interest rates save money over the loan term. Mention specific rates like "2.99% for 24 months."
+3. "Factory Cash Rebate" - Instant money off. Best for high HP motors. Example: "Your 115HP qualifies for $500 back!" Always calculate their specific rebate based on HP.
+
+When customer asks "which should I choose?" → Ask about their situation:
+- Buying at season start and want payment flexibility? → No Payments
+- Financing a large amount and want lowest cost over time? → Special Financing  
+- Paying mostly cash or want instant savings? → Cash Rebate
+`;
+  
   return formatted;
 }
 
