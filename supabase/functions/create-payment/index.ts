@@ -136,6 +136,10 @@ serve(async (req) => {
 
       const origin = req.headers.get("origin") || "https://eutsoqdpjurknjsshxes.lovableproject.com";
       
+      // Get customer name and motor info from request
+      const customerName = customerInfo?.name || "Customer";
+      const motorInfo = body.motorInfo || null;
+      
       const sessionData: Stripe.Checkout.SessionCreateParams = {
         line_items: [{ price: priceId, quantity: 1 }],
         mode: "payment",
@@ -143,7 +147,10 @@ serve(async (req) => {
         cancel_url: `${origin}/payment-canceled`,
         metadata: {
           deposit_amount: depositAmount,
-          payment_type: "motor_deposit"
+          payment_type: "motor_deposit",
+          customer_name: customerName,
+          customer_email: userEmail || customerInfo?.email || "",
+          motor_info: motorInfo ? JSON.stringify(motorInfo) : ""
         }
       };
 
@@ -151,11 +158,6 @@ serve(async (req) => {
         sessionData.customer = customerId;
       } else if (userEmail) {
         sessionData.customer_email = userEmail;
-      }
-
-      if (customerInfo?.name) {
-        sessionData.metadata = sessionData.metadata || {};
-        sessionData.metadata.customer_name = customerInfo.name;
       }
 
       const session = await stripe.checkout.sessions.create(sessionData);

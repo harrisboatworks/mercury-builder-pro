@@ -182,3 +182,9 @@ verify_jwt = false
 
 [functions.perplexity-prefetch]
 verify_jwt = false
+
+[functions.stripe-webhook]
+verify_jwt = false
+
+[functions.send-deposit-confirmation-email]
+verify_jwt = false
