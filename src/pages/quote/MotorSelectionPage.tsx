@@ -15,8 +15,8 @@ import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { daysUntil } from '@/lib/finance';
-import { Clock, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Clock } from 'lucide-react';
+import { DismissibleBanner } from '@/components/ui/dismissible-banner';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
@@ -172,15 +172,7 @@ function MotorSelectionContent() {
     storageKey: 'promo_reminder_motor_selection'
   });
   
-  // Get 7 promotional banner state
-  const [dismissedGet7Banner, setDismissedGet7Banner] = useState(() => {
-    return localStorage.getItem('get7_banner_dismissed') === 'true';
-  });
-  
-  const dismissGet7Banner = useCallback(() => {
-    localStorage.setItem('get7_banner_dismissed', 'true');
-    setDismissedGet7Banner(true);
-  }, []);
+  // Get 7 promotional banner - state now handled by DismissibleBanner component
   
   // Get the currently viewed motor for the promo modal
   const exitIntentMotor = useMemo(() => {
@@ -895,55 +887,20 @@ if (event.type === 'filter_motors') {
         />
         
         {/* Mercury Get 7 Promotional Banner */}
-        {!dismissedGet7Banner && (
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="max-w-4xl mx-auto px-4 mb-4"
-          >
-            <div className="bg-gradient-to-r from-red-900 to-red-800 rounded-lg p-3 flex flex-col sm:flex-row items-center sm:justify-between gap-3 text-white shadow-lg relative">
-              {/* Dismiss button - absolute on mobile */}
-              <button 
-                onClick={dismissGet7Banner}
-                className="absolute top-2 right-2 sm:hidden p-1 hover:bg-white/10 rounded transition-colors"
-                aria-label="Dismiss banner"
-              >
-                <X className="h-4 w-4" />
-              </button>
-              
-              {/* Content */}
-              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
-                <img 
-                  src="/images/promotions/mercury-get-7-promo.png" 
-                  alt="Mercury Get 7" 
-                  className="h-8 sm:h-10 w-auto rounded"
-                />
-                <div>
-                  <p className="font-semibold text-sm">Mercury Get 7 — 7 Years Factory Coverage</p>
-                  <p className="text-xs opacity-80">Ends March 31, 2026</p>
-                </div>
-              </div>
-              
-              {/* Actions */}
-              <div className="flex items-center gap-2 flex-shrink-0">
-                <Link 
-                  to="/promotions" 
-                  className="text-sm underline underline-offset-2 hover:opacity-80 transition-opacity whitespace-nowrap"
-                >
-                  Learn More
-                </Link>
-                <button 
-                  onClick={dismissGet7Banner}
-                  className="hidden sm:block p-1 hover:bg-white/10 rounded transition-colors"
-                  aria-label="Dismiss banner"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
+        <DismissibleBanner
+          storageKey="get7_banner_dismissed"
+          variant="promotional"
+          className="max-w-4xl mx-auto px-4 mb-4"
+          actionLabel="Learn More"
+          actionHref="/promotions"
+          imageUrl="/images/promotions/mercury-get-7-promo.png"
+          imageAlt="Mercury Get 7"
+        >
+          <div>
+            <p className="font-semibold text-sm">Mercury Get 7 — 7 Years Factory Coverage</p>
+            <p className="text-xs opacity-80">Ends March 31, 2026</p>
+          </div>
+        </DismissibleBanner>
         
         {/* Recently Viewed Bar */}
         <RecentlyViewedBar 
