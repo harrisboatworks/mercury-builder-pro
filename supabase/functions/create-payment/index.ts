@@ -138,7 +138,7 @@ serve(async (req) => {
       
       // Get customer name and motor info from request
       const customerName = customerInfo?.name || "Customer";
-      const motorInfo = body.motorInfo || null;
+      const motorInfo = rawBody.motorInfo || null;
       
       const sessionData: Stripe.Checkout.SessionCreateParams = {
         line_items: [{ price: priceId, quantity: 1 }],
