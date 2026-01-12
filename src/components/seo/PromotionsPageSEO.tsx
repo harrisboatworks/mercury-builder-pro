@@ -7,61 +7,88 @@ interface PromotionsPageSEOProps {
     discount_fixed_amount?: number;
     warranty_extra_years?: number;
     end_date?: string;
+    promo_options?: any;
   }>;
 }
 
 export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
   const faqData = [
     {
-      question: "How do I claim a Mercury promotion?",
-      answer: "Mercury promotions are automatically applied when you build your quote on our website. Simply select your motor, and any applicable promotions will be shown in your quote summary. Our team will also verify all eligible promotions when you finalize your purchase."
+      question: "What is the Mercury Get 7 + Choose One promotion?",
+      answer: "This promotion gives you 7 years of factory warranty coverage (3 years standard + 4 years FREE extension) on qualifying Mercury outboard motors. PLUS, you choose one additional bonus: 6 months no payments, special financing rates as low as 2.99% APR, OR a factory rebate up to $1,000 based on your motor's horsepower."
+    },
+    {
+      question: "How do I choose my bonus?",
+      answer: "When you finalize your purchase with us, our sales team will help you select the bonus option that works best for your situation. All three options provide great value — it just depends on whether you prefer deferred payments, lower monthly payments with promotional rates, or cash back."
+    },
+    {
+      question: "Can I combine the warranty with all three bonuses?",
+      answer: "No, you get to choose ONE of the three bonuses (no payments, special financing, or rebate) in addition to the 7-year warranty. However, the 7-year warranty is included with ALL options automatically."
+    },
+    {
+      question: "What is the minimum for special financing rates?",
+      answer: "The special promotional financing rates (2.99% for 24 months, 3.99% for 36 months, 4.49% for 48 months, 5.49% for 60 months) require a minimum financed amount of $5,000. Credit approval required."
+    },
+    {
+      question: "How much is the factory rebate for my motor?",
+      answer: "Rebates range from $100 to $1,000 based on horsepower: 2.5-6HP ($100), 8-20HP ($250), 25HP ($300), 30-60HP ($350), 65-75HP ($400), 80-115HP ($500), 150-200HP ($650), 225-425HP ($1,000)."
+    },
+    {
+      question: "When does this promotion end?",
+      answer: "The Mercury Get 7 + Choose One promotion runs from January 12, 2026 through March 31, 2026. Don't wait — build your quote today to lock in these savings!"
+    },
+    {
+      question: "Does this apply to repower installations?",
+      answer: "Yes! This promotion applies to both new boat packages and repower installations. Our Certified Repower Center can help you maximize savings on your engine replacement project."
     },
     {
       question: "Can I combine multiple Mercury promotions?",
-      answer: "Some Mercury promotions can be stacked, while others cannot. Stackable promotions will automatically combine in your quote. Our sales team can help identify all eligible promotions for your specific motor purchase."
-    },
-    {
-      question: "What is the Mercury Get 7 Extended Warranty promotion?",
-      answer: "The Mercury Get 7 promotion extends your factory warranty to 7 years of coverage at no additional cost when you purchase qualifying Mercury outboard motors. This includes comprehensive coverage for parts and labor."
-    },
-    {
-      question: "Do promotions apply to all Mercury motors?",
-      answer: "Promotions vary by motor model and horsepower range. Most promotions apply to specific motor families like FourStroke, Pro XS, or Verado. Check our promotions page or use our quote builder to see which promotions apply to your selected motor."
-    },
-    {
-      question: "How long do Mercury promotions last?",
-      answer: "Mercury runs seasonal promotions that typically last 1-3 months. We display countdown timers on our promotions page so you know exactly how long each deal is available. Sign up for our newsletter to be notified of new promotions."
-    },
-    {
-      question: "Are there financing promotions available?",
-      answer: "Yes! Mercury and our financing partners offer promotional financing rates as low as 6.99% APR on qualifying purchases. Promotional rates and terms are available through our online financing application."
-    },
-    {
-      question: "Can I get a promotion on a repower installation?",
-      answer: "Yes, most Mercury promotions apply to repower installations as well as new boat packages. Our Certified Repower Center can help you maximize savings on your engine replacement project."
-    },
-    {
-      question: "What documents do I need to claim a rebate?",
-      answer: "For mail-in rebates, you'll need your original purchase receipt, completed rebate form, and proof of purchase (typically the motor serial number). We help our customers complete all paperwork to ensure successful rebate claims."
+      answer: "The Get 7 + Choose One promotion is a comprehensive package. The 7-year warranty is automatic, and you select one of the three bonuses. Additional manufacturer rebates may be available on select models."
     }
   ];
 
-  const offerData = promotions.map(promo => ({
-    "@type": "Offer",
-    "name": promo.name,
-    "description": promo.warranty_extra_years 
-      ? `${promo.warranty_extra_years} years extended warranty included`
-      : promo.discount_percentage 
-        ? `${promo.discount_percentage}% off` 
-        : promo.discount_fixed_amount 
-          ? `$${promo.discount_fixed_amount} off`
-          : "Special promotion",
-    "priceValidUntil": promo.end_date || undefined,
-    "seller": {
-      "@type": "Organization",
-      "name": "Harris Boat Works"
+  const offerData = [
+    {
+      "@type": "Offer",
+      "name": "Mercury Get 7 + Choose One: 7-Year Warranty",
+      "description": "7 years of factory warranty coverage included with all qualifying Mercury outboard motors",
+      "priceValidUntil": "2026-03-31",
+      "seller": {
+        "@type": "Organization",
+        "name": "Harris Boat Works"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Mercury Get 7 + Choose One: 6 Months No Payments",
+      "description": "Defer your first payment for 6 months when you choose this bonus option",
+      "priceValidUntil": "2026-03-31",
+      "seller": {
+        "@type": "Organization",
+        "name": "Harris Boat Works"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Mercury Get 7 + Choose One: Special Financing",
+      "description": "Promotional financing rates as low as 2.99% APR for 24 months on $5,000+ purchases",
+      "priceValidUntil": "2026-03-31",
+      "seller": {
+        "@type": "Organization",
+        "name": "Harris Boat Works"
+      }
+    },
+    {
+      "@type": "Offer",
+      "name": "Mercury Get 7 + Choose One: Factory Rebate",
+      "description": "Get up to $1,000 cash back based on your motor horsepower",
+      "priceValidUntil": "2026-03-31",
+      "seller": {
+        "@type": "Organization",
+        "name": "Harris Boat Works"
+      }
     }
-  }));
+  ];
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -70,8 +97,8 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
         "@type": "WebPage",
         "@id": "https://quote.harrisboatworks.ca/promotions",
         "url": "https://quote.harrisboatworks.ca/promotions",
-        "name": "Mercury Outboard Promotions & Rebates | Harris Boat Works",
-        "description": "Current Mercury Marine promotions, rebates, and extended warranty offers. Save on FourStroke, Pro XS, and Verado outboard motors at Harris Boat Works.",
+        "name": "Mercury Get 7 + Choose One Promotion | Harris Boat Works",
+        "description": "Get 7 years warranty PLUS your choice: 6 months no payments, special financing as low as 2.99% APR, or up to $1,000 factory rebate on Mercury outboards.",
         "isPartOf": {
           "@id": "https://quote.harrisboatworks.ca/#website"
         },
@@ -106,9 +133,9 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
       },
       {
         "@type": "OfferCatalog",
-        "name": "Mercury Outboard Motor Promotions",
-        "description": "Current promotions and special offers on Mercury outboard motors",
-        "numberOfItems": promotions.length,
+        "name": "Mercury Get 7 + Choose One Promotion",
+        "description": "7 years warranty plus your choice of bonus: no payments, special financing, or factory rebate",
+        "numberOfItems": 4,
         "itemListElement": offerData
       }
     ]
@@ -116,21 +143,21 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
 
   return (
     <Helmet>
-      <title>Mercury Outboard Promotions & Rebates 2025 | Harris Boat Works</title>
-      <meta name="description" content="Save on Mercury outboard motors with current promotions, rebates, and extended warranty offers. Get 7 years warranty FREE on qualifying motors. Ontario's trusted Mercury dealer since 1965." />
-      <meta name="keywords" content="Mercury promotions, Mercury rebates, outboard motor deals, Mercury Get 7, extended warranty, Mercury dealer Ontario, boat motor promotions" />
+      <title>Mercury Get 7 + Choose One Promotion 2026 | 7-Year Warranty + Bonus | Harris Boat Works</title>
+      <meta name="description" content="Get 7 years factory warranty PLUS choose your bonus: 6 months no payments, 2.99% APR financing, or up to $1,000 factory rebate. January 12 - March 31, 2026. Ontario's trusted Mercury dealer." />
+      <meta name="keywords" content="Mercury Get 7, Mercury promotions, outboard motor rebate, Mercury 7 year warranty, Mercury financing, 6 months no payments, Mercury dealer Ontario, boat motor promotions 2026, Mercury Choose One" />
       <link rel="canonical" href="https://quote.harrisboatworks.ca/promotions" />
       
       {/* Open Graph */}
-      <meta property="og:title" content="Mercury Outboard Promotions & Rebates | Harris Boat Works" />
-      <meta property="og:description" content="Current Mercury Marine promotions and rebates. Save on FourStroke, Pro XS, and Verado outboards." />
+      <meta property="og:title" content="Mercury Get 7 + Choose One | 7-Year Warranty + Your Choice of Bonus" />
+      <meta property="og:description" content="7 years factory coverage PLUS choose: no payments for 6 months, special financing from 2.99% APR, or up to $1,000 rebate. Ends March 31, 2026." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://quote.harrisboatworks.ca/promotions" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Outboard Promotions | Harris Boat Works" />
-      <meta name="twitter:description" content="Save on Mercury outboard motors with current promotions and rebates." />
+      <meta name="twitter:title" content="Mercury Get 7 + Choose One Promotion | Harris Boat Works" />
+      <meta name="twitter:description" content="7 years warranty + your choice of bonus. Ends March 31, 2026." />
       
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

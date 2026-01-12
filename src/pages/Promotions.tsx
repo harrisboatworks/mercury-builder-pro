@@ -4,7 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { 
   Bell, ChevronRight, Calendar, Tag, Gift, Sparkles, Mail, MessageSquare,
-  Award, Wrench, Waves, MapPin, Star, ChevronLeft, BadgeCheck
+  Award, Wrench, Waves, MapPin, Star, ChevronLeft, BadgeCheck, Shield
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -12,13 +12,14 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { toast } from 'sonner';
-import { format } from 'date-fns';
 import useEmblaCarousel from 'embla-carousel-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { generateDailyTestimonials, generateReviewCount } from '@/lib/activityGenerator';
 import { allTestimonials } from '@/lib/testimonialData';
 import { PromotionsPageSEO } from '@/components/seo/PromotionsPageSEO';
+import { PromotionHero } from '@/components/promotions/PromotionHero';
+import { ChooseOneSection } from '@/components/promotions/ChooseOneSection';
+import { RebateMatrix } from '@/components/promotions/RebateMatrix';
 
 const csiAwardBadge = "/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png";
 
@@ -71,6 +72,7 @@ interface Promotion {
   image_url: string | null;
   terms_url: string | null;
   is_active: boolean;
+  promo_options?: any;
 }
 
 export default function Promotions() {
@@ -104,6 +106,13 @@ export default function Promotions() {
       setLoading(false);
     }
   };
+
+  // Find the main "Get 7 + Choose One" promotion
+  const mainPromotion = promotions.find(p => p.promo_options?.type === 'choose_one');
+  const chooseOneOptions = mainPromotion?.promo_options?.options || [];
+
+  // Get rebate matrix for the full table display
+  const rebateMatrix = chooseOneOptions.find((o: any) => o.id === 'cash_rebate')?.matrix || [];
 
   const formatPhone = (value: string) => {
     const digits = value.replace(/\D/g, '');
@@ -154,13 +163,6 @@ export default function Promotions() {
     }
   };
 
-  const getDaysRemaining = (endDate: string) => {
-    const end = new Date(endDate);
-    const now = new Date();
-    const diff = Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-    return diff;
-  };
-
   // Testimonials Carousel Component
   const TestimonialsSection = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
@@ -188,7 +190,7 @@ export default function Promotions() {
         clearInterval(interval);
       };
     }, [emblaApi, onSelect]);
-    // Generate daily testimonials deterministically
+    
     const dailyTestimonials = useMemo(() => 
       generateDailyTestimonials(allTestimonials, 6), 
       []
@@ -208,7 +210,6 @@ export default function Promotions() {
           </div>
           
           <div className="relative">
-            {/* Carousel */}
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex gap-6">
                 {dailyTestimonials.map((testimonial, index) => (
@@ -217,30 +218,25 @@ export default function Promotions() {
                     className="flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
                   >
                     <div className="bg-white rounded-xl border border-border p-6 h-full">
-                      {/* Stars */}
                       <div className="flex gap-1 mb-4">
                         {Array.from({ length: testimonial.rating }).map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                         ))}
                       </div>
                       
-                      {/* Quote */}
                       <p className="text-foreground mb-4 italic">
                         "{testimonial.quote}"
                       </p>
                       
-                      {/* Author */}
                       <div className="text-sm">
                         <span className="font-medium text-foreground">{testimonial.name}</span>
                         <span className="text-muted-foreground"> — {testimonial.location}</span>
                       </div>
                       
-                      {/* Date */}
                       <p className="text-xs text-muted-foreground mt-1 mb-3">
                         {testimonial.dateLabel}
                       </p>
                       
-                      {/* Footer badges */}
                       <div className="flex items-center justify-between pt-3 border-t border-border">
                         <div className="flex items-center gap-2">
                           <img src={mercuryLogo} alt="Mercury" className="h-4" />
@@ -257,7 +253,6 @@ export default function Promotions() {
               </div>
             </div>
 
-            {/* Navigation Arrows */}
             <button
               onClick={scrollPrev}
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full border border-border shadow-sm flex items-center justify-center hover:bg-stone-50 transition-colors hidden md:flex"
@@ -272,7 +267,6 @@ export default function Promotions() {
             </button>
           </div>
 
-          {/* Dots */}
           <div className="flex justify-center gap-2 mt-6">
             {dailyTestimonials.map((_, index) => (
               <button
@@ -290,12 +284,34 @@ export default function Promotions() {
   };
 
   const promotionFaqs = [
-    { question: "How do I claim a Mercury promotion?", answer: "Mercury promotions are automatically applied when you build your quote on our website. Simply select your motor, and any applicable promotions will be shown in your quote summary." },
-    { question: "Can I combine multiple Mercury promotions?", answer: "Some Mercury promotions can be stacked, while others cannot. Stackable promotions will automatically combine in your quote. Our sales team can help identify all eligible promotions." },
-    { question: "What is the Mercury Get 7 Extended Warranty?", answer: "The Mercury Get 7 promotion extends your factory warranty to 7 years of coverage at no additional cost when you purchase qualifying Mercury outboard motors." },
-    { question: "Do promotions apply to all Mercury motors?", answer: "Promotions vary by motor model and horsepower range. Most apply to specific motor families like FourStroke, Pro XS, or Verado. Check our quote builder to see which promotions apply." },
-    { question: "How long do Mercury promotions last?", answer: "Mercury runs seasonal promotions that typically last 1-3 months. We display countdown timers so you know exactly how long each deal is available." },
-    { question: "Are there financing promotions available?", answer: "Yes! Mercury and our financing partners offer promotional financing rates as low as 6.99% APR* on qualifying purchases. *Promotional rates subject to availability and credit approval." }
+    { 
+      question: "What is the Mercury Get 7 + Choose One promotion?", 
+      answer: "This promotion gives you 7 years of factory warranty coverage (3 years standard + 4 years FREE extension) on qualifying Mercury outboard motors. PLUS, you choose one additional bonus: 6 months no payments, special financing rates as low as 2.99% APR, OR a factory rebate up to $1,000 based on your motor's horsepower." 
+    },
+    { 
+      question: "How do I choose my bonus?", 
+      answer: "When you finalize your purchase with us, our sales team will help you select the bonus option that works best for your situation. All three options provide great value — it just depends on whether you prefer deferred payments, lower monthly payments with promotional rates, or cash back." 
+    },
+    { 
+      question: "Can I combine the warranty with all three bonuses?", 
+      answer: "No, you get to choose ONE of the three bonuses (no payments, special financing, or rebate) in addition to the 7-year warranty. However, the 7-year warranty is included with ALL options automatically." 
+    },
+    { 
+      question: "What is the minimum for special financing rates?", 
+      answer: "The special promotional financing rates (2.99% for 24 months, 3.99% for 36 months, 4.49% for 48 months, 5.49% for 60 months) require a minimum financed amount of $5,000. Credit approval required." 
+    },
+    { 
+      question: "How much is the factory rebate for my motor?", 
+      answer: "Rebates range from $100 to $1,000 based on horsepower: 2.5-6HP ($100), 8-20HP ($250), 25HP ($300), 30-60HP ($350), 65-75HP ($400), 80-115HP ($500), 150-200HP ($650), 225-425HP ($1,000)." 
+    },
+    { 
+      question: "When does this promotion end?", 
+      answer: "The Mercury Get 7 + Choose One promotion runs from January 12, 2026 through March 31, 2026. Don't wait — build your quote today to lock in these savings!" 
+    },
+    { 
+      question: "Does this apply to repower installations?", 
+      answer: "Yes! This promotion applies to both new boat packages and repower installations. Our Certified Repower Center can help you maximize savings on your engine replacement project." 
+    }
   ];
 
   return (
@@ -304,27 +320,36 @@ export default function Promotions() {
       <LuxuryHeader />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-stone-50 to-white py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center mb-6">
-            <img src={mercuryLogo} alt="Mercury Marine" className="h-10" />
-          </div>
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Sparkles className="w-4 h-4" />
-            Limited Time Offers
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
-            Current Promotions
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Take advantage of exclusive savings on Mercury outboard motors. These offers won't last forever.
-          </p>
-        </div>
-      </section>
+      <PromotionHero endDate={mainPromotion?.end_date} />
 
-      {/* Promotions Grid */}
-      <section className="max-w-6xl mx-auto px-4 py-12">
-        {loading ? (
+      {/* Choose One Section */}
+      {chooseOneOptions.length > 0 && (
+        <ChooseOneSection options={chooseOneOptions} />
+      )}
+
+      {/* Full Rebate Matrix Table */}
+      {rebateMatrix.length > 0 && (
+        <section className="bg-stone-50 py-16 px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
+                Factory Rebate by Horsepower
+              </h2>
+              <p className="text-muted-foreground">
+                If you choose the rebate option, here's what you'll get based on your motor
+              </p>
+            </div>
+            <RebateMatrix matrix={rebateMatrix} />
+            <p className="text-center text-sm text-muted-foreground mt-4">
+              Rebate applied at time of purchase. See dealer for complete details.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Loading state for other promotions */}
+      {loading && (
+        <section className="max-w-6xl mx-auto px-4 py-12">
           <div className="grid md:grid-cols-2 gap-6">
             {[1, 2].map((i) => (
               <div key={i} className="bg-white rounded-xl border border-border p-6 animate-pulse">
@@ -334,126 +359,8 @@ export default function Promotions() {
               </div>
             ))}
           </div>
-        ) : promotions.length > 0 ? (
-          <div className="grid md:grid-cols-2 gap-6">
-            {promotions.map((promo) => {
-              const daysRemaining = promo.end_date ? getDaysRemaining(promo.end_date) : null;
-              
-              return (
-                <div
-                  key={promo.id}
-                  className="bg-white rounded-xl border border-border overflow-hidden hover:shadow-lg transition-shadow"
-                >
-                  {/* Promo Image */}
-                  {promo.image_url && (
-                    <div className="bg-stone-100">
-                      <img
-                        src={promo.image_url}
-                        alt={promo.name}
-                        className="w-full h-auto object-contain"
-                      />
-                    </div>
-                  )}
-                  
-                  <div className="p-6 space-y-4">
-                    {/* Badge */}
-                    {promo.bonus_short_badge && (
-                      <span className="inline-flex items-center gap-1.5 bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                        <Gift className="w-3.5 h-3.5" />
-                        {promo.bonus_short_badge}
-                      </span>
-                    )}
-                    
-                    {/* Title */}
-                    <h2 className="text-xl font-semibold text-foreground">
-                      {promo.bonus_title || promo.name}
-                    </h2>
-                    
-                    {/* Description */}
-                    {promo.bonus_description && (
-                      <p className="text-muted-foreground">
-                        {promo.bonus_description}
-                      </p>
-                    )}
-                    
-                    {/* Offer Details */}
-                    <div className="flex flex-wrap gap-3 text-sm">
-                      {promo.warranty_extra_years && promo.warranty_extra_years > 0 && (
-                        <span className="flex items-center gap-1.5 text-muted-foreground">
-                          <Tag className="w-4 h-4" />
-                          +{promo.warranty_extra_years} Year{promo.warranty_extra_years > 1 ? 's' : ''} Warranty
-                        </span>
-                      )}
-                      {promo.discount_percentage > 0 && (
-                        <span className="flex items-center gap-1.5 text-muted-foreground">
-                          <Tag className="w-4 h-4" />
-                          {promo.discount_percentage}% Off
-                        </span>
-                      )}
-                      {promo.discount_fixed_amount > 0 && (
-                        <span className="flex items-center gap-1.5 text-muted-foreground">
-                          <Tag className="w-4 h-4" />
-                          ${promo.discount_fixed_amount} Off
-                        </span>
-                      )}
-                    </div>
-                    
-                    {/* Countdown Timer */}
-                    {promo.end_date && (
-                      <div className="space-y-2">
-                        <CountdownTimer endDate={promo.end_date} />
-                        <div className="flex items-center gap-2 text-sm">
-                          <Calendar className="w-4 h-4 text-muted-foreground" />
-                          <span className="text-muted-foreground">
-                            Ends {format(new Date(promo.end_date), 'MMM d, yyyy')}
-                          </span>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* Actions */}
-                    <div className="flex flex-wrap gap-3 pt-4 border-t border-border">
-                      <Link to="/">
-                        <Button variant="outline" className="gap-2">
-                          View Eligible Motors
-                          <ChevronRight className="w-4 h-4" />
-                        </Button>
-                      </Link>
-                      {promo.terms_url && (
-                        <a 
-                          href={promo.terms_url} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-sm text-muted-foreground hover:text-foreground underline"
-                        >
-                          Terms & Conditions
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <div className="text-center py-16">
-            <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
-              <Tag className="w-8 h-8 text-muted-foreground" />
-            </div>
-            <h2 className="text-xl font-semibold text-foreground mb-2">
-              No Active Promotions
-            </h2>
-            <p className="text-muted-foreground max-w-md mx-auto mb-6">
-              Check back soon! We regularly offer special promotions and savings on Mercury outboard motors.
-            </p>
-            <Link to="/">
-              <Button variant="outline">
-                Browse All Motors
-              </Button>
-            </Link>
-          </div>
-        )}
-      </section>
+        </section>
+      )}
 
       {/* Testimonials Carousel */}
       <TestimonialsSection />
@@ -495,7 +402,7 @@ export default function Promotions() {
           Promotion FAQs
         </h2>
         <p className="text-muted-foreground text-center mb-10">
-          Common questions about Mercury promotions and rebates.
+          Common questions about the Mercury Get 7 + Choose One promotion.
         </p>
         <Accordion type="single" collapsible className="space-y-3">
           {promotionFaqs.map((faq, index) => (
@@ -525,7 +432,6 @@ export default function Promotions() {
           </p>
           
           <form onSubmit={handleGeneralSubscribe} className="max-w-md mx-auto space-y-4">
-            {/* Channel Toggle */}
             <div className="space-y-3">
               <Label className="text-sm font-medium text-left block">How should we notify you?</Label>
               <RadioGroup
@@ -568,7 +474,6 @@ export default function Promotions() {
               </RadioGroup>
             </div>
 
-            {/* Email Input */}
             {(channel === 'email' || channel === 'both') && (
               <Input
                 type="email"
@@ -580,7 +485,6 @@ export default function Promotions() {
               />
             )}
 
-            {/* Phone Input */}
             {(channel === 'sms' || channel === 'both') && (
               <Input
                 type="tel"
