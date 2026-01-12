@@ -39,12 +39,28 @@ interface QuoteDisplayProps {
   purchasePath?: string;
 }
 
+// Calculate recommended deposit based on motor HP
+const getRecommendedDeposit = (hp: number): "500" | "1000" | "2500" => {
+  if (hp < 50) return "500";
+  if (hp <= 150) return "1000";
+  return "2500";
+};
+
+const DEPOSIT_TIERS = [
+  { amount: "500" as const, label: "$500 CAD", description: "Small motors (under 50HP)", minHp: 0, maxHp: 49 },
+  { amount: "1000" as const, label: "$1,000 CAD", description: "Mid-range motors (50-150HP)", minHp: 50, maxHp: 150 },
+  { amount: "2500" as const, label: "$2,500 CAD", description: "High-performance motors (150HP+)", minHp: 151, maxHp: 999 },
+];
+
 export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, onEarnXP, purchasePath }: QuoteDisplayProps) => {
   const FINANCING_MINIMUM = 5000;
   const [downPayment, setDownPayment] = useState(0);
   const [term, setTerm] = useState(60);
   const [showTermComparison, setShowTermComparison] = useState(false);
   const [paymentPreference, setPaymentPreference] = useState<'cash' | 'finance' | null>(null);
+  const [selectedDeposit, setSelectedDeposit] = useState<"500" | "1000" | "2500">(
+    getRecommendedDeposit(quoteData.motor?.hp || 0)
+  );
   const [achievement, setAchievement] = useState<{
     icon: string;
     title: string;
@@ -360,39 +376,33 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   };
 
   const handleStripePayment = async () => {
-    if (!user) {
-      // User not signed in - handled by disabled button state
-      return;
-    }
-
     try {
-      // For deposit, we only charge $100 to secure the deal
-      const depositAmount = 100;
-      const stripeQuoteData = {
-        motorModel: quoteData.motor?.model || 'Mercury Motor',
-        horsepower: quoteData.motor?.hp || 0,
-        motorPrice: depositAmount, // Only charge deposit amount
-        accessoryCosts: 0, // No accessories in deposit
-        installationCost: 0, // No installation in deposit
-        tradeInCredit: 0, // No trade-in credit in deposit
-        totalPrice: depositAmount, // Total is just the deposit
-        customerName: user.email,
-        customerPhone: user.phone || '',
-        isDeposit: true, // Flag to indicate this is a deposit
-        fullQuoteTotal: totalCashPrice // Store full quote amount for reference
+      // Prepare customer info (works for both guests and logged-in users)
+      const customerInfo = {
+        name: user?.user_metadata?.full_name || user?.email || 'Guest Customer',
+        email: user?.email || ''
       };
 
       const { data, error } = await supabase.functions.invoke('create-payment', {
-        body: { quoteData: stripeQuoteData }
+        body: {
+          paymentType: 'deposit',
+          depositAmount: selectedDeposit,
+          customerInfo,
+          // Include motor info for email confirmation
+          motorInfo: {
+            model: quoteData.motor?.model,
+            hp: quoteData.motor?.hp,
+            year: quoteData.motor?.year
+          }
+        }
       });
 
       if (error) throw error;
 
       if (data?.url) {
         window.open(data.url, '_blank');
-        // Silent - window opening provides feedback
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Deposit payment error:', error);
       toast({
         title: 'Payment Error', 
@@ -642,22 +652,56 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             )}
           </div>
 
-          {/* Deposit Payment - Only show when Cash is selected */}
+          {/* Smart Deposit Tier Selection - Only show when Cash is selected */}
           {paymentPreference === 'cash' && (
-            <div className="flex justify-center mt-4">
-              <Card 
-                className="p-4 cursor-pointer transition-all border-2 border-green-200 hover:border-green-300 bg-green-50 w-full max-w-xs"
-                onClick={handleStripePayment}
-              >
-                <div className="text-center space-y-2">
-                  <CreditCard className="w-8 h-8 mx-auto text-green-600" />
-                  <h4 className="font-semibold text-green-800">Secure Deal with Deposit</h4>
-                  <p className="text-2xl font-bold text-green-600">$100</p>
-                  <p className="text-sm text-muted-foreground">
-                    Lock in your quote • Balance due on delivery
-                  </p>
-                </div>
-              </Card>
+            <div className="mt-6 space-y-4">
+              <h4 className="text-center font-semibold text-foreground">Choose Your Deposit Amount</h4>
+              <p className="text-center text-sm text-muted-foreground">
+                Secure your motor with a refundable deposit • Balance due on delivery
+              </p>
+              
+              <div className="flex justify-center gap-3 flex-wrap">
+                {DEPOSIT_TIERS.map((tier) => {
+                  const isRecommended = tier.amount === getRecommendedDeposit(quoteData.motor?.hp || 0);
+                  const isSelected = tier.amount === selectedDeposit;
+                  
+                  return (
+                    <Card 
+                      key={tier.amount}
+                      className={`p-4 cursor-pointer transition-all border-2 w-full max-w-[180px] relative ${
+                        isSelected 
+                          ? 'border-green-500 bg-green-50 ring-2 ring-green-200' 
+                          : 'border-border hover:border-green-300'
+                      }`}
+                      onClick={() => setSelectedDeposit(tier.amount)}
+                    >
+                      {isRecommended && (
+                        <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs">
+                          Recommended
+                        </Badge>
+                      )}
+                      <div className="text-center space-y-1 pt-1">
+                        <p className="text-xl font-bold text-green-600">{tier.label}</p>
+                        <p className="text-xs text-muted-foreground">{tier.description}</p>
+                        {isSelected && (
+                          <CheckCircle2 className="w-5 h-5 mx-auto text-green-600 mt-2" />
+                        )}
+                      </div>
+                    </Card>
+                  );
+                })}
+              </div>
+
+              <div className="flex justify-center mt-4">
+                <Button 
+                  onClick={handleStripePayment}
+                  size="lg"
+                  className="bg-green-600 hover:bg-green-700 text-white"
+                >
+                  <CreditCard className="w-4 h-4 mr-2" />
+                  Pay {DEPOSIT_TIERS.find(t => t.amount === selectedDeposit)?.label} Deposit
+                </Button>
+              </div>
             </div>
           )}
         </div>
