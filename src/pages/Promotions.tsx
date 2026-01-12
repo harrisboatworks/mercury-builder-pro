@@ -20,6 +20,7 @@ import { PromotionsPageSEO } from '@/components/seo/PromotionsPageSEO';
 import { PromotionHero } from '@/components/promotions/PromotionHero';
 import { ChooseOneSection } from '@/components/promotions/ChooseOneSection';
 import { RebateMatrix } from '@/components/promotions/RebateMatrix';
+import { RebateCalculator } from '@/components/promotions/RebateCalculator';
 
 const csiAwardBadge = "/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png";
 
@@ -327,10 +328,10 @@ export default function Promotions() {
         <ChooseOneSection options={chooseOneOptions} />
       )}
 
-      {/* Full Rebate Matrix Table */}
+      {/* Full Rebate Matrix Table with Interactive Calculator */}
       {rebateMatrix.length > 0 && (
         <section className="bg-stone-50 py-16 px-4">
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
                 Factory Rebate by Horsepower
@@ -339,8 +340,17 @@ export default function Promotions() {
                 If you choose the rebate option, here's what you'll get based on your motor
               </p>
             </div>
-            <RebateMatrix matrix={rebateMatrix} />
-            <p className="text-center text-sm text-muted-foreground mt-4">
+            
+            {/* Interactive Calculator */}
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              <RebateCalculator matrix={rebateMatrix} initialHP={115} />
+              <div className="space-y-4">
+                <h3 className="text-lg font-semibold text-foreground">All Rebate Tiers</h3>
+                <RebateMatrix matrix={rebateMatrix} />
+              </div>
+            </div>
+            
+            <p className="text-center text-sm text-muted-foreground">
               Rebate applied at time of purchase. See dealer for complete details.
             </p>
           </div>

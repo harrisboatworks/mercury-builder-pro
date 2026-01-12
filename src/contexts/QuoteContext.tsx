@@ -53,6 +53,7 @@ interface QuoteState {
   hasTradein: boolean;
   selectedOptions: SelectedOption[];
   selectedPackage: SelectedPackage | null; // Selected package from summary page
+  selectedPromoOption: 'no_payments' | 'special_financing' | 'cash_rebate' | null; // Choose One promo selection
   completedSteps: number[];
   currentStep: number;
   isLoading: boolean;
@@ -76,6 +77,7 @@ type QuoteAction =
   | { type: 'SET_HAS_TRADEIN'; payload: boolean }
   | { type: 'SET_SELECTED_OPTIONS'; payload: SelectedOption[] }
   | { type: 'SET_SELECTED_PACKAGE'; payload: SelectedPackage | null }
+  | { type: 'SET_PROMO_OPTION'; payload: 'no_payments' | 'special_financing' | 'cash_rebate' | null }
   | { type: 'COMPLETE_STEP'; payload: number }
   | { type: 'SET_CURRENT_STEP'; payload: number }
   | { type: 'LOAD_FROM_STORAGE'; payload: QuoteState }
@@ -103,6 +105,7 @@ const initialState: QuoteState = {
   hasTradein: false,
   selectedOptions: [],
   selectedPackage: null,
+  selectedPromoOption: null,
   completedSteps: [],
   currentStep: 1,
   isLoading: true,
@@ -158,6 +161,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       return { ...state, selectedOptions: action.payload };
     case 'SET_SELECTED_PACKAGE':
       return { ...state, selectedPackage: action.payload };
+    case 'SET_PROMO_OPTION':
+      return { ...state, selectedPromoOption: action.payload };
     case 'COMPLETE_STEP':
       return { 
         ...state, 
