@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -9,6 +10,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { generateSocialProofMessage } from "@/lib/activityGenerator";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface SaveQuoteDialogProps {
   open: boolean;
@@ -32,6 +34,7 @@ export function SaveQuoteDialog({
   const [isSaved, setIsSaved] = useState(false);
   const { toast } = useToast();
   const { user } = useAuth();
+  const isMobile = useIsMobile();
 
   const [emailError, setEmailError] = useState("");
 
@@ -160,36 +163,146 @@ export function SaveQuoteDialog({
     }, 300);
   };
 
-  // Success state after saving
+  // Shared success content
+  const successContent = (
+    <div className="flex flex-col items-center text-center py-6 space-y-4">
+      <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
+        <CheckCircle className="h-8 w-8 text-green-600" />
+      </div>
+      <div className="text-xl font-semibold">Quote Saved!</div>
+      <div className="space-y-3 text-muted-foreground">
+        <p>We've saved your configuration and sent details to <strong className="text-foreground">{email}</strong>.</p>
+        {!user && (
+          <div className="bg-muted/50 rounded-lg p-4 mt-4 text-left">
+            <div className="flex items-start gap-3">
+              <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+              <div className="text-sm">
+                <p className="font-medium text-foreground">Check your email</p>
+                <p className="text-muted-foreground mt-1">
+                  Click the link in your email to access your account and view all your saved quotes anytime.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+      <Button onClick={handleClose} className="mt-4">
+        Continue
+      </Button>
+    </div>
+  );
+
+  // Shared form content
+  const formContent = (
+    <div className="grid gap-4 py-4">
+      <div className="grid gap-2">
+        <Label htmlFor="email">Email *</Label>
+        <Input
+          id="email"
+          type="email"
+          placeholder="your.email@example.com"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value);
+            setEmailError("");
+          }}
+          disabled={isLoading}
+          className={emailError ? "border-destructive" : ""}
+        />
+        {emailError && (
+          <p className="text-sm text-destructive">{emailError}</p>
+        )}
+      </div>
+      
+      <div className="grid gap-2">
+        <Label htmlFor="name">Name (optional)</Label>
+        <Input
+          id="name"
+          type="text"
+          placeholder="John Smith"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          disabled={isLoading}
+        />
+      </div>
+      
+      <div className="grid gap-2">
+        <Label htmlFor="phone">Phone (optional)</Label>
+        <Input
+          id="phone"
+          type="tel"
+          placeholder="(555) 123-4567"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          disabled={isLoading}
+        />
+      </div>
+      
+      <p className="text-sm text-muted-foreground">
+        {generateSocialProofMessage()}
+      </p>
+    </div>
+  );
+
+  // Shared footer buttons
+  const footerButtons = (
+    <>
+      <Button 
+        variant="outline" 
+        onClick={() => onOpenChange(false)}
+        disabled={isLoading}
+      >
+        Cancel
+      </Button>
+      <Button onClick={handleSave} disabled={isLoading}>
+        {isLoading ? (
+          <>
+            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            Saving...
+          </>
+        ) : (
+          "Save My Quote"
+        )}
+      </Button>
+    </>
+  );
+
+  // Mobile: Use Drawer (slides up from bottom)
+  if (isMobile) {
+    if (isSaved) {
+      return (
+        <Drawer open={open} onOpenChange={handleClose}>
+          <DrawerContent className="px-4 pb-8">
+            {successContent}
+          </DrawerContent>
+        </Drawer>
+      );
+    }
+
+    return (
+      <Drawer open={open} onOpenChange={onOpenChange}>
+        <DrawerContent className="px-4 pb-8">
+          <DrawerHeader className="text-left">
+            <DrawerTitle>Save Your Quote</DrawerTitle>
+            <DrawerDescription>
+              Enter your email to save this configuration. We'll send you a link so you can return anytime.
+            </DrawerDescription>
+          </DrawerHeader>
+          {formContent}
+          <DrawerFooter className="flex-row gap-2 pt-2">
+            {footerButtons}
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    );
+  }
+
+  // Desktop: Use Dialog (centered modal)
   if (isSaved) {
     return (
       <Dialog open={open} onOpenChange={handleClose}>
         <DialogContent className="sm:max-w-[425px]">
-          <div className="flex flex-col items-center text-center py-6 space-y-4">
-            <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
-              <CheckCircle className="h-8 w-8 text-green-600" />
-            </div>
-            <DialogTitle className="text-xl">Quote Saved!</DialogTitle>
-            <DialogDescription className="space-y-3">
-              <p>We've saved your configuration and sent details to <strong>{email}</strong>.</p>
-              {!user && (
-                <div className="bg-muted/50 rounded-lg p-4 mt-4 text-left">
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <div className="text-sm">
-                      <p className="font-medium text-foreground">Check your email</p>
-                      <p className="text-muted-foreground mt-1">
-                        Click the link in your email to access your account and view all your saved quotes anytime.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </DialogDescription>
-            <Button onClick={handleClose} className="mt-4">
-              Continue
-            </Button>
-          </div>
+          {successContent}
         </DialogContent>
       </Dialog>
     );
@@ -204,74 +317,9 @@ export function SaveQuoteDialog({
             Enter your email to save this configuration. We'll send you a link so you can return anytime.
           </DialogDescription>
         </DialogHeader>
-        
-        <div className="grid gap-4 py-4">
-          <div className="grid gap-2">
-            <Label htmlFor="email">Email *</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="your.email@example.com"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value);
-                setEmailError("");
-              }}
-              disabled={isLoading}
-              className={emailError ? "border-destructive" : ""}
-            />
-            {emailError && (
-              <p className="text-sm text-destructive">{emailError}</p>
-            )}
-          </div>
-          
-          <div className="grid gap-2">
-            <Label htmlFor="name">Name (optional)</Label>
-            <Input
-              id="name"
-              type="text"
-              placeholder="John Smith"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              disabled={isLoading}
-            />
-          </div>
-          
-          <div className="grid gap-2">
-            <Label htmlFor="phone">Phone (optional)</Label>
-            <Input
-              id="phone"
-              type="tel"
-              placeholder="(555) 123-4567"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              disabled={isLoading}
-            />
-          </div>
-          
-          <p className="text-sm text-muted-foreground">
-            {generateSocialProofMessage()}
-          </p>
-        </div>
-
+        {formContent}
         <DialogFooter>
-          <Button 
-            variant="outline" 
-            onClick={() => onOpenChange(false)}
-            disabled={isLoading}
-          >
-            Cancel
-          </Button>
-          <Button onClick={handleSave} disabled={isLoading}>
-            {isLoading ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Saving...
-              </>
-            ) : (
-              "Save My Quote"
-            )}
-          </Button>
+          {footerButtons}
         </DialogFooter>
       </DialogContent>
     </Dialog>
