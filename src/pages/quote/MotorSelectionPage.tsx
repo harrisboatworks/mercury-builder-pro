@@ -902,18 +902,30 @@ if (event.type === 'filter_motors') {
             exit={{ opacity: 0, y: -10 }}
             className="max-w-4xl mx-auto px-4 mb-4"
           >
-            <div className="bg-gradient-to-r from-red-900 to-red-800 rounded-lg p-3 flex items-center justify-between gap-4 text-white shadow-lg">
-              <div className="flex items-center gap-3 min-w-0">
+            <div className="bg-gradient-to-r from-red-900 to-red-800 rounded-lg p-3 flex flex-col sm:flex-row items-center sm:justify-between gap-3 text-white shadow-lg relative">
+              {/* Dismiss button - absolute on mobile */}
+              <button 
+                onClick={dismissGet7Banner}
+                className="absolute top-2 right-2 sm:hidden p-1 hover:bg-white/10 rounded transition-colors"
+                aria-label="Dismiss banner"
+              >
+                <X className="h-4 w-4" />
+              </button>
+              
+              {/* Content */}
+              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
                 <img 
                   src="/images/promotions/mercury-get-7-promo.png" 
                   alt="Mercury Get 7" 
-                  className="h-10 w-auto rounded hidden sm:block"
+                  className="h-8 sm:h-10 w-auto rounded"
                 />
-                <div className="min-w-0">
-                  <p className="font-semibold text-sm truncate">Mercury Get 7 — 7 Years Factory Coverage</p>
+                <div>
+                  <p className="font-semibold text-sm">Mercury Get 7 — 7 Years Factory Coverage</p>
                   <p className="text-xs opacity-80">Ends March 31, 2026</p>
                 </div>
               </div>
+              
+              {/* Actions */}
               <div className="flex items-center gap-2 flex-shrink-0">
                 <Link 
                   to="/promotions" 
@@ -923,7 +935,7 @@ if (event.type === 'filter_motors') {
                 </Link>
                 <button 
                   onClick={dismissGet7Banner}
-                  className="p-1 hover:bg-white/10 rounded transition-colors"
+                  className="hidden sm:block p-1 hover:bg-white/10 rounded transition-colors"
                   aria-label="Dismiss banner"
                 >
                   <X className="h-4 w-4" />
