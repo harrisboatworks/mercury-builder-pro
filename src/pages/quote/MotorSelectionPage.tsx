@@ -893,7 +893,7 @@ if (event.type === 'filter_motors') {
           className="max-w-4xl mx-auto px-4 mb-4"
           actionLabel="See Your Options"
           actionHref="/promotions"
-          imageUrl="/images/promotions/mercury-get-7-promo.png"
+          imageUrl="/images/promotions/mercury-get-7-choose-one.jpg"
           imageAlt="Mercury Get 7 + Choose One"
         >
           <div>
