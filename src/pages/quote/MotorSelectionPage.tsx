@@ -886,18 +886,18 @@ if (event.type === 'filter_motors') {
           onHpSelect={handleHpSuggestionSelect}
         />
         
-        {/* Mercury Get 7 Promotional Banner */}
+        {/* Mercury Get 7 + Choose One Promotional Banner */}
         <DismissibleBanner
-          storageKey="get7_banner_dismissed"
+          storageKey="get7_choose_one_banner_dismissed"
           variant="promotional"
           className="max-w-4xl mx-auto px-4 mb-4"
-          actionLabel="Learn More"
+          actionLabel="See Your Options"
           actionHref="/promotions"
           imageUrl="/images/promotions/mercury-get-7-promo.png"
-          imageAlt="Mercury Get 7"
+          imageAlt="Mercury Get 7 + Choose One"
         >
           <div>
-            <p className="font-semibold text-sm">Mercury Get 7 — 7 Years Factory Coverage</p>
+            <p className="font-semibold text-sm">Get 7 Years + Choose One: No Payments, Special Rates, or Rebate!</p>
             <p className="text-xs opacity-80">Ends March 31, 2026</p>
           </div>
         </DismissibleBanner>
