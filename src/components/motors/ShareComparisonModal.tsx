@@ -1,9 +1,18 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Copy, Check, Link2, Mail, MessageSquare } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+} from '@/components/ui/drawer';
+import { Copy, Check, Link2, Mail, MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { toast } from 'sonner';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface ShareComparisonModalProps {
   isOpen: boolean;
@@ -18,6 +27,7 @@ export function ShareComparisonModal({
   shareUrl, 
   motorCount 
 }: ShareComparisonModalProps) {
+  const isMobile = useIsMobile();
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -42,94 +52,97 @@ export function ShareComparisonModal({
     window.open(`sms:?body=${body}`);
   };
 
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <>
-          {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-50"
-            onClick={onClose}
-          />
-          
-          {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden">
-              {/* Header */}
-              <div className="flex items-center justify-between p-4 border-b border-border">
-                <div className="flex items-center gap-2">
-                  <Link2 className="text-primary" size={20} />
-                  <h3 className="font-semibold text-lg">Share Comparison</h3>
-                </div>
-                <button 
-                  onClick={onClose}
-                  className="p-2 hover:bg-muted rounded-full transition-colors"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-              
-              {/* Content */}
-              <div className="p-6 space-y-6">
-                <p className="text-sm text-muted-foreground">
-                  Share this link with anyone to show them your {motorCount}-motor comparison.
-                </p>
-                
-                {/* Copy Link */}
-                <div className="flex gap-2">
-                  <Input 
-                    value={shareUrl} 
-                    readOnly 
-                    className="flex-1 text-sm bg-muted/50"
-                  />
-                  <Button onClick={handleCopy} variant="default" className="shrink-0">
-                    {copied ? <Check size={16} /> : <Copy size={16} />}
-                  </Button>
-                </div>
-                
-                {/* Share Options */}
-                <div className="space-y-3">
-                  <p className="text-sm font-medium text-foreground">Or share via:</p>
-                  <div className="flex gap-3">
-                    <Button 
-                      variant="outline" 
-                      onClick={handleEmailShare}
-                      className="flex-1 gap-2"
-                    >
-                      <Mail size={16} />
-                      Email
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      onClick={handleSMSShare}
-                      className="flex-1 gap-2"
-                    >
-                      <MessageSquare size={16} />
-                      Text
-                    </Button>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Footer */}
-              <div className="p-4 bg-muted/30 border-t border-border">
-                <Button onClick={onClose} variant="ghost" className="w-full">
-                  Done
-                </Button>
-              </div>
+  // Shared content
+  const descriptionText = `Share this link with anyone to show them your ${motorCount}-motor comparison.`;
+
+  const copyLinkSection = (
+    <div className="flex gap-2">
+      <Input 
+        value={shareUrl} 
+        readOnly 
+        className="flex-1 text-sm bg-muted/50"
+      />
+      <Button onClick={handleCopy} variant="default" className="shrink-0">
+        {copied ? <Check size={16} /> : <Copy size={16} />}
+      </Button>
+    </div>
+  );
+
+  const shareOptionsSection = (
+    <div className="space-y-3">
+      <p className="text-sm font-medium text-foreground">Or share via:</p>
+      <div className="flex gap-3">
+        <Button 
+          variant="outline" 
+          onClick={handleEmailShare}
+          className="flex-1 gap-2"
+        >
+          <Mail size={16} />
+          Email
+        </Button>
+        <Button 
+          variant="outline" 
+          onClick={handleSMSShare}
+          className="flex-1 gap-2"
+        >
+          <MessageSquare size={16} />
+          Text
+        </Button>
+      </div>
+    </div>
+  );
+
+  // Mobile: Bottom drawer
+  if (isMobile) {
+    return (
+      <Drawer open={isOpen} onOpenChange={onClose}>
+        <DrawerContent className="px-4 pb-8">
+          <DrawerHeader className="text-left">
+            <div className="flex items-center gap-2">
+              <Link2 className="text-primary" size={20} />
+              <DrawerTitle>Share Comparison</DrawerTitle>
             </div>
-          </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+            <DrawerDescription>{descriptionText}</DrawerDescription>
+          </DrawerHeader>
+
+          <div className="px-4 space-y-6">
+            {copyLinkSection}
+            {shareOptionsSection}
+          </div>
+
+          <DrawerFooter className="pt-4">
+            <Button onClick={onClose} variant="ghost" className="w-full">
+              Done
+            </Button>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    );
+  }
+
+  // Desktop: Centered dialog
+  return (
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <div className="flex items-center gap-2">
+            <Link2 className="text-primary" size={20} />
+            <DialogTitle>Share Comparison</DialogTitle>
+          </div>
+          <DialogDescription>{descriptionText}</DialogDescription>
+        </DialogHeader>
+
+        <div className="space-y-6">
+          {copyLinkSection}
+          {shareOptionsSection}
+        </div>
+
+        <div className="pt-2">
+          <Button onClick={onClose} variant="ghost" className="w-full">
+            Done
+          </Button>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
