@@ -94,8 +94,9 @@ function formatPromotionData(promotions) {
   
   let formatted = "\n## CURRENT PROMOTIONS & SPECIAL OFFERS:\n\n";
   
-  promotions.slice(0, 5).forEach(promo => { // Limit to prevent prompt bloat
+  promotions.slice(0, 5).forEach(promo => {
     formatted += `**${promo.name}**\n`;
+    
     if (promo.discount_percentage > 0) {
       formatted += `- ${promo.discount_percentage}% off qualifying motors\n`;
     }
@@ -105,8 +106,44 @@ function formatPromotionData(promotions) {
     if (promo.bonus_title) {
       formatted += `- Bonus: ${promo.bonus_title}\n`;
     }
+    if (promo.bonus_description) {
+      formatted += `- ${promo.bonus_description}\n`;
+    }
+    if (promo.warranty_extra_years) {
+      formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years of coverage\n`;
+    }
+    
+    // Handle "Choose One" promo_options (new Get 7 + Choose One structure)
+    if (promo.promo_options && Array.isArray(promo.promo_options) && promo.promo_options.length > 0) {
+      formatted += `- **Customer Chooses ONE of these bonus options:**\n`;
+      
+      promo.promo_options.forEach((option, idx) => {
+        formatted += `  ${idx + 1}. **${option.title || 'Option'}**`;
+        if (option.description) formatted += ` — ${option.description}`;
+        formatted += `\n`;
+        
+        // Special financing rates detail
+        if (option.rates && Array.isArray(option.rates)) {
+          formatted += `     Available rates:\n`;
+          option.rates.forEach(rate => {
+            const minText = rate.minAmount ? ` (min $${rate.minAmount.toLocaleString()})` : '';
+            formatted += `     - ${rate.months} months @ ${rate.rate}%${minText}\n`;
+          });
+        }
+        
+        // Rebate matrix detail
+        if (option.matrix && Array.isArray(option.matrix)) {
+          formatted += `     Rebate amounts by horsepower:\n`;
+          option.matrix.forEach(tier => {
+            formatted += `     - ${tier.hp}: $${tier.amount} factory rebate\n`;
+          });
+        }
+      });
+    }
+    
     if (promo.end_date) {
-      formatted += `- Valid until: ${promo.end_date}\n`;
+      const endDate = new Date(promo.end_date);
+      formatted += `- Valid until: ${endDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}\n`;
     }
     formatted += "\n";
   });
