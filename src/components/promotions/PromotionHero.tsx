@@ -16,14 +16,32 @@ export function PromotionHero({ endDate }: PromotionHeroProps) {
       </div>
 
       <div className="relative max-w-4xl mx-auto text-center">
-        {/* Mercury logo */}
+        {/* Mercury logo - inverted for dark background */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="flex items-center justify-center mb-6"
         >
-          <img src={mercuryLogo} alt="Mercury Marine" className="h-12" />
+          <img 
+            src={mercuryLogo} 
+            alt="Mercury Marine" 
+            className="h-12 brightness-0 invert" 
+          />
+        </motion.div>
+
+        {/* Official Promo Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <img 
+            src="/images/promotions/mercury-get-7-choose-one.jpg" 
+            alt="Mercury Get 7 + Choose One Promotion"
+            className="max-w-full md:max-w-2xl mx-auto rounded-xl shadow-2xl"
+          />
         </motion.div>
 
         {/* Badge */}
