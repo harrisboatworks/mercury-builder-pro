@@ -9,7 +9,8 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useMotorViewSafe } from '@/contexts/MotorViewContext';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
-import { getContextualPrompts } from './getContextualPrompts';
+import { getContextualPromptsWithPromo, getPageWelcomeMessage, isMotorFocusedPage } from './getContextualPrompts';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
 
@@ -196,7 +197,11 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     }
   }, [isOpen]);
 
-  // Get contextual prompts based on motor and page
+  // Get active promotion for promo-aware prompts
+  const { promotions } = useActivePromotions();
+  const mainPromo = promotions[0] || null;
+
+  // Get contextual prompts based on motor and page (with promo awareness)
   const contextualPrompts = useMemo(() => {
     // Use preview motor (currently viewing) or selected motor
     const activeMotor = state.previewMotor || state.motor;
@@ -205,52 +210,19 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
       hp: activeMotor.hp || 0
     } : null;
     
-    return getContextualPrompts(motor, state.boatInfo, location.pathname);
-  }, [state.previewMotor, state.motor, state.boatInfo, location.pathname]);
+    return getContextualPromptsWithPromo(motor, state.boatInfo, location.pathname, mainPromo);
+  }, [state.previewMotor, state.motor, state.boatInfo, location.pathname, mainPromo]);
 
-  // Get contextual welcome message - friendly and conversational
+  // Get contextual welcome message - uses centralized function for consistency
   const getWelcomeMessage = useCallback((): string => {
-    const path = location.pathname;
     const activeMotor = state.previewMotor || state.motor;
+    const motor = activeMotor ? {
+      model: activeMotor.model || '',
+      hp: activeMotor.hp || 0
+    } : null;
     
-    // If they're looking at a specific motor
-    if (activeMotor) {
-      const hp = activeMotor.hp || 0;
-      const family = activeMotor.model?.toLowerCase().includes('verado') ? 'Verado' :
-                     activeMotor.model?.toLowerCase().includes('pro xs') ? 'Pro XS' :
-                     'FourStroke';
-      return `Hey! Checking out the ${hp}HP ${family}? Solid choice — what do you want to know about it?`;
-    }
-    
-    // Page-specific greetings
-    if (path.includes('/quote/options')) {
-      return "Hey! Need help picking a package? I can break down what's in each one.";
-    }
-    if (path.includes('/quote/purchase-path')) {
-      return "Hey! Deciding between pro install or DIY? I can walk you through the options.";
-    }
-    if (path.includes('/quote/boat-info')) {
-      return "Hey! Got questions about compatibility or controls? I'm here to help.";
-    }
-    if (path.includes('/quote/trade-in')) {
-      return "Hey! Got something to trade? Tell me what you've got and I'll give you a ballpark.";
-    }
-    if (path.includes('/quote/summary')) {
-      return "Hey! Looking over your quote? Let me know if you have any questions about pricing or next steps.";
-    }
-    if (path.includes('/financing')) {
-      return "Hey! Curious about financing? I can help you figure out monthly payments and options.";
-    }
-    if (path.includes('/promotions')) {
-      return "Hey! Looking at the current deals? I can help you find the best one for what you need.";
-    }
-    if (path.includes('/repower')) {
-      return "Hey! Thinking about repowering? Tell me about your boat — I'll help you figure out if it makes sense and what motor would work best.";
-    }
-    
-    // Default friendly greeting
-    return "Hey! I'm here to help you find the perfect Mercury motor. What are you looking for?";
-  }, [location.pathname, state.previewMotor, state.motor]);
+    return getPageWelcomeMessage(location.pathname, motor, mainPromo);
+  }, [location.pathname, state.previewMotor, state.motor, mainPromo]);
 
   // Convert persisted messages to UI format
   const convertPersistedMessages = useCallback((persisted: PersistedMessage[]): Message[] => {
@@ -426,8 +398,17 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     enabled: isOpen && messages.length <= 2,
   });
   
-  // Fall back to contextual prompts if no motor context
-  const smartPrompts = motorPromptContext ? rotatingPrompts : contextualPrompts;
+  // Page-first prompt selection: use page prompts except on motor-focused pages with motor context
+  const isOnMotorPage = useMemo(() => isMotorFocusedPage(location.pathname), [location.pathname]);
+  
+  const smartPrompts = useMemo(() => {
+    // On motor-focused pages with motor context, prefer motor-specific rotating prompts
+    if (isOnMotorPage && motorPromptContext && rotatingPrompts.length > 0) {
+      return rotatingPrompts;
+    }
+    // Otherwise, always use page-specific contextual prompts
+    return contextualPrompts;
+  }, [isOnMotorPage, motorPromptContext, rotatingPrompts, contextualPrompts]);
 
   // Detect if motor context changed (to show fresh prompts for new motor)
   const currentMotorId = (state.previewMotor as any)?.id || (state.motor as any)?.id || null;

@@ -3,17 +3,21 @@ import { Button } from '@/components/ui/button';
 
 interface SuggestedQuestionsProps {
   onQuestionSelect: (question: string) => void;
+  questions?: string[]; // Accept dynamic questions
 }
 
+const defaultQuestions = [
+  "What Mercury motor is best for my pontoon boat?",
+  "How much does a 150HP Mercury motor cost?",
+  "What's included in motor installation?",
+  "Can you help me build a quote?"
+];
+
 export const SuggestedQuestions: React.FC<SuggestedQuestionsProps> = ({ 
-  onQuestionSelect 
+  onQuestionSelect,
+  questions: customQuestions
 }) => {
-  const questions = [
-    "What Mercury motor is best for my pontoon boat?",
-    "How much does a 150HP Mercury motor cost?",
-    "What's included in motor installation?",
-    "Can you help me build a quote?"
-  ];
+  const questions = customQuestions || defaultQuestions;
 
   return (
     <div className="px-4 pb-2">
