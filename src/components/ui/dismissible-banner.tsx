@@ -65,6 +65,10 @@ export interface DismissibleBannerProps {
   imageUrl?: string;
   /** Image alt text */
   imageAlt?: string;
+  /** Full-width image to show on mobile instead of text content */
+  mobileImageUrl?: string;
+  /** Alt text for mobile image */
+  mobileImageAlt?: string;
 }
 
 export function DismissibleBanner({
@@ -78,6 +82,8 @@ export function DismissibleBanner({
   onActionClick,
   imageUrl,
   imageAlt = '',
+  mobileImageUrl,
+  mobileImageAlt = '',
 }: DismissibleBannerProps) {
   const { isDismissed, dismiss } = useDismissibleState(storageKey);
 
@@ -97,20 +103,45 @@ export function DismissibleBanner({
         transition={{ duration: 0.2 }}
         className={className}
       >
+        {/* Mobile: Full image banner */}
+        {mobileImageUrl && (
+          <div className="block sm:hidden relative">
+            <Link to={actionHref || '#'} className="block">
+              <img
+                src={mobileImageUrl}
+                alt={mobileImageAlt}
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+            </Link>
+            {/* Mobile dismiss button */}
+            <button
+              onClick={handleDismiss}
+              className="absolute top-2 right-2 p-1.5 bg-black/50 hover:bg-black/70 rounded-full transition-colors"
+              aria-label="Dismiss banner"
+            >
+              <X className="h-4 w-4 text-white" />
+            </button>
+          </div>
+        )}
+
+        {/* Desktop: Text-based layout (also mobile fallback if no mobileImageUrl) */}
         <div
           className={cn(
             'rounded-lg p-3 flex flex-col sm:flex-row items-center sm:justify-between gap-3 shadow-lg relative',
-            variantStyles[variant]
+            variantStyles[variant],
+            mobileImageUrl ? 'hidden sm:flex' : 'flex'
           )}
         >
-          {/* Mobile dismiss button - absolute positioned */}
-          <button
-            onClick={handleDismiss}
-            className="absolute top-2 right-2 sm:hidden p-1 hover:bg-white/10 rounded transition-colors"
-            aria-label="Dismiss banner"
-          >
-            <X className="h-4 w-4" />
-          </button>
+          {/* Mobile dismiss button - only show if no mobile image */}
+          {!mobileImageUrl && (
+            <button
+              onClick={handleDismiss}
+              className="absolute top-2 right-2 sm:hidden p-1 hover:bg-white/10 rounded transition-colors"
+              aria-label="Dismiss banner"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          )}
 
           {/* Content area */}
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
