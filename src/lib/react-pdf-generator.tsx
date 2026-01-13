@@ -56,6 +56,9 @@ export interface ReactPdfQuoteData {
   financingRate?: number;
   financingQrCode?: string;
   pricing?: any;
+  // Selected promo option from "Choose One"
+  selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
+  selectedPromoValue?: string;
 }
 
 /**
@@ -125,6 +128,8 @@ export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string>
       financingRate: data.financingRate,
       financingQrCode: data.financingQrCode,
       includesInstallation: data.includesInstallation,
+      selectedPromoOption: data.selectedPromoOption,
+      selectedPromoValue: data.selectedPromoValue,
     };
     
     // Generate PDF blob using @react-pdf/renderer
@@ -176,6 +181,8 @@ export async function generatePDFBlob(data: ReactPdfQuoteData): Promise<Blob> {
       financingRate: data.financingRate,
       financingQrCode: data.financingQrCode,
       includesInstallation: data.includesInstallation,
+      selectedPromoOption: data.selectedPromoOption,
+      selectedPromoValue: data.selectedPromoValue,
     };
     
     // Generate PDF blob using @react-pdf/renderer
