@@ -58,6 +58,7 @@ type PackageCardsProps = {
   showUpgradeDeltas?: boolean; // Enable comparison mode
   basePackageId?: string; // Package to compare against (default: first package)
   revealComplete?: boolean; // Whether cinematic reveal has completed (triggers stagger animation)
+  variant?: 'light' | 'dark'; // Background context for styling
 };
 
 export function PackageCards({
@@ -68,9 +69,11 @@ export function PackageCards({
   showUpgradeDeltas = true,
   basePackageId,
   revealComplete = true,
+  variant = 'light',
 }: PackageCardsProps) {
   const { triggerHaptic } = useHapticFeedback();
   const { playPackageSelect } = useSound();
+  const isDark = variant === 'dark';
   
   // Find base package for comparison (default to first/Essential)
   const basePackage = options.find(p => p.id === (basePackageId || 'good')) || options[0];
@@ -106,26 +109,27 @@ export function PackageCards({
               onSelect(p.id);
             }}
             className={cn(
-              "group relative flex flex-col rounded-2xl border p-6 text-left",
+              "group relative flex flex-col rounded-xl border-2 p-6 text-left",
               // Smooth premium transitions
               "transition-all duration-300 ease-out",
               // Micro-interaction: scale + lift + shadow on hover
               "hover:scale-[1.02] hover:-translate-y-1 hover:shadow-2xl",
               // Active press feedback
               "active:scale-[0.98] active:translate-y-0",
-              // Premium effects
-              "premium-lift premium-glow-hover",
               "cursor-pointer pointer-events-auto touch-manipulation",
+              // Background based on variant
+              isDark ? "bg-white shadow-lg" : "glass-card",
               isSelected
-                ? "border-primary ring-2 ring-primary/20 glass-card-primary premium-selected"
-                : "border-border/50 glass-card",
-              "dark:border-border"
+                ? "border-primary ring-2 ring-primary/20"
+                : isDark 
+                  ? "border-transparent hover:border-primary/50" 
+                  : "border-border/50 hover:border-primary/50"
             )}
             aria-pressed={isSelected}
           >
             {/* Mobile Selected Checkmark Badge */}
             {isSelected && (
-              <span className="absolute right-3 bottom-3 flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white sm:hidden">
+              <span className="absolute right-3 bottom-3 flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground sm:hidden">
                 <Check className="w-4 h-4" />
               </span>
             )}
@@ -135,30 +139,30 @@ export function PackageCards({
                 "absolute right-3 top-3 flex flex-col items-end gap-1",
                 isSelected && "sm:right-3"
               )}>
-                <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-amber-50 to-yellow-50 px-2.5 py-1 text-xs font-semibold text-amber-700 ring-1 ring-inset ring-amber-300 shadow-sm">
-                  <Star className="w-3 h-3 fill-amber-500 text-amber-500" />
+                <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-primary to-primary/80 px-2.5 py-1 text-xs font-bold text-primary-foreground shadow-lg">
+                  <Star className="w-3 h-3 fill-current" />
                   For You
                 </span>
               </div>
             )}
 
             <div className="pr-20">
-              <div className="text-base font-bold uppercase tracking-[0.12em] text-slate-600">
+              <div className="text-base font-bold uppercase tracking-[0.12em] text-foreground">
                 {p.label.split(' • ')[0]}
               </div>
               {p.label.includes(' • ') && (
-                <div className="text-sm font-medium text-slate-500 mt-0.5">
+                <div className="text-sm font-medium text-muted-foreground mt-0.5">
                   {p.label.split(' • ')[1]}
                 </div>
               )}
             </div>
 
-            <div className="mt-2 text-2xl font-semibold tracking-tight text-slate-900">
+            <div className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
               {money(p.priceBeforeTax)}
             </div>
 
-            <div className="mt-1 text-sm text-slate-600">
-              From <span className="font-semibold">{money(Math.round(monthly))}/mo</span>
+            <div className="mt-1 text-sm text-muted-foreground">
+              From <span className="font-semibold text-primary">{money(Math.round(monthly))}/mo</span>
             </div>
 
             {/* Upgrade delta badges - show for non-base packages */}
@@ -186,16 +190,16 @@ export function PackageCards({
             )}
 
             {p.coverageYears != null && (
-              <div className="mt-2 text-sm text-slate-600">
-                Coverage: <span className="font-medium">{p.coverageYears} years total</span>
+              <div className="mt-2 text-sm text-muted-foreground">
+                Coverage: <span className="font-medium text-foreground">{p.coverageYears} years total</span>
               </div>
             )}
 
-            <div className="mt-2 inline-flex items-center rounded-full bg-slate-50 px-2.5 py-0.5 text-xs font-medium text-slate-700 ring-1 ring-inset ring-slate-200">
+            <div className="mt-2 inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-200">
               Save {money(p.savings)}
             </div>
 
-            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-700">
+            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground">
               {p.features.slice(0, 4).map((f, i) => (
                 <li 
                   key={i} 
@@ -206,7 +210,7 @@ export function PackageCards({
                   )}
                 >
                   <svg 
-                    className="h-4 w-4 flex-shrink-0 text-blue-600" 
+                    className="h-4 w-4 flex-shrink-0 text-primary" 
                     fill="currentColor" 
                     viewBox="0 0 20 20"
                   >
@@ -223,7 +227,7 @@ export function PackageCards({
             
             {/* Mobile "Tap to select" hint for unselected packages */}
             {!isSelected && (
-              <span className="mt-3 text-center text-xs text-slate-400 sm:hidden">
+              <span className="mt-3 text-center text-xs text-muted-foreground sm:hidden">
                 Tap to select
               </span>
             )}
