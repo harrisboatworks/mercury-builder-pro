@@ -18,7 +18,20 @@ interface QuoteRevealCinematicProps {
   savings: number;
   coverageYears: number;
   imageUrl?: string;
+  // Promo information
+  selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
+  selectedPromoValue?: string;
 }
+
+// Helper to get display-friendly promo label
+const getPromoLabel = (option: string, value: string): string => {
+  switch (option) {
+    case 'no_payments': return '6 Mo. Deferred';
+    case 'special_financing': return `${value} APR`;
+    case 'cash_rebate': return `${value} Rebate`;
+    default: return value;
+  }
+};
 
 // Premium gold/silver confetti burst
 const triggerPremiumConfetti = () => {
@@ -83,7 +96,9 @@ export function QuoteRevealCinematic({
   msrp,
   savings,
   coverageYears,
-  imageUrl
+  imageUrl,
+  selectedPromoOption,
+  selectedPromoValue
 }: QuoteRevealCinematicProps) {
   const [stage, setStage] = useState<'spotlight' | 'motor' | 'msrp' | 'price' | 'savings' | 'details' | 'complete'>('spotlight');
   const [displayPrice, setDisplayPrice] = useState(0);
@@ -557,6 +572,33 @@ export function QuoteRevealCinematic({
                   {coverageYears} Years
                 </span>
               </motion.div>
+              
+              {/* Selected Promo Bonus */}
+              {selectedPromoOption && selectedPromoValue && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 0.7, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+                  className="text-center"
+                >
+                  <motion.span 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.9, duration: 0.4 }}
+                    className="flex items-center justify-center gap-1 text-[10px] uppercase tracking-[0.2em] mb-2"
+                    style={{ color: '#D4AF37' }}
+                  >
+                    <Sparkles className="w-3 h-3" />
+                    Your Bonus
+                  </motion.span>
+                  <span 
+                    className="font-outfit text-lg md:text-xl font-semibold"
+                    style={{ color: '#D4AF37' }}
+                  >
+                    {getPromoLabel(selectedPromoOption, selectedPromoValue)}
+                  </span>
+                </motion.div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>

@@ -69,16 +69,23 @@ export default function QuoteSummaryPage() {
   const [isMounted, setIsMounted] = useState(false);
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   
-  // Cinematic reveal - only show once per session
-  const [showCinematic, setShowCinematic] = useState(() => {
-    const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
-    return !hasSeenReveal;
-  });
+  // Cinematic reveal - show for fresh quotes coming from package selection
+  const [showCinematic, setShowCinematic] = useState(false);
 
   const handleCinematicComplete = () => {
     sessionStorage.setItem('quote-reveal-seen', 'true');
     setShowCinematic(false);
   };
+
+  // Check if we should show cinematic (fresh from package selection)
+  useEffect(() => {
+    const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
+    if (!hasSeenReveal) {
+      setShowCinematic(true);
+    }
+    // Scroll to top on mount
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
 
   // Keyboard shortcut to replay cinematic (Ctrl/Cmd + Shift + R)
   useEffect(() => {
@@ -565,6 +572,8 @@ export default function QuoteSummaryPage() {
         savings={totals.savings}
         coverageYears={selectedPackageCoverageYears}
         imageUrl={imageUrl}
+        selectedPromoOption={state.selectedPromoOption}
+        selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
       />
       
       <ScrollToTop />
