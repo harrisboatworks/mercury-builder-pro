@@ -17,7 +17,7 @@ import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExtern
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, CreditCard } from 'lucide-react';
+import { ArrowLeft, CreditCard, ChevronLeft } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
 import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
@@ -567,6 +567,22 @@ export default function QuoteSummaryPage() {
             <div className="grid lg:grid-cols-[1fr_360px] gap-8">
               {/* Main Content - Left Column */}
               <div className="space-y-6">
+                {/* Package Header with Change Link */}
+                <div className="flex items-center justify-between">
+                  <p className="text-sm text-muted-foreground">
+                    <span className="font-medium text-foreground">{selectedPackageLabel}</span> Package
+                  </p>
+                  <Button
+                    variant="link"
+                    size="sm"
+                    onClick={() => navigate('/quote/package-selection')}
+                    className="h-auto p-0 text-sm text-primary hover:text-primary/80 gap-1"
+                  >
+                    <ChevronLeft className="w-3.5 h-3.5" />
+                    Change Package
+                  </Button>
+                </div>
+
                 {/* Detailed Pricing Breakdown */}
                 <motion.div
                   variants={pricingTableVariants}
@@ -664,7 +680,7 @@ export default function QuoteSummaryPage() {
                   </Button>
                   <Button 
                     onClick={handleStepComplete}
-                    className="w-full bg-primary hover:opacity-90 text-primary-foreground"
+                    className="w-full bg-primary hover:opacity-90 text-primary-foreground premium-pulse"
                     size="lg"
                   >
                     Continue to Schedule
