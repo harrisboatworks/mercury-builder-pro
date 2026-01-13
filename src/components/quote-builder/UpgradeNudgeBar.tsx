@@ -11,6 +11,7 @@ interface UpgradeNudgeBarProps {
   monthlyDelta: number; // Additional monthly cost
   upgradeToLabel: string; // e.g. "Complete"
   onUpgrade: () => void;
+  promoMessage?: string; // e.g., "Keeps your 2.99% APR"
 }
 
 export function UpgradeNudgeBar({
@@ -19,6 +20,7 @@ export function UpgradeNudgeBar({
   monthlyDelta,
   upgradeToLabel,
   onUpgrade,
+  promoMessage,
 }: UpgradeNudgeBarProps) {
   const { triggerHaptic } = useHapticFeedback();
   const { playPackageSelect } = useSound();
@@ -77,7 +79,7 @@ export function UpgradeNudgeBar({
               </motion.div>
               
               <div className="space-y-1 text-center sm:text-left">
-                <div className="flex items-center justify-center sm:justify-start gap-2">
+                <div className="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
                   <Sparkles className="h-4 w-4 text-amber-500" />
                   <span className="text-sm font-semibold text-slate-900">
                     Get{' '}
@@ -90,6 +92,11 @@ export function UpgradeNudgeBar({
                     </motion.span>
                     {' '}more coverage
                   </span>
+                  {promoMessage && (
+                    <span className="px-2 py-0.5 text-xs rounded-full bg-emerald-100 text-emerald-700 font-medium">
+                      {promoMessage}
+                    </span>
+                  )}
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600">
                   Upgrade to {upgradeToLabel} for just{' '}

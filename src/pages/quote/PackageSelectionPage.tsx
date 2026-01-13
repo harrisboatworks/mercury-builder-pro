@@ -47,7 +47,7 @@ export default function PackageSelectionPage() {
   const navigate = useNavigate();
   const { state, dispatch, getQuoteData } = useQuote();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings } = useActivePromotions();
+  const { promotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getSpecialFinancingRates } = useActivePromotions();
   
   const [selectedPackage, setSelectedPackage] = useState<string>(
     state.selectedPackage?.id || 'good'
@@ -55,6 +55,31 @@ export default function PackageSelectionPage() {
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
+
+  // Calculate effective promo rate based on user's promo selection
+  const effectivePromoRate = useMemo(() => {
+    if (state.selectedPromoOption === 'special_financing') {
+      const rates = getSpecialFinancingRates();
+      return rates?.[0]?.rate || null;
+    }
+    return promo?.rate || null;
+  }, [state.selectedPromoOption, getSpecialFinancingRates, promo?.rate]);
+
+  // Create promo message for nudge bars
+  const promoMessage = useMemo(() => {
+    switch (state.selectedPromoOption) {
+      case 'special_financing': {
+        const rates = getSpecialFinancingRates();
+        return `Keeps ${rates?.[0]?.rate || 2.99}% APR`;
+      }
+      case 'no_payments':
+        return 'Keeps 6 Mo. No Payments';
+      case 'cash_rebate':
+        return 'Keeps your rebate';
+      default:
+        return undefined;
+    }
+  }, [state.selectedPromoOption, getSpecialFinancingRates]);
 
   // Get promo end date for countdown
   const promoEndDate = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
@@ -219,17 +244,17 @@ export default function PackageSelectionPage() {
 
   const essentialMonthly = calculateMonthlyPayment(
     (essentialPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    promo?.rate || null
+    effectivePromoRate
   ).payment;
   
   const completeMonthly = calculateMonthlyPayment(
     (completePackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    promo?.rate || null
+    effectivePromoRate
   ).payment;
   
   const premiumMonthly = calculateMonthlyPayment(
     (premiumPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    promo?.rate || null
+    effectivePromoRate
   ).payment;
 
   const monthlyDeltaToComplete = completeMonthly - essentialMonthly;
@@ -440,6 +465,7 @@ export default function PackageSelectionPage() {
                     monthlyDelta={monthlyDeltaToComplete}
                     upgradeToLabel="Complete"
                     onUpgrade={() => handlePackageSelect('better')}
+                    promoMessage={promoMessage}
                   />
                 </motion.div>
               )}
@@ -456,6 +482,7 @@ export default function PackageSelectionPage() {
                     monthlyDelta={monthlyDeltaToPremium}
                     upgradeToLabel="Premium"
                     onUpgrade={() => handlePackageSelect('best')}
+                    promoMessage={promoMessage}
                   />
                 </motion.div>
               )}

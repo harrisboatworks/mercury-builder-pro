@@ -16,9 +16,10 @@ import {
   DrawerTitle,
 } from '@/components/ui/drawer';
 import { formatMotorTitle } from '@/lib/card-title';
-import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { useQuote } from '@/contexts/QuoteContext';
 import { calculatePaymentWithFrequency, getDefaultFinancingRate, type PaymentFrequency } from '@/lib/finance';
-import { DollarSign, Calculator } from 'lucide-react';
+import { DollarSign, Calculator, Sparkles } from 'lucide-react';
 
 interface FinanceCalculatorDrawerProps {
   open: boolean;
@@ -38,7 +39,19 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
   const [down, setDown] = useState<number>(0);
   const [apr, setApr] = useState<number>(8.99);
   const [frequency, setFrequency] = useState<PaymentFrequency>('monthly');
-  const { promo } = useActiveFinancingPromo();
+  
+  // Use Quote context and Active Promotions for correct promo data
+  const { state } = useQuote();
+  const { getSpecialFinancingRates, promotions } = useActivePromotions();
+  
+  // Get effective promo rate based on user's selection
+  const effectivePromoRate = useMemo(() => {
+    if (state.selectedPromoOption === 'special_financing') {
+      const rates = getSpecialFinancingRates();
+      return rates?.[0]?.rate || null;
+    }
+    return null; // Use tiered default
+  }, [state.selectedPromoOption, getSpecialFinancingRates]);
 
   const handleApplyForFinancing = () => {
     navigate('/financing-application', {
@@ -66,24 +79,27 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
       setTotalFinanced(Math.round(totalWithFees));
       setDown(0);
       
-      // Set correct tiered APR based on total financed amount
-      // Only if no active promo (promo effect will override if needed)
-      if (!promo?.rate) {
-        setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
+      // Set correct APR based on user's promo selection or tiered default
+      const tieredRate = getDefaultFinancingRate(Math.round(totalWithFees));
+      if (effectivePromoRate && effectivePromoRate < tieredRate) {
+        setApr(effectivePromoRate);
+      } else {
+        setApr(tieredRate);
       }
     }
-  }, [open, motor.price, promo?.rate]);
+  }, [open, motor.price, effectivePromoRate]);
 
-  // Apply promotional rate if available
+  // Update APR when total financed changes
   useEffect(() => {
-    if (promo?.rate && totalFinanced > 0) {
+    if (totalFinanced > 0) {
       const tieredRate = getDefaultFinancingRate(totalFinanced);
-      // Only apply promo if it's actually better than the default tiered rate
-      if (promo.rate < tieredRate) {
-        setApr(Number(promo.rate));
+      if (effectivePromoRate && effectivePromoRate < tieredRate) {
+        setApr(effectivePromoRate);
+      } else {
+        setApr(tieredRate);
       }
     }
-  }, [promo, totalFinanced]);
+  }, [totalFinanced, effectivePromoRate]);
 
   const paymentCalculation = useMemo(() => {
     const principal = Math.max(0, totalFinanced - down);
@@ -220,16 +236,43 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
               </RadioGroup>
             </div>
 
-            {/* Promo Alert */}
-            {promo && (
-              <div className="p-3 bg-primary/10 rounded-lg text-sm">
-                <div className="font-medium">Promo APR applied: {promo.rate}%</div>
-                {promo.promo_text && <div className="text-muted-foreground mt-0.5">{promo.promo_text}</div>}
-                {promo.promo_end_date && (
+            {/* Promo Alert - Shows based on user's "Choose One" selection */}
+            {state.selectedPromoOption === 'special_financing' && effectivePromoRate && (
+              <div className="p-3 bg-primary/10 rounded-lg text-sm border border-primary/20">
+                <div className="flex items-center gap-2 font-medium">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  Special Financing: {effectivePromoRate}% APR
+                </div>
+                <div className="text-muted-foreground mt-0.5">
+                  Mercury GET 7 promotional rate applied
+                </div>
+                {promotions?.[0]?.end_date && (
                   <div className="text-muted-foreground mt-0.5">
-                    Ends {new Date(promo.promo_end_date).toLocaleDateString()}
+                    Offer ends {new Date(promotions[0].end_date).toLocaleDateString()}
                   </div>
                 )}
+              </div>
+            )}
+            {state.selectedPromoOption === 'no_payments' && (
+              <div className="p-3 bg-emerald-500/10 rounded-lg text-sm border border-emerald-500/20">
+                <div className="flex items-center gap-2 font-medium text-emerald-600">
+                  <Sparkles className="w-4 h-4" />
+                  6 Months No Payments Selected
+                </div>
+                <div className="text-muted-foreground mt-0.5">
+                  Your first payment starts after 6 months
+                </div>
+              </div>
+            )}
+            {state.selectedPromoOption === 'cash_rebate' && (
+              <div className="p-3 bg-amber-500/10 rounded-lg text-sm border border-amber-500/20">
+                <div className="flex items-center gap-2 font-medium text-amber-600">
+                  <DollarSign className="w-4 h-4" />
+                  Cash Rebate Selected
+                </div>
+                <div className="text-muted-foreground mt-0.5">
+                  Your rebate will be applied at purchase
+                </div>
               </div>
             )}
 
