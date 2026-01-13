@@ -90,7 +90,12 @@ export default function PromoSelectionPage() {
   };
 
   const handleBack = () => {
-    navigate(-1);
+    // Navigate based on purchase path - mirrors forward navigation logic
+    if (state.purchasePath === 'installed') {
+      navigate('/quote/installation');
+    } else {
+      navigate('/quote/trade-in');
+    }
   };
 
   return (
