@@ -1,5 +1,5 @@
 "use client";
-import { useCallback } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
 import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
@@ -64,6 +64,13 @@ export default function StickySummary({
   onBookConsult,
 }: StickySummaryProps) {
   const { playCelebration } = useSound();
+  const [showPulse, setShowPulse] = useState(false);
+
+  // Trigger pulse animation after a delay
+  useEffect(() => {
+    const timer = setTimeout(() => setShowPulse(true), 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleReserveClick = useCallback(() => {
     // Trigger celebration confetti burst
@@ -204,7 +211,7 @@ export default function StickySummary({
 
           <button
             onClick={handleReserveClick}
-            className="w-full rounded-xl bg-blue-600 px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            className={`w-full rounded-xl bg-blue-600 px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${showPulse ? 'premium-pulse' : ''}`}
           >
             Reserve with {money(depositAmount)} refundable deposit
           </button>
