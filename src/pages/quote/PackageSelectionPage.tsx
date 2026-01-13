@@ -16,6 +16,7 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPackageRecommendation, getRecommendationExplanation } from '@/lib/package-recommendation';
+import mercuryLogo from '@/assets/mercury-logo.png';
 
 // Package warranty year constants
 const COMPLETE_TARGET_YEARS = 7;
@@ -312,7 +313,7 @@ export default function PackageSelectionPage() {
             {/* Logo and Header */}
             <motion.div variants={itemVariants} className="text-center space-y-6">
               <img 
-                src="/mercury-logo.png" 
+                src={mercuryLogo} 
                 alt="Mercury Marine" 
                 className="h-10 md:h-12 mx-auto brightness-0 invert opacity-90"
               />
@@ -349,48 +350,45 @@ export default function PackageSelectionPage() {
                 transition={{ delay: 0.5, duration: 0.4, type: "spring" }}
                 className="relative mx-auto max-w-md"
               >
-                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500/20 via-yellow-500/20 to-amber-500/20 border border-amber-500/30 px-5 py-3">
-                  {/* Shimmer effect */}
-                  <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                  
-                  <div className="relative flex items-center justify-center gap-3">
-                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500/20">
-                      <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                <div className="bg-white rounded-xl border-2 border-primary shadow-lg px-5 py-4">
+                  <div className="flex items-center justify-center gap-3">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Star className="w-5 h-5 text-primary fill-primary" />
                     </div>
-                    <div className="text-center">
-                      <p className="text-sm font-semibold text-amber-300">
+                    <div className="text-left">
+                      <p className="text-sm font-bold text-foreground">
                         Recommended for You: {recommendation.packageId === 'good' ? 'Essential' : recommendation.packageId === 'better' ? 'Complete' : 'Premium'}
                       </p>
-                      <p className="text-xs text-amber-400/80">{recommendation.reason}</p>
+                      <p className="text-xs text-muted-foreground">{recommendation.reason}</p>
                     </div>
                     
                     {/* Why This? Tooltip */}
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <button className="ml-1 p-1.5 rounded-full hover:bg-amber-500/20 transition-colors">
-                          <HelpCircle className="w-4 h-4 text-amber-400/60 hover:text-amber-400 transition-colors" />
+                        <button className="ml-1 p-1.5 rounded-full hover:bg-muted transition-colors">
+                          <HelpCircle className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" />
                         </button>
                       </TooltipTrigger>
                       <TooltipContent 
                         side="bottom" 
-                        className="max-w-xs p-4 bg-stone-800 border-stone-600 shadow-xl"
+                        className="max-w-xs p-4 bg-white border shadow-xl"
                       >
                         <div className="space-y-3">
                           <div className="flex items-center gap-2">
-                            <Lightbulb className="w-4 h-4 text-amber-400" />
-                            <span className="font-semibold text-amber-300">{recommendationExplanation.title}</span>
+                            <Lightbulb className="w-4 h-4 text-primary" />
+                            <span className="font-semibold text-foreground">{recommendationExplanation.title}</span>
                           </div>
-                          <p className="text-xs text-stone-400 font-medium">Based on your setup:</p>
+                          <p className="text-xs text-muted-foreground font-medium">Based on your setup:</p>
                           <ul className="space-y-2">
                             {recommendationExplanation.factors.map((factor, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-xs text-stone-300">
-                                <span className="text-amber-400 mt-0.5">•</span>
+                              <li key={idx} className="flex items-start gap-2 text-xs text-foreground">
+                                <span className="text-primary mt-0.5">•</span>
                                 <span>{factor}</span>
                               </li>
                             ))}
                           </ul>
-                          <div className="pt-2 border-t border-stone-700">
-                            <p className="text-xs text-stone-500 italic">
+                          <div className="pt-2 border-t border-border">
+                            <p className="text-xs text-muted-foreground italic">
                               You can always choose a different package based on your preferences.
                             </p>
                           </div>
@@ -411,6 +409,7 @@ export default function PackageSelectionPage() {
                 promoRate={promo?.rate || null}
                 showUpgradeDeltas={true}
                 revealComplete={true}
+                variant="dark"
               />
             </motion.div>
 

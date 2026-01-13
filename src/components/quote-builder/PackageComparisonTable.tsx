@@ -64,8 +64,8 @@ export function PackageComparisonTable({
       className={cn(
         "flex items-center justify-center w-6 h-6 rounded-full",
         hasFeature 
-          ? "bg-emerald-500/20 text-emerald-400" 
-          : "bg-stone-700/50 text-stone-600"
+          ? "bg-emerald-100 text-emerald-600" 
+          : "bg-muted text-muted-foreground/40"
       )}
     >
       {hasFeature ? (
@@ -80,16 +80,16 @@ export function PackageComparisonTable({
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
       <CollapsibleTrigger asChild>
         <button
-          className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-stone-800/30 border border-stone-700/50 hover:bg-stone-800/50 transition-colors group"
+          className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 transition-colors group"
         >
-          <span className="text-sm font-medium text-stone-300 group-hover:text-white transition-colors">
+          <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">
             Compare all features
           </span>
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.2 }}
           >
-            <ChevronDown className="w-4 h-4 text-stone-400 group-hover:text-white transition-colors" />
+            <ChevronDown className="w-4 h-4 text-white/60 group-hover:text-white transition-colors" />
           </motion.div>
         </button>
       </CollapsibleTrigger>
@@ -104,10 +104,10 @@ export function PackageComparisonTable({
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="overflow-hidden"
             >
-              <div className="mt-4 bg-stone-800/30 border border-stone-700/50 rounded-2xl overflow-hidden">
+              <div className="mt-4 bg-white rounded-xl border shadow-lg overflow-hidden">
                 {/* Header */}
-                <div className="grid grid-cols-4 bg-stone-700/50">
-                  <div className="p-3 text-sm font-medium text-stone-400">
+                <div className="grid grid-cols-4 bg-muted/50">
+                  <div className="p-3 text-sm font-medium text-muted-foreground">
                     Features
                   </div>
                   {(['good', 'better', 'best'] as const).map((pkg) => (
@@ -116,8 +116,8 @@ export function PackageComparisonTable({
                       className={cn(
                         "p-3 text-center text-sm font-semibold transition-colors",
                         selectedId === pkg 
-                          ? "bg-primary/20 text-primary" 
-                          : "text-stone-300"
+                          ? "bg-primary/10 text-primary" 
+                          : "text-foreground"
                       )}
                     >
                       {PACKAGE_LABELS[pkg]}
@@ -126,7 +126,7 @@ export function PackageComparisonTable({
                 </div>
 
                 {/* Feature Rows */}
-                <div className="divide-y divide-stone-700/30">
+                <div className="divide-y divide-border">
                   {filteredFeatures.map((feature, idx) => (
                     <motion.div
                       key={feature.label}
@@ -135,10 +135,10 @@ export function PackageComparisonTable({
                       transition={{ delay: idx * 0.03 }}
                       className={cn(
                         "grid grid-cols-4 items-center",
-                        idx % 2 === 0 ? "bg-stone-800/20" : "bg-transparent"
+                        idx % 2 === 0 ? "bg-muted/30" : "bg-transparent"
                       )}
                     >
-                      <div className="p-3 text-sm text-stone-300">
+                      <div className="p-3 text-sm text-foreground">
                         {feature.label}
                       </div>
                       {(['good', 'better', 'best'] as const).map((pkg) => (
@@ -157,17 +157,17 @@ export function PackageComparisonTable({
                 </div>
 
                 {/* Warranty Timeline */}
-                <div className="p-4 border-t border-stone-700/50 bg-stone-800/40">
-                  <p className="text-xs text-stone-400 mb-3 text-center font-medium uppercase tracking-wider">
+                <div className="p-4 border-t border-border bg-muted/30">
+                  <p className="text-xs text-muted-foreground mb-3 text-center font-medium uppercase tracking-wider">
                     Warranty Timeline
                   </p>
-                  <div className="relative h-8 bg-stone-700/50 rounded-full overflow-hidden">
+                  <div className="relative h-8 bg-muted rounded-full overflow-hidden">
                     {/* Base coverage (Essential) */}
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${(currentCoverageYears / 8) * 100}%` }}
                       transition={{ delay: 0.2, duration: 0.5 }}
-                      className="absolute left-0 top-0 h-full bg-stone-500 rounded-l-full"
+                      className="absolute left-0 top-0 h-full bg-slate-400 rounded-l-full"
                     />
                     
                     {/* Complete extension */}
@@ -175,7 +175,7 @@ export function PackageComparisonTable({
                       initial={{ width: 0 }}
                       animate={{ width: `${((7 - currentCoverageYears) / 8) * 100}%` }}
                       transition={{ delay: 0.4, duration: 0.5 }}
-                      className="absolute top-0 h-full bg-blue-500"
+                      className="absolute top-0 h-full bg-primary"
                       style={{ left: `${(currentCoverageYears / 8) * 100}%` }}
                     />
                     
@@ -195,7 +195,7 @@ export function PackageComparisonTable({
                         className="absolute top-1/2 -translate-y-1/2 flex flex-col items-center"
                         style={{ left: `${(year / 8) * 100}%`, transform: `translateX(-50%) translateY(-50%)` }}
                       >
-                        <div className="w-1 h-4 bg-white/30 rounded-full" />
+                        <div className="w-1 h-4 bg-white/50 rounded-full" />
                       </div>
                     ))}
                   </div>
@@ -203,16 +203,16 @@ export function PackageComparisonTable({
                   {/* Legend */}
                   <div className="flex items-center justify-center gap-6 mt-3 text-xs">
                     <div className="flex items-center gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-stone-500" />
-                      <span className="text-stone-400">Essential ({currentCoverageYears}yr)</span>
+                      <div className="w-3 h-3 rounded-full bg-slate-400" />
+                      <span className="text-muted-foreground">Essential ({currentCoverageYears}yr)</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-blue-500" />
-                      <span className="text-stone-400">Complete (7yr)</span>
+                      <div className="w-3 h-3 rounded-full bg-primary" />
+                      <span className="text-muted-foreground">Complete (7yr)</span>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-3 h-3 rounded-full bg-amber-500" />
-                      <span className="text-stone-400">Premium (8yr)</span>
+                      <span className="text-muted-foreground">Premium (8yr)</span>
                     </div>
                   </div>
                 </div>
