@@ -511,7 +511,12 @@ export default function QuoteSummaryPage() {
         totalWithFees: totalWithFees,
         motorModel: quoteData.motor?.model || motorName,
         packageName: packageName,
-        tradeInValue: tradeInValue
+        tradeInValue: tradeInValue,
+        // Include promo details for financing application
+        promoOption: state.selectedPromoOption,
+        promoRate: state.selectedPromoRate,
+        promoTerm: state.selectedPromoTerm,
+        promoValue: state.selectedPromoValue,
       }
     };
     
