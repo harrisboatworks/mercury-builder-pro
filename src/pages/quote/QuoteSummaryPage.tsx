@@ -4,24 +4,20 @@ import { motion } from 'framer-motion';
 import { ScrollToTop } from '@/components/ui/ScrollToTop';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
-import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
 import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
-import { UpgradeNudgeBar } from '@/components/quote-builder/UpgradeNudgeBar';
 import { PromoPanel } from '@/components/quote-builder/PromoPanel';
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 
 import MotorHeader from '@/components/quote-builder/MotorHeader';
-import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
 import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
-import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, CreditCard, RotateCcw, Clock } from 'lucide-react';
+import { ArrowLeft, CreditCard, RotateCcw, Shield, Pencil } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
 import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
@@ -29,24 +25,22 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
-// confetti import removed - now using QuoteRevealCinematic
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
 
+// Package warranty year constants
+const COMPLETE_TARGET_YEARS = 7;
+const PREMIUM_TARGET_YEARS = 8;
 
-// Package warranty year constants (module-level to prevent recreation on every render)
-const COMPLETE_TARGET_YEARS = 7; // Complete: 7 years total
-const PREMIUM_TARGET_YEARS = 8;  // Premium: 8 years max
-
-// Animation variants - using transform-only animations for iOS compatibility
-const packageContainerVariants = {
-  hidden: { y: 10 },
+// Animation variants
+const sectionVariants = {
+  hidden: { y: 8 },
   visible: {
     y: 0,
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.1
+      duration: 0.3,
+      ease: "easeOut"
     }
   }
 };
@@ -63,51 +57,29 @@ const pricingTableVariants = {
   }
 };
 
-const sectionVariants = {
-  hidden: { y: 8 },
-  visible: {
-    y: 0,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut"
-    }
-  }
-};
-
 export default function QuoteSummaryPage() {
   const navigate = useNavigate();
-  const { state, dispatch, isStepAccessible, getQuoteData, isNavigationBlocked } = useQuote();
+  const { state, dispatch, getQuoteData } = useQuote();
   const { promo } = useActiveFinancingPromo();
   const { promotions, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings } = useActivePromotions();
   const { toast } = useToast();
-  const [selectedPackage, setSelectedPackage] = useState<string>('good');
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   
-  
-  // Get first active promotion with end date for countdown
-  const promoEndDate = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
-  
   // Cinematic reveal - only show once per session
   const [showCinematic, setShowCinematic] = useState(() => {
     const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
     return !hasSeenReveal;
   });
-  
-  // Track when reveal completes to trigger staggered card animations
-  const [revealComplete, setRevealComplete] = useState(() => {
-    // If already seen before, cards should animate immediately
-    return !!sessionStorage.getItem('quote-reveal-seen');
-  });
-  
+
   const handleCinematicComplete = () => {
     sessionStorage.setItem('quote-reveal-seen', 'true');
     setShowCinematic(false);
-    setRevealComplete(true); // Trigger staggered package card entrance
   };
+
   // Keyboard shortcut to replay cinematic (Ctrl/Cmd + Shift + R)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -115,7 +87,6 @@ export default function QuoteSummaryPage() {
         e.preventDefault();
         sessionStorage.removeItem('quote-reveal-seen');
         setShowCinematic(true);
-        setRevealComplete(false);
       }
     };
     
@@ -123,38 +94,32 @@ export default function QuoteSummaryPage() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Ensure minimum mount time before running accessibility checks
+  // Ensure minimum mount time
   useEffect(() => {
-    console.log('🎬 QuoteSummaryPage: Component mounting...');
     const mountTimer = setTimeout(() => {
-      console.log('✅ QuoteSummaryPage: Component fully mounted');
       setIsMounted(true);
     }, 500);
     
     return () => clearTimeout(mountTimer);
   }, []);
 
-  // Set document title and meta description
+  // Set document title
   useEffect(() => {
     document.title = 'Your Mercury Motor Quote | Harris Boat Works';
-    
-    let desc = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
-    if (!desc) {
-      desc = document.createElement('meta');
-      desc.name = 'description';
-      document.head.appendChild(desc);
-    }
-    desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
   }, []);
 
-  // Redirect to promo selection if no promo option selected
+  // Redirect if no package selected
   useEffect(() => {
-    if (isMounted && state.motor && !state.selectedPromoOption) {
-      navigate('/quote/promo-selection');
+    if (isMounted) {
+      if (!state.motor) {
+        navigate('/quote/motor');
+      } else if (!state.selectedPromoOption) {
+        navigate('/quote/promo-selection');
+      } else if (!state.selectedPackage) {
+        navigate('/quote/package-selection');
+      }
     }
-  }, [isMounted, state.motor, state.selectedPromoOption, navigate]);
-
-  // NOTE: Celebration animation moved to QuoteRevealCinematic component
+  }, [isMounted, state.motor, state.selectedPromoOption, state.selectedPackage, navigate]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });
@@ -162,13 +127,16 @@ export default function QuoteSummaryPage() {
   };
 
   const handleBack = () => {
-    // Always go back to promo selection from summary
-    navigate('/quote/promo-selection');
+    navigate('/quote/package-selection');
+  };
+
+  const handleChangePackage = () => {
+    navigate('/quote/package-selection');
   };
 
   const quoteData = getQuoteData();
 
-  // Motor details for header - use existing state only
+  // Motor details
   const motor = state?.motor ?? {} as any;
   const motorName = motor?.model ?? motor?.name ?? motor?.displayName ?? "Mercury Outboard";
   const modelYear = motor?.year ?? motor?.modelYear ?? undefined;
@@ -177,7 +145,7 @@ export default function QuoteSummaryPage() {
   const sku = motor?.sku ?? motor?.partNumber ?? null;
   const imageUrl = motor?.imageUrl ?? motor?.thumbnail ?? null;
 
-  // Build spec pills from known fields (show only those that exist)
+  // Spec pills
   const specs = [
     motor?.shaftLength ? { label: "Shaft", value: String(motor.shaftLength) } : null,
     motor?.starting ? { label: "Start", value: String(motor.starting) } : null,
@@ -186,7 +154,6 @@ export default function QuoteSummaryPage() {
     motor?.alternatorOutput ? { label: "Alt", value: `${motor.alternatorOutput} A` } : null,
   ].filter(Boolean) as Array<{label:string; value:string}>;
 
-  // Short "why this motor" bullets – keep generic unless you already store use-case text
   const why = [
     "Quiet, low-vibration four-stroke performance",
     "Excellent fuel economy & range", 
@@ -202,14 +169,12 @@ export default function QuoteSummaryPage() {
     
     switch (option) {
       case 'no_payments':
-        // Calculate payment start date (6 months from now)
         const startDate = new Date();
         startDate.setMonth(startDate.getMonth() + 6);
         return `Payments begin ${startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`;
       case 'special_financing':
         return '2.99%';
       case 'cash_rebate':
-        // Rebate amount based on HP tier
         if (motorHP >= 200) return '$750';
         if (motorHP >= 115) return '$500';
         if (motorHP >= 40) return '$300';
@@ -221,7 +186,7 @@ export default function QuoteSummaryPage() {
 
   const specSheetUrl = motor?.specSheetUrl ?? null;
   
-  // Calculate base accessories needed based on motor type
+  // Motor type calculations
   const motorModel = motor?.model || '';
   const isManualTiller = isTillerMotor(motorModel);
   const needsControls = requiresMercuryControls(motor);
@@ -230,52 +195,33 @@ export default function QuoteSummaryPage() {
   // Calculate base accessory costs
   const motorHP = typeof motor.hp === 'string' ? parseFloat(motor.hp) : motor.hp;
   
-  // Dynamic controls cost based on boat-info selection
   const getControlsCostFromSelection = (): number => {
     if (!needsControls) return 0;
-    
     const controlsOption = state.boatInfo?.controlsOption;
-    
     switch (controlsOption) {
-      case 'none':
-        return 1200;  // "I need new controls"
-      case 'adapter':
-        return 125;   // "I have Mercury controls (2004+)"
-      case 'compatible':
-        return 0;     // "I have compatible controls ready"
-      default:
-        return 0;
+      case 'none': return 1200;
+      case 'adapter': return 125;
+      case 'compatible': return 0;
+      default: return 0;
     }
   };
   
   const controlsCost = getControlsCostFromSelection();
-  
-  // Add flat installation labor for remote motors
   const installationLaborCost = !isManualTiller ? 450 : 0;
-  
   const batteryCost = !isManualStart ? 179.99 : 0;
   const includesProp = includesPropeller(motor);
   const canAddFuelTank = canAddExternalFuelTank(motor);
-  const baseAccessoryCost = controlsCost + installationLaborCost; // Battery separate from base
-  
-  // Calculate installation cost for tiller motors
+  const baseAccessoryCost = controlsCost + installationLaborCost;
   const tillerInstallCost = isManualTiller ? (state.installConfig?.installationCost || 0) : 0;
-  
-  // Add warranty price if selected
   const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
   
-  // Calculate proper MSRP and discount from motor data
+  // Calculate pricing
   const motorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || 0;
   const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
   const motorDiscount = motorMSRP - motorSalePrice;
-  
-  // Get promotional savings dynamically
   const promoSavings = getTotalPromotionalSavings?.(motorMSRP) || 0;
-  
-  // Calculate selected options total
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
   
-  // Calculate complete pricing with proper structure (including selected options)
   const totals = calculateQuotePricing({
     motorMSRP,
     motorDiscount,
@@ -287,294 +233,172 @@ export default function QuoteSummaryPage() {
     taxRate: 0.13
   });
 
-  // Get financing rate
-  const financingRate = promo?.rate || 7.99;
-
-  // Coverage years calculation (memoized to prevent infinite loops)
+  // Coverage years
   const baseYears = 3;
   const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
-  const currentCoverageYears = useMemo(() => {
-    return Math.min(baseYears + promoYears, 8);
-  }, [promoYears]);
-  const maxCoverageYears = 8;
+  const currentCoverageYears = useMemo(() => Math.min(baseYears + promoYears, 8), [promoYears]);
 
-  // Promo warranty years for sticky summary
-  const warrantyPromos = getWarrantyPromotions?.() ?? [];
-  const promoWarrantyYears = warrantyPromos[0]?.warranty_extra_years ?? 0;
-
-  // Fetch real warranty extension costs from database
+  // Fetch warranty costs for accessory breakdown
   useEffect(() => {
     async function fetchWarrantyCosts() {
-      const completeCost = await calculateWarrantyExtensionCost(
-        motorHP,
-        currentCoverageYears,
-        COMPLETE_TARGET_YEARS
-      );
-      
-      const premiumCost = await calculateWarrantyExtensionCost(
-        motorHP,
-        currentCoverageYears,
-        PREMIUM_TARGET_YEARS
-      );
-      
+      const completeCost = await calculateWarrantyExtensionCost(motorHP, currentCoverageYears, COMPLETE_TARGET_YEARS);
+      const premiumCost = await calculateWarrantyExtensionCost(motorHP, currentCoverageYears, PREMIUM_TARGET_YEARS);
       setCompleteWarrantyCost(completeCost);
       setPremiumWarrantyCost(premiumCost);
     }
-    
-    if (motorHP > 0) {
-      fetchWarrantyCosts();
-    }
+    if (motorHP > 0) fetchWarrantyCosts();
   }, [motorHP, currentCoverageYears]);
 
-  // Initialize warranty config to match default selected package (Essential - no extended warranty)
-  useEffect(() => {
-    if (isMounted) {
-      // Essential package starts with base coverage only (no warranty extension)
-      dispatch({
-        type: 'SET_WARRANTY_CONFIG',
-        payload: {
-          totalYears: currentCoverageYears,
-          extendedYears: 0,
-          warrantyPrice: 0
-        }
-      });
-    }
-  }, [isMounted, currentCoverageYears, dispatch]);
-
-  // Calculate base subtotal (motor + base accessories + selected options, NO battery)
-  const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost + selectedOptionsTotal - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
-
-  // Package options with ACTUAL warranty costs included - MEMOIZED to prevent infinite loops
-  const packages: PackageOption[] = useMemo(() => [
-    { 
-      id: "good", 
-      label: "Essential • Best Value", 
-      priceBeforeTax: baseSubtotal + tillerInstallCost, 
-      savings: totals.savings, 
-      features: [
-        "Mercury motor", 
-        isManualTiller ? "Tiller-handle operation" : "Standard controls & rigging", 
-        `${currentCoverageYears} years coverage included`,
-        isManualTiller && tillerInstallCost === 0 ? "DIY clamp-on mounting" : "Basic installation",
-        "Customer supplies battery (if needed)"
-      ],
-      coverageYears: currentCoverageYears
-    },
-    { 
-      id: "better", 
-      label: "Complete • Extended Coverage", 
-      priceBeforeTax: baseSubtotal + tillerInstallCost + (isManualStart ? 0 : batteryCost) + completeWarrantyCost, 
-      savings: totals.savings, 
-      features: [
-        "Everything in Essential",
-        ...(isManualStart ? [] : ["Marine starting battery ($180 value)"]), 
-        `Extended to ${COMPLETE_TARGET_YEARS} years total coverage`,
-        completeWarrantyCost > 0 ? `Warranty extension: $${completeWarrantyCost}` : `Already includes ${COMPLETE_TARGET_YEARS}yr coverage`,
-        "Priority installation"
-      ].filter(Boolean),
-      recommended: true,
-      coverageYears: COMPLETE_TARGET_YEARS,
-      targetWarrantyYears: COMPLETE_TARGET_YEARS
-    },
-    { 
-      id: "best", 
-      label: "Premium • Max Coverage", 
-      priceBeforeTax: baseSubtotal + tillerInstallCost + (isManualStart ? 0 : batteryCost) + premiumWarrantyCost + (!includesProp ? 299.99 : 0) + (canAddFuelTank ? 199 : 0), 
-      savings: totals.savings, 
-      features: [
-        "Everything in Complete",
-        `Maximum ${PREMIUM_TARGET_YEARS} years total coverage`,
-        premiumWarrantyCost > 0 ? `Warranty extension: $${premiumWarrantyCost}` : `Already includes ${PREMIUM_TARGET_YEARS}yr coverage`,
-        !includesProp ? "Premium aluminum 3-blade propeller ($300 value)" : null,
-        canAddFuelTank ? "12L external fuel tank & hose ($199 value)" : null,
-        "White-glove installation"
-      ].filter(Boolean),
-      coverageYears: PREMIUM_TARGET_YEARS,
-      targetWarrantyYears: PREMIUM_TARGET_YEARS
-    },
-  ], [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank]);
+  // Use selected package from context
+  const selectedPackage = state.selectedPackage?.id || 'good';
+  const selectedPackageLabel = state.selectedPackage?.label || 'Essential • Best Value';
+  const selectedPackagePriceBeforeTax = state.selectedPackage?.priceBeforeTax || 0;
   
-  // Auto-select package based on tiller mounting type
-  useEffect(() => {
-    if (isManualTiller && state.installConfig?.recommendedPackage && isMounted) {
-      setSelectedPackage(state.installConfig.recommendedPackage);
-    }
-  }, [isManualTiller, state.installConfig?.recommendedPackage, isMounted]);
+  // Get coverage years for selected package
+  const selectedPackageCoverageYears = useMemo(() => {
+    if (selectedPackage === 'best') return PREMIUM_TARGET_YEARS;
+    if (selectedPackage === 'better') return COMPLETE_TARGET_YEARS;
+    return currentCoverageYears;
+  }, [selectedPackage, currentCoverageYears]);
 
-  // Sync selected package to context for UnifiedMobileBar
-  useEffect(() => {
-    const selectedPkg = packages.find(p => p.id === selectedPackage);
-    if (selectedPkg) {
-      dispatch({ 
-        type: 'SET_SELECTED_PACKAGE', 
-        payload: { 
-          id: selectedPkg.id, 
-          label: selectedPkg.label, 
-          priceBeforeTax: selectedPkg.priceBeforeTax 
-        } 
-      });
-    }
-  }, [selectedPackage, packages, dispatch]);
-
-  // Helper function for controls description
-  const getControlsDescription = (): string => {
-    const controlsOption = state.boatInfo?.controlsOption;
+  // Build accessory breakdown
+  const accessoryBreakdown = useMemo(() => {
+    const breakdown = [];
     
-    switch (controlsOption) {
-      case 'none':
-        return 'Complete Mercury remote control kit with cables';
-      case 'adapter':
-        return 'Control harness adapter for existing Mercury controls';
-      case 'compatible':
-        return 'Using existing compatible controls (no additional charge)';
-      default:
-        return 'Premium marine controls and installation hardware';
+    // Selected motor options
+    if (state.selectedOptions && state.selectedOptions.length > 0) {
+      state.selectedOptions.forEach(option => {
+        breakdown.push({
+          name: option.name,
+          price: option.price,
+          description: option.isIncluded ? 'Included with motor' : undefined
+        });
+      });
     }
-  };
+    
+    // Tiller installation
+    if (isManualTiller && tillerInstallCost > 0) {
+      const mountingType = state.installConfig?.mounting === 'transom_bolt' ? 'Bolt-On Transom' : 'Installation';
+      breakdown.push({
+        name: `${mountingType} Installation`,
+        price: tillerInstallCost,
+        description: 'Professional mounting and setup'
+      });
+    } else if (isManualTiller && tillerInstallCost === 0) {
+      breakdown.push({
+        name: 'Clamp-On Installation',
+        price: 0,
+        description: 'DIY-friendly mounting system (no installation labor required)'
+      });
+    }
+    
+    // Controls
+    if (needsControls && controlsCost > 0) {
+      breakdown.push({
+        name: 'Controls & Rigging',
+        price: controlsCost,
+        description: 'Premium marine controls and installation hardware'
+      });
+    }
+    
+    // Professional installation for remote motors
+    if (!isManualTiller) {
+      breakdown.push({
+        name: 'Professional Installation',
+        price: installationLaborCost,
+        description: 'Expert rigging, mounting, and commissioning by certified technicians'
+      });
+    }
+    
+    // Battery for electric start motors
+    if (!isManualStart && (selectedPackage === 'better' || selectedPackage === 'best')) {
+      breakdown.push({
+        name: 'Marine Battery',
+        price: batteryCost,
+        description: 'Marine starting battery (required for electric start)'
+      });
+    }
+    
+    // Propeller for Premium
+    if (selectedPackage === 'best' && !includesProp) {
+      breakdown.push({
+        name: 'Premium Aluminum 3-Blade Propeller',
+        price: 299.99,
+        description: 'High-performance aluminum 3-blade propeller'
+      });
+    }
+    
+    // Fuel tank for Premium
+    if (selectedPackage === 'best' && canAddFuelTank) {
+      breakdown.push({
+        name: '12L External Fuel Tank & Hose',
+        price: 199,
+        description: 'Portable fuel tank for extended range'
+      });
+    }
+    
+    // Warranty extension
+    if (selectedPackage === 'better' && completeWarrantyCost > 0) {
+      const extensionYears = COMPLETE_TARGET_YEARS - currentCoverageYears;
+      breakdown.push({
+        name: `Complete Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
+        price: completeWarrantyCost,
+        description: `Total coverage: ${COMPLETE_TARGET_YEARS} years`
+      });
+    } else if (selectedPackage === 'best' && premiumWarrantyCost > 0) {
+      const extensionYears = PREMIUM_TARGET_YEARS - currentCoverageYears;
+      breakdown.push({
+        name: `Premium Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
+        price: premiumWarrantyCost,
+        description: `Total coverage: ${PREMIUM_TARGET_YEARS} years`
+      });
+    }
+    
+    return breakdown;
+  }, [state.selectedOptions, isManualTiller, tillerInstallCost, state.installConfig, needsControls, controlsCost, isManualStart, selectedPackage, batteryCost, includesProp, canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, installationLaborCost]);
 
-  // Build accessory breakdown based on motor requirements and selected package
-  const accessoryBreakdown = [];
-  
-  // Add selected motor options first (if any)
-  if (state.selectedOptions && state.selectedOptions.length > 0) {
-    state.selectedOptions.forEach(option => {
-      accessoryBreakdown.push({
-        name: option.name,
-        price: option.price,
-        description: option.isIncluded ? 'Included with motor' : undefined
-      });
+  // Calculate package-specific totals
+  const packageSpecificTotals = useMemo(() => {
+    const accessoryTotal = accessoryBreakdown.reduce((sum, item) => sum + item.price, 0);
+    return calculateQuotePricing({
+      motorMSRP,
+      motorDiscount,
+      accessoryTotal,
+      warrantyPrice: 0,
+      promotionalSavings: promoSavings,
+      tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+      taxRate: 0.13
     });
-  }
-  
-  // Add tiller installation cost if applicable
-  if (isManualTiller && tillerInstallCost > 0) {
-    const mountingType = state.installConfig?.mounting === 'transom_bolt' ? 'Bolt-On Transom' : 'Installation';
-    accessoryBreakdown.push({
-      name: `${mountingType} Installation`,
-      price: tillerInstallCost,
-      description: 'Professional mounting and setup'
-    });
-  } else if (isManualTiller && tillerInstallCost === 0) {
-    accessoryBreakdown.push({
-      name: 'Clamp-On Installation',
-      price: 0,
-      description: 'DIY-friendly mounting system (no installation labor required)'
-    });
-  }
-  
-  // Only add controls if the motor requires them (not for tiller motors)
-  if (needsControls && controlsCost > 0) {
-    accessoryBreakdown.push({
-      name: 'Controls & Rigging',
-      price: controlsCost,
-      description: getControlsDescription()
-    });
-  }
-  
-  // Add professional installation labor for remote motors
-  if (!isManualTiller) {
-    accessoryBreakdown.push({
-      name: 'Professional Installation',
-      price: installationLaborCost,
-      description: 'Expert rigging, mounting, and commissioning by certified technicians'
-    });
-  }
-  
-  // Only add battery for ELECTRIC START motors (manual start motors don't need batteries)
-  if (!isManualStart) {
-    accessoryBreakdown.push({
-      name: 'Marine Battery',
-      price: batteryCost,
-      description: 'Marine starting battery (required for electric start)'
-    });
-  }
-  
-  // Add premium propeller for Premium package only (if motor doesn't already include one)
-  if (selectedPackage === 'best' && !includesProp) {
-    accessoryBreakdown.push({
-      name: 'Premium Aluminum 3-Blade Propeller',
-      price: 299.99,
-      description: 'High-performance aluminum 3-blade propeller'
-    });
-  }
-  
-  // Add external fuel tank for Premium package only (if motor can benefit from it)
-  if (selectedPackage === 'best' && canAddFuelTank) {
-    accessoryBreakdown.push({
-      name: '12L External Fuel Tank & Hose',
-      price: 199,
-      description: 'Portable fuel tank for extended range'
-    });
-  }
-  
-  // Add warranty extension based on selected package
-  const selectedPkg = packages.find(p => p.id === selectedPackage);
-  if (selectedPkg && selectedPkg.targetWarrantyYears) {
-    const extensionYears = selectedPkg.targetWarrantyYears - currentCoverageYears;
-    if (extensionYears > 0) {
-      const extensionCost = selectedPackage === 'better' ? completeWarrantyCost : premiumWarrantyCost;
-      accessoryBreakdown.push({
-        name: `${selectedPkg.label.split('•')[0].trim()} Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
-        price: extensionCost,
-        description: `Total coverage: ${selectedPkg.targetWarrantyYears} years`
-      });
-    }
-  }
+  }, [motorMSRP, motorDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue]);
+
+  // Monthly payment calculation
+  const amountToFinance = (packageSpecificTotals.subtotal * 1.13) + DEALERPLAN_FEE;
+  const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, promo?.rate || null);
 
   // CTA handlers
-  const handleReserveDeposit = () => {
-    // Reservation functionality - placeholder
-  };
-
   const handleDownloadPDF = async () => {
     setIsGeneratingPDF(true);
     
     try {
-      const quoteData = getQuoteData();
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      const packageTax = packageSpecificTotals.subtotal * 0.13;
+      const packageTotal = packageSpecificTotals.subtotal + packageTax;
       
-      // Get selected package info - it already has correct pricing
-      const selectedPkg = packages.find(p => p.id === selectedPackage) || packages[1];
-      
-      // Use the package's correctly calculated pricing
-      const packageSubtotal = selectedPkg.priceBeforeTax;
-      const packageTax = packageSubtotal * 0.13;
-      const packageTotal = packageSubtotal + packageTax;
-      
-      // Calculate financing details (same logic as FinancingCallout)
-      const amountToFinance = packageTotal + DEALERPLAN_FEE;
-      const promoRate = promo?.rate || null;
-      const { payment, termMonths, rate } = calculateMonthlyPayment(amountToFinance, promoRate);
-      
-      // Generate QR code for financing application with pre-filled data
-      const motorModel = state.motor?.model || 'Motor';
-      const motorPrice = (packageTotal + DEALERPLAN_FEE).toFixed(2);
-      const packageName = selectedPackage === 'good' ? 'Essential' : selectedPackage === 'better' ? 'Complete' : 'Premium';
-      const downPayment = '0';
-      const tradeInValue = state.tradeInInfo?.hasTradeIn ? 
-        (state.tradeInInfo.estimatedValue || '0') : '0';
-
-      // Check if quote was saved (has a saved_quotes record)
+      // Generate QR code
       const savedQuoteId = localStorage.getItem('current_saved_quote_id');
-      
       let financingUrl: string;
       
       if (savedQuoteId) {
-        // Use short, clean URL with quote ID for full restoration
         financingUrl = `${SITE_URL}/financing-application/from-quote?quoteId=${savedQuoteId}`;
-        console.log('QR code using saved quote ID:', savedQuoteId);
       } else {
-        // Fallback to parameter-based URL (existing logic for unsaved quotes)
         const financingParams = new URLSearchParams({
-          motor: motorModel,
-          price: motorPrice,
-          package: packageName,
-          down: downPayment,
-          trade: tradeInValue
+          motor: motorName,
+          price: (packageTotal + DEALERPLAN_FEE).toFixed(2),
+          package: selectedPackageLabel.split('•')[0].trim(),
+          down: '0',
+          trade: state.tradeInInfo?.hasTradeIn ? String(state.tradeInInfo.estimatedValue || '0') : '0'
         });
-
         financingUrl = `${SITE_URL}/financing-application/from-quote?${financingParams.toString()}`;
-        console.log('QR code using parameter-based URL (quote not saved)');
       }
       
       let qrCodeDataUrl = '';
@@ -582,17 +406,11 @@ export default function QuoteSummaryPage() {
         qrCodeDataUrl = await QRCode.toDataURL(financingUrl, {
           width: 200,
           margin: 1,
-          color: {
-            dark: '#111827',
-            light: '#ffffff'
-          }
+          color: { dark: '#111827', light: '#ffffff' }
         });
       } catch (error) {
         console.error('QR code generation failed:', error);
       }
-      
-      // Transform quote data for React PDF
-      const motorSubtotal = motorMSRP - motorDiscount - promoSavings;
       
       const pdfData = {
         quoteNumber,
@@ -612,72 +430,46 @@ export default function QuoteSummaryPage() {
         },
         selectedPackage: {
           id: selectedPackage,
-          label: selectedPkg.label,
-          coverageYears: selectedPkg.coverageYears,
-          features: selectedPkg.features
+          label: selectedPackageLabel,
+          coverageYears: selectedPackageCoverageYears,
+          features: []
         },
-        // Add accessory breakdown and trade-in
-        accessoryBreakdown: accessoryBreakdown,
-        // Only include trade-in if explicitly selected AND has ALL valid fields
-        ...((() => {
-          console.log('🔍 Trade-in validation check:', {
-            hasTradeIn: state.tradeInInfo?.hasTradeIn,
-            estimatedValue: state.tradeInInfo?.estimatedValue,
-            brand: state.tradeInInfo?.brand,
-            year: state.tradeInInfo?.year,
-            horsepower: state.tradeInInfo?.horsepower,
-            fullObject: state.tradeInInfo
-          });
-          
-          const hasValidTradeIn = state.tradeInInfo?.hasTradeIn === true 
-            && state.tradeInInfo?.estimatedValue 
-            && state.tradeInInfo.estimatedValue > 0
-            && state.tradeInInfo?.brand 
-            && state.tradeInInfo.brand.trim().length > 0  // Must have non-empty brand
-            && state.tradeInInfo?.year > 0  // Must have valid year
-            && state.tradeInInfo?.horsepower > 0;  // Must have valid HP
-          
-          return hasValidTradeIn ? {
-            tradeInValue: state.tradeInInfo.estimatedValue,
-            tradeInInfo: {
-              brand: state.tradeInInfo.brand,
-              year: state.tradeInInfo.year,
-              horsepower: state.tradeInInfo.horsepower,
-              model: state.tradeInInfo.model
-            }
-          } : {
-            tradeInValue: undefined,
-            tradeInInfo: undefined
-          };
-        })()),
+        accessoryBreakdown,
+        ...(state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue && state.tradeInInfo.estimatedValue > 0 && state.tradeInInfo?.brand ? {
+          tradeInValue: state.tradeInInfo.estimatedValue,
+          tradeInInfo: {
+            brand: state.tradeInInfo.brand,
+            year: state.tradeInInfo.year,
+            horsepower: state.tradeInInfo.horsepower,
+            model: state.tradeInInfo.model
+          }
+        } : {}),
         includesInstallation: state.purchasePath === 'installed',
-        // Use the selected package's pricing (already includes everything)
         pricing: {
           msrp: motorMSRP,
           discount: motorDiscount,
           promoValue: promoSavings,
-          motorSubtotal: motorSubtotal,
-          subtotal: packageSubtotal,
+          motorSubtotal: motorMSRP - motorDiscount - promoSavings,
+          subtotal: packageSpecificTotals.subtotal,
           hst: packageTax,
           totalCashPrice: packageTotal,
           savings: motorDiscount + promoSavings
         },
-        monthlyPayment: payment,
+        monthlyPayment,
         financingTerm: termMonths,
-        financingRate: rate,
+        financingRate,
         financingQrCode: qrCodeDataUrl,
-        // Include selected promo option for PDF
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp)
       };
       
-      // Save lead data when PDF is downloaded
+      // Save lead
       try {
         const { saveLead } = await import('@/lib/leadCapture');
         await saveLead({
           motor_model: quoteData.motor?.model,
           motor_hp: quoteData.motor?.hp,
-          base_price: packageSubtotal,
+          base_price: packageSpecificTotals.subtotal,
           final_price: packageTotal,
           lead_status: 'downloaded',
           lead_source: 'pdf_download',
@@ -685,16 +477,10 @@ export default function QuoteSummaryPage() {
         });
       } catch (leadError) {
         console.error('Failed to save lead:', leadError);
-        // Don't block PDF generation if lead save fails
       }
       
-      // Generate PDF using React PDF
       const pdfUrl = await generateQuotePDF(pdfData);
-      
-      // Download the PDF
       await downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
-      
-      // Silent success - browser download provides feedback
       
     } catch (error) {
       console.error('PDF generation error:', error);
@@ -708,135 +494,63 @@ export default function QuoteSummaryPage() {
     }
   };
 
-  const handleEmailQuote = () => {
-    // Email quote functionality - placeholder
-  };
-
-  const handleTextQuote = () => {
-    // Text quote functionality - placeholder
+  const handleApplyForFinancing = () => {
+    const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
+    const promoValue = packageSpecificTotals.promoValue || 0;
+    const packageSubtotalBeforeTradeIn = packageSpecificTotals.subtotal + tradeInValue + promoValue;
+    const packageName = selectedPackageLabel.split('•')[0].trim();
+    const subtotalWithTax = packageSubtotalBeforeTradeIn * 1.13;
+    const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
+    
+    const financingData = {
+      ...state,
+      financingAmount: {
+        packageSubtotal: packageSubtotalBeforeTradeIn,
+        hst: packageSubtotalBeforeTradeIn * 0.13,
+        financingFee: DEALERPLAN_FEE,
+        totalWithFees: totalWithFees,
+        motorModel: quoteData.motor?.model || motorName,
+        packageName: packageName,
+        tradeInValue: tradeInValue
+      }
+    };
+    
+    localStorage.setItem('quote_state', JSON.stringify(financingData));
+    navigate('/financing/apply');
   };
 
   const handleBookConsult = () => {
     navigate('/quote/schedule');
   };
 
-  const handleApplyForFinancing = () => {
-    // CRITICAL: packageSpecificTotals.subtotal already has trade-in subtracted.
-    // We need to add it back so it's only subtracted once in the financing application.
-    const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
-    const promoValue = packageSpecificTotals.promoValue || 0;
-    
-    // Reconstruct the subtotal BEFORE trade-in and promos were applied
-    const packageSubtotalBeforeTradeIn = packageSpecificTotals.subtotal + tradeInValue + promoValue;
-    
-    const packageName = selectedPackageData.label.split('•')[0].trim();
-    
-    // Calculate the complete financing amount:
-    // (Motor + Accessories - Promos) + HST + Dealerplan Fee
-    // Trade-in will be subtracted in the financing application
-    const subtotalWithTax = packageSubtotalBeforeTradeIn * 1.13;
-    const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
-    
-    // Save complete pricing data for financing
-    const financingData = {
-      ...state,
-      financingAmount: {
-        packageSubtotal: packageSubtotalBeforeTradeIn,  // BEFORE trade-in
-        hst: packageSubtotalBeforeTradeIn * 0.13,
-        financingFee: DEALERPLAN_FEE,
-        totalWithFees: totalWithFees,  // Full price: (motor + accessories - promos) + tax + $299
-        motorModel: quoteData.motor?.model || motorName,
-        packageName: packageName,
-        tradeInValue: tradeInValue  // Saved separately to be subtracted in financing app
-      }
-    };
-    
-    localStorage.setItem('quote_state', JSON.stringify(financingData));
-    
-    // Navigate to financing application
-    navigate('/financing/apply');
-  };
-
-  const handlePackageSelect = (packageId: string) => {
-    setSelectedPackage(packageId);
-    
-    // Update warranty config in context to match selected package
-    const selectedPkg = packages.find(p => p.id === packageId);
-    if (selectedPkg && selectedPkg.coverageYears) {
-      const totalYears = selectedPkg.coverageYears;
-      const extendedYears = Math.max(0, totalYears - currentCoverageYears);
-      
-      // Determine warranty price based on package
-      let warrantyPrice = 0;
-      if (packageId === 'better') {
-        warrantyPrice = completeWarrantyCost;
-      } else if (packageId === 'best') {
-        warrantyPrice = premiumWarrantyCost;
-      }
-      
-      dispatch({
-        type: 'SET_WARRANTY_CONFIG',
-        payload: {
-          totalYears,
-          extendedYears,
-          warrantyPrice
-        }
-      });
+  // Package features for display
+  const selectedPackageFeatures = useMemo(() => {
+    if (selectedPackage === 'best') {
+      return [
+        "Everything in Complete",
+        `Maximum ${PREMIUM_TARGET_YEARS} years coverage`,
+        "Premium propeller",
+        "White-glove installation"
+      ];
     }
-  };
-
-  const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[0];
-  
-  // Calculate selected package monthly payment using smart term selection
-  const selectedPkgAmountToFinance = (selectedPackageData.priceBeforeTax * 1.13) + DEALERPLAN_FEE;
-  const selectedPkgMonthly = calculateMonthlyPayment(selectedPkgAmountToFinance, promo?.rate || null).payment;
-
-  // Calculate monthly payments for upgrade comparison
-  const essentialPackage = packages.find(p => p.id === 'good') || packages[0];
-  const completePackage = packages.find(p => p.id === 'better') || packages[1];
-  
-  const essentialMonthly = calculateMonthlyPayment(
-    (essentialPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    promo?.rate || null
-  ).payment;
-  
-  const completeMonthly = calculateMonthlyPayment(
-    (completePackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    promo?.rate || null
-  ).payment;
-  
-  const monthlyDeltaToComplete = completeMonthly - essentialMonthly;
-  const coverageGainToComplete = (completePackage.coverageYears || COMPLETE_TARGET_YEARS) - (essentialPackage.coverageYears || currentCoverageYears);
-
-  // Calculate Complete → Premium upgrade delta
-  const premiumPackage = packages.find(p => p.id === 'best') || packages[2];
-  const premiumMonthly = calculateMonthlyPayment(
-    (premiumPackage.priceBeforeTax * 1.13) + DEALERPLAN_FEE,
-    promo?.rate || null
-  ).payment;
-  const monthlyDeltaToPremium = premiumMonthly - completeMonthly;
-  const coverageGainToPremium = (premiumPackage.coverageYears || PREMIUM_TARGET_YEARS) - (completePackage.coverageYears || COMPLETE_TARGET_YEARS);
-
-  // Calculate totals for the SELECTED PACKAGE (not just base motor)
-  const packageSpecificTotals = calculateQuotePricing({
-    motorMSRP,
-    motorDiscount,
-    accessoryTotal: baseAccessoryCost + 
-      tillerInstallCost + // Tiller installation cost
-      (selectedPackage !== 'good' && !isManualStart ? batteryCost : 0) + // Battery in Complete/Premium
-      (selectedPackage === 'better' ? completeWarrantyCost : 0) + // Warranty extension for Complete
-      (selectedPackage === 'best' && !includesProp ? 299.99 : 0) + // Propeller in Premium
-      (selectedPackage === 'best' && canAddFuelTank ? 199 : 0) + // Fuel tank in Premium
-      (selectedPackage === 'best' ? premiumWarrantyCost : 0), // Warranty extension for Premium
-    warrantyPrice: 0,  // Already included in accessoryTotal above
-    promotionalSavings: promoSavings,
-    tradeInValue: state.tradeInInfo?.estimatedValue || 0,
-    taxRate: 0.13
-  });
+    if (selectedPackage === 'better') {
+      return [
+        "Mercury motor",
+        `${COMPLETE_TARGET_YEARS} years coverage`,
+        "Marine battery included",
+        "Priority installation"
+      ];
+    }
+    return [
+      "Mercury motor",
+      `${currentCoverageYears} years coverage`,
+      "Standard installation"
+    ];
+  }, [selectedPackage, currentCoverageYears]);
 
   return (
     <>
-      {/* Cinematic Quote Reveal - shows once per session */}
+      {/* Cinematic Quote Reveal */}
       <QuoteRevealCinematic
         isVisible={showCinematic && isMounted}
         onComplete={handleCinematicComplete}
@@ -844,7 +558,7 @@ export default function QuoteSummaryPage() {
         finalPrice={packageSpecificTotals.subtotal}
         msrp={motorMSRP}
         savings={totals.savings}
-        coverageYears={selectedPackageData?.coverageYears || currentCoverageYears}
+        coverageYears={selectedPackageCoverageYears}
         imageUrl={imageUrl}
       />
       
@@ -855,235 +569,210 @@ export default function QuoteSummaryPage() {
             <QuoteSummarySkeleton />
           ) : (
           <div className="max-w-7xl mx-auto space-y-8">
-          <div className="grid lg:grid-cols-[1fr_360px] gap-8">
-            {/* Main Content - Left Column */}
-            <div className="space-y-6">
-              {/* Motor Header with integrated back button */}
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={sectionVariants}
-                className="relative"
-              >
-                <MotorHeader
-                  name={motorName}
-                  modelYear={modelYear}
-                  hp={motorHp}
-                  sku={sku}
-                  imageUrl={imageUrl}
-                  specs={specs}
-                  why={why}
-                  specSheetUrl={specSheetUrl}
-                  onBack={handleBack}
-                />
-                {/* Replay intro button - more visible */}
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="absolute top-4 right-4 h-9 w-9 bg-muted/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors rounded-full shadow-sm border border-border/30"
-                  onClick={() => {
-                    sessionStorage.removeItem('quote-reveal-seen');
-                    setShowCinematic(true);
-                    setRevealComplete(false);
-                  }}
-                  title="Replay intro animation"
+            <div className="grid lg:grid-cols-[1fr_360px] gap-8">
+              {/* Main Content - Left Column */}
+              <div className="space-y-6">
+                {/* Motor Header */}
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={sectionVariants}
+                  className="relative"
                 >
-                  <RotateCcw className="h-4 w-4" />
-                </Button>
-              </motion.div>
+                  <MotorHeader
+                    name={motorName}
+                    modelYear={modelYear}
+                    hp={motorHp}
+                    sku={sku}
+                    imageUrl={imageUrl}
+                    specs={specs}
+                    why={why}
+                    specSheetUrl={specSheetUrl}
+                    onBack={handleBack}
+                  />
+                  {/* Replay intro button */}
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="absolute top-4 right-4 h-9 w-9 bg-muted/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors rounded-full shadow-sm border border-border/30"
+                    onClick={() => {
+                      sessionStorage.removeItem('quote-reveal-seen');
+                      setShowCinematic(true);
+                    }}
+                    title="Replay intro animation"
+                  >
+                    <RotateCcw className="h-4 w-4" />
+                  </Button>
+                </motion.div>
 
-              {/* Package Selection */}
-              <motion.div
-                variants={packageContainerVariants}
-                initial="hidden"
-                animate="visible"
-                className="space-y-4"
-              >
-                {/* Section Header with Mobile Instructions */}
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h2 className="text-lg font-semibold text-slate-900">Choose Your Package</h2>
-                    <p className="text-sm text-slate-500 sm:hidden">Tap to select a coverage option</p>
+                {/* Selected Package Display (Read-only) */}
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={sectionVariants}
+                  className="bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20 rounded-xl p-5"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center">
+                        <Shield className="w-6 h-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-muted-foreground">Your Selected Package</p>
+                        <p className="text-lg font-semibold text-foreground">{selectedPackageLabel}</p>
+                        <p className="text-sm text-primary font-medium">{selectedPackageCoverageYears} Years Coverage</p>
+                      </div>
+                    </div>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={handleChangePackage}
+                      className="gap-2"
+                    >
+                      <Pencil className="w-3.5 h-3.5" />
+                      Change
+                    </Button>
                   </div>
-                  <span className="text-xs text-blue-600 font-medium sm:hidden">
-                    {selectedPackageData.label.split(' • ')[0]} selected
-                  </span>
-                </div>
-                
-                <PackageCards
-                  options={packages}
-                  selectedId={selectedPackage}
-                  onSelect={handlePackageSelect}
-                  promoRate={promo?.rate || null}
-                  showUpgradeDeltas={true}
-                  revealComplete={revealComplete}
-                />
-                
-                {/* Dynamic Upgrade Nudge Bar - shows next tier upgrade */}
-                {selectedPackage === 'good' && (
-                  <UpgradeNudgeBar
-                    isVisible={true}
-                    coverageGain={coverageGainToComplete}
-                    monthlyDelta={monthlyDeltaToComplete}
-                    upgradeToLabel="Complete"
-                    onUpgrade={() => handlePackageSelect('better')}
-                  />
-                )}
-                {selectedPackage === 'better' && (
-                  <UpgradeNudgeBar
-                    isVisible={true}
-                    coverageGain={coverageGainToPremium}
-                    monthlyDelta={monthlyDeltaToPremium}
-                    upgradeToLabel="Premium"
-                    onUpgrade={() => handlePackageSelect('best')}
-                  />
-                )}
-              </motion.div>
+                </motion.div>
 
-              {/* Detailed Pricing Breakdown */}
-              <motion.div
-                variants={pricingTableVariants}
-                initial="hidden"
-                animate="visible"
-              >
-                <PricingTable
-                  pricing={packageSpecificTotals}
-                  motorName={quoteData.motor?.model || 'Mercury Motor'}
-                  accessoryBreakdown={accessoryBreakdown}
-                  tradeInValue={state.tradeInInfo?.estimatedValue || 0}
-                  tradeInInfo={state.tradeInInfo?.hasTradeIn ? {
-                    brand: state.tradeInInfo.brand,
-                    year: state.tradeInInfo.year,
-                    horsepower: state.tradeInInfo.horsepower,
-                    model: state.tradeInInfo.model
-                  } : undefined}
-                  packageName={selectedPackageData.label}
-                  includesInstallation={state.purchasePath === 'installed'}
-                  onApplyForFinancing={handleApplyForFinancing}
-                  selectedPromoOption={state.selectedPromoOption}
-                  selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
-                />
-              </motion.div>
-
-              {/* Active Promotions */}
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  ...sectionVariants,
-                  visible: {
-                    ...sectionVariants.visible,
-                    transition: {
-                      ...sectionVariants.visible.transition,
-                      delay: 0.6
-                    }
-                  }
-                }}
-              >
-                <PromoPanel motorHp={hp} />
-              </motion.div>
-
-              {/* Legacy Components - Keep for compatibility */}
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  ...sectionVariants,
-                  visible: {
-                    ...sectionVariants.visible,
-                    transition: {
-                      ...sectionVariants.visible.transition,
-                      delay: 0.7
-                    }
-                  }
-                }}
-              >
-                <div className="grid md:grid-cols-2 gap-6">
-                  <BonusOffers motor={quoteData.motor} />
-                </div>
-              </motion.div>
-
-            {/* Mobile CTA Section */}
-            <div className="lg:hidden space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <Button 
-                  onClick={() => setShowSaveDialog(true)}
-                  variant="outline"
-                  className="w-full"
-                  size="lg"
+                {/* Detailed Pricing Breakdown */}
+                <motion.div
+                  variants={pricingTableVariants}
+                  initial="hidden"
+                  animate="visible"
                 >
-                  <Download className="w-4 h-4 mr-2" />
-                  Save for Later
-                </Button>
-                <Button 
-                  onClick={handleDownloadPDF}
-                  variant="outline"
-                  className="w-full"
-                  size="lg"
-                  disabled={isGeneratingPDF}
+                  <PricingTable
+                    pricing={packageSpecificTotals}
+                    motorName={quoteData.motor?.model || 'Mercury Motor'}
+                    accessoryBreakdown={accessoryBreakdown}
+                    tradeInValue={state.tradeInInfo?.estimatedValue || 0}
+                    tradeInInfo={state.tradeInInfo?.hasTradeIn ? {
+                      brand: state.tradeInInfo.brand,
+                      year: state.tradeInInfo.year,
+                      horsepower: state.tradeInInfo.horsepower,
+                      model: state.tradeInInfo.model
+                    } : undefined}
+                    packageName={selectedPackageLabel}
+                    includesInstallation={state.purchasePath === 'installed'}
+                    onApplyForFinancing={handleApplyForFinancing}
+                    selectedPromoOption={state.selectedPromoOption}
+                    selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
+                  />
+                </motion.div>
+
+                {/* Active Promotions */}
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    ...sectionVariants,
+                    visible: {
+                      ...sectionVariants.visible,
+                      transition: {
+                        ...sectionVariants.visible.transition,
+                        delay: 0.4
+                      }
+                    }
+                  }}
                 >
-                  <Download className="w-4 h-4 mr-2" />
-                  {isGeneratingPDF ? 'PDF' : 'Download PDF'}
-                </Button>
+                  <PromoPanel motorHp={hp} />
+                </motion.div>
+
+                {/* Bonus Offers */}
+                <motion.div
+                  initial="hidden"
+                  animate="visible"
+                  variants={{
+                    ...sectionVariants,
+                    visible: {
+                      ...sectionVariants.visible,
+                      transition: {
+                        ...sectionVariants.visible.transition,
+                        delay: 0.5
+                      }
+                    }
+                  }}
+                >
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <BonusOffers motor={quoteData.motor} />
+                  </div>
+                </motion.div>
+
+                {/* Mobile CTA Section */}
+                <div className="lg:hidden space-y-4">
+                  <div className="grid grid-cols-2 gap-3">
+                    <Button 
+                      onClick={() => setShowSaveDialog(true)}
+                      variant="outline"
+                      className="w-full"
+                      size="lg"
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Save for Later
+                    </Button>
+                    <Button 
+                      onClick={handleDownloadPDF}
+                      variant="outline"
+                      className="w-full"
+                      size="lg"
+                      disabled={isGeneratingPDF}
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      {isGeneratingPDF ? 'PDF' : 'Download PDF'}
+                    </Button>
+                  </div>
+                  <Button 
+                    onClick={handleApplyForFinancing}
+                    variant="default"
+                    className="w-full"
+                    size="lg"
+                  >
+                    <CreditCard className="w-4 h-4 mr-2" />
+                    Apply for Financing
+                  </Button>
+                  <Button 
+                    onClick={handleStepComplete}
+                    className="w-full bg-primary hover:opacity-90 text-primary-foreground"
+                    size="lg"
+                  >
+                    Continue to Schedule
+                  </Button>
+                </div>
               </div>
-              <Button 
-                onClick={handleApplyForFinancing}
-                variant="default"
-                className="w-full"
-                size="lg"
-              >
-                <CreditCard className="w-4 h-4 mr-2" />
-                Apply for Financing
-              </Button>
-              <Button 
-                onClick={handleStepComplete}
-                className="w-full bg-primary hover:opacity-90 text-primary-foreground"
-                size="lg"
-              >
-                Continue to Schedule
-              </Button>
+
+              {/* Sticky Summary - Right Column (Desktop) */}         
+              <div>
+                <StickySummary
+                  packageLabel={selectedPackageLabel}
+                  yourPriceBeforeTax={packageSpecificTotals.subtotal}
+                  totalSavings={totals.savings}
+                  monthly={monthlyPayment}
+                  bullets={selectedPackageFeatures}
+                  onReserve={() => {}}
+                  depositAmount={200}
+                  coverageYears={selectedPackageCoverageYears}
+                  onDownloadPDF={handleDownloadPDF}
+                  onSaveForLater={() => setShowSaveDialog(true)}
+                  onApplyForFinancing={handleApplyForFinancing}
+                  isGeneratingPDF={isGeneratingPDF}
+                  showUpgradePrompt={false}
+                  packageInclusions={selectedPackageFeatures}
+                  onEmailQuote={() => {}}
+                  onTextQuote={() => {}}
+                  onBookConsult={handleBookConsult}
+                />
+              </div>
             </div>
           </div>
-
-          {/* Sticky Summary - Right Column (Desktop) */}         
-          <div>
-            <StickySummary
-              packageLabel={selectedPackageData.label}
-              yourPriceBeforeTax={selectedPackageData.priceBeforeTax}
-              totalSavings={selectedPackageData.savings}
-              monthly={selectedPkgMonthly}
-              bullets={selectedPackageData.features}
-              onReserve={handleReserveDeposit}
-              depositAmount={200}
-              coverageYears={selectedPackageData.coverageYears}
-              onDownloadPDF={handleDownloadPDF}
-              onSaveForLater={() => setShowSaveDialog(true)}
-              onApplyForFinancing={handleApplyForFinancing}
-              isGeneratingPDF={isGeneratingPDF}
-              // Upgrade prompt - shown when Essential is selected
-              showUpgradePrompt={selectedPackage === 'good'}
-              upgradeToLabel="Complete"
-              upgradeCostDelta={monthlyDeltaToComplete}
-              upgradeCoverageGain={coverageGainToComplete}
-              onUpgradeClick={() => handlePackageSelect('better')}
-              // Mobile sheet props
-              packageInclusions={selectedPackageData.features}
-              onEmailQuote={handleEmailQuote}
-              onTextQuote={handleTextQuote}
-              onBookConsult={handleBookConsult}
-            />
-          </div>
-        </div>
-      </div>
-      )}
-      
-      <SaveQuoteDialog 
-        open={showSaveDialog}
-        onOpenChange={setShowSaveDialog}
-        quoteData={state}
-        motorModel={motorName}
-        finalPrice={packageSpecificTotals.total}
-      />
+          )}
+          
+          <SaveQuoteDialog 
+            open={showSaveDialog}
+            onOpenChange={setShowSaveDialog}
+            quoteData={state}
+            motorModel={motorName}
+            finalPrice={packageSpecificTotals.total}
+          />
         </QuoteLayout>
       </PageTransition>
     </>
