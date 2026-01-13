@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw, Mic, Volume2, Eye, Clock, Scale } from 'lucide-react';
+import { ChevronUp, MessageCircle, Phone, Sparkles, ArrowRight, Shield, Award, DollarSign, Check, Flag, Heart, RefreshCw, Mic, Volume2, Eye, Clock, Scale, Lightbulb, AlertTriangle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAIChat } from '@/components/chat/GlobalAIChat';
@@ -15,6 +15,7 @@ import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { cn } from '@/lib/utils';
 import { getHPRange, HP_SPECIFIC_MESSAGES, MOTOR_FAMILY_TIPS, getMotorFamilyKey, getMotorFamilyConfiguratorTip } from '@/components/chat/conversationalMessages';
+import { EXPERT_NUDGES, getRecommendedHPRange, isUnderpowered, getRotatingNudge } from '@/lib/quote-nudges';
 
 // Nudge types for different visual treatments
 type NudgeType = 'tip' | 'success' | 'celebration' | 'progress' | 'social-proof' | 'info' | 'comparison';
@@ -106,8 +107,10 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Questions about boat compatibility or controls?',
     nudges: {
       idle: [
-        { delay: 15, message: 'This helps us ensure a perfect fit', icon: 'check' },
-        { delay: 25, message: 'Compatibility matters for performance & safety', icon: 'shield' },
+        { delay: 8, message: EXPERT_NUDGES.boatInfo.initial[0], icon: 'lightbulb' },
+        { delay: 16, message: EXPERT_NUDGES.boatInfo.initial[1], icon: 'check' },
+        { delay: 24, message: EXPERT_NUDGES.boatInfo.progress[0], icon: 'shield' },
+        { delay: 32, message: "We'll match the perfect motor to your boat.", icon: 'heart' },
         { delay: 40, message: 'Questions? Tap AI for expert guidance →', icon: 'sparkles' },
       ],
       encouragement: 'Perfect fit confirmed! Almost there →',
@@ -119,9 +122,10 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Curious about trade-in values or the process?',
     nudges: {
       idle: [
-        { delay: 15, message: 'Have a motor to trade? Get instant value', icon: 'refresh' },
-        { delay: 25, message: 'Trade-ins reduce your upfront cost', icon: 'dollar' },
-        { delay: 40, message: 'We accept most outboard motors', icon: 'check' },
+        { delay: 8, message: EXPERT_NUDGES.tradeIn.initial[0], icon: 'dollar' },
+        { delay: 16, message: EXPERT_NUDGES.tradeIn.initial[1], icon: 'check' },
+        { delay: 24, message: EXPERT_NUDGES.tradeIn.initial[2], icon: 'refresh' },
+        { delay: 32, message: 'Trade-in value is applied at checkout.', icon: 'heart' },
       ],
       withSelection: "Nice! That's ${value} toward your new motor",
       withoutSelection: 'No trade-in? No problem →',
@@ -134,9 +138,11 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Questions about installation or rigging?',
     nudges: {
       idle: [
-        { delay: 15, message: 'Professional installation includes sea trial', icon: 'check' },
-        { delay: 25, message: 'Full rigging & setup by certified techs', icon: 'shield' },
-        { delay: 40, message: 'Average install time: 4-6 hours', icon: 'award' },
+        { delay: 8, message: EXPERT_NUDGES.installation.general[0], icon: 'lightbulb' },
+        { delay: 16, message: EXPERT_NUDGES.installation.general[1], icon: 'check' },
+        { delay: 24, message: EXPERT_NUDGES.installation.general[2], icon: 'sparkles' },
+        { delay: 32, message: EXPERT_NUDGES.installation.general[3], icon: 'shield' },
+        { delay: 40, message: EXPERT_NUDGES.installation.general[4], icon: 'award' },
       ],
       encouragement: 'Expert installation confirmed!',
     }
@@ -160,9 +166,10 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Questions about the Mercury promotion options?',
     nudges: {
       idle: [
-        { delay: 10, message: '7 years factory warranty included!', icon: 'shield' },
-        { delay: 20, message: 'Choose rebate, financing, or deferred payments', icon: 'dollar' },
-        { delay: 35, message: 'All options include the same warranty', icon: 'check' },
+        { delay: 0, message: EXPERT_NUDGES.promoSelection[1], icon: 'shield' },
+        { delay: 8, message: EXPERT_NUDGES.promoSelection[2], icon: 'dollar' },
+        { delay: 16, message: EXPERT_NUDGES.promoSelection[0], icon: 'award' },
+        { delay: 24, message: EXPERT_NUDGES.promoSelection[3], icon: 'check' },
       ],
       withSelection: 'Great choice! Tap Continue →',
       encouragement: 'Great choice! One more step →',
@@ -174,9 +181,11 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Need help choosing a coverage package?',
     nudges: {
       idle: [
-        { delay: 10, message: 'Complete is our most popular package', icon: 'check' },
-        { delay: 20, message: 'Premium extends warranty to 8 years', icon: 'shield' },
-        { delay: 35, message: 'All packages include professional rigging', icon: 'award' },
+        { delay: 0, message: EXPERT_NUDGES.packageSelection[2], icon: 'check' },
+        { delay: 8, message: EXPERT_NUDGES.packageSelection[0], icon: 'heart' },
+        { delay: 16, message: EXPERT_NUDGES.packageSelection[3], icon: 'shield' },
+        { delay: 24, message: EXPERT_NUDGES.packageSelection[1], icon: 'lightbulb' },
+        { delay: 32, message: EXPERT_NUDGES.packageSelection[4], icon: 'award' },
       ],
       withSelection: 'Perfect package! View your quote →',
       encouragement: 'Package selected! View your quote →',
@@ -201,15 +210,16 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Questions about your quote or financing?',
     nudges: {
       idle: [
-        { delay: 0, message: "Your price is locked — take your time", icon: 'shield' },
-        { delay: 6, message: "Quote valid for 30 days — no rush", icon: 'check' },
-        { delay: 12, message: "Family-owned since 1947", icon: 'heart' },
-        { delay: 18, message: "Mercury dealer since 1965 — we know these motors", icon: 'award' },
-        { delay: 24, message: "Download PDF to share or review later", icon: 'check' },
-        { delay: 30, message: "Financing available — tap to see options", icon: 'dollar' },
-        { delay: 36, message: "Questions? Tap to chat or call us", icon: 'sparkles' },
-        { delay: 42, message: "Most customers take a few days to decide", icon: 'clock' },
-        { delay: 48, message: "Text us anytime: 647-952-2153", icon: 'phone' },
+        { delay: 0, message: EXPERT_NUDGES.summary.initial[2], icon: 'shield' },
+        { delay: 8, message: EXPERT_NUDGES.summary.initial[3], icon: 'check' },
+        { delay: 16, message: EXPERT_NUDGES.summary.initial[0], icon: 'lightbulb' },
+        { delay: 24, message: EXPERT_NUDGES.summary.reassurance[0], icon: 'heart' },
+        { delay: 32, message: EXPERT_NUDGES.summary.initial[1], icon: 'sparkles' },
+        { delay: 40, message: EXPERT_NUDGES.summary.reassurance[1], icon: 'dollar' },
+        { delay: 48, message: EXPERT_NUDGES.summary.reassurance[2], icon: 'check' },
+        { delay: 56, message: EXPERT_NUDGES.summary.notes, icon: 'lightbulb' },
+        { delay: 64, message: "Text us anytime: 647-952-2153", icon: 'phone' },
+        { delay: 72, message: "Mercury dealer since 1965 — we know these motors", icon: 'award' },
       ],
       encouragement: "Great choices — ready when you are",
       contextHint: "Everything in one place",
@@ -620,16 +630,21 @@ export const UnifiedMobileBar: React.FC = () => {
       return { message: nudges.withSelection, type: 'success', icon: 'check' };
     }
 
-    // Priority 1: Micro-celebration for recent actions
-    if (recentAction === 'motor-selected' && nudges.encouragement) {
-      return { message: nudges.encouragement, type: 'celebration', icon: 'sparkles' };
+    // Priority 1: Micro-celebration for recent actions with live values
+    if (recentAction === 'motor-selected' && displayMotor) {
+      const hp = displayMotor.hp || 0;
+      const modelPart = displayMotor.model?.split(' ')[0] || 'Motor';
+      const message = hp > 0 
+        ? `✨ ${hp}HP ${modelPart} added! Let's customize →` 
+        : (nudges.encouragement || "Excellent choice! Let's customize →");
+      return { message, type: 'celebration', icon: 'sparkles' };
     }
     if (recentAction === 'package-selected' && nudges.withSelection) {
       return { message: nudges.withSelection, type: 'success', icon: 'check' };
     }
-    if (recentAction === 'tradein-applied' && nudges.withSelection) {
-      const msg = nudges.withSelection.replace('${value}', money(state.tradeInInfo?.estimatedValue || 0));
-      return { message: msg, type: 'success', icon: 'dollar' };
+    if (recentAction === 'tradein-applied' && state.tradeInInfo?.estimatedValue) {
+      const tradeValue = money(state.tradeInInfo.estimatedValue);
+      return { message: `💰 ${tradeValue} trade-in applied!`, type: 'success', icon: 'dollar' };
     }
 
     // Priority 2: Progress encouragement when near completion
@@ -650,18 +665,67 @@ export const UnifiedMobileBar: React.FC = () => {
       if (nudges.withSelection) return { message: nudges.withSelection, type: 'success', icon: 'shield' };
     }
 
-    // Priority 4: Rotating idle nudges (with dynamic nudges for summary page)
-    if (nudges.idle && idleSeconds >= (location.pathname === '/quote/summary' ? 0 : 15)) {
-      // Build dynamic nudges array for summary page
+    // Priority 4: Rotating idle nudges with dynamic content
+    // Start rotating earlier on summary/promo pages for immediate engagement
+    const minIdleForRotation = ['/quote/summary', '/quote/promo-selection', '/quote/package-selection'].includes(location.pathname) ? 0 : 8;
+    
+    if (nudges.idle && idleSeconds >= minIdleForRotation) {
+      // Build dynamic nudges array with page-specific additions
       let allNudges = [...nudges.idle];
       
+      // Dynamic boat-info nudge: show HP range based on boat length
+      if (location.pathname === '/quote/boat-info' && state.boatInfo?.length) {
+        const boatLength = typeof state.boatInfo.length === 'string' ? parseFloat(state.boatInfo.length) : state.boatInfo.length;
+        if (boatLength && !isNaN(boatLength)) {
+          const range = getRecommendedHPRange(boatLength);
+          allNudges.push({
+            delay: 48,
+            message: `${boatLength}ft boats typically run ${range.label}HP — you're in a great spot.`,
+            icon: 'lightbulb'
+          });
+        }
+      }
+      
+      // Dynamic motor selection: warn if underpowered
+      if (location.pathname === '/quote/motor-selection' && state.boatInfo?.length && displayMotor?.hp) {
+        const boatLength = typeof state.boatInfo.length === 'string' ? parseFloat(state.boatInfo.length) : state.boatInfo.length;
+        if (boatLength && !isNaN(boatLength) && isUnderpowered(boatLength, displayMotor.hp)) {
+          const range = getRecommendedHPRange(boatLength);
+          allNudges.push({
+            delay: 20,
+            message: `This looks a bit light for ${boatLength}ft. Consider ${range.label}HP?`,
+            icon: 'alert'
+          });
+        }
+      }
+      
+      // Dynamic summary page additions
       if (location.pathname === '/quote/summary') {
         // Add dynamic savings nudge only when currentSavings > 0
         if (currentSavings > 0) {
           allNudges.push({ 
-            delay: 54, 
+            delay: 80, 
             message: `You're saving ${money(currentSavings)} on this package`, 
             icon: 'dollar' 
+          });
+        }
+        
+        // Add motor-specific nudge
+        if (displayMotor?.hp) {
+          allNudges.push({
+            delay: 88,
+            message: `${displayMotor.hp}HP ready to power your adventures.`,
+            icon: 'heart'
+          });
+        }
+        
+        // Add package-specific warranty nudge
+        if (state.selectedPackage?.id) {
+          const years = state.selectedPackage.id === 'best' ? 8 : 7;
+          allNudges.push({
+            delay: 96,
+            message: `${years} years of worry-free boating ahead.`,
+            icon: 'shield'
           });
         }
         
@@ -681,7 +745,7 @@ export const UnifiedMobileBar: React.FC = () => {
           const promoMessage = promo.promo_end_date 
             ? `Promo rate: ${promo.rate}% APR — ends ${formatPromoDate(promo.promo_end_date)}`
             : `Special rate: ${promo.rate}% APR — locked in for you`;
-          allNudges.push({ delay: 60, message: promoMessage, icon: 'sparkles' });
+          allNudges.push({ delay: 104, message: promoMessage, icon: 'sparkles' });
         }
       }
       
