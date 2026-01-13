@@ -85,6 +85,9 @@ export default function PromoSelectionPage() {
     setHasJustSelected(true);
     triggerHaptic('light');
     
+    // Dispatch to context immediately so UnifiedMobileBar can detect the selection
+    dispatch({ type: 'SET_PROMO_OPTION', payload: optionId });
+    
     // Auto-reset after 5 seconds
     setTimeout(() => setHasJustSelected(false), 5000);
   };
