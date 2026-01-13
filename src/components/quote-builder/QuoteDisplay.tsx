@@ -8,7 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, CreditCard, Image, Check, Download } from 'lucide-react';
+import { ArrowLeft, Calculator, DollarSign, CheckCircle2, AlertTriangle, CreditCard, Image, Check, Download, Gift } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, normalizeBrand } from '@/lib/trade-valuation';
 
@@ -29,6 +29,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { AuthModal } from '@/components/auth/AuthModal';
 import { createQuote } from '@/lib/quotesApi';
 import { useQuote } from '@/contexts/QuoteContext';
+import { PromoOptionSelector, PromoOptionType } from './PromoOptionSelector';
 
 interface QuoteDisplayProps {
   quoteData: QuoteData;
@@ -92,8 +93,13 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   // Auth
   const { user } = useAuth();
 
-  // Get state data that's not in QuoteData interface
-  const { state } = useQuote();
+  // Get state and dispatch from QuoteContext
+  const { state, dispatch } = useQuote();
+  
+  // Selected promo option handler
+  const handlePromoOptionSelect = (option: PromoOptionType) => {
+    dispatch({ type: 'SET_PROMO_OPTION', payload: option });
+  };
 
   // Auto-dismiss achievement on mobile
   useEffect(() => {
@@ -601,6 +607,18 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             </div>
           </div>
         </div>
+
+        {/* Promo Option Selector - Choose Your Bonus */}
+        {promotions.length > 0 && (
+          <div className="mt-8">
+            <PromoOptionSelector
+              motorHP={quoteData.motor?.hp || 0}
+              totalAmount={totalCashPrice}
+              selectedOption={state.selectedPromoOption}
+              onSelect={handlePromoOptionSelect}
+            />
+          </div>
+        )}
 
         {/* Payment Selection */}
         <div className="mt-8 space-y-6">

@@ -188,3 +188,6 @@ verify_jwt = false
 
 [functions.send-deposit-confirmation-email]
 verify_jwt = false
+
+[functions.send-get7-campaign]
+verify_jwt = true
