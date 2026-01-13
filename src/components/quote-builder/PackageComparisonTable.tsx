@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Check, Minus } from 'lucide-react';
+import { ChevronDown, ChevronRight, Check, Minus } from 'lucide-react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { cn } from '@/lib/utils';
 
@@ -39,6 +39,12 @@ const PACKAGE_LABELS = {
   best: 'Premium'
 };
 
+const PACKAGE_LABELS_SHORT = {
+  good: 'Ess.',
+  better: 'Comp.',
+  best: 'Prem.'
+};
+
 export function PackageComparisonTable({
   selectedId,
   currentCoverageYears,
@@ -47,6 +53,9 @@ export function PackageComparisonTable({
   canAddFuelTank
 }: PackageComparisonTableProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [showSwipeHint, setShowSwipeHint] = useState(true);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   // Filter features based on conditions
   const filteredFeatures = COMPARISON_FEATURES.filter(feature => {
@@ -56,13 +65,29 @@ export function PackageComparisonTable({
     return true;
   });
 
+  // Handle scroll to hide swipe hint
+  const handleScroll = () => {
+    if (!hasScrolled) {
+      setHasScrolled(true);
+      setShowSwipeHint(false);
+    }
+  };
+
+  // Reset hint when table opens
+  useEffect(() => {
+    if (isOpen) {
+      setShowSwipeHint(true);
+      setHasScrolled(false);
+    }
+  }, [isOpen]);
+
   const renderCheckmark = (hasFeature: boolean, packageId: string) => (
     <motion.div
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 0.1, type: "spring", stiffness: 300 }}
       className={cn(
-        "flex items-center justify-center w-6 h-6 rounded-full",
+        "flex items-center justify-center w-6 h-6 rounded-full flex-shrink-0",
         hasFeature 
           ? "bg-emerald-100 text-emerald-600" 
           : "bg-muted text-muted-foreground/40"
@@ -105,55 +130,106 @@ export function PackageComparisonTable({
               className="overflow-hidden"
             >
               <div className="mt-4 bg-white rounded-xl border shadow-lg overflow-hidden">
-                {/* Header */}
-                <div className="grid grid-cols-4 bg-muted/50">
-                  <div className="p-3 text-sm font-medium text-muted-foreground">
-                    Features
-                  </div>
-                  {(['good', 'better', 'best'] as const).map((pkg) => (
-                    <div 
-                      key={pkg}
-                      className={cn(
-                        "p-3 text-center text-sm font-semibold transition-colors",
-                        selectedId === pkg 
-                          ? "bg-primary/10 text-primary" 
-                          : "text-foreground"
-                      )}
-                    >
-                      {PACKAGE_LABELS[pkg]}
-                    </div>
-                  ))}
-                </div>
+                {/* Scrollable Table Container */}
+                <div className="relative">
+                  <div 
+                    ref={scrollRef}
+                    onScroll={handleScroll}
+                    className="overflow-x-auto scrollbar-hide touch-pan-x scroll-smooth"
+                    style={{ WebkitOverflowScrolling: 'touch' }}
+                  >
+                    <table className="w-full min-w-[420px]">
+                      {/* Header */}
+                      <thead>
+                        <tr className="bg-muted/50">
+                          <th className="sticky left-0 z-10 bg-muted/50 p-3 text-left text-sm font-medium text-muted-foreground min-w-[130px] shadow-[2px_0_4px_rgba(0,0,0,0.05)]">
+                            Features
+                          </th>
+                          {(['good', 'better', 'best'] as const).map((pkg) => (
+                            <th 
+                              key={pkg}
+                              className={cn(
+                                "p-3 text-center text-sm font-semibold transition-colors min-w-[80px]",
+                                selectedId === pkg 
+                                  ? "bg-primary/10 text-primary" 
+                                  : "text-foreground"
+                              )}
+                            >
+                              <span className="hidden sm:inline">{PACKAGE_LABELS[pkg]}</span>
+                              <span className="sm:hidden">{PACKAGE_LABELS_SHORT[pkg]}</span>
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
 
-                {/* Feature Rows */}
-                <div className="divide-y divide-border">
-                  {filteredFeatures.map((feature, idx) => (
-                    <motion.div
-                      key={feature.label}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: idx * 0.03 }}
-                      className={cn(
-                        "grid grid-cols-4 items-center",
-                        idx % 2 === 0 ? "bg-muted/30" : "bg-transparent"
-                      )}
-                    >
-                      <div className="p-3 text-sm text-foreground">
-                        {feature.label}
-                      </div>
-                      {(['good', 'better', 'best'] as const).map((pkg) => (
-                        <div 
-                          key={pkg}
-                          className={cn(
-                            "p-3 flex justify-center",
-                            selectedId === pkg && "bg-primary/5"
-                          )}
-                        >
-                          {renderCheckmark(feature[pkg], pkg)}
-                        </div>
-                      ))}
-                    </motion.div>
-                  ))}
+                      {/* Feature Rows */}
+                      <tbody className="divide-y divide-border">
+                        {filteredFeatures.map((feature, idx) => (
+                          <motion.tr
+                            key={feature.label}
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: idx * 0.03 }}
+                            className={idx % 2 === 0 ? "bg-muted/30" : "bg-white"}
+                          >
+                            <td className={cn(
+                              "sticky left-0 z-10 p-3 text-sm text-foreground min-w-[130px] shadow-[2px_0_4px_rgba(0,0,0,0.05)]",
+                              idx % 2 === 0 ? "bg-muted/30" : "bg-white"
+                            )}>
+                              {feature.label}
+                            </td>
+                            {(['good', 'better', 'best'] as const).map((pkg) => (
+                              <td 
+                                key={pkg}
+                                className={cn(
+                                  "p-3",
+                                  selectedId === pkg && "bg-primary/5"
+                                )}
+                              >
+                                <div className="flex justify-center">
+                                  {renderCheckmark(feature[pkg], pkg)}
+                                </div>
+                              </td>
+                            ))}
+                          </motion.tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Swipe hint overlay - mobile only */}
+                  <AnimatePresence>
+                    {showSwipeHint && (
+                      <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ 
+                          opacity: 1,
+                          x: [0, 8, 0, 8, 0]
+                        }}
+                        exit={{ opacity: 0 }}
+                        transition={{ 
+                          opacity: { duration: 0.3 },
+                          x: { 
+                            duration: 1.5, 
+                            ease: "easeInOut",
+                            times: [0, 0.25, 0.5, 0.75, 1]
+                          }
+                        }}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1 text-xs text-muted-foreground bg-white/95 px-2.5 py-1.5 rounded-full shadow-md border border-border/50 md:hidden pointer-events-none"
+                      >
+                        <span>Swipe</span>
+                        <ChevronRight className="w-3 h-3" />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  {/* Scroll fade indicator - mobile only */}
+                  <div 
+                    className={cn(
+                      "absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-white to-transparent pointer-events-none transition-opacity duration-300 md:hidden",
+                      hasScrolled && "opacity-40"
+                    )} 
+                  />
                 </div>
 
                 {/* Warranty Timeline */}
@@ -201,7 +277,7 @@ export function PackageComparisonTable({
                   </div>
                   
                   {/* Legend */}
-                  <div className="flex items-center justify-center gap-6 mt-3 text-xs">
+                  <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-3 text-xs">
                     <div className="flex items-center gap-1.5">
                       <div className="w-3 h-3 rounded-full bg-slate-400" />
                       <span className="text-muted-foreground">Essential ({currentCoverageYears}yr)</span>
