@@ -10,14 +10,14 @@ import { PromoPanel } from '@/components/quote-builder/PromoPanel';
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 
-import MotorHeader from '@/components/quote-builder/MotorHeader';
+
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
 import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, CreditCard, RotateCcw, Shield, Pencil } from 'lucide-react';
+import { ArrowLeft, CreditCard } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
 import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
@@ -154,11 +154,6 @@ export default function QuoteSummaryPage() {
     motor?.alternatorOutput ? { label: "Alt", value: `${motor.alternatorOutput} A` } : null,
   ].filter(Boolean) as Array<{label:string; value:string}>;
 
-  const why = [
-    "Quiet, low-vibration four-stroke performance",
-    "Excellent fuel economy & range", 
-    "Factory-backed service at Harris Boat Works",
-  ];
 
   // Helper to get display value for promo option
   const getPromoDisplayValue = (
@@ -572,69 +567,6 @@ export default function QuoteSummaryPage() {
             <div className="grid lg:grid-cols-[1fr_360px] gap-8">
               {/* Main Content - Left Column */}
               <div className="space-y-6">
-                {/* Motor Header */}
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={sectionVariants}
-                  className="relative"
-                >
-                  <MotorHeader
-                    name={motorName}
-                    modelYear={modelYear}
-                    hp={motorHp}
-                    sku={sku}
-                    imageUrl={imageUrl}
-                    specs={specs}
-                    why={why}
-                    specSheetUrl={specSheetUrl}
-                    onBack={handleBack}
-                  />
-                  {/* Replay intro button */}
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="absolute top-4 right-4 h-9 w-9 bg-muted/50 text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors rounded-full shadow-sm border border-border/30"
-                    onClick={() => {
-                      sessionStorage.removeItem('quote-reveal-seen');
-                      setShowCinematic(true);
-                    }}
-                    title="Replay intro animation"
-                  >
-                    <RotateCcw className="h-4 w-4" />
-                  </Button>
-                </motion.div>
-
-                {/* Selected Package Display (Read-only) */}
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={sectionVariants}
-                  className="bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20 rounded-xl p-5"
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-primary/15 flex items-center justify-center">
-                        <Shield className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Your Selected Package</p>
-                        <p className="text-lg font-semibold text-foreground">{selectedPackageLabel}</p>
-                        <p className="text-sm text-primary font-medium">{selectedPackageCoverageYears} Years Coverage</p>
-                      </div>
-                    </div>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={handleChangePackage}
-                      className="gap-2"
-                    >
-                      <Pencil className="w-3.5 h-3.5" />
-                      Change
-                    </Button>
-                  </div>
-                </motion.div>
-
                 {/* Detailed Pricing Breakdown */}
                 <motion.div
                   variants={pricingTableVariants}
