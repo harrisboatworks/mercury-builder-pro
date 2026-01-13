@@ -915,7 +915,7 @@ async function handleSendMotorPhotos(params: {
   }
 }
 
-// Client tool handler for getting current deals
+// Client tool handler for getting current deals - includes full "Choose One" promo details
 async function handleCheckCurrentDeals(params: {
   motor_model?: string;
   hp_range?: string;
@@ -925,7 +925,7 @@ async function handleCheckCurrentDeals(params: {
   try {
     const { data, error } = await supabase
       .from('promotions')
-      .select('name, discount_percentage, discount_fixed_amount, bonus_title, end_date')
+      .select('name, discount_percentage, discount_fixed_amount, bonus_title, bonus_description, warranty_extra_years, end_date, promo_options')
       .eq('is_active', true)
       .order('priority', { ascending: false })
       .limit(5);
@@ -937,18 +937,39 @@ async function handleCheckCurrentDeals(params: {
       });
     }
     
-    const promoList = data.map(p => {
-      let desc = p.name;
-      if (p.discount_percentage > 0) desc += ` - ${p.discount_percentage}% off`;
-      if (p.discount_fixed_amount > 0) desc += ` - $${p.discount_fixed_amount} off`;
-      if (p.bonus_title) desc += ` plus ${p.bonus_title}`;
-      return desc;
-    }).join('. ');
+    const mainPromo = data[0];
+    let message = `We've got the ${mainPromo.name} running right now!`;
+    
+    // Include warranty bonus
+    if (mainPromo.warranty_extra_years) {
+      message += ` That's ${3 + mainPromo.warranty_extra_years} years of factory coverage!`;
+    }
+    
+    // Include Choose One options if available
+    const promoOptions = mainPromo.promo_options as any;
+    if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
+      message += ` Plus you get to choose one bonus: `;
+      const optionTitles = promoOptions.map((o: any) => o.title || 'bonus option').filter(Boolean);
+      message += optionTitles.join(', or ');
+      message += `. Want me to explain any of these options, or show you the promotions page?`;
+    } else if (mainPromo.bonus_title) {
+      message += ` Plus ${mainPromo.bonus_title}.`;
+    }
+    
+    if (mainPromo.end_date) {
+      const endDate = new Date(mainPromo.end_date);
+      const daysLeft = Math.ceil((endDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24));
+      if (daysLeft > 0 && daysLeft <= 30) {
+        message += ` Ends in ${daysLeft} days!`;
+      }
+    }
     
     return JSON.stringify({
       success: true,
       promotions: data,
-      message: `Here's what's running right now: ${promoList}. Want me to show you what motors qualify?`
+      hasChooseOne: !!(promoOptions && promoOptions.length > 0),
+      chooseOneOptions: promoOptions || [],
+      message
     });
   } catch (err) {
     return JSON.stringify({ error: 'Unable to check promotions right now.' });
@@ -1453,7 +1474,52 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           }
           // === END SPEC QUESTION GUARDRAIL ===
 
-          // Immediate on-screen acknowledgement (covers the "dead air" period)
+          // === FAREWELL DETECTION (Conversational End-Call) ===
+          // Detect when user says goodbye and trigger graceful close
+          const farewellPatterns = [
+            /^(bye|goodbye|see ya|later|that['']?s all|that['']?s it|i['']?m good|all set|thanks,?\s*bye)$/i,
+            /^(thank you,?\s*(bye|goodbye)?|thanks,?\s*(that['']?s all|bye)?)$/i,
+            /^(ok,?\s*(bye|thanks|goodbye)|alright,?\s*(bye|thanks|goodbye))$/i,
+            /^(have a good (one|day)|take care|talk to you later)$/i,
+          ];
+          
+          const lowerText = lowerTranscript.trim();
+          const isFarewell = farewellPatterns.some(pattern => pattern.test(lowerText)) || 
+            lowerText === 'bye' || lowerText === 'goodbye' || lowerText === 'thanks bye';
+          
+          if (isFarewell) {
+            console.log('%c👋 FAREWELL DETECTED - triggering graceful close', 'background: #FF9800; color: white; padding: 2px 6px; border-radius: 4px;');
+            
+            // Send a contextual update to trigger a graceful goodbye
+            if (conversationRef.current?.status === 'connected') {
+              try {
+                const goodbyeContext = "[User said goodbye. Respond with a brief, warm farewell (1 sentence max) then end naturally. Example: 'Take care - give us a shout anytime you need anything!']";
+                if (typeof (conversationRef.current as any).sendContextualUpdate === 'function') {
+                  (conversationRef.current as any).sendContextualUpdate(goodbyeContext);
+                }
+              } catch (e) {
+                console.warn('[Farewell] Could not send goodbye context:', e);
+              }
+            }
+            
+            // Set a short timer to end the call after agent says goodbye
+            setTimeout(async () => {
+              if (conversationRef.current?.status === 'connected') {
+                console.log('[Farewell] Auto-ending session after goodbye');
+                await voiceSession.endSession('goodbye');
+                await conversationRef.current.endSession();
+                setState(prev => ({
+                  ...prev,
+                  isConnected: false,
+                  isListening: false,
+                  isSpeaking: false,
+                  currentPhase: 'idle',
+                }));
+              }
+            }, 4000); // Give agent 4s to say goodbye
+          }
+          // === END FAREWELL DETECTION ===
+
           // Also start new turn timing
           setState(prev => ({
             ...prev,
@@ -1843,6 +1909,70 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       // Check current deals and promotions
       check_current_deals: async (params: { motor_model?: string; hp_range?: string }) => {
         return await handleCheckCurrentDeals(params);
+      },
+      // Navigate to promotions page
+      navigate_to_promotions: () => {
+        console.log('[ClientTool] navigate_to_promotions');
+        dispatchVoiceNavigation({ type: 'navigate', payload: { path: '/promotions' } });
+        
+        return JSON.stringify({
+          success: true,
+          message: "I've opened the promotions page for you. Take a look at the details and let me know if you have questions!",
+          navigated: true
+        });
+      },
+      // Show a specific motor's details (opens modal/detail view)
+      show_motor: async (params: { motor_model: string }) => {
+        console.log('[ClientTool] show_motor', params);
+        
+        try {
+          // Lookup the motor by model name
+          const { data, error } = await supabase.functions.invoke('voice-inventory-lookup', {
+            body: { action: 'get_motor_for_quote', params: { model: params.motor_model } }
+          });
+          
+          if (error || !data?.result?.motor) {
+            return JSON.stringify({ error: `Couldn't find motor: ${params.motor_model}` });
+          }
+          
+          const motor = data.result.motor;
+          dispatchVoiceNavigation({ type: 'show_motor', payload: { motorId: motor.id } });
+          
+          return JSON.stringify({
+            success: true,
+            message: `Showing the ${motor.model}. Take a look at the details on your screen!`,
+            motor: { model: motor.model, hp: motor.horsepower, price: motor.msrp }
+          });
+        } catch (err) {
+          console.error('[ClientTool] show_motor error:', err);
+          return JSON.stringify({ error: 'Unable to show motor details.' });
+        }
+      },
+      // Navigate to a specific quote step
+      go_to_quote_step: (params: { step: 'motor' | 'path' | 'boat' | 'trade-in' | 'promo' | 'summary' }) => {
+        console.log('[ClientTool] go_to_quote_step', params);
+        
+        const stepPaths: Record<string, string> = {
+          'motor': '/quote/motor-selection',
+          'path': '/quote/purchase-path',
+          'boat': '/quote/boat-info',
+          'trade-in': '/quote/trade-in',
+          'promo': '/quote/promo-selection',
+          'summary': '/quote/summary',
+        };
+        
+        const path = stepPaths[params.step];
+        if (!path) {
+          return JSON.stringify({ error: `Unknown step: ${params.step}` });
+        }
+        
+        dispatchVoiceNavigation({ type: 'navigate', payload: { path } });
+        
+        return JSON.stringify({
+          success: true,
+          message: `Taking you to the ${params.step} step.`,
+          navigated: true
+        });
       },
     },
   });

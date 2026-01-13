@@ -163,6 +163,9 @@ function MotorSelectionContent() {
   // Config filter state - shared by UI pills and voice commands
   const [configFilters, setConfigFilters] = useState<ConfigFiltersState | null>(null);
   
+  // Voice show motor state (handled after processedMotors defined)
+  const [voiceShowMotorId, setVoiceShowMotorId] = useState<string | null>(null);
+  
   // Lock to prevent voice-set filters from being cleared by HP change handlers
   const voiceFilterLockRef = useRef(false);
   
@@ -304,8 +307,22 @@ if (event.type === 'filter_motors') {
       }
     };
     
+    // Listen for voice:show-motor event to open motor detail modal
+    const handleShowMotor = (e: CustomEvent<{ motorId: string }>) => {
+      const { motorId } = e.detail;
+      console.log('[MotorSelectionPage] voice:show-motor received, motorId:', motorId);
+      
+      // We'll handle this after processedMotors and groupedMotors are defined
+      // For now, just dispatch the event to state for later handling
+      setVoiceShowMotorId(motorId);
+    };
+    
     window.addEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNavigation as EventListener);
-    return () => window.removeEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNavigation as EventListener);
+    window.addEventListener('voice:show-motor', handleShowMotor as EventListener);
+    return () => {
+      window.removeEventListener(VOICE_NAVIGATION_EVENT, handleVoiceNavigation as EventListener);
+      window.removeEventListener('voice:show-motor', handleShowMotor as EventListener);
+    };
   }, [toast]);
 
   // Auto-trigger background image scraping for motors without images
@@ -698,6 +715,29 @@ if (event.type === 'filter_motors') {
     return () => clearTimeout(timer);
   }, [processedMotors, groupedMotors, searchParams, setSearchParams]);
   
+  // Handle voice:show-motor when processedMotors and groupedMotors are available
+  useEffect(() => {
+    if (!voiceShowMotorId || processedMotors.length === 0 || groupedMotors.length === 0) return;
+    
+    console.log('[MotorSelectionPage] Processing voice show motor:', voiceShowMotorId);
+    
+    // Find the motor in our list and open its detail preview
+    const motor = processedMotors.find(m => m.id === voiceShowMotorId);
+    if (motor) {
+      // Find the group this motor belongs to
+      const group = groupedMotors.find(g => g.variants.some(v => v.id === voiceShowMotorId));
+      if (group) {
+        setSelectedGroup(group);
+        setShowConfigurator(true);
+        // Set preview motor in quote context
+        dispatch({ type: 'SET_PREVIEW_MOTOR', payload: motor });
+      }
+    }
+    
+    // Clear the voice motor ID so it doesn't re-trigger
+    setVoiceShowMotorId(null);
+  }, [voiceShowMotorId, processedMotors, groupedMotors, dispatch]);
+
   // Filter groups based on search
   const filteredGroups = useMemo(() => {
     if (!searchQuery) return groupedMotors;
