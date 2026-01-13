@@ -1,5 +1,5 @@
 export interface SMSTemplate {
-  type: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual' | 'unmatched_motors' | 'promo_active' | 'promo_subscription' | 'chat_lead';
+  type: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual' | 'unmatched_motors' | 'promo_active' | 'promo_subscription' | 'chat_lead' | 'get7_campaign' | 'get7_reminder';
   generateMessage: (data: any) => string;
 }
 
@@ -79,6 +79,47 @@ export const SMS_TEMPLATES: Record<string, SMSTemplate> = {
       const emailLine = customerEmail ? `\nEmail: ${customerEmail}` : '';
       const motorLine = motorModel ? `\nMotor: ${motorModel}` : '';
       return `💬 CHAT LEAD!\n\nName: ${customerName}\nPhone: ${customerPhone}${emailLine}${motorLine}\nContext: ${context || 'Requested callback from chat'}\nLead Score: ${leadScore || 'N/A'}/100\n\nAction: Call within 24hrs!\n\n- Harris Boat Works AI`;
+    }
+  },
+
+  get7_campaign: {
+    type: 'get7_campaign' as const,
+    generateMessage: (data) => {
+      const { customerName, expiresIn, rebateAmount, promoUrl } = data;
+      const nameGreeting = customerName ? `Hi ${customerName}! ` : '';
+      const rebateLine = rebateAmount ? `\n💰 Your motor qualifies for $${rebateAmount} cash back!` : '';
+      return `🎉 ${nameGreeting}Mercury Get 7 is HERE!
+
+7-Year Warranty PLUS Choose One:
+• 6 Months No Payments
+• Special Financing from 2.99%
+• Up to $1,500 Cash Back${rebateLine}
+
+Ends ${expiresIn || 'Mar 31, 2026'}!
+Build your quote: ${promoUrl || 'quote.harrisboatworks.ca'}
+
+- Harris Boat Works
+Reply STOP to unsubscribe`;
+    }
+  },
+
+  get7_reminder: {
+    type: 'get7_reminder' as const,
+    generateMessage: (data) => {
+      const { customerName, daysLeft, motorModel, rebateAmount } = data;
+      const nameGreeting = customerName ? `${customerName}, ` : '';
+      const motorLine = motorModel ? `\nMotor: ${motorModel}` : '';
+      const rebateLine = rebateAmount ? `\n💰 Eligible for $${rebateAmount} rebate!` : '';
+      return `⏰ ${nameGreeting}Only ${daysLeft} days left!
+
+Mercury Get 7 + Choose One ends soon:
+✓ 7-Year Factory Warranty
+✓ No Payments OR Low Rates OR Cash Back${motorLine}${rebateLine}
+
+Don't miss out: quote.harrisboatworks.ca/promotions
+
+- Harris Boat Works
+Reply STOP to unsubscribe`;
     }
   }
 };
