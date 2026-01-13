@@ -147,8 +147,8 @@ export default function TradeInPage() {
     // Reset dirty flag - data is saved
     setIsDirty(false);
     
-    // Navigate immediately - React 18 batches state updates automatically
-    const target = state.purchasePath === 'installed' ? '/quote/installation' : '/quote/summary';
+    // Navigate to promo selection first, then summary
+    const target = state.purchasePath === 'installed' ? '/quote/installation' : '/quote/promo-selection';
     navigate(target);
   };
 
