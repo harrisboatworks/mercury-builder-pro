@@ -114,10 +114,12 @@ function formatPromotionData(promotions) {
     }
     
     // Handle "Choose One" promo_options (new Get 7 + Choose One structure)
-    if (promo.promo_options && Array.isArray(promo.promo_options) && promo.promo_options.length > 0) {
+    // promo_options is an object with { type: "choose_one", options: [...] }
+    const promoOptions = promo.promo_options?.options;
+    if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
       formatted += `- **Customer Chooses ONE of these bonus options:**\n`;
       
-      promo.promo_options.forEach((option, idx) => {
+      promoOptions.forEach((option: any, idx: number) => {
         formatted += `  ${idx + 1}. **${option.title || 'Option'}**`;
         if (option.description) formatted += ` — ${option.description}`;
         formatted += `\n`;
@@ -125,17 +127,22 @@ function formatPromotionData(promotions) {
         // Special financing rates detail
         if (option.rates && Array.isArray(option.rates)) {
           formatted += `     Available rates:\n`;
-          option.rates.forEach(rate => {
-            const minText = rate.minAmount ? ` (min $${rate.minAmount.toLocaleString()})` : '';
+          option.rates.forEach((rate: any) => {
+            const minText = (rate.minAmount || rate.minimum_amount) 
+              ? ` (min $${(rate.minAmount || rate.minimum_amount).toLocaleString()})` 
+              : '';
             formatted += `     - ${rate.months} months @ ${rate.rate}%${minText}\n`;
           });
         }
         
-        // Rebate matrix detail
+        // Rebate matrix detail - uses hp_min, hp_max, rebate fields
         if (option.matrix && Array.isArray(option.matrix)) {
           formatted += `     Rebate amounts by horsepower:\n`;
-          option.matrix.forEach(tier => {
-            formatted += `     - ${tier.hp}: $${tier.amount} factory rebate\n`;
+          option.matrix.forEach((tier: any) => {
+            const hpRange = tier.hp_min === tier.hp_max 
+              ? `${tier.hp_min}HP` 
+              : `${tier.hp_min}-${tier.hp_max}HP`;
+            formatted += `     - ${hpRange}: $${tier.rebate} factory rebate\n`;
           });
         }
       });
