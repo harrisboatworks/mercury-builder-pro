@@ -11,7 +11,7 @@ import { UpgradeNudgeBar } from '@/components/quote-builder/UpgradeNudgeBar';
 import { PromoPanel } from '@/components/quote-builder/PromoPanel';
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
-import CurrentPromotions from '@/components/quote-builder/BonusOffersBadge';
+import { PromoSummaryCard } from '@/components/quote-builder/PromoSummaryCard';
 import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
@@ -890,7 +890,7 @@ export default function QuoteSummaryPage() {
                 </Button>
               </motion.div>
 
-              {/* Current Promotions */}
+              {/* Current Promotion - Clean Light Design */}
               <motion.div
                 initial="hidden"
                 animate="visible"
@@ -905,18 +905,12 @@ export default function QuoteSummaryPage() {
                   }
                 }}
               >
-                <CurrentPromotions />
-                
-                {/* Promo Countdown Timer */}
-                {promoEndDate && (
-                  <div className="mt-4 flex items-center gap-3 p-3 bg-amber-50 border border-amber-200 rounded-lg">
-                    <Clock className="h-5 w-5 text-amber-600 flex-shrink-0" />
-                    <div className="flex-1">
-                      <span className="text-sm font-medium text-amber-800">Offer ends in:</span>
-                    </div>
-                    <CountdownTimer endDate={promoEndDate} compact />
-                  </div>
-                )}
+                <PromoSummaryCard
+                  motorHP={motorHp}
+                  selectedOption={state.selectedPromoOption}
+                  onChangeOption={(option) => dispatch({ type: 'SET_PROMO_OPTION', payload: option })}
+                  endDate={promoEndDate}
+                />
               </motion.div>
 
               {/* Package Selection */}
