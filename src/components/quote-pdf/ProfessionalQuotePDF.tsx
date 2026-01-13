@@ -452,6 +452,9 @@ export interface QuotePDFProps {
     financingRate?: number;
     financingQrCode?: string;
     includesInstallation?: boolean;
+    // Selected promo option from "Choose One"
+    selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
+    selectedPromoValue?: string; // e.g., "$500" or "2.99%" or "6 months"
   };
 }
 
@@ -787,6 +790,20 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <Text style={styles.summaryItem}>• Priority installation service</Text>
                 <Text style={styles.summaryItem}>• Extended coverage ($350 value)</Text>
               </>
+              
+            {/* YOUR SELECTED BONUS (Choose One promo) */}
+            {quoteData.selectedPromoOption && (
+              <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
+                <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
+                  YOUR SELECTED BONUS:
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.discount, fontWeight: 'bold' }}>
+                  {quoteData.selectedPromoOption === 'no_payments' && `✓ 6 Months No Payments${quoteData.selectedPromoValue ? ` (${quoteData.selectedPromoValue})` : ''}`}
+                  {quoteData.selectedPromoOption === 'special_financing' && `✓ Special Financing: ${quoteData.selectedPromoValue || '2.99%'} APR`}
+                  {quoteData.selectedPromoOption === 'cash_rebate' && `✓ Factory Cash Rebate: ${quoteData.selectedPromoValue || ''}`}
+                </Text>
+              </View>
+            )}
               
             {/* BONUS OFFER (if promo warranty exists) */}
             {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears > 3 && (
