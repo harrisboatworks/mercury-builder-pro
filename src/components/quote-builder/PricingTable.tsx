@@ -31,6 +31,9 @@ interface PricingTableProps {
   packageName?: string;
   includesInstallation?: boolean;
   onApplyForFinancing?: () => void;
+  // Selected promo option from "Choose One" bonus
+  selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
+  selectedPromoValue?: string;
 }
 
 export function PricingTable({ 
@@ -41,7 +44,9 @@ export function PricingTable({
   tradeInInfo,
   packageName = "Accessories & Setup",
   includesInstallation = false,
-  onApplyForFinancing
+  onApplyForFinancing,
+  selectedPromoOption,
+  selectedPromoValue
 }: PricingTableProps) {
   return (
     <Card className="p-6 space-y-1 bg-white">
@@ -121,6 +126,27 @@ export function PricingTable({
             amount={pricing.promoValue}
             isDiscount
           />
+        )}
+
+        {/* Selected Promo Bonus (Choose One) */}
+        {selectedPromoOption && (
+          <div className="mt-3 mb-2 p-3 bg-green-50 border border-green-200 rounded-lg">
+            <div className="flex items-center gap-2 text-sm font-medium text-green-800">
+              <span className="text-green-600">✓</span>
+              <span>YOUR SELECTED BONUS</span>
+            </div>
+            <div className="mt-1 text-sm text-green-700 font-medium pl-5">
+              {selectedPromoOption === 'no_payments' && (
+                <>6 Months No Payments{selectedPromoValue ? ` (${selectedPromoValue})` : ''}</>
+              )}
+              {selectedPromoOption === 'special_financing' && (
+                <>Special Financing Rate: {selectedPromoValue || '2.99%'} APR</>
+              )}
+              {selectedPromoOption === 'cash_rebate' && (
+                <>Factory Cash Rebate: {selectedPromoValue}</>
+              )}
+            </div>
+          </div>
         )}
 
         {/* Subtotal */}

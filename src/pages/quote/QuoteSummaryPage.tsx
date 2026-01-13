@@ -184,6 +184,32 @@ export default function QuoteSummaryPage() {
     "Factory-backed service at Harris Boat Works",
   ];
 
+  // Helper to get display value for promo option
+  const getPromoDisplayValue = (
+    option: 'no_payments' | 'special_financing' | 'cash_rebate' | null | undefined,
+    motorHP: number
+  ): string => {
+    if (!option) return '';
+    
+    switch (option) {
+      case 'no_payments':
+        // Calculate payment start date (6 months from now)
+        const startDate = new Date();
+        startDate.setMonth(startDate.getMonth() + 6);
+        return `Payments begin ${startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`;
+      case 'special_financing':
+        return '2.99%';
+      case 'cash_rebate':
+        // Rebate amount based on HP tier
+        if (motorHP >= 200) return '$750';
+        if (motorHP >= 115) return '$500';
+        if (motorHP >= 40) return '$300';
+        return '$200';
+      default:
+        return '';
+    }
+  };
+
   const specSheetUrl = motor?.specSheetUrl ?? null;
   
   // Calculate base accessories needed based on motor type
@@ -630,7 +656,10 @@ export default function QuoteSummaryPage() {
         monthlyPayment: payment,
         financingTerm: termMonths,
         financingRate: rate,
-        financingQrCode: qrCodeDataUrl
+        financingQrCode: qrCodeDataUrl,
+        // Include selected promo option for PDF
+        selectedPromoOption: state.selectedPromoOption,
+        selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp)
       };
       
       // Save lead data when PDF is downloaded
@@ -940,6 +969,8 @@ export default function QuoteSummaryPage() {
                   packageName={selectedPackageData.label}
                   includesInstallation={state.purchasePath === 'installed'}
                   onApplyForFinancing={handleApplyForFinancing}
+                  selectedPromoOption={state.selectedPromoOption}
+                  selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
                 />
               </motion.div>
 

@@ -66,9 +66,12 @@ export default function SavedQuotePage() {
             dispatch({ type: 'SET_INSTALL_CONFIG', payload: quoteData.installConfig });
           }
           if (quoteData.warrantyConfig) {
-          dispatch({ type: 'SET_WARRANTY_CONFIG', payload: quoteData.warrantyConfig });
+            dispatch({ type: 'SET_WARRANTY_CONFIG', payload: quoteData.warrantyConfig });
+          }
+          if (quoteData.selectedPromoOption) {
+            dispatch({ type: 'SET_PROMO_OPTION', payload: quoteData.selectedPromoOption });
+          }
         }
-      }
 
       // Silent success - navigation provides feedback
 
