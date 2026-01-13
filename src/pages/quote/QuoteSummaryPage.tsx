@@ -16,11 +16,14 @@ import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
 import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
+import { PromoOptionSelector, type PromoOptionType } from '@/components/quote-builder/PromoOptionSelector';
+import { CountdownTimer } from '@/components/ui/countdown-timer';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, CreditCard, RotateCcw } from 'lucide-react';
+import { ArrowLeft, CreditCard, RotateCcw, Clock } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
 import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
@@ -77,7 +80,7 @@ export default function QuoteSummaryPage() {
   const navigate = useNavigate();
   const { state, dispatch, isStepAccessible, getQuoteData, isNavigationBlocked } = useQuote();
   const { promo } = useActiveFinancingPromo();
-  const { getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings } = useActivePromotions();
+  const { promotions, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings } = useActivePromotions();
   const { toast } = useToast();
   const [selectedPackage, setSelectedPackage] = useState<string>('good');
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
@@ -85,6 +88,10 @@ export default function QuoteSummaryPage() {
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
   const [showSaveDialog, setShowSaveDialog] = useState(false);
+  const [showPromoSelector, setShowPromoSelector] = useState(false);
+  
+  // Get first active promotion with end date for countdown
+  const promoEndDate = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
   
   // Cinematic reveal - only show once per session
   const [showCinematic, setShowCinematic] = useState(() => {
@@ -899,6 +906,17 @@ export default function QuoteSummaryPage() {
                 }}
               >
                 <CurrentPromotions />
+                
+                {/* Promo Countdown Timer */}
+                {promoEndDate && (
+                  <div className="mt-4 flex items-center gap-3 p-3 bg-amber-50 border border-amber-200 rounded-lg">
+                    <Clock className="h-5 w-5 text-amber-600 flex-shrink-0" />
+                    <div className="flex-1">
+                      <span className="text-sm font-medium text-amber-800">Offer ends in:</span>
+                    </div>
+                    <CountdownTimer endDate={promoEndDate} compact />
+                  </div>
+                )}
               </motion.div>
 
               {/* Package Selection */}
@@ -971,6 +989,7 @@ export default function QuoteSummaryPage() {
                   onApplyForFinancing={handleApplyForFinancing}
                   selectedPromoOption={state.selectedPromoOption}
                   selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
+                  onChangeBonus={() => setShowPromoSelector(true)}
                 />
               </motion.div>
 
@@ -1093,6 +1112,31 @@ export default function QuoteSummaryPage() {
         motorModel={motorName}
         finalPrice={packageSpecificTotals.total}
       />
+      
+      {/* Change Bonus Modal */}
+      <Dialog open={showPromoSelector} onOpenChange={setShowPromoSelector}>
+        <DialogContent className="sm:max-w-3xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>Change Your Promotional Bonus</DialogTitle>
+            <DialogDescription>
+              Select a different promotional benefit for your quote
+            </DialogDescription>
+          </DialogHeader>
+          <PromoOptionSelector
+            motorHP={hp}
+            totalAmount={packageSpecificTotals.total}
+            selectedOption={state.selectedPromoOption}
+            onSelect={(option: PromoOptionType) => {
+              dispatch({ type: 'SET_PROMO_OPTION', payload: option });
+              setShowPromoSelector(false);
+              toast({ 
+                title: "Bonus updated!", 
+                description: "Your selected promotional bonus has been changed." 
+              });
+            }}
+          />
+        </DialogContent>
+      </Dialog>
         </QuoteLayout>
       </PageTransition>
     </>
