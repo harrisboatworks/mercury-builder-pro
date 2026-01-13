@@ -117,13 +117,26 @@ export function useActivePromotions() {
   };
 
   // Helper function to get rebate amount for a given HP
+  // Includes fallback to nearest tier if exact match not found
   const getRebateForHP = (hp: number): number | null => {
     const options = getChooseOneOptions();
     const rebateOption = options.find(o => o.id === 'cash_rebate');
-    if (!rebateOption?.matrix) return null;
+    if (!rebateOption?.matrix || rebateOption.matrix.length === 0) return null;
     
-    const match = rebateOption.matrix.find(row => hp >= row.hp_min && hp <= row.hp_max);
-    return match ? match.rebate : null;
+    // Try exact match first
+    const exactMatch = rebateOption.matrix.find(row => hp >= row.hp_min && hp <= row.hp_max);
+    if (exactMatch) return exactMatch.rebate;
+    
+    // Fallback: find nearest tier to prevent $0 rebate
+    console.warn(`[Rebate Matrix] No exact match for ${hp}HP - finding nearest tier`);
+    
+    const sorted = [...rebateOption.matrix].sort((a, b) => {
+      const distA = Math.min(Math.abs(hp - a.hp_min), Math.abs(hp - a.hp_max));
+      const distB = Math.min(Math.abs(hp - b.hp_min), Math.abs(hp - b.hp_max));
+      return distA - distB;
+    });
+    
+    return sorted[0]?.rebate ?? null;
   };
 
   // Helper function to get special financing rates
