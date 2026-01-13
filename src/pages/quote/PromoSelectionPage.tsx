@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { cn } from '@/lib/utils';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { PageTransition } from '@/components/ui/page-transition';
@@ -25,6 +26,7 @@ export default function PromoSelectionPage() {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
   const { promotions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { triggerHaptic } = useHapticFeedback();
   
   const [selectedOption, setSelectedOption] = useState<PromoOptionId>(
     state.selectedPromoOption || 'cash_rebate'
@@ -76,6 +78,11 @@ export default function PromoSelectionPage() {
       navigate('/quote/motor');
     }
   }, [state.motor, navigate]);
+
+  const handleOptionSelect = (optionId: PromoOptionId) => {
+    setSelectedOption(optionId);
+    triggerHaptic('promoSelected');
+  };
 
   const handleContinue = () => {
     dispatch({ type: 'SET_PROMO_OPTION', payload: selectedOption });
@@ -149,33 +156,57 @@ export default function PromoSelectionPage() {
               PLUS your choice of one additional benefit.
             </motion.p>
 
-            {/* Warranty Badge - Included */}
+            {/* Warranty Badge - Included with Shimmer Effect */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-4 mb-10"
+              className="relative inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-4 mb-10 overflow-hidden"
             >
-              <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+              {/* Shimmer overlay */}
+              <div 
+                className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" 
+              />
+              
+              {/* Floating Shield Icon */}
+              <motion.div 
+                className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center"
+                animate={{ y: [0, -6, 0] }}
+                transition={{ 
+                  duration: 3, 
+                  ease: 'easeInOut', 
+                  repeat: Infinity 
+                }}
+              >
                 <Shield className="w-6 h-6 text-green-400" />
-              </div>
+              </motion.div>
               <div className="text-left">
                 <div className="text-white font-bold text-lg">7 Years Factory Warranty</div>
                 <div className="text-stone-400 text-sm">3 years standard + 4 years FREE extension</div>
               </div>
-              <div className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full ml-2">
+              {/* Pulsing INCLUDED Badge */}
+              <motion.div 
+                className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full ml-2"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              >
                 ✓ INCLUDED
-              </div>
+              </motion.div>
             </motion.div>
 
-            {/* Divider */}
-            <div className="flex items-center gap-4 mb-8">
+            {/* Divider with Animation */}
+            <motion.div 
+              className="flex items-center gap-4 mb-8"
+              initial={{ opacity: 0, scaleX: 0 }}
+              animate={{ opacity: 1, scaleX: 1 }}
+              transition={{ delay: 0.45, duration: 0.5 }}
+            >
               <div className="flex-1 h-px bg-white/20"></div>
               <span className="text-white/60 text-sm font-medium uppercase tracking-wider">Choose Your Bonus</span>
               <div className="flex-1 h-px bg-white/20"></div>
-            </div>
+            </motion.div>
 
-            {/* Option Cards */}
+            {/* Option Cards with Staggered Entrance */}
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               {options.map((option, index) => {
                 const Icon = option.icon;
@@ -184,29 +215,44 @@ export default function PromoSelectionPage() {
                 return (
                   <motion.button
                     key={option.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 + index * 0.1 }}
-                    onClick={() => setSelectedOption(option.id)}
+                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      delay: 0.5 + index * 0.15,
+                      type: 'spring',
+                      stiffness: 100,
+                      damping: 15
+                    }}
+                    whileHover={{ scale: 1.03, y: -4 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => handleOptionSelect(option.id)}
                     className={cn(
                       'relative bg-white rounded-xl border-2 p-6 text-left transition-all duration-200',
-                      'hover:shadow-xl hover:scale-[1.02]',
                       isSelected
                         ? 'border-primary shadow-xl ring-2 ring-primary/30'
-                        : 'border-transparent hover:border-primary/50'
+                        : 'border-transparent hover:border-primary/50 hover:shadow-xl'
                     )}
                   >
                     {/* Selected Checkmark */}
                     {isSelected && (
-                      <div className="absolute -top-3 -right-3 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg">
+                      <motion.div 
+                        className="absolute -top-3 -right-3 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 15 }}
+                      >
                         <Check className="w-5 h-5 text-white" />
-                      </div>
+                      </motion.div>
                     )}
 
-                    {/* Icon */}
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    {/* Icon with Hover Effect */}
+                    <motion.div 
+                      className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: 'spring', stiffness: 300 }}
+                    >
                       <Icon className="w-7 h-7 text-primary" />
-                    </div>
+                    </motion.div>
 
                     {/* Title */}
                     <h3 className="text-xl font-semibold text-foreground mb-1">{option.title}</h3>

@@ -158,10 +158,20 @@ export default {
 					'0%': { transform: 'translateX(0)' },
 					'100%': { transform: 'translateX(100%)' }
 				},
-				// Shimmer effect for skeletons
+			// Shimmer effect for skeletons
 				'shimmer': {
 					'0%': { backgroundPosition: '-1000px 0' },
 					'100%': { backgroundPosition: '1000px 0' }
+				},
+				// Floating animation for icons
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-6px)' }
+				},
+				// Shimmer sweep for banners
+				'shimmer-sweep': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' }
 				}
 			},
 			animation: {
@@ -174,6 +184,8 @@ export default {
 				'slide-in-right': 'slide-in-right 0.3s ease-out',
 				'slide-out-right': 'slide-out-right 0.3s ease-out',
 				'shimmer': 'shimmer 2s infinite linear',
+				'float': 'float 3s ease-in-out infinite',
+				'shimmer-sweep': 'shimmer-sweep 3s ease-in-out infinite',
 				// Combined Animations
 				'enter': 'fade-in 0.3s ease-out, scale-in 0.2s ease-out',
 				'exit': 'fade-out 0.3s ease-out, scale-out 0.2s ease-out'

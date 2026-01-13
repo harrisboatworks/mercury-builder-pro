@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
 export type HapticIntensity = 'light' | 'medium' | 'heavy';
-export type HapticPattern = 'messageSent' | 'responseReceived' | 'error' | 'motorSelected' | 'addedToQuote' | 'packageChanged';
+export type HapticPattern = 'messageSent' | 'responseReceived' | 'error' | 'motorSelected' | 'addedToQuote' | 'packageChanged' | 'promoSelected';
 export type HapticType = HapticIntensity | HapticPattern;
 
 const HAPTIC_PATTERNS: Record<HapticType, number | number[]> = {
@@ -14,6 +14,7 @@ const HAPTIC_PATTERNS: Record<HapticType, number | number[]> = {
   motorSelected: [12, 60, 12],        // Satisfying double-tap for motor selection
   addedToQuote: [8, 40, 8, 40, 8],    // Triple pulse - confirms addition
   packageChanged: [10, 50, 10],       // Package selection feedback
+  promoSelected: [10, 50, 10],        // Satisfying double-tap for promo selection
 } as const;
 
 export function useHapticFeedback() {
