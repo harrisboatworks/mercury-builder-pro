@@ -6,12 +6,12 @@ import { cn } from '@/lib/utils';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 interface PackageComparisonTableProps {
-  selectedId: string;
+  selectedId?: string | null;
   onSelectPackage?: (packageId: string) => void;
   currentCoverageYears: number;
-  isManualStart: boolean;
-  includesProp: boolean;
-  canAddFuelTank: boolean;
+  isManualStart?: boolean;
+  includesProp?: boolean;
+  canAddFuelTank?: boolean;
 }
 
 interface ComparisonFeature {
@@ -162,13 +162,13 @@ export function PackageComparisonTable({
                               className={cn(
                                 "p-3 text-center text-sm font-semibold transition-all min-w-[80px] cursor-pointer relative",
                                 "hover:bg-primary/20 active:scale-95",
-                                selectedId === pkg 
+                                selectedId && selectedId === pkg 
                                   ? "bg-primary/10 text-primary" 
                                   : "text-foreground hover:text-primary"
                               )}
                             >
                               {/* Selected column top indicator */}
-                              {selectedId === pkg && (
+                              {selectedId && selectedId === pkg && (
                                 <motion.div
                                   layoutId="column-header-highlight"
                                   className="absolute inset-x-0 top-0 h-1 bg-primary rounded-t"
@@ -205,11 +205,11 @@ export function PackageComparisonTable({
                                 className={cn(
                                   "p-3 relative cursor-pointer transition-colors",
                                   "hover:bg-primary/10",
-                                  selectedId === pkg && "bg-primary/5"
+                                  selectedId && selectedId === pkg && "bg-primary/5"
                                 )}
                               >
                                 {/* Selected column highlight bar */}
-                                {selectedId === pkg && (
+                                {selectedId && selectedId === pkg && (
                                   <motion.div
                                     layoutId={`column-cell-highlight-${idx}`}
                                     className="absolute inset-y-0 left-0 w-0.5 bg-primary"

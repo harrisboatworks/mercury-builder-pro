@@ -49,14 +49,17 @@ export default function PackageSelectionPage() {
   const { promo } = useActiveFinancingPromo();
   const { promotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getSpecialFinancingRates } = useActivePromotions();
   
-  // Only pre-select if user already explicitly chose a package
-  const [selectedPackage, setSelectedPackage] = useState<string | null>(
-    state.selectedPackage?.id || null
-  );
+  // Always start with no selection - customer must explicitly choose
+  const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
   const [hasJustSelected, setHasJustSelected] = useState(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
+  
+  // Clear any persisted package selection on mount so customer must choose fresh
+  useEffect(() => {
+    dispatch({ type: 'SET_SELECTED_PACKAGE', payload: null });
+  }, [dispatch]);
 
   // Calculate effective promo rate based on user's promo selection
   const effectivePromoRate = useMemo(() => {
@@ -326,12 +329,6 @@ export default function PackageSelectionPage() {
               Back
             </Button>
             
-            {promoEndDate && (
-              <div className="flex items-center gap-2 text-xs text-stone-400">
-                <span>Offer ends in</span>
-                <CountdownTimer endDate={promoEndDate} compact />
-              </div>
-            )}
           </div>
         </div>
 
