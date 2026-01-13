@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Shield, Calendar, Percent, DollarSign, Check, ChevronRight, Clock } from 'lucide-react';
+import { Shield, CalendarOff, Percent, Banknote, Check, ChevronRight, Clock } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import mercuryLogo from '@/assets/mercury-logo.png';
 import type { PromoOptionType } from './PromoOptionSelector';
 
 interface PromoSummaryCardProps {
@@ -42,30 +43,24 @@ export function PromoSummaryCard({
   const options = [
     {
       id: 'no_payments' as PromoOptionType,
-      icon: Calendar,
+      icon: CalendarOff,
       title: '6 Months',
       subtitle: 'No Payments',
-      value: 'Deferred',
-      iconColor: 'text-blue-600',
-      bgColor: 'bg-blue-50',
+      highlight: 'Deferred',
     },
     {
       id: 'special_financing' as PromoOptionType,
       icon: Percent,
       title: `${lowestRate}% APR`,
-      subtitle: 'Special Financing',
-      value: 'Low Rate',
-      iconColor: 'text-purple-600',
-      bgColor: 'bg-purple-50',
+      subtitle: 'Special Rate',
+      highlight: 'Low Rate',
     },
     {
       id: 'cash_rebate' as PromoOptionType,
-      icon: DollarSign,
+      icon: Banknote,
       title: `$${rebateAmount}`,
       subtitle: 'Factory Rebate',
-      value: `For ${motorHP}HP`,
-      iconColor: 'text-green-600',
-      bgColor: 'bg-green-50',
+      highlight: 'Your Rebate',
     },
   ];
 
@@ -74,14 +69,20 @@ export function PromoSummaryCard({
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className="rounded-xl border border-border bg-card overflow-hidden"
+      className="rounded-xl border border-border bg-card overflow-hidden shadow-sm"
     >
-      {/* Header Row */}
-      <div className="flex items-center justify-between px-5 py-3 bg-muted/30 border-b border-border">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Your Mercury Promotion
-          </span>
+      {/* Header Row with Mercury Branding */}
+      <div className="flex items-center justify-between px-5 py-3 bg-gradient-to-r from-stone-100 to-stone-50 border-b border-border">
+        <div className="flex items-center gap-3">
+          <img src={mercuryLogo} alt="Mercury" className="h-6" />
+          <div className="flex items-center gap-2">
+            <span className="text-sm font-semibold text-foreground">
+              Mercury Promotion
+            </span>
+            <span className="text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full border border-red-100">
+              GET 7
+            </span>
+          </div>
         </div>
         {endDate && (
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -92,17 +93,20 @@ export function PromoSummaryCard({
       </div>
       
       <div className="p-5 space-y-5">
-        {/* Warranty Included - Always shows */}
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
-            <Shield className="w-5 h-5 text-green-600" />
+        {/* Premium Warranty Badge */}
+        <div className="flex items-center gap-3 bg-gradient-to-r from-green-50 to-emerald-50/50 rounded-lg p-3 border border-green-100">
+          <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0 shadow-sm">
+            <Shield className="w-6 h-6 text-white" />
           </div>
-          <div className="flex-1">
-            <div className="flex items-center gap-2">
-              <Check className="w-4 h-4 text-green-600" />
-              <span className="font-medium text-foreground">7 Years Factory Warranty</span>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center justify-between gap-2">
+              <span className="font-semibold text-foreground">7 Years Factory Warranty</span>
+              <span className="text-xs font-medium text-green-700 bg-green-100 px-2 py-0.5 rounded-full flex items-center gap-1 flex-shrink-0">
+                <Check className="w-3 h-3" />
+                Included
+              </span>
             </div>
-            <span className="text-sm text-muted-foreground">3 standard + 4 bonus years included</span>
+            <span className="text-sm text-muted-foreground">3 years standard + 4 years FREE extension</span>
           </div>
         </div>
         
@@ -113,15 +117,15 @@ export function PromoSummaryCard({
           </div>
           <div className="relative flex justify-center">
             <span className="px-3 bg-card text-xs font-medium text-muted-foreground uppercase tracking-wide">
-              Plus Pick Your Bonus
+              Plus Pick One Bonus
             </span>
           </div>
         </div>
         
-        {/* Choose One Options */}
+        {/* Choose One Options - Premium Cards */}
         <div className="space-y-3">
           <p className="text-sm text-muted-foreground">
-            Choose one additional benefit with your {motorHP}HP motor:
+            Choose one additional benefit with your {motorHP}HP:
           </p>
           
           <div className="grid grid-cols-3 gap-2">
@@ -134,21 +138,35 @@ export function PromoSummaryCard({
                   key={option.id}
                   onClick={() => onChangeOption(option.id)}
                   className={cn(
-                    'relative flex flex-col items-center p-3 rounded-lg border-2 transition-all duration-200 text-center',
+                    'relative flex flex-col items-center p-4 rounded-xl border-2 transition-all duration-200 text-center group',
                     isSelected
-                      ? 'border-primary bg-primary/5 shadow-sm'
-                      : 'border-border hover:border-primary/40 hover:bg-muted/30'
+                      ? 'border-primary bg-primary/5 shadow-md'
+                      : 'border-border hover:border-primary/40 hover:bg-muted/30 hover:shadow-sm'
                   )}
                 >
                   {/* Selected indicator */}
                   {isSelected && (
-                    <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-primary rounded-full flex items-center justify-center">
+                    <div className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-primary rounded-full flex items-center justify-center shadow-sm">
                       <Check className="w-3 h-3 text-white" />
                     </div>
                   )}
                   
-                  <div className={cn('w-9 h-9 rounded-lg flex items-center justify-center mb-2', option.bgColor)}>
-                    <Icon className={cn('w-4 h-4', option.iconColor)} />
+                  {/* Highlight Badge */}
+                  <span className={cn(
+                    'text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full mb-2',
+                    isSelected
+                      ? 'bg-primary text-white'
+                      : 'bg-muted text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary'
+                  )}>
+                    {option.highlight}
+                  </span>
+                  
+                  {/* Icon */}
+                  <div className={cn(
+                    'w-12 h-12 rounded-xl flex items-center justify-center mb-2 transition-colors',
+                    isSelected ? 'bg-primary/15' : 'bg-primary/10 group-hover:bg-primary/15'
+                  )}>
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
                   
                   <span className="text-sm font-semibold text-foreground leading-tight">
@@ -157,13 +175,6 @@ export function PromoSummaryCard({
                   <span className="text-xs text-muted-foreground leading-tight">
                     {option.subtitle}
                   </span>
-                  
-                  {/* Value tag for selected */}
-                  {isSelected && (
-                    <span className="mt-1.5 text-[10px] font-medium text-primary">
-                      {option.value}
-                    </span>
-                  )}
                 </button>
               );
             })}
