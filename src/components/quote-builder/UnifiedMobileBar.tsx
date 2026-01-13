@@ -182,14 +182,17 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Need help choosing a coverage package?',
     nudges: {
       idle: [
-        { delay: 0, message: EXPERT_NUDGES.packageSelection[2], icon: 'check' },
+        { delay: 0, message: 'Tap a package to see your coverage options.', icon: 'lightbulb' },
         { delay: 8, message: EXPERT_NUDGES.packageSelection[0], icon: 'heart' },
-        { delay: 16, message: EXPERT_NUDGES.packageSelection[3], icon: 'shield' },
-        { delay: 24, message: EXPERT_NUDGES.packageSelection[1], icon: 'lightbulb' },
-        { delay: 32, message: EXPERT_NUDGES.packageSelection[4], icon: 'award' },
+        { delay: 16, message: EXPERT_NUDGES.packageSelection[2], icon: 'check' },
+        { delay: 24, message: EXPERT_NUDGES.packageSelection[3], icon: 'shield' },
+        { delay: 32, message: EXPERT_NUDGES.packageSelection[1], icon: 'dollar' },
+        { delay: 40, message: EXPERT_NUDGES.packageSelection[4], icon: 'award' },
       ],
-      withSelection: 'Perfect! Most popular for peace of mind.',
-      encouragement: 'Solid coverage. You\'re almost there.',
+      // Dynamic - will be replaced with package-specific message in activeNudge logic
+      withSelection: 'Solid choice! Tap View Summary to continue.',
+      withoutSelection: 'Tap a package to see your coverage options.',
+      encouragement: 'Great coverage. You\'re almost there.',
     }
   },
   '/quote/schedule': {
@@ -633,8 +636,15 @@ export const UnifiedMobileBar: React.FC = () => {
       const selected = promoMessages[state.selectedPromoOption] || { message: nudges.withSelection || 'Great choice!', icon: 'check' };
       return { message: selected.message, type: 'success', icon: selected.icon };
     }
-    if (hasPackageSelection && nudges.withSelection) {
-      return { message: nudges.withSelection, type: 'success', icon: 'check' };
+    // Package selection feedback with package-specific messages
+    if (hasPackageSelection && state.selectedPackage?.id) {
+      const packageMessages: Record<string, { message: string; icon: string }> = {
+        'good': { message: 'Essential selected — smart value choice!', icon: 'check' },
+        'better': { message: 'Complete selected — 7 years coverage!', icon: 'shield' },
+        'best': { message: 'Premium selected — maximum protection!', icon: 'award' },
+      };
+      const selected = packageMessages[state.selectedPackage.id] || { message: nudges.withSelection || 'Package selected!', icon: 'check' };
+      return { message: selected.message, type: 'success', icon: selected.icon };
     }
 
     // Priority 1: Micro-celebration for recent actions with live values
@@ -756,11 +766,11 @@ export const UnifiedMobileBar: React.FC = () => {
         }
       }
       
-      const applicableNudges = allNudges.filter(n => idleSeconds >= n.delay);
-      if (applicableNudges.length > 0) {
-        const nudge = applicableNudges[applicableNudges.length - 1];
-        return { message: nudge.message, type: 'tip', icon: nudge.icon };
-      }
+      // Use time-based rotation instead of "last applicable" to ensure proper cycling
+      const rotationInterval = 8; // seconds per nudge
+      const nudgeIndex = Math.floor(idleSeconds / rotationInterval) % allNudges.length;
+      const selectedNudge = allNudges[nudgeIndex];
+      return { message: selectedNudge.message, type: 'tip', icon: selectedNudge.icon };
     }
 
     // Priority 5: Occasional social proof (every ~60s idle, cycling through)
@@ -775,7 +785,7 @@ export const UnifiedMobileBar: React.FC = () => {
     location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
     isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep,
     state.configuratorOptions, currentSavings, monthlyPayment, promo,
-    hasPromoSelection, hasPackageSelection, state.selectedPromoOption
+    hasPromoSelection, hasPackageSelection, state.selectedPromoOption, state.selectedPackage?.id
   ]);
 
   // Helper to render nudge icon

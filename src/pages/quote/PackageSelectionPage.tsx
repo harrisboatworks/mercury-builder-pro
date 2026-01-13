@@ -49,8 +49,9 @@ export default function PackageSelectionPage() {
   const { promo } = useActiveFinancingPromo();
   const { promotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getSpecialFinancingRates } = useActivePromotions();
   
-  const [selectedPackage, setSelectedPackage] = useState<string>(
-    state.selectedPackage?.id || 'good'
+  // Only pre-select if user already explicitly chose a package
+  const [selectedPackage, setSelectedPackage] = useState<string | null>(
+    state.selectedPackage?.id || null
   );
   const [hasJustSelected, setHasJustSelected] = useState(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
@@ -271,10 +272,10 @@ export default function PackageSelectionPage() {
     // Auto-reset after 5 seconds
     setTimeout(() => setHasJustSelected(false), 5000);
     
-    // Update warranty config
+    // Update warranty config and dispatch to context immediately
     const selectedPkg = packages.find(p => p.id === packageId);
-    if (selectedPkg && selectedPkg.coverageYears) {
-      const totalYears = selectedPkg.coverageYears;
+    if (selectedPkg) {
+      const totalYears = selectedPkg.coverageYears || currentCoverageYears;
       const extendedYears = Math.max(0, totalYears - currentCoverageYears);
       
       let warrantyPrice = 0;
@@ -285,12 +286,8 @@ export default function PackageSelectionPage() {
         type: 'SET_WARRANTY_CONFIG',
         payload: { totalYears, extendedYears, warrantyPrice }
       });
-    }
-  };
-
-  const handleContinue = () => {
-    const selectedPkg = packages.find(p => p.id === selectedPackage);
-    if (selectedPkg) {
+      
+      // Dispatch package selection immediately so UnifiedMobileBar can detect it
       dispatch({ 
         type: 'SET_SELECTED_PACKAGE', 
         payload: { 
@@ -300,6 +297,11 @@ export default function PackageSelectionPage() {
         } 
       });
     }
+  };
+
+  const handleContinue = () => {
+    // Require explicit selection before continuing
+    if (!selectedPackage) return;
     navigate('/quote/summary');
   };
 
@@ -307,7 +309,7 @@ export default function PackageSelectionPage() {
     navigate('/quote/promo-selection');
   };
 
-  const selectedPackageData = packages.find(p => p.id === selectedPackage) || packages[0];
+  const selectedPackageData = selectedPackage ? packages.find(p => p.id === selectedPackage) : null;
 
   return (
     <PageTransition>
@@ -493,56 +495,63 @@ export default function PackageSelectionPage() {
               )}
             </AnimatePresence>
 
-            {/* Selected Package Summary */}
-            <motion.div 
-              variants={itemVariants}
-              className="bg-stone-800/50 border border-stone-700/50 rounded-2xl p-6 space-y-4"
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
-                    <Sparkles className="w-5 h-5 text-primary" />
+            {/* Selected Package Summary - only show when a package is selected */}
+            {selectedPackageData && (
+              <motion.div 
+                variants={itemVariants}
+                className="bg-stone-800/50 border border-stone-700/50 rounded-2xl p-6 space-y-4"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center">
+                      <Sparkles className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-stone-400">Selected Package</p>
+                      <p className="text-lg font-semibold text-white">{selectedPackageData.label}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm text-stone-400">Selected Package</p>
-                    <p className="text-lg font-semibold text-white">{selectedPackageData.label}</p>
+                  <div className="text-right">
+                    <p className="text-sm text-stone-400">Starting at</p>
+                    <p className="text-2xl font-bold text-white">
+                      ${selectedPackageData.priceBeforeTax.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
+                    </p>
+                    <p className="text-xs text-stone-500">before tax</p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="text-sm text-stone-400">Starting at</p>
-                  <p className="text-2xl font-bold text-white">
-                    ${selectedPackageData.priceBeforeTax.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
-                  </p>
-                  <p className="text-xs text-stone-500">before tax</p>
+                
+                {/* Features preview */}
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {selectedPackageData.features.slice(0, 3).map((feature, i) => (
+                    <span 
+                      key={i}
+                      className="px-3 py-1 text-xs rounded-full bg-stone-700/50 text-stone-300"
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                  {selectedPackageData.features.length > 3 && (
+                    <span className="px-3 py-1 text-xs rounded-full bg-stone-700/50 text-stone-400">
+                      +{selectedPackageData.features.length - 3} more
+                    </span>
+                  )}
                 </div>
-              </div>
-              
-              {/* Features preview */}
-              <div className="flex flex-wrap gap-2 pt-2">
-                {selectedPackageData.features.slice(0, 3).map((feature, i) => (
-                  <span 
-                    key={i}
-                    className="px-3 py-1 text-xs rounded-full bg-stone-700/50 text-stone-300"
-                  >
-                    {feature}
-                  </span>
-                ))}
-                {selectedPackageData.features.length > 3 && (
-                  <span className="px-3 py-1 text-xs rounded-full bg-stone-700/50 text-stone-400">
-                    +{selectedPackageData.features.length - 3} more
-                  </span>
-                )}
-              </div>
-            </motion.div>
+              </motion.div>
+            )}
 
             {/* Continue Button */}
             <motion.div variants={itemVariants} className="pt-4">
               <Button
                 onClick={handleContinue}
+                disabled={!selectedPackage}
                 size="lg"
-                className={`w-full md:w-auto md:min-w-[280px] md:mx-auto md:flex bg-white text-stone-900 hover:bg-stone-100 font-semibold text-lg h-14 rounded-xl shadow-lg shadow-white/10 transition-all ${hasJustSelected ? 'animate-pulse-glow' : ''}`}
+                className={`w-full md:w-auto md:min-w-[280px] md:mx-auto md:flex font-semibold text-lg h-14 rounded-xl transition-all ${
+                  selectedPackage 
+                    ? `bg-white text-stone-900 hover:bg-stone-100 shadow-lg shadow-white/10 ${hasJustSelected ? 'animate-pulse-glow' : ''}` 
+                    : 'bg-stone-700 text-stone-400 cursor-not-allowed'
+                }`}
               >
-                Continue to Summary
+                {selectedPackage ? 'Continue to Summary' : 'Select a Package'}
               </Button>
             </motion.div>
           </motion.div>
