@@ -417,6 +417,7 @@ export default function PackageSelectionPage() {
             <motion.div variants={itemVariants}>
               <PackageComparisonTable
                 selectedId={selectedPackage}
+                onSelectPackage={handlePackageSelect}
                 currentCoverageYears={currentCoverageYears}
                 isManualStart={isManualStart}
                 includesProp={includesProp}
