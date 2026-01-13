@@ -8,6 +8,11 @@ export interface PackageRecommendation {
   badge: string;
 }
 
+export interface RecommendationExplanation {
+  title: string;
+  factors: string[];
+}
+
 // Boat type to category mapping
 const BOAT_CATEGORIES = {
   // Casual/Recreational - Essential is fine
@@ -126,5 +131,72 @@ export function getPackageRecommendation(
     packageId: 'better',
     reason: `Best balance of coverage and value`,
     badge: `Most popular choice`
+  };
+}
+
+/**
+ * Get detailed explanation for why a package was recommended
+ */
+export function getRecommendationExplanation(
+  boatType: string | undefined,
+  motorHP: number,
+  packageId: 'good' | 'better' | 'best'
+): RecommendationExplanation {
+  const factors: string[] = [];
+  const category = getBoatCategory(boatType);
+  const boatDisplayName = boatType?.replace(/-/g, ' ') || 'your boat';
+  
+  // Add HP factor
+  if (motorHP >= 200) {
+    factors.push(`Your ${motorHP}HP motor is a significant investment that benefits from maximum protection`);
+  } else if (motorHP >= 150) {
+    factors.push(`High-performance ${motorHP}HP motors see more stress and benefit from extended coverage`);
+  } else if (motorHP >= 90) {
+    factors.push(`Your ${motorHP}HP motor is powerful enough to warrant comprehensive protection`);
+  } else if (motorHP >= 40) {
+    factors.push(`Your ${motorHP}HP motor is ideal for the Complete package's balanced coverage`);
+  } else if (motorHP > 0) {
+    factors.push(`Smaller ${motorHP}HP motors typically need less extended coverage`);
+  }
+  
+  // Add boat type factor
+  if (category) {
+    switch (category) {
+      case 'performance':
+        factors.push(`${boatDisplayName.charAt(0).toUpperCase() + boatDisplayName.slice(1)}s are often used offshore or in tournaments, benefiting from premium coverage`);
+        break;
+      case 'fishing':
+        factors.push(`Fishing boats see regular use in varied conditions — extended protection is valuable`);
+        break;
+      case 'family':
+        factors.push(`Family boats like ${boatDisplayName}s are popular with Complete coverage for peace of mind`);
+        break;
+      case 'light':
+        factors.push(`For light-duty utility use, Essential provides reliable coverage without over-insuring`);
+        break;
+      case 'casual':
+        factors.push(`For casual weekend use, Essential provides great value for recreational boating`);
+        break;
+    }
+  }
+  
+  // Add package-specific value prop
+  switch (packageId) {
+    case 'good':
+      factors.push(`Essential covers the basics reliably — perfect for your setup`);
+      break;
+    case 'better':
+      factors.push(`Complete strikes the best balance between coverage and cost for most boaters`);
+      break;
+    case 'best':
+      factors.push(`Premium provides maximum peace of mind with 8 years of total coverage`);
+      break;
+  }
+  
+  const packageLabel = packageId === 'good' ? 'Essential' : packageId === 'better' ? 'Complete' : 'Premium';
+  
+  return {
+    title: `Why ${packageLabel}?`,
+    factors
   };
 }
