@@ -31,6 +31,9 @@ export function UpgradeNudgeBar({
     onUpgrade();
   };
 
+  // Don't show if no coverage gain
+  if (coverageGain <= 0) return null;
+
   return (
     <AnimatePresence>
       {isVisible && (
