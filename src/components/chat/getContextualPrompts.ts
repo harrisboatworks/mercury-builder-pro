@@ -277,6 +277,44 @@ export function getContextualPromptsWithPromo(
   return basePrompts;
 }
 
+// Enhanced function that blends Perplexity insights with page prompts
+export function getContextualPromptsWithPerplexity(
+  motor: Motor | null,
+  boatInfo: BoatInfo | null,
+  currentPage: string,
+  activePromo: ActivePromo | null,
+  perplexityQuestions: string[] | null
+): string[] {
+  // Start with promo-aware base prompts
+  const basePrompts = getContextualPromptsWithPromo(motor, boatInfo, currentPage, activePromo);
+  
+  // If we have Perplexity-backed questions, blend one in
+  if (perplexityQuestions && perplexityQuestions.length > 0) {
+    // Skip pages that already have comprehensive prompts
+    if (currentPage.includes('/quote/package-selection') || 
+        currentPage.includes('/quote/promo-selection')) {
+      // These pages already have good coverage - just add one Perplexity question
+      const perplexityQ = perplexityQuestions[0];
+      // Only add if not already present
+      if (!basePrompts.includes(perplexityQ)) {
+        return [...basePrompts.slice(0, 3), perplexityQ];
+      }
+    }
+    
+    // For other pages, insert Perplexity question at position 2
+    const perplexityQ = perplexityQuestions[0];
+    if (!basePrompts.includes(perplexityQ)) {
+      return [
+        ...basePrompts.slice(0, 2),
+        perplexityQ,
+        ...basePrompts.slice(2, 3)
+      ];
+    }
+  }
+  
+  return basePrompts;
+}
+
 // Get page-specific welcome messages
 export function getPageWelcomeMessage(
   currentPage: string,

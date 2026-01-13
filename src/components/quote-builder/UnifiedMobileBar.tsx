@@ -16,6 +16,7 @@ import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { cn } from '@/lib/utils';
 import { getHPRange, HP_SPECIFIC_MESSAGES, MOTOR_FAMILY_TIPS, getMotorFamilyKey, getMotorFamilyConfiguratorTip } from '@/components/chat/conversationalMessages';
 import { EXPERT_NUDGES, getRecommendedHPRange, isUnderpowered, getRotatingNudge } from '@/lib/quote-nudges';
+import { usePageSpecificInsights } from '@/hooks/usePageSpecificInsights';
 
 // Nudge types for different visual treatments
 type NudgeType = 'tip' | 'success' | 'celebration' | 'progress' | 'social-proof' | 'info' | 'comparison';
@@ -310,6 +311,9 @@ export const UnifiedMobileBar: React.FC = () => {
     removeFromComparison, 
     clearComparison 
   } = useMotorComparison();
+  
+  // Perplexity-backed page insights for smarter nudges
+  const { insights: perplexityInsights } = usePageSpecificInsights(location.pathname);
   
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [showComparisonDrawer, setShowComparisonDrawer] = useState(false);
@@ -800,6 +804,20 @@ export const UnifiedMobileBar: React.FC = () => {
         }
       }
       
+      // Perplexity-backed insights for package-selection and promo-selection pages
+      if ((location.pathname.includes('/quote/package-selection') || 
+           location.pathname.includes('/quote/promo-selection')) && 
+          perplexityInsights.length > 0) {
+        // Add Perplexity-backed insight questions as nudges (educational content)
+        perplexityInsights.slice(0, 2).forEach((insight, i) => {
+          allNudges.push({
+            delay: 112 + (i * 8),
+            message: `💡 ${insight.questionForm}`,
+            icon: 'sparkles'
+          });
+        });
+      }
+      
       // Use time-based rotation instead of "last applicable" to ensure proper cycling
       const rotationInterval = 8; // seconds per nudge
       const nudgeIndex = Math.floor(idleSeconds / rotationInterval) % allNudges.length;
@@ -819,7 +837,8 @@ export const UnifiedMobileBar: React.FC = () => {
     location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
     isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep,
     state.configuratorOptions, currentSavings, monthlyPayment, promo,
-    hasPromoSelection, hasPackageSelection, state.selectedPromoOption, state.selectedPackage?.id
+    hasPromoSelection, hasPackageSelection, state.selectedPromoOption, state.selectedPackage?.id,
+    perplexityInsights, state.boatInfo?.length
   ]);
 
   // Helper to render nudge icon
