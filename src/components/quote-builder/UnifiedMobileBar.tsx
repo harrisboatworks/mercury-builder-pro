@@ -318,6 +318,9 @@ export const UnifiedMobileBar: React.FC = () => {
   const [savingsAmount, setSavingsAmount] = useState(0);
   const prevSavingsRef = useRef(0);
   const prevTotalRef = useRef(0);
+  
+  // Track when a promo/package selection was made for time-based nudge transitions
+  const selectionTimeRef = useRef<number | null>(null);
 
   // Idle detection - reset on any touch
   useEffect(() => {
@@ -334,9 +337,10 @@ export const UnifiedMobileBar: React.FC = () => {
     };
   }, []);
 
-  // Reset idle on page change
+  // Reset idle and selection time on page change
   useEffect(() => {
     setIdleSeconds(0);
+    selectionTimeRef.current = null;
   }, [location.pathname]);
 
   // Check if we should show the bar (mobile + tablet, under 1024px)
@@ -359,6 +363,13 @@ export const UnifiedMobileBar: React.FC = () => {
   const hasPromoSelection = isPromoPage && !!state.selectedPromoOption;
   const hasPackageSelection = isPackagePage && !!state.selectedPackage;
   const showSelectionFeedback = hasPromoSelection || hasPackageSelection;
+  
+  // Track when promo/package selection is made for time-based nudge transitions
+  useEffect(() => {
+    if ((hasPromoSelection || hasPackageSelection) && !selectionTimeRef.current) {
+      selectionTimeRef.current = Date.now();
+    }
+  }, [hasPromoSelection, hasPackageSelection]);
 
   // Calculate running total
   const runningTotal = useMemo(() => {
@@ -626,25 +637,48 @@ export const UnifiedMobileBar: React.FC = () => {
       return { message: msg.message, type: msg.type, icon: msg.icon };
     }
 
-    // Priority 0.7: Promo/Package selection feedback - immediate response with option-specific messages
+    // Priority 0.7: Promo/Package selection feedback - time-based transition from celebration to action prompt
+    const selectionAge = selectionTimeRef.current 
+      ? (Date.now() - selectionTimeRef.current) / 1000 
+      : 0;
+    const actionPromptDelay = 5; // seconds before switching to action prompt
+    
     if (hasPromoSelection && state.selectedPromoOption) {
-      const promoMessages: Record<string, { message: string; icon: string }> = {
-        'no_payments': { message: '6 months no payments — start boating now!', icon: 'clock' },
-        'special_financing': { message: 'Special APR selected — your promo rate carries forward.', icon: 'dollar' },
-        'cash_rebate': { message: 'Factory rebate selected — instant savings applied!', icon: 'dollar' },
+      // First 5 seconds: show selection confirmation
+      if (selectionAge < actionPromptDelay) {
+        const promoMessages: Record<string, { message: string; icon: string }> = {
+          'no_payments': { message: '6 months no payments — start boating now!', icon: 'clock' },
+          'special_financing': { message: 'Special APR selected — your promo rate carries forward.', icon: 'dollar' },
+          'cash_rebate': { message: 'Factory rebate selected — instant savings applied!', icon: 'dollar' },
+        };
+        const selected = promoMessages[state.selectedPromoOption] || { message: nudges.withSelection || 'Great choice!', icon: 'check' };
+        return { message: selected.message, type: 'success', icon: selected.icon };
+      }
+      // After 5 seconds: show action prompt
+      return { 
+        message: `Tap "${getPrimaryLabel()}" to continue →`, 
+        type: 'tip', 
+        icon: 'sparkles' 
       };
-      const selected = promoMessages[state.selectedPromoOption] || { message: nudges.withSelection || 'Great choice!', icon: 'check' };
-      return { message: selected.message, type: 'success', icon: selected.icon };
     }
-    // Package selection feedback with package-specific messages
+    // Package selection feedback with time-based transition
     if (hasPackageSelection && state.selectedPackage?.id) {
-      const packageMessages: Record<string, { message: string; icon: string }> = {
-        'good': { message: 'Essential selected — smart value choice!', icon: 'check' },
-        'better': { message: 'Complete selected — 7 years coverage!', icon: 'shield' },
-        'best': { message: 'Premium selected — maximum protection!', icon: 'award' },
+      // First 5 seconds: show package confirmation
+      if (selectionAge < actionPromptDelay) {
+        const packageMessages: Record<string, { message: string; icon: string }> = {
+          'good': { message: 'Essential selected — smart value choice!', icon: 'check' },
+          'better': { message: 'Complete selected — 7 years coverage!', icon: 'shield' },
+          'best': { message: 'Premium selected — maximum protection!', icon: 'award' },
+        };
+        const selected = packageMessages[state.selectedPackage.id] || { message: nudges.withSelection || 'Package selected!', icon: 'check' };
+        return { message: selected.message, type: 'success', icon: selected.icon };
+      }
+      // After 5 seconds: show action prompt
+      return { 
+        message: `Tap "${getPrimaryLabel()}" to view your quote →`, 
+        type: 'tip', 
+        icon: 'sparkles' 
       };
-      const selected = packageMessages[state.selectedPackage.id] || { message: nudges.withSelection || 'Package selected!', icon: 'check' };
-      return { message: selected.message, type: 'success', icon: selected.icon };
     }
 
     // Priority 1: Micro-celebration for recent actions with live values
