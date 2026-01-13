@@ -6,7 +6,6 @@ interface CountdownTimerProps {
   onExpire?: () => void;
   className?: string;
   compact?: boolean;
-  variant?: 'light' | 'dark';
 }
 
 interface TimeLeft {
@@ -40,7 +39,7 @@ const getUrgencyLevel = (days: number): 'normal' | 'warning' | 'critical' | 'urg
   return 'normal';
 };
 
-export function CountdownTimer({ endDate, onExpire, className, compact = false, variant = 'light' }: CountdownTimerProps) {
+export function CountdownTimer({ endDate, onExpire, className, compact = false }: CountdownTimerProps) {
   const targetDate = typeof endDate === 'string' ? new Date(endDate) : endDate;
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft(targetDate));
   const [hasExpired, setHasExpired] = useState(false);
@@ -70,7 +69,7 @@ export function CountdownTimer({ endDate, onExpire, className, compact = false, 
 
   const urgency = getUrgencyLevel(timeLeft.days);
   
-  const lightStyles = {
+  const urgencyStyles = {
     normal: {
       container: 'bg-stone-50 border-stone-200',
       box: 'bg-white border-stone-200',
@@ -96,35 +95,6 @@ export function CountdownTimer({ endDate, onExpire, className, compact = false, 
       label: 'text-red-600',
     },
   };
-
-  const darkStyles = {
-    normal: {
-      container: 'bg-white/5 border-white/20',
-      box: 'bg-white/10 border-white/20',
-      text: 'text-white',
-      label: 'text-stone-400',
-    },
-    warning: {
-      container: 'bg-amber-500/10 border-amber-500/30',
-      box: 'bg-amber-500/20 border-amber-500/30',
-      text: 'text-amber-200',
-      label: 'text-amber-300/70',
-    },
-    critical: {
-      container: 'bg-orange-500/10 border-orange-500/30',
-      box: 'bg-orange-500/20 border-orange-500/30',
-      text: 'text-orange-200',
-      label: 'text-orange-300/70',
-    },
-    urgent: {
-      container: 'bg-red-500/15 border-red-500/40 animate-pulse',
-      box: 'bg-red-500/25 border-red-500/40',
-      text: 'text-red-200 font-bold',
-      label: 'text-red-300/70',
-    },
-  };
-
-  const urgencyStyles = variant === 'dark' ? darkStyles : lightStyles;
 
   const styles = urgencyStyles[urgency];
   const padNumber = (num: number) => num.toString().padStart(2, '0');
