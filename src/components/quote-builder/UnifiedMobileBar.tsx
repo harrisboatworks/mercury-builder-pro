@@ -171,8 +171,8 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
         { delay: 16, message: EXPERT_NUDGES.promoSelection[0], icon: 'award' },
         { delay: 24, message: EXPERT_NUDGES.promoSelection[3], icon: 'check' },
       ],
-      withSelection: 'Great choice! Tap Continue →',
-      encouragement: 'Great choice! One more step →',
+      withSelection: 'Great choice! That\'s a popular pick.',
+      encouragement: 'Nice! One more step to go.',
     }
   },
   '/quote/package-selection': {
@@ -187,8 +187,8 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
         { delay: 24, message: EXPERT_NUDGES.packageSelection[1], icon: 'lightbulb' },
         { delay: 32, message: EXPERT_NUDGES.packageSelection[4], icon: 'award' },
       ],
-      withSelection: 'Perfect package! View your quote →',
-      encouragement: 'Package selected! View your quote →',
+      withSelection: 'Perfect! Most popular for peace of mind.',
+      encouragement: 'Solid coverage. You\'re almost there.',
     }
   },
   '/quote/schedule': {
