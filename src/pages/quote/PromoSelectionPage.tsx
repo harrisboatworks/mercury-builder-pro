@@ -86,7 +86,7 @@ export default function PromoSelectionPage() {
 
   const handleContinue = () => {
     dispatch({ type: 'SET_PROMO_OPTION', payload: selectedOption });
-    navigate('/quote/summary');
+    navigate('/quote/package-selection');
   };
 
   const handleBack = () => {
