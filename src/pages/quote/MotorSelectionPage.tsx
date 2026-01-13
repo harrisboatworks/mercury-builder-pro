@@ -17,6 +17,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { daysUntil } from '@/lib/finance';
 import { Clock } from 'lucide-react';
 import { DismissibleBanner } from '@/components/ui/dismissible-banner';
+import mercuryGet7PromoMobile from '@/assets/mercury-get7-promo-mobile.png';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
@@ -895,6 +896,8 @@ if (event.type === 'filter_motors') {
           actionHref="/promotions"
           imageUrl="/images/promotions/mercury-get-7-choose-one.jpg"
           imageAlt="Mercury Get 7 + Choose One"
+          mobileImageUrl={mercuryGet7PromoMobile}
+          mobileImageAlt="Get 7 Years Factory Coverage + Choose One Bonus"
         >
           <div>
             <p className="font-semibold text-sm">Get 7 Years + Choose One: No Payments, Special Rates, or Rebate!</p>
