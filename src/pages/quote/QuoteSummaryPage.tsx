@@ -61,7 +61,7 @@ export default function QuoteSummaryPage() {
   const navigate = useNavigate();
   const { state, dispatch, getQuoteData } = useQuote();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings } = useActivePromotions();
+  const { promotions, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getRebateForHP } = useActivePromotions();
   const { toast } = useToast();
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
@@ -214,7 +214,13 @@ export default function QuoteSummaryPage() {
   const motorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || 0;
   const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
   const motorDiscount = motorMSRP - motorSalePrice;
-  const promoSavings = getTotalPromotionalSavings?.(motorMSRP) || 0;
+  
+  // Calculate promo savings including rebate if selected
+  const basePromoSavings = getTotalPromotionalSavings?.(motorMSRP) || 0;
+  const rebateAmount = state.selectedPromoOption === 'cash_rebate' 
+    ? (getRebateForHP?.(hp) || 0) 
+    : 0;
+  const promoSavings = basePromoSavings + rebateAmount;
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
   
   const totals = calculateQuotePricing({

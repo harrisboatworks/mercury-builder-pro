@@ -13,6 +13,13 @@ function formatTradeInLabel(tradeInInfo?: { brand: string; year: number; horsepo
   return `Estimated Trade Value (${parts.join(' ')})`;
 }
 
+// Parse rebate value from string like "$500" to number
+function parseRebateValue(value?: string): number {
+  if (!value) return 0;
+  const match = value.match(/\$?([\d,]+)/);
+  return match ? parseInt(match[1].replace(/,/g, ''), 10) : 0;
+}
+
 interface PricingTableProps {
   pricing: PricingBreakdown;
   motorName?: string;
@@ -138,7 +145,8 @@ export function PricingTable({
                 ? `7 Years Warranty + ${selectedPromoValue || '2.99%'} APR`
                 : `7 Years Warranty + ${selectedPromoValue} Rebate`
             }
-            amount={0}
+            amount={selectedPromoOption === 'cash_rebate' ? parseRebateValue(selectedPromoValue) : 0}
+            isDiscount={selectedPromoOption === 'cash_rebate'}
             className="text-green-600 font-medium"
             description="Mercury GET 7 Promotion"
           />
