@@ -300,7 +300,7 @@ export default function PromoSelectionPage() {
                 onClick={handleContinue}
                 className="px-8 py-6 text-lg font-semibold"
               >
-                Continue to Summary
+                Choose Package
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </motion.div>
