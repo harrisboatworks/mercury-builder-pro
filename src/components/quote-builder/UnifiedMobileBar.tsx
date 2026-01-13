@@ -166,12 +166,13 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     aiMessage: 'Questions about the Mercury promotion options?',
     nudges: {
       idle: [
-        { delay: 0, message: EXPERT_NUDGES.promoSelection[1], icon: 'shield' },
-        { delay: 8, message: EXPERT_NUDGES.promoSelection[2], icon: 'dollar' },
-        { delay: 16, message: EXPERT_NUDGES.promoSelection[0], icon: 'award' },
-        { delay: 24, message: EXPERT_NUDGES.promoSelection[3], icon: 'check' },
+        { delay: 0, message: EXPERT_NUDGES.promoSelection[0], icon: 'award' },
+        { delay: 10, message: EXPERT_NUDGES.promoSelection[1], icon: 'shield' },
+        { delay: 20, message: EXPERT_NUDGES.promoSelection[2], icon: 'dollar' },
+        { delay: 30, message: EXPERT_NUDGES.promoSelection[3], icon: 'check' },
       ],
-      withSelection: 'Great choice! That\'s a popular pick.',
+      // Dynamic - will be replaced with option-specific message in activeNudge logic
+      withSelection: 'Great choice! Tap Continue to lock it in.',
       encouragement: 'Nice! One more step to go.',
     }
   },
@@ -622,9 +623,15 @@ export const UnifiedMobileBar: React.FC = () => {
       return { message: msg.message, type: msg.type, icon: msg.icon };
     }
 
-    // Priority 0.7: Promo/Package selection feedback - immediate response
-    if (hasPromoSelection && nudges.withSelection) {
-      return { message: nudges.withSelection, type: 'success', icon: 'check' };
+    // Priority 0.7: Promo/Package selection feedback - immediate response with option-specific messages
+    if (hasPromoSelection && state.selectedPromoOption) {
+      const promoMessages: Record<string, { message: string; icon: string }> = {
+        'no_payments': { message: '6 months no payments — start boating now!', icon: 'clock' },
+        'special_financing': { message: 'Special APR selected — your promo rate carries forward.', icon: 'dollar' },
+        'cash_rebate': { message: 'Factory rebate selected — instant savings applied!', icon: 'dollar' },
+      };
+      const selected = promoMessages[state.selectedPromoOption] || { message: nudges.withSelection || 'Great choice!', icon: 'check' };
+      return { message: selected.message, type: 'success', icon: selected.icon };
     }
     if (hasPackageSelection && nudges.withSelection) {
       return { message: nudges.withSelection, type: 'success', icon: 'check' };
@@ -768,7 +775,7 @@ export const UnifiedMobileBar: React.FC = () => {
     location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
     isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep,
     state.configuratorOptions, currentSavings, monthlyPayment, promo,
-    hasPromoSelection, hasPackageSelection
+    hasPromoSelection, hasPackageSelection, state.selectedPromoOption
   ]);
 
   // Helper to render nudge icon
@@ -787,6 +794,8 @@ export const UnifiedMobileBar: React.FC = () => {
       case 'clock': return <Clock className={className} />;
       case 'phone': return <Phone className={className} />;
       case 'scale': return <Scale className={className} />;
+      case 'lightbulb': return <Lightbulb className={className} />;
+      case 'alert': return <AlertTriangle className={className} />;
       default: return null;
     }
   };
@@ -1260,38 +1269,35 @@ export const UnifiedMobileBar: React.FC = () => {
           {/* Primary CTA - Smart contextual label */}
           {(hasMotor || location.pathname !== '/quote/motor-selection') && (
             <motion.button
+              // Key forces animation restart when selection changes
+              key={`cta-${state.selectedPromoOption ?? 'none'}-${state.selectedPackage?.id ?? 'none'}`}
               whileTap={{ scale: 0.95 }}
               animate={showSelectionFeedback ? {
-                // 🔄 A/B TEST: Change 'white' to 'amber' to compare glow styles
-                boxShadow: {
-                  // Option A: Soft White Glow (modern, Apple-like)
-                  white: [
-                    '0 4px 24px -4px rgba(255, 255, 255, 0.15), 0 2px 12px -2px rgba(255, 255, 255, 0.1)',
-                    '0 8px 40px -4px rgba(255, 255, 255, 0.35), 0 4px 20px -2px rgba(255, 255, 255, 0.25)',
-                    '0 4px 24px -4px rgba(255, 255, 255, 0.15), 0 2px 12px -2px rgba(255, 255, 255, 0.1)'
-                  ],
-                  // Option B: Warm Amber Glow (luxury automotive)
-                  amber: [
-                    '0 4px 24px -4px rgba(180, 140, 80, 0.2), 0 2px 12px -2px rgba(180, 140, 80, 0.15)',
-                    '0 8px 40px -4px rgba(180, 140, 80, 0.5), 0 4px 20px -2px rgba(180, 140, 80, 0.35)',
-                    '0 4px 24px -4px rgba(180, 140, 80, 0.2), 0 2px 12px -2px rgba(180, 140, 80, 0.15)'
-                  ]
-                }['white'], // 👈 CHANGE THIS TO 'amber' TO TEST
-                y: [0, -1, 0]
+                // Visible green glow for selection feedback
+                boxShadow: [
+                  '0 0 0 2px rgba(34, 197, 94, 0.4), 0 4px 20px -2px rgba(34, 197, 94, 0.3)',
+                  '0 0 0 4px rgba(34, 197, 94, 0.6), 0 8px 30px -2px rgba(34, 197, 94, 0.5)',
+                  '0 0 0 2px rgba(34, 197, 94, 0.4), 0 4px 20px -2px rgba(34, 197, 94, 0.3)'
+                ],
+                y: [0, -2, 0]
               } : {}}
               transition={{
                 ...springConfig,
-                boxShadow: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
-                y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' }
+                boxShadow: { duration: 2, repeat: Infinity, ease: 'easeInOut' },
+                y: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
               }}
               onClick={handlePrimary}
               disabled={!hasMotor}
-              className="shrink-0 rounded-xl font-semibold
-                h-10 px-2.5 text-xs min-[375px]:h-11 min-[375px]:px-3 min-[375px]:text-sm min-[428px]:px-4
-                bg-gray-900 text-white 
-                shadow-lg shadow-gray-900/20
-                disabled:opacity-40 disabled:bg-gray-400 disabled:shadow-none
-                flex items-center gap-1"
+              className={cn(
+                "shrink-0 rounded-xl font-semibold",
+                "h-10 px-2.5 text-xs min-[375px]:h-11 min-[375px]:px-3 min-[375px]:text-sm min-[428px]:px-4",
+                "bg-gray-900 text-white",
+                "shadow-lg shadow-gray-900/20",
+                "disabled:opacity-40 disabled:bg-gray-400 disabled:shadow-none",
+                "flex items-center gap-1",
+                // Visible ring when selection is made
+                showSelectionFeedback && "ring-2 ring-emerald-400/70"
+              )}
             >
               {getPrimaryLabel()}
               <ArrowRight className="h-3 w-3 min-[375px]:h-3.5 min-[375px]:w-3.5" />
