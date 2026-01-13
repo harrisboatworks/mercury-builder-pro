@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Shield, CalendarOff, Percent, Banknote, Check, ArrowRight, ArrowLeft } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Shield, CalendarOff, Percent, Banknote, Check, ArrowRight, ArrowLeft, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -10,6 +10,7 @@ import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { cn } from '@/lib/utils';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { PageTransition } from '@/components/ui/page-transition';
+import { calculateMonthly } from '@/lib/finance';
 
 type PromoOptionId = 'no_payments' | 'special_financing' | 'cash_rebate';
 
@@ -22,6 +23,14 @@ interface PromoOption {
   icon: typeof CalendarOff;
 }
 
+interface FinancingRate {
+  months: number;
+  rate: number;
+}
+
+// Minimum financing amount for special financing eligibility
+const SPECIAL_FINANCING_MIN_AMOUNT = 5000;
+
 export default function PromoSelectionPage() {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
@@ -31,6 +40,11 @@ export default function PromoSelectionPage() {
   const [selectedOption, setSelectedOption] = useState<PromoOptionId>(
     state.selectedPromoOption || 'cash_rebate'
   );
+  const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(
+    state.selectedPromoRate && state.selectedPromoTerm 
+      ? { rate: state.selectedPromoRate, months: state.selectedPromoTerm }
+      : null
+  );
   const [hasJustSelected, setHasJustSelected] = useState(false);
 
   const activePromo = promotions.length > 0 ? promotions[0] : null;
@@ -39,8 +53,20 @@ export default function PromoSelectionPage() {
   // Get dynamic values based on motor HP
   const motorHP = state.motor?.hp || 150;
   const rebateAmount = getRebateForHP(motorHP) || 250;
-  const financingRates = getSpecialFinancingRates();
+  const financingRates = getSpecialFinancingRates() || [];
   const lowestRate = financingRates?.[0]?.rate || 2.99;
+
+  // Estimate financing amount (motor price + tax + fees - trade-in)
+  const estimatedFinancingAmount = useMemo(() => {
+    const motorPrice = state.motor?.salePrice || state.motor?.price || 0;
+    const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
+    const taxMultiplier = 1.13; // HST
+    const dealerplanFee = 299;
+    return (motorPrice * taxMultiplier) + dealerplanFee - tradeInValue;
+  }, [state.motor, state.tradeInInfo]);
+
+  // Check if eligible for special financing
+  const isEligibleForSpecialFinancing = estimatedFinancingAmount >= SPECIAL_FINANCING_MIN_AMOUNT;
 
   const options: PromoOption[] = [
     {
@@ -55,7 +81,9 @@ export default function PromoSelectionPage() {
       id: 'special_financing',
       title: 'Special Financing',
       subtitle: `As Low As ${lowestRate}% APR`,
-      description: 'Lock in promotional financing rates well below standard rates. Save thousands over the life of your loan.',
+      description: isEligibleForSpecialFinancing 
+        ? 'Lock in promotional financing rates well below standard rates. Save thousands over the life of your loan.'
+        : `Requires minimum $${SPECIAL_FINANCING_MIN_AMOUNT.toLocaleString()} financing. Your estimated amount: $${Math.round(estimatedFinancingAmount).toLocaleString()}`,
       highlight: 'Low Rate',
       icon: Percent,
     },
@@ -69,6 +97,15 @@ export default function PromoSelectionPage() {
     },
   ];
 
+  // Set default rate when special financing is selected
+  useEffect(() => {
+    if (selectedOption === 'special_financing' && !selectedRate && financingRates.length > 0) {
+      // Default to 36-month option as a balanced choice
+      const defaultRate = financingRates.find(r => r.months === 36) || financingRates[0];
+      setSelectedRate(defaultRate);
+    }
+  }, [selectedOption, selectedRate, financingRates]);
+
   useEffect(() => {
     document.title = 'Choose Your Bonus | Mercury Get 7 Promotion';
   }, []);
@@ -81,19 +118,53 @@ export default function PromoSelectionPage() {
   }, [state.motor, navigate]);
 
   const handleOptionSelect = (optionId: PromoOptionId) => {
+    // Prevent selecting special financing if not eligible
+    if (optionId === 'special_financing' && !isEligibleForSpecialFinancing) {
+      return;
+    }
+    
     setSelectedOption(optionId);
     setHasJustSelected(true);
     triggerHaptic('light');
     
-    // Dispatch to context immediately so UnifiedMobileBar can detect the selection
-    dispatch({ type: 'SET_PROMO_OPTION', payload: optionId });
+    // Clear rate selection if switching away from special financing
+    if (optionId !== 'special_financing') {
+      setSelectedRate(null);
+    }
     
     // Auto-reset after 5 seconds
     setTimeout(() => setHasJustSelected(false), 5000);
   };
 
+  const handleRateSelect = (rate: FinancingRate) => {
+    setSelectedRate(rate);
+    triggerHaptic('light');
+  };
+
+  const getPromoDisplayValue = (): string => {
+    switch (selectedOption) {
+      case 'no_payments':
+        return 'First payment deferred 6 months';
+      case 'special_financing':
+        return selectedRate ? `${selectedRate.rate}% APR for ${selectedRate.months} months` : '';
+      case 'cash_rebate':
+        return `$${rebateAmount.toLocaleString()} rebate`;
+      default:
+        return '';
+    }
+  };
+
   const handleContinue = () => {
-    dispatch({ type: 'SET_PROMO_OPTION', payload: selectedOption });
+    // Dispatch full promo details
+    dispatch({ 
+      type: 'SET_PROMO_DETAILS', 
+      payload: {
+        option: selectedOption,
+        rate: selectedOption === 'special_financing' ? selectedRate?.rate : null,
+        term: selectedOption === 'special_financing' ? selectedRate?.months : null,
+        value: getPromoDisplayValue(),
+      }
+    });
     navigate('/quote/package-selection');
   };
 
@@ -104,6 +175,11 @@ export default function PromoSelectionPage() {
     } else {
       navigate('/quote/trade-in');
     }
+  };
+
+  // Calculate estimated monthly payment for each rate
+  const getEstimatedPayment = (rate: number, months: number): number => {
+    return calculateMonthly(estimatedFinancingAmount, rate, months);
   };
 
   return (
@@ -220,10 +296,11 @@ export default function PromoSelectionPage() {
             </motion.div>
 
             {/* Option Cards with Staggered Entrance */}
-            <div className="grid md:grid-cols-3 gap-6 mb-10">
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
               {options.map((option, index) => {
                 const Icon = option.icon;
                 const isSelected = selectedOption === option.id;
+                const isDisabled = option.id === 'special_financing' && !isEligibleForSpecialFinancing;
 
                 return (
                   <motion.button
@@ -236,18 +313,20 @@ export default function PromoSelectionPage() {
                       stiffness: 100,
                       damping: 15
                     }}
-                    whileHover={{ scale: 1.03, y: -4 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={!isDisabled ? { scale: 1.03, y: -4 } : undefined}
+                    whileTap={!isDisabled ? { scale: 0.98 } : undefined}
                     onClick={() => handleOptionSelect(option.id)}
+                    disabled={isDisabled}
                     className={cn(
                       'relative bg-white rounded-xl border-2 p-6 text-left transition-all duration-200',
-                      isSelected
+                      isDisabled && 'opacity-50 cursor-not-allowed',
+                      isSelected && !isDisabled
                         ? 'border-primary shadow-xl ring-2 ring-primary/30'
                         : 'border-transparent hover:border-primary/50 hover:shadow-xl'
                     )}
                   >
                     {/* Selected Checkmark */}
-                    {isSelected && (
+                    {isSelected && !isDisabled && (
                       <motion.div 
                         className="absolute -top-3 -right-3 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg"
                         initial={{ scale: 0 }}
@@ -258,31 +337,107 @@ export default function PromoSelectionPage() {
                       </motion.div>
                     )}
 
+                    {/* Not Eligible Badge */}
+                    {isDisabled && (
+                      <motion.div 
+                        className="absolute -top-3 -right-3 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-lg"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                      >
+                        MIN $5K
+                      </motion.div>
+                    )}
+
                     {/* Icon with Hover Effect */}
                     <motion.div 
-                      className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className={cn(
+                        "w-14 h-14 rounded-xl flex items-center justify-center mb-4",
+                        isDisabled ? "bg-muted" : "bg-primary/10"
+                      )}
+                      whileHover={!isDisabled ? { scale: 1.1, rotate: 5 } : undefined}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <Icon className="w-7 h-7 text-primary" />
+                      <Icon className={cn("w-7 h-7", isDisabled ? "text-muted-foreground" : "text-primary")} />
                     </motion.div>
 
                     {/* Title */}
                     <h3 className="text-xl font-semibold text-foreground mb-1">{option.title}</h3>
 
                     {/* Highlight Badge */}
-                    <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-3">
+                    <span className={cn(
+                      "inline-block px-3 py-1 rounded-full text-sm font-medium mb-3",
+                      isDisabled 
+                        ? "bg-muted text-muted-foreground" 
+                        : "bg-green-100 text-green-800"
+                    )}>
                       {option.highlight}
                     </span>
 
                     {/* Description */}
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className={cn(
+                      "text-sm leading-relaxed",
+                      isDisabled ? "text-muted-foreground" : "text-muted-foreground"
+                    )}>
                       {option.description}
                     </p>
                   </motion.button>
                 );
               })}
             </div>
+
+            {/* Rate/Term Selection for Special Financing */}
+            <AnimatePresence>
+              {selectedOption === 'special_financing' && isEligibleForSpecialFinancing && financingRates.length > 0 && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mb-8"
+                >
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 max-w-2xl mx-auto">
+                    <h3 className="text-white font-semibold mb-4">Select Your Rate & Term</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                      {financingRates.map((rate) => {
+                        const isRateSelected = selectedRate?.months === rate.months;
+                        const estimatedPayment = getEstimatedPayment(rate.rate, rate.months);
+                        
+                        return (
+                          <button
+                            key={rate.months}
+                            onClick={() => handleRateSelect(rate)}
+                            className={cn(
+                              'p-4 rounded-lg border-2 text-center transition-all duration-200',
+                              isRateSelected
+                                ? 'border-primary bg-primary/20 shadow-lg'
+                                : 'border-white/20 bg-white/5 hover:border-primary/50 hover:bg-white/10'
+                            )}
+                          >
+                            <div className="text-2xl font-bold text-white">{rate.rate}%</div>
+                            <div className="text-sm text-white/70">{rate.months} months</div>
+                            <div className="text-xs text-white/50 mt-1">
+                              ~${Math.round(estimatedPayment)}/mo
+                            </div>
+                            {isRateSelected && (
+                              <motion.div
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                className="mt-2"
+                              >
+                                <Check className="w-4 h-4 text-primary mx-auto" />
+                              </motion.div>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <p className="text-white/50 text-xs mt-4">
+                      💡 Tip: Shorter terms = lower rates but higher monthly payments
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Countdown Timer */}
             {endDate && (
@@ -306,11 +461,15 @@ export default function PromoSelectionPage() {
               <Button
                 size="lg"
                 onClick={handleContinue}
+                disabled={selectedOption === 'special_financing' && !selectedRate}
                 className={`px-8 py-6 text-lg font-semibold transition-all ${hasJustSelected ? 'animate-pulse-glow' : ''}`}
               >
                 Choose Package
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
+              {selectedOption === 'special_financing' && !selectedRate && (
+                <p className="text-amber-400 text-sm mt-2">Please select a rate and term above</p>
+              )}
             </motion.div>
           </div>
         </div>

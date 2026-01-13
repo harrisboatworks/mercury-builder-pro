@@ -181,6 +181,18 @@ export function ReviewSubmitStep() {
                     <span className="text-muted-foreground">Amount to Finance:</span>
                     <span className="font-medium">${state.purchaseDetails?.amountToFinance?.toLocaleString() || 'N/A'}</span>
                   </div>
+                  {state.purchaseDetails?.promoOption && (
+                    <div className="flex justify-between">
+                      <span className="text-muted-foreground">Promotion:</span>
+                      <span className="font-medium text-green-600">
+                        {state.purchaseDetails.promoOption === 'no_payments' && '6 Mo No Payments'}
+                        {state.purchaseDetails.promoOption === 'special_financing' && 
+                          `${state.purchaseDetails.promoRate}% APR for ${state.purchaseDetails.promoTerm} months`}
+                        {state.purchaseDetails.promoOption === 'cash_rebate' && 
+                          `${state.purchaseDetails.promoValue}`}
+                      </span>
+                    </div>
+                  )}
                   <Button
                     variant="ghost"
                     size="sm"

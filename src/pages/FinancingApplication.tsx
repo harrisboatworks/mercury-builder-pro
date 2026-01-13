@@ -291,6 +291,16 @@ export default function FinancingApplication() {
       const motorModel = (quoteData as any).financingAmount?.packageName 
         ? `${quoteData.motor.model || ''} (${(quoteData as any).financingAmount.packageName})`
         : quoteData.motor.model || '';
+
+      // Extract promo details from financing amount or state
+      const promoOption = (quoteData as any).financingAmount?.promoOption || 
+                          (quoteData as any).selectedPromoOption || null;
+      const promoRate = (quoteData as any).financingAmount?.promoRate || 
+                        (quoteData as any).selectedPromoRate || null;
+      const promoTerm = (quoteData as any).financingAmount?.promoTerm || 
+                        (quoteData as any).selectedPromoTerm || null;
+      const promoValue = (quoteData as any).financingAmount?.promoValue || 
+                         (quoteData as any).selectedPromoValue || null;
       
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
@@ -300,6 +310,11 @@ export default function FinancingApplication() {
           downPayment: downPayment,
           tradeInValue: tradeInValue,
           amountToFinance: Math.max(0, motorPrice - downPayment - tradeInValue),
+          // Include promo details
+          promoOption: promoOption,
+          promoRate: promoRate,
+          promoTerm: promoTerm,
+          promoValue: promoValue,
         },
       });
     }

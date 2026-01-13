@@ -6,12 +6,15 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
-import { Pencil } from 'lucide-react';
+import { Pencil, Percent, CalendarOff, Banknote, AlertCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { money } from '@/lib/money';
 import { calculateMonthlyPayment, calculateMonthly, getFinancingTermOptions } from '@/lib/finance';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
+
+// Minimum financing amount for special financing eligibility
+const SPECIAL_FINANCING_MIN_AMOUNT = 5000;
 
 export function PurchaseDetailsStep() {
   const { state, dispatch } = useFinancing();
@@ -33,7 +36,11 @@ export function PurchaseDetailsStep() {
       downPayment: state.purchaseDetails?.downPayment || 0,
       tradeInValue: state.purchaseDetails?.tradeInValue || 0,
       amountToFinance: state.purchaseDetails?.amountToFinance || 0,
-      preferredTerm: state.purchaseDetails?.preferredTerm || String(getFinancingTermOptions(state.purchaseDetails?.motorPrice || 0)[1]) as '36' | '48' | '60' | '72' | '84' | '120' | '180',
+      preferredTerm: state.purchaseDetails?.preferredTerm || String(getFinancingTermOptions(state.purchaseDetails?.motorPrice || 0)[1]) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180',
+      promoOption: state.purchaseDetails?.promoOption || null,
+      promoRate: state.purchaseDetails?.promoRate || null,
+      promoTerm: state.purchaseDetails?.promoTerm || null,
+      promoValue: state.purchaseDetails?.promoValue || null,
     },
   });
 
@@ -42,6 +49,16 @@ export function PurchaseDetailsStep() {
   const tradeInValue = watch('tradeInValue') || 0;
   const preferredTerm = watch('preferredTerm');
   const amountToFinance = Math.max(0, motorPrice - downPayment - tradeInValue);
+
+  // Get promo details from state
+  const promoOption = state.purchaseDetails?.promoOption;
+  const promoRate = state.purchaseDetails?.promoRate;
+  const promoTerm = state.purchaseDetails?.promoTerm;
+  const promoValue = state.purchaseDetails?.promoValue;
+
+  // Check if special financing is still eligible
+  const isEligibleForSpecialFinancing = amountToFinance >= SPECIAL_FINANCING_MIN_AMOUNT;
+  const hasSpecialFinancing = promoOption === 'special_financing' && promoRate;
 
   // Sync local state with form
   useEffect(() => {
@@ -58,7 +75,15 @@ export function PurchaseDetailsStep() {
   const onSubmit = (data: PurchaseDetails) => {
     dispatch({
       type: 'SET_PURCHASE_DETAILS',
-      payload: { ...data, amountToFinance },
+      payload: { 
+        ...data, 
+        amountToFinance,
+        // Preserve promo details
+        promoOption,
+        promoRate,
+        promoTerm,
+        promoValue,
+      },
     });
     dispatch({ type: 'COMPLETE_STEP', payload: 1 });
     dispatch({ type: 'SET_CURRENT_STEP', payload: 2 });
@@ -67,15 +92,23 @@ export function PurchaseDetailsStep() {
   const maxDownPayment = Math.floor(motorPrice * 0.5);
   const downPaymentPercentage = motorPrice > 0 ? Math.round((downPayment / motorPrice) * 100) : 0;
 
-  // Get dynamic term options based on motor price
-  const termOptions = getFinancingTermOptions(motorPrice);
-  const [shortTerm, midTerm, longTerm] = termOptions;
+  // Get dynamic term options based on motor price and promo
+  const standardTermOptions = getFinancingTermOptions(motorPrice);
+  
+  // If special financing, use promo terms (24, 36, 48, 60)
+  const termOptions = hasSpecialFinancing ? [24, 36, 48, 60] : standardTermOptions;
+  const [shortTerm, midTerm, longTerm] = termOptions.length >= 3 
+    ? [termOptions[0], termOptions[1], termOptions[2]] 
+    : [termOptions[0], termOptions[0], termOptions[0]];
+
+  // Use promo rate if available, otherwise use tiered default
+  const defaultRate = amountToFinance >= 10000 ? 7.99 : 8.99;
+  const activeRate = (hasSpecialFinancing && isEligibleForSpecialFinancing) ? promoRate : defaultRate;
 
   // Calculate payments for each dynamic term
-  const rate = 7.99; // Standard rate for estimates
-  const paymentShort = calculateMonthly(amountToFinance, rate, shortTerm);
-  const paymentMid = calculateMonthly(amountToFinance, rate, midTerm);
-  const paymentLong = calculateMonthly(amountToFinance, rate, longTerm);
+  const paymentShort = calculateMonthly(amountToFinance, activeRate, shortTerm);
+  const paymentMid = calculateMonthly(amountToFinance, activeRate, midTerm);
+  const paymentLong = calculateMonthly(amountToFinance, activeRate, longTerm);
 
   // Helper to format term display
   const formatTermDisplay = (months: number) => {
@@ -92,6 +125,71 @@ export function PurchaseDetailsStep() {
         <h2 className="text-2xl font-bold text-foreground">Let's Get You Financed</h2>
         <p className="text-muted-foreground font-light">First, confirm your motor selection</p>
       </div>
+
+      {/* Promo Status Banners */}
+      {promoOption === 'special_financing' && promoRate && (
+        <div className={`rounded-lg p-4 flex items-start gap-3 ${
+          isEligibleForSpecialFinancing 
+            ? 'bg-green-50 border border-green-200' 
+            : 'bg-amber-50 border border-amber-200'
+        }`}>
+          <Percent className={`w-5 h-5 mt-0.5 flex-shrink-0 ${
+            isEligibleForSpecialFinancing ? 'text-green-600' : 'text-amber-600'
+          }`} />
+          <div>
+            {isEligibleForSpecialFinancing ? (
+              <>
+                <p className="text-sm font-semibold text-green-800">
+                  Special Financing: {promoRate}% APR for {promoTerm} months
+                </p>
+                <p className="text-xs text-green-700 mt-0.5">
+                  Locked in from your Mercury GET 7 promotion selection
+                </p>
+              </>
+            ) : (
+              <>
+                <p className="text-sm font-semibold text-amber-800 flex items-center gap-1">
+                  <AlertCircle className="w-4 h-4" />
+                  Eligibility Warning
+                </p>
+                <p className="text-xs text-amber-700 mt-0.5">
+                  Special financing requires minimum ${SPECIAL_FINANCING_MIN_AMOUNT.toLocaleString()}. 
+                  Current amount: {money(amountToFinance)}. 
+                  Consider reducing your down payment to qualify.
+                </p>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
+      {promoOption === 'no_payments' && (
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start gap-3">
+          <CalendarOff className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="text-sm font-semibold text-blue-800">
+              6 Months No Payments
+            </p>
+            <p className="text-xs text-blue-700 mt-0.5">
+              Your first payment will be deferred for 6 months from your Mercury GET 7 promotion
+            </p>
+          </div>
+        </div>
+      )}
+
+      {promoOption === 'cash_rebate' && promoValue && (
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 flex items-start gap-3">
+          <Banknote className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
+          <div>
+            <p className="text-sm font-semibold text-amber-800">
+              Factory Rebate: {promoValue}
+            </p>
+            <p className="text-xs text-amber-700 mt-0.5">
+              Applied to your purchase from your Mercury GET 7 promotion
+            </p>
+          </div>
+        </div>
+      )}
 
       {/* Motor Model - Read-only with edit option */}
       <div className="space-y-2">
@@ -235,19 +333,29 @@ export function PurchaseDetailsStep() {
         <p className="text-xs text-muted-foreground font-light">
           Includes 13% HST and $299 Dealerplan processing fee
         </p>
+        {hasSpecialFinancing && isEligibleForSpecialFinancing && (
+          <p className="text-xs text-green-600 font-medium">
+            ✓ Qualifies for {promoRate}% APR special financing
+          </p>
+        )}
       </div>
 
       {/* Preferred Term Selection */}
       {amountToFinance > 0 && (
         <div className="space-y-3 animate-fade-in">
           <Label className="text-sm font-medium">Choose Your Preferred Term</Label>
+          {hasSpecialFinancing && isEligibleForSpecialFinancing && (
+            <p className="text-xs text-green-600">
+              Using promotional rate of {promoRate}% APR
+            </p>
+          )}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {/* Short Term */}
             <button
               type="button"
               onClick={() => {
                 setSelectedTerm(String(shortTerm));
-                setValue('preferredTerm', String(shortTerm) as '36' | '48' | '60' | '72' | '84' | '120' | '180', { shouldValidate: true });
+                setValue('preferredTerm', String(shortTerm) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180', { shouldValidate: true });
               }}
               className={`rounded-lg p-4 text-center min-h-[80px] flex flex-col justify-center transition-all duration-200 cursor-pointer hover:shadow-md ${
                 selectedTerm === String(shortTerm)
@@ -269,7 +377,7 @@ export function PurchaseDetailsStep() {
               type="button"
               onClick={() => {
                 setSelectedTerm(String(midTerm));
-                setValue('preferredTerm', String(midTerm) as '36' | '48' | '60' | '72' | '84' | '120' | '180', { shouldValidate: true });
+                setValue('preferredTerm', String(midTerm) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180', { shouldValidate: true });
               }}
               className={`rounded-lg p-4 text-center min-h-[80px] flex flex-col justify-center transition-all duration-200 cursor-pointer hover:shadow-md relative ${
                 selectedTerm === String(midTerm)
@@ -294,7 +402,7 @@ export function PurchaseDetailsStep() {
               type="button"
               onClick={() => {
                 setSelectedTerm(String(longTerm));
-                setValue('preferredTerm', String(longTerm) as '36' | '48' | '60' | '72' | '84' | '120' | '180', { shouldValidate: true });
+                setValue('preferredTerm', String(longTerm) as '24' | '36' | '48' | '60' | '72' | '84' | '120' | '180', { shouldValidate: true });
               }}
               className={`rounded-lg p-4 text-center min-h-[80px] flex flex-col justify-center transition-all duration-200 cursor-pointer hover:shadow-md ${
                 selectedTerm === String(longTerm)
@@ -315,7 +423,9 @@ export function PurchaseDetailsStep() {
             </button>
           </div>
           <p className="text-xs text-muted-foreground font-light text-center">
-            Terms are tailored to your purchase amount. Your broker will confirm the best rate and final term.
+            {hasSpecialFinancing && isEligibleForSpecialFinancing
+              ? `Promotional ${promoRate}% APR applied. Your broker will confirm final terms.`
+              : 'Terms are tailored to your purchase amount. Your broker will confirm the best rate and final term.'}
           </p>
         </div>
       )}

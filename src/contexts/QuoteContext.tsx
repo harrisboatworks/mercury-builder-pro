@@ -54,6 +54,9 @@ interface QuoteState {
   selectedOptions: SelectedOption[];
   selectedPackage: SelectedPackage | null; // Selected package from summary page
   selectedPromoOption: 'no_payments' | 'special_financing' | 'cash_rebate' | null; // Choose One promo selection
+  selectedPromoRate: number | null;      // e.g., 2.99, 3.99, 4.49, 5.49 for special financing
+  selectedPromoTerm: number | null;      // e.g., 24, 36, 48, 60 months for special financing
+  selectedPromoValue: string | null;     // Display value (e.g., "$500", "3.99% for 36mo")
   completedSteps: number[];
   currentStep: number;
   isLoading: boolean;
@@ -78,6 +81,12 @@ type QuoteAction =
   | { type: 'SET_SELECTED_OPTIONS'; payload: SelectedOption[] }
   | { type: 'SET_SELECTED_PACKAGE'; payload: SelectedPackage | null }
   | { type: 'SET_PROMO_OPTION'; payload: 'no_payments' | 'special_financing' | 'cash_rebate' | null }
+  | { type: 'SET_PROMO_DETAILS'; payload: { 
+      option: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
+      rate?: number | null;
+      term?: number | null;
+      value?: string | null;
+    }}
   | { type: 'COMPLETE_STEP'; payload: number }
   | { type: 'SET_CURRENT_STEP'; payload: number }
   | { type: 'LOAD_FROM_STORAGE'; payload: QuoteState }
@@ -106,6 +115,9 @@ const initialState: QuoteState = {
   selectedOptions: [],
   selectedPackage: null,
   selectedPromoOption: null,
+  selectedPromoRate: null,
+  selectedPromoTerm: null,
+  selectedPromoValue: null,
   completedSteps: [],
   currentStep: 1,
   isLoading: true,
@@ -163,6 +175,14 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       return { ...state, selectedPackage: action.payload };
     case 'SET_PROMO_OPTION':
       return { ...state, selectedPromoOption: action.payload };
+    case 'SET_PROMO_DETAILS':
+      return { 
+        ...state, 
+        selectedPromoOption: action.payload.option,
+        selectedPromoRate: action.payload.rate ?? null,
+        selectedPromoTerm: action.payload.term ?? null,
+        selectedPromoValue: action.payload.value ?? null,
+      };
     case 'COMPLETE_STEP':
       return { 
         ...state, 
