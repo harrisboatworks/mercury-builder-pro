@@ -7,6 +7,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import type { TradeInInfo } from '@/lib/trade-valuation';
+import { Skeleton } from '@/components/ui/skeleton';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -229,6 +230,34 @@ export default function TradeInPage() {
       }
     };
   }, [state.tradeInInfo]);
+
+  // Show loading skeleton while context is hydrating
+  if (state.isLoading) {
+    return (
+      <PageTransition>
+        <QuoteLayout>
+          <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
+            {/* Skeleton back button */}
+            <Skeleton className="h-9 w-32" />
+            
+            {/* Skeleton card */}
+            <div className="p-8 border border-border bg-card rounded-lg space-y-6">
+              <div className="space-y-3">
+                <Skeleton className="h-8 w-64" />
+                <Skeleton className="h-5 w-96" />
+              </div>
+              
+              {/* Skeleton trade-in options */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+                <Skeleton className="h-28 rounded-lg" />
+                <Skeleton className="h-28 rounded-lg" />
+              </div>
+            </div>
+          </div>
+        </QuoteLayout>
+      </PageTransition>
+    );
+  }
 
   return (
     <PageTransition>

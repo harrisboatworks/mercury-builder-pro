@@ -24,6 +24,14 @@ export default function PurchasePathPage() {
     desc.content = 'Choose between professional installation or loose motor purchase for your Mercury outboard.';
   }, []);
 
+  // Prefetch likely next pages for faster navigation
+  useEffect(() => {
+    // Prefetch trade-in page (most common next step)
+    import('@/pages/quote/TradeInPage');
+    // Prefetch boat-info page (for installed path)
+    import('@/pages/quote/BoatInfoPage');
+  }, []);
+
   // Separate effect for access control check - only runs on mount
   useEffect(() => {
     if (!state.isLoading && !isNavigationBlocked && !isStepAccessible(2)) {
