@@ -1262,11 +1262,21 @@ export const UnifiedMobileBar: React.FC = () => {
             <motion.button
               whileTap={{ scale: 0.95 }}
               animate={showSelectionFeedback ? {
-                boxShadow: [
-                  '0 4px 20px -4px rgba(17, 24, 39, 0.25), 0 2px 8px -2px rgba(17, 24, 39, 0.15)',
-                  '0 8px 32px -4px rgba(17, 24, 39, 0.5), 0 4px 16px -2px rgba(17, 24, 39, 0.3)',
-                  '0 4px 20px -4px rgba(17, 24, 39, 0.25), 0 2px 8px -2px rgba(17, 24, 39, 0.15)'
-                ],
+                // 🔄 A/B TEST: Change 'white' to 'amber' to compare glow styles
+                boxShadow: {
+                  // Option A: Soft White Glow (modern, Apple-like)
+                  white: [
+                    '0 4px 24px -4px rgba(255, 255, 255, 0.15), 0 2px 12px -2px rgba(255, 255, 255, 0.1)',
+                    '0 8px 40px -4px rgba(255, 255, 255, 0.35), 0 4px 20px -2px rgba(255, 255, 255, 0.25)',
+                    '0 4px 24px -4px rgba(255, 255, 255, 0.15), 0 2px 12px -2px rgba(255, 255, 255, 0.1)'
+                  ],
+                  // Option B: Warm Amber Glow (luxury automotive)
+                  amber: [
+                    '0 4px 24px -4px rgba(180, 140, 80, 0.2), 0 2px 12px -2px rgba(180, 140, 80, 0.15)',
+                    '0 8px 40px -4px rgba(180, 140, 80, 0.5), 0 4px 20px -2px rgba(180, 140, 80, 0.35)',
+                    '0 4px 24px -4px rgba(180, 140, 80, 0.2), 0 2px 12px -2px rgba(180, 140, 80, 0.15)'
+                  ]
+                }['white'], // 👈 CHANGE THIS TO 'amber' TO TEST
                 y: [0, -1, 0]
               } : {}}
               transition={{
