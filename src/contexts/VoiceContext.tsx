@@ -262,6 +262,15 @@ export const VoiceProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         // This is handled by the client tool reading from state
       }
       
+      // Handle show specific motor (open detail modal)
+      if (type === 'show_motor' && payload?.motorId) {
+        const motorId = payload.motorId as string;
+        console.log('[VoiceContext] Showing motor:', motorId);
+        
+        // Dispatch event for MotorSelectionPage to handle (open modal)
+        window.dispatchEvent(new CustomEvent('voice:show-motor', { detail: { motorId } }));
+      }
+      
       // Handle compare motors (informational, handled by client tool)
       if (type === 'compare_motors') {
         console.log('[VoiceContext] Comparing motors:', payload);

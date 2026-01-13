@@ -306,7 +306,7 @@ Go to **Agent Settings** → **Tools** → **Add Tool** → **Client Tool**
 
 ### 11. Go To Quote Step
 **Name:** `go_to_quote_step`  
-**Description:** Navigate to a specific step in the quote builder.
+**Description:** Navigate to a specific step in the quote builder. Use when customer says "show me my quote", "go to summary", "back to motor selection".
 
 **Parameters:**
 ```json
@@ -315,11 +315,46 @@ Go to **Agent Settings** → **Tools** → **Add Tool** → **Client Tool**
   "properties": {
     "step": {
       "type": "string",
-      "enum": ["motor", "path", "boat", "trade-in", "summary"],
+      "enum": ["motor", "path", "boat", "trade-in", "promo", "summary"],
       "description": "Which step to navigate to"
     }
   },
   "required": ["step"]
+}
+```
+
+---
+
+### 14. Navigate to Promotions
+**Name:** `navigate_to_promotions`  
+**Description:** Navigate to the promotions page to show current deals and special offers. Use when customer asks about deals, specials, promotions, or says "tell me about the Get 7".
+
+**Parameters:**
+```json
+{
+  "type": "object",
+  "properties": {},
+  "required": []
+}
+```
+
+---
+
+### 15. Show Motor Details
+**Name:** `show_motor`  
+**Description:** Show a specific motor's detail view/modal on the customer's screen. Use when customer selects a specific variant like "show me the 9.9ELH" or "let me see the 20 ELPT".
+
+**Parameters:**
+```json
+{
+  "type": "object",
+  "properties": {
+    "motor_model": {
+      "type": "string",
+      "description": "The motor model name to show details for (e.g., '9.9ELH', '20 ELPT', '115 EXLPT Pro XS')"
+    }
+  },
+  "required": ["motor_model"]
 }
 ```
 
