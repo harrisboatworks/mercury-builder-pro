@@ -126,29 +126,21 @@ export function PricingTable({
           />
         )}
 
-        {/* Promotional Savings */}
+        {/* Promotional Savings - Show ONE consolidated line */}
         {pricing.promoValue > 0 && (
-          <LineItemRow
-            label="Promotional Savings"
-            amount={pricing.promoValue}
-            isDiscount
-          />
-        )}
-
-        {/* Selected Promo Bonus (Choose One) - Simple line item */}
-        {selectedPromoOption && (
           <LineItemRow
             label={
               selectedPromoOption === 'no_payments' 
                 ? '7 Years Warranty + 6 Mo No Payments'
                 : selectedPromoOption === 'special_financing'
                 ? `7 Years Warranty + ${selectedPromoValue || '2.99%'} APR`
-                : `7 Years Warranty + ${selectedPromoValue} Rebate`
+                : selectedPromoOption === 'cash_rebate'
+                ? `7 Years Warranty + ${selectedPromoValue} Rebate`
+                : 'Promotional Savings'
             }
-            amount={selectedPromoOption === 'cash_rebate' ? parseRebateValue(selectedPromoValue) : 0}
-            isDiscount={selectedPromoOption === 'cash_rebate'}
-            className="text-green-600 font-medium"
-            description="Mercury GET 7 Promotion"
+            amount={pricing.promoValue}
+            isDiscount
+            description={selectedPromoOption ? "Mercury GET 7 Promotion" : undefined}
           />
         )}
 
