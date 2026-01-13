@@ -174,12 +174,12 @@ export default {
 					'100%': { transform: 'translateX(100%)' }
 				},
 				// Subtle CTA pulse glow
-				'pulse-glow': {
+			'pulse-glow': {
 					'0%, 100%': { 
-						boxShadow: '0 0 0 0 rgba(17, 24, 39, 0.3)' 
+						boxShadow: '0 4px 20px -4px rgba(17, 24, 39, 0.25), 0 2px 8px -2px rgba(17, 24, 39, 0.15)' 
 					},
 					'50%': { 
-						boxShadow: '0 0 0 8px rgba(17, 24, 39, 0)' 
+						boxShadow: '0 8px 32px -4px rgba(17, 24, 39, 0.5), 0 4px 16px -2px rgba(17, 24, 39, 0.3)' 
 					}
 				}
 			},
