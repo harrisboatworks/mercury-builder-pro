@@ -11,14 +11,12 @@ import { UpgradeNudgeBar } from '@/components/quote-builder/UpgradeNudgeBar';
 import { PromoPanel } from '@/components/quote-builder/PromoPanel';
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
-import { PromoSelectionBadge } from '@/components/quote-builder/PromoSelectionBadge';
+
 import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
 import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
-import { PromoOptionSelector, type PromoOptionType } from '@/components/quote-builder/PromoOptionSelector';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 
 import { useQuote } from '@/contexts/QuoteContext';
@@ -88,7 +86,7 @@ export default function QuoteSummaryPage() {
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
   const [showSaveDialog, setShowSaveDialog] = useState(false);
-  const [showPromoSelector, setShowPromoSelector] = useState(false);
+  
   
   // Get first active promotion with end date for countdown
   const promoEndDate = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
@@ -894,28 +892,6 @@ export default function QuoteSummaryPage() {
                 </Button>
               </motion.div>
 
-              {/* Current Promotion - Clean Light Design */}
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={{
-                  ...sectionVariants,
-                  visible: {
-                    ...sectionVariants.visible,
-                    transition: {
-                      ...sectionVariants.visible.transition,
-                      delay: 0.1
-                    }
-                  }
-                }}
-              >
-                <PromoSelectionBadge
-                  motorHP={motorHp}
-                  selectedOption={state.selectedPromoOption}
-                  endDate={promoEndDate}
-                />
-              </motion.div>
-
               {/* Package Selection */}
               <motion.div
                 variants={packageContainerVariants}
@@ -986,7 +962,6 @@ export default function QuoteSummaryPage() {
                   onApplyForFinancing={handleApplyForFinancing}
                   selectedPromoOption={state.selectedPromoOption}
                   selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
-                  onChangeBonus={() => setShowPromoSelector(true)}
                 />
               </motion.div>
 
@@ -1109,31 +1084,6 @@ export default function QuoteSummaryPage() {
         motorModel={motorName}
         finalPrice={packageSpecificTotals.total}
       />
-      
-      {/* Change Bonus Modal */}
-      <Dialog open={showPromoSelector} onOpenChange={setShowPromoSelector}>
-        <DialogContent className="sm:max-w-3xl max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle>Change Your Promotional Bonus</DialogTitle>
-            <DialogDescription>
-              Select a different promotional benefit for your quote
-            </DialogDescription>
-          </DialogHeader>
-          <PromoOptionSelector
-            motorHP={hp}
-            totalAmount={packageSpecificTotals.total}
-            selectedOption={state.selectedPromoOption}
-            onSelect={(option: PromoOptionType) => {
-              dispatch({ type: 'SET_PROMO_OPTION', payload: option });
-              setShowPromoSelector(false);
-              toast({ 
-                title: "Bonus updated!", 
-                description: "Your selected promotional bonus has been changed." 
-              });
-            }}
-          />
-        </DialogContent>
-      </Dialog>
         </QuoteLayout>
       </PageTransition>
     </>
