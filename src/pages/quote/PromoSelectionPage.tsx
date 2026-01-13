@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, CalendarOff, Percent, Banknote, Check, ArrowRight, ArrowLeft, AlertCircle } from 'lucide-react';
@@ -46,6 +46,9 @@ export default function PromoSelectionPage() {
       : null
   );
   const [hasJustSelected, setHasJustSelected] = useState(false);
+  
+  // Ref for auto-scrolling to rate selector
+  const rateSelectorRef = useRef<HTMLDivElement>(null);
 
   const activePromo = promotions.length > 0 ? promotions[0] : null;
   const endDate = activePromo?.end_date ? new Date(activePromo.end_date) : null;
@@ -106,6 +109,19 @@ export default function PromoSelectionPage() {
     }
   }, [selectedOption, selectedRate, financingRates]);
 
+  // Auto-scroll to rate selector when special financing is selected
+  useEffect(() => {
+    if (selectedOption === 'special_financing' && isEligibleForSpecialFinancing && rateSelectorRef.current) {
+      // Small delay to allow animation to start
+      setTimeout(() => {
+        rateSelectorRef.current?.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'center' 
+        });
+      }, 150);
+    }
+  }, [selectedOption, isEligibleForSpecialFinancing]);
+
   useEffect(() => {
     document.title = 'Choose Your Bonus | Mercury Get 7 Promotion';
   }, []);
@@ -130,6 +146,21 @@ export default function PromoSelectionPage() {
     // Clear rate selection if switching away from special financing
     if (optionId !== 'special_financing') {
       setSelectedRate(null);
+      
+      // Dispatch to context immediately for non-financing options (enables mobile bar glow)
+      const promoValue = optionId === 'no_payments' 
+        ? 'First payment deferred 6 months' 
+        : `$${rebateAmount.toLocaleString()} rebate`;
+      
+      dispatch({ 
+        type: 'SET_PROMO_DETAILS', 
+        payload: {
+          option: optionId,
+          rate: null,
+          term: null,
+          value: promoValue,
+        }
+      });
     }
     
     // Auto-reset after 5 seconds
@@ -138,7 +169,22 @@ export default function PromoSelectionPage() {
 
   const handleRateSelect = (rate: FinancingRate) => {
     setSelectedRate(rate);
+    setHasJustSelected(true);
     triggerHaptic('light');
+    
+    // Dispatch to context immediately with rate details (enables mobile bar glow)
+    dispatch({ 
+      type: 'SET_PROMO_DETAILS', 
+      payload: {
+        option: 'special_financing',
+        rate: rate.rate,
+        term: rate.months,
+        value: `${rate.rate}% APR for ${rate.months} months`,
+      }
+    });
+    
+    // Auto-reset after 5 seconds
+    setTimeout(() => setHasJustSelected(false), 5000);
   };
 
   const getPromoDisplayValue = (): string => {
@@ -155,16 +201,8 @@ export default function PromoSelectionPage() {
   };
 
   const handleContinue = () => {
-    // Dispatch full promo details
-    dispatch({ 
-      type: 'SET_PROMO_DETAILS', 
-      payload: {
-        option: selectedOption,
-        rate: selectedOption === 'special_financing' ? selectedRate?.rate : null,
-        term: selectedOption === 'special_financing' ? selectedRate?.months : null,
-        value: getPromoDisplayValue(),
-      }
-    });
+    // Context is already updated in handleOptionSelect/handleRateSelect
+    // Just navigate to the next page
     navigate('/quote/package-selection');
   };
 
@@ -389,6 +427,7 @@ export default function PromoSelectionPage() {
             <AnimatePresence>
               {selectedOption === 'special_financing' && isEligibleForSpecialFinancing && financingRates.length > 0 && (
                 <motion.div
+                  ref={rateSelectorRef}
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
