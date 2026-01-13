@@ -37,15 +37,11 @@ export default function PromoSelectionPage() {
   const { promotions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { triggerHaptic } = useHapticFeedback();
   
-  const [selectedOption, setSelectedOption] = useState<PromoOptionId>(
-    state.selectedPromoOption || 'cash_rebate'
-  );
-  const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(
-    state.selectedPromoRate && state.selectedPromoTerm 
-      ? { rate: state.selectedPromoRate, months: state.selectedPromoTerm }
-      : null
-  );
+  // Start with no selection - user must choose
+  const [selectedOption, setSelectedOption] = useState<PromoOptionId | null>(null);
+  const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(null);
   const [hasJustSelected, setHasJustSelected] = useState(false);
+  const [hasUserInteracted, setHasUserInteracted] = useState(false);
   
   // Ref for auto-scrolling to rate selector
   const rateSelectorRef = useRef<HTMLDivElement>(null);
@@ -84,9 +80,7 @@ export default function PromoSelectionPage() {
       id: 'special_financing',
       title: 'Special Financing',
       subtitle: `As Low As ${lowestRate}% APR`,
-      description: isEligibleForSpecialFinancing 
-        ? 'Lock in promotional financing rates well below standard rates. Save thousands over the life of your loan.'
-        : `Requires minimum $${SPECIAL_FINANCING_MIN_AMOUNT.toLocaleString()} financing. Your estimated amount: $${Math.round(estimatedFinancingAmount).toLocaleString()}`,
+      description: 'Lock in promotional financing rates well below standard rates. Save thousands over the life of your loan.',
       highlight: 'Low Rate',
       icon: Percent,
     },
@@ -100,6 +94,21 @@ export default function PromoSelectionPage() {
     },
   ];
 
+  // Filter to only eligible options - hide special financing if not eligible
+  const eligibleOptions = useMemo(() => {
+    return options.filter(option => {
+      if (option.id === 'special_financing' && !isEligibleForSpecialFinancing) {
+        return false;
+      }
+      return true;
+    });
+  }, [options, isEligibleForSpecialFinancing, rebateAmount, lowestRate]);
+
+  // Clear any persisted promo selection on mount - fresh choice each time
+  useEffect(() => {
+    dispatch({ type: 'SET_PROMO_DETAILS', payload: { option: null, rate: null, term: null, value: null } });
+  }, [dispatch]);
+
   // Set default rate when special financing is selected
   useEffect(() => {
     if (selectedOption === 'special_financing' && !selectedRate && financingRates.length > 0) {
@@ -109,10 +118,9 @@ export default function PromoSelectionPage() {
     }
   }, [selectedOption, selectedRate, financingRates]);
 
-  // Auto-scroll to rate selector when special financing is selected
+  // Auto-scroll to rate selector ONLY after user explicitly selects special financing
   useEffect(() => {
-    if (selectedOption === 'special_financing' && isEligibleForSpecialFinancing && rateSelectorRef.current) {
-      // Small delay to allow animation to start
+    if (hasUserInteracted && selectedOption === 'special_financing' && isEligibleForSpecialFinancing && rateSelectorRef.current) {
       setTimeout(() => {
         rateSelectorRef.current?.scrollIntoView({ 
           behavior: 'smooth', 
@@ -120,7 +128,7 @@ export default function PromoSelectionPage() {
         });
       }, 150);
     }
-  }, [selectedOption, isEligibleForSpecialFinancing]);
+  }, [hasUserInteracted, selectedOption, isEligibleForSpecialFinancing]);
 
   useEffect(() => {
     document.title = 'Choose Your Bonus | Mercury Get 7 Promotion';
@@ -134,13 +142,9 @@ export default function PromoSelectionPage() {
   }, [state.motor, navigate]);
 
   const handleOptionSelect = (optionId: PromoOptionId) => {
-    // Prevent selecting special financing if not eligible
-    if (optionId === 'special_financing' && !isEligibleForSpecialFinancing) {
-      return;
-    }
-    
     setSelectedOption(optionId);
     setHasJustSelected(true);
+    setHasUserInteracted(true);
     triggerHaptic('light');
     
     // Clear rate selection if switching away from special financing
@@ -333,12 +337,14 @@ export default function PromoSelectionPage() {
               <div className="flex-1 h-px bg-white/20"></div>
             </motion.div>
 
-            {/* Option Cards with Staggered Entrance */}
-            <div className="grid md:grid-cols-3 gap-6 mb-6">
-              {options.map((option, index) => {
+            {/* Option Cards with Staggered Entrance - only eligible options */}
+            <div className={cn(
+              "grid gap-6 mb-6",
+              eligibleOptions.length === 2 ? "md:grid-cols-2 max-w-2xl mx-auto" : "md:grid-cols-3"
+            )}>
+              {eligibleOptions.map((option, index) => {
                 const Icon = option.icon;
                 const isSelected = selectedOption === option.id;
-                const isDisabled = option.id === 'special_financing' && !isEligibleForSpecialFinancing;
 
                 return (
                   <motion.button
@@ -351,20 +357,18 @@ export default function PromoSelectionPage() {
                       stiffness: 100,
                       damping: 15
                     }}
-                    whileHover={!isDisabled ? { scale: 1.03, y: -4 } : undefined}
-                    whileTap={!isDisabled ? { scale: 0.98 } : undefined}
+                    whileHover={{ scale: 1.03, y: -4 }}
+                    whileTap={{ scale: 0.98 }}
                     onClick={() => handleOptionSelect(option.id)}
-                    disabled={isDisabled}
                     className={cn(
                       'relative bg-white rounded-xl border-2 p-6 text-left transition-all duration-200',
-                      isDisabled && 'opacity-50 cursor-not-allowed',
-                      isSelected && !isDisabled
+                      isSelected
                         ? 'border-primary shadow-xl ring-2 ring-primary/30'
                         : 'border-transparent hover:border-primary/50 hover:shadow-xl'
                     )}
                   >
                     {/* Selected Checkmark */}
-                    {isSelected && !isDisabled && (
+                    {isSelected && (
                       <motion.div 
                         className="absolute -top-3 -right-3 w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg"
                         initial={{ scale: 0 }}
@@ -375,47 +379,25 @@ export default function PromoSelectionPage() {
                       </motion.div>
                     )}
 
-                    {/* Not Eligible Badge */}
-                    {isDisabled && (
-                      <motion.div 
-                        className="absolute -top-3 -right-3 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-lg"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                      >
-                        MIN $5K
-                      </motion.div>
-                    )}
-
                     {/* Icon with Hover Effect */}
                     <motion.div 
-                      className={cn(
-                        "w-14 h-14 rounded-xl flex items-center justify-center mb-4",
-                        isDisabled ? "bg-muted" : "bg-primary/10"
-                      )}
-                      whileHover={!isDisabled ? { scale: 1.1, rotate: 5 } : undefined}
+                      className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-4"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: 'spring', stiffness: 300 }}
                     >
-                      <Icon className={cn("w-7 h-7", isDisabled ? "text-muted-foreground" : "text-primary")} />
+                      <Icon className="w-7 h-7 text-primary" />
                     </motion.div>
 
                     {/* Title */}
                     <h3 className="text-xl font-semibold text-foreground mb-1">{option.title}</h3>
 
                     {/* Highlight Badge */}
-                    <span className={cn(
-                      "inline-block px-3 py-1 rounded-full text-sm font-medium mb-3",
-                      isDisabled 
-                        ? "bg-muted text-muted-foreground" 
-                        : "bg-green-100 text-green-800"
-                    )}>
+                    <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-3 bg-green-100 text-green-800">
                       {option.highlight}
                     </span>
 
                     {/* Description */}
-                    <p className={cn(
-                      "text-sm leading-relaxed",
-                      isDisabled ? "text-muted-foreground" : "text-muted-foreground"
-                    )}>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
                       {option.description}
                     </p>
                   </motion.button>
@@ -500,12 +482,15 @@ export default function PromoSelectionPage() {
               <Button
                 size="lg"
                 onClick={handleContinue}
-                disabled={selectedOption === 'special_financing' && !selectedRate}
+                disabled={!selectedOption || (selectedOption === 'special_financing' && !selectedRate)}
                 className={`px-8 py-6 text-lg font-semibold transition-all ${hasJustSelected ? 'animate-pulse-glow' : ''}`}
               >
                 Choose Package
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
+              {!selectedOption && (
+                <p className="text-white/50 text-sm mt-2">Select one of the options above</p>
+              )}
               {selectedOption === 'special_financing' && !selectedRate && (
                 <p className="text-amber-400 text-sm mt-2">Please select a rate and term above</p>
               )}
