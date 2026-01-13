@@ -2,6 +2,7 @@
 import React from "react";
 import { money } from "@/lib/money";
 import { useActivePromotions } from "@/hooks/useActivePromotions";
+import { Calendar, Percent, DollarSign } from "lucide-react";
 
 type Props = {
   model?: string;
@@ -14,6 +15,9 @@ type Props = {
   secondaryLabel?: string;
   onSecondary?: () => void;
   deltaOnce?: { cash?: number | null; monthly?: number | null } | null;
+  // Selected promo option for "Choose One" promotions
+  selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
+  selectedPromoDisplay?: string | null;
 };
 
 export default function StickyQuoteBar({
@@ -26,7 +30,9 @@ export default function StickyQuoteBar({
   onPrimary,
   secondaryLabel = "Change",
   onSecondary,
-  deltaOnce
+  deltaOnce,
+  selectedPromoOption,
+  selectedPromoDisplay
 }: Props) {
   const [showDelta, setShowDelta] = React.useState(true);
   React.useEffect(() => {
@@ -62,6 +68,26 @@ export default function StickyQuoteBar({
                 {p.bonus_title || `+${p.warranty_extra_years} yrs warranty`}
               </span>
             ))}
+            {/* Selected Promo Option Badge */}
+            {selectedPromoOption && (
+              <span className={`hidden sm:inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold ${
+                selectedPromoOption === 'no_payments' 
+                  ? 'bg-blue-50 text-blue-700 ring-1 ring-blue-200'
+                  : selectedPromoOption === 'special_financing'
+                  ? 'bg-purple-50 text-purple-700 ring-1 ring-purple-200'
+                  : 'bg-green-50 text-green-700 ring-1 ring-green-200'
+              }`}>
+                {selectedPromoOption === 'no_payments' && <Calendar className="w-3 h-3" />}
+                {selectedPromoOption === 'special_financing' && <Percent className="w-3 h-3" />}
+                {selectedPromoOption === 'cash_rebate' && <DollarSign className="w-3 h-3" />}
+                <span className="hidden md:inline">{selectedPromoDisplay}</span>
+                <span className="md:hidden">
+                  {selectedPromoOption === 'no_payments' && 'No Payments'}
+                  {selectedPromoOption === 'special_financing' && 'Low APR'}
+                  {selectedPromoOption === 'cash_rebate' && 'Rebate'}
+                </span>
+              </span>
+            )}
             {stepLabel && <span className="hidden lg:inline text-slate-500 ml-auto">{stepLabel}</span>}
             {showDelta && deltaOnce && (deltaOnce.cash || deltaOnce.monthly) && (
               <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700 ring-1 ring-emerald-200">
