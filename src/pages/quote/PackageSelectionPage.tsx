@@ -1,19 +1,21 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Shield, Sparkles, Star } from 'lucide-react';
+import { ArrowLeft, Shield, Sparkles, Star, HelpCircle, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageTransition } from '@/components/ui/page-transition';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
+import { PackageComparisonTable } from '@/components/quote-builder/PackageComparisonTable';
 import { UpgradeNudgeBar } from '@/components/quote-builder/UpgradeNudgeBar';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
-import { getPackageRecommendation } from '@/lib/package-recommendation';
+import { getPackageRecommendation, getRecommendationExplanation } from '@/lib/package-recommendation';
 
 // Package warranty year constants
 const COMPLETE_TARGET_YEARS = 7;
@@ -83,6 +85,12 @@ export default function PackageSelectionPage() {
   const recommendation = useMemo(() => 
     getPackageRecommendation(boatType, motorHP, state.purchasePath),
     [boatType, motorHP, state.purchasePath]
+  );
+
+  // Get explanation for the recommendation
+  const recommendationExplanation = useMemo(() =>
+    getRecommendationExplanation(boatType, motorHP, recommendation.packageId),
+    [boatType, motorHP, recommendation.packageId]
   );
 
   // Motor type calculations
@@ -333,30 +341,66 @@ export default function PackageSelectionPage() {
               </div>
             </motion.div>
 
-            {/* Smart Recommendation Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: -10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.4, type: "spring" }}
-              className="relative mx-auto max-w-md"
-            >
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500/20 via-yellow-500/20 to-amber-500/20 border border-amber-500/30 px-5 py-3">
-                {/* Shimmer effect */}
-                <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                
-                <div className="relative flex items-center justify-center gap-3">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500/20">
-                    <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm font-semibold text-amber-300">
-                      Recommended for You: {recommendation.packageId === 'good' ? 'Essential' : recommendation.packageId === 'better' ? 'Complete' : 'Premium'}
-                    </p>
-                    <p className="text-xs text-amber-400/80">{recommendation.reason}</p>
+            {/* Smart Recommendation Badge with Tooltip */}
+            <TooltipProvider>
+              <motion.div
+                initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ delay: 0.5, duration: 0.4, type: "spring" }}
+                className="relative mx-auto max-w-md"
+              >
+                <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500/20 via-yellow-500/20 to-amber-500/20 border border-amber-500/30 px-5 py-3">
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                  
+                  <div className="relative flex items-center justify-center gap-3">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500/20">
+                      <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                    </div>
+                    <div className="text-center">
+                      <p className="text-sm font-semibold text-amber-300">
+                        Recommended for You: {recommendation.packageId === 'good' ? 'Essential' : recommendation.packageId === 'better' ? 'Complete' : 'Premium'}
+                      </p>
+                      <p className="text-xs text-amber-400/80">{recommendation.reason}</p>
+                    </div>
+                    
+                    {/* Why This? Tooltip */}
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <button className="ml-1 p-1.5 rounded-full hover:bg-amber-500/20 transition-colors">
+                          <HelpCircle className="w-4 h-4 text-amber-400/60 hover:text-amber-400 transition-colors" />
+                        </button>
+                      </TooltipTrigger>
+                      <TooltipContent 
+                        side="bottom" 
+                        className="max-w-xs p-4 bg-stone-800 border-stone-600 shadow-xl"
+                      >
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-2">
+                            <Lightbulb className="w-4 h-4 text-amber-400" />
+                            <span className="font-semibold text-amber-300">{recommendationExplanation.title}</span>
+                          </div>
+                          <p className="text-xs text-stone-400 font-medium">Based on your setup:</p>
+                          <ul className="space-y-2">
+                            {recommendationExplanation.factors.map((factor, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-xs text-stone-300">
+                                <span className="text-amber-400 mt-0.5">•</span>
+                                <span>{factor}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          <div className="pt-2 border-t border-stone-700">
+                            <p className="text-xs text-stone-500 italic">
+                              You can always choose a different package based on your preferences.
+                            </p>
+                          </div>
+                        </div>
+                      </TooltipContent>
+                    </Tooltip>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </TooltipProvider>
 
             {/* Package Cards */}
             <motion.div variants={itemVariants} className="pt-4">
@@ -367,6 +411,17 @@ export default function PackageSelectionPage() {
                 promoRate={promo?.rate || null}
                 showUpgradeDeltas={true}
                 revealComplete={true}
+              />
+            </motion.div>
+
+            {/* Comparison Table */}
+            <motion.div variants={itemVariants}>
+              <PackageComparisonTable
+                selectedId={selectedPackage}
+                currentCoverageYears={currentCoverageYears}
+                isManualStart={isManualStart}
+                includesProp={includesProp}
+                canAddFuelTank={canAddFuelTank}
               />
             </motion.div>
 
