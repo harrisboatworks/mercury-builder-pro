@@ -1263,14 +1263,16 @@ export const UnifiedMobileBar: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               animate={showSelectionFeedback ? {
                 boxShadow: [
-                  '0 0 0 0 rgba(17, 24, 39, 0.3)',
-                  '0 0 0 8px rgba(17, 24, 39, 0)',
-                  '0 0 0 0 rgba(17, 24, 39, 0.3)'
-                ]
+                  '0 4px 20px -4px rgba(17, 24, 39, 0.25), 0 2px 8px -2px rgba(17, 24, 39, 0.15)',
+                  '0 8px 32px -4px rgba(17, 24, 39, 0.5), 0 4px 16px -2px rgba(17, 24, 39, 0.3)',
+                  '0 4px 20px -4px rgba(17, 24, 39, 0.25), 0 2px 8px -2px rgba(17, 24, 39, 0.15)'
+                ],
+                y: [0, -1, 0]
               } : {}}
               transition={{
                 ...springConfig,
-                boxShadow: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
+                boxShadow: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
+                y: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' }
               }}
               onClick={handlePrimary}
               disabled={!hasMotor}
