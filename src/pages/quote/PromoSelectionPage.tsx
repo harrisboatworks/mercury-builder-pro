@@ -31,6 +31,7 @@ export default function PromoSelectionPage() {
   const [selectedOption, setSelectedOption] = useState<PromoOptionId>(
     state.selectedPromoOption || 'cash_rebate'
   );
+  const [hasJustSelected, setHasJustSelected] = useState(false);
 
   const activePromo = promotions.length > 0 ? promotions[0] : null;
   const endDate = activePromo?.end_date ? new Date(activePromo.end_date) : null;
@@ -81,7 +82,11 @@ export default function PromoSelectionPage() {
 
   const handleOptionSelect = (optionId: PromoOptionId) => {
     setSelectedOption(optionId);
-    triggerHaptic('promoSelected');
+    setHasJustSelected(true);
+    triggerHaptic('light');
+    
+    // Auto-reset after 5 seconds
+    setTimeout(() => setHasJustSelected(false), 5000);
   };
 
   const handleContinue = () => {
@@ -298,7 +303,7 @@ export default function PromoSelectionPage() {
               <Button
                 size="lg"
                 onClick={handleContinue}
-                className="px-8 py-6 text-lg font-semibold"
+                className={`px-8 py-6 text-lg font-semibold transition-all ${hasJustSelected ? 'animate-pulse-glow' : ''}`}
               >
                 Choose Package
                 <ArrowRight className="w-5 h-5 ml-2" />

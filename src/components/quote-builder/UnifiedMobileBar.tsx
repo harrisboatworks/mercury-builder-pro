@@ -164,6 +164,7 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
         { delay: 20, message: 'Choose rebate, financing, or deferred payments', icon: 'dollar' },
         { delay: 35, message: 'All options include the same warranty', icon: 'check' },
       ],
+      withSelection: 'Great choice! Tap Continue →',
       encouragement: 'Great choice! One more step →',
     }
   },
@@ -177,6 +178,7 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
         { delay: 20, message: 'Premium extends warranty to 8 years', icon: 'shield' },
         { delay: 35, message: 'All packages include professional rigging', icon: 'award' },
       ],
+      withSelection: 'Perfect package! View your quote →',
       encouragement: 'Package selected! View your quote →',
     }
   },
@@ -336,6 +338,13 @@ export const UnifiedMobileBar: React.FC = () => {
   const displayMotor = state.previewMotor || state.motor;
   const hasMotor = !!displayMotor;
   const isPreview = !!state.previewMotor;
+
+  // Detect promo/package selection for feedback
+  const isPromoPage = location.pathname === '/quote/promo-selection';
+  const isPackagePage = location.pathname === '/quote/package-selection';
+  const hasPromoSelection = isPromoPage && !!state.selectedPromoOption;
+  const hasPackageSelection = isPackagePage && !!state.selectedPackage;
+  const showSelectionFeedback = hasPromoSelection || hasPackageSelection;
 
   // Calculate running total
   const runningTotal = useMemo(() => {
@@ -603,6 +612,14 @@ export const UnifiedMobileBar: React.FC = () => {
       return { message: msg.message, type: msg.type, icon: msg.icon };
     }
 
+    // Priority 0.7: Promo/Package selection feedback - immediate response
+    if (hasPromoSelection && nudges.withSelection) {
+      return { message: nudges.withSelection, type: 'success', icon: 'check' };
+    }
+    if (hasPackageSelection && nudges.withSelection) {
+      return { message: nudges.withSelection, type: 'success', icon: 'check' };
+    }
+
     // Priority 1: Micro-celebration for recent actions
     if (recentAction === 'motor-selected' && nudges.encouragement) {
       return { message: nudges.encouragement, type: 'celebration', icon: 'sparkles' };
@@ -686,7 +703,8 @@ export const UnifiedMobileBar: React.FC = () => {
     comparisonCount, chatMinimizedAt, pageConfig.nudges, recentAction, idleSeconds, hasMotor, quoteProgress.remaining,
     location.pathname, state.tradeInInfo?.estimatedValue, state.selectedOptions?.length,
     isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep,
-    state.configuratorOptions, currentSavings, monthlyPayment, promo
+    state.configuratorOptions, currentSavings, monthlyPayment, promo,
+    hasPromoSelection, hasPackageSelection
   ]);
 
   // Helper to render nudge icon
@@ -1179,7 +1197,17 @@ export const UnifiedMobileBar: React.FC = () => {
           {(hasMotor || location.pathname !== '/quote/motor-selection') && (
             <motion.button
               whileTap={{ scale: 0.95 }}
-              transition={springConfig}
+              animate={showSelectionFeedback ? {
+                boxShadow: [
+                  '0 0 0 0 rgba(17, 24, 39, 0.3)',
+                  '0 0 0 8px rgba(17, 24, 39, 0)',
+                  '0 0 0 0 rgba(17, 24, 39, 0.3)'
+                ]
+              } : {}}
+              transition={{
+                ...springConfig,
+                boxShadow: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
+              }}
               onClick={handlePrimary}
               disabled={!hasMotor}
               className="shrink-0 rounded-xl font-semibold

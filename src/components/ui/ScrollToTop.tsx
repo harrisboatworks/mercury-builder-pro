@@ -71,10 +71,13 @@ export function ScrollToTop() {
     }
 
     // Simplified: Just scroll to top after modal checks
+    // Use smooth scroll for quote builder steps for a premium feel
+    const isQuoteRoute = location.pathname.startsWith('/quote/');
+    
     const timer = setTimeout(() => {
       window.scrollTo({
         top: 0,
-        behavior: 'auto'
+        behavior: isQuoteRoute ? 'smooth' : 'auto'
       });
 
       // Focus on the main content for accessibility

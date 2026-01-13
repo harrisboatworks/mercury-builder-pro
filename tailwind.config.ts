@@ -172,6 +172,15 @@ export default {
 				'shimmer-sweep': {
 					'0%': { transform: 'translateX(-100%)' },
 					'100%': { transform: 'translateX(100%)' }
+				},
+				// Subtle CTA pulse glow
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 0 0 rgba(17, 24, 39, 0.3)' 
+					},
+					'50%': { 
+						boxShadow: '0 0 0 8px rgba(17, 24, 39, 0)' 
+					}
 				}
 			},
 			animation: {
@@ -186,6 +195,7 @@ export default {
 				'shimmer': 'shimmer 2s infinite linear',
 				'float': 'float 3s ease-in-out infinite',
 				'shimmer-sweep': 'shimmer-sweep 3s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
 				// Combined Animations
 				'enter': 'fade-in 0.3s ease-out, scale-in 0.2s ease-out',
 				'exit': 'fade-out 0.3s ease-out, scale-out 0.2s ease-out'
