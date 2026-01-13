@@ -305,6 +305,9 @@ export default function PackageSelectionPage() {
   const handleContinue = () => {
     // Require explicit selection before continuing
     if (!selectedPackage) return;
+    
+    // Clear cinematic flag so it shows fresh on summary page
+    sessionStorage.removeItem('quote-reveal-seen');
     navigate('/quote/summary');
   };
 
