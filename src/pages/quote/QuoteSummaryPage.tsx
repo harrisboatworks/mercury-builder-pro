@@ -11,7 +11,7 @@ import { UpgradeNudgeBar } from '@/components/quote-builder/UpgradeNudgeBar';
 import { PromoPanel } from '@/components/quote-builder/PromoPanel';
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
-import { PromoSummaryCard } from '@/components/quote-builder/PromoSummaryCard';
+import { PromoSelectionBadge } from '@/components/quote-builder/PromoSelectionBadge';
 import MotorHeader from '@/components/quote-builder/MotorHeader';
 import CoverageComparisonTooltip from '@/components/quote-builder/CoverageComparisonTooltip';
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
@@ -149,6 +149,13 @@ export default function QuoteSummaryPage() {
     desc.content = 'Review your complete Mercury outboard motor quote with pricing, financing options, and bonus offers.';
   }, []);
 
+  // Redirect to promo selection if no promo option selected
+  useEffect(() => {
+    if (isMounted && state.motor && !state.selectedPromoOption) {
+      navigate('/quote/promo-selection');
+    }
+  }, [isMounted, state.motor, state.selectedPromoOption, navigate]);
+
   // NOTE: Celebration animation moved to QuoteRevealCinematic component
 
   const handleStepComplete = () => {
@@ -157,11 +164,8 @@ export default function QuoteSummaryPage() {
   };
 
   const handleBack = () => {
-    if (state.purchasePath === 'installed') {
-      navigate('/quote/installation');
-    } else {
-      navigate('/quote/trade-in');
-    }
+    // Always go back to promo selection from summary
+    navigate('/quote/promo-selection');
   };
 
   const quoteData = getQuoteData();
@@ -905,10 +909,9 @@ export default function QuoteSummaryPage() {
                   }
                 }}
               >
-                <PromoSummaryCard
+                <PromoSelectionBadge
                   motorHP={motorHp}
                   selectedOption={state.selectedPromoOption}
-                  onChangeOption={(option) => dispatch({ type: 'SET_PROMO_OPTION', payload: option })}
                   endDate={promoEndDate}
                 />
               </motion.div>

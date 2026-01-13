@@ -49,7 +49,7 @@ export default function InstallationPage() {
   const handleStepComplete = (installConfig: any) => {
     dispatch({ type: 'SET_INSTALL_CONFIG', payload: installConfig });
     dispatch({ type: 'COMPLETE_STEP', payload: 5 });
-    navigate('/quote/summary');
+    navigate('/quote/promo-selection');
   };
 
   const handleBack = () => {
