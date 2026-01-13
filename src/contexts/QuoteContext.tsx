@@ -222,11 +222,11 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   useEffect(() => {
     console.log('🔄 QuoteContext: Starting localStorage load...');
     
-    // Safety timeout to prevent infinite loading - reduced to 3 seconds for faster recovery
+    // Safety timeout to prevent infinite loading - reduced to 1.5 seconds for faster recovery
     const loadingTimeout = setTimeout(() => {
-      console.warn('⚠️ QuoteContext: Loading timeout reached (3s), forcing isLoading: false');
+      console.warn('⚠️ QuoteContext: Loading timeout reached (1.5s), forcing isLoading: false');
       dispatch({ type: 'SET_LOADING', payload: false });
-    }, 3000);
+    }, 1500);
 
     try {
       const saved = localStorage.getItem('quoteBuilder');
