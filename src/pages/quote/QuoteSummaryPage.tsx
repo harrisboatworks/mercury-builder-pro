@@ -61,7 +61,7 @@ export default function QuoteSummaryPage() {
   const navigate = useNavigate();
   const { state, dispatch, getQuoteData } = useQuote();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getRebateForHP } = useActivePromotions();
+  const { promotions, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { toast } = useToast();
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
@@ -168,12 +168,11 @@ export default function QuoteSummaryPage() {
         startDate.setMonth(startDate.getMonth() + 6);
         return `Payments begin ${startDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`;
       case 'special_financing':
-        return '2.99%';
+        const rates = getSpecialFinancingRates();
+        return rates?.[0]?.rate ? `${rates[0].rate}%` : '2.99%';
       case 'cash_rebate':
-        if (motorHP >= 200) return '$750';
-        if (motorHP >= 115) return '$500';
-        if (motorHP >= 40) return '$300';
-        return '$200';
+        const rebate = getRebateForHP(motorHP);
+        return rebate ? `$${rebate.toLocaleString()}` : '$0';
       default:
         return '';
     }
