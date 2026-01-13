@@ -9,7 +9,8 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useMotorViewSafe } from '@/contexts/MotorViewContext';
 import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
-import { getContextualPromptsWithPromo, getPageWelcomeMessage, isMotorFocusedPage } from './getContextualPrompts';
+import { getContextualPromptsWithPerplexity, getPageWelcomeMessage, isMotorFocusedPage } from './getContextualPrompts';
+import { usePageSpecificInsights } from '@/hooks/usePageSpecificInsights';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
@@ -201,7 +202,13 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const { promotions } = useActivePromotions();
   const mainPromo = promotions[0] || null;
 
-  // Get contextual prompts based on motor and page (with promo awareness)
+  // Get Perplexity-backed page insights
+  const { insights: pageInsights } = usePageSpecificInsights(location.pathname);
+  const perplexityQuestions = useMemo(() => {
+    return pageInsights.map(i => i.questionForm);
+  }, [pageInsights]);
+
+  // Get contextual prompts based on motor, page, promo, and Perplexity insights
   const contextualPrompts = useMemo(() => {
     // Use preview motor (currently viewing) or selected motor
     const activeMotor = state.previewMotor || state.motor;
@@ -210,8 +217,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
       hp: activeMotor.hp || 0
     } : null;
     
-    return getContextualPromptsWithPromo(motor, state.boatInfo, location.pathname, mainPromo);
-  }, [state.previewMotor, state.motor, state.boatInfo, location.pathname, mainPromo]);
+    return getContextualPromptsWithPerplexity(motor, state.boatInfo, location.pathname, mainPromo, perplexityQuestions);
+  }, [state.previewMotor, state.motor, state.boatInfo, location.pathname, mainPromo, perplexityQuestions]);
 
   // Get contextual welcome message - uses centralized function for consistency
   const getWelcomeMessage = useCallback((): string => {

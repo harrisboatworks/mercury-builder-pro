@@ -7,7 +7,8 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useMotorViewSafe } from '@/contexts/MotorViewContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { streamChat, detectComparisonQuery } from '@/lib/streamParser';
-import { getContextualPromptsWithPromo, getPageWelcomeMessage, isMotorFocusedPage } from './getContextualPrompts';
+import { getContextualPromptsWithPerplexity, getPageWelcomeMessage, isMotorFocusedPage } from './getContextualPrompts';
+import { usePageSpecificInsights } from '@/hooks/usePageSpecificInsights';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
@@ -159,7 +160,13 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
     const { promotions } = useActivePromotions();
     const mainPromo = promotions[0] || null;
 
-    // Get contextual prompts based on motor and page (with promo awareness)
+    // Get Perplexity-backed page insights
+    const { insights: pageInsights } = usePageSpecificInsights(location.pathname);
+    const perplexityQuestions = useMemo(() => {
+      return pageInsights.map(i => i.questionForm);
+    }, [pageInsights]);
+
+    // Get contextual prompts based on motor, page, promo, and Perplexity insights
     const contextualPrompts = useMemo(() => {
       const activeMotor = state.previewMotor || state.motor;
       const motor = activeMotor ? {
@@ -167,8 +174,8 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
         hp: activeMotor.hp || 0
       } : null;
       
-      return getContextualPromptsWithPromo(motor, state.boatInfo, location.pathname, mainPromo);
-    }, [state.previewMotor, state.motor, state.boatInfo, location.pathname, mainPromo]);
+      return getContextualPromptsWithPerplexity(motor, state.boatInfo, location.pathname, mainPromo, perplexityQuestions);
+    }, [state.previewMotor, state.motor, state.boatInfo, location.pathname, mainPromo, perplexityQuestions]);
 
     // Track which motor the welcome message was generated for
     const welcomeMotorIdRef = useRef<string | null>(null);
