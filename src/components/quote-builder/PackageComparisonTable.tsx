@@ -3,9 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ChevronRight, Check, Minus } from 'lucide-react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { cn } from '@/lib/utils';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 interface PackageComparisonTableProps {
   selectedId: string;
+  onSelectPackage?: (packageId: string) => void;
   currentCoverageYears: number;
   isManualStart: boolean;
   includesProp: boolean;
@@ -47,6 +49,7 @@ const PACKAGE_LABELS_SHORT = {
 
 export function PackageComparisonTable({
   selectedId,
+  onSelectPackage,
   currentCoverageYears,
   isManualStart,
   includesProp,
@@ -56,6 +59,13 @@ export function PackageComparisonTable({
   const [hasScrolled, setHasScrolled] = useState(false);
   const [showSwipeHint, setShowSwipeHint] = useState(true);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { triggerHaptic } = useHapticFeedback();
+
+  // Handle quick select from column header
+  const handleColumnSelect = (packageId: string) => {
+    triggerHaptic('packageChanged');
+    onSelectPackage?.(packageId);
+  };
 
   // Filter features based on conditions
   const filteredFeatures = COMPARISON_FEATURES.filter(feature => {
@@ -148,13 +158,23 @@ export function PackageComparisonTable({
                           {(['good', 'better', 'best'] as const).map((pkg) => (
                             <th 
                               key={pkg}
+                              onClick={() => handleColumnSelect(pkg)}
                               className={cn(
-                                "p-3 text-center text-sm font-semibold transition-colors min-w-[80px]",
+                                "p-3 text-center text-sm font-semibold transition-all min-w-[80px] cursor-pointer relative",
+                                "hover:bg-primary/20 active:scale-95",
                                 selectedId === pkg 
                                   ? "bg-primary/10 text-primary" 
-                                  : "text-foreground"
+                                  : "text-foreground hover:text-primary"
                               )}
                             >
+                              {/* Selected column top indicator */}
+                              {selectedId === pkg && (
+                                <motion.div
+                                  layoutId="column-header-highlight"
+                                  className="absolute inset-x-0 top-0 h-1 bg-primary rounded-t"
+                                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                                />
+                              )}
                               <span className="hidden sm:inline">{PACKAGE_LABELS[pkg]}</span>
                               <span className="sm:hidden">{PACKAGE_LABELS_SHORT[pkg]}</span>
                             </th>
@@ -181,11 +201,21 @@ export function PackageComparisonTable({
                             {(['good', 'better', 'best'] as const).map((pkg) => (
                               <td 
                                 key={pkg}
+                                onClick={() => handleColumnSelect(pkg)}
                                 className={cn(
-                                  "p-3",
+                                  "p-3 relative cursor-pointer transition-colors",
+                                  "hover:bg-primary/10",
                                   selectedId === pkg && "bg-primary/5"
                                 )}
                               >
+                                {/* Selected column highlight bar */}
+                                {selectedId === pkg && (
+                                  <motion.div
+                                    layoutId={`column-cell-highlight-${idx}`}
+                                    className="absolute inset-y-0 left-0 w-0.5 bg-primary"
+                                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                                  />
+                                )}
                                 <div className="flex justify-center">
                                   {renderCheckmark(feature[pkg], pkg)}
                                 </div>
