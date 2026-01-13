@@ -4,6 +4,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 import StickyQuoteBar from './StickyQuoteBar';
 
 export function GlobalStickyQuoteBar() {
@@ -12,6 +13,7 @@ export function GlobalStickyQuoteBar() {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const { promo } = useActiveFinancingPromo();
+  const { getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
 
   // Pages where bar should NOT show
   const hideOnPages = [
@@ -119,6 +121,29 @@ export function GlobalStickyQuoteBar() {
     return null;
   }, [location.pathname]);
 
+  // Get promo display for selected option (future-proof: uses active promo data)
+  const selectedPromoDisplay = useMemo(() => {
+    if (!state.selectedPromoOption) return null;
+    
+    const hp = state.motor?.hp || 0;
+    
+    switch (state.selectedPromoOption) {
+      case 'no_payments':
+        return '6 Mo. No Payments';
+      case 'special_financing': {
+        const rates = getSpecialFinancingRates?.();
+        const lowestRate = rates?.[0]?.rate ?? 2.99;
+        return `${lowestRate}% APR`;
+      }
+      case 'cash_rebate': {
+        const rebate = getRebateForHP?.(hp);
+        return rebate ? `$${rebate} Rebate` : 'Cash Rebate';
+      }
+      default:
+        return null;
+    }
+  }, [state.selectedPromoOption, state.motor?.hp, getRebateForHP, getSpecialFinancingRates]);
+
   // Handle primary action (Continue)
   const handlePrimary = () => {
     const path = location.pathname;
@@ -150,6 +175,8 @@ export function GlobalStickyQuoteBar() {
       onPrimary={handlePrimary}
       secondaryLabel="View Summary"
       onSecondary={handleSecondary}
+      selectedPromoOption={state.selectedPromoOption}
+      selectedPromoDisplay={selectedPromoDisplay}
     />
   );
 }
