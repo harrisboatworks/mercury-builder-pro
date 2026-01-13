@@ -52,6 +52,7 @@ export default function PackageSelectionPage() {
   const [selectedPackage, setSelectedPackage] = useState<string>(
     state.selectedPackage?.id || 'good'
   );
+  const [hasJustSelected, setHasJustSelected] = useState(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
@@ -265,6 +266,10 @@ export default function PackageSelectionPage() {
 
   const handlePackageSelect = (packageId: string) => {
     setSelectedPackage(packageId);
+    setHasJustSelected(true);
+    
+    // Auto-reset after 5 seconds
+    setTimeout(() => setHasJustSelected(false), 5000);
     
     // Update warranty config
     const selectedPkg = packages.find(p => p.id === packageId);
@@ -535,7 +540,7 @@ export default function PackageSelectionPage() {
               <Button
                 onClick={handleContinue}
                 size="lg"
-                className="w-full md:w-auto md:min-w-[280px] md:mx-auto md:flex bg-white text-stone-900 hover:bg-stone-100 font-semibold text-lg h-14 rounded-xl shadow-lg shadow-white/10"
+                className={`w-full md:w-auto md:min-w-[280px] md:mx-auto md:flex bg-white text-stone-900 hover:bg-stone-100 font-semibold text-lg h-14 rounded-xl shadow-lg shadow-white/10 transition-all ${hasJustSelected ? 'animate-pulse-glow' : ''}`}
               >
                 Continue to Summary
               </Button>
