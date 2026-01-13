@@ -36,7 +36,7 @@ interface PageNudges {
 
 interface PageConfig {
   primaryLabel: string | ((state: any, hasMotor: boolean) => string);
-  nextPath: string;
+  nextPath: string | ((state: any) => string);
   aiMessage: string;
   nudges: PageNudges;
 }
@@ -115,7 +115,7 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
   },
   '/quote/trade-in': {
     primaryLabel: (state) => state.tradeInInfo?.estimatedValue ? 'Apply Trade-In' : 'Skip Trade-In',
-    nextPath: '/quote/installation',
+    nextPath: (state) => state.purchasePath === 'installed' ? '/quote/installation' : '/quote/promo-selection',
     aiMessage: 'Curious about trade-in values or the process?',
     nudges: {
       idle: [
@@ -130,7 +130,7 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
   },
   '/quote/installation': {
     primaryLabel: 'Continue',
-    nextPath: '/quote/fuel-tank',
+    nextPath: '/quote/promo-selection',
     aiMessage: 'Questions about installation or rigging?',
     nudges: {
       idle: [
@@ -142,8 +142,8 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     }
   },
   '/quote/fuel-tank': {
-    primaryLabel: 'View Summary',
-    nextPath: '/quote/summary',
+    primaryLabel: 'Continue',
+    nextPath: '/quote/promo-selection',
     aiMessage: 'Need help choosing a fuel tank size?',
     nudges: {
       idle: [
@@ -152,6 +152,32 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
         { delay: 40, message: 'Larger tanks = fewer fill-ups', icon: 'dollar' },
       ],
       encouragement: 'Ready for the water! Final step →',
+    }
+  },
+  '/quote/promo-selection': {
+    primaryLabel: 'Choose Package',
+    nextPath: '/quote/package-selection',
+    aiMessage: 'Questions about the Mercury promotion options?',
+    nudges: {
+      idle: [
+        { delay: 10, message: '7 years factory warranty included!', icon: 'shield' },
+        { delay: 20, message: 'Choose rebate, financing, or deferred payments', icon: 'dollar' },
+        { delay: 35, message: 'All options include the same warranty', icon: 'check' },
+      ],
+      encouragement: 'Great choice! One more step →',
+    }
+  },
+  '/quote/package-selection': {
+    primaryLabel: 'View Summary',
+    nextPath: '/quote/summary',
+    aiMessage: 'Need help choosing a coverage package?',
+    nudges: {
+      idle: [
+        { delay: 10, message: 'Complete is our most popular package', icon: 'check' },
+        { delay: 20, message: 'Premium extends warranty to 8 years', icon: 'shield' },
+        { delay: 35, message: 'All packages include professional rigging', icon: 'award' },
+      ],
+      encouragement: 'Package selected! View your quote →',
     }
   },
   '/quote/schedule': {
@@ -689,7 +715,11 @@ export const UnifiedMobileBar: React.FC = () => {
     if (isPreview && location.pathname === '/quote/motor-selection' && state.previewMotor) {
       dispatch({ type: 'SET_MOTOR', payload: state.previewMotor });
     }
-    navigate(pageConfig.nextPath);
+    // Support dynamic nextPath based on state
+    const targetPath = typeof pageConfig.nextPath === 'function'
+      ? pageConfig.nextPath(state)
+      : pageConfig.nextPath;
+    navigate(targetPath);
   };
 
   const handleOpenAI = () => {
