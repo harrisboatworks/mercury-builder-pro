@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Shield, Sparkles } from 'lucide-react';
+import { ArrowLeft, Shield, Sparkles, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageTransition } from '@/components/ui/page-transition';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
@@ -13,6 +13,7 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
+import { getPackageRecommendation } from '@/lib/package-recommendation';
 
 // Package warranty year constants
 const COMPLETE_TARGET_YEARS = 7;
@@ -76,6 +77,13 @@ export default function PackageSelectionPage() {
   const motorName = motor?.model ?? motor?.name ?? "Mercury Outboard";
   const hp = quoteData.motor?.hp || motor?.hp || motor?.horsepower || 0;
   const motorHP = hp;
+  const boatType = state.boatInfo?.type || quoteData.boatInfo?.type;
+
+  // Get smart package recommendation based on boat type and motor HP
+  const recommendation = useMemo(() => 
+    getPackageRecommendation(boatType, motorHP, state.purchasePath),
+    [boatType, motorHP, state.purchasePath]
+  );
 
   // Motor type calculations
   const motorModel = motor?.model || '';
@@ -140,7 +148,7 @@ export default function PackageSelectionPage() {
   // Base subtotal
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost + selectedOptionsTotal - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
 
-  // Package options
+  // Package options with smart recommendations
   const packages: PackageOption[] = useMemo(() => [
     { 
       id: "good", 
@@ -154,7 +162,9 @@ export default function PackageSelectionPage() {
         isManualTiller && tillerInstallCost === 0 ? "DIY clamp-on mounting" : "Basic installation",
         "Customer supplies battery (if needed)"
       ],
-      coverageYears: currentCoverageYears
+      coverageYears: currentCoverageYears,
+      recommended: recommendation.packageId === 'good',
+      recommendationReason: recommendation.packageId === 'good' ? recommendation.reason : undefined
     },
     { 
       id: "better", 
@@ -168,9 +178,10 @@ export default function PackageSelectionPage() {
         completeWarrantyCost > 0 ? `Warranty extension: $${completeWarrantyCost}` : `Already includes ${COMPLETE_TARGET_YEARS}yr coverage`,
         "Priority installation"
       ].filter(Boolean),
-      recommended: true,
       coverageYears: COMPLETE_TARGET_YEARS,
-      targetWarrantyYears: COMPLETE_TARGET_YEARS
+      targetWarrantyYears: COMPLETE_TARGET_YEARS,
+      recommended: recommendation.packageId === 'better',
+      recommendationReason: recommendation.packageId === 'better' ? recommendation.reason : undefined
     },
     { 
       id: "best", 
@@ -186,9 +197,11 @@ export default function PackageSelectionPage() {
         "White-glove installation"
       ].filter(Boolean),
       coverageYears: PREMIUM_TARGET_YEARS,
-      targetWarrantyYears: PREMIUM_TARGET_YEARS
+      targetWarrantyYears: PREMIUM_TARGET_YEARS,
+      recommended: recommendation.packageId === 'best',
+      recommendationReason: recommendation.packageId === 'best' ? recommendation.reason : undefined
     },
-  ], [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank]);
+  ], [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank, recommendation]);
 
   // Calculate monthly payments for upgrade nudges
   const essentialPackage = packages.find(p => p.id === 'good') || packages[0];
@@ -317,6 +330,31 @@ export default function PackageSelectionPage() {
                   Select the level of protection that's right for your{' '}
                   <span className="text-white font-medium">{motorName}</span>
                 </p>
+              </div>
+            </motion.div>
+
+            {/* Smart Recommendation Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.4, type: "spring" }}
+              className="relative mx-auto max-w-md"
+            >
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500/20 via-yellow-500/20 to-amber-500/20 border border-amber-500/30 px-5 py-3">
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                
+                <div className="relative flex items-center justify-center gap-3">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-500/20">
+                    <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                  </div>
+                  <div className="text-center">
+                    <p className="text-sm font-semibold text-amber-300">
+                      Recommended for You: {recommendation.packageId === 'good' ? 'Essential' : recommendation.packageId === 'better' ? 'Complete' : 'Premium'}
+                    </p>
+                    <p className="text-xs text-amber-400/80">{recommendation.reason}</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
