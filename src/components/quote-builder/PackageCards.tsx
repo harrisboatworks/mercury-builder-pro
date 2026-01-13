@@ -5,7 +5,7 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE } from "@/lib/finance";
 import { cn } from "@/lib/utils";
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useSound } from '@/contexts/SoundContext';
-import { TrendingUp, Shield, Check } from 'lucide-react';
+import { TrendingUp, Shield, Check, Star } from 'lucide-react';
 
 // Container variants for staggered entrance
 const containerVariants = {
@@ -45,6 +45,7 @@ export type PackageOption = {
   monthly?: number;
   features: string[];
   recommended?: boolean;
+  recommendationReason?: string; // Dynamic reason for smart recommendation
   coverageYears?: number;
   targetWarrantyYears?: number; // used only to trigger selection handler
 };
@@ -130,12 +131,15 @@ export function PackageCards({
             )}
             
             {p.recommended && (
-              <span className={cn(
-                "absolute right-3 top-3 rounded-full bg-blue-50 px-2 py-0.5 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-200 premium-pulse",
+              <div className={cn(
+                "absolute right-3 top-3 flex flex-col items-end gap-1",
                 isSelected && "sm:right-3"
               )}>
-                Recommended
-              </span>
+                <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-amber-50 to-yellow-50 px-2.5 py-1 text-xs font-semibold text-amber-700 ring-1 ring-inset ring-amber-300 shadow-sm">
+                  <Star className="w-3 h-3 fill-amber-500 text-amber-500" />
+                  For You
+                </span>
+              </div>
             )}
 
             <div className="pr-20">
