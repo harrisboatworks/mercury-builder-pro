@@ -34,6 +34,8 @@ interface PricingTableProps {
   // Selected promo option from "Choose One" bonus
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoValue?: string;
+  // Callback to open promo selector modal
+  onChangeBonus?: () => void;
 }
 
 export function PricingTable({ 
@@ -46,7 +48,8 @@ export function PricingTable({
   includesInstallation = false,
   onApplyForFinancing,
   selectedPromoOption,
-  selectedPromoValue
+  selectedPromoValue,
+  onChangeBonus
 }: PricingTableProps) {
   return (
     <Card className="p-6 space-y-1 bg-white">
@@ -131,9 +134,19 @@ export function PricingTable({
         {/* Selected Promo Bonus (Choose One) */}
         {selectedPromoOption && (
           <div className="mt-3 mb-2 p-3 bg-green-50 border border-green-200 rounded-lg">
-            <div className="flex items-center gap-2 text-sm font-medium text-green-800">
-              <span className="text-green-600">✓</span>
-              <span>YOUR SELECTED BONUS</span>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2 text-sm font-medium text-green-800">
+                <span className="text-green-600">✓</span>
+                <span>YOUR SELECTED BONUS</span>
+              </div>
+              {onChangeBonus && (
+                <button 
+                  onClick={onChangeBonus}
+                  className="text-xs text-green-700 hover:text-green-900 hover:underline font-medium transition-colors"
+                >
+                  Change
+                </button>
+              )}
             </div>
             <div className="mt-1 text-sm text-green-700 font-medium pl-5">
               {selectedPromoOption === 'no_payments' && (

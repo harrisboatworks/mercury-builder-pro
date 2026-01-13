@@ -25,6 +25,7 @@ const navItems = [
   { label: "SIN Encryption", to: "/admin/sin-encryption-test" },
   { label: "Zapier Integration", to: "/admin/zapier" },
   { label: "Email Management", to: "/admin/email" },
+  { label: "Abandoned Quotes", to: "/admin/abandoned-quotes" },
   { label: "Blog", to: "/admin/blog" },
   { label: "Payments", to: "/admin/payments" },
   { label: "SMS Alerts", to: "/admin/sms" },
