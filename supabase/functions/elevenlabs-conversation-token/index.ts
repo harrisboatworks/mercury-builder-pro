@@ -128,10 +128,12 @@ function formatPromotionData(promotions: any[]) {
     }
     
     // Handle "Choose One" promo_options (Get 7 + Choose One structure)
-    if (promo.promo_options && Array.isArray(promo.promo_options) && promo.promo_options.length > 0) {
+    // promo_options is an object with an "options" array, not an array itself
+    const promoOptions = promo.promo_options?.options;
+    if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
       formatted += `\n**CUSTOMER CHOOSES ONE BONUS (explain these options when asked):**\n`;
       
-      promo.promo_options.forEach((option: any, idx: number) => {
+      promoOptions.forEach((option: any, idx: number) => {
         formatted += `\n${idx + 1}. **${option.title || 'Option'}**`;
         if (option.description) formatted += ` — ${option.description}`;
         formatted += `\n`;
