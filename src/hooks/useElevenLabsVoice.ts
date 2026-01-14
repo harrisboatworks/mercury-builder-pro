@@ -946,7 +946,9 @@ async function handleCheckCurrentDeals(params: {
     }
     
     // Include Choose One options if available
-    const promoOptions = mainPromo.promo_options as any;
+    // promo_options is an object with an "options" array, not an array itself
+    const promoOptionsData = mainPromo.promo_options as any;
+    const promoOptions = promoOptionsData?.options;
     if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
       message += ` Plus you get to choose one bonus: `;
       const optionTitles = promoOptions.map((o: any) => o.title || 'bonus option').filter(Boolean);
