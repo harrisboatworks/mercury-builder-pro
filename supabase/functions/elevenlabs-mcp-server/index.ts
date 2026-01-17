@@ -894,7 +894,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       return { 
         content: [{ 
           type: "text", 
-          text: `Harris Boat Works is located at:\n\n📍 1230 County Road 2\nGrafton, Ontario K0K 2G0\n\nWe're right on Highway 2, about 15 minutes west of Cobourg. Look for the Mercury Marine sign!\n\n📞 Phone: (905) 342-9980\n\nWant me to text you the Google Maps link?` 
+          text: `Harris Boat Works is located at:\n\n📍 5369 Harris Boat Works Rd\nGores Landing, Ontario K0K 2E0\n\nWe're right on Rice Lake, about 30 minutes from Peterborough and easy to reach from Cobourg and Port Hope. Look for the Mercury Marine sign!\n\n📞 Phone: (905) 342-2153\n\nWant me to text you the Google Maps link?` 
         }] 
       };
     }
