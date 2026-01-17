@@ -615,7 +615,7 @@ We're boaters ourselves. We fish these lakes, we know these conditions, and we s
     faqs: [
       {
         question: 'Where is Harris Boat Works located?',
-        answer: 'We\'re located in Bewdley, Ontario, just minutes from Rice Lake and easily accessible from Peterborough, Cobourg, Port Hope, and the greater Kawarthas region.'
+        answer: 'We\'re located at 5369 Harris Boat Works Rd in Gores Landing, Ontario, right on Rice Lake. We\'re easily accessible from Peterborough, Cobourg, Port Hope, and the greater Kawarthas region.'
       },
       {
         question: 'Do you offer financing on Mercury motors?',
