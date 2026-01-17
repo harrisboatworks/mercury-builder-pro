@@ -41,6 +41,13 @@ Deno.serve(async (req) => {
 
     console.log('🔄 Starting Google Sheets sync:', sheetUrl);
 
+    // IMPORTANT: This function ONLY READS from the Google Sheet
+    // It NEVER writes or modifies the sheet in any way
+    // All updates go to the Supabase motor_models table only
+    
+    // Target sheet: "New Mercury Motors" (gid=1323498498)
+    const NEW_MERCURY_MOTORS_GID = '1323498498';
+    
     // Convert various Google Sheets URL formats to CSV export format
     let csvUrl = sheetUrl;
     
@@ -49,25 +56,23 @@ Deno.serve(async (req) => {
       // Extract the spreadsheet ID
       const match = sheetUrl.match(/\/d\/([a-zA-Z0-9-_]+)/);
       if (match) {
-        csvUrl = `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv`;
+        // Always target the "New Mercury Motors" sheet specifically
+        csvUrl = `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv&gid=${NEW_MERCURY_MOTORS_GID}`;
       }
     } else if (sheetUrl.includes('/pubhtml')) {
       csvUrl = sheetUrl.replace('/pubhtml', '/pub');
-      if (csvUrl.includes('?')) {
-        const baseUrl = csvUrl.split('?')[0];
-        const urlParams = new URLSearchParams(csvUrl.split('?')[1]);
-        const gid = urlParams.get('gid') || '0';
-        csvUrl = `${baseUrl}?gid=${gid}&output=csv`;
-      } else {
-        csvUrl = `${csvUrl}?output=csv`;
-      }
+      // Override with specific sheet gid
+      const baseUrl = csvUrl.split('?')[0];
+      csvUrl = `${baseUrl}?gid=${NEW_MERCURY_MOTORS_GID}&output=csv`;
     } else if (!sheetUrl.includes('/export')) {
-      // Generic fallback - try to convert to export URL
+      // Generic fallback - try to convert to export URL with specific sheet
       const match = sheetUrl.match(/\/d\/([a-zA-Z0-9-_]+)/);
       if (match) {
-        csvUrl = `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv`;
+        csvUrl = `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv&gid=${NEW_MERCURY_MOTORS_GID}`;
       }
     }
+    
+    console.log('📋 Targeting sheet: New Mercury Motors (gid=' + NEW_MERCURY_MOTORS_GID + ')');
 
     console.log('📄 Fetching CSV from:', csvUrl);
 
