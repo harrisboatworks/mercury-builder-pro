@@ -89,7 +89,7 @@ export function getVisibleMotorsSummary(): {
     };
   }
   
-  const inStockCount = motors.filter(m => m.in_stock).length;
+  const inStockCount = motors.filter(m => m.in_stock).reduce((sum, m) => sum + ((m as any).stock_quantity || 1), 0);
   const prices = motors.map(m => m.price).filter(p => p > 0);
   
   // Check for start types by looking at model names
