@@ -26,7 +26,7 @@ import { HPMotorCard } from '@/components/motors/HPMotorCard';
 // ViewModeToggle removed - using expert view only
 import { MotorConfiguratorModal } from '@/components/motors/MotorConfiguratorModal';
 import { ConfigFilterSheet, type ConfigFiltersState } from '@/components/motors/ConfigFilterSheet';
-import { StockCountIndicator } from '@/components/motors/StockCountIndicator';
+
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
@@ -901,10 +901,6 @@ if (event.type === 'filter_motors') {
             />
             
             <div className="flex items-center justify-between mt-3">
-              <StockCountIndicator 
-                motors={processedMotors}
-                onFilterInStock={() => setConfigFilters(prev => ({ ...prev, inStock: true }))}
-              />
               {(searchQuery || configFilters) && (
                 <div className="text-xs text-luxury-gray">
                   {finalFilteredMotors.length} results
