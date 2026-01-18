@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift, Package, AlertCircle as AlertCircleIcon, ChevronLeft } from "lucide-react";
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
+import { SpecSheetPDFDownload } from './SpecSheetPDFDownload';
 import { supabase } from "../../integrations/supabase/client";
 import { Button } from "../ui/button";
 import { toast } from "sonner";
@@ -848,32 +847,12 @@ export default function MotorDetailsSheet({
                               Clean, professional specification sheet
                             </p>
                           </div>
-                          <PDFDownloadLink
-                            document={
-                              <CleanSpecSheetPDF 
-                                motorData={{
-                                  motor: motor,
-                                  promotions: activePromotions,
-                                  motorModel: motor?.model || title
-                                }} 
-                              />
-                            }
-                            fileName={`${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`}
-                          >
-                            {({ loading }) => (
-                              <Button 
-                                variant="outline"
-                                size="sm"
-                                disabled={loading}
-                              >
-                                {loading ? (
-                                  <Loader2 className="w-4 h-4 animate-spin" />
-                                ) : (
-                                  <Download className="w-4 h-4" />
-                                )}
-                              </Button>
-                            )}
-                          </PDFDownloadLink>
+                          <SpecSheetPDFDownload
+                            motor={motor}
+                            promotions={activePromotions}
+                            motorModel={motor?.model || title}
+                            className="p-2 border border-gray-200 rounded-md hover:bg-gray-50 transition-colors"
+                          />
                         </div>
                       </div>
 

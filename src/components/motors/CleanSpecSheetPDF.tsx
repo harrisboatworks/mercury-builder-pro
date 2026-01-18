@@ -234,6 +234,28 @@ const styles = StyleSheet.create({
     color: colors.text,
   },
   
+  // Insights section - "Why Boaters Love It"
+  insightsBox: {
+    padding: 6,
+    backgroundColor: '#f0f9ff',
+    borderLeft: '1.5 solid #3b82f6',
+    marginBottom: 6,
+  },
+  
+  insightsTitle: {
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: '#1e40af',
+    marginBottom: 4,
+  },
+  
+  insightItem: {
+    fontSize: 7,
+    color: '#374151',
+    marginBottom: 3,
+    paddingLeft: 6,
+  },
+  
   // Footer - fixed at bottom
   footer: {
     position: 'absolute',
@@ -291,11 +313,12 @@ interface CleanSpecSheetPDFProps {
     motor: any;
     promotions: any[];
     motorModel: string;
+    insights?: string[];
   };
 }
 
 export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
-  const { motor, promotions, motorModel } = motorData;
+  const { motor, promotions, motorModel, insights } = motorData;
   
   // Extract HP from model name
   const modelName = motor.model || motorModel;
@@ -488,6 +511,16 @@ export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
                     </View>
                   ))}
                 </View>
+              </View>
+            )}
+
+            {/* Why Boaters Love This Motor - Perplexity Insights */}
+            {insights && insights.length > 0 && (
+              <View style={styles.insightsBox}>
+                <Text style={styles.insightsTitle}>Why Boaters Love This Motor</Text>
+                {insights.slice(0, 3).map((insight, idx) => (
+                  <Text key={idx} style={styles.insightItem}>• {insight}</Text>
+                ))}
               </View>
             )}
           </View>
