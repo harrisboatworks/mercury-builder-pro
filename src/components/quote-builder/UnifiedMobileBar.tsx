@@ -8,6 +8,7 @@ import { useVoiceSafe } from '@/contexts/VoiceContext';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
 import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { money } from '@/lib/money';
@@ -15,7 +16,7 @@ import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { cn } from '@/lib/utils';
 import { getHPRange, HP_SPECIFIC_MESSAGES, MOTOR_FAMILY_TIPS, getMotorFamilyKey, getMotorFamilyConfiguratorTip } from '@/components/chat/conversationalMessages';
-import { EXPERT_NUDGES, getRecommendedHPRange, isUnderpowered, getRotatingNudge } from '@/lib/quote-nudges';
+import { EXPERT_NUDGES, getRecommendedHPRange, isUnderpowered, getRotatingNudge, PROMO_AWARENESS_NUDGES, getChatNudgesForPath, ChatEngagementNudge } from '@/lib/quote-nudges';
 import { usePageSpecificInsights } from '@/hooks/usePageSpecificInsights';
 
 // Nudge types for different visual treatments
@@ -25,6 +26,7 @@ interface NudgeMessage {
   delay: number;
   message: string;
   icon?: string;
+  aiPrompt?: string; // For chat engagement nudges
 }
 
 interface PageNudges {
@@ -312,6 +314,12 @@ export const UnifiedMobileBar: React.FC = () => {
     clearComparison 
   } = useMotorComparison();
   
+  // Get promotions for warranty years and end date
+  const { promotions: activePromotions } = useActivePromotions();
+  const activePromotion = activePromotions?.[0];
+  const warrantyBonusYears = activePromotion?.warranty_extra_years || 0;
+  const promoEndDate = activePromotion?.end_date;
+  
   // Perplexity-backed page insights for smarter nudges
   const { insights: perplexityInsights } = usePageSpecificInsights(location.pathname);
   
@@ -569,7 +577,7 @@ export const UnifiedMobileBar: React.FC = () => {
   const { chatMinimizedAt } = useAIChat();
 
   // Smart nudge selection with priority layers
-  const activeNudge = useMemo((): { message: string; type: NudgeType; icon?: string } | null => {
+  const activeNudge = useMemo((): { message: string; type: NudgeType; icon?: string; aiPrompt?: string } | null => {
     const nudges = pageConfig.nudges;
     if (!nudges) return null;
 
@@ -818,11 +826,53 @@ export const UnifiedMobileBar: React.FC = () => {
         });
       }
       
+      // UNIVERSAL PROMO AWARENESS: Add promo nudges to ALL pages when active
+      if (warrantyBonusYears > 0) {
+        const totalWarranty = 3 + warrantyBonusYears;
+        const promoNudges = PROMO_AWARENESS_NUDGES.getWarrantyNudges(totalWarranty);
+        promoNudges.forEach((nudge, i) => {
+          allNudges.push({
+            delay: 128 + (i * 16), // Spread out, less frequent than educational nudges
+            message: nudge.message,
+            icon: nudge.icon
+          });
+        });
+        
+        // Add urgency nudge if promo ending soon
+        if (promoEndDate) {
+          const daysLeft = PROMO_AWARENESS_NUDGES.getDaysUntilEnd(promoEndDate);
+          const urgencyNudge = PROMO_AWARENESS_NUDGES.getUrgencyNudge(daysLeft, totalWarranty);
+          if (urgencyNudge) {
+            allNudges.push({
+              delay: 200, // Show later in rotation
+              message: urgencyNudge.message,
+              icon: urgencyNudge.icon
+            });
+          }
+        }
+      }
+      
+      // CHAT ENGAGEMENT: Add occasional chat prompts (roughly every 40-48 seconds)
+      const chatNudges = getChatNudgesForPath(location.pathname);
+      chatNudges.forEach((chatNudge, i) => {
+        allNudges.push({
+          delay: 160 + (i * 24), // Spread out, less frequent
+          message: chatNudge.message,
+          icon: chatNudge.icon,
+          aiPrompt: chatNudge.aiPrompt
+        });
+      });
+      
       // Use time-based rotation instead of "last applicable" to ensure proper cycling
       const rotationInterval = 8; // seconds per nudge
       const nudgeIndex = Math.floor(idleSeconds / rotationInterval) % allNudges.length;
       const selectedNudge = allNudges[nudgeIndex];
-      return { message: selectedNudge.message, type: 'tip', icon: selectedNudge.icon };
+      return { 
+        message: selectedNudge.message, 
+        type: 'tip', 
+        icon: selectedNudge.icon,
+        aiPrompt: selectedNudge.aiPrompt 
+      };
     }
 
     // Priority 5: Occasional social proof (every ~60s idle, cycling through)
@@ -838,7 +888,7 @@ export const UnifiedMobileBar: React.FC = () => {
     isPreview, displayMotor?.hp, displayMotor?.id, displayMotor?.model, state.configuratorStep,
     state.configuratorOptions, currentSavings, monthlyPayment, promo,
     hasPromoSelection, hasPackageSelection, state.selectedPromoOption, state.selectedPackage?.id,
-    perplexityInsights, state.boatInfo?.length
+    perplexityInsights, state.boatInfo?.length, warrantyBonusYears, promoEndDate
   ]);
 
   // Helper to render nudge icon
@@ -876,7 +926,7 @@ export const UnifiedMobileBar: React.FC = () => {
     navigate(targetPath);
   };
 
-  const handleOpenAI = () => {
+  const handleOpenAI = (initialMessage?: string) => {
     triggerHaptic('medium');
     setIdleSeconds(0);
     
@@ -886,8 +936,8 @@ export const UnifiedMobileBar: React.FC = () => {
       return;
     }
     
-    // Motor context flows through QuoteContext.previewMotor - no marker needed
-    openChat();
+    // Open chat with optional initial message (for contextual chat nudges)
+    openChat(initialMessage);
   };
 
   const handleOpenDrawer = () => {
@@ -980,7 +1030,7 @@ export const UnifiedMobileBar: React.FC = () => {
     return { type, number };
   };
 
-  // Handle nudge bar tap - phone numbers open native apps, comparison opens drawer, otherwise open AI chat
+  // Handle nudge bar tap - phone numbers open native apps, comparison opens drawer, chat nudges pass context, otherwise open AI chat
   const handleNudgeClick = () => {
     if (activeNudge) {
       // If comparison nudge, open comparison drawer
@@ -996,10 +1046,19 @@ export const UnifiedMobileBar: React.FC = () => {
         window.location.href = `${phoneAction.type}:${phoneAction.number}`;
         return;
       }
+      
+      // If chat engagement nudge with aiPrompt, pass it to chat
+      if (activeNudge.aiPrompt) {
+        handleOpenAI(activeNudge.aiPrompt);
+        return;
+      }
     }
     // Default: open AI chat
     handleOpenAI();
   };
+  
+  // Wrapper for button onClick that ignores the event parameter
+  const handleChatButtonClick = () => handleOpenAI();
   
   // Handle motor selection from comparison drawer
   const handleComparisonSelect = (motor: any) => {
@@ -1125,7 +1184,7 @@ export const UnifiedMobileBar: React.FC = () => {
                 ease: [0.4, 0, 0.2, 1]
               }
             }}
-            onClick={handleOpenAI}
+            onClick={handleChatButtonClick}
             className={cn(
               "flex flex-col items-center justify-center shrink-0 relative overflow-visible",
               "h-10 w-10 min-[375px]:h-11 min-[375px]:w-11 rounded-xl",

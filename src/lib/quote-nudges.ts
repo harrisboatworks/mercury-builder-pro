@@ -160,3 +160,100 @@ export function getRotatingNudge(nudges: string[], idleSeconds: number, interval
   const index = Math.floor(idleSeconds / intervalSeconds) % nudges.length;
   return nudges[index];
 }
+
+// ============= PROMO AWARENESS NUDGES =============
+// Universal promo messages that can be shown on any page
+
+export const PROMO_AWARENESS_NUDGES = {
+  // Generic promo nudges (work for any "Get X" style promotion)
+  getWarrantyNudges: (totalYears: number): Array<{ message: string; icon: string }> => [
+    { message: `Mercury Get ${totalYears}: ${totalYears} years factory warranty`, icon: 'shield' },
+    { message: `Every motor includes ${totalYears} years parts + labour`, icon: 'check' },
+    { message: `${totalYears} years of worry-free boating — that's real coverage`, icon: 'heart' },
+    { message: `All 3 bonus options include the same ${totalYears}-year protection`, icon: 'award' },
+  ],
+  
+  // Urgency nudge when promo is ending soon
+  getUrgencyNudge: (daysLeft: number, totalYears: number): { message: string; icon: string } | null => {
+    if (daysLeft <= 0) return null;
+    if (daysLeft <= 7) return { message: `⏰ Only ${daysLeft} days left on the Get ${totalYears} offer!`, icon: 'clock' };
+    if (daysLeft <= 14) return { message: `Get ${totalYears} promotion ends in ${daysLeft} days`, icon: 'clock' };
+    return null;
+  },
+  
+  // Calculate days until promo ends
+  getDaysUntilEnd: (endDateStr: string | null | undefined): number => {
+    if (!endDateStr) return 999;
+    try {
+      const endDate = new Date(endDateStr);
+      const now = new Date();
+      return Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+    } catch {
+      return 999;
+    }
+  },
+};
+
+// ============= CHAT ENGAGEMENT NUDGES =============
+// Subtle prompts to encourage AI chat interaction
+
+export interface ChatEngagementNudge {
+  message: string;
+  icon: string;
+  aiPrompt: string;
+}
+
+export const CHAT_ENGAGEMENT_NUDGES: Record<string, ChatEngagementNudge[]> = {
+  '/quote/motor-selection': [
+    { message: "Not sure which HP? Ask AI →", icon: 'sparkles', aiPrompt: "Help me choose the right HP for my boat" },
+    { message: "Curious about fuel economy? I can compare →", icon: 'sparkles', aiPrompt: "Compare fuel economy between motors" },
+    { message: "Ask AI: What's the difference between these motors?", icon: 'sparkles', aiPrompt: "What's the difference between FourStroke and Pro XS?" },
+  ],
+  '/quote/options': [
+    { message: "What's covered? Tap to ask AI →", icon: 'sparkles', aiPrompt: "What does the Complete package cover?" },
+    { message: "Need help choosing? AI can compare →", icon: 'sparkles', aiPrompt: "Compare the package options for me" },
+  ],
+  '/quote/promo-selection': [
+    { message: "Which bonus is best for you? Ask AI →", icon: 'sparkles', aiPrompt: "Which promo option is best for me?" },
+    { message: "Not sure? AI can explain each option →", icon: 'sparkles', aiPrompt: "Explain the Mercury Get 7 bonus options" },
+  ],
+  '/quote/package-selection': [
+    { message: "Complete vs Premium? AI can compare →", icon: 'sparkles', aiPrompt: "Compare Complete and Premium packages" },
+    { message: "What's the difference? Ask AI →", icon: 'sparkles', aiPrompt: "What's the difference between coverage packages?" },
+  ],
+  '/quote/boat-info': [
+    { message: "Questions about controls? Ask AI →", icon: 'sparkles', aiPrompt: "Help me understand the control options for my boat" },
+    { message: "Not sure what fits? AI can help →", icon: 'sparkles', aiPrompt: "What controls do I need for my boat type?" },
+  ],
+  '/quote/trade-in': [
+    { message: "Wondering what yours is worth? Ask AI →", icon: 'sparkles', aiPrompt: "How much is my old motor worth as a trade-in?" },
+    { message: "Trade-in questions? AI has answers →", icon: 'sparkles', aiPrompt: "What factors affect my trade-in value?" },
+  ],
+  '/quote/summary': [
+    { message: "Questions before you submit? Ask here →", icon: 'sparkles', aiPrompt: "What happens after I submit my quote?" },
+    { message: "Need financing info? AI can explain →", icon: 'sparkles', aiPrompt: "Tell me about the financing options" },
+  ],
+  '/repower': [
+    { message: "Is repowering right for me? Ask AI →", icon: 'sparkles', aiPrompt: "Should I repower my boat or buy new?" },
+    { message: "Questions about the process? AI can help →", icon: 'sparkles', aiPrompt: "How does the repower process work?" },
+  ],
+  'default': [
+    { message: "Questions? AI's got answers →", icon: 'sparkles', aiPrompt: "Help me with my quote" },
+    { message: "Not sure about something? Just ask →", icon: 'sparkles', aiPrompt: "I have a question about Mercury motors" },
+  ],
+};
+
+// Get chat nudges for a specific path, with fallback to default
+export function getChatNudgesForPath(pathname: string): ChatEngagementNudge[] {
+  // Try exact match first
+  if (CHAT_ENGAGEMENT_NUDGES[pathname]) {
+    return CHAT_ENGAGEMENT_NUDGES[pathname];
+  }
+  // Try partial matches for quote paths
+  for (const [path, nudges] of Object.entries(CHAT_ENGAGEMENT_NUDGES)) {
+    if (path !== 'default' && pathname.includes(path)) {
+      return nudges;
+    }
+  }
+  return CHAT_ENGAGEMENT_NUDGES.default;
+}
