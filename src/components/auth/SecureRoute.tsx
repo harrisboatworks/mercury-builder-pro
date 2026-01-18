@@ -7,10 +7,11 @@ interface SecureRouteProps {
 }
 
 export const SecureRoute = ({ children, requireAdmin }: SecureRouteProps) => {
-  const { user, loading, isAdmin } = useAuth();
+  const { user, loading, isAdmin, adminLoading } = useAuth();
   const location = useLocation();
 
-  if (loading) {
+  // Wait for auth loading, and also wait for admin check if this route requires admin
+  if (loading || (requireAdmin && adminLoading)) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
