@@ -26,6 +26,7 @@ import { HPMotorCard } from '@/components/motors/HPMotorCard';
 // ViewModeToggle removed - using expert view only
 import { MotorConfiguratorModal } from '@/components/motors/MotorConfiguratorModal';
 import { ConfigFilterSheet, type ConfigFiltersState } from '@/components/motors/ConfigFilterSheet';
+import { StockCountIndicator } from '@/components/motors/StockCountIndicator';
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
@@ -899,21 +900,27 @@ if (event.type === 'filter_motors') {
               }
             />
             
-            {(searchQuery || configFilters) && (
-              <div className="text-center mt-2 text-xs text-luxury-gray">
-                {finalFilteredMotors.length} results
-                {configFilters && (
-                  <span className="ml-2 text-primary">
-                    (filtered by: {[
-                      configFilters.inStock && 'in stock',
-                      configFilters.startType,
-                      configFilters.controlType,
-                      configFilters.shaftLength && `${configFilters.shaftLength} shaft`
-                    ].filter(Boolean).join(', ')})
-                  </span>
-                )}
-              </div>
-            )}
+            <div className="flex items-center justify-between mt-3">
+              <StockCountIndicator 
+                motors={processedMotors}
+                onFilterInStock={() => setConfigFilters(prev => ({ ...prev, inStock: true }))}
+              />
+              {(searchQuery || configFilters) && (
+                <div className="text-xs text-luxury-gray">
+                  {finalFilteredMotors.length} results
+                  {configFilters && (
+                    <span className="ml-2 text-primary">
+                      (filtered by: {[
+                        configFilters.inStock && 'in stock',
+                        configFilters.startType,
+                        configFilters.controlType,
+                        configFilters.shaftLength && `${configFilters.shaftLength} shaft`
+                      ].filter(Boolean).join(', ')})
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
         
