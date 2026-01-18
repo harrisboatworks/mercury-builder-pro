@@ -14,7 +14,6 @@ const navItems = [
   
   { label: "Inventory", to: "/admin/inventory" },
   { label: "Stock Sync", to: "/admin/stock-sync" },
-  { label: "Cron Jobs", to: "/admin/cron-monitor" },
   { label: "Pricing Import", to: "/admin/pricing-import" },
   { label: "Options Catalog", to: "/admin/options-catalog" },
   { label: "Options Manager", to: "/admin/options-manager" },
