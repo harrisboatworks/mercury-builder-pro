@@ -6,12 +6,13 @@ import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, CheckCircle, XCircle, RefreshCw, Clock, AlertTriangle } from 'lucide-react';
+import { Loader2, CheckCircle, XCircle, RefreshCw, Clock, AlertTriangle, HelpCircle } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 
 interface GoogleSheetsConfig {
   id: string;
   sheet_url: string;
+  sheet_gid: string | null;
   last_sync: string | null;
   auto_sync_enabled: boolean;
   sync_frequency: string;
@@ -25,12 +26,14 @@ interface SyncResult {
   matched?: string[];
   unmatched?: string[];
   error?: string;
+  sheetGid?: string;
 }
 
 export function GoogleSheetsSyncPanel() {
   const { toast } = useToast();
   const [config, setConfig] = useState<GoogleSheetsConfig | null>(null);
   const [sheetUrl, setSheetUrl] = useState('');
+  const [sheetGid, setSheetGid] = useState('');
   const [loading, setLoading] = useState(false);
   const [syncing, setSyncing] = useState(false);
   const [syncResult, setSyncResult] = useState<SyncResult | null>(null);
@@ -52,8 +55,9 @@ export function GoogleSheetsSyncPanel() {
       }
 
       if (data) {
-        setConfig(data);
+        setConfig(data as GoogleSheetsConfig);
         setSheetUrl(data.sheet_url);
+        setSheetGid(data.sheet_gid || '');
       }
     } catch (error) {
       console.error('Error fetching config:', error);
@@ -78,7 +82,10 @@ export function GoogleSheetsSyncPanel() {
         // Update existing
         const { error } = await supabase
           .from('google_sheets_config')
-          .update({ sheet_url: sheetUrl })
+          .update({ 
+            sheet_url: sheetUrl,
+            sheet_gid: sheetGid.trim() || null,
+          })
           .eq('id', config.id);
 
         if (error) throw error;
@@ -86,17 +93,20 @@ export function GoogleSheetsSyncPanel() {
         // Insert new
         const { data, error } = await supabase
           .from('google_sheets_config')
-          .insert({ sheet_url: sheetUrl })
+          .insert({ 
+            sheet_url: sheetUrl,
+            sheet_gid: sheetGid.trim() || null,
+          })
           .select()
           .single();
 
         if (error) throw error;
-        setConfig(data);
+        setConfig(data as GoogleSheetsConfig);
       }
 
       toast({
         title: 'Success',
-        description: 'Google Sheets URL saved',
+        description: 'Google Sheets configuration saved',
       });
 
       await fetchConfig();
@@ -127,7 +137,10 @@ export function GoogleSheetsSyncPanel() {
 
     try {
       const { data, error } = await supabase.functions.invoke('sync-google-sheets-inventory', {
-        body: { sheetUrl: config.sheet_url },
+        body: { 
+          sheetUrl: config.sheet_url,
+          sheetGid: config.sheet_gid || undefined,
+        },
       });
 
       if (error) throw error;
@@ -195,7 +208,7 @@ export function GoogleSheetsSyncPanel() {
         <CardHeader>
           <CardTitle>Google Sheets Inventory Sync</CardTitle>
           <CardDescription>
-            Sync in-stock motors from a published Google Sheet. Motors listed in Column A will be marked "In Stock", all others revert to "Brochure".
+            Sync in-stock motors from a published Google Sheet. Motors listed in the "New Mercury Motors" tab will be marked "In Stock", all others revert to "Brochure".
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -203,18 +216,41 @@ export function GoogleSheetsSyncPanel() {
             <label className="text-sm font-medium">Published Google Sheets URL</label>
             <div className="flex gap-2">
               <Input
-                placeholder="https://docs.google.com/spreadsheets/d/e/..."
+                placeholder="https://docs.google.com/spreadsheets/d/..."
                 value={sheetUrl}
                 onChange={(e) => setSheetUrl(e.target.value)}
+                disabled={loading}
+              />
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Paste the URL from your browser when viewing the Google Sheet
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-medium flex items-center gap-2">
+              Sheet Tab GID
+              <span className="text-xs text-muted-foreground font-normal">(for "New Mercury Motors" tab)</span>
+            </label>
+            <div className="flex gap-2">
+              <Input
+                placeholder="e.g., 1042549170"
+                value={sheetGid}
+                onChange={(e) => setSheetGid(e.target.value)}
                 disabled={loading}
               />
               <Button onClick={saveConfig} disabled={loading || !sheetUrl.trim()}>
                 {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Save'}
               </Button>
             </div>
-            <p className="text-xs text-muted-foreground">
-              File → Share → Publish to web → Choose "Sheet1" → Format: "Web page" → Copy the URL
-            </p>
+            <div className="flex items-start gap-2 p-2 bg-muted/50 rounded-md">
+              <HelpCircle className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+              <p className="text-xs text-muted-foreground">
+                <strong>How to find:</strong> Click the "New Mercury Motors" tab in your sheet, then look at the browser URL. Copy the number after <code className="bg-muted px-1 rounded">gid=</code>
+                <br />
+                Example: <code className="bg-muted px-1 rounded">...edit#gid=<strong>1042549170</strong></code>
+              </p>
+            </div>
           </div>
 
           {config && (
@@ -230,6 +266,11 @@ export function GoogleSheetsSyncPanel() {
                   <p className="text-xs text-muted-foreground flex items-center gap-1">
                     <Clock className="h-3 w-3" />
                     Last synced {formatDistanceToNow(new Date(config.last_sync), { addSuffix: true })}
+                  </p>
+                )}
+                {config.sheet_gid && (
+                  <p className="text-xs text-muted-foreground">
+                    Using GID: {config.sheet_gid}
                   </p>
                 )}
               </div>
@@ -354,15 +395,15 @@ export function GoogleSheetsSyncPanel() {
           <div className="flex gap-3">
             <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold">1</div>
             <div>
-              <p className="font-medium">Publish Your Google Sheet</p>
-              <p className="text-muted-foreground text-xs">File → Share → Publish to web → Choose your sheet → Format: "Web page"</p>
+              <p className="font-medium">Paste Your Google Sheet URL</p>
+              <p className="text-muted-foreground text-xs">Copy the URL from your browser when viewing the spreadsheet</p>
             </div>
           </div>
           <div className="flex gap-3">
             <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs font-bold">2</div>
             <div>
-              <p className="font-medium">Format Your Sheet</p>
-              <p className="text-muted-foreground text-xs">Put motor model names in Column A (e.g., "25 ELPT FourStroke", "115 EXLPT ProXS")</p>
+              <p className="font-medium">Enter the Sheet Tab GID</p>
+              <p className="text-muted-foreground text-xs">Click "New Mercury Motors" tab, copy the GID number from the URL (e.g., 1042549170)</p>
             </div>
           </div>
           <div className="flex gap-3">
