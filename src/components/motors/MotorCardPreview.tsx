@@ -283,10 +283,11 @@ export default function MotorCardPreview({
     return { text: "Available to Order", dotColor: "bg-gray-400" };
   };
 
-  // Get warranty text if applicable
+  // Get warranty text if applicable - show TOTAL warranty (base 3 + promo bonus)
   const getWarrantyText = () => {
     if (hasWarrantyPromo && warrantyYears > 0) {
-      return `✓ ${warrantyYears} Year Extended Coverage`;
+      const totalYears = 3 + warrantyYears; // Base 3-year + promo bonus
+      return `✓ ${totalYears} Year Warranty`;
     }
     return null;
   };
@@ -302,16 +303,17 @@ export default function MotorCardPreview({
   // Format promo text elegantly
   const getPromoDisplay = () => {
     if (hasWarrantyPromo && warrantyYears > 0) {
-      let promoText = `Mercury Promotion: ${warrantyYears} Years Extended Coverage Included`;
+      const totalYears = 3 + warrantyYears; // Base 3-year + promo bonus
+      let promoText = `Mercury Get ${totalYears}: ${totalYears} Years Factory Warranty Included`;
       
-      // Add end date if available (example logic - would need actual promo data)
+      // Add end date if available
       const activePromo = promotions.find(promo => promo.warranty_extra_years);
       if (activePromo?.end_date) {
         const endDate = new Date(activePromo.end_date).toLocaleDateString('en-US', {
           month: 'short',
           day: 'numeric'
         });
-        promoText += ` • Available Until ${endDate}`;
+        promoText += ` • Until ${endDate}`;
       }
       
       return promoText;
