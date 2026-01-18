@@ -16,17 +16,19 @@ Deno.serve(async (req) => {
     
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Get sheet URL from request or database
+    // Get sheet URL and GID from request or database
     let sheetUrl: string;
+    let sheetGid: string;
     const body = await req.json().catch(() => ({}));
     
     if (body.sheetUrl) {
       sheetUrl = body.sheetUrl;
+      sheetGid = body.sheetGid || '1042549170'; // Default to correct GID
     } else {
       // Get from database
       const { data: config } = await supabase
         .from('google_sheets_config')
-        .select('sheet_url, auto_sync_enabled')
+        .select('sheet_url, sheet_gid, auto_sync_enabled')
         .single();
       
       if (!config || !config.auto_sync_enabled) {
@@ -37,16 +39,15 @@ Deno.serve(async (req) => {
       }
       
       sheetUrl = config.sheet_url;
+      sheetGid = config.sheet_gid || '1042549170'; // Default to correct GID
     }
 
     console.log('🔄 Starting Google Sheets sync:', sheetUrl);
+    console.log('📋 Using sheet GID:', sheetGid);
 
     // IMPORTANT: This function ONLY READS from the Google Sheet
     // It NEVER writes or modifies the sheet in any way
     // All updates go to the Supabase motor_models table only
-    
-    // Target sheet: "New Mercury Motors" (gid=1323498498)
-    const NEW_MERCURY_MOTORS_GID = '1323498498';
     
     // Convert various Google Sheets URL formats to CSV export format
     let csvUrl = sheetUrl;
@@ -56,24 +57,23 @@ Deno.serve(async (req) => {
       // Extract the spreadsheet ID
       const match = sheetUrl.match(/\/d\/([a-zA-Z0-9-_]+)/);
       if (match) {
-        // Always target the "New Mercury Motors" sheet specifically
-        csvUrl = `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv&gid=${NEW_MERCURY_MOTORS_GID}`;
+        // Use the configured GID
+        csvUrl = `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv&gid=${sheetGid}`;
       }
     } else if (sheetUrl.includes('/pubhtml')) {
       csvUrl = sheetUrl.replace('/pubhtml', '/pub');
-      // Override with specific sheet gid
+      // Override with configured sheet gid
       const baseUrl = csvUrl.split('?')[0];
-      csvUrl = `${baseUrl}?gid=${NEW_MERCURY_MOTORS_GID}&output=csv`;
+      csvUrl = `${baseUrl}?gid=${sheetGid}&output=csv`;
     } else if (!sheetUrl.includes('/export')) {
-      // Generic fallback - try to convert to export URL with specific sheet
+      // Generic fallback - try to convert to export URL with configured sheet
       const match = sheetUrl.match(/\/d\/([a-zA-Z0-9-_]+)/);
       if (match) {
-        csvUrl = `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv&gid=${NEW_MERCURY_MOTORS_GID}`;
+        csvUrl = `https://docs.google.com/spreadsheets/d/${match[1]}/export?format=csv&gid=${sheetGid}`;
       }
     }
     
-    console.log('📋 Targeting sheet: New Mercury Motors (gid=' + NEW_MERCURY_MOTORS_GID + ')');
-
+    console.log('📋 Targeting sheet GID:', sheetGid);
     console.log('📄 Fetching CSV from:', csvUrl);
 
     // Fetch CSV directly from Google Sheets
@@ -85,6 +85,13 @@ Deno.serve(async (req) => {
 
     const csvText = await csvResponse.text();
     console.log('📄 CSV content length:', csvText.length);
+    
+    // CRITICAL: Validate that we received CSV data, not HTML
+    if (csvText.startsWith('<!DOCTYPE') || csvText.includes('<html>') || csvText.includes('<!doctype')) {
+      console.error('❌ Received HTML instead of CSV. Check sheet GID and sharing settings.');
+      console.error('📄 Response preview:', csvText.substring(0, 500));
+      throw new Error(`Received HTML instead of CSV. The sheet GID (${sheetGid}) may be incorrect, or the sheet may not be properly shared. Please verify the GID matches your "New Mercury Motors" tab.`);
+    }
 
     // Parse CSV with proper handling of quoted fields
     function parseCSVLine(line: string): string[] {
@@ -352,6 +359,7 @@ Deno.serve(async (req) => {
           matched: matchedMotors,
           unmatched: unmatchedModels,
           sheet_url: sheetUrl,
+          sheet_gid: sheetGid,
           filter: 'New Mercury Outboard Motors only',
         },
         completed_at: new Date().toISOString(),
@@ -384,7 +392,7 @@ Deno.serve(async (req) => {
               <li>Unmatched: ${unmatchedModels.length}</li>
             </ul>
             <p>Please review these motors and ensure they exist in your motor_models database with the correct model_display names.</p>
-            <p style="color: #666; font-size: 12px; margin-top: 20px;">Synced from: ${sheetUrl}</p>
+            <p style="color: #666; font-size: 12px; margin-top: 20px;">Synced from: ${sheetUrl} (GID: ${sheetGid})</p>
           `;
 
           const response = await fetch('https://api.resend.com/emails', {
@@ -427,6 +435,7 @@ Deno.serve(async (req) => {
         matched: matchedMotors,
         unmatched: unmatchedModels,
         filter: 'New Mercury Outboard Motors only',
+        sheetGid: sheetGid,
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
