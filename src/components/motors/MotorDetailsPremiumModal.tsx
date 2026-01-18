@@ -5,8 +5,7 @@ import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3
 import { motion, AnimatePresence } from "framer-motion";
 // Note: useAIChat is NOT used here because this component is rendered via portal
 // The openChat function is passed as a prop from the parent component
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
+import { SpecSheetPDFDownload } from './SpecSheetPDFDownload';
 import { supabase } from "../../integrations/supabase/client";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { MotorInlineChatPanel } from './MotorInlineChatPanel';
@@ -816,26 +815,11 @@ export default function MotorDetailsPremiumModal({
                       
                       {/* Quick Actions */}
                       <div className="border-t border-gray-100 pt-6">
-                        <PDFDownloadLink
-                          document={
-                            <CleanSpecSheetPDF 
-                              motorData={{
-                                motor: motor,
-                                promotions: activePromotions,
-                                motorModel: motor?.model || title
-                              }} 
-                            />
-                          }
-                          fileName={`${(motor?.model || title).replace(/\s+/g, '-')}-Specifications.pdf`}
-                          className="w-full border border-gray-300 text-gray-700 py-3 px-4 text-sm font-medium rounded-sm hover:bg-stone-50 transition-all duration-300 flex items-center justify-center gap-2"
-                        >
-                          {({ loading }) => (
-                            <>
-                              <Download className="w-4 h-4" />
-                              {loading ? 'Generating...' : 'Download Spec Sheet'}
-                            </>
-                          )}
-                        </PDFDownloadLink>
+                        <SpecSheetPDFDownload
+                          motor={motor}
+                          promotions={activePromotions}
+                          motorModel={motor?.model || title}
+                        />
                       </div>
                     </div>
                   </TabsContent>
