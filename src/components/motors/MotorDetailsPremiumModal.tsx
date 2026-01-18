@@ -769,14 +769,21 @@ export default function MotorDetailsPremiumModal({
                             3-Year Mercury Factory Warranty
                           </span>
                         </div>
-                        {activePromotions.some(p => p.warranty_extra_years) && (
-                          <div className="flex flex-row items-center gap-3 text-left">
-                            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
-                            <span className="text-sm font-normal text-gray-700 flex-1">
-                              +2 Year Extended Coverage (Promotional)
-                            </span>
-                          </div>
-                        )}
+                        {(() => {
+                          const promoYears = activePromotions.find(p => p.warranty_extra_years)?.warranty_extra_years || 0;
+                          if (promoYears > 0) {
+                            const totalYears = 3 + promoYears;
+                            return (
+                              <div className="flex flex-row items-center gap-3 text-left">
+                                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                <span className="text-sm font-normal text-gray-700 flex-1">
+                                  +{promoYears} Year Extended Coverage = <strong>{totalYears} Years Total</strong>
+                                </span>
+                              </div>
+                            );
+                          }
+                          return null;
+                        })()}
                       </div>
                     </div>
                   </TabsContent>
