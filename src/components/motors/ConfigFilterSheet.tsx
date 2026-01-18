@@ -116,7 +116,7 @@ export function ConfigFilterSheet({
     };
     
     return {
-      inStock: motors.filter(m => m.inStock).length,
+      inStock: motors.filter(m => m.in_stock).length,
       electric: motors.filter(m => parseStartType(m.model, m.hp) === 'electric').length,
       manual: motors.filter(m => parseStartType(m.model, m.hp) === 'manual').length,
       tiller: motors.filter(m => parseControlType(m.model, m.hp) === 'tiller').length,
