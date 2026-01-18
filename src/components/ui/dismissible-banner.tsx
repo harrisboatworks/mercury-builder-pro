@@ -4,13 +4,56 @@ import { X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
+// Known promo banner storage keys for reset utility
+const PROMO_BANNER_KEYS = [
+  'get7_choose_one_banner_dismissed',
+  // Add other promo banner keys here as needed
+];
+
+/**
+ * Reset all promotional banners - useful for testing
+ * Call from browser console: window.resetAllPromoBanners()
+ */
+export function resetAllPromoBanners() {
+  PROMO_BANNER_KEYS.forEach(key => {
+    try {
+      localStorage.removeItem(key);
+    } catch {
+      // Ignore
+    }
+  });
+  console.log('All promo banners reset. Refresh the page to see them again.');
+}
+
+// Expose to window for easy console access
+if (typeof window !== 'undefined') {
+  (window as unknown as { resetAllPromoBanners: typeof resetAllPromoBanners }).resetAllPromoBanners = resetAllPromoBanners;
+}
+
 /**
  * Custom hook for managing dismissible state with localStorage persistence
+ * and time-based expiration for returning visitors
  */
-export function useDismissibleState(storageKey: string) {
+export function useDismissibleState(storageKey: string, expirationDays: number = 1) {
+  const expirationMs = expirationDays * 24 * 60 * 60 * 1000;
+
   const [isDismissed, setIsDismissed] = useState(() => {
     try {
-      return localStorage.getItem(storageKey) === 'true';
+      const dismissedAt = parseInt(localStorage.getItem(storageKey) || '0', 10);
+      
+      // Handle legacy 'true' values or invalid data - treat as expired
+      if (!dismissedAt || isNaN(dismissedAt)) {
+        localStorage.removeItem(storageKey);
+        return false;
+      }
+      
+      const isExpired = Date.now() - dismissedAt > expirationMs;
+      if (isExpired) {
+        // Clean up expired entry
+        localStorage.removeItem(storageKey);
+        return false;
+      }
+      return true;
     } catch {
       return false;
     }
@@ -18,7 +61,8 @@ export function useDismissibleState(storageKey: string) {
 
   const dismiss = useCallback(() => {
     try {
-      localStorage.setItem(storageKey, 'true');
+      // Store timestamp instead of boolean
+      localStorage.setItem(storageKey, Date.now().toString());
     } catch {
       // localStorage might be unavailable
     }
@@ -53,6 +97,8 @@ export interface DismissibleBannerProps {
   variant?: keyof typeof variantStyles;
   /** Additional container styles */
   className?: string;
+  /** Days until dismissed banner reappears (default: 1) */
+  expirationDays?: number;
   /** Callback when dismissed */
   onDismiss?: () => void;
   /** Action button label */
@@ -76,6 +122,7 @@ export function DismissibleBanner({
   children,
   variant = 'info',
   className,
+  expirationDays = 1,
   onDismiss,
   actionLabel,
   actionHref,
@@ -85,7 +132,7 @@ export function DismissibleBanner({
   mobileImageUrl,
   mobileImageAlt = '',
 }: DismissibleBannerProps) {
-  const { isDismissed, dismiss } = useDismissibleState(storageKey);
+  const { isDismissed, dismiss } = useDismissibleState(storageKey, expirationDays);
 
   const handleDismiss = useCallback(() => {
     dismiss();
