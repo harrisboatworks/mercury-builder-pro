@@ -263,8 +263,32 @@ export const MotorManualOverride: React.FC<ManualOverrideProps> = ({
                 </p>
               </div>
 
-              <div>
-                <Label htmlFor="sale-price">Sale Price Override</Label>
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="sale-price">Sale Price Override</Label>
+                  {overrides.sale_price && (
+                    <div className="flex items-center gap-2">
+                      {overrides.sale_price_expires && (
+                        <Badge variant={new Date(overrides.sale_price_expires) > new Date() ? "default" : "destructive"}>
+                          {new Date(overrides.sale_price_expires) > new Date() 
+                            ? `Expires ${new Date(overrides.sale_price_expires).toLocaleDateString()}`
+                            : 'EXPIRED'}
+                        </Badge>
+                      )}
+                      <Button 
+                        variant="outline" 
+                        size="sm"
+                        onClick={() => {
+                          updateOverride('sale_price', null);
+                          updateOverride('sale_price_expires', null);
+                        }}
+                      >
+                        <X className="h-3 w-3 mr-1" />
+                        Clear Sale
+                      </Button>
+                    </div>
+                  )}
+                </div>
                 <Input
                   id="sale-price"
                   type="number"
@@ -272,8 +296,21 @@ export const MotorManualOverride: React.FC<ManualOverrideProps> = ({
                   value={overrides.sale_price || ''}
                   onChange={(e) => updateOverride('sale_price', parseFloat(e.target.value) || null)}
                 />
-                <p className="text-xs text-muted-foreground mt-1">
+                <p className="text-xs text-muted-foreground">
                   Original: ${motor.sale_price || motor.dealer_price || 'Not set'}
+                </p>
+              </div>
+
+              <div>
+                <Label htmlFor="sale-price-expires">Sale Price Expires</Label>
+                <Input
+                  id="sale-price-expires"
+                  type="date"
+                  value={overrides.sale_price_expires || ''}
+                  onChange={(e) => updateOverride('sale_price_expires', e.target.value || null)}
+                />
+                <p className="text-xs text-muted-foreground mt-1">
+                  Leave empty for no expiry. Sale price will be ignored after this date.
                 </p>
               </div>
             </div>

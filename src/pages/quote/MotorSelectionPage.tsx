@@ -420,7 +420,12 @@ if (event.type === 'filter_motors') {
       // Apply promotions - prioritize manual overrides, then msrp
       const manualOverrides = dbMotor.manual_overrides || {};
       const basePrice = manualOverrides.base_price || dbMotor.msrp || dbMotor.base_price || 0;
-      const salePrice = manualOverrides.sale_price || 
+      
+      // Check if manual sale price has expired
+      const salePriceExpires = manualOverrides.sale_price_expires;
+      const isManualSaleExpired = salePriceExpires && new Date(salePriceExpires) < new Date();
+      
+      const salePrice = (!isManualSaleExpired && manualOverrides.sale_price) || 
                        dbMotor.sale_price || 
                        (dbMotor.dealer_price && dbMotor.dealer_price < (dbMotor.msrp || basePrice) ? dbMotor.dealer_price : null);
       let effectivePrice = salePrice || basePrice;
