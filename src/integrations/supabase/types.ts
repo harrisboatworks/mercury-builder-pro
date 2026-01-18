@@ -1826,6 +1826,7 @@ export type Database = {
           customer_phone: string | null
           id: string
           is_active: boolean | null
+          last_notified_promo_id: string | null
           motor_details: Json | null
           motor_model_id: string | null
           notified_at: string | null
@@ -1841,6 +1842,7 @@ export type Database = {
           customer_phone?: string | null
           id?: string
           is_active?: boolean | null
+          last_notified_promo_id?: string | null
           motor_details?: Json | null
           motor_model_id?: string | null
           notified_at?: string | null
@@ -1856,6 +1858,7 @@ export type Database = {
           customer_phone?: string | null
           id?: string
           is_active?: boolean | null
+          last_notified_promo_id?: string | null
           motor_details?: Json | null
           motor_model_id?: string | null
           notified_at?: string | null
@@ -1865,6 +1868,13 @@ export type Database = {
           updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "promo_reminder_subscriptions_last_notified_promo_id_fkey"
+            columns: ["last_notified_promo_id"]
+            isOneToOne: false
+            referencedRelation: "promotions"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "promo_reminder_subscriptions_motor_model_id_fkey"
             columns: ["motor_model_id"]
