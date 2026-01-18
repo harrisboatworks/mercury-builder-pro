@@ -17,21 +17,23 @@ interface MobileQuoteDrawerProps {
   onClose: () => void;
 }
 
-const PACKAGE_LABELS: Record<string, { name: string; years: number }> = {
-  essential: { name: 'Essential', years: 5 },
-  complete: { name: 'Complete', years: 7 },
-  premium: { name: 'Premium', years: 10 }
-};
+// Package labels are now calculated dynamically based on promo years
+
+const BASE_WARRANTY_YEARS = 3;
 
 export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { state } = useQuote();
-  const { promotions } = useActivePromotions();
+  const { promotions, getTotalWarrantyBonusYears } = useActivePromotions();
   const { promo: financingPromo } = useActiveFinancingPromo();
   const { triggerHaptic } = useHapticFeedback();
 
   const isSummaryPage = location.pathname === '/quote/summary';
+  
+  // Calculate default warranty with active promo bonus
+  const promoWarrantyBonus = getTotalWarrantyBonusYears?.() ?? 0;
+  const defaultWarrantyYears = BASE_WARRANTY_YEARS + promoWarrantyBonus;
 
   // Use preview motor if available, otherwise selected motor (matches UnifiedMobileBar behavior)
   const displayMotor = state.previewMotor || state.motor;
@@ -118,13 +120,16 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
     };
   }, [displayMotor, state, financingPromo]);
 
-  // Get package info
+  // Get package info - dynamically based on promo years
   const packageInfo = useMemo(() => {
-    if (!state.warrantyConfig?.totalYears) return PACKAGE_LABELS.essential;
-    if (state.warrantyConfig.totalYears >= 10) return PACKAGE_LABELS.premium;
-    if (state.warrantyConfig.totalYears >= 7) return PACKAGE_LABELS.complete;
-    return PACKAGE_LABELS.essential;
-  }, [state.warrantyConfig]);
+    const baseYears = defaultWarrantyYears;
+    const totalYears = state.warrantyConfig?.totalYears ?? baseYears;
+    
+    // Package thresholds relative to base warranty with promo
+    if (totalYears >= baseYears + 5) return { name: 'Premium', years: totalYears };
+    if (totalYears >= baseYears + 2) return { name: 'Complete', years: totalYears };
+    return { name: 'Essential', years: baseYears };
+  }, [state.warrantyConfig, defaultWarrantyYears]);
 
   // Active promotions
   const activePromos = promotions || [];
@@ -172,7 +177,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground mt-1">
-                  {state.warrantyConfig?.totalYears || 5}-year warranty coverage
+                  {state.warrantyConfig?.totalYears || defaultWarrantyYears}-year warranty coverage
                 </p>
               </div>
 
