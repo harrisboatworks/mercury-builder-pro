@@ -64,7 +64,6 @@ const AdminPayments = lazy(() => import("./pages/AdminPayments"));
 const AdminSMS = lazy(() => import("./pages/AdminSMS"));
 const AdminInventory = lazy(() => import("./pages/AdminInventory"));
 const AdminStockSync = lazy(() => import("./pages/AdminStockSync"));
-const AdminCronMonitor = lazy(() => import("./pages/AdminCronMonitor"));
 const AdminConnectors = lazy(() => import("./pages/AdminConnectors"));
 const AdminSources = lazy(() => import("./pages/AdminSources"));
 const AdminPricingImport = lazy(() => import("./pages/AdminPricingImport"));
@@ -280,14 +279,6 @@ function AnimatedRoutes() {
           element={
             <SecureRoute requireAdmin={true}>
               <AdminStockSync />
-            </SecureRoute>
-          }
-        />
-        <Route
-          path="/admin/cron-monitor"
-          element={
-            <SecureRoute requireAdmin={true}>
-              <AdminCronMonitor />
             </SecureRoute>
           }
         />
