@@ -799,6 +799,19 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <Text style={styles.summaryItem}>• Extended coverage ($350 value)</Text>
               </>
               
+              {/* MERCHANDISE BONUS - based on package tier */}
+              {quoteData.selectedPackage?.id && quoteData.selectedPackage.id !== 'good' && (
+                <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
+                  <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
+                    PACKAGE BONUS:
+                  </Text>
+                  <Text style={{ fontSize: 9, color: colors.discount, fontWeight: 'bold' }}>
+                    {quoteData.selectedPackage.id === 'better' && '✓ FREE Mercury Hat ($35 value)'}
+                    {quoteData.selectedPackage.id === 'best' && '✓ FREE Mercury Hat + Shirt ($75 value)'}
+                  </Text>
+                </View>
+              )}
+              
             {/* YOUR SELECTED BONUS (Choose One promo) */}
             {quoteData.selectedPromoOption && (
               <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
