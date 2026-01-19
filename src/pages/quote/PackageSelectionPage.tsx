@@ -444,6 +444,7 @@ export default function PackageSelectionPage() {
                 showUpgradeDeltas={true}
                 revealComplete={true}
                 variant="dark"
+                maxFeatures={6}
               />
             </motion.div>
 
