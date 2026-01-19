@@ -74,18 +74,26 @@ export default function QuoteSummaryPage() {
 
   const handleCinematicComplete = () => {
     sessionStorage.setItem('quote-reveal-seen', 'true');
+    const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
+    if (currentMotorId) {
+      sessionStorage.setItem('quote-reveal-motor-id', String(currentMotorId));
+    }
     setShowCinematic(false);
   };
 
-  // Check if we should show cinematic (fresh from package selection)
+  // Check if we should show cinematic (fresh from package selection OR new motor)
   useEffect(() => {
     const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
-    if (!hasSeenReveal) {
+    const lastRevealedMotor = sessionStorage.getItem('quote-reveal-motor-id');
+    const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
+    
+    // Show cinematic if never seen OR different motor selected
+    if (!hasSeenReveal || (currentMotorId && lastRevealedMotor !== String(currentMotorId))) {
       setShowCinematic(true);
     }
     // Scroll to top on mount
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, []);
+  }, [state.motor]);
 
   // Keyboard shortcut to replay cinematic (Ctrl/Cmd + Shift + R)
   useEffect(() => {

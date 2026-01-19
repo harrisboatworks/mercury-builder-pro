@@ -150,11 +150,19 @@ export function GlobalStickyQuoteBar() {
     
     if (path === '/quote/purchase-path') navigate('/quote/boat-info');
     else if (path === '/quote/boat-info') navigate('/quote/trade-in');
-    else if (path === '/quote/fuel-tank') navigate('/quote/summary');
-    else if (path === '/quote/trade-in') navigate('/quote/installation');
-    else if (path === '/quote/installation') navigate('/quote/summary');
+    else if (path === '/quote/fuel-tank') navigate('/quote/promo-selection');
+    else if (path === '/quote/trade-in') {
+      if (state.purchasePath === 'installed') {
+        navigate('/quote/installation');
+      } else {
+        navigate('/quote/promo-selection');
+      }
+    }
+    else if (path === '/quote/installation') navigate('/quote/promo-selection');
+    else if (path === '/quote/promo-selection') navigate('/quote/package-selection');
+    else if (path === '/quote/package-selection') navigate('/quote/summary');
     else if (path === '/quote/schedule') navigate('/quote/summary');
-    else navigate('/quote/summary');
+    else navigate('/quote/promo-selection');
   };
 
   // Handle secondary action (View Summary)

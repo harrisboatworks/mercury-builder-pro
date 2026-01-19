@@ -608,7 +608,15 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               
               {parseFloat(quoteData.promoSavings) > 0 && (
                 <View style={styles.pricingRow}>
-                  <Text style={styles.pricingLabel}>Promotional Savings</Text>
+                  <Text style={styles.pricingLabel}>
+                    {quoteData.selectedPromoOption === 'no_payments'
+                      ? 'Mercury GET 7 + 6 Mo No Payments'
+                      : quoteData.selectedPromoOption === 'special_financing'
+                      ? `Mercury GET 7 + ${quoteData.selectedPromoValue || '2.99%'} APR`
+                      : quoteData.selectedPromoOption === 'cash_rebate'
+                      ? `Mercury GET 7 + ${quoteData.selectedPromoValue || ''} Rebate`
+                      : 'Mercury GET 7 Promotion'}
+                  </Text>
                   <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.promoSavings}</Text>
                 </View>
               )}
@@ -805,17 +813,17 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </View>
             )}
               
-            {/* BONUS OFFER (if promo warranty exists) */}
-            {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears > 3 && (
+            {/* BONUS OFFER (Mercury GET 7 promo warranty) */}
+            {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears >= 7 && (
               <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
                 <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 2 }}>
-                  BONUS OFFER
+                  MERCURY GET 7 PROMOTION
                 </Text>
                   <Text style={{ fontSize: 9, color: colors.text }}>
-                    +2 Years Extended Warranty FREE
+                    {quoteData.selectedPackage.coverageYears} Years Factory Warranty Included
                   </Text>
                   <Text style={{ fontSize: 8, color: colors.lightText }}>
-                    (Limited time offer)
+                    (Limited time offer - 3 base + {quoteData.selectedPackage.coverageYears - 3} bonus)
                   </Text>
                 </View>
               )}
