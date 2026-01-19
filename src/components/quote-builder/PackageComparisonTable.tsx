@@ -33,6 +33,8 @@ const COMPARISON_FEATURES: ComparisonFeature[] = [
   { label: 'External fuel tank & hose', good: false, better: false, best: true, conditional: 'canAddFuelTank' },
   { label: 'Priority scheduling', good: false, better: true, best: true },
   { label: 'White-glove installation', good: false, better: false, best: true },
+  { label: 'FREE Mercury Hat', good: false, better: true, best: true },
+  { label: 'FREE Mercury Shirt', good: false, better: false, best: true },
 ];
 
 const PACKAGE_LABELS = {
