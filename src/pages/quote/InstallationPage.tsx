@@ -41,8 +41,8 @@ export default function InstallationPage() {
     if (!state.motor) {
       navigate('/quote/motor-selection');
     } else if (state.purchasePath !== 'installed') {
-      // If user has motor but wrong path, send them to summary
-      navigate('/quote/summary');
+      // If user has motor but wrong path, send them to promo selection
+      navigate('/quote/promo-selection');
     }
   }, [state.motor, state.purchasePath, navigate]);
 

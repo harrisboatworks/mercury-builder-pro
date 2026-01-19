@@ -129,6 +129,10 @@ const Index = () => {
         navigate('/quote/boat-info');
       } else if (!state.completedSteps.includes(4)) {
         navigate('/quote/trade-in');
+      } else if (!state.selectedPromoOption) {
+        navigate('/quote/promo-selection');
+      } else if (!state.selectedPackage) {
+        navigate('/quote/package-selection');
       } else {
         navigate('/quote/summary');
       }

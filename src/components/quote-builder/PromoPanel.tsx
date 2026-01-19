@@ -1,7 +1,6 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Clock, Gift } from 'lucide-react';
-import { money, formatExpiry } from '@/lib/quote-utils';
+import { Clock, Gift, Shield } from 'lucide-react';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 
 interface PromoPanelProps {
@@ -9,7 +8,7 @@ interface PromoPanelProps {
 }
 
 export function PromoPanel({ motorHp }: PromoPanelProps) {
-  const { promotions, loading } = useActivePromotions();
+  const { promotions, loading, getTotalWarrantyBonusYears } = useActivePromotions();
 
   if (loading) {
     return (
@@ -27,22 +26,47 @@ export function PromoPanel({ motorHp }: PromoPanelProps) {
     return null;
   }
 
-  // Calculate total promotional value
-  const totalPromoValue = promotions.reduce((total, promo) => {
-    let value = 0;
-    if (promo.discount_fixed_amount) value += promo.discount_fixed_amount;
-    if (promo.warranty_extra_years) value += promo.warranty_extra_years * 100; // Estimate warranty value
-    // Add percentage discount value if motor price is available
-    if (promo.discount_percentage && motorHp) {
-      // Rough estimate based on HP - this would need actual motor price for accuracy
-      const estimatedMotorPrice = motorHp * 500; // Rough estimate
-      value += (estimatedMotorPrice * promo.discount_percentage) / 100;
-    }
-    return total + value;
-  }, 0);
+  // Calculate days left until promo ends
+  const daysLeft = (endDate: string | null | undefined): number => {
+    if (!endDate) return 0;
+    const end = new Date(endDate);
+    const now = new Date();
+    const diff = Math.ceil((end.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+    return Math.max(0, diff);
+  };
+
+  const warrantyYears = getTotalWarrantyBonusYears?.() || 0;
+  const totalWarranty = 3 + warrantyYears;
 
   return (
-    <Card className="border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+    <Card className="border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
+      {promotions.map((promo) => (
+        <div key={promo.id} className="space-y-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Gift className="h-5 w-5 text-primary" />
+              <span className="font-semibold text-foreground">{promo.name}</span>
+            </div>
+            {promo.end_date && (
+              <Badge variant="outline" className="text-xs">
+                <Clock className="w-3 h-3 mr-1" />
+                {daysLeft(promo.end_date)} days left
+              </Badge>
+            )}
+          </div>
+          
+          {warrantyYears > 0 && (
+            <div className="flex items-center gap-2 bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400 px-3 py-2 rounded-lg">
+              <Shield className="w-4 h-4" />
+              <span className="font-medium">{totalWarranty} Years Factory Coverage</span>
+            </div>
+          )}
+          
+          {promo.bonus_description && (
+            <p className="text-sm text-muted-foreground">{promo.bonus_description}</p>
+          )}
+        </div>
+      ))}
     </Card>
   );
 }
