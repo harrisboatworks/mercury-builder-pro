@@ -85,15 +85,21 @@ export function UpgradeNudgeBar({
                 <div className="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
                   <Sparkles className="h-4 w-4 text-amber-500" />
                   <span className="text-sm font-semibold text-slate-900">
-                    Get{' '}
-                    <motion.span 
-                      className="text-blue-600"
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      +{coverageGain} years
-                    </motion.span>
-                    {' '}more coverage
+                    {coverageGain > 0 ? (
+                      <>
+                        Get{' '}
+                        <motion.span 
+                          className="text-blue-600"
+                          animate={{ scale: [1, 1.05, 1] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        >
+                          +{coverageGain} years
+                        </motion.span>
+                        {' '}+ {upgradeToLabel === 'Complete' ? '🧢 FREE Hat' : '🧢👕 FREE Hat & Shirt'}
+                      </>
+                    ) : (
+                      <>Get {upgradeToLabel === 'Complete' ? '🧢 FREE Mercury Hat' : '🧢👕 FREE Hat & Shirt + Extra Year'}</>
+                    )}
                   </span>
                   {promoMessage && (
                     <span className="px-2 py-0.5 text-xs rounded-full bg-emerald-100 text-emerald-700 font-medium">
