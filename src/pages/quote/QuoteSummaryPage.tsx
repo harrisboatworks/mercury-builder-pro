@@ -6,7 +6,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
-import { PromoPanel } from '@/components/quote-builder/PromoPanel';
+
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 
@@ -638,24 +638,6 @@ export default function QuoteSummaryPage() {
                   />
                 </motion.div>
 
-                {/* Active Promotions */}
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={{
-                    ...sectionVariants,
-                    visible: {
-                      ...sectionVariants.visible,
-                      transition: {
-                        ...sectionVariants.visible.transition,
-                        delay: 0.4
-                      }
-                    }
-                  }}
-                >
-                  <PromoPanel motorHp={hp} />
-                </motion.div>
-
                 {/* Bonus Offers */}
                 <motion.div
                   initial="hidden"
@@ -666,7 +648,7 @@ export default function QuoteSummaryPage() {
                       ...sectionVariants.visible,
                       transition: {
                         ...sectionVariants.visible.transition,
-                        delay: 0.5
+                        delay: 0.4
                       }
                     }
                   }}
