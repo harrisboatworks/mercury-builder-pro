@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, Shield, Sparkles, Star, HelpCircle, Lightbulb } from 'lucide-react';
+import { ArrowLeft, Shield, Sparkles, Star, HelpCircle, Lightbulb, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { PageTransition } from '@/components/ui/page-transition';
 import { PackageCards, type PackageOption } from '@/components/quote-builder/PackageCards';
@@ -448,6 +448,29 @@ export default function PackageSelectionPage() {
                 maxFeatures={6}
               />
             </motion.div>
+
+            {/* Temporary scroll indicator after selection */}
+            <AnimatePresence>
+              {hasJustSelected && selectedPackage && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3 }}
+                  className="flex flex-col items-center gap-2 py-4"
+                >
+                  <span className="text-sm text-stone-400">
+                    Great choice! Scroll down to continue
+                  </span>
+                  <motion.div
+                    animate={{ y: [0, 6, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+                  >
+                    <ChevronDown className="w-5 h-5 text-primary" />
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Comparison Table */}
             <motion.div variants={itemVariants}>
