@@ -59,6 +59,7 @@ type PackageCardsProps = {
   basePackageId?: string; // Package to compare against (default: first package)
   revealComplete?: boolean; // Whether cinematic reveal has completed (triggers stagger animation)
   variant?: 'light' | 'dark'; // Background context for styling
+  maxFeatures?: number; // Max features to display per card (default 4)
 };
 
 export function PackageCards({
@@ -70,6 +71,7 @@ export function PackageCards({
   basePackageId,
   revealComplete = true,
   variant = 'light',
+  maxFeatures = 4,
 }: PackageCardsProps) {
   const { triggerHaptic } = useHapticFeedback();
   const { playPackageSelect } = useSound();
@@ -200,7 +202,7 @@ export function PackageCards({
             </div>
 
             <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground">
-              {p.features.slice(0, 4).map((f, i) => (
+              {p.features.slice(0, maxFeatures).map((f, i) => (
                 <li 
                   key={i} 
                   className={cn(
