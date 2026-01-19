@@ -188,6 +188,7 @@ export default function PackageSelectionPage() {
   const baseSubtotal = (motorMSRP - motorDiscount) + baseAccessoryCost + selectedOptionsTotal - promoSavings - (state.tradeInInfo?.estimatedValue || 0);
 
   // Package options with smart recommendations
+  const isInstalled = state.purchasePath === 'installed';
   const packages: PackageOption[] = useMemo(() => [
     { 
       id: "good", 
@@ -198,7 +199,7 @@ export default function PackageSelectionPage() {
         "Mercury motor", 
         isManualTiller ? "Tiller-handle operation" : "Standard controls & rigging", 
         `${currentCoverageYears} years coverage included`,
-        isManualTiller && tillerInstallCost === 0 ? "DIY clamp-on mounting" : "Basic installation",
+        ...(isInstalled ? [isManualTiller && tillerInstallCost === 0 ? "DIY clamp-on mounting" : "Basic installation"] : []),
         "Customer supplies battery (if needed)"
       ],
       coverageYears: currentCoverageYears,
@@ -215,8 +216,8 @@ export default function PackageSelectionPage() {
         ...(isManualStart ? [] : ["Marine starting battery ($180 value)"]), 
         `Extended to ${COMPLETE_TARGET_YEARS} years total coverage`,
         completeWarrantyCost > 0 ? `Warranty extension: $${completeWarrantyCost}` : `Already includes ${COMPLETE_TARGET_YEARS}yr coverage`,
-        "Priority installation",
-        "🧢 FREE Mercury Hat ($35 value)"
+        ...(isInstalled ? ["Priority installation"] : []),
+        "🧢 FREE Mercury Hat ($35)"
       ].filter(Boolean),
       coverageYears: COMPLETE_TARGET_YEARS,
       targetWarrantyYears: COMPLETE_TARGET_YEARS,
@@ -234,15 +235,15 @@ export default function PackageSelectionPage() {
         premiumWarrantyCost > 0 ? `Warranty extension: $${premiumWarrantyCost}` : `Already includes ${PREMIUM_TARGET_YEARS}yr coverage`,
         !includesProp ? "Premium aluminum 3-blade propeller ($300 value)" : null,
         canAddFuelTank ? "12L external fuel tank & hose ($199 value)" : null,
-        "White-glove installation",
-        "🧢👕 FREE Mercury Hat + Shirt ($75 value)"
+        ...(isInstalled ? ["White-glove installation"] : []),
+        "🧢👕 FREE Hat + Shirt ($75)"
       ].filter(Boolean),
       coverageYears: PREMIUM_TARGET_YEARS,
       targetWarrantyYears: PREMIUM_TARGET_YEARS,
       recommended: recommendation.packageId === 'best',
       recommendationReason: recommendation.packageId === 'best' ? recommendation.reason : undefined
     },
-  ], [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank, recommendation]);
+  ], [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank, recommendation, isInstalled]);
 
   // Calculate monthly payments for upgrade nudges
   const essentialPackage = packages.find(p => p.id === 'good') || packages[0];
@@ -457,6 +458,7 @@ export default function PackageSelectionPage() {
                 isManualStart={isManualStart}
                 includesProp={includesProp}
                 canAddFuelTank={canAddFuelTank}
+                purchasePath={state.purchasePath}
               />
             </motion.div>
 

@@ -12,6 +12,7 @@ interface PackageComparisonTableProps {
   isManualStart?: boolean;
   includesProp?: boolean;
   canAddFuelTank?: boolean;
+  purchasePath?: 'installed' | 'loose';
 }
 
 interface ComparisonFeature {
@@ -19,20 +20,20 @@ interface ComparisonFeature {
   good: boolean;
   better: boolean;
   best: boolean;
-  conditional?: 'isManualStart' | 'includesProp' | 'canAddFuelTank';
+  conditional?: 'isManualStart' | 'includesProp' | 'canAddFuelTank' | 'isInstalled';
 }
 
 const COMPARISON_FEATURES: ComparisonFeature[] = [
   { label: 'Mercury outboard motor', good: true, better: true, best: true },
   { label: 'Standard controls & rigging', good: true, better: true, best: true },
-  { label: 'Professional installation', good: true, better: true, best: true },
+  { label: 'Professional installation', good: true, better: true, best: true, conditional: 'isInstalled' },
   { label: 'Marine starting battery', good: false, better: true, best: true, conditional: 'isManualStart' },
   { label: '7 years total warranty', good: false, better: true, best: true },
   { label: '8 years total warranty', good: false, better: false, best: true },
   { label: 'Premium aluminum propeller', good: false, better: false, best: true, conditional: 'includesProp' },
   { label: 'External fuel tank & hose', good: false, better: false, best: true, conditional: 'canAddFuelTank' },
-  { label: 'Priority scheduling', good: false, better: true, best: true },
-  { label: 'White-glove installation', good: false, better: false, best: true },
+  { label: 'Priority scheduling', good: false, better: true, best: true, conditional: 'isInstalled' },
+  { label: 'White-glove installation', good: false, better: false, best: true, conditional: 'isInstalled' },
   { label: 'FREE Mercury Hat', good: false, better: true, best: true },
   { label: 'FREE Mercury Shirt', good: false, better: false, best: true },
 ];
@@ -55,7 +56,8 @@ export function PackageComparisonTable({
   currentCoverageYears,
   isManualStart,
   includesProp,
-  canAddFuelTank
+  canAddFuelTank,
+  purchasePath = 'installed'
 }: PackageComparisonTableProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -70,10 +72,12 @@ export function PackageComparisonTable({
   };
 
   // Filter features based on conditions
+  const isInstalled = purchasePath === 'installed';
   const filteredFeatures = COMPARISON_FEATURES.filter(feature => {
     if (feature.conditional === 'isManualStart') return !isManualStart;
     if (feature.conditional === 'includesProp') return !includesProp;
     if (feature.conditional === 'canAddFuelTank') return canAddFuelTank;
+    if (feature.conditional === 'isInstalled') return isInstalled;
     return true;
   });
 
