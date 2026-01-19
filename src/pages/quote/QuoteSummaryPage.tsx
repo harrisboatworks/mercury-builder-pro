@@ -544,13 +544,15 @@ export default function QuoteSummaryPage() {
   };
 
   // Package features for display
+  const isInstalled = state.purchasePath === 'installed';
   const selectedPackageFeatures = useMemo(() => {
     if (selectedPackage === 'best') {
       return [
         "Everything in Complete",
         `Maximum ${PREMIUM_TARGET_YEARS} years coverage`,
         "Premium propeller",
-        "White-glove installation"
+        "🧢👕 FREE Hat + Shirt ($75)",
+        ...(isInstalled ? ["White-glove installation"] : [])
       ];
     }
     if (selectedPackage === 'better') {
@@ -558,15 +560,16 @@ export default function QuoteSummaryPage() {
         "Mercury motor",
         `${COMPLETE_TARGET_YEARS} years coverage`,
         "Marine battery included",
-        "Priority installation"
+        "🧢 FREE Mercury Hat ($35)",
+        ...(isInstalled ? ["Priority installation"] : [])
       ];
     }
     return [
       "Mercury motor",
       `${currentCoverageYears} years coverage`,
-      "Standard installation"
+      ...(isInstalled ? ["Standard installation"] : [])
     ];
-  }, [selectedPackage, currentCoverageYears]);
+  }, [selectedPackage, currentCoverageYears, isInstalled]);
 
   return (
     <>
