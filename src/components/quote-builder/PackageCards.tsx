@@ -129,11 +129,16 @@ export function PackageCards({
             )}
             aria-pressed={isSelected}
           >
-            {/* Mobile Selected Checkmark Badge */}
+            {/* Selected Checkmark Badge - all screen sizes */}
             {isSelected && (
-              <span className="absolute right-3 bottom-3 flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground sm:hidden">
+              <motion.span 
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                className="absolute right-3 bottom-3 flex items-center justify-center w-6 h-6 rounded-full bg-primary text-primary-foreground shadow-lg"
+              >
                 <Check className="w-4 h-4" />
-              </span>
+              </motion.span>
             )}
             
             {p.recommended && (
