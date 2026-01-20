@@ -21,6 +21,8 @@ export function GlobalStickyQuoteBar() {
     '/quote/summary',
     '/quote/trade-in',
     '/quote/boat-info',
+    '/quote/promo-selection',
+    '/quote/package-selection',
     '/financing',
     '/login',
     '/auth',
