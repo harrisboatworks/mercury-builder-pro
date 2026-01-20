@@ -34,6 +34,9 @@ type StickySummaryProps = {
   onEmailQuote?: () => void;
   onTextQuote?: () => void;
   onBookConsult?: () => void;
+  // Payment preference props
+  paymentPreference?: 'cash' | 'financing';
+  isProcessingPayment?: boolean;
 };
 
 export default function StickySummary({
@@ -62,6 +65,9 @@ export default function StickySummary({
   onEmailQuote,
   onTextQuote,
   onBookConsult,
+  // Payment preference props
+  paymentPreference = 'cash',
+  isProcessingPayment = false,
 }: StickySummaryProps) {
   const { playCelebration } = useSound();
   const [showPulse, setShowPulse] = useState(false);
@@ -211,9 +217,19 @@ export default function StickySummary({
 
           <button
             onClick={handleReserveClick}
-            className={`w-full rounded-xl bg-blue-600 px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${showPulse ? 'premium-pulse' : ''}`}
+            disabled={isProcessingPayment}
+            className={`w-full rounded-xl px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed ${
+              paymentPreference === 'financing' 
+                ? 'bg-primary' 
+                : 'bg-blue-600'
+            } ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
           >
-            Reserve with {money(depositAmount)} refundable deposit
+            {isProcessingPayment 
+              ? 'Processing...' 
+              : paymentPreference === 'financing'
+                ? 'Apply for Financing'
+                : `Reserve with ${money(depositAmount)} refundable deposit`
+            }
           </button>
         </div>
       </aside>
