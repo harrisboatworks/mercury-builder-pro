@@ -6,6 +6,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
+import { PaymentPreferenceSelector, getRecommendedDeposit } from '@/components/quote-builder/PaymentPreferenceSelector';
 
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
@@ -16,6 +17,7 @@ import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCine
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 
 import { useQuote } from '@/contexts/QuoteContext';
+import { useAuth } from '@/components/auth/AuthProvider';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CreditCard, ChevronLeft } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
@@ -60,6 +62,7 @@ const pricingTableVariants = {
 export default function QuoteSummaryPage() {
   const navigate = useNavigate();
   const { state, dispatch, getQuoteData } = useQuote();
+  const { user } = useAuth();
   const { promo } = useActiveFinancingPromo();
   const { promotions, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { toast } = useToast();
@@ -68,6 +71,10 @@ export default function QuoteSummaryPage() {
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [isMounted, setIsMounted] = useState(false);
   const [showSaveDialog, setShowSaveDialog] = useState(false);
+  
+  // Payment preference state - default to cash (75% of sales)
+  const [paymentPreference, setPaymentPreference] = useState<'cash' | 'financing'>('cash');
+  const [isProcessingDeposit, setIsProcessingDeposit] = useState(false);
   
   // Cinematic reveal - show for fresh quotes coming from package selection
   const [showCinematic, setShowCinematic] = useState(false);
@@ -159,6 +166,9 @@ export default function QuoteSummaryPage() {
   const motorHp = hp;
   const sku = motor?.sku ?? motor?.partNumber ?? null;
   const imageUrl = motor?.imageUrl ?? motor?.thumbnail ?? null;
+  
+  // Smart deposit tier based on motor HP (default to cash path - 75% of sales)
+  const [selectedDeposit, setSelectedDeposit] = useState(() => getRecommendedDeposit(hp));
 
   // Spec pills
   const specs = [
@@ -543,6 +553,55 @@ export default function QuoteSummaryPage() {
     navigate('/quote/schedule');
   };
 
+  // Handle deposit payment via Stripe
+  const handleReserveDeposit = async () => {
+    setIsProcessingDeposit(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('create-payment', {
+        body: {
+          paymentType: 'deposit',
+          depositAmount: String(selectedDeposit),
+          customerInfo: {
+            name: user?.user_metadata?.full_name || 'Customer',
+            email: user?.email || ''
+          },
+          motorInfo: {
+            model: motorName,
+            hp: hp,
+            year: modelYear || 2026
+          }
+        }
+      });
+
+      if (error) throw error;
+      if (data?.url) {
+        window.open(data.url, '_blank');
+        toast({
+          title: "Redirecting to Payment",
+          description: "Opening secure payment window...",
+        });
+      }
+    } catch (error: any) {
+      console.error('Deposit error:', error);
+      toast({
+        title: 'Payment Error',
+        description: error.message || 'Failed to initiate deposit. Please try again.',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsProcessingDeposit(false);
+    }
+  };
+
+  // Handle primary CTA based on payment preference
+  const handlePrimaryCTA = () => {
+    if (paymentPreference === 'financing') {
+      handleApplyForFinancing();
+    } else {
+      handleReserveDeposit();
+    }
+  };
+
   // Package features for display
   const isInstalled = state.purchasePath === 'installed';
   const selectedPackageFeatures = useMemo(() => {
@@ -702,14 +761,22 @@ export default function QuoteSummaryPage() {
 
               {/* Sticky Summary - Right Column (Desktop) */}         
               <div>
+                <PaymentPreferenceSelector
+                  motorHP={hp}
+                  paymentPreference={paymentPreference}
+                  onPaymentPreferenceChange={setPaymentPreference}
+                  selectedDeposit={selectedDeposit}
+                  onDepositChange={setSelectedDeposit}
+                  isProcessing={isProcessingDeposit}
+                />
                 <StickySummary
                   packageLabel={selectedPackageLabel}
                   yourPriceBeforeTax={packageSpecificTotals.subtotal}
                   totalSavings={totals.savings}
                   monthly={monthlyPayment}
                   bullets={selectedPackageFeatures}
-                  onReserve={() => {}}
-                  depositAmount={200}
+                  onReserve={handlePrimaryCTA}
+                  depositAmount={selectedDeposit}
                   coverageYears={selectedPackageCoverageYears}
                   onDownloadPDF={handleDownloadPDF}
                   onSaveForLater={() => setShowSaveDialog(true)}
@@ -720,6 +787,8 @@ export default function QuoteSummaryPage() {
                   onEmailQuote={() => {}}
                   onTextQuote={() => {}}
                   onBookConsult={handleBookConsult}
+                  paymentPreference={paymentPreference}
+                  isProcessingPayment={isProcessingDeposit}
                 />
               </div>
             </div>
