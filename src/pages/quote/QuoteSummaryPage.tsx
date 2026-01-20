@@ -134,7 +134,7 @@ export default function QuoteSummaryPage() {
   useEffect(() => {
     if (isMounted) {
       if (!state.motor) {
-        navigate('/quote/motor');
+        navigate('/quote/motor-selection');
       } else if (!state.selectedPromoOption) {
         navigate('/quote/promo-selection');
       } else if (!state.selectedPackage) {
