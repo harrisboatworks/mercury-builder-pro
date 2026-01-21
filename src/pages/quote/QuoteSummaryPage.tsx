@@ -6,7 +6,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
-import { PaymentPreferenceSelector, getRecommendedDeposit } from '@/components/quote-builder/PaymentPreferenceSelector';
+import { getRecommendedDeposit } from '@/components/quote-builder/PaymentPreferenceSelector';
 
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
@@ -72,8 +72,7 @@ export default function QuoteSummaryPage() {
   const [isMounted, setIsMounted] = useState(false);
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   
-  // Payment preference state - default to cash (75% of sales)
-  const [paymentPreference, setPaymentPreference] = useState<'cash' | 'financing'>('cash');
+  // Deposit processing state - amount is auto-calculated from HP
   const [isProcessingDeposit, setIsProcessingDeposit] = useState(false);
   
   // Cinematic reveal - show for fresh quotes coming from package selection
@@ -167,8 +166,8 @@ export default function QuoteSummaryPage() {
   const sku = motor?.sku ?? motor?.partNumber ?? null;
   const imageUrl = motor?.imageUrl ?? motor?.thumbnail ?? null;
   
-  // Smart deposit tier based on motor HP (default to cash path - 75% of sales)
-  const [selectedDeposit, setSelectedDeposit] = useState(() => getRecommendedDeposit(hp));
+  // Auto-calculated deposit based on motor HP (no user selection)
+  const depositAmount = getRecommendedDeposit(hp);
 
   // Spec pills
   const specs = [
@@ -560,7 +559,7 @@ export default function QuoteSummaryPage() {
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: {
           paymentType: 'deposit',
-          depositAmount: String(selectedDeposit),
+          depositAmount: String(depositAmount),
           customerInfo: {
             name: user?.user_metadata?.full_name || 'Customer',
             email: user?.email || ''
@@ -593,14 +592,14 @@ export default function QuoteSummaryPage() {
     }
   };
 
-  // Handle primary CTA based on payment preference
-  const handlePrimaryCTA = () => {
-    if (paymentPreference === 'financing') {
-      handleApplyForFinancing();
-    } else {
+  // Listen for deposit trigger from UnifiedMobileBar
+  useEffect(() => {
+    const handleInitiateDeposit = () => {
       handleReserveDeposit();
-    }
-  };
+    };
+    window.addEventListener('initiate-deposit', handleInitiateDeposit);
+    return () => window.removeEventListener('initiate-deposit', handleInitiateDeposit);
+  }, [depositAmount, user, motorName, hp, modelYear]);
 
   // Package features for display
   const isInstalled = state.purchasePath === 'installed';
@@ -761,33 +760,20 @@ export default function QuoteSummaryPage() {
 
               {/* Sticky Summary - Right Column (Desktop) */}         
               <div>
-                <PaymentPreferenceSelector
-                  motorHP={hp}
-                  paymentPreference={paymentPreference}
-                  onPaymentPreferenceChange={setPaymentPreference}
-                  selectedDeposit={selectedDeposit}
-                  onDepositChange={setSelectedDeposit}
-                  isProcessing={isProcessingDeposit}
-                />
                 <StickySummary
                   packageLabel={selectedPackageLabel}
                   yourPriceBeforeTax={packageSpecificTotals.subtotal}
                   totalSavings={totals.savings}
                   monthly={monthlyPayment}
                   bullets={selectedPackageFeatures}
-                  onReserve={handlePrimaryCTA}
-                  depositAmount={selectedDeposit}
+                  onReserve={handleReserveDeposit}
+                  depositAmount={depositAmount}
                   coverageYears={selectedPackageCoverageYears}
                   onDownloadPDF={handleDownloadPDF}
                   onSaveForLater={() => setShowSaveDialog(true)}
                   onApplyForFinancing={handleApplyForFinancing}
                   isGeneratingPDF={isGeneratingPDF}
                   showUpgradePrompt={false}
-                  packageInclusions={selectedPackageFeatures}
-                  onEmailQuote={() => {}}
-                  onTextQuote={() => {}}
-                  onBookConsult={handleBookConsult}
-                  paymentPreference={paymentPreference}
                   isProcessingPayment={isProcessingDeposit}
                 />
               </div>

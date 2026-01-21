@@ -29,13 +29,7 @@ type StickySummaryProps = {
   upgradeCostDelta?: number;
   upgradeCoverageGain?: number;
   onUpgradeClick?: () => void;
-  // Mobile sheet props
-  packageInclusions?: string[];
-  onEmailQuote?: () => void;
-  onTextQuote?: () => void;
-  onBookConsult?: () => void;
-  // Payment preference props
-  paymentPreference?: 'cash' | 'financing';
+  // Payment processing prop
   isProcessingPayment?: boolean;
 };
 
@@ -60,13 +54,7 @@ export default function StickySummary({
   upgradeCostDelta,
   upgradeCoverageGain,
   onUpgradeClick,
-  // Mobile sheet props
-  packageInclusions = [],
-  onEmailQuote,
-  onTextQuote,
-  onBookConsult,
-  // Payment preference props
-  paymentPreference = 'cash',
+  // Payment processing prop
   isProcessingPayment = false,
 }: StickySummaryProps) {
   const { playCelebration } = useSound();
@@ -218,17 +206,11 @@ export default function StickySummary({
           <button
             onClick={handleReserveClick}
             disabled={isProcessingPayment}
-            className={`w-full rounded-xl px-4 py-3 text-center text-white shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed ${
-              paymentPreference === 'financing' 
-                ? 'bg-primary' 
-                : 'bg-blue-600'
-            } ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
+            className={`w-full rounded-xl bg-primary px-4 py-3 text-center text-primary-foreground shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-50 disabled:cursor-not-allowed ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
           >
             {isProcessingPayment 
               ? 'Processing...' 
-              : paymentPreference === 'financing'
-                ? 'Apply for Financing'
-                : `Reserve with ${money(depositAmount)} refundable deposit`
+              : `Reserve with ${money(depositAmount)} refundable deposit`
             }
           </button>
         </div>
