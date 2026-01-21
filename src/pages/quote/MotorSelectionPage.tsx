@@ -18,6 +18,7 @@ import { daysUntil } from '@/lib/finance';
 import { Clock } from 'lucide-react';
 import { DismissibleBanner } from '@/components/ui/dismissible-banner';
 import mercuryGet7PromoMobile from '@/assets/mercury-get7-promo-mobile.png';
+import mercuryGet7Promo from '@/assets/mercury-get-7-choose-one.jpg';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview from '@/components/motors/MotorCardPreview';
@@ -942,7 +943,7 @@ if (event.type === 'filter_motors') {
           className="max-w-4xl mx-auto px-4 mb-4"
           actionLabel="See Your Options"
           actionHref="/promotions"
-          imageUrl="/images/promotions/mercury-get-7-choose-one.jpg"
+          imageUrl={mercuryGet7Promo}
           imageAlt="Mercury Get 7 + Choose One"
           mobileImageUrl={mercuryGet7PromoMobile}
           mobileImageAlt="Get 7 Years Factory Coverage + Choose One Bonus"

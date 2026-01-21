@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Sparkles, Shield, Calendar } from 'lucide-react';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import mercuryGet7Promo from '@/assets/mercury-get-7-choose-one.jpg';
 
 interface PromotionHeroProps {
   endDate?: string | null;
@@ -38,7 +39,7 @@ export function PromotionHero({ endDate }: PromotionHeroProps) {
           className="mb-8"
         >
           <img 
-            src="/images/promotions/mercury-get-7-choose-one.jpg" 
+            src={mercuryGet7Promo} 
             alt="Mercury Get 7 + Choose One Promotion"
             className="max-w-full md:max-w-2xl mx-auto rounded-xl shadow-2xl"
           />
