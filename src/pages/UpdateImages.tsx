@@ -89,13 +89,13 @@ export default function UpdateImages() {
     try {
       toast.info('Fetching motors that need images...');
       
-      // Get motors without images (check all three image fields)
+      // Get motors without images (all three image fields must be null/empty)
       const { data: motors, error: fetchError } = await supabase
         .from('motor_models')
         .select('id, horsepower, family, model_display')
-        .or('image_url.is.null,image_url.eq.')
+        .is('image_url', null)
+        .is('hero_image_url', null)
         .or('images.is.null,images.eq.[]')
-        .or('hero_image_url.is.null,hero_image_url.eq.')
         .not('horsepower', 'is', null)
         .limit(10);
       
