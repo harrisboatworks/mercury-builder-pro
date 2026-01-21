@@ -16,6 +16,7 @@ import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { cn } from '@/lib/utils';
 import { getHPRange, HP_SPECIFIC_MESSAGES, MOTOR_FAMILY_TIPS, getMotorFamilyKey, getMotorFamilyConfiguratorTip } from '@/components/chat/conversationalMessages';
+import { getRecommendedDeposit } from '@/components/quote-builder/PaymentPreferenceSelector';
 import { EXPERT_NUDGES, getRecommendedHPRange, isUnderpowered, getRotatingNudge, PROMO_AWARENESS_NUDGES, getChatNudgesForPath, ChatEngagementNudge } from '@/lib/quote-nudges';
 import { usePageSpecificInsights } from '@/hooks/usePageSpecificInsights';
 
@@ -496,9 +497,11 @@ export const UnifiedMobileBar: React.FC = () => {
   };
 
   const getPrimaryLabel = (): string => {
-    // Summary page shows Reserve CTA
+    // Summary page shows dynamic Reserve CTA based on motor HP
     if (location.pathname === '/quote/summary') {
-      return 'Reserve $200';
+      const motorHP = state.motor?.hp || 0;
+      const deposit = getRecommendedDeposit(motorHP);
+      return `Reserve $${deposit} →`;
     }
     // When previewing a motor on motor-selection, show Configure
     if (isPreview && location.pathname === '/quote/motor-selection') {
@@ -915,6 +918,13 @@ export const UnifiedMobileBar: React.FC = () => {
 
   const handlePrimary = () => {
     triggerHaptic('light');
+    
+    // Summary page: trigger deposit payment via custom event
+    if (location.pathname === '/quote/summary') {
+      window.dispatchEvent(new CustomEvent('initiate-deposit'));
+      return;
+    }
+    
     // If previewing a motor on selection page, select it first
     if (isPreview && location.pathname === '/quote/motor-selection' && state.previewMotor) {
       dispatch({ type: 'SET_MOTOR', payload: state.previewMotor });
