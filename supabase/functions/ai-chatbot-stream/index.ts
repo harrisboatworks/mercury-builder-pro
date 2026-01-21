@@ -846,6 +846,23 @@ If they ask about installation, explain:
     return `${p.name}: ${benefitText}${endDateStr}`;
   }).join(' | ');
 
+  // Build Mercury Get 7 rebate matrix context from promo_options
+  let rebateMatrixContext = '';
+  const get7Promo = promotions.find(p => p.name?.toLowerCase().includes('get 7') && p.promo_options?.options);
+  if (get7Promo?.promo_options?.options) {
+    const rebateOption = get7Promo.promo_options.options.find((o: any) => o.id === 'cash_rebate');
+    if (rebateOption?.matrix && Array.isArray(rebateOption.matrix)) {
+      rebateMatrixContext = `
+## MERCURY GET 7 FACTORY REBATES - EXACT AMOUNTS BY HP (MEMORIZE THIS!)
+When a customer asks about rebates, use EXACTLY these amounts based on motor HP:
+${rebateOption.matrix.map((tier: any) => `- ${tier.hp_min === tier.hp_max ? `${tier.hp_min}HP` : `${tier.hp_min}-${tier.hp_max}HP`}: $${tier.rebate} rebate`).join('\n')}
+
+Example: 9.9HP is in the 8-20HP range = **$250 rebate** (NOT $500!)
+Example: 115HP is in the 80-115HP range = **$500 rebate**
+`;
+    }
+  }
+
   // Personality injection based on detected topics
   let topicHint = '';
   if (detectedTopics.includes('fishing')) topicHint = "They're into fishing - be enthusiastic!";
@@ -853,6 +870,7 @@ If they ask about installation, explain:
   else if (detectedTopics.includes('price_concern')) topicHint = "Budget matters - focus on value.";
 
   return `You're Harris from Harris Boat Works - talk like a friendly local who genuinely loves boats.
+${rebateMatrixContext}
 
 ## MOTOR MODEL CODE INTERPRETER (CRITICAL FOR SPEC QUESTIONS)
 When a customer asks about a motor's features (electric start, tiller, shaft length), DECODE THE MODEL NAME - the answer is in the letters after the HP!
