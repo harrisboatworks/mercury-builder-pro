@@ -377,60 +377,56 @@ export default function PackageSelectionPage() {
               </div>
             </motion.div>
 
-            {/* Smart Recommendation Badge with Tooltip */}
+            {/* Compact Recommendation Badge */}
             <TooltipProvider>
               <motion.div
-                initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: 0.5, duration: 0.4, type: "spring" }}
-                className="relative mx-auto max-w-md"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.3 }}
+                className="flex items-center justify-center py-2"
               >
-                <div className="bg-white rounded-xl border-2 border-primary shadow-lg px-5 py-4">
-                  <div className="flex items-center justify-center gap-3">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <Star className="w-5 h-5 text-primary fill-primary" />
-                    </div>
-                    <div className="text-left">
-                      <p className="text-sm font-bold text-foreground">
-                        Recommended for You: {recommendation.packageId === 'good' ? 'Essential' : recommendation.packageId === 'better' ? 'Complete' : 'Premium'}
-                      </p>
-                      <p className="text-xs text-muted-foreground">{recommendation.reason}</p>
-                    </div>
-                    
-                    {/* Why This? Tooltip */}
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <button className="ml-1 p-1.5 rounded-full hover:bg-muted transition-colors">
-                          <HelpCircle className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" />
-                        </button>
-                      </TooltipTrigger>
-                      <TooltipContent 
-                        side="bottom" 
-                        className="max-w-xs p-4 bg-white border shadow-xl"
-                      >
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-2">
-                            <Lightbulb className="w-4 h-4 text-primary" />
-                            <span className="font-semibold text-foreground">{recommendationExplanation.title}</span>
-                          </div>
-                          <p className="text-xs text-muted-foreground font-medium">Based on your setup:</p>
-                          <ul className="space-y-2">
-                            {recommendationExplanation.factors.map((factor, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-xs text-foreground">
-                                <span className="text-primary mt-0.5">•</span>
-                                <span>{factor}</span>
-                              </li>
-                            ))}
-                          </ul>
-                          <div className="pt-2 border-t border-border">
-                            <p className="text-xs text-muted-foreground italic">
-                              You can always choose a different package based on your preferences.
-                            </p>
-                          </div>
+                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+                  <Star className="w-4 h-4 text-primary fill-primary flex-shrink-0" />
+                  <span className="text-sm font-semibold text-white">
+                    Recommended: {recommendation.packageId === 'good' ? 'Essential' : recommendation.packageId === 'better' ? 'Complete' : 'Premium'}
+                  </span>
+                  <span className="text-xs text-stone-400 hidden sm:inline">
+                    — {recommendation.reason}
+                  </span>
+                  
+                  {/* Inline Tooltip */}
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <button className="p-1 rounded-full hover:bg-white/10 transition-colors flex-shrink-0">
+                        <HelpCircle className="w-3.5 h-3.5 text-stone-400 hover:text-white transition-colors" />
+                      </button>
+                    </TooltipTrigger>
+                    <TooltipContent 
+                      side="bottom" 
+                      className="max-w-xs p-4 bg-white border shadow-xl"
+                    >
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2">
+                          <Lightbulb className="w-4 h-4 text-primary" />
+                          <span className="font-semibold text-foreground">{recommendationExplanation.title}</span>
                         </div>
-                      </TooltipContent>
-                    </Tooltip>
-                  </div>
+                        <p className="text-xs text-muted-foreground font-medium">Based on your setup:</p>
+                        <ul className="space-y-2">
+                          {recommendationExplanation.factors.map((factor, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-xs text-foreground">
+                              <span className="text-primary mt-0.5">•</span>
+                              <span>{factor}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="pt-2 border-t border-border">
+                          <p className="text-xs text-muted-foreground italic">
+                            You can always choose a different package based on your preferences.
+                          </p>
+                        </div>
+                      </div>
+                    </TooltipContent>
+                  </Tooltip>
                 </div>
               </motion.div>
             </TooltipProvider>
