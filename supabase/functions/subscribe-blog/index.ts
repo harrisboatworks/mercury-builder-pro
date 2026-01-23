@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
@@ -30,10 +30,10 @@ const handler = async (req: Request): Promise<Response> => {
                      'unknown';
     
     const { data: allowed } = await supabase.rpc('check_rate_limit', {
-      p_identifier: clientIP,
-      p_action: 'blog_subscribe',
-      p_max_attempts: 10,
-      p_window_minutes: 60
+      _identifier: clientIP,
+      _action: 'blog_subscribe',
+      _max_attempts: 10,
+      _window_minutes: 60
     });
 
     if (!allowed) {

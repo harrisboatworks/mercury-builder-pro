@@ -1,8 +1,8 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2.53.1";
+import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { corsHeaders } from "../_shared/cors.ts";
-import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+import { z } from "npm:zod@3.22.4";
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
@@ -39,10 +39,10 @@ const handler = async (req: Request): Promise<Response> => {
                      'unknown';
     
     const { data: allowed } = await supabase.rpc('check_rate_limit', {
-      p_identifier: clientIP,
-      p_action: 'contact_inquiry',
-      p_max_attempts: 5,
-      p_window_minutes: 60
+      _identifier: clientIP,
+      _action: 'contact_inquiry',
+      _max_attempts: 5,
+      _window_minutes: 60
     });
 
     if (!allowed) {

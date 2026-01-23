@@ -1,6 +1,6 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { z } from "npm:zod@3.22.4";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -59,10 +59,10 @@ serve(async (req) => {
                      'unknown';
     
     const { data: allowed } = await supabase.rpc('check_rate_limit', {
-      p_identifier: clientIP,
-      p_action: 'chat_lead',
-      p_max_attempts: 5,
-      p_window_minutes: 60
+      _identifier: clientIP,
+      _action: 'chat_lead',
+      _max_attempts: 5,
+      _window_minutes: 60
     });
 
     if (!allowed) {
