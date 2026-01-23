@@ -120,6 +120,7 @@ export default function InstallationPage() {
           
           <InstallationConfig 
             selectedMotor={state.motor}
+            boatInfo={state.boatInfo}
             onComplete={handleStepComplete}
           />
         </div>
