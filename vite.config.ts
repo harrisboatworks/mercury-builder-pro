@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
     mode === 'development' && componentTagger(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'robots.txt', 'assets/**/*', 'lovable-uploads/**/*'],
+      includeAssets: ['favicon.ico', 'robots.txt', 'assets/**/*'],
       manifest: {
         name: 'Mercury Quote Tool - Harris Boat Works',
         short_name: 'Mercury Quote',
