@@ -100,7 +100,9 @@ const BlogUnsubscribe = lazy(() => import("./pages/BlogUnsubscribe"));
 const Compare = lazy(() => import("./pages/Compare"));
 
 // Test/Dev pages (low priority)
-const Dev = lazy(() => import("./pages/Dev"));
+// IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
+// Vite replaces `import.meta.env.DEV` at build time, so the Dev import is tree-shaken from production.
+const Dev = import.meta.env.DEV ? lazy(() => import("./pages/Dev")) : NotFound;
 const TestScraper = lazy(() => import("./pages/TestScraper"));
 const TestEmail = lazy(() => import("./pages/TestEmail"));
 const TestFinancingEmails = lazy(() => import("./pages/TestFinancingEmails"));
