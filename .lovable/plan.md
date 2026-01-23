@@ -1,143 +1,150 @@
 
-# Fix Publishing Failures: Complete Edge Function Standardization + Dev Route Restoration
+
+# Complete Publishing Fix: Remove Heavy Dependencies + Security Hardening
 
 ## Problem Summary
 
-Your publish keeps failing despite the Vite build succeeding. After thorough investigation, I've identified **two root causes**:
+The publish is failing because the production bundle includes a **21.6 MB WASM file** (`ort-wasm-simd-threaded.jsep.wasm`) from `@huggingface/transformers`. This happens because the `/dev` route is now unconditionally loaded, which imports the `ImageProcessor` component that uses AI-based background removal.
 
-1. **Edge Function Import Inconsistency**: 20+ edge functions still use mixed/outdated dependency versions that can fail during Deno deployment
-2. **Dev Route Conflict**: You need `/dev` to work on the live site, but the current code gates it to development-only
+Additionally, there are **security vulnerabilities** that need to be addressed:
+- `chat_messages` table is publicly readable (exposing ~330 private messages)
+- `email_sequence_queue` table has RLS enabled but no policies
 
 ---
 
 ## Root Cause Analysis
 
-### Edge Functions Using Outdated Imports
+### Build Size Issue
 
-| Version | Functions Affected |
-|---------|-------------------|
-| `@supabase/supabase-js@2.7.1` | `update-motor-images`, `generate-motor-spec-sheet` |
-| `@supabase/supabase-js@2.39.3` | `scrape-motor-prices`, `send-repower-guide-email`, `process-email-sequence`, `track-email-event`, `unsubscribe-email-sequence`, `start-abandoned-quote-sequence`, `sync-google-sheets-inventory`, `sync-dropbox-folder`, `sync-dropbox-motor-folders` |
-| `@supabase/supabase-js@2.47.10` | `trigger-zapier-webhooks`, `send-quote-email` |
-| `@supabase/supabase-js@2.49.1` | `scrape-mercury-public` |
-| `@supabase/supabase-js@2.57.2` | `stripe-webhook`, `create-payment` |
-| `deno.land/std@0.168.0` | 15+ functions (mixing with `0.190.0`) |
+| File | Size | Source |
+|------|------|--------|
+| `ort-wasm-simd-threaded.jsep.wasm` | 21.6 MB | `@huggingface/transformers` via Dev page |
 
-When Lovable's publish system deploys these functions, `esm.sh` resolution can differ from what worked locally, causing random deployment failures.
+The problem chain:
+1. `src/App.tsx:105` → unconditionally imports `Dev.tsx`
+2. `src/pages/Dev.tsx:4` → imports `ImageProcessor`
+3. `src/components/ui/image-processor.tsx` → imports `processSpeedBoatImage`
+4. `src/utils/processSpeedBoatImage.ts` → imports `removeBackground`
+5. `src/lib/backgroundRemoval.ts` → imports `@huggingface/transformers`
+6. `@huggingface/transformers` → bundles ONNX runtime WASM (21.6 MB)
+
+Even with lazy loading, Vite still analyzes the import tree and includes the WASM file in the production bundle because it's referenced via `new URL()` patterns.
+
+### Security Issues
+
+1. **`chat_messages`**: Has `FOR SELECT USING (true)` policy allowing anyone to read all messages
+2. **`email_sequence_queue`**: RLS enabled but no policies defined (blocks all access by default, but needs proper admin policies)
 
 ---
 
 ## Implementation Plan
 
-### Phase 1: Restore Dev Route for Production
-Update `src/App.tsx` to unconditionally load the Dev page so it works on the live site.
+### Phase 1: Fix Bundle Size (Keep /dev Working)
 
-**Change at line 105:**
+Remove the `ImageProcessor` from the Dev page. The `/dev` route will retain its core functionality (quote list, seed quote) but exclude the heavy AI background removal tool.
+
+**File: `src/pages/Dev.tsx`**
 ```typescript
-// Before (gates Dev to development only)
-const Dev = import.meta.env.DEV ? lazy(() => import("./pages/Dev")) : NotFound;
+// Remove this import:
+// import { ImageProcessor } from '@/components/ui/image-processor';
 
-// After (always available)
-const Dev = lazy(() => import("./pages/Dev"));
+// Remove from JSX:
+// <ImageProcessor />
 ```
 
-> **Note**: This will include the ~21MB `@huggingface/transformers` in the production bundle. The build will be larger but the route will work.
+This keeps `/dev` working in production for its primary purpose while removing the 21.6 MB dependency from the bundle.
 
-### Phase 2: Standardize All Edge Function Imports
-Update every edge function to use:
-- `npm:@supabase/supabase-js@2.53.1` (stable, npm-resolved)
-- `https://deno.land/std@0.190.0/http/server.ts` (consistent std version)
+### Phase 2: Secure chat_messages Table
 
-**Functions requiring updates (20 total):**
+Add proper RLS policies so users can only see messages from their own conversations.
 
-| Function | Current Supabase Version | Current std Version |
-|----------|-------------------------|---------------------|
-| `update-motor-images` | 2.7.1 | 0.168.0 |
-| `generate-motor-spec-sheet` | 2.7.1 | 0.168.0 |
-| `scrape-motor-prices` | 2.39.3 | 0.168.0 |
-| `send-repower-guide-email` | 2.39.3 | 0.190.0 ✓ |
-| `process-email-sequence` | 2.39.3 | 0.190.0 ✓ |
-| `track-email-event` | 2.39.3 | 0.190.0 ✓ |
-| `unsubscribe-email-sequence` | 2.39.3 | 0.190.0 ✓ |
-| `start-abandoned-quote-sequence` | 2.39.3 | 0.190.0 ✓ |
-| `sync-google-sheets-inventory` | 2.39.3 | (uses Deno.serve) |
-| `sync-dropbox-folder` | 2.39.3 | (uses Deno.serve) |
-| `sync-dropbox-motor-folders` | 2.39.3 | (uses Deno.serve) |
-| `trigger-zapier-webhooks` | 2.47.10 | 0.168.0 |
-| `send-quote-email` | 2.47.10 | 0.168.0 |
-| `scrape-mercury-public` | 2.49.1 | 0.168.0 |
-| `stripe-webhook` | 2.57.2 | 0.190.0 ✓ |
-| `create-payment` | 2.57.2 | 0.190.0 ✓ |
-| `scrape-motor-details` | 2.53.1 ✓ | 0.168.0 |
-| `file-proxy` | 2.53.1 ✓ | 0.168.0 |
-| `attach-brochure-pdf` | 2.53.1 ✓ | 0.168.0 |
-| `upload-hero-image` | 2.53.1 ✓ | 0.168.0 |
-| `sync-elevenlabs-static-kb` | (no supabase) | 0.168.0 |
-| `realtime-session` | (no supabase) | 0.168.0 |
-| `google-places` | (no supabase) | 0.168.0 |
-| `dropbox-oauth` | (no supabase) | 0.168.0 |
-| `get-dropbox-config` | (no supabase) | 0.168.0 |
-| `realtime-sdp-exchange` | (no supabase) | 0.168.0 |
-| `debug-xml-inventory` | (no supabase) | 0.168.0 |
+**Database Migration:**
+```sql
+-- Drop the overly permissive policy
+DROP POLICY IF EXISTS "Allow read access to chat_messages" ON public.chat_messages;
+DROP POLICY IF EXISTS "chat_messages_select_policy" ON public.chat_messages;
 
-### Phase 3: Verify and Publish
-After all imports are standardized:
-1. Attempt publish
-2. If it still fails, check Supabase edge function deployment logs
-3. Verify no migration drift between Test and Live environments
+-- Create secure policies
+CREATE POLICY "Users can view own chat messages"
+ON public.chat_messages FOR SELECT
+TO authenticated
+USING (
+  user_id = auth.uid() 
+  OR session_id IN (
+    SELECT session_id FROM public.chat_messages WHERE user_id = auth.uid()
+  )
+  OR public.has_role(auth.uid(), 'admin')
+);
 
----
+CREATE POLICY "Users can insert own chat messages"
+ON public.chat_messages FOR INSERT
+TO authenticated
+WITH CHECK (user_id = auth.uid() OR user_id IS NULL);
 
-## Technical Details
+CREATE POLICY "Anonymous users can insert chat messages"
+ON public.chat_messages FOR INSERT
+TO anon
+WITH CHECK (user_id IS NULL);
 
-### Standard Import Pattern (Target State)
-```typescript
-import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
-import { createClient } from "npm:@supabase/supabase-js@2.53.1";
-import { Resend } from "npm:resend@2.0.0";
+CREATE POLICY "Admins can manage all chat messages"
+ON public.chat_messages FOR ALL
+TO authenticated
+USING (public.has_role(auth.uid(), 'admin'));
 ```
 
-For functions using `Deno.serve` (newer pattern), no `std` import is needed—just update the Supabase client.
+### Phase 3: Secure email_sequence_queue Table
 
-### Why npm: Instead of esm.sh?
-- `npm:` specifier is resolved by Deno's native NPM support
-- More stable than `esm.sh` which can have CDN drift
-- Recommended by Supabase for edge functions
+Add admin-only policies for managing email sequences.
+
+**Database Migration:**
+```sql
+-- Admin-only access for email sequence queue
+CREATE POLICY "Admins can view email sequences"
+ON public.email_sequence_queue FOR SELECT
+TO authenticated
+USING (public.has_role(auth.uid(), 'admin'));
+
+CREATE POLICY "Admins can manage email sequences"
+ON public.email_sequence_queue FOR ALL
+TO authenticated
+USING (public.has_role(auth.uid(), 'admin'));
+
+-- Service role (edge functions) can manage sequences
+CREATE POLICY "Service role can manage email sequences"
+ON public.email_sequence_queue FOR ALL
+TO service_role
+USING (true);
+```
 
 ---
 
 ## Files to Modify
 
 ### Frontend (1 file)
-- `src/App.tsx` — Restore Dev route for production
+| File | Change |
+|------|--------|
+| `src/pages/Dev.tsx` | Remove `ImageProcessor` import and usage |
 
-### Edge Functions (26 files)
-- `supabase/functions/update-motor-images/index.ts`
-- `supabase/functions/generate-motor-spec-sheet/index.ts`
-- `supabase/functions/scrape-motor-prices/index.ts`
-- `supabase/functions/send-repower-guide-email/index.ts`
-- `supabase/functions/process-email-sequence/index.ts`
-- `supabase/functions/track-email-event/index.ts`
-- `supabase/functions/unsubscribe-email-sequence/index.ts`
-- `supabase/functions/start-abandoned-quote-sequence/index.ts`
-- `supabase/functions/sync-google-sheets-inventory/index.ts`
-- `supabase/functions/sync-dropbox-folder/index.ts`
-- `supabase/functions/sync-dropbox-motor-folders/index.ts`
-- `supabase/functions/trigger-zapier-webhooks/index.ts`
-- `supabase/functions/send-quote-email/index.ts`
-- `supabase/functions/scrape-mercury-public/index.ts`
-- `supabase/functions/stripe-webhook/index.ts`
-- `supabase/functions/create-payment/index.ts`
-- `supabase/functions/scrape-motor-details/index.ts`
-- `supabase/functions/file-proxy/index.ts`
-- `supabase/functions/attach-brochure-pdf/index.ts`
-- `supabase/functions/upload-hero-image/index.ts`
-- `supabase/functions/sync-elevenlabs-static-kb/index.ts`
-- `supabase/functions/realtime-session/index.ts`
-- `supabase/functions/google-places/index.ts`
-- `supabase/functions/dropbox-oauth/index.ts`
-- `supabase/functions/get-dropbox-config/index.ts`
-- `supabase/functions/realtime-sdp-exchange/index.ts`
+### Database (1 migration)
+| Action | Tables Affected |
+|--------|-----------------|
+| Add secure RLS policies | `chat_messages`, `email_sequence_queue` |
+
+---
+
+## Technical Details
+
+### Why This Fixes the Build
+
+The `@huggingface/transformers` library uses ONNX runtime which includes WASM binaries. Even with dynamic imports, Vite's bundler statically analyzes the import graph and includes referenced WASM files. By removing the import chain entirely from the Dev page, the 21.6 MB file is excluded from the production bundle.
+
+### What /dev Will Retain
+- Quote listing functionality
+- Seed quote creation button
+- Admin debugging tools
+
+### What /dev Will Lose
+- AI-powered background removal (can be moved to a separate admin-only tool if needed later)
 
 ---
 
@@ -145,14 +152,18 @@ For functions using `Deno.serve` (newer pattern), no `std` import is needed—ju
 
 | Risk | Mitigation |
 |------|------------|
-| Larger production bundle (~21MB more) | Acceptable trade-off if `/dev` must work live |
-| Edge function behavior change | Changes are import-only; no business logic modified |
-| Stripe integration breaking | Version 2.53.1 is compatible; signature verification unchanged |
+| /dev loses background removal | This is rarely used; can be re-added as separate admin tool |
+| RLS policy breaks existing queries | Policies allow authenticated users to see own data + admins |
+| Edge functions can't access email queue | Added `service_role` policy for edge functions |
 
 ---
 
 ## Expected Outcome
-After implementation, publishing should succeed because:
-1. All edge functions use consistent, stable imports
-2. No `esm.sh` resolution drift between local and deploy environments
-3. The `/dev` route loads correctly in production
+
+After implementation:
+1. Production bundle size reduced by ~21 MB
+2. Publishing should succeed without size/timeout issues
+3. `chat_messages` properly secured (users see only their own messages)
+4. `email_sequence_queue` secured (admin + service role only)
+5. `/dev` route works in production with core functionality
+
