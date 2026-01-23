@@ -1,28 +1,55 @@
 
-# Fix PDF Quote Overflowing to Two Pages
+# Fix Model Code Breakdown Missing Electric Start
 
 ## Problem
 
-The PDF quote is rendering on two pages instead of one. The footer and terms section are pushed to page 2, which looks unprofessional and wastes paper.
+The PDF quote's "Motor Code Breakdown" section is not showing "Electric start" for the motor **"60 ELPT FourStroke"**.
+
+**Current PDF shows:**
+- 60 = 60 Horsepower
+- Standard 20" shaft
+- PT = Power Trim & Tilt
+
+**Should also show:**
+- E = Electric start
+- L = Long shaft (20")
+
+---
 
 ## Root Cause
 
-The `termsSection` has a `marginBottom: 80` which creates excessive spacing before the absolutely-positioned footer. When combined with content like trade-in values, accessories, and financing details, this pushes the total height beyond a single page.
+The regex that extracts the model code fails when there's a **space** between the HP and rig codes.
+
+**Current regex (line 477):**
+```javascript
+const codeMatch = productName.match(/^([\d.]+[A-Z]*)/i);
+```
+
+| Input | What it captures | Result |
+|-------|------------------|--------|
+| `"60ELPT FourStroke"` | `"60ELPT"` | Works |
+| `"60 ELPT FourStroke"` | `"60"` | **Broken** - space stops the match |
+
+Since `modelCode = "60"` doesn't contain 'E', 'L', etc., those codes are not displayed.
 
 ---
 
 ## Solution
 
-Reduce the spacing in the PDF layout to fit everything on one page:
+Update the regex to capture the rig codes even when separated by a space:
 
-| Element | Current Value | New Value | Reason |
-|---------|---------------|-----------|--------|
-| `termsSection.marginBottom` | 80 | **40** | Excessive padding pushing content down |
-| `termsSection.marginTop` | 8 | **4** | Tighten spacing |
-| `pricingTableContainer.marginBottom` | 8 | **4** | Reduce spacing after pricing |
-| `summaryBox.marginBottom` | 8 | **6** | Slightly tighter |
-| `savingsCalloutBox.padding` | 10 | **8** | Slightly more compact |
-| `heroBox.marginBottom` (unused but still defined) | 18 | **12** | Compact |
+**New regex:**
+```javascript
+const codeMatch = productName.match(/^([\d.]+)\s*([A-Z]+)?/i);
+const modelCode = codeMatch ? (codeMatch[1] + (codeMatch[2] || '')).toUpperCase() : '';
+```
+
+This matches:
+- `[\d.]+` - The horsepower number
+- `\s*` - Optional whitespace
+- `([A-Z]+)?` - Optional letter codes (ELPT, MH, etc.)
+
+Then combines them: `"60" + "ELPT"` = `"60ELPT"`
 
 ---
 
@@ -30,55 +57,30 @@ Reduce the spacing in the PDF layout to fit everything on one page:
 
 **File: `src/components/quote-pdf/ProfessionalQuotePDF.tsx`**
 
-Adjust the following styles in the `StyleSheet.create` block:
+Update lines 476-478:
 
 ```typescript
-// Line 375-381: Reduce terms section spacing
-termsSection: {
-  marginTop: 4,       // was 8
-  marginBottom: 40,   // was 80 - THIS IS THE MAIN ISSUE
-  paddingTop: 8,
-  borderTop: `1 solid ${colors.border}`,
-},
+// Before (broken with spaces):
+const codeMatch = productName.match(/^([\d.]+[A-Z]*)/i);
+const modelCode = codeMatch ? codeMatch[1].toUpperCase() : '';
 
-// Line 128-132: Tighten pricing table container
-pricingTableContainer: {
-  border: `1 solid ${colors.border}`,
-  padding: 8,
-  marginBottom: 4,   // was 8
-},
-
-// Line 229-235: Tighten summary box
-summaryBox: {
-  padding: 8,
-  border: `1 solid ${colors.border}`,
-  backgroundColor: 'transparent',
-  marginBottom: 6,   // was 8
-},
-
-// Line 245-252: Tighten savings callout
-savingsCalloutBox: {
-  border: `2 solid ${colors.border}`,
-  padding: 8,        // was 10
-  backgroundColor: 'transparent',
-  marginBottom: 8,
-  textAlign: 'center',
-},
+// After (handles spaces):
+const codeMatch = productName.match(/^([\d.]+)\s*([A-Z]+)?/i);
+const modelCode = codeMatch ? (codeMatch[1] + (codeMatch[2] || '')).toUpperCase() : '';
 ```
+
+---
+
+## Expected Result After Fix
+
+**Motor Code Breakdown for "60 ELPT FourStroke":**
+- 60 = 60 Horsepower
+- **E = Electric start** ✓
+- **L = Long shaft (20")** ✓
+- PT = Power Trim & Tilt
 
 ---
 
 ## Files to Modify
 
-1. **`src/components/quote-pdf/ProfessionalQuotePDF.tsx`** — Adjust 4 style values to reduce vertical spacing
-
----
-
-## Expected Result
-
-The PDF will fit on a single page with:
-- Terms section directly above the footer
-- Footer properly positioned at the bottom
-- All content comfortably fitting without overflow
-
-No visual changes other than slightly tighter spacing throughout.
+1. **`src/components/quote-pdf/ProfessionalQuotePDF.tsx`** — Fix regex on lines 477-478 to handle space-separated rig codes
