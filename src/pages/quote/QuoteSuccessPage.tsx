@@ -1,17 +1,67 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { CheckCircle2, ArrowRight, Phone, Mail, MessageSquare } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { COMPANY_INFO } from '@/lib/companyInfo';
+import { SaveQuotePrompt } from '@/components/auth/SaveQuotePrompt';
+import { useAuth } from '@/components/auth/AuthProvider';
+import { supabase } from '@/integrations/supabase/client';
 
 export default function QuoteSuccessPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [searchParams] = useSearchParams();
   const [showConfetti, setShowConfetti] = useState(false);
+  const { user } = useAuth();
 
   const referenceNumber = searchParams.get('ref') || 'PENDING';
+  const isOAuthCallback = searchParams.get('oauth') === 'google';
+  
+  // Get contact info from navigation state (passed from ScheduleConsultation)
+  const contactInfo = location.state?.contactInfo as { name: string; email: string; phone: string } | undefined;
+  const quoteId = location.state?.quoteId as string | undefined;
+
+  // Handle OAuth callback - link quote to new user
+  useEffect(() => {
+    const linkQuoteToUser = async () => {
+      if (isOAuthCallback && user && referenceNumber !== 'PENDING') {
+        try {
+          // Update saved_quotes to link to the new user
+          const { error: quoteError } = await supabase
+            .from('saved_quotes')
+            .update({ user_id: user.id })
+            .eq('email', user.email)
+            .is('user_id', null);
+          
+          if (quoteError) {
+            console.error('Error linking quote to user:', quoteError);
+          }
+
+          // Update profile with phone if available from OAuth user metadata or contact info
+          const phone = contactInfo?.phone || user.user_metadata?.phone;
+          if (phone) {
+            const { error: profileError } = await supabase
+              .from('profiles')
+              .update({ 
+                phone,
+                display_name: contactInfo?.name || user.user_metadata?.full_name || user.user_metadata?.name
+              })
+              .eq('user_id', user.id);
+            
+            if (profileError) {
+              console.error('Error updating profile:', profileError);
+            }
+          }
+        } catch (err) {
+          console.error('Error in OAuth callback handling:', err);
+        }
+      }
+    };
+
+    linkQuoteToUser();
+  }, [isOAuthCallback, user, referenceNumber, contactInfo]);
 
   useEffect(() => {
     // Trigger confetti animation
@@ -69,6 +119,17 @@ export default function QuoteSuccessPage() {
               Save this number for your records
             </p>
           </div>
+
+          {/* Save Quote Prompt - Only show if not logged in */}
+          {!user && (
+            <div className="mb-8">
+              <SaveQuotePrompt 
+                referenceNumber={referenceNumber}
+                contactInfo={contactInfo}
+                quoteId={quoteId}
+              />
+            </div>
+          )}
 
           {/* Timeline */}
           <div className="space-y-6 text-left mb-8">

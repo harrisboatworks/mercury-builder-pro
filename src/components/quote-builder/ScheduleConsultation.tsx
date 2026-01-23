@@ -470,8 +470,17 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
       console.log('✅ [NOTIFICATIONS] Notification process complete');
 
-      // Navigate to quote success page with reference number
-      navigate(`/quote/success?ref=${quoteNumber}`);
+      // Navigate to quote success page with reference number and contact info for account creation
+      navigate(`/quote/success?ref=${quoteNumber}`, {
+        state: {
+          contactInfo: {
+            name: sanitizedContactInfo.name,
+            email: sanitizedContactInfo.email,
+            phone: sanitizedContactInfo.phone
+          },
+          quoteId
+        }
+      });
       
     } catch (error) {
       toast({

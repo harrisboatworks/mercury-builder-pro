@@ -4,7 +4,6 @@ import {
   Drawer,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
 } from '@/components/ui/drawer';
@@ -17,6 +16,7 @@ import { Loader2, Mail, Lock, User } from 'lucide-react';
 import { PasswordStrength, validatePasswordStrength } from '@/components/ui/password-strength';
 import { authSchema } from '@/lib/validation';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { GoogleSignInButton } from './GoogleSignInButton';
 
 interface AuthModalProps {
   open: boolean;
@@ -119,7 +119,23 @@ export const AuthModal = ({
 
   // Shared form content
   const formContent = (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="space-y-4">
+      {/* Google Sign-In Button */}
+      <GoogleSignInButton 
+        onError={(err) => setError(err.message)}
+      />
+      
+      {/* Divider */}
+      <div className="relative">
+        <div className="absolute inset-0 flex items-center">
+          <span className="w-full border-t" />
+        </div>
+        <div className="relative flex justify-center text-xs uppercase">
+          <span className="bg-background px-2 text-muted-foreground">or continue with email</span>
+        </div>
+      </div>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
       {mode === 'signup' && (
         <div className="space-y-2">
           <Label htmlFor="displayName">Full Name</Label>
@@ -213,7 +229,8 @@ export const AuthModal = ({
           }
         </Button>
       </div>
-    </form>
+      </form>
+    </div>
   );
 
   // Mobile: Bottom drawer
