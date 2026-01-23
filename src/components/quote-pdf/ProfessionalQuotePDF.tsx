@@ -474,8 +474,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
     const upperName = productName.toUpperCase();
     
     // Extract the model code part (before family name like FourStroke, SeaPro, etc.)
-    const codeMatch = productName.match(/^([\d.]+[A-Z]*)/i);
-    const modelCode = codeMatch ? codeMatch[1].toUpperCase() : '';
+    // Handle both "60ELPT" and "60 ELPT" formats with optional space
+    const codeMatch = productName.match(/^([\d.]+)\s*([A-Z]+)?/i);
+    const modelCode = codeMatch ? (codeMatch[1] + (codeMatch[2] || '')).toUpperCase() : '';
     
     // 1. Extract HP from the number at the start
     const hpMatch = productName.match(/^(\d+\.?\d*)/);
