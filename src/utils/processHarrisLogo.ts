@@ -1,22 +1,20 @@
-import { removeBackground, loadImageFromUrl } from '@/lib/backgroundRemoval';
+// DEV-ONLY: Background-removal utilities require @huggingface/transformers (~21MB WASM).
 
 export const processHarrisLogoBackground = async (): Promise<string> => {
+  if (!import.meta.env.DEV) {
+    console.warn('[processHarrisLogoBackground] Not available in production builds.');
+    return '/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png';
+  }
+
   try {
-    // Load the original Harris logo
+    const { removeBackground, loadImageFromUrl } = await import('@/lib/backgroundRemoval');
     const img = await loadImageFromUrl('/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png');
-    
-    // Remove the background
     const processedBlob = await removeBackground(img);
-    
-    // Create a blob URL for the processed image
     const processedUrl = URL.createObjectURL(processedBlob);
-    
     console.log('Harris logo background removed successfully');
     return processedUrl;
-    
   } catch (error) {
     console.error('Failed to process Harris logo:', error);
-    // Fallback to original image if processing fails
     return '/lovable-uploads/bdce50a1-2d19-4696-a2ec-6b67379cbe23.png';
   }
 };
