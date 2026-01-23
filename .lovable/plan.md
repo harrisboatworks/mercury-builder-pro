@@ -1,107 +1,84 @@
 
-# Skip Control Selection When User Has Existing Controls
+# Fix PDF Quote Overflowing to Two Pages
 
 ## Problem
 
-When users select "I have Mercury controls (2004+)" or "I have compatible controls ready" on the Boat Information page, the Installation page still asks them to choose a control system. This is redundant and confusing since they've already indicated they have controls.
+The PDF quote is rendering on two pages instead of one. The footer and terms section are pushed to page 2, which looks unprofessional and wastes paper.
+
+## Root Cause
+
+The `termsSection` has a `marginBottom: 80` which creates excessive spacing before the absolutely-positioned footer. When combined with content like trade-in values, accessories, and financing details, this pushes the total height beyond a single page.
 
 ---
 
 ## Solution
 
-Modify the `InstallationConfig` component to:
-1. Check the user's `controlsOption` from the quote context
-2. Skip "Step 1: Choose Your Control System" if the user has existing controls
-3. Start directly at Step 2 (Steering) with a pre-filled `controls` value indicating their selection
+Reduce the spacing in the PDF layout to fit everything on one page:
 
----
-
-## User Experience After Fix
-
-| Boat Info Selection | Installation Page Behavior |
-|---------------------|---------------------------|
-| "I need new controls" | Shows Step 1: Controls → Step 2: Steering → Step 3: Gauges |
-| "I have Mercury controls (2004+)" | **Skips Step 1** → Shows Step 2: Steering → Step 3: Gauges |
-| "I have compatible controls ready" | **Skips Step 1** → Shows Step 2: Steering → Step 3: Gauges |
+| Element | Current Value | New Value | Reason |
+|---------|---------------|-----------|--------|
+| `termsSection.marginBottom` | 80 | **40** | Excessive padding pushing content down |
+| `termsSection.marginTop` | 8 | **4** | Tighten spacing |
+| `pricingTableContainer.marginBottom` | 8 | **4** | Reduce spacing after pricing |
+| `summaryBox.marginBottom` | 8 | **6** | Slightly tighter |
+| `savingsCalloutBox.padding` | 10 | **8** | Slightly more compact |
+| `heroBox.marginBottom` (unused but still defined) | 18 | **12** | Compact |
 
 ---
 
 ## Technical Changes
 
-### 1. Update InstallationPage to Pass boatInfo
+**File: `src/components/quote-pdf/ProfessionalQuotePDF.tsx`**
 
-**File: `src/pages/quote/InstallationPage.tsx`**
+Adjust the following styles in the `StyleSheet.create` block:
 
-Pass the `boatInfo` from context to the `InstallationConfig` component:
+```typescript
+// Line 375-381: Reduce terms section spacing
+termsSection: {
+  marginTop: 4,       // was 8
+  marginBottom: 40,   // was 80 - THIS IS THE MAIN ISSUE
+  paddingTop: 8,
+  borderTop: `1 solid ${colors.border}`,
+},
 
-```tsx
-<InstallationConfig 
-  selectedMotor={state.motor}
-  boatInfo={state.boatInfo}  // ADD THIS
-  onComplete={handleStepComplete}
-/>
-```
+// Line 128-132: Tighten pricing table container
+pricingTableContainer: {
+  border: `1 solid ${colors.border}`,
+  padding: 8,
+  marginBottom: 4,   // was 8
+},
 
-### 2. Update InstallationConfig to Accept and Use boatInfo
+// Line 229-235: Tighten summary box
+summaryBox: {
+  padding: 8,
+  border: `1 solid ${colors.border}`,
+  backgroundColor: 'transparent',
+  marginBottom: 6,   // was 8
+},
 
-**File: `src/components/quote-builder/InstallationConfig.tsx`**
-
-**Props interface:**
-```tsx
-interface InstallationConfigProps {
-  selectedMotor: any;
-  boatInfo?: BoatInfo | null;  // ADD THIS
-  onComplete: (config: any) => void;
-}
-```
-
-**Initial step logic:**
-```tsx
-// Determine if we should skip controls step
-const hasExistingControls = boatInfo?.controlsOption === 'adapter' || 
-                            boatInfo?.controlsOption === 'compatible';
-
-// Start at step 2 if user has existing controls
-const [step, setStep] = useState(hasExistingControls ? 2 : 1);
-
-// Pre-fill controls value based on user's selection
-const [config, setConfig] = useState({
-  controls: hasExistingControls 
-    ? (boatInfo?.controlsOption === 'adapter' ? 'existing_adapter' : 'existing_compatible')
-    : '',
-  steering: '',
-  gauges: '',
-  mounting: '',
-  waterTest: true
-});
-```
-
-**Update step progression:**
-- When `hasExistingControls` is true, the component starts at step 2
-- The controls step (Step 1) is never rendered
-- The `controls` field is pre-filled with a marker value indicating the user's prior selection
-
-### 3. Add Visual Confirmation (Optional Enhancement)
-
-Show a small confirmation banner when controls are skipped:
-
-```tsx
-{hasExistingControls && (
-  <Alert className="mb-6 border-green-500 bg-green-50">
-    <CheckCircle className="w-4 h-4" />
-    <AlertDescription>
-      <strong>Using your existing controls</strong> — 
-      {boatInfo?.controlsOption === 'adapter' 
-        ? "We'll install a harness adapter (+$125)"
-        : "No additional control hardware needed"}
-    </AlertDescription>
-  </Alert>
-)}
+// Line 245-252: Tighten savings callout
+savingsCalloutBox: {
+  border: `2 solid ${colors.border}`,
+  padding: 8,        // was 10
+  backgroundColor: 'transparent',
+  marginBottom: 8,
+  textAlign: 'center',
+},
 ```
 
 ---
 
 ## Files to Modify
 
-1. **`src/pages/quote/InstallationPage.tsx`** — Pass `state.boatInfo` to InstallationConfig
-2. **`src/components/quote-builder/InstallationConfig.tsx`** — Add logic to skip controls step when user has existing controls
+1. **`src/components/quote-pdf/ProfessionalQuotePDF.tsx`** — Adjust 4 style values to reduce vertical spacing
+
+---
+
+## Expected Result
+
+The PDF will fit on a single page with:
+- Terms section directly above the footer
+- Footer properly positioned at the bottom
+- All content comfortably fitting without overflow
+
+No visual changes other than slightly tighter spacing throughout.
