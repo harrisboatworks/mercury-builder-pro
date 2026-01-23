@@ -338,36 +338,27 @@ export default function TradeInPage() {
             </div>
           )}
           
-          <TradeInValuation 
-            tradeInInfo={tradeInInfo}
-            onTradeInChange={handleTradeInChange}
-            onAutoAdvance={needsBatteryPrompt ? undefined : handleComplete}
-            currentMotorBrand={state.boatInfo?.currentMotorBrand}
-            currentHp={state.boatInfo?.currentHp}
-            currentMotorYear={state.boatInfo?.currentMotorYear}
-          />
-          
-          {/* Battery prompt for electric start loose motors */}
+          {/* Battery prompt for electric start loose motors - SHOWN FIRST */}
           {needsBatteryPrompt && (
+            <BatteryOptionPrompt
+              onSelect={handleBatterySelect}
+              selectedOption={batterySelection}
+              batteryCost={BATTERY_COST}
+            />
+          )}
+          
+          {/* Trade-in valuation - shown after battery selection (if needed) or immediately */}
+          {(!needsBatteryPrompt || batterySelection !== null) && (
             <>
-              <Separator className="my-6" />
-              <BatteryOptionPrompt
-                onSelect={handleBatterySelect}
-                selectedOption={batterySelection}
-                batteryCost={BATTERY_COST}
+              {needsBatteryPrompt && <Separator className="my-6" />}
+              <TradeInValuation 
+                tradeInInfo={tradeInInfo}
+                onTradeInChange={handleTradeInChange}
+                onAutoAdvance={handleComplete}
+                currentMotorBrand={state.boatInfo?.currentMotorBrand}
+                currentHp={state.boatInfo?.currentHp}
+                currentMotorYear={state.boatInfo?.currentMotorYear}
               />
-              
-              {/* Continue button when battery selection is made */}
-              {batterySelection !== null && (
-                <div className="pt-4">
-                  <Button 
-                    onClick={handleComplete}
-                    className="w-full sm:w-auto"
-                  >
-                    Continue to Promotions
-                  </Button>
-                </div>
-              )}
             </>
           )}
         </div>

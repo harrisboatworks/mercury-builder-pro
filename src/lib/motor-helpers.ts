@@ -460,6 +460,12 @@ export const isTillerMotor = (model: string) => {
     return true;
   }
   
+  // ProKicker motors are tiller/kicker style (even without H suffix)
+  if (upperModel.includes('PROKICKER') || upperModel.includes('PRO KICKER')) {
+    tillerCache.set(model, true);
+    return true;
+  }
+  
   // Tiller patterns - H suffix indicates tiller handle
   const tillerPatterns = [
     /\b(\d+\.?\d*)\s*MLH\b/i,    // MLH = Manual + Long + Handle
