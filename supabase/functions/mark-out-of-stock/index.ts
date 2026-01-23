@@ -1,12 +1,13 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// Lazy initialize Supabase client
-async function getServiceClient() {
+// Initialize Supabase client
+function getServiceClient() {
   const url = Deno.env.get('SUPABASE_URL');
   const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
   
@@ -14,7 +15,6 @@ async function getServiceClient() {
     throw new Error('Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY');
   }
   
-  const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
   return createClient(url, serviceKey);
 }
 
@@ -25,7 +25,7 @@ serve(async (req) => {
 
   try {
     const { model_keys, all_brochure_models = false } = await req.json();
-    const supabase = await getServiceClient();
+    const supabase = getServiceClient();
 
     if (all_brochure_models) {
       // Mark all brochure models as out of stock (safety operation for inventory updates)
