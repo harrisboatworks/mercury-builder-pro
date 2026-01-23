@@ -325,9 +325,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   <Input
                     id="trade-hp"
                     type="number"
+                    step="0.1"
                     value={tradeInInfo.horsepower || ''}
-                    onChange={(e) => onTradeInChange({ ...tradeInInfo, horsepower: parseInt(e.target.value) || 0 })}
-                    placeholder="e.g., 115"
+                    onChange={(e) => onTradeInChange({ ...tradeInInfo, horsepower: parseFloat(e.target.value) || 0 })}
+                    placeholder="e.g., 9.9 or 115"
                     min="1"
                     max="600"
                     className={`min-h-[48px] rounded-sm font-light ${
