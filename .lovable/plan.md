@@ -1,190 +1,187 @@
 
-# Fix: Loose Motor Path Still Shows Installation + Missing Battery Prompt
 
-## Problems Identified
+# Fix: Loose Motor Path Still Shows Installation + Battery Prompt Placement
 
-Looking at your PDF and the code, I found **two root causes**:
+## Problem Summary
 
-### Problem 1: Installation Labor Still Appears on Loose Motor Path
-The PDF shows **"Professional Installation $450.00"** even though you selected "Loose Motor". 
+I've identified the root causes of both issues:
 
-**Root Cause**: In `QuoteSummaryPage.tsx` (lines 331-338), the code adds installation labor for **all non-tiller motors** without checking the purchase path:
+### Issue 1: Professional Installation Still Appearing on Loose Motor Quotes
 
-```typescript
-// Professional installation for remote motors
-if (!isManualTiller) {
-  breakdown.push({
-    name: 'Professional Installation',
-    price: installationLaborCost,  // $450
-    ...
-  });
-}
-```
+The PDF quote shows **"Professional Installation - $450.00"** even when "Loose Motor" was selected because:
 
-This condition is missing: `state.purchasePath === 'installed'`
+1. **Line 228 in QuoteSummaryPage.tsx** - The `installationLaborCost` is calculated **without checking the purchase path**:
+   ```typescript
+   const installationLaborCost = !isManualTiller ? 450 : 0;
+   ```
+   This adds $450 for ALL remote motors regardless of whether they chose "Loose Motor".
 
-The same issue affects:
-- `PackageSelectionPage.tsx` (line 148): `installationLaborCost` is computed for all remote motors without path guard
-- `GlobalStickyQuoteBar.tsx` (line 228): same unguarded calculation
-- `UnifiedMobileBar.tsx`: similar issue
+2. **Lines 331-338 in QuoteSummaryPage.tsx** - The accessory breakdown adds the installation item **without checking the purchase path**:
+   ```typescript
+   if (!isManualTiller) {
+     breakdown.push({
+       name: 'Professional Installation',
+       price: installationLaborCost,  // Always $450 for remote motors!
+       ...
+     });
+   }
+   ```
 
-### Problem 2: Battery Prompt Never Appeared
-Your motor (15EXLPT ProKicker) is an electric start tiller motor on the loose path, which should trigger the battery choice prompt. However, the PDF shows no battery was discussed.
+3. **Same issue in PackageSelectionPage.tsx (line 148)** - Identical unguarded calculation.
 
-**Root Cause**: In `TradeInPage.tsx` (lines 51-65), the detection logic is:
+### Issue 2: Battery Prompt is Below Trade-In Selection
 
-```typescript
-const isElectricStart = model.includes('EH') || model.includes('EL') || 
-                        model.includes('ELPT') || model.includes('EXL') || ...
-```
+Currently the battery prompt appears **after** the trade-in form on the TradeInPage. You want it to appear **before** the trade-in selection.
 
-For **"15EXLPT ProKicker"**, the code does check `ELPT` but also requires `isTiller` to be `true`. 
+### Issue 3: ProKicker Not Recognized as Tiller
 
-The `isTillerMotor()` function in `motor-helpers.ts` may not correctly identify "ProKicker" models as tillers because:
-- ProKicker motors are typically tiller-style but the model code might not contain "H" (the usual tiller indicator)
-- The function checks for "H" after shaft length codes, but "EXLPT" has the pattern where "H" is not present
-
-Let me confirm: for "15EXLPT ProKicker FourStroke":
-- `isTillerMotor()` checks for "H" in specific positions, but this model has `XL` (extra long) + `PT` (power trim) without explicit "H"
-- ProKicker motors ARE tiller/kicker motors, so they should be treated as tillers for battery prompt purposes
+The `isTillerMotor()` function doesn't recognize "ProKicker" models (like "15EXLPT ProKicker") as tillers because they don't have the "H" suffix, so the battery prompt never triggers.
 
 ---
 
 ## Solution Plan
 
-### Part 1: Fix Installation Labor Path Guard
+### Part 1: Fix Installation Labor for Loose Motor Path
 
-**Files to modify:**
+**File: `src/pages/quote/QuoteSummaryPage.tsx`**
 
-1. **`src/pages/quote/QuoteSummaryPage.tsx`** (lines 331-338)
-   - Add `state.purchasePath === 'installed'` check before adding "Professional Installation" line
+Change line 228 from:
+```typescript
+const installationLaborCost = !isManualTiller ? 450 : 0;
+```
+To:
+```typescript
+// Only charge installation labor for installed path AND remote motors
+const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;
+```
 
-2. **`src/pages/quote/PackageSelectionPage.tsx`** (lines 147-154)
-   - Guard `installationLaborCost` with purchase path check
+Change lines 331-338 from:
+```typescript
+if (!isManualTiller) {
+  breakdown.push({...});
+}
+```
+To:
+```typescript
+if (!isManualTiller && state.purchasePath === 'installed') {
+  breakdown.push({...});
+}
+```
 
-3. **`src/lib/react-pdf-generator.tsx`** (line 130)
-   - Ensure `includesInstallation` is correctly passed through to PDF
+**File: `src/pages/quote/PackageSelectionPage.tsx`**
 
-### Part 2: Fix Battery Prompt Tiller Detection
-
-**Files to modify:**
-
-1. **`src/lib/motor-helpers.ts`** (isTillerMotor function)
-   - Add explicit detection for "PROKICKER" as a tiller/kicker motor
-   - These motors are always operated via tiller handle even without "H" code
-
-2. **`src/pages/quote/TradeInPage.tsx`** (lines 51-65)
-   - Improve electric start detection to handle more edge cases
-   - Specifically handle "EXLPT" pattern which includes "E" for electric start
+Change line 148 from:
+```typescript
+const installationLaborCost = !isManualTiller ? 450 : 0;
+```
+To:
+```typescript
+const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;
+```
 
 ---
 
-## Technical Changes
+### Part 2: Move Battery Prompt Before Trade-In Selection
 
-### Change 1: QuoteSummaryPage.tsx - Guard remote motor installation
+**File: `src/pages/quote/TradeInPage.tsx`**
 
-**Current code (lines 331-338):**
+Restructure the component to show the battery prompt **first** (when applicable), and only after the user makes a battery selection, show the trade-in selection. This creates a clear two-step flow:
+
+1. **Step 1**: Battery selection (only for electric start tiller motors on loose path)
+2. **Step 2**: Trade-in valuation
+
+Changes required:
+- Move the `BatteryOptionPrompt` component to render **before** the `TradeInValuation` component
+- Add a condition so trade-in section only shows after battery selection is made (when battery prompt is needed)
+- Update the UI flow so the battery selection is a clear first step
+
+---
+
+### Part 3: Fix ProKicker Tiller Detection
+
+**File: `src/lib/motor-helpers.ts`**
+
+Add ProKicker detection to the `isTillerMotor` function (around line 458):
+
 ```typescript
-// Professional installation for remote motors
-if (!isManualTiller) {
-  breakdown.push({
-    name: 'Professional Installation',
-    price: installationLaborCost,
-    description: 'Expert rigging, mounting, and commissioning by certified technicians'
-  });
+// Check for explicit tiller indicators
+if (upperModel.includes('BIG TILLER') || upperModel.includes('TILLER')) {
+  tillerCache.set(model, true);
+  return true;
 }
-```
 
-**Updated code:**
-```typescript
-// Professional installation for remote motors (ONLY for installed path)
-if (!isManualTiller && state.purchasePath === 'installed') {
-  breakdown.push({
-    name: 'Professional Installation',
-    price: installationLaborCost,
-    description: 'Expert rigging, mounting, and commissioning by certified technicians'
-  });
-}
-```
-
-### Change 2: QuoteSummaryPage.tsx - Guard installationLaborCost calculation
-
-**Current code (line 228):**
-```typescript
-const installationLaborCost = !isManualTiller ? 450 : 0;
-```
-
-**Updated code:**
-```typescript
-// Only calculate installation labor for installed path
-const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;
-```
-
-### Change 3: PackageSelectionPage.tsx - Same guard
-
-**Current code (line 148):**
-```typescript
-const installationLaborCost = !isManualTiller ? 450 : 0;
-```
-
-**Updated code:**
-```typescript
-const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;
-```
-
-### Change 4: motor-helpers.ts - Add ProKicker to tiller detection
-
-**Add to isTillerMotor function:**
-```typescript
-// ProKicker motors are always tiller/kicker style
+// ProKicker motors are tiller/kicker style (even without H suffix)
 if (upperModel.includes('PROKICKER') || upperModel.includes('PRO KICKER')) {
   tillerCache.set(model, true);
   return true;
 }
 ```
 
-### Change 5: TradeInPage.tsx - Improve electric start detection for ProKicker
+---
 
-**Current detection (lines 51-61):**
+## Technical Implementation Details
+
+### QuoteSummaryPage.tsx Changes
+
+| Line | Current | New |
+|------|---------|-----|
+| 228 | `const installationLaborCost = !isManualTiller ? 450 : 0;` | `const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;` |
+| 332 | `if (!isManualTiller) {` | `if (!isManualTiller && state.purchasePath === 'installed') {` |
+
+### PackageSelectionPage.tsx Changes
+
+| Line | Current | New |
+|------|---------|-----|
+| 148 | `const installationLaborCost = !isManualTiller ? 450 : 0;` | `const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;` |
+
+### TradeInPage.tsx Changes
+
+The current render order is:
+1. Trade-in selection (Yes/No cards)
+2. Trade-in valuation form (if yes)
+3. Battery prompt (at the bottom)
+
+The new render order will be:
+1. Battery prompt (if `needsBatteryPrompt` is true)
+2. Trade-in selection (Yes/No cards) - only after battery selection made, OR immediately if no battery prompt needed
+3. Trade-in valuation form (if yes)
+
+### motor-helpers.ts Changes
+
+Add ProKicker detection right after the existing "BIG TILLER" / "TILLER" check:
+
 ```typescript
-const isElectricStart = useMemo(() => {
-  const model = motorModel.toUpperCase();
-  return model.includes('EH') || 
-         model.includes('EL') || 
-         model.includes('ELPT') || 
-         model.includes('EXL') || 
-         model.includes('EXLPT') ||
-         (model.includes('E') && !model.includes('MH') && !model.includes('MLH'));
-}, [motorModel]);
-```
-
-This should already match "15EXLPT" via the `EXLPT` check, but the tiller check is failing.
-
-**The real fix is in isTillerMotor** - once ProKicker is recognized as a tiller, the `needsBatteryPrompt` condition will be satisfied:
-```typescript
-const needsBatteryPrompt = isLoosePath && isElectricStart && isTiller;
+// After line 461, add:
+// ProKicker motors are tiller/kicker style motors
+if (upperModel.includes('PROKICKER') || upperModel.includes('PRO KICKER')) {
+  tillerCache.set(model, true);
+  return true;
+}
 ```
 
 ---
 
 ## Files Changed Summary
 
-| File | Change |
-|------|--------|
-| `src/pages/quote/QuoteSummaryPage.tsx` | Add `purchasePath === 'installed'` guard to installation labor calculation and breakdown entry |
-| `src/pages/quote/PackageSelectionPage.tsx` | Add same guard to installation labor calculation |
-| `src/lib/motor-helpers.ts` | Add "PROKICKER" detection to `isTillerMotor()` function |
+| File | Changes |
+|------|---------|
+| `src/pages/quote/QuoteSummaryPage.tsx` | Add `state.purchasePath === 'installed'` guard to line 228 and line 332 |
+| `src/pages/quote/PackageSelectionPage.tsx` | Add `state.purchasePath === 'installed'` guard to line 148 |
+| `src/pages/quote/TradeInPage.tsx` | Restructure to show battery prompt BEFORE trade-in selection |
+| `src/lib/motor-helpers.ts` | Add ProKicker detection to `isTillerMotor()` function |
 
 ---
 
 ## Testing Checklist
 
-After these changes:
+After implementation:
 
-1. Select a **15EXLPT ProKicker** motor
-2. Choose **"Loose Motor"** path
-3. At Trade-In page, verify the **Battery Option Prompt** appears asking about starting battery
-4. Complete the quote
-5. Verify Summary page shows **NO Professional Installation line** ($450 should not appear)
-6. Download PDF and verify **NO installation costs** appear in the breakdown
-7. Test a **remote motor** (non-tiller) on **"Installed"** path - verify $450 installation DOES appear
+1. Select **15EXLPT ProKicker** motor
+2. Choose **"Loose Motor"** path  
+3. On Trade-In page, verify **Battery Option Prompt appears FIRST** (before trade-in Yes/No)
+4. Select battery option, then verify trade-in selection appears
+5. Complete the quote to Summary page
+6. Verify **NO "Professional Installation - $450"** line appears
+7. Download PDF and verify **NO installation costs** in the breakdown
+8. Test a **remote motor** on **"Installed"** path - verify $450 installation DOES appear correctly
+
