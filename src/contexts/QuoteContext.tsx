@@ -33,6 +33,12 @@ interface SelectedPackage {
   priceBeforeTax: number;
 }
 
+// Battery option for loose electric start motors
+interface LooseMotorBattery {
+  wantsBattery: boolean;
+  batteryCost: number;
+}
+
 interface QuoteState {
   motor: Motor | null;
   previewMotor: Motor | null; // Motor being viewed in modal before selection
@@ -44,6 +50,7 @@ interface QuoteState {
   tradeInInfo: any | null;
   fuelTankConfig: any | null;
   installConfig: any | null;
+  looseMotorBattery: LooseMotorBattery | null; // Battery choice for electric start loose motors
   financing: {
     downPayment: number;
     term: number;
@@ -75,6 +82,7 @@ type QuoteAction =
   | { type: 'SET_TRADE_IN_INFO'; payload: any }
   | { type: 'SET_FUEL_TANK_CONFIG'; payload: any }
   | { type: 'SET_INSTALL_CONFIG'; payload: any }
+  | { type: 'SET_LOOSE_MOTOR_BATTERY'; payload: LooseMotorBattery | null }
   | { type: 'SET_FINANCING'; payload: { downPayment: number; term: number; rate: number } }
   | { type: 'SET_WARRANTY_CONFIG'; payload: WarrantyConfig }
   | { type: 'SET_HAS_TRADEIN'; payload: boolean }
@@ -105,6 +113,7 @@ const initialState: QuoteState = {
   tradeInInfo: null,
   fuelTankConfig: null,
   installConfig: null,
+  looseMotorBattery: null,
   financing: {
     downPayment: 0,
     term: 48,
@@ -163,6 +172,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       return { ...state, fuelTankConfig: action.payload };
     case 'SET_INSTALL_CONFIG':
       return { ...state, installConfig: action.payload };
+    case 'SET_LOOSE_MOTOR_BATTERY':
+      return { ...state, looseMotorBattery: action.payload };
     case 'SET_FINANCING':
       return { ...state, financing: action.payload };
     case 'SET_WARRANTY_CONFIG':
