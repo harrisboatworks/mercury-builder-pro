@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   pricingTableContainer: {
     border: `1 solid ${colors.border}`,
     padding: 8,
-    marginBottom: 8,
+    marginBottom: 4,
   },
   
   pricingSection: {
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
     padding: 8,
     border: `1 solid ${colors.border}`,
     backgroundColor: 'transparent',
-    marginBottom: 8,
+    marginBottom: 6,
   },
   
   // Financing callout box (outline style)
@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
   // Large savings callout box (right column top)
   savingsCalloutBox: {
     border: `2 solid ${colors.border}`,
-    padding: 10,
+    padding: 8,
     backgroundColor: 'transparent',
     marginBottom: 8,
     textAlign: 'center',
@@ -374,8 +374,8 @@ const styles = StyleSheet.create({
   
   // Terms section
   termsSection: {
-    marginTop: 8,
-    marginBottom: 80,
+    marginTop: 4,
+    marginBottom: 40,
     paddingTop: 8,
     borderTop: `1 solid ${colors.border}`,
   },
