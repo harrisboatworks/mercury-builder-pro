@@ -1,91 +1,65 @@
 
-
-# Fix: Revert ProKicker Blanket Tiller Detection
+# Streamline Schedule Page: Remove Redundant Elements
 
 ## Problem
 
-The recent change incorrectly marked ALL ProKicker motors as tillers:
+On `/quote/schedule`, there are two issues:
 
-```typescript
-// This is WRONG - not all ProKickers are tillers!
-if (upperModel.includes('PROKICKER') || upperModel.includes('PRO KICKER')) {
-  tillerCache.set(model, true);
-  return true;
-}
-```
+1. **Duplicate Quote Summary**: The left-side "Quote Summary" card repeats everything the customer just reviewed on the Summary page
+2. **Two Bottom Bars**: Both `GlobalStickyQuoteBar` (desktop) and `UnifiedMobileBar` are showing, creating visual clutter
 
-**Reality from the pricing data:**
+## Changes
 
-| Model Code | Tiller? | Why |
-|------------|---------|-----|
-| 15**EL**HPT ProKicker | Yes | Has "H" in code |
-| 15**EXL**HPT ProKicker | Yes | Has "H" in code |  
-| 15**EL**PT ProKicker | No | No "H" - remote steering |
-| 15**EX**LPT ProKicker | No | No "H" - remote steering |
-| 25ELPT ProKicker | No | No "H" - remote steering |
-| 25EXLPT ProKicker | No | No "H" - remote steering |
+### 1. Remove Quote Summary Card from ScheduleConsultation
 
-The **"H"** in the rigging code still correctly identifies tillers. ProKicker is just a designation indicating these motors are designed as kicker/trolling motors - it doesn't determine the steering type.
+**File: `src/components/quote-builder/ScheduleConsultation.tsx`**
 
----
+Remove the entire "Quote Summary" card (lines 746-825). The customer has already reviewed their quote - this page should focus only on:
+- Contact form (already there)
+- Harris Boat Works contact info
+- "What happens next?" section (useful expectation-setting)
 
-## Solution
+The layout will shift from a two-column grid to a single, focused contact form.
 
-**Remove the blanket ProKicker detection** from `isTillerMotor()`. The existing "H" pattern matching already handles this correctly:
+### 2. Hide GlobalStickyQuoteBar on Schedule Page
 
-```typescript
-const tillerPatterns = [
-  /\b(\d+\.?\d*)\s*MLH\b/i,    // MLH = Manual + Long + Handle  
-  /\b(\d+\.?\d*)\s*ELH\b/i,    // ELH = Electric + Long + Handle
-  /\b(\d+\.?\d*)\s*EXLH\b/i,   // EXLH = Electric + XL + Handle
-  /\b(\d+\.?\d*)\s*ELHPT\b/i,  // ELHPT = Electric + Long + Handle + Power Tilt
-  /\b(\d+\.?\d*)\s*EXLHPT\b/i, // EXLHPT = Electric + XL + Handle + Power Tilt
-  // ... more H patterns
-];
-```
+**File: `src/components/quote/GlobalStickyQuoteBar.tsx`**
 
-These patterns will correctly match:
-- "15ELHPT ProKicker" (tiller) via `ELHPT` pattern
-- "9.9 EXLHPT ProKicker" (tiller) via `EXLHPT` pattern
-
-And correctly NOT match:
-- "15EXLPT ProKicker" (remote) - no H
-- "25ELPT ProKicker" (remote) - no H
+Add `/quote/schedule` to the `hideOnPages` array (around line 19-40). This removes the redundant desktop sticky bar since the UnifiedMobileBar handles mobile navigation and the page doesn't need a "Continue" action (submitting the form IS the final action).
 
 ---
 
-## Technical Change
-
-**File: `src/lib/motor-helpers.ts`**
-
-Remove lines 463-467:
-```typescript
-// DELETE THIS BLOCK:
-// ProKicker motors are tiller/kicker style (even without H suffix)
-if (upperModel.includes('PROKICKER') || upperModel.includes('PRO KICKER')) {
-  tillerCache.set(model, true);
-  return true;
-}
-```
-
-The existing `tillerPatterns` array already handles "H" detection correctly for all motors, including ProKickers.
-
----
-
-## Files Changed
+## Technical Details
 
 | File | Change |
 |------|--------|
-| `src/lib/motor-helpers.ts` | Remove incorrect ProKicker blanket tiller detection (lines 463-467) |
+| `src/components/quote-builder/ScheduleConsultation.tsx` | Remove Quote Summary card (lines 746-825), adjust grid layout to single column |
+| `src/components/quote/GlobalStickyQuoteBar.tsx` | Add `/quote/schedule` to `hideOnPages` array |
 
----
+### Layout After Changes
 
-## Testing Checklist
+```text
++------------------------------------------+
+|        Submit Your Quote                 |
+|  Complete your contact information...    |
++------------------------------------------+
+|                                          |
+|    [ Contact Information Form ]          |
+|    - Name                                |
+|    - Email                               |
+|    - Phone                               |
+|    - Preferred Contact Method            |
+|    - Notes                               |
+|    - Send Quote Options                  |
+|    - Submit Quote Button                 |
+|                                          |
++------------------------------------------+
+|    Harris Boat Works                     |
+|    Phone | Email | Location              |
+|                                          |
+|    What happens next?                    |
+|    - We'll contact you within 24 hrs... |
++------------------------------------------+
+```
 
-After this fix:
-
-1. **15EXLPT ProKicker** (no H) should be detected as **REMOTE** - battery prompt should NOT appear
-2. **15ELHPT ProKicker** (has H) should be detected as **TILLER** - battery prompt SHOULD appear  
-3. **25EXLPT ProKicker** (no H) should be detected as **REMOTE**
-4. **9.9 EXLHPT ProKicker** (has H) should be detected as **TILLER**
-
+The page becomes cleaner and more focused on the single goal: capturing customer contact info.
