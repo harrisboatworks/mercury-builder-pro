@@ -225,7 +225,8 @@ export default function QuoteSummaryPage() {
   };
   
   const controlsCost = getControlsCostFromSelection();
-  const installationLaborCost = !isManualTiller ? 450 : 0;
+  // Only charge installation labor for installed path AND remote motors
+  const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;
   const batteryCost = !isManualStart ? 179.99 : 0;
   const includesProp = includesPropeller(motor);
   const canAddFuelTank = canAddExternalFuelTank(motor);
@@ -328,8 +329,8 @@ export default function QuoteSummaryPage() {
       });
     }
     
-    // Professional installation for remote motors
-    if (!isManualTiller) {
+    // Professional installation for remote motors (ONLY for installed path)
+    if (!isManualTiller && state.purchasePath === 'installed') {
       breakdown.push({
         name: 'Professional Installation',
         price: installationLaborCost,

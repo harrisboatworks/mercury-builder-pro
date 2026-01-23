@@ -145,7 +145,8 @@ export default function PackageSelectionPage() {
   };
 
   const controlsCost = getControlsCostFromSelection();
-  const installationLaborCost = !isManualTiller ? 450 : 0;
+  // Only charge installation labor for installed path AND remote motors
+  const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;
   const batteryCost = !isManualStart ? 179.99 : 0;
   const baseAccessoryCost = controlsCost + installationLaborCost;
   // Only apply tiller installation cost if purchasePath is 'installed'
