@@ -6,18 +6,36 @@ import { controlChoices, steeringChoices, gaugeChoices, tillerMountingChoices } 
 import confetti from "canvas-confetti";
 import { isTillerMotor } from "@/lib/utils";
 import { useSound } from '@/contexts/SoundContext';
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { CheckCircle } from "lucide-react";
+
+interface BoatInfo {
+  controlsOption?: string;
+  [key: string]: any;
+}
 
 interface InstallationConfigProps {
   selectedMotor: any;
+  boatInfo?: BoatInfo | null;
   onComplete: (config: any) => void;
 }
 
-export default function InstallationConfig({ selectedMotor, onComplete }: InstallationConfigProps) {
-  const [step, setStep] = useState(1);
+export default function InstallationConfig({ selectedMotor, boatInfo, onComplete }: InstallationConfigProps) {
   const isTiller = isTillerMotor(selectedMotor?.model || '');
   const { playSwoosh, playCelebration } = useSound();
+  
+  // Determine if we should skip controls step (user already has controls)
+  const hasExistingControls = boatInfo?.controlsOption === 'adapter' || 
+                              boatInfo?.controlsOption === 'compatible';
+  
+  // Start at step 2 if user has existing controls (skip control selection)
+  const [step, setStep] = useState(hasExistingControls ? 2 : 1);
+  
   const [config, setConfig] = useState({
-    controls: '',
+    // Pre-fill controls value if user has existing controls
+    controls: hasExistingControls 
+      ? (boatInfo?.controlsOption === 'adapter' ? 'existing_adapter' : 'existing_compatible')
+      : '',
     steering: '',
     gauges: '',
     mounting: '',
@@ -103,6 +121,19 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
           }
         </p>
 
+        {/* Confirmation banner when controls step is skipped */}
+        {!isTiller && hasExistingControls && (
+          <Alert className="mb-6 border-green-600 bg-green-50 dark:bg-green-950/30">
+            <CheckCircle className="w-4 h-4 text-green-600" />
+            <AlertDescription className="text-green-800 dark:text-green-200">
+              <strong>Using your existing controls</strong> — 
+              {boatInfo?.controlsOption === 'adapter' 
+                ? " We'll install a harness adapter (+$125)"
+                : " No additional control hardware needed"}
+            </AlertDescription>
+          </Alert>
+        )}
+
         {/* Tiller Motor Flow - Mounting Options */}
         {isTiller && (
           <motion.div
@@ -119,7 +150,7 @@ export default function InstallationConfig({ selectedMotor, onComplete }: Instal
         )}
 
         {/* Non-Tiller Motor Flow */}
-        {!isTiller && step >= 1 && (
+        {!isTiller && step >= 1 && !hasExistingControls && (
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
