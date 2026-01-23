@@ -10,15 +10,16 @@ const corsHeaders = {
 
 // Motor deposit price mapping - CAD prices (Canadian dollars)
 const DEPOSIT_PRICES: Record<string, string> = {
-  "500": "price_1SocofHhVKClVQCpsdCfdG7e",    // $500 CAD - Small motors (under 50HP)
-  "1000": "price_1SocogHhVKClVQCpEDslYPR3",   // $1,000 CAD - Mid-range motors (50-150HP)
-  "2500": "price_1SocoiHhVKClVQCptRAWryya"    // $2,500 CAD - High-performance motors (150HP+)
+  "200": "price_1Sspb6HhVKClVQCpaUhCXRnm",    // $200 CAD - Small motors (0-25HP)
+  "500": "price_1SocofHhVKClVQCpsdCfdG7e",    // $500 CAD - Mid-small motors (30-115HP)
+  "1000": "price_1SocogHhVKClVQCpEDslYPR3",   // $1,000 CAD - Mid-range motors (150HP+)
+  "2500": "price_1SocoiHhVKClVQCptRAWryya"    // $2,500 CAD - Reserved for future use
 };
 
 // Input validation schemas
 const customerInfoSchema = z.object({
   name: z.string().trim().min(1).max(100).optional(),
-  email: z.string().trim().email().max(255).optional(),
+  email: z.string().trim().email().max(255).optional().or(z.literal('')).or(z.null()),
   phone: z.string().max(20).optional(),
 }).optional();
 
@@ -37,7 +38,7 @@ const quoteDataSchema = z.object({
 
 const paymentRequestSchema = z.object({
   quoteData: quoteDataSchema,
-  depositAmount: z.enum(["500", "1000", "2500"]).optional(),
+  depositAmount: z.enum(["200", "500", "1000", "2500"]).optional(),
   customerInfo: customerInfoSchema,
   paymentType: z.enum(["deposit", "quote"]).optional(),
 });

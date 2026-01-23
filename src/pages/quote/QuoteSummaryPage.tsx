@@ -556,13 +556,14 @@ export default function QuoteSummaryPage() {
   const handleReserveDeposit = async () => {
     setIsProcessingDeposit(true);
     try {
+      const customerEmail = user?.email;
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: {
           paymentType: 'deposit',
           depositAmount: String(depositAmount),
           customerInfo: {
             name: user?.user_metadata?.full_name || 'Customer',
-            email: user?.email || ''
+            ...(customerEmail ? { email: customerEmail } : {})
           },
           motorInfo: {
             model: motorName,
