@@ -1,98 +1,117 @@
 
 
-# Add Facebook Sign-In to AuthModal and SaveQuotePrompt
+# Fix Trade-In Valuation for Older Motors
 
-## Overview
+## Problem Identified
 
-Add Facebook OAuth sign-in button alongside the existing Google button in both the AuthModal and SaveQuotePrompt components. The Facebook OAuth is already implemented in `AuthProvider.tsx`, so we just need to create the button component and integrate it.
+The console logs reveal two issues:
 
----
+1. **Data Entry Issue:** The horsepower was recorded as `2` instead of `25` (UI shows "25 ELPT" in the model field, but HP field only captured `2`)
 
-## Changes Summary
-
-| File | Change |
-|------|--------|
-| `src/components/auth/FacebookSignInButton.tsx` | **Create** - New button component matching Google's structure |
-| `src/components/auth/AuthModal.tsx` | Add Facebook button below Google button |
-| `src/components/auth/SaveQuotePrompt.tsx` | Add Facebook button below Google button |
-| `src/components/auth/AuthProvider.tsx` | Update `signInWithFacebook` to accept `redirectTo` parameter |
+2. **Underlying Valuation Issue:** The formula for motors older than 2015 uses only **$25/HP** which is too low. A 2005 Mercury 25HP in good condition calculates to ~$500, but should realistically be **$1,000-$1,500**
 
 ---
 
-## Visual Layout After Changes
+## Current Formula (Motors Pre-2015)
 
-```text
-┌─────────────────────────────────────────┐
-│  [G] Continue with Google               │
-├─────────────────────────────────────────┤
-│  [f] Continue with Facebook             │
-├─────────────────────────────────────────┤
-│          ── or continue with email ──   │
-├─────────────────────────────────────────┤
-│  [Email/Password Form]                  │
-└─────────────────────────────────────────┘
+```
+baseValue = horsepower × $25
+estimatedValue = baseValue × conditionMultiplier (0.8 for "Good")
 ```
 
+**Example: 2005 Mercury 25HP Good**
+- Current: $625 × 0.8 = $500 (range $400-$600)
+- Should be: ~$1,200-$1,500
+
 ---
 
-## Technical Details
+## Proposed Fix: Add 2010-2014 and 2005-2009 Year Ranges
 
-### 1. Create FacebookSignInButton Component
+Rather than using a generic formula for all motors pre-2015, add detailed pricing data for older year ranges:
 
-**New file: `src/components/auth/FacebookSignInButton.tsx`**
+| Year Range | Mercury 25HP Good Value |
+|------------|-------------------------|
+| 2020-2024 | $2,600 |
+| 2015-2019 | $2,200 |
+| 2010-2014 | **$1,800** (new) |
+| 2005-2009 | **$1,400** (new) |
+| Pre-2005 | Generic formula (improved) |
 
-Mirror the GoogleSignInButton structure:
-- Accept `redirectTo`, `variant`, `className`, and `onError` props
-- Use `signInWithFacebook` from AuthProvider
-- Include Facebook's branded SVG icon (white "f" on blue background)
-- Show loading spinner during auth flow
+---
 
-### 2. Update AuthProvider (Minor Change)
+## Technical Changes
 
-**File: `src/components/auth/AuthProvider.tsx`**
+### 1. Add Year Ranges to `tradeValues` Database
 
-Update `signInWithFacebook` to accept optional `redirectTo` parameter (currently hardcoded to `/dashboard`):
+**File: `src/lib/trade-valuation.ts`**
+
+Add two new year ranges for each brand with appropriately depreciated values:
 
 ```typescript
-const signInWithFacebook = async (redirectTo?: string) => {
-  const { error } = await supabase.auth.signInWithOAuth({
-    provider: 'facebook',
-    options: {
-      redirectTo: redirectTo || `${window.location.origin}/`
-    }
-  });
-  return { error };
-};
+'2010-2014': {
+  '5': { excellent: 600, good: 475, fair: 375, poor: 225 },
+  '10': { excellent: 1050, good: 825, fair: 650, poor: 400 },
+  '15': { excellent: 1500, good: 1175, fair: 925, poor: 575 },
+  '20': { excellent: 1950, good: 1525, fair: 1200, poor: 750 },
+  '25': { excellent: 2450, good: 1900, fair: 1500, poor: 900 },
+  // ... (all HP values)
+},
+'2005-2009': {
+  '5': { excellent: 500, good: 400, fair: 300, poor: 180 },
+  '10': { excellent: 900, good: 700, fair: 550, poor: 325 },
+  '15': { excellent: 1300, good: 1000, fair: 800, poor: 475 },
+  '20': { excellent: 1700, good: 1300, fair: 1025, poor: 625 },
+  '25': { excellent: 2100, good: 1650, fair: 1300, poor: 775 },
+  // ... (all HP values)
+}
 ```
 
-### 3. Update AuthModal
+### 2. Update Year Range Detection Logic
 
-**File: `src/components/auth/AuthModal.tsx`**
-
-Import and add FacebookSignInButton after Google button:
-
-```tsx
-<GoogleSignInButton onError={(err) => setError(err.message)} />
-<FacebookSignInButton onError={(err) => setError(err.message)} />
+```typescript
+let yearRange = '';
+if (year >= 2020) {
+  yearRange = '2020-2024';
+} else if (year >= 2015) {
+  yearRange = '2015-2019';
+} else if (year >= 2010) {
+  yearRange = '2010-2014';  // NEW
+} else if (year >= 2005) {
+  yearRange = '2005-2009';  // NEW
+} else {
+  // Very old motor (pre-2005) - improved generic formula
+}
 ```
 
-### 4. Update SaveQuotePrompt
+### 3. Improve Pre-2005 Generic Formula
 
-**File: `src/components/auth/SaveQuotePrompt.tsx`**
+Increase the base multiplier from $25/HP to **$40/HP** with better age-based depreciation:
 
-Import and add FacebookSignInButton after Google button with the same redirect URL pattern:
-
-```tsx
-<GoogleSignInButton redirectTo={redirectUrl} onError={...} />
-<FacebookSignInButton redirectTo={redirectUrl} onError={...} />
+```typescript
+// Motors older than 2005
+const motorAge = currentYear - year;
+const baseValue = horsepower * 40;  // Increased from $25
+const ageDepreciation = Math.max(0.35, 1 - (motorAge - 20) * 0.03);  // Slower decline
 ```
 
 ---
 
-## Files to Create/Modify
+## Expected Results After Fix
 
-1. **`src/components/auth/FacebookSignInButton.tsx`** - Create new component
-2. **`src/components/auth/AuthProvider.tsx`** - Add `redirectTo` param to Facebook function
-3. **`src/components/auth/AuthModal.tsx`** - Add Facebook button
-4. **`src/components/auth/SaveQuotePrompt.tsx`** - Add Facebook button
+| Motor | Current Value | New Value |
+|-------|---------------|-----------|
+| 2005 Mercury 25HP Good | ~$500 | **$1,650** |
+| 2008 Mercury 25HP Good | ~$500 | **$1,650** |
+| 2012 Mercury 25HP Good | ~$500 | **$1,900** |
+| 2000 Mercury 25HP Good | ~$400 | **$800** |
+
+---
+
+## Files to Modify
+
+1. **`src/lib/trade-valuation.ts`**
+   - Add `2010-2014` year range data for all brands
+   - Add `2005-2009` year range data for all brands
+   - Update year range detection logic
+   - Improve pre-2005 generic formula
 
