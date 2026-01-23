@@ -16,8 +16,19 @@ interface ChatContext {
   motorName?: string;
 }
 
+interface ChatHistoryResponse {
+  conversation: {
+    id: string;
+    context: Record<string, any>;
+    created_at: string;
+    last_message_at: string;
+  } | null;
+  messages: PersistedMessage[];
+}
+
 const SESSION_KEY = 'chat_session_id';
 const MAX_MESSAGES_TO_LOAD = 20;
+const SUPABASE_URL = 'https://eutsoqdpjurknjsshxes.supabase.co';
 
 // Generate cryptographically secure session IDs to prevent enumeration attacks
 function generateSecureSessionId(): string {
@@ -28,11 +39,39 @@ function generateSecureSessionId(): string {
 
 function getOrCreateSessionId(): string {
   let sessionId = localStorage.getItem(SESSION_KEY);
-  if (!sessionId) {
+  if (!sessionId || !isValidSessionIdFormat(sessionId)) {
     sessionId = generateSecureSessionId();
     localStorage.setItem(SESSION_KEY, sessionId);
   }
   return sessionId;
+}
+
+// Validate session ID format matches our secure format
+function isValidSessionIdFormat(sessionId: string): boolean {
+  return /^chat_[a-f0-9]{64}$/.test(sessionId);
+}
+
+// Fetch chat history via secure Edge Function
+async function fetchChatHistoryFromEdge(sessionId: string): Promise<ChatHistoryResponse> {
+  try {
+    const response = await fetch(`${SUPABASE_URL}/functions/v1/chat-history`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ session_id: sessionId }),
+    });
+
+    if (!response.ok) {
+      console.error('Chat history fetch failed:', response.status);
+      return { conversation: null, messages: [] };
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error('Failed to fetch chat history:', error);
+    return { conversation: null, messages: [] };
+  }
 }
 
 export function useChatPersistence() {
@@ -42,61 +81,23 @@ export function useChatPersistence() {
 
   const sessionId = getOrCreateSessionId();
 
-  // Get or create conversation with smart recovery
+  // Initialize conversation - only creates new if none exists for this session
   const initializeConversation = useCallback(async (context?: ChatContext) => {
     try {
-      // First: try existing session ID from localStorage
-      const existingSessionId = localStorage.getItem(SESSION_KEY);
-      
-      if (existingSessionId) {
-        const { data: existing } = await supabase
-          .from('chat_conversations')
-          .select('id')
-          .eq('session_id', existingSessionId)
-          .eq('is_active', true)
-          .order('last_message_at', { ascending: false })
-          .limit(1)
-          .single();
+      // Use Edge Function to securely fetch existing conversation
+      const { conversation } = await fetchChatHistoryFromEdge(sessionId);
 
-        if (existing) {
-          setConversationId(existing.id);
-          return existing.id;
-        }
+      if (conversation) {
+        setConversationId(conversation.id);
+        setHasHistory(true);
+        return conversation.id;
       }
 
-      // FALLBACK: No valid session - try to recover most recent conversation with messages
-      const { data: recentConvo } = await supabase
-        .from('chat_conversations')
-        .select('id, session_id')
-        .eq('is_active', true)
-        .order('last_message_at', { ascending: false })
-        .limit(1)
-        .single();
-
-      if (recentConvo) {
-        // Check if this conversation has messages
-        const { count } = await supabase
-          .from('chat_messages')
-          .select('id', { count: 'exact', head: true })
-          .eq('conversation_id', recentConvo.id);
-
-        if (count && count > 0) {
-          // Found a conversation with messages - recover it
-          localStorage.setItem(SESSION_KEY, recentConvo.session_id || '');
-          setConversationId(recentConvo.id);
-          setHasHistory(true);
-          return recentConvo.id;
-        }
-      }
-
-      // No recoverable conversation - create new one with secure session ID
-      const newSessionId = generateSecureSessionId();
-      localStorage.setItem(SESSION_KEY, newSessionId);
-      
+      // No existing conversation - create a new one
       const { data: newConvo, error: createError } = await supabase
         .from('chat_conversations')
         .insert({
-          session_id: newSessionId,
+          session_id: sessionId,
           context: context || {},
         })
         .select('id')
@@ -105,43 +106,39 @@ export function useChatPersistence() {
       if (createError) throw createError;
       
       setConversationId(newConvo.id);
+      setHasHistory(false);
       return newConvo.id;
     } catch (error) {
       console.error('Failed to initialize conversation:', error);
       return null;
     }
-  }, []);
+  }, [sessionId]);
 
-  // Load messages from database
+  // Load messages using Edge Function (secure)
   const loadMessages = useCallback(async (): Promise<PersistedMessage[]> => {
-    if (!conversationId) return [];
-
     try {
-      const { data, error } = await supabase
-        .from('chat_messages')
-        .select('id, content, role, created_at, reaction, metadata')
-        .eq('conversation_id', conversationId)
-        .order('created_at', { ascending: true })
-        .limit(MAX_MESSAGES_TO_LOAD);
-
-      if (error) throw error;
+      const { conversation, messages } = await fetchChatHistoryFromEdge(sessionId);
       
-      const messages = (data || []).map(msg => ({
+      if (conversation) {
+        setConversationId(conversation.id);
+      }
+      
+      const formattedMessages = messages.map(msg => ({
         ...msg,
         role: msg.role as 'user' | 'assistant',
         reaction: msg.reaction as 'thumbs_up' | 'thumbs_down' | null,
-        metadata: msg.metadata as Record<string, any>,
+        metadata: (msg.metadata || {}) as Record<string, any>,
       }));
       
-      setHasHistory(messages.length > 0);
-      return messages;
+      setHasHistory(formattedMessages.length > 0);
+      return formattedMessages;
     } catch (error) {
       console.error('Failed to load messages:', error);
       return [];
     }
-  }, [conversationId]);
+  }, [sessionId]);
 
-  // Save a message to database
+  // Save a message to database (direct insert is still allowed by RLS)
   const saveMessage = useCallback(async (
     content: string,
     role: 'user' | 'assistant',
@@ -213,6 +210,10 @@ export function useChatPersistence() {
         .from('chat_conversations')
         .update({ is_active: false })
         .eq('id', conversationId);
+
+      // Generate new session ID for fresh start
+      const newSessionId = generateSecureSessionId();
+      localStorage.setItem(SESSION_KEY, newSessionId);
 
       setConversationId(null);
       setHasHistory(false);
