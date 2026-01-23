@@ -1,92 +1,155 @@
 
-## What changed since the last time publishing worked (and why it now “never works”)
+# Fix: Tiller Motors Loose Path & Electric Start Battery Option
 
-From the build output you pasted, **Vite successfully builds your app bundle** (it lists all `dist/assets/...` and then the log gets truncated). That strongly suggests the failure happens **after bundling**, during a post-step like **PWA/Workbox service worker generation** (this is the most common “it prints the chunk list and then dies” pattern).
+## Problem Summary
 
-The key change that correlates with your failures is:
+Based on analysis of the codebase and the user's report, there are two distinct issues:
 
-1) **You have `vite-plugin-pwa` enabled with Workbox precaching**
-   - `vite.config.ts` includes `VitePWA({ workbox: { globPatterns: ... } })`
-   - Workbox will **precache every file matched by `globPatterns`**.
+1. **Installation costs incorrectly added for "Loose Motor" purchases**  
+   When a user selects a tiller motor and chooses "Loose Motor" (no installation), the quote still includes installation/mounting costs. This happens because:
+   - The `installConfig` state is not cleared when switching to "loose" path
+   - Pricing components add `state.installConfig.installationCost` unconditionally without checking the purchase path
+   - Stale data from previous sessions persists in localStorage
 
-2) **Your Workbox `globPatterns` includes `png`**
-   - Current config:  
-     `globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}']`
-
-3) **Your build contains a PNG bigger than Workbox’s default maximum precache size**
-   - Your build output shows:
-     - `dist/assets/mercury-get7-promo-mobile-....png` = **2,350.28 kB (~2.35 MB)**
-   - Workbox has a default `maximumFileSizeToCacheInBytes` (commonly ~2 MB).  
-     If any matched file exceeds this, **service worker generation can fail**.
-   - This would happen *after* “computing gzip size…” and the asset list—exactly where your logs get truncated.
-
-So compared to a “previously published” version, what likely changed is:
-- **PWA precache rules now include images**, and/or
-- **This specific large promo image was added (or grew past ~2 MB)**, and Workbox now tries to precache it and fails.
-
-## Why the error text is useless right now
-Lovable’s build output is being truncated (“Build errors truncated: too large to display completely”), which hides the actual Workbox error message (it’s usually something like “File is larger than maximumFileSizeToCacheInBytes”).
-
-Given your logs and config, we can proceed with a fix that directly addresses this failure mode.
+2. **Electric start motors lack a battery choice for loose purchases**  
+   Electric start tiller motors require a starting battery to operate, but users aren't prompted about whether they want to purchase one when selecting "Loose Motor" path.
 
 ---
 
-## Fix strategy (most reliable)
+## Technical Root Cause Analysis
 
-### Goal
-Stop Workbox from trying to precache large images (especially that 2.35MB PNG), while keeping images cached at runtime via your existing runtimeCaching rules.
+### Issue 1: Installation Cost Leak
 
-### Change 1 (recommended): Remove images from precache `globPatterns`
-Update:
-- `globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}']`
-to something like:
-- `globPatterns: ['**/*.{js,css,html,ico,svg,woff2}']`  
-(Notice: remove `png` and we can also avoid `jpg/jpeg` if present later.)
+**Where it breaks:**
+- `src/pages/quote/PurchasePathPage.tsx` - When user selects "loose", only sets `purchasePath` but does NOT clear `installConfig`
+- `src/components/quote/GlobalStickyQuoteBar.tsx:64-67` - Adds `installConfig.installationCost` without checking `purchasePath`
+- `src/components/quote-builder/UnifiedMobileBar.tsx:411-413` - Same issue
+- `src/pages/quote/PackageSelectionPage.tsx:151` - Calculates `tillerInstallCost` without purchase path guard
+- `src/pages/quote/QuoteSummaryPage.tsx:233` - Same issue
 
-Rationale:
-- Precache is best for the **app shell** (HTML/CSS/JS) and critical small icons.
-- You already have `runtimeCaching` for images:
-  - `urlPattern: /\.(png|jpg|jpeg|svg|webp|gif)$/` with `CacheFirst`
-- That means images will still be cached, just not forced into precache (which is what is breaking the build).
+**Data flow:**
+```text
+User selects tiller motor -> 
+User picks "Installed" and configures mounting ($99) ->
+installConfig.installationCost = 99 saved to state and localStorage ->
+User changes mind, selects "Loose Motor" ->
+installConfig NOT cleared ->
+$99 still shows on quote total
+```
 
-### Change 2 (optional fallback): Increase the Workbox size limit
-If you want to keep some images precached (I generally don’t recommend it here), add:
-- `maximumFileSizeToCacheInBytes: 5 * 1024 * 1024` (5 MB), or similar.
+### Issue 2: Missing Battery Prompt
 
-This is less ideal because it can bloat your precache and slow down SW generation/installs, but it can work.
-
-### Change 3 (targeted alternative): Exclude only the one large asset
-Add a Workbox ignore for that promo image (hash varies per build, so we’d likely match by filename prefix):
-- `globIgnores: ['**/mercury-get7-promo-mobile*.png']`
-
-This can work, but it’s more brittle than simply removing images from precache.
+**Current behavior:**
+- Electric start detection works via model codes (EH, ELH, ELPT, etc.)
+- Battery cost ($179.99) is automatically added to "Better" and "Best" packages
+- No user prompt for loose motor path about whether they want a battery
 
 ---
 
-## How we’ll confirm the fix
-1) Publish again.
-2) If publishing succeeds, we’ve confirmed it was the Workbox precache size limit.
-3) Quick sanity check in the deployed app:
-   - The promotions page and quote motor selection banner images load.
-   - Offline behavior still works for the app shell (if you rely on offline).
+## Implementation Plan
+
+### Part 1: Clear Installation Config for Loose Path
+
+**File: `src/pages/quote/PurchasePathPage.tsx`**
+- When user selects "loose" path, dispatch action to clear `installConfig`
+- This prevents stale installation costs from polluting the quote
+
+**File: `src/contexts/QuoteContext.tsx`**
+- Already has `SET_INSTALL_CONFIG` action that can accept `null`
+
+### Part 2: Add Purchase Path Guards to Pricing Calculations
+
+Update pricing calculations to only include installation/mounting costs when `purchasePath === 'installed'`:
+
+**Files to update:**
+- `src/pages/quote/PackageSelectionPage.tsx` - Guard `tillerInstallCost` calculation
+- `src/pages/quote/QuoteSummaryPage.tsx` - Guard `tillerInstallCost` calculation
+- `src/components/quote/GlobalStickyQuoteBar.tsx` - Guard `installConfig.installationCost` addition
+- `src/components/quote-builder/UnifiedMobileBar.tsx` - Guard `installConfig.installationCost` addition
+- `src/components/quote-builder/MobileQuoteDrawer.tsx` - Guard mounting hardware line item
+
+### Part 3: Battery Choice for Electric Start Loose Motors
+
+**New Component: `src/components/quote-builder/BatteryOptionPrompt.tsx`**
+A simple selection component that asks:
+- "Your motor has electric start. Would you like to add a marine starting battery?"
+- Options: "Yes, add battery ($179.99)" / "No, I have my own battery"
+
+**File: `src/pages/quote/TradeInPage.tsx`**
+- Before navigating away for electric start tiller motors on loose path, check if battery choice is needed
+- Show the battery prompt inline or as a step before trade-in completion
+
+**Alternative approach (simpler):**
+- Add the battery prompt as a section within the TradeInPage for electric start loose motors
+- Store choice in context (new field: `wantsBattery: boolean`)
+
+**File: `src/contexts/QuoteContext.tsx`**
+- Add new state field: `looseMotorBattery: { wantsBattery: boolean; batteryCost: number } | null`
+- Add new action: `SET_LOOSE_MOTOR_BATTERY`
+
+**Files to update for battery pricing:**
+- `src/pages/quote/PackageSelectionPage.tsx` - Include battery cost if selected
+- `src/pages/quote/QuoteSummaryPage.tsx` - Include battery in breakdown if selected
 
 ---
 
-## Files that will change
-- `vite.config.ts` (Workbox config only)
+## File Changes Summary
+
+| File | Changes |
+|------|---------|
+| `src/pages/quote/PurchasePathPage.tsx` | Clear `installConfig` when "loose" is selected |
+| `src/contexts/QuoteContext.tsx` | Add `looseMotorBattery` state, add `SET_LOOSE_MOTOR_BATTERY` action |
+| `src/pages/quote/PackageSelectionPage.tsx` | Add purchase path guard for `tillerInstallCost`, add loose motor battery cost |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Add purchase path guard for `tillerInstallCost`, add loose motor battery to breakdown |
+| `src/components/quote/GlobalStickyQuoteBar.tsx` | Add purchase path guard for installation costs |
+| `src/components/quote-builder/UnifiedMobileBar.tsx` | Add purchase path guard for installation costs |
+| `src/components/quote-builder/MobileQuoteDrawer.tsx` | Add purchase path guard for mounting hardware line item |
+| `src/pages/quote/TradeInPage.tsx` | Add battery option prompt for electric start loose motors |
+| `src/components/quote-builder/BatteryOptionPrompt.tsx` | **NEW** - Simple yes/no battery selection component |
 
 ---
 
-## Notes on your other recent changes (not the current blocker, but relevant context)
-- The “dev-only gating” for Transformers/WASM was the right move to keep production bundles smaller.
-- Adding the missing PWA icons and stable `/public/assets/*` was also correct, but it doesn’t address the core symptom of “build completes then fails at the end.”
+## Example Code Changes
+
+### PurchasePathPage.tsx - Clear install config for loose path
+```typescript
+const handleStepComplete = (path: 'loose' | 'installed') => {
+  pathSelectedOnThisPage.current = true;
+  dispatch({ type: 'SET_PURCHASE_PATH', payload: path });
+  
+  // Clear installation config when selecting loose motor (no installation)
+  if (path === 'loose') {
+    dispatch({ type: 'SET_INSTALL_CONFIG', payload: null });
+  }
+  
+  dispatch({ type: 'COMPLETE_STEP', payload: 2 });
+};
+```
+
+### PackageSelectionPage.tsx - Add purchase path guard
+```typescript
+// Only apply tiller installation cost if purchasePath is 'installed'
+const tillerInstallCost = 
+  isManualTiller && state.purchasePath === 'installed' 
+    ? (state.installConfig?.installationCost || 0) 
+    : 0;
+```
+
+### GlobalStickyQuoteBar.tsx - Add purchase path guard
+```typescript
+// Add installation config costs ONLY for installed path
+if (state.purchasePath === 'installed' && state.installConfig?.installationCost) {
+  total += state.installConfig.installationCost;
+}
+```
 
 ---
 
-## Implementation steps I will take once you approve
-1) Edit `vite.config.ts`:
-   - Remove `png` from Workbox `globPatterns` (and ensure `jpg/jpeg` are not included either if we decide to keep precache minimal).
-   - Keep your runtime caching rule for images unchanged.
-2) Publish again.
+## Testing Checklist
 
-If this still fails after that, the next most likely culprit would be a different post-build gate (security scan, edge function deploy, etc.), but the evidence you posted overwhelmingly points to Workbox choking on the 2.35MB promo PNG during SW generation.
+1. Select tiller motor → "Loose Motor" → Verify NO installation costs appear
+2. Select tiller motor → "Installed" → Configure mounting → Go back → Select "Loose Motor" → Verify costs cleared
+3. Select electric start tiller (e.g., 9.9 ELH) → "Loose Motor" → Verify battery prompt appears
+4. Decline battery → Verify no battery cost on quote
+5. Accept battery → Verify $179.99 appears in quote breakdown
+6. Verify localStorage doesn't persist stale installation costs after path change
