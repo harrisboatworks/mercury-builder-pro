@@ -11,7 +11,7 @@ interface AuthContextType {
   isAdmin: boolean;
   signUp: (email: string, password: string, displayName?: string) => Promise<{ error: any }>;
   signIn: (email: string, password: string) => Promise<{ error: any }>;
-  signInWithGoogle: () => Promise<{ error: any }>;
+  signInWithGoogle: (redirectTo?: string) => Promise<{ error: any }>;
   signInWithFacebook: () => Promise<{ error: any }>;
   signOut: () => Promise<{ error: any }>;
 }
@@ -116,9 +116,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     return { error };
   };
 
-  const signInWithGoogle = async () => {
-    // Google OAuth temporarily disabled - configure in Supabase first
-    return { error: new Error('Google sign-in is not currently available') };
+  const signInWithGoogle = async (redirectTo?: string) => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: redirectTo || `${window.location.origin}/`
+      }
+    });
+    return { error };
   };
 
   const signInWithFacebook = async () => {
