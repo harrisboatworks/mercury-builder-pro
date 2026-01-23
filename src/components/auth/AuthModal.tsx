@@ -17,6 +17,7 @@ import { PasswordStrength, validatePasswordStrength } from '@/components/ui/pass
 import { authSchema } from '@/lib/validation';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { GoogleSignInButton } from './GoogleSignInButton';
+import { FacebookSignInButton } from './FacebookSignInButton';
 
 interface AuthModalProps {
   open: boolean;
@@ -120,8 +121,11 @@ export const AuthModal = ({
   // Shared form content
   const formContent = (
     <div className="space-y-4">
-      {/* Google Sign-In Button */}
+      {/* Social Sign-In Buttons */}
       <GoogleSignInButton 
+        onError={(err) => setError(err.message)}
+      />
+      <FacebookSignInButton 
         onError={(err) => setError(err.message)}
       />
       

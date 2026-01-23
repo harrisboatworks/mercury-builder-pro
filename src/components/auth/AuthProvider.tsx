@@ -12,7 +12,7 @@ interface AuthContextType {
   signUp: (email: string, password: string, displayName?: string) => Promise<{ error: any }>;
   signIn: (email: string, password: string) => Promise<{ error: any }>;
   signInWithGoogle: (redirectTo?: string) => Promise<{ error: any }>;
-  signInWithFacebook: () => Promise<{ error: any }>;
+  signInWithFacebook: (redirectTo?: string) => Promise<{ error: any }>;
   signOut: () => Promise<{ error: any }>;
 }
 
@@ -126,11 +126,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     return { error };
   };
 
-  const signInWithFacebook = async () => {
+  const signInWithFacebook = async (redirectTo?: string) => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'facebook',
       options: {
-        redirectTo: `${window.location.origin}/dashboard`
+        redirectTo: redirectTo || `${window.location.origin}/`
       }
     });
     return { error };
