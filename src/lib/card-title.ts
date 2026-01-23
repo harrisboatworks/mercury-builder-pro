@@ -41,9 +41,9 @@ export const START_SHAFT_TRIM_BUNDLES = [
 
 const PRIORITY_LIST: string[][] = [
   [...FEATURE_WORDS],
+  [...START_SHAFT_TRIM_BUNDLES],
   [...SHAFT_ROTATION_CODES],
   [...CONTROL_TRIM_CODES],
-  [...START_SHAFT_TRIM_BUNDLES],
 ];
 
 export const BRAND_REGEX = /\bmercury(?:\s+marine)?\b|mercury®|^merc\.\b|^mercury\s*/gi;
@@ -119,6 +119,10 @@ export function formatVariantSubtitle(raw: string, title: string): string {
   const formatted = picked.map((t) => {
     // Heuristic: if token is letters-only and <= 5 chars, treat as code -> uppercase
     const isCode = /^[a-zA-Z]{2,5}$/.test(t.replace(/\s+/g, ''));
+
+    // Preserve exact casing for known feature words (e.g. ProKicker, Pro XS)
+    if ((FEATURE_WORDS as readonly string[]).includes(t)) return t;
+
     return isCode ? t.toUpperCase() : toTitleCaseWord(t);
   });
 
