@@ -33,6 +33,26 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Rate limiting: Check IP-based limits
+    const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
+                     req.headers.get('cf-connecting-ip') || 
+                     'unknown';
+    
+    const { data: allowed } = await supabase.rpc('check_rate_limit', {
+      p_identifier: clientIP,
+      p_action: 'contact_inquiry',
+      p_max_attempts: 5,
+      p_window_minutes: 60
+    });
+
+    if (!allowed) {
+      console.log(`[send-contact-inquiry] Rate limit exceeded for IP: ${clientIP}`);
+      return new Response(
+        JSON.stringify({ error: 'Too many requests. Please try again later.' }),
+        { status: 429, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
     const rawData = await req.json();
     
     // Validate input with zod
