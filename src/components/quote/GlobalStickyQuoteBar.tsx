@@ -61,8 +61,8 @@ export function GlobalStickyQuoteBar() {
       total += 450; // Professional installation labor
     }
 
-    // Add installation config costs (mounting hardware for tillers)
-    if (state.installConfig?.installationCost) {
+    // Add installation config costs (mounting hardware for tillers) - ONLY for installed path
+    if (state.purchasePath === 'installed' && state.installConfig?.installationCost) {
       total += state.installConfig.installationCost;
     }
 

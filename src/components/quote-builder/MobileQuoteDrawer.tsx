@@ -79,8 +79,8 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       lineItems.push({ label: 'Installation Labor', value: 450 });
     }
 
-    // Installation config (mounting for tillers)
-    if (state.installConfig?.installationCost) {
+    // Installation config (mounting for tillers) - ONLY for installed path
+    if (state.purchasePath === 'installed' && state.installConfig?.installationCost) {
       subtotal += state.installConfig.installationCost;
       lineItems.push({ label: 'Mounting Hardware', value: state.installConfig.installationCost });
     }

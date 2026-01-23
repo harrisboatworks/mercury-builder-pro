@@ -76,6 +76,12 @@ export default function PurchasePathPage() {
   const handleStepComplete = (path: 'loose' | 'installed') => {
     pathSelectedOnThisPage.current = true;
     dispatch({ type: 'SET_PURCHASE_PATH', payload: path });
+    
+    // Clear installation config when selecting loose motor (no installation)
+    if (path === 'loose') {
+      dispatch({ type: 'SET_INSTALL_CONFIG', payload: null });
+    }
+    
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
     // Navigation handled by useEffect above
   };

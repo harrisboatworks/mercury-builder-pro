@@ -408,7 +408,8 @@ export const UnifiedMobileBar: React.FC = () => {
         total += 450;
       }
 
-      if (state.installConfig?.installationCost) {
+      // Add installation config costs ONLY for installed path
+      if (state.purchasePath === 'installed' && state.installConfig?.installationCost) {
         total += state.installConfig.installationCost;
       }
 
