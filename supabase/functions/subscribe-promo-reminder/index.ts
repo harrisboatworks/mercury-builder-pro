@@ -29,6 +29,26 @@ serve(async (req) => {
     const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseKey);
 
+    // Rate limiting: Check IP-based limits
+    const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
+                     req.headers.get('cf-connecting-ip') || 
+                     'unknown';
+    
+    const { data: allowed } = await supabase.rpc('check_rate_limit', {
+      p_identifier: clientIP,
+      p_action: 'promo_subscribe',
+      p_max_attempts: 10,
+      p_window_minutes: 60
+    });
+
+    if (!allowed) {
+      console.log(`[subscribe-promo-reminder] Rate limit exceeded for IP: ${clientIP}`);
+      return new Response(
+        JSON.stringify({ error: "Too many requests. Please try again later." }),
+        { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     const body: SubscribeRequest = await req.json();
     console.log("[subscribe-promo-reminder] Received request:", JSON.stringify(body));
 

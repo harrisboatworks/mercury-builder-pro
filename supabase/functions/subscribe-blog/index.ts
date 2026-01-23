@@ -19,6 +19,31 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
+    // Initialize Supabase client first for rate limiting
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    // Rate limiting: Check IP-based limits
+    const clientIP = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 
+                     req.headers.get('cf-connecting-ip') || 
+                     'unknown';
+    
+    const { data: allowed } = await supabase.rpc('check_rate_limit', {
+      p_identifier: clientIP,
+      p_action: 'blog_subscribe',
+      p_max_attempts: 10,
+      p_window_minutes: 60
+    });
+
+    if (!allowed) {
+      console.log(`[subscribe-blog] Rate limit exceeded for IP: ${clientIP}`);
+      return new Response(
+        JSON.stringify({ error: "Too many requests. Please try again later." }),
+        { status: 429, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
     const { email, name }: SubscribeRequest = await req.json();
 
     // Validate email
@@ -30,11 +55,6 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     console.log(`[subscribe-blog] Processing subscription for: ${email}`);
-
-    // Initialize Supabase client
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
     // Check if already subscribed
     const { data: existing } = await supabase
