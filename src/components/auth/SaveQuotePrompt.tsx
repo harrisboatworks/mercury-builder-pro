@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useAuth } from './AuthProvider';
 import { AuthModal } from './AuthModal';
 import { GoogleSignInButton } from './GoogleSignInButton';
+import { FacebookSignInButton } from './FacebookSignInButton';
 import { BookmarkPlus, Sparkles } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
@@ -64,6 +65,10 @@ export const SaveQuotePrompt = ({ referenceNumber, contactInfo, quoteId }: SaveQ
 
           <div className="space-y-3 pt-2">
             <GoogleSignInButton 
+              redirectTo={redirectUrl}
+              onError={(err) => setAuthError(err.message)}
+            />
+            <FacebookSignInButton 
               redirectTo={redirectUrl}
               onError={(err) => setAuthError(err.message)}
             />
