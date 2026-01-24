@@ -74,7 +74,7 @@ const AdminQuoteDetail = () => {
   const handleEditQuote = () => {
     if (!q) return;
     
-    // If we have quote_data, restore it to context and navigate to quote builder
+    // If we have quote_data, restore it to context and navigate to summary
     if (q.quote_data) {
       dispatch({ type: 'RESTORE_QUOTE', payload: q.quote_data });
       dispatch({ type: 'SET_ADMIN_MODE', payload: { isAdmin: true, editingQuoteId: q.id } });
@@ -83,7 +83,23 @@ const AdminQuoteDetail = () => {
         adminNotes: q.admin_notes || '',
         customerNotes: q.customer_notes || ''
       }});
-      navigate('/quote/motor-selection');
+      
+      // Force immediate save so state persists through navigation
+      const adminState = {
+        ...q.quote_data,
+        isAdminQuote: true,
+        editingQuoteId: q.id,
+        adminDiscount: q.admin_discount || 0,
+        adminNotes: q.admin_notes || '',
+        customerNotes: q.customer_notes || ''
+      };
+      localStorage.setItem('quoteBuilder', JSON.stringify({
+        state: adminState,
+        timestamp: Date.now(),
+        lastActivity: Date.now()
+      }));
+      
+      navigate('/quote/summary');
     } else {
       // No quote_data, just toggle inline editing mode
       setIsEditing(true);
@@ -185,21 +201,43 @@ const AdminQuoteDetail = () => {
           
           {/* Trade-In */}
           <Card className="p-4">
-            <h2 className="font-semibold mb-2 flex items-center gap-2">
-              Trade-In
-              {q.penalty_applied && (
-                <AlertTriangle className="w-4 h-4 text-yellow-600" />
-              )}
-            </h2>
-            <div>Pre-penalty value: {fmt(q.tradein_value_pre_penalty)}</div>
-            <div>Final value: {fmt(q.tradein_value_final)}</div>
-            <div>Penalty applied: {q.penalty_applied ? 'Yes' : 'No'}</div>
-            {q.penalty_applied && (
-              <>
-                <div>Penalty factor: {q.penalty_factor}</div>
-                <div>Reason: {q.penalty_reason}</div>
-              </>
-            )}
+            {(() => {
+              // Extract trade-in from quote_data if not in top-level columns
+              const tradeIn = q.quote_data?.tradeInInfo || {};
+              const hasTradeIn = tradeIn.hasTradeIn || q.tradein_value_pre_penalty;
+              const estimatedValue = q.tradein_value_final ?? tradeIn.tradeinValueFinal ?? tradeIn.estimatedValue;
+              
+              return (
+                <>
+                  <h2 className="font-semibold mb-2 flex items-center gap-2">
+                    Trade-In
+                    {q.penalty_applied && (
+                      <AlertTriangle className="w-4 h-4 text-yellow-600" />
+                    )}
+                  </h2>
+                  {hasTradeIn ? (
+                    <div className="space-y-1">
+                      {tradeIn.year && <div>Year: {tradeIn.year}</div>}
+                      {tradeIn.brand && <div>Brand: {tradeIn.brand}</div>}
+                      {tradeIn.horsepower && <div>HP: {tradeIn.horsepower}</div>}
+                      {tradeIn.condition && <div>Condition: {tradeIn.condition}</div>}
+                      <div className="border-t pt-1 mt-2">
+                        <div>Estimated Value: {fmt(estimatedValue)}</div>
+                        {q.penalty_applied && (
+                          <>
+                            <div className="text-yellow-600">Penalty Applied: Yes</div>
+                            <div>Penalty Factor: {q.penalty_factor}</div>
+                            <div>Reason: {q.penalty_reason}</div>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="text-muted-foreground italic">No trade-in</div>
+                  )}
+                </>
+              );
+            })()}
           </Card>
           
           {/* Financial Summary */}
