@@ -1,203 +1,121 @@
 
-# Update AI Chat & Voice with Deposit/Payment Information
+# Fix Mobile Chat Viewport Issues on iPhone Chrome
 
-## Overview
+## Problem Summary
 
-Add deposit tier information and mobile payment method availability to all three AI systems:
-1. **Text Chatbot** (`ai-chatbot/index.ts`) — OpenAI-powered chat
-2. **Voice AI** (`realtime-session/index.ts`) — OpenAI Realtime voice
-3. **ElevenLabs KB** (`format-kb-documents.ts`) — Static knowledge documents
+When using the chat on iPhone in Chrome, the viewport shifts and requires manual adjustment. Looking at your screenshots, I can see:
+1. Content is getting cut off on the right side
+2. User messages overflow the visible area
+3. The screen scales/zooms unexpectedly when interacting with the chat
 
----
+## Root Causes
 
-## New Content to Add
+1. **Missing explicit width containment** on the chat drawer container
+2. **No viewport lock** when chat is open (iOS browsers allow pinch-zoom and pan when fixed elements don't fully constrain the viewport)
+3. **Message bubbles can overflow** with long content or links
+4. **Keyboard interaction** causes iOS Chrome to resize the viewport unpredictably
 
-### Reserving a Motor (Deposits)
+## Solution
 
-```text
-## RESERVING A MOTOR (DEPOSIT SYSTEM)
+### File 1: `src/components/chat/InlineChatDrawer.tsx`
 
-Customers can secure a motor with a refundable deposit based on HP:
-- **$200** — Portable motors (0-25HP)
-- **$500** — Mid-range motors (30-115HP)
-- **$1,000** — High-power motors (150HP+)
-
-### Payment Methods
-Checkout supports fast mobile payment options:
-- **Apple Pay** (Safari on iPhone/Mac)
-- **Google Pay** (Chrome on Android/desktop)
-- **Link** (Stripe's one-click checkout)
-- Standard card payment always available
-
-### Reservation Policies
-- Deposit is fully refundable if customer changes their mind
-- Deposit holds the motor and locks in current pricing
-- Balance due at pickup
-- All pickups still require in-person visit with photo ID
-- Receipt sent immediately by email
-
-### How to Reserve
-1. Complete the quote builder
-2. Click "Reserve This Motor" on the summary page
-3. Pay the deposit via Apple Pay, Google Pay, or card
-4. Receive confirmation email with next steps
-5. Schedule pickup at your convenience
-```
-
----
-
-## File-by-File Changes
-
-### 1. `supabase/functions/ai-chatbot/index.ts`
-
-**Location:** After the financing section (~line 530), before website navigation
-
-**Add new section:**
+**Add viewport locking when chat opens:**
 ```typescript
-## RESERVING A MOTOR (DEPOSIT SYSTEM):
-
-Customers can secure their motor with a refundable deposit:
-- $200 deposit for portable motors (0-25HP)
-- $500 deposit for mid-range motors (30-115HP)
-- $1,000 deposit for high-power motors (150HP+)
-
-### Payment Options at Checkout:
-- Apple Pay (iPhone/Mac users)
-- Google Pay (Android/Chrome users)
-- Link (Stripe one-click checkout)
-- Standard credit/debit card
-
-### Reservation Policies:
-- Deposit is fully refundable
-- Holds the motor and locks current pricing
-- Balance due at in-person pickup
-- Confirmation email sent immediately
-
-When discussing reservations, say:
-"Want to lock in this price? A $[amount] deposit holds the motor - and you can pay with Apple Pay or Google Pay for a quick checkout."
-```
-
----
-
-### 2. `supabase/functions/realtime-session/index.ts`
-
-**Location:** Within the `instructions` string, before "You can discuss motors..."
-
-**Add after "NO DELIVERY POLICY" section:**
-```typescript
-RESERVING A MOTOR:
-Customers can reserve with a refundable deposit:
-- $200 for small motors (under 25HP)
-- $500 for mid-range (30-115HP)
-- $1,000 for big motors (150HP+)
-
-Checkout accepts Apple Pay, Google Pay, and Link for quick payment. Just say: "A quick deposit locks it in - you can even use Apple Pay."
-
-Deposits are fully refundable. Balance due at pickup.
-```
-
----
-
-### 3. `supabase/functions/_shared/format-kb-documents.ts`
-
-**Location:** Add a new export function and include in `KB_DOCUMENTS`
-
-**New function (~after line 640):**
-```typescript
-// ========== RESERVING A MOTOR GUIDE ==========
-export function formatReservationGuide(): string {
-  const now = new Date().toISOString().split('T')[0];
+// Add effect to lock body scroll and viewport when drawer is open
+useEffect(() => {
+  if (isOpen) {
+    // Lock body scroll and prevent viewport shifts
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed';
+    document.body.style.width = '100%';
+    document.body.style.top = `-${window.scrollY}px`;
+  } else {
+    // Restore scroll position when closing
+    const scrollY = document.body.style.top;
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  }
   
-  return `# Reserving a Motor - Deposit Guide
-Updated: ${now}
+  return () => {
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
+  };
+}, [isOpen]);
+```
 
-## Deposit Tiers
+**Fix drawer container styling (line ~697):**
+```tsx
+className="fixed inset-x-0 z-[75] bg-white rounded-t-2xl border-t border-gray-200 
+  w-full max-w-[100vw] overflow-hidden"
+```
 
-Secure your motor with a refundable deposit based on horsepower:
+**Fix message bubble overflow (line ~808):**
+```tsx
+className={cn(
+  "max-w-[85%] px-3.5 py-2.5 text-[14px] break-words overflow-hidden",
+  // ... rest of styles
+)}
+```
 
-| Motor Size | HP Range | Deposit Amount |
-|------------|----------|----------------|
-| Portable | 0-25 HP | $200 |
-| Mid-Range | 30-115 HP | $500 |
-| High-Power | 150+ HP | $1,000 |
+**Add word-break to message text (line ~817):**
+```tsx
+<p className="whitespace-pre-wrap leading-relaxed font-light break-words overflow-wrap-anywhere">
+```
 
-## Payment Methods
+### File 2: `src/index.css`
 
-Our checkout supports fast, secure payment options:
+**Add iOS-specific chat drawer fixes:**
+```css
+/* iOS Chrome chat drawer fixes */
+@supports (-webkit-touch-callout: none) {
+  .chat-drawer-open {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* Prevent overscroll bounce when chat is open */
+  .chat-drawer-open body {
+    overscroll-behavior: none;
+  }
+}
 
-### Mobile Payments
-- **Apple Pay** — Available on Safari (iPhone, iPad, Mac)
-- **Google Pay** — Available on Chrome (Android, desktop)
-- **Link** — Stripe's one-click saved payment
-
-### Card Payments
-- Visa, Mastercard, American Express
-- Secure Stripe-powered checkout
-
-## Reservation Policies
-
-### Refund Policy
-- Deposits are **fully refundable** if you change your mind
-- No restocking fees or penalties
-- Refund processed within 5-7 business days
-
-### What Your Deposit Secures
-- Holds the specific motor for you
-- Locks in the current quoted price
-- Priority in our installation schedule
-
-### Next Steps After Deposit
-1. Confirmation email sent immediately
-2. Team contacts you within 1 business day
-3. Finalize installation date
-4. Balance due at pickup
-
-## Pickup Requirements
-
-All motor pickups require:
-- In-person visit to Gores Landing
-- Valid photo ID matching the buyer
-- No third-party or delivery options
-
-## Talking Points for Voice
-
-When a customer asks about reserving:
-- "A $[X] deposit locks it in, and it's fully refundable"
-- "You can use Apple Pay for a quick checkout"
-- "We'll reach out within a day to schedule everything"
-- "The deposit just holds the price — balance at pickup"
-`;
+/* Ensure chat messages don't cause horizontal overflow */
+.chat-message-content {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
 }
 ```
 
-**Update KB_DOCUMENTS object:**
-```typescript
-export const KB_DOCUMENTS = {
-  // ... existing entries ...
-  
-  'Reserving a Motor - Deposit Guide': {
-    generator: formatReservationGuide,
-    description: 'Deposit tiers, payment methods (Apple Pay, Google Pay, Link), and reservation policies'
-  }
-};
+### File 3: `index.html`
+
+**Update viewport meta for better iOS Chrome behavior:**
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
 ```
 
----
+This prevents pinch-zoom which is the main cause of the "adjusting screen" issue. Note: This restricts all zooming on the site, which is a trade-off for stable chat behavior.
 
-## Summary of Changes
+## Changes Summary
 
-| File | Change Type | Description |
-|------|-------------|-------------|
-| `ai-chatbot/index.ts` | Add section | Deposit tiers + payment methods in system prompt |
-| `realtime-session/index.ts` | Add section | Concise deposit info for voice responses |
-| `format-kb-documents.ts` | New function | `formatReservationGuide()` for ElevenLabs KB |
-| `format-kb-documents.ts` | Update export | Add to `KB_DOCUMENTS` object |
+| File | Change |
+|------|--------|
+| `InlineChatDrawer.tsx` | Add body scroll lock, explicit width containment, message overflow handling |
+| `src/index.css` | Add iOS-specific overscroll and word-break fixes |
+| `index.html` | Lock viewport scale to prevent zoom-induced layout shifts |
 
----
+## Expected Result
 
-## Post-Implementation
-
-After deploying these changes:
-1. **Trigger ElevenLabs KB Sync** — Use the admin panel button to sync the new document
-2. **Test voice** — Ask "How do I reserve a motor?" and verify deposit info
-3. **Test chat** — Ask about deposits and payment methods
+After these changes:
+- Chat drawer stays within viewport bounds
+- No horizontal scrolling or panning required
+- Messages wrap properly without overflow
+- Keyboard interaction doesn't shift the view
+- Consistent experience between Safari and Chrome on iOS
