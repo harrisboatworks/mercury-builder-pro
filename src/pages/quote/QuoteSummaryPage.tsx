@@ -130,9 +130,9 @@ export default function QuoteSummaryPage() {
     document.title = 'Your Mercury Motor Quote | Harris Boat Works';
   }, []);
 
-  // Redirect if no package selected
+  // Redirect if no package selected (wait for loading to complete first)
   useEffect(() => {
-    if (isMounted) {
+    if (isMounted && !state.isLoading) {
       if (!state.motor) {
         navigate('/quote/motor-selection');
       } else if (!state.selectedPromoOption) {
@@ -141,7 +141,7 @@ export default function QuoteSummaryPage() {
         navigate('/quote/package-selection');
       }
     }
-  }, [isMounted, state.motor, state.selectedPromoOption, state.selectedPackage, navigate]);
+  }, [isMounted, state.isLoading, state.motor, state.selectedPromoOption, state.selectedPackage, navigate]);
 
   const handleStepComplete = () => {
     dispatch({ type: 'COMPLETE_STEP', payload: 6 });

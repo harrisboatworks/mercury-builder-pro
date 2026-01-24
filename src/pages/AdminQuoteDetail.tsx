@@ -76,6 +76,13 @@ const AdminQuoteDetail = () => {
     
     // If we have quote_data, restore it to context and navigate to summary
     if (q.quote_data) {
+      console.log('🔧 Admin Edit: Restoring quote', {
+        quoteId: q.id,
+        hasMotor: !!q.quote_data?.motor,
+        hasPackage: !!q.quote_data?.selectedPackage,
+        hasPromo: !!q.quote_data?.selectedPromoOption
+      });
+      
       dispatch({ type: 'RESTORE_QUOTE', payload: q.quote_data });
       dispatch({ type: 'SET_ADMIN_MODE', payload: { isAdmin: true, editingQuoteId: q.id } });
       dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: { 
@@ -87,18 +94,39 @@ const AdminQuoteDetail = () => {
         customerPhone: q.customer_phone || ''
       }});
       
-      // Force immediate save so state persists through navigation
+      // Force immediate save with ALL state fields explicitly mapped
       const adminState = {
+        // Spread the quote data first (contains motor, options, trade-in, etc.)
         ...q.quote_data,
+        
+        // Explicitly set critical fields to ensure they're present
+        motor: q.quote_data?.motor || null,
+        selectedOptions: q.quote_data?.selectedOptions || [],
+        selectedPackage: q.quote_data?.selectedPackage || null,
+        selectedPromoOption: q.quote_data?.selectedPromoOption || null,
+        tradeInInfo: q.quote_data?.tradeInInfo || null,
+        purchasePath: q.quote_data?.purchasePath || null,
+        boatInfo: q.quote_data?.boatInfo || null,
+        installConfig: q.quote_data?.installConfig || null,
+        warrantyConfig: q.quote_data?.warrantyConfig || null,
+        looseMotorBattery: q.quote_data?.looseMotorBattery || null,
+        
+        // Admin mode flags
         isAdminQuote: true,
         editingQuoteId: q.id,
+        
+        // Admin data from database columns
         adminDiscount: q.admin_discount || 0,
         adminNotes: q.admin_notes || '',
         customerNotes: q.customer_notes || '',
         customerName: q.customer_name || '',
         customerEmail: q.customer_email || '',
-        customerPhone: q.customer_phone || ''
+        customerPhone: q.customer_phone || '',
+        
+        // Ensure loading is false
+        isLoading: false
       };
+      
       localStorage.setItem('quoteBuilder', JSON.stringify({
         state: adminState,
         timestamp: Date.now(),
