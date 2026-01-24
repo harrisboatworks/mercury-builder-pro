@@ -1,92 +1,77 @@
 
-# Add Apple Pay & Google Pay Badges to Payment Buttons
+# Fix Incorrect Contact Info on Payment Pages
 
-## Why This Helps
+## The Problem
 
-Displaying payment method badges signals to customers that fast, secure mobile payments are available—reducing checkout friction and increasing conversions, especially on mobile devices.
+The Payment Canceled and Payment Success pages display hardcoded placeholder contact information that doesn't exist, confusing customers who need support.
 
----
-
-## Visual Design
-
-Add small, recognizable icons beneath or beside the main payment button text:
-
-```text
-┌─────────────────────────────────────┐
-│   💳  Pay $4,143.86 with Card       │
-│                                     │
-│   🍎 Apple Pay  |  G Pay  |  Link   │
-└─────────────────────────────────────┘
-```
-
-Or as inline badge icons next to the button:
-
-```text
-[Pay $500 Deposit]  🍎 G Pay
-```
+| Issue Location | Current Value | Correct Value |
+|----------------|---------------|---------------|
+| `PaymentCanceled.tsx` line 56 | `(123) 456-7890` | `(905) 342-2153` |
+| `PaymentCanceled.tsx` line 57 | `support@harrisboatworks.com` | `info@harrisboatworks.ca` |
+| `PaymentSuccess.tsx` line 231 | `(705) 887-6568` | `(905) 342-2153` |
+| `PaymentSuccess.tsx` line 235 | `info@harrisboatworks.com` | `info@harrisboatworks.ca` |
 
 ---
 
-## Implementation
+## Solution
 
-### Files to Update
+Import and use the existing `COMPANY_INFO` constant from `src/lib/companyInfo.ts` on both payment pages.
 
-| Component | Location | Purpose |
-|-----------|----------|---------|
-| `StripePaymentButton.tsx` | Quote builder full payment | Add badges below button |
-| `DepositPayment.tsx` | Standalone deposit page | Add badges below button |
-| `QuoteDisplay.tsx` | Quote summary deposit button | Add badges |
-| `QuoteSummaryPage.tsx` | Reserve button on shared quotes | Add badges |
+---
 
-### Create Reusable Badge Component
+## Files to Modify
 
-**New File: `src/components/payments/PaymentMethodBadges.tsx`**
+### 1. `src/pages/PaymentCanceled.tsx`
 
-A simple component displaying Apple Pay, Google Pay, and optionally Link badges:
+**Add import:**
+```typescript
+import { COMPANY_INFO } from '@/lib/companyInfo';
+```
 
+**Update contact section (lines 55-58):**
 ```tsx
-import { Apple } from 'lucide-react';
-
-export const PaymentMethodBadges = ({ className }: { className?: string }) => (
-  <div className={`flex items-center justify-center gap-3 text-xs text-muted-foreground ${className}`}>
-    <span className="flex items-center gap-1">
-      <Apple className="w-3.5 h-3.5" /> Pay
-    </span>
-    <span className="text-border">|</span>
-    <span className="flex items-center gap-1">
-      <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">...</svg> Pay
-    </span>
-    <span className="text-border">|</span>
-    <span>Link</span>
-  </div>
-);
+<div className="text-center text-sm text-muted-foreground">
+  <p>Need help? Contact us at{" "}
+    <a href={`tel:${COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '')}`} 
+       className="text-primary hover:underline">
+      {COMPANY_INFO.contact.phone}
+    </a>
+  </p>
+  <p>or email{" "}
+    <a href={`mailto:${COMPANY_INFO.contact.email}`} 
+       className="text-primary hover:underline">
+      {COMPANY_INFO.contact.email}
+    </a>
+  </p>
+</div>
 ```
 
-### Update Each Payment Button
+### 2. `src/pages/PaymentSuccess.tsx`
 
-Add the `<PaymentMethodBadges />` component below the Button in each location:
+**Add import:**
+```typescript
+import { COMPANY_INFO } from '@/lib/companyInfo';
+```
 
+**Update contact section (lines 226-237):**
 ```tsx
-<Button onClick={handlePayment} ...>
-  Pay $500 Deposit
-</Button>
-<PaymentMethodBadges className="mt-2" />
+<a href={`tel:${COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '')}`} 
+   className="flex items-center gap-1 text-primary hover:underline">
+  <Phone className="h-4 w-4" />
+  {COMPANY_INFO.contact.phone}
+</a>
+<a href={`mailto:${COMPANY_INFO.contact.email}`} 
+   className="flex items-center gap-1 text-primary hover:underline">
+  <Mail className="h-4 w-4" />
+  {COMPANY_INFO.contact.email}
+</a>
 ```
-
----
-
-## Badge Assets
-
-Use either:
-1. **Lucide icons** (Apple icon available, Google requires custom SVG)
-2. **Official Stripe badge assets** from their branding guidelines
-3. **Simple text labels** with minimal icons for lightweight approach
 
 ---
 
 ## Expected Result
 
-- All payment buttons display small badges showing Apple Pay, Google Pay, and Link
-- Helps customers know they can use their preferred payment method
-- Matches professional e-commerce checkout experiences
-- Responsive design that works on mobile and desktop
+- Both payment pages will display the correct phone number: **(905) 342-2153**
+- Both payment pages will display the correct email: **info@harrisboatworks.ca**
+- Future contact info updates only need to change `companyInfo.ts` once
