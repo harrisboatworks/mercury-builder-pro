@@ -106,7 +106,7 @@ export default function About() {
       
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative py-16 md:py-24 bg-gradient-to-b from-muted/50 to-background">
+        <section aria-labelledby="about-hero" className="relative py-16 md:py-24 bg-gradient-to-b from-muted/50 to-background">
           <div className="max-w-6xl mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-4 mb-6">
@@ -114,7 +114,7 @@ export default function About() {
                 <div className="w-px h-10 bg-border" />
                 <img src={mercuryLogo} alt="Mercury Marine" className="h-12 md:h-16" />
               </div>
-              <h1 className="text-3xl md:text-5xl font-light text-foreground mb-4">
+              <h1 id="about-hero" className="text-3xl md:text-5xl font-light text-foreground mb-4">
                 Family-Owned Since <span className="font-medium">1947</span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -159,9 +159,9 @@ export default function About() {
         </section>
 
         {/* Our Story Timeline */}
-        <section className="py-16 md:py-20">
+        <section aria-labelledby="our-story" className="py-16 md:py-20">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-light text-center mb-12">
+            <h2 id="our-story" className="text-2xl md:text-3xl font-light text-center mb-12">
               Our <span className="font-medium">Story</span>
             </h2>
             
@@ -169,32 +169,34 @@ export default function About() {
               {/* Timeline line */}
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
               
-              {timelineEvents.map((event, index) => (
-                <div 
-                  key={event.year}
-                  className={`relative flex items-start gap-6 mb-10 ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
-                  {/* Timeline dot */}
-                  <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary border-4 border-background -translate-x-1.5 md:-translate-x-1.5 z-10" />
-                  
-                  {/* Content */}
-                  <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <span className="text-sm font-medium text-primary">{event.year}</span>
-                    <h3 className="text-lg font-medium text-foreground mt-1">{event.title}</h3>
-                    <p className="text-muted-foreground mt-2">{event.description}</p>
-                  </div>
-                </div>
-              ))}
+              <ol className="list-none p-0 m-0">
+                {timelineEvents.map((event, index) => (
+                  <li 
+                    key={event.year}
+                    className={`relative flex items-start gap-6 mb-10 ${
+                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
+                  >
+                    {/* Timeline dot */}
+                    <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary border-4 border-background -translate-x-1.5 md:-translate-x-1.5 z-10" />
+                    
+                    {/* Content */}
+                    <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
+                      <time className="text-sm font-medium text-primary">{event.year}</time>
+                      <h3 className="text-lg font-medium text-foreground mt-1">{event.title}</h3>
+                      <p className="text-muted-foreground mt-2">{event.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </div>
           </div>
         </section>
 
         {/* Photo Gallery Section */}
-        <section className="py-16 md:py-20 bg-muted/30">
+        <section aria-labelledby="gallery" className="py-16 md:py-20 bg-muted/30">
           <div className="max-w-6xl mx-auto px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-light text-center mb-4">
+            <h2 id="gallery" className="text-2xl md:text-3xl font-light text-center mb-4">
               Our <span className="font-medium">Location</span>
             </h2>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
@@ -206,9 +208,9 @@ export default function About() {
         </section>
 
         {/* Services Section */}
-        <section className="py-16 md:py-20">
+        <section aria-labelledby="services" className="py-16 md:py-20">
           <div className="max-w-6xl mx-auto px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-light text-center mb-4">
+            <h2 id="services" className="text-2xl md:text-3xl font-light text-center mb-4">
               What We <span className="font-medium">Offer</span>
             </h2>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
@@ -236,9 +238,9 @@ export default function About() {
         </section>
 
         {/* Google Reviews Section */}
-        <section className="py-16 md:py-20">
+        <section aria-labelledby="reviews" className="py-16 md:py-20">
           <div className="max-w-6xl mx-auto px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-light text-center mb-4">
+            <h2 id="reviews" className="text-2xl md:text-3xl font-light text-center mb-4">
               What Our <span className="font-medium">Customers Say</span>
             </h2>
             <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
@@ -250,15 +252,15 @@ export default function About() {
         </section>
 
         {/* Location Section */}
-        <section className="py-16 md:py-20">
+        <section aria-labelledby="visit-us" className="py-16 md:py-20">
           <div className="max-w-6xl mx-auto px-4 md:px-6">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
-                <h2 className="text-2xl md:text-3xl font-light mb-6">
+                <h2 id="visit-us" className="text-2xl md:text-3xl font-light mb-6">
                   Visit <span className="font-medium">Us</span>
                 </h2>
                 
-                <div className="space-y-4">
+                <address className="not-italic space-y-4">
                   <div className="flex items-start gap-3">
                     <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <div>
@@ -299,7 +301,7 @@ export default function About() {
                       />
                     </div>
                   </div>
-                </div>
+                </address>
                 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Button asChild>
@@ -325,9 +327,9 @@ export default function About() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 md:py-20 bg-muted/30">
+        <section aria-labelledby="about-faq" className="py-16 md:py-20 bg-muted/30">
           <div className="max-w-3xl mx-auto px-4 md:px-6">
-            <h2 className="text-2xl md:text-3xl font-light text-center mb-4">
+            <h2 id="about-faq" className="text-2xl md:text-3xl font-light text-center mb-4">
               Frequently Asked <span className="font-medium">Questions</span>
             </h2>
             <p className="text-muted-foreground text-center mb-10">
@@ -354,9 +356,9 @@ export default function About() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 md:py-20">
+        <section aria-labelledby="about-cta" className="py-16 md:py-20">
           <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <h2 className="text-2xl md:text-3xl font-light mb-4">
+            <h2 id="about-cta" className="text-2xl md:text-3xl font-light mb-4">
               Ready to Get <span className="font-medium">Started</span>?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">

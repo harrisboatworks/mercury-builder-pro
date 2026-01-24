@@ -253,7 +253,7 @@ export default function BlogArticle() {
           </BreadcrumbList>
         </Breadcrumb>
 
-        <article className="max-w-3xl mx-auto">
+        <article className="max-w-3xl mx-auto" aria-labelledby="article-title">
           {/* Back Link */}
           <Link 
             to="/blog" 
@@ -268,7 +268,7 @@ export default function BlogArticle() {
             <span className="text-sm font-medium text-primary uppercase tracking-wider">
               {article.category}
             </span>
-            <h1 className="text-3xl md:text-4xl font-light text-foreground mt-2 mb-4">
+            <h1 id="article-title" className="text-3xl md:text-4xl font-light text-foreground mt-2 mb-4">
               {article.title}
             </h1>
             <p className="text-lg text-muted-foreground font-light mb-4">
@@ -322,8 +322,8 @@ export default function BlogArticle() {
 
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
-            <section className="mt-12 pt-8 border-t border-border">
-              <h2 className="text-2xl font-semibold text-foreground mb-6">
+            <section aria-labelledby="faq-heading" className="mt-12 pt-8 border-t border-border">
+              <h2 id="faq-heading" className="text-2xl font-semibold text-foreground mb-6">
                 Frequently Asked Questions
               </h2>
               <Accordion type="single" collapsible className="w-full">
@@ -381,16 +381,18 @@ export default function BlogArticle() {
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
-          <section className="mt-16">
+          <nav aria-label="Related Articles" className="mt-16">
             <h2 className="text-2xl font-light text-foreground mb-6 text-center">
               Related Articles
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               {relatedArticles.map(related => (
-                <BlogCard key={related.slug} article={related} />
+                <article key={related.slug}>
+                  <BlogCard article={related} />
+                </article>
               ))}
             </div>
-          </section>
+          </nav>
         )}
       </main>
       
