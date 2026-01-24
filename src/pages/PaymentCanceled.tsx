@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { XCircle, ArrowLeft, CreditCard } from "lucide-react";
+import { COMPANY_INFO } from "@/lib/companyInfo";
 
 export default function PaymentCanceled() {
   useEffect(() => {
@@ -53,8 +54,16 @@ export default function PaymentCanceled() {
           </div>
 
           <div className="text-center text-sm text-muted-foreground">
-            <p>Need help? Contact us at <a href="tel:+1234567890" className="text-primary hover:underline">(123) 456-7890</a></p>
-            <p>or email <a href="mailto:support@harrisboatworks.com" className="text-primary hover:underline">support@harrisboatworks.com</a></p>
+            <p>Need help? Contact us at{" "}
+              <a href={`tel:${COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '')}`} className="text-primary hover:underline">
+                {COMPANY_INFO.contact.phone}
+              </a>
+            </p>
+            <p>or email{" "}
+              <a href={`mailto:${COMPANY_INFO.contact.email}`} className="text-primary hover:underline">
+                {COMPANY_INFO.contact.email}
+              </a>
+            </p>
           </div>
         </CardContent>
       </Card>
