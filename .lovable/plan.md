@@ -1,116 +1,89 @@
 
-# Fix Customer Info Restoration on Edit Quote
+# Verify and Harden Quote Restoration Flow
 
-## Problem
+## Current Status
 
-When clicking "Edit Full Quote" from the Admin Quote Detail page, the customer's name, email, and phone are not pre-populated in the Admin Controls panel on the Summary page. The admin has to re-enter this information even though it's already saved in the database.
+Based on my analysis, the quote restoration logic **should work correctly**:
 
----
-
-## Root Cause
-
-The customer identity fields (`customer_name`, `customer_email`, `customer_phone`) are:
-- ✅ **Saved correctly** to the `customer_quotes` table during save
-- ❌ **Not restored** when loading a quote for editing
-- ❌ **Not stored** in the `QuoteContext` state
-
-The `AdminQuoteControls` component uses local `useState` for these fields, initialized to empty strings, instead of reading from context.
+1. **Database contains full data** - The `quote_data` JSONB includes motor, trade-in, options, package, promo, and admin fields
+2. **Restoration dispatches are correct** - `RESTORE_QUOTE` + `SET_ADMIN_MODE` + `SET_ADMIN_QUOTE_DATA` 
+3. **localStorage is written synchronously** - Before navigation, all data is saved
+4. **LOAD_FROM_STORAGE handles admin fields** - It spreads the payload and explicitly sets admin fields
 
 ---
 
-## Solution
+## Potential Issue: State Timing
 
-### 1. Add Customer Fields to QuoteState
+There may be a subtle race condition:
+- The dispatches run in the current context
+- Navigation happens immediately 
+- The new page mounts a fresh QuoteProvider that reads localStorage
+- The localStorage write might not be visible to the new context immediately
 
-Update `QuoteContext.tsx` to include customer identity in the state:
+---
 
-```typescript
-interface QuoteState {
-  // ... existing fields ...
-  
-  // Admin quote fields
-  isAdminQuote: boolean;
-  editingQuoteId: string | null;
-  adminDiscount: number;
-  adminNotes: string;
-  customerNotes: string;
-  customerName: string;     // NEW
-  customerEmail: string;    // NEW
-  customerPhone: string;    // NEW
-}
-```
+## Improvements to Implement
 
-### 2. Update Initial State
+### 1. Ensure Complete State in localStorage Save
+
+Update `AdminQuoteDetail.tsx` to include ALL state fields, not just spreading `quote_data`:
 
 ```typescript
-const initialState: QuoteState = {
-  // ... existing ...
-  customerName: '',
-  customerEmail: '',
-  customerPhone: ''
-};
-```
-
-### 3. Update SET_ADMIN_QUOTE_DATA Action
-
-Extend the action to accept customer info:
-
-```typescript
-case 'SET_ADMIN_QUOTE_DATA':
-  return {
-    ...state,
-    adminDiscount: action.payload.adminDiscount ?? state.adminDiscount,
-    adminNotes: action.payload.adminNotes ?? state.adminNotes,
-    customerNotes: action.payload.customerNotes ?? state.customerNotes,
-    customerName: action.payload.customerName ?? state.customerName,
-    customerEmail: action.payload.customerEmail ?? state.customerEmail,
-    customerPhone: action.payload.customerPhone ?? state.customerPhone
-  };
-```
-
-### 4. Update AdminQuoteDetail handleEditQuote
-
-Pass customer info when restoring:
-
-```typescript
-dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: { 
-  adminDiscount: q.admin_discount || 0,
-  adminNotes: q.admin_notes || '',
-  customerNotes: q.customer_notes || '',
-  customerName: q.customer_name || '',      // NEW
-  customerEmail: q.customer_email || '',    // NEW
-  customerPhone: q.customer_phone || ''     // NEW
-}});
-
-// Also include in localStorage save
 const adminState = {
+  // Spread the quote data first (contains motor, options, trade-in, etc.)
   ...q.quote_data,
+  
+  // Explicitly set critical fields to ensure they're present
+  motor: q.quote_data?.motor || null,
+  selectedOptions: q.quote_data?.selectedOptions || [],
+  selectedPackage: q.quote_data?.selectedPackage || null,
+  selectedPromoOption: q.quote_data?.selectedPromoOption || null,
+  tradeInInfo: q.quote_data?.tradeInInfo || null,
+  purchasePath: q.quote_data?.purchasePath || null,
+  
+  // Admin mode flags
   isAdminQuote: true,
   editingQuoteId: q.id,
+  
+  // Admin data from database columns
   adminDiscount: q.admin_discount || 0,
   adminNotes: q.admin_notes || '',
   customerNotes: q.customer_notes || '',
-  customerName: q.customer_name || '',      // NEW
-  customerEmail: q.customer_email || '',    // NEW
-  customerPhone: q.customer_phone || ''     // NEW
+  customerName: q.customer_name || '',
+  customerEmail: q.customer_email || '',
+  customerPhone: q.customer_phone || '',
+  
+  // Ensure loading is false
+  isLoading: false
 };
 ```
 
-### 5. Update AdminQuoteControls
+### 2. Add Console Logging for Debugging
 
-Initialize local state from context:
+Add logging to track the restoration flow:
 
 ```typescript
-const [customerName, setCustomerName] = useState(state.customerName || '');
-const [customerEmail, setCustomerEmail] = useState(state.customerEmail || '');
-const [customerPhone, setCustomerPhone] = useState(state.customerPhone || '');
+// In AdminQuoteDetail.tsx handleEditQuote
+console.log('🔧 Admin Edit: Restoring quote', {
+  quoteId: q.id,
+  hasMotor: !!q.quote_data?.motor,
+  hasPackage: !!q.quote_data?.selectedPackage,
+  hasPromo: !!q.quote_data?.selectedPromoOption
+});
+```
 
-// Sync when context changes
+### 3. Verify the Summary Page Waits for Loading
+
+The Summary page should check `state.isLoading` before redirecting:
+
+```typescript
 useEffect(() => {
-  setCustomerName(state.customerName || '');
-  setCustomerEmail(state.customerEmail || '');
-  setCustomerPhone(state.customerPhone || '');
-}, [state.customerName, state.customerEmail, state.customerPhone]);
+  if (isMounted && !state.isLoading) {
+    if (!state.motor) {
+      navigate('/quote/motor-selection');
+    } // ... rest of checks
+  }
+}, [isMounted, state.isLoading, state.motor, ...]);
 ```
 
 ---
@@ -119,20 +92,19 @@ useEffect(() => {
 
 | File | Changes |
 |------|---------|
-| `src/contexts/QuoteContext.tsx` | Add `customerName`, `customerEmail`, `customerPhone` to state, initial state, and `SET_ADMIN_QUOTE_DATA` reducer |
-| `src/pages/AdminQuoteDetail.tsx` | Pass customer info in `handleEditQuote` |
-| `src/components/admin/AdminQuoteControls.tsx` | Initialize local state from context |
+| `src/pages/AdminQuoteDetail.tsx` | Ensure complete state in localStorage save with explicit field mapping |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Add `state.isLoading` check to redirect guard |
 
 ---
 
 ## Expected Result
 
-1. Admin opens a saved quote from `/admin/quotes`
-2. Clicks "Edit Full Quote"
-3. Arrives at Summary page with:
-   - ✅ Motor, options, packages pre-loaded
-   - ✅ Admin discount, notes pre-filled
-   - ✅ **Customer Name pre-filled**
-   - ✅ **Customer Email pre-filled**
-   - ✅ **Customer Phone pre-filled**
-4. Can make changes and save (updates existing quote)
+After clicking "Edit Full Quote":
+1. Navigate to Summary page
+2. See the full quote with:
+   - Motor details and pricing
+   - Selected options/accessories
+   - Trade-in value (if any)
+   - Selected promo and package
+   - Admin Controls panel with customer info pre-filled
+3. Admin can make any changes and save/update the quote
