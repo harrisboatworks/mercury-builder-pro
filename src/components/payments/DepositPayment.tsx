@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
 import { CreditCard, DollarSign, Shield, CheckCircle } from 'lucide-react';
+import { PaymentMethodBadges } from './PaymentMethodBadges';
 
 interface DepositOption {
   amount: string;
@@ -211,6 +212,7 @@ export const DepositPayment = () => {
             <CreditCard className="w-5 h-5 mr-2" />
             {isLoading ? 'Processing...' : `Pay ${selectedOption?.label} Deposit`}
           </Button>
+          <PaymentMethodBadges className="mt-2" />
 
           <div className="text-xs text-center text-muted-foreground">
             By proceeding, you agree to our terms of service. Deposits are refundable within 30 days.

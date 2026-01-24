@@ -6,6 +6,7 @@ import CoverageComparisonTooltip from "@/components/quote-builder/CoverageCompar
 import { Button } from "@/components/ui/button";
 import { Download, CreditCard, ArrowUp, Sparkles } from "lucide-react";
 import confetti from 'canvas-confetti';
+import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
 import { useSound } from '@/contexts/SoundContext';
 
 type StickySummaryProps = {
@@ -213,6 +214,7 @@ export default function StickySummary({
               : `Reserve with ${money(depositAmount)} refundable deposit`
             }
           </button>
+          <PaymentMethodBadges className="mt-2" />
         </div>
       </aside>
     </>

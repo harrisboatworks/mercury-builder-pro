@@ -4,6 +4,7 @@ import { CreditCard } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
 
 interface StripePaymentButtonProps {
   quoteData: any;
@@ -73,22 +74,25 @@ export const StripePaymentButton = ({
   };
 
   return (
-    <Button 
-      onClick={handleStripePayment}
-      disabled={loading}
-      className="w-full bg-purple-600 hover:bg-purple-700 text-white"
-    >
-      {loading ? (
-        <>
-          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-          Opening checkout...
-        </>
-      ) : (
-        <>
-          <CreditCard className="w-4 h-4 mr-2" />
-          Pay ${totalCashPrice.toLocaleString()} with Card
-        </>
-      )}
-    </Button>
+    <div className="w-full">
+      <Button 
+        onClick={handleStripePayment}
+        disabled={loading}
+        className="w-full bg-purple-600 hover:bg-purple-700 text-white"
+      >
+        {loading ? (
+          <>
+            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+            Opening checkout...
+          </>
+        ) : (
+          <>
+            <CreditCard className="w-4 h-4 mr-2" />
+            Pay ${totalCashPrice.toLocaleString()} with Card
+          </>
+        )}
+      </Button>
+      <PaymentMethodBadges className="mt-2" />
+    </div>
   );
 };

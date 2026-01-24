@@ -28,6 +28,7 @@ import { useIsMobile } from '@/hooks/use-mobile';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { AuthModal } from '@/components/auth/AuthModal';
 import { createQuote } from '@/lib/quotesApi';
+import { PaymentMethodBadges } from '@/components/payments/PaymentMethodBadges';
 import { useQuote } from '@/contexts/QuoteContext';
 import { PromoOptionSelector, PromoOptionType } from './PromoOptionSelector';
 
@@ -710,7 +711,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 })}
               </div>
 
-              <div className="flex justify-center mt-4">
+              <div className="flex flex-col items-center mt-4">
                 <Button 
                   onClick={handleStripePayment}
                   size="lg"
@@ -719,6 +720,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                   <CreditCard className="w-4 h-4 mr-2" />
                   Pay {DEPOSIT_TIERS.find(t => t.amount === selectedDeposit)?.label} Deposit
                 </Button>
+                <PaymentMethodBadges className="mt-2" />
               </div>
             </div>
           )}
