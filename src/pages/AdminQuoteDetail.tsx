@@ -232,37 +232,76 @@ const AdminQuoteDetail = () => {
       const qd = q.quote_data;
       const motor = qd.motor || {};
       
-      // Build PDF data object
+      // Extract pricing values from quote_data or compute them
+      const motorMSRP = motor.msrp || q.base_price || 0;
+      const adminDiscount = q.admin_discount || 0;
+      const promoValue = qd.promoValue || 0;
+      const motorSubtotal = motorMSRP - adminDiscount - promoValue;
+      
+      // Get accessory breakdown from quote_data
+      const accessoryBreakdown = qd.accessoryBreakdown || qd.accessories || [];
+      
+      // Calculate package totals
+      const accessoriesTotal = accessoryBreakdown.reduce((sum: number, a: any) => sum + (a.price || 0), 0);
+      const tradeInValue = qd.tradeInInfo?.hasTradeIn ? (q.tradein_value_final || qd.tradeInInfo?.estimatedValue || 0) : 0;
+      const subtotalBeforeTax = motorSubtotal + accessoriesTotal - tradeInValue;
+      const taxAmount = subtotalBeforeTax * 0.13;
+      const totalPrice = subtotalBeforeTax + taxAmount;
+      
+      // Get selected package info
+      const selectedPackage = qd.selectedPackage || null;
+      const selectedPackageLabel = selectedPackage?.label || selectedPackage?.id || 'Essential';
+      const selectedPackageCoverageYears = selectedPackage?.coverageYears || 0;
+      
+      // Build complete PDF data object matching QuoteSummaryPage structure
       const pdfData = {
-        quoteNumber: q.id.slice(0, 8).toUpperCase(),
-        customerName: q.customer_name,
-        customerEmail: q.customer_email,
+        quoteNumber: `HBW-${q.id.slice(0, 6).toUpperCase()}`,
+        customerName: q.customer_name || 'Valued Customer',
+        customerEmail: q.customer_email || '',
         customerPhone: q.customer_phone || '',
         motor: {
-          id: motor.id || '',
           model: motor.model || motor.display_name || 'Motor',
           hp: motor.horsepower || motor.hp || 0,
-          year: motor.year || new Date().getFullYear(),
-          msrp: motor.msrp || q.base_price,
-          sku: motor.sku || motor.stock_number || ''
+          msrp: motorMSRP,
+          base_price: motorMSRP - adminDiscount,
+          sale_price: motorSubtotal,
+          dealer_price: motorMSRP - adminDiscount,
+          model_year: motor.year || motor.model_year || new Date().getFullYear(),
+          category: motor.category || motor.motor_type || 'FourStroke',
+          imageUrl: motor.imageUrl || motor.image_url || motor.hero_image_url
         },
-        pricing: {
-          msrp: motor.msrp || q.base_price,
-          discount: q.admin_discount || qd.discount || 0,
-          subtotal: q.final_price,
-          tax: (q.final_price * 0.13),
-          total: q.final_price * 1.13,
-          savings: (q.admin_discount || 0) + (qd.promoValue || 0)
-        },
-        tradeIn: qd.tradeInInfo?.hasTradeIn ? {
-          value: q.tradein_value_final || qd.tradeInInfo?.estimatedValue || 0,
-          year: qd.tradeInInfo?.year,
-          brand: qd.tradeInInfo?.brand,
-          hp: qd.tradeInInfo?.horsepower
+        selectedPackage: selectedPackage ? {
+          id: selectedPackage.id || 'essential',
+          label: selectedPackageLabel,
+          coverageYears: selectedPackageCoverageYears,
+          features: selectedPackage.features || []
         } : undefined,
+        accessoryBreakdown,
+        ...(qd.tradeInInfo?.hasTradeIn && tradeInValue > 0 && qd.tradeInInfo?.brand ? {
+          tradeInValue: tradeInValue,
+          tradeInInfo: {
+            brand: qd.tradeInInfo.brand,
+            year: qd.tradeInInfo.year,
+            horsepower: qd.tradeInInfo.horsepower,
+            model: qd.tradeInInfo.model
+          }
+        } : {}),
+        includesInstallation: qd.purchasePath === 'installed',
+        pricing: {
+          msrp: motorMSRP,
+          discount: adminDiscount,
+          promoValue: promoValue,
+          motorSubtotal: motorSubtotal,
+          subtotal: subtotalBeforeTax,
+          hst: taxAmount,
+          totalCashPrice: totalPrice,
+          savings: adminDiscount + promoValue
+        },
+        monthlyPayment: q.monthly_payment || qd.monthlyPayment,
+        financingTerm: q.term_months || qd.financingTerm || 120,
+        financingRate: qd.financingRate || 7.99,
         selectedPromoOption: qd.selectedPromoOption,
-        selectedPromoValue: qd.selectedPromoValue,
-        warranty: qd.warrantyConfig || { baseYears: 3, extendedYears: 0 }
+        selectedPromoValue: qd.selectedPromoValue
       };
       
       const pdfUrl = await generateQuotePDF(pdfData);
