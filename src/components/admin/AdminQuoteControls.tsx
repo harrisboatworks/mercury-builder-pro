@@ -10,6 +10,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { DEALERPLAN_FEE } from '@/lib/finance';
+import { SITE_URL } from '@/lib/site';
 
 interface AdminQuoteControlsProps {
   onSave?: () => void;
@@ -179,7 +180,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
   const handleCopyLink = async () => {
     if (!savedQuoteId) return;
     
-    const shareUrl = `${window.location.origin}/quote/saved/${savedQuoteId}`;
+    const shareUrl = `${SITE_URL}/quote/saved/${savedQuoteId}`;
     try {
       await navigator.clipboard.writeText(shareUrl);
       setLinkCopied(true);
@@ -318,7 +319,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
             <div className="flex gap-2">
               <Input 
                 readOnly 
-                value={`${window.location.origin}/quote/saved/${savedQuoteId}`}
+                value={`${SITE_URL}/quote/saved/${savedQuoteId}`}
                 className="text-xs bg-white dark:bg-gray-900"
               />
               <Button 
