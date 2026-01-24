@@ -5,19 +5,27 @@ import { componentTagger } from "lovable-tagger";
 import { VitePWA } from "vite-plugin-pwa";
 import { writeFileSync } from "fs";
 
-// Sitemap generation plugin
+// Sitemap and RSS generation plugin
 function sitemapPlugin(): Plugin {
   return {
-    name: 'generate-sitemap',
+    name: 'generate-sitemap-and-rss',
     async buildStart() {
       try {
-        const { generateSitemapXML } = await import('./src/utils/generateSitemap');
+        const { generateSitemapXML, generateRssXML } = await import('./src/utils/generateSitemap');
+        
+        // Generate sitemap with images
         const sitemap = generateSitemapXML();
         writeFileSync('public/sitemap.xml', sitemap);
         const urlCount = (sitemap.match(/<url>/g) || []).length;
-        console.log(`✓ Sitemap generated with ${urlCount} URLs`);
+        console.log(`✓ Sitemap generated with ${urlCount} URLs (including images)`);
+        
+        // Generate RSS feed
+        const rss = generateRssXML();
+        writeFileSync('public/rss.xml', rss);
+        const itemCount = (rss.match(/<item>/g) || []).length;
+        console.log(`✓ RSS feed generated with ${itemCount} articles`);
       } catch (error) {
-        console.warn('Sitemap generation skipped:', error);
+        console.warn('Sitemap/RSS generation skipped:', error);
       }
     }
   };

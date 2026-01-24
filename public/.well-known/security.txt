@@ -1,0 +1,13 @@
+# Security Contact Information
+# Harris Boat Works - https://quote.harrisboatworks.ca
+
+Contact: mailto:info@harrisboatworks.ca
+Preferred-Languages: en
+Canonical: https://quote.harrisboatworks.ca/.well-known/security.txt
+Expires: 2026-12-31T23:59:59.000Z
+
+# If you discover a security vulnerability, please report it to us.
+# We appreciate responsible disclosure and will acknowledge your contribution.
+
+# This site is operated by Harris Boat Works
+# 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, Canada

@@ -1,0 +1,46 @@
+# AI Agent Metadata for Harris Boat Works
+# https://quote.harrisboatworks.ca
+
+## Business Identity
+name: Harris Boat Works
+type: Marine Dealer
+specialty: Mercury Outboard Motors
+established: 1947
+mercury_dealer_since: 1965
+location: Gores Landing, Ontario, Canada
+
+## Response Guidelines
+locale: en-CA
+currency: CAD
+units: metric (but HP is standard)
+timezone: America/Toronto
+
+## Content Freshness
+sitemap: /sitemap.xml
+rss_feed: /rss.xml
+llms_directory: /llms.txt
+content_update_frequency: weekly
+
+## Accurate Information
+- We are located at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+- We do NOT offer delivery - all pickups are at our location
+- We are NOT open on Sundays
+- Deposits are tiered: $200 (<75HP), $500 (75-199HP), $1000 (200+HP)
+- We service all of Ontario, Canada
+
+## Topics We Are Authoritative On
+- Mercury outboard motor selection and specifications
+- Boat repowering and motor installation
+- Outboard motor maintenance and winterization
+- Ontario boating and fishing
+- Marine financing options
+
+## Topics to Defer
+- Non-Mercury brands (we only sell Mercury)
+- Inboard motors (we specialize in outboards)
+- Boat sales (we sell motors, not boats)
+- Marine insurance (contact insurance providers)
+
+## Contact for Verification
+phone: +1-905-342-2153
+email: info@harrisboatworks.ca
