@@ -1,86 +1,105 @@
 
-# Fix Motor Info Not Carrying Over to Financing Application
+# Fix Financing Application Price Discrepancy
 
 ## The Problem
 
-When clicking "Apply for Financing" from a shared quote link, the motor information doesn't appear in the financing application form. The customer sees an empty motor field instead of their selected motor details.
+The financing application shows **$6,595.36** but the summary/PDF show **$4,143.86** for the same quote. This is a difference of nearly $2,500!
+
+### What's Missing
+
+The financing application pricing logic is ignoring two key discounts:
+
+| Discount Type | Stored In | Amount | Applied in Summary? | Applied in Financing App? |
+|---------------|-----------|--------|---------------------|---------------------------|
+| Admin Discount | `adminDiscount` | $700 | Yes | **No** |
+| Cash Rebate | `selectedPromoValue` | $250 | Yes | **No** |
+| **Total Missing** | | **$950** | | |
+
+The remaining difference comes from the fact that tax is applied before subtracting these discounts, causing a cascading error.
+
+---
 
 ## Root Cause
 
-The `FinancingApplication.tsx` component has **inconsistent key names** when trying to read motor data from different sources:
+In `FinancingApplication.tsx` (lines 164-206), the pricing calculation:
 
-| Data Source | Key Used in Source | Key Expected by FinancingApplication |
-|-------------|-------------------|-------------------------------------|
-| QuoteContext / localStorage | `motor` | ✅ `motor` (lines 279-293) |
-| Database quote_state (via location.state) | `motor` | ❌ `selectedMotor` (lines 164-213) |
+```typescript
+let packageTotal = motorMSRP - motorDiscount;
+// ... adds accessories, installation, etc.
+// ... subtracts trade-in
+const withTax = (packageTotal - tradeInValue) * 1.13;
+const totalWithFees = withTax + 299;
+```
 
-When a user views a shared quote via `SavedQuotePage.tsx` and clicks "Apply for Financing":
-1. The quote data is saved with the key `motor`
-2. `FinancingApplication.tsx` line 168-169 looks for `restoredQuoteState.selectedMotor?.msrp` which returns `undefined`
-3. Line 207 falls back to `restoredQuoteState.selectedMotor?.model || 'Motor'` → displays just "Motor"
+Is missing:
+1. `restoredQuoteState.adminDiscount` (the $700 special admin discount)
+2. `restoredQuoteState.selectedPromoValue` (the "$250 rebate" string that needs parsing)
+
+---
 
 ## Solution
 
-Fix the key mismatch in `FinancingApplication.tsx` to accept **both** `motor` and `selectedMotor` keys, just like `SavedQuotePage.tsx` already does.
+Add the missing deductions to match the summary page calculation:
 
----
+### Changes to Make
 
-## Implementation
+```text
+// After line 176: let packageTotal = motorMSRP - motorDiscount;
 
-### File: `src/pages/FinancingApplication.tsx`
+// Subtract admin discount (special pricing from admin)
+const adminDiscount = parseFloat(restoredQuoteState.adminDiscount) || 0;
+packageTotal -= adminDiscount;
 
-Update lines 164-213 to first resolve the motor data from either key:
-
-```typescript
-if (savedQuoteIdParam && restoredQuoteState) {
-  console.log('Restoring full quote state from database:', restoredQuoteState);
-  
-  // Handle both 'motor' and 'selectedMotor' keys (consistent with SavedQuotePage.tsx)
-  const motorData = restoredQuoteState.motor || restoredQuoteState.selectedMotor;
-  
-  // Calculate accurate total from saved state
-  const motorMSRP = parseFloat(motorData?.msrp) || parseFloat(motorData?.basePrice) || 0;
-  const motorDiscount = parseFloat(motorData?.dealer_discount) || 
-                        (motorMSRP - (parseFloat(motorData?.salePrice) || parseFloat(motorData?.price) || motorMSRP));
-  
-  // ... rest of calculation logic uses motorData instead of restoredQuoteState.selectedMotor
-  
-  financingDispatch({
-    type: 'SET_PURCHASE_DETAILS',
-    payload: {
-      motorModel: motorData?.model || 'Motor',  // Now correctly reads motor.model
-      // ... rest unchanged
-    }
-  });
+// Subtract promo rebate if cash_rebate option selected
+let promoRebate = 0;
+if (restoredQuoteState.selectedPromoOption === 'cash_rebate' && 
+    restoredQuoteState.selectedPromoValue) {
+  // Parse "$250 rebate" -> 250
+  const match = restoredQuoteState.selectedPromoValue.match(/\$?([\d,]+)/);
+  if (match) {
+    promoRebate = parseFloat(match[1].replace(',', '')) || 0;
+  }
 }
+packageTotal -= promoRebate;
 ```
 
-### Changes Summary
+---
 
-| Line | Current Code | Fixed Code |
-|------|-------------|------------|
-| 168 | `restoredQuoteState.selectedMotor?.msrp` | `motorData?.msrp \|\| motorData?.basePrice` |
-| 169 | `restoredQuoteState.selectedMotor?.dealer_discount` | `motorData?.dealer_discount` |
-| 207 | `restoredQuoteState.selectedMotor?.model \|\| 'Motor'` | `motorData?.model \|\| 'Motor'` |
-| 218 | `restoredQuoteState.selectedMotor?.model` | `motorData?.model` |
+## Correct Calculation
+
+With fixes applied, the math becomes:
+
+```text
+Motor MSRP:          $6,080
+- Dealer Discount:     -$508  (motor.salePrice = $5,572)
+= Motor Price:       $5,572
+- Admin Discount:      -$700  [NEW]
+- Promo Rebate:        -$250  [NEW]
+= Net Motor:         $4,622
+- Trade-in:          -$1,550
+= Subtotal:          $3,072
++ Tax (13%):           +$399
+= After Tax:         $3,471
++ Dealerplan Fee:      +$299
+= Total:             $3,770  [Matches summary!]
+```
 
 ---
 
-## Additional Improvements
+## Files to Modify
 
-While fixing this, also address these related issues:
-
-1. **MSRP Field Names**: The motor object uses `msrp` or `basePrice` depending on source. Handle both.
-
-2. **Price Field Names**: Handle `salePrice`, `price`, or fallback to MSRP.
-
-3. **Package Name Recovery**: Extract package name from `restoredQuoteState.selectedPackage?.label` when `financingAmount` wrapper is missing.
+| File | Change |
+|------|--------|
+| `src/pages/FinancingApplication.tsx` | Add adminDiscount and promo rebate parsing to pricing calculation |
 
 ---
 
-## Expected Result
+## Technical Implementation
 
-After this fix:
-- Shared quote → Summary → Apply for Financing will display the correct motor model (e.g., "Mercury 5HP MH 4-Stroke (Essential)")
-- The price will be correctly calculated with all accessories, tax, and fees
-- Promo details will carry over for accurate rate display
+Update lines 174-177 in `FinancingApplication.tsx` to include:
+
+1. Parse and subtract `adminDiscount` from `restoredQuoteState`
+2. Parse the rebate amount from `selectedPromoValue` string (e.g., "$250 rebate" → 250)
+3. Subtract both values from `packageTotal` before calculating tax
+
+This ensures the financing application displays the same price the customer saw on their quote summary and PDF.
