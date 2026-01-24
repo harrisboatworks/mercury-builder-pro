@@ -1,134 +1,205 @@
 
-# Google Analytics, Branded 404 Page & Sitemap Regeneration
 
-## Overview
+# Complete AI & Search Optimization Plan
 
-This plan adds GA4 tracking to enable all existing gtag events, redesigns the 404 page with Harris Boat Works luxury branding, and triggers a sitemap rebuild.
+## Current State Summary
+
+Your site already has a strong foundation:
+- **Google Analytics 4** is now active (G-0JNMHD89YJ)
+- **robots.txt** explicitly allows all major AI crawlers (GPTBot, PerplexityBot, Claude, etc.)
+- **Structured Data** includes Organization, LocalBusiness, FAQ, and Article schemas
+- **Sitemap generator** is configured and runs on production builds
+- **Blog SEO** includes HowTo, Speakable, and Article schemas
+
+However, there are key gaps for AI agent optimization:
+
+---
+
+## What We'll Add
+
+### 1. Create `llms.txt` File (AI Agent Directory)
+
+Following the emerging [llmstxt.org](https://llmstxt.org) standard, this provides AI agents with a quick, structured overview of the site content.
+
+**Location:** `public/llms.txt`
+
+**Content includes:**
+- Business identity and expertise
+- Available services (Sales, Repower, Service, Parts)
+- Mercury motor families with HP ranges
+- Blog article index with descriptions
+- Contact information and hours
+- Key FAQs for common queries
+
+This file makes it easy for ChatGPT, Claude, Perplexity, and other AI assistants to quickly understand what Harris Boat Works offers without crawling the entire site.
+
+---
+
+### 2. Create `public/.well-known/ai.txt` 
+
+A standardized location for AI-specific metadata, including:
+- Business description for AI context
+- Preferred response guidelines (locale, currency, units)
+- API endpoints if any are public
+- Content update frequency
+
+---
+
+### 3. Add Semantic HTML Improvements
+
+Enhance key pages with `<article>`, `<section>`, `<nav>` landmarks and ARIA labels to help AI agents parse content structure more accurately.
+
+**Pages affected:**
+- Motor selection page (product listings)
+- Blog index and articles
+- About page
+
+---
+
+### 4. Add Product Schema to Motor Listings
+
+Currently individual motors don't have Product schema. Adding this enables:
+- Rich snippets in Google Search
+- Better AI understanding of inventory
+- Price and availability in search results
+
+**Implementation:**
+- Add JSON-LD Product schema to motor cards
+- Include price, availability, brand, and SKU data
+- Reference the Organization as seller
+
+---
+
+### 5. Add RSS Feed for Blog
+
+AI agents and news aggregators can subscribe to content updates.
+
+**Location:** `public/feed.xml` (or served via `/rss`)
+
+**Benefits:**
+- AI agents discover new content automatically
+- Google News eligibility (if applicable)
+- Standard format for content syndication
+
+---
+
+### 6. Update Sitemap with Image Data
+
+Enhance the sitemap to include `<image:image>` tags for:
+- Motor product images
+- Blog article featured images
+- Logo and branding assets
+
+This helps visual AI systems and Google Image Search.
+
+---
+
+### 7. Add Security.txt
+
+Standard file for security researchers and automated tools.
+
+**Location:** `public/.well-known/security.txt`
+
+**Contents:**
+- Contact email for security issues
+- Preferred reporting method
+- Policy acknowledgment
 
 ---
 
 ## File Changes Summary
 
-| File | Change |
-|------|--------|
-| `index.html` | Add GA4 tracking script with ID G-0JNMHD89YJ |
-| `src/pages/NotFound.tsx` | Complete redesign with Harris branding |
-| `public/favicon.ico` | Delete (cleanup - now using favicon.png) |
-
----
-
-## 1. Add Google Analytics to `index.html`
-
-Insert GA4 initialization script immediately after the opening `<head>` tag (line 3):
-
-```html
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0JNMHD89YJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-0JNMHD89YJ');
-</script>
-```
-
-This enables all existing `gtag()` event calls throughout the codebase to start capturing data.
-
----
-
-## 2. Redesign 404 Page with Harris Boat Works Branding
-
-Replace the current generic 404 page with a luxury-branded version matching the site design.
-
-### Design Elements
-
-- **Background**: Gradient from `muted/50` to `background` with ambient glassmorphism orbs
-- **Dual logos**: Harris Boat Works + Mercury Marine with vertical divider
-- **Typography**: Large "404" in Playfair Display serif, descriptive text in Inter
-- **Helpful links**: Quick navigation to popular pages (Motors, Promotions, Contact)
-- **Contact info**: Phone number and email for assistance
-- **Trust badges**: CSI Award and Certified Repower Center
-
-### New Component Structure
-
-```text
-┌─────────────────────────────────────────────────┐
-│          [Harris Logo] │ [Mercury Logo]         │
-├─────────────────────────────────────────────────┤
-│                                                 │
-│                      404                        │
-│                                                 │
-│            Page Not Found                       │
-│                                                 │
-│  The page you're looking for doesn't exist      │
-│  or has been moved.                             │
-│                                                 │
-│  ┌─────────────────────────────────────────┐   │
-│  │ [🏠 Home] [⚙️ Motors] [📞 Contact]     │   │
-│  └─────────────────────────────────────────┘   │
-│                                                 │
-│  Need help? Call (905) 342-2153                 │
-│                                                 │
-│  [CSI Badge]  [Repower Badge]                   │
-│                                                 │
-└─────────────────────────────────────────────────┘
-```
-
-### Implementation Details
-
-- Import `COMPANY_INFO` for consistent contact details
-- Use existing logo assets (`/assets/harris-logo-black.png`, `/assets/mercury-logo.png`)
-- Add lucide icons (Home, Wrench, Phone, Mail)
-- Include trust badges from `/lovable-uploads/`
-- Apply hover animations consistent with site patterns
-- Log 404 error to console for debugging
-- Track 404 event with `gtag('event', 'page_not_found', {...})`
-
----
-
-## 3. Cleanup & Sitemap Regeneration
-
-### Delete Unused File
-- Remove `public/favicon.ico` (replaced by `favicon.png`)
-
-### Sitemap
-The sitemap generator is already configured in `vite.config.ts` and will run automatically on the next production build. No code changes needed - publishing the changes will trigger the build and regenerate `sitemap.xml` with:
-- All 9 static pages with today's date
-- All published blog articles with their `dateModified` dates
-
-After publishing, submit the updated sitemap URL to Google Search Console:
-`https://quote.harrisboatworks.ca/sitemap.xml`
+| File | Action | Purpose |
+|------|--------|---------|
+| `public/llms.txt` | Create | AI agent content directory |
+| `public/.well-known/ai.txt` | Create | AI metadata and guidelines |
+| `public/.well-known/security.txt` | Create | Security contact info |
+| `public/rss.xml` | Create | Blog RSS feed |
+| `src/utils/generateSitemap.ts` | Update | Add image sitemap support |
+| `src/components/motors/MotorCard.tsx` | Update | Add Product schema |
+| `vite.config.ts` | Update | Generate RSS on build |
 
 ---
 
 ## Technical Details
 
-### GA4 Event Tracking
-With the initialization script in place, all existing `gtag()` calls will automatically start working:
-- Page views (automatic)
-- Quote builder interactions
-- Financing calculator events
-- Form submissions
-- Product views
-
-### 404 Page Features
-- Responsive layout (mobile-first)
-- Consistent with luxury marine aesthetic
-- Actionable navigation options
-- Direct contact methods
-- Trust signals for credibility
-- Analytics tracking for monitoring broken links
-
-### Files Modified
+### llms.txt Format
 
 ```text
-MODIFIED:
-├── index.html              (+8 lines for GA4 script)
-└── src/pages/NotFound.tsx  (complete redesign)
+# Harris Boat Works - Mercury Marine Dealer
 
-DELETED:
-└── public/favicon.ico      (cleanup)
+> Family-owned Mercury dealer since 1965 serving Ontario boaters.
+> Located on Rice Lake in Gores Landing, Ontario, Canada.
 
-AUTO-UPDATED ON BUILD:
-└── public/sitemap.xml      (regenerated with current dates)
+## About
+Harris Boat Works is an authorized Mercury Marine dealer specializing in 
+outboard motor sales, repowering, and service. CSI Award winner.
+
+## Products
+- Mercury FourStroke: 2.5-150HP, fuel-efficient
+- Mercury Pro XS: 115-400HP, high-performance
+- Mercury Verado: 175-600HP, premium supercharged
+- Mercury SeaPro: Commercial-grade
+
+## Services
+- New motor sales with online quote builder
+- Professional repower installation
+- Factory-authorized Mercury service
+- Genuine parts and accessories
+
+## Blog Articles
+- How to Choose the Right Horsepower for Your Boat
+- Mercury Motor Maintenance: Seasonal Care Tips
+- Understanding Mercury Motor Families
+- Boat Repowering 101
+- Breaking In Your New Mercury Motor
+
+## Contact
+- Phone: (905) 342-2153
+- Email: info@harrisboatworks.ca
+- Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+- Hours: Mon-Fri 8am-5pm, Sat 9am-2pm
+
+## Links
+- Quote Builder: /quote/motor-selection
+- Blog: /blog
+- Financing: /financing-application
+- Contact: /contact
 ```
+
+### Product Schema Example
+
+```json
+{
+  "@type": "Product",
+  "name": "Mercury 115 Pro XS",
+  "brand": { "@type": "Brand", "name": "Mercury Marine" },
+  "category": "Outboard Motors",
+  "offers": {
+    "@type": "Offer",
+    "price": "14999",
+    "priceCurrency": "CAD",
+    "availability": "https://schema.org/InStock",
+    "seller": { "@id": "https://quote.harrisboatworks.ca/#organization" }
+  }
+}
+```
+
+---
+
+## Priority Order
+
+1. **High Impact:** llms.txt + ai.txt (immediate AI discoverability)
+2. **Medium Impact:** Product schema on motors (rich search results)  
+3. **Standard:** RSS feed, security.txt, image sitemap
+
+---
+
+## Post-Implementation
+
+After publishing:
+1. Submit updated sitemap to Google Search Console
+2. Test llms.txt accessibility at `https://quote.harrisboatworks.ca/llms.txt`
+3. Validate Product schema with Google Rich Results Test
+4. Monitor Search Console for indexing and rich snippet activation
+
