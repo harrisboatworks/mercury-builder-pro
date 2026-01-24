@@ -18,6 +18,7 @@ import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExtern
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
+import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CreditCard, ChevronLeft } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
@@ -62,7 +63,7 @@ const pricingTableVariants = {
 export default function QuoteSummaryPage() {
   const navigate = useNavigate();
   const { state, dispatch, getQuoteData } = useQuote();
-  const { user } = useAuth();
+  const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
   const { promotions, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { toast } = useToast();
@@ -729,6 +730,28 @@ export default function QuoteSummaryPage() {
                     <BonusOffers motor={quoteData.motor} />
                   </div>
                 </motion.div>
+
+                {/* Admin Controls - Only visible to admins */}
+                {isAdmin && state.isAdminQuote && (
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                      ...sectionVariants,
+                      visible: {
+                        ...sectionVariants.visible,
+                        transition: {
+                          ...sectionVariants.visible.transition,
+                          delay: 0.5
+                        }
+                      }
+                    }}
+                  >
+                    <AdminQuoteControls 
+                      onSave={() => navigate('/admin/quotes')}
+                    />
+                  </motion.div>
+                )}
 
                 {/* Mobile CTA Section */}
                 <div className="lg:hidden space-y-4">

@@ -6,7 +6,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
-import { AlertTriangle, Download } from 'lucide-react';
+import { AlertTriangle, Download, Plus } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -138,6 +138,10 @@ const AdminQuotes = () => {
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">Lead & Quote Management</h1>
         <div className="flex items-center gap-4">
+          <Button onClick={() => navigate('/admin/quote/new')}>
+            <Plus className="w-4 h-4 mr-2" />
+            Create Quote
+          </Button>
           <div className="flex items-center gap-2">
             <Label className="text-sm">Status:</Label>
             <select 
