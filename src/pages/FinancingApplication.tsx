@@ -164,15 +164,20 @@ export default function FinancingApplication() {
     if (savedQuoteIdParam && restoredQuoteState) {
       console.log('Restoring full quote state from database:', restoredQuoteState);
       
-      // Calculate accurate total from saved state
-      const motorMSRP = parseFloat(restoredQuoteState.selectedMotor?.msrp) || 0;
-      const motorDiscount = parseFloat(restoredQuoteState.selectedMotor?.dealer_discount) || 0;
+      // Handle both 'motor' and 'selectedMotor' keys (consistent with SavedQuotePage.tsx)
+      const motorData = restoredQuoteState.motor || restoredQuoteState.selectedMotor;
+      
+      // Calculate accurate total from saved state - handle multiple field name variations
+      const motorMSRP = parseFloat(motorData?.msrp) || parseFloat(motorData?.basePrice) || 0;
+      const motorDiscount = parseFloat(motorData?.dealer_discount) || 
+                            (motorMSRP - (parseFloat(motorData?.salePrice) || parseFloat(motorData?.price) || motorMSRP));
       
       // Get package-specific pricing
       let packageTotal = motorMSRP - motorDiscount;
       
       // Add accessories based on package
-      if (restoredQuoteState.selectedPackage === 'better' || restoredQuoteState.selectedPackage === 'best') {
+      const packageKey = restoredQuoteState.selectedPackage?.key || restoredQuoteState.selectedPackage;
+      if (packageKey === 'better' || packageKey === 'best') {
         packageTotal += 180; // Battery
       }
       
@@ -200,11 +205,18 @@ export default function FinancingApplication() {
       const withTax = (packageTotal - tradeInValue) * 1.13;
       const totalWithFees = withTax + 299; // Dealerplan fee
       
+      // Build motor model display with package info
+      const packageLabel = restoredQuoteState.selectedPackage?.label || 
+                           (packageKey ? packageKey.charAt(0).toUpperCase() + packageKey.slice(1) : '');
+      const motorModel = packageLabel 
+        ? `${motorData?.model || 'Motor'} (${packageLabel})`
+        : motorData?.model || 'Motor';
+      
       // Dispatch to financing form
       financingDispatch({
         type: 'SET_PURCHASE_DETAILS',
         payload: {
-          motorModel: restoredQuoteState.selectedMotor?.model || 'Motor',
+          motorModel: motorModel,
           motorPrice: Math.round(totalWithFees * 100) / 100,
           downPayment: 0,
           tradeInValue: tradeInValue,
@@ -215,7 +227,7 @@ export default function FinancingApplication() {
       // Show confirmation toast
       toast({
         title: "Quote Restored Successfully",
-        description: `Your ${restoredQuoteState.selectedMotor?.model || 'motor'} configuration has been loaded with all accessories and options.`,
+        description: `Your ${motorData?.model || 'motor'} configuration has been loaded with all accessories and options.`,
         duration: 5000,
       });
       
