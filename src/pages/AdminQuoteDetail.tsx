@@ -7,10 +7,13 @@ import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Edit2, Save, Loader2, FileText, AlertTriangle } from 'lucide-react';
+import { Edit2, Save, Loader2, FileText, AlertTriangle, Download, Copy, Check, Gift, Calendar, Link } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useToast } from '@/hooks/use-toast';
 import AdminNav from '@/components/admin/AdminNav';
+import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { SITE_URL } from '@/lib/site';
 
 interface QuoteDetail {
   id: string;
@@ -49,6 +52,11 @@ const AdminQuoteDetail = () => {
   const [q, setQ] = useState<QuoteDetail | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
+  
+  // Promo data
+  const { promotions } = useActivePromotions();
   
   // Editable fields
   const [adminDiscount, setAdminDiscount] = useState(0);
@@ -189,6 +197,105 @@ const AdminQuoteDetail = () => {
       case 'closed': return <Badge variant="destructive">Closed</Badge>;
       default: return <Badge variant="secondary">Unknown</Badge>;
     }
+  };
+
+  const getPromoLabel = (option: string | null): string => {
+    switch (option) {
+      case 'no_payments': return '6 Months Deferred Payments';
+      case 'special_financing': return 'Special Financing Rate';
+      case 'cash_rebate': return 'Factory Rebate';
+      default: return 'Standard Warranty';
+    }
+  };
+
+  const handleCopyLink = async () => {
+    if (!q) return;
+    const shareUrl = `${SITE_URL}/quote/saved/${q.id}`;
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setLinkCopied(true);
+      toast({ title: 'Link copied!', description: 'Share URL copied to clipboard.' });
+      setTimeout(() => setLinkCopied(false), 2000);
+    } catch (err) {
+      toast({ title: 'Copy failed', description: 'Please copy the link manually.', variant: 'destructive' });
+    }
+  };
+
+  const handleDownloadPDF = async () => {
+    if (!q || !q.quote_data) {
+      toast({ title: 'No data', description: 'This quote has no data to generate PDF.', variant: 'destructive' });
+      return;
+    }
+    
+    setIsGeneratingPDF(true);
+    try {
+      const qd = q.quote_data;
+      const motor = qd.motor || {};
+      
+      // Build PDF data object
+      const pdfData = {
+        quoteNumber: q.id.slice(0, 8).toUpperCase(),
+        customerName: q.customer_name,
+        customerEmail: q.customer_email,
+        customerPhone: q.customer_phone || '',
+        motor: {
+          id: motor.id || '',
+          model: motor.model || motor.display_name || 'Motor',
+          hp: motor.horsepower || motor.hp || 0,
+          year: motor.year || new Date().getFullYear(),
+          msrp: motor.msrp || q.base_price,
+          sku: motor.sku || motor.stock_number || ''
+        },
+        pricing: {
+          msrp: motor.msrp || q.base_price,
+          discount: q.admin_discount || qd.discount || 0,
+          subtotal: q.final_price,
+          tax: (q.final_price * 0.13),
+          total: q.final_price * 1.13,
+          savings: (q.admin_discount || 0) + (qd.promoValue || 0)
+        },
+        tradeIn: qd.tradeInInfo?.hasTradeIn ? {
+          value: q.tradein_value_final || qd.tradeInInfo?.estimatedValue || 0,
+          year: qd.tradeInInfo?.year,
+          brand: qd.tradeInInfo?.brand,
+          hp: qd.tradeInInfo?.horsepower
+        } : undefined,
+        selectedPromoOption: qd.selectedPromoOption,
+        selectedPromoValue: qd.selectedPromoValue,
+        warranty: qd.warrantyConfig || { baseYears: 3, extendedYears: 0 }
+      };
+      
+      const pdfUrl = await generateQuotePDF(pdfData);
+      downloadPDF(pdfUrl, `Quote-${q.customer_name.replace(/\s+/g, '-')}.pdf`);
+      toast({ title: 'PDF Downloaded', description: 'Quote PDF generated successfully.' });
+    } catch (err: any) {
+      console.error('PDF generation error:', err);
+      toast({ title: 'PDF Error', description: err.message || 'Failed to generate PDF.', variant: 'destructive' });
+    } finally {
+      setIsGeneratingPDF(false);
+    }
+  };
+
+  // Extract promo info from quote_data
+  const getPromoInfo = () => {
+    if (!q?.quote_data) return null;
+    const selectedOption = q.quote_data.selectedPromoOption;
+    const selectedValue = q.quote_data.selectedPromoValue;
+    
+    // Get active promotion for expiry date (check for promo_options with choose_one type)
+    const activePromo = promotions.find(p => p.promo_options?.type === 'choose_one' || p.warranty_extra_years);
+    const expiryDate = activePromo?.end_date ? new Date(activePromo.end_date) : null;
+    const warrantyYears = activePromo?.warranty_extra_years || 0;
+    
+    return {
+      hasPromo: !!selectedOption,
+      option: selectedOption,
+      value: selectedValue,
+      label: getPromoLabel(selectedOption),
+      expiryDate,
+      warrantyYears,
+      totalWarranty: 3 + warrantyYears
+    };
   };
 
   return (
@@ -366,6 +473,81 @@ const AdminQuoteDetail = () => {
                 </div>
               </div>
             )}
+          </Card>
+
+          {/* Applied Promotion Card */}
+          {(() => {
+            const promo = getPromoInfo();
+            if (!promo?.hasPromo) return null;
+            
+            return (
+              <Card className="p-4 border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20">
+                <h2 className="font-semibold mb-3 flex items-center gap-2 text-emerald-800 dark:text-emerald-200">
+                  <Gift className="w-4 h-4" />
+                  Applied Promotion
+                </h2>
+                <div className="space-y-2 text-sm">
+                  <div className="font-medium text-emerald-700 dark:text-emerald-300">
+                    Mercury GET 7 + Choose One
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-600" />
+                    <span>{promo.label}</span>
+                    {promo.value && <Badge variant="secondary">{promo.value}</Badge>}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-emerald-600" />
+                    <span>{promo.totalWarranty}-Year Factory Warranty</span>
+                    <Badge variant="outline" className="text-xs">3 + {promo.warrantyYears} FREE</Badge>
+                  </div>
+                  {promo.expiryDate && (
+                    <div className="flex items-center gap-2 text-muted-foreground pt-1 border-t mt-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>Offer Expires: {promo.expiryDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                    </div>
+                  )}
+                </div>
+              </Card>
+            );
+          })()}
+
+          {/* Share & Download Card */}
+          <Card className="p-4 border-blue-500 bg-blue-50/50 dark:bg-blue-950/20">
+            <h2 className="font-semibold mb-3 flex items-center gap-2 text-blue-800 dark:text-blue-200">
+              <Link className="w-4 h-4" />
+              Share & Download
+            </h2>
+            <div className="space-y-3">
+              <div className="flex gap-2">
+                <Button 
+                  onClick={handleDownloadPDF} 
+                  disabled={isGeneratingPDF || !q?.quote_data}
+                  className="flex-1"
+                >
+                  {isGeneratingPDF ? (
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  ) : (
+                    <Download className="w-4 h-4 mr-2" />
+                  )}
+                  Download PDF
+                </Button>
+                <Button 
+                  variant="outline" 
+                  onClick={handleCopyLink}
+                  className="flex-1"
+                >
+                  {linkCopied ? (
+                    <Check className="w-4 h-4 mr-2 text-green-600" />
+                  ) : (
+                    <Copy className="w-4 h-4 mr-2" />
+                  )}
+                  {linkCopied ? 'Copied!' : 'Copy Link'}
+                </Button>
+              </div>
+              <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded font-mono truncate">
+                {SITE_URL}/quote/saved/{q?.id?.slice(0, 8)}...
+              </div>
+            </div>
           </Card>
         </div>
       )}
