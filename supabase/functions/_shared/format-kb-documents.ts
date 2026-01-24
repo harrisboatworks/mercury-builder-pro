@@ -742,6 +742,71 @@ ${SHAFT_LENGTH_GUIDE.sales_guidance.key_message}
 `;
 }
 
+// ========== RESERVING A MOTOR GUIDE ==========
+export function formatReservationGuide(): string {
+  const now = new Date().toISOString().split('T')[0];
+  
+  return `# Reserving a Motor - Deposit Guide
+Updated: ${now}
+
+## Deposit Tiers
+
+Secure your motor with a refundable deposit based on horsepower:
+
+| Motor Size | HP Range | Deposit Amount |
+|------------|----------|----------------|
+| Portable | 0-25 HP | $200 |
+| Mid-Range | 30-115 HP | $500 |
+| High-Power | 150+ HP | $1,000 |
+
+## Payment Methods
+
+Our checkout supports fast, secure payment options:
+
+### Mobile Payments
+- **Apple Pay** — Available on Safari (iPhone, iPad, Mac)
+- **Google Pay** — Available on Chrome (Android, desktop)
+- **Link** — Stripe's one-click saved payment
+
+### Card Payments
+- Visa, Mastercard, American Express
+- Secure Stripe-powered checkout
+
+## Reservation Policies
+
+### Refund Policy
+- Deposits are **fully refundable** if you change your mind
+- No restocking fees or penalties
+- Refund processed within 5-7 business days
+
+### What Your Deposit Secures
+- Holds the specific motor for you
+- Locks in the current quoted price
+- Priority in our installation schedule
+
+### Next Steps After Deposit
+1. Confirmation email sent immediately
+2. Team contacts you within 1 business day
+3. Finalize installation date
+4. Balance due at pickup
+
+## Pickup Requirements
+
+All motor pickups require:
+- In-person visit to Gores Landing
+- Valid photo ID matching the buyer
+- No third-party or delivery options
+
+## Talking Points for Voice
+
+When a customer asks about reserving:
+- "A $[X] deposit locks it in, and it's fully refundable"
+- "You can use Apple Pay for a quick checkout"
+- "We'll reach out within a day to schedule everything"
+- "The deposit just holds the price — balance at pickup"
+`;
+}
+
 // Export all document generators
 export const KB_DOCUMENTS = {
   harris_guide: {
@@ -773,5 +838,10 @@ export const KB_DOCUMENTS = {
     name: "Shaft Length & Transom Height Guide",
     generator: formatShaftLengthGuide,
     description: "Critical education on shaft length matching, common misconceptions, measurement guide"
+  },
+  reservation_guide: {
+    name: "Reserving a Motor - Deposit Guide",
+    generator: formatReservationGuide,
+    description: "Deposit tiers, payment methods (Apple Pay, Google Pay, Link), and reservation policies"
   }
 };
