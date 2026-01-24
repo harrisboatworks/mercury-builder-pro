@@ -218,7 +218,16 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
     case 'SET_CURRENT_STEP':
       return { ...state, currentStep: action.payload };
     case 'LOAD_FROM_STORAGE':
-      return { ...action.payload, isLoading: false };
+      return { 
+        ...initialState,
+        ...action.payload, 
+        isAdminQuote: action.payload.isAdminQuote ?? false,
+        editingQuoteId: action.payload.editingQuoteId ?? null,
+        adminDiscount: action.payload.adminDiscount ?? 0,
+        adminNotes: action.payload.adminNotes ?? '',
+        customerNotes: action.payload.customerNotes ?? '',
+        isLoading: false 
+      };
     case 'SET_LOADING':
       return { ...state, isLoading: action.payload };
     case 'SET_UI_FLAG':
