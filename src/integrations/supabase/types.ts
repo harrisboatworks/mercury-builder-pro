@@ -2030,6 +2030,44 @@ export type Database = {
           },
         ]
       }
+      quote_change_log: {
+        Row: {
+          change_type: string
+          changed_by: string
+          changes: Json
+          created_at: string
+          id: string
+          notes: string | null
+          quote_id: string
+        }
+        Insert: {
+          change_type: string
+          changed_by: string
+          changes?: Json
+          created_at?: string
+          id?: string
+          notes?: string | null
+          quote_id: string
+        }
+        Update: {
+          change_type?: string
+          changed_by?: string
+          changes?: Json
+          created_at?: string
+          id?: string
+          notes?: string | null
+          quote_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quote_change_log_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "customer_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       quotes: {
         Row: {
           created_at: string

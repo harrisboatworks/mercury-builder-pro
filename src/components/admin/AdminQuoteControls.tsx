@@ -138,6 +138,21 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         if (error) throw error;
         
         setSavedQuoteId(state.editingQuoteId);
+        
+        // Log the update
+        if (user?.id) {
+          await supabase.from('quote_change_log').insert({
+            quote_id: state.editingQuoteId,
+            changed_by: user.id,
+            change_type: 'updated',
+            changes: { 
+              admin_discount: { new: adminDiscount },
+              admin_notes: { new: adminNotes },
+              customer_notes: { new: customerNotes }
+            }
+          });
+        }
+        
         toast({
           title: 'Quote Updated',
           description: 'The quote has been saved successfully.'
@@ -156,6 +171,21 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
           setSavedQuoteId(data.id);
           // Update context with the new quote ID
           dispatch({ type: 'SET_ADMIN_MODE', payload: { isAdmin: true, editingQuoteId: data.id } });
+          
+          // Log the creation
+          if (user?.id) {
+            await supabase.from('quote_change_log').insert({
+              quote_id: data.id,
+              changed_by: user.id,
+              change_type: 'created',
+              changes: { 
+                customer_name: { new: customerName },
+                customer_email: { new: customerEmail },
+                motor: { new: motor?.model || 'N/A' },
+                admin_discount: { new: adminDiscount }
+              }
+            });
+          }
         }
         
         toast({
