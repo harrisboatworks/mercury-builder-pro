@@ -232,26 +232,49 @@ const AdminQuoteDetail = () => {
       const qd = q.quote_data;
       const motor = qd.motor || {};
       
-      // Extract pricing values from quote_data or compute them
-      const motorMSRP = motor.msrp || q.base_price || 0;
-      const adminDiscount = q.admin_discount || 0;
-      const promoValue = qd.promoValue || 0;
-      const motorSubtotal = motorMSRP - adminDiscount - promoValue;
+      // Motor pricing - use motor's built-in savings as dealer discount
+      const motorMSRP = motor.msrp || motor.originalPrice || q.base_price || 0;
+      const motorSavings = motor.savings || 0;  // Built-in dealer discount
+      const adminDiscountValue = q.admin_discount || qd.adminDiscount || 0;  // Admin's special discount
       
-      // Get accessory breakdown from quote_data
-      const accessoryBreakdown = qd.accessoryBreakdown || qd.accessories || [];
+      // Promo rebate - parse the selectedPromoValue (e.g., "$250 rebate" -> 250)
+      const promoValueStr = qd.selectedPromoValue || '';
+      const promoValue = qd.selectedPromoOption === 'cash_rebate' 
+        ? (parseInt(promoValueStr.replace(/[^0-9]/g, '')) || 0) 
+        : 0;
       
-      // Calculate package totals
+      // Motor subtotal after all discounts
+      const motorSubtotal = motorMSRP - motorSavings - adminDiscountValue - promoValue;
+      
+      // Accessories - handle loose motor path
+      let accessoryBreakdown = qd.accessoryBreakdown || qd.selectedOptions || [];
+      
+      // For loose motor path, add "Clamp-On Installation" if empty
+      if (qd.purchasePath === 'loose' && accessoryBreakdown.length === 0) {
+        accessoryBreakdown = [{
+          name: 'Clamp-On Installation',
+          price: 0,
+          description: 'DIY-friendly mounting system (no installation labor required)'
+        }];
+      }
+      
+      // Calculate totals
       const accessoriesTotal = accessoryBreakdown.reduce((sum: number, a: any) => sum + (a.price || 0), 0);
-      const tradeInValue = qd.tradeInInfo?.hasTradeIn ? (q.tradein_value_final || qd.tradeInInfo?.estimatedValue || 0) : 0;
+      const tradeInValue = qd.tradeInInfo?.hasTradeIn 
+        ? (q.tradein_value_final || qd.tradeInInfo?.estimatedValue || 0) 
+        : 0;
       const subtotalBeforeTax = motorSubtotal + accessoriesTotal - tradeInValue;
       const taxAmount = subtotalBeforeTax * 0.13;
       const totalPrice = subtotalBeforeTax + taxAmount;
       
+      // Financing info - extract from qd.financing object
+      const financing = qd.financing || {};
+      const financingTerm = financing.term || q.term_months || 48;
+      const financingRate = financing.rate || 7.99;
+      const monthlyPayment = q.monthly_payment || qd.monthlyPayment || Math.round(totalPrice / financingTerm);
+      
       // Get selected package info
       const selectedPackage = qd.selectedPackage || null;
-      const selectedPackageLabel = selectedPackage?.label || selectedPackage?.id || 'Essential';
-      const selectedPackageCoverageYears = selectedPackage?.coverageYears || 0;
       
       // Build complete PDF data object matching QuoteSummaryPage structure
       const pdfData = {
@@ -263,21 +286,22 @@ const AdminQuoteDetail = () => {
           model: motor.model || motor.display_name || 'Motor',
           hp: motor.horsepower || motor.hp || 0,
           msrp: motorMSRP,
-          base_price: motorMSRP - adminDiscount,
+          base_price: motorMSRP - motorSavings,
           sale_price: motorSubtotal,
-          dealer_price: motorMSRP - adminDiscount,
+          dealer_price: motorMSRP - motorSavings,
+          savings: motorSavings,
           model_year: motor.year || motor.model_year || new Date().getFullYear(),
           category: motor.category || motor.motor_type || 'FourStroke',
           imageUrl: motor.imageUrl || motor.image_url || motor.hero_image_url
         },
         selectedPackage: selectedPackage ? {
           id: selectedPackage.id || 'essential',
-          label: selectedPackageLabel,
-          coverageYears: selectedPackageCoverageYears,
+          label: selectedPackage.label || 'Essential',
+          coverageYears: qd.warrantyConfig?.totalYears || selectedPackage.coverageYears || 7,
           features: selectedPackage.features || []
         } : undefined,
         accessoryBreakdown,
-        ...(qd.tradeInInfo?.hasTradeIn && tradeInValue > 0 && qd.tradeInInfo?.brand ? {
+        ...(qd.tradeInInfo?.hasTradeIn && tradeInValue > 0 ? {
           tradeInValue: tradeInValue,
           tradeInInfo: {
             brand: qd.tradeInInfo.brand,
@@ -289,17 +313,18 @@ const AdminQuoteDetail = () => {
         includesInstallation: qd.purchasePath === 'installed',
         pricing: {
           msrp: motorMSRP,
-          discount: adminDiscount,
+          discount: motorSavings,  // Dealer discount from motor
+          adminDiscount: adminDiscountValue,  // Admin's special discount
           promoValue: promoValue,
           motorSubtotal: motorSubtotal,
           subtotal: subtotalBeforeTax,
           hst: taxAmount,
           totalCashPrice: totalPrice,
-          savings: adminDiscount + promoValue
+          savings: motorSavings + adminDiscountValue + promoValue
         },
-        monthlyPayment: q.monthly_payment || qd.monthlyPayment,
-        financingTerm: q.term_months || qd.financingTerm || 120,
-        financingRate: qd.financingRate || 7.99,
+        monthlyPayment: monthlyPayment,
+        financingTerm: financingTerm,
+        financingRate: financingRate,
         selectedPromoOption: qd.selectedPromoOption,
         selectedPromoValue: qd.selectedPromoValue
       };
