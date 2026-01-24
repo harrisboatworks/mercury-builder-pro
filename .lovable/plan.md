@@ -1,121 +1,239 @@
 
-# Fix Mobile Chat Viewport Issues on iPhone Chrome
+# Comprehensive SEO & Sitemap Improvements
 
-## Problem Summary
+## Overview
 
-When using the chat on iPhone in Chrome, the viewport shifts and requires manual adjustment. Looking at your screenshots, I can see:
-1. Content is getting cut off on the right side
-2. User messages overflow the visible area
-3. The screen scales/zooms unexpectedly when interacting with the chat
+This plan addresses missing meta tags, stale sitemap, and adds new deposit/payment FAQs to the schema. It also introduces a dynamic sitemap generator that automatically includes blog articles.
 
-## Root Causes
+---
 
-1. **Missing explicit width containment** on the chat drawer container
-2. **No viewport lock** when chat is open (iOS browsers allow pinch-zoom and pan when fixed elements don't fully constrain the viewport)
-3. **Message bubbles can overflow** with long content or links
-4. **Keyboard interaction** causes iOS Chrome to resize the viewport unpredictably
-
-## Solution
-
-### File 1: `src/components/chat/InlineChatDrawer.tsx`
-
-**Add viewport locking when chat opens:**
-```typescript
-// Add effect to lock body scroll and viewport when drawer is open
-useEffect(() => {
-  if (isOpen) {
-    // Lock body scroll and prevent viewport shifts
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed';
-    document.body.style.width = '100%';
-    document.body.style.top = `-${window.scrollY}px`;
-  } else {
-    // Restore scroll position when closing
-    const scrollY = document.body.style.top;
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
-    document.body.style.top = '';
-    window.scrollTo(0, parseInt(scrollY || '0') * -1);
-  }
-  
-  return () => {
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-    document.body.style.width = '';
-    document.body.style.top = '';
-  };
-}, [isOpen]);
-```
-
-**Fix drawer container styling (line ~697):**
-```tsx
-className="fixed inset-x-0 z-[75] bg-white rounded-t-2xl border-t border-gray-200 
-  w-full max-w-[100vw] overflow-hidden"
-```
-
-**Fix message bubble overflow (line ~808):**
-```tsx
-className={cn(
-  "max-w-[85%] px-3.5 py-2.5 text-[14px] break-words overflow-hidden",
-  // ... rest of styles
-)}
-```
-
-**Add word-break to message text (line ~817):**
-```tsx
-<p className="whitespace-pre-wrap leading-relaxed font-light break-words overflow-wrap-anywhere">
-```
-
-### File 2: `src/index.css`
-
-**Add iOS-specific chat drawer fixes:**
-```css
-/* iOS Chrome chat drawer fixes */
-@supports (-webkit-touch-callout: none) {
-  .chat-drawer-open {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
-  
-  /* Prevent overscroll bounce when chat is open */
-  .chat-drawer-open body {
-    overscroll-behavior: none;
-  }
-}
-
-/* Ensure chat messages don't cause horizontal overflow */
-.chat-message-content {
-  word-break: break-word;
-  overflow-wrap: anywhere;
-  max-width: 100%;
-}
-```
-
-### File 3: `index.html`
-
-**Update viewport meta for better iOS Chrome behavior:**
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-```
-
-This prevents pinch-zoom which is the main cause of the "adjusting screen" issue. Note: This restricts all zooming on the site, which is a trade-off for stable chat behavior.
-
-## Changes Summary
+## File Changes Summary
 
 | File | Change |
 |------|--------|
-| `InlineChatDrawer.tsx` | Add body scroll lock, explicit width containment, message overflow handling |
-| `src/index.css` | Add iOS-specific overscroll and word-break fixes |
-| `index.html` | Lock viewport scale to prevent zoom-induced layout shifts |
+| `index.html` | Add favicon link, canonical URL, og:url, twitter:url |
+| `src/components/seo/GlobalSEO.tsx` | Add 3 new FAQ items about deposits/payments |
+| `src/utils/generateSitemap.ts` | NEW: Dynamic sitemap generator |
+| `scripts/generate-sitemap.ts` | NEW: Build-time sitemap script |
+| `vite.config.ts` | Add sitemap generation hook |
+| `public/sitemap.xml` | Will be auto-generated with current dates + blog URLs |
 
-## Expected Result
+---
 
-After these changes:
-- Chat drawer stays within viewport bounds
-- No horizontal scrolling or panning required
-- Messages wrap properly without overflow
-- Keyboard interaction doesn't shift the view
-- Consistent experience between Safari and Chrome on iOS
+## 1. Fix `index.html` Meta Tags
+
+### Add Missing Tags
+
+```html
+<!-- After line 18 (apple-touch-icon) -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<!-- Before og:title (line 40) -->
+<link rel="canonical" href="https://quote.harrisboatworks.ca/" />
+
+<!-- After og:image (line 43) -->
+<meta property="og:url" content="https://quote.harrisboatworks.ca/" />
+
+<!-- After twitter:image (line 47) -->
+<meta name="twitter:url" content="https://quote.harrisboatworks.ca/" />
+```
+
+### Result
+- Favicon displays in browser tabs
+- Search engines understand canonical URL
+- Social shares link back to correct URL
+
+---
+
+## 2. Update `GlobalSEO.tsx` Schema FAQs
+
+### Add 3 New FAQ Entries (after existing FAQs)
+
+```typescript
+{
+  "@type": "Question",
+  "name": "How do I reserve a Mercury motor?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You can reserve any Mercury motor with a refundable deposit through our online quote builder. Deposit amounts are based on horsepower: $200 for motors 0-25HP, $500 for 30-115HP, and $1,000 for 150HP and up. The deposit locks in your price and holds the motor until pickup."
+  }
+},
+{
+  "@type": "Question",
+  "name": "What payment methods do you accept for deposits?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Our checkout supports Apple Pay, Google Pay, Link (Stripe one-click), and all major credit cards. Mobile payment options make it quick and easy to secure your motor from your phone."
+  }
+},
+{
+  "@type": "Question",
+  "name": "Are motor deposits refundable?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, all deposits are fully refundable if you change your mind. There are no restocking fees or penalties. The deposit simply holds the motor and locks in your quoted price until you pick it up in person at our Gores Landing location."
+  }
+}
+```
+
+---
+
+## 3. Create Dynamic Sitemap Generator
+
+### New File: `src/utils/generateSitemap.ts`
+
+```typescript
+import { blogArticles, isArticlePublished } from '../data/blogArticles';
+
+const BASE_URL = 'https://quote.harrisboatworks.ca';
+
+interface SitemapEntry {
+  loc: string;
+  lastmod: string;
+  changefreq: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+  priority: number;
+}
+
+// Static pages with their metadata
+const staticPages: SitemapEntry[] = [
+  { loc: '/', lastmod: new Date().toISOString().split('T')[0], changefreq: 'daily', priority: 1.0 },
+  { loc: '/quote/motor-selection', lastmod: new Date().toISOString().split('T')[0], changefreq: 'daily', priority: 0.9 },
+  { loc: '/promotions', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.8 },
+  { loc: '/repower', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.9 },
+  { loc: '/financing-application', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { loc: '/finance-calculator', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.7 },
+  { loc: '/contact', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.6 },
+  { loc: '/about', lastmod: new Date().toISOString().split('T')[0], changefreq: 'monthly', priority: 0.8 },
+  { loc: '/blog', lastmod: new Date().toISOString().split('T')[0], changefreq: 'weekly', priority: 0.8 },
+];
+
+export function generateSitemapXML(): string {
+  const today = new Date().toISOString().split('T')[0];
+  
+  // Get published blog articles
+  const publishedArticles = blogArticles.filter(isArticlePublished);
+  
+  // Convert blog articles to sitemap entries
+  const blogEntries: SitemapEntry[] = publishedArticles.map(article => ({
+    loc: `/blog/${article.slug}`,
+    lastmod: article.dateModified || article.datePublished,
+    changefreq: 'monthly' as const,
+    priority: 0.7
+  }));
+  
+  // Combine all entries
+  const allEntries = [...staticPages, ...blogEntries];
+  
+  // Generate XML
+  const urlEntries = allEntries.map(entry => `  <url>
+    <loc>${BASE_URL}${entry.loc}</loc>
+    <lastmod>${entry.lastmod}</lastmod>
+    <changefreq>${entry.changefreq}</changefreq>
+    <priority>${entry.priority}</priority>
+  </url>`).join('\n');
+  
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urlEntries}
+</urlset>`;
+}
+```
+
+### New File: `scripts/generate-sitemap.ts`
+
+```typescript
+// Build-time script to generate sitemap.xml
+import { writeFileSync } from 'fs';
+import { generateSitemapXML } from '../src/utils/generateSitemap';
+
+const sitemap = generateSitemapXML();
+writeFileSync('public/sitemap.xml', sitemap);
+console.log('Sitemap generated with', sitemap.match(/<url>/g)?.length || 0, 'URLs');
+```
+
+### Update `vite.config.ts`
+
+Add a plugin hook to regenerate sitemap on build:
+
+```typescript
+// Add to plugins array
+{
+  name: 'generate-sitemap',
+  buildStart() {
+    // Import and run sitemap generation
+    import('./src/utils/generateSitemap').then(({ generateSitemapXML }) => {
+      const fs = require('fs');
+      fs.writeFileSync('public/sitemap.xml', generateSitemapXML());
+    });
+  }
+}
+```
+
+---
+
+## 4. Updated Sitemap Output Example
+
+After generation, sitemap.xml will include:
+
+```text
+- / (homepage)
+- /quote/motor-selection
+- /promotions
+- /repower
+- /financing-application
+- /finance-calculator
+- /contact
+- /about
+- /blog (index)
+- /blog/how-to-choose-right-horsepower-boat
+- /blog/mercury-motor-maintenance-seasonal-tips
+- /blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado
+- /blog/boat-repowering-guide-when-to-replace-motor
+- /blog/breaking-in-new-mercury-motor-guide
+- ... (all other published articles)
+```
+
+Each entry uses the article's `dateModified` for accurate `lastmod` values.
+
+---
+
+## Technical Details
+
+### Why Dynamic Sitemap?
+
+- **Automatic blog inclusion**: No manual updates when articles are added
+- **Accurate dates**: Uses actual `dateModified` from article data
+- **Future-proofing**: Respects `publishDate` for scheduled articles (excludes unpublished)
+- **Build-time generation**: No runtime overhead
+
+### Schema FAQ Benefits
+
+Adding deposit/payment FAQs to structured data:
+- **AI Search Visibility**: ChatGPT, Perplexity, Google SGE can surface this info
+- **Rich Results**: Google may show FAQ snippets in search results
+- **Voice Search**: Answers formatted for voice assistant responses
+
+### Files Created/Modified
+
+```text
+MODIFIED:
+├── index.html                    (+4 meta/link tags)
+├── src/components/seo/GlobalSEO.tsx  (+3 FAQ entries)
+└── vite.config.ts                (+sitemap plugin)
+
+NEW:
+├── src/utils/generateSitemap.ts  (sitemap generator)
+└── scripts/generate-sitemap.ts   (build script)
+
+AUTO-GENERATED:
+└── public/sitemap.xml            (now dynamic)
+```
+
+---
+
+## Post-Implementation
+
+1. **Verify favicon** — Check browser tab shows icon
+2. **Test social sharing** — Use Facebook/Twitter debug tools
+3. **Submit sitemap** — Resubmit to Google Search Console
+4. **Test schema** — Use Google Rich Results Test for FAQ visibility
