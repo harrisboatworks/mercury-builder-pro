@@ -46,9 +46,10 @@ export default function SavedQuotePage() {
         const quoteData = quote.quote_data;
         
         if (quoteData) {
-          // Restore all the quote state
-          if (quoteData.selectedMotor) {
-            dispatch({ type: 'SET_MOTOR', payload: quoteData.selectedMotor });
+          // Restore motor (handle both 'motor' and 'selectedMotor' keys)
+          const motorData = quoteData.motor || quoteData.selectedMotor;
+          if (motorData) {
+            dispatch({ type: 'SET_MOTOR', payload: motorData });
           }
           if (quoteData.purchasePath) {
             dispatch({ type: 'SET_PURCHASE_PATH', payload: quoteData.purchasePath });
@@ -68,14 +69,55 @@ export default function SavedQuotePage() {
           if (quoteData.warrantyConfig) {
             dispatch({ type: 'SET_WARRANTY_CONFIG', payload: quoteData.warrantyConfig });
           }
+          if (quoteData.selectedOptions) {
+            dispatch({ type: 'SET_SELECTED_OPTIONS', payload: quoteData.selectedOptions });
+          }
+          if (quoteData.selectedPackage) {
+            dispatch({ type: 'SET_SELECTED_PACKAGE', payload: quoteData.selectedPackage });
+          }
+          if (quoteData.looseMotorBattery) {
+            dispatch({ type: 'SET_LOOSE_MOTOR_BATTERY', payload: quoteData.looseMotorBattery });
+          }
+          
+          // Restore promo selection with full details
           if (quoteData.selectedPromoOption) {
-            dispatch({ type: 'SET_PROMO_OPTION', payload: quoteData.selectedPromoOption });
+            dispatch({ 
+              type: 'SET_PROMO_DETAILS', 
+              payload: {
+                option: quoteData.selectedPromoOption,
+                rate: quoteData.selectedPromoRate,
+                term: quoteData.selectedPromoTerm,
+                value: quoteData.selectedPromoValue
+              }
+            });
+          }
+          
+          // Restore admin fields from quote_data OR direct columns
+          const adminDiscountValue = quoteData.adminDiscount ?? quote.admin_discount ?? 0;
+          const adminNotesValue = quoteData.adminNotes ?? quote.admin_notes ?? '';
+          const customerNotesValue = quoteData.customerNotes ?? quote.customer_notes ?? '';
+          
+          if (adminDiscountValue > 0 || adminNotesValue || customerNotesValue || quoteData.isAdminQuote || quote.is_admin_quote) {
+            dispatch({ 
+              type: 'SET_ADMIN_QUOTE_DATA', 
+              payload: { 
+                adminDiscount: adminDiscountValue,
+                adminNotes: adminNotesValue,
+                customerNotes: customerNotesValue
+              }
+            });
+            
+            // Set admin mode with the quote ID for potential editing
+            if (quoteData.isAdminQuote || quote.is_admin_quote) {
+              dispatch({ 
+                type: 'SET_ADMIN_MODE', 
+                payload: { isAdmin: true, editingQuoteId: quoteId }
+              });
+            }
           }
         }
 
-      // Silent success - navigation provides feedback
-
-      // Navigate to summary page
+        // Navigate to summary page
         navigate('/quote/summary');
       } catch (error) {
         console.error('Error loading saved quote:', error);

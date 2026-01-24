@@ -146,6 +146,17 @@ export interface QuoteData {
   tradeInInfo?: any | null;
   selectedOptions?: SelectedOption[];
   selectedPackage?: SelectedPackage | null;
+  // Admin fields for quote restoration
+  adminDiscount?: number;
+  adminNotes?: string;
+  customerNotes?: string;
+  isAdminQuote?: boolean;
+  // Promo fields for restoration
+  selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
+  selectedPromoRate?: number | null;
+  selectedPromoTerm?: number | null;
+  selectedPromoValue?: string | null;
+  looseMotorBattery?: { wantsBattery: boolean; batteryCost: number } | null;
 }
 
 const QuoteBuilder = () => {

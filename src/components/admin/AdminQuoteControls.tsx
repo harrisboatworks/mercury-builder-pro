@@ -4,11 +4,12 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { ShieldCheck, Save, Loader2 } from 'lucide-react';
+import { ShieldCheck, Save, Loader2, Copy, Check, Link } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import { DEALERPLAN_FEE } from '@/lib/finance';
 
 interface AdminQuoteControlsProps {
   onSave?: () => void;
@@ -27,6 +28,8 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
   const [customerName, setCustomerName] = useState('');
   const [customerEmail, setCustomerEmail] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
+  const [savedQuoteId, setSavedQuoteId] = useState<string | null>(state.editingQuoteId || null);
+  const [linkCopied, setLinkCopied] = useState(false);
 
   // Sync local state with context when context changes
   useEffect(() => {
@@ -61,17 +64,42 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       const quoteData = getQuoteData();
       const motor = state.motor;
       
-      // Calculate pricing
+      // Calculate comprehensive pricing (same logic as ScheduleConsultation)
       const motorMSRP = motor?.msrp || motor?.basePrice || 0;
       const motorSalePrice = motor?.salePrice || motor?.price || motorMSRP;
-      const basePrice = motorSalePrice;
-      const finalPrice = basePrice - adminDiscount;
+      const motorDiscount = motorMSRP - motorSalePrice;
+      
+      // Accessories total
+      const accessoryTotal = state.selectedOptions?.reduce((sum, opt) => sum + (opt.price || 0), 0) || 0;
+      
+      // Trade-in value
+      const tradeInValue = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo?.estimatedValue || 0) : 0;
+      
+      // Calculate subtotal before tax
+      const subtotal = motorSalePrice + accessoryTotal - tradeInValue;
+      const hst = subtotal * 0.13;
+      const totalBeforeDiscount = subtotal + hst + DEALERPLAN_FEE;
+      const finalPrice = Math.max(0, totalBeforeDiscount - adminDiscount);
+      
+      // Enhanced quote data with admin fields
+      const enhancedQuoteData = {
+        ...quoteData,
+        adminDiscount,
+        adminNotes,
+        customerNotes,
+        isAdminQuote: true,
+        selectedPromoOption: state.selectedPromoOption,
+        selectedPromoRate: state.selectedPromoRate,
+        selectedPromoTerm: state.selectedPromoTerm,
+        selectedPromoValue: state.selectedPromoValue,
+        looseMotorBattery: state.looseMotorBattery
+      };
       
       const payload = {
         customer_name: customerName,
         customer_email: customerEmail,
         customer_phone: customerPhone || null,
-        base_price: basePrice,
+        base_price: motorSalePrice,
         final_price: finalPrice,
         deposit_amount: 0,
         loan_amount: finalPrice,
@@ -87,7 +115,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         created_by_admin: user?.id,
         last_modified_by: user?.id,
         last_modified_at: new Date().toISOString(),
-        quote_data: quoteData,
+        quote_data: enhancedQuoteData,
         lead_status: 'scheduled',
         lead_source: 'admin'
       };
@@ -101,21 +129,30 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         
         if (error) throw error;
         
+        setSavedQuoteId(state.editingQuoteId);
         toast({
           title: 'Quote Updated',
           description: 'The quote has been saved successfully.'
         });
       } else {
-        // Create new quote
-        const { error } = await supabase
+        // Create new quote and get the ID
+        const { data, error } = await supabase
           .from('customer_quotes')
-          .insert(payload);
+          .insert(payload)
+          .select('id')
+          .single();
         
         if (error) throw error;
         
+        if (data) {
+          setSavedQuoteId(data.id);
+          // Update context with the new quote ID
+          dispatch({ type: 'SET_ADMIN_MODE', payload: { isAdmin: true, editingQuoteId: data.id } });
+        }
+        
         toast({
           title: 'Quote Saved',
-          description: 'The quote has been created successfully.'
+          description: 'The quote has been created. You can now share the link with the customer.'
         });
       }
       
@@ -129,6 +166,28 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       });
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handleCopyLink = async () => {
+    if (!savedQuoteId) return;
+    
+    const shareUrl = `${window.location.origin}/quote/saved/${savedQuoteId}`;
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setLinkCopied(true);
+      toast({
+        title: 'Link Copied',
+        description: 'The shareable quote link has been copied to your clipboard.'
+      });
+      setTimeout(() => setLinkCopied(false), 3000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+      toast({
+        title: 'Copy Failed',
+        description: 'Please copy the link manually.',
+        variant: 'destructive'
+      });
     }
   };
 
@@ -239,6 +298,40 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
             </>
           )}
         </Button>
+        
+        {/* Share Link Section - shown after save */}
+        {savedQuoteId && (
+          <div className="mt-4 p-3 bg-green-50 dark:bg-green-950/30 border border-green-200 dark:border-green-800 rounded-lg">
+            <div className="flex items-center gap-2 mb-2">
+              <Link className="w-4 h-4 text-green-700 dark:text-green-400" />
+              <p className="text-sm font-medium text-green-800 dark:text-green-300">
+                Quote saved! Share with customer:
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <Input 
+                readOnly 
+                value={`${window.location.origin}/quote/saved/${savedQuoteId}`}
+                className="text-xs bg-white dark:bg-gray-900"
+              />
+              <Button 
+                variant="outline" 
+                size="sm"
+                onClick={handleCopyLink}
+                className="shrink-0"
+              >
+                {linkCopied ? (
+                  <Check className="w-4 h-4 text-green-600" />
+                ) : (
+                  <Copy className="w-4 h-4" />
+                )}
+              </Button>
+            </div>
+            <p className="text-xs text-green-700 dark:text-green-400 mt-2">
+              Customer can view, download PDF, and complete financing from this link.
+            </p>
+          </div>
+        )}
       </div>
     </Card>
   );

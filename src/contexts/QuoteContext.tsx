@@ -540,7 +540,18 @@ export const QuoteProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     fuelTankConfig: state.fuelTankConfig,
     tradeInInfo: state.tradeInInfo,
     selectedOptions: state.selectedOptions,
-    selectedPackage: state.selectedPackage
+    selectedPackage: state.selectedPackage,
+    // Admin fields for restoration
+    adminDiscount: state.adminDiscount,
+    adminNotes: state.adminNotes,
+    customerNotes: state.customerNotes,
+    isAdminQuote: state.isAdminQuote,
+    // Promo fields for restoration
+    selectedPromoOption: state.selectedPromoOption,
+    selectedPromoRate: state.selectedPromoRate,
+    selectedPromoTerm: state.selectedPromoTerm,
+    selectedPromoValue: state.selectedPromoValue,
+    looseMotorBattery: state.looseMotorBattery
   });
 
   const clearQuote = () => {
