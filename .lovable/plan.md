@@ -1,110 +1,79 @@
 
-# Verify and Harden Quote Restoration Flow
+# Fix Shared Quote Links - Add Public Read Access
 
-## Current Status
+## Problem
 
-Based on my analysis, the quote restoration logic **should work correctly**:
+Shared quote links (`/quote/saved/:quoteId`) are not working because RLS policies block access:
+- Admin-created quotes have `user_id = 'admin'` (not a real UUID)
+- No RLS policy allows public/anonymous access to quotes via direct ID lookup
+- The "Quote not found" error appears because the database query fails
 
-1. **Database contains full data** - The `quote_data` JSONB includes motor, trade-in, options, package, promo, and admin fields
-2. **Restoration dispatches are correct** - `RESTORE_QUOTE` + `SET_ADMIN_MODE` + `SET_ADMIN_QUOTE_DATA` 
-3. **localStorage is written synchronously** - Before navigation, all data is saved
-4. **LOAD_FROM_STORAGE handles admin fields** - It spreads the payload and explicitly sets admin fields
+## Solution
 
----
-
-## Potential Issue: State Timing
-
-There may be a subtle race condition:
-- The dispatches run in the current context
-- Navigation happens immediately 
-- The new page mounts a fresh QuoteProvider that reads localStorage
-- The localStorage write might not be visible to the new context immediately
+Add an RLS policy that allows **anyone** to read a quote **if they have the exact UUID**. This is secure because:
+- Quote UUIDs are unguessable (cryptographically random)
+- The link is only shared intentionally by the admin
+- Similar to "unlisted" YouTube videos - public if you have the link
 
 ---
 
-## Improvements to Implement
+## Implementation
 
-### 1. Ensure Complete State in localStorage Save
+### Add New RLS Policy
 
-Update `AdminQuoteDetail.tsx` to include ALL state fields, not just spreading `quote_data`:
+Add a SELECT policy that allows reading quotes by their ID:
 
-```typescript
-const adminState = {
-  // Spread the quote data first (contains motor, options, trade-in, etc.)
-  ...q.quote_data,
-  
-  // Explicitly set critical fields to ensure they're present
-  motor: q.quote_data?.motor || null,
-  selectedOptions: q.quote_data?.selectedOptions || [],
-  selectedPackage: q.quote_data?.selectedPackage || null,
-  selectedPromoOption: q.quote_data?.selectedPromoOption || null,
-  tradeInInfo: q.quote_data?.tradeInInfo || null,
-  purchasePath: q.quote_data?.purchasePath || null,
-  
-  // Admin mode flags
-  isAdminQuote: true,
-  editingQuoteId: q.id,
-  
-  // Admin data from database columns
-  adminDiscount: q.admin_discount || 0,
-  adminNotes: q.admin_notes || '',
-  customerNotes: q.customer_notes || '',
-  customerName: q.customer_name || '',
-  customerEmail: q.customer_email || '',
-  customerPhone: q.customer_phone || '',
-  
-  // Ensure loading is false
-  isLoading: false
-};
+```sql
+CREATE POLICY "Anyone can read quotes with direct link"
+ON public.customer_quotes
+FOR SELECT
+USING (true);
 ```
 
-### 2. Add Console Logging for Debugging
+**Alternative (more restrictive):** Only allow public access for admin-created quotes:
 
-Add logging to track the restoration flow:
-
-```typescript
-// In AdminQuoteDetail.tsx handleEditQuote
-console.log('🔧 Admin Edit: Restoring quote', {
-  quoteId: q.id,
-  hasMotor: !!q.quote_data?.motor,
-  hasPackage: !!q.quote_data?.selectedPackage,
-  hasPromo: !!q.quote_data?.selectedPromoOption
-});
-```
-
-### 3. Verify the Summary Page Waits for Loading
-
-The Summary page should check `state.isLoading` before redirecting:
-
-```typescript
-useEffect(() => {
-  if (isMounted && !state.isLoading) {
-    if (!state.motor) {
-      navigate('/quote/motor-selection');
-    } // ... rest of checks
-  }
-}, [isMounted, state.isLoading, state.motor, ...]);
+```sql
+CREATE POLICY "Anyone can read admin-created quotes with direct link"
+ON public.customer_quotes
+FOR SELECT
+USING (is_admin_quote = true);
 ```
 
 ---
 
-## Files to Modify
+## Trade-offs
 
-| File | Changes |
-|------|---------|
-| `src/pages/AdminQuoteDetail.tsx` | Ensure complete state in localStorage save with explicit field mapping |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Add `state.isLoading` check to redirect guard |
+| Option | Pros | Cons |
+|--------|------|------|
+| **Allow all SELECT** | Simple, all share links work | Customer-created quotes also accessible (but UUID is unguessable) |
+| **Only admin quotes** | More restrictive | Need to ensure `is_admin_quote` is set correctly |
+
+---
+
+## Recommendation
+
+Use the **admin quotes only** policy for better security hygiene:
+
+```sql
+-- Allow anyone to view admin-created quotes (shared links)
+CREATE POLICY "Public read for admin shared quotes"
+ON public.customer_quotes
+FOR SELECT
+TO anon, authenticated
+USING (is_admin_quote = true);
+```
+
+This ensures:
+1. ✅ Admin-shared links work for anyone (customers, prospects)
+2. ✅ Customer quotes remain private (only visible to the user who created them)
+3. ✅ Admins can still see all quotes via their existing policy
 
 ---
 
 ## Expected Result
 
-After clicking "Edit Full Quote":
-1. Navigate to Summary page
-2. See the full quote with:
-   - Motor details and pricing
-   - Selected options/accessories
-   - Trade-in value (if any)
-   - Selected promo and package
-   - Admin Controls panel with customer info pre-filled
-3. Admin can make any changes and save/update the quote
+After applying the policy:
+1. Admin saves a quote and copies the share link
+2. Anyone with the link can open it
+3. Quote data loads and redirects to the Summary page
+4. Customer sees their configured quote with all details
