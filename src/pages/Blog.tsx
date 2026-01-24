@@ -15,39 +15,45 @@ export default function Blog() {
       <LuxuryHeader />
       
       <main className="container mx-auto px-4 py-12 md:py-16">
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-light text-foreground mb-4">
+        {/* Page Header */}
+        <header className="max-w-3xl mx-auto text-center mb-12">
+          <h1 id="blog-title" className="text-3xl md:text-4xl font-light text-foreground mb-4">
             Boat Motor Guides & Tips
           </h1>
           <p className="text-lg text-muted-foreground font-light">
             Expert advice from Ontario's trusted Mercury dealer since 1965. 
             Learn how to choose, maintain, and get the most from your outboard motor.
           </p>
-        </div>
+        </header>
 
         {/* Featured Article */}
         {publishedArticles.length > 0 && (
-          <div className="mb-12">
-            <BlogCard article={publishedArticles[0]} />
-          </div>
+          <section aria-label="Featured Article" className="mb-12">
+            <article>
+              <BlogCard article={publishedArticles[0]} />
+            </article>
+          </section>
         )}
 
         {/* Article Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {publishedArticles.slice(1).map(article => (
-            <BlogCard key={article.slug} article={article} />
-          ))}
-        </div>
+        <section aria-label="All Articles">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {publishedArticles.slice(1).map(article => (
+              <article key={article.slug}>
+                <BlogCard article={article} />
+              </article>
+            ))}
+          </div>
+        </section>
 
         {/* Subscribe Section */}
-        <div className="mt-16">
+        <aside aria-label="Newsletter Subscription" className="mt-16">
           <BlogSubscribeForm />
-        </div>
+        </aside>
 
         {/* CTA Section */}
-        <div className="mt-12 text-center bg-muted/30 rounded-2xl p-8 md:p-12">
-          <h2 className="text-2xl font-light text-foreground mb-3">
+        <section aria-labelledby="cta-heading" className="mt-12 text-center bg-muted/30 rounded-2xl p-8 md:p-12">
+          <h2 id="cta-heading" className="text-2xl font-light text-foreground mb-3">
             Ready to Find Your Motor?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
@@ -60,7 +66,7 @@ export default function Blog() {
           >
             Browse Motors
           </Link>
-        </div>
+        </section>
       </main>
       
       <SiteFooter />
