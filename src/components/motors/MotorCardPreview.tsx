@@ -338,9 +338,64 @@ export default function MotorCardPreview({
 
   const monthlyPayment = calculateMonthlyPayment();
 
+  // Generate Product schema for SEO
+  const getProductSchema = () => {
+    if (!motor) return null;
+    
+    const displayName = formatMotorDisplayName(title);
+    const priceValue = price || msrp;
+    const imageUrlFull = imageUrl?.startsWith('/') 
+      ? `https://quote.harrisboatworks.ca${imageUrl}` 
+      : imageUrl;
+    
+    return {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": displayName,
+      "description": description || `${displayName} outboard motor - Mercury Marine`,
+      "image": imageUrlFull || "https://quote.harrisboatworks.ca/lovable-uploads/logo-dark.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "Mercury Marine"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Mercury Marine"
+      },
+      "category": "Outboard Motors",
+      "sku": motor.id,
+      "mpn": motor.model || title,
+      ...(priceValue && {
+        "offers": {
+          "@type": "Offer",
+          "url": `https://quote.harrisboatworks.ca/quote/motor-selection`,
+          "priceCurrency": "CAD",
+          "price": priceValue,
+          "availability": inStock 
+            ? "https://schema.org/InStock" 
+            : "https://schema.org/PreOrder",
+          "seller": {
+            "@type": "Organization",
+            "name": "Harris Boat Works",
+            "url": "https://quote.harrisboatworks.ca"
+          }
+        }
+      })
+    };
+  };
+
+  const productSchema = getProductSchema();
+
   return (
     <>
-      <div 
+      {/* Product Schema for SEO */}
+      {productSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+        />
+      )}
+      <div
         className="group bg-white rounded-2xl border border-gray-100/80 overflow-hidden cursor-pointer touch-action-manipulation
           transition-all duration-500 ease-out
           hover:shadow-[0_25px_80px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.03)] 
