@@ -6,6 +6,7 @@ import { CheckCircle, Download, Home, Phone, Mail, Clock, Package, Wrench, Truck
 import { supabase } from "@/integrations/supabase/client";
 import { useHapticFeedback } from "@/hooks/useHapticFeedback";
 import confetti from "canvas-confetti";
+import { COMPANY_INFO } from "@/lib/companyInfo";
 
 const timelineSteps = [
   { icon: CheckCircle, label: "Payment Confirmed", description: "Your payment has been processed", complete: true },
@@ -226,13 +227,13 @@ export default function PaymentSuccess() {
           <div className="text-center pt-4 border-t border-border">
             <p className="text-sm text-muted-foreground mb-2">Questions about your order?</p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <a href="tel:+17058876568" className="flex items-center gap-1 text-primary hover:underline">
+              <a href={`tel:${COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-1 text-primary hover:underline">
                 <Phone className="h-4 w-4" />
-                (705) 887-6568
+                {COMPANY_INFO.contact.phone}
               </a>
-              <a href="mailto:info@harrisboatworks.com" className="flex items-center gap-1 text-primary hover:underline">
+              <a href={`mailto:${COMPANY_INFO.contact.email}`} className="flex items-center gap-1 text-primary hover:underline">
                 <Mail className="h-4 w-4" />
-                info@harrisboatworks.com
+                {COMPANY_INFO.contact.email}
               </a>
             </div>
           </div>
