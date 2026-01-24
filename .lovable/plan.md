@@ -1,124 +1,86 @@
 
-# Add Quote Change Log to Admin Panel
+# Fix Motor Info Not Carrying Over to Financing Application
 
-## Overview
+## The Problem
 
-Create an audit trail that tracks all changes made to quotes by admins. Every time a quote is saved or updated, a log entry will be created showing what changed, who made the change, and when.
+When clicking "Apply for Financing" from a shared quote link, the motor information doesn't appear in the financing application form. The customer sees an empty motor field instead of their selected motor details.
 
----
+## Root Cause
 
-## Database Design
+The `FinancingApplication.tsx` component has **inconsistent key names** when trying to read motor data from different sources:
 
-### New Table: `quote_change_log`
+| Data Source | Key Used in Source | Key Expected by FinancingApplication |
+|-------------|-------------------|-------------------------------------|
+| QuoteContext / localStorage | `motor` | ✅ `motor` (lines 279-293) |
+| Database quote_state (via location.state) | `motor` | ❌ `selectedMotor` (lines 164-213) |
 
-```text
-+-------------------+------------------+--------------------------------+
-| Column            | Type             | Purpose                        |
-+-------------------+------------------+--------------------------------+
-| id                | uuid             | Primary key                    |
-| quote_id          | uuid             | Link to customer_quotes table  |
-| changed_by        | uuid             | Admin user who made the change |
-| change_type       | text             | Type: created, updated, status |
-| changes           | jsonb            | Before/after values            |
-| notes             | text             | Optional change notes          |
-| created_at        | timestamptz      | When the change was made       |
-+-------------------+------------------+--------------------------------+
-```
+When a user views a shared quote via `SavedQuotePage.tsx` and clicks "Apply for Financing":
+1. The quote data is saved with the key `motor`
+2. `FinancingApplication.tsx` line 168-169 looks for `restoredQuoteState.selectedMotor?.msrp` which returns `undefined`
+3. Line 207 falls back to `restoredQuoteState.selectedMotor?.model || 'Motor'` → displays just "Motor"
 
-### Changes JSONB Structure
+## Solution
 
-```json
-{
-  "admin_discount": { "old": 0, "new": 500 },
-  "admin_notes": { "old": "", "new": "Customer requested additional discount" },
-  "lead_status": { "old": "scheduled", "new": "contacted" }
-}
-```
+Fix the key mismatch in `FinancingApplication.tsx` to accept **both** `motor` and `selectedMotor` keys, just like `SavedQuotePage.tsx` already does.
 
 ---
 
 ## Implementation
 
-### 1. Database Migration
+### File: `src/pages/FinancingApplication.tsx`
 
-Create a new table with proper RLS policies:
+Update lines 164-213 to first resolve the motor data from either key:
 
-- Only admins can read/write to this table
-- Foreign key link to `customer_quotes`
-- Index on `quote_id` for fast lookups
-
-### 2. New Component: `QuoteChangeLog`
-
-Similar to the existing `StatusHistorySection` for financing applications:
-
-- Fetches change history for a specific quote
-- Displays timeline with admin name, date, and changed fields
-- Shows old vs new values with visual differentiation
-- Color-coded by change type (create = green, update = blue, status = yellow)
-
-### 3. Update Save Functions
-
-Modify the two update locations to log changes:
-
-| File | Function | Changes |
-|------|----------|---------|
-| `AdminQuoteDetail.tsx` | `handleSaveChanges` | Log discount/notes updates |
-| `AdminQuoteControls.tsx` | `handleSaveQuote` | Log full quote creates/updates |
-
-### 4. UI Integration
-
-Add the change log section to the `AdminQuoteDetail.tsx` page, positioned below the "Admin Controls" card.
-
----
-
-## Files to Create/Modify
-
-| File | Action | Description |
-|------|--------|-------------|
-| `supabase/migrations/xxx_quote_change_log.sql` | Create | New table with RLS |
-| `src/components/admin/QuoteChangeLog.tsx` | Create | Timeline UI component |
-| `src/pages/AdminQuoteDetail.tsx` | Modify | Add change log section, update save logic |
-| `src/components/admin/AdminQuoteControls.tsx` | Modify | Log changes on save/update |
-
----
-
-## What Gets Logged
-
-| Field | Tracked | Display Format |
-|-------|---------|----------------|
-| Quote created | Yes | "Quote created" (green) |
-| Admin discount changed | Yes | "$0 → $500" |
-| Admin notes changed | Yes | Shows new value |
-| Customer notes changed | Yes | Shows new value |
-| Lead status changed | Yes | Badge with old → new |
-| Customer info changed | Yes | Name, email, phone |
-| Motor/package edited | Yes | "Full quote updated" summary |
-
----
-
-## Visual Design
-
-The change log will display as a vertical timeline:
-
-```text
-┌─────────────────────────────────────────────┐
-│ Change Log                                  │
-├─────────────────────────────────────────────┤
-│ ● Admin Discount Updated                    │
-│   $0 → $700                                 │
-│   📅 Jan 23, 2026 9:15 PM  👤 John Doe     │
-├─────────────────────────────────────────────┤
-│ ● Quote Created                             │
-│   Initial quote for Mercury 75HP            │
-│   📅 Jan 23, 2026 3:30 PM  👤 John Doe     │
-└─────────────────────────────────────────────┘
+```typescript
+if (savedQuoteIdParam && restoredQuoteState) {
+  console.log('Restoring full quote state from database:', restoredQuoteState);
+  
+  // Handle both 'motor' and 'selectedMotor' keys (consistent with SavedQuotePage.tsx)
+  const motorData = restoredQuoteState.motor || restoredQuoteState.selectedMotor;
+  
+  // Calculate accurate total from saved state
+  const motorMSRP = parseFloat(motorData?.msrp) || parseFloat(motorData?.basePrice) || 0;
+  const motorDiscount = parseFloat(motorData?.dealer_discount) || 
+                        (motorMSRP - (parseFloat(motorData?.salePrice) || parseFloat(motorData?.price) || motorMSRP));
+  
+  // ... rest of calculation logic uses motorData instead of restoredQuoteState.selectedMotor
+  
+  financingDispatch({
+    type: 'SET_PURCHASE_DETAILS',
+    payload: {
+      motorModel: motorData?.model || 'Motor',  // Now correctly reads motor.model
+      // ... rest unchanged
+    }
+  });
+}
 ```
 
+### Changes Summary
+
+| Line | Current Code | Fixed Code |
+|------|-------------|------------|
+| 168 | `restoredQuoteState.selectedMotor?.msrp` | `motorData?.msrp \|\| motorData?.basePrice` |
+| 169 | `restoredQuoteState.selectedMotor?.dealer_discount` | `motorData?.dealer_discount` |
+| 207 | `restoredQuoteState.selectedMotor?.model \|\| 'Motor'` | `motorData?.model \|\| 'Motor'` |
+| 218 | `restoredQuoteState.selectedMotor?.model` | `motorData?.model` |
+
 ---
 
-## Security
+## Additional Improvements
 
-- RLS enabled on `quote_change_log` table
-- Only authenticated admins can read/insert logs
-- Uses `has_role()` function for permission checks
-- Logs capture `auth.uid()` for audit accountability
+While fixing this, also address these related issues:
+
+1. **MSRP Field Names**: The motor object uses `msrp` or `basePrice` depending on source. Handle both.
+
+2. **Price Field Names**: Handle `salePrice`, `price`, or fallback to MSRP.
+
+3. **Package Name Recovery**: Extract package name from `restoredQuoteState.selectedPackage?.label` when `financingAmount` wrapper is missing.
+
+---
+
+## Expected Result
+
+After this fix:
+- Shared quote → Summary → Apply for Financing will display the correct motor model (e.g., "Mercury 5HP MH 4-Stroke (Essential)")
+- The price will be correctly calculated with all accessories, tax, and fees
+- Promo details will carry over for accurate rate display
