@@ -190,6 +190,30 @@ export function GlobalSEO() {
               "@type": "Answer",
               "text": "We serve boaters throughout Central Ontario including Peterborough, Cobourg, Port Hope, Lindsay, and the Kawarthas. We're located on Rice Lake in Gores Landing, easily accessible from the GTA."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I reserve a Mercury motor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can reserve any Mercury motor with a refundable deposit through our online quote builder. Deposit amounts are based on horsepower: $200 for motors 0-25HP, $500 for 30-115HP, and $1,000 for 150HP and up. The deposit locks in your price and holds the motor until pickup."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What payment methods do you accept for deposits?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our checkout supports Apple Pay, Google Pay, Link (Stripe one-click), and all major credit cards. Mobile payment options make it quick and easy to secure your motor from your phone."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are motor deposits refundable?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, all deposits are fully refundable if you change your mind. There are no restocking fees or penalties. The deposit simply holds the motor and locks in your quoted price until you pick it up in person at our Gores Landing location."
+            }
           }
         ]
       }

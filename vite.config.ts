@@ -1,8 +1,27 @@
-import { defineConfig } from "vite";
+import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { VitePWA } from "vite-plugin-pwa";
+import { writeFileSync } from "fs";
+
+// Sitemap generation plugin
+function sitemapPlugin(): Plugin {
+  return {
+    name: 'generate-sitemap',
+    async buildStart() {
+      try {
+        const { generateSitemapXML } = await import('./src/utils/generateSitemap');
+        const sitemap = generateSitemapXML();
+        writeFileSync('public/sitemap.xml', sitemap);
+        const urlCount = (sitemap.match(/<url>/g) || []).length;
+        console.log(`✓ Sitemap generated with ${urlCount} URLs`);
+      } catch (error) {
+        console.warn('Sitemap generation skipped:', error);
+      }
+    }
+  };
+}
 
 export default defineConfig(({ mode }) => ({
   server: {
@@ -12,6 +31,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === 'development' && componentTagger(),
+    mode === 'production' && sitemapPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'assets/**/*'],
