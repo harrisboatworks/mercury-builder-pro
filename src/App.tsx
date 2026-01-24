@@ -182,6 +182,14 @@ function AnimatedRoutes() {
           }
         />
         <Route
+          path="/admin"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <Navigate to="/admin/quotes" replace />
+            </SecureRoute>
+          }
+        />
+        <Route
           path="/admin/quotes"
           element={
             <SecureRoute requireAdmin={true}>
