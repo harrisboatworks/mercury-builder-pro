@@ -1,56 +1,179 @@
 
-# Use Custom Domain for Shared Quote Links
 
-## Problem
+# Add PDF Download, Share Link & Promo Display to Admin Quote Detail
 
-When copying a quote share link from the admin panel, it uses `window.location.origin` - which means it generates a link to whatever domain you're currently on (e.g., the Lovable preview URL). You want it to always use your public domain: `quote.harrisboatworks.ca`
+## Overview
 
----
-
-## Solution
-
-1. **Add environment variable** for your public site URL
-2. **Update AdminQuoteControls** to use the `SITE_URL` constant instead of `window.location.origin`
+Enhance the `AdminQuoteDetail.tsx` page to include:
+1. **PDF Download Button** - Generate and download the quote PDF directly from the detail view
+2. **Share Link Section** - Copy the public quote link to share with customers  
+3. **Promo Information Display** - Show which promotion was applied and when it expires
 
 ---
 
-## Implementation
+## Current State
 
-### 1. Add Environment Variable
+The `AdminQuoteDetail.tsx` page currently shows:
+- Customer info, trade-in details, financial summary
+- Admin controls (discount, notes)
+- "Edit Full Quote" button
 
-Add to `.env`:
-```
-VITE_SITE_URL=https://quote.harrisboatworks.ca
-```
-
-### 2. Update AdminQuoteControls.tsx
-
-Import and use the SITE_URL:
-
-```typescript
-import { SITE_URL } from "@/lib/site";
-
-// In handleCopyLink function (line 182):
-const shareUrl = `${SITE_URL}/quote/saved/${savedQuoteId}`;
-
-// In the Input display (line 321):
-value={`${SITE_URL}/quote/saved/${savedQuoteId}`}
-```
+**Missing features:**
+- No way to download PDF from this screen
+- No share link to copy
+- No promotion details displayed
 
 ---
 
-## Files to Modify
+## Implementation Plan
+
+### 1. Add New "Sharing & Actions" Card
+
+Create a new card below the existing grid that contains:
+- **Download PDF** button
+- **Copy Share Link** with the public URL
+- Loading states for PDF generation
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│  📄 Sharing & Actions                                         │
+├──────────────────────────────────────────────────────────────┤
+│  [Download PDF]              [Copy Link]                      │
+│                                                              │
+│  https://quote.harrisboatworks.ca/quote/saved/{id}           │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### 2. Add "Applied Promotion" Card
+
+Display the promotion details extracted from `quote_data`:
+- Promotion type (Rebate, Financing, or No Payments)
+- Promotion value (e.g., "$500 Rebate" or "2.99% APR")
+- Expiration date from database
+
+```text
+┌──────────────────────────────────────────────────────────────┐
+│  🎁 Applied Promotion                                         │
+├──────────────────────────────────────────────────────────────┤
+│  Mercury GET 7 + Choose One                                   │
+│  Selection: Factory Rebate - $500                             │
+│  Warranty: 7 Years (3 Standard + 4 Bonus)                     │
+│  Offer Expires: March 31, 2026                                │
+└──────────────────────────────────────────────────────────────┘
+```
+
+### 3. PDF Generation Logic
+
+Reuse the existing `generateQuotePDF` function from `src/lib/react-pdf-generator.tsx`:
+
+1. Extract motor data, pricing, and promo details from `quote_data`
+2. Build the PDF data object (same structure as QuoteSummaryPage)
+3. Generate blob URL and trigger download
+4. Handle loading and error states
+
+---
+
+## Technical Details
+
+### Files to Modify
 
 | File | Changes |
 |------|---------|
-| `.env` | Add `VITE_SITE_URL=https://quote.harrisboatworks.ca` |
-| `src/components/admin/AdminQuoteControls.tsx` | Import `SITE_URL` and use it instead of `window.location.origin` |
+| `src/pages/AdminQuoteDetail.tsx` | Add PDF download, share link, and promo display sections |
+
+### New Imports Required
+
+```typescript
+import { Download, Link, Copy, Check, Gift, Calendar } from 'lucide-react';
+import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { SITE_URL } from '@/lib/site';
+```
+
+### New State Variables
+
+```typescript
+const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+const [linkCopied, setLinkCopied] = useState(false);
+```
+
+### PDF Download Handler
+
+The handler will:
+1. Set loading state
+2. Extract data from `q.quote_data`
+3. Build PDF data object with motor, pricing, promo info
+4. Call `generateQuotePDF()` and `downloadPDF()`
+5. Show success/error toast
+
+### Share Link Handler
+
+Copy the shareable URL to clipboard:
+```typescript
+const shareUrl = `${SITE_URL}/quote/saved/${q.id}`;
+await navigator.clipboard.writeText(shareUrl);
+```
+
+### Promo Display Logic
+
+Extract from `q.quote_data`:
+- `selectedPromoOption`: 'no_payments' | 'special_financing' | 'cash_rebate'
+- `selectedPromoValue`: Display string (e.g., "$500")
+
+Use `useActivePromotions()` hook to get:
+- `end_date` for expiration display
+- `warranty_extra_years` for warranty total
+
+### Helper Function for Promo Label
+
+```typescript
+const getPromoLabel = (option: string | null): string => {
+  switch (option) {
+    case 'no_payments': return '6 Months Deferred Payments';
+    case 'special_financing': return 'Special Financing Rate';
+    case 'cash_rebate': return 'Factory Rebate';
+    default: return 'Standard Warranty';
+  }
+};
+```
+
+---
+
+## UI Layout (Updated Grid)
+
+```text
+┌─────────────────────────────┐  ┌─────────────────────────────┐
+│  Customer                   │  │  Trade-In                   │
+│  Name: Tony Bowen           │  │  Year: 2022                 │
+│  Email: tony@example.com    │  │  Brand: Mercury             │
+│  Phone: 705-868-3194        │  │  HP: 9.9                    │
+│  Date: 1/23/2026            │  │  Value: $1,550              │
+└─────────────────────────────┘  └─────────────────────────────┘
+
+┌─────────────────────────────┐  ┌─────────────────────────────┐
+│  Financial Summary          │  │  Admin Controls             │
+│  Base price: $5,572         │  │  Special Discount: $700     │
+│  Admin discount: -$700      │  │  Internal Notes: None       │
+│  Final price: $4,144        │  │  Customer Notes: ...        │
+└─────────────────────────────┘  └─────────────────────────────┘
+
+┌─────────────────────────────┐  ┌─────────────────────────────┐
+│  🎁 Applied Promotion       │  │  📄 Share & Download        │
+│  Mercury GET 7 + Choose One │  │  [📥 Download PDF]          │
+│  ✓ Factory Rebate: $500     │  │  [🔗 Copy Link]             │
+│  ✓ 7-Year Warranty          │  │                             │
+│  ⏰ Expires: Mar 31, 2026   │  │  Link: quote.harris.../123  │
+└─────────────────────────────┘  └─────────────────────────────┘
+```
 
 ---
 
 ## Expected Result
 
-1. Admin creates/saves a quote
-2. Clicks "Copy Link"  
-3. Link copied is: `https://quote.harrisboatworks.ca/quote/saved/{uuid}`
-4. Customer clicks link → lands on your public site with the quote loaded
+After implementation:
+1. Admin opens quote detail page
+2. Sees promotion details with expiration date
+3. Can click "Download PDF" to generate and download the quote
+4. Can click "Copy Link" to get the shareable customer URL
+5. All data matches what was saved in the quote
+
