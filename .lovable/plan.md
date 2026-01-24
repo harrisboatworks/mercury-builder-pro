@@ -1,179 +1,164 @@
 
+# Fix Admin PDF to Match Customer Quote PDF
 
-# Add PDF Download, Share Link & Promo Display to Admin Quote Detail
+## Problem Identified
 
-## Overview
+Comparing the two PDFs reveals the admin-generated version is missing key content:
 
-Enhance the `AdminQuoteDetail.tsx` page to include:
-1. **PDF Download Button** - Generate and download the quote PDF directly from the detail view
-2. **Share Link Section** - Copy the public quote link to share with customers  
-3. **Promo Information Display** - Show which promotion was applied and when it expires
+| Element | Customer PDF | Admin PDF |
+|---------|-------------|-----------|
+| Dealer Discount | -$508.00 (motor's built-in savings) | -$700.00 (using admin discount incorrectly) |
+| Promo Rebate Line | "Mercury GET 7 + $250 Rebate" line | Missing |
+| Accessories Section | Shows "Clamp-On Installation $0.00" | Missing (empty array not being used) |
+| Header Monthly Payment | "$4,262.36 or $113/month*" | Just total price |
+| GET 7 Promo Box | Full callout with 7-Year warranty | Missing |
+| Financing Section | "$113/month over 48 months at 8.99% APR" | Missing |
 
----
+## Root Cause
 
-## Current State
+The admin's `handleDownloadPDF` function is misinterpreting the saved `quote_data`:
 
-The `AdminQuoteDetail.tsx` page currently shows:
-- Customer info, trade-in details, financial summary
-- Admin controls (discount, notes)
-- "Edit Full Quote" button
+1. **Wrong discount source**: Using `q.admin_discount` as dealer discount, but should use motor's `savings` field
+2. **Missing promo value**: Not extracting `selectedPromoValue` correctly for the rebate amount
+3. **Empty accessories**: Accessories array exists but may not be rendering
+4. **Missing financing data**: Monthly payment exists in `qd.financing` but not being extracted properly
 
-**Missing features:**
-- No way to download PDF from this screen
-- No share link to copy
-- No promotion details displayed
+## Data Available in quote_data
 
----
-
-## Implementation Plan
-
-### 1. Add New "Sharing & Actions" Card
-
-Create a new card below the existing grid that contains:
-- **Download PDF** button
-- **Copy Share Link** with the public URL
-- Loading states for PDF generation
-
-```text
-┌──────────────────────────────────────────────────────────────┐
-│  📄 Sharing & Actions                                         │
-├──────────────────────────────────────────────────────────────┤
-│  [Download PDF]              [Copy Link]                      │
-│                                                              │
-│  https://quote.harrisboatworks.ca/quote/saved/{id}           │
-└──────────────────────────────────────────────────────────────┘
-```
-
-### 2. Add "Applied Promotion" Card
-
-Display the promotion details extracted from `quote_data`:
-- Promotion type (Rebate, Financing, or No Payments)
-- Promotion value (e.g., "$500 Rebate" or "2.99% APR")
-- Expiration date from database
-
-```text
-┌──────────────────────────────────────────────────────────────┐
-│  🎁 Applied Promotion                                         │
-├──────────────────────────────────────────────────────────────┤
-│  Mercury GET 7 + Choose One                                   │
-│  Selection: Factory Rebate - $500                             │
-│  Warranty: 7 Years (3 Standard + 4 Bonus)                     │
-│  Offer Expires: March 31, 2026                                │
-└──────────────────────────────────────────────────────────────┘
-```
-
-### 3. PDF Generation Logic
-
-Reuse the existing `generateQuotePDF` function from `src/lib/react-pdf-generator.tsx`:
-
-1. Extract motor data, pricing, and promo details from `quote_data`
-2. Build the PDF data object (same structure as QuoteSummaryPage)
-3. Generate blob URL and trigger download
-4. Handle loading and error states
+The saved quote has all the necessary data:
+- `motor.savings`: $508 (dealer discount)
+- `adminDiscount`: $700 (special admin discount - separate line)
+- `selectedPromoOption`: "cash_rebate"
+- `selectedPromoValue`: "$250 rebate"
+- `financing.rate`: 7.99
+- `financing.term`: 48
+- `purchasePath`: "loose" (affects accessories)
+- `tradeInInfo.estimatedValue`: $1550
 
 ---
 
-## Technical Details
+## Implementation
 
-### Files to Modify
+### Fix AdminQuoteDetail.tsx `handleDownloadPDF`
 
-| File | Changes |
-|------|---------|
-| `src/pages/AdminQuoteDetail.tsx` | Add PDF download, share link, and promo display sections |
-
-### New Imports Required
+Rewrite the data extraction to properly map all fields:
 
 ```typescript
-import { Download, Link, Copy, Check, Gift, Calendar } from 'lucide-react';
-import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
-import { useActivePromotions } from '@/hooks/useActivePromotions';
-import { SITE_URL } from '@/lib/site';
-```
-
-### New State Variables
-
-```typescript
-const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
-const [linkCopied, setLinkCopied] = useState(false);
-```
-
-### PDF Download Handler
-
-The handler will:
-1. Set loading state
-2. Extract data from `q.quote_data`
-3. Build PDF data object with motor, pricing, promo info
-4. Call `generateQuotePDF()` and `downloadPDF()`
-5. Show success/error toast
-
-### Share Link Handler
-
-Copy the shareable URL to clipboard:
-```typescript
-const shareUrl = `${SITE_URL}/quote/saved/${q.id}`;
-await navigator.clipboard.writeText(shareUrl);
-```
-
-### Promo Display Logic
-
-Extract from `q.quote_data`:
-- `selectedPromoOption`: 'no_payments' | 'special_financing' | 'cash_rebate'
-- `selectedPromoValue`: Display string (e.g., "$500")
-
-Use `useActivePromotions()` hook to get:
-- `end_date` for expiration display
-- `warranty_extra_years` for warranty total
-
-### Helper Function for Promo Label
-
-```typescript
-const getPromoLabel = (option: string | null): string => {
-  switch (option) {
-    case 'no_payments': return '6 Months Deferred Payments';
-    case 'special_financing': return 'Special Financing Rate';
-    case 'cash_rebate': return 'Factory Rebate';
-    default: return 'Standard Warranty';
+const handleDownloadPDF = async () => {
+  // ... existing validation ...
+  
+  const qd = q.quote_data;
+  const motor = qd.motor || {};
+  
+  // Motor pricing - use motor's built-in savings as dealer discount
+  const motorMSRP = motor.msrp || motor.originalPrice || q.base_price || 0;
+  const motorSavings = motor.savings || 0;  // Built-in dealer discount
+  const adminDiscount = q.admin_discount || qd.adminDiscount || 0;  // Admin's special discount
+  
+  // Promo rebate - parse the selectedPromoValue (e.g., "$250 rebate" -> 250)
+  const promoValueStr = qd.selectedPromoValue || '';
+  const promoValue = parseInt(promoValueStr.replace(/[^0-9]/g, '')) || 0;
+  
+  // Motor subtotal after all discounts
+  const motorSubtotal = motorMSRP - motorSavings - adminDiscount - promoValue;
+  
+  // Accessories - handle loose motor path
+  let accessoryBreakdown = qd.accessoryBreakdown || qd.selectedOptions || [];
+  
+  // For loose motor path, add "Clamp-On Installation" if empty
+  if (qd.purchasePath === 'loose' && accessoryBreakdown.length === 0) {
+    accessoryBreakdown = [{
+      name: 'Clamp-On Installation',
+      price: 0,
+      description: 'DIY-friendly mounting system (no installation labor required)'
+    }];
   }
+  
+  // Calculate totals
+  const accessoriesTotal = accessoryBreakdown.reduce((sum, a) => sum + (a.price || 0), 0);
+  const tradeInValue = qd.tradeInInfo?.hasTradeIn ? 
+    (q.tradein_value_final || qd.tradeInInfo?.estimatedValue || 0) : 0;
+  const subtotalBeforeTax = motorSubtotal + accessoriesTotal - tradeInValue;
+  const taxAmount = subtotalBeforeTax * 0.13;
+  const totalPrice = subtotalBeforeTax + taxAmount;
+  
+  // Financing info - extract from qd.financing object
+  const financing = qd.financing || {};
+  const financingTerm = financing.term || q.term_months || 48;
+  const financingRate = financing.rate || 7.99;
+  const monthlyPayment = q.monthly_payment || qd.monthlyPayment || 
+    Math.round(totalPrice / financingTerm);
+  
+  // Build PDF data with correct structure
+  const pdfData = {
+    quoteNumber: `HBW-${q.id.slice(0, 6).toUpperCase()}`,
+    customerName: q.customer_name || 'Valued Customer',
+    customerEmail: q.customer_email || '',
+    customerPhone: q.customer_phone || '',
+    motor: {
+      model: motor.model || motor.display_name || 'Motor',
+      hp: motor.hp || motor.horsepower || 0,
+      msrp: motorMSRP,
+      model_year: motor.year || 2025,
+      category: motor.category || 'FourStroke'
+    },
+    selectedPackage: qd.selectedPackage ? {
+      id: qd.selectedPackage.id || 'essential',
+      label: qd.selectedPackage.label || 'Essential',
+      coverageYears: qd.warrantyConfig?.totalYears || 7,
+      features: qd.selectedPackage.features || []
+    } : undefined,
+    accessoryBreakdown,
+    tradeInValue: tradeInValue > 0 ? tradeInValue : undefined,
+    tradeInInfo: qd.tradeInInfo?.hasTradeIn ? {
+      brand: qd.tradeInInfo.brand,
+      year: qd.tradeInInfo.year,
+      horsepower: qd.tradeInInfo.horsepower,
+      model: qd.tradeInInfo.model
+    } : undefined,
+    includesInstallation: qd.purchasePath === 'installed',
+    pricing: {
+      msrp: motorMSRP,
+      discount: motorSavings + adminDiscount,  // Combine dealer + admin discount
+      promoValue: promoValue,
+      motorSubtotal: motorSubtotal,
+      subtotal: subtotalBeforeTax,
+      hst: taxAmount,
+      totalCashPrice: totalPrice,
+      savings: motorSavings + adminDiscount + promoValue
+    },
+    monthlyPayment: monthlyPayment,
+    financingTerm: financingTerm,
+    financingRate: financingRate,
+    selectedPromoOption: qd.selectedPromoOption,
+    selectedPromoValue: qd.selectedPromoValue
+  };
+  
+  const pdfUrl = await generateQuotePDF(pdfData);
+  // ... rest of download logic
 };
 ```
 
 ---
 
-## UI Layout (Updated Grid)
+## Key Fixes Summary
 
-```text
-┌─────────────────────────────┐  ┌─────────────────────────────┐
-│  Customer                   │  │  Trade-In                   │
-│  Name: Tony Bowen           │  │  Year: 2022                 │
-│  Email: tony@example.com    │  │  Brand: Mercury             │
-│  Phone: 705-868-3194        │  │  HP: 9.9                    │
-│  Date: 1/23/2026            │  │  Value: $1,550              │
-└─────────────────────────────┘  └─────────────────────────────┘
-
-┌─────────────────────────────┐  ┌─────────────────────────────┐
-│  Financial Summary          │  │  Admin Controls             │
-│  Base price: $5,572         │  │  Special Discount: $700     │
-│  Admin discount: -$700      │  │  Internal Notes: None       │
-│  Final price: $4,144        │  │  Customer Notes: ...        │
-└─────────────────────────────┘  └─────────────────────────────┘
-
-┌─────────────────────────────┐  ┌─────────────────────────────┐
-│  🎁 Applied Promotion       │  │  📄 Share & Download        │
-│  Mercury GET 7 + Choose One │  │  [📥 Download PDF]          │
-│  ✓ Factory Rebate: $500     │  │  [🔗 Copy Link]             │
-│  ✓ 7-Year Warranty          │  │                             │
-│  ⏰ Expires: Mar 31, 2026   │  │  Link: quote.harris.../123  │
-└─────────────────────────────┘  └─────────────────────────────┘
-```
+| Issue | Fix |
+|-------|-----|
+| Wrong discount | Use `motor.savings` for dealer discount, `adminDiscount` separately |
+| Missing promo line | Parse `selectedPromoValue` to get numeric promo value |
+| Empty accessories | Generate default "Clamp-On" for loose motor path |
+| Missing financing | Extract from `qd.financing` object |
+| Missing monthly in header | Calculate or use saved `monthlyPayment` |
 
 ---
 
 ## Expected Result
 
-After implementation:
-1. Admin opens quote detail page
-2. Sees promotion details with expiration date
-3. Can click "Download PDF" to generate and download the quote
-4. Can click "Copy Link" to get the shareable customer URL
-5. All data matches what was saved in the quote
-
+After fix, admin PDF will show:
+- Correct dealer discount from motor pricing
+- Mercury GET 7 promo rebate as separate line
+- Accessories section with installation info
+- Monthly payment in price header
+- GET 7 Promotion callout box
+- Financing details section
