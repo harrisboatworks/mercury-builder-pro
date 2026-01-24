@@ -1,79 +1,56 @@
 
-# Fix Shared Quote Links - Add Public Read Access
+# Use Custom Domain for Shared Quote Links
 
 ## Problem
 
-Shared quote links (`/quote/saved/:quoteId`) are not working because RLS policies block access:
-- Admin-created quotes have `user_id = 'admin'` (not a real UUID)
-- No RLS policy allows public/anonymous access to quotes via direct ID lookup
-- The "Quote not found" error appears because the database query fails
+When copying a quote share link from the admin panel, it uses `window.location.origin` - which means it generates a link to whatever domain you're currently on (e.g., the Lovable preview URL). You want it to always use your public domain: `quote.harrisboatworks.ca`
+
+---
 
 ## Solution
 
-Add an RLS policy that allows **anyone** to read a quote **if they have the exact UUID**. This is secure because:
-- Quote UUIDs are unguessable (cryptographically random)
-- The link is only shared intentionally by the admin
-- Similar to "unlisted" YouTube videos - public if you have the link
+1. **Add environment variable** for your public site URL
+2. **Update AdminQuoteControls** to use the `SITE_URL` constant instead of `window.location.origin`
 
 ---
 
 ## Implementation
 
-### Add New RLS Policy
+### 1. Add Environment Variable
 
-Add a SELECT policy that allows reading quotes by their ID:
-
-```sql
-CREATE POLICY "Anyone can read quotes with direct link"
-ON public.customer_quotes
-FOR SELECT
-USING (true);
+Add to `.env`:
+```
+VITE_SITE_URL=https://quote.harrisboatworks.ca
 ```
 
-**Alternative (more restrictive):** Only allow public access for admin-created quotes:
+### 2. Update AdminQuoteControls.tsx
 
-```sql
-CREATE POLICY "Anyone can read admin-created quotes with direct link"
-ON public.customer_quotes
-FOR SELECT
-USING (is_admin_quote = true);
+Import and use the SITE_URL:
+
+```typescript
+import { SITE_URL } from "@/lib/site";
+
+// In handleCopyLink function (line 182):
+const shareUrl = `${SITE_URL}/quote/saved/${savedQuoteId}`;
+
+// In the Input display (line 321):
+value={`${SITE_URL}/quote/saved/${savedQuoteId}`}
 ```
 
 ---
 
-## Trade-offs
+## Files to Modify
 
-| Option | Pros | Cons |
-|--------|------|------|
-| **Allow all SELECT** | Simple, all share links work | Customer-created quotes also accessible (but UUID is unguessable) |
-| **Only admin quotes** | More restrictive | Need to ensure `is_admin_quote` is set correctly |
-
----
-
-## Recommendation
-
-Use the **admin quotes only** policy for better security hygiene:
-
-```sql
--- Allow anyone to view admin-created quotes (shared links)
-CREATE POLICY "Public read for admin shared quotes"
-ON public.customer_quotes
-FOR SELECT
-TO anon, authenticated
-USING (is_admin_quote = true);
-```
-
-This ensures:
-1. ✅ Admin-shared links work for anyone (customers, prospects)
-2. ✅ Customer quotes remain private (only visible to the user who created them)
-3. ✅ Admins can still see all quotes via their existing policy
+| File | Changes |
+|------|---------|
+| `.env` | Add `VITE_SITE_URL=https://quote.harrisboatworks.ca` |
+| `src/components/admin/AdminQuoteControls.tsx` | Import `SITE_URL` and use it instead of `window.location.origin` |
 
 ---
 
 ## Expected Result
 
-After applying the policy:
-1. Admin saves a quote and copies the share link
-2. Anyone with the link can open it
-3. Quote data loads and redirects to the Summary page
-4. Customer sees their configured quote with all details
+1. Admin creates/saves a quote
+2. Clicks "Copy Link"  
+3. Link copied is: `https://quote.harrisboatworks.ca/quote/saved/{uuid}`
+4. Customer clicks link → lands on your public site with the quote loaded
