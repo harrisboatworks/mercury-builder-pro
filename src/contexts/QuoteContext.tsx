@@ -76,6 +76,9 @@ interface QuoteState {
   adminDiscount: number;
   adminNotes: string;
   customerNotes: string;
+  customerName: string;
+  customerEmail: string;
+  customerPhone: string;
 }
 
 type QuoteAction = 
@@ -109,7 +112,7 @@ type QuoteAction =
   | { type: 'RESET_QUOTE' }
   // Admin quote actions
   | { type: 'SET_ADMIN_MODE'; payload: { isAdmin: boolean; editingQuoteId: string | null } }
-  | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string } }
+  | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string; customerName?: string; customerEmail?: string; customerPhone?: string } }
   | { type: 'RESTORE_QUOTE'; payload: any };
 
 const initialState: QuoteState = {
@@ -148,7 +151,10 @@ const initialState: QuoteState = {
   editingQuoteId: null,
   adminDiscount: 0,
   adminNotes: '',
-  customerNotes: ''
+  customerNotes: '',
+  customerName: '',
+  customerEmail: '',
+  customerPhone: ''
 };
 
 const QuoteContext = createContext<{
@@ -226,6 +232,9 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         adminDiscount: action.payload.adminDiscount ?? 0,
         adminNotes: action.payload.adminNotes ?? '',
         customerNotes: action.payload.customerNotes ?? '',
+        customerName: action.payload.customerName ?? '',
+        customerEmail: action.payload.customerEmail ?? '',
+        customerPhone: action.payload.customerPhone ?? '',
         isLoading: false 
       };
     case 'SET_LOADING':
@@ -251,7 +260,10 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         ...state, 
         adminDiscount: action.payload.adminDiscount ?? state.adminDiscount,
         adminNotes: action.payload.adminNotes ?? state.adminNotes,
-        customerNotes: action.payload.customerNotes ?? state.customerNotes
+        customerNotes: action.payload.customerNotes ?? state.customerNotes,
+        customerName: action.payload.customerName ?? state.customerName,
+        customerEmail: action.payload.customerEmail ?? state.customerEmail,
+        customerPhone: action.payload.customerPhone ?? state.customerPhone
       };
     case 'RESTORE_QUOTE':
       // Restore quote from saved data (used for admin editing)
