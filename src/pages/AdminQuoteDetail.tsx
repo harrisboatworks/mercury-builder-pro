@@ -14,6 +14,7 @@ import AdminNav from '@/components/admin/AdminNav';
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { SITE_URL } from '@/lib/site';
+import QRCode from 'qrcode';
 
 interface QuoteDetail {
   id: string;
@@ -276,6 +277,19 @@ const AdminQuoteDetail = () => {
       // Get selected package info
       const selectedPackage = qd.selectedPackage || null;
       
+      // Generate financing QR code using public SITE_URL
+      const financingUrl = `${SITE_URL}/financing-application/from-quote?quoteId=${q.id}`;
+      let financingQrCode = '';
+      try {
+        financingQrCode = await QRCode.toDataURL(financingUrl, {
+          width: 200,
+          margin: 1,
+          color: { dark: '#111827', light: '#ffffff' }
+        });
+      } catch (error) {
+        console.error('QR code generation failed:', error);
+      }
+      
       // Build complete PDF data object matching QuoteSummaryPage structure
       const pdfData = {
         quoteNumber: `HBW-${q.id.slice(0, 6).toUpperCase()}`,
@@ -325,6 +339,7 @@ const AdminQuoteDetail = () => {
         monthlyPayment: monthlyPayment,
         financingTerm: financingTerm,
         financingRate: financingRate,
+        financingQrCode,
         selectedPromoOption: qd.selectedPromoOption,
         selectedPromoValue: qd.selectedPromoValue
       };
