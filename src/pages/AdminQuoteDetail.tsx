@@ -10,10 +10,12 @@ import { Label } from '@/components/ui/label';
 import { Edit2, Save, Loader2, FileText, AlertTriangle, Download, Copy, Check, Gift, Calendar, Link } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/components/auth/AuthProvider';
 import AdminNav from '@/components/admin/AdminNav';
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { SITE_URL } from '@/lib/site';
+import { QuoteChangeLog } from '@/components/admin/QuoteChangeLog';
 import QRCode from 'qrcode';
 
 interface QuoteDetail {
@@ -49,6 +51,8 @@ const AdminQuoteDetail = () => {
   const navigate = useNavigate();
   const { dispatch } = useQuote();
   const { toast } = useToast();
+  const { user } = useAuth();
+  const [changeLogKey, setChangeLogKey] = useState(0);
   
   const [q, setQ] = useState<QuoteDetail | null>(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -154,17 +158,43 @@ const AdminQuoteDetail = () => {
     
     setIsSaving(true);
     try {
+      // Track what changed for the log
+      const changes: Record<string, { old: any; new: any }> = {};
+      if (adminDiscount !== (q.admin_discount || 0)) {
+        changes.admin_discount = { old: q.admin_discount || 0, new: adminDiscount };
+      }
+      if (adminNotes !== (q.admin_notes || '')) {
+        changes.admin_notes = { old: q.admin_notes || '', new: adminNotes };
+      }
+      if (customerNotes !== (q.customer_notes || '')) {
+        changes.customer_notes = { old: q.customer_notes || '', new: customerNotes };
+      }
+
       const { error } = await supabase
         .from('customer_quotes')
         .update({
           admin_discount: adminDiscount,
           admin_notes: adminNotes,
           customer_notes: customerNotes,
-          last_modified_at: new Date().toISOString()
+          last_modified_at: new Date().toISOString(),
+          last_modified_by: user?.id
         })
         .eq('id', q.id);
       
       if (error) throw error;
+
+      // Log the changes if any
+      if (Object.keys(changes).length > 0 && user?.id) {
+        const changeType = changes.admin_discount ? 'discount' : 'notes';
+        await supabase.from('quote_change_log').insert({
+          quote_id: q.id,
+          changed_by: user.id,
+          change_type: changeType,
+          changes
+        });
+        // Refresh the change log
+        setChangeLogKey(prev => prev + 1);
+      }
       
       // Update local state
       setQ(prev => prev ? {
@@ -628,6 +658,9 @@ const AdminQuoteDetail = () => {
               </div>
             </div>
           </Card>
+
+          {/* Change Log */}
+          <QuoteChangeLog key={changeLogKey} quoteId={q.id} />
         </div>
       )}
     </main>
