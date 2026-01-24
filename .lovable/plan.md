@@ -1,85 +1,88 @@
 
+# Fix Finance Rate Discrepancy Between Intro Screen and PDF
 
-# Add QR Code to Admin PDF Download
+## The Problem
 
-## Current Issue
+The intro screen shows **$76/mo** while the PDF shows **$113/mo** for the same quote. This is confusing to customers and looks inconsistent.
 
-The PDF downloaded from the admin panel is **missing the QR code** because the `handleDownloadPDF` function doesn't generate one. The customer-facing version includes a scannable QR code that links to the financing application.
+### Root Cause Analysis
+
+| Factor | Intro Screen (Wrong) | PDF/Summary (Correct) |
+|--------|---------------------|----------------------|
+| Base Amount | $3,772 (pre-tax subtotal) | $4,561 (with HST + $299 fee) |
+| Interest Rate | 7.99% (hardcoded) | 8.99% (dynamic from promo) |
+| Loan Term | 60 months (hardcoded) | 48 months (price-based) |
+| **Monthly Payment** | **$76** | **$113** |
+
+The intro animation calculates the monthly payment internally using outdated defaults, while the rest of the page uses the proper financing calculation.
 
 ---
 
 ## Solution
 
-Add QR code generation to `AdminQuoteDetail.tsx` using the same approach as `QuoteSummaryPage.tsx` - this will:
+Pass the **pre-calculated monthly payment** from `QuoteSummaryPage` to the cinematic component instead of letting it calculate its own (incorrect) value.
 
-1. Generate a QR code data URL using the `qrcode` library
-2. Use `SITE_URL` to ensure it points to `https://quote.harrisboatworks.ca`
-3. Pass the QR code to the PDF generator
-
----
-
-## What the QR Code Links To
-
-The QR code will encode a link to the financing application with the quote ID:
-
-```
-https://quote.harrisboatworks.ca/financing-application/from-quote?quoteId={quote-uuid}
-```
-
-When customers scan this from a printed PDF, they'll be directed to your public site to complete their financing application - **not** a Lovable preview URL.
+This ensures the intro screen displays the **same $113/mo** that appears in:
+- The summary table
+- The PDF document
+- The financing application
 
 ---
 
-## Technical Changes
+## Implementation
 
-### File: `src/pages/AdminQuoteDetail.tsx`
+### 1. Update `QuoteRevealCinematic` Props
 
-**1. Add Import**
-```typescript
-import QRCode from 'qrcode';
-```
-
-**2. Update `handleDownloadPDF` Function**
-
-Before building `pdfData`, generate the QR code:
+Add a new optional prop `monthlyPayment` to accept the pre-calculated value:
 
 ```typescript
-// Generate financing QR code using public SITE_URL
-const financingUrl = `${SITE_URL}/financing-application/from-quote?quoteId=${q.id}`;
-let financingQrCode = '';
-try {
-  financingQrCode = await QRCode.toDataURL(financingUrl, {
-    width: 200,
-    margin: 1,
-    color: { dark: '#111827', light: '#ffffff' }
-  });
-} catch (error) {
-  console.error('QR code generation failed:', error);
+interface QuoteRevealCinematicProps {
+  // ... existing props ...
+  monthlyPayment?: number; // NEW: Pre-calculated monthly payment
 }
 ```
 
-**3. Add to `pdfData` Object**
+### 2. Use Passed Value When Available
 
-Include the QR code in the data passed to the generator:
+Inside the component, prefer the passed value over internal calculation:
 
 ```typescript
-const pdfData = {
-  // ... existing fields ...
-  financingQrCode,  // Add this line
-};
+// Use pre-calculated monthly payment if provided, otherwise calculate
+const calculatedMonthly = calculateMonthly(finalPrice);
+const displayedMonthlyPayment = monthlyPayment || calculatedMonthly.amount;
 ```
+
+### 3. Pass Monthly Payment from Summary Page
+
+Update `QuoteSummaryPage.tsx` to pass the already-calculated value:
+
+```typescript
+<QuoteRevealCinematic
+  // ... existing props ...
+  monthlyPayment={monthlyPayment}  // Add this line
+/>
+```
+
+---
+
+## Files to Modify
+
+| File | Change |
+|------|--------|
+| `src/components/quote-builder/QuoteRevealCinematic.tsx` | Add `monthlyPayment` prop and use it for display |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Pass the calculated `monthlyPayment` to cinematic |
 
 ---
 
 ## Expected Result
 
-After this fix, the admin-downloaded PDF will include:
+After this fix:
 
-| Section | Content |
-|---------|---------|
-| Financing Available | Monthly payment, term, APR rate |
-| QR Code | Scannable code linking to financing application |
-| QR URL | `https://quote.harrisboatworks.ca/financing-application/from-quote?quoteId=...` |
+- **Intro Screen**: Shows **$113/mo** (matches PDF and summary)
+- **Summary Table**: Shows **$113/mo** 
+- **PDF Document**: Shows **$113/mo**
 
-The QR code will match exactly what appears in customer-generated PDFs.
-
+All three locations will display consistent financing information, calculated with:
+- Full financed amount (subtotal + 13% HST + $299 Dealerplan fee)
+- Current promotional or price-tier rate
+- Appropriate loan term based on purchase amount
