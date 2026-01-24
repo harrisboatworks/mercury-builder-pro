@@ -21,6 +21,8 @@ interface QuoteRevealCinematicProps {
   // Promo information
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoValue?: string;
+  // Pre-calculated monthly payment to ensure consistency with PDF/Summary
+  monthlyPayment?: number;
 }
 
 // Helper to get display-friendly promo label
@@ -98,7 +100,8 @@ export function QuoteRevealCinematic({
   coverageYears,
   imageUrl,
   selectedPromoOption,
-  selectedPromoValue
+  selectedPromoValue,
+  monthlyPayment: passedMonthlyPayment
 }: QuoteRevealCinematicProps) {
   const [stage, setStage] = useState<'spotlight' | 'motor' | 'msrp' | 'price' | 'savings' | 'details' | 'complete'>('spotlight');
   const [displayPrice, setDisplayPrice] = useState(0);
@@ -119,8 +122,9 @@ export function QuoteRevealCinematic({
   // Calculate savings percentage
   const savingsPercent = msrp && msrp > 0 ? Math.round((savings / msrp) * 100) : 0;
   
-  // Calculate monthly payment
-  const monthlyPayment = calculateMonthly(finalPrice);
+  // Use pre-calculated monthly payment if provided, otherwise calculate (fallback)
+  const calculatedMonthly = calculateMonthly(finalPrice);
+  const monthlyPayment = passedMonthlyPayment ?? calculatedMonthly.amount;
 
   // Smooth skip handler with fade-out animation
   const handleSkip = () => {
@@ -508,7 +512,7 @@ export function QuoteRevealCinematic({
                 className="mt-3 text-sm md:text-base"
                 style={{ color: '#9CA3AF' }}
               >
-                Or just {money(monthlyPayment.amount)}/mo
+                Or just {money(monthlyPayment)}/mo
               </motion.span>
             </motion.div>
           )}

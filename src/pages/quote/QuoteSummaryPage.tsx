@@ -658,6 +658,7 @@ export default function QuoteSummaryPage() {
         imageUrl={imageUrl}
         selectedPromoOption={state.selectedPromoOption}
         selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
+        monthlyPayment={monthlyPayment}
       />
       
       <ScrollToTop />
