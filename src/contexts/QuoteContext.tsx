@@ -70,6 +70,12 @@ interface QuoteState {
   uiFlags: {
     // Can add other UI flags here if needed in the future
   };
+  // Admin quote fields
+  isAdminQuote: boolean;
+  editingQuoteId: string | null;
+  adminDiscount: number;
+  adminNotes: string;
+  customerNotes: string;
 }
 
 type QuoteAction = 
@@ -100,7 +106,11 @@ type QuoteAction =
   | { type: 'LOAD_FROM_STORAGE'; payload: QuoteState }
   | { type: 'SET_LOADING'; payload: boolean }
   | { type: 'SET_UI_FLAG'; payload: { key: string; value: any } }
-  | { type: 'RESET_QUOTE' };
+  | { type: 'RESET_QUOTE' }
+  // Admin quote actions
+  | { type: 'SET_ADMIN_MODE'; payload: { isAdmin: boolean; editingQuoteId: string | null } }
+  | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string } }
+  | { type: 'RESTORE_QUOTE'; payload: any };
 
 const initialState: QuoteState = {
   motor: null,
@@ -132,7 +142,13 @@ const initialState: QuoteState = {
   isLoading: true,
   uiFlags: {
     // Can add other UI flags here if needed in the future
-  }
+  },
+  // Admin quote fields
+  isAdminQuote: false,
+  editingQuoteId: null,
+  adminDiscount: 0,
+  adminNotes: '',
+  customerNotes: ''
 };
 
 const QuoteContext = createContext<{
@@ -215,6 +231,41 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       };
     case 'RESET_QUOTE':
       return { ...initialState, isLoading: false };
+    case 'SET_ADMIN_MODE':
+      return { 
+        ...state, 
+        isAdminQuote: action.payload.isAdmin, 
+        editingQuoteId: action.payload.editingQuoteId 
+      };
+    case 'SET_ADMIN_QUOTE_DATA':
+      return { 
+        ...state, 
+        adminDiscount: action.payload.adminDiscount ?? state.adminDiscount,
+        adminNotes: action.payload.adminNotes ?? state.adminNotes,
+        customerNotes: action.payload.customerNotes ?? state.customerNotes
+      };
+    case 'RESTORE_QUOTE':
+      // Restore quote from saved data (used for admin editing)
+      const restored = action.payload;
+      return {
+        ...state,
+        motor: restored.motor || null,
+        purchasePath: restored.purchasePath || null,
+        boatInfo: restored.boatInfo || null,
+        tradeInInfo: restored.tradeInInfo || null,
+        fuelTankConfig: restored.fuelTankConfig || null,
+        installConfig: restored.installConfig || null,
+        looseMotorBattery: restored.looseMotorBattery || null,
+        warrantyConfig: restored.warrantyConfig || null,
+        hasTradein: restored.hasTradein || false,
+        selectedOptions: restored.selectedOptions || [],
+        selectedPackage: restored.selectedPackage || null,
+        selectedPromoOption: restored.selectedPromoOption || null,
+        selectedPromoRate: restored.selectedPromoRate || null,
+        selectedPromoTerm: restored.selectedPromoTerm || null,
+        selectedPromoValue: restored.selectedPromoValue || null,
+        isLoading: false
+      };
     default:
       return state;
   }

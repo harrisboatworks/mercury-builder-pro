@@ -234,18 +234,25 @@ export type Database = {
       }
       customer_quotes: {
         Row: {
+          admin_discount: number | null
+          admin_notes: string | null
           anonymous_session_id: string | null
           base_price: number
           contact_attempts: number | null
           created_at: string | null
+          created_by_admin: string | null
           customer_email: string
           customer_name: string
+          customer_notes: string | null
           customer_phone: string | null
           deposit_amount: number
           discount_amount: number | null
           final_price: number
           id: string
+          is_admin_quote: boolean | null
           last_contact_attempt: string | null
+          last_modified_at: string | null
+          last_modified_by: string | null
           lead_score: number | null
           lead_source: string | null
           lead_status: string | null
@@ -257,6 +264,7 @@ export type Database = {
           penalty_factor: number | null
           penalty_reason: string | null
           promotion_id: string | null
+          quote_data: Json | null
           term_months: number
           total_cost: number
           tradein_value_final: number | null
@@ -264,18 +272,25 @@ export type Database = {
           user_id: string
         }
         Insert: {
+          admin_discount?: number | null
+          admin_notes?: string | null
           anonymous_session_id?: string | null
           base_price: number
           contact_attempts?: number | null
           created_at?: string | null
+          created_by_admin?: string | null
           customer_email: string
           customer_name: string
+          customer_notes?: string | null
           customer_phone?: string | null
           deposit_amount: number
           discount_amount?: number | null
           final_price: number
           id?: string
+          is_admin_quote?: boolean | null
           last_contact_attempt?: string | null
+          last_modified_at?: string | null
+          last_modified_by?: string | null
           lead_score?: number | null
           lead_source?: string | null
           lead_status?: string | null
@@ -287,6 +302,7 @@ export type Database = {
           penalty_factor?: number | null
           penalty_reason?: string | null
           promotion_id?: string | null
+          quote_data?: Json | null
           term_months: number
           total_cost: number
           tradein_value_final?: number | null
@@ -294,18 +310,25 @@ export type Database = {
           user_id: string
         }
         Update: {
+          admin_discount?: number | null
+          admin_notes?: string | null
           anonymous_session_id?: string | null
           base_price?: number
           contact_attempts?: number | null
           created_at?: string | null
+          created_by_admin?: string | null
           customer_email?: string
           customer_name?: string
+          customer_notes?: string | null
           customer_phone?: string | null
           deposit_amount?: number
           discount_amount?: number | null
           final_price?: number
           id?: string
+          is_admin_quote?: boolean | null
           last_contact_attempt?: string | null
+          last_modified_at?: string | null
+          last_modified_by?: string | null
           lead_score?: number | null
           lead_source?: string | null
           lead_status?: string | null
@@ -317,6 +340,7 @@ export type Database = {
           penalty_factor?: number | null
           penalty_reason?: string | null
           promotion_id?: string | null
+          quote_data?: Json | null
           term_months?: number
           total_cost?: number
           tradein_value_final?: number | null

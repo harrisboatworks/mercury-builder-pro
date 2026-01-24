@@ -3,6 +3,13 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Textarea } from '@/components/ui/textarea';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Edit2, Save, Loader2, FileText, AlertTriangle } from 'lucide-react';
+import { useQuote } from '@/contexts/QuoteContext';
+import { useToast } from '@/hooks/use-toast';
 import AdminNav from '@/components/admin/AdminNav';
 
 interface QuoteDetail {
@@ -23,44 +30,167 @@ interface QuoteDetail {
   penalty_applied?: boolean;
   penalty_factor?: number | null;
   penalty_reason?: string | null;
+  // Admin fields
+  admin_discount?: number | null;
+  admin_notes?: string | null;
+  customer_notes?: string | null;
+  is_admin_quote?: boolean;
+  quote_data?: any;
+  lead_status?: string;
+  lead_source?: string;
 }
 
 const AdminQuoteDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { dispatch } = useQuote();
+  const { toast } = useToast();
+  
   const [q, setQ] = useState<QuoteDetail | null>(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
+  
+  // Editable fields
+  const [adminDiscount, setAdminDiscount] = useState(0);
+  const [adminNotes, setAdminNotes] = useState('');
+  const [customerNotes, setCustomerNotes] = useState('');
 
   useEffect(() => {
     document.title = 'Quote Detail | Admin';
     const fetchOne = async () => {
       const { data, error } = await supabase.from('customer_quotes').select('*').eq('id', id).single();
-      if (!error) setQ(data as any);
+      if (!error && data) {
+        setQ(data as any);
+        setAdminDiscount(data.admin_discount || 0);
+        setAdminNotes(data.admin_notes || '');
+        setCustomerNotes(data.customer_notes || '');
+      }
     };
     fetchOne();
   }, [id]);
 
   const fmt = (n: number | null | undefined) => (n == null ? '-' : `$${Math.round(Number(n)).toLocaleString()}`);
 
+  const handleEditQuote = () => {
+    if (!q) return;
+    
+    // If we have quote_data, restore it to context and navigate to quote builder
+    if (q.quote_data) {
+      dispatch({ type: 'RESTORE_QUOTE', payload: q.quote_data });
+      dispatch({ type: 'SET_ADMIN_MODE', payload: { isAdmin: true, editingQuoteId: q.id } });
+      dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: { 
+        adminDiscount: q.admin_discount || 0,
+        adminNotes: q.admin_notes || '',
+        customerNotes: q.customer_notes || ''
+      }});
+      navigate('/quote/motor-selection');
+    } else {
+      // No quote_data, just toggle inline editing mode
+      setIsEditing(true);
+    }
+  };
+
+  const handleSaveChanges = async () => {
+    if (!q) return;
+    
+    setIsSaving(true);
+    try {
+      const { error } = await supabase
+        .from('customer_quotes')
+        .update({
+          admin_discount: adminDiscount,
+          admin_notes: adminNotes,
+          customer_notes: customerNotes,
+          last_modified_at: new Date().toISOString()
+        })
+        .eq('id', q.id);
+      
+      if (error) throw error;
+      
+      // Update local state
+      setQ(prev => prev ? {
+        ...prev,
+        admin_discount: adminDiscount,
+        admin_notes: adminNotes,
+        customer_notes: customerNotes
+      } : null);
+      
+      setIsEditing(false);
+      toast({
+        title: 'Quote Updated',
+        description: 'Changes have been saved successfully.'
+      });
+    } catch (error: any) {
+      toast({
+        title: 'Error',
+        description: error.message || 'Failed to save changes.',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  const getStatusBadge = (status?: string) => {
+    switch (status) {
+      case 'downloaded': return <Badge variant="secondary">Downloaded</Badge>;
+      case 'scheduled': return <Badge variant="default">Scheduled</Badge>;
+      case 'contacted': return <Badge variant="outline">Contacted</Badge>;
+      case 'closed': return <Badge variant="destructive">Closed</Badge>;
+      default: return <Badge variant="secondary">Unknown</Badge>;
+    }
+  };
+
   return (
     <main className="container mx-auto px-4 py-8">
       <AdminNav />
       <div className="flex items-center justify-between mb-4">
-        <h1 className="text-2xl font-bold">Quote Details</h1>
-        <Button variant="secondary" onClick={() => navigate('/admin/quotes')}>Back</Button>
+        <div className="flex items-center gap-3">
+          <h1 className="text-2xl font-bold">Quote Details</h1>
+          {q?.is_admin_quote && (
+            <Badge variant="outline" className="border-yellow-500 text-yellow-700 dark:text-yellow-300">
+              Admin Created
+            </Badge>
+          )}
+        </div>
+        <div className="flex gap-2">
+          {q?.quote_data && (
+            <Button variant="default" onClick={handleEditQuote}>
+              <Edit2 className="w-4 h-4 mr-2" />
+              Edit Full Quote
+            </Button>
+          )}
+          <Button variant="secondary" onClick={() => navigate('/admin/quotes')}>Back</Button>
+        </div>
       </div>
+      
       {!q ? (
-        <div>Loading...</div>
+        <div className="flex items-center justify-center h-64">
+          <div className="animate-pulse text-muted-foreground">Loading...</div>
+        </div>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
+          {/* Customer Info */}
           <Card className="p-4">
-            <h2 className="font-semibold mb-2">Customer</h2>
+            <h2 className="font-semibold mb-2 flex items-center gap-2">
+              Customer
+              {q.lead_status && <span className="ml-auto">{getStatusBadge(q.lead_status)}</span>}
+            </h2>
             <div>Name: {q.customer_name}</div>
             <div>Email: {q.customer_email}</div>
             <div>Phone: {q.customer_phone || '-'}</div>
             <div>Date: {q.created_at ? new Date(q.created_at).toLocaleString() : '-'}</div>
+            {q.lead_source && <div>Source: <Badge variant="outline">{q.lead_source}</Badge></div>}
           </Card>
+          
+          {/* Trade-In */}
           <Card className="p-4">
-            <h2 className="font-semibold mb-2">Trade-In</h2>
+            <h2 className="font-semibold mb-2 flex items-center gap-2">
+              Trade-In
+              {q.penalty_applied && (
+                <AlertTriangle className="w-4 h-4 text-yellow-600" />
+              )}
+            </h2>
             <div>Pre-penalty value: {fmt(q.tradein_value_pre_penalty)}</div>
             <div>Final value: {fmt(q.tradein_value_final)}</div>
             <div>Penalty applied: {q.penalty_applied ? 'Yes' : 'No'}</div>
@@ -71,14 +201,99 @@ const AdminQuoteDetail = () => {
               </>
             )}
           </Card>
-          <Card className="p-4 md:col-span-2">
+          
+          {/* Financial Summary */}
+          <Card className="p-4">
             <h2 className="font-semibold mb-2">Financial Summary</h2>
             <div>Base price: {fmt(q.base_price)}</div>
-            <div>Deposit amount: {fmt(q.deposit_amount)}</div>
-            <div>Loan amount: {fmt(q.loan_amount)}</div>
-            <div>Monthly payment: {fmt(q.monthly_payment)}</div>
-            <div>Term months: {q.term_months}</div>
-            <div>Total cost: {fmt(q.total_cost)}</div>
+            {(q.admin_discount || 0) > 0 && (
+              <div className="text-green-600">Admin discount: -{fmt(q.admin_discount)}</div>
+            )}
+            <div className="font-medium">Final price: {fmt(q.final_price)}</div>
+            <div className="border-t mt-2 pt-2">
+              <div>Deposit amount: {fmt(q.deposit_amount)}</div>
+              <div>Loan amount: {fmt(q.loan_amount)}</div>
+              <div>Monthly payment: {fmt(q.monthly_payment)}</div>
+              <div>Term months: {q.term_months}</div>
+              <div>Total cost: {fmt(q.total_cost)}</div>
+            </div>
+          </Card>
+          
+          {/* Admin Controls Card */}
+          <Card className="p-4 border-yellow-500 bg-yellow-50/50 dark:bg-yellow-950/20">
+            <h2 className="font-semibold mb-3 flex items-center gap-2 text-yellow-800 dark:text-yellow-200">
+              <FileText className="w-4 h-4" />
+              Admin Controls
+              {!isEditing && (
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="ml-auto"
+                  onClick={() => setIsEditing(true)}
+                >
+                  <Edit2 className="w-4 h-4" />
+                </Button>
+              )}
+            </h2>
+            
+            {isEditing ? (
+              <div className="space-y-3">
+                <div>
+                  <Label className="text-sm">Special Discount ($)</Label>
+                  <Input 
+                    type="number"
+                    value={adminDiscount}
+                    onChange={(e) => setAdminDiscount(Number(e.target.value))}
+                  />
+                </div>
+                <div>
+                  <Label className="text-sm">Internal Notes</Label>
+                  <Textarea 
+                    value={adminNotes}
+                    onChange={(e) => setAdminNotes(e.target.value)}
+                    placeholder="Notes for the sales team..."
+                    rows={2}
+                  />
+                </div>
+                <div>
+                  <Label className="text-sm">Customer Notes (on PDF)</Label>
+                  <Textarea 
+                    value={customerNotes}
+                    onChange={(e) => setCustomerNotes(e.target.value)}
+                    placeholder="Notes that appear on PDF..."
+                    rows={2}
+                  />
+                </div>
+                <div className="flex gap-2">
+                  <Button onClick={handleSaveChanges} disabled={isSaving}>
+                    {isSaving ? (
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    ) : (
+                      <Save className="w-4 h-4 mr-2" />
+                    )}
+                    Save Changes
+                  </Button>
+                  <Button variant="ghost" onClick={() => setIsEditing(false)}>
+                    Cancel
+                  </Button>
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-2 text-sm">
+                <div>
+                  <span className="text-muted-foreground">Special Discount:</span>{' '}
+                  {(q.admin_discount || 0) > 0 ? fmt(q.admin_discount) : 'None'}
+                </div>
+                <div>
+                  <span className="text-muted-foreground">Internal Notes:</span>{' '}
+                  {q.admin_notes || <span className="text-muted-foreground italic">None</span>}
+                </div>
+                <div>
+                  <span className="text-muted-foreground">Customer Notes:</span>{' '}
+                  {q.customer_notes || <span className="text-muted-foreground italic">None</span>}
+                </div>
+              </div>
+            )}
           </Card>
         </div>
       )}

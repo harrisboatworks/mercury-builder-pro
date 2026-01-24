@@ -52,6 +52,7 @@ const MyQuotes = lazy(() => import("@/pages/account/MyQuotesPage"));
 const AdminPromotions = lazy(() => import("./pages/AdminPromotions"));
 const AdminQuotes = lazy(() => import("./pages/AdminQuotes"));
 const AdminQuoteDetail = lazy(() => import("./pages/AdminQuoteDetail"));
+const AdminQuoteBuilder = lazy(() => import("./pages/admin/AdminQuoteBuilder"));
 const FinancingAdmin = lazy(() => import("./components/admin/FinancingAdmin"));
 const AdminFinancingApplications = lazy(() => import("./pages/AdminFinancingApplications"));
 const AdminSecurity = lazy(() => import("./pages/AdminSecurity"));
@@ -193,6 +194,14 @@ function AnimatedRoutes() {
           element={
             <SecureRoute requireAdmin={true}>
               <AdminQuoteDetail />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/quote/new"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminQuoteBuilder />
             </SecureRoute>
           }
         />
