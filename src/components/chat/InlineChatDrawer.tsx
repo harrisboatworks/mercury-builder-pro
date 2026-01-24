@@ -118,6 +118,36 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
       viewport.removeEventListener('scroll', handleResize);
     };
   }, []);
+
+  // Lock body scroll and viewport when drawer is open (iOS viewport fix)
+  useEffect(() => {
+    if (isOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${scrollY}px`;
+      document.documentElement.classList.add('chat-drawer-open');
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      document.documentElement.classList.remove('chat-drawer-open');
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      document.documentElement.classList.remove('chat-drawer-open');
+    };
+  }, [isOpen]);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -694,7 +724,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
             dragConstraints={{ top: 0, bottom: 0 }}
             dragElastic={{ top: 0, bottom: 0.5 }}
             onDragEnd={handleDragEnd}
-            className="fixed inset-x-0 z-[75] bg-white rounded-t-2xl border-t border-gray-200"
+            className="fixed inset-x-0 z-[75] bg-white rounded-t-2xl border-t border-gray-200 w-full max-w-[100vw] overflow-hidden"
             style={{ 
               bottom: keyboardVisible ? '0px' : 'calc(5rem + env(safe-area-inset-bottom))',
               maxHeight: keyboardVisible ? '100vh' : '70vh',
@@ -805,7 +835,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                         <>
                           <div
                             className={cn(
-                              "max-w-[85%] px-3.5 py-2.5 text-[14px]",
+                              "max-w-[85%] px-3.5 py-2.5 text-[14px] break-words overflow-hidden",
                               message.isUser
                                 ? 'bg-gray-900 text-white rounded-2xl rounded-br-md shadow-sm'
                                 : 'bg-white text-gray-800 rounded-2xl rounded-bl-md shadow-[0_1px_4px_-1px_rgba(0,0,0,0.08)] border border-gray-100'
@@ -814,7 +844,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                             {message.isStreaming && message.text === '' ? (
                               <TypingIndicator />
                             ) : (
-                              <p className="whitespace-pre-wrap leading-relaxed font-light">
+                              <p className="whitespace-pre-wrap leading-relaxed font-light break-words" style={{ overflowWrap: 'anywhere' }}>
                                 {parseMessageText(message.text).map((segment, idx) => {
                                   if (segment.type === 'text') {
                                     return <span key={idx}>{segment.content}</span>;
