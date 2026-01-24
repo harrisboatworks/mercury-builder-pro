@@ -175,6 +175,22 @@ export default function FinancingApplication() {
       // Get package-specific pricing
       let packageTotal = motorMSRP - motorDiscount;
       
+      // Subtract admin discount (special pricing from admin)
+      const adminDiscount = parseFloat(restoredQuoteState.adminDiscount) || 0;
+      packageTotal -= adminDiscount;
+      
+      // Subtract promo rebate if cash_rebate option selected
+      let promoRebate = 0;
+      if (restoredQuoteState.selectedPromoOption === 'cash_rebate' && 
+          restoredQuoteState.selectedPromoValue) {
+        // Parse "$250 rebate" -> 250
+        const match = restoredQuoteState.selectedPromoValue.match(/\$?([\d,]+)/);
+        if (match) {
+          promoRebate = parseFloat(match[1].replace(',', '')) || 0;
+        }
+      }
+      packageTotal -= promoRebate;
+      
       // Add accessories based on package
       const packageKey = restoredQuoteState.selectedPackage?.key || restoredQuoteState.selectedPackage;
       if (packageKey === 'better' || packageKey === 'best') {
