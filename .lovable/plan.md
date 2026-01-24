@@ -1,83 +1,116 @@
 
+# Fix Customer Info Restoration on Edit Quote
 
-# Fix Admin Quote Detail Issues
+## Problem
 
-## Summary
-
-Fix two issues in the Admin Quote Detail page:
-1. **Trade-in data not displaying** - The page reads from empty database columns instead of the `quote_data` JSONB where trade-in is actually saved
-2. **"Edit Full Quote" wrong destination** - Button navigates to motor selection instead of the summary page
+When clicking "Edit Full Quote" from the Admin Quote Detail page, the customer's name, email, and phone are not pre-populated in the Admin Controls panel on the Summary page. The admin has to re-enter this information even though it's already saved in the database.
 
 ---
 
-## Issue 1: Trade-In Not Showing
+## Root Cause
 
-### Root Cause
-- The `AdminQuoteControls` saves trade-in inside `quote_data.tradeInInfo` (JSONB)
-- But `AdminQuoteDetail` reads from `q.tradein_value_pre_penalty` (database columns)
-- These columns are never populated by admin quote saves
+The customer identity fields (`customer_name`, `customer_email`, `customer_phone`) are:
+- ✅ **Saved correctly** to the `customer_quotes` table during save
+- ❌ **Not restored** when loading a quote for editing
+- ❌ **Not stored** in the `QuoteContext` state
 
-### Solution
-Update `AdminQuoteDetail.tsx` to read trade-in from `quote_data.tradeInInfo` as a fallback:
+The `AdminQuoteControls` component uses local `useState` for these fields, initialized to empty strings, instead of reading from context.
+
+---
+
+## Solution
+
+### 1. Add Customer Fields to QuoteState
+
+Update `QuoteContext.tsx` to include customer identity in the state:
 
 ```typescript
-// Extract trade-in from quote_data if not in top-level columns
-const tradeIn = q.quote_data?.tradeInInfo || {};
-const hasTradeInData = tradeIn.hasTradeIn || q.tradein_value_pre_penalty;
-
-// In render:
-<div>Pre-penalty value: {fmt(q.tradein_value_pre_penalty ?? tradeIn.tradeinValuePrePenalty ?? tradeIn.estimatedValue)}</div>
-<div>Final value: {fmt(q.tradein_value_final ?? tradeIn.tradeinValueFinal ?? tradeIn.estimatedValue)}</div>
-<div>Brand/Make: {tradeIn.brand || '-'}</div>
-<div>HP: {tradeIn.horsepower || '-'}</div>
-<div>Year: {tradeIn.year || '-'}</div>
+interface QuoteState {
+  // ... existing fields ...
+  
+  // Admin quote fields
+  isAdminQuote: boolean;
+  editingQuoteId: string | null;
+  adminDiscount: number;
+  adminNotes: string;
+  customerNotes: string;
+  customerName: string;     // NEW
+  customerEmail: string;    // NEW
+  customerPhone: string;    // NEW
+}
 ```
 
----
-
-## Issue 2: Edit Full Quote Navigation
-
-### Root Cause
-- `handleEditQuote` navigates to `/quote/motor-selection` (line 86)
-- User expects to land on `/quote/summary` to see admin controls
-
-### Solution
-Change navigation to go directly to the summary page:
+### 2. Update Initial State
 
 ```typescript
-const handleEditQuote = () => {
-  if (!q) return;
-  
-  if (q.quote_data) {
-    dispatch({ type: 'RESTORE_QUOTE', payload: q.quote_data });
-    dispatch({ type: 'SET_ADMIN_MODE', payload: { isAdmin: true, editingQuoteId: q.id } });
-    dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: { 
-      adminDiscount: q.admin_discount || 0,
-      adminNotes: q.admin_notes || '',
-      customerNotes: q.customer_notes || ''
-    }});
-    
-    // Force immediate save so state persists through navigation
-    const adminState = {
-      ...q.quote_data,
-      isAdminQuote: true,
-      editingQuoteId: q.id,
-      adminDiscount: q.admin_discount || 0,
-      adminNotes: q.admin_notes || '',
-      customerNotes: q.customer_notes || ''
-    };
-    localStorage.setItem('quoteBuilder', JSON.stringify({
-      state: adminState,
-      timestamp: Date.now(),
-      lastActivity: Date.now()
-    }));
-    
-    // Navigate to summary instead of motor selection
-    navigate('/quote/summary');
-  } else {
-    setIsEditing(true);
-  }
+const initialState: QuoteState = {
+  // ... existing ...
+  customerName: '',
+  customerEmail: '',
+  customerPhone: ''
 };
+```
+
+### 3. Update SET_ADMIN_QUOTE_DATA Action
+
+Extend the action to accept customer info:
+
+```typescript
+case 'SET_ADMIN_QUOTE_DATA':
+  return {
+    ...state,
+    adminDiscount: action.payload.adminDiscount ?? state.adminDiscount,
+    adminNotes: action.payload.adminNotes ?? state.adminNotes,
+    customerNotes: action.payload.customerNotes ?? state.customerNotes,
+    customerName: action.payload.customerName ?? state.customerName,
+    customerEmail: action.payload.customerEmail ?? state.customerEmail,
+    customerPhone: action.payload.customerPhone ?? state.customerPhone
+  };
+```
+
+### 4. Update AdminQuoteDetail handleEditQuote
+
+Pass customer info when restoring:
+
+```typescript
+dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: { 
+  adminDiscount: q.admin_discount || 0,
+  adminNotes: q.admin_notes || '',
+  customerNotes: q.customer_notes || '',
+  customerName: q.customer_name || '',      // NEW
+  customerEmail: q.customer_email || '',    // NEW
+  customerPhone: q.customer_phone || ''     // NEW
+}});
+
+// Also include in localStorage save
+const adminState = {
+  ...q.quote_data,
+  isAdminQuote: true,
+  editingQuoteId: q.id,
+  adminDiscount: q.admin_discount || 0,
+  adminNotes: q.admin_notes || '',
+  customerNotes: q.customer_notes || '',
+  customerName: q.customer_name || '',      // NEW
+  customerEmail: q.customer_email || '',    // NEW
+  customerPhone: q.customer_phone || ''     // NEW
+};
+```
+
+### 5. Update AdminQuoteControls
+
+Initialize local state from context:
+
+```typescript
+const [customerName, setCustomerName] = useState(state.customerName || '');
+const [customerEmail, setCustomerEmail] = useState(state.customerEmail || '');
+const [customerPhone, setCustomerPhone] = useState(state.customerPhone || '');
+
+// Sync when context changes
+useEffect(() => {
+  setCustomerName(state.customerName || '');
+  setCustomerEmail(state.customerEmail || '');
+  setCustomerPhone(state.customerPhone || '');
+}, [state.customerName, state.customerEmail, state.customerPhone]);
 ```
 
 ---
@@ -86,31 +119,20 @@ const handleEditQuote = () => {
 
 | File | Changes |
 |------|---------|
-| `src/pages/AdminQuoteDetail.tsx` | Read trade-in from `quote_data` JSONB, change navigation to `/quote/summary` |
-
----
-
-## Enhanced Trade-In Display
-
-The Trade-In card will show more useful info:
-
-```text
-Trade-In
----------
-Year: 2022
-Brand: Mercury  
-HP: 9.9
-Condition: Excellent
-
-Estimated Value: $1,550
-Penalty Applied: No
-```
+| `src/contexts/QuoteContext.tsx` | Add `customerName`, `customerEmail`, `customerPhone` to state, initial state, and `SET_ADMIN_QUOTE_DATA` reducer |
+| `src/pages/AdminQuoteDetail.tsx` | Pass customer info in `handleEditQuote` |
+| `src/components/admin/AdminQuoteControls.tsx` | Initialize local state from context |
 
 ---
 
 ## Expected Result
 
-1. **Trade-in displays correctly** - Shows brand, year, HP, condition, and estimated value from saved quote data
-2. **Edit Full Quote works** - Navigates to summary page with admin controls visible and pre-populated
-3. **Admin can make edits** - Customer info, discount, and notes are loaded for quick changes
-
+1. Admin opens a saved quote from `/admin/quotes`
+2. Clicks "Edit Full Quote"
+3. Arrives at Summary page with:
+   - ✅ Motor, options, packages pre-loaded
+   - ✅ Admin discount, notes pre-filled
+   - ✅ **Customer Name pre-filled**
+   - ✅ **Customer Email pre-filled**
+   - ✅ **Customer Phone pre-filled**
+4. Can make changes and save (updates existing quote)
