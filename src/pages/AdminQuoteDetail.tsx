@@ -81,7 +81,10 @@ const AdminQuoteDetail = () => {
       dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: { 
         adminDiscount: q.admin_discount || 0,
         adminNotes: q.admin_notes || '',
-        customerNotes: q.customer_notes || ''
+        customerNotes: q.customer_notes || '',
+        customerName: q.customer_name || '',
+        customerEmail: q.customer_email || '',
+        customerPhone: q.customer_phone || ''
       }});
       
       // Force immediate save so state persists through navigation
@@ -91,7 +94,10 @@ const AdminQuoteDetail = () => {
         editingQuoteId: q.id,
         adminDiscount: q.admin_discount || 0,
         adminNotes: q.admin_notes || '',
-        customerNotes: q.customer_notes || ''
+        customerNotes: q.customer_notes || '',
+        customerName: q.customer_name || '',
+        customerEmail: q.customer_email || '',
+        customerPhone: q.customer_phone || ''
       };
       localStorage.setItem('quoteBuilder', JSON.stringify({
         state: adminState,

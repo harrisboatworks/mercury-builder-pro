@@ -25,11 +25,18 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
   const [adminNotes, setAdminNotes] = useState(state.adminNotes || '');
   const [customerNotes, setCustomerNotes] = useState(state.customerNotes || '');
   const [isSaving, setIsSaving] = useState(false);
-  const [customerName, setCustomerName] = useState('');
-  const [customerEmail, setCustomerEmail] = useState('');
-  const [customerPhone, setCustomerPhone] = useState('');
+  const [customerName, setCustomerName] = useState(state.customerName || '');
+  const [customerEmail, setCustomerEmail] = useState(state.customerEmail || '');
+  const [customerPhone, setCustomerPhone] = useState(state.customerPhone || '');
   const [savedQuoteId, setSavedQuoteId] = useState<string | null>(state.editingQuoteId || null);
   const [linkCopied, setLinkCopied] = useState(false);
+
+  // Sync customer info from context when editing existing quote
+  useEffect(() => {
+    if (state.customerName) setCustomerName(state.customerName);
+    if (state.customerEmail) setCustomerEmail(state.customerEmail);
+    if (state.customerPhone) setCustomerPhone(state.customerPhone);
+  }, [state.customerName, state.customerEmail, state.customerPhone]);
 
   // Sync local state with context when context changes
   useEffect(() => {
