@@ -1,245 +1,206 @@
 
+# Admin Quote Builder Enhancements
 
-# Admin Quote Builder with Edit Capabilities
+## Summary
 
-## Overview
-
-Create an admin-only quote creation and editing system that leverages the existing customer quote builder but adds admin-specific controls for discounts, notes, and other adjustments.
-
----
-
-## User Experience
-
-### Creating a New Quote (Admin)
-
-1. Admin clicks "Create Quote" from `/admin/quotes`
-2. Navigates to `/admin/quote/new` which renders the same quote builder flow
-3. Admin selects motor, boat info, etc. just like a customer
-4. At the summary page, admin sees additional controls:
-   - **Special Discount** field ($ amount)
-   - **Admin Notes** text area (internal only, not shown on PDF)
-   - **Customer Notes** field (shows on PDF)
-5. Admin clicks "Save Quote" → stored with admin ID and editable flag
-
-### Editing an Existing Quote
-
-1. From `/admin/quotes`, admin clicks on any quote row
-2. Instead of just viewing, they get an **"Edit Quote"** button
-3. Quote is loaded into the quote builder with all values restored
-4. Admin can modify:
-   - Any step (motor, trade-in, package, etc.)
-   - Add/change special discount
-   - Add/update notes
-5. Save overwrites the existing quote or creates a new version
+Enhance the admin quote builder to support:
+1. **Manual customer info entry** with proper validation
+2. **Correct pricing calculations** including admin discount in all totals
+3. **Shareable quote links** customers can use to view and complete their quote
 
 ---
 
-## Technical Approach
+## Current State
 
-### Option 1: Add Admin Fields to Summary Page (Recommended)
+The AdminQuoteControls component already has:
+- Customer name, email, phone input fields
+- Admin discount field
+- Internal notes and customer notes fields
+- Save functionality
 
-Extend the existing `QuoteSummaryPage` to detect admin users and show additional controls.
-
-**Pros**: Minimal code changes, reuses existing flow  
-**Cons**: Summary page gets slightly more complex
-
-### Option 2: Separate Admin Quote Editor Page
-
-Create a dedicated `/admin/quote/edit/:id` page with a form for all quote fields.
-
-**Pros**: Full control, cleaner separation  
-**Cons**: More code to maintain, duplicates logic
-
-**Recommendation**: Option 1 with a dedicated admin entry point
+**Issues to fix:**
+1. Pricing calculations in AdminQuoteControls don't include accessories, trade-in, promotions, or tax
+2. Admin discount isn't integrated into the pricing table display
+3. No "copy share link" functionality after saving
+4. SavedQuotePage restoration doesn't include admin fields (discount, notes)
 
 ---
 
 ## Implementation Plan
 
-### Phase 1: Database & Types
+### Phase 1: Fix Pricing Calculations in AdminQuoteControls
 
-**Add new fields to `customer_quotes` table:**
+**File: `src/components/admin/AdminQuoteControls.tsx`**
 
-```sql
-ALTER TABLE customer_quotes ADD COLUMN IF NOT EXISTS
-  admin_discount numeric DEFAULT 0,
-  admin_notes text,
-  customer_notes text,
-  created_by_admin uuid REFERENCES auth.users(id),
-  last_modified_by uuid REFERENCES auth.users(id),
-  last_modified_at timestamp with time zone,
-  quote_data jsonb,  -- Store full quote state for restoration
-  is_admin_quote boolean DEFAULT false;
+Update the `handleSaveQuote` function to use the same pricing logic as ScheduleConsultation:
+
+```typescript
+// Calculate comprehensive pricing like ScheduleConsultation does
+const accessoryTotal = state.selectedOptions?.reduce((sum, opt) => sum + (opt.price || 0), 0) || 0;
+const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
+const hasTradeIn = state.tradeInInfo?.hasTradeIn || false;
+
+const subtotal = motorSalePrice + accessoryTotal - (hasTradeIn ? tradeInValue : 0);
+const hst = subtotal * 0.13;
+const totalBeforeDiscount = subtotal + hst;
+const finalPrice = totalBeforeDiscount - adminDiscount;
 ```
 
-### Phase 2: Admin Quote Creation Entry Point
+### Phase 2: Integrate Admin Discount into Summary Page Display
 
-**New page: `src/pages/admin/AdminQuoteBuilder.tsx`**
+**File: `src/pages/quote/QuoteSummaryPage.tsx`**
 
-- Wrapper that sets `isAdminMode` flag in context/state
-- Navigates to `/quote/motor-selection` with admin context
-- Persists admin session so the full flow knows it's admin-created
+Add admin discount to the pricing breakdown so it shows correctly before PDF generation:
 
-**Update `QuoteContext.tsx`:**
-- Add `isAdminQuote: boolean` to state
-- Add `adminDiscount: number`
-- Add `adminNotes: string`
-- Add `customerNotes: string`
+```typescript
+// After the promoSavings calculation
+const adminDiscount = state.adminDiscount || 0;
 
-### Phase 3: Enhanced Summary Page for Admins
+// Include in package-specific totals calculation
+const packageSpecificTotals = useMemo(() => {
+  return calculateQuotePricing({
+    motorMSRP,
+    motorDiscount: motorDiscount + adminDiscount, // Include admin discount
+    // ... rest of params
+  });
+}, [motorMSRP, motorDiscount, adminDiscount, ...]);
+```
 
-**Modify `src/pages/quote/QuoteSummaryPage.tsx`:**
+### Phase 3: Add Share Link After Save
 
-```tsx
-// Add admin detection
-const { isAdmin } = useAuth();
+**File: `src/components/admin/AdminQuoteControls.tsx`**
 
-// Render admin controls if admin
-{isAdmin && (
-  <Card className="p-4 border-yellow-500 bg-yellow-50/50 dark:bg-yellow-950/20">
-    <h3 className="font-semibold mb-3 flex items-center gap-2">
-      <ShieldCheck className="w-5 h-5" />
-      Admin Controls
-    </h3>
-    
-    {/* Special Discount */}
-    <div className="mb-4">
-      <Label>Special Discount ($)</Label>
+After successful save, return the quote ID and provide a copy link button:
+
+```typescript
+const [savedQuoteId, setSavedQuoteId] = useState<string | null>(null);
+
+// In save handler, capture the returned ID
+const { data, error } = await supabase
+  .from('customer_quotes')
+  .insert(payload)
+  .select('id')
+  .single();
+
+if (!error && data) {
+  setSavedQuoteId(data.id);
+}
+
+// Render share link section after save
+{savedQuoteId && (
+  <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+    <p className="text-sm text-green-800 mb-2">Quote saved! Share with customer:</p>
+    <div className="flex gap-2">
       <Input 
-        type="number" 
-        value={adminDiscount} 
-        onChange={(e) => setAdminDiscount(Number(e.target.value))}
+        readOnly 
+        value={`${window.location.origin}/quote/saved/${savedQuoteId}`}
       />
+      <Button variant="outline" onClick={() => copyToClipboard()}>
+        <Copy className="w-4 h-4" />
+      </Button>
     </div>
-    
-    {/* Admin Notes (internal) */}
-    <div className="mb-4">
-      <Label>Internal Notes (not on PDF)</Label>
-      <Textarea value={adminNotes} onChange={...} />
-    </div>
-    
-    {/* Customer Notes (on PDF) */}
-    <div>
-      <Label>Customer Notes (appears on PDF)</Label>
-      <Textarea value={customerNotes} onChange={...} />
-    </div>
-  </Card>
+  </div>
 )}
 ```
 
-### Phase 4: Admin Quote Detail Page Enhancement
+### Phase 4: Enhance SavedQuotePage for Admin Fields
 
-**Modify `src/pages/AdminQuoteDetail.tsx`:**
+**File: `src/pages/quote/SavedQuotePage.tsx`**
 
-- Add "Edit Quote" button
-- Load full `quote_data` and restore to context
-- Navigate to `/quote/summary` with edit mode flag
+Restore admin-specific fields when loading a shared quote:
 
-```tsx
-const handleEditQuote = async () => {
-  // Load quote_data and dispatch to context
-  if (quote.quote_data) {
-    dispatch({ type: 'RESTORE_QUOTE', payload: quote.quote_data });
-    dispatch({ type: 'SET_ADMIN_EDIT_MODE', payload: { quoteId: quote.id } });
-  }
-  navigate('/quote/motor-selection');
-};
+```typescript
+// After restoring other quote data
+if (quote.admin_discount) {
+  dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: { 
+    adminDiscount: quote.admin_discount,
+    adminNotes: quote.admin_notes || '',
+    customerNotes: quote.customer_notes || ''
+  }});
+}
+
+// Also restore from quote_data if present
+if (quoteData.adminDiscount !== undefined) {
+  dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: {
+    adminDiscount: quoteData.adminDiscount,
+    adminNotes: quoteData.adminNotes || '',
+    customerNotes: quoteData.customerNotes || ''
+  }});
+}
 ```
 
-### Phase 5: Save Logic Updates
+### Phase 5: Include Admin Discount in PDF
 
-**Modify quote save flow:**
+**File: `src/components/quote-pdf/ProfessionalQuotePDF.tsx`**
 
-When admin saves a quote, store additional metadata:
+Add admin discount as a line item if present:
 
-```tsx
-const saveAdminQuote = async () => {
-  const payload = {
-    ...existingQuoteData,
-    admin_discount: adminDiscount,
-    admin_notes: adminNotes,
-    customer_notes: customerNotes,
-    quote_data: getQuoteData(), // Full state for restoration
-    created_by_admin: user.id,
-    is_admin_quote: true,
-    last_modified_by: user.id,
-    last_modified_at: new Date().toISOString(),
+```typescript
+// In the pricing section, after motor discount
+{quoteData.adminDiscount > 0 && (
+  <View style={styles.tableRow}>
+    <Text style={[styles.itemDescription, styles.discountText]}>
+      Special Discount
+    </Text>
+    <Text style={[styles.itemPrice, styles.discountText]}>
+      -${quoteData.adminDiscount.toLocaleString()}
+    </Text>
+  </View>
+)}
+```
+
+### Phase 6: Update getQuoteData to Include Admin Fields
+
+**File: `src/contexts/QuoteContext.tsx`**
+
+Ensure getQuoteData captures admin fields for restoration:
+
+```typescript
+const getQuoteData = useCallback(() => {
+  return {
+    selectedMotor: state.motor,
+    purchasePath: state.purchasePath,
+    boatInfo: state.boatInfo,
+    // ... existing fields
+    // Add admin fields
+    adminDiscount: state.adminDiscount,
+    adminNotes: state.adminNotes,
+    customerNotes: state.customerNotes,
+    isAdminQuote: state.isAdminQuote
   };
-  
-  // Upsert to customer_quotes
-  await supabase.from('customer_quotes').upsert(payload);
-};
+}, [state]);
 ```
 
 ---
 
-## Files to Create/Modify
+## Customer Experience When Opening Shared Link
 
-| File | Action | Purpose |
-|------|--------|---------|
-| `supabase/migrations/xxx_admin_quote_fields.sql` | Create | Add admin fields to customer_quotes |
-| `src/contexts/QuoteContext.tsx` | Modify | Add admin state (discount, notes, edit mode) |
-| `src/pages/admin/AdminQuoteBuilder.tsx` | Create | Entry point for admin quote creation |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Modify | Add admin controls panel |
-| `src/pages/AdminQuoteDetail.tsx` | Modify | Add Edit Quote button and restore logic |
-| `src/pages/AdminQuotes.tsx` | Modify | Add "Create Quote" button |
-| `src/components/admin/AdminNav.tsx` | Modify | Add link to quote builder |
-| `src/App.tsx` | Modify | Add route for `/admin/quote/new` |
+1. Customer clicks link: `https://site.com/quote/saved/{quote-id}`
+2. SavedQuotePage loads quote data from database
+3. Full quote context is restored (motor, options, trade-in, admin discount, etc.)
+4. Customer sees the Summary page with complete pricing
+5. Customer can proceed to Schedule → Success flow
+6. Or apply for financing directly
 
 ---
 
-## Admin Quote Flow Diagram
+## Files to Modify
 
-```text
-┌─────────────────────────────────────────────────────────────┐
-│                     /admin/quotes                           │
-│  ┌──────────────┐                      ┌─────────────────┐  │
-│  │ Create Quote │────────────────────▶ │ Quote Builder   │  │
-│  │    Button    │                      │ (Admin Mode)    │  │
-│  └──────────────┘                      └────────┬────────┘  │
-│                                                 │           │
-│  ┌──────────────────────────────────────────────┼───────┐   │
-│  │ Existing Quote Row                           │       │   │
-│  │ ┌────────────┐   ┌─────────────┐            │       │   │
-│  │ │ View       │   │ Edit Quote  │◀───────────┘       │   │
-│  │ │ Details    │   │   Button    │                    │   │
-│  │ └────────────┘   └──────┬──────┘                    │   │
-│  └─────────────────────────│────────────────────────────┘   │
-│                            │                                │
-│                            ▼                                │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │              Quote Summary Page                       │   │
-│  │  ┌────────────────────────────────────────────────┐   │   │
-│  │  │ ADMIN CONTROLS (yellow border)                  │   │   │
-│  │  │ • Special Discount: $____                       │   │   │
-│  │  │ • Internal Notes: ___________                   │   │   │
-│  │  │ • Customer Notes: ___________                   │   │   │
-│  │  └────────────────────────────────────────────────┘   │   │
-│  │                                                        │   │
-│  │  [Save Quote]  [Download PDF]  [Send to Customer]      │   │
-│  └────────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-```
+| File | Changes |
+|------|---------|
+| `src/components/admin/AdminQuoteControls.tsx` | Fix pricing calculations, add share link UI |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Integrate admin discount into pricing display |
+| `src/pages/quote/SavedQuotePage.tsx` | Restore admin fields from database |
+| `src/contexts/QuoteContext.tsx` | Include admin fields in getQuoteData |
+| `src/components/quote-pdf/ProfessionalQuotePDF.tsx` | Show admin discount on PDF |
 
 ---
 
-## Security Considerations
+## Expected Result
 
-- All admin-only fields gated by `isAdmin` check
-- RLS policies on new columns to ensure only admins can write
-- Audit trail via `last_modified_by` and `last_modified_at`
-- Admin discount visible in PDF but not editable by customers
-
----
-
-## Summary
-
-This feature allows admins to:
-1. Create quotes just like customers, with the same smooth flow
-2. Add special discounts that apply to the final price
-3. Add internal notes (for sales team) and customer-facing notes
-4. Edit any previously created quote
-5. Download PDFs and send to customers
-
-All while reusing the existing quote builder infrastructure with minimal duplication.
-
+- Admin creates quote with all selections + special discount + notes
+- System calculates accurate pricing including HST and all components
+- Admin can copy shareable link
+- Customer opens link and sees their complete quote
+- Customer can download PDF, apply for financing, or schedule consultation
+- Admin discount appears on PDF as "Special Discount"
