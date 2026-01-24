@@ -1,96 +1,83 @@
 
 
-# Fix Admin Quote Builder - Show Admin Controls
+# Fix Admin Quote Detail Issues
 
-## Problem
+## Summary
 
-When you go through the admin quote creation flow, the **Admin Controls panel** (yellow card with customer info, discount, notes, and save button) doesn't appear on the Summary page.
+Fix two issues in the Admin Quote Detail page:
+1. **Trade-in data not displaying** - The page reads from empty database columns instead of the `quote_data` JSONB where trade-in is actually saved
+2. **"Edit Full Quote" wrong destination** - Button navigates to motor selection instead of the summary page
 
 ---
 
-## Root Cause
+## Issue 1: Trade-In Not Showing
 
-The Summary page checks **two conditions** before showing Admin Controls:
+### Root Cause
+- The `AdminQuoteControls` saves trade-in inside `quote_data.tradeInInfo` (JSONB)
+- But `AdminQuoteDetail` reads from `q.tradein_value_pre_penalty` (database columns)
+- These columns are never populated by admin quote saves
+
+### Solution
+Update `AdminQuoteDetail.tsx` to read trade-in from `quote_data.tradeInInfo` as a fallback:
 
 ```typescript
-{isAdmin && state.isAdminQuote && (
-  <AdminQuoteControls />
-)}
+// Extract trade-in from quote_data if not in top-level columns
+const tradeIn = q.quote_data?.tradeInInfo || {};
+const hasTradeInData = tradeIn.hasTradeIn || q.tradein_value_pre_penalty;
+
+// In render:
+<div>Pre-penalty value: {fmt(q.tradein_value_pre_penalty ?? tradeIn.tradeinValuePrePenalty ?? tradeIn.estimatedValue)}</div>
+<div>Final value: {fmt(q.tradein_value_final ?? tradeIn.tradeinValueFinal ?? tradeIn.estimatedValue)}</div>
+<div>Brand/Make: {tradeIn.brand || '-'}</div>
+<div>HP: {tradeIn.horsepower || '-'}</div>
+<div>Year: {tradeIn.year || '-'}</div>
 ```
 
-The problem is that when navigating from AdminQuoteBuilder to MotorSelection:
-
-1. `clearQuote()` clears localStorage and resets state
-2. `SET_ADMIN_MODE` sets `isAdminQuote: true` in memory
-3. `navigate('/quote/motor-selection')` happens immediately
-4. The state save to localStorage is **debounced by 1000ms**
-5. By the time the save happens, we're already on a new page
-6. When the quote builder pages load, they may reload from localStorage (which is empty) or the state may not have persisted properly through React Router navigation
-
 ---
 
-## Solution
+## Issue 2: Edit Full Quote Navigation
 
-Two changes to ensure `isAdminQuote` persists through the entire flow:
+### Root Cause
+- `handleEditQuote` navigates to `/quote/motor-selection` (line 86)
+- User expects to land on `/quote/summary` to see admin controls
 
-### 1. Immediate save in AdminQuoteBuilder
-
-Instead of relying on the debounced save, force an immediate save before navigating:
+### Solution
+Change navigation to go directly to the summary page:
 
 ```typescript
-const handleStartNewQuote = () => {
-  clearQuote();
-  dispatch({ type: 'SET_ADMIN_MODE', payload: { isAdmin: true, editingQuoteId: null } });
+const handleEditQuote = () => {
+  if (!q) return;
   
-  // Force immediate save before navigation
-  const adminState = {
-    ...initialState,
-    isAdminQuote: true,
-    editingQuoteId: null,
-    isLoading: false
-  };
-  localStorage.setItem('quoteBuilder', JSON.stringify({
-    state: adminState,
-    timestamp: Date.now(),
-    lastActivity: Date.now()
-  }));
-  
-  navigate('/quote/motor-selection');
+  if (q.quote_data) {
+    dispatch({ type: 'RESTORE_QUOTE', payload: q.quote_data });
+    dispatch({ type: 'SET_ADMIN_MODE', payload: { isAdmin: true, editingQuoteId: q.id } });
+    dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: { 
+      adminDiscount: q.admin_discount || 0,
+      adminNotes: q.admin_notes || '',
+      customerNotes: q.customer_notes || ''
+    }});
+    
+    // Force immediate save so state persists through navigation
+    const adminState = {
+      ...q.quote_data,
+      isAdminQuote: true,
+      editingQuoteId: q.id,
+      adminDiscount: q.admin_discount || 0,
+      adminNotes: q.admin_notes || '',
+      customerNotes: q.customer_notes || ''
+    };
+    localStorage.setItem('quoteBuilder', JSON.stringify({
+      state: adminState,
+      timestamp: Date.now(),
+      lastActivity: Date.now()
+    }));
+    
+    // Navigate to summary instead of motor selection
+    navigate('/quote/summary');
+  } else {
+    setIsEditing(true);
+  }
 };
-```
-
-### 2. Add immediate save action to QuoteContext
-
-Create a synchronous save option that doesn't debounce:
-
-```typescript
-// In QuoteContext
-const saveImmediately = useCallback(() => {
-  const dataToSave = {
-    state,
-    timestamp: Date.now(),
-    lastActivity: Date.now()
-  };
-  localStorage.setItem('quoteBuilder', JSON.stringify(dataToSave));
-}, [state]);
-```
-
-### 3. Preserve isAdminQuote through LOAD_FROM_STORAGE
-
-Ensure the `LOAD_FROM_STORAGE` reducer properly restores admin fields:
-
-```typescript
-case 'LOAD_FROM_STORAGE':
-  return {
-    ...initialState,
-    ...action.payload,
-    isAdminQuote: action.payload.isAdminQuote ?? false,
-    editingQuoteId: action.payload.editingQuoteId ?? null,
-    adminDiscount: action.payload.adminDiscount ?? 0,
-    adminNotes: action.payload.adminNotes ?? '',
-    customerNotes: action.payload.customerNotes ?? '',
-    isLoading: true
-  };
 ```
 
 ---
@@ -99,37 +86,31 @@ case 'LOAD_FROM_STORAGE':
 
 | File | Changes |
 |------|---------|
-| `src/pages/admin/AdminQuoteBuilder.tsx` | Force immediate localStorage save before navigation |
-| `src/contexts/QuoteContext.tsx` | Ensure LOAD_FROM_STORAGE preserves admin fields |
+| `src/pages/AdminQuoteDetail.tsx` | Read trade-in from `quote_data` JSONB, change navigation to `/quote/summary` |
 
 ---
 
-## Where to Find Saved Quotes
+## Enhanced Trade-In Display
 
-After you save a quote using the Admin Controls, it appears at:
+The Trade-In card will show more useful info:
 
-**`/admin/quotes`** - The main Admin Quotes table
+```text
+Trade-In
+---------
+Year: 2022
+Brand: Mercury  
+HP: 9.9
+Condition: Excellent
 
-The table shows all quotes from `customer_quotes`, including:
-- Admin-created quotes (with `is_admin_quote: true`)
-- Customer-submitted quotes
-- Filter by status, source, and penalized
-
-You can click any row to view details, or use the "Create Quote" button to start a new admin quote.
+Estimated Value: $1,550
+Penalty Applied: No
+```
 
 ---
 
-## Expected Result After Fix
+## Expected Result
 
-1. Click "Create Quote" from `/admin/quotes`
-2. Go through motor selection, package selection, etc.
-3. Arrive at Summary page
-4. **See the yellow Admin Controls panel** with:
-   - Customer Name / Email / Phone fields
-   - Special Discount input
-   - Internal Notes (admin only)
-   - Customer Notes (on PDF)
-   - Save Quote button
-5. After saving, get a shareable link
-6. Quote appears in `/admin/quotes` table
+1. **Trade-in displays correctly** - Shows brand, year, HP, condition, and estimated value from saved quote data
+2. **Edit Full Quote works** - Navigates to summary page with admin controls visible and pre-populated
+3. **Admin can make edits** - Customer info, discount, and notes are loaded for quick changes
 
