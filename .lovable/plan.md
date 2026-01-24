@@ -1,105 +1,92 @@
 
-# Fix Financing Application Price Discrepancy
+# Add Apple Pay & Google Pay Badges to Payment Buttons
 
-## The Problem
+## Why This Helps
 
-The financing application shows **$6,595.36** but the summary/PDF show **$4,143.86** for the same quote. This is a difference of nearly $2,500!
-
-### What's Missing
-
-The financing application pricing logic is ignoring two key discounts:
-
-| Discount Type | Stored In | Amount | Applied in Summary? | Applied in Financing App? |
-|---------------|-----------|--------|---------------------|---------------------------|
-| Admin Discount | `adminDiscount` | $700 | Yes | **No** |
-| Cash Rebate | `selectedPromoValue` | $250 | Yes | **No** |
-| **Total Missing** | | **$950** | | |
-
-The remaining difference comes from the fact that tax is applied before subtracting these discounts, causing a cascading error.
+Displaying payment method badges signals to customers that fast, secure mobile payments are available—reducing checkout friction and increasing conversions, especially on mobile devices.
 
 ---
 
-## Root Cause
+## Visual Design
 
-In `FinancingApplication.tsx` (lines 164-206), the pricing calculation:
-
-```typescript
-let packageTotal = motorMSRP - motorDiscount;
-// ... adds accessories, installation, etc.
-// ... subtracts trade-in
-const withTax = (packageTotal - tradeInValue) * 1.13;
-const totalWithFees = withTax + 299;
-```
-
-Is missing:
-1. `restoredQuoteState.adminDiscount` (the $700 special admin discount)
-2. `restoredQuoteState.selectedPromoValue` (the "$250 rebate" string that needs parsing)
-
----
-
-## Solution
-
-Add the missing deductions to match the summary page calculation:
-
-### Changes to Make
+Add small, recognizable icons beneath or beside the main payment button text:
 
 ```text
-// After line 176: let packageTotal = motorMSRP - motorDiscount;
-
-// Subtract admin discount (special pricing from admin)
-const adminDiscount = parseFloat(restoredQuoteState.adminDiscount) || 0;
-packageTotal -= adminDiscount;
-
-// Subtract promo rebate if cash_rebate option selected
-let promoRebate = 0;
-if (restoredQuoteState.selectedPromoOption === 'cash_rebate' && 
-    restoredQuoteState.selectedPromoValue) {
-  // Parse "$250 rebate" -> 250
-  const match = restoredQuoteState.selectedPromoValue.match(/\$?([\d,]+)/);
-  if (match) {
-    promoRebate = parseFloat(match[1].replace(',', '')) || 0;
-  }
-}
-packageTotal -= promoRebate;
+┌─────────────────────────────────────┐
+│   💳  Pay $4,143.86 with Card       │
+│                                     │
+│   🍎 Apple Pay  |  G Pay  |  Link   │
+└─────────────────────────────────────┘
 ```
 
----
-
-## Correct Calculation
-
-With fixes applied, the math becomes:
+Or as inline badge icons next to the button:
 
 ```text
-Motor MSRP:          $6,080
-- Dealer Discount:     -$508  (motor.salePrice = $5,572)
-= Motor Price:       $5,572
-- Admin Discount:      -$700  [NEW]
-- Promo Rebate:        -$250  [NEW]
-= Net Motor:         $4,622
-- Trade-in:          -$1,550
-= Subtotal:          $3,072
-+ Tax (13%):           +$399
-= After Tax:         $3,471
-+ Dealerplan Fee:      +$299
-= Total:             $3,770  [Matches summary!]
+[Pay $500 Deposit]  🍎 G Pay
 ```
 
 ---
 
-## Files to Modify
+## Implementation
 
-| File | Change |
-|------|--------|
-| `src/pages/FinancingApplication.tsx` | Add adminDiscount and promo rebate parsing to pricing calculation |
+### Files to Update
+
+| Component | Location | Purpose |
+|-----------|----------|---------|
+| `StripePaymentButton.tsx` | Quote builder full payment | Add badges below button |
+| `DepositPayment.tsx` | Standalone deposit page | Add badges below button |
+| `QuoteDisplay.tsx` | Quote summary deposit button | Add badges |
+| `QuoteSummaryPage.tsx` | Reserve button on shared quotes | Add badges |
+
+### Create Reusable Badge Component
+
+**New File: `src/components/payments/PaymentMethodBadges.tsx`**
+
+A simple component displaying Apple Pay, Google Pay, and optionally Link badges:
+
+```tsx
+import { Apple } from 'lucide-react';
+
+export const PaymentMethodBadges = ({ className }: { className?: string }) => (
+  <div className={`flex items-center justify-center gap-3 text-xs text-muted-foreground ${className}`}>
+    <span className="flex items-center gap-1">
+      <Apple className="w-3.5 h-3.5" /> Pay
+    </span>
+    <span className="text-border">|</span>
+    <span className="flex items-center gap-1">
+      <svg className="w-3.5 h-3.5" viewBox="0 0 24 24">...</svg> Pay
+    </span>
+    <span className="text-border">|</span>
+    <span>Link</span>
+  </div>
+);
+```
+
+### Update Each Payment Button
+
+Add the `<PaymentMethodBadges />` component below the Button in each location:
+
+```tsx
+<Button onClick={handlePayment} ...>
+  Pay $500 Deposit
+</Button>
+<PaymentMethodBadges className="mt-2" />
+```
 
 ---
 
-## Technical Implementation
+## Badge Assets
 
-Update lines 174-177 in `FinancingApplication.tsx` to include:
+Use either:
+1. **Lucide icons** (Apple icon available, Google requires custom SVG)
+2. **Official Stripe badge assets** from their branding guidelines
+3. **Simple text labels** with minimal icons for lightweight approach
 
-1. Parse and subtract `adminDiscount` from `restoredQuoteState`
-2. Parse the rebate amount from `selectedPromoValue` string (e.g., "$250 rebate" → 250)
-3. Subtract both values from `packageTotal` before calculating tax
+---
 
-This ensures the financing application displays the same price the customer saw on their quote summary and PDF.
+## Expected Result
+
+- All payment buttons display small badges showing Apple Pay, Google Pay, and Link
+- Helps customers know they can use their preferred payment method
+- Matches professional e-commerce checkout experiences
+- Responsive design that works on mobile and desktop
