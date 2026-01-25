@@ -455,6 +455,18 @@ export interface QuotePDFProps {
     // Selected promo option from "Choose One"
     selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
     selectedPromoValue?: string; // e.g., "$500" or "2.99%" or "6 months"
+    // Pricing breakdown with admin discount
+    pricing?: {
+      msrp: number;
+      discount: number;
+      adminDiscount?: number;
+      promoValue: number;
+      motorSubtotal: number;
+      subtotal: number;
+      hst: number;
+      totalCashPrice: number;
+      savings: number;
+    };
   };
 }
 
@@ -606,6 +618,15 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <Text style={styles.pricingLabel}>Dealer Discount</Text>
                 <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.dealerDiscount}</Text>
               </View>
+              
+              {quoteData.pricing?.adminDiscount && quoteData.pricing.adminDiscount > 0 && (
+                <View style={styles.pricingRow}>
+                  <Text style={styles.pricingLabel}>Special Discount</Text>
+                  <Text style={[styles.pricingValue, styles.discountValue]}>
+                    -${quoteData.pricing.adminDiscount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  </Text>
+                </View>
+              )}
               
               {parseFloat(quoteData.promoSavings) > 0 && (
                 <View style={styles.pricingRow}>

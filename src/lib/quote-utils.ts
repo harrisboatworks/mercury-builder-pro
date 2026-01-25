@@ -6,6 +6,7 @@
 export interface PricingBreakdown {
   msrp: number;
   discount: number;
+  adminDiscount: number;
   promoValue: number;
   subtotal: number;
   tax: number;
@@ -96,6 +97,7 @@ export function computeTotals(data: {
   return {
     msrp,
     discount,
+    adminDiscount: 0,
     promoValue: promotionalSavings,
     subtotal,
     tax,
@@ -110,6 +112,7 @@ export function computeTotals(data: {
 export function calculateQuotePricing(data: {
   motorMSRP: number;
   motorDiscount: number;
+  adminDiscount?: number;
   accessoryTotal: number;
   warrantyPrice: number;
   promotionalSavings: number;
@@ -120,6 +123,7 @@ export function calculateQuotePricing(data: {
   const {
     motorMSRP,
     motorDiscount,
+    adminDiscount = 0,
     accessoryTotal,
     warrantyPrice,
     promotionalSavings,
@@ -132,15 +136,16 @@ export function calculateQuotePricing(data: {
   const discount = motorDiscount;
   const promoValue = promotionalSavings;
   
-  // Motor after discount + accessories + warranty + financing fee - trade-in - promos
-  const subtotal = (msrp - discount) + accessoryTotal + warrantyPrice + financingFee - tradeInValue - promoValue;
+  // Motor after discount + admin discount + accessories + warranty + financing fee - trade-in - promos
+  const subtotal = (msrp - discount - adminDiscount) + accessoryTotal + warrantyPrice + financingFee - tradeInValue - promoValue;
   const tax = subtotal * taxRate;
   const total = subtotal + tax;
-  const savings = discount + promoValue + tradeInValue;
+  const savings = discount + adminDiscount + promoValue + tradeInValue;
   
   return {
     msrp,
     discount,
+    adminDiscount,
     promoValue,
     subtotal,
     tax,
