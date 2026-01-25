@@ -130,6 +130,7 @@ export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string>
       includesInstallation: data.includesInstallation,
       selectedPromoOption: data.selectedPromoOption,
       selectedPromoValue: data.selectedPromoValue,
+      pricing: data.pricing,  // Pass full pricing object for admin discount rendering
     };
     
     // Generate PDF blob using @react-pdf/renderer
@@ -183,6 +184,7 @@ export async function generatePDFBlob(data: ReactPdfQuoteData): Promise<Blob> {
       includesInstallation: data.includesInstallation,
       selectedPromoOption: data.selectedPromoOption,
       selectedPromoValue: data.selectedPromoValue,
+      pricing: data.pricing,  // Pass full pricing object for admin discount rendering
     };
     
     // Generate PDF blob using @react-pdf/renderer
