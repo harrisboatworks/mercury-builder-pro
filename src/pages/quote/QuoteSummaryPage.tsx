@@ -254,6 +254,7 @@ export default function QuoteSummaryPage() {
   const totals = calculateQuotePricing({
     motorMSRP,
     motorDiscount,
+    adminDiscount: state.adminDiscount || 0,
     accessoryTotal: baseAccessoryCost + selectedOptionsTotal,
     warrantyPrice,
     promotionalSavings: promoSavings,
@@ -401,13 +402,14 @@ export default function QuoteSummaryPage() {
     return calculateQuotePricing({
       motorMSRP,
       motorDiscount,
+      adminDiscount: state.adminDiscount || 0,
       accessoryTotal,
       warrantyPrice: 0,
       promotionalSavings: promoSavings,
       tradeInValue: state.tradeInInfo?.estimatedValue || 0,
       taxRate: 0.13
     });
-  }, [motorMSRP, motorDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue]);
+  }, [motorMSRP, motorDiscount, state.adminDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue]);
 
   // Monthly payment calculation
   const amountToFinance = (packageSpecificTotals.subtotal * 1.13) + DEALERPLAN_FEE;
@@ -486,12 +488,13 @@ export default function QuoteSummaryPage() {
         pricing: {
           msrp: motorMSRP,
           discount: motorDiscount,
+          adminDiscount: state.adminDiscount || 0,
           promoValue: promoSavings,
-          motorSubtotal: motorMSRP - motorDiscount - promoSavings,
+          motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
           subtotal: packageSpecificTotals.subtotal,
           hst: packageTax,
           totalCashPrice: packageTotal,
-          savings: motorDiscount + promoSavings
+          savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
         },
         monthlyPayment,
         financingTerm: termMonths,

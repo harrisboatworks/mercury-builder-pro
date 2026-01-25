@@ -91,9 +91,18 @@ export function PricingTable({
             />
           )}
           
+          {pricing.adminDiscount > 0 && (
+            <LineItemRow
+              label="Special Discount"
+              amount={pricing.adminDiscount}
+              isDiscount
+              description="Applied by Harris Boat Works"
+            />
+          )}
+          
           <LineItemRow
             label="Motor Price"
-            amount={pricing.msrp - pricing.discount}
+            amount={pricing.msrp - pricing.discount - (pricing.adminDiscount || 0)}
             className="font-medium"
           />
         </div>
