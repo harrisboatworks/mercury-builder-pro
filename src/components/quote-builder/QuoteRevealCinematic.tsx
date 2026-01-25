@@ -23,6 +23,8 @@ interface QuoteRevealCinematicProps {
   selectedPromoValue?: string;
   // Pre-calculated monthly payment to ensure consistency with PDF/Summary
   monthlyPayment?: number;
+  // Trade-in value for dynamic label display
+  tradeInValue?: number;
 }
 
 // Helper to get display-friendly promo label
@@ -101,7 +103,8 @@ export function QuoteRevealCinematic({
   imageUrl,
   selectedPromoOption,
   selectedPromoValue,
-  monthlyPayment: passedMonthlyPayment
+  monthlyPayment: passedMonthlyPayment,
+  tradeInValue
 }: QuoteRevealCinematicProps) {
   const [stage, setStage] = useState<'spotlight' | 'motor' | 'msrp' | 'price' | 'savings' | 'details' | 'complete'>('spotlight');
   const [displayPrice, setDisplayPrice] = useState(0);
@@ -542,7 +545,7 @@ export function QuoteRevealCinematic({
                     style={{ color: '#10B981' }}
                   >
                     <Sparkles className="w-3 h-3" />
-                    Total Savings
+                    {tradeInValue && tradeInValue > 0 ? 'Savings + Trade-In' : 'Total Savings'}
                   </motion.span>
                   <span 
                     className="font-outfit text-lg md:text-xl font-semibold"
