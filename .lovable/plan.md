@@ -1,250 +1,88 @@
 
-# Fix Admin Special Discount Display
+# Fix: Admin Discount Not Showing on PDF
 
-## Problem Summary
+## Problem Identified
 
-You've added a $500 special discount in the admin panel, but it's not appearing on the Summary page or in the PDF. The investigation reveals that while `adminDiscount` is stored correctly in the state (via `QuoteContext.tsx`), the value is never used in the pricing calculations or displayed in the UI.
-
----
+The `$500 Special Discount` you applied in the admin panel is being **included in the total savings calculation** (you can see the PDF shows "Total savings of $1,258.00" which is $508 + $250 + $500), but the **line item itself is not appearing** in the pricing breakdown.
 
 ## Root Cause
 
-The data flow is broken at multiple points:
+The issue is in `src/lib/react-pdf-generator.tsx`. When the PDF is generated, the data goes through a transformation step that **does not pass the `pricing` object** to the PDF template:
 
 ```text
-┌───────────────────┐     ┌────────────────────┐     ┌───────────────────┐
-│   Admin Panel     │ ──► │  state.adminDiscount│ ──X │  calculateQuote   │
-│   (saves $500)    │     │  (value exists)     │     │  Pricing()        │
-└───────────────────┘     └────────────────────┘     └───────────────────┘
-                                                            │
-                                                            X (not included)
-                                                            ▼
-                          ┌────────────────────┐     ┌───────────────────┐
-                          │   PricingTable     │ ◄─X─│  PricingBreakdown │
-                          │   (no line item)   │     │  (missing field)  │
-                          └────────────────────┘     └───────────────────┘
-                                                            │
-                                                            X (not passed)
-                                                            ▼
-                                                     ┌───────────────────┐
-                                                     │   PDF Generator   │
-                                                     │   (no line item)  │
-                                                     └───────────────────┘
+QuoteSummaryPage.tsx          react-pdf-generator.tsx         ProfessionalQuotePDF.tsx
+─────────────────────         ────────────────────────        ────────────────────────
+pdfData.pricing = {           transformedData = {             Checks for:
+  adminDiscount: 500,    ─►     msrp: "6,080.00",        ─►   quoteData.pricing?.adminDiscount
+  ...                           dealerDiscount: "508.00",     
+}                               // pricing object MISSING!     → Returns undefined, no render
+                              }
 ```
+
+The PDF template at line 622 checks `quoteData.pricing?.adminDiscount`, but since `pricing` is never included in `transformedData`, it's always undefined.
 
 ---
 
-## Files to Modify
+## Solution
 
-| File | Changes |
-|------|---------|
-| `src/lib/quote-utils.ts` | Add `adminDiscount` to interface and calculation |
-| `src/components/quote-builder/PricingTable.tsx` | Add prop and display line item |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Pass `adminDiscount` to PricingTable and PDF data |
-| `src/components/quote-pdf/ProfessionalQuotePDF.tsx` | Render admin discount as a line item |
+Add the `pricing` object to the transformed data in `react-pdf-generator.tsx`:
+
+| File | Change |
+|------|--------|
+| `src/lib/react-pdf-generator.tsx` | Pass `pricing` object in both `generateQuotePDF` and `generatePDFBlob` functions |
 
 ---
 
 ## Technical Implementation
 
-### 1. Update PricingBreakdown Interface
+### react-pdf-generator.tsx
 
-**File:** `src/lib/quote-utils.ts`
+Add the `pricing` object to the `transformedData` in both functions:
 
-Add `adminDiscount` to the interface:
-
+**In `generateQuotePDF` function (around line 133):**
 ```typescript
-export interface PricingBreakdown {
-  msrp: number;
-  discount: number;
-  adminDiscount: number;    // NEW: Special discount from admin
-  promoValue: number;
-  subtotal: number;
-  tax: number;
-  total: number;
-  savings: number;
-}
+const transformedData = {
+  quoteNumber: data.quoteNumber,
+  date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+  // ... existing fields ...
+  selectedPromoOption: data.selectedPromoOption,
+  selectedPromoValue: data.selectedPromoValue,
+  // ADD THIS LINE:
+  pricing: data.pricing,  // Pass full pricing object for admin discount rendering
+};
 ```
 
-### 2. Update calculateQuotePricing Function
-
-**File:** `src/lib/quote-utils.ts`
-
-Add the parameter and include it in calculations:
-
+**In `generatePDFBlob` function (around line 186):**
 ```typescript
-export function calculateQuotePricing(data: {
-  motorMSRP: number;
-  motorDiscount: number;
-  adminDiscount?: number;    // NEW
-  accessoryTotal: number;
-  warrantyPrice: number;
-  promotionalSavings: number;
-  tradeInValue: number;
-  financingFee?: number;
-  taxRate?: number;
-}): PricingBreakdown {
-  const {
-    motorMSRP,
-    motorDiscount,
-    adminDiscount = 0,       // NEW
-    accessoryTotal,
-    warrantyPrice,
-    promotionalSavings,
-    tradeInValue,
-    financingFee = 0,
-    taxRate = 0.13
-  } = data;
-
-  const msrp = motorMSRP;
-  const discount = motorDiscount;
-  const promoValue = promotionalSavings;
-  
-  // Include admin discount in subtotal calculation
-  const subtotal = (msrp - discount - adminDiscount) + accessoryTotal + warrantyPrice + financingFee - tradeInValue - promoValue;
-  const tax = subtotal * taxRate;
-  const total = subtotal + tax;
-  const savings = discount + adminDiscount + promoValue + tradeInValue;
-  
-  return {
-    msrp,
-    discount,
-    adminDiscount,           // NEW
-    promoValue,
-    subtotal,
-    tax,
-    total,
-    savings
-  };
-}
-```
-
-### 3. Update PricingTable Component
-
-**File:** `src/components/quote-builder/PricingTable.tsx`
-
-Add the admin discount line item below dealer discount:
-
-```tsx
-// After the dealer discount line (~line 91)
-{pricing.adminDiscount > 0 && (
-  <LineItemRow
-    label="Special Discount"
-    amount={pricing.adminDiscount}
-    isDiscount
-    description="Applied by Harris Boat Works"
-  />
-)}
-```
-
-### 4. Update QuoteSummaryPage
-
-**File:** `src/pages/quote/QuoteSummaryPage.tsx`
-
-Pass `adminDiscount` in all calculation calls:
-
-```typescript
-// Line 254-263: Pass adminDiscount to calculateQuotePricing
-const totals = calculateQuotePricing({
-  motorMSRP,
-  motorDiscount,
-  adminDiscount: state.adminDiscount || 0,  // NEW
-  accessoryTotal: baseAccessoryCost + selectedOptionsTotal,
-  warrantyPrice,
-  promotionalSavings: promoSavings,
-  tradeInValue: state.tradeInInfo?.estimatedValue || 0,
-  financingFee: DEALERPLAN_FEE,
-  taxRate: 0.13
-});
-
-// Line 401-410: Same for packageSpecificTotals
-const packageSpecificTotals = useMemo(() => {
-  const accessoryTotal = accessoryBreakdown.reduce((sum, item) => sum + item.price, 0);
-  return calculateQuotePricing({
-    motorMSRP,
-    motorDiscount,
-    adminDiscount: state.adminDiscount || 0,  // NEW
-    accessoryTotal,
-    warrantyPrice: 0,
-    promotionalSavings: promoSavings,
-    tradeInValue: state.tradeInInfo?.estimatedValue || 0,
-    taxRate: 0.13
-  });
-}, [motorMSRP, motorDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue, state.adminDiscount]);
-
-// Line 486-495: Include in PDF data
-pricing: {
-  msrp: motorMSRP,
-  discount: motorDiscount,
-  adminDiscount: state.adminDiscount || 0,  // NEW
-  promoValue: promoSavings,
-  motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
-  subtotal: packageSpecificTotals.subtotal,
-  hst: packageTax,
-  totalCashPrice: packageTotal,
-  savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
-}
-```
-
-### 5. Update PDF Template
-
-**File:** `src/components/quote-pdf/ProfessionalQuotePDF.tsx`
-
-Add the admin discount row after the dealer discount:
-
-```tsx
-{/* After Dealer Discount row (~line 608) */}
-{quoteData.pricing?.adminDiscount > 0 && (
-  <View style={styles.pricingRow}>
-    <Text style={styles.pricingLabel}>Special Discount</Text>
-    <Text style={[styles.pricingValue, styles.discountValue]}>
-      -${quoteData.pricing.adminDiscount.toLocaleString('en-CA', { minimumFractionDigits: 2 })}
-    </Text>
-  </View>
-)}
+const transformedData = {
+  quoteNumber: data.quoteNumber,
+  // ... existing fields ...
+  selectedPromoOption: data.selectedPromoOption,
+  selectedPromoValue: data.selectedPromoValue,
+  // ADD THIS LINE:
+  pricing: data.pricing,  // Pass full pricing object for admin discount rendering
+};
 ```
 
 ---
 
-## Data Flow After Fix
+## Expected Result
 
-```text
-┌───────────────────┐     ┌────────────────────┐     ┌───────────────────┐
-│   Admin Panel     │ ──► │  state.adminDiscount│ ──► │  calculateQuote   │
-│   (saves $500)    │     │  (value: 500)       │     │  Pricing()        │
-└───────────────────┘     └────────────────────┘     └───────────────────┘
-                                                            │
-                                                            ▼
-                          ┌────────────────────┐     ┌───────────────────┐
-                          │   PricingTable     │ ◄───│  PricingBreakdown │
-                          │   "Special Discount│     │  adminDiscount:500│
-                          │    −$500"          │     └───────────────────┘
-                          └────────────────────┘            │
-                                                            ▼
-                                                     ┌───────────────────┐
-                                                     │   PDF Generator   │
-                                                     │   "Special        │
-                                                     │    Discount -$500"│
-                                                     └───────────────────┘
-```
-
----
-
-## Visual Result
-
-After the fix, both the Summary page and PDF will show:
+After this fix, when you download a PDF for a quote with a special discount:
 
 | Item | Price |
 |------|-------|
-| MSRP - Mercury Motor | ~~$7,632~~ |
-| Dealer Discount | −$546 |
-| **Special Discount** | **−$500** |
-| Motor Price | $6,586 |
+| MSRP - 15EXLHPT ProKicker FourStroke | ~~$6,080.00~~ |
+| Dealer Discount | -$508.00 |
+| **Special Discount** | **-$500.00** |
+| Mercury GET 7 + $250 rebate Rebate | -$250.00 |
+| Motor Price | $4,322.00 |
 | ... | ... |
-| **Total Savings** | **$1,046** |
+
+The "Special Discount" line will now appear in the PDF pricing breakdown, matching the Total Savings amount.
 
 ---
 
 ## Summary
 
-This is a 4-file fix that threads the `adminDiscount` value through the entire pricing pipeline - from state to calculations to display in both the web UI and PDF output. The discount will appear as a distinct "Special Discount" line item with green text, consistent with other discounts.
+This is a 1-file fix that adds the missing `pricing` object to the PDF data transformation, enabling the Special Discount line item to render correctly in generated PDFs.
