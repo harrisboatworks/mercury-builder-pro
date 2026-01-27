@@ -1,17 +1,32 @@
 
-# Fix: Dark Mode Resistant Headings on Boat Info Page
+# Fix: Comprehensive Dark Mode Resistance for Boat Details Wizard
 
-## Problem
-The headings on the Boat Details Wizard page ("Boat Details Wizard", "What type of boat do you have?", boat type labels, etc.) appear nearly invisible because:
-1. Browser extensions or OS-level dark mode force color inversion
-2. The `text-gray-900` Tailwind class gets inverted to light gray
-3. The `dark:` overrides added earlier never fire because `ThemeProvider` forces light mode
+## Problem Analysis
+
+From the screenshots, multiple elements on the Boat Details Wizard page are invisible or barely visible:
+
+1. **Boat type card headings** - "V-Hull Fishing", "Pontoon" labels
+2. **Card descriptions** - "Deep V-hull fishing boats", "Family & entertainment"
+3. **Recommended HP text** - "Recommended: 40-150 HP"
+4. **Skip buttons** - "Skip this step - Use typical settings for 60HP", "Skip for now"
+5. **Navigation buttons** - "Back to Motor", "NEXT: TRANSOM HEIGHT"
+6. **Tip text** - "Tip: You can tap a preset above to speed things up."
+7. **Various form labels** and descriptions
+
+## Root Cause
+
+The `dark:` Tailwind classes (e.g., `dark:text-gray-300`) only work when the `dark` class is on the HTML element. Since the ThemeProvider forces light mode, these never fire.
+
+Browser extensions/OS dark mode use color inversion which inverts `text-gray-600` to nearly invisible light gray on the (now dark) inverted background.
 
 ## Solution
-Make headings **resistant to forced dark mode** by:
-1. Using high-specificity CSS with explicit color values
-2. Adding a global CSS rule that protects critical text from inversion
-3. Removing ineffective `dark:` classes (they never fire)
+
+Expand the protection CSS classes and apply them more comprehensively:
+
+1. Add more protected text classes with varying gray levels
+2. Add card/background protection
+3. Add button text protection
+4. Remove non-functional `dark:` classes to reduce code clutter
 
 ---
 
@@ -19,93 +34,131 @@ Make headings **resistant to forced dark mode** by:
 
 | File | Change |
 |------|--------|
-| `src/index.css` | Add forced color protection for headings |
-| `src/components/quote-builder/BoatInformation.tsx` | Apply protected heading class + remove dead `dark:` overrides |
+| `src/index.css` | Add more protected classes: `.text-protected-subtle`, `.bg-protected`, `.button-protected` |
+| `src/components/quote-builder/BoatInformation.tsx` | Apply protection classes to all remaining unprotected elements |
 
 ---
 
-## Implementation
+## Changes
 
-### 1. Add Global Dark Mode Resistant Heading Styles (src/index.css)
+### 1. Expand CSS Protection Classes (src/index.css)
 
-Add CSS that protects important headings from browser-based dark mode inversion:
+Add after line 36:
 
 ```css
-/* After line 20 - Protect headings from forced dark mode inversion */
-/* These headings must remain visible regardless of browser dark mode extensions */
-.heading-protected,
-.heading-protected h1,
-.heading-protected h2,
-.heading-protected h3,
-.heading-protected h4,
-.heading-protected label {
+/* Additional protection for secondary text */
+.text-protected-subtle {
+  color: hsl(220, 9%, 46%) !important;
+  -webkit-text-fill-color: hsl(220, 9%, 46%) !important;
+}
+
+/* Protection for light gray text like tips and hints */
+.text-protected-muted {
+  color: hsl(220, 13%, 55%) !important;
+  -webkit-text-fill-color: hsl(220, 13%, 55%) !important;
+}
+
+/* Card/container background protection */
+.bg-protected {
+  background-color: hsl(220, 14%, 96%) !important;
+}
+
+.bg-protected-white {
+  background-color: hsl(0, 0%, 100%) !important;
+}
+
+/* Button text protection */
+.button-text-protected {
   color: hsl(222, 47%, 11%) !important;
   -webkit-text-fill-color: hsl(222, 47%, 11%) !important;
+  border-color: hsl(222, 47%, 11%) !important;
 }
 
-.text-protected {
-  color: hsl(215, 16%, 47%) !important;
-  -webkit-text-fill-color: hsl(215, 16%, 47%) !important;
+/* Accent text protection (like primary blue) */
+.text-protected-primary {
+  color: hsl(211, 48%, 29%) !important;
+  -webkit-text-fill-color: hsl(211, 48%, 29%) !important;
 }
 ```
 
-### 2. Update BoatInformation.tsx Headings
+### 2. Update BoatInformation.tsx Elements
 
-Apply the protected classes and remove non-functional `dark:` overrides:
-
-**Main Header (line 466-471):**
+**Boat Type Card Descriptions (line 576-579):**
 ```tsx
-<div className="text-center space-y-3 animate-fade-in heading-protected">
-  <h2 className="text-3xl md:text-4xl font-light tracking-wide">Boat Details Wizard</h2>
-  <p className="text-base md:text-lg font-light text-protected">
-    Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
-  </p>
+<div className="boat-details mt-1 space-y-0.5">
+  <span className="block text-sm md:text-base font-light text-protected-subtle">{type.description}</span>
+  {type.recommendedHP && <span className="block text-xs md:text-sm text-protected-primary font-medium">Recommended: {type.recommendedHP} HP</span>}
 </div>
 ```
 
-**Question Label (line 527-529):**
+**Selection Impact Text (line 580):**
 ```tsx
-<div className="text-center space-y-2 heading-protected">
-  <Label className="text-2xl font-light tracking-wide">What type of boat do you have?</Label>
-  <p className="font-light text-protected">Pick the closest match and enter your boat length.</p>
+<div className="selection-impact mt-2 text-xs text-protected-subtle">
+```
+
+**Skip This Step Button (line 688-692):**
+```tsx
+<Button type="button" variant="ghost" size="sm" onClick={handleSkip} className="button-text-protected hover:opacity-80">
+  Skip this step - Use typical settings for {hp || selectedMotor?.hp || '--'}HP
+</Button>
+```
+
+**Navigation Buttons (line 1065-1081):**
+
+Back/Previous button:
+```tsx
+<Button type="button" variant="outline" onClick={handlePrev} className="flex items-center justify-center gap-2 min-h-[44px] order-2 sm:order-1 border-2 button-text-protected font-light rounded-sm hover:bg-gray-900 hover:text-white transition-all duration-500">
+```
+
+Skip for now button:
+```tsx
+<Button type="button" variant="ghost" onClick={handleSkip} className="text-sm min-h-[44px] font-light button-text-protected hover:opacity-80">
+```
+
+Next/Submit buttons:
+```tsx
+<Button type="submit" className="border-2 border-gray-900 bg-gray-900 text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-gray-900 transition-all duration-500" disabled={!canNext()}>
+```
+
+**Tip Text (line 1087-1089):**
+```tsx
+<div className="rounded-lg border border-border bg-protected p-4">
+  <div className="text-sm text-protected-subtle">Tip: You can tap a preset above to speed things up.</div>
 </div>
 ```
 
-**Boat Type Card Headings (line 575):**
-```tsx
-<h3 className="font-light tracking-wide text-base md:text-lg heading-protected">{type.label}</h3>
-```
+**Other Labels and Descriptions:**
+- Form labels: Add `heading-protected` class
+- Helper text (line 701, 726, 749, etc.): Replace `text-gray-500` with `text-protected-subtle`
+- Slider labels (line 732, 736): Replace `text-gray-600 dark:text-gray-300` with `text-protected-subtle`
+- Alert descriptions: Replace `text-gray-600 dark:text-gray-300` with `text-protected-subtle`
 
-**Other Section Headings:**
-- Line 481: "Motor Only" heading
-- Line 513: "Trade-In Valuation" heading  
-- Line 520: "Ready to Continue" heading
-- Line 603: "Not Sure?" heading
-- Line 609: "Let's figure out your boat type" heading
+### 3. Remove Non-Functional `dark:` Classes
 
-All will get the `heading-protected` class wrapper or direct application.
+Throughout the file, remove all `dark:` variant classes since they never fire and add clutter:
+- `dark:bg-gray-800`, `dark:bg-gray-900`, `dark:bg-red-950/30` on cards
+- `dark:border-gray-700`, `dark:border-gray-100` on borders
+- `dark:text-gray-100`, `dark:text-gray-300`, `dark:text-gray-400` on text
+- `dark:hover:text-gray-100`, `dark:hover:bg-gray-100` on hover states
+- `dark:bg-orange-950/20`, `dark:bg-blue-950/20` on alerts
 
 ---
 
-## Summary of Changes
+## Summary Table
 
 | Element | Current | After |
 |---------|---------|-------|
-| "Boat Details Wizard" | `text-gray-900 dark:text-gray-100` | `heading-protected` (CSS forces dark color) |
-| "What type of boat..." | `text-gray-900 dark:text-gray-100` | `heading-protected` |
-| Boat type labels | `text-gray-900 dark:text-gray-100` | `heading-protected` |
-| Description text | `text-gray-600 dark:text-gray-300` | `text-protected` |
-| "Not Sure?" | `text-gray-900 dark:text-gray-100` | `heading-protected` |
+| Card descriptions | `text-gray-600 dark:text-gray-300` | `text-protected-subtle` |
+| Recommended HP | `text-primary` | `text-protected-primary` |
+| Skip buttons | `text-gray-600 dark:text-gray-300` | `button-text-protected` |
+| Back/Next buttons | `border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100` | `button-text-protected` |
+| Tip text | `text-gray-600 dark:text-gray-300` | `text-protected-subtle` |
+| Helper text | `text-gray-500` | `text-protected-subtle` |
+| Slider labels | `text-gray-600 dark:text-gray-300` | `text-protected-subtle` |
+| Card backgrounds | `bg-gray-50 dark:bg-gray-800` | `bg-protected` |
 
 ---
 
-## Why This Works
-
-1. **`!important`** overrides any browser-injected dark mode styles
-2. **`-webkit-text-fill-color`** prevents WebKit browsers from inverting text color
-3. **Explicit HSL values** are not affected by Tailwind's theme resolution
-4. **Removing `dark:` classes** cleans up dead code that never executes
-
 ## Expected Result
 
-All headings on the Boat Details Wizard will be clearly visible with high contrast, regardless of browser dark mode settings or extensions.
+All text, buttons, and cards on the Boat Details Wizard page will remain clearly visible with proper contrast regardless of browser dark mode extensions or OS-level dark mode settings.
