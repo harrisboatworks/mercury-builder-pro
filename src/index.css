@@ -35,6 +35,40 @@ html, body, #root {
   -webkit-text-fill-color: hsl(215, 16%, 47%) !important;
 }
 
+/* Additional protection for secondary text */
+.text-protected-subtle {
+  color: hsl(220, 9%, 46%) !important;
+  -webkit-text-fill-color: hsl(220, 9%, 46%) !important;
+}
+
+/* Protection for light gray text like tips and hints */
+.text-protected-muted {
+  color: hsl(220, 13%, 55%) !important;
+  -webkit-text-fill-color: hsl(220, 13%, 55%) !important;
+}
+
+/* Card/container background protection */
+.bg-protected {
+  background-color: hsl(220, 14%, 96%) !important;
+}
+
+.bg-protected-white {
+  background-color: hsl(0, 0%, 100%) !important;
+}
+
+/* Button text protection */
+.button-text-protected {
+  color: hsl(222, 47%, 11%) !important;
+  -webkit-text-fill-color: hsl(222, 47%, 11%) !important;
+  border-color: hsl(222, 47%, 11%) !important;
+}
+
+/* Accent text protection (like primary blue) */
+.text-protected-primary {
+  color: hsl(211, 48%, 29%) !important;
+  -webkit-text-fill-color: hsl(211, 48%, 29%) !important;
+}
+
 body {
   overscroll-behavior-y: none; /* Prevent pull-to-refresh interference with native */
 }
