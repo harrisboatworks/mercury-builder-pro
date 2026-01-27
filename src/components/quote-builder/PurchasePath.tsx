@@ -54,15 +54,8 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
+      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
     >
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-3">
-          Great Choice! {selectedMotor?.model}
-        </h2>
-        <p className="text-muted-foreground font-light">How would you like to purchase this motor?</p>
-      </div>
-      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto items-stretch">
         <motion.div variants={cardVariants}>
           <Card className="relative bg-white hover:shadow-xl transition-all duration-300 cursor-pointer group border-2 hover:border-primary/50 flex flex-col premium-lift" 
