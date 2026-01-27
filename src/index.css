@@ -273,6 +273,31 @@ a, button, [role="button"], .cursor-pointer {
   }
 }
 
+/* ===== iOS Chrome: Disable backdrop-blur on mobile to prevent milky/washed-out rendering ===== */
+@media (max-width: 1024px) {
+  .backdrop-blur,
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-lg,
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl,
+  .backdrop-blur-3xl,
+  [class*="backdrop-blur"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  
+  /* Force solid backgrounds on mobile for elements that had transparency */
+  .bg-white\/80,
+  .bg-white\/90,
+  .bg-white\/95,
+  .bg-background\/80,
+  .bg-background\/90,
+  .bg-background\/95 {
+    background-color: hsl(0, 0%, 100%) !important;
+  }
+}
+
 /* Harris Boat Works Design System - Maritime Professional Theme */
 
 @layer base {
