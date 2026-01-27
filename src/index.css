@@ -19,6 +19,22 @@ html, body, #root {
   color: hsl(222, 47%, 11%) !important;
 }
 
+/* ===== Dark Mode Resistant Text - Protects from browser/extension forced inversion ===== */
+.heading-protected,
+.heading-protected h1,
+.heading-protected h2,
+.heading-protected h3,
+.heading-protected h4,
+.heading-protected label {
+  color: hsl(222, 47%, 11%) !important;
+  -webkit-text-fill-color: hsl(222, 47%, 11%) !important;
+}
+
+.text-protected {
+  color: hsl(215, 16%, 47%) !important;
+  -webkit-text-fill-color: hsl(215, 16%, 47%) !important;
+}
+
 body {
   overscroll-behavior-y: none; /* Prevent pull-to-refresh interference with native */
 }
