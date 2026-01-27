@@ -1,82 +1,111 @@
 
-# Fix: Scroll to Top on Quote Builder Navigation
+# Fix: Dark Mode Resistant Headings on Boat Info Page
 
 ## Problem
-
-When navigating between steps in the quote builder (e.g., clicking "Continue" on Trade-In to go to Promo Selection), users see the new page at their current scroll position (often near the bottom) before it slowly scrolls up. This creates a poor user experience where users feel "lost" on the page and have to wait for the scroll animation.
-
-## Root Cause
-
-The global `ScrollToTop` component uses:
-- A **100ms delay** before scrolling
-- **Smooth scroll behavior** for quote routes
-
-This causes the new page content to render first (at the user's previous scroll position), then animate up - which feels jarring and disorienting.
+The headings on the Boat Details Wizard page ("Boat Details Wizard", "What type of boat do you have?", boat type labels, etc.) appear nearly invisible because:
+1. Browser extensions or OS-level dark mode force color inversion
+2. The `text-gray-900` Tailwind class gets inverted to light gray
+3. The `dark:` overrides added earlier never fire because `ThemeProvider` forces light mode
 
 ## Solution
-
-Change the scroll behavior for quote builder routes from `smooth` to `instant` so the page immediately appears at the top when navigating between steps.
+Make headings **resistant to forced dark mode** by:
+1. Using high-specificity CSS with explicit color values
+2. Adding a global CSS rule that protects critical text from inversion
+3. Removing ineffective `dark:` classes (they never fire)
 
 ---
 
-## File Changes
+## Files to Modify
 
-### 1. Update ScrollToTop Component
+| File | Change |
+|------|--------|
+| `src/index.css` | Add forced color protection for headings |
+| `src/components/quote-builder/BoatInformation.tsx` | Apply protected heading class + remove dead `dark:` overrides |
 
-**File**: `src/components/ui/ScrollToTop.tsx`
+---
 
-**Change**: Use `instant` scroll behavior for quote routes instead of `smooth`, and reduce the delay.
+## Implementation
 
-| Before | After |
-|--------|-------|
-| 100ms delay | 50ms delay (faster response) |
-| `behavior: 'smooth'` for quote routes | `behavior: 'instant'` for quote routes |
+### 1. Add Global Dark Mode Resistant Heading Styles (src/index.css)
 
-**Lines 73-81**:
-```typescript
-// Before
-const timer = setTimeout(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: isQuoteRoute ? 'smooth' : 'auto'
-  });
-  ...
-}, 100);
+Add CSS that protects important headings from browser-based dark mode inversion:
 
-// After  
-const timer = setTimeout(() => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'instant'  // Always instant for immediate feedback
-  });
-  ...
-}, 50);  // Reduced delay for faster scroll
+```css
+/* After line 20 - Protect headings from forced dark mode inversion */
+/* These headings must remain visible regardless of browser dark mode extensions */
+.heading-protected,
+.heading-protected h1,
+.heading-protected h2,
+.heading-protected h3,
+.heading-protected h4,
+.heading-protected label {
+  color: hsl(222, 47%, 11%) !important;
+  -webkit-text-fill-color: hsl(222, 47%, 11%) !important;
+}
+
+.text-protected {
+  color: hsl(215, 16%, 47%) !important;
+  -webkit-text-fill-color: hsl(215, 16%, 47%) !important;
+}
 ```
+
+### 2. Update BoatInformation.tsx Headings
+
+Apply the protected classes and remove non-functional `dark:` overrides:
+
+**Main Header (line 466-471):**
+```tsx
+<div className="text-center space-y-3 animate-fade-in heading-protected">
+  <h2 className="text-3xl md:text-4xl font-light tracking-wide">Boat Details Wizard</h2>
+  <p className="text-base md:text-lg font-light text-protected">
+    Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
+  </p>
+</div>
+```
+
+**Question Label (line 527-529):**
+```tsx
+<div className="text-center space-y-2 heading-protected">
+  <Label className="text-2xl font-light tracking-wide">What type of boat do you have?</Label>
+  <p className="font-light text-protected">Pick the closest match and enter your boat length.</p>
+</div>
+```
+
+**Boat Type Card Headings (line 575):**
+```tsx
+<h3 className="font-light tracking-wide text-base md:text-lg heading-protected">{type.label}</h3>
+```
+
+**Other Section Headings:**
+- Line 481: "Motor Only" heading
+- Line 513: "Trade-In Valuation" heading  
+- Line 520: "Ready to Continue" heading
+- Line 603: "Not Sure?" heading
+- Line 609: "Let's figure out your boat type" heading
+
+All will get the `heading-protected` class wrapper or direct application.
+
+---
+
+## Summary of Changes
+
+| Element | Current | After |
+|---------|---------|-------|
+| "Boat Details Wizard" | `text-gray-900 dark:text-gray-100` | `heading-protected` (CSS forces dark color) |
+| "What type of boat..." | `text-gray-900 dark:text-gray-100` | `heading-protected` |
+| Boat type labels | `text-gray-900 dark:text-gray-100` | `heading-protected` |
+| Description text | `text-gray-600 dark:text-gray-300` | `text-protected` |
+| "Not Sure?" | `text-gray-900 dark:text-gray-100` | `heading-protected` |
 
 ---
 
 ## Why This Works
 
-1. **Instant scroll** ensures users always see the new page from the top immediately
-2. **Reduced delay** (50ms) still allows React to commit the new route before scrolling, but feels more responsive
-3. **Consistent with QuoteSummaryPage** which already uses `window.scrollTo({ top: 0, behavior: 'instant' })` on mount
-
-## Pages That Will Benefit
-
-All quote builder step transitions:
-- Motor Selection → Options → Purchase Path
-- Purchase Path → Boat Info / Trade-In
-- Trade-In → Installation / Promo Selection
-- Promo Selection → Package Selection
-- Package Selection → Summary
-- Summary → Schedule
-
----
+1. **`!important`** overrides any browser-injected dark mode styles
+2. **`-webkit-text-fill-color`** prevents WebKit browsers from inverting text color
+3. **Explicit HSL values** are not affected by Tailwind's theme resolution
+4. **Removing `dark:` classes** cleans up dead code that never executes
 
 ## Expected Result
 
-| Before | After |
-|--------|-------|
-| Page renders at scroll position, then slowly animates up | Page immediately appears at top |
-| User sees bottom of new page first | User always sees top of new page |
-| Disorienting experience | Clean, predictable navigation |
+All headings on the Boat Details Wizard will be clearly visible with high contrast, regardless of browser dark mode settings or extensions.
