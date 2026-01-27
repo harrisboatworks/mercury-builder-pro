@@ -70,14 +70,11 @@ export function ScrollToTop() {
       return;
     }
 
-    // Simplified: Just scroll to top after modal checks
-    // Use smooth scroll for quote builder steps for a premium feel
-    const isQuoteRoute = location.pathname.startsWith('/quote/');
-    
+    // Scroll to top immediately for clean navigation experience
     const timer = setTimeout(() => {
       window.scrollTo({
         top: 0,
-        behavior: isQuoteRoute ? 'smooth' : 'auto'
+        behavior: 'instant'
       });
 
       // Focus on the main content for accessibility
@@ -90,7 +87,7 @@ export function ScrollToTop() {
           mainContent.removeAttribute('tabindex');
         }, 100);
       }
-    }, 100);
+    }, 50);
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
