@@ -62,9 +62,7 @@ export function LuxuryHeader({
       {/* Main Header */}
       <header 
         className={`sticky top-0 z-50 h-14 sm:h-16 md:h-[72px] transition-all duration-300 bg-white border-b border-luxury-hairline ${
-          isScrolled 
-            ? 'shadow-sm backdrop-blur-md opacity-100' 
-            : 'opacity-95'
+          isScrolled ? 'shadow-sm backdrop-blur-md' : ''
         }`}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 h-full">
