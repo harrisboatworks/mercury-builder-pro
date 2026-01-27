@@ -463,9 +463,9 @@ export const BoatInformation = ({
   };
   return <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 md:space-y-8 py-4 md:py-6 lg:py-8 overflow-x-hidden">
       {/* Header */}
-      <div className="text-center space-y-3 animate-fade-in">
-        <h2 className="text-3xl md:text-4xl font-light tracking-wide text-gray-900 dark:text-gray-100">Boat Details Wizard</h2>
-              <p className="text-base md:text-lg font-light text-gray-600 dark:text-gray-300">
+      <div className="text-center space-y-3 animate-fade-in heading-protected">
+        <h2 className="text-3xl md:text-4xl font-light tracking-wide">Boat Details Wizard</h2>
+              <p className="text-base md:text-lg font-light text-protected">
                 Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
               </p>
       </div>
@@ -478,7 +478,7 @@ export const BoatInformation = ({
         {boatInfo.type === 'motor-only' ? <>
             {currentStep === 0 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
-                  <h3 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Motor Only</h3>
+                  <h3 className="text-2xl font-light tracking-wide heading-protected">Motor Only</h3>
                   <p className="text-sm font-light text-gray-500">Buying a motor without a boat? We'll confirm specs at consultation.</p>
 
                   <div className="space-y-2">
@@ -510,23 +510,23 @@ export const BoatInformation = ({
 
             {showTradeIn && currentStep === 1 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Trade-In Valuation (Optional)</h3>
+                  <h3 className="text-2xl font-light tracking-wide heading-protected">Trade-In Valuation (Optional)</h3>
                   <TradeInValuation tradeInInfo={tradeInInfo} onTradeInChange={setTradeInInfo} currentMotorBrand={'No Current Motor'} currentHp={0} />
                 </div>
               </Card>}
 
             {currentStep === 2 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-4">
-                  <h3 className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">Ready to Continue</h3>
+                  <h3 className="text-2xl font-light tracking-wide heading-protected">Ready to Continue</h3>
                   <p className="text-sm font-light text-gray-500">We'll use typical settings and confirm any unknowns.</p>
                 </div>
               </Card>}
           </> : <>
             {currentStep === 0 && <Card className="p-6 animate-fade-in">
                 <div className="space-y-6">
-                  <div className="text-center space-y-2">
-                    <Label className="text-2xl font-light tracking-wide text-gray-900 dark:text-gray-100">What type of boat do you have?</Label>
-                    <p className="font-light text-gray-500">Pick the closest match and enter your boat length.</p>
+                  <div className="text-center space-y-2 heading-protected">
+                    <Label className="text-2xl font-light tracking-wide">What type of boat do you have?</Label>
+                    <p className="font-light text-protected">Pick the closest match and enter your boat length.</p>
                   </div>
                   
                   {boatTypes
@@ -572,7 +572,7 @@ export const BoatInformation = ({
                                loading="lazy" 
                              />
                          </div>
-                        <h3 className="font-light tracking-wide text-base md:text-lg text-gray-900 dark:text-gray-100">{type.label}</h3>
+                        <h3 className="font-light tracking-wide text-base md:text-lg heading-protected">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
                           <span className="block text-sm md:text-base font-light text-gray-600 dark:text-gray-300">{type.description}</span>
                           {type.recommendedHP && <span className="block text-xs md:text-sm text-primary font-medium">Recommended: {type.recommendedHP} HP</span>}
@@ -600,14 +600,14 @@ export const BoatInformation = ({
                       <div className="mb-3 h-24 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
                            <img src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png" alt="Not sure? We'll help you choose your boat type" className="h-20 w-full h-auto object-contain" loading="lazy" />
                       </div>
-                      <h3 className="font-light tracking-wide text-gray-900 dark:text-gray-100">Not Sure?</h3>
-                      <p className="text-sm font-light text-gray-500">We'll help you figure it out</p>
+                      <h3 className="font-light tracking-wide heading-protected">Not Sure?</h3>
+                      <p className="text-sm font-light text-protected">We'll help you figure it out</p>
                      </button>
                    </div>
 
                    {/* Help content for "Not Sure?" option */}
                    {showHelp && <div className="help-content animate-fade-in mt-4 p-4 bg-muted/30 rounded-lg border border-border">
-                       <h4 className="font-light tracking-wide text-gray-900 dark:text-gray-100 mb-3">Let's figure out your boat type together!</h4>
+                       <h4 className="font-light tracking-wide heading-protected mb-3">Let's figure out your boat type together!</h4>
                        <div className="space-y-3 text-sm">
                          <p>Answer these quick questions to identify your boat:</p>
                          <div className="space-y-2">
@@ -697,7 +697,7 @@ export const BoatInformation = ({
                          {/* Boat Make and Model */}
                          <div className="space-y-4">
                           <div className="text-center space-y-2">
-                            <Label className="text-xl font-light tracking-wide text-gray-900 dark:text-gray-100">Tell us about your {boatTypes.find(t => t.id === boatInfo.type)?.label}</Label>
+                            <Label className="text-xl font-light tracking-wide heading-protected">Tell us about your {boatTypes.find(t => t.id === boatInfo.type)?.label}</Label>
                             <p className="text-sm font-light text-gray-500">Boat details help us provide more accurate recommendations</p>
                            </div>
                            
