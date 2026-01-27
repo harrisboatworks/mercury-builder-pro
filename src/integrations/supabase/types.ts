@@ -265,6 +265,7 @@ export type Database = {
           penalty_reason: string | null
           promotion_id: string | null
           quote_data: Json | null
+          share_token: string | null
           term_months: number
           total_cost: number
           tradein_value_final: number | null
@@ -303,6 +304,7 @@ export type Database = {
           penalty_reason?: string | null
           promotion_id?: string | null
           quote_data?: Json | null
+          share_token?: string | null
           term_months: number
           total_cost: number
           tradein_value_final?: number | null
@@ -341,6 +343,7 @@ export type Database = {
           penalty_reason?: string | null
           promotion_id?: string | null
           quote_data?: Json | null
+          share_token?: string | null
           term_months?: number
           total_cost?: number
           tradein_value_final?: number | null
