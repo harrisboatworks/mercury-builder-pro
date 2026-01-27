@@ -1,61 +1,63 @@
 
-# Fix: Stepper Route & Remove Redundant Heading
+# Fix: Remove Redundant Heading on Purchase Path Page
 
-## Problems
-1. **Stepper shows "Step 0 of 7 / Loading..."** because `/quote/boat-info` is missing from the stepper configuration
-2. **"Boat Details Wizard" heading is redundant** - the stepper already indicates the step, and the form question is self-explanatory
+## Problem
+The Purchase Path page (`/quote/purchase-path`) displays a redundant "Great Choice! 60 ELPT FourStroke" heading and "How would you like to purchase this motor?" subheading. This is unnecessary because:
+- The stepper already indicates the user is on the "Purchase Path" step
+- The user just selected this motor so a confirmation is redundant
+- The card titles ("Loose Motor" / "Professional Installation") are self-explanatory
+
+## Solution
+Remove the header section from `PurchasePath.tsx` to let the cards speak for themselves.
 
 ---
 
-## Changes
+## File to Modify
 
-### 1. Add Boat Info to Stepper (QuoteProgressStepper.tsx)
+| File | Change |
+|------|--------|
+| `src/components/quote-builder/PurchasePath.tsx` | Delete lines 59-64 (header block) |
 
-Insert the "Boat Info" step after "Purchase Path" (id: 3):
+---
 
-```text
-File: src/components/quote-builder/QuoteProgressStepper.tsx
+## Change Details
 
-Add new step after line 33:
+### Remove Header Block (lines 59-64)
 
-  {
-    id: 4,
-    label: 'Boat Info',
-    shortLabel: 'Boat',
-    path: '/quote/boat-info',
-  },
+**Delete this entire block:**
+```tsx
+<div className="text-center mb-12">
+  <h2 className="text-3xl md:text-4xl font-light tracking-wide text-foreground mb-3">
+    Great Choice! {selectedMotor?.model}
+  </h2>
+  <p className="text-muted-foreground font-light">How would you like to purchase this motor?</p>
+</div>
 ```
 
-Then update all subsequent step IDs (Trade-In becomes 5, Fuel Tank becomes 6, etc.) to maintain proper ordering.
+### Adjust Container Spacing
 
-### 2. Remove Redundant Header (BoatInformation.tsx)
+With the header removed, update the container padding from `py-8` to `py-4` since we no longer need as much top spacing:
 
-Delete the "Boat Details Wizard" header block entirely (lines 466-471):
+```tsx
+// Line 57: before
+className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8"
 
-| Before | After |
-|--------|-------|
-| "Boat Details Wizard" heading + subheading | No header - content starts directly |
-
-The card's "What type of boat do you have?" question provides sufficient context.
+// After
+className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
+```
 
 ---
 
 ## Result
 
-| Element | Before | After |
-|---------|--------|-------|
-| Mobile stepper | "Step 0 of 7" / "Loading..." | "Step 4 of 7" / "Boat Info" |
-| Page header | Large "Boat Details Wizard" + description | Removed (cleaner) |
-| First visible content | Form question pushed down | Form question immediately visible |
+| Before | After |
+|--------|-------|
+| "Great Choice! 60 ELPT FourStroke" heading | Removed |
+| "How would you like to purchase this motor?" subheading | Removed |
+| Cards pushed down by header | Cards immediately visible |
 
 ---
 
-## Technical Details
+## Visual Impact
 
-**File 1: `src/components/quote-builder/QuoteProgressStepper.tsx`**
-- Insert Boat Info step with `id: 4`, `path: '/quote/boat-info'`
-- Renumber subsequent steps (Trade-In: 5, Fuel Tank: 6, Installation: 7, Promo: 8, Package: 9, Summary: 10)
-
-**File 2: `src/components/quote-builder/BoatInformation.tsx`**
-- Delete lines 466-471 (the header `div` with "Boat Details Wizard" and its description)
-- This removes ~6 lines of code and improves mobile scroll efficiency
+The two purchase option cards ("Loose Motor" and "Professional Installation") will now be the first visible content, providing a cleaner experience consistent with the Boat Info page design.
