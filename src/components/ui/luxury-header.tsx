@@ -256,16 +256,6 @@ export function LuxuryHeader({
                 Engines
               </Link>
               <Link 
-                to="/accessories" 
-                className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
-                  location.pathname === '/accessories' 
-                    ? 'text-foreground after:scale-x-100' 
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                Accessories
-              </Link>
-              <Link 
                 to="/promotions" 
                 className={`relative text-sm font-medium transition-all duration-300 hover:scale-105 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-foreground after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${
                   location.pathname === '/promotions' 

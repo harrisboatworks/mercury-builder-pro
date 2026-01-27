@@ -14,7 +14,6 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
 
   const navigationLinks = [
     { label: 'Motors', href: '/quote/motor-selection' },
-    { label: 'Accessories', href: '/accessories' },
     { label: 'Promotions', href: '/promotions' },
     { label: 'Financing', href: '/financing' },
     { label: 'Blog', href: '/blog' },
