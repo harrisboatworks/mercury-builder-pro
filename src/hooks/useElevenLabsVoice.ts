@@ -1058,6 +1058,12 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         console.log('%c🔗 TOOL CHAIN STARTED', 'background: #9C27B0; color: white; padding: 2px 6px; border-radius: 4px;');
       }
       console.log(`%c📍 Active tools: [${Array.from(activeToolsRef.current).join(', ')}]`, 'color: #9C27B0;');
+      
+      // ========== FIX: Clear watchdog when tools start ==========
+      // Tool starting = agent IS responding (tool execution is a form of response)
+      // This prevents the watchdog from firing during legitimate tool operations
+      agentRespondedRef.current = true;
+      clearThinkingWatchdog();
       // ==========================================
       
       // ========== ENHANCED TOOL CALL LOGGING ==========
@@ -1227,6 +1233,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     console.log('[Voice] Starting thinking watchdog timer...');
     
     thinkingWatchdogRef.current = setTimeout(() => {
+      // ========== FIX: Guard against nudging while tools are active ==========
+      // Don't nudge if tools are actively processing - let them complete
+      if (activeToolsRef.current.size > 0) {
+        console.log('[Watchdog] Tools active - skipping nudge');
+        return;
+      }
+      
       // Only nudge if agent hasn't responded and we haven't already nudged
       if (!agentRespondedRef.current && !thinkingNudgeSentRef.current) {
         console.log('[Voice] Thinking watchdog triggered - agent slow to respond, sending nudge');
@@ -1483,7 +1496,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
                   console.warn('[Fallback] Could not send context to agent:', e);
                 }
               }
-            }, 600); // Wait for navigation + filter + store update
+            }, 1200); // Wait for navigation + filter + store update (increased from 600ms)
           }
           // === END NAVIGATE-FIRST SAFETY NET ===
 
@@ -1643,17 +1656,18 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       check_inventory: withSearchingFeedback(
         'check_inventory',
         async (params: { horsepower?: number; family?: string; in_stock?: boolean; min_hp?: number; max_hp?: number }) => {
-          // === DEDUPLICATION: Skip if we just navigated to same HP within 3 seconds ===
+          // === DEDUPLICATION: Skip if we just navigated to same HP within 5 seconds ===
+          // Extended from 3s to 5s to give more buffer for tool chains
           const recentNav = lastNavigationRef.current;
           if (recentNav && 
               params.horsepower && 
               recentNav.hp === params.horsepower && 
-              Date.now() - recentNav.timestamp < 3000) {
+              Date.now() - recentNav.timestamp < 5000) {
             console.log('%c⏭️ check_inventory SKIPPED: Recent navigation already covered this HP', 'background: #FF9800; color: white; padding: 2px 6px; border-radius: 4px;');
             return JSON.stringify({ 
-              message: "Already showing these motors on screen.",
-              hint: "Call get_visible_motors to describe what's displayed",
-              skipped: true
+              skipped: true,
+              instruction: "SCREEN ALREADY SHOWS THIS DATA. Do NOT say 'checking' or 'let me look'. Just describe the motors visible on screen.",
+              hint: "Use get_visible_motors if needed, or just describe what you know"
             });
           }
           return await handleInventoryLookup('check_inventory', params);
