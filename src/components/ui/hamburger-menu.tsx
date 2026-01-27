@@ -63,7 +63,6 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
             <h3 className="font-semibold text-foreground">Navigation</h3>
             <div className="space-y-2">
               <Link to="/" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Engines</Link>
-              <Link to="/accessories" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Accessories</Link>
               <Link to="/promotions" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Promotions</Link>
               <Link to="/repower" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Repower</Link>
               <Link to="/compare" onClick={onClose} className="block py-2 text-muted-foreground hover:text-foreground">Compare Engines</Link>
