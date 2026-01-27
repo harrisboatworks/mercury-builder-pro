@@ -33,6 +33,12 @@ const allSteps: Step[] = [
   },
   {
     id: 4,
+    label: 'Boat Info',
+    shortLabel: 'Boat',
+    path: '/quote/boat-info',
+  },
+  {
+    id: 5,
     label: 'Trade-In',
     shortLabel: 'Trade-In',
     path: '/quote/trade-in',
@@ -40,7 +46,7 @@ const allSteps: Step[] = [
     condition: (state) => state.hasTradein,
   },
   {
-    id: 5,
+    id: 6,
     label: 'Fuel Tank',
     shortLabel: 'Fuel',
     path: '/quote/fuel-tank',
@@ -48,7 +54,7 @@ const allSteps: Step[] = [
     condition: (state) => state.purchasePath === 'loose' && state.motor?.isTiller,
   },
   {
-    id: 6,
+    id: 7,
     label: 'Installation',
     shortLabel: 'Install',
     path: '/quote/installation',
@@ -56,19 +62,19 @@ const allSteps: Step[] = [
     condition: (state) => state.purchasePath === 'installed',
   },
   {
-    id: 7,
+    id: 8,
     label: 'Promo',
     shortLabel: 'Promo',
     path: '/quote/promo-selection',
   },
   {
-    id: 8,
+    id: 9,
     label: 'Package',
     shortLabel: 'Package',
     path: '/quote/package-selection',
   },
   {
-    id: 9,
+    id: 10,
     label: 'Summary',
     shortLabel: 'Summary',
     path: '/quote/summary',
