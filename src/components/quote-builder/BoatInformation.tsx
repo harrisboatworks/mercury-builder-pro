@@ -556,11 +556,11 @@ export const BoatInformation = ({
                          selectedMotor.model,
                          type.id
                        ))
-                        .map(type => <button type="button" key={type.id} onClick={() => setBoatInfo(prev => ({
+                       .map(type => <button type="button" key={type.id} onClick={() => setBoatInfo(prev => ({
                    ...prev,
                    type: type.id
-                 }))} className={`group relative rounded-2xl border-2 p-4 bg-gray-50 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-50' : 'border-gray-200'}`} aria-pressed={boatInfo.type === type.id}>
-                          <div className="mb-3 h-32 md:h-40 overflow-hidden rounded-md flex items-center justify-center bg-white">
+                 }))} className={`group relative rounded-2xl border-2 p-4 bg-gray-50 dark:bg-gray-800 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-50 dark:bg-red-950/30' : 'border-gray-200 dark:border-gray-700'}`} aria-pressed={boatInfo.type === type.id}>
+                          <div className="mb-3 h-32 md:h-40 overflow-hidden rounded-md flex items-center justify-center bg-white dark:bg-gray-900">
                              <img 
                                src={type.image} 
                                alt={`${type.label} boat`} 
@@ -572,7 +572,7 @@ export const BoatInformation = ({
                                loading="lazy" 
                              />
                          </div>
-                        <h3 className="font-light tracking-wide text-base md:text-lg text-gray-900">{type.label}</h3>
+                        <h3 className="font-light tracking-wide text-base md:text-lg text-gray-900 dark:text-gray-100">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
                           <span className="block text-sm md:text-base font-light text-gray-600 dark:text-gray-300">{type.description}</span>
                           {type.recommendedHP && <span className="block text-xs md:text-sm text-primary font-medium">Recommended: {type.recommendedHP} HP</span>}
@@ -600,14 +600,14 @@ export const BoatInformation = ({
                       <div className="mb-3 h-24 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
                            <img src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png" alt="Not sure? We'll help you choose your boat type" className="h-20 w-full h-auto object-contain" loading="lazy" />
                       </div>
-                      <h3 className="font-light tracking-wide text-gray-900">Not Sure?</h3>
+                      <h3 className="font-light tracking-wide text-gray-900 dark:text-gray-100">Not Sure?</h3>
                       <p className="text-sm font-light text-gray-500">We'll help you figure it out</p>
                      </button>
                    </div>
 
                    {/* Help content for "Not Sure?" option */}
                    {showHelp && <div className="help-content animate-fade-in mt-4 p-4 bg-muted/30 rounded-lg border border-border">
-                       <h4 className="font-light tracking-wide text-gray-900 mb-3">Let's figure out your boat type together!</h4>
+                       <h4 className="font-light tracking-wide text-gray-900 dark:text-gray-100 mb-3">Let's figure out your boat type together!</h4>
                        <div className="space-y-3 text-sm">
                          <p>Answer these quick questions to identify your boat:</p>
                          <div className="space-y-2">
