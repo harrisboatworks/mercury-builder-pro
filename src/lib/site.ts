@@ -1,5 +1,6 @@
 // src/lib/site.ts
-// Works in Vite/React. Reads your Vercel env var and falls back to the current origin.
+// Production URL for QR codes and public links
+// Prioritizes: VITE_SITE_URL env var → hardcoded production domain → window.location.origin
 export const SITE_URL =
   (import.meta as any).env?.VITE_SITE_URL || 
-  (typeof window !== 'undefined' ? window.location.origin : 'https://eutsoqdpjurknjsshxes.supabase.co');
+  'https://quote.harrisboatworks.ca';
