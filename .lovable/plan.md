@@ -1,48 +1,98 @@
 
-# Hide Accessories Page (Temporary)
 
-## Summary
-Remove the Accessories page from all navigation menus while preserving the code for future use.
+# Fix: Mobile Washed Out / Pink Tint Issue
+
+## Problem
+The site appears "washed out" with a pinkish-beige tint on iPhone Chrome. All UI elements look faded and have a pink overlay.
+
+## Root Cause Analysis
+
+Two elements are combining to cause this issue:
+
+### 1. Header `opacity-95` (Primary Culprit)
+When the page first loads (not scrolled), the header has `opacity-95`:
+
+```tsx
+// src/components/ui/luxury-header.tsx:64-68
+className={`... ${
+  isScrolled 
+    ? 'shadow-sm backdrop-blur-md opacity-100' 
+    : 'opacity-95'  // ← This makes header semi-transparent
+}`}
+```
+
+On iOS Chrome, this partial transparency triggers GPU compositing issues with the blurred background elements.
+
+### 2. Ambient Gradient Orbs (Secondary Culprit)
+The `QuoteLayout` has three fixed-position blurred gradient circles:
+
+```tsx
+// src/components/quote-builder/QuoteLayout.tsx:35-39
+<div className="bg-blue-100/40 blur-3xl" />
+<div className="bg-purple-100/30 blur-3xl" />
+<div className="bg-emerald-100/20 blur-3xl" />
+```
+
+When these overlapping colors (blue + purple + emerald) are viewed through the `opacity-95` header on iOS, they blend into an unexpected **pinkish wash**.
 
 ---
 
-## Changes
+## Solution
 
-### Files to Modify
+Make two targeted changes:
+
+### Change 1: Remove `opacity-95` from header
+**File:** `src/components/ui/luxury-header.tsx`
+
+Replace the opacity-based approach with solid white at all times:
+
+```tsx
+// Before (line 64-68):
+className={`sticky top-0 z-50 ... ${
+  isScrolled 
+    ? 'shadow-sm backdrop-blur-md opacity-100' 
+    : 'opacity-95'
+}`}
+
+// After:
+className={`sticky top-0 z-50 ... ${
+  isScrolled 
+    ? 'shadow-sm backdrop-blur-md' 
+    : ''
+}`}
+```
+
+The header is already `bg-white`, so the opacity was only adding a subtle "floating" effect that's not worth the mobile rendering bugs.
+
+### Change 2: Hide gradient orbs on mobile
+**File:** `src/components/quote-builder/QuoteLayout.tsx`
+
+Add `hidden md:block` so the decorative orbs only render on desktop:
+
+```tsx
+// Before (line 35):
+<div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+
+// After:
+<div className="hidden md:block fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+```
+
+This removes the blur-3xl elements on mobile where they cause GPU artifacts.
+
+---
+
+## Summary of Changes
 
 | File | Change |
 |------|--------|
-| `src/components/ui/luxury-header.tsx` | Remove desktop nav link (lines 258-267) |
-| `src/components/ui/hamburger-menu.tsx` | Remove mobile nav link (line 66) |
-| `src/components/ui/site-footer.tsx` | Remove footer link from `navigationLinks` array (line 17) |
+| `src/components/ui/luxury-header.tsx` | Remove `opacity-95` class from header |
+| `src/components/quote-builder/QuoteLayout.tsx` | Add `hidden md:block` to gradient orbs container |
 
 ---
 
-## What Stays Unchanged
+## Expected Result
 
-The following will remain **untouched** so you can easily restore the page later:
+- Mobile: Clean, solid white background with crisp UI
+- Desktop: Retains subtle glassmorphism aesthetic with gradient orbs
+- No visible change to the overall design intent
 
-| Item | Reason |
-|------|--------|
-| `src/pages/Accessories.tsx` | Keep the page component |
-| `src/App.tsx` route | Route stays defined (direct URL still works for testing) |
-| `src/lib/accessories-data.ts` | Keep the data file |
-| `GlobalStickyQuoteBar.tsx` | Already excludes accessories page |
-| `UnifiedMobileBar.tsx` | No visible link, just visibility logic |
-| Contact form "Parts & Accessories" option | Useful for general inquiries |
-| `llms.txt` | Can update later when ready |
-
----
-
-## Result
-
-- **Accessories** link removed from header, mobile menu, and footer
-- Direct URL `/accessories` still works (for internal testing)
-- All code preserved for easy re-enablement later
-- No visible way for customers to navigate to the page
-
----
-
-## To Re-Enable Later
-
-Simply revert these 3 changes to restore the navigation links.
