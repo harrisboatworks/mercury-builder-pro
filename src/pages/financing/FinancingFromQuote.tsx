@@ -74,12 +74,13 @@ export default function FinancingFromQuote() {
   }
 
   function loadQuoteFromParams() {
-    // EXISTING parameter-based logic (unchanged)
-    const motorModel = searchParams.get('motor');
-    const motorPrice = searchParams.get('price');
-    const packageName = searchParams.get('package');
-    const downPayment = searchParams.get('down') || '0';
-    const tradeInValue = searchParams.get('trade') || '0';
+    // Support BOTH legacy param names (motor/price/package/down/trade)
+    // and the newer names used by current QR codes (motorModel/motorPrice/...)
+    const motorModel = searchParams.get('motorModel') || searchParams.get('motor');
+    const motorPrice = searchParams.get('motorPrice') || searchParams.get('price');
+    const packageName = searchParams.get('packageName') || searchParams.get('package');
+    const downPayment = searchParams.get('downPayment') || searchParams.get('down') || '0';
+    const tradeInValue = searchParams.get('tradeInValue') || searchParams.get('trade') || '0';
 
     // Validate required parameters
     if (!motorModel || !motorPrice) {

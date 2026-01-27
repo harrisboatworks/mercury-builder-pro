@@ -15,6 +15,7 @@ import AdminNav from '@/components/admin/AdminNav';
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { SITE_URL } from '@/lib/site';
+import { DEALERPLAN_FEE } from '@/lib/finance';
 import { QuoteChangeLog } from '@/components/admin/QuoteChangeLog';
 import QRCode from 'qrcode';
 
@@ -307,8 +308,18 @@ const AdminQuoteDetail = () => {
       // Get selected package info
       const selectedPackage = qd.selectedPackage || null;
       
-      // Generate financing QR code using public SITE_URL
-      const financingUrl = `${SITE_URL}/financing-application/from-quote?quoteId=${q.id}`;
+      // Generate financing QR code using public SITE_URL.
+      // IMPORTANT: Do NOT rely on saved_quotes here. We pass URL params so public scans always prefill.
+      const pkgLabel = selectedPackage?.label ? selectedPackage.label.split('•')[0].trim() : '';
+      const financingParams = new URLSearchParams({
+        motorModel: motor.model || motor.display_name || 'Motor',
+        motorPrice: (totalPrice + DEALERPLAN_FEE).toFixed(2),
+        packageName: pkgLabel,
+        downPayment: '0',
+        tradeInValue: String(tradeInValue || 0),
+        fromQr: 'true',
+      });
+      const financingUrl = `${SITE_URL}/financing-application?${financingParams.toString()}`;
       let financingQrCode = '';
       try {
         financingQrCode = await QRCode.toDataURL(financingUrl, {

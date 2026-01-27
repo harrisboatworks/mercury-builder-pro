@@ -425,21 +425,17 @@ export default function QuoteSummaryPage() {
       const packageTotal = packageSpecificTotals.subtotal + packageTax;
       
       // Generate QR code
-      const savedQuoteId = localStorage.getItem('current_saved_quote_id');
-      let financingUrl: string;
-      
-      if (savedQuoteId) {
-        financingUrl = `${SITE_URL}/financing-application/from-quote?quoteId=${savedQuoteId}`;
-      } else {
-        const financingParams = new URLSearchParams({
-          motor: motorName,
-          price: (packageTotal + DEALERPLAN_FEE).toFixed(2),
-          package: selectedPackageLabel.split('•')[0].trim(),
-          down: '0',
-          trade: state.tradeInInfo?.hasTradeIn ? String(state.tradeInInfo.estimatedValue || '0') : '0'
-        });
-        financingUrl = `${SITE_URL}/financing-application/from-quote?${financingParams.toString()}`;
-      }
+      // IMPORTANT: Do NOT rely on saved_quotes here. Live currently has 0 rows in saved_quotes,
+      // so QR scans must be able to prefill the financing app from URL params alone.
+      const financingParams = new URLSearchParams({
+        motorModel: motorName,
+        motorPrice: (packageTotal + DEALERPLAN_FEE).toFixed(2),
+        packageName: selectedPackageLabel.split('•')[0].trim(),
+        downPayment: '0',
+        tradeInValue: state.tradeInInfo?.hasTradeIn ? String(state.tradeInInfo.estimatedValue || '0') : '0',
+        fromQr: 'true',
+      });
+      const financingUrl = `${SITE_URL}/financing-application?${financingParams.toString()}`;
       
       let qrCodeDataUrl = '';
       try {
