@@ -1,99 +1,82 @@
 
-# Fix: Dark Mode Heading Visibility on Boat Info Page
+# Fix: Scroll to Top on Quote Builder Navigation
 
 ## Problem
 
-In dark mode, several headings and card elements on the Boat Details Wizard page are nearly invisible because they use hardcoded light-mode colors (`text-gray-900`, `bg-gray-50`) without corresponding `dark:` variant overrides.
+When navigating between steps in the quote builder (e.g., clicking "Continue" on Trade-In to go to Promo Selection), users see the new page at their current scroll position (often near the bottom) before it slowly scrolls up. This creates a poor user experience where users feel "lost" on the page and have to wait for the scroll animation.
 
-### Affected Elements (from screenshot)
-- "Boat Details Wizard" main heading (has override - OK)
-- "What type of boat do you have?" question label
-- Boat type card headings (e.g., "Pontoon", "V-Hull Fishing")
-- Boat type card backgrounds
-- "Not Sure?" help button heading and text
-- Help content headings
+## Root Cause
 
----
+The global `ScrollToTop` component uses:
+- A **100ms delay** before scrolling
+- **Smooth scroll behavior** for quote routes
 
-## Files to Modify
+This causes the new page content to render first (at the user's previous scroll position), then animate up - which feels jarring and disorienting.
 
-| File | Purpose |
-|------|---------|
-| `src/components/quote-builder/BoatInformation.tsx` | Add dark mode text colors to headings and card backgrounds |
+## Solution
+
+Change the scroll behavior for quote builder routes from `smooth` to `instant` so the page immediately appears at the top when navigating between steps.
 
 ---
 
-## Changes
+## File Changes
 
-### 1. Boat Type Card Headings (Line 575)
-**Current:**
-```tsx
-<h3 className="font-light tracking-wide text-base md:text-lg text-gray-900">{type.label}</h3>
-```
+### 1. Update ScrollToTop Component
 
-**Fixed:**
-```tsx
-<h3 className="font-light tracking-wide text-base md:text-lg text-gray-900 dark:text-gray-100">{type.label}</h3>
-```
+**File**: `src/components/ui/ScrollToTop.tsx`
 
-### 2. Boat Type Card Backgrounds (Line 562)
-**Current:**
-```tsx
-className={`group relative rounded-2xl border-2 p-4 bg-gray-50 text-left ... ${boatInfo.type === type.id ? 'border-red-600 bg-red-50' : 'border-gray-200'}`}
-```
+**Change**: Use `instant` scroll behavior for quote routes instead of `smooth`, and reduce the delay.
 
-**Fixed:**
-```tsx
-className={`group relative rounded-2xl border-2 p-4 bg-gray-50 dark:bg-gray-800 text-left ... ${boatInfo.type === type.id ? 'border-red-600 bg-red-50 dark:bg-red-950/30' : 'border-gray-200 dark:border-gray-700'}`}
-```
+| Before | After |
+|--------|-------|
+| 100ms delay | 50ms delay (faster response) |
+| `behavior: 'smooth'` for quote routes | `behavior: 'instant'` for quote routes |
 
-### 3. Card Image Container (Line 563)
-**Current:**
-```tsx
-className="mb-3 h-32 md:h-40 overflow-hidden rounded-md flex items-center justify-center bg-white"
-```
+**Lines 73-81**:
+```typescript
+// Before
+const timer = setTimeout(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: isQuoteRoute ? 'smooth' : 'auto'
+  });
+  ...
+}, 100);
 
-**Fixed:**
-```tsx
-className="mb-3 h-32 md:h-40 overflow-hidden rounded-md flex items-center justify-center bg-white dark:bg-gray-900"
-```
-
-### 4. "Not Sure?" Button Heading (Line 603)
-**Current:**
-```tsx
-<h3 className="font-light tracking-wide text-gray-900">Not Sure?</h3>
-```
-
-**Fixed:**
-```tsx
-<h3 className="font-light tracking-wide text-gray-900 dark:text-gray-100">Not Sure?</h3>
-```
-
-### 5. Help Content Heading (Line 610)
-**Current:**
-```tsx
-<h4 className="font-light tracking-wide text-gray-900 mb-3">Let's figure out your boat type together!</h4>
-```
-
-**Fixed:**
-```tsx
-<h4 className="font-light tracking-wide text-gray-900 dark:text-gray-100 mb-3">Let's figure out your boat type together!</h4>
+// After  
+const timer = setTimeout(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'instant'  // Always instant for immediate feedback
+  });
+  ...
+}, 50);  // Reduced delay for faster scroll
 ```
 
 ---
 
-## Summary of All Class Changes
+## Why This Works
 
-| Line | Element | Add Classes |
-|------|---------|-------------|
-| 562 | Boat type card container | `dark:bg-gray-800`, `dark:bg-red-950/30`, `dark:border-gray-700` |
-| 563 | Card image container | `dark:bg-gray-900` |
-| 575 | Boat type label `<h3>` | `dark:text-gray-100` |
-| 603 | "Not Sure?" heading | `dark:text-gray-100` |
-| 610 | Help content heading | `dark:text-gray-100` |
+1. **Instant scroll** ensures users always see the new page from the top immediately
+2. **Reduced delay** (50ms) still allows React to commit the new route before scrolling, but feels more responsive
+3. **Consistent with QuoteSummaryPage** which already uses `window.scrollTo({ top: 0, behavior: 'instant' })` on mount
+
+## Pages That Will Benefit
+
+All quote builder step transitions:
+- Motor Selection → Options → Purchase Path
+- Purchase Path → Boat Info / Trade-In
+- Trade-In → Installation / Promo Selection
+- Promo Selection → Package Selection
+- Package Selection → Summary
+- Summary → Schedule
 
 ---
 
 ## Expected Result
 
-After these changes, all headings and cards on the Boat Details Wizard will have proper contrast in dark mode, making them clearly visible and readable.
+| Before | After |
+|--------|-------|
+| Page renders at scroll position, then slowly animates up | Page immediately appears at top |
+| User sees bottom of new page first | User always sees top of new page |
+| Disorienting experience | Clean, predictable navigation |
