@@ -14,8 +14,12 @@ const IDLE_TIMEOUT_MS = 18000; // 18 seconds - ensures graceful close happens be
 const GRACEFUL_CLOSE_MESSAGE = "[SYSTEM: Natural pause in conversation. Say ONE brief, friendly sign-off like 'I'll let you browse - just tap the mic if you need me!' then stop talking. No questions, just a warm goodbye.]";
 
 // Thinking watchdog - prompt agent to acknowledge if no response within this time after user speaks
-const THINKING_WATCHDOG_MS = 600; // 0.6s (reduce perceived "dead air")
+// Increased to 2000ms to avoid interrupting legitimate tool operations
+const THINKING_WATCHDOG_MS = 2000; // 2s (gives tools time to complete before nudging)
 const THINKING_NUDGE_MESSAGE = "[SYSTEM: You haven't started responding yet. Give a VERY quick acknowledgement like 'Got it—' or 'Yep—' or 'Right—' - just 1-2 words - then continue with your answer. Do NOT say 'let me check' or mention inventory.]";
+
+// Tool chain timeout - abort if tool operations take too long
+const TOOL_CHAIN_TIMEOUT_MS = 5000; // 5 seconds max for tool chains
 
 // Pre-warm edge functions to eliminate cold start on first question
 // Export so VoiceButton can call it on hover/visibility
@@ -1031,8 +1035,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   const agentRespondedRef = useRef<boolean>(false);
   const thinkingNudgeSentRef = useRef<boolean>(false);
   
+  // Tool chain tracking refs - prevent redundant operations and fallback conflicts
+  const activeToolsRef = useRef<Set<string>>(new Set());
+  const lastToolChainStartRef = useRef<number>(0);
+  const lastNavigationRef = useRef<{ hp: number; timestamp: number } | null>(null);
+  
   // Wrap a tool handler to show searching state and play instant feedback
-  // ENHANCED LOGGING: This wrapper detects when ElevenLabs triggers a client tool call
+  // ENHANCED: Now tracks active tools to prevent navigate-first fallback conflicts
   const withSearchingFeedback = useCallback(<T extends unknown[], R>(
     toolName: string,
     handler: (...args: T) => Promise<R> | R,
@@ -1040,6 +1049,16 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
   ) => {
     return async (...args: T): Promise<R> => {
       const startTime = performance.now();
+      
+      // ========== TOOL CHAIN TRACKING ==========
+      // Track this tool as active to prevent navigate-first fallback from firing
+      activeToolsRef.current.add(toolName);
+      if (activeToolsRef.current.size === 1) {
+        lastToolChainStartRef.current = Date.now();
+        console.log('%c🔗 TOOL CHAIN STARTED', 'background: #9C27B0; color: white; padding: 2px 6px; border-radius: 4px;');
+      }
+      console.log(`%c📍 Active tools: [${Array.from(activeToolsRef.current).join(', ')}]`, 'color: #9C27B0;');
+      // ==========================================
       
       // ========== ENHANCED TOOL CALL LOGGING ==========
       console.log('%c🔧 ELEVENLABS CLIENT TOOL TRIGGERED', 'background: #4CAF50; color: white; font-size: 14px; padding: 4px 8px; border-radius: 4px;');
@@ -1079,6 +1098,14 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         // ============================================
         throw error;
       } finally {
+        // Remove from active tools set
+        activeToolsRef.current.delete(toolName);
+        console.log(`%c📍 Tool ${toolName} done. Remaining: [${Array.from(activeToolsRef.current).join(', ') || 'none'}]`, 'color: #9C27B0;');
+        
+        if (activeToolsRef.current.size === 0) {
+          console.log('%c🔗 TOOL CHAIN COMPLETE', 'background: #4CAF50; color: white; padding: 2px 6px; border-radius: 4px;');
+        }
+        
         // Clear searching state and record tool end time
         const toolEndTime = performance.now();
         setStateRef.current(prev => ({ 
@@ -1399,6 +1426,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           // AGGRESSIVE: Auto-navigate on ANY HP detection in a motor-related conversation
           // Voice conversation implies motor shopping context, so be liberal with navigation
           if (detectedHp) {
+            // === GUARD: Skip if tools are already actively processing ===
+            if (activeToolsRef.current.size > 0) {
+              console.log('%c⏸️ NAVIGATE-FIRST SKIPPED: Tools already active', 'background: #FF9800; color: white; padding: 2px 6px; border-radius: 4px;');
+              console.log(`[Navigate-First] Active tools: [${Array.from(activeToolsRef.current).join(', ')}]`);
+              return; // Don't interfere with active tool chain
+            }
+            
             console.log(`%c🚀 NAVIGATE-FIRST: Detected ${detectedHp}HP - auto-navigating NOW`, 'background: #4CAF50; color: white; font-size: 14px; padding: 4px 8px; border-radius: 4px;');
             console.log('[Navigate-First] Full transcript:', userTranscript);
             navigateToMotorsWithFilter({ horsepower: detectedHp });
@@ -1406,6 +1440,31 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
             // FALLBACK: After navigation + filter, automatically send visible motors to agent
             // This ensures agent gets data even if it doesn't call get_visible_motors tool
             setTimeout(() => {
+              // === TOOL CHAIN TIMEOUT CHECK ===
+              // If tools have been running for > 5 seconds, abort and provide fallback
+              if (activeToolsRef.current.size > 0 && 
+                  Date.now() - lastToolChainStartRef.current > TOOL_CHAIN_TIMEOUT_MS) {
+                console.warn('%c⏱️ TOOL CHAIN TIMEOUT - clearing and providing fallback', 'background: #f44336; color: white; padding: 2px 6px; border-radius: 4px;');
+                activeToolsRef.current.clear();
+                // Send recovery context to agent
+                if (conversationRef.current?.status === 'connected') {
+                  try {
+                    const recoveryMsg = "[SYSTEM: Tool lookup is taking long. Just describe what you know about this HP range based on what's showing on screen, and offer to answer specific questions.]";
+                    conversationRef.current.sendUserMessage(recoveryMsg);
+                    console.log('[Fallback] Sent recovery message to agent');
+                  } catch (e) {
+                    console.warn('[Fallback] Could not send recovery message:', e);
+                  }
+                }
+                return; // Don't send another context update
+              }
+              
+              // Skip if tools are now active (agent started its own tool calls)
+              if (activeToolsRef.current.size > 0) {
+                console.log('%c⏸️ FALLBACK SKIPPED: Tools became active', 'background: #FF9800; color: white; padding: 2px 6px; border-radius: 4px;');
+                return;
+              }
+              
               const summary = formatMotorsForVoice(8);
               console.log('%c📤 FALLBACK: Auto-sending visible motors to agent', 'background: #2196F3; color: white; padding: 2px 6px; border-radius: 4px;');
               console.log('[Fallback] Visible motors summary:', summary);
@@ -1580,9 +1639,23 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
     // Wrapped with withSearchingFeedback for instant audio acknowledgement
     clientTools: {
       // Check inventory by horsepower, family, or stock status
+      // ENHANCED: Deduplicates redundant calls after recent navigation
       check_inventory: withSearchingFeedback(
         'check_inventory',
         async (params: { horsepower?: number; family?: string; in_stock?: boolean; min_hp?: number; max_hp?: number }) => {
+          // === DEDUPLICATION: Skip if we just navigated to same HP within 3 seconds ===
+          const recentNav = lastNavigationRef.current;
+          if (recentNav && 
+              params.horsepower && 
+              recentNav.hp === params.horsepower && 
+              Date.now() - recentNav.timestamp < 3000) {
+            console.log('%c⏭️ check_inventory SKIPPED: Recent navigation already covered this HP', 'background: #FF9800; color: white; padding: 2px 6px; border-radius: 4px;');
+            return JSON.stringify({ 
+              message: "Already showing these motors on screen.",
+              hint: "Call get_visible_motors to describe what's displayed",
+              skipped: true
+            });
+          }
           return await handleInventoryLookup('check_inventory', params);
         },
         'Checking inventory...'
@@ -1757,6 +1830,13 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           controlType: controlType,
           shaftLength: shaftLength,
         });
+        
+        // === TRACK NAVIGATION FOR DEDUPLICATION ===
+        // Record this navigation so check_inventory can skip redundant lookups
+        if (hpValue) {
+          lastNavigationRef.current = { hp: hpValue, timestamp: Date.now() };
+          console.log(`%c📍 Navigation tracked: ${hpValue}HP`, 'color: #9C27B0;');
+        }
         
         const filterDesc = filterParts.length > 0 
           ? filterParts.join(', ') + ' motors'
