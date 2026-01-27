@@ -36,9 +36,11 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-muted/50 to-background flex flex-col items-center justify-center px-4 py-12 relative overflow-hidden">
-      {/* Ambient glassmorphism orbs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      {/* Ambient glassmorphism orbs - Desktop only */}
+      <div className="hidden md:block">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+      </div>
       
       <div className="relative z-10 max-w-lg w-full text-center space-y-8">
         {/* Dual logos */}
