@@ -462,16 +462,6 @@ export const BoatInformation = ({
     });
   };
   return <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 md:space-y-8 py-4 md:py-6 lg:py-8 overflow-x-hidden">
-      {/* Header */}
-      <div className="text-center space-y-3 animate-fade-in heading-protected">
-        <h2 className="text-3xl md:text-4xl font-light tracking-wide">Boat Details Wizard</h2>
-              <p className="text-base md:text-lg font-light text-protected">
-                Let's match your {selectedMotor?.model || 'Mercury motor'} to your boat, step by step.
-              </p>
-      </div>
-
-
-
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Step Content */}
         <div>
