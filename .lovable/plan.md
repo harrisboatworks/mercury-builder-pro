@@ -1,29 +1,69 @@
 
-# Show "Special Price" Badge for Manually-Priced Motors
+# Remove Green "In Stock" Badges from Motor Cards
 
-## ✅ COMPLETED
+## Summary
 
-When you manually set a special price on a motor through the admin panel, the card will display a **"Special Price"** badge instead of the rule-based "Best Seller" badge.
+Remove the green "In Stock" badges that appear in the top-left corner of motor cards. The stock information is already displayed in the card text (e.g., "🟢 5 in stock today"), making the badge redundant and visually cluttered.
 
 ---
 
-## Implementation Summary
+## Changes
 
 | File | Change |
 |------|--------|
-| `src/components/motors/PopularityBadge.tsx` | ✅ Added `'special-price'` type with red promo gradient styling |
-| `src/lib/motor-helpers.ts` | ✅ Added `hasManualSalePrice?: boolean` to Motor interface |
-| `src/pages/quote/MotorSelectionPage.tsx` | ✅ Set `hasManualSalePrice` flag when `manualOverrides.sale_price` is present and not expired |
-| `src/components/motors/MotorCardPremium.tsx` | ✅ Prioritize special-price badge over popularity |
-| `src/components/motors/MotorCardPreview.tsx` | ✅ Prioritize special-price badge over popularity |
+| `src/components/motors/MotorCardPremium.tsx` | Remove `StockBadge` component from the image overlay |
+| `src/components/motors/MotorCardPreview.tsx` | Remove `StockBadge` component from the image overlay |
+| `src/components/motors/HPMotorCard.tsx` | Remove `StockBadge` component from the image overlay |
 
 ---
 
-## Badge Visual
+## What Will Be Removed
 
-| Badge Type | Color | Icon |
-|------------|-------|------|
-| Best Seller | Gold gradient | Star |
-| Popular | Dark gray | Star |
-| Dealer's Pick | Gold gradient | Award |
-| **Special Price** | Red/promo gradient | Tag |
+### From MotorCardPremium.tsx (lines 246-253)
+```typescript
+// REMOVE THIS:
+<StockBadge 
+  motor={{
+    in_stock: inStock,
+    stock_quantity: motor?.stockQuantity,
+    stock_number: motor?.stockNumber
+  }}
+  variant="default"
+/>
+```
+
+### From MotorCardPreview.tsx (lines 439-446)
+```typescript
+// REMOVE THIS:
+<StockBadge 
+  motor={{
+    in_stock: inStock,
+    stock_quantity: motor?.stockQuantity,
+    stock_number: motor?.stockNumber
+  }}
+  variant="default"
+/>
+```
+
+### From HPMotorCard.tsx (lines 113-120)
+```typescript
+// REMOVE THIS:
+{inStockCount > 0 && (
+  <div className="absolute top-4 left-4">
+    <StockBadge 
+      motor={{ in_stock: true, stock_quantity: inStockCount }}
+      variant="default"
+    />
+  </div>
+)}
+```
+
+---
+
+## What Stays
+
+The text-based stock status at the bottom of each card will remain:
+- **HPMotorCard**: "🟢 5 in stock today" or "○ Available to order"
+- **MotorCardPremium/Preview**: Similar stock text in the content area
+
+This keeps the stock information visible without the visual clutter of the badge overlay.
