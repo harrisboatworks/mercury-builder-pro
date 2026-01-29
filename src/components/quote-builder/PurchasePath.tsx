@@ -16,7 +16,9 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
   const hp = typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp;
   const isTiller = isTillerMotor(selectedMotor?.model || '');
   const isInStock = selectedMotor?.stockStatus === 'In Stock';
-  const includes12LTank = hp && hp >= 9.9 && hp <= 20 && !isTiller;
+  const hasInternalTank = hp && hp <= 6;  // Only ≤6HP have internal tanks
+  const includes12LTank = hp && hp >= 8 && hp <= 20;  // 8-20HP (both tiller & remote)
+  const includes25LTank = hp && hp >= 25 && hp <= 30 && isTiller;  // 25-30HP tiller only
   
   const handleLooseMotorSelect = () => {
     onSelectPath('loose');
@@ -84,12 +86,22 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
                 <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <span className="text-left">Shop Tank Tested</span>
               </div>
-              {isTiller ? (
+              {isTiller && hasInternalTank ? (
                 <div className="flex flex-row items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span className="text-left">Includes propeller & internal fuel tank</span>
                 </div>
-              ) : includes12LTank ? (
+              ) : isTiller && includes12LTank ? (
+                <div className="flex flex-row items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-left">Includes propeller & 12L fuel tank</span>
+                </div>
+              ) : isTiller && includes25LTank ? (
+                <div className="flex flex-row items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-left">Includes propeller & 25L fuel tank</span>
+                </div>
+              ) : includes12LTank && !isTiller ? (
                 <div className="flex flex-row items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                   <span className="text-left">Includes 12L fuel tank & hose</span>
@@ -97,7 +109,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               ) : (
                 <div className="flex flex-row items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-left">Ready for rigging & accessories</span>
+                  <span className="text-left">Includes propeller</span>
                 </div>
               )}
               {isTiller && isInStock && (
