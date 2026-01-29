@@ -241,20 +241,12 @@ export default function MotorCardPremium({
                 }}
               />
               
-              {/* Stock Badge & Popularity Badge - Top Left */}
-              <div className="absolute top-4 left-4 flex flex-col gap-1.5">
-                <StockBadge 
-                  motor={{
-                    in_stock: inStock,
-                    stock_quantity: motor?.stockQuantity,
-                    stock_number: motor?.stockNumber
-                  }}
-                  variant="default"
-                />
-                {popularityType && (
+              {/* Popularity Badge - Top Left */}
+              {popularityType && (
+                <div className="absolute top-4 left-4">
                   <PopularityBadge type={popularityType} />
-                )}
-              </div>
+                </div>
+              )}
               
               {/* HP Badge */}
               {hpNum && (
