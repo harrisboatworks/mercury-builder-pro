@@ -1,57 +1,100 @@
 
-# Fix Voice Agent's Rebate Matrix Formatting
+
+# Make Voice Agent's Promo Knowledge Fully Dynamic
 
 ## Problem
 
-The voice agent gave you wrong promo info because the **rebate matrix is not being formatted correctly** in the ElevenLabs system prompt.
+The voice agent has **hardcoded references** to the current "Get 7" promo structure that won't adapt when you add a new promotion:
 
-The database stores rebate tiers with:
-- `hp_min`, `hp_max` (e.g., 8-20)
-- `rebate` (e.g., 250)
-
-But the voice agent prompt uses:
-- `tier.hp` ❌ (doesn't exist → undefined)
-- `tier.amount` ❌ (doesn't exist → undefined)
-
-This means the voice agent sees **blank rebate data** and makes up incorrect amounts.
-
----
-
-## Root Cause Comparison
-
-| Agent | Field Names | Result |
-|-------|-------------|--------|
-| **Text Chatbot** ✅ | `tier.hp_min`, `tier.hp_max`, `tier.rebate` | Correct: "$250 for 8-20HP" |
-| **Voice Agent** ❌ | `tier.hp`, `tier.amount` | Broken: "undefined: $undefined" |
+| Issue | Current Code | Problem |
+|-------|-------------|---------|
+| Line 127 | `(total 7 years!)` | Hardcoded "7" won't update for future promos |
+| Lines 170-180 | Static "HOW TO EXPLAIN" guide | References specific option names that may not exist in future promos |
 
 ---
 
 ## Solution
 
-Update `supabase/functions/elevenlabs-conversation-token/index.ts` line 150-156 to match the correct field names used in the text chatbot.
+Make the promotion formatting fully dynamic by:
 
-### Before (Broken)
+1. **Calculate total warranty dynamically** (base 3 + promo bonus)
+2. **Generate the "how to explain" guide from the promo options data** instead of hardcoding option names
+3. **Add fallback guidance** when no promo options exist
+
+---
+
+## Technical Changes
+
+### File: `supabase/functions/elevenlabs-conversation-token/index.ts`
+
+#### 1. Fix Warranty Display (Line 126-128)
+
+**Before:**
 ```typescript
-// Rebate matrix detail
-if (option.matrix && Array.isArray(option.matrix)) {
-  formatted += `   FACTORY REBATE BY HORSEPOWER:\n`;
-  option.matrix.forEach((tier: any) => {
-    formatted += `   - ${tier.hp}: $${tier.amount} cash back\n`;
-  });
+if (promo.warranty_extra_years) {
+  formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years of coverage (total 7 years!)\n`;
 }
 ```
 
-### After (Fixed)
+**After:**
 ```typescript
-// Rebate matrix detail - uses hp_min, hp_max, rebate fields
-if (option.matrix && Array.isArray(option.matrix)) {
-  formatted += `   FACTORY REBATE BY HORSEPOWER:\n`;
-  option.matrix.forEach((tier: any) => {
-    const hpRange = tier.hp_min === tier.hp_max 
-      ? `${tier.hp_min}HP` 
-      : `${tier.hp_min}-${tier.hp_max}HP`;
-    formatted += `   - ${hpRange}: $${tier.rebate} cash back\n`;
-  });
+if (promo.warranty_extra_years) {
+  const baseWarranty = 3; // Mercury standard
+  const totalYears = baseWarranty + promo.warranty_extra_years;
+  formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years FREE (${totalYears} years total!)\n`;
+}
+```
+
+#### 2. Generate Dynamic "How to Explain" Guide (Lines 170-180)
+
+Instead of hardcoded option names, generate the guide from the promo data:
+
+**Before:**
+```typescript
+formatted += `
+**HOW TO EXPLAIN THE CHOOSE ONE OPTIONS:**
+1. "6 Months No Payments" - Great for customers who want...
+2. "Special Financing" - Best for customers financing...
+3. "Factory Cash Rebate" - Instant money off...
+`;
+```
+
+**After:**
+```typescript
+// Only add explanation guide if there were promo options
+if (hasChooseOneOptions) {
+  formatted += `
+**HOW TO HELP CUSTOMERS CHOOSE:**
+When customer asks "which option should I choose?" → Ask about their situation:
+- Want to defer payments? → No-payment options work best
+- Financing a large amount? → Lower interest rates save money over time
+- Paying mostly cash? → Rebates give instant savings
+
+Use the specific option details listed above to explain what's available.
+`;
+}
+```
+
+#### 3. Track If Promo Has Options
+
+Add a flag to track whether any promo had "choose one" options so we only show the guide when relevant:
+
+```typescript
+let hasChooseOneOptions = false;
+
+promotions.forEach(promo => {
+  // ... existing code ...
+  
+  const promoOptions = promo.promo_options?.options;
+  if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
+    hasChooseOneOptions = true;
+    // ... rest of options formatting
+  }
+});
+
+// After the loop, conditionally add guidance
+if (hasChooseOneOptions) {
+  formatted += `... dynamic guidance ...`;
 }
 ```
 
@@ -59,25 +102,15 @@ if (option.matrix && Array.isArray(option.matrix)) {
 
 ## What This Fixes
 
-After the fix, the voice agent's prompt will correctly show:
-```
-FACTORY REBATE BY HORSEPOWER:
-- 2.5-6HP: $100 cash back
-- 8-20HP: $250 cash back
-- 25HP: $300 cash back
-- 30-60HP: $350 cash back
-- 65-75HP: $400 cash back
-- 80-115HP: $500 cash back
-- 150-200HP: $650 cash back
-- 225-425HP: $1000 cash back
-```
+| Scenario | Before | After |
+|----------|--------|-------|
+| New promo with 5-year bonus | Says "total 7 years" (wrong) | Says "8 years total" (correct) |
+| Promo with different options | References wrong option names | Uses actual option titles from database |
+| Promo with no choose-one | Shows irrelevant guidance | Shows no guidance (appropriate) |
 
 ---
 
-## Technical Details
+## Edge Function Deployment
 
-| File | Change |
-|------|--------|
-| `supabase/functions/elevenlabs-conversation-token/index.ts` | Fix rebate matrix formatting (lines 150-156) to use correct database field names |
+After the fix, the `elevenlabs-conversation-token` edge function will need to be redeployed.
 
-After the fix, the edge function will need to be redeployed.
