@@ -1,68 +1,92 @@
 
-# Fix: "null value in column 'id'" Error When Creating New Option
+
+# Fix: Selected Options Missing from Sticky Quote Bars
 
 ## Problem
-When creating a new motor option, the error appears:
-> "null value in column 'id' of relation 'motor_options' violates not-null constraint"
+When selecting optional add-ons (like the 25 L fuel tank) on Step 2 "Customize Your Motor Package", the price is not reflected in the bottom sticky bar. However, the final Summary, PDF, and Financing application DO include these options correctly.
 
-## Root Cause
-The `handleSubmit` function creates an option object with `id: editingOption?.id`. When creating a NEW option (not editing), `editingOption` is `null`, so `id` becomes `undefined`. 
+## Verified Status
 
-When this object is passed to `supabase.insert()`, Supabase converts `undefined` to `null`, which violates the database's not-null constraint on the `id` column.
-
-**Current code (line 159-160):**
-```typescript
-const option: MotorOption = {
-  id: editingOption?.id,  // undefined for new options!
-  ...
-};
-```
-
-**In mutation (lines 118-122):**
-```typescript
-const { error } = await supabase
-  .from('motor_options')
-  .insert([option]);  // Includes id: undefined → null
-```
+| Component | Selected Options | Status |
+|-----------|-----------------|--------|
+| Quote Summary Page | ✅ Included | Uses `selectedOptionsTotal` in pricing |
+| PDF Quote | ✅ Included | Receives `accessoryBreakdown` with options |
+| Financing Application | ✅ Included | Gets total price with options |
+| Desktop Sticky Bar | ❌ Missing | Needs fix |
+| Mobile Sticky Bar | ❌ Missing | Needs fix |
+| Mobile Breakdown Drawer | ❌ Missing | Needs fix |
 
 ## Solution
-Remove the `id` field from the object when inserting a new record. The database will auto-generate a UUID.
 
-### Option 1: Exclude `id` when inserting (Recommended)
+Add `state.selectedOptions` to the running total calculation in all three components.
 
-Modify the mutation to destructure out the `id` field before inserting:
+---
+
+## Files to Modify
+
+### 1. GlobalStickyQuoteBar.tsx (Desktop)
+
+Add selected options total after motor price:
 
 ```typescript
-const saveMutation = useMutation({
-  mutationFn: async (option: MotorOption) => {
-    if (option.id) {
-      const { error } = await supabase
-        .from('motor_options')
-        .update(option)
-        .eq('id', option.id);
-      if (error) throw error;
-    } else {
-      // Remove id from the object before inserting
-      const { id, ...optionWithoutId } = option;
-      const { error } = await supabase
-        .from('motor_options')
-        .insert([optionWithoutId]);
-      if (error) throw error;
+// After line 50: let total = state.motor.price;
+const selectedOptionsTotal = (state.selectedOptions || []).reduce(
+  (sum, opt) => sum + opt.price, 0
+);
+total += selectedOptionsTotal;
+```
+
+Update dependency array to include `state.selectedOptions`.
+
+---
+
+### 2. UnifiedMobileBar.tsx (Mobile Bar)
+
+Add selected options inside the `if (!isPreview)` block:
+
+```typescript
+// After line 418 (fuel tank config)
+const selectedOptionsTotal = (state.selectedOptions || []).reduce(
+  (sum, opt) => sum + opt.price, 0
+);
+total += selectedOptionsTotal;
+```
+
+Update dependency array to include `state.selectedOptions`.
+
+---
+
+### 3. MobileQuoteDrawer.tsx (Mobile Breakdown)
+
+Add selected options as line items after "Motor Price":
+
+```typescript
+// After line 53 (Motor Price line item)
+if (state.selectedOptions && state.selectedOptions.length > 0) {
+  state.selectedOptions.forEach(option => {
+    if (option.price > 0) {
+      subtotal += option.price;
+      lineItems.push({ label: option.name, value: option.price });
     }
-  },
-  ...
-});
+  });
+}
 ```
 
 ---
 
-## File to Modify
+## Summary of Changes
 
 | File | Change |
 |------|--------|
-| `src/components/admin/options/MotorOptionsCatalog.tsx` | Destructure out `id` before insert to let database auto-generate it |
+| `src/components/quote/GlobalStickyQuoteBar.tsx` | Add `selectedOptionsTotal` to `runningTotal` calculation |
+| `src/components/quote-builder/UnifiedMobileBar.tsx` | Add `selectedOptionsTotal` to `runningTotal` calculation |
+| `src/components/quote-builder/MobileQuoteDrawer.tsx` | Add selected options as line items in pricing breakdown |
 
-## Why This Works
-- For **updates**: We use the existing `id` to find and update the record
-- For **inserts**: We exclude `id` entirely, allowing the database to generate a new UUID automatically
-- No changes needed to the form or state logic
+## Result
+
+After this fix, when a customer selects a fuel tank or any add-on on the Options page:
+- Desktop sticky bar shows updated total immediately
+- Mobile sticky bar shows updated total immediately  
+- Mobile drawer shows each option as a line item with price
+- Summary, PDF, and Financing continue to work as before (already correct)
+
