@@ -1,20 +1,21 @@
 
-# Fix: Battery Not Showing on Quote Summary
+# Fix: Battery Prompt Skipped When No Motor Options Available
 
 ## Problem Identified
 
-The `QuoteSummaryPage.tsx` uses an **inconsistent method** to detect electric start motors compared to the `OptionsPage.tsx`:
+The `OptionsPage.tsx` has an **auto-skip** feature (lines 57-71) that immediately navigates to the next page when no motor-specific options exist in the database. However, this skips the **battery prompt for electric start motors**.
 
-| Component | Detection Method | Issue |
-|-----------|------------------|-------|
-| `OptionsPage.tsx` | `hasElectricStart(model)` utility | ✅ Correct - uses robust parser |
-| `QuoteSummaryPage.tsx` | `motorModel.includes('MH')` | ❌ Wrong - checks for manual start string |
-
-The condition on line 363 checks `!isManualStart && state.looseMotorBattery?.wantsBattery`, but `isManualStart` (line 212) uses a simple string check that may not match all manual-start models.
+**Flow causing the issue:**
+1. User selects "15 EH FourStroke" motor
+2. OptionsPage loads, finds no required/recommended/available options for this motor
+3. Auto-skip logic triggers, immediately navigates to `/quote/purchase-path`
+4. Battery prompt is never shown
+5. `state.looseMotorBattery` remains `undefined`
+6. Summary page condition `isElectricStart && state.looseMotorBattery?.wantsBattery` fails
 
 ## Solution
 
-Replace the inconsistent manual-start detection in `QuoteSummaryPage.tsx` with the proper `hasElectricStart` utility that's already used in `OptionsPage.tsx`.
+Modify the auto-skip logic to **only skip if there are no options AND the motor is NOT electric start**. If the motor is electric start, the page must remain visible so the user can answer the battery question.
 
 ---
 
@@ -22,72 +23,116 @@ Replace the inconsistent manual-start detection in `QuoteSummaryPage.tsx` with t
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/QuoteSummaryPage.tsx` | Import and use `hasElectricStart` utility |
+| `src/pages/quote/OptionsPage.tsx` | Update auto-skip condition to account for electric start motors |
 
 ---
 
 ## Code Changes
 
-### Line 62: Add Import
-
-Add to imports:
-```typescript
-import { hasElectricStart } from '@/lib/motor-config-utils';
-```
-
-### Line 212: Replace Detection Logic
+### Lines 57-71: Update Auto-Skip Logic
 
 **Current:**
 ```typescript
-const isManualStart = motorModel.includes('MH') || motorModel.includes('MLH');
+// Auto-skip to purchase path if no options available
+useEffect(() => {
+  if (!isLoading && categorizedOptions && !hasNavigatedRef.current) {
+    const hasOptions = 
+      categorizedOptions.required.length > 0 ||
+      categorizedOptions.recommended.length > 0 ||
+      categorizedOptions.available.length > 0;
+    
+    if (!hasOptions) {
+      hasNavigatedRef.current = true;
+      dispatch({ type: 'SET_SELECTED_OPTIONS', payload: [] });
+      navigate('/quote/purchase-path');
+    }
+  }
+}, [isLoading, categorizedOptions, dispatch, navigate]);
 ```
 
 **Replace with:**
 ```typescript
-const isElectricStart = hasElectricStart(motorModel);
+// Auto-skip to purchase path if no options available AND no battery choice needed
+useEffect(() => {
+  if (!isLoading && categorizedOptions && !hasNavigatedRef.current) {
+    const hasOptions = 
+      categorizedOptions.required.length > 0 ||
+      categorizedOptions.recommended.length > 0 ||
+      categorizedOptions.available.length > 0;
+    
+    // Only auto-skip if no options AND motor doesn't need battery question
+    if (!hasOptions && !isElectricStart) {
+      hasNavigatedRef.current = true;
+      dispatch({ type: 'SET_SELECTED_OPTIONS', payload: [] });
+      navigate('/quote/purchase-path');
+    }
+  }
+}, [isLoading, categorizedOptions, dispatch, navigate, isElectricStart]);
 ```
 
-### Line 231: Update Battery Cost Logic
+### Lines 172-181: Update Page Visibility Check
 
 **Current:**
 ```typescript
-const batteryCost = !isManualStart ? 179.99 : 0;
+const hasOptions = categorizedOptions && (
+  categorizedOptions.required.length > 0 ||
+  categorizedOptions.recommended.length > 0 ||
+  categorizedOptions.available.length > 0
+);
+
+// If no options available, return null (navigation happens in useEffect)
+if (!hasOptions) {
+  return null;
+}
 ```
 
 **Replace with:**
 ```typescript
-const batteryCost = isElectricStart ? 179.99 : 0;
-```
+const hasOptions = categorizedOptions && (
+  categorizedOptions.required.length > 0 ||
+  categorizedOptions.recommended.length > 0 ||
+  categorizedOptions.available.length > 0
+);
 
-### Line 363: Update Battery Breakdown Condition
+// Show page if there are options OR if battery choice is needed
+const shouldShowPage = hasOptions || isElectricStart;
 
-**Current:**
-```typescript
-if (!isManualStart && state.looseMotorBattery?.wantsBattery) {
-```
-
-**Replace with:**
-```typescript
-if (isElectricStart && state.looseMotorBattery?.wantsBattery) {
+// If nothing to show, return null (navigation happens in useEffect)
+if (!shouldShowPage) {
+  return null;
+}
 ```
 
 ---
 
 ## Why This Fixes It
 
-The `hasElectricStart()` utility properly parses Mercury model codes:
-- `9.9EH FourStroke` → **E** detected → electric start ✅
-- `9.9MH FourStroke` → **M** detected → manual start
-- `60 FourStroke` → 40+ HP → defaults to electric ✅
-
-Using the same utility across both pages ensures the battery prompt and summary are **in sync**.
+| Motor | Options Available | Electric Start? | Before | After |
+|-------|-------------------|-----------------|--------|-------|
+| 15 EH | ❌ None | ✅ Yes | Skips page, no battery prompt | Shows page with battery prompt only |
+| 15 MH | ❌ None | ❌ No (manual) | Skips page correctly | Skips page correctly |
+| 60HP Verado | ✅ Some | ✅ Yes | Shows options + battery | Shows options + battery |
+| 2.5MH | ❌ None | ❌ No | Skips page correctly | Skips page correctly |
 
 ---
 
-## Expected Result
+## Expected User Flow After Fix
 
-| Scenario | Before | After |
-|----------|--------|-------|
-| 9.9EH + Battery selected | Battery not shown ❌ | Battery shown as line item ✅ |
-| 60HP + Battery selected | Battery not shown ❌ | Battery shown as line item ✅ |
-| 9.9MH (manual) | N/A | No battery prompt (correct) |
+```
+Motor Selection → Options Page → [Electric Start?]
+                       ↓
+       ┌───────────────┴───────────────┐
+       │                               │
+   YES (Electric)               NO (Manual)
+       ↓                               ↓
+ Show battery prompt           [Any options?]
+ (even if no other               ↓
+  options exist)          YES → Show options
+       ↓                  NO  → Auto-skip
+ User must select                     ↓
+ Yes/No for battery         Continue to Purchase Path
+       ↓
+ Battery choice saved
+       ↓
+ Continue to Purchase Path
+```
