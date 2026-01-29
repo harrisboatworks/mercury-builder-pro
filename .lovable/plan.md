@@ -1,103 +1,102 @@
 
-
-# Add Motor Detail Links to SMS and Email
+# Fix Motor Deep-Link to Open Specific Motor Modal
 
 ## Problem
 
-The SMS and email tools are sending messages without useful links:
+When a customer clicks the link in an SMS (e.g., `quote.harrisboatworks.ca/quote?motor=abc123`):
+- The page loads correctly
+- The motor selection page shows
+- But the **motor detail modal doesn't auto-open** with the specific motor
 
-| Tool | Current State | Issue |
-|------|--------------|-------|
-| **SMS** | "The 9.9MRC FourStroke you asked about is in stock. Ready when you are!" | No link - customer can't click to see details |
-| **Email** | Links to `harrisboatworks.ca/motor/${motor.id}` | Broken link - that route doesn't exist |
+## Root Cause
 
-Customer has no way to view the motor they asked about!
+There are two competing `useEffect` hooks handling the `?motor=` URL parameter:
 
----
+| Hook Location | What It Does | Problem |
+|---------------|--------------|---------|
+| Lines 411-424 | Sets `voiceShowMotorId`, deletes URL param | Runs first, clears URL before the other hook can see it |
+| Lines 717-739 | Sets `deepLinkedMotorId` and opens modal properly | Never runs because URL param is already gone |
+
+Additionally, the effect that handles `voiceShowMotorId` (lines 742-762) doesn't set `deepLinkedMotorId`, which is what the `MotorConfiguratorModal` uses to pre-select the specific variant.
 
 ## Solution
 
-Link to the quote tool with the specific motor pre-selected so customers can:
-1. See full specs and photos
-2. Start building a quote immediately
-
-**Link format:** `https://quote.harrisboatworks.ca/quote?motor={motorId}`
+Remove the duplicate/conflicting useEffect (lines 411-424) and update the voice handler effect (lines 742-762) to also set `deepLinkedMotorId` so the modal opens with the correct motor pre-selected.
 
 ---
 
-## Files to Modify
+## File to Modify
 
-| File | Change |
-|------|--------|
-| `supabase/functions/voice-send-follow-up/index.ts` | Add motor link to SMS templates |
-| `supabase/functions/elevenlabs-mcp-server/index.ts` | 1) Pass motor ID to SMS function, 2) Fix email link |
+`src/pages/quote/MotorSelectionPage.tsx`
 
 ---
 
 ## Technical Changes
 
-### 1. Update SMS Function to Accept Motor ID and Include Link
+### 1. Remove the Redundant useEffect (Lines 411-424)
 
-**File:** `supabase/functions/voice-send-follow-up/index.ts`
-
-- Add `motor_id` parameter to the request body
-- Update `inventory_alert` template to include a clickable link:
+Delete this entire block - it's a duplicate that runs too early and conflicts with the proper handler:
 
 ```typescript
-// New template with link
-inventory_alert: (name: string, motor?: string, motorId?: string) => {
-  const link = motorId 
-    ? `\n\nView details: quote.harrisboatworks.ca/quote?motor=${motorId}` 
-    : '';
-  return `Hi ${name}! ${motor ? `The ${motor} you asked about is in stock.` : 'We have motors in stock!'} Ready when you are!${link} — Harris Boat Works 📞 ${COMPANY_PHONE}`;
-}
+// DELETE THIS BLOCK
+useEffect(() => {
+  const motorIdParam = searchParams.get('motor');
+  if (motorIdParam && !loading && motors.length > 0) {
+    const targetMotor = motors.find(m => m.id === motorIdParam);
+    if (targetMotor) {
+      console.log('[MotorSelectionPage] Auto-opening motor from URL param:', motorIdParam);
+      setVoiceShowMotorId(motorIdParam);
+      searchParams.delete('motor');
+      setSearchParams(searchParams, { replace: true });
+    }
+  }
+}, [searchParams, setSearchParams, loading, motors]);
 ```
 
-**Example SMS output:**
-```
-Hi Jay! The 9.9MRC FourStroke you asked about is in stock. Ready when you are!
+### 2. Update Voice Handler Effect (Lines 742-762)
 
-View details: quote.harrisboatworks.ca/quote?motor=abc123
+Add `setDeepLinkedMotorId(voiceShowMotorId)` so the modal knows which specific variant to pre-select:
 
-— Harris Boat Works 📞 (905) 342-2153
-```
-
-### 2. Update MCP Server to Pass Motor ID
-
-**File:** `supabase/functions/elevenlabs-mcp-server/index.ts`
-
-In `send_motor_photos` case (~line 545-579):
-- Look up motor in database to get ID (like email tool does)
-- Pass `motor_id` to the follow-up function
-
-### 3. Fix Email Link
-
-**File:** `supabase/functions/elevenlabs-mcp-server/index.ts`
-
-Change line 649 from:
 ```typescript
-<a href="https://harrisboatworks.ca/motor/${motor.id}" class="cta">View Full Details</a>
+useEffect(() => {
+  if (!voiceShowMotorId || processedMotors.length === 0 || groupedMotors.length === 0) return;
+  
+  console.log('[MotorSelectionPage] Processing voice show motor:', voiceShowMotorId);
+  
+  const motor = processedMotors.find(m => m.id === voiceShowMotorId);
+  if (motor) {
+    const group = groupedMotors.find(g => g.variants.some(v => v.id === voiceShowMotorId));
+    if (group) {
+      setSelectedGroup(group);
+      setDeepLinkedMotorId(voiceShowMotorId);  // <-- ADD THIS LINE
+      setShowConfigurator(true);
+      dispatch({ type: 'SET_PREVIEW_MOTOR', payload: motor });
+    }
+  }
+  
+  setVoiceShowMotorId(null);
+}, [voiceShowMotorId, processedMotors, groupedMotors, dispatch]);
 ```
-
-To:
-```typescript
-<a href="https://quote.harrisboatworks.ca/quote?motor=${motor.id}" class="cta">View Full Details</a>
-```
-
-### 4. Handle Query Parameter on Quote Page
-
-**File:** `src/pages/quote/MotorSelectionPage.tsx`
-
-Add logic to read `?motor=` query parameter and auto-open that motor's detail modal when the page loads.
 
 ---
 
-## Expected Results
+## Expected Result
 
-| Channel | Message | Link |
-|---------|---------|------|
-| **SMS** | "The 9.9MRC FourStroke you asked about is in stock..." | `quote.harrisboatworks.ca/quote?motor=abc123` |
-| **Email** | Full specs card with CTA button | Same link in "View Full Details" button |
+| Before | After |
+|--------|-------|
+| Customer clicks SMS link → Motor selection page loads → Nothing happens | Customer clicks SMS link → Motor selection page loads → **Modal opens with the specific motor showing** |
 
-Customer clicks → Opens quote tool → Motor detail modal appears → Can start quote immediately.
+The modal will:
+1. Open automatically
+2. Show the correct motor's details
+3. Have the motor "added to cart" (shown in the sticky bar)
+4. Allow the customer to continue building their quote
 
+---
+
+## Testing
+
+After implementation:
+1. Send a new test SMS with motor link
+2. Click the link
+3. Verify the motor detail modal opens immediately with the correct motor displayed
