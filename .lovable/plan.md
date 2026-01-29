@@ -1,104 +1,93 @@
 
+# Fix: Battery Not Showing on Quote Summary
 
-# Add Battery Cost to Running Totals
+## Problem Identified
 
-## Problem
-When a user selects "Yes" for the marine starting battery on the Options page, the $179.99 cost is not reflected in:
-1. **Desktop sticky bar** (`GlobalStickyQuoteBar`)
-2. **Mobile sticky bar** (`UnifiedMobileBar`)
-3. **Mobile breakdown drawer** (`MobileQuoteDrawer`)
+The `QuoteSummaryPage.tsx` uses an **inconsistent method** to detect electric start motors compared to the `OptionsPage.tsx`:
 
-The battery choice is saved to `state.looseMotorBattery`, but none of these components include it in their running total calculations.
+| Component | Detection Method | Issue |
+|-----------|------------------|-------|
+| `OptionsPage.tsx` | `hasElectricStart(model)` utility | ✅ Correct - uses robust parser |
+| `QuoteSummaryPage.tsx` | `motorModel.includes('MH')` | ❌ Wrong - checks for manual start string |
+
+The condition on line 363 checks `!isManualStart && state.looseMotorBattery?.wantsBattery`, but `isManualStart` (line 212) uses a simple string check that may not match all manual-start models.
 
 ## Solution
 
-Add the battery cost from `state.looseMotorBattery` to the `runningTotal` calculation in all three components.
+Replace the inconsistent manual-start detection in `QuoteSummaryPage.tsx` with the proper `hasElectricStart` utility that's already used in `OptionsPage.tsx`.
 
 ---
 
-## Files to Modify
+## File to Modify
 
 | File | Change |
 |------|--------|
-| `src/components/quote/GlobalStickyQuoteBar.tsx` | Add battery cost to runningTotal |
-| `src/components/quote-builder/UnifiedMobileBar.tsx` | Add battery cost to runningTotal |
-| `src/components/quote-builder/MobileQuoteDrawer.tsx` | Add battery cost to pricing + line item |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Import and use `hasElectricStart` utility |
 
 ---
 
 ## Code Changes
 
-### 1. GlobalStickyQuoteBar.tsx (lines 76-84)
+### Line 62: Add Import
 
-Add after the fuel tank config block:
-
+Add to imports:
 ```typescript
-// Add fuel tank config (for small tillers)
-if (state.fuelTankConfig?.tankCost) {
-  total += state.fuelTankConfig.tankCost;
-}
-
-// Add battery cost (if user opted for it)
-if (state.looseMotorBattery?.wantsBattery && state.looseMotorBattery?.batteryCost) {
-  total += state.looseMotorBattery.batteryCost;
-}
-
-// Add warranty
-if (state.warrantyConfig?.warrantyPrice) {
+import { hasElectricStart } from '@/lib/motor-config-utils';
 ```
 
-Also add to the dependency array (line 103):
+### Line 212: Replace Detection Logic
+
+**Current:**
 ```typescript
-state.looseMotorBattery?.wantsBattery,
-state.looseMotorBattery?.batteryCost,
+const isManualStart = motorModel.includes('MH') || motorModel.includes('MLH');
 ```
 
-### 2. UnifiedMobileBar.tsx (lines 416-428)
-
-Add after the fuel tank config block:
-
+**Replace with:**
 ```typescript
-if (state.fuelTankConfig?.tankCost) {
-  total += state.fuelTankConfig.tankCost;
-}
-
-// Add battery cost (if user opted for it)
-if (state.looseMotorBattery?.wantsBattery && state.looseMotorBattery?.batteryCost) {
-  total += state.looseMotorBattery.batteryCost;
-}
-
-// Add selected options (fuel tanks, accessories, etc. from Options page)
+const isElectricStart = hasElectricStart(motorModel);
 ```
 
-Also add to the dependency array.
+### Line 231: Update Battery Cost Logic
 
-### 3. MobileQuoteDrawer.tsx (lines 98-102)
-
-Add after the fuel tank block:
-
+**Current:**
 ```typescript
-// Fuel tank
-if (state.fuelTankConfig?.tankCost && state.fuelTankConfig?.tankSize) {
-  subtotal += state.fuelTankConfig.tankCost;
-  lineItems.push({ label: `${state.fuelTankConfig.tankSize} Fuel Tank`, value: state.fuelTankConfig.tankCost });
-}
-
-// Battery (if user opted for it)
-if (state.looseMotorBattery?.wantsBattery && state.looseMotorBattery?.batteryCost) {
-  subtotal += state.looseMotorBattery.batteryCost;
-  lineItems.push({ label: 'Marine Starting Battery', value: state.looseMotorBattery.batteryCost });
-}
-
-// Trade-in
+const batteryCost = !isManualStart ? 179.99 : 0;
 ```
+
+**Replace with:**
+```typescript
+const batteryCost = isElectricStart ? 179.99 : 0;
+```
+
+### Line 363: Update Battery Breakdown Condition
+
+**Current:**
+```typescript
+if (!isManualStart && state.looseMotorBattery?.wantsBattery) {
+```
+
+**Replace with:**
+```typescript
+if (isElectricStart && state.looseMotorBattery?.wantsBattery) {
+```
+
+---
+
+## Why This Fixes It
+
+The `hasElectricStart()` utility properly parses Mercury model codes:
+- `9.9EH FourStroke` → **E** detected → electric start ✅
+- `9.9MH FourStroke` → **M** detected → manual start
+- `60 FourStroke` → 40+ HP → defaults to electric ✅
+
+Using the same utility across both pages ensures the battery prompt and summary are **in sync**.
 
 ---
 
 ## Expected Result
 
-| Action | Before | After |
-|--------|--------|-------|
-| Select battery on Options page | Bar shows motor price only | Bar updates to include +$179.99 |
-| Expand mobile drawer | Battery not listed | Battery shown as line item |
-| Navigate through flow | Total stays unchanged | Total reflects battery choice |
-
+| Scenario | Before | After |
+|----------|--------|-------|
+| 9.9EH + Battery selected | Battery not shown ❌ | Battery shown as line item ✅ |
+| 60HP + Battery selected | Battery not shown ❌ | Battery shown as line item ✅ |
+| 9.9MH (manual) | N/A | No battery prompt (correct) |
