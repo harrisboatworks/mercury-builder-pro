@@ -2017,6 +2017,17 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           navigated: true
         });
       },
+      // Navigate to contact page for detailed inquiries
+      navigate_to_contact: () => {
+        console.log('[ClientTool] navigate_to_contact');
+        dispatchVoiceNavigation({ type: 'navigate', payload: { path: '/contact' } });
+        
+        return JSON.stringify({
+          success: true,
+          message: "I've opened our contact page. Feel free to fill out the form — someone will get back to you within 24 hours!",
+          navigated: true
+        });
+      },
       // Show a specific motor's details (opens modal/detail view)
       show_motor: async (params: { motor_model: string }) => {
         console.log('[ClientTool] show_motor', params);
