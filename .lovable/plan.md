@@ -1,69 +1,83 @@
 
-# Remove Green "In Stock" Badges from Motor Cards
+# Fix Voice Agent's Rebate Matrix Formatting
 
-## Summary
+## Problem
 
-Remove the green "In Stock" badges that appear in the top-left corner of motor cards. The stock information is already displayed in the card text (e.g., "🟢 5 in stock today"), making the badge redundant and visually cluttered.
+The voice agent gave you wrong promo info because the **rebate matrix is not being formatted correctly** in the ElevenLabs system prompt.
+
+The database stores rebate tiers with:
+- `hp_min`, `hp_max` (e.g., 8-20)
+- `rebate` (e.g., 250)
+
+But the voice agent prompt uses:
+- `tier.hp` ❌ (doesn't exist → undefined)
+- `tier.amount` ❌ (doesn't exist → undefined)
+
+This means the voice agent sees **blank rebate data** and makes up incorrect amounts.
 
 ---
 
-## Changes
+## Root Cause Comparison
+
+| Agent | Field Names | Result |
+|-------|-------------|--------|
+| **Text Chatbot** ✅ | `tier.hp_min`, `tier.hp_max`, `tier.rebate` | Correct: "$250 for 8-20HP" |
+| **Voice Agent** ❌ | `tier.hp`, `tier.amount` | Broken: "undefined: $undefined" |
+
+---
+
+## Solution
+
+Update `supabase/functions/elevenlabs-conversation-token/index.ts` line 150-156 to match the correct field names used in the text chatbot.
+
+### Before (Broken)
+```typescript
+// Rebate matrix detail
+if (option.matrix && Array.isArray(option.matrix)) {
+  formatted += `   FACTORY REBATE BY HORSEPOWER:\n`;
+  option.matrix.forEach((tier: any) => {
+    formatted += `   - ${tier.hp}: $${tier.amount} cash back\n`;
+  });
+}
+```
+
+### After (Fixed)
+```typescript
+// Rebate matrix detail - uses hp_min, hp_max, rebate fields
+if (option.matrix && Array.isArray(option.matrix)) {
+  formatted += `   FACTORY REBATE BY HORSEPOWER:\n`;
+  option.matrix.forEach((tier: any) => {
+    const hpRange = tier.hp_min === tier.hp_max 
+      ? `${tier.hp_min}HP` 
+      : `${tier.hp_min}-${tier.hp_max}HP`;
+    formatted += `   - ${hpRange}: $${tier.rebate} cash back\n`;
+  });
+}
+```
+
+---
+
+## What This Fixes
+
+After the fix, the voice agent's prompt will correctly show:
+```
+FACTORY REBATE BY HORSEPOWER:
+- 2.5-6HP: $100 cash back
+- 8-20HP: $250 cash back
+- 25HP: $300 cash back
+- 30-60HP: $350 cash back
+- 65-75HP: $400 cash back
+- 80-115HP: $500 cash back
+- 150-200HP: $650 cash back
+- 225-425HP: $1000 cash back
+```
+
+---
+
+## Technical Details
 
 | File | Change |
 |------|--------|
-| `src/components/motors/MotorCardPremium.tsx` | Remove `StockBadge` component from the image overlay |
-| `src/components/motors/MotorCardPreview.tsx` | Remove `StockBadge` component from the image overlay |
-| `src/components/motors/HPMotorCard.tsx` | Remove `StockBadge` component from the image overlay |
+| `supabase/functions/elevenlabs-conversation-token/index.ts` | Fix rebate matrix formatting (lines 150-156) to use correct database field names |
 
----
-
-## What Will Be Removed
-
-### From MotorCardPremium.tsx (lines 246-253)
-```typescript
-// REMOVE THIS:
-<StockBadge 
-  motor={{
-    in_stock: inStock,
-    stock_quantity: motor?.stockQuantity,
-    stock_number: motor?.stockNumber
-  }}
-  variant="default"
-/>
-```
-
-### From MotorCardPreview.tsx (lines 439-446)
-```typescript
-// REMOVE THIS:
-<StockBadge 
-  motor={{
-    in_stock: inStock,
-    stock_quantity: motor?.stockQuantity,
-    stock_number: motor?.stockNumber
-  }}
-  variant="default"
-/>
-```
-
-### From HPMotorCard.tsx (lines 113-120)
-```typescript
-// REMOVE THIS:
-{inStockCount > 0 && (
-  <div className="absolute top-4 left-4">
-    <StockBadge 
-      motor={{ in_stock: true, stock_quantity: inStockCount }}
-      variant="default"
-    />
-  </div>
-)}
-```
-
----
-
-## What Stays
-
-The text-based stock status at the bottom of each card will remain:
-- **HPMotorCard**: "🟢 5 in stock today" or "○ Available to order"
-- **MotorCardPremium/Preview**: Similar stock text in the content area
-
-This keeps the stock information visible without the visual clutter of the badge overlay.
+After the fix, the edge function will need to be redeployed.
