@@ -49,6 +49,12 @@ export function GlobalStickyQuoteBar() {
 
     let total = state.motor.price;
 
+    // Add selected options (fuel tanks, accessories, etc. from Options page)
+    const selectedOptionsTotal = (state.selectedOptions || []).reduce(
+      (sum, opt) => sum + opt.price, 0
+    );
+    total += selectedOptionsTotal;
+
     // Add controls cost from boat info
     if (state.boatInfo?.controlsOption) {
       if (state.boatInfo.controlsOption === 'none') total += 1200;
@@ -88,6 +94,7 @@ export function GlobalStickyQuoteBar() {
     return totalWithTax;
   }, [
     state.motor,
+    state.selectedOptions,
     state.boatInfo?.controlsOption,
     state.purchasePath,
     state.installConfig?.installationCost,
