@@ -1,45 +1,44 @@
 
-# Fix: Battery Selection Not Appearing on Quote Summary
 
-## Root Cause Analysis
+# Fix: AI Chat Sending Users to Mercury Website for Promo Questions
 
-After thorough testing and code analysis, I identified the issue:
+## Problem Analysis
 
-### Problem
-When the user selects "Yes" for the battery on the Options page and clicks "Continue," the `looseMotorBattery` state is dispatched to the context. However, the 1000ms debounced save to localStorage means the state might not be persisted before navigation occurs. When the Summary page loads and reads state, the battery selection may be lost or stale.
+When users ask about the "Get 7" promotion, the AI chatbot:
 
-### Evidence
-1. Battery prompt appears correctly on Options page ✓
-2. User selects "Yes" and clicks Continue ✓  
-3. Summary page loads but shows no battery line item ✗
-4. Console logs show no errors - the state simply isn't there
+1. Says the info is correct (7-year warranty, etc.)
+2. **BUT** adds: "these promotional offers can vary by region and dealer, so for the most accurate and up-to-date details, it's best to check Mercury's official website or give us a call"
+3. This is wrong because Harris has a dedicated `/promotions` page with all details including:
+   - Complete promo structure (7 years + Choose One)
+   - Exact rebate amounts by HP
+   - Financing rates
+   - End date (March 31, 2026)
 
-### Technical Root Cause
-In `OptionsPage.tsx`, the `handleContinue` function dispatches `SET_LOOSE_MOTOR_BATTERY` and immediately navigates:
+### Root Cause
 
-```typescript
-// Lines 125-135
-if (isElectricStart && batteryChoice !== null) {
-  dispatch({ 
-    type: 'SET_LOOSE_MOTOR_BATTERY', 
-    payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
-  });
-}
+The `searchWithPerplexity` function is configured to search `mercurymarine.com` for promotion queries (lines 614-619). This returns **generic national** promo info with the typical "varies by dealer" disclaimer, which the AI then incorporates into its response despite having authoritative local data.
 
-dispatch({ type: 'COMPLETE_STEP', payload: 2 });
-navigate('/quote/purchase-path');  // Navigation happens before debounce save!
+```text
+Current flow:
+User asks about Get 7 → Category: "promotions" → Perplexity searches mercurymarine.com
+→ Returns: "offers vary by region and dealer" → AI repeats this hedge
 ```
-
-The QuoteContext has a 1000ms debounced save (line 477). Navigation happens instantly, but the save may not complete.
 
 ---
 
 ## Solution
 
-Force an **immediate synchronous save** to localStorage before navigation, similar to how trade-in changes are handled (which has an immediate save path at lines 435-447 in QuoteContext).
+### 1. Skip Perplexity for Promotion Queries
 
-### Approach
-Add a helper function to force-save the battery state immediately before navigating away from the Options page. This ensures the state is persisted regardless of the debounce timing.
+The local database already has complete, authoritative promo data. There's no need to search externally.
+
+### 2. Strengthen the Promotion Response Instructions
+
+Add explicit instructions telling the AI:
+- Use ONLY the local promo data provided in context
+- Never say "check Mercury website" for promotions
+- Always link to `/promotions` as the authoritative source
+- Include specific details (end date, rebate amounts, etc.)
 
 ---
 
@@ -47,133 +46,85 @@ Add a helper function to force-save the battery state immediately before navigat
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/OptionsPage.tsx` | Force immediate localStorage save before navigation |
+| `supabase/functions/ai-chatbot-stream/index.ts` | Skip Perplexity for `promotions` category; strengthen promo response rules |
 
 ---
 
-## Code Change
+## Code Changes
 
-### OptionsPage.tsx - Add Immediate Save Before Navigation
+### Change 1: Skip Perplexity for Promotions (Line ~562)
 
-**Current code (lines 95-136):**
+**Current:**
 ```typescript
-const handleContinue = () => {
-  if (!categorizedOptions) return;
-  
-  // Block if battery choice required but not made
-  if (isElectricStart && batteryChoice === null) {
-    toast.error('Please select a battery option before continuing');
-    return;
-  }
-
-  // Build selected options...
-  const selectedOptions = allOptions
-    .filter(opt => localSelectedIds.has(opt.id))
-    .map(opt => ({...}));
-
-  dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
-  
-  // Save battery choice for electric start motors
-  if (isElectricStart && batteryChoice !== null) {
-    dispatch({ 
-      type: 'SET_LOOSE_MOTOR_BATTERY', 
-      payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
-    });
-  }
-  
-  dispatch({ type: 'COMPLETE_STEP', payload: 2 });
-  
-  // Navigate to purchase path
-  navigate('/quote/purchase-path');
-};
+// Skip Perplexity for redirect categories and none
+if (category === 'none' || category === 'financing' || category === 'tradein_redirect') return null;
 ```
 
 **Replace with:**
 ```typescript
-const handleContinue = () => {
-  if (!categorizedOptions) return;
-  
-  // Block if battery choice required but not made
-  if (isElectricStart && batteryChoice === null) {
-    toast.error('Please select a battery option before continuing');
-    return;
-  }
-
-  // Build selected options...
-  const selectedOptions = allOptions
-    .filter(opt => localSelectedIds.has(opt.id))
-    .map(opt => ({...}));
-
-  dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
-  
-  // Save battery choice for electric start motors
-  const batteryPayload = isElectricStart && batteryChoice !== null 
-    ? { wantsBattery: batteryChoice, batteryCost: BATTERY_COST }
-    : state.looseMotorBattery;
-    
-  if (isElectricStart && batteryChoice !== null) {
-    dispatch({ 
-      type: 'SET_LOOSE_MOTOR_BATTERY', 
-      payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
-    });
-  }
-  
-  dispatch({ type: 'COMPLETE_STEP', payload: 2 });
-  
-  // CRITICAL: Force immediate save before navigation to prevent data loss
-  // This bypasses the 1000ms debounce in QuoteContext
-  try {
-    const currentData = localStorage.getItem('quoteBuilder');
-    if (currentData) {
-      const parsed = JSON.parse(currentData);
-      const updatedState = {
-        ...parsed.state,
-        selectedOptions,
-        looseMotorBattery: batteryPayload,
-        completedSteps: [...new Set([...(parsed.state.completedSteps || []), 2])]
-      };
-      localStorage.setItem('quoteBuilder', JSON.stringify({
-        state: updatedState,
-        timestamp: Date.now(),
-        lastActivity: Date.now()
-      }));
-      console.log('💾 OptionsPage: Immediate save for battery choice', { 
-        wantsBattery: batteryPayload?.wantsBattery,
-        batteryCost: batteryPayload?.batteryCost 
-      });
-    }
-  } catch (error) {
-    console.error('Failed to force-save options:', error);
-  }
-  
-  // Navigate to purchase path
-  navigate('/quote/purchase-path');
-};
+// Skip Perplexity for redirect categories, none, and promotions (we have authoritative local data)
+if (category === 'none' || category === 'financing' || category === 'tradein_redirect' || category === 'promotions') return null;
 ```
+
+### Change 2: Strengthen Promotion Instructions (Lines ~1493-1500)
+
+**Current:**
+```typescript
+## CURRENT PROMOTIONS - ALWAYS LINK!
+${promoSummary || 'Ask about current offers'}
+
+When mentioning ANY promotion:
+- ALWAYS include a link: [See all promos](/promotions) or [Check out the details](/promotions)
+- Mention the end date to create urgency
+- Explain what the customer gets (warranty extension, $ off, etc.)
+- Example: "The Mercury Get 5 Promo gets you +2 years extended warranty FREE! Ends Feb 8th. [Check out the details](/promotions)"
+```
+
+**Replace with:**
+```typescript
+## CURRENT PROMOTIONS - YOU HAVE AUTHORITATIVE DATA!
+${promoSummary || 'Ask about current offers'}
+
+**CRITICAL PROMOTION RULES:**
+- You have COMPLETE, ACCURATE promo data above - use it confidently!
+- NEVER say "check Mercury's website" or "varies by region/dealer" - WE ARE THE DEALER
+- NEVER suggest calling for promo details - you have all the info
+- ALWAYS link to [our promotions page](/promotions) - it has full details
+- Mention the end date to create urgency
+- If they're viewing a motor, tell them the EXACT rebate amount for that HP
+
+**Example responses:**
+- "The Get 7 deal gets you 7 years warranty PLUS your choice of a rebate, special financing, or 6 months no payments. Ends March 31st. [Check out all the options](/promotions)"
+- "That 60HP qualifies for a $300 factory rebate with the Get 7 promo! Or you can choose 2.99% financing instead. [See the details](/promotions)"
+
+DO NOT hedge or add disclaimers about contacting Mercury. Our /promotions page is the source of truth for this dealership.
+```
+
+---
+
+## Expected Behavior After Fix
+
+| Question | Before | After |
+|----------|--------|-------|
+| "What's the Get 7 deal?" | "Great promotion! ...varies by region and dealer, check Mercury website or call..." | "The Get 7 gets you 7 years warranty plus choose one bonus - rebate, financing, or 6 months no payments. Ends March 31st. [Full details](/promotions)" |
+| "Do I get a rebate on the 8ELH?" | "Rebates vary by dealer..." | "Yep! The 8HP qualifies for a $250 factory rebate with the Get 7 promo. [See all options](/promotions)" |
 
 ---
 
 ## Why This Works
 
-| Scenario | Before Fix | After Fix |
-|----------|------------|-----------|
-| User selects battery → Continue | State dispatched but debounce delays save → Navigation happens → State lost | Immediate localStorage write → Navigation → State preserved |
-| User skips battery (manual start motor) | Works (no battery state needed) | Works (unchanged) |
-| Returning to Options page | Battery choice may be lost | Battery choice persisted |
-
----
-
-## Expected Results
-
-After this fix:
-1. User selects "Yes, add battery" on Options page
-2. Clicks "Continue"
-3. **Immediate save** of `looseMotorBattery: { wantsBattery: true, batteryCost: 179.99 }` to localStorage
-4. Navigation to Purchase Path
-5. Quote Summary shows "Marine Starting Battery — $179.99" line item ✓
+1. **No external search pollution**: Perplexity won't inject "varies by dealer" disclaimers
+2. **Authoritative local data**: The AI uses the promo details already in the database
+3. **Clear directive**: Explicit instruction to NEVER redirect to Mercury website
+4. **Better UX**: Users get complete, confident answers with a link to learn more
 
 ---
 
 ## Technical Notes
 
-This approach mirrors the existing pattern for trade-in data (QuoteContext lines 431-450) where critical state changes trigger an immediate save bypassing the debounce. This ensures pricing consistency across the Quote Builder, Summary, PDF, and Financing views.
+The promo data flows from:
+1. `promotions` table → `promo_options` JSONB field with rebate matrix
+2. `buildSystemPrompt()` fetches active promos (line ~779)
+3. `promoSummary` and `rebateMatrixContext` inject details into system prompt
+4. This fix ensures the AI uses this data without external interference
+
