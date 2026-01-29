@@ -434,22 +434,16 @@ export default function MotorCardPreview({
                 )}
               </div>
               
-              {/* Stock Badge & Popularity Badge - Top Left */}
-              <div className="absolute top-4 left-4 flex flex-col gap-1.5">
-                <StockBadge 
-                  motor={{
-                    in_stock: inStock,
-                    stock_quantity: motor?.stockQuantity,
-                    stock_number: motor?.stockNumber
-                  }}
-                  variant="default"
-                />
-                {motor && (motor.hasManualSalePrice ? (
+              {/* Popularity Badge - Top Left */}
+              {motor && (motor.hasManualSalePrice ? (
+                <div className="absolute top-4 left-4">
                   <PopularityBadge type="special-price" />
-                ) : getMotorPopularity(motor) ? (
+                </div>
+              ) : getMotorPopularity(motor) ? (
+                <div className="absolute top-4 left-4">
                   <PopularityBadge type={getMotorPopularity(motor)!} />
-                ) : null)}
-              </div>
+                </div>
+              ) : null)}
               
               {/* HP Badge - Premium pill style */}
               {hpNum && (

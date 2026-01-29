@@ -109,15 +109,6 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
           style={{ transform: `scale(${imageScale})` }}
         />
         
-        {/* Stock Badge */}
-        {inStockCount > 0 && (
-          <div className="absolute top-4 left-4">
-            <StockBadge 
-              motor={{ in_stock: true, stock_quantity: inStockCount }}
-              variant="default"
-            />
-          </div>
-        )}
         
         {/* Pro XS Badge */}
         {hasProXS && (
