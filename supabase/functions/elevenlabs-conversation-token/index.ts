@@ -147,11 +147,14 @@ function formatPromotionData(promotions: any[]) {
           });
         }
         
-        // Rebate matrix detail
+        // Rebate matrix detail - uses hp_min, hp_max, rebate fields from database
         if (option.matrix && Array.isArray(option.matrix)) {
           formatted += `   FACTORY REBATE BY HORSEPOWER:\n`;
           option.matrix.forEach((tier: any) => {
-            formatted += `   - ${tier.hp}: $${tier.amount} cash back\n`;
+            const hpRange = tier.hp_min === tier.hp_max 
+              ? `${tier.hp_min}HP` 
+              : `${tier.hp_min}-${tier.hp_max}HP`;
+            formatted += `   - ${hpRange}: $${tier.rebate} cash back\n`;
           });
         }
       });
