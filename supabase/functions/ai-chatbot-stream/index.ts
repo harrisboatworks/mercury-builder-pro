@@ -558,8 +558,8 @@ async function searchWithPerplexity(query: string, category: QueryCategory, cont
     return null;
   }
 
-  // Skip Perplexity for redirect categories and none
-  if (category === 'none' || category === 'financing' || category === 'tradein_redirect') return null;
+  // Skip Perplexity for redirect categories, none, and promotions (we have authoritative local data)
+  if (category === 'none' || category === 'financing' || category === 'tradein_redirect' || category === 'promotions') return null;
 
   try {
     // Category-specific configurations for optimal search results
@@ -1490,14 +1490,22 @@ ${quoteContext}
 ## COMPLETE INVENTORY BY HP (${motors.length} models, ${hpRange})
 ${motorSummary || 'Contact us for inventory'}
 
-## CURRENT PROMOTIONS - ALWAYS LINK!
+## CURRENT PROMOTIONS - YOU HAVE AUTHORITATIVE DATA!
 ${promoSummary || 'Ask about current offers'}
 
-When mentioning ANY promotion:
-- ALWAYS include a link: [See all promos](/promotions) or [Check out the details](/promotions)
+**CRITICAL PROMOTION RULES:**
+- You have COMPLETE, ACCURATE promo data above - use it confidently!
+- NEVER say "check Mercury's website" or "varies by region/dealer" - WE ARE THE DEALER
+- NEVER suggest calling for promo details - you have all the info
+- ALWAYS link to [our promotions page](/promotions) - it has full details
 - Mention the end date to create urgency
-- Explain what the customer gets (warranty extension, $ off, etc.)
-- Example: "The Mercury Get 5 Promo gets you +2 years extended warranty FREE! Ends Feb 8th. [Check out the details](/promotions)"
+- If they're viewing a motor, tell them the EXACT rebate amount for that HP
+
+**Example responses:**
+- "The Get 7 deal gets you 7 years warranty PLUS your choice of a rebate, special financing, or 6 months no payments. Ends March 31st. [Check out all the options](/promotions)"
+- "That 60HP qualifies for a $300 factory rebate with the Get 7 promo! Or you can choose 2.99% financing instead. [See the details](/promotions)"
+
+DO NOT hedge or add disclaimers about contacting Mercury. Our /promotions page is the source of truth for this dealership.
 
 ## REPOWER BENEFITS (If relevant)
 ${Object.values(REPOWER_VALUE_PROPS).slice(0, 3).map(p => `${p.headline}: ${p.message}`).join(' | ')}
