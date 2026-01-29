@@ -417,6 +417,12 @@ export const UnifiedMobileBar: React.FC = () => {
         total += state.fuelTankConfig.tankCost;
       }
 
+      // Add selected options (fuel tanks, accessories, etc. from Options page)
+      const selectedOptionsTotal = (state.selectedOptions || []).reduce(
+        (sum, opt) => sum + opt.price, 0
+      );
+      total += selectedOptionsTotal;
+
       if (state.warrantyConfig?.warrantyPrice) {
         total += state.warrantyConfig.warrantyPrice;
       }
@@ -433,7 +439,8 @@ export const UnifiedMobileBar: React.FC = () => {
     isPreview, state.motor?.model,
     state.boatInfo?.controlsOption, state.purchasePath,
     state.installConfig?.installationCost, state.fuelTankConfig?.tankCost,
-    state.warrantyConfig?.warrantyPrice, state.tradeInInfo?.estimatedValue
+    state.selectedOptions, state.warrantyConfig?.warrantyPrice, 
+    state.tradeInInfo?.estimatedValue
   ]);
 
   // Calculate current savings (trade-in + promos)

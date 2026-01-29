@@ -52,6 +52,16 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
     // Motor
     lineItems.push({ label: 'Motor Price', value: motorPrice });
 
+    // Selected options (fuel tanks, accessories, etc. from Options page)
+    if (state.selectedOptions && state.selectedOptions.length > 0) {
+      state.selectedOptions.forEach(option => {
+        if (option.price > 0) {
+          subtotal += option.price;
+          lineItems.push({ label: option.name, value: option.price });
+        }
+      });
+    }
+
     // Warranty
     if (state.warrantyConfig?.warrantyPrice) {
       subtotal += state.warrantyConfig.warrantyPrice;
