@@ -102,11 +102,12 @@ Shaft length MUST match the boat's transom height - this isn't optional or a pre
 - This isn't preference - it's a specification. Getting it wrong hurts performance every trip.
 `;
 
-// Format promotion data with full "Choose One" details
+// Format promotion data with full "Choose One" details - FULLY DYNAMIC
 function formatPromotionData(promotions: any[]) {
   if (!promotions.length) return "";
   
   let formatted = "\n## CURRENT PROMOTIONS & SPECIAL OFFERS:\n\n";
+  let hasChooseOneOptions = false; // Track if any promo has choose-one options
   
   promotions.forEach(promo => {
     formatted += `**${promo.name}**\n`;
@@ -124,13 +125,16 @@ function formatPromotionData(promotions: any[]) {
       formatted += `- ${promo.bonus_description}\n`;
     }
     if (promo.warranty_extra_years) {
-      formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years of coverage (total 7 years!)\n`;
+      const baseWarranty = 3; // Mercury standard warranty
+      const totalYears = baseWarranty + promo.warranty_extra_years;
+      formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years FREE (${totalYears} years total!)\n`;
     }
     
     // Handle "Choose One" promo_options (Get 7 + Choose One structure)
     // promo_options is an object with an "options" array, not an array itself
     const promoOptions = promo.promo_options?.options;
     if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
+      hasChooseOneOptions = true;
       formatted += `\n**CUSTOMER CHOOSES ONE BONUS (explain these options when asked):**\n`;
       
       promoOptions.forEach((option: any, idx: number) => {
@@ -167,17 +171,18 @@ function formatPromotionData(promotions: any[]) {
     formatted += "\n";
   });
   
-  formatted += `
-**HOW TO EXPLAIN THE CHOOSE ONE OPTIONS:**
-1. "6 Months No Payments" - Great for customers who want the motor NOW but want to defer payments. They get the motor, use it all season, first payment in 6 months.
-2. "Special Financing" - Best for customers financing larger amounts. Lower interest rates save money over the loan term. Mention specific rates like "2.99% for 24 months."
-3. "Factory Cash Rebate" - Instant money off. Best for high HP motors. Example: "Your 115HP qualifies for $500 back!" Always calculate their specific rebate based on HP.
+  // Only add explanation guide if there were promo options (fully dynamic)
+  if (hasChooseOneOptions) {
+    formatted += `
+**HOW TO HELP CUSTOMERS CHOOSE:**
+When customer asks "which option should I choose?" → Ask about their situation:
+- Want to defer payments? → No-payment options work best
+- Financing a large amount? → Lower interest rates save money over time
+- Paying mostly cash? → Rebates give instant savings
 
-When customer asks "which should I choose?" → Ask about their situation:
-- Buying at season start and want payment flexibility? → No Payments
-- Financing a large amount and want lowest cost over time? → Special Financing  
-- Paying mostly cash or want instant savings? → Cash Rebate
+Use the specific option details listed above to explain what's available.
 `;
+  }
   
   return formatted;
 }
