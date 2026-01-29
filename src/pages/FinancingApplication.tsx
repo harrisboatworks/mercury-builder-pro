@@ -374,13 +374,52 @@ export default function FinancingApplication() {
   };
 
   const handleStartFresh = () => {
-    // Clear all saved drafts and quote data
+    // IMPORTANT: Preserve the current quote_state BEFORE clearing drafts
+    // This contains the motor details from the quote the user just came from
+    const currentQuoteState = localStorage.getItem('quote_state');
+    let quoteDataToRestore: any = null;
+    
+    if (currentQuoteState) {
+      try {
+        quoteDataToRestore = JSON.parse(currentQuoteState);
+      } catch (e) {
+        console.error('Failed to parse quote state for restoration:', e);
+      }
+    }
+    
+    // Clear all saved drafts (old financing progress)
     localStorage.removeItem('financing_draft');
     localStorage.removeItem('financingApplication');
     localStorage.removeItem('quote_state');
     
     // Reset context to initial state
     financingDispatch({ type: 'RESET_APPLICATION' });
+    
+    // Re-apply the current quote's motor details if available
+    if (quoteDataToRestore?.motor) {
+      const totalWithFees = quoteDataToRestore.financingAmount?.totalWithFees;
+      const motorPrice = totalWithFees || quoteDataToRestore.motor.salePrice || quoteDataToRestore.motor.price || 0;
+      const tradeInValue = quoteDataToRestore.financingAmount?.tradeInValue || quoteDataToRestore.tradeInInfo?.estimatedValue || 0;
+      
+      const motorModel = quoteDataToRestore.financingAmount?.packageName 
+        ? `${quoteDataToRestore.motor.model || ''} (${quoteDataToRestore.financingAmount.packageName})`
+        : quoteDataToRestore.motor.model || '';
+      
+      financingDispatch({
+        type: 'SET_PURCHASE_DETAILS',
+        payload: {
+          motorModel: motorModel,
+          motorPrice: motorPrice,
+          downPayment: 0,
+          tradeInValue: tradeInValue,
+          amountToFinance: Math.max(0, motorPrice - tradeInValue),
+          promoOption: quoteDataToRestore.financingAmount?.promoOption || quoteDataToRestore.selectedPromoOption || null,
+          promoRate: quoteDataToRestore.financingAmount?.promoRate || quoteDataToRestore.selectedPromoRate || null,
+          promoTerm: quoteDataToRestore.financingAmount?.promoTerm || quoteDataToRestore.selectedPromoTerm || null,
+          promoValue: quoteDataToRestore.financingAmount?.promoValue || quoteDataToRestore.selectedPromoValue || null,
+        },
+      });
+    }
     
     setShowResumeDialog(false);
   };
