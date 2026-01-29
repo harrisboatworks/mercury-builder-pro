@@ -126,6 +126,20 @@ const TOOLS = [
     }
   },
   {
+    name: "send_motor_info_email",
+    description: "Send motor details, specs, and pricing via email. Use when customer wants info emailed to them.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        customer_email: { type: "string", description: "Customer's email address" },
+        customer_name: { type: "string", description: "Customer's name" },
+        motor_model: { type: "string", description: "Motor model to send info about" },
+        include_pricing: { type: "boolean", description: "Include pricing in the email (default true)" }
+      },
+      required: ["customer_email", "motor_model"]
+    }
+  },
+  {
     name: "check_current_deals",
     description: "Check current promotions and deals. Use when customers ask about discounts or special offers.",
     inputSchema: {
@@ -562,6 +576,115 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       );
       const result = await response.json();
       return { content: [{ type: "text", text: result.success ? `I've sent details about the ${args.motor_model} to your phone!` : result.error }] };
+    }
+    
+    case "send_motor_info_email": {
+      const customerEmail = args.customer_email as string;
+      const customerName = (args.customer_name as string) || "Customer";
+      const motorModel = args.motor_model as string;
+      const includePricing = args.include_pricing !== false;
+      
+      // Look up motor details
+      const { data: motor } = await supabase
+        .from("motor_models")
+        .select("*")
+        .or(`model_display.ilike.%${motorModel}%,model.ilike.%${motorModel}%`)
+        .limit(1)
+        .single();
+      
+      if (!motor) {
+        return { 
+          content: [{ type: "text", text: `I couldn't find that motor in our system. Could you give me the exact model name?` }] 
+        };
+      }
+      
+      // Check for Resend API key
+      const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+      if (!RESEND_API_KEY) {
+        return { 
+          content: [{ type: "text", text: `I'm having trouble with our email system right now. You can find all the details at harrisboatworks.ca, or I can have someone from our team call you.` }] 
+        };
+      }
+      
+      // Build email HTML with motor details
+      const priceSection = includePricing && motor.msrp 
+        ? `<p><strong>Price:</strong> $${motor.msrp.toLocaleString()} CAD</p>` 
+        : '';
+      
+      const emailHtml = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <style>
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background: #1e3a5f; color: white; padding: 20px; text-align: center; }
+            .content { padding: 20px; }
+            .motor-card { background: #f8fafc; border-radius: 8px; padding: 20px; margin: 20px 0; }
+            .cta { background: #dc2626; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; display: inline-block; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <h1>Mercury ${motor.model_display || motor.model}</h1>
+              <p>Harris Boat Works</p>
+            </div>
+            <div class="content">
+              <p>Hi ${customerName},</p>
+              <p>Here's the motor info you asked about!</p>
+              
+              <div class="motor-card">
+                <h2>${motor.model_display || motor.model}</h2>
+                <p><strong>Horsepower:</strong> ${motor.horsepower} HP</p>
+                <p><strong>Family:</strong> ${motor.family || 'FourStroke'}</p>
+                <p><strong>Shaft Length:</strong> ${motor.shaft || 'Standard'}</p>
+                <p><strong>Availability:</strong> ${motor.in_stock ? 'In Stock' : 'Available to Order (7-14 days)'}</p>
+                ${priceSection}
+              </div>
+              
+              <p>Want a detailed quote with options and promotions?</p>
+              <p style="text-align: center; margin: 24px 0;">
+                <a href="https://harrisboatworks.ca/motor/${motor.id}" class="cta">View Full Details</a>
+              </p>
+              
+              <p>Questions? Just reply to this email or call us at (905) 342-2153.</p>
+              
+              <p>Thanks,<br>Harris Boat Works</p>
+            </div>
+          </div>
+        </body>
+        </html>
+      `;
+      
+      try {
+        const { Resend } = await import("npm:resend@2.0.0");
+        const resend = new Resend(RESEND_API_KEY);
+        
+        await resend.emails.send({
+          from: "Harris Boat Works <quotes@hbwsales.ca>",
+          to: [customerEmail],
+          reply_to: "info@harrisboatworks.ca",
+          subject: `Mercury ${motor.model_display || motor.model} - Motor Details`,
+          html: emailHtml
+        });
+        
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `Done! I've sent the ${motor.model_display || motor.model} details to ${customerEmail}. It'll be in your inbox in just a minute. Anything else you'd like to know?` 
+          }] 
+        };
+      } catch (error) {
+        console.error("[MCP] Email send error:", error);
+        return { 
+          content: [{ 
+            type: "text", 
+            text: `I had trouble sending that email. Could you double-check your email address, or I can have someone from our team follow up with you?` 
+          }] 
+        };
+      }
     }
     
     case "check_current_deals": {
