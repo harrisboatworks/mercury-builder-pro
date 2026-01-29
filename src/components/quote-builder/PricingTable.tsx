@@ -164,7 +164,6 @@ export function PricingTable({
         <LineItemRow
           label="HST (13%)"
           amount={pricing.tax}
-          description="Ontario tax included"
         />
 
         {/* Total */}
