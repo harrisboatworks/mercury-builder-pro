@@ -61,8 +61,8 @@ export default function MotorCardPremium({
   const navigate = useNavigate();
   const [showTooltip, setShowTooltip] = useState(false);
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
-  // Get popularity type for this motor (rule-based)
-  const popularityType = motor ? getMotorPopularity(motor) : null;
+  // Get popularity type for this motor - prioritize "Special Price" if manual sale price is set
+  const popularityType = motor?.hasManualSalePrice ? 'special-price' : (motor ? getMotorPopularity(motor) : null);
   const [scrollPosition, setScrollPosition] = useState(0);
   
   // Get the best available image URL and count total images using priority logic

@@ -31,6 +31,8 @@ export interface Motor {
   availability?: string;
   // Hero image field for priority logic
   hero_media_id?: string;
+  // Manual pricing flag for "Special Price" badge
+  hasManualSalePrice?: boolean;
   [key: string]: any;
 }
 

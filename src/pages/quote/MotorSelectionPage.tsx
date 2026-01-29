@@ -496,6 +496,8 @@ if (event.type === 'filter_motors') {
         availability: dbMotor.availability,
         // Preserve hero_media_id for image priority logic
         hero_media_id: dbMotor.hero_media_id,
+        // Flag for "Special Price" badge when manual sale price is set and not expired
+        hasManualSalePrice: !isManualSaleExpired && !!manualOverrides.sale_price,
         category: dbMotor.horsepower <= 20 ? 'portable' :
                  dbMotor.horsepower <= 60 ? 'mid-range' : 
                  dbMotor.horsepower <= 150 ? 'high-performance' : 'v8-racing',

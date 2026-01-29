@@ -73,6 +73,8 @@ export interface Motor {
   shaft?: string | null;
   images?: any[];
   family?: string | null;
+  // Manual pricing flag for "Special Price" badge
+  hasManualSalePrice?: boolean;
 }
 
 export interface BoatInfo {
