@@ -1,130 +1,112 @@
 
 
-# Fix: AI Chat Sending Users to Mercury Website for Promo Questions
+# Fix: Voice Chat SMS Not Sending (Secret Name Mismatch)
 
-## Problem Analysis
+## Root Cause Analysis
 
-When users ask about the "Get 7" promotion, the AI chatbot:
+The voice chat SMS feature is completely broken due to a **secret environment variable name mismatch**:
 
-1. Says the info is correct (7-year warranty, etc.)
-2. **BUT** adds: "these promotional offers can vary by region and dealer, so for the most accurate and up-to-date details, it's best to check Mercury's official website or give us a call"
-3. This is wrong because Harris has a dedicated `/promotions` page with all details including:
-   - Complete promo structure (7 years + Choose One)
-   - Exact rebate amounts by HP
-   - Financing rates
-   - End date (March 31, 2026)
+| What Edge Function Expects | What's Actually Configured |
+|---------------------------|---------------------------|
+| `TWILIO_PHONE_NUMBER` | `TWILIO_FROM_NUMBER` |
 
-### Root Cause
+This causes `voice-send-follow-up`, `send-get7-campaign`, and parts of `elevenlabs-mcp-server` to fail immediately with "SMS service not configured."
 
-The `searchWithPerplexity` function is configured to search `mercurymarine.com` for promotion queries (lines 614-619). This returns **generic national** promo info with the typical "varies by dealer" disclaimer, which the AI then incorporates into its response despite having authoritative local data.
-
-```text
-Current flow:
-User asks about Get 7 → Category: "promotions" → Perplexity searches mercurymarine.com
-→ Returns: "offers vary by region and dealer" → AI repeats this hedge
-```
+### Evidence
+- **No edge function logs**: Function returns at line 88-96 before any logging happens
+- **Empty `sms_logs` table**: No SMS attempts ever reach Twilio
+- **Agent behavior**: Says "I've sent it" before having a phone number (ElevenLabs hallucination)
 
 ---
 
 ## Solution
 
-### 1. Skip Perplexity for Promotion Queries
-
-The local database already has complete, authoritative promo data. There's no need to search externally.
-
-### 2. Strengthen the Promotion Response Instructions
-
-Add explicit instructions telling the AI:
-- Use ONLY the local promo data provided in context
-- Never say "check Mercury website" for promotions
-- Always link to `/promotions` as the authoritative source
-- Include specific details (end date, rebate amounts, etc.)
+Update the affected edge functions to use `TWILIO_FROM_NUMBER` (the actual secret name) instead of `TWILIO_PHONE_NUMBER`.
 
 ---
 
 ## Files to Modify
 
-| File | Change |
-|------|--------|
-| `supabase/functions/ai-chatbot-stream/index.ts` | Skip Perplexity for `promotions` category; strengthen promo response rules |
+| File | Current | Change To |
+|------|---------|-----------|
+| `supabase/functions/voice-send-follow-up/index.ts` | `TWILIO_PHONE_NUMBER` | `TWILIO_FROM_NUMBER` |
+| `supabase/functions/send-get7-campaign/index.ts` | `TWILIO_PHONE_NUMBER` | `TWILIO_FROM_NUMBER` |
+| `supabase/functions/elevenlabs-mcp-server/index.ts` | `TWILIO_PHONE_NUMBER` | `TWILIO_FROM_NUMBER` |
 
 ---
 
 ## Code Changes
 
-### Change 1: Skip Perplexity for Promotions (Line ~562)
+### 1. voice-send-follow-up/index.ts (Line 11)
 
 **Current:**
 ```typescript
-// Skip Perplexity for redirect categories and none
-if (category === 'none' || category === 'financing' || category === 'tradein_redirect') return null;
+const TWILIO_PHONE_NUMBER = Deno.env.get("TWILIO_PHONE_NUMBER");
 ```
 
 **Replace with:**
 ```typescript
-// Skip Perplexity for redirect categories, none, and promotions (we have authoritative local data)
-if (category === 'none' || category === 'financing' || category === 'tradein_redirect' || category === 'promotions') return null;
+const TWILIO_PHONE_NUMBER = Deno.env.get("TWILIO_FROM_NUMBER");
 ```
 
-### Change 2: Strengthen Promotion Instructions (Lines ~1493-1500)
+### 2. send-get7-campaign/index.ts (Line 12)
 
 **Current:**
 ```typescript
-## CURRENT PROMOTIONS - ALWAYS LINK!
-${promoSummary || 'Ask about current offers'}
-
-When mentioning ANY promotion:
-- ALWAYS include a link: [See all promos](/promotions) or [Check out the details](/promotions)
-- Mention the end date to create urgency
-- Explain what the customer gets (warranty extension, $ off, etc.)
-- Example: "The Mercury Get 5 Promo gets you +2 years extended warranty FREE! Ends Feb 8th. [Check out the details](/promotions)"
+const TWILIO_PHONE_NUMBER = Deno.env.get("TWILIO_PHONE_NUMBER");
 ```
 
 **Replace with:**
 ```typescript
-## CURRENT PROMOTIONS - YOU HAVE AUTHORITATIVE DATA!
-${promoSummary || 'Ask about current offers'}
+const TWILIO_PHONE_NUMBER = Deno.env.get("TWILIO_FROM_NUMBER");
+```
 
-**CRITICAL PROMOTION RULES:**
-- You have COMPLETE, ACCURATE promo data above - use it confidently!
-- NEVER say "check Mercury's website" or "varies by region/dealer" - WE ARE THE DEALER
-- NEVER suggest calling for promo details - you have all the info
-- ALWAYS link to [our promotions page](/promotions) - it has full details
-- Mention the end date to create urgency
-- If they're viewing a motor, tell them the EXACT rebate amount for that HP
+### 3. elevenlabs-mcp-server/index.ts (Line 535)
 
-**Example responses:**
-- "The Get 7 deal gets you 7 years warranty PLUS your choice of a rebate, special financing, or 6 months no payments. Ends March 31st. [Check out all the options](/promotions)"
-- "That 60HP qualifies for a $300 factory rebate with the Get 7 promo! Or you can choose 2.99% financing instead. [See the details](/promotions)"
+**Current:**
+```typescript
+const twilioPhone = Deno.env.get("TWILIO_PHONE_NUMBER");
+```
 
-DO NOT hedge or add disclaimers about contacting Mercury. Our /promotions page is the source of truth for this dealership.
+**Replace with:**
+```typescript
+const twilioPhone = Deno.env.get("TWILIO_FROM_NUMBER");
 ```
 
 ---
 
-## Expected Behavior After Fix
+## Why Phone Number Formatting Works
 
-| Question | Before | After |
+For the number "9053766208", the existing logic is correct:
+```typescript
+function formatPhoneNumber(phone: string): string {
+  const digits = phone.replace(/\D/g, '');  // → "9053766208" (10 digits)
+  if (digits.length === 10) {
+    return `+1${digits}`;  // → "+19053766208" ✓
+  }
+  ...
+}
+```
+
+Users don't need to add "1" - the code handles it automatically.
+
+---
+
+## Expected Results After Fix
+
+| Scenario | Before | After |
 |----------|--------|-------|
-| "What's the Get 7 deal?" | "Great promotion! ...varies by region and dealer, check Mercury website or call..." | "The Get 7 gets you 7 years warranty plus choose one bonus - rebate, financing, or 6 months no payments. Ends March 31st. [Full details](/promotions)" |
-| "Do I get a rebate on the 8ELH?" | "Rebates vary by dealer..." | "Yep! The 8HP qualifies for a $250 factory rebate with the Get 7 promo. [See all options](/promotions)" |
+| Voice agent sends SMS | "SMS service not configured" (silent fail) | SMS delivered via Twilio |
+| Edge function logs | Empty | Shows request details and Twilio response |
+| `sms_logs` table | Empty | Records each SMS attempt |
 
 ---
 
-## Why This Works
+## Additional Recommendation
 
-1. **No external search pollution**: Perplexity won't inject "varies by dealer" disclaimers
-2. **Authoritative local data**: The AI uses the promo details already in the database
-3. **Clear directive**: Explicit instruction to NEVER redirect to Mercury website
-4. **Better UX**: Users get complete, confident answers with a link to learn more
+The voice agent's premature "I've sent it" claim is an ElevenLabs configuration issue. The agent should be instructed to:
+1. ALWAYS ask for phone number before claiming to send anything
+2. Wait for tool result before confirming success
 
----
-
-## Technical Notes
-
-The promo data flows from:
-1. `promotions` table → `promo_options` JSONB field with rebate matrix
-2. `buildSystemPrompt()` fetches active promos (line ~779)
-3. `promoSummary` and `rebateMatrixContext` inject details into system prompt
-4. This fix ensures the AI uses this data without external interference
+This requires updating the ElevenLabs agent system prompt, which is in `supabase/functions/elevenlabs-conversation-token/index.ts`.
 
