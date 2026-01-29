@@ -101,6 +101,12 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       lineItems.push({ label: `${state.fuelTankConfig.tankSize} Fuel Tank`, value: state.fuelTankConfig.tankCost });
     }
 
+    // Battery (if user opted for it)
+    if (state.looseMotorBattery?.wantsBattery && state.looseMotorBattery?.batteryCost) {
+      subtotal += state.looseMotorBattery.batteryCost;
+      lineItems.push({ label: 'Marine Starting Battery', value: state.looseMotorBattery.batteryCost });
+    }
+
     // Trade-in
     if (state.tradeInInfo?.estimatedValue) {
       subtotal -= state.tradeInInfo.estimatedValue;

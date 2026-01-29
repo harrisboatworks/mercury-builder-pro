@@ -78,6 +78,11 @@ export function GlobalStickyQuoteBar() {
       total += state.fuelTankConfig.tankCost;
     }
 
+    // Add battery cost (if user opted for it)
+    if (state.looseMotorBattery?.wantsBattery && state.looseMotorBattery?.batteryCost) {
+      total += state.looseMotorBattery.batteryCost;
+    }
+
     // Add warranty
     if (state.warrantyConfig?.warrantyPrice) {
       total += state.warrantyConfig.warrantyPrice;
@@ -99,6 +104,8 @@ export function GlobalStickyQuoteBar() {
     state.purchasePath,
     state.installConfig?.installationCost,
     state.fuelTankConfig?.tankCost,
+    state.looseMotorBattery?.wantsBattery,
+    state.looseMotorBattery?.batteryCost,
     state.warrantyConfig?.warrantyPrice,
     state.tradeInInfo?.estimatedValue,
   ]);
