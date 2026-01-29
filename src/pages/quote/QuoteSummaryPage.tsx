@@ -207,7 +207,7 @@ export default function QuoteSummaryPage() {
   const specSheetUrl = motor?.specSheetUrl ?? null;
   
   // Motor type calculations
-  const motorModel = motor?.model || '';
+  const motorModel = motor?.model || state.motor?.model || '';
   const isManualTiller = isTillerMotor(motorModel);
   const needsControls = requiresMercuryControls(motor);
   const isElectricStart = hasElectricStart(motorModel);
