@@ -1,105 +1,153 @@
 
+# Fix: Battery Selection Not Appearing on Quote Summary
 
-# Fix: "Start Fresh" Should Preserve Current Quote's Motor Details
+## Root Cause Analysis
 
-## Problem Identified
+After thorough testing and code analysis, I identified the issue:
 
-When a user clicks "Apply for Financing" from the Quote Summary and a previous financing draft exists:
+### Problem
+When the user selects "Yes" for the battery on the Options page and clicks "Continue," the `looseMotorBattery` state is dispatched to the context. However, the 1000ms debounced save to localStorage means the state might not be persisted before navigation occurs. When the Summary page loads and reads state, the battery selection may be lost or stale.
 
-1. The Quote Summary saves current motor details to `quote_state` in localStorage
-2. FinancingApplication loads and **immediately** detects an old `financing_draft`
-3. The Resume Dialog appears **before** the quote pre-fill logic runs (lines 290-348)
-4. User clicks **"Start Fresh"**
-5. `handleStartFresh()` clears ALL storage including `quote_state`
-6. The pre-fill logic never runs → motor details are lost
+### Evidence
+1. Battery prompt appears correctly on Options page ✓
+2. User selects "Yes" and clicks Continue ✓  
+3. Summary page loads but shows no battery line item ✗
+4. Console logs show no errors - the state simply isn't there
 
-**The current `handleStartFresh` at lines 376-386:**
+### Technical Root Cause
+In `OptionsPage.tsx`, the `handleContinue` function dispatches `SET_LOOSE_MOTOR_BATTERY` and immediately navigates:
+
 ```typescript
-const handleStartFresh = () => {
-  localStorage.removeItem('financing_draft');
-  localStorage.removeItem('financingApplication');
-  localStorage.removeItem('quote_state');  // ← Bug: This deletes the NEW quote data
-  
-  financingDispatch({ type: 'RESET_APPLICATION' });
-  setShowResumeDialog(false);
-};
+// Lines 125-135
+if (isElectricStart && batteryChoice !== null) {
+  dispatch({ 
+    type: 'SET_LOOSE_MOTOR_BATTERY', 
+    payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
+  });
+}
+
+dispatch({ type: 'COMPLETE_STEP', payload: 2 });
+navigate('/quote/purchase-path');  // Navigation happens before debounce save!
 ```
+
+The QuoteContext has a 1000ms debounced save (line 477). Navigation happens instantly, but the save may not complete.
 
 ---
 
 ## Solution
 
-Modify `handleStartFresh` to:
-1. **Read and preserve** the current `quote_state` before clearing
-2. Clear the old financing drafts
-3. Reset the application state
-4. **Re-apply** the preserved quote data to pre-fill the form
+Force an **immediate synchronous save** to localStorage before navigation, similar to how trade-in changes are handled (which has an immediate save path at lines 435-447 in QuoteContext).
+
+### Approach
+Add a helper function to force-save the battery state immediately before navigating away from the Options page. This ensures the state is persisted regardless of the debounce timing.
 
 ---
 
-## File to Modify
+## Files to Modify
 
 | File | Change |
 |------|--------|
-| `src/pages/FinancingApplication.tsx` | Update `handleStartFresh` to preserve and re-apply current quote |
+| `src/pages/quote/OptionsPage.tsx` | Force immediate localStorage save before navigation |
 
 ---
 
 ## Code Change
 
-### Lines 376-386: Update `handleStartFresh`
+### OptionsPage.tsx - Add Immediate Save Before Navigation
 
-**Replace with:**
+**Current code (lines 95-136):**
 ```typescript
-const handleStartFresh = () => {
-  // IMPORTANT: Preserve the current quote_state BEFORE clearing drafts
-  // This contains the motor details from the quote the user just came from
-  const currentQuoteState = localStorage.getItem('quote_state');
-  let quoteDataToRestore: any = null;
+const handleContinue = () => {
+  if (!categorizedOptions) return;
   
-  if (currentQuoteState) {
-    try {
-      quoteDataToRestore = JSON.parse(currentQuoteState);
-    } catch (e) {
-      console.error('Failed to parse quote state for restoration:', e);
-    }
+  // Block if battery choice required but not made
+  if (isElectricStart && batteryChoice === null) {
+    toast.error('Please select a battery option before continuing');
+    return;
   }
+
+  // Build selected options...
+  const selectedOptions = allOptions
+    .filter(opt => localSelectedIds.has(opt.id))
+    .map(opt => ({...}));
+
+  dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
   
-  // Clear all saved drafts (old financing progress)
-  localStorage.removeItem('financing_draft');
-  localStorage.removeItem('financingApplication');
-  localStorage.removeItem('quote_state');
-  
-  // Reset context to initial state
-  financingDispatch({ type: 'RESET_APPLICATION' });
-  
-  // Re-apply the current quote's motor details if available
-  if (quoteDataToRestore?.motor) {
-    const totalWithFees = quoteDataToRestore.financingAmount?.totalWithFees;
-    const motorPrice = totalWithFees || quoteDataToRestore.motor.salePrice || quoteDataToRestore.motor.price || 0;
-    const tradeInValue = quoteDataToRestore.financingAmount?.tradeInValue || quoteDataToRestore.tradeInInfo?.estimatedValue || 0;
-    
-    const motorModel = quoteDataToRestore.financingAmount?.packageName 
-      ? `${quoteDataToRestore.motor.model || ''} (${quoteDataToRestore.financingAmount.packageName})`
-      : quoteDataToRestore.motor.model || '';
-    
-    financingDispatch({
-      type: 'SET_PURCHASE_DETAILS',
-      payload: {
-        motorModel: motorModel,
-        motorPrice: motorPrice,
-        downPayment: 0,
-        tradeInValue: tradeInValue,
-        amountToFinance: Math.max(0, motorPrice - tradeInValue),
-        promoOption: quoteDataToRestore.financingAmount?.promoOption || quoteDataToRestore.selectedPromoOption || null,
-        promoRate: quoteDataToRestore.financingAmount?.promoRate || quoteDataToRestore.selectedPromoRate || null,
-        promoTerm: quoteDataToRestore.financingAmount?.promoTerm || quoteDataToRestore.selectedPromoTerm || null,
-        promoValue: quoteDataToRestore.financingAmount?.promoValue || quoteDataToRestore.selectedPromoValue || null,
-      },
+  // Save battery choice for electric start motors
+  if (isElectricStart && batteryChoice !== null) {
+    dispatch({ 
+      type: 'SET_LOOSE_MOTOR_BATTERY', 
+      payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
     });
   }
   
-  setShowResumeDialog(false);
+  dispatch({ type: 'COMPLETE_STEP', payload: 2 });
+  
+  // Navigate to purchase path
+  navigate('/quote/purchase-path');
+};
+```
+
+**Replace with:**
+```typescript
+const handleContinue = () => {
+  if (!categorizedOptions) return;
+  
+  // Block if battery choice required but not made
+  if (isElectricStart && batteryChoice === null) {
+    toast.error('Please select a battery option before continuing');
+    return;
+  }
+
+  // Build selected options...
+  const selectedOptions = allOptions
+    .filter(opt => localSelectedIds.has(opt.id))
+    .map(opt => ({...}));
+
+  dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
+  
+  // Save battery choice for electric start motors
+  const batteryPayload = isElectricStart && batteryChoice !== null 
+    ? { wantsBattery: batteryChoice, batteryCost: BATTERY_COST }
+    : state.looseMotorBattery;
+    
+  if (isElectricStart && batteryChoice !== null) {
+    dispatch({ 
+      type: 'SET_LOOSE_MOTOR_BATTERY', 
+      payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
+    });
+  }
+  
+  dispatch({ type: 'COMPLETE_STEP', payload: 2 });
+  
+  // CRITICAL: Force immediate save before navigation to prevent data loss
+  // This bypasses the 1000ms debounce in QuoteContext
+  try {
+    const currentData = localStorage.getItem('quoteBuilder');
+    if (currentData) {
+      const parsed = JSON.parse(currentData);
+      const updatedState = {
+        ...parsed.state,
+        selectedOptions,
+        looseMotorBattery: batteryPayload,
+        completedSteps: [...new Set([...(parsed.state.completedSteps || []), 2])]
+      };
+      localStorage.setItem('quoteBuilder', JSON.stringify({
+        state: updatedState,
+        timestamp: Date.now(),
+        lastActivity: Date.now()
+      }));
+      console.log('💾 OptionsPage: Immediate save for battery choice', { 
+        wantsBattery: batteryPayload?.wantsBattery,
+        batteryCost: batteryPayload?.batteryCost 
+      });
+    }
+  } catch (error) {
+    console.error('Failed to force-save options:', error);
+  }
+  
+  // Navigate to purchase path
+  navigate('/quote/purchase-path');
 };
 ```
 
@@ -109,42 +157,23 @@ const handleStartFresh = () => {
 
 | Scenario | Before Fix | After Fix |
 |----------|------------|-----------|
-| Has old draft + new quote → Start Fresh | Motor details lost | Motor details preserved |
-| Has old draft + no new quote → Start Fresh | Empty form (correct) | Empty form (correct) |
-| No draft + new quote | Pre-fills correctly | Pre-fills correctly (unchanged) |
-| Continue Application | Uses old draft | Uses old draft (unchanged) |
+| User selects battery → Continue | State dispatched but debounce delays save → Navigation happens → State lost | Immediate localStorage write → Navigation → State preserved |
+| User skips battery (manual start motor) | Works (no battery state needed) | Works (unchanged) |
+| Returning to Options page | Battery choice may be lost | Battery choice persisted |
 
 ---
 
-## User Flow After Fix
+## Expected Results
 
-```
-Quote Summary                    Financing Application
-     │                                   │
-     │ clicks "Apply for Financing"      │
-     │───────────────────────────────────▶ Saves quote_state
-     │                                   │
-     │                                   ▼
-     │                           Detects old draft
-     │                                   │
-     │                                   ▼
-     │                         ┌─────────────────────┐
-     │                         │   Resume Dialog     │
-     │                         │                     │
-     │                         │ [Start Fresh]       │
-     │                         │ [Continue App]      │
-     │                         └─────────────────────┘
-     │                                   │
-     │                         User clicks "Start Fresh"
-     │                                   │
-     │                                   ▼
-     │                         1. Read quote_state (motor data)
-     │                         2. Clear old drafts
-     │                         3. Reset form
-     │                         4. Pre-fill with motor data ✓
-     │                                   │
-     │                                   ▼
-     │                         Form shows motor: "15 EH FourStroke"
-     │                         Price: $4,799 + HST + fee
-```
+After this fix:
+1. User selects "Yes, add battery" on Options page
+2. Clicks "Continue"
+3. **Immediate save** of `looseMotorBattery: { wantsBattery: true, batteryCost: 179.99 }` to localStorage
+4. Navigation to Purchase Path
+5. Quote Summary shows "Marine Starting Battery — $179.99" line item ✓
 
+---
+
+## Technical Notes
+
+This approach mirrors the existing pattern for trade-in data (QuoteContext lines 431-450) where critical state changes trigger an immediate save bypassing the debounce. This ensures pricing consistency across the Quote Builder, Summary, PDF, and Financing views.
