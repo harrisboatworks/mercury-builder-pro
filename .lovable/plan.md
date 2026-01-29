@@ -1,101 +1,49 @@
 
 
-# Fix: Battery Display on Summary + Remove Redundant Tax Text
+# Fix: Remove Duplicate Arrow from Reserve Button
 
-## Issues Identified
+## Problem
 
-### Issue 1: Battery Not Showing on Quote Summary
-The battery selection IS being saved correctly to state when the user clicks "Continue" on the Options page. However, looking at the current code flow:
+The Reserve button on mobile displays two arrows (`Reserve $200 → →`) because:
 
-- **Line 364 in QuoteSummaryPage.tsx**: The condition `isElectricStart && state.looseMotorBattery?.wantsBattery` is correct
-- **Line 407**: The dependency array includes `state.looseMotorBattery`
+1. **Line 518**: `getPrimaryLabel()` returns `Reserve $${deposit} →` with a hardcoded arrow character
+2. **Line 1449**: An `<ArrowRight />` Lucide icon is rendered after the label
 
-The logic looks correct, but the issue is likely that the motor being tested doesn't trigger `isElectricStart = true` via `hasElectricStart()`. Let me verify by checking if the model string is being passed correctly.
+## Solution
 
-**Root Cause Found**: At line 210 in QuoteSummaryPage.tsx:
-```typescript
-const motorModel = motor?.model || '';
-```
-
-But `motor` comes from `quoteData.motor` which is resolved at line 126-135. If `motor` is undefined or the model string is empty, `hasElectricStart('')` returns `false`.
-
-**Fix**: Add a fallback to also check `state.motor?.model` directly from the context, ensuring we always have the motor model even if `quoteData` hasn't resolved the motor object.
-
-### Issue 2: "Ontario Tax Included" Text
-Found at `PricingTable.tsx:167`:
-```typescript
-<LineItemRow
-  label="HST (13%)"
-  amount={pricing.tax}
-  description="Ontario tax included"  // ← Redundant, remove this
-/>
-```
-
-This is unnecessary - customers know HST is Ontario's tax.
+Remove the hardcoded arrow character from the string in `getPrimaryLabel()` since the `<ArrowRight />` icon already provides the visual indicator.
 
 ---
 
-## Files to Modify
+## File to Modify
 
 | File | Change |
 |------|--------|
-| `src/components/quote-builder/PricingTable.tsx` | Remove "Ontario tax included" description |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Add fallback for motor model to ensure `isElectricStart` works reliably |
+| `src/components/quote-builder/UnifiedMobileBar.tsx` | Remove `→` from reserve label string |
 
 ---
 
-## Code Changes
+## Code Change
 
-### 1. PricingTable.tsx - Remove Redundant Tax Description
+### Line 518: Remove Arrow Character
 
-**Line 164-168 - Current:**
+**Current:**
 ```typescript
-<LineItemRow
-  label="HST (13%)"
-  amount={pricing.tax}
-  description="Ontario tax included"
-/>
+return `Reserve $${deposit} →`;
 ```
 
 **Replace with:**
 ```typescript
-<LineItemRow
-  label="HST (13%)"
-  amount={pricing.tax}
-/>
+return `Reserve $${deposit}`;
 ```
-
-### 2. QuoteSummaryPage.tsx - Fix Motor Model Resolution
-
-**Line 210 - Current:**
-```typescript
-const motorModel = motor?.model || '';
-```
-
-**Replace with:**
-```typescript
-const motorModel = motor?.model || state.motor?.model || '';
-```
-
-This ensures the motor model is always available, even if the resolved `motor` object from `quoteData` doesn't have a model property for some reason.
 
 ---
 
-## Expected Results
+## Expected Result
 
-| Issue | Before | After |
-|-------|--------|-------|
-| Battery on summary | Not visible when selected | Shows "Marine Starting Battery - $179.99" line item |
-| HST description | "HST (13%) - Ontario tax included" | "HST (13%)" - clean, no redundant text |
+| Before | After |
+|--------|-------|
+| `Reserve $200 → →` | `Reserve $200 →` |
 
----
-
-## Technical Details
-
-The `hasElectricStart()` utility parses motor model codes:
-- Looks for 'E' prefix (electric start) vs 'M' prefix (manual)
-- Motors 40+ HP default to electric start
-- Uses regex pattern matching on model strings like "9.9EH FourStroke"
-
-By ensuring the motor model string is always populated, the electric start detection will work correctly and the battery will appear in the summary breakdown when selected.
+The button will display cleanly with a single arrow icon.
 
