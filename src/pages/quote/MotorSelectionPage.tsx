@@ -407,21 +407,8 @@ if (event.type === 'filter_motors') {
     loadData();
   }, [loadData]);
 
-  // Handle ?motor= query parameter to auto-open motor detail modal
-  useEffect(() => {
-    const motorIdParam = searchParams.get('motor');
-    if (motorIdParam && !loading && motors.length > 0) {
-      // Find the motor in the database
-      const targetMotor = motors.find(m => m.id === motorIdParam);
-      if (targetMotor) {
-        console.log('[MotorSelectionPage] Auto-opening motor from URL param:', motorIdParam);
-        setVoiceShowMotorId(motorIdParam);
-        // Clear the param from URL to prevent re-triggering
-        searchParams.delete('motor');
-        setSearchParams(searchParams, { replace: true });
-      }
-    }
-  }, [searchParams, setSearchParams, loading, motors]);
+  // NOTE: The ?motor= URL param is now handled by the deepLinkedMotorId useEffect below (lines 717-739)
+  // which properly opens the modal with the correct variant pre-selected
 
 
   // Preload configurator images after motors load (non-blocking)
@@ -751,6 +738,7 @@ if (event.type === 'filter_motors') {
       const group = groupedMotors.find(g => g.variants.some(v => v.id === voiceShowMotorId));
       if (group) {
         setSelectedGroup(group);
+        setDeepLinkedMotorId(voiceShowMotorId);  // Pre-select the specific variant in modal
         setShowConfigurator(true);
         // Set preview motor in quote context
         dispatch({ type: 'SET_PREVIEW_MOTOR', payload: motor });
