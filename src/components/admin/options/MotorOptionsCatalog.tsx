@@ -60,6 +60,27 @@ export default function MotorOptionsCatalog() {
   const [editingOption, setEditingOption] = useState<MotorOption | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [deleteOptionId, setDeleteOptionId] = useState<string | null>(null);
+  
+  // Controlled state for form Select components
+  const [formCategory, setFormCategory] = useState('accessory');
+  const [formIsActive, setFormIsActive] = useState(true);
+  const [formIsTaxable, setFormIsTaxable] = useState(true);
+
+  const openCreateDialog = () => {
+    setEditingOption(null);
+    setFormCategory('accessory');
+    setFormIsActive(true);
+    setFormIsTaxable(true);
+    setIsDialogOpen(true);
+  };
+
+  const openEditDialog = (option: MotorOption) => {
+    setEditingOption(option);
+    setFormCategory(option.category);
+    setFormIsActive(option.is_active);
+    setFormIsTaxable(option.is_taxable);
+    setIsDialogOpen(true);
+  };
 
   // Fetch options
   const { data: options = [], isLoading } = useQuery({
@@ -140,13 +161,13 @@ export default function MotorOptionsCatalog() {
       name: formData.get('name') as string,
       description: formData.get('description') as string || null,
       short_description: formData.get('short_description') as string || null,
-      category: formData.get('category') as string,
+      category: formCategory,
       base_price: parseFloat(formData.get('base_price') as string) || 0,
       msrp: parseFloat(formData.get('msrp') as string) || null,
       image_url: formData.get('image_url') as string || null,
       part_number: formData.get('part_number') as string || null,
-      is_active: formData.get('is_active') === 'true',
-      is_taxable: formData.get('is_taxable') === 'true',
+      is_active: formIsActive,
+      is_taxable: formIsTaxable,
       display_order: parseInt(formData.get('display_order') as string) || 0,
     };
 
@@ -160,7 +181,7 @@ export default function MotorOptionsCatalog() {
           <h2 className="text-2xl font-bold">Motor Options Catalog</h2>
           <p className="text-muted-foreground">Manage the central catalog of motor options and accessories</p>
         </div>
-        <Button onClick={() => { setEditingOption(null); setIsDialogOpen(true); }}>
+        <Button onClick={openCreateDialog}>
           <Plus className="h-4 w-4 mr-2" />
           Add Option
         </Button>
@@ -218,7 +239,7 @@ export default function MotorOptionsCatalog() {
                     <Button
                       size="sm"
                       variant="ghost"
-                      onClick={() => { setEditingOption(option); setIsDialogOpen(true); }}
+                      onClick={() => openEditDialog(option)}
                     >
                       <Edit className="h-3 w-3" />
                     </Button>
@@ -272,7 +293,7 @@ export default function MotorOptionsCatalog() {
 
               <div className="space-y-2">
                 <Label htmlFor="category">Category *</Label>
-                <Select name="category" defaultValue={editingOption?.category || 'accessory'}>
+                <Select value={formCategory} onValueChange={setFormCategory}>
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
@@ -354,7 +375,7 @@ export default function MotorOptionsCatalog() {
 
               <div className="space-y-2">
                 <Label htmlFor="is_taxable">Taxable</Label>
-                <Select name="is_taxable" defaultValue={editingOption?.is_taxable !== false ? 'true' : 'false'}>
+                <Select value={formIsTaxable ? 'true' : 'false'} onValueChange={(v) => setFormIsTaxable(v === 'true')}>
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
@@ -367,7 +388,7 @@ export default function MotorOptionsCatalog() {
 
               <div className="space-y-2 col-span-2">
                 <Label htmlFor="is_active">Status</Label>
-                <Select name="is_active" defaultValue={editingOption?.is_active !== false ? 'true' : 'false'}>
+                <Select value={formIsActive ? 'true' : 'false'} onValueChange={(v) => setFormIsActive(v === 'true')}>
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
