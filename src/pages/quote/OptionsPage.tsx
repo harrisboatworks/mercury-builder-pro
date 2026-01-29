@@ -122,6 +122,10 @@ export default function OptionsPage() {
     dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
     
     // Save battery choice for electric start motors
+    const batteryPayload = isElectricStart && batteryChoice !== null 
+      ? { wantsBattery: batteryChoice, batteryCost: BATTERY_COST }
+      : state.looseMotorBattery;
+      
     if (isElectricStart && batteryChoice !== null) {
       dispatch({ 
         type: 'SET_LOOSE_MOTOR_BATTERY', 
@@ -130,6 +134,32 @@ export default function OptionsPage() {
     }
     
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
+    
+    // CRITICAL: Force immediate save before navigation to prevent data loss
+    // This bypasses the 1000ms debounce in QuoteContext
+    try {
+      const currentData = localStorage.getItem('quoteBuilder');
+      if (currentData) {
+        const parsed = JSON.parse(currentData);
+        const updatedState = {
+          ...parsed.state,
+          selectedOptions,
+          looseMotorBattery: batteryPayload,
+          completedSteps: [...new Set([...(parsed.state.completedSteps || []), 2])]
+        };
+        localStorage.setItem('quoteBuilder', JSON.stringify({
+          state: updatedState,
+          timestamp: Date.now(),
+          lastActivity: Date.now()
+        }));
+        console.log('💾 OptionsPage: Immediate save for battery choice', { 
+          wantsBattery: batteryPayload?.wantsBattery,
+          batteryCost: batteryPayload?.batteryCost 
+        });
+      }
+    } catch (error) {
+      console.error('Failed to force-save options:', error);
+    }
     
     // Navigate to purchase path
     navigate('/quote/purchase-path');
