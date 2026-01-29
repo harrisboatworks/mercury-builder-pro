@@ -1,121 +1,174 @@
 
 
-# Fix: Hide Included Fuel Tank When Upgrade Selected
+# Move Battery Choice to Options Page
+
+## Current State
+
+Currently, the battery prompt for electric start motors appears:
+- **Loose Motor Path**: On the Trade-In page (first step) - using `BatteryOptionPrompt`
+- **Installed Path**: Automatically added for Better/Best packages in QuoteSummaryPage
 
 ## Problem
-When a user selects a 9.9EH motor and upgrades to the 25L fuel tank, the Quote Summary shows both:
-- **12L Fuel Tank & Hose: $0** (Included with motor)
-- **25L Fuel Tank & Hose: $200** (Optional upgrade)
 
-The upgrade should replace the included tank in the display, not appear alongside it.
+You're right that the battery decision should be made earlier, at the **Options stage**, regardless of purchase path:
+1. Both loose motor AND installed customers may already have a battery
+2. Currently loose motor customers see the prompt too late (Trade-In page)
+3. Installed customers never get asked - battery is auto-added for Better/Best packages
 
 ## Solution
 
-Update `QuoteSummaryPage.tsx` to filter out the $0 included fuel tank when an upgraded fuel tank (price > $0) is selected.
+Add the battery prompt to the **OptionsPage** for all electric start motors, making it part of the "Required Items" section with a mandatory Yes/No answer.
 
 ---
 
-## File to Modify
+## Files to Modify
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/QuoteSummaryPage.tsx` | Filter out included fuel tanks when upgrade is selected; guard Best package fuel tank logic |
+| `src/pages/quote/OptionsPage.tsx` | Add battery prompt section for electric start motors |
+| `src/pages/quote/TradeInPage.tsx` | Remove battery prompt (no longer needed here) |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Update battery logic to use `looseMotorBattery` for ALL paths, not just loose |
+| `src/contexts/QuoteContext.tsx` | Rename `looseMotorBattery` to `batteryChoice` (applies to both paths now) |
 
 ---
 
-## Code Changes
+## Technical Details
 
-### Lines 294-307: Add upgrade detection and filter logic
+### 1. OptionsPage.tsx - Add Battery Section
 
-**Current code:**
+After the "Required Items" section, add a conditional battery prompt:
+
 ```typescript
-// Build accessory breakdown
-const accessoryBreakdown = useMemo(() => {
-  const breakdown = [];
+import { BatteryOptionPrompt, BATTERY_COST } from '@/components/quote-builder/BatteryOptionPrompt';
+import { hasElectricStart } from '@/lib/motor-config-utils';
+
+// Inside component
+const isElectricStart = hasElectricStart(state.motor?.model || '');
+const [batteryChoice, setBatteryChoice] = useState<boolean | null>(
+  state.looseMotorBattery?.wantsBattery ?? null
+);
+
+// Block Continue if electric start and no battery choice made
+const canContinue = !isElectricStart || batteryChoice !== null;
+
+// Save battery choice on continue
+const handleContinue = () => {
+  // ... existing option saving logic
   
-  // Selected motor options
-  if (state.selectedOptions && state.selectedOptions.length > 0) {
-    state.selectedOptions.forEach(option => {
-      breakdown.push({
-        name: option.name,
-        price: option.price,
-        description: option.isIncluded ? 'Included with motor' : undefined
-      });
+  if (isElectricStart && batteryChoice !== null) {
+    dispatch({ 
+      type: 'SET_LOOSE_MOTOR_BATTERY', 
+      payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
     });
   }
+  
+  navigate('/quote/purchase-path');
+};
 ```
 
-**Replace with:**
-```typescript
-// Build accessory breakdown
-const accessoryBreakdown = useMemo(() => {
-  const breakdown = [];
-  
-  // Check if user selected an upgraded fuel tank (replaces included tank)
-  const hasUpgradedFuelTank = state.selectedOptions?.some(
-    opt => opt.name?.toLowerCase().includes('fuel tank') && opt.price > 0
-  );
-  
-  // Check if user already has any fuel tank selected (for Best package logic)
-  const hasAnyFuelTankSelected = state.selectedOptions?.some(
-    opt => opt.name?.toLowerCase().includes('fuel tank')
-  );
-  
-  // Selected motor options
-  if (state.selectedOptions && state.selectedOptions.length > 0) {
-    state.selectedOptions.forEach(option => {
-      // If user selected an upgraded fuel tank, skip the included $0 tank
-      const isFuelTank = option.name?.toLowerCase().includes('fuel tank');
-      const isIncludedTank = isFuelTank && option.isIncluded && option.price === 0;
-      
-      // Skip included tank if user upgraded to a different tank
-      if (isIncludedTank && hasUpgradedFuelTank) {
-        return; // Don't add included tank to breakdown
-      }
-      
-      breakdown.push({
-        name: option.name,
-        price: option.price,
-        description: option.isIncluded ? 'Included with motor' : undefined
-      });
-    });
-  }
+**UI placement**: After Required Items, before Recommended Options:
+
+```tsx
+{/* Battery Requirement for Electric Start */}
+{isElectricStart && (
+  <div className="mb-8">
+    <div className="flex items-center gap-2 mb-4">
+      <h2 className="text-xl font-semibold">Starting Battery</h2>
+      <Badge variant="destructive">Required Answer</Badge>
+    </div>
+    <BatteryOptionPrompt 
+      onSelect={setBatteryChoice}
+      selectedOption={batteryChoice}
+    />
+    {batteryChoice === null && (
+      <p className="text-sm text-destructive mt-2">
+        Please select an option before continuing
+      </p>
+    )}
+  </div>
+)}
 ```
 
-### Lines 371-377: Guard Best package fuel tank addition
+### 2. TradeInPage.tsx - Remove Battery Prompt
 
-**Current code:**
+Remove:
+- `needsBatteryPrompt` logic (lines 49-65)
+- `batterySelection` state
+- `BatteryOptionPrompt` component and rendering
+- Battery-related sections from the UI
+
+### 3. QuoteSummaryPage.tsx - Update Battery Logic
+
+Change the battery breakdown logic to use the user's choice for ALL paths:
+
+**Current (lines 362-378):**
 ```typescript
-// Fuel tank for Premium
-if (selectedPackage === 'best' && canAddFuelTank) {
+// Battery for electric start motors (Better/Best packages on installed path)
+if (!isManualStart && (selectedPackage === 'better' || selectedPackage === 'best')) {
   breakdown.push({
-    name: '12L External Fuel Tank & Hose',
-    price: 199,
-    description: 'Portable fuel tank for extended range'
+    name: 'Marine Battery',
+    price: batteryCost,
+    description: 'Marine starting battery (required for electric start)'
+  });
+}
+
+// Battery for loose motor path (if user opted for it)
+if (state.purchasePath === 'loose' && state.looseMotorBattery?.wantsBattery) {
+  // ...
+}
+```
+
+**New:**
+```typescript
+// Battery for electric start motors - respect user's choice from Options page
+if (!isManualStart && state.looseMotorBattery?.wantsBattery) {
+  breakdown.push({
+    name: 'Marine Starting Battery',
+    price: state.looseMotorBattery.batteryCost,
+    description: 'Marine starting battery for electric start motor'
   });
 }
 ```
 
-**Replace with:**
-```typescript
-// Fuel tank for Premium - only if user hasn't already selected one
-if (selectedPackage === 'best' && canAddFuelTank && !hasAnyFuelTankSelected) {
-  breakdown.push({
-    name: '12L External Fuel Tank & Hose',
-    price: 199,
-    description: 'Portable fuel tank for extended range'
-  });
-}
+This respects the user's choice for BOTH loose and installed paths.
+
+### 4. Optional: Rename Context Field (can do later)
+
+Consider renaming `looseMotorBattery` → `batteryChoice` in `QuoteContext.tsx` since it now applies to both paths. This is a refactor that can be done in a follow-up if desired.
+
+---
+
+## User Flow After Changes
+
+```text
+Motor Selection → Options Page → Purchase Path → ...
+                       ↓
+            [Electric Start Motor?]
+                       ↓
+         ┌─────────────┴─────────────┐
+         │    YES                    │ NO
+         ↓                           ↓
+   Show Battery Prompt          Continue normally
+   (Required answer)
+         ↓
+   User selects Yes/No
+         ↓
+   Save choice to context
+         ↓
+   (Later in Summary: only add battery cost if user said Yes)
 ```
 
 ---
 
-## Expected Result
+## Edge Cases Handled
 
-| Scenario | Before | After |
-|----------|--------|-------|
-| 9.9EH with 12L included only | 12L: $0 ✓ | 12L: $0 ✓ |
-| 9.9EH + 25L upgrade selected | 12L: $0, 25L: $200 ❌ | 25L: $200 ✓ |
-| 9.9EH + Best Package (no manual tank) | 12L: $199 ✓ | 12L: $199 ✓ |
-| 9.9EH + Best Package + 25L upgrade | 12L: $0, 25L: $200, 12L: $199 ❌ | 25L: $200 ✓ |
+| Scenario | Behavior |
+|----------|----------|
+| 9.9EH (electric tiller) | Battery prompt shown, user must answer |
+| 9.9MH (manual tiller) | No battery prompt |
+| 60HP Verado (electric, no code) | Battery prompt shown (40+ HP defaults to electric) |
+| User goes back to Options | Previous choice remembered |
+| Loose motor + Yes battery | Battery added to summary at $179.99 |
+| Installed + Yes battery | Battery added to summary at $179.99 |
+| Any path + No battery | No battery in summary |
 
