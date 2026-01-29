@@ -177,7 +177,7 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
   switch (action.type) {
     case 'SET_MOTOR':
       const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
-      return { ...state, motor: action.payload, motorSpecs, previewMotor: null, configuratorStep: null, configuratorOptions: null };
+      return { ...state, motor: action.payload, motorSpecs, previewMotor: null, configuratorStep: null, configuratorOptions: null, selectedOptions: [] };
     case 'SET_PREVIEW_MOTOR':
       return { ...state, previewMotor: action.payload };
     case 'SET_CONFIGURATOR_STEP':
