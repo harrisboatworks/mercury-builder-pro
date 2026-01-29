@@ -1,92 +1,80 @@
 
 
-# Fix: Selected Options Missing from Sticky Quote Bars
+# Fix: Purchase Path Page Not Scrolling to Top
 
 ## Problem
-When selecting optional add-ons (like the 25 L fuel tank) on Step 2 "Customize Your Motor Package", the price is not reflected in the bottom sticky bar. However, the final Summary, PDF, and Financing application DO include these options correctly.
+When navigating from `/quote/options` to `/quote/purchase-path`, the page doesn't scroll to the top. Users land somewhere in the middle of the page.
 
-## Verified Status
+## Root Cause
+The console logs reveal:
+```
+🧭 ScrollToTop triggered by navigation: /quote/options → /quote/purchase-path
+⏸️ ScrollToTop skipped - active modals found: 1
+```
 
-| Component | Selected Options | Status |
-|-----------|-----------------|--------|
-| Quote Summary Page | ✅ Included | Uses `selectedOptionsTotal` in pricing |
-| PDF Quote | ✅ Included | Receives `accessoryBreakdown` with options |
-| Financing Application | ✅ Included | Gets total price with options |
-| Desktop Sticky Bar | ❌ Missing | Needs fix |
-| Mobile Sticky Bar | ❌ Missing | Needs fix |
-| Mobile Breakdown Drawer | ❌ Missing | Needs fix |
+The `ScrollToTop` component uses an overly broad modal detection selector:
+```javascript
+const modalSelectors = [
+  '[role="dialog"]',
+  '.fixed.inset-0.z-50',
+  'div.fixed.inset-0[class*="z-"]',
+  '[data-state="open"]'  // ← PROBLEM: Too broad!
+];
+```
+
+The `[data-state="open"]` selector catches **any** open Radix UI component, including:
+- Tooltips (from `MotorCodeTooltip`)
+- Popovers
+- Dropdowns in the header
+- Select components
+
+These are NOT blocking modals and shouldn't prevent scroll-to-top.
+
+---
 
 ## Solution
 
-Add `state.selectedOptions` to the running total calculation in all three components.
+Refine the modal detection to only catch **actual modal dialogs**, not every open Radix component.
 
----
+### Changes to `ScrollToTop.tsx`
 
-## Files to Modify
+1. **Remove the overly broad `[data-state="open"]` selector** from the initial check
+2. **Add more specific modal detection** that checks for actual dialog overlays with proper z-index and visibility
+3. **Keep the existing refined detection** (lines 42-64) which already does proper visibility and z-index checks
 
-### 1. GlobalStickyQuoteBar.tsx (Desktop)
-
-Add selected options total after motor price:
-
-```typescript
-// After line 50: let total = state.motor.price;
-const selectedOptionsTotal = (state.selectedOptions || []).reduce(
-  (sum, opt) => sum + opt.price, 0
-);
-total += selectedOptionsTotal;
-```
-
-Update dependency array to include `state.selectedOptions`.
-
----
-
-### 2. UnifiedMobileBar.tsx (Mobile Bar)
-
-Add selected options inside the `if (!isPreview)` block:
+### Updated Modal Detection Logic
 
 ```typescript
-// After line 418 (fuel tank config)
-const selectedOptionsTotal = (state.selectedOptions || []).reduce(
-  (sum, opt) => sum + opt.price, 0
-);
-total += selectedOptionsTotal;
+// Only check for actual modal dialogs, not tooltips/popovers/dropdowns
+const modalSelectors = [
+  '[role="dialog"][data-state="open"]',  // Actual dialogs only
+  '.fixed.inset-0.z-50',  // Full-screen overlays
+  'div.fixed.inset-0[class*="z-"]'  // Any fixed full-screen overlay
+];
 ```
 
-Update dependency array to include `state.selectedOptions`.
+The key change is from `[data-state="open"]` (which matches any open Radix component) to `[role="dialog"][data-state="open"]` (which only matches actual dialog components that are open).
 
 ---
 
-### 3. MobileQuoteDrawer.tsx (Mobile Breakdown)
+## Technical Details
 
-Add selected options as line items after "Motor Price":
-
-```typescript
-// After line 53 (Motor Price line item)
-if (state.selectedOptions && state.selectedOptions.length > 0) {
-  state.selectedOptions.forEach(option => {
-    if (option.price > 0) {
-      subtotal += option.price;
-      lineItems.push({ label: option.name, value: option.price });
-    }
-  });
-}
-```
+| Before | After |
+|--------|-------|
+| `[data-state="open"]` catches tooltips, popovers, selects, dropdowns | `[role="dialog"][data-state="open"]` only catches actual dialogs |
+| Navigation to purchase-path was blocked by tooltip residue | Navigation proceeds normally |
 
 ---
 
-## Summary of Changes
+## File to Modify
 
 | File | Change |
 |------|--------|
-| `src/components/quote/GlobalStickyQuoteBar.tsx` | Add `selectedOptionsTotal` to `runningTotal` calculation |
-| `src/components/quote-builder/UnifiedMobileBar.tsx` | Add `selectedOptionsTotal` to `runningTotal` calculation |
-| `src/components/quote-builder/MobileQuoteDrawer.tsx` | Add selected options as line items in pricing breakdown |
+| `src/components/ui/ScrollToTop.tsx` | Update `modalSelectors` to be more specific, removing the overly broad `[data-state="open"]` selector |
 
 ## Result
-
-After this fix, when a customer selects a fuel tank or any add-on on the Options page:
-- Desktop sticky bar shows updated total immediately
-- Mobile sticky bar shows updated total immediately  
-- Mobile drawer shows each option as a line item with price
-- Summary, PDF, and Financing continue to work as before (already correct)
+After this fix:
+- Navigating from Options → Purchase Path will scroll to the top correctly
+- Actual modal dialogs will still correctly prevent scroll-to-top
+- Tooltips, popovers, dropdowns, and select components will NOT block scroll behavior
 
