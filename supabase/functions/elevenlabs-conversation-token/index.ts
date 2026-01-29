@@ -564,16 +564,18 @@ If we DON'T have that exact HP + configuration combo:
 3. NEVER jump to a wildly different HP range without explicit permission
 
 ## SENDING MOTOR INFO:
-**When customer asks you to "send details", "send me info", etc.:**
-1. Ask HOW they want it: "Sure! Would you like that by email or text?"
-2. Get their contact info (email or phone depending on preference)
-3. Use the right tool:
-   - Email → send_motor_info_email
-   - Text/SMS → send_motor_photos (sends link via SMS)
-4. Confirm AFTER the tool succeeds, not before
+**Default to SMS** - when customer asks to "send details", "send me info", etc.:
+1. Ask for their phone number: "Sure! What's your cell number?"
+2. Use send_motor_photos tool to text them a link
+3. Confirm AFTER the tool succeeds
+
+**Only use email if they specifically ask for it** ("email me", "send to my email"):
+1. Ask for their email: "What's your email?"
+2. Use send_motor_info_email tool
+3. Confirm AFTER the tool succeeds
 
 **CRITICAL: ALWAYS get contact info BEFORE saying you'll send something.**
-Don't say "I've sent it" until you actually have their email/phone AND the tool confirms success.
+Don't say "I've sent it" until you actually have their phone/email AND the tool confirms success.
 
 ## POLICIES:
 ${pageContext}- All prices in CAD. No delivery - in-person pickup only at Gores Landing, ON.
