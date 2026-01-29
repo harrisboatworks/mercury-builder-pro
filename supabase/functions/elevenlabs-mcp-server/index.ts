@@ -558,6 +558,15 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         };
       }
       
+      // Look up motor to get ID for the link
+      const motorModelStr = args.motor_model as string;
+      const { data: motorForSms } = await supabase
+        .from("motor_models")
+        .select("id, model, model_display")
+        .or(`model_display.ilike.%${motorModelStr}%,model.ilike.%${motorModelStr}%`)
+        .limit(1)
+        .single();
+      
       const response = await fetch(
         `${Deno.env.get("SUPABASE_URL")}/functions/v1/voice-send-follow-up`,
         {
@@ -570,7 +579,8 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
             customer_name: args.customer_name || "Customer",
             customer_phone: args.customer_phone,
             message_type: "inventory_alert",
-            motor_model: args.motor_model
+            motor_model: args.motor_model,
+            motor_id: motorForSms?.id || null
           })
         }
       );
@@ -646,7 +656,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
               
               <p>Want a detailed quote with options and promotions?</p>
               <p style="text-align: center; margin: 24px 0;">
-                <a href="https://harrisboatworks.ca/motor/${motor.id}" class="cta">View Full Details</a>
+                <a href="https://quote.harrisboatworks.ca/quote?motor=${motor.id}" class="cta">View Full Details</a>
               </p>
               
               <p>Questions? Just reply to this email or call us at (905) 342-2153.</p>
