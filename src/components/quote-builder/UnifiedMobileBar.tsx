@@ -515,7 +515,7 @@ export const UnifiedMobileBar: React.FC = () => {
     if (location.pathname === '/quote/summary') {
       const motorHP = state.motor?.hp || 0;
       const deposit = getRecommendedDeposit(motorHP);
-      return `Reserve $${deposit} →`;
+      return `Reserve $${deposit}`;
     }
     // When previewing a motor on motor-selection, show Configure
     if (isPreview && location.pathname === '/quote/motor-selection') {
