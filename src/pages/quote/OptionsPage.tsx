@@ -9,12 +9,20 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { ChevronLeft, ChevronRight, PackagePlus, CheckCircle2 } from 'lucide-react';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { toast } from 'sonner';
+import { BatteryOptionPrompt, BATTERY_COST } from '@/components/quote-builder/BatteryOptionPrompt';
+import { hasElectricStart } from '@/lib/motor-config-utils';
 
 export default function OptionsPage() {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
   const [localSelectedIds, setLocalSelectedIds] = useState<Set<string>>(new Set());
   const hasNavigatedRef = useRef(false);
+  
+  // Battery choice for electric start motors
+  const isElectricStart = hasElectricStart(state.motor?.model || '');
+  const [batteryChoice, setBatteryChoice] = useState<boolean | null>(
+    state.looseMotorBattery?.wantsBattery ?? null
+  );
   
   const { data: categorizedOptions, isLoading } = useMotorOptions(
     state.motor?.id,
@@ -80,8 +88,17 @@ export default function OptionsPage() {
     });
   };
 
+  // Block continue if electric start motor and no battery choice
+  const canContinue = !isElectricStart || batteryChoice !== null;
+
   const handleContinue = () => {
     if (!categorizedOptions) return;
+    
+    // Block if battery choice required but not made
+    if (isElectricStart && batteryChoice === null) {
+      toast.error('Please select a battery option before continuing');
+      return;
+    }
 
     // Build selected options from all categories
     const allOptions = [
@@ -102,6 +119,15 @@ export default function OptionsPage() {
       }));
 
     dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
+    
+    // Save battery choice for electric start motors
+    if (isElectricStart && batteryChoice !== null) {
+      dispatch({ 
+        type: 'SET_LOOSE_MOTOR_BATTERY', 
+        payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
+      });
+    }
+    
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
     
     // Navigate to purchase path
@@ -188,6 +214,26 @@ export default function OptionsPage() {
           </div>
         )}
 
+        {/* Battery Requirement for Electric Start Motors */}
+        {isElectricStart && (
+          <div className="mb-8">
+            <div className="flex items-center gap-2 mb-4">
+              <h2 className="text-xl font-semibold">Starting Battery</h2>
+              <Badge variant="destructive">Required Answer</Badge>
+            </div>
+            <BatteryOptionPrompt 
+              onSelect={setBatteryChoice}
+              selectedOption={batteryChoice}
+              batteryCost={BATTERY_COST}
+            />
+            {batteryChoice === null && (
+              <p className="text-sm text-destructive mt-2">
+                Please select an option before continuing
+              </p>
+            )}
+          </div>
+        )}
+
         {/* Recommended Options */}
         {categorizedOptions?.recommended.length > 0 && (
           <div className="mb-8">
@@ -240,7 +286,7 @@ export default function OptionsPage() {
               </p>
             </div>
 
-            <Button onClick={handleContinue}>
+            <Button onClick={handleContinue} disabled={!canContinue}>
               Continue
               <ChevronRight className="h-4 w-4 ml-2" />
             </Button>
