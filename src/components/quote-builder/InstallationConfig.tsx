@@ -111,15 +111,16 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
         animate={{ opacity: 1 }}
         className="max-w-6xl mx-auto"
       >
-        <h2 className="text-3xl font-light tracking-wide text-foreground mb-2">
-          {isTiller ? 'Configure Your Tiller Installation' : 'Configure Your Installation'}
-        </h2>
-        <p className="text-gray-600 font-light mb-8">
-          {isTiller 
-            ? `Select your mounting option for the ${selectedMotor?.model}`
-            : `Select your rigging options for the ${selectedMotor?.model}`
-          }
-        </p>
+        {!isTiller && (
+          <>
+            <h2 className="text-3xl font-light tracking-wide text-foreground mb-2">
+              Configure Your Installation
+            </h2>
+            <p className="text-gray-600 font-light mb-8">
+              Select your rigging options for the {selectedMotor?.model}
+            </p>
+          </>
+        )}
 
         {/* Confirmation banner when controls step is skipped */}
         {!isTiller && hasExistingControls && (
