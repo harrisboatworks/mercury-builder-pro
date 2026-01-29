@@ -116,9 +116,11 @@ export default function MotorOptionsCatalog() {
           .eq('id', option.id);
         if (error) throw error;
       } else {
+        // Remove id from the object before inserting to let DB auto-generate UUID
+        const { id, ...optionWithoutId } = option;
         const { error } = await supabase
           .from('motor_options')
-          .insert([option]);
+          .insert([optionWithoutId]);
         if (error) throw error;
       }
     },
