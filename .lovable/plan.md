@@ -1,74 +1,103 @@
 
 
-# Fix: Restore SMS Option (Email Should Be ADDITIONAL, Not Replacement)
+# Add Motor Detail Links to SMS and Email
 
-## What I Broke
+## Problem
 
-I incorrectly added instructions that discourage SMS for product info. The user wanted email **added** as an option, not to replace SMS.
+The SMS and email tools are sending messages without useful links:
 
-**Wrong instruction I added:**
-```
-**NEVER offer to text product info or photos** - email is the right channel for that.
-```
+| Tool | Current State | Issue |
+|------|--------------|-------|
+| **SMS** | "The 9.9MRC FourStroke you asked about is in stock. Ready when you are!" | No link - customer can't click to see details |
+| **Email** | Links to `harrisboatworks.ca/motor/${motor.id}` | Broken link - that route doesn't exist |
 
-## The Fix
-
-Update the system prompt to offer BOTH options - let the customer choose their preferred channel.
+Customer has no way to view the motor they asked about!
 
 ---
 
-## File to Modify
+## Solution
+
+Link to the quote tool with the specific motor pre-selected so customers can:
+1. See full specs and photos
+2. Start building a quote immediately
+
+**Link format:** `https://quote.harrisboatworks.ca/quote?motor={motorId}`
+
+---
+
+## Files to Modify
 
 | File | Change |
 |------|--------|
-| `supabase/functions/elevenlabs-conversation-token/index.ts` | Fix lines 566-578 to support both email AND SMS |
+| `supabase/functions/voice-send-follow-up/index.ts` | Add motor link to SMS templates |
+| `supabase/functions/elevenlabs-mcp-server/index.ts` | 1) Pass motor ID to SMS function, 2) Fix email link |
 
 ---
 
-## Code Change
+## Technical Changes
 
-**Replace lines 566-578:**
+### 1. Update SMS Function to Accept Motor ID and Include Link
+
+**File:** `supabase/functions/voice-send-follow-up/index.ts`
+
+- Add `motor_id` parameter to the request body
+- Update `inventory_alert` template to include a clickable link:
+
 ```typescript
-## SENDING MOTOR INFO:
-**When customer asks you to "send details" or "email me the info":**
-1. Ask for their email address: "Sure! What's your email?"
-2. Use send_motor_info_email tool with their email and the motor model
-3. Confirm it's sent: "Done! Check your inbox."
-
-**EMAIL vs SMS - Use the right tool:**
-- Motor specs, pricing, details → EMAIL (use send_motor_info_email)
-- Full quote with options → EMAIL (use email_quote_to_customer)  
-- Quick appointment/callback confirmation → SMS only if they specifically want a text
-
-**NEVER offer to text product info or photos** - email is the right channel for that.
-**ALWAYS ask for email/phone BEFORE saying you'll send something** - don't claim success without the contact info.
+// New template with link
+inventory_alert: (name: string, motor?: string, motorId?: string) => {
+  const link = motorId 
+    ? `\n\nView details: quote.harrisboatworks.ca/quote?motor=${motorId}` 
+    : '';
+  return `Hi ${name}! ${motor ? `The ${motor} you asked about is in stock.` : 'We have motors in stock!'} Ready when you are!${link} — Harris Boat Works 📞 ${COMPANY_PHONE}`;
+}
 ```
 
-**With:**
-```typescript
-## SENDING MOTOR INFO:
-**When customer asks you to "send details", "send me info", etc.:**
-1. Ask HOW they want it: "Sure! Would you like that by email or text?"
-2. Get their contact info (email or phone depending on preference)
-3. Use the right tool:
-   - Email → send_motor_info_email
-   - Text/SMS → send_motor_photos (sends link via SMS)
-4. Confirm AFTER the tool succeeds, not before
-
-**CRITICAL: ALWAYS get contact info BEFORE saying you'll send something.**
-Don't say "I've sent it" until you actually have their email/phone AND the tool confirms success.
+**Example SMS output:**
 ```
+Hi Jay! The 9.9MRC FourStroke you asked about is in stock. Ready when you are!
+
+View details: quote.harrisboatworks.ca/quote?motor=abc123
+
+— Harris Boat Works 📞 (905) 342-2153
+```
+
+### 2. Update MCP Server to Pass Motor ID
+
+**File:** `supabase/functions/elevenlabs-mcp-server/index.ts`
+
+In `send_motor_photos` case (~line 545-579):
+- Look up motor in database to get ID (like email tool does)
+- Pass `motor_id` to the follow-up function
+
+### 3. Fix Email Link
+
+**File:** `supabase/functions/elevenlabs-mcp-server/index.ts`
+
+Change line 649 from:
+```typescript
+<a href="https://harrisboatworks.ca/motor/${motor.id}" class="cta">View Full Details</a>
+```
+
+To:
+```typescript
+<a href="https://quote.harrisboatworks.ca/quote?motor=${motor.id}" class="cta">View Full Details</a>
+```
+
+### 4. Handle Query Parameter on Quote Page
+
+**File:** `src/pages/quote/MotorSelectionPage.tsx`
+
+Add logic to read `?motor=` query parameter and auto-open that motor's detail modal when the page loads.
 
 ---
 
-## Expected Behavior
+## Expected Results
 
-| Customer Says | Response |
-|---------------|----------|
-| "Send me the details" | "Sure! Would you like that by email or text?" |
-| "Email me the specs" | "What's your email?" → sends via email |
-| "Text me the info" | "What's your phone number?" → sends via SMS |
-| "Can you send that to me?" | "Of course! Email or text?" |
+| Channel | Message | Link |
+|---------|---------|------|
+| **SMS** | "The 9.9MRC FourStroke you asked about is in stock..." | `quote.harrisboatworks.ca/quote?motor=abc123` |
+| **Email** | Full specs card with CTA button | Same link in "View Full Details" button |
 
-Both channels work - customer chooses.
+Customer clicks → Opens quote tool → Motor detail modal appears → Can start quote immediately.
 
