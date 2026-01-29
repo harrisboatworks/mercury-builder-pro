@@ -295,9 +295,28 @@ export default function QuoteSummaryPage() {
   const accessoryBreakdown = useMemo(() => {
     const breakdown = [];
     
+    // Check if user selected an upgraded fuel tank (replaces included tank)
+    const hasUpgradedFuelTank = state.selectedOptions?.some(
+      opt => opt.name?.toLowerCase().includes('fuel tank') && opt.price > 0
+    );
+    
+    // Check if user already has any fuel tank selected (for Best package logic)
+    const hasAnyFuelTankSelected = state.selectedOptions?.some(
+      opt => opt.name?.toLowerCase().includes('fuel tank')
+    );
+    
     // Selected motor options
     if (state.selectedOptions && state.selectedOptions.length > 0) {
       state.selectedOptions.forEach(option => {
+        // If user selected an upgraded fuel tank, skip the included $0 tank
+        const isFuelTank = option.name?.toLowerCase().includes('fuel tank');
+        const isIncludedTank = isFuelTank && option.isIncluded && option.price === 0;
+        
+        // Skip included tank if user upgraded to a different tank
+        if (isIncludedTank && hasUpgradedFuelTank) {
+          return; // Don't add included tank to breakdown
+        }
+        
         breakdown.push({
           name: option.name,
           price: option.price,
@@ -367,8 +386,8 @@ export default function QuoteSummaryPage() {
       });
     }
     
-    // Fuel tank for Premium
-    if (selectedPackage === 'best' && canAddFuelTank) {
+    // Fuel tank for Premium - only if user hasn't already selected one
+    if (selectedPackage === 'best' && canAddFuelTank && !hasAnyFuelTankSelected) {
       breakdown.push({
         name: '12L External Fuel Tank & Hose',
         price: 199,
