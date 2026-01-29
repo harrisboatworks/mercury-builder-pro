@@ -15,6 +15,7 @@ import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
 import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
+import { hasElectricStart } from '@/lib/motor-config-utils';
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
@@ -209,7 +210,7 @@ export default function QuoteSummaryPage() {
   const motorModel = motor?.model || '';
   const isManualTiller = isTillerMotor(motorModel);
   const needsControls = requiresMercuryControls(motor);
-  const isManualStart = motorModel.includes('MH') || motorModel.includes('MLH');
+  const isElectricStart = hasElectricStart(motorModel);
   
   // Calculate base accessory costs
   const motorHP = typeof motor.hp === 'string' ? parseFloat(motor.hp) : motor.hp;
@@ -228,7 +229,7 @@ export default function QuoteSummaryPage() {
   const controlsCost = getControlsCostFromSelection();
   // Only charge installation labor for installed path AND remote motors
   const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;
-  const batteryCost = !isManualStart ? 179.99 : 0;
+  const batteryCost = isElectricStart ? 179.99 : 0;
   const includesProp = includesPropeller(motor);
   const canAddFuelTank = canAddExternalFuelTank(motor);
   const baseAccessoryCost = controlsCost + installationLaborCost;
@@ -360,7 +361,7 @@ export default function QuoteSummaryPage() {
     }
     
     // Battery for electric start motors - respect user's choice from Options page
-    if (!isManualStart && state.looseMotorBattery?.wantsBattery) {
+    if (isElectricStart && state.looseMotorBattery?.wantsBattery) {
       breakdown.push({
         name: 'Marine Starting Battery',
         price: state.looseMotorBattery.batteryCost,
@@ -404,7 +405,7 @@ export default function QuoteSummaryPage() {
     }
     
     return breakdown;
-  }, [state.selectedOptions, isManualTiller, tillerInstallCost, state.installConfig, needsControls, controlsCost, isManualStart, selectedPackage, batteryCost, includesProp, canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, installationLaborCost, state.purchasePath, state.looseMotorBattery]);
+  }, [state.selectedOptions, isManualTiller, tillerInstallCost, state.installConfig, needsControls, controlsCost, isElectricStart, selectedPackage, batteryCost, includesProp, canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, installationLaborCost, state.purchasePath, state.looseMotorBattery]);
 
   // Calculate package-specific totals
   const packageSpecificTotals = useMemo(() => {
