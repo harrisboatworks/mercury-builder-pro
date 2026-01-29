@@ -54,7 +54,7 @@ export default function OptionsPage() {
     }
   }, [state.motor, navigate]);
 
-  // Auto-skip to purchase path if no options available
+  // Auto-skip to purchase path if no options available AND no battery choice needed
   useEffect(() => {
     if (!isLoading && categorizedOptions && !hasNavigatedRef.current) {
       const hasOptions = 
@@ -62,13 +62,14 @@ export default function OptionsPage() {
         categorizedOptions.recommended.length > 0 ||
         categorizedOptions.available.length > 0;
       
-      if (!hasOptions) {
+      // Only auto-skip if no options AND motor doesn't need battery question
+      if (!hasOptions && !isElectricStart) {
         hasNavigatedRef.current = true;
         dispatch({ type: 'SET_SELECTED_OPTIONS', payload: [] });
         navigate('/quote/purchase-path');
       }
     }
-  }, [isLoading, categorizedOptions, dispatch, navigate]);
+  }, [isLoading, categorizedOptions, dispatch, navigate, isElectricStart]);
 
   const toggleOption = (option: MotorOption) => {
     // Cannot deselect required options
@@ -175,8 +176,11 @@ export default function OptionsPage() {
     categorizedOptions.available.length > 0
   );
 
-  // If no options available, return null (navigation happens in useEffect)
-  if (!hasOptions) {
+  // Show page if there are options OR if battery choice is needed
+  const shouldShowPage = hasOptions || isElectricStart;
+
+  // If nothing to show, return null (navigation happens in useEffect)
+  if (!shouldShowPage) {
     return null;
   }
 
