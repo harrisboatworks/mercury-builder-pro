@@ -1,49 +1,64 @@
 
-
-# Simplify Tiller Installation Page Heading
+# Fix: Reset Selected Options When Changing Motors
 
 ## Problem
-The tiller installation page currently shows three headings:
-1. "Configure Your Tiller Installation" (main h2)
-2. "Select your mounting option for the 9.9MH FourStroke" (subtitle paragraph)
-3. "Choose Your Mounting Option" (OptionGallery title)
+When a user selects a different motor, the previously selected options (like the 25L Fuel Tank) remain selected and continue to be added to the total price. This leads to incorrect pricing and potentially incompatible options being applied to the new motor.
 
-The user wants to keep **only** "Choose Your Mounting Option" from the OptionGallery.
+## Root Cause
+In `src/contexts/QuoteContext.tsx`, the `SET_MOTOR` action resets several fields (like `previewMotor`, `configuratorStep`, `configuratorOptions`) but does **not** reset `selectedOptions`:
+
+```typescript
+case 'SET_MOTOR':
+  const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
+  return { 
+    ...state, 
+    motor: action.payload, 
+    motorSpecs, 
+    previewMotor: null, 
+    configuratorStep: null, 
+    configuratorOptions: null 
+    // ❌ selectedOptions NOT reset - options from previous motor persist
+  };
+```
 
 ## Solution
 
-Hide the main h2 and subtitle paragraph when displaying the tiller motor flow.
+Add `selectedOptions: []` to the `SET_MOTOR` action return statement to clear any previously selected options when a new motor is chosen.
 
-### File to Modify
+---
+
+## File to Modify
 
 | File | Change |
 |------|--------|
-| `src/components/quote-builder/InstallationConfig.tsx` | Wrap the h2 and subtitle in a conditional that hides them for tiller motors |
+| `src/contexts/QuoteContext.tsx` | Add `selectedOptions: []` to the `SET_MOTOR` case return |
 
-### Code Change
+---
 
-**Lines 103-112** - Wrap the heading block in `{!isTiller && (...)}`:
+## Code Change
+
+**Line 180** - Update the return statement:
 
 ```typescript
-{!isTiller && (
-  <>
-    <h2 className="text-3xl font-light tracking-wide text-foreground mb-2">
-      Configure Your Installation
-    </h2>
-    <p className="text-gray-600 font-light mb-8">
-      Select your rigging options for the {selectedMotor?.model}
-    </p>
-  </>
-)}
+case 'SET_MOTOR':
+  const motorSpecs = findMotorSpecs(action.payload.hp, action.payload.model);
+  return { 
+    ...state, 
+    motor: action.payload, 
+    motorSpecs, 
+    previewMotor: null, 
+    configuratorStep: null, 
+    configuratorOptions: null,
+    selectedOptions: []  // ✅ Reset options when motor changes
+  };
 ```
 
-This removes both the h2 ("Configure Your Tiller Installation") and the subtitle paragraph for tiller motors, leaving only the clean "Choose Your Mounting Option" title from the OptionGallery component.
+---
 
-### Result
+## Result
 
-For tiller motors, the page will show:
-- "Choose Your Mounting Option" (from OptionGallery)
-- The two mounting option cards
-
-For non-tiller motors, the multi-step headings remain unchanged.
-
+After this fix:
+- Selecting a new motor will clear any previously selected fuel tanks, accessories, or add-ons
+- The Options page will show a fresh state with no pre-selected items
+- The sticky bars and summary will correctly reflect only options selected for the current motor
+- Prevents incompatible options from carrying over between different motor types
