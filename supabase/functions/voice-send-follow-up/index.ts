@@ -17,17 +17,23 @@ const SERVICE_URL = "hbw.wiki/service";
 
 // Message templates
 const MESSAGE_TEMPLATES = {
-  quote_interest: (name: string, motor?: string) => 
-    `Hi ${name}! Thanks for chatting with Harris Boat Works.${motor ? ` Want a full quote for the ${motor}?` : ''} Reply YES or call us at ${COMPANY_PHONE}.`,
+  quote_interest: (name: string, motor?: string, motorId?: string) => {
+    const link = motorId ? `\n\nView details: quote.harrisboatworks.ca/quote?motor=${motorId}` : '';
+    return `Hi ${name}! Thanks for chatting with Harris Boat Works.${motor ? ` Want a full quote for the ${motor}?` : ''}${link} Reply YES or call us at ${COMPANY_PHONE}.`;
+  },
   
-  inventory_alert: (name: string, motor?: string) => 
-    `Hi ${name}! ${motor ? `The ${motor} you asked about is in stock.` : 'We have motors in stock!'} Ready when you are! — Harris Boat Works 📞 ${COMPANY_PHONE}`,
+  inventory_alert: (name: string, motor?: string, motorId?: string) => {
+    const link = motorId ? `\n\nView details: quote.harrisboatworks.ca/quote?motor=${motorId}` : '';
+    return `Hi ${name}! ${motor ? `The ${motor} you asked about is in stock.` : 'We have motors in stock!'} Ready when you are!${link}\n\n— Harris Boat Works 📞 ${COMPANY_PHONE}`;
+  },
   
   service_reminder: (name: string) => 
     `Hi ${name}! Ready to book your service? Visit ${SERVICE_URL} or call ${COMPANY_PHONE} — Harris Boat Works`,
   
-  general: (name: string, note?: string) => 
-    `Hi ${name}! ${note || 'Thanks for your interest in Harris Boat Works.'} 📞 ${COMPANY_PHONE}`,
+  general: (name: string, note?: string, motorId?: string) => {
+    const link = motorId ? `\n\nView details: quote.harrisboatworks.ca/quote?motor=${motorId}` : '';
+    return `Hi ${name}! ${note || 'Thanks for your interest in Harris Boat Works.'}${link} 📞 ${COMPANY_PHONE}`;
+  },
 };
 
 // Format phone number to E.164
@@ -53,7 +59,7 @@ serve(async (req) => {
   }
 
   try {
-    const { customer_name, customer_phone, message_type, motor_model, custom_note } = await req.json();
+    const { customer_name, customer_phone, message_type, motor_model, motor_id, custom_note } = await req.json();
 
     console.log("[voice-send-follow-up] Request received:", { 
       customer_name, 
@@ -130,17 +136,17 @@ serve(async (req) => {
 
     switch (message_type) {
       case 'quote_interest':
-        message = MESSAGE_TEMPLATES.quote_interest(firstName, motor_model);
+        message = MESSAGE_TEMPLATES.quote_interest(firstName, motor_model, motor_id);
         break;
       case 'inventory_alert':
-        message = MESSAGE_TEMPLATES.inventory_alert(firstName, motor_model);
+        message = MESSAGE_TEMPLATES.inventory_alert(firstName, motor_model, motor_id);
         break;
       case 'service_reminder':
         message = MESSAGE_TEMPLATES.service_reminder(firstName);
         break;
       case 'general':
       default:
-        message = MESSAGE_TEMPLATES.general(firstName, custom_note);
+        message = MESSAGE_TEMPLATES.general(firstName, custom_note, motor_id);
         break;
     }
 
