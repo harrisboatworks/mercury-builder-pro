@@ -1,16 +1,13 @@
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
-import { BatteryOptionPrompt, BATTERY_COST } from '@/components/quote-builder/BatteryOptionPrompt';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import type { TradeInInfo } from '@/lib/trade-valuation';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Separator } from '@/components/ui/separator';
-import { isTillerMotor } from '@/lib/utils';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -45,29 +42,6 @@ export default function TradeInPage() {
   // Track save indicator
   const [showSaveIndicator, setShowSaveIndicator] = useState(false);
   const saveIndicatorTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  // Detect if this is an electric start motor on loose path (needs battery prompt)
-  const motorModel = state.motor?.model || '';
-  const isElectricStart = useMemo(() => {
-    // Electric start indicators: EH, ELH, ELPT, EXL, EXLPT, etc.
-    // Manual start: MH, MLH
-    const model = motorModel.toUpperCase();
-    return model.includes('EH') || 
-           model.includes('EL') || 
-           model.includes('ELPT') || 
-           model.includes('EXL') || 
-           model.includes('EXLPT') ||
-           (model.includes('E') && !model.includes('MH') && !model.includes('MLH'));
-  }, [motorModel]);
-  
-  const isTiller = useMemo(() => isTillerMotor(motorModel), [motorModel]);
-  const isLoosePath = state.purchasePath === 'loose';
-  const needsBatteryPrompt = isLoosePath && isElectricStart && isTiller;
-  
-  // Battery selection state
-  const [batterySelection, setBatterySelection] = useState<boolean | null>(
-    state.looseMotorBattery?.wantsBattery ?? null
-  );
 
   useEffect(() => {
     // Trust navigation if we have required state
@@ -127,25 +101,8 @@ export default function TradeInPage() {
     dispatch({ type: 'SET_HAS_TRADEIN', payload: updatedTradeInInfo.hasTradeIn });
   };
 
-  const handleBatterySelect = (wantsBattery: boolean) => {
-    setBatterySelection(wantsBattery);
-    dispatch({ 
-      type: 'SET_LOOSE_MOTOR_BATTERY', 
-      payload: { 
-        wantsBattery, 
-        batteryCost: wantsBattery ? BATTERY_COST : 0 
-      } 
-    });
-  };
-
   const handleComplete = () => {
     console.log('🔄 TradeInPage handleComplete - tradeInInfo:', tradeInInfo);
-    
-    // If battery prompt is needed and no selection made, don't proceed
-    if (needsBatteryPrompt && batterySelection === null) {
-      console.log('⚠️ Battery selection required for electric start loose motor');
-      return;
-    }
     
     // If no trade-in, ensure clean state
     const finalTradeInInfo = tradeInInfo.hasTradeIn ? tradeInInfo : {
@@ -185,8 +142,7 @@ export default function TradeInPage() {
     
     console.log('🚀 TradeInPage: State updates dispatched, navigating', {
       hasTradeIn: finalTradeInInfo.hasTradeIn,
-      estimatedValue: finalTradeInInfo.estimatedValue,
-      batterySelection: batterySelection
+      estimatedValue: finalTradeInInfo.estimatedValue
     });
     
     // Reset dirty flag - data is saved
@@ -338,29 +294,15 @@ export default function TradeInPage() {
             </div>
           )}
           
-          {/* Battery prompt for electric start loose motors - SHOWN FIRST */}
-          {needsBatteryPrompt && (
-            <BatteryOptionPrompt
-              onSelect={handleBatterySelect}
-              selectedOption={batterySelection}
-              batteryCost={BATTERY_COST}
-            />
-          )}
-          
-          {/* Trade-in valuation - shown after battery selection (if needed) or immediately */}
-          {(!needsBatteryPrompt || batterySelection !== null) && (
-            <>
-              {needsBatteryPrompt && <Separator className="my-6" />}
-              <TradeInValuation 
-                tradeInInfo={tradeInInfo}
-                onTradeInChange={handleTradeInChange}
-                onAutoAdvance={handleComplete}
-                currentMotorBrand={state.boatInfo?.currentMotorBrand}
-                currentHp={state.boatInfo?.currentHp}
-                currentMotorYear={state.boatInfo?.currentMotorYear}
-              />
-            </>
-          )}
+          {/* Trade-in valuation */}
+          <TradeInValuation 
+            tradeInInfo={tradeInInfo}
+            onTradeInChange={handleTradeInChange}
+            onAutoAdvance={handleComplete}
+            currentMotorBrand={state.boatInfo?.currentMotorBrand}
+            currentHp={state.boatInfo?.currentHp}
+            currentMotorYear={state.boatInfo?.currentMotorYear}
+          />
         </div>
       
       <AlertDialog open={showExitDialog} onOpenChange={setShowExitDialog}>

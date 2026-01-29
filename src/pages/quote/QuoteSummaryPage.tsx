@@ -359,21 +359,12 @@ export default function QuoteSummaryPage() {
       });
     }
     
-    // Battery for electric start motors (Better/Best packages on installed path)
-    if (!isManualStart && (selectedPackage === 'better' || selectedPackage === 'best')) {
-      breakdown.push({
-        name: 'Marine Battery',
-        price: batteryCost,
-        description: 'Marine starting battery (required for electric start)'
-      });
-    }
-    
-    // Battery for loose motor path (if user opted for it)
-    if (state.purchasePath === 'loose' && state.looseMotorBattery?.wantsBattery) {
+    // Battery for electric start motors - respect user's choice from Options page
+    if (!isManualStart && state.looseMotorBattery?.wantsBattery) {
       breakdown.push({
         name: 'Marine Starting Battery',
         price: state.looseMotorBattery.batteryCost,
-        description: 'Marine starting battery (selected for electric start motor)'
+        description: 'Marine starting battery for electric start motor'
       });
     }
     
