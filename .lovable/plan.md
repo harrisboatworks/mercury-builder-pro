@@ -1,38 +1,72 @@
 
-# Implement SMS Sending for Text Chatbot with Production URLs
+# Show "Special Price" Badge for Manually-Priced Motors
 
-## ✅ COMPLETED
+## Summary
 
-### Changes Made
+When you manually set a special price on a motor through the admin panel, the card will display a **"Special Price"** badge instead of the rule-based "Best Seller" badge. This ensures customers clearly see which motors have dealer-specific pricing.
+
+---
+
+## How It Will Work
+
+Motors with a manually-entered sale price (via admin overrides) will show the "Special Price" badge with priority over the auto-detected popularity badges. If no manual price is set, the normal "Best Seller" / "Popular" / "Dealer's Pick" logic will apply as usual.
+
+---
+
+## Technical Changes
+
+### 1. Add `special-price` Badge Type to PopularityBadge Component
+
+**File:** `src/components/motors/PopularityBadge.tsx`
+
+- Add new type: `'special-price'` to the `PopularityType` union
+- Add badge configuration with a distinctive red/promo style (using the existing promo color tokens)
+- Use a "DollarSign" or "Tag" icon to indicate it's about pricing
+
+### 2. Track Manual Sale Price on Motor Object
+
+**File:** `src/pages/quote/MotorSelectionPage.tsx`
+
+- Add a new flag `hasManualSalePrice: boolean` to the converted motor object
+- This flag is `true` when `manualOverrides.sale_price` is set and not expired
+
+### 3. Update Motor Type Definition
+
+**File:** `src/lib/motor-helpers.ts`
+
+- Add `hasManualSalePrice?: boolean` to the `Motor` interface
+
+### 4. Update Badge Logic in Motor Cards
+
+**Files:** 
+- `src/components/motors/MotorCardPremium.tsx`
+- `src/components/motors/MotorCardPreview.tsx`
+
+- Check `motor.hasManualSalePrice` first
+- If true, show `PopularityBadge type="special-price"` 
+- Otherwise, fall back to the existing `getMotorPopularity()` logic
+
+---
+
+## Visual Design
+
+The "Special Price" badge will use a **red/promo gradient** style to stand out and match the existing promotional color scheme:
+
+| Badge Type | Color | Icon |
+|------------|-------|------|
+| Best Seller | Gold gradient | Star |
+| Popular | Dark gray | Star |
+| Dealer's Pick | Gold gradient | Award |
+| **Special Price** | Red/promo gradient | Tag |
+
+---
+
+## Files to Modify
 
 | File | Change |
 |------|--------|
-| `src/components/chat/EnhancedChatWidget.tsx` | Added handlers for `[SEND_SMS]` and `[PRICE_ALERT]` commands |
-| `supabase/functions/voice-send-follow-up/index.ts` | Added new message types for `comparison` and `promo_reminder` |
-
-### Implementation Details
-
-1. **EnhancedChatWidget.tsx**
-   - Updated streaming display to hide `[SEND_SMS]` and `[PRICE_ALERT]` markers
-   - Added SMS handler that invokes `voice-send-follow-up` edge function
-   - Added price alert handler that captures lead with price alert context
-
-2. **voice-send-follow-up Edge Function**
-   - Added `comparison` template with link to quote.harrisboatworks.ca/compare
-   - Added `promo_reminder` template with link to quote.harrisboatworks.ca/promotions
-   - All links use production domain (hardcoded)
-
-### URL Verification
-
-All SMS links use the production domain because:
-- The `voice-send-follow-up` function hardcodes `quote.harrisboatworks.ca` in all templates
-- New templates (`comparison`, `promo_reminder`) follow the same pattern
-- No dynamic URL generation happens on the frontend
-
-### Testing
-
-1. Start a text chat conversation
-2. Ask about a specific motor, then say "let me check with my wife"
-3. When the bot offers to text you, provide your phone number
-4. Verify SMS is received with `quote.harrisboatworks.ca` link
-5. Click the link to verify it opens the correct motor page
+| `src/components/motors/PopularityBadge.tsx` | Add `'special-price'` type with red styling |
+| `src/lib/motor-helpers.ts` | Add `hasManualSalePrice` to Motor interface |
+| `src/pages/quote/MotorSelectionPage.tsx` | Set `hasManualSalePrice` flag when processing motors |
+| `src/components/motors/MotorCardPremium.tsx` | Prioritize special-price badge over popularity |
+| `src/components/motors/MotorCardPreview.tsx` | Prioritize special-price badge over popularity |
