@@ -1,138 +1,101 @@
 
-# Fix: Battery Prompt Skipped When No Motor Options Available
 
-## Problem Identified
+# Fix: Battery Display on Summary + Remove Redundant Tax Text
 
-The `OptionsPage.tsx` has an **auto-skip** feature (lines 57-71) that immediately navigates to the next page when no motor-specific options exist in the database. However, this skips the **battery prompt for electric start motors**.
+## Issues Identified
 
-**Flow causing the issue:**
-1. User selects "15 EH FourStroke" motor
-2. OptionsPage loads, finds no required/recommended/available options for this motor
-3. Auto-skip logic triggers, immediately navigates to `/quote/purchase-path`
-4. Battery prompt is never shown
-5. `state.looseMotorBattery` remains `undefined`
-6. Summary page condition `isElectricStart && state.looseMotorBattery?.wantsBattery` fails
+### Issue 1: Battery Not Showing on Quote Summary
+The battery selection IS being saved correctly to state when the user clicks "Continue" on the Options page. However, looking at the current code flow:
 
-## Solution
+- **Line 364 in QuoteSummaryPage.tsx**: The condition `isElectricStart && state.looseMotorBattery?.wantsBattery` is correct
+- **Line 407**: The dependency array includes `state.looseMotorBattery`
 
-Modify the auto-skip logic to **only skip if there are no options AND the motor is NOT electric start**. If the motor is electric start, the page must remain visible so the user can answer the battery question.
+The logic looks correct, but the issue is likely that the motor being tested doesn't trigger `isElectricStart = true` via `hasElectricStart()`. Let me verify by checking if the model string is being passed correctly.
+
+**Root Cause Found**: At line 210 in QuoteSummaryPage.tsx:
+```typescript
+const motorModel = motor?.model || '';
+```
+
+But `motor` comes from `quoteData.motor` which is resolved at line 126-135. If `motor` is undefined or the model string is empty, `hasElectricStart('')` returns `false`.
+
+**Fix**: Add a fallback to also check `state.motor?.model` directly from the context, ensuring we always have the motor model even if `quoteData` hasn't resolved the motor object.
+
+### Issue 2: "Ontario Tax Included" Text
+Found at `PricingTable.tsx:167`:
+```typescript
+<LineItemRow
+  label="HST (13%)"
+  amount={pricing.tax}
+  description="Ontario tax included"  // ← Redundant, remove this
+/>
+```
+
+This is unnecessary - customers know HST is Ontario's tax.
 
 ---
 
-## File to Modify
+## Files to Modify
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/OptionsPage.tsx` | Update auto-skip condition to account for electric start motors |
+| `src/components/quote-builder/PricingTable.tsx` | Remove "Ontario tax included" description |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Add fallback for motor model to ensure `isElectricStart` works reliably |
 
 ---
 
 ## Code Changes
 
-### Lines 57-71: Update Auto-Skip Logic
+### 1. PricingTable.tsx - Remove Redundant Tax Description
 
-**Current:**
+**Line 164-168 - Current:**
 ```typescript
-// Auto-skip to purchase path if no options available
-useEffect(() => {
-  if (!isLoading && categorizedOptions && !hasNavigatedRef.current) {
-    const hasOptions = 
-      categorizedOptions.required.length > 0 ||
-      categorizedOptions.recommended.length > 0 ||
-      categorizedOptions.available.length > 0;
-    
-    if (!hasOptions) {
-      hasNavigatedRef.current = true;
-      dispatch({ type: 'SET_SELECTED_OPTIONS', payload: [] });
-      navigate('/quote/purchase-path');
-    }
-  }
-}, [isLoading, categorizedOptions, dispatch, navigate]);
+<LineItemRow
+  label="HST (13%)"
+  amount={pricing.tax}
+  description="Ontario tax included"
+/>
 ```
 
 **Replace with:**
 ```typescript
-// Auto-skip to purchase path if no options available AND no battery choice needed
-useEffect(() => {
-  if (!isLoading && categorizedOptions && !hasNavigatedRef.current) {
-    const hasOptions = 
-      categorizedOptions.required.length > 0 ||
-      categorizedOptions.recommended.length > 0 ||
-      categorizedOptions.available.length > 0;
-    
-    // Only auto-skip if no options AND motor doesn't need battery question
-    if (!hasOptions && !isElectricStart) {
-      hasNavigatedRef.current = true;
-      dispatch({ type: 'SET_SELECTED_OPTIONS', payload: [] });
-      navigate('/quote/purchase-path');
-    }
-  }
-}, [isLoading, categorizedOptions, dispatch, navigate, isElectricStart]);
+<LineItemRow
+  label="HST (13%)"
+  amount={pricing.tax}
+/>
 ```
 
-### Lines 172-181: Update Page Visibility Check
+### 2. QuoteSummaryPage.tsx - Fix Motor Model Resolution
 
-**Current:**
+**Line 210 - Current:**
 ```typescript
-const hasOptions = categorizedOptions && (
-  categorizedOptions.required.length > 0 ||
-  categorizedOptions.recommended.length > 0 ||
-  categorizedOptions.available.length > 0
-);
-
-// If no options available, return null (navigation happens in useEffect)
-if (!hasOptions) {
-  return null;
-}
+const motorModel = motor?.model || '';
 ```
 
 **Replace with:**
 ```typescript
-const hasOptions = categorizedOptions && (
-  categorizedOptions.required.length > 0 ||
-  categorizedOptions.recommended.length > 0 ||
-  categorizedOptions.available.length > 0
-);
-
-// Show page if there are options OR if battery choice is needed
-const shouldShowPage = hasOptions || isElectricStart;
-
-// If nothing to show, return null (navigation happens in useEffect)
-if (!shouldShowPage) {
-  return null;
-}
+const motorModel = motor?.model || state.motor?.model || '';
 ```
+
+This ensures the motor model is always available, even if the resolved `motor` object from `quoteData` doesn't have a model property for some reason.
 
 ---
 
-## Why This Fixes It
+## Expected Results
 
-| Motor | Options Available | Electric Start? | Before | After |
-|-------|-------------------|-----------------|--------|-------|
-| 15 EH | ❌ None | ✅ Yes | Skips page, no battery prompt | Shows page with battery prompt only |
-| 15 MH | ❌ None | ❌ No (manual) | Skips page correctly | Skips page correctly |
-| 60HP Verado | ✅ Some | ✅ Yes | Shows options + battery | Shows options + battery |
-| 2.5MH | ❌ None | ❌ No | Skips page correctly | Skips page correctly |
+| Issue | Before | After |
+|-------|--------|-------|
+| Battery on summary | Not visible when selected | Shows "Marine Starting Battery - $179.99" line item |
+| HST description | "HST (13%) - Ontario tax included" | "HST (13%)" - clean, no redundant text |
 
 ---
 
-## Expected User Flow After Fix
+## Technical Details
 
-```
-Motor Selection → Options Page → [Electric Start?]
-                       ↓
-       ┌───────────────┴───────────────┐
-       │                               │
-   YES (Electric)               NO (Manual)
-       ↓                               ↓
- Show battery prompt           [Any options?]
- (even if no other               ↓
-  options exist)          YES → Show options
-       ↓                  NO  → Auto-skip
- User must select                     ↓
- Yes/No for battery         Continue to Purchase Path
-       ↓
- Battery choice saved
-       ↓
- Continue to Purchase Path
-```
+The `hasElectricStart()` utility parses motor model codes:
+- Looks for 'E' prefix (electric start) vs 'M' prefix (manual)
+- Motors 40+ HP default to electric start
+- Uses regex pattern matching on model strings like "9.9EH FourStroke"
+
+By ensuring the motor model string is always populated, the electric start detection will work correctly and the battery will appear in the summary breakdown when selected.
+
