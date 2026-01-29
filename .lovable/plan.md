@@ -1,27 +1,17 @@
 
-# Fix: Correct Fuel Tank Description for Tiller Motors by HP Range
+
+# Fix: Hide Included Fuel Tank When Upgrade Selected
 
 ## Problem
-On the Purchase Path page, the "Loose Motor" card incorrectly displays **"Includes propeller & internal fuel tank"** for all tiller motors. However, only motors **≤6HP** have an internal (built-in) fuel tank. Your 9.9EH is an 8-20HP tiller, which includes a **12L external fuel tank**, not an internal one.
+When a user selects a 9.9EH motor and upgrades to the 25L fuel tank, the Quote Summary shows both:
+- **12L Fuel Tank & Hose: $0** (Included with motor)
+- **25L Fuel Tank & Hose: $200** (Optional upgrade)
 
-## Business Rules (from motor-helpers.ts)
-
-| HP Range | Tiller | Included Tank |
-|----------|--------|---------------|
-| ≤6HP | All | **Internal** fuel tank (built-in) |
-| 8-20HP | Yes | **12L external** fuel tank + hose |
-| 25-30HP | Yes | **25L external** fuel tank + hose |
-| 25-30HP | No (remote/ProKicker) | None included |
-| >30HP | Any | None included |
+The upgrade should replace the included tank in the display, not appear alongside it.
 
 ## Solution
 
-Update the conditional logic in `PurchasePath.tsx` to differentiate between:
-1. **≤6HP tillers**: "Includes propeller & internal fuel tank"
-2. **8-20HP tillers**: "Includes propeller & 12L fuel tank" 
-3. **25-30HP tillers**: "Includes propeller & 25L fuel tank"
-4. **9.9-20HP remote**: "Includes 12L fuel tank & hose" (already handled)
-5. **Other**: "Ready for rigging & accessories"
+Update `QuoteSummaryPage.tsx` to filter out the $0 included fuel tank when an upgraded fuel tank (price > $0) is selected.
 
 ---
 
@@ -29,68 +19,103 @@ Update the conditional logic in `PurchasePath.tsx` to differentiate between:
 
 | File | Change |
 |------|--------|
-| `src/components/quote-builder/PurchasePath.tsx` | Add HP-based conditionals for tiller fuel tank descriptions |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Filter out included fuel tanks when upgrade is selected; guard Best package fuel tank logic |
 
 ---
 
 ## Code Changes
 
-### Add HP range flags (after line 19)
+### Lines 294-307: Add upgrade detection and filter logic
 
+**Current code:**
 ```typescript
-const hp = typeof selectedMotor?.hp === 'string' ? parseInt(selectedMotor.hp, 10) : selectedMotor?.hp;
-const isTiller = isTillerMotor(selectedMotor?.model || '');
-const isInStock = selectedMotor?.stockStatus === 'In Stock';
-
-// Fuel tank logic based on HP
-const hasInternalTank = hp && hp <= 6;  // Only ≤6HP have internal tanks
-const includes12LTank = hp && hp >= 8 && hp <= 20;  // 8-20HP (both tiller & remote)
-const includes25LTank = hp && hp >= 25 && hp <= 30 && isTiller;  // 25-30HP tiller only
+// Build accessory breakdown
+const accessoryBreakdown = useMemo(() => {
+  const breakdown = [];
+  
+  // Selected motor options
+  if (state.selectedOptions && state.selectedOptions.length > 0) {
+    state.selectedOptions.forEach(option => {
+      breakdown.push({
+        name: option.name,
+        price: option.price,
+        description: option.isIncluded ? 'Included with motor' : undefined
+      });
+    });
+  }
 ```
 
-### Update the conditional display (lines 87-102)
-
-Replace the current simplified check with proper HP-based logic:
-
+**Replace with:**
 ```typescript
-{isTiller && hasInternalTank ? (
-  <div className="flex flex-row items-start gap-3">
-    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-    <span className="text-left">Includes propeller & internal fuel tank</span>
-  </div>
-) : isTiller && includes12LTank ? (
-  <div className="flex flex-row items-start gap-3">
-    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-    <span className="text-left">Includes propeller & 12L fuel tank</span>
-  </div>
-) : isTiller && includes25LTank ? (
-  <div className="flex flex-row items-start gap-3">
-    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-    <span className="text-left">Includes propeller & 25L fuel tank</span>
-  </div>
-) : includes12LTank && !isTiller ? (
-  <div className="flex flex-row items-start gap-3">
-    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-    <span className="text-left">Includes 12L fuel tank & hose</span>
-  </div>
-) : (
-  <div className="flex flex-row items-start gap-3">
-    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-    <span className="text-left">Includes propeller</span>
-  </div>
-)}
+// Build accessory breakdown
+const accessoryBreakdown = useMemo(() => {
+  const breakdown = [];
+  
+  // Check if user selected an upgraded fuel tank (replaces included tank)
+  const hasUpgradedFuelTank = state.selectedOptions?.some(
+    opt => opt.name?.toLowerCase().includes('fuel tank') && opt.price > 0
+  );
+  
+  // Check if user already has any fuel tank selected (for Best package logic)
+  const hasAnyFuelTankSelected = state.selectedOptions?.some(
+    opt => opt.name?.toLowerCase().includes('fuel tank')
+  );
+  
+  // Selected motor options
+  if (state.selectedOptions && state.selectedOptions.length > 0) {
+    state.selectedOptions.forEach(option => {
+      // If user selected an upgraded fuel tank, skip the included $0 tank
+      const isFuelTank = option.name?.toLowerCase().includes('fuel tank');
+      const isIncludedTank = isFuelTank && option.isIncluded && option.price === 0;
+      
+      // Skip included tank if user upgraded to a different tank
+      if (isIncludedTank && hasUpgradedFuelTank) {
+        return; // Don't add included tank to breakdown
+      }
+      
+      breakdown.push({
+        name: option.name,
+        price: option.price,
+        description: option.isIncluded ? 'Included with motor' : undefined
+      });
+    });
+  }
+```
+
+### Lines 371-377: Guard Best package fuel tank addition
+
+**Current code:**
+```typescript
+// Fuel tank for Premium
+if (selectedPackage === 'best' && canAddFuelTank) {
+  breakdown.push({
+    name: '12L External Fuel Tank & Hose',
+    price: 199,
+    description: 'Portable fuel tank for extended range'
+  });
+}
+```
+
+**Replace with:**
+```typescript
+// Fuel tank for Premium - only if user hasn't already selected one
+if (selectedPackage === 'best' && canAddFuelTank && !hasAnyFuelTankSelected) {
+  breakdown.push({
+    name: '12L External Fuel Tank & Hose',
+    price: 199,
+    description: 'Portable fuel tank for extended range'
+  });
+}
 ```
 
 ---
 
-## Result
+## Expected Result
 
-| Motor | Before | After |
-|-------|--------|-------|
-| 4HP Tiller | "propeller & internal fuel tank" | "propeller & internal fuel tank" ✓ |
-| 6HP Tiller | "propeller & internal fuel tank" | "propeller & internal fuel tank" ✓ |
-| **9.9EH Tiller** | "propeller & internal fuel tank" ❌ | "propeller & 12L fuel tank" ✓ |
-| 15HP Tiller | "propeller & internal fuel tank" ❌ | "propeller & 12L fuel tank" ✓ |
-| 25HP Tiller | "propeller & internal fuel tank" ❌ | "propeller & 25L fuel tank" ✓ |
-| 15HP Remote | "12L fuel tank & hose" | "12L fuel tank & hose" ✓ |
-| 60HP Remote | "Ready for rigging..." | "Includes propeller" ✓ |
+| Scenario | Before | After |
+|----------|--------|-------|
+| 9.9EH with 12L included only | 12L: $0 ✓ | 12L: $0 ✓ |
+| 9.9EH + 25L upgrade selected | 12L: $0, 25L: $200 ❌ | 25L: $200 ✓ |
+| 9.9EH + Best Package (no manual tank) | 12L: $199 ✓ | 12L: $199 ✓ |
+| 9.9EH + Best Package + 25L upgrade | 12L: $0, 25L: $200, 12L: $199 ❌ | 25L: $200 ✓ |
+
