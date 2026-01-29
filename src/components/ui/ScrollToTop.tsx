@@ -25,12 +25,11 @@ export function ScrollToTop() {
       return;
     }
 
-    // Enhanced DOM-based modal detection for MotorDetailsSheet and other modals
+    // Only catch actual modal dialogs, not tooltips/popovers/dropdowns
     const modalSelectors = [
-      '[role="dialog"]',
-      '.fixed.inset-0.z-50',  // MotorDetailsSheet specific
-      'div.fixed.inset-0[class*="z-"]',  // Any fixed overlay with z-index
-      '[data-state="open"]'
+      '[role="dialog"][data-state="open"]',  // Actual dialogs only
+      '.fixed.inset-0.z-50',  // Full-screen overlays
+      'div.fixed.inset-0[class*="z-"]'  // Any fixed overlay with z-index
     ];
     
     const activeModals = document.querySelectorAll(modalSelectors.join(', '));
