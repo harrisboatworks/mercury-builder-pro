@@ -533,9 +533,13 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
           },
           onDelta: (chunk) => {
             fullResponse += chunk;
-            // Strip lead capture marker during streaming to hide it from user
-            const displayText = fullResponse.replace(/\[LEAD_CAPTURE:.*$/s, '').trim();
-            setMessages(prev => prev.map(msg => 
+            // Strip all command markers during streaming to hide them from user
+            const displayText = fullResponse
+              .replace(/\[LEAD_CAPTURE:.*$/s, '')
+              .replace(/\[SEND_SMS:.*$/s, '')
+              .replace(/\[PRICE_ALERT:.*$/s, '')
+              .trim();
+            setMessages(prev => prev.map(msg =>
               msg.id === streamingId 
                 ? { ...msg, text: displayText, isStreaming: true }
                 : msg
@@ -553,7 +557,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                 console.log('[Chat] Lead capture detected:', leadData);
                 
                 // Remove the marker from the displayed message
-                displayResponse = finalResponse.replace(/\[LEAD_CAPTURE:\s*\{[^}]+\}\]/, '').trim();
+                displayResponse = displayResponse.replace(/\[LEAD_CAPTURE:\s*\{[^}]+\}\]/, '').trim();
                 
                 // Get conversation context (last few exchanges)
                 const recentContext = conversationHistory.slice(-4).map(h => 
@@ -590,7 +594,80 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
               }
             }
             
-            setMessages(prev => prev.map(msg => 
+            // Check for SMS send pattern
+            const smsMatch = finalResponse.match(/\[SEND_SMS:\s*(\{[^}]+\})\]/);
+            if (smsMatch) {
+              try {
+                const smsData = JSON.parse(smsMatch[1]);
+                console.log('[Chat] SMS send detected:', smsData);
+                
+                // Remove the marker from displayed message
+                displayResponse = displayResponse.replace(/\[SEND_SMS:\s*\{[^}]+\}\]/, '').trim();
+                
+                // Determine message type and motor context
+                const activeMotor = state.previewMotor || state.motor;
+                
+                const { error: smsError } = await supabase.functions.invoke('voice-send-follow-up', {
+                  body: {
+                    customer_name: smsData.name || 'Friend',
+                    customer_phone: smsData.phone,
+                    message_type: smsData.content === 'comparison' ? 'comparison' : 
+                                  smsData.content === 'promo_reminder' ? 'promo_reminder' : 'quote_interest',
+                    motor_model: activeMotor?.model || smsData.motors?.join(' vs '),
+                    motor_id: activeMotor?.id,
+                    custom_note: smsData.content === 'comparison' 
+                      ? `Comparing: ${smsData.motors?.join(' vs ')}`
+                      : undefined
+                  }
+                });
+                
+                if (smsError) {
+                  console.error('[Chat] Failed to send SMS:', smsError);
+                } else {
+                  console.log('[Chat] SMS sent successfully');
+                  toast.success("Text sent! Check your phone.");
+                }
+              } catch (parseError) {
+                console.error('[Chat] Failed to parse SMS command:', parseError);
+              }
+            }
+            
+            // Check for price alert pattern
+            const priceAlertMatch = finalResponse.match(/\[PRICE_ALERT:\s*(\{[^}]+\})\]/);
+            if (priceAlertMatch) {
+              try {
+                const alertData = JSON.parse(priceAlertMatch[1]);
+                console.log('[Chat] Price alert detected:', alertData);
+                
+                // Remove the marker from displayed message
+                displayResponse = displayResponse.replace(/\[PRICE_ALERT:\s*\{[^}]+\}\]/, '').trim();
+                
+                // Get motor context for lead capture
+                const activeMotor = state.previewMotor || state.motor;
+                
+                // Capture as lead with price alert context
+                await supabase.functions.invoke('capture-chat-lead', {
+                  body: {
+                    name: alertData.name || 'Price Alert Subscriber',
+                    phone: alertData.phone,
+                    conversationContext: `Price drop alert for ${alertData.motor_hp || activeMotor?.hp || 'unknown'}HP motor`,
+                    currentPage: location.pathname,
+                    motorContext: activeMotor ? {
+                      model: activeMotor.model || (activeMotor as any).model_display,
+                      hp: activeMotor.hp || (activeMotor as any).horsepower,
+                      price: activeMotor.msrp || activeMotor.price || (activeMotor as any).sale_price
+                    } : undefined
+                  }
+                });
+                
+                console.log('[Chat] Price alert lead captured');
+                toast.success("Got it! We'll text you if pricing changes.");
+              } catch (parseError) {
+                console.error('[Chat] Failed to parse price alert:', parseError);
+              }
+            }
+            
+            setMessages(prev => prev.map(msg =>
               msg.id === streamingId 
                 ? { ...msg, text: displayResponse, isStreaming: false }
                 : msg

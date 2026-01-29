@@ -34,6 +34,12 @@ const MESSAGE_TEMPLATES = {
     const link = motorId ? `\n\nView details: quote.harrisboatworks.ca/quote?motor=${motorId}` : '';
     return `Hi ${name}! ${note || 'Thanks for your interest in Harris Boat Works.'}${link} 📞 ${COMPANY_PHONE}`;
   },
+  
+  comparison: (name: string, note?: string) => 
+    `Hi ${name}! Here's your motor comparison: quote.harrisboatworks.ca/compare${note ? ` (${note})` : ''}\n\n— Harris Boat Works 📞 ${COMPANY_PHONE}`,
+  
+  promo_reminder: (name: string) => 
+    `Hi ${name}! Quick reminder: the Mercury Get 7 promo ends March 31st. 7-year warranty + pick your bonus!\n\nDetails: quote.harrisboatworks.ca/promotions\n\n— Harris Boat Works 📞 ${COMPANY_PHONE}`,
 };
 
 // Format phone number to E.164
@@ -143,6 +149,12 @@ serve(async (req) => {
         break;
       case 'service_reminder':
         message = MESSAGE_TEMPLATES.service_reminder(firstName);
+        break;
+      case 'comparison':
+        message = MESSAGE_TEMPLATES.comparison(firstName, custom_note);
+        break;
+      case 'promo_reminder':
+        message = MESSAGE_TEMPLATES.promo_reminder(firstName);
         break;
       case 'general':
       default:
