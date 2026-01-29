@@ -329,6 +329,15 @@ WRONG - NEVER DO THIS:
       },
       required: ["part_number"]
     }
+  },
+  {
+    name: "navigate_to_contact",
+    description: "Navigate the customer to the contact page for detailed inquiries. Use when customer wants to fill out a contact form, has complex questions that need staff follow-up, or prefers written communication.",
+    inputSchema: {
+      type: "object",
+      properties: {},
+      required: []
+    }
   }
 ];
 
@@ -756,6 +765,19 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         content: [{ 
           type: "text", 
           text: `To update your ${stepDescriptions[args.step as string] || args.step}, please visit harrisboatworks.ca/quote or tell me what you'd like to change.` 
+        }] 
+      };
+    }
+    
+    case "navigate_to_contact": {
+      return { 
+        content: [{ 
+          type: "text", 
+          text: JSON.stringify({
+            action: "navigate_to_contact",
+            clientAction: true,
+            message: "I've opened our contact page. You can fill out the form there and someone will get back to you within 24 hours!"
+          })
         }] 
       };
     }
