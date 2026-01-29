@@ -1,7 +1,7 @@
-import { Star, Award } from "lucide-react";
+import { Star, Award, Tag } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export type PopularityType = 'best-seller' | 'popular' | 'dealers-pick';
+export type PopularityType = 'best-seller' | 'popular' | 'dealers-pick' | 'special-price';
 
 interface PopularityBadgeProps {
   type: PopularityType;
@@ -23,6 +23,11 @@ const badgeConfig = {
     label: "Dealer's Pick",
     Icon: Award,
     variant: 'gold' as const
+  },
+  'special-price': {
+    label: 'Special Price',
+    Icon: Tag,
+    variant: 'promo' as const
   }
 };
 
@@ -38,6 +43,7 @@ export function PopularityBadge({ type, className }: PopularityBadgeProps) {
         "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-medium tracking-wide uppercase shadow-sm",
         variant === 'gold' && "bg-gradient-to-r from-amber-500 to-amber-600 text-amber-950",
         variant === 'dark' && "bg-gray-900 text-gray-100",
+        variant === 'promo' && "bg-gradient-to-r from-red-500 to-red-600 text-white",
         className
       )}
     >

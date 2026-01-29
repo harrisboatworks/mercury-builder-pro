@@ -444,9 +444,11 @@ export default function MotorCardPreview({
                   }}
                   variant="default"
                 />
-                {motor && getMotorPopularity(motor) && (
+                {motor && (motor.hasManualSalePrice ? (
+                  <PopularityBadge type="special-price" />
+                ) : getMotorPopularity(motor) ? (
                   <PopularityBadge type={getMotorPopularity(motor)!} />
-                )}
+                ) : null)}
               </div>
               
               {/* HP Badge - Premium pill style */}
