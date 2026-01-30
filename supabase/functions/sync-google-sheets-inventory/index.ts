@@ -331,6 +331,7 @@ Deno.serve(async (req) => {
             availability: 'In Stock',
             stock_quantity: newQuantity,
             last_stock_check: new Date().toISOString(),
+            inventory_source: 'google_sheets',
           })
           .eq('id', motor.id);
 
