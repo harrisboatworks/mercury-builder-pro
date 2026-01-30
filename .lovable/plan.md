@@ -1,116 +1,98 @@
 
 
-# Make Voice Agent's Promo Knowledge Fully Dynamic
+# Fix Inventory Source Tracking in Google Sheets Sync
 
 ## Problem
 
-The voice agent has **hardcoded references** to the current "Get 7" promo structure that won't adapt when you add a new promotion:
+The sync function updates stock levels correctly but **never updates the `inventory_source` field**, leaving it as `'html'` (from the old deprecated scraper). This makes it impossible to verify where inventory data originated.
 
-| Issue | Current Code | Problem |
-|-------|-------------|---------|
-| Line 127 | `(total 7 years!)` | Hardcoded "7" won't update for future promos |
-| Lines 170-180 | Static "HOW TO EXPLAIN" guide | References specific option names that may not exist in future promos |
+## Current Status
+
+| Metric | Value | Status |
+|--------|-------|--------|
+| Unique motors in stock | 18 | ✅ Correct |
+| Total units | 30 | ✅ Matches sync log |
+| Unmatched motors | 0 | ✅ All matched |
+| `inventory_source` field | `'html'` | ❌ Should be `'google_sheets'` |
+
+**Good news:** Your current inventory is accurate - no phantom "in stock" motors exist.
 
 ---
 
 ## Solution
 
-Make the promotion formatting fully dynamic by:
+Update the edge function to set `inventory_source: 'google_sheets'` when updating motors.
 
-1. **Calculate total warranty dynamically** (base 3 + promo bonus)
-2. **Generate the "how to explain" guide from the promo options data** instead of hardcoding option names
-3. **Add fallback guidance** when no promo options exist
+### File: `supabase/functions/sync-google-sheets-inventory/index.ts`
 
----
-
-## Technical Changes
-
-### File: `supabase/functions/elevenlabs-conversation-token/index.ts`
-
-#### 1. Fix Warranty Display (Line 126-128)
-
-**Before:**
+**Line 327-335 - Current code:**
 ```typescript
-if (promo.warranty_extra_years) {
-  formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years of coverage (total 7 years!)\n`;
-}
+const { error: updateError } = await supabase
+  .from('motor_models')
+  .update({
+    in_stock: true,
+    availability: 'In Stock',
+    stock_quantity: newQuantity,
+    last_stock_check: new Date().toISOString(),
+  })
+  .eq('id', motor.id);
 ```
 
-**After:**
+**Updated code:**
 ```typescript
-if (promo.warranty_extra_years) {
-  const baseWarranty = 3; // Mercury standard
-  const totalYears = baseWarranty + promo.warranty_extra_years;
-  formatted += `- Extra Warranty: ${promo.warranty_extra_years} additional years FREE (${totalYears} years total!)\n`;
-}
-```
-
-#### 2. Generate Dynamic "How to Explain" Guide (Lines 170-180)
-
-Instead of hardcoded option names, generate the guide from the promo data:
-
-**Before:**
-```typescript
-formatted += `
-**HOW TO EXPLAIN THE CHOOSE ONE OPTIONS:**
-1. "6 Months No Payments" - Great for customers who want...
-2. "Special Financing" - Best for customers financing...
-3. "Factory Cash Rebate" - Instant money off...
-`;
-```
-
-**After:**
-```typescript
-// Only add explanation guide if there were promo options
-if (hasChooseOneOptions) {
-  formatted += `
-**HOW TO HELP CUSTOMERS CHOOSE:**
-When customer asks "which option should I choose?" → Ask about their situation:
-- Want to defer payments? → No-payment options work best
-- Financing a large amount? → Lower interest rates save money over time
-- Paying mostly cash? → Rebates give instant savings
-
-Use the specific option details listed above to explain what's available.
-`;
-}
-```
-
-#### 3. Track If Promo Has Options
-
-Add a flag to track whether any promo had "choose one" options so we only show the guide when relevant:
-
-```typescript
-let hasChooseOneOptions = false;
-
-promotions.forEach(promo => {
-  // ... existing code ...
-  
-  const promoOptions = promo.promo_options?.options;
-  if (promoOptions && Array.isArray(promoOptions) && promoOptions.length > 0) {
-    hasChooseOneOptions = true;
-    // ... rest of options formatting
-  }
-});
-
-// After the loop, conditionally add guidance
-if (hasChooseOneOptions) {
-  formatted += `... dynamic guidance ...`;
-}
+const { error: updateError } = await supabase
+  .from('motor_models')
+  .update({
+    in_stock: true,
+    availability: 'In Stock',
+    stock_quantity: newQuantity,
+    last_stock_check: new Date().toISOString(),
+    inventory_source: 'google_sheets',  // Track data source
+  })
+  .eq('id', motor.id);
 ```
 
 ---
 
 ## What This Fixes
 
-| Scenario | Before | After |
-|----------|--------|-------|
-| New promo with 5-year bonus | Says "total 7 years" (wrong) | Says "8 years total" (correct) |
-| Promo with different options | References wrong option names | Uses actual option titles from database |
-| Promo with no choose-one | Shows irrelevant guidance | Shows no guidance (appropriate) |
+| Before | After |
+|--------|-------|
+| `inventory_source: 'html'` (confusing/outdated) | `inventory_source: 'google_sheets'` (accurate) |
+| Can't tell when sync last ran by looking at motors | Clear audit trail of sync source |
 
 ---
 
-## Edge Function Deployment
+## Inventory Verification Results
 
-After the fix, the `elevenlabs-conversation-token` edge function will need to be redeployed.
+Your current in-stock motors (all correctly synced from Google Sheet):
+
+| Motor | Qty | HP |
+|-------|-----|-----|
+| 2.5MH FourStroke | 1 | 2.5 |
+| 6MH FourStroke | 1 | 6 |
+| 9.9MH FourStroke | 3 | 9.9 |
+| 9.9MLH Command Thrust FourStroke | 1 | 9.9 |
+| 20 ELH FourStroke | 2 | 20 |
+| 20EPT FourStroke | 2 | 20 |
+| 25 ELH FourStroke | 1 | 25 |
+| 25 ELPT FourStroke | 1 | 25 |
+| 40 ELPT FourStroke | 2 | 40 |
+| 60 ELPT Command Thrust FourStroke | 2 | 60 |
+| 60 ELPT FourStroke | 2 | 60 |
+| 90 ELPT FourStroke | 3 | 90 |
+| 115 ELPT ProXS | 1 | 115 |
+| 115 EXLPT ProXS | 1 | 115 |
+| 115ELPT Command Thrust FourStroke | 3 | 115 |
+| 150 XL ProXS | 2 | 150 |
+| 200 XL ProXS | 1 | 200 |
+| 250 L ProXS | 1 | 250 |
+
+**Total: 30 units across 18 configurations** - matches the Google Sheet exactly.
+
+---
+
+## Deployment
+
+After the fix, the `sync-google-sheets-inventory` edge function will be redeployed, and the next sync (manual or 6 AM cron) will update all inventory sources correctly.
 
