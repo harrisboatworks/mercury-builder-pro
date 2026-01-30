@@ -690,6 +690,7 @@ if (event.type === 'filter_motors') {
       price: m.price,
       msrp: m.msrp,
       in_stock: m.in_stock,
+      stock_quantity: m.stock_quantity,
       type: m.type,
     }));
     

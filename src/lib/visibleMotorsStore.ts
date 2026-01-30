@@ -14,6 +14,7 @@ export interface VisibleMotor {
   price: number;
   msrp?: number;
   in_stock?: boolean;
+  stock_quantity?: number;
   type?: string;
 }
 
@@ -155,6 +156,7 @@ export function formatMotorsForVoice(limit: number = 5): string {
       hp: m.horsepower,
       price: m.price,
       in_stock: m.in_stock,
+      quantity: m.stock_quantity || (m.in_stock ? 1 : 0),
     })),
     message: summary.filterHP 
       ? `Showing ${summary.count} ${summary.filterHP}HP configurations on screen. ${summary.inStockCount > 0 ? `${summary.inStockCount} in stock.` : ''} ${configInfo.length > 0 ? `Available in ${configInfo.join(", ")}.` : ''}`
