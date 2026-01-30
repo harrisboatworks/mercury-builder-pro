@@ -104,11 +104,12 @@ async function getMotorsForComparison(hp1: number, hp2: number) {
   };
 }
 
-// Get current motor inventory with rich details - ALL motors, no limit
+// Get current motor inventory with rich details - ONLY IN-STOCK motors
 async function getCurrentMotorInventory() {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('model, model_display, horsepower, msrp, sale_price, family, description, features, specifications, shaft, control')
+    .select('model, model_display, horsepower, msrp, sale_price, family, description, features, specifications, shaft, control, in_stock, stock_quantity')
+    .eq('in_stock', true)
     .order('horsepower', { ascending: true });
   return motors || [];
 }
@@ -131,20 +132,23 @@ function detectHPQuery(message: string): number | null {
   return null;
 }
 
-// Get motors for a specific HP
+// Get motors for a specific HP - includes stock status, sorted in-stock first
 async function getMotorsForHP(hp: number) {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('id, model_display, horsepower, msrp, sale_price, family, shaft, control')
+    .select('id, model_display, horsepower, msrp, sale_price, family, shaft, control, in_stock, stock_quantity')
     .eq('horsepower', hp)
+    .order('in_stock', { ascending: false })
     .order('msrp', { ascending: true });
   return motors || [];
 }
 
-// Build compact grouped inventory summary by HP
+// Build compact grouped inventory summary by HP - ONLY IN-STOCK motors with quantities
 function buildGroupedInventorySummary(motors: any[]): string {
+  // Filter to only in-stock motors
+  const inStockMotors = motors.filter(m => m.in_stock);
   const byHP: Record<number, any[]> = {};
-  motors.forEach(m => {
+  inStockMotors.forEach(m => {
     const hp = m.horsepower;
     if (!byHP[hp]) byHP[hp] = [];
     byHP[hp].push(m);
@@ -153,13 +157,14 @@ function buildGroupedInventorySummary(motors: any[]): string {
   return Object.entries(byHP)
     .sort(([a], [b]) => parseFloat(a) - parseFloat(b))
     .map(([hp, models]) => {
+      const totalQty = models.reduce((sum, m) => sum + (m.stock_quantity || 1), 0);
       const prices = models.map(m => m.sale_price || m.msrp || 0).filter(p => p > 0);
       const minPrice = Math.min(...prices);
       const maxPrice = Math.max(...prices);
       const priceStr = prices.length === 0 ? 'TBD' :
         minPrice === maxPrice ? `$${minPrice.toLocaleString()}` : `$${minPrice.toLocaleString()}-$${maxPrice.toLocaleString()}`;
       const families = [...new Set(models.map(m => m.family).filter(Boolean))];
-      return `${hp}HP: ${priceStr}${families.length ? ` (${families.join('/')})` : ''} [${models.length}]`;
+      return `${hp}HP: ${priceStr}${families.length ? ` (${families.join('/')})` : ''} [${totalQty} in stock]`;
     })
     .join(' | ');
 }

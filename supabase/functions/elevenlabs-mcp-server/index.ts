@@ -788,7 +788,8 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       const inStockOnly = args.in_stock_only !== false; // Default to true
       let query = supabase
         .from("motor_models")
-        .select("model_display, model, horsepower, msrp, family, in_stock, shaft, control_type")
+        .select("model_display, model, horsepower, msrp, family, in_stock, stock_quantity, shaft, control_type")
+        .order("in_stock", { ascending: false })  // In-stock first!
         .order("horsepower");
       
       if (args.horsepower) {
@@ -817,16 +818,21 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       const motorList = motors.map(m => {
         const name = m.model_display || `${m.family} ${m.horsepower}HP`;
         const price = m.msrp ? `$${m.msrp.toLocaleString()}` : "Call for price";
-        const stock = m.in_stock ? "✓ In Stock" : "Available to order";
+        const qty = m.stock_quantity || 0;
+        const stock = m.in_stock 
+          ? `✓ ${qty} in stock` 
+          : "Available to order";
         return `• ${name}: ${price} (${stock})`;
       }).join("\n");
       
-      const stockCount = motors.filter(m => m.in_stock).length;
+      const totalInStock = motors
+        .filter(m => m.in_stock)
+        .reduce((sum, m) => sum + (m.stock_quantity || 1), 0);
       
       return { 
         content: [{ 
           type: "text", 
-          text: `Found ${motors.length} motors${args.family ? ` in the ${args.family} family` : ''}${args.horsepower ? ` at ${args.horsepower}HP` : ''}:\n\n${motorList}\n\n${stockCount} are in stock and ready. Want details on any of these?` 
+          text: `Found ${motors.length} motors${args.family ? ` in the ${args.family} family` : ''}${args.horsepower ? ` at ${args.horsepower}HP` : ''}:\n\n${motorList}\n\n${totalInStock} units in stock and ready. Want details on any of these?` 
         }] 
       };
     }
