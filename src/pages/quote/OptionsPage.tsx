@@ -70,8 +70,12 @@ export default function OptionsPage() {
       // Include previously selected options
       state.selectedOptions?.forEach(opt => initialIds.add(opt.optionId));
       
-      // Include recommended options by default
-      categorizedOptions.recommended.forEach(opt => initialIds.add(opt.id));
+      // ONLY pre-select recommended items that are INCLUDED in price (e.g., fuel tanks)
+      categorizedOptions.recommended.forEach(opt => {
+        if (opt.is_included) {
+          initialIds.add(opt.id);
+        }
+      });
       
       setLocalSelectedIds(initialIds);
     }

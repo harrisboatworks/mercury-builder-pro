@@ -9,6 +9,7 @@ interface ScrapedImage {
   productName: string;
   imageUrl: string;
   partNumber?: string;
+  category?: string;
 }
 
 Deno.serve(async (req) => {
@@ -47,12 +48,11 @@ Deno.serve(async (req) => {
       const smartcraftData = await smartcraftResponse.json();
       const html = smartcraftData.data?.html || '';
       
-      // Extract SmartCraft product image - look for high-res product images
+      // Extract SmartCraft product image
       const imagePatterns = [
         /src="(https:\/\/[^"]*mercurymarine[^"]*smartcraft[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/gi,
         /src="(https:\/\/[^"]*mercury[^"]*connect[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/gi,
         /data-src="(https:\/\/[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/gi,
-        /srcset="([^"]+)"/gi,
       ];
       
       let smartcraftImage = null;
@@ -61,9 +61,8 @@ Deno.serve(async (req) => {
         for (const match of matches) {
           const url = match[1];
           if (url && (url.includes('smartcraft') || url.includes('connect') || url.includes('product'))) {
-            // Prefer larger images
             if (!url.includes('thumb') && !url.includes('icon') && !url.includes('50x') && !url.includes('100x')) {
-              smartcraftImage = url.split(' ')[0]; // Handle srcset
+              smartcraftImage = url.split(' ')[0];
               break;
             }
           }
@@ -71,7 +70,6 @@ Deno.serve(async (req) => {
         if (smartcraftImage) break;
       }
 
-      // Fallback: extract any large product image
       if (!smartcraftImage) {
         const allImgMatches = html.matchAll(/src="(https:\/\/[^"]+\.(jpg|jpeg|png|webp))"/gi);
         for (const match of allImgMatches) {
@@ -84,12 +82,12 @@ Deno.serve(async (req) => {
       }
 
       if (smartcraftImage) {
-        // Upload to Supabase Storage
         const uploadedUrl = await uploadImageToStorage(supabase, smartcraftImage, 'smartcraft-connect-mobile');
         results.push({
           productName: 'SmartCraft Connect Mobile',
           imageUrl: uploadedUrl || smartcraftImage,
           partNumber: '8M0173128',
+          category: 'electronics',
         });
         console.log('SmartCraft image found:', uploadedUrl || smartcraftImage);
       } else {
@@ -98,83 +96,241 @@ Deno.serve(async (req) => {
           productName: 'SmartCraft Connect Mobile',
           imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop',
           partNumber: '8M0173128',
+          category: 'electronics',
         });
       }
     }
 
-    // 2. Scrape Maintenance Kits page
-    console.log('Scraping Maintenance Kits page...');
-    const maintenanceResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
+    // 2. Scrape individual maintenance kit product pages for unique images
+    console.log('Scraping individual maintenance kit pages...');
+    
+    const maintenanceProducts = [
+      { 
+        name: '100-Hour Service Kit (Under 25HP)', 
+        partNumber: '8M0151469',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0151469-100-hour-maintenance-kit-under-25hp'
+      },
+      { 
+        name: '100-Hour Service Kit (40-60HP)', 
+        partNumber: '8M0232733',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0232733-100-hour-maintenance-kit-40-60hp'
+      },
+      { 
+        name: '100-Hour Service Kit (75-115HP)', 
+        partNumber: '8M0097854',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0097854-21l-4-cyl-100-hour-maintenance-kit'
+      },
+      { 
+        name: '100-Hour Service Kit (150HP)', 
+        partNumber: '8M0094232',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0094232-30l-100-hour-maintenance-kit'
+      },
+      { 
+        name: '100-Hour Service Kit (175-300HP)', 
+        partNumber: '8M0149929',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0149929-v6-v8-100-hour-maintenance-kit'
+      },
+      { 
+        name: '300-Hour Service Kit (40-60HP)', 
+        partNumber: '8M0090559',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0090559-300-hour-service-kit'
+      },
+      { 
+        name: '300-Hour Service Kit (75-115HP)', 
+        partNumber: '8M0097855',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0097855-21l-4-cyl-300-hour-maintenance-kit'
+      },
+      { 
+        name: '300-Hour Service Kit (150HP)', 
+        partNumber: '8M0094233',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0094233-30l-300-hour-maintenance-kit'
+      },
+      { 
+        name: '300-Hour Service Kit (175-225HP)', 
+        partNumber: '8M0149930',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0149930-v6-300-hour-maintenance-kit'
+      },
+      { 
+        name: '300-Hour Service Kit (250-300HP)', 
+        partNumber: '8M0149931',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0149931-v8-300-hour-maintenance-kit'
+      },
+      { 
+        name: 'Oil Change Kit (40-60HP)', 
+        partNumber: '8M0081916',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0081916-oil-change-kit'
+      },
+      { 
+        name: 'Oil Change Kit (75-115HP)', 
+        partNumber: '8M0107510',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0107510-oil-change-kit'
+      },
+      { 
+        name: 'Oil Change Kit (150HP)', 
+        partNumber: '8M0188357',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0188357-oil-change-kit'
+      },
+      { 
+        name: 'Oil Change Kit (175-225HP)', 
+        partNumber: '8M0187621',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0187621-oil-change-kit'
+      },
+      { 
+        name: 'Oil Change Kit (250-300HP)', 
+        partNumber: '8M0187622',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-8m0187622-oil-change-kit'
+      },
+    ];
+
+    // Scrape a few key products for unique images
+    for (const product of maintenanceProducts.slice(0, 6)) {
+      try {
+        console.log(`Scraping: ${product.name}`);
+        const productResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${firecrawlApiKey}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            url: product.url,
+            formats: ['html'],
+            onlyMainContent: false,
+          }),
+        });
+
+        if (productResponse.ok) {
+          const productData = await productResponse.json();
+          const html = productData.data?.html || '';
+          
+          // Extract product image
+          const imgMatch = html.match(/src="(https:\/\/[^"]*(?:product|maintenance|kit|mercury)[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/i);
+          let imageUrl = imgMatch?.[1];
+          
+          if (!imageUrl) {
+            const fallbackMatch = html.match(/src="(https:\/\/[^"]+\.(jpg|jpeg|png))"/i);
+            imageUrl = fallbackMatch?.[1];
+          }
+          
+          if (imageUrl && !imageUrl.includes('logo') && !imageUrl.includes('icon')) {
+            const fileName = `maintenance-${product.partNumber}`;
+            const uploadedUrl = await uploadImageToStorage(supabase, imageUrl, fileName);
+            results.push({
+              productName: product.name,
+              imageUrl: uploadedUrl || imageUrl,
+              partNumber: product.partNumber,
+              category: 'maintenance',
+            });
+            console.log(`${product.name} image uploaded:`, uploadedUrl || imageUrl);
+          } else {
+            results.push({
+              productName: product.name,
+              imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
+              partNumber: product.partNumber,
+              category: 'maintenance',
+            });
+          }
+        }
+      } catch (err) {
+        console.error(`Error scraping ${product.name}:`, err);
+        results.push({
+          productName: product.name,
+          imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
+          partNumber: product.partNumber,
+          category: 'maintenance',
+        });
+      }
+    }
+
+    // Add remaining maintenance kits with placeholder
+    for (const product of maintenanceProducts.slice(6)) {
+      results.push({
+        productName: product.name,
+        imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop',
+        partNumber: product.partNumber,
+        category: 'maintenance',
+      });
+    }
+
+    // 3. Scrape Motor Covers page
+    console.log('Scraping Motor Covers pages...');
+    
+    const coverProducts = [
+      {
+        name: 'Attwood Outboard Motor Cover (40-60HP)',
+        partNumber: 'ATT-10541',
+        url: 'https://www.mercurymarine.com/us/en/product/attwood-outboard-motor-cover',
+        hpRange: '40-60HP',
+      },
+      {
+        name: 'Mercury Vented Splash Cover (75-115HP)',
+        partNumber: 'MRC-VS-75115',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-vented-splash-cover-75-115hp',
+        hpRange: '75-115HP',
+      },
+      {
+        name: 'Mercury Vented Splash Cover (150HP)',
+        partNumber: 'MRC-VS-150',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-vented-splash-cover-150hp',
+        hpRange: '150HP',
+      },
+      {
+        name: 'Mercury Vented Splash Cover (175-225HP V6)',
+        partNumber: 'MRC-VS-V6',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-vented-splash-cover-v6',
+        hpRange: '175-225HP',
+      },
+      {
+        name: 'Mercury Vented Splash Cover (250-300HP V8)',
+        partNumber: 'MRC-VS-V8',
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-vented-splash-cover-v8',
+        hpRange: '250-300HP',
+      },
+    ];
+
+    // Scrape motor covers
+    const coversResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${firecrawlApiKey}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        url: 'https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants/maintenance-kits',
-        formats: ['html', 'links'],
+        url: 'https://www.mercurymarine.com/us/en/product/mercury-vented-splash-cover',
+        formats: ['html'],
         onlyMainContent: false,
       }),
     });
 
-    let maintenanceKitImage = null;
-    if (maintenanceResponse.ok) {
-      const maintenanceData = await maintenanceResponse.json();
-      const html = maintenanceData.data?.html || '';
+    let coverImage = null;
+    if (coversResponse.ok) {
+      const coverData = await coversResponse.json();
+      const html = coverData.data?.html || '';
       
-      // Extract maintenance kit image
-      const kitImagePatterns = [
-        /src="(https:\/\/[^"]*maintenance[^"]*kit[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/gi,
-        /src="(https:\/\/[^"]*service[^"]*kit[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/gi,
-        /src="(https:\/\/[^"]*mercury[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/gi,
-      ];
+      const coverImgMatch = html.match(/src="(https:\/\/[^"]*(?:cover|splash|motor)[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/i);
+      coverImage = coverImgMatch?.[1];
       
-      for (const pattern of kitImagePatterns) {
-        const matches = html.matchAll(pattern);
-        for (const match of matches) {
-          const url = match[1];
-          if (url && !url.includes('logo') && !url.includes('icon') && !url.includes('thumb')) {
-            maintenanceKitImage = url;
-            break;
-          }
-        }
-        if (maintenanceKitImage) break;
+      if (!coverImage) {
+        const fallbackMatch = html.match(/src="(https:\/\/[^"]+\.(jpg|jpeg|png))"/i);
+        coverImage = fallbackMatch?.[1];
       }
-
-      if (maintenanceKitImage) {
-        const uploadedUrl = await uploadImageToStorage(supabase, maintenanceKitImage, 'maintenance-kit-generic');
-        maintenanceKitImage = uploadedUrl || maintenanceKitImage;
-        console.log('Maintenance kit image found:', maintenanceKitImage);
+      
+      if (coverImage && !coverImage.includes('logo') && !coverImage.includes('icon')) {
+        const uploadedUrl = await uploadImageToStorage(supabase, coverImage, 'motor-cover-vented');
+        coverImage = uploadedUrl || coverImage;
+        console.log('Motor cover image uploaded:', coverImage);
       }
     }
 
-    // Use placeholder for maintenance kits if no image found
-    const kitPlaceholder = maintenanceKitImage || 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop';
+    // Use placeholder if no cover image found
+    const coverPlaceholder = coverImage || 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop';
 
-    // Add all maintenance kit products with the same image
-    const maintenanceKits = [
-      { name: '100-Hour Service Kit (Under 25HP)', partNumber: '8M0151469' },
-      { name: '100-Hour Service Kit (40-60HP)', partNumber: '8M0232733' },
-      { name: '100-Hour Service Kit (75-115HP)', partNumber: '8M0097854' },
-      { name: '100-Hour Service Kit (150HP)', partNumber: '8M0094232' },
-      { name: '100-Hour Service Kit (175-300HP)', partNumber: '8M0149929' },
-      { name: '300-Hour Service Kit (40-60HP)', partNumber: '8M0090559' },
-      { name: '300-Hour Service Kit (75-115HP)', partNumber: '8M0097855' },
-      { name: '300-Hour Service Kit (150HP)', partNumber: '8M0094233' },
-      { name: '300-Hour Service Kit (175-225HP)', partNumber: '8M0149930' },
-      { name: '300-Hour Service Kit (250-300HP)', partNumber: '8M0149931' },
-      { name: 'Oil Change Kit (40-60HP)', partNumber: '8M0081916' },
-      { name: 'Oil Change Kit (75-115HP)', partNumber: '8M0107510' },
-      { name: 'Oil Change Kit (150HP)', partNumber: '8M0188357' },
-      { name: 'Oil Change Kit (175-225HP)', partNumber: '8M0187621' },
-      { name: 'Oil Change Kit (250-300HP)', partNumber: '8M0187622' },
-    ];
-
-    for (const kit of maintenanceKits) {
+    for (const cover of coverProducts) {
       results.push({
-        productName: kit.name,
-        imageUrl: kitPlaceholder,
-        partNumber: kit.partNumber,
+        productName: cover.name,
+        imageUrl: coverPlaceholder,
+        partNumber: cover.partNumber,
+        category: 'accessory',
       });
     }
 
@@ -205,7 +361,6 @@ async function uploadImageToStorage(
   fileName: string
 ): Promise<string | null> {
   try {
-    // Download the image
     const response = await fetch(imageUrl);
     if (!response.ok) {
       console.log(`Failed to download image from ${imageUrl}`);
@@ -217,7 +372,6 @@ async function uploadImageToStorage(
     const extension = contentType.includes('png') ? 'png' : contentType.includes('webp') ? 'webp' : 'jpg';
     const storagePath = `accessories/${fileName}.${extension}`;
 
-    // Upload to Supabase Storage
     const { data, error } = await supabase.storage
       .from('motor-images')
       .upload(storagePath, arrayBuffer, {
@@ -230,7 +384,6 @@ async function uploadImageToStorage(
       return null;
     }
 
-    // Get public URL
     const { data: urlData } = supabase.storage
       .from('motor-images')
       .getPublicUrl(storagePath);
