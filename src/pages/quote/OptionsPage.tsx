@@ -246,11 +246,17 @@ export default function OptionsPage() {
   return (
     <QuoteLayout>
       <div className="container mx-auto px-4 py-8 max-w-5xl pb-32">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Customize Your Motor Package</h1>
+        {/* Compact Header with Mobile Back */}
+        <div className="mb-4 flex items-center gap-3">
+          <button 
+            onClick={handleBack}
+            className="md:hidden p-2 -ml-2 text-muted-foreground hover:text-foreground"
+            aria-label="Back to motor selection"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
           <p className="text-muted-foreground">
-            Select additional options and accessories for your {state.motor?.model || 'motor'}
+            Options for your {state.motor?.model || 'motor'}
           </p>
         </div>
 
@@ -369,7 +375,7 @@ export default function OptionsPage() {
         )}
 
         {/* Sticky Footer */}
-        <div className="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur border-t py-4 z-50">
+        <div className="hidden md:block fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur border-t py-4 z-50">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="flex items-center justify-between">
               <Button variant="outline" onClick={handleBack}>
