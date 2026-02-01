@@ -16,6 +16,7 @@ import { Progress } from '@/components/ui/progress';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { isTillerMotor } from '@/lib/utils';
+import { TransomHeightCalculator } from '@/components/motors/TransomHeightCalculator';
 interface BoatInformationProps {
   onStepComplete: (boatInfo: BoatInfo) => void;
   onBack: () => void;
@@ -395,7 +396,8 @@ export const BoatInformation = ({
         return '--';
     }
   };
-  // showHelp state removed - "Not Sure?" now skips to next step
+  // Transom height calculator modal state
+  const [showTransomCalculator, setShowTransomCalculator] = useState(false);
 
   // (Using per-type recommendedHP from boatTypes entries)
   const handleSkip = () => {
@@ -738,26 +740,14 @@ export const BoatInformation = ({
                       </AlertDescription>
                     </Alert>}
 
-                  <Collapsible>
-                    <CollapsibleTrigger asChild>
-                      <Button variant="outline" className="w-full justify-between">
-                        <div className="flex items-center gap-2">
-                          <HelpCircle className="w-4 h-4" />
-                          <span>Need help measuring transom height?</span>
-                        </div>
-                        <ChevronDown className="w-4 h-4" />
-                      </Button>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="mt-3">
-                      <div className="bg-muted/30 rounded-lg p-4">
-                        <ExpandableImage 
-                          src="/lovable-uploads/cb45570a-2b96-4b08-af3d-412c7607a66e.png" 
-                          alt="Transom height measurement guide showing how to measure from top of transom to bottom of hull"
-                          className="max-w-lg mx-auto"
-                        />
-                      </div>
-                    </CollapsibleContent>
-                  </Collapsible>
+                  <button
+                    type="button"
+                    onClick={() => setShowTransomCalculator(true)}
+                    className="text-sm text-muted-foreground hover:text-foreground underline-offset-4 hover:underline transition-colors flex items-center gap-1.5"
+                  >
+                    <HelpCircle className="w-4 h-4" />
+                    Need help measuring?
+                  </button>
                 </div>
               </Card>}
 
@@ -1015,16 +1005,8 @@ export const BoatInformation = ({
           </>}
 
         {/* Navigation */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between pt-6 border-t gap-3">
-          {/* Only show Previous button on steps after the first - page handles exit navigation */}
-          {currentStep > 0 ? (
-            <Button type="button" variant="outline" onClick={handlePrev} className="flex items-center justify-center gap-2 min-h-[44px] order-2 sm:order-1 border-2 button-text-protected font-light rounded-sm hover:bg-gray-900 hover:text-white transition-all duration-500">
-              <ArrowLeft className="w-4 h-4" />
-              Previous
-            </Button>
-          ) : (
-            <div /> 
-          )}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-end pt-6 border-t gap-3">
+          {/* Page-level back button handles navigation - no Previous needed */}
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 order-1 sm:order-2">
             
@@ -1038,9 +1020,16 @@ export const BoatInformation = ({
         </div>
       </form>
 
-      {/* Mobile chat style hint */}
-      {isMobile && <div className="rounded-lg border border-border bg-protected p-4">
-          <div className="text-sm text-protected-subtle">Tip: You can tap a preset above to speed things up.</div>
-        </div>}
+      {/* Transom Height Calculator Modal */}
+      <TransomHeightCalculator
+        open={showTransomCalculator}
+        onClose={() => setShowTransomCalculator(false)}
+        onApply={(shaftInches) => {
+          setBoatInfo(prev => ({
+            ...prev,
+            shaftLength: String(shaftInches)
+          }));
+        }}
+      />
     </div>;
 };
