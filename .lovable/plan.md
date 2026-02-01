@@ -1,62 +1,58 @@
 
-# Streamline Options Page Header & Add Mobile Back Button
 
-## Issues Identified
+# Premium Back Button for Options Page
 
-1. **Too Much Text**: The current header uses both a large `h1` ("Customize Your Motor Package") and a paragraph subtitle ("Select additional options and accessories for your {motor}"), which consumes valuable vertical space on mobile.
+## Current Issues
 
-2. **No Back Button on Mobile**: The desktop sticky footer includes a Back button, but it's hidden behind the `UnifiedMobileBar` on mobile devices. Users have no way to return to motor selection.
+1. **Faint Styling**: Uses `text-muted-foreground` which makes it barely visible
+2. **Icon Only**: No label text - premium sites use "← Back" or "← Back to Motors"
+3. **Inconsistent**: Other components in this codebase (MotorDetailsSheet, MotorDetailsPremiumModal) use bold, labeled back buttons
 
----
+## Premium Patterns (Tesla/Porsche/Apple)
+
+- **Always use Icon + Label** - never a lone chevron
+- **High contrast** - `text-gray-700` or darker, not muted
+- **Generous touch targets** - min 44px height
+- **Subtle feedback** - `active:scale-95` press animation
+- **Left-aligned** - clear visual anchor at top-left
 
 ## Solution
 
-### 1. Simplify the Header
+Follow the existing premium pattern from `MotorDetailsPremiumModal`:
 
-Remove the large `h1` heading and keep only a cleaner, context-aware subtitle. The section headers ("Recommended Add-Ons", "Available Options") already explain what the page contains.
+```text
+Before (faint, icon-only):
+  [ < ]  Options for your 9.9MH FourStroke
 
-**Before:**
-```
-Customize Your Motor Package          ← Remove this
-Select additional options...          ← Keep, but shorter
-```
-
-**After:**
-```
-Options for your 9.9MH FourStroke     ← Single clean line
+After (premium, labeled):
+  [ < Back ]  
+  Options for your 9.9MH FourStroke
 ```
 
-Or even simpler - just remove the header entirely since the section titles are self-explanatory.
-
-### 2. Add Back Button Above Content on Mobile
-
-Add a simple back link at the top of the page (below the stepper) that only shows on mobile. This follows the pattern used on other quote pages and provides a clear way to navigate back.
+Or inline (cleaner):
+```text
+  [ < Back ]   Options for your 9.9MH FourStroke
+```
 
 ---
 
-## Files to Modify
+## Implementation
 
-| File | Change |
-|------|--------|
-| `src/pages/quote/OptionsPage.tsx` | Simplify header, add mobile-only back link, hide desktop footer on mobile |
+### File: `src/pages/quote/OptionsPage.tsx`
 
----
-
-## Implementation Details
-
-### Header Simplification
-Replace the `mb-8` header block with a more compact version:
+**Replace lines 250-260 with:**
 
 ```tsx
-{/* Compact Header - Mobile-friendly */}
-<div className="mb-4 flex items-center gap-3">
-  {/* Mobile Back Button */}
+{/* Compact Header with Mobile Back */}
+<div className="mb-4">
+  {/* Mobile Back Button - Premium Style */}
   <button 
     onClick={handleBack}
-    className="md:hidden p-2 -ml-2 text-muted-foreground hover:text-foreground"
+    className="md:hidden flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px] mb-2"
     aria-label="Back to motor selection"
   >
     <ChevronLeft className="h-5 w-5" />
+    <span className="text-sm font-medium">Back</span>
   </button>
   
   <p className="text-muted-foreground">
@@ -65,32 +61,23 @@ Replace the `mb-8` header block with a more compact version:
 </div>
 ```
 
-### Desktop Footer Visibility
-Add `hidden md:flex` to ensure the sticky footer only shows on desktop:
+---
 
-```tsx
-<div className="hidden md:block fixed bottom-0 ...">
-```
+## Key Changes
+
+| Aspect | Before | After |
+|--------|--------|-------|
+| Color | `text-muted-foreground` (faint gray) | `text-gray-600` (visible, high contrast) |
+| Label | None (icon only) | "Back" text |
+| Touch Target | ~28px | `min-h-[44px]` |
+| Feedback | None | `active:scale-95` |
+| Layout | Inline with subtitle | Stacked (Back above subtitle) |
 
 ---
 
-## Visual Result
+## Files to Modify
 
-**Mobile:**
-- Clean back arrow at top left
-- Single line "Options for your 9.9MH FourStroke"
-- Immediately shows first section ("Recommended Add-Ons")
-- UnifiedMobileBar handles Continue/Skip navigation
+| File | Change |
+|------|--------|
+| `src/pages/quote/OptionsPage.tsx` | Upgrade back button to premium style with label and proper contrast |
 
-**Desktop:**
-- Compact header text
-- Sticky footer with Back, Total, and Continue buttons (unchanged)
-
----
-
-## Technical Notes
-
-- The `handleBack` function already exists (lines 197-199)
-- Mobile users rely on `UnifiedMobileBar` for forward navigation
-- Desktop users continue using the sticky footer
-- Reduces vertical scroll distance by ~60px on mobile
