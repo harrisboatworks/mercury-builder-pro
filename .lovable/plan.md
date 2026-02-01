@@ -1,117 +1,179 @@
 
 
-# Add Mercury Products with Images to Database
+# Enhance Options Page: Pre-Selection Logic, Images, and Motor Covers
 
 ## Overview
-You're right - I created the UI components but haven't added the actual products to the database yet. We need to:
-1. Create a new edge function to scrape images from Mercury's SmartCraft and Maintenance Kit pages
-2. Add the 17 Mercury products to `motor_options` with their scraped images
-3. Create the HP-based rules in `motor_option_rules`
+Three enhancements to the Options page based on your feedback:
+
+1. **Fix Pre-Selection Logic**: Only pre-select items that are truly "included" (like the 12L fuel tank) - NOT all recommended items
+2. **Add Images for All Options**: Scrape higher-quality, product-specific images for 100-hour kits, 300-hour kits, and oil change kits
+3. **Add Motor Covers**: New category of Mercury motor covers (Tow-n-Stow and Vented Splash covers) with images
 
 ---
 
-## Implementation Steps
+## Change 1: Fix Pre-Selection Logic
 
-### Step 1: Create Edge Function to Scrape Mercury Accessory Images
-
-Create a new edge function `scrape-mercury-accessories` that uses the existing Firecrawl integration to:
-
-- Scrape the SmartCraft Connect Mobile page: `https://www.mercurymarine.com/us/en/gauges-and-controls/smartcraft/smartcraft-connect-mobile`
-- Scrape the Maintenance Kits page: `https://www.mercurymarine.com/ca/en/parts-and-service/parts-and-lubricants/maintenance-kits`
-- Extract product images and upload them to Supabase Storage
-- Return the public URLs for each product
-
-**Technical approach:**
-```text
-1. Use Firecrawl v1/scrape with formats: ['markdown', 'html', 'links']
-2. Extract image URLs using regex patterns for Mercury CDN
-3. Download best images and upload to 'motor-images' bucket
-4. Return mapping of product name -> image URL
+### Current Behavior (Problem)
+Currently in `OptionsPage.tsx` lines 73-74:
+```javascript
+// Include recommended options by default  <-- THIS IS THE PROBLEM
+categorizedOptions.recommended.forEach(opt => initialIds.add(opt.id));
 ```
 
-### Step 2: Create SQL Migration for Motor Options
+This pre-selects ALL recommended items (like SmartCraft Connect Mobile) regardless of whether they're actually included in the price.
 
-Insert 17 products into `motor_options` table:
+### New Behavior
+Only pre-select options that are:
+- **Required** (assignment_type = 'required')
+- **Included in price** (is_included = true, like the 12L fuel tank)
+- **Previously selected** (when returning to the page)
 
-| Category | Name | Part # | Price | Image |
-|----------|------|--------|-------|-------|
-| electronics | SmartCraft Connect Mobile | 8M0173128 | $325 | (scraped) |
-| maintenance | 100-Hour Service Kit (Under 25HP) | 8M0151469 | $95 | (scraped or placeholder) |
-| maintenance | 100-Hour Service Kit (40-60HP) | 8M0232733 | $80 | (scraped or placeholder) |
-| maintenance | 100-Hour Service Kit (75-115HP) | 8M0097854 | $55 | (scraped or placeholder) |
-| maintenance | 100-Hour Service Kit (150HP) | 8M0094232 | $65 | (scraped or placeholder) |
-| maintenance | 100-Hour Service Kit (175-300HP) | 8M0149929 | $105 | (scraped or placeholder) |
-| maintenance | 300-Hour Service Kit (40-60HP) | 8M0090559 | $340 | (scraped or placeholder) |
-| maintenance | 300-Hour Service Kit (75-115HP) | 8M0097855 | $440 | (scraped or placeholder) |
-| maintenance | 300-Hour Service Kit (150HP) | 8M0094233 | $510 | (scraped or placeholder) |
-| maintenance | 300-Hour Service Kit (175-225HP) | 8M0149930 | $500 | (scraped or placeholder) |
-| maintenance | 300-Hour Service Kit (250-300HP) | 8M0149931 | $700 | (scraped or placeholder) |
-| maintenance | Oil Change Kit (40-60HP) | 8M0081916 | $90 | (scraped or placeholder) |
-| maintenance | Oil Change Kit (75-115HP) | 8M0107510 | $125 | (scraped or placeholder) |
-| maintenance | Oil Change Kit (150HP) | 8M0188357 | $140 | (scraped or placeholder) |
-| maintenance | Oil Change Kit (175-225HP) | 8M0187621 | $180 | (scraped or placeholder) |
-| maintenance | Oil Change Kit (250-300HP) | 8M0187621 | $215 | (scraped or placeholder) |
-
-Each product includes:
-- `name`, `description`, `short_description`
-- `category` (electronics or maintenance)
-- `base_price`, `part_number`
-- `image_url` (from scraper or placeholder)
-- `features` (JSONB array)
-- `is_active: true`, `is_taxable: true`
-
-### Step 3: Create SQL Migration for Option Rules
-
-Insert 17 rules into `motor_option_rules`:
-
-| Product | Conditions | Assignment |
-|---------|------------|------------|
-| SmartCraft Connect Mobile | `{"hp_min": 8}` | recommended |
-| 100-Hour Kit (Under 25HP) | `{"hp_min": 8, "hp_max": 24}` | available |
-| 100-Hour Kit (40-60HP) | `{"hp_min": 40, "hp_max": 60}` | available |
-| 100-Hour Kit (75-115HP) | `{"hp_min": 75, "hp_max": 115}` | available |
-| 100-Hour Kit (150HP) | `{"hp_min": 150, "hp_max": 150}` | available |
-| 100-Hour Kit (175-300HP) | `{"hp_min": 175, "hp_max": 300}` | available |
-| 300-Hour Kit (40-60HP) | `{"hp_min": 40, "hp_max": 60}` | available |
-| ... (same pattern for remaining kits) |
+### Code Change
+Update `OptionsPage.tsx` initialization logic:
+```javascript
+useEffect(() => {
+  if (categorizedOptions) {
+    const initialIds = new Set<string>();
+    
+    // Always include required options
+    categorizedOptions.required.forEach(opt => initialIds.add(opt.id));
+    
+    // Include previously selected options
+    state.selectedOptions?.forEach(opt => initialIds.add(opt.optionId));
+    
+    // ONLY pre-select recommended items that are INCLUDED in price
+    categorizedOptions.recommended.forEach(opt => {
+      if (opt.is_included) {
+        initialIds.add(opt.id);
+      }
+    });
+    
+    setLocalSelectedIds(initialIds);
+  }
+}, [categorizedOptions, state.selectedOptions]);
+```
 
 ---
 
-## File Changes
+## Change 2: Add Product-Specific Images
 
-### New Files
-| File | Purpose |
+### Current State
+All maintenance kits use the same generic image: `maintenance-kit-generic.jpg`
+
+### Enhancement
+Scrape individual product images from Mercury's product pages for:
+
+| Product Type | Source | Images Needed |
+|--------------|--------|---------------|
+| 100-Hour Service Kits | Mercury parts catalog | 5 unique images |
+| 300-Hour Service Kits | Mercury maintenance page | 5 unique images |
+| Oil Change Kits | Mercury oil change kits page | 5 unique images |
+
+### Implementation
+1. **Update Edge Function**: Enhance `scrape-mercury-accessories` to scrape specific product pages:
+   - `https://www.mercurymarine.com/us/en/product/mercury-8m0097854-21l-4-cyl-100-hour-maintenance-kit` (example)
+   - Oil change kits: `https://www.mercurymarine.com/ca/en/category/parts-and-maintenance/oils-and-lubricants/oil-change-kits`
+
+2. **Upload Unique Images**: Store each kit with its own image file:
+   - `accessories/100hr-kit-75-115hp.jpg`
+   - `accessories/300hr-kit-v6.jpg`
+   - `accessories/oil-kit-2.1l.jpg`
+
+3. **Update Database**: SQL to update `motor_options.image_url` for each product
+
+---
+
+## Change 3: Add Motor Covers
+
+### Products to Add
+Based on Mercury's product line:
+
+| Cover Type | HP Range | Est. Price | Part # | Category |
+|------------|----------|------------|--------|----------|
+| Tow-n-Stow Cover | 40-60HP | $85 | TBD | accessory |
+| Tow-n-Stow Cover | 75-115HP | $95 | TBD | accessory |
+| Tow-n-Stow Cover | 150HP | $105 | TBD | accessory |
+| Tow-n-Stow Cover | 175-225HP V6 | $120 | TBD | accessory |
+| Tow-n-Stow Cover | 250-300HP V8 | $140 | TBD | accessory |
+| Vented Splash Cover | 75-115HP | $75 | TBD | accessory |
+| Vented Splash Cover | 150HP+ | $95 | TBD | accessory |
+
+### Implementation
+1. **Scrape Motor Cover Images**: Add to edge function to scrape from:
+   - `https://www.mercurymarine.com/us/en/product/mercury-vented-splash-cover`
+   - Mercury Dockstore accessory pages
+
+2. **Database Migration**: Insert motor cover products with:
+   - Category: `accessory` (so they display in visual grid)
+   - Features: ["UV-resistant", "Marine-grade material", "Custom fit", "Easy install"]
+   - Image URLs from scraper
+
+3. **HP-Based Rules**: Create rules in `motor_option_rules` to show appropriate covers based on motor HP:
+   - 40-60HP motors see 40-60HP covers
+   - 75-115HP motors see 75-115HP covers
+   - etc.
+
+---
+
+## File Changes Summary
+
+### Modified Files
+
+| File | Changes |
 |------|---------|
-| `supabase/functions/scrape-mercury-accessories/index.ts` | Scrape SmartCraft and maintenance kit images from Mercury |
+| `src/pages/quote/OptionsPage.tsx` | Update pre-selection logic to only select `is_included` items |
+| `supabase/functions/scrape-mercury-accessories/index.ts` | Add motor covers scraping, improve kit-specific image scraping |
 
 ### Database Migrations
-| Migration | Purpose |
-|-----------|---------|
-| `add_mercury_accessories.sql` | Insert 17 products into motor_options |
-| `add_mercury_accessory_rules.sql` | Insert 17 HP-based rules into motor_option_rules |
+
+| Table | Action |
+|-------|--------|
+| `motor_options` | Insert 5-7 motor cover products |
+| `motor_options` | Update image_url for existing maintenance kits |
+| `motor_option_rules` | Insert HP-based rules for motor covers |
 
 ---
 
-## Image Strategy
+## Visual Result
 
-**For SmartCraft Connect Mobile:**
-- Scrape from Mercury's official product page
-- High priority - this is a visual "hero" item
-- Will display in the premium grid layout
+### Before
+- SmartCraft Connect Mobile: Pre-selected (wrong)
+- All maintenance kits: Same generic image
 
-**For Maintenance Kits:**
-- Scrape from Mercury's maintenance kits page
-- These display in compact list format (not visual grid)
-- Having images is nice-to-have for the details modal
-- Can use placeholder if scraping is difficult
+### After
+- SmartCraft Connect Mobile: NOT pre-selected (user chooses)
+- 12L Fuel Tank (if included): Pre-selected (correct)
+- Maintenance kits: Each has its own product image
+- Motor covers: New visual cards in the grid with product images
 
 ---
 
-## Execution Order
+## Technical Details
 
-1. **Create edge function** - `scrape-mercury-accessories` to fetch images
-2. **Deploy and test** - Run the scraper to get image URLs
-3. **Run SQL migration** - Insert products with scraped image URLs
-4. **Run rules migration** - Create HP-based filtering rules
-5. **Test end-to-end** - Verify products appear on Options page with images
+### Pre-Selection Logic Change
+Location: `src/pages/quote/OptionsPage.tsx` lines 62-78
+
+```text
+BEFORE:
+- Required options → pre-selected
+- Previously selected → pre-selected  
+- ALL recommended options → pre-selected (WRONG)
+
+AFTER:
+- Required options → pre-selected
+- Previously selected → pre-selected
+- Recommended options ONLY if is_included=true → pre-selected
+```
+
+### Image Scraping Enhancement
+The edge function will be enhanced to:
+1. Scrape individual product pages for high-res images
+2. Upload each product's image with a unique filename
+3. Update the database with new image URLs
+
+### Motor Covers Data
+New category of products with:
+- `category: 'accessory'` → displays in visual grid (since they have images)
+- HP-based filtering rules → only show relevant covers for selected motor
+- `assignment_type: 'available'` → shown in Available Options section
 
