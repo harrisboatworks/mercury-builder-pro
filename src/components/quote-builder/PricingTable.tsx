@@ -74,10 +74,8 @@ export function PricingTable({
       <div className="space-y-1">
         {/* Motor Pricing */}
         <div className="space-y-1">
-          <div className="flex items-baseline justify-between">
-            <div className="text-muted-foreground">
-              MSRP - {motorName}
-            </div>
+          <div className="flex items-baseline justify-between py-2">
+            <div className="text-sm text-muted-foreground">MSRP</div>
             <div className="text-right">
               <s className="text-muted-foreground">${pricing.msrp.toLocaleString()}</s>
             </div>
@@ -85,7 +83,7 @@ export function PricingTable({
           
           {pricing.discount > 0 && (
             <LineItemRow
-              label="Dealer Discount"
+              label="Your Discount"
               amount={pricing.discount}
               isDiscount
             />
@@ -150,11 +148,11 @@ export function PricingTable({
               <LineItemRow
                 label={
                   selectedPromoOption === 'no_payments' 
-                    ? '7 Years Warranty + 6 Mo No Payments'
+                    ? '7-Year Warranty + No Payments'
                     : selectedPromoOption === 'special_financing'
-                    ? `7 Years Warranty + ${selectedPromoValue || '2.99%'} APR`
+                    ? `7-Year Warranty + ${selectedPromoValue || '2.99%'} APR`
                     : selectedPromoOption === 'cash_rebate'
-                    ? `7 Years Warranty + ${selectedPromoValue} Rebate`
+                    ? `7-Year Warranty + ${selectedPromoValue} Rebate`
                     : 'Promotional Savings'
                 }
                 amount={pricing.promoValue}
@@ -210,7 +208,7 @@ export function PricingTable({
         <div className="text-xs text-muted-foreground">
           All prices in Canadian dollars. Installation, rigging, and trade-in values subject to inspection and verification.
           {pricing.savings > 0 && (
-            <span className="block mt-1 text-green-600 font-medium">
+            <span className="inline-block mt-2 px-2 py-1 bg-emerald-50 text-emerald-700 rounded-md text-xs font-semibold">
               Total savings of ${pricing.savings.toLocaleString()} vs MSRP
             </span>
           )}
