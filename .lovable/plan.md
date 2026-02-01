@@ -1,31 +1,26 @@
 
-# Real-Time Price Updates in Bottom Bar
+
+# Fix: Infinite Loop in Options Page
 
 ## The Problem
 
-When you select or unselect options on the Options page, the bottom bar stays at $2,999 instead of updating. This happens because:
-
-1. **Local State Only**: Option toggles update a local state (`localSelectedIds`) within the page
-2. **Delayed Sync**: The QuoteContext (which the bar reads from) only gets updated when you click "Continue"
-3. **Bar Reads Context**: `UnifiedMobileBar` displays `state.selectedOptions` from the context, which is stale during browsing
-
-## The Solution
-
-Sync selections to QuoteContext immediately on each toggle, so the bar reflects changes in real-time.
-
-### How It Works
+The console shows **"Maximum update depth exceeded"** - an infinite render loop caused by two `useEffect` hooks fighting each other:
 
 ```text
-User taps option card
-       ↓
-toggleOption() updates localSelectedIds (for UI checkmarks)
-       ↓
-NEW: Also dispatches SET_SELECTED_OPTIONS to QuoteContext
-       ↓
-UnifiedMobileBar re-calculates total (already has this logic)
-       ↓
-Price updates instantly in the bar
+Effect A (initialization):
+  Dependencies: [categorizedOptions, state.selectedOptions]
+  Action: setLocalSelectedIds(initialIds)
+      ↓
+Effect B (sync to context):
+  Dependencies: [localSelectedIds, categorizedOptions, dispatch]
+  Action: dispatch SET_SELECTED_OPTIONS
+      ↓
+state.selectedOptions changes → triggers Effect A again → LOOP!
 ```
+
+## Solution
+
+Remove `state.selectedOptions` from Effect A's dependency array. The initialization logic should only run once when `categorizedOptions` first loads, not every time the context updates (since we're the ones updating it).
 
 ---
 
@@ -33,57 +28,53 @@ Price updates instantly in the bar
 
 ### File: `src/pages/quote/OptionsPage.tsx`
 
-**Add a `useEffect` that syncs local selections to context on every change:**
+**Change the initialization effect (lines 63-82):**
 
+Before:
 ```tsx
-// After localSelectedIds changes, sync to QuoteContext for real-time bar updates
 useEffect(() => {
-  if (!categorizedOptions) return;
-  
-  const allOptions = [
-    ...categorizedOptions.required,
-    ...categorizedOptions.recommended,
-    ...categorizedOptions.available,
-  ];
-
-  const selectedOptions = allOptions
-    .filter(opt => localSelectedIds.has(opt.id))
-    .map(opt => ({
-      optionId: opt.id,
-      name: opt.name,
-      price: opt.is_included ? 0 : (opt.price_override ?? opt.base_price),
-      category: opt.category,
-      assignmentType: opt.assignment_type,
-      isIncluded: opt.is_included,
-    }));
-
-  dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
-}, [localSelectedIds, categorizedOptions, dispatch]);
+  if (categorizedOptions) {
+    const initialIds = new Set<string>();
+    categorizedOptions.required.forEach(opt => initialIds.add(opt.id));
+    state.selectedOptions?.forEach(opt => initialIds.add(opt.optionId));
+    categorizedOptions.recommended.forEach(opt => {
+      if (opt.is_included) initialIds.add(opt.id);
+    });
+    setLocalSelectedIds(initialIds);
+  }
+}, [categorizedOptions, state.selectedOptions]);  // ← PROBLEM: triggers on every dispatch
 ```
 
-This effect:
-- Runs whenever `localSelectedIds` changes (i.e., after every toggle)
-- Builds the selectedOptions array from the current selections
-- Dispatches to QuoteContext immediately
-- The bar's `useMemo` dependency on `state.selectedOptions` triggers a re-render
+After:
+```tsx
+// Use a ref to track if we've already initialized
+const initializedRef = useRef(false);
+
+useEffect(() => {
+  // Only initialize once when categorizedOptions loads
+  if (categorizedOptions && !initializedRef.current) {
+    initializedRef.current = true;
+    
+    const initialIds = new Set<string>();
+    categorizedOptions.required.forEach(opt => initialIds.add(opt.id));
+    state.selectedOptions?.forEach(opt => initialIds.add(opt.optionId));
+    categorizedOptions.recommended.forEach(opt => {
+      if (opt.is_included) initialIds.add(opt.id);
+    });
+    setLocalSelectedIds(initialIds);
+  }
+}, [categorizedOptions]); // ← Removed state.selectedOptions dependency
+```
 
 ---
 
-## Battery Choice Sync
+## Why This Works
 
-Similarly, sync the battery choice immediately so the bar updates when you select "Yes, include battery":
-
-```tsx
-// Sync battery choice to context for real-time bar updates
-useEffect(() => {
-  if (isElectricStart && batteryChoice !== null) {
-    dispatch({ 
-      type: 'SET_LOOSE_MOTOR_BATTERY', 
-      payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
-    });
-  }
-}, [batteryChoice, isElectricStart, dispatch]);
-```
+| Before | After |
+|--------|-------|
+| Effect A triggers on every `state.selectedOptions` change | Effect A only runs once when options load |
+| Effect B dispatches → triggers Effect A → loop | Effect B dispatches → Effect A doesn't re-run → no loop |
+| App crashes with max update depth error | Selections sync smoothly to bottom bar |
 
 ---
 
@@ -91,13 +82,5 @@ useEffect(() => {
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/OptionsPage.tsx` | Add two `useEffect` hooks to sync selections and battery choice to QuoteContext in real-time |
+| `src/pages/quote/OptionsPage.tsx` | Add `initializedRef` guard to prevent re-initialization on context updates |
 
----
-
-## Result
-
-- **Before**: Bar shows $2,999 (base motor) until you click Continue
-- **After**: Bar updates to $3,324 as soon as you tap SmartCraft Connect ($325)
-
-This makes the bottom bar a true "live companion" that reflects every choice as you make it.
