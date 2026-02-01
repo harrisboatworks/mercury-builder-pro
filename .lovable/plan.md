@@ -1,110 +1,155 @@
 
+# Handle Financing-Dependent Promo Options for Sub-$5K Motors
 
-# Fix Package Pricing and PDF Financing Threshold
+## The Problem
 
-## Overview
+Looking at the screenshot, both "6 Months No Payments" and "Factory Rebate" are showing for a 3.5HP motor that costs $1,548. The "6 Months No Payments" option is a **financing-dependent benefit** (deferred payment plan) that shouldn't be available for purchases under $5,000.
 
-Two bugs need fixing:
-1. **$191 warranty charge** appearing for Complete package when Get 7 promo already covers 7 years
-2. **Financing info** appearing in PDF for quotes under $5,000
+Currently, `PromoSelectionPage.tsx` only filters out "Special Financing" when the amount is below the $5,000 threshold, but "6 Months No Payments" also requires financing and should be filtered too.
 
----
+## Recommended Approach
 
-## Bug Analysis
+**Hide both financing-dependent options** ("no_payments" and "special_financing") for sub-$5K motors, leaving only the "Factory Rebate" as the available option.
 
-### Bug 1: Incorrect Warranty Extension Charge
+This is safer than auto-selecting because:
+- It's clear and honest - users see what's actually available
+- Avoids confusion when they expect to defer payments but can't
+- The rebate is genuinely valuable at any price point
+- Simpler UI with just one option for small motors
 
-**Root Cause**: Race condition between promotions loading and warranty cost calculation
+## Implementation
 
-The Summary page calls `getTotalWarrantyBonusYears()` to determine current coverage years. If the promotions haven't loaded yet:
-- `promoYears = 0` (should be 4 with Get 7)
-- `currentCoverageYears = 3` (should be 7)
-- `calculateWarrantyExtensionCost(HP, 3, 7)` returns $191
-- The accessory breakdown captures this stale value
+### File: `src/pages/quote/PromoSelectionPage.tsx`
 
-Even though the useEffect has `currentCoverageYears` as a dependency and re-runs when promos load, the `accessoryBreakdown` useMemo might capture the old `completeWarrantyCost` state before the async calculation completes.
-
-**Fix**: Add a guard to skip warranty extension cost if current coverage already meets or exceeds target:
-
-```tsx
-// QuoteSummaryPage.tsx, lines 390-397
-if (selectedPackage === 'better' && completeWarrantyCost > 0 && currentCoverageYears < COMPLETE_TARGET_YEARS) {
-  // Only add if we actually need to extend
-}
-```
-
-Additionally, ensure the `loading` state from `useActivePromotions` is checked before rendering the PDF.
-
-### Bug 2: Financing on Sub-$5000 Quotes
-
-**Root Cause**: `handleDownloadPDF` passes financing data unconditionally
-
-The PDF receives `monthlyPayment`, `financingTerm`, `financingRate`, and `financingQrCode` regardless of the total price. The template then displays "Financing Available" even for small motors.
-
-**Fix**: Conditionally pass financing fields only when `packageTotal >= FINANCING_MINIMUM`:
-
-```tsx
-// QuoteSummaryPage.tsx, around line 506-509
-...(packageTotal >= FINANCING_MINIMUM ? {
-  monthlyPayment,
-  financingTerm: termMonths,
-  financingRate,
-  financingQrCode: qrCodeDataUrl,
-} : {}),
-```
-
----
-
-## Changes
-
-### File: `src/pages/quote/QuoteSummaryPage.tsx`
-
-**Change 1**: Add guard to warranty breakdown (lines 390-397)
+**Change 1**: Rename eligibility flag to be more inclusive (lines 65-66)
 
 ```tsx
 // Before
-if (selectedPackage === 'better' && completeWarrantyCost > 0) {
+const isEligibleForSpecialFinancing = estimatedFinancingAmount >= FINANCING_MINIMUM;
 
-// After - also check we actually need extension
-if (selectedPackage === 'better' && completeWarrantyCost > 0 && currentCoverageYears < COMPLETE_TARGET_YEARS) {
+// After - applies to all financing-dependent options
+const isEligibleForFinancing = estimatedFinancingAmount >= FINANCING_MINIMUM;
 ```
 
-**Change 2**: Same for Premium package (lines 398-404)
+**Change 2**: Update filter to exclude both financing-dependent options (lines 95-103)
 
 ```tsx
-// Before  
-} else if (selectedPackage === 'best' && premiumWarrantyCost > 0) {
+// Before
+const eligibleOptions = useMemo(() => {
+  return options.filter(option => {
+    if (option.id === 'special_financing' && !isEligibleForSpecialFinancing) {
+      return false;
+    }
+    return true;
+  });
+}, [options, isEligibleForSpecialFinancing, rebateAmount, lowestRate]);
+
+// After - filter both financing-dependent options
+const eligibleOptions = useMemo(() => {
+  return options.filter(option => {
+    // Both "no_payments" and "special_financing" require financing eligibility
+    if ((option.id === 'no_payments' || option.id === 'special_financing') && !isEligibleForFinancing) {
+      return false;
+    }
+    return true;
+  });
+}, [options, isEligibleForFinancing, rebateAmount, lowestRate]);
+```
+
+**Change 3**: Update rate selector condition to use renamed variable (lines 407-408)
+
+```tsx
+// Before
+{selectedOption === 'special_financing' && isEligibleForSpecialFinancing && financingRates.length > 0 && (
 
 // After
-} else if (selectedPackage === 'best' && premiumWarrantyCost > 0 && currentCoverageYears < PREMIUM_TARGET_YEARS) {
+{selectedOption === 'special_financing' && isEligibleForFinancing && financingRates.length > 0 && (
 ```
 
-**Change 3**: Conditionally pass financing to PDF (lines 506-509)
+**Change 4**: Update auto-scroll effect dependency (line 121)
 
 ```tsx
 // Before
-monthlyPayment,
-financingTerm: termMonths,
-financingRate,
-financingQrCode: qrCodeDataUrl,
+if (hasUserInteracted && selectedOption === 'special_financing' && isEligibleForSpecialFinancing && rateSelectorRef.current) {
 
-// After - only include if total meets minimum
-...(packageTotal >= FINANCING_MINIMUM ? {
-  monthlyPayment,
-  financingTerm: termMonths,
-  financingRate,
-  financingQrCode: qrCodeDataUrl,
-} : {}),
+// After
+if (hasUserInteracted && selectedOption === 'special_financing' && isEligibleForFinancing && rateSelectorRef.current) {
+```
+
+### File: `src/components/quote-builder/PromoOptionSelector.tsx`
+
+Apply the same fix to the shared component (used elsewhere in the app):
+
+**Change 1**: Add financing eligibility check (around line 26)
+
+```tsx
+// Add after line 27
+import { FINANCING_MINIMUM } from '@/lib/finance';
+
+// Add after rebateAmount memo (around line 38)
+const isEligibleForFinancing = totalAmount >= FINANCING_MINIMUM;
+```
+
+**Change 2**: Filter options before rendering (modify line 147)
+
+```tsx
+// Before - renders all options
+{options.map((option) => {
+
+// After - filter to eligible options
+{options.filter(opt => {
+  if ((opt.id === 'no_payments' || opt.id === 'special_financing') && !isEligibleForFinancing) {
+    return false;
+  }
+  return true;
+}).map((option) => {
+```
+
+**Change 3**: Update recommended option logic (lines 46-57)
+
+```tsx
+// Before
+const recommendedOption = useMemo((): PromoOptionType => {
+  if (motorHP >= 150 && rebateAmount >= 500) {
+    return 'cash_rebate';
+  }
+  if (totalAmount >= 15000 && financingRates.length > 0) {
+    return 'special_financing';
+  }
+  return 'no_payments';
+}, [motorHP, rebateAmount, totalAmount, financingRates]);
+
+// After - only recommend eligible options
+const recommendedOption = useMemo((): PromoOptionType => {
+  // If not eligible for financing, only rebate is available
+  if (totalAmount < FINANCING_MINIMUM) {
+    return 'cash_rebate';
+  }
+  // High HP motors benefit most from rebate
+  if (motorHP >= 150 && rebateAmount >= 500) {
+    return 'cash_rebate';
+  }
+  // Large financed amounts benefit from lower rates
+  if (totalAmount >= 15000 && financingRates.length > 0) {
+    return 'special_financing';
+  }
+  return 'no_payments';
+}, [motorHP, rebateAmount, totalAmount, financingRates]);
 ```
 
 ---
 
-## Technical Notes
+## Expected Result
 
-- The warranty guard is a belt-and-suspenders fix that prevents the breakdown from including invalid line items even if a race condition occurs
-- The financing conditional uses the same `FINANCING_MINIMUM` constant already imported
-- No changes needed to the PDF template itself - it already conditionally renders based on presence of `monthlyPayment`
-- The footer terms we updated earlier are separate from the MSRP pricing section still showing "Installation and PDI included" - that appears to be in a different location in the PDF that wasn't covered in the previous update
+For a 3.5HP motor at $1,548:
+- Only **"Factory Rebate"** option is shown
+- The grid adjusts to single column for one option
+- User clearly sees their only available bonus
+- No confusion about deferred payments they can't actually use
+
+For motors over $5,000:
+- All three options remain available as before
+- No change to current behavior
 
 ---
 
@@ -112,14 +157,5 @@ financingQrCode: qrCodeDataUrl,
 
 | File | Changes |
 |------|---------|
-| `src/pages/quote/QuoteSummaryPage.tsx` | 1. Guard warranty breakdown conditions<br>2. Conditionally pass financing to PDF |
-
----
-
-## Expected Results
-
-After these fixes:
-- Complete package for Get 7 quotes shows `$0.00` warranty extension (or no warranty line at all)
-- Quotes under $5,000 omit the "Financing Available" section and QR code from PDF
-- No impact on quotes over $5,000 or non-promo quotes
-
+| `src/pages/quote/PromoSelectionPage.tsx` | 1. Rename `isEligibleForSpecialFinancing` to `isEligibleForFinancing`<br>2. Filter both `no_payments` and `special_financing`<br>3. Update rate selector condition<br>4. Update auto-scroll effect |
+| `src/components/quote-builder/PromoOptionSelector.tsx` | 1. Import `FINANCING_MINIMUM`<br>2. Add eligibility check<br>3. Filter options before rendering<br>4. Update recommended option logic |
