@@ -3,14 +3,14 @@ import { LineItemRow } from './LineItemRow';
 import { FinancingCallout } from './FinancingCallout';
 import { type PricingBreakdown } from '@/lib/quote-utils';
 import { FINANCING_MINIMUM } from '@/lib/finance';
-function formatTradeInLabel(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
-  if (!tradeInInfo) return "Estimated Trade Value";
+function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string | undefined {
+  if (!tradeInInfo) return undefined;
   
   const { brand, year, horsepower, model } = tradeInInfo;
   const parts = [year.toString(), brand, `${horsepower} HP`];
   if (model) parts.push(model);
   
-  return `Estimated Trade Value (${parts.join(' ')})`;
+  return parts.join(' ');
 }
 
 // Parse rebate value from string like "$500" to number
@@ -137,9 +137,10 @@ export function PricingTable({
             {/* Trade Value */}
             {tradeInValue > 0 && (
               <LineItemRow
-                label={formatTradeInLabel(tradeInInfo)}
+                label="Estimated Trade Value"
                 amount={tradeInValue}
                 isDiscount
+                description={formatTradeInDescription(tradeInInfo)}
                 className="pl-2 border-l-2 border-emerald-200"
               />
             )}
