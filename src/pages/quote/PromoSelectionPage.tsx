@@ -62,8 +62,8 @@ export default function PromoSelectionPage() {
     return (motorPrice * taxMultiplier) + dealerplanFee - tradeInValue;
   }, [state.motor, state.tradeInInfo]);
 
-  // Check if eligible for special financing
-  const isEligibleForSpecialFinancing = estimatedFinancingAmount >= FINANCING_MINIMUM;
+  // Check if eligible for financing-dependent options (no_payments and special_financing)
+  const isEligibleForFinancing = estimatedFinancingAmount >= FINANCING_MINIMUM;
 
   const options: PromoOption[] = [
     {
@@ -92,15 +92,16 @@ export default function PromoSelectionPage() {
     },
   ];
 
-  // Filter to only eligible options - hide special financing if not eligible
+  // Filter to only eligible options - hide financing-dependent options if not eligible
   const eligibleOptions = useMemo(() => {
     return options.filter(option => {
-      if (option.id === 'special_financing' && !isEligibleForSpecialFinancing) {
+      // Both "no_payments" and "special_financing" require financing eligibility
+      if ((option.id === 'no_payments' || option.id === 'special_financing') && !isEligibleForFinancing) {
         return false;
       }
       return true;
     });
-  }, [options, isEligibleForSpecialFinancing, rebateAmount, lowestRate]);
+  }, [options, isEligibleForFinancing, rebateAmount, lowestRate]);
 
   // Clear any persisted promo selection on mount - fresh choice each time
   useEffect(() => {
@@ -118,7 +119,7 @@ export default function PromoSelectionPage() {
 
   // Auto-scroll to rate selector ONLY after user explicitly selects special financing
   useEffect(() => {
-    if (hasUserInteracted && selectedOption === 'special_financing' && isEligibleForSpecialFinancing && rateSelectorRef.current) {
+    if (hasUserInteracted && selectedOption === 'special_financing' && isEligibleForFinancing && rateSelectorRef.current) {
       setTimeout(() => {
         rateSelectorRef.current?.scrollIntoView({ 
           behavior: 'smooth', 
@@ -126,7 +127,7 @@ export default function PromoSelectionPage() {
         });
       }, 150);
     }
-  }, [hasUserInteracted, selectedOption, isEligibleForSpecialFinancing]);
+  }, [hasUserInteracted, selectedOption, isEligibleForFinancing]);
 
   useEffect(() => {
     document.title = 'Choose Your Bonus | Mercury Get 7 Promotion';
@@ -405,7 +406,7 @@ export default function PromoSelectionPage() {
 
             {/* Rate/Term Selection for Special Financing */}
             <AnimatePresence>
-              {selectedOption === 'special_financing' && isEligibleForSpecialFinancing && financingRates.length > 0 && (
+              {selectedOption === 'special_financing' && isEligibleForFinancing && financingRates.length > 0 && (
                 <motion.div
                   ref={rateSelectorRef}
                   initial={{ opacity: 0, height: 0 }}

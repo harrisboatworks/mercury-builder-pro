@@ -6,6 +6,7 @@ import { Check, Clock, Percent, DollarSign, Sparkles, ChevronDown, ChevronUp } f
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { FINANCING_MINIMUM } from '@/lib/finance';
 
 export type PromoOptionType = 'no_payments' | 'special_financing' | 'cash_rebate';
 
@@ -42,8 +43,15 @@ export function PromoOptionSelector({
     return getSpecialFinancingRates() || [];
   }, [getSpecialFinancingRates]);
 
+  // Check if eligible for financing-dependent options
+  const isEligibleForFinancing = totalAmount >= FINANCING_MINIMUM;
+
   // Determine the best option for this customer
   const recommendedOption = useMemo((): PromoOptionType => {
+    // If not eligible for financing, only rebate is available
+    if (!isEligibleForFinancing) {
+      return 'cash_rebate';
+    }
     // High HP motors benefit most from rebate
     if (motorHP >= 150 && rebateAmount >= 500) {
       return 'cash_rebate';
@@ -54,7 +62,7 @@ export function PromoOptionSelector({
     }
     // Default to no payments for broad appeal
     return 'no_payments';
-  }, [motorHP, rebateAmount, totalAmount, financingRates]);
+  }, [motorHP, rebateAmount, totalAmount, financingRates, isEligibleForFinancing]);
 
   // Auto-select recommended if nothing selected
   useEffect(() => {
@@ -143,8 +151,20 @@ export function PromoOptionSelector({
         </Badge>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-3">
-        {options.map((option) => {
+      <div className={cn(
+        "grid gap-3",
+        // Adjust grid based on number of eligible options
+        options.filter(opt => !((opt.id === 'no_payments' || opt.id === 'special_financing') && !isEligibleForFinancing)).length === 1 
+          ? "sm:grid-cols-1 max-w-sm mx-auto" 
+          : "sm:grid-cols-3"
+      )}>
+        {options.filter(opt => {
+          // Filter out financing-dependent options if not eligible
+          if ((opt.id === 'no_payments' || opt.id === 'special_financing') && !isEligibleForFinancing) {
+            return false;
+          }
+          return true;
+        }).map((option) => {
           const isSelected = selectedOption === option.id;
           const isRecommended = recommendedOption === option.id;
           const isExpanded = expandedOption === option.id;
