@@ -25,40 +25,43 @@ export function ScrollToTop() {
       return;
     }
 
-    // Only catch actual modal dialogs, not tooltips/popovers/dropdowns
-    const modalSelectors = [
-      '[role="dialog"][data-state="open"]',  // Actual dialogs only
-      '.fixed.inset-0.z-50',  // Full-screen overlays
-      'div.fixed.inset-0[class*="z-"]'  // Any fixed overlay with z-index
-    ];
-    
-    const activeModals = document.querySelectorAll(modalSelectors.join(', '));
-    if (activeModals.length > 0) {
-      console.log('⏸️ ScrollToTop skipped - active modals found:', activeModals.length);
-      return;
-    }
-
-    // More specific modal detection - only check for full-screen modal overlays
-    const modalOverlays = document.querySelectorAll('.fixed.inset-0[class*="z-"], [role="dialog"][class*="fixed"]');
-    const visibleModals = Array.from(modalOverlays).filter(el => {
-      const computedStyle = window.getComputedStyle(el);
-      const zIndex = parseInt(computedStyle.zIndex);
-      // Only consider it a modal if it's:
-      // 1. High z-index (50+)
-      // 2. Fixed position
-      // 3. Full-screen overlay (inset-0) OR has dialog role
-      // 4. Actually visible (not display:none or opacity:0)
-      return (
-        zIndex >= 50 && 
-        computedStyle.position === 'fixed' &&
-        computedStyle.display !== 'none' &&
-        computedStyle.visibility !== 'hidden' &&
-        parseFloat(computedStyle.opacity) > 0
-      );
+    // Only block scroll for TRUE full-screen modal overlays
+    // Check for elements that:
+    // 1. Cover the entire viewport (inset: 0px on all sides)
+    // 2. Are fixed position
+    // 3. Are actually visible
+    // 4. Have high z-index (blocking other content)
+    const allFixed = document.querySelectorAll('.fixed, [style*="position: fixed"]');
+    const blockingModals = Array.from(allFixed).filter(el => {
+      const style = window.getComputedStyle(el);
+      
+      // Must be fixed position and visible
+      if (style.position !== 'fixed') return false;
+      if (style.display === 'none' || style.visibility === 'hidden') return false;
+      if (parseFloat(style.opacity) === 0) return false;
+      
+      // Must cover entire viewport (inset: 0 on all sides)
+      const isFullScreen = 
+        style.top === '0px' && 
+        style.right === '0px' && 
+        style.bottom === '0px' && 
+        style.left === '0px';
+      
+      if (!isFullScreen) return false;
+      
+      // Must have high z-index (modal-level)
+      const zIndex = parseInt(style.zIndex);
+      if (isNaN(zIndex) || zIndex < 40) return false;
+      
+      // Must have significant size (not a 0x0 hidden element)
+      const rect = el.getBoundingClientRect();
+      if (rect.width < 100 || rect.height < 100) return false;
+      
+      return true;
     });
 
-    if (visibleModals.length > 0) {
-      console.log('⏸️ ScrollToTop skipped - visible modal overlays detected:', visibleModals.length);
+    if (blockingModals.length > 0) {
+      console.log('⏸️ ScrollToTop skipped - blocking modal detected');
       return;
     }
 
