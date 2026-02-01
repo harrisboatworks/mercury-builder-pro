@@ -807,6 +807,67 @@ When a customer asks about reserving:
 `;
 }
 
+// ========== ACCESSORIES & MAINTENANCE GUIDE ==========
+export function formatAccessoriesGuide(): string {
+  const now = new Date().toISOString().split('T')[0];
+  
+  return `# Mercury Accessories & Maintenance Guide
+Updated: ${now}
+
+## SmartCraft Connect Mobile
+The SmartCraft Connect Mobile ($325) is a plug-and-play Bluetooth module that streams 
+live engine data to your smartphone. Compatible with Mercury outboards 40HP+ (2004 
+and newer) and 25-30HP (2022 and newer).
+
+### What It Shows
+- Real-time fuel consumption and range
+- Battery voltage monitoring
+- Maintenance reminders
+- GPS-based trip logging
+- Engine temperature and RPM
+
+### Who It's For
+Anyone who wants peace of mind on the water. Great for tracking fuel usage, 
+planning trips, and catching problems early.
+
+## Service & Maintenance Kits
+We stock genuine Mercury service kits matched to specific HP ranges:
+
+### 100-Hour Service Kits ($85-175)
+Contains everything for the 100-hour service interval:
+- Engine oil and filter
+- Gearcase oil
+- Spark plugs
+- Fuel filter
+
+Available for: Under 25HP, 40-60HP, 75-115HP, 150HP, 175-300HP
+
+### 300-Hour Service Kits ($150-350)
+Same as 100-hour PLUS water pump impeller and gaskets.
+Recommended every 300 hours or 3 years.
+
+### Oil Change Kits ($45-95)
+Quick DIY oil changes between full services.
+
+## Motor Covers
+Custom-fit covers protect your investment from UV, rain, and debris.
+Available for all HP ranges from portable motors to V8 engines.
+
+## Fuel Tank Options
+- 12L External Tank: $99-149 - Standard portable for smaller motors
+- 25L External Tank: $149-249 - Extended range for longer trips
+
+Note: Many motors 8-30HP already include a fuel tank. Check the quote builder.
+
+## How to Recommend
+When a customer asks about accessories, suggest:
+1. SmartCraft Connect Mobile for any EFI motor 8HP+ 
+2. The correct 100-Hour Service Kit for their HP range
+3. A motor cover for storage protection
+4. The Options page in the quote builder shows all compatible accessories
+`;
+}
+
 // Export all document generators
 export const KB_DOCUMENTS = {
   harris_guide: {
@@ -843,5 +904,10 @@ export const KB_DOCUMENTS = {
     name: "Reserving a Motor - Deposit Guide",
     generator: formatReservationGuide,
     description: "Deposit tiers, payment methods (Apple Pay, Google Pay, Link), and reservation policies"
+  },
+  accessories_guide: {
+    name: "Accessories & Maintenance Guide",
+    generator: formatAccessoriesGuide,
+    description: "SmartCraft Connect, service kits, motor covers, fuel tanks, and accessory recommendations"
   }
 };

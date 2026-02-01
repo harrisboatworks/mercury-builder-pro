@@ -523,6 +523,26 @@ export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
                 ))}
               </View>
             )}
+
+            {/* Recommended Accessories */}
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Recommended Accessories</Text>
+              <View style={styles.includedList}>
+                {hpNumber >= 8 && (
+                  <Text style={styles.includedItem}>
+                    ★ SmartCraft Connect Mobile - Live engine data to your phone
+                  </Text>
+                )}
+                <Text style={styles.includedItem}>
+                  ★ 100-Hour Service Kit - Complete maintenance in one box
+                </Text>
+                {hpNumber >= 25 && (
+                  <Text style={styles.includedItem}>
+                    ★ Motor Cover - UV and weather protection
+                  </Text>
+                )}
+              </View>
+            </View>
           </View>
         </View>
 

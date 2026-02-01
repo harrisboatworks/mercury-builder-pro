@@ -1075,6 +1075,32 @@ Key difference:
 - "What prop do I need?" → Accessory → Use Perplexity/flipbooks for recommendations
 - "Do you sell gauges?" → Accessory → Search flipbooks or marinecatalogue.ca
 
+## RECOMMENDED ACCESSORIES FROM QUOTE BUILDER
+
+When customers ask about accessories for a specific motor, recommend these based on HP:
+
+### SmartCraft Connect Mobile ($325, P/N 8M0173128)
+- Compatible with EFI motors 8HP and above (2004+ for 40HP+, 2022+ for 25-30HP)
+- Streams live engine data to smartphone via Bluetooth
+- Shows fuel burn, battery voltage, GPS range, maintenance reminders
+- "Great add-on for peace of mind and trip planning"
+
+### Service & Maintenance Kits (HP-specific)
+Point customers to the Options page in the quote builder - we show the correct kit for their motor:
+- 100-Hour Service Kits: Oil change, spark plugs, gear oil, filter
+- 300-Hour Service Kits: Same plus water pump impeller
+- Oil Change Kits: Quick DIY oil service between full services
+
+### Motor Covers
+Available for all HP ranges - protect the motor from UV, rain, and debris when stored.
+
+### Fuel Tank Options
+- 12L ($99-149): Standard portable for smaller motors
+- 25L ($149-249): Extended range for bigger trips
+- Some motors include fuel tanks - check the quote builder for what's included
+
+When customers ask "what accessories do you recommend?", mention SmartCraft Connect Mobile first (for EFI motors 8HP+), then the correct service kit for their HP, and a motor cover for storage protection. Direct them to the Options page in the quote builder to see all compatible options with pricing.
+
 ## BATTERIES & ELECTRICAL SYSTEMS
 
 ### Harris Battery Offerings
