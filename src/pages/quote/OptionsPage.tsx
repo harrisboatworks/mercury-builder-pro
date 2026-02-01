@@ -16,7 +16,7 @@ import { OptionDetailsModal } from '@/components/options/OptionDetailsModal';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 
 // Categories that should display as visual cards when they have images
-const VISUAL_CATEGORIES = ['electronics', 'accessory'];
+const VISUAL_CATEGORIES = ['electronics', 'accessory', 'maintenance'];
 
 function isVisualOption(option: MotorOption): boolean {
   return VISUAL_CATEGORIES.includes(option.category) && !!option.image_url;
