@@ -1,126 +1,130 @@
 
-# Fix Pages Loading Halfway Down
+# Enforce $5,000 Minimum for Financing Display
 
 ## The Problem
 
-When navigating between quote builder steps, the `ScrollToTop` component is skipping its scroll reset because it detects "active modals" that don't actually exist. The console logs prove this:
+Financing should only be offered for purchases of $5,000 or more. Currently, several components display monthly payment estimates regardless of the total amount, which could mislead customers with smaller purchases.
 
-```text
-🧭 ScrollToTop triggered by navigation: /quote/boat-info → /quote/trade-in
-⏸️ ScrollToTop skipped - active modals found: 1
-🧭 ScrollToTop triggered by navigation: /quote/trade-in → /quote/installation  
-⏸️ ScrollToTop skipped - active modals found: 1
-```
+**Components showing financing without threshold check:**
+- `FinancingCallout` - Shows "From $X/month" for any amount
+- `PricingTable` - Displays the financing section unconditionally
+- `GlobalStickyQuoteBar` - Shows monthly payment in the sticky bar
+- `StickyQuoteBar` - Displays monthly if passed to it
+- `UnifiedMobileBar` - Mobile equivalent
 
-This causes users to land partway down the new page instead of at the top.
-
-## Root Cause
-
-The modal detection in `ScrollToTop.tsx` uses selectors that match elements that aren't actually blocking modals:
-
-```tsx
-const modalSelectors = [
-  '[role="dialog"][data-state="open"]',  // ← Matches hidden/offscreen dialogs
-  '.fixed.inset-0.z-50',                  // ← Matches sticky footers
-  'div.fixed.inset-0[class*="z-"]'        // ← Too broad
-];
-```
-
-Elements that might trigger false positives:
-- Dialog components that are in the DOM but not visually open (have `data-state="open"` before animation completes or cleanup)
-- Tooltips, drawers, or other components with `role="dialog"`
-- Sticky footer bars with `z-50` classes
+---
 
 ## Solution
 
-Simplify the modal detection to be more precise - only skip scroll-to-top for **truly blocking full-screen overlays** that cover the entire viewport and are actually visible.
+Add a centralized financing minimum constant and enforce it everywhere financing is displayed.
 
-### File: `src/components/ui/ScrollToTop.tsx`
+### 1. Add constant to finance.ts
 
-**Key changes:**
+**File:** `src/lib/finance.ts`
 
-1. **Remove overly broad selectors** - The current selectors match too many false positives
-2. **Add proper inset-0 check** - Only elements with `inset: 0` (covering the whole screen) should block scroll
-3. **Ignore small/partial elements** - Elements that don't cover the viewport shouldn't block scroll
-4. **Add logging for debugging** - Log what elements are being detected to help troubleshoot
-
-**Before (lines 28-63):**
-```tsx
-// Only catch actual modal dialogs, not tooltips/popovers/dropdowns
-const modalSelectors = [
-  '[role="dialog"][data-state="open"]',  // Actual dialogs only
-  '.fixed.inset-0.z-50',  // Full-screen overlays
-  'div.fixed.inset-0[class*="z-"]'  // Any fixed overlay with z-index
-];
-
-const activeModals = document.querySelectorAll(modalSelectors.join(', '));
-if (activeModals.length > 0) {
-  console.log('⏸️ ScrollToTop skipped - active modals found:', activeModals.length);
-  return;
-}
-
-// More specific modal detection...
-const modalOverlays = document.querySelectorAll('.fixed.inset-0[class*="z-"], [role="dialog"][class*="fixed"]');
-const visibleModals = Array.from(modalOverlays).filter(el => {
-  ...
-});
+```typescript
+/**
+ * Minimum amount eligible for financing
+ */
+export const FINANCING_MINIMUM = 5000;
 ```
 
-**After:**
-```tsx
-// Only block scroll for TRUE full-screen modal overlays
-// Check for elements that:
-// 1. Cover the entire viewport (inset: 0px 0px 0px 0px)
-// 2. Are fixed position
-// 3. Are actually visible
-// 4. Have high z-index (blocking other content)
-const allFixed = document.querySelectorAll('[style*="position: fixed"], .fixed');
-const blockingModals = Array.from(allFixed).filter(el => {
-  const style = window.getComputedStyle(el);
-  
-  // Must be fixed position and visible
-  if (style.position !== 'fixed') return false;
-  if (style.display === 'none' || style.visibility === 'hidden') return false;
-  if (parseFloat(style.opacity) === 0) return false;
-  
-  // Must cover entire viewport (inset: 0 on all sides)
-  const isFullScreen = 
-    style.top === '0px' && 
-    style.right === '0px' && 
-    style.bottom === '0px' && 
-    style.left === '0px';
-  
-  if (!isFullScreen) return false;
-  
-  // Must have high z-index (modal-level)
-  const zIndex = parseInt(style.zIndex);
-  if (isNaN(zIndex) || zIndex < 40) return false;
-  
-  // Extra check: Must have significant size (not a 0x0 hidden element)
-  const rect = el.getBoundingClientRect();
-  if (rect.width < 100 || rect.height < 100) return false;
-  
-  return true;
-});
+This creates a single source of truth, replacing the scattered `SPECIAL_FINANCING_MIN_AMOUNT` constants.
 
-if (blockingModals.length > 0) {
-  console.log('⏸️ ScrollToTop skipped - blocking modal detected');
-  return;
+### 2. Update FinancingCallout to hide when below minimum
+
+**File:** `src/components/quote-builder/FinancingCallout.tsx`
+
+```typescript
+import { FINANCING_MINIMUM } from '@/lib/finance';
+
+export function FinancingCallout({ totalPrice, onApplyForFinancing }) {
+  // Don't show financing for purchases under $5,000
+  if (totalPrice < FINANCING_MINIMUM) {
+    return null;
+  }
+  
+  // ... rest of component
 }
 ```
 
-This ensures only **actual full-screen blocking overlays** (like modal backdrops) prevent scroll-to-top, not sticky bars, toasts, or other fixed UI elements.
+### 3. Update PricingTable to conditionally show financing section
+
+**File:** `src/components/quote-builder/PricingTable.tsx`
+
+```typescript
+import { FINANCING_MINIMUM } from '@/lib/finance';
+
+// In the component, wrap the financing section:
+{pricing.total >= FINANCING_MINIMUM && (
+  <div className="mt-6 mb-4 pt-6 border-t border-gray-200 space-y-2">
+    <div className="text-sm text-gray-600 font-normal">
+      Flexible financing available
+    </div>
+    <FinancingCallout totalPrice={pricing.total} ... />
+    ...
+  </div>
+)}
+```
+
+### 4. Update GlobalStickyQuoteBar
+
+**File:** `src/components/quote/GlobalStickyQuoteBar.tsx`
+
+```typescript
+import { FINANCING_MINIMUM } from '@/lib/finance';
+
+const monthlyPayment = useMemo(() => {
+  // Don't calculate for amounts below minimum
+  if (!runningTotal || runningTotal < FINANCING_MINIMUM) return null;
+  
+  // ... rest of calculation
+}, [runningTotal, promo]);
+```
+
+### 5. Update UnifiedMobileBar
+
+**File:** `src/components/quote-builder/UnifiedMobileBar.tsx`
+
+```typescript
+import { FINANCING_MINIMUM } from '@/lib/finance';
+
+const monthlyPayment = useMemo(() => {
+  // Don't show financing for purchases under $5,000
+  if (!runningTotal || runningTotal < FINANCING_MINIMUM) return 0;
+  
+  // ... rest of calculation
+}, [runningTotal, promo]);
+```
+
+### 6. Clean up duplicate constants
+
+Remove the scattered `SPECIAL_FINANCING_MIN_AMOUNT = 5000` from:
+- `src/components/financing/PurchaseDetailsStep.tsx` (line 17)
+- `src/pages/quote/PromoSelectionPage.tsx` (line 32)
+
+Replace with import from `@/lib/finance`.
+
+---
 
 ## Files to Modify
 
 | File | Change |
 |------|--------|
-| `src/components/ui/ScrollToTop.tsx` | Replace modal detection with more precise full-screen overlay check |
+| `src/lib/finance.ts` | Add `FINANCING_MINIMUM = 5000` constant |
+| `src/components/quote-builder/FinancingCallout.tsx` | Return null if below minimum |
+| `src/components/quote-builder/PricingTable.tsx` | Conditionally render financing section |
+| `src/components/quote/GlobalStickyQuoteBar.tsx` | Return null for monthly if below minimum |
+| `src/components/quote-builder/UnifiedMobileBar.tsx` | Return 0 for monthly if below minimum |
+| `src/components/financing/PurchaseDetailsStep.tsx` | Import constant from finance.ts |
+| `src/pages/quote/PromoSelectionPage.tsx` | Import constant from finance.ts |
+
+---
 
 ## Result
 
 | Before | After |
 |--------|-------|
-| Pages load halfway down or at bottom | Pages always start at the top |
-| False positives from sticky bars and toasts | Only true modal overlays block scroll reset |
-| Frustrating UX requiring manual scroll up | Clean, expected navigation behavior |
+| Shows "From $X/mo" for a $2,000 motor | No financing displayed |
+| Inconsistent thresholds across files | Single source of truth in finance.ts |
+| Could mislead customers on small purchases | Clear that financing requires $5,000+ |
