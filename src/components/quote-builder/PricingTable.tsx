@@ -125,32 +125,44 @@ export function PricingTable({
           </div>
         )}
 
-        {/* Estimated Trade Value */}
-        {tradeInValue > 0 && (
-          <LineItemRow
-            label={formatTradeInLabel(tradeInInfo)}
-            amount={tradeInValue}
-            isDiscount
-            className="pt-2"
-          />
-        )}
-
-        {/* Promotional Savings - Show ONE consolidated line */}
-        {pricing.promoValue > 0 && (
-          <LineItemRow
-            label={
-              selectedPromoOption === 'no_payments' 
-                ? '7 Years Warranty + 6 Mo No Payments'
-                : selectedPromoOption === 'special_financing'
-                ? `7 Years Warranty + ${selectedPromoValue || '2.99%'} APR`
-                : selectedPromoOption === 'cash_rebate'
-                ? `7 Years Warranty + ${selectedPromoValue} Rebate`
-                : 'Promotional Savings'
-            }
-            amount={pricing.promoValue}
-            isDiscount
-            description={selectedPromoOption ? "Mercury GET 7 Promotion" : undefined}
-          />
+        {/* Your Savings Section - only show if there are savings */}
+        {(tradeInValue > 0 || pricing.promoValue > 0) && (
+          <div className="space-y-1 pt-3">
+            <div className="flex items-center gap-2 py-1 border-t border-dashed border-emerald-200">
+              <span className="text-xs font-medium text-emerald-600 uppercase tracking-wide">
+                Your Savings
+              </span>
+            </div>
+            
+            {/* Trade Value */}
+            {tradeInValue > 0 && (
+              <LineItemRow
+                label={formatTradeInLabel(tradeInInfo)}
+                amount={tradeInValue}
+                isDiscount
+                className="pl-2 border-l-2 border-emerald-200"
+              />
+            )}
+            
+            {/* Promotional Savings */}
+            {pricing.promoValue > 0 && (
+              <LineItemRow
+                label={
+                  selectedPromoOption === 'no_payments' 
+                    ? '7 Years Warranty + 6 Mo No Payments'
+                    : selectedPromoOption === 'special_financing'
+                    ? `7 Years Warranty + ${selectedPromoValue || '2.99%'} APR`
+                    : selectedPromoOption === 'cash_rebate'
+                    ? `7 Years Warranty + ${selectedPromoValue} Rebate`
+                    : 'Promotional Savings'
+                }
+                amount={pricing.promoValue}
+                isDiscount
+                description="Mercury GET 7 Promotion"
+                className="pl-2 border-l-2 border-emerald-200"
+              />
+            )}
+          </div>
         )}
 
         {/* Subtotal */}
@@ -195,12 +207,7 @@ export function PricingTable({
       {/* Summary Note */}
       <div className="pt-4 border-t border-border/50">
         <div className="text-xs text-muted-foreground">
-          All prices in Canadian dollars.{includesInstallation && ' Installation and PDI included.'}
-          {tradeInValue > 0 && (
-            <span className="block mt-1">
-              *Estimated trade value subject to physical inspection.
-            </span>
-          )}
+          All prices in Canadian dollars. Installation, rigging, and trade-in values subject to inspection and verification.
           {pricing.savings > 0 && (
             <span className="block mt-1 text-green-600 font-medium">
               Total savings of ${pricing.savings.toLocaleString()} vs MSRP
