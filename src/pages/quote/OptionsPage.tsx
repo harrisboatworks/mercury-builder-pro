@@ -247,13 +247,15 @@ export default function OptionsPage() {
     <QuoteLayout>
       <div className="container mx-auto px-4 py-8 max-w-5xl pb-32">
         {/* Compact Header with Mobile Back */}
-        <div className="mb-4 flex items-center gap-3">
+        <div className="mb-4">
+          {/* Mobile Back Button - Premium Style */}
           <button 
             onClick={handleBack}
-            className="md:hidden p-2 -ml-2 text-muted-foreground hover:text-foreground"
+            className="md:hidden flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px] mb-2"
             aria-label="Back to motor selection"
           >
             <ChevronLeft className="h-5 w-5" />
+            <span className="text-sm font-medium">Back</span>
           </button>
           <p className="text-muted-foreground">
             Options for your {state.motor?.model || 'motor'}
