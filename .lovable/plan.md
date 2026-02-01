@@ -1,159 +1,166 @@
 
-
-# Polish Quote Summary - Final Refinements
+# Sync PDF Template with Quote Summary UI Updates
 
 ## Overview
 
-Five targeted improvements to polish the pricing breakdown UX:
-
-1. Unify MSRP row styling with LineItemRow
-2. Shorten promo labels with details in description
-3. Add subtle green highlight to total savings callout
-4. Change "Dealer Discount" to "Your Discount"
-5. Remove motor name redundancy from MSRP line
+Update `ProfessionalQuotePDF.tsx` to match the five refinements we made to the web UI in `PricingTable.tsx`.
 
 ---
 
 ## Changes
 
-### 1. Unify MSRP Row Styling
+### 1. Remove Redundant Motor Name from MSRP
 
-**Current (lines 73-81):**
-```tsx
-<div className="flex items-baseline justify-between">
-  <div className="text-muted-foreground">
-    MSRP - {motorName}
-  </div>
-  <div className="text-right">
-    <s className="text-muted-foreground">${pricing.msrp.toLocaleString()}</s>
-  </div>
-</div>
-```
-
-**Updated:**
-Use a simpler "MSRP" label since the motor name is already shown in the header above. Keep the strikethrough styling.
+**File:** `src/components/quote-pdf/ProfessionalQuotePDF.tsx`  
+**Line 613**
 
 ```tsx
-<div className="flex items-baseline justify-between py-2">
-  <div className="text-sm text-muted-foreground">MSRP</div>
-  <div className="text-right">
-    <s className="text-muted-foreground">${pricing.msrp.toLocaleString()}</s>
-  </div>
-</div>
+// Before
+<Text style={styles.pricingLabel}>MSRP - {quoteData.productName}</Text>
+
+// After
+<Text style={styles.pricingLabel}>MSRP</Text>
 ```
 
 ---
 
-### 2. Shorten Promo Labels
+### 2. Personalize Discount Label
 
-**Current (lines 148-157):**
+**Line 618**
+
 ```tsx
-label={
-  selectedPromoOption === 'no_payments' 
-    ? '7 Years Warranty + 6 Mo No Payments'
-    : selectedPromoOption === 'special_financing'
-    ? `7 Years Warranty + ${selectedPromoValue || '2.99%'} APR`
-    : selectedPromoOption === 'cash_rebate'
-    ? `7 Years Warranty + ${selectedPromoValue} Rebate`
-    : 'Promotional Savings'
+// Before
+<Text style={styles.pricingLabel}>Dealer Discount</Text>
+
+// After
+<Text style={styles.pricingLabel}>Your Discount</Text>
+```
+
+---
+
+### 3. Shorten Promo Labels
+
+**Lines 633-641**
+
+```tsx
+// Before
+<Text style={styles.pricingLabel}>
+  {quoteData.selectedPromoOption === 'no_payments'
+    ? 'Mercury GET 7 + 6 Mo No Payments'
+    : quoteData.selectedPromoOption === 'special_financing'
+    ? `Mercury GET 7 + ${quoteData.selectedPromoValue || '2.99%'} APR`
+    : quoteData.selectedPromoOption === 'cash_rebate'
+    ? `Mercury GET 7 + ${quoteData.selectedPromoValue || ''} Rebate`
+    : 'Mercury GET 7 Promotion'}
+</Text>
+
+// After - two-line layout
+<View style={{ flex: 1 }}>
+  <Text style={styles.pricingLabel}>
+    {quoteData.selectedPromoOption === 'no_payments'
+      ? '7-Year Warranty + No Payments'
+      : quoteData.selectedPromoOption === 'special_financing'
+      ? `7-Year Warranty + ${quoteData.selectedPromoValue || '2.99%'} APR`
+      : quoteData.selectedPromoOption === 'cash_rebate'
+      ? `7-Year Warranty + ${quoteData.selectedPromoValue} Rebate`
+      : 'Promotional Savings'}
+  </Text>
+  <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
+    Mercury GET 7 Promotion
+  </Text>
+</View>
+```
+
+---
+
+### 4. Trade-In on Two Lines
+
+**Lines 5-13 and 684-689**
+
+Update the helper function and rendering:
+
+```tsx
+// Lines 5-13: Simplify formatTradeInLabel to just return the label
+function formatTradeInLabel(): string {
+  return "Estimated Trade Value";
 }
-```
 
-**Updated:**
-Shorter labels, move promo name to description:
-
-```tsx
-label={
-  selectedPromoOption === 'no_payments' 
-    ? '7-Year Warranty + No Payments'
-    : selectedPromoOption === 'special_financing'
-    ? `7-Year Warranty + ${selectedPromoValue || '2.99%'} APR`
-    : selectedPromoOption === 'cash_rebate'
-    ? `7-Year Warranty + ${selectedPromoValue} Rebate`
-    : 'Promotional Savings'
+// Add new helper for description
+function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
+  if (!tradeInInfo) return "";
+  const { brand, year, horsepower, model } = tradeInInfo;
+  const parts = [year.toString(), brand, `${horsepower} HP`];
+  if (model) parts.push(model);
+  return parts.join(' ');
 }
-description="Mercury GET 7 Promotion"
+
+// Lines 684-689: Update the trade-in row
+<View style={styles.pricingRow}>
+  <View style={{ flex: 1 }}>
+    <Text style={styles.pricingLabel}>Estimated Trade Value</Text>
+    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
+      {formatTradeInDescription(quoteData.tradeInInfo)}
+    </Text>
+  </View>
+  <Text style={[styles.pricingValue, styles.discountValue]}>
+    -${quoteData.tradeInValue.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+  </Text>
+</View>
 ```
 
 ---
 
-### 3. Highlight Total Savings Callout
+### 5. Consolidate Footer Terms
 
-**Current (lines 199-201):**
-```tsx
-<span className="block mt-1 text-green-600 font-medium">
-  Total savings of ${pricing.savings.toLocaleString()} vs MSRP
-</span>
-```
-
-**Updated:**
-Add subtle green background pill for more visual prominence:
+**Lines 871-886**
 
 ```tsx
-<span className="inline-block mt-2 px-2 py-1 bg-emerald-50 text-emerald-700 rounded-md text-xs font-semibold">
-  Total savings of ${pricing.savings.toLocaleString()} vs MSRP
-</span>
+// Before - multiple separate bullets
+<View style={styles.termsSection}>
+  <Text style={styles.termsText}>
+    • This quote is valid for 30 days from date of issue • Prices subject to change without notice after expiry
+  </Text>
+  <Text style={styles.termsText}>
+    • {quoteData.includesInstallation ? 'Installation and PDI included • ' : ''}All prices in Canadian dollars
+  </Text>
+  {quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
+    <Text style={styles.termsText}>
+      • *Estimated trade values subject to physical inspection
+    </Text>
+  )}
+  ...
+</View>
+
+// After - consolidated with clearer language
+<View style={styles.termsSection}>
+  <Text style={styles.termsText}>
+    • This quote is valid for 30 days from date of issue • Prices subject to change without notice after expiry
+  </Text>
+  <Text style={styles.termsText}>
+    • All prices in Canadian dollars • Installation, rigging, and trade-in values subject to inspection and verification
+  </Text>
+  <Text style={styles.termsText}>
+    • Financing options available subject to credit approval • Ask your sales representative for details
+  </Text>
+</View>
 ```
 
 ---
 
-### 4. Personalize Dealer Discount Label
-
-**Current (line 86):**
-```tsx
-label="Dealer Discount"
-```
-
-**Updated:**
-```tsx
-label="Your Discount"
-```
-
----
-
-### 5. Remove Redundant Motor Name from MSRP
-
-The motor name already appears in the header section (lines 58-61). Showing it again in "MSRP - Mercury 150HP FourStroke" is redundant.
-
-**Current:** `MSRP - {motorName}`
-**Updated:** `MSRP`
-
----
-
-## File to Modify
+## Files to Modify
 
 | File | Changes |
 |------|---------|
-| `src/components/quote-builder/PricingTable.tsx` | All 5 refinements above |
+| `src/components/quote-pdf/ProfessionalQuotePDF.tsx` | 1. Remove motor name from MSRP line<br>2. "Dealer Discount" to "Your Discount"<br>3. Shorten promo labels with description line<br>4. Trade-in motor info on second line<br>5. Consolidate footer terms |
 
 ---
 
-## Visual Result
+## Summary
 
-```
-┌─────────────────────────────────────────┐
-│  Pricing Breakdown                      │
-│  Mercury 150HP FourStroke               │
-│  Complete cost breakdown for your quote │
-├─────────────────────────────────────────┤
-│  MSRP                          $12,999  │  ← Cleaner, no redundant name
-│  Your Discount                 −$1,500  │  ← Personalized
-│  Special Discount                −$200  │
-│  Motor Price                   $11,299  │
-├─────────────────────────────────────────┤
-│  YOUR SAVINGS                           │
-│  ├─ Estimated Trade Value      −$2,400  │
-│  │   2020 Yamaha 20 HP                  │
-│  └─ 7-Year Warranty + $250     −$250    │  ← Shorter label
-│      Mercury GET 7 Promotion            │
-├─────────────────────────────────────────┤
-│  Subtotal                      $8,649   │
-│  HST (13%)                     $1,124   │
-│  Total Price                   $9,773   │
-├─────────────────────────────────────────┤
-│  ┌──────────────────────────────────┐   │
-│  │ Total savings of $3,226 vs MSRP │   │  ← Green pill highlight
-│  └──────────────────────────────────┘   │
-└─────────────────────────────────────────┘
-```
+These changes ensure the PDF output matches the polished quote summary UI:
 
+- Cleaner MSRP label without redundant motor name
+- Personalized "Your Discount" wording
+- Shorter promo labels with "Mercury GET 7 Promotion" as subtitle
+- Trade-in motor details on dedicated second line (no awkward wrapping)
+- Consolidated footer disclaimer matching the web UI
