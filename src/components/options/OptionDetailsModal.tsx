@@ -55,6 +55,7 @@ export function OptionDetailsModal({
             <img 
               src={option.image_url} 
               alt={option.name}
+              onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/placeholder.svg'; }}
               className="w-full h-full object-cover"
             />
           </AspectRatio>
