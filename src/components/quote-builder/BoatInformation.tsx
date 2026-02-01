@@ -643,12 +643,6 @@ export const BoatInformation = ({
                     </div>}
 
 
-                  {/* Quick Skip */}
-                  <div className="skip-option">
-                    <Button type="button" variant="ghost" size="sm" onClick={handleSkip} className="button-text-protected hover:opacity-80">
-                      Skip this step - Use typical settings for {hp || selectedMotor?.hp || '--'}HP
-                    </Button>
-                  </div>
 
                    {/* Boat Details Section - Shows after boat type is selected */}
                    {boatInfo.type && boatInfo.type !== 'motor-only' && <div ref={lengthSectionRef} className="boat-details-section animate-fade-in mt-6 p-6 bg-muted/30 rounded-lg border border-border">
@@ -1033,9 +1027,6 @@ export const BoatInformation = ({
           )}
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 order-1 sm:order-2">
-            {currentStep < totalSteps - 1 && <Button type="button" variant="ghost" onClick={handleSkip} className="text-sm min-h-[44px] font-light button-text-protected hover:opacity-80">
-                Skip for now
-              </Button>}
             
             {currentStep === totalSteps - 1 ? <Button type="submit" className="border-2 border-gray-900 bg-gray-900 text-white px-8 py-4 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-white hover:text-gray-900 transition-all duration-500" disabled={!canNext()}>
                 Continue to Quote
