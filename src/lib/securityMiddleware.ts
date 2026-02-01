@@ -177,46 +177,36 @@ export class SecurityManager {
     }
   }
 
-  // Enhanced input sanitization with comprehensive security checks
+  // Focused input sanitization - removes actual security threats without breaking valid input
+  // Note: This is a client-side defense layer; server-side validation via Zod + RLS is the primary protection
   static sanitizeInput(input: any): any {
     if (typeof input === 'string') {
       return input
-        // Remove script tags and javascript protocols
+        // Remove script tags and dangerous protocols (actual XSS vectors)
         .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
         .replace(/<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi, '')
         .replace(/javascript:|data:text\/html|vbscript:/gi, '')
-        // Remove event handlers
+        // Remove event handlers (onclick, onerror, etc.)
         .replace(/on\w+\s*=/gi, '')
-        // Remove potentially dangerous attributes
+        // Remove dangerous attributes
         .replace(/srcdoc\s*=/gi, '')
         .replace(/formaction\s*=/gi, '')
-        // Enhanced SQL injection prevention
-        .replace(/(\b(union|select|insert|update|delete|drop|create|alter|exec|execute|script|iframe)\b)/gi, '')
-        .replace(/(\-\-|\#|\/\*|\*\/|;)/g, '')
-        // Remove dangerous characters for XSS prevention
-        .replace(/[<>'"`;(){}]/g, '')
-        // Escape HTML entities
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#x27;')
-        // Remove null bytes and control characters
+        // Remove null bytes and control characters (can break parsing)
         .replace(/\0/g, '')
         .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '')
         .trim()
-        .slice(0, 1000); // Limit length
+        .slice(0, 10000); // Generous length limit for descriptions
     }
     
     if (Array.isArray(input)) {
-      return input.slice(0, 100).map(item => this.sanitizeInput(item)); // Limit array size
+      return input.slice(0, 100).map(item => this.sanitizeInput(item));
     }
     
     if (typeof input === 'object' && input !== null) {
       const sanitized: any = {};
       let count = 0;
       for (const [key, value] of Object.entries(input)) {
-        if (count >= 50) break; // Limit object size
+        if (count >= 100) break;
         const sanitizedKey = this.sanitizeInput(key);
         if (typeof sanitizedKey === 'string' && sanitizedKey.length > 0) {
           sanitized[sanitizedKey] = this.sanitizeInput(value);
