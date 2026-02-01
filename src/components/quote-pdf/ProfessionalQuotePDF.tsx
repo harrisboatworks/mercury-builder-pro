@@ -2,14 +2,12 @@ import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
-function formatTradeInLabel(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
-  if (!tradeInInfo) return "Estimated Trade Value";
-  
+function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
+  if (!tradeInInfo) return "";
   const { brand, year, horsepower, model } = tradeInInfo;
   const parts = [year.toString(), brand, `${horsepower} HP`];
   if (model) parts.push(model);
-  
-  return `Estimated Trade Value (${parts.join(' ')})`;
+  return parts.join(' ');
 }
 
 // Import logos
@@ -610,12 +608,12 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               
               {/* Motor Pricing */}
               <View style={styles.pricingRow}>
-                <Text style={styles.pricingLabel}>MSRP - {quoteData.productName}</Text>
+                <Text style={styles.pricingLabel}>MSRP</Text>
                 <Text style={[styles.pricingValue, styles.strikethrough]}>${quoteData.msrp}</Text>
               </View>
               
               <View style={styles.pricingRow}>
-                <Text style={styles.pricingLabel}>Dealer Discount</Text>
+                <Text style={styles.pricingLabel}>Your Discount</Text>
                 <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.dealerDiscount}</Text>
               </View>
               
@@ -630,15 +628,20 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               
               {parseFloat(quoteData.promoSavings) > 0 && (
                 <View style={styles.pricingRow}>
-                  <Text style={styles.pricingLabel}>
-                    {quoteData.selectedPromoOption === 'no_payments'
-                      ? 'Mercury GET 7 + 6 Mo No Payments'
-                      : quoteData.selectedPromoOption === 'special_financing'
-                      ? `Mercury GET 7 + ${quoteData.selectedPromoValue || '2.99%'} APR`
-                      : quoteData.selectedPromoOption === 'cash_rebate'
-                      ? `Mercury GET 7 + ${quoteData.selectedPromoValue || ''} Rebate`
-                      : 'Mercury GET 7 Promotion'}
-                  </Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={styles.pricingLabel}>
+                      {quoteData.selectedPromoOption === 'no_payments'
+                        ? '7-Year Warranty + No Payments'
+                        : quoteData.selectedPromoOption === 'special_financing'
+                        ? `7-Year Warranty + ${quoteData.selectedPromoValue || '2.99%'} APR`
+                        : quoteData.selectedPromoOption === 'cash_rebate'
+                        ? `7-Year Warranty + ${quoteData.selectedPromoValue} Rebate`
+                        : 'Promotional Savings'}
+                    </Text>
+                    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
+                      Mercury GET 7 Promotion
+                    </Text>
+                  </View>
                   <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.promoSavings}</Text>
                 </View>
               )}
@@ -682,7 +685,12 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 && quoteData.tradeInInfo.brand
                 && quoteData.tradeInInfo.year > 0 && (
                 <View style={styles.pricingRow}>
-                  <Text style={styles.pricingLabel}>{formatTradeInLabel(quoteData.tradeInInfo)}</Text>
+                  <View style={{ flex: 1 }}>
+                    <Text style={styles.pricingLabel}>Estimated Trade Value</Text>
+                    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
+                      {formatTradeInDescription(quoteData.tradeInInfo)}
+                    </Text>
+                  </View>
                   <Text style={[styles.pricingValue, styles.discountValue]}>
                     -${quoteData.tradeInValue.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                   </Text>
@@ -873,13 +881,8 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             • This quote is valid for 30 days from date of issue • Prices subject to change without notice after expiry
           </Text>
           <Text style={styles.termsText}>
-            • {quoteData.includesInstallation ? 'Installation and PDI included • ' : ''}All prices in Canadian dollars
+            • All prices in Canadian dollars • Installation, rigging, and trade-in values subject to inspection and verification
           </Text>
-          {quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
-            <Text style={styles.termsText}>
-              • *Estimated trade values subject to physical inspection
-            </Text>
-          )}
           <Text style={styles.termsText}>
             • Financing options available subject to credit approval • Ask your sales representative for details
           </Text>
