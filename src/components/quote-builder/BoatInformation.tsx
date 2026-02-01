@@ -994,7 +994,7 @@ export const BoatInformation = ({
                                 <span>I have a compatible propeller from my old {hp}HP motor</span>
                               </label>
                               {!boatInfo.hasCompatibleProp && <div className="cost-note text-sm text-protected-primary">
-                                  +${hp >= 150 ? '950 (Stainless Steel)' : '350 (Aluminum)'}
+                                  +${hp >= 150 ? '1,200 (Stainless Steel)' : '350 (Aluminum)'}
                                   <small className="block text-xs text-protected-muted">Fit and Size determined to be confirmed at inspection</small>
                                 </div>}
                             </div>}
