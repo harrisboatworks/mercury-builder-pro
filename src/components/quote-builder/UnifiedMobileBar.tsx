@@ -10,7 +10,7 @@ import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
-import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
@@ -473,10 +473,12 @@ export const UnifiedMobileBar: React.FC = () => {
     prevSavingsRef.current = currentSavings;
   }, [currentSavings, triggerHaptic]);
 
-  // Calculate monthly payment
+  // Calculate monthly payment - only for amounts >= $5,000
   const monthlyPayment = useMemo(() => {
     if (!runningTotal) return 0;
     const priceWithHST = runningTotal * 1.13;
+    // Don't show financing for purchases under minimum
+    if (priceWithHST < FINANCING_MINIMUM) return 0;
     const priceWithFee = priceWithHST + DEALERPLAN_FEE;
     const promoRate = promo?.rate || null;
     const { payment } = calculateMonthlyPayment(priceWithFee, promoRate);

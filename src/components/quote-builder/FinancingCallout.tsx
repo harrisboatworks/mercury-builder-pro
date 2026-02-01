@@ -1,5 +1,5 @@
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
-import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { useMemo } from 'react';
 
 interface FinancingCalloutProps {
@@ -8,6 +8,11 @@ interface FinancingCalloutProps {
 }
 
 export function FinancingCallout({ totalPrice, onApplyForFinancing }: FinancingCalloutProps) {
+  // Don't show financing for purchases under $5,000
+  if (totalPrice < FINANCING_MINIMUM) {
+    return null;
+  }
+  
   const { promo } = useActiveFinancingPromo();
   
   const financingDetails = useMemo(() => {

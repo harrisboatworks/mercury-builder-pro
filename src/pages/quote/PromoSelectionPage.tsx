@@ -10,7 +10,7 @@ import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { cn } from '@/lib/utils';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { PageTransition } from '@/components/ui/page-transition';
-import { calculateMonthly } from '@/lib/finance';
+import { calculateMonthly, FINANCING_MINIMUM } from '@/lib/finance';
 
 type PromoOptionId = 'no_payments' | 'special_financing' | 'cash_rebate';
 
@@ -28,8 +28,6 @@ interface FinancingRate {
   rate: number;
 }
 
-// Minimum financing amount for special financing eligibility
-const SPECIAL_FINANCING_MIN_AMOUNT = 5000;
 
 export default function PromoSelectionPage() {
   const navigate = useNavigate();
@@ -65,7 +63,7 @@ export default function PromoSelectionPage() {
   }, [state.motor, state.tradeInInfo]);
 
   // Check if eligible for special financing
-  const isEligibleForSpecialFinancing = estimatedFinancingAmount >= SPECIAL_FINANCING_MIN_AMOUNT;
+  const isEligibleForSpecialFinancing = estimatedFinancingAmount >= FINANCING_MINIMUM;
 
   const options: PromoOption[] = [
     {

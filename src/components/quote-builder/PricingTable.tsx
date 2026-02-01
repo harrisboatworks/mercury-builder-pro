@@ -2,7 +2,7 @@ import { Card } from '@/components/ui/card';
 import { LineItemRow } from './LineItemRow';
 import { FinancingCallout } from './FinancingCallout';
 import { type PricingBreakdown } from '@/lib/quote-utils';
-
+import { FINANCING_MINIMUM } from '@/lib/finance';
 function formatTradeInLabel(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
   if (!tradeInInfo) return "Estimated Trade Value";
   
@@ -174,21 +174,23 @@ export function PricingTable({
         />
       </div>
 
-      {/* Financing Callout - Subtle and Minimal */}
-      <div className="mt-6 mb-4 pt-6 border-t border-gray-200 space-y-2">
-        <div className="text-sm text-gray-600 font-normal">
-          Flexible financing available
+      {/* Financing Callout - Subtle and Minimal - Only show for $5,000+ */}
+      {pricing.total >= FINANCING_MINIMUM && (
+        <div className="mt-6 mb-4 pt-6 border-t border-gray-200 space-y-2">
+          <div className="text-sm text-gray-600 font-normal">
+            Flexible financing available
+          </div>
+          
+          <FinancingCallout 
+            totalPrice={pricing.total}
+            onApplyForFinancing={onApplyForFinancing}
+          />
+          
+          <div className="text-xs text-gray-500 italic mt-1">
+            *Based on default financing terms, subject to approval
+          </div>
         </div>
-        
-        <FinancingCallout 
-          totalPrice={pricing.total}
-          onApplyForFinancing={onApplyForFinancing}
-        />
-        
-        <div className="text-xs text-gray-500 italic mt-1">
-          *Based on default financing terms, subject to approval
-        </div>
-      </div>
+      )}
 
       {/* Summary Note */}
       <div className="pt-4 border-t border-border/50">
