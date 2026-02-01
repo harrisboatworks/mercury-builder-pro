@@ -1,155 +1,36 @@
 
+# Streamline Options Page Header & Add Mobile Back Button
 
-# Scrape Motor Option Images by Part Number
+## Issues Identified
 
-## Problem
-Motor covers and some accessories still display Unsplash placeholder images instead of real product photos. The current scraping function uses hardcoded Mercury URLs rather than searching by part number, which is more reliable.
+1. **Too Much Text**: The current header uses both a large `h1` ("Customize Your Motor Package") and a paragraph subtitle ("Select additional options and accessories for your {motor}"), which consumes valuable vertical space on mobile.
 
-## Solution
-Enhance the `scrape-mercury-accessories` function to search for images using **part number lookups** on reliable marine parts sites. Many sites have predictable URL patterns based on part numbers.
+2. **No Back Button on Mobile**: The desktop sticky footer includes a Back button, but it's hidden behind the `UnifiedMobileBar` on mobile devices. Users have no way to return to motor selection.
 
 ---
 
-## Implementation
+## Solution
 
-### 1. Image Source Strategy by Part Number
+### 1. Simplify the Header
 
-| Source | URL Pattern | Reliability |
-|--------|------------|-------------|
-| **Crowley Marine** | `https://www.crowleymarine.com/images/parts/{PART_NUMBER}.jpg` | High - already working for maintenance kits |
-| **Marine Engine** | `https://www.marineengine.com/parts/images/mercury/{PART_NUMBER}.jpg` | High |
-| **Boats.net** | `https://www.boats.net/product/image/large/{PART_NUMBER}` | Medium |
-| **Mercury Parts Direct** | Firecrawl scrape of product page | Medium |
+Remove the large `h1` heading and keep only a cleaner, context-aware subtitle. The section headers ("Recommended Add-Ons", "Available Options") already explain what the page contains.
 
-### 2. File Changes
-
-#### `supabase/functions/scrape-mercury-accessories/index.ts`
-
-**Add Part Number Image Lookup Function:**
-```typescript
-async function findImageByPartNumber(
-  supabase: any, 
-  partNumber: string, 
-  productName: string
-): Promise<string | null> {
-  const sources = [
-    `https://www.crowleymarine.com/images/parts/${partNumber}.jpg`,
-    `https://www.marineengine.com/parts/images/mercury/${partNumber}.jpg`,
-    `https://cdn.boats.net/images/parts/mercury/${partNumber}.jpg`,
-  ];
-  
-  for (const sourceUrl of sources) {
-    try {
-      const response = await fetch(sourceUrl, { method: 'HEAD' });
-      if (response.ok && response.headers.get('content-type')?.includes('image')) {
-        // Image exists - download and upload to our storage
-        const uploadedUrl = await uploadImageToStorage(supabase, sourceUrl, `accessory-${partNumber}`);
-        if (uploadedUrl) {
-          console.log(`Found image for ${partNumber} at ${sourceUrl}`);
-          return uploadedUrl;
-        }
-      }
-    } catch (e) {
-      // Try next source
-    }
-  }
-  return null;
-}
+**Before:**
+```
+Customize Your Motor Package          ← Remove this
+Select additional options...          ← Keep, but shorter
 ```
 
-**Update Cover Products with Real Mercury Part Numbers:**
-```typescript
-const coverProducts = [
-  {
-    name: 'Vented Splash Cover (75-115HP)',
-    partNumber: '8M0104228',  // Real Mercury P/N
-    hpRange: '75-115HP',
-  },
-  {
-    name: 'Vented Splash Cover (150HP)',
-    partNumber: '8M0104229',
-    hpRange: '150HP',
-  },
-  {
-    name: 'Vented Splash Cover (175-225HP V6)',
-    partNumber: '8M0104231',
-    hpRange: '175-225HP',
-  },
-  {
-    name: 'Vented Splash Cover (250-300HP V8)',
-    partNumber: '8M0104232',
-    hpRange: '250-300HP',
-  },
-];
+**After:**
+```
+Options for your 9.9MH FourStroke     ← Single clean line
 ```
 
-**Modify Scraping Loop to Use Part Number Lookup:**
-```typescript
-for (const cover of coverProducts) {
-  const imageUrl = await findImageByPartNumber(supabase, cover.partNumber, cover.name);
-  results.push({
-    productName: cover.name,
-    imageUrl: imageUrl || 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop',
-    partNumber: cover.partNumber,
-    category: 'accessory',
-  });
-}
-```
+Or even simpler - just remove the header entirely since the section titles are self-explanatory.
 
-### 3. Database Update
+### 2. Add Back Button Above Content on Mobile
 
-After scraping, update the `motor_options` table with the new image URLs:
-
-```typescript
-// At end of function, update database with scraped images
-for (const result of results) {
-  if (result.partNumber && result.imageUrl && !result.imageUrl.includes('unsplash')) {
-    await supabase
-      .from('motor_options')
-      .update({ image_url: result.imageUrl })
-      .eq('part_number', result.partNumber);
-    console.log(`Updated ${result.partNumber} with image: ${result.imageUrl}`);
-  }
-}
-```
-
-### 4. Add Fallback: Google Image Search via Firecrawl
-
-For products without images on marine parts sites, use Firecrawl to search Google Images:
-
-```typescript
-async function searchGoogleForImage(
-  firecrawlApiKey: string,
-  partNumber: string,
-  productName: string
-): Promise<string | null> {
-  const searchQuery = `Mercury Marine ${partNumber} ${productName}`;
-  
-  const response = await fetch('https://api.firecrawl.dev/v1/search', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${firecrawlApiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      query: searchQuery,
-      limit: 5,
-    }),
-  });
-  
-  if (response.ok) {
-    const data = await response.json();
-    // Parse results for image URLs
-    for (const result of data.data || []) {
-      if (result.url?.includes('crowley') || result.url?.includes('boats.net')) {
-        // Scrape the page for the product image
-        // ...
-      }
-    }
-  }
-  return null;
-}
-```
+Add a simple back link at the top of the page (below the stepper) that only shows on mobile. This follows the pattern used on other quote pages and provides a clear way to navigate back.
 
 ---
 
@@ -157,21 +38,59 @@ async function searchGoogleForImage(
 
 | File | Change |
 |------|--------|
-| `supabase/functions/scrape-mercury-accessories/index.ts` | Add `findImageByPartNumber()` function, update cover part numbers, add DB update logic |
-| `motor_options` table | Will be updated programmatically with scraped image URLs |
+| `src/pages/quote/OptionsPage.tsx` | Simplify header, add mobile-only back link, hide desktop footer on mobile |
 
 ---
 
-## Testing
+## Implementation Details
 
-After deployment:
-1. Call the `scrape-mercury-accessories` function
-2. Verify motor covers in `motor_options` table have real image URLs (not Unsplash)
-3. Confirm the Options page displays actual product images for covers
+### Header Simplification
+Replace the `mb-8` header block with a more compact version:
+
+```tsx
+{/* Compact Header - Mobile-friendly */}
+<div className="mb-4 flex items-center gap-3">
+  {/* Mobile Back Button */}
+  <button 
+    onClick={handleBack}
+    className="md:hidden p-2 -ml-2 text-muted-foreground hover:text-foreground"
+    aria-label="Back to motor selection"
+  >
+    <ChevronLeft className="h-5 w-5" />
+  </button>
+  
+  <p className="text-muted-foreground">
+    Options for your {state.motor?.model || 'motor'}
+  </p>
+</div>
+```
+
+### Desktop Footer Visibility
+Add `hidden md:flex` to ensure the sticky footer only shows on desktop:
+
+```tsx
+<div className="hidden md:block fixed bottom-0 ...">
+```
 
 ---
 
-## Summary
+## Visual Result
 
-This enhancement replaces URL-based scraping with **part number lookups** on reliable marine parts sites. The predictable URL patterns (`crowleymarine.com/images/parts/{PN}.jpg`) work well for Mercury products and provide consistent, high-quality product images. Any images found are uploaded to Supabase Storage for reliable hosting.
+**Mobile:**
+- Clean back arrow at top left
+- Single line "Options for your 9.9MH FourStroke"
+- Immediately shows first section ("Recommended Add-Ons")
+- UnifiedMobileBar handles Continue/Skip navigation
 
+**Desktop:**
+- Compact header text
+- Sticky footer with Back, Total, and Continue buttons (unchanged)
+
+---
+
+## Technical Notes
+
+- The `handleBack` function already exists (lines 197-199)
+- Mobile users rely on `UnifiedMobileBar` for forward navigation
+- Desktop users continue using the sticky footer
+- Reduces vertical scroll distance by ~60px on mobile
