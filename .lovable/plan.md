@@ -1,98 +1,71 @@
 
-# Add "Do Not Fabricate" AI Guardrails
+# Update Propeller Placeholder Prices
 
-## Goal
-
-Prevent chatbot and voice agents from making up facts about ice conditions, booking availability, specific inventory, prices, or service timelines. This protects customer trust and prevents misinformation.
+## Overview
+Update the propeller allowance prices to reflect real Mercury pricing, making quotes more accurate for 150HP+ motors where stainless steel props are standard.
 
 ---
 
-## What Guardrails Will Say
+## Current vs Proposed Pricing
 
-Based on the business context document:
+| HP Range | Current | Proposed | Reasoning |
+|----------|---------|----------|-----------|
+| Under 25 HP | $0 | $0 | Props included with motor |
+| 25-115 HP | $350 (Aluminum) | $350 (Aluminum) | Accurate - Black Max/Spitfire range $280-$395 |
+| 150 HP+ | $950 (Stainless) | $1,200 (Stainless) | More accurate - Enertia/Revolution range $1,100-$1,700 |
 
-### Never Fabricate
-- Ice/lake conditions (use weather station data or say nothing)
-- Booking availability percentages ("we're 40% booked" — NO)
-- Specific inventory unless from database
-- Local business recommendations that conflict with our services
-- Prices unless from database or current promo
-- Service timelines unless confirmed
-
-### Safe to Include
-- Facts from knowledge files
-- Data from harrisboatworks.ca
-- Current weather from weather station link
-- Mercury promos from database
-- General seasonal advice that's always true
-
-### When in Doubt
-Be vague or skip it. "Planning ahead for spring?" is better than "We're almost booked!"
+The $350 aluminum placeholder is already well-calibrated. The stainless placeholder at $950 is below actual market rates and should increase to $1,200 as a conservative mid-range estimate.
 
 ---
 
 ## Files to Update
 
-| File | Location | Change |
-|------|----------|--------|
-| `ai-chatbot-stream/index.ts` | After GOLDEN RULES (line 916) | Add `## DO NOT FABRICATE` section |
-| `elevenlabs-conversation-token/index.ts` | After VOICE RULES (line 343) | Add `## DO NOT FABRICATE` section |
-| `realtime-session/index.ts` | In AVOID section (line 82) | Add fabrication restrictions |
+### 1. BoatInformation.tsx (line 997)
+The cost note shown when customer doesn't have their own prop.
 
----
-
-## Proposed Changes
-
-### 1. Chatbot System Prompt (`ai-chatbot-stream/index.ts`)
-
-Insert after GOLDEN RULES section:
-
-```text
-## DO NOT FABRICATE (CRITICAL FOR TRUST)
-Only state facts you can verify. If you don't have data, don't make it up.
-
-**NEVER fabricate:**
-- Ice/lake conditions (use weather station link or say "check our weather station")
-- Booking percentages ("we're 40% booked" — NO! say "call to check availability")
-- Specific inventory unless from database query
-- Prices unless from database, quote builder, or current promo
-- Service timelines ("takes about 2 weeks" — NO! say "depends on the season, give us a call")
-- Local business recommendations that conflict with our services (we sell ethanol-free fuel!)
-
-**When in doubt:** Be vague or skip it. "Planning ahead for spring?" is better than "We're almost booked!"
+**Change from:**
+```
++${hp >= 150 ? '950 (Stainless Steel)' : '350 (Aluminum)'}
 ```
 
-### 2. Voice Agent Prompt (`elevenlabs-conversation-token/index.ts`)
-
-Insert after VOICE RULES section:
-
-```text
-## DO NOT FABRICATE (CRITICAL):
-Never make up:
-- Ice/lake conditions (say "check our weather station" or nothing)
-- Booking percentages ("we're 40% booked" — NO!)
-- Prices unless you have them from tools
-- Service timelines (say "give us a call to confirm")
-- Inventory unless from your check_inventory tool
-
-When unsure: Be vague. "Call us to check" beats making it up.
+**Change to:**
+```
++${hp >= 150 ? '1,200 (Stainless Steel)' : '350 (Aluminum)'}
 ```
 
-### 3. OpenAI Realtime Prompt (`realtime-session/index.ts`)
+### 2. MotorSelection.tsx (line 2033)
+The "Total Investment Estimate" calculation in the quick view overlay.
 
-Add to the AVOID section:
+**Change from:**
+```javascript
+const propCost = hp >= 25 ? hp >= 150 ? 950 : 350 : 0;
+```
 
-```text
-- Fabricating ice/lake conditions, booking percentages, service timelines, or prices you don't have
+**Change to:**
+```javascript
+const propCost = hp >= 25 ? hp >= 150 ? 1200 : 350 : 0;
 ```
 
 ---
 
-## Deployment
+## Optional: Seed Data Cleanup
 
-After changes:
-1. Redeploy `ai-chatbot-stream` edge function
-2. Redeploy `elevenlabs-conversation-token` edge function
-3. Redeploy `realtime-session` edge function
+The file `api/quotes-seed.js` has a hardcoded "Stainless Prop" at $350 (line 78), which appears incorrect even for aluminum. This is seed/test data and doesn't affect production quotes, but could be updated for consistency if desired.
 
-All three voice/chat systems will then enforce the same fabrication guardrails.
+---
+
+## No Other Changes Needed
+
+- The pricing utilities (`quote-utils.ts`) don't hardcode prop values - they receive them from components
+- The chatbot already correctly explains that final prop selection happens during water testing
+- The "hasCompatibleProp" checkbox remains unchanged - customers with their own prop still get credit
+
+---
+
+## Summary
+
+Two simple number changes:
+1. `BoatInformation.tsx`: 950 → 1,200
+2. `MotorSelection.tsx`: 950 → 1200
+
+This brings the 150HP+ stainless steel placeholder in line with actual Mercury Enertia/Revolution pricing from your reference document.
