@@ -395,7 +395,7 @@ export const BoatInformation = ({
         return '--';
     }
   };
-  const [showHelp, setShowHelp] = useState(false);
+  // showHelp state removed - "Not Sure?" now skips to next step
 
   // (Using per-type recommendedHP from boatTypes entries)
   const handleSkip = () => {
@@ -585,47 +585,16 @@ export const BoatInformation = ({
                         </div>
                       </button>)}
 
-                    {/* Help option */}
-                    <button type="button" onClick={() => setShowHelp(s => !s)} className="group relative rounded-xl border-2 border-border bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg">
+                    {/* Skip option for unsure users */}
+                    <button type="button" onClick={handleSkip} className="group relative rounded-xl border-2 border-border bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-lg">
                       <div className="mb-3 h-24 overflow-hidden rounded-md border-b border-border bg-gradient-to-b from-muted/40 to-background flex items-center justify-center">
-                           <img src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png" alt="Not sure? We'll help you choose your boat type" className="h-20 w-full h-auto object-contain" loading="lazy" />
+                           <img src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png" alt="Skip boat type selection" className="h-20 w-full h-auto object-contain" loading="lazy" />
                       </div>
                       <h3 className="font-light tracking-wide heading-protected">Not Sure?</h3>
-                      <p className="text-sm font-light text-protected">We'll help you figure it out</p>
+                      <p className="text-sm font-light text-protected">Skip — we'll confirm later</p>
                      </button>
                    </div>
 
-                   {/* Help content for "Not Sure?" option */}
-                   {showHelp && <div className="help-content animate-fade-in mt-4 p-4 bg-muted/30 rounded-lg border border-border">
-                       <h4 className="font-light tracking-wide heading-protected mb-3">Let's figure out your boat type together!</h4>
-                       <div className="space-y-3 text-sm">
-                         <p>Answer these quick questions to identify your boat:</p>
-                         <div className="space-y-2">
-                           <div>
-                             <strong>What's the primary use?</strong>
-                             <ul className="ml-4 mt-1 space-y-1">
-                               <li>• Fishing in lakes/rivers → <strong>V-Hull Fishing</strong> or <strong>Bass Boat</strong></li>
-                               <li>• Family fun/cruising → <strong>Pontoon</strong> or <strong>Bowrider</strong></li>
-                               <li>• Small lakes/portability → <strong>Utility Boat</strong></li>
-                               <li>• Offshore fishing → <strong>Center Console</strong></li>
-                               <li>• Racing/speed → <strong>Speed Boat</strong></li>
-                             </ul>
-                           </div>
-                           <div>
-                             <strong>Hull shape:</strong>
-                             <ul className="ml-4 mt-1 space-y-1">
-                               <li>• Flat bottom with aluminum → <strong>Utility Boat</strong></li>
-                               <li>• V-shaped hull → <strong>V-Hull Fishing</strong></li>
-                               <li>• Two tubes/pontoons → <strong>Pontoon</strong></li>
-                               <li>• Open bow area → <strong>Bowrider</strong></li>
-                             </ul>
-                           </div>
-                         </div>
-                         <Button variant="outline" size="sm" onClick={() => setShowHelp(false)} className="mt-3">
-                           Close Help
-                         </Button>
-                       </div>
-                     </div>}
 
                    {/* Why this matters */}
                   <div className="why-this-matters">
