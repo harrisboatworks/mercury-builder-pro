@@ -2030,7 +2030,7 @@ export const MotorSelection = ({
                 const model = (quickViewMotor.model || '').toUpperCase();
                 const needsControls = hp >= 40;
                 const needsBattery = /\bE\b|EL|ELPT|EH|EFI/.test(model) && !/\bM\b/.test(model);
-                const propCost = hp >= 25 ? hp >= 150 ? 950 : 350 : 0;
+                const propCost = hp >= 25 ? hp >= 150 ? 1200 : 350 : 0;
                 const total = price + (needsControls ? 1200 : 0) + (needsBattery ? 179.99 : 0) + propCost + 500;
                 return <>
                            <div>Motor: {'$' + price.toLocaleString()}</div>
