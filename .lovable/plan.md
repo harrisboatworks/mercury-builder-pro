@@ -1,83 +1,91 @@
 
 
-# Premium Back Button for Options Page
+# Fix Purchase Path Back Button - Style & Navigation
 
-## Current Issues
+## Issues Identified
 
-1. **Faint Styling**: Uses `text-muted-foreground` which makes it barely visible
-2. **Icon Only**: No label text - premium sites use "← Back" or "← Back to Motors"
-3. **Inconsistent**: Other components in this codebase (MotorDetailsSheet, MotorDetailsPremiumModal) use bold, labeled back buttons
+1. **Inconsistent Styling**: The Purchase Path page uses a boxed `Button variant="outline"` with "Back to Motor Selection", while the Options page (and premium patterns) use a clean, unboxed text link with just "< Back"
 
-## Premium Patterns (Tesla/Porsche/Apple)
+2. **Wrong Navigation Target**: Currently navigates to `/quote/motor-selection` (Step 1) instead of `/quote/options` (Step 2 - the immediate previous page)
 
-- **Always use Icon + Label** - never a lone chevron
-- **High contrast** - `text-gray-700` or darker, not muted
-- **Generous touch targets** - min 44px height
-- **Subtle feedback** - `active:scale-95` press animation
-- **Left-aligned** - clear visual anchor at top-left
+## Quote Flow Reference
+
+| Step | Page | Previous Page |
+|------|------|---------------|
+| 1 | Motor Selection | — |
+| 2 | Options | Motor Selection |
+| 3 | **Purchase Path** | **Options** ← Should go here |
+| 4 | Boat Info | Purchase Path |
 
 ## Solution
 
-Follow the existing premium pattern from `MotorDetailsPremiumModal`:
+Update `PurchasePathPage.tsx` to match the premium styling from OptionsPage and fix the navigation target.
 
-```text
-Before (faint, icon-only):
-  [ < ]  Options for your 9.9MH FourStroke
+### File: `src/pages/quote/PurchasePathPage.tsx`
 
-After (premium, labeled):
-  [ < Back ]  
-  Options for your 9.9MH FourStroke
-```
-
-Or inline (cleaner):
-```text
-  [ < Back ]   Options for your 9.9MH FourStroke
-```
-
----
-
-## Implementation
-
-### File: `src/pages/quote/OptionsPage.tsx`
-
-**Replace lines 250-260 with:**
-
+**Current (lines 89-101):**
 ```tsx
-{/* Compact Header with Mobile Back */}
-<div className="mb-4">
-  {/* Mobile Back Button - Premium Style */}
-  <button 
-    onClick={handleBack}
-    className="md:hidden flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px] mb-2"
-    aria-label="Back to motor selection"
-  >
-    <ChevronLeft className="h-5 w-5" />
-    <span className="text-sm font-medium">Back</span>
-  </button>
-  
-  <p className="text-muted-foreground">
-    Options for your {state.motor?.model || 'motor'}
-  </p>
-</div>
+const handleBack = () => {
+  navigate('/quote/motor-selection');  // Wrong!
+};
+
+return (
+  <PageTransition>
+    <QuoteLayout>
+      <div className="space-y-6">
+        <div className="flex items-center gap-4">
+          <Button variant="outline" size="sm" onClick={handleBack} className="border-gray-300...">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Motor Selection
+          </Button>
+        </div>
 ```
 
----
+**After:**
+```tsx
+const handleBack = () => {
+  navigate('/quote/options');  // Correct previous step
+};
 
-## Key Changes
+return (
+  <PageTransition>
+    <QuoteLayout>
+      <div className="space-y-6">
+        {/* Premium Back Button - matches Options page style */}
+        <button 
+          onClick={handleBack}
+          className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px]"
+          aria-label="Back to options"
+        >
+          <ChevronLeft className="h-5 w-5" />
+          <span className="text-sm font-medium">Back</span>
+        </button>
+        
+        <PurchasePath ... />
+      </div>
+    </QuoteLayout>
+  </PageTransition>
+);
+```
+
+## Changes Summary
 
 | Aspect | Before | After |
 |--------|--------|-------|
-| Color | `text-muted-foreground` (faint gray) | `text-gray-600` (visible, high contrast) |
-| Label | None (icon only) | "Back" text |
-| Touch Target | ~28px | `min-h-[44px]` |
-| Feedback | None | `active:scale-95` |
-| Layout | Inline with subtitle | Stacked (Back above subtitle) |
-
----
+| **Navigation** | `/quote/motor-selection` (skips Options) | `/quote/options` (correct previous step) |
+| **Style** | Boxed outline button | Clean text link with icon |
+| **Icon** | `ArrowLeft` | `ChevronLeft` (matches Options page) |
+| **Label** | "Back to Motor Selection" | "Back" |
 
 ## Files to Modify
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/OptionsPage.tsx` | Upgrade back button to premium style with label and proper contrast |
+| `src/pages/quote/PurchasePathPage.tsx` | Fix navigation target & update button style |
+
+## Additional Notes
+
+- Import `ChevronLeft` from lucide-react (replace `ArrowLeft`)
+- Remove the `Button` component usage for back navigation
+- The premium style uses a native `<button>` element with Tailwind classes for a cleaner, unboxed look
 
