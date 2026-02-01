@@ -1,86 +1,72 @@
 
 
-# Fix: Infinite Loop in Options Page
+# Remove Redundant "Back to Motor" Button
 
-## The Problem
+## The Issue
 
-The console shows **"Maximum update depth exceeded"** - an infinite render loop caused by two `useEffect` hooks fighting each other:
+On the Boat Info page (`/quote/boat-info`), there's a "Back to Motor" button at the bottom of the form that's redundant because:
+
+1. **Page already has back navigation** - The `BoatInfoPage.tsx` has a "Back to Purchase Path" button at the top
+2. **Label is misleading** - The button says "Back to Motor" but the actual previous step is Purchase Path, not Motor Selection
+3. **Confusing UX** - Two back buttons doing the same thing clutters the interface
+
+## Current Flow
 
 ```text
-Effect A (initialization):
-  Dependencies: [categorizedOptions, state.selectedOptions]
-  Action: setLocalSelectedIds(initialIds)
-      ↓
-Effect B (sync to context):
-  Dependencies: [localSelectedIds, categorizedOptions, dispatch]
-  Action: dispatch SET_SELECTED_OPTIONS
-      ↓
-state.selectedOptions changes → triggers Effect A again → LOOP!
+┌─────────────────────────────────────────────────────┐
+│  BoatInfoPage.tsx                                    │
+│  ┌─────────────────────────────────────────────────┐│
+│  │ [← Back to Purchase Path] ← Top-level back      ││
+│  │                                                 ││
+│  │  BoatInformation.tsx (internal wizard)          ││
+│  │  ┌─────────────────────────────────────────────┐││
+│  │  │ Step 0: Boat Type Selection                │││
+│  │  │                                             │││
+│  │  │ [← Back to Motor]  [Skip]  [Next →]        │││  ← Redundant!
+│  │  └─────────────────────────────────────────────┘││
+│  └─────────────────────────────────────────────────┘│
+└─────────────────────────────────────────────────────┘
 ```
 
 ## Solution
 
-Remove `state.selectedOptions` from Effect A's dependency array. The initialization logic should only run once when `categorizedOptions` first loads, not every time the context updates (since we're the ones updating it).
+Hide the back button when on step 0 of the wizard. The page-level back navigation handles exiting the wizard. Only show "Previous" when navigating between internal wizard steps (step 1+).
 
----
+### File: `src/components/quote-builder/BoatInformation.tsx`
 
-## Implementation
-
-### File: `src/pages/quote/OptionsPage.tsx`
-
-**Change the initialization effect (lines 63-82):**
-
-Before:
+**Current (lines 1055-1059):**
 ```tsx
-useEffect(() => {
-  if (categorizedOptions) {
-    const initialIds = new Set<string>();
-    categorizedOptions.required.forEach(opt => initialIds.add(opt.id));
-    state.selectedOptions?.forEach(opt => initialIds.add(opt.optionId));
-    categorizedOptions.recommended.forEach(opt => {
-      if (opt.is_included) initialIds.add(opt.id);
-    });
-    setLocalSelectedIds(initialIds);
-  }
-}, [categorizedOptions, state.selectedOptions]);  // ← PROBLEM: triggers on every dispatch
+<div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between pt-6 border-t gap-3">
+  <Button type="button" variant="outline" onClick={handlePrev} className="...">
+    <ArrowLeft className="w-4 h-4" />
+    {currentStep === 0 ? 'Back to Motor' : 'Previous'}
+  </Button>
 ```
 
-After:
+**After:**
 ```tsx
-// Use a ref to track if we've already initialized
-const initializedRef = useRef(false);
-
-useEffect(() => {
-  // Only initialize once when categorizedOptions loads
-  if (categorizedOptions && !initializedRef.current) {
-    initializedRef.current = true;
-    
-    const initialIds = new Set<string>();
-    categorizedOptions.required.forEach(opt => initialIds.add(opt.id));
-    state.selectedOptions?.forEach(opt => initialIds.add(opt.optionId));
-    categorizedOptions.recommended.forEach(opt => {
-      if (opt.is_included) initialIds.add(opt.id);
-    });
-    setLocalSelectedIds(initialIds);
-  }
-}, [categorizedOptions]); // ← Removed state.selectedOptions dependency
+<div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between pt-6 border-t gap-3">
+  {/* Only show Previous button on steps after the first - page handles exit navigation */}
+  {currentStep > 0 ? (
+    <Button type="button" variant="outline" onClick={handlePrev} className="...">
+      <ArrowLeft className="w-4 h-4" />
+      Previous
+    </Button>
+  ) : (
+    <div /> {/* Empty spacer to maintain layout */}
+  )}
 ```
 
----
+## Result
 
-## Why This Works
-
-| Before | After |
-|--------|-------|
-| Effect A triggers on every `state.selectedOptions` change | Effect A only runs once when options load |
-| Effect B dispatches → triggers Effect A → loop | Effect B dispatches → Effect A doesn't re-run → no loop |
-| App crashes with max update depth error | Selections sync smoothly to bottom bar |
-
----
+| Step | Before | After |
+|------|--------|-------|
+| Step 0 (Boat Type) | Shows "Back to Motor" button | No back button (page has its own) |
+| Step 1+ (Transom, Controls, etc.) | Shows "Previous" button | Shows "Previous" button (unchanged) |
 
 ## Files to Modify
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/OptionsPage.tsx` | Add `initializedRef` guard to prevent re-initialization on context updates |
+| `src/components/quote-builder/BoatInformation.tsx` | Conditionally hide back button on step 0 |
 
