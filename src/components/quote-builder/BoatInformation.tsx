@@ -1053,10 +1053,15 @@ export const BoatInformation = ({
 
         {/* Navigation */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between pt-6 border-t gap-3">
-          <Button type="button" variant="outline" onClick={handlePrev} className="flex items-center justify-center gap-2 min-h-[44px] order-2 sm:order-1 border-2 button-text-protected font-light rounded-sm hover:bg-gray-900 hover:text-white transition-all duration-500">
-            <ArrowLeft className="w-4 h-4" />
-            {currentStep === 0 ? 'Back to Motor' : 'Previous'}
-          </Button>
+          {/* Only show Previous button on steps after the first - page handles exit navigation */}
+          {currentStep > 0 ? (
+            <Button type="button" variant="outline" onClick={handlePrev} className="flex items-center justify-center gap-2 min-h-[44px] order-2 sm:order-1 border-2 button-text-protected font-light rounded-sm hover:bg-gray-900 hover:text-white transition-all duration-500">
+              <ArrowLeft className="w-4 h-4" />
+              Previous
+            </Button>
+          ) : (
+            <div /> 
+          )}
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 order-1 sm:order-2">
             {currentStep < totalSteps - 1 && <Button type="button" variant="ghost" onClick={handleSkip} className="text-sm min-h-[44px] font-light button-text-protected hover:opacity-80">
