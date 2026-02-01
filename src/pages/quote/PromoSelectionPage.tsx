@@ -136,7 +136,7 @@ export default function PromoSelectionPage() {
   // Redirect if no motor selected
   useEffect(() => {
     if (!state.motor) {
-      navigate('/quote/motor');
+      navigate('/quote/motor-selection');
     }
   }, [state.motor, navigate]);
 
