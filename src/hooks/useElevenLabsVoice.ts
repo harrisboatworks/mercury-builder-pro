@@ -2055,6 +2055,95 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           return JSON.stringify({ error: 'Unable to show motor details.' });
         }
       },
+      // Get current quote status for guided quote building
+      get_quote_status: () => {
+        console.log('[ClientTool] get_quote_status');
+        const ctx = options.quoteContext;
+        
+        const status = {
+          hasMotor: !!ctx?.selectedMotor,
+          motorModel: ctx?.selectedMotor?.model || null,
+          motorHp: ctx?.selectedMotor?.hp || null,
+          hasPurchasePath: !!ctx?.purchasePath,
+          purchasePath: ctx?.purchasePath || null,
+          hasBoatInfo: !!(ctx?.boatInfo?.length || ctx?.boatInfo?.type),
+          boatLength: ctx?.boatInfo?.length || null,
+          boatType: ctx?.boatInfo?.type || null,
+          hasTradeIn: ctx?.tradeInValue !== null && ctx?.tradeInValue !== undefined,
+          tradeInValue: ctx?.tradeInValue || null,
+        };
+        
+        // Determine next step in quote flow
+        let nextStep = 'motor';
+        if (status.hasMotor && !status.hasPurchasePath) {
+          nextStep = 'path';
+        } else if (status.hasPurchasePath && status.purchasePath === 'installed' && !status.hasBoatInfo) {
+          nextStep = 'boat';
+        } else if ((status.hasBoatInfo || status.purchasePath === 'loose') && !status.hasTradeIn) {
+          nextStep = 'trade-in';
+        } else if (status.hasTradeIn || (status.hasPurchasePath && status.purchasePath === 'loose')) {
+          nextStep = 'promo';
+        }
+        
+        const completedSteps: string[] = [];
+        if (status.hasMotor) completedSteps.push('motor');
+        if (status.hasPurchasePath) completedSteps.push('path');
+        if (status.hasBoatInfo) completedSteps.push('boat');
+        if (status.hasTradeIn) completedSteps.push('trade-in');
+        
+        console.log('[ClientTool] get_quote_status result:', { status, nextStep, completedSteps });
+        
+        return JSON.stringify({
+          ...status,
+          nextStep,
+          completedSteps,
+          readyForSummary: status.hasMotor && status.hasPurchasePath,
+          message: status.hasMotor 
+            ? `Quote has ${status.motorModel} (${status.motorHp}HP). Next: ${nextStep}.`
+            : 'Quote is empty - start by selecting a motor.'
+        });
+      },
+      // Update boat information for quote (used in guided mode)
+      update_boat_info: (params: { 
+        length?: number; 
+        type?: string;
+        make?: string;
+      }) => {
+        console.log('[ClientTool] update_boat_info', params);
+        
+        // Validate we have at least one value
+        if (!params.length && !params.type && !params.make) {
+          return JSON.stringify({ 
+            error: 'Please provide at least boat length or type.',
+            hint: 'Ask: "What length is your boat?" or "What type of boat?"'
+          });
+        }
+        
+        // Dispatch to VoiceContext handler (wrap in boatInfo to match expected structure)
+        dispatchVoiceNavigation({ 
+          type: 'update_boat_info', 
+          payload: { 
+            boatInfo: {
+              length: params.length,
+              type: params.type,
+              make: params.make,
+            }
+          } 
+        });
+        
+        // Build confirmation message
+        const parts: string[] = [];
+        if (params.length) parts.push(`${params.length} foot`);
+        if (params.type) parts.push(params.type);
+        if (params.make) parts.push(params.make);
+        const desc = parts.join(' ') || 'boat info';
+        
+        return JSON.stringify({
+          success: true,
+          message: `Got it - ${desc}. Moving on!`,
+          updated: { length: params.length, type: params.type, make: params.make }
+        });
+      },
       // Navigate to a specific quote step
       go_to_quote_step: (params: { step: 'motor' | 'path' | 'boat' | 'trade-in' | 'promo' | 'summary' }) => {
         console.log('[ClientTool] go_to_quote_step', params);

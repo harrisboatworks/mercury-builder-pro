@@ -17,7 +17,7 @@ export type VoiceNavigationEvent =
   | { type: 'add_motor_to_quote'; payload: { motor: MotorForQuote } }
   | { type: 'set_purchase_path'; payload: { path: 'loose' | 'installed' } }
   | { type: 'read_quote_summary'; payload: Record<string, never> }
-  | { type: 'update_boat_info'; payload: { length?: number; type?: string; make?: string; currentHp?: number } }
+  | { type: 'update_boat_info'; payload: { boatInfo: { length?: number; type?: string; make?: string; currentHp?: number } } }
   | { type: 'navigate_quote_step'; payload: { step: 'motor' | 'path' | 'boat' | 'trade-in' | 'summary' | 'schedule' } }
   | { type: 'apply_trade_in'; payload: { brand: string; year: number; horsepower: number; condition?: string } }
   | { type: 'compare_motors'; payload: { motorIds: string[] } }
