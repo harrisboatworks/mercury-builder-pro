@@ -9,12 +9,9 @@ import { Button } from '@/components/ui/button';
 import { Pencil, Percent, CalendarOff, Banknote, AlertCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { money } from '@/lib/money';
-import { calculateMonthlyPayment, calculateMonthly, getFinancingTermOptions } from '@/lib/finance';
+import { calculateMonthlyPayment, calculateMonthly, getFinancingTermOptions, FINANCING_MINIMUM } from '@/lib/finance';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
-
-// Minimum financing amount for special financing eligibility
-const SPECIAL_FINANCING_MIN_AMOUNT = 5000;
 
 export function PurchaseDetailsStep() {
   const { state, dispatch } = useFinancing();
@@ -57,7 +54,7 @@ export function PurchaseDetailsStep() {
   const promoValue = state.purchaseDetails?.promoValue;
 
   // Check if special financing is still eligible
-  const isEligibleForSpecialFinancing = amountToFinance >= SPECIAL_FINANCING_MIN_AMOUNT;
+  const isEligibleForSpecialFinancing = amountToFinance >= FINANCING_MINIMUM;
   const hasSpecialFinancing = promoOption === 'special_financing' && promoRate;
 
   // Sync local state with form
@@ -153,7 +150,7 @@ export function PurchaseDetailsStep() {
                   Eligibility Warning
                 </p>
                 <p className="text-xs text-amber-700 mt-0.5">
-                  Special financing requires minimum ${SPECIAL_FINANCING_MIN_AMOUNT.toLocaleString()}. 
+                  Special financing requires minimum ${FINANCING_MINIMUM.toLocaleString()}. 
                   Current amount: {money(amountToFinance)}. 
                   Consider reducing your down payment to qualify.
                 </p>

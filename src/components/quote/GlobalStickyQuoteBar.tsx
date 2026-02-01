@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import StickyQuoteBar from './StickyQuoteBar';
 
@@ -110,9 +110,9 @@ export function GlobalStickyQuoteBar() {
     state.tradeInInfo?.estimatedValue,
   ]);
 
-  // Calculate monthly payment
+  // Calculate monthly payment - only for amounts >= $5,000
   const monthlyPayment = useMemo(() => {
-    if (!runningTotal) return null;
+    if (!runningTotal || runningTotal < FINANCING_MINIMUM) return null;
 
     // Add Dealerplan fee
     const priceWithFee = runningTotal + DEALERPLAN_FEE;

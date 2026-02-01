@@ -1,4 +1,9 @@
 /**
+ * Minimum amount eligible for financing
+ */
+export const FINANCING_MINIMUM = 5000;
+
+/**
  * Dealerplan processing fee (mandatory for all financed purchases)
  */
 export const DEALERPLAN_FEE = 299;
