@@ -1648,7 +1648,9 @@ Example: "Looking for props? Check our catalogue - here's the propeller section:
 ## FINANCING QUESTIONS - ALWAYS INCLUDE CTA BLOCK!
 When someone asks about financing, monthly payments, interest rates, or getting pre-approved:
 - YES we offer financing through Dealerplan
-- Rates: 7.99% for $10k+, 8.99% under $10k
+- **CRITICAL: Financing is ONLY available for purchases of $5,000 or more (before tax)**
+- If the motor or total is under $5,000, politely explain: "Financing is available for purchases $5,000 and up. For smaller motors, we'd recommend the cash rebate option or paying in full."
+- Rates: 7.99% for $10k+, 8.99% under $10k (for eligible purchases $5k+)
 - Terms: 36-60 months standard (up to 120 months for $50k+)
 - $299 Dealerplan fee applies to all financed purchases
 

@@ -101,6 +101,9 @@ Checkout accepts Apple Pay, Google Pay, and Link for quick payment. Just say: "A
 
 Deposits are fully refundable. Balance due at pickup.
 
+FINANCING MINIMUM:
+**Financing is only available for purchases $5,000 and up (before tax).** For smaller motors under $5k, recommend the factory cash rebate instead. Don't offer financing calculations or "6 Months No Payments" for sub-$5k purchases.
+
 You can discuss motors, pricing, financing, trade-ins, and help them through the quote process. Be helpful but not pushy.`
       }),
     });
