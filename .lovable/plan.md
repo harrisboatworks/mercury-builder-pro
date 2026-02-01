@@ -1,149 +1,110 @@
 
-# Sync PDF Template with Quote Summary UI Updates
+
+# Fix Package Pricing and PDF Financing Threshold
 
 ## Overview
 
-Update `ProfessionalQuotePDF.tsx` to match the five refinements we made to the web UI in `PricingTable.tsx`.
+Two bugs need fixing:
+1. **$191 warranty charge** appearing for Complete package when Get 7 promo already covers 7 years
+2. **Financing info** appearing in PDF for quotes under $5,000
+
+---
+
+## Bug Analysis
+
+### Bug 1: Incorrect Warranty Extension Charge
+
+**Root Cause**: Race condition between promotions loading and warranty cost calculation
+
+The Summary page calls `getTotalWarrantyBonusYears()` to determine current coverage years. If the promotions haven't loaded yet:
+- `promoYears = 0` (should be 4 with Get 7)
+- `currentCoverageYears = 3` (should be 7)
+- `calculateWarrantyExtensionCost(HP, 3, 7)` returns $191
+- The accessory breakdown captures this stale value
+
+Even though the useEffect has `currentCoverageYears` as a dependency and re-runs when promos load, the `accessoryBreakdown` useMemo might capture the old `completeWarrantyCost` state before the async calculation completes.
+
+**Fix**: Add a guard to skip warranty extension cost if current coverage already meets or exceeds target:
+
+```tsx
+// QuoteSummaryPage.tsx, lines 390-397
+if (selectedPackage === 'better' && completeWarrantyCost > 0 && currentCoverageYears < COMPLETE_TARGET_YEARS) {
+  // Only add if we actually need to extend
+}
+```
+
+Additionally, ensure the `loading` state from `useActivePromotions` is checked before rendering the PDF.
+
+### Bug 2: Financing on Sub-$5000 Quotes
+
+**Root Cause**: `handleDownloadPDF` passes financing data unconditionally
+
+The PDF receives `monthlyPayment`, `financingTerm`, `financingRate`, and `financingQrCode` regardless of the total price. The template then displays "Financing Available" even for small motors.
+
+**Fix**: Conditionally pass financing fields only when `packageTotal >= FINANCING_MINIMUM`:
+
+```tsx
+// QuoteSummaryPage.tsx, around line 506-509
+...(packageTotal >= FINANCING_MINIMUM ? {
+  monthlyPayment,
+  financingTerm: termMonths,
+  financingRate,
+  financingQrCode: qrCodeDataUrl,
+} : {}),
+```
 
 ---
 
 ## Changes
 
-### 1. Remove Redundant Motor Name from MSRP
+### File: `src/pages/quote/QuoteSummaryPage.tsx`
 
-**File:** `src/components/quote-pdf/ProfessionalQuotePDF.tsx`  
-**Line 613**
+**Change 1**: Add guard to warranty breakdown (lines 390-397)
 
 ```tsx
 // Before
-<Text style={styles.pricingLabel}>MSRP - {quoteData.productName}</Text>
+if (selectedPackage === 'better' && completeWarrantyCost > 0) {
+
+// After - also check we actually need extension
+if (selectedPackage === 'better' && completeWarrantyCost > 0 && currentCoverageYears < COMPLETE_TARGET_YEARS) {
+```
+
+**Change 2**: Same for Premium package (lines 398-404)
+
+```tsx
+// Before  
+} else if (selectedPackage === 'best' && premiumWarrantyCost > 0) {
 
 // After
-<Text style={styles.pricingLabel}>MSRP</Text>
+} else if (selectedPackage === 'best' && premiumWarrantyCost > 0 && currentCoverageYears < PREMIUM_TARGET_YEARS) {
 ```
 
----
-
-### 2. Personalize Discount Label
-
-**Line 618**
+**Change 3**: Conditionally pass financing to PDF (lines 506-509)
 
 ```tsx
 // Before
-<Text style={styles.pricingLabel}>Dealer Discount</Text>
+monthlyPayment,
+financingTerm: termMonths,
+financingRate,
+financingQrCode: qrCodeDataUrl,
 
-// After
-<Text style={styles.pricingLabel}>Your Discount</Text>
+// After - only include if total meets minimum
+...(packageTotal >= FINANCING_MINIMUM ? {
+  monthlyPayment,
+  financingTerm: termMonths,
+  financingRate,
+  financingQrCode: qrCodeDataUrl,
+} : {}),
 ```
 
 ---
 
-### 3. Shorten Promo Labels
+## Technical Notes
 
-**Lines 633-641**
-
-```tsx
-// Before
-<Text style={styles.pricingLabel}>
-  {quoteData.selectedPromoOption === 'no_payments'
-    ? 'Mercury GET 7 + 6 Mo No Payments'
-    : quoteData.selectedPromoOption === 'special_financing'
-    ? `Mercury GET 7 + ${quoteData.selectedPromoValue || '2.99%'} APR`
-    : quoteData.selectedPromoOption === 'cash_rebate'
-    ? `Mercury GET 7 + ${quoteData.selectedPromoValue || ''} Rebate`
-    : 'Mercury GET 7 Promotion'}
-</Text>
-
-// After - two-line layout
-<View style={{ flex: 1 }}>
-  <Text style={styles.pricingLabel}>
-    {quoteData.selectedPromoOption === 'no_payments'
-      ? '7-Year Warranty + No Payments'
-      : quoteData.selectedPromoOption === 'special_financing'
-      ? `7-Year Warranty + ${quoteData.selectedPromoValue || '2.99%'} APR`
-      : quoteData.selectedPromoOption === 'cash_rebate'
-      ? `7-Year Warranty + ${quoteData.selectedPromoValue} Rebate`
-      : 'Promotional Savings'}
-  </Text>
-  <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
-    Mercury GET 7 Promotion
-  </Text>
-</View>
-```
-
----
-
-### 4. Trade-In on Two Lines
-
-**Lines 5-13 and 684-689**
-
-Update the helper function and rendering:
-
-```tsx
-// Lines 5-13: Simplify formatTradeInLabel to just return the label
-function formatTradeInLabel(): string {
-  return "Estimated Trade Value";
-}
-
-// Add new helper for description
-function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string {
-  if (!tradeInInfo) return "";
-  const { brand, year, horsepower, model } = tradeInInfo;
-  const parts = [year.toString(), brand, `${horsepower} HP`];
-  if (model) parts.push(model);
-  return parts.join(' ');
-}
-
-// Lines 684-689: Update the trade-in row
-<View style={styles.pricingRow}>
-  <View style={{ flex: 1 }}>
-    <Text style={styles.pricingLabel}>Estimated Trade Value</Text>
-    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
-      {formatTradeInDescription(quoteData.tradeInInfo)}
-    </Text>
-  </View>
-  <Text style={[styles.pricingValue, styles.discountValue]}>
-    -${quoteData.tradeInValue.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-  </Text>
-</View>
-```
-
----
-
-### 5. Consolidate Footer Terms
-
-**Lines 871-886**
-
-```tsx
-// Before - multiple separate bullets
-<View style={styles.termsSection}>
-  <Text style={styles.termsText}>
-    • This quote is valid for 30 days from date of issue • Prices subject to change without notice after expiry
-  </Text>
-  <Text style={styles.termsText}>
-    • {quoteData.includesInstallation ? 'Installation and PDI included • ' : ''}All prices in Canadian dollars
-  </Text>
-  {quoteData.tradeInValue && quoteData.tradeInValue > 0 && (
-    <Text style={styles.termsText}>
-      • *Estimated trade values subject to physical inspection
-    </Text>
-  )}
-  ...
-</View>
-
-// After - consolidated with clearer language
-<View style={styles.termsSection}>
-  <Text style={styles.termsText}>
-    • This quote is valid for 30 days from date of issue • Prices subject to change without notice after expiry
-  </Text>
-  <Text style={styles.termsText}>
-    • All prices in Canadian dollars • Installation, rigging, and trade-in values subject to inspection and verification
-  </Text>
-  <Text style={styles.termsText}>
-    • Financing options available subject to credit approval • Ask your sales representative for details
-  </Text>
-</View>
-```
+- The warranty guard is a belt-and-suspenders fix that prevents the breakdown from including invalid line items even if a race condition occurs
+- The financing conditional uses the same `FINANCING_MINIMUM` constant already imported
+- No changes needed to the PDF template itself - it already conditionally renders based on presence of `monthlyPayment`
+- The footer terms we updated earlier are separate from the MSRP pricing section still showing "Installation and PDI included" - that appears to be in a different location in the PDF that wasn't covered in the previous update
 
 ---
 
@@ -151,16 +112,14 @@ function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; h
 
 | File | Changes |
 |------|---------|
-| `src/components/quote-pdf/ProfessionalQuotePDF.tsx` | 1. Remove motor name from MSRP line<br>2. "Dealer Discount" to "Your Discount"<br>3. Shorten promo labels with description line<br>4. Trade-in motor info on second line<br>5. Consolidate footer terms |
+| `src/pages/quote/QuoteSummaryPage.tsx` | 1. Guard warranty breakdown conditions<br>2. Conditionally pass financing to PDF |
 
 ---
 
-## Summary
+## Expected Results
 
-These changes ensure the PDF output matches the polished quote summary UI:
+After these fixes:
+- Complete package for Get 7 quotes shows `$0.00` warranty extension (or no warranty line at all)
+- Quotes under $5,000 omit the "Financing Available" section and QR code from PDF
+- No impact on quotes over $5,000 or non-promo quotes
 
-- Cleaner MSRP label without redundant motor name
-- Personalized "Your Discount" wording
-- Shorter promo labels with "Mercury GET 7 Promotion" as subtitle
-- Trade-in motor details on dedicated second line (no awkward wrapping)
-- Consolidated footer disclaimer matching the web UI
