@@ -22,7 +22,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CreditCard, ChevronLeft } from 'lucide-react';
-import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE } from '@/lib/finance';
+import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
@@ -544,17 +544,19 @@ export default function QuoteSummaryPage() {
 
   const handleApplyForFinancing = () => {
     const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
-    const promoValue = packageSpecificTotals.promoValue || 0;
-    const packageSubtotalBeforeTradeIn = packageSpecificTotals.subtotal + tradeInValue + promoValue;
-    const packageName = selectedPackageLabel.split('•')[0].trim();
-    const subtotalWithTax = packageSubtotalBeforeTradeIn * 1.13;
+    
+    // Use the actual package subtotal (already net of discounts, trade-in, promos)
+    // Add tax and financing fee for the total amount to finance
+    const subtotalWithTax = packageSpecificTotals.subtotal * 1.13;
     const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
+    
+    const packageName = selectedPackageLabel.split('•')[0].trim();
     
     const financingData = {
       ...state,
       financingAmount: {
-        packageSubtotal: packageSubtotalBeforeTradeIn,
-        hst: packageSubtotalBeforeTradeIn * 0.13,
+        packageSubtotal: packageSpecificTotals.subtotal,
+        hst: packageSpecificTotals.subtotal * 0.13,
         financingFee: DEALERPLAN_FEE,
         totalWithFees: totalWithFees,
         motorModel: quoteData.motor?.model || motorName,
@@ -788,15 +790,17 @@ export default function QuoteSummaryPage() {
                       {isGeneratingPDF ? 'PDF' : 'Download PDF'}
                     </Button>
                   </div>
-                  <Button 
-                    onClick={handleApplyForFinancing}
-                    variant="default"
-                    className="w-full"
-                    size="lg"
-                  >
-                    <CreditCard className="w-4 h-4 mr-2" />
-                    Apply for Financing
-                  </Button>
+                  {packageSpecificTotals.total >= FINANCING_MINIMUM && (
+                    <Button 
+                      onClick={handleApplyForFinancing}
+                      variant="default"
+                      className="w-full"
+                      size="lg"
+                    >
+                      <CreditCard className="w-4 h-4 mr-2" />
+                      Apply for Financing
+                    </Button>
+                  )}
                   <Button 
                     onClick={handleStepComplete}
                     className="w-full bg-primary hover:opacity-90 text-primary-foreground premium-pulse"
@@ -820,7 +824,7 @@ export default function QuoteSummaryPage() {
                   coverageYears={selectedPackageCoverageYears}
                   onDownloadPDF={handleDownloadPDF}
                   onSaveForLater={() => setShowSaveDialog(true)}
-                  onApplyForFinancing={handleApplyForFinancing}
+                  onApplyForFinancing={packageSpecificTotals.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
                   showUpgradePrompt={false}
                   isProcessingPayment={isProcessingDeposit}
