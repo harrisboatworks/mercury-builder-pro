@@ -9,17 +9,57 @@ const queryClient = new QueryClient()
 
 console.log('🚀 Main.tsx executing...');
 
+// Helper to create error fallback using safe DOM methods (no innerHTML)
+function createErrorFallback(isRootMissing: boolean, errorDetails?: string) {
+  const container = document.createElement('div');
+  container.style.cssText = 'text-align: center; padding: 2rem; font-family: system-ui; max-width: 600px; margin: 0 auto;';
+
+  const heading = document.createElement('h2');
+  heading.textContent = isRootMissing ? 'Loading Error' : 'Application Error';
+  heading.style.cssText = isRootMissing ? '' : 'color: #dc2626;';
+  container.appendChild(heading);
+
+  const message = document.createElement('p');
+  message.textContent = isRootMissing 
+    ? 'Unable to find root element.' 
+    : 'The application failed to load properly.';
+  message.style.cssText = 'margin: 1rem 0;';
+  container.appendChild(message);
+
+  const linkContainer = document.createElement('div');
+  linkContainer.style.cssText = 'margin: 1.5rem 0;';
+  const link = document.createElement('a');
+  link.href = '/quote/motor-selection';
+  link.textContent = isRootMissing ? 'Click here to continue' : 'Continue to Quote Builder';
+  link.style.cssText = isRootMissing 
+    ? '' 
+    : 'background: #2563eb; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 0.375rem; display: inline-block;';
+  linkContainer.appendChild(link);
+  container.appendChild(linkContainer);
+
+  if (errorDetails) {
+    const details = document.createElement('details');
+    details.style.cssText = 'margin-top: 2rem; text-align: left;';
+    const summary = document.createElement('summary');
+    summary.textContent = 'Technical Details';
+    summary.style.cssText = 'cursor: pointer;';
+    details.appendChild(summary);
+    const pre = document.createElement('pre');
+    pre.textContent = errorDetails;
+    pre.style.cssText = 'background: #f3f4f6; padding: 1rem; border-radius: 0.375rem; overflow-x: auto; margin-top: 0.5rem;';
+    details.appendChild(pre);
+    container.appendChild(details);
+  }
+
+  document.body.appendChild(container);
+}
+
 try {
   const rootElement = document.getElementById("root");
   
   if (!rootElement) {
     console.error('❌ Root element not found!');
-    document.body.innerHTML = `
-      <div style="text-align: center; padding: 2rem; font-family: system-ui;">
-        <h2>Loading Error</h2>
-        <p>Unable to find root element. <a href="/quote/motor-selection">Click here to continue</a></p>
-      </div>
-    `;
+    createErrorFallback(true);
     throw new Error('Root element not found');
   }
 
@@ -46,21 +86,5 @@ try {
   
 } catch (error) {
   console.error('❌ Fatal error in main.tsx:', error);
-  
-  // Ultimate fallback
-  document.body.innerHTML = `
-    <div style="text-align: center; padding: 2rem; font-family: system-ui; max-width: 600px; margin: 0 auto;">
-      <h2 style="color: #dc2626;">Application Error</h2>
-      <p style="margin: 1rem 0;">The application failed to load properly.</p>
-      <div style="margin: 1.5rem 0;">
-        <a href="/quote/motor-selection" style="background: #2563eb; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 0.375rem; display: inline-block;">
-          Continue to Quote Builder
-        </a>
-      </div>
-      <details style="margin-top: 2rem; text-align: left;">
-        <summary style="cursor: pointer;">Technical Details</summary>
-        <pre style="background: #f3f4f6; padding: 1rem; border-radius: 0.375rem; overflow-x: auto; margin-top: 0.5rem;">${error}</pre>
-      </details>
-    </div>
-  `;
+  createErrorFallback(false, String(error));
 }
