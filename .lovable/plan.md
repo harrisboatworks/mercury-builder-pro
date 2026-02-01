@@ -1,125 +1,77 @@
 
+# Move Trade-In Motor Description to Second Line
 
-# Update Quote Summary Footer & Add Savings Section Divider
+## Problem
 
-## Overview
+Currently, the trade-in label shows everything on one line:
+```
+Estimated Trade Value (2020 Yamaha 20 HP)    −$2,400
+```
 
-Two improvements to the PricingTable component:
-1. Replace confusing "Installation and PDI included" text with clearer messaging about inspection requirements
-2. Add a subtle "Your Savings" section divider to visually group discount line items together
+On mobile, this wraps awkwardly mid-text. The user wants the motor description on its own line for cleaner formatting.
 
----
+## Solution
+
+Use the existing `description` prop on `LineItemRow` to put the motor details on a dedicated second line:
+
+```
+Estimated Trade Value                        −$2,400
+2020 Yamaha 20 HP
+```
 
 ## Changes
 
-### 1. Update Footer Note Text
+**File:** `src/components/quote-builder/PricingTable.tsx`
 
-**Current (line 198):**
-```
-All prices in Canadian dollars. Installation and PDI included.
-*Estimated trade value subject to physical inspection.
-```
-
-**Updated:**
-```
-All prices in Canadian dollars. Installation, rigging, and trade-in values subject to inspection and verification.
-```
-
-This change:
-- Removes confusing industry jargon ("PDI")
-- Consolidates the trade-in disclaimer into the main note
-- Makes clear that multiple items require verification
-
----
-
-### 2. Add "Your Savings" Section Divider
-
-Group the discount line items (trade-in, promos) under a subtle header to visually separate them from the motor pricing while keeping individual line item transparency.
-
-**New section structure (between accessories and subtotal):**
-
-```
-┌─────────────────────────────────────────┐
-│  Motor Price                    $X,XXX  │
-├─────────────────────────────────────────┤
-│  Accessories & Setup                    │
-│  ├─ Battery                      $XXX   │
-│  └─ Installation                 $XXX   │
-├─────────────────────────────────────────┤
-│  💰 Your Savings                        │  ← New subtle header
-│  ├─ Trade Value (2020 Merc 75HP) −$X,XXX│
-│  └─ Mercury GET 7 Promotion      −$XXX  │
-├─────────────────────────────────────────┤
-│  Subtotal                       $X,XXX  │
-│  HST (13%)                        $XXX  │
-│  Total Price                    $X,XXX  │
-└─────────────────────────────────────────┘
-```
-
-**Implementation:**
+### 1. Simplify the label function
 
 ```tsx
-{/* Your Savings Section - only show if there are savings */}
-{(tradeInValue > 0 || pricing.promoValue > 0) && (
-  <div className="space-y-1 pt-3">
-    <div className="flex items-center gap-2 py-1 border-t border-dashed border-emerald-200">
-      <span className="text-xs font-medium text-emerald-600 uppercase tracking-wide">
-        Your Savings
-      </span>
-    </div>
-    
-    {/* Trade Value */}
-    {tradeInValue > 0 && (
-      <LineItemRow
-        label={formatTradeInLabel(tradeInInfo)}
-        amount={tradeInValue}
-        isDiscount
-        className="pl-2 border-l-2 border-emerald-200"
-      />
-    )}
-    
-    {/* Promotional Savings */}
-    {pricing.promoValue > 0 && (
-      <LineItemRow
-        label={/* existing promo label logic */}
-        amount={pricing.promoValue}
-        isDiscount
-        description="Mercury GET 7 Promotion"
-        className="pl-2 border-l-2 border-emerald-200"
-      />
-    )}
-  </div>
-)}
+function formatTradeInLabel(): string {
+  return "Estimated Trade Value";
+}
 ```
 
----
+### 2. Add a new description helper
 
-## File to Modify
+```tsx
+function formatTradeInDescription(tradeInInfo?: { brand: string; year: number; horsepower: number; model?: string }): string | undefined {
+  if (!tradeInInfo) return undefined;
+  
+  const { brand, year, horsepower, model } = tradeInInfo;
+  const parts = [year.toString(), brand, `${horsepower} HP`];
+  if (model) parts.push(model);
+  
+  return parts.join(' ');
+}
+```
 
-| File | Changes |
-|------|---------|
-| `src/components/quote-builder/PricingTable.tsx` | 1. Add "Your Savings" section wrapper with subtle header<br>2. Move trade-in and promo rows inside the savings section<br>3. Update footer note text |
+### 3. Update the LineItemRow usage
 
----
+```tsx
+<LineItemRow
+  label="Estimated Trade Value"
+  amount={tradeInValue}
+  isDiscount
+  description={formatTradeInDescription(tradeInInfo)}
+  className="pl-2 border-l-2 border-emerald-200"
+/>
+```
 
-## Visual Result
+## Result
 
-**Before:**
-- Discounts scattered between accessories and subtotal
-- Generic footer text with jargon
+| Before | After |
+|--------|-------|
+| `Estimated Trade Value (2020 Yamaha 20 HP)` wrapping awkwardly | Clean two-line layout |
+| Motor info gets cut off mid-phrase | Motor info on its own line |
 
-**After:**
-- Clean "Your Savings" section with dashed green border
-- All discount items grouped with left accent border
-- Professional footer with clear inspection disclaimer
+## Visual
 
----
-
-## Design Rationale
-
-- **Emerald/green accents**: Already used for discount styling (LineItemRow uses `text-emerald-600`), so this maintains visual consistency
-- **Dashed border**: Subtle separation without heavy visual weight
-- **"Your Savings" label**: Customer-focused language that feels like a win
-- **Individual line items preserved**: Transparency on exactly where savings come from
-- **Uppercase tracking**: Premium typography treatment for section headers
-
+```
+┌────────────────────────────────────────┐
+│  YOUR SAVINGS                          │
+│  ├─ Estimated Trade Value    −$2,400   │
+│  │   2020 Yamaha 20 HP                 │
+│  └─ 7 Years Warranty + $250   −$250    │
+│      Mercury GET 7 Promotion           │
+└────────────────────────────────────────┘
+```
