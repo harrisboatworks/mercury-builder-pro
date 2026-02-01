@@ -27,6 +27,7 @@ export default function OptionsPage() {
   const { state, dispatch } = useQuote();
   const [localSelectedIds, setLocalSelectedIds] = useState<Set<string>>(new Set());
   const hasNavigatedRef = useRef(false);
+  const initializedRef = useRef(false);
   const { triggerHaptic } = useHapticFeedback();
   
   // Modal state for viewing option details
@@ -59,9 +60,11 @@ export default function OptionsPage() {
     };
   }, [categorizedOptions]);
 
-  // Initialize with required options and previously selected options
+  // Initialize with required options and previously selected options (run once only)
   useEffect(() => {
-    if (categorizedOptions) {
+    if (categorizedOptions && !initializedRef.current) {
+      initializedRef.current = true;
+      
       const initialIds = new Set<string>();
       
       // Always include required options
@@ -79,7 +82,7 @@ export default function OptionsPage() {
       
       setLocalSelectedIds(initialIds);
     }
-  }, [categorizedOptions, state.selectedOptions]);
+  }, [categorizedOptions]);
 
   // Redirect if no motor selected
   useEffect(() => {
