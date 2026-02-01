@@ -105,6 +105,40 @@ export default function OptionsPage() {
     }
   }, [isLoading, categorizedOptions, dispatch, navigate, isElectricStart]);
 
+  // Sync local selections to QuoteContext for real-time bar updates
+  useEffect(() => {
+    if (!categorizedOptions) return;
+    
+    const allOptions = [
+      ...categorizedOptions.required,
+      ...categorizedOptions.recommended,
+      ...categorizedOptions.available,
+    ];
+
+    const selectedOptions = allOptions
+      .filter(opt => localSelectedIds.has(opt.id))
+      .map(opt => ({
+        optionId: opt.id,
+        name: opt.name,
+        price: opt.is_included ? 0 : (opt.price_override ?? opt.base_price),
+        category: opt.category,
+        assignmentType: opt.assignment_type,
+        isIncluded: opt.is_included,
+      }));
+
+    dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
+  }, [localSelectedIds, categorizedOptions, dispatch]);
+
+  // Sync battery choice to context for real-time bar updates
+  useEffect(() => {
+    if (isElectricStart && batteryChoice !== null) {
+      dispatch({ 
+        type: 'SET_LOOSE_MOTOR_BATTERY', 
+        payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
+      });
+    }
+  }, [batteryChoice, isElectricStart, dispatch]);
+
   const toggleOption = (option: MotorOption) => {
     // Cannot deselect required options
     if (option.assignment_type === 'required' && localSelectedIds.has(option.id)) {
