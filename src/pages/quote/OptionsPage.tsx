@@ -1,22 +1,36 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useMotorOptions, type MotorOption } from '@/hooks/useMotorOptions';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
-import { ChevronLeft, ChevronRight, PackagePlus, CheckCircle2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle2, Info } from 'lucide-react';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { toast } from 'sonner';
 import { BatteryOptionPrompt, BATTERY_COST } from '@/components/quote-builder/BatteryOptionPrompt';
 import { hasElectricStart } from '@/lib/motor-config-utils';
+import { VisualOptionCard } from '@/components/options/VisualOptionCard';
+import { OptionDetailsModal } from '@/components/options/OptionDetailsModal';
+import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+
+// Categories that should display as visual cards when they have images
+const VISUAL_CATEGORIES = ['electronics', 'accessory'];
+
+function isVisualOption(option: MotorOption): boolean {
+  return VISUAL_CATEGORIES.includes(option.category) && !!option.image_url;
+}
 
 export default function OptionsPage() {
   const navigate = useNavigate();
   const { state, dispatch } = useQuote();
   const [localSelectedIds, setLocalSelectedIds] = useState<Set<string>>(new Set());
   const hasNavigatedRef = useRef(false);
+  const { triggerHaptic } = useHapticFeedback();
+  
+  // Modal state for viewing option details
+  const [detailsModalOption, setDetailsModalOption] = useState<MotorOption | null>(null);
   
   // Battery choice for electric start motors
   const isElectricStart = hasElectricStart(state.motor?.model || '');
@@ -28,6 +42,22 @@ export default function OptionsPage() {
     state.motor?.id,
     state.motor
   );
+
+  // Split options into visual and list categories
+  const splitOptions = useMemo(() => {
+    if (!categorizedOptions) return null;
+    
+    const split = (options: MotorOption[]) => ({
+      visual: options.filter(isVisualOption),
+      list: options.filter(opt => !isVisualOption(opt)),
+    });
+    
+    return {
+      required: split(categorizedOptions.required),
+      recommended: split(categorizedOptions.recommended),
+      available: split(categorizedOptions.available),
+    };
+  }, [categorizedOptions]);
 
   // Initialize with required options and previously selected options
   useEffect(() => {
@@ -78,6 +108,7 @@ export default function OptionsPage() {
       return;
     }
 
+    triggerHaptic('addedToQuote');
     setLocalSelectedIds(prev => {
       const newSet = new Set(prev);
       if (newSet.has(option.id)) {
@@ -136,7 +167,6 @@ export default function OptionsPage() {
     dispatch({ type: 'COMPLETE_STEP', payload: 2 });
     
     // CRITICAL: Force immediate save before navigation to prevent data loss
-    // This bypasses the 1000ms debounce in QuoteContext
     try {
       const currentData = localStorage.getItem('quoteBuilder');
       if (currentData) {
@@ -152,16 +182,11 @@ export default function OptionsPage() {
           timestamp: Date.now(),
           lastActivity: Date.now()
         }));
-        console.log('💾 OptionsPage: Immediate save for battery choice', { 
-          wantsBattery: batteryPayload?.wantsBattery,
-          batteryCost: batteryPayload?.batteryCost 
-        });
       }
     } catch (error) {
       console.error('Failed to force-save options:', error);
     }
     
-    // Navigate to purchase path
     navigate('/quote/purchase-path');
   };
 
@@ -187,7 +212,7 @@ export default function OptionsPage() {
   };
 
   if (!state.motor) {
-    return null; // Navigation happens in useEffect
+    return null;
   }
 
   if (isLoading) {
@@ -206,10 +231,8 @@ export default function OptionsPage() {
     categorizedOptions.available.length > 0
   );
 
-  // Show page if there are options OR if battery choice is needed
   const shouldShowPage = hasOptions || isElectricStart;
 
-  // If nothing to show, return null (navigation happens in useEffect)
   if (!shouldShowPage) {
     return null;
   }
@@ -228,33 +251,32 @@ export default function OptionsPage() {
         </div>
 
         {/* Required Options */}
-        {categorizedOptions?.required.length > 0 && (
-          <div className="mb-8">
-            <div className="flex items-center gap-2 mb-4">
-              <h2 className="text-xl font-semibold">Required Items</h2>
-              <Badge variant="destructive">Must Include</Badge>
-            </div>
+        {splitOptions && splitOptions.required.list.length > 0 && (
+          <OptionsSection
+            title="Required Items"
+            badge={<Badge variant="destructive">Must Include</Badge>}
+          >
             <div className="space-y-3">
-              {categorizedOptions.required.map(option => (
+              {splitOptions.required.list.map(option => (
                 <OptionCard
                   key={option.id}
                   option={option}
                   isSelected={true}
                   onToggle={() => {}}
+                  onViewDetails={() => setDetailsModalOption(option)}
                   disabled={true}
                 />
               ))}
             </div>
-          </div>
+          </OptionsSection>
         )}
 
         {/* Battery Requirement for Electric Start Motors */}
         {isElectricStart && (
-          <div className="mb-8">
-            <div className="flex items-center gap-2 mb-4">
-              <h2 className="text-xl font-semibold">Starting Battery</h2>
-              <Badge variant="destructive">Required Answer</Badge>
-            </div>
+          <OptionsSection
+            title="Starting Battery"
+            badge={<Badge variant="destructive">Required Answer</Badge>}
+          >
             <BatteryOptionPrompt 
               onSelect={setBatteryChoice}
               selectedOption={batteryChoice}
@@ -265,95 +287,171 @@ export default function OptionsPage() {
                 Please select an option before continuing
               </p>
             )}
-          </div>
+          </OptionsSection>
         )}
 
         {/* Recommended Options */}
-        {categorizedOptions?.recommended.length > 0 && (
-          <div className="mb-8">
-            <div className="flex items-center gap-2 mb-4">
-              <h2 className="text-xl font-semibold">Recommended Add-Ons</h2>
-              <Badge>Pre-selected</Badge>
-            </div>
-            <div className="space-y-3">
-              {categorizedOptions.recommended.map(option => (
-                <OptionCard
-                  key={option.id}
-                  option={option}
-                  isSelected={localSelectedIds.has(option.id)}
-                  onToggle={() => toggleOption(option)}
-                />
-              ))}
-            </div>
-          </div>
+        {splitOptions && (splitOptions.recommended.visual.length > 0 || splitOptions.recommended.list.length > 0) && (
+          <OptionsSection
+            title="Recommended Add-Ons"
+            badge={<Badge>Pre-selected</Badge>}
+          >
+            {/* Visual Grid */}
+            {splitOptions.recommended.visual.length > 0 && (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-4">
+                {splitOptions.recommended.visual.map(option => (
+                  <VisualOptionCard
+                    key={option.id}
+                    option={option}
+                    isSelected={localSelectedIds.has(option.id)}
+                    onToggle={() => toggleOption(option)}
+                    onViewDetails={() => setDetailsModalOption(option)}
+                    isRecommended={true}
+                  />
+                ))}
+              </div>
+            )}
+            
+            {/* List */}
+            {splitOptions.recommended.list.length > 0 && (
+              <div className="space-y-3">
+                {splitOptions.recommended.list.map(option => (
+                  <OptionCard
+                    key={option.id}
+                    option={option}
+                    isSelected={localSelectedIds.has(option.id)}
+                    onToggle={() => toggleOption(option)}
+                    onViewDetails={() => setDetailsModalOption(option)}
+                  />
+                ))}
+              </div>
+            )}
+          </OptionsSection>
         )}
 
         {/* Available Options */}
-        {categorizedOptions?.available.length > 0 && (
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold mb-4">Available Options</h2>
-            <div className="space-y-3">
-              {categorizedOptions.available.map(option => (
-                <OptionCard
-                  key={option.id}
-                  option={option}
-                  isSelected={localSelectedIds.has(option.id)}
-                  onToggle={() => toggleOption(option)}
-                />
-              ))}
-            </div>
-          </div>
+        {splitOptions && (splitOptions.available.visual.length > 0 || splitOptions.available.list.length > 0) && (
+          <OptionsSection title="Available Options">
+            {/* Visual Grid */}
+            {splitOptions.available.visual.length > 0 && (
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mb-4">
+                {splitOptions.available.visual.map(option => (
+                  <VisualOptionCard
+                    key={option.id}
+                    option={option}
+                    isSelected={localSelectedIds.has(option.id)}
+                    onToggle={() => toggleOption(option)}
+                    onViewDetails={() => setDetailsModalOption(option)}
+                  />
+                ))}
+              </div>
+            )}
+            
+            {/* List */}
+            {splitOptions.available.list.length > 0 && (
+              <div className="space-y-3">
+                {splitOptions.available.list.map(option => (
+                  <OptionCard
+                    key={option.id}
+                    option={option}
+                    isSelected={localSelectedIds.has(option.id)}
+                    onToggle={() => toggleOption(option)}
+                    onViewDetails={() => setDetailsModalOption(option)}
+                  />
+                ))}
+              </div>
+            )}
+          </OptionsSection>
         )}
 
         {/* Sticky Footer */}
-        <div className="sticky bottom-0 bg-background/95 backdrop-blur border-t py-4 mt-8">
-          <div className="flex items-center justify-between">
-            <Button variant="outline" onClick={handleBack}>
-              <ChevronLeft className="h-4 w-4 mr-2" />
-              Back
-            </Button>
+        <div className="fixed bottom-0 left-0 right-0 bg-background/95 backdrop-blur border-t py-4 z-50">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="flex items-center justify-between">
+              <Button variant="outline" onClick={handleBack}>
+                <ChevronLeft className="h-4 w-4 mr-2" />
+                Back
+              </Button>
 
-            <div className="text-center">
-              <p className="text-sm text-muted-foreground">Options Total</p>
-              <p className="text-2xl font-bold">
-                {optionsTotal === 0 ? 'Included' : `+$${optionsTotal.toFixed(2)}`}
-              </p>
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground">Options Total</p>
+                <p className="text-2xl font-bold">
+                  {optionsTotal === 0 ? 'Included' : `+$${optionsTotal.toFixed(2)}`}
+                </p>
+              </div>
+
+              <Button onClick={handleContinue} disabled={!canContinue}>
+                Continue
+                <ChevronRight className="h-4 w-4 ml-2" />
+              </Button>
             </div>
-
-            <Button onClick={handleContinue} disabled={!canContinue}>
-              Continue
-              <ChevronRight className="h-4 w-4 ml-2" />
-            </Button>
           </div>
         </div>
+
+        {/* Details Modal */}
+        <OptionDetailsModal
+          option={detailsModalOption}
+          isOpen={!!detailsModalOption}
+          onClose={() => setDetailsModalOption(null)}
+          isSelected={detailsModalOption ? localSelectedIds.has(detailsModalOption.id) : false}
+          onToggle={() => detailsModalOption && toggleOption(detailsModalOption)}
+          disabled={detailsModalOption?.assignment_type === 'required'}
+        />
       </div>
     </QuoteLayout>
   );
 }
 
-// Option Card Component
+// Section wrapper component
+interface OptionsSectionProps {
+  title: string;
+  badge?: React.ReactNode;
+  children: React.ReactNode;
+}
+
+function OptionsSection({ title, badge, children }: OptionsSectionProps) {
+  return (
+    <div className="mb-8">
+      <div className="flex items-center gap-2 mb-4">
+        <h2 className="text-xl font-semibold">{title}</h2>
+        {badge}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+// Option Card Component (compact list style)
 interface OptionCardProps {
   option: MotorOption;
   isSelected: boolean;
   onToggle: () => void;
+  onViewDetails: () => void;
   disabled?: boolean;
 }
 
-function OptionCard({ option, isSelected, onToggle, disabled }: OptionCardProps) {
+function OptionCard({ option, isSelected, onToggle, onViewDetails, disabled }: OptionCardProps) {
   const effectivePrice = option.is_included ? 0 : (option.price_override ?? option.base_price);
 
+  const handleDetailsClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onViewDetails();
+  };
+
   return (
-    <Card className={`cursor-pointer transition-all ${
-      isSelected ? 'border-primary bg-primary/5' : 'hover:border-muted-foreground/50'
-    } ${disabled ? 'opacity-60 cursor-not-allowed' : ''}`}
-    onClick={disabled ? undefined : onToggle}>
+    <Card 
+      className={`cursor-pointer transition-all ${
+        isSelected ? 'border-primary bg-primary/5' : 'hover:border-muted-foreground/50'
+      } ${disabled ? 'opacity-60 cursor-not-allowed' : ''}`}
+      onClick={disabled ? undefined : onToggle}
+    >
       <CardContent className="p-4">
         <div className="flex items-start gap-4">
           {!disabled && (
             <div className="pt-1">
               <Checkbox
                 checked={isSelected}
-                onCheckedChange={onToggle}
+                onCheckedChange={() => onToggle()}
                 onClick={(e) => e.stopPropagation()}
               />
             </div>
@@ -364,19 +462,19 @@ function OptionCard({ option, isSelected, onToggle, disabled }: OptionCardProps)
             </div>
           )}
 
-          <div className="flex-1">
-            <div className="flex items-start justify-between">
-              <div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0 flex-1">
                 <h3 className="font-semibold">{option.name}</h3>
                 {option.short_description && (
-                  <p className="text-sm text-muted-foreground mt-1">{option.short_description}</p>
+                  <p className="text-sm text-muted-foreground mt-1 line-clamp-1">{option.short_description}</p>
                 )}
                 {option.part_number && (
                   <p className="text-xs text-muted-foreground mt-1">Part: {option.part_number}</p>
                 )}
               </div>
               
-              <div className="text-right">
+              <div className="text-right shrink-0">
                 {option.is_included ? (
                   <Badge variant="secondary">Included</Badge>
                 ) : (
@@ -392,15 +490,24 @@ function OptionCard({ option, isSelected, onToggle, disabled }: OptionCardProps)
               </div>
             </div>
 
-            {option.features && option.features.length > 0 && (
-              <ul className="mt-2 space-y-1">
-                {option.features.slice(0, 3).map((feature: string, idx: number) => (
-                  <li key={idx} className="text-xs text-muted-foreground flex items-center gap-1">
-                    <span className="text-primary">•</span> {feature}
-                  </li>
-                ))}
-              </ul>
-            )}
+            {/* Features preview and View Details button */}
+            <div className="flex items-center justify-between mt-2">
+              {option.features && option.features.length > 0 ? (
+                <p className="text-xs text-muted-foreground line-clamp-1 flex-1">
+                  {option.features.slice(0, 3).join(' • ')}
+                </p>
+              ) : (
+                <div />
+              )}
+              
+              <button
+                onClick={handleDetailsClick}
+                className="text-xs text-primary hover:underline flex items-center gap-1 ml-2 shrink-0 min-h-[44px] px-2 -mr-2"
+              >
+                <Info className="w-3 h-3" />
+                Details
+              </button>
+            </div>
           </div>
         </div>
       </CardContent>
