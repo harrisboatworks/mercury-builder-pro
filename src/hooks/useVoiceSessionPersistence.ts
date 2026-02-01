@@ -50,6 +50,11 @@ function getOrCreateSessionId(): string {
   return sessionId;
 }
 
+// Helper to get headers with session ID for RLS policy validation
+function getSessionHeaders(): { 'x-session-id': string } {
+  return { 'x-session-id': getOrCreateSessionId() };
+}
+
 export function useVoiceSessionPersistence() {
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
