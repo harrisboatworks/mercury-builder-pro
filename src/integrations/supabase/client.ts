@@ -27,6 +27,27 @@ const supportsLocalStorage = typeof window !== 'undefined' && (() => {
 
 const safeStorage: Pick<Storage, 'getItem' | 'setItem' | 'removeItem'> = supportsLocalStorage ? window.localStorage : memoryStorage;
 
+// Session ID key for anonymous user tracking (used by RLS policies)
+const SESSION_ID_KEY = 'chat_session_id';
+
+// Get or create a cryptographically secure session ID for anonymous users
+function getOrCreateSessionId(): string {
+  if (typeof window === 'undefined') return '';
+  
+  try {
+    let sessionId = safeStorage.getItem(SESSION_ID_KEY);
+    if (!sessionId) {
+      const array = new Uint8Array(16);
+      crypto.getRandomValues(array);
+      sessionId = `voice_${Array.from(array, b => b.toString(16).padStart(2, '0')).join('')}`;
+      safeStorage.setItem(SESSION_ID_KEY, sessionId);
+    }
+    return sessionId;
+  } catch {
+    return '';
+  }
+}
+
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
 
@@ -35,5 +56,11 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
     storage: safeStorage,
     persistSession: true,
     autoRefreshToken: true,
-  }
+  },
+  global: {
+    headers: {
+      // Pass session ID header for RLS policy validation (voice_sessions, customer_quotes, etc.)
+      'x-session-id': getOrCreateSessionId(),
+    },
+  },
 });
