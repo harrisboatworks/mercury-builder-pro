@@ -1,91 +1,103 @@
 
+# Real-Time Price Updates in Bottom Bar
 
-# Fix Purchase Path Back Button - Style & Navigation
+## The Problem
 
-## Issues Identified
+When you select or unselect options on the Options page, the bottom bar stays at $2,999 instead of updating. This happens because:
 
-1. **Inconsistent Styling**: The Purchase Path page uses a boxed `Button variant="outline"` with "Back to Motor Selection", while the Options page (and premium patterns) use a clean, unboxed text link with just "< Back"
+1. **Local State Only**: Option toggles update a local state (`localSelectedIds`) within the page
+2. **Delayed Sync**: The QuoteContext (which the bar reads from) only gets updated when you click "Continue"
+3. **Bar Reads Context**: `UnifiedMobileBar` displays `state.selectedOptions` from the context, which is stale during browsing
 
-2. **Wrong Navigation Target**: Currently navigates to `/quote/motor-selection` (Step 1) instead of `/quote/options` (Step 2 - the immediate previous page)
+## The Solution
 
-## Quote Flow Reference
+Sync selections to QuoteContext immediately on each toggle, so the bar reflects changes in real-time.
 
-| Step | Page | Previous Page |
-|------|------|---------------|
-| 1 | Motor Selection | — |
-| 2 | Options | Motor Selection |
-| 3 | **Purchase Path** | **Options** ← Should go here |
-| 4 | Boat Info | Purchase Path |
+### How It Works
 
-## Solution
-
-Update `PurchasePathPage.tsx` to match the premium styling from OptionsPage and fix the navigation target.
-
-### File: `src/pages/quote/PurchasePathPage.tsx`
-
-**Current (lines 89-101):**
-```tsx
-const handleBack = () => {
-  navigate('/quote/motor-selection');  // Wrong!
-};
-
-return (
-  <PageTransition>
-    <QuoteLayout>
-      <div className="space-y-6">
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm" onClick={handleBack} className="border-gray-300...">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Motor Selection
-          </Button>
-        </div>
+```text
+User taps option card
+       ↓
+toggleOption() updates localSelectedIds (for UI checkmarks)
+       ↓
+NEW: Also dispatches SET_SELECTED_OPTIONS to QuoteContext
+       ↓
+UnifiedMobileBar re-calculates total (already has this logic)
+       ↓
+Price updates instantly in the bar
 ```
 
-**After:**
-```tsx
-const handleBack = () => {
-  navigate('/quote/options');  // Correct previous step
-};
+---
 
-return (
-  <PageTransition>
-    <QuoteLayout>
-      <div className="space-y-6">
-        {/* Premium Back Button - matches Options page style */}
-        <button 
-          onClick={handleBack}
-          className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px]"
-          aria-label="Back to options"
-        >
-          <ChevronLeft className="h-5 w-5" />
-          <span className="text-sm font-medium">Back</span>
-        </button>
-        
-        <PurchasePath ... />
-      </div>
-    </QuoteLayout>
-  </PageTransition>
-);
+## Implementation
+
+### File: `src/pages/quote/OptionsPage.tsx`
+
+**Add a `useEffect` that syncs local selections to context on every change:**
+
+```tsx
+// After localSelectedIds changes, sync to QuoteContext for real-time bar updates
+useEffect(() => {
+  if (!categorizedOptions) return;
+  
+  const allOptions = [
+    ...categorizedOptions.required,
+    ...categorizedOptions.recommended,
+    ...categorizedOptions.available,
+  ];
+
+  const selectedOptions = allOptions
+    .filter(opt => localSelectedIds.has(opt.id))
+    .map(opt => ({
+      optionId: opt.id,
+      name: opt.name,
+      price: opt.is_included ? 0 : (opt.price_override ?? opt.base_price),
+      category: opt.category,
+      assignmentType: opt.assignment_type,
+      isIncluded: opt.is_included,
+    }));
+
+  dispatch({ type: 'SET_SELECTED_OPTIONS', payload: selectedOptions });
+}, [localSelectedIds, categorizedOptions, dispatch]);
 ```
 
-## Changes Summary
+This effect:
+- Runs whenever `localSelectedIds` changes (i.e., after every toggle)
+- Builds the selectedOptions array from the current selections
+- Dispatches to QuoteContext immediately
+- The bar's `useMemo` dependency on `state.selectedOptions` triggers a re-render
 
-| Aspect | Before | After |
-|--------|--------|-------|
-| **Navigation** | `/quote/motor-selection` (skips Options) | `/quote/options` (correct previous step) |
-| **Style** | Boxed outline button | Clean text link with icon |
-| **Icon** | `ArrowLeft` | `ChevronLeft` (matches Options page) |
-| **Label** | "Back to Motor Selection" | "Back" |
+---
+
+## Battery Choice Sync
+
+Similarly, sync the battery choice immediately so the bar updates when you select "Yes, include battery":
+
+```tsx
+// Sync battery choice to context for real-time bar updates
+useEffect(() => {
+  if (isElectricStart && batteryChoice !== null) {
+    dispatch({ 
+      type: 'SET_LOOSE_MOTOR_BATTERY', 
+      payload: { wantsBattery: batteryChoice, batteryCost: BATTERY_COST } 
+    });
+  }
+}, [batteryChoice, isElectricStart, dispatch]);
+```
+
+---
 
 ## Files to Modify
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/PurchasePathPage.tsx` | Fix navigation target & update button style |
+| `src/pages/quote/OptionsPage.tsx` | Add two `useEffect` hooks to sync selections and battery choice to QuoteContext in real-time |
 
-## Additional Notes
+---
 
-- Import `ChevronLeft` from lucide-react (replace `ArrowLeft`)
-- Remove the `Button` component usage for back navigation
-- The premium style uses a native `<button>` element with Tailwind classes for a cleaner, unboxed look
+## Result
 
+- **Before**: Bar shows $2,999 (base motor) until you click Continue
+- **After**: Bar updates to $3,324 as soon as you tap SmartCraft Connect ($325)
+
+This makes the bottom bar a true "live companion" that reflects every choice as you make it.
