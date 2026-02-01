@@ -124,6 +124,11 @@ export function GlobalStickyQuoteBar() {
     return payment;
   }, [runningTotal, promo]);
 
+  // Financing unavailable when total is valid but below threshold
+  const financingUnavailable = useMemo(() => {
+    return runningTotal !== null && runningTotal > 0 && runningTotal < FINANCING_MINIMUM;
+  }, [runningTotal]);
+
   // Get step label based on current path
   const stepLabel = useMemo(() => {
     const path = location.pathname;
@@ -202,6 +207,7 @@ export function GlobalStickyQuoteBar() {
       onSecondary={handleSecondary}
       selectedPromoOption={state.selectedPromoOption}
       selectedPromoDisplay={selectedPromoDisplay}
+      financingUnavailable={financingUnavailable}
     />
   );
 }

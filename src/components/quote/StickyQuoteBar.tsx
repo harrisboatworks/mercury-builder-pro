@@ -18,6 +18,8 @@ type Props = {
   // Selected promo option for "Choose One" promotions
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoDisplay?: string | null;
+  // Indicates financing is unavailable (total < $5,000)
+  financingUnavailable?: boolean;
 };
 
 export default function StickyQuoteBar({
@@ -32,7 +34,8 @@ export default function StickyQuoteBar({
   onSecondary,
   deltaOnce,
   selectedPromoOption,
-  selectedPromoDisplay
+  selectedPromoDisplay,
+  financingUnavailable
 }: Props) {
   const [showDelta, setShowDelta] = React.useState(true);
   React.useEffect(() => {
@@ -56,7 +59,11 @@ export default function StickyQuoteBar({
           {model && <div className="text-sm md:text-base font-semibold text-slate-900 leading-tight truncate">{model}</div>}
           <div className="mt-0.5 flex flex-wrap items-center gap-1.5 md:gap-2 text-xs md:text-sm text-slate-700 font-light">
             {typeof total === "number" && <span><span className="hidden md:inline">Total: </span><span className="font-semibold">{money(total)}</span></span>}
-            {typeof monthly === "number" && monthly > 0 && <span>≈ {money(Math.round(monthly))}/mo<span className="hidden md:inline"> OAC</span></span>}
+            {typeof monthly === "number" && monthly > 0 ? (
+              <span>≈ {money(Math.round(monthly))}/mo<span className="hidden md:inline"> OAC</span></span>
+            ) : financingUnavailable ? (
+              <span className="text-slate-400 text-[10px] md:text-xs">Financing N/A</span>
+            ) : null}
             {typeof coverageYears === "number" && coverageYears > 0 && (
               <span>
                 <span className="md:hidden">{coverageYears}yr</span>

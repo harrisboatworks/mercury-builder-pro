@@ -485,6 +485,13 @@ export const UnifiedMobileBar: React.FC = () => {
     return payment;
   }, [runningTotal, promo]);
 
+  // Financing unavailable when total is valid but below threshold
+  const financingUnavailable = useMemo(() => {
+    if (!runningTotal) return false;
+    const priceWithHST = runningTotal * 1.13;
+    return priceWithHST < FINANCING_MINIMUM;
+  }, [runningTotal]);
+
   // Calculate progress through quote journey
   const quoteProgress = useMemo(() => {
     let completed = 0;
@@ -1395,11 +1402,15 @@ export const UnifiedMobileBar: React.FC = () => {
                     </motion.span>
                     <ChevronUp className={`h-3 w-3 text-gray-400 transition-transform duration-200 ${isDrawerOpen ? 'rotate-180' : ''}`} />
                   </div>
-                  {monthlyPayment > 0 && (
+                  {monthlyPayment > 0 ? (
                     <span className="text-gray-500 text-[9px] min-[375px]:text-[10px]">
                       ≈{money(monthlyPayment)}/mo
                     </span>
-                  )}
+                  ) : financingUnavailable && runningTotal > 0 ? (
+                    <span className="text-gray-400 text-[8px] min-[375px]:text-[9px]">
+                      Financing N/A
+                    </span>
+                  ) : null}
                 </div>
               </>
             ) : (

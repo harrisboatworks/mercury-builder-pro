@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
-import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
+import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -132,7 +132,8 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       total,
       monthly,
       termMonths,
-      rate
+      rate,
+      financingUnavailable: total < FINANCING_MINIMUM
     };
   }, [displayMotor, state, financingPromo]);
 
@@ -271,12 +272,20 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
                   <CreditCard className="h-4 w-4 text-primary" />
                   <span className="text-sm font-medium">Monthly Financing</span>
                 </div>
-                <p className="text-2xl font-semibold">
-                  ≈ {money(pricing.monthly)}<span className="text-sm font-normal text-muted-foreground">/mo</span>
-                </p>
-                <p className="text-xs text-muted-foreground mt-1">
-                  {pricing.termMonths} months @ {pricing.rate}% APR OAC
-                </p>
+                {pricing.financingUnavailable ? (
+                  <p className="text-sm text-muted-foreground">
+                    Financing available for purchases $5,000+
+                  </p>
+                ) : (
+                  <>
+                    <p className="text-2xl font-semibold">
+                      ≈ {money(pricing.monthly)}<span className="text-sm font-normal text-muted-foreground">/mo</span>
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {pricing.termMonths} months @ {pricing.rate}% APR OAC
+                    </p>
+                  </>
+                )}
               </div>
 
               {/* Summary Page Actions */}
