@@ -59,6 +59,7 @@ export function VisualOptionCard({
           <img 
             src={option.image_url || '/placeholder.svg'} 
             alt={option.name}
+            onError={(e) => { e.currentTarget.src = '/placeholder.svg'; }}
             className="w-full h-full object-cover bg-muted"
             loading="lazy"
           />
