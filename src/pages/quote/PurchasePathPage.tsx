@@ -4,8 +4,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import PurchasePath from '@/components/quote-builder/PurchasePath';
 import { useQuote } from '@/contexts/QuoteContext';
-import { Button } from '@/components/ui/button';
-import { ArrowLeft } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 
 export default function PurchasePathPage() {
   const navigate = useNavigate();
@@ -87,21 +86,24 @@ export default function PurchasePathPage() {
   };
 
   const handleBack = () => {
-    navigate('/quote/motor-selection');
+    navigate('/quote/options');
   };
 
   return (
     <PageTransition>
       <QuoteLayout>
         <div className="space-y-6">
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" onClick={handleBack} className="border-gray-300 hover:border-gray-900 font-light">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Motor Selection
-            </Button>
-          </div>
+          {/* Premium Back Button - matches Options page style */}
+          <button 
+            onClick={handleBack}
+            className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px]"
+            aria-label="Back to options"
+          >
+            <ChevronLeft className="h-5 w-5" />
+            <span className="text-sm font-medium">Back</span>
+          </button>
           
-          <PurchasePath 
+          <PurchasePath
             selectedMotor={state.motor!}
             onSelectPath={handleStepComplete}
           />
