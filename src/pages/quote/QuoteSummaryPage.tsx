@@ -387,15 +387,15 @@ export default function QuoteSummaryPage() {
       });
     }
     
-    // Warranty extension
-    if (selectedPackage === 'better' && completeWarrantyCost > 0) {
+    // Warranty extension - only add if current coverage is below target (prevents race condition with promo loading)
+    if (selectedPackage === 'better' && completeWarrantyCost > 0 && currentCoverageYears < COMPLETE_TARGET_YEARS) {
       const extensionYears = COMPLETE_TARGET_YEARS - currentCoverageYears;
       breakdown.push({
         name: `Complete Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
         price: completeWarrantyCost,
         description: `Total coverage: ${COMPLETE_TARGET_YEARS} years`
       });
-    } else if (selectedPackage === 'best' && premiumWarrantyCost > 0) {
+    } else if (selectedPackage === 'best' && premiumWarrantyCost > 0 && currentCoverageYears < PREMIUM_TARGET_YEARS) {
       const extensionYears = PREMIUM_TARGET_YEARS - currentCoverageYears;
       breakdown.push({
         name: `Premium Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
@@ -503,10 +503,13 @@ export default function QuoteSummaryPage() {
           totalCashPrice: packageTotal,
           savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
         },
-        monthlyPayment,
-        financingTerm: termMonths,
-        financingRate,
-        financingQrCode: qrCodeDataUrl,
+        // Only include financing data if total meets minimum threshold
+        ...(packageTotal >= FINANCING_MINIMUM ? {
+          monthlyPayment,
+          financingTerm: termMonths,
+          financingRate,
+          financingQrCode: qrCodeDataUrl,
+        } : {}),
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp)
       };
