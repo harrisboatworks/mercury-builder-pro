@@ -1,119 +1,191 @@
 
+# Fix Google Sheets Inventory Sync Mismatches
 
-# Clean Up Hamburger Menu - Remove Redundant CTAs
+## Problem Summary
 
-## The Problem
+The Google Sheets sync is incorrectly marking motors as "In Stock" due to bugs in the model name parsing logic. Your screenshot shows motors like **25EPT FourStroke** and **20ML FourStroke** displaying as "In Stock Today" when they're not actually in your inventory.
 
-The hamburger menu currently has a "Quick Actions" section with:
-- A giant "Call (905) 342-2153" button
-- A "Request a Quote" button
+### Verified Mismatches
 
-This is redundant because:
-1. This **is** the quote building site - users are already building quotes!
-2. The **UnifiedMobileBar** already provides Call/Text/Email options in its drawer
-3. The phone number appears again in the **Location Footer** section at the bottom of the menu
-4. "Contact Us" is already in the navigation links
+| What's in Your Google Sheet | What It's Matching To | Correct Motor |
+|-----------------------------|----------------------|---------------|
+| FourStroke 20HP EFI EH | 20ML FourStroke | 20 EH FourStroke |
+| FourStroke 20HP EFI EH | 20EPT FourStroke | 20 EH FourStroke |
+| FourStroke 25HP EFI ELHPT | 25EPT FourStroke | 25 ELHPT FourStroke |
 
-## Proposed Changes
+### Root Cause
 
-Remove the entire "Quick Actions" section (lines 42-59) from the hamburger menu.
+The rigging code regex in the sync function is missing several valid Mercury codes:
 
-### Before
+**Current regex:**
 ```
-┌─────────────────────────────────┐
-│ [Harris Logo]              [X] │
-├─────────────────────────────────┤
-│ ┌─────────────────────────────┐ │
-│ │ 📞 Call (905) 342-2153      │ │  ← REMOVE
-│ └─────────────────────────────┘ │
-│ ┌─────────────────────────────┐ │
-│ │ 💬 Request a Quote          │ │  ← REMOVE
-│ └─────────────────────────────┘ │
-│                                 │
-│ Navigation                      │
-│ • Engines                       │
-│ • Promotions                    │
-│ ...                             │
-└─────────────────────────────────┘
+\b(EXLPT|ELHPT|ELPT|ELH|MRC|MXXL|MXL|MLH|MH|XXL|XL|CT)\b
 ```
 
-### After
-```
-┌─────────────────────────────────┐
-│ [Harris Logo]              [X] │
-├─────────────────────────────────┤
-│ [XP Badge - if user has XP]    │
-│                                 │
-│ Navigation                      │
-│ • Engines                       │
-│ • Promotions                    │
-│ • Repower                       │
-│ • Compare Engines               │
-│ • Financing                     │
-│ • Blog                          │
-│ • About Us                      │
-│ • Contact Us   ← Still here    │
-│                                 │
-│ Dealer Credentials              │
-│ [CSI Award] [Certified Repower] │
-│                                 │
-│ Account                         │
-│ ...                             │
-│                                 │
-│ Harris Boat Works               │
-│ 5369 Harris Boat Works Rd...    │
-│ Mercury Premier Dealer          │
-└─────────────────────────────────┘
+**Missing codes:** `EH`, `EPT`, `E`, `EL`, `ML`
+
+When a rigging code isn't recognized, the sync falls back to matching by HP + family only, causing a 20HP FourStroke with code `EH` to match the first 20HP FourStroke found (which happens to be `20ML`).
+
+---
+
+## Implementation Plan
+
+### Step 1: Fix the Rigging Code Regex
+
+Update the regex pattern in `sync-google-sheets-inventory/index.ts` to include all valid Mercury rigging codes:
+
+```typescript
+// BEFORE
+const riggingMatch = normalized.match(/\b(EXLPT|ELHPT|ELPT|ELH|MRC|MXXL|MXL|MLH|MH|XXL|XL|CT)\b/i);
+
+// AFTER - Ordered by length (longest first) to prevent partial matches
+const riggingMatch = normalized.match(/\b(EXLPT|ELHPT|ELPT|ELH|EPT|EH|MRC|MXXL|MXL|MLH|MH|ML|EL|E|XXL|XL|L|CT)\b/i);
 ```
 
-## Implementation
+**Code priorities (longest first):**
+- `EXLPT` - Electric, Extra Long, Power Trim
+- `ELHPT` - Electric, Long, High-thrust, Power Trim
+- `ELPT` - Electric, Long, Power Trim
+- `ELH` - Electric, Long, High-thrust (Tiller)
+- `EPT` - Electric, Power Trim (Short shaft)
+- `EH` - Electric, Short shaft (Tiller)
+- `MRC` - Mercury Racing
+- `MXXL` - Manual, Ultra-Extra Long
+- `MXL` - Manual, Extra Long
+- `MLH` - Manual, Long, High-thrust
+- `MH` - Manual, Short shaft
+- `ML` - Manual, Long
+- `EL` - Electric, Long
+- `E` - Electric base
+- `XXL` - Ultra-Extra Long
+- `XL` - Extra Long
+- `L` - Long (standalone)
+- `CT` - Command Thrust
 
-### File to Modify
-`src/components/ui/hamburger-menu.tsx`
+### Step 2: Prevent False Matches
 
-### Changes
-1. Remove the "Quick Actions" section (lines 42-59)
-2. Remove the `Phone` and `MessageSquare` icon imports (no longer needed)
+Add stricter validation to prevent a motor from matching when no rigging code is detected in the sheet entry:
 
-### Code Change
+```typescript
+// If rigging code was detected in the sheet BUT not found in DB results, skip the match
+if (parsed.riggingCode && motors && motors.length > 0) {
+  const motor = motors[0];
+  // Validate the matched motor contains the same rigging code
+  const motorHasCode = motor.model_display.toUpperCase().includes(parsed.riggingCode);
+  if (!motorHasCode) {
+    console.log(`⚠️ Rigging code mismatch - skipping false match`);
+    motors = []; // Clear to prevent false positive
+  }
+}
 
-Delete this section:
-```tsx
-{/* Quick Actions */}
-<div className="space-y-3">
-  <a 
-    href="tel:+19053422153" 
-    className="flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-  >
-    <Phone className="w-5 h-5" />
-    Call (905) 342-2153
-  </a>
-  <Link 
-    to="/contact" 
-    onClick={onClose}
-    className="flex items-center justify-center gap-2 border border-border py-3 rounded-lg font-medium hover:bg-muted transition-colors"
-  >
-    <MessageSquare className="w-5 h-5" />
-    Request a Quote
-  </Link>
-</div>
+// NEW: If NO rigging code was detected, require an EXACT HP-only match
+// This prevents "FourStroke 20HP EFI EH" (EH not detected) from matching "20ML"
+if (!parsed.riggingCode) {
+  console.log(`⚠️ No rigging code detected for "${modelName}" - flagging as unmatched`);
+  unmatchedModels.push(modelName);
+  continue; // Skip this entry - requires human review
+}
 ```
 
-Update imports from:
-```tsx
-import { X, Sparkles, User, Phone, MessageSquare, FileText } from "lucide-react";
+### Step 3: Add Admin Alert for Unmatched Motors
+
+When motors can't be matched, send an email notification so you can review and either:
+- Fix the model name format in Google Sheets
+- Add the missing motor to the database
+
+This already exists in the code but will now trigger more often with stricter matching.
+
+### Step 4: Reset Phantom Stock Data
+
+After deploying the fix, manually clear the incorrect stock data:
+
+```sql
+-- Reset incorrectly matched motors
+UPDATE motor_models 
+SET in_stock = false, 
+    stock_quantity = 0, 
+    availability = NULL
+WHERE model_display IN (
+  '20ML FourStroke',
+  '20EPT FourStroke', 
+  '25EPT FourStroke'
+)
+AND inventory_source = 'google_sheets';
 ```
 
-To:
-```tsx
-import { X, Sparkles, User, FileText } from "lucide-react";
+Then re-run the sync to get correct matches.
+
+---
+
+## Files to Modify
+
+| File | Changes |
+|------|---------|
+| `supabase/functions/sync-google-sheets-inventory/index.ts` | Expand rigging code regex, add stricter validation |
+
+---
+
+## Technical Details
+
+### Updated `parseMotorName` Function
+
+```typescript
+function parseMotorName(name: string): {
+  hp: number | null;
+  riggingCode: string | null;
+  family: string | null;
+  hasCommandThrust: boolean;
+} {
+  let normalized = name
+    .replace(/®/g, '')
+    .replace(/\s*HP\s*/gi, ' ')
+    .replace(/\s*EFI\s*/gi, ' ') // Remove EFI to not confuse with rigging
+    .replace(/Pro\s*XS/gi, 'ProXS')
+    .trim();
+
+  // Extract HP
+  const hpMatch = normalized.match(/(\d+(?:\.\d+)?)\s*HP|\b(\d+(?:\.\d+)?)\b/i);
+  const hp = hpMatch ? parseFloat(hpMatch[1] || hpMatch[2]) : null;
+
+  // FIXED: Comprehensive rigging codes (longest first for proper matching)
+  const riggingMatch = normalized.match(
+    /\b(EXLPT|ELHPT|ELPT|ELH|EPT|EH|MRC|MXXL|MXL|MLH|MH|ML|EL|E|XXL|XL|L|CT)\b/i
+  );
+  const riggingCode = riggingMatch ? riggingMatch[1].toUpperCase() : null;
+
+  // Command Thrust detection
+  const hasCommandThrust = /command\s*thrust|\bCT\b/i.test(normalized);
+
+  // Family detection
+  let family: string | null = null;
+  if (/verado/i.test(normalized)) family = 'Verado';
+  else if (/pro\s*xs|proxs/i.test(normalized)) family = 'ProXS';
+  else if (/sea\s*pro|seapro/i.test(normalized)) family = 'SeaPro';
+  else if (/four\s*stroke|fourstroke/i.test(normalized)) family = 'FourStroke';
+
+  return { hp, riggingCode, family, hasCommandThrust };
+}
 ```
 
-## Result
+---
 
-A cleaner, more focused hamburger menu that:
-- Prioritizes navigation (what users actually need from a menu)
-- Removes redundant contact CTAs that are available elsewhere
-- Keeps the menu shorter and easier to scan
-- Still provides contact via "Contact Us" nav link and footer info
+## Expected Results After Fix
 
+| Google Sheet Entry | Will Match To | Status |
+|--------------------|---------------|--------|
+| FourStroke 20HP EFI EH | 20 EH FourStroke | Correct |
+| FourStroke 25HP EFI ELHPT | 25 ELHPT FourStroke | Correct |
+| 20 ELH | 20 ELH FourStroke | Already correct |
+| FourStroke 9.9HP MH | 9.9MH FourStroke | Already correct |
+
+Motors not in your database (like `20 EH FourStroke` if missing) will show as "unmatched" and you'll receive an email alert.
+
+---
+
+## Future Recommendation
+
+Consider updating your Google Sheet to use standardized model codes that exactly match your database format. For example:
+- Instead of: `FourStroke 20HP EFI EH`
+- Use: `20 EH FourStroke`
+
+This eliminates parsing ambiguity entirely.
