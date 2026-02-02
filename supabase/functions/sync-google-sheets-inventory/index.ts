@@ -194,15 +194,7 @@ Deno.serve(async (req) => {
       const hpMatch = normalized.match(/(\d+(?:\.\d+)?)\s*HP|\b(\d+(?:\.\d+)?)\b/i);
       const hp = hpMatch ? parseFloat(hpMatch[1] || hpMatch[2]) : null;
 
-      // Extract rigging codes (common patterns) - ORDERED BY LENGTH for proper matching
-      // Longest codes first to prevent partial matches (e.g., "ELHPT" before "EL")
-      const riggingMatch = normalized.match(/\b(EXLPT|ELHPT|ELPT|ELH|EPT|EH|MRC|MXXL|MXL|MLH|MH|ML|EL|XXL|XL|CT)\b/i);
-      const riggingCode = riggingMatch ? riggingMatch[1].toUpperCase() : null;
-
-      // Check for Command Thrust
-      const hasCommandThrust = /command\s*thrust|\bCT\b/i.test(normalized);
-
-      // Extract family
+      // Extract family FIRST (needed for Pro XS code translation)
       let family: string | null = null;
       if (/verado/i.test(normalized)) {
         family = 'Verado';
@@ -213,6 +205,27 @@ Deno.serve(async (req) => {
       } else if (/four\s*stroke|fourstroke/i.test(normalized)) {
         family = 'FourStroke';
       }
+
+      // Extract rigging codes (common patterns) - ORDERED BY LENGTH for proper matching
+      // Longest codes first to prevent partial matches (e.g., "ELHPT" before "EL")
+      // Include L and XL at end for Pro XS motors that use simplified codes
+      const riggingMatch = normalized.match(/\b(EXLPT|ELHPT|ELPT|ELH|EPT|EH|MRC|MXXL|MXL|MLH|MH|ML|EL|XXL|XL|L|CT)\b/i);
+      let riggingCode = riggingMatch ? riggingMatch[1].toUpperCase() : null;
+
+      // For Pro XS motors, translate L/XL to full codes (ELPT/EXLPT) for matching
+      // Mercury uses simplified codes on sheets but we standardized to full codes in DB
+      if (riggingCode && (family === 'ProXS' || /pro\s*xs/i.test(normalized))) {
+        if (riggingCode === 'L') {
+          riggingCode = 'ELPT';
+          console.log(`  Pro XS translation: L → ELPT`);
+        } else if (riggingCode === 'XL') {
+          riggingCode = 'EXLPT';
+          console.log(`  Pro XS translation: XL → EXLPT`);
+        }
+      }
+
+      // Check for Command Thrust
+      const hasCommandThrust = /command\s*thrust|\bCT\b/i.test(normalized);
 
       return { hp, riggingCode, family, hasCommandThrust };
     }
