@@ -24,11 +24,13 @@ export function SpecSheetPDFDownload({
     setIsGenerating(true);
     
     try {
-      // Fetch insights from Perplexity via edge function
+      // Fetch insights and buyer-focused content from Perplexity via edge function
       let insights: string[] = [];
+      let idealUses: string[] = [];
+      let mercuryAdvantages: string[] = [];
       
       try {
-        const { data: insightsData, error: insightsError } = await supabase.functions.invoke(
+        const { data: contentData, error: contentError } = await supabase.functions.invoke(
           'generate-spec-sheet-insights',
           {
             body: {
@@ -41,21 +43,25 @@ export function SpecSheetPDFDownload({
           }
         );
         
-        if (!insightsError && insightsData?.insights) {
-          insights = insightsData.insights;
-          console.log('Fetched spec sheet insights:', insightsData.source);
+        if (!contentError && contentData) {
+          insights = contentData.insights || [];
+          idealUses = contentData.ideal_uses || [];
+          mercuryAdvantages = contentData.mercury_advantages || [];
+          console.log('Fetched spec sheet content:', contentData.source);
         }
-      } catch (insightError) {
-        console.error('Failed to fetch insights:', insightError);
-        // Continue without insights - they're optional
+      } catch (contentError) {
+        console.error('Failed to fetch content:', contentError);
+        // Continue without content - it's optional
       }
 
-      // Generate PDF with insights
+      // Generate PDF with all content
       const motorData = {
         motor,
         promotions,
         motorModel,
-        insights
+        insights,
+        idealUses,
+        mercuryAdvantages
       };
 
       const blob = await pdf(<CleanSpecSheetPDF motorData={motorData} />).toBlob();

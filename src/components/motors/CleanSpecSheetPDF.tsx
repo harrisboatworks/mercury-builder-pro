@@ -255,6 +255,50 @@ const styles = StyleSheet.create({
     marginBottom: 3,
     paddingLeft: 6,
   },
+
+  // Ideal For section
+  idealForBox: {
+    padding: 6,
+    backgroundColor: '#f0fdf4',
+    borderLeft: '1.5 solid #22c55e',
+    marginBottom: 6,
+  },
+
+  idealForTitle: {
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: '#166534',
+    marginBottom: 4,
+  },
+
+  idealForItem: {
+    fontSize: 7,
+    color: '#374151',
+    marginBottom: 2,
+    paddingLeft: 6,
+  },
+
+  // Mercury Advantage section
+  advantageBox: {
+    padding: 6,
+    backgroundColor: '#fef3c7',
+    borderLeft: '1.5 solid #f59e0b',
+    marginBottom: 6,
+  },
+
+  advantageTitle: {
+    fontSize: 9,
+    fontWeight: 'bold',
+    color: '#92400e',
+    marginBottom: 4,
+  },
+
+  advantageItem: {
+    fontSize: 7,
+    color: '#374151',
+    marginBottom: 2,
+    paddingLeft: 6,
+  },
   
   // Footer - fixed at bottom
   footer: {
@@ -314,11 +358,13 @@ interface CleanSpecSheetPDFProps {
     promotions: any[];
     motorModel: string;
     insights?: string[];
+    idealUses?: string[];
+    mercuryAdvantages?: string[];
   };
 }
 
 export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
-  const { motor, promotions, motorModel, insights } = motorData;
+  const { motor, promotions, motorModel, insights, idealUses, mercuryAdvantages } = motorData;
   
   // Extract HP from model name
   const modelName = motor.model || motorModel;
@@ -455,6 +501,16 @@ export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
                 </View>
               </View>
             </View>
+
+            {/* Ideal For - Best Use Cases */}
+            {idealUses && idealUses.length > 0 && (
+              <View style={styles.idealForBox}>
+                <Text style={styles.idealForTitle}>Ideal For</Text>
+                {idealUses.slice(0, 4).map((use, idx) => (
+                  <Text key={idx} style={styles.idealForItem}>✓ {use}</Text>
+                ))}
+              </View>
+            )}
           </View>
 
           {/* RIGHT COLUMN */}
@@ -524,25 +580,15 @@ export function CleanSpecSheetPDF({ motorData }: CleanSpecSheetPDFProps) {
               </View>
             )}
 
-            {/* Recommended Accessories */}
-            <View style={styles.section}>
-              <Text style={styles.sectionTitle}>Recommended Accessories</Text>
-              <View style={styles.includedList}>
-                {hpNumber >= 8 && (
-                  <Text style={styles.includedItem}>
-                    ★ SmartCraft Connect Mobile - Live engine data to your phone
-                  </Text>
-                )}
-                <Text style={styles.includedItem}>
-                  ★ 100-Hour Service Kit - Complete maintenance in one box
-                </Text>
-                {hpNumber >= 25 && (
-                  <Text style={styles.includedItem}>
-                    ★ Motor Cover - UV and weather protection
-                  </Text>
-                )}
+            {/* Mercury Advantage - Competitive Benefits */}
+            {mercuryAdvantages && mercuryAdvantages.length > 0 && (
+              <View style={styles.advantageBox}>
+                <Text style={styles.advantageTitle}>Mercury Advantage</Text>
+                {mercuryAdvantages.slice(0, 3).map((adv, idx) => (
+                  <Text key={idx} style={styles.advantageItem}>★ {adv}</Text>
+                ))}
               </View>
-            </View>
+            )}
           </View>
         </View>
 

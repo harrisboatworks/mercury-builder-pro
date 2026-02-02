@@ -6,7 +6,7 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
 };
 
-// Fallback insights by HP range for when Perplexity is unavailable
+// Fallback content by HP range for when Perplexity is unavailable
 const getFallbackInsights = (hp: number): string[] => {
   if (hp <= 6) {
     return [
@@ -53,20 +53,70 @@ const getFallbackInsights = (hp: number): string[] => {
   }
 };
 
-const buildPerplexityPrompt = (hp: number, model: string, family: string): string => {
-  return `Generate exactly 3 compelling one-sentence reasons why boaters love the Mercury ${model} outboard motor.
-
-Focus on practical, real-world benefits that resonate with buyers:
-- Reliability and peace of mind
-- Performance characteristics (hole shot, fuel economy, top speed)
-- Ease of use and maintenance
-- Value compared to competitors
-
-Keep each sentence punchy and conversational - like advice from a trusted marine dealer.
-Do NOT mention warranty or promotions. Focus on the motor itself.
-
-Format as a JSON array: ["reason 1", "reason 2", "reason 3"]`;
+const getFallbackIdealUses = (hp: number): string[] => {
+  if (hp <= 6) {
+    return ["Sailboat auxiliary power", "Dinghies and tenders", "Car-top boats and canoes", "Inflatable boats"];
+  } else if (hp <= 15) {
+    return ["Small aluminum fishing boats", "Inflatable boats (RIBs)", "Sailboat auxiliaries", "Jon boats and car-toppers"];
+  } else if (hp <= 30) {
+    return ["Medium aluminum boats", "Pontoon boats", "Fishing skiffs", "Sailboat auxiliaries"];
+  } else if (hp <= 75) {
+    return ["Bass boats", "Center consoles", "Pontoon boats", "Multi-species fishing boats"];
+  } else if (hp <= 150) {
+    return ["Bass boats", "Bay boats", "Flats boats", "Aluminum fishing boats"];
+  } else if (hp <= 300) {
+    return ["Offshore center consoles", "Bay boats", "Walkaround boats", "Large pontoons"];
+  } else {
+    return ["Offshore sport fishing", "Large center consoles", "Express cruisers", "Performance boats"];
+  }
 };
+
+const getFallbackMercuryAdvantages = (hp: number): string[] => {
+  const common = [
+    "Best-in-class warranty with Get 7 promotion (7 years total)",
+    "Mercury CSI Award-winning dealer network",
+    "Industry-leading corrosion protection"
+  ];
+  
+  if (hp <= 6) {
+    return ["Lightest in class for easy portability", "Twist-grip throttle for intuitive control", ...common.slice(0, 1)];
+  } else if (hp <= 15) {
+    return ["Front-mounted shift for one-handed operation", "Shallow water drive standard", ...common.slice(0, 1)];
+  } else if (hp <= 30) {
+    return ["Electronic fuel injection for reliable starts", "Command Thrust gearcase available", ...common.slice(0, 1)];
+  } else if (hp <= 75) {
+    return ["BigFoot gearcase for superior low-speed thrust", "Adaptive Speed Control maintains RPM under load", ...common.slice(0, 1)];
+  } else if (hp <= 150) {
+    return ["Advanced Range Optimization (ARO) for fuel savings", "SmartCraft digital integration", ...common.slice(0, 1)];
+  } else {
+    return ["V8 power in a compact package", "Digital Throttle & Shift (DTS)", ...common.slice(0, 1)];
+  }
+};
+
+const buildPerplexityPrompt = (hp: number, model: string, family: string): string => {
+  return `Generate marketing content for the Mercury ${model} outboard motor (${hp}HP ${family}).
+
+Return a JSON object with these exact fields:
+
+1. "insights" - Array of exactly 3 compelling one-sentence reasons why boaters love this motor. Focus on reliability, performance, fuel economy, or ease of use. Keep each punchy and conversational.
+
+2. "ideal_uses" - Array of 4 specific boat types or activities this motor is perfect for. Be specific (e.g., "16-18ft aluminum fishing boats" not just "boats").
+
+3. "mercury_advantages" - Array of 3 competitive advantages Mercury has over Yamaha, Honda, and Suzuki in this HP class. Focus on unique features, technology, or value - don't mention competitor names directly.
+
+Format as JSON only:
+{
+  "insights": ["reason 1", "reason 2", "reason 3"],
+  "ideal_uses": ["use 1", "use 2", "use 3", "use 4"],
+  "mercury_advantages": ["advantage 1", "advantage 2", "advantage 3"]
+}`;
+};
+
+interface SpecSheetContent {
+  insights: string[];
+  ideal_uses: string[];
+  mercury_advantages: string[];
+}
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -76,26 +126,37 @@ serve(async (req) => {
   try {
     const { motor } = await req.json();
     
+    const hp = motor?.hp || motor?.horsepower || 100;
+    const model = motor?.model || `${hp}HP FourStroke`;
+    const family = motor?.family || 'FourStroke';
+
+    // Default fallback content
+    const fallbackContent: SpecSheetContent = {
+      insights: getFallbackInsights(hp),
+      ideal_uses: getFallbackIdealUses(hp),
+      mercury_advantages: getFallbackMercuryAdvantages(hp)
+    };
+
     if (!motor) {
       return new Response(
-        JSON.stringify({ error: "Motor data is required", insights: getFallbackInsights(100) }),
+        JSON.stringify({ 
+          error: "Motor data is required", 
+          ...fallbackContent,
+          source: 'fallback'
+        }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
-
-    const hp = motor.hp || motor.horsepower || 100;
-    const model = motor.model || `${hp}HP FourStroke`;
-    const family = motor.family || 'FourStroke';
 
     // Try Perplexity if API key is available
     const perplexityKey = Deno.env.get("PERPLEXITY_API_KEY");
     
     if (!perplexityKey) {
-      console.log("No Perplexity API key, using fallback insights");
+      console.log("No Perplexity API key, using fallback content");
       return new Response(
         JSON.stringify({ 
           success: true, 
-          insights: getFallbackInsights(hp),
+          ...fallbackContent,
           source: 'fallback'
         }),
         { headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -114,7 +175,7 @@ serve(async (req) => {
           messages: [
             {
               role: "system",
-              content: "You are a Mercury Marine expert helping create engaging marketing content for motor specification sheets. Keep responses concise and benefit-focused. Always respond with valid JSON."
+              content: "You are a Mercury Marine expert helping create engaging marketing content for motor specification sheets. Always respond with valid JSON only, no markdown or explanation."
             },
             {
               role: "user",
@@ -122,7 +183,7 @@ serve(async (req) => {
             }
           ],
           temperature: 0.7,
-          max_tokens: 300,
+          max_tokens: 500,
           search_domain_filter: [
             "mercurymarine.com",
             "boatingmag.com",
@@ -138,7 +199,7 @@ serve(async (req) => {
         return new Response(
           JSON.stringify({ 
             success: true, 
-            insights: getFallbackInsights(hp),
+            ...fallbackContent,
             source: 'fallback'
           }),
           { headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -148,22 +209,34 @@ serve(async (req) => {
       const perplexityData = await perplexityResponse.json();
       const content = perplexityData.choices?.[0]?.message?.content || "";
 
-      // Parse JSON array from response
-      const jsonMatch = content.match(/\[[\s\S]*\]/);
+      // Parse JSON object from response
+      const jsonMatch = content.match(/\{[\s\S]*\}/);
       if (jsonMatch) {
         try {
-          const insights = JSON.parse(jsonMatch[0]);
-          if (Array.isArray(insights) && insights.length >= 3) {
-            return new Response(
-              JSON.stringify({ 
-                success: true, 
-                insights: insights.slice(0, 3),
-                source: 'perplexity',
-                citations: perplexityData.citations || []
-              }),
-              { headers: { ...corsHeaders, "Content-Type": "application/json" } }
-            );
-          }
+          const parsed = JSON.parse(jsonMatch[0]);
+          
+          // Validate and extract each field, falling back as needed
+          const result: SpecSheetContent = {
+            insights: Array.isArray(parsed.insights) && parsed.insights.length >= 3 
+              ? parsed.insights.slice(0, 3) 
+              : fallbackContent.insights,
+            ideal_uses: Array.isArray(parsed.ideal_uses) && parsed.ideal_uses.length >= 3 
+              ? parsed.ideal_uses.slice(0, 4) 
+              : fallbackContent.ideal_uses,
+            mercury_advantages: Array.isArray(parsed.mercury_advantages) && parsed.mercury_advantages.length >= 3 
+              ? parsed.mercury_advantages.slice(0, 3) 
+              : fallbackContent.mercury_advantages
+          };
+
+          return new Response(
+            JSON.stringify({ 
+              success: true, 
+              ...result,
+              source: 'perplexity',
+              citations: perplexityData.citations || []
+            }),
+            { headers: { ...corsHeaders, "Content-Type": "application/json" } }
+          );
         } catch (parseError) {
           console.error("Failed to parse Perplexity JSON:", parseError);
         }
@@ -173,7 +246,7 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({ 
           success: true, 
-          insights: getFallbackInsights(hp),
+          ...fallbackContent,
           source: 'fallback'
         }),
         { headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -184,7 +257,7 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({ 
           success: true, 
-          insights: getFallbackInsights(hp),
+          ...fallbackContent,
           source: 'fallback'
         }),
         { headers: { ...corsHeaders, "Content-Type": "application/json" } }
@@ -197,6 +270,8 @@ serve(async (req) => {
       JSON.stringify({ 
         error: error instanceof Error ? error.message : "Unknown error",
         insights: getFallbackInsights(100),
+        ideal_uses: getFallbackIdealUses(100),
+        mercury_advantages: getFallbackMercuryAdvantages(100),
         source: 'fallback'
       }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
