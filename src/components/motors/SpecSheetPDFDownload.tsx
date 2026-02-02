@@ -46,7 +46,8 @@ export function SpecSheetPDFDownload({
           console.log('Fetched spec sheet insights:', insightsData.source);
         }
       } catch (insightError) {
-        console.warn('Failed to fetch insights, proceeding without them:', insightError);
+        console.error('Failed to fetch insights:', insightError);
+        // Continue without insights - they're optional
       }
 
       // Generate PDF with insights
