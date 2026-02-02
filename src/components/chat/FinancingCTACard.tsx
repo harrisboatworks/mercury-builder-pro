@@ -87,7 +87,9 @@ export function FinancingCTACard({ data }: FinancingCTACardProps) {
 
 // Helper to parse financing CTA from message text
 export function parseFinancingCTA(text: string): { displayText: string; ctaData: FinancingCTAData | null } {
-  const ctaRegex = /\[FINANCING_CTA:\s*(\{[^}]+\})\]/;
+  // Match [FINANCING_CTA: {...}] with flexible JSON parsing
+  // This regex captures everything between the outermost braces
+  const ctaRegex = /\[FINANCING_CTA:\s*(\{[^[\]]*\})\]/;
   const match = text.match(ctaRegex);
   
   if (!match) {
@@ -95,11 +97,15 @@ export function parseFinancingCTA(text: string): { displayText: string; ctaData:
   }
   
   try {
-    const ctaData = JSON.parse(match[1]) as FinancingCTAData;
+    // Clean up the JSON string (handle potential issues with quotes)
+    const jsonStr = match[1].trim();
+    const ctaData = JSON.parse(jsonStr) as FinancingCTAData;
     const displayText = text.replace(ctaRegex, '').trim();
     return { displayText, ctaData };
   } catch (error) {
-    console.error('Failed to parse financing CTA:', error);
-    return { displayText: text, ctaData: null };
+    console.error('Failed to parse financing CTA:', error, 'Raw:', match[1]);
+    // Still remove the marker even if parsing fails
+    const displayText = text.replace(/\[FINANCING_CTA:[^\]]*\]/, '').trim();
+    return { displayText, ctaData: null };
   }
 }
