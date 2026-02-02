@@ -1,5 +1,5 @@
 import { Skeleton } from '@/components/ui/skeleton';
-import { OpeningHours } from '@/hooks/useGooglePlaceData';
+import { OpeningHours, isCurrentlyOpen } from '@/hooks/useGooglePlaceData';
 
 interface OpeningHoursDisplayProps {
   openingHours?: OpeningHours;
@@ -30,20 +30,24 @@ export function OpeningHoursDisplay({ openingHours, loading, error }: OpeningHou
   }
 
   const hours = openingHours?.weekdayText ?? (error ? FALLBACK_HOURS : FALLBACK_HOURS);
+  
+  // Calculate isOpen client-side for accurate real-time status
+  const calculatedIsOpen = isCurrentlyOpen(hours);
+  const isOpen = calculatedIsOpen !== null ? calculatedIsOpen : openingHours?.isOpen;
 
   return (
     <div className="space-y-1">
-      {/* Open/Closed Status Badge */}
-      {openingHours && (
+      {/* Open/Closed Status Badge - calculated client-side for accuracy */}
+      {isOpen !== undefined && isOpen !== null && (
         <div className="mb-2">
           <span
             className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
-              openingHours.isOpen
+              isOpen
                 ? 'bg-green-100 text-green-800'
                 : 'bg-red-100 text-red-800'
             }`}
           >
-            {openingHours.isOpen ? 'Open Now' : 'Closed'}
+            {isOpen ? 'Open Now' : 'Closed'}
           </span>
         </div>
       )}
