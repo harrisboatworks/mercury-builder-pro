@@ -14,6 +14,8 @@ import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecifi
 import { useRotatingPrompts } from '@/hooks/useRotatingPrompts';
 import { usePrefetchedInsights } from '@/hooks/usePrefetchedInsights';
 import { MotorComparisonCard } from './MotorComparisonCard';
+import { FinancingCTACard, parseFinancingCTA } from './FinancingCTACard';
+import { FINANCING_MINIMUM } from '@/lib/finance';
 
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { useCrossChannelContext, VoiceContextForText } from '@/hooks/useCrossChannelContext';
@@ -38,6 +40,7 @@ interface Message {
     recommendation?: string;
   };
   activityData?: VoiceActivityEvent;
+  financingCTA?: import('./FinancingCTACard').FinancingCTAData;
 }
 
 export interface EnhancedChatWidgetHandle {
@@ -539,6 +542,7 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
               .replace(/\[LEAD_CAPTURE:.*$/s, '')
               .replace(/\[SEND_SMS:.*$/s, '')
               .replace(/\[PRICE_ALERT:.*$/s, '')
+              .replace(/\[FINANCING_CTA:.*$/s, '')
               .trim();
             setMessages(prev => prev.map(msg =>
               msg.id === streamingId 
@@ -668,13 +672,27 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
               }
             }
             
+            // Parse financing CTA - only show if price meets minimum threshold
+            let financingCTA: import('./FinancingCTACard').FinancingCTAData | undefined;
+            const { displayText: afterFinancing, ctaData } = parseFinancingCTA(displayResponse);
+            if (ctaData) {
+              displayResponse = afterFinancing;
+              // Only show CTA if motor price meets minimum financing threshold
+              if (ctaData.price >= FINANCING_MINIMUM) {
+                financingCTA = ctaData;
+                console.log('[Chat] Financing CTA parsed:', ctaData);
+              } else {
+                console.log('[Chat] Financing CTA ignored - price below minimum:', ctaData.price);
+              }
+            }
+            
             setMessages(prev => prev.map(msg =>
               msg.id === streamingId 
-                ? { ...msg, text: displayResponse, isStreaming: false }
+                ? { ...msg, text: displayResponse, isStreaming: false, financingCTA }
                 : msg
             ));
             
-            // Save assistant message to DB (without the lead capture marker)
+            // Save assistant message to DB (without markers)
             const assistantDbId = await saveMessage(displayResponse, 'assistant');
             if (assistantDbId) messageIdMap.current.set(streamingId, assistantDbId);
             
@@ -862,6 +880,10 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                                     motor2={message.comparisonData.motor2}
                                     recommendation={message.comparisonData.recommendation}
                                   />
+                                )}
+                                {/* Financing CTA Card */}
+                                {!message.isUser && message.financingCTA && (
+                                  <FinancingCTACard data={message.financingCTA} />
                                 )}
                               </>
                             )}

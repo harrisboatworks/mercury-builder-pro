@@ -14,6 +14,8 @@ import { usePageSpecificInsights } from '@/hooks/usePageSpecificInsights';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { getMotorSpecificPrompts, getMotorContextLabel } from './getMotorSpecificPrompts';
 import { MotorComparisonCard } from './MotorComparisonCard';
+import { FinancingCTACard, parseFinancingCTA } from './FinancingCTACard';
+import { FINANCING_MINIMUM } from '@/lib/finance';
 
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { useCrossChannelContext, VoiceContextForText } from '@/hooks/useCrossChannelContext';
@@ -38,6 +40,7 @@ interface Message {
     recommendation?: string;
   };
   activityData?: VoiceActivityEvent;
+  financingCTA?: import('./FinancingCTACard').FinancingCTAData;
 }
 
 interface InlineChatDrawerProps {
@@ -619,29 +622,48 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         },
         onDelta: (chunk) => {
           fullResponse += chunk;
+          // Strip CTA markers during streaming to hide them from user
+          const displayText = fullResponse
+            .replace(/\[FINANCING_CTA:.*$/s, '')
+            .trim();
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
-              ? { ...msg, text: msg.text + chunk, isStreaming: true }
+              ? { ...msg, text: displayText, isStreaming: true }
               : msg
           ));
           scrollToBottom();
         },
         onDone: async (finalResponse) => {
+          // Parse financing CTA - only show if price meets minimum threshold
+          let displayResponse = finalResponse;
+          let financingCTA: import('./FinancingCTACard').FinancingCTAData | undefined;
+          const { displayText: afterFinancing, ctaData } = parseFinancingCTA(displayResponse);
+          if (ctaData) {
+            displayResponse = afterFinancing;
+            // Only show CTA if motor price meets minimum financing threshold
+            if (ctaData.price >= FINANCING_MINIMUM) {
+              financingCTA = ctaData;
+              console.log('[Chat] Financing CTA parsed:', ctaData);
+            } else {
+              console.log('[Chat] Financing CTA ignored - price below minimum:', ctaData.price);
+            }
+          }
+          
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
-              ? { ...msg, isStreaming: false }
+              ? { ...msg, text: displayResponse, isStreaming: false, financingCTA }
               : msg
           ));
           
           triggerHaptic('responseReceived');
           
-          const assistantDbId = await saveMessage(finalResponse, 'assistant');
+          const assistantDbId = await saveMessage(displayResponse, 'assistant');
           if (assistantDbId) messageIdMap.current.set(streamingId, assistantDbId);
           
           setConversationHistory(prev => [
             ...prev,
             { role: 'user', content: text.trim() },
-            { role: 'assistant', content: finalResponse }
+            { role: 'assistant', content: displayResponse }
           ]);
           
           setIsLoading(false);
@@ -880,6 +902,13 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
                                 motor2={message.comparisonData.motor2}
                                 recommendation={message.comparisonData.recommendation}
                               />
+                            </div>
+                          )}
+                          
+                          {/* Financing CTA Card */}
+                          {!message.isUser && message.financingCTA && (
+                            <div className="mt-2 max-w-[85%]">
+                              <FinancingCTACard data={message.financingCTA} />
                             </div>
                           )}
                         </>
