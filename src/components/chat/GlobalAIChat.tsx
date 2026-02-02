@@ -1,10 +1,10 @@
 import React, { useState, useRef, createContext, useContext, useCallback, useEffect } from 'react';
-import { AIChatButton } from './AIChatButton';
 import { EnhancedChatWidget, EnhancedChatWidgetHandle } from './EnhancedChatWidget';
 import { InlineChatDrawer } from './InlineChatDrawer';
 import { VoiceIndicator } from './VoiceIndicator';
 import { VoiceProvider } from '@/contexts/VoiceContext';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
+import { DesktopCommandBar } from './DesktopCommandBar';
 
 interface AIChatContextType {
   openChat: (initialMessage?: string) => void;
@@ -88,11 +88,11 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
       <AIChatContext.Provider value={{ openChat, closeChat, isOpen, isLoading, setIsLoading, unreadCount, incrementUnread, clearUnread, chatMinimizedAt, notifyChatMinimized }}>
         {children}
         
-        {/* Floating AI Button - Only show on desktop (mobile uses unified bar) */}
+        {/* Desktop Command Bar - Only show on desktop (mobile uses unified bar) */}
         {!isMobileOrTablet && (
-          <AIChatButton 
+          <DesktopCommandBar 
             onOpenChat={() => openChat()} 
-            isOpen={isOpen} 
+            isChatOpen={isOpen} 
           />
         )}
         
