@@ -1,147 +1,72 @@
 
+# Fix Spec Sheet PDF Missing "Why Boaters Love This Motor" Insights
 
-# Restore Old Chat Bubble + Improve Voice Visibility Inside Chat
+## The Problem
 
-## Overview
+The PDF you downloaded is missing the "Why Boaters Love This Motor" section that we built earlier. The edge function is working correctly (I tested it and got great insights), but the browser is failing to fetch them due to a CORS header mismatch.
 
-Revert to the original floating "Ask Mercury Expert" chat bubble on desktop, and make the voice feature **clearly visible and inviting** inside the chat widget once it's opened.
-
-## Changes
-
-### 1. Revert GlobalAIChat to Use Original Chat Bubble
-
-**File: `src/components/chat/GlobalAIChat.tsx`**
-
-Replace `DesktopCommandBar` with the original `AIChatButton`:
-
-```tsx
-// Before
-import { DesktopCommandBar } from './DesktopCommandBar';
-...
-{!isMobileOrTablet && (
-  <DesktopCommandBar onOpenChat={() => openChat()} isChatOpen={isOpen} />
-)}
-
-// After
-import { AIChatButton } from './AIChatButton';
-...
-{!isMobileOrTablet && (
-  <AIChatButton onOpenChat={() => openChat()} isOpen={isOpen} />
-)}
+The network logs show:
+```
+Request: POST .../generate-spec-sheet-insights
+Error: Failed to fetch
 ```
 
----
+The edge function only allows these headers:
+- `authorization`, `x-client-info`, `apikey`, `content-type`
 
-### 2. Add Prominent Voice Option in Chat Header
+But the Supabase client is also sending:
+- `x-session-id`
+- `x-supabase-client-platform`
+- `x-supabase-client-platform-version`
+- `x-supabase-client-runtime`
+- `x-supabase-client-runtime-version`
 
-**File: `src/components/chat/EnhancedChatWidget.tsx`**
+This causes the browser's preflight CORS check to fail, so the insights fetch silently fails and the PDF is generated without them.
 
-Add a clear "Start Voice Chat" button in the chat header, right next to the close button. This makes voice immediately discoverable when the chat opens.
+## The Fix
 
-```tsx
-// In the header section (around line 750-770)
-<div className="flex items-center gap-3">
-  {/* Existing Mercury Expert title */}
-</div>
+### 1. Update CORS Headers in Edge Function
 
-<div className="flex items-center gap-2">
-  {/* NEW: Voice chat button in header */}
-  <VoiceHeaderButton 
-    isConnected={voice.isConnected}
-    isConnecting={voice.isConnecting}
-    isSpeaking={voice.isSpeaking}
-    isListening={voice.isListening}
-    onStart={voice.startVoiceChat}
-    onEnd={voice.endVoiceChat}
-  />
-  <Button variant="ghost" onClick={onClose}>
-    <X className="w-5 h-5" />
-  </Button>
-</div>
+Update `generate-spec-sheet-insights` to accept all the headers the Supabase client sends:
+
+```typescript
+// supabase/functions/generate-spec-sheet-insights/index.ts
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-session-id, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+  "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+};
 ```
 
-The `VoiceHeaderButton` will be a new sub-component:
-- Green gradient styling (matching the mobile look)
-- Clear label: "Voice" when idle, "LIVE" when active
-- Microphone icon with subtle animations
-- Tooltip on hover: "Talk to Harris"
+### 2. Add Better Error Logging
 
----
+Update `SpecSheetPDFDownload.tsx` to log when insights fail so we can debug more easily:
 
-### 3. Improve Existing Voice Button in Input Area
-
-**File: `src/components/chat/VoiceButton.tsx`**
-
-Update the default styling of `VoiceButton` when used in the chat input:
-- Use green background instead of gray when idle
-- Add a tooltip: "Start voice chat"
-- Make it slightly larger and more prominent
-
-```tsx
-// Update getStateColor() for idle state:
-return 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200';
-// Instead of: 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+```typescript
+} catch (insightError) {
+  console.error('Failed to fetch insights:', insightError);
+  // Continue without insights - they're optional
+}
 ```
 
----
+### 3. Redeploy the Edge Function
 
-## Visual Result
+After updating, the edge function needs to be redeployed.
 
-### Before (Current)
-```
-┌──────────────────────────────────────┐
-│  [Mercury Expert]              [X]   │  ← Header, just close button
-├──────────────────────────────────────┤
-│                                      │
-│  Messages...                         │
-│                                      │
-├──────────────────────────────────────┤
-│  [🎤] [Type message...        ] [→]  │  ← Small gray mic looks like dictate
-└──────────────────────────────────────┘
-```
-
-### After (Proposed)
-```
-┌──────────────────────────────────────┐
-│  [Mercury Expert]     [🎤 Voice] [X] │  ← GREEN voice button in header!
-├──────────────────────────────────────┤
-│                                      │
-│  Messages...                         │
-│                                      │
-├──────────────────────────────────────┤
-│  [🎤] [Type message...        ] [→]  │  ← Green mic (still there as backup)
-└──────────────────────────────────────┘
-```
-
-When voice is active:
-```
-┌──────────────────────────────────────┐
-│  [Mercury Expert]  [🔊 LIVE 🔴] [X]  │  ← Shows live status
-├──────────────────────────────────────┤
-│  ...                                 │
-```
-
----
-
-## Files to Modify
+## Files to Change
 
 | File | Change |
 |------|--------|
-| `src/components/chat/GlobalAIChat.tsx` | Replace `DesktopCommandBar` with `AIChatButton` |
-| `src/components/chat/EnhancedChatWidget.tsx` | Add `VoiceHeaderButton` to header area |
-| `src/components/chat/VoiceButton.tsx` | Change idle color from gray to green |
+| `supabase/functions/generate-spec-sheet-insights/index.ts` | Update CORS headers to accept all Supabase client headers |
+| `src/components/motors/SpecSheetPDFDownload.tsx` | Improve error logging |
 
-## Optional Cleanup
+## Expected Result
 
-- `src/components/chat/DesktopCommandBar.tsx` can be deleted or kept for potential future use
+After this fix, when you download a spec sheet:
 
----
-
-## Benefits
-
-1. **Familiar bubble experience** - Users get the same floating chat button they're used to
-2. **Voice is immediately visible** - Green "Voice" button right in the header when chat opens
-3. **Not confusing** - Clear "Voice" label with conversational styling makes it obvious this is for talking
-4. **Two access points** - Header button for discovery, input button for quick access during typing
-5. **Consistent styling** - Green = voice (matches mobile voice buttons)
-
+1. The insights fetch will succeed
+2. The PDF will include the "Why Boaters Love This Motor" section with 3 compelling reasons
+3. For this 5HP motor, you'll see things like:
+   - "Ultra-lightweight design makes this perfect for car-top boats"
+   - "Built-in fuel tank means less gear to haul"
+   - "Exceptionally quiet operation won't disturb the fish"
