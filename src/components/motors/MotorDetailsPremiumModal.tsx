@@ -737,6 +737,15 @@ export default function MotorDetailsPremiumModal({
                           <SpecRow label="Oil Type" value={getOilRequirement(motor)} />
                         </div>
                       </div>
+
+                      {/* Download Spec Sheet - natural place after viewing specs */}
+                      <div className="border-t border-gray-100 pt-6">
+                        <SpecSheetPDFDownload
+                          motor={motor}
+                          promotions={activePromotions}
+                          motorModel={motor?.model || title}
+                        />
+                      </div>
                     </div>
                   </TabsContent>
                   
@@ -813,14 +822,6 @@ export default function MotorDetailsPremiumModal({
                         </div>
                       )}
                       
-                      {/* Quick Actions */}
-                      <div className="border-t border-gray-100 pt-6">
-                        <SpecSheetPDFDownload
-                          motor={motor}
-                          promotions={activePromotions}
-                          motorModel={motor?.model || title}
-                        />
-                      </div>
                     </div>
                   </TabsContent>
                 </div>
