@@ -1,4 +1,4 @@
-import { X, Sparkles, User, Phone, MessageSquare, FileText } from "lucide-react";
+import { X, Sparkles, User, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -39,24 +39,6 @@ export const HamburgerMenu = ({ isOpen, onClose, totalXP, user, loading, signOut
             </div>
           )}
 
-          {/* Quick Actions */}
-          <div className="space-y-3">
-            <a 
-              href="tel:+19053422153" 
-              className="flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
-            >
-              <Phone className="w-5 h-5" />
-              Call (905) 342-2153
-            </a>
-            <Link 
-              to="/contact" 
-              onClick={onClose}
-              className="flex items-center justify-center gap-2 border border-border py-3 rounded-lg font-medium hover:bg-muted transition-colors"
-            >
-              <MessageSquare className="w-5 h-5" />
-              Request a Quote
-            </Link>
-          </div>
 
           {/* Navigation */}
           <nav className="space-y-4">
