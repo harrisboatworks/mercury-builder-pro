@@ -194,8 +194,9 @@ Deno.serve(async (req) => {
       const hpMatch = normalized.match(/(\d+(?:\.\d+)?)\s*HP|\b(\d+(?:\.\d+)?)\b/i);
       const hp = hpMatch ? parseFloat(hpMatch[1] || hpMatch[2]) : null;
 
-      // Extract rigging codes (common patterns)
-      const riggingMatch = normalized.match(/\b(EXLPT|ELHPT|ELPT|ELH|MRC|MXXL|MXL|MLH|MH|XXL|XL|CT)\b/i);
+      // Extract rigging codes (common patterns) - ORDERED BY LENGTH for proper matching
+      // Longest codes first to prevent partial matches (e.g., "ELHPT" before "EL")
+      const riggingMatch = normalized.match(/\b(EXLPT|ELHPT|ELPT|ELH|EPT|EH|MRC|MXXL|MXL|MLH|MH|ML|EL|XXL|XL|CT)\b/i);
       const riggingCode = riggingMatch ? riggingMatch[1].toUpperCase() : null;
 
       // Check for Command Thrust
@@ -223,6 +224,14 @@ Deno.serve(async (req) => {
     for (const modelName of motorNames) {
       const parsed = parseMotorName(modelName);
       console.log(`🔍 Parsing "${modelName}":`, JSON.stringify(parsed));
+
+      // STRICT MATCHING: If no rigging code was detected, skip to prevent false matches
+      // This prevents "FourStroke 20HP EFI EH" (if EH wasn't detected) from matching "20ML"
+      if (!parsed.riggingCode) {
+        console.log(`⚠️ No rigging code detected for "${modelName}" - flagging as unmatched for human review`);
+        unmatchedModels.push(modelName);
+        continue;
+      }
 
       // Build query with multiple criteria for better matching
       let query = supabase
