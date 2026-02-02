@@ -1,72 +1,85 @@
 
-# Fix Spec Sheet PDF Missing "Why Boaters Love This Motor" Insights
 
-## The Problem
+# Move Spec Sheet Download Button to Specs Tab
 
-The PDF you downloaded is missing the "Why Boaters Love This Motor" section that we built earlier. The edge function is working correctly (I tested it and got great insights), but the browser is failing to fetch them due to a CORS header mismatch.
+## The Change
 
-The network logs show:
-```
-Request: POST .../generate-spec-sheet-insights
-Error: Failed to fetch
-```
+Move the "Download Spec Sheet" button from the Resources tab to the bottom of the Specs tab, where it logically belongs since the button downloads a PDF of the specifications.
 
-The edge function only allows these headers:
-- `authorization`, `x-client-info`, `apikey`, `content-type`
+## Current Location
+- **Resources Tab** → "Quick Actions" section at the very bottom (lines 816-823)
 
-But the Supabase client is also sending:
-- `x-session-id`
-- `x-supabase-client-platform`
-- `x-supabase-client-platform-version`
-- `x-supabase-client-runtime`
-- `x-supabase-client-runtime-version`
+## New Location  
+- **Specs Tab** → After the "Requirements" section (around line 739)
 
-This causes the browser's preflight CORS check to fail, so the insights fetch silently fails and the PDF is generated without them.
+## Implementation
 
-## The Fix
+### File: `src/components/motors/MotorDetailsPremiumModal.tsx`
 
-### 1. Update CORS Headers in Edge Function
+**1. Add the button at the end of the Specs tab content (before line 740):**
 
-Update `generate-spec-sheet-insights` to accept all the headers the Supabase client sends:
+```tsx
+{/* Requirements */}
+<div>
+  <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+    <AlertCircle className="w-5 h-5 text-primary" />
+    Requirements
+  </h3>
+  <div className="bg-slate-50 rounded-lg divide-y divide-gray-200">
+    <SpecRow label="Battery" value={getBatteryRequirement(motor)} />
+    <SpecRow label="Recommended Fuel" value={getFuelRequirement(motor)} />
+    <SpecRow label="Oil Type" value={getOilRequirement(motor)} />
+  </div>
+</div>
 
-```typescript
-// supabase/functions/generate-spec-sheet-insights/index.ts
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-session-id, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
-  "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-};
-```
-
-### 2. Add Better Error Logging
-
-Update `SpecSheetPDFDownload.tsx` to log when insights fail so we can debug more easily:
-
-```typescript
-} catch (insightError) {
-  console.error('Failed to fetch insights:', insightError);
-  // Continue without insights - they're optional
-}
+{/* NEW: Download Spec Sheet - natural place after viewing specs */}
+<div className="border-t border-gray-100 pt-6">
+  <SpecSheetPDFDownload
+    motor={motor}
+    promotions={activePromotions}
+    motorModel={motor?.model || title}
+  />
+</div>
 ```
 
-### 3. Redeploy the Edge Function
+**2. Remove from Resources tab (lines 816-823):**
 
-After updating, the edge function needs to be redeployed.
+Delete the "Quick Actions" section that currently contains the button.
 
-## Files to Change
+## Visual Result
+
+### Specs Tab (After)
+```
+┌─────────────────────────────────────┐
+│ 📖 Model Code Breakdown             │
+│ ⚙️ Engine Specifications            │
+│ 📦 Physical Specifications          │
+│ 🎯 Performance Estimates            │
+│ ⚠️ Requirements                      │
+├─────────────────────────────────────┤
+│  [📥 Download Spec Sheet]           │  ← NEW: Natural CTA after specs
+└─────────────────────────────────────┘
+```
+
+### Resources Tab (After)
+```
+┌─────────────────────────────────────┐
+│ 🎬 Videos & Demonstrations          │
+│ 📄 Downloads & Documentation        │
+│                                     │  ← Button removed (was redundant)
+└─────────────────────────────────────┘
+```
+
+## Why This Makes Sense
+
+1. **Logical flow** - After reviewing specs, user naturally wants to save/share them
+2. **Clear call-to-action** - "I've seen the specs, now let me download them"
+3. **Resources tab cleanup** - That tab is for videos and Mercury docs, not our generated PDF
+4. **Matches mobile** - The mobile `MotorDetailsSheet` already has this in the specs section
+
+## Files to Modify
 
 | File | Change |
 |------|--------|
-| `supabase/functions/generate-spec-sheet-insights/index.ts` | Update CORS headers to accept all Supabase client headers |
-| `src/components/motors/SpecSheetPDFDownload.tsx` | Improve error logging |
+| `src/components/motors/MotorDetailsPremiumModal.tsx` | Move button from Resources to Specs tab |
 
-## Expected Result
-
-After this fix, when you download a spec sheet:
-
-1. The insights fetch will succeed
-2. The PDF will include the "Why Boaters Love This Motor" section with 3 compelling reasons
-3. For this 5HP motor, you'll see things like:
-   - "Ultra-lightweight design makes this perfect for car-top boats"
-   - "Built-in fuel tank means less gear to haul"
-   - "Exceptionally quiet operation won't disturb the fish"
