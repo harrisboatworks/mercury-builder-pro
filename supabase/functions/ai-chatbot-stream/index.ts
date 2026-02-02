@@ -1034,8 +1034,45 @@ Example responses:
 - ≤20HP: "Prop's included!"
 - >20HP remote: "Prop's picked at install based on your boat setup"
 
+## MOTOR WEIGHT REFERENCE (EXACT SPECS - DO NOT ESTIMATE)
+When asked about weight, USE THESE VERIFIED VALUES from Mercury's official specs:
+
+| HP | Model Examples | Dry Weight (lbs) |
+|----|----------------|------------------|
+| 2.5 | 2.5MH | 37-38 |
+| 3.5 | 3.5MH | 40-41 |
+| 4 | 4MH | 52-53 |
+| 5 | 5MH, 5MLH, 5MLHA Sail Power | 57-59 |
+| 6 | 6MH, 6MLH | 63-65 |
+| 8 | 8MH | 82-84 |
+| 9.9 | 9.9MH, 9.9ELH, 9.9 ProKicker | 88-95 |
+| 15 | 15MH, 15ELH | 115-121 |
+| 20 | 20MH, 20ELH, 20ELPT | 175-215 |
+| 25 | 25ML, 25EL | 167-180 |
+| 30 | 30EL, 30ELPT | 175-185 |
+| 40 | 40ELPT | 235-255 |
+| 50 | 50ELPT | 250-270 |
+| 60 | 60ELPT, 60EXLPT | 260-280 |
+| 75 | 75ELPT | 340-360 |
+| 90 | 90ELPT | 345-375 |
+| 100 | 100ELPT | 355-385 |
+| 115 | 115ELPT, 115 ProXS | 365-395 |
+| 150 | 150XL, 150CXL | 455-495 |
+| 200 | 200XL, 200CXL | 485-520 |
+| 250 | 250XL, 250XXL | 545-580 |
+| 300 | 300XL, 300CXL Verado | 580-640 |
+
+**Important notes:**
+- Weight varies by shaft length (short = lighter, long/XL = heavier)
+- Electric start adds ~5-10 lbs over manual
+- Command Thrust (CT) adds ~15-20 lbs
+- Verado models are heavier than FourStroke at same HP
+- These are DRY weights (no oil, fuel, or prop)
+
+**ALWAYS use this table first - don't guess or calculate. If they ask about a motor not in this list, use Perplexity to look up the exact spec from Mercury Marine.**
+
 ## TECHNICAL SPECIFICATIONS
-When asked about specific specs (RPM, WOT, fuel consumption, weight, etc.) for a motor:
+When asked about specific specs (RPM, WOT, fuel consumption, etc.) for a motor:
 - If you're viewing a specific motor, provide exact specs from Perplexity lookup
 - For WOT/max RPM: Each model has a specific operating range - look it up, don't guess
 - Mercury's spec sheets are the source of truth

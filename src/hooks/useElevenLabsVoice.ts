@@ -423,39 +423,54 @@ async function handleVerifySpecs(params: {
   // === WEIGHT ===
   if (query.includes('weight') || query.includes('how heavy') || query.includes('weigh') || query.includes('pounds') || query.includes('lbs')) {
     // Extract HP from query or motor context
-    const hpMatch = query.match(/(\d+)/);
-    const hp = hpMatch ? parseInt(hpMatch[1]) : (motor.match(/(\d+)/) ? parseInt(motor.match(/(\d+)/)![1]) : 0);
+    const hpMatch = query.match(/(\d+\.?\d*)/);
+    const hp = hpMatch ? parseFloat(hpMatch[1]) : (motor.match(/(\d+\.?\d*)/) ? parseFloat(motor.match(/(\d+\.?\d*)/)![1]) : 0);
     
     if (hp > 0) {
-      // Approximate weights for Mercury FourStroke outboards (based on real specs)
-      let weight: number;
-      let description: string;
+      // VERIFIED weights from Mercury's official specs (dry weight in lbs)
+      const weightTable: Record<number, { weight: string; desc: string }> = {
+        2.5: { weight: '37-38', desc: 'Super light - easy to carry with one hand.' },
+        3.5: { weight: '40-41', desc: 'Nice and light, perfect for car-topping.' },
+        4: { weight: '52-53', desc: 'Still very portable, one person can handle it easily.' },
+        5: { weight: '57-59', desc: 'Light and compact - great for dinghies and sailboats.' },
+        6: { weight: '63-65', desc: 'Still portable, easy for one person to manage.' },
+        8: { weight: '82-84', desc: 'Getting a bit heavier but still one-person manageable.' },
+        9.9: { weight: '88-95', desc: 'One person can manage, but two makes it easier.' },
+        15: { weight: '115-121', desc: 'Definitely a two-person lift.' },
+        20: { weight: '175-215', desc: 'Two-person lift for sure, depends on the config.' },
+        25: { weight: '167-180', desc: 'A two-person job.' },
+        30: { weight: '175-185', desc: 'Need a buddy for this one.' },
+        40: { weight: '235-255', desc: "You'll want a hoist or extra hands." },
+        50: { weight: '250-270', desc: 'Hoist recommended.' },
+        60: { weight: '260-280', desc: 'Definitely need proper lifting equipment.' },
+        75: { weight: '340-360', desc: 'These need a hoist.' },
+        90: { weight: '345-375', desc: 'Hoist required.' },
+        100: { weight: '355-385', desc: 'Big motor, needs proper equipment.' },
+        115: { weight: '365-395', desc: 'Hoist time.' },
+        150: { weight: '455-495', desc: 'Serious lifting equipment needed.' },
+        200: { weight: '485-520', desc: 'These are heavy - hoist required.' },
+        250: { weight: '545-580', desc: 'Big boy territory.' },
+        300: { weight: '580-640', desc: 'These are beasts - definitely hoist only.' },
+      };
       
-      if (hp <= 6) {
-        weight = Math.round(hp * 5 + 45); // 2.5HP ~57lbs, 6HP ~75lbs
-        description = `Around ${weight} pounds - super light and easy to carry. Great for car-topping.`;
-      } else if (hp <= 15) {
-        weight = Math.round(hp * 5.5 + 35); // 9.9HP ~90lbs, 15HP ~118lbs
-        description = `About ${weight} pounds. One person can manage it, but two makes it easier.`;
-      } else if (hp <= 30) {
-        weight = Math.round(hp * 5 + 100); // 20HP ~200lbs, 30HP ~250lbs
-        description = `Roughly ${weight} pounds. Definitely a two-person lift.`;
-      } else if (hp <= 60) {
-        weight = Math.round(hp * 4.5 + 150); // 40HP ~330lbs, 60HP ~420lbs
-        description = `Around ${weight} pounds. You'll want a hoist or extra hands for this one.`;
-      } else if (hp <= 115) {
-        weight = Math.round(hp * 3.8 + 180); // 75HP ~465lbs, 115HP ~617lbs
-        description = `Approximately ${weight} pounds. These need proper lifting equipment.`;
-      } else {
-        weight = Math.round(hp * 3 + 280); // 150HP ~730lbs, 300HP ~1180lbs
-        description = `These big boys run about ${weight} pounds. Definitely need a hoist.`;
+      // Find exact or closest match
+      const exactMatch = weightTable[hp];
+      if (exactMatch) {
+        const motorRef = motor || `${hp} horsepower motor`;
+        return `The ${motorRef} weighs about ${exactMatch.weight} pounds dry. ${exactMatch.desc}`;
       }
       
+      // Find closest match if not exact
+      const hpValues = Object.keys(weightTable).map(Number).sort((a, b) => a - b);
+      const closest = hpValues.reduce((prev, curr) => 
+        Math.abs(curr - hp) < Math.abs(prev - hp) ? curr : prev
+      );
+      const closestMatch = weightTable[closest];
       const motorRef = motor || `${hp} horsepower motor`;
-      return `The ${motorRef} weighs ${description}`;
+      return `The closest I have is the ${closest}HP at ${closestMatch.weight} pounds. ${closestMatch.desc} Your ${hp}HP would be similar.`;
     }
     
-    return "Motor weight varies by horsepower. What HP are you looking at? For example, a 20 HP runs about 200 pounds, and a 115 HP is around 400 pounds.";
+    return "Motor weight varies by model. What HP are you looking at? For example, a 5HP is about 57 pounds, a 20HP runs about 175-215 pounds, and a 115HP is around 365-395 pounds.";
   }
 
   // === DEFAULT FALLBACK - CALL PERPLEXITY ===
