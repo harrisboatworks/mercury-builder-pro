@@ -826,6 +826,36 @@ export type Database = {
         }
         Relationships: []
       }
+      google_places_cache: {
+        Row: {
+          cached_at: string
+          created_at: string
+          data: Json
+          expires_at: string
+          hit_count: number | null
+          id: string
+          place_query: string
+        }
+        Insert: {
+          cached_at?: string
+          created_at?: string
+          data: Json
+          expires_at?: string
+          hit_count?: number | null
+          id?: string
+          place_query: string
+        }
+        Update: {
+          cached_at?: string
+          created_at?: string
+          data?: Json
+          expires_at?: string
+          hit_count?: number | null
+          id?: string
+          place_query?: string
+        }
+        Relationships: []
+      }
       google_sheets_config: {
         Row: {
           auto_sync_enabled: boolean
