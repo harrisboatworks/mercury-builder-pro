@@ -4,7 +4,7 @@ import { InlineChatDrawer } from './InlineChatDrawer';
 import { VoiceIndicator } from './VoiceIndicator';
 import { VoiceProvider } from '@/contexts/VoiceContext';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
-import { DesktopCommandBar } from './DesktopCommandBar';
+import { AIChatButton } from './AIChatButton';
 
 interface AIChatContextType {
   openChat: (initialMessage?: string) => void;
@@ -88,11 +88,11 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
       <AIChatContext.Provider value={{ openChat, closeChat, isOpen, isLoading, setIsLoading, unreadCount, incrementUnread, clearUnread, chatMinimizedAt, notifyChatMinimized }}>
         {children}
         
-        {/* Desktop Command Bar - Only show on desktop (mobile uses unified bar) */}
+        {/* Desktop Chat Button - floating bubble (mobile uses unified bar) */}
         {!isMobileOrTablet && (
-          <DesktopCommandBar 
+          <AIChatButton 
             onOpenChat={() => openChat()} 
-            isChatOpen={isOpen} 
+            isOpen={isOpen} 
           />
         )}
         

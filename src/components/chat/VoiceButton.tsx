@@ -74,7 +74,7 @@ export const VoiceButton: React.FC<VoiceButtonProps> = ({
     if (isConnecting) return 'bg-amber-100 text-amber-600';
     if (isSpeaking) return 'bg-emerald-500 text-white';
     if (isListening) return 'bg-red-500 text-white';
-    return 'bg-gray-100 text-gray-600 hover:bg-gray-200';
+    return 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200';
   };
 
   const getIcon = () => {

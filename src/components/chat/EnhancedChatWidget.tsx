@@ -18,6 +18,7 @@ import { MotorComparisonCard } from './MotorComparisonCard';
 import { useChatPersistence, PersistedMessage } from '@/hooks/useChatPersistence';
 import { useCrossChannelContext, VoiceContextForText } from '@/hooks/useCrossChannelContext';
 import { VoiceButton } from './VoiceButton';
+import { VoiceHeaderButton } from './VoiceHeaderButton';
 import { useVoice } from '@/contexts/VoiceContext';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -760,14 +761,25 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
                   <p className="text-xs text-gray-500 font-light">Always here to help</p>
                 </div>
               </div>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={onClose}
-                className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-9 w-9 p-0 rounded-full transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </Button>
+              <div className="flex items-center gap-2">
+                {/* Voice chat button in header */}
+                <VoiceHeaderButton 
+                  isConnected={voice?.isConnected ?? false}
+                  isConnecting={voice?.isConnecting ?? false}
+                  isSpeaking={voice?.isSpeaking ?? false}
+                  isListening={voice?.isListening ?? false}
+                  onStart={() => voice?.startVoiceChat?.()}
+                  onEnd={() => voice?.endVoiceChat?.()}
+                />
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={onClose}
+                  className="text-gray-400 hover:text-gray-600 hover:bg-gray-100 h-9 w-9 p-0 rounded-full transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </Button>
+              </div>
             </div>
 
             {!isMinimized && (
