@@ -1,102 +1,103 @@
 
+# Fix Voice Chat HP Detection for All Motors
 
-# Standardize Pro XS Model Codes to Full Format
+## Problem
 
-## The Goal
+When users ask about motors using spoken words like "nine point nine HP" or "two hundred HP", the voice chat says "let me check" and then times out. The current spoken pattern dictionary only covers a small subset of HP values.
 
-Normalize all Pro XS motors to use full rigging codes for consistency:
-- `L` → `ELPT` (Electric, Long shaft, Power Trim)
-- `XL` → `EXLPT` (Electric, Extra Long shaft, Power Trim)
+## Current State Analysis
 
-## Current State in Database
+**Database HP values**: 2.5, 3.5, 4, 5, 6, 8, 9.9, 15, 20, 25, 30, 40, 50, 60, 75, 90, 115, 150, 175, 200, 225, 250, 300
 
-| HP | Current Format | Should Be |
-|----|----------------|-----------|
-| 115 | 115 ELPT ProXS | 115 ELPT ProXS (already correct) |
-| 115 | 115 EXLPT ProXS | 115 EXLPT ProXS (already correct) |
-| 150 | 150 L ProXS | 150 ELPT ProXS |
-| 150 | 150 XL ProXS | 150 EXLPT ProXS |
-| 175 | 175 L ProXS | 175 ELPT ProXS |
-| 175 | 175 XL ProXS | 175 EXLPT ProXS |
-| 200 | 200 L ProXS | 200 ELPT ProXS |
-| 200 | 200 XL ProXS | 200 EXLPT ProXS |
-| 225 | 225 L ProXS | 225 ELPT ProXS |
-| 225 | 225 XL ProXS | 225 EXLPT ProXS |
-| 250 | 250 L ProXS | 250 ELPT ProXS |
-| 250 | 250 XL ProXS | 250 EXLPT ProXS |
-| 300 | 300L Pro XS DTS TorqueMaster | 300 ELPT Pro XS DTS TorqueMaster |
-| 300 | 300XL Pro XS | 300 EXLPT Pro XS |
-| 300 | 300XL Pro XS DTS | 300 EXLPT Pro XS DTS |
-| 300 | 300CXL Pro XS DTS | 300 CEXLPT Pro XS DTS (Counter-rotating) |
+**Current spoken patterns** (lines 1412-1422):
+- Only covers: 20, 25, 30, 40, 50, 60, 75, 100, 115, 150, and "twenny"
+- Missing: 2.5, 3.5, 4, 5, 6, 8, 9.9, 15, 90, 175, 200, 225, 250, 300
 
-## Implementation Plan
+**Numeric pattern** (line 1409): Has 9.9 and decimals, but only works when speech-to-text outputs "9.9" not "nine point nine"
 
-### Step 1: Update Database Model Names
+## Root Cause
 
-Run a SQL migration to rename all Pro XS motors to use full rigging codes:
+Speech recognition often transcribes numbers as words:
+- "9.9" becomes "nine point nine" 
+- "200" becomes "two hundred"
+- "250" becomes "two fifty" or "two hundred fifty"
 
-```sql
--- Standardize Pro XS model_display to full rigging codes
-UPDATE motor_models
-SET model_display = REPLACE(model_display, ' L ProXS', ' ELPT ProXS')
-WHERE model_display LIKE '% L ProXS';
+The spoken patterns dictionary is incomplete, so these word-based transcriptions don't match.
 
-UPDATE motor_models
-SET model_display = REPLACE(model_display, ' XL ProXS', ' EXLPT ProXS')
-WHERE model_display LIKE '% XL ProXS';
+## Solution
 
--- Handle 300 HP variants with different spacing
-UPDATE motor_models
-SET model_display = REGEXP_REPLACE(model_display, '(\d+)L Pro XS', '\1 ELPT Pro XS')
-WHERE model_display ~ '^\d+L Pro XS';
+Expand `spokenHpPatterns` to cover all 23 HP values with common speech variations.
 
-UPDATE motor_models
-SET model_display = REGEXP_REPLACE(model_display, '(\d+)XL Pro XS', '\1 EXLPT Pro XS')
-WHERE model_display ~ '^\d+XL Pro XS';
+## File to Modify
 
--- Counter-rotating: CXL → CEXLPT
-UPDATE motor_models
-SET model_display = REGEXP_REPLACE(model_display, '(\d+)CXL Pro XS', '\1 CEXLPT Pro XS')
-WHERE model_display ~ '^\d+CXL Pro XS';
-```
+`src/hooks/useElevenLabsVoice.ts` - lines 1412-1422
 
-### Step 2: Update Sync Function to Translate Codes
+## Code Change
 
-Modify `supabase/functions/sync-google-sheets-inventory/index.ts` to translate sheet entries:
+Replace the limited pattern dictionary with a comprehensive one:
 
 ```typescript
-// In parseMotorName function, after detecting riggingCode:
-let riggingCode = riggingMatch ? riggingMatch[1].toUpperCase() : null;
-
-// For Pro XS motors, translate L/XL to full codes for matching
-if (riggingCode && (family === 'ProXS' || /pro\s*xs/i.test(normalized))) {
-  if (riggingCode === 'L') {
-    riggingCode = 'ELPT';
-    console.log(`  Pro XS translation: L → ELPT`);
-  } else if (riggingCode === 'XL') {
-    riggingCode = 'EXLPT';
-    console.log(`  Pro XS translation: XL → EXLPT`);
-  }
-}
+// Expanded spoken HP patterns for voice recognition
+const spokenHpPatterns: Record<string, number> = {
+  // === DECIMAL HP VALUES (small motors) ===
+  'two point five': 2.5, 'two and a half': 2.5, 'two-point-five': 2.5,
+  'three point five': 3.5, 'three and a half': 3.5, 'three-point-five': 3.5,
+  'nine point nine': 9.9, 'nine-point-nine': 9.9, 'nine nine': 9.9,
+  
+  // === SMALL HP (single digits) ===
+  'four hp': 4, 'four horsepower': 4,
+  'five hp': 5, 'five horsepower': 5,
+  'six hp': 6, 'six horsepower': 6,
+  'eight hp': 8, 'eight horsepower': 8,
+  
+  // === TEENS ===
+  'fifteen hp': 15, 'fifteen horsepower': 15, 'fifteen': 15,
+  
+  // === TWENTIES/THIRTIES ===
+  'twenty hp': 20, 'twenty horsepower': 20, '20 hp': 20, '20hp': 20,
+  'twenny': 20, 'twenny hp': 20, // Common mispronunciation
+  'twenty-five hp': 25, 'twenty five hp': 25, 'twenty-five': 25, 'twenty five': 25,
+  'thirty hp': 30, 'thirty horsepower': 30, 'thirty': 30,
+  
+  // === FORTIES THROUGH NINETIES ===
+  'forty hp': 40, 'forty horsepower': 40, 'forty': 40,
+  'fifty hp': 50, 'fifty horsepower': 50, 'fifty': 50,
+  'sixty hp': 60, 'sixty horsepower': 60, 'sixty': 60,
+  'seventy-five hp': 75, 'seventy five hp': 75, 'seventy five': 75, 'seventy-five': 75,
+  'ninety hp': 90, 'ninety horsepower': 90, 'ninety': 90,
+  
+  // === HUNDREDS ===
+  'hundred hp': 100, 'one hundred': 100, 'one hundred hp': 100,
+  'one-fifteen': 115, 'one fifteen': 115, 'one-fifteen hp': 115, 'one fifteen hp': 115,
+  'one-fifty': 150, 'one fifty': 150, 'one-fifty hp': 150, 'one fifty hp': 150,
+  'one-seventy-five': 175, 'one seventy five': 175, 'one seventy-five': 175,
+  'one seventy five hp': 175, 'one-seventy-five hp': 175,
+  
+  // === TWO HUNDREDS ===
+  'two hundred': 200, 'two hundred hp': 200, 'two hundred horsepower': 200,
+  'two-twenty-five': 225, 'two twenty five': 225, 'two twenty-five': 225,
+  'two twenty five hp': 225, 'two-twenty-five hp': 225,
+  'two-fifty': 250, 'two fifty': 250, 'two-fifty hp': 250, 'two fifty hp': 250,
+  'two hundred fifty': 250, 'two hundred and fifty': 250,
+  
+  // === THREE HUNDREDS ===
+  'three hundred': 300, 'three hundred hp': 300, 'three hundred horsepower': 300,
+};
 ```
 
-### Step 3: Update Rigging Code Regex Priority
+## Why This Works
 
-Ensure `L` and `XL` are matched correctly (they currently are, but ensure they don't get eaten by longer codes for non-Pro XS):
+1. **Covers all decimal HP**: "nine point nine", "two point five", "three point five"
+2. **Covers all whole HP**: From 4 HP to 300 HP with common spoken variations
+3. **Handles hyphenation**: Both "one-fifteen" and "one fifteen"
+4. **Common mispronunciations**: "twenny" for "twenty"
+5. **Phrase variations**: "two fifty" vs "two hundred fifty" vs "250"
 
-The current regex already handles this correctly since `ELPT` and `EXLPT` come before `L` and `XL` in the pattern.
+## Testing
 
-## Files to Modify
-
-| Location | Change |
-|----------|--------|
-| Database (SQL) | Update `model_display` for Pro XS motors 150HP+ |
-| `supabase/functions/sync-google-sheets-inventory/index.ts` | Add L→ELPT, XL→EXLPT translation for Pro XS |
-
-## Result
-
-After this change:
-- All Pro XS motors display with clear, full rigging codes
-- Google Sheet entries like "Pro XS 200 HP L" will correctly match "200 ELPT ProXS"
-- Consistent naming across all motor families
-
+After this fix, these voice queries should all work:
+- "Do you have any 9.9 HP motors?" (numeric or "nine point nine")
+- "Show me two hundred HP motors" 
+- "What do you have in a one-seventy-five?"
+- "I need a two fifty"
+- "Looking for something around ninety horsepower"
