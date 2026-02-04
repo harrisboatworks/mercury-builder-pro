@@ -1,62 +1,108 @@
 
-# Remove Perplexity Live Lookup - Database Only
+# Fix: Cinematic Intro Loading Twice
 
-## Overview
+## Problem Identified
 
-Remove the Perplexity-powered live market lookup feature and revert to using only the curated trade valuation database. Random listing prices from Kijiji/Boat Trader are unreliable for dealer trade-in values.
+The cinematic reveal animation plays twice because the `useEffect` that controls `showCinematic` depends on `[state.motor]` - the entire motor object. During the initial page load:
 
----
+1. The page mounts with `state.motor` in one state (possibly null or loading)
+2. The effect fires and sets `showCinematic = true`
+3. QuoteContext finishes loading from localStorage, `state.motor` gets a new object reference
+4. The effect fires **again** because the object reference changed
+5. The cinematic animation restarts
 
-## Changes Required
+## Solution
 
-### 1. Revert TradeInValuation Component
-
-**File:** `src/components/quote-builder/TradeInValuation.tsx`
-
-Remove:
-- `liveMarketValue` state
-- `isLoadingLiveValue` state  
-- `handleLiveMarketLookup` function
-- "Get Live Market Value" button
-- Live market results card with sources
-- All Supabase function invocation code
-
-Keep:
-- Database-powered `estimatedValue` from `useTradeValuationData` hook
-- Current condition-based valuation logic
-- Fallback to hardcoded values when database unavailable
-
-### 2. Delete Edge Function
-
-**File:** `supabase/functions/trade-value-lookup/index.ts`
-
-Delete the entire function - it's no longer needed.
-
-### 3. Update Config
-
-**File:** `supabase/config.toml`
-
-Remove the `trade-value-lookup` function entry.
+Change the effect to depend on a **stable motor identifier** (`state.motor?.id` or `state.motor?.sku`) instead of the entire motor object, and add guards to prevent re-triggering.
 
 ---
 
-## Result
+## Implementation
 
-The trade-in valuation will use only:
+### File: `src/pages/quote/QuoteSummaryPage.tsx`
 
-| Priority | Source | Description |
-|----------|--------|-------------|
-| 1 | Supabase `trade_valuation_brackets` | Curated dealer values by brand/year/HP |
-| 2 | Hardcoded fallback | Built-in values if database unavailable |
+**Current (problematic) code:**
+```typescript
+useEffect(() => {
+  const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
+  const lastRevealedMotor = sessionStorage.getItem('quote-reveal-motor-id');
+  const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
+  
+  if (!hasSeenReveal || (currentMotorId && lastRevealedMotor !== String(currentMotorId))) {
+    setShowCinematic(true);
+  }
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}, [state.motor]);
+```
 
-No external API calls, no random listing prices.
+**Fixed code:**
+```typescript
+// Extract stable motor ID outside the effect
+const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
+
+useEffect(() => {
+  // Guard: if cinematic is already showing, don't re-trigger
+  if (showCinematic) return;
+  
+  const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
+  const lastRevealedMotor = sessionStorage.getItem('quote-reveal-motor-id');
+  
+  // Only show if never seen OR motor changed (using stable ID comparison)
+  if (!hasSeenReveal || (currentMotorId && lastRevealedMotor !== String(currentMotorId))) {
+    setShowCinematic(true);
+  }
+  
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}, [currentMotorId]); // Use stable ID, not full object
+```
+
+---
+
+## Why This Works
+
+| Before | After |
+|--------|-------|
+| Depends on `state.motor` object reference | Depends on `currentMotorId` string value |
+| Effect fires when object reference changes | Effect only fires when motor ID actually changes |
+| No guard against re-triggering | Guard prevents re-trigger if already showing |
+
+---
+
+## Additional Safety: Mount Flag
+
+As extra protection, add a ref to track if the effect has already run on this mount:
+
+```typescript
+const cinematicTriggeredRef = useRef(false);
+
+useEffect(() => {
+  // Prevent double-trigger on same mount
+  if (cinematicTriggeredRef.current || showCinematic) return;
+  
+  const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
+  const lastRevealedMotor = sessionStorage.getItem('quote-reveal-motor-id');
+  
+  if (!hasSeenReveal || (currentMotorId && lastRevealedMotor !== String(currentMotorId))) {
+    cinematicTriggeredRef.current = true;
+    setShowCinematic(true);
+  }
+  
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}, [currentMotorId, showCinematic]);
+```
 
 ---
 
 ## Files to Modify
 
-| File | Action |
+| File | Change |
 |------|--------|
-| `src/components/quote-builder/TradeInValuation.tsx` | Remove live lookup code |
-| `supabase/functions/trade-value-lookup/index.ts` | Delete |
-| `supabase/config.toml` | Remove function entry |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Fix useEffect dependency + add guards |
+
+---
+
+## Expected Outcome
+
+- Cinematic plays **exactly once** when entering the summary page
+- Motor changes still trigger a fresh cinematic (correct behavior)
+- No double animation during initial page load
