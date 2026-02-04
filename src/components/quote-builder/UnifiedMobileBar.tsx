@@ -78,18 +78,20 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     }
   },
   '/quote/options': {
-    primaryLabel: (state) => state.selectedPackage ? 'Continue' : 'Skip Options',
+    primaryLabel: (state) => state.selectedOptions?.length ? 'Continue' : 'Continue',
     nextPath: '/quote/purchase-path',
     aiMessage: 'Need help choosing options or accessories?',
     nudges: {
       idle: [
-        { delay: 15, message: 'Packages save you money vs à la carte', icon: 'dollar' },
-        { delay: 25, message: 'Complete includes everything for peace of mind', icon: 'shield' },
-        { delay: 40, message: 'Not sure? AI can compare packages for you →', icon: 'sparkles' },
+        { delay: 10, message: 'Fuel tanks included with most 8-30HP motors', icon: 'check' },
+        { delay: 18, message: 'SmartCraft Connect streams data to your phone', icon: 'sparkles' },
+        { delay: 28, message: 'Pre-selected items are recommended for your motor', icon: 'heart' },
+        { delay: 38, message: 'Tap any accessory for full details', icon: 'info' },
+        { delay: 48, message: 'Not sure? Tap AI for accessory advice →', icon: 'sparkles' },
       ],
-      withSelection: 'Smart choice! Full protection included',
-      withoutSelection: 'Most customers choose Complete for worry-free boating',
-      encouragement: 'Perfect package! Moving forward →',
+      withSelection: 'Good picks! These work great with your motor',
+      withoutSelection: 'Recommended items are already selected for you',
+      encouragement: 'Great accessories chosen!',
     }
   },
   '/quote/purchase-path': {

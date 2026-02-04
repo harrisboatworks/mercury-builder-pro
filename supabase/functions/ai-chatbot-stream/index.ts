@@ -806,7 +806,26 @@ PROACTIVE KNOWLEDGE RULES:
 
   // Build page-specific context to guide AI responses
   let pageContext = '';
-  if (context?.currentPage?.includes('/quote/purchase-path')) {
+  if (context?.currentPage?.includes('/quote/options')) {
+    pageContext = `
+## CURRENT PAGE: MOTOR OPTIONS & ACCESSORIES
+The customer is viewing compatible add-ons for their selected motor. This is Step 2 of the quote process.
+
+Options typically include:
+- **SmartCraft Connect Mobile** ($325) - streams engine data to smartphone (for EFI motors 8HP+)
+- **Fuel Tanks** - 12L or 25L portable tanks (many motors 8-30HP include one)
+- **Service Kits** - 100-Hour or 300-Hour maintenance kits matched to their HP
+- **Motor Covers** - UV/weather protection for storage
+
+What to help with:
+- Explain what SmartCraft Connect does and why it's useful
+- Clarify which items are INCLUDED with their motor vs add-ons
+- Help them understand the difference between required, recommended, and optional items
+- "Recommended" items are pre-selected because they're popular for that motor
+
+DON'T confuse this with the Package Selection page (warranty packages) - this is ACCESSORIES.
+`;
+  } else if (context?.currentPage?.includes('/quote/purchase-path')) {
     pageContext = `
 ## CURRENT PAGE: PURCHASE PATH (Loose vs Installed)
 The customer is choosing HOW they want to get the motor - this is NOT about tiller vs remote steering (that was already decided during motor configuration).
