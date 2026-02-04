@@ -321,7 +321,7 @@ export async function generateExecutivePDF(quoteData: PDFExecutiveQuoteData) {
   doc.setFillColor(...colors.navy);
   doc.roundedRect(20, 195, 170, 45, 3, 3, "F");
 
-  const qrCodeUrl = `https://harrisboatworks.ca/quote/${quoteData.quoteNumber || ""}`;
+  const qrCodeUrl = `https://mercuryrepower.ca/quote/${quoteData.quoteNumber || ""}`;
   const qrCodeDataUrl = await QRCode.toDataURL(qrCodeUrl, {
     width: 120,
     margin: 1,
@@ -351,7 +351,7 @@ export async function generateExecutivePDF(quoteData: PDFExecutiveQuoteData) {
   doc.text("HARRIS BOAT WORKS | EXCLUSIVE MERCURY DEALER", 105, 280, { align: "center" });
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9);
-  doc.text("905.342.2153 | harrisboatworks.ca", 105, 287, { align: "center" });
+  doc.text("905.342.2153 | mercuryrepower.ca", 105, 287, { align: "center" });
 
   return doc;
 }

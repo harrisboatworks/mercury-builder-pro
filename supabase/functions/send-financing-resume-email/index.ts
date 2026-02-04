@@ -89,7 +89,7 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     // Generate resume URL
-    const siteUrl = Deno.env.get('APP_URL') || 'https://harrisboatworks.com';
+    const siteUrl = Deno.env.get('APP_URL') || 'https://mercuryrepower.ca';
     const resumeUrl = `${siteUrl}/financing/resume?token=${resumeToken}`;
 
     // Calculate progress

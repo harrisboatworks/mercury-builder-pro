@@ -1,5 +1,5 @@
 # AI Agent Metadata for Harris Boat Works
-# https://quote.harrisboatworks.ca
+# https://mercuryrepower.ca
 
 ## Business Identity
 name: Harris Boat Works

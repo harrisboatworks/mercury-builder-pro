@@ -1,7 +1,7 @@
 // Shared email template for professional, branded emails
 
 export function createBrandedEmailTemplate(content: string, previewText?: string): string {
-  const appUrl = Deno.env.get('APP_URL') || 'https://quote.harrisboatworks.ca';
+  const appUrl = Deno.env.get('APP_URL') || 'https://mercuryrepower.ca';
   
   return `
 <!DOCTYPE html>

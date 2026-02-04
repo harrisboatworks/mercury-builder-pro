@@ -35,7 +35,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log('Sending saved quote email to:', customerEmail);
 
-    const siteUrl = Deno.env.get("SITE_URL") || "https://quote.harrisboatworks.ca";
+    const siteUrl = Deno.env.get("SITE_URL") || "https://mercuryrepower.ca";
     
     // Use savedQuoteId for full quote restoration if available
     const quoteLink = savedQuoteId 
