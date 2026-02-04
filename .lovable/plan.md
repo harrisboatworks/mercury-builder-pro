@@ -1,151 +1,136 @@
 
-
-# Trade-In Valuation Database Migration Plan
+# AI-Powered Trade-In Valuation via Perplexity
 
 ## Overview
 
-Migrate the hardcoded trade-in valuation data from `src/lib/trade-valuation.ts` to Supabase tables, enabling admins to update market values without code deployments. This also adds support for 2025-2029 motors and updates the Mercury bonus logic.
+Integrate Perplexity search into the trade-in valuation flow to fetch **real-time wholesale/trade values in CAD** when a customer enters their motor details. This replaces static database lookups with live market data sourced from boat trading sites, dealer listings, and valuation guides.
 
 ---
 
-## Current State Analysis
-
-The trade-in valuation system is entirely hardcoded in `src/lib/trade-valuation.ts`:
-
-| Component | Current Location | Issue |
-|-----------|------------------|-------|
-| Brand values (Mercury, Yamaha, Honda, Suzuki, Evinrude) | Lines 60-382 | ~320 lines of hardcoded data |
-| Year brackets | `2020-2024`, `2015-2019`, `2010-2014`, `2005-2009` | Missing 2025-2029 bracket |
-| HP levels | 5, 10, 15, 20, 25, 40, 50, 60, 75, 90, 115, 150, 200, 250, 300 | Static per brand |
-| Condition multipliers | excellent, good, fair, poor | Embedded in values |
-| Brand penalties | Johnson: 50%, Evinrude: 50% | Lines 37-40 |
-| Mercury bonus | 10% for year >= 2020 | Line 474 (outdated logic) |
-
-**Problem:** In 2026, a 2025 motor gets mapped to the "2020-2024" bracket at line 419, undervaluing it by treating it like a 5-year-old motor instead of a 1-year-old one.
-
----
-
-## Database Schema Design
-
-### Table 1: `trade_valuation_brackets`
-Stores condition-based values for each brand/year-range/HP combination.
+## How It Will Work
 
 ```text
-┌──────────────────────────────────────────────────────────────────────────────┐
-│  trade_valuation_brackets                                                     │
-├──────────────────────────────────────────────────────────────────────────────┤
-│  id            UUID  PRIMARY KEY                                              │
-│  brand         TEXT  NOT NULL         -- 'Mercury', 'Yamaha', etc.           │
-│  year_range    TEXT  NOT NULL         -- '2025-2029', '2020-2024', etc.      │
-│  horsepower    INTEGER NOT NULL       -- 5, 10, 15, 20, 25, etc.             │
-│  excellent     NUMERIC NOT NULL       -- Value in CAD                        │
-│  good          NUMERIC NOT NULL       -- Value in CAD                        │
-│  fair          NUMERIC NOT NULL       -- Value in CAD                        │
-│  poor          NUMERIC NOT NULL       -- Value in CAD                        │
-│  created_at    TIMESTAMPTZ            -- Auto                                │
-│  updated_at    TIMESTAMPTZ            -- Auto                                │
-│  UNIQUE (brand, year_range, horsepower)                                      │
-└──────────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Customer enters: 2020 Mercury 115HP Pro XS                                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Edge Function: trade-value-lookup                                          │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│  Query Perplexity: "2020 Mercury 115HP Pro XS outboard motor                │
+│                     wholesale trade-in value CAD Canadian dollars"          │
+│                                                                             │
+│  Search domains: boattrader.com, kijiji.ca, jdpower.com/boats,             │
+│                  nada.com, boats.com, marinebluebook.com                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Perplexity returns:                                                        │
+│  "Based on current market data, a 2020 Mercury 115HP Pro XS in good         │
+│   condition has a wholesale/trade-in value of approximately $8,500-$9,500   │
+│   CAD. Retail listings range $11,000-$13,000 CAD."                         │
+│                                                                             │
+│  Sources: [boattrader.com, kijiji.ca, mercurymarine.com]                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+                                    │
+                                    ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  Parse response → Extract trade value range → Apply condition adjustments   │
+│  → Display to customer with source citations                                │
+└─────────────────────────────────────────────────────────────────────────────┘
 ```
-
-### Table 2: `trade_valuation_config`
-Stores global configuration (penalties, bonuses, min value).
-
-```text
-┌──────────────────────────────────────────────────────────────────────────────┐
-│  trade_valuation_config                                                       │
-├──────────────────────────────────────────────────────────────────────────────┤
-│  key           TEXT  PRIMARY KEY      -- 'BRAND_PENALTY_JOHNSON', etc.       │
-│  value         JSONB NOT NULL         -- { "factor": 0.5 } or { "value": 100 }│
-│  description   TEXT                   -- Human-readable description          │
-│  updated_at    TIMESTAMPTZ            -- Auto                                │
-└──────────────────────────────────────────────────────────────────────────────┘
-```
-
-**Configuration keys:**
-- `BRAND_PENALTY_JOHNSON` → `{ "factor": 0.5 }`
-- `BRAND_PENALTY_EVINRUDE` → `{ "factor": 0.5 }`
-- `MERCURY_BONUS_YEARS` → `{ "max_age": 3, "factor": 1.1 }` (motors < 3 years old get 10% bonus)
-- `MIN_TRADE_VALUE` → `{ "value": 100 }`
 
 ---
 
 ## Implementation Steps
 
-### Phase 1: Database Setup
+### Phase 1: Connect Perplexity to Project
 
-1. **Create migration file** with:
-   - `trade_valuation_brackets` table with indexes on (brand, year_range)
-   - `trade_valuation_config` table
-   - RLS policies (public read, admin write)
-   - Seed data migration from current hardcoded values
+The Perplexity connector exists in the workspace but is not linked to this project. I'll link it using the connector tool.
 
-2. **Seed the 2025-2029 bracket** with ~10-15% higher values than 2020-2024:
-   - Mercury 115HP excellent: $12,100 (was $11,000 for 2020-2024)
-   - Apply similar increases across all brands/HP
+### Phase 2: Create Edge Function
 
-3. **Insert configuration rows** for penalties and bonuses
+Create `supabase/functions/trade-value-lookup/index.ts`:
 
-### Phase 2: Frontend Data Layer
+- Accept motor details (brand, year, HP, model, condition)
+- Build an optimized Perplexity query for Canadian trade values
+- Parse the AI response to extract value ranges
+- Return structured data with sources
 
-4. **Create React Query hook** `useTradeValuationData()`:
-   - Fetches brackets and config on app load
-   - Caches for 1 hour (stale-while-revalidate)
-   - Provides fallback to current hardcoded values if fetch fails
+**Query Template:**
+```text
+"[YEAR] [BRAND] [HP]HP [MODEL] outboard motor wholesale trade-in value CAD 
+Canadian dollars dealer price. What is the fair trade value for this motor 
+in [CONDITION] condition?"
+```
 
-5. **Update `src/lib/trade-valuation.ts`**:
-   - Accept optional `brackets` and `config` parameters
-   - Fall back to hardcoded values when database data is unavailable
-   - Update Mercury bonus: check if `(currentYear - year) < config.max_age`
+**Perplexity Configuration:**
+```typescript
+{
+  model: 'sonar',
+  messages: [
+    { 
+      role: 'system', 
+      content: `You are a marine valuation expert. Provide trade-in values in Canadian dollars (CAD).
+                Return a low-high range for wholesale/trade-in value.
+                Format: "Trade-in value: $X,XXX - $X,XXX CAD"
+                Also provide retail comparison if available.
+                Cite your sources.`
+    },
+    { role: 'user', content: query }
+  ],
+  search_domain_filter: [
+    'boattrader.com', 
+    'boats.com', 
+    'kijiji.ca',
+    'jdpower.com',
+    'nada.com',
+    'marinebluebook.com'
+  ],
+  search_recency_filter: 'year'
+}
+```
 
-### Phase 3: Valuation Logic Updates
+### Phase 3: Update TradeInValuation Component
 
-6. **Fix year bracket matching**:
-   ```text
-   Current (broken):
-   if (year >= 2020) → yearRange = '2020-2024'
-   
-   Updated:
-   if (year >= 2025) → yearRange = '2025-2029'
-   else if (year >= 2020) → yearRange = '2020-2024'
-   ```
+Modify `src/components/quote-builder/TradeInValuation.tsx`:
 
-7. **Update Mercury bonus logic**:
-   ```text
-   Current (outdated):
-   if (brand === 'Mercury' && year >= 2020) → 10% bonus
-   
-   Updated:
-   const maxAge = config.MERCURY_BONUS_YEARS.max_age || 3
-   if (brand === 'Mercury' && (currentYear - year) < maxAge) → 10% bonus
-   ```
+1. Add "Get Live Market Value" button alongside current estimate
+2. Call the new edge function when clicked
+3. Display Perplexity response with source citations
+4. Fall back to database values if Perplexity fails or rate-limited
 
-### Phase 4: Admin UI (Optional Enhancement)
+### Phase 4: Hybrid Valuation Strategy
 
-8. **Add admin interface** for editing values:
-   - Read/write to `trade_valuation_brackets`
-   - Edit configuration in `trade_valuation_config`
-   - Preview impact before saving
+Use a layered approach:
+
+| Priority | Source | When Used |
+|----------|--------|-----------|
+| 1 | Perplexity live search | Default for all valuations |
+| 2 | Supabase cached values | Fallback if Perplexity fails |
+| 3 | Hardcoded fallback | Last resort if DB unavailable |
 
 ---
 
-## 2025-2029 Market Values
+## User Experience
 
-Based on ~10% appreciation from 2020-2024 bracket (reflecting newer inventory holding value):
+**Before (current):**
+```text
+✓ Get Estimate → Instant static value from database
+```
 
-| Brand | HP | Excellent | Good | Fair | Poor |
-|-------|-----|-----------|------|------|------|
-| Mercury | 5 | $880 | $715 | $550 | $330 |
-| Mercury | 10 | $1,540 | $1,265 | $990 | $605 |
-| Mercury | 25 | $3,520 | $2,860 | $2,200 | $1,320 |
-| Mercury | 115 | $12,100 | $9,900 | $7,700 | $4,620 |
-| Mercury | 150 | $15,950 | $13,200 | $10,450 | $6,270 |
-| Mercury | 300 | $28,600 | $23,100 | $18,150 | $10,890 |
-| Yamaha | 115 | $11,000 | $8,800 | $6,820 | $4,070 |
-| Honda | 115 | $10,560 | $8,470 | $6,600 | $3,960 |
-| Suzuki | 115 | $9,570 | $7,700 | $5,940 | $3,575 |
-
-*(Full table will include all HP levels for all brands)*
+**After (with Perplexity):**
+```text
+✓ Get Estimate → 2-3 second search → Live market value with sources
+   
+   "Based on recent Canadian listings:
+    Trade-in value: $8,500 - $9,500 CAD
+    Retail price: $11,000 - $13,000 CAD
+    
+    Sources: Boat Trader, Kijiji, J.D. Power"
+```
 
 ---
 
@@ -153,61 +138,57 @@ Based on ~10% appreciation from 2020-2024 bracket (reflecting newer inventory ho
 
 | File | Action |
 |------|--------|
-| `supabase/migrations/XXXXXX_trade_valuation_tables.sql` | **Create** - Schema + seed data |
-| `src/integrations/supabase/types.ts` | **Auto-regenerate** after migration |
-| `src/hooks/useTradeValuationData.ts` | **Create** - React Query hook for data |
-| `src/lib/trade-valuation.ts` | **Modify** - Accept database data, fix year logic |
-| `src/components/quote-builder/TradeInValuation.tsx` | **Modify** - Use hook, pass data to estimator |
+| `supabase/functions/trade-value-lookup/index.ts` | **Create** - Perplexity integration |
+| `src/components/quote-builder/TradeInValuation.tsx` | **Modify** - Add live lookup button/flow |
+| `src/lib/trade-valuation.ts` | **Modify** - Add parsePerplexityValue helper |
 
 ---
 
 ## Technical Details
 
-### RLS Policies
+### Response Parsing
 
-```sql
--- Public can read (needed for quote builder)
-CREATE POLICY "Public read access" ON trade_valuation_brackets
-  FOR SELECT USING (true);
-
--- Only admins can modify
-CREATE POLICY "Admins can manage" ON trade_valuation_brackets
-  FOR ALL USING (has_role(auth.uid(), 'admin'))
-  WITH CHECK (has_role(auth.uid(), 'admin'));
-```
-
-### React Query Hook Pattern
+Extract structured values from Perplexity's natural language response:
 
 ```typescript
-export function useTradeValuationData() {
-  return useQuery({
-    queryKey: ['trade-valuation-data'],
-    queryFn: async () => {
-      const [brackets, config] = await Promise.all([
-        supabase.from('trade_valuation_brackets').select('*'),
-        supabase.from('trade_valuation_config').select('*')
-      ]);
-      return { brackets: brackets.data, config: config.data };
-    },
-    staleTime: 60 * 60 * 1000, // 1 hour
-    gcTime: 24 * 60 * 60 * 1000, // 24 hours
-  });
+function parseTradeValue(response: string): { low: number; high: number } | null {
+  // Match patterns like "$8,500 - $9,500" or "8500-9500 CAD"
+  const patterns = [
+    /\$?([\d,]+)\s*[-–to]\s*\$?([\d,]+)\s*(?:CAD|Canadian)?/i,
+    /trade[- ]?in[^:]*:\s*\$?([\d,]+)\s*[-–to]\s*\$?([\d,]+)/i
+  ];
+  
+  for (const pattern of patterns) {
+    const match = response.match(pattern);
+    if (match) {
+      return {
+        low: parseInt(match[1].replace(/,/g, '')),
+        high: parseInt(match[2].replace(/,/g, ''))
+      };
+    }
+  }
+  return null;
 }
 ```
 
-### Fallback Strategy
+### Error Handling
 
-If database fetch fails, the valuation system will:
-1. Log a warning to console
-2. Continue using the hardcoded fallback values
-3. Ensure zero downtime for users
+- **Rate limited**: Fall back to database values, show "Market data temporarily unavailable"
+- **No results**: Use database values with lower confidence
+- **Parse failure**: Log for debugging, use database fallback
+
+### Caching Strategy
+
+Cache Perplexity responses by motor key for 24 hours to:
+- Reduce API costs
+- Speed up repeat queries
+- Provide offline fallback
 
 ---
 
 ## Expected Outcomes
 
-1. **Immediate**: 2025-2026 motors valued correctly (~10% higher than 2020 models)
-2. **Ongoing**: Admins can update values in Supabase without deployments
-3. **Mercury bonus**: Now targets motors < 3 years old (dynamic, not hardcoded year)
-4. **Data integrity**: Hardcoded fallback ensures the system works even if DB is unavailable
-
+1. **Accurate market values**: Real-time data from current Canadian listings
+2. **Transparent sourcing**: Customers see where values come from (Boat Trader, Kijiji, etc.)
+3. **Dealer confidence**: Staff can reference market data when negotiating trade-ins
+4. **Fallback safety**: System works even when Perplexity is unavailable
