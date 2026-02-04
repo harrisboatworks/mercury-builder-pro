@@ -185,8 +185,8 @@ const TOOLS = [
       properties: {
         step: { 
           type: "string", 
-          enum: ["boat", "motor", "addons", "financing", "review"],
-          description: "Quote step to navigate to" 
+          enum: ["boat", "motor", "options", "addons", "financing", "review", "promo", "summary"],
+          description: "Quote step to navigate to: motor (motor selection), options (accessories), addons (legacy), boat (boat info), financing (finance options), promo (promotion selection), review/summary (quote summary)" 
         }
       },
       required: ["step"]
