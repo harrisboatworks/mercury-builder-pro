@@ -1,109 +1,66 @@
 
-# Fix Voice Chat "Unavailable" Error with Token Fetch Retry
+Goal: Fix the recurring “Voice chat unavailable”/tool failures by addressing the real failing request shown in logs: calls to the `voice-inventory-lookup` Edge Function are being blocked at the browser/network layer (“Failed to fetch”), while `elevenlabs-conversation-token` is succeeding.
 
-## Problem Identified
+What the logs show (key findings)
+- The ElevenLabs token function is working:
+  - Browser network: `POST /functions/v1/elevenlabs-conversation-token` returns 200 and JSON (warmup ok).
+  - Edge logs: token requested, system prompt built, “Conversation token received successfully”.
+- The inventory tool function is not reachable from the browser:
+  - Browser network: `POST /functions/v1/voice-inventory-lookup` fails with “Failed to fetch” even for `{ action: "ping" }`.
+  - Edge logs for `voice-inventory-lookup` show only “booted/listening”, and no per-request logs like `Voice inventory lookup: ping` — consistent with CORS/preflight blocking before the request hits the function.
+- Code confirms a CORS mismatch:
+  - `supabase/functions/_shared/cors.ts` already allows `x-session-id` and sets `Access-Control-Allow-Methods`.
+  - But `supabase/functions/voice-inventory-lookup/index.ts` defines its own `corsHeaders` with:
+    - `Access-Control-Allow-Headers`: only `"authorization, x-client-info, apikey, content-type"`
+    - No `Access-Control-Allow-Methods`
+  - The browser is sending `x-session-id` for these function calls (visible in network logs). That header is not allowed by this function’s CORS config, causing the fetch to fail.
 
-When trying to start voice chat, the app shows "Voice chat unavailable" because the ElevenLabs conversation token fetch is failing with "Failed to fetch" network errors.
+Root cause
+- `voice-inventory-lookup` Edge Function is using an outdated/local CORS header list that does not include `x-session-id` (and doesn’t declare allowed methods). The browser blocks the request (including simple “ping”) before it reaches the function, producing “Failed to fetch”.
+- This cascades into the voice tool flow because ElevenLabs “client tools” (like `check_inventory`) rely on `voice-inventory-lookup` to respond.
 
-**Evidence from logs:**
-- OPTIONS preflight requests succeed (200 status)
-- POST requests fail with "Failed to fetch" before reaching the server
-- The edge function itself works correctly (tested directly)
-- Multiple rapid requests in quick succession may be getting aborted
+Implementation plan (code changes)
+1) Standardize `voice-inventory-lookup` CORS to use the shared CORS module
+   - File: `supabase/functions/voice-inventory-lookup/index.ts`
+   - Replace the local `corsHeaders` object with:
+     - `import { corsHeaders } from "../_shared/cors.ts";`
+   - Ensure OPTIONS is handled as it already is:
+     - `if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });`
+   - Ensure all responses include the shared headers:
+     - For JSON responses: `headers: { ...corsHeaders, "Content-Type": "application/json" }`
+   - This will allow:
+     - `x-session-id`
+     - Standard Supabase headers
+     - Allowed methods including POST/OPTIONS
 
-## Root Cause
+2) Add the “Supabase client platform/runtime” headers to shared CORS if needed (optional hardening)
+   - Only if we observe preflight still failing after step (1).
+   - Your `elevenlabs-conversation-token` already allows these headers; the shared `_shared/cors.ts` currently does not.
+   - Since the browser logs for `voice-inventory-lookup` only show `x-client-info` and `x-session-id` today, step (1) should be sufficient; this is a fallback.
 
-The token fetch in `useElevenLabsVoice.ts` has **no retry logic** for network failures. When the first request fails (even due to transient issues), the voice chat immediately shows as unavailable.
+3) Verify with targeted runtime checks
+   - Browser-side verification:
+     - Confirm that `POST /functions/v1/voice-inventory-lookup` for `{ action: "ping" }` returns 200 and JSON.
+     - Confirm that `check_inventory` tool calls no longer throw `FunctionsFetchError`.
+   - Server-side verification:
+     - Supabase Edge logs should now show `Voice inventory lookup: ping` when warmup happens and show action logs during real tool usage.
+   - End-to-end:
+     - Start voice chat → ask “Do you have any nine point nine horsepower motors?” and verify:
+       - Voice tool calls succeed
+       - No “Voice chat unavailable” popups triggered by tool failures
+       - UI navigates/updates as expected
 
-This is different from the WebRTC connection which has 3 retries with exponential backoff.
+Expected outcome
+- `voice-inventory-lookup` becomes reachable from the browser in all environments.
+- ElevenLabs client tools (inventory lookup) stop failing with “Failed to fetch”.
+- “Voice chat unavailable” should disappear for the flows that depended on inventory tools; if any remaining “unavailable” occurs, it will be isolated to token/session start and can be addressed separately with clearer diagnostics.
 
-## Solution
+Risks / edge cases
+- Cached edge function deployment: after deploying, users may need a hard refresh.
+- If another function (besides `voice-inventory-lookup`) is used by client tools and has similar local CORS headers, we’ll need to standardize those too; we can quickly scan other functions for locally-defined `corsHeaders` that omit `x-session-id`.
 
-Add retry logic with exponential backoff to the token fetch, similar to the WebRTC connection retry pattern already in the code.
-
-## Implementation
-
-### File: `src/hooks/useElevenLabsVoice.ts`
-
-Wrap the token fetch in a retry loop (lines ~2359-2397):
-
-```typescript
-// PARALLELIZED with RETRY: Load previous context, get token simultaneously
-console.log('Fetching ElevenLabs conversation token...');
-let tokenData: { token: string } | null = null;
-let previousContext: any = null;
-
-// Load previous context (non-critical, don't retry)
-previousContext = await voiceSession.loadPreviousSessionContext().catch(err => {
-  console.warn('[Voice] Failed to load previous context:', err);
-  return null;
-});
-
-if (previousContext?.totalPreviousChats > 0) {
-  console.log('[Voice] Returning customer:', previousContext.totalPreviousChats, 'previous chats');
-}
-
-// Token fetch with retry logic
-const TOKEN_RETRIES = 3;
-let tokenError: Error | null = null;
-
-for (let attempt = 1; attempt <= TOKEN_RETRIES; attempt++) {
-  try {
-    console.log(`[Voice] Token fetch attempt ${attempt}/${TOKEN_RETRIES}...`);
-    
-    // Pre-warm on first attempt only
-    if (attempt === 1) {
-      prewarmEdgeFunctions().catch(() => {});
-    }
-    
-    const tokenResult = await supabase.functions.invoke('elevenlabs-conversation-token', {
-      body: { 
-        motorContext: options.motorContext,
-        currentPage: options.currentPage,
-        quoteContext: options.quoteContext,
-      }
-    });
-    
-    if (tokenResult.error) {
-      throw new Error(tokenResult.error.message || 'Token request failed');
-    }
-    
-    if (!tokenResult.data?.token) {
-      throw new Error('No token in response');
-    }
-    
-    tokenData = tokenResult.data;
-    console.log('[Voice] Token received successfully');
-    break; // Success - exit retry loop
-    
-  } catch (err) {
-    tokenError = err instanceof Error ? err : new Error('Token fetch failed');
-    console.warn(`[Voice] Token attempt ${attempt} failed:`, tokenError.message);
-    
-    if (attempt < TOKEN_RETRIES) {
-      // Exponential backoff: 500ms, 1000ms, 2000ms
-      const delay = Math.pow(2, attempt - 1) * 500;
-      console.log(`[Voice] Waiting ${delay}ms before retry...`);
-      await new Promise(r => setTimeout(r, delay));
-    }
-  }
-}
-
-if (!tokenData) {
-  throw new Error('Unable to get voice session. Please check your connection and try again.');
-}
-```
-
-## Why This Works
-
-1. **Resilience**: Transient network blips don't immediately fail voice chat
-2. **Exponential backoff**: Prevents hammering the server (500ms → 1s → 2s delays)
-3. **Matches existing pattern**: Same retry approach as WebRTC connection (lines 2406-2449)
-4. **User-friendly**: Only shows "unavailable" after 3 genuine failures
-
-## Testing
-
-After this fix:
-1. Open voice chat - should connect normally
-2. If first request fails due to network, automatic retry should succeed
-3. Only after 3 failures should "Voice chat unavailable" appear
+Concrete checklist
+- [ ] Update `voice-inventory-lookup` to import and use `_shared/cors.ts`
+- [ ] Redeploy `voice-inventory-lookup`
+- [ ] Re-test in browser: ping + real `check_inventory` tool call
+- [ ] If still failing: extend `_shared/cors.ts` to include `x-supabase-client-*` headers to match token function
