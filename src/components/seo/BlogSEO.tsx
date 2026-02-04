@@ -1,12 +1,13 @@
 import { Helmet } from 'react-helmet-async';
 import { BlogArticle } from '@/data/blogArticles';
+import { SITE_URL } from '@/lib/site';
 
 interface BlogSEOProps {
   article: BlogArticle;
 }
 
 export function BlogSEO({ article }: BlogSEOProps) {
-  const url = `https://quote.harrisboatworks.ca/blog/${article.slug}`;
+  const url = `${SITE_URL}/blog/${article.slug}`;
   
   // Calculate word count from content
   const wordCount = article.content.trim().split(/\s+/).length;
@@ -22,16 +23,16 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "@id": `${url}#article`,
         "headline": article.title,
         "description": article.description,
-        "image": `https://quote.harrisboatworks.ca${article.image}`,
+        "image": `${SITE_URL}${article.image}`,
         "author": {
           "@type": "Organization",
           "name": "Harris Boat Works",
-          "@id": "https://quote.harrisboatworks.ca/#organization"
+          "@id": `${SITE_URL}/#organization`
         },
         "publisher": {
           "@type": "Organization",
           "name": "Harris Boat Works",
-          "@id": "https://quote.harrisboatworks.ca/#organization"
+          "@id": `${SITE_URL}/#organization`
         },
         "datePublished": article.datePublished,
         "dateModified": article.dateModified,
@@ -67,13 +68,13 @@ export function BlogSEO({ article }: BlogSEOProps) {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://quote.harrisboatworks.ca"
+            "item": SITE_URL
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Blog",
-            "item": "https://quote.harrisboatworks.ca/blog"
+            "item": `${SITE_URL}/blog`
           },
           {
             "@type": "ListItem",
@@ -95,7 +96,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
           "position": index + 1,
           "name": step.name,
           "text": step.text,
-          ...(step.image ? { "image": `https://quote.harrisboatworks.ca${step.image}` } : {})
+          ...(step.image ? { "image": `${SITE_URL}${step.image}` } : {})
         }))
       }] : []),
       // FAQ schema
@@ -124,7 +125,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       {/* Open Graph */}
       <meta property="og:title" content={article.title} />
       <meta property="og:description" content={article.description} />
-      <meta property="og:image" content={`https://quote.harrisboatworks.ca${article.image}`} />
+      <meta property="og:image" content={`${SITE_URL}${article.image}`} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="article" />
       <meta property="og:locale" content="en_CA" />
@@ -136,7 +137,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={article.title} />
       <meta name="twitter:description" content={article.description} />
-      <meta name="twitter:image" content={`https://quote.harrisboatworks.ca${article.image}`} />
+      <meta name="twitter:image" content={`${SITE_URL}${article.image}`} />
       
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

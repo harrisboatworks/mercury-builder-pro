@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/lib/site';
 
 export function GlobalSEO() {
   const structuredData = {
@@ -6,12 +7,12 @@ export function GlobalSEO() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://quote.harrisboatworks.ca/#organization",
+        "@id": `${SITE_URL}/#organization`,
         "name": "Harris Boat Works",
-        "url": "https://quote.harrisboatworks.ca",
+        "url": SITE_URL,
         "logo": {
           "@type": "ImageObject",
-          "url": "https://quote.harrisboatworks.ca/assets/harris-logo-black.png",
+          "url": `${SITE_URL}/assets/harris-logo-black.png`,
           "width": 300,
           "height": 100
         },
@@ -60,9 +61,9 @@ export function GlobalSEO() {
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://quote.harrisboatworks.ca/#localbusiness",
+        "@id": `${SITE_URL}/#localbusiness`,
         "name": "Harris Boat Works",
-        "image": "https://quote.harrisboatworks.ca/assets/harris-logo-black.png",
+        "image": `${SITE_URL}/assets/harris-logo-black.png`,
         "priceRange": "$$$",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
@@ -79,7 +80,7 @@ export function GlobalSEO() {
           "latitude": 44.1167,
           "longitude": -78.2500
         },
-        "url": "https://quote.harrisboatworks.ca",
+        "url": SITE_URL,
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -134,22 +135,22 @@ export function GlobalSEO() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://quote.harrisboatworks.ca/#website",
-        "url": "https://quote.harrisboatworks.ca",
+        "@id": `${SITE_URL}/#website`,
+        "url": SITE_URL,
         "name": "Harris Boat Works Mercury Quote Builder",
         "description": "Build your Mercury outboard motor quote online. Configure engines, compare packages, and get instant pricing.",
         "publisher": {
-          "@id": "https://quote.harrisboatworks.ca/#organization"
+          "@id": `${SITE_URL}/#organization`
         },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://quote.harrisboatworks.ca/quote/motor-selection?search={search_term_string}",
+          "target": `${SITE_URL}/quote/motor-selection?search={search_term_string}`,
           "query-input": "required name=search_term_string"
         }
       },
       {
         "@type": "FAQPage",
-        "@id": "https://quote.harrisboatworks.ca/#faq",
+        "@id": `${SITE_URL}/#faq`,
         "mainEntity": [
           {
             "@type": "Question",
