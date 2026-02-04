@@ -142,7 +142,7 @@ export function AboutPageSEO() {
             "name": "How long has Harris Boat Works been in business?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Harris Boat Works was founded in 1947, making us a family-owned business serving Ontario boaters for over 77 years. We've been an authorized Mercury Marine dealer since 1965 - nearly 60 years of Mercury expertise."
+              "text": "Harris Boat Works was founded in 1947, making us a family-owned business serving Ontario boaters for over 79 years. We've been an authorized Mercury Marine dealer since 1965 - over 60 years of Mercury expertise."
             }
           },
           {
@@ -185,13 +185,13 @@ export function AboutPageSEO() {
   return (
     <Helmet>
       <title>About Harris Boat Works | Family-Owned Since 1947 | Mercury Dealer Ontario</title>
-      <meta name="description" content="Harris Boat Works: family-owned since 1947, Mercury dealer since 1965. CSI Award-winning service on Rice Lake, Ontario. 77 years of marine expertise serving the Kawarthas, Toronto, and Peterborough." />
+      <meta name="description" content="Harris Boat Works: family-owned since 1947, Mercury dealer since 1965. CSI Award-winning service on Rice Lake, Ontario. 79 years of marine expertise serving the Kawarthas, Toronto, and Peterborough." />
       <meta name="keywords" content="Harris Boat Works, Mercury dealer Ontario, Rice Lake boat dealer, Kawartha Lakes marine, boat dealer Peterborough, Mercury repower center, family boat dealer" />
       <link rel="canonical" href="https://quote.harrisboatworks.ca/about" />
       
       {/* Open Graph */}
       <meta property="og:title" content="About Harris Boat Works | Mercury Dealer Since 1965" />
-      <meta property="og:description" content="Family-owned marine dealership on Rice Lake. 77 years serving Ontario boaters." />
+      <meta property="og:description" content="Family-owned marine dealership on Rice Lake. 79 years serving Ontario boaters." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://quote.harrisboatworks.ca/about" />
       

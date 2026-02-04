@@ -68,7 +68,7 @@ const services = [
 const faqs = [
   {
     question: "How long has Harris Boat Works been in business?",
-    answer: "Harris Boat Works was founded in 1947, making us a family-owned business serving Ontario boaters for over 77 years. We've been an authorized Mercury Marine dealer since 1965 — nearly 60 years of Mercury expertise."
+    answer: "Harris Boat Works was founded in 1947, making us a family-owned business serving Ontario boaters for over 79 years. We've been an authorized Mercury Marine dealer since 1965 — over 60 years of Mercury expertise."
   },
   {
     question: "Where exactly are you located?",
@@ -150,7 +150,7 @@ export default function About() {
               <div className="flex items-center gap-3 bg-muted/50 rounded-lg px-4 py-2">
                 <Calendar className="h-8 w-8 text-primary" />
                 <div className="text-left">
-                  <p className="text-sm font-medium text-foreground">77 Years</p>
+                  <p className="text-sm font-medium text-foreground">79 Years</p>
                   <p className="text-xs text-muted-foreground">In Business</p>
                 </div>
               </div>
