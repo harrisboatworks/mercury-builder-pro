@@ -38,7 +38,7 @@ function createDepositConfirmationEmail(
   referenceNumber: string,
   motorInfo?: { model?: string; hp?: number; year?: number }
 ): string {
-  const appUrl = Deno.env.get("APP_URL") || "https://quote.harrisboatworks.ca";
+  const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
   
   const motorDetails = motorInfo?.model 
     ? `<div class="motor-details">

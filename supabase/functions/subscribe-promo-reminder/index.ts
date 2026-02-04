@@ -126,7 +126,7 @@ serve(async (req) => {
     if (customerEmail && (preferredChannel === 'email' || preferredChannel === 'both')) {
       try {
         const motorName = motorDetails?.model || 'the motor you configured';
-        const appUrl = Deno.env.get("APP_URL") || "https://quote.harrisboatworks.ca";
+        const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
         const unsubscribeUrl = `${appUrl}/unsubscribe/${subscription.unsubscribe_token}`;
 
         await resend.emails.send({

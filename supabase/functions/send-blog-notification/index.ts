@@ -71,7 +71,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log(`[send-blog-notification] Found ${subscribers.length} active subscribers`);
 
-    const appUrl = Deno.env.get("APP_URL") || "https://harrisboatworks.com";
+    const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
     let successCount = 0;
     let errorCount = 0;
 

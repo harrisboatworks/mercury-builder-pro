@@ -108,7 +108,7 @@ const handler = async (req: Request): Promise<Response> => {
     if (resendApiKey) {
       try {
         const resend = new Resend(resendApiKey);
-        const appUrl = Deno.env.get("APP_URL") || "https://harrisboatworks.com";
+        const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
         const unsubscribeUrl = `${appUrl}/blog/unsubscribe?token=${subscription.unsubscribe_token}`;
 
         await resend.emails.send({

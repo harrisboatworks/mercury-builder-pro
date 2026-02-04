@@ -891,7 +891,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         {/* Footer */}
         <View style={styles.footer}>
           <Text style={styles.footerText}>
-            Harris Boat Works • 5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0 • (905) 342-2153 • www.harrisboatworks.ca
+            Harris Boat Works • 5369 Harris Boat Works Rd, Gore's Landing, ON K0K 2E0 • (905) 342-2153 • mercuryrepower.ca
           </Text>
         </View>
       </Page>
