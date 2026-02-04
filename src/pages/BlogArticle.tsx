@@ -1,4 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
+import { SITE_URL } from '@/lib/site';
 import { ExpandableImage } from '@/components/ui/expandable-image';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
@@ -216,7 +217,7 @@ export default function BlogArticle() {
       });
   };
 
-  const articleUrl = `https://harrisboatworks.ca/blog/${article.slug}`;
+  const articleUrl = `${SITE_URL}/blog/${article.slug}`;
 
   return (
     <div className="min-h-screen bg-background">
