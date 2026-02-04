@@ -4,13 +4,13 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Slider } from '@/components/ui/slider';
 
 import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, DollarSign, AlertTriangle, CheckCircle2, Sparkles, CircleCheck, AlertCircle, Wrench } from 'lucide-react';
-import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo } from '@/lib/trade-valuation';
+import { Loader2, DollarSign, AlertTriangle, CheckCircle2, CircleCheck, AlertCircle, Wrench } from 'lucide-react';
+import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig } from '@/lib/trade-valuation';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
+import { useTradeValuationData } from '@/hooks/useTradeValuationData';
 
 interface TradeInValuationProps {
   tradeInInfo: TradeInInfo;
@@ -27,6 +27,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const [showValidation, setShowValidation] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
   const { triggerHaptic } = useHapticFeedback();
+  
+  // Fetch trade valuation data from Supabase (with fallback to hardcoded values)
+  const { data: valuationData } = useTradeValuationData();
 
   // Auto-scroll to form when "Yes, I have a trade-in" is clicked
   useEffect(() => {
@@ -97,7 +100,19 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     // Simulate API delay for better UX
     await new Promise(resolve => setTimeout(resolve, 1500));
     
-    const tradeEstimate = estimateTradeValue(tradeInInfo);
+    // Build config from database data
+    const config: TradeValuationConfig | undefined = valuationData?.config ? {
+      BRAND_PENALTY_JOHNSON: valuationData.config.BRAND_PENALTY_JOHNSON as { factor: number } | undefined,
+      BRAND_PENALTY_EVINRUDE: valuationData.config.BRAND_PENALTY_EVINRUDE as { factor: number } | undefined,
+      BRAND_PENALTY_OMC: valuationData.config.BRAND_PENALTY_OMC as { factor: number } | undefined,
+      MERCURY_BONUS_YEARS: valuationData.config.MERCURY_BONUS_YEARS as { max_age: number; factor: number } | undefined,
+      MIN_TRADE_VALUE: valuationData.config.MIN_TRADE_VALUE as { value: number } | undefined,
+    } : undefined;
+    
+    const tradeEstimate = estimateTradeValue(tradeInInfo, {
+      brackets: valuationData?.brackets,
+      config
+    });
     setEstimate(tradeEstimate);
     
     // Update the trade-in info with the rounded median value ($25 increments)

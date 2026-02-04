@@ -2399,6 +2399,66 @@ export type Database = {
         }
         Relationships: []
       }
+      trade_valuation_brackets: {
+        Row: {
+          brand: string
+          created_at: string
+          excellent: number
+          fair: number
+          good: number
+          horsepower: number
+          id: string
+          poor: number
+          updated_at: string
+          year_range: string
+        }
+        Insert: {
+          brand: string
+          created_at?: string
+          excellent: number
+          fair: number
+          good: number
+          horsepower: number
+          id?: string
+          poor: number
+          updated_at?: string
+          year_range: string
+        }
+        Update: {
+          brand?: string
+          created_at?: string
+          excellent?: number
+          fair?: number
+          good?: number
+          horsepower?: number
+          id?: string
+          poor?: number
+          updated_at?: string
+          year_range?: string
+        }
+        Relationships: []
+      }
+      trade_valuation_config: {
+        Row: {
+          description: string | null
+          key: string
+          updated_at: string
+          value: Json
+        }
+        Insert: {
+          description?: string | null
+          key: string
+          updated_at?: string
+          value: Json
+        }
+        Update: {
+          description?: string | null
+          key?: string
+          updated_at?: string
+          value?: Json
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string | null
