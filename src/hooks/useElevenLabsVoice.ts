@@ -2351,49 +2351,71 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         return;
       }
 
-      // PARALLELIZED: Load previous context, get token, AND prewarm edge functions simultaneously
+      // Load previous context (non-critical, don't retry)
       console.log('Fetching ElevenLabs conversation token...');
       let tokenData: { token: string } | null = null;
       let previousContext: any = null;
       
-      try {
-        // Run ALL in parallel for fastest startup
-        const [prevContextResult, tokenResult] = await Promise.all([
-          voiceSession.loadPreviousSessionContext().catch(err => {
-            console.warn('[Voice] Failed to load previous context:', err);
-            return null;
-          }),
-          supabase.functions.invoke('elevenlabs-conversation-token', {
+      // Load previous context in parallel with first token attempt
+      const previousContextPromise = voiceSession.loadPreviousSessionContext().catch(err => {
+        console.warn('[Voice] Failed to load previous context:', err);
+        return null;
+      });
+      
+      // Token fetch with retry logic (3 attempts with exponential backoff)
+      const TOKEN_RETRIES = 3;
+      let tokenError: Error | null = null;
+      
+      for (let attempt = 1; attempt <= TOKEN_RETRIES; attempt++) {
+        try {
+          console.log(`[Voice] Token fetch attempt ${attempt}/${TOKEN_RETRIES}...`);
+          
+          // Pre-warm on first attempt only
+          if (attempt === 1) {
+            prewarmEdgeFunctions().catch(() => {});
+          }
+          
+          const tokenResult = await supabase.functions.invoke('elevenlabs-conversation-token', {
             body: { 
               motorContext: options.motorContext,
               currentPage: options.currentPage,
               quoteContext: options.quoteContext,
-              // Note: previousSessionContext added after we get it
             }
-          }),
-          // Pre-warm inventory function while we wait for token
-          prewarmEdgeFunctions().catch(() => {}),
-        ]);
-        
-        previousContext = prevContextResult;
-        if (previousContext?.totalPreviousChats > 0) {
-          console.log('[Voice] Returning customer:', previousContext.totalPreviousChats, 'previous chats');
+          });
+          
+          if (tokenResult.error) {
+            throw new Error(tokenResult.error.message || 'Token request failed');
+          }
+          
+          if (!tokenResult.data?.token) {
+            throw new Error('No token in response');
+          }
+          
+          tokenData = tokenResult.data;
+          console.log('[Voice] Token received successfully');
+          break; // Success - exit retry loop
+          
+        } catch (err) {
+          tokenError = err instanceof Error ? err : new Error('Token fetch failed');
+          console.warn(`[Voice] Token attempt ${attempt} failed:`, tokenError.message);
+          
+          if (attempt < TOKEN_RETRIES) {
+            // Exponential backoff: 500ms, 1000ms, 2000ms
+            const delay = Math.pow(2, attempt - 1) * 500;
+            console.log(`[Voice] Waiting ${delay}ms before retry...`);
+            await new Promise(r => setTimeout(r, delay));
+          }
         }
-        
-        if (tokenResult.error) {
-          console.error('Token fetch error:', tokenResult.error);
-          throw new Error('Unable to get voice session. Please check your connection.');
-        }
-        
-        if (!tokenResult.data?.token) {
-          throw new Error('Voice service unavailable. Please try again.');
-        }
-        
-        tokenData = tokenResult.data;
-        console.log('Token received successfully');
-      } catch (tokenError) {
-        console.error('Token fetch failed:', tokenError);
-        throw new Error(tokenError instanceof Error ? tokenError.message : 'Failed to connect to voice service');
+      }
+      
+      // Wait for previous context (should be done by now)
+      previousContext = await previousContextPromise;
+      if (previousContext?.totalPreviousChats > 0) {
+        console.log('[Voice] Returning customer:', previousContext.totalPreviousChats, 'previous chats');
+      }
+      
+      if (!tokenData) {
+        throw new Error('Unable to get voice session. Please check your connection and try again.');
       }
 
       // Start voice session in database (fire-and-forget, don't block)
