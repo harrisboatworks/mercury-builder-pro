@@ -9,7 +9,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { formatMotorTitle } from '@/lib/card-title';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { findMotorSpecs } from '@/lib/data/mercury-motors';
-import { calculatePaymentWithFrequency, getDefaultFinancingRate, type PaymentFrequency } from '@/lib/finance';
+import { calculatePaymentWithFrequency, getDefaultFinancingRate, getFinancingTerm, type PaymentFrequency } from '@/lib/finance';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { useQuote } from '@/contexts/QuoteContext';
 
@@ -84,6 +84,7 @@ export default function FinanceCalculator() {
         const motorPrice = Math.round(navState.motorPrice);
         const totalWithFees = motorPrice * 1.13 + 299;
         setTotalFinanced(Math.round(totalWithFees));
+        setTerm(getFinancingTerm(Math.round(totalWithFees)));
         // Set tiered APR if no promo
         if (!promo?.rate) {
           setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
@@ -106,6 +107,7 @@ export default function FinanceCalculator() {
         const motorPrice = contextMotor.price || 0;
         const totalWithFees = motorPrice * 1.13 + 299;
         setTotalFinanced(Math.round(totalWithFees));
+        setTerm(getFinancingTerm(Math.round(totalWithFees)));
         // Set tiered APR if no promo
         if (!promo?.rate) {
           setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
@@ -131,6 +133,7 @@ export default function FinanceCalculator() {
         const motorPrice = (data.sale_price && data.sale_price > 0 ? data.sale_price : data.base_price) || 0;
         const totalWithFees = motorPrice * 1.13 + 299;
         setTotalFinanced(Math.round(totalWithFees));
+        setTerm(getFinancingTerm(Math.round(totalWithFees)));
         // Set tiered APR if no promo
         if (!promo?.rate) {
           setApr(getDefaultFinancingRate(Math.round(totalWithFees)));
@@ -156,9 +159,9 @@ export default function FinanceCalculator() {
     
     if (!principal || principal <= 0) return { amount: 0, frequency };
     
-    const result = calculatePaymentWithFrequency(principal, frequency, apr);
+    const result = calculatePaymentWithFrequency(principal, frequency, apr, term);
     return { amount: result.payment, frequency, termPeriods: result.termPeriods };
-  }, [totalFinanced, down, apr, frequency]);
+  }, [totalFinanced, down, apr, frequency, term]);
 
   // Calculate breakdown for display
   const breakdown = useMemo(() => {

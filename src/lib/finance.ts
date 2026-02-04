@@ -72,9 +72,10 @@ export const getPaymentFrequencyMultiplier = (frequency: PaymentFrequency): numb
 export const calculatePaymentWithFrequency = (
   price: number, 
   frequency: PaymentFrequency = 'monthly',
-  promoRate: number | null = null
+  promoRate: number | null = null,
+  termMonthsOverride: number | null = null
 ) => {
-  const termMonths = getFinancingTerm(price);
+  const termMonths = termMonthsOverride || getFinancingTerm(price);
   const defaultRate = getDefaultFinancingRate(price);
   const rate = promoRate || defaultRate;
   const paymentsPerYear = getPaymentFrequencyMultiplier(frequency);
