@@ -1,95 +1,71 @@
 
-# Fix: Cinematic Intro Loading Twice
+# Enable Term Override in Finance Calculator
 
-## Problem Identified
+## Overview
 
-The cinematic reveal animation plays twice because the `useEffect` that controls `showCinematic` depends on `[state.motor]` - the entire motor object. During the initial page load:
-
-1. The page mounts with `state.motor` in one state (possibly null or loading)
-2. The effect fires and sets `showCinematic = true`
-3. QuoteContext finishes loading from localStorage, `state.motor` gets a new object reference
-4. The effect fires **again** because the object reference changed
-5. The cinematic animation restarts
-
-## Solution
-
-Change the effect to depend on a **stable motor identifier** (`state.motor?.id` or `state.motor?.sku`) instead of the entire motor object, and add guards to prevent re-triggering.
+Add an optional `termMonths` parameter to the `calculatePaymentWithFrequency` function to allow the Finance Calculator page to use user-specified terms while maintaining smart defaults for all other callers.
 
 ---
 
-## Implementation
+## Changes Required
 
-### File: `src/pages/quote/QuoteSummaryPage.tsx`
+### 1. Update `calculatePaymentWithFrequency` Function
 
-**Current (problematic) code:**
+**File:** `src/lib/finance.ts`
+
+Add optional `termMonthsOverride` parameter:
+
 ```typescript
-useEffect(() => {
-  const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
-  const lastRevealedMotor = sessionStorage.getItem('quote-reveal-motor-id');
-  const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
-  
-  if (!hasSeenReveal || (currentMotorId && lastRevealedMotor !== String(currentMotorId))) {
-    setShowCinematic(true);
-  }
-  window.scrollTo({ top: 0, behavior: 'instant' });
-}, [state.motor]);
+export const calculatePaymentWithFrequency = (
+  price: number, 
+  frequency: PaymentFrequency = 'monthly',
+  promoRate: number | null = null,
+  termMonthsOverride: number | null = null  // NEW optional param
+) => {
+  // Use override if provided, otherwise smart default
+  const termMonths = termMonthsOverride || getFinancingTerm(price);
+  // ... rest unchanged
+}
 ```
 
-**Fixed code:**
-```typescript
-// Extract stable motor ID outside the effect
-const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
+This maintains full backward compatibility - existing callers that don't pass the 4th argument get the same smart defaults.
 
-useEffect(() => {
-  // Guard: if cinematic is already showing, don't re-trigger
-  if (showCinematic) return;
-  
-  const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
-  const lastRevealedMotor = sessionStorage.getItem('quote-reveal-motor-id');
-  
-  // Only show if never seen OR motor changed (using stable ID comparison)
-  if (!hasSeenReveal || (currentMotorId && lastRevealedMotor !== String(currentMotorId))) {
-    setShowCinematic(true);
-  }
-  
-  window.scrollTo({ top: 0, behavior: 'instant' });
-}, [currentMotorId]); // Use stable ID, not full object
+---
+
+### 2. Update Finance Calculator Page
+
+**File:** `src/pages/FinanceCalculator.tsx`
+
+**A. Auto-populate term on load:**
+
+When motor data loads and `totalFinanced` is set, also set the term to the smart default:
+
+```typescript
+import { getFinancingTerm } from '@/lib/finance';
+
+// Inside the motor loading effect:
+setTerm(getFinancingTerm(Math.round(totalWithFees)));
+```
+
+**B. Pass term to calculation:**
+
+Update the `paymentCalculation` memo to pass the user's term:
+
+```typescript
+const result = calculatePaymentWithFrequency(principal, frequency, apr, term);
+```
+
+**C. Add term to dependencies:**
+
+```typescript
+}, [totalFinanced, down, apr, frequency, term]);  // Add term
 ```
 
 ---
 
-## Why This Works
+### 3. Drawer Remains Unchanged
 
-| Before | After |
-|--------|-------|
-| Depends on `state.motor` object reference | Depends on `currentMotorId` string value |
-| Effect fires when object reference changes | Effect only fires when motor ID actually changes |
-| No guard against re-triggering | Guard prevents re-trigger if already showing |
-
----
-
-## Additional Safety: Mount Flag
-
-As extra protection, add a ref to track if the effect has already run on this mount:
-
-```typescript
-const cinematicTriggeredRef = useRef(false);
-
-useEffect(() => {
-  // Prevent double-trigger on same mount
-  if (cinematicTriggeredRef.current || showCinematic) return;
-  
-  const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
-  const lastRevealedMotor = sessionStorage.getItem('quote-reveal-motor-id');
-  
-  if (!hasSeenReveal || (currentMotorId && lastRevealedMotor !== String(currentMotorId))) {
-    cinematicTriggeredRef.current = true;
-    setShowCinematic(true);
-  }
-  
-  window.scrollTo({ top: 0, behavior: 'instant' });
-}, [currentMotorId, showCinematic]);
-```
+The `FinanceCalculatorDrawer.tsx` doesn't have a term input and will continue using smart defaults (no changes needed).
 
 ---
 
@@ -97,12 +73,31 @@ useEffect(() => {
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/QuoteSummaryPage.tsx` | Fix useEffect dependency + add guards |
+| `src/lib/finance.ts` | Add optional `termMonthsOverride` param to `calculatePaymentWithFrequency` |
+| `src/pages/FinanceCalculator.tsx` | Import `getFinancingTerm`, auto-populate term, pass term to calculation |
 
 ---
 
-## Expected Outcome
+## Math Verification
 
-- Cinematic plays **exactly once** when entering the summary page
-- Motor changes still trigger a fresh cinematic (correct behavior)
-- No double animation during initial page load
+With a $15,000 principal, 7.99% APR, 60 months, monthly frequency:
+
+| Metric | Value |
+|--------|-------|
+| Monthly rate | 0.0799 / 12 = 0.00666 |
+| Payment | $15,000 × (0.00666 × 1.00666^60) / (1.00666^60 - 1) |
+| Result | ~$304/month |
+| Total payments | 60 monthly payments |
+
+If user changes to 72 months:
+- Payment drops to ~$262/month
+- Total payments: 72
+
+---
+
+## Result
+
+- Smart defaults auto-populate the term input based on price tier
+- Users can freely adjust the term and see updated payments
+- All other finance displays (cards, drawer, etc.) keep using smart defaults
+- Payment count correctly reflects user's chosen term × frequency
