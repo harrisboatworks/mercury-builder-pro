@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ScrollToTop } from '@/components/ui/ScrollToTop';
@@ -79,10 +79,13 @@ export default function QuoteSummaryPage() {
   
   // Cinematic reveal - show for fresh quotes coming from package selection
   const [showCinematic, setShowCinematic] = useState(false);
+  const cinematicTriggeredRef = useRef(false);
+  
+  // Extract stable motor ID outside the effect to prevent re-triggers on object reference changes
+  const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
 
   const handleCinematicComplete = () => {
     sessionStorage.setItem('quote-reveal-seen', 'true');
-    const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
     if (currentMotorId) {
       sessionStorage.setItem('quote-reveal-motor-id', String(currentMotorId));
     }
@@ -91,17 +94,21 @@ export default function QuoteSummaryPage() {
 
   // Check if we should show cinematic (fresh from package selection OR new motor)
   useEffect(() => {
+    // Guard: prevent double-trigger on same mount or if already showing
+    if (cinematicTriggeredRef.current || showCinematic) return;
+    
     const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
     const lastRevealedMotor = sessionStorage.getItem('quote-reveal-motor-id');
-    const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
     
     // Show cinematic if never seen OR different motor selected
     if (!hasSeenReveal || (currentMotorId && lastRevealedMotor !== String(currentMotorId))) {
+      cinematicTriggeredRef.current = true;
       setShowCinematic(true);
     }
+    
     // Scroll to top on mount
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [state.motor]);
+  }, [currentMotorId, showCinematic]);
 
   // Keyboard shortcut to replay cinematic (Ctrl/Cmd + Shift + R)
   useEffect(() => {
