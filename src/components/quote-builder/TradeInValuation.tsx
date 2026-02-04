@@ -7,20 +7,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 
 import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, DollarSign, AlertTriangle, CheckCircle2, CircleCheck, AlertCircle, Wrench, Globe, ExternalLink } from 'lucide-react';
+import { Loader2, DollarSign, AlertTriangle, CheckCircle2, CircleCheck, AlertCircle, Wrench } from 'lucide-react';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig } from '@/lib/trade-valuation';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useTradeValuationData } from '@/hooks/useTradeValuationData';
-import { supabase } from '@/integrations/supabase/client';
-import { toast } from 'sonner';
-
-interface LiveMarketValue {
-  low: number;
-  high: number;
-  sources: string[];
-  rawResponse?: string;
-  confidence: 'high' | 'medium' | 'low';
-}
 
 interface TradeInValuationProps {
   tradeInInfo: TradeInInfo;
@@ -33,9 +23,7 @@ interface TradeInValuationProps {
 
 export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [isLiveLoading, setIsLiveLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
-  const [liveMarketValue, setLiveMarketValue] = useState<LiveMarketValue | null>(null);
   const [showValidation, setShowValidation] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
   const { triggerHaptic } = useHapticFeedback();
@@ -148,84 +136,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     setIsLoading(false);
   };
 
-  // Live market value lookup via Perplexity
-  const handleLiveMarketLookup = async () => {
-    if (!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition) {
-      setShowValidation(true);
-      return;
-    }
-
-    setIsLiveLoading(true);
-    setLiveMarketValue(null);
-
-    try {
-      const { data, error } = await supabase.functions.invoke('trade-value-lookup', {
-        body: {
-          brand: tradeInInfo.brand,
-          year: tradeInInfo.year,
-          horsepower: tradeInInfo.horsepower,
-          model: tradeInInfo.model,
-          condition: tradeInInfo.condition,
-        }
-      });
-
-      if (error) {
-        console.error('Live lookup error:', error);
-        toast.error('Market lookup failed', {
-          description: 'Falling back to database estimate'
-        });
-        // Fall back to database estimate
-        handleGetEstimate();
-        return;
-      }
-
-      if (data?.success && data.low && data.high) {
-        const liveValue: LiveMarketValue = {
-          low: data.low,
-          high: data.high,
-          sources: data.sources || [],
-          rawResponse: data.rawResponse,
-          confidence: data.confidence || 'medium',
-        };
-        setLiveMarketValue(liveValue);
-
-        // Update trade-in info with live market value
-        const medianVal = medianRoundedTo25(data.low, data.high);
-        onTradeInChange({
-          ...tradeInInfo,
-          estimatedValue: medianVal,
-          confidenceLevel: data.confidence || 'medium',
-          rangeFinalLow: data.low,
-          rangeFinalHigh: data.high,
-          tradeinValueFinal: medianVal,
-        });
-
-        toast.success('Live market value found', {
-          description: `Based on ${data.sources?.length || 0} sources`
-        });
-      } else {
-        console.warn('No live value found, falling back to database');
-        toast.info('Using database estimate', {
-          description: data?.error || 'Live market data unavailable'
-        });
-        handleGetEstimate();
-      }
-    } catch (err) {
-      console.error('Live lookup exception:', err);
-      toast.error('Market lookup failed');
-      handleGetEstimate();
-    } finally {
-      setIsLiveLoading(false);
-    }
-  };
-
-  // Confidence meter removed per UX update
-
-  const medianValue = liveMarketValue 
-    ? medianRoundedTo25(liveMarketValue.low, liveMarketValue.high)
-    : estimate 
-      ? medianRoundedTo25(estimate.low, estimate.high) 
-      : 0;
+  const medianValue = estimate 
+    ? medianRoundedTo25(estimate.low, estimate.high) 
+    : 0;
 
   return (
     <motion.div
@@ -502,123 +415,30 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 )}
               </div>
 
-              {/* Get Estimate Buttons */}
-              <div className="pt-4 space-y-3">
-                {/* Primary: Live Market Lookup */}
-                <Button
-                  type="button"
-                  onClick={handleLiveMarketLookup}
-                  disabled={isLiveLoading || isLoading}
-                  className="w-full min-h-[56px] text-lg font-light bg-gray-900 hover:bg-gray-800 text-white"
-                >
-                  {isLiveLoading ? (
-                    <>
-                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                      Searching market data...
-                    </>
-                  ) : (
-                    <>
-                      <Globe className="w-5 h-5 mr-2" />
-                      Get Live Market Value
-                    </>
-                  )}
-                </Button>
-                
-                {/* Secondary: Database Estimate */}
+              {/* Get Estimate Button */}
+              <div className="pt-4">
                 <Button
                   type="button"
                   onClick={handleValidatedEstimate}
-                  disabled={isLoading || isLiveLoading}
-                  variant="outline"
-                  className="w-full min-h-[48px] text-base font-light border-gray-300 hover:border-gray-900"
+                  disabled={isLoading}
+                  className="w-full min-h-[56px] text-lg font-light bg-gray-900 hover:bg-gray-800 text-white"
                 >
                   {isLoading ? (
                     <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
                       Calculating...
                     </>
                   ) : (
                     <>
-                      <DollarSign className="w-4 h-4 mr-2" />
-                      Use Database Estimate
+                      <DollarSign className="w-5 h-5 mr-2" />
+                      Get Trade-In Estimate
                     </>
                   )}
                 </Button>
               </div>
 
-              {/* Live Market Value Result */}
-              {liveMarketValue && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="space-y-4"
-                >
-                  <Card className="p-6 bg-blue-50 border-blue-200">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Globe className="w-6 h-6 text-blue-600" />
-                      <div>
-                        <h3 className="text-lg font-light text-gray-900">Live Market Value</h3>
-                        <p className="text-xs text-gray-500 font-light">Based on current Canadian listings</p>
-                      </div>
-                    </div>
-                    
-                    <div className="text-center space-y-2">
-                      <div className="text-4xl font-light text-blue-700">
-                        ${medianValue.toLocaleString()} CAD
-                      </div>
-                      <div className="text-sm font-light text-gray-600">
-                        Range: ${liveMarketValue.low.toLocaleString()} - ${liveMarketValue.high.toLocaleString()} CAD
-                      </div>
-                      <div className="flex items-center justify-center gap-2 mt-2">
-                        <span className={`text-xs px-2 py-0.5 rounded-full ${
-                          liveMarketValue.confidence === 'high' 
-                            ? 'bg-green-100 text-green-700' 
-                            : liveMarketValue.confidence === 'medium'
-                              ? 'bg-yellow-100 text-yellow-700'
-                              : 'bg-gray-100 text-gray-600'
-                        }`}>
-                          {liveMarketValue.confidence} confidence
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Sources */}
-                    {liveMarketValue.sources.length > 0 && (
-                      <div className="mt-4 pt-4 border-t border-blue-200">
-                        <p className="text-xs font-light text-gray-500 mb-2">Sources:</p>
-                        <div className="flex flex-wrap gap-2">
-                          {liveMarketValue.sources.slice(0, 3).map((source, idx) => {
-                            // Extract domain from URL
-                            const domain = source.replace(/^https?:\/\//, '').split('/')[0];
-                            return (
-                              <a 
-                                key={idx}
-                                href={source}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 underline"
-                              >
-                                {domain}
-                                <ExternalLink className="w-3 h-3" />
-                              </a>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
-                  </Card>
-
-                  <Alert className="border-blue-200 bg-blue-50">
-                    <Wrench className="w-4 h-4 text-blue-600" />
-                    <AlertDescription className="text-sm font-light text-blue-800">
-                      Final trade value confirmed after in-person inspection. This estimate is based on current market listings.
-                    </AlertDescription>
-                  </Alert>
-                </motion.div>
-              )}
-
-              {/* Database Estimate Result (only show if no live value) */}
-              {estimate && !liveMarketValue && (
+              {/* Database Estimate Result */}
+              {estimate && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
