@@ -3,7 +3,20 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  // The web app sends `x-session-id` (anonymous session tracking) via the Supabase client.
+  // If this header isn't explicitly allowed, the browser will block the request at the CORS layer.
+  'Access-Control-Allow-Headers': [
+    'authorization',
+    'x-client-info',
+    'apikey',
+    'content-type',
+    'x-session-id',
+    // Supabase clients may include platform/runtime headers; allow them to avoid CORS drift.
+    'x-supabase-client-platform',
+    'x-supabase-client-platform-version',
+    'x-supabase-client-runtime',
+    'x-supabase-client-runtime-version',
+  ].join(', '),
 };
 
 const ELEVENLABS_AGENT_ID = "agent_0501kdexvsfkfx8a240g7ts27dy1";
