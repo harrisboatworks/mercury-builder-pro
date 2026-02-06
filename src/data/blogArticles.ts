@@ -538,6 +538,159 @@ When you purchase from Harris Boat Works, we walk you through the break-in proce
     ]
   },
 
+  {
+    slug: 'mercury-prokicker-rice-lake-fishing-guide',
+    title: 'The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide',
+    description: 'Everything you need to know about the Mercury ProKicker kicker motor for Rice Lake fishing — model comparison, tiller vs remote, installation tips, and why it\'s the best trolling upgrade for walleye and muskie.',
+    image: '/lovable-uploads/ProKicker_Rice_Lake_Hero.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-02-06',
+    dateModified: '2026-02-06',
+    category: 'Fishing',
+    readTime: '10 min read',
+    keywords: ['mercury prokicker', 'kicker motor rice lake', 'trolling motor ontario', 'prokicker installation', 'mercury 9.9 prokicker', 'kicker motor fishing boat', 'rice lake walleye trolling'],
+    content: `
+## Why a Kicker Motor Changes Everything on Rice Lake
+
+If you fish Rice Lake, you already know — it's shallow, weedy, and the fish are structure-oriented. Maximum depth is about 27 feet, and the best walleye and muskie water sits along weed edges, mudflats, and contour breaks between Gores Landing, Bewdley, and the islands.
+
+That's precision trolling territory. And precision trolling means you need a dedicated kicker motor.
+
+Running your main outboard at trolling speed is hard on the engine, burns more fuel than it should, and gives you sloppy speed control. A purpose-built kicker like the Mercury ProKicker lets you dial in speeds down to a tenth of a mile per hour — the 0.8 to 3 mph window where walleye rigs, crankbaits, and muskie presentations do their best work.
+
+If you've been making do without one, a ProKicker is the single upgrade that'll change your fishing the most. Here's everything you need to know.
+
+## What Makes the ProKicker Different from a Regular Small Outboard
+
+Not all small motors are created equal. Mercury didn't just shrink a standard outboard — the ProKicker lineup is purpose-engineered for fishing:
+
+- **High-thrust four-blade propeller and matched gear ratio** for precise low-speed control
+- **Deeper gearcase and heavy-duty skeg** to handle big boats and rough water
+- **Fastest power tilt in the industry** — deploy or stow without leaning over the transom
+- **Exceptionally quiet operation** with soft-rubber vibration isolation, critical in Rice Lake's shallow water where fish spook easily
+- **EFI technology** for reliable cold-morning starts during early spring walleye season
+- **Strong alternator output at low RPM** to keep your fish finder, GPS, and electronics charged while trolling
+
+These aren't marketing bullet points — they're the features that separate a real kicker motor from a cheap outboard bolted to a bracket.
+
+## Choosing the Right ProKicker: 9.9 vs 15 vs 25 HP
+
+Mercury offers three ProKicker models. Here's how to pick the right one for your Rice Lake setup:
+
+| Feature | 9.9 HP ProKicker | 15 HP ProKicker | 25 HP ProKicker |
+|---------|-----------------|-----------------|-----------------|
+| Engine | Inline 2-cylinder | Inline 2-cylinder | Inline 3-cylinder |
+| Displacement | 333cc | 333cc | 500cc |
+| Dry Weight | ~122 lbs | ~122 lbs | ~146 lbs |
+| Alternator | 12A / 145W | 12A / 145W | 17A / 210W |
+| SmartCraft | No | No | Yes |
+| Trim System | Power tilt | Power tilt | Power trim & tilt |
+
+**The 9.9 HP** is the most popular choice and handles most Rice Lake fishing boats in the 16- to 22-foot range. It covers typical walleye trolling speeds of 0.5–2.5 mph with ease.
+
+**The 15 HP** shares the same block as the 9.9 with more power — a good step up if you run a heavier aluminum boat or fish in wind frequently.
+
+**The 25 HP** is the choice for larger boats (20ft+) with multiple downriggers, dual electronics, or if you want SmartCraft integration and extra charging capacity. It also gives you the ability to run the kicker as a "get home" motor at reasonable speed.
+
+## Tiller vs Remote Steering
+
+This comes down to how you fish:
+
+**Tiller steering** gives you instant, hands-on directional control. It's the preferred setup for slow-trolling tight contours along Rice Lake's weed edges and island structures. Many dedicated walleye anglers swear by tiller because you can feel the motor's response and make micro-adjustments without looking away from the water.
+
+**Remote steering** connects the kicker to your main outboard via a tie bar, letting you steer from the helm while watching your electronics. This is the go-to for open-water trolling patterns and for muskie anglers who want to monitor multiple screens at the console.
+
+There's no wrong answer — it depends on your fishing style. If you're not sure, come talk to us and we'll help you figure out what suits your setup.
+
+## Installation: What's Involved
+
+### Replacing an Existing Kicker
+
+If your boat already has a kicker motor, swapping in a new ProKicker is straightforward:
+
+1. **Mount the engine** to the transom or existing bracket using the included hardware, following torque specs in the manual
+2. **Connect fuel lines** using the new fuel line kit included with the motor
+3. **Wire the power connections** — positive and negative cables to your cranking battery for electric start and power tilt
+4. **Add fluids** — gear lube comes pre-installed, add engine oil per the owner's manual
+
+A handy boat owner can handle this in an afternoon. The manual walks you through every step.
+
+### New Installation (No Previous Kicker)
+
+If your boat has never had a kicker, there's more involved — drilling transom holes, installing a dedicated kicker-mounting bracket (common on fiberglass boats and boats with swim platforms), and routing fuel lines. This is where professional installation pays for itself.
+
+**Key tip:** Position the kicker far enough from the primary engine that neither outboard contacts the other during full turns, and avoid mounting directly over your transducer.
+
+Not sure which situation you're in? [Submit a service request](https://hbw.wiki/service) and we'll walk you through it.
+
+## Don't Skip the Break-In
+
+Every new Mercury motor requires a proper break-in period — for ProKicker models, that's the first 10 hours of operation. This lets piston rings seat, bearings wear in evenly, and the oil film develop properly.
+
+We've got a [complete break-in guide](/blog/breaking-in-new-mercury-motor-guide) that walks you through the procedure step by step. Follow it and your ProKicker will reward you with years of reliable service.
+
+## Why Harris Boat Works for Your ProKicker
+
+We've been a Mercury Marine dealer since 1965 and a Platinum-certified dealer for over a decade. Our technicians are factory-trained on every Mercury product line, including the full ProKicker range.
+
+When you buy a ProKicker through us, you get:
+
+- **Expert model selection** — we'll match the right HP and control setup to your boat and fishing style
+- **Professional installation** with proper bracket selection, rigging, and wiring
+- **A lake test on Rice Lake** to verify everything runs perfectly before you take delivery
+- **Break-in guidance** and ongoing [seasonal maintenance](/blog/mercury-motor-maintenance-seasonal-tips) support
+- **79 years of Rice Lake expertise** — nobody knows this lake's unique conditions better
+
+Whether you're chasing walleye along the weed lines near Gores Landing, trolling for muskie from Bewdley to Hastings, or working smallmouth structure around the islands, a properly installed Mercury ProKicker will transform your fishing game.
+
+**Ready to add a ProKicker to your boat?** [Build a quote in our online configurator](/quote/motor-selection) — all three ProKicker models are available — or [submit a service request](https://hbw.wiki/service) to discuss installation.
+    `,
+    howToSteps: [
+      {
+        name: 'Mount the Engine',
+        text: 'Through-bolt the ProKicker engine to the transom or existing mounting bracket using the included hardware. Follow the torque specifications in the owner\'s manual for a secure mount.',
+      },
+      {
+        name: 'Connect Fuel Lines',
+        text: 'Connect the fuel line using the kit included with the motor. Follow all fuel system guidelines in the manual to ensure a leak-free connection.',
+      },
+      {
+        name: 'Wire Power Connections',
+        text: 'Connect the positive and negative power cables to your boat\'s cranking battery to enable electric start and power tilt functionality.',
+      },
+      {
+        name: 'Add Fluids and Inspect',
+        text: 'Gear lube comes pre-installed from the factory. Add engine oil per the owner\'s manual specifications. Inspect all connections before the first start.',
+      },
+      {
+        name: 'Complete the Break-In Period',
+        text: 'Run the engine through the 10-hour break-in procedure specified in the owner\'s manual, varying speed and avoiding sustained full throttle. Schedule your first oil change at 20 hours.',
+      },
+    ],
+    faqs: [
+      {
+        question: 'Which ProKicker model is best for Rice Lake fishing?',
+        answer: 'The 9.9 HP ProKicker is the most popular choice for Rice Lake and handles most fishing boats in the 16- to 22-foot range. If you run a heavier boat, fish in wind frequently, or want SmartCraft integration, consider the 15 or 25 HP models.',
+      },
+      {
+        question: 'Should I choose tiller or remote steering for my ProKicker?',
+        answer: 'Tiller steering is preferred for precision contour trolling along weed edges, while remote steering is ideal for open-water trolling patterns where you want to stay at the helm watching electronics. It depends on your fishing style.',
+      },
+      {
+        question: 'Can I install a ProKicker myself?',
+        answer: 'If you\'re replacing an existing kicker motor, a handy boat owner can handle the swap in an afternoon. New installations on boats that never had a kicker require bracket mounting, transom drilling, and fuel line routing — professional installation is recommended.',
+      },
+      {
+        question: 'What break-in does a new ProKicker need?',
+        answer: 'Mercury requires a 10-hour break-in period for all new ProKicker engines. During this time, vary your speed and avoid sustained full throttle. Complete your first oil change at 20 hours to remove break-in contaminants.',
+      },
+      {
+        question: 'Will a ProKicker fit my boat?',
+        answer: 'ProKicker motors are compatible with most fishing boats that have transom space for a second motor. Boats with swim platforms or certain fiberglass configurations may need a dedicated kicker bracket. Contact Harris Boat Works to confirm compatibility with your specific setup.',
+      },
+    ],
+  },
+
   // ============================================
   // NEW SCHEDULED ARTICLES - Weekly from Jan 6, 2025
   // ============================================
