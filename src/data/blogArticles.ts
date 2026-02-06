@@ -6564,6 +6564,619 @@ Typically when motor is installed and ready for water test. Review payment terms
         answer: 'Issues found during water test are addressed before handover. This is exactly why we test—any problems are warranty covered and fixed before you take delivery.'
       }
     ]
+  },
+
+  // ============================================
+  // NEW ARTICLES — Published 2026-02-06
+  // ============================================
+
+  {
+    slug: '2026-boating-market-ontario-boat-buyers',
+    title: 'What the 2026 Boating Market Means for Ontario Boat Buyers',
+    description: 'The North American boating market is stabilizing in 2026 with healthier inventory, improving financing, and Canada\'s luxury tax on boats repealed. Here\'s the full picture for Ontario buyers at Harris Boat Works.',
+    image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_Hero.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-02-06',
+    dateModified: '2026-02-06',
+    publishDate: '2026-02-06',
+    category: 'Market Insight',
+    readTime: '10 min read',
+    keywords: ['2026 boating market', 'ontario boat buying', 'boat market forecast', 'luxury tax boats canada', 'boat dealer inventory', 'used boat market'],
+    content: `
+## Where the North American Market Stands
+
+The National Marine Manufacturers Association (NMMA) estimates that total new powerboat retail unit sales in the U.S. dropped about 8–10% in 2025, landing in the range of 215,000–225,000 units. That includes everything from personal watercraft to aluminum fishing boats to offshore cruisers.
+
+That decline followed a roughly 9–12% drop in 2024, when unit sales fell back to around 230,000–240,000 after the COVID-era surge. The pandemic boom of 2020–2021 was never sustainable; what we're seeing now is a return toward pre-COVID baseline levels rather than a collapse.
+
+At the same time, overall spending on boating remains very strong. NMMA notes that total U.S. recreational boating expenditures were expected to reach record highs in 2025, potentially 3–5% above 2024's already elevated levels. People are still boating, still spending on marine products and services — they're just being more selective and value-focused on new boat purchases.
+
+Looking ahead, NMMA and industry analysts characterize 2026 as a "stable" year with a potential slight uptick in unit sales rather than further decline. Manufacturers have right-sized production, dealers are working through aged inventory, and the overall tone is one of cautious optimism rather than panic.
+
+## What Dealers Are Seeing On the Ground
+
+Industry-wide dealer surveys give a more detailed picture of what's happening at the retail level.
+
+The Baird/MRAA/Soundings Trade Only "Pulse Report" polls marine dealers monthly on business conditions. In the most recent reports:
+
+- About 48% of dealers expect their overall revenue to increase slightly in 2026, and another ~9% expect significant growth.
+- Only around 18% foresee revenue declines, with the rest expecting flat conditions.
+- Service departments are widely expected to lead revenue, followed by used-boat sales and then new-boat sales.
+
+That matches what we see at Harris Boat Works — people are maintaining and improving the boats they already own (service, repowers, upgrades), and the pre-owned market remains active even as new-boat sales normalize.
+
+### Inventory Tells an Important Story
+
+- Roughly 71% of dealers say their new-boat inventory is "too high", while virtually none say it's too low.
+- By contrast, about 45% of dealers say their used-boat inventory is too low, with very few reporting "too much" used stock.
+
+For buyers, "too much" new inventory is actually a benefit. It means more selection on dealer lots and stronger motivation to make deals to turn aged 2023–2024 product.
+
+On the used side, tighter supply but softening prices (down an estimated 5–10% from pandemic peaks) creates opportunities if you're watching closely and ready to move on clean trade-ins.
+
+## The Segments That Matter for Rice Lake
+
+Across North America, not all boat types are moving in lockstep. The segments most relevant to Rice Lake — fishing boats, pontoons, and smaller trailerable rigs — tell a reassuring story:
+
+- **Aluminum fishing / freshwater fishing boats**: One of the most resilient categories. Inventory aging for freshwater fish boats dropped below 15% over 365 days and inventory turns climbed above 2x, indicating healthy movement.
+- **Pontoon boats**: 2024 pontoon sales in the U.S. were in the ~52,000–55,000 unit range, down about 10–13% year over year but still historically strong. Inventory turns in the pontoon segment actually exceeded market average.
+- **Personal watercraft (PWC)**: Still the top volume category at more than 60,000 units, though off high pandemic levels.
+
+These are the types of boats that dominate Rice Lake — aluminum fishing rigs, pontoons, and smaller trailerable packages powered by Mercury outboards. While high-end cruisers and offshore boats have seen more volatility, the core Ontario segments remain fundamentally healthy.
+
+## Canada's Luxury Tax on Boats Is Gone
+
+At the higher end of the market, there's a major policy change that benefits Canadian buyers.
+
+Canada's 2022 federal budget introduced a luxury tax on certain items, including boats priced above $250,000. The tax was calculated as the lesser of 10% of the full value or 20% of the value above $250,000, which could add tens of thousands of dollars to the cost of larger yachts and premium packages.
+
+The marine industry argued the tax was counterproductive, driving sales out of Canada and hurting Canadian builders and dealers without generating meaningful revenue. After heavy advocacy from NMMA Canada and industry groups, the federal government announced in late 2025 that the luxury tax on boats would be repealed.
+
+Budget 2025 confirmed that the luxury tax on pleasure craft would be removed. For buyers looking at high-end pontoons, larger Legend packages, or other boats near the threshold, this is a direct saving and removes a psychological barrier.
+
+## Interest Rates Are Finally Easing
+
+One of the biggest headwinds in 2023–2025 was the cost of borrowing; higher benchmark rates translated into higher monthly payments on boat loans, pushing some buyers out of the market.
+
+By early 2026, the rate environment is shifting. Major marine finance commentators note that rate cuts are beginning to filter through, and dealers expect that lower monthly payments will help "payment buyers" re-engage in the market.
+
+On a typical $60,000 boat package, even a 1% decrease in interest can shave $30–40 per month off payments over a five-year term — thousands over the life of the loan.
+
+## The Case for Pre-Owned Boats in 2026
+
+Pre-owned boats routinely account for roughly 80% of all boat transactions in a typical year. With used prices down from pandemic peaks and a steady flow of trades as owners upgrade, the 2026 used market deserves serious consideration.
+
+Industry data shows:
+
+- Used boat pricing has softened 5–10% from the highs of 2021–2022, when some pre-owned boats sold near or above original MSRP.
+- Buyers are more price-sensitive and value-oriented, favouring well-maintained, late-model used boats over new in some cases.
+
+At Harris Boat Works, every used boat that passes through our shop is inspected by our techs before it goes up for sale. That local, service-first approach is your best protection against surprises — especially in a market where private sales can look tempting but carry more risk.
+
+## What It All Means for You at Harris Boat Works
+
+Putting all of this together, 2026 is a very favourable moment for Ontario boat buyers:
+
+- **Inventory is back.** You can actually walk onto a lot and choose your boat, colour, layout, and power instead of taking whatever's left.
+- **Pricing is rational.** The COVID-era "take it or leave it" pricing is gone. New-boat prices have levelled off, used prices have corrected, and dealers are motivated to move aged stock.
+- **Financing is improving.** With rates easing, monthly payments are becoming more palatable again.
+- **Tax headwinds have eased.** The federal luxury tax on boats has been repealed, which especially matters if you're looking at higher-end packages.
+
+For Harris Boat Works customers specifically, this translates into:
+
+- Strong opportunities on Legend aluminum fishing boats and pontoons powered by Mercury outboards.
+- A compelling case for [repowers](/blog/boat-repowering-guide-when-to-replace-motor) — swapping an older two-stroke for a more efficient, cleaner, quieter Mercury FourStroke or Verado.
+- Good value in pre-owned packages that have been serviced and vetted locally.
+- An accessible entry point via our rental fleet if you're still deciding whether ownership is right for you.
+
+If you've been sitting on the fence waiting for conditions to improve, this is the kind of balanced, buyer-friendly market that doesn't come around every year.
+
+Stop by the marina in Gores Landing, give us a call at (905) 342-2153, or [browse Mercury motors online](/quote/motor-selection). We'll help you navigate the 2026 market and find the boat that fits your budget, your family, and Rice Lake.
+    `,
+    faqs: [
+      {
+        question: 'Is the boating market going to stabilize in 2026?',
+        answer: 'Yes. Industry analysts and the NMMA characterize 2026 as a stable year with a potential slight uptick in unit sales. Manufacturers have right-sized production, dealers are working through aged inventory, and the overall tone is one of cautious optimism.'
+      },
+      {
+        question: 'How does the luxury tax repeal affect boat buyers in Canada?',
+        answer: 'Canada\'s federal luxury tax on boats priced above $250,000 has been repealed. This removes what could have been a 10–20% surcharge on higher-end packages. For buyers near that threshold, it\'s a direct saving and removes a psychological barrier.'
+      },
+      {
+        question: 'When is the best time to buy a boat in 2026?',
+        answer: 'Right now is favourable. Dealer inventories are high (71% of dealers report "too much" new stock), pricing has levelled off from pandemic highs, and interest rates are easing. Dealers are motivated to move aged 2023–2024 product, which means better deals for buyers.'
+      },
+      {
+        question: 'Is a pre-owned boat a good value in 2026?',
+        answer: 'Yes. Used boat pricing has softened 5–10% from the highs of 2021–2022. Combined with tighter used supply, well-maintained late-model boats represent excellent value. Just make sure any pre-owned purchase is inspected by a qualified technician.'
+      }
+    ]
+  },
+
+  {
+    slug: 'tariffs-trade-canadian-boating-2026',
+    title: 'Tariffs, Trade, and Canadian Boating — What Harris Boat Works Customers Should Know in 2026',
+    description: 'U.S.–Canada tariffs, retaliatory measures, and the 2026 CUSMA review are creating uncertainty in the boating world. Here\'s a plain-language breakdown of what it all means for Mercury outboard and boat pricing in Ontario.',
+    image: '/lovable-uploads/Financing_A_New_Boat_Motor_Hero.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-02-06',
+    dateModified: '2026-02-06',
+    publishDate: '2026-02-06',
+    category: 'Market Insight',
+    readTime: '12 min read',
+    keywords: ['tariffs boating canada', 'CUSMA boating', 'mercury outboard tariff', 'canada us trade boats', 'boat prices tariffs 2026'],
+    content: `
+If you've glanced at the news over the past year, you've probably seen stories about new tariffs, trade skirmishes, and the upcoming review of the Canada–United States–Mexico Agreement (CUSMA/USMCA). For most people, it's background noise — right up until it sounds like it might affect the cost of a boat or an outboard.
+
+At Harris Boat Works, we pay close attention to trade developments because the marine industry is deeply integrated across the Canada–U.S. border. Mercury outboards come from Wisconsin, many boats are U.S.-built, and Canada is one of the biggest export markets for American marine products. Here's what you actually need to know as a Canadian boater heading into the 2026 season.
+
+## How We Got Here: The Tariff Story in Brief
+
+The current climate is the result of a sequence of policy moves since early 2025:
+
+- **Early 2025**: The Trump administration announced new tariffs on a variety of imports, including a 25% duty on certain Canadian products that did not qualify under CUSMA's rules of origin.
+- **Spring 2025**: Canada responded with retaliatory counter-tariffs on selected U.S. goods, echoing earlier disputes over steel and aluminum from the late 2010s.
+- **Summer 2025**: Some U.S. tariffs on non-CUSMA-compliant Canadian goods were raised to as high as 35%, increasing pressure on Canadian exporters.
+- **September 2025**: Canada announced it would remove most of its retaliatory tariffs on U.S. imports, while maintaining measures on steel, aluminum, and certain autos.
+- **Late 2025**: The U.S. Trade Representative (USTR) began consultations and hearings in advance of the 2026 CUSMA joint review. NMMA testified on recreational boating priorities, emphasizing the need to preserve duty-free treatment for marine products.
+
+Throughout this period, one crucial protection has remained in place: goods that qualify under CUSMA — including most recreational boats and marine engines that meet content and origin rules — continue to cross the border duty-free.
+
+## Why Recreational Boating Is So Affected
+
+The boating industry is more cross-border than many people realize:
+
+- Canada imports nearly $1.1 billion CAD worth of U.S.-made recreational boats and engines annually, making it one of the largest foreign markets for U.S. marine exports.
+- Approximately half of all U.S. recreational boat exports go to Canada, according to NMMA Canada.
+- Canada's recreational boating industry generates $13.9 billion in annual economic impact and supports about 80,500 jobs.
+
+That means disruptions in trade policy are felt on both sides of the border. American manufacturers rely on Canadian dealers and customers; Canadian marinas and dealers rely on steady supply from U.S. factories.
+
+When tariffs or uncertainty increase costs or slow shipments, the impact ripples through manufacturers, distributors, dealers, and ultimately to boaters.
+
+## How Tariffs and Trade Policy Influence Prices
+
+Even when a finished boat or engine qualifies for duty-free treatment under CUSMA, trade friction can still affect pricing in several ways:
+
+1. **Input costs**: Tariffs on steel, aluminum, and other raw materials increase production costs for U.S. boat and engine manufacturers. Those costs can be passed along in the form of higher wholesale prices.
+2. **Components**: Many components — electronics, hardware, wiring, fasteners — are sourced globally. Tariffs on Chinese or European inputs can add cost even if the final product is North American.
+3. **Currency and uncertainty**: Trade disputes can weaken the Canadian dollar relative to the U.S. dollar, increasing the cost of American goods once converted.
+4. **Compliance overhead**: More complex origin documentation, inspections, and border checks add administrative costs and delays.
+
+The result isn't always immediate price spikes, but rather gradual upward pressure and more variability in how and when manufacturers adjust pricing.
+
+## Mercury Outboards: What's the Impact?
+
+Mercury Marine builds its outboards in Fond du Lac, Wisconsin, and other U.S. facilities. As U.S.-manufactured goods entering Canada, Mercury engines are within the scope of cross-border trade rules — but they also benefit from CUSMA when they meet origin requirements.
+
+### Key Points
+
+- Mercury outboards that qualify under CUSMA's rules of origin continue to enter Canada without added CUSMA-based tariffs beyond standard rates.
+- NMMA has prioritized preserving these favourable conditions in its testimony to U.S. trade officials.
+- While there have been normal annual price adjustments from Mercury, there hasn't been a broad, sudden "tariff surcharge" on engines sold through Canadian dealers.
+- However, Mercury is not immune to broader cost pressures. Increased tariffs on inputs, shipping, or certain components can influence their cost base. When those pressures persist, some of the cost may eventually flow through to wholesale and retail pricing.
+
+For Harris Boat Works customers, this is one reason we recommend planning repowers and major engine purchases with some lead time — especially around key trade-policy milestones like the 2026 CUSMA review.
+
+## Legend Boats: Canadian-Built, Globally Connected
+
+Legend boats are built in Ontario, so there is no import duty when a Legend is sold to a Canadian customer. That's a clear benefit: the hull itself isn't subject to cross-border tariffs.
+
+Still, Legend — like almost every boat builder — relies on an international supply chain. Components such as:
+
+- Electronics (sonar, GPS, stereo systems)
+- Stainless hardware and fittings
+- Upholstery materials
+- Wiring, chargers, and electrical components
+
+may be sourced from U.S., European, or Asian manufacturers. When tariffs affect these imported components, the incremental cost can trickle through to boat prices even when the hull is Canadian.
+
+The bottom line: the boat itself is protected by being Canadian-built, but no manufacturer is completely insulated from global trade shocks.
+
+## Parts and Accessories: Where You May Feel It First
+
+Marine parts and accessories are often the first place where retail customers feel tariff-related changes:
+
+- Many items (electronics, batteries, trolling motors, chargers, certain hardware) rely on imported components or are fully imported.
+- Tariffs on specific categories can raise costs for distributors and retailers.
+- Some price changes show up as modest increases across the board rather than one obvious jump on a single line item.
+
+At Harris Boat Works, we try to keep pricing fair and transparent. When supplier costs change, we adjust carefully and look for alternatives where possible, but some increases are unavoidable if the underlying import costs rise.
+
+## The "Buy Canadian" Effect
+
+Beyond the policy specifics, tariffs have also influenced attitudes. Surveys tracked by NMMA Canada and other business groups show that:
+
+- About 56% of Canadian consumers report buying more Canadian-made goods in response to trade tensions.
+- Around 58% say they are actively avoiding certain U.S. products where there are viable domestic alternatives.
+
+For Harris Boat Works customers, that often means:
+
+- Greater interest in Canadian-built boats like Legend.
+- Continued preference for best-in-class engines like Mercury, despite their U.S. origin, because there isn't a Canadian-made equivalent in most horsepower ranges.
+
+## The Big Fork in the Road: CUSMA Review in 2026
+
+Under CUSMA, the three member countries are required to conduct a formal joint review six years after the agreement's entry into force. That review — scheduled for July 2026 — will determine whether the agreement is extended, amended, or allowed to move toward expiry in 2036.
+
+### Key Points for Boating
+
+- Recreational marine products (boats, engines, parts) currently benefit from CUSMA provisions that facilitate duty-free trade under defined origin rules.
+- NMMA's testimony at the USTR hearing emphasized maintaining these provisions and avoiding any backsliding that would reintroduce barriers.
+- A smooth renewal/extension would provide long-term certainty for manufacturers and dealers and support stable pricing and supply.
+- A contentious renegotiation, or failure to extend, could introduce real tariff risk on boats and engines that currently move duty-free and could chill investment and purchasing decisions.
+
+NMMA and NMMA Canada have been vocal that renewing CUSMA as a "success story" for North American manufacturing is a top priority. The stakes are high, but the economic logic for maintaining it is strong.
+
+## Practical Advice for HBW Customers
+
+Amid all the noise about tariffs and trade, here's our straightforward guidance:
+
+1. **Don't panic.** Most recreational marine products you'd buy — Mercury outboards, Legend boats, mainstream accessories — are still flowing across the border under CUSMA with no new surprise tariff charges tacked on at retail.
+2. **Think about timing.** If you're considering a major purchase (new boat package, repower, big electronics upgrade), there's a reasonable argument for acting before the 2026 CUSMA review introduces additional uncertainty. That doesn't mean prices will spike, but it removes one variable.
+3. **Consider origin, but prioritize quality.** Supporting Canadian-built boats like Legend makes sense, and we're proud to sell them. For engines, Mercury's product quality, market support, and local service network matter more than political headlines. There isn't a realistic Canadian substitute for a modern 90–150 HP outboard, and compromising on engine quality rarely pays off.
+4. **Ask questions.** If you're worried a particular product might be affected by tariffs, or if a price seems out of step with what you expect, talk to us. We see the wholesale side of this and can explain what's driving costs.
+
+Harris Boat Works has been on Rice Lake since 1947. We've seen different trade regimes, different governments, and plenty of economic ups and downs. Through all of it, people keep boating, and the Canada–U.S. marine relationship remains vital on both sides of the border.
+
+We're optimistic that CUSMA will be renewed and that common sense will prevail. In the meantime, our job remains the same: help you get into the right boat and engine package at a fair price, keep it running, and get you out on Rice Lake.
+
+[Browse Mercury motors and get pricing](/quote/motor-selection) — or give us a call at (905) 342-2153.
+    `,
+    faqs: [
+      {
+        question: 'Will tariffs raise the price of Mercury outboards in Canada?',
+        answer: 'Mercury outboards that qualify under CUSMA continue to enter Canada without added tariffs. Normal annual price adjustments occur, but there hasn\'t been a sudden "tariff surcharge." However, broader cost pressures on inputs like steel, aluminum, and components can gradually influence pricing.'
+      },
+      {
+        question: 'What happens if the 2026 CUSMA review goes badly?',
+        answer: 'If CUSMA isn\'t renewed or is significantly changed, it could reintroduce tariffs on boats and engines that currently cross the border duty-free. This would likely raise prices and create supply uncertainty. NMMA and NMMA Canada are actively advocating for a smooth renewal.'
+      },
+      {
+        question: 'Are Canadian-built boats cheaper because of tariffs?',
+        answer: 'Canadian-built boats like Legend avoid import duties on the hull itself, which is an advantage. However, they still use globally sourced components (electronics, hardware, upholstery) that can be affected by tariffs. No manufacturer is completely insulated from trade shocks.'
+      },
+      {
+        question: 'Should I buy a boat now before the CUSMA review?',
+        answer: 'There\'s a reasonable argument for acting before the July 2026 CUSMA review if you\'re already planning a purchase. It removes one uncertainty variable. That said, don\'t panic-buy — current pricing remains stable and most products continue to flow duty-free under existing rules.'
+      }
+    ]
+  },
+
+  {
+    slug: 'boat-rentals-shared-access-booming-2026',
+    title: 'Why Boat Rentals and Shared Access Are Booming in 2026 — And How Harris Boat Works Gets You on the Water',
+    description: 'The boat rental market is surging across North America. Here\'s why shared boating is exploding, what\'s driving the trend, and how Harris Boat Works\' rental fleet on Rice Lake fits into the picture.',
+    image: '/lovable-uploads/Boaters_Trust_HBW.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-02-06',
+    dateModified: '2026-02-06',
+    publishDate: '2026-02-06',
+    category: 'Lifestyle',
+    readTime: '10 min read',
+    keywords: ['boat rental rice lake', 'boat rental market 2026', 'boat club vs ownership', 'rice lake boat rental', 'harris boat works rentals'],
+    content: `
+Not everyone wants to own a boat — and in 2026, that's no longer a barrier to enjoying boating. Across North America, boat rentals, boat clubs, and shared access models are growing faster than most other parts of the marine industry. The idea is simple: you shouldn't have to buy a boat to enjoy the water.
+
+At Harris Boat Works, we've been renting boats on Rice Lake for decades. Long before anyone called it the "sharing economy," we were putting families, anglers, and cottagers into well-maintained rental boats powered by Mercury outboards. Now the rest of the industry is catching up to what marinas like ours have known for years.
+
+## The Size of the Rental Boom
+
+Industry research shows just how big the rental and shared-access market has become:
+
+- Fortune Business Insights values the global boat rental market at **USD 25.52 billion in 2026**, projected to reach **USD 39.10 billion by 2034** at a 5.48% CAGR.
+- North America accounts for roughly 38.68% of global revenue, with the region valued around USD 9.94 billion in 2026.
+- Future Market Insights projects an even steeper trajectory, putting the global rental market at USD 21.8 billion in 2025 and forecasting growth to USD 40.5 billion by 2035 at a 6.4% CAGR.
+
+The key takeaway: while new boat unit sales dipped in 2024–2025, boating participation remains robust, and rentals are a major part of how people are getting on the water.
+
+## What's Driving the Shift From Ownership to Access
+
+Several big-picture trends are converging to make rentals and shared access more appealing than ever.
+
+### 1. The Experience Economy
+
+Consumers are increasingly prioritizing experiences over possessions. Travel, outdoor recreation, and adventure consistently rank higher than "owning more stuff" in surveys of spending priorities, especially for millennials and Gen Z.
+
+Boating fits that pattern perfectly. A day on Rice Lake with family, friends, or a fishing buddy is an experience people are willing to pay for — but many don't feel they need to own a boat year-round to have it. Renting makes it as simple as "book, go, return."
+
+### 2. The Real Cost of Ownership
+
+Owning a boat is rewarding, but it isn't cheap. When you add up:
+
+- Purchase price or financing
+- Dockage or trailer storage
+- Winter storage and shrink-wrapping
+- Insurance
+- Annual maintenance (oil changes, impellers, lower unit service)
+- Repairs and upgrades
+
+The all-in annual cost can easily reach thousands of dollars, even for modest rigs. For a family that only gets out a handful of times per season, the per-outing cost of ownership can dwarf rental rates.
+
+Rentals flip that equation: you pay only for the days you're actually on the water. No off-season bills, no repair surprises, no storage decisions. For many customers, that's a much easier number to work with.
+
+### 3. The Post-Pandemic Boating Wave
+
+During COVID-19, boating exploded as a safe, outdoor, socially distanced activity. Many newcomers to boating tried it for the first time through rentals, not ownership.
+
+As restrictions lifted, a large cohort of "rental native" boaters remained — people who now see boating the way they see skiing or cottage rentals: something you do periodically, often with rented gear, without feeling compelled to buy.
+
+### 4. Technology and Convenience
+
+The same app-driven convenience that transformed taxis into ride-sharing and spare rooms into vacation rentals has reached boating:
+
+- Online booking systems let customers see availability, pricing, and boat details instantly.
+- Mobile check-in and digital waivers streamline the process.
+- Peer-to-peer platforms connect private boat owners with renters, massively expanding available inventory.
+
+These tools make it easier for customers to get from "I want to go boating" to "I have a boat booked for Saturday" in a few clicks.
+
+## Boat Clubs and Membership Fleets
+
+Beyond one-off daily rentals, boat clubs and membership fleets have become a major growth engine in the U.S. and globally.
+
+Companies like Freedom Boat Club (owned by Brunswick, Mercury's parent company) and others operate hundreds of locations where members pay an initiation fee and monthly dues in exchange for access to a fleet of boats.
+
+**Members typically:**
+- Reserve boats online
+- Show up, boat, and leave the cleaning/maintenance to the club
+- Enjoy variety: pontoons one weekend, a fishing boat the next, perhaps a bowrider another time
+
+**This model appeals to people who:**
+- Don't want to worry about storage, maintenance, or depreciation
+- Want access to different boat types
+- Live near busy waterways where dockage is expensive or limited
+
+The NMMA has highlighted boat clubs and rental platforms as key to attracting new participants to boating, rather than a threat to traditional sales. Data suggests a significant percentage of club members eventually transition to ownership once they fall in love with the lifestyle.
+
+## How Harris Boat Works' Rental Fleet Fits In
+
+All of this industry movement points in one direction: rentals and shared access aren't a fad; they're part of the future of boating. Harris Boat Works is already part of that future on Rice Lake.
+
+Here's what sets our rental program apart.
+
+### Local Knowledge Since 1947
+
+Rice Lake is a unique fishery — shallow, fertile, averaging less than 20 feet deep with a maximum around 27 feet, and full of weed beds, shoals, and structure. It's renowned for:
+
+- Walleye (pickerel)
+- Muskie
+- Smallmouth and largemouth bass
+- Panfish like perch, crappie, and sunfish
+
+We've been operating on this lake since 1947. That means when you rent from us, you're not just getting a boat key — you're getting decades of local knowledge: where walleye tend to stage in spring vs. mid-summer, which weedlines are worth trolling for muskie, which stretches to avoid on a windy day with a smaller boat, and where to find a quiet shoreline for a family picnic.
+
+That level of lake-specific guidance is something an app or distant booking platform simply can't provide.
+
+### Quality Boats, Powered by Mercury
+
+Every rental boat at Harris Boat Works is powered by Mercury outboards. That's intentional:
+
+- We know Mercury engines inside and out from our sales and service business.
+- We trust their reliability, fuel efficiency, and ease of use.
+- Our techs maintain our rental fleet to the same standard we apply to customers' boats.
+
+When you pick up a rental from us, it's not an unknown boat with unknown maintenance. It's a boat we know, powered by engines we stand behind.
+
+### Real Service From Real People
+
+At HBW, rentals are not a purely self-serve, phone-only transaction. When you show up:
+
+- We walk you through the boat's controls.
+- We explain any local navigation considerations.
+- We make sure you're comfortable before you leave the dock.
+
+If you're new to boating, this onboarding is invaluable. If you're experienced, it's still reassuring to have a quick lake-specific briefing.
+
+### A Fit for Many Types of Boaters
+
+Our rental fleet works for:
+
+- **Cottagers** who don't own a boat but want easy access when friends or family visit.
+- **Tourists** staying at local cottages or resorts who want to experience Rice Lake.
+- **Families** who want a fun day cruising, swimming, or fishing without long-term commitment.
+- **Anglers** who want a solid fishing platform on Rice Lake without trailering their own rig.
+- **Prospective buyers** who want to "try before they buy."
+
+Whatever your reason, you get the same combination of quality equipment, local support, and Mercury power.
+
+## From Rental to Ownership
+
+We see the rental-to-ownership journey play out at our marina every year.
+
+The pattern often looks like this:
+
+1. A family or angler rents a few times, gets comfortable on the lake, and realizes boating is becoming a regular part of their life.
+2. They start to notice what they like — 16' vs. 18', console vs. tiller, 40 HP vs. 60 HP, pontoon vs. fishing boat.
+3. They come back to us and start asking questions about Legend boats, Mercury packages, and financing options.
+
+Industry data aligns with this: rental and club participants are a major source of future boat buyers. Our job is to help you make that transition when you're ready, with:
+
+- Practical advice on boat size and layout for Rice Lake.
+- Clear explanations of engine options ([Mercury FourStroke, ProKicker](/blog/mercury-prokicker-rice-lake-anglers-guide), etc.).
+- Straight talk about new vs. used and what fits your budget and usage.
+
+## Getting on Rice Lake in 2026
+
+Whether you want to spend a Saturday exploring Rice Lake with your family, plan a fishing weekend targeting walleye, muskie, or bass, or test the waters before committing to boat ownership — our rental fleet is the easiest way to get started.
+
+Give us a call at (905) 342-2153, stop by the marina in Gores Landing, or [browse Mercury motors](/quote/motor-selection) to learn more about our rental options.
+
+Boating doesn't have to start with a purchase. With Harris Boat Works, it can start with a rental — and go wherever you want from there.
+    `,
+    faqs: [
+      {
+        question: 'How much does it cost to rent a boat vs. owning one?',
+        answer: 'Ownership costs include purchase/financing, dockage, storage, insurance, and annual maintenance — easily thousands per year even for modest rigs. Renting means you pay only for the days you\'re on the water, with no off-season bills, repair surprises, or storage decisions. For families who boat a handful of times per season, renting is often significantly cheaper.'
+      },
+      {
+        question: 'What\'s included when I rent a boat from Harris Boat Works?',
+        answer: 'Every rental includes a well-maintained boat powered by Mercury outboards, a walkthrough of the boat\'s controls, local lake navigation tips, and our support throughout your time on the water. You get decades of Rice Lake knowledge included with every rental.'
+      },
+      {
+        question: 'Can renting a boat lead to ownership?',
+        answer: 'Absolutely. We see this journey every year. Renters get comfortable on the lake, figure out what boat size and style they prefer, and then come to us for advice on Legend boats, Mercury packages, and financing. Industry data confirms that rental and boat club participants are a major source of future boat buyers.'
+      },
+      {
+        question: 'What fish species can I target on Rice Lake?',
+        answer: 'Rice Lake is renowned for walleye (pickerel), muskie, smallmouth and largemouth bass, and panfish like perch, crappie, and sunfish. It\'s a shallow, fertile lake averaging less than 20 feet deep, full of weed beds, shoals, and structure — perfect for a variety of fishing techniques.'
+      }
+    ]
+  },
+
+  {
+    slug: 'why-mercury-dominates-outboard-market',
+    title: 'Why Mercury Dominates the Outboard Market — And Why Harris Boat Works Chose Them',
+    description: 'Mercury Marine is the world\'s leading outboard brand, with dominant market share and relentless innovation. Here\'s why Harris Boat Works proudly sells, services, and trusts Mercury outboards for every boat on Rice Lake.',
+    image: '/lovable-uploads/Comparing_Motor_Families.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-02-06',
+    dateModified: '2026-02-06',
+    publishDate: '2026-02-06',
+    category: 'Buying Guide',
+    readTime: '12 min read',
+    keywords: ['mercury marine market share', 'best outboard brand', 'mercury vs yamaha', 'mercury verado v12', 'mercury innovation', 'mercury prokicker'],
+    content: `
+When someone comes into Harris Boat Works and asks, "What motor should I put on my boat?", our answer is almost always Mercury. That isn't a slogan — it's the conclusion we've reached after decades of selling, installing, and servicing outboards on Rice Lake.
+
+Mercury Marine doesn't just have a big name; they have dominant market share, deep technology, and a track record that shows up on dealer lots and in customer satisfaction surveys across the world. Here's why that matters for you.
+
+## Mercury's Market Position: The Clear Leader
+
+Mercury Marine, a division of Brunswick Corporation, is the largest outboard manufacturer in the world. Its competitive advantages widened substantially after BRP discontinued the Evinrude brand in 2020, leaving Mercury as the most complete, full-line competitor in the outboard space.
+
+Show-floor data highlights how dominant Mercury has become:
+
+- At major international shows like Venice and Sydney, Mercury has powered 50–80% of the outboard-equipped boats on display, according to Brunswick.
+- At the 2025 Sydney International Boat Show, Mercury captured 50% of the outboards on display across all brands, and at Venice, Mercury engines appeared on more than 80% of the boats.
+
+Boat builders choose Mercury because their customers ask for it, and because Mercury delivers performance, reliability, and support that makes boat packages easier to sell and own.
+
+Mercury's strategic partnerships reinforce this lead. In early 2026, Mercury and De Antonio Yachts announced an exclusive five-year supply agreement for outboard power, adding another premium builder to the Mercury portfolio. These deals are a signal: top-tier boat brands want Mercury on the transom.
+
+## Innovation: Why Mercury Stays Ahead
+
+Market share alone doesn't explain Mercury's position; continuous innovation does. Across internal combustion, digital systems, and electric propulsion, Mercury consistently pushes the industry forward.
+
+### Verado V12 600 HP
+
+When Mercury unveiled the V12 600 HP Verado in 2022, it changed what people thought an outboard could be. Highlights include:
+
+- A naturally aspirated 7.6L V12 powerhead (no turbo or supercharger)
+- Two-speed automatic transmission for efficient hole shot and optimized cruising
+- Steerable gearcase with fixed powerhead, improving manoeuvrability and reducing transom space used by steering hardware
+- Extremely low noise and vibration levels for the power class
+
+No competitor has an outboard that matches this combination of horsepower and integrated features.
+
+### V10 Verado 350–425 HP
+
+Mercury's V10 Verado family extends Verado-level refinement down into the 350–425 HP range. The latest 425 HP model and updated 350 HP variant deliver:
+
+- Up to 15% quicker 0–50 mph acceleration vs. previous models
+- A 150-amp alternator, the highest in class, supporting today's power-hungry electronics
+- Around 22% quieter operation at cruise, enhancing comfort on long runs
+
+These engines are ideal for offshore centre consoles and high-performance freshwater rigs that demand big power without sacrificing refinement.
+
+### SmartCraft and VesselView: Mercury's Digital Backbone
+
+Mercury's SmartCraft ecosystem is a major differentiator, tying engines, helm displays, and mobile devices into one integrated data and control network. Core components include:
+
+- **VesselView displays**: High-resolution helm screens that show engine RPM, speed, fuel burn, range, trim, temperatures, alerts, and more.
+- **SmartCraft Connect**: A module that opens up VesselView data on compatible Garmin and Raymarine multi-function displays, turning them into full Mercury engine monitors.
+- **Mercury Marine app**: Lets owners connect via Bluetooth, view engine data, track maintenance schedules, log trips, and receive notifications.
+- **Active Trim**: Automatically optimizes trim for speed and efficiency.
+- **Troll Control, Smart Tow, and other modes** tailored to fishing and watersports.
+
+For Rice Lake anglers running Garmin, Lowrance, Raymarine, or Simrad units, this matters: one screen can show sonar, charts, and engine data together.
+
+### Joystick Piloting for Outboards (JPO)
+
+On multi-engine boats, Mercury's Joystick Piloting for Outboards (JPO) makes docking and low-speed manoeuvres dramatically easier. You push the joystick, and the system independently controls throttle, shift, and steering on each engine to move the boat forward, sideways, or diagonally.
+
+For big water and tight marinas, that's a huge quality-of-life improvement.
+
+### Avator Electric Outboards
+
+Mercury's Avator electric outboard line shows they're serious about the future of low-impact propulsion. Early models like the 7.5e, 20e, 35e and larger 75e/110e units feature:
+
+- Quiet, emission-free operation ideal for eco-sensitive waters and small craft
+- Modular, swappable battery packs with integrated chargers
+- Digital displays integrated into the tiller or remote helm
+- SmartCraft connectivity, so electric and combustion engines live in the same data ecosystem
+
+Avator won't replace combustion outboards on Rice Lake tomorrow, but it's an important illustration of where the brand is headed and gives HBW customers options for specific use cases.
+
+### ProKicker: Purpose-Built for Trolling
+
+For serious anglers, Mercury's [ProKicker line](/blog/mercury-prokicker-rice-lake-anglers-guide) offers 9.9–15 HP four-stroke outboards engineered specifically as kicker/trolling motors. Features include:
+
+- High-thrust propellers and gearing optimized for slow-speed control
+- Extended tillers and brackets for easier integration on larger transoms
+- SmartCraft compatibility via VesselView Mobile
+
+On a lake known for trolling walleye and muskie like Rice Lake, a ProKicker is one of the most practical add-ons you can rig.
+
+### 808 HP V12 Concept: The Future Signal
+
+At CES 2026, Mercury made headlines by unveiling an 808 HP V12 concept outboard, demonstrating where ultra-high-performance marine propulsion may be headed. While still a prototype, it sends a clear signal: Mercury intends to lead at the extreme performance edge of the market as well.
+
+## Why Mercury Is the Right Fit for Rice Lake
+
+All that tech is impressive, but what matters for Harris Boat Works customers is how Mercury performs on this lake, in your boat.
+
+Here's why Mercury is such a strong match for Rice Lake boaters:
+
+- **Complete horsepower coverage**: From 2.5 HP portables to 150 HP FourStrokes and beyond, Mercury covers virtually every realistic power need on Rice Lake.
+- **Fuel efficiency**: Mercury's four-stroke engines are among the most fuel-efficient in their classes, which matters when you're running long days trolling or exploring the lake.
+- **Quiet, low-vibration operation**: A quieter motor means less fatigue and can help avoid spooking fish in shallow or clear water.
+- **Reliability in shallow, weedy, variable conditions**: Rice Lake's weeds, fluctuating water levels, and wind shifts demand engines that tolerate real-world use. Mercury's cooling, corrosion resistance, and ignition systems are engineered with these conditions in mind.
+- **Smart integration with electronics**: SmartCraft Connect and compatibility with major electronics brands allow you to monitor engine vitals where you already look for depth and fish.
+
+Just as importantly, Mercury is already the dominant presence on Rice Lake. Walk any marina — Gores Landing, Bewdley, Hastings — and you'll see Mercury cowlings everywhere because local boaters have voted with their wallets over many seasons.
+
+## Why Harris Boat Works Sticks With Mercury
+
+Harris Boat Works has been serving Rice Lake since 1947, and we've seen multiple engine brands come and go over that time. We choose to sell and service Mercury because:
+
+- The engines are reliable and give our customers fewer headaches.
+- The parts and support infrastructure are strong in Ontario.
+- Mercury continues to innovate, keeping our customers' rigs current with modern tech.
+- We can stand behind every Mercury we rig, knowing we'll still be here to service it years down the line.
+
+When you buy a Mercury from HBW, you're also buying our local expertise:
+
+- Proper horsepower and prop selection for Rice Lake hulls and usage.
+- Professional installation and rigging, including controls and electronics integration.
+- Ongoing maintenance and warranty support just minutes from your dock or launch.
+
+We're not interested in selling you whatever happens to be on a crate this month. We're interested in putting the right Mercury engine on the back of your boat, so it starts reliably, runs efficiently, and carries you and your family safely for many seasons of Rice Lake memories.
+
+## Ready to Talk Outboards?
+
+Whether you're repowering an older boat, spec'ing a new Legend package, [adding a ProKicker for trolling](/blog/mercury-prokicker-rice-lake-anglers-guide), or planning your first serious fishing rig — we're here to help you choose and set up the right Mercury outboard.
+
+[Browse Mercury motors and get pricing](/quote/motor-selection) — or call us at (905) 342-2153 to start the conversation.
+    `,
+    faqs: [
+      {
+        question: 'Why does Mercury have such a large market share?',
+        answer: 'Mercury Marine is the world\'s largest outboard manufacturer, with 50–80% share of outboards at major international boat shows. Their position widened after BRP discontinued Evinrude in 2020. Continuous innovation (V12 600HP, SmartCraft, Avator electric), a full horsepower range, and strong dealer support keep them ahead of competitors.'
+      },
+      {
+        question: 'What makes the Verado V12 600 HP special?',
+        answer: 'The V12 Verado is a naturally aspirated 7.6L V12 with a two-speed automatic transmission, steerable gearcase, and extremely low noise and vibration. No competitor matches its combination of 600 HP, integrated features, and refinement. It changed what people thought an outboard could be.'
+      },
+      {
+        question: 'How does SmartCraft benefit boat owners?',
+        answer: 'SmartCraft ties engines, helm displays, and mobile devices into one integrated network. VesselView shows engine data on helm screens, SmartCraft Connect pushes that data to Garmin and Raymarine chartplotters, and the Mercury app provides remote monitoring. Features like Active Trim and Troll Control add automated convenience.'
+      },
+      {
+        question: 'Why does Harris Boat Works only sell Mercury?',
+        answer: 'After decades of selling and servicing outboards, Mercury consistently delivers reliability, innovation, and strong parts/support infrastructure in Ontario. Their full HP range covers every Rice Lake need, and our techs know the engines inside and out — meaning better service and fewer headaches for our customers.'
+      }
+    ]
   }
 ];
 
