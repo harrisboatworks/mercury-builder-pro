@@ -1,44 +1,51 @@
 
 
-# Fix: Mobile FAQ Category Navigation
+# Fix Deposit Refund Language Across the Site
 
-## Problem
+## The Problem
 
-On mobile, the 8 category navigation buttons are rendering as full-width, vertically-stacked cards that consume the entire screen. Each card shows the icon above the category name, taking up massive vertical space. When a category is tapped, the page scrolls behind this wall of cards but the actual FAQ content is hidden.
+The current wording in multiple places says deposits are "fully refundable" with "no restocking fees or penalties." For in-stock motors this may be fine, but for **special-order motors** (which Mercury builds or ships specifically for the customer), a no-strings refund policy defeats the purpose of the deposit. If someone special-orders a 400HP Verado and cancels, the dealership is stuck with a motor they may not normally stock.
 
-## Root Cause
+## Updated Policy Language
 
-The `flex` container with `overflow-x-auto` and `shrink-0` on each button should create a horizontal scroll row, but on narrow mobile viewports each button stretches to fill the container width because there is no explicit `flex-nowrap` constraint and no `max-width` or size constraint on individual buttons. The buttons end up reflowing vertically.
+The deposit language will be updated to distinguish between in-stock and special-order scenarios, while still being transparent and buyer-friendly:
 
-## Solution
+**In-stock motors**: Deposits are fully refundable before pickup.
+**Special-order motors**: Deposits may be non-refundable once the order is placed with Mercury, as these motors are ordered specifically for the customer.
 
-Redesign the category navigation to work properly on mobile by:
+## Files to Update (4 locations)
 
-1. **On mobile (below `md`)**: Show a compact, single-row, horizontally-scrollable chip bar with small pill-shaped buttons. Each chip shows the icon next to the text (inline), is compact, and the whole row scrolls horizontally with hidden scrollbar.
+### 1. `src/data/faqData.ts` (line 221-222)
 
-2. **On desktop (above `md`)**: Keep the current horizontal chip layout, which already works fine.
+**Current**: "Yes, all deposits are fully refundable if you change your mind. There are no restocking fees or penalties."
 
-3. **Reduce the sticky nav height** so it doesn't obscure content when a category is tapped.
+**Updated**: Rewrite to explain the distinction clearly:
+- Deposits on **in-stock motors** are fully refundable if you change your mind before pickup
+- Deposits on **special-order motors** may be non-refundable once the order has been placed with Mercury, as these units are ordered specifically for you
+- We'll always confirm whether a motor is in-stock or special-order before you place your deposit
+- Payment methods line stays the same (Apple Pay, Google Pay, etc.)
 
-## Technical Changes
+### 2. `src/components/quote-builder/StickySummary.tsx` (line 214)
 
-### File: `src/pages/FAQ.tsx`
+**Current button text**: "Reserve with $X refundable deposit"
 
-**Category Navigation Section (lines 100-130)**
+**Updated**: Change to "Reserve with $X deposit" -- dropping the word "refundable" from the button label. The deposit details and refund terms are explained on the summary page and FAQ; the button doesn't need to make a blanket promise.
 
-Update the chip container and button styles:
+### 3. `src/components/quote-builder/QuoteDisplay.tsx` (line 679)
 
-- Add `flex-nowrap` explicitly to the flex container to prevent wrapping on any viewport
-- Set a mobile-optimized size for each chip: smaller padding (`px-3 py-1.5`), smaller text (`text-xs`), and smaller icon (`h-3.5 w-3.5`) on mobile
-- Use responsive classes: `text-xs md:text-sm`, `px-3 md:px-4`, `py-1.5 md:py-2`, `gap-1.5 md:gap-2`
-- Add `min-w-0` to the container to allow proper overflow behavior
-- Reduce nav padding on mobile from `py-3` to `py-2`
+**Current subtext**: "Secure your motor with a refundable deposit - Balance due on delivery"
 
-**Scroll offset (line 43)**
+**Updated**: Change to "Secure your motor with a deposit -- Balance due on delivery" -- same reasoning, removing the blanket "refundable" claim from the deposit selector.
 
-Adjust the scroll offset to account for the now-compact sticky nav height (reduce from 120px to a responsive value or keep 120px which covers header + nav).
+### 4. `src/components/seo/GlobalSEO.tsx` (line 200)
 
-### Expected Result
+**Current schema text**: "You can reserve any Mercury motor with a refundable deposit..."
 
-The category navigation becomes a compact, horizontally-scrollable chip bar on mobile (similar to filter pills on Google Search or food delivery apps). Tapping a chip smoothly scrolls to the correct FAQ section, which is now fully visible below the compact nav bar. The entire FAQ content is accessible without the nav consuming the screen.
+**Updated**: Change to "You can reserve any Mercury motor with a deposit through our online quote builder. Deposit amounts are based on horsepower: $200 for motors 0-25HP, $500 for 30-115HP, and $1,000 for 150HP and up. The deposit locks in your price and holds the motor until pickup. Deposits on in-stock motors are fully refundable before pickup."
+
+This keeps the structured data accurate without blanket refund claims for special orders.
+
+## Summary of Changes
+
+All four updates follow the same principle: **remove blanket "fully refundable" language and replace with nuanced, honest wording that distinguishes in-stock from special-order situations.** This protects the business while still being transparent and buyer-friendly -- which actually builds more trust than an overly generous promise that might need to be walked back later.
 
