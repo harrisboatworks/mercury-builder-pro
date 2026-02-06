@@ -197,7 +197,7 @@ export function GlobalSEO() {
             "name": "How do I reserve a Mercury motor?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can reserve any Mercury motor with a refundable deposit through our online quote builder. Deposit amounts are based on horsepower: $200 for motors 0-25HP, $500 for 30-115HP, and $1,000 for 150HP and up. The deposit locks in your price and holds the motor until pickup."
+              "text": "You can reserve any Mercury motor with a deposit through our online quote builder. Deposit amounts are based on horsepower: $200 for motors 0-25HP, $500 for 30-115HP, and $1,000 for 150HP and up. The deposit locks in your price and holds the motor until pickup. Deposits on in-stock motors are fully refundable before pickup."
             }
           },
           {
@@ -213,7 +213,7 @@ export function GlobalSEO() {
             "name": "Are motor deposits refundable?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, all deposits are fully refundable if you change your mind. There are no restocking fees or penalties. The deposit simply holds the motor and locks in your quoted price until you pick it up in person at our Gores Landing location."
+              "text": "Deposits on in-stock motors are fully refundable if you change your mind before pickup. Deposits on special-order motors may be non-refundable once the order has been placed with Mercury, as these units are ordered specifically for you. We'll always confirm whether a motor is in-stock or special-order before you place your deposit."
             }
           }
         ]
