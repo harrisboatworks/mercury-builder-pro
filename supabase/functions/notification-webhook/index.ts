@@ -1,10 +1,20 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { z } from "npm:zod@3.22.4";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
+
+// Twilio webhook validation schema
+const twilioWebhookSchema = z.object({
+  MessageSid: z.string().min(1).max(100),
+  MessageStatus: z.string().min(1).max(50),
+  To: z.string().max(50).optional(),
+  ErrorCode: z.string().max(20).optional(),
+  ErrorMessage: z.string().max(500).optional(),
+});
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -21,11 +31,25 @@ serve(async (req) => {
     const body = await req.text()
     const params = new URLSearchParams(body)
     
-    const messageSid = params.get('MessageSid')
-    const messageStatus = params.get('MessageStatus')
-    const to = params.get('To')
-    const errorCode = params.get('ErrorCode')
-    const errorMessage = params.get('ErrorMessage')
+    // Extract and validate webhook data
+    const rawData = {
+      MessageSid: params.get('MessageSid') || undefined,
+      MessageStatus: params.get('MessageStatus') || undefined,
+      To: params.get('To') || undefined,
+      ErrorCode: params.get('ErrorCode') || undefined,
+      ErrorMessage: params.get('ErrorMessage') || undefined,
+    };
+
+    const validationResult = twilioWebhookSchema.safeParse(rawData);
+    if (!validationResult.success) {
+      console.log('[notification-webhook] Validation failed:', validationResult.error.errors);
+      return new Response(
+        JSON.stringify({ error: 'Invalid webhook data', details: validationResult.error.errors }),
+        { status: 400, headers: corsHeaders }
+      )
+    }
+
+    const { MessageSid: messageSid, MessageStatus: messageStatus, To: to, ErrorCode: errorCode, ErrorMessage: errorMessage } = validationResult.data;
 
     console.log('Received Twilio webhook:', {
       messageSid,
@@ -34,13 +58,6 @@ serve(async (req) => {
       errorCode,
       errorMessage
     })
-
-    if (!messageSid || !messageStatus) {
-      return new Response(
-        JSON.stringify({ error: 'Missing required webhook data' }),
-        { status: 400, headers: corsHeaders }
-      )
-    }
 
     // Update SMS log status
     const { error } = await supabaseClient

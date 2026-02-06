@@ -1,10 +1,17 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { z } from "npm:zod@3.22.4";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 }
+
+// Optional input validation for any query parameters
+const processOptionsSchema = z.object({
+  limit: z.number().int().min(1).max(500).optional(),
+  dryRun: z.boolean().optional(),
+}).optional();
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -12,6 +19,18 @@ serve(async (req) => {
   }
 
   try {
+    // Validate any optional input parameters
+    const rawBody = await req.json().catch(() => ({}));
+    const validationResult = processOptionsSchema.safeParse(rawBody);
+    
+    if (!validationResult.success) {
+      console.log('[process-notifications] Validation failed:', validationResult.error.errors);
+      return new Response(
+        JSON.stringify({ error: 'Invalid request parameters' }),
+        { status: 400, headers: corsHeaders }
+      )
+    }
+
     const supabaseClient = createClient(
       Deno.env.get('SUPABASE_URL') ?? '',
       Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
