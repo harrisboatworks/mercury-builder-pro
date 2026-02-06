@@ -1,9 +1,16 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { z } from "npm:zod@3.22.4";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
+
+// SDP exchange validation schema
+const sdpExchangeSchema = z.object({
+  sdpOffer: z.string().min(1).max(50000), // SDP offers can be large
+  ephemeralKey: z.string().min(1).max(500),
+});
 
 serve(async (req) => {
   // Handle CORS preflight requests
@@ -12,15 +19,18 @@ serve(async (req) => {
   }
 
   try {
-    const { sdpOffer, ephemeralKey } = await req.json();
-
-    if (!sdpOffer || !ephemeralKey) {
-      console.error('Missing required fields:', { hasSdpOffer: !!sdpOffer, hasKey: !!ephemeralKey });
+    const rawBody = await req.json();
+    
+    const validationResult = sdpExchangeSchema.safeParse(rawBody);
+    if (!validationResult.success) {
+      console.error('[realtime-sdp-exchange] Validation failed:', validationResult.error.errors);
       return new Response(
-        JSON.stringify({ error: 'Missing sdpOffer or ephemeralKey' }),
+        JSON.stringify({ error: 'Invalid request data', details: validationResult.error.errors }),
         { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
+
+    const { sdpOffer, ephemeralKey } = validationResult.data;
 
     console.log('Proxying SDP exchange to OpenAI...');
 

@@ -1,9 +1,20 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { z } from "npm:zod@3.22.4";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
+
+// Input validation schema for realtime session context
+const sessionContextSchema = z.object({
+  motorContext: z.object({
+    model: z.string().max(200).optional(),
+    hp: z.number().min(0).max(2000).optional(),
+    price: z.number().min(0).max(1000000).optional(),
+  }).optional(),
+  currentPage: z.string().max(500).optional(),
+}).optional();
 
 serve(async (req) => {
   // Handle CORS preflight
@@ -17,8 +28,19 @@ serve(async (req) => {
       throw new Error('OPENAI_API_KEY is not configured');
     }
 
-    // Get context from request body
-    const { motorContext, currentPage } = await req.json().catch(() => ({}));
+    // Get and validate context from request body
+    const rawBody = await req.json().catch(() => ({}));
+    const validationResult = sessionContextSchema.safeParse(rawBody);
+    
+    if (!validationResult.success) {
+      console.log('[realtime-session] Validation failed:', validationResult.error.errors);
+      return new Response(
+        JSON.stringify({ error: 'Invalid request data' }),
+        { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      );
+    }
+
+    const { motorContext, currentPage } = validationResult.data || {};
 
     // Build context-aware instructions
     let contextInfo = '';
