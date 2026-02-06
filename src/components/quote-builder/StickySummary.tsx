@@ -211,7 +211,7 @@ export default function StickySummary({
           >
             {isProcessingPayment 
               ? 'Processing...' 
-              : `Reserve with ${money(depositAmount)} refundable deposit`
+              : `Reserve with ${money(depositAmount)} deposit`
             }
           </button>
           <PaymentMethodBadges className="mt-2" />

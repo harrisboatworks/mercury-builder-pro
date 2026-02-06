@@ -218,8 +218,8 @@ export const faqCategories: FAQCategory[] = [
         answer: 'Deposit amounts are based on horsepower: <strong>$200</strong> for motors 0–25 HP, <strong>$500</strong> for 30–115 HP, and <strong>$1,000</strong> for 150 HP and above. The deposit locks in your quoted price and holds the motor until you pick it up in person at our Gores Landing location.'
       },
       {
-        question: 'Are deposits refundable?',
-        answer: 'Yes, all deposits are fully refundable if you change your mind. There are no restocking fees or penalties. We accept Apple Pay, Google Pay, Link (Stripe one-click), and all major credit cards for deposits.'
+      question: 'Are deposits refundable?',
+        answer: 'It depends on the motor. Deposits on <strong>in-stock motors</strong> are fully refundable if you change your mind before pickup. Deposits on <strong>special-order motors</strong> may be non-refundable once the order has been placed with Mercury, as these units are ordered specifically for you. We\'ll always confirm whether a motor is in-stock or special-order before you place your deposit. We accept Apple Pay, Google Pay, Link (Stripe one-click), and all major credit cards for deposits.'
       },
       {
         question: 'Do I have to buy the motor in person?',
