@@ -1,24 +1,24 @@
 
-# Swap Hero Images for 2 Blog Posts
+
+# Swap Hero Images for Remaining 2 Blog Posts
 
 ## What's Happening
 
-You've provided the real hero images for two of the four new blog posts. I'll copy them into the project and update the article references to use them instead of the current placeholders.
+You've provided the final two hero images for the blog posts that were still on placeholders. I'll copy them into the project and update the article references.
 
 ## Image Mapping
 
 | Blog Post | Current Placeholder | New Image File |
 |-----------|-------------------|----------------|
-| What the 2026 Boating Market Means for Ontario Boat Buyers | `2026_Mercury_Buying_Pricing_Promotions_Hero.png` (shared with another post) | `What_the_boating_market_means_blog_hero_image.png` |
-| Tariffs, Trade, and Canadian Boating | `Financing_A_New_Boat_Motor_Hero.png` (shared with another post) | `Tariffs_and_Trade_Blog_Hero_Image.png` |
+| Why Boat Rentals and Shared Access Are Booming in 2026 | `Boaters_Trust_HBW.png` | `Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image.png` |
+| Why Mercury Dominates the Outboard Market | `Comparing_Motor_Families.png` | `Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image.png` |
 
 ## Steps
 
-1. **Copy both images** into `public/lovable-uploads/` (matching the existing pattern used by all other blog hero images)
+1. **Copy both images** into `public/lovable-uploads/` (same location as all other blog hero images)
 2. **Update `src/data/blogArticles.ts`** -- change the `image` field for both articles:
-   - Line ~6577: change from `2026_Mercury_Buying_Pricing_Promotions_Hero.png` to `What_the_boating_market_means_blog_hero_image.png`
-   - Line ~6700: change from `Financing_A_New_Boat_Motor_Hero.png` to `Tariffs_and_Trade_Blog_Hero_Image.png`
+   - Line 6850: change from `Boaters_Trust_HBW.png` to `Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image.png`
+   - Line 7031: change from `Comparing_Motor_Families.png` to `Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image.png`
 
-No other files need changes -- the blog index, article pages, RSS feed, and sitemap all pull from the same `blogArticles` array automatically.
+No other files need changes. After this, all 4 new blog posts will have their real hero images.
 
-Still waiting on the other two images (Boat Rentals and Why Mercury Dominates) -- those will stay on their current placeholders until you send them.
