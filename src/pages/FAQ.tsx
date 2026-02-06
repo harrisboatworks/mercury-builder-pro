@@ -104,7 +104,7 @@ export default function FAQ() {
           className="sticky top-16 z-30 bg-background/95 backdrop-blur-sm border-b border-border"
         >
           <div className="container mx-auto px-4">
-            <div className="flex gap-2 py-3 overflow-x-auto scrollbar-hide">
+            <div className="flex flex-nowrap gap-1.5 md:gap-2 py-2 md:py-3 overflow-x-auto scrollbar-hide min-w-0">
               {faqCategories.map(cat => {
                 const Icon = cat.icon;
                 const isActive = activeSection === cat.id;
@@ -114,13 +114,13 @@ export default function FAQ() {
                     data-category={cat.id}
                     onClick={() => scrollToSection(cat.id)}
                     className={cn(
-                      'flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors shrink-0',
+                      'flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition-colors shrink-0',
                       isActive
                         ? 'bg-primary text-primary-foreground shadow-sm'
                         : 'bg-muted/60 text-muted-foreground hover:bg-muted hover:text-foreground'
                     )}
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon className="h-3.5 w-3.5 md:h-4 md:w-4" />
                     {cat.title}
                   </button>
                 );
