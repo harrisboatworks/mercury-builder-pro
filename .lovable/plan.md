@@ -1,48 +1,70 @@
 
 
-# Fix Missing Blog Post Images
+# Add 4 New Blog Posts (Published Today)
 
-## Problem
+## Overview
 
-Two currently-published blog posts show broken images because they reference `.jpg` placeholder filenames that don't exist in `public/lovable-uploads/`. This is not related to the domain change -- these files were never uploaded. Many future scheduled articles also reuse these same phantom filenames.
+Add the four long-form blog posts from the uploaded markdown file to `src/data/blogArticles.ts`, all published immediately with today's date (2026-02-06). Images will use existing thematically-appropriate placeholders for now (the BlogCard fallback will protect against any issues). You said you'll provide the real hero images afterward.
 
-**Broken now (published):**
-- "Mercury 75 vs 90 vs 115" (Jan 26) points to `mercury-comparison.jpg` -- does not exist
-- "Ontario Cottage Owner's Guide" (Feb 2) points to `repower-hero.jpg` -- does not exist
+## The 4 New Articles
 
-**Broken in the future (scheduled):**
-- 12+ upcoming articles reuse `mercury-comparison.jpg`, `mercury-service.jpg`, `mercury-fishing.jpg`, and `repower-hero.jpg`
+| # | Title | Slug | Category | Est. Read Time |
+|---|-------|------|----------|---------------|
+| 4 | What the 2026 Boating Market Means for Ontario Boat Buyers | `2026-boating-market-ontario-boat-buyers` | Market Insight | 10 min |
+| 5 | Tariffs, Trade, and Canadian Boating -- What Harris Boat Works Customers Should Know in 2026 | `tariffs-trade-canadian-boating-2026` | Market Insight | 12 min |
+| 6 | Why Boat Rentals and Shared Access Are Booming in 2026 -- And How Harris Boat Works Gets You on the Water | `boat-rentals-shared-access-booming-2026` | Lifestyle | 10 min |
+| 7 | Why Mercury Dominates the Outboard Market -- And Why Harris Boat Works Chose Them | `why-mercury-dominates-outboard-market` | Buying Guide | 12 min |
 
-## Fix
+## Temporary Placeholder Images
 
-### 1. Reassign the two live articles to existing images
+These are existing images that thematically match each post. They'll be swapped for the real hero images once you provide them:
 
-Swap the missing `.jpg` references to real `.png` images that already exist and thematically match:
+| Article | Placeholder Image |
+|---------|-------------------|
+| 2026 Boating Market | `2026_Mercury_Buying_Pricing_Promotions_Hero.png` |
+| Tariffs & Trade | `Financing_A_New_Boat_Motor_Hero.png` |
+| Boat Rentals | `Boaters_Trust_HBW.png` |
+| Mercury Dominates | `Comparing_Motor_Families.png` |
 
-| Article | Old (missing) | New (exists) |
-|---|---|---|
-| Mercury 75 vs 90 vs 115 | `mercury-comparison.jpg` | `Comparing_Motor_Families.png` |
-| Ontario Cottage Owner's Guide: Repower | `repower-hero.jpg` | `Boat_Repowering_101_Hero.png` |
+## Content Cleanup
 
-### 2. Add a fallback image to BlogCard
+Each article will be cleaned up from the raw markdown:
 
-Update `src/components/blog/BlogCard.tsx` to handle broken images gracefully. If the `<img>` tag fails to load, show a branded fallback (Mercury red gradient with the Harris Boat Works name) instead of a broken icon. This prevents future scheduled articles from looking broken if their hero images haven't been uploaded yet.
+- Strip all footnote references (e.g. `[^1]`, `[^2]`) since the blog renderer doesn't support them
+- Remove the "Harris Boat Works | Gores Landing" signature blocks at the bottom (already handled by site footer)
+- Replace `harrisboatworks.ca` references with internal links where appropriate (e.g. `/quote/motor-selection`, `/blog/...`)
+- Convert section headers to match existing article style (H2/H3 hierarchy)
+- Preserve all data tables, bullet lists, and structured content
 
-### 3. Bulk-replace future placeholder references
+## Per-Article Details
 
-Replace all remaining phantom `.jpg` references across the scheduled articles with thematically appropriate existing `.png` images:
+### Article 4: 2026 Boating Market
+- **Keywords**: 2026 boating market, ontario boat buying, boat market forecast, luxury tax boats canada, boat dealer inventory, used boat market
+- **FAQs**: Market stabilization outlook, luxury tax repeal impact, best time to buy in 2026, pre-owned vs new boat value
+- Internal links to quote builder and repower guide
 
-| Placeholder | Replacement |
-|---|---|
-| `mercury-comparison.jpg` (4 articles) | `Comparing_Motor_Families.png` |
-| `mercury-service.jpg` (5 articles) | `Mercury_Maintenance_Schedule.png` |
-| `mercury-fishing.jpg` (2 articles) | `Best_Mercury_Outboard_Rice_Lake_Fishing.png` |
-| `repower-hero.jpg` (1 article) | `Boat_Repowering_101_Hero.png` |
+### Article 5: Tariffs, Trade, and Canadian Boating
+- **Keywords**: tariffs boating canada, CUSMA boating, mercury outboard tariff, canada us trade boats, boat prices tariffs 2026
+- **FAQs**: CUSMA review impact, Mercury pricing changes, Canadian-built vs US boats, practical buying timing
+- Internal links to quote builder
 
-This ensures every article has a working image today, while the fallback handler acts as a safety net for any future posts added without images.
+### Article 6: Boat Rentals and Shared Access
+- **Keywords**: boat rental rice lake, boat rental market 2026, boat club vs ownership, rice lake boat rental, harris boat works rentals
+- **FAQs**: Rental vs ownership cost, what's included in rental, rental-to-ownership path, Rice Lake fishing species
+- Internal links to rentals and quote builder
 
-## Files Changed
+### Article 7: Why Mercury Dominates
+- **Keywords**: mercury marine market share, best outboard brand, mercury vs yamaha, mercury verado v12, mercury innovation, mercury prokicker
+- **FAQs**: Mercury vs competitors, Verado V12 features, SmartCraft benefits, why dealers choose Mercury
+- Internal links to ProKicker article, motor families comparison, quote builder
 
-- **`src/data/blogArticles.ts`** -- Replace all 12+ phantom `.jpg` image references with existing `.png` files
-- **`src/components/blog/BlogCard.tsx`** -- Add `onError` fallback so broken images show a branded placeholder instead of a broken icon
+## Technical Details
+
+### File Changed
+- **`src/data/blogArticles.ts`** -- Add 4 new article entries to the `blogArticles` array, placed right after the ProKicker article (the most recent published article). All 4 will have `publishDate: '2026-02-06'` so they appear immediately.
+
+### No Other Files Need Changes
+- BlogCard already has the fallback image handler
+- BlogArticle page renders markdown content the same way for all articles
+- RSS feed, sitemap, and admin dashboard automatically pick up new articles from the array
 
