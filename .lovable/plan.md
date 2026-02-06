@@ -1,124 +1,44 @@
 
-# Mercury Outboards FAQ Page
 
-## Overview
+# Fix: Mobile FAQ Category Navigation
 
-A dedicated, comprehensive FAQ page at `/faq` that aggregates the best questions and answers from across the entire site -- blog articles, repower page, about page, AI knowledge base, and the uploaded Mercury FAQ reference. The page will be organized by topic category, optimized for both human buyers and AI search engines with rich schema.org markup, and styled consistently with the existing site design.
+## Problem
 
-## Content Strategy
+On mobile, the 8 category navigation buttons are rendering as full-width, vertically-stacked cards that consume the entire screen. Each card shows the icon above the category name, taking up massive vertical space. When a category is tapped, the page scrolls behind this wall of cards but the actual FAQ content is hidden.
 
-The FAQ page will be organized into **8 topic categories**, curating the strongest questions from existing site content and supplementing with new questions from the uploaded Mercury reference file. Each category targets a distinct buyer intent:
+## Root Cause
 
-1. **Choosing the Right Motor** -- HP sizing, motor families, boat matching
-2. **Repowering Your Boat** -- signs, costs, process, timeline
-3. **Maintenance and Service** -- seasonal care, service schedules, DIY vs pro
-4. **New Motor Ownership** -- break-in, first oil change, warranty registration
-5. **Warranty and Protection** -- coverage, extended options, what's covered
-6. **Fuel, Operation and Safety** -- fuel types, ethanol, flushing, storage
-7. **Financing and Pricing** -- payment options, deposit info, quote builder
-8. **About Harris Boat Works** -- location, credentials, service area, hours
+The `flex` container with `overflow-x-auto` and `shrink-0` on each button should create a horizontal scroll row, but on narrow mobile viewports each button stretches to fill the container width because there is no explicit `flex-nowrap` constraint and no `max-width` or size constraint on individual buttons. The buttons end up reflowing vertically.
 
-Each category will contain 4-8 curated questions. Total target: approximately 45-55 high-quality Q&A pairs. Every answer will be written from Harris Boat Works' perspective (first-person dealer voice), referencing Rice Lake, the Kawarthas, and local expertise where appropriate.
+## Solution
 
-Content will adhere to company knowledge rules:
-- Founded 1947, Mercury dealer since 1965, 79 years in business
-- Use "lake test" not "sea trial"
-- No fabricated stats or specific booking percentages
-- Pricing from existing published content only
+Redesign the category navigation to work properly on mobile by:
 
-## New Files
+1. **On mobile (below `md`)**: Show a compact, single-row, horizontally-scrollable chip bar with small pill-shaped buttons. Each chip shows the icon next to the text (inline), is compact, and the whole row scrolls horizontally with hidden scrollbar.
 
-### 1. `src/data/faqData.ts`
-Central FAQ data file containing all questions organized by category. Each category has:
-- `id` (slug for anchor links)
-- `title` (display name)
-- `icon` (Lucide icon name)
-- `description` (one-line summary)
-- `items[]` array of `{ question, answer }` pairs
+2. **On desktop (above `md`)**: Keep the current horizontal chip layout, which already works fine.
 
-This separates data from presentation and allows reuse by the SEO component, the page, and potentially the AI chatbot knowledge base.
+3. **Reduce the sticky nav height** so it doesn't obscure content when a category is tapped.
 
-### 2. `src/pages/FAQ.tsx`
-The main FAQ page featuring:
-- `LuxuryHeader` and `SiteFooter` (matching all other pages)
-- Hero section with page title and description
-- Category navigation bar (horizontal scroll on mobile, grid on desktop) with icon chips that smooth-scroll to sections
-- Category sections, each with its own heading, description, and accordion group
-- Internal cross-links to related pages (quote builder, repower, blog articles, finance calculator)
-- CTA section at the bottom (matching the pattern from Blog.tsx and About.tsx)
-- Breadcrumb navigation
+## Technical Changes
 
-### 3. `src/components/seo/FAQPageSEO.tsx`
-SEO component with:
-- `FAQPage` schema.org markup containing ALL questions (this is the primary AI search optimization -- a single page with comprehensive FAQ schema)
-- `BreadcrumbList` schema
-- `WebPage` schema with speakable specification (matching the blog's AI search optimization strategy)
-- Canonical URL using `SITE_URL`
-- Open Graph and Twitter meta tags
-- Keywords targeting Mercury FAQ search intent
+### File: `src/pages/FAQ.tsx`
 
-## Modified Files
+**Category Navigation Section (lines 100-130)**
 
-### 4. `src/App.tsx`
-- Add lazy import for the new FAQ page
-- Add route: `<Route path="/faq" element={<FAQ />} />`
+Update the chip container and button styles:
 
-### 5. `src/components/ui/site-footer.tsx`
-- Add "FAQ" link to the `navigationLinks` array (between "Blog" and "About")
+- Add `flex-nowrap` explicitly to the flex container to prevent wrapping on any viewport
+- Set a mobile-optimized size for each chip: smaller padding (`px-3 py-1.5`), smaller text (`text-xs`), and smaller icon (`h-3.5 w-3.5`) on mobile
+- Use responsive classes: `text-xs md:text-sm`, `px-3 md:px-4`, `py-1.5 md:py-2`, `gap-1.5 md:gap-2`
+- Add `min-w-0` to the container to allow proper overflow behavior
+- Reduce nav padding on mobile from `py-3` to `py-2`
 
-### 6. `src/components/ui/hamburger-menu.tsx`
-- Add "FAQ" link to the mobile navigation menu
+**Scroll offset (line 43)**
 
-## Technical Details
+Adjust the scroll offset to account for the now-compact sticky nav height (reduce from 120px to a responsive value or keep 120px which covers header + nav).
 
-### Page Layout Structure
+### Expected Result
 
-```text
-+------------------------------------------+
-|  LuxuryHeader                            |
-+------------------------------------------+
-|  Breadcrumb: Home > FAQ                  |
-+------------------------------------------+
-|  Hero: "Mercury Outboard FAQ"            |
-|  Subtitle + search-friendly description  |
-+------------------------------------------+
-|  Category Nav Bar (scrollable chips)     |
-|  [Motor] [Repower] [Maintenance] ...     |
-+------------------------------------------+
-|  Section: Choosing the Right Motor       |
-|  +------------------------------------+  |
-|  | Accordion Q&A items                |  |
-|  +------------------------------------+  |
-|                                          |
-|  Section: Repowering Your Boat           |
-|  +------------------------------------+  |
-|  | Accordion Q&A items                |  |
-|  +------------------------------------+  |
-|  ...                                     |
-+------------------------------------------+
-|  CTA: "Ready to Find Your Motor?"        |
-|  [Browse Motors] [Contact Us]            |
-+------------------------------------------+
-|  SiteFooter                              |
-+------------------------------------------+
-```
+The category navigation becomes a compact, horizontally-scrollable chip bar on mobile (similar to filter pills on Google Search or food delivery apps). Tapping a chip smoothly scrolls to the correct FAQ section, which is now fully visible below the compact nav bar. The entire FAQ content is accessible without the nav consuming the screen.
 
-### SEO and AI Search Optimization
-
-- **FAQPage schema** with every Q&A pair -- this is the single most impactful structured data for AI search engines (Google, Perplexity, ChatGPT search)
-- **Speakable schema** on the page title and first description paragraph for voice assistant compatibility
-- **Anchor links** for each category section (e.g., `/faq#repowering`) enabling direct deep links
-- **Semantic HTML5** landmarks: `<main>`, `<section>`, `<nav>`, proper heading hierarchy (h1 > h2 > h3)
-- **Keyword-rich** meta description targeting "Mercury outboard FAQ", "Mercury motor questions", "boat motor FAQ Ontario"
-- **Internal linking** within answers to relevant pages (/quote, /repower, /blog/*, /finance-calculator)
-
-### Accordion Pattern
-
-Will use the existing `@radix-ui/react-accordion` components (already used on Repower, About, and Blog pages) with the same styling conventions:
-- `type="single"` with `collapsible` for one-at-a-time expand
-- Rounded border cards with hover state
-- Open state background tint (`data-[state=open]:bg-stone-50`)
-
-### Category Navigation
-
-A sticky-ish horizontal chip bar (like a filter bar) that uses `scrollIntoView({ behavior: 'smooth' })` when clicked. Each chip shows the category icon and name. Active state highlights the current section using an Intersection Observer for scroll-spy behavior.
