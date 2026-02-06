@@ -7177,6 +7177,374 @@ Whether you're repowering an older boat, spec'ing a new Legend package, [adding 
         answer: 'After decades of selling and servicing outboards, Mercury consistently delivers reliability, innovation, and strong parts/support infrastructure in Ontario. Their full HP range covers every Rice Lake need, and our techs know the engines inside and out — meaning better service and fewer headaches for our customers.'
       }
     ]
+  },
+
+  // ============================================
+  // BATCH 3: Published 2026-02-06
+  // ============================================
+
+  {
+    slug: 'mercury-2026-outboard-lineup-ontario',
+    title: "Inside Mercury's 2026 Outboard Lineup — What Actually Matters for Ontario Boaters",
+    description: "Mercury's 2026 outboard lineup runs from tiny portables to fire-breathing V12s and advanced electric Avator motors. Here's what really matters for Harris Boat Works customers on Rice Lake.",
+    image: '/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-02-06',
+    dateModified: '2026-02-06',
+    publishDate: '2026-02-06',
+    category: 'Buying Guide',
+    readTime: '10 min read',
+    keywords: ['mercury 2026 lineup', 'mercury outboard models', 'mercury fourstroke 2026', 'mercury verado v10', 'avator electric outboard', 'mercury outboard ontario', 'rice lake outboard motor', 'mercury dealer ontario'],
+    content: `If you've glanced at any 2026 outboard "lineup" videos or articles, you've probably seen a blur of model names, horsepower numbers, and buzzwords. It's exciting, but it can also be overwhelming. The truth is, most Ontario boaters don't need 808 horsepower or a 40-foot centre console. You need an engine that starts every time, sips fuel, and matches how you actually use Rice Lake.
+
+Mercury's 2026 lineup has something for every kind of boater, from portable four-strokes to the latest V10 Verado models and expanding Avator electric range. Here's a clear, Harris Boat Works-style breakdown of what matters for you.
+
+## The Big Picture: How Mercury Organizes Its Lineup
+
+Mercury's engines fall into a few key families:
+
+- **Portable and mid-range FourStroke outboards:** 2.5–150 HP
+- **High-output FourStroke / Pro XS performance models:** for bass and multi-species fishing
+- **SeaPro commercial duty models:** for workboats and high-use situations
+- **Verado V6, V8, V10, V12:** premium smooth, quiet, high-tech outboards from 175–600 HP
+- **Avator electric outboards:** low-voltage, quiet, emission-free electric motors
+
+For Rice Lake and most Ontario inland boating, the sweet spots are:
+
+- 9.9–115 HP FourStroke / Pro XS
+- 150 HP FourStroke or Verado on larger fishing and pontoon rigs
+- Avator electric for small car-toppers, tenders, and restricted waters
+
+The wild offshore stuff is fun to look at, but you don't need a V12 to fish walleye off Gores Landing.
+
+## Portable to Mid-Range FourStroke: The Workhorses of Rice Lake
+
+Mercury's **portable and mid-range FourStroke** engines cover 2.5–150 HP. They're the backbone of what we rig and service at Harris Boat Works.
+
+Key traits:
+
+- **Lightweight, easy to handle:** Modern 4-stroke 9.9s and 15s are built to be carried and mounted by one person.
+- **Efficient and quiet:** Compared to older carbureted motors, today's EFI FourStrokes are smoother, quieter, and use noticeably less fuel.
+- **Clean running:** Fully meets current emissions standards, with less smoke and smell than old 2-strokes.
+
+For Rice Lake use cases:
+
+- **9.9–15 HP**: Great for small car-toppers, jon boats, and as kicker/trolling motors on bigger rigs.
+- **25–40 HP**: Ideal for 14–16 ft aluminum fishing boats.
+- **60–115 HP**: Common on mid-size fishing boats and pontoons.
+
+Mercury has also focused on **battery-free EFI** in smaller engines and improved starting across the range, so you're not fighting a finicky motor at the dock.
+
+## V10 Verado 350–425 HP: Overkill Here, but Worth Knowing
+
+In 2025, Mercury expanded its **V10 Verado** family with an all-new **425 HP** outboard and enhanced **350 HP** model. That's more than most Rice Lake boaters will ever bolt on, but it's still useful to understand what it represents:
+
+- **Faster acceleration:** Mercury notes the updated 350 HP is about 3 seconds quicker 0–50 mph vs. the engine it replaced.
+- **Lighter weight:** The new 425 HP is about 254 pounds lighter than comparable high-horsepower competitors, improving performance and efficiency.
+- **Class-leading alternator:** A 150-amp alternator supports the electronics-heavy boats of today.
+- **Quieter operation:** Mercury calls these the quietest in their class, with significantly lower cruise noise than leading competitors.
+
+You probably won't see a V10 on Rice Lake, but the same technologies (quiet running, strong alternators, smart fuel calibration) trickle down through the FourStroke lineup you *do* use.
+
+## Avator Electric: Mercury's Growing Electric Family
+
+Mercury's **Avator** sub-brand focuses on low-voltage electric outboards. The family now includes:
+
+- Avator 7.5e (about 1 HP equivalent)
+- Avator 20e and 35e (roughly 5–10 HP equivalents)
+- New higher-power concepts previewed at CES and shows, intended to push into 15 HP-class territory and small pontoons.
+
+Key features:
+
+- **Transverse flux motor technology**: More torque per pound than conventional designs.
+- **Swappable batteries**: Modular packs you can pop in and out, with some models allowing up to four packs in parallel for extended range.
+- **Digital displays and controls**: Simple, colour displays and ergonomic tillers.
+- **SmartCraft integration**: Electric motors still talk to Mercury's broader digital ecosystem.
+
+Real-world testing, such as Mercury's 13 ft Veer V13 with Avator 7.5e, shows around 60 minutes / 5 miles at full throttle or up to 19 hours / 34 miles at 25% throttle on a 1 kWh pack. For Rice Lake, Avator is ideal for:
+
+- Small car-toppers or car-topped fishing skiffs on quiet bays.
+- Short-range cottage runabouts where charging is easy.
+- Eco-sensitive or electric-only waters you might visit beyond Rice Lake.
+
+Want a deeper dive on Avator? Read our full guide: [Mercury Avator & the Future of Electric Boating in Ontario](/blog/mercury-avator-electric-boating-ontario).
+
+## The "Big Announcement" to Start 2026
+
+Early 2026 saw another Mercury teaser: a "big announcement" around its evolving high-horsepower and digital ecosystem, highlighted in January content. While not every detail is finalized, the themes are clear:
+
+- Tightening integration between engines, digital controls, and onboard power management.
+- Continued expansion of electric and hybrid-adjacent systems.
+- Refinements to engines across the lineup rather than just headline-grabbing flagships.
+
+For a Harris Boat Works customer, the takeaway is simple: Mercury isn't just adding one new motor; it's steadily making **every** step on the horsepower ladder more refined, more connected, and easier to live with.
+
+## What Matters Specifically for Harris Boat Works Customers
+
+Looking at 2026 from the Rice Lake shoreline, here's how we'd map Mercury's lineup:
+
+- **Best all-around choices for 14–16 ft fishing boats:** 25–60 HP FourStroke.
+- **Ideal for 16–18 ft fishing boats and smaller pontoons:** 60–115 HP FourStroke or Pro XS depending on how performance-focused you are.
+- **Popular for larger pontoons and multi-purpose boats:** 115–150 HP FourStroke or Verado where extra refinement is worth it.
+- **Serious trolling setups:** A main FourStroke paired with a [ProKicker 9.9–15 HP](/blog/mercury-prokicker-rice-lake-fishing-guide).
+- **Niche electric applications:** Avator on small utility boats, car-toppers, or in restricted waters.
+
+The absolute top end (V10, V12, 808 HP concepts) might not land on Rice Lake, but the same engineering culture that produced those engines is baked into the 25–150 HP range we rig every day.
+
+If you're thinking about a new engine for 2026, [talk to us](/contact) about how you actually use your boat — trolling, cruising, family, fishing — and we'll map you to the right corner of Mercury's lineup. Or [explore motors and pricing in our quote builder](/quote/motor-selection).`,
+    faqs: [
+      {
+        question: 'What is the best Mercury motor for a Rice Lake fishing boat?',
+        answer: 'For most 14–18 ft fishing boats on Rice Lake, a Mercury FourStroke in the 25–115 HP range is ideal. The exact horsepower depends on your boat size, weight, and whether you prioritize trolling, cruising, or performance. Adding a ProKicker for dedicated trolling is a popular setup. Use our quote builder to explore options for your specific boat.'
+      },
+      {
+        question: 'Is the Mercury V10 Verado relevant for Ontario inland boating?',
+        answer: 'The V10 Verado (350–425 HP) is designed for larger offshore and performance boats. Most Rice Lake boaters won\'t need that much power. However, the technologies developed for the V10 — quieter operation, stronger alternators, smarter fuel calibration — trickle down into the smaller FourStroke engines that are popular on Ontario inland waters.'
+      },
+      {
+        question: 'Is the Mercury Avator suitable for Rice Lake?',
+        answer: 'The Avator electric outboard is well-suited for small car-toppers, cottage runabouts, and short-range trips on Rice Lake. It\'s near-silent, zero-emission, and very low maintenance. It\'s not yet a replacement for a full-size gas outboard on larger fishing boats, but it\'s a compelling option for specific use cases — especially quiet bays and eco-sensitive areas.'
+      },
+      {
+        question: 'How do I choose from Mercury\'s 2026 lineup?',
+        answer: 'Start with how you use your boat: what size, what activities (fishing, cruising, family outings), and how far you typically travel. Match that to the FourStroke range (2.5–150 HP) for most inland use, or consider Avator electric for small-boat and short-range applications. Our team at Harris Boat Works can help you narrow down the right fit based on your specific boat and habits.'
+      }
+    ]
+  },
+
+  {
+    slug: 'mercury-avator-electric-boating-ontario',
+    title: 'Mercury Avator & the Future of Electric Boating in Ontario',
+    description: "Mercury's Avator electric outboards are quietly changing what small-boat and cottage boating can look like. Here's how Avator fits into the future of boating for Harris Boat Works customers.",
+    image: '/lovable-uploads/Mercury_Avator_and_The_Future_Blog_Post_Hero_Image.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-02-06',
+    dateModified: '2026-02-06',
+    publishDate: '2026-02-06',
+    category: 'Buying Guide',
+    readTime: '10 min read',
+    keywords: ['mercury avator', 'electric outboard motor', 'avator electric boat', 'electric boating ontario', 'mercury electric motor', 'cottage boat electric', 'rice lake electric outboard', 'avator range runtime'],
+    content: `Electric propulsion is creeping into more corners of the marine world every year. It started with trolling motors, then kayaks and small tenders. Now we're seeing serious outboard manufacturers like Mercury build full electric families designed for real-world use — not just for trade show stands.
+
+Mercury's **Avator** line is the company's low-voltage electric outboard brand, and it's expanding fast. While we don't expect Rice Lake to go all-electric overnight, Avator already makes sense for some Ontario boaters, and it gives us a glimpse of where the industry is headed.
+
+## What Is Mercury Avator?
+
+Avator is Mercury's electric propulsion family — similar to how Verado is its premium gas outboard brand. Mercury describes it as a new boating experience built around **electrification, intuitive controls, and smart integration**.
+
+Key points:
+
+- Designed as a **complete system**: motor, battery, charger, controls, and displays designed to work together.
+- Focused on **low-voltage applications** initially — think small boats, tenders, and short-range use.
+- Backed by Mercury's existing dealer and service infrastructure, not an experimental side project.
+
+## The Current Avator Lineup
+
+As of 2026, publicly detailed Avator models include:
+
+- **Avator 7.5e**: roughly equivalent thrust to a 3.5–4 HP gas outboard, with 750 W output.
+- **Avator 20e and 35e**: electric systems designed to compete with approximately 5–10 HP gas outboards.
+- Higher-power Avator concepts shown at CES that push into 1–15 HP-equivalent range and can push small aluminum fishing boats, compact pontoons, and small fibreglass runabouts.
+
+Each uses a transverse flux electric motor and proprietary battery systems.
+
+## How Far and How Long Can You Run?
+
+Mercury and independent testers have published early runtime and range examples. On a 13 ft Veer V13 (about 382 lb hull weight) with an Avator 7.5e:
+
+- About **60 minutes or 5 miles at full throttle** on a single 1 kWh battery.
+- Up to **19 hours or 34 miles at 25% throttle**, ideal for slow exploring or fishing.
+
+Higher-power Avator models allow connecting multiple battery packs (up to four 2.3 kWh packs in some configurations), extending run time and range significantly.
+
+For short-range cottage use — running from the dock to a nearby bay and back — that's more than enough for many days on the water. For all-day trolling on Rice Lake, it's not yet a direct replacement for a gas [ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide), but the tech is moving quickly.
+
+## Why Avator Might Make Sense for Some Rice Lake Boaters
+
+Electric propulsion has some very specific advantages:
+
+- **Near-silent operation**: Great for early morning and evening trips when you want peace and quiet, or when you're sneaking along a shoreline.
+- **No fuel smell or exhaust**: Especially appealing for families and cottagers.
+- **Very low maintenance**: No oil changes, fuel filters, or winterization the way you know it with gas engines.
+- **Instant torque**: Electric motors deliver smooth, immediate thrust from standstill.
+
+On Rice Lake and nearby waters, Avator makes particular sense for:
+
+- **Small car-topper boats** where range requirements are modest.
+- **Cottage runabouts** that make short round-trips, especially where noise is a concern.
+- **Electric-restricted or quiet lakes** you might visit in the region beyond Rice Lake.
+- **Owners who want a second, quiet boat** for evening cruises or fishing close to the cottage.
+
+It's not yet a replacement for a full-size main outboard on most Rice Lake boats, but it's a compelling additional option.
+
+## How Avator Fits into Mercury's Bigger Picture
+
+Mercury isn't treating Avator as a stand-alone novelty. It's tightly woven into their broader digital strategy:
+
+- Avator controls and displays share a design language and interface philosophy with the rest of Mercury's SmartCraft/VesselView system.
+- Some Avator setups are expected to interface with broader onboard power systems like Brunswick's Fathom e-Power auxiliary systems.
+- The brand's presence at major shows (CES, Miami, etc.) and ongoing expansion into higher power ranges signal long-term commitment.
+
+For a marina like Harris Boat Works, that matters. We don't want to sell you into a dead-end technology; we want to support systems that will be around for years and can be serviced and upgraded as needed.
+
+## Avator vs. Trolling Motor vs. Small FourStroke
+
+If you're thinking about a small boat power solution, the choice may be between:
+
+- A **traditional trolling motor** (12V/24V)
+- A **small Mercury FourStroke** (2.5–9.9 HP)
+- An **Avator electric outboard**
+
+The right choice depends on:
+
+- How far you need to go
+- How long you'll be out
+- How fast you want to travel
+- Where you can charge batteries
+- How important silence and zero local emissions are to you
+
+Right now, for Rice Lake:
+
+- If you're pushing a typical 16–18 ft fishing boat or pontoon for full-day trips, a **gas FourStroke + trolling motor** remains the most practical.
+- If you're using a small, light boat near the cottage and can charge easily, **Avator** is a serious option and will only get stronger as the line grows.
+
+For a full overview of where Avator sits in Mercury's 2026 range, see our [2026 Outboard Lineup Guide](/blog/mercury-2026-outboard-lineup-ontario).
+
+## Our Take as Harris Boat Works
+
+We're excited about Avator, but also realistic.
+
+- **Short term:** Avator is a smart solution for small boats and niche use cases.
+- **Medium term:** As power and energy density improve, we expect viable Avator options for more of the Rice Lake fleet.
+- **Long term:** Electric and hybrid systems will coexist with gas engines, not replace them overnight.
+
+If you're curious about whether an Avator fits your situation, [talk to us](/contact). We'll look at:
+
+- Your boat (or the boat you're considering)
+- How and where you use it
+- Your access to shore power and charging
+- Your expectations for speed and range
+
+Then we'll give you a frank recommendation on gas, electric, or a hybrid of both. You can also [explore motor options and pricing in our quote builder](/quote/motor-selection).`,
+    faqs: [
+      {
+        question: 'How far can a Mercury Avator go on a single charge?',
+        answer: 'On a 13 ft boat with the Avator 7.5e, expect about 60 minutes / 5 miles at full throttle or up to 19 hours / 34 miles at 25% throttle on a single 1 kWh battery. Higher-power models with multiple battery packs extend range significantly. Real-world range depends on boat weight, wind, current, and throttle use.'
+      },
+      {
+        question: 'Is an electric outboard practical for Rice Lake?',
+        answer: 'For small car-toppers, cottage runabouts, and short-range trips, yes — the Avator is very practical on Rice Lake. For full-day fishing on larger boats, a gas outboard with a trolling motor is still the most versatile option. The gap is closing as Avator models get more powerful and battery capacity increases.'
+      },
+      {
+        question: 'How does the Avator compare to a trolling motor?',
+        answer: 'Unlike a traditional trolling motor, the Avator is a complete propulsion system designed to be a boat\'s primary power source. It has more thrust, a proper tiller or remote setup, digital displays, and integrates with Mercury\'s SmartCraft ecosystem. A trolling motor is an auxiliary tool; an Avator replaces the main outboard on small boats.'
+      },
+      {
+        question: 'What maintenance does an Avator electric outboard need?',
+        answer: 'Much less than a gas engine. There are no oil changes, fuel filters, spark plugs, or fuel system winterization. Maintenance is primarily rinsing after use, checking electrical connections, and proper battery storage. Mercury backs Avator with their dealer service network for any issues.'
+      }
+    ]
+  },
+
+  {
+    slug: '2026-rice-lake-fishing-season-outlook',
+    title: '2026 Boating Season Preview: Rice Lake & Ontario Fishing Outlook',
+    description: "From walleye and muskie on Rice Lake to broader Ontario boating trends, here's what the 2026 season looks like — and how Harris Boat Works can help you get ready.",
+    image: '/lovable-uploads/2026_Rice_Lake_Fishing_Season_Blog_Post_Hero_Image.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-02-06',
+    dateModified: '2026-02-06',
+    publishDate: '2026-02-06',
+    category: 'Lifestyle',
+    readTime: '10 min read',
+    keywords: ['rice lake fishing 2026', 'ontario fishing season', 'rice lake walleye', 'rice lake muskie', 'boating season preview', 'kawartha fishing', 'ontario boating trends', 'rice lake bass fishing'],
+    content: `Every boating season feels a bit different. Water levels change, weather patterns shift, and the fishing can be a little better (or a little tougher) than last year. Layer on top of that a changing boat market and new engine technology, and it's fair to ask: what does 2026 look like for Rice Lake and Ontario boating?
+
+The short answer: a stable, opportunity-rich year with lots of reasons to be on the water — especially if you love fishing.
+
+## Rice Lake: Still One of Ontario's Most Productive Fisheries
+
+Rice Lake has been drawing anglers for more than 150 years. It's shallow, fertile, and full of structure — weedbeds, sandflats, and channels that create ideal feeding grounds for predator fish.
+
+Fish you can expect to target in 2026 include:
+
+- **Walleye (pickerel)**
+- **Muskie**
+- **Smallmouth and largemouth bass**
+- **Panfish** like perch, crappie, sunfish, and bluegill
+
+Local guides often note that Rice Lake has "more fish per acre than almost any other lake in Ontario," thanks to its fertility and forage base.
+
+## Seasonal Patterns to Watch
+
+While every year is different, long-standing patterns and recent observations give a good sense of what to expect:
+
+- **Spring (post-season opener for walleye and bass):** Walleye are often found along emerging weedlines and shallow flats, especially in the south end and off Gores Landing.
+- **Mid-summer:** Walleye commonly school in deeper channels in the 17–21 ft range off Gores Landing and the south end; slow trolling with worm harnesses and live bait rigs is a staple tactic. Muskie fishing picks up as water temps climb — trolling big crankbaits along deeper weed edges is productive.
+- **Late summer into fall:** Bass (both largemouth and smallmouth) hold on weed edges, rock/weed transitions, and around islands and shoals. Jigs, crankbaits, and topwaters all produce depending on conditions.
+
+Solunar and conditions-based forecasting tools suggest that in-season, peak activity periods often cluster around early morning and evening, especially on stable weather days.
+
+## Ontario Boating Participation: Still Strong
+
+On the broader Ontario/Canadian level:
+
+- Canada's recreational boating industry generates roughly **$13.9 billion** in annual economic impact and supports tens of thousands of jobs.
+- Post-COVID participation in boating and fishing remains high; people are still prioritizing outdoor and local recreation.
+- While new-boat sales normalized in 2024–2025, **the number of people getting on the water has stayed strong**, with rental, club, and shared access models helping fill gaps.
+
+For Rice Lake and the Kawartha region, that means you should expect:
+
+- Busy weekends with lots of cottage and day-trip traffic.
+- Increased demand for rentals and short-term access.
+- A healthy level of fishing pressure — but also plenty of fish to go around if you adjust and fish smart.
+
+## 2026: A Good Year to Upgrade or Dial In Your Rig
+
+Because the broader market has settled and inventory has normalized (as discussed in our [boating market outlook](/blog/boat-rentals-shared-access-booming-2026)), 2026 is a good time to:
+
+- **Repower:** Upgrade an older engine to a modern [Mercury FourStroke](/quote/motor-selection) or add a [ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) for more precise trolling.
+- **Refine electronics:** Leverage SmartCraft Connect and modern sonar to better map Rice Lake structure.
+- **Optimize for your primary species:**
+  - Walleye/muskie: focus on precise speed control and fuel-efficient trollers.
+  - Bass: ensure good positioning control and reliable starting for run-and-gun days.
+
+Given Rice Lake's weedbeds and channels, we often recommend:
+
+- Reliable primary outboard (40–150 HP range)
+- Trolling motor with good thrust and weed-handling
+- Optional kicker for serious trolling sets
+
+## How Harris Boat Works Can Help You Own 2026 on Rice Lake
+
+For the 2026 season, here's how we can make your life easier:
+
+- **Boat setup or upgrade:** We can help you choose a Legend package or optimize your current boat for how you actually fish and boat on Rice Lake.
+- **Mercury engine advice:** From choosing horsepower to deciding between FourStroke, Pro XS, ProKicker, or even exploring [Avator](/blog/mercury-avator-electric-boating-ontario) for specific use cases.
+- **Service and prep:** Spring commissioning, mid-season service, and fall winterizing to keep your equipment reliable all season.
+- **Rentals:** If you're not ready to own, you can still have a full Rice Lake season via our rental fleet — and use that experience to decide what you'd buy later.
+
+2026 looks like a season with solid fishing, stable market conditions, and a lot of flexibility in how you get on the water — owning, renting, or something in between.
+
+If you want to tune your setup for this year's conditions, or just nail down a plan for opening day, [come see us](/contact) in Gores Landing, call **(905) 342-2153**, or [explore motors and pricing in our quote builder](/quote/motor-selection).`,
+    faqs: [
+      {
+        question: 'What fish species can you target on Rice Lake in 2026?',
+        answer: 'Rice Lake offers walleye (pickerel), muskie, smallmouth and largemouth bass, and panfish including perch, crappie, sunfish, and bluegill. The lake\'s shallow, fertile waters and abundant structure make it one of Ontario\'s most productive multi-species fisheries.'
+      },
+      {
+        question: 'What are the best seasonal fishing patterns on Rice Lake?',
+        answer: 'Spring walleye are found along emerging weedlines and shallow flats. Mid-summer walleye school in 17–21 ft channels off Gores Landing, and muskie fishing picks up along deeper weed edges. Late summer through fall is prime for bass on weed edges, rock transitions, and around islands. Early morning and evening typically produce the best activity.'
+      },
+      {
+        question: 'What motor setup do you recommend for fishing Rice Lake?',
+        answer: 'We recommend a reliable primary outboard in the 40–150 HP range depending on boat size, a trolling motor with good thrust and weed-handling capability, and an optional ProKicker for serious trolling sets. The specific horsepower depends on your boat — use our quote builder to explore options.'
+      },
+      {
+        question: 'Can I rent a boat for fishing Rice Lake?',
+        answer: 'Yes — Harris Boat Works offers rental boats so you can experience Rice Lake fishing without owning. Rentals are a great way to try different setups and figure out what you\'d want in your own rig before committing to a purchase.'
+      }
+    ]
   }
 ];
 
