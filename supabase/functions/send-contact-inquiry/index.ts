@@ -106,7 +106,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to customer
     const customerEmailResponse = await resend.emails.send({
-      from: "Harris Boat Works <info@harrisboatworks.ca>",
+      from: "Harris Boat Works <info@hbwsales.ca>",
       to: [inquiryData.email],
       subject: "We received your inquiry - Harris Boat Works",
       html: `
@@ -164,7 +164,7 @@ const handler = async (req: Request): Promise<Response> => {
     // Send notification to admin
     const adminSubject = `New ${inquiryData.inquiry_type} Inquiry${inquiryData.urgency_level === 'urgent' ? ' - URGENT' : ''}`;
     const adminEmailResponse = await resend.emails.send({
-      from: "Harris Boat Works <info@harrisboatworks.ca>",
+      from: "Harris Boat Works <info@hbwsales.ca>",
       to: ["info@harrisboatworks.ca"],
       subject: adminSubject,
       html: `
