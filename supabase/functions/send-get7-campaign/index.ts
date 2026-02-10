@@ -143,7 +143,7 @@ const sendEmail = async (to: string, subject: string, html: string) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Harris Boat Works <promotions@harrisboatworks.ca>",
+        from: "Harris Boat Works <promotions@hbwsales.ca>",
         to: [to],
         subject,
         html,

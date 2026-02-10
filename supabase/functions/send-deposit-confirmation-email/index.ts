@@ -354,7 +354,7 @@ serve(async (req) => {
     const emailHtml = createDepositConfirmationEmail(customerName, depositAmount, referenceNumber, motorInfo);
 
     const emailResponse = await resend.emails.send({
-      from: "Harris Boat Works <deposits@harrisboatworks.ca>",
+      from: "Harris Boat Works <deposits@hbwsales.ca>",
       to: [customerEmail],
       subject: `Deposit Confirmed - Ref ${referenceNumber}`,
       html: emailHtml,

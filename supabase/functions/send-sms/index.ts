@@ -92,7 +92,6 @@ serve(async (req) => {
         to_phone: formattedPhone,
         message: smsData.message,
         status: 'sent',
-        notification_id: responseData.sid,
       });
 
     if (logError) {
