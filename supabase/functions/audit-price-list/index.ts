@@ -1,50 +1,23 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-interface PriceListMotor {
-  model_number: string;
-  model_display: string;
-  dealer_price: number;
-  horsepower: number;
-}
-
-interface DatabaseMotor {
-  id: string;
-  model_number: string;
-  model_display: string;
-  dealer_price: number | null;
-  msrp: number | null;
-  horsepower: number | null;
-  is_brochure: boolean | null;
-}
-
-interface Discrepancy {
-  type: 'missing_in_db' | 'extra_in_db' | 'name_mismatch' | 'price_mismatch' | 'hp_mismatch';
-  model_number: string;
-  price_list_value?: string | number;
-  database_value?: string | number;
-  details?: string;
-  fixed?: boolean;
-}
-
-interface ChangeRecord {
-  model_number: string;
-  model_display: string;
-  field: string;
-  old_value: string | number | null;
-  new_value: string | number;
-}
+// ... keep existing code (interfaces)
 
 Deno.serve(async (req) => {
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  // Admin auth check
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;

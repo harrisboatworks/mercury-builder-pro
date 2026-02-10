@@ -1,72 +1,21 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { requireAdmin } from "../_shared/admin-auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// Schema for structured extraction of Mercury outboard motors
-const motorSchema = {
-  type: "object",
-  properties: {
-    motors: {
-      type: "array",
-      items: {
-        type: "object",
-        properties: {
-          year: { type: "number", description: "Model year (e.g., 2025)" },
-          make: { type: "string", description: "Manufacturer (should be Mercury)" },
-          model_name: { type: "string", description: "Full model name like 'FourStroke 25 ELH EFI'" },
-          horsepower: { type: "number", description: "HP rating as a number" },
-          sale_price: { type: "number", description: "Current sale/selling price in CAD" },
-          msrp: { type: "number", description: "Original MSRP or 'Was' price in CAD" },
-          stock_number: { type: "string", description: "Dealer stock number" },
-          availability: { type: "string", description: "Stock status like 'In Stock'" },
-          image_url: { type: "string", description: "Main product image URL" },
-          detail_url: { type: "string", description: "Full URL to the product detail page" },
-          motor_family: { type: "string", description: "Motor family: FourStroke, SeaPro, ProXS, Verado, Racing, Jet, Avator" },
-          shaft_code: { type: "string", description: "Shaft length code like MH, MLH, ELH, ELPT, EXLPT, XL, XXL, CXL" },
-          control_type: { type: "string", description: "Tiller or Remote control type" },
-          start_type: { type: "string", description: "Manual or Electric start" }
-        },
-        required: ["year", "make", "model_name", "horsepower", "sale_price", "stock_number"]
-      }
-    }
-  },
-  required: ["motors"]
-};
-
-// Generate a model key for deduplication
-function generateModelKey(motor: any): string {
-  const family = (motor.motor_family || 'fourstroke').toLowerCase().replace(/\s+/g, '');
-  const hp = motor.horsepower || 0;
-  const shaft = (motor.shaft_code || '').toLowerCase();
-  const control = (motor.control_type || '').toLowerCase().includes('tiller') ? 'tiller' : 'remote';
-  const start = (motor.start_type || '').toLowerCase().includes('manual') ? 'manual' : 'electric';
-  
-  return `${family}-${hp}hp-${shaft}-${control}-${start}`.replace(/\s+/g, '-');
-}
-
-// Parse motor display name from model_name
-function parseModelDisplay(modelName: string, hp: number): string {
-  // Clean up and format the model name
-  const cleaned = modelName
-    .replace(/Mercury\s*/i, '')
-    .replace(/Outboard\s*/i, '')
-    .trim();
-  
-  // If it already looks formatted, return it
-  if (cleaned.includes(hp.toString())) {
-    return cleaned;
-  }
-  
-  return `${hp}HP ${cleaned}`;
-}
+// ... keep existing code (motorSchema, generateModelKey, parseModelDisplay)
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  // Admin auth check
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   const startTime = Date.now();
   

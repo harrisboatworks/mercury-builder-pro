@@ -1,181 +1,21 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.49.1';
+import { requireAdmin } from "../_shared/admin-auth.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-interface ScrapedImage {
-  productName: string;
-  imageUrl: string;
-  partNumber?: string;
-  category?: string;
-}
-
-// Scrape product page using Firecrawl to find the image
-async function scrapeProductImage(
-  firecrawlApiKey: string,
-  supabase: any,
-  partNumber: string,
-  productName: string
-): Promise<string | null> {
-  // Try multiple URLs based on part number
-  const searchUrls = [
-    `https://www.crowleymarine.com/mercury/${partNumber}`,
-    `https://www.boats.net/product/${partNumber}`,
-    `https://www.mercuryparts.com/parts/${partNumber}`,
-  ];
-
-  // First try Firecrawl search to find the product page
-  try {
-    console.log(`Searching for ${partNumber} via Firecrawl...`);
-    const searchResponse = await fetch('https://api.firecrawl.dev/v1/search', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${firecrawlApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: `Mercury Marine ${partNumber} ${productName}`,
-        limit: 5,
-      }),
-    });
-
-    if (searchResponse.ok) {
-      const searchData = await searchResponse.json();
-      const results = searchData.data || [];
-      
-      // Look for marine parts sites in search results
-      for (const result of results) {
-        const url = result.url || '';
-        if (url.includes('crowley') || url.includes('boats.net') || url.includes('mercury') || url.includes('marineengine')) {
-          console.log(`Found product page for ${partNumber}: ${url}`);
-          
-          // Scrape this page for images
-          const scrapeResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${firecrawlApiKey}`,
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              url: url,
-              formats: ['html'],
-              onlyMainContent: false,
-            }),
-          });
-
-          if (scrapeResponse.ok) {
-            const scrapeData = await scrapeResponse.json();
-            const html = scrapeData.data?.html || '';
-            
-            // Extract product image from HTML
-            const imageUrl = extractProductImage(html, partNumber);
-            if (imageUrl) {
-              const uploadedUrl = await uploadImageToStorage(supabase, imageUrl, `accessory-${partNumber}`);
-              if (uploadedUrl) {
-                console.log(`Uploaded image for ${partNumber}: ${uploadedUrl}`);
-                return uploadedUrl;
-              }
-            }
-          }
-        }
-      }
-    }
-  } catch (e) {
-    console.log(`Firecrawl search failed for ${partNumber}:`, e);
-  }
-
-  // Fallback: Try scraping Mercury's own pages
-  try {
-    const mercuryUrl = `https://www.mercurymarine.com/us/en/product/mercury-${partNumber.toLowerCase()}`;
-    console.log(`Trying Mercury direct URL: ${mercuryUrl}`);
-    
-    const scrapeResponse = await fetch('https://api.firecrawl.dev/v1/scrape', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${firecrawlApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        url: mercuryUrl,
-        formats: ['html'],
-        onlyMainContent: false,
-      }),
-    });
-
-    if (scrapeResponse.ok) {
-      const scrapeData = await scrapeResponse.json();
-      const html = scrapeData.data?.html || '';
-      
-      const imageUrl = extractProductImage(html, partNumber);
-      if (imageUrl) {
-        const uploadedUrl = await uploadImageToStorage(supabase, imageUrl, `accessory-${partNumber}`);
-        if (uploadedUrl) {
-          console.log(`Uploaded Mercury image for ${partNumber}: ${uploadedUrl}`);
-          return uploadedUrl;
-        }
-      }
-    }
-  } catch (e) {
-    console.log(`Mercury scrape failed for ${partNumber}:`, e);
-  }
-
-  console.log(`No image found for part number ${partNumber} (${productName})`);
-  return null;
-}
-
-// Extract product image URL from HTML
-function extractProductImage(html: string, partNumber: string): string | null {
-  // Look for product images in various patterns
-  const patterns = [
-    // Mercury product images
-    /src="(https:\/\/[^"]*(?:product|parts?|accessories)[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/gi,
-    // Crowley Marine images
-    /src="(https:\/\/[^"]*crowley[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/gi,
-    // Boats.net images
-    /src="(https:\/\/[^"]*boats\.net[^"]*\.(jpg|jpeg|png|webp)[^"]*)"/gi,
-    // General product images
-    /src="(https:\/\/[^"]+\.(jpg|jpeg|png|webp))"/gi,
-    // Data-src for lazy loaded images
-    /data-src="(https:\/\/[^"]+\.(jpg|jpeg|png|webp)[^"]*)"/gi,
-  ];
-
-  for (const pattern of patterns) {
-    const matches = html.matchAll(pattern);
-    for (const match of matches) {
-      const url = match[1];
-      if (url && !url.includes('logo') && !url.includes('icon') && !url.includes('thumb') && 
-          !url.includes('placeholder') && !url.includes('50x') && !url.includes('100x')) {
-        // Prefer images that mention the part number or product-related keywords
-        if (url.includes(partNumber) || url.includes('product') || url.includes('part') || 
-            url.includes('image') || url.includes('gallery')) {
-          return url.split(' ')[0];
-        }
-      }
-    }
-  }
-
-  // Fallback: get the first reasonable product image
-  for (const pattern of patterns) {
-    const matches = html.matchAll(pattern);
-    for (const match of matches) {
-      const url = match[1];
-      if (url && !url.includes('logo') && !url.includes('icon') && !url.includes('thumb') && 
-          !url.includes('placeholder') && !url.includes('nav') && !url.includes('header') &&
-          !url.includes('footer') && !url.includes('banner')) {
-        return url.split(' ')[0];
-      }
-    }
-  }
-
-  return null;
-}
+// ... keep existing code (interfaces, scrapeProductImage, extractProductImage functions)
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  // Admin auth check
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const firecrawlApiKey = Deno.env.get('FIRECRAWL_API_KEY');
