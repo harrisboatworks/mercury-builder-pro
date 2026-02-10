@@ -83,8 +83,8 @@ ${notificationData.error_message}
       `;
 
       const emailResponse = await resend.emails.send({
-        from: "Mercury Sync <noreply@yourdomain.com>",
-        to: ["admin@yourdomain.com"], // Replace with actual admin email
+        from: "Mercury Sync <noreply@hbwsales.ca>",
+        to: ["info@harrisboatworks.ca"],
         subject: subject,
         html: emailBody,
       });
@@ -95,8 +95,8 @@ ${notificationData.error_message}
     // Send daily summary even for successful runs
     if (!notificationData.error_message && notificationData.motors_found > 0) {
       const summaryEmail = await resend.emails.send({
-        from: "Mercury Sync <noreply@yourdomain.com>",
-        to: ["admin@yourdomain.com"], // Replace with actual admin email
+        from: "Mercury Sync <noreply@hbwsales.ca>",
+        to: ["info@harrisboatworks.ca"],
         subject: `✅ Daily Mercury Inventory Sync Complete - ${new Date().toLocaleDateString()}`,
         html: `
           <h2>Daily Inventory Sync Summary</h2>

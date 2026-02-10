@@ -314,7 +314,7 @@ export function createEmailTemplate(content: string, previewText?: string): stri
 <body>
   <div class="email-container">
     <div class="header">
-      <a href="https://harrisboatworks.com" class="logo">Harris Boat Works</a>
+      <a href="https://mercuryrepower.ca" class="logo">Harris Boat Works</a>
     </div>
     <div class="content">
       ${content}
