@@ -101,6 +101,8 @@ const BlogUnsubscribe = lazy(() => import("./pages/BlogUnsubscribe"));
 const Compare = lazy(() => import("./pages/Compare"));
 const FAQ = lazy(() => import("./pages/FAQ"));
 const Terms = lazy(() => import("./pages/Terms"));
+const Privacy = lazy(() => import("./pages/Privacy"));
+const TikTokCallback = lazy(() => import("./pages/TikTokCallback"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
@@ -415,8 +417,12 @@ function AnimatedRoutes() {
         {/* FAQ Page */}
         <Route path="/faq" element={<FAQ />} />
         
-        {/* Terms & Conditions (direct URL only, not in nav) */}
+        {/* Terms & Conditions / Privacy (direct URL only, not in nav) */}
         <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
+        
+        {/* TikTok OAuth Callback */}
+        <Route path="/auth/tiktok/callback" element={<TikTokCallback />} />
         
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
