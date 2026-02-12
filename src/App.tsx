@@ -100,6 +100,7 @@ const RssFeed = lazy(() => import("./pages/RssFeed"));
 const BlogUnsubscribe = lazy(() => import("./pages/BlogUnsubscribe"));
 const Compare = lazy(() => import("./pages/Compare"));
 const FAQ = lazy(() => import("./pages/FAQ"));
+const Terms = lazy(() => import("./pages/Terms"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
@@ -413,6 +414,9 @@ function AnimatedRoutes() {
         
         {/* FAQ Page */}
         <Route path="/faq" element={<FAQ />} />
+        
+        {/* Terms & Conditions (direct URL only, not in nav) */}
+        <Route path="/terms" element={<Terms />} />
         
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
