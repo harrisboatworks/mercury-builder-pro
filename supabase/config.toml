@@ -207,3 +207,6 @@ verify_jwt = false
 [functions.auth-tiktok-callback]
 verify_jwt = false
 
+[functions.weekly-quote-report]
+verify_jwt = false
+
