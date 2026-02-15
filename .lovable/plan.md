@@ -1,66 +1,28 @@
 
+## Add "Copy Share Link" Button to Motor Cards
 
-# Weekly Quote Activity Report
+A small share button will be added to each motor card, right alongside the existing Compare, Voice Chat, and Ask buttons that appear on hover. Tapping it copies the shareable URL to your clipboard so you can paste it into a text or email to a customer.
 
-## What You'll Get
+### What It Looks Like
 
-Every Monday morning, you'll receive an SMS and/or email with a summary like:
+- A small circular button with a share/link icon, matching the style of the existing Compare button
+- Appears in the bottom-left button row on hover (desktop) or always visible (mobile)
+- On click: copies the link (e.g., `quote.harrisboatworks.ca/motors/fs-115-elpt-ct`) to clipboard and shows a toast confirmation: "Link copied!"
 
-```
-Weekly Quote Report (Feb 8 - Feb 15)
-- 12 new quotes created
-- Total value: $187,400
-- Top models: Mercury 150HP (4), Mercury 250HP (3)
-- 3 hot leads (score 70+)
-- Avg quote value: $15,617
-```
+### Technical Details
 
-## How It Works
+**New file: `src/components/motors/ShareLinkButton.tsx`**
+- A small button component styled identically to `CompareButton` (rounded, same size, tooltip)
+- Uses the `Link` icon from lucide-react
+- On click, constructs the slug from the motor's `model_key` (lowercase, dashes), builds the full URL using `window.location.origin`, copies to clipboard via `navigator.clipboard.writeText()`, and shows a `sonner` toast
 
-A scheduled Edge Function runs every Monday at 8am EST. It queries the `customer_quotes` table for the past 7 days, builds a summary, and sends it via your existing Twilio SMS and Resend email integrations.
+**Modified file: `src/components/motors/MotorCardPreview.tsx`**
+- Import and add `ShareLinkButton` to the existing bottom-left button group (after CompareButton, VoiceChatButton, AskQuestionButton)
+- Pass the motor's `model_key` (or fall back to `model` field) as a prop
 
----
+**Slug generation helper** (inline in the button component):
+- Takes `model_key` like `FS_115_ELPT_CT`
+- Converts to `fs-115-elpt-ct`
+- Builds URL: `{origin}/motors/fs-115-elpt-ct`
 
-## Technical Details
-
-### New Edge Function: `weekly-quote-report`
-
-Queries `customer_quotes` for records created in the last 7 days and computes:
-- Total quote count
-- Total and average quote value
-- Top quoted motor models (from `quote_data` JSONB field)
-- Hot lead count (lead_score >= 70)
-- Lead source breakdown
-- Comparison to previous week (up/down)
-
-Sends the report via:
-1. **SMS** to `ADMIN_PHONE` (already stored as a secret) using the existing `send-sms` function
-2. **Email** to a configured address using Resend (`RESEND_API_KEY` already stored)
-
-### Scheduling with pg_cron
-
-A `pg_cron` job calls the edge function every Monday at 8am EST:
-
-```text
-cron.schedule('weekly-quote-report', '0 13 * * 1', ...)
-```
-
-(13:00 UTC = 8:00 AM EST)
-
-### New Files
-
-- `supabase/functions/weekly-quote-report/index.ts` -- the report function
-
-### Configuration
-
-- Uses existing `ADMIN_PHONE` secret for SMS delivery
-- A new secret `ADMIN_EMAIL` will be added for email delivery (you'll provide the address)
-- No new database tables needed -- reads from existing `customer_quotes`
-
-### What the Email Version Includes (richer than SMS)
-
-- Formatted HTML email with a table of top quotes
-- Week-over-week comparison
-- Direct links to the admin dashboard
-- List of hot leads requiring follow-up
-
+No new dependencies, no database changes. Uses the `/motors/:slug` route already created.
