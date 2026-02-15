@@ -13,6 +13,7 @@ import { PopularityBadge, getMotorPopularity } from './PopularityBadge';
 import { ModalSkeleton } from '@/components/ui/ModalSkeleton';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { CompareButton } from './CompareButton';
+import { ShareLinkButton } from './ShareLinkButton';
 import { VoiceChatButton } from './VoiceChatButton';
 import { VoiceChatCoachMark } from './VoiceChatCoachMark';
 import { AskQuestionButton } from './AskQuestionButton';
@@ -483,6 +484,7 @@ export default function MotorCardPreview({
                     />
                   </div>
                   <AskQuestionButton motor={motor} />
+                  <ShareLinkButton modelKey={(motor as any).model_key} modelFallback={motor.model} />
                 </div>
               )}
             </div>
