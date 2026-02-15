@@ -103,6 +103,7 @@ const FAQ = lazy(() => import("./pages/FAQ"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const TikTokCallback = lazy(() => import("./pages/TikTokCallback"));
+const MotorRedirect = lazy(() => import("./pages/MotorRedirect"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
@@ -155,6 +156,7 @@ function AnimatedRoutes() {
           } 
         />
         <Route path="/" element={<Navigate to="/quote/motor-selection" replace />} />
+        <Route path="/motors/:slug" element={<MotorRedirect />} />
         <Route path="/index" element={<Index />} />
                 
         {/* Quote Builder Routes */}
