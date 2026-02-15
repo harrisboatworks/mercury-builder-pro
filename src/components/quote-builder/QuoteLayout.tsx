@@ -10,6 +10,7 @@ import { HamburgerMenu } from '@/components/ui/hamburger-menu';
 import { useState } from 'react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { QuoteProgressStepper } from './QuoteProgressStepper';
+import { useQuoteActivityTracker } from '@/hooks/useQuoteActivityTracker';
 
 interface QuoteLayoutProps {
   children: React.ReactNode;
@@ -30,6 +31,10 @@ export const QuoteLayout = ({
   const location = useLocation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  // Track anonymous quote-building activity in the background
+  useQuoteActivityTracker();
+  
   return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
       {/* Ambient gradient orbs for glassmorphism effect - Desktop only */}
       <div className="hidden md:block fixed inset-0 -z-10 overflow-hidden pointer-events-none">
