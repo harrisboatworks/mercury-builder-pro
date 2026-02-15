@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import DOMPurify from 'dompurify';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
@@ -169,7 +170,7 @@ export default function FAQ() {
                           </span>
                         </AccordionTrigger>
                         <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
-                          <div dangerouslySetInnerHTML={{ __html: item.answer }} />
+                          <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(item.answer, { ALLOWED_TAGS: ['p', 'br', 'strong', 'em', 'a', 'ul', 'ol', 'li', 'span'], ALLOWED_ATTR: ['href', 'target', 'rel'] }) }} />
                         </AccordionContent>
                       </AccordionItem>
                     ))}
