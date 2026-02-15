@@ -53,6 +53,45 @@ serve(async (req) => {
     const quotes = thisWeekQuotes || [];
     const prevQuotes = lastWeekQuotes || [];
 
+    // --- Fetch browsing activity from quote_activity_events ---
+    const { data: activityEvents } = await supabase
+      .from('quote_activity_events')
+      .select('*')
+      .gte('created_at', weekAgo.toISOString())
+      .lte('created_at', now.toISOString());
+
+    const events = activityEvents || [];
+
+    // Browsing activity metrics
+    const uniqueSessions = new Set(events.map(e => e.session_id)).size;
+    const motorSelectedEvents = events.filter(e => e.event_type === 'motor_selected');
+    const abandonedEvents = events.filter(e => e.event_type === 'quote_abandoned');
+    const optionsEvents = events.filter(e => e.event_type === 'options_configured');
+    const tradeInEvents = events.filter(e => e.event_type === 'trade_in_entered');
+    const financingEvents = events.filter(e => e.event_type === 'financing_calculated');
+
+    // Most-configured motors from activity
+    const activityModelCounts: Record<string, number> = {};
+    for (const e of motorSelectedEvents) {
+      const model = e.motor_model || 'Unknown';
+      activityModelCounts[model] = (activityModelCounts[model] || 0) + 1;
+    }
+    const topActivityModels = Object.entries(activityModelCounts)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5);
+
+    // Average unsaved quote value (from abandoned events with quote_value)
+    const abandonedWithValue = abandonedEvents.filter(e => e.quote_value && e.quote_value > 0);
+    const avgUnsavedValue = abandonedWithValue.length > 0
+      ? abandonedWithValue.reduce((s, e) => s + (e.quote_value || 0), 0) / abandonedWithValue.length
+      : 0;
+
+    // Drop-off funnel
+    const sessionsWithMotor = new Set(motorSelectedEvents.map(e => e.session_id)).size;
+    const sessionsWithOptions = new Set(optionsEvents.map(e => e.session_id)).size;
+    const sessionsWithTradeIn = new Set(tradeInEvents.map(e => e.session_id)).size;
+    const sessionsWithFinancing = new Set(financingEvents.map(e => e.session_id)).size;
+
     // --- Compute metrics ---
     const totalQuotes = quotes.length;
     const prevTotalQuotes = prevQuotes.length;
@@ -90,7 +129,7 @@ serve(async (req) => {
     const fmt = (n: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
 
     // --- SMS Report ---
-    const smsBody = [
+    const smsLines = [
       `📊 Weekly Quote Report (${formatDateDisplay(weekAgo)} - ${formatDateDisplay(now)})`,
       `• ${totalQuotes} new quotes ${quoteTrend} (${quoteDiff >= 0 ? '+' : ''}${quoteDiff} vs last wk)`,
       `• Total value: ${fmt(totalValue)} ${valueTrend}`,
@@ -99,7 +138,19 @@ serve(async (req) => {
         : '• No motor models quoted',
       `• ${hotLeads.length} hot lead${hotLeads.length !== 1 ? 's' : ''} (score 70+)`,
       `• Avg quote: ${fmt(avgValue)}`,
-    ].join('\n');
+    ];
+    // Browsing activity for SMS
+    if (uniqueSessions > 0) {
+      smsLines.push(`\n👀 Browsing Activity:`);
+      smsLines.push(`• ${uniqueSessions} quote sessions (${totalQuotes} saved)`);
+      if (topActivityModels.length > 0) {
+        smsLines.push(`• Most viewed: ${topActivityModels.slice(0, 3).map(([m, c]) => `${m} (${c})`).join(', ')}`);
+      }
+      if (avgUnsavedValue > 0) {
+        smsLines.push(`• Avg unsaved quote: ${fmt(avgUnsavedValue)}`);
+      }
+    }
+    const smsBody = smsLines.join('\n');
 
     console.log('[WEEKLY-REPORT] SMS body:', smsBody);
 
@@ -214,6 +265,37 @@ serve(async (req) => {
         </tr></thead>
         <tbody>${sourceRows}</tbody>
       </table>
+      ` : ''}
+
+      <!-- Browsing Activity -->
+      ${uniqueSessions > 0 ? `
+      <h2 style="font-size:16px;color:#374151;margin:24px 0 12px;">👀 Browsing Activity</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+        <div style="flex:1;min-width:100px;background:#fff7ed;border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:24px;font-weight:700;color:#ea580c;">${uniqueSessions}</div>
+          <div style="font-size:11px;color:#6b7280;margin-top:4px;">Quote Sessions</div>
+        </div>
+        <div style="flex:1;min-width:100px;background:#f0f9ff;border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:24px;font-weight:700;color:#007DC5;">${totalQuotes}</div>
+          <div style="font-size:11px;color:#6b7280;margin-top:4px;">Saved Quotes</div>
+        </div>
+        <div style="flex:1;min-width:100px;background:#fef2f2;border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:24px;font-weight:700;color:#dc2626;">${abandonedEvents.length}</div>
+          <div style="font-size:11px;color:#6b7280;margin-top:4px;">Abandoned</div>
+        </div>
+        ${avgUnsavedValue > 0 ? `
+        <div style="flex:1;min-width:100px;background:#f5f3ff;border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:24px;font-weight:700;color:#7c3aed;">${fmt(avgUnsavedValue)}</div>
+          <div style="font-size:11px;color:#6b7280;margin-top:4px;">Avg Unsaved Value</div>
+        </div>` : ''}
+      </div>
+      ${topActivityModels.length > 0 ? `
+      <p style="font-size:13px;color:#6b7280;margin:8px 0;">
+        <strong>Most configured:</strong> ${topActivityModels.map(([m, c]) => `${m} (${c})`).join(', ')}
+      </p>` : ''}
+      <p style="font-size:13px;color:#6b7280;margin:8px 0;">
+        <strong>Funnel:</strong> ${sessionsWithMotor} selected motor → ${sessionsWithOptions} added options → ${sessionsWithTradeIn} entered trade-in → ${sessionsWithFinancing} calculated financing
+      </p>
       ` : ''}
 
       <!-- Week-over-Week -->
