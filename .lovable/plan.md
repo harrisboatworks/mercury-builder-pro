@@ -1,28 +1,70 @@
 
-## Add "Copy Share Link" Button to Motor Cards
+## Track Anonymous Quote-Building Activity
 
-A small share button will be added to each motor card, right alongside the existing Compare, Voice Chat, and Ask buttons that appear on hover. Tapping it copies the shareable URL to your clipboard so you can paste it into a text or email to a customer.
+### The Problem
+Right now you only see leads when someone downloads a PDF, saves a quote, or schedules a consultation. If someone spends 20 minutes configuring a 200HP Pro XS with options and financing, then closes their browser -- that activity is invisible.
 
-### What It Looks Like
+### The Solution
+Add a lightweight background tracker that silently saves "snapshots" of what people are building in the quote tool, without requiring any action from the visitor. You'll be able to see in your admin dashboard what motors people are looking at and how far they get in the quote process.
 
-- A small circular button with a share/link icon, matching the style of the existing Compare button
-- Appears in the bottom-left button row on hover (desktop) or always visible (mobile)
-- On click: copies the link (e.g., `quote.harrisboatworks.ca/motors/fs-115-elpt-ct`) to clipboard and shows a toast confirmation: "Link copied!"
+### How It Works
+
+1. **New database table: `quote_activity_events`**
+   - Stores events like: motor viewed, motor selected, options configured, trade-in entered, financing calculated, quote abandoned
+   - Includes the session ID (anonymous or logged-in user), motor details, quote value, and timestamp
+   - Lightweight -- just key moments, not every click
+
+2. **Background event tracker (new hook: `useQuoteActivityTracker`)**
+   - Watches the QuoteContext state for meaningful changes
+   - Fires events at key milestones:
+     - Motor selected (which model, HP, price)
+     - Options/accessories added
+     - Purchase path chosen (loose vs installed)
+     - Trade-in entered (value range)
+     - Financing calculated
+     - Quote abandoned (user navigates away without saving)
+   - Uses a stable anonymous session ID stored in localStorage so repeat visitors are grouped together
+   - Debounced to avoid spamming the database
+
+3. **Weekly report enhancement**
+   - The weekly report edge function will include a new section: "Browsing Activity"
+   - Shows: total quote sessions, most-viewed motors, average quote value built (even unsaved), and drop-off points (where people abandon)
+
+4. **Admin dashboard section (future)**
+   - A simple "Recent Activity" feed showing what visitors are building in real-time
+
+### What You'll See in Reports
+
+Example additions to your weekly email/SMS:
+- "47 quote sessions started (only 12 saved)"
+- "Most configured: Pro XS 200 (18 sessions), FourStroke 115 (14 sessions)"
+- "Average unsaved quote value: $18,400"
+- "Drop-off: 60% leave after motor selection, 25% leave after options"
 
 ### Technical Details
 
-**New file: `src/components/motors/ShareLinkButton.tsx`**
-- A small button component styled identically to `CompareButton` (rounded, same size, tooltip)
-- Uses the `Link` icon from lucide-react
-- On click, constructs the slug from the motor's `model_key` (lowercase, dashes), builds the full URL using `window.location.origin`, copies to clipboard via `navigator.clipboard.writeText()`, and shows a `sonner` toast
+**New table: `quote_activity_events`**
+- `id` (uuid, primary key)
+- `session_id` (text) -- anonymous visitor ID from localStorage
+- `user_id` (uuid, nullable) -- linked if logged in
+- `event_type` (text) -- motor_viewed, motor_selected, options_configured, trade_in_entered, financing_calculated, quote_abandoned
+- `motor_model` (text)
+- `motor_hp` (integer)
+- `quote_value` (numeric) -- running total at time of event
+- `event_data` (jsonb) -- flexible payload for extra context (options selected, trade-in value, etc.)
+- `page_path` (text) -- which step they were on
+- `created_at` (timestamptz)
+- RLS: insert-only for anonymous users, admin-readable
 
-**Modified file: `src/components/motors/MotorCardPreview.tsx`**
-- Import and add `ShareLinkButton` to the existing bottom-left button group (after CompareButton, VoiceChatButton, AskQuestionButton)
-- Pass the motor's `model_key` (or fall back to `model` field) as a prop
+**New hook: `src/hooks/useQuoteActivityTracker.ts`**
+- Subscribes to QuoteContext state changes
+- Generates/retrieves a stable `visitor_id` from localStorage
+- Inserts events to `quote_activity_events` via Supabase client
+- Debounced (waits 2 seconds of inactivity before writing)
+- Fires `quote_abandoned` via `beforeunload` event if quote is in progress
 
-**Slug generation helper** (inline in the button component):
-- Takes `model_key` like `FS_115_ELPT_CT`
-- Converts to `fs-115-elpt-ct`
-- Builds URL: `{origin}/motors/fs-115-elpt-ct`
+**Modified files:**
+- `src/components/quote-builder/QuoteLayout.tsx` -- mount the tracker hook
+- `supabase/functions/weekly-quote-report/index.ts` -- add browsing activity section to email/SMS
 
-No new dependencies, no database changes. Uses the `/motors/:slug` route already created.
+**No new dependencies required.**
