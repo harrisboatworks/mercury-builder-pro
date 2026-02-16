@@ -1,31 +1,32 @@
 
 
-## Fix: Payment Error — CORS Header Mismatch in `create-payment` Edge Function
+## Add Share Link Buttons to Motor Cards (MotorCardPremium)
 
-### Root Cause
-
-The Supabase client (`src/integrations/supabase/client.ts`, line 63) globally adds an `x-session-id` header to every request. When the browser sends a CORS preflight (OPTIONS) to the `create-payment` edge function, the function's `Access-Control-Allow-Headers` only lists `authorization, x-client-info, apikey, content-type` — it does NOT include `x-session-id`.
-
-The browser rejects the preflight, the POST never fires, and the client gets "Failed to fetch."
+### What Happened
+The share link buttons were only added to the **preview/test** motor card design (`MotorCardPreview.tsx`), not to the **production** card (`MotorCardPremium.tsx`) that you actually see on the Engines page. They likely appeared to work before because the preview design was being viewed during testing.
 
 ### Fix
+Add the `ShareLinkButton` (and the existing `AskQuestionButton` + `VoiceChatButton` for consistency) to `MotorCardPremium.tsx`, positioned in the image area similar to how the preview card does it.
 
-**File: `supabase/functions/create-payment/index.ts`** (line 8)
+### Technical Details
 
-Update the CORS headers to include the full set of headers the Supabase JS client sends:
+**File: `src/components/motors/MotorCardPremium.tsx`**
+
+1. Import `ShareLinkButton`, `AskQuestionButton`, and `VoiceChatButton` components
+2. Add a small button group in the bottom-left of the image area (around line 260, near the Mercury logo) with the share link button and other action buttons
+3. Style them to match the premium card's clean aesthetic -- small, subtle icons that appear on hover
+
+### Layout
+The buttons will sit in the bottom-left corner of the image section, appearing on hover (desktop) or always visible (mobile), matching the existing premium card style:
 
 ```
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type, x-session-id, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
-};
+ [Popularity Badge]          [HP Badge]
+                              
+        (motor image)
+                              
+ [Share] [Ask] [Voice]    [Mercury Logo]
 ```
-
-The key addition is `x-session-id`, but including the other standard Supabase client headers prevents the same issue if the SDK adds them in future versions.
 
 ### Files Changed
-1. **`supabase/functions/create-payment/index.ts`** — Update CORS `Access-Control-Allow-Headers` (line 8) to include `x-session-id` and other Supabase client headers
-
-### After Fix
-Redeploy the edge function and the Reserve button on the quote summary page will work correctly.
+1. **`src/components/motors/MotorCardPremium.tsx`** -- Import and add `ShareLinkButton` (+ action buttons) to the image overlay area
 
