@@ -33,7 +33,7 @@ export default function MotorRedirect() {
         .maybeSingle();
 
       if (dbError || !data) {
-        // Try a fuzzy match (slug might be a partial or alternate format)
+        // Try a fuzzy match on model_key
         const { data: fuzzy } = await supabase
           .from('motor_models')
           .select('id, model_key')
@@ -43,6 +43,20 @@ export default function MotorRedirect() {
 
         if (fuzzy) {
           navigate(`/quote/motor-selection?motor=${fuzzy.id}`, { replace: true });
+          return;
+        }
+
+        // Fallback: try matching model_display (handles old/bad slugs like "6mh-fourstroke")
+        const displaySearch = slug.replace(/-/g, ' ');
+        const { data: displayMatch } = await supabase
+          .from('motor_models')
+          .select('id')
+          .ilike('model_display', `%${displaySearch}%`)
+          .limit(1)
+          .maybeSingle();
+
+        if (displayMatch) {
+          navigate(`/quote/motor-selection?motor=${displayMatch.id}`, { replace: true });
           return;
         }
 
