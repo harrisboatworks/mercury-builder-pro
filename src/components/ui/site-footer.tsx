@@ -139,7 +139,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
               </div>
             </div>
             <p className="text-xs text-muted-foreground mt-4">
-              Serving Ontario Since 1965
+              Serving Ontario Since 1947
             </p>
           </div>
         </div>
