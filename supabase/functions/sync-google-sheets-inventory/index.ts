@@ -161,7 +161,7 @@ Deno.serve(async (req) => {
     console.log(`📋 Sheet stats: ${totalRows} total rows, ${mercuryMotorsFound} new Mercury motors found`);
     console.log('📋 Motor names to match:', motorNames);
 
-    // Reset all motors to out of stock first
+    // Reset all motors to out of stock first, but PRESERVE excluded motors
     const { error: resetError } = await supabase
       .from('motor_models')
       .update({
@@ -169,7 +169,8 @@ Deno.serve(async (req) => {
         availability: null,
         stock_quantity: 0,
       })
-      .neq('id', '00000000-0000-0000-0000-000000000000'); // Update all
+      .neq('id', '00000000-0000-0000-0000-000000000000')
+      .neq('availability', 'Exclude'); // Skip excluded motors
 
     if (resetError) {
       console.error('Error resetting stock:', resetError);
@@ -335,15 +336,20 @@ Deno.serve(async (req) => {
 
       if (motors && motors.length > 0) {
         const motor = motors[0];
-        
-        // Fetch current stock quantity to properly increment
-        const { data: currentMotor } = await supabase
+
+        // Check if this motor is excluded - skip if so
+        const { data: motorCheck } = await supabase
           .from('motor_models')
-          .select('stock_quantity')
+          .select('stock_quantity, availability')
           .eq('id', motor.id)
           .single();
 
-        const newQuantity = (currentMotor?.stock_quantity || 0) + 1;
+        if (motorCheck?.availability === 'Exclude') {
+          console.log(`⛔ Skipping excluded motor: ${motor.model_display}`);
+          continue;
+        }
+
+        const newQuantity = (motorCheck?.stock_quantity || 0) + 1;
         
         // Update this motor with incremented stock quantity
         const { error: updateError } = await supabase
