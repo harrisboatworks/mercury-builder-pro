@@ -1,0 +1,2 @@
+UPDATE motor_options SET image_url = '/images/options/8M0228517.webp', updated_at = now() WHERE id = 'c2b2891e-403c-47b6-aabc-3af43ababefc';
+UPDATE motor_options SET image_url = '/images/options/8M0228521.webp', updated_at = now() WHERE id = 'e9a98ef9-5f56-4ce5-a4b9-21a72736c7d0';
