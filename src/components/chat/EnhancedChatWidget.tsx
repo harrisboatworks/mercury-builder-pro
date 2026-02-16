@@ -160,6 +160,13 @@ export const EnhancedChatWidget = forwardRef<EnhancedChatWidgetHandle, EnhancedC
       }
     }, [isOpen, isMinimized]);
 
+    // Re-focus input after AI finishes responding
+    useEffect(() => {
+      if (!isLoading && isOpen && !isMinimized && inputRef.current) {
+        inputRef.current.focus();
+      }
+    }, [isLoading, isOpen, isMinimized]);
+
     // Get active promotion for promo-aware prompts
     const { promotions } = useActivePromotions();
     const mainPromo = promotions[0] || null;
