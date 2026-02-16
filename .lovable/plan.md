@@ -1,19 +1,44 @@
 
 
-## Fix Share Link Still Using Wrong Slug
+## Fix Share Links: Slug Generation + Modal Auto-Open
 
-### Root Cause
-The `Motor` interface in `QuoteBuilder.tsx` doesn't include `model_key`, so even though the database query fetches it, the data gets lost when passed around as the `Motor` type. The ShareLinkButton falls back to `motor.model` ("6MH FourStroke"), producing `6mh-fourstroke` instead of the correct `fs-6-mh`.
+There are two distinct bugs causing the broken experience:
 
-### Fixes
+### Bug 1: Wrong slug still being generated
 
-**1. `src/components/QuoteBuilder.tsx`** -- Add `model_key` to the Motor interface
-- Add `model_key?: string | null;` to the `Motor` interface so it flows cleanly through the type system without `as any` hacks
+**Root cause:** `MotorSelectionPage.tsx` (the actual page rendering motor cards) fetches `model_key` via `SELECT *`, but drops it during the Motor type conversion at line 531. The `convertedMotor` object never includes `model_key`, so it's always `undefined` when it reaches the `ShareLinkButton`. The button then falls back to `motor.model` (e.g., "6MH FourStroke"), producing the broken slug `6mh-fourstroke`.
 
-**2. `src/components/quote-builder/MotorSelection.tsx`** -- Remove the `as any` cast
-- In the motor mapping (~line 489), set `model_key: m.model_key || null` as a proper typed field instead of relying on `as any`
+**Fix:** Add `model_key: dbMotor.model_key || null` to the motor mapping in `MotorSelectionPage.tsx` (around line 530, alongside the existing `shaft` and `images` fields).
 
-**3. `src/components/motors/MotorCardPreview.tsx`** -- Remove `(motor as any)` cast
-- Change `(motor as any).model_key` to just `motor.model_key` since the Motor type will now include it
+### Bug 2: Modal doesn't open on redirect
 
-These are small, targeted changes -- just making `model_key` a first-class field on the Motor type so the ShareLinkButton always gets it.
+**Root cause:** The deep-link handler (line 706-729) searches for the motor by ID within `groupedMotors`, which groups motors by HP. When it finds a match, it calls `setSelectedGroup(targetGroup)` and `setShowConfigurator(true)`. However, the motor appeared in the bottom bar (via `SET_PREVIEW_MOTOR` dispatched elsewhere) but the modal didn't open -- this suggests the `groupedMotors.find()` lookup failed to match.
+
+The likely timing issue: `processedMotors` populates first, the effect fires, but `groupedMotors` (derived via `useGroupedMotors`) may not yet contain the motor when the effect runs. The effect depends on both `processedMotors` and `groupedMotors`, but the `setTimeout(150ms)` may not be enough.
+
+**Fix:** Make the deep-link effect more resilient:
+- Add `groupedMotors` to the dependency check more carefully
+- If the group lookup fails, fall back to directly finding the motor in `processedMotors` and constructing a temporary group
+- Add a retry mechanism if motors haven't loaded yet
+
+### Bug 3: `MotorRedirect.tsx` can't resolve bad slugs
+
+**Root cause:** When the slug `6mh-fourstroke` arrives, `MotorRedirect` converts it to `6MH_FOURSTROKE` and queries `model_key = '6MH_FOURSTROKE'`. The actual key is `FS_6_MH`, so both exact and fuzzy (`ILIKE '%6MH_FOURSTROKE%'`) lookups fail. The user gets a "not found" error.
+
+**Fix:** Add a secondary lookup in `MotorRedirect.tsx` that also tries matching against `model_display` (case-insensitive, with dashes converted to spaces). So `6mh-fourstroke` becomes `6MH FOURSTROKE`, which would match `model_display = '6MH FourStroke'` via `ILIKE`. This ensures old/bad links still work even after the slug generation is fixed.
+
+### Files Changed
+
+1. **`src/pages/quote/MotorSelectionPage.tsx`**
+   - Add `model_key: dbMotor.model_key || null` to the motor conversion (line ~530)
+   - Make the deep-link `useEffect` (line 706) more resilient with a fallback lookup
+
+2. **`src/pages/MotorRedirect.tsx`**
+   - Add fallback query matching `model_display` when `model_key` lookup fails
+   - This ensures backwards compatibility with previously generated broken slugs
+
+### Result
+- New share links will use the correct `model_key` slug (e.g., `/motors/fs-6-mh`)
+- Old broken links (e.g., `/motors/6mh-fourstroke`) will still resolve via `model_display` fallback
+- The configurator modal will reliably open when arriving via a share link
+
