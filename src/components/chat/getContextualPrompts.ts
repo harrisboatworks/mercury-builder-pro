@@ -5,6 +5,7 @@ interface Motor {
   model: string;
   hp?: number;
   horsepower?: number;
+  price?: number;
 }
 
 interface BoatInfo {
@@ -110,14 +111,28 @@ export function getContextualPrompts(
     ];
   }
 
-  // Quote summary page - closing questions
+  // Quote summary page - motor-aware closing questions
   if (currentPage.includes('/quote/summary')) {
-    return [
-      "Can you get me a better price?",
-      "What's my monthly payment?",
-      "How long until delivery?",
-      "What are my financing options?"
-    ];
+    const hp = motor?.hp || motor?.horsepower || 0;
+    const motorPrice = motor?.price || 0;
+    const motorLabel = hp > 0 ? `${hp}HP` : 'my motor';
+    const isFinancingEligible = motorPrice >= 5000;
+    
+    if (isFinancingEligible) {
+      return [
+        `What's my monthly payment on the ${motorLabel}?`,
+        "Can you get me a better price?",
+        `How long until my ${motorLabel} is ready?`,
+        "What are my financing options?"
+      ];
+    } else {
+      return [
+        `Any current rebates on the ${motorLabel}?`,
+        `How long until my ${motorLabel} is ready?`,
+        "What's included with my motor?",
+        "Can you walk me through the quote?"
+      ];
+    }
   }
 
   // Schedule page

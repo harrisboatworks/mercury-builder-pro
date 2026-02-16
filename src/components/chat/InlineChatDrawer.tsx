@@ -247,7 +247,8 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     const activeMotor = state.previewMotor || state.motor;
     const motor = activeMotor ? {
       model: activeMotor.model || '',
-      hp: activeMotor.hp || 0
+      hp: activeMotor.hp || 0,
+      price: activeMotor.price || 0
     } : null;
     
     return getContextualPromptsWithPerplexity(motor, state.boatInfo, location.pathname, mainPromo, perplexityQuestions);
