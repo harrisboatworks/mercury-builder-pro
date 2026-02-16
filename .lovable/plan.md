@@ -1,42 +1,37 @@
 
 
-## Fix: Restore Input Focus After AI Chat Response
+## Fix: Google Sheets Inventory Sync Wiping Motor Exclusions
 
-### Problem
-After the AI finishes responding to a message, the text input loses focus. The user has to manually click back into the input field to type the next question. This breaks the conversational flow.
+### What's Happening
+
+You correctly excluded certain motors by marking them as `availability = 'Exclude'` in the admin dashboard. However, every time the **Google Sheets inventory sync** runs, it resets **every motor's** `availability` field to `null` before updating stock. This erases all your exclusion settings.
+
+Currently, **zero motors** in the database are marked as `Exclude` -- they've all been wiped.
 
 ### Root Cause
-Both chat components (`EnhancedChatWidget.tsx` for desktop and `InlineChatDrawer.tsx` for mobile) only focus the input when the chat **first opens**. After a message is sent and the AI responds, `isLoading` goes from `true` back to `false`, but nothing re-focuses the input.
+
+In `supabase/functions/sync-google-sheets-inventory/index.ts` (line 164-172), the sync does:
+
+```
+-- Reset ALL motors (no exceptions)
+UPDATE motor_models SET availability = NULL, in_stock = false, stock_quantity = 0
+```
+
+This blanket reset doesn't preserve the `Exclude` status.
 
 ### Fix
-Add a `useEffect` in both components that re-focuses the input whenever `isLoading` transitions to `false` (i.e., when the AI finishes responding).
 
-### Technical Details
+**File: `supabase/functions/sync-google-sheets-inventory/index.ts`**
 
-**File 1: `src/components/chat/EnhancedChatWidget.tsx`**
-- Add a `useEffect` (after the existing open-focus effect around line 161) that watches `isLoading` and calls `inputRef.current?.focus()` when loading ends:
-```typescript
-useEffect(() => {
-  if (!isLoading && isOpen && !isMinimized && inputRef.current) {
-    inputRef.current.focus();
-  }
-}, [isLoading, isOpen, isMinimized]);
-```
+1. Change the reset query to **skip motors marked as 'Exclude'** by adding `.neq('availability', 'Exclude')` to the reset update. This way excluded motors keep their status and are never shown to customers.
 
-**File 2: `src/components/chat/InlineChatDrawer.tsx`**
-- Add a similar `useEffect` (after the existing open-focus effect around line 232):
-```typescript
-useEffect(() => {
-  if (!isLoading && isOpen && inputRef.current) {
-    // Small delay to ensure DOM is settled after streaming completes
-    setTimeout(() => inputRef.current?.focus(), 100);
-  }
-}, [isLoading, isOpen]);
-```
+2. Also add the same guard to the stock update section so that an excluded motor can't accidentally get set back to `'In Stock'` if it appears in the Google Sheet.
 
-The mobile version uses a small timeout (consistent with its existing pattern) to account for drawer animations and virtual keyboard behavior.
+### After Fix
+
+1. Deploy the updated edge function
+2. You'll need to re-exclude the motors that were reset -- go to the Admin Inventory Dashboard and mark those models as `Exclude` again
+3. Future inventory syncs will preserve those exclusions
 
 ### Files Changed
-1. `src/components/chat/EnhancedChatWidget.tsx` -- Add focus-on-response-complete effect
-2. `src/components/chat/InlineChatDrawer.tsx` -- Add focus-on-response-complete effect
-
+1. **`supabase/functions/sync-google-sheets-inventory/index.ts`** -- Add `.neq('availability', 'Exclude')` to the bulk reset query, and skip excluded motors during stock updates
