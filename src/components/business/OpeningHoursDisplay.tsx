@@ -1,22 +1,12 @@
 import { Skeleton } from '@/components/ui/skeleton';
 import { OpeningHours, isCurrentlyOpen } from '@/hooks/useGooglePlaceData';
+import { COMPANY_INFO } from '@/lib/companyInfo';
 
 interface OpeningHoursDisplayProps {
   openingHours?: OpeningHours;
   loading?: boolean;
   error?: boolean;
 }
-
-// Fallback hours if API fails
-const FALLBACK_HOURS = [
-  'Monday: 8:00 AM – 5:00 PM',
-  'Tuesday: 8:00 AM – 5:00 PM',
-  'Wednesday: 8:00 AM – 5:00 PM',
-  'Thursday: 8:00 AM – 5:00 PM',
-  'Friday: 8:00 AM – 5:00 PM',
-  'Saturday: 9:00 AM – 2:00 PM',
-  'Sunday: Closed',
-];
 
 export function OpeningHoursDisplay({ openingHours, loading, error }: OpeningHoursDisplayProps) {
   if (loading) {
@@ -29,8 +19,26 @@ export function OpeningHoursDisplay({ openingHours, loading, error }: OpeningHou
     );
   }
 
-  const hours = openingHours?.weekdayText ?? (error ? FALLBACK_HOURS : FALLBACK_HOURS);
-  
+  const hours = openingHours?.weekdayText;
+
+  // If no Google data available, show graceful fallback
+  if (!hours || hours.length === 0) {
+    const phoneLink = COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '');
+    return (
+      <div className="space-y-1">
+        <p className="text-muted-foreground text-sm">
+          Contact us for current hours
+        </p>
+        <a
+          href={`tel:+1${phoneLink}`}
+          className="text-primary text-sm hover:underline"
+        >
+          {COMPANY_INFO.contact.phone}
+        </a>
+      </div>
+    );
+  }
+
   // Calculate isOpen client-side for accurate real-time status
   const calculatedIsOpen = isCurrentlyOpen(hours);
   const isOpen = calculatedIsOpen !== null ? calculatedIsOpen : openingHours?.isOpen;
