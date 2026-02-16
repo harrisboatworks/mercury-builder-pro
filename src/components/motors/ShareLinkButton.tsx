@@ -12,7 +12,12 @@ interface ShareLinkButtonProps {
 }
 
 function buildSlug(modelKey: string): string {
-  return modelKey.toLowerCase().replace(/_/g, '-');
+  return modelKey
+    .toLowerCase()
+    .replace(/[_\s]+/g, '-')       // underscores & spaces → dashes
+    .replace(/[^a-z0-9-]/g, '')    // strip non-alphanumeric
+    .replace(/-+/g, '-')           // collapse multiple dashes
+    .replace(/^-|-$/g, '');        // trim leading/trailing dashes
 }
 
 export function ShareLinkButton({ modelKey, modelFallback, className, size = 'sm' }: ShareLinkButtonProps) {

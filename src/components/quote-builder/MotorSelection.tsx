@@ -71,6 +71,7 @@ interface DbMotor {
   make: string;
   family?: string | null;
   shaft?: string | null;
+  model_key?: string | null;
   // New enhanced fields
   description?: string | null;
   features?: string[] | null;
@@ -407,7 +408,7 @@ export const MotorSelection = ({
       }] = await Promise.all([
         // Optimized query: only select fields needed for motor cards display
         supabase.from('motor_models').select(`
-          id, model, model_display, horsepower, base_price, sale_price, msrp, dealer_price,
+          id, model, model_display, model_key, horsepower, base_price, sale_price, msrp, dealer_price,
           motor_type, engine_type, image_url, hero_image_url, availability, stock_number, year, make,
           description, features, specifications, detail_url, family, shaft
         `).order('horsepower'), 
@@ -485,8 +486,9 @@ export const MotorSelection = ({
           description: m.description || null,
           detailUrl: m.detail_url || null,
           family: m.family || null,
-          shaft: m.shaft || null
-        };
+          shaft: m.shaft || null,
+          model_key: m.model_key || null
+        } as any;
       });
 
       // Debug-only: simulate a few discounted items so card UI can be verified
@@ -902,6 +904,22 @@ export const MotorSelection = ({
       }).finally(() => setQuickViewLoading(false));
     }
   }, [quickViewMotor?.id]);
+
+  // Auto-open motor detail modal when redirected with ?motor=ID
+  useEffect(() => {
+    if (!motors.length) return;
+    const params = new URLSearchParams(window.location.search);
+    const motorId = params.get('motor');
+    if (!motorId) return;
+    const match = motors.find(m => m.id === motorId);
+    if (match) {
+      setQuickViewMotor(match);
+      // Clean the URL param so it doesn't re-trigger
+      const url = new URL(window.location.href);
+      url.searchParams.delete('motor');
+      window.history.replaceState({}, '', url.pathname + url.search);
+    }
+  }, [motors]);
   const handleMotorSelection = (motor: Motor) => {
     // Track interaction for social proof
     trackInteraction(motor.id);
