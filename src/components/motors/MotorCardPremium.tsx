@@ -15,6 +15,9 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { getFinancingDisplay } from '@/lib/finance';
 import { getPriceDisplayState } from '@/lib/pricing';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import { ShareLinkButton } from './ShareLinkButton';
+import { AskQuestionButton } from './AskQuestionButton';
+import { VoiceChatButton } from './VoiceChatButton';
 
 export default function MotorCardPremium({ 
   img, 
@@ -256,6 +259,17 @@ export default function MotorCardPremium({
               )}
               
               
+              {/* Action Buttons - Bottom Left */}
+              <div className="absolute bottom-4 left-4 flex items-center gap-1.5 opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300" style={{ opacity: isMobile ? 1 : undefined }}>
+                {motor && (
+                  <>
+                    <ShareLinkButton modelKey={motor.model_key} modelFallback={motor.model} size="sm" />
+                    <AskQuestionButton motor={motor} />
+                    <VoiceChatButton motor={motor} size="sm" />
+                  </>
+                )}
+              </div>
+
               {/* Mercury Logo - Enhanced interaction */}
               <div className="absolute bottom-4 right-4 opacity-30 group-hover:opacity-50 transition-opacity duration-300">
                 <img 
