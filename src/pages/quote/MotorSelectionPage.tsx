@@ -81,6 +81,7 @@ interface DbMotor {
   images?: any[] | null;
   shaft?: string | null;
   hero_media_id?: string | null;
+  model_key?: string | null;
   // Hero media joined data
   hero_media?: {
     id: string;
@@ -527,7 +528,8 @@ if (event.type === 'filter_motors') {
         spec_json: dbMotor.spec_json,
         features: dbMotor.features,
         shaft: dbMotor.shaft,
-        images: galleryImages
+        images: galleryImages,
+        model_key: dbMotor.model_key || null
       };
       
       return convertedMotor;
@@ -706,22 +708,51 @@ if (event.type === 'filter_motors') {
   // Handle URL parameter for deep-linking to a specific motor (from AI chat links)
   useEffect(() => {
     const motorId = searchParams.get('motor') || searchParams.get('select');
-    if (!motorId || processedMotors.length === 0 || groupedMotors.length === 0) return;
+    if (!motorId || processedMotors.length === 0) return;
     
-    // Small delay to ensure state is fully computed
-    const timer = setTimeout(() => {
-      // Find the group containing this motor
-      const targetGroup = groupedMotors.find(g => 
+    const openMotorModal = () => {
+      // Try finding group in groupedMotors first
+      let targetGroup = groupedMotors.find(g => 
         g.variants.some(v => v.id === motorId)
       );
-      if (targetGroup) {
-        setSelectedGroup(targetGroup);
-        setDeepLinkedMotorId(motorId);  // Store the specific motor ID for direct modal
-        setShowConfigurator(true);
-        // Clear the param so refresh doesn't re-trigger
-        searchParams.delete('motor');
-        searchParams.delete('select');
-        setSearchParams(searchParams, { replace: true });
+      
+      // Fallback: construct a temporary group from processedMotors
+      if (!targetGroup) {
+        const targetMotor = processedMotors.find(m => m.id === motorId);
+        if (!targetMotor) return false;
+        
+        // Find all motors with same HP to build a proper group
+        const sameHpMotors = processedMotors.filter(m => m.hp === targetMotor.hp);
+        targetGroup = {
+          hp: targetMotor.hp,
+          variants: sameHpMotors,
+          priceRange: { 
+            min: Math.min(...sameHpMotors.map(m => m.price)), 
+            max: Math.max(...sameHpMotors.map(m => m.price)) 
+          },
+          features: { hasElectricStart: false, hasManualStart: false, hasTiller: false, hasRemote: false, hasPowerTrim: false, hasCommandThrust: false, shaftLengths: [] },
+          families: [],
+          inStockCount: sameHpMotors.filter(m => m.in_stock).length,
+          heroImage: targetMotor.image || '/lovable-uploads/speedboat-transparent.png',
+          isRepresentativeImage: false
+        };
+      }
+      
+      setSelectedGroup(targetGroup);
+      setDeepLinkedMotorId(motorId);
+      setShowConfigurator(true);
+      // Clear the param so refresh doesn't re-trigger
+      searchParams.delete('motor');
+      searchParams.delete('select');
+      setSearchParams(searchParams, { replace: true });
+      return true;
+    };
+    
+    // Try immediately, then retry with delays if groupedMotors aren't ready
+    const timer = setTimeout(() => {
+      if (!openMotorModal()) {
+        const retry = setTimeout(() => openMotorModal(), 500);
+        return () => clearTimeout(retry);
       }
     }, 150);
     
