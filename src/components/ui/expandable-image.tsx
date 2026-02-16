@@ -67,7 +67,7 @@ export const ExpandableImage: React.FC<ExpandableImageProps> = ({
           />
           
           {/* Expand Hint */}
-          <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-all duration-200 rounded-lg">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/10 transition-all duration-200 rounded-lg" onClick={handleImageClick}>
             <div className="opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-200 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
               <Expand className="w-4 h-4 text-gray-700" />
             </div>
