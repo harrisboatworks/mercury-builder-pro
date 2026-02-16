@@ -231,6 +231,13 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
     }
   }, [isOpen]);
 
+  // Re-focus input after AI finishes responding
+  useEffect(() => {
+    if (!isLoading && isOpen && inputRef.current) {
+      setTimeout(() => inputRef.current?.focus(), 100);
+    }
+  }, [isLoading, isOpen]);
+
   // Get active promotion for promo-aware prompts
   const { promotions } = useActivePromotions();
   const mainPromo = promotions[0] || null;
