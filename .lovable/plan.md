@@ -1,50 +1,27 @@
 
 
-## Replace Hardcoded Pinning with Dynamic In-Stock-First Sort
+## Add Oil Change Kit Image for 40-60 HP Motor Options
 
-### What changes
+### Current State
+The Oil Change Kit (part number 8M0081916) already exists in the database:
+- **`motor_options` table**: Record exists with name "Oil Change Kit (40-60HP)", base price $90, category "maintenance"
+- **`motor_option_rules` table**: A rule already maps this option to motors with HP between 40-60, with assignment type "available"
+- **Image**: Currently points to an external URL (`crowleymarine.com`) which may be unreliable or blocked
 
-**File: `src/pages/quote/MotorSelectionPage.tsx`**
+The rule-based system in `useMotorOptions.ts` should already be showing this kit on the Options page for any 40-60 HP motor. No code changes are needed for the option to appear.
 
-1. **Remove** the `CRITICAL_MODELS` constant (line 128)
-2. **Update** the `filteredMotors` memo (lines 566-577) to replace the hardcoded pinning with a dynamic sort:
-   - In-stock motors appear first, sorted by HP ascending
-   - Out-of-stock / order-only motors follow, also sorted by HP ascending
-   - This applies only when there's no active search query (search results keep relevance-based ordering)
+### What Will Change
 
-### Before (current logic)
+1. **Copy the uploaded product image** into the project at `public/images/options/8M0081916_Oil_Change_Kit.jpg`
+2. **Update the database record** in `motor_options` to use the local image path (`/images/options/8M0081916_Oil_Change_Kit.jpg`) instead of the external Crowley Marine URL
+3. **Verify** the option renders correctly on the Options page when a 40-60 HP motor is selected
 
-```
-const CRITICAL_MODELS = ['1A10201LK', '1C08201LK'];
-// ...
-const criticalMotors = processedMotors.filter(motor =>
-  CRITICAL_MODELS.includes(motor.model_number || '') && motor.in_stock
-);
-const nonCritical = processedMotors.filter(m =>
-  !criticalMotors.some(cm => cm.id === m.id)
-);
-return [...criticalMotors, ...nonCritical];
-```
-
-### After (new logic)
-
-```
-if (!searchQuery) {
-  const inStock = processedMotors.filter(m => m.in_stock);
-  const outOfStock = processedMotors.filter(m => !m.in_stock);
-  // Both groups keep their existing HP sort
-  return [...inStock, ...outOfStock];
-}
-```
-
-### Why this is better
-
-- No hardcoded model numbers to maintain -- works automatically as inventory changes
-- Customers immediately see what they can buy today
-- HP ordering is preserved within each group for easy browsing
-- Stock badges already provide clear visual distinction, no extra UI needed
+### Why
+- The external image URL may be unreliable, slow, or blocked by CORS
+- Using a local image ensures the product photo always loads
+- No code changes needed since the rule-based option assignment is already configured correctly
 
 ### Scope
-
-One file, ~10 lines changed. No new dependencies.
-
+- 1 image file copied
+- 1 database record updated (image_url field)
+- 0 code files changed
