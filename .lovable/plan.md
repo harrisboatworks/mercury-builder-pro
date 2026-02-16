@@ -1,35 +1,50 @@
 
-## Fix: "Serving Ontario Since 1965" to "Since 1947"
 
-### Problem
+## Replace Hardcoded Pinning with Dynamic In-Stock-First Sort
 
-The footer text reads "Serving Ontario Since 1965" but Harris Boat Works has been in business since **1947**. 1965 is when you became a Mercury dealer, not when the business started.
+### What changes
 
-### Mobile Layout Check
+**File: `src/pages/quote/MotorSelectionPage.tsx`**
 
-I reviewed the entire financing page on a 390px mobile viewport. Everything looks solid:
+1. **Remove** the `CRITICAL_MODELS` constant (line 128)
+2. **Update** the `filteredMotors` memo (lines 566-577) to replace the hardcoded pinning with a dynamic sort:
+   - In-stock motors appear first, sorted by HP ascending
+   - Out-of-stock / order-only motors follow, also sorted by HP ascending
+   - This applies only when there's no active search query (search results keep relevance-based ordering)
 
-- Hero section with promo pill, CTAs, and scroll link -- all properly stacked
-- How It Works steps -- stacked vertically, clean spacing
-- Benefits cards -- single column, readable
-- Promo banner -- fits well, badges/pills wrap correctly
-- Calculator -- full-width inputs, good touch targets
-- FAQ accordion -- taps and expands cleanly
-- Footer -- hours showing correctly from Google (winter schedule), contact info legible, trust badges visible
+### Before (current logic)
 
-No layout issues found on mobile.
-
-### Change
-
-**File: `src/components/ui/site-footer.tsx` (line 141)**
-
-Change:
 ```
-Serving Ontario Since 1965
-```
-To:
-```
-Serving Ontario Since 1947
+const CRITICAL_MODELS = ['1A10201LK', '1C08201LK'];
+// ...
+const criticalMotors = processedMotors.filter(motor =>
+  CRITICAL_MODELS.includes(motor.model_number || '') && motor.in_stock
+);
+const nonCritical = processedMotors.filter(m =>
+  !criticalMotors.some(cm => cm.id === m.id)
+);
+return [...criticalMotors, ...nonCritical];
 ```
 
-One line, one file.
+### After (new logic)
+
+```
+if (!searchQuery) {
+  const inStock = processedMotors.filter(m => m.in_stock);
+  const outOfStock = processedMotors.filter(m => !m.in_stock);
+  // Both groups keep their existing HP sort
+  return [...inStock, ...outOfStock];
+}
+```
+
+### Why this is better
+
+- No hardcoded model numbers to maintain -- works automatically as inventory changes
+- Customers immediately see what they can buy today
+- HP ordering is preserved within each group for easy browsing
+- Stock badges already provide clear visual distinction, no extra UI needed
+
+### Scope
+
+One file, ~10 lines changed. No new dependencies.
+
