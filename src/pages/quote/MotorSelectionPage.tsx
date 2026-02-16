@@ -124,8 +124,6 @@ interface PromotionRule {
   discount_fixed_amount: number;
 }
 
-// Critical models that should always be visible when in stock
-const CRITICAL_MODELS = ['1A10201LK', '1C08201LK']; // 9.9MH, 8MH - popular portable models
 
 function MotorSelectionContent() {
   const navigate = useNavigate();
@@ -564,17 +562,11 @@ if (event.type === 'filter_motors') {
 
   // Filter motors with intelligent search + fuzzy matching
   const filteredMotors = useMemo(() => {
-    // Always include critical in-stock models
-    const criticalMotors = processedMotors.filter(motor => 
-      CRITICAL_MODELS.includes(motor.model_number || '') && motor.in_stock
-    );
-    
     if (!searchQuery) {
-      // When no search query, ensure critical motors are at the top
-      const nonCritical = processedMotors.filter(m => 
-        !criticalMotors.some(cm => cm.id === m.id)
-      );
-      return [...criticalMotors, ...nonCritical];
+      // In-stock motors first, then out-of-stock; HP sort preserved within each group
+      const inStock = processedMotors.filter(m => m.in_stock);
+      const outOfStock = processedMotors.filter(m => !m.in_stock);
+      return [...inStock, ...outOfStock];
     }
 
     const query = searchQuery.toLowerCase().trim();
