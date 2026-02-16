@@ -1,21 +1,35 @@
 
+## Fix: "Serving Ontario Since 1965" to "Since 1947"
 
-## Fix: Remove Misleading Fallback Hours
+### Problem
 
-### What's Happening
+The footer text reads "Serving Ontario Since 1965" but Harris Boat Works has been in business since **1947**. 1965 is when you became a Mercury dealer, not when the business started.
 
-The financing page footer is already correctly pulling hours from Google Places (your winter hours of 8:00-8:01 AM / Closed are accurate). The Google API call is already limited to once per day via 24-hour caching on both client and server -- no changes needed there.
+### Mobile Layout Check
 
-The only problem: if the Google API ever fails temporarily, the `OpeningHoursDisplay` component falls back to **hardcoded summer hours** (Mon-Fri 8-5, Sat 9-2) which would be completely wrong during winter. This fallback needs to go.
+I reviewed the entire financing page on a 390px mobile viewport. Everything looks solid:
 
-### Changes
+- Hero section with promo pill, CTAs, and scroll link -- all properly stacked
+- How It Works steps -- stacked vertically, clean spacing
+- Benefits cards -- single column, readable
+- Promo banner -- fits well, badges/pills wrap correctly
+- Calculator -- full-width inputs, good touch targets
+- FAQ accordion -- taps and expands cleanly
+- Footer -- hours showing correctly from Google (winter schedule), contact info legible, trust badges visible
 
-**File: `src/components/business/OpeningHoursDisplay.tsx`**
+No layout issues found on mobile.
 
-- Remove the `FALLBACK_HOURS` constant entirely
-- When no Google data is available (API error or loading), show a simple "Contact us for current hours" message with the phone number instead of fake hours
-- Import `COMPANY_INFO` to pull the phone number
-- Keep the "Open Now / Closed" badge logic unchanged (it calculates from whatever hours are available)
+### Change
 
-This is a small, targeted change. One file, no other pages affected. The footer on every page (including financing) will either show real Google hours or a graceful fallback that doesn't lie about your schedule.
+**File: `src/components/ui/site-footer.tsx` (line 141)**
 
+Change:
+```
+Serving Ontario Since 1965
+```
+To:
+```
+Serving Ontario Since 1947
+```
+
+One line, one file.
