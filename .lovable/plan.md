@@ -1,28 +1,19 @@
 
-## Fix Share Link: Broken Slugs + Auto-Open Motor Modal
 
-Three issues to fix:
+## Fix Share Link Still Using Wrong Slug
 
-### Bug 1: `model_key` Not Fetched
-The motor query in `MotorSelection.tsx` (line 409-412) doesn't include `model_key` in the SELECT, so it's always `undefined`. The ShareLinkButton then falls back to `model` or `model_display` (e.g., "6MH FourStroke"), producing URLs with spaces like `/motors/6mh fourstroke`.
+### Root Cause
+The `Motor` interface in `QuoteBuilder.tsx` doesn't include `model_key`, so even though the database query fetches it, the data gets lost when passed around as the `Motor` type. The ShareLinkButton falls back to `motor.model` ("6MH FourStroke"), producing `6mh-fourstroke` instead of the correct `fs-6-mh`.
 
-**Fix:** Add `model_key` to the select query in `MotorSelection.tsx`.
+### Fixes
 
-### Bug 2: `buildSlug` Not Robust
-Even with `model_key` available, the slug builder should handle edge cases (spaces, special chars) as a safety net.
+**1. `src/components/QuoteBuilder.tsx`** -- Add `model_key` to the Motor interface
+- Add `model_key?: string | null;` to the `Motor` interface so it flows cleanly through the type system without `as any` hacks
 
-**Fix:** Update `buildSlug` in `ShareLinkButton.tsx` to also strip spaces and non-URL-safe characters.
+**2. `src/components/quote-builder/MotorSelection.tsx`** -- Remove the `as any` cast
+- In the motor mapping (~line 489), set `model_key: m.model_key || null` as a proper typed field instead of relying on `as any`
 
-### Bug 3: Share Link Doesn't Open the Motor Modal
-Currently `/motors/fs-6-mh` redirects to `/quote/motor-selection?motor=ID`, but nothing in MotorSelection reads that `?motor=` param. The user lands on the full motor list with nothing highlighted.
+**3. `src/components/motors/MotorCardPreview.tsx`** -- Remove `(motor as any)` cast
+- Change `(motor as any).model_key` to just `motor.model_key` since the Motor type will now include it
 
-**Fix:** Add logic in `MotorSelection.tsx` to read the `motor` URL param on mount. When present, find that motor in the list and automatically open its detail modal (the same one that opens when you click a card).
-
-### Files Changed
-
-1. **`src/components/quote-builder/MotorSelection.tsx`**
-   - Add `model_key` to the Supabase select query
-   - On mount, read `?motor=` param; if present, find matching motor and auto-trigger its detail modal open
-
-2. **`src/components/motors/ShareLinkButton.tsx`**
-   - Make `buildSlug` more robust: replace spaces with dashes, strip non-alphanumeric characters (except dashes), collapse multiple dashes
+These are small, targeted changes -- just making `model_key` a first-class field on the Motor type so the ShareLinkButton always gets it.
