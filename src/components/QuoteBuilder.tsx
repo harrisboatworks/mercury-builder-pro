@@ -40,6 +40,7 @@ export interface Motor {
   type: string;
   specs: string;
   // Hero image field for priority logic
+  model_key?: string | null;
   hero_media_id?: string;
   // Optional pricing metadata
   basePrice?: number;

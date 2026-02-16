@@ -488,7 +488,7 @@ export const MotorSelection = ({
           family: m.family || null,
           shaft: m.shaft || null,
           model_key: m.model_key || null
-        } as any;
+        };
       });
 
       // Debug-only: simulate a few discounted items so card UI can be verified

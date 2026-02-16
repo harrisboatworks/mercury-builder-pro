@@ -484,7 +484,7 @@ export default function MotorCardPreview({
                     />
                   </div>
                   <AskQuestionButton motor={motor} />
-                  <ShareLinkButton modelKey={(motor as any).model_key} modelFallback={motor.model} />
+                  <ShareLinkButton modelKey={motor.model_key} modelFallback={motor.model} />
                 </div>
               )}
             </div>
