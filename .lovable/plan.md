@@ -1,44 +1,54 @@
 
 
-## Fix Share Links: Slug Generation + Modal Auto-Open
+## Fix Quote Summary Chat: Motor-Aware Prompts + Financing Gate
 
-There are two distinct bugs causing the broken experience:
+### Problem 1: Financing prompts shown for sub-$5k motors
+The summary page suggested questions (in `getContextualPrompts.ts`, lines 114-121) are hardcoded and always include "What's my monthly payment?" and "What are my financing options?" -- even when the motor is under $5,000, where financing is not available per policy.
 
-### Bug 1: Wrong slug still being generated
+### Problem 2: Prompts don't reference the motor
+The same hardcoded prompts are generic ("What's my monthly payment?") with no motor name. When the user taps one, the AI receives a vague question without motor context in the message itself. While the system prompt does include motor info, the AI may still respond generically because the user's question doesn't reference a specific motor.
 
-**Root cause:** `MotorSelectionPage.tsx` (the actual page rendering motor cards) fetches `model_key` via `SELECT *`, but drops it during the Motor type conversion at line 531. The `convertedMotor` object never includes `model_key`, so it's always `undefined` when it reaches the `ShareLinkButton`. The button then falls back to `motor.model` (e.g., "6MH FourStroke"), producing the broken slug `6mh-fourstroke`.
+### Fixes
 
-**Fix:** Add `model_key: dbMotor.model_key || null` to the motor mapping in `MotorSelectionPage.tsx` (around line 530, alongside the existing `shaft` and `images` fields).
+**File: `src/components/chat/getContextualPrompts.ts`**
 
-### Bug 2: Modal doesn't open on redirect
+1. Update the summary page section (lines 113-121) to accept the `motor` parameter and make prompts motor-aware:
+   - Include the motor name in prompts (e.g., "How long until my 6HP FourStroke is ready?")
+   - Check motor price/HP to determine financing eligibility
+   - If motor is under $5k (roughly under 40HP as a proxy, or pass price): show non-financing prompts like "Any rebates on this motor?" instead of "What's my monthly payment?"
+   - If motor is $5k+: keep financing-related prompts
 
-**Root cause:** The deep-link handler (line 706-729) searches for the motor by ID within `groupedMotors`, which groups motors by HP. When it finds a match, it calls `setSelectedGroup(targetGroup)` and `setShowConfigurator(true)`. However, the motor appeared in the bottom bar (via `SET_PREVIEW_MOTOR` dispatched elsewhere) but the modal didn't open -- this suggests the `groupedMotors.find()` lookup failed to match.
+2. The function signature already receives `motor: Motor | null`, so no interface changes needed. We just need to use it in the summary block.
 
-The likely timing issue: `processedMotors` populates first, the effect fires, but `groupedMotors` (derived via `useGroupedMotors`) may not yet contain the motor when the effect runs. The effect depends on both `processedMotors` and `groupedMotors`, but the `setTimeout(150ms)` may not be enough.
+### Example prompt sets after fix
 
-**Fix:** Make the deep-link effect more resilient:
-- Add `groupedMotors` to the dependency check more carefully
-- If the group lookup fails, fall back to directly finding the motor in `processedMotors` and constructing a temporary group
-- Add a retry mechanism if motors haven't loaded yet
+**Sub-$5k motor (e.g., 6HP FourStroke):**
+- "Any current rebates on the 6HP?"
+- "How long until my 6HP is ready?"
+- "What's included with my motor?"
+- "Can you walk me through the quote?"
 
-### Bug 3: `MotorRedirect.tsx` can't resolve bad slugs
+**$5k+ motor (e.g., 150HP Pro XS):**
+- "What's my monthly payment on the 150HP?"
+- "Can you get me a better price?"
+- "How long until my Pro XS is ready?"
+- "What are my financing options?"
 
-**Root cause:** When the slug `6mh-fourstroke` arrives, `MotorRedirect` converts it to `6MH_FOURSTROKE` and queries `model_key = '6MH_FOURSTROKE'`. The actual key is `FS_6_MH`, so both exact and fuzzy (`ILIKE '%6MH_FOURSTROKE%'`) lookups fail. The user gets a "not found" error.
+### Technical Details
 
-**Fix:** Add a secondary lookup in `MotorRedirect.tsx` that also tries matching against `model_display` (case-insensitive, with dashes converted to spaces). So `6mh-fourstroke` becomes `6MH FOURSTROKE`, which would match `model_display = '6MH FourStroke'` via `ILIKE`. This ensures old/bad links still work even after the slug generation is fixed.
+- The `getContextualPrompts` function already receives a `motor` object with `model` and `hp` fields
+- We'll use `hp` as a proxy for the $5k threshold: motors under ~40HP are generally under $5k. Alternatively, we can check `motor.price` if available in the interface (it's not currently -- the Motor interface in this file only has `model`, `hp`, and `horsepower`)
+- Safest approach: add an optional `price` field to the local Motor interface and pass it from `EnhancedChatWidget.tsx` and `InlineChatDrawer.tsx` where motor price is available via `state.motor.price`
+- Use `FINANCING_MINIMUM` constant from `@/lib/finance` for the threshold check to stay consistent with the rest of the app
 
 ### Files Changed
 
-1. **`src/pages/quote/MotorSelectionPage.tsx`**
-   - Add `model_key: dbMotor.model_key || null` to the motor conversion (line ~530)
-   - Make the deep-link `useEffect` (line 706) more resilient with a fallback lookup
+1. **`src/components/chat/getContextualPrompts.ts`**
+   - Add `price?: number` to the local Motor interface
+   - Update summary page prompts to use motor name and conditionally show/hide financing prompts based on price vs FINANCING_MINIMUM
 
-2. **`src/pages/MotorRedirect.tsx`**
-   - Add fallback query matching `model_display` when `model_key` lookup fails
-   - This ensures backwards compatibility with previously generated broken slugs
+2. **`src/components/chat/EnhancedChatWidget.tsx`**
+   - Pass `price` when constructing the motor object for `getContextualPromptsWithPerplexity` (~line 176)
 
-### Result
-- New share links will use the correct `model_key` slug (e.g., `/motors/fs-6-mh`)
-- Old broken links (e.g., `/motors/6mh-fourstroke`) will still resolve via `model_display` fallback
-- The configurator modal will reliably open when arriving via a share link
-
+3. **`src/components/chat/InlineChatDrawer.tsx`**
+   - Same change: pass `price` in the motor object for contextual prompts
