@@ -1,50 +1,55 @@
 
 
-# Fix: Mobile Chat Failing on Streaming Connection Drop
+# Fix: Washed Out / Faded Boat Info Page on Mobile
 
 ## Problem
-When you tap a quick question on mobile, the AI chat sends a **streaming (SSE) request** to `ai-chatbot-stream`. On mobile networks, the connection drops before the response completes, causing the "Http: connection closed before message completed" error server-side. The client then shows the generic error message.
+The Boat Info step (Step 4) looks faded and washed out on iPhone. The root cause is the "dark mode protection" CSS classes that force low-contrast gray colors:
 
-## Root Causes
-1. **Missing API key header** in `src/lib/streamParser.ts` -- the fetch call to the edge function omits the `apikey` header, which can cause issues with Supabase's gateway on certain networks
-2. **No retry or fallback** -- when streaming fails on mobile (common on cellular), there is no fallback to a simpler non-streaming request
-3. **Long server processing time** -- the edge function fetches inventory, promotions, and potentially Perplexity data before responding, which can take several seconds. Mobile connections may time out during this wait
+- `bg-protected` forces `hsl(220, 14%, 96%)` (very light gray) on card backgrounds
+- `text-protected` forces `hsl(215, 16%, 47%)` (medium gray) for body text
+- `text-protected-subtle` forces `hsl(220, 9%, 46%)` for descriptions
+- `heading-protected` forces `hsl(222, 47%, 11%)` which is fine for headings
+- Combined with `border-gray-200` on cards and `font-light` everywhere, the whole page reads as washed out
 
-## Plan
+On a phone screen at outdoor brightness, these low-contrast grays are especially hard to read.
 
-### 1. Add missing `apikey` header to stream requests
-**File:** `src/lib/streamParser.ts`
-- Add the Supabase anon key to the fetch headers so the request is properly authenticated through the gateway
+## Solution
+Increase contrast across the board by darkening text colors and making backgrounds crisper, while keeping the dark-mode protection approach intact.
 
-### 2. Add automatic retry with non-streaming fallback
-**File:** `src/lib/streamParser.ts`
-- If the streaming fetch fails or the connection drops, automatically retry once with `stream: false`
-- Parse the JSON response and simulate typewriter effect (this path already exists in the code but only triggers when the content-type isn't SSE)
+### 1. Darken the protected text utility classes
+**File:** `src/index.css`
 
-### 3. Add connection timeout for mobile
-**File:** `src/lib/streamParser.ts`
-- Add an `AbortController` with a 25-second timeout to prevent indefinite hangs on mobile
-- If the timeout fires, fall back to the non-streaming path
+| Class | Current | New |
+|-------|---------|-----|
+| `.text-protected` | `hsl(215, 16%, 47%)` (47% lightness) | `hsl(215, 20%, 30%)` (30% lightness) |
+| `.text-protected-subtle` | `hsl(220, 9%, 46%)` | `hsl(220, 12%, 35%)` |
+| `.text-protected-muted` | `hsl(220, 13%, 55%)` | `hsl(220, 13%, 45%)` |
+| `.bg-protected` | `hsl(220, 14%, 96%)` | `hsl(0, 0%, 100%)` (white, crisper) |
 
-### 4. Improve error handling in InlineChatDrawer
-**File:** `src/components/chat/InlineChatDrawer.tsx`
-- Update the `onError` handler to show a more helpful message with a "Retry" option instead of immediately showing the "text us" fallback
+This improves readability without changing the overall design language.
+
+### 2. Strengthen boat type card borders and text
+**File:** `src/components/quote-builder/BoatInformation.tsx`
+
+- Change card border from `border-gray-200` to `border-gray-300` for unselected cards
+- Change the page subtitle from `text-protected` to `text-protected-subtle` (which will now be darker)
+- The "Recommended: XX HP" text already uses `text-protected-primary` which is fine
+
+### 3. Bump font weight on key labels
+**File:** `src/components/quote-builder/BoatInformation.tsx`
+
+- Boat type name: change from `font-light` to `font-normal` so it stands out
+- "What type of boat do you have?" heading is already good
+- Description text: keep `font-light` but the darker color from step 1 will make it readable
 
 ## Technical Details
 
-```text
-Current flow (broken on mobile):
-  Phone -> SSE stream request -> Edge Function builds prompt (3-5s) -> Streams response
-                                    ^-- mobile connection drops here
-
-Fixed flow:
-  Phone -> SSE stream request (with apikey + 25s timeout)
-    |-- Success: stream response as before
-    |-- Fail/timeout: auto-retry with non-streaming JSON request
-        |-- Success: typewriter effect from JSON response
-        |-- Fail: show error with retry button
-```
-
 ### Files to modify:
-- `src/lib/streamParser.ts` (add apikey header, retry logic, timeout)
-- `src/components/chat/InlineChatDrawer.tsx` (retry button on error)
+1. **`src/index.css`** (lines 33-52) -- darken the 4 protected color utility classes
+2. **`src/components/quote-builder/BoatInformation.tsx`** (line 554) -- change `border-gray-200` to `border-gray-300`, and (line 567) change `font-light` to `font-normal` on boat type headings
+
+### Impact
+- All pages using these protected classes will get the contrast boost (consistent improvement across the site)
+- No layout changes, no structural changes
+- Selected state (red border) stays the same
+
