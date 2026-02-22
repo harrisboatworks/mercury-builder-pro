@@ -8,7 +8,7 @@ const corsHeaders = {
 };
 
 const ADMIN_EMAIL = "info@harrisboatworks.ca";
-const APP_URL = "https://mercury-quote-tool.lovable.app";
+const APP_URL = "https://mercuryrepower.ca";
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
