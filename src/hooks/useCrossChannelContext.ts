@@ -26,7 +26,7 @@ export function useCrossChannelContext() {
   
   /**
    * Load recent voice session context for text chat
-   * Returns summary of recent voice conversations for the same session
+   * Uses edge function proxy for anonymous users (RLS cannot read HTTP headers)
    */
   const loadVoiceContextForText = useCallback(async (): Promise<VoiceContextForText> => {
     try {
@@ -35,18 +35,48 @@ export function useCrossChannelContext() {
         return { hasRecentVoice: false, summary: null, motorsDiscussed: [], lastVoiceAt: null, messageCount: 0 };
       }
 
-      // Get recent voice sessions from the last 2 hours for this session
       const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString();
       
-      const { data: sessions, error } = await supabase
-        .from('voice_sessions')
-        .select('summary, motor_context, started_at, messages_exchanged')
-        .eq('session_id', sessionId)
-        .gte('started_at', twoHoursAgo)
-        .order('started_at', { ascending: false })
-        .limit(3);
+      const { data: { user } } = await supabase.auth.getUser();
 
-      if (error || !sessions || sessions.length === 0) {
+      let sessions: Array<{
+        summary: string | null;
+        motor_context: unknown;
+        started_at: string;
+        messages_exchanged: number;
+      }> | null = null;
+
+      if (user) {
+        // Authenticated: direct RLS query
+        const { data, error } = await supabase
+          .from('voice_sessions')
+          .select('summary, motor_context, started_at, messages_exchanged')
+          .eq('user_id', user.id)
+          .gte('started_at', twoHoursAgo)
+          .order('started_at', { ascending: false })
+          .limit(3);
+
+        if (error) {
+          return { hasRecentVoice: false, summary: null, motorsDiscussed: [], lastVoiceAt: null, messageCount: 0 };
+        }
+        sessions = data;
+      } else {
+        // Anonymous: use edge function proxy
+        const { data, error } = await supabase.functions.invoke('voice-sessions-proxy', {
+          body: { action: 'list', session_id: sessionId, limit: 3 },
+        });
+
+        if (error || !data?.sessions) {
+          return { hasRecentVoice: false, summary: null, motorsDiscussed: [], lastVoiceAt: null, messageCount: 0 };
+        }
+
+        // Filter to last 2 hours client-side (proxy doesn't support date filtering)
+        sessions = (data.sessions as typeof sessions)?.filter(
+          (s) => s.started_at && new Date(s.started_at).toISOString() >= twoHoursAgo
+        ) ?? null;
+      }
+
+      if (!sessions || sessions.length === 0) {
         return { hasRecentVoice: false, summary: null, motorsDiscussed: [], lastVoiceAt: null, messageCount: 0 };
       }
 

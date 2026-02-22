@@ -210,3 +210,6 @@ verify_jwt = false
 [functions.weekly-quote-report]
 verify_jwt = false
 
+[functions.voice-sessions-proxy]
+verify_jwt = false
+
