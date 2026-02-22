@@ -92,6 +92,43 @@ serve(async (req) => {
     const sessionsWithTradeIn = new Set(tradeInEvents.map(e => e.session_id)).size;
     const sessionsWithFinancing = new Set(financingEvents.map(e => e.session_id)).size;
 
+    // --- Traffic Source Analysis (UTM) ---
+    const trafficSources: Record<string, number> = {};
+    const campaignPerformance: Record<string, { sessions: number; quotes: number }> = {};
+    const seenSessions = new Set<string>();
+
+    for (const e of events) {
+      // Deduplicate by session for traffic source counting
+      if (seenSessions.has(e.session_id)) continue;
+      seenSessions.add(e.session_id);
+
+      const source = e.utm_source || (e.referrer ? new URL(e.referrer).hostname.replace('www.', '') : 'direct');
+      trafficSources[source] = (trafficSources[source] || 0) + 1;
+
+      const campaign = e.utm_campaign;
+      if (campaign) {
+        if (!campaignPerformance[campaign]) campaignPerformance[campaign] = { sessions: 0, quotes: 0 };
+        campaignPerformance[campaign].sessions++;
+      }
+    }
+
+    // Count saved quotes per campaign
+    for (const q of quotes) {
+      const qd = q.quote_data as any;
+      const campaign = qd?.utm_campaign || q.lead_source;
+      if (campaign && campaignPerformance[campaign]) {
+        campaignPerformance[campaign].quotes++;
+      }
+    }
+
+    const topTrafficSources = Object.entries(trafficSources)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 10);
+
+    const topCampaigns = Object.entries(campaignPerformance)
+      .sort((a, b) => b[1].sessions - a[1].sessions)
+      .slice(0, 5);
+
     // --- Compute metrics ---
     const totalQuotes = quotes.length;
     const prevTotalQuotes = prevQuotes.length;
@@ -149,6 +186,14 @@ serve(async (req) => {
       if (avgUnsavedValue > 0) {
         smsLines.push(`• Avg unsaved quote: ${fmt(avgUnsavedValue)}`);
       }
+    }
+    // Traffic sources for SMS
+    if (topTrafficSources.length > 0) {
+      smsLines.push(`\n🌐 Traffic Sources:`);
+      smsLines.push(`• ${topTrafficSources.slice(0, 5).map(([s, c]) => `${s} (${c})`).join(', ')}`);
+    }
+    if (topCampaigns.length > 0) {
+      smsLines.push(`• Campaigns: ${topCampaigns.slice(0, 3).map(([c, d]) => `${c}: ${d.sessions} visits, ${d.quotes} quotes`).join('; ')}`);
     }
     const smsBody = smsLines.join('\n');
 
@@ -264,6 +309,43 @@ serve(async (req) => {
           <th style="padding:8px 12px;text-align:center;border-bottom:2px solid #e5e7eb;">Count</th>
         </tr></thead>
         <tbody>${sourceRows}</tbody>
+      </table>
+      ` : ''}
+
+      <!-- Traffic Sources (Ad Campaigns) -->
+      ${topTrafficSources.length > 0 ? `
+      <h2 style="font-size:16px;color:#374151;margin:24px 0 12px;">🌐 Traffic Sources</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;">
+        <thead><tr style="background:#ecfdf5;">
+          <th style="padding:8px 12px;text-align:left;border-bottom:2px solid #e5e7eb;">Source</th>
+          <th style="padding:8px 12px;text-align:center;border-bottom:2px solid #e5e7eb;">Sessions</th>
+        </tr></thead>
+        <tbody>${topTrafficSources.map(([source, count]) => `
+          <tr>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${source}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${count}</td>
+          </tr>
+        `).join('')}</tbody>
+      </table>
+      ` : ''}
+
+      ${topCampaigns.length > 0 ? `
+      <h2 style="font-size:16px;color:#374151;margin:24px 0 12px;">📣 Ad Campaign Performance</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;">
+        <thead><tr style="background:#fef3c7;">
+          <th style="padding:8px 12px;text-align:left;border-bottom:2px solid #e5e7eb;">Campaign</th>
+          <th style="padding:8px 12px;text-align:center;border-bottom:2px solid #e5e7eb;">Sessions</th>
+          <th style="padding:8px 12px;text-align:center;border-bottom:2px solid #e5e7eb;">Quotes</th>
+          <th style="padding:8px 12px;text-align:center;border-bottom:2px solid #e5e7eb;">Conv. Rate</th>
+        </tr></thead>
+        <tbody>${topCampaigns.map(([campaign, data]) => `
+          <tr>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;">${campaign}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${data.sessions}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${data.quotes}</td>
+            <td style="padding:8px 12px;border-bottom:1px solid #e5e7eb;text-align:center;">${data.sessions > 0 ? Math.round((data.quotes / data.sessions) * 100) : 0}%</td>
+          </tr>
+        `).join('')}</tbody>
       </table>
       ` : ''}
 
