@@ -2066,15 +2066,19 @@ export type Database = {
       quote_activity_events: {
         Row: {
           created_at: string
+          device_type: string | null
           event_data: Json | null
           event_type: string
           id: string
           motor_hp: number | null
           motor_model: string | null
           page_path: string | null
+          page_title: string | null
           quote_value: number | null
           referrer: string | null
+          screen_width: number | null
           session_id: string
+          time_on_page_seconds: number | null
           user_id: string | null
           utm_campaign: string | null
           utm_content: string | null
@@ -2084,15 +2088,19 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          device_type?: string | null
           event_data?: Json | null
           event_type: string
           id?: string
           motor_hp?: number | null
           motor_model?: string | null
           page_path?: string | null
+          page_title?: string | null
           quote_value?: number | null
           referrer?: string | null
+          screen_width?: number | null
           session_id: string
+          time_on_page_seconds?: number | null
           user_id?: string | null
           utm_campaign?: string | null
           utm_content?: string | null
@@ -2102,15 +2110,19 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          device_type?: string | null
           event_data?: Json | null
           event_type?: string
           id?: string
           motor_hp?: number | null
           motor_model?: string | null
           page_path?: string | null
+          page_title?: string | null
           quote_value?: number | null
           referrer?: string | null
+          screen_width?: number | null
           session_id?: string
+          time_on_page_seconds?: number | null
           user_id?: string | null
           utm_campaign?: string | null
           utm_content?: string | null

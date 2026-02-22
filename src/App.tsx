@@ -18,6 +18,7 @@ import { RouteLoader } from "@/components/ui/RouteLoader";
 import { GlobalAIChat } from "@/components/chat/GlobalAIChat";
 import { UnifiedMobileBar } from "@/components/quote-builder/UnifiedMobileBar";
 import { ComparisonDesktopButton } from "@/components/motors/ComparisonDesktopButton";
+import { usePageViewTracker } from "@/hooks/usePageViewTracker";
 import { GoogleRatingBadge } from "@/components/business/GoogleRatingBadge";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SoundProvider } from "@/contexts/SoundContext";
@@ -133,6 +134,7 @@ function Canonical() {
 
 function AnimatedRoutes() {
   const location = useLocation();
+  usePageViewTracker();
   
   return (
     <Suspense fallback={<RouteLoader />}>
