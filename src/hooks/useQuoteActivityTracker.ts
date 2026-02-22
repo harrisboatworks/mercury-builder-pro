@@ -5,6 +5,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useLocation } from 'react-router-dom';
 
 const SESSION_KEY = 'quote_activity_session_id';
+const UTM_KEY = 'quote_activity_utm';
 const DEBOUNCE_MS = 2000;
 
 function getOrCreateSessionId(): string {
@@ -20,6 +21,36 @@ function getOrCreateSessionId(): string {
   } catch {
     return `qa_fallback_${Date.now()}`;
   }
+}
+
+interface UtmParams {
+  utm_source: string | null;
+  utm_medium: string | null;
+  utm_campaign: string | null;
+  utm_term: string | null;
+  utm_content: string | null;
+  referrer: string | null;
+}
+
+/** Capture UTM params from URL on first visit, persist in sessionStorage */
+function captureUtmParams(): UtmParams {
+  try {
+    const cached = sessionStorage.getItem(UTM_KEY);
+    if (cached) return JSON.parse(cached);
+  } catch { /* ignore */ }
+
+  const params = new URLSearchParams(window.location.search);
+  const utm: UtmParams = {
+    utm_source: params.get('utm_source'),
+    utm_medium: params.get('utm_medium'),
+    utm_campaign: params.get('utm_campaign'),
+    utm_term: params.get('utm_term'),
+    utm_content: params.get('utm_content'),
+    referrer: document.referrer || null,
+  };
+
+  try { sessionStorage.setItem(UTM_KEY, JSON.stringify(utm)); } catch { /* ignore */ }
+  return utm;
 }
 
 type EventType =
@@ -60,10 +91,13 @@ export function useQuoteActivityTracker() {
   const prevFinancingTerm = useRef(0);
   const hasActiveQuote = useRef(false);
 
+  const utmParams = useRef(captureUtmParams());
+
   const flush = useCallback(async (event: PendingEvent) => {
     if (flushing.current) return;
     flushing.current = true;
     try {
+      const utm = utmParams.current;
       await (supabase as any).from('quote_activity_events').insert({
         session_id: sessionId.current,
         user_id: user?.id ?? null,
@@ -73,6 +107,12 @@ export function useQuoteActivityTracker() {
         quote_value: event.quote_value,
         event_data: event.event_data,
         page_path: event.page_path,
+        utm_source: utm.utm_source,
+        utm_medium: utm.utm_medium,
+        utm_campaign: utm.utm_campaign,
+        utm_term: utm.utm_term,
+        utm_content: utm.utm_content,
+        referrer: utm.referrer,
       });
     } catch {
       // Silently fail — analytics should never break the app
@@ -197,6 +237,7 @@ export function useQuoteActivityTracker() {
     const handleBeforeUnload = () => {
       if (!hasActiveQuote.current || !state.motor) return;
       const { model, hp, price } = getMotorInfo();
+      const utm = utmParams.current;
       // Use sendBeacon for reliability during unload
       const payload = JSON.stringify({
         session_id: sessionId.current,
@@ -207,6 +248,12 @@ export function useQuoteActivityTracker() {
         quote_value: price,
         event_data: { step: state.currentStep },
         page_path: location.pathname,
+        utm_source: utm.utm_source,
+        utm_medium: utm.utm_medium,
+        utm_campaign: utm.utm_campaign,
+        utm_term: utm.utm_term,
+        utm_content: utm.utm_content,
+        referrer: utm.referrer,
       });
       const url = `${(supabase as any).supabaseUrl}/rest/v1/quote_activity_events`;
       const apiKey = (supabase as any).supabaseKey;

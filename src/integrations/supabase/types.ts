@@ -2073,8 +2073,14 @@ export type Database = {
           motor_model: string | null
           page_path: string | null
           quote_value: number | null
+          referrer: string | null
           session_id: string
           user_id: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
         }
         Insert: {
           created_at?: string
@@ -2085,8 +2091,14 @@ export type Database = {
           motor_model?: string | null
           page_path?: string | null
           quote_value?: number | null
+          referrer?: string | null
           session_id: string
           user_id?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
         }
         Update: {
           created_at?: string
@@ -2097,8 +2109,14 @@ export type Database = {
           motor_model?: string | null
           page_path?: string | null
           quote_value?: number | null
+          referrer?: string | null
           session_id?: string
           user_id?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
         }
         Relationships: []
       }
