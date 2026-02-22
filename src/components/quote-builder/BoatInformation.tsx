@@ -551,7 +551,7 @@ export const BoatInformation = ({
                        .map(type => <button type="button" key={type.id} onClick={() => setBoatInfo(prev => ({
                    ...prev,
                    type: type.id
-                 }))} className={`group relative rounded-2xl border-2 p-4 bg-protected text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-50' : 'border-gray-200'}`} aria-pressed={boatInfo.type === type.id}>
+                 }))} className={`group relative rounded-2xl border-2 p-4 bg-protected text-left transition-all hover:-translate-y-0.5 hover:shadow-lg min-h-[44px] ${boatInfo.type === type.id ? 'border-red-600 bg-red-50' : 'border-gray-300'}`} aria-pressed={boatInfo.type === type.id}>
                           <div className="mb-3 h-32 md:h-40 overflow-hidden rounded-md flex items-center justify-center bg-protected-white">
                              <img 
                                src={type.image} 
@@ -564,7 +564,7 @@ export const BoatInformation = ({
                                loading="lazy" 
                              />
                          </div>
-                        <h3 className="font-light tracking-wide text-base md:text-lg heading-protected">{type.label}</h3>
+                        <h3 className="font-normal tracking-wide text-base md:text-lg heading-protected">{type.label}</h3>
                         <div className="boat-details mt-1 space-y-0.5">
                           <span className="block text-sm md:text-base font-light text-protected-subtle">{type.description}</span>
                           {type.recommendedHP && <span className="block text-xs md:text-sm text-protected-primary font-medium">Recommended: {type.recommendedHP} HP</span>}
