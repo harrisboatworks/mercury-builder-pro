@@ -1,6 +1,9 @@
-// SSE Stream Parser for AI Chat with Typewriter Effect
+// SSE Stream Parser for AI Chat with Typewriter Effect + Mobile Fallback
 
 const SUPABASE_URL = 'https://eutsoqdpjurknjsshxes.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
+
+const STREAM_TIMEOUT_MS = 25_000; // 25s timeout for mobile connections
 
 export interface StreamChatParams {
   message: string;
@@ -23,9 +26,7 @@ export interface StreamChatParams {
       selectedPackage?: string | null;
       tradeInValue?: number | null;
     };
-    // Prefetched motor insights from Perplexity for proactive knowledge sharing
     prefetchedInsights?: string[];
-    // Voice-to-text context handoff - recent voice session summary
     voiceContext?: {
       summary: string | null;
       motorsDiscussed: string[];
@@ -38,6 +39,54 @@ export interface StreamChatParams {
   onError: (error: Error) => void;
 }
 
+// Non-streaming fallback request (used when SSE fails on mobile)
+async function fetchNonStreaming(
+  message: string,
+  conversationHistory: Array<{ role: string; content: string }>,
+  context: StreamChatParams['context'],
+  onDelta: (chunk: string) => void,
+  onDone: (fullResponse: string) => void,
+): Promise<void> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), STREAM_TIMEOUT_MS);
+
+  try {
+    const response = await fetch(`${SUPABASE_URL}/functions/v1/ai-chatbot-stream`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify({ message, conversationHistory, context, stream: false }),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeout);
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error || `Fallback request failed: ${response.status}`);
+    }
+
+    const data = await response.json();
+    const reply = data.reply || data.error || 'No response received';
+
+    // Simulate typewriter effect for non-streaming response
+    const words = reply.split(' ');
+    let fullResponse = '';
+    for (let i = 0; i < words.length; i++) {
+      const word = words[i] + (i < words.length - 1 ? ' ' : '');
+      fullResponse += word;
+      onDelta(word);
+      await new Promise(r => setTimeout(r, 30));
+    }
+    onDone(fullResponse);
+  } catch (err) {
+    clearTimeout(timeout);
+    throw err;
+  }
+}
+
 export async function streamChat({
   message,
   conversationHistory,
@@ -47,18 +96,34 @@ export async function streamChat({
   onError
 }: StreamChatParams): Promise<void> {
   try {
-    const response = await fetch(`${SUPABASE_URL}/functions/v1/ai-chatbot-stream`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ 
-        message, 
-        conversationHistory,
-        context,
-        stream: true
-      })
-    });
+    // Attempt streaming request with timeout
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), STREAM_TIMEOUT_MS);
+
+    let response: Response;
+    try {
+      response = await fetch(`${SUPABASE_URL}/functions/v1/ai-chatbot-stream`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': SUPABASE_ANON_KEY,
+        },
+        body: JSON.stringify({ message, conversationHistory, context, stream: true }),
+        signal: controller.signal,
+      });
+    } catch (fetchErr) {
+      clearTimeout(timeout);
+      // Network error or timeout — fall back to non-streaming
+      console.warn('[StreamChat] Streaming fetch failed, retrying without streaming:', fetchErr);
+      try {
+        await fetchNonStreaming(message, conversationHistory, context, onDelta, onDone);
+        return;
+      } catch (fallbackErr) {
+        throw fallbackErr;
+      }
+    }
+
+    clearTimeout(timeout);
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
@@ -74,36 +139,54 @@ export async function streamChat({
       let buffer = '';
       let fullResponse = '';
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
+      try {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
 
-        buffer += decoder.decode(value, { stream: true });
+          buffer += decoder.decode(value, { stream: true });
 
-        // Parse SSE lines
-        const lines = buffer.split('\n');
-        buffer = lines.pop() || '';
+          const lines = buffer.split('\n');
+          buffer = lines.pop() || '';
 
-        for (const line of lines) {
-          if (line.startsWith('data: ')) {
-            const data = line.slice(6).trim();
-            
-            if (data === '[DONE]') {
-              onDone(fullResponse);
-              return;
-            }
-
-            try {
-              const parsed = JSON.parse(data);
-              const content = parsed.choices?.[0]?.delta?.content;
-              if (content) {
-                fullResponse += content;
-                onDelta(content);
+          for (const line of lines) {
+            if (line.startsWith('data: ')) {
+              const data = line.slice(6).trim();
+              
+              if (data === '[DONE]') {
+                onDone(fullResponse);
+                return;
               }
-            } catch {
-              // Incomplete JSON, skip
+
+              try {
+                const parsed = JSON.parse(data);
+                const content = parsed.choices?.[0]?.delta?.content;
+                if (content) {
+                  fullResponse += content;
+                  onDelta(content);
+                }
+              } catch {
+                // Incomplete JSON, skip
+              }
             }
           }
+        }
+      } catch (streamReadErr) {
+        // Stream read failed mid-response (connection drop on mobile)
+        console.warn('[StreamChat] Stream read failed mid-response, falling back:', streamReadErr);
+        
+        // If we already got some content, deliver what we have
+        if (fullResponse.length > 20) {
+          onDone(fullResponse);
+          return;
+        }
+        
+        // Otherwise retry without streaming
+        try {
+          await fetchNonStreaming(message, conversationHistory, context, onDelta, onDone);
+          return;
+        } catch (fallbackErr) {
+          throw fallbackErr;
         }
       }
 
@@ -132,7 +215,6 @@ export async function streamChat({
       const data = await response.json();
       const reply = data.reply || data.error || 'No response received';
       
-      // Simulate typewriter effect for non-streaming responses
       const words = reply.split(' ');
       let fullResponse = '';
       
@@ -140,7 +222,7 @@ export async function streamChat({
         const word = words[i] + (i < words.length - 1 ? ' ' : '');
         fullResponse += word;
         onDelta(word);
-        await new Promise(r => setTimeout(r, 30)); // Small delay for effect
+        await new Promise(r => setTimeout(r, 30));
       }
       
       onDone(fullResponse);
@@ -168,7 +250,6 @@ export function detectComparisonQuery(message: string): {
   for (const pattern of patterns) {
     const match = message.match(pattern);
     if (match) {
-      // Extract the two HP values
       const numbers = match.slice(1).filter(m => /^\d+$/.test(m)).map(Number);
       if (numbers.length >= 2) {
         return { 

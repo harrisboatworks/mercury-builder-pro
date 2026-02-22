@@ -82,6 +82,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
   const [isLoadingLocal, setIsLoadingLocal] = useState(false);
   const [keyboardVisible, setKeyboardVisible] = useState(false);
   const [sendState, setSendState] = useState<'idle' | 'sending' | 'success'>('idle');
+  const [lastFailedMessage, setLastFailedMessage] = useState<string | null>(null);
   
   // Track which motor the user has already interacted with (asked questions about)
   const [interactedMotorId, setInteractedMotorId] = useState<string | null>(null);
@@ -680,7 +681,7 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
         onError: (error) => {
           console.error('Stream error:', error);
           triggerHaptic('error');
-          const errorText = "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.";
+          const errorText = "I'm sorry, I'm having trouble connecting. Tap **Retry** to try again, or text us at 647-952-2153.";
           setMessages(prev => prev.map(msg => 
             msg.id === streamingId 
               ? { ...msg, text: errorText, isStreaming: false }
@@ -688,21 +689,33 @@ export const InlineChatDrawer: React.FC<InlineChatDrawerProps> = ({
           ));
           saveMessage(errorText, 'assistant');
           setIsLoading(false);
+          // Store the failed message so user can retry
+          setLastFailedMessage(text.trim());
         }
       });
 
     } catch (error) {
       console.error('Chat error:', error);
       triggerHaptic('error');
-      const errorText = "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance.";
+      const errorText = "I'm sorry, I'm having trouble connecting. Tap **Retry** to try again, or text us at 647-952-2153.";
       setMessages(prev => prev.map(msg => 
         msg.id === streamingId 
           ? { ...msg, text: errorText, isStreaming: false }
           : msg
       ));
+      saveMessage(errorText, 'assistant');
+      setLastFailedMessage(text.trim());
       setIsLoading(false);
     }
   };
+
+  const handleRetry = useCallback(() => {
+    if (lastFailedMessage) {
+      setLastFailedMessage(null);
+      handleSend(lastFailedMessage);
+    }
+  }, [lastFailedMessage]);
+
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
