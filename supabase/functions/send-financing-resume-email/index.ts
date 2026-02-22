@@ -1,6 +1,7 @@
 import { serve } from 'https://deno.land/std@0.190.0/http/server.ts';
 import { Resend } from 'npm:resend@2.0.0';
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { z } from "npm:zod@3.22.4";
 import { createBrandedEmailTemplate, createButtonHtml } from '../_shared/email-template.ts';
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
@@ -10,12 +11,13 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-interface ResumeEmailRequest {
-  applicationId: string;
-  email: string;
-  applicantName?: string;
-  completedSteps: number;
-}
+// Input validation schema
+const resumeEmailSchema = z.object({
+  applicationId: z.string().uuid("Invalid application ID"),
+  email: z.string().trim().email("Invalid email address").max(255),
+  applicantName: z.string().trim().max(100, "Name too long").optional(),
+  completedSteps: z.number().int().min(0).max(10, "Invalid step count"),
+});
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight
@@ -46,7 +48,16 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    const { applicationId, email, applicantName, completedSteps }: ResumeEmailRequest = await req.json();
+    const rawBody = await req.json();
+    const validationResult = resumeEmailSchema.safeParse(rawBody);
+    if (!validationResult.success) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid input data', details: validationResult.error.errors }),
+        { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+      );
+    }
+
+    const { applicationId, email, applicantName, completedSteps } = validationResult.data;
 
     // Rate limiting: Check if user has exceeded email sending limit
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
@@ -189,7 +200,7 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error('Error sending resume email:', error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: 'An error occurred while sending the resume email. Please try again.' }),
       {
         status: 500,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
