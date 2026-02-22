@@ -1,7 +1,18 @@
 import { serve } from 'https://deno.land/std@0.190.0/http/server.ts';
 import { Resend } from 'npm:resend@2.0.0';
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { z } from "npm:zod@3.22.4";
 import { createBrandedEmailTemplate, createButtonHtml } from '../_shared/email-template.ts';
+
+// Input validation schema
+const confirmationEmailSchema = z.object({
+  applicationId: z.string().uuid("Invalid application ID"),
+  applicantEmail: z.string().trim().email("Invalid email address").max(255),
+  applicantName: z.string().trim().min(1, "Name is required").max(100, "Name too long"),
+  motorModel: z.string().trim().max(200, "Motor model too long"),
+  amountToFinance: z.number().min(0).max(1000000, "Amount out of range"),
+  sendAdminNotification: z.boolean().optional().default(true),
+});
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -10,14 +21,7 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-interface ConfirmationEmailRequest {
-  applicationId: string;
-  applicantEmail: string;
-  applicantName: string;
-  motorModel: string;
-  amountToFinance: number;
-  sendAdminNotification?: boolean;
-}
+// Interface removed - using Zod schema for validation
 
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight
@@ -48,14 +52,23 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
+    const rawBody = await req.json();
+    const validationResult = confirmationEmailSchema.safeParse(rawBody);
+    if (!validationResult.success) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid input data', details: validationResult.error.errors }),
+        { status: 400, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+      );
+    }
+
     const {
       applicationId,
       applicantEmail,
       applicantName,
       motorModel,
       amountToFinance,
-      sendAdminNotification = true,
-    }: ConfirmationEmailRequest = await req.json();
+      sendAdminNotification,
+    } = validationResult.data;
 
     // Rate limiting: Check if user has exceeded email sending limit
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
@@ -246,7 +259,7 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error('Error sending confirmation emails:', error);
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: 'An error occurred while sending the confirmation email. Please try again.' }),
       {
         status: 500,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
