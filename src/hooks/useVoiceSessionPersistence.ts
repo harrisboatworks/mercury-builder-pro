@@ -50,11 +50,6 @@ function getOrCreateSessionId(): string {
   return sessionId;
 }
 
-// Helper to get headers with session ID for RLS policy validation
-function getSessionHeaders(): { 'x-session-id': string } {
-  return { 'x-session-id': getOrCreateSessionId() };
-}
-
 export function useVoiceSessionPersistence() {
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -62,29 +57,39 @@ export function useVoiceSessionPersistence() {
   const sessionStartTimeRef = useRef<Date | null>(null);
 
   // Load previous voice sessions for context (for returning customers)
+  // Uses edge function proxy for anonymous users (RLS cannot read HTTP headers)
   const loadPreviousSessionContext = useCallback(async (): Promise<VoiceSessionContext | null> => {
     try {
       const sessionId = getOrCreateSessionId();
       const { data: { user } } = await supabase.auth.getUser();
       
-      // Query by user_id if logged in, otherwise by session_id
-      let query = supabase
-        .from('voice_sessions')
-        .select('*')
-        .order('started_at', { ascending: false })
-        .limit(5);
-      
+      let sessions: VoiceSessionData[] | null = null;
+
       if (user) {
-        query = query.eq('user_id', user.id);
+        // Authenticated users can query directly via RLS
+        const { data, error } = await supabase
+          .from('voice_sessions')
+          .select('*')
+          .eq('user_id', user.id)
+          .order('started_at', { ascending: false })
+          .limit(5);
+        
+        if (error) {
+          console.error('Error loading previous voice sessions:', error);
+          return null;
+        }
+        sessions = data as VoiceSessionData[] | null;
       } else {
-        query = query.eq('session_id', sessionId);
-      }
-      
-      const { data: sessions, error } = await query;
-      
-      if (error) {
-        console.error('Error loading previous voice sessions:', error);
-        return null;
+        // Anonymous users go through the edge function proxy
+        const { data, error } = await supabase.functions.invoke('voice-sessions-proxy', {
+          body: { action: 'list', session_id: sessionId, limit: 5 },
+        });
+
+        if (error) {
+          console.error('Error loading previous voice sessions via proxy:', error);
+          return null;
+        }
+        sessions = data?.sessions ?? null;
       }
       
       if (!sessions || sessions.length === 0) {
@@ -124,6 +129,7 @@ export function useVoiceSessionPersistence() {
   }, []);
 
   // Start a new voice session
+  // INSERT is allowed for anonymous users via RLS (no header check needed)
   const startSession = useCallback(async (
     motorContext?: { model: string; hp: number; price?: number } | null,
     pageContext?: string,
@@ -175,6 +181,7 @@ export function useVoiceSessionPersistence() {
   }, []);
 
   // End the current voice session
+  // Uses edge function proxy for anonymous users (RLS UPDATE requires auth)
   const endSession = useCallback(async (
     endReason: 'user_ended' | 'timeout' | 'goodbye' | 'error' = 'user_ended',
     summary?: string
@@ -186,22 +193,43 @@ export function useVoiceSessionPersistence() {
         ? Math.floor((Date.now() - sessionStartTimeRef.current.getTime()) / 1000)
         : 0;
       
-      const { error } = await supabase
-        .from('voice_sessions')
-        .update({
-          ended_at: new Date().toISOString(),
-          duration_seconds: duration,
-          messages_exchanged: messageCountRef.current,
-          end_reason: endReason,
-          summary: summary || null,
-        })
-        .eq('id', currentSessionId);
-      
-      if (error) {
-        console.error('Error ending voice session:', error);
+      const updates = {
+        ended_at: new Date().toISOString(),
+        duration_seconds: duration,
+        messages_exchanged: messageCountRef.current,
+        end_reason: endReason,
+        summary: summary || null,
+      };
+
+      const { data: { user } } = await supabase.auth.getUser();
+
+      if (user) {
+        // Authenticated: direct RLS update
+        const { error } = await supabase
+          .from('voice_sessions')
+          .update(updates)
+          .eq('id', currentSessionId);
+        
+        if (error) {
+          console.error('Error ending voice session:', error);
+        }
       } else {
-        console.log('[VoiceSession] Ended session:', currentSessionId, { endReason, duration, messages: messageCountRef.current });
+        // Anonymous: go through edge function proxy
+        const { error } = await supabase.functions.invoke('voice-sessions-proxy', {
+          body: {
+            action: 'update',
+            session_id: getOrCreateSessionId(),
+            record_id: currentSessionId,
+            updates,
+          },
+        });
+
+        if (error) {
+          console.error('Error ending voice session via proxy:', error);
+        }
       }
+
+      console.log('[VoiceSession] Ended session:', currentSessionId, { endReason, duration, messages: messageCountRef.current });
     } catch (err) {
       console.error('Error ending voice session:', err);
     } finally {
@@ -218,12 +246,23 @@ export function useVoiceSessionPersistence() {
     if (!currentSessionId) return;
     
     try {
-      await supabase
-        .from('voice_sessions')
-        .update({
-          motor_context: motorContext,
-        })
-        .eq('id', currentSessionId);
+      const { data: { user } } = await supabase.auth.getUser();
+
+      if (user) {
+        await supabase
+          .from('voice_sessions')
+          .update({ motor_context: motorContext })
+          .eq('id', currentSessionId);
+      } else {
+        await supabase.functions.invoke('voice-sessions-proxy', {
+          body: {
+            action: 'update',
+            session_id: getOrCreateSessionId(),
+            record_id: currentSessionId,
+            updates: { motor_context: motorContext },
+          },
+        });
+      }
     } catch (err) {
       console.error('Error updating motor context:', err);
     }
