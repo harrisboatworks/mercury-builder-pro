@@ -13,7 +13,7 @@ import { Plus, FileText } from 'lucide-react';
  */
 const AdminQuoteBuilder = () => {
   const navigate = useNavigate();
-  const { dispatch, clearQuote } = useQuote();
+  const { dispatch } = useQuote();
   const { isAdmin, loading: authLoading } = useAuth();
 
   useEffect(() => {
@@ -28,53 +28,19 @@ const AdminQuoteBuilder = () => {
   }, [isAdmin, authLoading, navigate]);
 
   const handleStartNewQuote = () => {
-    // Clear any existing quote data
-    clearQuote();
+    // Clear any stale data first
+    localStorage.removeItem('quoteBuilder');
     
-    // Set admin mode in context
-    dispatch({ type: 'SET_ADMIN_MODE', payload: { isAdmin: true, editingQuoteId: null } });
-    
-    // Force immediate save before navigation to ensure isAdminQuote persists
-    // The debounced save (1000ms) won't complete before navigation, so we save synchronously
-    const adminState = {
-      isAdminQuote: true,
-      editingQuoteId: null,
-      isLoading: false,
-      motor: null,
-      motorSpecs: null,
-      previewMotor: null,
-      configuratorStep: null,
-      configuratorOptions: null,
-      purchasePath: null,
-      boatInfo: null,
-      tradeInInfo: null,
-      fuelTankConfig: null,
-      installConfig: null,
-      looseMotorBattery: null,
-      financing: null,
-      warrantyConfig: null,
-      hasTradein: false,
-      selectedOptions: [],
-      selectedPackage: null,
-      selectedPromoOption: null,
-      selectedPromoRate: null,
-      selectedPromoTerm: null,
-      selectedPromoValue: null,
-      completedSteps: [],
-      currentStep: 1,
-      adminDiscount: 0,
-      adminNotes: '',
-      customerNotes: '',
-      uiFlags: {}
-    };
-    localStorage.setItem('quoteBuilder', JSON.stringify({
-      state: adminState,
-      timestamp: Date.now(),
-      lastActivity: Date.now()
-    }));
-    
-    // Navigate to motor selection
-    navigate('/quote/motor-selection');
+    // Atomic reset + admin mode in one dispatch (no race condition)
+    dispatch({
+      type: 'RESET_TO_ADMIN_MODE',
+      payload: { editingQuoteId: null }
+    });
+
+    // Small delay to let the debounced save persist the new state
+    setTimeout(() => {
+      navigate('/quote/motor-selection');
+    }, 50);
   };
 
   if (authLoading) {

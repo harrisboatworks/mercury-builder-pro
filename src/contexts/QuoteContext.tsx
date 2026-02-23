@@ -113,7 +113,8 @@ type QuoteAction =
   // Admin quote actions
   | { type: 'SET_ADMIN_MODE'; payload: { isAdmin: boolean; editingQuoteId: string | null } }
   | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string; customerName?: string; customerEmail?: string; customerPhone?: string } }
-  | { type: 'RESTORE_QUOTE'; payload: any };
+  | { type: 'RESTORE_QUOTE'; payload: any }
+  | { type: 'RESET_TO_ADMIN_MODE'; payload: { editingQuoteId: string | null } };
 
 const initialState: QuoteState = {
   motor: null,
@@ -249,6 +250,13 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
       };
     case 'RESET_QUOTE':
       return { ...initialState, isLoading: false };
+    case 'RESET_TO_ADMIN_MODE':
+      return {
+        ...initialState,
+        isLoading: false,
+        isAdminQuote: true,
+        editingQuoteId: action.payload.editingQuoteId
+      };
     case 'SET_ADMIN_MODE':
       return { 
         ...state, 

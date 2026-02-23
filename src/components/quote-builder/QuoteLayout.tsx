@@ -4,13 +4,13 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useQuote } from '@/contexts/QuoteContext';
 import { cn } from '@/lib/utils';
 import { HamburgerMenu } from '@/components/ui/hamburger-menu';
 import { useState } from 'react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { QuoteProgressStepper } from './QuoteProgressStepper';
 import { useQuoteActivityTracker } from '@/hooks/useQuoteActivityTracker';
+import { useQuote } from '@/contexts/QuoteContext';
 
 interface QuoteLayoutProps {
   children: React.ReactNode;
@@ -26,8 +26,10 @@ export const QuoteLayout = ({
 }: QuoteLayoutProps) => {
   const {
     user,
-    signOut
+    signOut,
+    isAdmin
   } = useAuth();
+  const { state } = useQuote();
   const location = useLocation();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,6 +44,13 @@ export const QuoteLayout = ({
         <div className="absolute bottom-40 right-1/4 w-80 h-80 bg-purple-100/30 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-72 h-72 bg-emerald-100/20 rounded-full blur-3xl" />
       </div>
+
+      {/* Admin Mode Banner */}
+      {state.isAdminQuote && isAdmin && (
+        <div className="bg-yellow-500 text-yellow-950 text-center text-sm py-1 font-medium z-50 relative">
+          Admin Mode — Quote controls will appear on summary page
+        </div>
+      )}
 
       {/* Luxury Header System */}
       <LuxuryHeader 
