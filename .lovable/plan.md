@@ -1,67 +1,43 @@
 
-
-# Fix Washed-Out Text Across All Quote Builder Pages
+# Fix Washed-Out Text on Package Selection Page
 
 ## Problem
-The same faded/washed-out issue from the Boat Info page affects multiple pages throughout the quote flow. The Installation page (screenshot) shows "Transom Bolt Mount" and "Permanent bolt-through mounting" looking light and hard to read on iPhone.
+The Coverage Package page has multiple faded text elements visible in the screenshot:
+- "Best Value" subtitle on the card is barely readable
+- "$1,271" price and "From $43/mo" are light
+- "Coverage: 7 years total" is faint
+- Feature checklist text is too light
+- Page subtitle "Select the level of protection..." on the dark header uses `text-stone-400` which washes out on mobile
 
-The root cause: many components use raw Tailwind classes like `text-gray-500`, `text-gray-600`, and `text-muted-foreground` combined with `font-light`, producing low-contrast text that's hard to read on mobile screens in daylight.
+## Root Cause
+- `PackageCards.tsx` uses `text-muted-foreground` for subtitle, monthly payment, coverage, and feature list text
+- `PackageSelectionPage.tsx` uses `text-stone-400` for header subtitle and other secondary text
+- The `glass-card` background is semi-transparent (`rgba(255,255,255,0.75)`) which further reduces contrast
 
-## Solution
-Apply the same contrast-boosting approach across all affected quote builder components, upgrading gray text from lighter shades to darker ones and bumping `font-light` to `font-normal` on key labels.
+## Changes
 
-### Color Upgrade Map
+### 1. `src/components/quote-builder/PackageCards.tsx`
 
-| Current | Replacement | Reason |
-|---------|-------------|--------|
-| `text-gray-500` | `text-gray-700` | Too faint for body text on mobile |
-| `text-gray-600` | `text-gray-700` | Slightly too light in bright conditions |
-| `text-gray-600 font-light` | `text-gray-700 font-normal` | Double penalty -- light color + light weight |
-| `text-muted-foreground font-normal` (in OptionGallery helper) | `text-gray-600` | Bump the helper text contrast |
-| `border-gray-200` (price badges) | `border-gray-300` | Match the border fix from Boat Info |
+| Line | Current | Fix |
+|------|---------|-----|
+| 161 | `text-sm font-medium text-muted-foreground` (subtitle "Best Value") | `text-sm font-medium text-gray-600` |
+| 171 | `text-sm text-muted-foreground` ("From $X/mo" line) | `text-sm text-gray-600` |
+| 200 | `text-sm text-muted-foreground` ("Coverage: X years") | `text-sm text-gray-600` |
+| 209 | `text-sm leading-relaxed text-muted-foreground` (features list) | `text-sm leading-relaxed text-gray-700` |
+| 237 | `text-xs text-muted-foreground` ("Tap to select") | `text-xs text-gray-500` |
 
-### Files to Update
+### 2. `src/pages/quote/PackageSelectionPage.tsx`
 
-1. **`src/components/OptionGallery.tsx`** (Installation cards)
-   - Helper text: `text-muted-foreground` to `text-gray-600`
-   - Price badge border: `border-gray-200` to `border-gray-300`
-   - Card background: ensure `bg-white` instead of `bg-card`
-
-2. **`src/components/quote-builder/InstallationConfig.tsx`**
-   - Subtitle: `text-gray-600 font-light` to `text-gray-700 font-normal`
-
-3. **`src/components/quote-builder/TradeInValuation.tsx`**
-   - Multiple `text-gray-600 font-light` descriptions to `text-gray-700 font-normal`
-   - `text-gray-500` hints to `text-gray-600`
-
-4. **`src/components/quote-builder/PurchasePath.tsx`**
-   - Card body text: `text-muted-foreground` with `font-light` to `font-normal`
-   - Button text: `font-light` to `font-normal`
-
-5. **`src/components/quote-builder/PricingTable.tsx`**
-   - `text-gray-600` to `text-gray-700`
-   - `text-gray-500` to `text-gray-600`
-   - `border-gray-200` to `border-gray-300`
-
-6. **`src/components/quote-builder/MotorSelection.tsx`**
-   - `text-gray-600` descriptor text to `text-gray-700`
-   - Filter button `text-gray-600` to `text-gray-700`
-
-7. **`src/components/quote-builder/MotorRecommendationQuiz.tsx`**
-   - Icon colors: `text-gray-600` to `text-gray-700`
-   - Step counter: `text-gray-500` to `text-gray-600`
-   - Back button: `text-gray-600` to `text-gray-700`, `font-light` to `font-normal`
-
-8. **`src/components/quote-builder/CurrentStepIndicator.tsx`**
-   - `text-gray-600` to `text-gray-700`
-   - Dot separator: `text-gray-400` to `text-gray-500`
-
-9. **`src/components/quote-builder/ScheduleConsultation.tsx`**
-   - Helper/hint text: `font-light` to `font-normal` where paired with gray text
+| Line | Current | Fix |
+|------|---------|-----|
+| 382 | `text-stone-400 text-lg` (page subtitle) | `text-stone-300 text-lg` |
+| 402 | `text-xs text-stone-400` (recommendation reason) | `text-xs text-stone-300` |
+| 467 | `text-sm text-stone-400` ("Scroll down") | `text-sm text-stone-300` |
+| 543 | `text-sm text-stone-400` ("Selected Package" label) | `text-sm text-stone-300` |
+| 548 | `text-sm text-stone-400` ("Starting at") | `text-sm text-stone-300` |
+| 552 | `text-xs text-stone-500` ("before tax") | `text-xs text-stone-400` |
 
 ## Impact
-- Every step of the quote builder will be more readable on mobile
-- No layout or structural changes
-- Consistent darker text throughout the entire flow
-- The same clean, premium look -- just easier to read outdoors
-
+- Package cards will have crisp, readable text on white backgrounds in bright outdoor conditions
+- Dark header section text bumped from stone-400 to stone-300 for better visibility
+- No layout or design changes -- same premium look, just more legible on mobile
