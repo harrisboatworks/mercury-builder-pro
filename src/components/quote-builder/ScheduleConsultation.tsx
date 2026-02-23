@@ -449,7 +449,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       try {
         const adminSmsPayload = {
           to: '+19053766208',
-          message: `🔥 NEW QUOTE SUBMITTED!\n\nCustomer: ${sanitizedContactInfo.name}\nMotor: ${quoteData.motor?.model || 'Mercury Motor'}\nQuote: $${Math.round(totalCashPrice).toLocaleString()}\nContact: ${sanitizedContactInfo.contactMethod}\n\nView: quote.harrisboatworks.ca/admin/quotes\n\n- Harris Boat Works`,
+          message: `🔥 NEW QUOTE SUBMITTED!\n\nCustomer: ${sanitizedContactInfo.name}\nMotor: ${quoteData.motor?.model || 'Mercury Motor'}\nQuote: $${Math.round(totalCashPrice).toLocaleString()}\nContact: ${sanitizedContactInfo.contactMethod}\n\nView: mercuryrepower.ca/admin/quotes\n\n- Harris Boat Works`,
           messageType: 'hot_lead'
         };
         

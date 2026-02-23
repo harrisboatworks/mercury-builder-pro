@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/lib/site';
 
 interface MotorSelectionSEOProps {
   motorCount?: number;
@@ -16,12 +17,12 @@ export function MotorSelectionSEO({
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://quote.harrisboatworks.ca/quote/motor-selection",
-        "url": "https://quote.harrisboatworks.ca/quote/motor-selection",
+        "@id": `${SITE_URL}/quote/motor-selection`,
+        "url": `${SITE_URL}/quote/motor-selection`,
         "name": "Mercury Outboard Motors for Sale | Build Your Quote | Harris Boat Works",
         "description": "Browse our complete inventory of Mercury outboard motors from 2.5HP to 600HP. Configure your motor, compare packages, and get instant pricing online.",
         "isPartOf": {
-          "@id": "https://quote.harrisboatworks.ca/#website"
+          "@id": `${SITE_URL}/#website`
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -30,13 +31,13 @@ export function MotorSelectionSEO({
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://quote.harrisboatworks.ca"
+              "item": SITE_URL
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Motor Selection",
-              "item": "https://quote.harrisboatworks.ca/quote/motor-selection"
+              "item": `${SITE_URL}/quote/motor-selection`
             }
           ]
         }
@@ -219,13 +220,13 @@ export function MotorSelectionSEO({
       <title>Mercury Outboard Motors for Sale Ontario | 2.5HP-600HP | Harris Boat Works</title>
       <meta name="description" content={`Shop ${motorCount}+ Mercury outboard motors from $${minPrice.toLocaleString()} to $${maxPrice.toLocaleString()} CAD. FourStroke, Pro XS, Verado, SeaPro. Configure online, get instant quotes. Ontario's trusted Mercury dealer since 1965.`} />
       <meta name="keywords" content="Mercury outboard motors, Mercury motors for sale, buy Mercury outboard, Mercury dealer Ontario, FourStroke outboard, Pro XS outboard, Verado outboard, boat motors Canada" />
-      <link rel="canonical" href="https://quote.harrisboatworks.ca/quote/motor-selection" />
+      <link rel="canonical" href={`${SITE_URL}/quote/motor-selection`} />
       
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Outboard Motors for Sale | Harris Boat Works" />
       <meta property="og:description" content="Browse our complete Mercury outboard inventory. Configure your motor and get instant pricing online." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://quote.harrisboatworks.ca/quote/motor-selection" />
+      <meta property="og:url" content={`${SITE_URL}/quote/motor-selection`} />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

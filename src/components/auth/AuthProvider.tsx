@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { User, Session } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { SITE_URL } from '@/lib/site';
 
 interface AuthContextType {
   user: User | null;
@@ -34,14 +35,12 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
-    // Set up auth state listener FIRST
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
         setSession(session);
         setUser(session?.user ?? null);
         setLoading(false);
         
-        // Check admin role when user changes
         if (session?.user) {
           checkAdminRole(session.user.id);
         } else {
@@ -51,7 +50,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       }
     );
 
-    // THEN check for existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
@@ -70,7 +68,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const checkAdminRole = async (userId: string) => {
     setAdminLoading(true);
     try {
-      // Use SECURITY DEFINER RPC to avoid RLS issues on user_roles
       const { data, error } = await supabase.rpc('has_role', {
         _user_id: userId,
         _role: 'admin',
@@ -87,7 +84,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const signUp = async (email: string, password: string, displayName?: string) => {
-    const redirectUrl = `${window.location.origin}/`;
+    const redirectUrl = `${SITE_URL}/`;
     
     const { error } = await supabase.auth.signUp({
       email,
@@ -108,7 +105,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       password
     });
     
-    // Log successful signin - simplified
     if (!error) {
       console.log('User signed in successfully');
     }
@@ -120,7 +116,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: redirectTo || `${window.location.origin}/`
+        redirectTo: redirectTo || `${SITE_URL}/`
       }
     });
     return { error };
@@ -130,14 +126,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'facebook',
       options: {
-        redirectTo: redirectTo || `${window.location.origin}/`
+        redirectTo: redirectTo || `${SITE_URL}/`
       }
     });
     return { error };
   };
 
   const signOut = async () => {
-    // Log signout - simplified
     if (user) {
       console.log('User signed out:', user.id);
     }

@@ -291,7 +291,7 @@ function generateSpecSheetHTML(motor: any, promotions: any[]): string {
     5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0<br>
     <div class="contact-info">
       Phone: (905) 342-2153 | Email: info@harrisboatworks.ca<br>
-      quote.harrisboatworks.ca
+      mercuryrepower.ca
     </div>
     <div style="margin-top: 20px; font-size: 12px;">
       Generated on ${currentDate}

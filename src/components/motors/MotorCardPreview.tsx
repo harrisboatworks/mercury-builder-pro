@@ -345,8 +345,9 @@ export default function MotorCardPreview({
     
     const displayName = formatMotorDisplayName(title);
     const priceValue = price || msrp;
+    const siteUrl = 'https://mercuryrepower.ca';
     const imageUrlFull = imageUrl?.startsWith('/') 
-      ? `https://quote.harrisboatworks.ca${imageUrl}` 
+      ? `${siteUrl}${imageUrl}` 
       : imageUrl;
     
     return {
@@ -354,7 +355,7 @@ export default function MotorCardPreview({
       "@type": "Product",
       "name": displayName,
       "description": description || `${displayName} outboard motor - Mercury Marine`,
-      "image": imageUrlFull || "https://quote.harrisboatworks.ca/lovable-uploads/logo-dark.png",
+      "image": imageUrlFull || `${siteUrl}/lovable-uploads/logo-dark.png`,
       "brand": {
         "@type": "Brand",
         "name": "Mercury Marine"
@@ -369,7 +370,7 @@ export default function MotorCardPreview({
       ...(priceValue && {
         "offers": {
           "@type": "Offer",
-          "url": `https://quote.harrisboatworks.ca/quote/motor-selection`,
+          "url": `${siteUrl}/quote/motor-selection`,
           "priceCurrency": "CAD",
           "price": priceValue,
           "availability": inStock 
@@ -378,7 +379,7 @@ export default function MotorCardPreview({
           "seller": {
             "@type": "Organization",
             "name": "Harris Boat Works",
-            "url": "https://quote.harrisboatworks.ca"
+            "url": siteUrl
           }
         }
       })
