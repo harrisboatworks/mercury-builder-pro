@@ -18,6 +18,8 @@ export function GlobalStickyQuoteBar() {
   // Pages where bar should NOT show
   const hideOnPages = [
     '/quote/motor-selection',
+    '/quote/options',
+    '/quote/purchase-path',
     '/quote/summary',
     '/quote/trade-in',
     '/quote/boat-info',
