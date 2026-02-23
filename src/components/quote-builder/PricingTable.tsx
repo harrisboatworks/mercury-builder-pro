@@ -187,8 +187,8 @@ export function PricingTable({
 
       {/* Financing Callout - Subtle and Minimal - Only show for $5,000+ */}
       {pricing.total >= FINANCING_MINIMUM && (
-        <div className="mt-6 mb-4 pt-6 border-t border-gray-200 space-y-2">
-          <div className="text-sm text-gray-600 font-normal">
+        <div className="mt-6 mb-4 pt-6 border-t border-gray-300 space-y-2">
+          <div className="text-sm text-gray-700 font-normal">
             Flexible financing available
           </div>
           
@@ -197,7 +197,7 @@ export function PricingTable({
             onApplyForFinancing={onApplyForFinancing}
           />
           
-          <div className="text-xs text-gray-500 italic mt-1">
+          <div className="text-xs text-gray-600 italic mt-1">
             *Based on default financing terms, subject to approval
           </div>
         </div>

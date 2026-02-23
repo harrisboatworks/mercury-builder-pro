@@ -94,7 +94,7 @@ export default function OptionGallery({
                     <div className={`absolute top-2 right-2 px-3 py-1.5 rounded-lg text-sm font-medium shadow-lg ${
                       choice.price === 0 
                         ? 'bg-green-500 text-white' 
-                        : 'bg-white text-gray-900 border border-gray-200'
+                        : 'bg-white text-gray-900 border border-gray-300'
                     }`}>
                       {choice.priceLabel}
                     </div>
@@ -115,10 +115,10 @@ export default function OptionGallery({
                 </div>
                 
                 {/* Content */}
-                <div className="p-4 bg-card">
+                <div className="p-4 bg-white">
                   <div className="font-medium tracking-wide text-foreground">{choice.label}</div>
                   {choice.helper && (
-                    <div className="text-sm text-muted-foreground font-normal mt-1">{choice.helper}</div>
+                    <div className="text-sm text-gray-700 font-normal mt-1">{choice.helper}</div>
                   )}
                 </div>
               </motion.button>

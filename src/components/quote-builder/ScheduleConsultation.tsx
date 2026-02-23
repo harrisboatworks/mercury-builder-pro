@@ -745,7 +745,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
       {/* Header */}
       <div className="text-center space-y-4">
         <h2 className="text-4xl md:text-5xl font-light tracking-wide text-slate-900">Submit Your Quote</h2>
-        <p className="text-lg text-slate-600 font-light">
+        <p className="text-lg text-slate-700 font-normal">
           Complete your contact information and we'll reach out to finalize the details
         </p>
       </div>
@@ -756,7 +756,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <h3 className="text-xl font-light tracking-wide">Contact Information</h3>
-              <p className="text-slate-600 font-light mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
+              <p className="text-slate-700 font-normal mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
             </div>
             
             <div className="space-y-2">

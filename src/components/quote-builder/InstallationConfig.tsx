@@ -116,7 +116,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
             <h2 className="text-3xl font-light tracking-wide text-foreground mb-2">
               Configure Your Installation
             </h2>
-            <p className="text-gray-600 font-light mb-8">
+            <p className="text-gray-700 font-normal mb-8">
               Select your rigging options for the {selectedMotor?.model}
             </p>
           </>

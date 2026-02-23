@@ -153,7 +153,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
               <h2 className="text-3xl font-light tracking-wide text-gray-900">
                 Trade-In Valuation
               </h2>
-              <p className="text-base font-light text-gray-600">
+              <p className="text-base font-normal text-gray-700">
                 Get an instant estimate for your current motor
               </p>
             </div>
@@ -190,7 +190,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     tradeInInfo.hasTradeIn ? 'text-gray-900 animate-check-pop' : 'text-gray-400'
                   }`} />
                   <div className="font-light text-lg text-gray-900 tracking-wide">Yes, I have a trade-in</div>
-                  <div className="text-sm font-light text-gray-600 mt-1">We'll estimate your value instantly</div>
+                  <div className="text-sm font-normal text-gray-700 mt-1">We'll estimate your value instantly</div>
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.02, y: -4 }}
@@ -252,7 +252,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     !tradeInInfo.hasTradeIn ? 'text-gray-900' : 'text-gray-400'
                   }`} />
                   <div className="font-light text-lg text-gray-900 tracking-wide">No trade-in</div>
-                  <div className="text-sm font-light text-gray-600 mt-1">Skip valuation and continue</div>
+                  <div className="text-sm font-normal text-gray-700 mt-1">Skip valuation and continue</div>
                 </motion.button>
               </div>
             </div>
@@ -275,7 +275,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     <CheckCircle2 className="w-4 h-4" />
                     <span className="text-sm font-light">Pre-filled from your current motor details</span>
                   </div>
-                  <p className="text-xs font-light text-gray-600 mt-1">You can adjust any details below if needed.</p>
+                  <p className="text-xs font-normal text-gray-600 mt-1">You can adjust any details below if needed.</p>
                 </div>
               )}
               
@@ -406,7 +406,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       onClick={() => onTradeInChange({ ...tradeInInfo, condition: option.value as any })}
                     >
                       <div className="font-light text-lg text-gray-900">{option.label}</div>
-                      <div className="text-xs font-light text-gray-500 mt-1">{option.description}</div>
+                      <div className="text-xs font-normal text-gray-600 mt-1">{option.description}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -454,7 +454,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       <div className="text-4xl font-light text-green-700">
                         ${medianValue.toLocaleString()}
                       </div>
-                      <div className="text-sm font-light text-gray-600">
+                      <div className="text-sm font-normal text-gray-700">
                         Range: ${estimate.low.toLocaleString()} - ${estimate.high.toLocaleString()}
                       </div>
                     </div>
