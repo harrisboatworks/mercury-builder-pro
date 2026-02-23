@@ -379,7 +379,7 @@ export default function PackageSelectionPage() {
                 <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                   Choose Your Coverage Package
                 </h1>
-                <p className="text-stone-400 text-lg max-w-2xl mx-auto">
+                <p className="text-stone-300 text-lg max-w-2xl mx-auto">
                   Select the level of protection that's right for your{' '}
                   <span className="text-white font-medium">{motorName}</span>
                 </p>
@@ -399,7 +399,7 @@ export default function PackageSelectionPage() {
                   <span className="text-sm font-semibold text-white">
                     Recommended: {recommendation.packageId === 'good' ? 'Essential' : recommendation.packageId === 'better' ? 'Complete' : 'Premium'}
                   </span>
-                  <span className="text-xs text-stone-400 hidden sm:inline">
+                  <span className="text-xs text-stone-300 hidden sm:inline">
                     — {recommendation.reason}
                   </span>
                   
@@ -464,7 +464,7 @@ export default function PackageSelectionPage() {
                   transition={{ duration: 0.3 }}
                   className="flex flex-col items-center gap-2 py-4"
                 >
-                  <span className="text-sm text-stone-400">
+                  <span className="text-sm text-stone-300">
                     Great choice! Scroll down to continue
                   </span>
                   <motion.div
@@ -540,16 +540,16 @@ export default function PackageSelectionPage() {
                       <Sparkles className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-stone-400">Selected Package</p>
+                      <p className="text-sm text-stone-300">Selected Package</p>
                       <p className="text-lg font-semibold text-white">{selectedPackageData.label}</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-stone-400">Starting at</p>
+                    <p className="text-sm text-stone-300">Starting at</p>
                     <p className="text-2xl font-bold text-white">
                       ${selectedPackageData.priceBeforeTax.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                     </p>
-                    <p className="text-xs text-stone-500">before tax</p>
+                    <p className="text-xs text-stone-400">before tax</p>
                   </div>
                 </div>
                 

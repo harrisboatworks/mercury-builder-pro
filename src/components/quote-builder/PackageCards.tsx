@@ -158,7 +158,7 @@ export function PackageCards({
                 {p.label.split(' • ')[0]}
               </div>
               {p.label.includes(' • ') && (
-                <div className="text-sm font-medium text-muted-foreground mt-0.5">
+                <div className="text-sm font-medium text-gray-600 mt-0.5">
                   {p.label.split(' • ')[1]}
                 </div>
               )}
@@ -168,7 +168,7 @@ export function PackageCards({
               {money(p.priceBeforeTax)}
             </div>
 
-            <div className="mt-1 text-sm text-muted-foreground">
+            <div className="mt-1 text-sm text-gray-600">
               From <span className="font-semibold text-primary">{money(Math.round(monthly))}/mo</span>
             </div>
 
@@ -197,7 +197,7 @@ export function PackageCards({
             )}
 
             {p.coverageYears != null && (
-              <div className="mt-2 text-sm text-muted-foreground">
+              <div className="mt-2 text-sm text-gray-600">
                 Coverage: <span className="font-medium text-foreground">{p.coverageYears} years total</span>
               </div>
             )}
@@ -206,7 +206,7 @@ export function PackageCards({
               Save {money(p.savings)}
             </div>
 
-            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground">
+            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-gray-700">
               {p.features.slice(0, maxFeatures).map((f, i) => (
                 <li 
                   key={i} 
@@ -234,7 +234,7 @@ export function PackageCards({
             
             {/* Mobile "Tap to select" hint for unselected packages */}
             {!isSelected && (
-              <span className="mt-3 text-center text-xs text-muted-foreground sm:hidden">
+              <span className="mt-3 text-center text-xs text-gray-500 sm:hidden">
                 Tap to select
               </span>
             )}
