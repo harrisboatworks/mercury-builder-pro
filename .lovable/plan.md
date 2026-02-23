@@ -1,43 +1,81 @@
 
-# Fix Washed-Out Text on Package Selection Page
+# Fix Admin Quote Builder - Admin Controls Not Appearing
 
 ## Problem
-The Coverage Package page has multiple faded text elements visible in the screenshot:
-- "Best Value" subtitle on the card is barely readable
-- "$1,271" price and "From $43/mo" are light
-- "Coverage: 7 years total" is faint
-- Feature checklist text is too light
-- Page subtitle "Select the level of protection..." on the dark header uses `text-stone-400` which washes out on mobile
+When starting a new quote from `/admin/quote/new`, clicking "Start New Quote" navigates to the motor selection screen and the user builds a quote through the normal flow. But when they reach the summary page, the **Admin Controls panel never appears**.
+
+The admin controls are gated by this condition on the summary page:
+```
+{isAdmin && state.isAdminQuote && ( <AdminQuoteControls /> )}
+```
+
+The `isAdminQuote` flag is getting lost due to a race condition in the quote initialization.
 
 ## Root Cause
-- `PackageCards.tsx` uses `text-muted-foreground` for subtitle, monthly payment, coverage, and feature list text
-- `PackageSelectionPage.tsx` uses `text-stone-400` for header subtitle and other secondary text
-- The `glass-card` background is semi-transparent (`rgba(255,255,255,0.75)`) which further reduces contrast
 
-## Changes
+In `AdminQuoteBuilder.tsx`, `handleStartNewQuote` does this:
 
-### 1. `src/components/quote-builder/PackageCards.tsx`
+1. Calls `clearQuote()` which dispatches `RESET_QUOTE` (sets `isAdminQuote: false`) and removes localStorage
+2. Dispatches `SET_ADMIN_MODE` (sets `isAdminQuote: true`)
+3. Manually writes to localStorage with `isAdminQuote: true`
+4. Navigates to `/quote/motor-selection`
 
-| Line | Current | Fix |
-|------|---------|-----|
-| 161 | `text-sm font-medium text-muted-foreground` (subtitle "Best Value") | `text-sm font-medium text-gray-600` |
-| 171 | `text-sm text-muted-foreground` ("From $X/mo" line) | `text-sm text-gray-600` |
-| 200 | `text-sm text-muted-foreground` ("Coverage: X years") | `text-sm text-gray-600` |
-| 209 | `text-sm leading-relaxed text-muted-foreground` (features list) | `text-sm leading-relaxed text-gray-700` |
-| 237 | `text-xs text-muted-foreground` ("Tap to select") | `text-xs text-gray-500` |
+The problem: both `RESET_QUOTE` and `SET_ADMIN_MODE` trigger the debounced save effect (1000ms). When navigation occurs, the QuoteProvider on the new page loads from localStorage (the manual write), but the debounced save from the *old* QuoteProvider may fire and overwrite it, or the new page's QuoteProvider starts fresh and the manual localStorage write conflicts with the state initialization sequence.
 
-### 2. `src/pages/quote/PackageSelectionPage.tsx`
+## Solution
 
-| Line | Current | Fix |
-|------|---------|-----|
-| 382 | `text-stone-400 text-lg` (page subtitle) | `text-stone-300 text-lg` |
-| 402 | `text-xs text-stone-400` (recommendation reason) | `text-xs text-stone-300` |
-| 467 | `text-sm text-stone-400` ("Scroll down") | `text-sm text-stone-300` |
-| 543 | `text-sm text-stone-400` ("Selected Package" label) | `text-sm text-stone-300` |
-| 548 | `text-sm text-stone-400` ("Starting at") | `text-sm text-stone-300` |
-| 552 | `text-xs text-stone-500` ("before tax") | `text-xs text-stone-400` |
+### 1. Add a new reducer action: `RESET_TO_ADMIN_MODE`
 
-## Impact
-- Package cards will have crisp, readable text on white backgrounds in bright outdoor conditions
-- Dark header section text bumped from stone-400 to stone-300 for better visibility
-- No layout or design changes -- same premium look, just more legible on mobile
+In `src/contexts/QuoteContext.tsx`, add a single atomic action that resets state AND sets admin mode simultaneously, eliminating the race condition.
+
+```
+case 'RESET_TO_ADMIN_MODE':
+  return {
+    ...initialState,
+    isLoading: false,
+    isAdminQuote: true,
+    editingQuoteId: action.payload.editingQuoteId
+  };
+```
+
+### 2. Simplify `AdminQuoteBuilder.tsx`
+
+Replace the fragile 3-step sequence with:
+
+```
+const handleStartNewQuote = () => {
+  localStorage.removeItem('quoteBuilder');
+
+  dispatch({
+    type: 'RESET_TO_ADMIN_MODE',
+    payload: { editingQuoteId: null }
+  });
+
+  // Small delay to let the debounced save persist the new state
+  setTimeout(() => {
+    navigate('/quote/motor-selection');
+  }, 50);
+};
+```
+
+This removes the manual localStorage hack entirely and lets the normal save mechanism handle persistence.
+
+### 3. Add an admin mode banner to QuoteLayout
+
+To give admins visual confirmation they're in admin mode throughout the flow, add a small yellow banner at the top of `QuoteLayout.tsx` when `state.isAdminQuote` is true:
+
+```
+{state.isAdminQuote && isAdmin && (
+  <div className="bg-yellow-500 text-yellow-950 text-center text-sm py-1 font-medium">
+    Admin Mode -- Quote controls will appear on summary page
+  </div>
+)}
+```
+
+## Files to Change
+
+| File | Change |
+|------|--------|
+| `src/contexts/QuoteContext.tsx` | Add `RESET_TO_ADMIN_MODE` action type and reducer case |
+| `src/pages/admin/AdminQuoteBuilder.tsx` | Replace `clearQuote` + `SET_ADMIN_MODE` + manual localStorage with single `RESET_TO_ADMIN_MODE` dispatch + short delay before navigate |
+| `src/components/quote-builder/QuoteLayout.tsx` | Add admin mode banner for visual feedback |
