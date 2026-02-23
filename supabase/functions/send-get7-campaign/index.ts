@@ -54,13 +54,13 @@ const generateGet7EmailHtml = (data: {
   <div style="max-width: 600px; margin: 0 auto; background: white;">
     <!-- Header -->
     <div style="background: linear-gradient(135deg, #1e3a5f 0%, #0c1929 100%); padding: 30px; text-align: center;">
-      <img src="https://quote.harrisboatworks.ca/mercury-logo-white.png" alt="Mercury Marine" style="height: 40px; margin-bottom: 15px;">
+      <img src="https://mercuryrepower.ca/mercury-logo-white.png" alt="Mercury Marine" style="height: 40px; margin-bottom: 15px;">
       <h1 style="color: white; margin: 0; font-size: 28px; font-weight: bold;">GET 7 + CHOOSE ONE</h1>
       <p style="color: #94a3b8; margin: 10px 0 0 0; font-size: 14px;">Limited Time Offer • Ends ${expiryDate}</p>
     </div>
     
     <!-- Hero Banner -->
-    <div style="background: url('https://quote.harrisboatworks.ca/assets/mercury-get-7-choose-one.jpg') center/cover; height: 200px; position: relative;">
+    <div style="background: url('https://mercuryrepower.ca/assets/mercury-get-7-choose-one.jpg') center/cover; height: 200px; position: relative;">
       <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);"></div>
     </div>
     
@@ -227,7 +227,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Get7 Campaign request:", { targetType, minHp, maxHp, sinceDays, testMode });
 
-    const promoUrl = "https://quote.harrisboatworks.ca/promotions";
+    const promoUrl = "https://mercuryrepower.ca/promotions";
     const expiryDate = "March 31, 2026";
 
     // Test mode - send to single recipient

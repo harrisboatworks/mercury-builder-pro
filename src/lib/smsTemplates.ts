@@ -50,7 +50,7 @@ export const SMS_TEMPLATES: Record<string, SMSTemplate> = {
       const motorList = motors.slice(0, 3)
         .map(m => `- ${m.model_display || m.name}`)
         .join('\n');
-      return `🔧 Mercury Inventory Alert\n\n${count} motors need matching review:\n${motorList}${count > 3 ? '\n...' : ''}\n\nReview: quote.harrisboatworks.ca/admin/stock-sync\n\n- Harris Boat Works`;
+      return `🔧 Mercury Inventory Alert\n\n${count} motors need matching review:\n${motorList}${count > 3 ? '\n...' : ''}\n\nReview: mercuryrepower.ca/admin/stock-sync\n\n- Harris Boat Works`;
     }
   },
 
@@ -96,7 +96,7 @@ export const SMS_TEMPLATES: Record<string, SMSTemplate> = {
 • Up to $1,500 Cash Back${rebateLine}
 
 Ends ${expiresIn || 'Mar 31, 2026'}!
-Build your quote: ${promoUrl || 'quote.harrisboatworks.ca'}
+Build your quote: ${promoUrl || 'mercuryrepower.ca'}
 
 - Harris Boat Works
 Reply STOP to unsubscribe`;
@@ -116,7 +116,7 @@ Mercury Get 7 + Choose One ends soon:
 ✓ 7-Year Factory Warranty
 ✓ No Payments OR Low Rates OR Cash Back${motorLine}${rebateLine}
 
-Don't miss out: quote.harrisboatworks.ca/promotions
+Don't miss out: mercuryrepower.ca/promotions
 
 - Harris Boat Works
 Reply STOP to unsubscribe`;

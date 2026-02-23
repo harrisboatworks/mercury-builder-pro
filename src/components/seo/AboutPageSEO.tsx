@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/lib/site';
 
 export function AboutPageSEO() {
   const structuredData = {
@@ -6,12 +7,12 @@ export function AboutPageSEO() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://quote.harrisboatworks.ca/about",
-        "url": "https://quote.harrisboatworks.ca/about",
+        "@id": `${SITE_URL}/about`,
+        "url": `${SITE_URL}/about`,
         "name": "About Harris Boat Works | Family-Owned Since 1947 | Mercury Dealer",
         "description": "Learn about Harris Boat Works' 77-year history serving Ontario boaters. Mercury Marine dealer since 1965. CSI Award-winning service on Rice Lake.",
         "isPartOf": {
-          "@id": "https://quote.harrisboatworks.ca/#website"
+          "@id": `${SITE_URL}/#website`
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -20,22 +21,22 @@ export function AboutPageSEO() {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://quote.harrisboatworks.ca"
+              "item": SITE_URL
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "About Us",
-              "item": "https://quote.harrisboatworks.ca/about"
+              "item": `${SITE_URL}/about`
             }
           ]
         }
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://quote.harrisboatworks.ca/about#localbusiness",
+        "@id": `${SITE_URL}/about#localbusiness`,
         "name": "Harris Boat Works",
-        "image": "https://quote.harrisboatworks.ca/assets/harris-logo-black.png",
+        "image": `${SITE_URL}/assets/harris-logo-black.png`,
         "description": "Family-owned marine dealership serving Ontario boaters since 1947. Authorized Mercury Marine dealer since 1965. CSI Award-winning service team specializing in outboard sales, service, and repowering.",
         "foundingDate": "1947",
         "foundingLocation": {
@@ -61,7 +62,7 @@ export function AboutPageSEO() {
           "latitude": 44.1167,
           "longitude": -78.2500
         },
-        "url": "https://quote.harrisboatworks.ca",
+        "url": SITE_URL,
         "hasMap": "https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0",
         "openingHoursSpecification": [
           {
@@ -187,13 +188,13 @@ export function AboutPageSEO() {
       <title>About Harris Boat Works | Family-Owned Since 1947 | Mercury Dealer Ontario</title>
       <meta name="description" content="Harris Boat Works: family-owned since 1947, Mercury dealer since 1965. CSI Award-winning service on Rice Lake, Ontario. 79 years of marine expertise serving the Kawarthas, Toronto, and Peterborough." />
       <meta name="keywords" content="Harris Boat Works, Mercury dealer Ontario, Rice Lake boat dealer, Kawartha Lakes marine, boat dealer Peterborough, Mercury repower center, family boat dealer" />
-      <link rel="canonical" href="https://quote.harrisboatworks.ca/about" />
+      <link rel="canonical" href={`${SITE_URL}/about`} />
       
       {/* Open Graph */}
       <meta property="og:title" content="About Harris Boat Works | Mercury Dealer Since 1965" />
       <meta property="og:description" content="Family-owned marine dealership on Rice Lake. 79 years serving Ontario boaters." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://quote.harrisboatworks.ca/about" />
+      <meta property="og:url" content={`${SITE_URL}/about`} />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

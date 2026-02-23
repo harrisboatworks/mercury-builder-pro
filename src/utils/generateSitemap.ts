@@ -1,6 +1,6 @@
 import { blogArticles, isArticlePublished } from '../data/blogArticles';
 
-const BASE_URL = 'https://quote.harrisboatworks.ca';
+const BASE_URL = 'https://mercuryrepower.ca';
 
 interface SitemapEntry {
   loc: string;
@@ -30,10 +30,8 @@ const getStaticPages = (): SitemapEntry[] => {
 };
 
 export function generateSitemapXML(): string {
-  // Get published blog articles
   const publishedArticles = blogArticles.filter(isArticlePublished);
   
-  // Convert blog articles to sitemap entries with images
   const blogEntries: SitemapEntry[] = publishedArticles.map(article => ({
     loc: `/blog/${article.slug}`,
     lastmod: article.dateModified || article.datePublished,
@@ -45,10 +43,8 @@ export function generateSitemapXML(): string {
     } : undefined
   }));
   
-  // Combine all entries
   const allEntries = [...getStaticPages(), ...blogEntries];
   
-  // Generate XML with image namespace
   const urlEntries = allEntries.map(entry => {
     let xml = `  <url>
     <loc>${BASE_URL}${entry.loc}</loc>
@@ -121,7 +117,6 @@ ${items}
 </rss>`;
 }
 
-// Export for use in components if needed
 export function getSitemapEntries() {
   const publishedArticles = blogArticles.filter(isArticlePublished);
   return {

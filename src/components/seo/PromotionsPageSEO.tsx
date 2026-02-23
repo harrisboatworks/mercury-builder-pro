@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '@/lib/site';
 
 interface PromotionsPageSEOProps {
   promotions?: Array<{
@@ -53,40 +54,28 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
       "name": "Mercury Get 7 + Choose One: 7-Year Warranty",
       "description": "7 years of factory warranty coverage included with all qualifying Mercury outboard motors",
       "priceValidUntil": "2026-03-31",
-      "seller": {
-        "@type": "Organization",
-        "name": "Harris Boat Works"
-      }
+      "seller": { "@type": "Organization", "name": "Harris Boat Works" }
     },
     {
       "@type": "Offer",
       "name": "Mercury Get 7 + Choose One: 6 Months No Payments",
       "description": "Defer your first payment for 6 months when you choose this bonus option",
       "priceValidUntil": "2026-03-31",
-      "seller": {
-        "@type": "Organization",
-        "name": "Harris Boat Works"
-      }
+      "seller": { "@type": "Organization", "name": "Harris Boat Works" }
     },
     {
       "@type": "Offer",
       "name": "Mercury Get 7 + Choose One: Special Financing",
       "description": "Promotional financing rates as low as 2.99% APR for 24 months on $5,000+ purchases",
       "priceValidUntil": "2026-03-31",
-      "seller": {
-        "@type": "Organization",
-        "name": "Harris Boat Works"
-      }
+      "seller": { "@type": "Organization", "name": "Harris Boat Works" }
     },
     {
       "@type": "Offer",
       "name": "Mercury Get 7 + Choose One: Factory Rebate",
       "description": "Get up to $1,000 cash back based on your motor horsepower",
       "priceValidUntil": "2026-03-31",
-      "seller": {
-        "@type": "Organization",
-        "name": "Harris Boat Works"
-      }
+      "seller": { "@type": "Organization", "name": "Harris Boat Works" }
     }
   ];
 
@@ -95,12 +84,12 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://quote.harrisboatworks.ca/promotions",
-        "url": "https://quote.harrisboatworks.ca/promotions",
+        "@id": `${SITE_URL}/promotions`,
+        "url": `${SITE_URL}/promotions`,
         "name": "Mercury Get 7 + Choose One Promotion | Harris Boat Works",
         "description": "Get 7 years warranty PLUS your choice: 6 months no payments, special financing as low as 2.99% APR, or up to $1,000 factory rebate on Mercury outboards.",
         "isPartOf": {
-          "@id": "https://quote.harrisboatworks.ca/#website"
+          "@id": `${SITE_URL}/#website`
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -109,13 +98,13 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://quote.harrisboatworks.ca"
+              "item": SITE_URL
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Promotions",
-              "item": "https://quote.harrisboatworks.ca/promotions"
+              "item": `${SITE_URL}/promotions`
             }
           ]
         }
@@ -146,13 +135,13 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
       <title>Mercury Get 7 + Choose One Promotion 2026 | 7-Year Warranty + Bonus | Harris Boat Works</title>
       <meta name="description" content="Get 7 years factory warranty PLUS choose your bonus: 6 months no payments, 2.99% APR financing, or up to $1,000 factory rebate. January 12 - March 31, 2026. Ontario's trusted Mercury dealer." />
       <meta name="keywords" content="Mercury Get 7, Mercury promotions, outboard motor rebate, Mercury 7 year warranty, Mercury financing, 6 months no payments, Mercury dealer Ontario, boat motor promotions 2026, Mercury Choose One" />
-      <link rel="canonical" href="https://quote.harrisboatworks.ca/promotions" />
+      <link rel="canonical" href={`${SITE_URL}/promotions`} />
       
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Get 7 + Choose One | 7-Year Warranty + Your Choice of Bonus" />
       <meta property="og:description" content="7 years factory coverage PLUS choose: no payments for 6 months, special financing from 2.99% APR, or up to $1,000 rebate. Ends March 31, 2026." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://quote.harrisboatworks.ca/promotions" />
+      <meta property="og:url" content={`${SITE_URL}/promotions`} />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />

@@ -18,12 +18,12 @@ const SERVICE_URL = "hbw.wiki/service";
 // Message templates
 const MESSAGE_TEMPLATES = {
   quote_interest: (name: string, motor?: string, motorId?: string) => {
-    const link = motorId ? `\n\nView details: quote.harrisboatworks.ca/quote?motor=${motorId}` : '';
+    const link = motorId ? `\n\nView details: mercuryrepower.ca/quote?motor=${motorId}` : '';
     return `Hi ${name}! Thanks for chatting with Harris Boat Works.${motor ? ` Want a full quote for the ${motor}?` : ''}${link} Reply YES or call us at ${COMPANY_PHONE}.`;
   },
   
   inventory_alert: (name: string, motor?: string, motorId?: string) => {
-    const link = motorId ? `\n\nView details: quote.harrisboatworks.ca/quote?motor=${motorId}` : '';
+    const link = motorId ? `\n\nView details: mercuryrepower.ca/quote?motor=${motorId}` : '';
     return `Hi ${name}! ${motor ? `The ${motor} you asked about is in stock.` : 'We have motors in stock!'} Ready when you are!${link}\n\n— Harris Boat Works 📞 ${COMPANY_PHONE}`;
   },
   
@@ -31,15 +31,15 @@ const MESSAGE_TEMPLATES = {
     `Hi ${name}! Ready to book your service? Visit ${SERVICE_URL} or call ${COMPANY_PHONE} — Harris Boat Works`,
   
   general: (name: string, note?: string, motorId?: string) => {
-    const link = motorId ? `\n\nView details: quote.harrisboatworks.ca/quote?motor=${motorId}` : '';
+    const link = motorId ? `\n\nView details: mercuryrepower.ca/quote?motor=${motorId}` : '';
     return `Hi ${name}! ${note || 'Thanks for your interest in Harris Boat Works.'}${link} 📞 ${COMPANY_PHONE}`;
   },
   
   comparison: (name: string, note?: string) => 
-    `Hi ${name}! Here's your motor comparison: quote.harrisboatworks.ca/compare${note ? ` (${note})` : ''}\n\n— Harris Boat Works 📞 ${COMPANY_PHONE}`,
+    `Hi ${name}! Here's your motor comparison: mercuryrepower.ca/compare${note ? ` (${note})` : ''}\n\n— Harris Boat Works 📞 ${COMPANY_PHONE}`,
   
   promo_reminder: (name: string) => 
-    `Hi ${name}! Quick reminder: the Mercury Get 7 promo ends March 31st. 7-year warranty + pick your bonus!\n\nDetails: quote.harrisboatworks.ca/promotions\n\n— Harris Boat Works 📞 ${COMPANY_PHONE}`,
+    `Hi ${name}! Quick reminder: the Mercury Get 7 promo ends March 31st. 7-year warranty + pick your bonus!\n\nDetails: mercuryrepower.ca/promotions\n\n— Harris Boat Works 📞 ${COMPANY_PHONE}`,
 };
 
 // Format phone number to E.164

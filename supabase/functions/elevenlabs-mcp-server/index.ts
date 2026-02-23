@@ -665,7 +665,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
               
               <p>Want a detailed quote with options and promotions?</p>
               <p style="text-align: center; margin: 24px 0;">
-                <a href="https://quote.harrisboatworks.ca/quote?motor=${motor.id}" class="cta">View Full Details</a>
+                <a href="https://mercuryrepower.ca/quote?motor=${motor.id}" class="cta">View Full Details</a>
               </p>
               
               <p>Questions? Just reply to this email or call us at (905) 342-2153.</p>

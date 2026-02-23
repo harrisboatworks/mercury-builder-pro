@@ -554,7 +554,7 @@ When discussing reservations, say:
 
 ## WEBSITE NAVIGATION GUIDE (Direct Customers Here!):
 
-### Quote Builder (PRIMARY TOOL - quote.harrisboatworks.ca or /):
+### Quote Builder (PRIMARY TOOL - mercuryrepower.ca or /):
 1. Select motor from current inventory
 2. Choose: New install vs repower vs tiller/portable
 3. Customize: Boat info, controls, fuel tank, trade-in
@@ -583,7 +583,7 @@ Gores Landing, ON K0K 2E0
 - **Phone:** (905) 342-2153
 - **Text Line:** 647-952-2153 (for quick questions - customers love this!)
 - **Email:** info@harrisboatworks.ca
-- **Website:** quote.harrisboatworks.ca
+- **Website:** mercuryrepower.ca
 
 ### Credentials & History:
 - Mercury Marine Authorized Premier Dealer since 1965 (60+ years!)

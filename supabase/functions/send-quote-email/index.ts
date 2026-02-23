@@ -251,7 +251,7 @@ function generateAdminNotificationEmail(data: QuoteEmailRequest): string {
           </div>
           
           <div style="text-align: center; margin-top: 30px;">
-            <a href="https://quote.harrisboatworks.ca/admin/quotes/${data.leadData?.quoteId}" class="btn">View Full Quote in Admin Dashboard</a>
+            <a href="https://mercuryrepower.ca/admin/quotes/${data.leadData?.quoteId}" class="btn">View Full Quote in Admin Dashboard</a>
           </div>
           
           ${data.pdfUrl ? `

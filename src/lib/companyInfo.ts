@@ -17,7 +17,7 @@ export const COMPANY_INFO = {
     phone: "(905) 342-2153",
     sms: "(647) 952-2153",
     email: "info@harrisboatworks.ca",
-    website: "quote.harrisboatworks.ca"
+    website: "mercuryrepower.ca"
   },
   branding: {
     primaryColor: "#007DC5", // Mercury Blue
