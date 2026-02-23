@@ -3,7 +3,7 @@ import { SITE_URL } from "./lib/site";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { QuoteProvider } from "@/contexts/QuoteContext";
 import { FinancingProvider } from "@/contexts/FinancingContext";
 import { MotorComparisonProvider } from "@/contexts/MotorComparisonContext";
@@ -22,6 +22,7 @@ import { usePageViewTracker } from "@/hooks/usePageViewTracker";
 import { GoogleRatingBadge } from "@/components/business/GoogleRatingBadge";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SoundProvider } from "@/contexts/SoundContext";
+import { useAuth } from "@/components/auth/AuthProvider";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -132,6 +133,29 @@ function Canonical() {
   return null;
 }
 
+function RootRedirect() {
+  const params = new URLSearchParams(window.location.search);
+  const hash = window.location.hash;
+  const hasAuthParams = params.has('code') || 
+                        hash.includes('access_token') || 
+                        params.has('error');
+
+  const { user, loading } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (hasAuthParams && !loading) {
+      navigate(user ? '/dashboard' : '/quote/motor-selection', { replace: true });
+    }
+  }, [loading, user, hasAuthParams, navigate]);
+
+  if (hasAuthParams) {
+    return <RouteLoader />;
+  }
+
+  return <Navigate to="/quote/motor-selection" replace />;
+}
+
 function AnimatedRoutes() {
   const location = useLocation();
   usePageViewTracker();
@@ -157,7 +181,7 @@ function AnimatedRoutes() {
             </ProtectedRoute>
           } 
         />
-        <Route path="/" element={<Navigate to="/quote/motor-selection" replace />} />
+        <Route path="/" element={<RootRedirect />} />
         <Route path="/motors/:slug" element={<MotorRedirect />} />
         <Route path="/index" element={<Index />} />
                 
