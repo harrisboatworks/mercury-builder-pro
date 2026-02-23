@@ -43,7 +43,7 @@ export function GlobalStickyQuoteBar() {
   ];
 
   // Hide on mobile (handled by UnifiedMobileBar) or on excluded pages
-  const shouldShowBar = !isMobile && state.motor && !hideOnPages.some(path => location.pathname.startsWith(path));
+  const shouldShowBar = !isMobile && state.motor && !location.pathname.startsWith('/quote/') && !hideOnPages.some(path => location.pathname.startsWith(path));
 
   // Calculate running total dynamically
   const runningTotal = useMemo(() => {
@@ -186,7 +186,7 @@ export function GlobalStickyQuoteBar() {
     else if (path === '/quote/promo-selection') navigate('/quote/package-selection');
     else if (path === '/quote/package-selection') navigate('/quote/summary');
     else if (path === '/quote/schedule') navigate('/quote/summary');
-    else navigate('/quote/promo-selection');
+    // no-op: unknown page, do nothing
   };
 
   // Handle secondary action (View Summary)
