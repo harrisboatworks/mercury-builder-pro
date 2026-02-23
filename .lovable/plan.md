@@ -1,43 +1,52 @@
 
-# Fix: Options Page Sticky Footer Hidden by CSS Kill Switch
+
+# Fix: Login Redirect to Wrong Domain
 
 ## Problem
-The Options page's own Back/Continue footer bar is invisible on desktop, leaving users stranded with no way to continue the quote flow.
+When logging in on `mercuryrepower.ca`, OAuth (Google/Facebook) redirects to `https://quote.harrisboatworks.ca/` instead of staying on the correct domain.
 
 ## Root Cause
-In `src/styles/premium-motor.css` (line 36-41), there's a broad CSS "kill switch":
+Two issues working together:
 
-```css
-.fixed.bottom-0.z-50 {
-  display: none !important;
-}
-```
+1. **Supabase Auth Configuration** (Dashboard setting, not code): The Supabase project's **Site URL** and **Redirect URL allowlist** likely still point to `quote.harrisboatworks.ca`. When OAuth returns, Supabase checks the requested `redirectTo` URL against the allowlist. If `mercuryrepower.ca` isn't listed, Supabase falls back to the old Site URL.
 
-This was originally added to hide old gamification/celebration bars, but it matches ANY element with classes `fixed`, `bottom-0`, and `z-50` -- including the Options page's own sticky footer, the Motor Selection sticky bar, and potentially other legitimate fixed bars throughout the quote flow.
+2. **Hardcoded old domain in code**: There are ~220 references to `quote.harrisboatworks.ca` across SEO components, sitemap generator, SMS templates, and other files.
 
 ## Solution
 
-**File: `src/styles/premium-motor.css`**
+### Step 1: Update Supabase Auth Settings (Manual - Dashboard)
+You need to update these in your Supabase Dashboard (Authentication > URL Configuration):
 
-Remove `.fixed.bottom-0.z-50` from the kill switch rule (line 38). The other selectors in that block (`.fixed.pointer-events-none.z-30` and `.fixed.top-4.right-4.z-40`) can stay since they target specific gamification/celebration elements.
+- **Site URL**: Change from `https://quote.harrisboatworks.ca` to `https://mercuryrepower.ca`
+- **Redirect URLs**: Add these entries:
+  - `https://mercuryrepower.ca/**`
+  - `https://mercury-quote-tool.lovable.app/**`
+  - Keep `https://quote.harrisboatworks.ca/**` temporarily for backward compatibility
 
-The GlobalStickyQuoteBar interference is already handled by the JavaScript fix we applied earlier (hiding it on all `/quote/` pages), so this CSS kill switch is no longer needed and is actively harmful.
+### Step 2: Replace Hardcoded Domain References in Code
+Update all `quote.harrisboatworks.ca` references to use `mercuryrepower.ca`. The affected files are:
 
-### Before
-```css
-.fixed.pointer-events-none.z-30,
-.fixed.bottom-0.z-50,
-.fixed.top-4.right-4.z-40 {
-  display: none !important;
-}
+| File | What to change |
+|------|---------------|
+| `src/utils/generateSitemap.ts` | `BASE_URL` constant |
+| `src/components/seo/FinancingSEO.tsx` | All canonical/OG/structured data URLs |
+| `src/components/seo/BlogIndexSEO.tsx` | All canonical/OG/structured data URLs |
+| `src/components/seo/PromotionsPageSEO.tsx` | All canonical/OG/structured data URLs |
+| `src/components/seo/BlogArticleSEO.tsx` | All canonical/OG/structured data URLs (if exists) |
+| `src/components/seo/IndexPageSEO.tsx` | All canonical/OG/structured data URLs (if exists) |
+| `src/components/quote-builder/ScheduleConsultation.tsx` | Admin SMS link |
+| `supabase/functions/voice-send-follow-up/index.ts` | SMS template links |
+
+All hardcoded URLs will be replaced with the `SITE_URL` constant from `src/lib/site.ts` (which already resolves to `https://mercuryrepower.ca`) or with the direct `mercuryrepower.ca` string where imports aren't available (edge functions).
+
+### Step 3: Auth Provider - Use SITE_URL for Redirects
+Update `src/components/auth/AuthProvider.tsx` to import and use `SITE_URL` for OAuth redirects instead of `window.location.origin`. This ensures consistent redirect URLs regardless of which domain the user is currently on:
+
+```
+redirectTo: redirectTo || `${SITE_URL}/`
 ```
 
-### After
-```css
-.fixed.pointer-events-none.z-30,
-.fixed.top-4.right-4.z-40 {
-  display: none !important;
-}
-```
+## Important Note
+**Step 1 (Supabase Dashboard) is the critical fix** for the login redirect issue. Without adding `mercuryrepower.ca` to the redirect allowlist, the code changes alone won't fix OAuth login. You'll need to do this manually in your Supabase Dashboard at:
+`https://supabase.com/dashboard/project/eutsoqdpjurknjsshxes/auth/url-configuration`
 
-This is a one-line CSS deletion that will restore the Options page footer (and any other legitimate fixed bottom bars) across the entire app.
