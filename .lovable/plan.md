@@ -1,81 +1,34 @@
 
-# Fix Admin Quote Builder - Admin Controls Not Appearing
+# Fix: Options Page Skipping Steps via Global Sticky Bar
 
 ## Problem
-When starting a new quote from `/admin/quote/new`, clicking "Start New Quote" navigates to the motor selection screen and the user builds a quote through the normal flow. But when they reach the summary page, the **Admin Controls panel never appears**.
+When on the `/quote/options` page, the desktop `GlobalStickyQuoteBar` is visible and its "Continue" button hits a catch-all that navigates directly to `/quote/promo-selection`, skipping purchase path, boat info, trade-in, and installation.
 
-The admin controls are gated by this condition on the summary page:
-```
-{isAdmin && state.isAdminQuote && ( <AdminQuoteControls /> )}
-```
-
-The `isAdminQuote` flag is getting lost due to a race condition in the quote initialization.
+The Options page already has its own fixed bottom bar with proper validation (e.g., battery choice required), so the global bar shouldn't appear there at all.
 
 ## Root Cause
+In `src/components/quote/GlobalStickyQuoteBar.tsx`:
+- `/quote/options` is missing from the `hideOnPages` array (line 19-41)
+- `handlePrimary` (line 170-188) has no case for `/quote/options`, so it falls through to the catch-all: `else navigate('/quote/promo-selection')`
 
-In `AdminQuoteBuilder.tsx`, `handleStartNewQuote` does this:
+## Fix
 
-1. Calls `clearQuote()` which dispatches `RESET_QUOTE` (sets `isAdminQuote: false`) and removes localStorage
-2. Dispatches `SET_ADMIN_MODE` (sets `isAdminQuote: true`)
-3. Manually writes to localStorage with `isAdminQuote: true`
-4. Navigates to `/quote/motor-selection`
+**File: `src/components/quote/GlobalStickyQuoteBar.tsx`**
 
-The problem: both `RESET_QUOTE` and `SET_ADMIN_MODE` trigger the debounced save effect (1000ms). When navigation occurs, the QuoteProvider on the new page loads from localStorage (the manual write), but the debounced save from the *old* QuoteProvider may fire and overwrite it, or the new page's QuoteProvider starts fresh and the manual localStorage write conflicts with the state initialization sequence.
-
-## Solution
-
-### 1. Add a new reducer action: `RESET_TO_ADMIN_MODE`
-
-In `src/contexts/QuoteContext.tsx`, add a single atomic action that resets state AND sets admin mode simultaneously, eliminating the race condition.
+Add `/quote/options` and `/quote/purchase-path` to the `hideOnPages` array. Both pages have their own navigation controls, and showing a second "Continue" bar creates confusion and incorrect navigation.
 
 ```
-case 'RESET_TO_ADMIN_MODE':
-  return {
-    ...initialState,
-    isLoading: false,
-    isAdminQuote: true,
-    editingQuoteId: action.payload.editingQuoteId
-  };
+const hideOnPages = [
+  '/quote/motor-selection',
+  '/quote/options',           // <-- ADD: has its own sticky footer
+  '/quote/purchase-path',     // <-- ADD: has its own navigation
+  '/quote/summary',
+  '/quote/trade-in',
+  '/quote/boat-info',
+  '/quote/promo-selection',
+  '/quote/package-selection',
+  ...
+];
 ```
 
-### 2. Simplify `AdminQuoteBuilder.tsx`
-
-Replace the fragile 3-step sequence with:
-
-```
-const handleStartNewQuote = () => {
-  localStorage.removeItem('quoteBuilder');
-
-  dispatch({
-    type: 'RESET_TO_ADMIN_MODE',
-    payload: { editingQuoteId: null }
-  });
-
-  // Small delay to let the debounced save persist the new state
-  setTimeout(() => {
-    navigate('/quote/motor-selection');
-  }, 50);
-};
-```
-
-This removes the manual localStorage hack entirely and lets the normal save mechanism handle persistence.
-
-### 3. Add an admin mode banner to QuoteLayout
-
-To give admins visual confirmation they're in admin mode throughout the flow, add a small yellow banner at the top of `QuoteLayout.tsx` when `state.isAdminQuote` is true:
-
-```
-{state.isAdminQuote && isAdmin && (
-  <div className="bg-yellow-500 text-yellow-950 text-center text-sm py-1 font-medium">
-    Admin Mode -- Quote controls will appear on summary page
-  </div>
-)}
-```
-
-## Files to Change
-
-| File | Change |
-|------|--------|
-| `src/contexts/QuoteContext.tsx` | Add `RESET_TO_ADMIN_MODE` action type and reducer case |
-| `src/pages/admin/AdminQuoteBuilder.tsx` | Replace `clearQuote` + `SET_ADMIN_MODE` + manual localStorage with single `RESET_TO_ADMIN_MODE` dispatch + short delay before navigate |
-| `src/components/quote-builder/QuoteLayout.tsx` | Add admin mode banner for visual feedback |
+This is a one-line fix (adding two entries to an array). No other files need changes.
