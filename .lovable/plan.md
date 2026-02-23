@@ -1,49 +1,43 @@
 
-
-# Fix: Eliminate All GlobalStickyQuoteBar Navigation Conflicts
+# Fix: Options Page Sticky Footer Hidden by CSS Kill Switch
 
 ## Problem
-After Options, the quote jumps straight to Promo Selection, skipping Purchase Path, Boat Info, Trade-In, and Installation. The previous fix (hiding the bar on `/quote/options` and `/quote/purchase-path`) was not sufficient.
+The Options page's own Back/Continue footer bar is invisible on desktop, leaving users stranded with no way to continue the quote flow.
 
 ## Root Cause
-The `GlobalStickyQuoteBar` has a dangerous catch-all on line 189:
-```
-else navigate('/quote/promo-selection');
-```
-This means ANY page not explicitly handled in `handlePrimary` gets redirected to promo when Continue is clicked. Additionally, `/quote/installation` and `/quote/fuel-tank` are NOT in the `hideOnPages` array, creating similar issues for other flows.
+In `src/styles/premium-motor.css` (line 36-41), there's a broad CSS "kill switch":
 
-Since every quote page already has its own navigation logic (page-specific Continue buttons, card click handlers, etc.), the `GlobalStickyQuoteBar` should NOT appear on ANY `/quote/*` page. It should only show on non-quote pages (like the homepage, `/motors`, etc.) as a "resume quote" prompt.
+```css
+.fixed.bottom-0.z-50 {
+  display: none !important;
+}
+```
+
+This was originally added to hide old gamification/celebration bars, but it matches ANY element with classes `fixed`, `bottom-0`, and `z-50` -- including the Options page's own sticky footer, the Motor Selection sticky bar, and potentially other legitimate fixed bars throughout the quote flow.
 
 ## Solution
 
-**File: `src/components/quote-builder/GlobalStickyQuoteBar.tsx`**
+**File: `src/styles/premium-motor.css`**
 
-Two changes:
+Remove `.fixed.bottom-0.z-50` from the kill switch rule (line 38). The other selectors in that block (`.fixed.pointer-events-none.z-30` and `.fixed.top-4.right-4.z-40`) can stay since they target specific gamification/celebration elements.
 
-1. **Replace the entire `hideOnPages` list with a single prefix check**: Hide the bar on ALL `/quote/` pages, since every quote step has its own navigation. This eliminates the need to maintain a list and prevents future omissions.
+The GlobalStickyQuoteBar interference is already handled by the JavaScript fix we applied earlier (hiding it on all `/quote/` pages), so this CSS kill switch is no longer needed and is actively harmful.
 
-2. **Remove the catch-all `else navigate('/quote/promo-selection')`**: Replace it with a safe no-op or navigate to the next logical step. This prevents any remaining edge case from silently skipping steps.
-
-### Technical Details
-
-Change the `shouldShowBar` logic (around line 46):
-```typescript
-// Before:
-const shouldShowBar = !isMobile && state.motor && !hideOnPages.some(path => location.pathname.startsWith(path));
-
-// After:
-const shouldShowBar = !isMobile && state.motor 
-  && !location.pathname.startsWith('/quote/')  // Hide on ALL quote pages
-  && !hideOnPages.some(path => location.pathname.startsWith(path));
+### Before
+```css
+.fixed.pointer-events-none.z-30,
+.fixed.bottom-0.z-50,
+.fixed.top-4.right-4.z-40 {
+  display: none !important;
+}
 ```
 
-And change the catch-all in `handlePrimary` (line 189):
-```typescript
-// Before:
-else navigate('/quote/promo-selection');
-
-// After: (no-op - don't navigate to an arbitrary page)
-else { /* no-op: unknown page, do nothing */ }
+### After
+```css
+.fixed.pointer-events-none.z-30,
+.fixed.top-4.right-4.z-40 {
+  display: none !important;
+}
 ```
 
-This is a minimal, safe change that prevents ALL quote pages from being affected by the global bar, while keeping the bar functional on non-quote pages like the homepage.
+This is a one-line CSS deletion that will restore the Options page footer (and any other legitimate fixed bottom bars) across the entire app.
