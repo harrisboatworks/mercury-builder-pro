@@ -145,7 +145,7 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
           
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-xl font-light tracking-wide text-black">
-              <Lightbulb className="w-5 h-5 text-gray-600" />
+              <Lightbulb className="w-5 h-5 text-gray-700" />
               Find Your Perfect Motor
             </DialogTitle>
           </DialogHeader>
@@ -166,9 +166,9 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
 
             {/* Question */}
             <div className="text-center space-y-2">
-              {StepIcon && <StepIcon className="w-12 h-12 mx-auto text-gray-600" />}
+              {StepIcon && <StepIcon className="w-12 h-12 mx-auto text-gray-700" />}
               <h3 className="text-2xl font-light tracking-wide text-black">{currentQuizStep.title}</h3>
-              <p className="text-sm uppercase tracking-widest text-gray-500">
+              <p className="text-sm uppercase tracking-widest text-gray-600">
                 Step {currentStep + 1} of {quizSteps.length}
               </p>
             </div>
@@ -196,7 +196,7 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
             {/* Navigation */}
             {currentStep > 0 && (
               <div className="flex justify-start">
-                <Button variant="ghost" onClick={handleBack} className="font-light text-gray-600 hover:text-black">
+                <Button variant="ghost" onClick={handleBack} className="font-normal text-gray-700 hover:text-black">
                   ← Back
                 </Button>
               </div>
@@ -260,7 +260,7 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
               <Button variant="outline" onClick={handleBack} className="flex-1 border-black text-black hover:bg-stone-50">
                 ← Back to Quiz
               </Button>
-              <Button variant="ghost" onClick={handleClose} className="flex-1 font-light text-gray-600 hover:text-black hover:bg-transparent">
+              <Button variant="ghost" onClick={handleClose} className="flex-1 font-normal text-gray-700 hover:text-black hover:bg-transparent">
                 Browse All Motors
               </Button>
             </div>

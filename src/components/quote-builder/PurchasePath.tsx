@@ -71,13 +71,13 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               <Package className="w-8 h-8 text-primary" />
               <CardTitle className="text-2xl font-light tracking-wide text-foreground">Loose Motor</CardTitle>
             </div>
-            <p className="text-sm font-light text-muted-foreground">
+            <p className="text-sm font-normal text-gray-700">
               In-store pickup only • No installation
             </p>
           </CardHeader>
           
           <CardContent className="flex flex-col flex-1 pt-0">
-            <div className="space-y-3 text-base font-light text-muted-foreground flex-1 mb-6">
+            <div className="space-y-3 text-base font-normal text-gray-700 flex-1 mb-6">
               <div className="flex flex-row items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <span className="text-left">Free Prep</span>
@@ -122,7 +122,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             
             <Button 
               variant="outline"
-              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-foreground hover:text-background transition-all duration-500 premium-btn-hover"
+              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-normal rounded-sm hover:bg-foreground hover:text-background transition-all duration-500 premium-btn-hover"
             >
               Select Loose Motor
             </Button>
@@ -142,13 +142,13 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
               <Wrench className="w-8 h-8 text-primary" />
               <CardTitle className="text-2xl font-light tracking-wide text-foreground">Professional Installation</CardTitle>
             </div>
-            <p className="text-sm font-light text-muted-foreground">
+            <p className="text-sm font-normal text-gray-700">
               {isTiller ? 'Complete motor prep & water test' : 'Complete rigging & water test'}
             </p>
           </CardHeader>
           
           <CardContent className="flex flex-col flex-1 pt-0">
-            <div className="space-y-3 text-base font-light text-muted-foreground flex-1 mb-6">
+            <div className="space-y-3 text-base font-normal text-gray-700 flex-1 mb-6">
               {!isTiller && (
                 <div className="flex flex-row items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
@@ -177,7 +177,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             
             <Button 
               variant="outline"
-              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-light rounded-sm hover:bg-foreground hover:text-background transition-all duration-500 premium-btn-hover"
+              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-normal rounded-sm hover:bg-foreground hover:text-background transition-all duration-500 premium-btn-hover"
             >
               Select Installation
             </Button>
