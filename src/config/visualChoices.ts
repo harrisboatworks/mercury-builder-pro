@@ -20,17 +20,18 @@ export const controlChoices = [
     price: 1200,
     priceLabel: "+$1,200"
   },
-  {
-    id: "dts",
-    label: "DTS Digital Control",
-    value: "dts",
-    image: "/images/options/mercury-panel-mount-control.jpeg",
-    helper: "Smooth digital precision",
-    xpReward: 25,
-    badge: "Tech Savvy",
-    price: 1200,
-    priceLabel: "+$1,200"
-  }
+  // DTS option hidden for now
+  // {
+  //   id: "dts",
+  //   label: "DTS Digital Control",
+  //   value: "dts",
+  //   image: "/images/options/mercury-panel-mount-control.jpeg",
+  //   helper: "Smooth digital precision",
+  //   xpReward: 25,
+  //   badge: "Tech Savvy",
+  //   price: 1200,
+  //   priceLabel: "+$1,200"
+  // }
 ];
 
 export const steeringChoices = [
