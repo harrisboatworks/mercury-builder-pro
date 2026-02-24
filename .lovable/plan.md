@@ -1,32 +1,30 @@
 
 
-# Fix: Shared Quote Links Blocked by RLS
+# Fix: Show Customer Name on Quote PDF
 
 ## Problem
 
-The quote `47e0b7b8-...` exists in `customer_quotes`, but the RLS (Row Level Security) policies block access for anyone who isn't the quote owner or an admin. Shared links like `/quote/saved/:quoteId` fail with "Quote not found" because the anonymous browser can't SELECT the row.
+When downloading a PDF from the Quote Summary page, the customer name always shows as "Valued Customer" instead of the actual customer's name. This is because `QuoteSummaryPage.tsx` hardcodes the value at line 471:
 
-## Solution
+```
+customerName: 'Valued Customer',
+customerEmail: '',
+customerPhone: '',
+```
 
-Create a Supabase Edge Function to fetch shared quotes using the service role (bypasses RLS). This avoids weakening RLS policies while still enabling shared links. The edge function will return only the `quote_data` and non-sensitive fields needed to restore the quote -- not PII like email/phone.
+The customer name, email, and phone are available in the QuoteContext (`state.customerName`, `state.customerEmail`, `state.customerPhone`) but aren't being used.
 
-## Technical Changes
+## Fix
 
-### 1. New Edge Function: `supabase/functions/get-shared-quote/index.ts`
+### File: `src/pages/quote/QuoteSummaryPage.tsx`
 
-- Accepts `{ quoteId: string }` in the request body
-- Uses the service role client to fetch the quote from `customer_quotes`
-- Returns only safe fields: `id`, `quote_data`, `customer_name` (first name only), `is_admin_quote`, `admin_discount`, `admin_notes`, `customer_notes`
-- Does NOT return `customer_email`, `customer_phone`, or `user_id`
+Update lines 471-473 to pull from the context state, falling back to the generic defaults if empty:
 
-### 2. Update `src/pages/quote/SavedQuotePage.tsx`
+```
+customerName: state.customerName || 'Valued Customer',
+customerEmail: state.customerEmail || '',
+customerPhone: state.customerPhone || '',
+```
 
-- Replace the direct Supabase query (blocked by RLS) with a call to the new edge function:
-  ```
-  const { data } = await supabase.functions.invoke('get-shared-quote', {
-    body: { quoteId }
-  });
-  ```
-- The rest of the quote restoration logic remains the same
+This is a 3-line change. When an admin creates a quote with a customer name (like "Kurt Graichen"), the PDF will now display that name instead of "Valued Customer".
 
-This is a two-file change. The shared link will work for anyone with the URL, while keeping PII protected behind RLS.
