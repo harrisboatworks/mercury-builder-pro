@@ -1,20 +1,47 @@
 
 
-# Hide Gauges Selection Step
+# Add Customer Guidance to Installation Config Selections
 
 ## What's Changing
 
-The gauges selection step in the Installation Config will be hidden, similar to how the DTS control option was hidden. Users will no longer be prompted to choose between Basic Tach, Smartcraft Connect, or VesselView during installation configuration.
+Add contextual direction so customers understand they're describing what's **already on their boat**, plus reassurance that it's okay if they're unsure.
 
-## Technical Details
+## Changes
 
-### File: `src/components/quote-builder/InstallationConfig.tsx`
+### 1. Update page intro text (`InstallationConfig.tsx`)
 
-Remove or skip the gauges step from the installation flow. This means:
+Replace the current generic subtitle with something like:
 
-- Remove the gauge selection `OptionGallery` rendering
-- Adjust step logic so the flow goes directly from steering selection to completion (for non-tiller motors)
-- Update any step count or completion logic that references the gauges step
+> "Tell us what rigging is currently on your boat — we'll confirm everything during your consultation."
 
-The `gaugeChoices` array in `visualChoices.ts` can remain in place (just unused), keeping it easy to re-enable later.
+### 2. Add a "Not sure?" reassurance note
+
+Below the steering step (or as a subtle note at the bottom), add a small message:
+
+> "Not sure what you have? No worries — just pick your best guess and we'll sort it out when we see the boat."
+
+This will be a simple muted text line, not a full alert banner.
+
+### 3. Update helper descriptions (`visualChoices.ts`)
+
+Make the helpers more descriptive so customers can identify what they have:
+
+**Controls:**
+- Side-Mount: "Lever on the side of your console" (was "Mounts on side of console")
+- Binnacle: "Lever mounted on top of your console" (was "Top-mount throttle/shift")
+
+**Steering:**
+- Cable: "Standard mechanical steering — most common on smaller boats" (was "Mechanical cable system")
+- Hydraulic: "Power-assisted steering — common on larger boats" (was "Smooth hydraulic control")
+
+### 4. Update step titles
+
+Change from directive ("Choose Your Control System") to descriptive:
+- Step 1: "What type of controls does your boat have?"
+- Step 2: "What type of steering does your boat have?"
+
+## Files to Edit
+
+- `src/config/visualChoices.ts` — Updated helper text
+- `src/components/quote-builder/InstallationConfig.tsx` — Updated intro text, step titles, and "not sure" note
 
