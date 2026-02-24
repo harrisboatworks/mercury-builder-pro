@@ -56,6 +56,8 @@ export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
     storage: safeStorage,
     persistSession: true,
     autoRefreshToken: true,
+    flowType: 'pkce',
+    detectSessionInUrl: true,
   },
   global: {
     headers: {
