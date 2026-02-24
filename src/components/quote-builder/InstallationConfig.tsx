@@ -2,7 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import OptionGallery from "../OptionGallery";
-import { controlChoices, steeringChoices, gaugeChoices, tillerMountingChoices } from "@/config/visualChoices";
+import { controlChoices, steeringChoices, tillerMountingChoices } from "@/config/visualChoices";
 import confetti from "canvas-confetti";
 import { isTillerMotor } from "@/lib/utils";
 import { useSound } from '@/contexts/SoundContext';
@@ -44,16 +44,13 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
 
   // Refs for scroll targets
   const step2Ref = useRef<HTMLDivElement>(null);
-  const step3Ref = useRef<HTMLDivElement>(null);
 
   // Scroll to new step when it appears (non-tiller flow)
   useEffect(() => {
     if (!isTiller && step >= 2) {
-      const refs = [null, null, step2Ref, step3Ref];
-      const targetRef = refs[step];
-      if (targetRef?.current) {
+      if (step2Ref?.current) {
         setTimeout(() => {
-          targetRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          step2Ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       }
     }
@@ -93,10 +90,10 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
     } else {
       // For non-tiller motors, advance to next step or complete
       setTimeout(() => {
-        if (field === 'gauges') {
-          // Final step - auto-complete
+        if (field === 'steering') {
+          // Steering is now the final step - auto-complete
           triggerComplete(updatedConfig);
-        } else if (step < 3) {
+        } else if (step < 2) {
           playSwoosh(); // Play swoosh on step transition
           setStep(step + 1);
         }
@@ -180,20 +177,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
           </motion.div>
         )}
 
-        {!isTiller && step >= 3 && (
-          <motion.div
-            ref={step3Ref}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-          >
-            <OptionGallery
-              title="Step 3: Pick Your Gauge Package"
-              choices={gaugeChoices}
-              value={config.gauges}
-              onChange={(val) => handleOptionSelect('gauges', val)}
-            />
-          </motion.div>
-        )}
+        {/* Gauges step hidden for now — gaugeChoices remains in visualChoices.ts */}
       </motion.div>
     </div>
   );
