@@ -1,5 +1,6 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { SITE_URL } from "./lib/site";
+import { supabase } from "@/integrations/supabase/client";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -135,19 +136,29 @@ function Canonical() {
 
 function RootRedirect() {
   const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
   const hash = window.location.hash;
-  const hasAuthParams = params.has('code') || 
-                        hash.includes('access_token') || 
-                        params.has('error');
+  const hasAuthParams = !!code || hash.includes('access_token') || params.has('error');
 
   const { user, loading } = useAuth();
   const navigate = useNavigate();
+  const [exchanging, setExchanging] = useState(false);
 
   useEffect(() => {
-    if (hasAuthParams && !loading) {
+    if (code && !exchanging) {
+      setExchanging(true);
+      supabase.auth.exchangeCodeForSession(code).then(({ error }) => {
+        if (error) console.error('OAuth code exchange failed:', error);
+        setExchanging(false);
+      });
+    }
+  }, [code]);
+
+  useEffect(() => {
+    if (hasAuthParams && !loading && !exchanging) {
       navigate(user ? '/dashboard' : '/quote/motor-selection', { replace: true });
     }
-  }, [loading, user, hasAuthParams, navigate]);
+  }, [loading, user, hasAuthParams, navigate, exchanging]);
 
   if (hasAuthParams) {
     return <RouteLoader />;
