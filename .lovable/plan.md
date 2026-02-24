@@ -1,35 +1,27 @@
 
 
-# Replace Placeholder Control Box Images with Real Mercury Photos
+# Replace Placeholder Steering Images with Real Product Photos
 
 ## What's Changing
 
-The three control box options in the quote builder currently use generic Unsplash stock photos. You've provided actual Mercury product images to replace them:
+Replace the two Unsplash stock photos for steering options with the real product images you provided:
 
-| Option | Current Image | New Image |
-|--------|--------------|-----------|
-| Side-Mount Control | Unsplash stock photo | Mercury Side Mount Control Box |
-| Binnacle Control | Unsplash stock photo | Mercury Binnacle Mount Control Box |
-| DTS Digital Control | Unsplash stock photo | Mercury Panel Mount Control Box |
+| Option | New Image |
+|--------|-----------|
+| Cable Steering | Safe-T QC Rotary Steering System |
+| Hydraulic Steering | SeaStar Pro Hydraulic Steering Kit |
 
 ## Technical Details
 
 ### 1. Copy uploaded images to `public/images/options/`
 
-This matches the existing pattern used for installation mount images. Files:
-- `public/images/options/mercury-side-mount-control.png`
-- `public/images/options/mercury-binnacle-control.jpeg`
-- `public/images/options/mercury-panel-mount-control.jpeg`
+- `public/images/options/cable-steering.jpg` (from Cable_Steering.jpg)
+- `public/images/options/hydraulic-steering.jpg` (from Hydraulic_Steering.jpg)
 
 ### 2. Update `src/config/visualChoices.ts`
 
-Replace the three Unsplash URLs in `controlChoices` with paths to the new local images:
+Replace the Unsplash URLs in `steeringChoices`:
 
-```
-// Line 7:  image: "/images/options/mercury-side-mount-control.png"
-// Line 17: image: "/images/options/mercury-binnacle-control.jpeg"
-// Line 27: image: "/images/options/mercury-panel-mount-control.jpeg"
-```
-
-No other files need to change -- the `OptionGallery` component already renders whatever `image` URL is in the config.
+- Cable: `"/images/options/cable-steering.jpg"`
+- Hydraulic: `"/images/options/hydraulic-steering.jpg"`
 
