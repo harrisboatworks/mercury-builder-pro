@@ -6,9 +6,7 @@ export const controlChoices = [
     value: "side_mount",
     image: "/images/options/mercury-side-mount-control.png",
     helper: "Mounts on side of console",
-    xpReward: 15,
-    price: 1200,
-    priceLabel: "+$1,200"
+    xpReward: 15
   },
   {
     id: "bin",
@@ -16,9 +14,7 @@ export const controlChoices = [
     value: "binnacle",
     image: "/images/options/mercury-binnacle-control.jpeg",
     helper: "Top-mount throttle/shift",
-    xpReward: 15,
-    price: 1200,
-    priceLabel: "+$1,200"
+    xpReward: 15
   },
   // DTS option hidden for now
   // {
@@ -41,9 +37,7 @@ export const steeringChoices = [
     value: "cable",
     image: "/images/options/cable-steering.jpg",
     helper: "Mechanical cable system",
-    xpReward: 10,
-    price: 0,
-    priceLabel: "Included"
+    xpReward: 10
   },
   {
     id: "hydraulic",
@@ -52,9 +46,7 @@ export const steeringChoices = [
     image: "/images/options/hydraulic-steering.jpg",
     helper: "Smooth hydraulic control",
     xpReward: 20,
-    badge: "Smooth Operator",
-    price: 0,
-    priceLabel: "Included"
+    badge: "Smooth Operator"
   }
 ];
 
@@ -65,9 +57,7 @@ export const gaugeChoices = [
     value: "tach_basic",
     image: "https://images.unsplash.com/photo-1493238792000-8113da705763?w=400&h=300&fit=crop",
     helper: "Essential RPM gauge",
-    xpReward: 10,
-    price: 0,
-    priceLabel: "Included"
+    xpReward: 10
   },
   {
     id: "sc",
@@ -75,9 +65,7 @@ export const gaugeChoices = [
     value: "smartcraft",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop",
     helper: "Digital monitoring suite",
-    xpReward: 20,
-    price: 0,
-    priceLabel: "Included"
+    xpReward: 20
   },
   {
     id: "vv",
@@ -86,9 +74,7 @@ export const gaugeChoices = [
     image: "https://images.unsplash.com/photo-1521295121783-8a321d551ad2?w=400&h=300&fit=crop",
     helper: "Full glass cockpit display",
     xpReward: 30,
-    badge: "Captain's Choice",
-    price: 0,
-    priceLabel: "Included"
+    badge: "Captain's Choice"
   }
 ];
 
