@@ -1,55 +1,32 @@
 
 
-# Fix: Remove Double Code Exchange Conflict
+# Fix: Shared Quote Links Blocked by RLS
 
-## Root Cause
+## Problem
 
-The last two changes introduced a conflict:
-- `detectSessionInUrl: true` + `flowType: 'pkce'` in the Supabase client config tells the client to **automatically** detect `?code=` in the URL and exchange it for a session during initialization
-- The `RootRedirect` component **also** manually calls `exchangeCodeForSession(code)` on the same code
-
-OAuth authorization codes are single-use. The automatic exchange uses the code first, then the manual exchange fails (silently). Additionally, there's a race condition: `setExchanging(false)` fires before `onAuthStateChange` updates the user state, causing the redirect to `/quote/motor-selection` with `user=null` instead of waiting for the session.
+The quote `47e0b7b8-...` exists in `customer_quotes`, but the RLS (Row Level Security) policies block access for anyone who isn't the quote owner or an admin. Shared links like `/quote/saved/:quoteId` fail with "Quote not found" because the anonymous browser can't SELECT the row.
 
 ## Solution
 
-Remove the manual `exchangeCodeForSession` call from `RootRedirect`. Instead, rely entirely on the Supabase client's built-in auto-detection (`detectSessionInUrl: true`). The `RootRedirect` component just needs to **wait** for the auth state to settle.
+Create a Supabase Edge Function to fetch shared quotes using the service role (bypasses RLS). This avoids weakening RLS policies while still enabling shared links. The edge function will return only the `quote_data` and non-sensitive fields needed to restore the quote -- not PII like email/phone.
 
-## Technical Change
+## Technical Changes
 
-### File: `src/App.tsx` -- Simplify RootRedirect
+### 1. New Edge Function: `supabase/functions/get-shared-quote/index.ts`
 
-Replace the current `RootRedirect` with a simpler version that doesn't manually exchange codes:
+- Accepts `{ quoteId: string }` in the request body
+- Uses the service role client to fetch the quote from `customer_quotes`
+- Returns only safe fields: `id`, `quote_data`, `customer_name` (first name only), `is_admin_quote`, `admin_discount`, `admin_notes`, `customer_notes`
+- Does NOT return `customer_email`, `customer_phone`, or `user_id`
 
-```text
-function RootRedirect() {
-  const params = new URLSearchParams(window.location.search);
-  const hash = window.location.hash;
-  const hasAuthParams = params.has('code') || 
-                        hash.includes('access_token') || 
-                        params.has('error');
+### 2. Update `src/pages/quote/SavedQuotePage.tsx`
 
-  const { user, loading } = useAuth();
-  const navigate = useNavigate();
+- Replace the direct Supabase query (blocked by RLS) with a call to the new edge function:
+  ```
+  const { data } = await supabase.functions.invoke('get-shared-quote', {
+    body: { quoteId }
+  });
+  ```
+- The rest of the quote restoration logic remains the same
 
-  useEffect(() => {
-    if (hasAuthParams && !loading) {
-      navigate(user ? '/dashboard' : '/quote/motor-selection', { replace: true });
-    }
-  }, [loading, user, hasAuthParams, navigate]);
-
-  if (hasAuthParams) {
-    return <RouteLoader />;
-  }
-
-  return <Navigate to="/quote/motor-selection" replace />;
-}
-```
-
-Key changes:
-- Remove `useState` import for `exchanging` (no longer needed)
-- Remove `supabase` import (no longer calling exchange manually)
-- Remove the `exchangeCodeForSession` useEffect entirely
-- Remove `exchanging` state and its dependency from the redirect useEffect
-- The Supabase client's `detectSessionInUrl: true` handles the code exchange automatically during initialization
-
-The `supabase/client.ts` changes from the previous fix (adding `flowType: 'pkce'` and `detectSessionInUrl: true`) remain in place -- those are correct and necessary.
+This is a two-file change. The shared link will work for anyone with the URL, while keeping PII protected behind RLS.
