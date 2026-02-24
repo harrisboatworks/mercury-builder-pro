@@ -1,30 +1,35 @@
 
 
-# Fix: Show Customer Name on Quote PDF
+# Replace Placeholder Control Box Images with Real Mercury Photos
 
-## Problem
+## What's Changing
 
-When downloading a PDF from the Quote Summary page, the customer name always shows as "Valued Customer" instead of the actual customer's name. This is because `QuoteSummaryPage.tsx` hardcodes the value at line 471:
+The three control box options in the quote builder currently use generic Unsplash stock photos. You've provided actual Mercury product images to replace them:
+
+| Option | Current Image | New Image |
+|--------|--------------|-----------|
+| Side-Mount Control | Unsplash stock photo | Mercury Side Mount Control Box |
+| Binnacle Control | Unsplash stock photo | Mercury Binnacle Mount Control Box |
+| DTS Digital Control | Unsplash stock photo | Mercury Panel Mount Control Box |
+
+## Technical Details
+
+### 1. Copy uploaded images to `public/images/options/`
+
+This matches the existing pattern used for installation mount images. Files:
+- `public/images/options/mercury-side-mount-control.png`
+- `public/images/options/mercury-binnacle-control.jpeg`
+- `public/images/options/mercury-panel-mount-control.jpeg`
+
+### 2. Update `src/config/visualChoices.ts`
+
+Replace the three Unsplash URLs in `controlChoices` with paths to the new local images:
 
 ```
-customerName: 'Valued Customer',
-customerEmail: '',
-customerPhone: '',
+// Line 7:  image: "/images/options/mercury-side-mount-control.png"
+// Line 17: image: "/images/options/mercury-binnacle-control.jpeg"
+// Line 27: image: "/images/options/mercury-panel-mount-control.jpeg"
 ```
 
-The customer name, email, and phone are available in the QuoteContext (`state.customerName`, `state.customerEmail`, `state.customerPhone`) but aren't being used.
-
-## Fix
-
-### File: `src/pages/quote/QuoteSummaryPage.tsx`
-
-Update lines 471-473 to pull from the context state, falling back to the generic defaults if empty:
-
-```
-customerName: state.customerName || 'Valued Customer',
-customerEmail: state.customerEmail || '',
-customerPhone: state.customerPhone || '',
-```
-
-This is a 3-line change. When an admin creates a quote with a customer name (like "Kurt Graichen"), the PDF will now display that name instead of "Valued Customer".
+No other files need to change -- the `OptionGallery` component already renders whatever `image` URL is in the config.
 
