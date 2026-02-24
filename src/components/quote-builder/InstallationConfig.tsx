@@ -158,10 +158,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
           >
             <OptionGallery
               title="Step 1: Choose Your Control System"
-              choices={selectedMotor?.hp >= 150 ? 
-                controlChoices.filter(c => c.value === 'dts') : 
-                controlChoices
-              }
+              choices={controlChoices}
               value={config.controls}
               onChange={(val) => handleOptionSelect('controls', val)}
             />
