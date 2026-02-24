@@ -1,22 +1,20 @@
 
 
-# Remove Misleading Prices from Installation Config Options
+# Hide Gauges Selection Step
 
 ## What's Changing
 
-The controls, steering, and gauge options in the Installation Config step are purely for capturing the boat's configuration -- none of their prices feed into the quote total. The price badges currently displayed on these cards ("+ $1,200", "Included") are unnecessary and potentially confusing.
+The gauges selection step in the Installation Config will be hidden, similar to how the DTS control option was hidden. Users will no longer be prompted to choose between Basic Tach, Smartcraft Connect, or VesselView during installation configuration.
 
-## Changes
+## Technical Details
 
-### File: `src/config/visualChoices.ts`
+### File: `src/components/quote-builder/InstallationConfig.tsx`
 
-Remove `price` and `priceLabel` fields from all entries in:
+Remove or skip the gauges step from the installation flow. This means:
 
-- `controlChoices` (remove `price: 1200` and `priceLabel: "+$1,200"` from both side-mount and binnacle)
-- `steeringChoices` (remove `price: 0` and `priceLabel: "Included"` from both cable and hydraulic)
-- `gaugeChoices` (remove `price: 0` and `priceLabel: "Included"` from all three gauge options)
+- Remove the gauge selection `OptionGallery` rendering
+- Adjust step logic so the flow goes directly from steering selection to completion (for non-tiller motors)
+- Update any step count or completion logic that references the gauges step
 
-The `tillerMountingChoices` will keep their prices since those **do** flow into the quote total via `installationCost`.
-
-The `OptionGallery` component already handles missing `priceLabel` gracefully -- it only renders the price badge when `choice.priceLabel` is present, so no other files need changes.
+The `gaugeChoices` array in `visualChoices.ts` can remain in place (just unused), keeping it easy to re-enable later.
 
