@@ -468,9 +468,9 @@ export default function QuoteSummaryPage() {
       
       const pdfData = {
         quoteNumber,
-        customerName: 'Valued Customer',
-        customerEmail: '',
-        customerPhone: '',
+        customerName: state.customerName || 'Valued Customer',
+        customerEmail: state.customerEmail || '',
+        customerPhone: state.customerPhone || '',
         motor: {
           model: motorName,
           hp: hp,
