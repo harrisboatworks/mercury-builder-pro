@@ -1,65 +1,55 @@
 
-# Fix: Google OAuth PKCE Code Exchange
 
-## Root Cause (Updated)
+# Fix: Remove Double Code Exchange Conflict
 
-The previous fix correctly prevents the immediate redirect from stripping the `?code=` parameter, but the Supabase client still isn't exchanging the code for a session. Two issues:
+## Root Cause
 
-1. **No explicit `flowType: 'pkce'`** in the Supabase client config -- the client may not know to look for `?code=` in the URL
-2. **No explicit code exchange** -- nowhere in the app calls `supabase.auth.exchangeCodeForSession(code)`, so we rely entirely on auto-detection which is failing silently
+The last two changes introduced a conflict:
+- `detectSessionInUrl: true` + `flowType: 'pkce'` in the Supabase client config tells the client to **automatically** detect `?code=` in the URL and exchange it for a session during initialization
+- The `RootRedirect` component **also** manually calls `exchangeCodeForSession(code)` on the same code
+
+OAuth authorization codes are single-use. The automatic exchange uses the code first, then the manual exchange fails (silently). Additionally, there's a race condition: `setExchanging(false)` fires before `onAuthStateChange` updates the user state, causing the redirect to `/quote/motor-selection` with `user=null` instead of waiting for the session.
 
 ## Solution
 
-Two changes:
+Remove the manual `exchangeCodeForSession` call from `RootRedirect`. Instead, rely entirely on the Supabase client's built-in auto-detection (`detectSessionInUrl: true`). The `RootRedirect` component just needs to **wait** for the auth state to settle.
 
-### 1. `src/integrations/supabase/client.ts` -- Add PKCE flow type
+## Technical Change
 
-Add `flowType: 'pkce'` and ensure `detectSessionInUrl: true` in the auth config so the client explicitly knows to handle `?code=` parameters:
+### File: `src/App.tsx` -- Simplify RootRedirect
 
-```ts
-auth: {
-  storage: safeStorage,
-  persistSession: true,
-  autoRefreshToken: true,
-  flowType: 'pkce',
-  detectSessionInUrl: true,
-}
-```
+Replace the current `RootRedirect` with a simpler version that doesn't manually exchange codes:
 
-### 2. `src/App.tsx` -- Explicit code exchange in RootRedirect
-
-Update the `RootRedirect` component to explicitly call `exchangeCodeForSession()` when a `code` parameter is detected, rather than hoping the client auto-detects it:
-
-```ts
+```text
 function RootRedirect() {
   const params = new URLSearchParams(window.location.search);
-  const code = params.get('code');
   const hash = window.location.hash;
-  const hasAuthParams = !!code || hash.includes('access_token') || params.has('error');
-  
+  const hasAuthParams = params.has('code') || 
+                        hash.includes('access_token') || 
+                        params.has('error');
+
   const { user, loading } = useAuth();
   const navigate = useNavigate();
-  const [exchanging, setExchanging] = useState(false);
 
   useEffect(() => {
-    if (code && !exchanging) {
-      setExchanging(true);
-      supabase.auth.exchangeCodeForSession(code).then(({ error }) => {
-        if (error) console.error('Code exchange failed:', error);
-        setExchanging(false);
-      });
-    }
-  }, [code]);
-
-  useEffect(() => {
-    if (hasAuthParams && !loading && !exchanging) {
+    if (hasAuthParams && !loading) {
       navigate(user ? '/dashboard' : '/quote/motor-selection', { replace: true });
     }
-  }, [loading, user, hasAuthParams, navigate, exchanging]);
+  }, [loading, user, hasAuthParams, navigate]);
 
-  if (hasAuthParams) return <RouteLoader />;
+  if (hasAuthParams) {
+    return <RouteLoader />;
+  }
+
   return <Navigate to="/quote/motor-selection" replace />;
 }
 ```
 
-This ensures the code is explicitly exchanged for a session token before any redirect happens. The `AuthProvider`'s `onAuthStateChange` listener will then fire with the new session.
+Key changes:
+- Remove `useState` import for `exchanging` (no longer needed)
+- Remove `supabase` import (no longer calling exchange manually)
+- Remove the `exchangeCodeForSession` useEffect entirely
+- Remove `exchanging` state and its dependency from the redirect useEffect
+- The Supabase client's `detectSessionInUrl: true` handles the code exchange automatically during initialization
+
+The `supabase/client.ts` changes from the previous fix (adding `flowType: 'pkce'` and `detectSessionInUrl: true`) remain in place -- those are correct and necessary.
