@@ -1,57 +1,65 @@
 
+# Fix: Google OAuth PKCE Code Exchange
 
-# Fix: Google OAuth Login Not Working
+## Root Cause (Updated)
 
-## Root Cause
+The previous fix correctly prevents the immediate redirect from stripping the `?code=` parameter, but the Supabase client still isn't exchanging the code for a session. Two issues:
 
-When Google OAuth completes, Supabase redirects back to `https://mercuryrepower.ca/?code=XXXX` with an authorization code. However, the root route `/` has a `<Navigate to="/quote/motor-selection" replace />` that immediately redirects away, **stripping the `?code=` query parameter before the Supabase client can exchange it for a session token**.
+1. **No explicit `flowType: 'pkce'`** in the Supabase client config -- the client may not know to look for `?code=` in the URL
+2. **No explicit code exchange** -- nowhere in the app calls `supabase.auth.exchangeCodeForSession(code)`, so we rely entirely on auto-detection which is failing silently
 
 ## Solution
 
-Update the root route to preserve OAuth callback parameters. When the URL contains auth-related query parameters (`code`, `access_token`, `refresh_token`, `error`), we should let the Supabase client process them before redirecting.
+Two changes:
 
-## Technical Changes
+### 1. `src/integrations/supabase/client.ts` -- Add PKCE flow type
 
-### File: `src/App.tsx`
+Add `flowType: 'pkce'` and ensure `detectSessionInUrl: true` in the auth config so the client explicitly knows to handle `?code=` parameters:
 
-Replace the simple `Navigate` on the root route with a small component that:
-1. Checks if the URL has OAuth callback parameters (`code`, `access_token`, `error`)
-2. If yes, renders a loading spinner and lets `AuthProvider` process the tokens (via `onAuthStateChange` / `getSession()`) -- then redirects after the session is established
-3. If no, immediately redirects to `/quote/motor-selection` as before
+```ts
+auth: {
+  storage: safeStorage,
+  persistSession: true,
+  autoRefreshToken: true,
+  flowType: 'pkce',
+  detectSessionInUrl: true,
+}
+```
 
-```text
-// New component (inline or separate file):
+### 2. `src/App.tsx` -- Explicit code exchange in RootRedirect
+
+Update the `RootRedirect` component to explicitly call `exchangeCodeForSession()` when a `code` parameter is detected, rather than hoping the client auto-detects it:
+
+```ts
 function RootRedirect() {
   const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
   const hash = window.location.hash;
-  const hasAuthParams = params.has('code') || 
-                        hash.includes('access_token') || 
-                        params.has('error');
-
+  const hasAuthParams = !!code || hash.includes('access_token') || params.has('error');
+  
   const { user, loading } = useAuth();
   const navigate = useNavigate();
+  const [exchanging, setExchanging] = useState(false);
 
   useEffect(() => {
-    if (hasAuthParams) {
-      // Wait for auth to finish processing
-      if (!loading) {
-        navigate(user ? '/dashboard' : '/quote/motor-selection', { replace: true });
-      }
+    if (code && !exchanging) {
+      setExchanging(true);
+      supabase.auth.exchangeCodeForSession(code).then(({ error }) => {
+        if (error) console.error('Code exchange failed:', error);
+        setExchanging(false);
+      });
     }
-  }, [loading, user, hasAuthParams]);
+  }, [code]);
 
-  if (hasAuthParams) {
-    return <LoadingSpinner />;  // Show spinner while processing auth
-  }
+  useEffect(() => {
+    if (hasAuthParams && !loading && !exchanging) {
+      navigate(user ? '/dashboard' : '/quote/motor-selection', { replace: true });
+    }
+  }, [loading, user, hasAuthParams, navigate, exchanging]);
 
+  if (hasAuthParams) return <RouteLoader />;
   return <Navigate to="/quote/motor-selection" replace />;
 }
 ```
 
-Then update the route:
-```
-<Route path="/" element={<RootRedirect />} />
-```
-
-This is a minimal, targeted fix. No other files need to change.
-
+This ensures the code is explicitly exchanged for a session token before any redirect happens. The `AuthProvider`'s `onAuthStateChange` listener will then fire with the new session.
