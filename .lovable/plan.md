@@ -1,27 +1,22 @@
 
 
-# Replace Placeholder Steering Images with Real Product Photos
+# Remove Misleading Prices from Installation Config Options
 
 ## What's Changing
 
-Replace the two Unsplash stock photos for steering options with the real product images you provided:
+The controls, steering, and gauge options in the Installation Config step are purely for capturing the boat's configuration -- none of their prices feed into the quote total. The price badges currently displayed on these cards ("+ $1,200", "Included") are unnecessary and potentially confusing.
 
-| Option | New Image |
-|--------|-----------|
-| Cable Steering | Safe-T QC Rotary Steering System |
-| Hydraulic Steering | SeaStar Pro Hydraulic Steering Kit |
+## Changes
 
-## Technical Details
+### File: `src/config/visualChoices.ts`
 
-### 1. Copy uploaded images to `public/images/options/`
+Remove `price` and `priceLabel` fields from all entries in:
 
-- `public/images/options/cable-steering.jpg` (from Cable_Steering.jpg)
-- `public/images/options/hydraulic-steering.jpg` (from Hydraulic_Steering.jpg)
+- `controlChoices` (remove `price: 1200` and `priceLabel: "+$1,200"` from both side-mount and binnacle)
+- `steeringChoices` (remove `price: 0` and `priceLabel: "Included"` from both cable and hydraulic)
+- `gaugeChoices` (remove `price: 0` and `priceLabel: "Included"` from all three gauge options)
 
-### 2. Update `src/config/visualChoices.ts`
+The `tillerMountingChoices` will keep their prices since those **do** flow into the quote total via `installationCost`.
 
-Replace the Unsplash URLs in `steeringChoices`:
-
-- Cable: `"/images/options/cable-steering.jpg"`
-- Hydraulic: `"/images/options/hydraulic-steering.jpg"`
+The `OptionGallery` component already handles missing `priceLabel` gracefully -- it only renders the price badge when `choice.priceLabel` is present, so no other files need changes.
 
