@@ -213,3 +213,6 @@ verify_jwt = false
 [functions.voice-sessions-proxy]
 verify_jwt = false
 
+[functions.get-shared-quote]
+verify_jwt = false
+

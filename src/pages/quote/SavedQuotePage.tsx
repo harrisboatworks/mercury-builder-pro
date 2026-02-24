@@ -25,14 +25,12 @@ export default function SavedQuotePage() {
       }
 
       try {
-        // Fetch the saved quote
-        const { data: quote, error } = await supabase
-          .from('customer_quotes')
-          .select('*')
-          .eq('id', quoteId)
-          .single();
+        // Fetch via edge function to bypass RLS for shared links
+        const { data: quote, error } = await supabase.functions.invoke('get-shared-quote', {
+          body: { quoteId }
+        });
 
-        if (error || !quote) {
+        if (error || !quote || quote.error) {
           toast({
             title: "Quote not found",
             description: "We couldn't find this saved quote. It may have been deleted.",
