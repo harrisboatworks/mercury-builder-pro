@@ -5,7 +5,7 @@ export const controlChoices = [
     label: "Side-Mount Control",
     value: "side_mount",
     image: "/images/options/mercury-side-mount-control.png",
-    helper: "Mounts on side of console",
+    helper: "Lever on the side of your console",
     xpReward: 15
   },
   {
@@ -13,7 +13,7 @@ export const controlChoices = [
     label: "Binnacle Control",
     value: "binnacle",
     image: "/images/options/mercury-binnacle-control.jpeg",
-    helper: "Top-mount throttle/shift",
+    helper: "Lever mounted on top of your console",
     xpReward: 15
   },
   // DTS option hidden for now
@@ -36,7 +36,7 @@ export const steeringChoices = [
     label: "Cable Steering",
     value: "cable",
     image: "/images/options/cable-steering.jpg",
-    helper: "Mechanical cable system",
+    helper: "Standard mechanical steering — most common on smaller boats",
     xpReward: 10
   },
   {
@@ -44,7 +44,7 @@ export const steeringChoices = [
     label: "Hydraulic Steering",
     value: "hydraulic",
     image: "/images/options/hydraulic-steering.jpg",
-    helper: "Smooth hydraulic control",
+    helper: "Power-assisted steering — common on larger boats",
     xpReward: 20,
     badge: "Smooth Operator"
   }

@@ -113,8 +113,8 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
             <h2 className="text-3xl font-light tracking-wide text-foreground mb-2">
               Configure Your Installation
             </h2>
-            <p className="text-gray-700 font-normal mb-8">
-              Select your rigging options for the {selectedMotor?.model}
+            <p className="text-muted-foreground font-normal mb-8">
+              Tell us what rigging is currently on your boat — we'll confirm everything during your consultation.
             </p>
           </>
         )}
@@ -154,7 +154,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
             animate={{ opacity: 1, x: 0 }}
           >
             <OptionGallery
-              title="Step 1: Choose Your Control System"
+              title="What type of controls does your boat have?"
               choices={controlChoices}
               value={config.controls}
               onChange={(val) => handleOptionSelect('controls', val)}
@@ -169,7 +169,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
             animate={{ opacity: 1, x: 0 }}
           >
             <OptionGallery
-              title="Step 2: Select Steering Type"
+              title="What type of steering does your boat have?"
               choices={steeringChoices}
               value={config.steering}
               onChange={(val) => handleOptionSelect('steering', val)}
@@ -178,6 +178,13 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
         )}
 
         {/* Gauges step hidden for now — gaugeChoices remains in visualChoices.ts */}
+
+        {/* Reassurance note */}
+        {!isTiller && (
+          <p className="text-sm text-muted-foreground mt-6 italic">
+            Not sure what you have? No worries — just pick your best guess and we'll sort it out when we see the boat.
+          </p>
+        )}
       </motion.div>
     </div>
   );
