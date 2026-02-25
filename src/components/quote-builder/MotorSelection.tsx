@@ -431,7 +431,7 @@ export const MotorSelection = ({
         // Cap horsepower at 300
         const isOverHpLimit = m.horsepower > 300;
         // Exclude motors marked as "Exclude"
-        const isExcluded = m.availability === 'Exclude';
+        const isExcluded = !m.availability || m.availability === 'Exclude';
         
         if (isCounterRotating) {
           console.log(`Excluding Counter Rotating motor: ${m.model || m.model_display}`);

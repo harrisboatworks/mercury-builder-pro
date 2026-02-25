@@ -114,6 +114,7 @@ export const AICommandBar: React.FC<AICommandBarProps> = ({
           .select('id, model, model_display, horsepower, shaft, msrp, sale_price')
           .or(`model.ilike.%${query}%,model_display.ilike.%${query}%`)
           .neq('availability', 'Exclude')
+          .not('availability', 'is', null)
           .limit(5);
 
         if (!error && motors) {
