@@ -1,39 +1,49 @@
 
 
-# Fix: Excluded Motors Appearing in Search Results
-
-## Problem
-
-The `AICommandBar` component (the global search/command bar) queries the `motor_models` table directly without filtering out motors with `availability = 'Exclude'`. This means excluded motors show up in search results even though they're properly hidden from the motor selection grid.
+# Fix: Motors with NULL Availability Still Showing on Site
 
 ## Root Cause
 
-In `src/components/chat/AICommandBar.tsx` (lines 112-116), the Supabase query searches motors by name but does not add `.neq('availability', 'Exclude')`:
+The exclusion filter `!= 'Exclude'` does **not** filter out motors where `availability` is NULL. In both SQL and JavaScript, comparing NULL to any value returns NULL/falsy — so NULL rows slip through.
 
+- **Database**: 111 motors have `availability = NULL`. Only 17 have `availability = 'In Stock'`.
+- **No motors** are actually marked `'Exclude'` — the filter was correct but had nothing to catch.
+
+## Fix: Show Only Motors With Explicit Availability
+
+Per your preference, we will hide both NULL and 'Exclude' motors. This means only motors with a positive availability value (like "In Stock", "Available to Order") will appear.
+
+### Changes
+
+**1. `src/components/quote-builder/MotorSelection.tsx`** (client-side filter, ~line 434)
+
+Change:
 ```typescript
-const { data: motors, error } = await supabase
-  .from('motor_models')
-  .select('id, model, model_display, horsepower, shaft, msrp, sale_price')
-  .or(`model.ilike.%${query}%,model_display.ilike.%${query}%`)
-  .limit(5);
+const isExcluded = m.availability === 'Exclude';
+```
+To:
+```typescript
+const isExcluded = !m.availability || m.availability === 'Exclude';
 ```
 
-## Fix
+**2. `src/pages/quote/MotorSelectionPage.tsx`** (client-side filter, ~line 358)
 
-Add `.neq('availability', 'Exclude')` to the query in `AICommandBar.tsx` so excluded motors are filtered out of search results.
-
-### File: `src/components/chat/AICommandBar.tsx`
-
-Add the exclusion filter to the motor search query at line ~114:
-
+Change:
 ```typescript
-const { data: motors, error } = await supabase
-  .from('motor_models')
-  .select('id, model, model_display, horsepower, shaft, msrp, sale_price')
-  .or(`model.ilike.%${query}%,model_display.ilike.%${query}%`)
-  .neq('availability', 'Exclude')
-  .limit(5);
+motor.availability !== 'Exclude'
+```
+To:
+```typescript
+motor.availability && motor.availability !== 'Exclude'
 ```
 
-This is a one-line addition. The other search paths (HybridMotorSearch, SearchOverlay, MotorSelectionPage) already receive pre-filtered motor lists and are not affected.
+**3. `src/components/chat/AICommandBar.tsx`** (database query, ~line 116)
+
+Add a `.not('availability', 'is', null)` filter alongside the existing `.neq`:
+```typescript
+.neq('availability', 'Exclude')
+.not('availability', 'is', null)
+```
+
+These three changes ensure that only motors with an explicitly set, non-excluded availability appear across all search and browse paths on the site.
 
