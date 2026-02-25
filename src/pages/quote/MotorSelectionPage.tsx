@@ -355,7 +355,7 @@ if (event.type === 'filter_motors') {
       const filteredMotors = (motorsData?.filter(motor => 
         !motor.model?.toLowerCase().includes('jet') &&
         motor.horsepower <= 600 && // HP cap same as original
-        motor.availability !== 'Exclude' // Exclude motors marked as "Exclude"
+        motor.availability && motor.availability !== 'Exclude' // Hide motors with NULL or 'Exclude' availability
       ) || []).map(motor => {
         // Normalize features: extract title if features are objects
         if (motor.features && Array.isArray(motor.features) && motor.features.length > 0) {
