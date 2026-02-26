@@ -723,6 +723,7 @@ export const getMotorImageByPriority = async (motor: any): Promise<{ url: string
       // with the same horsepower (common for low-HP models that share imagery).
       const hp = motor?.horsepower ?? motor?.hp;
       if (typeof hp === 'number') {
+        // First try: motor with hero_image_url at same HP
         const { data: templateMotors, error: templateError } = await supabase
           .from('motor_models')
           .select('id, hero_image_url')
@@ -732,6 +733,35 @@ export const getMotorImageByPriority = async (motor: any): Promise<{ url: string
 
         if (!templateError && templateMotors && templateMotors.length > 0) {
           return { url: templateMotors[0].hero_image_url as string, isInventory: false };
+        }
+
+        // Second try: motor with hero_media_id at same HP
+        const { data: heroMediaMotors, error: heroMediaError } = await supabase
+          .from('motor_models')
+          .select('id, hero_media:motor_media!motor_models_hero_media_id_fkey(media_url)')
+          .eq('horsepower', hp)
+          .not('hero_media_id', 'is', null)
+          .limit(1);
+
+        if (!heroMediaError && heroMediaMotors && heroMediaMotors.length > 0) {
+          const mediaUrl = (heroMediaMotors[0] as any)?.hero_media?.media_url;
+          if (mediaUrl) {
+            return { url: mediaUrl, isInventory: false };
+          }
+        }
+
+        // Third try: any motor at same HP that has motor_media records
+        const { data: anyMediaMotor, error: anyMediaError } = await supabase
+          .from('motor_media')
+          .select('media_url, motor_id!inner(horsepower)')
+          .eq('is_active', true)
+          .eq('media_type', 'image')
+          .eq('motor_id.horsepower', hp)
+          .order('display_order', { ascending: true })
+          .limit(1);
+
+        if (!anyMediaError && anyMediaMotor && anyMediaMotor.length > 0) {
+          return { url: anyMediaMotor[0].media_url, isInventory: false };
         }
       }
     } catch (err) {
