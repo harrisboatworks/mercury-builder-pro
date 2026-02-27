@@ -1,46 +1,34 @@
 
 
-## Issues Found
+## Verification Results
 
-### 1. Battery option not on PDF
-The battery **is** included in `accessoryBreakdown` (line 371-377 of QuoteSummaryPage.tsx) when `state.looseMotorBattery?.wantsBattery` is true. The PDF renders it in the "Accessories & Setup" section. If it's missing from your PDF, the battery choice likely wasn't set in the quote context when you generated it — possibly a state restoration issue from the saved quote flow.
+All three changes are structurally correct and the data flows end-to-end. Here is what I verified:
 
-### 2. Customer Notes not shown on PDF
-The `customerNotes` field exists in the QuoteContext and is saved to the database in `quote_data`, but it is **never passed to the PDF data object** (lines 469-522 of QuoteSummaryPage.tsx) and the **PDF component has no rendering section for notes** at all. This is the gap.
+### A. Customer Notes on PDF — Correct
+- `customerNotes` added to PDF props interface (line 436)
+- Rendered as a styled "Notes" box before Terms section (lines 879-885)
+- Passed through `ReactPdfQuoteData` interface (line 62) and both `generateQuotePDF` (line 135) and `generatePDFBlob` (line 187)
+- Passed from QuoteSummaryPage into pdfData (line 533)
 
-### 3. No custom line items feature
-There's currently no way to manually add ad-hoc items (like "Battery box — $0.00") from admin controls. The accessory breakdown is entirely derived from the motor options system.
+### B. Admin Custom Line Items — Correct with one gap
+- State field `adminCustomItems` added to QuoteContext (line 82), initial state (empty array), `SET_ADMIN_QUOTE_DATA` reducer (line 277), and `RESTORE_QUOTE` reducer (line 299)
+- Admin UI for add/edit/remove items in AdminQuoteControls (lines 325-393)
+- Items included in `accessoryBreakdown` in QuoteSummaryPage (lines 414-423), which flows into the pricing table AND the PDF
+- Items saved in `enhancedQuoteData` when admin saves the quote (line 102)
 
-## Plan
+**Gap found:** The admin save function's `finalPrice` calculation (line 84-93) only sums `state.selectedOptions` — it does NOT include `customItems` prices. This means the `final_price` column in the database won't reflect custom line items, though the PDF and pricing table will be correct (they compute from `accessoryBreakdown` which does include them).
 
-### A. Show customer notes on PDF (2 files)
+**Fix needed in `src/components/admin/AdminQuoteControls.tsx` (line 84):**
+```typescript
+const accessoryTotal = (state.selectedOptions?.reduce((sum, opt) => sum + (opt.price || 0), 0) || 0)
+  + (customItems?.reduce((sum, item) => sum + (item.price || 0), 0) || 0);
+```
 
-**`src/components/quote-pdf/ProfessionalQuotePDF.tsx`**:
-- Add `customerNotes?: string` to the `QuotePDFProps` interface
-- Render a "Notes" section below the pricing table (before Terms) when `customerNotes` is present
+### C. Battery + Notes Restore from Saved Quotes — Correct
+- `looseMotorBattery` is dispatched via `SET_LOOSE_MOTOR_BATTERY` at line 76-78 of SavedQuotePage
+- `adminCustomItems` restored via `SET_ADMIN_QUOTE_DATA` at line 97-107 of SavedQuotePage
+- `looseMotorBattery` is explicitly saved in `enhancedQuoteData` at line 107 of AdminQuoteControls
 
-**`src/lib/react-pdf-generator.tsx`**:
-- Add `customerNotes` to `ReactPdfQuoteData` interface
-- Pass `customerNotes` through in both `generateQuotePDF` and `generatePDFBlob` transform blocks
-
-**`src/pages/quote/QuoteSummaryPage.tsx`**:
-- Pass `customerNotes: state.customerNotes` into the `pdfData` object
-
-### B. Add admin custom line items (3 files)
-
-**`src/contexts/QuoteContext.tsx`**:
-- Add `adminCustomItems: Array<{ name: string; price: number }>` to state
-- Handle it in `SET_ADMIN_QUOTE_DATA` and `RESTORE_QUOTE` actions
-
-**`src/components/admin/AdminQuoteControls.tsx`**:
-- Add UI section for custom line items: text input for description, number input for price, add/remove buttons
-- Dispatch custom items to context
-
-**`src/pages/quote/QuoteSummaryPage.tsx`**:
-- Include `state.adminCustomItems` in the `accessoryBreakdown` builder so they appear in the pricing table and PDF
-
-### C. Ensure battery choice restores from saved quotes
-
-**`src/pages/quote/SavedQuotePage.tsx`**:
-- Verify `looseMotorBattery` is restored from `quote_data` during the RESTORE_QUOTE dispatch (it's already in `enhancedQuoteData` when saved — need to confirm it's being restored)
+### Summary
+One fix needed: include custom item prices in the admin save's `finalPrice` calculation so the database record matches the PDF total.
 
