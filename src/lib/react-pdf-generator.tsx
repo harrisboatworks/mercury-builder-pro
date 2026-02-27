@@ -59,6 +59,7 @@ export interface ReactPdfQuoteData {
   // Selected promo option from "Choose One"
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoValue?: string;
+  customerNotes?: string;
 }
 
 /**
@@ -130,13 +131,11 @@ export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string>
       includesInstallation: data.includesInstallation,
       selectedPromoOption: data.selectedPromoOption,
       selectedPromoValue: data.selectedPromoValue,
-      pricing: data.pricing,  // Pass full pricing object for admin discount rendering
+      pricing: data.pricing,
+      customerNotes: data.customerNotes,
     };
     
-    // Generate PDF blob using @react-pdf/renderer
     const blob = await pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
-    
-    // Convert blob to URL for download
     const url = URL.createObjectURL(blob);
     return url;
   } catch (error) {
@@ -184,10 +183,10 @@ export async function generatePDFBlob(data: ReactPdfQuoteData): Promise<Blob> {
       includesInstallation: data.includesInstallation,
       selectedPromoOption: data.selectedPromoOption,
       selectedPromoValue: data.selectedPromoValue,
-      pricing: data.pricing,  // Pass full pricing object for admin discount rendering
+      pricing: data.pricing,
+      customerNotes: data.customerNotes,
     };
     
-    // Generate PDF blob using @react-pdf/renderer
     const blob = await pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
     return blob;
   } catch (error) {

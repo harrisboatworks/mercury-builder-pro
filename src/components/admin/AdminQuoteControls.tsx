@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { ShieldCheck, Save, Loader2, Copy, Check, Link } from 'lucide-react';
+import { ShieldCheck, Save, Loader2, Copy, Check, Link, Plus, Trash2 } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
@@ -31,6 +31,9 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
   const [customerPhone, setCustomerPhone] = useState(state.customerPhone || '');
   const [savedQuoteId, setSavedQuoteId] = useState<string | null>(state.editingQuoteId || null);
   const [linkCopied, setLinkCopied] = useState(false);
+  const [customItems, setCustomItems] = useState<Array<{ name: string; price: number }>>(state.adminCustomItems || []);
+  const [newItemName, setNewItemName] = useState('');
+  const [newItemPrice, setNewItemPrice] = useState(0);
 
   // Sync customer info from context when editing existing quote
   useEffect(() => {
@@ -51,11 +54,11 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
     const timeout = setTimeout(() => {
       dispatch({ 
         type: 'SET_ADMIN_QUOTE_DATA', 
-        payload: { adminDiscount, adminNotes, customerNotes } 
+        payload: { adminDiscount, adminNotes, customerNotes, adminCustomItems: customItems } 
       });
     }, 500);
     return () => clearTimeout(timeout);
-  }, [adminDiscount, adminNotes, customerNotes, dispatch]);
+  }, [adminDiscount, adminNotes, customerNotes, customItems, dispatch]);
 
   const handleSaveQuote = async () => {
     if (!customerName.trim() || !customerEmail.trim()) {
@@ -96,6 +99,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         adminNotes,
         customerNotes,
         isAdminQuote: true,
+        adminCustomItems: customItems,
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoRate: state.selectedPromoRate,
         selectedPromoTerm: state.selectedPromoTerm,
@@ -316,6 +320,76 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
           <p className="text-xs text-muted-foreground mt-1">
             These notes will be printed on the customer PDF.
           </p>
+        </div>
+        
+        {/* Custom Line Items */}
+        <div>
+          <Label className="text-sm">Custom Line Items</Label>
+          <p className="text-xs text-muted-foreground mb-2">
+            Add custom items to the quote (e.g., "Battery box — $0.00")
+          </p>
+          
+          {customItems.map((item, index) => (
+            <div key={index} className="flex gap-2 mb-2 items-center">
+              <Input 
+                value={item.name}
+                onChange={(e) => {
+                  const updated = [...customItems];
+                  updated[index] = { ...updated[index], name: e.target.value };
+                  setCustomItems(updated);
+                }}
+                placeholder="Item description"
+                className="flex-1"
+              />
+              <Input 
+                type="number"
+                value={item.price}
+                onChange={(e) => {
+                  const updated = [...customItems];
+                  updated[index] = { ...updated[index], price: Number(e.target.value) };
+                  setCustomItems(updated);
+                }}
+                placeholder="0"
+                className="w-24"
+              />
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setCustomItems(customItems.filter((_, i) => i !== index))}
+              >
+                <Trash2 className="w-4 h-4 text-destructive" />
+              </Button>
+            </div>
+          ))}
+          
+          <div className="flex gap-2 items-end">
+            <Input 
+              value={newItemName}
+              onChange={(e) => setNewItemName(e.target.value)}
+              placeholder="New item description"
+              className="flex-1"
+            />
+            <Input 
+              type="number"
+              value={newItemPrice}
+              onChange={(e) => setNewItemPrice(Number(e.target.value))}
+              placeholder="Price"
+              className="w-24"
+            />
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => {
+                if (newItemName.trim()) {
+                  setCustomItems([...customItems, { name: newItemName.trim(), price: newItemPrice }]);
+                  setNewItemName('');
+                  setNewItemPrice(0);
+                }
+              }}
+            >
+              <Plus className="w-4 h-4" />
+            </Button>
+          </div>
         </div>
         
         {/* Save Button */}
