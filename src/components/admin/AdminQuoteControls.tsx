@@ -81,7 +81,8 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       const motorDiscount = motorMSRP - motorSalePrice;
       
       // Accessories total
-      const accessoryTotal = state.selectedOptions?.reduce((sum, opt) => sum + (opt.price || 0), 0) || 0;
+      const accessoryTotal = (state.selectedOptions?.reduce((sum, opt) => sum + (opt.price || 0), 0) || 0)
+        + (customItems?.reduce((sum, item) => sum + (item.price || 0), 0) || 0);
       
       // Trade-in value
       const tradeInValue = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo?.estimatedValue || 0) : 0;
