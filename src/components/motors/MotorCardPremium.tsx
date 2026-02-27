@@ -116,7 +116,9 @@ export default function MotorCardPremium({
   
   // Smart financing calculation
   const { promo } = useActiveFinancingPromo();
-  const financingDisplay = getFinancingDisplay((price || 0) * 1.13, promo?.rate || null);
+  const financingDisplay = price && price >= 5000
+    ? getFinancingDisplay((price) * 1.13, promo?.rate || null)
+    : null; // Hide financing for motors under $5k (FINANCING_MINIMUM)
   
   // Popularity badge is now handled by getMotorPopularity (rule-based, no state needed)
   

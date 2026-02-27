@@ -327,7 +327,7 @@ export default function MotorCardPreview({
 
   // Calculate dynamic monthly payment estimate
   const calculateMonthlyPayment = () => {
-    if (!price || price <= 0) return null;
+    if (!price || price < 5000) return null; // Hide financing for motors under $5k (FINANCING_MINIMUM)
     
     const term = getFinancingTerm(price);
     const priceWithTax = price * 1.13; // 13% HST
