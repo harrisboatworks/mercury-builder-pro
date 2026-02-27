@@ -411,8 +411,19 @@ export default function QuoteSummaryPage() {
       });
     }
     
+    // Admin custom line items
+    if (state.adminCustomItems && state.adminCustomItems.length > 0) {
+      state.adminCustomItems.forEach(item => {
+        breakdown.push({
+          name: item.name,
+          price: item.price,
+          description: 'Custom item'
+        });
+      });
+    }
+    
     return breakdown;
-  }, [state.selectedOptions, isManualTiller, tillerInstallCost, state.installConfig, needsControls, controlsCost, isElectricStart, selectedPackage, batteryCost, includesProp, canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, installationLaborCost, state.purchasePath, state.looseMotorBattery]);
+  }, [state.selectedOptions, isManualTiller, tillerInstallCost, state.installConfig, needsControls, controlsCost, isElectricStart, selectedPackage, batteryCost, includesProp, canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, installationLaborCost, state.purchasePath, state.looseMotorBattery, state.adminCustomItems]);
 
   // Calculate package-specific totals
   const packageSpecificTotals = useMemo(() => {
@@ -518,7 +529,8 @@ export default function QuoteSummaryPage() {
           financingQrCode: qrCodeDataUrl,
         } : {}),
         selectedPromoOption: state.selectedPromoOption,
-        selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp)
+        selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
+        customerNotes: state.customerNotes || undefined,
       };
       
       // Save lead

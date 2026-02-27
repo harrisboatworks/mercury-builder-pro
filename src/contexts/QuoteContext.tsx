@@ -79,6 +79,7 @@ interface QuoteState {
   customerName: string;
   customerEmail: string;
   customerPhone: string;
+  adminCustomItems: Array<{ name: string; price: number }>;
 }
 
 type QuoteAction = 
@@ -112,7 +113,7 @@ type QuoteAction =
   | { type: 'RESET_QUOTE' }
   // Admin quote actions
   | { type: 'SET_ADMIN_MODE'; payload: { isAdmin: boolean; editingQuoteId: string | null } }
-  | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string; customerName?: string; customerEmail?: string; customerPhone?: string } }
+  | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string; customerName?: string; customerEmail?: string; customerPhone?: string; adminCustomItems?: Array<{ name: string; price: number }> } }
   | { type: 'RESTORE_QUOTE'; payload: any }
   | { type: 'RESET_TO_ADMIN_MODE'; payload: { editingQuoteId: string | null } };
 
@@ -155,7 +156,8 @@ const initialState: QuoteState = {
   customerNotes: '',
   customerName: '',
   customerEmail: '',
-  customerPhone: ''
+  customerPhone: '',
+  adminCustomItems: []
 };
 
 const QuoteContext = createContext<{
@@ -271,7 +273,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         customerNotes: action.payload.customerNotes ?? state.customerNotes,
         customerName: action.payload.customerName ?? state.customerName,
         customerEmail: action.payload.customerEmail ?? state.customerEmail,
-        customerPhone: action.payload.customerPhone ?? state.customerPhone
+        customerPhone: action.payload.customerPhone ?? state.customerPhone,
+        adminCustomItems: action.payload.adminCustomItems ?? state.adminCustomItems
       };
     case 'RESTORE_QUOTE':
       // Restore quote from saved data (used for admin editing)
@@ -293,6 +296,7 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         selectedPromoRate: restored.selectedPromoRate || null,
         selectedPromoTerm: restored.selectedPromoTerm || null,
         selectedPromoValue: restored.selectedPromoValue || null,
+        adminCustomItems: restored.adminCustomItems || [],
         isLoading: false
       };
     default:

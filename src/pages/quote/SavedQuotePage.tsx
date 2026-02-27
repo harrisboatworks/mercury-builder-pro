@@ -94,14 +94,16 @@ export default function SavedQuotePage() {
           const adminDiscountValue = quoteData.adminDiscount ?? quote.admin_discount ?? 0;
           const adminNotesValue = quoteData.adminNotes ?? quote.admin_notes ?? '';
           const customerNotesValue = quoteData.customerNotes ?? quote.customer_notes ?? '';
+          const adminCustomItemsValue = quoteData.adminCustomItems ?? [];
           
-          if (adminDiscountValue > 0 || adminNotesValue || customerNotesValue || quoteData.isAdminQuote || quote.is_admin_quote) {
+          if (adminDiscountValue > 0 || adminNotesValue || customerNotesValue || adminCustomItemsValue.length > 0 || quoteData.isAdminQuote || quote.is_admin_quote) {
             dispatch({ 
               type: 'SET_ADMIN_QUOTE_DATA', 
               payload: { 
                 adminDiscount: adminDiscountValue,
                 adminNotes: adminNotesValue,
-                customerNotes: customerNotesValue
+                customerNotes: customerNotesValue,
+                adminCustomItems: adminCustomItemsValue
               }
             });
             
