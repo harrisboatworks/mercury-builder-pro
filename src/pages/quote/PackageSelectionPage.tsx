@@ -331,14 +331,14 @@ export default function PackageSelectionPage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900">
+      <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950">
         {/* Header */}
-        <div className="sticky top-0 z-50 bg-stone-900/80 backdrop-blur-md border-b border-stone-700/50">
+        <div className="sticky top-0 z-50 bg-stone-950/95 backdrop-blur-md border-b border-stone-700/50">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <Button
               variant="ghost"
               onClick={handleBack}
-              className="text-stone-300 hover:text-white hover:bg-stone-700/50 -ml-2"
+              className="text-white hover:text-white hover:bg-stone-700/50 -ml-2"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
@@ -367,10 +367,10 @@ export default function PackageSelectionPage() {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/30 border border-emerald-500/50"
               >
                 <Shield className="w-4 h-4 text-emerald-400" />
-                <span className="text-sm font-medium text-emerald-300">
+                <span className="text-sm font-medium text-emerald-200">
                   {currentCoverageYears} Years Factory Warranty Included
                 </span>
               </motion.div>
@@ -379,7 +379,7 @@ export default function PackageSelectionPage() {
                 <h1 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                   Choose Your Coverage Package
                 </h1>
-                <p className="text-stone-300 text-lg max-w-2xl mx-auto">
+                <p className="text-stone-200 text-lg max-w-2xl mx-auto">
                   Select the level of protection that's right for your{' '}
                   <span className="text-white font-medium">{motorName}</span>
                 </p>
@@ -394,12 +394,12 @@ export default function PackageSelectionPage() {
                 transition={{ delay: 0.5, duration: 0.3 }}
                 className="flex items-center justify-center py-2"
               >
-                <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 border border-white/20">
+                <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">
                   <Star className="w-4 h-4 text-primary fill-primary flex-shrink-0" />
                   <span className="text-sm font-semibold text-white">
                     Recommended: {recommendation.packageId === 'good' ? 'Essential' : recommendation.packageId === 'better' ? 'Complete' : 'Premium'}
                   </span>
-                  <span className="text-xs text-stone-300 hidden sm:inline">
+                  <span className="text-xs text-stone-200 hidden sm:inline">
                     — {recommendation.reason}
                   </span>
                   
@@ -407,7 +407,7 @@ export default function PackageSelectionPage() {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <button className="p-1 rounded-full hover:bg-white/10 transition-colors flex-shrink-0">
-                        <HelpCircle className="w-3.5 h-3.5 text-stone-400 hover:text-white transition-colors" />
+                        <HelpCircle className="w-3.5 h-3.5 text-stone-300 hover:text-white transition-colors" />
                       </button>
                     </TooltipTrigger>
                     <TooltipContent 
@@ -464,7 +464,7 @@ export default function PackageSelectionPage() {
                   transition={{ duration: 0.3 }}
                   className="flex flex-col items-center gap-2 py-4"
                 >
-                  <span className="text-sm text-stone-300">
+                  <span className="text-sm text-stone-200">
                     Great choice! Scroll down to continue
                   </span>
                   <motion.div
@@ -540,16 +540,16 @@ export default function PackageSelectionPage() {
                       <Sparkles className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <p className="text-sm text-stone-300">Selected Package</p>
+                      <p className="text-sm text-stone-200">Selected Package</p>
                       <p className="text-lg font-semibold text-white">{selectedPackageData.label}</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-sm text-stone-300">Starting at</p>
+                    <p className="text-sm text-stone-200">Starting at</p>
                     <p className="text-2xl font-bold text-white">
                       ${selectedPackageData.priceBeforeTax.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}
                     </p>
-                    <p className="text-xs text-stone-400">before tax</p>
+                    <p className="text-xs text-stone-300">before tax</p>
                   </div>
                 </div>
                 
@@ -558,13 +558,13 @@ export default function PackageSelectionPage() {
                   {selectedPackageData.features.slice(0, 3).map((feature, i) => (
                     <span 
                       key={i}
-                      className="px-3 py-1 text-xs rounded-full bg-stone-700/50 text-stone-300"
+                      className="px-3 py-1 text-xs rounded-full bg-stone-700/50 text-stone-200"
                     >
                       {feature}
                     </span>
                   ))}
                   {selectedPackageData.features.length > 3 && (
-                    <span className="px-3 py-1 text-xs rounded-full bg-stone-700/50 text-stone-400">
+                    <span className="px-3 py-1 text-xs rounded-full bg-stone-700/50 text-stone-300">
                       +{selectedPackageData.features.length - 3} more
                     </span>
                   )}
@@ -581,7 +581,7 @@ export default function PackageSelectionPage() {
                 className={`w-full md:w-auto md:min-w-[280px] md:mx-auto md:flex font-semibold text-lg h-14 rounded-xl transition-all ${
                   selectedPackage 
                     ? `bg-white text-stone-900 hover:bg-stone-100 shadow-lg shadow-white/10 ${hasJustSelected ? 'animate-pulse-glow' : ''}` 
-                    : 'bg-stone-700 text-stone-400 cursor-not-allowed'
+                    : 'bg-stone-700 text-stone-300 cursor-not-allowed'
                 }`}
               >
                 {selectedPackage ? 'Continue to Summary' : 'Select a Package'}
