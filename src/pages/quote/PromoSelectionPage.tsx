@@ -225,13 +225,13 @@ export default function PromoSelectionPage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900">
+      <div className="min-h-screen bg-gradient-to-b from-stone-950 via-stone-900 to-stone-950">
         {/* Header */}
         <div className="container mx-auto px-4 py-6">
           <Button
             variant="ghost"
             onClick={handleBack}
-            className="text-white/70 hover:text-white hover:bg-white/10"
+            className="text-white hover:text-white hover:bg-white/10"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back
@@ -280,7 +280,7 @@ export default function PromoSelectionPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-stone-400 text-lg mb-8 max-w-2xl mx-auto"
+              className="text-stone-200 text-lg mb-8 max-w-2xl mx-auto"
             >
               Every qualifying Mercury outboard comes with 7 years of factory warranty
               PLUS your choice of one additional benefit.
@@ -291,7 +291,7 @@ export default function PromoSelectionPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="relative inline-flex items-center gap-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-4 mb-10 overflow-hidden"
+              className="relative inline-flex items-center gap-4 bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-6 py-4 mb-10 overflow-hidden"
             >
               {/* Shimmer overlay */}
               <div 
@@ -312,7 +312,7 @@ export default function PromoSelectionPage() {
               </motion.div>
               <div className="text-left">
                 <div className="text-white font-bold text-lg">7 Years Factory Warranty</div>
-                <div className="text-stone-400 text-sm">3 years standard + 4 years FREE extension</div>
+                <div className="text-stone-200 text-sm">3 years standard + 4 years FREE extension</div>
               </div>
               {/* Pulsing INCLUDED Badge */}
               <motion.div 
@@ -332,7 +332,7 @@ export default function PromoSelectionPage() {
               transition={{ delay: 0.45, duration: 0.5 }}
             >
               <div className="flex-1 h-px bg-white/20"></div>
-              <span className="text-white/60 text-sm font-medium uppercase tracking-wider">Choose Your Bonus</span>
+              <span className="text-white/80 text-sm font-medium uppercase tracking-wider">Choose Your Bonus</span>
               <div className="flex-1 h-px bg-white/20"></div>
             </motion.div>
 
@@ -434,8 +434,8 @@ export default function PromoSelectionPage() {
                             )}
                           >
                             <div className="text-2xl font-bold text-white">{rate.rate}%</div>
-                            <div className="text-sm text-white/70">{rate.months} months</div>
-                            <div className="text-xs text-white/50 mt-1">
+                            <div className="text-sm text-white/90">{rate.months} months</div>
+                            <div className="text-xs text-white/70 mt-1">
                               ~${Math.round(estimatedPayment)}/mo
                             </div>
                             {isRateSelected && (
@@ -451,7 +451,7 @@ export default function PromoSelectionPage() {
                         );
                       })}
                     </div>
-                    <p className="text-white/50 text-xs mt-4">
+                    <p className="text-white/70 text-xs mt-4">
                       💡 Tip: Shorter terms = lower rates but higher monthly payments
                     </p>
                   </div>
@@ -467,7 +467,7 @@ export default function PromoSelectionPage() {
                 transition={{ delay: 0.8 }}
                 className="mb-8"
               >
-                <p className="text-stone-500 text-sm mb-2">Offer ends March 31, 2026</p>
+                <p className="text-stone-300 text-sm mb-2">Offer ends March 31, 2026</p>
                 <CountdownTimer endDate={endDate} className="justify-center" />
               </motion.div>
             )}
@@ -488,7 +488,7 @@ export default function PromoSelectionPage() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               {!selectedOption && (
-                <p className="text-white/50 text-sm mt-2">Select one of the options above</p>
+                <p className="text-white/70 text-sm mt-2">Select one of the options above</p>
               )}
               {selectedOption === 'special_financing' && !selectedRate && (
                 <p className="text-amber-400 text-sm mt-2">Please select a rate and term above</p>
