@@ -16,6 +16,7 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE } from '@/lib/finance';
 import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPackageRecommendation, getRecommendationExplanation } from '@/lib/package-recommendation';
+import { getPropellerAllowance } from '@/lib/propeller-allowance';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 // Package warranty year constants
@@ -131,7 +132,7 @@ export default function PackageSelectionPage() {
   const isManualStart = motorModel.includes('MH') || motorModel.includes('MLH');
   const includesProp = includesPropeller(motor);
   const canAddFuelTank = canAddExternalFuelTank(motor);
-
+  const propAllowance = getPropellerAllowance(hp);
   // Calculate costs
   const getControlsCostFromSelection = (): number => {
     if (!needsControls) return 0;
@@ -198,17 +199,23 @@ export default function PackageSelectionPage() {
 
   // Package options with smart recommendations
   const isInstalled = state.purchasePath === 'installed';
+  const propCost = (!includesProp && propAllowance) ? propAllowance.price : 0;
+  const propFeatureText = propAllowance
+    ? `${propAllowance.name} ($${propAllowance.price.toLocaleString()})`
+    : null;
+
   const packages: PackageOption[] = useMemo(() => [
     { 
       id: "good", 
       label: "Essential • Best Value", 
-      priceBeforeTax: baseSubtotal + tillerInstallCost + looseMotorBatteryCost, 
+      priceBeforeTax: baseSubtotal + tillerInstallCost + looseMotorBatteryCost + propCost, 
       savings: totals.savings, 
       features: [
         "Mercury motor", 
         isManualTiller ? "Tiller-handle operation" : (state.boatInfo?.controlsOption === 'adapter' ? "Control adaptor harness (uses your existing controls)" : state.boatInfo?.controlsOption === 'compatible' ? "Compatible with your existing controls (no extra hardware)" : "New controls & rigging package"), 
         `${currentCoverageYears} years coverage included`,
         ...(isInstalled ? [isManualTiller && tillerInstallCost === 0 ? "DIY clamp-on mounting" : "Basic installation"] : []),
+        ...(propFeatureText && !includesProp ? [propFeatureText] : []),
         ...(looseMotorBatteryCost > 0 ? [`Marine starting battery ($${looseMotorBatteryCost.toFixed(0)})`] : ["Customer supplies battery (if needed)"])
       ],
       coverageYears: currentCoverageYears,
@@ -218,7 +225,7 @@ export default function PackageSelectionPage() {
     { 
       id: "better", 
       label: "Complete • Extended Coverage", 
-      priceBeforeTax: baseSubtotal + tillerInstallCost + looseMotorBatteryCost + (isManualStart ? 0 : batteryCost) + completeWarrantyCost, 
+      priceBeforeTax: baseSubtotal + tillerInstallCost + looseMotorBatteryCost + propCost + (isManualStart ? 0 : batteryCost) + completeWarrantyCost, 
       savings: totals.savings, 
       features: [
         "Everything in Essential",
@@ -236,13 +243,12 @@ export default function PackageSelectionPage() {
     { 
       id: "best", 
       label: "Premium • Max Coverage", 
-      priceBeforeTax: baseSubtotal + tillerInstallCost + looseMotorBatteryCost + (isManualStart ? 0 : batteryCost) + premiumWarrantyCost + (!includesProp ? 299.99 : 0) + (canAddFuelTank ? 199 : 0), 
+      priceBeforeTax: baseSubtotal + tillerInstallCost + looseMotorBatteryCost + propCost + (isManualStart ? 0 : batteryCost) + premiumWarrantyCost + (canAddFuelTank ? 199 : 0), 
       savings: totals.savings, 
       features: [
         "Everything in Complete",
         `Maximum ${PREMIUM_TARGET_YEARS} years total coverage`,
         premiumWarrantyCost > 0 ? `Warranty extension: $${premiumWarrantyCost}` : `Already includes ${PREMIUM_TARGET_YEARS}yr coverage`,
-        !includesProp ? "Premium aluminum 3-blade propeller ($300 value)" : null,
         canAddFuelTank ? "12L external fuel tank & hose ($199 value)" : null,
         ...(isInstalled ? ["White-glove installation"] : []),
         "🧢👕 FREE Hat + Shirt ($75)"
@@ -252,7 +258,7 @@ export default function PackageSelectionPage() {
       recommended: recommendation.packageId === 'best',
       recommendationReason: recommendation.packageId === 'best' ? recommendation.reason : undefined
     },
-  ], [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank, recommendation, isInstalled, looseMotorBatteryCost]);
+  ], [baseSubtotal, tillerInstallCost, totals.savings, isManualTiller, currentCoverageYears, isManualStart, batteryCost, completeWarrantyCost, premiumWarrantyCost, includesProp, canAddFuelTank, recommendation, isInstalled, looseMotorBatteryCost, propCost, propFeatureText]);
 
   // Calculate monthly payments for upgrade nudges
   const essentialPackage = packages.find(p => p.id === 'good') || packages[0];
