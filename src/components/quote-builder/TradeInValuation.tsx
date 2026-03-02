@@ -76,10 +76,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const years = Array.from({ length: currentYear - 1989 }, (_, i) => currentYear - i);
 
   const conditionOptions = [
-    { value: 'excellent', label: 'Excellent', description: 'Like new, low hours' },
-    { value: 'good', label: 'Good', description: 'Normal wear, well maintained' },
-    { value: 'fair', label: 'Fair', description: 'Higher hours, needs minor work' },
-    { value: 'poor', label: 'Poor', description: 'Needs repair' }
+    { value: 'excellent', label: 'Excellent', description: 'Like new, 0–100 hours, no issues' },
+    { value: 'good', label: 'Good', description: '100–500 hours, well maintained' },
+    { value: 'fair', label: 'Fair', description: '500–1,000 hours, needs minor work' },
+    { value: 'poor', label: 'Poor', description: '1,000+ hours or needs major repair' }
   ];
 
   const handleGetEstimate = async () => {
@@ -475,6 +475,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       Final trade value confirmed after in-person inspection. This estimate helps you plan your budget.
                     </AlertDescription>
                   </Alert>
+
+                  {/* Continue button */}
+                  <Button
+                    type="button"
+                    variant="luxuryModern"
+                    onClick={() => onAutoAdvance?.()}
+                    className="w-full min-h-[56px] text-lg font-light mt-2"
+                  >
+                    Continue →
+                  </Button>
                 </motion.div>
               )}
             </motion.div>

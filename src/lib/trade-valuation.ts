@@ -94,89 +94,89 @@ export function getBrandPenaltyFactor(brand?: string, config?: TradeValuationCon
 const fallbackTradeValues: Record<string, Record<string, Record<string, { excellent: number; good: number; fair: number; poor: number }>>> = {
   'Mercury': {
     '2025-2029': {
-      '5': { excellent: 880, good: 715, fair: 550, poor: 330 },
-      '10': { excellent: 1540, good: 1265, fair: 990, poor: 605 },
-      '15': { excellent: 2200, good: 1815, fair: 1430, poor: 880 },
-      '20': { excellent: 2860, good: 2365, fair: 1870, poor: 1100 },
-      '25': { excellent: 3520, good: 2860, fair: 2200, poor: 1320 },
-      '40': { excellent: 4950, good: 4070, fair: 3190, poor: 1980 },
-      '50': { excellent: 5720, good: 4730, fair: 3740, poor: 2310 },
-      '60': { excellent: 6600, good: 5390, fair: 4180, poor: 2530 },
-      '75': { excellent: 7920, good: 6490, fair: 5060, poor: 3080 },
-      '90': { excellent: 9350, good: 7700, fair: 6050, poor: 3630 },
-      '115': { excellent: 12100, good: 9900, fair: 7700, poor: 4620 },
-      '150': { excellent: 15950, good: 13200, fair: 10450, poor: 6270 },
-      '200': { excellent: 19800, good: 16280, fair: 12760, poor: 7700 },
-      '250': { excellent: 24200, good: 19800, fair: 15400, poor: 9240 },
-      '300': { excellent: 28600, good: 23100, fair: 18150, poor: 10890 }
+      '5': { excellent: 660, good: 500, fair: 385, poor: 230 },
+      '10': { excellent: 1155, good: 885, fair: 695, poor: 425 },
+      '15': { excellent: 1650, good: 1270, fair: 1000, poor: 615 },
+      '20': { excellent: 2145, good: 1655, fair: 1310, poor: 770 },
+      '25': { excellent: 2640, good: 2000, fair: 1540, poor: 925 },
+      '40': { excellent: 3715, good: 2850, fair: 2235, poor: 1385 },
+      '50': { excellent: 4290, good: 3310, fair: 2620, poor: 1615 },
+      '60': { excellent: 4950, good: 3775, fair: 2925, poor: 1770 },
+      '75': { excellent: 5940, good: 4545, fair: 3545, poor: 2155 },
+      '90': { excellent: 7010, good: 5390, fair: 4235, poor: 2540 },
+      '115': { excellent: 9075, good: 6930, fair: 5390, poor: 3235 },
+      '150': { excellent: 11960, good: 9240, fair: 7315, poor: 4390 },
+      '200': { excellent: 14850, good: 11395, fair: 8930, poor: 5390 },
+      '250': { excellent: 18150, good: 13860, fair: 10780, poor: 6470 },
+      '300': { excellent: 21450, good: 16170, fair: 12710, poor: 7625 }
     },
     '2020-2024': {
-      '5': { excellent: 800, good: 650, fair: 500, poor: 300 },
-      '10': { excellent: 1400, good: 1150, fair: 900, poor: 550 },
-      '15': { excellent: 2000, good: 1650, fair: 1300, poor: 800 },
-      '20': { excellent: 2600, good: 2150, fair: 1700, poor: 1000 },
-      '25': { excellent: 3200, good: 2600, fair: 2000, poor: 1200 },
-      '40': { excellent: 4500, good: 3700, fair: 2900, poor: 1800 },
-      '50': { excellent: 5200, good: 4300, fair: 3400, poor: 2100 },
-      '60': { excellent: 6000, good: 4900, fair: 3800, poor: 2300 },
-      '75': { excellent: 7200, good: 5900, fair: 4600, poor: 2800 },
-      '90': { excellent: 8500, good: 7000, fair: 5500, poor: 3300 },
-      '115': { excellent: 11000, good: 9000, fair: 7000, poor: 4200 },
-      '150': { excellent: 14500, good: 12000, fair: 9500, poor: 5700 },
-      '200': { excellent: 18000, good: 14800, fair: 11600, poor: 7000 },
-      '250': { excellent: 22000, good: 18000, fair: 14000, poor: 8400 },
-      '300': { excellent: 26000, good: 21000, fair: 16500, poor: 9900 }
+      '5': { excellent: 600, good: 455, fair: 350, poor: 210 },
+      '10': { excellent: 1050, good: 805, fair: 630, poor: 385 },
+      '15': { excellent: 1500, good: 1155, fair: 910, poor: 560 },
+      '20': { excellent: 1950, good: 1505, fair: 1190, poor: 700 },
+      '25': { excellent: 2400, good: 1820, fair: 1400, poor: 840 },
+      '40': { excellent: 3375, good: 2590, fair: 2030, poor: 1260 },
+      '50': { excellent: 3900, good: 3010, fair: 2380, poor: 1470 },
+      '60': { excellent: 4500, good: 3430, fair: 2660, poor: 1610 },
+      '75': { excellent: 5400, good: 4130, fair: 3220, poor: 1960 },
+      '90': { excellent: 6375, good: 4900, fair: 3850, poor: 2310 },
+      '115': { excellent: 8250, good: 6300, fair: 4900, poor: 2940 },
+      '150': { excellent: 10875, good: 8400, fair: 6650, poor: 3990 },
+      '200': { excellent: 13500, good: 10360, fair: 8120, poor: 4900 },
+      '250': { excellent: 16500, good: 12600, fair: 9800, poor: 5880 },
+      '300': { excellent: 19500, good: 14700, fair: 11550, poor: 6930 }
     },
     '2015-2019': {
-      '5': { excellent: 700, good: 550, fair: 425, poor: 250 },
-      '10': { excellent: 1200, good: 950, fair: 750, poor: 450 },
-      '15': { excellent: 1700, good: 1350, fair: 1050, poor: 650 },
-      '20': { excellent: 2200, good: 1750, fair: 1400, poor: 850 },
-      '25': { excellent: 2800, good: 2200, fair: 1700, poor: 1000 },
-      '40': { excellent: 3900, good: 3100, fair: 2400, poor: 1500 },
-      '50': { excellent: 4500, good: 3600, fair: 2800, poor: 1700 },
-      '60': { excellent: 5200, good: 4100, fair: 3200, poor: 1900 },
-      '75': { excellent: 6200, good: 4900, fair: 3800, poor: 2300 },
-      '90': { excellent: 7300, good: 5800, fair: 4500, poor: 2700 },
-      '115': { excellent: 9500, good: 7500, fair: 5800, poor: 3500 },
-      '150': { excellent: 12500, good: 10000, fair: 7800, poor: 4700 },
-      '200': { excellent: 15500, good: 12400, fair: 9600, poor: 5800 },
-      '250': { excellent: 19000, good: 15200, fair: 11800, poor: 7100 },
-      '300': { excellent: 22500, good: 18000, fair: 14000, poor: 8400 }
+      '5': { excellent: 525, good: 385, fair: 300, poor: 175 },
+      '10': { excellent: 900, good: 665, fair: 525, poor: 315 },
+      '15': { excellent: 1275, good: 945, fair: 735, poor: 455 },
+      '20': { excellent: 1650, good: 1225, fair: 980, poor: 595 },
+      '25': { excellent: 2100, good: 1540, fair: 1190, poor: 700 },
+      '40': { excellent: 2925, good: 2170, fair: 1680, poor: 1050 },
+      '50': { excellent: 3375, good: 2520, fair: 1960, poor: 1190 },
+      '60': { excellent: 3900, good: 2870, fair: 2240, poor: 1330 },
+      '75': { excellent: 4650, good: 3430, fair: 2660, poor: 1610 },
+      '90': { excellent: 5475, good: 4060, fair: 3150, poor: 1890 },
+      '115': { excellent: 7125, good: 5250, fair: 4060, poor: 2450 },
+      '150': { excellent: 9375, good: 7000, fair: 5460, poor: 3290 },
+      '200': { excellent: 11625, good: 8680, fair: 6720, poor: 4060 },
+      '250': { excellent: 14250, good: 10640, fair: 8260, poor: 4970 },
+      '300': { excellent: 16875, good: 12600, fair: 9800, poor: 5880 }
     },
     '2010-2014': {
-      '5': { excellent: 600, good: 475, fair: 375, poor: 225 },
-      '10': { excellent: 1050, good: 825, fair: 650, poor: 400 },
-      '15': { excellent: 1500, good: 1175, fair: 925, poor: 575 },
-      '20': { excellent: 1950, good: 1525, fair: 1200, poor: 750 },
-      '25': { excellent: 2450, good: 1900, fair: 1500, poor: 900 },
-      '40': { excellent: 3400, good: 2700, fair: 2100, poor: 1300 },
-      '50': { excellent: 3900, good: 3100, fair: 2400, poor: 1500 },
-      '60': { excellent: 4500, good: 3600, fair: 2800, poor: 1700 },
-      '75': { excellent: 5400, good: 4300, fair: 3300, poor: 2000 },
-      '90': { excellent: 6400, good: 5100, fair: 3900, poor: 2400 },
-      '115': { excellent: 8300, good: 6600, fair: 5100, poor: 3100 },
-      '150': { excellent: 10900, good: 8700, fair: 6800, poor: 4100 },
-      '200': { excellent: 13500, good: 10800, fair: 8400, poor: 5100 },
-      '250': { excellent: 16600, good: 13300, fair: 10300, poor: 6200 },
-      '300': { excellent: 19700, good: 15800, fair: 12200, poor: 7400 }
+      '5': { excellent: 450, good: 335, fair: 265, poor: 160 },
+      '10': { excellent: 790, good: 580, fair: 455, poor: 280 },
+      '15': { excellent: 1125, good: 825, fair: 650, poor: 400 },
+      '20': { excellent: 1465, good: 1070, fair: 840, poor: 525 },
+      '25': { excellent: 1840, good: 1330, fair: 1050, poor: 630 },
+      '40': { excellent: 2550, good: 1890, fair: 1470, poor: 910 },
+      '50': { excellent: 2925, good: 2170, fair: 1680, poor: 1050 },
+      '60': { excellent: 3375, good: 2520, fair: 1960, poor: 1190 },
+      '75': { excellent: 4050, good: 3010, fair: 2310, poor: 1400 },
+      '90': { excellent: 4800, good: 3570, fair: 2730, poor: 1680 },
+      '115': { excellent: 6225, good: 4620, fair: 3570, poor: 2170 },
+      '150': { excellent: 8175, good: 6090, fair: 4760, poor: 2870 },
+      '200': { excellent: 10125, good: 7560, fair: 5880, poor: 3570 },
+      '250': { excellent: 12450, good: 9310, fair: 7210, poor: 4340 },
+      '300': { excellent: 14775, good: 11060, fair: 8540, poor: 5180 }
     },
     '2005-2009': {
-      '5': { excellent: 500, good: 400, fair: 300, poor: 180 },
-      '10': { excellent: 900, good: 700, fair: 550, poor: 325 },
-      '15': { excellent: 1300, good: 1000, fair: 800, poor: 475 },
-      '20': { excellent: 1700, good: 1300, fair: 1025, poor: 625 },
-      '25': { excellent: 2100, good: 1650, fair: 1300, poor: 775 },
-      '40': { excellent: 2900, good: 2300, fair: 1800, poor: 1100 },
-      '50': { excellent: 3400, good: 2700, fair: 2100, poor: 1300 },
-      '60': { excellent: 3900, good: 3100, fair: 2400, poor: 1450 },
-      '75': { excellent: 4700, good: 3700, fair: 2900, poor: 1750 },
-      '90': { excellent: 5500, good: 4400, fair: 3400, poor: 2050 },
-      '115': { excellent: 7200, good: 5700, fair: 4400, poor: 2650 },
-      '150': { excellent: 9500, good: 7600, fair: 5900, poor: 3550 },
-      '200': { excellent: 11700, good: 9400, fair: 7300, poor: 4400 },
-      '250': { excellent: 14400, good: 11500, fair: 8900, poor: 5400 },
-      '300': { excellent: 17000, good: 13600, fair: 10600, poor: 6400 }
+      '5': { excellent: 375, good: 280, fair: 210, poor: 125 },
+      '10': { excellent: 675, good: 490, fair: 385, poor: 230 },
+      '15': { excellent: 975, good: 700, fair: 560, poor: 335 },
+      '20': { excellent: 1275, good: 910, fair: 720, poor: 440 },
+      '25': { excellent: 1575, good: 1155, fair: 910, poor: 545 },
+      '40': { excellent: 2175, good: 1610, fair: 1260, poor: 770 },
+      '50': { excellent: 2550, good: 1890, fair: 1470, poor: 910 },
+      '60': { excellent: 2925, good: 2170, fair: 1680, poor: 1015 },
+      '75': { excellent: 3525, good: 2590, fair: 2030, poor: 1225 },
+      '90': { excellent: 4125, good: 3080, fair: 2380, poor: 1435 },
+      '115': { excellent: 5400, good: 3990, fair: 3080, poor: 1855 },
+      '150': { excellent: 7125, good: 5320, fair: 4130, poor: 2485 },
+      '200': { excellent: 8775, good: 6580, fair: 5110, poor: 3080 },
+      '250': { excellent: 10800, good: 8050, fair: 6230, poor: 3780 },
+      '300': { excellent: 12750, good: 9520, fair: 7420, poor: 4480 }
     }
   }
 };
@@ -232,9 +232,9 @@ export function estimateTradeValue(
   
   if (!brandData) {
     // Generic estimate for unknown brands
-    const baseValue = horsepower * 40;
+    const baseValue = horsepower * 30;
     const ageDepreciation = Math.max(0.3, 1 - ((currentYear - year) * 0.1));
-    const conditionMultiplier = { excellent: 1.2, good: 1.0, fair: 0.75, poor: 0.45 }[condition];
+    const conditionMultiplier = { excellent: 1.0, good: 0.75, fair: 0.55, poor: 0.3 }[condition];
     
     const estimatedValue = baseValue * ageDepreciation * conditionMultiplier;
     let low = estimatedValue * 0.85;
@@ -271,9 +271,9 @@ export function estimateTradeValue(
   } else {
     // Very old motor (pre-2005) - improved formula
     const motorAge = currentYear - year;
-    const baseValue = horsepower * 40;  // Increased from $25
-    const ageDepreciation = Math.max(0.35, 1 - (motorAge - 20) * 0.03);  // Slower decline
-    const conditionMultiplier = { excellent: 1.0, good: 0.8, fair: 0.6, poor: 0.35 }[condition];
+    const baseValue = horsepower * 30;
+    const ageDepreciation = Math.max(0.3, 1 - (motorAge - 20) * 0.03);
+    const conditionMultiplier = { excellent: 0.85, good: 0.65, fair: 0.45, poor: 0.25 }[condition];
     const estimatedValue = baseValue * ageDepreciation * conditionMultiplier;
     let low = estimatedValue * 0.8;
     let high = estimatedValue * 1.2;
