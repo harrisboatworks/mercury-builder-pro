@@ -12,7 +12,7 @@ import { SecureRoute } from "@/components/auth/SecureRoute";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { NotificationToast } from "@/components/notifications/NotificationToast";
-import { ContactButton } from "@/components/ui/contact-button";
+
 import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
 import { RouteLoader } from "@/components/ui/RouteLoader";
 import { GlobalAIChat } from "@/components/chat/GlobalAIChat";
@@ -482,7 +482,7 @@ const App = () => (
                 <div data-vaul-drawer-wrapper className="min-h-screen bg-background">
                   <ScrollToTop />
                   <NotificationToast />
-                  <ContactButton />
+                  
                   <AnimatedRoutes />
                   <GlobalStickyQuoteBar />
                   <UnifiedMobileBar />
