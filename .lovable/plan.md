@@ -1,34 +1,50 @@
 
 
-## Contrast Audit: Dark-Background Pages in Quote Flow
+## Problem
 
-**Pages with dark backgrounds:**
-1. `PackageSelectionPage.tsx` — Already fixed (stone-950 background, stone-200 text)
-2. `PromoSelectionPage.tsx` — **Has issues** (stone-900/800 background, multiple low-contrast elements)
+The AI chatbot incorrectly tells users "there are no rebates" for 9.9HP motors, despite the Get 7 promotion being active and the rebate matrix data being injected into the system prompt. The quote builder correctly shows a $250 rebate for the same motor.
 
-No other quote flow pages use dark backgrounds. The `PromoSelectionBadge.tsx` has a small `bg-stone-900` header bar but lives inside light pages — acceptable.
+## Root Cause
 
----
+The system prompt in `supabase/functions/ai-chatbot/index.ts` (lines 628-646) has outdated "PROMOTIONAL RESPONSE PATTERNS" that mislead the AI:
 
-## Issues in PromoSelectionPage.tsx
+1. References obsolete promo name "Get 5" instead of current "Get 7"
+2. Has a "When No Special Promos Active" fallback section that the AI incorrectly triggers
+3. Mentions "0% Financing Promos" which aren't the current offer structure
+4. Lacks an explicit instruction to **always consult the injected promotion data** before answering rebate/promo questions
+5. No instruction telling the AI that the Get 7 rebate applies to ALL HP ranges (the matrix covers every tier)
 
-Per the established standard (`stone-950` background, `text-stone-200` minimum for body text, `text-white` for interactive elements), the following violations exist:
+## Fix
 
-| Line | Current | Fix |
-|------|---------|-----|
-| 228 | `from-stone-900 via-stone-800 to-stone-900` | `from-stone-950 via-stone-900 to-stone-950` |
-| 234 | `text-white/70` (Back button) | `text-white` |
-| 283 | `text-stone-400` (subtitle) | `text-stone-200` |
-| 294 | `bg-white/10 border-white/20` (warranty badge) | `bg-white/15 border-white/30` |
-| 315 | `text-stone-400` (warranty sub-text) | `text-stone-200` |
-| 335 | `text-white/60` (divider text) | `text-white/80` |
-| 437 | `text-white/70` (rate months) | `text-white/90` |
-| 438 | `text-white/50` (estimated payment) | `text-white/70` |
-| 454 | `text-white/50` (tip text) | `text-white/70` |
-| 470 | `text-stone-500` (offer ends text) | `text-stone-300` |
-| 491 | `text-white/50` (hint text) | `text-white/70` |
+Rewrite lines 628-646 in `supabase/functions/ai-chatbot/index.ts` to replace the outdated promotional response patterns with accurate instructions:
 
-## Implementation
+**Replace the entire "PROMOTIONAL RESPONSE PATTERNS" section with:**
 
-Single file edit: `src/pages/quote/PromoSelectionPage.tsx` — apply all 11 contrast fixes listed above to match the established standard from `PackageSelectionPage.tsx`.
+```
+## PROMOTIONAL RESPONSE PATTERNS (CRITICAL — READ CAREFULLY):
+
+### Before Answering ANY Promotion/Rebate Question:
+- ALWAYS check the "CURRENT PROMOTIONS & SPECIAL OFFERS" section above — it contains LIVE data from the database
+- If a rebate matrix is listed, look up the customer's HP range to give the exact rebate amount
+- NEVER say "no rebates available" if the promotion data above shows an active promotion with a rebate matrix
+- The current "Get 7" promotion applies to ALL Mercury outboards — every HP range has a rebate tier
+
+### When Discussing the Get 7 Promotion:
+- 7-year factory warranty (3 standard + 4 bonus years) on ALL qualifying Mercury outboards
+- Customer chooses ONE bonus: No Payments for 6 Months, Special Financing, OR Factory Cash Rebate
+- Rebate amounts vary by HP — check the matrix above for exact dollar amounts
+- Direct to /promotions for full details or the quote builder to see it applied
+
+### Rebate Questions:
+- Look up the HP in the rebate matrix from the promotion data above
+- Give the exact dollar amount: "The 9.9HP qualifies for a $[amount] factory rebate"
+- Mention it's one of three bonus choices they can pick from
+- NEVER say rebates don't exist if the matrix data is present above
+
+### When No Promotions Are In Database:
+- "Our everyday pricing is competitive with any Mercury dealer"
+- Focus on value: warranty, service, local support
+```
+
+This is a single edge function file edit (~20 lines replaced). After editing, the function must be redeployed.
 
