@@ -57,7 +57,13 @@ type EventType =
   | 'motor_selected'
   | 'options_configured'
   | 'purchase_path_chosen'
+  | 'boat_info_completed'
   | 'trade_in_entered'
+  | 'installation_configured'
+  | 'promo_selected'
+  | 'package_selected'
+  | 'summary_viewed'
+  | 'quote_submitted'
   | 'financing_calculated'
   | 'quote_abandoned';
 
@@ -89,6 +95,11 @@ export function useQuoteActivityTracker() {
   const prevPurchasePath = useRef<string | null>(null);
   const prevHasTradeIn = useRef(false);
   const prevFinancingTerm = useRef(0);
+  const prevHasBoatInfo = useRef(false);
+  const prevHasInstallConfig = useRef(false);
+  const prevPromoOption = useRef<string | null>(null);
+  const prevPackageId = useRef<string | null>(null);
+  const prevSummaryPath = useRef(false);
   const hasActiveQuote = useRef(false);
 
   const utmParams = useRef(captureUtmParams());
@@ -231,6 +242,110 @@ export function useQuoteActivityTracker() {
       });
     }
   }, [state.financing, state.isLoading, state.motor, getMotorInfo, scheduleFlush, location.pathname]);
+
+  // Detect boat info completion
+  useEffect(() => {
+    if (state.isLoading || !state.motor) return;
+    if (state.boatInfo && !prevHasBoatInfo.current) {
+      prevHasBoatInfo.current = true;
+      const { model, hp, price } = getMotorInfo();
+      scheduleFlush({
+        event_type: 'boat_info_completed',
+        motor_model: model,
+        motor_hp: hp,
+        quote_value: price,
+        event_data: { boatType: state.boatInfo.type, boatMake: state.boatInfo.make },
+        page_path: location.pathname,
+      });
+    }
+  }, [state.boatInfo, state.isLoading, state.motor, getMotorInfo, scheduleFlush, location.pathname]);
+
+  // Detect installation configured
+  useEffect(() => {
+    if (state.isLoading || !state.motor) return;
+    if (state.installConfig && !prevHasInstallConfig.current) {
+      prevHasInstallConfig.current = true;
+      const { model, hp, price } = getMotorInfo();
+      scheduleFlush({
+        event_type: 'installation_configured',
+        motor_model: model,
+        motor_hp: hp,
+        quote_value: price,
+        event_data: { removeDispose: state.installConfig.removeDispose, waterTest: state.installConfig.waterTest },
+        page_path: location.pathname,
+      });
+    }
+  }, [state.installConfig, state.isLoading, state.motor, getMotorInfo, scheduleFlush, location.pathname]);
+
+  // Detect promo selection
+  useEffect(() => {
+    if (state.isLoading || !state.motor) return;
+    if (state.selectedPromoOption && state.selectedPromoOption !== prevPromoOption.current) {
+      prevPromoOption.current = state.selectedPromoOption;
+      const { model, hp, price } = getMotorInfo();
+      scheduleFlush({
+        event_type: 'promo_selected',
+        motor_model: model,
+        motor_hp: hp,
+        quote_value: price,
+        event_data: { promoOption: state.selectedPromoOption },
+        page_path: location.pathname,
+      });
+    }
+  }, [state.selectedPromoOption, state.isLoading, state.motor, getMotorInfo, scheduleFlush, location.pathname]);
+
+  // Detect package selection
+  useEffect(() => {
+    if (state.isLoading || !state.motor) return;
+    const pkgId = state.selectedPackage?.id ?? null;
+    if (pkgId && pkgId !== prevPackageId.current) {
+      prevPackageId.current = pkgId;
+      const { model, hp, price } = getMotorInfo();
+      scheduleFlush({
+        event_type: 'package_selected',
+        motor_model: model,
+        motor_hp: hp,
+        quote_value: price,
+        event_data: { packageId: pkgId, packageLabel: state.selectedPackage?.label },
+        page_path: location.pathname,
+      });
+    }
+  }, [state.selectedPackage, state.isLoading, state.motor, getMotorInfo, scheduleFlush, location.pathname]);
+
+  // Detect summary page viewed
+  useEffect(() => {
+    if (state.isLoading || !state.motor) return;
+    const onSummary = location.pathname === '/quote/summary';
+    if (onSummary && !prevSummaryPath.current) {
+      prevSummaryPath.current = true;
+      const { model, hp, price } = getMotorInfo();
+      scheduleFlush({
+        event_type: 'summary_viewed',
+        motor_model: model,
+        motor_hp: hp,
+        quote_value: price,
+        event_data: { currentStep: state.currentStep },
+        page_path: location.pathname,
+      });
+    }
+  }, [location.pathname, state.isLoading, state.motor, state.currentStep, getMotorInfo, scheduleFlush]);
+
+  // Detect quote submitted (completedSteps includes the final step)
+  useEffect(() => {
+    if (state.isLoading || !state.motor) return;
+    const onSchedule = location.pathname === '/quote/schedule';
+    if (onSchedule && state.completedSteps.includes(7)) {
+      const { model, hp, price } = getMotorInfo();
+      flush({
+        event_type: 'quote_submitted',
+        motor_model: model,
+        motor_hp: hp,
+        quote_value: price,
+        event_data: { completedSteps: state.completedSteps },
+        page_path: location.pathname,
+      });
+    }
+  }, [location.pathname, state.completedSteps, state.isLoading, state.motor, getMotorInfo, flush]);
 
   // Quote abandoned — fires on page unload if quote is in progress
   useEffect(() => {
