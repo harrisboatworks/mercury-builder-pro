@@ -1,26 +1,25 @@
 
 
-## Plan: Replace Contact Button with Compact AI Chat Button
+## Why the customer name is missing on shared quotes
 
-### What's happening now
-- `ContactButton` renders a white floating circle at `bottom-4 right-4` (desktop only)
-- `AIChatButton` renders a large pill-shaped button at `bottom-24 right-4` with text label — and is hidden on `/quote/` pages
-- Two overlapping floating buttons on desktop, one of which (contact) isn't useful
+The customer name, email, and phone are saved as **top-level columns** on `customer_quotes` (not inside the `quote_data` JSON blob). When the shared quote loads:
 
-### Changes
+1. The edge function `get-shared-quote` returns `customer_name` (truncated to first name only for privacy)
+2. `SavedQuotePage` never passes this name into the QuoteContext
+3. The quote summary page and PDF generator read from QuoteContext, which has empty customer fields
 
-**1. Remove `ContactButton` from the app** (`src/App.tsx`)
-- Remove the `<ContactButton />` component from the layout and its import
-- Keep the `ContactModal` export in `contact-button.tsx` since it's used by `UnifiedMobileBar`
+### Two fixes needed
 
-**2. Restyle `AIChatButton` as a compact circle** (`src/components/chat/AIChatButton.tsx`)
-- Position at `bottom-4 right-4` (where contact button was)
-- Make it a small round button (`h-12 w-12 rounded-full`) instead of the large pill with text
-- Remove the text label — just show the icon with sparkle
-- Remove the quote-page hiding logic so it's available everywhere on desktop
-- Keep unread badge and loading indicator
+**1. Include customer info in `quote_data` when admin saves** (`AdminQuoteControls.tsx`, ~line 97)
+- Add `customerName`, `customerEmail`, `customerPhone` to `enhancedQuoteData` so they're stored inside the JSON blob and available when restoring
 
-### Files changed
-- `src/App.tsx` — remove `ContactButton` import and usage
-- `src/components/chat/AIChatButton.tsx` — compact circle style, position at bottom-4 right-4, show on all pages
+**2. Restore customer info when loading shared quote** (`SavedQuotePage.tsx`, ~line 99)
+- After restoring admin fields, also pass `customerName`/`customerEmail`/`customerPhone` from `quoteData` (or from the edge function response `customer_name`) into the `SET_ADMIN_QUOTE_DATA` dispatch
+- For the edge function response: return the **full** `customer_name` (not just first name) since the data is already inside `quote_data` anyway, and the summary page needs it for the PDF
+
+This means existing saved quotes (before this fix) will use the first-name-only fallback from the edge function column, but new quotes will have the full name embedded in `quote_data`.
+
+### Files to change
+- `src/components/admin/AdminQuoteControls.tsx` -- add customer fields to `enhancedQuoteData`
+- `src/pages/quote/SavedQuotePage.tsx` -- restore customer name/email/phone to context from `quote_data` or edge function response
 
