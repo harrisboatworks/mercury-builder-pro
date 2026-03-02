@@ -1,50 +1,30 @@
 
 
-## Problem
+## Findings
 
-The AI chatbot incorrectly tells users "there are no rebates" for 9.9HP motors, despite the Get 7 promotion being active and the rebate matrix data being injected into the system prompt. The quote builder correctly shows a $250 rebate for the same motor.
+The `realtime-session` edge function (OpenAI Realtime API voice assistant) has no dedicated promotional section at all. Key issues:
 
-## Root Cause
+1. **Line 127**: References "factory cash rebate" for sub-$5k motors but provides zero context about what promotion is active, rebate amounts, or the Get 7 structure
+2. **No promo section**: Unlike the ai-chatbot (which now has explicit "PROMOTIONAL RESPONSE PATTERNS"), this voice prompt has nothing — if asked about rebates/promos, the AI would guess or deflect
 
-The system prompt in `supabase/functions/ai-chatbot/index.ts` (lines 628-646) has outdated "PROMOTIONAL RESPONSE PATTERNS" that mislead the AI:
+The ElevenLabs voice assistant (`useElevenLabsVoice.ts`) is fine — it uses a `check_current_deals` client tool that queries the database live. No changes needed there.
 
-1. References obsolete promo name "Get 5" instead of current "Get 7"
-2. Has a "When No Special Promos Active" fallback section that the AI incorrectly triggers
-3. Mentions "0% Financing Promos" which aren't the current offer structure
-4. Lacks an explicit instruction to **always consult the injected promotion data** before answering rebate/promo questions
-5. No instruction telling the AI that the Get 7 rebate applies to ALL HP ranges (the matrix covers every tier)
+## Plan
 
-## Fix
+**Single file edit**: `supabase/functions/realtime-session/index.ts`
 
-Rewrite lines 628-646 in `supabase/functions/ai-chatbot/index.ts` to replace the outdated promotional response patterns with accurate instructions:
-
-**Replace the entire "PROMOTIONAL RESPONSE PATTERNS" section with:**
+Add a `PROMOTIONS` section before the closing of the instructions string (before line 129), matching the corrected ai-chatbot patterns but condensed for voice brevity:
 
 ```
-## PROMOTIONAL RESPONSE PATTERNS (CRITICAL — READ CAREFULLY):
-
-### Before Answering ANY Promotion/Rebate Question:
-- ALWAYS check the "CURRENT PROMOTIONS & SPECIAL OFFERS" section above — it contains LIVE data from the database
-- If a rebate matrix is listed, look up the customer's HP range to give the exact rebate amount
-- NEVER say "no rebates available" if the promotion data above shows an active promotion with a rebate matrix
-- The current "Get 7" promotion applies to ALL Mercury outboards — every HP range has a rebate tier
-
-### When Discussing the Get 7 Promotion:
-- 7-year factory warranty (3 standard + 4 bonus years) on ALL qualifying Mercury outboards
-- Customer chooses ONE bonus: No Payments for 6 Months, Special Financing, OR Factory Cash Rebate
-- Rebate amounts vary by HP — check the matrix above for exact dollar amounts
-- Direct to /promotions for full details or the quote builder to see it applied
-
-### Rebate Questions:
-- Look up the HP in the rebate matrix from the promotion data above
-- Give the exact dollar amount: "The 9.9HP qualifies for a $[amount] factory rebate"
-- Mention it's one of three bonus choices they can pick from
-- NEVER say rebates don't exist if the matrix data is present above
-
-### When No Promotions Are In Database:
-- "Our everyday pricing is competitive with any Mercury dealer"
-- Focus on value: warranty, service, local support
+CURRENT PROMOTION — GET 7 (Jan 12 – Mar 31, 2026):
+- 7-year factory warranty on ALL Mercury outboards (3 standard + 4 bonus)
+- Customer picks ONE bonus: 6 Months No Payments, Special Financing (from 2.99%), OR Factory Cash Rebate
+- Rebate amounts by HP: 2.5-6HP = $100, 8-15HP = $250, 20-30HP = $350, 40-60HP = $500, 75-115HP = $600, 150HP = $750, 175-300HP = $850, 350-400HP = $1,000
+- NEVER say "no rebates" — every HP range qualifies
+- Direct them to the quote builder or /promotions for full details
 ```
 
-This is a single edge function file edit (~20 lines replaced). After editing, the function must be redeployed.
+Also update line 127 to reference the Get 7 rebate explicitly instead of the generic "factory cash rebate" mention.
+
+Redeploy the `realtime-session` edge function after editing.
 
