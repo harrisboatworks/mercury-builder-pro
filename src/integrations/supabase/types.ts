@@ -2868,6 +2868,30 @@ export type Database = {
         }
         Relationships: []
       }
+      weekly_intelligence_reports: {
+        Row: {
+          created_at: string | null
+          generated_at: string | null
+          id: string
+          report_data: Json
+          week_of: string
+        }
+        Insert: {
+          created_at?: string | null
+          generated_at?: string | null
+          id?: string
+          report_data: Json
+          week_of: string
+        }
+        Update: {
+          created_at?: string | null
+          generated_at?: string | null
+          id?: string
+          report_data?: Json
+          week_of?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       email_analytics_summary: {
