@@ -87,7 +87,14 @@ serve(async (req) => {
     const motorSelectedEvents = events.filter(e => e.event_type === 'motor_selected');
     const abandonedEvents = events.filter(e => e.event_type === 'quote_abandoned');
     const optionsEvents = events.filter(e => e.event_type === 'options_configured');
+    const purchasePathEvents = events.filter(e => e.event_type === 'purchase_path_chosen');
+    const boatInfoEvents = events.filter(e => e.event_type === 'boat_info_completed');
     const tradeInEvents = events.filter(e => e.event_type === 'trade_in_entered');
+    const installEvents = events.filter(e => e.event_type === 'installation_configured');
+    const promoEvents = events.filter(e => e.event_type === 'promo_selected');
+    const packageEvents = events.filter(e => e.event_type === 'package_selected');
+    const summaryEvents = events.filter(e => e.event_type === 'summary_viewed');
+    const submittedEvents = events.filter(e => e.event_type === 'quote_submitted');
     const financingEvents = events.filter(e => e.event_type === 'financing_calculated');
 
     // Which motors people are looking at (from motor_selected events)
@@ -138,7 +145,14 @@ serve(async (req) => {
     const uniqueSessions = new Set(events.map(e => e.session_id)).size;
     const sessionsWithMotor = new Set(motorSelectedEvents.map(e => e.session_id)).size;
     const sessionsWithOptions = new Set(optionsEvents.map(e => e.session_id)).size;
+    const sessionsWithPurchasePath = new Set(purchasePathEvents.map(e => e.session_id)).size;
+    const sessionsWithBoatInfo = new Set(boatInfoEvents.map(e => e.session_id)).size;
     const sessionsWithTradeIn = new Set(tradeInEvents.map(e => e.session_id)).size;
+    const sessionsWithInstall = new Set(installEvents.map(e => e.session_id)).size;
+    const sessionsWithPromo = new Set(promoEvents.map(e => e.session_id)).size;
+    const sessionsWithPackage = new Set(packageEvents.map(e => e.session_id)).size;
+    const sessionsWithSummary = new Set(summaryEvents.map(e => e.session_id)).size;
+    const sessionsWithSubmit = new Set(submittedEvents.map(e => e.session_id)).size;
     const sessionsWithFinancing = new Set(financingEvents.map(e => e.session_id)).size;
 
     const avgUnsavedValue = (() => {
@@ -246,7 +260,30 @@ serve(async (req) => {
       smsLines.push(`\n🌐 TRAFFIC: ${topTrafficSources.slice(0, 5).map(([s, c]) => `${s}(${c})`).join(', ')}`);
     }
 
-    smsLines.push(`\n🔄 FUNNEL: ${sessionsWithMotor} motor → ${sessionsWithOptions} options → ${sessionsWithTradeIn} trade-in → ${sessionsWithFinancing} financing → ${totalQuotes} saved`);
+    smsLines.push(`\n🔄 FUNNEL: ${sessionsWithMotor} motor → ${sessionsWithOptions} options → ${sessionsWithPurchasePath} path → ${sessionsWithBoatInfo} boat → ${sessionsWithTradeIn} trade-in → ${sessionsWithPromo} promo → ${sessionsWithSummary} summary → ${sessionsWithSubmit} submitted`);
+
+    // Find biggest drop-off for SMS
+    const funnelSteps = [
+      { label: 'Motor', count: sessionsWithMotor },
+      { label: 'Options', count: sessionsWithOptions },
+      { label: 'Path', count: sessionsWithPurchasePath },
+      { label: 'Boat Info', count: sessionsWithBoatInfo },
+      { label: 'Trade-In', count: sessionsWithTradeIn },
+      { label: 'Promo', count: sessionsWithPromo },
+      { label: 'Summary', count: sessionsWithSummary },
+      { label: 'Submitted', count: sessionsWithSubmit },
+    ];
+    let biggestDrop = { from: '', to: '', pct: 0 };
+    for (let i = 1; i < funnelSteps.length; i++) {
+      const prev = funnelSteps[i - 1];
+      if (prev.count > 0) {
+        const dropPct = Math.round(((prev.count - funnelSteps[i].count) / prev.count) * 100);
+        if (dropPct > biggestDrop.pct) biggestDrop = { from: prev.label, to: funnelSteps[i].label, pct: dropPct };
+      }
+    }
+    if (biggestDrop.pct > 0) {
+      smsLines.push(`⚠️ BIGGEST DROP: ${biggestDrop.pct}% lost between ${biggestDrop.from} → ${biggestDrop.to}`);
+    }
 
     const smsBody = smsLines.join('\n');
     console.log('[WEEKLY-REPORT] SMS body:', smsBody);
@@ -364,22 +401,82 @@ serve(async (req) => {
       <!-- Conversion Funnel -->
       <h2 style="font-size:16px;color:#374151;margin:24px 0 12px;">🔄 Conversion Funnel</h2>
       <div style="background:#f9fafb;border-radius:8px;padding:16px;">
-        ${[
-          { label: 'Site Visitors', count: uniqueSessions, pct: 100 },
-          { label: 'Selected a Motor', count: sessionsWithMotor, pct: uniqueSessions > 0 ? Math.round((sessionsWithMotor / uniqueSessions) * 100) : 0 },
-          { label: 'Added Options', count: sessionsWithOptions, pct: uniqueSessions > 0 ? Math.round((sessionsWithOptions / uniqueSessions) * 100) : 0 },
-          { label: 'Entered Trade-In', count: sessionsWithTradeIn, pct: uniqueSessions > 0 ? Math.round((sessionsWithTradeIn / uniqueSessions) * 100) : 0 },
-          { label: 'Calculated Financing', count: sessionsWithFinancing, pct: uniqueSessions > 0 ? Math.round((sessionsWithFinancing / uniqueSessions) * 100) : 0 },
-          { label: 'Saved Quote', count: totalQuotes, pct: uniqueSessions > 0 ? Math.round((totalQuotes / uniqueSessions) * 100) : 0 },
-        ].map(step => `
-          <div style="display:flex;align-items:center;margin-bottom:6px;">
-            <div style="width:160px;font-size:13px;color:#374151;">${step.label}</div>
-            <div style="flex:1;background:#e5e7eb;border-radius:4px;height:20px;margin:0 12px;position:relative;">
-              <div style="background:linear-gradient(90deg,#007DC5,#3b82f6);height:100%;border-radius:4px;width:${step.pct}%;min-width:${step.count > 0 ? '2' : '0'}px;"></div>
-            </div>
-            <div style="font-size:13px;color:#374151;font-weight:600;min-width:60px;text-align:right;">${step.count} (${step.pct}%)</div>
-          </div>
-        `).join('')}
+        ${(() => {
+          const steps = [
+            { label: 'Site Visitors', count: uniqueSessions },
+            { label: 'Selected Motor', count: sessionsWithMotor },
+            { label: 'Added Options', count: sessionsWithOptions },
+            { label: 'Chose Purchase Path', count: sessionsWithPurchasePath },
+            { label: 'Entered Boat Info', count: sessionsWithBoatInfo },
+            { label: 'Trade-In', count: sessionsWithTradeIn },
+            { label: 'Installation Config', count: sessionsWithInstall },
+            { label: 'Promo Selected', count: sessionsWithPromo },
+            { label: 'Package Selected', count: sessionsWithPackage },
+            { label: 'Viewed Summary', count: sessionsWithSummary },
+            { label: 'Submitted Quote', count: sessionsWithSubmit },
+          ];
+          let biggestDropIdx = -1;
+          let biggestDropPct = 0;
+          for (let i = 1; i < steps.length; i++) {
+            if (steps[i - 1].count > 0) {
+              const drop = Math.round(((steps[i - 1].count - steps[i].count) / steps[i - 1].count) * 100);
+              if (drop > biggestDropPct) { biggestDropPct = drop; biggestDropIdx = i; }
+            }
+          }
+          return steps.map((step, i) => {
+            const pct = uniqueSessions > 0 ? Math.round((step.count / uniqueSessions) * 100) : 0;
+            const dropFromPrev = i > 0 && steps[i - 1].count > 0
+              ? Math.round(((steps[i - 1].count - step.count) / steps[i - 1].count) * 100)
+              : 0;
+            const isBiggest = i === biggestDropIdx;
+            const dropLabel = i > 0 && dropFromPrev > 0
+              ? `<span style="color:${isBiggest ? '#dc2626;font-weight:700' : '#9ca3af'};font-size:11px;margin-left:6px;">↓${dropFromPrev}%${isBiggest ? ' ⚠️' : ''}</span>`
+              : '';
+            return `
+            <div style="display:flex;align-items:center;margin-bottom:6px;">
+              <div style="width:170px;font-size:13px;color:#374151;">${step.label}${dropLabel}</div>
+              <div style="flex:1;background:#e5e7eb;border-radius:4px;height:20px;margin:0 12px;position:relative;">
+                <div style="background:linear-gradient(90deg,#007DC5,#3b82f6);height:100%;border-radius:4px;width:${pct}%;min-width:${step.count > 0 ? '2' : '0'}px;"></div>
+              </div>
+              <div style="font-size:13px;color:#374151;font-weight:600;min-width:60px;text-align:right;">${step.count} (${pct}%)</div>
+            </div>`;
+          }).join('');
+        })()}
+        ${(() => {
+          // Drop-off hotspots section
+          const steps = [
+            { label: 'Selected Motor', count: sessionsWithMotor },
+            { label: 'Added Options', count: sessionsWithOptions },
+            { label: 'Chose Purchase Path', count: sessionsWithPurchasePath },
+            { label: 'Entered Boat Info', count: sessionsWithBoatInfo },
+            { label: 'Trade-In', count: sessionsWithTradeIn },
+            { label: 'Installation Config', count: sessionsWithInstall },
+            { label: 'Promo Selected', count: sessionsWithPromo },
+            { label: 'Package Selected', count: sessionsWithPackage },
+            { label: 'Viewed Summary', count: sessionsWithSummary },
+            { label: 'Submitted Quote', count: sessionsWithSubmit },
+          ];
+          const drops = [];
+          for (let i = 1; i < steps.length; i++) {
+            if (steps[i - 1].count > 0) {
+              const lost = steps[i - 1].count - steps[i].count;
+              const pct = Math.round((lost / steps[i - 1].count) * 100);
+              if (lost > 0) drops.push({ from: steps[i - 1].label, to: steps[i].label, lost, pct });
+            }
+          }
+          drops.sort((a, b) => b.lost - a.lost);
+          const top3 = drops.slice(0, 3);
+          if (top3.length === 0) return '';
+          return `
+          <div style="margin-top:16px;padding-top:12px;border-top:1px solid #e5e7eb;">
+            <h4 style="margin:0 0 8px;font-size:13px;color:#dc2626;">🔥 Drop-off Hotspots</h4>
+            ${top3.map((d, i) => `
+              <div style="font-size:13px;color:#374151;margin-bottom:4px;">
+                ${i + 1}. <strong>${d.from} → ${d.to}</strong>: ${d.lost} people lost (${d.pct}% drop)
+              </div>
+            `).join('')}
+          </div>`;
+        })()}
       </div>
 
       <!-- Most Visited Pages -->
