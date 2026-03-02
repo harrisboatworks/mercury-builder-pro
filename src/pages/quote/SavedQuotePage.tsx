@@ -96,6 +96,11 @@ export default function SavedQuotePage() {
           const customerNotesValue = quoteData.customerNotes ?? quote.customer_notes ?? '';
           const adminCustomItemsValue = quoteData.adminCustomItems ?? [];
           
+          // Restore customer info from quote_data (preferred) or edge function response
+          const customerNameValue = quoteData.customerName ?? quote.customer_name ?? '';
+          const customerEmailValue = quoteData.customerEmail ?? '';
+          const customerPhoneValue = quoteData.customerPhone ?? '';
+          
           if (adminDiscountValue > 0 || adminNotesValue || customerNotesValue || adminCustomItemsValue.length > 0 || quoteData.isAdminQuote || quote.is_admin_quote) {
             dispatch({ 
               type: 'SET_ADMIN_QUOTE_DATA', 
@@ -103,7 +108,10 @@ export default function SavedQuotePage() {
                 adminDiscount: adminDiscountValue,
                 adminNotes: adminNotesValue,
                 customerNotes: customerNotesValue,
-                adminCustomItems: adminCustomItemsValue
+                adminCustomItems: adminCustomItemsValue,
+                customerName: customerNameValue,
+                customerEmail: customerEmailValue,
+                customerPhone: customerPhoneValue,
               }
             });
             

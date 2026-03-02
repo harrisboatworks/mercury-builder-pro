@@ -43,14 +43,11 @@ Deno.serve(async (req) => {
       );
     }
 
-    // Return only first name for privacy
-    const firstName = quote.customer_name?.split(" ")[0] ?? "";
-
     return new Response(
       JSON.stringify({
         id: quote.id,
         quote_data: quote.quote_data,
-        customer_name: firstName,
+        customer_name: quote.customer_name ?? "",
         is_admin_quote: quote.is_admin_quote,
         admin_discount: quote.admin_discount,
         admin_notes: quote.admin_notes,
