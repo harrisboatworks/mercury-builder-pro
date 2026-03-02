@@ -209,16 +209,116 @@ serve(async (req) => {
     const valueTrend = totalValue >= prevTotalValue ? '↑' : '↓';
     const quoteDiff = totalQuotes - prevTotalQuotes;
     const valueDiff = totalValue - prevTotalValue;
+    const conversionRate = uniqueSessions > 0 ? ((totalQuotes / uniqueSessions) * 100).toFixed(1) : '0';
+
+    // ============ AI SUMMARY ============
+    let aiSummaryHtml = '';
+    let aiSummarySms = '';
+    try {
+      const LOVABLE_API_KEY = Deno.env.get('LOVABLE_API_KEY');
+      if (LOVABLE_API_KEY) {
+        // Find biggest drop-off for AI context
+        const aiFunnelSteps = [
+          { label: 'Motor Selection', count: sessionsWithMotor },
+          { label: 'Options Config', count: sessionsWithOptions },
+          { label: 'Purchase Path', count: sessionsWithPurchasePath },
+          { label: 'Boat Info', count: sessionsWithBoatInfo },
+          { label: 'Trade-In', count: sessionsWithTradeIn },
+          { label: 'Installation', count: sessionsWithInstall },
+          { label: 'Promo Selection', count: sessionsWithPromo },
+          { label: 'Package Selection', count: sessionsWithPackage },
+          { label: 'Summary Page', count: sessionsWithSummary },
+          { label: 'Quote Submitted', count: sessionsWithSubmit },
+        ];
+        let worstDrop = { from: '', to: '', pct: 0 };
+        for (let i = 1; i < aiFunnelSteps.length; i++) {
+          const prev = aiFunnelSteps[i - 1];
+          if (prev.count > 0) {
+            const dropPct = Math.round(((prev.count - aiFunnelSteps[i].count) / prev.count) * 100);
+            if (dropPct > worstDrop.pct) worstDrop = { from: prev.label, to: aiFunnelSteps[i].label, pct: dropPct };
+          }
+        }
+
+        const metricsSummary = [
+          `This week: ${uniqueSessions} visitors, ${totalQuotes} quotes saved (${conversionRate}% conversion).`,
+          `Last week: ${prevTotalQuotes} quotes, ${fmt(prevTotalValue)} value. Change: ${quoteDiff >= 0 ? '+' : ''}${quoteDiff} quotes, ${valueDiff >= 0 ? '+' : ''}${fmt(valueDiff)} value.`,
+          `Average quote value: ${fmt(avgValue)}. Hot leads (score 70+): ${hotLeads.length}.`,
+          `Biggest funnel drop-off: ${worstDrop.pct}% lost between ${worstDrop.from} → ${worstDrop.to}.`,
+          `Top viewed motors: ${topViewedMotors.slice(0, 3).map(([m, d]) => `${m} (${d.count} views)`).join(', ') || 'none'}.`,
+          `Top abandoned motors: ${topAbandonedMotors.slice(0, 3).map(([m, d]) => `${m} (${d.count}x abandoned, avg ${fmt(d.avgValue)})`).join(', ') || 'none'}.`,
+          `Device split: Mobile ${deviceCounts.mobile || 0}, Desktop ${deviceCounts.desktop || 0}, Tablet ${deviceCounts.tablet || 0}.`,
+          `Top exit pages: ${topExitPages.slice(0, 3).map(([p, c]) => `${p} (${c} exits)`).join(', ') || 'none'}.`,
+          `Funnel: ${aiFunnelSteps.map(s => `${s.label}: ${s.count}`).join(' → ')}.`,
+        ].join('\n');
+
+        console.log('[WEEKLY-REPORT] Calling AI gateway for summary...');
+        const aiResponse = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${LOVABLE_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            model: 'google/gemini-3-flash-preview',
+            messages: [
+              {
+                role: 'system',
+                content: `You're a blunt, experienced marine dealership employee giving your boss the weekly website report. Be direct, conversational, no corporate speak. No bullet points or headers — just talk naturally like you're sitting across the desk. Point out problems honestly. Give actionable suggestions. Keep it under 200 words total. Structure your response as:
+1) A 3-4 sentence plain-English summary of what happened this week
+2) 2-3 blunt observations about what's working and what isn't
+3) 2-3 specific, actionable improvement suggestions`
+              },
+              {
+                role: 'user',
+                content: `Here are this week's website metrics for Harris Boat Works / Mercury Repower:\n\n${metricsSummary}`
+              }
+            ],
+          }),
+        });
+
+        if (aiResponse.ok) {
+          const aiData = await aiResponse.json();
+          const aiText = aiData.choices?.[0]?.message?.content || '';
+          if (aiText) {
+            console.log('[WEEKLY-REPORT] AI summary generated successfully');
+            // Email version - styled box
+            const escapedText = aiText.replace(/\n/g, '<br>');
+            aiSummaryHtml = `
+              <div style="background:linear-gradient(135deg,#fefce8,#fef9c3);border:2px solid #eab308;border-radius:12px;padding:20px 24px;margin-bottom:28px;">
+                <h2 style="margin:0 0 12px;font-size:16px;color:#854d0e;">🧠 AI Weekly Debrief</h2>
+                <p style="margin:0;font-size:14px;color:#713f12;line-height:1.7;">${escapedText}</p>
+              </div>`;
+            // SMS version - condensed to first 2-3 sentences
+            const sentences = aiText.split(/(?<=[.!?])\s+/).filter((s: string) => s.trim());
+            aiSummarySms = `🧠 AI TAKE: ${sentences.slice(0, 3).join(' ')}`;
+          }
+        } else {
+          const errText = await aiResponse.text();
+          console.error('[WEEKLY-REPORT] AI gateway error:', aiResponse.status, errText);
+        }
+      } else {
+        console.log('[WEEKLY-REPORT] LOVABLE_API_KEY not set, skipping AI summary');
+      }
+    } catch (aiErr) {
+      console.error('[WEEKLY-REPORT] AI summary failed (non-fatal):', aiErr);
+    }
 
     // ============ SMS REPORT ============
     const smsLines = [
       `📊 Weekly Report (${formatDateDisplay(weekAgo)} - ${formatDateDisplay(now)})`,
+    ];
+
+    if (aiSummarySms) {
+      smsLines.push(``, aiSummarySms);
+    }
+
+    smsLines.push(
       ``,
       `📈 QUOTES:`,
       `• ${totalQuotes} new quotes ${quoteTrend} (${quoteDiff >= 0 ? '+' : ''}${quoteDiff} vs last wk)`,
       `• Total: ${fmt(totalValue)} | Avg: ${fmt(avgValue)}`,
       `• ${hotLeads.length} hot leads (score 70+)`,
-    ];
+    );
 
     if (topModels.length > 0) {
       smsLines.push(`\n🏆 TOP QUOTED: ${topModels.map(([m, c]) => `${m} (${c})`).join(', ')}`);
@@ -313,6 +413,7 @@ serve(async (req) => {
     </div>
 
     <div style="padding:32px;">
+      ${aiSummaryHtml}
       <!-- Summary Cards -->
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
         <div style="flex:1;min-width:120px;background:#f0f9ff;border-radius:8px;padding:16px;text-align:center;">
