@@ -15,6 +15,7 @@ import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
 import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
+import { getPropellerAllowance } from '@/lib/propeller-allowance';
 import { hasElectricStart } from '@/lib/motor-config-utils';
 
 import { useQuote } from '@/contexts/QuoteContext';
@@ -238,6 +239,8 @@ export default function QuoteSummaryPage() {
   const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;
   const batteryCost = isElectricStart ? 179.99 : 0;
   const includesProp = includesPropeller(motor);
+  const propAllowance = getPropellerAllowance(hp);
+  const propCost = (!includesProp && propAllowance) ? propAllowance.price : 0;
   const canAddFuelTank = canAddExternalFuelTank(motor);
   const baseAccessoryCost = controlsCost + installationLaborCost;
   // Only apply tiller installation cost if purchasePath is 'installed'
@@ -263,7 +266,7 @@ export default function QuoteSummaryPage() {
     motorMSRP,
     motorDiscount,
     adminDiscount: state.adminDiscount || 0,
-    accessoryTotal: baseAccessoryCost + selectedOptionsTotal,
+    accessoryTotal: baseAccessoryCost + selectedOptionsTotal + propCost,
     warrantyPrice,
     promotionalSavings: promoSavings,
     tradeInValue: state.tradeInInfo?.estimatedValue || 0,
@@ -383,12 +386,12 @@ export default function QuoteSummaryPage() {
       });
     }
     
-    // Propeller for Premium
-    if (selectedPackage === 'best' && !includesProp) {
+    // Propeller allowance (HP-based, all packages)
+    if (!includesProp && propAllowance) {
       breakdown.push({
-        name: 'Premium Aluminum 3-Blade Propeller',
-        price: 299.99,
-        description: 'High-performance aluminum 3-blade propeller'
+        name: propAllowance.name,
+        price: propAllowance.price,
+        description: propAllowance.description
       });
     }
     
@@ -430,7 +433,7 @@ export default function QuoteSummaryPage() {
     }
     
     return breakdown;
-  }, [state.selectedOptions, isManualTiller, tillerInstallCost, state.installConfig, needsControls, controlsCost, isElectricStart, selectedPackage, batteryCost, includesProp, canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, installationLaborCost, state.purchasePath, state.looseMotorBattery, state.adminCustomItems]);
+  }, [state.selectedOptions, isManualTiller, tillerInstallCost, state.installConfig, needsControls, controlsCost, isElectricStart, selectedPackage, batteryCost, includesProp, propAllowance, canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, installationLaborCost, state.purchasePath, state.looseMotorBattery, state.adminCustomItems]);
 
   // Calculate package-specific totals
   const packageSpecificTotals = useMemo(() => {
