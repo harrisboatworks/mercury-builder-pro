@@ -2,25 +2,19 @@
 
 ## Two Issues to Fix
 
-### 1. Add "Continue" button after estimate result
-After the estimate displays, there's no way to proceed. Add a prominent "Continue" button below the estimate in `TradeInValuation.tsx` that calls `onAutoAdvance`.
+### Issue 1: Continue button not appearing after estimate
+The Continue button code exists in `TradeInValuation.tsx` (lines 479-487) but I need to verify it's actually rendering. Looking at the code structure, the button is correctly placed inside the `{estimate && (...)}` block. However, there's a possible issue: the `luxuryModern` variant on the Button may not be rendering visibly, or the button could be obscured by the floating chat widget. I'll verify the button variant exists and ensure it renders properly.
 
-### 2. Values too high + Add hours to condition labels
-For a 2008 Mercury 90 in "Good" condition, the system returns ~$4,400. You're saying that's basically the ceiling for an excellent, low-hours unit.
+### Issue 2: Desktop floating chat button overlaps trade-in buttons
+The `AIChatButton` component (in `src/components/chat/AIChatButton.tsx`) is positioned at `fixed bottom-24 right-4 z-40` (96px from bottom, 16px from right). This directly overlaps with the "Get Trade-In Estimate" and "Continue" buttons on the trade-in page.
 
-**Fix A: Update condition descriptions with hour ranges**
-In `TradeInValuation.tsx`, update `conditionOptions`:
-- Excellent: "Like new, 0–100 hours, no issues"
-- Good: "100–500 hours, well maintained"  
-- Fair: "500–1,000 hours, needs minor work"
-- Poor: "1,000+ hours or needs major repair"
+**Fix**: Hide the `AIChatButton` on quote builder pages (specifically `/quote/` routes) where it interferes with the flow, or reposition it higher. The cleanest approach is to hide it on `/quote/trade-in` and other quote flow pages where full-width CTAs exist at the bottom.
 
-**Fix B: Reduce trade values across the board**
-In `src/lib/trade-valuation.ts`, reduce the fallback values. Current "good" values are too close to what should be the excellent ceiling. Proposed adjustment: reduce all conditions by roughly 25-30%, making "excellent" closer to what "good" currently is. This affects the `fallbackTradeValues` table for all year ranges and HP levels.
+### Files to Change
 
-Also reduce the generic/unknown brand multiplier and the condition multipliers used in the pre-2005 and unknown-brand formulas.
+**`src/components/chat/AIChatButton.tsx`** (line 65):
+- Add route-based hiding: check if current path starts with `/quote/` and hide the button on quote builder pages where it conflicts with in-page CTAs. This keeps the chat accessible via the header/menu while removing the overlap.
 
-### Files changed
-- `src/components/quote-builder/TradeInValuation.tsx` — add Continue button after estimate, update condition hour descriptions
-- `src/lib/trade-valuation.ts` — reduce all fallback trade values by ~25-30%
+**`src/components/quote-builder/TradeInValuation.tsx`** (lines 479-487):
+- The Continue button code is already present. I'll verify the `luxuryModern` variant works and add additional styling to ensure visibility — making it more prominent with explicit dark background styling as a fallback.
 
