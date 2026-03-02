@@ -61,8 +61,9 @@ export const AIChatButton: React.FC<AIChatButtonProps> = ({ onOpenChat, isOpen }
     onOpenChat();
   };
 
-  // Hide on mobile/tablet (handled by UnifiedMobileBar) or when chat is open
-  if (isMobileOrTablet || isOpen) return null;
+  // Hide on mobile/tablet, when chat is open, or on quote builder pages (overlaps CTAs)
+  const isQuotePage = location.pathname.startsWith('/quote/');
+  if (isMobileOrTablet || isOpen || isQuotePage) return null;
 
   return (
     <motion.button

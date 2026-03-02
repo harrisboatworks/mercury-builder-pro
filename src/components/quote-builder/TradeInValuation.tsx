@@ -479,9 +479,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   {/* Continue button */}
                   <Button
                     type="button"
-                    variant="luxuryModern"
                     onClick={() => onAutoAdvance?.()}
-                    className="w-full min-h-[56px] text-lg font-light mt-2"
+                    className="w-full min-h-[56px] text-lg font-light mt-4 bg-[hsl(var(--luxury-black))] text-white rounded-[10px] hover:opacity-90 active:scale-[0.97] transition-all duration-200"
                   >
                     Continue →
                   </Button>
