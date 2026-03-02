@@ -1,30 +1,47 @@
 
 
-## Findings
+## Current State
 
-The `realtime-session` edge function (OpenAI Realtime API voice assistant) has no dedicated promotional section at all. Key issues:
+Your analytics system already tracks a lot, but the **quote funnel has gaps** that hide where people are getting stuck.
 
-1. **Line 127**: References "factory cash rebate" for sub-$5k motors but provides zero context about what promotion is active, rebate amounts, or the Get 7 structure
-2. **No promo section**: Unlike the ai-chatbot (which now has explicit "PROMOTIONAL RESPONSE PATTERNS"), this voice prompt has nothing — if asked about rebates/promos, the AI would guess or deflect
+### What's tracked today (quote activity events):
+- `motor_selected`, `options_configured`, `purchase_path_chosen`, `trade_in_entered`, `financing_calculated`, `quote_abandoned`
+- Page views and exit pages (via `usePageViewTracker`)
 
-The ElevenLabs voice assistant (`useElevenLabsVoice.ts`) is fine — it uses a `check_current_deals` client tool that queries the database live. No changes needed there.
+### What's missing from the funnel:
+The quote flow is: Motor → Options → Purchase Path → Boat Info → Trade-In → Installation → Promo Selection → Package Selection → Summary → Submit
+
+But the tracker only fires events for 5 of these 10 steps. **Boat Info completion, Installation completion, Promo Selection, Package Selection, Summary viewed, and Quote Submitted are all invisible** in the funnel data. This means if people are dropping off at the Promo Selection page or the Installation page, you'd never know.
+
+### The weekly report funnel is also incomplete:
+It shows: `Visitors → Motor → Options → Trade-In → Financing → Saved`
+Missing: Purchase Path, Boat Info, Installation, Promo, Package, Summary steps — and the drop-off percentages between consecutive steps.
 
 ## Plan
 
-**Single file edit**: `supabase/functions/realtime-session/index.ts`
+### 1. Add missing quote step events to `useQuoteActivityTracker.ts`
 
-Add a `PROMOTIONS` section before the closing of the instructions string (before line 129), matching the corrected ai-chatbot patterns but condensed for voice brevity:
+Add detection for these new event types:
+- `boat_info_completed` — fires when boat info is filled
+- `installation_configured` — fires when installation config is done  
+- `promo_selected` — fires when a promo option is chosen
+- `package_selected` — fires when package selection is completed
+- `summary_viewed` — fires when user reaches the summary page
+- `quote_submitted` — fires when a quote is actually submitted/saved
 
-```
-CURRENT PROMOTION — GET 7 (Jan 12 – Mar 31, 2026):
-- 7-year factory warranty on ALL Mercury outboards (3 standard + 4 bonus)
-- Customer picks ONE bonus: 6 Months No Payments, Special Financing (from 2.99%), OR Factory Cash Rebate
-- Rebate amounts by HP: 2.5-6HP = $100, 8-15HP = $250, 20-30HP = $350, 40-60HP = $500, 75-115HP = $600, 150HP = $750, 175-300HP = $850, 350-400HP = $1,000
-- NEVER say "no rebates" — every HP range qualifies
-- Direct them to the quote builder or /promotions for full details
-```
+### 2. Enhance the weekly report funnel with all steps
 
-Also update line 127 to reference the Get 7 rebate explicitly instead of the generic "factory cash rebate" mention.
+Update `supabase/functions/weekly-quote-report/index.ts` to:
+- Query the new event types alongside existing ones
+- Show the full 10-step funnel with drop-off percentages between each consecutive step
+- Highlight the **biggest drop-off point** (e.g., "Biggest drop: 62% lost between Options → Purchase Path")
+- Add a "Drop-off Hotspots" section showing the top 3 steps where people quit, with counts
 
-Redeploy the `realtime-session` edge function after editing.
+### 3. Add `purchase_path_chosen` to the funnel (already tracked but not in the report)
+
+The `purchase_path_chosen` event already exists in the tracker but isn't included in the weekly report funnel — add it.
+
+### Files changed:
+- `src/hooks/useQuoteActivityTracker.ts` — add 6 new event detectors
+- `supabase/functions/weekly-quote-report/index.ts` — expand funnel to all steps + add drop-off analysis section
 
