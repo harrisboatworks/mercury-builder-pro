@@ -1,36 +1,37 @@
 
 
-## Add Propeller Allowance to All Packages (HP-Based Pricing)
+## Test Results: End-to-End Quote Verification
 
-### Problem
-The propeller allowance line item is missing from Essential and Complete packages entirely. For Premium, it's hardcoded at $299.99 "Aluminum" regardless of HP. Per the established pricing rules:
-- **Under 25HP**: $0 (propeller included with motor)
-- **25-115HP**: $350 Aluminum propeller allowance
-- **150HP+**: $1,200 Stainless Steel propeller allowance
+### Configuration Tested
+- **Motor**: 200 XL FourStroke (200HP) — $27,044
+- **Path**: Professional Installation
+- **Controls**: "I have Mercury controls (2004+)" — Adapter harness
+- **Trade-in**: None
+- **Promo**: 6 Months No Payments
+- **Package**: Essential
 
-The installation labor ($450 for remote motors on installed path) IS already showing correctly.
+### Package Selection Page Results
+All features display correctly in the Essential card:
+- "Control adaptor harness (uses your existing controls)" — shown
+- "Basic installation" — shown
+- "Propeller Allowance (Stainless Steel) ($1,200)" — shown with correct HP-based amount
 
-### Changes
+### Summary Page Results — ALL PASS
+| Line Item | Expected | Actual | Status |
+|---|---|---|---|
+| Control Adaptor Harness | $125 | $125 | PASS |
+| Professional Installation | $450 | $450 | PASS |
+| Propeller Allowance (Stainless Steel) | $1,200 | $1,200 | PASS |
+| Motor Price | $27,044 | $27,044 | PASS |
+| Subtotal | $28,819 | $28,819 | PASS |
 
-**1. Create a propeller allowance helper** (can be inline or a small function)
+Descriptions are accurate:
+- "Adapter to connect your existing Mercury controls to the new motor"
+- "Expert rigging, mounting, and commissioning by certified technicians"
+- "Stainless steel propeller — final selection after water test"
 
-A function `getPropellerAllowance(hp)` returning `{ price, name, description }`:
-- `hp < 25` → price: 0 (prop included, no line item needed)
-- `25 <= hp <= 115` → price: 350, name: "Propeller Allowance (Aluminum)", description: "Standard aluminum propeller — final selection after water test"
-- `hp >= 150` → price: 1200, name: "Propeller Allowance (Stainless Steel)", description: "Stainless steel propeller — final selection after water test"
+### PDF
+No separate PDF test was performed, but the PDF renders from the same `accessoryBreakdown` data that populates the summary page, so it will contain the same line items and descriptions.
 
-**2. `src/pages/quote/QuoteSummaryPage.tsx`** — Add propeller allowance to `accessoryBreakdown`
-- After the controls/installation section (~line 375), add a propeller allowance line item for ALL packages when `!includesProp` and HP >= 25
-- Remove the existing Premium-only prop logic at lines 386-393 (replace with the universal allowance)
-- The allowance amount must also be added to the pricing total calculation at line 266
-
-**3. `src/pages/quote/PackageSelectionPage.tsx`** — Update package pricing and features
-- Replace the hardcoded `299.99` prop cost in the Premium package (line 239) with the HP-based amount
-- Add propeller allowance to Essential and Complete package `priceBeforeTax` calculations (lines 205, 221)
-- Update feature text in all three packages to mention the propeller allowance with correct type (Aluminum vs Stainless Steel)
-
-**4. PDF flow** — No changes needed, since the PDF renders whatever `accessoryBreakdown` contains
-
-### Summary of pricing impact
-For a 150HP+ motor, this adds $1,200 to the quote as a visible "Propeller Allowance (Stainless Steel)" line item across all packages. For 25-115HP, $350 appears. Under 25HP, no change (prop already included).
+### No code changes needed — everything is working correctly.
 
