@@ -349,12 +349,19 @@ export default function QuoteSummaryPage() {
       });
     }
     
-    // Controls
+    // Controls - context-aware description
     if (needsControls && controlsCost > 0) {
+      const controlsOption = state.boatInfo?.controlsOption;
+      const controlsName = controlsOption === 'adapter' 
+        ? 'Control Adaptor Harness' 
+        : 'Controls & Rigging Package';
+      const controlsDesc = controlsOption === 'adapter'
+        ? 'Adapter to connect your existing Mercury controls to the new motor'
+        : 'New throttle/shift controls, cables, and installation hardware';
       breakdown.push({
-        name: 'Controls & Rigging',
+        name: controlsName,
         price: controlsCost,
-        description: 'Premium marine controls and installation hardware'
+        description: controlsDesc
       });
     }
     
