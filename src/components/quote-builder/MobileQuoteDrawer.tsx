@@ -75,10 +75,10 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
     if (state.boatInfo?.controlsOption) {
       if (state.boatInfo.controlsOption === 'none') {
         subtotal += 1200;
-        lineItems.push({ label: 'New Controls & Rigging', value: 1200 });
+        lineItems.push({ label: 'Controls & Rigging Package', value: 1200 });
       } else if (state.boatInfo.controlsOption === 'adapter') {
         subtotal += 125;
-        lineItems.push({ label: 'Controls Adapter', value: 125 });
+        lineItems.push({ label: 'Control Adaptor Harness', value: 125 });
       }
     }
 
