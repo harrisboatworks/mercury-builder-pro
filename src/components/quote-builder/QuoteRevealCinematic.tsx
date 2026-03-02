@@ -7,7 +7,7 @@ import { money, calculateMonthly } from '@/lib/quote-utils';
 import { X, Shield, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import harrisLogo from '@/assets/harris-logo.png';
-import harrisLogoBlack from '@/assets/harris-logo-black.png';
+import harrisLogoWhite from '@/assets/harris-logo-white.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 
 interface QuoteRevealCinematicProps {
@@ -350,11 +350,11 @@ export function QuoteRevealCinematic({
                 />
               ) : (
                 <img 
-                  src={harrisLogoBlack}
+                  src={harrisLogoWhite}
                   alt="Harris Boat Works"
                   className="h-20 md:h-32 w-auto object-contain"
                   style={{
-                    filter: 'invert(1) drop-shadow(0 4px 20px rgba(255, 255, 255, 0.15))',
+                    filter: 'drop-shadow(0 4px 20px rgba(255, 255, 255, 0.15))',
                     opacity: 0.9,
                   }}
                 />
