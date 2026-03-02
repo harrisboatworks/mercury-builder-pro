@@ -206,7 +206,7 @@ export default function PackageSelectionPage() {
       savings: totals.savings, 
       features: [
         "Mercury motor", 
-        isManualTiller ? "Tiller-handle operation" : "Standard controls & rigging", 
+        isManualTiller ? "Tiller-handle operation" : (state.boatInfo?.controlsOption === 'adapter' ? "Control adaptor harness (uses your existing controls)" : state.boatInfo?.controlsOption === 'compatible' ? "Compatible with your existing controls (no extra hardware)" : "New controls & rigging package"), 
         `${currentCoverageYears} years coverage included`,
         ...(isInstalled ? [isManualTiller && tillerInstallCost === 0 ? "DIY clamp-on mounting" : "Basic installation"] : []),
         ...(looseMotorBatteryCost > 0 ? [`Marine starting battery ($${looseMotorBatteryCost.toFixed(0)})`] : ["Customer supplies battery (if needed)"])
