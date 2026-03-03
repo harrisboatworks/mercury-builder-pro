@@ -83,10 +83,10 @@ function fmt(n: number): string {
 
 async function stampDepositOnQuotePdf(
   existingPdfBytes: Uint8Array,
-  customerName: string,
-  customerEmail: string,
-  customerPhone: string,
-  customerAddress: CustomerAddress | null,
+  _customerName: string,
+  _customerEmail: string,
+  _customerPhone: string,
+  _customerAddress: CustomerAddress | null,
   depositAmount: string,
   referenceNumber: string,
   paymentId: string,
@@ -95,7 +95,7 @@ async function stampDepositOnQuotePdf(
   const doc = await PDFDocument.load(existingPdfBytes);
   const pages = doc.getPages();
   const page = pages[0];
-  const { width, height } = page.getSize();
+  const { width } = page.getSize();
   
   const helvetica = await doc.embedFont(StandardFonts.Helvetica);
   const helveticaBold = await doc.embedFont(StandardFonts.HelveticaBold);
@@ -104,26 +104,15 @@ async function stampDepositOnQuotePdf(
   const balanceDue = totalCashPrice > 0 ? totalCashPrice - depositNum : 0;
   const dateStr = new Date().toLocaleDateString("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "long", day: "numeric" });
 
-  // Colors matching the quote's navy theme
+  // Colors matching the quote's theme
   const navy = rgb(0.118, 0.251, 0.686);    // #1e40af
   const green = rgb(0.02, 0.59, 0.41);
   const white = rgb(1, 1, 1);
   const darkGray = rgb(0.12, 0.16, 0.21);
-  const gray = rgb(0.42, 0.44, 0.49);
 
-  // Format address
-  const addressParts: string[] = [];
-  if (customerAddress?.line1) addressParts.push(customerAddress.line1);
-  if (customerAddress?.line2) addressParts.push(customerAddress.line2);
-  const cityLine: string[] = [];
-  if (customerAddress?.city) cityLine.push(customerAddress.city);
-  if (customerAddress?.state) cityLine.push(customerAddress.state);
-  if (customerAddress?.postalCode) cityLine.push(customerAddress.postalCode);
-  if (cityLine.length > 0) addressParts.push(cityLine.join(", "));
-
-  // Determine banner height based on content
-  const hasAddress = addressParts.length > 0;
-  const bannerHeight = hasAddress ? 105 : 85;
+  // Customer info is ALREADY on the PDF — only stamp deposit confirmation.
+  // Place a compact banner just above the existing footer area.
+  const bannerHeight = 65;
   const bannerY = 50; // Just above the footer
 
   // Background
@@ -137,57 +126,34 @@ async function stampDepositOnQuotePdf(
     x: 0, y: bannerY + bannerHeight - 3, width, height: 3, color: green,
   });
 
-  // ── LEFT SIDE: Customer Info ──
+  // ── LEFT SIDE: Deposit confirmation details ──
   let leftY = bannerY + bannerHeight - 18;
 
-  page.drawText("CUSTOMER", { x: 40, y: leftY, size: 8, font: helveticaBold, color: gray });
-  leftY -= 13;
-  page.drawText(customerName, { x: 40, y: leftY, size: 10, font: helveticaBold, color: darkGray });
-  leftY -= 12;
-  if (customerEmail) {
-    page.drawText(customerEmail, { x: 40, y: leftY, size: 8, font: helvetica, color: darkGray });
-    leftY -= 11;
-  }
-  if (customerPhone) {
-    page.drawText(customerPhone, { x: 40, y: leftY, size: 8, font: helvetica, color: darkGray });
-    leftY -= 11;
-  }
-  if (hasAddress) {
-    for (const line of addressParts) {
-      page.drawText(line, { x: 40, y: leftY, size: 8, font: helvetica, color: darkGray });
-      leftY -= 11;
-    }
+  page.drawText("✓ DEPOSIT CONFIRMED", { x: 40, y: leftY, size: 11, font: helveticaBold, color: green });
+  leftY -= 14;
+  page.drawText(`Ref: ${referenceNumber}`, { x: 40, y: leftY, size: 8, font: helvetica, color: darkGray });
+  leftY -= 11;
+  page.drawText(`Paid: ${dateStr}`, { x: 40, y: leftY, size: 8, font: helvetica, color: darkGray });
+  leftY -= 11;
+  if (paymentId) {
+    page.drawText(`Payment ID: ${paymentId}`, { x: 40, y: leftY, size: 6, font: helvetica, color: rgb(0.5, 0.5, 0.5) });
   }
 
-  // ── RIGHT SIDE: Deposit & Balance ──
+  // ── RIGHT SIDE: Amount paid & Balance due ──
   const rightX = width - 215;
   let rightY = bannerY + bannerHeight - 18;
-
-  page.drawText("DEPOSIT CONFIRMED", { x: rightX, y: rightY, size: 10, font: helveticaBold, color: green });
-  rightY -= 14;
-  page.drawText(`Ref: ${referenceNumber}`, { x: rightX, y: rightY, size: 8, font: helvetica, color: darkGray });
-  rightY -= 11;
-  page.drawText(`Paid: ${dateStr}`, { x: rightX, y: rightY, size: 8, font: helvetica, color: darkGray });
-  rightY -= 14;
 
   // Deposit paid row
   page.drawText("Deposit Paid:", { x: rightX, y: rightY, size: 9, font: helveticaBold, color: green });
   page.drawText(`-$${fmt(depositNum)}`, { x: rightX + 110, y: rightY, size: 9, font: helveticaBold, color: green });
-  rightY -= 16;
+  rightY -= 18;
 
   // Balance due box
-  page.drawRectangle({ x: rightX - 5, y: rightY - 5, width: 210, height: 20, color: navy });
-  page.drawText("BALANCE DUE:", { x: rightX, y: rightY, size: 9, font: helveticaBold, color: white });
+  page.drawRectangle({ x: rightX - 5, y: rightY - 5, width: 210, height: 22, color: navy });
+  page.drawText("BALANCE DUE:", { x: rightX, y: rightY, size: 10, font: helveticaBold, color: white });
   page.drawText(balanceDue > 0 ? `$${fmt(balanceDue)} CAD` : "PAID IN FULL", {
-    x: rightX + 110, y: rightY, size: 9, font: helveticaBold, color: white,
+    x: rightX + 110, y: rightY, size: 10, font: helveticaBold, color: white,
   });
-
-  // Small payment ID at very bottom of banner
-  if (paymentId) {
-    page.drawText(`Payment: ${paymentId}`, {
-      x: 40, y: bannerY + 5, size: 6, font: helvetica, color: rgb(0.6, 0.6, 0.6),
-    });
-  }
 
   return await doc.save();
 }
