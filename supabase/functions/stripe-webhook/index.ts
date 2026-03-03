@@ -76,6 +76,7 @@ serve(async (req) => {
         const paymentIntentId = typeof session.payment_intent === "string" 
           ? session.payment_intent 
           : session.payment_intent?.id;
+        const savedQuoteId = session.metadata.saved_quote_id || "";
         
         // Extract billing address from Stripe session
         const billingAddress = session.customer_details?.address;
@@ -98,13 +99,12 @@ serve(async (req) => {
         }
 
         logStep("Processing deposit confirmation", {
-          depositAmount, customerName, customerEmail, paymentIntentId, motorInfo, customerAddress,
+          depositAmount, customerName, customerEmail, paymentIntentId, motorInfo, savedQuoteId,
         });
 
         const quotePdfPath = session.metadata.quote_pdf_path || "";
 
-        // Fetch the full quote record to get pricing data
-        let quoteRecord: any = null;
+        // Update customer_quotes record
         const { data: existingDeposit, error: findError } = await supabase
           .from("customer_quotes")
           .select("*")
@@ -117,7 +117,6 @@ serve(async (req) => {
         }
 
         if (existingDeposit) {
-          quoteRecord = existingDeposit;
           const { error: updateError } = await supabase
             .from("customer_quotes")
             .update({
@@ -140,19 +139,46 @@ serve(async (req) => {
           } else {
             logStep("Deposit record updated to scheduled", { quoteId: existingDeposit.id });
           }
-        } else {
-          logStep("No existing deposit record found for session", { sessionId: session.id });
         }
 
-        // Build pricing data from the quote record
-        const pricingData = quoteRecord ? {
-          basePrice: quoteRecord.base_price,
-          finalPrice: quoteRecord.final_price,
-          totalCost: quoteRecord.total_cost,
-          discountAmount: quoteRecord.discount_amount,
-          quoteData: quoteRecord.quote_data,
-        } : null;
+        // Update saved_quotes record with deposit confirmation
+        if (savedQuoteId) {
+          const { error: sqUpdateError } = await supabase
+            .from("saved_quotes")
+            .update({
+              deposit_status: "paid",
+              deposit_amount: parseFloat(depositAmount),
+              deposit_paid_at: new Date().toISOString(),
+            })
+            .eq("id", savedQuoteId);
 
+          if (sqUpdateError) {
+            logStep("WARNING: Failed to update saved_quotes deposit status", { error: sqUpdateError.message });
+          } else {
+            logStep("saved_quotes deposit status updated to paid", { savedQuoteId });
+          }
+        } else if (customerEmail) {
+          // Fallback: try to find saved_quote by email + pending deposit
+          const { error: sqFallbackError } = await supabase
+            .from("saved_quotes")
+            .update({
+              deposit_status: "paid",
+              deposit_amount: parseFloat(depositAmount),
+              deposit_paid_at: new Date().toISOString(),
+            })
+            .eq("email", customerEmail)
+            .eq("deposit_status", "pending")
+            .order("created_at", { ascending: false })
+            .limit(1);
+
+          if (sqFallbackError) {
+            logStep("WARNING: Fallback saved_quotes update failed", { error: sqFallbackError.message });
+          } else {
+            logStep("saved_quotes updated via email fallback");
+          }
+        }
+
+        // Send confirmation emails
         if (customerEmail) {
           const { error: emailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
             body: {
@@ -165,7 +191,6 @@ serve(async (req) => {
               motorInfo,
               sendAdminNotification: true,
               quotePdfPath,
-              pricingData,
             },
           });
 
@@ -176,7 +201,7 @@ serve(async (req) => {
           }
         } else {
           logStep("WARNING: No customer email available for confirmation");
-          const { error: adminEmailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
+          await supabase.functions.invoke("send-deposit-confirmation-email", {
             body: {
               customerEmail: "",
               customerName,
@@ -188,12 +213,8 @@ serve(async (req) => {
               sendAdminNotification: true,
               adminOnly: true,
               quotePdfPath,
-              pricingData,
             },
           });
-          if (adminEmailError) {
-            logStep("ERROR: Failed to send admin notification", { error: adminEmailError.message });
-          }
         }
       }
     }

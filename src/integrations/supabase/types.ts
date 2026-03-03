@@ -2250,11 +2250,16 @@ export type Database = {
           access_count: number | null
           converted_to_quote_id: string | null
           created_at: string | null
+          deposit_amount: number | null
+          deposit_paid_at: string | null
+          deposit_pdf_path: string | null
+          deposit_status: string | null
           email: string
           expires_at: string
           id: string
           is_completed: boolean | null
           last_accessed: string | null
+          quote_pdf_path: string | null
           quote_state: Json
           resume_token: string
           updated_at: string | null
@@ -2264,11 +2269,16 @@ export type Database = {
           access_count?: number | null
           converted_to_quote_id?: string | null
           created_at?: string | null
+          deposit_amount?: number | null
+          deposit_paid_at?: string | null
+          deposit_pdf_path?: string | null
+          deposit_status?: string | null
           email: string
           expires_at?: string
           id?: string
           is_completed?: boolean | null
           last_accessed?: string | null
+          quote_pdf_path?: string | null
           quote_state: Json
           resume_token: string
           updated_at?: string | null
@@ -2278,11 +2288,16 @@ export type Database = {
           access_count?: number | null
           converted_to_quote_id?: string | null
           created_at?: string | null
+          deposit_amount?: number | null
+          deposit_paid_at?: string | null
+          deposit_pdf_path?: string | null
+          deposit_status?: string | null
           email?: string
           expires_at?: string
           id?: string
           is_completed?: boolean | null
           last_accessed?: string | null
+          quote_pdf_path?: string | null
           quote_state?: Json
           resume_token?: string
           updated_at?: string | null

@@ -149,6 +149,7 @@ serve(async (req) => {
       const customerPhone = customerInfo?.phone || "";
       const motorInfo = rawBody.motorInfo || null;
       const quotePdfPath = rawBody.quotePdfPath || "";
+      const savedQuoteId = rawBody.savedQuoteId || "";
       
       const sessionData: Stripe.Checkout.SessionCreateParams = {
         line_items: [{ price: priceId, quantity: 1 }],
@@ -164,6 +165,7 @@ serve(async (req) => {
           customer_phone: customerPhone,
           motor_info: motorInfo ? JSON.stringify(motorInfo) : "",
           quote_pdf_path: quotePdfPath,
+          saved_quote_id: savedQuoteId,
         }
       };
 
