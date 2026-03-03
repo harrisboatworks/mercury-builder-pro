@@ -153,6 +153,7 @@ serve(async (req) => {
       const sessionData: Stripe.Checkout.SessionCreateParams = {
         line_items: [{ price: priceId, quantity: 1 }],
         mode: "payment",
+        billing_address_collection: "required",
         success_url: `${origin}/payment-success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${origin}/payment-canceled`,
         metadata: {
