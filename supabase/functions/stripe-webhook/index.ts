@@ -75,6 +75,7 @@ serve(async (req) => {
         const depositAmount = session.metadata.deposit_amount;
         const customerName = session.metadata.customer_name || "Customer";
         const customerEmail = session.customer_email || session.metadata.customer_email;
+        const customerPhone = session.metadata.customer_phone || "";
         const paymentIntentId = typeof session.payment_intent === "string" 
           ? session.payment_intent 
           : session.payment_intent?.id;
@@ -135,14 +136,16 @@ serve(async (req) => {
         }
 
         if (customerEmail) {
-          // Call the email sending function
+          // Send customer confirmation email
           const { error: emailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
             body: {
               customerEmail,
               customerName,
+              customerPhone,
               depositAmount,
               paymentId: paymentIntentId,
               motorInfo,
+              sendAdminNotification: true,
             },
           });
 
@@ -153,6 +156,22 @@ serve(async (req) => {
           }
         } else {
           logStep("WARNING: No customer email available for confirmation");
+          // Still send admin notification even without customer email
+          const { error: adminEmailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
+            body: {
+              customerEmail: "",
+              customerName,
+              customerPhone,
+              depositAmount,
+              paymentId: paymentIntentId,
+              motorInfo,
+              sendAdminNotification: true,
+              adminOnly: true,
+            },
+          });
+          if (adminEmailError) {
+            logStep("ERROR: Failed to send admin notification", { error: adminEmailError.message });
+          }
         }
       }
     }

@@ -11,6 +11,7 @@ const corsHeaders = {
 interface DepositConfirmationRequest {
   customerEmail: string;
   customerName: string;
+  customerPhone?: string;
   depositAmount: string;
   paymentId?: string;
   motorInfo?: {
@@ -18,7 +19,12 @@ interface DepositConfirmationRequest {
     hp?: number;
     year?: number;
   };
+  sendAdminNotification?: boolean;
+  adminOnly?: boolean;
 }
+
+// Admin emails to notify
+const ADMIN_EMAILS = ["jayharris97@gmail.com", "harrisboatworks@hotmail.com"];
 
 function logStep(step: string, data?: Record<string, unknown>) {
   console.log(`[DEPOSIT-EMAIL] ${step}`, data ? JSON.stringify(data) : "");
@@ -26,7 +32,6 @@ function logStep(step: string, data?: Record<string, unknown>) {
 
 function generateReferenceNumber(paymentId?: string): string {
   if (paymentId) {
-    // Extract last 8 characters of payment intent ID
     return `HBW-${paymentId.slice(-8).toUpperCase()}`;
   }
   return `HBW-${Date.now().toString(36).toUpperCase()}`;
@@ -56,197 +61,34 @@ function createDepositConfirmationEmail(
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deposit Confirmation - Harris Boat Works</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-      background-color: #f5f5f5;
-    }
-    .email-container {
-      max-width: 600px;
-      margin: 0 auto;
-      background-color: #ffffff;
-    }
-    .header {
-      background: linear-gradient(135deg, #007DC5 0%, #1e40af 100%);
-      padding: 24px 20px;
-      text-align: center;
-    }
-    .logo-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .logo {
-      height: 50px;
-      width: auto;
-    }
-    .tagline {
-      color: #ffffff;
-      font-size: 14px;
-      margin-top: 12px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-    }
-    .content {
-      padding: 40px 32px;
-      color: #374151;
-      line-height: 1.6;
-    }
-    .success-banner {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: white;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      margin-bottom: 24px;
-    }
-    .success-icon {
-      font-size: 48px;
-      margin-bottom: 8px;
-    }
-    .reference-number {
-      font-size: 28px;
-      font-weight: 700;
-      color: #007DC5;
-      font-family: 'Courier New', monospace;
-      text-align: center;
-      padding: 20px;
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-      border-radius: 12px;
-      margin: 24px 0;
-      border: 2px solid #007DC5;
-    }
-    .deposit-amount {
-      font-size: 36px;
-      font-weight: 700;
-      color: #10b981;
-      text-align: center;
-      margin: 16px 0;
-    }
-    .motor-details {
-      background-color: #f9fafb;
-      border-left: 4px solid #007DC5;
-      padding: 16px 20px;
-      margin: 24px 0;
-      border-radius: 8px;
-    }
-    .motor-details h3 {
-      margin: 0 0 8px 0;
-      color: #374151;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .motor-details p {
-      margin: 4px 0;
-      color: #1f2937;
-    }
-    .next-steps {
-      background-color: #eff6ff;
-      border-radius: 12px;
-      padding: 24px;
-      margin: 24px 0;
-    }
-    .next-steps h3 {
-      color: #1e40af;
-      margin: 0 0 16px 0;
-      font-size: 18px;
-    }
-    .next-steps ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-    .next-steps li {
-      margin: 8px 0;
-      color: #374151;
-    }
-    .refund-policy {
-      background-color: #fef3c7;
-      border-left: 4px solid #f59e0b;
-      padding: 16px 20px;
-      margin: 24px 0;
-      border-radius: 8px;
-    }
-    .refund-policy h4 {
-      margin: 0 0 8px 0;
-      color: #92400e;
-      font-size: 14px;
-    }
-    .refund-policy p {
-      margin: 0;
-      color: #78350f;
-      font-size: 14px;
-    }
-    .button {
-      display: inline-block;
-      padding: 16px 40px;
-      background: linear-gradient(135deg, #007DC5 0%, #1e40af 100%);
-      color: #ffffff !important;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      margin: 24px 0;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 125, 197, 0.3);
-    }
-    .trust-footer {
-      background-color: #f9fafb;
-      padding: 32px 20px;
-      text-align: center;
-      border-top: 1px solid #e5e7eb;
-    }
-    .badges-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    .badge {
-      display: inline-block;
-      padding: 8px 16px;
-      background: #ffffff;
-      border: 1px solid #d1d5db;
-      border-radius: 6px;
-      font-size: 12px;
-      color: #374151;
-      font-weight: 600;
-    }
-    .contact-info {
-      color: #6b7280;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-    .contact-info a {
-      color: #007DC5;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .divider {
-      height: 1px;
-      background-color: #e5e7eb;
-      margin: 24px 0;
-    }
-    @media only screen and (max-width: 600px) {
-      .content {
-        padding: 24px 16px;
-      }
-      .header {
-        padding: 20px 16px;
-      }
-      .logo-container {
-        flex-direction: column;
-        gap: 15px;
-      }
-      .badges-container {
-        flex-direction: column;
-        gap: 12px;
-      }
-    }
+    body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; background-color: #f5f5f5; }
+    .email-container { max-width: 600px; margin: 0 auto; background-color: #ffffff; }
+    .header { background: linear-gradient(135deg, #007DC5 0%, #1e40af 100%); padding: 24px 20px; text-align: center; }
+    .logo-container { display: flex; align-items: center; justify-content: center; gap: 30px; max-width: 600px; margin: 0 auto; }
+    .logo { height: 50px; width: auto; }
+    .tagline { color: #ffffff; font-size: 14px; margin-top: 12px; font-weight: 500; letter-spacing: 0.5px; }
+    .content { padding: 40px 32px; color: #374151; line-height: 1.6; }
+    .success-banner { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 24px; }
+    .success-icon { font-size: 48px; margin-bottom: 8px; }
+    .reference-number { font-size: 28px; font-weight: 700; color: #007DC5; font-family: 'Courier New', monospace; text-align: center; padding: 20px; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 12px; margin: 24px 0; border: 2px solid #007DC5; }
+    .deposit-amount { font-size: 36px; font-weight: 700; color: #10b981; text-align: center; margin: 16px 0; }
+    .motor-details { background-color: #f9fafb; border-left: 4px solid #007DC5; padding: 16px 20px; margin: 24px 0; border-radius: 8px; }
+    .motor-details h3 { margin: 0 0 8px 0; color: #374151; font-size: 14px; font-weight: 600; }
+    .motor-details p { margin: 4px 0; color: #1f2937; }
+    .next-steps { background-color: #eff6ff; border-radius: 12px; padding: 24px; margin: 24px 0; }
+    .next-steps h3 { color: #1e40af; margin: 0 0 16px 0; font-size: 18px; }
+    .next-steps ul { margin: 0; padding-left: 20px; }
+    .next-steps li { margin: 8px 0; color: #374151; }
+    .refund-policy { background-color: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 24px 0; border-radius: 8px; }
+    .refund-policy h4 { margin: 0 0 8px 0; color: #92400e; font-size: 14px; }
+    .refund-policy p { margin: 0; color: #78350f; font-size: 14px; }
+    .button { display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #007DC5 0%, #1e40af 100%); color: #ffffff !important; text-decoration: none; border-radius: 8px; font-weight: 600; margin: 24px 0; text-align: center; box-shadow: 0 4px 12px rgba(0, 125, 197, 0.3); }
+    .trust-footer { background-color: #f9fafb; padding: 32px 20px; text-align: center; border-top: 1px solid #e5e7eb; }
+    .badges-container { display: flex; justify-content: center; align-items: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
+    .badge { display: inline-block; padding: 8px 16px; background: #ffffff; border: 1px solid #d1d5db; border-radius: 6px; font-size: 12px; color: #374151; font-weight: 600; }
+    .contact-info { color: #6b7280; font-size: 14px; line-height: 1.8; }
+    .contact-info a { color: #007DC5; text-decoration: none; font-weight: 500; }
+    .divider { height: 1px; background-color: #e5e7eb; margin: 24px 0; }
   </style>
 </head>
 <body>
@@ -258,27 +100,16 @@ function createDepositConfirmationEmail(
       </div>
       <div class="tagline">Authorized Mercury Marine Dealer • Go Boldly</div>
     </div>
-    
     <div class="content">
       <div class="success-banner">
         <div class="success-icon">✓</div>
         <h2 style="margin: 0; font-size: 24px;">Deposit Confirmed!</h2>
       </div>
-      
       <p>Hi ${customerName},</p>
-      
       <p>Great news! Your deposit has been successfully processed. Your motor is now reserved and we're excited to help you get on the water!</p>
-      
-      <div class="reference-number">
-        Reference: ${referenceNumber}
-      </div>
-      
-      <div class="deposit-amount">
-        $${depositAmount} CAD
-      </div>
-      
+      <div class="reference-number">Reference: ${referenceNumber}</div>
+      <div class="deposit-amount">$${depositAmount} CAD</div>
       ${motorDetails}
-      
       <div class="next-steps">
         <h3>📋 What Happens Next</h3>
         <ul>
@@ -287,24 +118,14 @@ function createDepositConfirmationEmail(
           <li><strong>Balance payment:</strong> The remaining balance will be due upon delivery or pickup.</li>
         </ul>
       </div>
-      
       <div class="refund-policy">
         <h4>💰 Refund Policy</h4>
         <p>Your deposit is fully refundable if you change your mind before delivery. Just give us a call and we'll process your refund promptly.</p>
       </div>
-      
-      <p style="text-align: center;">
-        <a href="tel:905-342-2153" class="button">Call Us: (905) 342-2153</a>
-      </p>
-      
+      <p style="text-align: center;"><a href="tel:905-342-2153" class="button">Call Us: (905) 342-2153</a></p>
       <p>Thank you for choosing Harris Boat Works. We look forward to serving you!</p>
-      
-      <p>
-        Best regards,<br>
-        <strong>The Harris Boat Works Team</strong>
-      </p>
+      <p>Best regards,<br><strong>The Harris Boat Works Team</strong></p>
     </div>
-    
     <div class="trust-footer">
       <div class="badges-container">
         <div class="badge">🏆 Mercury CSI Award Winner</div>
@@ -319,50 +140,145 @@ function createDepositConfirmationEmail(
       </div>
       <div class="divider"></div>
       <p style="font-size: 12px; color: #9ca3af; margin-top: 16px;">
-        You received this email because you made a deposit payment at Harris Boat Works.
-        Keep this email as your receipt.
+        You received this email because you made a deposit payment at Harris Boat Works. Keep this email as your receipt.
       </p>
     </div>
   </div>
 </body>
-</html>
-  `.trim();
+</html>`.trim();
+}
+
+function createAdminNotificationEmail(
+  customerName: string,
+  customerEmail: string,
+  customerPhone: string,
+  depositAmount: string,
+  referenceNumber: string,
+  paymentId: string,
+  motorInfo?: { model?: string; hp?: number; year?: number },
+): string {
+  const appUrl = Deno.env.get("APP_URL") || "https://mercuryrepower.ca";
+  const adminUrl = `${appUrl}/admin/quotes`;
+  const now = new Date().toLocaleString("en-CA", { timeZone: "America/Toronto" });
+  
+  const motorLine = motorInfo?.model 
+    ? `${motorInfo.year || 2025} ${motorInfo.model}${motorInfo.hp ? ` (${motorInfo.hp}HP)` : ""}`
+    : "Not specified";
+
+  return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚨 New Deposit Received - Harris Boat Works</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #ffffff; }
+    .container { max-width: 600px; margin: 0 auto; background: #ffffff; }
+    .header { background: #1e293b; color: white; padding: 20px 24px; }
+    .header h1 { margin: 0; font-size: 20px; }
+    .header .subtitle { color: #94a3b8; font-size: 13px; margin-top: 4px; }
+    .body { padding: 24px; }
+    .amount-banner { background: #ecfdf5; border: 2px solid #10b981; border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 24px; }
+    .amount-banner .amount { font-size: 42px; font-weight: 800; color: #059669; margin: 0; }
+    .amount-banner .label { font-size: 14px; color: #6b7280; }
+    .info-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+    .info-table td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; font-size: 14px; }
+    .info-table td:first-child { font-weight: 600; color: #64748b; width: 140px; }
+    .info-table td:last-child { color: #1e293b; }
+    .info-table a { color: #007DC5; text-decoration: none; }
+    .cta { text-align: center; margin: 24px 0; }
+    .cta a { display: inline-block; padding: 14px 32px; background: #007DC5; color: #ffffff !important; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 15px; }
+    .footer { background: #f8fafc; padding: 16px 24px; border-top: 1px solid #e2e8f0; font-size: 12px; color: #94a3b8; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚨 New Motor Deposit Received</h1>
+      <div class="subtitle">${now} ET</div>
+    </div>
+    <div class="body">
+      <div class="amount-banner">
+        <div class="label">DEPOSIT AMOUNT</div>
+        <p class="amount">$${depositAmount}</p>
+        <div class="label">CAD • Payment Confirmed</div>
+      </div>
+      
+      <table class="info-table">
+        <tr><td>Customer</td><td><strong>${customerName}</strong></td></tr>
+        <tr><td>Email</td><td><a href="mailto:${customerEmail}">${customerEmail || "Not provided"}</a></td></tr>
+        <tr><td>Phone</td><td>${customerPhone ? `<a href="tel:${customerPhone}">${customerPhone}</a>` : "<em>Not provided</em>"}</td></tr>
+        <tr><td>Motor Interest</td><td>${motorLine}</td></tr>
+        <tr><td>Reference #</td><td><strong>${referenceNumber}</strong></td></tr>
+        <tr><td>Stripe Payment</td><td style="font-family: monospace; font-size: 12px;">${paymentId || "N/A"}</td></tr>
+      </table>
+
+      <div class="cta">
+        <a href="${adminUrl}">View in Admin Dashboard →</a>
+      </div>
+
+      <div style="background: #fffbeb; border: 1px solid #fbbf24; border-radius: 8px; padding: 16px; margin-top: 16px;">
+        <strong style="color: #92400e;">⚡ Action Required</strong>
+        <p style="margin: 8px 0 0; font-size: 14px; color: #78350f;">
+          Contact this customer within 24-48 hours to discuss their motor selection, delivery options, and remaining balance.
+        </p>
+      </div>
+    </div>
+    <div class="footer">
+      This is an automated notification from Harris Boat Works deposit system.
+    </div>
+  </div>
+</body>
+</html>`.trim();
 }
 
 serve(async (req) => {
-  // Handle CORS preflight
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const { customerEmail, customerName, depositAmount, paymentId, motorInfo }: DepositConfirmationRequest = await req.json();
+    const { 
+      customerEmail, customerName, customerPhone, depositAmount, 
+      paymentId, motorInfo, sendAdminNotification, adminOnly 
+    }: DepositConfirmationRequest & { sendAdminNotification?: boolean; adminOnly?: boolean } = await req.json();
 
-    logStep("Sending deposit confirmation email", {
-      customerEmail,
-      customerName,
-      depositAmount,
-      paymentId,
-      motorInfo,
+    logStep("Processing deposit emails", {
+      customerEmail, customerName, customerPhone, depositAmount, paymentId, motorInfo,
+      sendAdminNotification, adminOnly,
     });
-
-    if (!customerEmail) {
-      throw new Error("Customer email is required");
-    }
 
     const referenceNumber = generateReferenceNumber(paymentId);
-    const emailHtml = createDepositConfirmationEmail(customerName, depositAmount, referenceNumber, motorInfo);
 
-    const emailResponse = await resend.emails.send({
-      from: "Harris Boat Works <deposits@hbwsales.ca>",
-      to: [customerEmail],
-      subject: `Deposit Confirmed - Ref ${referenceNumber}`,
-      html: emailHtml,
-      // Also BCC the business for records
-      bcc: ["info@harrisboatworks.ca"],
-    });
+    // Send customer confirmation email (unless admin-only)
+    if (!adminOnly && customerEmail) {
+      const emailHtml = createDepositConfirmationEmail(customerName, depositAmount, referenceNumber, motorInfo);
+      const emailResponse = await resend.emails.send({
+        from: "Harris Boat Works <deposits@hbwsales.ca>",
+        to: [customerEmail],
+        subject: `Deposit Confirmed - Ref ${referenceNumber}`,
+        html: emailHtml,
+        bcc: ["info@harrisboatworks.ca"],
+      });
+      logStep("Customer email sent", { emailResponse });
+    }
 
-    logStep("Email sent successfully", { emailResponse });
+    // Send admin notification email
+    if (sendAdminNotification || adminOnly) {
+      const adminHtml = createAdminNotificationEmail(
+        customerName, customerEmail || "", customerPhone || "",
+        depositAmount, referenceNumber, paymentId || "", motorInfo,
+      );
+
+      const adminResponse = await resend.emails.send({
+        from: "Harris Boat Works System <deposits@hbwsales.ca>",
+        to: ADMIN_EMAILS,
+        subject: `🚨 NEW DEPOSIT $${depositAmount} — ${customerName}`,
+        html: adminHtml,
+      });
+      logStep("Admin notification sent", { adminResponse });
+    }
 
     return new Response(JSON.stringify({ success: true, referenceNumber }), {
       status: 200,
