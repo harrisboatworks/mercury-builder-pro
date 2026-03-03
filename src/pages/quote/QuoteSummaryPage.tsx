@@ -7,6 +7,7 @@ import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
 import { getRecommendedDeposit } from '@/components/quote-builder/PaymentPreferenceSelector';
+import { DepositInfoDialog, type DepositCustomerInfo } from '@/components/quote-builder/DepositInfoDialog';
 
 import { PricingTable } from '@/components/quote-builder/PricingTable';
 import { BonusOffers } from '@/components/quote-builder/BonusOffers';
@@ -77,6 +78,7 @@ export default function QuoteSummaryPage() {
   
   // Deposit processing state - amount is auto-calculated from HP
   const [isProcessingDeposit, setIsProcessingDeposit] = useState(false);
+  const [showDepositDialog, setShowDepositDialog] = useState(false);
   
   // Cinematic reveal - show for fresh quotes coming from package selection
   const [showCinematic, setShowCinematic] = useState(false);
@@ -610,13 +612,17 @@ export default function QuoteSummaryPage() {
     navigate('/quote/schedule');
   };
 
-  // Handle deposit payment via Stripe
-  const handleReserveDeposit = async () => {
+  // Open the deposit info dialog (replaces direct payment flow)
+  const handleReserveDeposit = () => {
+    setShowDepositDialog(true);
+  };
+
+  // Handle deposit after customer info is collected
+  const handleDepositSubmit = async (customerInfo: DepositCustomerInfo) => {
+    setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {
-      const customerEmail = user?.email;
-      
-      // Generate the quote PDF and upload to storage so it can be attached to admin email
+      // Generate the quote PDF with REAL customer info baked in
       let quotePdfPath: string | undefined;
       try {
         const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
@@ -626,9 +632,9 @@ export default function QuoteSummaryPage() {
         
         const pdfData = {
           quoteNumber,
-          customerName: state.customerName || user?.user_metadata?.full_name || 'Customer',
-          customerEmail: state.customerEmail || customerEmail || '',
-          customerPhone: state.customerPhone || '',
+          customerName: customerInfo.name,
+          customerEmail: customerInfo.email,
+          customerPhone: customerInfo.phone,
           motor: {
             model: motorName,
             hp: hp,
@@ -694,9 +700,9 @@ export default function QuoteSummaryPage() {
           paymentType: 'deposit',
           depositAmount: String(depositAmount),
           customerInfo: {
-            name: user?.user_metadata?.full_name || 'Customer',
-            ...(customerEmail ? { email: customerEmail } : {}),
-            phone: state.customerPhone || ''
+            name: customerInfo.name,
+            email: customerInfo.email,
+            phone: customerInfo.phone,
           },
           motorInfo: {
             model: motorName,
@@ -766,6 +772,19 @@ export default function QuoteSummaryPage() {
 
   return (
     <>
+      {/* Deposit Info Dialog */}
+      <DepositInfoDialog
+        open={showDepositDialog}
+        onOpenChange={setShowDepositDialog}
+        onSubmit={handleDepositSubmit}
+        depositAmount={depositAmount}
+        defaultValues={{
+          name: state.customerName || user?.user_metadata?.full_name || '',
+          email: state.customerEmail || user?.email || '',
+          phone: state.customerPhone || '',
+        }}
+        isProcessing={isProcessingDeposit}
+      />
       {/* Cinematic Quote Reveal */}
       <QuoteRevealCinematic
         isVisible={showCinematic && isMounted}
