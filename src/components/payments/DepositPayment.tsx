@@ -46,10 +46,10 @@ export const DepositPayment = () => {
   const { toast } = useToast();
 
   const handlePayment = async () => {
-    if (!customerInfo.email || !customerInfo.name) {
+    if (!customerInfo.email || !customerInfo.name || !customerInfo.phone) {
       toast({
         title: "Missing Information",
-        description: "Please provide your name and email address.",
+        description: "Please provide your name, email, and phone number.",
         variant: "destructive"
       });
       return;
@@ -173,13 +173,14 @@ export const DepositPayment = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <Label htmlFor="customerPhone">Phone Number (Optional)</Label>
+            <Label htmlFor="customerPhone">Phone Number *</Label>
             <Input
               id="customerPhone"
               type="tel"
               placeholder="(555) 123-4567"
               value={customerInfo.phone}
               onChange={(e) => setCustomerInfo(prev => ({ ...prev, phone: e.target.value }))}
+              required
             />
           </div>
         </CardContent>
@@ -205,7 +206,7 @@ export const DepositPayment = () => {
 
           <Button 
             onClick={handlePayment}
-            disabled={isLoading || !customerInfo.email || !customerInfo.name}
+            disabled={isLoading || !customerInfo.email || !customerInfo.name || !customerInfo.phone}
             className="w-full"
             size="lg"
           >

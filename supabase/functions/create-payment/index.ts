@@ -146,6 +146,7 @@ serve(async (req) => {
       
       // Get customer name and motor info from request
       const customerName = customerInfo?.name || "Customer";
+      const customerPhone = customerInfo?.phone || "";
       const motorInfo = rawBody.motorInfo || null;
       
       const sessionData: Stripe.Checkout.SessionCreateParams = {
@@ -158,6 +159,7 @@ serve(async (req) => {
           payment_type: "motor_deposit",
           customer_name: customerName,
           customer_email: userEmail || customerInfo?.email || "",
+          customer_phone: customerPhone,
           motor_info: motorInfo ? JSON.stringify(motorInfo) : ""
         }
       };
@@ -178,6 +180,7 @@ serve(async (req) => {
           anonymous_session_id: user ? null : (session.id || crypto.randomUUID()),
           customer_name: customerName,
           customer_email: userEmail || customerInfo?.email || "",
+          customer_phone: customerPhone || null,
           base_price: 0,
           final_price: 0,
           deposit_amount: parseInt(depositAmount),
