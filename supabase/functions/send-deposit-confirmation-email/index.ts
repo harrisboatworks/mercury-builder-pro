@@ -48,9 +48,129 @@ function getMotorLabel(motorInfo?: { model?: string; hp?: number; year?: number 
   return `${motorInfo.year || 2025} ${motorInfo.model}${motorInfo.hp ? ` ${motorInfo.hp}HP` : ""}`;
 }
 
-// ── Download quote PDF from Supabase Storage ────────────────────────────────
+// ── Download quote PDF from Supabase Storage & stamp deposit info ────────────
 
-async function downloadQuotePdf(path: string): Promise<{ content: string; filename: string } | null> {
+function toBase64(bytes: Uint8Array): string {
+  let binary = '';
+  const chunkSize = 8192;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    const chunk = bytes.subarray(i, i + chunkSize);
+    binary += String.fromCharCode(...chunk);
+  }
+  return btoa(binary);
+}
+
+async function addDepositPageToPdf(
+  pdfBytes: Uint8Array,
+  customerName: string,
+  customerEmail: string,
+  customerPhone: string,
+  depositAmount: string,
+  referenceNumber: string,
+  paymentId: string,
+  motorInfo?: { model?: string; hp?: number; year?: number },
+): Promise<Uint8Array> {
+  const doc = await PDFDocument.load(pdfBytes);
+  const page = doc.addPage([612, 792]);
+  const helvetica = await doc.embedFont(StandardFonts.Helvetica);
+  const helveticaBold = await doc.embedFont(StandardFonts.HelveticaBold);
+  const { height } = page.getSize();
+
+  const blue = rgb(0, 0.49, 0.77);
+  const darkGray = rgb(0.15, 0.15, 0.15);
+  const gray = rgb(0.4, 0.4, 0.4);
+  const green = rgb(0.02, 0.59, 0.41);
+  const white = rgb(1, 1, 1);
+  const lightBg = rgb(0.96, 0.97, 0.98);
+
+  let y = height - 50;
+
+  // Header bar
+  page.drawRectangle({ x: 0, y: y - 10, width: 612, height: 60, color: blue });
+  page.drawText("HARRIS BOAT WORKS", { x: 40, y: y + 12, size: 20, font: helveticaBold, color: white });
+  page.drawText("Authorized Mercury Marine Dealer", { x: 40, y: y - 6, size: 10, font: helvetica, color: rgb(0.85, 0.92, 1) });
+  y -= 90;
+
+  // Title
+  page.drawText("DEPOSIT CONFIRMATION & INVOICE", { x: 40, y, size: 22, font: helveticaBold, color: darkGray });
+  y -= 18;
+  const dateStr = new Date().toLocaleDateString("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "long", day: "numeric" });
+  page.drawText(dateStr, { x: 40, y, size: 10, font: helvetica, color: gray });
+  y -= 28;
+
+  // Reference + Amount box
+  page.drawRectangle({ x: 40, y: y - 55, width: 532, height: 60, color: lightBg });
+  page.drawRectangle({ x: 40, y: y - 55, width: 532, height: 60, borderColor: green, borderWidth: 2, color: lightBg });
+  page.drawText("[CONFIRMED]  PAYMENT CONFIRMED", { x: 55, y: y - 10, size: 14, font: helveticaBold, color: green });
+  page.drawText(`Reference: ${referenceNumber}`, { x: 55, y: y - 30, size: 12, font: helveticaBold, color: blue });
+  page.drawText(`Amount Paid: $${depositAmount} CAD`, { x: 350, y: y - 30, size: 12, font: helveticaBold, color: green });
+  page.drawText(`Transaction: ${paymentId || "N/A"}`, { x: 55, y: y - 46, size: 8, font: helvetica, color: gray });
+  y -= 80;
+
+  const drawSectionHeader = (label: string) => {
+    page.drawRectangle({ x: 40, y: y - 4, width: 532, height: 22, color: blue });
+    page.drawText(label, { x: 50, y: y, size: 11, font: helveticaBold, color: white });
+    y -= 28;
+  };
+
+  const drawRow = (label: string, value: string) => {
+    page.drawText(label, { x: 55, y, size: 10, font: helveticaBold, color: gray });
+    page.drawText(value || "Not provided", { x: 200, y, size: 10, font: helvetica, color: darkGray });
+    y -= 18;
+  };
+
+  // Customer info
+  drawSectionHeader("CUSTOMER INFORMATION");
+  drawRow("Name", customerName);
+  drawRow("Email", customerEmail || "Not provided");
+  drawRow("Phone", customerPhone || "Not provided");
+  y -= 10;
+
+  // Motor details
+  drawSectionHeader("MOTOR DETAILS");
+  const motorLine = motorInfo?.model ? `${motorInfo.year || 2025} ${motorInfo.model}` : "Not specified";
+  drawRow("Motor", motorLine);
+  if (motorInfo?.hp) drawRow("Horsepower", `${motorInfo.hp} HP`);
+  y -= 10;
+
+  // Payment details
+  drawSectionHeader("PAYMENT DETAILS");
+  drawRow("Deposit Amount", `$${depositAmount} CAD`);
+  drawRow("Payment Status", "Confirmed");
+  drawRow("Payment ID", paymentId || "N/A");
+  drawRow("Payment Date", dateStr);
+  drawRow("Reference Number", referenceNumber);
+  y -= 20;
+
+  // Next steps box
+  page.drawRectangle({ x: 40, y: y - 80, width: 532, height: 85, color: rgb(0.94, 0.97, 1) });
+  page.drawText("NEXT STEPS", { x: 55, y: y - 8, size: 11, font: helveticaBold, color: blue });
+  page.drawText("• We will contact you within 24-48 hours to discuss delivery options.", { x: 55, y: y - 26, size: 9, font: helvetica, color: darkGray });
+  page.drawText("• We'll schedule rigging and installation if applicable.", { x: 55, y: y - 40, size: 9, font: helvetica, color: darkGray });
+  page.drawText("• Remaining balance is due upon delivery or pickup.", { x: 55, y: y - 54, size: 9, font: helvetica, color: darkGray });
+  page.drawText("• Deposit is fully refundable before delivery.", { x: 55, y: y - 68, size: 9, font: helvetica, color: darkGray });
+
+  // Footer
+  page.drawText("Harris Boat Works  •  5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  •  (905) 342-2153", {
+    x: 40, y: 40, size: 8, font: helvetica, color: gray,
+  });
+  page.drawText("info@harrisboatworks.ca  •  mercuryrepower.ca", {
+    x: 40, y: 28, size: 8, font: helvetica, color: gray,
+  });
+
+  return await doc.save();
+}
+
+async function downloadQuotePdf(
+  path: string,
+  customerName?: string,
+  customerEmail?: string,
+  customerPhone?: string,
+  depositAmount?: string,
+  referenceNumber?: string,
+  paymentId?: string,
+  motorInfo?: { model?: string; hp?: number; year?: number },
+): Promise<{ content: string; filename: string } | null> {
   try {
     logStep("Downloading quote PDF from storage", { path });
     const { data, error } = await supabase.storage.from("quotes").download(path);
@@ -59,18 +179,25 @@ async function downloadQuotePdf(path: string): Promise<{ content: string; filena
       return null;
     }
     const arrayBuffer = await data.arrayBuffer();
-    const bytes = new Uint8Array(arrayBuffer);
-    // Chunk the conversion to avoid stack overflow on large files
-    let binary = '';
-    const chunkSize = 8192;
-    for (let i = 0; i < bytes.length; i += chunkSize) {
-      const chunk = bytes.subarray(i, i + chunkSize);
-      binary += String.fromCharCode(...chunk);
+    let bytes = new Uint8Array(arrayBuffer);
+
+    // Stamp deposit confirmation page onto the quote PDF
+    if (depositAmount && referenceNumber) {
+      try {
+        bytes = await addDepositPageToPdf(
+          bytes, customerName || "", customerEmail || "", customerPhone || "",
+          depositAmount, referenceNumber, paymentId || "", motorInfo,
+        );
+        logStep("Deposit confirmation page added to quote PDF");
+      } catch (stampErr: any) {
+        logStep("WARNING: Could not add deposit page to PDF", { error: stampErr.message });
+      }
     }
-    const base64 = btoa(binary);
+
+    const base64 = toBase64(bytes);
     const filename = path.split("/").pop() || "Motor-Quote.pdf";
-    logStep("Quote PDF downloaded successfully", { size: bytes.length, filename });
-    return { content: base64, filename: `Motor-Quote-${filename}` };
+    logStep("Quote PDF ready", { size: bytes.length, filename });
+    return { content: base64, filename: `Motor-Quote-Invoice-${filename}` };
   } catch (err: any) {
     logStep("WARNING: Exception downloading quote PDF", { error: err.message });
     return null;
@@ -291,20 +418,34 @@ serve(async (req) => {
     const referenceNumber = generateReferenceNumber(paymentId);
     const motorLabel = getMotorLabel(motorInfo);
 
+    // Download and stamp the quote PDF with deposit info (used for both customer & admin)
+    let stampedQuotePdf: { content: string; filename: string } | null = null;
+    if (quotePdfPath) {
+      stampedQuotePdf = await downloadQuotePdf(
+        quotePdfPath, customerName, customerEmail || "", customerPhone || "",
+        depositAmount, referenceNumber, paymentId || "", motorInfo,
+      );
+    }
+
     // Send customer confirmation email (unless admin-only)
     if (!adminOnly && customerEmail) {
       const emailHtml = createDepositConfirmationEmail(customerName, depositAmount, referenceNumber, motorInfo);
       const customerSubject = motorLabel
         ? `Deposit Confirmed — ${motorLabel} — Ref ${referenceNumber}`
         : `Deposit Confirmed — Ref ${referenceNumber}`;
+      const customerAttachments: Array<{ filename: string; content: string }> = [];
+      if (stampedQuotePdf) {
+        customerAttachments.push(stampedQuotePdf);
+      }
       const emailResponse = await resend.emails.send({
         from: "Harris Boat Works <deposits@hbwsales.ca>",
         to: [customerEmail],
         subject: customerSubject,
         html: emailHtml,
         bcc: ["info@harrisboatworks.ca"],
+        ...(customerAttachments.length > 0 ? { attachments: customerAttachments } : {}),
       });
-      logStep("Customer email sent", { emailResponse });
+      logStep("Customer email sent", { emailResponse, attachments: customerAttachments.length });
     }
 
     // Send admin notification email with PDF attachments
@@ -317,12 +458,9 @@ serve(async (req) => {
       // Build attachments array
       const attachments: Array<{ filename: string; content: string }> = [];
 
-      // 1. Try to download the actual motor quote PDF from storage (primary attachment)
-      if (quotePdfPath) {
-        const quotePdf = await downloadQuotePdf(quotePdfPath);
-        if (quotePdf) {
-          attachments.push(quotePdf);
-        }
+      // 1. Use the already-stamped quote PDF (with deposit page appended)
+      if (stampedQuotePdf) {
+        attachments.push(stampedQuotePdf);
       }
 
       // 2. Also generate the deposit receipt PDF as a secondary attachment
@@ -331,13 +469,7 @@ serve(async (req) => {
           customerName, customerEmail || "", customerPhone || "",
           depositAmount, referenceNumber, paymentId || "", motorInfo,
         );
-        let receiptBinary = '';
-        const rcChunk = 8192;
-        for (let i = 0; i < receiptBytes.length; i += rcChunk) {
-          const chunk = receiptBytes.subarray(i, i + rcChunk);
-          receiptBinary += String.fromCharCode(...chunk);
-        }
-        const base64 = btoa(receiptBinary);
+        const base64 = toBase64(receiptBytes);
         attachments.push({
           filename: `Deposit-Receipt-${referenceNumber}.pdf`,
           content: base64,

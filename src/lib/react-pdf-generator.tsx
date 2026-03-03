@@ -60,6 +60,15 @@ export interface ReactPdfQuoteData {
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoValue?: string;
   customerNotes?: string;
+  // Deposit/payment confirmation info
+  depositInfo?: {
+    amount: number;
+    referenceNumber: string;
+    paymentDate: string;
+    paymentMethod?: string;
+    paymentId?: string;
+    status?: string;
+  };
 }
 
 /**
@@ -133,6 +142,7 @@ export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string>
       selectedPromoValue: data.selectedPromoValue,
       pricing: data.pricing,
       customerNotes: data.customerNotes,
+      depositInfo: data.depositInfo,
     };
     
     const blob = await pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
@@ -185,6 +195,7 @@ export async function generatePDFBlob(data: ReactPdfQuoteData): Promise<Blob> {
       selectedPromoValue: data.selectedPromoValue,
       pricing: data.pricing,
       customerNotes: data.customerNotes,
+      depositInfo: data.depositInfo,
     };
     
     const blob = await pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();

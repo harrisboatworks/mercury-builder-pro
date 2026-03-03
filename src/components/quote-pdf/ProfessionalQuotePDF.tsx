@@ -454,6 +454,15 @@ export interface QuotePDFProps {
     // Selected promo option from "Choose One"
     selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
     selectedPromoValue?: string; // e.g., "$500" or "2.99%" or "6 months"
+    // Deposit/payment confirmation
+    depositInfo?: {
+      amount: number;
+      referenceNumber: string;
+      paymentDate: string;
+      paymentMethod?: string;
+      paymentId?: string;
+      status?: string;
+    };
     // Pricing breakdown with admin discount
     pricing?: {
       msrp: number;
@@ -881,6 +890,61 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           <View style={{ marginTop: 4, marginBottom: 4, padding: 8, border: `1 solid ${colors.border}`, backgroundColor: colors.tableBg }}>
             <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>Notes</Text>
             <Text style={{ fontSize: 9, color: colors.text, lineHeight: 1.4 }}>{quoteData.customerNotes}</Text>
+          </View>
+        )}
+
+        {/* Deposit Payment Confirmation */}
+        {quoteData.depositInfo && (
+          <View style={{ marginTop: 8, marginBottom: 4, padding: 10, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+              <Text style={{ fontSize: 12, fontWeight: 'bold', color: colors.text }}>
+                ✓ DEPOSIT PAYMENT CONFIRMED
+              </Text>
+              <Text style={{ fontSize: 14, fontWeight: 'bold', color: colors.discount }}>
+                ${quoteData.depositInfo.amount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
+              </Text>
+            </View>
+            <View style={{ flexDirection: 'row', gap: 20 }}>
+              <View style={{ flex: 1 }}>
+                <View style={styles.infoRow}>
+                  <Text style={[styles.infoLabel, { width: 90 }]}>Reference #:</Text>
+                  <Text style={[styles.infoValue, { fontWeight: 'bold' }]}>{quoteData.depositInfo.referenceNumber}</Text>
+                </View>
+                <View style={styles.infoRow}>
+                  <Text style={[styles.infoLabel, { width: 90 }]}>Payment Date:</Text>
+                  <Text style={styles.infoValue}>{quoteData.depositInfo.paymentDate}</Text>
+                </View>
+                {quoteData.depositInfo.paymentMethod && (
+                  <View style={styles.infoRow}>
+                    <Text style={[styles.infoLabel, { width: 90 }]}>Method:</Text>
+                    <Text style={styles.infoValue}>{quoteData.depositInfo.paymentMethod}</Text>
+                  </View>
+                )}
+                {quoteData.depositInfo.paymentId && (
+                  <View style={styles.infoRow}>
+                    <Text style={[styles.infoLabel, { width: 90 }]}>Transaction:</Text>
+                    <Text style={{ fontSize: 8, color: colors.lightText, flex: 1 }}>{quoteData.depositInfo.paymentId}</Text>
+                  </View>
+                )}
+              </View>
+              <View style={{ flex: 1 }}>
+                <View style={styles.infoRow}>
+                  <Text style={[styles.infoLabel, { width: 90 }]}>Status:</Text>
+                  <Text style={[styles.infoValue, { color: colors.discount, fontWeight: 'bold' }]}>
+                    {quoteData.depositInfo.status || 'Confirmed'}
+                  </Text>
+                </View>
+                <View style={styles.infoRow}>
+                  <Text style={[styles.infoLabel, { width: 90 }]}>Balance Due:</Text>
+                  <Text style={[styles.infoValue, { fontWeight: 'bold' }]}>
+                    ${((quoteData.pricing?.totalCashPrice || parseFloat(quoteData.total.replace(/,/g, ''))) - quoteData.depositInfo.amount).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 6, fontStyle: 'italic' }}>
+              Deposit is fully refundable before delivery. Remaining balance due upon pickup or delivery.
+            </Text>
           </View>
         )}
 
