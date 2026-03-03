@@ -270,7 +270,7 @@ export type Database = {
           total_cost: number
           tradein_value_final: number | null
           tradein_value_pre_penalty: number | null
-          user_id: string
+          user_id: string | null
         }
         Insert: {
           admin_discount?: number | null
@@ -309,7 +309,7 @@ export type Database = {
           total_cost: number
           tradein_value_final?: number | null
           tradein_value_pre_penalty?: number | null
-          user_id: string
+          user_id?: string | null
         }
         Update: {
           admin_discount?: number | null
@@ -348,7 +348,7 @@ export type Database = {
           total_cost?: number
           tradein_value_final?: number | null
           tradein_value_pre_penalty?: number | null
-          user_id?: string
+          user_id?: string | null
         }
         Relationships: [
           {

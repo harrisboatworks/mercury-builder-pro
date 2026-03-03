@@ -1,0 +1,1 @@
+DELETE FROM public.customer_quotes WHERE customer_email = 'test@test.com' AND lead_source = 'deposit' AND customer_name = 'Test User';
