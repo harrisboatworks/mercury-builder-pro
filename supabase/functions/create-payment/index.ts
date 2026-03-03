@@ -148,6 +148,7 @@ serve(async (req) => {
       const customerName = customerInfo?.name || "Customer";
       const customerPhone = customerInfo?.phone || "";
       const motorInfo = rawBody.motorInfo || null;
+      const quotePdfPath = rawBody.quotePdfPath || "";
       
       const sessionData: Stripe.Checkout.SessionCreateParams = {
         line_items: [{ price: priceId, quantity: 1 }],
@@ -160,7 +161,8 @@ serve(async (req) => {
           customer_name: customerName,
           customer_email: userEmail || customerInfo?.email || "",
           customer_phone: customerPhone,
-          motor_info: motorInfo ? JSON.stringify(motorInfo) : ""
+          motor_info: motorInfo ? JSON.stringify(motorInfo) : "",
+          quote_pdf_path: quotePdfPath,
         }
       };
 
@@ -196,6 +198,7 @@ serve(async (req) => {
             stripe_session_id: session.id,
             payment_status: "pending",
             motor_info: motorInfo,
+            quote_pdf_path: quotePdfPath || null,
           },
         });
         if (depositSaveError) {

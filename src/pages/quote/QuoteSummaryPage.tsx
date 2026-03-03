@@ -615,19 +615,95 @@ export default function QuoteSummaryPage() {
     setIsProcessingDeposit(true);
     try {
       const customerEmail = user?.email;
+      
+      // Generate the quote PDF and upload to storage so it can be attached to admin email
+      let quotePdfPath: string | undefined;
+      try {
+        const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
+        const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+        const packageTax = packageSpecificTotals.subtotal * 0.13;
+        const packageTotal = packageSpecificTotals.subtotal + packageTax;
+        
+        const pdfData = {
+          quoteNumber,
+          customerName: state.customerName || user?.user_metadata?.full_name || 'Customer',
+          customerEmail: state.customerEmail || customerEmail || '',
+          customerPhone: state.customerPhone || '',
+          motor: {
+            model: motorName,
+            hp: hp,
+            msrp: motorMSRP,
+            base_price: motorMSRP - motorDiscount,
+            sale_price: motorMSRP - motorDiscount - promoSavings,
+            dealer_price: motorMSRP - motorDiscount,
+            model_year: modelYear || 2026,
+            category: motor?.category || 'FourStroke',
+            imageUrl: imageUrl
+          },
+          selectedPackage: {
+            id: selectedPackage,
+            label: selectedPackageLabel,
+            coverageYears: selectedPackageCoverageYears,
+            features: []
+          },
+          accessoryBreakdown,
+          ...(state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue && state.tradeInInfo.estimatedValue > 0 && state.tradeInInfo?.brand ? {
+            tradeInValue: state.tradeInInfo.estimatedValue,
+            tradeInInfo: {
+              brand: state.tradeInInfo.brand,
+              year: state.tradeInInfo.year,
+              horsepower: state.tradeInInfo.horsepower,
+              model: state.tradeInInfo.model
+            }
+          } : {}),
+          includesInstallation: state.purchasePath === 'installed',
+          pricing: {
+            msrp: motorMSRP,
+            discount: motorDiscount,
+            adminDiscount: state.adminDiscount || 0,
+            promoValue: promoSavings,
+            motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
+            subtotal: packageSpecificTotals.subtotal,
+            hst: packageTax,
+            totalCashPrice: packageTotal,
+            savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
+          },
+          selectedPromoOption: state.selectedPromoOption,
+          selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
+          customerNotes: state.customerNotes || undefined,
+        };
+
+        const pdfBlob = await generatePDFBlob(pdfData);
+        const fileName = `deposit-quotes/${quoteNumber}-${Date.now()}.pdf`;
+        const { error: uploadError } = await supabase.storage
+          .from('quotes')
+          .upload(fileName, pdfBlob, { contentType: 'application/pdf' });
+
+        if (!uploadError) {
+          quotePdfPath = fileName;
+          console.log('Quote PDF uploaded for deposit:', fileName);
+        } else {
+          console.warn('Failed to upload quote PDF:', uploadError.message);
+        }
+      } catch (pdfErr) {
+        console.warn('Could not generate quote PDF for deposit:', pdfErr);
+      }
+
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: {
           paymentType: 'deposit',
           depositAmount: String(depositAmount),
           customerInfo: {
             name: user?.user_metadata?.full_name || 'Customer',
-            ...(customerEmail ? { email: customerEmail } : {})
+            ...(customerEmail ? { email: customerEmail } : {}),
+            phone: state.customerPhone || ''
           },
           motorInfo: {
             model: motorName,
             hp: hp,
             year: modelYear || 2026
-          }
+          },
+          quotePdfPath,
         }
       });
 
