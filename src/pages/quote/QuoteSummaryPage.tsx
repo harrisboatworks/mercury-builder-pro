@@ -622,77 +622,125 @@ export default function QuoteSummaryPage() {
     setShowDepositDialog(false);
     setIsProcessingDeposit(true);
     try {
-      // Generate the quote PDF with REAL customer info baked in
+      const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
+      const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
+      const packageTax = packageSpecificTotals.subtotal * 0.13;
+      const packageTotal = packageSpecificTotals.subtotal + packageTax;
+      const referenceNumber = `HBW-DEP-${quoteNumber.slice(4)}`;
+      
+      const basePdfData = {
+        quoteNumber,
+        customerName: customerInfo.name,
+        customerEmail: customerInfo.email,
+        customerPhone: customerInfo.phone,
+        motor: {
+          model: motorName,
+          hp: hp,
+          msrp: motorMSRP,
+          base_price: motorMSRP - motorDiscount,
+          sale_price: motorMSRP - motorDiscount - promoSavings,
+          dealer_price: motorMSRP - motorDiscount,
+          model_year: modelYear || 2026,
+          category: motor?.category || 'FourStroke',
+          imageUrl: imageUrl
+        },
+        selectedPackage: {
+          id: selectedPackage,
+          label: selectedPackageLabel,
+          coverageYears: selectedPackageCoverageYears,
+          features: []
+        },
+        accessoryBreakdown,
+        ...(state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue && state.tradeInInfo.estimatedValue > 0 && state.tradeInInfo?.brand ? {
+          tradeInValue: state.tradeInInfo.estimatedValue,
+          tradeInInfo: {
+            brand: state.tradeInInfo.brand,
+            year: state.tradeInInfo.year,
+            horsepower: state.tradeInInfo.horsepower,
+            model: state.tradeInInfo.model
+          }
+        } : {}),
+        includesInstallation: state.purchasePath === 'installed',
+        pricing: {
+          msrp: motorMSRP,
+          discount: motorDiscount,
+          adminDiscount: state.adminDiscount || 0,
+          promoValue: promoSavings,
+          motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
+          subtotal: packageSpecificTotals.subtotal,
+          hst: packageTax,
+          totalCashPrice: packageTotal,
+          savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
+        },
+        selectedPromoOption: state.selectedPromoOption,
+        selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
+        customerNotes: state.customerNotes || undefined,
+      };
+
+      // Generate TWO PDFs: clean quote + deposit-confirmed version
       let quotePdfPath: string | undefined;
+      let depositPdfPath: string | undefined;
+      
       try {
-        const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
-        const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-        const packageTax = packageSpecificTotals.subtotal * 0.13;
-        const packageTotal = packageSpecificTotals.subtotal + packageTax;
-        
-        const pdfData = {
-          quoteNumber,
-          customerName: customerInfo.name,
-          customerEmail: customerInfo.email,
-          customerPhone: customerInfo.phone,
-          motor: {
-            model: motorName,
-            hp: hp,
-            msrp: motorMSRP,
-            base_price: motorMSRP - motorDiscount,
-            sale_price: motorMSRP - motorDiscount - promoSavings,
-            dealer_price: motorMSRP - motorDiscount,
-            model_year: modelYear || 2026,
-            category: motor?.category || 'FourStroke',
-            imageUrl: imageUrl
-          },
-          selectedPackage: {
-            id: selectedPackage,
-            label: selectedPackageLabel,
-            coverageYears: selectedPackageCoverageYears,
-            features: []
-          },
-          accessoryBreakdown,
-          ...(state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue && state.tradeInInfo.estimatedValue > 0 && state.tradeInInfo?.brand ? {
-            tradeInValue: state.tradeInInfo.estimatedValue,
-            tradeInInfo: {
-              brand: state.tradeInInfo.brand,
-              year: state.tradeInInfo.year,
-              horsepower: state.tradeInInfo.horsepower,
-              model: state.tradeInInfo.model
-            }
-          } : {}),
-          includesInstallation: state.purchasePath === 'installed',
-          pricing: {
-            msrp: motorMSRP,
-            discount: motorDiscount,
-            adminDiscount: state.adminDiscount || 0,
-            promoValue: promoSavings,
-            motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
-            subtotal: packageSpecificTotals.subtotal,
-            hst: packageTax,
-            totalCashPrice: packageTotal,
-            savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
-          },
-          selectedPromoOption: state.selectedPromoOption,
-          selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
-          customerNotes: state.customerNotes || undefined,
-        };
-
-        const pdfBlob = await generatePDFBlob(pdfData);
-        const fileName = `deposit-quotes/${quoteNumber}-${Date.now()}.pdf`;
-        const { error: uploadError } = await supabase.storage
+        // 1. Clean quote PDF
+        const cleanBlob = await generatePDFBlob(basePdfData);
+        const cleanFileName = `deposit-quotes/${quoteNumber}-${Date.now()}.pdf`;
+        const { error: cleanErr } = await supabase.storage
           .from('quotes')
-          .upload(fileName, pdfBlob, { contentType: 'application/pdf' });
+          .upload(cleanFileName, cleanBlob, { contentType: 'application/pdf' });
+        if (!cleanErr) {
+          quotePdfPath = cleanFileName;
+          console.log('Clean quote PDF uploaded:', cleanFileName);
+        }
 
-        if (!uploadError) {
-          quotePdfPath = fileName;
-          console.log('Quote PDF uploaded for deposit:', fileName);
-        } else {
-          console.warn('Failed to upload quote PDF:', uploadError.message);
+        // 2. Deposit-confirmed PDF (with depositInfo baked in)
+        const depositPdfData = {
+          ...basePdfData,
+          depositInfo: {
+            amount: depositAmount,
+            referenceNumber,
+            paymentDate: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+            paymentMethod: 'Credit Card (Stripe)',
+            status: 'Confirmed',
+          },
+        };
+        const depositBlob = await generatePDFBlob(depositPdfData);
+        const depositFileName = `deposit-quotes/${quoteNumber}-${Date.now()}-deposit.pdf`;
+        const { error: depositErr } = await supabase.storage
+          .from('quotes')
+          .upload(depositFileName, depositBlob, { contentType: 'application/pdf' });
+        if (!depositErr) {
+          depositPdfPath = depositFileName;
+          console.log('Deposit-confirmed PDF uploaded:', depositFileName);
         }
       } catch (pdfErr) {
-        console.warn('Could not generate quote PDF for deposit:', pdfErr);
+        console.warn('Could not generate quote PDFs for deposit:', pdfErr);
+      }
+
+      // Save/update saved_quotes record with PDF paths
+      let savedQuoteId: string | undefined;
+      try {
+        const { data: savedQuote, error: sqError } = await supabase
+          .from('saved_quotes')
+          .insert({
+            email: customerInfo.email,
+            resume_token: `dep_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
+            quote_state: state as any,
+            user_id: user?.id || null,
+            expires_at: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString(),
+            quote_pdf_path: quotePdfPath || null,
+            deposit_pdf_path: depositPdfPath || null,
+            deposit_status: 'pending',
+            deposit_amount: depositAmount,
+          } as any)
+          .select('id')
+          .single();
+        if (!sqError && savedQuote) {
+          savedQuoteId = savedQuote.id;
+          console.log('Saved quote created for deposit tracking:', savedQuoteId);
+        }
+      } catch (sqErr) {
+        console.warn('Could not create saved_quotes record:', sqErr);
       }
 
       const { data, error } = await supabase.functions.invoke('create-payment', {
@@ -709,7 +757,8 @@ export default function QuoteSummaryPage() {
             hp: hp,
             year: modelYear || 2026
           },
-          quotePdfPath,
+          quotePdfPath: depositPdfPath || quotePdfPath,
+          savedQuoteId,
         }
       });
 
