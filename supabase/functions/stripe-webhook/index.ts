@@ -89,13 +89,50 @@ serve(async (req) => {
           }
         }
 
-        logStep("Processing deposit confirmation email", {
+        logStep("Processing deposit confirmation", {
           depositAmount,
           customerName,
           customerEmail,
           paymentIntentId,
           motorInfo,
         });
+
+        // Update existing deposit record status to 'scheduled' (payment confirmed)
+        const { data: existingDeposit, error: findError } = await supabase
+          .from("customer_quotes")
+          .select("id")
+          .eq("lead_source", "deposit")
+          .contains("quote_data", { stripe_session_id: session.id })
+          .maybeSingle();
+
+        if (findError) {
+          logStep("WARNING: Error finding deposit record", { error: findError.message });
+        }
+
+        if (existingDeposit) {
+          const { error: updateError } = await supabase
+            .from("customer_quotes")
+            .update({
+              lead_status: "scheduled",
+              quote_data: {
+                deposit_amount: depositAmount,
+                payment_type: "motor_deposit",
+                stripe_session_id: session.id,
+                stripe_payment_intent: paymentIntentId,
+                payment_status: "paid",
+                motor_info: motorInfo,
+              },
+            })
+            .eq("id", existingDeposit.id);
+
+          if (updateError) {
+            logStep("ERROR: Failed to update deposit record", { error: updateError.message });
+          } else {
+            logStep("Deposit record updated to scheduled", { quoteId: existingDeposit.id });
+          }
+        } else {
+          logStep("No existing deposit record found for session", { sessionId: session.id });
+        }
 
         if (customerEmail) {
           // Call the email sending function

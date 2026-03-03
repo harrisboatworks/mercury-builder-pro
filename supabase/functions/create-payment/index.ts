@@ -114,6 +114,13 @@ serve(async (req) => {
     }
     const stripe = new Stripe(stripeKey, { apiVersion: "2025-08-27.basil" });
 
+    // Initialize service role client early (needed for both deposit and quote paths)
+    const supabaseService = createClient(
+      Deno.env.get("SUPABASE_URL") ?? "",
+      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
+      { auth: { persistSession: false } }
+    );
+
     // Check if customer exists
     let customerId;
     if (userEmail) {
@@ -164,6 +171,39 @@ serve(async (req) => {
       const session = await stripe.checkout.sessions.create(sessionData);
       logStep("Deposit payment session created", { sessionId: session.id });
 
+      // Save deposit record to customer_quotes BEFORE returning checkout URL
+      try {
+        const { error: depositSaveError } = await supabaseService.from("customer_quotes").insert({
+          user_id: user?.id || null,
+          anonymous_session_id: user ? null : (session.id || crypto.randomUUID()),
+          customer_name: customerName,
+          customer_email: userEmail || customerInfo?.email || "",
+          base_price: 0,
+          final_price: 0,
+          deposit_amount: parseInt(depositAmount),
+          total_cost: 0,
+          loan_amount: 0,
+          monthly_payment: 0,
+          term_months: 0,
+          lead_status: "downloaded",
+          lead_source: "deposit",
+          quote_data: {
+            deposit_amount: depositAmount,
+            payment_type: "motor_deposit",
+            stripe_session_id: session.id,
+            payment_status: "pending",
+            motor_info: motorInfo,
+          },
+        });
+        if (depositSaveError) {
+          logStep("WARNING: Failed to save deposit record", { error: depositSaveError.message });
+        } else {
+          logStep("Deposit record saved to customer_quotes");
+        }
+      } catch (saveErr) {
+        logStep("WARNING: Exception saving deposit record", { error: saveErr instanceof Error ? saveErr.message : String(saveErr) });
+      }
+
       return new Response(JSON.stringify({ url: session.url, sessionId: session.id }), {
         headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 200,
@@ -174,12 +214,7 @@ serve(async (req) => {
     if (!quoteData) throw new Error("Quote data is required for quote payments");
     logStep("Quote data received", { totalPrice: quoteData.totalPrice });
 
-    // Server-side price validation using service role key
-    const supabaseService = createClient(
-      Deno.env.get("SUPABASE_URL") ?? "",
-      Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "",
-      { auth: { persistSession: false } }
-    );
+    // Server-side price validation (supabaseService already initialized above)
 
     // Validate motor price if motorId is provided
     let validatedMotorPrice = quoteData.motorPrice || 0;
