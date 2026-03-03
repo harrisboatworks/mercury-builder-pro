@@ -60,7 +60,14 @@ async function downloadQuotePdf(path: string): Promise<{ content: string; filena
     }
     const arrayBuffer = await data.arrayBuffer();
     const bytes = new Uint8Array(arrayBuffer);
-    const base64 = btoa(String.fromCharCode(...bytes));
+    // Chunk the conversion to avoid stack overflow on large files
+    let binary = '';
+    const chunkSize = 8192;
+    for (let i = 0; i < bytes.length; i += chunkSize) {
+      const chunk = bytes.subarray(i, i + chunkSize);
+      binary += String.fromCharCode(...chunk);
+    }
+    const base64 = btoa(binary);
     const filename = path.split("/").pop() || "Motor-Quote.pdf";
     logStep("Quote PDF downloaded successfully", { size: bytes.length, filename });
     return { content: base64, filename: `Motor-Quote-${filename}` };
@@ -324,7 +331,13 @@ serve(async (req) => {
           customerName, customerEmail || "", customerPhone || "",
           depositAmount, referenceNumber, paymentId || "", motorInfo,
         );
-        const base64 = btoa(String.fromCharCode(...receiptBytes));
+        let receiptBinary = '';
+        const rcChunk = 8192;
+        for (let i = 0; i < receiptBytes.length; i += rcChunk) {
+          const chunk = receiptBytes.subarray(i, i + rcChunk);
+          receiptBinary += String.fromCharCode(...chunk);
+        }
+        const base64 = btoa(receiptBinary);
         attachments.push({
           filename: `Deposit-Receipt-${referenceNumber}.pdf`,
           content: base64,
