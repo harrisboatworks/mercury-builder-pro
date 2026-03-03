@@ -77,6 +77,17 @@ serve(async (req) => {
           ? session.payment_intent 
           : session.payment_intent?.id;
         
+        // Extract billing address from Stripe session
+        const billingAddress = session.customer_details?.address;
+        const customerAddress = billingAddress ? {
+          line1: billingAddress.line1 || "",
+          line2: billingAddress.line2 || "",
+          city: billingAddress.city || "",
+          state: billingAddress.state || "",
+          postalCode: billingAddress.postal_code || "",
+          country: billingAddress.country || "",
+        } : null;
+
         let motorInfo = null;
         if (session.metadata.motor_info) {
           try {
@@ -87,7 +98,7 @@ serve(async (req) => {
         }
 
         logStep("Processing deposit confirmation", {
-          depositAmount, customerName, customerEmail, paymentIntentId, motorInfo,
+          depositAmount, customerName, customerEmail, paymentIntentId, motorInfo, customerAddress,
         });
 
         const quotePdfPath = session.metadata.quote_pdf_path || "";
@@ -148,6 +159,7 @@ serve(async (req) => {
               customerEmail,
               customerName,
               customerPhone,
+              customerAddress,
               depositAmount,
               paymentId: paymentIntentId,
               motorInfo,
@@ -169,6 +181,7 @@ serve(async (req) => {
               customerEmail: "",
               customerName,
               customerPhone,
+              customerAddress,
               depositAmount,
               paymentId: paymentIntentId,
               motorInfo,
