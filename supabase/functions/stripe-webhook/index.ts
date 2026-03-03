@@ -20,7 +20,6 @@ function logStep(step: string, data?: Record<string, unknown>) {
 }
 
 serve(async (req) => {
-  // Handle CORS preflight
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -60,7 +59,6 @@ serve(async (req) => {
 
     logStep("Event received", { type: event.type, id: event.id });
 
-    // Handle checkout.session.completed for deposit payments
     if (event.type === "checkout.session.completed") {
       const session = event.data.object as Stripe.Checkout.Session;
       
@@ -70,7 +68,6 @@ serve(async (req) => {
         customerEmail: session.customer_email,
       });
 
-      // Only process motor deposit payments
       if (session.metadata?.payment_type === "motor_deposit") {
         const depositAmount = session.metadata.deposit_amount;
         const customerName = session.metadata.customer_name || "Customer";
@@ -80,7 +77,6 @@ serve(async (req) => {
           ? session.payment_intent 
           : session.payment_intent?.id;
         
-        // Parse motor info if available
         let motorInfo = null;
         if (session.metadata.motor_info) {
           try {
@@ -91,20 +87,16 @@ serve(async (req) => {
         }
 
         logStep("Processing deposit confirmation", {
-          depositAmount,
-          customerName,
-          customerEmail,
-          paymentIntentId,
-          motorInfo,
+          depositAmount, customerName, customerEmail, paymentIntentId, motorInfo,
         });
 
-        // Get quote PDF path from metadata
         const quotePdfPath = session.metadata.quote_pdf_path || "";
 
-        // Update existing deposit record status to 'scheduled' (payment confirmed)
+        // Fetch the full quote record to get pricing data
+        let quoteRecord: any = null;
         const { data: existingDeposit, error: findError } = await supabase
           .from("customer_quotes")
-          .select("id")
+          .select("*")
           .eq("lead_source", "deposit")
           .contains("quote_data", { stripe_session_id: session.id })
           .maybeSingle();
@@ -114,12 +106,14 @@ serve(async (req) => {
         }
 
         if (existingDeposit) {
+          quoteRecord = existingDeposit;
           const { error: updateError } = await supabase
             .from("customer_quotes")
             .update({
               lead_status: "scheduled",
               quote_data: {
-              deposit_amount: depositAmount,
+                ...(existingDeposit.quote_data || {}),
+                deposit_amount: depositAmount,
                 payment_type: "motor_deposit",
                 stripe_session_id: session.id,
                 stripe_payment_intent: paymentIntentId,
@@ -139,8 +133,16 @@ serve(async (req) => {
           logStep("No existing deposit record found for session", { sessionId: session.id });
         }
 
+        // Build pricing data from the quote record
+        const pricingData = quoteRecord ? {
+          basePrice: quoteRecord.base_price,
+          finalPrice: quoteRecord.final_price,
+          totalCost: quoteRecord.total_cost,
+          discountAmount: quoteRecord.discount_amount,
+          quoteData: quoteRecord.quote_data,
+        } : null;
+
         if (customerEmail) {
-          // Send customer confirmation email
           const { error: emailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
             body: {
               customerEmail,
@@ -151,6 +153,7 @@ serve(async (req) => {
               motorInfo,
               sendAdminNotification: true,
               quotePdfPath,
+              pricingData,
             },
           });
 
@@ -161,7 +164,6 @@ serve(async (req) => {
           }
         } else {
           logStep("WARNING: No customer email available for confirmation");
-          // Still send admin notification even without customer email
           const { error: adminEmailError } = await supabase.functions.invoke("send-deposit-confirmation-email", {
             body: {
               customerEmail: "",
@@ -173,6 +175,7 @@ serve(async (req) => {
               sendAdminNotification: true,
               adminOnly: true,
               quotePdfPath,
+              pricingData,
             },
           });
           if (adminEmailError) {

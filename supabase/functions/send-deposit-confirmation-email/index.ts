@@ -28,6 +28,13 @@ interface DepositConfirmationRequest {
   sendAdminNotification?: boolean;
   adminOnly?: boolean;
   quotePdfPath?: string;
+  pricingData?: {
+    basePrice?: number;
+    finalPrice?: number;
+    totalCost?: number;
+    discountAmount?: number;
+    quoteData?: any;
+  };
 }
 
 const ADMIN_EMAILS = ["jayharris97@gmail.com", "harrisboatworks@hotmail.com"];
@@ -48,8 +55,6 @@ function getMotorLabel(motorInfo?: { model?: string; hp?: number; year?: number 
   return `${motorInfo.year || 2025} ${motorInfo.model}${motorInfo.hp ? ` ${motorInfo.hp}HP` : ""}`;
 }
 
-// ── Download quote PDF from Supabase Storage & stamp deposit info ────────────
-
 function toBase64(bytes: Uint8Array): string {
   let binary = '';
   const chunkSize = 8192;
@@ -60,8 +65,13 @@ function toBase64(bytes: Uint8Array): string {
   return btoa(binary);
 }
 
-async function addDepositPageToPdf(
-  pdfBytes: Uint8Array,
+function fmt(n: number): string {
+  return n.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+// ── Generate unified invoice PDF (single page with everything) ──────────────
+
+async function generateInvoicePdf(
   customerName: string,
   customerEmail: string,
   customerPhone: string,
@@ -69,108 +79,180 @@ async function addDepositPageToPdf(
   referenceNumber: string,
   paymentId: string,
   motorInfo?: { model?: string; hp?: number; year?: number },
+  pricingData?: {
+    basePrice?: number;
+    finalPrice?: number;
+    totalCost?: number;
+    discountAmount?: number;
+    quoteData?: any;
+  },
 ): Promise<Uint8Array> {
-  const doc = await PDFDocument.load(pdfBytes);
+  const doc = await PDFDocument.create();
   const page = doc.addPage([612, 792]);
   const helvetica = await doc.embedFont(StandardFonts.Helvetica);
   const helveticaBold = await doc.embedFont(StandardFonts.HelveticaBold);
-  const { height } = page.getSize();
+  const { width, height } = page.getSize();
 
+  const navy = rgb(0.10, 0.21, 0.36);      // #1a365d
   const blue = rgb(0, 0.49, 0.77);
-  const darkGray = rgb(0.15, 0.15, 0.15);
-  const gray = rgb(0.4, 0.4, 0.4);
+  const darkGray = rgb(0.07, 0.09, 0.15);
+  const gray = rgb(0.42, 0.44, 0.49);
+  const lightGray = rgb(0.88, 0.90, 0.92);
   const green = rgb(0.02, 0.59, 0.41);
   const white = rgb(1, 1, 1);
   const lightBg = rgb(0.96, 0.97, 0.98);
 
-  let y = height - 50;
+  const depositNum = parseFloat(depositAmount) || 0;
+  const dateStr = new Date().toLocaleDateString("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "long", day: "numeric" });
 
-  // Header bar
-  page.drawRectangle({ x: 0, y: y - 10, width: 612, height: 60, color: blue });
-  page.drawText("HARRIS BOAT WORKS", { x: 40, y: y + 12, size: 20, font: helveticaBold, color: white });
-  page.drawText("Authorized Mercury Marine Dealer", { x: 40, y: y - 6, size: 10, font: helvetica, color: rgb(0.85, 0.92, 1) });
+  // Extract pricing from quoteData or pricingData
+  const qd = pricingData?.quoteData || {};
+  const msrp = qd.pricing?.msrp || qd.msrp || pricingData?.basePrice || 0;
+  const discount = qd.pricing?.discount || qd.discount || pricingData?.discountAmount || 0;
+  const adminDiscount = qd.pricing?.adminDiscount || 0;
+  const promoValue = qd.pricing?.promoValue || 0;
+  const subtotal = qd.pricing?.subtotal || 0;
+  const hst = qd.pricing?.hst || 0;
+  const totalCashPrice = qd.pricing?.totalCashPrice || pricingData?.totalCost || pricingData?.finalPrice || 0;
+  const tradeInValue = qd.tradeInValue || qd.trade_in_value || 0;
+  const balanceDue = totalCashPrice > 0 ? totalCashPrice - depositNum : 0;
+
+  let y = height - 40;
+
+  // ── HEADER BAR ──
+  page.drawRectangle({ x: 0, y: y - 15, width, height: 65, color: navy });
+  page.drawText("HARRIS BOAT WORKS", { x: 40, y: y + 14, size: 22, font: helveticaBold, color: white });
+  page.drawText("Authorized Mercury Marine Dealer", { x: 40, y: y - 4, size: 10, font: helvetica, color: rgb(0.63, 0.70, 0.80) });
+  page.drawText("INVOICE", { x: width - 120, y: y + 14, size: 22, font: helveticaBold, color: white });
   y -= 90;
 
-  // Title
-  page.drawText("DEPOSIT CONFIRMATION & INVOICE", { x: 40, y, size: 22, font: helveticaBold, color: darkGray });
-  y -= 18;
-  const dateStr = new Date().toLocaleDateString("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "long", day: "numeric" });
-  page.drawText(dateStr, { x: 40, y, size: 10, font: helvetica, color: gray });
-  y -= 28;
+  // ── REFERENCE & DATE ROW ──
+  page.drawText(`Reference: ${referenceNumber}`, { x: 40, y, size: 12, font: helveticaBold, color: blue });
+  page.drawText(`Date: ${dateStr}`, { x: width - 220, y, size: 10, font: helvetica, color: gray });
+  y -= 25;
 
-  // Reference + Amount box
-  page.drawRectangle({ x: 40, y: y - 55, width: 532, height: 60, color: lightBg });
-  page.drawRectangle({ x: 40, y: y - 55, width: 532, height: 60, borderColor: green, borderWidth: 2, color: lightBg });
-  page.drawText("[CONFIRMED]  PAYMENT CONFIRMED", { x: 55, y: y - 10, size: 14, font: helveticaBold, color: green });
-  page.drawText(`Reference: ${referenceNumber}`, { x: 55, y: y - 30, size: 12, font: helveticaBold, color: blue });
-  page.drawText(`Amount Paid: $${depositAmount} CAD`, { x: 350, y: y - 30, size: 12, font: helveticaBold, color: green });
-  page.drawText(`Transaction: ${paymentId || "N/A"}`, { x: 55, y: y - 46, size: 8, font: helvetica, color: gray });
-  y -= 80;
-
+  // ── CUSTOMER INFORMATION ──
   const drawSectionHeader = (label: string) => {
-    page.drawRectangle({ x: 40, y: y - 4, width: 532, height: 22, color: blue });
-    page.drawText(label, { x: 50, y: y, size: 11, font: helveticaBold, color: white });
+    page.drawRectangle({ x: 40, y: y - 4, width: width - 80, height: 22, color: navy });
+    page.drawText(label, { x: 50, y: y, size: 10, font: helveticaBold, color: white });
     y -= 28;
   };
 
-  const drawRow = (label: string, value: string) => {
-    page.drawText(label, { x: 55, y, size: 10, font: helveticaBold, color: gray });
-    page.drawText(value || "Not provided", { x: 200, y, size: 10, font: helvetica, color: darkGray });
+  const drawRow = (label: string, value: string, opts?: { bold?: boolean; color?: any }) => {
+    page.drawText(label, { x: 55, y, size: 9, font: helveticaBold, color: gray });
+    page.drawText(value || "—", { x: 180, y, size: 9, font: opts?.bold ? helveticaBold : helvetica, color: opts?.color || darkGray });
+    y -= 16;
+  };
+
+  drawSectionHeader("CUSTOMER INFORMATION");
+  drawRow("Name", customerName, { bold: true });
+  drawRow("Email", customerEmail);
+  drawRow("Phone", customerPhone || "Not provided");
+  y -= 6;
+
+  // ── MOTOR DETAILS ──
+  drawSectionHeader("MOTOR DETAILS");
+  const motorLine = motorInfo?.model ? `${motorInfo.year || 2025} Mercury ${motorInfo.model}` : "Motor — see quote";
+  drawRow("Motor", motorLine, { bold: true });
+  if (motorInfo?.hp) drawRow("Horsepower", `${motorInfo.hp} HP`);
+  y -= 6;
+
+  // ── PRICING BREAKDOWN ──
+  drawSectionHeader("PRICING BREAKDOWN");
+
+  const drawPricingRow = (label: string, amount: number, opts?: { negative?: boolean; bold?: boolean; bg?: any }) => {
+    if (opts?.bg) {
+      page.drawRectangle({ x: 40, y: y - 4, width: width - 80, height: 18, color: opts.bg });
+    }
+    page.drawText(label, { x: 55, y, size: 9, font: opts?.bold ? helveticaBold : helvetica, color: opts?.bold ? darkGray : gray });
+    const prefix = opts?.negative ? "-$" : "$";
+    const color = opts?.negative ? green : darkGray;
+    page.drawText(`${prefix}${fmt(Math.abs(amount))}`, { 
+      x: width - 160, y, size: 9, font: opts?.bold ? helveticaBold : helvetica, color 
+    });
     y -= 18;
   };
 
-  // Customer info
-  drawSectionHeader("CUSTOMER INFORMATION");
-  drawRow("Name", customerName);
-  drawRow("Email", customerEmail || "Not provided");
-  drawRow("Phone", customerPhone || "Not provided");
-  y -= 10;
+  if (msrp > 0) {
+    drawPricingRow("MSRP", msrp);
+  }
+  if (discount > 0) {
+    drawPricingRow("Dealer Discount", discount, { negative: true });
+  }
+  if (adminDiscount > 0) {
+    drawPricingRow("Special Discount", adminDiscount, { negative: true });
+  }
+  if (promoValue > 0) {
+    drawPricingRow("Promotional Savings", promoValue, { negative: true });
+  }
+  if (tradeInValue > 0) {
+    drawPricingRow("Estimated Trade Value", tradeInValue, { negative: true });
+  }
+  if (subtotal > 0) {
+    drawPricingRow("Subtotal", subtotal, { bold: true, bg: lightBg });
+  }
+  if (hst > 0) {
+    drawPricingRow("HST (13%)", hst);
+  }
 
-  // Motor details
-  drawSectionHeader("MOTOR DETAILS");
-  const motorLine = motorInfo?.model ? `${motorInfo.year || 2025} ${motorInfo.model}` : "Not specified";
-  drawRow("Motor", motorLine);
-  if (motorInfo?.hp) drawRow("Horsepower", `${motorInfo.hp} HP`);
-  y -= 10;
+  // Total line
+  if (totalCashPrice > 0) {
+    page.drawRectangle({ x: 40, y: y - 5, width: width - 80, height: 22, color: navy });
+    page.drawText("TOTAL PRICE", { x: 55, y: y - 1, size: 10, font: helveticaBold, color: white });
+    page.drawText(`$${fmt(totalCashPrice)}`, { x: width - 160, y: y - 1, size: 10, font: helveticaBold, color: white });
+    y -= 28;
+  }
+  y -= 6;
+
+  // ── PAYMENT APPLIED ──
+  drawSectionHeader("PAYMENT APPLIED");
+
+  // Deposit paid row
+  page.drawRectangle({ x: 40, y: y - 5, width: width - 80, height: 22, color: rgb(0.93, 0.99, 0.95) });
+  page.drawRectangle({ x: 40, y: y - 5, width: width - 80, height: 22, borderColor: green, borderWidth: 1.5, color: rgb(0.93, 0.99, 0.95) });
+  page.drawText("[PAID] Deposit", { x: 55, y: y - 1, size: 10, font: helveticaBold, color: green });
+  page.drawText(`-$${fmt(depositNum)}`, { x: width - 160, y: y - 1, size: 10, font: helveticaBold, color: green });
+  y -= 28;
 
   // Payment details
-  drawSectionHeader("PAYMENT DETAILS");
-  drawRow("Deposit Amount", `$${depositAmount} CAD`);
-  drawRow("Payment Status", "Confirmed");
   drawRow("Payment ID", paymentId || "N/A");
   drawRow("Payment Date", dateStr);
-  drawRow("Reference Number", referenceNumber);
-  y -= 20;
+  drawRow("Status", "Confirmed", { bold: true, color: green });
+  y -= 6;
 
-  // Next steps box
-  page.drawRectangle({ x: 40, y: y - 80, width: 532, height: 85, color: rgb(0.94, 0.97, 1) });
-  page.drawText("NEXT STEPS", { x: 55, y: y - 8, size: 11, font: helveticaBold, color: blue });
-  page.drawText("• We will contact you within 24-48 hours to discuss delivery options.", { x: 55, y: y - 26, size: 9, font: helvetica, color: darkGray });
-  page.drawText("• We'll schedule rigging and installation if applicable.", { x: 55, y: y - 40, size: 9, font: helvetica, color: darkGray });
-  page.drawText("• Remaining balance is due upon delivery or pickup.", { x: 55, y: y - 54, size: 9, font: helvetica, color: darkGray });
-  page.drawText("• Deposit is fully refundable before delivery.", { x: 55, y: y - 68, size: 9, font: helvetica, color: darkGray });
-
-  // Footer
-  page.drawText("Harris Boat Works  •  5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  •  (905) 342-2153", {
-    x: 40, y: 40, size: 8, font: helvetica, color: gray,
+  // BALANCE DUE - big prominent row
+  page.drawRectangle({ x: 40, y: y - 6, width: width - 80, height: 26, color: navy });
+  page.drawText("BALANCE DUE", { x: 55, y: y, size: 12, font: helveticaBold, color: white });
+  page.drawText(balanceDue > 0 ? `$${fmt(balanceDue)} CAD` : "Paid in Full", { 
+    x: width - 200, y: y, size: 12, font: helveticaBold, color: white 
   });
-  page.drawText("info@harrisboatworks.ca  •  mercuryrepower.ca", {
-    x: 40, y: 28, size: 8, font: helvetica, color: gray,
+  y -= 38;
+
+  // ── NEXT STEPS ──
+  if (y > 160) {
+    page.drawRectangle({ x: 40, y: y - 75, width: width - 80, height: 80, color: rgb(0.94, 0.97, 1) });
+    page.drawText("NEXT STEPS", { x: 55, y: y - 8, size: 10, font: helveticaBold, color: blue });
+    page.drawText("1. We will contact you within 24-48 hours to discuss delivery options.", { x: 55, y: y - 24, size: 8, font: helvetica, color: darkGray });
+    page.drawText("2. Rigging and installation will be scheduled if applicable.", { x: 55, y: y - 36, size: 8, font: helvetica, color: darkGray });
+    page.drawText("3. Remaining balance is due upon delivery or pickup.", { x: 55, y: y - 48, size: 8, font: helvetica, color: darkGray });
+    page.drawText("4. Deposit is fully refundable before delivery.", { x: 55, y: y - 60, size: 8, font: helvetica, color: darkGray });
+  }
+
+  // ── FOOTER ──
+  page.drawRectangle({ x: 0, y: 0, width, height: 45, color: navy });
+  page.drawText("Harris Boat Works  |  5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  |  (905) 342-2153", {
+    x: 40, y: 24, size: 8, font: helvetica, color: rgb(0.63, 0.70, 0.80),
+  });
+  page.drawText("info@harrisboatworks.ca  |  mercuryrepower.ca", {
+    x: 40, y: 12, size: 8, font: helvetica, color: rgb(0.63, 0.70, 0.80),
   });
 
   return await doc.save();
 }
 
-async function downloadQuotePdf(
-  path: string,
-  customerName?: string,
-  customerEmail?: string,
-  customerPhone?: string,
-  depositAmount?: string,
-  referenceNumber?: string,
-  paymentId?: string,
-  motorInfo?: { model?: string; hp?: number; year?: number },
-): Promise<{ content: string; filename: string } | null> {
+// ── Download existing quote PDF (no stamping - just attach as-is) ───────────
+
+async function downloadQuotePdf(path: string): Promise<{ content: string; filename: string } | null> {
   try {
     logStep("Downloading quote PDF from storage", { path });
     const { data, error } = await supabase.storage.from("quotes").download(path);
@@ -179,119 +261,15 @@ async function downloadQuotePdf(
       return null;
     }
     const arrayBuffer = await data.arrayBuffer();
-    let bytes = new Uint8Array(arrayBuffer);
-
-    // Stamp deposit confirmation page onto the quote PDF
-    if (depositAmount && referenceNumber) {
-      try {
-        bytes = await addDepositPageToPdf(
-          bytes, customerName || "", customerEmail || "", customerPhone || "",
-          depositAmount, referenceNumber, paymentId || "", motorInfo,
-        );
-        logStep("Deposit confirmation page added to quote PDF");
-      } catch (stampErr: any) {
-        logStep("WARNING: Could not add deposit page to PDF", { error: stampErr.message });
-      }
-    }
-
+    const bytes = new Uint8Array(arrayBuffer);
     const base64 = toBase64(bytes);
     const filename = path.split("/").pop() || "Motor-Quote.pdf";
     logStep("Quote PDF ready", { size: bytes.length, filename });
-    return { content: base64, filename: `Motor-Quote-Invoice-${filename}` };
+    return { content: base64, filename };
   } catch (err: any) {
     logStep("WARNING: Exception downloading quote PDF", { error: err.message });
     return null;
   }
-}
-
-// ── Fallback deposit receipt PDF ────────────────────────────────────────────
-
-async function generateDepositPdf(
-  customerName: string,
-  customerEmail: string,
-  customerPhone: string,
-  depositAmount: string,
-  referenceNumber: string,
-  paymentId: string,
-  motorInfo?: { model?: string; hp?: number; year?: number },
-): Promise<Uint8Array> {
-  const doc = await PDFDocument.create();
-  const page = doc.addPage([612, 792]);
-  const helvetica = await doc.embedFont(StandardFonts.Helvetica);
-  const helveticaBold = await doc.embedFont(StandardFonts.HelveticaBold);
-  const { height } = page.getSize();
-
-  const blue = rgb(0, 0.49, 0.77);
-  const darkGray = rgb(0.15, 0.15, 0.15);
-  const gray = rgb(0.4, 0.4, 0.4);
-  const green = rgb(0.02, 0.59, 0.41);
-  const white = rgb(1, 1, 1);
-  const lightBg = rgb(0.96, 0.97, 0.98);
-
-  let y = height - 50;
-
-  page.drawRectangle({ x: 0, y: y - 10, width: 612, height: 60, color: blue });
-  page.drawText("HARRIS BOAT WORKS", { x: 40, y: y + 12, size: 20, font: helveticaBold, color: white });
-  page.drawText("Authorized Mercury Marine Dealer", { x: 40, y: y - 6, size: 10, font: helvetica, color: rgb(0.85, 0.92, 1) });
-  y -= 90;
-
-  page.drawText("DEPOSIT RECEIPT", { x: 40, y, size: 22, font: helveticaBold, color: darkGray });
-  y -= 18;
-  const dateStr = new Date().toLocaleDateString("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "long", day: "numeric" });
-  page.drawText(dateStr, { x: 40, y, size: 10, font: helvetica, color: gray });
-  y -= 20;
-
-  page.drawRectangle({ x: 40, y: y - 50, width: 532, height: 55, color: lightBg });
-  page.drawText(`Reference: ${referenceNumber}`, { x: 55, y: y - 18, size: 14, font: helveticaBold, color: blue });
-  page.drawText(`Amount Paid: $${depositAmount} CAD`, { x: 55, y: y - 38, size: 14, font: helveticaBold, color: green });
-  y -= 75;
-
-  const drawSectionHeader = (label: string) => {
-    page.drawRectangle({ x: 40, y: y - 4, width: 532, height: 22, color: blue });
-    page.drawText(label, { x: 50, y: y, size: 11, font: helveticaBold, color: white });
-    y -= 28;
-  };
-
-  const drawRow = (label: string, value: string) => {
-    page.drawText(label, { x: 55, y, size: 10, font: helveticaBold, color: gray });
-    page.drawText(value || "Not provided", { x: 200, y, size: 10, font: helvetica, color: darkGray });
-    y -= 18;
-  };
-
-  drawSectionHeader("CUSTOMER INFORMATION");
-  drawRow("Name", customerName);
-  drawRow("Email", customerEmail || "Not provided");
-  drawRow("Phone", customerPhone || "Not provided");
-  y -= 10;
-
-  drawSectionHeader("MOTOR DETAILS");
-  const motorLine = motorInfo?.model ? `${motorInfo.year || 2025} ${motorInfo.model}` : "Not specified";
-  drawRow("Motor", motorLine);
-  if (motorInfo?.hp) drawRow("Horsepower", `${motorInfo.hp} HP`);
-  y -= 10;
-
-  drawSectionHeader("PAYMENT DETAILS");
-  drawRow("Deposit Amount", `$${depositAmount} CAD`);
-  drawRow("Payment Status", "Confirmed");
-  drawRow("Payment ID", paymentId || "N/A");
-  drawRow("Payment Date", dateStr);
-  y -= 20;
-
-  page.drawRectangle({ x: 40, y: y - 80, width: 532, height: 85, color: rgb(0.94, 0.97, 1) });
-  page.drawText("NEXT STEPS", { x: 55, y: y - 8, size: 11, font: helveticaBold, color: blue });
-  page.drawText("• Contact customer within 24-48 hours to discuss delivery options.", { x: 55, y: y - 26, size: 9, font: helvetica, color: darkGray });
-  page.drawText("• Schedule rigging appointment if applicable.", { x: 55, y: y - 40, size: 9, font: helvetica, color: darkGray });
-  page.drawText("• Remaining balance due upon delivery or pickup.", { x: 55, y: y - 54, size: 9, font: helvetica, color: darkGray });
-  page.drawText("• Deposit is fully refundable before delivery.", { x: 55, y: y - 68, size: 9, font: helvetica, color: darkGray });
-
-  page.drawText("Harris Boat Works  •  5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  •  (905) 342-2153", {
-    x: 40, y: 40, size: 8, font: helvetica, color: gray,
-  });
-  page.drawText("info@harrisboatworks.ca  •  mercuryrepower.ca", {
-    x: 40, y: 28, size: 8, font: helvetica, color: gray,
-  });
-
-  return await doc.save();
 }
 
 // ── Email HTML Templates ────────────────────────────────────────────────────
@@ -327,6 +305,7 @@ function createDepositConfirmationEmail(
     <div style="font-size:28px;font-weight:700;color:#007DC5;font-family:'Courier New',monospace;text-align:center;padding:20px;background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%);border-radius:12px;margin:24px 0;border:2px solid #007DC5;">Reference: ${referenceNumber}</div>
     <div style="font-size:36px;font-weight:700;color:#10b981;text-align:center;margin:16px 0;">$${depositAmount} CAD</div>
     ${motorDetails}
+    <p style="text-align:center;margin-top:16px;font-size:14px;color:#6b7280;">📎 Your complete invoice is attached to this email.</p>
     <div style="background-color:#eff6ff;border-radius:12px;padding:24px;margin:24px 0;">
       <h3 style="color:#1e40af;margin:0 0 16px 0;font-size:18px;">📋 What Happens Next</h3>
       <ul style="margin:0;padding-left:20px;">
@@ -389,7 +368,7 @@ function createAdminNotificationEmail(
       <strong style="color:#92400e;">⚡ Action Required</strong>
       <p style="margin:8px 0 0;font-size:14px;color:#78350f;">Contact this customer within 24-48 hours to discuss delivery options and remaining balance.</p>
     </div>
-    <p style="margin-top:16px;font-size:13px;color:#94a3b8;">📎 The customer's motor quote PDF is attached to this email.</p>
+    <p style="margin-top:16px;font-size:13px;color:#94a3b8;">📎 The customer's invoice PDF is attached to this email.</p>
   </div>
   <div style="background:#f8fafc;padding:16px 24px;border-top:1px solid #e2e8f0;font-size:12px;color:#94a3b8;text-align:center;">
     Automated notification from Harris Boat Works deposit system.
@@ -408,23 +387,37 @@ serve(async (req) => {
     const {
       customerEmail, customerName, customerPhone, depositAmount,
       paymentId, motorInfo, sendAdminNotification, adminOnly, quotePdfPath,
+      pricingData,
     }: DepositConfirmationRequest = await req.json();
 
     logStep("Processing deposit emails", {
       customerEmail, customerName, customerPhone, depositAmount, paymentId, motorInfo,
-      sendAdminNotification, adminOnly, quotePdfPath,
+      sendAdminNotification, adminOnly, quotePdfPath, hasPricingData: !!pricingData,
     });
 
     const referenceNumber = generateReferenceNumber(paymentId);
     const motorLabel = getMotorLabel(motorInfo);
 
-    // Download and stamp the quote PDF with deposit info (used for both customer & admin)
-    let stampedQuotePdf: { content: string; filename: string } | null = null;
-    if (quotePdfPath) {
-      stampedQuotePdf = await downloadQuotePdf(
-        quotePdfPath, customerName, customerEmail || "", customerPhone || "",
-        depositAmount, referenceNumber, paymentId || "", motorInfo,
+    // Generate the unified invoice PDF with customer info, pricing, deposit & balance
+    let invoicePdf: { content: string; filename: string } | null = null;
+    try {
+      const invoiceBytes = await generateInvoicePdf(
+        customerName, customerEmail || "", customerPhone || "",
+        depositAmount, referenceNumber, paymentId || "", motorInfo, pricingData,
       );
+      invoicePdf = {
+        content: toBase64(invoiceBytes),
+        filename: `Invoice-${referenceNumber}.pdf`,
+      };
+      logStep("Invoice PDF generated", { size: invoiceBytes.length });
+    } catch (pdfErr: any) {
+      logStep("WARNING: Invoice PDF generation failed", { error: pdfErr.message });
+    }
+
+    // Also download the original quote PDF (for reference/attachment)
+    let originalQuotePdf: { content: string; filename: string } | null = null;
+    if (quotePdfPath) {
+      originalQuotePdf = await downloadQuotePdf(quotePdfPath);
     }
 
     // Send customer confirmation email (unless admin-only)
@@ -434,9 +427,9 @@ serve(async (req) => {
         ? `Deposit Confirmed — ${motorLabel} — Ref ${referenceNumber}`
         : `Deposit Confirmed — Ref ${referenceNumber}`;
       const customerAttachments: Array<{ filename: string; content: string }> = [];
-      if (stampedQuotePdf) {
-        customerAttachments.push(stampedQuotePdf);
-      }
+      if (invoicePdf) customerAttachments.push(invoicePdf);
+      if (originalQuotePdf) customerAttachments.push(originalQuotePdf);
+
       const emailResponse = await resend.emails.send({
         from: "Harris Boat Works <deposits@hbwsales.ca>",
         to: [customerEmail],
@@ -448,36 +441,16 @@ serve(async (req) => {
       logStep("Customer email sent", { emailResponse, attachments: customerAttachments.length });
     }
 
-    // Send admin notification email with PDF attachments
+    // Send admin notification email
     if (sendAdminNotification || adminOnly) {
       const adminHtml = createAdminNotificationEmail(
         customerName, customerEmail || "", customerPhone || "",
         depositAmount, referenceNumber, paymentId || "", motorInfo,
       );
 
-      // Build attachments array
       const attachments: Array<{ filename: string; content: string }> = [];
-
-      // 1. Use the already-stamped quote PDF (with deposit page appended)
-      if (stampedQuotePdf) {
-        attachments.push(stampedQuotePdf);
-      }
-
-      // 2. Also generate the deposit receipt PDF as a secondary attachment
-      try {
-        const receiptBytes = await generateDepositPdf(
-          customerName, customerEmail || "", customerPhone || "",
-          depositAmount, referenceNumber, paymentId || "", motorInfo,
-        );
-        const base64 = toBase64(receiptBytes);
-        attachments.push({
-          filename: `Deposit-Receipt-${referenceNumber}.pdf`,
-          content: base64,
-        });
-        logStep("Deposit receipt PDF generated", { size: receiptBytes.length });
-      } catch (pdfErr: any) {
-        logStep("WARNING: Deposit receipt PDF generation failed", { error: pdfErr.message });
-      }
+      if (invoicePdf) attachments.push(invoicePdf);
+      if (originalQuotePdf) attachments.push(originalQuotePdf);
 
       const adminSubject = motorLabel
         ? `🚨 NEW DEPOSIT $${depositAmount} — ${motorLabel} — ${customerName}`
