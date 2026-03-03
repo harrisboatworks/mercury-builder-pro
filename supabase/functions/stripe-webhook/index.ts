@@ -98,6 +98,9 @@ serve(async (req) => {
           motorInfo,
         });
 
+        // Get quote PDF path from metadata
+        const quotePdfPath = session.metadata.quote_pdf_path || "";
+
         // Update existing deposit record status to 'scheduled' (payment confirmed)
         const { data: existingDeposit, error: findError } = await supabase
           .from("customer_quotes")
@@ -116,12 +119,13 @@ serve(async (req) => {
             .update({
               lead_status: "scheduled",
               quote_data: {
-                deposit_amount: depositAmount,
+              deposit_amount: depositAmount,
                 payment_type: "motor_deposit",
                 stripe_session_id: session.id,
                 stripe_payment_intent: paymentIntentId,
                 payment_status: "paid",
                 motor_info: motorInfo,
+                quote_pdf_path: quotePdfPath || null,
               },
             })
             .eq("id", existingDeposit.id);
@@ -146,6 +150,7 @@ serve(async (req) => {
               paymentId: paymentIntentId,
               motorInfo,
               sendAdminNotification: true,
+              quotePdfPath,
             },
           });
 
@@ -167,6 +172,7 @@ serve(async (req) => {
               motorInfo,
               sendAdminNotification: true,
               adminOnly: true,
+              quotePdfPath,
             },
           });
           if (adminEmailError) {
