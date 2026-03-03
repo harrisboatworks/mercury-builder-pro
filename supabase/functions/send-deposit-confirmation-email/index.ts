@@ -69,9 +69,144 @@ function fmt(n: number): string {
   return n.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-// ── Generate unified invoice PDF (single page with everything) ──────────────
+// ── Stamp deposit info onto existing quote PDF ──────────────────────────────
 
-async function generateInvoicePdf(
+async function stampDepositOnQuotePdf(
+  existingPdfBytes: Uint8Array,
+  depositAmount: string,
+  referenceNumber: string,
+  paymentId: string,
+  totalCashPrice: number,
+): Promise<Uint8Array> {
+  const doc = await PDFDocument.load(existingPdfBytes);
+  const pages = doc.getPages();
+  const page = pages[0]; // Stamp on the first (and likely only) page
+  const { width, height } = page.getSize();
+  
+  const helvetica = await doc.embedFont(StandardFonts.Helvetica);
+  const helveticaBold = await doc.embedFont(StandardFonts.HelveticaBold);
+
+  const depositNum = parseFloat(depositAmount) || 0;
+  const balanceDue = totalCashPrice > 0 ? totalCashPrice - depositNum : 0;
+  const dateStr = new Date().toLocaleDateString("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "long", day: "numeric" });
+
+  // Colors matching the quote's navy theme
+  const navy = rgb(0.118, 0.251, 0.686);    // #1e40af - matches quote header
+  const green = rgb(0.02, 0.59, 0.41);       // confirmed green
+  const white = rgb(1, 1, 1);
+  const darkGray = rgb(0.12, 0.16, 0.21);
+
+  // We need to stamp above the footer. The footer is typically at the bottom.
+  // We'll place our deposit banner just above the dark footer area.
+  // The quote footer starts around y=45, so we place our stamp above that.
+  
+  const bannerHeight = 75;
+  const bannerY = 50; // Just above the very bottom footer
+
+  // Draw deposit confirmation banner background
+  page.drawRectangle({
+    x: 0,
+    y: bannerY,
+    width: width,
+    height: bannerHeight,
+    color: rgb(0.95, 0.99, 0.96), // very light green bg
+  });
+
+  // Top border line (green accent)
+  page.drawRectangle({
+    x: 0,
+    y: bannerY + bannerHeight - 3,
+    width: width,
+    height: 3,
+    color: green,
+  });
+
+  // "DEPOSIT CONFIRMED" label
+  page.drawText("DEPOSIT CONFIRMED", {
+    x: 40,
+    y: bannerY + bannerHeight - 20,
+    size: 12,
+    font: helveticaBold,
+    color: green,
+  });
+
+  // Reference number
+  page.drawText(`Ref: ${referenceNumber}`, {
+    x: 40,
+    y: bannerY + bannerHeight - 35,
+    size: 9,
+    font: helvetica,
+    color: darkGray,
+  });
+
+  // Payment date
+  page.drawText(`Paid: ${dateStr}`, {
+    x: 40,
+    y: bannerY + bannerHeight - 48,
+    size: 9,
+    font: helvetica,
+    color: darkGray,
+  });
+
+  // Payment ID (small)
+  if (paymentId) {
+    page.drawText(`Payment ID: ${paymentId}`, {
+      x: 40,
+      y: bannerY + bannerHeight - 61,
+      size: 7,
+      font: helvetica,
+      color: rgb(0.5, 0.5, 0.5),
+    });
+  }
+
+  // Right side: Deposit amount and balance
+  const rightX = width - 200;
+
+  // Deposit paid
+  page.drawText("Deposit Paid:", {
+    x: rightX,
+    y: bannerY + bannerHeight - 20,
+    size: 10,
+    font: helveticaBold,
+    color: green,
+  });
+  page.drawText(`-$${fmt(depositNum)}`, {
+    x: rightX + 100,
+    y: bannerY + bannerHeight - 20,
+    size: 10,
+    font: helveticaBold,
+    color: green,
+  });
+
+  // Balance due box
+  page.drawRectangle({
+    x: rightX - 5,
+    y: bannerY + bannerHeight - 55,
+    width: 195,
+    height: 26,
+    color: navy,
+  });
+  page.drawText("BALANCE DUE:", {
+    x: rightX,
+    y: bannerY + bannerHeight - 48,
+    size: 10,
+    font: helveticaBold,
+    color: white,
+  });
+  page.drawText(balanceDue > 0 ? `$${fmt(balanceDue)} CAD` : "PAID IN FULL", {
+    x: rightX + 100,
+    y: bannerY + bannerHeight - 48,
+    size: 10,
+    font: helveticaBold,
+    color: white,
+  });
+
+  return await doc.save();
+}
+
+// ── Fallback: Generate standalone invoice if no quote PDF exists ─────────────
+
+async function generateFallbackInvoicePdf(
   customerName: string,
   customerEmail: string,
   customerPhone: string,
@@ -79,13 +214,7 @@ async function generateInvoicePdf(
   referenceNumber: string,
   paymentId: string,
   motorInfo?: { model?: string; hp?: number; year?: number },
-  pricingData?: {
-    basePrice?: number;
-    finalPrice?: number;
-    totalCost?: number;
-    discountAmount?: number;
-    quoteData?: any;
-  },
+  pricingData?: { basePrice?: number; finalPrice?: number; totalCost?: number; discountAmount?: number; quoteData?: any },
 ): Promise<Uint8Array> {
   const doc = await PDFDocument.create();
   const page = doc.addPage([612, 792]);
@@ -93,11 +222,10 @@ async function generateInvoicePdf(
   const helveticaBold = await doc.embedFont(StandardFonts.HelveticaBold);
   const { width, height } = page.getSize();
 
-  const navy = rgb(0.10, 0.21, 0.36);      // #1a365d
+  const navy = rgb(0.118, 0.251, 0.686);
   const blue = rgb(0, 0.49, 0.77);
   const darkGray = rgb(0.07, 0.09, 0.15);
   const gray = rgb(0.42, 0.44, 0.49);
-  const lightGray = rgb(0.88, 0.90, 0.92);
   const green = rgb(0.02, 0.59, 0.41);
   const white = rgb(1, 1, 1);
   const lightBg = rgb(0.96, 0.97, 0.98);
@@ -105,36 +233,33 @@ async function generateInvoicePdf(
   const depositNum = parseFloat(depositAmount) || 0;
   const dateStr = new Date().toLocaleDateString("en-CA", { timeZone: "America/Toronto", year: "numeric", month: "long", day: "numeric" });
 
-  // Extract pricing from quoteData or pricingData
   const qd = pricingData?.quoteData || {};
-  const msrp = qd.pricing?.msrp || qd.msrp || pricingData?.basePrice || 0;
-  const discount = qd.pricing?.discount || qd.discount || pricingData?.discountAmount || 0;
+  const msrp = qd.pricing?.msrp || pricingData?.basePrice || 0;
+  const discount = qd.pricing?.discount || pricingData?.discountAmount || 0;
   const adminDiscount = qd.pricing?.adminDiscount || 0;
   const promoValue = qd.pricing?.promoValue || 0;
   const subtotal = qd.pricing?.subtotal || 0;
   const hst = qd.pricing?.hst || 0;
   const totalCashPrice = qd.pricing?.totalCashPrice || pricingData?.totalCost || pricingData?.finalPrice || 0;
-  const tradeInValue = qd.tradeInValue || qd.trade_in_value || 0;
+  const tradeInValue = qd.tradeInValue || 0;
   const balanceDue = totalCashPrice > 0 ? totalCashPrice - depositNum : 0;
 
   let y = height - 40;
 
-  // ── HEADER BAR ──
+  // Header
   page.drawRectangle({ x: 0, y: y - 15, width, height: 65, color: navy });
   page.drawText("HARRIS BOAT WORKS", { x: 40, y: y + 14, size: 22, font: helveticaBold, color: white });
   page.drawText("Authorized Mercury Marine Dealer", { x: 40, y: y - 4, size: 10, font: helvetica, color: rgb(0.63, 0.70, 0.80) });
   page.drawText("INVOICE", { x: width - 120, y: y + 14, size: 22, font: helveticaBold, color: white });
   y -= 90;
 
-  // ── REFERENCE & DATE ROW ──
   page.drawText(`Reference: ${referenceNumber}`, { x: 40, y, size: 12, font: helveticaBold, color: blue });
   page.drawText(`Date: ${dateStr}`, { x: width - 220, y, size: 10, font: helvetica, color: gray });
   y -= 25;
 
-  // ── CUSTOMER INFORMATION ──
   const drawSectionHeader = (label: string) => {
     page.drawRectangle({ x: 40, y: y - 4, width: width - 80, height: 22, color: navy });
-    page.drawText(label, { x: 50, y: y, size: 10, font: helveticaBold, color: white });
+    page.drawText(label, { x: 50, y, size: 10, font: helveticaBold, color: white });
     y -= 28;
   };
 
@@ -150,52 +275,30 @@ async function generateInvoicePdf(
   drawRow("Phone", customerPhone || "Not provided");
   y -= 6;
 
-  // ── MOTOR DETAILS ──
   drawSectionHeader("MOTOR DETAILS");
   const motorLine = motorInfo?.model ? `${motorInfo.year || 2025} Mercury ${motorInfo.model}` : "Motor — see quote";
   drawRow("Motor", motorLine, { bold: true });
   if (motorInfo?.hp) drawRow("Horsepower", `${motorInfo.hp} HP`);
   y -= 6;
 
-  // ── PRICING BREAKDOWN ──
   drawSectionHeader("PRICING BREAKDOWN");
-
   const drawPricingRow = (label: string, amount: number, opts?: { negative?: boolean; bold?: boolean; bg?: any }) => {
-    if (opts?.bg) {
-      page.drawRectangle({ x: 40, y: y - 4, width: width - 80, height: 18, color: opts.bg });
-    }
+    if (opts?.bg) page.drawRectangle({ x: 40, y: y - 4, width: width - 80, height: 18, color: opts.bg });
     page.drawText(label, { x: 55, y, size: 9, font: opts?.bold ? helveticaBold : helvetica, color: opts?.bold ? darkGray : gray });
     const prefix = opts?.negative ? "-$" : "$";
     const color = opts?.negative ? green : darkGray;
-    page.drawText(`${prefix}${fmt(Math.abs(amount))}`, { 
-      x: width - 160, y, size: 9, font: opts?.bold ? helveticaBold : helvetica, color 
-    });
+    page.drawText(`${prefix}${fmt(Math.abs(amount))}`, { x: width - 160, y, size: 9, font: opts?.bold ? helveticaBold : helvetica, color });
     y -= 18;
   };
 
-  if (msrp > 0) {
-    drawPricingRow("MSRP", msrp);
-  }
-  if (discount > 0) {
-    drawPricingRow("Dealer Discount", discount, { negative: true });
-  }
-  if (adminDiscount > 0) {
-    drawPricingRow("Special Discount", adminDiscount, { negative: true });
-  }
-  if (promoValue > 0) {
-    drawPricingRow("Promotional Savings", promoValue, { negative: true });
-  }
-  if (tradeInValue > 0) {
-    drawPricingRow("Estimated Trade Value", tradeInValue, { negative: true });
-  }
-  if (subtotal > 0) {
-    drawPricingRow("Subtotal", subtotal, { bold: true, bg: lightBg });
-  }
-  if (hst > 0) {
-    drawPricingRow("HST (13%)", hst);
-  }
+  if (msrp > 0) drawPricingRow("MSRP", msrp);
+  if (discount > 0) drawPricingRow("Dealer Discount", discount, { negative: true });
+  if (adminDiscount > 0) drawPricingRow("Special Discount", adminDiscount, { negative: true });
+  if (promoValue > 0) drawPricingRow("Promotional Savings", promoValue, { negative: true });
+  if (tradeInValue > 0) drawPricingRow("Estimated Trade Value", tradeInValue, { negative: true });
+  if (subtotal > 0) drawPricingRow("Subtotal", subtotal, { bold: true, bg: lightBg });
+  if (hst > 0) drawPricingRow("HST (13%)", hst);
 
-  // Total line
   if (totalCashPrice > 0) {
     page.drawRectangle({ x: 40, y: y - 5, width: width - 80, height: 22, color: navy });
     page.drawText("TOTAL PRICE", { x: 55, y: y - 1, size: 10, font: helveticaBold, color: white });
@@ -204,41 +307,23 @@ async function generateInvoicePdf(
   }
   y -= 6;
 
-  // ── PAYMENT APPLIED ──
   drawSectionHeader("PAYMENT APPLIED");
-
-  // Deposit paid row
-  page.drawRectangle({ x: 40, y: y - 5, width: width - 80, height: 22, color: rgb(0.93, 0.99, 0.95) });
   page.drawRectangle({ x: 40, y: y - 5, width: width - 80, height: 22, borderColor: green, borderWidth: 1.5, color: rgb(0.93, 0.99, 0.95) });
   page.drawText("[PAID] Deposit", { x: 55, y: y - 1, size: 10, font: helveticaBold, color: green });
   page.drawText(`-$${fmt(depositNum)}`, { x: width - 160, y: y - 1, size: 10, font: helveticaBold, color: green });
   y -= 28;
 
-  // Payment details
   drawRow("Payment ID", paymentId || "N/A");
   drawRow("Payment Date", dateStr);
   drawRow("Status", "Confirmed", { bold: true, color: green });
   y -= 6;
 
-  // BALANCE DUE - big prominent row
   page.drawRectangle({ x: 40, y: y - 6, width: width - 80, height: 26, color: navy });
   page.drawText("BALANCE DUE", { x: 55, y: y, size: 12, font: helveticaBold, color: white });
-  page.drawText(balanceDue > 0 ? `$${fmt(balanceDue)} CAD` : "Paid in Full", { 
-    x: width - 200, y: y, size: 12, font: helveticaBold, color: white 
-  });
+  page.drawText(balanceDue > 0 ? `$${fmt(balanceDue)} CAD` : "Paid in Full", { x: width - 200, y: y, size: 12, font: helveticaBold, color: white });
   y -= 38;
 
-  // ── NEXT STEPS ──
-  if (y > 160) {
-    page.drawRectangle({ x: 40, y: y - 75, width: width - 80, height: 80, color: rgb(0.94, 0.97, 1) });
-    page.drawText("NEXT STEPS", { x: 55, y: y - 8, size: 10, font: helveticaBold, color: blue });
-    page.drawText("1. We will contact you within 24-48 hours to discuss delivery options.", { x: 55, y: y - 24, size: 8, font: helvetica, color: darkGray });
-    page.drawText("2. Rigging and installation will be scheduled if applicable.", { x: 55, y: y - 36, size: 8, font: helvetica, color: darkGray });
-    page.drawText("3. Remaining balance is due upon delivery or pickup.", { x: 55, y: y - 48, size: 8, font: helvetica, color: darkGray });
-    page.drawText("4. Deposit is fully refundable before delivery.", { x: 55, y: y - 60, size: 8, font: helvetica, color: darkGray });
-  }
-
-  // ── FOOTER ──
+  // Footer
   page.drawRectangle({ x: 0, y: 0, width, height: 45, color: navy });
   page.drawText("Harris Boat Works  |  5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0  |  (905) 342-2153", {
     x: 40, y: 24, size: 8, font: helvetica, color: rgb(0.63, 0.70, 0.80),
@@ -250,9 +335,9 @@ async function generateInvoicePdf(
   return await doc.save();
 }
 
-// ── Download existing quote PDF (no stamping - just attach as-is) ───────────
+// ── Download existing quote PDF from storage ────────────────────────────────
 
-async function downloadQuotePdf(path: string): Promise<{ content: string; filename: string } | null> {
+async function downloadQuotePdf(path: string): Promise<Uint8Array | null> {
   try {
     logStep("Downloading quote PDF from storage", { path });
     const { data, error } = await supabase.storage.from("quotes").download(path);
@@ -261,14 +346,31 @@ async function downloadQuotePdf(path: string): Promise<{ content: string; filena
       return null;
     }
     const arrayBuffer = await data.arrayBuffer();
-    const bytes = new Uint8Array(arrayBuffer);
-    const base64 = toBase64(bytes);
-    const filename = path.split("/").pop() || "Motor-Quote.pdf";
-    logStep("Quote PDF ready", { size: bytes.length, filename });
-    return { content: base64, filename };
+    return new Uint8Array(arrayBuffer);
   } catch (err: any) {
     logStep("WARNING: Exception downloading quote PDF", { error: err.message });
     return null;
+  }
+}
+
+// ── Re-upload stamped PDF back to storage ───────────────────────────────────
+
+async function uploadStampedPdf(path: string, pdfBytes: Uint8Array): Promise<boolean> {
+  try {
+    const blob = new Blob([pdfBytes], { type: "application/pdf" });
+    const { error } = await supabase.storage.from("quotes").upload(path, blob, {
+      upsert: true,
+      contentType: "application/pdf",
+    });
+    if (error) {
+      logStep("WARNING: Could not re-upload stamped PDF", { error: error.message });
+      return false;
+    }
+    logStep("Stamped PDF re-uploaded to storage", { path });
+    return true;
+  } catch (err: any) {
+    logStep("WARNING: Exception re-uploading stamped PDF", { error: err.message });
+    return false;
   }
 }
 
@@ -305,9 +407,9 @@ function createDepositConfirmationEmail(
     <div style="font-size:28px;font-weight:700;color:#007DC5;font-family:'Courier New',monospace;text-align:center;padding:20px;background:linear-gradient(135deg,#f0f9ff 0%,#e0f2fe 100%);border-radius:12px;margin:24px 0;border:2px solid #007DC5;">Reference: ${referenceNumber}</div>
     <div style="font-size:36px;font-weight:700;color:#10b981;text-align:center;margin:16px 0;">$${depositAmount} CAD</div>
     ${motorDetails}
-    <p style="text-align:center;margin-top:16px;font-size:14px;color:#6b7280;">📎 Your complete invoice is attached to this email.</p>
+    <p style="text-align:center;margin-top:16px;font-size:14px;color:#6b7280;">Your updated quote with deposit applied is attached.</p>
     <div style="background-color:#eff6ff;border-radius:12px;padding:24px;margin:24px 0;">
-      <h3 style="color:#1e40af;margin:0 0 16px 0;font-size:18px;">📋 What Happens Next</h3>
+      <h3 style="color:#1e40af;margin:0 0 16px 0;font-size:18px;">What Happens Next</h3>
       <ul style="margin:0;padding-left:20px;">
         <li style="margin:8px 0;"><strong>Within 24-48 hours:</strong> We'll contact you to discuss delivery options.</li>
         <li style="margin:8px 0;"><strong>Rigging appointment:</strong> We'll schedule installation details if applicable.</li>
@@ -315,7 +417,7 @@ function createDepositConfirmationEmail(
       </ul>
     </div>
     <div style="background-color:#fef3c7;border-left:4px solid #f59e0b;padding:16px 20px;margin:24px 0;border-radius:8px;">
-      <h4 style="margin:0 0 8px 0;color:#92400e;font-size:14px;">💰 Refund Policy</h4>
+      <h4 style="margin:0 0 8px 0;color:#92400e;font-size:14px;">Refund Policy</h4>
       <p style="margin:0;color:#78350f;font-size:14px;">Fully refundable before delivery. Just give us a call.</p>
     </div>
     <p style="text-align:center;"><a href="tel:905-342-2153" style="display:inline-block;padding:16px 40px;background:linear-gradient(135deg,#007DC5 0%,#1e40af 100%);color:#ffffff !important;text-decoration:none;border-radius:8px;font-weight:600;">Call Us: (905) 342-2153</a></p>
@@ -344,14 +446,14 @@ function createAdminNotificationEmail(
   return `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head><body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background-color:#ffffff;">
 <div style="max-width:600px;margin:0 auto;background:#ffffff;">
   <div style="background:#1e293b;color:white;padding:20px 24px;">
-    <h1 style="margin:0;font-size:20px;">🚨 New Motor Deposit — ${motorLine}</h1>
+    <h1 style="margin:0;font-size:20px;">New Motor Deposit - ${motorLine}</h1>
     <div style="color:#94a3b8;font-size:13px;margin-top:4px;">${now} ET</div>
   </div>
   <div style="padding:24px;">
     <div style="background:#ecfdf5;border:2px solid #10b981;border-radius:12px;padding:20px;text-align:center;margin-bottom:24px;">
       <div style="font-size:14px;color:#6b7280;">DEPOSIT AMOUNT</div>
       <p style="font-size:42px;font-weight:800;color:#059669;margin:0;">$${depositAmount}</p>
-      <div style="font-size:14px;color:#6b7280;">CAD • Payment Confirmed</div>
+      <div style="font-size:14px;color:#6b7280;">CAD - Payment Confirmed</div>
     </div>
     <table style="width:100%;border-collapse:collapse;margin-bottom:24px;">
       <tr><td style="padding:12px 16px;border-bottom:1px solid #f1f5f9;font-weight:600;color:#64748b;width:140px;">Customer</td><td style="padding:12px 16px;border-bottom:1px solid #f1f5f9;color:#1e293b;"><strong>${customerName}</strong></td></tr>
@@ -362,13 +464,13 @@ function createAdminNotificationEmail(
       <tr><td style="padding:12px 16px;border-bottom:1px solid #f1f5f9;font-weight:600;color:#64748b;">Stripe Payment</td><td style="padding:12px 16px;border-bottom:1px solid #f1f5f9;font-family:monospace;font-size:12px;">${paymentId || "N/A"}</td></tr>
     </table>
     <div style="text-align:center;margin:24px 0;">
-      <a href="${adminUrl}" style="display:inline-block;padding:14px 32px;background:#007DC5;color:#ffffff !important;text-decoration:none;border-radius:8px;font-weight:600;">View in Admin Dashboard →</a>
+      <a href="${adminUrl}" style="display:inline-block;padding:14px 32px;background:#007DC5;color:#ffffff !important;text-decoration:none;border-radius:8px;font-weight:600;">View in Admin Dashboard</a>
     </div>
     <div style="background:#fffbeb;border:1px solid #fbbf24;border-radius:8px;padding:16px;margin-top:16px;">
-      <strong style="color:#92400e;">⚡ Action Required</strong>
+      <strong style="color:#92400e;">Action Required</strong>
       <p style="margin:8px 0 0;font-size:14px;color:#78350f;">Contact this customer within 24-48 hours to discuss delivery options and remaining balance.</p>
     </div>
-    <p style="margin-top:16px;font-size:13px;color:#94a3b8;">📎 The customer's invoice PDF is attached to this email.</p>
+    <p style="margin-top:16px;font-size:13px;color:#94a3b8;">The stamped quote PDF with deposit applied is attached.</p>
   </div>
   <div style="background:#f8fafc;padding:16px 24px;border-top:1px solid #e2e8f0;font-size:12px;color:#94a3b8;text-align:center;">
     Automated notification from Harris Boat Works deposit system.
@@ -398,37 +500,62 @@ serve(async (req) => {
     const referenceNumber = generateReferenceNumber(paymentId);
     const motorLabel = getMotorLabel(motorInfo);
 
-    // Generate the unified invoice PDF with customer info, pricing, deposit & balance
-    let invoicePdf: { content: string; filename: string } | null = null;
-    try {
-      const invoiceBytes = await generateInvoicePdf(
-        customerName, customerEmail || "", customerPhone || "",
-        depositAmount, referenceNumber, paymentId || "", motorInfo, pricingData,
-      );
-      invoicePdf = {
-        content: toBase64(invoiceBytes),
-        filename: `Invoice-${referenceNumber}.pdf`,
-      };
-      logStep("Invoice PDF generated", { size: invoiceBytes.length });
-    } catch (pdfErr: any) {
-      logStep("WARNING: Invoice PDF generation failed", { error: pdfErr.message });
+    // Extract total for balance calculation
+    const qd = pricingData?.quoteData || {};
+    const totalCashPrice = qd.pricing?.totalCashPrice || pricingData?.totalCost || pricingData?.finalPrice || 0;
+
+    // Strategy: Download existing quote PDF → stamp deposit info → re-upload → send
+    let finalPdf: { content: string; filename: string } | null = null;
+
+    if (quotePdfPath) {
+      const existingPdfBytes = await downloadQuotePdf(quotePdfPath);
+      if (existingPdfBytes) {
+        try {
+          logStep("Stamping deposit info onto existing quote PDF");
+          const stampedBytes = await stampDepositOnQuotePdf(
+            existingPdfBytes, depositAmount, referenceNumber, paymentId || "", totalCashPrice,
+          );
+          
+          // Re-upload the stamped version to storage (overwrites original)
+          await uploadStampedPdf(quotePdfPath, stampedBytes);
+          
+          finalPdf = {
+            content: toBase64(stampedBytes),
+            filename: `Invoice-${referenceNumber}.pdf`,
+          };
+          logStep("Quote PDF stamped with deposit info", { size: stampedBytes.length });
+        } catch (stampErr: any) {
+          logStep("WARNING: Stamping failed, falling back to standalone invoice", { error: stampErr.message });
+        }
+      }
     }
 
-    // Also download the original quote PDF (for reference/attachment)
-    let originalQuotePdf: { content: string; filename: string } | null = null;
-    if (quotePdfPath) {
-      originalQuotePdf = await downloadQuotePdf(quotePdfPath);
+    // Fallback: generate a standalone invoice if no quote PDF was available or stamping failed
+    if (!finalPdf) {
+      logStep("No quote PDF available, generating standalone invoice");
+      try {
+        const fallbackBytes = await generateFallbackInvoicePdf(
+          customerName, customerEmail || "", customerPhone || "",
+          depositAmount, referenceNumber, paymentId || "", motorInfo, pricingData,
+        );
+        finalPdf = {
+          content: toBase64(fallbackBytes),
+          filename: `Invoice-${referenceNumber}.pdf`,
+        };
+        logStep("Fallback invoice PDF generated", { size: fallbackBytes.length });
+      } catch (pdfErr: any) {
+        logStep("WARNING: Fallback invoice generation also failed", { error: pdfErr.message });
+      }
     }
 
     // Send customer confirmation email (unless admin-only)
     if (!adminOnly && customerEmail) {
       const emailHtml = createDepositConfirmationEmail(customerName, depositAmount, referenceNumber, motorInfo);
       const customerSubject = motorLabel
-        ? `Deposit Confirmed — ${motorLabel} — Ref ${referenceNumber}`
-        : `Deposit Confirmed — Ref ${referenceNumber}`;
+        ? `Deposit Confirmed - ${motorLabel} - Ref ${referenceNumber}`
+        : `Deposit Confirmed - Ref ${referenceNumber}`;
       const customerAttachments: Array<{ filename: string; content: string }> = [];
-      if (invoicePdf) customerAttachments.push(invoicePdf);
-      if (originalQuotePdf) customerAttachments.push(originalQuotePdf);
+      if (finalPdf) customerAttachments.push(finalPdf);
 
       const emailResponse = await resend.emails.send({
         from: "Harris Boat Works <deposits@hbwsales.ca>",
@@ -449,12 +576,11 @@ serve(async (req) => {
       );
 
       const attachments: Array<{ filename: string; content: string }> = [];
-      if (invoicePdf) attachments.push(invoicePdf);
-      if (originalQuotePdf) attachments.push(originalQuotePdf);
+      if (finalPdf) attachments.push(finalPdf);
 
       const adminSubject = motorLabel
-        ? `🚨 NEW DEPOSIT $${depositAmount} — ${motorLabel} — ${customerName}`
-        : `🚨 NEW DEPOSIT $${depositAmount} — ${customerName}`;
+        ? `NEW DEPOSIT $${depositAmount} - ${motorLabel} - ${customerName}`
+        : `NEW DEPOSIT $${depositAmount} - ${customerName}`;
 
       const adminResponse = await resend.emails.send({
         from: "Harris Boat Works System <deposits@hbwsales.ca>",
