@@ -901,7 +901,14 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
         <Suspense fallback={<div className="fixed inset-0 z-[60] bg-black/50" />}>
           <MotorDetailsPremiumModal
             open={!!motorForDetails}
-            onClose={() => setMotorForDetails(null)}
+            onClose={() => {
+              if (initialMotorId) {
+                // Deep link: dismiss the entire configurator instead of revealing step wizard
+                onClose();
+              } else {
+                setMotorForDetails(null);
+              }
+            }}
             onSelect={() => {
               handleSelectMotor(motorForDetails);
               setMotorForDetails(null);
