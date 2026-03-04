@@ -287,7 +287,7 @@ async function lookupMercuryPart(partNumber: string): Promise<{
         name: cached.name,
         cadPrice: cached.cad_price,
         imageUrl: cached.image_url,
-        sourceUrl: 'https://www.harrisboatworks.ca/mercuryparts'
+        sourceUrl: 'https://www.mercuryrepower.ca/mercuryparts'
       };
     }
     
@@ -297,7 +297,7 @@ async function lookupMercuryPart(partNumber: string): Promise<{
       name: null,
       cadPrice: null,
       imageUrl: null,
-      sourceUrl: 'https://www.harrisboatworks.ca/mercuryparts'
+      sourceUrl: 'https://www.mercuryrepower.ca/mercuryparts'
     };
   } catch (error) {
     console.error(`Error looking up part ${partNumber}:`, error);
@@ -1107,14 +1107,14 @@ NEVER guess or make up part numbers:
 - Quicksilver/Mercury part numbers are model-specific - what works on one motor may NOT work on another
 
 ### Self-Service Parts Lookup - ALWAYS RECOMMEND FIRST
-Harris has an online parts lookup at https://www.harrisboatworks.ca/mercuryparts where customers can:
+Harris has an online parts lookup at https://www.mercuryrepower.ca/mercuryparts where customers can:
 - Search by PART NUMBER to see CAD pricing and availability
 - Search by SERIAL NUMBER to find exact parts for their specific motor
 - This is the BEST resource for service/maintenance parts
 
 When customers ask "where can I look up parts?" or "do you have a parts page?" or need service parts:
-- ALWAYS provide harrisboatworks.ca/mercuryparts FIRST
-- Example: "Yeah! Check out harrisboatworks.ca/mercuryparts - you can search by part number or your motor's serial number and see CAD pricing."
+- ALWAYS provide mercuryrepower.ca/mercuryparts FIRST
+- Example: "Yeah! Check out mercuryrepower.ca/mercuryparts - you can search by part number or your motor's serial number and see CAD pricing."
 
 For phone orders or complex parts questions: (905) 342-2153
 When in doubt, recommend the Harris parts page or calling rather than giving potentially wrong info.
@@ -1127,7 +1127,7 @@ For ACCESSORIES like props, gauges, rigging, steering, electronics, controls, ca
 - When uncertain about accessory compatibility, recommend calling (905) 342-2153
 
 Key difference:
-- "What spark plug for my 9.9?" → Service part → Use Perplexity to verify, then recommend harrisboatworks.ca/mercuryparts
+- "What spark plug for my 9.9?" → Service part → Use Perplexity to verify, then recommend mercuryrepower.ca/mercuryparts
 - "What prop do I need?" → Accessory → Use Perplexity/flipbooks for recommendations
 - "Do you sell gauges?" → Accessory → Search flipbooks or marinecatalogue.ca
 
@@ -1191,7 +1191,7 @@ For specific battery recommendations for a particular motor, say:
 ### What Harris Boat Works Offers
 - We sell **Platinum only** - Mercury's highest tier of extended protection
 - Factory-backed at 3,600+ authorized Mercury dealers worldwide
-- Full details & pricing: https://www.harrisboatworks.ca/warranty
+- Full details & pricing: https://www.mercuryrepower.ca/warranty
 
 ### Platinum Coverage Pricing (Approximate by HP)
 Coverage pricing varies by horsepower range. Sample ranges:
@@ -1255,7 +1255,7 @@ Coverage pricing varies by horsepower range. Sample ranges:
 - Adds significant resale value - selling point for customers
 
 ### How to Get a Warranty Quote
-1. Visit: https://www.harrisboatworks.ca/warranty
+1. Visit: https://www.mercuryrepower.ca/warranty
 2. Or call: (905) 342-2153
 3. We'll need: Motor model, serial number, purchase date
 
@@ -1450,7 +1450,7 @@ After answering a question, if it naturally leads somewhere, offer the next step
 | **Maintenance/oil/service** | Provide the info, then: "Want to book a service appointment? Here's the link: http://hbw.wiki/service" |
 | **Winterization** | Walk through the steps, then: "We can handle winterization for you if you'd rather - want me to get you on the service calendar?" |
 | **Comparisons (2+ motors)** | After comparing: "If these are your finalists, want me to have someone call with real-world insights?" |
-| **Warranty questions** | After explaining: "Want a quick warranty quote? https://www.harrisboatworks.ca/warranty" |
+| **Warranty questions** | After explaining: "Want a quick warranty quote? https://www.mercuryrepower.ca/warranty" |
 | **Pricing/budget** | "We've got financing if that helps - 5-minute application. Want the link? /financing" |
 | **Troubleshooting** | Always end with: "For proper diagnosis, our certified techs should take a look: http://hbw.wiki/service" |
 | **Spec sheet request** | If we have one for that motor, offer to link it: "Want the official Mercury spec sheet?" |
@@ -1606,12 +1606,12 @@ Speak from experience. Be genuine. Don't list bullet points - weave it naturally
 ## OUR FACILITIES (Gores Landing, Rice Lake) - ALWAYS PROVIDE LINKS!
 - **Address**: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 - **Directions**: https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0
-- **Launch Ramp**: Best on Rice Lake! Two-lane concrete, 24/7 access, well-lit, annual passes. Live cam: https://video.nest.com/live/Cfue6qPE5l | Details: https://www.harrisboatworks.ca/launch-ramp
+- **Launch Ramp**: Best on Rice Lake! Two-lane concrete, 24/7 access, well-lit, annual passes. Live cam: https://video.nest.com/live/Cfue6qPE5l | Details: https://www.mercuryrepower.ca/launch-ramp
 - **Marina**: Full-service - slips, washrooms, showers, Wi-Fi, ice, power, travel lift
 - **Parking**: Day, overnight, and long-term for vehicles & trailers
-- **Boat Rentals**: Pontoons & fishing boats - https://www.harrisboatworks.ca/rentals (boat card required)
-- **Boat Slips**: Transient & seasonal - https://www.harrisboatworks.ca/boatslips
-- **Winter Storage**: https://www.harrisboatworks.ca/winter-storage
+- **Boat Rentals**: Pontoons & fishing boats - https://www.mercuryrepower.ca/rentals (boat card required)
+- **Boat Slips**: Transient & seasonal - https://www.mercuryrepower.ca/boatslips
+- **Winter Storage**: https://www.mercuryrepower.ca/winter-storage
 - **On-Water Service**: We come to your boat!
 - **Weather Station**: https://tempestwx.com/station/107760
 - **Wind Conditions**: http://fishweather.com/search/44.118,-78.24
@@ -1911,7 +1911,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
             partsContext += `\n[Look up current pricing](${part.sourceUrl})\n`;
           }
         }
-        partsContext += `\nFor current CAD pricing on Mercury parts, customers can use our online parts lookup at: https://www.harrisboatworks.ca/mercuryparts\n`;
+        partsContext += `\nFor current CAD pricing on Mercury parts, customers can use our online parts lookup at: https://www.mercuryrepower.ca/mercuryparts\n`;
       }
     }
 

@@ -97,15 +97,15 @@ function generateQuoteDeliveryEmail(data: QuoteEmailRequest): string {
             
             <p>This quote is valid for 30 days. Contact us to lock in this pricing or discuss any modifications.</p>
             
-            <p>Ready to move forward? Reply to this email or call us at <strong>(555) 123-4567</strong></p>
+            <p>Ready to move forward? Reply to this email or call us at <strong>(905) 342-2153</strong></p>
             
             <p>Best regards,<br>
-            The Mercury Motors Team</p>
+            The Harris Boat Works Team</p>
           </div>
           
           <div class="footer">
             <p>Have questions? Simply reply to this email and we'll get back to you!</p>
-            <p>Or call us directly at <strong>(555) 123-4567</strong></p>
+            <p>Or call us directly at <strong>(905) 342-2153</strong></p>
           </div>
         </div>
       </body>
@@ -160,17 +160,16 @@ function generateFollowUpEmail(data: QuoteEmailRequest): string {
             <p>I'm here to help! As your Mercury specialist, I can answer any questions and even schedule a time to see the motor in person.</p>
             
             <p><strong>Ready to take the next step?</strong><br>
-            Simply reply to this email or give me a call at <strong>(555) 123-4567</strong></p>
+            Simply reply to this email or give us a call at <strong>(905) 342-2153</strong></p>
             
-            <p>Don't forget - your quote is valid for another few weeks, so there's no rush. But if you're ready to move forward, I'd love to help make it happen!</p>
+            <p>Don't forget - your quote is valid for another few weeks, so there's no rush. But if you're ready to move forward, we'd love to help make it happen!</p>
             
             <p>Best regards,<br>
-            Mike Johnson<br>
-            Mercury Motor Specialist</p>
+            The Harris Boat Works Team</p>
           </div>
           
            <div class="footer">
-             <p>Questions? Simply reply to this email or call us at <strong>(555) 123-4567</strong></p>
+             <p>Questions? Simply reply to this email or call us at <strong>(905) 342-2153</strong></p>
            </div>
         </div>
       </body>
