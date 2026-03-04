@@ -2,19 +2,16 @@ import { useEffect, useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, Download, Home, Phone, Mail, Clock, Package, Wrench, Truck } from "lucide-react";
+import { CheckCircle, Download, Home, Phone, Mail, Clock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useHapticFeedback } from "@/hooks/useHapticFeedback";
 import confetti from "canvas-confetti";
 import { COMPANY_INFO } from "@/lib/companyInfo";
 
 const timelineSteps = [
-  { icon: CheckCircle, label: "Payment Confirmed", description: "Your payment has been processed", complete: true },
-  { icon: Mail, label: "Confirmation Email", description: "You'll receive details shortly", complete: false, timing: "Within 5 minutes" },
-  { icon: Phone, label: "Team Contact", description: "We'll reach out to discuss details", complete: false, timing: "Within 1 business day" },
-  { icon: Package, label: "Order Processing", description: "Your motor is being prepared", complete: false, timing: "1-2 business days" },
-  { icon: Wrench, label: "Installation Scheduled", description: "We'll coordinate installation timing", complete: false, timing: "2-3 business days" },
-  { icon: Truck, label: "Delivery & Installation", description: "Your new motor arrives", complete: false, timing: "2-4 weeks" },
+  { icon: CheckCircle, label: "Payment Confirmed", description: "Your deposit has been processed successfully", complete: true },
+  { icon: Mail, label: "Confirmation Email", description: "You'll receive a confirmation email with your quote PDF attached", complete: false, timing: "Within 5 minutes" },
+  { icon: Phone, label: "We'll Be In Touch", description: "Our team will contact you to discuss next steps, timing, and any questions", complete: false, timing: "Within 1 business day" },
 ];
 
 export default function PaymentSuccess() {
@@ -130,8 +127,8 @@ export default function PaymentSuccess() {
           {quoteData && (
             <div className="bg-gradient-to-br from-secondary/50 to-secondary/30 rounded-xl p-6 border border-border/50 animate-fade-in" style={{ animationDelay: '200ms' }}>
               <h3 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                <Package className="h-5 w-5 text-primary" />
-                Order Summary
+                <CheckCircle className="h-5 w-5 text-primary" />
+                Deposit Summary
               </h3>
               <div className="space-y-3">
                 <div className="flex justify-between items-center py-2 border-b border-border/50">
