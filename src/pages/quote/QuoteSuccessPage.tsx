@@ -165,7 +165,7 @@ export default function QuoteSuccessPage() {
                   </div>
                   <div className="flex-1">
                     <p className="font-medium text-foreground">Schedule</p>
-                    <p className="text-sm text-muted-foreground">We'll arrange pickup or delivery at your convenience</p>
+                    <p className="text-sm text-muted-foreground">We'll schedule your pickup at our Gores Landing location</p>
                   </div>
                 </div>
                 

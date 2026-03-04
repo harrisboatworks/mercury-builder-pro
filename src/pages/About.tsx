@@ -61,7 +61,7 @@ const services = [
   {
     icon: Users,
     title: "Parts & Accessories",
-    description: "Genuine Mercury parts, propellers, rigging, and marine accessories. Same-day shipping on most orders."
+    description: "Genuine Mercury parts, propellers, rigging, and marine accessories. Available for pickup at our location."
   }
 ];
 

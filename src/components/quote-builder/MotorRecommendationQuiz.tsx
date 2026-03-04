@@ -383,7 +383,7 @@ function generateReason(answers: QuizAnswers, motor: any, rank: number, hpRange:
 
   // Stock status
   if (motor.in_stock) {
-    reasons.push('Available now for immediate delivery!');
+    reasons.push('Available now — ready for pickup!');
   }
 
   return `This ${hp}HP motor ${reasons.join(', ')}.`;
