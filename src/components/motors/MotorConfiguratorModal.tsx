@@ -910,8 +910,14 @@ export function MotorConfiguratorModal({ open, onClose, group, onSelectMotor, in
               }
             }}
             onSelect={() => {
-              handleSelectMotor(motorForDetails);
-              setMotorForDetails(null);
+              if (initialMotorId) {
+                // Deep link: select motor then dismiss entirely, skip setMotorForDetails(null)
+                handleSelectMotor(motorForDetails);
+                onClose();
+              } else {
+                handleSelectMotor(motorForDetails);
+                setMotorForDetails(null);
+              }
             }}
             title={motorForDetails.model}
             img={motorForDetails.hero_image_url || motorForDetails.image_url || motorForDetails.image}
