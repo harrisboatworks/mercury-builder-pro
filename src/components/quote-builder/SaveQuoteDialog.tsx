@@ -150,7 +150,36 @@ export function SaveQuoteDialog({
 
       if (emailError) {
         console.error('Error sending email:', emailError);
-        // Don't fail the save if email fails
+      }
+
+      // Notify admin about new saved quote (email + SMS)
+      try {
+        await supabase.functions.invoke('send-quote-email', {
+          body: {
+            customerName: name,
+            customerEmail: email,
+            customerPhone: phone,
+            quoteNumber: leadRecord.id?.slice(0, 8)?.toUpperCase() || 'NEW',
+            motorModel: motorModel || 'Mercury Motor',
+            totalPrice: finalPrice || 0,
+            emailType: 'admin_quote_notification',
+            leadData: {
+              leadScore: leadRecord.lead_score || 0,
+              leadSource: 'save_for_later',
+            },
+          }
+        });
+        
+        // Also send SMS to admin
+        await supabase.functions.invoke('send-sms', {
+          body: {
+            to: 'admin',
+            message: `📋 NEW SAVED QUOTE!\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nMotor: ${motorModel || 'Not specified'}\nPrice: $${(finalPrice || 0).toLocaleString()}\n\nAction: Follow up ASAP!\n\n- Harris Boat Works`,
+            messageType: 'saved_quote_alert',
+          }
+        });
+      } catch (notifyError) {
+        console.error('Admin notification error (non-blocking):', notifyError);
       }
 
       // Show success state

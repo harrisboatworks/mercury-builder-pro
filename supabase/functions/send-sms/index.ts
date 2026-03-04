@@ -9,7 +9,7 @@ const corsHeaders = {
 interface SMSRequest {
   to: string;
   message: string;
-  messageType: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual';
+  messageType: 'hot_lead' | 'quote_confirmation' | 'follow_up' | 'reminder' | 'manual' | 'saved_quote_alert' | 'chat_lead';
   customerName?: string;
   leadScore?: number;
   quoteAmount?: number;
@@ -39,6 +39,18 @@ serve(async (req) => {
     const smsData: SMSRequest = await req.json();
     
     console.log('SMS request:', smsData);
+
+    // Resolve 'admin' to ADMIN_PHONE env var
+    if (smsData.to === 'admin') {
+      const adminPhone = Deno.env.get('ADMIN_PHONE');
+      if (!adminPhone) {
+        console.log('No ADMIN_PHONE configured, skipping admin SMS');
+        return new Response(JSON.stringify({ success: true, skipped: true, reason: 'no_admin_phone' }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      smsData.to = adminPhone;
+    }
 
     // Validate phone number format
     const phoneRegex = /^\+?[1-9]\d{1,14}$/;
