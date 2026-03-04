@@ -229,7 +229,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
           <img
             src={displayImages[selectedIndex]}
             alt={`${motorTitle} - Image ${selectedIndex + 1}`}
-            className={`max-h-full max-w-full object-contain transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            className={`w-full h-full object-contain transition-all duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={onMainImageLoad}
             onError={() => handleImageError(displayImages[selectedIndex])}
             style={{ 
