@@ -30,6 +30,39 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
     );
 
+    // First try saved_quotes table (used by "Save Quote" email links)
+    const { data: savedQuote, error: savedError } = await supabase
+      .from("saved_quotes")
+      .select("id, quote_state, email, user_id, deposit_status, deposit_amount, quote_pdf_path, deposit_pdf_path")
+      .eq("id", quoteId)
+      .single();
+
+    if (savedQuote && !savedError) {
+      // Update access tracking
+      await supabase
+        .from("saved_quotes")
+        .update({ 
+          access_count: (savedQuote.access_count || 0) + 1,
+          last_accessed: new Date().toISOString()
+        })
+        .eq("id", quoteId);
+
+      const quoteData = savedQuote.quote_state;
+      return new Response(
+        JSON.stringify({
+          id: savedQuote.id,
+          quote_data: quoteData,
+          customer_name: quoteData?.customerName ?? "",
+          is_admin_quote: quoteData?.isAdminQuote ?? false,
+          admin_discount: quoteData?.adminDiscount ?? 0,
+          admin_notes: quoteData?.adminNotes ?? "",
+          customer_notes: quoteData?.customerNotes ?? "",
+        }),
+        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
+    // Fall back to customer_quotes table (used by share links)
     const { data: quote, error } = await supabase
       .from("customer_quotes")
       .select("id, quote_data, customer_name, is_admin_quote, admin_discount, admin_notes, customer_notes")
