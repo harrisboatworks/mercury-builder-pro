@@ -9,7 +9,7 @@ const corsHeaders = {
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
-const PARTS_PAGE_URL = 'https://www.harrisboatworks.ca/mercuryparts';
+const PARTS_PAGE_URL = 'https://www.mercuryrepower.ca/mercuryparts';
 
 interface PartInfo {
   partNumber: string;

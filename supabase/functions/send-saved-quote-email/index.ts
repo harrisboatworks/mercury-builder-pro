@@ -112,13 +112,13 @@ const handler = async (req: Request): Promise<Response> => {
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd;">
             <h3 style="color: #333; font-size: 16px; margin-bottom: 10px;">Questions? We're Here to Help!</h3>
             <p style="color: #555; font-size: 14px; margin: 5px 0;">
-              📧 Email: sales@hbwsales.ca
+              📧 Email: info@harrisboatworks.ca
             </p>
             <p style="color: #555; font-size: 14px; margin: 5px 0;">
-              📞 Phone: (705) 327-2002
+              📞 Phone: (905) 342-2153
             </p>
             <p style="color: #555; font-size: 14px; margin: 5px 0;">
-              ⏰ Hours: Mon-Fri 9AM-5PM, Sat 9AM-3PM
+              ⏰ Hours: Mon-Fri 8AM-5PM, Sat 9AM-3PM
             </p>
           </div>
           

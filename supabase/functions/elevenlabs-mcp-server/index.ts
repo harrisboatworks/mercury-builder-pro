@@ -562,7 +562,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         return { 
           content: [{ 
             type: "text", 
-            text: `All motor photos and details are available on our website at harrisboatworks.ca. Just search for the ${args.motor_model} and you'll find everything there!` 
+            text: `All motor photos and details are available on our website at mercuryrepower.ca. Just search for the ${args.motor_model} and you'll find everything there!` 
           }] 
         };
       }
@@ -621,7 +621,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
       if (!RESEND_API_KEY) {
         return { 
-          content: [{ type: "text", text: `I'm having trouble with our email system right now. You can find all the details at harrisboatworks.ca, or I can have someone from our team call you.` }] 
+          content: [{ type: "text", text: `I'm having trouble with our email system right now. You can find all the details at mercuryrepower.ca, or I can have someone from our team call you.` }] 
         };
       }
       
@@ -739,7 +739,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       return { 
         content: [{ 
           type: "text", 
-          text: "To get your personalized quote summary, please visit harrisboatworks.ca/quote or tell me what motor you're interested in and I can help build a quote for you." 
+          text: "To get your personalized quote summary, please visit mercuryrepower.ca/quote or tell me what motor you're interested in and I can help build a quote for you." 
         }] 
       };
     }
@@ -764,7 +764,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       return { 
         content: [{ 
           type: "text", 
-          text: `To update your ${stepDescriptions[args.step as string] || args.step}, please visit harrisboatworks.ca/quote or tell me what you'd like to change.` 
+          text: `To update your ${stepDescriptions[args.step as string] || args.step}, please visit mercuryrepower.ca/quote or tell me what you'd like to change.` 
         }] 
       };
     }
@@ -1169,7 +1169,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
         return { 
           content: [{ 
             type: "text", 
-            text: `Part ${partNumber} - ${partName}${partDesc ? `\n${partDesc}` : ''}\n\nPrice: ${priceInfo}\n\nFor live inventory and ordering, visit harrisboatworks.ca/mercuryparts or call us at (905) 342-9980. Want me to have someone check availability and call you back?` 
+            text: `Part ${partNumber} - ${partName}${partDesc ? `\n${partDesc}` : ''}\n\nPrice: ${priceInfo}\n\nFor live inventory and ordering, visit mercuryrepower.ca/mercuryparts or call us at (905) 342-2153. Want me to have someone check availability and call you back?` 
           }] 
         };
       } catch (error) {
