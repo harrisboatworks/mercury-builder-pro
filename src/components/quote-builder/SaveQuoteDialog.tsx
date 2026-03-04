@@ -37,21 +37,36 @@ export function SaveQuoteDialog({
   const isMobile = useIsMobile();
 
   const [emailError, setEmailError] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
 
   const handleSave = async () => {
     // Clear previous errors
     setEmailError("");
+    setNameError("");
+    setPhoneError("");
     
-    if (!email) {
-      setEmailError("Email address is required");
-      return;
+    let hasError = false;
+
+    if (!name.trim()) {
+      setNameError("Name is required");
+      hasError = true;
     }
 
-    // Basic email validation
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!email) {
+      setEmailError("Email address is required");
+      hasError = true;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       setEmailError("Please enter a valid email address");
-      return;
+      hasError = true;
     }
+
+    if (!phone.trim()) {
+      setPhoneError("Phone number is required");
+      hasError = true;
+    }
+
+    if (hasError) return;
 
     setIsLoading(true);
 
@@ -195,6 +210,26 @@ export function SaveQuoteDialog({
   // Shared form content
   const formContent = (
     <div className="grid gap-4 py-4">
+      
+      <div className="grid gap-2">
+        <Label htmlFor="name">Name *</Label>
+        <Input
+          id="name"
+          type="text"
+          placeholder="John Smith"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+            setNameError("");
+          }}
+          disabled={isLoading}
+          className={nameError ? "border-destructive" : ""}
+        />
+        {nameError && (
+          <p className="text-sm text-destructive">{nameError}</p>
+        )}
+      </div>
+      
       <div className="grid gap-2">
         <Label htmlFor="email">Email *</Label>
         <Input
@@ -215,27 +250,22 @@ export function SaveQuoteDialog({
       </div>
       
       <div className="grid gap-2">
-        <Label htmlFor="name">Name (optional)</Label>
-        <Input
-          id="name"
-          type="text"
-          placeholder="John Smith"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          disabled={isLoading}
-        />
-      </div>
-      
-      <div className="grid gap-2">
-        <Label htmlFor="phone">Phone (optional)</Label>
+        <Label htmlFor="phone">Phone *</Label>
         <Input
           id="phone"
           type="tel"
           placeholder="(555) 123-4567"
           value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={(e) => {
+            setPhone(e.target.value);
+            setPhoneError("");
+          }}
           disabled={isLoading}
+          className={phoneError ? "border-destructive" : ""}
         />
+        {phoneError && (
+          <p className="text-sm text-destructive">{phoneError}</p>
+        )}
       </div>
       
       <p className="text-sm text-muted-foreground">
@@ -285,7 +315,7 @@ export function SaveQuoteDialog({
           <DrawerHeader className="text-left">
             <DrawerTitle>Save Your Quote</DrawerTitle>
             <DrawerDescription>
-              Enter your email to save this configuration. We'll send you a link so you can return anytime.
+              Enter your details to save this configuration. We'll send you a link so you can return anytime.
             </DrawerDescription>
           </DrawerHeader>
           {formContent}
@@ -314,7 +344,7 @@ export function SaveQuoteDialog({
         <DialogHeader>
           <DialogTitle>Save Your Quote</DialogTitle>
           <DialogDescription>
-            Enter your email to save this configuration. We'll send you a link so you can return anytime.
+            Enter your details to save this configuration. We'll send you a link so you can return anytime.
           </DialogDescription>
         </DialogHeader>
         {formContent}
