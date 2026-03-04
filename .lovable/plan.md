@@ -1,37 +1,26 @@
 
 
-## Duplicate Battery Prompt: Analysis and Fix
+## Fix: Deep Link Close Behavior + Pro XS 115 Image Issues
 
-### The Problem
+### What's Happening
 
-The battery question appears **twice** in the flow:
+Two issues when visiting `/motors/pxs-115-exlpt`:
 
-1. **Options Page** (`/quote/options`) — Clean `BatteryOptionPrompt` card asking "Would you like to add a starting battery?" with Yes/No selection. User's choice is saved to `state.looseMotorBattery`.
+1. **Close behavior**: When the details modal closes, it reveals the configurator step UI underneath (start type, shaft, etc.) instead of dismissing everything. For deep-link visitors, this is confusing — they came for a specific motor, not a step-by-step wizard.
 
-2. **Package Selection Page** (`/quote/packages`) — The "Complete" and "Premium" packages **automatically include** a battery cost (`$179.99`) for all non-manual-start motors (`batteryCost` on line 151), regardless of what the user chose on the Options page. The "Essential" package separately references the user's Options page choice via `looseMotorBatteryCost`.
+2. **Image not fitting frame**: This is likely specific to the Pro XS 115 because the image source (from the database or CDN fallback) has different dimensions/aspect ratio than typical motors. The `MotorImageGallery` uses `h-96` in enhanced mode with `object-contain`, so unusually sized images leave whitespace. The container-aware scale hook should handle this, but if the natural image dimensions are close to the container size, `minScale: 1.0` prevents any upscaling.
 
-This means:
-- If the user said **"Yes, add battery"** on Options, the Essential package charges them for it, AND the Complete/Premium packages charge them again (double-counting).
-- If the user said **"No, I have my own"** on Options, the Complete/Premium packages still add a battery cost — contradicting their choice.
+### Plan
 
-### The Fix
+**File 1: `src/components/motors/MotorConfiguratorModal.tsx`**
 
-**On PackageSelectionPage**, the battery logic for Complete/Premium packages should respect the user's choice from the Options page instead of unconditionally adding `batteryCost`:
+- Line 904: Update the `onClose` callback so that when `initialMotorId` is set (deep link), closing the details modal calls `onClose()` (dismisses the entire configurator) instead of just `setMotorForDetails(null)` (which reveals the step wizard underneath).
 
-- **Line 151**: `const batteryCost = !isManualStart ? 179.99 : 0;` — This should check `state.looseMotorBattery` when on the `loose` path. If the user already said "No", don't add a battery. If they said "Yes", don't double-add (it's already in `looseMotorBatteryCost`).
-- **Lines 228-232**: The Complete package features list says "Marine starting battery ($180 value)" unconditionally for non-manual-start motors. This should only show if a battery is actually being included.
-- **Line 219**: Essential package shows "Customer supplies battery (if needed)" when `looseMotorBatteryCost === 0` — this is correct behavior.
+**File 2: `src/components/motors/MotorImageGallery.tsx`**
 
-**Concrete changes to `src/pages/quote/PackageSelectionPage.tsx`:**
+- The `enhanced` mode container (`h-96`) combined with `useContainerAwareScale` already tries to fill optimally, but `minScale: 1.0` means images that nearly fill the container won't get the small boost they need. Lower `minScale` isn't the answer — instead, ensure the `object-contain` image uses `w-full h-full` so the browser's native fitting maximizes the image within the container before the scale hook applies. This is a small CSS tweak to the `<img>` tag (around line 196) to replace `max-h-full max-w-full` with `w-full h-full` while keeping `object-contain`.
 
-1. Update `batteryCost` calculation (line 151) to account for loose path battery choice:
-   - If `purchasePath === 'loose'` and user declined battery → `batteryCost = 0`
-   - If `purchasePath === 'loose'` and user accepted battery → battery is already in `looseMotorBatteryCost`, so `batteryCost = 0` for Complete/Premium to avoid double-counting
-   - If `purchasePath === 'installed'` → keep existing logic (battery included in Complete/Premium as an upgrade perk)
+### Scope
 
-2. Update Complete package features (line 232) to conditionally show battery line item based on whether it's actually being added.
-
-3. Update Premium package price calculation (line 246) accordingly.
-
-No other files need changes — the Options page battery prompt is working correctly.
+Two files, two targeted changes. No other files affected.
 
