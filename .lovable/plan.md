@@ -1,26 +1,29 @@
 
 
-## Fix: Deep Link Close Behavior + Pro XS 115 Image Issues
+## Fix: Deep Link Motor Experience (Images + Configure Flow)
 
-### What's Happening
+### What's Still Wrong
 
-Two issues when visiting `/motors/pxs-115-exlpt`:
+**1. "Configure" button reveals step wizard briefly**
 
-1. **Close behavior**: When the details modal closes, it reveals the configurator step UI underneath (start type, shaft, etc.) instead of dismissing everything. For deep-link visitors, this is confusing — they came for a specific motor, not a step-by-step wizard.
+When clicking "Configure This Motor" from a deep-linked motor details modal, the flow is:
+- `onSelect()` runs → sets motor in quote context + `setMotorForDetails(null)` (reveals configurator steps underneath)
+- Navigation to `/quote/options` only fires after a 500ms `setTimeout`
+- During that 500ms gap, the user sees the configurator's step wizard (shaft selector, etc.)
 
-2. **Image not fitting frame**: This is likely specific to the Pro XS 115 because the image source (from the database or CDN fallback) has different dimensions/aspect ratio than typical motors. The `MotorImageGallery` uses `h-96` in enhanced mode with `object-contain`, so unusually sized images leave whitespace. The container-aware scale hook should handle this, but if the natural image dimensions are close to the container size, `minScale: 1.0` prevents any upscaling.
+Even though the close fix was added, the `onSelect` callback runs *before* `onClose` in the details modal's `handleSelectMotor`, so `setMotorForDetails(null)` exposes the step wizard momentarily.
 
-### Plan
+**Fix**: In `MotorConfiguratorModal.tsx` line 912-914, when `initialMotorId` is set, the `onSelect` callback should call `onSelectMotor(motor)` and then immediately call `onClose()` (the parent's close) without calling `setMotorForDetails(null)`. This prevents the step wizard from ever becoming visible.
 
-**File 1: `src/components/motors/MotorConfiguratorModal.tsx`**
+**2. Image sizing may need the gallery container adjusted**
 
-- Line 904: Update the `onClose` callback so that when `initialMotorId` is set (deep link), closing the details modal calls `onClose()` (dismisses the entire configurator) instead of just `setMotorForDetails(null)` (which reveals the step wizard underneath).
+The `w-full h-full` change on the `<img>` tag is correct but may not visually help for the Pro XS 115 because the containing `div` at line 470 in `MotorDetailsPremiumModal.tsx` adds padding (`pt-4 pb-6`) that shrinks the available space. The image gallery container should use full width without extra vertical padding to maximize the image area.
 
-**File 2: `src/components/motors/MotorImageGallery.tsx`**
+### Changes
 
-- The `enhanced` mode container (`h-96`) combined with `useContainerAwareScale` already tries to fill optimally, but `minScale: 1.0` means images that nearly fill the container won't get the small boost they need. Lower `minScale` isn't the answer — instead, ensure the `object-contain` image uses `w-full h-full` so the browser's native fitting maximizes the image within the container before the scale hook applies. This is a small CSS tweak to the `<img>` tag (around line 196) to replace `max-h-full max-w-full` with `w-full h-full` while keeping `object-contain`.
+**File 1: `src/components/motors/MotorConfiguratorModal.tsx`** (lines 912-914)
+- When `initialMotorId` is set, the `onSelect` callback should call `onSelectMotor(motor)` then `onClose()` directly, skipping `setMotorForDetails(null)` to avoid flashing the step wizard.
 
-### Scope
-
-Two files, two targeted changes. No other files affected.
+**File 2: `src/components/motors/MotorDetailsPremiumModal.tsx`** (line 470)
+- Remove extra padding from the image gallery wrapper (`pt-4 pb-6` → `py-2`) so images have more room to fill the frame.
 
