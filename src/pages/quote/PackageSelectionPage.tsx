@@ -148,7 +148,9 @@ export default function PackageSelectionPage() {
   const controlsCost = getControlsCostFromSelection();
   // Only charge installation labor for installed path AND remote motors
   const installationLaborCost = (!isManualTiller && state.purchasePath === 'installed') ? 450 : 0;
-  const batteryCost = !isManualStart ? 179.99 : 0;
+  // For loose path, battery is already handled by looseMotorBatteryCost (user chose on Options page)
+  // Only add batteryCost for installed path where Complete/Premium include it as a perk
+  const batteryCost = (state.purchasePath === 'installed' && !isManualStart) ? 179.99 : 0;
   const baseAccessoryCost = controlsCost + installationLaborCost;
   // Only apply tiller installation cost if purchasePath is 'installed'
   const tillerInstallCost = isManualTiller && state.purchasePath === 'installed' 
@@ -229,7 +231,7 @@ export default function PackageSelectionPage() {
       savings: totals.savings, 
       features: [
         "Everything in Essential",
-        ...(isManualStart ? [] : ["Marine starting battery ($180 value)"]), 
+        ...(batteryCost > 0 ? ["Marine starting battery ($180 value)"] : []), 
         `Extended to ${COMPLETE_TARGET_YEARS} years total coverage`,
         completeWarrantyCost > 0 ? `Warranty extension: $${completeWarrantyCost}` : `Already includes ${COMPLETE_TARGET_YEARS}yr coverage`,
         ...(isInstalled ? ["Priority installation"] : []),
