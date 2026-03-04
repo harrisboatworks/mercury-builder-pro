@@ -1,42 +1,42 @@
 
 
-## Testing Status
+## Testing the Deposit Flow
 
-The quote builder flow works end-to-end through all steps:
-1. Motor Selection → 9.9HP Command Thrust selected
-2. Options → Fuel tank pre-selected, continued
-3. Purchase Path → Loose Motor selected
-4. Trade-In → Skipped (No trade-in)
-5. Promo → Factory Rebate ($250) selected
-6. Package → Essential selected
-7. **Summary page loaded correctly** with accurate pricing and the "Reserve with $200 deposit" button
+The core issue: Stripe test cards only work when Stripe is in **test mode**. If `4242 4242 4242 4242` was rejected, your Stripe account is in **live mode**, which means test cards won't work.
 
-## What Still Needs Testing
+### Options
 
-The critical piece — clicking "Reserve with $200 deposit" — requires **you to test manually** because:
+**Option A: Switch Stripe to test mode temporarily**
+- In your Stripe Dashboard, toggle the "Test mode" switch (top-right)
+- Copy the **test mode** secret key (starts with `sk_test_`)
+- Update the `STRIPE_SECRET_KEY` secret in Supabase to the test key
+- Update `STRIPE_WEBHOOK_SECRET` to the test webhook secret
+- Run through the full deposit flow with `4242 4242 4242 4242`
+- Switch everything back to live keys when done
 
-1. **Authentication**: You need to be logged in for the `saved_quotes` record to link to your account. The browser automation doesn't share your login session.
-2. **Stripe redirect**: The deposit flow opens Stripe Checkout in a new tab, which browser automation cannot follow.
-3. **Email verification**: You need to check your inbox for the deposit-confirmed PDF after completing the Stripe test payment.
+This is the proper way to test without spending money.
 
-## Manual Test Steps
+**Option B: Test everything except the Stripe redirect**
+- We can verify the **pre-Stripe** portion right now by checking:
+  1. The deposit dialog collects name/email/phone
+  2. The PDF is generated and uploaded to storage before redirect
+  3. The `saved_quotes` record is created with the correct metadata
+  4. The `create-payment` edge function returns a valid Stripe session URL
+- The **post-Stripe** portion (webhook → email → My Quotes badge) would remain untested until a real or test-mode payment goes through
 
-1. **Log in** to the site (Sign In button, top right)
-2. **Configure a quote** (motor → options → purchase path → trade-in → promo → package → summary) — or resume if your session persists
-3. **Click "Reserve with $200 deposit"**
-4. **Fill in the deposit dialog** (name, email, phone) — watch the console for:
-   - `"Deposit-confirmed PDF uploaded:"` — confirms the React PDF with depositInfo was generated and stored
-   - `"Saved quote created for deposit tracking:"` — confirms the saved_quotes record was created
-5. **Complete the Stripe test payment** in the new tab
-6. **Check your email** — the PDF attached should be the professional React PDF with the green "DEPOSIT CONFIRMED" section, not the old ugly pdf-lib version
-7. **Check My Quotes page** (`/account/my-quotes`) — should show the quote with a green "Deposit Paid" badge
+**Option C: Create a $1 test price**
+- Create a `$1.00 CAD` Stripe price for testing purposes
+- Temporarily wire it as the deposit price for a specific HP range
+- Pay the $1, verify the full chain works, then remove it
 
-## Edge Functions to Deploy
+### Recommendation
 
-Before testing, make sure these updated edge functions are deployed:
-- `send-deposit-confirmation-email` (gutted the pdf-lib stamping)
-- `stripe-webhook` (now updates saved_quotes with deposit status)
-- `create-payment` (now passes savedQuoteId through metadata)
+**Option A** is the standard approach. You'd:
+1. Toggle test mode in Stripe Dashboard
+2. I update the Supabase secret to `sk_test_...`
+3. You run through the quote → reserve → pay flow
+4. We verify email PDF + My Quotes page
+5. Switch back to live keys
 
-You can verify deployment status at the Supabase dashboard Edge Functions page.
+No code changes needed — just a secret swap.
 
