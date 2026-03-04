@@ -166,13 +166,13 @@ export default function Terms() {
 
             <h3>Acceptance of Orders</h3>
             <p>
-              The receipt of an e-mail order confirmation or reservation of a part, accessory, or unit does not constitute the acceptance of an order or a confirmation of an offer to sell. {COMPANY_INFO.name} reserves the right, without prior notification, to limit the order quantity on any item and/or refuse service to any customer. {COMPANY_INFO.name} may cancel an order at any time before delivery or pickup for any reason, including pricing errors or stock availability issues.
+              The receipt of an e-mail order confirmation or reservation of a part, accessory, or unit does not constitute the acceptance of an order or a confirmation of an offer to sell. {COMPANY_INFO.name} reserves the right, without prior notification, to limit the order quantity on any item and/or refuse service to any customer. {COMPANY_INFO.name} may cancel an order at any time before pickup for any reason, including pricing errors or stock availability issues.
             </p>
             <hr />
 
             <h3>Pricing, Availability, Taxes &amp; Surcharges</h3>
             <p>
-              All prices are subject to change without notice. Prices do not include applicable taxes, shipping, and handling charges, which may be calculated and added at checkout. You are responsible for paying all applicable sales, use, value-added, and other taxes, duties, and charges associated with your purchase.
+              All prices are subject to change without notice. Prices do not include applicable taxes, which will be calculated at the time of purchase. You are responsible for paying all applicable sales, use, value-added, and other taxes, duties, and charges associated with your purchase.
             </p>
             <hr />
 

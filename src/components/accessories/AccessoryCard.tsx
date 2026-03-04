@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, Mail, AlertCircle, RefreshCw, Store, Truck, Package } from 'lucide-react';
+import { Phone, Mail, AlertCircle, RefreshCw, Store, Package } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -36,14 +36,6 @@ function FulfillmentBadges({ fulfillment }: { fulfillment?: FulfillmentOptions }
     );
   }
   
-  if (fulfillment.localDelivery || fulfillment.sameDayDelivery) {
-    badges.push(
-      <Badge key="delivery" variant="outline" className="bg-purple-50 text-purple-700 border-purple-200 text-xs gap-1">
-        <Truck className="h-3 w-3" />
-        {fulfillment.sameDayDelivery ? 'Same-Day Delivery' : 'Local Delivery'}
-      </Badge>
-    );
-  }
   
   if (badges.length === 0) return null;
   
