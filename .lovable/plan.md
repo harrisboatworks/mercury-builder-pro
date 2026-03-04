@@ -1,42 +1,33 @@
 
 
-## Testing the Deposit Flow
+## Remove All Delivery/Shipping References
 
-The core issue: Stripe test cards only work when Stripe is in **test mode**. If `4242 4242 4242 4242` was rejected, your Stripe account is in **live mode**, which means test cards won't work.
+Audit found several customer-facing pages that mention delivery or shipping. Here are the specific changes needed:
 
-### Options
+### Files to Edit
 
-**Option A: Switch Stripe to test mode temporarily**
-- In your Stripe Dashboard, toggle the "Test mode" switch (top-right)
-- Copy the **test mode** secret key (starts with `sk_test_`)
-- Update the `STRIPE_SECRET_KEY` secret in Supabase to the test key
-- Update `STRIPE_WEBHOOK_SECRET` to the test webhook secret
-- Run through the full deposit flow with `4242 4242 4242 4242`
-- Switch everything back to live keys when done
+**1. `src/pages/quote/QuoteSuccessPage.tsx` (line 168)**
+- Change "We'll arrange pickup or delivery at your convenience" → "We'll schedule your pickup at our Gores Landing location"
 
-This is the proper way to test without spending money.
+**2. `src/components/quote-builder/MotorRecommendationQuiz.tsx` (line 386)**
+- Change "Available now for immediate delivery!" → "Available now — ready for pickup!"
 
-**Option B: Test everything except the Stripe redirect**
-- We can verify the **pre-Stripe** portion right now by checking:
-  1. The deposit dialog collects name/email/phone
-  2. The PDF is generated and uploaded to storage before redirect
-  3. The `saved_quotes` record is created with the correct metadata
-  4. The `create-payment` edge function returns a valid Stripe session URL
-- The **post-Stripe** portion (webhook → email → My Quotes badge) would remain untested until a real or test-mode payment goes through
+**3. `src/pages/About.tsx` (line 64)**
+- Change "Same-day shipping on most orders." → "Available for pickup at our location."
 
-**Option C: Create a $1 test price**
-- Create a `$1.00 CAD` Stripe price for testing purposes
-- Temporarily wire it as the deposit price for a specific HP range
-- Pay the $1, verify the full chain works, then remove it
+**4. `src/pages/Terms.tsx` (line 169)**
+- Change "before delivery or pickup" → "before pickup"
 
-### Recommendation
+**5. `src/pages/Terms.tsx` (line 175)**
+- Remove "shipping, and handling charges" from pricing paragraph — reword to clarify pickup-only
 
-**Option A** is the standard approach. You'd:
-1. Toggle test mode in Stripe Dashboard
-2. I update the Supabase secret to `sk_test_...`
-3. You run through the quote → reserve → pay flow
-4. We verify email PDF + My Quotes page
-5. Switch back to live keys
+**6. `src/components/accessories/AccessoryCard.tsx` (lines 39-45)**
+- Remove the delivery badge block entirely (local delivery / same-day delivery badges). Keep pickup badges only.
 
-No code changes needed — just a secret swap.
+### Files NOT changed (intentionally)
+- `supabase/functions/locally-inventory/index.ts` — This is a third-party API response mapper (Locally.io). The data comes from their API; we just won't display delivery badges on our end.
+- `useLocallyInventory.ts` — Same reason; keeps the data but we won't render delivery UI.
+- `supabase/functions/_shared/mercury-knowledge.ts` — "delivers" used as a verb describing engine performance (e.g., "delivers more thrust"), not shipping. Fine to keep.
+- `supabase/functions/generate-spec-sheet-insights/index.ts` — Same, "delivers" = engine performance language.
+- Email/SMS edge functions — "email delivery" refers to sending emails, not physical shipping.
 
