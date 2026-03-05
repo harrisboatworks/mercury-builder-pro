@@ -16,6 +16,7 @@ import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { SITE_URL } from '@/lib/site';
 import { DEALERPLAN_FEE } from '@/lib/finance';
+import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
 import { QuoteChangeLog } from '@/components/admin/QuoteChangeLog';
 import QRCode from 'qrcode';
 
@@ -278,10 +279,24 @@ const AdminQuoteDetail = () => {
       // Motor subtotal after all discounts
       const motorSubtotal = motorMSRP - motorSavings - adminDiscountValue - promoValue;
       
-      // Accessories - handle loose motor path
-      let accessoryBreakdown = qd.accessoryBreakdown || qd.selectedOptions || [];
+      // Accessories - use persisted breakdown, or recompute for legacy quotes
+      let accessoryBreakdown = qd.accessoryBreakdown;
       
-      // For loose motor path, add "Clamp-On Installation" if empty
+      if (!accessoryBreakdown || accessoryBreakdown.length === 0) {
+        // Legacy quote: recompute from saved quote data
+        accessoryBreakdown = buildAccessoryBreakdown({
+          selectedOptions: qd.selectedOptions || [],
+          motor: qd.motor || {},
+          boatInfo: qd.boatInfo,
+          purchasePath: qd.purchasePath,
+          installConfig: qd.installConfig,
+          looseMotorBattery: qd.looseMotorBattery,
+          selectedPackage: qd.selectedPackage?.id || 'good',
+          adminCustomItems: qd.adminCustomItems || [],
+        });
+      }
+      
+      // For loose motor path with no items, add clamp-on placeholder
       if (qd.purchasePath === 'loose' && accessoryBreakdown.length === 0) {
         accessoryBreakdown = [{
           name: 'Clamp-On Installation',
