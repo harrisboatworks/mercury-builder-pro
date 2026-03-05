@@ -472,6 +472,21 @@ export function QuoteRevealCinematic({
                   {money(displayPrice)}
                 </motion.span>
                 
+                {/* "+ HST" suffix - appears after price counter completes */}
+                <AnimatePresence>
+                  {priceComplete && (
+                    <motion.span
+                      initial={{ opacity: 0, x: -5 }}
+                      animate={{ opacity: 0.5, x: 0 }}
+                      transition={{ delay: 0.3, duration: 0.4 }}
+                      className="absolute -right-16 md:-right-20 bottom-1 md:bottom-2 text-xs md:text-sm font-medium tracking-wide"
+                      style={{ color: '#9CA3AF' }}
+                    >
+                      + HST
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+
                 {/* Pulsing glow ring around price when complete */}
                 {priceComplete && (
                   <motion.div
