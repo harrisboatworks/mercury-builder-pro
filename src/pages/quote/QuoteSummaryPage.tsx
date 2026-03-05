@@ -18,6 +18,7 @@ import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCine
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
 import { hasElectricStart } from '@/lib/motor-config-utils';
+import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
 
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
@@ -306,136 +307,20 @@ export default function QuoteSummaryPage() {
 
   // Build accessory breakdown
   const accessoryBreakdown = useMemo(() => {
-    const breakdown = [];
-    
-    // Check if user selected an upgraded fuel tank (replaces included tank)
-    const hasUpgradedFuelTank = state.selectedOptions?.some(
-      opt => opt.name?.toLowerCase().includes('fuel tank') && opt.price > 0
-    );
-    
-    // Check if user already has any fuel tank selected (for Best package logic)
-    const hasAnyFuelTankSelected = state.selectedOptions?.some(
-      opt => opt.name?.toLowerCase().includes('fuel tank')
-    );
-    
-    // Selected motor options
-    if (state.selectedOptions && state.selectedOptions.length > 0) {
-      state.selectedOptions.forEach(option => {
-        // If user selected an upgraded fuel tank, skip the included $0 tank
-        const isFuelTank = option.name?.toLowerCase().includes('fuel tank');
-        const isIncludedTank = isFuelTank && option.isIncluded && option.price === 0;
-        
-        // Skip included tank if user upgraded to a different tank
-        if (isIncludedTank && hasUpgradedFuelTank) {
-          return; // Don't add included tank to breakdown
-        }
-        
-        breakdown.push({
-          name: option.name,
-          price: option.price,
-          description: option.isIncluded ? 'Included with motor' : undefined
-        });
-      });
-    }
-    
-    // Tiller installation
-    if (isManualTiller && tillerInstallCost > 0) {
-      const mountingType = state.installConfig?.mounting === 'transom_bolt' ? 'Bolt-On Transom' : 'Installation';
-      breakdown.push({
-        name: `${mountingType} Installation`,
-        price: tillerInstallCost,
-        description: 'Professional mounting and setup'
-      });
-    } else if (isManualTiller && tillerInstallCost === 0) {
-      breakdown.push({
-        name: 'Clamp-On Installation',
-        price: 0,
-        description: 'DIY-friendly mounting system (no installation labor required)'
-      });
-    }
-    
-    // Controls - context-aware description
-    if (needsControls && controlsCost > 0) {
-      const controlsOption = state.boatInfo?.controlsOption;
-      const controlsName = controlsOption === 'adapter' 
-        ? 'Control Adaptor Harness' 
-        : 'Controls & Rigging Package';
-      const controlsDesc = controlsOption === 'adapter'
-        ? 'Adapter to connect your existing Mercury controls to the new motor'
-        : 'New throttle/shift controls, cables, and installation hardware';
-      breakdown.push({
-        name: controlsName,
-        price: controlsCost,
-        description: controlsDesc
-      });
-    }
-    
-    // Professional installation for remote motors (ONLY for installed path)
-    if (!isManualTiller && state.purchasePath === 'installed') {
-      breakdown.push({
-        name: 'Professional Installation',
-        price: installationLaborCost,
-        description: 'Expert rigging, mounting, and commissioning by certified technicians'
-      });
-    }
-    
-    // Battery for electric start motors - respect user's choice from Options page
-    if (isElectricStart && state.looseMotorBattery?.wantsBattery) {
-      breakdown.push({
-        name: 'Marine Starting Battery',
-        price: state.looseMotorBattery.batteryCost,
-        description: 'Marine starting battery for electric start motor'
-      });
-    }
-    
-    // Propeller allowance (HP-based, all packages)
-    if (!includesProp && propAllowance) {
-      breakdown.push({
-        name: propAllowance.name,
-        price: propAllowance.price,
-        description: propAllowance.description
-      });
-    }
-    
-    // Fuel tank for Premium - only if user hasn't already selected one
-    if (selectedPackage === 'best' && canAddFuelTank && !hasAnyFuelTankSelected) {
-      breakdown.push({
-        name: '12L External Fuel Tank & Hose',
-        price: 199,
-        description: 'Portable fuel tank for extended range'
-      });
-    }
-    
-    // Warranty extension - only add if current coverage is below target (prevents race condition with promo loading)
-    if (selectedPackage === 'better' && completeWarrantyCost > 0 && currentCoverageYears < COMPLETE_TARGET_YEARS) {
-      const extensionYears = COMPLETE_TARGET_YEARS - currentCoverageYears;
-      breakdown.push({
-        name: `Complete Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
-        price: completeWarrantyCost,
-        description: `Total coverage: ${COMPLETE_TARGET_YEARS} years`
-      });
-    } else if (selectedPackage === 'best' && premiumWarrantyCost > 0 && currentCoverageYears < PREMIUM_TARGET_YEARS) {
-      const extensionYears = PREMIUM_TARGET_YEARS - currentCoverageYears;
-      breakdown.push({
-        name: `Premium Package: Extended Warranty (${extensionYears} additional year${extensionYears > 1 ? 's' : ''})`,
-        price: premiumWarrantyCost,
-        description: `Total coverage: ${PREMIUM_TARGET_YEARS} years`
-      });
-    }
-    
-    // Admin custom line items
-    if (state.adminCustomItems && state.adminCustomItems.length > 0) {
-      state.adminCustomItems.forEach(item => {
-        breakdown.push({
-          name: item.name,
-          price: item.price,
-          description: 'Custom item'
-        });
-      });
-    }
-    
-    return breakdown;
-  }, [state.selectedOptions, isManualTiller, tillerInstallCost, state.installConfig, needsControls, controlsCost, isElectricStart, selectedPackage, batteryCost, includesProp, propAllowance, canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, installationLaborCost, state.purchasePath, state.looseMotorBattery, state.adminCustomItems]);
+    return buildAccessoryBreakdown({
+      selectedOptions: state.selectedOptions,
+      motor,
+      boatInfo: state.boatInfo,
+      purchasePath: state.purchasePath,
+      installConfig: state.installConfig,
+      looseMotorBattery: state.looseMotorBattery,
+      selectedPackage,
+      adminCustomItems: state.adminCustomItems || [],
+      completeWarrantyCost,
+      premiumWarrantyCost,
+      currentCoverageYears,
+    });
+  }, [state.selectedOptions, motor, state.boatInfo, state.purchasePath, state.installConfig, state.looseMotorBattery, selectedPackage, state.adminCustomItems, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears]);
 
   // Calculate package-specific totals
   const packageSpecificTotals = useMemo(() => {

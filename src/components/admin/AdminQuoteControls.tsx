@@ -11,6 +11,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
 import { DEALERPLAN_FEE } from '@/lib/finance';
 import { SITE_URL } from '@/lib/site';
+import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
 
 interface AdminQuoteControlsProps {
   onSave?: () => void;
@@ -75,14 +76,28 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       const quoteData = getQuoteData();
       const motor = state.motor;
       
-      // Calculate comprehensive pricing (same logic as ScheduleConsultation)
+      // Build the full accessory breakdown using the shared utility
+      const accessoryBreakdown = buildAccessoryBreakdown({
+        selectedOptions: state.selectedOptions,
+        motor,
+        boatInfo: state.boatInfo,
+        purchasePath: state.purchasePath,
+        installConfig: state.installConfig,
+        looseMotorBattery: state.looseMotorBattery,
+        selectedPackage: state.selectedPackage?.id || 'good',
+        adminCustomItems: customItems,
+        completeWarrantyCost: 0, // Not available in admin context, will be 0
+        premiumWarrantyCost: 0,
+        currentCoverageYears: 3,
+      });
+      
+      // Calculate comprehensive pricing using the full breakdown
       const motorMSRP = motor?.msrp || motor?.basePrice || 0;
       const motorSalePrice = motor?.salePrice || motor?.price || motorMSRP;
       const motorDiscount = motorMSRP - motorSalePrice;
       
-      // Accessories total
-      const accessoryTotal = (state.selectedOptions?.reduce((sum, opt) => sum + (opt.price || 0), 0) || 0)
-        + (customItems?.reduce((sum, item) => sum + (item.price || 0), 0) || 0);
+      // Full accessory total from breakdown (includes controls, installation, battery, propeller, custom items)
+      const accessoryTotal = accessoryBreakdown.reduce((sum, item) => sum + (item.price || 0), 0);
       
       // Trade-in value
       const tradeInValue = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo?.estimatedValue || 0) : 0;
@@ -93,7 +108,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       const totalBeforeDiscount = subtotal + hst + DEALERPLAN_FEE;
       const finalPrice = Math.max(0, totalBeforeDiscount - adminDiscount);
       
-      // Enhanced quote data with admin fields
+      // Enhanced quote data with admin fields and persisted accessory breakdown
       const enhancedQuoteData = {
         ...quoteData,
         adminDiscount,
@@ -104,6 +119,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         customerPhone,
         isAdminQuote: true,
         adminCustomItems: customItems,
+        accessoryBreakdown, // Persist the full breakdown for PDF generation
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoRate: state.selectedPromoRate,
         selectedPromoTerm: state.selectedPromoTerm,
