@@ -306,6 +306,7 @@ const AdminQuoteDetail = () => {
       }
       
       // Calculate totals
+      console.log('[Admin PDF] accessoryBreakdown items:', accessoryBreakdown.length, JSON.stringify(accessoryBreakdown));
       const accessoriesTotal = accessoryBreakdown.reduce((sum: number, a: any) => sum + (a.price || 0), 0);
       const tradeInValue = qd.tradeInInfo?.hasTradeIn 
         ? (q.tradein_value_final || qd.tradeInInfo?.estimatedValue || 0) 

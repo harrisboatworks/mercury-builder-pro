@@ -396,7 +396,7 @@ export default function QuoteSummaryPage() {
           coverageYears: selectedPackageCoverageYears,
           features: []
         },
-        accessoryBreakdown,
+        accessoryBreakdown: (() => { console.log('[PDF] accessoryBreakdown items:', accessoryBreakdown.length, JSON.stringify(accessoryBreakdown)); return accessoryBreakdown; })(),
         ...(state.tradeInInfo?.hasTradeIn && state.tradeInInfo?.estimatedValue && state.tradeInInfo.estimatedValue > 0 && state.tradeInInfo?.brand ? {
           tradeInValue: state.tradeInInfo.estimatedValue,
           tradeInInfo: {

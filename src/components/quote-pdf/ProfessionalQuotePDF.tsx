@@ -663,7 +663,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </View>
               
               {/* Accessories Section */}
-              {quoteData.accessoryBreakdown && quoteData.accessoryBreakdown.length > 0 && (
+              {quoteData.accessoryBreakdown && quoteData.accessoryBreakdown.length > 0 ? (
                 <>
                   <View style={{ marginTop: 8, marginBottom: 4 }}>
                     <Text style={[styles.pricingLabel, { fontWeight: 'bold' }]}>
@@ -686,6 +686,14 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                     </View>
                   ))}
                 </>
+              ) : (
+                (!quoteData.accessoryBreakdown || quoteData.accessoryBreakdown.length === 0) && (
+                  <View style={{ marginTop: 8, marginBottom: 4 }}>
+                    <Text style={{ fontSize: 7, color: colors.lightText, fontStyle: 'italic' }}>
+                      Controls & setup costs calculated at time of order
+                    </Text>
+                  </View>
+                )
               )}
               
               {/* Estimated Trade Value */}
