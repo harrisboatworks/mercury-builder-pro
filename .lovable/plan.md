@@ -1,78 +1,57 @@
 
 
-## Bug: Controls & Installation Missing from Admin-Downloaded PDFs
+## Diagnosis: Accessories Missing from PDF
 
-### Root Cause
+### What the data shows
 
-The PDF named `Quote-Brian-Andrews.pdf` was downloaded from the **Admin Quote Detail** page (`AdminQuoteDetail.tsx`), not from the live Quote Summary page. Here's the chain of failure:
+I queried the database and confirmed Brian's saved quote (`988ad48c`) has ALL the right data:
+- `boatInfo.controlsOption = "none"` → should add Controls ($1,200)
+- `purchasePath = "installed"` → should add Professional Installation ($450)
+- `motor.hp = 150` → should add Propeller Allowance Stainless Steel ($1,200)
 
-**1. AdminQuoteControls doesn't save the computed accessoryBreakdown**
+Yet the PDF shows $0 in accessories. The subtotal is just Motor Price ($23,457) minus Trade ($2,050) = $21,407.
 
-When an admin clicks "Save Quote," the pricing calculation at line 84-85 only sums `selectedOptions` (motor add-ons like fuel tanks, covers) and `customItems`. It completely ignores:
-- Controls cost ($1,200 for new controls, $125 for adapter)
-- Installation labor ($450 for remote motors)
-- Battery cost ($179.99 for electric start)
-- Propeller allowance
+### The code is correct in the editor
 
-The `quote_data` JSON blob stored in Supabase contains `boatInfo.controlsOption`, `purchasePath`, and `selectedOptions`, but NOT the full `accessoryBreakdown` that the summary page computes on-the-fly.
+I traced every step:
+1. `buildAccessoryBreakdown()` correctly handles all three items
+2. `QuoteSummaryPage` line 309-323 calls it with the right state values
+3. `pdfData.accessoryBreakdown` passes it to the PDF generator (line 399)
+4. `react-pdf-generator.tsx` line 131 passes it through to the PDF component
+5. `ProfessionalQuotePDF.tsx` line 666-689 renders the "Accessories & Setup" section when items exist
 
-**2. AdminQuoteDetail rebuilds the PDF from incomplete data**
+**The published site is running older code that predates the `buildAccessoryBreakdown` utility.** Even though you clicked Publish, the deployment may not have completed, or a cached version is being served.
 
-When downloading the PDF from the admin detail page (line 282):
-```
-let accessoryBreakdown = qd.accessoryBreakdown || qd.selectedOptions || [];
-```
-Since `accessoryBreakdown` was never saved, it falls back to `selectedOptions` — which only has motor options, not controls/installation/battery. The pricing totals then exclude these costs entirely.
+### Plan: Add defensive logging + force a verifiable change
 
-**Why it works on the summary page**: The QuoteSummaryPage computes `accessoryBreakdown` fresh from live context state (`state.boatInfo?.controlsOption`, `state.purchasePath`, etc.), so controls and installation show up correctly there. But once saved and re-opened from admin, they vanish.
-
-### Fix Plan
-
-**New shared utility: `src/lib/build-accessory-breakdown.ts`**
-
-Extract the accessory breakdown logic (currently duplicated/inline in QuoteSummaryPage lines 308-438) into a reusable function:
+**File 1: `src/pages/quote/QuoteSummaryPage.tsx`** — Add a console.log right before PDF generation that prints the `accessoryBreakdown` array so we can verify via console logs whether the breakdown is populated:
 
 ```typescript
-export function buildAccessoryBreakdown(params: {
-  selectedOptions: SelectedOption[];
-  motor: any;
-  boatInfo: any;
-  purchasePath: 'loose' | 'installed' | null;
-  installConfig: any;
-  looseMotorBattery: any;
-  selectedPackage: string;
-  adminCustomItems: any[];
-  completeWarrantyCost: number;
-  premiumWarrantyCost: number;
-  currentCoverageYears: number;
-}): Array<{ name: string; price: number; description?: string }>
+// Before line 399
+console.log('[PDF] accessoryBreakdown items:', accessoryBreakdown.length, accessoryBreakdown);
 ```
 
-This consolidates the controls cost logic, installation labor, battery, propeller, warranty extensions, and admin custom items into one place.
+**File 2: `src/components/quote-pdf/ProfessionalQuotePDF.tsx`** — Add a fallback: if `accessoryBreakdown` is empty but the motor is ≥40HP and not a tiller, show a "Controls & setup costs calculated at time of order" note in the pricing section so it's visually obvious when the breakdown is missing vs intentionally empty.
 
-**File 2: `src/components/admin/AdminQuoteControls.tsx`** (lines 78-112)
+**File 3: `src/pages/AdminQuoteDetail.tsx`** — Same logging before PDF generation to confirm the recomputation works.
 
-- Import and call `buildAccessoryBreakdown` to get the full breakdown
-- Fix the pricing calculation to use the full accessory total (including controls, installation, etc.)
-- Save the computed `accessoryBreakdown` array into the `enhancedQuoteData` so it persists in `quote_data`
+### Verification step
 
-**File 3: `src/pages/AdminQuoteDetail.tsx`** (lines 280-298)
+After implementing, you publish again and I can check the console logs from the preview to verify the breakdown contains the expected 3 items. Then regenerate the PDF and we confirm it's correct.
 
-- When `qd.accessoryBreakdown` is missing (legacy quotes), compute it from `qd.boatInfo`, `qd.purchasePath`, `qd.selectedOptions`, etc. using the same shared function
-- This ensures even previously-saved quotes generate correct PDFs
+### Expected result on Brian's quote
 
-**File 4: `src/pages/quote/QuoteSummaryPage.tsx`** (lines 308-438)
-
-- Replace the inline `accessoryBreakdown` useMemo with a call to the shared `buildAccessoryBreakdown` function
-- No behavior change, just deduplication
-
-### Also Fixes the Financing Discrepancy
-
-The original financing bug (Perplexity flagged $504/mo as wrong) stems from the same root cause: the saved quote's `total_cost` and `final_price` in `AdminQuoteControls` exclude controls and installation costs, so the financing calculation uses a lower base amount. Once the full accessory total is included, the saved pricing will be consistent.
-
-### Scope
-
-- 1 new file (shared utility)
-- 3 files updated (AdminQuoteControls, AdminQuoteDetail, QuoteSummaryPage)
-- No database changes needed — the fix is in how data is computed and stored in the `quote_data` JSON blob
+| Item | Price |
+|------|-------|
+| MSRP | $27,395.00 |
+| Your Discount | -$3,288.00 |
+| Rebate | -$650.00 |
+| Motor Price | $23,457.00 |
+| **Controls & Rigging Package** | **$1,200.00** |
+| **Professional Installation** | **$450.00** |
+| **Propeller Allowance (Stainless Steel)** | **$1,200.00** |
+| Estimated Trade Value | -$2,050.00 |
+| Subtotal | $24,257.00 |
+| HST (13%) | $3,153.41 |
+| **Total Price** | **$27,410.41** |
 
