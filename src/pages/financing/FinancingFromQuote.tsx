@@ -43,7 +43,7 @@ export default function FinancingFromQuote() {
       // Redirect with full quote state
       setTimeout(() => {
         navigate('/financing-application?quoteId=' + quoteId + '&fromQr=true', {
-          state: { savedQuoteState: savedQuote.quote_state }
+          state: { savedQuoteState: result.quote_data }
         });
       }, 1500);
       
