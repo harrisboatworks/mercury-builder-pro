@@ -26,43 +26,24 @@ export default function FinancingFromQuote() {
     try {
       setStatus('loading');
       
-      // Fetch saved quote from database
-      const { data: savedQuote, error } = await supabase
-        .from('saved_quotes')
-        .select('*')
-        .eq('id', quoteId)
-        .single();
+      // Fetch saved quote via edge function (no direct table access needed)
+      const { data: result, error } = await supabase.functions.invoke('get-shared-quote', {
+        body: { quoteId }
+      });
       
-      if (error || !savedQuote) {
+      if (error || !result) {
         console.error('Quote not found:', error);
         setStatus('error');
         setTimeout(() => navigate('/financing-application'), 2000);
         return;
       }
       
-      // Validate expiration
-      if (new Date(savedQuote.expires_at) < new Date()) {
-        console.error('Quote expired');
-        setStatus('error');
-        setTimeout(() => navigate('/financing-application'), 2000);
-        return;
-      }
-      
-      // Update access count for analytics
-      await supabase
-        .from('saved_quotes')
-        .update({ 
-          access_count: (savedQuote.access_count || 0) + 1,
-          last_accessed: new Date().toISOString()
-        })
-        .eq('id', quoteId);
-      
       setStatus('success');
       
       // Redirect with full quote state
       setTimeout(() => {
         navigate('/financing-application?quoteId=' + quoteId + '&fromQr=true', {
-          state: { savedQuoteState: savedQuote.quote_state }
+          state: { savedQuoteState: result.quote_data }
         });
       }, 1500);
       
