@@ -769,7 +769,21 @@ export const getMotorImageByPriority = async (motor: any): Promise<{ url: string
     }
   }
   
-  // Priority 7: Fallback to Mercury placeholder
+  // Priority 7: Mercury CDN static image map fallback
+  const hp = motor?.horsepower ?? motor?.hp;
+  if (typeof hp === 'number') {
+    try {
+      const { getMotorHeroImage } = await import('@/lib/mercury-product-images');
+      const cdnImage = getMotorHeroImage(hp);
+      if (cdnImage) {
+        return { url: cdnImage, isInventory: false };
+      }
+    } catch (err) {
+      console.warn('Failed to load Mercury CDN fallback:', err);
+    }
+  }
+
+  // Priority 8: Fallback to Mercury placeholder
   return { url: fallbackImage, isInventory: false };
 };
 
