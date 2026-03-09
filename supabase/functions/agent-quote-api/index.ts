@@ -340,7 +340,7 @@ async function estimateTradeIn(supabase: any, body: any) {
   if (!year) throw new Error("year is required (e.g. 2018)");
   if (!horsepower) throw new Error("horsepower is required (e.g. 115)");
   const validConditions = ["excellent", "good", "fair", "poor"];
-  const cond = (condition || "fair").toLowerCase();
+  const cond = (condition || "good").toLowerCase();
   if (!validConditions.includes(cond)) throw new Error(`condition must be one of: ${validConditions.join(", ")}`);
 
   // Fetch valuation data from DB
@@ -494,7 +494,7 @@ async function createQuote(supabase: any, body: any) {
   let tradeInData: any = null;
   if (body.trade_in && body.trade_in.brand && body.trade_in.year && body.trade_in.horsepower) {
     const ti = body.trade_in;
-    const cond = (ti.condition || "fair").toLowerCase();
+    const cond = (ti.condition || "good").toLowerCase();
 
     const [bracketsRes, configRes] = await Promise.all([
       supabase.from("trade_valuation_brackets").select("*"),
@@ -720,7 +720,7 @@ async function updateQuote(supabase: any, body: any) {
       updates.tradein_value_final = null;
     } else if (body.trade_in.brand && body.trade_in.year && body.trade_in.horsepower) {
       const ti = body.trade_in;
-      const cond = (ti.condition || "fair").toLowerCase();
+      const cond = (ti.condition || "good").toLowerCase();
       const [bracketsRes, configRes] = await Promise.all([
         supabase.from("trade_valuation_brackets").select("*"),
         supabase.from("trade_valuation_config").select("*"),

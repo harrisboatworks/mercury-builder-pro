@@ -125,7 +125,7 @@ Estimates the value of a customer's existing motor for trade-in credit.
 | `brand` | string | **Yes** | e.g. "Mercury", "Yamaha", "Johnson" |
 | `year` | number | **Yes** | Model year |
 | `horsepower` | number | **Yes** | HP rating |
-| `condition` | string | No | `"excellent"`, `"good"`, `"fair"`, `"poor"` (default: `"fair"`) |
+| `condition` | string | No | `"excellent"`, `"good"`, `"fair"`, `"poor"` (default: `"good"`) |
 
 **Condition definitions:**
 - **Excellent**: 0–100 engine hours
