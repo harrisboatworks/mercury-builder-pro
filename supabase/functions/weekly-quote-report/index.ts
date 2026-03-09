@@ -709,7 +709,7 @@ serve(async (req) => {
     const emailResponse = await resend.emails.send({
       from: "Mercury Quotes <noreply@hbwsales.ca>",
       to: [ADMIN_EMAIL],
-      cc: ["hbwbot00@gmail.com"],
+      cc: ["hbwbot00@gmail.com", "harrisboatworks2153@manus.bot"],
       subject: `📊 Weekly Report: ${uniqueSessions} visitors, ${totalQuotes} quotes, ${fmt(totalValue)} (${formatDateDisplay(weekAgo)} - ${formatDateDisplay(now)})`,
       html: emailHtml,
     });
