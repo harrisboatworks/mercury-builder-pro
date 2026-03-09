@@ -1,31 +1,28 @@
+## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
+### Context
+Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-## Add "+ HST" label after price counter completes
+### Changes Made
 
-### What changes
+**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
+- Appears after user scrolls past 2+ motor cards using IntersectionObserver
+- "Build Your Quote — Tap any motor to configure & get pricing"
+- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
+- Fires `cta_build_quote` gtag event
 
-**File: `src/components/quote-builder/QuoteRevealCinematic.tsx`**
+**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
+- Shows below the motor grid, above the financing disclaimer
+- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
+- Captures device type and timestamp in metadata
+- Success state with confirmation message
+- Fires `lead_capture` gtag event
 
-After the price text (line 473, after `{money(displayPrice)}`), add a small `+ HST` label that fades in only when `priceComplete` is true. This keeps the counter animation untouched and adds the tax note as a subtle suffix.
+**3. Motor card data attribute**
+- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
 
-Insert right after the closing `</motion.span>` of the price text (after line 473), still inside the `relative` div:
-
-```tsx
-{/* "+ HST" suffix - appears after price counter completes */}
-<AnimatePresence>
-  {priceComplete && (
-    <motion.span
-      initial={{ opacity: 0, x: -5 }}
-      animate={{ opacity: 0.5, x: 0 }}
-      transition={{ delay: 0.3, duration: 0.4 }}
-      className="absolute -right-16 md:-right-20 bottom-1 md:bottom-2 text-xs md:text-sm font-medium tracking-wide"
-      style={{ color: '#9CA3AF' }}
-    >
-      + HST
-    </motion.span>
-  )}
-</AnimatePresence>
-```
-
-This positions "+ HST" to the right of the price, small and muted, fading in 300ms after the counter finishes. No existing animations or logic are modified.
-
+### What to Monitor
+- Motor selection → options conversion rate (baseline: 7.6%)
+- `pricing_updates` email captures per week
+- CTA click rate via `cta_build_quote` event
+- Review after 2–3 weeks with larger sample
