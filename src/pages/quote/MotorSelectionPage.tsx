@@ -38,6 +38,8 @@ import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
 import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModal';
 import { VoiceStatusBanner } from '@/components/voice/VoiceStatusBanner';
+import { MobileQuoteCTA } from '@/components/motors/MobileQuoteCTA';
+import { EmailCaptureInline } from '@/components/motors/EmailCaptureInline';
 
 import { fuzzySearch } from '@/lib/fuzzySearch';
 import { preloadConfiguratorImages } from '@/lib/configurator-preload';
@@ -1033,7 +1035,7 @@ if (event.type === 'filter_motors') {
                  const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || '';
                  
                  return (
-                   <motion.div
+                   <motion.div data-motor-card
                      key={motor.id}
                       variants={{
                         hidden: { opacity: 0, y: 16, scale: 0.97 },
@@ -1103,9 +1105,19 @@ if (event.type === 'filter_motors') {
               </p>
             </div>
           )}
+
+          {/* Email Capture — after motor grid */}
+          <EmailCaptureInline />
         </div>
           </div>
         </QuoteLayout>
+        
+        {/* Floating mobile CTA — nudge browsers to tap a motor */}
+        <MobileQuoteCTA onStartQuote={() => {
+          // Scroll to the top of the motor grid so first card is visible
+          const grid = document.querySelector('.motor-grid-section');
+          grid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }} />
         
         {/* Motor Recommendation Quiz Modal */}
         <MotorRecommendationQuiz
