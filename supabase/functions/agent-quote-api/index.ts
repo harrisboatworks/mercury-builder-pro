@@ -907,6 +907,7 @@ async function getQuote(supabase: any, body: any) {
       created_at: data.created_at,
       last_modified_at: data.last_modified_at,
       share_url: shareUrl(data.id),
+      admin_url: adminUrl(data.id),
       motor,
       custom_items: qd.adminCustomItems || [],
       purchase_path: qd.purchasePath || "loose",
