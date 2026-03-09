@@ -683,15 +683,58 @@ async function createQuote(supabase: any, body: any) {
   const { data, error } = await supabase
     .from("customer_quotes")
     .insert(payload)
-    .select("id")
+    .select("id, share_token")
     .single();
 
   if (error) throw new Error(`Failed to create quote: ${error.message}`);
+
+  // --- Dual-write to saved_quotes so the quote appears on "My Quotes" dashboard ---
+  const shareToken = data.share_token || generateShareToken();
+  try {
+    await supabase.from("saved_quotes").insert({
+      id: data.id,
+      email: customer_email.trim(),
+      resume_token: shareToken,
+      quote_state: quoteData,
+      expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(), // 90 days
+      access_count: 0,
+    });
+  } catch (savedErr: any) {
+    console.error("saved_quotes dual-write failed (non-fatal):", savedErr.message);
+  }
+
+  // --- Admin SMS notification ---
+  try {
+    const motorLabel = motor.model_display || motor.model || `${motor.horsepower}HP`;
+    const smsMessage = `🤖 AI Agent Quote Created\n` +
+      `Customer: ${customer_name.trim()}\n` +
+      `Motor: ${motorLabel}\n` +
+      `Price: $${pricing.finalPrice.toLocaleString("en-CA", { minimumFractionDigits: 2 })}\n` +
+      `View: ${adminUrl(data.id)}`;
+
+    await fetch(`${Deno.env.get("SUPABASE_URL")}/functions/v1/send-sms`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")}`,
+      },
+      body: JSON.stringify({
+        to: "admin",
+        message: smsMessage,
+        messageType: "saved_quote_alert",
+        customerName: customer_name.trim(),
+        quoteAmount: pricing.finalPrice,
+      }),
+    });
+  } catch (smsErr: any) {
+    console.error("Admin SMS notification failed (non-fatal):", smsErr.message);
+  }
 
   const response: any = {
     ok: true,
     quote_id: data.id,
     share_url: shareUrl(data.id),
+    admin_url: adminUrl(data.id),
     motor: {
       model: motor.model_display || motor.model,
       horsepower: motor.horsepower,
