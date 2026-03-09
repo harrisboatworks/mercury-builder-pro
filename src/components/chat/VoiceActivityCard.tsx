@@ -5,10 +5,11 @@ import { Button } from '@/components/ui/button';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
+import { money } from '@/lib/money';
 import type { VoiceActivityEvent, VoiceActivityAction } from '@/lib/voiceActivityFeed';
 import { 
   Search, Navigation, Check, Info, Tag, 
-  DollarSign, Phone, Scale, Star, PartyPopper 
+  DollarSign, Phone, Scale, Star, PartyPopper, FileText 
 } from 'lucide-react';
 
 interface VoiceActivityCardProps {
@@ -23,6 +24,7 @@ const iconMap: Record<string, React.ReactNode> = {
   '⭐': <Star className="w-4 h-4" />,
   '🎉': <PartyPopper className="w-4 h-4" />,
   '✅': <Check className="w-4 h-4" />,
+  '📋': <FileText className="w-4 h-4" />,
 };
 
 const typeIconMap: Record<string, React.ReactNode> = {
@@ -31,6 +33,7 @@ const typeIconMap: Record<string, React.ReactNode> = {
   action: <Check className="w-4 h-4" />,
   info: <Info className="w-4 h-4" />,
   promo: <Tag className="w-4 h-4" />,
+  quote_created: <FileText className="w-4 h-4" />,
 };
 
 const typeBgMap: Record<string, string> = {
@@ -39,6 +42,7 @@ const typeBgMap: Record<string, string> = {
   action: 'bg-green-500/10 border-green-500/20',
   info: 'bg-amber-500/10 border-amber-500/20',
   promo: 'bg-pink-500/10 border-pink-500/20',
+  quote_created: 'bg-[hsl(201,100%,39%)]/10 border-[hsl(201,100%,39%)]/30',
 };
 
 const typeIconBgMap: Record<string, string> = {
@@ -47,6 +51,7 @@ const typeIconBgMap: Record<string, string> = {
   action: 'bg-green-500/20 text-green-600',
   info: 'bg-amber-500/20 text-amber-600',
   promo: 'bg-pink-500/20 text-pink-600',
+  quote_created: 'bg-[hsl(201,100%,39%)]/20 text-[hsl(201,100%,39%)]',
 };
 
 export const VoiceActivityCard: React.FC<VoiceActivityCardProps> = ({ 
@@ -90,7 +95,7 @@ export const VoiceActivityCard: React.FC<VoiceActivityCardProps> = ({
       
       toast({
         title: 'Trade-in applied',
-        description: `$${data.estimatedValue.toLocaleString()} added to your quote`,
+        description: `${money(data.estimatedValue)} added to your quote`,
       });
       return;
     }
@@ -102,6 +107,9 @@ export const VoiceActivityCard: React.FC<VoiceActivityCardProps> = ({
     ? iconMap[activity.icon] || typeIconMap[activity.type]
     : typeIconMap[activity.type];
 
+  const isQuoteCreated = activity.type === 'quote_created';
+  const finalPrice = activity.data?.final_price as number | undefined;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 10, scale: 0.95 }}
@@ -110,6 +118,7 @@ export const VoiceActivityCard: React.FC<VoiceActivityCardProps> = ({
       className={cn(
         'rounded-lg border p-3 shadow-sm',
         typeBgMap[activity.type] || 'bg-muted/50 border-border',
+        isQuoteCreated && 'shadow-md',
         className
       )}
     >
@@ -131,15 +140,25 @@ export const VoiceActivityCard: React.FC<VoiceActivityCardProps> = ({
         </div>
       </div>
 
+      {/* Price line for quote_created */}
+      {isQuoteCreated && finalPrice != null && (
+        <p className="text-lg font-bold text-[hsl(201,100%,39%)] mb-2 pl-9">
+          {money(finalPrice)}
+        </p>
+      )}
+
       {/* Actions */}
       {activity.actions && activity.actions.length > 0 && (
-        <div className="flex flex-wrap gap-2 mt-2">
+        <div className={cn('flex flex-wrap gap-2 mt-2', isQuoteCreated && 'mt-1')}>
           {activity.actions.map((action, idx) => (
             <Button
               key={idx}
-              size="sm"
-              variant={action.variant === 'primary' ? 'default' : 'outline'}
-              className="h-7 text-xs px-2.5"
+              size={isQuoteCreated ? 'default' : 'sm'}
+              variant={isQuoteCreated && action.variant === 'primary' ? 'luxuryModern' : action.variant === 'primary' ? 'default' : 'outline'}
+              className={cn(
+                !isQuoteCreated && 'h-7 text-xs px-2.5',
+                isQuoteCreated && action.variant === 'primary' && 'w-full'
+              )}
               onClick={() => handleAction(action)}
             >
               {action.label}
