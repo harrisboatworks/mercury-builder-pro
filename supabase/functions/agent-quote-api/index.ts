@@ -444,12 +444,14 @@ async function createQuote(supabase: any, body: any) {
   const purchasePath = body.purchase_path || "loose";
 
   // --- Promotion handling ---
+  const promoOptionProvided = body.promo_option !== undefined;
   let promoOption = body.promo_option || null;
   let rebateAmount = 0;
   let promoData: any = null;
   let promoWarnings: string[] = [];
 
-  if (promoOption || promoOption === undefined) {
+  // Always fetch promos — auto-default to cash_rebate if not specified
+  {
     // Fetch active promo
     const { data: promos } = await supabase
       .from("promotions")
