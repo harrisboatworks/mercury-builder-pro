@@ -86,6 +86,19 @@ function shareUrl(quoteId: string) {
   return `${SITE_URL}/quote/saved/${quoteId}`;
 }
 
+function adminUrl(quoteId: string) {
+  return `${SITE_URL}/admin/quotes/${quoteId}`;
+}
+
+function generateShareToken(): string {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let token = "";
+  for (let i = 0; i < 32; i++) {
+    token += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return token;
+}
+
 function calcPricing(opts: {
   motorPrice: number;
   customItemsTotal?: number;
@@ -659,7 +672,8 @@ async function createQuote(supabase: any, body: any) {
     admin_notes: body.admin_notes || null,
     customer_notes: body.customer_notes || null,
     is_admin_quote: true,
-    lead_status: "scheduled",
+    lead_status: body.lead_status || "new",
+    share_token: generateShareToken(),
     lead_source: "ai_agent",
     promotion_id: promoData?.id || null,
     tradein_value_final: tradeInValue || null,
@@ -669,15 +683,58 @@ async function createQuote(supabase: any, body: any) {
   const { data, error } = await supabase
     .from("customer_quotes")
     .insert(payload)
-    .select("id")
+    .select("id, share_token")
     .single();
 
   if (error) throw new Error(`Failed to create quote: ${error.message}`);
+
+  // --- Dual-write to saved_quotes so the quote appears on "My Quotes" dashboard ---
+  const shareToken = data.share_token || generateShareToken();
+  try {
+    await supabase.from("saved_quotes").insert({
+      id: data.id,
+      email: customer_email.trim(),
+      resume_token: shareToken,
+      quote_state: quoteData,
+      expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(), // 90 days
+      access_count: 0,
+    });
+  } catch (savedErr: any) {
+    console.error("saved_quotes dual-write failed (non-fatal):", savedErr.message);
+  }
+
+  // --- Admin SMS notification ---
+  try {
+    const motorLabel = motor.model_display || motor.model || `${motor.horsepower}HP`;
+    const smsMessage = `🤖 AI Agent Quote Created\n` +
+      `Customer: ${customer_name.trim()}\n` +
+      `Motor: ${motorLabel}\n` +
+      `Price: $${pricing.finalPrice.toLocaleString("en-CA", { minimumFractionDigits: 2 })}\n` +
+      `View: ${adminUrl(data.id)}`;
+
+    await fetch(`${Deno.env.get("SUPABASE_URL")}/functions/v1/send-sms`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")}`,
+      },
+      body: JSON.stringify({
+        to: "admin",
+        message: smsMessage,
+        messageType: "saved_quote_alert",
+        customerName: customer_name.trim(),
+        quoteAmount: pricing.finalPrice,
+      }),
+    });
+  } catch (smsErr: any) {
+    console.error("Admin SMS notification failed (non-fatal):", smsErr.message);
+  }
 
   const response: any = {
     ok: true,
     quote_id: data.id,
     share_url: shareUrl(data.id),
+    admin_url: adminUrl(data.id),
     motor: {
       model: motor.model_display || motor.model,
       horsepower: motor.horsepower,
@@ -791,7 +848,17 @@ async function updateQuote(supabase: any, body: any) {
   const { error } = await supabase.from("customer_quotes").update(updates).eq("id", quote_id);
   if (error) throw new Error(`Failed to update quote: ${error.message}`);
 
-  return json({ ok: true, quote_id, share_url: shareUrl(quote_id), pricing });
+  // Sync saved_quotes if it exists
+  try {
+    await supabase.from("saved_quotes").update({
+      quote_state: updates.quote_data,
+      updated_at: new Date().toISOString(),
+    }).eq("id", quote_id);
+  } catch (syncErr: any) {
+    console.error("saved_quotes sync failed (non-fatal):", syncErr.message);
+  }
+
+  return json({ ok: true, quote_id, share_url: shareUrl(quote_id), admin_url: adminUrl(quote_id), pricing });
 }
 
 async function getQuote(supabase: any, body: any) {
@@ -840,6 +907,7 @@ async function getQuote(supabase: any, body: any) {
       created_at: data.created_at,
       last_modified_at: data.last_modified_at,
       share_url: shareUrl(data.id),
+      admin_url: adminUrl(data.id),
       motor,
       custom_items: qd.adminCustomItems || [],
       purchase_path: qd.purchasePath || "loose",

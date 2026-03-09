@@ -239,6 +239,7 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
 | `admin_notes` | string | No | Internal notes (not shown to customer) |
 | `customer_notes` | string | No | Notes visible to customer |
 | `custom_items` | array | No | Extra line items `{ name, price }` |
+| `lead_status` | string | No | Default: `"new"`. Options: `"new"`, `"contacted"`, `"scheduled"`, `"won"`, `"lost"` |
 
 **Response:**
 ```json
@@ -246,6 +247,7 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
   "ok": true,
   "quote_id": "uuid",
   "share_url": "https://mercuryrepower.ca/quote/saved/uuid",
+  "admin_url": "https://mercuryrepower.ca/admin/quotes/uuid",
   "motor": {
     "model": "Mercury 150 EFI 4-Stroke",
     "horsepower": 150,
@@ -281,6 +283,7 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
 ```
 
 > **Always give the customer the `share_url`** — it opens their full quote with pricing breakdown.
+> The `admin_url` opens the admin edit view for the quote.
 
 ---
 
@@ -316,6 +319,7 @@ Only send the fields you want to change. Pricing is recalculated automatically.
   "ok": true,
   "quote_id": "uuid",
   "share_url": "https://mercuryrepower.ca/quote/saved/uuid",
+  "admin_url": "https://mercuryrepower.ca/admin/quotes/uuid",
   "pricing": { "...recalculated..." }
 }
 ```
@@ -384,6 +388,7 @@ The API applies intelligent defaults so agents don't need to specify every field
 | `special_financing` or `no_payments` requested but total < $5,000 | Falls back to `cash_rebate` with a warning in the response |
 | No `trade_in` provided | No trade-in applied |
 | No `purchase_path` specified | Defaults to `"loose"` (motor only, no installation) |
+| No `lead_status` specified | Defaults to `"new"` (customer just asked for a quote) |
 | No `warranty_years` specified | Uses promotion-included warranty (e.g. 7 years with Get 7) |
 | No `package` specified | Defaults to `"good"` (Essential package) |
 
