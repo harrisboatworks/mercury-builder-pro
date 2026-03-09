@@ -1,28 +1,28 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+## Plan: Quote Activity Card Styling + Error Handling
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+### 1. Branded `quote_created` card style in VoiceActivityCard
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+Add `quote_created` entries to the three style maps and the icon map in `VoiceActivityCard.tsx`:
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+- **typeBgMap**: Mercury blue gradient — `bg-[#007DC5]/10 border-[#007DC5]/30`
+- **typeIconBgMap**: `bg-[#007DC5]/20 text-[#007DC5]`
+- **typeIconMap**: `FileText` icon from lucide
+- **iconMap**: Add `📋` mapped to `FileText`
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+Override the CTA button for `quote_created` type to render as `luxuryModern` variant (full-width, larger) instead of the default small button. Add a price line below the description showing `$XX,XXX.XX` in bold Mercury blue when `activity.data?.final_price` exists.
+
+### 2. Error handling in `deliver_quote_link`
+
+Wrap the tool handler in `useElevenLabsVoice.ts` (lines 2232-2268) with validation:
+
+- Check `params.share_url` is present and non-empty; if missing, return `{ success: false, error: "Quote creation failed — no share link was returned. Please try again." }` and show an error toast
+- Check `params.final_price` is a valid number; default to `0` if missing to avoid `toLocaleString` crash
+- Wrap the entire body in try/catch; on error, return failure JSON and show error toast
+- Log errors with `[ClientTool] deliver_quote_link error:`
+
+### Files changed
+- `src/components/chat/VoiceActivityCard.tsx` — branded quote_created style + prominent CTA
+- `src/hooks/useElevenLabsVoice.ts` — error handling in deliver_quote_link
+
