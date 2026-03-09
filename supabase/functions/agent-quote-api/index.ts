@@ -720,7 +720,7 @@ async function updateQuote(supabase: any, body: any) {
       updates.tradein_value_final = null;
     } else if (body.trade_in.brand && body.trade_in.year && body.trade_in.horsepower) {
       const ti = body.trade_in;
-      const cond = (ti.condition || "fair").toLowerCase();
+      const cond = (ti.condition || "good").toLowerCase();
       const [bracketsRes, configRes] = await Promise.all([
         supabase.from("trade_valuation_brackets").select("*"),
         supabase.from("trade_valuation_config").select("*"),
