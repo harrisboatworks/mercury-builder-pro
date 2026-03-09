@@ -2244,13 +2244,20 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           type: 'quote_created',
           title: 'Quote Created',
           description: `${params.motor_model} for ${params.customer_name}`,
-          metadata: {
+          data: {
             share_url: params.share_url,
             final_price: params.final_price,
             monthly_payment: params.monthly_payment,
             trade_in_credit: params.trade_in_credit,
             warranty_years: params.warranty_years,
           },
+          actions: [
+            {
+              label: 'View Quote',
+              path: params.share_url,
+              variant: 'primary',
+            },
+          ],
         });
         
         return JSON.stringify({
