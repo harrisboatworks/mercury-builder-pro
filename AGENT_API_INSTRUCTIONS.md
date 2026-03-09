@@ -239,6 +239,7 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
 | `admin_notes` | string | No | Internal notes (not shown to customer) |
 | `customer_notes` | string | No | Notes visible to customer |
 | `custom_items` | array | No | Extra line items `{ name, price }` |
+| `lead_status` | string | No | Default: `"new"`. Options: `"new"`, `"contacted"`, `"scheduled"`, `"won"`, `"lost"` |
 
 **Response:**
 ```json
@@ -246,6 +247,7 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
   "ok": true,
   "quote_id": "uuid",
   "share_url": "https://mercuryrepower.ca/quote/saved/uuid",
+  "admin_url": "https://mercuryrepower.ca/admin/quotes/uuid",
   "motor": {
     "model": "Mercury 150 EFI 4-Stroke",
     "horsepower": 150,
@@ -281,6 +283,7 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
 ```
 
 > **Always give the customer the `share_url`** — it opens their full quote with pricing breakdown.
+> The `admin_url` opens the admin edit view for the quote.
 
 ---
 
