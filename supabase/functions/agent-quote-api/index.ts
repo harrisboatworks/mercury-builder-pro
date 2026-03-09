@@ -581,6 +581,14 @@ async function createQuote(supabase: any, body: any) {
     };
   }
 
+  // Build warrantyConfig that SavedQuotePage expects
+  const totalWarrantyYears = body.warranty_years || totalBaseWarranty;
+  const warrantyConfig = {
+    totalYears: totalWarrantyYears,
+    extendedYears: warrantyYearsExtra,
+    warrantyPrice: warrantyCost,
+  };
+
   const quoteData = {
     motorId: motor.id,
     motorModel: motor.model_display || motor.model,
@@ -618,8 +626,9 @@ async function createQuote(supabase: any, body: any) {
     // Trade-in — use 'tradeInInfo' key that SavedQuotePage restores
     tradeInInfo: tradeInData,
     tradeIn: tradeInData,
-    // Warranty
-    warrantyYears: body.warranty_years || totalBaseWarranty,
+    // Warranty — use 'warrantyConfig' key that SavedQuotePage restores
+    warrantyConfig,
+    warrantyYears: totalWarrantyYears,
     warrantyYearsExtra,
     warrantyCost,
     // Package — use 'selectedPackage' key that SavedQuotePage restores
