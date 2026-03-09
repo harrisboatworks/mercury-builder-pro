@@ -494,7 +494,7 @@ async function createQuote(supabase: any, body: any) {
   let tradeInData: any = null;
   if (body.trade_in && body.trade_in.brand && body.trade_in.year && body.trade_in.horsepower) {
     const ti = body.trade_in;
-    const cond = (ti.condition || "fair").toLowerCase();
+    const cond = (ti.condition || "good").toLowerCase();
 
     const [bracketsRes, configRes] = await Promise.all([
       supabase.from("trade_valuation_brackets").select("*"),
