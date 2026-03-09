@@ -467,3 +467,48 @@ All errors return `{ "error": "message" }` with an appropriate HTTP status:
 | 500 | Server error |
 
 Always check for the `ok: true` field in successful responses. Some responses may include a `warnings` array with non-fatal issues (e.g. financing fallback).
+
+---
+
+## 8. Backend Behavior
+
+These details are handled automatically — agents do **not** need to manage them, but should be aware of the behavior.
+
+### 8.1 Dual-Write Persistence
+
+Every `create_quote` and `update_quote` writes to **two** tables:
+
+| Table | Purpose |
+|-------|---------|
+| `customer_quotes` | Admin CRM — lead management, status tracking, analytics |
+| `saved_quotes` | Customer-facing — "My Quotes" dashboard, PDF generation, deposit flow |
+
+Saved quotes expire after **90 days**. The `share_url` returned in the response opens the customer's quote summary with full pricing breakdown.
+
+### 8.2 Admin SMS Notifications
+
+On every `create_quote`, the dealer admin receives an SMS alert:
+
+```
+🤖 AI Agent Quote Created
+Customer: John Smith
+Motor: Mercury 150 EFI 4-Stroke
+Price: $15,664.20
+Quote: https://mercuryrepower.ca/quote/saved/<uuid>
+Admin: https://mercuryrepower.ca/admin/quotes/<uuid>
+```
+
+- **Non-blocking** — SMS delivery failure does not affect quote creation or the API response.
+- The **Quote** link can be forwarded directly to the customer.
+- The **Admin** link opens the quote in the admin edit view.
+
+### 8.3 Automatic Lead Tagging
+
+All quotes created through this API are automatically tagged with:
+
+| Field | Value |
+|-------|-------|
+| `lead_source` | `"ai_agent"` |
+| `is_admin_quote` | `true` |
+
+These tags allow filtering agent-created quotes in the admin dashboard and analytics.

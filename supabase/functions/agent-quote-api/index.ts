@@ -710,7 +710,8 @@ async function createQuote(supabase: any, body: any) {
       `Customer: ${customer_name.trim()}\n` +
       `Motor: ${motorLabel}\n` +
       `Price: $${pricing.finalPrice.toLocaleString("en-CA", { minimumFractionDigits: 2 })}\n` +
-      `View: ${adminUrl(data.id)}`;
+      `Quote: ${shareUrl(data.id)}\n` +
+      `Admin: ${adminUrl(data.id)}`;
 
     await fetch(`${Deno.env.get("SUPABASE_URL")}/functions/v1/send-sms`, {
       method: "POST",

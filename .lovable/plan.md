@@ -1,31 +1,28 @@
+## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
+### Context
+Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-## Plan: Update docs + include share link in admin SMS
+### Changes Made
 
-### 1. Add customer share link to admin SMS (code change)
+**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
+- Appears after user scrolls past 2+ motor cards using IntersectionObserver
+- "Build Your Quote — Tap any motor to configure & get pricing"
+- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
+- Fires `cta_build_quote` gtag event
 
-In `supabase/functions/agent-quote-api/index.ts` around line 709-713, update the SMS message to include the customer `share_url` so the admin can quickly forward it:
+**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
+- Shows below the motor grid, above the financing disclaimer
+- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
+- Captures device type and timestamp in metadata
+- Success state with confirmation message
+- Fires `lead_capture` gtag event
 
-```
-🤖 AI Agent Quote Created
-Customer: John Smith
-Motor: Mercury 150 EFI
-Price: $15,664.20
-Quote: https://mercuryrepower.ca/quote/saved/uuid
-Admin: https://mercuryrepower.ca/admin/quotes/uuid
-```
+**3. Motor card data attribute**
+- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
 
-The share link is already available via `shareUrl(data.id)` — just needs to be appended to the SMS body.
-
-### 2. Add Section 8 to AGENT_API_INSTRUCTIONS.md
-
-Add a new "Backend Behavior" section documenting:
-
-- **Dual-write**: Every `create_quote` and `update_quote` writes to both `customer_quotes` (admin CRM) and `saved_quotes` (customer-facing "My Quotes" dashboard, deposit flow, PDF generation). Quotes persist for 90 days.
-- **Admin SMS alerts**: On quote creation, the admin receives an SMS with customer name, motor, price, customer share link, and admin link. Non-blocking — SMS failure does not affect quote creation.
-- **Lead tagging**: All agent quotes are auto-tagged with `lead_source: "ai_agent"` and `is_admin_quote: true`.
-
-### Files changed
-- `supabase/functions/agent-quote-api/index.ts` — add `shareUrl` to SMS message body
-- `AGENT_API_INSTRUCTIONS.md` — add Section 8: Backend Behavior
-
+### What to Monitor
+- Motor selection → options conversion rate (baseline: 7.6%)
+- `pricing_updates` email captures per week
+- CTA click rate via `cta_build_quote` event
+- Review after 2–3 weeks with larger sample
