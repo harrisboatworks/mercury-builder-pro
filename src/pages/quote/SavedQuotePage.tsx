@@ -44,8 +44,17 @@ export default function SavedQuotePage() {
         const quoteData = quote.quote_data;
         
         if (quoteData) {
-          // Restore motor (handle both 'motor' and 'selectedMotor' keys)
-          const motorData = quoteData.motor || quoteData.selectedMotor;
+          // Restore motor (handle both 'motor' and 'selectedMotor' keys, plus flat-field fallback for agent-created quotes)
+          let motorData = quoteData.motor || quoteData.selectedMotor;
+          if (!motorData && quoteData.motorId) {
+            motorData = {
+              id: quoteData.motorId,
+              model: quoteData.motorModel,
+              hp: quoteData.motorHp,
+              price: quoteData.motorPrice,
+              msrp: quoteData.motorMsrp,
+            };
+          }
           if (motorData) {
             dispatch({ type: 'SET_MOTOR', payload: motorData });
           }
