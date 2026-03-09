@@ -293,23 +293,29 @@ async function listPromotions(supabase: any) {
 
   if (error) throw new Error(`list_promotions failed: ${error.message}`);
 
-  // Also fetch rebate rules from promotions_rules
-  const promoIds = (data || []).map((p: any) => p.id);
-  let rebateRules: any[] = [];
-  if (promoIds.length > 0) {
-    const { data: rules } = await supabase
-      .from("promotions_rules")
-      .select("*")
-      .in("promotion_id", promoIds)
-      .order("horsepower_min", { ascending: true });
-    rebateRules = rules || [];
-  }
-
   return json({
     ok: true,
     promotions: (data || []).map((p: any) => {
       const promoOpts = p.promo_options || {};
-      const rules = rebateRules.filter((r: any) => r.promotion_id === p.id);
+      // Options are stored in promo_options.options[] array
+      const options = promoOpts.options || [];
+      const chooseOneIds = options.map((o: any) => o.id);
+
+      // Extract rebate matrix from the cash_rebate option
+      const cashRebateOpt = options.find((o: any) => o.id === "cash_rebate");
+      const rebateMatrix = (cashRebateOpt?.matrix || []).map((m: any) => ({
+        hp_min: m.hp_min,
+        hp_max: m.hp_max,
+        rebate_amount: m.rebate,
+      }));
+
+      // Extract financing rates from the special_financing option
+      const financingOpt = options.find((o: any) => o.id === "special_financing");
+      const financingRates = (financingOpt?.rates || []).map((r: any) => ({
+        term: r.months,
+        rate: r.rate,
+      }));
+
       return {
         id: p.id,
         name: p.name,
@@ -320,14 +326,15 @@ async function listPromotions(supabase: any) {
         bonus_title: p.bonus_title,
         bonus_description: p.bonus_description,
         terms_url: p.terms_url,
-        choose_one_options: promoOpts.choose_one || [],
-        rebate_matrix: rules.map((r: any) => ({
-          hp_min: r.horsepower_min,
-          hp_max: r.horsepower_max,
-          rebate_amount: r.discount_fixed_amount,
+        choose_one_options: chooseOneIds,
+        options_detail: options.map((o: any) => ({
+          id: o.id,
+          title: o.title,
+          description: o.description,
         })),
-        financing_rates: promoOpts.financing_rates || [],
-        financing_minimum: FINANCING_MINIMUM,
+        rebate_matrix: rebateMatrix,
+        financing_rates: financingRates,
+        financing_minimum: financingOpt?.minimum_amount || FINANCING_MINIMUM,
       };
     }),
     count: (data || []).length,
