@@ -725,11 +725,15 @@ async function updateQuote(supabase: any, body: any) {
   if (body.customer_notes !== undefined) { updates.customer_notes = body.customer_notes; quoteData.customerNotes = body.customer_notes; }
   if (body.custom_items !== undefined) { quoteData.adminCustomItems = body.custom_items; }
   if (body.purchase_path !== undefined) { quoteData.purchasePath = body.purchase_path; }
-  if (body.package !== undefined) { quoteData.package = body.package; }
+  if (body.package !== undefined) { 
+    quoteData.package = body.package; 
+    quoteData.selectedPackage = { tier: body.package };
+  }
 
   // Promo update
   if (body.promo_option !== undefined) {
     quoteData.promoOption = body.promo_option;
+    quoteData.selectedPromoOption = body.promo_option;
   }
 
   // Trade-in update
