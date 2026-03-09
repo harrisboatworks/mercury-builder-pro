@@ -1033,7 +1033,7 @@ if (event.type === 'filter_motors') {
                  const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || '';
                  
                  return (
-                   <motion.div
+                   <motion.div data-motor-card
                      key={motor.id}
                       variants={{
                         hidden: { opacity: 0, y: 16, scale: 0.97 },
