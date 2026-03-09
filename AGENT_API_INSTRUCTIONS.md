@@ -319,6 +319,7 @@ Only send the fields you want to change. Pricing is recalculated automatically.
   "ok": true,
   "quote_id": "uuid",
   "share_url": "https://mercuryrepower.ca/quote/saved/uuid",
+  "admin_url": "https://mercuryrepower.ca/admin/quotes/uuid",
   "pricing": { "...recalculated..." }
 }
 ```
