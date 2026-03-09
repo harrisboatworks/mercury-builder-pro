@@ -480,17 +480,16 @@ async function createQuote(supabase: any, body: any) {
         }
       }
 
-      // Look up rebate amount for this HP
+      // Look up rebate amount from promo_options.options[].matrix
       if (promoOption === "cash_rebate" && motor.horsepower) {
-        const { data: rules } = await supabase
-          .from("promotions_rules")
-          .select("discount_fixed_amount")
-          .eq("promotion_id", activePromo.id)
-          .lte("horsepower_min", motor.horsepower)
-          .gte("horsepower_max", motor.horsepower)
-          .limit(1);
-        if (rules && rules.length > 0) {
-          rebateAmount = rules[0].discount_fixed_amount || 0;
+        const promoOpts = activePromo.promo_options || {};
+        const cashRebateOpt = (promoOpts.options || []).find((o: any) => o.id === "cash_rebate");
+        const matrix = cashRebateOpt?.matrix || [];
+        for (const bracket of matrix) {
+          if (motor.horsepower >= bracket.hp_min && motor.horsepower <= bracket.hp_max) {
+            rebateAmount = bracket.rebate || 0;
+            break;
+          }
         }
       }
     }
