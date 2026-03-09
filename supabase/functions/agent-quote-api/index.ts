@@ -608,18 +608,22 @@ async function createQuote(supabase: any, body: any) {
     customerPhone: body.customer_phone || "",
     isAdminQuote: true,
     adminCustomItems: customItems,
-    // Promo
+    // Promo — use keys that SavedQuotePage expects
+    selectedPromoOption: promoOption,
+    selectedPromoValue: rebateAmount,
     promoOption,
     promoName: promoData?.name || null,
     promoId: promoData?.id || null,
     rebateAmount,
-    // Trade-in
+    // Trade-in — use 'tradeInInfo' key that SavedQuotePage restores
+    tradeInInfo: tradeInData,
     tradeIn: tradeInData,
     // Warranty
     warrantyYears: body.warranty_years || totalBaseWarranty,
     warrantyYearsExtra,
     warrantyCost,
-    // Package — default to "good" (Essential) unless specified
+    // Package — use 'selectedPackage' key that SavedQuotePage restores
+    selectedPackage: { tier: body.package || "good" },
     package: body.package || "good",
     // Financing
     financing: financingData,
