@@ -581,6 +581,14 @@ async function createQuote(supabase: any, body: any) {
     };
   }
 
+  // Build warrantyConfig that SavedQuotePage expects
+  const totalWarrantyYears = body.warranty_years || totalBaseWarranty;
+  const warrantyConfig = {
+    totalYears: totalWarrantyYears,
+    extendedYears: warrantyYearsExtra,
+    warrantyPrice: warrantyCost,
+  };
+
   const quoteData = {
     motorId: motor.id,
     motorModel: motor.model_display || motor.model,
@@ -618,8 +626,9 @@ async function createQuote(supabase: any, body: any) {
     // Trade-in — use 'tradeInInfo' key that SavedQuotePage restores
     tradeInInfo: tradeInData,
     tradeIn: tradeInData,
-    // Warranty
-    warrantyYears: body.warranty_years || totalBaseWarranty,
+    // Warranty — use 'warrantyConfig' key that SavedQuotePage restores
+    warrantyConfig,
+    warrantyYears: totalWarrantyYears,
     warrantyYearsExtra,
     warrantyCost,
     // Package — use 'selectedPackage' key that SavedQuotePage restores
@@ -716,17 +725,22 @@ async function updateQuote(supabase: any, body: any) {
   if (body.customer_notes !== undefined) { updates.customer_notes = body.customer_notes; quoteData.customerNotes = body.customer_notes; }
   if (body.custom_items !== undefined) { quoteData.adminCustomItems = body.custom_items; }
   if (body.purchase_path !== undefined) { quoteData.purchasePath = body.purchase_path; }
-  if (body.package !== undefined) { quoteData.package = body.package; }
+  if (body.package !== undefined) { 
+    quoteData.package = body.package; 
+    quoteData.selectedPackage = { tier: body.package };
+  }
 
   // Promo update
   if (body.promo_option !== undefined) {
     quoteData.promoOption = body.promo_option;
+    quoteData.selectedPromoOption = body.promo_option;
   }
 
   // Trade-in update
   if (body.trade_in !== undefined) {
     if (body.trade_in === null) {
       quoteData.tradeIn = null;
+      quoteData.tradeInInfo = null;
       updates.tradein_value_final = null;
     } else if (body.trade_in.brand && body.trade_in.year && body.trade_in.horsepower) {
       const ti = body.trade_in;
@@ -741,11 +755,13 @@ async function updateQuote(supabase: any, body: any) {
       const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap);
       const median = (estimate.low + estimate.high) / 2;
       const tradeInValue = Math.max(Math.round(median / 25) * 25, configMap?.MIN_TRADE_VALUE?.value ?? MIN_TRADE_VALUE);
-      quoteData.tradeIn = {
+      const tradeInObj = {
         brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
         condition: cond, model: ti.model || "", serialNumber: ti.serial_number || "",
         estimatedValue: tradeInValue, hasTradeIn: true,
       };
+      quoteData.tradeIn = tradeInObj;
+      quoteData.tradeInInfo = tradeInObj;
       updates.tradein_value_final = tradeInValue;
     }
   }
