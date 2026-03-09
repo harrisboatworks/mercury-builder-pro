@@ -613,8 +613,8 @@ async function createQuote(supabase: any, body: any) {
     warrantyYears: body.warranty_years || totalBaseWarranty,
     warrantyYearsExtra,
     warrantyCost,
-    // Package
-    package: body.package || null,
+    // Package — default to "good" (Essential) unless specified
+    package: body.package || "good",
     // Financing
     financing: financingData,
     // Pricing breakdown
