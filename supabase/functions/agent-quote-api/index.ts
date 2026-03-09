@@ -86,6 +86,19 @@ function shareUrl(quoteId: string) {
   return `${SITE_URL}/quote/saved/${quoteId}`;
 }
 
+function adminUrl(quoteId: string) {
+  return `${SITE_URL}/admin/quotes/${quoteId}`;
+}
+
+function generateShareToken(): string {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let token = "";
+  for (let i = 0; i < 32; i++) {
+    token += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return token;
+}
+
 function calcPricing(opts: {
   motorPrice: number;
   customItemsTotal?: number;
