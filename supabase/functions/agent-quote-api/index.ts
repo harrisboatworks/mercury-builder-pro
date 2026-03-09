@@ -848,7 +848,17 @@ async function updateQuote(supabase: any, body: any) {
   const { error } = await supabase.from("customer_quotes").update(updates).eq("id", quote_id);
   if (error) throw new Error(`Failed to update quote: ${error.message}`);
 
-  return json({ ok: true, quote_id, share_url: shareUrl(quote_id), pricing });
+  // Sync saved_quotes if it exists
+  try {
+    await supabase.from("saved_quotes").update({
+      quote_state: updates.quote_data,
+      updated_at: new Date().toISOString(),
+    }).eq("id", quote_id);
+  } catch (syncErr: any) {
+    console.error("saved_quotes sync failed (non-fatal):", syncErr.message);
+  }
+
+  return json({ ok: true, quote_id, share_url: shareUrl(quote_id), admin_url: adminUrl(quote_id), pricing });
 }
 
 async function getQuote(supabase: any, body: any) {
