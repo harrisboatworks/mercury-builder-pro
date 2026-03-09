@@ -385,6 +385,7 @@ The API applies intelligent defaults so agents don't need to specify every field
 | No `trade_in` provided | No trade-in applied |
 | No `purchase_path` specified | Defaults to `"loose"` (motor only, no installation) |
 | No `warranty_years` specified | Uses promotion-included warranty (e.g. 7 years with Get 7) |
+| No `package` specified | Defaults to `"good"` (Essential package) |
 
 ---
 
