@@ -388,6 +388,7 @@ The API applies intelligent defaults so agents don't need to specify every field
 | `special_financing` or `no_payments` requested but total < $5,000 | Falls back to `cash_rebate` with a warning in the response |
 | No `trade_in` provided | No trade-in applied |
 | No `purchase_path` specified | Defaults to `"loose"` (motor only, no installation) |
+| No `lead_status` specified | Defaults to `"new"` (customer just asked for a quote) |
 | No `warranty_years` specified | Uses promotion-included warranty (e.g. 7 years with Get 7) |
 | No `package` specified | Defaults to `"good"` (Essential package) |
 
