@@ -9,7 +9,8 @@ export type VoiceActivityType =
   | 'navigate'    // Navigated to a page
   | 'action'      // Took an action (added to quote, scheduled callback)
   | 'info'        // Provided information (trade-in estimate, comparison)
-  | 'promo';      // Showed promotions/deals
+  | 'promo'       // Showed promotions/deals
+  | 'quote_created'; // Created a customer quote with share link
 
 export interface VoiceActivityAction {
   label: string;
