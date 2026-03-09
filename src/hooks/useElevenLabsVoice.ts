@@ -2219,6 +2219,53 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           navigated: true
         });
       },
+      // Deliver a quote link to the customer's screen (toast + activity card)
+      // Called AFTER the server tool create_customer_quote returns a share_url
+      deliver_quote_link: (params: {
+        share_url: string;
+        customer_name: string;
+        motor_model: string;
+        final_price: number;
+        monthly_payment?: number;
+        trade_in_credit?: number;
+        warranty_years?: number;
+      }) => {
+        console.log('[ClientTool] deliver_quote_link', params);
+        
+        // Show toast with quote link
+        toast({
+          title: "Your quote is ready! 🎉",
+          description: `${params.motor_model} — $${params.final_price.toLocaleString('en-CA', { minimumFractionDigits: 2 })}`,
+          duration: 15000, // Keep visible longer
+        });
+        
+        // Show activity card in voice feed
+        dispatchVoiceActivity({
+          type: 'quote_created',
+          title: 'Quote Created',
+          description: `${params.motor_model} for ${params.customer_name}`,
+          data: {
+            share_url: params.share_url,
+            final_price: params.final_price,
+            monthly_payment: params.monthly_payment,
+            trade_in_credit: params.trade_in_credit,
+            warranty_years: params.warranty_years,
+          },
+          actions: [
+            {
+              label: 'View Quote',
+              path: params.share_url,
+              variant: 'primary',
+            },
+          ],
+        });
+        
+        return JSON.stringify({
+          success: true,
+          message: `Quote link is now on ${params.customer_name}'s screen. They can tap it to view full details, download PDF, or place a deposit.`,
+          share_url: params.share_url,
+        });
+      },
     },
   });
 

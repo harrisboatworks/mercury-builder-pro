@@ -512,3 +512,97 @@ All quotes created through this API are automatically tagged with:
 | `is_admin_quote` | `true` |
 
 These tags allow filtering agent-created quotes in the admin dashboard and analytics.
+
+---
+
+## 9. Voice Agent Workflow (ElevenLabs / Harris)
+
+The voice agent "Harris" can create quotes conversationally during live phone or in-app voice sessions. This uses the **same `agent-quote-api` endpoint** as external agents — no separate backend required.
+
+### 9.1 How It Works
+
+Harris has two tools for quoting:
+
+| Tool | Type | Purpose |
+|------|------|---------|
+| `create_customer_quote` | **Server tool** (ElevenLabs dashboard) | Calls `agent-quote-api` with `action: "create_quote"` |
+| `deliver_quote_link` | **Client tool** (runs in browser) | Displays the `share_url` on the customer's screen |
+
+### 9.2 Conversational Flow
+
+```
+1. Customer expresses interest in a motor
+2. Harris confirms the motor selection
+3. Harris gathers info naturally:
+   - Name: "Who should I put this quote under?"
+   - Email: "What's the best email to send this to?"
+   - Phone (optional): "Want me to text you the link too?"
+   - Trade-in (optional): "Are you trading anything in?"
+4. Harris calls create_customer_quote (server tool)
+5. Harris calls deliver_quote_link (client tool) → toast + card appear
+6. Harris reads back key numbers: price, rebate, warranty
+```
+
+### 9.3 Server Tool Configuration
+
+Add this as a **Server Tool** in the ElevenLabs agent dashboard:
+
+- **Name:** `create_customer_quote`
+- **URL:** `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api`
+- **Method:** POST
+- **Headers:**
+  - `x-agent-key: <AGENT_QUOTE_API_KEY>`
+  - `Content-Type: application/json`
+
+**Body (JSON):**
+```json
+{
+  "action": "create_quote",
+  "customer_name": "Dave Wilson",
+  "customer_email": "dave@email.com",
+  "customer_phone": "+16135551234",
+  "motor_id": "<uuid from check_inventory>",
+  "promo_option": "cash_rebate",
+  "trade_in": {
+    "brand": "Yamaha",
+    "year": 2018,
+    "horsepower": 90,
+    "condition": "good"
+  },
+  "warranty_years": 7,
+  "purchase_path": "installed",
+  "customer_notes": "Voice agent quote — customer on phone"
+}
+```
+
+The response includes `share_url`, `admin_url`, and full pricing breakdown — Harris passes `share_url` to `deliver_quote_link`.
+
+### 9.4 What Happens Behind the Scenes
+
+1. Quote is dual-written to `customer_quotes` + `saved_quotes`
+2. Admin receives SMS with customer link + admin link
+3. Quote is tagged `lead_source: "ai_agent"`, `is_admin_quote: true`
+4. Customer can open `share_url` to view pricing, download PDF, or place a deposit
+
+### 9.5 System Prompt Section (for ElevenLabs dashboard)
+
+Add this to Harris's system prompt:
+
+```text
+## PHONE QUOTING WORKFLOW
+When a customer wants a quote, gather info naturally through conversation:
+1. Motor selection — you likely already know this from the conversation
+2. Name — "Who should I put this quote under?"
+3. Email — "What's the best email to send this to?"
+4. Phone (optional) — "Want me to text you the link too?"
+5. Trade-in (optional) — "Are you trading anything in?"
+6. Then call create_customer_quote with all collected info
+7. After creating, use deliver_quote_link to show the link on screen
+8. Read back the key numbers: price, any rebate, warranty coverage
+
+RULES:
+- Don't ask all questions at once — keep it conversational
+- If they already told you their name/phone (e.g. from schedule_callback), reuse it
+- Always confirm the motor before creating the quote
+- After creating, say something like "Your quote is ready — I've put the link on your screen"
+```

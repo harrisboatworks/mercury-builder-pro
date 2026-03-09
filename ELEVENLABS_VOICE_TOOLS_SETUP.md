@@ -578,3 +578,156 @@ Test your agent with these phrases:
 7. **Photos:** "Can you text me pictures of that motor?"
 8. **Deals:** "Any specials going on right now?"
 9. **Quote:** "What's in my quote so far?"
+10. **Voice Quote:** "Can you put together a quote for me on the 150 FourStroke?"
+
+---
+
+## Server Tool: Create Customer Quote
+
+This is a **Server Tool** (not a client tool). Add it in the ElevenLabs dashboard under **Tools** → **Add Tool** → **Server Tool**.
+
+### Configuration
+
+**Name:** `create_customer_quote`
+**Description:** Create a complete customer quote with pricing, promotions, and warranty. Use after gathering customer name, email, and confirming motor selection. Returns a share link to display on screen.
+
+**URL:** `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api`
+**Method:** POST
+
+**Headers:**
+| Header | Value |
+|--------|-------|
+| `x-agent-key` | `<AGENT_QUOTE_API_KEY secret>` |
+| `Content-Type` | `application/json` |
+
+**Body Parameters:**
+```json
+{
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": ["create_quote"],
+      "description": "Always 'create_quote'"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "Customer's full name"
+    },
+    "customer_email": {
+      "type": "string",
+      "description": "Customer's email address"
+    },
+    "customer_phone": {
+      "type": "string",
+      "description": "Customer's phone number (optional)"
+    },
+    "motor_id": {
+      "type": "string",
+      "description": "UUID of the motor from check_inventory or get_visible_motors"
+    },
+    "promo_option": {
+      "type": "string",
+      "enum": ["cash_rebate", "extended_warranty"],
+      "description": "Promotion type (default: cash_rebate)"
+    },
+    "trade_in": {
+      "type": "object",
+      "description": "Trade-in motor details (optional)",
+      "properties": {
+        "brand": { "type": "string" },
+        "year": { "type": "number" },
+        "horsepower": { "type": "number" },
+        "condition": { "type": "string", "enum": ["excellent", "good", "fair", "rough"] }
+      }
+    },
+    "warranty_years": {
+      "type": "number",
+      "description": "Warranty duration (default: 7 for Get 7 promo)"
+    },
+    "purchase_path": {
+      "type": "string",
+      "enum": ["loose", "installed"],
+      "description": "Loose motor or professional installation"
+    },
+    "customer_notes": {
+      "type": "string",
+      "description": "Any notes about the quote (auto-tagged as voice agent quote)"
+    }
+  },
+  "required": ["action", "customer_name", "customer_email", "motor_id"]
+}
+```
+
+**Response includes:** `share_url`, `admin_url`, pricing breakdown, promo details. Pass `share_url` to the `deliver_quote_link` client tool.
+
+---
+
+## Client Tool: Deliver Quote Link
+
+### Name: `deliver_quote_link`
+**Description:** Display the customer's quote link on their screen as a toast notification and activity card. Call this after create_customer_quote returns successfully.
+
+**Parameters:**
+```json
+{
+  "type": "object",
+  "properties": {
+    "share_url": {
+      "type": "string",
+      "description": "The quote share URL from create_customer_quote response"
+    },
+    "customer_name": {
+      "type": "string",
+      "description": "Customer's name for the card"
+    },
+    "motor_model": {
+      "type": "string",
+      "description": "Motor model name for display"
+    },
+    "final_price": {
+      "type": "number",
+      "description": "Final quote price"
+    },
+    "monthly_payment": {
+      "type": "number",
+      "description": "Monthly financing payment (optional)"
+    },
+    "trade_in_credit": {
+      "type": "number",
+      "description": "Trade-in credit amount (optional)"
+    },
+    "warranty_years": {
+      "type": "number",
+      "description": "Warranty coverage years (optional)"
+    }
+  },
+  "required": ["share_url", "customer_name", "motor_model", "final_price"]
+}
+```
+
+---
+
+## Voice Quoting System Prompt Addition
+
+Add this to the agent's system prompt for the quoting workflow:
+
+```text
+## PHONE QUOTING WORKFLOW
+When a customer wants a quote, gather info naturally through conversation:
+1. Motor selection — you likely already know this from the conversation
+2. Name — "Who should I put this quote under?"
+3. Email — "What's the best email to send this to?"
+4. Phone (optional) — "Want me to text you the link too?"
+5. Trade-in (optional) — "Are you trading anything in?"
+6. Then call create_customer_quote with all collected info
+7. After creating, use deliver_quote_link to show the link on screen
+8. Read back the key numbers: price, any rebate, warranty coverage
+
+RULES:
+- Don't ask all questions at once — keep it conversational
+- If they already told you their name/phone (e.g. from schedule_callback), reuse it
+- Always confirm the motor before creating the quote
+- After creating, say something like "Your quote is ready — I've put the link on your screen"
+- The motor_id comes from check_inventory or get_visible_motors results
+```
