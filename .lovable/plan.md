@@ -1,28 +1,27 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Update Boat Rentals Blog Post CTAs to Drive Self-Serve Booking
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## Problem
+The boat rentals blog post (`boat-rentals-shared-access-booming-2026`) tells readers to "call or stop by" for rentals. The business now has a self-serve rentals page at `https://www.harrisboatworks.ca/rentals` where customers can browse models, check availability, read FAQs, and book online.
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+One other post (`rice-lake-fishing-boating-guide-2026`, ~line 7525) also mentions rentals without linking to the rentals page.
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+## Changes — `src/data/blogArticles.ts`
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+### 1. "Real Service From Real People" section (lines 6961-6969)
+Reframe: keep the personal touch messaging but note that booking starts online, with in-person walkthroughs happening at pickup. Remove the "not a purely self-serve, phone-only transaction" framing since it now IS self-serve online.
+
+### 2. Closing CTA (line 7003)
+Replace "Give us a call at (905) 342-2153, stop by the marina..." with a CTA driving to the rentals page:
+> "Browse our rental fleet, check availability, and book online at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) — no phone call needed."
+
+### 3. "A Fit for Many Types of Boaters" section (line 6981)
+Add a link to the rentals page after the list.
+
+### 4. Rice Lake 2026 guide post — rentals mention (line 7525)
+Add a link: "via our [rental fleet](https://www.harrisboatworks.ca/rentals)"
+
+### 5. FAQ answer about what's included (line 7014)
+Add mention of online booking: "Start by browsing models and availability at harrisboatworks.ca/rentals."
+
