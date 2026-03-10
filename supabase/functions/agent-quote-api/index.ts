@@ -107,6 +107,7 @@ function calcPricing(opts: {
   motorPrice: number;
   customItemsTotal?: number;
   warrantyCost?: number;
+  accessoryCost?: number;
   tradeInValue?: number;
   rebateAmount?: number;
   adminDiscount?: number;
@@ -115,12 +116,13 @@ function calcPricing(opts: {
     motorPrice,
     customItemsTotal = 0,
     warrantyCost = 0,
+    accessoryCost = 0,
     tradeInValue = 0,
     rebateAmount = 0,
     adminDiscount = 0,
   } = opts;
 
-  const subtotal = motorPrice + customItemsTotal + warrantyCost;
+  const subtotal = motorPrice + customItemsTotal + warrantyCost + accessoryCost;
   const tradeInCredit = Math.min(tradeInValue, subtotal); // can't exceed subtotal
   const rebateCredit = Math.min(rebateAmount, subtotal - tradeInCredit);
   const adjustedSubtotal = subtotal - tradeInCredit - rebateCredit;
@@ -131,6 +133,7 @@ function calcPricing(opts: {
   return {
     subtotal,
     warrantyCost,
+    accessoryCost,
     tradeInCredit,
     rebateCredit,
     adjustedSubtotal,
@@ -139,6 +142,87 @@ function calcPricing(opts: {
     adminDiscount,
     finalPrice,
   };
+}
+
+// ── Tiller detection (mirrors src/lib/motor-helpers.ts) ──
+
+function isTillerMotor(modelDisplay: string): boolean {
+  if (!modelDisplay) return false;
+  const upper = modelDisplay.toUpperCase().trim();
+  if (upper.includes('TILLER') || upper.includes('BIG TILLER')) return true;
+  // H suffix patterns: MLH, ELH, EXLH, MH
+  if (/\b\d+\.?\d*\s*(MLH|ELH|EXLH|MH)\b/i.test(upper)) return true;
+  // Standalone MH at end
+  if (/\bMH\b/i.test(upper) && !upper.includes('EXLPT') && !upper.includes('CT')) return true;
+  return false;
+}
+
+// ── Propeller allowance (mirrors src/lib/propeller-allowance.ts) ──
+
+function getPropellerAllowance(hp: number): { price: number; name: string; description: string } | null {
+  if (hp < 25) return null; // prop included with motor
+  if (hp <= 115) {
+    return { price: 350, name: "Propeller Allowance (Aluminum)", description: "Standard aluminum propeller — final selection after water test" };
+  }
+  return { price: 1200, name: "Propeller Allowance (Stainless Steel)", description: "Stainless steel propeller — final selection after water test" };
+}
+
+// ── Accessory breakdown builder for agent quotes ──
+
+const PACKAGE_LABELS: Record<string, string> = {
+  good: "Essential • Best Value",
+  better: "Complete • Most Popular",
+  best: "Premium • Maximum Protection",
+};
+
+function buildAgentAccessoryBreakdown(opts: {
+  hp: number;
+  modelDisplay: string;
+  purchasePath: string;
+  selectedOptions: any[];
+  warrantyCost: number;
+  warrantyYearsExtra: number;
+  totalBaseWarranty: number;
+  customItems: any[];
+  packageTier: string;
+}): { items: any[]; totalCost: number } {
+  const { hp, modelDisplay, purchasePath, selectedOptions, warrantyCost, warrantyYearsExtra, totalBaseWarranty, customItems, packageTier } = opts;
+  const items: any[] = [];
+  const isTiller = isTillerMotor(modelDisplay);
+
+  // Selected catalog options
+  for (const opt of selectedOptions) {
+    items.push({ name: opt.name, price: opt.price, description: opt.isIncluded ? "Included with motor" : undefined });
+  }
+
+  // Installation labor (non-tiller, installed path)
+  if (!isTiller && purchasePath === "installed") {
+    items.push({ name: "Professional Installation", price: 450, description: "Expert rigging, mounting, and commissioning by certified technicians" });
+  }
+
+  // Propeller allowance
+  const propAllowance = getPropellerAllowance(hp);
+  if (propAllowance) {
+    items.push({ name: propAllowance.name, price: propAllowance.price, description: propAllowance.description });
+  }
+
+  // Warranty extension
+  if (warrantyCost > 0 && warrantyYearsExtra > 0) {
+    const totalYears = totalBaseWarranty + warrantyYearsExtra;
+    items.push({
+      name: `Extended Warranty (${warrantyYearsExtra} additional year${warrantyYearsExtra > 1 ? "s" : ""})`,
+      price: warrantyCost,
+      description: `Total coverage: ${totalYears} years`,
+    });
+  }
+
+  // Custom items
+  for (const ci of customItems) {
+    items.push({ name: ci.name, price: ci.price, description: "Custom item" });
+  }
+
+  const totalCost = items.reduce((sum, i) => sum + (i.price || 0), 0);
+  return { items, totalCost };
 }
 
 // ── Trade-In Valuation (ported from src/lib/trade-valuation.ts) ──
@@ -736,10 +820,31 @@ async function createQuote(supabase: any, body: any) {
     }
   }
 
+  // --- Build accessory breakdown ---
+  const packageTier = body.package || "good";
+  const breakdown = buildAgentAccessoryBreakdown({
+    hp: motor.horsepower || 0,
+    modelDisplay: motor.model_display || motor.model || "",
+    purchasePath,
+    selectedOptions: selectedOptionsResolved,
+    warrantyCost,
+    warrantyYearsExtra,
+    totalBaseWarranty: totalBaseWarranty,
+    customItems,
+    packageTier,
+  });
+
+  // accessoryCost = installation + propeller (excludes selected options, warranty, custom items which are already in their own params)
+  const isTiller = isTillerMotor(motor.model_display || motor.model || "");
+  const installCost = (!isTiller && purchasePath === "installed") ? 450 : 0;
+  const propCost = getPropellerAllowance(motor.horsepower || 0)?.price || 0;
+  const accessoryCost = installCost + propCost;
+
   const pricing = calcPricing({
     motorPrice,
     customItemsTotal: customItemsTotal + selectedOptionsTotal,
     warrantyCost,
+    accessoryCost,
     tradeInValue,
     rebateAmount,
     adminDiscount,
@@ -816,8 +921,14 @@ async function createQuote(supabase: any, body: any) {
     warrantyYearsExtra,
     warrantyCost,
     // Package — use 'selectedPackage' key that SavedQuotePage restores
-    selectedPackage: { tier: body.package || "good" },
-    package: body.package || "good",
+    selectedPackage: {
+      id: packageTier,
+      label: PACKAGE_LABELS[packageTier] || PACKAGE_LABELS.good,
+      priceBeforeTax: pricing.adjustedSubtotal,
+    },
+    package: packageTier,
+    // Accessory breakdown for frontend restoration
+    accessoryBreakdown: breakdown.items,
     // Financing
     financing: financingData,
     // Pricing breakdown
@@ -964,7 +1075,11 @@ async function updateQuote(supabase: any, body: any) {
   if (body.purchase_path !== undefined) { quoteData.purchasePath = body.purchase_path; }
   if (body.package !== undefined) { 
     quoteData.package = body.package; 
-    quoteData.selectedPackage = { tier: body.package };
+    quoteData.selectedPackage = {
+      id: body.package,
+      label: PACKAGE_LABELS[body.package] || PACKAGE_LABELS.good,
+      priceBeforeTax: 0, // will be updated after pricing recalc
+    };
   }
 
   // Promo update
@@ -1028,16 +1143,44 @@ async function updateQuote(supabase: any, body: any) {
   const rebateAmount = quoteData.rebateAmount || 0;
   const warrantyCost = quoteData.warrantyCost || 0;
 
+  // Compute accessory costs (installation + propeller)
+  const motorDisplay = quoteData.motor?.model || quoteData.motorModel || "";
+  const motorHp = quoteData.motor?.hp || quoteData.motorHp || 0;
+  const purchasePath = quoteData.purchasePath || "loose";
+  const updateIsTiller = isTillerMotor(motorDisplay);
+  const updateInstallCost = (!updateIsTiller && purchasePath === "installed") ? 450 : 0;
+  const updatePropCost = getPropellerAllowance(motorHp)?.price || 0;
+  const updateAccessoryCost = updateInstallCost + updatePropCost;
+
   const pricing = calcPricing({
     motorPrice, customItemsTotal: customItemsTotal + selectedOptionsTotal, warrantyCost,
+    accessoryCost: updateAccessoryCost,
     tradeInValue, rebateAmount, adminDiscount,
+  });
+
+  // Update selectedPackage.priceBeforeTax if present
+  if (quoteData.selectedPackage) {
+    quoteData.selectedPackage.priceBeforeTax = pricing.adjustedSubtotal;
+  }
+
+  // Rebuild accessory breakdown
+  const updateBreakdown = buildAgentAccessoryBreakdown({
+    hp: motorHp,
+    modelDisplay: motorDisplay,
+    purchasePath,
+    selectedOptions: quoteData.selectedOptions || [],
+    warrantyCost,
+    warrantyYearsExtra: quoteData.warrantyYearsExtra || 0,
+    totalBaseWarranty: quoteData.warrantyConfig?.totalYears || 7,
+    customItems,
+    packageTier: quoteData.package || "good",
   });
 
   updates.admin_discount = adminDiscount;
   updates.final_price = pricing.finalPrice;
   updates.total_cost = pricing.finalPrice;
   updates.loan_amount = pricing.finalPrice;
-  updates.quote_data = { ...quoteData, ...pricing, adminDiscount };
+  updates.quote_data = { ...quoteData, ...pricing, adminDiscount, accessoryBreakdown: updateBreakdown.items };
 
   const { error } = await supabase.from("customer_quotes").update(updates).eq("id", quote_id);
   if (error) throw new Error(`Failed to update quote: ${error.message}`);
