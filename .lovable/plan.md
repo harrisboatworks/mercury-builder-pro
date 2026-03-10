@@ -1,55 +1,28 @@
+## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
+### Context
+Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-# Centralize Quote Pricing Calculation
+### Changes Made
 
-## Problem
-The same ~30-line pricing calculation is copy-pasted across 3 components (GlobalStickyQuoteBar, UnifiedMobileBar, MobileQuoteDrawer). Every time a new line item type is added, all 3 must be updated — which has already caused bugs.
+**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
+- Appears after user scrolls past 2+ motor cards using IntersectionObserver
+- "Build Your Quote — Tap any motor to configure & get pricing"
+- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
+- Fires `cta_build_quote` gtag event
 
-## Approach
-Extract a single pure function `calculateRunningTotal(state, getRebateForHP)` into a new file, and a companion React hook `useQuoteRunningTotal()` that wires it to the QuoteContext. All 3 components replace their inline `useMemo` with a call to this hook.
+**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
+- Shows below the motor grid, above the financing disclaimer
+- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
+- Captures device type and timestamp in metadata
+- Success state with confirmation message
+- Fires `lead_capture` gtag event
 
-## New file: `src/hooks/useQuoteRunningTotal.ts`
+**3. Motor card data attribute**
+- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
 
-Export a **pure function** `calculateRunningTotal` that takes the quote state fields and a `getRebateForHP` callback, returns `{ subtotal, hst, total, lineItems }`. This is the single source of truth for the pre-tax and post-tax running total.
-
-Also export a **hook** `useQuoteRunningTotal()` that:
-- Calls `useQuote()` for state
-- Calls `useActivePromotions()` for `getRebateForHP`
-- Wraps `calculateRunningTotal` in a `useMemo`
-- Returns `{ subtotal, hst, total, lineItems, financingUnavailable }`
-
-The pure function includes all current line items:
-- Motor price
-- Selected options
-- Controls (none=$1200, adapter=$125)
-- Installation labor ($450 for remote motors on installed path)
-- Installation config costs
-- Fuel tank config
-- Battery cost
-- Warranty price
-- Trade-in credit (subtract)
-- Admin custom items
-- Admin discount (subtract)
-- Cash rebate (subtract, via `getRebateForHP`)
-- HST at 13%
-
-## Component changes
-
-### `GlobalStickyQuoteBar.tsx`
-- Replace the `runningTotal` useMemo (lines 49-117) with `const { total } = useQuoteRunningTotal()`
-- Keep the monthly payment calculation that uses `total`
-
-### `UnifiedMobileBar.tsx`
-- Replace the `runningTotal` useMemo (lines 390-470) with the hook
-- Keep the special `isPreview` and `selectedPackage.priceBeforeTax` overrides as conditional logic before falling back to the hook
-
-### `MobileQuoteDrawer.tsx`
-- Replace the `pricing` useMemo (lines 43-161) with the hook
-- The hook returns `lineItems` so the drawer can still render its breakdown rows
-
-## Safety
-- Pure function with no side effects — easy to unit test
-- Components keep their own display/navigation logic unchanged
-- Only the arithmetic moves; UI rendering stays in each component
-- The hook returns the same shape of data each component already uses
-
+### What to Monitor
+- Motor selection → options conversion rate (baseline: 7.6%)
+- `pricing_updates` email captures per week
+- CTA click rate via `cta_build_quote` event
+- Review after 2–3 weeks with larger sample

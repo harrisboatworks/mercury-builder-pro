@@ -11,6 +11,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
 import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
+import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import { money } from '@/lib/money';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
@@ -386,87 +387,27 @@ export const UnifiedMobileBar: React.FC = () => {
     }
   }, [hasPromoSelection, hasPackageSelection]);
 
-  // Calculate running total
+  // Centralized running total (single source of truth)
+  const { total: centralTotal } = useQuoteRunningTotal(displayMotor);
+
+  // Calculate running total with page-specific overrides
   const runningTotal = useMemo(() => {
     // On summary page, use the selected package price from context
     if (location.pathname === '/quote/summary' && state.selectedPackage?.priceBeforeTax) {
       return state.selectedPackage.priceBeforeTax;
     }
 
-    const motorPrice = displayMotor?.price || displayMotor?.basePrice || displayMotor?.msrp || 0;
-    if (!motorPrice) return 0;
-
-    let total = motorPrice;
-
-    // Only add extras if not previewing (actual selected motor)
-    if (!isPreview) {
-      if (state.boatInfo?.controlsOption) {
-        if (state.boatInfo.controlsOption === 'none') total += 1200;
-        else if (state.boatInfo.controlsOption === 'adapter') total += 125;
-      }
-
-      const isTiller = state.motor?.model?.includes('TLR') || state.motor?.model?.includes('MH');
-      if (state.purchasePath === 'installed' && !isTiller) {
-        total += 450;
-      }
-
-      // Add installation config costs ONLY for installed path
-      if (state.purchasePath === 'installed' && state.installConfig?.installationCost) {
-        total += state.installConfig.installationCost;
-      }
-
-      if (state.fuelTankConfig?.tankCost) {
-        total += state.fuelTankConfig.tankCost;
-      }
-
-      // Add battery cost (if user opted for it)
-      if (state.looseMotorBattery?.wantsBattery && state.looseMotorBattery?.batteryCost) {
-        total += state.looseMotorBattery.batteryCost;
-      }
-
-      // Add selected options (fuel tanks, accessories, etc. from Options page)
-      const selectedOptionsTotal = (state.selectedOptions || []).reduce(
-        (sum, opt) => sum + opt.price, 0
-      );
-      total += selectedOptionsTotal;
-
-      if (state.warrantyConfig?.warrantyPrice) {
-        total += state.warrantyConfig.warrantyPrice;
-      }
-
-      if (state.tradeInInfo?.estimatedValue) {
-        total -= state.tradeInInfo.estimatedValue;
-      }
-
-      // Add admin custom items
-      if (state.adminCustomItems?.length) {
-        total += state.adminCustomItems.reduce((sum, item) => sum + (item.price || 0), 0);
-      }
-
-      // Subtract admin discount
-      if (state.adminDiscount && state.adminDiscount > 0) {
-        total -= state.adminDiscount;
-      }
-
-      // Subtract cash rebate if selected
-      if (state.selectedPromoOption === 'cash_rebate' && displayMotor?.hp) {
-        const rebate = getRebateForHP(displayMotor.hp);
-        if (rebate) total -= rebate;
-      }
+    // When previewing, just show motor price (no extras)
+    if (isPreview) {
+      const motorPrice = displayMotor?.price || displayMotor?.basePrice || displayMotor?.msrp || 0;
+      return motorPrice;
     }
 
-    return total;
+    return centralTotal;
   }, [
     location.pathname, state.selectedPackage?.priceBeforeTax,
-    displayMotor?.price, displayMotor?.basePrice, displayMotor?.msrp,
-    isPreview, state.motor?.model,
-    state.boatInfo?.controlsOption, state.purchasePath,
-    state.installConfig?.installationCost, state.fuelTankConfig?.tankCost,
-    state.looseMotorBattery?.wantsBattery, state.looseMotorBattery?.batteryCost,
-    state.selectedOptions, state.warrantyConfig?.warrantyPrice, 
-    state.tradeInInfo?.estimatedValue,
-    state.adminCustomItems, state.adminDiscount, state.selectedPromoOption,
-    getRebateForHP,
+    isPreview, displayMotor?.price, displayMotor?.basePrice, displayMotor?.msrp,
+    centralTotal,
   ]);
 
   // Calculate current savings (trade-in + promos)
