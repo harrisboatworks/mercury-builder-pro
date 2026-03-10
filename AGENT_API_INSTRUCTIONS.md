@@ -285,7 +285,8 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
 | `admin_discount` | number | No | Dollar amount off final price |
 | `admin_notes` | string | No | Internal notes (not shown to customer) |
 | `customer_notes` | string | No | Notes visible to customer |
-| `custom_items` | array | No | Extra line items `{ name, price }` |
+| `selected_options` | array | No | Array of option UUIDs from `list_motor_options`. Prices resolved from catalog automatically. |
+| `custom_items` | array | No | Extra line items `{ name, price }` — only for items NOT in the options catalog |
 | `lead_status` | string | No | Default: `"new"`. Options: `"new"`, `"contacted"`, `"scheduled"`, `"won"`, `"lost"` |
 
 **Response:**
