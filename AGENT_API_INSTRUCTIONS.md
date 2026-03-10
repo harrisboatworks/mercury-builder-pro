@@ -208,7 +208,8 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
     "horsepower": 90,
     "condition": "good",
     "model": "FourStroke",
-    "serial_number": "OT123456"
+    "serial_number": "OT123456",
+    "override_value": 5500
   },
   "warranty_years": 8,
   "package": "better",
@@ -232,7 +233,8 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
 | `promo_option` | string | No | `"cash_rebate"`, `"special_financing"`, `"no_payments"`, or `null` |
 | `promo_rate` | number | No | APR for special_financing (default: 2.99) |
 | `promo_term` | number | No | Term in months for special_financing (default: 120) |
-| `trade_in` | object | No | `{ brand, year, horsepower, condition, model?, serial_number? }` |
+| `trade_in` | object | No | `{ brand, year, horsepower, condition, model?, serial_number?, override_value? }` |
+| `trade_in.override_value` | number | No | Override the formula estimate with an exact trade-in dollar amount. The formula estimate is still calculated and stored for reference. |
 | `warranty_years` | number | No | Total warranty years desired (e.g. 7 or 8) |
 | `package` | string | No | `"good"`, `"better"`, or `"best"` |
 | `admin_discount` | number | No | Dollar amount off final price |
