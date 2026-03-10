@@ -262,10 +262,9 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
     "rebateCredit": 500,
     "adjustedSubtotal": 14040,
     "hst": 1825.20,
-    "dealerplanFee": 299,
-    "totalBeforeDiscount": 16164.20,
+    "totalBeforeDiscount": 15865.20,
     "adminDiscount": 500,
-    "finalPrice": 15664.20
+    "finalPrice": 15365.20
   },
   "promo_applied": {
     "option": "cash_rebate",

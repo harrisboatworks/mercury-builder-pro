@@ -131,7 +131,6 @@ function calcPricing(opts: {
     rebateCredit,
     adjustedSubtotal,
     hst,
-    dealerplanFee: DEALERPLAN_FEE,
     totalBeforeDiscount,
     adminDiscount,
     finalPrice,
