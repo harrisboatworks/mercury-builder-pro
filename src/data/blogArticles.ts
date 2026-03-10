@@ -6978,7 +6978,7 @@ Our rental fleet works for:
 - **Anglers** who want a solid fishing platform on Rice Lake without trailering their own rig.
 - **Prospective buyers** who want to "try before they buy."
 
-Whatever your reason, you get the same combination of quality equipment, local support, and Mercury power.
+Whatever your reason, you get the same combination of quality equipment, local support, and Mercury power. [See what's available and book online →](https://www.harrisboatworks.ca/rentals)
 
 ## From Rental to Ownership
 
