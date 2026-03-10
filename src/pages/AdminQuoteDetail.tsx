@@ -572,7 +572,6 @@ const AdminQuoteDetail = () => {
           {/* Trade-In */}
           <Card className="p-4">
             {(() => {
-              // Extract trade-in from quote_data if not in top-level columns
               const tradeIn = q.quote_data?.tradeInInfo || {};
               const hasTradeIn = tradeIn.hasTradeIn || q.tradein_value_pre_penalty;
               const estimatedValue = q.tradein_value_final ?? tradeIn.tradeinValueFinal ?? tradeIn.estimatedValue;
@@ -583,6 +582,11 @@ const AdminQuoteDetail = () => {
                     Trade-In
                     {q.penalty_applied && (
                       <AlertTriangle className="w-4 h-4 text-yellow-600" />
+                    )}
+                    {hasTradeIn && !isEditingTradeIn && (
+                      <Button variant="ghost" size="sm" className="ml-auto" onClick={() => setIsEditingTradeIn(true)}>
+                        <Edit2 className="w-4 h-4" />
+                      </Button>
                     )}
                   </h2>
                   {hasTradeIn ? (
@@ -608,6 +612,35 @@ const AdminQuoteDetail = () => {
                           </>
                         )}
                       </div>
+                      
+                      {/* Inline override editor */}
+                      {isEditingTradeIn && (
+                        <div className="border-t pt-3 mt-3 space-y-2">
+                          <Label className="text-sm font-medium">Override Trade-In Value ($)</Label>
+                          <Input
+                            type="number"
+                            value={tradeInOverride}
+                            onChange={(e) => setTradeInOverride(e.target.value)}
+                            placeholder="Enter override value..."
+                            min={0}
+                          />
+                          <div className="text-xs text-muted-foreground">
+                            Formula estimate: {fmt(tradeIn.originalEstimate || estimatedValue)}
+                          </div>
+                          <div className="flex gap-2 pt-1">
+                            <Button size="sm" onClick={() => handleSaveTradeInOverride(false)} disabled={isSavingTradeIn || !tradeInOverride}>
+                              {isSavingTradeIn ? <Loader2 className="w-3 h-3 mr-1 animate-spin" /> : <Save className="w-3 h-3 mr-1" />}
+                              Save
+                            </Button>
+                            {tradeIn.overrideValue && (
+                              <Button size="sm" variant="outline" onClick={() => handleSaveTradeInOverride(true)} disabled={isSavingTradeIn}>
+                                Clear Override
+                              </Button>
+                            )}
+                            <Button size="sm" variant="ghost" onClick={() => setIsEditingTradeIn(false)}>Cancel</Button>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <div className="text-muted-foreground italic">No trade-in</div>
