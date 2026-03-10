@@ -119,7 +119,11 @@ export function QuoteRevealCinematic({
   const { triggerHaptic } = useHapticFeedback();
   const priceIntervalRef = useRef<NodeJS.Timeout>();
   const startTimeRef = useRef<number>(0);
+  const onCompleteRef = useRef(onComplete);
   const isMobile = useIsMobile();
+  
+  // Keep ref in sync
+  onCompleteRef.current = onComplete;
   
   const TOTAL_DURATION = 12500; // Match the auto-close timing
   
