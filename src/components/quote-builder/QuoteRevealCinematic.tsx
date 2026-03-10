@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSound } from '@/contexts/SoundContext';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
@@ -119,7 +119,11 @@ export function QuoteRevealCinematic({
   const { triggerHaptic } = useHapticFeedback();
   const priceIntervalRef = useRef<NodeJS.Timeout>();
   const startTimeRef = useRef<number>(0);
+  const onCompleteRef = useRef(onComplete);
   const isMobile = useIsMobile();
+  
+  // Keep ref in sync
+  onCompleteRef.current = onComplete;
   
   const TOTAL_DURATION = 12500; // Match the auto-close timing
   
@@ -239,15 +243,16 @@ export function QuoteRevealCinematic({
     const badgeTimeout = setTimeout(() => setShowSavingsBadge(true), 6200);
     timeouts.push(badgeTimeout);
 
-    // Complete callback - extended by 3 seconds for final reveal
-    const completeTimeout = setTimeout(onComplete, 12500);
+    // Complete callback - use ref to avoid dependency on onComplete
+    const completeTimeout = setTimeout(() => onCompleteRef.current(), 12500);
     timeouts.push(completeTimeout);
 
     return () => {
       timeouts.forEach(clearTimeout);
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
-  }, [isVisible, onComplete, playReveal, playSwoosh, playComplete, playAmbientPad, playCelebration]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isVisible, playReveal, playSwoosh, playComplete, playAmbientPad, playCelebration]);
 
   // Smoother price counting animation
   useEffect(() => {

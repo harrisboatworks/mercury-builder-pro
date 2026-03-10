@@ -262,7 +262,7 @@ async function listMotors(supabase: any, body: any) {
 
   let query = supabase
     .from("motor_models")
-    .select("id, model_display, model, horsepower, msrp, sale_price, in_stock, model_key, motor_type, year, base_price")
+    .select("id, model_display, model, horsepower, msrp, sale_price, dealer_price, in_stock, model_key, motor_type, year, base_price")
     .eq("is_brochure", true)
     .order("horsepower", { ascending: true })
     .limit(limit);
@@ -286,7 +286,8 @@ async function listMotors(supabase: any, body: any) {
       model_display: m.model_display,
       horsepower: m.horsepower,
       msrp: m.msrp,
-      sale_price: m.sale_price || m.base_price,
+      sale_price: m.sale_price || (m.dealer_price && m.dealer_price < m.msrp ? m.dealer_price : null) || m.base_price,
+      dealer_price: m.dealer_price,
       in_stock: m.in_stock,
       model_key: m.model_key,
       motor_type: m.motor_type,
@@ -449,7 +450,10 @@ async function createQuote(supabase: any, body: any) {
     .single();
   if (motorErr || !motor) throw new Error(`Motor not found: ${motor_id}`);
 
-  const motorPrice = motor.sale_price || motor.base_price || motor.msrp || 0;
+  // Match frontend pricing logic: sale_price > dealer_price (if < msrp) > base_price > msrp
+  const motorPrice = motor.sale_price || 
+    (motor.dealer_price && motor.dealer_price < motor.msrp ? motor.dealer_price : null) || 
+    motor.base_price || motor.msrp || 0;
   const adminDiscount = Math.max(0, body.admin_discount || 0);
   const customItems: Array<{ name: string; price: number }> = body.custom_items || [];
   const customItemsTotal = customItems.reduce((sum: number, i: any) => sum + (i.price || 0), 0);
@@ -623,7 +627,9 @@ async function createQuote(supabase: any, body: any) {
       hp: motor.horsepower,
       price: motorPrice,
       msrp: motor.msrp,
-      salePrice: motor.sale_price || motor.base_price,
+      salePrice: motorPrice,
+      dealerPrice: motor.dealer_price,
+      basePrice: motor.base_price,
       modelKey: motor.model_key,
       motorType: motor.motor_type,
       year: motor.year,
