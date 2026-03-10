@@ -820,10 +820,31 @@ async function createQuote(supabase: any, body: any) {
     }
   }
 
+  // --- Build accessory breakdown ---
+  const packageTier = body.package || "good";
+  const breakdown = buildAgentAccessoryBreakdown({
+    hp: motor.horsepower || 0,
+    modelDisplay: motor.model_display || motor.model || "",
+    purchasePath,
+    selectedOptions: selectedOptionsResolved,
+    warrantyCost,
+    warrantyYearsExtra,
+    totalBaseWarranty: totalBaseWarranty,
+    customItems,
+    packageTier,
+  });
+
+  // accessoryCost = installation + propeller (excludes selected options, warranty, custom items which are already in their own params)
+  const isTiller = isTillerMotor(motor.model_display || motor.model || "");
+  const installCost = (!isTiller && purchasePath === "installed") ? 450 : 0;
+  const propCost = getPropellerAllowance(motor.horsepower || 0)?.price || 0;
+  const accessoryCost = installCost + propCost;
+
   const pricing = calcPricing({
     motorPrice,
     customItemsTotal: customItemsTotal + selectedOptionsTotal,
     warrantyCost,
+    accessoryCost,
     tradeInValue,
     rebateAmount,
     adminDiscount,
