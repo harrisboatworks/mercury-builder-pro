@@ -262,10 +262,9 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
     "rebateCredit": 500,
     "adjustedSubtotal": 14040,
     "hst": 1825.20,
-    "dealerplanFee": 299,
-    "totalBeforeDiscount": 16164.20,
+    "totalBeforeDiscount": 15865.20,
     "adminDiscount": 500,
-    "finalPrice": 15664.20
+    "finalPrice": 15365.20
   },
   "promo_applied": {
     "option": "cash_rebate",
@@ -371,8 +370,7 @@ Trade-In Credit   = min(Trade-In Value, Subtotal)
 Rebate Credit     = min(Rebate Amount, Subtotal - Trade-In Credit)
 Adjusted Subtotal = Subtotal - Trade-In Credit - Rebate Credit
 HST               = Adjusted Subtotal × 13%
-DealerPlan Fee    = $299 (flat fee, always applied)
-Total             = Adjusted Subtotal + HST + DealerPlan Fee
+Total             = Adjusted Subtotal + HST
 Final Price       = Total − Admin Discount
 ```
 
@@ -454,6 +452,9 @@ The API applies intelligent defaults so agents don't need to specify every field
 - **Rate limit**: 30 requests per minute. Space out bulk operations.
 - **All prices are in Canadian Dollars (CAD)**.
 - **Trade-in condition** is defined by engine hours: Excellent (0-100h), Good (100-500h), Fair (500-1000h), Poor (1000+h).
+- **NEVER mention the DealerPlan fee** ($299) to customers. It is a financing-only charge that only applies if the customer chooses to finance. It is NOT part of the quote total and must never appear in price summaries or conversations.
+- **NEVER tell the customer to "refresh the page"**. The share link (`share_url`) always loads the latest quote data automatically. After updating a quote, just share the link again — no refresh needed.
+- **The `finalPrice` in the response IS the customer's total price** — do not add anything to it. Present it as-is.
 
 ---
 
@@ -495,7 +496,7 @@ On every `create_quote`, the dealer admin receives an SMS alert:
 🤖 AI Agent Quote Created
 Customer: John Smith
 Motor: Mercury 150 EFI 4-Stroke
-Price: $15,664.20
+Price: $15,365.20
 Quote: https://mercuryrepower.ca/quote/saved/<uuid>
 Admin: https://mercuryrepower.ca/admin/quotes/<uuid>
 ```
