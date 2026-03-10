@@ -304,11 +304,27 @@ export default function BlogArticle() {
 
           {/* Featured Image */}
           <div className="aspect-[16/9] overflow-hidden rounded-xl bg-muted mb-8">
-            <img 
-              src={article.image} 
-              alt={article.title}
-              className="w-full h-full object-cover"
-            />
+            {(() => {
+              const [imgError, setImgError] = React.useState(false);
+              if (imgError) {
+                return (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#c8102e] to-[#8b0000] text-white">
+                    <div className="text-center px-4">
+                      <span className="block text-3xl font-bold tracking-tight">Harris Boat Works</span>
+                      <span className="block text-sm mt-1 opacity-80 uppercase tracking-widest">Mercury Authorized Dealer</span>
+                    </div>
+                  </div>
+                );
+              }
+              return (
+                <img 
+                  src={article.image} 
+                  alt={article.title}
+                  className="w-full h-full object-contain"
+                  onError={() => setImgError(true)}
+                />
+              );
+            })()}
           </div>
 
           {/* Table of Contents */}
