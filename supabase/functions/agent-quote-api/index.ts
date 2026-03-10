@@ -827,6 +827,7 @@ async function createQuote(supabase: any, body: any) {
 
   // --- Build accessory breakdown ---
   const packageTier = body.package || "good";
+  const customerHasProp = !!body.customer_has_prop;
   const breakdown = buildAgentAccessoryBreakdown({
     hp: motor.horsepower || 0,
     modelDisplay: motor.model_display || motor.model || "",
@@ -837,12 +838,13 @@ async function createQuote(supabase: any, body: any) {
     totalBaseWarranty: totalBaseWarranty,
     customItems,
     packageTier,
+    customerHasProp,
   });
 
   // accessoryCost = installation + propeller (excludes selected options, warranty, custom items which are already in their own params)
   const isTiller = isTillerMotor(motor.model_display || motor.model || "");
   const installCost = (!isTiller && purchasePath === "installed") ? 450 : 0;
-  const propCost = getPropellerAllowance(motor.horsepower || 0)?.price || 0;
+  const propCost = customerHasProp ? 0 : (getPropellerAllowance(motor.horsepower || 0)?.price || 0);
   const accessoryCost = installCost + propCost;
 
   const pricing = calcPricing({
