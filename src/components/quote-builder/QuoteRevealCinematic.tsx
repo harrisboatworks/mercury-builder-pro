@@ -294,7 +294,7 @@ export function QuoteRevealCinematic({
     return () => {
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
-  }, [stage, finalPrice, playTick, priceComplete]);
+  }, [stage, finalPrice, priceComplete]);
 
   if (!isVisible) return null;
 

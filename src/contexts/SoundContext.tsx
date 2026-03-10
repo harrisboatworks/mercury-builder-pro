@@ -43,25 +43,25 @@ export function SoundProvider({ children }: { children: ReactNode }) {
     handleSetEnabled(!enabled);
   }, [enabled, handleSetEnabled]);
 
+  const value = useMemo<SoundContextValue>(() => ({
+    enabled,
+    setEnabled: handleSetEnabled,
+    toggle,
+    playSound: sounds.playSound,
+    playClick: sounds.playClick,
+    playSuccess: sounds.playSuccess,
+    playSwoosh: sounds.playSwoosh,
+    playReveal: sounds.playReveal,
+    playTick: sounds.playTick,
+    playComplete: sounds.playComplete,
+    playPackageSelect: sounds.playPackageSelect,
+    playAmbientPad: sounds.playAmbientPad,
+    playCelebration: sounds.playCelebration,
+    playMotorNameReveal: sounds.playMotorNameReveal,
+  }), [enabled, handleSetEnabled, toggle, sounds.playSound, sounds.playClick, sounds.playSuccess, sounds.playSwoosh, sounds.playReveal, sounds.playTick, sounds.playComplete, sounds.playPackageSelect, sounds.playAmbientPad, sounds.playCelebration, sounds.playMotorNameReveal]);
+
   return (
-    <SoundContext.Provider
-      value={{
-        enabled,
-        setEnabled: handleSetEnabled,
-        toggle,
-        playSound: sounds.playSound,
-        playClick: sounds.playClick,
-        playSuccess: sounds.playSuccess,
-        playSwoosh: sounds.playSwoosh,
-        playReveal: sounds.playReveal,
-        playTick: sounds.playTick,
-        playComplete: sounds.playComplete,
-        playPackageSelect: sounds.playPackageSelect,
-        playAmbientPad: sounds.playAmbientPad,
-        playCelebration: sounds.playCelebration,
-        playMotorNameReveal: sounds.playMotorNameReveal,
-      }}
-    >
+    <SoundContext.Provider value={value}>
       {children}
     </SoundContext.Provider>
   );

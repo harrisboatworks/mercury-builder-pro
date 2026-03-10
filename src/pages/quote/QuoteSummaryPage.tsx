@@ -112,7 +112,7 @@ export default function QuoteSummaryPage() {
     
     // Scroll to top on mount
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [currentMotorId, showCinematic]);
+  }, [currentMotorId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Keyboard shortcut to replay cinematic (Ctrl/Cmd + Shift + R)
   useEffect(() => {
