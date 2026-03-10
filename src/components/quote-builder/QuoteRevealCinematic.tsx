@@ -122,8 +122,22 @@ export function QuoteRevealCinematic({
   const onCompleteRef = useRef(onComplete);
   const isMobile = useIsMobile();
   
-  // Keep ref in sync
+  // Keep refs in sync — prevents dependency changes from restarting effects
   onCompleteRef.current = onComplete;
+  const playRevealRef = useRef(playReveal);
+  playRevealRef.current = playReveal;
+  const playSwooshRef = useRef(playSwoosh);
+  playSwooshRef.current = playSwoosh;
+  const playTickRef = useRef(playTick);
+  playTickRef.current = playTick;
+  const playCompleteRef = useRef(playComplete);
+  playCompleteRef.current = playComplete;
+  const playAmbientPadRef = useRef(playAmbientPad);
+  playAmbientPadRef.current = playAmbientPad;
+  const playCelebrationRef = useRef(playCelebration);
+  playCelebrationRef.current = playCelebration;
+  const playMotorNameRevealRef = useRef(playMotorNameReveal);
+  playMotorNameRevealRef.current = playMotorNameReveal;
   
   const TOTAL_DURATION = 12500; // Match the auto-close timing
   
