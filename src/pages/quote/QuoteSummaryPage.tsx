@@ -343,7 +343,7 @@ export default function QuoteSummaryPage() {
     if (import.meta.env.DEV && motor) {
       const effectiveMotorPrice = (motorMSRP || 0) - motorDiscount;
       const check = calculateRunningTotal(
-        { price: effectiveMotorPrice, model: motor.model, hp: motor.horsepower || 0 },
+        { price: effectiveMotorPrice, model: motor.model, hp: hp },
         {
           selectedOptions: state.selectedOptions,
           controlsOption: state.boatInfo?.controlsOption,
