@@ -208,7 +208,8 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
     "horsepower": 90,
     "condition": "good",
     "model": "FourStroke",
-    "serial_number": "OT123456"
+    "serial_number": "OT123456",
+    "override_value": 5500
   },
   "warranty_years": 8,
   "package": "better",

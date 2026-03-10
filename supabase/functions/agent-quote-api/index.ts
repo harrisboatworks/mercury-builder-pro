@@ -847,10 +847,8 @@ async function updateQuote(supabase: any, body: any) {
         quoteData.tradeInInfo = tradeInObj;
         updates.tradein_value_final = tradeInValue;
       }
-      quoteData.tradeIn = tradeInObj;
-      quoteData.tradeInInfo = tradeInObj;
-      updates.tradein_value_final = tradeInValue;
     }
+  }
   }
 
   // Recalculate pricing
