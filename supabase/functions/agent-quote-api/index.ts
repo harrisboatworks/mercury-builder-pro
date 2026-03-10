@@ -951,6 +951,14 @@ async function updateQuote(supabase: any, body: any) {
   if (body.admin_notes !== undefined) { updates.admin_notes = body.admin_notes; quoteData.adminNotes = body.admin_notes; }
   if (body.customer_notes !== undefined) { updates.customer_notes = body.customer_notes; quoteData.customerNotes = body.customer_notes; }
   if (body.custom_items !== undefined) { quoteData.adminCustomItems = body.custom_items; }
+  // Handle selected_options update
+  if (body.selected_options !== undefined && Array.isArray(body.selected_options)) {
+    const motorId = existing.motor_model_id;
+    if (motorId) {
+      const result = await resolveSelectedOptions(supabase, body.selected_options, motorId);
+      quoteData.selectedOptions = result.options;
+    }
+  }
   if (body.purchase_path !== undefined) { quoteData.purchasePath = body.purchase_path; }
   if (body.package !== undefined) { 
     quoteData.package = body.package; 
