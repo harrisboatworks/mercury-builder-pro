@@ -69,6 +69,11 @@ const AdminQuoteDetail = () => {
   const [adminDiscount, setAdminDiscount] = useState(0);
   const [adminNotes, setAdminNotes] = useState('');
   const [customerNotes, setCustomerNotes] = useState('');
+  
+  // Trade-in override
+  const [tradeInOverride, setTradeInOverride] = useState<string>('');
+  const [isEditingTradeIn, setIsEditingTradeIn] = useState(false);
+  const [isSavingTradeIn, setIsSavingTradeIn] = useState(false);
 
   useEffect(() => {
     document.title = 'Quote Detail | Admin';
@@ -79,12 +84,100 @@ const AdminQuoteDetail = () => {
         setAdminDiscount(data.admin_discount || 0);
         setAdminNotes(data.admin_notes || '');
         setCustomerNotes(data.customer_notes || '');
+        // Initialize trade-in override from existing data
+        const ti = (data as any).quote_data?.tradeInInfo;
+        if (ti?.overrideValue) {
+          setTradeInOverride(String(ti.overrideValue));
+        } else if (ti?.estimatedValue) {
+          setTradeInOverride(String(ti.estimatedValue));
+        }
       }
     };
     fetchOne();
   }, [id]);
 
   const fmt = (n: number | null | undefined) => (n == null ? '-' : `$${Math.round(Number(n)).toLocaleString()}`);
+
+  const handleSaveTradeInOverride = async (clearOverride = false) => {
+    if (!q || !user?.id) return;
+    setIsSavingTradeIn(true);
+    try {
+      const qd = q.quote_data || {};
+      const tradeIn = qd.tradeInInfo || {};
+      const formulaEstimate = tradeIn.originalEstimate || tradeIn.estimatedValue || q.tradein_value_final || 0;
+      const overrideVal = clearOverride ? null : Number(tradeInOverride);
+      const finalTradeValue = clearOverride ? formulaEstimate : overrideVal!;
+
+      // Build updated tradeInInfo
+      const updatedTradeIn = {
+        ...tradeIn,
+        estimatedValue: finalTradeValue,
+        ...(clearOverride
+          ? { overrideValue: undefined, originalEstimate: undefined }
+          : { overrideValue: overrideVal, originalEstimate: formulaEstimate }
+        ),
+      };
+      // Remove undefined keys for clean JSONB
+      if (clearOverride) {
+        delete updatedTradeIn.overrideValue;
+        delete updatedTradeIn.originalEstimate;
+      }
+
+      const updatedQuoteData = { ...qd, tradeInInfo: updatedTradeIn };
+
+      // Recalculate final_price: base_price - admin_discount - trade-in
+      const newFinalPrice = q.base_price - (q.admin_discount || 0) - finalTradeValue;
+
+      const changes: Record<string, { old: any; new: any }> = {
+        tradein_value_final: { old: q.tradein_value_final, new: finalTradeValue },
+      };
+      if (!clearOverride) {
+        changes.trade_in_override = { old: tradeIn.overrideValue || null, new: overrideVal };
+      }
+
+      const { error } = await supabase
+        .from('customer_quotes')
+        .update({
+          tradein_value_final: finalTradeValue,
+          final_price: newFinalPrice,
+          quote_data: updatedQuoteData,
+          last_modified_at: new Date().toISOString(),
+          last_modified_by: user.id,
+        })
+        .eq('id', q.id);
+      if (error) throw error;
+
+      // Log change
+      await supabase.from('quote_change_log').insert({
+        quote_id: q.id,
+        changed_by: user.id,
+        change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
+        changes,
+        notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
+      });
+
+      // Dual-write to saved_quotes if exists (best-effort)
+      try {
+        await (supabase as any).from('saved_quotes').update({ quote_data: updatedQuoteData }).eq('customer_quote_id', q.id);
+      } catch { /* ignore if saved_quotes doesn't have this record */ }
+
+      // Update local state
+      setQ(prev => prev ? {
+        ...prev,
+        tradein_value_final: finalTradeValue,
+        final_price: newFinalPrice,
+        quote_data: updatedQuoteData,
+      } : null);
+      if (clearOverride) setTradeInOverride(String(formulaEstimate));
+      setIsEditingTradeIn(false);
+      setChangeLogKey(prev => prev + 1);
+      toast({ title: clearOverride ? 'Override Cleared' : 'Trade-In Updated', description: clearOverride ? 'Reverted to formula estimate.' : `Trade-in value set to $${overrideVal?.toLocaleString()}.` });
+    } catch (err: any) {
+      toast({ title: 'Error', description: err.message || 'Failed to update trade-in.', variant: 'destructive' });
+    } finally {
+      setIsSavingTradeIn(false);
+    }
+  };
 
   const handleEditQuote = () => {
     if (!q) return;
@@ -479,7 +572,6 @@ const AdminQuoteDetail = () => {
           {/* Trade-In */}
           <Card className="p-4">
             {(() => {
-              // Extract trade-in from quote_data if not in top-level columns
               const tradeIn = q.quote_data?.tradeInInfo || {};
               const hasTradeIn = tradeIn.hasTradeIn || q.tradein_value_pre_penalty;
               const estimatedValue = q.tradein_value_final ?? tradeIn.tradeinValueFinal ?? tradeIn.estimatedValue;
@@ -490,6 +582,11 @@ const AdminQuoteDetail = () => {
                     Trade-In
                     {q.penalty_applied && (
                       <AlertTriangle className="w-4 h-4 text-yellow-600" />
+                    )}
+                    {hasTradeIn && !isEditingTradeIn && (
+                      <Button variant="ghost" size="sm" className="ml-auto" onClick={() => setIsEditingTradeIn(true)}>
+                        <Edit2 className="w-4 h-4" />
+                      </Button>
                     )}
                   </h2>
                   {hasTradeIn ? (
@@ -515,6 +612,35 @@ const AdminQuoteDetail = () => {
                           </>
                         )}
                       </div>
+                      
+                      {/* Inline override editor */}
+                      {isEditingTradeIn && (
+                        <div className="border-t pt-3 mt-3 space-y-2">
+                          <Label className="text-sm font-medium">Override Trade-In Value ($)</Label>
+                          <Input
+                            type="number"
+                            value={tradeInOverride}
+                            onChange={(e) => setTradeInOverride(e.target.value)}
+                            placeholder="Enter override value..."
+                            min={0}
+                          />
+                          <div className="text-xs text-muted-foreground">
+                            Formula estimate: {fmt(tradeIn.originalEstimate || estimatedValue)}
+                          </div>
+                          <div className="flex gap-2 pt-1">
+                            <Button size="sm" onClick={() => handleSaveTradeInOverride(false)} disabled={isSavingTradeIn || !tradeInOverride}>
+                              {isSavingTradeIn ? <Loader2 className="w-3 h-3 mr-1 animate-spin" /> : <Save className="w-3 h-3 mr-1" />}
+                              Save
+                            </Button>
+                            {tradeIn.overrideValue && (
+                              <Button size="sm" variant="outline" onClick={() => handleSaveTradeInOverride(true)} disabled={isSavingTradeIn}>
+                                Clear Override
+                              </Button>
+                            )}
+                            <Button size="sm" variant="ghost" onClick={() => setIsEditingTradeIn(false)}>Cancel</Button>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <div className="text-muted-foreground italic">No trade-in</div>
