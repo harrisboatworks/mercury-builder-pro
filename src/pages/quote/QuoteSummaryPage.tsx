@@ -747,7 +747,7 @@ export default function QuoteSummaryPage() {
         motorName={motorName}
         finalPrice={packageSpecificTotals.subtotal}
         msrp={motorMSRP}
-        savings={totals.savings}
+        savings={packageSpecificTotals.savings}
         tradeInValue={state.tradeInInfo?.estimatedValue}
         coverageYears={selectedPackageCoverageYears}
         imageUrl={imageUrl}
