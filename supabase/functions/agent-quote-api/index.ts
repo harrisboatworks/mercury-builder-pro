@@ -47,6 +47,8 @@ Deno.serve(async (req) => {
         return await estimateTradeIn(supabase, body);
       case "get_warranty_pricing":
         return await getWarrantyPricing(supabase, body);
+      case "list_motor_options":
+        return await listMotorOptions(supabase, body);
       case "create_quote":
         return await createQuote(supabase, body);
       case "update_quote":
@@ -60,8 +62,8 @@ Deno.serve(async (req) => {
           error: `Unknown action: ${action}`,
           available_actions: [
             "list_motors", "list_promotions", "estimate_trade_in",
-            "get_warranty_pricing", "create_quote", "update_quote",
-            "get_quote", "list_quotes",
+            "get_warranty_pricing", "list_motor_options", "create_quote",
+            "update_quote", "get_quote", "list_quotes",
           ],
         }, 400);
     }
