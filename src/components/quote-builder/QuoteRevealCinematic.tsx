@@ -122,8 +122,22 @@ export function QuoteRevealCinematic({
   const onCompleteRef = useRef(onComplete);
   const isMobile = useIsMobile();
   
-  // Keep ref in sync
+  // Keep refs in sync — prevents dependency changes from restarting effects
   onCompleteRef.current = onComplete;
+  const playRevealRef = useRef(playReveal);
+  playRevealRef.current = playReveal;
+  const playSwooshRef = useRef(playSwoosh);
+  playSwooshRef.current = playSwoosh;
+  const playTickRef = useRef(playTick);
+  playTickRef.current = playTick;
+  const playCompleteRef = useRef(playComplete);
+  playCompleteRef.current = playComplete;
+  const playAmbientPadRef = useRef(playAmbientPad);
+  playAmbientPadRef.current = playAmbientPad;
+  const playCelebrationRef = useRef(playCelebration);
+  playCelebrationRef.current = playCelebration;
+  const playMotorNameRevealRef = useRef(playMotorNameReveal);
+  playMotorNameRevealRef.current = playMotorNameReveal;
   
   const TOTAL_DURATION = 12500; // Match the auto-close timing
   
@@ -182,11 +196,11 @@ export function QuoteRevealCinematic({
   useEffect(() => {
     if (stage === 'motor') {
       const soundTimeout = setTimeout(() => {
-        playMotorNameReveal();
-      }, 400); // Match the 0.4s animation delay
+        playMotorNameRevealRef.current();
+      }, 400);
       return () => clearTimeout(soundTimeout);
     }
-  }, [stage, playMotorNameReveal]);
+  }, [stage]);
 
   // Progress bar countdown
   useEffect(() => {
@@ -216,16 +230,16 @@ export function QuoteRevealCinematic({
     }
 
     // Play ambient pad at start for immersive atmosphere
-    playAmbientPad();
+    playAmbientPadRef.current();
 
     // Extended luxury timeline with MSRP flash
     const timeline = [
-      { stage: 'spotlight' as const, delay: 0, sound: playReveal },
-      { stage: 'motor' as const, delay: 1000, sound: playSwoosh },
-      { stage: 'msrp' as const, delay: 2500, sound: null }, // MSRP flash
-      { stage: 'price' as const, delay: 3500, sound: null }, // Price countdown
-      { stage: 'savings' as const, delay: 5800, sound: () => { playCelebration?.(); triggerPremiumConfetti(); } }, // Savings celebration
-      { stage: 'details' as const, delay: 7200, sound: playComplete },
+      { stage: 'spotlight' as const, delay: 0, sound: () => playRevealRef.current() },
+      { stage: 'motor' as const, delay: 1000, sound: () => playSwooshRef.current() },
+      { stage: 'msrp' as const, delay: 2500, sound: null },
+      { stage: 'price' as const, delay: 3500, sound: null },
+      { stage: 'savings' as const, delay: 5800, sound: () => { playCelebrationRef.current?.(); triggerPremiumConfetti(); } },
+      { stage: 'details' as const, delay: 7200, sound: () => playCompleteRef.current() },
       { stage: 'complete' as const, delay: 9800, sound: null },
     ];
 
@@ -251,8 +265,9 @@ export function QuoteRevealCinematic({
       timeouts.forEach(clearTimeout);
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
+  // Sound functions stored in refs — only isVisible triggers
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isVisible, playReveal, playSwoosh, playComplete, playAmbientPad, playCelebration]);
+  }, [isVisible]);
 
   // Smoother price counting animation
   useEffect(() => {
@@ -272,14 +287,14 @@ export function QuoteRevealCinematic({
         if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
       } else {
         setDisplayPrice(Math.floor(current));
-        playTick();
+        playTickRef.current();
       }
     }, duration / steps);
 
     return () => {
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
-  }, [stage, finalPrice, playTick, priceComplete]);
+  }, [stage, finalPrice, priceComplete]);
 
   if (!isVisible) return null;
 

@@ -188,6 +188,51 @@ Returns warranty extension pricing for a given horsepower.
 
 ---
 
+### 2.5 `list_motor_options` — Get Available Options/Accessories for a Motor
+
+Returns all catalog options (rigging, electronics, propellers, etc.) available for a specific motor, categorized by assignment type.
+
+**Request:**
+```json
+{
+  "action": "list_motor_options",
+  "motor_id": "<motor uuid from list_motors>"
+}
+```
+
+**Response:**
+```json
+{
+  "ok": true,
+  "motor_id": "uuid",
+  "motor_display": "Mercury 150 ELPT ProXS",
+  "horsepower": 150,
+  "options": {
+    "required": [],
+    "recommended": [
+      {
+        "id": "option-uuid",
+        "name": "SmartCraft Connect Mobile",
+        "category": "electronics",
+        "price": 499,
+        "msrp": 599,
+        "description": "Bluetooth gateway for engine data on your phone",
+        "part_number": "8M0173128",
+        "assignment_type": "recommended",
+        "is_included": false
+      }
+    ],
+    "available": [...]
+  },
+  "total_options": 12,
+  "note": "Use option IDs in the 'selected_options' field when creating or updating a quote."
+}
+```
+
+> **Always use `list_motor_options` before adding accessories.** Only use `custom_items` for items NOT in the options catalog.
+
+---
+
 ### 2.5 `create_quote` — Create a Full Quote
 
 Create a complete quote with motor, promotions, trade-in, warranty, and accessories.
@@ -240,7 +285,8 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
 | `admin_discount` | number | No | Dollar amount off final price |
 | `admin_notes` | string | No | Internal notes (not shown to customer) |
 | `customer_notes` | string | No | Notes visible to customer |
-| `custom_items` | array | No | Extra line items `{ name, price }` |
+| `selected_options` | array | No | Array of option UUIDs from `list_motor_options`. Prices resolved from catalog automatically. |
+| `custom_items` | array | No | Extra line items `{ name, price }` — only for items NOT in the options catalog |
 | `lead_status` | string | No | Default: `"new"`. Options: `"new"`, `"contacted"`, `"scheduled"`, `"won"`, `"lost"` |
 
 **Response:**
