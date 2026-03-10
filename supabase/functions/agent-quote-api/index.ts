@@ -1020,13 +1020,14 @@ async function updateQuote(supabase: any, body: any) {
   const adminDiscount = body.admin_discount !== undefined ? Math.max(0, body.admin_discount) : (existing.admin_discount || 0);
   const customItems = body.custom_items || quoteData.adminCustomItems || [];
   const customItemsTotal = customItems.reduce((sum: number, i: any) => sum + (i.price || 0), 0);
+  const selectedOptionsTotal = (quoteData.selectedOptions || []).reduce((sum: number, o: any) => sum + (o.price || 0), 0);
   const motorPrice = existing.base_price || 0;
   const tradeInValue = quoteData.tradeIn?.estimatedValue || 0;
   const rebateAmount = quoteData.rebateAmount || 0;
   const warrantyCost = quoteData.warrantyCost || 0;
 
   const pricing = calcPricing({
-    motorPrice, customItemsTotal, warrantyCost,
+    motorPrice, customItemsTotal: customItemsTotal + selectedOptionsTotal, warrantyCost,
     tradeInValue, rebateAmount, adminDiscount,
   });
 
