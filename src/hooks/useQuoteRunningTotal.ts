@@ -37,6 +37,7 @@ export function calculateRunningTotal(
     adminDiscount?: number;
     selectedPromoOption?: string | null;
     getRebateForHP?: (hp: number) => number | null;
+    hasCompatibleProp?: boolean;
   } = {}
 ): RunningTotalResult {
   if (!motor) return { subtotal: 0, hst: 0, total: 0, lineItems: [] };
@@ -164,6 +165,7 @@ export function useQuoteRunningTotal(
       adminDiscount: state.adminDiscount,
       selectedPromoOption: state.selectedPromoOption,
       getRebateForHP,
+      hasCompatibleProp: state.boatInfo?.hasCompatibleProp,
     });
   }, [
     motor,
@@ -181,6 +183,7 @@ export function useQuoteRunningTotal(
     state.adminCustomItems,
     state.adminDiscount,
     state.selectedPromoOption,
+    state.boatInfo?.hasCompatibleProp,
     getRebateForHP,
   ]);
 }

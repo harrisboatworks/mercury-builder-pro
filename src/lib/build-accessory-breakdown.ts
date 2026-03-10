@@ -146,13 +146,21 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     });
   }
 
-  // Propeller allowance
+  // Propeller allowance (or customer prop opt-out)
   if (!includesProp && propAllowance) {
-    breakdown.push({
-      name: propAllowance.name,
-      price: propAllowance.price,
-      description: propAllowance.description
-    });
+    if (boatInfo?.hasCompatibleProp) {
+      breakdown.push({
+        name: 'Use of Customer Propeller',
+        price: 0,
+        description: 'If one is required, additional cost applies'
+      });
+    } else {
+      breakdown.push({
+        name: propAllowance.name,
+        price: propAllowance.price,
+        description: propAllowance.description
+      });
+    }
   }
 
   // Premium package fuel tank
