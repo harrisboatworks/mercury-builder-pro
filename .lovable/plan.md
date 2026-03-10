@@ -1,28 +1,35 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Fix Pricing Drift False Positive in Dev-Mode Check
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## Problem
+The browser test confirmed:
+- **All displayed prices are correct** — the summary page shows $2,999 motor → $2,749 after rebate → $3,106 with HST. Math checks out.
+- **The dev-mode drift check fires a false positive** because it passes wrong data to `calculateRunningTotal`:
+  1. It sends `motor.msrp` ($3,875) as the `price` field instead of the effective sale price ($2,999). The running-total function treats `price` as the final motor price.
+  2. It omits the `getRebateForHP` callback, so the $250 rebate is never subtracted.
+  
+  Combined: ($876 + $250) × 1.13 = $1,272.38 drift — exactly what the console shows.
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+## Fix
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+**`src/pages/quote/QuoteSummaryPage.tsx`** — Update the dev-mode `useEffect` (lines 344-362):
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+1. Pass the **effective motor price** (MSRP minus discount) as `price` instead of `motor.msrp`
+2. Pass `getRebateForHP` from `useActivePromotions` so the cash rebate is applied
+3. Pass `selectedPromoOption` from state (already done)
+
+The corrected call should look like:
+```ts
+const effectiveMotorPrice = (motor.msrp || 0) - motorDiscount;
+const check = calculateRunningTotal(
+  { price: effectiveMotorPrice, model: motor.model, hp: motor.horsepower || 0 },
+  {
+    ...existingOpts,
+    getRebateForHP,
+  }
+);
+```
+
+This is a ~3-line change in the drift-check `useEffect`. No changes to any pricing logic, display, or the `calculateRunningTotal` function itself.
+
