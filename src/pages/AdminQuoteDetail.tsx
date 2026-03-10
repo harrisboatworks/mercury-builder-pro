@@ -69,6 +69,11 @@ const AdminQuoteDetail = () => {
   const [adminDiscount, setAdminDiscount] = useState(0);
   const [adminNotes, setAdminNotes] = useState('');
   const [customerNotes, setCustomerNotes] = useState('');
+  
+  // Trade-in override
+  const [tradeInOverride, setTradeInOverride] = useState<string>('');
+  const [isEditingTradeIn, setIsEditingTradeIn] = useState(false);
+  const [isSavingTradeIn, setIsSavingTradeIn] = useState(false);
 
   useEffect(() => {
     document.title = 'Quote Detail | Admin';
