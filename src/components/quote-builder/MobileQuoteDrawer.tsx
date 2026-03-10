@@ -40,116 +40,18 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   const displayMotor = state.previewMotor || state.motor;
   const isPreview = !!state.previewMotor;
 
-  // Calculate all pricing details
+  // Centralized running total (single source of truth)
+  const { subtotal, hst, total, lineItems } = useQuoteRunningTotal(displayMotor);
+
+  // Calculate financing details
   const pricing = useMemo(() => {
-    // Only bail if no motor exists at all
-    if (!displayMotor) return null;
-    
-    const motorPrice = displayMotor.price || displayMotor.basePrice || displayMotor.msrp || 0;
-    
-    let subtotal = motorPrice;
-    const lineItems: { label: string; value: number; isCredit?: boolean }[] = [];
+    if (!displayMotor || total === 0) return null;
 
-    // Motor
-    lineItems.push({ label: 'Motor Price', value: motorPrice });
-
-    // Selected options (fuel tanks, accessories, etc. from Options page)
-    if (state.selectedOptions && state.selectedOptions.length > 0) {
-      state.selectedOptions.forEach(option => {
-        if (option.price > 0) {
-          subtotal += option.price;
-          lineItems.push({ label: option.name, value: option.price });
-        }
-      });
-    }
-
-    // Warranty
-    if (state.warrantyConfig?.warrantyPrice) {
-      subtotal += state.warrantyConfig.warrantyPrice;
-      lineItems.push({ 
-        label: `Extended Warranty (+${state.warrantyConfig.totalYears - 5} yrs)`, 
-        value: state.warrantyConfig.warrantyPrice 
-      });
-    }
-
-    // Controls
-    if (state.boatInfo?.controlsOption) {
-      if (state.boatInfo.controlsOption === 'none') {
-        subtotal += 1200;
-        lineItems.push({ label: 'Controls & Rigging Package', value: 1200 });
-      } else if (state.boatInfo.controlsOption === 'adapter') {
-        subtotal += 125;
-        lineItems.push({ label: 'Control Adaptor Harness', value: 125 });
-      }
-    }
-
-    // Installation labor for remote motors
-    const isTiller = displayMotor.model?.includes('TLR') || displayMotor.model?.includes('MH');
-    if (state.purchasePath === 'installed' && !isTiller) {
-      subtotal += 450;
-      lineItems.push({ label: 'Installation Labor', value: 450 });
-    }
-
-    // Installation config (mounting for tillers) - ONLY for installed path
-    if (state.purchasePath === 'installed' && state.installConfig?.installationCost) {
-      subtotal += state.installConfig.installationCost;
-      lineItems.push({ label: 'Mounting Hardware', value: state.installConfig.installationCost });
-    }
-
-    // Fuel tank
-    if (state.fuelTankConfig?.tankCost && state.fuelTankConfig?.tankSize) {
-      subtotal += state.fuelTankConfig.tankCost;
-      lineItems.push({ label: `${state.fuelTankConfig.tankSize} Fuel Tank`, value: state.fuelTankConfig.tankCost });
-    }
-
-    // Battery (if user opted for it)
-    if (state.looseMotorBattery?.wantsBattery && state.looseMotorBattery?.batteryCost) {
-      subtotal += state.looseMotorBattery.batteryCost;
-      lineItems.push({ label: 'Marine Starting Battery', value: state.looseMotorBattery.batteryCost });
-    }
-
-    // Trade-in
-    if (state.tradeInInfo?.estimatedValue) {
-      subtotal -= state.tradeInInfo.estimatedValue;
-      lineItems.push({ 
-        label: 'Trade-In Credit', 
-        value: state.tradeInInfo.estimatedValue, 
-        isCredit: true 
-      });
-    }
-
-    // Admin custom items
-    if (state.adminCustomItems && state.adminCustomItems.length > 0) {
-      state.adminCustomItems.forEach(item => {
-        subtotal += item.price;
-        lineItems.push({ label: item.name, value: item.price });
-      });
-    }
-
-    // Admin discount
-    if (state.adminDiscount && state.adminDiscount > 0) {
-      subtotal -= state.adminDiscount;
-      lineItems.push({ label: 'Discount', value: state.adminDiscount, isCredit: true });
-    }
-
-    // Promo rebate
-    if (state.selectedPromoOption === 'cash_rebate' && displayMotor.hp) {
-      const rebate = getRebateForHP(displayMotor.hp);
-      if (rebate && rebate > 0) {
-        subtotal -= rebate;
-        lineItems.push({ label: 'Mercury Rebate', value: rebate, isCredit: true });
-      }
-    }
-
-    const hst = subtotal * 0.13;
-    const total = subtotal + hst;
     const totalWithFee = total + DEALERPLAN_FEE;
-    
     const promoRate = financingPromo?.rate || null;
     const { payment: monthly, termMonths, rate } = calculateMonthlyPayment(totalWithFee, promoRate);
 
     return {
-      motorPrice,
       lineItems,
       subtotal,
       hst,
@@ -157,9 +59,9 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       monthly,
       termMonths,
       rate,
-      financingUnavailable: total < FINANCING_MINIMUM
+      financingUnavailable: total < FINANCING_MINIMUM,
     };
-  }, [displayMotor, state, financingPromo, getRebateForHP]);
+  }, [displayMotor, total, subtotal, hst, lineItems, financingPromo]);
 
   // Get package info - dynamically based on promo years
   const packageInfo = useMemo(() => {
