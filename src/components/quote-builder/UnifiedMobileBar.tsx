@@ -318,7 +318,7 @@ export const UnifiedMobileBar: React.FC = () => {
   } = useMotorComparison();
   
   // Get promotions for warranty years and end date
-  const { promotions: activePromotions } = useActivePromotions();
+  const { promotions: activePromotions, getRebateForHP } = useActivePromotions();
   const activePromotion = activePromotions?.[0];
   const warrantyBonusYears = activePromotion?.warranty_extra_years || 0;
   const promoEndDate = activePromotion?.end_date;
@@ -437,6 +437,22 @@ export const UnifiedMobileBar: React.FC = () => {
       if (state.tradeInInfo?.estimatedValue) {
         total -= state.tradeInInfo.estimatedValue;
       }
+
+      // Add admin custom items
+      if (state.adminCustomItems?.length) {
+        total += state.adminCustomItems.reduce((sum, item) => sum + (item.price || 0), 0);
+      }
+
+      // Subtract admin discount
+      if (state.adminDiscount && state.adminDiscount > 0) {
+        total -= state.adminDiscount;
+      }
+
+      // Subtract cash rebate if selected
+      if (state.selectedPromoOption === 'cash_rebate' && displayMotor?.hp) {
+        const rebate = getRebateForHP(displayMotor.hp);
+        if (rebate) total -= rebate;
+      }
     }
 
     return total;
@@ -448,7 +464,9 @@ export const UnifiedMobileBar: React.FC = () => {
     state.installConfig?.installationCost, state.fuelTankConfig?.tankCost,
     state.looseMotorBattery?.wantsBattery, state.looseMotorBattery?.batteryCost,
     state.selectedOptions, state.warrantyConfig?.warrantyPrice, 
-    state.tradeInInfo?.estimatedValue
+    state.tradeInInfo?.estimatedValue,
+    state.adminCustomItems, state.adminDiscount, state.selectedPromoOption,
+    getRebateForHP,
   ]);
 
   // Calculate current savings (trade-in + promos)
