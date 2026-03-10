@@ -105,7 +105,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       // Calculate subtotal before tax
       const subtotal = motorSalePrice + accessoryTotal - tradeInValue;
       const hst = subtotal * 0.13;
-      const totalBeforeDiscount = subtotal + hst + DEALERPLAN_FEE;
+      const totalBeforeDiscount = subtotal + hst;
       const finalPrice = Math.max(0, totalBeforeDiscount - adminDiscount);
       
       // Enhanced quote data with admin fields and persisted accessory breakdown

@@ -121,7 +121,7 @@ function calcPricing(opts: {
   const rebateCredit = Math.min(rebateAmount, subtotal - tradeInCredit);
   const adjustedSubtotal = subtotal - tradeInCredit - rebateCredit;
   const hst = adjustedSubtotal * HST_RATE;
-  const totalBeforeDiscount = adjustedSubtotal + hst + DEALERPLAN_FEE;
+  const totalBeforeDiscount = adjustedSubtotal + hst;
   const finalPrice = Math.max(0, totalBeforeDiscount - adminDiscount);
 
   return {
