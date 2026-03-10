@@ -273,7 +273,7 @@ export default function QuoteSummaryPage() {
     warrantyPrice,
     promotionalSavings: promoSavings,
     tradeInValue: state.tradeInInfo?.estimatedValue || 0,
-    financingFee: DEALERPLAN_FEE,
+    financingFee: 0,
     taxRate: 0.13
   });
 

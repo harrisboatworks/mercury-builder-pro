@@ -1,81 +1,28 @@
+## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
+### Context
+Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-# Investigation Results: The SMS Amount vs Share Link Discrepancy
+### Changes Made
 
-## What I Found
+**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
+- Appears after user scrolls past 2+ motor cards using IntersectionObserver
+- "Build Your Quote — Tap any motor to configure & get pricing"
+- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
+- Fires `cta_build_quote` gtag event
 
-The actual quote (`b44bab77`) data from the database:
+**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
+- Shows below the motor grid, above the financing disclaimer
+- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
+- Captures device type and timestamp in metadata
+- Success state with confirmation message
+- Fires `lead_capture` gtag event
 
-- Motor: 150HP, base_price $18,300, MSRP $25,165 (or similar 150HP variant)
-- Trade-in: $9,975
-- Rebate: $650
-- Agent's `finalPrice`: **$8,971.75**
+**3. Motor card data attribute**
+- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
 
-The **$38.87 difference** comes from one thing:
-
-### DealerPlan Fee ($299) — taxed vs untaxed
-
-- **Agent API** (line 124): Adds $299 **after** HST → untaxed
-  - `$7,675 × 1.13 + $299 = $8,971.75`
-- **Frontend** (QuoteSummaryPage line 276): Includes $299 **in subtotal before** HST → taxed
-  - `($7,675 + $299) × 1.13 = $9,010.62`
-
-### But the bigger issue you raised: the $299 shouldn't be in the total at all
-
-Per your policy (confirmed in memory: `hidden-dealerplan-fee-logic`), the $299 is a financing-only cost. It shouldn't be part of the quote's displayed total — it should only appear in monthly payment calculations.
-
-Currently **both** the agent API and the frontend are including it in the total price. The frontend even passes `financingFee: DEALERPLAN_FEE` into `calculateQuotePricing` which bakes it into the subtotal shown to the customer.
-
-## Proposed Fix (conservative, minimal risk)
-
-### 1. Agent API — remove $299 from finalPrice
-
-In `supabase/functions/agent-quote-api/index.ts`, line 124:
-
-```
-// BEFORE:
-const totalBeforeDiscount = adjustedSubtotal + hst + DEALERPLAN_FEE;
-
-// AFTER:
-const totalBeforeDiscount = adjustedSubtotal + hst;
-```
-
-Keep `dealerplanFee: DEALERPLAN_FEE` in the return object (informational for financing calcs). The SMS will now show the price without the hidden fee.
-
-### 2. Frontend — remove $299 from quote total calculation
-
-In `src/pages/quote/QuoteSummaryPage.tsx`, line 276:
-
-```
-// BEFORE:
-financingFee: DEALERPLAN_FEE,
-
-// AFTER:
-financingFee: 0,
-```
-
-The monthly payment calculations on lines 341, 358, 470 already separately add `DEALERPLAN_FEE` for financing — those stay as-is.
-
-### 3. AdminQuoteControls — same fix
-
-In `src/components/admin/AdminQuoteControls.tsx`, line 108:
-
-```
-// BEFORE:
-const totalBeforeDiscount = subtotal + hst + DEALERPLAN_FEE;
-
-// AFTER:
-const totalBeforeDiscount = subtotal + hst;
-```
-
-### What stays the same (no changes)
-- Monthly payment calculations — still include $299 (correct, it's a financing cost)
-- Financing application URLs — still include $299 (correct)
-- PDF financing sections — still include $299
-- Package card monthly estimates — still include $299
-
-### Result
-- Quote total = actual purchase price (no hidden fee)
-- SMS amount = matches share link = matches PDF
-- Financing payments still factor in the $299 behind the scenes (per existing policy)
-
+### What to Monitor
+- Motor selection → options conversion rate (baseline: 7.6%)
+- `pricing_updates` email captures per week
+- CTA click rate via `cta_build_quote` event
+- Review after 2–3 weeks with larger sample
