@@ -117,6 +117,29 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       });
     }
 
+    // Admin custom items
+    if (state.adminCustomItems && state.adminCustomItems.length > 0) {
+      state.adminCustomItems.forEach(item => {
+        subtotal += item.price;
+        lineItems.push({ label: item.description, value: item.price });
+      });
+    }
+
+    // Admin discount
+    if (state.adminDiscount && state.adminDiscount > 0) {
+      subtotal -= state.adminDiscount;
+      lineItems.push({ label: 'Discount', value: state.adminDiscount, isCredit: true });
+    }
+
+    // Promo rebate
+    if (state.selectedPromoOption === 'cash_rebate' && displayMotor.horsepower) {
+      const rebate = getRebateForHP(displayMotor.horsepower);
+      if (rebate && rebate > 0) {
+        subtotal -= rebate;
+        lineItems.push({ label: 'Mercury Rebate', value: rebate, isCredit: true });
+      }
+    }
+
     const hst = subtotal * 0.13;
     const total = subtotal + hst;
     const totalWithFee = total + DEALERPLAN_FEE;
@@ -135,7 +158,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
       rate,
       financingUnavailable: total < FINANCING_MINIMUM
     };
-  }, [displayMotor, state, financingPromo]);
+  }, [displayMotor, state, financingPromo, getRebateForHP]);
 
   // Get package info - dynamically based on promo years
   const packageInfo = useMemo(() => {
