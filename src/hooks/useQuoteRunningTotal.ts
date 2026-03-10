@@ -165,6 +165,7 @@ export function useQuoteRunningTotal(
       adminDiscount: state.adminDiscount,
       selectedPromoOption: state.selectedPromoOption,
       getRebateForHP,
+      hasCompatibleProp: state.boatInfo?.hasCompatibleProp,
     });
   }, [
     motor,
