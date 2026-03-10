@@ -84,6 +84,13 @@ const AdminQuoteDetail = () => {
         setAdminDiscount(data.admin_discount || 0);
         setAdminNotes(data.admin_notes || '');
         setCustomerNotes(data.customer_notes || '');
+        // Initialize trade-in override from existing data
+        const ti = (data as any).quote_data?.tradeInInfo;
+        if (ti?.overrideValue) {
+          setTradeInOverride(String(ti.overrideValue));
+        } else if (ti?.estimatedValue) {
+          setTradeInOverride(String(ti.estimatedValue));
+        }
       }
     };
     fetchOne();
