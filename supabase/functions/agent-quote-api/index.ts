@@ -529,6 +529,12 @@ async function createQuote(supabase: any, body: any) {
     const median = (estimate.low + estimate.high) / 2;
     tradeInValue = Math.max(Math.round(median / 25) * 25, configMap?.MIN_TRADE_VALUE?.value ?? MIN_TRADE_VALUE);
 
+    // Check for admin/agent override
+    const formulaEstimate = tradeInValue;
+    if (ti.override_value != null && typeof ti.override_value === "number" && ti.override_value > 0) {
+      tradeInValue = ti.override_value;
+    }
+
     tradeInData = {
       brand: ti.brand,
       year: ti.year,
@@ -537,6 +543,8 @@ async function createQuote(supabase: any, body: any) {
       model: ti.model || "",
       serialNumber: ti.serial_number || "",
       estimatedValue: tradeInValue,
+      originalEstimate: formulaEstimate,
+      overrideValue: ti.override_value != null ? ti.override_value : undefined,
       confidence: estimate.confidence,
       hasTradeIn: true,
     };
