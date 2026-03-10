@@ -736,7 +736,7 @@ async function createQuote(supabase: any, body: any) {
 
   const pricing = calcPricing({
     motorPrice,
-    customItemsTotal,
+    customItemsTotal: customItemsTotal + selectedOptionsTotal,
     warrantyCost,
     tradeInValue,
     rebateAmount,
