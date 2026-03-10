@@ -339,11 +339,14 @@ export default function QuoteSummaryPage() {
   }, [motorMSRP, motorDiscount, state.adminDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue]);
 
   // DEV-MODE: Cross-check against centralized running-total calculator
+  // Note: calculateRunningTotal doesn't model promotion-level discounts (discount_fixed_amount,
+  // discount_percentage) — those are only applied in the summary page via getTotalPromotionalSavings.
+  // We subtract basePromoSavings from the effective price to align the two systems, then compare.
   useEffect(() => {
     if (import.meta.env.DEV && motor) {
-      const effectiveMotorPrice = (motorMSRP || 0) - motorDiscount;
+      const effectiveMotorPrice = (motorMSRP || 0) - motorDiscount - basePromoSavings;
       const check = calculateRunningTotal(
-        { price: effectiveMotorPrice, model: motor.model, hp: motor.horsepower || 0 },
+        { price: effectiveMotorPrice, model: motor.model, hp: hp },
         {
           selectedOptions: state.selectedOptions,
           controlsOption: state.boatInfo?.controlsOption,
@@ -366,7 +369,7 @@ export default function QuoteSummaryPage() {
         console.warn('[PRICING DRIFT]', { runningTotal: check.total, summaryPage: packageSpecificTotals.total, diff: check.total - packageSpecificTotals.total });
       }
     }
-  }, [packageSpecificTotals.total, motor, state]);
+  }, [packageSpecificTotals.total, motor, state, motorMSRP, motorDiscount, basePromoSavings, hp]);
 
   const amountToFinance = (packageSpecificTotals.subtotal * 1.13) + DEALERPLAN_FEE;
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, promo?.rate || null);
