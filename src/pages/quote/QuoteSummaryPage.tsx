@@ -27,7 +27,7 @@ import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CreditCard, ChevronLeft } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
-import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
+import { calculateQuotePricing, calculateWarrantyExtensionCost, getFinanceableAmount } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
@@ -266,18 +266,6 @@ export default function QuoteSummaryPage() {
   const promoSavings = basePromoSavings + rebateAmount;
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
   
-  const totals = calculateQuotePricing({
-    motorMSRP,
-    motorDiscount,
-    adminDiscount: state.adminDiscount || 0,
-    accessoryTotal: baseAccessoryCost + selectedOptionsTotal + propCost,
-    warrantyPrice,
-    promotionalSavings: promoSavings,
-    tradeInValue: state.tradeInInfo?.estimatedValue || 0,
-    financingFee: 0,
-    taxRate: 0.13
-  });
-
   // Coverage years
   const baseYears = 3;
   const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
@@ -369,9 +357,15 @@ export default function QuoteSummaryPage() {
         console.warn('[PRICING DRIFT]', { runningTotal: check.total, summaryPage: packageSpecificTotals.total, diff: check.total - packageSpecificTotals.total });
       }
     }
-  }, [packageSpecificTotals.total, motor, state, motorMSRP, motorDiscount, basePromoSavings, hp]);
+  }, [packageSpecificTotals.total, motor, motorMSRP, motorDiscount, basePromoSavings, hp,
+      state.selectedOptions, state.boatInfo?.controlsOption, state.purchasePath,
+      state.installConfig?.installationCost, state.fuelTankConfig?.tankSize, state.fuelTankConfig?.tankCost,
+      state.looseMotorBattery?.wantsBattery, state.looseMotorBattery?.batteryCost,
+      state.warrantyConfig?.warrantyPrice, state.warrantyConfig?.totalYears,
+      state.tradeInInfo?.estimatedValue, state.adminCustomItems, state.adminDiscount,
+      state.selectedPromoOption, getRebateForHP]);
 
-  const amountToFinance = (packageSpecificTotals.subtotal * 1.13) + DEALERPLAN_FEE;
+  const amountToFinance = getFinanceableAmount(packageSpecificTotals.subtotal, 0.13, DEALERPLAN_FEE);
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, promo?.rate || null);
 
   // CTA handlers
@@ -388,7 +382,7 @@ export default function QuoteSummaryPage() {
       // so QR scans must be able to prefill the financing app from URL params alone.
       const financingParams = new URLSearchParams({
         motorModel: motorName,
-        motorPrice: (packageTotal + DEALERPLAN_FEE).toFixed(2),
+        motorPrice: getFinanceableAmount(packageSpecificTotals.subtotal, 0.13, DEALERPLAN_FEE).toFixed(2),
         packageName: selectedPackageLabel.split('•')[0].trim(),
         downPayment: '0',
         tradeInValue: state.tradeInInfo?.hasTradeIn ? String(state.tradeInInfo.estimatedValue || '0') : '0',
@@ -759,7 +753,7 @@ export default function QuoteSummaryPage() {
         motorName={motorName}
         finalPrice={packageSpecificTotals.subtotal}
         msrp={motorMSRP}
-        savings={totals.savings}
+        savings={packageSpecificTotals.savings}
         tradeInValue={state.tradeInInfo?.estimatedValue}
         coverageYears={selectedPackageCoverageYears}
         imageUrl={imageUrl}
@@ -910,7 +904,7 @@ export default function QuoteSummaryPage() {
                 <StickySummary
                   packageLabel={selectedPackageLabel}
                   yourPriceBeforeTax={packageSpecificTotals.subtotal}
-                  totalSavings={totals.savings}
+                  totalSavings={packageSpecificTotals.savings}
                   monthly={monthlyPayment}
                   bullets={selectedPackageFeatures}
                   onReserve={handleReserveDeposit}
