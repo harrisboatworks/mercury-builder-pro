@@ -436,6 +436,147 @@ async function getWarrantyPricing(supabase: any, body: any) {
   });
 }
 
+// ── List Motor Options ─────────────────────────────────────
+
+async function listMotorOptions(supabase: any, body: any) {
+  const { motor_id } = body;
+  if (!motor_id?.trim()) throw new Error("motor_id is required");
+
+  // Get motor details for rule matching
+  const { data: motor, error: motorErr } = await supabase
+    .from("motor_models")
+    .select("id, horsepower, motor_type, model_display, family")
+    .eq("id", motor_id)
+    .single();
+  if (motorErr || !motor) throw new Error(`Motor not found: ${motor_id}`);
+
+  // Fetch direct assignments
+  const { data: assignments } = await supabase
+    .from("motor_option_assignments")
+    .select("option_id, assignment_type, is_included, price_override, display_order, motor_options(*)")
+    .eq("motor_id", motor_id)
+    .eq("is_active", true);
+
+  // Fetch rule-based assignments
+  const { data: rules } = await supabase
+    .from("motor_option_rules")
+    .select("option_id, assignment_type, price_override, conditions, motor_options(*)")
+    .eq("is_active", true)
+    .order("priority", { ascending: false });
+
+  // Build options map (direct assignments take priority)
+  const optionsMap = new Map<string, any>();
+
+  // Apply rule-based options first
+  for (const rule of (rules || [])) {
+    const conds = rule.conditions || {};
+    // Check HP range
+    if (conds.hp_min && motor.horsepower < conds.hp_min) continue;
+    if (conds.hp_max && motor.horsepower > conds.hp_max) continue;
+    // Check motor type
+    if (conds.motor_type && conds.motor_type !== motor.motor_type) continue;
+
+    const opt = rule.motor_options;
+    if (!opt || !opt.is_active) continue;
+
+    optionsMap.set(opt.id, {
+      id: opt.id,
+      name: opt.name,
+      category: opt.category,
+      price: rule.price_override ?? opt.base_price,
+      msrp: opt.msrp,
+      description: opt.short_description || opt.description,
+      part_number: opt.part_number,
+      assignment_type: rule.assignment_type,
+      is_included: false,
+    });
+  }
+
+  // Override with direct assignments
+  for (const a of (assignments || [])) {
+    const opt = a.motor_options;
+    if (!opt || !opt.is_active) continue;
+
+    optionsMap.set(opt.id, {
+      id: opt.id,
+      name: opt.name,
+      category: opt.category,
+      price: a.price_override ?? opt.base_price,
+      msrp: opt.msrp,
+      description: opt.short_description || opt.description,
+      part_number: opt.part_number,
+      assignment_type: a.assignment_type,
+      is_included: a.is_included ?? false,
+      display_order: a.display_order,
+    });
+  }
+
+  // Categorize
+  const options = Array.from(optionsMap.values());
+  const required = options.filter(o => o.assignment_type === "required");
+  const recommended = options.filter(o => o.assignment_type === "recommended");
+  const available = options.filter(o => o.assignment_type === "available" || o.assignment_type === "optional");
+
+  return json({
+    ok: true,
+    motor_id,
+    motor_display: motor.model_display,
+    horsepower: motor.horsepower,
+    options: {
+      required,
+      recommended,
+      available,
+    },
+    total_options: options.length,
+    note: "Use option IDs in the 'selected_options' field when creating or updating a quote. Options marked 'is_included: true' are already included at no extra cost.",
+  });
+}
+
+// ── Resolve selected_options helper ───────────────────────
+
+async function resolveSelectedOptions(supabase: any, selectedOptionIds: string[], motorId: string) {
+  if (!selectedOptionIds || selectedOptionIds.length === 0) return { options: [], total: 0 };
+
+  // Fetch all option details
+  const { data: options, error } = await supabase
+    .from("motor_options")
+    .select("id, name, base_price, msrp, category, short_description, part_number")
+    .in("id", selectedOptionIds)
+    .eq("is_active", true);
+
+  if (error) throw new Error(`Failed to resolve options: ${error.message}`);
+
+  // Check for direct assignment price overrides
+  const { data: assignments } = await supabase
+    .from("motor_option_assignments")
+    .select("option_id, price_override, assignment_type, is_included")
+    .eq("motor_id", motorId)
+    .in("option_id", selectedOptionIds)
+    .eq("is_active", true);
+
+  const assignmentMap = new Map<string, any>();
+  for (const a of (assignments || [])) {
+    assignmentMap.set(a.option_id, a);
+  }
+
+  const resolved = (options || []).map((opt: any) => {
+    const assignment = assignmentMap.get(opt.id);
+    const isIncluded = assignment?.is_included ?? false;
+    const price = isIncluded ? 0 : (assignment?.price_override ?? opt.base_price);
+    return {
+      optionId: opt.id,
+      name: opt.name,
+      price,
+      category: opt.category,
+      assignmentType: assignment?.assignment_type || "available",
+      isIncluded,
+    };
+  });
+
+  const total = resolved.reduce((sum: number, o: any) => sum + o.price, 0);
+  return { options: resolved, total };
+}
+
 async function createQuote(supabase: any, body: any) {
   // Validate required fields
   const { customer_name, customer_email, motor_id } = body;
