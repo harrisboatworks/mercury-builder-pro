@@ -925,19 +925,6 @@ export const BoatInformation = ({
                               {/* Control radio options already shown above */}
                               <div className="text-xs text-muted-foreground">We’ll confirm compatibility during installation.</div>
                             </div>}
-                          {isElectricStart && <div className="accessory-item">
-                              <label className="flex items-start gap-2">
-                                <input type="checkbox" checked={!!boatInfo.hasBattery} onChange={e => setBoatInfo(prev => ({
-                          ...prev,
-                          hasBattery: e.target.checked
-                        }))} />
-                                <span>I have a marine battery</span>
-                              </label>
-                              {!boatInfo.hasBattery && <div className="cost-note text-sm text-protected-primary">
-                                  +$179.99 for battery
-                                  <small className="block text-xs text-protected-muted">Marine cranking battery</small>
-                                </div>}
-                            </div>}
                           {hp >= 25 && boatInfo.currentMotorBrand === 'Mercury' && <div className="accessory-item">
                               <label className="flex items-start gap-2">
                                 <input type="checkbox" checked={!!boatInfo.hasCompatibleProp} onChange={e => setBoatInfo(prev => ({

@@ -185,8 +185,9 @@ function buildAgentAccessoryBreakdown(opts: {
   totalBaseWarranty: number;
   customItems: any[];
   packageTier: string;
+  customerHasProp?: boolean;
 }): { items: any[]; totalCost: number } {
-  const { hp, modelDisplay, purchasePath, selectedOptions, warrantyCost, warrantyYearsExtra, totalBaseWarranty, customItems, packageTier } = opts;
+  const { hp, modelDisplay, purchasePath, selectedOptions, warrantyCost, warrantyYearsExtra, totalBaseWarranty, customItems, packageTier, customerHasProp } = opts;
   const items: any[] = [];
   const isTiller = isTillerMotor(modelDisplay);
 
