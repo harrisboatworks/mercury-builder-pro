@@ -287,7 +287,7 @@ export function QuoteRevealCinematic({
         if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
       } else {
         setDisplayPrice(Math.floor(current));
-        playTick();
+        playTickRef.current();
       }
     }, duration / steps);
 
