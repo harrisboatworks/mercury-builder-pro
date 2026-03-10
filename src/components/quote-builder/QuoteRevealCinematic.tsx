@@ -196,11 +196,11 @@ export function QuoteRevealCinematic({
   useEffect(() => {
     if (stage === 'motor') {
       const soundTimeout = setTimeout(() => {
-        playMotorNameReveal();
-      }, 400); // Match the 0.4s animation delay
+        playMotorNameRevealRef.current();
+      }, 400);
       return () => clearTimeout(soundTimeout);
     }
-  }, [stage, playMotorNameReveal]);
+  }, [stage]);
 
   // Progress bar countdown
   useEffect(() => {
