@@ -1,28 +1,35 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Add Admin Trade-In Override Control on Quote Detail Page
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## What It Does
+Adds an editable trade-in override field directly on the Admin Quote Detail page, so you can adjust the trade-in value for an existing quote without going through the full quote editor or the agent.
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+## Changes
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+### `src/pages/AdminQuoteDetail.tsx`
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+**1. Add trade-in override state** (near other editable field states, ~line 70):
+- `tradeInOverride` (number | null) — initialized from `q.quote_data.tradeInInfo.overrideValue`
+
+**2. Add override UI to the Trade-In card** (~line 479-524):
+- When the quote has a trade-in, show an "Override Trade-In Value" input field with a save button
+- Shows the formula estimate as read-only context
+- A "Clear Override" button to revert to formula value
+
+**3. Save logic** — new `handleSaveTradeInOverride` function:
+- Updates `quote_data` JSONB: sets `tradeInInfo.overrideValue`, `tradeInInfo.originalEstimate`, and `tradeInInfo.estimatedValue` to the override
+- Updates `tradein_value_final` column to the override value
+- Recalculates `final_price` based on the new trade-in value
+- Logs the change to `quote_change_log`
+- Also updates the corresponding `saved_quotes` record (dual-write consistency)
+
+### No database changes needed
+The override values are stored in the existing `quote_data` JSONB blob and `tradein_value_final` column.
+
+## UX Flow
+1. Open quote detail → Trade-In card shows current value
+2. Click edit icon or "Override" button → input appears pre-filled with current value
+3. Enter new value → click Save → quote updates immediately
+4. Card shows "Override Value: $X,XXX" in amber with "Formula estimate: $Y,YYY" below (same pattern already implemented for agent overrides)
+
