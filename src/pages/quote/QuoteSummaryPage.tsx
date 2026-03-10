@@ -357,9 +357,15 @@ export default function QuoteSummaryPage() {
         console.warn('[PRICING DRIFT]', { runningTotal: check.total, summaryPage: packageSpecificTotals.total, diff: check.total - packageSpecificTotals.total });
       }
     }
-  }, [packageSpecificTotals.total, motor, state, motorMSRP, motorDiscount, basePromoSavings, hp]);
+  }, [packageSpecificTotals.total, motor, motorMSRP, motorDiscount, basePromoSavings, hp,
+      state.selectedOptions, state.boatInfo?.controlsOption, state.purchasePath,
+      state.installConfig?.installationCost, state.fuelTankConfig?.tankSize, state.fuelTankConfig?.tankCost,
+      state.looseMotorBattery?.wantsBattery, state.looseMotorBattery?.batteryCost,
+      state.warrantyConfig?.warrantyPrice, state.warrantyConfig?.totalYears,
+      state.tradeInInfo?.estimatedValue, state.adminCustomItems, state.adminDiscount,
+      state.selectedPromoOption, getRebateForHP]);
 
-  const amountToFinance = (packageSpecificTotals.subtotal * 1.13) + DEALERPLAN_FEE;
+  const amountToFinance = getFinanceableAmount(packageSpecificTotals.subtotal, 0.13, DEALERPLAN_FEE);
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, promo?.rate || null);
 
   // CTA handlers
