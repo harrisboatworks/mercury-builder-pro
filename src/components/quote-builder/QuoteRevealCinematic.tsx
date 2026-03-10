@@ -228,6 +228,8 @@ export function QuoteRevealCinematic({
       setProgress(0);
       setCanTapToSkip(false);
       setShowTapHint(false);
+      priceStartedRef.current = false;
+      priceCompleteRef.current = false;
       return;
     }
 
