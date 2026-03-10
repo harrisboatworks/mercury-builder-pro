@@ -7522,7 +7522,7 @@ For the 2026 season, here's how we can make your life easier:
 - **Boat setup or upgrade:** We can help you choose a Legend package or optimize your current boat for how you actually fish and boat on Rice Lake.
 - **Mercury engine advice:** From choosing horsepower to deciding between FourStroke, Pro XS, ProKicker, or even exploring [Avator](/blog/mercury-avator-electric-boating-ontario) for specific use cases.
 - **Service and prep:** Spring commissioning, mid-season service, and fall winterizing to keep your equipment reliable all season.
-- **Rentals:** If you're not ready to own, you can still have a full Rice Lake season via our rental fleet — and use that experience to decide what you'd buy later.
+- **Rentals:** If you're not ready to own, you can still have a full Rice Lake season via our [rental fleet](https://www.harrisboatworks.ca/rentals) — browse models, check availability, and book online, then use that experience to decide what you'd buy later.
 
 2026 looks like a season with solid fishing, stable market conditions, and a lot of flexibility in how you get on the water — owning, renting, or something in between.
 
