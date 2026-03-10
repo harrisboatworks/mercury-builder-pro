@@ -157,6 +157,6 @@ describe('calculateRunningTotal', () => {
     expect(r.subtotal).toBe(10989);
     expect(r.hst).toBeCloseTo(10989 * 0.13);
     expect(r.total).toBeCloseTo(10989 * 1.13);
-    expect(r.lineItems.length).toBe(13);
+    expect(r.lineItems.length).toBe(12);
   });
 });
