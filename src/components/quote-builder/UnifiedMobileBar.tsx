@@ -400,7 +400,6 @@ export const UnifiedMobileBar: React.FC = () => {
 
     return centralTotal;
   }, [
-    location.pathname, state.selectedPackage?.priceBeforeTax,
     isPreview, displayMotor?.price, displayMotor?.basePrice, displayMotor?.msrp,
     centralTotal,
   ]);

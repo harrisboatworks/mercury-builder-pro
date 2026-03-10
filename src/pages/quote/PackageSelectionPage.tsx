@@ -341,7 +341,7 @@ export default function PackageSelectionPage() {
     <PageTransition>
       <div className="min-h-screen bg-gradient-to-br from-stone-950 via-stone-900 to-stone-950">
         {/* Header */}
-        <div className="sticky top-0 z-50 bg-stone-950/95 backdrop-blur-md border-b border-stone-700/50">
+        <div className="sticky top-0 z-50 bg-stone-950 lg:bg-stone-950/95 lg:backdrop-blur-md border-b border-stone-700/50">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <Button
               variant="ghost"
