@@ -11,6 +11,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
 import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
+import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import { money } from '@/lib/money';
 import { MobileQuoteDrawer } from './MobileQuoteDrawer';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
