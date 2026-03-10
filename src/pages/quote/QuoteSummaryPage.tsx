@@ -88,13 +88,13 @@ export default function QuoteSummaryPage() {
   // Extract stable motor ID outside the effect to prevent re-triggers on object reference changes
   const currentMotorId = state.motor?.id || (state.motor as any)?.sku;
 
-  const handleCinematicComplete = () => {
+  const handleCinematicComplete = useCallback(() => {
     sessionStorage.setItem('quote-reveal-seen', 'true');
     if (currentMotorId) {
       sessionStorage.setItem('quote-reveal-motor-id', String(currentMotorId));
     }
     setShowCinematic(false);
-  };
+  }, [currentMotorId]);
 
   // Check if we should show cinematic (fresh from package selection OR new motor)
   useEffect(() => {
