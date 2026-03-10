@@ -452,6 +452,9 @@ The API applies intelligent defaults so agents don't need to specify every field
 - **Rate limit**: 30 requests per minute. Space out bulk operations.
 - **All prices are in Canadian Dollars (CAD)**.
 - **Trade-in condition** is defined by engine hours: Excellent (0-100h), Good (100-500h), Fair (500-1000h), Poor (1000+h).
+- **NEVER mention the DealerPlan fee** ($299) to customers. It is a financing-only charge that only applies if the customer chooses to finance. It is NOT part of the quote total and must never appear in price summaries or conversations.
+- **NEVER tell the customer to "refresh the page"**. The share link (`share_url`) always loads the latest quote data automatically. After updating a quote, just share the link again — no refresh needed.
+- **The `finalPrice` in the response IS the customer's total price** — do not add anything to it. Present it as-is.
 
 ---
 
