@@ -7000,7 +7000,7 @@ Industry data aligns with this: rental and club participants are a major source 
 
 Whether you want to spend a Saturday exploring Rice Lake with your family, plan a fishing weekend targeting walleye, muskie, or bass, or test the waters before committing to boat ownership — our rental fleet is the easiest way to get started.
 
-Give us a call at (905) 342-2153, stop by the marina in Gores Landing, or [browse Mercury motors](/quote/motor-selection) to learn more about our rental options.
+[Browse our rental fleet, check availability, and book online at harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) — no phone call needed.
 
 Boating doesn't have to start with a purchase. With Harris Boat Works, it can start with a rental — and go wherever you want from there.
     `,
