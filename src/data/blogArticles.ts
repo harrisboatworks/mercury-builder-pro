@@ -6960,7 +6960,7 @@ When you pick up a rental from us, it's not an unknown boat with unknown mainten
 
 ### Real Service From Real People
 
-At HBW, rentals are not a purely self-serve, phone-only transaction. When you show up:
+Booking starts online — [browse our rental fleet, check availability, and reserve your spot](https://www.harrisboatworks.ca/rentals) anytime. When you arrive for pickup:
 
 - We walk you through the boat's controls.
 - We explain any local navigation considerations.
