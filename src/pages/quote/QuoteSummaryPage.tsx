@@ -341,8 +341,9 @@ export default function QuoteSummaryPage() {
   // DEV-MODE: Cross-check against centralized running-total calculator
   useEffect(() => {
     if (import.meta.env.DEV && motor) {
+      const effectiveMotorPrice = (motorMSRP || 0) - motorDiscount;
       const check = calculateRunningTotal(
-        { price: motor.msrp || motor.base_price || 0, basePrice: motor.base_price || 0, msrp: motor.msrp || 0, model: motor.model, hp: motor.horsepower || 0 },
+        { price: effectiveMotorPrice, model: motor.model, hp: motor.horsepower || 0 },
         {
           selectedOptions: state.selectedOptions,
           controlsOption: state.boatInfo?.controlsOption,
@@ -358,6 +359,7 @@ export default function QuoteSummaryPage() {
           adminCustomItems: state.adminCustomItems,
           adminDiscount: state.adminDiscount,
           selectedPromoOption: state.selectedPromoOption,
+          getRebateForHP,
         }
       );
       if (Math.abs(check.total - packageSpecificTotals.total) > 1) {
