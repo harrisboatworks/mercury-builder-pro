@@ -382,7 +382,7 @@ export default function QuoteSummaryPage() {
       // so QR scans must be able to prefill the financing app from URL params alone.
       const financingParams = new URLSearchParams({
         motorModel: motorName,
-        motorPrice: (packageTotal + DEALERPLAN_FEE).toFixed(2),
+        motorPrice: getFinanceableAmount(packageSpecificTotals.subtotal, 0.13, DEALERPLAN_FEE).toFixed(2),
         packageName: selectedPackageLabel.split('•')[0].trim(),
         downPayment: '0',
         tradeInValue: state.tradeInInfo?.hasTradeIn ? String(state.tradeInInfo.estimatedValue || '0') : '0',
