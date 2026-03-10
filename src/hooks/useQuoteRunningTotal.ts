@@ -183,6 +183,7 @@ export function useQuoteRunningTotal(
     state.adminCustomItems,
     state.adminDiscount,
     state.selectedPromoOption,
+    state.boatInfo?.hasCompatibleProp,
     getRebateForHP,
   ]);
 }
