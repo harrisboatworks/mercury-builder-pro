@@ -6960,7 +6960,7 @@ When you pick up a rental from us, it's not an unknown boat with unknown mainten
 
 ### Real Service From Real People
 
-At HBW, rentals are not a purely self-serve, phone-only transaction. When you show up:
+Booking starts online — [browse our rental fleet, check availability, and reserve your spot](https://www.harrisboatworks.ca/rentals) anytime. When you arrive for pickup:
 
 - We walk you through the boat's controls.
 - We explain any local navigation considerations.
@@ -6978,7 +6978,7 @@ Our rental fleet works for:
 - **Anglers** who want a solid fishing platform on Rice Lake without trailering their own rig.
 - **Prospective buyers** who want to "try before they buy."
 
-Whatever your reason, you get the same combination of quality equipment, local support, and Mercury power.
+Whatever your reason, you get the same combination of quality equipment, local support, and Mercury power. [See what's available and book online →](https://www.harrisboatworks.ca/rentals)
 
 ## From Rental to Ownership
 
@@ -7000,7 +7000,7 @@ Industry data aligns with this: rental and club participants are a major source 
 
 Whether you want to spend a Saturday exploring Rice Lake with your family, plan a fishing weekend targeting walleye, muskie, or bass, or test the waters before committing to boat ownership — our rental fleet is the easiest way to get started.
 
-Give us a call at (905) 342-2153, stop by the marina in Gores Landing, or [browse Mercury motors](/quote/motor-selection) to learn more about our rental options.
+[Browse our rental fleet, check availability, and book online at harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) — no phone call needed.
 
 Boating doesn't have to start with a purchase. With Harris Boat Works, it can start with a rental — and go wherever you want from there.
     `,
@@ -7011,7 +7011,7 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
       },
       {
         question: 'What\'s included when I rent a boat from Harris Boat Works?',
-        answer: 'Every rental includes a well-maintained boat powered by Mercury outboards, a walkthrough of the boat\'s controls, local lake navigation tips, and our support throughout your time on the water. You get decades of Rice Lake knowledge included with every rental.'
+        answer: 'Every rental includes a well-maintained boat powered by Mercury outboards, a walkthrough of the boat\'s controls, local lake navigation tips, and our support throughout your time on the water. You get decades of Rice Lake knowledge included with every rental. Start by browsing models and availability at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals).'
       },
       {
         question: 'Can renting a boat lead to ownership?',
@@ -7522,7 +7522,7 @@ For the 2026 season, here's how we can make your life easier:
 - **Boat setup or upgrade:** We can help you choose a Legend package or optimize your current boat for how you actually fish and boat on Rice Lake.
 - **Mercury engine advice:** From choosing horsepower to deciding between FourStroke, Pro XS, ProKicker, or even exploring [Avator](/blog/mercury-avator-electric-boating-ontario) for specific use cases.
 - **Service and prep:** Spring commissioning, mid-season service, and fall winterizing to keep your equipment reliable all season.
-- **Rentals:** If you're not ready to own, you can still have a full Rice Lake season via our rental fleet — and use that experience to decide what you'd buy later.
+- **Rentals:** If you're not ready to own, you can still have a full Rice Lake season via our [rental fleet](https://www.harrisboatworks.ca/rentals) — browse models, check availability, and book online, then use that experience to decide what you'd buy later.
 
 2026 looks like a season with solid fishing, stable market conditions, and a lot of flexibility in how you get on the water — owning, renting, or something in between.
 
