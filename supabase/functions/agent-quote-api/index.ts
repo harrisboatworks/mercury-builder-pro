@@ -1143,16 +1143,44 @@ async function updateQuote(supabase: any, body: any) {
   const rebateAmount = quoteData.rebateAmount || 0;
   const warrantyCost = quoteData.warrantyCost || 0;
 
+  // Compute accessory costs (installation + propeller)
+  const motorDisplay = quoteData.motor?.model || quoteData.motorModel || "";
+  const motorHp = quoteData.motor?.hp || quoteData.motorHp || 0;
+  const purchasePath = quoteData.purchasePath || "loose";
+  const updateIsTiller = isTillerMotor(motorDisplay);
+  const updateInstallCost = (!updateIsTiller && purchasePath === "installed") ? 450 : 0;
+  const updatePropCost = getPropellerAllowance(motorHp)?.price || 0;
+  const updateAccessoryCost = updateInstallCost + updatePropCost;
+
   const pricing = calcPricing({
     motorPrice, customItemsTotal: customItemsTotal + selectedOptionsTotal, warrantyCost,
+    accessoryCost: updateAccessoryCost,
     tradeInValue, rebateAmount, adminDiscount,
+  });
+
+  // Update selectedPackage.priceBeforeTax if present
+  if (quoteData.selectedPackage) {
+    quoteData.selectedPackage.priceBeforeTax = pricing.adjustedSubtotal;
+  }
+
+  // Rebuild accessory breakdown
+  const updateBreakdown = buildAgentAccessoryBreakdown({
+    hp: motorHp,
+    modelDisplay: motorDisplay,
+    purchasePath,
+    selectedOptions: quoteData.selectedOptions || [],
+    warrantyCost,
+    warrantyYearsExtra: quoteData.warrantyYearsExtra || 0,
+    totalBaseWarranty: quoteData.warrantyConfig?.totalYears || 7,
+    customItems,
+    packageTier: quoteData.package || "good",
   });
 
   updates.admin_discount = adminDiscount;
   updates.final_price = pricing.finalPrice;
   updates.total_cost = pricing.finalPrice;
   updates.loan_amount = pricing.finalPrice;
-  updates.quote_data = { ...quoteData, ...pricing, adminDiscount };
+  updates.quote_data = { ...quoteData, ...pricing, adminDiscount, accessoryBreakdown: updateBreakdown.items };
 
   const { error } = await supabase.from("customer_quotes").update(updates).eq("id", quote_id);
   if (error) throw new Error(`Failed to update quote: ${error.message}`);
