@@ -49,6 +49,8 @@ Deno.serve(async (req) => {
         return await getWarrantyPricing(supabase, body);
       case "list_motor_options":
         return await listMotorOptions(supabase, body);
+      case "list_accessories":
+        return await listAccessories(body);
       case "create_quote":
         return await createQuote(supabase, body);
       case "update_quote":
