@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { money } from '@/lib/money';
 import { Badge } from '@/components/ui/badge';
