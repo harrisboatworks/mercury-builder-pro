@@ -121,7 +121,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
     if (state.adminCustomItems && state.adminCustomItems.length > 0) {
       state.adminCustomItems.forEach(item => {
         subtotal += item.price;
-        lineItems.push({ label: item.description, value: item.price });
+        lineItems.push({ label: item.name, value: item.price });
       });
     }
 
