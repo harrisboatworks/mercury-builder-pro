@@ -7011,7 +7011,7 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
       },
       {
         question: 'What\'s included when I rent a boat from Harris Boat Works?',
-        answer: 'Every rental includes a well-maintained boat powered by Mercury outboards, a walkthrough of the boat\'s controls, local lake navigation tips, and our support throughout your time on the water. You get decades of Rice Lake knowledge included with every rental.'
+        answer: 'Every rental includes a well-maintained boat powered by Mercury outboards, a walkthrough of the boat\'s controls, local lake navigation tips, and our support throughout your time on the water. You get decades of Rice Lake knowledge included with every rental. Start by browsing models and availability at [harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals).'
       },
       {
         question: 'Can renting a boat lead to ownership?',
