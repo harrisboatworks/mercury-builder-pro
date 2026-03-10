@@ -5,6 +5,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
+import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import StickyQuoteBar from './StickyQuoteBar';
 
 export function GlobalStickyQuoteBar() {
