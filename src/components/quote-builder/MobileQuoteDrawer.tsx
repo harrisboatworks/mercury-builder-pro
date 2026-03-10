@@ -25,7 +25,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   const navigate = useNavigate();
   const location = useLocation();
   const { state } = useQuote();
-  const { promotions, getTotalWarrantyBonusYears } = useActivePromotions();
+  const { promotions, getTotalWarrantyBonusYears, getRebateForHP } = useActivePromotions();
   const { promo: financingPromo } = useActiveFinancingPromo();
   const { triggerHaptic } = useHapticFeedback();
 
