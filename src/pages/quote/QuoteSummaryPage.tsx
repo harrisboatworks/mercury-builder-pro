@@ -898,7 +898,7 @@ export default function QuoteSummaryPage() {
                 <StickySummary
                   packageLabel={selectedPackageLabel}
                   yourPriceBeforeTax={packageSpecificTotals.subtotal}
-                  totalSavings={totals.savings}
+                  totalSavings={packageSpecificTotals.savings}
                   monthly={monthlyPayment}
                   bullets={selectedPackageFeatures}
                   onReserve={handleReserveDeposit}
