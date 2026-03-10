@@ -371,8 +371,7 @@ Trade-In Credit   = min(Trade-In Value, Subtotal)
 Rebate Credit     = min(Rebate Amount, Subtotal - Trade-In Credit)
 Adjusted Subtotal = Subtotal - Trade-In Credit - Rebate Credit
 HST               = Adjusted Subtotal × 13%
-DealerPlan Fee    = $299 (flat fee, always applied)
-Total             = Adjusted Subtotal + HST + DealerPlan Fee
+Total             = Adjusted Subtotal + HST
 Final Price       = Total − Admin Discount
 ```
 
