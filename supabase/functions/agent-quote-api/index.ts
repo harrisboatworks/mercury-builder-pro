@@ -1075,7 +1075,11 @@ async function updateQuote(supabase: any, body: any) {
   if (body.purchase_path !== undefined) { quoteData.purchasePath = body.purchase_path; }
   if (body.package !== undefined) { 
     quoteData.package = body.package; 
-    quoteData.selectedPackage = { tier: body.package };
+    quoteData.selectedPackage = {
+      id: body.package,
+      label: PACKAGE_LABELS[body.package] || PACKAGE_LABELS.good,
+      priceBeforeTax: 0, // will be updated after pricing recalc
+    };
   }
 
   // Promo update
