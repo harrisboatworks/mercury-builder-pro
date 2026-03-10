@@ -107,6 +107,7 @@ function calcPricing(opts: {
   motorPrice: number;
   customItemsTotal?: number;
   warrantyCost?: number;
+  accessoryCost?: number;
   tradeInValue?: number;
   rebateAmount?: number;
   adminDiscount?: number;
@@ -115,12 +116,13 @@ function calcPricing(opts: {
     motorPrice,
     customItemsTotal = 0,
     warrantyCost = 0,
+    accessoryCost = 0,
     tradeInValue = 0,
     rebateAmount = 0,
     adminDiscount = 0,
   } = opts;
 
-  const subtotal = motorPrice + customItemsTotal + warrantyCost;
+  const subtotal = motorPrice + customItemsTotal + warrantyCost + accessoryCost;
   const tradeInCredit = Math.min(tradeInValue, subtotal); // can't exceed subtotal
   const rebateCredit = Math.min(rebateAmount, subtotal - tradeInCredit);
   const adjustedSubtotal = subtotal - tradeInCredit - rebateCredit;
@@ -131,6 +133,7 @@ function calcPricing(opts: {
   return {
     subtotal,
     warrantyCost,
+    accessoryCost,
     tradeInCredit,
     rebateCredit,
     adjustedSubtotal,
@@ -139,6 +142,87 @@ function calcPricing(opts: {
     adminDiscount,
     finalPrice,
   };
+}
+
+// ── Tiller detection (mirrors src/lib/motor-helpers.ts) ──
+
+function isTillerMotor(modelDisplay: string): boolean {
+  if (!modelDisplay) return false;
+  const upper = modelDisplay.toUpperCase().trim();
+  if (upper.includes('TILLER') || upper.includes('BIG TILLER')) return true;
+  // H suffix patterns: MLH, ELH, EXLH, MH
+  if (/\b\d+\.?\d*\s*(MLH|ELH|EXLH|MH)\b/i.test(upper)) return true;
+  // Standalone MH at end
+  if (/\bMH\b/i.test(upper) && !upper.includes('EXLPT') && !upper.includes('CT')) return true;
+  return false;
+}
+
+// ── Propeller allowance (mirrors src/lib/propeller-allowance.ts) ──
+
+function getPropellerAllowance(hp: number): { price: number; name: string; description: string } | null {
+  if (hp < 25) return null; // prop included with motor
+  if (hp <= 115) {
+    return { price: 350, name: "Propeller Allowance (Aluminum)", description: "Standard aluminum propeller — final selection after water test" };
+  }
+  return { price: 1200, name: "Propeller Allowance (Stainless Steel)", description: "Stainless steel propeller — final selection after water test" };
+}
+
+// ── Accessory breakdown builder for agent quotes ──
+
+const PACKAGE_LABELS: Record<string, string> = {
+  good: "Essential • Best Value",
+  better: "Complete • Most Popular",
+  best: "Premium • Maximum Protection",
+};
+
+function buildAgentAccessoryBreakdown(opts: {
+  hp: number;
+  modelDisplay: string;
+  purchasePath: string;
+  selectedOptions: any[];
+  warrantyCost: number;
+  warrantyYearsExtra: number;
+  totalBaseWarranty: number;
+  customItems: any[];
+  packageTier: string;
+}): { items: any[]; totalCost: number } {
+  const { hp, modelDisplay, purchasePath, selectedOptions, warrantyCost, warrantyYearsExtra, totalBaseWarranty, customItems, packageTier } = opts;
+  const items: any[] = [];
+  const isTiller = isTillerMotor(modelDisplay);
+
+  // Selected catalog options
+  for (const opt of selectedOptions) {
+    items.push({ name: opt.name, price: opt.price, description: opt.isIncluded ? "Included with motor" : undefined });
+  }
+
+  // Installation labor (non-tiller, installed path)
+  if (!isTiller && purchasePath === "installed") {
+    items.push({ name: "Professional Installation", price: 450, description: "Expert rigging, mounting, and commissioning by certified technicians" });
+  }
+
+  // Propeller allowance
+  const propAllowance = getPropellerAllowance(hp);
+  if (propAllowance) {
+    items.push({ name: propAllowance.name, price: propAllowance.price, description: propAllowance.description });
+  }
+
+  // Warranty extension
+  if (warrantyCost > 0 && warrantyYearsExtra > 0) {
+    const totalYears = totalBaseWarranty + warrantyYearsExtra;
+    items.push({
+      name: `Extended Warranty (${warrantyYearsExtra} additional year${warrantyYearsExtra > 1 ? "s" : ""})`,
+      price: warrantyCost,
+      description: `Total coverage: ${totalYears} years`,
+    });
+  }
+
+  // Custom items
+  for (const ci of customItems) {
+    items.push({ name: ci.name, price: ci.price, description: "Custom item" });
+  }
+
+  const totalCost = items.reduce((sum, i) => sum + (i.price || 0), 0);
+  return { items, totalCost };
 }
 
 // ── Trade-In Valuation (ported from src/lib/trade-valuation.ts) ──
