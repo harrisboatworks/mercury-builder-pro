@@ -37,6 +37,7 @@ export function calculateRunningTotal(
     adminDiscount?: number;
     selectedPromoOption?: string | null;
     getRebateForHP?: (hp: number) => number | null;
+    hasCompatibleProp?: boolean;
   } = {}
 ): RunningTotalResult {
   if (!motor) return { subtotal: 0, hst: 0, total: 0, lineItems: [] };

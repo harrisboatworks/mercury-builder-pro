@@ -902,6 +902,7 @@ async function createQuote(supabase: any, body: any) {
       inStock: motor.in_stock,
     },
     purchasePath,
+    boatInfo: customerHasProp ? { hasCompatibleProp: true } : undefined,
     adminDiscount,
     adminNotes: body.admin_notes || "",
     customerNotes: body.customer_notes || "",
