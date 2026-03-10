@@ -30,6 +30,7 @@ import {
 export default function BlogArticle() {
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? getArticleBySlug(slug) : undefined;
+  const [heroImgError, setHeroImgError] = useState(false);
   
   if (!article) {
     return <Navigate to="/blog" replace />;
