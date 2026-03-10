@@ -120,6 +120,8 @@ export function QuoteRevealCinematic({
   const priceIntervalRef = useRef<NodeJS.Timeout>();
   const startTimeRef = useRef<number>(0);
   const onCompleteRef = useRef(onComplete);
+  const priceStartedRef = useRef(false);
+  const priceCompleteRef = useRef(false);
   const isMobile = useIsMobile();
   
   // Keep refs in sync — prevents dependency changes from restarting effects
