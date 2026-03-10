@@ -493,7 +493,7 @@ On every `create_quote`, the dealer admin receives an SMS alert:
 🤖 AI Agent Quote Created
 Customer: John Smith
 Motor: Mercury 150 EFI 4-Stroke
-Price: $15,664.20
+Price: $15,365.20
 Quote: https://mercuryrepower.ca/quote/saved/<uuid>
 Admin: https://mercuryrepower.ca/admin/quotes/<uuid>
 ```
