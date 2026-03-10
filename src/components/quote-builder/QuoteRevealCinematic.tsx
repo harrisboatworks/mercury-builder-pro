@@ -265,8 +265,9 @@ export function QuoteRevealCinematic({
       timeouts.forEach(clearTimeout);
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
+  // Sound functions stored in refs — only isVisible triggers
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isVisible, playReveal, playSwoosh, playComplete, playAmbientPad, playCelebration]);
+  }, [isVisible]);
 
   // Smoother price counting animation
   useEffect(() => {
