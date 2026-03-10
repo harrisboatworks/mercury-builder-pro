@@ -98,6 +98,88 @@ const AdminQuoteDetail = () => {
 
   const fmt = (n: number | null | undefined) => (n == null ? '-' : `$${Math.round(Number(n)).toLocaleString()}`);
 
+  const handleSaveTradeInOverride = async (clearOverride = false) => {
+    if (!q || !user?.id) return;
+    setIsSavingTradeIn(true);
+    try {
+      const qd = q.quote_data || {};
+      const tradeIn = qd.tradeInInfo || {};
+      const formulaEstimate = tradeIn.originalEstimate || tradeIn.estimatedValue || q.tradein_value_final || 0;
+      const overrideVal = clearOverride ? null : Number(tradeInOverride);
+      const finalTradeValue = clearOverride ? formulaEstimate : overrideVal!;
+
+      // Build updated tradeInInfo
+      const updatedTradeIn = {
+        ...tradeIn,
+        estimatedValue: finalTradeValue,
+        ...(clearOverride
+          ? { overrideValue: undefined, originalEstimate: undefined }
+          : { overrideValue: overrideVal, originalEstimate: formulaEstimate }
+        ),
+      };
+      // Remove undefined keys for clean JSONB
+      if (clearOverride) {
+        delete updatedTradeIn.overrideValue;
+        delete updatedTradeIn.originalEstimate;
+      }
+
+      const updatedQuoteData = { ...qd, tradeInInfo: updatedTradeIn };
+
+      // Recalculate final_price: base_price - admin_discount - trade-in
+      const newFinalPrice = q.base_price - (q.admin_discount || 0) - finalTradeValue;
+
+      const changes: Record<string, { old: any; new: any }> = {
+        tradein_value_final: { old: q.tradein_value_final, new: finalTradeValue },
+      };
+      if (!clearOverride) {
+        changes.trade_in_override = { old: tradeIn.overrideValue || null, new: overrideVal };
+      }
+
+      const { error } = await supabase
+        .from('customer_quotes')
+        .update({
+          tradein_value_final: finalTradeValue,
+          final_price: newFinalPrice,
+          quote_data: updatedQuoteData,
+          last_modified_at: new Date().toISOString(),
+          last_modified_by: user.id,
+        })
+        .eq('id', q.id);
+      if (error) throw error;
+
+      // Log change
+      await supabase.from('quote_change_log').insert({
+        quote_id: q.id,
+        changed_by: user.id,
+        change_type: clearOverride ? 'trade_in_clear' : 'trade_in_override',
+        changes,
+        notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
+      });
+
+      // Dual-write to saved_quotes if exists
+      await supabase
+        .from('saved_quotes' as any)
+        .update({ quote_data: updatedQuoteData } as any)
+        .eq('customer_quote_id' as any, q.id);
+
+      // Update local state
+      setQ(prev => prev ? {
+        ...prev,
+        tradein_value_final: finalTradeValue,
+        final_price: newFinalPrice,
+        quote_data: updatedQuoteData,
+      } : null);
+      if (clearOverride) setTradeInOverride(String(formulaEstimate));
+      setIsEditingTradeIn(false);
+      setChangeLogKey(prev => prev + 1);
+      toast({ title: clearOverride ? 'Override Cleared' : 'Trade-In Updated', description: clearOverride ? 'Reverted to formula estimate.' : `Trade-in value set to $${overrideVal?.toLocaleString()}.` });
+    } catch (err: any) {
+      toast({ title: 'Error', description: err.message || 'Failed to update trade-in.', variant: 'destructive' });
+    } finally {
+      setIsSavingTradeIn(false);
+    }
+  };
+
   const handleEditQuote = () => {
     if (!q) return;
     
