@@ -822,11 +822,10 @@ async function updateQuote(supabase: any, body: any) {
       for (const item of (configRes.data || [])) configMap[item.key] = item.value;
       const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap);
       const median = (estimate.low + estimate.high) / 2;
-      const tradeInValue = Math.max(Math.round(median / 25) * 25, configMap?.MIN_TRADE_VALUE?.value ?? MIN_TRADE_VALUE);
+      let tradeInValue = Math.max(Math.round(median / 25) * 25, configMap?.MIN_TRADE_VALUE?.value ?? MIN_TRADE_VALUE);
       // Check for admin/agent override
       const formulaEstimate = tradeInValue;
       if (ti.override_value != null && typeof ti.override_value === "number" && ti.override_value > 0) {
-        tradeInValue = tradeInValue; // keep variable name for recalc below
         const finalTradeIn = ti.override_value;
         const tradeInObj = {
           brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
