@@ -921,8 +921,14 @@ async function createQuote(supabase: any, body: any) {
     warrantyYearsExtra,
     warrantyCost,
     // Package — use 'selectedPackage' key that SavedQuotePage restores
-    selectedPackage: { tier: body.package || "good" },
-    package: body.package || "good",
+    selectedPackage: {
+      id: packageTier,
+      label: PACKAGE_LABELS[packageTier] || PACKAGE_LABELS.good,
+      priceBeforeTax: pricing.adjustedSubtotal,
+    },
+    package: packageTier,
+    // Accessory breakdown for frontend restoration
+    accessoryBreakdown: breakdown.items,
     // Financing
     financing: financingData,
     // Pricing breakdown
