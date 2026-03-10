@@ -156,11 +156,10 @@ const AdminQuoteDetail = () => {
         notes: clearOverride ? 'Cleared trade-in override, reverted to formula estimate' : `Trade-in overridden to $${overrideVal?.toLocaleString()}`,
       });
 
-      // Dual-write to saved_quotes if exists
-      await supabase
-        .from('saved_quotes' as any)
-        .update({ quote_data: updatedQuoteData } as any)
-        .eq('customer_quote_id' as any, q.id);
+      // Dual-write to saved_quotes if exists (best-effort)
+      try {
+        await (supabase as any).from('saved_quotes').update({ quote_data: updatedQuoteData }).eq('customer_quote_id', q.id);
+      } catch { /* ignore if saved_quotes doesn't have this record */ }
 
       // Update local state
       setQ(prev => prev ? {
