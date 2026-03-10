@@ -499,7 +499,14 @@ const AdminQuoteDetail = () => {
                       {tradeIn.horsepower && <div>HP: {tradeIn.horsepower}</div>}
                       {tradeIn.condition && <div>Condition: {tradeIn.condition}</div>}
                       <div className="border-t pt-1 mt-2">
-                        <div>Estimated Value: {fmt(estimatedValue)}</div>
+                        {tradeIn.overrideValue ? (
+                          <>
+                            <div className="text-amber-600 font-medium">Override Value: {fmt(tradeIn.overrideValue)}</div>
+                            <div className="text-xs text-muted-foreground">Formula estimate: {fmt(tradeIn.originalEstimate)}</div>
+                          </>
+                        ) : (
+                          <div>Estimated Value: {fmt(estimatedValue)}</div>
+                        )}
                         {q.penalty_applied && (
                           <>
                             <div className="text-yellow-600">Penalty Applied: Yes</div>

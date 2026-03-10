@@ -823,11 +823,30 @@ async function updateQuote(supabase: any, body: any) {
       const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap);
       const median = (estimate.low + estimate.high) / 2;
       const tradeInValue = Math.max(Math.round(median / 25) * 25, configMap?.MIN_TRADE_VALUE?.value ?? MIN_TRADE_VALUE);
-      const tradeInObj = {
-        brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
-        condition: cond, model: ti.model || "", serialNumber: ti.serial_number || "",
-        estimatedValue: tradeInValue, hasTradeIn: true,
-      };
+      // Check for admin/agent override
+      const formulaEstimate = tradeInValue;
+      if (ti.override_value != null && typeof ti.override_value === "number" && ti.override_value > 0) {
+        tradeInValue = tradeInValue; // keep variable name for recalc below
+        const finalTradeIn = ti.override_value;
+        const tradeInObj = {
+          brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
+          condition: cond, model: ti.model || "", serialNumber: ti.serial_number || "",
+          estimatedValue: finalTradeIn, originalEstimate: formulaEstimate,
+          overrideValue: ti.override_value, hasTradeIn: true,
+        };
+        quoteData.tradeIn = tradeInObj;
+        quoteData.tradeInInfo = tradeInObj;
+        updates.tradein_value_final = finalTradeIn;
+      } else {
+        const tradeInObj = {
+          brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
+          condition: cond, model: ti.model || "", serialNumber: ti.serial_number || "",
+          estimatedValue: tradeInValue, originalEstimate: formulaEstimate, hasTradeIn: true,
+        };
+        quoteData.tradeIn = tradeInObj;
+        quoteData.tradeInInfo = tradeInObj;
+        updates.tradein_value_final = tradeInValue;
+      }
       quoteData.tradeIn = tradeInObj;
       quoteData.tradeInInfo = tradeInObj;
       updates.tradein_value_final = tradeInValue;
