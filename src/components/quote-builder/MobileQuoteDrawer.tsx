@@ -135,6 +135,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
     if (state.selectedPromoOption === 'cash_rebate' && (displayMotor.hp || displayMotor.horsepower)) {
       const hp = displayMotor.hp || displayMotor.horsepower || 0;
       const rebate = getRebateForHP(hp);
+      if (rebate && rebate > 0) {
         subtotal -= rebate;
         lineItems.push({ label: 'Mercury Rebate', value: rebate, isCredit: true });
       }
