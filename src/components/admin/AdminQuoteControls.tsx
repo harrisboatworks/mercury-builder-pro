@@ -9,7 +9,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { DEALERPLAN_FEE } from '@/lib/finance';
+
 import { SITE_URL } from '@/lib/site';
 import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
 
