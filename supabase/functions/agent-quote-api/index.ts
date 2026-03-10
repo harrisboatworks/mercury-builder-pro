@@ -262,7 +262,7 @@ async function listMotors(supabase: any, body: any) {
 
   let query = supabase
     .from("motor_models")
-    .select("id, model_display, model, horsepower, msrp, sale_price, in_stock, model_key, motor_type, year, base_price")
+    .select("id, model_display, model, horsepower, msrp, sale_price, dealer_price, in_stock, model_key, motor_type, year, base_price")
     .eq("is_brochure", true)
     .order("horsepower", { ascending: true })
     .limit(limit);
