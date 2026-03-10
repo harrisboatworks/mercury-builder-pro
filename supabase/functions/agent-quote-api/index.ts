@@ -848,7 +848,6 @@ async function updateQuote(supabase: any, body: any) {
       }
     }
   }
-  }
 
   // Recalculate pricing
   const adminDiscount = body.admin_discount !== undefined ? Math.max(0, body.admin_discount) : (existing.admin_discount || 0);
