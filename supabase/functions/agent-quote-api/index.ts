@@ -64,8 +64,8 @@ Deno.serve(async (req) => {
           error: `Unknown action: ${action}`,
           available_actions: [
             "list_motors", "list_promotions", "estimate_trade_in",
-            "get_warranty_pricing", "list_motor_options", "create_quote",
-            "update_quote", "get_quote", "list_quotes",
+            "get_warranty_pricing", "list_motor_options", "list_accessories",
+            "create_quote", "update_quote", "get_quote", "list_quotes",
           ],
         }, 400);
     }
