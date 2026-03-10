@@ -236,6 +236,18 @@ function getCumulativeCost(pricingData: any, years: number): number {
 }
 
 /**
+ * Calculate the financeable amount (subtotal + tax + dealer fee)
+ * Used by both the summary page and PDF generation to prevent drift.
+ */
+export function getFinanceableAmount(
+  subtotal: number,
+  taxRate: number = 0.13,
+  dealerFee: number = 0
+): number {
+  return subtotal * (1 + taxRate) + dealerFee;
+}
+
+/**
  * Package configurations for Good/Better/Best
  */
 export interface PackageConfig {

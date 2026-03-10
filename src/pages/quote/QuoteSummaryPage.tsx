@@ -266,18 +266,6 @@ export default function QuoteSummaryPage() {
   const promoSavings = basePromoSavings + rebateAmount;
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
   
-  const totals = calculateQuotePricing({
-    motorMSRP,
-    motorDiscount,
-    adminDiscount: state.adminDiscount || 0,
-    accessoryTotal: baseAccessoryCost + selectedOptionsTotal + propCost,
-    warrantyPrice,
-    promotionalSavings: promoSavings,
-    tradeInValue: state.tradeInInfo?.estimatedValue || 0,
-    financingFee: 0,
-    taxRate: 0.13
-  });
-
   // Coverage years
   const baseYears = 3;
   const promoYears = getTotalWarrantyBonusYears?.() ?? 0;
