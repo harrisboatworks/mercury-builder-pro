@@ -277,10 +277,12 @@ export function QuoteRevealCinematic({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isVisible]);
 
-  // Smoother price counting animation
+  // Smoother price counting animation — runs exactly once
   useEffect(() => {
     if (stage !== 'price' && stage !== 'savings' && stage !== 'details' && stage !== 'complete') return;
-    if (priceComplete) return;
+    // Ref-based guards: prevent restart even if React re-renders or stage changes
+    if (priceStartedRef.current || priceCompleteRef.current) return;
+    priceStartedRef.current = true;
 
     const duration = 2000;
     const steps = 50;
@@ -292,6 +294,7 @@ export function QuoteRevealCinematic({
       if (current >= finalPrice) {
         setDisplayPrice(finalPrice);
         setPriceComplete(true);
+        priceCompleteRef.current = true;
         if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
       } else {
         setDisplayPrice(Math.floor(current));
@@ -302,7 +305,8 @@ export function QuoteRevealCinematic({
     return () => {
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
-  }, [stage, finalPrice, priceComplete]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stage, finalPrice]);
 
   if (!isVisible) return null;
 
