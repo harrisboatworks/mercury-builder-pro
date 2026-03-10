@@ -1,28 +1,26 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Add Unit Tests for `calculateRunningTotal`
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## Plan
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+Create `src/hooks/useQuoteRunningTotal.test.ts` with tests covering every line item branch:
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+1. **Null/zero motor** → returns zeros
+2. **Motor only** → subtotal = motor price, HST = 13%, total = subtotal + HST
+3. **Selected options** → adds each option price
+4. **Controls: `none`** → +$1,200; **`adapter`** → +$125
+5. **Installation labor** → +$450 for non-tiller on `installed` path
+6. **Tiller motor skips labor** → no $450 when model contains `TLR`
+7. **Installation config (mounting hardware)** → adds `installationCost`
+8. **Fuel tank** → adds `tankCost`
+9. **Battery** → adds `batteryCost` when `wantsBattery`
+10. **Warranty** → adds `warrantyPrice`, label includes extra years
+11. **Trade-in credit** → subtracts value, `isCredit: true`
+12. **Admin custom items** → sums all item prices
+13. **Admin discount** → subtracts, `isCredit: true`
+14. **Cash rebate** → subtracts rebate from `getRebateForHP` when `selectedPromoOption === 'cash_rebate'`
+15. **Kitchen sink** → all options combined, verify final arithmetic
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+Single new file, no changes to existing code.
+
