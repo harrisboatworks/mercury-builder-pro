@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
+import { calculateRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ScrollToTop } from '@/components/ui/ScrollToTop';
