@@ -338,7 +338,34 @@ export default function QuoteSummaryPage() {
     });
   }, [motorMSRP, motorDiscount, state.adminDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue]);
 
-  // Monthly payment calculation
+  // DEV-MODE: Cross-check against centralized running-total calculator
+  useEffect(() => {
+    if (import.meta.env.DEV && motor) {
+      const check = calculateRunningTotal(
+        { price: motor.msrp || motor.base_price || 0, basePrice: motor.base_price || 0, msrp: motor.msrp || 0, model: motor.model, hp: motor.horsepower || 0 },
+        {
+          selectedOptions: state.selectedOptions,
+          controlsOption: state.boatInfo?.controlsOption,
+          purchasePath: state.purchasePath,
+          installationCost: state.installConfig?.installationCost,
+          tankSize: state.fuelTankConfig?.tankSize,
+          tankCost: state.fuelTankConfig?.tankCost,
+          wantsBattery: state.looseMotorBattery?.wantsBattery,
+          batteryCost: state.looseMotorBattery?.batteryCost,
+          warrantyPrice: state.warrantyConfig?.warrantyPrice,
+          warrantyTotalYears: state.warrantyConfig?.totalYears,
+          tradeInValue: state.tradeInInfo?.estimatedValue,
+          adminCustomItems: state.adminCustomItems,
+          adminDiscount: state.adminDiscount,
+          selectedPromoOption: state.selectedPromoOption,
+        }
+      );
+      if (Math.abs(check.total - packageSpecificTotals.total) > 1) {
+        console.warn('[PRICING DRIFT]', { runningTotal: check.total, summaryPage: packageSpecificTotals.total, diff: check.total - packageSpecificTotals.total });
+      }
+    }
+  }, [packageSpecificTotals.total, motor, state]);
+
   const amountToFinance = (packageSpecificTotals.subtotal * 1.13) + DEALERPLAN_FEE;
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, promo?.rate || null);
 
