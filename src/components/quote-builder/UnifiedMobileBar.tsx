@@ -318,7 +318,7 @@ export const UnifiedMobileBar: React.FC = () => {
   } = useMotorComparison();
   
   // Get promotions for warranty years and end date
-  const { promotions: activePromotions } = useActivePromotions();
+  const { promotions: activePromotions, getRebateForHP } = useActivePromotions();
   const activePromotion = activePromotions?.[0];
   const warrantyBonusYears = activePromotion?.warranty_extra_years || 0;
   const promoEndDate = activePromotion?.end_date;
