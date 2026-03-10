@@ -265,6 +265,10 @@ export function QuoteRevealCinematic({
     const completeTimeout = setTimeout(() => onCompleteRef.current(), 12500);
     timeouts.push(completeTimeout);
 
+    // Safety timeout: force-dismiss if overlay somehow gets stuck
+    const safetyTimeout = setTimeout(() => onCompleteRef.current(), 15000);
+    timeouts.push(safetyTimeout);
+
     return () => {
       timeouts.forEach(clearTimeout);
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
