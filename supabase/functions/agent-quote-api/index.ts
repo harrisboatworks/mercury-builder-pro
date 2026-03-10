@@ -602,6 +602,15 @@ async function createQuote(supabase: any, body: any) {
   const customItemsTotal = customItems.reduce((sum: number, i: any) => sum + (i.price || 0), 0);
   const purchasePath = body.purchase_path || "loose";
 
+  // --- Selected options handling ---
+  let selectedOptionsResolved: any[] = [];
+  let selectedOptionsTotal = 0;
+  if (body.selected_options && Array.isArray(body.selected_options) && body.selected_options.length > 0) {
+    const result = await resolveSelectedOptions(supabase, body.selected_options, motor_id);
+    selectedOptionsResolved = result.options;
+    selectedOptionsTotal = result.total;
+  }
+
   // --- Promotion handling ---
   const promoOptionProvided = body.promo_option !== undefined;
   let promoOption = body.promo_option || null;
