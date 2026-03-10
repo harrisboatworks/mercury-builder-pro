@@ -1136,3 +1136,54 @@ async function listQuotes(supabase: any, body: any) {
     count: (data || []).length,
   });
 }
+
+// ── Accessories Catalog ──────────────────────────────────
+
+const ACCESSORIES_CATALOG = [
+  // Propellers
+  { id: "prop-blackmax-13x17", name: "BlackMax 13.25 x 17", category: "propellers", shortDescription: "High-performance aluminum propeller for recreational boating", price: 285, partNumber: "48-8M8026910", compatibility: "40-140 HP Mercury outboards", inStock: true },
+  { id: "prop-vengeance-14x19", name: "Vengeance 14 x 19", category: "propellers", shortDescription: "Premium stainless steel propeller for maximum performance", price: 685, msrp: 749, partNumber: "48-8M8026021", compatibility: "75-150 HP Mercury outboards", inStock: true },
+  { id: "prop-trophy-sport-13x15", name: "Trophy Sport 13.6 x 15", category: "propellers", shortDescription: "Versatile propeller for pontoon boats and family cruising", price: 245, partNumber: "48-8M8027710", compatibility: "25-75 HP Mercury outboards, pontoon applications", inStock: true },
+  // Controls
+  { id: "ctrl-digital-throttle-shift", name: "Digital Throttle & Shift (DTS)", category: "controls", shortDescription: "Premium electronic control system for effortless operation", price: 1899, msrp: 2099, partNumber: "8M0075245", compatibility: "Mercury Verado, OptiMax, and select FourStroke models with DTS", inStock: true },
+  { id: "ctrl-gen-ii-single", name: "Gen II Single Binnacle Control", category: "controls", shortDescription: "Classic mechanical control with smooth operation", price: 489, partNumber: "881170A15", compatibility: "Most Mercury outboards 8 HP and above", inStock: true },
+  { id: "ctrl-steering-cable-15ft", name: "NFB Rack Steering Cable 15ft", category: "controls", shortDescription: "Premium no-feedback steering cable for precise handling", price: 325, partNumber: "865436A15", compatibility: "Mercury outboards with rack steering systems", inStock: true },
+  { id: "ctrl-trim-gauge-smartcraft", name: "SmartCraft Trim Gauge", category: "controls", shortDescription: "Digital trim angle indicator for optimal performance", price: 189, partNumber: "79-8M0135641", compatibility: "Mercury outboards with SmartCraft", inStock: true },
+  // Batteries
+  { id: "batt-marine-cranking-group24", name: "Mercury Marine Cranking Battery - Group 24", category: "batteries", shortDescription: "High-performance starting battery with 850 CCA", price: 199, partNumber: "8M0094923", compatibility: "Universal marine applications", inStock: true },
+  { id: "batt-dual-purpose-group27", name: "Mercury Dual Purpose Battery - Group 27", category: "batteries", shortDescription: "Versatile battery for starting and accessory power", price: 249, partNumber: "8M0094924", compatibility: "Universal marine applications", inStock: true },
+  { id: "batt-charger-10amp", name: "Mercury Marine Battery Charger 10A", category: "batteries", shortDescription: "Smart charger for optimal battery maintenance", price: 149, partNumber: "8M0146025", compatibility: "12V lead-acid and AGM batteries", inStock: true },
+  // Maintenance
+  { id: "maint-25w40-oil-case", name: "Mercury 25W-40 4-Stroke Oil (Case of 12)", category: "maintenance", shortDescription: "Premium synthetic blend oil for Mercury FourStroke outboards", price: 189, partNumber: "92-858064K12", compatibility: "All Mercury FourStroke outboards", inStock: true },
+  { id: "maint-premium-plus-gear-lube", name: "Mercury Premium Plus Gear Lube", category: "maintenance", shortDescription: "High-performance gear oil for lower unit protection", price: 24, partNumber: "92-858064QB1", compatibility: "All Mercury outboard lower units", inStock: true },
+  { id: "maint-fuel-treatment", name: "Mercury Quickleen Fuel Treatment", category: "maintenance", shortDescription: "Complete fuel system cleaner and stabilizer", price: 18, partNumber: "92-8M0058682", compatibility: "All gasoline marine engines", inStock: true },
+  { id: "maint-storage-seal", name: "Mercury Storage Seal Engine Fogger", category: "maintenance", shortDescription: "Essential protection for engine winterization", price: 16, partNumber: "92-802878Q51", compatibility: "All 2-stroke and 4-stroke engines", inStock: true },
+  { id: "maint-anodes-aluminum", name: "Mercury Aluminum Anode Kit", category: "maintenance", shortDescription: "Sacrificial anodes for corrosion protection", price: 45, partNumber: "8M0145880", compatibility: "Mercury outboards 75-150 HP", inStock: true },
+];
+
+async function listAccessories(body: any) {
+  const { category, search } = body;
+  let results = [...ACCESSORIES_CATALOG];
+
+  if (category) {
+    results = results.filter((a) => a.category === category);
+  }
+
+  if (search) {
+    const q = search.toLowerCase();
+    results = results.filter(
+      (a) =>
+        a.name.toLowerCase().includes(q) ||
+        a.shortDescription.toLowerCase().includes(q) ||
+        a.compatibility.toLowerCase().includes(q) ||
+        a.partNumber.toLowerCase().includes(q),
+    );
+  }
+
+  return json({
+    ok: true,
+    accessories: results,
+    count: results.length,
+    categories: ["propellers", "controls", "batteries", "maintenance"],
+  });
+}

@@ -655,3 +655,65 @@ RULES:
 - Always confirm the motor before creating the quote
 - After creating, say something like "Your quote is ready — I've put the link on your screen"
 ```
+
+---
+
+## 10. Accessories Catalog
+
+### 10.1 `list_accessories` — Browse General Accessories
+
+Returns items from the general accessories catalog (propellers, controls, batteries, maintenance). Use this for standalone accessories that are **not** motor-specific options.
+
+> **Guideline**: Use `list_motor_options` for motor-specific rigging/electronics that depend on the selected motor. Use `list_accessories` for general catalog items like propellers, batteries, and maintenance supplies.
+
+**Request:**
+```json
+{
+  "action": "list_accessories",
+  "category": "propellers",
+  "search": "stainless"
+}
+```
+
+| Field | Type | Required | Notes |
+|-------|------|----------|-------|
+| `category` | string | No | Filter: `propellers`, `controls`, `batteries`, `maintenance` |
+| `search` | string | No | Free-text search across name, description, compatibility, part number |
+
+**Response:**
+```json
+{
+  "ok": true,
+  "accessories": [
+    {
+      "id": "prop-vengeance-14x19",
+      "name": "Vengeance 14 x 19",
+      "category": "propellers",
+      "shortDescription": "Premium stainless steel propeller for maximum performance",
+      "price": 685,
+      "msrp": 749,
+      "partNumber": "48-8M8026021",
+      "compatibility": "75-150 HP Mercury outboards",
+      "inStock": true
+    }
+  ],
+  "count": 1,
+  "categories": ["propellers", "controls", "batteries", "maintenance"]
+}
+```
+
+### 10.2 Adding Accessories to a Quote
+
+Accessories from this catalog can be added to a quote as `custom_items` in `create_quote` or `update_quote`:
+
+```json
+{
+  "action": "update_quote",
+  "quote_id": "uuid",
+  "custom_items": [
+    { "name": "Vengeance 14 x 19 Propeller", "price": 685, "partNumber": "48-8M8026021" }
+  ]
+}
+```
+
+> **Tip**: Always use `list_accessories` to get the correct price before adding — never guess accessory prices.
