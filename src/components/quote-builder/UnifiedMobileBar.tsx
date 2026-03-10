@@ -392,11 +392,6 @@ export const UnifiedMobileBar: React.FC = () => {
 
   // Calculate running total with page-specific overrides
   const runningTotal = useMemo(() => {
-    // On summary page, use the selected package price from context
-    if (location.pathname === '/quote/summary' && state.selectedPackage?.priceBeforeTax) {
-      return state.selectedPackage.priceBeforeTax;
-    }
-
     // When previewing, just show motor price (no extras)
     if (isPreview) {
       const motorPrice = displayMotor?.price || displayMotor?.basePrice || displayMotor?.msrp || 0;
@@ -405,7 +400,6 @@ export const UnifiedMobileBar: React.FC = () => {
 
     return centralTotal;
   }, [
-    location.pathname, state.selectedPackage?.priceBeforeTax,
     isPreview, displayMotor?.price, displayMotor?.basePrice, displayMotor?.msrp,
     centralTotal,
   ]);
