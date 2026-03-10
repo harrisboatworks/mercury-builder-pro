@@ -95,6 +95,22 @@ export function GlobalStickyQuoteBar() {
       total -= state.tradeInInfo.estimatedValue;
     }
 
+    // Add admin custom items
+    if (state.adminCustomItems?.length) {
+      total += state.adminCustomItems.reduce((sum, item) => sum + (item.price || 0), 0);
+    }
+
+    // Subtract admin discount
+    if (state.adminDiscount && state.adminDiscount > 0) {
+      total -= state.adminDiscount;
+    }
+
+    // Subtract cash rebate if selected
+    if (state.selectedPromoOption === 'cash_rebate' && state.motor?.hp) {
+      const rebate = getRebateForHP(state.motor.hp);
+      if (rebate) total -= rebate;
+    }
+
     // Apply HST (13%)
     const totalWithTax = total * 1.13;
 
@@ -110,6 +126,10 @@ export function GlobalStickyQuoteBar() {
     state.looseMotorBattery?.batteryCost,
     state.warrantyConfig?.warrantyPrice,
     state.tradeInInfo?.estimatedValue,
+    state.adminCustomItems,
+    state.adminDiscount,
+    state.selectedPromoOption,
+    getRebateForHP,
   ]);
 
   // Calculate monthly payment - only for amounts >= $5,000
