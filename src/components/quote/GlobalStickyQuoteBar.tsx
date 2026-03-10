@@ -46,92 +46,9 @@ export function GlobalStickyQuoteBar() {
   // Hide on mobile (handled by UnifiedMobileBar) or on excluded pages
   const shouldShowBar = !isMobile && state.motor && !location.pathname.startsWith('/quote/') && !hideOnPages.some(path => location.pathname.startsWith(path));
 
-  // Calculate running total dynamically
-  const runningTotal = useMemo(() => {
-    if (!state.motor?.price) return null;
-
-    let total = state.motor.price;
-
-    // Add selected options (fuel tanks, accessories, etc. from Options page)
-    const selectedOptionsTotal = (state.selectedOptions || []).reduce(
-      (sum, opt) => sum + opt.price, 0
-    );
-    total += selectedOptionsTotal;
-
-    // Add controls cost from boat info
-    if (state.boatInfo?.controlsOption) {
-      if (state.boatInfo.controlsOption === 'none') total += 1200;
-      else if (state.boatInfo.controlsOption === 'adapter') total += 125;
-      // 'compatible' = $0, no addition needed
-    }
-
-    // Add installation labor for remote motors
-    const isTiller = state.motor.model?.includes('TLR') || state.motor.model?.includes('MH');
-    if (state.purchasePath === 'installed' && !isTiller) {
-      total += 450; // Professional installation labor
-    }
-
-    // Add installation config costs (mounting hardware for tillers) - ONLY for installed path
-    if (state.purchasePath === 'installed' && state.installConfig?.installationCost) {
-      total += state.installConfig.installationCost;
-    }
-
-    // Add fuel tank config (for small tillers)
-    if (state.fuelTankConfig?.tankCost) {
-      total += state.fuelTankConfig.tankCost;
-    }
-
-    // Add battery cost (if user opted for it)
-    if (state.looseMotorBattery?.wantsBattery && state.looseMotorBattery?.batteryCost) {
-      total += state.looseMotorBattery.batteryCost;
-    }
-
-    // Add warranty
-    if (state.warrantyConfig?.warrantyPrice) {
-      total += state.warrantyConfig.warrantyPrice;
-    }
-
-    // Subtract trade-in
-    if (state.tradeInInfo?.estimatedValue) {
-      total -= state.tradeInInfo.estimatedValue;
-    }
-
-    // Add admin custom items
-    if (state.adminCustomItems?.length) {
-      total += state.adminCustomItems.reduce((sum, item) => sum + (item.price || 0), 0);
-    }
-
-    // Subtract admin discount
-    if (state.adminDiscount && state.adminDiscount > 0) {
-      total -= state.adminDiscount;
-    }
-
-    // Subtract cash rebate if selected
-    if (state.selectedPromoOption === 'cash_rebate' && state.motor?.hp) {
-      const rebate = getRebateForHP(state.motor.hp);
-      if (rebate) total -= rebate;
-    }
-
-    // Apply HST (13%)
-    const totalWithTax = total * 1.13;
-
-    return totalWithTax;
-  }, [
-    state.motor,
-    state.selectedOptions,
-    state.boatInfo?.controlsOption,
-    state.purchasePath,
-    state.installConfig?.installationCost,
-    state.fuelTankConfig?.tankCost,
-    state.looseMotorBattery?.wantsBattery,
-    state.looseMotorBattery?.batteryCost,
-    state.warrantyConfig?.warrantyPrice,
-    state.tradeInInfo?.estimatedValue,
-    state.adminCustomItems,
-    state.adminDiscount,
-    state.selectedPromoOption,
-    getRebateForHP,
-  ]);
+  // Centralized running total (single source of truth)
+  const { total: runningTotalRaw } = useQuoteRunningTotal();
+  const runningTotal = runningTotalRaw > 0 ? runningTotalRaw : null;
 
   // Calculate monthly payment - only for amounts >= $5,000
   const monthlyPayment = useMemo(() => {
