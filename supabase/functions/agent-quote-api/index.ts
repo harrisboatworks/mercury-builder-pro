@@ -201,10 +201,14 @@ function buildAgentAccessoryBreakdown(opts: {
     items.push({ name: "Professional Installation", price: 450, description: "Expert rigging, mounting, and commissioning by certified technicians" });
   }
 
-  // Propeller allowance
+  // Propeller allowance (or customer prop opt-out)
   const propAllowance = getPropellerAllowance(hp);
   if (propAllowance) {
-    items.push({ name: propAllowance.name, price: propAllowance.price, description: propAllowance.description });
+    if (customerHasProp) {
+      items.push({ name: "Use of Customer Propeller", price: 0, description: "If one is required, additional cost applies" });
+    } else {
+      items.push({ name: propAllowance.name, price: propAllowance.price, description: propAllowance.description });
+    }
   }
 
   // Warranty extension
