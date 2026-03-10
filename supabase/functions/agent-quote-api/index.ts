@@ -796,6 +796,8 @@ async function createQuote(supabase: any, body: any) {
     customerPhone: body.customer_phone || "",
     isAdminQuote: true,
     adminCustomItems: customItems,
+    // Selected catalog options
+    selectedOptions: selectedOptionsResolved,
     // Promo — use keys that SavedQuotePage expects
     selectedPromoOption: promoOption,
     selectedPromoValue: rebateAmount,
