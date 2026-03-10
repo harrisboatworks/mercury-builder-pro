@@ -27,7 +27,7 @@ import { AdminQuoteControls } from '@/components/admin/AdminQuoteControls';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, CreditCard, ChevronLeft } from 'lucide-react';
 import { computeTotals, calculateMonthlyPayment, getFinancingTerm, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/lib/finance';
-import { calculateQuotePricing, calculateWarrantyExtensionCost } from '@/lib/quote-utils';
+import { calculateQuotePricing, calculateWarrantyExtensionCost, getFinanceableAmount } from '@/lib/quote-utils';
 import { supabase } from '@/integrations/supabase/client';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
