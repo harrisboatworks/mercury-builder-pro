@@ -420,9 +420,11 @@ const AdminQuoteDetail = () => {
       // Generate financing QR code using public SITE_URL.
       // IMPORTANT: Do NOT rely on saved_quotes here. We pass URL params so public scans always prefill.
       const pkgLabel = selectedPackage?.label ? selectedPackage.label.split('•')[0].trim() : '';
+      // Add trade-in back so the financing form handles the single subtraction
+      const preTradeInTotal = totalPrice + (tradeInValue * 1.13);
       const financingParams = new URLSearchParams({
         motorModel: motor.model || motor.display_name || 'Motor',
-        motorPrice: (totalPrice + DEALERPLAN_FEE).toFixed(2),
+        motorPrice: (preTradeInTotal + DEALERPLAN_FEE).toFixed(2),
         packageName: pkgLabel,
         downPayment: '0',
         tradeInValue: String(tradeInValue || 0),

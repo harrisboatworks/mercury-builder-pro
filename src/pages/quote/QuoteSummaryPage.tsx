@@ -380,12 +380,15 @@ export default function QuoteSummaryPage() {
       // Generate QR code
       // IMPORTANT: Do NOT rely on saved_quotes here. Live currently has 0 rows in saved_quotes,
       // so QR scans must be able to prefill the financing app from URL params alone.
+      const tradeInForQr = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo.estimatedValue || 0) : 0;
+      // Add trade-in back to subtotal so the financing form handles the single subtraction
+      const preTradeInSubtotalForQr = packageSpecificTotals.subtotal + tradeInForQr;
       const financingParams = new URLSearchParams({
         motorModel: motorName,
-        motorPrice: getFinanceableAmount(packageSpecificTotals.subtotal, 0.13, DEALERPLAN_FEE).toFixed(2),
+        motorPrice: getFinanceableAmount(preTradeInSubtotalForQr, 0.13, DEALERPLAN_FEE).toFixed(2),
         packageName: selectedPackageLabel.split('•')[0].trim(),
         downPayment: '0',
-        tradeInValue: state.tradeInInfo?.hasTradeIn ? String(state.tradeInInfo.estimatedValue || '0') : '0',
+        tradeInValue: String(tradeInForQr),
         fromQr: 'true',
       });
       const financingUrl = `${SITE_URL}/financing-application?${financingParams.toString()}`;
