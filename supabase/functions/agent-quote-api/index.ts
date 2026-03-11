@@ -1217,7 +1217,7 @@ async function updateQuote(supabase: any, body: any) {
       } else {
         const tradeInObj = {
           brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
-          condition: cond, engine_type: ti.engine_type || "4-stroke", engine_hours: ti.engine_hours ?? null,
+          condition: cond, engine_type: effectiveEngineType || "4-stroke", engine_hours: ti.engine_hours ?? null,
           model: ti.model || "", serialNumber: ti.serial_number || "",
           estimatedValue: tradeInValue, originalEstimate: formulaEstimate, hasTradeIn: true,
         };
