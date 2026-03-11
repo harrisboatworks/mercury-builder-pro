@@ -492,7 +492,7 @@ async function listPromotions(supabase: any) {
 }
 
 async function estimateTradeIn(supabase: any, body: any) {
-  const { brand, year, horsepower, condition } = body;
+  const { brand, year, horsepower, condition, engine_type, engine_hours } = body;
   if (!brand) throw new Error("brand is required (e.g. 'Mercury', 'Yamaha')");
   if (!year) throw new Error("year is required (e.g. 2018)");
   if (!horsepower) throw new Error("horsepower is required (e.g. 115)");
@@ -512,16 +512,19 @@ async function estimateTradeIn(supabase: any, body: any) {
     configMap[item.key] = item.value;
   }
 
-  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap);
+  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap, engine_type, engine_hours);
 
   // Compute the rounded median value (to nearest $25)
   const median = (estimate.low + estimate.high) / 2;
-  const rounded = Math.max(Math.round(median / 25) * 25, configMap?.MIN_TRADE_VALUE?.value ?? MIN_TRADE_VALUE);
+  const hpFloor = getHpClassFloor(horsepower, configMap);
+  const rounded = Math.max(Math.round(median / 25) * 25, hpFloor);
 
   return json({
     ok: true,
     trade_in: {
       brand, year, horsepower, condition: cond,
+      engine_type: engine_type || "4-stroke",
+      engine_hours: engine_hours ?? null,
       estimated_value: rounded,
       range_low: estimate.low,
       range_high: estimate.high,
