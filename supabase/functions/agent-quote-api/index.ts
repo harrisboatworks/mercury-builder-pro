@@ -884,15 +884,21 @@ async function createQuote(supabase: any, body: any) {
       }
     }
 
-    const [bracketsRes, configRes] = await Promise.all([
+    const [bracketsRes, configRes, msrpRes2] = await Promise.all([
       supabase.from("trade_valuation_brackets").select("*"),
       supabase.from("trade_valuation_config").select("*"),
+      supabase.from("motor_models").select("horsepower, msrp").eq("make", "Mercury").eq("is_brochure", true).not("msrp", "is", null).not("horsepower", "is", null),
     ]);
     const brackets = bracketsRes.data || [];
     const configMap: Record<string, Record<string, number>> = {};
     for (const item of (configRes.data || [])) configMap[item.key] = item.value;
+    const msrpLookup2: Record<number, number> = {};
+    for (const m of (msrpRes2.data || [])) {
+      const hp = Number(m.horsepower); const msrp = Number(m.msrp);
+      if (hp && msrp && (!msrpLookup2[hp] || msrp > msrpLookup2[hp])) msrpLookup2[hp] = msrp;
+    }
 
-    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours);
+    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours, msrpLookup2);
     const median = (estimate.low + estimate.high) / 2;
     const hpFloor = getHpClassFloor(ti.horsepower, configMap);
     tradeInValue = Math.max(Math.round(median / 25) * 25, hpFloor);
