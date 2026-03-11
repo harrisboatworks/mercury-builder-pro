@@ -317,6 +317,14 @@ export function QuoteRevealCinematic({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stage, finalPrice]);
 
+  // Safety net: snap displayPrice to current finalPrice after counter completes
+  // Covers late promo data arriving after the counter already finished
+  useEffect(() => {
+    if (priceComplete && displayPrice !== finalPrice) {
+      setDisplayPrice(finalPrice);
+    }
+  }, [priceComplete, finalPrice, displayPrice]);
+
   if (!isVisible) return null;
 
   return (
