@@ -493,7 +493,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         ${medianValue.toLocaleString()}
                       </div>
                       <div className="text-sm font-normal text-gray-700">
-                        Range: ${estimate.low.toLocaleString()} - ${estimate.high.toLocaleString()}
+                        Range: ${Math.round(estimate.low).toLocaleString()} - ${Math.round(estimate.high).toLocaleString()}
                       </div>
                     </div>
 
