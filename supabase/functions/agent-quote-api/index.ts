@@ -262,7 +262,8 @@ function getHpClassFloor(hp: number, config: Record<string, Record<string, numbe
 function runTradeEstimate(
   brand: string, year: number, horsepower: number, condition: string,
   brackets: any[], config: Record<string, Record<string, number>>,
-  engineType?: string, engineHours?: number
+  engineType?: string, engineHours?: number,
+  msrpLookup?: Record<number, number>
 ) {
   const currentYear = new Date().getFullYear();
   const minValue = getHpClassFloor(horsepower, config);
