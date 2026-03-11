@@ -218,6 +218,8 @@ function convertBracketsToTradeValues(brackets: TradeValuationBracket[]): typeof
 export interface EstimateTradeValueOptions {
   brackets?: TradeValuationBracket[];
   config?: TradeValuationConfig;
+  /** HP-to-MSRP lookup for Mercury motors (enables MSRP-based valuation) */
+  referenceMsrps?: Record<number, number>;
 }
 
 export function estimateTradeValue(
