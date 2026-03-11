@@ -107,6 +107,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       BRAND_PENALTY_OMC: valuationData.config.BRAND_PENALTY_OMC as { factor: number } | undefined,
       MERCURY_BONUS_YEARS: valuationData.config.MERCURY_BONUS_YEARS as { max_age: number; factor: number } | undefined,
       MIN_TRADE_VALUE: valuationData.config.MIN_TRADE_VALUE as { value: number } | undefined,
+      HP_CLASS_FLOORS: valuationData.config.HP_CLASS_FLOORS as Record<string, number> | undefined,
+      TWO_STROKE_PENALTY: valuationData.config.TWO_STROKE_PENALTY as { factor: number } | undefined,
+      HOURS_ADJUSTMENT: valuationData.config.HOURS_ADJUSTMENT as TradeValuationConfig['HOURS_ADJUSTMENT'] | undefined,
     } : undefined;
     
     const tradeEstimate = estimateTradeValue(tradeInInfo, {
@@ -308,6 +311,25 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
+                  <Label htmlFor="trade-engine-type" className="text-sm font-light tracking-wide text-gray-900">
+                    Engine Type
+                  </Label>
+                  <Select 
+                    value={tradeInInfo.engineType || ''} 
+                    onValueChange={(value) => onTradeInChange({ ...tradeInInfo, engineType: value as TradeInInfo['engineType'] })}
+                  >
+                    <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
+                      <SelectValue placeholder="Select engine type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="4-stroke" className="font-light">4-Stroke</SelectItem>
+                      <SelectItem value="2-stroke" className="font-light">2-Stroke</SelectItem>
+                      <SelectItem value="optimax" className="font-light">OptiMax</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
                   <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-gray-900">
                     Year *
                   </Label>
@@ -366,6 +388,22 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     value={tradeInInfo.model}
                     onChange={(e) => onTradeInChange({ ...tradeInInfo, model: e.target.value })}
                     placeholder="e.g., OptiMax Pro XS"
+                    className="min-h-[48px] rounded-sm border-gray-300 font-light"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="trade-hours" className="text-sm font-light tracking-wide text-gray-900">
+                    Engine Hours (Optional)
+                  </Label>
+                  <Input
+                    id="trade-hours"
+                    type="number"
+                    value={tradeInInfo.engineHours || ''}
+                    onChange={(e) => onTradeInChange({ ...tradeInInfo, engineHours: parseFloat(e.target.value) || undefined })}
+                    placeholder="e.g., 250"
+                    min="0"
+                    max="20000"
                     className="min-h-[48px] rounded-sm border-gray-300 font-light"
                   />
                 </div>
