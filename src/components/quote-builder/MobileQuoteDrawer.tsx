@@ -83,7 +83,7 @@ export const MobileQuoteDrawer: React.FC<MobileQuoteDrawerProps> = ({ isOpen, on
   };
 
   return (
-    <Drawer open={isOpen} onOpenChange={(open) => !open && onClose()}>
+    <Drawer open={isOpen} onOpenChange={(open) => !open && onClose()} shouldScaleBackground={false}>
       <DrawerContent className="max-h-[85vh] bg-white pb-safe">
         {(!pricing || !displayMotor) ? (
           <div className="p-8 text-center">
