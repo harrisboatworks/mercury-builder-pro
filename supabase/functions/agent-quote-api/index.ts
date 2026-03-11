@@ -821,6 +821,17 @@ async function createQuote(supabase: any, body: any) {
     const ti = body.trade_in;
     const cond = (ti.condition || "good").toLowerCase();
 
+    // Auto-detect engine type from model field if not explicitly set
+    let effectiveEngineType = ti.engine_type;
+    if (!effectiveEngineType || effectiveEngineType === "4-stroke") {
+      const modelLower = (ti.model || "").toLowerCase();
+      if (modelLower.includes("2-stroke") || modelLower.includes("2 stroke") || modelLower.includes("two stroke") || modelLower.includes("two-stroke")) {
+        effectiveEngineType = "2-stroke";
+      } else if (modelLower.includes("optimax")) {
+        effectiveEngineType = "optimax";
+      }
+    }
+
     const [bracketsRes, configRes] = await Promise.all([
       supabase.from("trade_valuation_brackets").select("*"),
       supabase.from("trade_valuation_config").select("*"),
@@ -829,7 +840,7 @@ async function createQuote(supabase: any, body: any) {
     const configMap: Record<string, Record<string, number>> = {};
     for (const item of (configRes.data || [])) configMap[item.key] = item.value;
 
-    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, ti.engine_type, ti.engine_hours);
+    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours);
     const median = (estimate.low + estimate.high) / 2;
     const hpFloor = getHpClassFloor(ti.horsepower, configMap);
     tradeInValue = Math.max(Math.round(median / 25) * 25, hpFloor);
