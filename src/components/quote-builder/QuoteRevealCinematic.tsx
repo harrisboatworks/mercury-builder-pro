@@ -332,9 +332,10 @@ export function QuoteRevealCinematic({
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isSkipping ? 0 : 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: isSkipping ? 0.5 : 0.3 }}
+        exit={{ opacity: 0, transition: { duration: isIOS ? 0 : 0.3 } }}
+        transition={{ duration: isSkipping ? (isIOS ? 0 : 0.5) : 0.3 }}
         className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
+        style={{ willChange: 'opacity' }}
         onClick={handleTapToSkip}
         onTouchEnd={handleTapToSkip}
       >

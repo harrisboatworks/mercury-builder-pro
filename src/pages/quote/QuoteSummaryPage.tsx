@@ -748,7 +748,7 @@ export default function QuoteSummaryPage() {
       />
       {/* Cinematic Quote Reveal */}
       <QuoteRevealCinematic
-        isVisible={showCinematic && isMounted}
+        isVisible={showCinematic && isMounted && !promoLoading}
         onComplete={handleCinematicComplete}
         motorName={motorName}
         finalPrice={packageSpecificTotals.subtotal}
