@@ -145,23 +145,24 @@ describe('estimateTradeValue — HP-class floors', () => {
 });
 
 describe('estimateTradeValue — combined scenarios', () => {
-  it('2-stroke + high hours + Johnson brand penalty all stack', () => {
-    const result = estimateTradeValue({
-      brand: 'Johnson',
-      year: 2010,
-      horsepower: 115,
-      condition: 'fair',
-      engineType: '2-stroke',
-      engineHours: 1200
+  it('2-stroke + high hours stack on Mercury motor', () => {
+    const normal = estimateTradeValue({ brand: 'Mercury', year: 2012, horsepower: 115, condition: 'fair' });
+    const combined = estimateTradeValue({
+      brand: 'Mercury', year: 2012, horsepower: 115, condition: 'fair',
+      engineType: '2-stroke', engineHours: 1200
     });
-    // Should have brand penalty applied
+    // Both penalties should stack: 0.825 * 0.825 = ~0.680625
+    expect(combined.prePenaltyLow).toBeCloseTo(normal.prePenaltyLow! * 0.825 * 0.825, 0);
+    expect(combined.factors.some(f => f.includes('2-Stroke'))).toBe(true);
+    expect(combined.factors.some(f => f.includes('High hours'))).toBe(true);
+  });
+
+  it('Johnson brand penalty applies on generic estimate', () => {
+    const result = estimateTradeValue({
+      brand: 'Johnson', year: 2010, horsepower: 115, condition: 'fair'
+    });
     expect(result.penaltyApplied).toBe(true);
     expect(result.penaltyFactor).toBe(0.5);
-    // Should have factor notes for 2-stroke AND high hours AND brand
-    expect(result.factors.some(f => f.includes('2-Stroke'))).toBe(true);
-    expect(result.factors.some(f => f.includes('High hours'))).toBe(true);
     expect(result.factors.some(f => f.includes('brand'))).toBe(true);
-    // Floor should still apply (115HP → $1,500 min)
-    expect(result.low).toBeGreaterThanOrEqual(1500);
   });
 });
