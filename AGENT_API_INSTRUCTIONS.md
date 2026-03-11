@@ -116,7 +116,9 @@ Estimates the value of a customer's existing motor for trade-in credit.
   "brand": "Mercury",
   "year": 2018,
   "horsepower": 115,
-  "condition": "good"
+  "condition": "good",
+  "engine_type": "4-stroke",
+  "engine_hours": 350
 }
 ```
 
@@ -126,12 +128,21 @@ Estimates the value of a customer's existing motor for trade-in credit.
 | `year` | number | **Yes** | Model year |
 | `horsepower` | number | **Yes** | HP rating |
 | `condition` | string | No | `"excellent"`, `"good"`, `"fair"`, `"poor"` (default: `"good"`) |
+| `engine_type` | string | No | `"4-stroke"` (default), `"2-stroke"`, `"optimax"` |
+| `engine_hours` | number | No | Actual engine hours if known |
 
 **Condition definitions:**
 - **Excellent**: 0–100 engine hours
 - **Good**: 100–500 engine hours
 - **Fair**: 500–1,000 engine hours
 - **Poor**: 1,000+ engine hours
+
+**Valuation adjustments:**
+- **2-Stroke / OptiMax engines**: ~17.5% haircut applied regardless of brand
+- **Low hours** (≤100h): ~7.5% bonus
+- **Moderate hours** (500–1,000h): ~10% penalty
+- **High hours** (1,000+h): ~17.5% penalty
+- **HP-class minimum floors**: <25HP ($200), 25–75HP ($1,000), 90–150HP ($1,500), 200HP+ ($2,500)
 
 **Response:**
 ```json
@@ -142,6 +153,8 @@ Estimates the value of a customer's existing motor for trade-in credit.
     "year": 2018,
     "horsepower": 115,
     "condition": "good",
+    "engine_type": "4-stroke",
+    "engine_hours": 350,
     "estimated_value": 5250,
     "range_low": 4463,
     "range_high": 5738,
@@ -278,7 +291,7 @@ Create a complete quote with motor, promotions, trade-in, warranty, and accessor
 | `promo_option` | string | No | `"cash_rebate"`, `"special_financing"`, `"no_payments"`, or `null` |
 | `promo_rate` | number | No | APR for special_financing (default: 2.99) |
 | `promo_term` | number | No | Term in months for special_financing (default: 120) |
-| `trade_in` | object | No | `{ brand, year, horsepower, condition, model?, serial_number?, override_value? }` |
+| `trade_in` | object | No | `{ brand, year, horsepower, condition, model?, serial_number?, override_value?, engine_type?, engine_hours? }` |
 | `trade_in.override_value` | number | No | Override the formula estimate with an exact trade-in dollar amount. The formula estimate is still calculated and stored for reference. |
 | `warranty_years` | number | No | Total warranty years desired (e.g. 7 or 8) |
 | `package` | string | No | `"good"`, `"better"`, or `"best"` |
