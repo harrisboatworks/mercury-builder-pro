@@ -1162,16 +1162,18 @@ async function updateQuote(supabase: any, body: any) {
       const brackets = bracketsRes.data || [];
       const configMap: Record<string, Record<string, number>> = {};
       for (const item of (configRes.data || [])) configMap[item.key] = item.value;
-      const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap);
+      const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, ti.engine_type, ti.engine_hours);
       const median = (estimate.low + estimate.high) / 2;
-      let tradeInValue = Math.max(Math.round(median / 25) * 25, configMap?.MIN_TRADE_VALUE?.value ?? MIN_TRADE_VALUE);
+      const hpFloor = getHpClassFloor(ti.horsepower, configMap);
+      let tradeInValue = Math.max(Math.round(median / 25) * 25, hpFloor);
       // Check for admin/agent override
       const formulaEstimate = tradeInValue;
       if (ti.override_value != null && typeof ti.override_value === "number" && ti.override_value > 0) {
         const finalTradeIn = ti.override_value;
         const tradeInObj = {
           brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
-          condition: cond, model: ti.model || "", serialNumber: ti.serial_number || "",
+          condition: cond, engine_type: ti.engine_type || "4-stroke", engine_hours: ti.engine_hours ?? null,
+          model: ti.model || "", serialNumber: ti.serial_number || "",
           estimatedValue: finalTradeIn, originalEstimate: formulaEstimate,
           overrideValue: ti.override_value, hasTradeIn: true,
         };
@@ -1181,7 +1183,8 @@ async function updateQuote(supabase: any, body: any) {
       } else {
         const tradeInObj = {
           brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
-          condition: cond, model: ti.model || "", serialNumber: ti.serial_number || "",
+          condition: cond, engine_type: ti.engine_type || "4-stroke", engine_hours: ti.engine_hours ?? null,
+          model: ti.model || "", serialNumber: ti.serial_number || "",
           estimatedValue: tradeInValue, originalEstimate: formulaEstimate, hasTradeIn: true,
         };
         quoteData.tradeIn = tradeInObj;
