@@ -10,6 +10,8 @@ export interface TradeInInfo {
   condition: 'excellent' | 'good' | 'fair' | 'poor';
   estimatedValue: number;
   confidenceLevel: 'high' | 'medium' | 'low';
+  engineType?: '4-stroke' | '2-stroke' | 'optimax';
+  engineHours?: number;
   // Optional audit fields for pre/post penalty values
   rangePrePenaltyLow?: number;
   rangePrePenaltyHigh?: number;
