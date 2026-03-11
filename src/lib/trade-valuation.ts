@@ -222,6 +222,48 @@ export interface EstimateTradeValueOptions {
   referenceMsrps?: Record<number, number>;
 }
 
+// Determine MSRP age bracket key from motor age
+function getMsrpAgeBracket(motorAge: number): string | null {
+  if (motorAge >= 1 && motorAge <= 3) return '1-3';
+  if (motorAge >= 4 && motorAge <= 7) return '4-7';
+  if (motorAge >= 8 && motorAge <= 12) return '8-12';
+  if (motorAge >= 13 && motorAge <= 17) return '13-17';
+  if (motorAge >= 18 && motorAge <= 20) return '18-20';
+  return null; // too new (0) or too old (21+)
+}
+
+// Try MSRP-based valuation for Mercury motors
+function tryMsrpBasedEstimate(
+  brand: string, year: number, horsepower: number, condition: 'excellent' | 'good' | 'fair' | 'poor',
+  referenceMsrps?: Record<number, number>,
+  msrpPercentages?: Record<string, Record<string, number>>
+): number | null {
+  if (brand !== 'Mercury' || !referenceMsrps || !msrpPercentages) return null;
+  
+  const currentYear = new Date().getFullYear();
+  const motorAge = currentYear - year;
+  const ageBracket = getMsrpAgeBracket(motorAge);
+  if (!ageBracket) return null;
+  
+  const pcts = msrpPercentages[ageBracket];
+  if (!pcts || pcts[condition] === undefined) return null;
+  
+  // Find closest HP match in referenceMsrps
+  const availableHPs = Object.keys(referenceMsrps).map(Number).sort((a, b) => a - b);
+  if (availableHPs.length === 0) return null;
+  
+  const closestHP = availableHPs.reduce((prev, curr) =>
+    Math.abs(curr - horsepower) < Math.abs(prev - horsepower) ? curr : prev
+  );
+  
+  const msrp = referenceMsrps[closestHP];
+  if (!msrp || msrp <= 0) return null;
+  
+  const baseValue = msrp * pcts[condition];
+  console.log(`msrp_trade_estimate brand=Mercury hp=${horsepower} closestHP=${closestHP} msrp=${msrp} age=${motorAge} bracket=${ageBracket} condition=${condition} pct=${pcts[condition]} baseValue=${baseValue}`);
+  return baseValue;
+}
+
 export function estimateTradeValue(
   tradeInfo: Partial<TradeInInfo>,
   options?: EstimateTradeValueOptions
@@ -239,8 +281,83 @@ export function estimateTradeValue(
   const mercuryMaxAge = config?.MERCURY_BONUS_YEARS?.max_age ?? FALLBACK_MERCURY_BONUS_MAX_AGE;
   const mercuryBonusFactor = config?.MERCURY_BONUS_YEARS?.factor ?? FALLBACK_MERCURY_BONUS_FACTOR;
   
+  // Extract MSRP percentages from config if available
+  const msrpPercentages = (config as any)?.MSRP_TRADE_PERCENTAGES as Record<string, Record<string, number>> | undefined;
+  
   const currentYear = new Date().getFullYear();
   
+  // --- MSRP-based path for Mercury motors ---
+  const msrpBaseValue = tryMsrpBasedEstimate(brand, year, horsepower, condition, options?.referenceMsrps, msrpPercentages);
+  if (msrpBaseValue !== null) {
+    const factors: string[] = ['MSRP-anchored valuation'];
+    let preLow = msrpBaseValue * 0.85;
+    let preHigh = msrpBaseValue * 1.15;
+    
+    // Apply 2-stroke/OptiMax haircut
+    const engineType = tradeInfo.engineType;
+    if (engineType === '2-stroke' || engineType === 'optimax') {
+      const strokeFactor = config?.TWO_STROKE_PENALTY?.factor ?? 0.825;
+      preLow *= strokeFactor;
+      preHigh *= strokeFactor;
+      factors.push(`${engineType === 'optimax' ? 'OptiMax' : '2-Stroke'} engine (-${Math.round((1 - strokeFactor) * 100)}%)`);
+    }
+    
+    // Apply engine hours adjustment
+    const hours = tradeInfo.engineHours;
+    if (hours !== undefined && hours > 0) {
+      const ha = config?.HOURS_ADJUSTMENT ?? {
+        low_max_hours: 100, low_bonus: 0.075,
+        high_min_hours: 500, high_penalty_moderate: 0.10,
+        high_threshold: 1000, high_penalty_severe: 0.175
+      };
+      if (hours <= ha.low_max_hours) {
+        const bonus = 1 + ha.low_bonus;
+        preLow *= bonus; preHigh *= bonus;
+        factors.push(`Low hours (${hours}h) bonus +${Math.round(ha.low_bonus * 100)}%`);
+      } else if (hours >= ha.high_threshold) {
+        const penalty = 1 - ha.high_penalty_severe;
+        preLow *= penalty; preHigh *= penalty;
+        factors.push(`High hours (${hours}h) penalty -${Math.round(ha.high_penalty_severe * 100)}%`);
+      } else if (hours >= ha.high_min_hours) {
+        const penalty = 1 - ha.high_penalty_moderate;
+        preLow *= penalty; preHigh *= penalty;
+        factors.push(`Moderate hours (${hours}h) penalty -${Math.round(ha.high_penalty_moderate * 100)}%`);
+      }
+    }
+    
+    // HP-class floor
+    const hpFloors = config?.HP_CLASS_FLOORS ?? { under_25: 200, '25_75': 1000, '90_150': 1500, '200_plus': 2500 };
+    let hpFloor = minTradeValue;
+    if (horsepower >= 200) hpFloor = hpFloors['200_plus'] ?? 2500;
+    else if (horsepower >= 90) hpFloor = hpFloors['90_150'] ?? 1500;
+    else if (horsepower >= 25) hpFloor = hpFloors['25_75'] ?? 1000;
+    else hpFloor = hpFloors['under_25'] ?? 200;
+    
+    const effectiveFloor = Math.max(hpFloor, minTradeValue);
+    // No brand penalty for Mercury
+    preLow = Math.max(preLow, effectiveFloor);
+    preHigh = Math.max(preHigh, effectiveFloor);
+    
+    const motorAge = currentYear - year;
+    let confidence: 'high' | 'medium' | 'low' = 'high';
+    if (motorAge > 12) confidence = 'low';
+    else if (motorAge > 7) confidence = 'medium';
+    
+    return {
+      low: preLow,
+      high: preHigh,
+      average: (preLow + preHigh) / 2,
+      confidence,
+      source: 'MSRP-anchored valuation',
+      factors,
+      prePenaltyLow: preLow,
+      prePenaltyHigh: preHigh,
+      penaltyApplied: false,
+      penaltyFactor: 1,
+    };
+  }
+  
+  // --- Bracket-based fallback path ---
   // Find the closest brand match
   const brandData = tradeValues[brand as keyof typeof tradeValues];
   

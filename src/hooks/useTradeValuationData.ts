@@ -26,9 +26,15 @@ export interface TradeValuationData {
 }
 
 async function fetchTradeValuationData(): Promise<TradeValuationData> {
-  const [bracketsResult, configResult] = await Promise.all([
+  const [bracketsResult, configResult, msrpResult] = await Promise.all([
     supabase.from('trade_valuation_brackets').select('*'),
-    supabase.from('trade_valuation_config').select('*')
+    supabase.from('trade_valuation_config').select('*'),
+    supabase.from('motor_models')
+      .select('horsepower, msrp')
+      .eq('make', 'Mercury')
+      .eq('is_brochure', true)
+      .not('msrp', 'is', null)
+      .not('horsepower', 'is', null)
   ]);
 
   if (bracketsResult.error) {
@@ -47,9 +53,23 @@ async function fetchTradeValuationData(): Promise<TradeValuationData> {
     configMap[item.key] = item.value as Record<string, number>;
   }
 
+  // Build HP-to-MSRP lookup from Mercury motor_models
+  const referenceMsrps: Record<number, number> = {};
+  for (const motor of msrpResult.data || []) {
+    if (motor.horsepower && motor.msrp) {
+      // Keep the highest MSRP for each HP (most current)
+      const hp = Number(motor.horsepower);
+      const msrp = Number(motor.msrp);
+      if (!referenceMsrps[hp] || msrp > referenceMsrps[hp]) {
+        referenceMsrps[hp] = msrp;
+      }
+    }
+  }
+
   return {
     brackets: bracketsResult.data || [],
-    config: configMap
+    config: configMap,
+    referenceMsrps
   };
 }
 
