@@ -1,28 +1,42 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Update Edge Function: Add Engine Type, Hours & HP-Floor Logic to Agent API
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## Problem
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+The `AGENT_API_INSTRUCTIONS.md` documents `engine_type` and `engine_hours` fields, but the **edge function (`agent-quote-api/index.ts`) ignores them entirely**. The `runTradeEstimate` function and all three call sites (estimate_trade_in, create_quote, update_quote) don't pass or apply these values. The API also still uses the global `MIN_TRADE_VALUE` floor instead of the new HP-class floors.
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+## Changes
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+### `supabase/functions/agent-quote-api/index.ts`
+
+**1. Update `runTradeEstimate` signature and logic** (lines 254-348)
+
+Add `engineType` and `engineHours` parameters. After computing the base low/high range and before applying brand penalty:
+
+- **2-stroke/OptiMax haircut**: If engine type is `'2-stroke'` or `'optimax'`, multiply range by `config.TWO_STROKE_PENALTY?.factor ?? 0.825`. Add factor note.
+- **Hours adjustment**: Apply bonus/penalty from `config.HOURS_ADJUSTMENT` (same logic as client-side `trade-valuation.ts`).
+- **HP-class floors**: Replace global `minValue` with HP-aware floor from `config.HP_CLASS_FLOORS` (under_25: $200, 25_75: $1000, 90_150: $1500, 200_plus: $2500).
+
+**2. Update `estimateTradeIn` action** (lines 450-488)
+
+- Extract `engine_type` and `engine_hours` from `body`
+- Pass them to `runTradeEstimate`
+- Include them in the response object
+
+**3. Update `create_quote` trade-in block** (lines 760-797)
+
+- Extract `ti.engine_type` and `ti.engine_hours`
+- Pass to `runTradeEstimate`
+- Store in `tradeInData` for persistence
+
+**4. Update `update_quote` trade-in block** (lines 1105-1140)
+
+- Same as create_quote: extract and pass `engine_type`/`engine_hours`
+
+### Files Modified
+
+| File | Change |
+|------|--------|
+| `supabase/functions/agent-quote-api/index.ts` | Add engine_type/engine_hours support + HP-class floors to runTradeEstimate and all 3 call sites |
+
