@@ -534,7 +534,7 @@ async function estimateTradeIn(supabase: any, body: any) {
     ok: true,
     trade_in: {
       brand, year, horsepower, condition: cond,
-      engine_type: engine_type || "4-stroke",
+      engine_type: effectiveEngineType || "4-stroke",
       engine_hours: engine_hours ?? null,
       estimated_value: rounded,
       range_low: estimate.low,
