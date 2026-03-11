@@ -313,6 +313,46 @@ function runTradeEstimate(
     return [low, high];
   }
 
+  // --- MSRP-based path for Mercury motors ---
+  const msrpPcts = config?.MSRP_TRADE_PERCENTAGES as Record<string, Record<string, number>> | undefined;
+  if (brand === "Mercury" && msrpLookup && msrpPcts) {
+    const motorAge = currentYear - year;
+    let ageBracket: string | null = null;
+    if (motorAge >= 1 && motorAge <= 3) ageBracket = "1-3";
+    else if (motorAge >= 4 && motorAge <= 7) ageBracket = "4-7";
+    else if (motorAge >= 8 && motorAge <= 12) ageBracket = "8-12";
+    else if (motorAge >= 13 && motorAge <= 17) ageBracket = "13-17";
+    else if (motorAge >= 18 && motorAge <= 20) ageBracket = "18-20";
+
+    if (ageBracket && msrpPcts[ageBracket]) {
+      const pcts = msrpPcts[ageBracket];
+      const pct = pcts[condition];
+      if (pct !== undefined) {
+        // Find closest HP in MSRP lookup
+        const availMsrpHPs = Object.keys(msrpLookup).map(Number).sort((a, b) => a - b);
+        if (availMsrpHPs.length > 0) {
+          const closestMsrpHP = availMsrpHPs.reduce((prev, curr) =>
+            Math.abs(curr - horsepower) < Math.abs(prev - horsepower) ? curr : prev
+          );
+          const msrp = msrpLookup[closestMsrpHP];
+          if (msrp && msrp > 0) {
+            const baseValue = msrp * pct;
+            const msrpFactors: string[] = ["MSRP-anchored valuation"];
+            let low = baseValue * 0.85, high = baseValue * 1.15;
+            [low, high] = applyEngineAdjustments(low, high, msrpFactors);
+            low = Math.max(low, minValue); high = Math.max(high, minValue);
+            let confidence = "high";
+            if (motorAge > 12) confidence = "low";
+            else if (motorAge > 7) confidence = "medium";
+            console.log(`msrp_trade_estimate brand=Mercury hp=${horsepower} closestHP=${closestMsrpHP} msrp=${msrp} age=${motorAge} bracket=${ageBracket} condition=${condition} pct=${pct} baseValue=${baseValue}`);
+            return { low: Math.round(low), high: Math.round(high), average: Math.round((low + high) / 2), confidence, factors: msrpFactors };
+          }
+        }
+      }
+    }
+  }
+
+  // --- Bracket-based fallback ---
   const brandData = lookup[brand];
   const factors: string[] = [];
 
