@@ -128,8 +128,8 @@ Estimates the value of a customer's existing motor for trade-in credit.
 | `year` | number | **Yes** | Model year |
 | `horsepower` | number | **Yes** | HP rating |
 | `condition` | string | No | `"excellent"`, `"good"`, `"fair"`, `"poor"` (default: `"good"`) |
-| `engine_type` | string | No | `"4-stroke"` (default), `"2-stroke"`, `"optimax"` |
-| `engine_hours` | number | No | Actual engine hours if known |
+| `engine_type` | string | **Strongly recommended** | `"4-stroke"` (default), `"2-stroke"`, `"optimax"`. **Always pass this when the customer mentions the engine type.** Omitting it for a 2-stroke motor will overstate the trade-in by ~17.5%. |
+| `engine_hours` | number | **Strongly recommended** | Actual engine hours if known. **Always pass this when the customer provides hours.** Affects valuation by up to ±17.5%. |
 
 **Condition definitions:**
 - **Excellent**: 0–100 engine hours
@@ -165,6 +165,8 @@ Estimates the value of a customer's existing motor for trade-in credit.
 ```
 
 > **Note**: Johnson, Evinrude, and OMC brands receive a 50% penalty (manufacturer out of business, limited parts availability).
+
+> **⚠️ Auto-detection fallback**: The API will attempt to detect `engine_type` from the `model` field (e.g. if `model` contains "2-stroke" or "OptiMax"). However, **do not rely on this** — always pass `engine_type` and `engine_hours` explicitly when the customer provides this information. The auto-detection is a safety net, not a substitute for correct data.
 
 ---
 
@@ -511,6 +513,7 @@ The API applies intelligent defaults so agents don't need to specify every field
 - **Rate limit**: 30 requests per minute. Space out bulk operations.
 - **All prices are in Canadian Dollars (CAD)**.
 - **Trade-in condition** is defined by engine hours: Excellent (0-100h), Good (100-500h), Fair (500-1000h), Poor (1000+h).
+- **ALWAYS pass `engine_type` and `engine_hours`** when the customer mentions them. A missing `engine_type` on a 2-stroke trade-in will overstate the value by ~17.5% ($500-$1,000+ on larger motors). The API has auto-detection from the `model` field as a fallback, but explicit values are always preferred.
 - **NEVER mention the DealerPlan fee** ($299) to customers. It is a financing-only charge that only applies if the customer chooses to finance. It is NOT part of the quote total and must never appear in price summaries or conversations.
 - **NEVER tell the customer to "refresh the page"**. The share link (`share_url`) always loads the latest quote data automatically. After updating a quote, just share the link again — no refresh needed.
 - **The `finalPrice` in the response IS the customer's total price** — do not add anything to it. Present it as-is.
