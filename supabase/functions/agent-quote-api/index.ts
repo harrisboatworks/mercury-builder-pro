@@ -500,6 +500,17 @@ async function estimateTradeIn(supabase: any, body: any) {
   const cond = (condition || "good").toLowerCase();
   if (!validConditions.includes(cond)) throw new Error(`condition must be one of: ${validConditions.join(", ")}`);
 
+  // Auto-detect engine type from model field if not explicitly set
+  let effectiveEngineType = engine_type;
+  if (!effectiveEngineType || effectiveEngineType === "4-stroke") {
+    const modelLower = (body.model || "").toLowerCase();
+    if (modelLower.includes("2-stroke") || modelLower.includes("2 stroke") || modelLower.includes("two stroke") || modelLower.includes("two-stroke")) {
+      effectiveEngineType = "2-stroke";
+    } else if (modelLower.includes("optimax")) {
+      effectiveEngineType = "optimax";
+    }
+  }
+
   // Fetch valuation data from DB
   const [bracketsRes, configRes] = await Promise.all([
     supabase.from("trade_valuation_brackets").select("*"),
@@ -512,7 +523,7 @@ async function estimateTradeIn(supabase: any, body: any) {
     configMap[item.key] = item.value;
   }
 
-  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap, engine_type, engine_hours);
+  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap, effectiveEngineType, engine_hours);
 
   // Compute the rounded median value (to nearest $25)
   const median = (estimate.low + estimate.high) / 2;
