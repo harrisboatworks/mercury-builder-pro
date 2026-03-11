@@ -500,6 +500,17 @@ async function estimateTradeIn(supabase: any, body: any) {
   const cond = (condition || "good").toLowerCase();
   if (!validConditions.includes(cond)) throw new Error(`condition must be one of: ${validConditions.join(", ")}`);
 
+  // Auto-detect engine type from model field if not explicitly set
+  let effectiveEngineType = engine_type;
+  if (!effectiveEngineType || effectiveEngineType === "4-stroke") {
+    const modelLower = (body.model || "").toLowerCase();
+    if (modelLower.includes("2-stroke") || modelLower.includes("2 stroke") || modelLower.includes("two stroke") || modelLower.includes("two-stroke")) {
+      effectiveEngineType = "2-stroke";
+    } else if (modelLower.includes("optimax")) {
+      effectiveEngineType = "optimax";
+    }
+  }
+
   // Fetch valuation data from DB
   const [bracketsRes, configRes] = await Promise.all([
     supabase.from("trade_valuation_brackets").select("*"),
@@ -512,7 +523,7 @@ async function estimateTradeIn(supabase: any, body: any) {
     configMap[item.key] = item.value;
   }
 
-  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap, engine_type, engine_hours);
+  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap, effectiveEngineType, engine_hours);
 
   // Compute the rounded median value (to nearest $25)
   const median = (estimate.low + estimate.high) / 2;
@@ -523,7 +534,7 @@ async function estimateTradeIn(supabase: any, body: any) {
     ok: true,
     trade_in: {
       brand, year, horsepower, condition: cond,
-      engine_type: engine_type || "4-stroke",
+      engine_type: effectiveEngineType || "4-stroke",
       engine_hours: engine_hours ?? null,
       estimated_value: rounded,
       range_low: estimate.low,
@@ -810,6 +821,17 @@ async function createQuote(supabase: any, body: any) {
     const ti = body.trade_in;
     const cond = (ti.condition || "good").toLowerCase();
 
+    // Auto-detect engine type from model field if not explicitly set
+    let effectiveEngineType = ti.engine_type;
+    if (!effectiveEngineType || effectiveEngineType === "4-stroke") {
+      const modelLower = (ti.model || "").toLowerCase();
+      if (modelLower.includes("2-stroke") || modelLower.includes("2 stroke") || modelLower.includes("two stroke") || modelLower.includes("two-stroke")) {
+        effectiveEngineType = "2-stroke";
+      } else if (modelLower.includes("optimax")) {
+        effectiveEngineType = "optimax";
+      }
+    }
+
     const [bracketsRes, configRes] = await Promise.all([
       supabase.from("trade_valuation_brackets").select("*"),
       supabase.from("trade_valuation_config").select("*"),
@@ -818,7 +840,7 @@ async function createQuote(supabase: any, body: any) {
     const configMap: Record<string, Record<string, number>> = {};
     for (const item of (configRes.data || [])) configMap[item.key] = item.value;
 
-    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, ti.engine_type, ti.engine_hours);
+    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours);
     const median = (estimate.low + estimate.high) / 2;
     const hpFloor = getHpClassFloor(ti.horsepower, configMap);
     tradeInValue = Math.max(Math.round(median / 25) * 25, hpFloor);
@@ -834,7 +856,7 @@ async function createQuote(supabase: any, body: any) {
       year: ti.year,
       horsepower: ti.horsepower,
       condition: cond,
-      engine_type: ti.engine_type || "4-stroke",
+      engine_type: effectiveEngineType || "4-stroke",
       engine_hours: ti.engine_hours ?? null,
       model: ti.model || "",
       serialNumber: ti.serial_number || "",
@@ -1155,6 +1177,18 @@ async function updateQuote(supabase: any, body: any) {
     } else if (body.trade_in.brand && body.trade_in.year && body.trade_in.horsepower) {
       const ti = body.trade_in;
       const cond = (ti.condition || "good").toLowerCase();
+
+      // Auto-detect engine type from model field if not explicitly set
+      let effectiveEngineType = ti.engine_type;
+      if (!effectiveEngineType || effectiveEngineType === "4-stroke") {
+        const modelLower = (ti.model || "").toLowerCase();
+        if (modelLower.includes("2-stroke") || modelLower.includes("2 stroke") || modelLower.includes("two stroke") || modelLower.includes("two-stroke")) {
+          effectiveEngineType = "2-stroke";
+        } else if (modelLower.includes("optimax")) {
+          effectiveEngineType = "optimax";
+        }
+      }
+
       const [bracketsRes, configRes] = await Promise.all([
         supabase.from("trade_valuation_brackets").select("*"),
         supabase.from("trade_valuation_config").select("*"),
@@ -1162,7 +1196,7 @@ async function updateQuote(supabase: any, body: any) {
       const brackets = bracketsRes.data || [];
       const configMap: Record<string, Record<string, number>> = {};
       for (const item of (configRes.data || [])) configMap[item.key] = item.value;
-      const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, ti.engine_type, ti.engine_hours);
+      const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours);
       const median = (estimate.low + estimate.high) / 2;
       const hpFloor = getHpClassFloor(ti.horsepower, configMap);
       let tradeInValue = Math.max(Math.round(median / 25) * 25, hpFloor);
@@ -1172,7 +1206,7 @@ async function updateQuote(supabase: any, body: any) {
         const finalTradeIn = ti.override_value;
         const tradeInObj = {
           brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
-          condition: cond, engine_type: ti.engine_type || "4-stroke", engine_hours: ti.engine_hours ?? null,
+          condition: cond, engine_type: effectiveEngineType || "4-stroke", engine_hours: ti.engine_hours ?? null,
           model: ti.model || "", serialNumber: ti.serial_number || "",
           estimatedValue: finalTradeIn, originalEstimate: formulaEstimate,
           overrideValue: ti.override_value, hasTradeIn: true,
@@ -1183,7 +1217,7 @@ async function updateQuote(supabase: any, body: any) {
       } else {
         const tradeInObj = {
           brand: ti.brand, year: ti.year, horsepower: ti.horsepower,
-          condition: cond, engine_type: ti.engine_type || "4-stroke", engine_hours: ti.engine_hours ?? null,
+          condition: cond, engine_type: effectiveEngineType || "4-stroke", engine_hours: ti.engine_hours ?? null,
           model: ti.model || "", serialNumber: ti.serial_number || "",
           estimatedValue: tradeInValue, originalEstimate: formulaEstimate, hasTradeIn: true,
         };
