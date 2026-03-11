@@ -150,13 +150,22 @@ export function QuoteRevealCinematic({
   const calculatedMonthly = calculateMonthly(finalPrice);
   const monthlyPayment = passedMonthlyPayment ?? calculatedMonthly.amount;
 
-  // Smooth skip handler with fade-out animation
+  // Detect iOS for rendering workarounds
+  const isIOS = typeof navigator !== 'undefined' && (
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+  );
+
+  // Smooth skip handler with fade-out animation (instant on iOS to prevent washed-out artifacts)
   const handleSkip = () => {
     if (isSkipping) return;
     setIsSkipping(true);
     triggerHaptic('light');
-    // Fade out over 500ms, then complete
-    setTimeout(onComplete, 500);
+    if (isIOS) {
+      onComplete();
+    } else {
+      setTimeout(onComplete, 500);
+    }
   };
 
   // Handle tap-to-skip for mobile
