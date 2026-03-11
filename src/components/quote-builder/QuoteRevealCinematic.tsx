@@ -150,13 +150,22 @@ export function QuoteRevealCinematic({
   const calculatedMonthly = calculateMonthly(finalPrice);
   const monthlyPayment = passedMonthlyPayment ?? calculatedMonthly.amount;
 
-  // Smooth skip handler with fade-out animation
+  // Detect iOS for rendering workarounds
+  const isIOS = typeof navigator !== 'undefined' && (
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+  );
+
+  // Smooth skip handler with fade-out animation (instant on iOS to prevent washed-out artifacts)
   const handleSkip = () => {
     if (isSkipping) return;
     setIsSkipping(true);
     triggerHaptic('light');
-    // Fade out over 500ms, then complete
-    setTimeout(onComplete, 500);
+    if (isIOS) {
+      onComplete();
+    } else {
+      setTimeout(onComplete, 500);
+    }
   };
 
   // Handle tap-to-skip for mobile
@@ -308,6 +317,14 @@ export function QuoteRevealCinematic({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stage, finalPrice]);
 
+  // Safety net: snap displayPrice to current finalPrice after counter completes
+  // Covers late promo data arriving after the counter already finished
+  useEffect(() => {
+    if (priceComplete && displayPrice !== finalPrice) {
+      setDisplayPrice(finalPrice);
+    }
+  }, [priceComplete, finalPrice, displayPrice]);
+
   if (!isVisible) return null;
 
   return (
@@ -315,9 +332,10 @@ export function QuoteRevealCinematic({
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isSkipping ? 0 : 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: isSkipping ? 0.5 : 0.3 }}
+        exit={{ opacity: 0, transition: { duration: isIOS ? 0 : 0.3 } }}
+        transition={{ duration: isSkipping ? (isIOS ? 0 : 0.5) : 0.3 }}
         className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden"
+        style={{ willChange: 'opacity' }}
         onClick={handleTapToSkip}
         onTouchEnd={handleTapToSkip}
       >
@@ -329,6 +347,7 @@ export function QuoteRevealCinematic({
           transition={{ duration: 0.8 }}
           style={{
             background: 'radial-gradient(ellipse at center, #0F0F0F 0%, #0A0A0A 50%, #050505 100%)',
+            willChange: 'opacity',
           }}
         />
         

@@ -70,7 +70,7 @@ export default function QuoteSummaryPage() {
   const { state, dispatch, getQuoteData } = useQuote();
   const { user, isAdmin } = useAuth();
   const { promo } = useActiveFinancingPromo();
-  const { promotions, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { promotions, loading: promoLoading, getWarrantyPromotions, getTotalWarrantyBonusYears, getTotalPromotionalSavings, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { toast } = useToast();
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
@@ -748,7 +748,7 @@ export default function QuoteSummaryPage() {
       />
       {/* Cinematic Quote Reveal */}
       <QuoteRevealCinematic
-        isVisible={showCinematic && isMounted}
+        isVisible={showCinematic && isMounted && !promoLoading}
         onComplete={handleCinematicComplete}
         motorName={motorName}
         finalPrice={packageSpecificTotals.subtotal}
