@@ -138,6 +138,8 @@ Estimates the value of a customer's existing motor for trade-in credit.
 - **Poor**: 1,000+ engine hours
 
 **Valuation adjustments:**
+- **Mercury MSRP-anchored**: Mercury trade-ins are valued as a percentage of current MSRP, automatically adjusting when prices change. Age brackets: 1-3yr (55% excellent), 4-7yr (44%), 8-12yr (29%), 13-17yr (19%), 18-20yr (13%).
+- **Non-Mercury brands**: Use fixed bracket lookup table (no MSRP data available).
 - **2-Stroke / OptiMax engines**: ~17.5% haircut applied regardless of brand
 - **Low hours** (≤100h): ~7.5% bonus
 - **Moderate hours** (500–1,000h): ~10% penalty
