@@ -251,12 +251,21 @@ function getBrandPenalty(brand: string, config?: Record<string, Record<string, n
   return factor;
 }
 
+function getHpClassFloor(hp: number, config: Record<string, Record<string, number>>): number {
+  const floors = config?.HP_CLASS_FLOORS;
+  if (hp >= 200) return floors?.["200_plus"] ?? 2500;
+  if (hp >= 90) return floors?.["90_150"] ?? 1500;
+  if (hp >= 25) return floors?.["25_75"] ?? 1000;
+  return floors?.under_25 ?? 200;
+}
+
 function runTradeEstimate(
   brand: string, year: number, horsepower: number, condition: string,
-  brackets: any[], config: Record<string, Record<string, number>>
+  brackets: any[], config: Record<string, Record<string, number>>,
+  engineType?: string, engineHours?: number
 ) {
   const currentYear = new Date().getFullYear();
-  const minValue = config?.MIN_TRADE_VALUE?.value ?? MIN_TRADE_VALUE;
+  const minValue = getHpClassFloor(horsepower, config);
   const mercuryMaxAge = config?.MERCURY_BONUS_YEARS?.max_age ?? 3;
   const mercuryBonusFactor = config?.MERCURY_BONUS_YEARS?.factor ?? 1.1;
 
@@ -269,6 +278,38 @@ function runTradeEstimate(
       excellent: Number(b.excellent), good: Number(b.good),
       fair: Number(b.fair), poor: Number(b.poor),
     };
+  }
+
+  // Helper to apply engine-type and hours adjustments
+  function applyEngineAdjustments(low: number, high: number, factors: string[]): [number, number] {
+    // 2-stroke / OptiMax haircut
+    const et = (engineType || "").toLowerCase();
+    if (et === "2-stroke" || et === "optimax") {
+      const factor = config?.TWO_STROKE_PENALTY?.factor ?? 0.825;
+      low *= factor;
+      high *= factor;
+      factors.push(`${et === "optimax" ? "OptiMax" : "2-stroke"} engine penalty applied (-${Math.round((1 - factor) * 100)}%)`);
+    }
+    // Hours adjustment
+    if (engineHours != null && engineHours >= 0) {
+      if (engineHours <= 100) {
+        const bonus = config?.HOURS_ADJUSTMENT?.low_hours_bonus ?? 0.075;
+        low *= (1 + bonus);
+        high *= (1 + bonus);
+        factors.push(`Low hours bonus (+${Math.round(bonus * 100)}%)`);
+      } else if (engineHours >= 1000) {
+        const penalty = config?.HOURS_ADJUSTMENT?.high_hours_penalty ?? 0.175;
+        low *= (1 - penalty);
+        high *= (1 - penalty);
+        factors.push(`High hours penalty (-${Math.round(penalty * 100)}%)`);
+      } else if (engineHours >= 500) {
+        const penalty = config?.HOURS_ADJUSTMENT?.moderate_hours_penalty ?? 0.10;
+        low *= (1 - penalty);
+        high *= (1 - penalty);
+        factors.push(`Moderate hours penalty (-${Math.round(penalty * 100)}%)`);
+      }
+    }
+    return [low, high];
   }
 
   const brandData = lookup[brand];
@@ -284,6 +325,7 @@ function runTradeEstimate(
     factors.push("Unknown brand", "Estimated depreciation");
     const pf = getBrandPenalty(brand, config);
     if (pf < 1) { low *= pf; high *= pf; factors.push("Brand penalty applied (-50%)"); }
+    [low, high] = applyEngineAdjustments(low, high, factors);
     low = Math.max(low, minValue); high = Math.max(high, minValue);
     return { low: Math.round(low), high: Math.round(high), average: Math.round((low + high) / 2), confidence: "low", factors };
   }
@@ -305,13 +347,14 @@ function runTradeEstimate(
     factors.push("Motor age over 20 years");
     const pf = getBrandPenalty(brand, config);
     if (pf < 1) { low *= pf; high *= pf; factors.push("Brand penalty applied (-50%)"); }
+    [low, high] = applyEngineAdjustments(low, high, factors);
     low = Math.max(low, minValue); high = Math.max(high, minValue);
     return { low: Math.round(low), high: Math.round(high), average: Math.round((low + high) / 2), confidence: "low", factors };
   }
 
   const yearData = brandData[yearRange];
   if (!yearData) {
-    return runTradeEstimate("Generic", year, horsepower, condition, brackets, config);
+    return runTradeEstimate("Generic", year, horsepower, condition, brackets, config, engineType, engineHours);
   }
 
   const availableHPs = Object.keys(yearData).map(Number).sort((a, b) => a - b);
@@ -320,7 +363,7 @@ function runTradeEstimate(
   );
 
   const hpData = yearData[closestHP.toString()];
-  if (!hpData) return runTradeEstimate("Generic", year, horsepower, condition, brackets, config);
+  if (!hpData) return runTradeEstimate("Generic", year, horsepower, condition, brackets, config, engineType, engineHours);
 
   let baseValue = hpData[condition] || hpData.fair;
   const motorAge = currentYear - year;
@@ -333,6 +376,7 @@ function runTradeEstimate(
   let low = baseValue * 0.85, high = baseValue * 1.15;
   const pf = getBrandPenalty(brand, config);
   if (pf < 1) { low *= pf; high *= pf; factors.push("Brand penalty applied (-50%)"); }
+  [low, high] = applyEngineAdjustments(low, high, factors);
   low = Math.max(low, minValue); high = Math.max(high, minValue);
 
   let confidence: string = "high";
