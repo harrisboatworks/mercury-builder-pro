@@ -552,10 +552,11 @@ async function estimateTradeIn(supabase: any, body: any) {
     }
   }
 
-  // Fetch valuation data from DB
-  const [bracketsRes, configRes] = await Promise.all([
+  // Fetch valuation data and Mercury MSRPs from DB
+  const [bracketsRes, configRes, msrpRes] = await Promise.all([
     supabase.from("trade_valuation_brackets").select("*"),
     supabase.from("trade_valuation_config").select("*"),
+    supabase.from("motor_models").select("horsepower, msrp").eq("make", "Mercury").eq("is_brochure", true).not("msrp", "is", null).not("horsepower", "is", null),
   ]);
 
   const brackets = bracketsRes.data || [];
@@ -564,7 +565,17 @@ async function estimateTradeIn(supabase: any, body: any) {
     configMap[item.key] = item.value;
   }
 
-  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap, effectiveEngineType, engine_hours);
+  // Build HP-to-MSRP lookup
+  const msrpLookup: Record<number, number> = {};
+  for (const m of (msrpRes.data || [])) {
+    const hp = Number(m.horsepower);
+    const msrp = Number(m.msrp);
+    if (hp && msrp && (!msrpLookup[hp] || msrp > msrpLookup[hp])) {
+      msrpLookup[hp] = msrp;
+    }
+  }
+
+  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap, effectiveEngineType, engine_hours, msrpLookup);
 
   // Compute the rounded median value (to nearest $25)
   const median = (estimate.low + estimate.high) / 2;
