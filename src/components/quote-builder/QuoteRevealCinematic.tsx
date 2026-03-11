@@ -347,6 +347,7 @@ export function QuoteRevealCinematic({
           transition={{ duration: 0.8 }}
           style={{
             background: 'radial-gradient(ellipse at center, #0F0F0F 0%, #0A0A0A 50%, #050505 100%)',
+            willChange: 'opacity',
           }}
         />
         
