@@ -128,8 +128,8 @@ Estimates the value of a customer's existing motor for trade-in credit.
 | `year` | number | **Yes** | Model year |
 | `horsepower` | number | **Yes** | HP rating |
 | `condition` | string | No | `"excellent"`, `"good"`, `"fair"`, `"poor"` (default: `"good"`) |
-| `engine_type` | string | No | `"4-stroke"` (default), `"2-stroke"`, `"optimax"` |
-| `engine_hours` | number | No | Actual engine hours if known |
+| `engine_type` | string | **Strongly recommended** | `"4-stroke"` (default), `"2-stroke"`, `"optimax"`. **Always pass this when the customer mentions the engine type.** Omitting it for a 2-stroke motor will overstate the trade-in by ~17.5%. |
+| `engine_hours` | number | **Strongly recommended** | Actual engine hours if known. **Always pass this when the customer provides hours.** Affects valuation by up to ±17.5%. |
 
 **Condition definitions:**
 - **Excellent**: 0–100 engine hours
