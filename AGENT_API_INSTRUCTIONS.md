@@ -166,6 +166,8 @@ Estimates the value of a customer's existing motor for trade-in credit.
 
 > **Note**: Johnson, Evinrude, and OMC brands receive a 50% penalty (manufacturer out of business, limited parts availability).
 
+> **⚠️ Auto-detection fallback**: The API will attempt to detect `engine_type` from the `model` field (e.g. if `model` contains "2-stroke" or "OptiMax"). However, **do not rely on this** — always pass `engine_type` and `engine_hours` explicitly when the customer provides this information. The auto-detection is a safety net, not a substitute for correct data.
+
 ---
 
 ### 2.4 `get_warranty_pricing` — Warranty Extension Costs
