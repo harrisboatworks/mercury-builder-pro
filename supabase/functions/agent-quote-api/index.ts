@@ -818,9 +818,10 @@ async function createQuote(supabase: any, body: any) {
     const configMap: Record<string, Record<string, number>> = {};
     for (const item of (configRes.data || [])) configMap[item.key] = item.value;
 
-    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap);
+    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, ti.engine_type, ti.engine_hours);
     const median = (estimate.low + estimate.high) / 2;
-    tradeInValue = Math.max(Math.round(median / 25) * 25, configMap?.MIN_TRADE_VALUE?.value ?? MIN_TRADE_VALUE);
+    const hpFloor = getHpClassFloor(ti.horsepower, configMap);
+    tradeInValue = Math.max(Math.round(median / 25) * 25, hpFloor);
 
     // Check for admin/agent override
     const formulaEstimate = tradeInValue;
@@ -833,6 +834,8 @@ async function createQuote(supabase: any, body: any) {
       year: ti.year,
       horsepower: ti.horsepower,
       condition: cond,
+      engine_type: ti.engine_type || "4-stroke",
+      engine_hours: ti.engine_hours ?? null,
       model: ti.model || "",
       serialNumber: ti.serial_number || "",
       estimatedValue: tradeInValue,
