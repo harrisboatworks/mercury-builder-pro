@@ -217,8 +217,8 @@ export default function FinancingApplication() {
       // Subtract trade-in
       const tradeInValue = parseFloat(restoredQuoteState.tradeInInfo?.estimatedValue) || 0;
       
-      // Add tax and fees
-      const withTax = (packageTotal - tradeInValue) * 1.13;
+      // Add tax and fees (do NOT subtract trade-in here — the financing form handles that)
+      const withTax = packageTotal * 1.13;
       const totalWithFees = withTax + 299; // Dealerplan fee
       
       // Build motor model display with package info

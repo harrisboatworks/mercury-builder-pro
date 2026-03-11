@@ -491,9 +491,10 @@ export default function QuoteSummaryPage() {
   const handleApplyForFinancing = () => {
     const tradeInValue = state.tradeInInfo?.estimatedValue || 0;
     
-    // Use the actual package subtotal (already net of discounts, trade-in, promos)
-    // Add tax and financing fee for the total amount to finance
-    const subtotalWithTax = packageSpecificTotals.subtotal * 1.13;
+    // Use the pre-trade-in subtotal so the financing form handles the single subtraction
+    // packageSpecificTotals.subtotal already has trade-in deducted, so add it back
+    const preTradeInSubtotal = packageSpecificTotals.subtotal + tradeInValue;
+    const subtotalWithTax = preTradeInSubtotal * 1.13;
     const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
     
     const packageName = selectedPackageLabel.split('•')[0].trim();
