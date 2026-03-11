@@ -44,6 +44,16 @@ export interface TradeValuationConfig {
   BRAND_PENALTY_OMC?: { factor: number };
   MERCURY_BONUS_YEARS?: { max_age: number; factor: number };
   MIN_TRADE_VALUE?: { value: number };
+  HP_CLASS_FLOORS?: Record<string, number>;
+  TWO_STROKE_PENALTY?: { factor: number };
+  HOURS_ADJUSTMENT?: {
+    low_max_hours: number;
+    low_bonus: number;
+    high_min_hours: number;
+    high_penalty_moderate: number;
+    high_threshold: number;
+    high_penalty_severe: number;
+  };
 }
 
 // Fallback config (used when database is unavailable)
