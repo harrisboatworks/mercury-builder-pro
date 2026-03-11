@@ -166,3 +166,163 @@ describe('estimateTradeValue — combined scenarios', () => {
     expect(result.factors.some(f => f.includes('brand'))).toBe(true);
   });
 });
+
+// ===== MSRP-based valuation tests =====
+
+const MSRP_CONFIG: TradeValuationConfig = {
+  MSRP_TRADE_PERCENTAGES: {
+    '1-3':  { excellent: 0.55, good: 0.50, fair: 0.40, poor: 0.25 },
+    '4-7':  { excellent: 0.44, good: 0.40, fair: 0.32, poor: 0.20 },
+    '8-12': { excellent: 0.29, good: 0.26, fair: 0.21, poor: 0.13 },
+    '13-17':{ excellent: 0.19, good: 0.17, fair: 0.14, poor: 0.09 },
+    '18-20':{ excellent: 0.13, good: 0.12, fair: 0.10, poor: 0.06 },
+  },
+  HP_CLASS_FLOORS: { under_25: 200, '25_75': 1000, '90_150': 1500, '200_plus': 2500 },
+};
+
+const REFERENCE_MSRPS: Record<number, number> = {
+  15: 4500,
+  25: 7500,
+  50: 12000,
+  75: 16000,
+  90: 18000,
+  115: 22000,
+  150: 28000,
+  200: 32000,
+  250: 38000,
+  300: 45000,
+};
+
+const currentYear = new Date().getFullYear();
+
+describe('estimateTradeValue — MSRP-based Mercury path', () => {
+  it('uses MSRP path when config + referenceMsrps provided for Mercury', () => {
+    const result = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 2, horsepower: 150, condition: 'good' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    expect(result.source).toBe('MSRP-anchored valuation');
+    // 150HP MSRP = $28,000, age 2 → bracket 1-3, good = 50%
+    // baseValue = 28000 * 0.50 = 14000, low = 14000*0.85 = 11900, high = 14000*1.15 = 16100
+    expect(result.average).toBeCloseTo(14000, -2);
+  });
+
+  it('falls back to brackets for non-Mercury brands', () => {
+    const result = estimateTradeValue(
+      { brand: 'Yamaha', year: currentYear - 2, horsepower: 150, condition: 'good' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    expect(result.source).not.toBe('MSRP-anchored valuation');
+  });
+
+  it('falls back to brackets when referenceMsrps missing', () => {
+    const result = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 2, horsepower: 150, condition: 'good' },
+      { config: MSRP_CONFIG }
+    );
+    expect(result.source).not.toBe('MSRP-anchored valuation');
+  });
+
+  it('calculates correct value for 4-7 year bracket', () => {
+    const result = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 5, horsepower: 250, condition: 'excellent' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    // 250HP MSRP = $38,000, age 5 → bracket 4-7, excellent = 44%
+    // baseValue = 38000 * 0.44 = 16720
+    expect(result.average).toBeCloseTo(16720, -2);
+  });
+
+  it('calculates correct value for 8-12 year bracket', () => {
+    const result = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 10, horsepower: 90, condition: 'fair' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    // 90HP MSRP = $18,000, age 10 → bracket 8-12, fair = 21%
+    // baseValue = 18000 * 0.21 = 3780
+    expect(result.average).toBeCloseTo(3780, -2);
+  });
+
+  it('applies 2-stroke penalty on MSRP path', () => {
+    const normal = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 5, horsepower: 150, condition: 'good' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    const twoStroke = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 5, horsepower: 150, condition: 'good', engineType: '2-stroke' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    expect(twoStroke.average).toBeCloseTo(normal.average * 0.825, -1);
+    expect(twoStroke.factors.some(f => f.includes('2-Stroke'))).toBe(true);
+  });
+
+  it('applies hours bonus on MSRP path', () => {
+    const normal = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 2, horsepower: 115, condition: 'good' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    const lowHours = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 2, horsepower: 115, condition: 'good', engineHours: 50 },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    expect(lowHours.average).toBeCloseTo(normal.average * 1.075, -1);
+  });
+
+  it('enforces HP-class floors on MSRP path', () => {
+    // 15HP poor, 18-20 year old → very low value, should hit $200 floor
+    const result = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 19, horsepower: 15, condition: 'poor' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    // 15HP MSRP = $4500, bracket 18-20, poor = 6% → $270, * 0.85 = $229.5
+    expect(result.low).toBeGreaterThanOrEqual(200);
+  });
+
+  it('200HP+ floor enforced on MSRP path', () => {
+    const result = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 19, horsepower: 200, condition: 'poor' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    expect(result.low).toBeGreaterThanOrEqual(2500);
+  });
+
+  it('motors older than 20 years fall back to bracket path', () => {
+    const result = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 22, horsepower: 150, condition: 'good' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    // getMsrpAgeBracket returns null for age > 20
+    expect(result.source).not.toBe('MSRP-anchored valuation');
+  });
+
+  it('brand-new (age 0) motors fall back to bracket path', () => {
+    const result = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear, horsepower: 150, condition: 'excellent' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    expect(result.source).not.toBe('MSRP-anchored valuation');
+  });
+
+  it('finds closest HP match when exact HP not in referenceMsrps', () => {
+    const result = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 3, horsepower: 140, condition: 'good' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    expect(result.source).toBe('MSRP-anchored valuation');
+    // Closest HP to 140 is 150 (MSRP $28,000), bracket 1-3, good = 50% → $14,000
+    expect(result.average).toBeCloseTo(14000, -2);
+  });
+
+  it('stacks 2-stroke + high hours on MSRP path', () => {
+    const normal = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 5, horsepower: 115, condition: 'fair' },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    const combined = estimateTradeValue(
+      { brand: 'Mercury', year: currentYear - 5, horsepower: 115, condition: 'fair', engineType: '2-stroke', engineHours: 1200 },
+      { config: MSRP_CONFIG, referenceMsrps: REFERENCE_MSRPS }
+    );
+    // 0.825 * 0.825 = 0.680625
+    expect(combined.average).toBeCloseTo(normal.average * 0.825 * 0.825, -1);
+  });
+});
