@@ -308,6 +308,25 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
+                  <Label htmlFor="trade-engine-type" className="text-sm font-light tracking-wide text-gray-900">
+                    Engine Type
+                  </Label>
+                  <Select 
+                    value={tradeInInfo.engineType || ''} 
+                    onValueChange={(value) => onTradeInChange({ ...tradeInInfo, engineType: value as TradeInInfo['engineType'] })}
+                  >
+                    <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
+                      <SelectValue placeholder="Select engine type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="4-stroke" className="font-light">4-Stroke</SelectItem>
+                      <SelectItem value="2-stroke" className="font-light">2-Stroke</SelectItem>
+                      <SelectItem value="optimax" className="font-light">OptiMax</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
                   <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-gray-900">
                     Year *
                   </Label>
@@ -366,6 +385,22 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     value={tradeInInfo.model}
                     onChange={(e) => onTradeInChange({ ...tradeInInfo, model: e.target.value })}
                     placeholder="e.g., OptiMax Pro XS"
+                    className="min-h-[48px] rounded-sm border-gray-300 font-light"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="trade-hours" className="text-sm font-light tracking-wide text-gray-900">
+                    Engine Hours (Optional)
+                  </Label>
+                  <Input
+                    id="trade-hours"
+                    type="number"
+                    value={tradeInInfo.engineHours || ''}
+                    onChange={(e) => onTradeInChange({ ...tradeInInfo, engineHours: parseFloat(e.target.value) || undefined })}
+                    placeholder="e.g., 250"
+                    min="0"
+                    max="20000"
                     className="min-h-[48px] rounded-sm border-gray-300 font-light"
                   />
                 </div>
