@@ -54,6 +54,8 @@ export interface TradeValuationConfig {
     high_threshold: number;
     high_penalty_severe: number;
   };
+  /** MSRP-based trade percentages keyed by age bracket then condition */
+  MSRP_TRADE_PERCENTAGES?: Record<string, Record<string, number>>;
 }
 
 // Fallback config (used when database is unavailable)
