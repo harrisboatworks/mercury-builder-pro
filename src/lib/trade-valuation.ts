@@ -351,9 +351,54 @@ export function estimateTradeValue(
     factors.push('Older motor age estimate');
   }
   
-  const preLow = finalValue * 0.85;
-  const preHigh = finalValue * 1.15;
-  const adj = applyBrandPenaltyToRange(preLow, preHigh, brand, factors, config, minTradeValue);
+  let preLow = finalValue * 0.85;
+  let preHigh = finalValue * 1.15;
+  
+  // Apply 2-stroke/OptiMax haircut
+  const engineType = tradeInfo.engineType;
+  if (engineType === '2-stroke' || engineType === 'optimax') {
+    const strokeFactor = config?.TWO_STROKE_PENALTY?.factor ?? 0.825;
+    preLow *= strokeFactor;
+    preHigh *= strokeFactor;
+    factors.push(`${engineType === 'optimax' ? 'OptiMax' : '2-Stroke'} engine (-${Math.round((1 - strokeFactor) * 100)}%)`);
+  }
+  
+  // Apply engine hours adjustment
+  const hours = tradeInfo.engineHours;
+  if (hours !== undefined && hours > 0) {
+    const ha = config?.HOURS_ADJUSTMENT ?? {
+      low_max_hours: 100, low_bonus: 0.075,
+      high_min_hours: 500, high_penalty_moderate: 0.10,
+      high_threshold: 1000, high_penalty_severe: 0.175
+    };
+    if (hours <= ha.low_max_hours) {
+      const bonus = 1 + ha.low_bonus;
+      preLow *= bonus;
+      preHigh *= bonus;
+      factors.push(`Low hours (${hours}h) bonus +${Math.round(ha.low_bonus * 100)}%`);
+    } else if (hours >= ha.high_threshold) {
+      const penalty = 1 - ha.high_penalty_severe;
+      preLow *= penalty;
+      preHigh *= penalty;
+      factors.push(`High hours (${hours}h) penalty -${Math.round(ha.high_penalty_severe * 100)}%`);
+    } else if (hours >= ha.high_min_hours) {
+      const penalty = 1 - ha.high_penalty_moderate;
+      preLow *= penalty;
+      preHigh *= penalty;
+      factors.push(`Moderate hours (${hours}h) penalty -${Math.round(ha.high_penalty_moderate * 100)}%`);
+    }
+  }
+  
+  // HP-class floor
+  const hpFloors = config?.HP_CLASS_FLOORS ?? { under_25: 200, '25_75': 1000, '90_150': 1500, '200_plus': 2500 };
+  let hpFloor = minTradeValue;
+  if (horsepower >= 200) hpFloor = hpFloors['200_plus'] ?? 2500;
+  else if (horsepower >= 90) hpFloor = hpFloors['90_150'] ?? 1500;
+  else if (horsepower >= 25) hpFloor = hpFloors['25_75'] ?? 1000;
+  else hpFloor = hpFloors['under_25'] ?? 200;
+  
+  const effectiveFloor = Math.max(hpFloor, minTradeValue);
+  const adj = applyBrandPenaltyToRange(preLow, preHigh, brand, factors, config, effectiveFloor);
   
   return {
     low: adj.low,
