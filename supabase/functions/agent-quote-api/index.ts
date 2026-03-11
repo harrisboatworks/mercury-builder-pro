@@ -262,7 +262,8 @@ function getHpClassFloor(hp: number, config: Record<string, Record<string, numbe
 function runTradeEstimate(
   brand: string, year: number, horsepower: number, condition: string,
   brackets: any[], config: Record<string, Record<string, number>>,
-  engineType?: string, engineHours?: number
+  engineType?: string, engineHours?: number,
+  msrpLookup?: Record<number, number>
 ) {
   const currentYear = new Date().getFullYear();
   const minValue = getHpClassFloor(horsepower, config);
@@ -312,6 +313,46 @@ function runTradeEstimate(
     return [low, high];
   }
 
+  // --- MSRP-based path for Mercury motors ---
+  const msrpPcts = config?.MSRP_TRADE_PERCENTAGES as Record<string, Record<string, number>> | undefined;
+  if (brand === "Mercury" && msrpLookup && msrpPcts) {
+    const motorAge = currentYear - year;
+    let ageBracket: string | null = null;
+    if (motorAge >= 1 && motorAge <= 3) ageBracket = "1-3";
+    else if (motorAge >= 4 && motorAge <= 7) ageBracket = "4-7";
+    else if (motorAge >= 8 && motorAge <= 12) ageBracket = "8-12";
+    else if (motorAge >= 13 && motorAge <= 17) ageBracket = "13-17";
+    else if (motorAge >= 18 && motorAge <= 20) ageBracket = "18-20";
+
+    if (ageBracket && msrpPcts[ageBracket]) {
+      const pcts = msrpPcts[ageBracket];
+      const pct = pcts[condition];
+      if (pct !== undefined) {
+        // Find closest HP in MSRP lookup
+        const availMsrpHPs = Object.keys(msrpLookup).map(Number).sort((a, b) => a - b);
+        if (availMsrpHPs.length > 0) {
+          const closestMsrpHP = availMsrpHPs.reduce((prev, curr) =>
+            Math.abs(curr - horsepower) < Math.abs(prev - horsepower) ? curr : prev
+          );
+          const msrp = msrpLookup[closestMsrpHP];
+          if (msrp && msrp > 0) {
+            const baseValue = msrp * pct;
+            const msrpFactors: string[] = ["MSRP-anchored valuation"];
+            let low = baseValue * 0.85, high = baseValue * 1.15;
+            [low, high] = applyEngineAdjustments(low, high, msrpFactors);
+            low = Math.max(low, minValue); high = Math.max(high, minValue);
+            let confidence = "high";
+            if (motorAge > 12) confidence = "low";
+            else if (motorAge > 7) confidence = "medium";
+            console.log(`msrp_trade_estimate brand=Mercury hp=${horsepower} closestHP=${closestMsrpHP} msrp=${msrp} age=${motorAge} bracket=${ageBracket} condition=${condition} pct=${pct} baseValue=${baseValue}`);
+            return { low: Math.round(low), high: Math.round(high), average: Math.round((low + high) / 2), confidence, factors: msrpFactors };
+          }
+        }
+      }
+    }
+  }
+
+  // --- Bracket-based fallback ---
   const brandData = lookup[brand];
   const factors: string[] = [];
 
@@ -511,10 +552,11 @@ async function estimateTradeIn(supabase: any, body: any) {
     }
   }
 
-  // Fetch valuation data from DB
-  const [bracketsRes, configRes] = await Promise.all([
+  // Fetch valuation data and Mercury MSRPs from DB
+  const [bracketsRes, configRes, msrpRes] = await Promise.all([
     supabase.from("trade_valuation_brackets").select("*"),
     supabase.from("trade_valuation_config").select("*"),
+    supabase.from("motor_models").select("horsepower, msrp").eq("make", "Mercury").eq("is_brochure", true).not("msrp", "is", null).not("horsepower", "is", null),
   ]);
 
   const brackets = bracketsRes.data || [];
@@ -523,7 +565,17 @@ async function estimateTradeIn(supabase: any, body: any) {
     configMap[item.key] = item.value;
   }
 
-  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap, effectiveEngineType, engine_hours);
+  // Build HP-to-MSRP lookup
+  const msrpLookup: Record<number, number> = {};
+  for (const m of (msrpRes.data || [])) {
+    const hp = Number(m.horsepower);
+    const msrp = Number(m.msrp);
+    if (hp && msrp && (!msrpLookup[hp] || msrp > msrpLookup[hp])) {
+      msrpLookup[hp] = msrp;
+    }
+  }
+
+  const estimate = runTradeEstimate(brand, year, horsepower, cond, brackets, configMap, effectiveEngineType, engine_hours, msrpLookup);
 
   // Compute the rounded median value (to nearest $25)
   const median = (estimate.low + estimate.high) / 2;
@@ -832,15 +884,21 @@ async function createQuote(supabase: any, body: any) {
       }
     }
 
-    const [bracketsRes, configRes] = await Promise.all([
+    const [bracketsRes, configRes, msrpRes2] = await Promise.all([
       supabase.from("trade_valuation_brackets").select("*"),
       supabase.from("trade_valuation_config").select("*"),
+      supabase.from("motor_models").select("horsepower, msrp").eq("make", "Mercury").eq("is_brochure", true).not("msrp", "is", null).not("horsepower", "is", null),
     ]);
     const brackets = bracketsRes.data || [];
     const configMap: Record<string, Record<string, number>> = {};
     for (const item of (configRes.data || [])) configMap[item.key] = item.value;
+    const msrpLookup2: Record<number, number> = {};
+    for (const m of (msrpRes2.data || [])) {
+      const hp = Number(m.horsepower); const msrp = Number(m.msrp);
+      if (hp && msrp && (!msrpLookup2[hp] || msrp > msrpLookup2[hp])) msrpLookup2[hp] = msrp;
+    }
 
-    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours);
+    const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours, msrpLookup2);
     const median = (estimate.low + estimate.high) / 2;
     const hpFloor = getHpClassFloor(ti.horsepower, configMap);
     tradeInValue = Math.max(Math.round(median / 25) * 25, hpFloor);
@@ -1189,14 +1247,20 @@ async function updateQuote(supabase: any, body: any) {
         }
       }
 
-      const [bracketsRes, configRes] = await Promise.all([
+      const [bracketsRes, configRes, msrpRes3] = await Promise.all([
         supabase.from("trade_valuation_brackets").select("*"),
         supabase.from("trade_valuation_config").select("*"),
+        supabase.from("motor_models").select("horsepower, msrp").eq("make", "Mercury").eq("is_brochure", true).not("msrp", "is", null).not("horsepower", "is", null),
       ]);
       const brackets = bracketsRes.data || [];
       const configMap: Record<string, Record<string, number>> = {};
       for (const item of (configRes.data || [])) configMap[item.key] = item.value;
-      const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours);
+      const msrpLookup3: Record<number, number> = {};
+      for (const m of (msrpRes3.data || [])) {
+        const hp = Number(m.horsepower); const msrp = Number(m.msrp);
+        if (hp && msrp && (!msrpLookup3[hp] || msrp > msrpLookup3[hp])) msrpLookup3[hp] = msrp;
+      }
+      const estimate = runTradeEstimate(ti.brand, ti.year, ti.horsepower, cond, brackets, configMap, effectiveEngineType, ti.engine_hours, msrpLookup3);
       const median = (estimate.low + estimate.high) / 2;
       const hpFloor = getHpClassFloor(ti.horsepower, configMap);
       let tradeInValue = Math.max(Math.round(median / 25) * 25, hpFloor);
