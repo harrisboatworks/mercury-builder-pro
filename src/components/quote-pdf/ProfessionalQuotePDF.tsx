@@ -372,9 +372,9 @@ const styles = StyleSheet.create({
   
   // Terms section
   termsSection: {
-    marginTop: 4,
-    marginBottom: 20,
-    paddingTop: 6,
+    marginTop: 2,
+    marginBottom: 4,
+    paddingTop: 4,
     borderTop: `1 solid ${colors.border}`,
   },
   
