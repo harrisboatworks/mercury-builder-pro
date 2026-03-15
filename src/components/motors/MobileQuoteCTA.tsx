@@ -56,6 +56,13 @@ export function MobileQuoteCTA({ triggerCardCount = 2, onStartQuote }: MobileQuo
     };
   }, [isMobile, dismissed, triggerCardCount]);
 
+  // Auto-dismiss after 8 seconds of being visible
+  useEffect(() => {
+    if (!visible || dismissed) return;
+    const timer = setTimeout(() => setDismissed(true), 8000);
+    return () => clearTimeout(timer);
+  }, [visible, dismissed]);
+
   if (!isMobile || dismissed) return null;
 
   return (
