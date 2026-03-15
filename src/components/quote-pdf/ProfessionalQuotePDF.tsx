@@ -667,7 +667,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <>
                   <View style={{ marginTop: 8, marginBottom: 4 }}>
                     <Text style={[styles.pricingLabel, { fontWeight: 'bold' }]}>
-                      Accessories & Setup
+                      Required Rigging & Installation
                     </Text>
                   </View>
                   {quoteData.accessoryBreakdown.map((item, idx) => (
