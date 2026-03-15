@@ -17,7 +17,7 @@ export const CurrentStepIndicator = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="text-sm font-medium text-foreground">
-              Step {currentStep} of {totalSteps}
+              Step {currentStep}
             </div>
             {stepTitle && (
               <>

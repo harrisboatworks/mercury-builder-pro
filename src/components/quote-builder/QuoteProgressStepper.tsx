@@ -183,7 +183,7 @@ export const QuoteProgressStepper = () => {
         <div className="md:hidden">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-foreground">
-              Step {currentStepIndex + 1} of {visibleSteps.length}
+              Step {currentStepIndex + 1}
             </span>
             <span className="text-sm text-muted-foreground">
               {visibleSteps[currentStepIndex]?.label || 'Loading...'}

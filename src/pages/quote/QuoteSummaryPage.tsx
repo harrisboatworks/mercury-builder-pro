@@ -75,7 +75,7 @@ export default function QuoteSummaryPage() {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
-  const [isMounted, setIsMounted] = useState(false);
+  const isMounted = true; // Render immediately — no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   
   // Deposit processing state - amount is auto-calculated from HP
@@ -132,14 +132,7 @@ export default function QuoteSummaryPage() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Ensure minimum mount time
-  useEffect(() => {
-    const mountTimer = setTimeout(() => {
-      setIsMounted(true);
-    }, 500);
-    
-    return () => clearTimeout(mountTimer);
-  }, []);
+  // isMounted gate removed — content renders immediately from context
 
   // Set document title
   useEffect(() => {
