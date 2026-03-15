@@ -1,49 +1,35 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Plan: Progressive Loading + Step Count Fix
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## 1. Remove Step Count from Progress Stepper
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+**File: `src/components/quote-builder/QuoteProgressStepper.tsx`**
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+Change the mobile stepper text from `Step {currentStepIndex + 1} of {visibleSteps.length}` to just `Step {currentStepIndex + 1}` (line 186). This eliminates the shifting "of N" that changes when conditional steps appear/disappear.
 
-## Merged QR Code + CTA (March 2026)
+**File: `src/components/quote-builder/CurrentStepIndicator.tsx`**
 
-### Context
-The PDF had two overlapping sections — a "Financing Available" box with QR (only for financing-eligible quotes) and a separate "Ready to Proceed?" CTA box. The CTA box caused page-break issues and cash buyers under $5K never got a QR code.
+Same change — line 20: `Step {currentStep}` instead of `Step {currentStep} of {totalSteps}`. Remove the `totalSteps` prop requirement (make it optional or remove references). Keep the progress bar percentage calculation working by keeping `totalSteps` as a prop but not displaying it in text.
 
-### Changes Made
+## 2. Progressive Loading on Summary Page
 
-**1. Universal QR generation (`QuoteSummaryPage.tsx`, `AdminQuoteDetail.tsx`)**
-- QR code is now always generated regardless of financing threshold
-- Financing-eligible quotes: QR points to `/financing-application?...` with prefilled params
-- Sub-$5K quotes: QR points to `mercuryrepower.ca`
-- `financingQrCode` field is always passed to the PDF data
+**File: `src/pages/quote/QuoteSummaryPage.tsx`**
 
-**2. Merged CTA + QR section (`ProfessionalQuotePDF.tsx`)**
-- Replaced separate financing box and CTA box with one unified section
-- QR code on the right, CTA steps on the left ("Scan QR", "Call/text", "Reply to email")
-- Financing terms ($/mo, term, APR) shown inside the same box when eligible
-- Fallback text-only CTA for edge cases where QR generation fails
-- `wrap={false}` prevents page-break splitting
-- Deposit-confirmed quotes skip the CTA entirely (existing behavior preserved)
+The current gate: a 500ms `setTimeout` sets `isMounted = true`, and until then the entire page shows `QuoteSummarySkeleton`. All pricing data is already available synchronously from context — no reason to block rendering.
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+Changes:
+- **Remove the `isMounted` gate** (lines 136-142) and the skeleton conditional (lines 805-807). Show the main content immediately since pricing, motor data, and package info are all in-memory from the quote context.
+- **Lazy-load only the heavy, non-critical sections** behind their own loading states:
+  - The PDF generation button — already has its own `isGeneratingPDF` state; just keep it as-is.
+  - The QR code generation — wrap in a `useState` that resolves after the QR is generated, show a small skeleton placeholder in the QR spot only.
+  - The cinematic reveal already manages its own state and doesn't block content.
+- **Keep the redirect guard** (lines 150-160) but check `state.isLoading` directly without the `isMounted` delay.
+
+This means pricing, motor header, package details, and the sticky summary all render on first paint. Only the QR code spot shows a small placeholder for ~1 second while it generates.
+
+### Files to modify
+1. `src/components/quote-builder/QuoteProgressStepper.tsx` — remove "of N" from mobile stepper
+2. `src/components/quote-builder/CurrentStepIndicator.tsx` — remove "of N" from step text
+3. `src/pages/quote/QuoteSummaryPage.tsx` — remove `isMounted` gate, show content immediately
+
