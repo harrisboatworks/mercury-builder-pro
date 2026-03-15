@@ -455,12 +455,12 @@ export default function QuoteSummaryPage() {
           totalCashPrice: packageTotal,
           savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
         },
-        // Only include financing data if total meets minimum threshold
+        // Always include QR code; only include financing data if total meets minimum threshold
+        financingQrCode: qrCodeDataUrl,
         ...(packageTotal >= FINANCING_MINIMUM ? {
           monthlyPayment,
           financingTerm: termMonths,
           financingRate,
-          financingQrCode: qrCodeDataUrl,
         } : {}),
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
