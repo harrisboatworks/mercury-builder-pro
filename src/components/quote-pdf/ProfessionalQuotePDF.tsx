@@ -243,9 +243,9 @@ const styles = StyleSheet.create({
   // Large savings callout box (right column top)
   savingsCalloutBox: {
     border: `2 solid ${colors.border}`,
-    padding: 8,
+    padding: 6,
     backgroundColor: 'transparent',
-    marginBottom: 8,
+    marginBottom: 4,
     textAlign: 'center',
   },
 
