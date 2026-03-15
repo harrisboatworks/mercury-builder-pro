@@ -975,6 +975,33 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </View>
         )}
 
+        {/* Next Steps CTA Box */}
+        {!quoteData.depositInfo && (
+          <View style={{ marginTop: 6, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
+            <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
+              Ready to Proceed?
+            </Text>
+            <View style={{ flexDirection: 'row', gap: 16 }}>
+              <View style={{ flex: 1 }}>
+                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                  {'\u2460'} Place a $500 deposit to lock in this price
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                  {'\u2461'} Call or text: (905) 342-2153
+                </Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                  {'\u2462'} Reply to this email
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.text }}>
+                  {'\u2463'} Visit mercuryrepower.ca
+                </Text>
+              </View>
+            </View>
+          </View>
+        )}
+
         {/* Terms */}
         <View style={styles.termsSection}>
           <Text style={styles.termsText}>
