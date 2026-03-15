@@ -28,6 +28,22 @@ export class ErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error('ErrorBoundary caught an error:', error, errorInfo);
     this.setState({ errorInfo });
+
+    const msg = error?.message || '';
+    const isChunkError =
+      msg.includes('dynamically imported module') ||
+      msg.includes('Loading chunk') ||
+      msg.includes('Failed to fetch');
+
+    if (isChunkError && !sessionStorage.getItem('chunk-reload-attempted')) {
+      sessionStorage.setItem('chunk-reload-attempted', '1');
+      window.location.reload();
+      return;
+    }
+  }
+
+  componentDidMount() {
+    sessionStorage.removeItem('chunk-reload-attempted');
   }
 
   handleRetry = () => {
