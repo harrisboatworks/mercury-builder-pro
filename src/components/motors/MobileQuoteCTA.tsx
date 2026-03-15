@@ -79,8 +79,8 @@ export function MobileQuoteCTA({ triggerCardCount = 2, onStartQuote }: MobileQuo
               onStartQuote();
             }}
             className="w-full flex items-center justify-between gap-3 px-5 py-3.5 
-              bg-[hsl(var(--cta-navy))] text-white rounded-xl shadow-lg
-              active:scale-[0.97] active:bg-[hsl(var(--cta-navy-active))]
+              bg-[#C8102E] text-white rounded-xl shadow-lg
+              active:scale-[0.97] active:bg-[#A00D24]
               transition-all duration-150 touch-manipulation"
           >
             <div className="text-left">
