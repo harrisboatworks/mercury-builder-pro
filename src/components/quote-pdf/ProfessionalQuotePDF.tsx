@@ -715,6 +715,25 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 </View>
               )}
               
+              {/* Tax Savings from Trade-In */}
+              {quoteData.tradeInInfo 
+                && quoteData.tradeInValue 
+                && quoteData.tradeInValue > 0 
+                && quoteData.tradeInInfo.brand
+                && quoteData.tradeInInfo.year > 0 && (
+                <View style={[styles.pricingRow, { backgroundColor: '#f0fdf4' }]}>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[styles.pricingLabel, { color: colors.discount, fontWeight: 'bold' }]}>Tax Savings from Trade-In</Text>
+                    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
+                      HST not charged on trade-in portion
+                    </Text>
+                  </View>
+                  <Text style={[styles.pricingValue, styles.discountValue, { fontWeight: 'bold' }]}>
+                    You save ${(quoteData.tradeInValue * 0.13).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  </Text>
+                </View>
+              )}
+              
               {/* Subtotal */}
               <View style={styles.pricingRow}>
                 <Text style={styles.pricingLabel}>Subtotal</Text>
