@@ -19,56 +19,23 @@ export function ScrollToTop() {
     previousPathname.current = location.pathname;
     
     console.log('🧭 ScrollToTop triggered by navigation:', oldPathname, '→', location.pathname);
-    // Enhanced modal detection - check multiple sources
+
+    // Force-reset any leaked body styles from modal scroll locks (iOS Safari fix)
+    // Modals set position:fixed/overflow:hidden on body, but cleanup can fail during navigation
+    const body = document.body;
+    if (body.style.position || body.style.overflow || body.style.top || body.style.width) {
+      console.log('🧹 ScrollToTop clearing leaked body styles');
+      body.style.position = '';
+      body.style.overflow = '';
+      body.style.top = '';
+      body.style.width = '';
+    }
+    body.removeAttribute('data-scroll-y');
+    document.documentElement.classList.remove('chat-drawer-open');
+
+    // Check scroll coordination lock (active modals that are still mounted)
     if (isScrollLocked()) {
-      console.log('⏸️ ScrollToTop skipped - scroll locked by:', getScrollLockReason());
-      return;
-    }
-
-    // Only block scroll for TRUE full-screen modal overlays
-    // Check for elements that:
-    // 1. Cover the entire viewport (inset: 0px on all sides)
-    // 2. Are fixed position
-    // 3. Are actually visible
-    // 4. Have high z-index (blocking other content)
-    const allFixed = document.querySelectorAll('.fixed, [style*="position: fixed"]');
-    const blockingModals = Array.from(allFixed).filter(el => {
-      const style = window.getComputedStyle(el);
-      
-      // Must be fixed position and visible
-      if (style.position !== 'fixed') return false;
-      if (style.display === 'none' || style.visibility === 'hidden') return false;
-      if (parseFloat(style.opacity) === 0) return false;
-      
-      // Must cover entire viewport (inset: 0 on all sides)
-      const isFullScreen = 
-        style.top === '0px' && 
-        style.right === '0px' && 
-        style.bottom === '0px' && 
-        style.left === '0px';
-      
-      if (!isFullScreen) return false;
-      
-      // Must have high z-index (modal-level)
-      const zIndex = parseInt(style.zIndex);
-      if (isNaN(zIndex) || zIndex < 40) return false;
-      
-      // Must have significant size (not a 0x0 hidden element)
-      const rect = el.getBoundingClientRect();
-      if (rect.width < 100 || rect.height < 100) return false;
-      
-      return true;
-    });
-
-    if (blockingModals.length > 0) {
-      console.log('⏸️ ScrollToTop skipped - blocking modal detected');
-      return;
-    }
-
-    // Check for body position fixed (modal scroll lock indicator)
-    const bodyStyle = window.getComputedStyle(document.body);
-    if (bodyStyle.position === 'fixed') {
-      console.log('⏸️ ScrollToTop skipped - body scroll locked');
+      console.log('⏸️ ScrollToTop skipped scroll - locked by:', getScrollLockReason());
       return;
     }
 

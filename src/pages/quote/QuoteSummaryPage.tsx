@@ -105,6 +105,9 @@ export default function QuoteSummaryPage() {
     const hasSeenReveal = sessionStorage.getItem('quote-reveal-seen');
     const lastRevealedMotor = sessionStorage.getItem('quote-reveal-motor-id');
     
+    // Skip cinematic for admin quote restores (avoids z-9999 compositing artifacts on iOS)
+    if (state.isAdminQuote) return;
+    
     // Show cinematic if never seen OR different motor selected
     if (!hasSeenReveal || (currentMotorId && lastRevealedMotor !== String(currentMotorId))) {
       cinematicTriggeredRef.current = true;
