@@ -336,10 +336,35 @@ export default function QuoteSummaryPage() {
   useEffect(() => {
     if (import.meta.env.DEV && motor) {
       const effectiveMotorPrice = (motorMSRP || 0) - motorDiscount - basePromoSavings;
+
+      // Build package-aware options to match what buildAccessoryBreakdown produces
+      const augmentedOptions = [...(state.selectedOptions || [])];
+
+      // Propeller allowance (added by breakdown when motor doesn't include prop)
+      if (!includesProp && propAllowance && !state.boatInfo?.hasCompatibleProp) {
+        augmentedOptions.push({ optionId: 'prop-allowance', name: propAllowance.name, price: propAllowance.price, category: 'propeller', assignmentType: 'required' as const, isIncluded: false });
+      }
+
+      // Premium package auto-adds fuel tank if none selected
+      const hasAnyFuelTank = (state.selectedOptions || []).some(
+        o => o.name?.toLowerCase().includes('fuel tank')
+      );
+      if (selectedPackage === 'best' && canAddFuelTank && !hasAnyFuelTank) {
+        augmentedOptions.push({ optionId: 'pkg-fuel-tank', name: '12L External Fuel Tank & Hose', price: 199, category: 'fuel', assignmentType: 'required' as const, isIncluded: false });
+      }
+
+      // Package warranty extension delta
+      let packageWarrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
+      if (selectedPackage === 'better' && completeWarrantyCost > 0 && currentCoverageYears < COMPLETE_TARGET_YEARS) {
+        packageWarrantyPrice += completeWarrantyCost;
+      } else if (selectedPackage === 'best' && premiumWarrantyCost > 0 && currentCoverageYears < PREMIUM_TARGET_YEARS) {
+        packageWarrantyPrice += premiumWarrantyCost;
+      }
+
       const check = calculateRunningTotal(
         { price: effectiveMotorPrice, model: motor.model, hp: hp },
         {
-          selectedOptions: state.selectedOptions,
+          selectedOptions: augmentedOptions,
           controlsOption: state.boatInfo?.controlsOption,
           purchasePath: state.purchasePath,
           installationCost: state.installConfig?.installationCost,
@@ -347,7 +372,7 @@ export default function QuoteSummaryPage() {
           tankCost: state.fuelTankConfig?.tankCost,
           wantsBattery: state.looseMotorBattery?.wantsBattery,
           batteryCost: state.looseMotorBattery?.batteryCost,
-          warrantyPrice: state.warrantyConfig?.warrantyPrice,
+          warrantyPrice: packageWarrantyPrice,
           warrantyTotalYears: state.warrantyConfig?.totalYears,
           tradeInValue: state.tradeInInfo?.estimatedValue,
           adminCustomItems: state.adminCustomItems,
@@ -366,7 +391,8 @@ export default function QuoteSummaryPage() {
       state.looseMotorBattery?.wantsBattery, state.looseMotorBattery?.batteryCost,
       state.warrantyConfig?.warrantyPrice, state.warrantyConfig?.totalYears,
       state.tradeInInfo?.estimatedValue, state.adminCustomItems, state.adminDiscount,
-      state.selectedPromoOption, getRebateForHP]);
+      state.selectedPromoOption, getRebateForHP, includesProp, propAllowance, selectedPackage,
+      canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears]);
 
   const amountToFinance = getFinanceableAmount(packageSpecificTotals.subtotal, 0.13, DEALERPLAN_FEE);
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, promo?.rate || null);
