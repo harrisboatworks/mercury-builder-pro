@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: colors.discount,
-    marginBottom: 10,
+    marginBottom: 4,
   },
 
   savingsCalloutLabel: {
