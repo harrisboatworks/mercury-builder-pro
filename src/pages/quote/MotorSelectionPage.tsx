@@ -416,6 +416,7 @@ if (event.type === 'filter_motors') {
   useEffect(() => {
     if (!loading && motors.length > 0) {
       preloadConfiguratorImages();
+      preloadModalChunk();
     }
   }, [loading, motors.length]);
 
