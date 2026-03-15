@@ -764,7 +764,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             
             {/* Unified CTA + QR Section */}
             {!quoteData.depositInfo && quoteData.financingQrCode && (
-              <View wrap={false} style={{ marginTop: 8, padding: 10, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <View wrap={false} style={{ marginTop: 4, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 {/* Left: CTA Text */}
                 <View style={{ flex: 1, paddingRight: 12 }}>
                   <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 6 }}>
