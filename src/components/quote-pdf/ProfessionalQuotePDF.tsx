@@ -28,7 +28,7 @@ const colors = {
 const styles = StyleSheet.create({
   page: {
     backgroundColor: colors.white,
-    padding: 12,
+    padding: 10,
     fontFamily: 'Helvetica',
     fontSize: 10,
   },
