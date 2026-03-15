@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     color: colors.text,
-    marginBottom: 10,
+    marginBottom: 4,
   },
 
   savingsCalloutMonthly: {
