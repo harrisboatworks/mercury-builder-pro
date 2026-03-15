@@ -49,6 +49,26 @@ export const preloadConfiguratorImages = (): void => {
 };
 
 /**
+ * Preload the MotorDetailsPremiumModal chunk during idle time
+ * Called after motor cards have loaded so the modal opens instantly on click
+ */
+export const preloadModalChunk = (): void => {
+  if (modalPreloaded || typeof window === 'undefined') return;
+  
+  const preload = () => {
+    import('../components/motors/MotorDetailsPremiumModal').catch(() => {
+      modalPreloaded = false;
+    });
+    modalPreloaded = true;
+  };
+  
+  if ('requestIdleCallback' in window) {
+    (window as any).requestIdleCallback(preload, { timeout: 5000 });
+  } else {
+    setTimeout(preload, 3000);
+  }
+};
+/**
  * High-priority preload for when user hovers over a motor card
  * Called on mouseenter/touchstart to ensure instant modal display
  */

@@ -414,8 +414,8 @@ export default function MotorCardPreview({
           hover:-translate-y-1.5 hover:border-gray-200/90
           active:scale-[0.98] active:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)]"
         onClick={handleCardClick}
-        onMouseEnter={preloadConfiguratorImagesHighPriority}
-        onTouchStart={preloadConfiguratorImagesHighPriority}
+        onMouseEnter={() => { preloadConfiguratorImagesHighPriority(); prefetchModal(); }}
+        onTouchStart={() => { preloadConfiguratorImagesHighPriority(); prefetchModal(); }}
       >
         <div className="relative bg-white p-8 overflow-hidden">
               {/* Shimmer loading overlay */}
