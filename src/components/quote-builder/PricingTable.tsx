@@ -97,10 +97,28 @@ export function PricingTable({
               description="Applied by Harris Boat Works"
             />
           )}
+
+          {/* Promotional Savings - shown before Motor Price to match PDF layout */}
+          {pricing.promoValue > 0 && (
+            <LineItemRow
+              label={
+                selectedPromoOption === 'no_payments' 
+                  ? '7-Year Warranty + No Payments'
+                  : selectedPromoOption === 'special_financing'
+                  ? `7-Year Warranty + ${selectedPromoValue || '2.99%'} APR`
+                  : selectedPromoOption === 'cash_rebate'
+                  ? `7-Year Warranty + ${selectedPromoValue} Rebate`
+                  : 'Promotional Savings'
+              }
+              amount={pricing.promoValue}
+              isDiscount
+              description="Mercury GET 7 Promotion"
+            />
+          )}
           
           <LineItemRow
             label="Motor Price"
-            amount={pricing.msrp - pricing.discount - (pricing.adminDiscount || 0)}
+            amount={pricing.msrp - pricing.discount - (pricing.adminDiscount || 0) - pricing.promoValue}
             className="font-medium"
           />
         </div>
