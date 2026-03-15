@@ -1,28 +1,31 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Fix: Exclude Trade-In from "Total Savings"
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## Problem
+`pricing.savings` currently includes trade-in value: `discount + adminDiscount + promoValue + tradeInValue`. The user wants savings to only reflect discounts off MSRP (discount + admin discount + promo), not trade-in credit. Trade-in is a separate credit, not a "saving."
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+The current promo placement in the motor pricing section of PricingTable.tsx is correct and stays as-is.
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+## Change
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+### `src/lib/quote-utils.ts` (line 143)
+
+In `calculateQuotePricing`, change savings calculation from:
+```ts
+const savings = discount + adminDiscount + promoValue + tradeInValue;
+```
+to:
+```ts
+const savings = discount + adminDiscount + promoValue;
+```
+
+**One line change.** This propagates everywhere savings is displayed:
+- PricingTable green badge ("Total savings of $X vs MSRP")
+- MobileSummaryBar ("Save $X" badge, "Total Savings" row)
+- StickySummary ("You save $X")
+- PDF ("YOU SAVE $X", "Total savings of $X vs MSRP")
+- Cinematic intro
+
+Also update the same pattern in `computeTotals` (line 95) for consistency — change `savings = discount + promotionalSavings + tradeInValue` to `savings = discount + promotionalSavings`.
+
