@@ -14,6 +14,7 @@ export const CONFIGURATOR_IMAGE_URLS = [
 ];
 
 let preloaded = false;
+let modalPreloaded = false;
 
 /**
  * Preload configurator images in the background

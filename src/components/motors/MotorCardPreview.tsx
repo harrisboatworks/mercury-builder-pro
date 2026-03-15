@@ -35,6 +35,16 @@ import { useSmartImageScale } from '@/hooks/useSmartImageScale';
 // Lazy load heavy modal component (~120KB)
 const MotorDetailsPremiumModal = lazy(() => import('./MotorDetailsPremiumModal'));
 
+// Prefetch modal chunk on hover/touch so it's cached before click
+let modalPrefetched = false;
+const prefetchModal = () => {
+  if (modalPrefetched) return;
+  modalPrefetched = true;
+  import('./MotorDetailsPremiumModal').catch(() => {
+    modalPrefetched = false; // Allow retry on failure
+  });
+};
+
 export default function MotorCardPreview({ 
   img, 
   title, 
