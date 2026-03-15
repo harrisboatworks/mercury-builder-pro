@@ -342,7 +342,7 @@ export default function QuoteSummaryPage() {
 
       // Propeller allowance (added by breakdown when motor doesn't include prop)
       if (!includesProp && propAllowance && !state.boatInfo?.hasCompatibleProp) {
-        augmentedOptions.push({ name: propAllowance.name, price: propAllowance.price });
+        augmentedOptions.push({ optionId: 'prop-allowance', name: propAllowance.name, price: propAllowance.price, category: 'propeller', assignmentType: 'required' as const, isIncluded: false });
       }
 
       // Premium package auto-adds fuel tank if none selected
