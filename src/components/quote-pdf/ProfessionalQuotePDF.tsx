@@ -347,8 +347,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.tableBg,
     border: `1 solid ${colors.border}`,
     padding: 6,
-    marginTop: 8,
-    marginBottom: 8,
+    marginTop: 4,
+    marginBottom: 4,
   },
 
   motorCodeTitle: {
