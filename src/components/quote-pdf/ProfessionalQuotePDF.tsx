@@ -589,9 +589,6 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             {/* Product Information */}
             <View style={styles.productSection}>
               <Text style={styles.productName}>{quoteData.productName}</Text>
-              <Text style={styles.productDetails}>• Quiet, low-vibration four-stroke performance</Text>
-              <Text style={styles.productDetails}>• Excellent fuel economy & range</Text>
-              <Text style={styles.productDetails}>• Factory-backed service at Harris Boat Works</Text>
             </View>
 
             {/* Motor Code Breakdown Box */}
