@@ -141,8 +141,8 @@ export function PricingTable({
           </div>
         )}
 
-        {/* Your Savings Section - only show if there are savings */}
-        {(tradeInValue > 0 || pricing.promoValue > 0) && (
+        {/* Your Savings Section - only show if there is a trade-in */}
+        {tradeInValue > 0 && (
           <div className="space-y-1 pt-3">
             <div className="flex items-center gap-2 py-1 border-t border-dashed border-emerald-200">
               <span className="text-xs font-medium text-emerald-600 uppercase tracking-wide">
@@ -150,35 +150,13 @@ export function PricingTable({
               </span>
             </div>
             
-            {/* Trade Value */}
-            {tradeInValue > 0 && (
-              <LineItemRow
-                label="Estimated Trade Value"
-                amount={tradeInValue}
-                isDiscount
-                description={formatTradeInDescription(tradeInInfo)}
-                className="pl-2 border-l-2 border-emerald-200"
-              />
-            )}
-            
-            {/* Promotional Savings */}
-            {pricing.promoValue > 0 && (
-              <LineItemRow
-                label={
-                  selectedPromoOption === 'no_payments' 
-                    ? '7-Year Warranty + No Payments'
-                    : selectedPromoOption === 'special_financing'
-                    ? `7-Year Warranty + ${selectedPromoValue || '2.99%'} APR`
-                    : selectedPromoOption === 'cash_rebate'
-                    ? `7-Year Warranty + ${selectedPromoValue} Rebate`
-                    : 'Promotional Savings'
-                }
-                amount={pricing.promoValue}
-                isDiscount
-                description="Mercury GET 7 Promotion"
-                className="pl-2 border-l-2 border-emerald-200"
-              />
-            )}
+            <LineItemRow
+              label="Estimated Trade Value"
+              amount={tradeInValue}
+              isDiscount
+              description={formatTradeInDescription(tradeInInfo)}
+              className="pl-2 border-l-2 border-emerald-200"
+            />
           </div>
         )}
 
