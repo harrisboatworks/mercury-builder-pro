@@ -1,48 +1,28 @@
+## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
+### Context
+Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-# Align Promotion Discount Placement: Summary Page vs PDF
+### Changes Made
 
-## Issue
+**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
+- Appears after user scrolls past 2+ motor cards using IntersectionObserver
+- "Build Your Quote — Tap any motor to configure & get pricing"
+- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
+- Fires `cta_build_quote` gtag event
 
-The $500 rebate appears in different locations:
+**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
+- Shows below the motor grid, above the financing disclaimer
+- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
+- Captures device type and timestamp in metadata
+- Success state with confirmation message
+- Fires `lead_capture` gtag event
 
-- **PDF**: Shows between "Your Discount" and "Motor Price" — rebate is deducted before showing the motor subtotal ($16,820)
-- **Summary page**: Shows in a separate "Your Savings" section below accessories, alongside trade-in — motor price shows as $17,320 (without rebate)
+**3. Motor card data attribute**
+- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
 
-The final total calculates the same either way, but the presentation is inconsistent and the PDF approach is clearer for customers (rebate reduces the motor price directly).
-
-## Fix
-
-### `src/components/quote-builder/PricingTable.tsx`
-
-Move the promotional savings line item from the "Your Savings" section (lines 147-163) up into the motor pricing section (after discount, before Motor Price on line 101-105). Update the Motor Price calculation on line 103 to subtract `pricing.promoValue` as well, so it matches the PDF's `motorSubtotal`.
-
-The "Your Savings" section will then only contain trade-in value. If there's no trade-in, the section won't render.
-
-**Before:**
-```
-MSRP                    $19,680
-Your Discount          -$2,360
-Motor Price            $17,320
-── Accessories ──
-── Your Savings ──
-  Trade Value          -$3,875
-  7-Yr + $500 Rebate     -$500
-Subtotal               $13,295
-```
-
-**After (matches PDF):**
-```
-MSRP                    $19,680
-Your Discount          -$2,360
-7-Yr + $500 Rebate       -$500
-Motor Price            $16,820
-── Accessories ──
-── Your Savings ──
-  Trade Value          -$3,875
-Subtotal               $13,295
-```
-
-### One file changed
-- `src/components/quote-builder/PricingTable.tsx` — move promo line item up, adjust Motor Price subtotal formula
-
+### What to Monitor
+- Motor selection → options conversion rate (baseline: 7.6%)
+- `pricing_updates` email captures per week
+- CTA click rate via `cta_build_quote` event
+- Review after 2–3 weeks with larger sample
