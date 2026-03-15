@@ -782,7 +782,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                   </Text>
                   {quoteData.financingQrCode && (
                     <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 6 }}>
-                      Scan to apply on your phone →
+                      Scan to apply on your phone
                     </Text>
                   )}
                 </View>
