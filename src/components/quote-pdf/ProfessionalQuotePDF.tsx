@@ -765,246 +765,65 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </Text>
             )}
             
-            {/* Financing Available Section */}
-            {quoteData.monthlyPayment && quoteData.financingTerm && (
-              <View style={[styles.financingBox, { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }]}>
-                {/* Left: Text Content */}
-                <View style={{ flex: 1, paddingRight: 8 }}>
-                  <Text style={{ fontSize: 10, color: colors.text, marginBottom: 4, fontWeight: 'bold' }}>
-                    Financing Available
+            {/* Unified CTA + QR Section */}
+            {!quoteData.depositInfo && quoteData.financingQrCode && (
+              <View wrap={false} style={{ marginTop: 8, padding: 10, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                {/* Left: CTA Text */}
+                <View style={{ flex: 1, paddingRight: 12 }}>
+                  <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 6 }}>
+                    Ready to Proceed?
                   </Text>
-                  <Text style={{ fontSize: 14, color: colors.text, marginBottom: 2, fontWeight: 'bold' }}>
-                    From ${quoteData.monthlyPayment}/month
+                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
+                    1. Scan QR to reserve online
                   </Text>
-                  <Text style={{ fontSize: 9, color: colors.lightText, marginBottom: 2 }}>
-                    Over {quoteData.financingTerm} months at {quoteData.financingRate}% APR
+                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
+                    2. Call or text: (905) 342-2153
                   </Text>
-                  <Text style={{ fontSize: 8, color: colors.lightText, fontStyle: 'italic', marginTop: 4 }}>
-                    *Based on approved credit and standard financing terms
+                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
+                    3. Reply to this email
                   </Text>
-                  {quoteData.financingQrCode && (
-                    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 6 }}>
-                      Scan to apply on your phone
-                    </Text>
+                  {quoteData.monthlyPayment && quoteData.financingTerm && (
+                    <View style={{ marginTop: 6, paddingTop: 6, borderTop: `1 solid ${colors.border}` }}>
+                      <Text style={{ fontSize: 10, color: colors.text, fontWeight: 'bold' }}>
+                        From ${quoteData.monthlyPayment}/mo over {quoteData.financingTerm} months at {quoteData.financingRate}% APR
+                      </Text>
+                      <Text style={{ fontSize: 7, color: colors.lightText, fontStyle: 'italic', marginTop: 2 }}>
+                        *Based on approved credit and standard financing terms
+                      </Text>
+                    </View>
                   )}
                 </View>
                 
                 {/* Right: QR Code */}
-                {quoteData.financingQrCode && (
-                  <View style={{ width: 70, height: 70, justifyContent: 'center', alignItems: 'center' }}>
-                    <Image
-                      src={quoteData.financingQrCode}
-                      style={{ width: 70, height: 70 }}
-                    />
-                  </View>
-                )}
-              </View>
-            )}
-          </View>
-
-          {/* Right Column */}
-          <View style={styles.rightColumn}>
-            {/* SAVINGS CALLOUT BOX - TOP */}
-            <View style={styles.savingsCalloutBox}>
-              <Text style={styles.savingsCalloutSavings}>
-                YOU SAVE ${quoteData.totalSavings}
-              </Text>
-              <Text style={styles.savingsCalloutLabel}>Total Price</Text>
-              <Text style={styles.savingsCalloutPrice}>
-                ${quoteData.total}
-              </Text>
-              {quoteData.monthlyPayment && (
-                <Text style={styles.savingsCalloutMonthly}>
-                  or ${quoteData.monthlyPayment}/month*
-                </Text>
-              )}
-            </View>
-
-            {/* CUSTOMER INFO BOX */}
-            <View style={styles.infoBox}>
-              <Text style={styles.summaryTitle}>Customer Information</Text>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Name:</Text>
-                <Text style={styles.infoValue}>{quoteData.customerName}</Text>
-              </View>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Email:</Text>
-                <Text style={styles.infoValue}>{quoteData.customerEmail}</Text>
-              </View>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Phone:</Text>
-                <Text style={styles.infoValue}>{quoteData.customerPhone}</Text>
-              </View>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Quote #:</Text>
-                <Text style={styles.infoValue}>{quoteData.quoteNumber}</Text>
-              </View>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Date:</Text>
-                <Text style={styles.infoValue}>{quoteData.date}</Text>
-              </View>
-              <View style={styles.infoRow}>
-                <Text style={styles.infoLabel}>Valid Until:</Text>
-                <Text style={styles.infoValue}>{validUntilString}</Text>
-              </View>
-            </View>
-
-          {/* COVERAGE BOX */}
-          <View style={styles.summaryBox}>
-            <Text style={styles.coverageTitle}>
-              {quoteData.selectedPackage?.label || 'COMPLETE COVERAGE'}
-            </Text>
-            <Text style={styles.summaryItem}>
-              Coverage: {quoteData.selectedPackage?.coverageYears || 5} years total
-            </Text>
-              <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginTop: 6, marginBottom: 4 }}>
-                What's Included:
-              </Text>
-              <>
-                <Text style={styles.summaryItem}>• {quoteData.selectedPackage?.coverageYears || 5}-year comprehensive warranty coverage</Text>
-                <Text style={styles.summaryItem}>• Mercury motor & all controls covered</Text>
-                <Text style={styles.summaryItem}>• Installation hardware included</Text>
-                <Text style={styles.summaryItem}>• Priority installation service</Text>
-                <Text style={styles.summaryItem}>• Extended coverage ($350 value)</Text>
-              </>
-              
-              {/* MERCHANDISE BONUS - based on package tier */}
-              {quoteData.selectedPackage?.id && quoteData.selectedPackage.id !== 'good' && (
-                <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
-                  <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
-                    PACKAGE BONUS:
-                  </Text>
-                  <Text style={{ fontSize: 9, color: colors.discount, fontWeight: 'bold' }}>
-                    {quoteData.selectedPackage.id === 'better' && '✓ FREE Mercury Hat ($35 value)'}
-                    {quoteData.selectedPackage.id === 'best' && '✓ FREE Mercury Hat + Shirt ($75 value)'}
+                <View style={{ width: 75, alignItems: 'center' }}>
+                  <Image
+                    src={quoteData.financingQrCode}
+                    style={{ width: 70, height: 70 }}
+                  />
+                  <Text style={{ fontSize: 6, color: colors.lightText, marginTop: 2, textAlign: 'center' }}>
+                    Scan to get started
                   </Text>
                 </View>
-              )}
-              
-            {/* YOUR SELECTED BONUS (Choose One promo) */}
-            {quoteData.selectedPromoOption && (
-              <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
-                <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
-                  YOUR SELECTED BONUS:
+              </View>
+            )}
+            
+            {/* Fallback CTA without QR */}
+            {!quoteData.depositInfo && !quoteData.financingQrCode && (
+              <View wrap={false} style={{ marginTop: 6, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
+                <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
+                  Ready to Proceed?
                 </Text>
-                <Text style={{ fontSize: 9, color: colors.discount, fontWeight: 'bold' }}>
-                  {quoteData.selectedPromoOption === 'no_payments' && `✓ 6 Months No Payments${quoteData.selectedPromoValue ? ` (${quoteData.selectedPromoValue})` : ''}`}
-                  {quoteData.selectedPromoOption === 'special_financing' && `✓ Special Financing: ${quoteData.selectedPromoValue || '2.99%'} APR`}
-                  {quoteData.selectedPromoOption === 'cash_rebate' && `✓ Factory Cash Rebate: ${quoteData.selectedPromoValue || ''}`}
+                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                  1. Place a $500 deposit to lock in this price
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                  2. Call or text: (905) 342-2153
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.text }}>
+                  3. Reply to this email
                 </Text>
               </View>
             )}
-              
-            {/* BONUS OFFER (Mercury GET 7 promo warranty) */}
-            {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears >= 7 && (
-              <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
-                <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 2 }}>
-                  MERCURY GET 7 PROMOTION
-                </Text>
-                  <Text style={{ fontSize: 9, color: colors.text }}>
-                    {quoteData.selectedPackage.coverageYears} Years Factory Warranty Included
-                  </Text>
-                  <Text style={{ fontSize: 8, color: colors.lightText }}>
-                    (Limited time offer - 3 base + {quoteData.selectedPackage.coverageYears - 3} bonus)
-                  </Text>
-                </View>
-              )}
-            </View>
-
-          </View>
-        </View>
-
-        {/* Customer Notes */}
-        {quoteData.customerNotes && (
-          <View style={{ marginTop: 4, marginBottom: 4, padding: 8, border: `1 solid ${colors.border}`, backgroundColor: colors.tableBg }}>
-            <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>Notes</Text>
-            <Text style={{ fontSize: 9, color: colors.text, lineHeight: 1.4 }}>{quoteData.customerNotes}</Text>
-          </View>
-        )}
-
-        {/* Deposit Payment Confirmation */}
-        {quoteData.depositInfo && (
-          <View style={{ marginTop: 8, marginBottom: 4, padding: 10, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-              <Text style={{ fontSize: 12, fontWeight: 'bold', color: colors.text }}>
-                ✓ DEPOSIT PAYMENT CONFIRMED
-              </Text>
-              <Text style={{ fontSize: 14, fontWeight: 'bold', color: colors.discount }}>
-                ${quoteData.depositInfo.amount.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
-              </Text>
-            </View>
-            <View style={{ flexDirection: 'row', gap: 20 }}>
-              <View style={{ flex: 1 }}>
-                <View style={styles.infoRow}>
-                  <Text style={[styles.infoLabel, { width: 90 }]}>Reference #:</Text>
-                  <Text style={[styles.infoValue, { fontWeight: 'bold' }]}>{quoteData.depositInfo.referenceNumber}</Text>
-                </View>
-                <View style={styles.infoRow}>
-                  <Text style={[styles.infoLabel, { width: 90 }]}>Payment Date:</Text>
-                  <Text style={styles.infoValue}>{quoteData.depositInfo.paymentDate}</Text>
-                </View>
-                {quoteData.depositInfo.paymentMethod && (
-                  <View style={styles.infoRow}>
-                    <Text style={[styles.infoLabel, { width: 90 }]}>Method:</Text>
-                    <Text style={styles.infoValue}>{quoteData.depositInfo.paymentMethod}</Text>
-                  </View>
-                )}
-                {quoteData.depositInfo.paymentId && (
-                  <View style={styles.infoRow}>
-                    <Text style={[styles.infoLabel, { width: 90 }]}>Transaction:</Text>
-                    <Text style={{ fontSize: 8, color: colors.lightText, flex: 1 }}>{quoteData.depositInfo.paymentId}</Text>
-                  </View>
-                )}
-              </View>
-              <View style={{ flex: 1 }}>
-                <View style={styles.infoRow}>
-                  <Text style={[styles.infoLabel, { width: 90 }]}>Status:</Text>
-                  <Text style={[styles.infoValue, { color: colors.discount, fontWeight: 'bold' }]}>
-                    {quoteData.depositInfo.status || 'Confirmed'}
-                  </Text>
-                </View>
-                <View style={styles.infoRow}>
-                  <Text style={[styles.infoLabel, { width: 90 }]}>Balance Due:</Text>
-                  <Text style={[styles.infoValue, { fontWeight: 'bold' }]}>
-                    ${((quoteData.pricing?.totalCashPrice || parseFloat(quoteData.total.replace(/,/g, ''))) - quoteData.depositInfo.amount).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} CAD
-                  </Text>
-                </View>
-              </View>
-            </View>
-            <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 6, fontStyle: 'italic' }}>
-              Deposit is fully refundable before delivery. Remaining balance due upon pickup or delivery.
-            </Text>
-          </View>
-        )}
-
-        {/* Next Steps CTA Box */}
-        {/* CTA + Terms wrapped together to prevent page break */}
-        <View wrap={false}>
-          {!quoteData.depositInfo && (
-            <View style={{ marginTop: 6, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
-              <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
-                Ready to Proceed?
-              </Text>
-              <View style={{ flexDirection: 'row', gap: 16 }}>
-                <View style={{ flex: 1 }}>
-                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                    1. Place a $500 deposit to lock in this price
-                  </Text>
-                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                    2. Call or text: (905) 342-2153
-                  </Text>
-                </View>
-                <View style={{ flex: 1 }}>
-                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                    3. Reply to this email
-                  </Text>
-                  <Text style={{ fontSize: 9, color: colors.text }}>
-                    4. Visit mercuryrepower.ca
-                  </Text>
-                </View>
-              </View>
-            </View>
-          )}
 
           {/* Terms */}
           <View style={styles.termsSection}>

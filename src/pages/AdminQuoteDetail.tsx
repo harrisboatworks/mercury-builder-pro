@@ -417,8 +417,8 @@ const AdminQuoteDetail = () => {
       // Get selected package info
       const selectedPackage = qd.selectedPackage || null;
       
-      // Generate financing QR code using public SITE_URL.
-      // IMPORTANT: Do NOT rely on saved_quotes here. We pass URL params so public scans always prefill.
+      // Generate QR code — always, for both cash and financing buyers
+      // Points to financing app with prefilled params for all quotes
       const pkgLabel = selectedPackage?.label ? selectedPackage.label.split('•')[0].trim() : '';
       // Add trade-in back so the financing form handles the single subtraction
       const preTradeInTotal = totalPrice + (tradeInValue * 1.13);
@@ -430,10 +430,10 @@ const AdminQuoteDetail = () => {
         tradeInValue: String(tradeInValue || 0),
         fromQr: 'true',
       });
-      const financingUrl = `${SITE_URL}/financing-application?${financingParams.toString()}`;
+      const qrTargetUrl = `${SITE_URL}/financing-application?${financingParams.toString()}`;
       let financingQrCode = '';
       try {
-        financingQrCode = await QRCode.toDataURL(financingUrl, {
+        financingQrCode = await QRCode.toDataURL(qrTargetUrl, {
           width: 200,
           margin: 1,
           color: { dark: '#111827', light: '#ffffff' }
