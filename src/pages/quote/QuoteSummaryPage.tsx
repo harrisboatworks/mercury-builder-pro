@@ -350,7 +350,7 @@ export default function QuoteSummaryPage() {
         o => o.name?.toLowerCase().includes('fuel tank')
       );
       if (selectedPackage === 'best' && canAddFuelTank && !hasAnyFuelTank) {
-        augmentedOptions.push({ name: '12L External Fuel Tank & Hose', price: 199 });
+        augmentedOptions.push({ optionId: 'pkg-fuel-tank', name: '12L External Fuel Tank & Hose', price: 199, category: 'fuel', assignmentType: 'required' as const, isIncluded: false });
       }
 
       // Package warranty extension delta
