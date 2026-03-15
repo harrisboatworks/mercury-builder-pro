@@ -429,23 +429,25 @@ export const UnifiedMobileBar: React.FC = () => {
   }, [currentSavings, triggerHaptic]);
 
   // Calculate monthly payment - only for amounts >= $5,000
+  // Note: centralTotal (non-preview) already includes HST from useQuoteRunningTotal
+  // Preview mode returns raw motor price, so we apply HST only for previews
   const monthlyPayment = useMemo(() => {
     if (!runningTotal) return 0;
-    const priceWithHST = runningTotal * 1.13;
+    const taxIncludedTotal = isPreview ? runningTotal * 1.13 : runningTotal;
     // Don't show financing for purchases under minimum
-    if (priceWithHST < FINANCING_MINIMUM) return 0;
-    const priceWithFee = priceWithHST + DEALERPLAN_FEE;
+    if (taxIncludedTotal < FINANCING_MINIMUM) return 0;
+    const priceWithFee = taxIncludedTotal + DEALERPLAN_FEE;
     const promoRate = promo?.rate || null;
     const { payment } = calculateMonthlyPayment(priceWithFee, promoRate);
     return payment;
-  }, [runningTotal, promo]);
+  }, [runningTotal, promo, isPreview]);
 
   // Financing unavailable when total is valid but below threshold
   const financingUnavailable = useMemo(() => {
     if (!runningTotal) return false;
-    const priceWithHST = runningTotal * 1.13;
-    return priceWithHST < FINANCING_MINIMUM;
-  }, [runningTotal]);
+    const taxIncludedTotal = isPreview ? runningTotal * 1.13 : runningTotal;
+    return taxIncludedTotal < FINANCING_MINIMUM;
+  }, [runningTotal, isPreview]);
 
   // Calculate progress through quote journey
   const quoteProgress = useMemo(() => {
