@@ -755,7 +755,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
             {/* Total Savings Below Table */}
             <Text style={styles.savingsText}>
-              Total savings of ${quoteData.totalSavings} vs MSRP
+              {quoteData.tradeInValue && quoteData.tradeInValue > 0
+                ? `Dealer + promo savings of $${quoteData.totalSavings} vs MSRP`
+                : `Total savings of $${quoteData.totalSavings} vs MSRP`}
             </Text>
             {parseFloat(quoteData.promoSavings || '0') > 0 && (
               <Text style={styles.promoUrgency}>
