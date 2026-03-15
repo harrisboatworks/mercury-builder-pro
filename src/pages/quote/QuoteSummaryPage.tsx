@@ -75,7 +75,7 @@ export default function QuoteSummaryPage() {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
-  const [isMounted, setIsMounted] = useState(false);
+  const isMounted = true; // Render immediately — no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   
   // Deposit processing state - amount is auto-calculated from HP
