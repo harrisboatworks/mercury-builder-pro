@@ -387,10 +387,10 @@ const styles = StyleSheet.create({
   // Footer - absolute positioning to stick to bottom
   footer: {
     position: 'absolute',
-    bottom: 12,
-    left: 12,
-    right: 12,
-    paddingTop: 6,
+    bottom: 10,
+    left: 10,
+    right: 10,
+    paddingTop: 4,
     borderTop: `1 solid ${colors.border}`,
     textAlign: 'center',
   },
