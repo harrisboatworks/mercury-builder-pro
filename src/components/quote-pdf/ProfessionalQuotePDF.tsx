@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   
   // Product section
   productSection: {
-    marginBottom: 8,
+    marginBottom: 4,
   },
   
   productName: {
