@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   pricingRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 3,
+    paddingVertical: 2,
     borderBottom: `0.5 solid ${colors.border}`,
   },
   
