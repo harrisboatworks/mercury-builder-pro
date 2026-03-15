@@ -1,55 +1,49 @@
+## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
+### Context
+Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-# Merge QR Code with CTA — One QR for Both Cash & Financing
+### Changes Made
 
-## Insight
+**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
+- Appears after user scrolls past 2+ motor cards using IntersectionObserver
+- "Build Your Quote — Tap any motor to configure & get pricing"
+- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
+- Fires `cta_build_quote` gtag event
 
-The QR code currently points to the financing application URL and only appears when financing is eligible. But it could just as easily point to the **saved quote page**, which already lets customers choose their path — financing, deposit, or contact. This eliminates the separate "Ready to Proceed?" CTA box and makes the QR useful for **all** buyers, not just financing-eligible ones.
+**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
+- Shows below the motor grid, above the financing disclaimer
+- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
+- Captures device type and timestamp in metadata
+- Success state with confirmation message
+- Fires `lead_capture` gtag event
 
-## Current State
+**3. Motor card data attribute**
+- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
 
-- **QR code**: Only generated when `packageTotal >= FINANCING_MINIMUM`, points to `/financing-application?...`
-- **CTA box**: Separate "Ready to Proceed?" section with 4 numbered steps, only shown when no deposit has been placed
-- **Result**: Two separate sections doing overlapping jobs; cash buyers under $5K get the CTA but no QR; the CTA box causes page-break issues
+## Merged QR Code + CTA (March 2026)
 
-## Plan
+### Context
+The PDF had two overlapping sections — a "Financing Available" box with QR (only for financing-eligible quotes) and a separate "Ready to Proceed?" CTA box. The CTA box caused page-break issues and cash buyers under $5K never got a QR code.
 
-### 1. Generate a universal QR code (`QuoteSummaryPage.tsx` + `AdminQuoteDetail.tsx`)
+### Changes Made
 
-- **Always** generate a QR code (not just when financing-eligible)
-- Point it to the **saved quote URL**: `${SITE_URL}/quote/{quoteId}` (or the share URL if one exists)
-- Fall back to the financing URL if no saved quote ID is available
-- Pass it as a new field `quoteQrCode` alongside existing `financingQrCode` (keep `financingQrCode` for backward compat, or just repurpose it)
+**1. Universal QR generation (`QuoteSummaryPage.tsx`, `AdminQuoteDetail.tsx`)**
+- QR code is now always generated regardless of financing threshold
+- Financing-eligible quotes: QR points to `/financing-application?...` with prefilled params
+- Sub-$5K quotes: QR points to `mercuryrepower.ca`
+- `financingQrCode` field is always passed to the PDF data
 
-### 2. Merge CTA + QR into one compact section (`ProfessionalQuotePDF.tsx`)
+**2. Merged CTA + QR section (`ProfessionalQuotePDF.tsx`)**
+- Replaced separate financing box and CTA box with one unified section
+- QR code on the right, CTA steps on the left ("Scan QR", "Call/text", "Reply to email")
+- Financing terms ($/mo, term, APR) shown inside the same box when eligible
+- Fallback text-only CTA for edge cases where QR generation fails
+- `wrap={false}` prevents page-break splitting
+- Deposit-confirmed quotes skip the CTA entirely (existing behavior preserved)
 
-Replace the current separate "Financing Available" QR area and "Ready to Proceed?" CTA box with a **single unified section** below the pricing table:
-
-```text
-┌─────────────────────────────────────────────────────┐
-│  Ready to Proceed?                        ┌──────┐  │
-│                                           │  QR  │  │
-│  1. Scan QR to reserve online             │ CODE │  │
-│  2. Call or text: (905) 342-2153          └──────┘  │
-│  3. Reply to this email                             │
-│                                                     │
-│  [if financing eligible:]                           │
-│  From $XXX/mo over XX months at X.XX% APR           │
-└─────────────────────────────────────────────────────┘
-```
-
-- QR sits on the right, CTA text on the left — similar to how the financing box already works
-- If financing is eligible, include the monthly payment line inside this same box
-- Remove the old standalone CTA box
-- Keep `wrap={false}` to prevent page breaks
-- This saves vertical space and eliminates the page-break issue entirely
-
-### 3. Files to modify
-
-| File | Change |
-|------|--------|
-| `src/pages/quote/QuoteSummaryPage.tsx` | Generate QR pointing to saved quote URL; always generate it regardless of financing threshold |
-| `src/pages/AdminQuoteDetail.tsx` | Same QR URL change |
-| `src/components/quote-pdf/ProfessionalQuotePDF.tsx` | Merge financing box + CTA into one unified section; accept `quoteQrCode`; remove standalone CTA box |
-| `src/lib/react-pdf-generator.tsx` | Pass through the new QR field in the data interface |
-
+### What to Monitor
+- Motor selection → options conversion rate (baseline: 7.6%)
+- `pricing_updates` email captures per week
+- CTA click rate via `cta_build_quote` event
+- Review after 2–3 weeks with larger sample

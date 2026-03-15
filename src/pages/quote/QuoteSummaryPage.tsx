@@ -380,25 +380,29 @@ export default function QuoteSummaryPage() {
       const packageTax = packageSpecificTotals.subtotal * 0.13;
       const packageTotal = packageSpecificTotals.subtotal + packageTax;
       
-      // Generate QR code
-      // IMPORTANT: Do NOT rely on saved_quotes here. Live currently has 0 rows in saved_quotes,
-      // so QR scans must be able to prefill the financing app from URL params alone.
+      // Generate QR code — always generate for all quotes (cash & financing)
+      // Points to financing app with prefilled params for financing-eligible quotes,
+      // or to the main site for sub-threshold quotes
       const tradeInForQr = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo.estimatedValue || 0) : 0;
-      // Add trade-in back to subtotal so the financing form handles the single subtraction
-      const preTradeInSubtotalForQr = packageSpecificTotals.subtotal + tradeInForQr;
-      const financingParams = new URLSearchParams({
-        motorModel: motorName,
-        motorPrice: getFinanceableAmount(preTradeInSubtotalForQr, 0.13, DEALERPLAN_FEE).toFixed(2),
-        packageName: selectedPackageLabel.split('•')[0].trim(),
-        downPayment: '0',
-        tradeInValue: String(tradeInForQr),
-        fromQr: 'true',
-      });
-      const financingUrl = `${SITE_URL}/financing-application?${financingParams.toString()}`;
+      let qrTargetUrl = `${SITE_URL}`;
+      
+      if (packageTotal >= FINANCING_MINIMUM) {
+        // Add trade-in back to subtotal so the financing form handles the single subtraction
+        const preTradeInSubtotalForQr = packageSpecificTotals.subtotal + tradeInForQr;
+        const financingParams = new URLSearchParams({
+          motorModel: motorName,
+          motorPrice: getFinanceableAmount(preTradeInSubtotalForQr, 0.13, DEALERPLAN_FEE).toFixed(2),
+          packageName: selectedPackageLabel.split('•')[0].trim(),
+          downPayment: '0',
+          tradeInValue: String(tradeInForQr),
+          fromQr: 'true',
+        });
+        qrTargetUrl = `${SITE_URL}/financing-application?${financingParams.toString()}`;
+      }
       
       let qrCodeDataUrl = '';
       try {
-        qrCodeDataUrl = await QRCode.toDataURL(financingUrl, {
+        qrCodeDataUrl = await QRCode.toDataURL(qrTargetUrl, {
           width: 200,
           margin: 1,
           color: { dark: '#111827', light: '#ffffff' }
@@ -451,12 +455,12 @@ export default function QuoteSummaryPage() {
           totalCashPrice: packageTotal,
           savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
         },
-        // Only include financing data if total meets minimum threshold
+        // Always include QR code; only include financing data if total meets minimum threshold
+        financingQrCode: qrCodeDataUrl,
         ...(packageTotal >= FINANCING_MINIMUM ? {
           monthlyPayment,
           financingTerm: termMonths,
           financingRate,
-          financingQrCode: qrCodeDataUrl,
         } : {}),
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),

@@ -765,39 +765,63 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </Text>
             )}
             
-            {/* Financing Available Section */}
-            {quoteData.monthlyPayment && quoteData.financingTerm && (
-              <View style={[styles.financingBox, { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }]}>
-                {/* Left: Text Content */}
-                <View style={{ flex: 1, paddingRight: 8 }}>
-                  <Text style={{ fontSize: 10, color: colors.text, marginBottom: 4, fontWeight: 'bold' }}>
-                    Financing Available
+            {/* Unified CTA + QR Section */}
+            {!quoteData.depositInfo && quoteData.financingQrCode && (
+              <View wrap={false} style={{ marginTop: 8, padding: 10, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                {/* Left: CTA Text */}
+                <View style={{ flex: 1, paddingRight: 12 }}>
+                  <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 6 }}>
+                    Ready to Proceed?
                   </Text>
-                  <Text style={{ fontSize: 14, color: colors.text, marginBottom: 2, fontWeight: 'bold' }}>
-                    From ${quoteData.monthlyPayment}/month
+                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
+                    1. Scan QR to reserve online
                   </Text>
-                  <Text style={{ fontSize: 9, color: colors.lightText, marginBottom: 2 }}>
-                    Over {quoteData.financingTerm} months at {quoteData.financingRate}% APR
+                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
+                    2. Call or text: (905) 342-2153
                   </Text>
-                  <Text style={{ fontSize: 8, color: colors.lightText, fontStyle: 'italic', marginTop: 4 }}>
-                    *Based on approved credit and standard financing terms
+                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
+                    3. Reply to this email
                   </Text>
-                  {quoteData.financingQrCode && (
-                    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 6 }}>
-                      Scan to apply on your phone
-                    </Text>
+                  {quoteData.monthlyPayment && quoteData.financingTerm && (
+                    <View style={{ marginTop: 6, paddingTop: 6, borderTop: `1 solid ${colors.border}` }}>
+                      <Text style={{ fontSize: 10, color: colors.text, fontWeight: 'bold' }}>
+                        From ${quoteData.monthlyPayment}/mo over {quoteData.financingTerm} months at {quoteData.financingRate}% APR
+                      </Text>
+                      <Text style={{ fontSize: 7, color: colors.lightText, fontStyle: 'italic', marginTop: 2 }}>
+                        *Based on approved credit and standard financing terms
+                      </Text>
+                    </View>
                   )}
                 </View>
                 
                 {/* Right: QR Code */}
-                {quoteData.financingQrCode && (
-                  <View style={{ width: 70, height: 70, justifyContent: 'center', alignItems: 'center' }}>
-                    <Image
-                      src={quoteData.financingQrCode}
-                      style={{ width: 70, height: 70 }}
-                    />
-                  </View>
-                )}
+                <View style={{ width: 75, alignItems: 'center' }}>
+                  <Image
+                    src={quoteData.financingQrCode}
+                    style={{ width: 70, height: 70 }}
+                  />
+                  <Text style={{ fontSize: 6, color: colors.lightText, marginTop: 2, textAlign: 'center' }}>
+                    Scan to get started
+                  </Text>
+                </View>
+              </View>
+            )}
+            
+            {/* Fallback CTA without QR */}
+            {!quoteData.depositInfo && !quoteData.financingQrCode && (
+              <View wrap={false} style={{ marginTop: 6, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
+                <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
+                  Ready to Proceed?
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                  1. Place a $500 deposit to lock in this price
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                  2. Call or text: (905) 342-2153
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.text }}>
+                  3. Reply to this email
+                </Text>
               </View>
             )}
           </View>
@@ -977,35 +1001,8 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </View>
         )}
 
-        {/* Next Steps CTA Box */}
-        {/* CTA + Terms wrapped together to prevent page break */}
+        {/* Terms — wrapped with CTA to prevent page break */}
         <View wrap={false}>
-          {!quoteData.depositInfo && (
-            <View style={{ marginTop: 6, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
-              <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
-                Ready to Proceed?
-              </Text>
-              <View style={{ flexDirection: 'row', gap: 16 }}>
-                <View style={{ flex: 1 }}>
-                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                    1. Place a $500 deposit to lock in this price
-                  </Text>
-                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                    2. Call or text: (905) 342-2153
-                  </Text>
-                </View>
-                <View style={{ flex: 1 }}>
-                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                    3. Reply to this email
-                  </Text>
-                  <Text style={{ fontSize: 9, color: colors.text }}>
-                    4. Visit mercuryrepower.ca
-                  </Text>
-                </View>
-              </View>
-            </View>
-          )}
-
           {/* Terms */}
           <View style={styles.termsSection}>
             <Text style={styles.termsText}>
