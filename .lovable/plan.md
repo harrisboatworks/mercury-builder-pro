@@ -21,6 +21,27 @@ Week 1 data (121 sessions) showed a 92% drop between motor selection (92 session
 **3. Motor card data attribute**
 - Added `data-motor-card` to each motor card wrapper for CTA trigger observation
 
+## Merged QR Code + CTA (March 2026)
+
+### Context
+The PDF had two overlapping sections — a "Financing Available" box with QR (only for financing-eligible quotes) and a separate "Ready to Proceed?" CTA box. The CTA box caused page-break issues and cash buyers under $5K never got a QR code.
+
+### Changes Made
+
+**1. Universal QR generation (`QuoteSummaryPage.tsx`, `AdminQuoteDetail.tsx`)**
+- QR code is now always generated regardless of financing threshold
+- Financing-eligible quotes: QR points to `/financing-application?...` with prefilled params
+- Sub-$5K quotes: QR points to `mercuryrepower.ca`
+- `financingQrCode` field is always passed to the PDF data
+
+**2. Merged CTA + QR section (`ProfessionalQuotePDF.tsx`)**
+- Replaced separate financing box and CTA box with one unified section
+- QR code on the right, CTA steps on the left ("Scan QR", "Call/text", "Reply to email")
+- Financing terms ($/mo, term, APR) shown inside the same box when eligible
+- Fallback text-only CTA for edge cases where QR generation fails
+- `wrap={false}` prevents page-break splitting
+- Deposit-confirmed quotes skip the CTA entirely (existing behavior preserved)
+
 ### What to Monitor
 - Motor selection → options conversion rate (baseline: 7.6%)
 - `pricing_updates` email captures per week
