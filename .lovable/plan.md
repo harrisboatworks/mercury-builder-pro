@@ -1,49 +1,39 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Fit PDF Quote on One Page
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## Problem
+The PDF currently spills onto page 2 when a quote includes trade-in, accessories, and the CTA+QR box. The left column is too tall — it contains product info, motor code breakdown, a long pricing table, savings text, promo urgency, and the CTA box.
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+## Strategy: Tighten spacing + reduce redundancy
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+The PDF uses LETTER size (612×792pt) with 12pt padding = ~768pt usable height. The content just barely overflows. A combination of small reductions will reclaim the ~40-60pt needed.
 
-## Merged QR Code + CTA (March 2026)
+### Changes (all in `ProfessionalQuotePDF.tsx`)
 
-### Context
-The PDF had two overlapping sections — a "Financing Available" box with QR (only for financing-eligible quotes) and a separate "Ready to Proceed?" CTA box. The CTA box caused page-break issues and cash buyers under $5K never got a QR code.
+| Area | Current | Proposed | Savings (est.) |
+|------|---------|----------|----------------|
+| Page padding | 12pt | 10pt | ~4pt |
+| Header `marginBottom` | 10pt | 6pt | ~4pt |
+| Product bullet points | 3 lines of generic text | Remove — motor code box already describes the motor | ~30pt |
+| Motor code box `marginBottom` | 8pt | 4pt | ~4pt |
+| Pricing table internal `paddingVertical` on rows | 3pt | 2pt | ~10-15pt across all rows |
+| `sectionTitle` font size | 14pt | 12pt, `marginBottom` 6→4 | ~4pt |
+| Savings text + promo urgency `marginTop` | 8pt gap before CTA | reduce to 4pt | ~4pt |
+| CTA box padding | 10pt | 8pt | ~4pt |
+| Right column: savingsCalloutBox padding/margins | Various generous | Reduce `marginBottom` 8→4, padding 8→6 | ~8pt |
+| Right column: coverage "What's Included" | 5 bullet items | Trim to 3 key items | ~12pt |
+| Terms section `marginTop`/`marginBottom` | 4/20pt | 2/4pt | ~18pt |
+| Footer absolute bottom | 12pt | 10pt | ~2pt |
 
-### Changes Made
+**Total estimated savings: ~100pt** — comfortably fits one page even with trade-in + accessories + CTA + QR.
 
-**1. Universal QR generation (`QuoteSummaryPage.tsx`, `AdminQuoteDetail.tsx`)**
-- QR code is now always generated regardless of financing threshold
-- Financing-eligible quotes: QR points to `/financing-application?...` with prefilled params
-- Sub-$5K quotes: QR points to `mercuryrepower.ca`
-- `financingQrCode` field is always passed to the PDF data
+### Additional: Remove the 3 generic product bullet points
+Lines 592-594 ("Quiet, low-vibration...", "Excellent fuel economy...", "Factory-backed service...") are marketing filler that takes ~30pt. The motor code breakdown box immediately below already provides product-specific info. Remove these bullets.
 
-**2. Merged CTA + QR section (`ProfessionalQuotePDF.tsx`)**
-- Replaced separate financing box and CTA box with one unified section
-- QR code on the right, CTA steps on the left ("Scan QR", "Call/text", "Reply to email")
-- Financing terms ($/mo, term, APR) shown inside the same box when eligible
-- Fallback text-only CTA for edge cases where QR generation fails
-- `wrap={false}` prevents page-break splitting
-- Deposit-confirmed quotes skip the CTA entirely (existing behavior preserved)
+### Keep `wrap={false}` on CTA
+The CTA box already has `wrap={false}`. With the space savings above, it won't need to wrap to page 2.
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+### Files
+- `src/components/quote-pdf/ProfessionalQuotePDF.tsx` — all changes in this single file
+
