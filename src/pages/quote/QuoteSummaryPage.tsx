@@ -132,14 +132,7 @@ export default function QuoteSummaryPage() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Ensure minimum mount time
-  useEffect(() => {
-    const mountTimer = setTimeout(() => {
-      setIsMounted(true);
-    }, 500);
-    
-    return () => clearTimeout(mountTimer);
-  }, []);
+  // isMounted gate removed — content renders immediately from context
 
   // Set document title
   useEffect(() => {
