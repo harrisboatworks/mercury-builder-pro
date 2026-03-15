@@ -132,15 +132,25 @@ export function PricingTable({
               </span>
             </div>
             
-            {/* Trade Value */}
+             {/* Trade Value */}
             {tradeInValue > 0 && (
-              <LineItemRow
-                label="Estimated Trade Value"
-                amount={tradeInValue}
-                isDiscount
-                description={formatTradeInDescription(tradeInInfo)}
-                className="pl-2 border-l-2 border-emerald-200"
-              />
+              <>
+                <LineItemRow
+                  label="Estimated Trade Value"
+                  amount={tradeInValue}
+                  isDiscount
+                  description={formatTradeInDescription(tradeInInfo)}
+                  className="pl-2 border-l-2 border-emerald-200"
+                />
+                <div className="pl-2 border-l-2 border-emerald-200 py-1">
+                  <div className="text-xs text-emerald-600 font-medium">
+                    💡 Tax Savings from Trade-In: ${Math.round(tradeInValue * 0.13).toLocaleString()}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    HST not charged on trade-in portion
+                  </div>
+                </div>
+              </>
             )}
             
             {/* Promotional Savings */}
