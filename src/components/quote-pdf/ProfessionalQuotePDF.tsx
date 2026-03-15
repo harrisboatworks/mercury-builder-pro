@@ -882,10 +882,8 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 What's Included:
               </Text>
               <>
-                <Text style={styles.summaryItem}>• {quoteData.selectedPackage?.coverageYears || 5}-year comprehensive warranty coverage</Text>
-                <Text style={styles.summaryItem}>• Mercury motor & all controls covered</Text>
-                <Text style={styles.summaryItem}>• Installation hardware included</Text>
-                <Text style={styles.summaryItem}>• Priority installation service</Text>
+                <Text style={styles.summaryItem}>• {quoteData.selectedPackage?.coverageYears || 5}-year comprehensive warranty</Text>
+                <Text style={styles.summaryItem}>• Motor, controls & installation included</Text>
                 <Text style={styles.summaryItem}>• Extended coverage ($350 value)</Text>
               </>
               
