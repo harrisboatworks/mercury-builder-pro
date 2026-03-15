@@ -824,7 +824,11 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 </Text>
               </View>
             )}
+          </View>
+        </View>
 
+        {/* Terms — wrapped with CTA to prevent page break */}
+        <View wrap={false}>
           {/* Terms */}
           <View style={styles.termsSection}>
             <Text style={styles.termsText}>
