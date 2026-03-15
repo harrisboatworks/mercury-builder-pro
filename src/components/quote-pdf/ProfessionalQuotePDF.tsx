@@ -28,7 +28,7 @@ const colors = {
 const styles = StyleSheet.create({
   page: {
     backgroundColor: colors.white,
-    padding: 12,
+    padding: 10,
     fontFamily: 'Helvetica',
     fontSize: 10,
   },
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 10,
-    paddingBottom: 10,
+    marginBottom: 6,
+    paddingBottom: 6,
     borderBottom: `1.5 solid ${colors.border}`,
   },
   
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   
   // Product section
   productSection: {
-    marginBottom: 8,
+    marginBottom: 4,
   },
   
   productName: {
@@ -134,10 +134,10 @@ const styles = StyleSheet.create({
   },
   
   sectionTitle: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: 'bold',
     color: colors.text,
-    marginBottom: 6,
+    marginBottom: 4,
   },
   
   pricingHeader: {
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   pricingRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 3,
+    paddingVertical: 2,
     borderBottom: `0.5 solid ${colors.border}`,
   },
   
@@ -243,9 +243,9 @@ const styles = StyleSheet.create({
   // Large savings callout box (right column top)
   savingsCalloutBox: {
     border: `2 solid ${colors.border}`,
-    padding: 8,
+    padding: 6,
     backgroundColor: 'transparent',
-    marginBottom: 8,
+    marginBottom: 4,
     textAlign: 'center',
   },
 
@@ -253,7 +253,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: colors.discount,
-    marginBottom: 10,
+    marginBottom: 4,
   },
 
   savingsCalloutLabel: {
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     color: colors.text,
-    marginBottom: 10,
+    marginBottom: 4,
   },
 
   savingsCalloutMonthly: {
@@ -347,8 +347,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.tableBg,
     border: `1 solid ${colors.border}`,
     padding: 6,
-    marginTop: 8,
-    marginBottom: 8,
+    marginTop: 4,
+    marginBottom: 4,
   },
 
   motorCodeTitle: {
@@ -372,9 +372,9 @@ const styles = StyleSheet.create({
   
   // Terms section
   termsSection: {
-    marginTop: 4,
-    marginBottom: 20,
-    paddingTop: 6,
+    marginTop: 2,
+    marginBottom: 4,
+    paddingTop: 4,
     borderTop: `1 solid ${colors.border}`,
   },
   
@@ -387,10 +387,10 @@ const styles = StyleSheet.create({
   // Footer - absolute positioning to stick to bottom
   footer: {
     position: 'absolute',
-    bottom: 12,
-    left: 12,
-    right: 12,
-    paddingTop: 6,
+    bottom: 10,
+    left: 10,
+    right: 10,
+    paddingTop: 4,
     borderTop: `1 solid ${colors.border}`,
     textAlign: 'center',
   },
@@ -589,9 +589,6 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             {/* Product Information */}
             <View style={styles.productSection}>
               <Text style={styles.productName}>{quoteData.productName}</Text>
-              <Text style={styles.productDetails}>• Quiet, low-vibration four-stroke performance</Text>
-              <Text style={styles.productDetails}>• Excellent fuel economy & range</Text>
-              <Text style={styles.productDetails}>• Factory-backed service at Harris Boat Works</Text>
             </View>
 
             {/* Motor Code Breakdown Box */}
@@ -767,7 +764,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             
             {/* Unified CTA + QR Section */}
             {!quoteData.depositInfo && quoteData.financingQrCode && (
-              <View wrap={false} style={{ marginTop: 8, padding: 10, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <View wrap={false} style={{ marginTop: 4, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                 {/* Left: CTA Text */}
                 <View style={{ flex: 1, paddingRight: 12 }}>
                   <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 6 }}>
@@ -885,10 +882,8 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 What's Included:
               </Text>
               <>
-                <Text style={styles.summaryItem}>• {quoteData.selectedPackage?.coverageYears || 5}-year comprehensive warranty coverage</Text>
-                <Text style={styles.summaryItem}>• Mercury motor & all controls covered</Text>
-                <Text style={styles.summaryItem}>• Installation hardware included</Text>
-                <Text style={styles.summaryItem}>• Priority installation service</Text>
+                <Text style={styles.summaryItem}>• {quoteData.selectedPackage?.coverageYears || 5}-year comprehensive warranty</Text>
+                <Text style={styles.summaryItem}>• Motor, controls & installation included</Text>
                 <Text style={styles.summaryItem}>• Extended coverage ($350 value)</Text>
               </>
               
