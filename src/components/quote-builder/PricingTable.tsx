@@ -97,28 +97,10 @@ export function PricingTable({
               description="Applied by Harris Boat Works"
             />
           )}
-
-          {/* Promotional Savings - shown before Motor Price to match PDF layout */}
-          {pricing.promoValue > 0 && (
-            <LineItemRow
-              label={
-                selectedPromoOption === 'no_payments' 
-                  ? '7-Year Warranty + No Payments'
-                  : selectedPromoOption === 'special_financing'
-                  ? `7-Year Warranty + ${selectedPromoValue || '2.99%'} APR`
-                  : selectedPromoOption === 'cash_rebate'
-                  ? `7-Year Warranty + ${selectedPromoValue} Rebate`
-                  : 'Promotional Savings'
-              }
-              amount={pricing.promoValue}
-              isDiscount
-              description="Mercury GET 7 Promotion"
-            />
-          )}
           
           <LineItemRow
             label="Motor Price"
-            amount={pricing.msrp - pricing.discount - (pricing.adminDiscount || 0) - pricing.promoValue}
+            amount={pricing.msrp - pricing.discount - (pricing.adminDiscount || 0)}
             className="font-medium"
           />
         </div>
@@ -141,22 +123,44 @@ export function PricingTable({
           </div>
         )}
 
-        {/* Your Savings Section - only show if there is a trade-in */}
-        {tradeInValue > 0 && (
+        {/* Your Savings Section - only show if there are savings */}
+        {(tradeInValue > 0 || pricing.promoValue > 0) && (
           <div className="space-y-1 pt-3">
             <div className="flex items-center gap-2 py-1 border-t border-dashed border-emerald-200">
               <span className="text-xs font-medium text-emerald-600 uppercase tracking-wide">
-                Trade-In Credit
+                Your Savings
               </span>
             </div>
             
-            <LineItemRow
-              label="Estimated Trade Value"
-              amount={tradeInValue}
-              isDiscount
-              description={formatTradeInDescription(tradeInInfo)}
-              className="pl-2 border-l-2 border-emerald-200"
-            />
+            {/* Trade Value */}
+            {tradeInValue > 0 && (
+              <LineItemRow
+                label="Estimated Trade Value"
+                amount={tradeInValue}
+                isDiscount
+                description={formatTradeInDescription(tradeInInfo)}
+                className="pl-2 border-l-2 border-emerald-200"
+              />
+            )}
+            
+            {/* Promotional Savings */}
+            {pricing.promoValue > 0 && (
+              <LineItemRow
+                label={
+                  selectedPromoOption === 'no_payments' 
+                    ? '7-Year Warranty + No Payments'
+                    : selectedPromoOption === 'special_financing'
+                    ? `7-Year Warranty + ${selectedPromoValue || '2.99%'} APR`
+                    : selectedPromoOption === 'cash_rebate'
+                    ? `7-Year Warranty + ${selectedPromoValue} Rebate`
+                    : 'Promotional Savings'
+                }
+                amount={pricing.promoValue}
+                isDiscount
+                description="Mercury GET 7 Promotion"
+                className="pl-2 border-l-2 border-emerald-200"
+              />
+            )}
           </div>
         )}
 

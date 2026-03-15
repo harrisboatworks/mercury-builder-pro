@@ -92,7 +92,7 @@ export function computeTotals(data: {
   const subtotal = motorPrice + accessoryTotal - tradeInValue;
   const tax = subtotal * taxRate;
   const total = subtotal + tax;
-  const savings = discount + promotionalSavings;
+  const savings = discount + promotionalSavings + tradeInValue;
 
   return {
     msrp,
@@ -140,7 +140,7 @@ export function calculateQuotePricing(data: {
   const subtotal = (msrp - discount - adminDiscount) + accessoryTotal + warrantyPrice + financingFee - tradeInValue - promoValue;
   const tax = subtotal * taxRate;
   const total = subtotal + tax;
-  const savings = discount + adminDiscount + promoValue;
+  const savings = discount + adminDiscount + promoValue + tradeInValue;
   
   return {
     msrp,
