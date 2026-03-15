@@ -1,49 +1,34 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Bug: Double HST in UnifiedMobileBar Monthly Payment
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## Problem Found
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+The **UnifiedMobileBar** has a double-taxation bug on its monthly payment calculation.
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+`useQuoteRunningTotal` returns `total` which **already includes HST** (`subtotal * 1.13`). But then line 434 multiplies it by 1.13 again:
 
-## Merged QR Code + CTA (March 2026)
+```text
+centralTotal = subtotal + HST = subtotal × 1.13
+runningTotal = centralTotal (when not preview)
+priceWithHST = runningTotal × 1.13  ← DOUBLE TAX
+priceWithFee = priceWithHST + $299
+monthlyPayment = calculateMonthlyPayment(priceWithFee)
+```
 
-### Context
-The PDF had two overlapping sections — a "Financing Available" box with QR (only for financing-eligible quotes) and a separate "Ready to Proceed?" CTA box. The CTA box caused page-break issues and cash buyers under $5K never got a QR code.
+This inflates the monthly payment shown on the mobile bar by ~13%. The **MobileQuoteDrawer** is correct — it uses `total` directly without re-applying HST. That's why the two prices don't match.
 
-### Changes Made
+The same double-tax bug also affects the `financingUnavailable` check on line 446.
 
-**1. Universal QR generation (`QuoteSummaryPage.tsx`, `AdminQuoteDetail.tsx`)**
-- QR code is now always generated regardless of financing threshold
-- Financing-eligible quotes: QR points to `/financing-application?...` with prefilled params
-- Sub-$5K quotes: QR points to `mercuryrepower.ca`
-- `financingQrCode` field is always passed to the PDF data
+## Fix
 
-**2. Merged CTA + QR section (`ProfessionalQuotePDF.tsx`)**
-- Replaced separate financing box and CTA box with one unified section
-- QR code on the right, CTA steps on the left ("Scan QR", "Call/text", "Reply to email")
-- Financing terms ($/mo, term, APR) shown inside the same box when eligible
-- Fallback text-only CTA for edge cases where QR generation fails
-- `wrap={false}` prevents page-break splitting
-- Deposit-confirmed quotes skip the CTA entirely (existing behavior preserved)
+**`src/components/quote-builder/UnifiedMobileBar.tsx`** — two changes:
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+1. **Monthly payment** (lines 432-441): Use `runningTotal` directly as the tax-included total. For preview motors (raw price, no tax), keep the `* 1.13` path. Restructure:
+   - When `isPreview`: apply HST (`motorPrice * 1.13`) then add fee, then calculate payment
+   - Otherwise: `runningTotal` is already tax-included → just add DEALERPLAN_FEE and calculate
+
+2. **Financing unavailable check** (lines 444-448): Same fix — `runningTotal` already includes HST when not preview, so compare directly against `FINANCING_MINIMUM`.
+
+Both paths must align with the drawer's logic: `total + DEALERPLAN_FEE` → `calculateMonthlyPayment(...)`.
+
