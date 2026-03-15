@@ -1,49 +1,31 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Fix Pricing Drift Between Running Total and Summary Page
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## Root Cause
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+The dev-mode cross-check compares `calculateRunningTotal` (which models the step-by-step quote builder state) against `packageSpecificTotals` (which uses `buildAccessoryBreakdown` for the selected package). They diverge because `buildAccessoryBreakdown` includes items the running total engine doesn't know about:
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+1. **Propeller allowance** (~$200-400) — added when motor doesn't include a prop and customer hasn't opted out
+2. **Package warranty extension costs** — "better" and "best" packages add warranty costs beyond what's in `state.warrantyConfig`
+3. **Premium fuel tank** ($199) — "best" package auto-adds a fuel tank if none selected
 
-## Merged QR Code + CTA (March 2026)
+These are legitimate package-specific costs that only exist on the summary page. The running total engine is correct for mid-flow pricing; the summary page is correct for final pricing.
 
-### Context
-The PDF had two overlapping sections — a "Financing Available" box with QR (only for financing-eligible quotes) and a separate "Ready to Proceed?" CTA box. The CTA box caused page-break issues and cash buyers under $5K never got a QR code.
+## Fix Strategy
 
-### Changes Made
+**Update the cross-check** (not the running total engine) to include package-specific additions so the comparison is apples-to-apples. The running total engine should remain the source of truth for the mobile bar/drawer during the flow.
 
-**1. Universal QR generation (`QuoteSummaryPage.tsx`, `AdminQuoteDetail.tsx`)**
-- QR code is now always generated regardless of financing threshold
-- Financing-eligible quotes: QR points to `/financing-application?...` with prefilled params
-- Sub-$5K quotes: QR points to `mercuryrepower.ca`
-- `financingQrCode` field is always passed to the PDF data
+### Changes in `QuoteSummaryPage.tsx` (lines 336-362)
 
-**2. Merged CTA + QR section (`ProfessionalQuotePDF.tsx`)**
-- Replaced separate financing box and CTA box with one unified section
-- QR code on the right, CTA steps on the left ("Scan QR", "Call/text", "Reply to email")
-- Financing terms ($/mo, term, APR) shown inside the same box when eligible
-- Fallback text-only CTA for edge cases where QR generation fails
-- `wrap={false}` prevents page-break splitting
-- Deposit-confirmed quotes skip the CTA entirely (existing behavior preserved)
+Update the dev cross-check to:
+1. Add propeller cost to the running total check's `selectedOptions` if the motor doesn't include a prop and the customer hasn't opted out
+2. Add the package warranty delta (completeWarrantyCost or premiumWarrantyCost) to the `warrantyPrice` passed to the check
+3. Add the premium fuel tank cost ($199) for "best" package if no fuel tank already selected
+4. Essentially: pass the same line items that `buildAccessoryBreakdown` produces into the cross-check so both sides compute from equivalent inputs
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+This keeps the running total engine clean and package-unaware (correct for mid-flow), while making the dev diagnostic actually compare equivalent data sets.
+
+### Files
+- `src/pages/quote/QuoteSummaryPage.tsx` — update the DEV cross-check effect (~lines 336-369)
+
