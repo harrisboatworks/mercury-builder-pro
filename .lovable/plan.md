@@ -1,49 +1,35 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Speed Up Motor Detail Modal Loading
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## The Problem
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+When a user clicks a motor card on the selection page, the `MotorDetailsPremiumModal` (1,051 lines) is **lazy-loaded on click**. This means the entire component chunk — plus its heavy imports (`SpecSheetPDFDownload`, `MotorDocumentsSection`, `MotorVideosSection`, `FinanceCalculatorDrawer`, `MotorImageGallery`, `framer-motion`, Supabase queries) — must be fetched and parsed before anything appears. The `ModalSkeleton` fallback renders during this time, but on slower connections or cold caches this creates a noticeable delay.
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+## Strategy: Prefetch on Hover/Touch + Preload on Page Idle
 
-## Merged QR Code + CTA (March 2026)
+Instead of waiting for a click, we'll **trigger the chunk download earlier** so it's already cached when the user clicks.
 
-### Context
-The PDF had two overlapping sections — a "Financing Available" box with QR (only for financing-eligible quotes) and a separate "Ready to Proceed?" CTA box. The CTA box caused page-break issues and cash buyers under $5K never got a QR code.
+### Changes
 
-### Changes Made
+**1. `src/components/motors/MotorCardPreview.tsx`**
+- Add a **prefetch on hover/touch** — when `onMouseEnter` or `onTouchStart` fires, trigger the dynamic import so the chunk starts downloading. The existing `preloadConfiguratorImagesHighPriority` call already runs here, so we piggyback on it.
+- Add a module-level prefetch function that calls `import('./MotorDetailsPremiumModal')` (returns are discarded — we just want the chunk in the browser cache).
 
-**1. Universal QR generation (`QuoteSummaryPage.tsx`, `AdminQuoteDetail.tsx`)**
-- QR code is now always generated regardless of financing threshold
-- Financing-eligible quotes: QR points to `/financing-application?...` with prefilled params
-- Sub-$5K quotes: QR points to `mercuryrepower.ca`
-- `financingQrCode` field is always passed to the PDF data
+**2. `src/lib/configurator-preload.ts`** (or new `modal-preload.ts`)
+- Add the modal chunk to the **idle-time preloader**. After the motor cards have loaded and the page is idle, use `requestIdleCallback` to trigger `import('./MotorDetailsPremiumModal')`. This means for most users the chunk is already cached before they even hover.
 
-**2. Merged CTA + QR section (`ProfessionalQuotePDF.tsx`)**
-- Replaced separate financing box and CTA box with one unified section
-- QR code on the right, CTA steps on the left ("Scan QR", "Call/text", "Reply to email")
-- Financing terms ($/mo, term, APR) shown inside the same box when eligible
-- Fallback text-only CTA for edge cases where QR generation fails
-- `wrap={false}` prevents page-break splitting
-- Deposit-confirmed quotes skip the CTA entirely (existing behavior preserved)
+**3. `src/pages/quote/MotorSelectionPage.tsx`**
+- After motors finish loading, fire the idle preload for the modal chunk. This ensures the heaviest component is pre-cached while the user browses cards.
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+### What This Does NOT Change
+- No visual changes — the modal looks and behaves identically
+- No PDF changes
+- The `ModalSkeleton` fallback remains as a safety net for very slow connections
+- No changes to the modal component itself
+
+### Expected Impact
+- **Hover prefetch**: ~200-500ms head start (typical hover-to-click time)
+- **Idle preload**: Modal chunk cached before user even considers clicking — **near-instant** modal open for most users
+- Combined: eliminates the perceived loading delay in almost all scenarios
+
