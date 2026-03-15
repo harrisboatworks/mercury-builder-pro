@@ -134,10 +134,10 @@ const styles = StyleSheet.create({
   },
   
   sectionTitle: {
-    fontSize: 14,
+    fontSize: 12,
     fontWeight: 'bold',
     color: colors.text,
-    marginBottom: 6,
+    marginBottom: 4,
   },
   
   pricingHeader: {
