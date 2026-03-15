@@ -219,7 +219,7 @@ export function PricingTable({
           All prices in Canadian dollars. Installation, rigging, and trade-in values subject to inspection and verification.
           {pricing.savings > 0 && (
             <span className="inline-block mt-2 px-2 py-1 bg-emerald-50 text-emerald-700 rounded-md text-xs font-semibold">
-              Total savings of ${pricing.savings.toLocaleString()} vs MSRP
+              {tradeInValue > 0 ? `Dealer + Promo Savings` : 'Total savings'} of ${pricing.savings.toLocaleString()} vs MSRP
             </span>
           )}
         </div>

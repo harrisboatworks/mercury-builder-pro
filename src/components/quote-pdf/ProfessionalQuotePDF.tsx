@@ -978,43 +978,46 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
         )}
 
         {/* Next Steps CTA Box */}
-        {!quoteData.depositInfo && (
-          <View style={{ marginTop: 6, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
-            <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
-              Ready to Proceed?
-            </Text>
-            <View style={{ flexDirection: 'row', gap: 16 }}>
-              <View style={{ flex: 1 }}>
-                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                  {'\u2460'} Place a $500 deposit to lock in this price
-                </Text>
-                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                  {'\u2461'} Call or text: (905) 342-2153
-                </Text>
-              </View>
-              <View style={{ flex: 1 }}>
-                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
-                  {'\u2462'} Reply to this email
-                </Text>
-                <Text style={{ fontSize: 9, color: colors.text }}>
-                  {'\u2463'} Visit mercuryrepower.ca
-                </Text>
+        {/* CTA + Terms wrapped together to prevent page break */}
+        <View wrap={false}>
+          {!quoteData.depositInfo && (
+            <View style={{ marginTop: 6, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
+              <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
+                Ready to Proceed?
+              </Text>
+              <View style={{ flexDirection: 'row', gap: 16 }}>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                    1. Place a $500 deposit to lock in this price
+                  </Text>
+                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                    2. Call or text: (905) 342-2153
+                  </Text>
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                    3. Reply to this email
+                  </Text>
+                  <Text style={{ fontSize: 9, color: colors.text }}>
+                    4. Visit mercuryrepower.ca
+                  </Text>
+                </View>
               </View>
             </View>
-          </View>
-        )}
+          )}
 
-        {/* Terms */}
-        <View style={styles.termsSection}>
-          <Text style={styles.termsText}>
-            • This quote is valid for 30 days from date of issue • Prices subject to change without notice after expiry
-          </Text>
-          <Text style={styles.termsText}>
-            • All prices in Canadian dollars • Installation, rigging, and trade-in values subject to inspection and verification
-          </Text>
-          <Text style={styles.termsText}>
-            • Financing options available subject to credit approval • Ask your sales representative for details
-          </Text>
+          {/* Terms */}
+          <View style={styles.termsSection}>
+            <Text style={styles.termsText}>
+              • This quote is valid for 30 days from date of issue • Prices subject to change without notice after expiry
+            </Text>
+            <Text style={styles.termsText}>
+              • All prices in Canadian dollars • Installation, rigging, and trade-in values subject to inspection and verification
+            </Text>
+            <Text style={styles.termsText}>
+              • Financing options available subject to credit approval • Ask your sales representative for details
+            </Text>
+          </View>
         </View>
 
         {/* Footer */}
