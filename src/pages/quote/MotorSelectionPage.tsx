@@ -42,7 +42,7 @@ import { MobileQuoteCTA } from '@/components/motors/MobileQuoteCTA';
 import { EmailCaptureInline } from '@/components/motors/EmailCaptureInline';
 
 import { fuzzySearch } from '@/lib/fuzzySearch';
-import { preloadConfiguratorImages } from '@/lib/configurator-preload';
+import { preloadConfiguratorImages, preloadModalChunk } from '@/lib/configurator-preload';
 import '@/styles/premium-motor.css';
 import '@/styles/sticky-quote-mobile.css';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
