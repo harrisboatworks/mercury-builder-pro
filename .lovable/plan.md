@@ -1,28 +1,24 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-### Changes Made
+# Auto-Retry for Dynamic Import Failures in ErrorBoundary
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+## Why
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+Vite's code-splitting means route components are loaded via dynamic `import()`. During HMR or deployment, the old chunk URL can 404, causing a "Failed to fetch dynamically imported module" error. Currently this shows the full error screen — but a simple page reload fetches the new chunks and resolves it instantly.
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+## Plan
 
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+### `src/components/ErrorBoundary.tsx`
+
+In `componentDidCatch`, detect chunk load failures and auto-reload once:
+
+1. Check if the error message contains `"dynamically imported module"` or `"Loading chunk"` or `"Failed to fetch"`
+2. Check `sessionStorage` for a `chunk-reload-attempted` flag to prevent infinite reload loops
+3. If it's a chunk error and no reload has been attempted yet:
+   - Set the flag in `sessionStorage`
+   - Call `window.location.reload()`
+4. If the flag already exists (reload already tried), fall through to the normal error UI
+5. Clear the flag on successful render (in `componentDidMount` or when `hasError` is false)
+
+This is ~15 lines of logic added to the existing ErrorBoundary. No new files needed.
+
