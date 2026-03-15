@@ -146,7 +146,7 @@ export function PricingTable({
           <div className="space-y-1 pt-3">
             <div className="flex items-center gap-2 py-1 border-t border-dashed border-emerald-200">
               <span className="text-xs font-medium text-emerald-600 uppercase tracking-wide">
-                Your Savings
+                Trade-In Credit
               </span>
             </div>
             

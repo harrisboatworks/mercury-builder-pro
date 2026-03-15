@@ -612,7 +612,7 @@ export function QuoteRevealCinematic({
                     style={{ color: '#10B981' }}
                   >
                     <Sparkles className="w-3 h-3" />
-                    {tradeInValue && tradeInValue > 0 ? 'Savings + Trade-In' : 'Total Savings'}
+                    Total Savings
                   </motion.span>
                   <span 
                     className="font-outfit text-lg md:text-xl font-semibold"
