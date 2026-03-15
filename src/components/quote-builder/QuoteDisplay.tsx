@@ -513,7 +513,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
               {/* Detailed Accessories */}
               {accessoryBreakdown.length > 0 && (
                 <div className="space-y-1">
-                  <div className="font-medium text-muted-foreground text-xs uppercase tracking-wide">Accessories & Setup</div>
+                  <div className="font-medium text-muted-foreground text-xs uppercase tracking-wide">Required Rigging & Installation</div>
                   {accessoryBreakdown.map((item, index) => (
                     <TooltipProvider key={index}>
                       <Tooltip>

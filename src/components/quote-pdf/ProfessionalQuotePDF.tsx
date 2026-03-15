@@ -373,8 +373,8 @@ const styles = StyleSheet.create({
   // Terms section
   termsSection: {
     marginTop: 4,
-    marginBottom: 40,
-    paddingTop: 8,
+    marginBottom: 20,
+    paddingTop: 6,
     borderTop: `1 solid ${colors.border}`,
   },
   
@@ -667,7 +667,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 <>
                   <View style={{ marginTop: 8, marginBottom: 4 }}>
                     <Text style={[styles.pricingLabel, { fontWeight: 'bold' }]}>
-                      Accessories & Setup
+                      Required Rigging & Installation
                     </Text>
                   </View>
                   {quoteData.accessoryBreakdown.map((item, idx) => (
@@ -715,6 +715,25 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                 </View>
               )}
               
+              {/* Tax Savings from Trade-In */}
+              {quoteData.tradeInInfo 
+                && quoteData.tradeInValue 
+                && quoteData.tradeInValue > 0 
+                && quoteData.tradeInInfo.brand
+                && quoteData.tradeInInfo.year > 0 && (
+                <View style={[styles.pricingRow, { backgroundColor: '#f0fdf4' }]}>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[styles.pricingLabel, { color: colors.discount, fontWeight: 'bold' }]}>Tax Savings from Trade-In</Text>
+                    <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
+                      HST not charged on trade-in portion
+                    </Text>
+                  </View>
+                  <Text style={[styles.pricingValue, styles.discountValue, { fontWeight: 'bold' }]}>
+                    You save ${(quoteData.tradeInValue * 0.13).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                  </Text>
+                </View>
+              )}
+              
               {/* Subtotal */}
               <View style={styles.pricingRow}>
                 <Text style={styles.pricingLabel}>Subtotal</Text>
@@ -736,7 +755,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
 
             {/* Total Savings Below Table */}
             <Text style={styles.savingsText}>
-              Total savings of ${quoteData.totalSavings} vs MSRP
+              {quoteData.tradeInValue && quoteData.tradeInValue > 0
+                ? `Dealer + promo savings of $${quoteData.totalSavings} vs MSRP`
+                : `Total savings of $${quoteData.totalSavings} vs MSRP`}
             </Text>
             {parseFloat(quoteData.promoSavings || '0') > 0 && (
               <Text style={styles.promoUrgency}>
@@ -763,7 +784,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                   </Text>
                   {quoteData.financingQrCode && (
                     <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 6 }}>
-                      Scan to apply on your phone →
+                      Scan to apply on your phone
                     </Text>
                   )}
                 </View>
@@ -953,6 +974,33 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
             <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 6, fontStyle: 'italic' }}>
               Deposit is fully refundable before delivery. Remaining balance due upon pickup or delivery.
             </Text>
+          </View>
+        )}
+
+        {/* Next Steps CTA Box */}
+        {!quoteData.depositInfo && (
+          <View style={{ marginTop: 6, padding: 8, border: `2 solid ${colors.discount}`, backgroundColor: 'transparent' }}>
+            <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>
+              Ready to Proceed?
+            </Text>
+            <View style={{ flexDirection: 'row', gap: 16 }}>
+              <View style={{ flex: 1 }}>
+                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                  {'\u2460'} Place a $500 deposit to lock in this price
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                  {'\u2461'} Call or text: (905) 342-2153
+                </Text>
+              </View>
+              <View style={{ flex: 1 }}>
+                <Text style={{ fontSize: 9, color: colors.text, marginBottom: 2 }}>
+                  {'\u2462'} Reply to this email
+                </Text>
+                <Text style={{ fontSize: 9, color: colors.text }}>
+                  {'\u2463'} Visit mercuryrepower.ca
+                </Text>
+              </View>
+            </View>
           </View>
         )}
 

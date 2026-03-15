@@ -49,7 +49,7 @@ export function PricingTable({
   accessoryBreakdown = [],
   tradeInValue = 0,
   tradeInInfo,
-  packageName = "Accessories & Setup",
+  packageName = "Required Rigging & Installation",
   includesInstallation = false,
   onApplyForFinancing,
   selectedPromoOption,
