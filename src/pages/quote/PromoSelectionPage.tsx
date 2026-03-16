@@ -295,7 +295,7 @@ export default function PromoSelectionPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="relative inline-flex items-center gap-4 bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-6 py-4 mb-10 overflow-hidden"
+              className="relative inline-flex items-center gap-4 bg-green-50 dark:bg-green-950/30 backdrop-blur-sm border border-green-200 dark:border-green-800 rounded-xl px-6 py-4 mb-10 overflow-hidden"
             >
               {/* Shimmer overlay */}
               <div 
