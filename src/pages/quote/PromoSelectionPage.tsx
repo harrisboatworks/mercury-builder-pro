@@ -35,9 +35,15 @@ export default function PromoSelectionPage() {
   const { promotions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { triggerHaptic } = useHapticFeedback();
   
-  // Start with no selection - user must choose
-  const [selectedOption, setSelectedOption] = useState<PromoOptionId | null>(null);
-  const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(null);
+  // Restore from context if user navigates back
+  const [selectedOption, setSelectedOption] = useState<PromoOptionId | null>(
+    state.selectedPromoOption || null
+  );
+  const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(
+    state.selectedPromoRate && state.selectedPromoTerm
+      ? { rate: state.selectedPromoRate, months: state.selectedPromoTerm }
+      : null
+  );
   const [hasJustSelected, setHasJustSelected] = useState(false);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
   
@@ -103,10 +109,7 @@ export default function PromoSelectionPage() {
     });
   }, [options, isEligibleForFinancing, rebateAmount, lowestRate]);
 
-  // Clear any persisted promo selection on mount - fresh choice each time
-  useEffect(() => {
-    dispatch({ type: 'SET_PROMO_DETAILS', payload: { option: null, rate: null, term: null, value: null } });
-  }, [dispatch]);
+  // No longer clearing promo selection on mount — user's choice persists on back-navigation
 
   // Set default rate when special financing is selected
   useEffect(() => {
@@ -204,9 +207,10 @@ export default function PromoSelectionPage() {
   };
 
   const handleContinue = () => {
-    // Context is already updated in handleOptionSelect/handleRateSelect
-    // Just navigate to the next page
-    navigate('/quote/package-selection');
+    // Auto-select Essential package and skip package step
+    dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
+    dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 7 } });
+    navigate('/quote/summary');
   };
 
   const handleBack = () => {
@@ -225,13 +229,13 @@ export default function PromoSelectionPage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-b from-stone-950 via-stone-900 to-stone-950">
+      <div className="min-h-screen bg-gradient-to-b from-background via-secondary/30 to-accent/50">
         {/* Header */}
         <div className="container mx-auto px-4 py-6">
           <Button
             variant="ghost"
             onClick={handleBack}
-            className="text-white hover:text-white hover:bg-white/10"
+            className="text-foreground hover:bg-accent"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back
@@ -245,7 +249,7 @@ export default function PromoSelectionPage() {
             <motion.img
               src={mercuryLogo}
               alt="Mercury Marine"
-              className="h-12 mx-auto mb-6 brightness-0 invert"
+              className="h-12 mx-auto mb-6 brightness-0 dark:invert"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             />
@@ -269,7 +273,7 @@ export default function PromoSelectionPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-3xl md:text-5xl font-bold text-white mb-4"
+              className="text-3xl md:text-5xl font-bold text-foreground mb-4"
             >
               Get 7 Years of Coverage
               <br />
@@ -280,7 +284,7 @@ export default function PromoSelectionPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-stone-200 text-lg mb-8 max-w-2xl mx-auto"
+              className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto"
             >
               Every qualifying Mercury outboard comes with 7 years of factory warranty
               PLUS your choice of one additional benefit.
@@ -291,11 +295,11 @@ export default function PromoSelectionPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="relative inline-flex items-center gap-4 bg-white/15 backdrop-blur-sm border border-white/30 rounded-xl px-6 py-4 mb-10 overflow-hidden"
+              className="relative inline-flex items-center gap-4 bg-green-50 dark:bg-green-950/30 backdrop-blur-sm border border-green-200 dark:border-green-800 rounded-xl px-6 py-4 mb-10 overflow-hidden"
             >
               {/* Shimmer overlay */}
               <div 
-                className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" 
+                className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-green-200/30 to-transparent pointer-events-none" 
               />
               
               {/* Floating Shield Icon */}
@@ -311,8 +315,8 @@ export default function PromoSelectionPage() {
                 <Shield className="w-6 h-6 text-green-400" />
               </motion.div>
               <div className="text-left">
-                <div className="text-white font-bold text-lg">7 Years Factory Warranty</div>
-                <div className="text-stone-200 text-sm">3 years standard + 4 years FREE extension</div>
+                <div className="text-foreground font-bold text-lg">7 Years Factory Warranty</div>
+                <div className="text-muted-foreground text-sm">3 years standard + 4 years FREE extension</div>
               </div>
               {/* Pulsing INCLUDED Badge */}
               <motion.div 
@@ -331,9 +335,9 @@ export default function PromoSelectionPage() {
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ delay: 0.45, duration: 0.5 }}
             >
-              <div className="flex-1 h-px bg-white/20"></div>
-              <span className="text-white/80 text-sm font-medium uppercase tracking-wider">Choose Your Bonus</span>
-              <div className="flex-1 h-px bg-white/20"></div>
+              <div className="flex-1 h-px bg-border"></div>
+              <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">Choose Your Bonus</span>
+              <div className="flex-1 h-px bg-border"></div>
             </motion.div>
 
             {/* Option Cards with Staggered Entrance - only eligible options */}
@@ -415,8 +419,8 @@ export default function PromoSelectionPage() {
                   transition={{ duration: 0.3 }}
                   className="mb-8"
                 >
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 max-w-2xl mx-auto">
-                    <h3 className="text-white font-semibold mb-4">Select Your Rate & Term</h3>
+                    <div className="bg-card border border-border rounded-xl p-6 max-w-2xl mx-auto">
+                    <h3 className="text-foreground font-semibold mb-4">Select Your Rate & Term</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {financingRates.map((rate) => {
                         const isRateSelected = selectedRate?.months === rate.months;
@@ -429,13 +433,13 @@ export default function PromoSelectionPage() {
                             className={cn(
                               'p-4 rounded-lg border-2 text-center transition-all duration-200',
                               isRateSelected
-                                ? 'border-primary bg-primary/20 shadow-lg'
-                                : 'border-white/20 bg-white/5 hover:border-primary/50 hover:bg-white/10'
+                                ? 'border-primary bg-primary/10 shadow-lg'
+                                : 'border-border bg-muted/50 hover:border-primary/50 hover:bg-accent'
                             )}
                           >
-                            <div className="text-2xl font-bold text-white">{rate.rate}%</div>
-                            <div className="text-sm text-white/90">{rate.months} months</div>
-                            <div className="text-xs text-white/70 mt-1">
+                            <div className="text-2xl font-bold text-foreground">{rate.rate}%</div>
+                            <div className="text-sm text-muted-foreground">{rate.months} months</div>
+                            <div className="text-xs text-muted-foreground mt-1">
                               ~${Math.round(estimatedPayment)}/mo
                             </div>
                             {isRateSelected && (
@@ -451,7 +455,7 @@ export default function PromoSelectionPage() {
                         );
                       })}
                     </div>
-                    <p className="text-white/70 text-xs mt-4">
+                    <p className="text-muted-foreground text-xs mt-4">
                       💡 Tip: Shorter terms = lower rates but higher monthly payments
                     </p>
                   </div>
@@ -467,7 +471,7 @@ export default function PromoSelectionPage() {
                 transition={{ delay: 0.8 }}
                 className="mb-8"
               >
-                <p className="text-stone-300 text-sm mb-2">Offer ends March 31, 2026</p>
+                <p className="text-muted-foreground text-sm mb-2">Offer ends March 31, 2026</p>
                 <CountdownTimer endDate={endDate} className="justify-center" />
               </motion.div>
             )}
@@ -484,14 +488,14 @@ export default function PromoSelectionPage() {
                 disabled={!selectedOption || (selectedOption === 'special_financing' && !selectedRate)}
                 className={`px-8 py-6 text-lg font-semibold transition-all ${hasJustSelected ? 'animate-pulse-glow' : ''}`}
               >
-                Choose Package
+                Apply Bonus & Continue
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               {!selectedOption && (
-                <p className="text-white/70 text-sm mt-2">Select one of the options above</p>
+                <p className="text-muted-foreground text-sm mt-2">Select one of the options above</p>
               )}
               {selectedOption === 'special_financing' && !selectedRate && (
-                <p className="text-amber-400 text-sm mt-2">Please select a rate and term above</p>
+                <p className="text-amber-600 dark:text-amber-400 text-sm mt-2">Please select a rate and term above</p>
               )}
             </motion.div>
           </div>

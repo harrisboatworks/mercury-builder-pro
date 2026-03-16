@@ -121,8 +121,7 @@ export function GlobalStickyQuoteBar() {
       }
     }
     else if (path === '/quote/installation') navigate('/quote/promo-selection');
-    else if (path === '/quote/promo-selection') navigate('/quote/package-selection');
-    else if (path === '/quote/package-selection') navigate('/quote/summary');
+    else if (path === '/quote/promo-selection') navigate('/quote/summary');
     else if (path === '/quote/schedule') navigate('/quote/summary');
     // no-op: unknown page, do nothing
   };

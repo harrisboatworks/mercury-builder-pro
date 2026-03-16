@@ -6,7 +6,8 @@ export const controlChoices = [
     value: "side_mount",
     image: "/images/options/mercury-side-mount-control.png",
     helper: "Lever on the side of your console",
-    xpReward: 15
+    xpReward: 15,
+    badge: "Most Common"
   },
   {
     id: "bin",
@@ -37,7 +38,8 @@ export const steeringChoices = [
     value: "cable",
     image: "/images/options/cable-steering.jpg",
     helper: "Standard mechanical steering — most common on smaller boats",
-    xpReward: 10
+    xpReward: 10,
+    badge: "Most Common"
   },
   {
     id: "hydraulic",

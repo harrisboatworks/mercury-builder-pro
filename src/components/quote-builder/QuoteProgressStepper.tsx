@@ -69,12 +69,6 @@ const allSteps: Step[] = [
   },
   {
     id: 9,
-    label: 'Package',
-    shortLabel: 'Package',
-    path: '/quote/package-selection',
-  },
-  {
-    id: 10,
     label: 'Summary',
     shortLabel: 'Summary',
     path: '/quote/summary',
