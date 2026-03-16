@@ -335,9 +335,9 @@ export default function PromoSelectionPage() {
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ delay: 0.45, duration: 0.5 }}
             >
-              <div className="flex-1 h-px bg-white/20"></div>
-              <span className="text-white/80 text-sm font-medium uppercase tracking-wider">Choose Your Bonus</span>
-              <div className="flex-1 h-px bg-white/20"></div>
+              <div className="flex-1 h-px bg-border"></div>
+              <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">Choose Your Bonus</span>
+              <div className="flex-1 h-px bg-border"></div>
             </motion.div>
 
             {/* Option Cards with Staggered Entrance - only eligible options */}
