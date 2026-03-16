@@ -419,8 +419,8 @@ export default function PromoSelectionPage() {
                   transition={{ duration: 0.3 }}
                   className="mb-8"
                 >
-                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 max-w-2xl mx-auto">
-                    <h3 className="text-white font-semibold mb-4">Select Your Rate & Term</h3>
+                    <div className="bg-card border border-border rounded-xl p-6 max-w-2xl mx-auto">
+                    <h3 className="text-foreground font-semibold mb-4">Select Your Rate & Term</h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {financingRates.map((rate) => {
                         const isRateSelected = selectedRate?.months === rate.months;
@@ -433,13 +433,13 @@ export default function PromoSelectionPage() {
                             className={cn(
                               'p-4 rounded-lg border-2 text-center transition-all duration-200',
                               isRateSelected
-                                ? 'border-primary bg-primary/20 shadow-lg'
-                                : 'border-white/20 bg-white/5 hover:border-primary/50 hover:bg-white/10'
+                                ? 'border-primary bg-primary/10 shadow-lg'
+                                : 'border-border bg-muted/50 hover:border-primary/50 hover:bg-accent'
                             )}
                           >
-                            <div className="text-2xl font-bold text-white">{rate.rate}%</div>
-                            <div className="text-sm text-white/90">{rate.months} months</div>
-                            <div className="text-xs text-white/70 mt-1">
+                            <div className="text-2xl font-bold text-foreground">{rate.rate}%</div>
+                            <div className="text-sm text-muted-foreground">{rate.months} months</div>
+                            <div className="text-xs text-muted-foreground mt-1">
                               ~${Math.round(estimatedPayment)}/mo
                             </div>
                             {isRateSelected && (
