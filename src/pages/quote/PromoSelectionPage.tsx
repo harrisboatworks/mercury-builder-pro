@@ -109,10 +109,7 @@ export default function PromoSelectionPage() {
     });
   }, [options, isEligibleForFinancing, rebateAmount, lowestRate]);
 
-  // Clear any persisted promo selection on mount - fresh choice each time
-  useEffect(() => {
-    dispatch({ type: 'SET_PROMO_DETAILS', payload: { option: null, rate: null, term: null, value: null } });
-  }, [dispatch]);
+  // No longer clearing promo selection on mount — user's choice persists on back-navigation
 
   // Set default rate when special financing is selected
   useEffect(() => {
