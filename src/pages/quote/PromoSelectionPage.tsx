@@ -315,8 +315,8 @@ export default function PromoSelectionPage() {
                 <Shield className="w-6 h-6 text-green-400" />
               </motion.div>
               <div className="text-left">
-                <div className="text-white font-bold text-lg">7 Years Factory Warranty</div>
-                <div className="text-stone-200 text-sm">3 years standard + 4 years FREE extension</div>
+                <div className="text-foreground font-bold text-lg">7 Years Factory Warranty</div>
+                <div className="text-muted-foreground text-sm">3 years standard + 4 years FREE extension</div>
               </div>
               {/* Pulsing INCLUDED Badge */}
               <motion.div 
