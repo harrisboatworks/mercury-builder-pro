@@ -207,9 +207,10 @@ export default function PromoSelectionPage() {
   };
 
   const handleContinue = () => {
-    // Context is already updated in handleOptionSelect/handleRateSelect
-    // Just navigate to the next page
-    navigate('/quote/package-selection');
+    // Auto-select Essential package and skip package step
+    dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
+    dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 7 } });
+    navigate('/quote/summary');
   };
 
   const handleBack = () => {
