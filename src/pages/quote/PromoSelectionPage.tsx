@@ -229,7 +229,7 @@ export default function PromoSelectionPage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-b from-stone-950 via-stone-900 to-stone-950">
+      <div className="min-h-screen bg-gradient-to-b from-background via-secondary/30 to-accent/50">
         {/* Header */}
         <div className="container mx-auto px-4 py-6">
           <Button
