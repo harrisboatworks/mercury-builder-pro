@@ -471,7 +471,7 @@ export default function PromoSelectionPage() {
                 transition={{ delay: 0.8 }}
                 className="mb-8"
               >
-                <p className="text-stone-300 text-sm mb-2">Offer ends March 31, 2026</p>
+                <p className="text-muted-foreground text-sm mb-2">Offer ends March 31, 2026</p>
                 <CountdownTimer endDate={endDate} className="justify-center" />
               </motion.div>
             )}
