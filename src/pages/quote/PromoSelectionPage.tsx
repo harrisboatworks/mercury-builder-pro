@@ -273,7 +273,7 @@ export default function PromoSelectionPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-3xl md:text-5xl font-bold text-white mb-4"
+              className="text-3xl md:text-5xl font-bold text-foreground mb-4"
             >
               Get 7 Years of Coverage
               <br />
