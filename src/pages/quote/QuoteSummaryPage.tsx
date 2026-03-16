@@ -147,7 +147,9 @@ export default function QuoteSummaryPage() {
       } else if (!state.selectedPromoOption) {
         navigate('/quote/promo-selection');
       } else if (!state.selectedPackage) {
-        navigate('/quote/package-selection');
+        // Auto-set Essential package instead of redirecting
+        dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
+        dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 7 } });
       }
     }
   }, [isMounted, state.isLoading, state.motor, state.selectedPromoOption, state.selectedPackage, navigate]);
