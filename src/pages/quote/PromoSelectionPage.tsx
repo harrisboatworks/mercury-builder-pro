@@ -455,7 +455,7 @@ export default function PromoSelectionPage() {
                         );
                       })}
                     </div>
-                    <p className="text-white/70 text-xs mt-4">
+                    <p className="text-muted-foreground text-xs mt-4">
                       💡 Tip: Shorter terms = lower rates but higher monthly payments
                     </p>
                   </div>
