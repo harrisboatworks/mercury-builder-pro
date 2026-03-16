@@ -35,9 +35,15 @@ export default function PromoSelectionPage() {
   const { promotions, getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
   const { triggerHaptic } = useHapticFeedback();
   
-  // Start with no selection - user must choose
-  const [selectedOption, setSelectedOption] = useState<PromoOptionId | null>(null);
-  const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(null);
+  // Restore from context if user navigates back
+  const [selectedOption, setSelectedOption] = useState<PromoOptionId | null>(
+    state.selectedPromoOption || null
+  );
+  const [selectedRate, setSelectedRate] = useState<FinancingRate | null>(
+    state.selectedPromoRate && state.selectedPromoTerm
+      ? { rate: state.selectedPromoRate, months: state.selectedPromoTerm }
+      : null
+  );
   const [hasJustSelected, setHasJustSelected] = useState(false);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
   
