@@ -168,8 +168,8 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
     }
   },
   '/quote/promo-selection': {
-    primaryLabel: 'Choose Package',
-    nextPath: '/quote/package-selection',
+    primaryLabel: 'Apply Bonus & Continue',
+    nextPath: '/quote/summary',
     aiMessage: 'Questions about the Mercury promotion options?',
     nudges: {
       idle: [

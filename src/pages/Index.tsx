@@ -131,8 +131,6 @@ const Index = () => {
         navigate('/quote/trade-in');
       } else if (!state.selectedPromoOption) {
         navigate('/quote/promo-selection');
-      } else if (!state.selectedPackage) {
-        navigate('/quote/package-selection');
       } else {
         navigate('/quote/summary');
       }
