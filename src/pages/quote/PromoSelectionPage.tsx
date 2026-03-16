@@ -249,7 +249,7 @@ export default function PromoSelectionPage() {
             <motion.img
               src={mercuryLogo}
               alt="Mercury Marine"
-              className="h-12 mx-auto mb-6 brightness-0 invert"
+              className="h-12 mx-auto mb-6 brightness-0 dark:invert"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             />
