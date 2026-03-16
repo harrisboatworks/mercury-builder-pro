@@ -488,7 +488,7 @@ export default function PromoSelectionPage() {
                 disabled={!selectedOption || (selectedOption === 'special_financing' && !selectedRate)}
                 className={`px-8 py-6 text-lg font-semibold transition-all ${hasJustSelected ? 'animate-pulse-glow' : ''}`}
               >
-                Choose Package
+                Apply Bonus & Continue
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               {!selectedOption && (
