@@ -284,7 +284,7 @@ export default function PromoSelectionPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-stone-200 text-lg mb-8 max-w-2xl mx-auto"
+              className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto"
             >
               Every qualifying Mercury outboard comes with 7 years of factory warranty
               PLUS your choice of one additional benefit.
