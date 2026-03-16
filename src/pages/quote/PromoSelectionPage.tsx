@@ -299,7 +299,7 @@ export default function PromoSelectionPage() {
             >
               {/* Shimmer overlay */}
               <div 
-                className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-white/15 to-transparent pointer-events-none" 
+                className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-green-200/30 to-transparent pointer-events-none" 
               />
               
               {/* Floating Shield Icon */}
