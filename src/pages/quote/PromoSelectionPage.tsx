@@ -492,7 +492,7 @@ export default function PromoSelectionPage() {
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               {!selectedOption && (
-                <p className="text-white/70 text-sm mt-2">Select one of the options above</p>
+                <p className="text-muted-foreground text-sm mt-2">Select one of the options above</p>
               )}
               {selectedOption === 'special_financing' && !selectedRate && (
                 <p className="text-amber-400 text-sm mt-2">Please select a rate and term above</p>
