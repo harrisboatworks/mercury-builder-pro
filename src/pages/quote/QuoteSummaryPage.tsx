@@ -160,7 +160,7 @@ export default function QuoteSummaryPage() {
   };
 
   const handleBack = () => {
-    navigate('/quote/package-selection');
+    navigate('/quote/promo-selection');
   };
 
   const handleChangePackage = () => {

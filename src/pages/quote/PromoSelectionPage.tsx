@@ -495,7 +495,7 @@ export default function PromoSelectionPage() {
                 <p className="text-muted-foreground text-sm mt-2">Select one of the options above</p>
               )}
               {selectedOption === 'special_financing' && !selectedRate && (
-                <p className="text-amber-400 text-sm mt-2">Please select a rate and term above</p>
+                <p className="text-amber-600 dark:text-amber-400 text-sm mt-2">Please select a rate and term above</p>
               )}
             </motion.div>
           </div>
