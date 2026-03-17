@@ -6,12 +6,13 @@ interface PageTransitionProps {
   className?: string;
 }
 
-// Detect iOS or reduced motion preference
+// Detect iOS (all browsers) or reduced motion preference
 const shouldReduceMotion = () => {
   if (typeof window === 'undefined') return false;
   
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+    /CriOS|FxiOS/.test(navigator.userAgent) ||
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   
   return prefersReducedMotion || isIOS;

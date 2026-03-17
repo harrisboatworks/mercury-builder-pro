@@ -38,6 +38,7 @@ export function calculateRunningTotal(
     selectedPromoOption?: string | null;
     getRebateForHP?: (hp: number) => number | null;
     hasCompatibleProp?: boolean;
+    promotionalSavings?: number;
   } = {}
 ): RunningTotalResult {
   if (!motor) return { subtotal: 0, hst: 0, total: 0, lineItems: [] };
@@ -121,6 +122,12 @@ export function calculateRunningTotal(
     lineItems.push({ label: 'Discount', value: opts.adminDiscount, isCredit: true });
   }
 
+  // Promotional savings (fixed + percentage from active promotions)
+  if (opts.promotionalSavings && opts.promotionalSavings > 0) {
+    subtotal -= opts.promotionalSavings;
+    lineItems.push({ label: 'Promotional Savings', value: opts.promotionalSavings, isCredit: true });
+  }
+
   // Cash rebate
   if (opts.selectedPromoOption === 'cash_rebate' && motor.hp && opts.getRebateForHP) {
     const rebate = opts.getRebateForHP(motor.hp);
@@ -144,11 +151,13 @@ export function useQuoteRunningTotal(
   motorOverride?: { price?: number; basePrice?: number; msrp?: number; model?: string; hp?: number } | null
 ) {
   const { state } = useQuote();
-  const { getRebateForHP } = useActivePromotions();
+  const { getRebateForHP, getTotalPromotionalSavings } = useActivePromotions();
 
   const motor = motorOverride !== undefined ? motorOverride : state.motor;
+  const motorPrice = motor?.price || motor?.basePrice || motor?.msrp || 0;
 
   return useMemo(() => {
+    const promotionalSavings = getTotalPromotionalSavings(motorPrice);
     return calculateRunningTotal(motor, {
       selectedOptions: state.selectedOptions,
       controlsOption: state.boatInfo?.controlsOption,
@@ -166,9 +175,11 @@ export function useQuoteRunningTotal(
       selectedPromoOption: state.selectedPromoOption,
       getRebateForHP,
       hasCompatibleProp: state.boatInfo?.hasCompatibleProp,
+      promotionalSavings,
     });
   }, [
     motor,
+    motorPrice,
     state.selectedOptions,
     state.boatInfo?.controlsOption,
     state.purchasePath,
@@ -185,5 +196,6 @@ export function useQuoteRunningTotal(
     state.selectedPromoOption,
     state.boatInfo?.hasCompatibleProp,
     getRebateForHP,
+    getTotalPromotionalSavings,
   ]);
 }
