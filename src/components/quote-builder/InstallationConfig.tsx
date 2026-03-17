@@ -88,25 +88,15 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="max-w-6xl mx-auto"
-      >
-        {/* Tiller Motor Flow - Mounting Options */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-        >
-          <OptionGallery
-            title="Choose Your Mounting Option"
-            choices={tillerMountingChoices}
-            value={config.mounting}
-            onChange={(val) => handleOptionSelect('mounting', val)}
-          />
-        </motion.div>
-      </motion.div>
+    <div className="container mx-auto px-2 sm:px-4 py-4 sm:py-8">
+      <div className="max-w-6xl mx-auto">
+        <OptionGallery
+          title="Choose Your Mounting Option"
+          choices={tillerMountingChoices}
+          value={config.mounting}
+          onChange={(val) => handleOptionSelect('mounting', val)}
+        />
+      </div>
     </div>
   );
 }

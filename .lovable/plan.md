@@ -1,87 +1,49 @@
+## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-Goal: fix the remaining washed-out tiller installation page on iPhone/Chrome and properly redesign the Purchase Path step for mobile, with a real audit/verification pass instead of one-off CSS guesses.
+### Context
+Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
 
-What I found
-- The tiller installation page still has opacity-based Framer Motion wrappers in `InstallationConfig.tsx`, and the card grid inside `OptionGallery.tsx` also animates each option from `opacity: 0`. On iOS browsers, those layers are a likely source of the semi-transparent “washed out” rendering in your screenshot.
-- The current “global light mode” CSS in `src/index.css` helps with dark mode, but it does not address component-level opacity animations and translucent overlays everywhere.
-- `PurchasePath.tsx` is only mildly compressed. It is still two full cards with multiple bullets and full-size actions, which is why it still feels like the same step on mobile.
-- The sticky mobile bar and progress/header stack consume a lot of vertical space, so mobile steps need to be designed with that constraint in mind, not just slightly tightened.
+### Changes Made
 
-Implementation plan
+**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
+- Appears after user scrolls past 2+ motor cards using IntersectionObserver
+- "Build Your Quote — Tap any motor to configure & get pricing"
+- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
+- Fires `cta_build_quote` gtag event
 
-1. Remove risky opacity animation from the tiller installation step
-- In `src/components/quote-builder/InstallationConfig.tsx`:
-  - remove the opacity-based motion wrappers around the tiller flow
-  - render the tiller page as a plain static container on mobile/iOS, or use transform-only animation if we keep motion at all
-- In `src/components/OptionGallery.tsx`:
-  - stop animating option cards from transparent to visible
-  - keep only safe micro-interactions like tap scale / border highlight / selected ring
-  - ensure image card content uses solid white backgrounds and no semi-transparent overlays by default on mobile
+**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
+- Shows below the motor grid, above the financing disclaimer
+- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
+- Captures device type and timestamp in metadata
+- Success state with confirmation message
+- Fires `lead_capture` gtag event
 
-2. Harden the iOS/mobile visual protection at the component level
-- In `src/index.css`:
-  - add a targeted mobile/iOS safeguard for quote-builder surfaces:
-    - force solid backgrounds for quote pages, cards, stepper, and content wrappers
-    - disable opacity/filter/backdrop effects on quote route containers where they can cause milky rendering
-  - avoid broad destructive overrides, but explicitly protect:
-    - quote page wrappers
-    - option gallery cards
-    - progress/header containers
-    - sticky prompt areas that use translucent gradients
-- If needed, add a reusable “ios-safe-surface” utility class and apply it to the most affected components.
+**3. Motor card data attribute**
+- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
 
-3. Redesign Purchase Path specifically for mobile, not just “shrink desktop”
-- In `src/components/quote-builder/PurchasePath.tsx`:
-  - create a true mobile-first variant below `md`
-  - reduce each choice to a compact decision card:
-    - smaller image/header footprint
-    - 2-3 short bullets max
-    - tighter label hierarchy
-    - full-width CTA always visible within each card
-  - prioritize the information mobile users need to decide quickly:
-    - Loose Motor: pickup, no install, included basics
-    - Full Install: we rig it, test it, battery included
-  - keep the richer premium desktop layout at `md+`
-- This should make both choices visible much earlier and feel intentionally designed for phone.
+## Merged QR Code + CTA (March 2026)
 
-4. Adjust page-level spacing on the affected quote steps
-- In `PurchasePathPage.tsx` and `InstallationPage.tsx`:
-  - reduce unnecessary top spacing on mobile
-  - tighten back-button area and content margins
-  - ensure the main card starts higher on screen
-- If helpful, make the back button more compact on mobile while keeping the current desktop presentation.
+### Context
+The PDF had two overlapping sections — a "Financing Available" box with QR (only for financing-eligible quotes) and a separate "Ready to Proceed?" CTA box. The CTA box caused page-break issues and cash buyers under $5K never got a QR code.
 
-5. Do an actual verification pass
-- After implementation, verify both:
-  - `/quote/installation` with a tiller motor
-  - `/quote/purchase-path`
-- Specifically check:
-  - no washed-out/translucent rendering on the tiller install page
-  - cards/backgrounds look solid in iPhone dark-mode browser conditions
-  - Purchase Path shows materially less vertical bloat on mobile
-  - CTAs remain visible above or close to above the sticky bar
-- I also want to compare preview vs published/custom-domain behavior, because your screenshot suggests the mobile experience may differ from what earlier testing assumed.
+### Changes Made
 
-Technical notes
-- Primary likely culprit for the tiller issue: nested Framer Motion opacity transitions in `InstallationConfig.tsx` and `OptionGallery.tsx`.
-- Current global dark-mode protection is necessary but not sufficient; the remaining issue appears to be transparency/compositing, not just theme inversion.
-- Best fix pattern:
-```text
-Mobile/iOS quote pages
-  -> solid surfaces
-  -> no opacity-entry animations on content cards
-  -> no translucent overlays unless absolutely necessary
-  -> compact mobile-specific layout, not scaled desktop
-```
+**1. Universal QR generation (`QuoteSummaryPage.tsx`, `AdminQuoteDetail.tsx`)**
+- QR code is now always generated regardless of financing threshold
+- Financing-eligible quotes: QR points to `/financing-application?...` with prefilled params
+- Sub-$5K quotes: QR points to `mercuryrepower.ca`
+- `financingQrCode` field is always passed to the PDF data
 
-Expected result
-- The tiller installation step will render solid and stable on iPhone/Chrome instead of faded/milky.
-- The Purchase Path step will feel genuinely mobile-optimized rather than “desktop cards squeezed onto a phone.”
-- The quote flow will look more deliberate and professional on mobile, especially with the sticky bar present.
+**2. Merged CTA + QR section (`ProfessionalQuotePDF.tsx`)**
+- Replaced separate financing box and CTA box with one unified section
+- QR code on the right, CTA steps on the left ("Scan QR", "Call/text", "Reply to email")
+- Financing terms ($/mo, term, APR) shown inside the same box when eligible
+- Fallback text-only CTA for edge cases where QR generation fails
+- `wrap={false}` prevents page-break splitting
+- Deposit-confirmed quotes skip the CTA entirely (existing behavior preserved)
 
-<lov-actions>
-<lov-suggestion message="Test the tiller installation page and purchase path end-to-end on mobile, including iPhone dark mode in Chrome and Safari, and verify there is no washed-out rendering.">Verify that it works</lov-suggestion>
-<lov-suggestion message="Implement the mobile-specific redesign for the Purchase Path page with compact cards, fewer bullets, and always-visible CTAs while keeping the richer desktop layout intact.">Redesign Purchase Path mobile</lov-suggestion>
-<lov-suggestion message="Remove unsafe opacity-based animations from the tiller installation step and option gallery, and replace them with iOS-safe motion or static rendering.">Harden iOS rendering</lov-suggestion>
-<lov-suggestion message="Add reusable iOS-safe surface utilities for quote pages so cards, headers, and sticky bars always render with solid backgrounds on mobile browsers.">Add iOS-safe UI utilities</lov-suggestion>
-</lov-actions>
+### What to Monitor
+- Motor selection → options conversion rate (baseline: 7.6%)
+- `pricing_updates` email captures per week
+- CTA click rate via `cta_build_quote` event
+- Review after 2–3 weeks with larger sample

@@ -107,10 +107,35 @@ body {
   }
 }
 
-/* Mobile animations: ensure they complete properly without blocking */
+/* ===== Quote Builder iOS Surface Protection ===== */
+/* Prevent washed-out rendering from stacked opacity layers on mobile */
 @media (max-width: 768px) {
   [class*="animate-"] {
     animation-fill-mode: forwards !important;
+  }
+
+  /* Force solid backgrounds on quote page containers */
+  [class*="quote"] button,
+  [class*="quote"] [class*="card"],
+  [class*="OptionGallery"] button,
+  [class*="InstallationConfig"] div,
+  [class*="PurchasePath"] button,
+  [class*="PurchasePath"] [class*="card"] {
+    opacity: 1 !important;
+    background-color: hsl(0, 0%, 100%);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  /* iOS-specific: prevent compositing artifacts on quote builder surfaces */
+  @media (max-width: 768px) {
+    .rounded-xl,
+    .rounded-lg {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
   }
 }
 
