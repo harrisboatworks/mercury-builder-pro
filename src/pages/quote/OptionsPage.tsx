@@ -343,7 +343,11 @@ export default function OptionsPage() {
         {splitOptions && (splitOptions.recommended.visual.length > 0 || splitOptions.recommended.list.length > 0) && (
           <OptionsSection
             title="Recommended Add-Ons"
-            badge={<Badge>Pre-selected</Badge>}
+            badge={
+              [...categorizedOptions!.recommended].some(opt => opt.is_included)
+                ? <Badge>Pre-selected</Badge>
+                : <Badge variant="secondary">Suggested</Badge>
+            }
           >
             {/* Visual Grid */}
             {splitOptions.recommended.visual.length > 0 && (
