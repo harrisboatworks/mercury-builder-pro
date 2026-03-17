@@ -191,6 +191,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
               choices={controlChoices}
               value={config.controls}
               onChange={(val) => handleOptionSelect('controls', val)}
+              recommended="side_mount"
             />
           </motion.div>
         )}
