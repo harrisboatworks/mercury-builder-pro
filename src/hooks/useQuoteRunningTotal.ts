@@ -144,13 +144,11 @@ export function useQuoteRunningTotal(
   motorOverride?: { price?: number; basePrice?: number; msrp?: number; model?: string; hp?: number } | null
 ) {
   const { state } = useQuote();
-  const { getRebateForHP, getTotalPromotionalSavings } = useActivePromotions();
+  const { getRebateForHP } = useActivePromotions();
 
   const motor = motorOverride !== undefined ? motorOverride : state.motor;
-  const motorPrice = motor?.price || motor?.basePrice || motor?.msrp || 0;
 
   return useMemo(() => {
-    const promotionalSavings = getTotalPromotionalSavings(motorPrice);
     return calculateRunningTotal(motor, {
       selectedOptions: state.selectedOptions,
       controlsOption: state.boatInfo?.controlsOption,
@@ -168,11 +166,9 @@ export function useQuoteRunningTotal(
       selectedPromoOption: state.selectedPromoOption,
       getRebateForHP,
       hasCompatibleProp: state.boatInfo?.hasCompatibleProp,
-      promotionalSavings,
     });
   }, [
     motor,
-    motorPrice,
     state.selectedOptions,
     state.boatInfo?.controlsOption,
     state.purchasePath,
@@ -189,6 +185,5 @@ export function useQuoteRunningTotal(
     state.selectedPromoOption,
     state.boatInfo?.hasCompatibleProp,
     getRebateForHP,
-    getTotalPromotionalSavings,
   ]);
 }
