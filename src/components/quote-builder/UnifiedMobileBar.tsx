@@ -1083,6 +1083,8 @@ export const UnifiedMobileBar: React.FC = () => {
           shadow-[0_-2px_20px_rgba(0,0,0,0.06)]"
         style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
+        {/* Overscroll shield — prevents iOS rubber-band bounce from revealing gap */}
+        <div className="absolute left-0 right-0 top-full h-[120px] bg-white" />
         {/* Always-Visible Tappable Prompt Bar */}
         <motion.button
           onClick={handleNudgeClick}
