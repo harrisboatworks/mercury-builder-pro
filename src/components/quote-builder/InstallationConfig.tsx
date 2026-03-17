@@ -7,7 +7,8 @@ import confetti from "canvas-confetti";
 import { isTillerMotor } from "@/lib/utils";
 import { useSound } from '@/contexts/SoundContext';
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface BoatInfo {
   controlsOption?: string;
