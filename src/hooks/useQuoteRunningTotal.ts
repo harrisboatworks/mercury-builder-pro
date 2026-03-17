@@ -151,9 +151,10 @@ export function useQuoteRunningTotal(
   motorOverride?: { price?: number; basePrice?: number; msrp?: number; model?: string; hp?: number } | null
 ) {
   const { state } = useQuote();
-  const { getRebateForHP } = useActivePromotions();
+  const { getRebateForHP, getTotalPromotionalSavings } = useActivePromotions();
 
   const motor = motorOverride !== undefined ? motorOverride : state.motor;
+  const motorPrice = motor?.price || motor?.basePrice || motor?.msrp || 0;
 
   return useMemo(() => {
     return calculateRunningTotal(motor, {
