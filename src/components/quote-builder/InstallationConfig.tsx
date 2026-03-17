@@ -207,6 +207,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
               choices={steeringChoices}
               value={config.steering}
               onChange={(val) => handleOptionSelect('steering', val)}
+              recommended="cable"
             />
           </motion.div>
         )}
