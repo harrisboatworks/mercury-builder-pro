@@ -1,14 +1,11 @@
 // src/components/quote-builder/InstallationConfig.tsx
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import OptionGallery from "../OptionGallery";
-import { controlChoices, steeringChoices, tillerMountingChoices } from "@/config/visualChoices";
+import { tillerMountingChoices } from "@/config/visualChoices";
 import confetti from "canvas-confetti";
 import { isTillerMotor } from "@/lib/utils";
 import { useSound } from '@/contexts/SoundContext';
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { CheckCircle, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 interface BoatInfo {
   controlsOption?: string;
