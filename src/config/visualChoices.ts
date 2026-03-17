@@ -14,7 +14,7 @@ export const controlChoices = [
     label: "Binnacle Control",
     value: "binnacle",
     image: "/images/options/mercury-binnacle-control.jpeg",
-    helper: "Lever mounted on top of your console",
+    helper: "A lever mounted on top of the console — common on center consoles",
     xpReward: 15
   },
   // DTS option hidden for now
