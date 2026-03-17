@@ -64,7 +64,9 @@ export default function OptionGallery({
                   relative text-left rounded-xl overflow-hidden transition-all duration-300
                   ${selected 
                     ? 'ring-2 ring-foreground ring-offset-2 shadow-lg' 
-                    : 'border border-border hover:border-foreground/30 hover:shadow-md'
+                    : isRecommended
+                      ? 'border-2 border-primary/50 shadow-md hover:border-primary hover:shadow-lg'
+                      : 'border border-border hover:border-foreground/30 hover:shadow-md'
                   }
                 `}
               >
