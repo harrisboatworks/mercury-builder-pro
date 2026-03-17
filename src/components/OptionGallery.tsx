@@ -22,10 +22,11 @@ interface OptionGalleryProps {
   choices: Choice[];
   value?: string;
   onChange: (val: string) => void;
+  recommended?: string;
 }
 
 export default function OptionGallery({
-  title, choices, value, onChange
+  title, choices, value, onChange, recommended
 }: OptionGalleryProps) {
   const [hover, setHover] = useState<string | null>(null);
   const { playTick } = useSound();
@@ -45,6 +46,7 @@ export default function OptionGallery({
         <AnimatePresence>
           {choices.map((choice) => {
             const selected = choice.value === value;
+            const isRecommended = !selected && choice.value === recommended;
             const isHover = hover === choice.id;
             
             return (
@@ -62,7 +64,9 @@ export default function OptionGallery({
                   relative text-left rounded-xl overflow-hidden transition-all duration-300
                   ${selected 
                     ? 'ring-2 ring-foreground ring-offset-2 shadow-lg' 
-                    : 'border border-border hover:border-foreground/30 hover:shadow-md'
+                    : isRecommended
+                      ? 'border-2 border-primary/50 shadow-md hover:border-primary hover:shadow-lg'
+                      : 'border border-border hover:border-foreground/30 hover:shadow-md'
                   }
                 `}
               >

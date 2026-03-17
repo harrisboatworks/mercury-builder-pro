@@ -7,7 +7,8 @@ import confetti from "canvas-confetti";
 import { isTillerMotor } from "@/lib/utils";
 import { useSound } from '@/contexts/SoundContext';
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface BoatInfo {
   controlsOption?: string;
@@ -101,6 +102,19 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
     }
   };
 
+  const handleSkipWithDefaults = () => {
+    const defaultConfig = {
+      ...config,
+      controls: 'side_mount',
+      steering: 'cable',
+    };
+    setConfig(defaultConfig);
+    playCelebration();
+    setTimeout(() => {
+      triggerComplete(defaultConfig);
+    }, 200);
+  };
+
   return (
     <div className="container mx-auto px-4 py-8">
       <motion.div
@@ -113,9 +127,28 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
             <h2 className="text-3xl font-light tracking-wide text-foreground mb-2">
               Configure Your Installation
             </h2>
-            <p className="text-muted-foreground font-normal mb-8">
+            <p className="text-muted-foreground font-normal mb-4">
               Tell us what rigging is currently on your boat — we'll confirm everything during your consultation.
             </p>
+            
+            {/* Skip shortcut for uncertain users */}
+            {!hasExistingControls && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="mb-8"
+              >
+                <Button
+                  variant="outline"
+                  onClick={handleSkipWithDefaults}
+                  className="border-primary/30 hover:border-primary hover:bg-primary/5 text-foreground font-normal gap-2"
+                >
+                  <Zap className="w-4 h-4 text-primary" />
+                  Not sure? Use the most common setup
+                </Button>
+              </motion.div>
+            )}
           </>
         )}
 
@@ -158,6 +191,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
               choices={controlChoices}
               value={config.controls}
               onChange={(val) => handleOptionSelect('controls', val)}
+              recommended="side_mount"
             />
           </motion.div>
         )}
@@ -173,6 +207,7 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
               choices={steeringChoices}
               value={config.steering}
               onChange={(val) => handleOptionSelect('steering', val)}
+              recommended="cable"
             />
           </motion.div>
         )}

@@ -5,7 +5,7 @@ export const controlChoices = [
     label: "Side-Mount Control",
     value: "side_mount",
     image: "/images/options/mercury-side-mount-control.png",
-    helper: "Lever on the side of your console",
+    helper: "Most boats have this — a lever on the side of the console",
     xpReward: 15,
     badge: "Most Common"
   },
@@ -14,7 +14,7 @@ export const controlChoices = [
     label: "Binnacle Control",
     value: "binnacle",
     image: "/images/options/mercury-binnacle-control.jpeg",
-    helper: "Lever mounted on top of your console",
+    helper: "A lever mounted on top of the console — common on center consoles",
     xpReward: 15
   },
   // DTS option hidden for now
@@ -37,7 +37,7 @@ export const steeringChoices = [
     label: "Cable Steering",
     value: "cable",
     image: "/images/options/cable-steering.jpg",
-    helper: "Standard mechanical steering — most common on smaller boats",
+    helper: "Standard on most boats under 150HP — the most common setup",
     xpReward: 10,
     badge: "Most Common"
   },
@@ -46,7 +46,7 @@ export const steeringChoices = [
     label: "Hydraulic Steering",
     value: "hydraulic",
     image: "/images/options/hydraulic-steering.jpg",
-    helper: "Power-assisted steering — common on larger boats",
+    helper: "Common on boats over 150HP or with larger motors",
     xpReward: 20,
     badge: "Smooth Operator"
   }
