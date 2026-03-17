@@ -122,6 +122,12 @@ export function calculateRunningTotal(
     lineItems.push({ label: 'Discount', value: opts.adminDiscount, isCredit: true });
   }
 
+  // Promotional savings (fixed + percentage from active promotions)
+  if (opts.promotionalSavings && opts.promotionalSavings > 0) {
+    subtotal -= opts.promotionalSavings;
+    lineItems.push({ label: 'Promotional Savings', value: opts.promotionalSavings, isCredit: true });
+  }
+
   // Cash rebate
   if (opts.selectedPromoOption === 'cash_rebate' && motor.hp && opts.getRebateForHP) {
     const rebate = opts.getRebateForHP(motor.hp);
