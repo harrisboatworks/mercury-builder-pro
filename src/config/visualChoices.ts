@@ -46,7 +46,7 @@ export const steeringChoices = [
     label: "Hydraulic Steering",
     value: "hydraulic",
     image: "/images/options/hydraulic-steering.jpg",
-    helper: "Power-assisted steering — common on larger boats",
+    helper: "Common on boats over 150HP or with larger motors",
     xpReward: 20,
     badge: "Smooth Operator"
   }
