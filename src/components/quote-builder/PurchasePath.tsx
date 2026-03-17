@@ -56,9 +56,10 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
+      className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 py-2 sm:py-4"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 max-w-4xl mx-auto items-stretch">
+        {/* Loose Motor Card */}
         <motion.div variants={cardVariants}>
           <Card className="relative bg-white hover:shadow-xl transition-all duration-300 cursor-pointer group border-2 hover:border-primary/50 flex flex-col premium-lift" 
                 onClick={handleLooseMotorSelect}>
@@ -66,63 +67,59 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             Quick & Easy
           </Badge>
           
-          <CardHeader className="pb-4">
-            <div className="flex items-center gap-3 mb-3">
-              <Package className="w-8 h-8 text-primary" />
-              <CardTitle className="text-2xl font-light tracking-wide text-foreground">Loose Motor</CardTitle>
+          <CardHeader className="pb-2 sm:pb-4 px-4 sm:px-6 pt-4 sm:pt-6">
+            <div className="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-3">
+              <Package className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+              <CardTitle className="text-lg sm:text-2xl font-light tracking-wide text-foreground">Loose Motor</CardTitle>
             </div>
-            <p className="text-sm font-normal text-gray-700">
+            <p className="text-xs sm:text-sm font-normal text-muted-foreground">
               In-store pickup only • No installation
             </p>
           </CardHeader>
           
-          <CardContent className="flex flex-col flex-1 pt-0">
-            <div className="space-y-3 text-base font-normal text-gray-700 flex-1 mb-6">
-              <div className="flex flex-row items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-left">Free Prep</span>
-              </div>
-              <div className="flex flex-row items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-left">Shop Tank Tested</span>
+          <CardContent className="flex flex-col flex-1 pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+            <div className="space-y-1.5 sm:space-y-3 text-sm sm:text-base font-normal text-foreground/80 flex-1 mb-3 sm:mb-6">
+              <div className="flex flex-row items-center gap-2 sm:gap-3">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span>Free Prep & Shop Tank Tested</span>
               </div>
               {isTiller && hasInternalTank ? (
-                <div className="flex flex-row items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-left">Includes propeller & internal fuel tank</span>
+                <div className="flex flex-row items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                  <span>Includes propeller & internal fuel tank</span>
                 </div>
               ) : isTiller && includes12LTank ? (
-                <div className="flex flex-row items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-left">Includes propeller & 12L fuel tank</span>
+                <div className="flex flex-row items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                  <span>Includes propeller & 12L fuel tank</span>
                 </div>
               ) : isTiller && includes25LTank ? (
-                <div className="flex flex-row items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-left">Includes propeller & 25L fuel tank</span>
+                <div className="flex flex-row items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                  <span>Includes propeller & 25L fuel tank</span>
                 </div>
               ) : includes12LTank && !isTiller ? (
-                <div className="flex flex-row items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-left">Includes 12L fuel tank & hose</span>
+                <div className="flex flex-row items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                  <span>Includes 12L fuel tank & hose</span>
                 </div>
               ) : (
-                <div className="flex flex-row items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-left">Includes propeller</span>
+                <div className="flex flex-row items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                  <span>Includes propeller</span>
                 </div>
               )}
               {isTiller && isInStock && (
-                <div className="flex flex-row items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-left">Same-day pickup available</span>
+                <div className="flex flex-row items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                  <span>Same-day pickup available</span>
                 </div>
               )}
             </div>
             
             <Button 
               variant="outline"
-              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-normal rounded-sm hover:bg-foreground hover:text-background transition-all duration-500 premium-btn-hover"
+              className="w-full border-2 border-foreground text-foreground py-4 sm:py-6 text-xs tracking-widest uppercase font-normal rounded-sm hover:bg-foreground hover:text-background transition-all duration-500 premium-btn-hover"
             >
               Select Loose Motor
             </Button>
@@ -130,6 +127,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
         </Card>
         </motion.div>
         
+        {/* Professional Installation Card */}
         <motion.div variants={cardVariants}>
           <Card className="relative bg-white hover:shadow-xl transition-all duration-300 cursor-pointer group border-2 hover:border-primary/50 flex flex-col premium-lift" 
                 onClick={handleInstalledSelect}>
@@ -137,47 +135,47 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
             Full Service
           </Badge>
           
-          <CardHeader className="pb-4">
-            <div className="flex items-center gap-3 mb-3">
-              <Wrench className="w-8 h-8 text-primary" />
-              <CardTitle className="text-2xl font-light tracking-wide text-foreground">Professional Installation</CardTitle>
+          <CardHeader className="pb-2 sm:pb-4 px-4 sm:px-6 pt-4 sm:pt-6">
+            <div className="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-3">
+              <Wrench className="w-6 h-6 sm:w-8 sm:h-8 text-primary" />
+              <CardTitle className="text-lg sm:text-2xl font-light tracking-wide text-foreground">Professional Install</CardTitle>
             </div>
-            <p className="text-sm font-normal text-gray-700">
+            <p className="text-xs sm:text-sm font-normal text-muted-foreground">
               {isTiller ? 'Complete motor prep & water test' : 'Complete rigging & water test'}
             </p>
           </CardHeader>
           
-          <CardContent className="flex flex-col flex-1 pt-0">
-            <div className="space-y-3 text-base font-normal text-gray-700 flex-1 mb-6">
+          <CardContent className="flex flex-col flex-1 pt-0 px-4 sm:px-6 pb-4 sm:pb-6">
+            <div className="space-y-1.5 sm:space-y-3 text-sm sm:text-base font-normal text-foreground/80 flex-1 mb-3 sm:mb-6">
               {!isTiller && (
-                <div className="flex flex-row items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-left">Controls & gauges configured</span>
+                <div className="flex flex-row items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                  <span>Controls & gauges configured</span>
                 </div>
               )}
               {isTiller && (
-                <div className="flex flex-row items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                  <span className="text-left">Securely bolted to transom (if requested)</span>
+                <div className="flex flex-row items-center gap-2 sm:gap-3">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                  <span>Bolted to transom (if requested)</span>
                 </div>
               )}
-              <div className="flex flex-row items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-left">Marine battery included ($180)</span>
+              <div className="flex flex-row items-center gap-2 sm:gap-3">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span>Marine battery included ($180)</span>
               </div>
-              <div className="flex flex-row items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-left">Old motor removal available</span>
+              <div className="flex flex-row items-center gap-2 sm:gap-3">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span>Old motor removal available</span>
               </div>
-              <div className="flex flex-row items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                <span className="text-left">Water tested & prop optimized</span>
+              <div className="flex flex-row items-center gap-2 sm:gap-3">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                <span>Water tested & prop optimized</span>
               </div>
             </div>
             
             <Button 
               variant="outline"
-              className="w-full border-2 border-foreground text-foreground py-6 text-xs tracking-widest uppercase font-normal rounded-sm hover:bg-foreground hover:text-background transition-all duration-500 premium-btn-hover"
+              className="w-full border-2 border-foreground text-foreground py-4 sm:py-6 text-xs tracking-widest uppercase font-normal rounded-sm hover:bg-foreground hover:text-background transition-all duration-500 premium-btn-hover"
             >
               Select Installation
             </Button>
