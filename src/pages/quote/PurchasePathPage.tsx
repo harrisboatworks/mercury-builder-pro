@@ -92,8 +92,8 @@ export default function PurchasePathPage() {
   return (
     <PageTransition>
       <QuoteLayout>
-        <div className="space-y-6">
-          {/* Premium Back Button - matches Options page style */}
+        <div className="space-y-3 sm:space-y-6">
+          {/* Premium Back Button */}
           <button 
             onClick={handleBack}
             className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px]"

@@ -42,60 +42,46 @@ export default function OptionGallery({
         <h3 className="text-xl font-semibold tracking-wide text-foreground">{title}</h3>
       </div>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <AnimatePresence>
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {choices.map((choice) => {
             const selected = choice.value === value;
             const isRecommended = !selected && choice.value === recommended;
-            const isHover = hover === choice.id;
             
             return (
-              <motion.button
+              <button
                 key={choice.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                whileHover={{ y: -4 }}
-                whileTap={{ scale: 0.98 }}
                 onMouseEnter={() => setHover(choice.id)}
                 onMouseLeave={() => setHover(null)}
                 onClick={() => handleSelect(choice)}
                 className={`
-                  relative text-left rounded-xl overflow-hidden transition-all duration-300
+                  relative text-left rounded-xl overflow-hidden transition-all duration-200 active:scale-[0.98] bg-white
                   ${selected 
                     ? 'ring-2 ring-foreground ring-offset-2 shadow-lg' 
                     : isRecommended
-                      ? 'border-2 border-primary/50 shadow-md hover:border-primary hover:shadow-lg'
-                      : 'border border-border hover:border-foreground/30 hover:shadow-md'
+                      ? 'border-2 border-primary/50 shadow-md'
+                      : 'border border-border'
                   }
                 `}
               >
                 {/* Image Container */}
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden bg-white">
                   <img 
                     src={choice.image} 
                     alt={choice.label}
                     className="w-full h-full object-cover"
                   />
                   
-                  {/* Overlay on hover */}
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: isHover ? 1 : 0 }}
-                    className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
-                  />
-                  
                   {/* Badge */}
                   {choice.badge && (
-                    <div className="absolute top-2 left-2 bg-foreground text-background px-2 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                      <Award className="w-3 h-3" />
+                    <div className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 bg-foreground text-background px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium flex items-center gap-1">
+                      <Award className="w-3 h-3 hidden sm:block" />
                       {choice.badge}
                     </div>
                   )}
                   
                   {/* Price Badge */}
                   {choice.priceLabel && (
-                    <div className={`absolute top-2 right-2 px-3 py-1.5 rounded-lg text-sm font-medium shadow-lg ${
+                    <div className={`absolute top-1.5 right-1.5 sm:top-2 sm:right-2 px-2 py-1 sm:px-3 sm:py-1.5 rounded-lg text-xs sm:text-sm font-medium shadow-lg ${
                       choice.price === 0 
                         ? 'bg-green-500 text-white' 
                         : 'bg-white text-gray-900 border border-gray-300'
@@ -106,29 +92,24 @@ export default function OptionGallery({
                   
                   {/* Selected Checkmark */}
                   {selected && (
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      className="absolute bottom-2 right-2 bg-foreground text-background rounded-full p-2"
-                    >
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="absolute bottom-2 right-2 bg-foreground text-background rounded-full p-1.5 sm:p-2">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
-                    </motion.div>
+                    </div>
                   )}
                 </div>
                 
                 {/* Content */}
-                <div className="p-4 bg-white">
-                  <div className="font-medium tracking-wide text-foreground">{choice.label}</div>
+                <div className="p-2.5 sm:p-4 bg-white">
+                  <div className="font-medium tracking-wide text-foreground text-sm sm:text-base">{choice.label}</div>
                   {choice.helper && (
-                    <div className="text-sm text-gray-700 font-normal mt-1">{choice.helper}</div>
+                    <div className="text-xs sm:text-sm text-gray-700 font-normal mt-0.5 sm:mt-1">{choice.helper}</div>
                   )}
                 </div>
-              </motion.button>
+              </button>
             );
           })}
-        </AnimatePresence>
       </div>
     </section>
   );
