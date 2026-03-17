@@ -23,47 +23,21 @@ interface InstallationConfigProps {
 
 export default function InstallationConfig({ selectedMotor, boatInfo, onComplete }: InstallationConfigProps) {
   const isTiller = isTillerMotor(selectedMotor?.model || '');
-  const { playSwoosh, playCelebration } = useSound();
-  
-  // Determine if we should skip controls step (user already has controls)
-  const hasExistingControls = boatInfo?.controlsOption === 'adapter' || 
-                              boatInfo?.controlsOption === 'compatible';
-  
-  // Start at step 2 if user has existing controls (skip control selection)
-  const [step, setStep] = useState(hasExistingControls ? 2 : 1);
+  const { playCelebration } = useSound();
   
   const [config, setConfig] = useState({
-    // Pre-fill controls value if user has existing controls
-    controls: hasExistingControls 
-      ? (boatInfo?.controlsOption === 'adapter' ? 'existing_adapter' : 'existing_compatible')
-      : '',
-    steering: '',
+    controls: 'side_mount',
+    steering: 'cable',
     gauges: '',
     mounting: '',
-    waterTest: true // Always included - shows on quote for added value
+    waterTest: true
   });
 
-  // Refs for scroll targets
-  const step2Ref = useRef<HTMLDivElement>(null);
-
-  // Scroll to new step when it appears (non-tiller flow)
-  useEffect(() => {
-    if (!isTiller && step >= 2) {
-      if (step2Ref?.current) {
-        setTimeout(() => {
-          step2Ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 100);
-      }
-    }
-  }, [step, isTiller]);
-
   const triggerComplete = (updatedConfig: typeof config) => {
-    // Get selected mounting option details for tiller motors
     const selectedMounting = tillerMountingChoices.find(choice => choice.value === updatedConfig.mounting);
     const installationCost = selectedMounting?.price || 0;
     const recommendedPackage = selectedMounting?.recommendedPackage || 'good';
     
-    // Celebration!
     confetti({
       particleCount: 100,
       spread: 70,
@@ -71,7 +45,6 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
     });
     playCelebration();
     
-    // Pass installation cost and recommended package to parent
     onComplete({
       ...updatedConfig,
       installationCost,
@@ -79,40 +52,33 @@ export default function InstallationConfig({ selectedMotor, boatInfo, onComplete
     });
   };
 
+  // For non-tiller motors, auto-complete immediately with defaults
+  useEffect(() => {
+    if (!isTiller) {
+      const defaultConfig = {
+        ...config,
+        controls: boatInfo?.controlsOption === 'adapter' ? 'existing_adapter' 
+                : boatInfo?.controlsOption === 'compatible' ? 'existing_compatible'
+                : 'side_mount',
+        steering: 'cable',
+      };
+      setConfig(defaultConfig);
+      setTimeout(() => {
+        triggerComplete(defaultConfig);
+      }, 300);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const handleOptionSelect = (field: string, value: string) => {
     const updatedConfig = { ...config, [field]: value };
     setConfig(updatedConfig);
     
     if (isTiller) {
-      // For tiller motors, auto-complete after mounting selection
       setTimeout(() => {
         triggerComplete(updatedConfig);
       }, 400);
-    } else {
-      // For non-tiller motors, advance to next step or complete
-      setTimeout(() => {
-        if (field === 'steering') {
-          // Steering is now the final step - auto-complete
-          triggerComplete(updatedConfig);
-        } else if (step < 2) {
-          playSwoosh(); // Play swoosh on step transition
-          setStep(step + 1);
-        }
-      }, 400);
     }
-  };
-
-  const handleSkipWithDefaults = () => {
-    const defaultConfig = {
-      ...config,
-      controls: 'side_mount',
-      steering: 'cable',
-    };
-    setConfig(defaultConfig);
-    playCelebration();
-    setTimeout(() => {
-      triggerComplete(defaultConfig);
-    }, 200);
   };
 
   return (
