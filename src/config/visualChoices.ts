@@ -5,7 +5,7 @@ export const controlChoices = [
     label: "Side-Mount Control",
     value: "side_mount",
     image: "/images/options/mercury-side-mount-control.png",
-    helper: "Lever on the side of your console",
+    helper: "Most boats have this — a lever on the side of the console",
     xpReward: 15,
     badge: "Most Common"
   },
