@@ -37,7 +37,7 @@ export const steeringChoices = [
     label: "Cable Steering",
     value: "cable",
     image: "/images/options/cable-steering.jpg",
-    helper: "Standard mechanical steering — most common on smaller boats",
+    helper: "Standard on most boats under 150HP — the most common setup",
     xpReward: 10,
     badge: "Most Common"
   },
