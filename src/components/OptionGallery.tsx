@@ -46,6 +46,7 @@ export default function OptionGallery({
         <AnimatePresence>
           {choices.map((choice) => {
             const selected = choice.value === value;
+            const isRecommended = !selected && choice.value === recommended;
             const isHover = hover === choice.id;
             
             return (
