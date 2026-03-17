@@ -1371,6 +1371,45 @@ html {
 @keyframes hbw-shimmer { to { transform: translateX(100%); } }
 
 @media (prefers-color-scheme: dark) {
+  /* === Force light mode on all elements when OS is in dark mode === */
+  /* This prevents iOS Chrome/Safari from inverting colors */
+  html, body, #root {
+    color-scheme: light !important;
+    background-color: hsl(0, 0%, 100%) !important;
+    color: hsl(222, 47%, 11%) !important;
+  }
+
+  /* Force all text to stay dark */
+  *, *::before, *::after {
+    color-scheme: light !important;
+  }
+  
+  /* Protect card/container backgrounds from inversion */
+  .bg-white,
+  [class*="bg-stone-50"],
+  [class*="bg-slate-50"],
+  [class*="bg-gray-50"],
+  [class*="bg-background"],
+  [class*="from-slate-50"],
+  [class*="via-white"],
+  [class*="to-blue-50"] {
+    background-color: hsl(0, 0%, 100%) !important;
+  }
+  
+  /* Protect borders from becoming invisible */
+  [class*="border-gray-"],
+  [class*="border-stone-"],
+  [class*="border-slate-"],
+  [class*="border-border"] {
+    border-color: hsl(214, 32%, 91%) !important;
+  }
+  
+  /* Protect input/select elements */
+  input, select, textarea, button {
+    color-scheme: light !important;
+  }
+  
+  /* Keep badges readable */
   .product-card .badge--shimmer {
     color: hsl(0 0% 100%);
     background: hsl(var(--primary));
@@ -1378,6 +1417,11 @@ html {
   }
   .product-card .badge--shimmer::after {
     background: linear-gradient(120deg, transparent 0%, hsl(0 0% 100% / 0.25) 40%, transparent 80%);
+  }
+  
+  /* Protect images from inversion */
+  img, svg, video, canvas {
+    filter: none !important;
   }
 }
 
