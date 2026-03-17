@@ -22,10 +22,11 @@ interface OptionGalleryProps {
   choices: Choice[];
   value?: string;
   onChange: (val: string) => void;
+  recommended?: string;
 }
 
 export default function OptionGallery({
-  title, choices, value, onChange
+  title, choices, value, onChange, recommended
 }: OptionGalleryProps) {
   const [hover, setHover] = useState<string | null>(null);
   const { playTick } = useSound();
