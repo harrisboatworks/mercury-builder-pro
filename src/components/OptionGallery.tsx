@@ -1,6 +1,5 @@
 // src/components/OptionGallery.tsx
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Award } from "lucide-react";
 import { useSound } from '@/contexts/SoundContext';
 
