@@ -1,49 +1,37 @@
-## Funnel Optimization: Motor Selection Drop-off (March 2026)
 
-### Context
-Week 1 data (121 sessions) showed a 92% drop between motor selection (92 sessions) and the next quote step (7 sessions). 85% of traffic is mobile.
+Fix the washed-out iPhone issue by treating it as a broader quote-flow rendering problem, not just a single page bug.
 
-### Changes Made
+1. Remove the remaining fade-risk on first render
+- Update `src/components/ui/page-transition.tsx` so iOS-safe rendering is decided immediately, not after mount.
+- Right now the page can briefly render with `opacity: 0` before the effect flips to safe mode, which can leave the screen looking faded on iPhone browsers.
 
-**1. Floating Mobile CTA (`src/components/motors/MobileQuoteCTA.tsx`)**
-- Appears after user scrolls past 2+ motor cards using IntersectionObserver
-- "Build Your Quote — Tap any motor to configure & get pricing"
-- Dismissible, positioned above the UnifiedMobileBar (bottom-20)
-- Fires `cta_build_quote` gtag event
+2. Hard-stop animated fade layers inside Boat Info
+- Audit `src/components/quote-builder/BoatInformation.tsx` and remove/replace the repeated `animate-fade-in` containers on mobile/iOS.
+- Convert key sections to static or transform-only reveal so the boat selection / boat info step never relies on opacity animation.
 
-**2. Inline Email Capture (`src/components/motors/EmailCaptureInline.tsx`)**
-- Shows below the motor grid, above the financing disclaimer
-- Single email field → writes to `email_sequence_queue` with `sequence_type: 'pricing_updates'`
-- Captures device type and timestamp in metadata
-- Success state with confirmation message
-- Fires `lead_capture` gtag event
+3. Replace semi-transparent quote surfaces with solid mobile surfaces
+- In `BoatInformation.tsx`, replace important `bg-muted/30`, tinted alert backgrounds, and similar translucent panels with solid light backgrounds on mobile/iOS.
+- This is especially important in the boat-type picker and follow-up detail panels, where stacked translucent layers can look milky on iPhone.
 
-**3. Motor card data attribute**
-- Added `data-motor-card` to each motor card wrapper for CTA trigger observation
+4. Tighten CSS targeting instead of broad guesses
+- Refine `src/index.css` so the quote flow has explicit “safe surface” rules for:
+  - `PageTransition` wrapper
+  - boat-info cards/panels
+  - purchase-path cards
+  - progress/header wrappers
+- Keep the fixes specific to quote pages and mobile/iOS so desktop styling is preserved.
 
-## Merged QR Code + CTA (March 2026)
+5. Verify the actual affected flow
+- Re-check these steps specifically:
+  - `/quote/purchase-path`
+  - `/quote/boat-info` boat selection section
+- Compare the shared wrappers between them, since the issue is likely coming from common layout/animation behavior rather than only one component.
 
-### Context
-The PDF had two overlapping sections — a "Financing Available" box with QR (only for financing-eligible quotes) and a separate "Ready to Proceed?" CTA box. The CTA box caused page-break issues and cash buyers under $5K never got a QR code.
+Technical findings
+- `PageTransition` still starts with animated opacity for one render before `useEffect` detects iOS.
+- `BoatInformation.tsx` still contains many `animate-fade-in` sections and translucent `bg-muted/30` containers.
+- `PurchasePath.tsx` itself is now mostly solid, so the remaining faded look likely comes from shared wrappers or the Boat Info step rather than that card component alone.
 
-### Changes Made
-
-**1. Universal QR generation (`QuoteSummaryPage.tsx`, `AdminQuoteDetail.tsx`)**
-- QR code is now always generated regardless of financing threshold
-- Financing-eligible quotes: QR points to `/financing-application?...` with prefilled params
-- Sub-$5K quotes: QR points to `mercuryrepower.ca`
-- `financingQrCode` field is always passed to the PDF data
-
-**2. Merged CTA + QR section (`ProfessionalQuotePDF.tsx`)**
-- Replaced separate financing box and CTA box with one unified section
-- QR code on the right, CTA steps on the left ("Scan QR", "Call/text", "Reply to email")
-- Financing terms ($/mo, term, APR) shown inside the same box when eligible
-- Fallback text-only CTA for edge cases where QR generation fails
-- `wrap={false}` prevents page-break splitting
-- Deposit-confirmed quotes skip the CTA entirely (existing behavior preserved)
-
-### What to Monitor
-- Motor selection → options conversion rate (baseline: 7.6%)
-- `pricing_updates` email captures per week
-- CTA click rate via `cta_build_quote` event
-- Review after 2–3 weeks with larger sample
+Expected result
+- Boat selection / boat info on iPhone should render fully solid immediately, with no washed-out first paint.
+- The quote flow should stop regressing page-to-page because the fix will cover the shared transition layer and the remaining translucent content panels.
