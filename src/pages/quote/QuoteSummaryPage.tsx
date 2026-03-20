@@ -277,8 +277,13 @@ export default function QuoteSummaryPage() {
       const premiumCost = await calculateWarrantyExtensionCost(motorHP, currentCoverageYears, PREMIUM_TARGET_YEARS);
       setCompleteWarrantyCost(completeCost);
       setPremiumWarrantyCost(premiumCost);
+      setWarrantyCostsLoaded(true);
     }
-    if (motorHP > 0) fetchWarrantyCosts();
+    if (motorHP > 0) {
+      fetchWarrantyCosts();
+    } else {
+      setWarrantyCostsLoaded(true);
+    }
   }, [motorHP, currentCoverageYears]);
 
   // Use selected package from context
