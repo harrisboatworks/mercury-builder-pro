@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
 import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
 import { Button } from "@/components/ui/button";
-import { Download, CreditCard, ArrowUp, Sparkles } from "lucide-react";
+import { Download, CreditCard, ArrowUp, Sparkles, Mail } from "lucide-react";
 import confetti from 'canvas-confetti';
 import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
 import { useSound } from '@/contexts/SoundContext';
@@ -176,8 +176,8 @@ export default function StickySummary({
               variant="outline"
               className="w-full"
             >
-              <Download className="w-4 h-4 mr-2" />
-              Save for Later
+              <Mail className="w-4 h-4 mr-2" />
+              Email Me This Quote
             </Button>
           )}
           

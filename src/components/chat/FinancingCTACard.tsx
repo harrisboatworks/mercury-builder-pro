@@ -67,7 +67,7 @@ export function FinancingCTACard({ data }: FinancingCTACardProps) {
         {/* Action Buttons */}
         <div className="flex gap-2">
           <Link
-            to="/financing"
+            to="/finance-calculator"
             className="flex-1 py-2.5 px-3 text-sm font-medium text-gray-700 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-center"
           >
             Calculator
