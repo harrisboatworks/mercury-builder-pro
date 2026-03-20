@@ -43,6 +43,11 @@ export interface TradeValuationConfig {
   BRAND_PENALTY_EVINRUDE?: { factor: number };
   BRAND_PENALTY_OMC?: { factor: number };
   BRAND_PENALTY_TOHATSU?: { factor: number };
+  BRAND_PENALTY_HONDA?: { factor: number };
+  BRAND_PENALTY_SUZUKI?: { factor: number };
+  BRAND_PENALTY_MARINER?: { factor: number };
+  BRAND_PENALTY_FORCE?: { factor: number };
+  BRAND_PENALTY_OTHER?: { factor: number };
   MERCURY_BONUS_YEARS?: { max_age: number; factor: number };
   MIN_TRADE_VALUE?: { value: number };
   HP_CLASS_FLOORS?: Record<string, number>;
