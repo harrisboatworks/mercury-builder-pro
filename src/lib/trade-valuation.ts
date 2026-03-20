@@ -95,6 +95,11 @@ export function getBrandPenaltyFactor(brand?: string, config?: TradeValuationCon
   } else {
     penalties['OMC'] = TRADEIN_BRAND_PENALTIES.OMC;
   }
+  if (config?.BRAND_PENALTY_TOHATSU?.factor !== undefined) {
+    penalties['TOHATSU'] = config.BRAND_PENALTY_TOHATSU.factor;
+  } else {
+    penalties['TOHATSU'] = TRADEIN_BRAND_PENALTIES.TOHATSU;
+  }
   
   // If the brand string contains any penalized brand name, apply the most severe (lowest factor)
   let factor = 1;

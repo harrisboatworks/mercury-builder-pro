@@ -50,9 +50,18 @@ describe('getBrandPenaltyFactor', () => {
     expect(getBrandPenaltyFactor('OMC')).toBe(0.5);
   });
 
+  it('returns 0.7 for Tohatsu', () => {
+    expect(getBrandPenaltyFactor('Tohatsu')).toBe(0.7);
+  });
+
   it('respects config override', () => {
     const config: TradeValuationConfig = { BRAND_PENALTY_JOHNSON: { factor: 0.4 } };
     expect(getBrandPenaltyFactor('Johnson', config)).toBe(0.4);
+  });
+
+  it('respects Tohatsu config override', () => {
+    const config: TradeValuationConfig = { BRAND_PENALTY_TOHATSU: { factor: 0.6 } };
+    expect(getBrandPenaltyFactor('Tohatsu', config)).toBe(0.6);
   });
 });
 
