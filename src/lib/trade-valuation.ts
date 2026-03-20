@@ -69,7 +69,12 @@ export const TRADEIN_BRAND_PENALTIES: Record<string, number> = {
   JOHNSON: 0.5,
   EVINRUDE: 0.5,
   OMC: 0.5,
+  MARINER: 0.5,
+  FORCE: 0.5,
+  OTHER: 0.5,
   TOHATSU: 0.7,
+  HONDA: 0.7,
+  SUZUKI: 0.7,
 };
 export const TRADEIN_MIN_VALUE = 100;
 const FALLBACK_MERCURY_BONUS_MAX_AGE = 3;
