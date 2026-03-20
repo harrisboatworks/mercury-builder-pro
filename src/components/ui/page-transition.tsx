@@ -49,11 +49,8 @@ const safeVariants = {
 };
 
 export function PageTransition({ children, className }: PageTransitionProps) {
-  const [reduceMotion, setReduceMotion] = useState(false);
-  
-  useEffect(() => {
-    setReduceMotion(shouldReduceMotion());
-  }, []);
+  // Synchronous init: prevents first-render opacity:0 flash on iOS
+  const [reduceMotion] = useState(() => shouldReduceMotion());
 
   // For iOS/reduced motion: render immediately without opacity animation
   if (reduceMotion) {
