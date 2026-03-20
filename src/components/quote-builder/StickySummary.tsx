@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
 import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
 import { Button } from "@/components/ui/button";
-import { Download, CreditCard, ArrowUp, Sparkles } from "lucide-react";
+import { Download, CreditCard, ArrowUp, Sparkles, Mail } from "lucide-react";
 import confetti from 'canvas-confetti';
 import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
 import { useSound } from '@/contexts/SoundContext';
