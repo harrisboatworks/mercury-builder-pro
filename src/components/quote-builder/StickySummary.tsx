@@ -176,8 +176,8 @@ export default function StickySummary({
               variant="outline"
               className="w-full"
             >
-              <Download className="w-4 h-4 mr-2" />
-              Save for Later
+              <Mail className="w-4 h-4 mr-2" />
+              Email Me This Quote
             </Button>
           )}
           

@@ -386,6 +386,7 @@ function AnimatedRoutes() {
         <Route path="/payment-canceled" element={<PaymentCanceled />} />
         
         {/* Other Routes */}
+        <Route path="/financing" element={<Navigate to="/finance-calculator" replace />} />
         <Route path="/finance-calculator" element={<FinanceCalculator />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/dev" element={<Dev />} />

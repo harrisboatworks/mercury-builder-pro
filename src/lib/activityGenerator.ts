@@ -149,10 +149,7 @@ export function generateDailyTestimonials(
   }));
 }
 
-export function generateReviewCount(date = new Date()): number {
-  const key = todayKey(date);
-  const seedFn = xmur3(`review-count-${key}`);
-  const rng = mulberry32(seedFn());
-  // Generate count between 150-220
-  return 150 + Math.floor(rng() * 70);
+export function generateReviewCount(_date = new Date()): number {
+  // Fixed count for consistency across all pages — update when real Google review count changes
+  return 170;
 }
