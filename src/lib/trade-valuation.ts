@@ -43,6 +43,11 @@ export interface TradeValuationConfig {
   BRAND_PENALTY_EVINRUDE?: { factor: number };
   BRAND_PENALTY_OMC?: { factor: number };
   BRAND_PENALTY_TOHATSU?: { factor: number };
+  BRAND_PENALTY_HONDA?: { factor: number };
+  BRAND_PENALTY_SUZUKI?: { factor: number };
+  BRAND_PENALTY_MARINER?: { factor: number };
+  BRAND_PENALTY_FORCE?: { factor: number };
+  BRAND_PENALTY_OTHER?: { factor: number };
   MERCURY_BONUS_YEARS?: { max_age: number; factor: number };
   MIN_TRADE_VALUE?: { value: number };
   HP_CLASS_FLOORS?: Record<string, number>;
@@ -64,7 +69,12 @@ export const TRADEIN_BRAND_PENALTIES: Record<string, number> = {
   JOHNSON: 0.5,
   EVINRUDE: 0.5,
   OMC: 0.5,
+  MARINER: 0.5,
+  FORCE: 0.5,
+  OTHER: 0.5,
   TOHATSU: 0.7,
+  HONDA: 0.7,
+  SUZUKI: 0.7,
 };
 export const TRADEIN_MIN_VALUE = 100;
 const FALLBACK_MERCURY_BONUS_MAX_AGE = 3;
@@ -79,26 +89,25 @@ export function getBrandPenaltyFactor(brand?: string, config?: TradeValuationCon
   if (!b) return 1;
   
   // Build penalties from config or use fallback
-  const penalties: Record<string, number> = {};
-  if (config?.BRAND_PENALTY_JOHNSON?.factor !== undefined) {
-    penalties['JOHNSON'] = config.BRAND_PENALTY_JOHNSON.factor;
-  } else {
-    penalties['JOHNSON'] = TRADEIN_BRAND_PENALTIES.JOHNSON;
-  }
-  if (config?.BRAND_PENALTY_EVINRUDE?.factor !== undefined) {
-    penalties['EVINRUDE'] = config.BRAND_PENALTY_EVINRUDE.factor;
-  } else {
-    penalties['EVINRUDE'] = TRADEIN_BRAND_PENALTIES.EVINRUDE;
-  }
-  if (config?.BRAND_PENALTY_OMC?.factor !== undefined) {
-    penalties['OMC'] = config.BRAND_PENALTY_OMC.factor;
-  } else {
-    penalties['OMC'] = TRADEIN_BRAND_PENALTIES.OMC;
-  }
-  if (config?.BRAND_PENALTY_TOHATSU?.factor !== undefined) {
-    penalties['TOHATSU'] = config.BRAND_PENALTY_TOHATSU.factor;
-  } else {
-    penalties['TOHATSU'] = TRADEIN_BRAND_PENALTIES.TOHATSU;
+  const penalties: Record<string, number> = { ...TRADEIN_BRAND_PENALTIES };
+  
+  // Apply any config overrides
+  const configKeys: Array<{ configKey: keyof TradeValuationConfig; brand: string }> = [
+    { configKey: 'BRAND_PENALTY_JOHNSON', brand: 'JOHNSON' },
+    { configKey: 'BRAND_PENALTY_EVINRUDE', brand: 'EVINRUDE' },
+    { configKey: 'BRAND_PENALTY_OMC', brand: 'OMC' },
+    { configKey: 'BRAND_PENALTY_TOHATSU', brand: 'TOHATSU' },
+    { configKey: 'BRAND_PENALTY_HONDA', brand: 'HONDA' },
+    { configKey: 'BRAND_PENALTY_SUZUKI', brand: 'SUZUKI' },
+    { configKey: 'BRAND_PENALTY_MARINER', brand: 'MARINER' },
+    { configKey: 'BRAND_PENALTY_FORCE', brand: 'FORCE' },
+    { configKey: 'BRAND_PENALTY_OTHER', brand: 'OTHER' },
+  ];
+  for (const { configKey, brand } of configKeys) {
+    const override = config?.[configKey] as { factor: number } | undefined;
+    if (override?.factor !== undefined) {
+      penalties[brand] = override.factor;
+    }
   }
   
   // If the brand string contains any penalized brand name, apply the most severe (lowest factor)

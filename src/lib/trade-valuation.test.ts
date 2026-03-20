@@ -54,6 +54,26 @@ describe('getBrandPenaltyFactor', () => {
     expect(getBrandPenaltyFactor('Tohatsu')).toBe(0.7);
   });
 
+  it('returns 0.7 for Honda', () => {
+    expect(getBrandPenaltyFactor('Honda')).toBe(0.7);
+  });
+
+  it('returns 0.7 for Suzuki', () => {
+    expect(getBrandPenaltyFactor('Suzuki')).toBe(0.7);
+  });
+
+  it('returns 0.5 for Mariner', () => {
+    expect(getBrandPenaltyFactor('Mariner')).toBe(0.5);
+  });
+
+  it('returns 0.5 for Force', () => {
+    expect(getBrandPenaltyFactor('Force')).toBe(0.5);
+  });
+
+  it('returns 0.5 for Other', () => {
+    expect(getBrandPenaltyFactor('Other')).toBe(0.5);
+  });
+
   it('respects config override', () => {
     const config: TradeValuationConfig = { BRAND_PENALTY_JOHNSON: { factor: 0.4 } };
     expect(getBrandPenaltyFactor('Johnson', config)).toBe(0.4);
@@ -62,6 +82,11 @@ describe('getBrandPenaltyFactor', () => {
   it('respects Tohatsu config override', () => {
     const config: TradeValuationConfig = { BRAND_PENALTY_TOHATSU: { factor: 0.6 } };
     expect(getBrandPenaltyFactor('Tohatsu', config)).toBe(0.6);
+  });
+
+  it('respects Honda config override', () => {
+    const config: TradeValuationConfig = { BRAND_PENALTY_HONDA: { factor: 0.8 } };
+    expect(getBrandPenaltyFactor('Honda', config)).toBe(0.8);
   });
 });
 
