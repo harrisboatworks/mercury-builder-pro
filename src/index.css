@@ -120,11 +120,20 @@ body {
   [class*="OptionGallery"] button,
   [class*="InstallationConfig"] div,
   [class*="PurchasePath"] button,
-  [class*="PurchasePath"] [class*="card"] {
+  [class*="PurchasePath"] [class*="card"],
+  [class*="BoatInformation"] [class*="card"],
+  [class*="PromoSelection"] button,
+  [class*="PromoSelection"] [class*="card"] {
     opacity: 1 !important;
     background-color: hsl(0, 0%, 100%);
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+  }
+
+  /* Force PageTransition wrapper and its children to be fully opaque */
+  [class*="page-transition"],
+  [data-framer-appear-id] {
+    opacity: 1 !important;
   }
 }
 

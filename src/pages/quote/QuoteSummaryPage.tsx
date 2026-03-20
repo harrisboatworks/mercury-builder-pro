@@ -75,6 +75,7 @@ export default function QuoteSummaryPage() {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState<boolean>(false);
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
+  const [warrantyCostsLoaded, setWarrantyCostsLoaded] = useState(false);
   const isMounted = true; // Render immediately — no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   
@@ -276,8 +277,13 @@ export default function QuoteSummaryPage() {
       const premiumCost = await calculateWarrantyExtensionCost(motorHP, currentCoverageYears, PREMIUM_TARGET_YEARS);
       setCompleteWarrantyCost(completeCost);
       setPremiumWarrantyCost(premiumCost);
+      setWarrantyCostsLoaded(true);
     }
-    if (motorHP > 0) fetchWarrantyCosts();
+    if (motorHP > 0) {
+      fetchWarrantyCosts();
+    } else {
+      setWarrantyCostsLoaded(true);
+    }
   }, [motorHP, currentCoverageYears]);
 
   // Use selected package from context
@@ -780,7 +786,7 @@ export default function QuoteSummaryPage() {
       />
       {/* Cinematic Quote Reveal */}
       <QuoteRevealCinematic
-        isVisible={showCinematic && isMounted && !promoLoading}
+        isVisible={showCinematic && isMounted && !promoLoading && warrantyCostsLoaded}
         onComplete={handleCinematicComplete}
         motorName={motorName}
         finalPrice={packageSpecificTotals.subtotal}

@@ -101,7 +101,6 @@ export default function PromoSelectionPage() {
   // Filter to only eligible options - hide financing-dependent options if not eligible
   const eligibleOptions = useMemo(() => {
     return options.filter(option => {
-      // Both "no_payments" and "special_financing" require financing eligibility
       if ((option.id === 'no_payments' || option.id === 'special_financing') && !isEligibleForFinancing) {
         return false;
       }
@@ -109,12 +108,9 @@ export default function PromoSelectionPage() {
     });
   }, [options, isEligibleForFinancing, rebateAmount, lowestRate]);
 
-  // No longer clearing promo selection on mount — user's choice persists on back-navigation
-
   // Set default rate when special financing is selected
   useEffect(() => {
     if (selectedOption === 'special_financing' && !selectedRate && financingRates.length > 0) {
-      // Default to 36-month option as a balanced choice
       const defaultRate = financingRates.find(r => r.months === 36) || financingRates[0];
       setSelectedRate(defaultRate);
     }
@@ -149,11 +145,9 @@ export default function PromoSelectionPage() {
     setHasUserInteracted(true);
     triggerHaptic('light');
     
-    // Clear rate selection if switching away from special financing
     if (optionId !== 'special_financing') {
       setSelectedRate(null);
       
-      // Dispatch to context immediately for non-financing options (enables mobile bar glow)
       const promoValue = optionId === 'no_payments' 
         ? 'First payment deferred 6 months' 
         : `$${rebateAmount.toLocaleString()} rebate`;
@@ -169,7 +163,6 @@ export default function PromoSelectionPage() {
       });
     }
     
-    // Auto-reset after 5 seconds
     setTimeout(() => setHasJustSelected(false), 5000);
   };
 
@@ -178,7 +171,6 @@ export default function PromoSelectionPage() {
     setHasJustSelected(true);
     triggerHaptic('light');
     
-    // Dispatch to context immediately with rate details (enables mobile bar glow)
     dispatch({ 
       type: 'SET_PROMO_DETAILS', 
       payload: {
@@ -189,32 +181,16 @@ export default function PromoSelectionPage() {
       }
     });
     
-    // Auto-reset after 5 seconds
     setTimeout(() => setHasJustSelected(false), 5000);
   };
 
-  const getPromoDisplayValue = (): string => {
-    switch (selectedOption) {
-      case 'no_payments':
-        return 'First payment deferred 6 months';
-      case 'special_financing':
-        return selectedRate ? `${selectedRate.rate}% APR for ${selectedRate.months} months` : '';
-      case 'cash_rebate':
-        return `$${rebateAmount.toLocaleString()} rebate`;
-      default:
-        return '';
-    }
-  };
-
   const handleContinue = () => {
-    // Auto-select Essential package and skip package step
     dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
     dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 7 } });
     navigate('/quote/summary');
   };
 
   const handleBack = () => {
-    // Navigate based on purchase path - mirrors forward navigation logic
     if (state.purchasePath === 'installed') {
       navigate('/quote/installation');
     } else {
@@ -222,7 +198,6 @@ export default function PromoSelectionPage() {
     }
   };
 
-  // Calculate estimated monthly payment for each rate
   const getEstimatedPayment = (rate: number, months: number): number => {
     return calculateMonthly(estimatedFinancingAmount, rate, months);
   };
@@ -245,58 +220,42 @@ export default function PromoSelectionPage() {
         {/* Main Content */}
         <div className="container mx-auto px-4 pb-12">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Mercury Logo */}
-            <motion.img
+            {/* Mercury Logo — no opacity animation */}
+            <img
               src={mercuryLogo}
               alt="Mercury Marine"
               className="h-12 mx-auto mb-6 brightness-0 dark:invert"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
             />
 
-            {/* Limited Time Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.1 }}
-              className="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6"
-            >
+            {/* Limited Time Badge — static */}
+            <div className="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
               </span>
               Limited Time: January 12 – March 31, 2026
-            </motion.div>
+            </div>
 
-            {/* Main Headline */}
+            {/* Main Headline — transform-only, no opacity */}
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              initial={{ y: 16 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
               className="text-3xl md:text-5xl font-bold text-foreground mb-4"
+              style={{ opacity: 1 }}
             >
               Get 7 Years of Coverage
               <br />
               <span className="text-primary">+ Choose One Bonus!</span>
             </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto"
-            >
+            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               Every qualifying Mercury outboard comes with 7 years of factory warranty
               PLUS your choice of one additional benefit.
-            </motion.p>
+            </p>
 
-            {/* Warranty Badge - Included with Shimmer Effect */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="relative inline-flex items-center gap-4 bg-green-50 dark:bg-green-950/30 backdrop-blur-sm border border-green-200 dark:border-green-800 rounded-xl px-6 py-4 mb-10 overflow-hidden"
-            >
+            {/* Warranty Badge - Included with Shimmer Effect — no opacity animation */}
+            <div className="relative inline-flex items-center gap-4 bg-green-50 dark:bg-green-950/30 backdrop-blur-sm border border-green-200 dark:border-green-800 rounded-xl px-6 py-4 mb-10 overflow-hidden">
               {/* Shimmer overlay */}
               <div 
                 className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-green-200/30 to-transparent pointer-events-none" 
@@ -326,21 +285,16 @@ export default function PromoSelectionPage() {
               >
                 ✓ INCLUDED
               </motion.div>
-            </motion.div>
+            </div>
 
-            {/* Divider with Animation */}
-            <motion.div 
-              className="flex items-center gap-4 mb-8"
-              initial={{ opacity: 0, scaleX: 0 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ delay: 0.45, duration: 0.5 }}
-            >
+            {/* Divider — static */}
+            <div className="flex items-center gap-4 mb-8">
               <div className="flex-1 h-px bg-border"></div>
               <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">Choose Your Bonus</span>
               <div className="flex-1 h-px bg-border"></div>
-            </motion.div>
+            </div>
 
-            {/* Option Cards with Staggered Entrance - only eligible options */}
+            {/* Option Cards — transform-only entrance, no opacity */}
             <div className={cn(
               "grid gap-6 mb-6",
               eligibleOptions.length === 2 ? "md:grid-cols-2 max-w-2xl mx-auto" : "md:grid-cols-3"
@@ -352,14 +306,15 @@ export default function PromoSelectionPage() {
                 return (
                   <motion.button
                     key={option.id}
-                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    initial={{ y: 24 }}
+                    animate={{ y: 0 }}
                     transition={{ 
-                      delay: 0.5 + index * 0.15,
+                      delay: index * 0.1,
                       type: 'spring',
                       stiffness: 100,
                       damping: 15
                     }}
+                    style={{ opacity: 1 }}
                     whileHover={{ scale: 1.03, y: -4 }}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleOptionSelect(option.id)}
@@ -413,11 +368,12 @@ export default function PromoSelectionPage() {
               {selectedOption === 'special_financing' && isEligibleForFinancing && financingRates.length > 0 && (
                 <motion.div
                   ref={rateSelectorRef}
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
+                  initial={{ height: 0 }}
+                  animate={{ height: 'auto' }}
+                  exit={{ height: 0 }}
                   transition={{ duration: 0.3 }}
                   className="mb-8"
+                  style={{ opacity: 1 }}
                 >
                     <div className="bg-card border border-border rounded-xl p-6 max-w-2xl mx-auto">
                     <h3 className="text-foreground font-semibold mb-4">Select Your Rate & Term</h3>
@@ -465,23 +421,14 @@ export default function PromoSelectionPage() {
 
             {/* Countdown Timer */}
             {endDate && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="mb-8"
-              >
+              <div className="mb-8">
                 <p className="text-muted-foreground text-sm mb-2">Offer ends March 31, 2026</p>
                 <CountdownTimer endDate={endDate} className="justify-center" />
-              </motion.div>
+              </div>
             )}
 
-            {/* Continue Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9 }}
-            >
+            {/* Continue Button — static */}
+            <div>
               <Button
                 size="lg"
                 onClick={handleContinue}
@@ -497,7 +444,7 @@ export default function PromoSelectionPage() {
               {selectedOption === 'special_financing' && !selectedRate && (
                 <p className="text-amber-600 dark:text-amber-400 text-sm mt-2">Please select a rate and term above</p>
               )}
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
