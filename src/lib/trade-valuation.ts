@@ -89,26 +89,25 @@ export function getBrandPenaltyFactor(brand?: string, config?: TradeValuationCon
   if (!b) return 1;
   
   // Build penalties from config or use fallback
-  const penalties: Record<string, number> = {};
-  if (config?.BRAND_PENALTY_JOHNSON?.factor !== undefined) {
-    penalties['JOHNSON'] = config.BRAND_PENALTY_JOHNSON.factor;
-  } else {
-    penalties['JOHNSON'] = TRADEIN_BRAND_PENALTIES.JOHNSON;
-  }
-  if (config?.BRAND_PENALTY_EVINRUDE?.factor !== undefined) {
-    penalties['EVINRUDE'] = config.BRAND_PENALTY_EVINRUDE.factor;
-  } else {
-    penalties['EVINRUDE'] = TRADEIN_BRAND_PENALTIES.EVINRUDE;
-  }
-  if (config?.BRAND_PENALTY_OMC?.factor !== undefined) {
-    penalties['OMC'] = config.BRAND_PENALTY_OMC.factor;
-  } else {
-    penalties['OMC'] = TRADEIN_BRAND_PENALTIES.OMC;
-  }
-  if (config?.BRAND_PENALTY_TOHATSU?.factor !== undefined) {
-    penalties['TOHATSU'] = config.BRAND_PENALTY_TOHATSU.factor;
-  } else {
-    penalties['TOHATSU'] = TRADEIN_BRAND_PENALTIES.TOHATSU;
+  const penalties: Record<string, number> = { ...TRADEIN_BRAND_PENALTIES };
+  
+  // Apply any config overrides
+  const configKeys: Array<{ configKey: keyof TradeValuationConfig; brand: string }> = [
+    { configKey: 'BRAND_PENALTY_JOHNSON', brand: 'JOHNSON' },
+    { configKey: 'BRAND_PENALTY_EVINRUDE', brand: 'EVINRUDE' },
+    { configKey: 'BRAND_PENALTY_OMC', brand: 'OMC' },
+    { configKey: 'BRAND_PENALTY_TOHATSU', brand: 'TOHATSU' },
+    { configKey: 'BRAND_PENALTY_HONDA', brand: 'HONDA' },
+    { configKey: 'BRAND_PENALTY_SUZUKI', brand: 'SUZUKI' },
+    { configKey: 'BRAND_PENALTY_MARINER', brand: 'MARINER' },
+    { configKey: 'BRAND_PENALTY_FORCE', brand: 'FORCE' },
+    { configKey: 'BRAND_PENALTY_OTHER', brand: 'OTHER' },
+  ];
+  for (const { configKey, brand } of configKeys) {
+    const override = config?.[configKey] as { factor: number } | undefined;
+    if (override?.factor !== undefined) {
+      penalties[brand] = override.factor;
+    }
   }
   
   // If the brand string contains any penalized brand name, apply the most severe (lowest factor)
