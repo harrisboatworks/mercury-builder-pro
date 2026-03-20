@@ -1,32 +1,44 @@
 
 
-# Apply Brand Penalties for All Non-Mercury/Non-Yamaha Trade-Ins
+# Council Feedback Implementation (Revised — No Motor Card Disclaimer)
 
-Keep all brands selectable in the dropdown, but apply heavy penalties to everything except Mercury and Yamaha since you can't service them and customers don't want them.
+Four changes based on the AI council reviews.
 
-## Changes
+---
 
-### `src/lib/trade-valuation.ts`
-- Ensure all non-Mercury, non-Yamaha brands get a significant penalty factor:
-  - Johnson/Evinrude/OMC: keep at 0.5 (50% penalty) — already set
-  - Tohatsu: keep at 0.7 (30% penalty) — just added
-  - Honda/Suzuki/Mariner/Force/Other: currently get **no penalty** (factor 1.0) — update these to apply penalties since they're unserviceable brands you don't want
-- Suggested factors:
-  - Honda/Suzuki: 0.7 (30% less — decent motors but not your brand)
-  - Mariner/Force/Other: 0.5 (50% less — discontinued/unknown brands)
-- Update `getBrandPenaltyFactor` to return the appropriate factor for each brand, with config overrides available via `trade_valuation_config` table
+## 1. Fix Broken `/financing` Nav Link
 
-### `src/lib/trade-valuation.test.ts`
-- Add test cases for Honda, Suzuki, Mariner, Force, and Other brand penalties
+The footer and chat CTA link to `/financing` which doesn't resolve. The working page is `/finance-calculator`.
 
-### No UI changes needed
-The brand dropdown stays the same with all options available.
+**Files**:
+- `src/components/ui/site-footer.tsx` line 18: change href from `/financing` to `/finance-calculator`
+- `src/components/chat/FinancingCTACard.tsx` line 70: change `to="/financing"` to `to="/finance-calculator"`
+- `src/App.tsx`: add a catch-all redirect `<Route path="/financing" element={<Navigate to="/finance-calculator" replace />} />` so any other links or bookmarks still work
 
-### Result
-- Mercury: full value (1.0)
-- Yamaha: 8% less (0.92) — already set
-- Honda/Suzuki/Tohatsu: 30% less (0.7)
-- Johnson/Evinrude/OMC/Mariner/Force/Other: 50% less (0.5)
+## 2. Promote "Save for Later" → "Email Me This Quote"
 
-All penalties remain adjustable via the `trade_valuation_config` database table without code changes.
+The quote summary has a buried "Save for Later" button that already triggers `SaveQuoteDialog` (captures name, email, phone, saves to Supabase, alerts admin). It just needs to be more visible and clearly named as the soft-exit action.
+
+**File: `src/components/quote-builder/StickySummary.tsx`**:
+- Rename the button label from "Save for Later" to "Email Me This Quote"
+- Change icon from `Download` to `Mail`
+- Move it above the "Download PDF" button in the action stack so it's the first secondary action users see
+
+## 3. Standardize Review Count
+
+`generateReviewCount()` currently returns a random number 150-220 per day, so different pages can show different counts.
+
+**File: `src/lib/activityGenerator.ts`**:
+- Change `generateReviewCount` to return a fixed value (e.g. `170`) so all pages are consistent
+- This can be updated manually when the real Google review count changes, or later replaced with a live API call
+
+## 4. Update Plan File
+
+**File: `.lovable/plan.md`**: Update to reflect completed council feedback items.
+
+---
+
+## No build errors
+
+The "build errors" message is just the normal Vite build output showing file sizes — the build completed successfully. No code fixes needed for that.
 
