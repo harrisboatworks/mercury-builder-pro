@@ -647,7 +647,7 @@ export const BoatInformation = ({
 
 
                    {/* Boat Details Section - Shows after boat type is selected */}
-                   {boatInfo.type && boatInfo.type !== 'motor-only' && <div ref={lengthSectionRef} className="boat-details-section animate-fade-in mt-6 p-6 bg-muted rounded-lg border border-border">
+                   {boatInfo.type && boatInfo.type !== 'motor-only' && <div ref={lengthSectionRef} className="boat-details-section mt-6 p-6 bg-muted rounded-lg border border-border">
                        <div className="space-y-6">
                          {/* Boat Make and Model */}
                          <div className="space-y-4">
