@@ -468,7 +468,7 @@ export const BoatInformation = ({
         {/* Step Content */}
         <div>
         {boatInfo.type === 'motor-only' ? <>
-            {currentStep === 0 && <Card className="p-6 animate-fade-in">
+            {currentStep === 0 && <Card className="p-6">
                 <div className="space-y-6">
                   <h3 className="text-2xl font-light tracking-wide heading-protected">Motor Only</h3>
                   <p className="text-sm font-light text-protected-subtle">Buying a motor without a boat? We'll confirm specs at consultation.</p>
@@ -500,21 +500,21 @@ export const BoatInformation = ({
                 </div>
               </Card>}
 
-            {showTradeIn && currentStep === 1 && <Card className="p-6 animate-fade-in">
+            {showTradeIn && currentStep === 1 && <Card className="p-6">
                 <div className="space-y-4">
                   <h3 className="text-2xl font-light tracking-wide heading-protected">Trade-In Valuation (Optional)</h3>
                   <TradeInValuation tradeInInfo={tradeInInfo} onTradeInChange={setTradeInInfo} currentMotorBrand={'No Current Motor'} currentHp={0} />
                 </div>
               </Card>}
 
-            {currentStep === 2 && <Card className="p-6 animate-fade-in">
+            {currentStep === 2 && <Card className="p-6">
                 <div className="space-y-4">
                   <h3 className="text-2xl font-light tracking-wide heading-protected">Ready to Continue</h3>
                   <p className="text-sm font-light text-protected-subtle">We'll use typical settings and confirm any unknowns.</p>
                 </div>
               </Card>}
           </> : <>
-            {currentStep === 0 && <Card className="p-6 animate-fade-in">
+            {currentStep === 0 && <Card className="p-6">
                 <div className="space-y-6">
                   <div className="text-center space-y-2 heading-protected">
                     <Label className="text-2xl font-light tracking-wide">What type of boat do you have?</Label>
@@ -697,7 +697,7 @@ export const BoatInformation = ({
                 </div>
               </Card>}
 
-            {currentStep === 1 && <Card className="p-6 animate-fade-in">
+            {currentStep === 1 && <Card className="p-6">
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-2xl font-light tracking-wide heading-protected">Transom Height Confirmation</h3>
@@ -751,7 +751,7 @@ export const BoatInformation = ({
                 </div>
               </Card>}
 
-            {currentStep === 2 && <Card className="p-6 animate-fade-in">
+            {currentStep === 2 && <Card className="p-6">
                 <div className="space-y-6">
                   <div className="space-y-4">
                     <div className="space-y-2">
@@ -953,14 +953,14 @@ export const BoatInformation = ({
                 </div>
               </Card>}
 
-            {showTradeIn && currentStep === 3 && <Card className="p-6 animate-fade-in">
+            {showTradeIn && currentStep === 3 && <Card className="p-6">
                 <div className="space-y-4">
                   <h3 className="text-2xl font-light tracking-wide heading-protected">Have a motor to trade?</h3>
                    <TradeInValuation tradeInInfo={tradeInInfo} onTradeInChange={setTradeInInfo} currentMotorBrand={boatInfo.currentMotorBrand} currentHp={boatInfo.currentHp} currentMotorYear={boatInfo.currentMotorYear} />
                 </div>
               </Card>}
 
-            {currentStep === 4 && <Card className="p-6 animate-fade-in">
+            {currentStep === 4 && <Card className="p-6">
                 <div className="space-y-6">
                   <div className="space-y-2">
                     <h3 className="text-2xl font-light tracking-wide heading-protected">Compatibility Check</h3>
