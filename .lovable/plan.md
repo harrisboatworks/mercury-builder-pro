@@ -1,37 +1,58 @@
 
-Fix the washed-out iPhone issue by treating it as a broader quote-flow rendering problem, not just a single page bug.
 
-1. Remove the remaining fade-risk on first render
-- Update `src/components/ui/page-transition.tsx` so iOS-safe rendering is decided immediately, not after mount.
-- Right now the page can briefly render with `opacity: 0` before the effect flips to safe mode, which can leave the screen looking faded on iPhone browsers.
+# Fix: Washed-Out Pages, Empty Promo Page, and Wrong Cinematic Price
 
-2. Hard-stop animated fade layers inside Boat Info
-- Audit `src/components/quote-builder/BoatInformation.tsx` and remove/replace the repeated `animate-fade-in` containers on mobile/iOS.
-- Convert key sections to static or transform-only reveal so the boat selection / boat info step never relies on opacity animation.
+Three distinct issues to solve in one pass.
 
-3. Replace semi-transparent quote surfaces with solid mobile surfaces
-- In `BoatInformation.tsx`, replace important `bg-muted/30`, tinted alert backgrounds, and similar translucent panels with solid light backgrounds on mobile/iOS.
-- This is especially important in the boat-type picker and follow-up detail panels, where stacked translucent layers can look milky on iPhone.
+---
 
-4. Tighten CSS targeting instead of broad guesses
-- Refine `src/index.css` so the quote flow has explicit “safe surface” rules for:
-  - `PageTransition` wrapper
-  - boat-info cards/panels
-  - purchase-path cards
-  - progress/header wrappers
-- Keep the fixes specific to quote pages and mobile/iOS so desktop styling is preserved.
+## Issue 1: Promo Selection Page Shows No Content on iPhone
 
-5. Verify the actual affected flow
-- Re-check these steps specifically:
-  - `/quote/purchase-path`
-  - `/quote/boat-info` boat selection section
-- Compare the shared wrappers between them, since the issue is likely coming from common layout/animation behavior rather than only one component.
+**Root cause**: Every element on PromoSelectionPage uses Framer Motion `initial={{ opacity: 0 }}` with staggered delays up to 0.9s. Combined with PageTransition also starting at `opacity: 0`, iOS compositing can leave layers permanently transparent.
 
-Technical findings
-- `PageTransition` still starts with animated opacity for one render before `useEffect` detects iOS.
-- `BoatInformation.tsx` still contains many `animate-fade-in` sections and translucent `bg-muted/30` containers.
-- `PurchasePath.tsx` itself is now mostly solid, so the remaining faded look likely comes from shared wrappers or the Boat Info step rather than that card component alone.
+**Fix in `src/pages/quote/PromoSelectionPage.tsx`**:
+- Remove all opacity-based entry animations from the logo, badge, headline, description, warranty badge, divider, option cards, countdown, and continue button
+- Replace with static rendering or transform-only animations (e.g. `y: 20 → 0`)
+- Keep interactive animations (whileHover, whileTap, selected checkmark scale) since those are user-triggered and safe
 
-Expected result
-- Boat selection / boat info on iPhone should render fully solid immediately, with no washed-out first paint.
-- The quote flow should stop regressing page-to-page because the fix will cover the shared transition layer and the remaining translucent content panels.
+## Issue 2: Cinematic Intro Shows Wrong (Low) Price
+
+**Root cause**: The cinematic receives `packageSpecificTotals.subtotal` as `finalPrice`, but this depends on `accessoryBreakdown` which includes `completeWarrantyCost`/`premiumWarrantyCost` — both initialized to `0` and fetched asynchronously. The cinematic can start before these settle.
+
+**Fix in `src/pages/quote/QuoteSummaryPage.tsx`**:
+- Add a `pricingReady` gate: don't show the cinematic until warranty costs have been fetched (track with a `warrantyCostsLoaded` state flag set after the `fetchWarrantyCosts` effect completes)
+- Change cinematic visibility condition from:
+  `showCinematic && isMounted && !promoLoading`
+  to:
+  `showCinematic && isMounted && !promoLoading && warrantyCostsLoaded`
+
+## Issue 3: Summary Page and Other Quote Pages Washed Out on iPhone
+
+**Root cause**: `PageTransition` uses `useState(false)` for iOS detection, so the first render always uses the opacity-based `pageVariants` (`opacity: 0 → 1`). By the time `useEffect` sets `reduceMotion = true`, the damage is done.
+
+**Fix in `src/components/ui/page-transition.tsx`**:
+- Call `shouldReduceMotion()` synchronously as the initial state value: `useState(() => shouldReduceMotion())`
+- This ensures iOS devices never get the opacity-based animation on first render
+
+**Fix in `src/index.css`** (belt-and-suspenders):
+- Add a mobile media query that forces `opacity: 1 !important` on `.page-transition-wrapper` and all direct children of quote page containers
+- Target known problem surfaces: PageTransition wrapper, promo selection cards, summary page sections
+
+## Issue 4: BoatInformation Still Uses animate-fade-in and Translucent Backgrounds
+
+**Fix in `src/components/quote-builder/BoatInformation.tsx`**:
+- Replace `animate-fade-in` class on all Card elements with static rendering
+- Replace `bg-muted/30` on the boat details section with a solid `bg-slate-50` or `bg-muted`
+
+---
+
+## Files to modify
+
+| File | Changes |
+|------|---------|
+| `src/components/ui/page-transition.tsx` | Synchronous iOS detection via `useState(() => shouldReduceMotion())` |
+| `src/pages/quote/PromoSelectionPage.tsx` | Strip all `initial={{ opacity: 0 }}` from every motion element; use transform-only or static |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Add `warrantyCostsLoaded` gate for cinematic visibility |
+| `src/components/quote-builder/BoatInformation.tsx` | Remove `animate-fade-in`, replace `bg-muted/30` with solid |
+| `src/index.css` | Add mobile safeguard forcing `opacity: 1` on quote page containers |
+
