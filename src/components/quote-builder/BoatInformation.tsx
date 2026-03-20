@@ -602,7 +602,7 @@ export const BoatInformation = ({
                   <div className="why-this-matters">
                     <details className="text-sm">
                       <summary className="cursor-pointer text-protected-primary hover:opacity-80">Why do we need to know your boat type?</summary>
-                      <div className="mt-2 rounded-md bg-muted/30 p-3">
+                      <div className="mt-2 rounded-md bg-muted p-3">
                         <p>Different boats need different motor features:</p>
                         <ul className="mt-2 space-y-1">
                           <li>• Pontoons: Need extra thrust for heavy loads</li>
@@ -647,7 +647,7 @@ export const BoatInformation = ({
 
 
                    {/* Boat Details Section - Shows after boat type is selected */}
-                   {boatInfo.type && boatInfo.type !== 'motor-only' && <div ref={lengthSectionRef} className="boat-details-section animate-fade-in mt-6 p-6 bg-muted/30 rounded-lg border border-border">
+                   {boatInfo.type && boatInfo.type !== 'motor-only' && <div ref={lengthSectionRef} className="boat-details-section animate-fade-in mt-6 p-6 bg-muted rounded-lg border border-border">
                        <div className="space-y-6">
                          {/* Boat Make and Model */}
                          <div className="space-y-4">
@@ -840,7 +840,7 @@ export const BoatInformation = ({
                         </Select>
                       </div>}
 
-                    {!isSelectedTillerMotor && selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && <div className="controls-section rounded-lg border border-border bg-muted/30 p-4">
+                    {!isSelectedTillerMotor && selectedMotor && (typeof selectedMotor.hp === 'number' ? selectedMotor.hp : parseInt(String(selectedMotor.hp))) >= 40 && <div className="controls-section rounded-lg border border-border bg-muted p-4">
                         <h4 className="font-light tracking-wide text-gray-900 dark:text-gray-100 mb-3">Steering Controls Required</h4>
                         {isNonMercuryBrand && <Alert className="mb-3 border-blue-500 bg-blue-50 dark:bg-blue-950/20">
                             <div className="flex items-center gap-2">
@@ -969,7 +969,7 @@ export const BoatInformation = ({
                       <span className="text-sm text-protected-subtle">{computeCompatibilityScore()}% match</span>
                     </div>
                   </div>
-                  <div className="rounded-lg border border-border bg-muted/30 p-4">
+                  <div className="rounded-lg border border-border bg-muted p-4">
                     <div className="flex flex-col md:flex-row gap-4 items-center">
                       <svg viewBox="0 0 400 120" className="w-full md:w-2/3">
                         <rect x="10" y="60" rx="6" ry="6" height="22" width={Math.max(80, Math.min(360, lengthFeet * 12))} className="fill-primary/50" />
