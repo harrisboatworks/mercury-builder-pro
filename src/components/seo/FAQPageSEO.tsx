@@ -86,7 +86,7 @@ export function FAQPageSEO() {
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Outboard Repower FAQ — Harris Boat Works" />
-      <meta name="twitter:description" content="20 expert answers about Mercury outboard repowers — choosing, buying, financing, and installing." />
+      <meta name="twitter:description" content="24 expert answers about Mercury outboard repowers — choosing, buying, financing, and installing." />
       <meta name="twitter:image" content={`${SITE_URL}/social-share.jpg`} />
 
       <script type="application/ld+json">
