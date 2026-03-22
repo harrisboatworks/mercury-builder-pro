@@ -36,6 +36,10 @@ export const faqCategories: FAQCategory[] = [
       {
         question: 'What\'s included in a repower package?',
         answer: 'A Mercury repower package at Harris Boat Works includes the new Mercury outboard motor, installation, and full rigging — that means new throttle and shift controls, steering connections, fuel lines, and gauges as required. We handle everything so you\'re not left with a new motor and old, incompatible hardware. Use the configurator at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> to see what\'s included and get live pricing on the motor that fits your boat.'
+      },
+      {
+        question: 'Can I repower a pontoon boat?',
+        answer: 'Yes — pontoons are one of the most common repower candidates. Because pontoons are heavy and sit high in the water, we typically recommend Mercury motors with Command Thrust, which uses a larger gearcase to generate more thrust at lower RPM. This makes a big difference in getting a loaded pontoon on plane and handling in wind or current. Most pontoon repowers fall in the 90–150hp range, depending on the tube configuration (double vs. triple) and how you use the boat. Build a quote at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> and we\'ll confirm the right motor and shaft length for your pontoon.'
       }
     ]
   },
