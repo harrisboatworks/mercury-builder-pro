@@ -68,7 +68,7 @@ export function FAQPageSEO() {
       <title>Mercury Outboard Repower FAQ — Harris Boat Works | mercuryrepower.ca</title>
       <meta
         name="description"
-        content="Get expert answers to 20 Mercury outboard repower questions. Choosing the right HP, repower costs, financing, trade-ins, installation process — from Ontario's Mercury Marine Platinum Dealer since 1947."
+        content="Get expert answers to 25 Mercury outboard repower questions. Choosing the right HP, Verado vs FourStroke, SmartCraft Connect, repower costs, financing, pontoon repowers, winterization — from Ontario's Mercury Marine Platinum Dealer since 1947."
       />
       <meta
         name="keywords"
