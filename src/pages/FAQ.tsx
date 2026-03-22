@@ -86,14 +86,16 @@ export default function FAQ() {
               id="faq-hero-title"
               className="text-3xl md:text-5xl font-light text-foreground mb-4"
             >
-              Mercury Outboard <span className="font-medium">FAQ</span>
+              Mercury Outboard Repower <span className="font-medium">FAQ</span>
             </h1>
             <p
               id="faq-hero-description"
               className="text-lg text-muted-foreground font-light"
             >
-              Expert answers to the most common questions about buying, maintaining, and repowering
-              Mercury outboard motors — from Ontario's trusted Mercury dealer since 1965.
+              Repowering means replacing your boat's existing outboard motor with a new one.
+              At Harris Boat Works, we specialize in Mercury outboard repowers — from 2.5hp kickers
+              to 300hp performance engines. We handle the full process: motor selection, rigging,
+              controls, gauges, and installation.
             </p>
           </div>
         </section>
