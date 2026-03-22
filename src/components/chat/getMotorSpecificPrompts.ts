@@ -257,16 +257,6 @@ const familyQuestions = {
     "Electric start available?",
     "Integrated linkage option?",
   ],
-  verado: [
-    "What makes Verado special?",
-    "Is the premium worth it?",
-    "Joystick piloting compatible?",
-    "How quiet is it really?",
-    "Supercharged benefits?",
-    "Maintenance costs higher?",
-    "Best Verado for my boat?",
-    "Digital throttle benefits?",
-  ],
   proxs: [
     "Pro XS vs standard FourStroke?",
     "What RPM at WOT?",
