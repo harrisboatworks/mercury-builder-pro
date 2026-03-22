@@ -216,7 +216,9 @@ ${tech.benefits.map(b => `- ${b}`).join('\n')}
 
 ## Common Comparisons
 
-### Verado vs FourStroke
+**IMPORTANT: Harris Boat Works does NOT sell Mercury Verado motors. We carry FourStroke, Pro XS, SeaPro, and Racing only. If asked about Verado, be honest that we don't carry it and recommend our FourStroke V8 or Pro XS alternatives.**
+
+### Verado vs FourStroke (General Mercury Knowledge — We Don't Sell Verado)
 ${MERCURY_COMPARISONS.verado_vs_fourstroke.answer}
 
 ### Pro XS vs FourStroke
@@ -571,10 +573,11 @@ ${HP_BY_BOAT_TYPE.map(rec => `| ${rec.boat} | ${rec.hp} | ${rec.note} |`).join('
 - **Best For:** ${MOTOR_FAMILIES_QUICK.proXS.bestFor}
 - **Key Benefits:** ${MOTOR_FAMILIES_QUICK.proXS.keyBenefits}
 
-### Mercury Verado
+### Mercury Verado (NOT SOLD BY HARRIS — general knowledge only)
 - **HP Range:** ${MOTOR_FAMILIES_QUICK.verado.hpRange}
 - **Best For:** ${MOTOR_FAMILIES_QUICK.verado.bestFor}
 - **Key Benefits:** ${MOTOR_FAMILIES_QUICK.verado.keyBenefits}
+- **Note:** Harris does not carry Verado. For high-HP needs, recommend FourStroke V8 (250-300HP) or Pro XS.
 
 ### Mercury SeaPro
 - **HP Range:** ${MOTOR_FAMILIES_QUICK.seaPro.hpRange}

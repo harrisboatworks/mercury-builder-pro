@@ -236,10 +236,6 @@ export const EMOTIONAL_REPOWER_MESSAGES: ConversationalNudge[] = [
 
 // Motor-family-specific messages
 export const MOTOR_FAMILY_TIPS: Record<string, ConversationalNudge[]> = {
-  'verado': [
-    { message: "Verado's the quietest and smoothest of the bunch", icon: 'sparkles' },
-    { message: "Verado gives you that premium ride feel", icon: 'shield' },
-  ],
   'pro xs': [
     { message: "Pro XS is built for speed — tournament-ready", icon: 'sparkles' },
     { message: "Pro XS owners love the extra punch", icon: 'check' },
@@ -339,7 +335,6 @@ export const pickRandomFiltered = <T extends ConversationalNudge>(arr: T[], hp: 
 export const getMotorFamilyKey = (model: string | undefined): string | null => {
   if (!model) return null;
   const lower = model.toLowerCase();
-  if (lower.includes('verado')) return 'verado';
   if (lower.includes('pro xs')) return 'pro xs';
   if (lower.includes('prokicker')) return 'prokicker';
   if (lower.includes('seapro')) return 'seapro';
@@ -355,13 +350,6 @@ export const MOTOR_FAMILY_CONFIGURATOR_TIPS: Record<string, Array<{ step: string
     { step: 'control', message: 'Digital Throttle & Shift for instant response', icon: 'sparkles' },
     { step: 'features', message: 'Transient Spark tech = fastest hole shot in class', icon: 'check' },
     { step: 'result', message: 'Tournament-proven — built to win', icon: 'heart' },
-  ],
-  'verado': [
-    { step: 'start', message: 'Verado is pure electric — smoothest start around', icon: 'sparkles' },
-    { step: 'shaft', message: 'Match shaft to your transom for best performance', icon: 'check' },
-    { step: 'control', message: 'Electro-hydraulic steering included — butter smooth', icon: 'sparkles' },
-    { step: 'features', message: 'Advanced Sound Control = quietest in class', icon: 'shield' },
-    { step: 'result', message: 'Premium choice — tap to see the difference', icon: 'heart' },
   ],
   'fourstroke': [
     { step: 'start', message: 'Electric start adds convenience — worth it!', icon: 'check' },

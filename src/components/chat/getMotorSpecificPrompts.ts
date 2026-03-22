@@ -234,14 +234,14 @@ const comparisonQuestions = {
   highPower: [
     "Compare to the 115HP",
     "Pro XS vs standard?",
-    "Verado vs FourStroke?",
+    "FourStroke V8 benefits?",
     "Worth the extra HP?",
   ],
   premium: [
-    "Verado vs Pro XS?",
+    "Pro XS advantages?",
     "Single vs twin setup?",
     "Compare to Yamaha?",
-    "Worth the Verado premium?",
+    "Command Thrust worth it?",
   ],
 };
 
@@ -256,16 +256,6 @@ const familyQuestions = {
     "Trolling plate needed?",
     "Electric start available?",
     "Integrated linkage option?",
-  ],
-  verado: [
-    "What makes Verado special?",
-    "Is the premium worth it?",
-    "Joystick piloting compatible?",
-    "How quiet is it really?",
-    "Supercharged benefits?",
-    "Maintenance costs higher?",
-    "Best Verado for my boat?",
-    "Digital throttle benefits?",
   ],
   proxs: [
     "Pro XS vs standard FourStroke?",
@@ -337,8 +327,6 @@ export function getMotorSpecificPrompts(context: MotorContext, count: number = 4
   // Add family-specific questions first (highest priority)
   if (modelLower.includes('prokicker') || familyLower.includes('prokicker')) {
     pool.push(...familyQuestions.prokicker);
-  } else if (familyLower.includes('verado')) {
-    pool.push(...familyQuestions.verado);
   } else if (familyLower.includes('pro xs') || modelLower.includes('pro xs')) {
     pool.push(...familyQuestions.proxs);
   } else if (familyLower.includes('seapro') || modelLower.includes('seapro')) {
