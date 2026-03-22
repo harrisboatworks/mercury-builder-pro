@@ -1,6 +1,21 @@
 import { Helmet } from 'react-helmet-async';
+import { getAllFAQItems } from '@/data/faqData';
+
+// Select the key repower questions for this page's schema
+const REPOWER_SCHEMA_QUESTIONS = [
+  'What does it mean to repower a boat?',
+  'How much does a Mercury repower cost?',
+  'How long does a Mercury repower take?',
+  'Can I repower a pontoon boat?',
+  'Is it worth repowering my boat or should I buy a new boat?',
+];
 
 export function RepowerPageSEO() {
+  const allItems = getAllFAQItems();
+  const schemaFAQItems = REPOWER_SCHEMA_QUESTIONS
+    .map(q => allItems.find(item => item.question === q))
+    .filter(Boolean);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -85,48 +100,14 @@ export function RepowerPageSEO() {
       },
       {
         "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What does '70% of the benefit for 30% of the cost' mean?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "This means you get most of the experience of owning a new boat—modern technology, reliability, better fuel economy, quieter operation—for a fraction of what a new boat would cost."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How much does a Mercury repower cost?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "For a typical Rice Lake cottage boat (16-18ft with 60-115 HP), expect to invest $8,000-$18,000 all-in, including motor, rigging, and professional installation."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What are signs my outboard motor needs replacing?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Watch for hard starting or stalling, excessive smoke, loss of power, and frequent repairs that keep adding up."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why should I repower in winter?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Winter offers best availability (first pick before spring rush), no wait for installation during our quietest shop time, and you'll be ready for launch day when ice comes off."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does a repower take?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Professional installation typically takes 1-2 days, including a lake test on Rice Lake."
-            }
+        "mainEntity": schemaFAQItems.map(item => ({
+          "@type": "Question",
+          "name": item!.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item!.answer.replace(/<[^>]*>/g, '')
           }
-        ]
+        }))
       },
       {
         "@type": "BreadcrumbList",

@@ -36,6 +36,10 @@ export const faqCategories: FAQCategory[] = [
       {
         question: 'What\'s included in a repower package?',
         answer: 'A Mercury repower package at Harris Boat Works includes the new Mercury outboard motor, installation, and full rigging — that means new throttle and shift controls, steering connections, fuel lines, and gauges as required. We handle everything so you\'re not left with a new motor and old, incompatible hardware. Use the configurator at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> to see what\'s included and get live pricing on the motor that fits your boat.'
+      },
+      {
+        question: 'Can I repower a pontoon boat?',
+        answer: 'Yes — pontoons are one of the most common repower candidates. Because pontoons are heavy and sit high in the water, we typically recommend Mercury motors with Command Thrust, which uses a larger gearcase to generate more thrust at lower RPM. This makes a big difference in getting a loaded pontoon on plane and handling in wind or current. Most pontoon repowers fall in the 90–150hp range, depending on the tube configuration (double vs. triple) and how you use the boat. Build a quote at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a> and we\'ll confirm the right motor and shaft length for your pontoon.'
       }
     ]
   },
@@ -64,6 +68,14 @@ export const faqCategories: FAQCategory[] = [
       {
         question: 'What is a ProKicker and when do I need one?',
         answer: 'A ProKicker is a Mercury FourStroke kicker motor (9.9hp or 15hp) configured specifically for use as a secondary trolling engine mounted alongside a larger primary motor. It includes features like a tiller extension, slow-speed control, and bracket compatibility designed for dual-engine setups on fishing boats. You need a ProKicker when you want precise low-speed trolling control without running your main motor at inefficient RPM. It\'s a popular addition for serious walleye and bass anglers who want quiet, fuel-efficient trolling speed with a larger motor standing by.'
+      },
+      {
+        question: 'What\'s the difference between Mercury Verado and FourStroke?',
+        answer: 'Mercury FourStroke is the standard lineup — reliable, fuel-efficient, and available from 2.5 to 300hp. It covers everything from kicker motors to large V8 engines and suits the majority of repower customers. Mercury Verado is the premium line, available in V8 (250–300hp) and V10 (350–400hp) configurations. The key differences: Verado features an Advanced MidSection (AMS) that virtually eliminates vibration for a smoother ride, Digital Throttle & Shift (DTS) as standard rather than optional, and integrated electro-hydraulic power steering. Verado also delivers 12–15% more torque and roughly 8% better fuel economy than the equivalent FourStroke. If you want the quietest, smoothest ride and your budget allows it, Verado is the premium choice. For most cottage and fishing boats, FourStroke is the right fit. Compare options at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
+      },
+      {
+        question: 'What is Mercury SmartCraft Connect?',
+        answer: 'SmartCraft Connect is a compact device that wirelessly streams real-time engine data — RPM, speed, fuel consumption, trim position, and maintenance alerts — to the free Mercury Marine app on your smartphone or tablet. It was formerly called VesselView Mobile (same product, new name). There are two versions: SmartCraft Connect Mobile (Bluetooth only, streams to your phone) and SmartCraft Connect (Bluetooth + NMEA 2000, also integrates with compatible chartplotters and MFDs). Compatibility: motors 40hp and up from 2004 or newer, and 25hp and up from 2022 or newer. It supports 1–4 engines. SmartCraft Connect is available as an accessory on new Mercury repowers at Harris Boat Works — ask us to include it in your quote at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
       }
     ]
   },
@@ -116,6 +128,14 @@ export const faqCategories: FAQCategory[] = [
       {
         question: 'Do you handle the rigging and controls as part of a repower?',
         answer: 'Yes — full rigging is included in every Mercury repower at Harris Boat Works. That covers throttle and shift controls, steering connections, fuel lines, and gauges. We don\'t just bolt on a new motor and send you home — the whole system is updated so your new Mercury operates correctly and safely. This is part of what makes a full repower package different from simply buying a motor and installing it yourself.'
+      },
+      {
+        question: 'What boat brands can you repower?',
+        answer: 'We repower all boat brands — Lund, Tracker, Princecraft, Legend, Crestliner, Starcraft, Alumacraft, and any other manufacturer. Mercury outboard motors are designed to fit standard transom configurations, and we handle any custom mounting or rigging requirements as part of the repower package. It doesn\'t matter what brand of motor is currently on the boat — we convert from Yamaha, Honda, Suzuki, Johnson, Evinrude, or any other make to Mercury. Get a quote for the Mercury motor that fits your boat at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
+      },
+      {
+        question: 'Do you offer winterization and storage?',
+        answer: 'Yes — Harris Boat Works offers full winterization service to protect your motor and boat through Ontario winters. This includes fogging the engine, stabilizing fuel, changing gear lube, greasing fittings, and preparing the cooling system for freezing temperatures. Proper winterization prevents costly damage from water freezing inside the engine block and lower unit. We also offer indoor storage at our Gores Landing facility. Book your winterization service at <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a> or call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
       }
     ]
   },
