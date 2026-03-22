@@ -351,13 +351,6 @@ export const MOTOR_FAMILY_CONFIGURATOR_TIPS: Record<string, Array<{ step: string
     { step: 'features', message: 'Transient Spark tech = fastest hole shot in class', icon: 'check' },
     { step: 'result', message: 'Tournament-proven — built to win', icon: 'heart' },
   ],
-  'verado': [
-    { step: 'start', message: 'Verado is pure electric — smoothest start around', icon: 'sparkles' },
-    { step: 'shaft', message: 'Match shaft to your transom for best performance', icon: 'check' },
-    { step: 'control', message: 'Electro-hydraulic steering included — butter smooth', icon: 'sparkles' },
-    { step: 'features', message: 'Advanced Sound Control = quietest in class', icon: 'shield' },
-    { step: 'result', message: 'Premium choice — tap to see the difference', icon: 'heart' },
-  ],
   'fourstroke': [
     { step: 'start', message: 'Electric start adds convenience — worth it!', icon: 'check' },
     { step: 'shaft', message: '20" fits most boats — measure if unsure', icon: 'check' },

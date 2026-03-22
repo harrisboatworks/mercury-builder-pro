@@ -327,8 +327,6 @@ export function getMotorSpecificPrompts(context: MotorContext, count: number = 4
   // Add family-specific questions first (highest priority)
   if (modelLower.includes('prokicker') || familyLower.includes('prokicker')) {
     pool.push(...familyQuestions.prokicker);
-  } else if (familyLower.includes('verado')) {
-    pool.push(...familyQuestions.verado);
   } else if (familyLower.includes('pro xs') || modelLower.includes('pro xs')) {
     pool.push(...familyQuestions.proxs);
   } else if (familyLower.includes('seapro') || modelLower.includes('seapro')) {
