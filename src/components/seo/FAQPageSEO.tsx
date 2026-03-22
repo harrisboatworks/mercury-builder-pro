@@ -78,7 +78,7 @@ export function FAQPageSEO() {
 
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Outboard Repower FAQ — Harris Boat Works" />
-      <meta property="og:description" content="Expert answers to 20 Mercury outboard repower questions from Ontario's Mercury Marine Platinum Dealer since 1947." />
+      <meta property="og:description" content="Expert answers to 24 Mercury outboard repower questions from Ontario's Mercury Marine Platinum Dealer since 1947." />
       <meta property="og:url" content={`${SITE_URL}/faq`} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
