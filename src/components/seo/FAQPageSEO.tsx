@@ -51,7 +51,7 @@ export function FAQPageSEO() {
         "@id": `${SITE_URL}/faq#webpage`,
         "url": `${SITE_URL}/faq`,
         "name": "Mercury Outboard Repower FAQ | Harris Boat Works",
-        "description": "Answers to 20 common Mercury outboard repower questions — from choosing the right HP to warranty coverage, financing, trade-ins, and installation process.",
+        "description": "Answers to 24 common Mercury outboard repower questions — from choosing the right HP to warranty coverage, financing, trade-ins, and installation process.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "breadcrumb": { "@id": `${SITE_URL}/faq#breadcrumblist` },
@@ -68,7 +68,7 @@ export function FAQPageSEO() {
       <title>Mercury Outboard Repower FAQ — Harris Boat Works | mercuryrepower.ca</title>
       <meta
         name="description"
-        content="Get expert answers to 25 Mercury outboard repower questions. Choosing the right HP, Verado vs FourStroke, SmartCraft Connect, repower costs, financing, pontoon repowers, winterization — from Ontario's Mercury Marine Platinum Dealer since 1947."
+        content="Get expert answers to 24 Mercury outboard repower questions. Choosing the right HP, SmartCraft Connect, repower costs, financing, pontoon repowers, winterization — from Ontario's Mercury Marine Platinum Dealer since 1947."
       />
       <meta
         name="keywords"
@@ -78,7 +78,7 @@ export function FAQPageSEO() {
 
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Outboard Repower FAQ — Harris Boat Works" />
-      <meta property="og:description" content="Expert answers to 20 Mercury outboard repower questions from Ontario's Mercury Marine Platinum Dealer since 1947." />
+      <meta property="og:description" content="Expert answers to 24 Mercury outboard repower questions from Ontario's Mercury Marine Platinum Dealer since 1947." />
       <meta property="og:url" content={`${SITE_URL}/faq`} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
@@ -86,7 +86,7 @@ export function FAQPageSEO() {
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Outboard Repower FAQ — Harris Boat Works" />
-      <meta name="twitter:description" content="20 expert answers about Mercury outboard repowers — choosing, buying, financing, and installing." />
+      <meta name="twitter:description" content="24 expert answers about Mercury outboard repowers — choosing, buying, financing, and installing." />
       <meta name="twitter:image" content={`${SITE_URL}/social-share.jpg`} />
 
       <script type="application/ld+json">
