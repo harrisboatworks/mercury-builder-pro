@@ -573,10 +573,11 @@ ${HP_BY_BOAT_TYPE.map(rec => `| ${rec.boat} | ${rec.hp} | ${rec.note} |`).join('
 - **Best For:** ${MOTOR_FAMILIES_QUICK.proXS.bestFor}
 - **Key Benefits:** ${MOTOR_FAMILIES_QUICK.proXS.keyBenefits}
 
-### Mercury Verado
+### Mercury Verado (NOT SOLD BY HARRIS — general knowledge only)
 - **HP Range:** ${MOTOR_FAMILIES_QUICK.verado.hpRange}
 - **Best For:** ${MOTOR_FAMILIES_QUICK.verado.bestFor}
 - **Key Benefits:** ${MOTOR_FAMILIES_QUICK.verado.keyBenefits}
+- **Note:** Harris does not carry Verado. For high-HP needs, recommend FourStroke V8 (250-300HP) or Pro XS.
 
 ### Mercury SeaPro
 - **HP Range:** ${MOTOR_FAMILIES_QUICK.seaPro.hpRange}
