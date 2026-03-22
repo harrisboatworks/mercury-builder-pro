@@ -335,7 +335,6 @@ export const pickRandomFiltered = <T extends ConversationalNudge>(arr: T[], hp: 
 export const getMotorFamilyKey = (model: string | undefined): string | null => {
   if (!model) return null;
   const lower = model.toLowerCase();
-  if (lower.includes('verado')) return 'verado';
   if (lower.includes('pro xs')) return 'pro xs';
   if (lower.includes('prokicker')) return 'prokicker';
   if (lower.includes('seapro')) return 'seapro';
