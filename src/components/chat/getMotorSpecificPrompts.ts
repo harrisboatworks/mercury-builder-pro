@@ -234,14 +234,14 @@ const comparisonQuestions = {
   highPower: [
     "Compare to the 115HP",
     "Pro XS vs standard?",
-    "Verado vs FourStroke?",
+    "FourStroke V8 benefits?",
     "Worth the extra HP?",
   ],
   premium: [
-    "Verado vs Pro XS?",
+    "Pro XS advantages?",
     "Single vs twin setup?",
     "Compare to Yamaha?",
-    "Worth the Verado premium?",
+    "Command Thrust worth it?",
   ],
 };
 
