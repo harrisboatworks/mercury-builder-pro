@@ -149,6 +149,45 @@ export function GlobalSEO() {
         }
       },
       {
+        "@type": "Organization",
+        "@id": "https://mercuryrepower.ca/#organization",
+        "name": "Mercury Repower by Harris Boat Works",
+        "description": "Mercury Repower is the outboard engine repower program operated by Harris Boat Works, a Mercury Marine Platinum Dealer on Rice Lake, Ontario. Get an instant repower quote and book your installation with our certified Mercury technicians.",
+        "url": "https://mercuryrepower.ca",
+        "parentOrganization": {
+          "@type": "BoatDealer",
+          "@id": "https://harrisboatworks.ca/#business",
+          "name": "Harris Boat Works",
+          "url": "https://harrisboatworks.ca",
+          "telephone": "905-342-2153",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "5369 Harris Boat Works Rd",
+            "addressLocality": "Gores Landing",
+            "addressRegion": "ON",
+            "postalCode": "K0K 2E0",
+            "addressCountry": "CA"
+          }
+        },
+        "sameAs": [
+          "https://harrisboatworks.ca",
+          "https://www.facebook.com/harrisboatworks",
+          "https://www.instagram.com/harrisboatworks"
+        ],
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "name": "Get a Repower Quote",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://mercuryrepower.ca",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
+        }
+      },
+      {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/#faq`,
         "mainEntity": [
