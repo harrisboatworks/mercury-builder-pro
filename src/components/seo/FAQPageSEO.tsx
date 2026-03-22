@@ -51,7 +51,7 @@ export function FAQPageSEO() {
         "@id": `${SITE_URL}/faq#webpage`,
         "url": `${SITE_URL}/faq`,
         "name": "Mercury Outboard Repower FAQ | Harris Boat Works",
-        "description": "Answers to 20 common Mercury outboard repower questions — from choosing the right HP to warranty coverage, financing, trade-ins, and installation process.",
+        "description": "Answers to 24 common Mercury outboard repower questions — from choosing the right HP to warranty coverage, financing, trade-ins, and installation process.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "breadcrumb": { "@id": `${SITE_URL}/faq#breadcrumblist` },
