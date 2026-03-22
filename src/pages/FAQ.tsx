@@ -193,20 +193,23 @@ export default function FAQ() {
               id="faq-cta"
               className="text-2xl md:text-3xl font-light mb-4"
             >
-              Ready to Find Your <span className="font-medium">Motor</span>?
+              Ready to Get a <span className="font-medium">Quote</span>?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Build your custom Mercury outboard quote online, or visit us at Rice Lake to see our inventory in person.
+              Build your Mercury repower quote online — live pricing, sale prices, and monthly payment
+              estimates on every motor from 2.5hp to 300hp. No phone call required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Button size="lg" asChild>
-                <Link to="/quote/motor-selection">
-                  Browse Motors
+                <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer">
+                  Build Your Quote
                   <ChevronRight className="h-4 w-4 ml-1" />
-                </Link>
+                </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link to="/contact">Contact Us</Link>
+                <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer">
+                  Book Service
+                </a>
               </Button>
             </div>
           </div>

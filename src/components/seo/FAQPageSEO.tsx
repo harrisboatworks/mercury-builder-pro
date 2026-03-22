@@ -11,8 +11,8 @@ export function FAQPageSEO() {
       {
         "@type": "FAQPage",
         "@id": `${SITE_URL}/faq#faqpage`,
-        "name": "Mercury Outboard FAQ — Harris Boat Works",
-        "description": "Comprehensive answers to the most common Mercury outboard motor questions. Choosing, buying, maintaining, and repowering — expert advice from Ontario's trusted Mercury dealer.",
+        "name": "Mercury Outboard Repower FAQ — Harris Boat Works",
+        "description": "Comprehensive answers to the most common Mercury outboard repower questions. Choosing, buying, financing, and installing — expert advice from Ontario's Mercury Marine Platinum Dealer.",
         "url": `${SITE_URL}/faq`,
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
@@ -25,7 +25,7 @@ export function FAQPageSEO() {
           "name": item.question,
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": item.answer.replace(/<[^>]*>/g, '') // Strip HTML for schema
+            "text": item.answer.replace(/<[^>]*>/g, '')
           }
         }))
       },
@@ -50,8 +50,8 @@ export function FAQPageSEO() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/faq#webpage`,
         "url": `${SITE_URL}/faq`,
-        "name": "Mercury Outboard FAQ | Harris Boat Works",
-        "description": "Answers to 50+ common Mercury outboard motor questions — from choosing the right HP to warranty coverage, maintenance schedules, repowering, and financing.",
+        "name": "Mercury Outboard Repower FAQ | Harris Boat Works",
+        "description": "Answers to 20 common Mercury outboard repower questions — from choosing the right HP to warranty coverage, financing, trade-ins, and installation process.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "breadcrumb": { "@id": `${SITE_URL}/faq#breadcrumblist` },
@@ -65,28 +65,28 @@ export function FAQPageSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Outboard FAQ — Answers from Ontario's Trusted Dealer | Harris Boat Works</title>
+      <title>Mercury Outboard Repower FAQ — Harris Boat Works | mercuryrepower.ca</title>
       <meta
         name="description"
-        content="Get expert answers to 50+ Mercury outboard motor questions. Choosing the right HP, repower costs, maintenance schedules, warranty coverage, financing — from a Mercury dealer since 1965."
+        content="Get expert answers to 20 Mercury outboard repower questions. Choosing the right HP, repower costs, financing, trade-ins, installation process — from Ontario's Mercury Marine Platinum Dealer since 1947."
       />
       <meta
         name="keywords"
-        content="Mercury outboard FAQ, Mercury motor questions, boat motor FAQ Ontario, Mercury repower FAQ, Mercury outboard maintenance, Mercury warranty, Mercury dealer FAQ, buy Mercury outboard Canada"
+        content="Mercury repower FAQ, Mercury outboard repower, boat repower Ontario, Mercury repower cost, Mercury outboard financing, Mercury dealer FAQ, repower vs new boat, Mercury Command Thrust, Mercury ProKicker, Harris Boat Works"
       />
       <link rel="canonical" href={`${SITE_URL}/faq`} />
 
       {/* Open Graph */}
-      <meta property="og:title" content="Mercury Outboard FAQ — Harris Boat Works" />
-      <meta property="og:description" content="Expert answers to 50+ Mercury outboard motor questions from Ontario's trusted dealer since 1965." />
+      <meta property="og:title" content="Mercury Outboard Repower FAQ — Harris Boat Works" />
+      <meta property="og:description" content="Expert answers to 20 Mercury outboard repower questions from Ontario's Mercury Marine Platinum Dealer since 1947." />
       <meta property="og:url" content={`${SITE_URL}/faq`} />
       <meta property="og:type" content="website" />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Outboard FAQ — Harris Boat Works" />
-      <meta name="twitter:description" content="50+ expert answers about Mercury outboard motors — choosing, buying, maintaining, and financing." />
+      <meta name="twitter:title" content="Mercury Outboard Repower FAQ — Harris Boat Works" />
+      <meta name="twitter:description" content="20 expert answers about Mercury outboard repowers — choosing, buying, financing, and installing." />
       <meta name="twitter:image" content={`${SITE_URL}/social-share.jpg`} />
 
       <script type="application/ld+json">
