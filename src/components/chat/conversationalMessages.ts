@@ -236,10 +236,6 @@ export const EMOTIONAL_REPOWER_MESSAGES: ConversationalNudge[] = [
 
 // Motor-family-specific messages
 export const MOTOR_FAMILY_TIPS: Record<string, ConversationalNudge[]> = {
-  'verado': [
-    { message: "Verado's the quietest and smoothest of the bunch", icon: 'sparkles' },
-    { message: "Verado gives you that premium ride feel", icon: 'shield' },
-  ],
   'pro xs': [
     { message: "Pro XS is built for speed — tournament-ready", icon: 'sparkles' },
     { message: "Pro XS owners love the extra punch", icon: 'check' },
