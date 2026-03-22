@@ -68,6 +68,14 @@ export const faqCategories: FAQCategory[] = [
       {
         question: 'What is a ProKicker and when do I need one?',
         answer: 'A ProKicker is a Mercury FourStroke kicker motor (9.9hp or 15hp) configured specifically for use as a secondary trolling engine mounted alongside a larger primary motor. It includes features like a tiller extension, slow-speed control, and bracket compatibility designed for dual-engine setups on fishing boats. You need a ProKicker when you want precise low-speed trolling control without running your main motor at inefficient RPM. It\'s a popular addition for serious walleye and bass anglers who want quiet, fuel-efficient trolling speed with a larger motor standing by.'
+      },
+      {
+        question: 'What\'s the difference between Mercury Verado and FourStroke?',
+        answer: 'Mercury FourStroke is the standard lineup — reliable, fuel-efficient, and available from 2.5 to 300hp. It covers everything from kicker motors to large V8 engines and suits the majority of repower customers. Mercury Verado is the premium line, available in V8 (250–300hp) and V10 (350–400hp) configurations. The key differences: Verado features an Advanced MidSection (AMS) that virtually eliminates vibration for a smoother ride, Digital Throttle & Shift (DTS) as standard rather than optional, and integrated electro-hydraulic power steering. Verado also delivers 12–15% more torque and roughly 8% better fuel economy than the equivalent FourStroke. If you want the quietest, smoothest ride and your budget allows it, Verado is the premium choice. For most cottage and fishing boats, FourStroke is the right fit. Compare options at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
+      },
+      {
+        question: 'What is Mercury SmartCraft Connect?',
+        answer: 'SmartCraft Connect is a compact device that wirelessly streams real-time engine data — RPM, speed, fuel consumption, trim position, and maintenance alerts — to the free Mercury Marine app on your smartphone or tablet. It was formerly called VesselView Mobile (same product, new name). There are two versions: SmartCraft Connect Mobile (Bluetooth only, streams to your phone) and SmartCraft Connect (Bluetooth + NMEA 2000, also integrates with compatible chartplotters and MFDs). Compatibility: motors 40hp and up from 2004 or newer, and 25hp and up from 2022 or newer. It supports 1–4 engines. SmartCraft Connect is available as an accessory on new Mercury repowers at Harris Boat Works — ask us to include it in your quote at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
       }
     ]
   },
