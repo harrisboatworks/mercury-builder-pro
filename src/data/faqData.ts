@@ -128,6 +128,14 @@ export const faqCategories: FAQCategory[] = [
       {
         question: 'Do you handle the rigging and controls as part of a repower?',
         answer: 'Yes — full rigging is included in every Mercury repower at Harris Boat Works. That covers throttle and shift controls, steering connections, fuel lines, and gauges. We don\'t just bolt on a new motor and send you home — the whole system is updated so your new Mercury operates correctly and safely. This is part of what makes a full repower package different from simply buying a motor and installing it yourself.'
+      },
+      {
+        question: 'What boat brands can you repower?',
+        answer: 'We repower all boat brands — Lund, Tracker, Princecraft, Legend, Crestliner, Starcraft, Alumacraft, and any other manufacturer. Mercury outboard motors are designed to fit standard transom configurations, and we handle any custom mounting or rigging requirements as part of the repower package. It doesn\'t matter what brand of motor is currently on the boat — we convert from Yamaha, Honda, Suzuki, Johnson, Evinrude, or any other make to Mercury. Get a quote for the Mercury motor that fits your boat at <a href="https://mercuryrepower.ca" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">mercuryrepower.ca</a>.'
+      },
+      {
+        question: 'Do you offer winterization and storage?',
+        answer: 'Yes — Harris Boat Works offers full winterization service to protect your motor and boat through Ontario winters. This includes fogging the engine, stabilizing fuel, changing gear lube, greasing fittings, and preparing the cooling system for freezing temperatures. Proper winterization prevents costly damage from water freezing inside the engine block and lower unit. We also offer indoor storage at our Gores Landing facility. Book your winterization service at <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a> or call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
       }
     ]
   },
