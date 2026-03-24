@@ -669,7 +669,7 @@ export default function QuoteSummaryPage() {
         financingFee: DEALERPLAN_FEE,
         totalWithFees: totalWithFees,
         motorModel: quoteData.motor?.model || motorName,
-        packageName: packageName,
+        packageName: selectedPackageLabel,
         tradeInValue: tradeInValue,
         // Include promo details for financing application
         promoOption: state.selectedPromoOption,
