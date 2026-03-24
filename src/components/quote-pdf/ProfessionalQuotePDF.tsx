@@ -873,6 +873,15 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </View>
             </View>
 
+          {/* Personal Note */}
+          {quoteData.customerNotes && (
+            <View style={{ marginTop: 6, paddingLeft: 4, paddingRight: 4 }}>
+              <Text style={{ fontSize: 9.5, fontStyle: 'italic', color: colors.text, lineHeight: 1.5 }}>
+                {quoteData.customerNotes}
+              </Text>
+            </View>
+          )}
+
           {/* COVERAGE BOX */}
           <View style={styles.summaryBox}>
             <Text style={styles.coverageTitle}>

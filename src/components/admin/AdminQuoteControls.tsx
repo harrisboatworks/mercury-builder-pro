@@ -354,12 +354,13 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         
         {/* Customer Notes (On PDF) */}
         <div>
-          <Label htmlFor="customerNotes" className="text-sm">Customer Notes</Label>
+          <Label htmlFor="customerNotes" className="text-sm">Personal Note for Customer</Label>
+          <p className="text-xs text-muted-foreground mb-1">Appears on the PDF — leave blank to skip</p>
           <Textarea 
             id="customerNotes"
             value={customerNotes}
             onChange={(e) => setCustomerNotes(e.target.value)}
-            placeholder="Notes that appear on the customer's PDF..."
+            placeholder="e.g. 'Jim, this Pro XS is going to transform your setup — can't wait to get you on the water.'"
             rows={2}
           />
           <p className="text-xs text-muted-foreground mt-1">
