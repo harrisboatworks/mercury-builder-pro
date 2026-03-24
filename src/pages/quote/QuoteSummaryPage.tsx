@@ -981,6 +981,14 @@ export default function QuoteSummaryPage() {
             motorModel={motorName}
             finalPrice={packageSpecificTotals.total}
           />
+          <SaveQuoteWithAuth
+            open={showAuthSaveDialog}
+            onOpenChange={setShowAuthSaveDialog}
+            onFallbackEmail={() => {
+              setShowAuthSaveDialog(false);
+              setShowSaveDialog(true);
+            }}
+          />
         </QuoteLayout>
       </PageTransition>
     </>
