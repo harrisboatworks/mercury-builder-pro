@@ -110,6 +110,17 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       const finalPrice = Math.max(0, totalBeforeDiscount - adminDiscount);
       
       // Enhanced quote data with admin fields and persisted accessory breakdown
+      const frozenPricingSnapshot = {
+        motorMSRP,
+        motorDiscount,
+        adminDiscount,
+        promoSavings: 0, // Admin quotes don't use live promo calculations
+        subtotal,
+        hst,
+        total: finalPrice,
+        savings: motorDiscount + adminDiscount,
+      };
+      
       const enhancedQuoteData = {
         ...quoteData,
         adminDiscount,
@@ -121,6 +132,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         isAdminQuote: true,
         adminCustomItems: customItems,
         accessoryBreakdown, // Persist the full breakdown for PDF generation
+        frozenPricing: frozenPricingSnapshot, // Lock prices for share link parity
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoRate: state.selectedPromoRate,
         selectedPromoTerm: state.selectedPromoTerm,

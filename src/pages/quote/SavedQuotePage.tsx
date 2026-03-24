@@ -99,6 +99,11 @@ export default function SavedQuotePage() {
             });
           }
           
+          // Restore frozen pricing snapshot (ensures PDF ↔ web parity)
+          if (quoteData.frozenPricing) {
+            dispatch({ type: 'SET_FROZEN_PRICING', payload: quoteData.frozenPricing });
+          }
+          
           // Restore admin fields from quote_data OR direct columns
           const adminDiscountValue = quoteData.adminDiscount ?? quote.admin_discount ?? 0;
           const adminNotesValue = quoteData.adminNotes ?? quote.admin_notes ?? '';
