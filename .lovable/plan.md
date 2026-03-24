@@ -1,49 +1,42 @@
 
 
-# Use Base Model Price as Trade-In Anchor (Not Median)
+# Pre-Fill Trade-In Form from Boat Info
 
 ## The Problem
 
-Right now the trade-in reference price per HP class is the **median** selling price across all models at that HP. For a 15hp, that includes the manual tiller (~$3,200), the electric-start tiller (~$3,800), and the electric-start remote (~$4,500+). The median lands somewhere in the middle, which means a customer who just says "15hp Mercury" without specifying electric start gets valued as if they have a mid-range model.
+In the Boat Information step, the user enters their current motor details (brand, HP, year). When they get to the Trade-In page and click "Yes, I have a trade-in," the form is completely blank — forcing them to re-enter the same motor info. The props (`currentMotorBrand`, `currentHp`, `currentMotorYear`) are already passed through but never used to populate the fields.
 
-A manual-start tiller is the most common small motor people trade in. If they don't specify electric start, the valuation should assume the base (cheapest) model — not the middle of the pack.
+Two issues:
+1. **TradeInPage** (line 49) explicitly resets to blank state with the comment "no auto-loading from context"
+2. **TradeInValuation** shows a "Pre-filled from your current motor details" banner when those props exist, but the form values still come from the empty `tradeInInfo` state
 
 ## The Fix
 
-**File: `src/hooks/useTradeValuationData.ts`** — one change in the MSRP aggregation logic (lines 73-80):
-
-Instead of computing the **median** selling price per HP class, use the **minimum** (lowest) selling price. This automatically anchors to the base tiller/manual-start model for small motors, which is the most conservative and fair assumption when start type isn't specified.
+### File: `src/pages/quote/TradeInPage.tsx`
+When initializing `tradeInInfo`, pre-fill `brand`, `year`, and `horsepower` from `state.boatInfo` if available:
 
 ```
-// Before: median
-const mid = Math.floor(sorted.length / 2);
-referenceMsrps[hp] = sorted.length % 2 === 0
-  ? Math.round((sorted[mid - 1] + sorted[mid]) / 2)
-  : sorted[mid];
-
-// After: minimum (base model)
-referenceMsrps[hp] = sorted[0];
+setTradeInInfo({
+  hasTradeIn: false,
+  brand: state.boatInfo?.currentMotorBrand || '',
+  year: state.boatInfo?.currentMotorYear || 0,
+  horsepower: state.boatInfo?.currentHp || 0,
+  model: '',
+  serialNumber: '',
+  condition: 'good',
+  estimatedValue: 0,
+  confidenceLevel: 'medium'
+});
 ```
 
-## Why Minimum, Not Median
+This means when the user clicks "Yes, I have a trade-in," the brand/year/HP are already filled in from what they told us earlier. They only need to add condition and serial number (if they want).
 
-- For small motors (3.5–25hp), the base model is the manual-start tiller — the most common trade-in
-- For large motors (40hp+), there's usually only one or two models per HP class, so min ≈ median anyway
-- If someone has an electric-start model, they can specify that — and eventually you could add a "start type" field to the trade-in form to bump the anchor up
-- This is the most defensible position: "we valued your trade at the base model price because you didn't specify upgrades"
+### File: `src/components/quote-builder/TradeInValuation.tsx`
+No changes needed — it already displays the "Pre-filled from your current motor details" notice and the form fields bind to `tradeInInfo`, which will now have the correct values.
 
-## Impact Example — 2020 Mercury 15hp
-
-| Anchor | Selling Price | Excellent (44%) | Good (40%) |
-|--------|-------------|-----------------|------------|
-| Median (current) | ~$4,100 | ~$1,800 | ~$1,640 |
-| Minimum (proposed) | ~$3,200 | ~$1,400 | ~$1,280 |
-
-The "good" condition value drops from ~$1,640 to ~$1,280 — a more realistic number for a basic 15hp tiller trade.
-
-## One File Change
+## One file, three lines changed.
 
 | File | Change |
 |------|--------|
-| `src/hooks/useTradeValuationData.ts` | Replace median calculation with `sorted[0]` (minimum) on lines 73-80 |
+| `src/pages/quote/TradeInPage.tsx` | Pre-fill brand/year/hp from `state.boatInfo` on init (~lines 51-55) |
 
