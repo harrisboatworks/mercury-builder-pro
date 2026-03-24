@@ -16,6 +16,7 @@ import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
 import { SaveQuoteWithAuth } from '@/components/quote-builder/SaveQuoteWithAuth';
+import { PhoneCapture } from '@/components/quote-builder/PhoneCapture';
 import { useAutoSaveQuoteOnAuth } from '@/hooks/useAutoSaveQuoteOnAuth';
 import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
@@ -81,9 +82,22 @@ export default function QuoteSummaryPage() {
   const isMounted = true; // Render immediately — no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
+  const [showPhoneCapture, setShowPhoneCapture] = useState(false);
+  const [phoneCaptureQuoteId, setPhoneCaptureQuoteId] = useState<string | undefined>();
   
   // Auto-save quote when returning from Google OAuth
   useAutoSaveQuoteOnAuth();
+
+  // Listen for quote-saved-via-auth event to show phone capture
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      setPhoneCaptureQuoteId(detail?.savedQuoteId);
+      setShowPhoneCapture(true);
+    };
+    window.addEventListener('quote-saved-via-auth', handler);
+    return () => window.removeEventListener('quote-saved-via-auth', handler);
+  }, []);
   
   // Deposit processing state - amount is auto-calculated from HP
   const [isProcessingDeposit, setIsProcessingDeposit] = useState(false);
@@ -988,6 +1002,11 @@ export default function QuoteSummaryPage() {
               setShowAuthSaveDialog(false);
               setShowSaveDialog(true);
             }}
+          />
+          <PhoneCapture
+            open={showPhoneCapture}
+            onOpenChange={setShowPhoneCapture}
+            savedQuoteId={phoneCaptureQuoteId}
           />
         </QuoteLayout>
       </PageTransition>

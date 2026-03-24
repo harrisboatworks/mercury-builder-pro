@@ -73,6 +73,7 @@ const AdminPricingImport = lazy(() => import("./pages/AdminPricingImport"));
 const MotorOptionsCatalog = lazy(() => import("./components/admin/options/MotorOptionsCatalog"));
 const MotorOptionsManager = lazy(() => import("./components/admin/options/MotorOptionsManager"));
 const MotorOptionRules = lazy(() => import("./components/admin/options/MotorOptionRules"));
+const AdminQuoteActivity = lazy(() => import("./pages/AdminQuoteActivity"));
 const UpdateMotorImages = lazy(() => import("./components/motors/UpdateMotorImages"));
 
 // Payment pages
@@ -376,6 +377,14 @@ function AnimatedRoutes() {
           element={
             <SecureRoute requireAdmin={true}>
               <MotorOptionRules />
+            </SecureRoute>
+          }
+        />
+        <Route
+          path="/admin/quote-activity"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminQuoteActivity />
             </SecureRoute>
           }
         />
