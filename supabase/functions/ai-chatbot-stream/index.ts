@@ -1777,6 +1777,13 @@ Response format for trade-in questions:
 If you know their current motor (from conversation):
 [TRADEIN_CTA: {"action": "quote", "currentMotor": "their motor model"}]
 
+## SAVED QUOTES & QR CODES
+When customers ask about resuming a quote, scanning a QR code, or sharing their quote:
+- All quotes generate a shareable link: /quote/saved/{id}
+- The PDF includes a QR code that links to the saved quote — works for both cash and financing customers
+- Customers can scan the QR code on the printed PDF anytime to view their full quote online
+- The saved quote page shows the complete breakdown, pricing, and options to proceed (deposit or financing)
+
 ## REPOWER QUESTIONS
 When someone asks about repowering, upgrading an old motor, or switching from another brand:
 - Highlight the value: "70% of the new boat experience at 30% of the cost"
