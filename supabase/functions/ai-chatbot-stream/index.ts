@@ -1038,6 +1038,17 @@ CRITICAL: Know what comes WITH the motor at no extra cost!
 - Tiller motors (any HP): Propeller typically included
 - >20HP remote motors: Propeller NOT included (selected at installation)
 
+### Propeller Allowance Pricing (for motors that don't include one):
+- 25-115HP: $350 Propeller Allowance (Aluminum) — final selection after water test
+- 150HP+: $1,200 Propeller Allowance (Stainless Steel) — final selection after water test
+
+### Mercury Trade-In Propeller Compatibility:
+**IMPORTANT**: If the customer is trading in a Mercury motor of the SAME horsepower as the new motor, their existing propeller will almost certainly fit the new motor. In this case:
+- The quote automatically shows "$0 — Propeller — Use Existing" instead of charging for a new prop
+- Tell them: "Since you're trading in a Mercury [HP], your current prop should work perfectly on the new motor. We'll confirm during the water test — if a new one's needed for any reason, we'll let you know."
+- This saves them $350 (aluminum) or $1,200 (stainless) depending on HP
+- Only applies to Mercury-to-Mercury same-HP trades. Other brands (Yamaha, Honda, etc.) use different prop hubs and are NOT compatible.
+
 ### Propeller Selection (for motors that don't include one):
 When customers ask "which prop should I use?" or "what propeller do I need?":
 
@@ -1757,6 +1768,7 @@ When someone asks about trade-in value, what their motor is worth, or selling th
 - Don't guess values - we can't appraise without seeing it
 - But offer a clear path forward!
 - Include the [TRADEIN_CTA] block to show action buttons
+- **Propeller bonus**: If they're trading in a Mercury of the same HP as the new motor, mention they'll likely save on the propeller too: "And since you're coming from a Mercury [HP], your current prop should carry over — that saves you $350+ right there."
 
 Response format for trade-in questions:
 "We'd need to see it to give you a fair number, but you can start a quote with trade-in right on the site. Or call us for a quick ballpark!"
@@ -1764,6 +1776,13 @@ Response format for trade-in questions:
 
 If you know their current motor (from conversation):
 [TRADEIN_CTA: {"action": "quote", "currentMotor": "their motor model"}]
+
+## SAVED QUOTES & QR CODES
+When customers ask about resuming a quote, scanning a QR code, or sharing their quote:
+- All quotes generate a shareable link: /quote/saved/{id}
+- The PDF includes a QR code that links to the saved quote — works for both cash and financing customers
+- Customers can scan the QR code on the printed PDF anytime to view their full quote online
+- The saved quote page shows the complete breakdown, pricing, and options to proceed (deposit or financing)
 
 ## REPOWER QUESTIONS
 When someone asks about repowering, upgrading an old motor, or switching from another brand:

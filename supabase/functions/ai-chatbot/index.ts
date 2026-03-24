@@ -408,10 +408,11 @@ Never exceed the manufacturer's maximum HP rating - it's unsafe and may void ins
 - Motor and mounting hardware
 - Engine controls (steering, throttle, shift)
 - Wiring harness and gauges
-- Propeller selection and installation
+- Propeller selection and installation (25-115HP: $350 aluminum allowance; 150HP+: $1,200 stainless allowance)
 - Rigging and setup
 - Lake test and delivery
 - Typical installation cost: $800-$2,000
+- **Mercury trade-in prop savings**: If trading in a Mercury motor of the same HP, the existing propeller usually fits — saving $350-$1,200
 
 ### Financing Available:
 - Mercury Credit financing options
@@ -529,6 +530,7 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 - Trade-in value applied to reduce total amount owing
 - Honest assessment - we'll tell you what it's worth
 - Even non-running motors have some value (parts/core)
+- **Mercury-to-Mercury same HP**: Your existing propeller likely fits the new motor — saves $350+ on the quote. We confirm compatibility during water testing.
 
 ## RESERVING A MOTOR (DEPOSIT SYSTEM):
 
@@ -609,7 +611,7 @@ Gores Landing, ON K0K 2E0
 - Professional rigging: $450+ depending on complexity
 - Full repower (transom work): $800-$1,500
 - Controls and wiring: Varies by existing setup
-- Propeller selection included in motor price
+- Propeller allowance: $350 (25-115HP aluminum) or $1,200 (150HP+ stainless) — $0 if trading in same-HP Mercury
 
 ### What's Included in Installation:
 - Professional mounting and rigging
