@@ -1,47 +1,56 @@
 
 
-# Fix Price Mismatch Between PDF and Shared/QR Link
+# Stale Quote Detection: Alert When Prices Have Changed
 
-## The Problem (Simple)
+## What It Does
 
-When you generate a PDF, the prices are calculated and printed — locked in stone. But when the customer scans the QR code or opens the share link, the system **recalculates** everything from scratch using whatever promotions are active *at that moment*. If a promo changed, expired, or the calculation differs even slightly, the customer sees a different number than what's on the paper you handed them.
+When a customer (or admin) opens a saved quote link, the system compares the **frozen pricing snapshot** against what the numbers **would be today** using live data. If anything meaningful has changed, a dialog appears explaining what's different and offering to regenerate the quote with current pricing.
 
-## The Fix
+## What Gets Compared
 
-Snapshot the exact calculated prices at PDF-generation time and admin-save time. When the quote is reopened, use the snapshot instead of recalculating.
+| Check | Frozen Value | Live Value | Trigger |
+|-------|-------------|------------|---------|
+| Motor MSRP | `frozenPricing.motorMSRP` | Current motor MSRP from state | Price changed by more than $1 |
+| Promo savings | `frozenPricing.promoSavings` | Live `getTotalPromotionalSavings() + rebate` | Savings differ (promo expired or changed) |
+| Promo expiry | Promotion `end_date` | Current date | Promotion has ended since quote was created |
+| Total | `frozenPricing.total` | Recalculated total | Differs by more than $10 |
+
+## User Experience
+
+1. Customer scans QR or opens share link
+2. Quote loads with frozen (accurate-to-PDF) pricing as it does now
+3. A comparison runs silently in the background
+4. If differences found, an `AlertDialog` appears:
+   - Header: "This quote's pricing may have changed"
+   - Lists what changed in plain language (e.g., "Motor price increased by $200", "The Get 7 promotion has ended")
+   - **"View Original Quote"** button — dismisses dialog, keeps frozen pricing (what's on their PDF)
+   - **"Update to Current Pricing"** button — clears `frozenPricing` from state, page recalculates with live data
+5. If no differences, nothing happens — seamless experience
 
 ## Technical Changes
 
-### 1. `src/contexts/QuoteContext.tsx` — Add `frozenPricing` to state
+### 1. New component: `src/components/quote-builder/StaleQuoteAlert.tsx`
 
-- Add `frozenPricing?: FrozenPricing` to `QuoteState` (optional field)
-- Add `SET_FROZEN_PRICING` action
-- Interface includes: `motorMSRP`, `motorDiscount`, `adminDiscount`, `promoSavings`, `subtotal`, `hst`, `total`, `savings`, `accessoryBreakdown`
+A self-contained component that:
+- Accepts `frozenPricing`, current motor, and promo hook data as props
+- Runs the comparison logic on mount
+- Renders an `AlertDialog` if deltas are found
+- "Update to Current Pricing" dispatches `SET_FROZEN_PRICING` with `undefined` to clear the snapshot
 
-### 2. `src/pages/quote/QuoteSummaryPage.tsx` — Freeze pricing into QR save + use it on load
+### 2. `src/pages/quote/QuoteSummaryPage.tsx`
 
-**Save side** (~line 488): When inserting into `saved_quotes` for the QR code, include a `frozenPricing` object built from the already-calculated values (`packageSpecificTotals`, `motorMSRP`, `motorDiscount`, `promoSavings`, etc.)
+- Import and render `<StaleQuoteAlert>` when `state.frozenPricing` exists
+- Pass it the frozen values plus the live-calculated values (`motorMSRP`, `promoSavings`, `packageSpecificTotals.total`)
+- On "update" callback, dispatch `{ type: 'SET_FROZEN_PRICING', payload: undefined }` to clear frozen state
 
-**Display side** (~lines 319-396): If `state.frozenPricing` exists, use its values directly instead of calling `getTotalPromotionalSavings()` and `getRebateForHP()`:
-```
-const promoSavings = state.frozenPricing?.promoSavings ?? (basePromoSavings + rebateAmount);
-const motorMSRP = state.frozenPricing?.motorMSRP ?? (quoteData.motor?.msrp || ...);
-```
+### 3. `src/contexts/QuoteContext.tsx`
 
-### 3. `src/pages/quote/SavedQuotePage.tsx` — Restore frozen pricing
-
-When loading a saved quote that has `quoteData.frozenPricing`, dispatch `SET_FROZEN_PRICING` so the summary page uses the snapshot.
-
-### 4. `src/components/admin/AdminQuoteControls.tsx` — Freeze on admin save
-
-When saving to `customer_quotes`, include `frozenPricing` in the `quote_data` JSON blob using the same calculated values already available in that function.
+- No changes needed — `SET_FROZEN_PRICING` already accepts the payload and setting it to `undefined` clears it
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `src/contexts/QuoteContext.tsx` | Add `frozenPricing` field + `SET_FROZEN_PRICING` action |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Save frozen snapshot with QR; use snapshot when available |
-| `src/pages/quote/SavedQuotePage.tsx` | Restore `frozenPricing` from saved quote data |
-| `src/components/admin/AdminQuoteControls.tsx` | Include frozen pricing in admin quote save |
+| `src/components/quote-builder/StaleQuoteAlert.tsx` | New — comparison logic + AlertDialog UI |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Render StaleQuoteAlert when frozenPricing exists |
 
