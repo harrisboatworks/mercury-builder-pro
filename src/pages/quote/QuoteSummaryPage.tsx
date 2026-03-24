@@ -407,7 +407,10 @@ export default function QuoteSummaryPage() {
       const augmentedOptions = [...(state.selectedOptions || [])];
 
       // Propeller allowance (added by breakdown when motor doesn't include prop)
-      if (!includesProp && propAllowance && !state.boatInfo?.hasCompatibleProp) {
+      const isMercuryTradeMatch = state.tradeInInfo?.hasTradeIn &&
+        state.tradeInInfo?.brand?.toLowerCase() === 'mercury' &&
+        state.tradeInInfo?.horsepower === hp;
+      if (!includesProp && propAllowance && !state.boatInfo?.hasCompatibleProp && !isMercuryTradeMatch) {
         augmentedOptions.push({ optionId: 'prop-allowance', name: propAllowance.name, price: propAllowance.price, category: 'propeller', assignmentType: 'required' as const, isIncluded: false });
       }
 
