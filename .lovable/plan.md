@@ -1,53 +1,68 @@
 
 
-# Warm-Up Ping for `get-shared-quote` Edge Function
+# Auto-Detect Compatible Propeller from Trade-In
 
-## What This Does
+## The Idea
 
-Fires a lightweight no-op request to the `get-shared-quote` edge function when the app first loads. This wakes up the Deno isolate so that when a customer clicks a shared quote link, the function is already warm and responds in ~200ms instead of 2-5 seconds.
+When a customer is trading in a Mercury motor of the same HP class as the new motor, their old propeller almost certainly fits. Instead of charging $350/$1,200 for a propeller allowance, automatically show a $0 line item: **"Your current propeller should be compatible — we'll confirm during water testing (additional charge applies if replacement needed)"**.
 
-## Why It's Worth It
+## How It Works Today
 
-- Shared quote links are the primary way customers access their quotes
-- Cold starts on Supabase Edge Functions take 2-5 seconds
-- The ping is a single tiny POST request — no meaningful cost or bandwidth
+- `buildAccessoryBreakdown` checks `boatInfo?.hasCompatibleProp` — a manual checkbox the customer ticks in the Boat Info step
+- If checked: $0 "Use of Customer Propeller" line item
+- If not checked: full propeller allowance charge ($350 or $1,200)
 
-## Changes
+## The Fix
 
-### 1. `src/App.tsx` — Add warm-up ping on mount
+### 1. `src/lib/build-accessory-breakdown.ts` — Add trade-in awareness
 
-Inside the `App` component (convert to a function body with a `useEffect`), fire a one-time ping to `get-shared-quote` with a `{ ping: true }` body. Use `fetch` directly (not `supabase.functions.invoke`) to keep it lightweight. Fire-and-forget — no error handling needed.
-
-```typescript
-useEffect(() => {
-  // Warm up the shared-quote edge function to eliminate cold starts
-  fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/get-shared-quote`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY },
-    body: JSON.stringify({ ping: true }),
-  }).catch(() => {});
-}, []);
+Add a `tradeInInfo` parameter to `BuildAccessoryBreakdownParams`:
+```
+tradeInInfo?: { brand?: string; horsepower?: number; hasTradeIn?: boolean };
 ```
 
-### 2. `supabase/functions/get-shared-quote/index.ts` — Handle ping early
+In the propeller section (lines 149-163), add auto-detection logic: if `tradeInInfo.hasTradeIn` is true AND `tradeInInfo.brand` is "Mercury" AND `tradeInInfo.horsepower` matches the new motor's HP, treat it like `hasCompatibleProp` but with a more specific message:
 
-Add a short-circuit at the top of the handler (after CORS) to return immediately for ping requests:
-
-```typescript
-const body = await req.json();
-if (body?.ping) {
-  return new Response(JSON.stringify({ ok: true }), {
-    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
-  });
-}
+```
+name: "Propeller — Use Existing"
+price: 0
+description: "Your current Mercury propeller should be compatible — 
+  we'll confirm during water testing (additional charge applies if needed)"
 ```
 
-This avoids creating a Supabase client or hitting the database for warm-up pings.
+The manual `hasCompatibleProp` checkbox still takes priority if set.
+
+### 2. `src/pages/quote/QuoteSummaryPage.tsx` — Pass trade-in info to breakdown builder
+
+Where `buildAccessoryBreakdown` is called, add `tradeInInfo: state.tradeInInfo` to the params object.
+
+### 3. `src/pages/quote/PackageSelectionPage.tsx` — Same pass-through
+
+If this page also calls `buildAccessoryBreakdown`, pass `tradeInInfo` there too.
+
+### 4. `src/hooks/useQuoteRunningTotal.ts` — Update running total
+
+The running total also needs to skip the propeller charge when trade-in matches. Pass `tradeInInfo` through so the cost calculation stays consistent with the breakdown display.
+
+## HP Matching Logic
+
+Same HP class means the prop hub pattern matches. We'll do a simple check: `tradeInInfo.horsepower === hp` (exact match). This covers the common case — same-size repower. We won't try fuzzy matching across HP ranges since prop compatibility gets complicated there.
+
+## What the Customer Sees
+
+**Without trade-in or different brand/HP:**
+> Propeller Allowance (Aluminum) — $350
+
+**With Mercury trade-in, same HP:**
+> Propeller — Use Existing — $0
+> *Your current Mercury propeller should be compatible — we'll confirm during water testing (additional charge applies if needed)*
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `src/App.tsx` | Add `useEffect` warm-up ping on mount |
-| `supabase/functions/get-shared-quote/index.ts` | Add early return for `{ ping: true }` |
+| `src/lib/build-accessory-breakdown.ts` | Add `tradeInInfo` param; auto-detect compatible prop |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Pass `tradeInInfo` to breakdown builder |
+| `src/pages/quote/PackageSelectionPage.tsx` | Pass `tradeInInfo` to breakdown builder (if applicable) |
+| `src/hooks/useQuoteRunningTotal.ts` | Account for trade-in prop match in cost calc |
 
