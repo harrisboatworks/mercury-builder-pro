@@ -60,6 +60,7 @@ export default function StickySummary({
   isProcessingPayment = false,
 }: StickySummaryProps) {
   const { playCelebration } = useSound();
+  const { user } = useAuth();
   const [showPulse, setShowPulse] = useState(false);
 
   // Trigger pulse animation after a delay
