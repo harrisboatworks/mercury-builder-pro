@@ -15,6 +15,8 @@ import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 
 
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
+import { SaveQuoteWithAuth } from '@/components/quote-builder/SaveQuoteWithAuth';
+import { useAutoSaveQuoteOnAuth } from '@/hooks/useAutoSaveQuoteOnAuth';
 import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
@@ -78,6 +80,10 @@ export default function QuoteSummaryPage() {
   const [warrantyCostsLoaded, setWarrantyCostsLoaded] = useState(false);
   const isMounted = true; // Render immediately — no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
+  const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
+  
+  // Auto-save quote when returning from Google OAuth
+  useAutoSaveQuoteOnAuth();
   
   // Deposit processing state - amount is auto-calculated from HP
   const [isProcessingDeposit, setIsProcessingDeposit] = useState(false);
@@ -949,7 +955,15 @@ export default function QuoteSummaryPage() {
                   depositAmount={depositAmount}
                   coverageYears={selectedPackageCoverageYears}
                   onDownloadPDF={handleDownloadPDF}
-                  onSaveForLater={() => setShowSaveDialog(true)}
+                  onSaveForLater={() => {
+                    if (user) {
+                      // Already logged in — save immediately via the email dialog (pre-filled)
+                      setShowSaveDialog(true);
+                    } else {
+                      // Not logged in — show auth-first dialog
+                      setShowAuthSaveDialog(true);
+                    }
+                  }}
                   onApplyForFinancing={packageSpecificTotals.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
                   showUpgradePrompt={false}
@@ -966,6 +980,14 @@ export default function QuoteSummaryPage() {
             quoteData={state}
             motorModel={motorName}
             finalPrice={packageSpecificTotals.total}
+          />
+          <SaveQuoteWithAuth
+            open={showAuthSaveDialog}
+            onOpenChange={setShowAuthSaveDialog}
+            onFallbackEmail={() => {
+              setShowAuthSaveDialog(false);
+              setShowSaveDialog(true);
+            }}
           />
         </QuoteLayout>
       </PageTransition>

@@ -4,10 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { money } from "@/lib/money";
 import CoverageComparisonTooltip from "@/components/quote-builder/CoverageComparisonTooltip";
 import { Button } from "@/components/ui/button";
-import { Download, CreditCard, ArrowUp, Sparkles, Mail } from "lucide-react";
+import { Download, CreditCard, ArrowUp, Sparkles, Bookmark, Mail } from "lucide-react";
 import confetti from 'canvas-confetti';
 import { PaymentMethodBadges } from "@/components/payments/PaymentMethodBadges";
 import { useSound } from '@/contexts/SoundContext';
+import { useAuth } from '@/components/auth/AuthProvider';
 
 type StickySummaryProps = {
   packageLabel: string;
@@ -59,6 +60,7 @@ export default function StickySummary({
   isProcessingPayment = false,
 }: StickySummaryProps) {
   const { playCelebration } = useSound();
+  const { user } = useAuth();
   const [showPulse, setShowPulse] = useState(false);
 
   // Trigger pulse animation after a delay
@@ -176,8 +178,17 @@ export default function StickySummary({
               variant="outline"
               className="w-full"
             >
-              <Mail className="w-4 h-4 mr-2" />
-              Email Me This Quote
+              {user ? (
+                <>
+                  <Bookmark className="w-4 h-4 mr-2" />
+                  Save Quote
+                </>
+              ) : (
+                <>
+                  <Bookmark className="w-4 h-4 mr-2" />
+                  Save My Quote
+                </>
+              )}
             </Button>
           )}
           
