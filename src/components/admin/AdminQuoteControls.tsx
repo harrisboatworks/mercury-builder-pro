@@ -92,7 +92,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         tradeInInfo: state.tradeInInfo,
       });
       
-      // Calculate comprehensive pricing using the full breakdown
+      // Calculate comprehensive pricing using the shared utility
       const motorMSRP = motor?.msrp || motor?.basePrice || 0;
       const motorSalePrice = motor?.salePrice || motor?.price || motorMSRP;
       const motorDiscount = motorMSRP - motorSalePrice;
@@ -103,22 +103,33 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       // Trade-in value
       const tradeInValue = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo?.estimatedValue || 0) : 0;
       
-      // Calculate subtotal before tax
-      const subtotal = motorSalePrice + accessoryTotal - tradeInValue;
-      const hst = subtotal * 0.13;
-      const totalBeforeDiscount = subtotal + hst;
-      const finalPrice = Math.max(0, totalBeforeDiscount - adminDiscount);
+      // Calculate promo savings from state (same logic as QuoteSummaryPage)
+      const promoSavings = state.selectedPromoOption === 'cash_rebate' && state.selectedPromoValue
+        ? parseInt(state.selectedPromoValue.replace(/[^0-9]/g, ''), 10) || 0
+        : 0;
+      
+      // Use the same calculateQuotePricing function as QuoteSummaryPage for consistency
+      const pricing = calculateQuotePricing({
+        motorMSRP,
+        motorDiscount,
+        adminDiscount,
+        accessoryTotal,
+        warrantyPrice: 0,
+        promotionalSavings: promoSavings,
+        tradeInValue,
+        taxRate: 0.13
+      });
       
       // Enhanced quote data with admin fields and persisted accessory breakdown
       const frozenPricingSnapshot = {
         motorMSRP,
         motorDiscount,
         adminDiscount,
-        promoSavings: 0, // Admin quotes don't use live promo calculations
-        subtotal,
-        hst,
-        total: finalPrice,
-        savings: motorDiscount + adminDiscount,
+        promoSavings,
+        subtotal: pricing.subtotal,
+        hst: pricing.tax,
+        total: pricing.total,
+        savings: pricing.savings,
       };
       
       const enhancedQuoteData = {
