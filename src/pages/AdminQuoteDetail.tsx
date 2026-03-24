@@ -50,6 +50,7 @@ interface QuoteDetail {
   quote_data?: any;
   lead_status?: string;
   lead_source?: string;
+  follow_up_date?: string | null;
 }
 
 const AdminQuoteDetail = () => {
