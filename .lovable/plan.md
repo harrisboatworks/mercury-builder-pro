@@ -1,68 +1,42 @@
 
 
-# Auto-Detect Compatible Propeller from Trade-In
+# QR Code Should Link to Saved Quote, Not Financing App
 
-## The Idea
+## The Problem
 
-When a customer is trading in a Mercury motor of the same HP class as the new motor, their old propeller almost certainly fits. Instead of charging $350/$1,200 for a propeller allowance, automatically show a $0 line item: **"Your current propeller should be compatible — we'll confirm during water testing (additional charge applies if replacement needed)"**.
+Currently, QR codes on PDFs point to `/financing-application?...` for quotes over $5,000. This only makes sense if the customer wants to finance. If they're paying cash, the QR code is useless. The user wants **all QR codes** to point to the saved quote page (`/quote/saved/{id}`) so anyone who prints the PDF can scan it later and resume — whether cash or finance.
 
-## How It Works Today
-
-- `buildAccessoryBreakdown` checks `boatInfo?.hasCompatibleProp` — a manual checkbox the customer ticks in the Boat Info step
-- If checked: $0 "Use of Customer Propeller" line item
-- If not checked: full propeller allowance charge ($350 or $1,200)
+The sub-$5K path in `QuoteSummaryPage` already does this correctly. The two broken paths are:
+1. **QuoteSummaryPage** (line 484-495): financing-eligible quotes point to `/financing-application`
+2. **AdminQuoteDetail** (line 426-434): always points to `/financing-application`
 
 ## The Fix
 
-### 1. `src/lib/build-accessory-breakdown.ts` — Add trade-in awareness
+### 1. `src/pages/quote/QuoteSummaryPage.tsx` — Always save quote and use saved-quote URL
 
-Add a `tradeInInfo` parameter to `BuildAccessoryBreakdownParams`:
-```
-tradeInInfo?: { brand?: string; horsepower?: number; hasTradeIn?: boolean };
-```
+Remove the `if (packageTotal >= FINANCING_MINIMUM)` branch for QR target URL. Always save the quote to `saved_quotes` and set QR to `/quote/saved/{id}` — the same logic currently used for sub-threshold quotes. The financing data still gets included in the PDF data object (monthly payment, term, rate) for display purposes; only the QR destination changes.
 
-In the propeller section (lines 149-163), add auto-detection logic: if `tradeInInfo.hasTradeIn` is true AND `tradeInInfo.brand` is "Mercury" AND `tradeInInfo.horsepower` matches the new motor's HP, treat it like `hasCompatibleProp` but with a more specific message:
+Lines ~482-516 become a single block: save quote, set `qrTargetUrl = /quote/saved/{id}`.
 
-```
-name: "Propeller — Use Existing"
-price: 0
-description: "Your current Mercury propeller should be compatible — 
-  we'll confirm during water testing (additional charge applies if needed)"
+### 2. `src/pages/AdminQuoteDetail.tsx` — Use the quote's own ID for QR
+
+The admin page already has the quote ID (`q.id`). The saved quote is already in the `saved_quotes` table (admin creates it there). Change lines 426-434 to simply:
+
+```typescript
+const qrTargetUrl = `${SITE_URL}/quote/saved/${q.id}`;
 ```
 
-The manual `hasCompatibleProp` checkbox still takes priority if set.
+Remove the financing URL params construction for QR. The QR code generation (`QRCode.toDataURL`) stays the same — just a shorter, simpler URL.
 
-### 2. `src/pages/quote/QuoteSummaryPage.tsx` — Pass trade-in info to breakdown builder
+### 3. PDF CTA text update — `ProfessionalQuotePDF.tsx`
 
-Where `buildAccessoryBreakdown` is called, add `tradeInInfo: state.tradeInInfo` to the params object.
+The "Ready to Proceed?" box text currently says things about financing. Update the CTA copy to be universal: something like **"Scan to view your quote online"** or **"Scan to resume your quote"** so it works for both cash and financing customers.
 
-### 3. `src/pages/quote/PackageSelectionPage.tsx` — Same pass-through
-
-If this page also calls `buildAccessoryBreakdown`, pass `tradeInInfo` there too.
-
-### 4. `src/hooks/useQuoteRunningTotal.ts` — Update running total
-
-The running total also needs to skip the propeller charge when trade-in matches. Pass `tradeInInfo` through so the cost calculation stays consistent with the breakdown display.
-
-## HP Matching Logic
-
-Same HP class means the prop hub pattern matches. We'll do a simple check: `tradeInInfo.horsepower === hp` (exact match). This covers the common case — same-size repower. We won't try fuzzy matching across HP ranges since prop compatibility gets complicated there.
-
-## What the Customer Sees
-
-**Without trade-in or different brand/HP:**
-> Propeller Allowance (Aluminum) — $350
-
-**With Mercury trade-in, same HP:**
-> Propeller — Use Existing — $0
-> *Your current Mercury propeller should be compatible — we'll confirm during water testing (additional charge applies if needed)*
-
-## Files
+## What Changes
 
 | File | Change |
 |------|--------|
-| `src/lib/build-accessory-breakdown.ts` | Add `tradeInInfo` param; auto-detect compatible prop |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Pass `tradeInInfo` to breakdown builder |
-| `src/pages/quote/PackageSelectionPage.tsx` | Pass `tradeInInfo` to breakdown builder (if applicable) |
-| `src/hooks/useQuoteRunningTotal.ts` | Account for trade-in prop match in cost calc |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Always use `/quote/saved/{id}` for QR URL |
+| `src/pages/AdminQuoteDetail.tsx` | Use `/quote/saved/{quoteId}` instead of financing params |
+| `src/components/quote-pdf/ProfessionalQuotePDF.tsx` | Update CTA text to be universal (not financing-specific) |
 
