@@ -44,6 +44,7 @@ export interface FrozenPricing {
   hst: number;
   total: number;
   savings: number;
+  quoteExpiryDate?: string; // ISO date — earliest of 30 days or promo end
 }
 
 // Battery option for loose electric start motors

@@ -434,6 +434,7 @@ export interface QuotePDFProps {
       model?: string;
     };
     customerNotes?: string;
+    promoEndDate?: string; // ISO date of active promotion end
     selectedPackage?: {
       id: string;
       label: string;
@@ -479,9 +480,11 @@ export interface QuotePDFProps {
 }
 
 export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => {
-  // Calculate valid until date (30 days from now)
-  const validUntil = new Date();
-  validUntil.setDate(validUntil.getDate() + 30);
+  // Calculate valid until date — use promoEndDate if earlier than 30 days
+  const thirtyDaysOut = new Date();
+  thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
+  const promoEnd = quoteData.promoEndDate ? new Date(quoteData.promoEndDate) : null;
+  const validUntil = promoEnd && promoEnd < thirtyDaysOut ? promoEnd : thirtyDaysOut;
   const validUntilString = validUntil.toLocaleDateString('en-US', { 
     year: 'numeric', 
     month: 'long', 

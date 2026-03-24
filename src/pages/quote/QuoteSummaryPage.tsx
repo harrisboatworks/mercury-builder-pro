@@ -527,6 +527,12 @@ export default function QuoteSummaryPage() {
       try {
         const packageTaxForQr = displayPricing.subtotal * 0.13;
         const packageTotalForQr = displayPricing.subtotal + packageTaxForQr;
+        // Calculate smart expiry: earlier of 30 days or promo end
+        const thirtyDaysOut = new Date();
+        thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
+        const promoEnd = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
+        const quoteExpiry = promoEnd && promoEnd < thirtyDaysOut ? promoEnd : thirtyDaysOut;
+
         const frozenPricingSnapshot = {
           motorMSRP,
           motorDiscount,
@@ -536,6 +542,7 @@ export default function QuoteSummaryPage() {
           hst: packageTaxForQr,
           total: packageTotalForQr,
           savings: motorDiscount + (state.adminDiscount || 0) + promoSavings,
+          quoteExpiryDate: quoteExpiry.toISOString(),
         };
         const { data: savedForQr } = await supabase
           .from('saved_quotes')
@@ -620,6 +627,7 @@ export default function QuoteSummaryPage() {
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
         customerNotes: state.customerNotes || undefined,
+        promoEndDate: promotions?.[0]?.end_date ?? undefined,
       };
       
       // Save lead
@@ -1115,10 +1123,8 @@ export default function QuoteSummaryPage() {
                   onDownloadPDF={handleDownloadPDF}
                   onSaveForLater={() => {
                     if (user) {
-                      // Already logged in — save immediately via the email dialog (pre-filled)
                       setShowSaveDialog(true);
                     } else {
-                      // Not logged in — show auth-first dialog
                       setShowAuthSaveDialog(true);
                     }
                   }}
@@ -1126,6 +1132,12 @@ export default function QuoteSummaryPage() {
                   isGeneratingPDF={isGeneratingPDF}
                   showUpgradePrompt={false}
                   isProcessingPayment={isProcessingDeposit}
+                  quoteValidUntil={(() => {
+                    if (state.frozenPricing?.quoteExpiryDate) return new Date(state.frozenPricing.quoteExpiryDate);
+                    const d = new Date(); d.setDate(d.getDate() + 30);
+                    const pe = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
+                    return pe && pe < d ? pe : d;
+                  })()}
                 />
               </div>
             </div>
