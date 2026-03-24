@@ -620,6 +620,7 @@ export default function QuoteSummaryPage() {
         selectedPromoOption: state.selectedPromoOption,
         selectedPromoValue: getPromoDisplayValue(state.selectedPromoOption, hp),
         customerNotes: state.customerNotes || undefined,
+        promoEndDate: promotions?.[0]?.end_date ?? undefined,
       };
       
       // Save lead
