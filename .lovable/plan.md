@@ -1,81 +1,37 @@
 
 
-# Admin Quote Activity Page + Phone Capture After Google Save
+# Fix Trade-In Valuation Accuracy + Data Tracking
 
-Two features: a new admin page to see what anonymous users are building, and a phone number prompt after Google sign-in save.
+## Problem 1: MSRP Reference Inflating Small Motor Valuations
 
----
+The `useTradeValuationData.ts` hook selects the **highest** MSRP for each HP class from `motor_models`. For smaller motors (15-25hp), this picks premium remote/electric-start models instead of base tillers, inflating the MSRP anchor by 30-50%. A 2020 Mercury 25hp in "excellent" condition at 44% of an $8,800 MSRP = ~$3,870 — way too high.
 
-## 1. Admin Quote Activity Page
+**Fix in `src/hooks/useTradeValuationData.ts`**: Change from `max(msrp)` to **median MSRP** per HP class. Sort all MSRPs for a given HP, take the middle value. This gives a more realistic anchor without penalizing legitimate higher-end models.
 
-New page at `/admin/quote-activity` that reads from the existing `quote_activity_events` table and groups events by `session_id` to show each visitor's quote-building journey.
+## Problem 2: Trade-In Details Not Saved to Customer Quotes
 
-### New file: `src/pages/AdminQuoteActivity.tsx`
-- Fetches `quote_activity_events` from last 7 days (configurable), ordered by `created_at` desc
-- Groups events by `session_id` into "sessions"
-- Each session row shows: timestamp, motor model, HP, quote value, device type, UTM source, furthest step reached, status badge (Active/Abandoned/Submitted)
-- Expandable rows showing full event timeline for each session
-- Filters: motor model, status, date range
-- Auto-refresh every 60 seconds via `refetchInterval`
-- Uses existing `AdminNav`, `Table`, `Badge`, `Card` components
+When a deposit is submitted, `customer_quotes.quote_data` only stores payment metadata — the full trade-in config (brand, HP, year, condition, estimated value) is missing. You can see it on the PDF because the PDF is generated client-side from QuoteContext, but the database record doesn't have it.
 
-### Session journey display
-Derives the "furthest step" from event types present in the session:
-```text
-Motor → Package → Options → Trade-In → Summary → Submitted
-  ✓        ✓         ✓         ✗           ✗          ✗
-```
+**Fix in `src/hooks/useQuoteActivityTracker.ts`**: Enrich the `trade_in_entered` event data to include all fields: `brand`, `year`, `horsepower`, `condition`, `engineType`, `engineHours`, `estimatedValue`, and the `prePenaltyValue`. Currently it only sends `tradeInValue` (which logs as 0) and `brand` (which logs as empty string) because it reads from `state.tradeInInfo` before the estimate is populated.
 
-### Status logic
-- **Submitted**: session has `quote_submitted` event
-- **Active**: last event within 30 minutes
-- **Abandoned**: last event older than 30 minutes, no submit
+**Fix timing**: The effect fires when `state.hasTradein` flips to true, but at that point the estimate hasn't been calculated yet. Change the dependency to also watch `state.tradeInInfo?.estimatedValue` and only fire when it has a non-zero value.
 
-### Modified files
-- **`src/App.tsx`**: Add lazy import for `AdminQuoteActivity` and route `/admin/quote-activity` with `SecureRoute requireAdmin`
-- **`src/components/admin/AdminNav.tsx`**: Add `{ label: "Quote Activity", to: "/admin/quote-activity" }` to nav items
+## Problem 3: Quote Data Not Persisted on Deposit
+
+**Fix in the deposit/payment flow**: Before redirecting to Stripe, serialize the full QuoteContext state (including trade-in details) into the `quote_data` JSONB column on the `customer_quotes` record. This way you can see exactly what was configured even without the PDF.
+
+This requires updating the `create-payment` edge function or the client-side code that calls it to include the full quote snapshot.
 
 ---
 
-## 2. Phone Number Capture After Google Save
-
-After the auto-save toast fires (from `useAutoSaveQuoteOnAuth`), show a subtle prompt asking the user to optionally add their phone number for text updates.
-
-### New file: `src/components/quote-builder/PhoneCapture.tsx`
-- Small dialog/drawer (mobile-responsive like other quote dialogs)
-- Headline: "Want text updates on your quote?"
-- Subtext: "We'll only text you about this quote — no spam."
-- Phone input field with basic validation (10+ digits)
-- "Save" and "Skip" buttons
-- On save: updates `saved_quotes` row with phone, and updates `profiles` table if exists
-- Triggers admin SMS notification with the phone number
-
-### Modified file: `src/hooks/useAutoSaveQuoteOnAuth.ts`
-- After successful save, instead of just showing a toast, also set a state/flag that triggers the phone capture prompt
-- Since the hook can't directly control UI, use a custom event or a shared ref/state
-
-### Modified file: `src/pages/quote/QuoteSummaryPage.tsx`
-- Listen for the "quote saved via auth" event
-- Show `PhoneCapture` dialog after a short delay (1-2 seconds after the save toast)
-- On submit or skip, dismiss and continue normally
-
-### Data flow
-1. User clicks "Save My Quote" → Google OAuth → returns to summary
-2. `useAutoSaveQuoteOnAuth` saves quote, shows toast
-3. After 1.5s delay, `PhoneCapture` dialog appears
-4. User enters phone → saved to `saved_quotes.quote_state` and admin notified
-5. Or user skips → no friction
-
----
-
-## Files summary
+## Files to modify
 
 | File | Change |
 |------|--------|
-| `src/pages/AdminQuoteActivity.tsx` | **New** — admin page showing grouped quote sessions |
-| `src/components/quote-builder/PhoneCapture.tsx` | **New** — optional phone prompt after Google save |
-| `src/App.tsx` | Add lazy import + route for AdminQuoteActivity |
-| `src/components/admin/AdminNav.tsx` | Add "Quote Activity" nav link |
-| `src/hooks/useAutoSaveQuoteOnAuth.ts` | Dispatch event after save for phone prompt |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Listen for save event, show PhoneCapture dialog |
+| `src/hooks/useTradeValuationData.ts` | Use median MSRP per HP instead of max |
+| `src/hooks/useQuoteActivityTracker.ts` | Include all trade-in fields in event data; fix timing to wait for estimate |
+| `src/components/quote-builder/StickySummary.tsx` or payment handler | Include full quote state in `quote_data` when creating deposit record |
+
+## No database changes needed
+All fixes are client-side logic changes. The `customer_quotes.quote_data` JSONB column already exists and accepts any structure.
 
