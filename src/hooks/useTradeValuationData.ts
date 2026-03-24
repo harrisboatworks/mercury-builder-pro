@@ -57,12 +57,11 @@ async function fetchTradeValuationData(): Promise<TradeValuationData> {
   const referenceMsrps: Record<number, number> = {};
   for (const motor of msrpResult.data || []) {
     if (motor.horsepower && motor.msrp) {
-      // Keep the highest MSRP for each HP (most current)
+      // Collect all MSRPs for each HP class to compute median
       const hp = Number(motor.horsepower);
       const msrp = Number(motor.msrp);
-      if (!referenceMsrps[hp] || msrp > referenceMsrps[hp]) {
-        referenceMsrps[hp] = msrp;
-      }
+      if (!msrpsByHp[hp]) msrpsByHp[hp] = [];
+      msrpsByHp[hp].push(msrp);
     }
   }
 
