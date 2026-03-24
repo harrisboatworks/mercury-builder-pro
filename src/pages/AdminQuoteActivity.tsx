@@ -284,6 +284,7 @@ export default function AdminQuoteActivity() {
                     <TableHead>Journey</TableHead>
                     <TableHead>Device</TableHead>
                     <TableHead>Source</TableHead>
+                    <TableHead>Warmth</TableHead>
                     <TableHead>Status</TableHead>
                   </TableRow>
                 </TableHeader>
