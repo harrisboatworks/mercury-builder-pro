@@ -94,7 +94,7 @@ function createDepositConfirmationEmail(
   const motorDetails = motorInfo?.model
     ? `<div style="background-color:#f9fafb;border-left:4px solid #007DC5;padding:16px 20px;margin:24px 0;border-radius:8px;">
         <h3 style="margin:0 0 8px 0;color:#374151;font-size:14px;font-weight:600;">Motor Being Reserved:</h3>
-        <p style="margin:4px 0;color:#1f2937;"><strong>${motorInfo.year || 2025} ${motorInfo.model}</strong></p>
+        <p style="margin:4px 0;color:#1f2937;"><strong>${motorInfo.year || 2026} ${motorInfo.model}</strong></p>
         ${motorInfo.hp ? `<p style="margin:4px 0;color:#1f2937;">${motorInfo.hp} Horsepower</p>` : ""}
        </div>` : "";
 
