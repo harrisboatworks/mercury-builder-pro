@@ -8,6 +8,7 @@ import { ShieldCheck, Save, Loader2, Copy, Check, Link, Plus, Trash2 } from 'luc
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
+import { calculateQuotePricing } from '@/lib/quote-utils';
 import { useToast } from '@/hooks/use-toast';
 
 import { SITE_URL } from '@/lib/site';
