@@ -89,6 +89,49 @@ export default function QuoteSummaryPage() {
   // Auto-save quote when returning from Google OAuth
   useAutoSaveQuoteOnAuth();
 
+  // Silent soft-lead save — auto-persist quote snapshot for anonymous visitors
+  const softLeadSavedRef = useRef(false);
+  useEffect(() => {
+    if (softLeadSavedRef.current || state.isLoading || !state.motor) return;
+    softLeadSavedRef.current = true;
+
+    const sessionId = getOrCreateSessionId();
+    (async () => {
+      try {
+        // Check if a soft-lead already exists for this session
+        const { data: existing } = await (supabase as any)
+          .from('saved_quotes')
+          .select('id')
+          .eq('session_id', sessionId)
+          .eq('is_soft_lead', true)
+          .maybeSingle();
+
+        if (existing) {
+          // Update the existing soft lead with latest state
+          await (supabase as any)
+            .from('saved_quotes')
+            .update({ quote_state: state as any, updated_at: new Date().toISOString() })
+            .eq('id', existing.id);
+        } else {
+          // Create new soft-lead record
+          await (supabase as any)
+            .from('saved_quotes')
+            .insert({
+              email: 'anonymous@soft-lead.local',
+              resume_token: `sl_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
+              quote_state: state as any,
+              user_id: user?.id || null,
+              session_id: sessionId,
+              is_soft_lead: true,
+              expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
+            } as any);
+        }
+      } catch {
+        // Silently fail — analytics should never break the app
+      }
+    })();
+  }, [state.isLoading, state.motor]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Listen for quote-saved-via-auth event to show phone capture
   useEffect(() => {
     const handler = (e: Event) => {
