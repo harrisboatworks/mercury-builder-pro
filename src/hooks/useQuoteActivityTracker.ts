@@ -8,7 +8,8 @@ const SESSION_KEY = 'quote_activity_session_id';
 const UTM_KEY = 'quote_activity_utm';
 const DEBOUNCE_MS = 2000;
 
-function getOrCreateSessionId(): string {
+/** Get or create the persistent session ID used for activity tracking and soft-lead linking. */
+export function getOrCreateSessionId(): string {
   try {
     let id = localStorage.getItem(SESSION_KEY);
     if (!id) {
@@ -65,7 +66,8 @@ type EventType =
   | 'summary_viewed'
   | 'quote_submitted'
   | 'financing_calculated'
-  | 'quote_abandoned';
+  | 'quote_abandoned'
+  | 'return_visit';
 
 interface PendingEvent {
   event_type: EventType;
@@ -409,6 +411,36 @@ export function useQuoteActivityTracker() {
     window.addEventListener('beforeunload', handleBeforeUnload);
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [state.motor, state.currentStep, getMotorInfo, user?.id, location.pathname]);
+
+  // Detect returning visitor — fires once if session already has previous events
+  const returnVisitChecked = useRef(false);
+  useEffect(() => {
+    if (returnVisitChecked.current) return;
+    returnVisitChecked.current = true;
+
+    // Check if this session ID already has events from a previous page load
+    (async () => {
+      try {
+        const { count } = await (supabase as any)
+          .from('quote_activity_events')
+          .select('id', { count: 'exact', head: true })
+          .eq('session_id', sessionId.current)
+          .lt('created_at', new Date(Date.now() - 60_000).toISOString()); // events older than 1 min
+        if (count && count > 0) {
+          flush({
+            event_type: 'return_visit',
+            motor_model: null,
+            motor_hp: null,
+            quote_value: null,
+            event_data: { previousEventCount: count },
+            page_path: location.pathname,
+          });
+        }
+      } catch {
+        // Silently fail
+      }
+    })();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Cleanup debounce on unmount
   useEffect(() => {

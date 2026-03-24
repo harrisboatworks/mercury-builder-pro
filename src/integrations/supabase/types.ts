@@ -2258,10 +2258,12 @@ export type Database = {
           expires_at: string
           id: string
           is_completed: boolean | null
+          is_soft_lead: boolean | null
           last_accessed: string | null
           quote_pdf_path: string | null
           quote_state: Json
           resume_token: string
+          session_id: string | null
           updated_at: string | null
           user_id: string | null
         }
@@ -2277,10 +2279,12 @@ export type Database = {
           expires_at?: string
           id?: string
           is_completed?: boolean | null
+          is_soft_lead?: boolean | null
           last_accessed?: string | null
           quote_pdf_path?: string | null
           quote_state: Json
           resume_token: string
+          session_id?: string | null
           updated_at?: string | null
           user_id?: string | null
         }
@@ -2296,10 +2300,12 @@ export type Database = {
           expires_at?: string
           id?: string
           is_completed?: boolean | null
+          is_soft_lead?: boolean | null
           last_accessed?: string | null
           quote_pdf_path?: string | null
           quote_state?: Json
           resume_token?: string
+          session_id?: string | null
           updated_at?: string | null
           user_id?: string | null
         }

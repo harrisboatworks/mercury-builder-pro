@@ -9,8 +9,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown, ChevronRight, Activity, Users, Eye, Clock } from 'lucide-react';
+import { ChevronDown, ChevronRight, Activity, Users, Eye, Clock, Flame, ThermometerSun, Snowflake, ExternalLink } from 'lucide-react';
 import { format, formatDistanceToNow } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
 
 interface QuoteEvent {
   id: string;
@@ -43,6 +44,8 @@ interface Session {
   status: 'active' | 'abandoned' | 'submitted';
   furthestStep: number;
   userId: string | null;
+  warmth: 'hot' | 'warm' | 'cool' | 'cold';
+  isReturnVisitor: boolean;
 }
 
 const STEP_ORDER = [
@@ -79,6 +82,21 @@ function getSessionStatus(events: QuoteEvent[]): 'active' | 'abandoned' | 'submi
   return lastEvent > thirtyMinAgo ? 'active' : 'abandoned';
 }
 
+function getLeadWarmth(events: QuoteEvent[], furthestStep: number): 'hot' | 'warm' | 'cool' | 'cold' {
+  const hasSubmitOrDeposit = events.some(e =>
+    e.event_type.includes('submit') || e.event_type.includes('deposit')
+  );
+  if (hasSubmitOrDeposit) return 'hot';
+
+  // Reached summary (step 4+) or spent significant time (many events)
+  if (furthestStep >= 4 || events.length >= 6) return 'warm';
+
+  // Selected a motor but didn't finish
+  if (events.some(e => e.event_type === 'motor_selected')) return 'cool';
+
+  return 'cold';
+}
+
 function groupEventsIntoSessions(events: QuoteEvent[]): Session[] {
   const map = new Map<string, QuoteEvent[]>();
   for (const e of events) {
@@ -106,11 +124,14 @@ function groupEventsIntoSessions(events: QuoteEvent[]): Session[] {
       status: getSessionStatus(evts),
       furthestStep,
       userId: evts[0].user_id,
+      warmth: getLeadWarmth(evts, furthestStep),
+      isReturnVisitor: evts.some(e => e.event_type === 'return_visit'),
     };
   }).sort((a, b) => new Date(b.lastEvent).getTime() - new Date(a.lastEvent).getTime());
 }
 
 export default function AdminQuoteActivity() {
+  const navigate = useNavigate();
   const [daysBack, setDaysBack] = useState('7');
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [motorFilter, setMotorFilter] = useState('');
@@ -163,6 +184,17 @@ export default function AdminQuoteActivity() {
       case 'submitted': return <Badge className="bg-blue-100 text-blue-800 border-blue-200">Submitted</Badge>;
       case 'abandoned': return <Badge variant="secondary">Abandoned</Badge>;
       default: return <Badge variant="outline">{status}</Badge>;
+    }
+  };
+
+  const warmthBadge = (warmth: string, isReturn: boolean) => {
+    const returnLabel = isReturn ? ' 🔁' : '';
+    switch (warmth) {
+      case 'hot': return <Badge className="bg-red-100 text-red-800 border-red-200"><Flame className="w-3 h-3 mr-1" />Hot{returnLabel}</Badge>;
+      case 'warm': return <Badge className="bg-orange-100 text-orange-800 border-orange-200"><ThermometerSun className="w-3 h-3 mr-1" />Warm{returnLabel}</Badge>;
+      case 'cool': return <Badge className="bg-sky-100 text-sky-800 border-sky-200">Cool{returnLabel}</Badge>;
+      case 'cold': return <Badge className="bg-slate-100 text-slate-600 border-slate-200"><Snowflake className="w-3 h-3 mr-1" />Cold{returnLabel}</Badge>;
+      default: return null;
     }
   };
 
@@ -252,6 +284,7 @@ export default function AdminQuoteActivity() {
                     <TableHead>Journey</TableHead>
                     <TableHead>Device</TableHead>
                     <TableHead>Source</TableHead>
+                    <TableHead>Warmth</TableHead>
                     <TableHead>Status</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -312,17 +345,43 @@ export default function AdminQuoteActivity() {
                             </TableCell>
                             <TableCell className="text-xs capitalize">{session.deviceType || '—'}</TableCell>
                             <TableCell className="text-xs">{session.utmSource || 'direct'}</TableCell>
+                            <TableCell>{warmthBadge(session.warmth, session.isReturnVisitor)}</TableCell>
                             <TableCell>{statusBadge(session.status)}</TableCell>
                           </TableRow>
                         </CollapsibleTrigger>
                         <CollapsibleContent asChild>
                           {expandedSessions.has(session.sessionId) ? (
                             <TableRow>
-                              <TableCell colSpan={8} className="bg-muted/30 p-4">
+                              <TableCell colSpan={9} className="bg-muted/30 p-4">
                                 <div className="space-y-2">
-                                  <div className="text-xs font-medium text-muted-foreground mb-2">
-                                    Session: {session.sessionId.slice(0, 12)}...
-                                    {session.userId && <span className="ml-2 text-blue-600">(Authenticated)</span>}
+                                  <div className="flex items-center justify-between text-xs font-medium text-muted-foreground mb-2">
+                                    <div>
+                                      Session: {session.sessionId.slice(0, 12)}...
+                                      {session.userId && <span className="ml-2 text-blue-600">(Authenticated)</span>}
+                                      {session.isReturnVisitor && <span className="ml-2 text-orange-600">(Return Visitor)</span>}
+                                    </div>
+                                    {session.furthestStep >= 4 && (
+                                      <Button
+                                        variant="outline"
+                                        size="sm"
+                                        className="text-xs h-7"
+                                        onClick={async (e) => {
+                                          e.stopPropagation();
+                                          // Look up soft-lead saved quote by session_id
+                                          const { data } = await (supabase as any)
+                                            .from('saved_quotes')
+                                            .select('id')
+                                            .eq('session_id', session.sessionId)
+                                            .maybeSingle();
+                                          if (data?.id) {
+                                            window.open(`/quote/saved/${data.id}`, '_blank');
+                                          }
+                                        }}
+                                      >
+                                        <ExternalLink className="w-3 h-3 mr-1" />
+                                        View Quote
+                                      </Button>
+                                    )}
                                   </div>
                                   <div className="space-y-1">
                                     {session.events.map(event => (
