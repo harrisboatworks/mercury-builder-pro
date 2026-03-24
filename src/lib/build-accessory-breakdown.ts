@@ -148,13 +148,23 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     });
   }
 
-  // Propeller allowance (or customer prop opt-out)
+  // Propeller allowance (or customer prop opt-out / trade-in match)
+  const isMercuryTradeMatch = tradeInInfo?.hasTradeIn &&
+    tradeInInfo?.brand?.toLowerCase() === 'mercury' &&
+    tradeInInfo?.horsepower === hp;
+
   if (!includesProp && propAllowance) {
     if (boatInfo?.hasCompatibleProp) {
       breakdown.push({
         name: 'Use of Customer Propeller',
         price: 0,
         description: 'If one is required, additional cost applies'
+      });
+    } else if (isMercuryTradeMatch) {
+      breakdown.push({
+        name: 'Propeller — Use Existing',
+        price: 0,
+        description: 'Your current Mercury propeller should be compatible — we\'ll confirm during water testing (additional charge applies if needed)'
       });
     } else {
       breakdown.push({
