@@ -402,6 +402,21 @@ export default function QuoteSummaryPage() {
     });
   }, [motorMSRP, motorDiscount, state.adminDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue]);
 
+  // When frozenPricing exists with full totals, use those for display
+  // to guarantee PDF ↔ web parity. Live recalc is only for stale-quote comparison.
+  const displayPricing = useMemo(() => {
+    if (state.frozenPricing?.subtotal != null && state.frozenPricing?.total != null) {
+      return {
+        ...packageSpecificTotals,
+        subtotal: state.frozenPricing.subtotal,
+        tax: state.frozenPricing.hst ?? Math.round(state.frozenPricing.subtotal * 0.13 * 100) / 100,
+        total: state.frozenPricing.total,
+        savings: state.frozenPricing.savings ?? packageSpecificTotals.savings,
+      };
+    }
+    return packageSpecificTotals;
+  }, [packageSpecificTotals, state.frozenPricing]);
+
   // Live total for stale-quote comparison (always calculated from current data, ignoring frozen)
   const liveTotalForComparison = useMemo(() => {
     if (!state.frozenPricing) return 0;
