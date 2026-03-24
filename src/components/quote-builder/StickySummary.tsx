@@ -62,6 +62,8 @@ export default function StickySummary({
   onUpgradeClick,
   // Payment processing prop
   isProcessingPayment = false,
+  // Quote expiry
+  quoteValidUntil,
 }: StickySummaryProps) {
   const { playCelebration } = useSound();
   const { user } = useAuth();
