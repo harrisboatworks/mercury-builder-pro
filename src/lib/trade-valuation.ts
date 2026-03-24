@@ -11,6 +11,7 @@ export interface TradeInInfo {
   estimatedValue: number;
   confidenceLevel: 'high' | 'medium' | 'low';
   engineType?: '4-stroke' | '2-stroke' | 'optimax';
+  startType?: 'manual' | 'electric';
   engineHours?: number;
   // Optional audit fields for pre/post penalty values
   rangePrePenaltyLow?: number;
@@ -238,6 +239,8 @@ export interface EstimateTradeValueOptions {
   config?: TradeValuationConfig;
   /** HP-to-MSRP lookup for Mercury motors (enables MSRP-based valuation) */
   referenceMsrps?: Record<number, number>;
+  /** HP-to-max-MSRP lookup — used when startType is 'electric' */
+  referenceMsrpsMax?: Record<number, number>;
 }
 
 // Determine MSRP age bracket key from motor age
@@ -254,7 +257,9 @@ function getMsrpAgeBracket(motorAge: number): string | null {
 function tryMsrpBasedEstimate(
   brand: string, year: number, horsepower: number, condition: 'excellent' | 'good' | 'fair' | 'poor',
   referenceMsrps?: Record<number, number>,
-  msrpPercentages?: Record<string, Record<string, number>>
+  msrpPercentages?: Record<string, Record<string, number>>,
+  startType?: 'manual' | 'electric',
+  referenceMsrpsMax?: Record<number, number>
 ): number | null {
   if (brand !== 'Mercury' || !referenceMsrps || !msrpPercentages) return null;
   
@@ -274,7 +279,10 @@ function tryMsrpBasedEstimate(
     Math.abs(curr - horsepower) < Math.abs(prev - horsepower) ? curr : prev
   );
   
-  const msrp = referenceMsrps[closestHP];
+  // Use max anchor for electric-start trades, median for manual/unspecified
+  const msrp = startType === 'electric' && referenceMsrpsMax?.[closestHP]
+    ? referenceMsrpsMax[closestHP]
+    : referenceMsrps[closestHP];
   if (!msrp || msrp <= 0) return null;
   
   const baseValue = msrp * pcts[condition];
@@ -305,7 +313,7 @@ export function estimateTradeValue(
   const currentYear = new Date().getFullYear();
   
   // --- MSRP-based path for Mercury motors ---
-  const msrpBaseValue = tryMsrpBasedEstimate(brand, year, horsepower, condition, options?.referenceMsrps, msrpPercentages);
+  const msrpBaseValue = tryMsrpBasedEstimate(brand, year, horsepower, condition, options?.referenceMsrps, msrpPercentages, tradeInfo.startType, options?.referenceMsrpsMax);
   if (msrpBaseValue !== null) {
     const factors: string[] = ['MSRP-anchored valuation'];
     let preLow = msrpBaseValue * 0.85;

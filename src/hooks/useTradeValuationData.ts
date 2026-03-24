@@ -21,8 +21,10 @@ export interface TradeValuationConfig {
 export interface TradeValuationData {
   brackets: TradeValuationBracket[];
   config: Record<string, Record<string, number>>;
-  /** HP-to-MSRP lookup for Mercury motors (enables MSRP-based valuation) */
+  /** HP-to-MSRP lookup for Mercury motors (median — enables MSRP-based valuation) */
   referenceMsrps: Record<number, number>;
+  /** HP-to-max-MSRP lookup (highest model per HP class — used for electric-start anchoring) */
+  referenceMsrpsMax: Record<number, number>;
 }
 
 async function fetchTradeValuationData(): Promise<TradeValuationData> {
@@ -70,19 +72,22 @@ async function fetchTradeValuationData(): Promise<TradeValuationData> {
     }
   }
 
-  // Use median selling price per HP class — balances base and upgraded models
+  // Compute median (default anchor) and max (electric-start anchor) per HP class
+  const referenceMsrpsMax: Record<number, number> = {};
   for (const [hpStr, msrps] of Object.entries(msrpsByHp)) {
     const sorted = [...msrps].sort((a, b) => a - b);
     const mid = Math.floor(sorted.length / 2);
     referenceMsrps[Number(hpStr)] = sorted.length % 2 === 0
       ? Math.round((sorted[mid - 1] + sorted[mid]) / 2)
       : sorted[mid];
+    referenceMsrpsMax[Number(hpStr)] = sorted[sorted.length - 1];
   }
 
   return {
     brackets: bracketsResult.data || [],
     config: configMap,
-    referenceMsrps
+    referenceMsrps,
+    referenceMsrpsMax
   };
 }
 
