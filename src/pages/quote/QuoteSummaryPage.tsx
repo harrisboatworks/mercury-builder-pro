@@ -80,6 +80,10 @@ export default function QuoteSummaryPage() {
   const [warrantyCostsLoaded, setWarrantyCostsLoaded] = useState(false);
   const isMounted = true; // Render immediately — no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
+  const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
+  
+  // Auto-save quote when returning from Google OAuth
+  useAutoSaveQuoteOnAuth();
   
   // Deposit processing state - amount is auto-calculated from HP
   const [isProcessingDeposit, setIsProcessingDeposit] = useState(false);
