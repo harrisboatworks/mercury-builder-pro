@@ -1,83 +1,81 @@
 
 
-# "Save My Quote" with Google Sign-In — Low-Friction Lead Capture
+# Admin Quote Activity Page + Phone Capture After Google Save
 
-## The Psychology
-Current flow: "Give us your name, email, phone" → feels like handing info to a salesman.
-New flow: "Sign in with Google to save your quote" → feels like saving a bookmark. Customer thinks they're doing it for themselves. You get their name + email automatically from Google, plus the exact quote they configured.
+Two features: a new admin page to see what anonymous users are building, and a phone number prompt after Google sign-in save.
 
 ---
 
-## What Changes
+## 1. Admin Quote Activity Page
 
-### 1. New Component: `SaveQuoteWithAuth.tsx`
-A dialog/drawer that appears when clicking "Save My Quote" on the summary page.
+New page at `/admin/quote-activity` that reads from the existing `quote_activity_events` table and groups events by `session_id` to show each visitor's quote-building journey.
 
-**Primary action**: "Continue with Google" button (one tap, zero forms)
-- Uses existing `signInWithGoogle()` from AuthProvider
-- After sign-in, auto-saves the current quote state to `saved_quotes` with their `user_id`
-- Pulls name + email from their Google profile (already captured by Supabase auth)
-- Sends admin notification (same SMS + email alerts as current flow)
+### New file: `src/pages/AdminQuoteActivity.tsx`
+- Fetches `quote_activity_events` from last 7 days (configurable), ordered by `created_at` desc
+- Groups events by `session_id` into "sessions"
+- Each session row shows: timestamp, motor model, HP, quote value, device type, UTM source, furthest step reached, status badge (Active/Abandoned/Submitted)
+- Expandable rows showing full event timeline for each session
+- Filters: motor model, status, date range
+- Auto-refresh every 60 seconds via `refetchInterval`
+- Uses existing `AdminNav`, `Table`, `Badge`, `Card` components
 
-**Secondary action**: "Continue with email" falls back to existing `SaveQuoteDialog` (name/email/phone form)
+### Session journey display
+Derives the "furthest step" from event types present in the session:
+```text
+Motor → Package → Options → Trade-In → Summary → Submitted
+  ✓        ✓         ✓         ✗           ✗          ✗
+```
 
-**UI tone**: Friendly, non-salesy
-- Icon: Bookmark or Cloud
-- Headline: "Save Your Quote"
-- Subtext: "Sign in to keep this quote safe. Access it anytime from any device."
-- Benefits list: "Pick up where you left off" / "Compare configurations" / "Share with a co-owner"
-- Skip option: "No thanks, continue without saving"
+### Status logic
+- **Submitted**: session has `quote_submitted` event
+- **Active**: last event within 30 minutes
+- **Abandoned**: last event older than 30 minutes, no submit
 
-### 2. Auto-Save on Auth Callback
-When Google OAuth completes and redirects back to the summary page:
-- Detect the returning auth session
-- Auto-save the quote state from QuoteContext to `saved_quotes`
-- Show a toast: "Quote saved to your account"
-- Trigger admin notification in background
-
-**File**: New `useAutoSaveQuoteOnAuth.ts` hook
-- Watches for auth state change (null → user)
-- Checks if there's an unsaved quote in QuoteContext
-- Saves it and notifies admin
-- Sets a flag so it doesn't re-trigger
-
-### 3. Update Summary Page Flow
-**File**: `src/pages/quote/QuoteSummaryPage.tsx`
-- When user clicks "Save My Quote":
-  - If already logged in → save immediately (no dialog needed), show toast
-  - If not logged in → show the new `SaveQuoteWithAuth` dialog
-
-### 4. Update StickySummary Button
-**File**: `src/components/quote-builder/StickySummary.tsx`
-- Change button label based on auth state:
-  - Logged in: "Save Quote" (instant save, no dialog)
-  - Not logged in: "Save My Quote" (opens auth dialog)
-
-### 5. Admin Notification on Auth-Based Save
-When a quote is saved via Google sign-in, trigger the same admin alerts:
-- SMS to admin: "New saved quote! Name: [from Google], Email: [from Google], Motor: X, Price: $Y"
-- Email notification
-- Lead record in `customer_quotes`
-
-This uses existing edge functions — no new backend needed.
+### Modified files
+- **`src/App.tsx`**: Add lazy import for `AdminQuoteActivity` and route `/admin/quote-activity` with `SecureRoute requireAdmin`
+- **`src/components/admin/AdminNav.tsx`**: Add `{ label: "Quote Activity", to: "/admin/quote-activity" }` to nav items
 
 ---
 
-## What Stays the Same
-- "Email Me This Quote" form remains as the fallback for users who don't want to sign in
-- Existing `SaveQuoteDialog` stays for that path
-- The deposit/payment flow is unchanged
-- `quote_activity_events` tracking continues for anonymous users
+## 2. Phone Number Capture After Google Save
 
-## Files Summary
+After the auto-save toast fires (from `useAutoSaveQuoteOnAuth`), show a subtle prompt asking the user to optionally add their phone number for text updates.
+
+### New file: `src/components/quote-builder/PhoneCapture.tsx`
+- Small dialog/drawer (mobile-responsive like other quote dialogs)
+- Headline: "Want text updates on your quote?"
+- Subtext: "We'll only text you about this quote — no spam."
+- Phone input field with basic validation (10+ digits)
+- "Save" and "Skip" buttons
+- On save: updates `saved_quotes` row with phone, and updates `profiles` table if exists
+- Triggers admin SMS notification with the phone number
+
+### Modified file: `src/hooks/useAutoSaveQuoteOnAuth.ts`
+- After successful save, instead of just showing a toast, also set a state/flag that triggers the phone capture prompt
+- Since the hook can't directly control UI, use a custom event or a shared ref/state
+
+### Modified file: `src/pages/quote/QuoteSummaryPage.tsx`
+- Listen for the "quote saved via auth" event
+- Show `PhoneCapture` dialog after a short delay (1-2 seconds after the save toast)
+- On submit or skip, dismiss and continue normally
+
+### Data flow
+1. User clicks "Save My Quote" → Google OAuth → returns to summary
+2. `useAutoSaveQuoteOnAuth` saves quote, shows toast
+3. After 1.5s delay, `PhoneCapture` dialog appears
+4. User enters phone → saved to `saved_quotes.quote_state` and admin notified
+5. Or user skips → no friction
+
+---
+
+## Files summary
 
 | File | Change |
 |------|--------|
-| `src/components/quote-builder/SaveQuoteWithAuth.tsx` | New — auth-first save dialog with Google button |
-| `src/hooks/useAutoSaveQuoteOnAuth.ts` | New — auto-saves quote when user returns from OAuth |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Update save handler to check auth state first |
-| `src/components/quote-builder/StickySummary.tsx` | Adjust button label based on auth state |
-
-## No Database Changes
-The `saved_quotes` table already has `user_id`, `quote_state`, `resume_token`, and `expires_at`. Google sign-in users get their `user_id` linked automatically.
+| `src/pages/AdminQuoteActivity.tsx` | **New** — admin page showing grouped quote sessions |
+| `src/components/quote-builder/PhoneCapture.tsx` | **New** — optional phone prompt after Google save |
+| `src/App.tsx` | Add lazy import + route for AdminQuoteActivity |
+| `src/components/admin/AdminNav.tsx` | Add "Quote Activity" nav link |
+| `src/hooks/useAutoSaveQuoteOnAuth.ts` | Dispatch event after save for phone prompt |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Listen for save event, show PhoneCapture dialog |
 
