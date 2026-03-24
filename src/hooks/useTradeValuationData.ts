@@ -21,8 +21,10 @@ export interface TradeValuationConfig {
 export interface TradeValuationData {
   brackets: TradeValuationBracket[];
   config: Record<string, Record<string, number>>;
-  /** HP-to-MSRP lookup for Mercury motors (enables MSRP-based valuation) */
+  /** HP-to-MSRP lookup for Mercury motors (median — enables MSRP-based valuation) */
   referenceMsrps: Record<number, number>;
+  /** HP-to-max-MSRP lookup (highest model per HP class — used for electric-start anchoring) */
+  referenceMsrpsMax: Record<number, number>;
 }
 
 async function fetchTradeValuationData(): Promise<TradeValuationData> {
