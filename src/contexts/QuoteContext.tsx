@@ -33,6 +33,19 @@ interface SelectedPackage {
   priceBeforeTax: number;
 }
 
+// Frozen pricing snapshot — locks in exact calculated values so shared/QR links
+// always match the PDF, regardless of whether promotions change later.
+export interface FrozenPricing {
+  motorMSRP: number;
+  motorDiscount: number;
+  adminDiscount: number;
+  promoSavings: number;
+  subtotal: number;
+  hst: number;
+  total: number;
+  savings: number;
+}
+
 // Battery option for loose electric start motors
 interface LooseMotorBattery {
   wantsBattery: boolean;
@@ -80,6 +93,7 @@ interface QuoteState {
   customerEmail: string;
   customerPhone: string;
   adminCustomItems: Array<{ name: string; price: number }>;
+  frozenPricing?: FrozenPricing;
 }
 
 type QuoteAction = 
@@ -115,7 +129,8 @@ type QuoteAction =
   | { type: 'SET_ADMIN_MODE'; payload: { isAdmin: boolean; editingQuoteId: string | null } }
   | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string; customerName?: string; customerEmail?: string; customerPhone?: string; adminCustomItems?: Array<{ name: string; price: number }> } }
   | { type: 'RESTORE_QUOTE'; payload: any }
-  | { type: 'RESET_TO_ADMIN_MODE'; payload: { editingQuoteId: string | null } };
+  | { type: 'RESET_TO_ADMIN_MODE'; payload: { editingQuoteId: string | null } }
+  | { type: 'SET_FROZEN_PRICING'; payload: FrozenPricing };
 
 const initialState: QuoteState = {
   motor: null,
@@ -276,6 +291,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         customerPhone: action.payload.customerPhone ?? state.customerPhone,
         adminCustomItems: action.payload.adminCustomItems ?? state.adminCustomItems
       };
+    case 'SET_FROZEN_PRICING':
+      return { ...state, frozenPricing: action.payload };
     case 'RESTORE_QUOTE':
       // Restore quote from saved data (used for admin editing)
       const restored = action.payload;

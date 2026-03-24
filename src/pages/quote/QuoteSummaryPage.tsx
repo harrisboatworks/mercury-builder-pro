@@ -316,17 +316,18 @@ export default function QuoteSummaryPage() {
     : 0;
   const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
   
-  // Calculate pricing
-  const motorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || 0;
+  // Calculate pricing — use frozen snapshot if available (shared/QR links),
+  // otherwise calculate live from current promo data
+  const motorMSRP = state.frozenPricing?.motorMSRP ?? (quoteData.motor?.msrp || quoteData.motor?.basePrice || 0);
   const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
-  const motorDiscount = motorMSRP - motorSalePrice;
+  const motorDiscount = state.frozenPricing?.motorDiscount ?? (motorMSRP - motorSalePrice);
   
   // Calculate promo savings including rebate if selected
   const basePromoSavings = getTotalPromotionalSavings?.(motorMSRP) || 0;
   const rebateAmount = state.selectedPromoOption === 'cash_rebate' 
     ? (getRebateForHP?.(hp) || 0) 
     : 0;
-  const promoSavings = basePromoSavings + rebateAmount;
+  const promoSavings = state.frozenPricing?.promoSavings ?? (basePromoSavings + rebateAmount);
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
   
   // Coverage years
@@ -483,12 +484,24 @@ export default function QuoteSummaryPage() {
       
       // Always save quote and point QR to saved quote page (works for both cash & financing)
       try {
+        const packageTaxForQr = packageSpecificTotals.subtotal * 0.13;
+        const packageTotalForQr = packageSpecificTotals.subtotal + packageTaxForQr;
+        const frozenPricingSnapshot = {
+          motorMSRP,
+          motorDiscount,
+          adminDiscount: state.adminDiscount || 0,
+          promoSavings,
+          subtotal: packageSpecificTotals.subtotal,
+          hst: packageTaxForQr,
+          total: packageTotalForQr,
+          savings: motorDiscount + (state.adminDiscount || 0) + promoSavings,
+        };
         const { data: savedForQr } = await supabase
           .from('saved_quotes')
           .insert({
             email: state.customerEmail || 'pdf-download@placeholder.com',
             resume_token: `qr_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-            quote_state: state as any,
+            quote_state: { ...state, frozenPricing: frozenPricingSnapshot } as any,
             user_id: user?.id || null,
             expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
           } as any)
