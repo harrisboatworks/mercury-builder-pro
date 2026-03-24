@@ -1,46 +1,33 @@
 
 
-# Add Savings Highlight for "Use Existing" Propeller
+# Create New Quote for Existing Customer
 
-## What This Does
+## Current State
 
-When the "Propeller — Use Existing" line item appears in the pricing breakdown, add a small inline savings note beneath it (similar to the existing trade-in tax savings callout) so the customer sees they're saving $350+. No extra vertical space — just a one-line green text hint appended to the existing description.
+- Admin can **edit** an existing quote (restores full state and navigates to summary)
+- Admin can create a **blank** new quote from `/admin/quote/new`
+- There's no way to start a fresh quote pre-filled with a customer's name/email/phone from their existing quote detail page
 
-## Approach
+## The Fix
 
-The cleanest way is to enhance the description text in `build-accessory-breakdown.ts` itself, adding the savings amount. This flows to both the web summary AND the PDF with zero extra components.
+### 1. `src/pages/AdminQuoteDetail.tsx` — Add "New Quote for This Customer" button
 
-### `src/lib/build-accessory-breakdown.ts`
+Next to the existing "Edit Quote" button, add a new button. On click:
+- Clear localStorage `quoteBuilder`
+- Dispatch `RESET_TO_ADMIN_MODE` (same as the existing new quote flow)
+- Dispatch `SET_ADMIN_QUOTE_DATA` with just the customer info (name, email, phone) from the current quote — no motor, options, or pricing carried over
+- Navigate to `/quote/motor-selection`
 
-In the Mercury trade-match propeller block (line 164-168), update the description to include the savings amount:
+This gives the admin a clean quote builder pre-filled with the customer's contact details.
 
-```typescript
-name: 'Propeller — Use Existing',
-price: 0,
-description: `Your current Mercury propeller should be compatible — we'll confirm during water testing (additional charge applies if needed). Saving you $${propAllowance.price.toLocaleString()}.`
-```
+### 2. `src/pages/AdminQuotes.tsx` — Add per-row "New Quote" action (optional enhancement)
 
-This uses the already-available `propAllowance.price` ($350 or $1,200 depending on HP) so the savings figure is always accurate.
-
-### `src/components/quote-builder/PricingTable.tsx`
-
-In the accessory breakdown loop (line 114-122), detect "Use Existing" items and render them with a green highlight style instead of the default — add `text-emerald-600` to the label and a small "✓ Saving $X" badge inline. This keeps the same row height, just colors it differently:
-
-```tsx
-const isExistingProp = item.name.includes('Use Existing');
-<LineItemRow
-  key={index}
-  label={item.name}
-  amount={item.price}
-  description={item.description}
-  className={cn("pl-4 border-l-2", isExistingProp ? "border-emerald-300 bg-emerald-50/50" : "border-muted")}
-/>
-```
+Add a small "+" icon button on each row that does the same: starts a new quote pre-filled with that customer's name/email. This is secondary — the detail page button is the primary entry point.
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `src/lib/build-accessory-breakdown.ts` | Add savings amount to description text |
-| `src/components/quote-builder/PricingTable.tsx` | Green highlight styling for "Use Existing" prop row |
+| `src/pages/AdminQuoteDetail.tsx` | Add "New Quote for Customer" button with pre-filled customer info |
+| `src/pages/AdminQuotes.tsx` | Optional: per-row quick-action to create new quote for that customer |
 
