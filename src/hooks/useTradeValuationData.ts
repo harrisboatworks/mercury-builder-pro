@@ -58,11 +58,15 @@ async function fetchTradeValuationData(): Promise<TradeValuationData> {
   const referenceMsrps: Record<number, number> = {};
   for (const motor of msrpResult.data || []) {
     if (motor.horsepower && motor.msrp) {
-      // Collect all MSRPs for each HP class to compute median
       const hp = Number(motor.horsepower);
       const msrp = Number(motor.msrp);
+      // Resolve selling price using the standard price hierarchy:
+      // sale_price → dealer_price (if < msrp) → base_price → msrp
+      const dealerPrice = motor.dealer_price && Number(motor.dealer_price) < msrp
+        ? Number(motor.dealer_price) : null;
+      const sellingPrice = Number(motor.sale_price) || dealerPrice || Number(motor.base_price) || msrp;
       if (!msrpsByHp[hp]) msrpsByHp[hp] = [];
-      msrpsByHp[hp].push(msrp);
+      msrpsByHp[hp].push(sellingPrice);
     }
   }
 
