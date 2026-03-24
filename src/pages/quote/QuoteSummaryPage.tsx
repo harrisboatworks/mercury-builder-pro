@@ -1121,7 +1121,7 @@ export default function QuoteSummaryPage() {
                       setShowAuthSaveDialog(true);
                     }
                   }}
-                  onApplyForFinancing={packageSpecificTotals.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
+                  onApplyForFinancing={displayPricing.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
                   showUpgradePrompt={false}
                   isProcessingPayment={isProcessingDeposit}
