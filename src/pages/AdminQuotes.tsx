@@ -39,6 +39,7 @@ interface QuoteRow {
   contact_attempts?: number;
   last_contact_attempt?: string | null;
   notes?: string | null;
+  follow_up_date?: string | null;
 }
 
 const AdminQuotes = () => {
