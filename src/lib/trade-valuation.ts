@@ -279,7 +279,10 @@ function tryMsrpBasedEstimate(
     Math.abs(curr - horsepower) < Math.abs(prev - horsepower) ? curr : prev
   );
   
-  const msrp = referenceMsrps[closestHP];
+  // Use max anchor for electric-start trades, median for manual/unspecified
+  const msrp = startType === 'electric' && referenceMsrpsMax?.[closestHP]
+    ? referenceMsrpsMax[closestHP]
+    : referenceMsrps[closestHP];
   if (!msrp || msrp <= 0) return null;
   
   const baseValue = msrp * pcts[condition];
