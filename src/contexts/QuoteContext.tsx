@@ -33,6 +33,19 @@ interface SelectedPackage {
   priceBeforeTax: number;
 }
 
+// Frozen pricing snapshot — locks in exact calculated values so shared/QR links
+// always match the PDF, regardless of whether promotions change later.
+export interface FrozenPricing {
+  motorMSRP: number;
+  motorDiscount: number;
+  adminDiscount: number;
+  promoSavings: number;
+  subtotal: number;
+  hst: number;
+  total: number;
+  savings: number;
+}
+
 // Battery option for loose electric start motors
 interface LooseMotorBattery {
   wantsBattery: boolean;
