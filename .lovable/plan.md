@@ -1,40 +1,47 @@
 
 
-# Fix Cinematic Not Showing + Verify Pricing on Saved Quote
+# Fix Price Mismatch Between PDF and Shared/QR Link
 
-## Problem 1: Cinematic Intro Never Shows for Shared Admin Quotes
+## The Problem (Simple)
 
-**Root cause**: `QuoteSummaryPage.tsx` line 174 blocks the cinematic whenever `state.isAdminQuote` is true. Since `SavedQuotePage` sets `isAdminQuote: true` for all admin-created quotes, no customer who opens a shared quote link ever sees the cinematic.
+When you generate a PDF, the prices are calculated and printed — locked in stone. But when the customer scans the QR code or opens the share link, the system **recalculates** everything from scratch using whatever promotions are active *at that moment*. If a promo changed, expired, or the calculation differs even slightly, the customer sees a different number than what's on the paper you handed them.
 
-**Fix**: Change the guard to check whether the **current viewer** is an admin, not whether the quote was admin-created.
+## The Fix
 
-### `src/pages/quote/QuoteSummaryPage.tsx` (line ~174)
+Snapshot the exact calculated prices at PDF-generation time and admin-save time. When the quote is reopened, use the snapshot instead of recalculating.
 
-Change:
-```typescript
-if (state.isAdminQuote) return;
+## Technical Changes
+
+### 1. `src/contexts/QuoteContext.tsx` — Add `frozenPricing` to state
+
+- Add `frozenPricing?: FrozenPricing` to `QuoteState` (optional field)
+- Add `SET_FROZEN_PRICING` action
+- Interface includes: `motorMSRP`, `motorDiscount`, `adminDiscount`, `promoSavings`, `subtotal`, `hst`, `total`, `savings`, `accessoryBreakdown`
+
+### 2. `src/pages/quote/QuoteSummaryPage.tsx` — Freeze pricing into QR save + use it on load
+
+**Save side** (~line 488): When inserting into `saved_quotes` for the QR code, include a `frozenPricing` object built from the already-calculated values (`packageSpecificTotals`, `motorMSRP`, `motorDiscount`, `promoSavings`, etc.)
+
+**Display side** (~lines 319-396): If `state.frozenPricing` exists, use its values directly instead of calling `getTotalPromotionalSavings()` and `getRebateForHP()`:
 ```
-To:
-```typescript
-if (isAdmin) return;
+const promoSavings = state.frozenPricing?.promoSavings ?? (basePromoSavings + rebateAmount);
+const motorMSRP = state.frozenPricing?.motorMSRP ?? (quoteData.motor?.msrp || ...);
 ```
 
-This way:
-- Admin viewing their own quotes: no cinematic (correct — they don't need the show)
-- Customer opening a shared admin-created quote: cinematic plays (desired behavior)
+### 3. `src/pages/quote/SavedQuotePage.tsx` — Restore frozen pricing
 
-## Problem 2: Verify Pricing Accuracy
+When loading a saved quote that has `quoteData.frozenPricing`, dispatch `SET_FROZEN_PRICING` so the summary page uses the snapshot.
 
-I'll visit the live saved quote link in the browser to cross-check the numbers displayed on the summary page against the PDF. The code logic for pricing (`QuoteSummaryPage` lines 384-396, 515-557) chains correctly:
-- `motorSubtotal = MSRP - discount - adminDiscount - promoSavings`
-- `subtotal = motorSubtotal + accessories`
-- `total = subtotal + (subtotal × 0.13)`
+### 4. `src/components/admin/AdminQuoteControls.tsx` — Freeze on admin save
 
-I'll confirm the actual rendered values match during implementation.
+When saving to `customer_quotes`, include `frozenPricing` in the `quote_data` JSON blob using the same calculated values already available in that function.
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/QuoteSummaryPage.tsx` | Change cinematic guard from `state.isAdminQuote` to `isAdmin` |
+| `src/contexts/QuoteContext.tsx` | Add `frozenPricing` field + `SET_FROZEN_PRICING` action |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Save frozen snapshot with QR; use snapshot when available |
+| `src/pages/quote/SavedQuotePage.tsx` | Restore `frozenPricing` from saved quote data |
+| `src/components/admin/AdminQuoteControls.tsx` | Include frozen pricing in admin quote save |
 
