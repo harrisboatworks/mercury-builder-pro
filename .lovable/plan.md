@@ -1,45 +1,53 @@
 
 
-# Add Start Type Field to Trade-In Form
+# Warm-Up Ping for `get-shared-quote` Edge Function
 
 ## What This Does
 
-Adds a "Start Type" dropdown (Manual / Electric) to the trade-in form. When "Electric" is selected, the valuation anchor shifts from the median selling price to the **maximum** (top model) for that HP class, producing a higher and more accurate trade value. When "Manual" is selected or left blank, it stays on the conservative median anchor.
+Fires a lightweight no-op request to the `get-shared-quote` edge function when the app first loads. This wakes up the Deno isolate so that when a customer clicks a shared quote link, the function is already warm and responds in ~200ms instead of 2-5 seconds.
 
-## How It Works
+## Why It's Worth It
 
-For a 15HP example:
-- **Manual/Unspecified** (median anchor): ~$4,100 → Good condition ~$1,640
-- **Electric** (max anchor): ~$4,500+ → Good condition ~$1,800
-
-The system already collects all model prices per HP class in `useTradeValuationData`. Right now it only exports the median. We'll also export the max so the valuation function can pick the right anchor based on start type.
+- Shared quote links are the primary way customers access their quotes
+- Cold starts on Supabase Edge Functions take 2-5 seconds
+- The ping is a single tiny POST request — no meaningful cost or bandwidth
 
 ## Changes
 
-### 1. `src/lib/trade-valuation.ts` — Add `startType` to TradeInInfo interface
-Add `startType?: 'manual' | 'electric'` to the `TradeInInfo` interface (after `engineType`).
+### 1. `src/App.tsx` — Add warm-up ping on mount
 
-### 2. `src/hooks/useTradeValuationData.ts` — Export both median and max per HP class
-Alongside `referenceMsrps` (median), add `referenceMsrpsMax: Record<number, number>` containing the highest selling price per HP class. Update the `TradeValuationData` interface and return value.
+Inside the `App` component (convert to a function body with a `useEffect`), fire a one-time ping to `get-shared-quote` with a `{ ping: true }` body. Use `fetch` directly (not `supabase.functions.invoke`) to keep it lightweight. Fire-and-forget — no error handling needed.
 
-### 3. `src/lib/trade-valuation.ts` — Use max anchor for electric-start trades
-In `tryMsrpBasedEstimate`, accept an optional `referenceMsrpsMax` parameter. When `startType === 'electric'`, use the max anchor instead of median. Update `estimateTradeValue` to pass through the new data.
+```typescript
+useEffect(() => {
+  // Warm up the shared-quote edge function to eliminate cold starts
+  fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/get-shared-quote`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'apikey': import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY },
+    body: JSON.stringify({ ping: true }),
+  }).catch(() => {});
+}, []);
+```
 
-### 4. `src/components/quote-builder/TradeInValuation.tsx` — Add Start Type dropdown
-Add a Select field between the existing "Engine Type" and "Year" fields:
-- Label: "Start Type"
-- Options: "Manual (Pull Start)" / "Electric Start"
-- Not required — defaults to unspecified (uses median anchor)
-- Pass `referenceMsrpsMax` through to `estimateTradeValue`
+### 2. `supabase/functions/get-shared-quote/index.ts` — Handle ping early
 
-### 5. `src/pages/quote/TradeInPage.tsx` — No changes needed
-The `tradeInInfo` state already spreads all fields through to the valuation component.
+Add a short-circuit at the top of the handler (after CORS) to return immediately for ping requests:
+
+```typescript
+const body = await req.json();
+if (body?.ping) {
+  return new Response(JSON.stringify({ ok: true }), {
+    headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+  });
+}
+```
+
+This avoids creating a Supabase client or hitting the database for warm-up pings.
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `src/lib/trade-valuation.ts` | Add `startType` to interface; use max anchor when electric |
-| `src/hooks/useTradeValuationData.ts` | Export `referenceMsrpsMax` (highest price per HP) |
-| `src/components/quote-builder/TradeInValuation.tsx` | Add Start Type dropdown; pass max MSRPs to estimator |
+| `src/App.tsx` | Add `useEffect` warm-up ping on mount |
+| `supabase/functions/get-shared-quote/index.ts` | Add early return for `{ ping: true }` |
 
