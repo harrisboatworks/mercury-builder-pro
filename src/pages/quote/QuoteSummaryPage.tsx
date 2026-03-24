@@ -514,8 +514,8 @@ export default function QuoteSummaryPage() {
     
     try {
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      const packageTax = packageSpecificTotals.subtotal * 0.13;
-      const packageTotal = packageSpecificTotals.subtotal + packageTax;
+      const packageTax = displayPricing.subtotal * 0.13;
+      const packageTotal = displayPricing.subtotal + packageTax;
       
       // Generate QR code — always generate for all quotes (cash & financing)
       // Points to financing app with prefilled params for financing-eligible quotes,
