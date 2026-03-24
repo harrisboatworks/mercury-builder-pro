@@ -150,6 +150,7 @@ serve(async (req) => {
       const motorInfo = rawBody.motorInfo || null;
       const quotePdfPath = rawBody.quotePdfPath || "";
       const savedQuoteId = rawBody.savedQuoteId || "";
+      const quoteSnapshot = rawBody.quoteSnapshot || null;
       
       const sessionData: Stripe.Checkout.SessionCreateParams = {
         line_items: [{ price: priceId, quantity: 1 }],
@@ -202,6 +203,7 @@ serve(async (req) => {
             payment_status: "pending",
             motor_info: motorInfo,
             quote_pdf_path: quotePdfPath || null,
+            ...(quoteSnapshot ? { quote_snapshot: quoteSnapshot } : {}),
           },
         });
         if (depositSaveError) {

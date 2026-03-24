@@ -713,6 +713,30 @@ export default function QuoteSummaryPage() {
         console.warn('Could not create saved_quotes record:', sqErr);
       }
 
+      // Build full quote snapshot for persistence
+      const quoteSnapshot = {
+        motor: state.motor ? { id: state.motor.id, model: state.motor.model, hp: state.motor.hp, price: state.motor.price } : null,
+        selectedOptions: state.selectedOptions?.map(o => ({ name: o.name, price: o.price })) || [],
+        selectedPackage: state.selectedPackage ? { id: state.selectedPackage.id, label: state.selectedPackage.label } : null,
+        purchasePath: state.purchasePath,
+        tradeIn: state.hasTradein && state.tradeInInfo ? {
+          brand: state.tradeInInfo.brand,
+          year: state.tradeInInfo.year,
+          horsepower: state.tradeInInfo.horsepower,
+          condition: state.tradeInInfo.condition,
+          engineType: state.tradeInInfo.engineType,
+          engineHours: state.tradeInInfo.engineHours,
+          estimatedValue: state.tradeInInfo.estimatedValue,
+          prePenaltyValue: state.tradeInInfo.prePenaltyValue,
+        } : null,
+        financing: state.financing,
+        selectedPromoOption: state.selectedPromoOption,
+        boatInfo: state.boatInfo,
+        installConfig: state.installConfig,
+        adminDiscount: state.adminDiscount || 0,
+        customerNotes: state.customerNotes || '',
+      };
+
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: {
           paymentType: 'deposit',
@@ -729,6 +753,7 @@ export default function QuoteSummaryPage() {
           },
           quotePdfPath: depositPdfPath || quotePdfPath,
           savedQuoteId,
+          quoteSnapshot,
         }
       });
 

@@ -204,23 +204,35 @@ export function useQuoteActivityTracker() {
     }
   }, [state.purchasePath, state.isLoading, state.motor, getMotorInfo, scheduleFlush, location.pathname]);
 
-  // Detect trade-in
+  // Detect trade-in — wait for estimatedValue to be populated before firing
   useEffect(() => {
     if (state.isLoading || !state.motor) return;
-    if (state.hasTradein && !prevHasTradeIn.current) {
+    if (!state.hasTradein) return;
+    const tradeInfo = state.tradeInInfo;
+    const estimatedValue = tradeInfo?.estimatedValue ?? 0;
+    // Only fire once we have a non-zero estimate (fixes timing issue)
+    if (estimatedValue > 0 && !prevHasTradeIn.current) {
       prevHasTradeIn.current = true;
       const { model, hp, price } = getMotorInfo();
-      const tradeValue = state.tradeInInfo?.estimatedValue ?? null;
       scheduleFlush({
         event_type: 'trade_in_entered',
         motor_model: model,
         motor_hp: hp,
         quote_value: price,
-        event_data: { tradeInValue: tradeValue, brand: state.tradeInInfo?.brand },
+        event_data: {
+          brand: tradeInfo?.brand || null,
+          year: tradeInfo?.year || null,
+          horsepower: tradeInfo?.horsepower || null,
+          condition: tradeInfo?.condition || null,
+          engineType: tradeInfo?.engineType || null,
+          engineHours: tradeInfo?.engineHours || null,
+          estimatedValue,
+          prePenaltyValue: tradeInfo?.prePenaltyValue ?? null,
+        },
         page_path: location.pathname,
       });
     }
-  }, [state.hasTradein, state.tradeInInfo, state.isLoading, state.motor, getMotorInfo, scheduleFlush, location.pathname]);
+  }, [state.hasTradein, state.tradeInInfo?.estimatedValue, state.tradeInInfo, state.isLoading, state.motor, getMotorInfo, scheduleFlush, location.pathname]);
 
   // Detect financing changes
   useEffect(() => {
