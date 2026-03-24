@@ -79,7 +79,7 @@ export function useAutoSaveQuoteOnAuth() {
 
         // Admin notifications (non-blocking)
         const userName = user.user_metadata?.full_name || user.user_metadata?.name || 'Google User';
-        const finalPrice = quoteData.pricing?.total || 0;
+        const finalPrice = quoteData.motor?.price || 0;
 
         supabase.functions.invoke('send-quote-email', {
           body: {
