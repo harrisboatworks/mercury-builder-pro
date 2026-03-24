@@ -533,6 +533,25 @@ const AdminQuoteDetail = () => {
           )}
         </div>
         <div className="flex gap-2">
+          <Button variant="outline" onClick={() => {
+            if (!q) return;
+            localStorage.removeItem('quoteBuilder');
+            dispatch({ type: 'RESET_TO_ADMIN_MODE', payload: { editingQuoteId: null } });
+            setTimeout(() => {
+              dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: {
+                adminDiscount: 0,
+                adminNotes: '',
+                customerNotes: '',
+                customerName: q.customer_name || '',
+                customerEmail: q.customer_email || '',
+                customerPhone: q.customer_phone || ''
+              }});
+              navigate('/quote/motor-selection');
+            }, 50);
+          }}>
+            <Plus className="w-4 h-4 mr-2" />
+            New Quote for Customer
+          </Button>
           {q?.quote_data && (
             <Button variant="default" onClick={handleEditQuote}>
               <Edit2 className="w-4 h-4 mr-2" />
