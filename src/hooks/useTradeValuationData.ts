@@ -72,13 +72,15 @@ async function fetchTradeValuationData(): Promise<TradeValuationData> {
     }
   }
 
-  // Use median selling price per HP class — balances base and upgraded models
+  // Compute median (default anchor) and max (electric-start anchor) per HP class
+  const referenceMsrpsMax: Record<number, number> = {};
   for (const [hpStr, msrps] of Object.entries(msrpsByHp)) {
     const sorted = [...msrps].sort((a, b) => a - b);
     const mid = Math.floor(sorted.length / 2);
     referenceMsrps[Number(hpStr)] = sorted.length % 2 === 0
       ? Math.round((sorted[mid - 1] + sorted[mid]) / 2)
       : sorted[mid];
+    referenceMsrpsMax[Number(hpStr)] = sorted[sorted.length - 1];
   }
 
   return {
