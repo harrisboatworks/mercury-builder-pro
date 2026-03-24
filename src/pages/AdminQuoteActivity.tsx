@@ -9,8 +9,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown, ChevronRight, Activity, Users, Eye, Clock } from 'lucide-react';
+import { ChevronDown, ChevronRight, Activity, Users, Eye, Clock, Flame, ThermometerSun, Snowflake, ExternalLink } from 'lucide-react';
 import { format, formatDistanceToNow } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
 
 interface QuoteEvent {
   id: string;
