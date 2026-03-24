@@ -1078,7 +1078,7 @@ export default function QuoteSummaryPage() {
                       {isGeneratingPDF ? 'PDF' : 'Download PDF'}
                     </Button>
                   </div>
-                  {packageSpecificTotals.total >= FINANCING_MINIMUM && (
+                  {displayPricing.total >= FINANCING_MINIMUM && (
                     <Button 
                       onClick={handleApplyForFinancing}
                       variant="default"
