@@ -1,33 +1,34 @@
 
+# Soft Lead Capture — Implemented ✅
 
-# Fix QR Code + Mobile Save Button Issues
+## What Was Added
 
-## Issue 1: QR Code Goes to Motor Selection Page
+### 1. Silent Quote Snapshot (QuoteSummaryPage.tsx)
+When any visitor reaches the summary page with a configured motor, a `saved_quotes` record is silently created with their `session_id` and `is_soft_lead = true`. No UI, no prompt. If they later sign in or save manually, the existing flows update the record with real info.
 
-**Root cause**: In `QuoteSummaryPage.tsx` (line 434), when the quote total is below $5,000 (the `FINANCING_MINIMUM`), the QR code URL defaults to just `SITE_URL` — the homepage. So scanning it dumps you at motor selection with no context.
+### 2. Lead Warmth Badges (AdminQuoteActivity.tsx)
+Each session row now shows a warmth badge:
+- 🔥 **Hot**: Submitted quote or deposit
+- 🌡️ **Warm**: Reached summary or 6+ events
+- **Cool**: Selected motor but didn't finish
+- ❄️ **Cold**: Browsed without selecting a motor
 
-**Fix**: For sub-threshold quotes, the QR code should point to the **saved quote** resume link instead. If the quote hasn't been saved yet, point it to the summary page URL or a shareable quote link. The system already generates `resumeToken` values when quotes are saved — use that.
+Return visitors are flagged with 🔁.
 
-**Change in `src/pages/quote/QuoteSummaryPage.tsx`** (around line 434):
-- If quote total < FINANCING_MINIMUM, set `qrTargetUrl` to the site URL + `/quote/saved/{quoteId}` (if a saved quote ID exists) or to the summary page URL
-- This way scanning the QR on a printed PDF actually takes the customer back to their quote, not to a blank motor selection page
+### 3. View Quote Button (AdminQuoteActivity.tsx)
+Sessions that reached the summary step show a "View Quote" button in the expanded row, linking to the soft-lead's saved quote.
 
-## Issue 2: Mobile "Save for Later" Skips Google Sign-In
+### 4. Return Visit Tracking (useQuoteActivityTracker.ts)
+A `return_visit` event fires when a visitor returns with an existing session ID that has prior events. This flags them as warmer leads.
 
-**Root cause**: The mobile CTA grid (line 944-952) has a "Save for Later" button that calls `setShowSaveDialog(true)` directly — opening the old email/phone form. It doesn't check auth state first like the desktop StickySummary button does (lines 997-1004).
+### 5. Database Changes
+- Added `session_id` (text) column to `saved_quotes`
+- Added `is_soft_lead` (boolean, default false) column to `saved_quotes`
+- Added index on `session_id` for fast lookups
 
-**Fix in `src/pages/quote/QuoteSummaryPage.tsx`** (line 945):
-- Change the mobile button's `onClick` to use the same auth-check logic as the desktop button:
-  - If `user` exists → `setShowSaveDialog(true)` (pre-filled email form)
-  - If no `user` → `setShowAuthSaveDialog(true)` (Google sign-in dialog)
-
-This is a one-line fix — just replace `() => setShowSaveDialog(true)` with the same handler used on the desktop side.
-
----
-
-## Files
-
+## Files Modified
 | File | Change |
 |------|--------|
-| `src/pages/quote/QuoteSummaryPage.tsx` | Fix mobile save button to check auth state; fix QR URL for sub-threshold quotes |
-
+| `src/pages/quote/QuoteSummaryPage.tsx` | Auto-save silent soft-lead quote snapshot |
+| `src/pages/AdminQuoteActivity.tsx` | Lead warmth badges, View Quote button, return visitor flag |
+| `src/hooks/useQuoteActivityTracker.ts` | Exported `getOrCreateSessionId`, added `return_visit` event |
