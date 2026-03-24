@@ -86,7 +86,8 @@ async function fetchTradeValuationData(): Promise<TradeValuationData> {
   return {
     brackets: bracketsResult.data || [],
     config: configMap,
-    referenceMsrps
+    referenceMsrps,
+    referenceMsrpsMax
   };
 }
 

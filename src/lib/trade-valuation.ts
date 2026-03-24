@@ -313,7 +313,7 @@ export function estimateTradeValue(
   const currentYear = new Date().getFullYear();
   
   // --- MSRP-based path for Mercury motors ---
-  const msrpBaseValue = tryMsrpBasedEstimate(brand, year, horsepower, condition, options?.referenceMsrps, msrpPercentages);
+  const msrpBaseValue = tryMsrpBasedEstimate(brand, year, horsepower, condition, options?.referenceMsrps, msrpPercentages, tradeInfo.startType, options?.referenceMsrpsMax);
   if (msrpBaseValue !== null) {
     const factors: string[] = ['MSRP-anchored valuation'];
     let preLow = msrpBaseValue * 0.85;

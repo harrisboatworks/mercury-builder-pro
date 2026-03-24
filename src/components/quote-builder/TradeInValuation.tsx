@@ -117,6 +117,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       brackets: valuationData?.brackets,
       config,
       referenceMsrps: valuationData?.referenceMsrps,
+      referenceMsrpsMax: valuationData?.referenceMsrpsMax,
     });
     setEstimate(tradeEstimate);
     
