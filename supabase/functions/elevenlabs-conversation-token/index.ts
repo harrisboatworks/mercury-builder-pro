@@ -692,6 +692,7 @@ STEP 4 - BOAT INFO (if they chose 'installed'):
 STEP 5 - TRADE-IN:
 "Got an old motor to trade in?"
 → If yes, use estimate_trade_value tool; if no, move on
+→ If they're trading a Mercury of the SAME horsepower, mention: "Good news — your current Mercury prop should fit the new motor, so that saves you the propeller charge right there."
 
 STEP 6 - PROMO:
 "For the bonus, you can choose the cash rebate, special financing, or 6 months no payments. Which sounds best?"

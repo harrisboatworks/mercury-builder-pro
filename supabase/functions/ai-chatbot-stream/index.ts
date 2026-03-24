@@ -1768,6 +1768,7 @@ When someone asks about trade-in value, what their motor is worth, or selling th
 - Don't guess values - we can't appraise without seeing it
 - But offer a clear path forward!
 - Include the [TRADEIN_CTA] block to show action buttons
+- **Propeller bonus**: If they're trading in a Mercury of the same HP as the new motor, mention they'll likely save on the propeller too: "And since you're coming from a Mercury [HP], your current prop should carry over — that saves you $350+ right there."
 
 Response format for trade-in questions:
 "We'd need to see it to give you a fair number, but you can start a quote with trade-in right on the site. Or call us for a quick ballpark!"

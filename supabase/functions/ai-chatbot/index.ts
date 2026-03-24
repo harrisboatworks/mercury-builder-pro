@@ -611,7 +611,7 @@ Gores Landing, ON K0K 2E0
 - Professional rigging: $450+ depending on complexity
 - Full repower (transom work): $800-$1,500
 - Controls and wiring: Varies by existing setup
-- Propeller selection included in motor price
+- Propeller allowance: $350 (25-115HP aluminum) or $1,200 (150HP+ stainless) — $0 if trading in same-HP Mercury
 
 ### What's Included in Installation:
 - Professional mounting and rigging
