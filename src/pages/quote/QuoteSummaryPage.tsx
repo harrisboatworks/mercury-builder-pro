@@ -1003,6 +1003,11 @@ export default function QuoteSummaryPage() {
               setShowSaveDialog(true);
             }}
           />
+          <PhoneCapture
+            open={showPhoneCapture}
+            onOpenChange={setShowPhoneCapture}
+            savedQuoteId={phoneCaptureQuoteId}
+          />
         </QuoteLayout>
       </PageTransition>
     </>
