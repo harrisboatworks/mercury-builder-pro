@@ -30,7 +30,7 @@ async function fetchTradeValuationData(): Promise<TradeValuationData> {
     supabase.from('trade_valuation_brackets').select('*'),
     supabase.from('trade_valuation_config').select('*'),
     supabase.from('motor_models')
-      .select('horsepower, msrp')
+      .select('horsepower, msrp, sale_price, dealer_price, base_price')
       .eq('make', 'Mercury')
       .eq('is_brochure', true)
       .not('msrp', 'is', null)
