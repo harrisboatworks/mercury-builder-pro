@@ -44,6 +44,7 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
     completeWarrantyCost = 0,
     premiumWarrantyCost = 0,
     currentCoverageYears = 3,
+    tradeInInfo,
   } = params;
 
   const breakdown: AccessoryBreakdownItem[] = [];
