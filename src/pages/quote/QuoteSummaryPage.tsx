@@ -505,7 +505,7 @@ export default function QuoteSummaryPage() {
       state.selectedPromoOption, getRebateForHP, includesProp, propAllowance, selectedPackage,
       canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears]);
 
-  const amountToFinance = getFinanceableAmount(packageSpecificTotals.subtotal, 0.13, DEALERPLAN_FEE);
+  const amountToFinance = getFinanceableAmount(displayPricing.subtotal, 0.13, DEALERPLAN_FEE);
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, promo?.rate || null);
 
   // CTA handlers
