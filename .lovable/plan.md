@@ -1,31 +1,45 @@
 
 
-# Use Median Selling Price (Not Minimum) for Trade-In Anchor
+# Add Start Type Field to Trade-In Form
 
-## The Change
+## What This Does
 
-Switch the MSRP aggregation from minimum to median per HP class. This bumps the 9.9HP anchor from ~$3,548 (cheapest model) to ~$4,065 (median dealer price), producing trade values closer to what Mr. Locke was originally quoted.
+Adds a "Start Type" dropdown (Manual / Electric) to the trade-in form. When "Electric" is selected, the valuation anchor shifts from the median selling price to the **maximum** (top model) for that HP class, producing a higher and more accurate trade value. When "Manual" is selected or left blank, it stays on the conservative median anchor.
 
-For the 2015 Mercury 9.9HP in excellent condition (8-12yr bracket, 29%):
-- Minimum anchor ($3,548) → ~$1,050
-- Median anchor (~$4,065) → ~$1,275
+## How It Works
 
-## File: `src/hooks/useTradeValuationData.ts`
+For a 15HP example:
+- **Manual/Unspecified** (median anchor): ~$4,100 → Good condition ~$1,640
+- **Electric** (max anchor): ~$4,500+ → Good condition ~$1,800
 
-Replace the minimum calculation (line 73-77) with a median:
+The system already collects all model prices per HP class in `useTradeValuationData`. Right now it only exports the median. We'll also export the max so the valuation function can pick the right anchor based on start type.
 
-```typescript
-// Use median selling price per HP class
-for (const [hpStr, msrps] of Object.entries(msrpsByHp)) {
-  const sorted = [...msrps].sort((a, b) => a - b);
-  const mid = Math.floor(sorted.length / 2);
-  referenceMsrps[Number(hpStr)] = sorted.length % 2 === 0
-    ? Math.round((sorted[mid - 1] + sorted[mid]) / 2)
-    : sorted[mid];
-}
-```
+## Changes
 
-Update the comment on line 56 to reflect "median" instead of "minimum".
+### 1. `src/lib/trade-valuation.ts` — Add `startType` to TradeInInfo interface
+Add `startType?: 'manual' | 'electric'` to the `TradeInInfo` interface (after `engineType`).
 
-One file, ~5 lines changed.
+### 2. `src/hooks/useTradeValuationData.ts` — Export both median and max per HP class
+Alongside `referenceMsrps` (median), add `referenceMsrpsMax: Record<number, number>` containing the highest selling price per HP class. Update the `TradeValuationData` interface and return value.
+
+### 3. `src/lib/trade-valuation.ts` — Use max anchor for electric-start trades
+In `tryMsrpBasedEstimate`, accept an optional `referenceMsrpsMax` parameter. When `startType === 'electric'`, use the max anchor instead of median. Update `estimateTradeValue` to pass through the new data.
+
+### 4. `src/components/quote-builder/TradeInValuation.tsx` — Add Start Type dropdown
+Add a Select field between the existing "Engine Type" and "Year" fields:
+- Label: "Start Type"
+- Options: "Manual (Pull Start)" / "Electric Start"
+- Not required — defaults to unspecified (uses median anchor)
+- Pass `referenceMsrpsMax` through to `estimateTradeValue`
+
+### 5. `src/pages/quote/TradeInPage.tsx` — No changes needed
+The `tradeInInfo` state already spreads all fields through to the valuation component.
+
+## Files
+
+| File | Change |
+|------|--------|
+| `src/lib/trade-valuation.ts` | Add `startType` to interface; use max anchor when electric |
+| `src/hooks/useTradeValuationData.ts` | Export `referenceMsrpsMax` (highest price per HP) |
+| `src/components/quote-builder/TradeInValuation.tsx` | Add Start Type dropdown; pass max MSRPs to estimator |
 
