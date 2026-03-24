@@ -291,6 +291,8 @@ function quoteReducer(state: QuoteState, action: QuoteAction): QuoteState {
         customerPhone: action.payload.customerPhone ?? state.customerPhone,
         adminCustomItems: action.payload.adminCustomItems ?? state.adminCustomItems
       };
+    case 'SET_FROZEN_PRICING':
+      return { ...state, frozenPricing: action.payload };
     case 'RESTORE_QUOTE':
       // Restore quote from saved data (used for admin editing)
       const restored = action.payload;
