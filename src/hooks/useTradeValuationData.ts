@@ -53,7 +53,8 @@ async function fetchTradeValuationData(): Promise<TradeValuationData> {
     configMap[item.key] = item.value as Record<string, number>;
   }
 
-  // Build HP-to-MSRP lookup from Mercury motor_models
+  // Build HP-to-MSRP lookup from Mercury motor_models using median MSRP per HP class
+  const msrpsByHp: Record<number, number[]> = {};
   const referenceMsrps: Record<number, number> = {};
   for (const motor of msrpResult.data || []) {
     if (motor.horsepower && motor.msrp) {
