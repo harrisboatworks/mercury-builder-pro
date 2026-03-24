@@ -248,6 +248,7 @@ export type Database = {
           deposit_amount: number
           discount_amount: number | null
           final_price: number
+          follow_up_date: string | null
           id: string
           is_admin_quote: boolean | null
           last_contact_attempt: string | null
@@ -287,6 +288,7 @@ export type Database = {
           deposit_amount: number
           discount_amount?: number | null
           final_price: number
+          follow_up_date?: string | null
           id?: string
           is_admin_quote?: boolean | null
           last_contact_attempt?: string | null
@@ -326,6 +328,7 @@ export type Database = {
           deposit_amount?: number
           discount_amount?: number | null
           final_price?: number
+          follow_up_date?: string | null
           id?: string
           is_admin_quote?: boolean | null
           last_contact_attempt?: string | null
@@ -2163,6 +2166,44 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "quote_change_log_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "customer_quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      quote_contact_log: {
+        Row: {
+          contact_type: string
+          contacted_by: string | null
+          created_at: string
+          customer_email: string
+          id: string
+          notes: string | null
+          quote_id: string
+        }
+        Insert: {
+          contact_type?: string
+          contacted_by?: string | null
+          created_at?: string
+          customer_email: string
+          id?: string
+          notes?: string | null
+          quote_id: string
+        }
+        Update: {
+          contact_type?: string
+          contacted_by?: string | null
+          created_at?: string
+          customer_email?: string
+          id?: string
+          notes?: string | null
+          quote_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quote_contact_log_quote_id_fkey"
             columns: ["quote_id"]
             isOneToOne: false
             referencedRelation: "customer_quotes"
