@@ -8,6 +8,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
+import { StaleQuoteAlert } from '@/components/quote-builder/StaleQuoteAlert';
 import { getRecommendedDeposit } from '@/components/quote-builder/PaymentPreferenceSelector';
 import { DepositInfoDialog, type DepositCustomerInfo } from '@/components/quote-builder/DepositInfoDialog';
 
