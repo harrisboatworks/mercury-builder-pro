@@ -770,9 +770,9 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                   <Text style={{ fontSize: 11, fontWeight: 'bold', color: colors.text, marginBottom: 6 }}>
                     Ready to Proceed?
                   </Text>
-                  <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
-                    1. Scan QR to reserve online
-                  </Text>
+                   <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
+                     1. Scan QR to view your quote online
+                   </Text>
                   <Text style={{ fontSize: 9, color: colors.text, marginBottom: 3 }}>
                     2. Call or text: (905) 342-2153
                   </Text>
