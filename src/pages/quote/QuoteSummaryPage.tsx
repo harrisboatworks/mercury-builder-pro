@@ -376,8 +376,9 @@ export default function QuoteSummaryPage() {
       completeWarrantyCost,
       premiumWarrantyCost,
       currentCoverageYears,
+      tradeInInfo: state.tradeInInfo,
     });
-  }, [state.selectedOptions, motor, state.boatInfo, state.purchasePath, state.installConfig, state.looseMotorBattery, selectedPackage, state.adminCustomItems, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears]);
+  }, [state.selectedOptions, motor, state.boatInfo, state.purchasePath, state.installConfig, state.looseMotorBattery, selectedPackage, state.adminCustomItems, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, state.tradeInInfo]);
 
   // Calculate package-specific totals
   const packageSpecificTotals = useMemo(() => {
@@ -406,7 +407,10 @@ export default function QuoteSummaryPage() {
       const augmentedOptions = [...(state.selectedOptions || [])];
 
       // Propeller allowance (added by breakdown when motor doesn't include prop)
-      if (!includesProp && propAllowance && !state.boatInfo?.hasCompatibleProp) {
+      const isMercuryTradeMatch = state.tradeInInfo?.hasTradeIn &&
+        state.tradeInInfo?.brand?.toLowerCase() === 'mercury' &&
+        state.tradeInInfo?.horsepower === hp;
+      if (!includesProp && propAllowance && !state.boatInfo?.hasCompatibleProp && !isMercuryTradeMatch) {
         augmentedOptions.push({ optionId: 'prop-allowance', name: propAllowance.name, price: propAllowance.price, category: 'propeller', assignmentType: 'required' as const, isIncluded: false });
       }
 

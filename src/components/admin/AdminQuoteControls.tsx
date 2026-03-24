@@ -89,6 +89,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         completeWarrantyCost: 0, // Not available in admin context, will be 0
         premiumWarrantyCost: 0,
         currentCoverageYears: 3,
+        tradeInInfo: state.tradeInInfo,
       });
       
       // Calculate comprehensive pricing using the full breakdown
