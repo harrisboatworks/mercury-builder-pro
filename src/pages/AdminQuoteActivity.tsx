@@ -124,6 +124,8 @@ function groupEventsIntoSessions(events: QuoteEvent[]): Session[] {
       status: getSessionStatus(evts),
       furthestStep,
       userId: evts[0].user_id,
+      warmth: getLeadWarmth(evts, furthestStep),
+      isReturnVisitor: evts.some(e => e.event_type === 'return_visit'),
     };
   }).sort((a, b) => new Date(b.lastEvent).getTime() - new Date(a.lastEvent).getTime());
 }
