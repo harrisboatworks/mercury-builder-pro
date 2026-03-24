@@ -402,6 +402,21 @@ export default function QuoteSummaryPage() {
     });
   }, [motorMSRP, motorDiscount, state.adminDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue]);
 
+  // When frozenPricing exists with full totals, use those for display
+  // to guarantee PDF ↔ web parity. Live recalc is only for stale-quote comparison.
+  const displayPricing = useMemo(() => {
+    if (state.frozenPricing?.subtotal != null && state.frozenPricing?.total != null) {
+      return {
+        ...packageSpecificTotals,
+        subtotal: state.frozenPricing.subtotal,
+        tax: state.frozenPricing.hst ?? Math.round(state.frozenPricing.subtotal * 0.13 * 100) / 100,
+        total: state.frozenPricing.total,
+        savings: state.frozenPricing.savings ?? packageSpecificTotals.savings,
+      };
+    }
+    return packageSpecificTotals;
+  }, [packageSpecificTotals, state.frozenPricing]);
+
   // Live total for stale-quote comparison (always calculated from current data, ignoring frozen)
   const liveTotalForComparison = useMemo(() => {
     if (!state.frozenPricing) return 0;
@@ -490,7 +505,7 @@ export default function QuoteSummaryPage() {
       state.selectedPromoOption, getRebateForHP, includesProp, propAllowance, selectedPackage,
       canAddFuelTank, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears]);
 
-  const amountToFinance = getFinanceableAmount(packageSpecificTotals.subtotal, 0.13, DEALERPLAN_FEE);
+  const amountToFinance = getFinanceableAmount(displayPricing.subtotal, 0.13, DEALERPLAN_FEE);
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, promo?.rate || null);
 
   // CTA handlers
@@ -499,8 +514,8 @@ export default function QuoteSummaryPage() {
     
     try {
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      const packageTax = packageSpecificTotals.subtotal * 0.13;
-      const packageTotal = packageSpecificTotals.subtotal + packageTax;
+      const packageTax = displayPricing.subtotal * 0.13;
+      const packageTotal = displayPricing.subtotal + packageTax;
       
       // Generate QR code — always generate for all quotes (cash & financing)
       // Points to financing app with prefilled params for financing-eligible quotes,
@@ -510,14 +525,14 @@ export default function QuoteSummaryPage() {
       
       // Always save quote and point QR to saved quote page (works for both cash & financing)
       try {
-        const packageTaxForQr = packageSpecificTotals.subtotal * 0.13;
-        const packageTotalForQr = packageSpecificTotals.subtotal + packageTaxForQr;
+        const packageTaxForQr = displayPricing.subtotal * 0.13;
+        const packageTotalForQr = displayPricing.subtotal + packageTaxForQr;
         const frozenPricingSnapshot = {
           motorMSRP,
           motorDiscount,
           adminDiscount: state.adminDiscount || 0,
           promoSavings,
-          subtotal: packageSpecificTotals.subtotal,
+          subtotal: displayPricing.subtotal,
           hst: packageTaxForQr,
           total: packageTotalForQr,
           savings: motorDiscount + (state.adminDiscount || 0) + promoSavings,
@@ -590,7 +605,7 @@ export default function QuoteSummaryPage() {
           adminDiscount: state.adminDiscount || 0,
           promoValue: promoSavings,
           motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
-          subtotal: packageSpecificTotals.subtotal,
+          subtotal: displayPricing.subtotal,
           hst: packageTax,
           totalCashPrice: packageTotal,
           savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
@@ -613,7 +628,7 @@ export default function QuoteSummaryPage() {
         await saveLead({
           motor_model: quoteData.motor?.model,
           motor_hp: quoteData.motor?.hp,
-          base_price: packageSpecificTotals.subtotal,
+          base_price: displayPricing.subtotal,
           final_price: packageTotal,
           lead_status: 'downloaded',
           lead_source: 'pdf_download',
@@ -643,21 +658,18 @@ export default function QuoteSummaryPage() {
     
     // Use the pre-trade-in subtotal so the financing form handles the single subtraction
     // packageSpecificTotals.subtotal already has trade-in deducted, so add it back
-    const preTradeInSubtotal = packageSpecificTotals.subtotal + tradeInValue;
+    const preTradeInSubtotal = displayPricing.subtotal + tradeInValue;
     const subtotalWithTax = preTradeInSubtotal * 1.13;
     const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
-    
-    const packageName = selectedPackageLabel.split('•')[0].trim();
-    
     const financingData = {
       ...state,
       financingAmount: {
-        packageSubtotal: packageSpecificTotals.subtotal,
-        hst: packageSpecificTotals.subtotal * 0.13,
+        packageSubtotal: displayPricing.subtotal,
+        hst: displayPricing.subtotal * 0.13,
         financingFee: DEALERPLAN_FEE,
         totalWithFees: totalWithFees,
         motorModel: quoteData.motor?.model || motorName,
-        packageName: packageName,
+        packageName: selectedPackageLabel,
         tradeInValue: tradeInValue,
         // Include promo details for financing application
         promoOption: state.selectedPromoOption,
@@ -687,8 +699,8 @@ export default function QuoteSummaryPage() {
     try {
       const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      const packageTax = packageSpecificTotals.subtotal * 0.13;
-      const packageTotal = packageSpecificTotals.subtotal + packageTax;
+      const packageTax = displayPricing.subtotal * 0.13;
+      const packageTotal = displayPricing.subtotal + packageTax;
       const referenceNumber = `HBW-DEP-${quoteNumber.slice(4)}`;
       
       const basePdfData = {
@@ -730,7 +742,7 @@ export default function QuoteSummaryPage() {
           adminDiscount: state.adminDiscount || 0,
           promoValue: promoSavings,
           motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
-          subtotal: packageSpecificTotals.subtotal,
+          subtotal: displayPricing.subtotal,
           hst: packageTax,
           totalCashPrice: packageTotal,
           savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
@@ -927,9 +939,9 @@ export default function QuoteSummaryPage() {
         isVisible={showCinematic && isMounted && !promoLoading && warrantyCostsLoaded}
         onComplete={handleCinematicComplete}
         motorName={motorName}
-        finalPrice={packageSpecificTotals.subtotal}
+        finalPrice={displayPricing.subtotal}
         msrp={motorMSRP}
-        savings={packageSpecificTotals.savings}
+        savings={displayPricing.savings}
         tradeInValue={state.tradeInInfo?.estimatedValue}
         coverageYears={selectedPackageCoverageYears}
         imageUrl={imageUrl}
@@ -984,7 +996,7 @@ export default function QuoteSummaryPage() {
                   animate="visible"
                 >
                   <PricingTable
-                    pricing={packageSpecificTotals}
+                    pricing={displayPricing}
                     motorName={quoteData.motor?.model || 'Mercury Motor'}
                     accessoryBreakdown={accessoryBreakdown}
                     tradeInValue={state.tradeInInfo?.estimatedValue || 0}
@@ -1067,7 +1079,7 @@ export default function QuoteSummaryPage() {
                       {isGeneratingPDF ? 'PDF' : 'Download PDF'}
                     </Button>
                   </div>
-                  {packageSpecificTotals.total >= FINANCING_MINIMUM && (
+                  {displayPricing.total >= FINANCING_MINIMUM && (
                     <Button 
                       onClick={handleApplyForFinancing}
                       variant="default"
@@ -1092,9 +1104,9 @@ export default function QuoteSummaryPage() {
               <div>
                 <StickySummary
                   packageLabel={selectedPackageLabel}
-                  yourPriceBeforeTax={packageSpecificTotals.subtotal}
-                  totalWithTax={packageSpecificTotals.total}
-                  totalSavings={packageSpecificTotals.savings}
+                  yourPriceBeforeTax={displayPricing.subtotal}
+                  totalWithTax={displayPricing.total}
+                  totalSavings={displayPricing.savings}
                   monthly={monthlyPayment}
                   bullets={selectedPackageFeatures}
                   onReserve={handleReserveDeposit}
@@ -1110,7 +1122,7 @@ export default function QuoteSummaryPage() {
                       setShowAuthSaveDialog(true);
                     }
                   }}
-                  onApplyForFinancing={packageSpecificTotals.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
+                  onApplyForFinancing={displayPricing.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
                   showUpgradePrompt={false}
                   isProcessingPayment={isProcessingDeposit}
@@ -1125,7 +1137,7 @@ export default function QuoteSummaryPage() {
             onOpenChange={setShowSaveDialog}
             quoteData={state}
             motorModel={motorName}
-            finalPrice={packageSpecificTotals.total}
+            finalPrice={displayPricing.total}
           />
           <SaveQuoteWithAuth
             open={showAuthSaveDialog}
