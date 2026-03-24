@@ -845,6 +845,12 @@ const AdminQuoteDetail = () => {
 
           {/* Change Log */}
           <QuoteChangeLog key={changeLogKey} quoteId={q.id} />
+
+          {/* Quote History Timeline */}
+          <QuoteHistoryTimeline customerEmail={q.customer_email} currentQuoteId={q.id} />
+
+          {/* Contact Log */}
+          <ContactLog quoteId={q.id} customerEmail={q.customer_email} />
         </div>
       )}
     </main>
