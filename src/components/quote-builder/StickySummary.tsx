@@ -178,8 +178,17 @@ export default function StickySummary({
               variant="outline"
               className="w-full"
             >
-              <Mail className="w-4 h-4 mr-2" />
-              Email Me This Quote
+              {user ? (
+                <>
+                  <Bookmark className="w-4 h-4 mr-2" />
+                  Save Quote
+                </>
+              ) : (
+                <>
+                  <Bookmark className="w-4 h-4 mr-2" />
+                  Save My Quote
+                </>
+              )}
             </Button>
           )}
           
