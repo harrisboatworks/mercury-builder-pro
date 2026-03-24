@@ -1,42 +1,43 @@
 
 
-# QR Code Should Link to Saved Quote, Not Financing App
+# Verification: Propeller Trade-In Logic
 
-## The Problem
+## Code Review — Logic is Correct
 
-Currently, QR codes on PDFs point to `/financing-application?...` for quotes over $5,000. This only makes sense if the customer wants to finance. If they're paying cash, the QR code is useless. The user wants **all QR codes** to point to the saved quote page (`/quote/saved/{id}`) so anyone who prints the PDF can scan it later and resume — whether cash or finance.
+I reviewed all three touch-points and the logic is properly wired:
 
-The sub-$5K path in `QuoteSummaryPage` already does this correctly. The two broken paths are:
-1. **QuoteSummaryPage** (line 484-495): financing-eligible quotes point to `/financing-application`
-2. **AdminQuoteDetail** (line 426-434): always points to `/financing-application`
+### Mercury same-HP trade-in → $0 prop
+1. **`build-accessory-breakdown.ts` (line 152-168)**: Checks `tradeInInfo.brand === 'mercury'` AND `tradeInInfo.horsepower === hp`. If both match, pushes "Propeller — Use Existing" at $0 with the compatibility message.
+2. **`QuoteSummaryPage.tsx` (line 410-414)**: Same `isMercuryTradeMatch` check — skips adding the prop allowance to `augmentedOptions`, so the running total stays consistent.
 
-## The Fix
+### Non-Mercury trade-in → full prop charge
+When brand is Yamaha, Honda, etc., `isMercuryTradeMatch` is `false`, so the standard `propAllowance` ($350 or $1,200) is added normally. This is correct — other brand props won't fit Mercury.
 
-### 1. `src/pages/quote/QuoteSummaryPage.tsx` — Always save quote and use saved-quote URL
+### PDF
+The breakdown array flows directly into the PDF via `accessoryBreakdown`, so "Propeller — Use Existing" will appear with its description on the PDF automatically.
 
-Remove the `if (packageTotal >= FINANCING_MINIMUM)` branch for QR target URL. Always save the quote to `saved_quotes` and set QR to `/quote/saved/{id}` — the same logic currently used for sub-threshold quotes. The financing data still gets included in the PDF data object (monthly payment, term, rate) for display purposes; only the QR destination changes.
+## Manual Test Steps
 
-Lines ~482-516 become a single block: save quote, set `qrTargetUrl = /quote/saved/{id}`.
+Since I can't build quotes in read-only mode, here's exactly what to test:
 
-### 2. `src/pages/AdminQuoteDetail.tsx` — Use the quote's own ID for QR
+### Test 1: Mercury 9.9HP trade-in (should show $0 prop)
+1. Select a **9.9HP Mercury** motor
+2. In trade-in, enter: **Mercury**, **9.9HP**, any year/condition
+3. On the summary page, verify the line item shows:
+   - **"Propeller — Use Existing" — $0.00**
+   - Description: *"Your current Mercury propeller should be compatible..."*
+4. Download PDF and confirm same line appears
 
-The admin page already has the quote ID (`q.id`). The saved quote is already in the `saved_quotes` table (admin creates it there). Change lines 426-434 to simply:
+### Test 2: Yamaha 9.9HP trade-in (should charge prop)
+1. Same 9.9HP Mercury motor
+2. Trade-in: **Yamaha**, **9.9HP**
+3. Summary should show: **"Propeller Allowance (Aluminum)" — $350.00**
+4. PDF should match
 
-```typescript
-const qrTargetUrl = `${SITE_URL}/quote/saved/${q.id}`;
-```
+### Test 3: Mercury different HP (should charge prop)
+1. Select a **40HP Mercury** motor
+2. Trade-in: **Mercury**, **9.9HP** (different HP)
+3. Should show full prop allowance since HP doesn't match
 
-Remove the financing URL params construction for QR. The QR code generation (`QRCode.toDataURL`) stays the same — just a shorter, simpler URL.
-
-### 3. PDF CTA text update — `ProfessionalQuotePDF.tsx`
-
-The "Ready to Proceed?" box text currently says things about financing. Update the CTA copy to be universal: something like **"Scan to view your quote online"** or **"Scan to resume your quote"** so it works for both cash and financing customers.
-
-## What Changes
-
-| File | Change |
-|------|--------|
-| `src/pages/quote/QuoteSummaryPage.tsx` | Always use `/quote/saved/{id}` for QR URL |
-| `src/pages/AdminQuoteDetail.tsx` | Use `/quote/saved/{quoteId}` instead of financing params |
-| `src/components/quote-pdf/ProfessionalQuotePDF.tsx` | Update CTA text to be universal (not financing-specific) |
+No code changes needed — the implementation is already correct for all cases.
 
