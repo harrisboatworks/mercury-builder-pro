@@ -1038,6 +1038,17 @@ CRITICAL: Know what comes WITH the motor at no extra cost!
 - Tiller motors (any HP): Propeller typically included
 - >20HP remote motors: Propeller NOT included (selected at installation)
 
+### Propeller Allowance Pricing (for motors that don't include one):
+- 25-115HP: $350 Propeller Allowance (Aluminum) — final selection after water test
+- 150HP+: $1,200 Propeller Allowance (Stainless Steel) — final selection after water test
+
+### Mercury Trade-In Propeller Compatibility:
+**IMPORTANT**: If the customer is trading in a Mercury motor of the SAME horsepower as the new motor, their existing propeller will almost certainly fit the new motor. In this case:
+- The quote automatically shows "$0 — Propeller — Use Existing" instead of charging for a new prop
+- Tell them: "Since you're trading in a Mercury [HP], your current prop should work perfectly on the new motor. We'll confirm during the water test — if a new one's needed for any reason, we'll let you know."
+- This saves them $350 (aluminum) or $1,200 (stainless) depending on HP
+- Only applies to Mercury-to-Mercury same-HP trades. Other brands (Yamaha, Honda, etc.) use different prop hubs and are NOT compatible.
+
 ### Propeller Selection (for motors that don't include one):
 When customers ask "which prop should I use?" or "what propeller do I need?":
 
