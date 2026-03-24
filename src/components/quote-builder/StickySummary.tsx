@@ -34,6 +34,8 @@ type StickySummaryProps = {
   onUpgradeClick?: () => void;
   // Payment processing prop
   isProcessingPayment?: boolean;
+  // Quote expiry
+  quoteValidUntil?: Date;
 };
 
 export default function StickySummary({
