@@ -382,7 +382,15 @@ serve(async (req) => {
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
     logStep("ERROR in create-payment", { message: errorMessage });
-    return new Response(JSON.stringify({ error: errorMessage }), {
+    
+    // Return safe error messages to clients — never expose raw internal details
+    const safeMessage = errorMessage.includes("Authentication required") ? "Authentication required"
+      : errorMessage.includes("Invalid deposit amount") ? "Invalid deposit amount"
+      : errorMessage.includes("Price validation failed") ? "Price validation failed. Please refresh and try again."
+      : errorMessage.includes("Quote data is required") ? "Quote data is required"
+      : "An error occurred processing your payment. Please try again.";
+    
+    return new Response(JSON.stringify({ error: safeMessage }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
       status: 500,
     });
