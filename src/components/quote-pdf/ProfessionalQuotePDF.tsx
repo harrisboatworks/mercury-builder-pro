@@ -936,13 +936,6 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </View>
         </View>
 
-        {/* Customer Notes */}
-        {quoteData.customerNotes && (
-          <View style={{ marginTop: 4, marginBottom: 4, padding: 8, border: `1 solid ${colors.border}`, backgroundColor: colors.tableBg }}>
-            <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 4 }}>Notes</Text>
-            <Text style={{ fontSize: 9, color: colors.text, lineHeight: 1.4 }}>{quoteData.customerNotes}</Text>
-          </View>
-        )}
 
         {/* Deposit Payment Confirmation */}
         {quoteData.depositInfo && (
