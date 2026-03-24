@@ -698,8 +698,8 @@ export default function QuoteSummaryPage() {
     try {
       const { generatePDFBlob } = await import('@/lib/react-pdf-generator');
       const quoteNumber = `HBW-${Date.now().toString().slice(-6)}`;
-      const packageTax = packageSpecificTotals.subtotal * 0.13;
-      const packageTotal = packageSpecificTotals.subtotal + packageTax;
+      const packageTax = displayPricing.subtotal * 0.13;
+      const packageTotal = displayPricing.subtotal + packageTax;
       const referenceNumber = `HBW-DEP-${quoteNumber.slice(4)}`;
       
       const basePdfData = {
