@@ -376,8 +376,9 @@ export default function QuoteSummaryPage() {
       completeWarrantyCost,
       premiumWarrantyCost,
       currentCoverageYears,
+      tradeInInfo: state.tradeInInfo,
     });
-  }, [state.selectedOptions, motor, state.boatInfo, state.purchasePath, state.installConfig, state.looseMotorBattery, selectedPackage, state.adminCustomItems, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears]);
+  }, [state.selectedOptions, motor, state.boatInfo, state.purchasePath, state.installConfig, state.looseMotorBattery, selectedPackage, state.adminCustomItems, completeWarrantyCost, premiumWarrantyCost, currentCoverageYears, state.tradeInInfo]);
 
   // Calculate package-specific totals
   const packageSpecificTotals = useMemo(() => {
