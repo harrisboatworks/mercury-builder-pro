@@ -46,6 +46,7 @@ const AdminQuotes = () => {
   const [loading, setLoading] = useState(true);
   const { toast } = useToast();
   const navigate = useNavigate();
+  const { dispatch } = useQuote();
   const [searchParams, setSearchParams] = useSearchParams();
   const [showPenalizedOnly, setShowPenalizedOnly] = useState(false);
   const [penalizedTotal, setPenalizedTotal] = useState(0);
