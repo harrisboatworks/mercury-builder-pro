@@ -203,6 +203,7 @@ serve(async (req) => {
             payment_status: "pending",
             motor_info: motorInfo,
             quote_pdf_path: quotePdfPath || null,
+            ...(quoteSnapshot ? { quote_snapshot: quoteSnapshot } : {}),
           },
         });
         if (depositSaveError) {
