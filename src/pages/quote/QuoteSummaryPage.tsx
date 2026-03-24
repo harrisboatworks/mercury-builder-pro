@@ -995,7 +995,7 @@ export default function QuoteSummaryPage() {
                   animate="visible"
                 >
                   <PricingTable
-                    pricing={packageSpecificTotals}
+                    pricing={displayPricing}
                     motorName={quoteData.motor?.model || 'Mercury Motor'}
                     accessoryBreakdown={accessoryBreakdown}
                     tradeInValue={state.tradeInInfo?.estimatedValue || 0}
