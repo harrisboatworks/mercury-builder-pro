@@ -955,7 +955,15 @@ export default function QuoteSummaryPage() {
                   depositAmount={depositAmount}
                   coverageYears={selectedPackageCoverageYears}
                   onDownloadPDF={handleDownloadPDF}
-                  onSaveForLater={() => setShowSaveDialog(true)}
+                  onSaveForLater={() => {
+                    if (user) {
+                      // Already logged in — save immediately via the email dialog (pre-filled)
+                      setShowSaveDialog(true);
+                    } else {
+                      // Not logged in — show auth-first dialog
+                      setShowAuthSaveDialog(true);
+                    }
+                  }}
                   onApplyForFinancing={packageSpecificTotals.total >= FINANCING_MINIMUM ? handleApplyForFinancing : undefined}
                   isGeneratingPDF={isGeneratingPDF}
                   showUpgradePrompt={false}
