@@ -8,7 +8,8 @@ const SESSION_KEY = 'quote_activity_session_id';
 const UTM_KEY = 'quote_activity_utm';
 const DEBOUNCE_MS = 2000;
 
-function getOrCreateSessionId(): string {
+/** Get or create the persistent session ID used for activity tracking and soft-lead linking. */
+export function getOrCreateSessionId(): string {
   try {
     let id = localStorage.getItem(SESSION_KEY);
     if (!id) {
