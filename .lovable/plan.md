@@ -1,42 +1,31 @@
 
 
-# Pre-Fill Trade-In Form from Boat Info
+# Use Median Selling Price (Not Minimum) for Trade-In Anchor
 
-## The Problem
+## The Change
 
-In the Boat Information step, the user enters their current motor details (brand, HP, year). When they get to the Trade-In page and click "Yes, I have a trade-in," the form is completely blank — forcing them to re-enter the same motor info. The props (`currentMotorBrand`, `currentHp`, `currentMotorYear`) are already passed through but never used to populate the fields.
+Switch the MSRP aggregation from minimum to median per HP class. This bumps the 9.9HP anchor from ~$3,548 (cheapest model) to ~$4,065 (median dealer price), producing trade values closer to what Mr. Locke was originally quoted.
 
-Two issues:
-1. **TradeInPage** (line 49) explicitly resets to blank state with the comment "no auto-loading from context"
-2. **TradeInValuation** shows a "Pre-filled from your current motor details" banner when those props exist, but the form values still come from the empty `tradeInInfo` state
+For the 2015 Mercury 9.9HP in excellent condition (8-12yr bracket, 29%):
+- Minimum anchor ($3,548) → ~$1,050
+- Median anchor (~$4,065) → ~$1,275
 
-## The Fix
+## File: `src/hooks/useTradeValuationData.ts`
 
-### File: `src/pages/quote/TradeInPage.tsx`
-When initializing `tradeInInfo`, pre-fill `brand`, `year`, and `horsepower` from `state.boatInfo` if available:
+Replace the minimum calculation (line 73-77) with a median:
 
-```
-setTradeInInfo({
-  hasTradeIn: false,
-  brand: state.boatInfo?.currentMotorBrand || '',
-  year: state.boatInfo?.currentMotorYear || 0,
-  horsepower: state.boatInfo?.currentHp || 0,
-  model: '',
-  serialNumber: '',
-  condition: 'good',
-  estimatedValue: 0,
-  confidenceLevel: 'medium'
-});
+```typescript
+// Use median selling price per HP class
+for (const [hpStr, msrps] of Object.entries(msrpsByHp)) {
+  const sorted = [...msrps].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  referenceMsrps[Number(hpStr)] = sorted.length % 2 === 0
+    ? Math.round((sorted[mid - 1] + sorted[mid]) / 2)
+    : sorted[mid];
+}
 ```
 
-This means when the user clicks "Yes, I have a trade-in," the brand/year/HP are already filled in from what they told us earlier. They only need to add condition and serial number (if they want).
+Update the comment on line 56 to reflect "median" instead of "minimum".
 
-### File: `src/components/quote-builder/TradeInValuation.tsx`
-No changes needed — it already displays the "Pre-filled from your current motor details" notice and the form fields bind to `tradeInInfo`, which will now have the correct values.
-
-## One file, three lines changed.
-
-| File | Change |
-|------|--------|
-| `src/pages/quote/TradeInPage.tsx` | Pre-fill brand/year/hp from `state.boatInfo` on init (~lines 51-55) |
+One file, ~5 lines changed.
 
