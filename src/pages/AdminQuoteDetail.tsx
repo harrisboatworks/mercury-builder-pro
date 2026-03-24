@@ -837,6 +837,13 @@ const AdminQuoteDetail = () => {
                   {linkCopied ? 'Copied!' : 'Copy Link'}
                 </Button>
               </div>
+              <SendQuoteEmail
+                quoteId={q.id}
+                customerName={q.customer_name}
+                customerEmail={q.customer_email}
+                motorModel={q.quote_data?.motor?.model || 'Mercury Motor'}
+                totalPrice={q.final_price}
+              />
               <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded font-mono truncate">
                 {SITE_URL}/quote/saved/{q?.id?.slice(0, 8)}...
               </div>
