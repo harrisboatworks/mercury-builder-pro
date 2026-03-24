@@ -605,7 +605,7 @@ export default function QuoteSummaryPage() {
           adminDiscount: state.adminDiscount || 0,
           promoValue: promoSavings,
           motorSubtotal: motorMSRP - motorDiscount - (state.adminDiscount || 0) - promoSavings,
-          subtotal: packageSpecificTotals.subtotal,
+          subtotal: displayPricing.subtotal,
           hst: packageTax,
           totalCashPrice: packageTotal,
           savings: motorDiscount + (state.adminDiscount || 0) + promoSavings
