@@ -938,9 +938,9 @@ export default function QuoteSummaryPage() {
         isVisible={showCinematic && isMounted && !promoLoading && warrantyCostsLoaded}
         onComplete={handleCinematicComplete}
         motorName={motorName}
-        finalPrice={packageSpecificTotals.subtotal}
+        finalPrice={displayPricing.subtotal}
         msrp={motorMSRP}
-        savings={packageSpecificTotals.savings}
+        savings={displayPricing.savings}
         tradeInValue={state.tradeInInfo?.estimatedValue}
         coverageYears={selectedPackageCoverageYears}
         imageUrl={imageUrl}
