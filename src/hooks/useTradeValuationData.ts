@@ -53,7 +53,7 @@ async function fetchTradeValuationData(): Promise<TradeValuationData> {
     configMap[item.key] = item.value as Record<string, number>;
   }
 
-  // Build HP-to-MSRP lookup from Mercury motor_models using median MSRP per HP class
+  // Build HP-to-selling-price lookup from Mercury motor_models using median per HP class
   const msrpsByHp: Record<number, number[]> = {};
   const referenceMsrps: Record<number, number> = {};
   for (const motor of msrpResult.data || []) {
@@ -70,10 +70,13 @@ async function fetchTradeValuationData(): Promise<TradeValuationData> {
     }
   }
 
-  // Use minimum (base model) selling price per HP class — anchors to manual-start tiller
+  // Use median selling price per HP class — balances base and upgraded models
   for (const [hpStr, msrps] of Object.entries(msrpsByHp)) {
     const sorted = [...msrps].sort((a, b) => a - b);
-    referenceMsrps[Number(hpStr)] = sorted[0];
+    const mid = Math.floor(sorted.length / 2);
+    referenceMsrps[Number(hpStr)] = sorted.length % 2 === 0
+      ? Math.round((sorted[mid - 1] + sorted[mid]) / 2)
+      : sorted[mid];
   }
 
   return {
