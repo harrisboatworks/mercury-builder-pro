@@ -1136,7 +1136,7 @@ export default function QuoteSummaryPage() {
             onOpenChange={setShowSaveDialog}
             quoteData={state}
             motorModel={motorName}
-            finalPrice={packageSpecificTotals.total}
+            finalPrice={displayPricing.total}
           />
           <SaveQuoteWithAuth
             open={showAuthSaveDialog}
