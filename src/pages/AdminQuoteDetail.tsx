@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Edit2, Save, Loader2, FileText, AlertTriangle, Download, Copy, Check, Gift, Calendar, Link, Plus } from 'lucide-react';
+import { Edit2, Save, Loader2, FileText, AlertTriangle, Download, Copy, Check, Gift, Calendar, Link, Plus, Mail } from 'lucide-react';
 import { useQuote } from '@/contexts/QuoteContext';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/components/auth/AuthProvider';
@@ -19,6 +19,10 @@ import { DEALERPLAN_FEE } from '@/lib/finance';
 import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
 import { QuoteChangeLog } from '@/components/admin/QuoteChangeLog';
 import QRCode from 'qrcode';
+import QuoteHistoryTimeline from '@/components/admin/QuoteHistoryTimeline';
+import ContactLog from '@/components/admin/ContactLog';
+import FollowUpReminder from '@/components/admin/FollowUpReminder';
+import SendQuoteEmail from '@/components/admin/SendQuoteEmail';
 
 interface QuoteDetail {
   id: string;
@@ -46,6 +50,7 @@ interface QuoteDetail {
   quote_data?: any;
   lead_status?: string;
   lead_source?: string;
+  follow_up_date?: string | null;
 }
 
 const AdminQuoteDetail = () => {
@@ -579,6 +584,13 @@ const AdminQuoteDetail = () => {
             <div>Phone: {q.customer_phone || '-'}</div>
             <div>Date: {q.created_at ? new Date(q.created_at).toLocaleString() : '-'}</div>
             {q.lead_source && <div>Source: <Badge variant="outline">{q.lead_source}</Badge></div>}
+            <div className="border-t mt-2 pt-2">
+              <FollowUpReminder
+                quoteId={q.id}
+                currentDate={q.follow_up_date || null}
+                onUpdate={(newDate) => setQ(prev => prev ? { ...prev, follow_up_date: newDate } : null)}
+              />
+            </div>
           </Card>
           
           {/* Trade-In */}
@@ -825,6 +837,13 @@ const AdminQuoteDetail = () => {
                   {linkCopied ? 'Copied!' : 'Copy Link'}
                 </Button>
               </div>
+              <SendQuoteEmail
+                quoteId={q.id}
+                customerName={q.customer_name}
+                customerEmail={q.customer_email}
+                motorModel={q.quote_data?.motor?.model || 'Mercury Motor'}
+                totalPrice={q.final_price}
+              />
               <div className="text-xs text-muted-foreground bg-muted/50 p-2 rounded font-mono truncate">
                 {SITE_URL}/quote/saved/{q?.id?.slice(0, 8)}...
               </div>
@@ -833,6 +852,12 @@ const AdminQuoteDetail = () => {
 
           {/* Change Log */}
           <QuoteChangeLog key={changeLogKey} quoteId={q.id} />
+
+          {/* Quote History Timeline */}
+          <QuoteHistoryTimeline customerEmail={q.customer_email} currentQuoteId={q.id} />
+
+          {/* Contact Log */}
+          <ContactLog quoteId={q.id} customerEmail={q.customer_email} />
         </div>
       )}
     </main>
