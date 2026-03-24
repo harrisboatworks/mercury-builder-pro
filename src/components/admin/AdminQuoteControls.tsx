@@ -8,6 +8,7 @@ import { ShieldCheck, Save, Loader2, Copy, Check, Link, Plus, Trash2 } from 'luc
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
+import { calculateQuotePricing } from '@/lib/quote-utils';
 import { useToast } from '@/hooks/use-toast';
 
 import { SITE_URL } from '@/lib/site';
@@ -92,7 +93,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         tradeInInfo: state.tradeInInfo,
       });
       
-      // Calculate comprehensive pricing using the full breakdown
+      // Calculate comprehensive pricing using the shared utility
       const motorMSRP = motor?.msrp || motor?.basePrice || 0;
       const motorSalePrice = motor?.salePrice || motor?.price || motorMSRP;
       const motorDiscount = motorMSRP - motorSalePrice;
@@ -103,22 +104,33 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
       // Trade-in value
       const tradeInValue = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo?.estimatedValue || 0) : 0;
       
-      // Calculate subtotal before tax
-      const subtotal = motorSalePrice + accessoryTotal - tradeInValue;
-      const hst = subtotal * 0.13;
-      const totalBeforeDiscount = subtotal + hst;
-      const finalPrice = Math.max(0, totalBeforeDiscount - adminDiscount);
+      // Calculate promo savings from state (same logic as QuoteSummaryPage)
+      const promoSavings = state.selectedPromoOption === 'cash_rebate' && state.selectedPromoValue
+        ? parseInt(state.selectedPromoValue.replace(/[^0-9]/g, ''), 10) || 0
+        : 0;
+      
+      // Use the same calculateQuotePricing function as QuoteSummaryPage for consistency
+      const pricing = calculateQuotePricing({
+        motorMSRP,
+        motorDiscount,
+        adminDiscount,
+        accessoryTotal,
+        warrantyPrice: 0,
+        promotionalSavings: promoSavings,
+        tradeInValue,
+        taxRate: 0.13
+      });
       
       // Enhanced quote data with admin fields and persisted accessory breakdown
       const frozenPricingSnapshot = {
         motorMSRP,
         motorDiscount,
         adminDiscount,
-        promoSavings: 0, // Admin quotes don't use live promo calculations
-        subtotal,
-        hst,
-        total: finalPrice,
-        savings: motorDiscount + adminDiscount,
+        promoSavings,
+        subtotal: pricing.subtotal,
+        hst: pricing.tax,
+        total: pricing.total,
+        savings: pricing.savings,
       };
       
       const enhancedQuoteData = {
@@ -144,13 +156,13 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         customer_name: customerName,
         customer_email: customerEmail,
         customer_phone: customerPhone || null,
-        base_price: motorSalePrice,
-        final_price: finalPrice,
+        base_price: pricing.subtotal,
+        final_price: pricing.total,
         deposit_amount: 0,
-        loan_amount: finalPrice,
+        loan_amount: pricing.total,
         monthly_payment: 0,
         term_months: 0,
-        total_cost: finalPrice,
+        total_cost: pricing.total,
         user_id: user?.id || 'admin',
         motor_model_id: motor?.id || null,
         admin_discount: adminDiscount,
