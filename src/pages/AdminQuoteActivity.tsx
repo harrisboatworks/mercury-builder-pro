@@ -352,11 +352,36 @@ export default function AdminQuoteActivity() {
                         <CollapsibleContent asChild>
                           {expandedSessions.has(session.sessionId) ? (
                             <TableRow>
-                              <TableCell colSpan={8} className="bg-muted/30 p-4">
+                              <TableCell colSpan={9} className="bg-muted/30 p-4">
                                 <div className="space-y-2">
-                                  <div className="text-xs font-medium text-muted-foreground mb-2">
-                                    Session: {session.sessionId.slice(0, 12)}...
-                                    {session.userId && <span className="ml-2 text-blue-600">(Authenticated)</span>}
+                                  <div className="flex items-center justify-between text-xs font-medium text-muted-foreground mb-2">
+                                    <div>
+                                      Session: {session.sessionId.slice(0, 12)}...
+                                      {session.userId && <span className="ml-2 text-blue-600">(Authenticated)</span>}
+                                      {session.isReturnVisitor && <span className="ml-2 text-orange-600">(Return Visitor)</span>}
+                                    </div>
+                                    {session.furthestStep >= 4 && (
+                                      <Button
+                                        variant="outline"
+                                        size="sm"
+                                        className="text-xs h-7"
+                                        onClick={async (e) => {
+                                          e.stopPropagation();
+                                          // Look up soft-lead saved quote by session_id
+                                          const { data } = await (supabase as any)
+                                            .from('saved_quotes')
+                                            .select('id')
+                                            .eq('session_id', session.sessionId)
+                                            .maybeSingle();
+                                          if (data?.id) {
+                                            window.open(`/quote/saved/${data.id}`, '_blank');
+                                          }
+                                        }}
+                                      >
+                                        <ExternalLink className="w-3 h-3 mr-1" />
+                                        View Quote
+                                      </Button>
+                                    )}
                                   </div>
                                   <div className="space-y-1">
                                     {session.events.map(event => (
