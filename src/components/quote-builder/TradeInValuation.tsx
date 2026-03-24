@@ -332,6 +332,24 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
+                  <Label htmlFor="trade-start-type" className="text-sm font-light tracking-wide text-gray-900">
+                    Start Type
+                  </Label>
+                  <Select 
+                    value={tradeInInfo.startType || ''} 
+                    onValueChange={(value) => onTradeInChange({ ...tradeInInfo, startType: value as TradeInInfo['startType'] })}
+                  >
+                    <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
+                      <SelectValue placeholder="Manual (default)" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="manual" className="font-light">Manual (Pull Start)</SelectItem>
+                      <SelectItem value="electric" className="font-light">Electric Start</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
                   <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-gray-900">
                     Year *
                   </Label>
