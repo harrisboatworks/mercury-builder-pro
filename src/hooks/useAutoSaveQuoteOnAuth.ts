@@ -77,6 +77,13 @@ export function useAutoSaveQuoteOnAuth() {
           description: 'You can access it anytime from My Quotes.',
         });
 
+        // Dispatch event so QuoteSummaryPage can show phone capture prompt
+        setTimeout(() => {
+          window.dispatchEvent(new CustomEvent('quote-saved-via-auth', {
+            detail: { savedQuoteId: savedQuote?.id },
+          }));
+        }, 1500);
+
         // Admin notifications (non-blocking)
         const userName = user.user_metadata?.full_name || user.user_metadata?.name || 'Google User';
         const finalPrice = quoteData.motor?.price || 0;

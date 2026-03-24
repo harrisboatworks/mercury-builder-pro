@@ -25,6 +25,7 @@ const navItems = [
   { label: "Zapier Integration", to: "/admin/zapier" },
   { label: "Email Management", to: "/admin/email" },
   { label: "Abandoned Quotes", to: "/admin/abandoned-quotes" },
+  { label: "Quote Activity", to: "/admin/quote-activity" },
   { label: "Blog", to: "/admin/blog" },
   { label: "Payments", to: "/admin/payments" },
   { label: "SMS Alerts", to: "/admin/sms" },
