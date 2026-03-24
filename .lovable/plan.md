@@ -1,33 +1,41 @@
 
 
-# Create New Quote for Existing Customer
+# Fix Sticky Summary: Show Tax-Inclusive Total
 
-## Current State
+## Problems
 
-- Admin can **edit** an existing quote (restores full state and navigates to summary)
-- Admin can create a **blank** new quote from `/admin/quote/new`
-- There's no way to start a fresh quote pre-filled with a customer's name/email/phone from their existing quote detail page
+1. **Misleading price**: The sticky summary shows the pre-HST subtotal ($17,120) as the big number. Customers may think that's what they'll pay, then get surprised by 13% HST on top. Showing the tax-inclusive total is more honest.
 
-## The Fix
+2. **Floating card**: The sticky card sits in a `<div>` with no width constraint in the right column, so it can feel disconnected. Minor CSS tightening.
 
-### 1. `src/pages/AdminQuoteDetail.tsx` — Add "New Quote for This Customer" button
+## Changes
 
-Next to the existing "Edit Quote" button, add a new button. On click:
-- Clear localStorage `quoteBuilder`
-- Dispatch `RESET_TO_ADMIN_MODE` (same as the existing new quote flow)
-- Dispatch `SET_ADMIN_QUOTE_DATA` with just the customer info (name, email, phone) from the current quote — no motor, options, or pricing carried over
-- Navigate to `/quote/motor-selection`
+### 1. `src/components/quote-builder/StickySummary.tsx` — Show total (incl. HST)
 
-This gives the admin a clean quote builder pre-filled with the customer's contact details.
+- Add a new prop `totalWithTax` (the HST-inclusive number)
+- Display `totalWithTax` as the big headline price
+- Below it, show the subtotal in smaller text: "Subtotal: $17,120 + HST"
+- This way the customer sees the real out-the-door number up front
 
-### 2. `src/pages/AdminQuotes.tsx` — Add per-row "New Quote" action (optional enhancement)
+### 2. `src/pages/quote/QuoteSummaryPage.tsx` — Pass the tax-inclusive total
 
-Add a small "+" icon button on each row that does the same: starts a new quote pre-filled with that customer's name/email. This is secondary — the detail page button is the primary entry point.
+- Pass `totalWithTax={packageSpecificTotals.total}` to `StickySummary`
+- `packageSpecificTotals.total` already includes HST (subtotal × 1.13)
+
+### 3. Minor: tighten sticky card alignment
+
+- Add `max-w-sm` or similar to the sticky aside so it doesn't stretch too wide on ultra-wide screens, keeping it visually anchored next to the pricing breakdown
+
+## What the Customer Sees
+
+**Before**: `$17,120` (misleading — doesn't include tax)
+
+**After**: `$19,346` with a note "Before tax: $17,120" in smaller text underneath — no surprises
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `src/pages/AdminQuoteDetail.tsx` | Add "New Quote for Customer" button with pre-filled customer info |
-| `src/pages/AdminQuotes.tsx` | Optional: per-row quick-action to create new quote for that customer |
+| `src/components/quote-builder/StickySummary.tsx` | Add `totalWithTax` prop, show as headline, demote subtotal |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Pass `totalWithTax` to StickySummary |
 
