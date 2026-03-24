@@ -36,8 +36,8 @@ export function useAutoSaveQuoteOnAuth() {
     (async () => {
       try {
         const quoteData = getQuoteData();
-        const motorModel = state.motor?.model || state.motor?.name || 'Mercury Motor';
-        const hp = state.motor?.hp || state.motor?.horsepower || 0;
+        const motorModel = state.motor?.model || 'Mercury Motor';
+        const hp = state.motor?.hp || 0;
 
         // Generate resume token
         const tokenArray = new Uint8Array(24);
