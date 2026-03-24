@@ -316,17 +316,18 @@ export default function QuoteSummaryPage() {
     : 0;
   const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
   
-  // Calculate pricing
-  const motorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || 0;
+  // Calculate pricing — use frozen snapshot if available (shared/QR links),
+  // otherwise calculate live from current promo data
+  const motorMSRP = state.frozenPricing?.motorMSRP ?? (quoteData.motor?.msrp || quoteData.motor?.basePrice || 0);
   const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
-  const motorDiscount = motorMSRP - motorSalePrice;
+  const motorDiscount = state.frozenPricing?.motorDiscount ?? (motorMSRP - motorSalePrice);
   
   // Calculate promo savings including rebate if selected
   const basePromoSavings = getTotalPromotionalSavings?.(motorMSRP) || 0;
   const rebateAmount = state.selectedPromoOption === 'cash_rebate' 
     ? (getRebateForHP?.(hp) || 0) 
     : 0;
-  const promoSavings = basePromoSavings + rebateAmount;
+  const promoSavings = state.frozenPricing?.promoSavings ?? (basePromoSavings + rebateAmount);
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
   
   // Coverage years
