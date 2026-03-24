@@ -62,7 +62,7 @@ const ContactLog = ({ quoteId, customerEmail }: Props) => {
       toast({ title: 'Error', description: 'Failed to save log entry.', variant: 'destructive' });
     } else {
       // Also increment contact_attempts on the quote
-      await supabase.rpc('increment_contact_attempts' as any, { quote_id: quoteId } as any).catch(() => {});
+      try { await supabase.rpc('increment_contact_attempts' as any, { quote_id: quoteId } as any); } catch {}
       setNewNotes('');
       setNewType('note');
       setIsAdding(false);
