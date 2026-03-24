@@ -13,6 +13,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 type StickySummaryProps = {
   packageLabel: string;
   yourPriceBeforeTax: number;
+  totalWithTax?: number;
   totalSavings: number;
   monthly?: number;
   bullets?: string[];
@@ -38,6 +39,7 @@ type StickySummaryProps = {
 export default function StickySummary({
   packageLabel,
   yourPriceBeforeTax,
+  totalWithTax,
   totalSavings,
   monthly,
   bullets = [],
@@ -90,9 +92,9 @@ export default function StickySummary({
       {/* Desktop sticky card - Premium glassmorphism */}
       <aside
         aria-label="Summary"
-        className="sticky top-28 hidden h-fit rounded-2xl glass-card p-5 lg:block animate-card-entrance premium-glow-hover"
+        className="sticky top-28 hidden h-fit max-w-sm rounded-2xl glass-card p-5 lg:block animate-card-entrance premium-glow-hover ml-auto"
       >
-        <div className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
+        <div className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
           {packageLabel}
         </div>
         
@@ -100,15 +102,20 @@ export default function StickySummary({
           <CoverageComparisonTooltip />
         </div>
 
-        <div className="mt-2 text-2xl font-semibold tracking-tight text-slate-900 dark:text-white">
-          {money(yourPriceBeforeTax)}
+        <div className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
+          {money(totalWithTax ?? yourPriceBeforeTax)}
         </div>
+        {totalWithTax != null && (
+          <div className="mt-0.5 text-xs text-muted-foreground">
+            Before tax: {money(yourPriceBeforeTax)}
+          </div>
+        )}
 
-        <div className="mt-1 text-sm text-slate-700 dark:text-slate-300">
+        <div className="mt-1 text-sm text-muted-foreground">
           {monthly != null && (
-            <>From <span className="font-semibold">{money(Math.round(monthly))}/mo</span> • </>
+            <>From <span className="font-semibold text-foreground">{money(Math.round(monthly))}/mo</span> • </>
           )}
-          You save <span className="font-semibold">{money(totalSavings)}</span>
+          You save <span className="font-semibold text-foreground">{money(totalSavings)}</span>
         </div>
 
         {typeof coverageYears === "number" && (
