@@ -46,13 +46,17 @@ export default function TradeInPage() {
   useEffect(() => {
     // Trust navigation if we have required state
     if (state.motor && state.purchasePath) {
-      // Always start with clean trade-in state - no auto-loading from context
-      console.log('🧹 TradeInPage: Starting with clean trade-in state');
+      // Pre-fill from boat info if available so users don't re-enter motor details
+      console.log('🧹 TradeInPage: Initializing with boatInfo pre-fill', {
+        brand: state.boatInfo?.currentMotorBrand,
+        year: state.boatInfo?.currentMotorYear,
+        hp: state.boatInfo?.currentHp
+      });
       setTradeInInfo({
         hasTradeIn: false,
-        brand: '',
-        year: 0,
-        horsepower: 0,
+        brand: state.boatInfo?.currentMotorBrand || '',
+        year: state.boatInfo?.currentMotorYear || 0,
+        horsepower: state.boatInfo?.currentHp || 0,
         model: '',
         serialNumber: '',
         condition: 'good' as const,
