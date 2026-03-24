@@ -628,7 +628,7 @@ export default function QuoteSummaryPage() {
         await saveLead({
           motor_model: quoteData.motor?.model,
           motor_hp: quoteData.motor?.hp,
-          base_price: packageSpecificTotals.subtotal,
+          base_price: displayPricing.subtotal,
           final_price: packageTotal,
           lead_status: 'downloaded',
           lead_source: 'pdf_download',
