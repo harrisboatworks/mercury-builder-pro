@@ -82,6 +82,21 @@ function getSessionStatus(events: QuoteEvent[]): 'active' | 'abandoned' | 'submi
   return lastEvent > thirtyMinAgo ? 'active' : 'abandoned';
 }
 
+function getLeadWarmth(events: QuoteEvent[], furthestStep: number): 'hot' | 'warm' | 'cool' | 'cold' {
+  const hasSubmitOrDeposit = events.some(e =>
+    e.event_type.includes('submit') || e.event_type.includes('deposit')
+  );
+  if (hasSubmitOrDeposit) return 'hot';
+
+  // Reached summary (step 4+) or spent significant time (many events)
+  if (furthestStep >= 4 || events.length >= 6) return 'warm';
+
+  // Selected a motor but didn't finish
+  if (events.some(e => e.event_type === 'motor_selected')) return 'cool';
+
+  return 'cold';
+}
+
 function groupEventsIntoSessions(events: QuoteEvent[]): Session[] {
   const map = new Map<string, QuoteEvent[]>();
   for (const e of events) {
