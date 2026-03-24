@@ -257,7 +257,9 @@ function getMsrpAgeBracket(motorAge: number): string | null {
 function tryMsrpBasedEstimate(
   brand: string, year: number, horsepower: number, condition: 'excellent' | 'good' | 'fair' | 'poor',
   referenceMsrps?: Record<number, number>,
-  msrpPercentages?: Record<string, Record<string, number>>
+  msrpPercentages?: Record<string, Record<string, number>>,
+  startType?: 'manual' | 'electric',
+  referenceMsrpsMax?: Record<number, number>
 ): number | null {
   if (brand !== 'Mercury' || !referenceMsrps || !msrpPercentages) return null;
   
