@@ -129,7 +129,8 @@ type QuoteAction =
   | { type: 'SET_ADMIN_MODE'; payload: { isAdmin: boolean; editingQuoteId: string | null } }
   | { type: 'SET_ADMIN_QUOTE_DATA'; payload: { adminDiscount?: number; adminNotes?: string; customerNotes?: string; customerName?: string; customerEmail?: string; customerPhone?: string; adminCustomItems?: Array<{ name: string; price: number }> } }
   | { type: 'RESTORE_QUOTE'; payload: any }
-  | { type: 'RESET_TO_ADMIN_MODE'; payload: { editingQuoteId: string | null } };
+  | { type: 'RESET_TO_ADMIN_MODE'; payload: { editingQuoteId: string | null } }
+  | { type: 'SET_FROZEN_PRICING'; payload: FrozenPricing };
 
 const initialState: QuoteState = {
   motor: null,
