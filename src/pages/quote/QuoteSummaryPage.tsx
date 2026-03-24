@@ -962,7 +962,7 @@ export default function QuoteSummaryPage() {
                 <div className="lg:hidden space-y-4">
                   <div className="grid grid-cols-2 gap-3">
                     <Button 
-                      onClick={() => setShowSaveDialog(true)}
+                      onClick={() => user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)}
                       variant="outline"
                       className="w-full"
                       size="lg"
