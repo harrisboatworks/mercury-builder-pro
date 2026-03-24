@@ -938,6 +938,19 @@ export default function QuoteSummaryPage() {
         monthlyPayment={monthlyPayment}
       />
       
+      {/* Stale Quote Detection */}
+      {state.frozenPricing && (
+        <StaleQuoteAlert
+          frozenPricing={state.frozenPricing}
+          liveMotorMSRP={liveMotorMSRP}
+          livePromoSavings={livePromoSavings}
+          liveTotal={liveTotalForComparison}
+          promoEndDate={promotions?.[0]?.end_date ?? null}
+          onKeepOriginal={() => {/* keep frozen — do nothing */}}
+          onUpdatePricing={() => dispatch({ type: 'SET_FROZEN_PRICING', payload: undefined })}
+        />
+      )}
+
       <ScrollToTop />
       <PageTransition>
         <QuoteLayout showProgress={false}>
