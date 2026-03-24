@@ -239,7 +239,20 @@ const AdminQuotes = () => {
                   return (
                     <TableRow key={r.id} className="cursor-pointer" onClick={() => navigate(`/admin/quotes/${r.id}`)}>
                       <TableCell>{r.created_at ? new Date(r.created_at).toLocaleString() : '-'}</TableCell>
-                      <TableCell>{r.customer_name || (r.anonymous_session_id ? 'Anonymous Lead' : 'Unknown')}</TableCell>
+                      <TableCell>
+                        <div className="flex items-center gap-1">
+                          {r.customer_name || (r.anonymous_session_id ? 'Anonymous Lead' : 'Unknown')}
+                          {r.follow_up_date && (() => {
+                            const isOverdue = new Date(r.follow_up_date) < new Date();
+                            const isToday = new Date(r.follow_up_date).toDateString() === new Date().toDateString();
+                            return (
+                              <Badge variant={isOverdue && !isToday ? 'destructive' : isToday ? 'default' : 'secondary'} className="text-[10px] px-1 py-0 ml-1">
+                                📅 {isToday ? 'Today' : isOverdue ? 'Overdue' : new Date(r.follow_up_date).toLocaleDateString()}
+                              </Badge>
+                            );
+                          })()}
+                        </div>
+                      </TableCell>
                       <TableCell>{r.customer_email || '-'}</TableCell>
                       <TableCell>{getStatusBadge(r.lead_status)}</TableCell>
                       <TableCell>
