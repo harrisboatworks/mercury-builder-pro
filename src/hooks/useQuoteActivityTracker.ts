@@ -66,7 +66,8 @@ type EventType =
   | 'summary_viewed'
   | 'quote_submitted'
   | 'financing_calculated'
-  | 'quote_abandoned';
+  | 'quote_abandoned'
+  | 'return_visit';
 
 interface PendingEvent {
   event_type: EventType;
