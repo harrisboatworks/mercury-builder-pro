@@ -13,6 +13,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 type StickySummaryProps = {
   packageLabel: string;
   yourPriceBeforeTax: number;
+  totalWithTax?: number;
   totalSavings: number;
   monthly?: number;
   bullets?: string[];
