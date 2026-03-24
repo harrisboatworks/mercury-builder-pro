@@ -138,6 +138,19 @@ export default function StickySummary({
           </div>
         ) : null}
 
+        {quoteValidUntil && (
+          <div className="mt-2 text-xs text-muted-foreground">
+            {(() => {
+              const now = new Date();
+              const diffDays = Math.ceil((quoteValidUntil.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+              const formatted = quoteValidUntil.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+              if (diffDays <= 0) return <span className="text-destructive font-medium">Quote pricing has expired</span>;
+              if (diffDays <= 7) return <span className="text-amber-600 dark:text-amber-400 font-medium">Pricing expires in {diffDays} day{diffDays !== 1 ? 's' : ''} — {formatted}</span>;
+              return <>Pricing valid until {formatted}</>;
+            })()}
+          </div>
+        )}
+
         {/* Upgrade prompt - shown when on Essential */}
         <AnimatePresence>
           {showUpgradePrompt && upgradeToLabel && upgradeCostDelta != null && onUpgradeClick && (

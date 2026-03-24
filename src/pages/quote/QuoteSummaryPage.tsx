@@ -1123,10 +1123,8 @@ export default function QuoteSummaryPage() {
                   onDownloadPDF={handleDownloadPDF}
                   onSaveForLater={() => {
                     if (user) {
-                      // Already logged in — save immediately via the email dialog (pre-filled)
                       setShowSaveDialog(true);
                     } else {
-                      // Not logged in — show auth-first dialog
                       setShowAuthSaveDialog(true);
                     }
                   }}
@@ -1134,6 +1132,12 @@ export default function QuoteSummaryPage() {
                   isGeneratingPDF={isGeneratingPDF}
                   showUpgradePrompt={false}
                   isProcessingPayment={isProcessingDeposit}
+                  quoteValidUntil={(() => {
+                    if (state.frozenPricing?.quoteExpiryDate) return new Date(state.frozenPricing.quoteExpiryDate);
+                    const d = new Date(); d.setDate(d.getDate() + 30);
+                    const pe = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
+                    return pe && pe < d ? pe : d;
+                  })()}
                 />
               </div>
             </div>

@@ -434,6 +434,7 @@ export interface QuotePDFProps {
       model?: string;
     };
     customerNotes?: string;
+    promoEndDate?: string; // ISO date of active promotion end
     selectedPackage?: {
       id: string;
       label: string;
