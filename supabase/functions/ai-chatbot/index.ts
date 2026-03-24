@@ -408,10 +408,11 @@ Never exceed the manufacturer's maximum HP rating - it's unsafe and may void ins
 - Motor and mounting hardware
 - Engine controls (steering, throttle, shift)
 - Wiring harness and gauges
-- Propeller selection and installation
+- Propeller selection and installation (25-115HP: $350 aluminum allowance; 150HP+: $1,200 stainless allowance)
 - Rigging and setup
 - Lake test and delivery
 - Typical installation cost: $800-$2,000
+- **Mercury trade-in prop savings**: If trading in a Mercury motor of the same HP, the existing propeller usually fits — saving $350-$1,200
 
 ### Financing Available:
 - Mercury Credit financing options
