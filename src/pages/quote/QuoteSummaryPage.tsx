@@ -661,7 +661,8 @@ export default function QuoteSummaryPage() {
     const preTradeInSubtotal = displayPricing.subtotal + tradeInValue;
     const subtotalWithTax = preTradeInSubtotal * 1.13;
     const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
-...
+    const financingData = {
+      ...state,
       financingAmount: {
         packageSubtotal: displayPricing.subtotal,
         hst: displayPricing.subtotal * 0.13,
