@@ -798,7 +798,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                     style={{ width: 70, height: 70 }}
                   />
                   <Text style={{ fontSize: 6, color: colors.lightText, marginTop: 2, textAlign: 'center' }}>
-                    Scan to get started
+                    Scan to view your quote
                   </Text>
                 </View>
               </View>
