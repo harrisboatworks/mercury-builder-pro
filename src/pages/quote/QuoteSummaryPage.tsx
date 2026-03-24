@@ -658,17 +658,13 @@ export default function QuoteSummaryPage() {
     
     // Use the pre-trade-in subtotal so the financing form handles the single subtraction
     // packageSpecificTotals.subtotal already has trade-in deducted, so add it back
-    const preTradeInSubtotal = packageSpecificTotals.subtotal + tradeInValue;
+    const preTradeInSubtotal = displayPricing.subtotal + tradeInValue;
     const subtotalWithTax = preTradeInSubtotal * 1.13;
     const totalWithFees = subtotalWithTax + DEALERPLAN_FEE;
-    
-    const packageName = selectedPackageLabel.split('•')[0].trim();
-    
-    const financingData = {
-      ...state,
+...
       financingAmount: {
-        packageSubtotal: packageSpecificTotals.subtotal,
-        hst: packageSpecificTotals.subtotal * 0.13,
+        packageSubtotal: displayPricing.subtotal,
+        hst: displayPricing.subtotal * 0.13,
         financingFee: DEALERPLAN_FEE,
         totalWithFees: totalWithFees,
         motorModel: quoteData.motor?.model || motorName,
