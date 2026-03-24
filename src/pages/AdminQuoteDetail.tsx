@@ -19,6 +19,10 @@ import { DEALERPLAN_FEE } from '@/lib/finance';
 import { buildAccessoryBreakdown } from '@/lib/build-accessory-breakdown';
 import { QuoteChangeLog } from '@/components/admin/QuoteChangeLog';
 import QRCode from 'qrcode';
+import QuoteHistoryTimeline from '@/components/admin/QuoteHistoryTimeline';
+import ContactLog from '@/components/admin/ContactLog';
+import FollowUpReminder from '@/components/admin/FollowUpReminder';
+import SendQuoteEmail from '@/components/admin/SendQuoteEmail';
 
 interface QuoteDetail {
   id: string;
