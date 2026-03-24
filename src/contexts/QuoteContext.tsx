@@ -93,6 +93,7 @@ interface QuoteState {
   customerEmail: string;
   customerPhone: string;
   adminCustomItems: Array<{ name: string; price: number }>;
+  frozenPricing?: FrozenPricing;
 }
 
 type QuoteAction = 
