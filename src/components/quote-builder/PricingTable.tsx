@@ -111,15 +111,18 @@ export function PricingTable({
             <div className="text-sm font-medium text-primary py-1">
               {packageName}
             </div>
-            {accessoryBreakdown.map((item, index) => (
-              <LineItemRow
-                key={index}
-                label={item.name}
-                amount={item.price}
-                description={item.description}
-                className="pl-4 border-l-2 border-muted"
-              />
-            ))}
+            {accessoryBreakdown.map((item, index) => {
+              const isExistingProp = item.name.includes('Use Existing');
+              return (
+                <LineItemRow
+                  key={index}
+                  label={item.name}
+                  amount={item.price}
+                  description={item.description}
+                  className={cn("pl-4 border-l-2", isExistingProp ? "border-emerald-300 bg-emerald-50/50 rounded" : "border-muted")}
+                />
+              );
+            })}
           </div>
         )}
 
