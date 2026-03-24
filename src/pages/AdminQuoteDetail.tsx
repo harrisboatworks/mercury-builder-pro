@@ -584,6 +584,13 @@ const AdminQuoteDetail = () => {
             <div>Phone: {q.customer_phone || '-'}</div>
             <div>Date: {q.created_at ? new Date(q.created_at).toLocaleString() : '-'}</div>
             {q.lead_source && <div>Source: <Badge variant="outline">{q.lead_source}</Badge></div>}
+            <div className="border-t mt-2 pt-2">
+              <FollowUpReminder
+                quoteId={q.id}
+                currentDate={q.follow_up_date || null}
+                onUpdate={(newDate) => setQ(prev => prev ? { ...prev, follow_up_date: newDate } : null)}
+              />
+            </div>
           </Card>
           
           {/* Trade-In */}
