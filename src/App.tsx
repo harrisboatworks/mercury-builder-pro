@@ -380,6 +380,14 @@ function AnimatedRoutes() {
             </SecureRoute>
           }
         />
+        <Route
+          path="/admin/quote-activity"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminQuoteActivity />
+            </SecureRoute>
+          }
+        />
         
         {/* Payment Routes */}
         <Route path="/deposits" element={<Deposits />} />
