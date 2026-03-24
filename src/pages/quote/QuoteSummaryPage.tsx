@@ -527,6 +527,12 @@ export default function QuoteSummaryPage() {
       try {
         const packageTaxForQr = displayPricing.subtotal * 0.13;
         const packageTotalForQr = displayPricing.subtotal + packageTaxForQr;
+        // Calculate smart expiry: earlier of 30 days or promo end
+        const thirtyDaysOut = new Date();
+        thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
+        const promoEnd = promotions?.[0]?.end_date ? new Date(promotions[0].end_date) : null;
+        const quoteExpiry = promoEnd && promoEnd < thirtyDaysOut ? promoEnd : thirtyDaysOut;
+
         const frozenPricingSnapshot = {
           motorMSRP,
           motorDiscount,
@@ -536,6 +542,7 @@ export default function QuoteSummaryPage() {
           hst: packageTaxForQr,
           total: packageTotalForQr,
           savings: motorDiscount + (state.adminDiscount || 0) + promoSavings,
+          quoteExpiryDate: quoteExpiry.toISOString(),
         };
         const { data: savedForQr } = await supabase
           .from('saved_quotes')
