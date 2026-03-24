@@ -481,38 +481,24 @@ export default function QuoteSummaryPage() {
       const tradeInForQr = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo.estimatedValue || 0) : 0;
       let qrTargetUrl = `${SITE_URL}`;
       
-      if (packageTotal >= FINANCING_MINIMUM) {
-        // Add trade-in back to subtotal so the financing form handles the single subtraction
-        const preTradeInSubtotalForQr = packageSpecificTotals.subtotal + tradeInForQr;
-        const financingParams = new URLSearchParams({
-          motorModel: motorName,
-          motorPrice: getFinanceableAmount(preTradeInSubtotalForQr, 0.13, DEALERPLAN_FEE).toFixed(2),
-          packageName: selectedPackageLabel.split('•')[0].trim(),
-          downPayment: '0',
-          tradeInValue: String(tradeInForQr),
-          fromQr: 'true',
-        });
-        qrTargetUrl = `${SITE_URL}/financing-application?${financingParams.toString()}`;
-      } else {
-        // Sub-threshold: save quote and point QR to the saved quote page
-        try {
-          const { data: savedForQr } = await supabase
-            .from('saved_quotes')
-            .insert({
-              email: state.customerEmail || 'pdf-download@placeholder.com',
-              resume_token: `qr_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
-              quote_state: state as any,
-              user_id: user?.id || null,
-              expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
-            } as any)
-            .select('id')
-            .single();
-          if (savedForQr?.id) {
-            qrTargetUrl = `${SITE_URL}/quote/saved/${savedForQr.id}`;
-          }
-        } catch (qrSaveErr) {
-          console.warn('Could not save quote for QR code:', qrSaveErr);
+      // Always save quote and point QR to saved quote page (works for both cash & financing)
+      try {
+        const { data: savedForQr } = await supabase
+          .from('saved_quotes')
+          .insert({
+            email: state.customerEmail || 'pdf-download@placeholder.com',
+            resume_token: `qr_${crypto.randomUUID().replace(/-/g, '').slice(0, 24)}`,
+            quote_state: state as any,
+            user_id: user?.id || null,
+            expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
+          } as any)
+          .select('id')
+          .single();
+        if (savedForQr?.id) {
+          qrTargetUrl = `${SITE_URL}/quote/saved/${savedForQr.id}`;
         }
+      } catch (qrSaveErr) {
+        console.warn('Could not save quote for QR code:', qrSaveErr);
       }
       
       let qrCodeDataUrl = '';

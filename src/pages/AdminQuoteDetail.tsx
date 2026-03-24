@@ -420,18 +420,8 @@ const AdminQuoteDetail = () => {
       
       // Generate QR code — always, for both cash and financing buyers
       // Points to financing app with prefilled params for all quotes
-      const pkgLabel = selectedPackage?.label ? selectedPackage.label.split('•')[0].trim() : '';
-      // Add trade-in back so the financing form handles the single subtraction
-      const preTradeInTotal = totalPrice + (tradeInValue * 1.13);
-      const financingParams = new URLSearchParams({
-        motorModel: motor.model || motor.display_name || 'Motor',
-        motorPrice: (preTradeInTotal + DEALERPLAN_FEE).toFixed(2),
-        packageName: pkgLabel,
-        downPayment: '0',
-        tradeInValue: String(tradeInValue || 0),
-        fromQr: 'true',
-      });
-      const qrTargetUrl = `${SITE_URL}/financing-application?${financingParams.toString()}`;
+      // QR always points to the saved quote page (works for both cash & financing)
+      const qrTargetUrl = `${SITE_URL}/quote/saved/${q.id}`;
       let financingQrCode = '';
       try {
         financingQrCode = await QRCode.toDataURL(qrTargetUrl, {
