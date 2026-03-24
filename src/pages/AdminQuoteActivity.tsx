@@ -345,6 +345,7 @@ export default function AdminQuoteActivity() {
                             </TableCell>
                             <TableCell className="text-xs capitalize">{session.deviceType || '—'}</TableCell>
                             <TableCell className="text-xs">{session.utmSource || 'direct'}</TableCell>
+                            <TableCell>{warmthBadge(session.warmth, session.isReturnVisitor)}</TableCell>
                             <TableCell>{statusBadge(session.status)}</TableCell>
                           </TableRow>
                         </CollapsibleTrigger>
