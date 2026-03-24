@@ -53,7 +53,7 @@ function generateReferenceNumber(paymentId?: string): string {
 
 function getMotorLabel(motorInfo?: { model?: string; hp?: number; year?: number }): string {
   if (!motorInfo?.model) return "";
-  return `${motorInfo.year || 2025} ${motorInfo.model}${motorInfo.hp ? ` ${motorInfo.hp}HP` : ""}`;
+  return `${motorInfo.year || 2026} ${motorInfo.model}${motorInfo.hp ? ` ${motorInfo.hp}HP` : ""}`;
 }
 
 function toBase64(bytes: Uint8Array): string {
