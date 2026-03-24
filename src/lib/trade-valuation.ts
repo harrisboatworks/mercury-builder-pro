@@ -11,6 +11,7 @@ export interface TradeInInfo {
   estimatedValue: number;
   confidenceLevel: 'high' | 'medium' | 'low';
   engineType?: '4-stroke' | '2-stroke' | 'optimax';
+  startType?: 'manual' | 'electric';
   engineHours?: number;
   // Optional audit fields for pre/post penalty values
   rangePrePenaltyLow?: number;
