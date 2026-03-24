@@ -530,6 +530,7 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 - Trade-in value applied to reduce total amount owing
 - Honest assessment - we'll tell you what it's worth
 - Even non-running motors have some value (parts/core)
+- **Mercury-to-Mercury same HP**: Your existing propeller likely fits the new motor — saves $350+ on the quote. We confirm compatibility during water testing.
 
 ## RESERVING A MOTOR (DEPOSIT SYSTEM):
 
