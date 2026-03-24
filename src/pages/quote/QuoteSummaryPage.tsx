@@ -8,6 +8,7 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { QuoteSummarySkeleton } from '@/components/quote-builder/QuoteSummarySkeleton';
 import StickySummary from '@/components/quote-builder/StickySummary';
+import { StaleQuoteAlert } from '@/components/quote-builder/StaleQuoteAlert';
 import { getRecommendedDeposit } from '@/components/quote-builder/PaymentPreferenceSelector';
 import { DepositInfoDialog, type DepositCustomerInfo } from '@/components/quote-builder/DepositInfoDialog';
 
@@ -328,6 +329,11 @@ export default function QuoteSummaryPage() {
     ? (getRebateForHP?.(hp) || 0) 
     : 0;
   const promoSavings = state.frozenPricing?.promoSavings ?? (basePromoSavings + rebateAmount);
+  
+  // Live (non-frozen) values for stale-quote comparison
+  const liveMotorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || 0;
+  const livePromoSavings = basePromoSavings + rebateAmount;
+  
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
   
   // Coverage years
@@ -396,7 +402,27 @@ export default function QuoteSummaryPage() {
     });
   }, [motorMSRP, motorDiscount, state.adminDiscount, accessoryBreakdown, promoSavings, state.tradeInInfo?.estimatedValue]);
 
-  // DEV-MODE: Cross-check against centralized running-total calculator
+  // Live total for stale-quote comparison (always calculated from current data, ignoring frozen)
+  const liveTotalForComparison = useMemo(() => {
+    if (!state.frozenPricing) return 0;
+    const liveMSRP = liveMotorMSRP;
+    const liveSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || liveMSRP;
+    const liveDiscount = liveMSRP - liveSalePrice;
+    const accessoryTotal = accessoryBreakdown.reduce((sum, item) => sum + item.price, 0);
+    const result = calculateQuotePricing({
+      motorMSRP: liveMSRP,
+      motorDiscount: liveDiscount,
+      adminDiscount: state.adminDiscount || 0,
+      accessoryTotal,
+      warrantyPrice: 0,
+      promotionalSavings: livePromoSavings,
+      tradeInValue: state.tradeInInfo?.estimatedValue || 0,
+      taxRate: 0.13
+    });
+    return result.total;
+  }, [state.frozenPricing, liveMotorMSRP, livePromoSavings, accessoryBreakdown, state.adminDiscount, state.tradeInInfo?.estimatedValue, quoteData.motor]);
+
+
   // Note: calculateRunningTotal doesn't model promotion-level discounts (discount_fixed_amount,
   // discount_percentage) — those are only applied in the summary page via getTotalPromotionalSavings.
   // We subtract basePromoSavings from the effective price to align the two systems, then compare.
@@ -912,6 +938,19 @@ export default function QuoteSummaryPage() {
         monthlyPayment={monthlyPayment}
       />
       
+      {/* Stale Quote Detection */}
+      {state.frozenPricing && (
+        <StaleQuoteAlert
+          frozenPricing={state.frozenPricing}
+          liveMotorMSRP={liveMotorMSRP}
+          livePromoSavings={livePromoSavings}
+          liveTotal={liveTotalForComparison}
+          promoEndDate={promotions?.[0]?.end_date ?? null}
+          onKeepOriginal={() => {/* keep frozen — do nothing */}}
+          onUpdatePricing={() => dispatch({ type: 'SET_FROZEN_PRICING', payload: undefined })}
+        />
+      )}
+
       <ScrollToTop />
       <PageTransition>
         <QuoteLayout showProgress={false}>
