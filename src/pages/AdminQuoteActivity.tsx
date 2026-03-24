@@ -44,6 +44,8 @@ interface Session {
   status: 'active' | 'abandoned' | 'submitted';
   furthestStep: number;
   userId: string | null;
+  warmth: 'hot' | 'warm' | 'cool' | 'cold';
+  isReturnVisitor: boolean;
 }
 
 const STEP_ORDER = [
