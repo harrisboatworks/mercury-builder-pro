@@ -525,8 +525,8 @@ export default function QuoteSummaryPage() {
       
       // Always save quote and point QR to saved quote page (works for both cash & financing)
       try {
-        const packageTaxForQr = packageSpecificTotals.subtotal * 0.13;
-        const packageTotalForQr = packageSpecificTotals.subtotal + packageTaxForQr;
+        const packageTaxForQr = displayPricing.subtotal * 0.13;
+        const packageTotalForQr = displayPricing.subtotal + packageTaxForQr;
         const frozenPricingSnapshot = {
           motorMSRP,
           motorDiscount,
