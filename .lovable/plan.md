@@ -1,56 +1,69 @@
 
 
-# Stale Quote Detection: Alert When Prices Have Changed
+# Frozen Pricing Doesn't Fully Freeze — Subtotal and Total Still Recalculated
 
-## What It Does
+## The Problem
 
-When a customer (or admin) opens a saved quote link, the system compares the **frozen pricing snapshot** against what the numbers **would be today** using live data. If anything meaningful has changed, a dialog appears explaining what's different and offering to regenerate the quote with current pricing.
+When a saved quote loads with `frozenPricing`, the system correctly freezes three values:
+- `motorMSRP`
+- `motorDiscount`  
+- `promoSavings`
 
-## What Gets Compared
+But then it **recalculates** the subtotal and total from scratch via `calculateQuotePricing()` (line ~391). The frozen `subtotal`, `hst`, and `total` fields that were stored in the snapshot are **never actually used for display**.
 
-| Check | Frozen Value | Live Value | Trigger |
-|-------|-------------|------------|---------|
-| Motor MSRP | `frozenPricing.motorMSRP` | Current motor MSRP from state | Price changed by more than $1 |
-| Promo savings | `frozenPricing.promoSavings` | Live `getTotalPromotionalSavings() + rebate` | Savings differ (promo expired or changed) |
-| Promo expiry | Promotion `end_date` | Current date | Promotion has ended since quote was created |
-| Total | `frozenPricing.total` | Recalculated total | Differs by more than $10 |
+This means two things can still cause drift between the PDF and the shared link:
 
-## User Experience
+1. **Warranty extension costs** — fetched live from the database via `calculateWarrantyExtensionCost()`. If warranty pricing rows change in the DB, `buildAccessoryBreakdown` produces different accessory totals, and the recalculated subtotal diverges from the PDF.
 
-1. Customer scans QR or opens share link
-2. Quote loads with frozen (accurate-to-PDF) pricing as it does now
-3. A comparison runs silently in the background
-4. If differences found, an `AlertDialog` appears:
-   - Header: "This quote's pricing may have changed"
-   - Lists what changed in plain language (e.g., "Motor price increased by $200", "The Get 7 promotion has ended")
-   - **"View Original Quote"** button — dismisses dialog, keeps frozen pricing (what's on their PDF)
-   - **"Update to Current Pricing"** button — clears `frozenPricing` from state, page recalculates with live data
-5. If no differences, nothing happens — seamless experience
+2. **Any code change** to `buildAccessoryBreakdown` (e.g., adding a new auto-included item, changing propeller allowance logic) would change the accessory total on reload while the PDF printed the old number.
 
-## Technical Changes
+## The Fix
 
-### 1. New component: `src/components/quote-builder/StaleQuoteAlert.tsx`
+When `state.frozenPricing` exists **and** contains `subtotal` and `total`, use those values directly for display instead of recalculating. The recalculated values should only be used for the stale-quote comparison (which already works correctly).
 
-A self-contained component that:
-- Accepts `frozenPricing`, current motor, and promo hook data as props
-- Runs the comparison logic on mount
-- Renders an `AlertDialog` if deltas are found
-- "Update to Current Pricing" dispatches `SET_FROZEN_PRICING` with `undefined` to clear the snapshot
+### `src/pages/quote/QuoteSummaryPage.tsx`
 
-### 2. `src/pages/quote/QuoteSummaryPage.tsx`
+**Change 1** — After `packageSpecificTotals` is calculated (~line 403), override with frozen values when available:
 
-- Import and render `<StaleQuoteAlert>` when `state.frozenPricing` exists
-- Pass it the frozen values plus the live-calculated values (`motorMSRP`, `promoSavings`, `packageSpecificTotals.total`)
-- On "update" callback, dispatch `{ type: 'SET_FROZEN_PRICING', payload: undefined }` to clear frozen state
+```typescript
+// If frozen pricing exists with full totals, use them directly
+// to guarantee PDF ↔ web parity regardless of DB/code changes
+const displayPricing = useMemo(() => {
+  if (state.frozenPricing?.subtotal != null && state.frozenPricing?.total != null) {
+    return {
+      ...packageSpecificTotals,
+      subtotal: state.frozenPricing.subtotal,
+      tax: state.frozenPricing.hst ?? state.frozenPricing.subtotal * 0.13,
+      total: state.frozenPricing.total,
+      savings: state.frozenPricing.savings ?? packageSpecificTotals.savings,
+    };
+  }
+  return packageSpecificTotals;
+}, [packageSpecificTotals, state.frozenPricing]);
+```
 
-### 3. `src/contexts/QuoteContext.tsx`
+**Change 2** — Replace all downstream references to `packageSpecificTotals` (PricingTable, StickySummary, cinematic, financing calc, PDF download, deposit) with `displayPricing`, except for the stale-quote comparison block which should keep using `packageSpecificTotals` (since that's the live recalculated value).
 
-- No changes needed — `SET_FROZEN_PRICING` already accepts the payload and setting it to `undefined` clears it
+References to update:
+- `<PricingTable pricing={...}>` (~line 987)
+- `<StickySummary>` total prop
+- `<QuoteRevealCinematic>` finalPrice/savings props (~line 930)
+- `amountToFinance` calculation (~line 493)
+- `handleDownloadPDF` tax/total calculations (~lines 502-503)
+- `handleDepositSubmit` tax/total calculations (~line 690-691)
+- `handleApplyForFinancing` references (~lines 646-656)
+
+No other files need changes — the frozen snapshot is already saved and restored correctly.
+
+## What This Guarantees
+
+- PDF prints `$19,346.50` → QR link shows `$19,346.50` — exact match, always
+- If warranty DB prices change later, the stale-quote alert fires but the displayed price stays locked to the PDF
+- New quotes (no frozen pricing) continue to work exactly as before
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `src/components/quote-builder/StaleQuoteAlert.tsx` | New — comparison logic + AlertDialog UI |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Render StaleQuoteAlert when frozenPricing exists |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Create `displayPricing` from frozen snapshot; replace `packageSpecificTotals` references with `displayPricing` for all display/CTA paths |
 
