@@ -532,7 +532,7 @@ export default function QuoteSummaryPage() {
           motorDiscount,
           adminDiscount: state.adminDiscount || 0,
           promoSavings,
-          subtotal: packageSpecificTotals.subtotal,
+          subtotal: displayPricing.subtotal,
           hst: packageTaxForQr,
           total: packageTotalForQr,
           savings: motorDiscount + (state.adminDiscount || 0) + promoSavings,
