@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
 import { calculateRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { getOrCreateSessionId } from '@/hooks/useQuoteActivityTracker';
 import { ScrollToTop } from '@/components/ui/ScrollToTop';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
