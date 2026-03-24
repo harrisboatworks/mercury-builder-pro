@@ -1,41 +1,40 @@
 
 
-# Fix Sticky Summary: Show Tax-Inclusive Total
+# Fix Cinematic Not Showing + Verify Pricing on Saved Quote
 
-## Problems
+## Problem 1: Cinematic Intro Never Shows for Shared Admin Quotes
 
-1. **Misleading price**: The sticky summary shows the pre-HST subtotal ($17,120) as the big number. Customers may think that's what they'll pay, then get surprised by 13% HST on top. Showing the tax-inclusive total is more honest.
+**Root cause**: `QuoteSummaryPage.tsx` line 174 blocks the cinematic whenever `state.isAdminQuote` is true. Since `SavedQuotePage` sets `isAdminQuote: true` for all admin-created quotes, no customer who opens a shared quote link ever sees the cinematic.
 
-2. **Floating card**: The sticky card sits in a `<div>` with no width constraint in the right column, so it can feel disconnected. Minor CSS tightening.
+**Fix**: Change the guard to check whether the **current viewer** is an admin, not whether the quote was admin-created.
 
-## Changes
+### `src/pages/quote/QuoteSummaryPage.tsx` (line ~174)
 
-### 1. `src/components/quote-builder/StickySummary.tsx` — Show total (incl. HST)
+Change:
+```typescript
+if (state.isAdminQuote) return;
+```
+To:
+```typescript
+if (isAdmin) return;
+```
 
-- Add a new prop `totalWithTax` (the HST-inclusive number)
-- Display `totalWithTax` as the big headline price
-- Below it, show the subtotal in smaller text: "Subtotal: $17,120 + HST"
-- This way the customer sees the real out-the-door number up front
+This way:
+- Admin viewing their own quotes: no cinematic (correct — they don't need the show)
+- Customer opening a shared admin-created quote: cinematic plays (desired behavior)
 
-### 2. `src/pages/quote/QuoteSummaryPage.tsx` — Pass the tax-inclusive total
+## Problem 2: Verify Pricing Accuracy
 
-- Pass `totalWithTax={packageSpecificTotals.total}` to `StickySummary`
-- `packageSpecificTotals.total` already includes HST (subtotal × 1.13)
+I'll visit the live saved quote link in the browser to cross-check the numbers displayed on the summary page against the PDF. The code logic for pricing (`QuoteSummaryPage` lines 384-396, 515-557) chains correctly:
+- `motorSubtotal = MSRP - discount - adminDiscount - promoSavings`
+- `subtotal = motorSubtotal + accessories`
+- `total = subtotal + (subtotal × 0.13)`
 
-### 3. Minor: tighten sticky card alignment
-
-- Add `max-w-sm` or similar to the sticky aside so it doesn't stretch too wide on ultra-wide screens, keeping it visually anchored next to the pricing breakdown
-
-## What the Customer Sees
-
-**Before**: `$17,120` (misleading — doesn't include tax)
-
-**After**: `$19,346` with a note "Before tax: $17,120" in smaller text underneath — no surprises
+I'll confirm the actual rendered values match during implementation.
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `src/components/quote-builder/StickySummary.tsx` | Add `totalWithTax` prop, show as headline, demote subtotal |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Pass `totalWithTax` to StickySummary |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Change cinematic guard from `state.isAdminQuote` to `isAdmin` |
 
