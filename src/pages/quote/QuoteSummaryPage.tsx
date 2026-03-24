@@ -15,6 +15,8 @@ import { BonusOffers } from '@/components/quote-builder/BonusOffers';
 
 
 import { SaveQuoteDialog } from '@/components/quote-builder/SaveQuoteDialog';
+import { SaveQuoteWithAuth } from '@/components/quote-builder/SaveQuoteWithAuth';
+import { useAutoSaveQuoteOnAuth } from '@/hooks/useAutoSaveQuoteOnAuth';
 import { QuoteRevealCinematic } from '@/components/quote-builder/QuoteRevealCinematic';
 import { isTillerMotor, requiresMercuryControls, includesPropeller, canAddExternalFuelTank } from '@/lib/motor-helpers';
 import { getPropellerAllowance } from '@/lib/propeller-allowance';
