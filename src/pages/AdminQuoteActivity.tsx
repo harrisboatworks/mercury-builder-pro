@@ -187,6 +187,17 @@ export default function AdminQuoteActivity() {
     }
   };
 
+  const warmthBadge = (warmth: string, isReturn: boolean) => {
+    const returnLabel = isReturn ? ' 🔁' : '';
+    switch (warmth) {
+      case 'hot': return <Badge className="bg-red-100 text-red-800 border-red-200"><Flame className="w-3 h-3 mr-1" />Hot{returnLabel}</Badge>;
+      case 'warm': return <Badge className="bg-orange-100 text-orange-800 border-orange-200"><ThermometerSun className="w-3 h-3 mr-1" />Warm{returnLabel}</Badge>;
+      case 'cool': return <Badge className="bg-sky-100 text-sky-800 border-sky-200">Cool{returnLabel}</Badge>;
+      case 'cold': return <Badge className="bg-slate-100 text-slate-600 border-slate-200"><Snowflake className="w-3 h-3 mr-1" />Cold{returnLabel}</Badge>;
+      default: return null;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <AdminNav />
