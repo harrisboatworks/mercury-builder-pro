@@ -1,43 +1,46 @@
 
 
-# Verification: Propeller Trade-In Logic
+# Add Savings Highlight for "Use Existing" Propeller
 
-## Code Review — Logic is Correct
+## What This Does
 
-I reviewed all three touch-points and the logic is properly wired:
+When the "Propeller — Use Existing" line item appears in the pricing breakdown, add a small inline savings note beneath it (similar to the existing trade-in tax savings callout) so the customer sees they're saving $350+. No extra vertical space — just a one-line green text hint appended to the existing description.
 
-### Mercury same-HP trade-in → $0 prop
-1. **`build-accessory-breakdown.ts` (line 152-168)**: Checks `tradeInInfo.brand === 'mercury'` AND `tradeInInfo.horsepower === hp`. If both match, pushes "Propeller — Use Existing" at $0 with the compatibility message.
-2. **`QuoteSummaryPage.tsx` (line 410-414)**: Same `isMercuryTradeMatch` check — skips adding the prop allowance to `augmentedOptions`, so the running total stays consistent.
+## Approach
 
-### Non-Mercury trade-in → full prop charge
-When brand is Yamaha, Honda, etc., `isMercuryTradeMatch` is `false`, so the standard `propAllowance` ($350 or $1,200) is added normally. This is correct — other brand props won't fit Mercury.
+The cleanest way is to enhance the description text in `build-accessory-breakdown.ts` itself, adding the savings amount. This flows to both the web summary AND the PDF with zero extra components.
 
-### PDF
-The breakdown array flows directly into the PDF via `accessoryBreakdown`, so "Propeller — Use Existing" will appear with its description on the PDF automatically.
+### `src/lib/build-accessory-breakdown.ts`
 
-## Manual Test Steps
+In the Mercury trade-match propeller block (line 164-168), update the description to include the savings amount:
 
-Since I can't build quotes in read-only mode, here's exactly what to test:
+```typescript
+name: 'Propeller — Use Existing',
+price: 0,
+description: `Your current Mercury propeller should be compatible — we'll confirm during water testing (additional charge applies if needed). Saving you $${propAllowance.price.toLocaleString()}.`
+```
 
-### Test 1: Mercury 9.9HP trade-in (should show $0 prop)
-1. Select a **9.9HP Mercury** motor
-2. In trade-in, enter: **Mercury**, **9.9HP**, any year/condition
-3. On the summary page, verify the line item shows:
-   - **"Propeller — Use Existing" — $0.00**
-   - Description: *"Your current Mercury propeller should be compatible..."*
-4. Download PDF and confirm same line appears
+This uses the already-available `propAllowance.price` ($350 or $1,200 depending on HP) so the savings figure is always accurate.
 
-### Test 2: Yamaha 9.9HP trade-in (should charge prop)
-1. Same 9.9HP Mercury motor
-2. Trade-in: **Yamaha**, **9.9HP**
-3. Summary should show: **"Propeller Allowance (Aluminum)" — $350.00**
-4. PDF should match
+### `src/components/quote-builder/PricingTable.tsx`
 
-### Test 3: Mercury different HP (should charge prop)
-1. Select a **40HP Mercury** motor
-2. Trade-in: **Mercury**, **9.9HP** (different HP)
-3. Should show full prop allowance since HP doesn't match
+In the accessory breakdown loop (line 114-122), detect "Use Existing" items and render them with a green highlight style instead of the default — add `text-emerald-600` to the label and a small "✓ Saving $X" badge inline. This keeps the same row height, just colors it differently:
 
-No code changes needed — the implementation is already correct for all cases.
+```tsx
+const isExistingProp = item.name.includes('Use Existing');
+<LineItemRow
+  key={index}
+  label={item.name}
+  amount={item.price}
+  description={item.description}
+  className={cn("pl-4 border-l-2", isExistingProp ? "border-emerald-300 bg-emerald-50/50" : "border-muted")}
+/>
+```
+
+## Files
+
+| File | Change |
+|------|--------|
+| `src/lib/build-accessory-breakdown.ts` | Add savings amount to description text |
+| `src/components/quote-builder/PricingTable.tsx` | Green highlight styling for "Use Existing" prop row |
 
