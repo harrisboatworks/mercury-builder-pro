@@ -239,6 +239,8 @@ export interface EstimateTradeValueOptions {
   config?: TradeValuationConfig;
   /** HP-to-MSRP lookup for Mercury motors (enables MSRP-based valuation) */
   referenceMsrps?: Record<number, number>;
+  /** HP-to-max-MSRP lookup — used when startType is 'electric' */
+  referenceMsrpsMax?: Record<number, number>;
 }
 
 // Determine MSRP age bracket key from motor age
