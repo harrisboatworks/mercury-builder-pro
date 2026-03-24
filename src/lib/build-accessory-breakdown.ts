@@ -164,7 +164,7 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
       breakdown.push({
         name: 'Propeller — Use Existing',
         price: 0,
-        description: 'Your current Mercury propeller should be compatible — we\'ll confirm during water testing (additional charge applies if needed)'
+        description: `Your current Mercury propeller should be compatible — we'll confirm during water testing (additional charge applies if needed). Saving you $${propAllowance!.price.toLocaleString()}.`
       });
     } else {
       breakdown.push({
