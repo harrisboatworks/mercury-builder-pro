@@ -528,6 +528,7 @@ const App = () => {
       </SoundProvider>
     </AuthProvider>
   </ErrorBoundary>
-);
+  );
+};
 
 export default App;

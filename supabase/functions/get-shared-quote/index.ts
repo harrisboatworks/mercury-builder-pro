@@ -7,7 +7,16 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const { quoteId } = await req.json();
+    const body = await req.json();
+
+    // Fast warm-up ping — no DB hit, just wake the isolate
+    if (body?.ping) {
+      return new Response(JSON.stringify({ ok: true }), {
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    const { quoteId } = body;
 
     if (!quoteId || typeof quoteId !== "string") {
       return new Response(
