@@ -329,6 +329,11 @@ export default function QuoteSummaryPage() {
     ? (getRebateForHP?.(hp) || 0) 
     : 0;
   const promoSavings = state.frozenPricing?.promoSavings ?? (basePromoSavings + rebateAmount);
+  
+  // Live (non-frozen) values for stale-quote comparison
+  const liveMotorMSRP = quoteData.motor?.msrp || quoteData.motor?.basePrice || 0;
+  const livePromoSavings = basePromoSavings + rebateAmount;
+  
   const selectedOptionsTotal = (state.selectedOptions || []).reduce((sum, opt) => sum + opt.price, 0);
   
   // Coverage years
