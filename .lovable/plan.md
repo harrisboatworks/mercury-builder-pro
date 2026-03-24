@@ -1,69 +1,54 @@
 
 
-# Frozen Pricing Doesn't Fully Freeze — Subtotal and Total Still Recalculated
+# Add Smart Quote Expiry Date to PDF and Web Summary
 
-## The Problem
+## Current State
 
-When a saved quote loads with `frozenPricing`, the system correctly freezes three values:
-- `motorMSRP`
-- `motorDiscount`  
-- `promoSavings`
-
-But then it **recalculates** the subtotal and total from scratch via `calculateQuotePricing()` (line ~391). The frozen `subtotal`, `hst`, and `total` fields that were stored in the snapshot are **never actually used for display**.
-
-This means two things can still cause drift between the PDF and the shared link:
-
-1. **Warranty extension costs** — fetched live from the database via `calculateWarrantyExtensionCost()`. If warranty pricing rows change in the DB, `buildAccessoryBreakdown` produces different accessory totals, and the recalculated subtotal diverges from the PDF.
-
-2. **Any code change** to `buildAccessoryBreakdown` (e.g., adding a new auto-included item, changing propeller allowance logic) would change the accessory total on reload while the PDF printed the old number.
+- **PDF**: Already shows "Valid Until: [30 days from now]" in the quote details and terms section. But it ignores the actual promotion end date — if the promo expires in 7 days, the PDF still says "valid for 30 days."
+- **Web Summary**: No expiry date shown anywhere.
 
 ## The Fix
 
-When `state.frozenPricing` exists **and** contains `subtotal` and `total`, use those values directly for display instead of recalculating. The recalculated values should only be used for the stale-quote comparison (which already works correctly).
+Use the **earlier of** 30 days from quote creation or the active promotion's end date as the quote expiry. Display it on both the PDF and the web summary.
 
-### `src/pages/quote/QuoteSummaryPage.tsx`
+### Logic
 
-**Change 1** — After `packageSpecificTotals` is calculated (~line 403), override with frozen values when available:
-
-```typescript
-// If frozen pricing exists with full totals, use them directly
-// to guarantee PDF ↔ web parity regardless of DB/code changes
-const displayPricing = useMemo(() => {
-  if (state.frozenPricing?.subtotal != null && state.frozenPricing?.total != null) {
-    return {
-      ...packageSpecificTotals,
-      subtotal: state.frozenPricing.subtotal,
-      tax: state.frozenPricing.hst ?? state.frozenPricing.subtotal * 0.13,
-      total: state.frozenPricing.total,
-      savings: state.frozenPricing.savings ?? packageSpecificTotals.savings,
-    };
-  }
-  return packageSpecificTotals;
-}, [packageSpecificTotals, state.frozenPricing]);
+```text
+quoteExpiry = min(quoteDate + 30 days, promoEndDate ?? Infinity)
 ```
 
-**Change 2** — Replace all downstream references to `packageSpecificTotals` (PricingTable, StickySummary, cinematic, financing calc, PDF download, deposit) with `displayPricing`, except for the stale-quote comparison block which should keep using `packageSpecificTotals` (since that's the live recalculated value).
+If a promo ends March 31 and the quote is generated March 20, the expiry should be March 31 (not April 19).
 
-References to update:
-- `<PricingTable pricing={...}>` (~line 987)
-- `<StickySummary>` total prop
-- `<QuoteRevealCinematic>` finalPrice/savings props (~line 930)
-- `amountToFinance` calculation (~line 493)
-- `handleDownloadPDF` tax/total calculations (~lines 502-503)
-- `handleDepositSubmit` tax/total calculations (~line 690-691)
-- `handleApplyForFinancing` references (~lines 646-656)
+## Changes
 
-No other files need changes — the frozen snapshot is already saved and restored correctly.
+### 1. `src/components/quote-pdf/ProfessionalQuotePDF.tsx`
 
-## What This Guarantees
+- Add optional `promoEndDate?: string` to `QuotePDFProps.quoteData`
+- Change the `validUntil` calculation from hardcoded "+30 days" to `Math.min(now + 30 days, promoEndDate)` when a promo end date is provided
+- The existing "Valid Until:" display and terms text will automatically use the smarter date
 
-- PDF prints `$19,346.50` → QR link shows `$19,346.50` — exact match, always
-- If warranty DB prices change later, the stale-quote alert fires but the displayed price stays locked to the PDF
-- New quotes (no frozen pricing) continue to work exactly as before
+### 2. `src/pages/quote/QuoteSummaryPage.tsx`
+
+- Calculate `quoteExpiryDate` using the same logic (min of 30 days, promo end date)
+- Pass `promoEndDate` to the PDF component when generating
+- Add a small expiry badge/note visible on the web summary — near the pricing section or sticky summary — showing "Quote valid until [date]" with a countdown if under 7 days
+- Store the expiry date in `frozenPricing` so saved quotes show the original expiry, not a recalculated one
+
+### 3. `src/components/quote-builder/StickySummary.tsx`
+
+- Add optional `quoteValidUntil?: Date` prop
+- Display a subtle line like "Pricing valid until April 19, 2026" or "Pricing expires in 5 days" below the total
+
+### 4. `src/contexts/QuoteContext.tsx`
+
+- Add `quoteExpiryDate?: string` to `FrozenPricing` interface so the expiry is locked with the snapshot
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `src/pages/quote/QuoteSummaryPage.tsx` | Create `displayPricing` from frozen snapshot; replace `packageSpecificTotals` references with `displayPricing` for all display/CTA paths |
+| `src/components/quote-pdf/ProfessionalQuotePDF.tsx` | Accept `promoEndDate`, compute smart expiry |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Calculate expiry, pass to PDF and StickySummary, store in frozen snapshot |
+| `src/components/quote-builder/StickySummary.tsx` | Display expiry date with countdown when close |
+| `src/contexts/QuoteContext.tsx` | Add `quoteExpiryDate` to `FrozenPricing` type |
 
