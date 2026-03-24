@@ -274,11 +274,43 @@ const AdminQuotes = () => {
                         )}
                       </TableCell>
                       <TableCell>
-                        {r.contact_attempts && r.contact_attempts > 0 && (
-                          <Badge variant="outline" className="text-xs">
-                            Contacted {r.contact_attempts}x
-                          </Badge>
-                        )}
+                        <div className="flex items-center gap-2">
+                          {r.contact_attempts && r.contact_attempts > 0 && (
+                            <Badge variant="outline" className="text-xs">
+                              Contacted {r.contact_attempts}x
+                            </Badge>
+                          )}
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger asChild>
+                                <Button
+                                  variant="ghost"
+                                  size="icon"
+                                  className="h-7 w-7"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    localStorage.removeItem('quoteBuilder');
+                                    dispatch({ type: 'RESET_TO_ADMIN_MODE', payload: { editingQuoteId: null } });
+                                    setTimeout(() => {
+                                      dispatch({ type: 'SET_ADMIN_QUOTE_DATA', payload: {
+                                        adminDiscount: 0,
+                                        adminNotes: '',
+                                        customerNotes: '',
+                                        customerName: r.customer_name || '',
+                                        customerEmail: r.customer_email || '',
+                                        customerPhone: r.customer_phone || ''
+                                      }});
+                                      navigate('/quote/motor-selection');
+                                    }, 50);
+                                  }}
+                                >
+                                  <FilePlus className="w-4 h-4" />
+                                </Button>
+                              </TooltipTrigger>
+                              <TooltipContent>New quote for {r.customer_name || 'this customer'}</TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </div>
                       </TableCell>
                     </TableRow>
                   );
