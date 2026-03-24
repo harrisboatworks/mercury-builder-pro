@@ -39,6 +39,7 @@ type StickySummaryProps = {
 export default function StickySummary({
   packageLabel,
   yourPriceBeforeTax,
+  totalWithTax,
   totalSavings,
   monthly,
   bullets = [],
