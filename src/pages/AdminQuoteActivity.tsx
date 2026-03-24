@@ -131,6 +131,7 @@ function groupEventsIntoSessions(events: QuoteEvent[]): Session[] {
 }
 
 export default function AdminQuoteActivity() {
+  const navigate = useNavigate();
   const [daysBack, setDaysBack] = useState('7');
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [motorFilter, setMotorFilter] = useState('');
