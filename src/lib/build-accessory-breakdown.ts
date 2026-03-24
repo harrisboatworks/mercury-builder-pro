@@ -28,6 +28,7 @@ export interface BuildAccessoryBreakdownParams {
   completeWarrantyCost?: number;
   premiumWarrantyCost?: number;
   currentCoverageYears?: number;
+  tradeInInfo?: { brand?: string; horsepower?: number; hasTradeIn?: boolean };
 }
 
 export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): AccessoryBreakdownItem[] {
