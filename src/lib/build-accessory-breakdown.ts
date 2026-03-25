@@ -151,7 +151,7 @@ export function buildAccessoryBreakdown(params: BuildAccessoryBreakdownParams): 
   // Propeller allowance (or customer prop opt-out / trade-in match)
   const isMercuryTradeMatch = tradeInInfo?.hasTradeIn &&
     tradeInInfo?.brand?.toLowerCase() === 'mercury' &&
-    tradeInInfo?.horsepower === hp;
+    Number(tradeInInfo?.horsepower) === Number(hp);
 
   if (!includesProp && propAllowance) {
     if (boatInfo?.hasCompatibleProp) {
