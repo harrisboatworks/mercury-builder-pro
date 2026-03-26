@@ -42,6 +42,18 @@ export function GlobalSEO() {
         ],
         "email": "info@harrisboatworks.ca",
         "areaServed": [
+          { "@type": "City", "name": "Toronto" },
+          { "@type": "City", "name": "Peterborough" },
+          { "@type": "City", "name": "Cobourg" },
+          { "@type": "City", "name": "Oshawa" },
+          { "@type": "City", "name": "Barrie" },
+          { "@type": "City", "name": "Kawartha Lakes" },
+          { "@type": "City", "name": "Port Hope" },
+          { "@type": "City", "name": "Bowmanville" },
+          { "@type": "City", "name": "Lindsay" },
+          { "@type": "City", "name": "Belleville" },
+          { "@type": "City", "name": "Kingston" },
+          { "@type": "City", "name": "Orillia" },
           {
             "@type": "GeoCircle",
             "geoMidpoint": {
@@ -63,10 +75,17 @@ export function GlobalSEO() {
         "@type": "LocalBusiness",
         "@id": `${SITE_URL}/#localbusiness`,
         "name": "Harris Boat Works",
+        "alternateName": "Mercury Repower by Harris Boat Works",
         "image": `${SITE_URL}/assets/harris-logo-black.png`,
         "priceRange": "$$$",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
+        "sameAs": [
+          "https://www.harrisboatworks.ca",
+          "https://www.facebook.com/HarrisBoatWorks",
+          "https://www.instagram.com/harrisboatworks",
+          "https://www.google.com/maps/place/Harris+Boat+Works"
+        ],
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "5369 Harris Boat Works Rd",
