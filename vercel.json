@@ -4,6 +4,10 @@
   "framework": "vite",
   "rewrites": [
     { "source": "/googlebdeec341596163e7.html", "destination": "/googlebdeec341596163e7.html" },
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/rss.xml", "destination": "/rss.xml" },
+    { "source": "/robots.txt", "destination": "/robots.txt" },
+    { "source": "/llms.txt", "destination": "/llms.txt" },
     { "source": "/((?!api).*)", "destination": "/" }
   ],
   "headers": [
