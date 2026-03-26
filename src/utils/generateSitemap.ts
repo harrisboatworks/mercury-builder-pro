@@ -21,11 +21,14 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/quote/motor-selection', lastmod: today, changefreq: 'daily', priority: 0.9 },
     { loc: '/promotions', lastmod: today, changefreq: 'weekly', priority: 0.8 },
     { loc: '/repower', lastmod: today, changefreq: 'monthly', priority: 0.9 },
+    { loc: '/faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/financing-application', lastmod: today, changefreq: 'monthly', priority: 0.7 },
     { loc: '/finance-calculator', lastmod: today, changefreq: 'monthly', priority: 0.7 },
     { loc: '/contact', lastmod: today, changefreq: 'monthly', priority: 0.6 },
     { loc: '/about', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/blog', lastmod: today, changefreq: 'weekly', priority: 0.8 },
+    { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
+    { loc: '/terms', lastmod: today, changefreq: 'yearly', priority: 0.3 },
   ];
 };
 

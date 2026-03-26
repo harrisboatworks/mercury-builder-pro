@@ -82,7 +82,9 @@ No, we do not offer delivery. All pickups are at our Gores Landing location.
 - Quote Builder: https://mercuryrepower.ca/quote/motor-selection
 - Promotions: https://mercuryrepower.ca/promotions
 - Repower Services: https://mercuryrepower.ca/repower
+- FAQ (24 answers): https://mercuryrepower.ca/faq
 - Blog: https://mercuryrepower.ca/blog
-- Financing: https://mercuryrepower.ca/financing-application
+- Finance Calculator: https://mercuryrepower.ca/finance-calculator
+- Financing Application: https://mercuryrepower.ca/financing-application
 - Contact: https://mercuryrepower.ca/contact
 - About Us: https://mercuryrepower.ca/about

@@ -16,6 +16,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { ContactPageSEO } from '@/components/seo/ContactPageSEO';
 import { 
   Mail, 
   Phone, 
@@ -132,6 +133,7 @@ export default function Contact() {
 
   return (
     <>
+      <ContactPageSEO />
       <LuxuryHeader />
       <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4 py-8">

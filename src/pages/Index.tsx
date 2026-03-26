@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { HomepageSEO } from '@/components/seo/HomepageSEO';
 import { StatusIndicator } from '@/components/StatusIndicator';
 import { MobileQuoteForm } from '@/components/ui/mobile-quote-form';
 import { MobileStickyCTA } from '@/components/ui/mobile-sticky-cta';
@@ -374,6 +375,7 @@ const Index = () => {
 
   return (
     <>
+      <HomepageSEO />
       {/* Header with Auth */}
       <header className="border-b border-border bg-background/95 backdrop-blur">
         <div className="container mx-auto px-4 py-3">
