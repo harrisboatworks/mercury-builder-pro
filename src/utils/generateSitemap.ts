@@ -1,4 +1,5 @@
 import { blogArticles, isArticlePublished } from '../data/blogArticles';
+import { supabase } from '../integrations/supabase/client';
 
 const BASE_URL = 'https://mercuryrepower.ca';
 
@@ -130,4 +131,90 @@ export function getSitemapEntries() {
       title: article.title
     }))
   };
+}
+
+// Build slug from model_key (same logic as ShareLinkButton)
+function buildSlug(source: string): string {
+  return source
+    .toLowerCase()
+    .replace(/[_\s]+/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
+// Fetch motor slugs from Supabase for sitemap generation
+export async function getMotorSitemapEntries(): Promise<SitemapEntry[]> {
+  try {
+    const { data: motors, error } = await supabase
+      .from('motor_models')
+      .select('model_key, model, model_display, updated_at, horsepower')
+      .not('model_key', 'is', null)
+      .order('horsepower', { ascending: true });
+
+    if (error || !motors) {
+      console.warn('Failed to fetch motors for sitemap:', error);
+      return [];
+    }
+
+    const today = new Date().toISOString().split('T')[0];
+
+    return motors
+      .filter(m => m.model_key && m.model_key.trim() !== '')
+      .map(m => ({
+        loc: `/motors/${buildSlug(m.model_key!)}`,
+        lastmod: m.updated_at ? m.updated_at.split('T')[0] : today,
+        changefreq: 'weekly' as const,
+        priority: 0.7,
+      }));
+  } catch (err) {
+    console.warn('Motor sitemap generation failed:', err);
+    return [];
+  }
+}
+
+// Generate full sitemap XML including motors (async version)
+export async function generateFullSitemapXML(): Promise<string> {
+  const publishedArticles = blogArticles.filter(isArticlePublished);
+  
+  const blogEntries: SitemapEntry[] = publishedArticles.map(article => ({
+    loc: `/blog/${article.slug}`,
+    lastmod: article.dateModified || article.datePublished,
+    changefreq: 'monthly' as const,
+    priority: 0.7,
+    image: article.image ? {
+      url: article.image.startsWith('/') ? `${BASE_URL}${article.image}` : article.image,
+      title: article.title
+    } : undefined
+  }));
+
+  const motorEntries = await getMotorSitemapEntries();
+  
+  const allEntries = [...getStaticPages(), ...blogEntries, ...motorEntries];
+  
+  const urlEntries = allEntries.map(entry => {
+    let xml = `  <url>
+    <loc>${BASE_URL}${entry.loc}</loc>
+    <lastmod>${entry.lastmod}</lastmod>
+    <changefreq>${entry.changefreq}</changefreq>
+    <priority>${entry.priority}</priority>`;
+    
+    if (entry.image) {
+      xml += `
+    <image:image>
+      <image:loc>${entry.image.url}</image:loc>
+      ${entry.image.title ? `<image:title><![CDATA[${entry.image.title}]]></image:title>` : ''}
+    </image:image>`;
+    }
+    
+    xml += `
+  </url>`;
+    return xml;
+  }).join('\n');
+  
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${urlEntries}
+</urlset>`;
 }

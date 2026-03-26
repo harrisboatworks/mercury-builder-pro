@@ -349,6 +349,16 @@ export default function MotorCardPreview({
 
   const monthlyPayment = calculateMonthlyPayment();
 
+  // Build slug for individual motor URL (same logic as ShareLinkButton)
+  const buildMotorSlug = (source: string): string => {
+    return source
+      .toLowerCase()
+      .replace(/[_\s]+/g, '-')
+      .replace(/[^a-z0-9-]/g, '')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+  };
+
   // Generate Product schema for SEO
   const getProductSchema = () => {
     if (!motor) return null;
@@ -359,6 +369,11 @@ export default function MotorCardPreview({
     const imageUrlFull = imageUrl?.startsWith('/') 
       ? `${siteUrl}${imageUrl}` 
       : imageUrl;
+    
+    // Build individual motor URL for SEO
+    const slugSource = motor.model_key || motor.model || title;
+    const motorSlug = buildMotorSlug(slugSource);
+    const motorUrl = `${siteUrl}/motors/${motorSlug}`;
     
     return {
       "@context": "https://schema.org",
@@ -380,7 +395,7 @@ export default function MotorCardPreview({
       ...(priceValue && {
         "offers": {
           "@type": "Offer",
-          "url": `${siteUrl}/quote/motor-selection`,
+          "url": motorUrl,
           "priceCurrency": "CAD",
           "price": priceValue,
           "availability": inStock 
