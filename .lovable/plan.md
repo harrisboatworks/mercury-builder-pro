@@ -1,25 +1,24 @@
 
 
-# Add Google Search Console Verification Meta Tag
+# Google Search Console Verification via HTML File Upload
 
-## What
-Add the Google Search Console verification meta tag to `index.html` so Google can verify ownership of mercuryrepower.ca and begin proper crawling.
+The meta tag approach isn't being detected by Google's crawler. The alternative is the **HTML file verification method** — place the verification file at the site root so Google can fetch it directly.
 
 ## Change
 
-### `index.html`
-Add this line inside the `<head>` section, after the existing meta tags (around line 13, after the GA config script):
+### Copy verification file to `public/`
+Copy `googlebdeec341596163e7.html` to `public/googlebdeec341596163e7.html` so it's served at `https://mercuryrepower.ca/googlebdeec341596163e7.html`.
 
-```html
-<meta name="google-site-verification" content="dQ0cAABotsaEYxoKgsE1OhdGpZ_UayYlQHM6vPZLCIw" />
-```
-
-## After Deploy
-Hit **Verify** in your Google Search Console tab. Once verified, Google will begin crawling mercuryrepower.ca properly.
+### Update `vercel.json` (if needed)
+Ensure the file isn't caught by the SPA catch-all rewrite. Add a rule so `/googlebdeec341596163e7.html` serves the static file directly before the wildcard route.
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `index.html` | Add GSC verification meta tag to `<head>` |
+| `public/googlebdeec341596163e7.html` | Copy verification file here |
+| `vercel.json` | Ensure static file isn't rewritten to index.html |
+
+## After Deploy
+Hit **Verify** in Google Search Console. The file method is more reliable than meta tags for SPAs.
 
