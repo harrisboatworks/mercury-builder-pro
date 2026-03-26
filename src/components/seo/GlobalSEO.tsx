@@ -116,7 +116,7 @@ export function GlobalSEO() {
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Mercury Outboard Motors",
+          "name": "Mercury Outboard Motors & Services",
           "itemListElement": [
             {
               "@type": "Offer",
@@ -140,6 +140,30 @@ export function GlobalSEO() {
                 "@type": "Product",
                 "name": "Mercury Verado Outboards",
                 "description": "Premium supercharged outboard motors with advanced features"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Mercury Outboard Repower",
+                "description": "Complete outboard motor replacement with new Mercury engine, rigging, controls, and professional installation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Mercury Outboard Service & Repair",
+                "description": "Certified Mercury outboard maintenance, diagnostics, and repair by factory-trained technicians"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Winterization & Storage",
+                "description": "Full outboard winterization service and indoor/outdoor boat storage on Rice Lake"
               }
             }
           ]
