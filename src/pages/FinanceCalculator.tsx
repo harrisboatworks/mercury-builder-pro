@@ -16,7 +16,6 @@ import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { FinanceCalculatorSEO } from '@/components/seo/FinanceCalculatorSEO';
 import { useQuote } from '@/contexts/QuoteContext';
-import { useQuote } from '@/contexts/QuoteContext';
 import { Search, Calculator, FileText, Anchor, Calendar, Percent, CreditCard, ShieldCheck, ArrowRight, Phone, Sparkles } from 'lucide-react';
 
 // ── Static data ──────────────────────────────────────────────
