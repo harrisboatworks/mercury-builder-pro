@@ -14,7 +14,7 @@ const memoryStorage = {
 };
 
 // Prefer persistent localStorage when available (prevents login loops on refresh)
-const _win = typeof globalThis !== 'undefined' ? (globalThis as unknown as Window & typeof globalThis) : undefined;
+const _win = typeof globalThis !== 'undefined' ? (globalThis as any) : undefined;
 
 const supportsLocalStorage = !!_win && (() => {
   try {
