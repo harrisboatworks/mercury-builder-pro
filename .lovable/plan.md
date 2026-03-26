@@ -1,44 +1,65 @@
 
 
-# Fix: Propeller Allowance on Admin PDF + QR Code Routing
+# Individual Motor URLs for AI Search Domination
 
-## Issues Found
+## What Claude Found
 
-### 1. Propeller Allowance Showing on PDF Despite Same-HP Mercury Trade-In
+Your 93 Product schemas are already excellent — brand, price, SKU, availability all correct. Two gaps remain:
 
-**Root cause**: The `buildAccessoryBreakdown` in `AdminQuoteControls.handleSaveQuote` runs at save time and persists the result. If the admin saves before the trade-in is fully populated in context, or if there's a timing issue with state updates, the persisted breakdown includes the standard propeller allowance ($350) instead of the $0 "Use Existing" line.
+1. **Every product schema URL points to `/quote/motor-selection`** — so ChatGPT links to your general page, not a specific motor
+2. **Sitemap has no individual motor URLs** — search crawlers don't know those pages exist
 
-The **share link** works correctly because `SavedQuotePage` restores `tradeInInfo` to context and the summary page's `useMemo` recalculates the breakdown live — correctly detecting the Mercury trade-in match.
+## What Already Exists
 
-The **PDF download** also uses the live `useMemo` breakdown, so if the PDF showed the prop allowance, it means the PDF was generated at a point when `state.tradeInInfo` wasn't yet reflecting in the memo, OR the HP comparison failed due to type mismatch (string vs number).
+- `/motors/:slug` route already works (e.g. `/motors/fourstroke-150hp-efi-elpt-ct`)
+- `ShareLinkButton` already builds correct slugs from `model_key`
+- `MotorRedirect.tsx` resolves slugs back to the right motor
 
-**Fix**: Add type-safe HP comparison in `build-accessory-breakdown.ts` using `Number()` coercion on both sides. Also ensure the admin save always refreshes the breakdown from current state at the moment of save.
+## The Fix (Two Small Changes)
 
-### 2. QR Code Opening Finance App Instead of Saved Quote
+### 1. Product Schema: Use Individual Motor URL
 
-**Root cause**: The code correctly saves to `saved_quotes` and points the QR to `/quote/saved/{id}`. The most likely explanation is a deployment timing issue — the production site may still have older code that routed QR codes to the financing application. The code in the repo is correct.
+**File**: `src/components/motors/MotorCardPreview.tsx`
 
-**Safeguard**: No code change needed for routing — it's already correct. But we should verify there's no fallback path that accidentally constructs a financing URL.
+Change the `"url"` in `getProductSchema()` from:
+```
+"url": `${siteUrl}/quote/motor-selection`
+```
+to:
+```
+"url": `${siteUrl}/motors/${slug}`
+```
 
-## Changes
+Using the same `buildSlug()` logic from `ShareLinkButton` (import or inline it). This means when ChatGPT sees a Mercury 150 Pro XS product, it links directly to `/motors/fourstroke-150hp-efi-elpt` instead of the generic page.
 
-### 1. `src/lib/build-accessory-breakdown.ts`
-- Change the HP comparison from strict `===` to a `Number()`-coerced comparison to handle string/number mismatches:
-  ```
-  Number(tradeInInfo?.horsepower) === Number(hp)
-  ```
-- This prevents edge cases where form inputs store HP as a string
+### 2. Sitemap: Add All Motors Dynamically
 
-### 2. `src/components/admin/AdminQuoteControls.tsx`
-- After saving, also update `frozenPricing` in context so the summary page reflects the saved state
-- Ensure `tradeInInfo` is explicitly read from `state` at save time (already done, but add a console log for debugging)
+**File**: `src/utils/generateSitemap.ts`
 
-### 3. Verify QR routing (no code change)
-- The code already points QR to `/quote/saved/{id}` — this is correct per the professional PDF strategy
-- The issue was likely a stale deployment; rebuilding/redeploying should fix it
+Add a function that fetches all `model_key` values from the `motor_models` table and generates sitemap entries for each `/motors/{slug}` URL with priority 0.7. This tells Google and AI crawlers that every motor has its own page.
+
+**File**: `public/sitemap.xml`
+
+Update the static sitemap to include representative motor URLs (the dynamic generation handles the full list at build time, but having some in the static file helps crawlers discover the pattern).
+
+### 3. Sitemap also in llms.txt
+
+**File**: `public/llms.txt`
+
+Add a section listing the `/motors/` URL pattern so AI crawlers know individual motor pages exist.
+
+## Result
+
+- ChatGPT answer to "where can I buy a Mercury 150 Pro XS in Ontario" → links to `mercuryrepower.ca/motors/proxs-150hp-efi-xl` instead of the generic page
+- Google indexes 93 individual motor URLs
+- Zero user-facing changes — the redirect still works exactly the same
+
+## Files
 
 | File | Change |
 |------|--------|
-| `src/lib/build-accessory-breakdown.ts` | Type-safe HP comparison with `Number()` coercion |
-| `src/components/admin/AdminQuoteControls.tsx` | Minor: sync frozen pricing to context after save |
+| `src/components/motors/MotorCardPreview.tsx` | Product schema URL → `/motors/{slug}` |
+| `src/utils/generateSitemap.ts` | Add motor entries to sitemap generation |
+| `public/sitemap.xml` | Add representative motor URLs |
+| `public/llms.txt` | Document motor URL pattern |
 
