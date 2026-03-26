@@ -124,7 +124,14 @@ export default defineConfig(({ mode }) => ({
           }
         ],
         navigateFallback: '/index.html',
-        navigateFallbackDenylist: [/^\/api/, /^\/rest/]
+        navigateFallbackDenylist: [
+          /^\/api/,
+          /^\/rest/,
+          /\.xml$/,
+          /\.txt$/,
+          /\.csv$/,
+          /^\/googlebdeec341596163e7\.html$/
+        ]
       }
     })
   ].filter(Boolean),
