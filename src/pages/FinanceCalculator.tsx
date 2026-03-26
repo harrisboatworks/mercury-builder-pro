@@ -14,6 +14,8 @@ import { findMotorSpecs } from '@/lib/data/mercury-motors';
 import { calculatePaymentWithFrequency, getDefaultFinancingRate, getFinancingTerm, type PaymentFrequency } from '@/lib/finance';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
+import { FinanceCalculatorSEO } from '@/components/seo/FinanceCalculatorSEO';
+import { useQuote } from '@/contexts/QuoteContext';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Search, Calculator, FileText, Anchor, Calendar, Percent, CreditCard, ShieldCheck, ArrowRight, Phone, Sparkles } from 'lucide-react';
 
@@ -194,6 +196,7 @@ export default function FinanceCalculator() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <FinanceCalculatorSEO />
       <LuxuryHeader />
 
       {/* ─── 1. Hero ─── */}
