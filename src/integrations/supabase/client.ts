@@ -34,7 +34,7 @@ const SESSION_ID_KEY = 'chat_session_id';
 
 // Get or create a cryptographically secure session ID for anonymous users
 function getOrCreateSessionId(): string {
-  if (typeof window === 'undefined') return '';
+  if (!_win) return '';
   
   try {
     let sessionId = safeStorage.getItem(SESSION_ID_KEY);
