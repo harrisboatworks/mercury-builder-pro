@@ -14,25 +14,27 @@ const memoryStorage = {
 };
 
 // Prefer persistent localStorage when available (prevents login loops on refresh)
-const supportsLocalStorage = typeof window !== 'undefined' && (() => {
+const _win = typeof globalThis !== 'undefined' ? (globalThis as any) : undefined;
+
+const supportsLocalStorage = !!_win && (() => {
   try {
     const k = '__supabase_test__';
-    window.localStorage.setItem(k, '1');
-    window.localStorage.removeItem(k);
+    _win.localStorage.setItem(k, '1');
+    _win.localStorage.removeItem(k);
     return true;
   } catch {
     return false;
   }
 })();
 
-const safeStorage: Pick<Storage, 'getItem' | 'setItem' | 'removeItem'> = supportsLocalStorage ? window.localStorage : memoryStorage;
+const safeStorage: Pick<Storage, 'getItem' | 'setItem' | 'removeItem'> = supportsLocalStorage ? _win!.localStorage : memoryStorage;
 
 // Session ID key for anonymous user tracking (used by RLS policies)
 const SESSION_ID_KEY = 'chat_session_id';
 
 // Get or create a cryptographically secure session ID for anonymous users
 function getOrCreateSessionId(): string {
-  if (typeof window === 'undefined') return '';
+  if (!_win) return '';
   
   try {
     let sessionId = safeStorage.getItem(SESSION_ID_KEY);
