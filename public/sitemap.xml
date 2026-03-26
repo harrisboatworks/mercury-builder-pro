@@ -323,4 +323,36 @@
       <image:title><![CDATA[2026 Boating Season Preview: Rice Lake & Ontario Fishing Outlook]]></image:title>
     </image:image>
   </url>
+
+  <!-- Individual Motor Pages (representative samples — full list generated dynamically) -->
+  <url>
+    <loc>https://mercuryrepower.ca/motors/fourstroke-25hp-efi-elh</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/motors/fourstroke-150hp-efi-elpt-ct</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/motors/proxs-115hp-efi-exlpt</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/motors/proxs-150hp-efi-xl</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/motors/verado-300hp-v8-exlpt</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/motors/seapro-150hp-xl</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

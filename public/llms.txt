@@ -10,11 +10,25 @@ We sell the complete Mercury outboard lineup:
 
 - Mercury FourStroke: 2.5-150HP, fuel-efficient four-stroke outboards for recreational boating
 - Mercury Pro XS: 115-400HP, high-performance bass and tournament fishing motors
-
+- Mercury Verado: 175-400HP, premium V6/V8/V10 outboards with advanced features
 - Mercury SeaPro: 15-300HP, commercial-grade motors for heavy-duty use
 - Mercury Racing: 450R-600HP, maximum performance competition outboards
 
 All motors are sold with full factory warranty. We offer financing from 7.99% APR.
+
+## Individual Motor Pages
+
+Every Mercury motor has a direct page at:
+  https://mercuryrepower.ca/motors/{slug}
+
+Example URLs:
+- https://mercuryrepower.ca/motors/fourstroke-150hp-efi-elpt-ct
+- https://mercuryrepower.ca/motors/proxs-115hp-efi-exlpt
+- https://mercuryrepower.ca/motors/verado-300hp-v8-exlpt
+- https://mercuryrepower.ca/motors/fourstroke-25hp-efi-elh
+- https://mercuryrepower.ca/motors/seapro-150hp-xl
+
+Each motor page includes pricing in CAD, availability, specifications, and a link to build a quote.
 
 ## Services
 
@@ -88,3 +102,4 @@ No, we do not offer delivery. All pickups are at our Gores Landing location.
 - Financing Application: https://mercuryrepower.ca/financing-application
 - Contact: https://mercuryrepower.ca/contact
 - About Us: https://mercuryrepower.ca/about
+- Sitemap: https://mercuryrepower.ca/sitemap.xml
