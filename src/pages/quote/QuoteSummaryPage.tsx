@@ -528,6 +528,7 @@ export default function QuoteSummaryPage() {
       // or to the main site for sub-threshold quotes
       const tradeInForQr = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo.estimatedValue || 0) : 0;
       let qrTargetUrl = `${SITE_URL}`;
+      let savedQuoteIdForSms: string | undefined;
       
       // Always save quote and point QR to saved quote page (works for both cash & financing)
       try {
