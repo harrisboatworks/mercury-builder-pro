@@ -16,25 +16,24 @@ export function FinanceCalculatorSEO() {
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["h1", ".calculator-intro"]
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": SITE_URL
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Finance Calculator",
+              "item": `${SITE_URL}/finance-calculator`
+            }
+          ]
         }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${SITE_URL}/finance-calculator#breadcrumblist`,
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": SITE_URL
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Finance Calculator",
-            "item": `${SITE_URL}/finance-calculator`
-          }
-        ]
       },
       {
         "@type": "FinancialProduct",

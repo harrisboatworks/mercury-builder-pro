@@ -16,19 +16,18 @@ export function HomepageSEO() {
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["h1", "h2", ".hero-description"]
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": SITE_URL
+            }
+          ]
         }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${SITE_URL}/#breadcrumblist`,
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": SITE_URL
-          }
-        ]
       },
       {
         "@type": "Service",

@@ -59,31 +59,30 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": [".article-intro", ".faq-answer", "h1", "h2"]
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": SITE_URL
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog",
+              "item": `${SITE_URL}/blog`
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": article.title,
+              "item": url
+            }
+          ]
         }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${url}#breadcrumblist`,
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": SITE_URL
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Blog",
-            "item": `${SITE_URL}/blog`
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": article.title,
-            "item": url
-          }
-        ]
       },
       // HowTo schema for instructional articles
       ...(article.howToSteps && article.howToSteps.length > 0 ? [{

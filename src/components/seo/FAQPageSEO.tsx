@@ -30,24 +30,6 @@ export function FAQPageSEO() {
         }))
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": `${SITE_URL}/faq#breadcrumblist`,
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": SITE_URL
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "FAQ",
-            "item": `${SITE_URL}/faq`
-          }
-        ]
-      },
-      {
         "@type": "WebPage",
         "@id": `${SITE_URL}/faq#webpage`,
         "url": `${SITE_URL}/faq`,
@@ -55,7 +37,23 @@ export function FAQPageSEO() {
         "description": "Answers to 24 common Mercury outboard repower questions — from choosing the right HP to warranty coverage, financing, trade-ins, and installation process.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
-        "breadcrumb": { "@id": `${SITE_URL}/faq#breadcrumblist` },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": SITE_URL
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "FAQ",
+              "item": `${SITE_URL}/faq`
+            }
+          ]
+        },
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["#faq-hero-title", "#faq-hero-description"]
