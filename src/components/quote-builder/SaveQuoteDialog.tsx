@@ -41,6 +41,16 @@ export function SaveQuoteDialog({
   const [phoneError, setPhoneError] = useState("");
 
   const handleSave = async () => {
+    // Block save if no motor selected
+    if (!quoteData?.selectedMotor && !quoteData?.motor) {
+      toast({
+        title: "No motor selected",
+        description: "Please select a motor before saving your quote.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     // Clear previous errors
     setEmailError("");
     setNameError("");

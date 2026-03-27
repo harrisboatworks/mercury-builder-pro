@@ -63,6 +63,14 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
   }, [adminDiscount, adminNotes, customerNotes, customItems, dispatch]);
 
   const handleSaveQuote = async () => {
+    if (!state.motor) {
+      toast({
+        title: 'No motor selected',
+        description: 'Please select a motor before saving your quote.',
+        variant: 'destructive'
+      });
+      return;
+    }
     if (!customerName.trim() || !customerEmail.trim()) {
       toast({
         title: 'Missing Information',
