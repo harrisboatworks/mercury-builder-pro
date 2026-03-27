@@ -529,6 +529,7 @@ export default function QuoteSummaryPage() {
       const tradeInForQr = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo.estimatedValue || 0) : 0;
       let qrTargetUrl = `${SITE_URL}`;
       let savedQuoteIdForSms: string | undefined;
+      let savedQuoteRefForSms: string | undefined;
       
       // Always save quote and point QR to saved quote page (works for both cash & financing)
       try {
@@ -560,11 +561,12 @@ export default function QuoteSummaryPage() {
             user_id: user?.id || null,
             expires_at: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
           } as any)
-          .select('id')
+          .select('id, reference_number')
           .single();
         if (savedForQr?.id) {
           qrTargetUrl = `${SITE_URL}/quote/saved/${savedForQr.id}`;
           savedQuoteIdForSms = savedForQr.id;
+          savedQuoteRefForSms = (savedForQr as any).reference_number;
         }
       } catch (qrSaveErr) {
         console.warn('Could not save quote for QR code:', qrSaveErr);
@@ -664,8 +666,9 @@ export default function QuoteSummaryPage() {
           ? ` | Trade-in: ${state.tradeInInfo.year || ''} ${state.tradeInInfo.brand || ''} ${state.tradeInInfo.horsepower || ''}HP`
           : '';
         const promoNote = state.selectedPromoOption ? ` | Promo: ${state.selectedPromoOption}` : '';
+        const refNote = savedQuoteRefForSms ? `\nRef: ${savedQuoteRefForSms}` : '';
         const quoteLink = savedQuoteIdForSms ? `\nView: https://mercuryrepower.ca/quote/saved/${savedQuoteIdForSms}` : '';
-        const smsMessage = `📄 Quote Downloaded!\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}\nPkg: ${selectedPackageLabel}${quoteLink}`;
+        const smsMessage = `📄 Quote Downloaded!${refNote}\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}\nPkg: ${selectedPackageLabel}${quoteLink}`;
         
         await supabase.functions.invoke('send-sms', {
           body: { to: 'admin', message: smsMessage }

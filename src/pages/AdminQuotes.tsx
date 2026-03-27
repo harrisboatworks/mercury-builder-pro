@@ -46,6 +46,7 @@ interface UnifiedQuoteRow {
   _motor_info?: string;
   _deposit_status?: string | null;
   _is_soft_lead?: boolean;
+  _reference_number?: string | null;
 }
 
 const AdminQuotes = () => {
@@ -112,6 +113,7 @@ const AdminQuotes = () => {
       _motor_info: motorInfo,
       _deposit_status: sq.deposit_status,
       _is_soft_lead: isSoftLead || isAnonymous,
+      _reference_number: sq.reference_number || null,
     };
   };
 
@@ -153,6 +155,7 @@ const AdminQuotes = () => {
       _motor_info: '',
       _deposit_status: null,
       _is_soft_lead: false,
+      _reference_number: null,
     }));
 
     const sqRows: UnifiedQuoteRow[] = (sqResult.data || []).map(normalizeSavedQuote);
@@ -198,7 +201,8 @@ const AdminQuotes = () => {
       merged = merged.filter(r =>
         (r.customer_name || '').toLowerCase().includes(q) ||
         (r.customer_email || '').toLowerCase().includes(q) ||
-        (r._motor_info || '').toLowerCase().includes(q)
+        (r._motor_info || '').toLowerCase().includes(q) ||
+        (r._reference_number || '').toLowerCase().includes(q)
       );
     }
 
@@ -353,6 +357,7 @@ const AdminQuotes = () => {
           <Table>
             <TableHeader>
               <TableRow>
+                <TableHead>Ref #</TableHead>
                 <TableHead>Date</TableHead>
                 <TableHead>Source</TableHead>
                 <TableHead>Customer</TableHead>
@@ -367,10 +372,10 @@ const AdminQuotes = () => {
             </TableHeader>
             <TableBody>
               {loading ? (
-                <TableRow><TableCell colSpan={10}>Loading...</TableCell></TableRow>
+                <TableRow><TableCell colSpan={11}>Loading...</TableCell></TableRow>
               ) : rows.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={10}>{searchQuery ? 'No results matching search.' : 'No quotes found.'}</TableCell>
+                  <TableCell colSpan={11}>{searchQuery ? 'No results matching search.' : 'No quotes found.'}</TableCell>
                 </TableRow>
               ) : (
                 rows.map((r) => {
@@ -382,6 +387,7 @@ const AdminQuotes = () => {
                       className="cursor-pointer"
                       onClick={() => navigate(`/admin/quotes/${r.id}`)}
                     >
+                      <TableCell className="text-xs font-mono font-medium text-primary">{r._reference_number || '-'}</TableCell>
                       <TableCell className="text-xs whitespace-nowrap">{r.created_at ? new Date(r.created_at).toLocaleString() : '-'}</TableCell>
                       <TableCell>{getSourceBadge(r)}</TableCell>
                       <TableCell>
