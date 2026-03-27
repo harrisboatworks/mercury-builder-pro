@@ -1,30 +1,31 @@
 
 
-# Fix: Build Error from Deno Edge Function Imports
+# Simplify Trade-In Form to Reduce Abandonment
 
-## Problem
-The Vite/TypeScript build is picking up `supabase/functions/audit-price-list/index.ts` and trying to resolve `npm:resend@2.0.0` through Node's module system. Deno-style `npm:` specifiers aren't valid in a Vite/Node context.
+## Changes
 
-## Root Cause
-`tsconfig.app.json` has `"include": ["src"]` which should exclude `supabase/`, but the TypeScript project references or file discovery is still finding edge function files.
+### 1. Make "Skip" the visually dominant default
+- Swap card order: "No trade-in" first (left on desktop, top on mobile)
+- Add subtle hint: "Most customers skip this step"
+- Replace AlertTriangle icon with ArrowRight
 
-## Fix
+### 2. Collapse optional fields (except Engine Type)
+- Keep visible: Brand, Year, HP, Condition, **Engine Type** (5 fields)
+- Collapse behind "Add more details for a better estimate": Start Type, Model, Engine Hours, Serial Number
 
-### `tsconfig.app.json`
-Add an explicit `exclude` array:
-```json
-"exclude": ["supabase"]
-```
+### 3. Auto-estimate when required fields are filled
+- Remove manual "Get Trade-In Estimate" button
+- Auto-trigger estimate when brand + year + HP + condition are all filled (same loading animation)
 
-### `tsconfig.node.json` (if needed)
-Also add `"exclude": ["supabase"]` if this file doesn't already exclude it.
+### 4. Pre-select "Good" condition visually
+- Ensure the default `'good'` value renders as selected on load
 
-This tells TypeScript to completely ignore the Deno edge function files during the Vite build. The edge functions are deployed separately by Supabase and don't need Vite's type checking.
+## What Does NOT Change
+- Valuation algorithm, data structure, pre-fill logic, audit fields — all untouched
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `tsconfig.app.json` | Add `"exclude": ["supabase"]` |
-| `tsconfig.node.json` | Add `"exclude": ["supabase"]` if not already excluded |
+| `src/components/quote-builder/TradeInValuation.tsx` | Reorder cards, collapse 4 optional fields (keep engine type visible), auto-estimate, swap icon |
 
