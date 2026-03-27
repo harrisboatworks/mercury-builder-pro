@@ -4,10 +4,11 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
 import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, DollarSign, AlertTriangle, CheckCircle2, CircleCheck, AlertCircle, Wrench } from 'lucide-react';
+import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, Wrench, ChevronDown } from 'lucide-react';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig } from '@/lib/trade-valuation';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useTradeValuationData } from '@/hooks/useTradeValuationData';
@@ -25,8 +26,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
   const [showValidation, setShowValidation] = useState(false);
+  const [moreDetailsOpen, setMoreDetailsOpen] = useState(false);
   const formRef = useRef<HTMLDivElement>(null);
   const { triggerHaptic } = useHapticFeedback();
+  const autoEstimateTriggered = useRef(false);
   
   // Fetch trade valuation data from Supabase (with fallback to hardcoded values)
   const { data: valuationData } = useTradeValuationData();
@@ -50,6 +53,34 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     }
   }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, showValidation]);
 
+  // Auto-estimate when all required fields are filled
+  useEffect(() => {
+    if (!tradeInInfo.hasTradeIn) {
+      autoEstimateTriggered.current = false;
+      return;
+    }
+    
+    const { brand, year, horsepower, condition } = tradeInInfo;
+    const allFilled = brand && year && horsepower && condition;
+    
+    if (allFilled && !isLoading && !estimate && !autoEstimateTriggered.current) {
+      autoEstimateTriggered.current = true;
+      handleGetEstimate();
+    }
+  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, tradeInInfo.hasTradeIn]);
+
+  // Reset auto-estimate flag when estimate is cleared (fields changed after estimate)
+  useEffect(() => {
+    if (estimate) {
+      // If any required field changes after estimate, clear estimate and allow re-trigger
+      const handler = () => {
+        setEstimate(null);
+        autoEstimateTriggered.current = false;
+      };
+      // We don't actually need this effect — the auto-estimate useEffect handles re-triggering
+    }
+  }, []);
+
   // Check if required fields are missing
   const missingFields = {
     brand: !tradeInInfo.brand,
@@ -58,15 +89,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     condition: !tradeInInfo.condition
   };
   const hasMissingFields = Object.values(missingFields).some(Boolean);
-
-  const handleValidatedEstimate = () => {
-    if (hasMissingFields) {
-      setShowValidation(true);
-      return;
-    }
-    handleGetEstimate();
-  };
-
 
   const brandOptions = [
     'Mercury', 'Yamaha', 'Honda', 'Suzuki', 'Tohatsu', 'Evinrude', 'Johnson', 'OMC', 'Mariner', 'Force', 'Other'
@@ -83,7 +105,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   ];
 
   const handleGetEstimate = async () => {
-    console.log('Button clicked - Current tradeInInfo:', tradeInInfo);
+    console.log('Auto-estimating - Current tradeInInfo:', tradeInInfo);
     
     if (!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition) {
       console.log('Missing required fields:', {
@@ -167,37 +189,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
             <div className="flex flex-col gap-4 mt-6">
               <p className="text-lg font-light text-gray-900">Do you have a motor to trade?</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.02, y: -4 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => {
-                    triggerHaptic('light');
-                    onTradeInChange({
-                      hasTradeIn: true,
-                      brand: '',
-                      year: 0,
-                      horsepower: 0,
-                      model: '',
-                      serialNumber: '',
-                      condition: 'good' as const,
-                      estimatedValue: 0,
-                      confidenceLevel: 'medium' as const
-                    });
-                  }}
-                  aria-pressed={tradeInInfo.hasTradeIn}
-                  className={`relative p-6 border-2 rounded-sm transition-all duration-300 bg-white text-left group premium-lift ${
-                    tradeInInfo.hasTradeIn 
-                      ? 'border-gray-900 shadow-xl premium-selected' 
-                      : 'border-gray-300 hover:border-gray-900 hover:shadow-xl'
-                  }`}
-                  type="button"
-                >
-                  <CheckCircle2 className={`w-6 h-6 mb-3 transition-transform ${
-                    tradeInInfo.hasTradeIn ? 'text-gray-900 animate-check-pop' : 'text-gray-400'
-                  }`} />
-                  <div className="font-light text-lg text-gray-900 tracking-wide">Yes, I have a trade-in</div>
-                  <div className="text-sm font-normal text-gray-700 mt-1">We'll estimate your value instantly</div>
-                </motion.button>
+                {/* "No trade-in" card first */}
                 <motion.button
                   whileHover={{ scale: 1.02, y: -4 }}
                   whileTap={{ scale: 0.98 }}
@@ -254,11 +246,47 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   }`}
                   type="button"
                 >
-                  <AlertTriangle className={`w-6 h-6 mb-3 transition-transform ${
+                  <ArrowRight className={`w-6 h-6 mb-3 transition-transform ${
                     !tradeInInfo.hasTradeIn ? 'text-gray-900' : 'text-gray-400'
                   }`} />
                   <div className="font-light text-lg text-gray-900 tracking-wide">No trade-in</div>
-                  <div className="text-sm font-normal text-gray-700 mt-1">Skip valuation and continue</div>
+                  <div className="text-sm font-normal text-gray-700 mt-1">Skip and continue</div>
+                  <div className="text-xs font-normal text-gray-500 mt-2">Most customers skip this step</div>
+                </motion.button>
+
+                {/* "Yes" card second */}
+                <motion.button
+                  whileHover={{ scale: 1.02, y: -4 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => {
+                    triggerHaptic('light');
+                    setEstimate(null);
+                    autoEstimateTriggered.current = false;
+                    onTradeInChange({
+                      hasTradeIn: true,
+                      brand: '',
+                      year: 0,
+                      horsepower: 0,
+                      model: '',
+                      serialNumber: '',
+                      condition: 'good' as const,
+                      estimatedValue: 0,
+                      confidenceLevel: 'medium' as const
+                    });
+                  }}
+                  aria-pressed={tradeInInfo.hasTradeIn}
+                  className={`relative p-6 border-2 rounded-sm transition-all duration-300 bg-white text-left group premium-lift ${
+                    tradeInInfo.hasTradeIn 
+                      ? 'border-gray-900 shadow-xl premium-selected' 
+                      : 'border-gray-300 hover:border-gray-900 hover:shadow-xl'
+                  }`}
+                  type="button"
+                >
+                  <CheckCircle2 className={`w-6 h-6 mb-3 transition-transform ${
+                    tradeInInfo.hasTradeIn ? 'text-gray-900 animate-check-pop' : 'text-gray-400'
+                  }`} />
+                  <div className="font-light text-lg text-gray-900 tracking-wide">Yes, I have a trade-in</div>
+                  <div className="text-sm font-normal text-gray-700 mt-1">We'll estimate your value instantly</div>
                 </motion.button>
               </div>
             </div>
@@ -285,7 +313,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
               )}
               
-              {/* Trade-In Details */}
+              {/* Required fields: Brand, Year, HP, Engine Type */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <Label htmlFor="trade-brand" className="text-sm font-light tracking-wide text-gray-900">
@@ -293,7 +321,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   </Label>
                   <Select 
                     value={tradeInInfo.brand} 
-                    onValueChange={(value) => onTradeInChange({ ...tradeInInfo, brand: value })}
+                    onValueChange={(value) => {
+                      setEstimate(null);
+                      autoEstimateTriggered.current = false;
+                      onTradeInChange({ ...tradeInInfo, brand: value });
+                    }}
                   >
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.brand 
@@ -314,49 +346,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-engine-type" className="text-sm font-light tracking-wide text-gray-900">
-                    Engine Type
-                  </Label>
-                  <Select 
-                    value={tradeInInfo.engineType || ''} 
-                    onValueChange={(value) => onTradeInChange({ ...tradeInInfo, engineType: value as TradeInInfo['engineType'] })}
-                  >
-                    <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
-                      <SelectValue placeholder="Select engine type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="4-stroke" className="font-light">4-Stroke</SelectItem>
-                      <SelectItem value="2-stroke" className="font-light">2-Stroke</SelectItem>
-                      <SelectItem value="optimax" className="font-light">OptiMax</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="trade-start-type" className="text-sm font-light tracking-wide text-gray-900">
-                    Start Type
-                  </Label>
-                  <Select 
-                    value={tradeInInfo.startType || ''} 
-                    onValueChange={(value) => onTradeInChange({ ...tradeInInfo, startType: value as TradeInInfo['startType'] })}
-                  >
-                    <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
-                      <SelectValue placeholder="Manual (default)" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="manual" className="font-light">Manual (Pull Start)</SelectItem>
-                      <SelectItem value="electric" className="font-light">Electric Start</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2">
                   <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-gray-900">
                     Year *
                   </Label>
                   <Select 
                     value={tradeInInfo.year?.toString() || ''} 
-                    onValueChange={(value) => onTradeInChange({ ...tradeInInfo, year: parseInt(value) })}
+                    onValueChange={(value) => {
+                      setEstimate(null);
+                      autoEstimateTriggered.current = false;
+                      onTradeInChange({ ...tradeInInfo, year: parseInt(value) });
+                    }}
                   >
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.year 
@@ -385,7 +384,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     type="number"
                     step="0.1"
                     value={tradeInInfo.horsepower || ''}
-                    onChange={(e) => onTradeInChange({ ...tradeInInfo, horsepower: parseFloat(e.target.value) || 0 })}
+                    onChange={(e) => {
+                      setEstimate(null);
+                      autoEstimateTriggered.current = false;
+                      onTradeInChange({ ...tradeInInfo, horsepower: parseFloat(e.target.value) || 0 });
+                    }}
                     placeholder="e.g., 9.9 or 115"
                     min="1"
                     max="600"
@@ -401,50 +404,26 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-gray-900">
-                    Model (Optional)
+                  <Label htmlFor="trade-engine-type" className="text-sm font-light tracking-wide text-gray-900">
+                    Engine Type
                   </Label>
-                  <Input
-                    id="trade-model"
-                    value={tradeInInfo.model}
-                    onChange={(e) => onTradeInChange({ ...tradeInInfo, model: e.target.value })}
-                    placeholder="e.g., OptiMax Pro XS"
-                    className="min-h-[48px] rounded-sm border-gray-300 font-light"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="trade-hours" className="text-sm font-light tracking-wide text-gray-900">
-                    Engine Hours (Optional)
-                  </Label>
-                  <Input
-                    id="trade-hours"
-                    type="number"
-                    value={tradeInInfo.engineHours || ''}
-                    onChange={(e) => onTradeInChange({ ...tradeInInfo, engineHours: parseFloat(e.target.value) || undefined })}
-                    placeholder="e.g., 250"
-                    min="0"
-                    max="20000"
-                    className="min-h-[48px] rounded-sm border-gray-300 font-light"
-                  />
-                </div>
-
-                {/* Serial Number */}
-                <div className="space-y-2">
-                  <Label htmlFor="trade-serial" className="text-sm font-light tracking-wide text-gray-900">
-                    Serial Number (Optional)
-                  </Label>
-                  <Input
-                    id="trade-serial"
-                    value={tradeInInfo.serialNumber}
-                    onChange={(e) => onTradeInChange({ ...tradeInInfo, serialNumber: e.target.value })}
-                    placeholder="Motor serial number"
-                    className="min-h-[48px] rounded-sm border-gray-300 font-light"
-                  />
+                  <Select 
+                    value={tradeInInfo.engineType || ''} 
+                    onValueChange={(value) => onTradeInChange({ ...tradeInInfo, engineType: value as TradeInInfo['engineType'] })}
+                  >
+                    <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
+                      <SelectValue placeholder="Select engine type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="4-stroke" className="font-light">4-Stroke</SelectItem>
+                      <SelectItem value="2-stroke" className="font-light">2-Stroke</SelectItem>
+                      <SelectItem value="optimax" className="font-light">OptiMax</SelectItem>
+                    </SelectContent>
+                  </Select>
                 </div>
               </div>
 
-              {/* Enhanced Condition Selection */}
+              {/* Condition Selection */}
               <div className="space-y-4">
                 <Label className="text-base font-light tracking-wide text-gray-900">
                   Motor Condition *
@@ -462,7 +441,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                           ? 'border-gray-900 bg-gray-50 shadow-lg premium-selected' 
                           : 'border-gray-300 hover:border-gray-900 hover:shadow-md'
                       }`}
-                      onClick={() => onTradeInChange({ ...tradeInInfo, condition: option.value as any })}
+                      onClick={() => {
+                        setEstimate(null);
+                        autoEstimateTriggered.current = false;
+                        onTradeInChange({ ...tradeInInfo, condition: option.value as any });
+                      }}
                     >
                       <div className="font-light text-lg text-gray-900">{option.label}</div>
                       <div className="text-xs font-normal text-gray-600 mt-1">{option.description}</div>
@@ -474,27 +457,84 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 )}
               </div>
 
-              {/* Get Estimate Button */}
-              <div className="pt-4">
-                <Button
-                  type="button"
-                  onClick={handleValidatedEstimate}
-                  disabled={isLoading}
-                  className="w-full min-h-[56px] text-lg font-light bg-gray-900 hover:bg-gray-800 text-white"
-                >
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                      Calculating...
-                    </>
-                  ) : (
-                    <>
-                      <DollarSign className="w-5 h-5 mr-2" />
-                      Get Trade-In Estimate
-                    </>
-                  )}
-                </Button>
-              </div>
+              {/* Collapsible optional fields */}
+              <Collapsible open={moreDetailsOpen} onOpenChange={setMoreDetailsOpen}>
+                <CollapsibleTrigger className="flex items-center gap-2 text-sm font-light text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${moreDetailsOpen ? 'rotate-180' : ''}`} />
+                  Add more details for a better estimate
+                </CollapsibleTrigger>
+                <CollapsibleContent className="pt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="trade-start-type" className="text-sm font-light tracking-wide text-gray-900">
+                        Start Type
+                      </Label>
+                      <Select 
+                        value={tradeInInfo.startType || ''} 
+                        onValueChange={(value) => onTradeInChange({ ...tradeInInfo, startType: value as TradeInInfo['startType'] })}
+                      >
+                        <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
+                          <SelectValue placeholder="Manual (default)" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="manual" className="font-light">Manual (Pull Start)</SelectItem>
+                          <SelectItem value="electric" className="font-light">Electric Start</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-gray-900">
+                        Model
+                      </Label>
+                      <Input
+                        id="trade-model"
+                        value={tradeInInfo.model}
+                        onChange={(e) => onTradeInChange({ ...tradeInInfo, model: e.target.value })}
+                        placeholder="e.g., OptiMax Pro XS"
+                        className="min-h-[48px] rounded-sm border-gray-300 font-light"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="trade-hours" className="text-sm font-light tracking-wide text-gray-900">
+                        Engine Hours
+                      </Label>
+                      <Input
+                        id="trade-hours"
+                        type="number"
+                        value={tradeInInfo.engineHours || ''}
+                        onChange={(e) => onTradeInChange({ ...tradeInInfo, engineHours: parseFloat(e.target.value) || undefined })}
+                        placeholder="e.g., 250"
+                        min="0"
+                        max="20000"
+                        className="min-h-[48px] rounded-sm border-gray-300 font-light"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="trade-serial" className="text-sm font-light tracking-wide text-gray-900">
+                        Serial Number
+                      </Label>
+                      <Input
+                        id="trade-serial"
+                        value={tradeInInfo.serialNumber}
+                        onChange={(e) => onTradeInChange({ ...tradeInInfo, serialNumber: e.target.value })}
+                        placeholder="Motor serial number"
+                        className="min-h-[48px] rounded-sm border-gray-300 font-light"
+                      />
+                    </div>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* Loading indicator for auto-estimate */}
+              {isLoading && (
+                <div className="pt-4 flex items-center justify-center gap-3 text-gray-600">
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <span className="text-lg font-light">Calculating your estimate...</span>
+                </div>
+              )}
 
               {/* Database Estimate Result */}
               {estimate && (
