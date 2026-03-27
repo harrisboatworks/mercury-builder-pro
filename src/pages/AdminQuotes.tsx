@@ -46,6 +46,7 @@ interface UnifiedQuoteRow {
   _motor_info?: string;
   _deposit_status?: string | null;
   _is_soft_lead?: boolean;
+  _reference_number?: string | null;
 }
 
 const AdminQuotes = () => {
@@ -112,6 +113,7 @@ const AdminQuotes = () => {
       _motor_info: motorInfo,
       _deposit_status: sq.deposit_status,
       _is_soft_lead: isSoftLead || isAnonymous,
+      _reference_number: sq.reference_number || null,
     };
   };
 
@@ -153,6 +155,7 @@ const AdminQuotes = () => {
       _motor_info: '',
       _deposit_status: null,
       _is_soft_lead: false,
+      _reference_number: null,
     }));
 
     const sqRows: UnifiedQuoteRow[] = (sqResult.data || []).map(normalizeSavedQuote);
