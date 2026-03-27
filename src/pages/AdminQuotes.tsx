@@ -372,10 +372,10 @@ const AdminQuotes = () => {
             </TableHeader>
             <TableBody>
               {loading ? (
-                <TableRow><TableCell colSpan={10}>Loading...</TableCell></TableRow>
+                <TableRow><TableCell colSpan={11}>Loading...</TableCell></TableRow>
               ) : rows.length === 0 ? (
                 <TableRow>
-                  <TableCell colSpan={10}>{searchQuery ? 'No results matching search.' : 'No quotes found.'}</TableCell>
+                  <TableCell colSpan={11}>{searchQuery ? 'No results matching search.' : 'No quotes found.'}</TableCell>
                 </TableRow>
               ) : (
                 rows.map((r) => {
@@ -387,6 +387,7 @@ const AdminQuotes = () => {
                       className="cursor-pointer"
                       onClick={() => navigate(`/admin/quotes/${r.id}`)}
                     >
+                      <TableCell className="text-xs font-mono font-medium text-primary">{r._reference_number || '-'}</TableCell>
                       <TableCell className="text-xs whitespace-nowrap">{r.created_at ? new Date(r.created_at).toLocaleString() : '-'}</TableCell>
                       <TableCell>{getSourceBadge(r)}</TableCell>
                       <TableCell>
