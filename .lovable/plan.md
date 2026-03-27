@@ -1,39 +1,40 @@
 
 
-# Fix RLS on Both `promotions_rules` AND `promotions` Tables
+# Fix Remaining Stale RLS Policies on promotions_rules (and promotions)
 
-## Problem
+## Root Cause
 
-The scanner still flags both tables because:
-- **`promotions`** table was never cleaned up — it still has the original permissive policies (`auth.uid() IS NOT NULL`) from an early migration, plus stale `is_admin()` policies
-- **`promotions_rules`** may have duplicate policies (old `is_admin()` ones coexisting with the new `has_role()` ones)
+Previous cleanup migrations dropped policies by name, but **missed the exact names** used in the original `20250811` migration:
 
-Multiple overlapping policies on the same table are OR'd together in Postgres — so one permissive policy defeats all restrictive ones.
+| Policy name that EXISTS in DB | Was it dropped? |
+|------|------|
+| `Admins can insert promotions_rules` (uses `is_admin()`) | **No** — cleanup looked for "promotion rules" not "promotions_rules" |
+| `Admins can update promotions_rules` (uses `is_admin()`) | **No** |
+| `Admins can delete promotions_rules` (uses `is_admin()`) | **No** |
+| `Public read access for promotions_rules` | **No** (harmless SELECT, but should be cleaned for clarity) |
+
+These stale `is_admin()` policies are OR'd with the new `has_role()` ones, and since `is_admin()` may also be permissive, the scanner keeps flagging it.
 
 ## Fix
 
-One new migration that:
+One new migration that drops every remaining stale policy name variant on both tables, ensuring only the clean `has_role()` policies survive.
 
-1. Drops ALL existing write policies on **both** tables (by every name variant that's ever been used)
-2. Drops any stale SELECT policies to avoid duplicates
-3. Creates clean policies using `has_role(auth.uid(), 'admin'::app_role)`
+### Policies to drop (promotions_rules)
+- `Admins can insert promotions_rules`
+- `Admins can update promotions_rules`
+- `Admins can delete promotions_rules`
+- `Public read access for promotions_rules`
 
-| Table | Operation | Access |
-|-------|-----------|--------|
-| `promotions` | SELECT | Any authenticated user |
-| `promotions` | INSERT | Admin only |
-| `promotions` | UPDATE | Admin only |
-| `promotions` | DELETE | Admin only |
-| `promotions_rules` | SELECT | Any authenticated user |
-| `promotions_rules` | INSERT | Admin only |
-| `promotions_rules` | UPDATE | Admin only |
-| `promotions_rules` | DELETE | Admin only |
+### Policies to drop (promotions — belt-and-suspenders)
+- `Admins can insert promotions` (old `is_admin()` version, if still present)
+- `Admins can update promotions` (old `is_admin()` version)
+- `Admins can delete promotions` (old `is_admin()` version)
+
+After dropping, the only surviving policies will be the ones created in `20260327205925` using `has_role()`.
 
 ## File
 
 | File | Change |
 |------|--------|
-| New migration | Drop all old policies on both tables, recreate with `has_role()` |
-
-After this, mark the `promotions_rules_any_authenticated_user_write` finding as resolved.
+| New migration | `DROP POLICY IF EXISTS` for every missed name variant on both tables |
 
