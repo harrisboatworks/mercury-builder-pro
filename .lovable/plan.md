@@ -1,43 +1,25 @@
 
 
-# Fix BreadcrumbList "Missing itemListElement" Across All SEO Components
+# Generate Trade-In Valuation Rules Document
 
-## Problem
-Google Search Console reports a critical error on `/faq`: the BreadcrumbList schema is missing `itemListElement`. The data is actually present, but GSC fails to resolve `@id` references when the BreadcrumbList is a separate `@graph` node. The working pages (Promotions, Financing, Motor Selection) all inline the BreadcrumbList directly inside the WebPage's `breadcrumb` property.
+## Task
+Create a comprehensive markdown reference document at `/mnt/documents/trade-in-valuation-rules.md` summarizing all trade-in valuation logic, brand penalties, adjustments, floors, and configuration options currently implemented in the system.
 
-## Fix
-Move the BreadcrumbList from a standalone `@graph` node into the WebPage's `breadcrumb` property for all 7 affected SEO components. Also add `breadcrumb` references where the WebPage node is missing one.
+## Content to Include
 
-## Affected Files
+1. **Two valuation paths**: MSRP-anchored (Mercury only, 1-20 years old) and Bracket-based (all brands, fallback)
+2. **MSRP anchor logic**: Median selling price by default, Max selling price for electric-start motors
+3. **Age brackets**: 1-3yr, 4-7yr, 8-12yr, 13-17yr, 18-20yr (MSRP path); 5-year ranges for bracket path
+4. **Brand penalties**: Mercury (1.0), Yamaha (0.92), Honda/Suzuki/Tohatsu (0.7), Johnson/Evinrude/OMC/Mariner/Force/Other (0.5)
+5. **Engine type adjustments**: 2-stroke/OptiMax penalty (default 17.5%)
+6. **Engine hours adjustments**: ≤100h bonus (+7.5%), 500-999h moderate penalty (-10%), 1000h+ severe penalty (-17.5%)
+7. **HP-class floors**: Under 25HP ($200), 25-75HP ($1,000), 90-150HP ($1,500), 200HP+ ($2,500)
+8. **Mercury bonus**: 10% bonus for motors under 3 years old (bracket path only)
+9. **Confidence levels**: High/Medium/Low based on age and HP match accuracy
+10. **Range calculation**: ±15% around base value, median rounded to nearest $25
+11. **Pre-2005 motors**: Generic age-based formula with heavier depreciation
+12. **Database configurability**: All values adjustable via `trade_valuation_config` table
 
-| File | Current Issue |
-|------|--------------|
-| `FAQPageSEO.tsx` | Separate @graph node; WebPage references via @id but GSC doesn't resolve it |
-| `HomepageSEO.tsx` | Separate @graph node; WebPage has no `breadcrumb` property at all |
-| `ContactPageSEO.tsx` | Separate @graph node; WebPage has no `breadcrumb` property |
-| `FinanceCalculatorSEO.tsx` | Separate @graph node; WebPage has no `breadcrumb` property |
-| `BlogIndexSEO.tsx` | Separate @graph node; CollectionPage has no `breadcrumb` property |
-| `BlogSEO.tsx` | Separate @graph node; WebPage has no `breadcrumb` property |
-| `RepowerPageSEO.tsx` | Separate @graph node; no WebPage node exists at all |
-
-## Change Pattern (same for each file)
-
-1. Remove the BreadcrumbList object from the `@graph` array
-2. Inline it as the `breadcrumb` property on the WebPage (or CollectionPage) node
-3. For RepowerPageSEO: also add a WebPage node to hold the breadcrumb
-
-```text
-BEFORE:
-@graph: [
-  { "@type": "WebPage", ... },
-  { "@type": "BreadcrumbList", "@id": "...#breadcrumblist", "itemListElement": [...] }
-]
-
-AFTER:
-@graph: [
-  { "@type": "WebPage", ..., "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [...] } }
-]
-```
-
-No content changes, no new fields — just restructuring so Google can find `itemListElement` without needing to resolve `@id` cross-references.
+## File
+`/mnt/documents/trade-in-valuation-rules.md` — generated via script
 
