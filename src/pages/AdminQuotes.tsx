@@ -201,7 +201,8 @@ const AdminQuotes = () => {
       merged = merged.filter(r =>
         (r.customer_name || '').toLowerCase().includes(q) ||
         (r.customer_email || '').toLowerCase().includes(q) ||
-        (r._motor_info || '').toLowerCase().includes(q)
+        (r._motor_info || '').toLowerCase().includes(q) ||
+        (r._reference_number || '').toLowerCase().includes(q)
       );
     }
 
@@ -356,6 +357,7 @@ const AdminQuotes = () => {
           <Table>
             <TableHeader>
               <TableRow>
+                <TableHead>Ref #</TableHead>
                 <TableHead>Date</TableHead>
                 <TableHead>Source</TableHead>
                 <TableHead>Customer</TableHead>
