@@ -1,29 +1,43 @@
 
 
-# Upgrade Saved-Quote Email to Professional Branded Template
+# Fix BreadcrumbList "Missing itemListElement" Across All SEO Components
 
 ## Problem
-The `send-saved-quote-email` edge function uses raw inline HTML — no branding, no logos, no trust badges. Meanwhile, a polished `createBrandedEmailTemplate()` already exists in `_shared/email-template.ts` with Harris Boat Works + Mercury logos, gradient header, trust badges, and responsive styling.
+Google Search Console reports a critical error on `/faq`: the BreadcrumbList schema is missing `itemListElement`. The data is actually present, but GSC fails to resolve `@id` references when the BreadcrumbList is a separate `@graph` node. The working pages (Promotions, Financing, Motor Selection) all inline the BreadcrumbList directly inside the WebPage's `breadcrumb` property.
 
-## Changes
+## Fix
+Move the BreadcrumbList from a standalone `@graph` node into the WebPage's `breadcrumb` property for all 7 affected SEO components. Also add `breadcrumb` references where the WebPage node is missing one.
 
-### `supabase/functions/send-saved-quote-email/index.ts`
-- Import `createBrandedEmailTemplate` and `createButtonHtml` from `_shared/email-template.ts`
-- Replace the raw HTML with branded template wrapping professional content:
-  - Personalized greeting with customer name
-  - Quote summary box showing motor model, total price, and quote reference number
-  - Prominent "View Your Saved Quote" CTA button
-  - Account access section (when `includeAccountInfo` is true) — styled consistently
-  - "Next Steps" section: brief bullets (review online, contact us, financing available)
-  - Valid-for-30-days notice
-- Fix the footer text from "financing application" to "quote configuration" (currently wrong copy)
-- Use CAD formatting (`en-CA`, `CAD`) instead of USD since this is a Canadian business
+## Affected Files
 
-No client-side changes needed — the caller already passes all required data.
+| File | Current Issue |
+|------|--------------|
+| `FAQPageSEO.tsx` | Separate @graph node; WebPage references via @id but GSC doesn't resolve it |
+| `HomepageSEO.tsx` | Separate @graph node; WebPage has no `breadcrumb` property at all |
+| `ContactPageSEO.tsx` | Separate @graph node; WebPage has no `breadcrumb` property |
+| `FinanceCalculatorSEO.tsx` | Separate @graph node; WebPage has no `breadcrumb` property |
+| `BlogIndexSEO.tsx` | Separate @graph node; CollectionPage has no `breadcrumb` property |
+| `BlogSEO.tsx` | Separate @graph node; WebPage has no `breadcrumb` property |
+| `RepowerPageSEO.tsx` | Separate @graph node; no WebPage node exists at all |
 
-## Files
+## Change Pattern (same for each file)
 
-| File | Change |
-|------|--------|
-| `supabase/functions/send-saved-quote-email/index.ts` | Use branded template, improve content, fix currency |
+1. Remove the BreadcrumbList object from the `@graph` array
+2. Inline it as the `breadcrumb` property on the WebPage (or CollectionPage) node
+3. For RepowerPageSEO: also add a WebPage node to hold the breadcrumb
+
+```text
+BEFORE:
+@graph: [
+  { "@type": "WebPage", ... },
+  { "@type": "BreadcrumbList", "@id": "...#breadcrumblist", "itemListElement": [...] }
+]
+
+AFTER:
+@graph: [
+  { "@type": "WebPage", ..., "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [...] } }
+]
+```
+
+No content changes, no new fields — just restructuring so Google can find `itemListElement` without needing to resolve `@id` cross-references.
 
