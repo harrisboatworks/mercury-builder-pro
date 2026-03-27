@@ -1,39 +1,30 @@
 
 
-# Fix: Static Files Returning 404 Due to PWA Service Worker
+# Fix: Build Error from Deno Edge Function Imports
+
+## Problem
+The Vite/TypeScript build is picking up `supabase/functions/audit-price-list/index.ts` and trying to resolve `npm:resend@2.0.0` through Node's module system. Deno-style `npm:` specifiers aren't valid in a Vite/Node context.
 
 ## Root Cause
-
-In `vite.config.ts`, the PWA workbox config has:
-```
-navigateFallback: '/index.html',
-navigateFallbackDenylist: [/^\/api/, /^\/rest/]
-```
-
-This means the service worker intercepts requests to `/sitemap.xml`, `/rss.xml`, `/robots.txt`, `/llms.txt`, and the Google verification HTML file — serving `index.html` instead of the actual static files.
+`tsconfig.app.json` has `"include": ["src"]` which should exclude `supabase/`, but the TypeScript project references or file discovery is still finding edge function files.
 
 ## Fix
 
-### `vite.config.ts` (line 127)
-
-Expand `navigateFallbackDenylist` to exclude all static file paths:
-
-```js
-navigateFallbackDenylist: [
-  /^\/api/,
-  /^\/rest/,
-  /\.xml$/,
-  /\.txt$/,
-  /\.csv$/,
-  /^\/googlebdeec341596163e7\.html$/
-]
+### `tsconfig.app.json`
+Add an explicit `exclude` array:
+```json
+"exclude": ["supabase"]
 ```
 
-This tells the service worker: "Don't intercept requests ending in `.xml`, `.txt`, `.csv`, or the Google verification file — let them through to the server."
+### `tsconfig.node.json` (if needed)
+Also add `"exclude": ["supabase"]` if this file doesn't already exclude it.
+
+This tells TypeScript to completely ignore the Deno edge function files during the Vite build. The edge functions are deployed separately by Supabase and don't need Vite's type checking.
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `vite.config.ts` | Expand `navigateFallbackDenylist` to exclude `.xml`, `.txt`, `.csv`, and verification file |
+| `tsconfig.app.json` | Add `"exclude": ["supabase"]` |
+| `tsconfig.node.json` | Add `"exclude": ["supabase"]` if not already excluded |
 
