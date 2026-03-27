@@ -1,34 +1,29 @@
 
 
-# Prevent Saving Quotes Without Motor Selected
+# Upgrade Saved-Quote Email to Professional Branded Template
 
 ## Problem
-Users can trigger save actions (email quote, save quote button, admin save) even when no motor is selected, resulting in incomplete/useless saved quotes.
+The `send-saved-quote-email` edge function uses raw inline HTML — no branding, no logos, no trust badges. Meanwhile, a polished `createBrandedEmailTemplate()` already exists in `_shared/email-template.ts` with Harris Boat Works + Mercury logos, gradient header, trust badges, and responsive styling.
 
 ## Changes
 
-### 1. `src/components/quote-builder/SaveQuoteDialog.tsx`
-Add a motor check at the top of `handleSave` — if `quoteData` has no motor, show a toast error and return early.
+### `supabase/functions/send-saved-quote-email/index.ts`
+- Import `createBrandedEmailTemplate` and `createButtonHtml` from `_shared/email-template.ts`
+- Replace the raw HTML with branded template wrapping professional content:
+  - Personalized greeting with customer name
+  - Quote summary box showing motor model, total price, and quote reference number
+  - Prominent "View Your Saved Quote" CTA button
+  - Account access section (when `includeAccountInfo` is true) — styled consistently
+  - "Next Steps" section: brief bullets (review online, contact us, financing available)
+  - Valid-for-30-days notice
+- Fix the footer text from "financing application" to "quote configuration" (currently wrong copy)
+- Use CAD formatting (`en-CA`, `CAD`) instead of USD since this is a Canadian business
 
-### 2. `src/components/quote-builder/QuoteDisplay.tsx`
-Add a guard in `handleSaveQuote` — if `quoteData.motor` is null/undefined, show a toast and return.
-
-### 3. `src/components/admin/AdminQuoteControls.tsx`
-Add a guard in `handleSaveQuote` — if `state.motor` is null, show a toast "Please select a motor before saving" and return.
-
-### 4. `src/pages/quote/QuoteSummaryPage.tsx`
-- Disable the "Email Me This Quote" and "Save My Quote" buttons when `!state.motor`, showing a tooltip/message "Select a motor first"
-- Guard the silent soft-lead save (already has `!state.motor` check — confirmed OK)
-- Guard the PDF download `handleDownloadPDF` with the same motor check
-
-Each guard shows: **"Please select a motor before saving your quote."**
+No client-side changes needed — the caller already passes all required data.
 
 ## Files
 
 | File | Change |
 |------|--------|
-| `src/components/quote-builder/SaveQuoteDialog.tsx` | Early return in `handleSave` if no motor in quoteData |
-| `src/components/quote-builder/QuoteDisplay.tsx` | Guard `handleSaveQuote` |
-| `src/components/admin/AdminQuoteControls.tsx` | Guard `handleSaveQuote` with `state.motor` check |
-| `src/pages/quote/QuoteSummaryPage.tsx` | Disable save/email buttons and guard PDF download when no motor |
+| `supabase/functions/send-saved-quote-email/index.ts` | Use branded template, improve content, fix currency |
 
