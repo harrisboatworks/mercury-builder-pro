@@ -31,6 +31,7 @@ export function FAQPageSEO() {
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/faq#breadcrumblist`,
         "itemListElement": [
           {
             "@type": "ListItem",
