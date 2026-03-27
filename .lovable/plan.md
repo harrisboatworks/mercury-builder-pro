@@ -1,25 +1,76 @@
 
 
-# Generate Trade-In Valuation Rules Document
+# Fix Anonymous Quote Visibility + Enhance Download Notifications
 
-## Task
-Create a comprehensive markdown reference document at `/mnt/documents/trade-in-valuation-rules.md` summarizing all trade-in valuation logic, brand penalties, adjustments, floors, and configuration options currently implemented in the system.
+## Current State
 
-## Content to Include
+1. **Anonymous quotes ARE being saved** — every visitor who reaches the summary page gets a "soft lead" record in `saved_quotes` with `email: 'anonymous@soft-lead.local'`. PDF downloads also create a `saved_quotes` record with `email: 'pdf-download@placeholder.com'`.
 
-1. **Two valuation paths**: MSRP-anchored (Mercury only, 1-20 years old) and Bracket-based (all brands, fallback)
-2. **MSRP anchor logic**: Median selling price by default, Max selling price for electric-start motors
-3. **Age brackets**: 1-3yr, 4-7yr, 8-12yr, 13-17yr, 18-20yr (MSRP path); 5-year ranges for bracket path
-4. **Brand penalties**: Mercury (1.0), Yamaha (0.92), Honda/Suzuki/Tohatsu (0.7), Johnson/Evinrude/OMC/Mariner/Force/Other (0.5)
-5. **Engine type adjustments**: 2-stroke/OptiMax penalty (default 17.5%)
-6. **Engine hours adjustments**: ≤100h bonus (+7.5%), 500-999h moderate penalty (-10%), 1000h+ severe penalty (-17.5%)
-7. **HP-class floors**: Under 25HP ($200), 25-75HP ($1,000), 90-150HP ($1,500), 200HP+ ($2,500)
-8. **Mercury bonus**: 10% bonus for motors under 3 years old (bracket path only)
-9. **Confidence levels**: High/Medium/Low based on age and HP match accuracy
-10. **Range calculation**: ±15% around base value, median rounded to nearest $25
-11. **Pre-2005 motors**: Generic age-based formula with heavier depreciation
-12. **Database configurability**: All values adjustable via `trade_valuation_config` table
+2. **Admin SMS IS firing on download** (lines 658-672 of QuoteSummaryPage) — it sends motor model, HP, total price, trade-in info, and promo selection. But it does NOT include a link to view the quote.
 
-## File
-`/mnt/documents/trade-in-valuation-rules.md` — generated via script
+3. **Admin Quotes page only queries `customer_quotes`** — it never touches `saved_quotes`, so anonymous quotes, soft leads, and PDF-download records are completely invisible to you.
+
+## Problems to Fix
+
+- **Admin Quotes page is blind to `saved_quotes`** — the 90HP with 60HP trade-in guy's config is sitting in `saved_quotes` but you can't see it.
+- **SMS notification has no link** — you get a text saying someone downloaded, but can't view their actual quote configuration.
+- **No way to search/filter anonymous quotes** — even once visible, need to find them by motor, HP, date, etc.
+
+## Plan
+
+### 1. Unify Admin Quotes to show both tables
+
+**File: `src/pages/AdminQuotes.tsx`**
+
+- Add a second fetch from `saved_quotes` on load
+- Normalize saved_quotes rows to match the QuoteRow shape:
+  - `quote_state.motor.model` → motor info display
+  - `quote_state.customerName` → customer_name (or "Anonymous")
+  - `email` → customer_email
+  - `deposit_status` → badge indicator
+  - `is_soft_lead` → visual tag
+- Merge both arrays, sort by `created_at` desc
+- Add source badges: "Lead" (customer_quotes), "Saved Quote" (saved_quotes), "Anonymous" (soft leads/pdf downloads)
+- Add a text search input filtering by name, email, motor model across both
+- Clicking a `saved_quotes` row navigates to `/admin/quotes/{id}` — the detail page already resolves both tables via `get-shared-quote`
+
+### 2. Include quote link in the SMS notification
+
+**File: `src/pages/quote/QuoteSummaryPage.tsx`**
+
+In `handleDownloadPDF`, the saved quote ID (`savedForQr?.id`) is already available before the SMS fires. Update the SMS message to append the resume link:
+
+```
+📄 Quote Downloaded!
+Anonymous visitor
+90HP FourStroke
+Total: $12,500 | Trade-in: 2018 Yamaha 60HP
+View: https://mercuryrepower.ca/quote/saved/{id}
+```
+
+This gives you a tappable link in the text message to see their exact configuration instantly.
+
+### 3. Add filter for quote source type
+
+**File: `src/pages/AdminQuotes.tsx`**
+
+Add a dropdown filter alongside existing lead status/source filters:
+- All Quotes
+- Customer Leads (customer_quotes only)
+- Saved Quotes (saved_quotes, non-soft-lead)
+- Anonymous / PDF Downloads (soft leads + pdf-download emails)
+- Deposits (deposit_status = 'paid')
+
+## Files Changed
+
+| File | Change |
+|------|--------|
+| `src/pages/AdminQuotes.tsx` | Fetch both tables, merge, search bar, source badges, filters |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Add saved quote link to SMS message |
+
+## Result
+
+- Every quote config (named or anonymous) visible in admin
+- SMS on download includes a direct link to view the full quote
+- Searchable and filterable by source type
 
