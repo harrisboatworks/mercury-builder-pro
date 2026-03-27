@@ -16,6 +16,7 @@ export function AboutPageSEO() {
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/about#breadcrumblist`,
           "itemListElement": [
             {
               "@type": "ListItem",

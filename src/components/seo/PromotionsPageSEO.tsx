@@ -93,6 +93,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/promotions#breadcrumblist`,
           "itemListElement": [
             {
               "@type": "ListItem",

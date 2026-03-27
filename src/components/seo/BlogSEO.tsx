@@ -63,6 +63,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumblist`,
         "itemListElement": [
           {
             "@type": "ListItem",

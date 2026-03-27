@@ -20,6 +20,7 @@ export function HomepageSEO() {
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/#breadcrumblist`,
         "itemListElement": [
           {
             "@type": "ListItem",

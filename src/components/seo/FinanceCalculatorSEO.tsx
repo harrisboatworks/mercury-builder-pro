@@ -20,6 +20,7 @@ export function FinanceCalculatorSEO() {
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/finance-calculator#breadcrumblist`,
         "itemListElement": [
           {
             "@type": "ListItem",
