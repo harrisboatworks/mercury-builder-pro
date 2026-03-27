@@ -16,6 +16,7 @@ export function FinancingSEO() {
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/financing-application#breadcrumblist`,
           "itemListElement": [
             {
               "@type": "ListItem",

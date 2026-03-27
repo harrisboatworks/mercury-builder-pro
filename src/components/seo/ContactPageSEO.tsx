@@ -20,6 +20,7 @@ export function ContactPageSEO() {
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/contact#breadcrumblist`,
         "itemListElement": [
           {
             "@type": "ListItem",

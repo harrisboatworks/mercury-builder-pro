@@ -21,6 +21,7 @@ export function BlogIndexSEO() {
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/blog#breadcrumblist`,
         "itemListElement": [
           {
             "@type": "ListItem",

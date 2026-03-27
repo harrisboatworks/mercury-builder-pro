@@ -26,6 +26,7 @@ export function MotorSelectionSEO({
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/quote/motor-selection#breadcrumblist`,
           "itemListElement": [
             {
               "@type": "ListItem",

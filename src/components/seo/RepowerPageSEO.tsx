@@ -111,6 +111,7 @@ export function RepowerPageSEO() {
       },
       {
         "@type": "BreadcrumbList",
+        "@id": "https://harrisboatworks.ca/repower#breadcrumblist",
         "itemListElement": [
           {
             "@type": "ListItem",
