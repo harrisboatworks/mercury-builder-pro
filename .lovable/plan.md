@@ -1,29 +1,34 @@
 
 
-# Inspection Results and Cleanup Plan
+# Prevent Saving Quotes Without Motor Selected
 
-## Trade-In Form — Mobile Test Results
+## Problem
+Users can trigger save actions (email quote, save quote button, admin save) even when no motor is selected, resulting in incomplete/useless saved quotes.
 
-Tested the full flow on 375px mobile viewport:
-- "No trade-in" card is primary/first with ArrowRight icon and "Most customers skip this step" hint — working
-- "Yes, I have a trade-in" is secondary — working
-- Form shows 5 visible fields (Brand, Year, HP, Engine Type, Condition) — working
-- "Good" condition is pre-selected visually — working
-- "Add more details for a better estimate" collapsible hides optional fields — working
-- Touch targets are appropriately sized (min-h-[48px] inputs) — good
-- "Skip Trade-In" button in bottom bar — working
-- No layout issues or overflow on mobile
+## Changes
 
-## Control Box and Steering Cable Selection
+### 1. `src/components/quote-builder/SaveQuoteDialog.tsx`
+Add a motor check at the top of `handleSave` — if `quoteData` has no motor, show a toast error and return early.
 
-Already confirmed: these selections are **not shown to users**. The `InstallationConfig` component already auto-completes with `side_mount` controls and `cable` steering for all non-tiller motors. For tiller motors, it only shows the mounting option (bolt vs clamp).
+### 2. `src/components/quote-builder/QuoteDisplay.tsx`
+Add a guard in `handleSaveQuote` — if `quoteData.motor` is null/undefined, show a toast and return.
 
-The `controlChoices` and `steeringChoices` arrays in `visualChoices.ts` are dead code — exported but never imported anywhere.
+### 3. `src/components/admin/AdminQuoteControls.tsx`
+Add a guard in `handleSaveQuote` — if `state.motor` is null, show a toast "Please select a motor before saving" and return.
 
-## Cleanup Change
+### 4. `src/pages/quote/QuoteSummaryPage.tsx`
+- Disable the "Email Me This Quote" and "Save My Quote" buttons when `!state.motor`, showing a tooltip/message "Select a motor first"
+- Guard the silent soft-lead save (already has `!state.motor` check — confirmed OK)
+- Guard the PDF download `handleDownloadPDF` with the same motor check
 
-### `src/config/visualChoices.ts`
-Remove the unused `controlChoices` and `steeringChoices` exports (lines 2-51) and the unused `gaugeChoices` export (lines 53-78). These were part of an earlier multi-step installation flow that was simplified. Removing dead code prevents confusion.
+Each guard shows: **"Please select a motor before saving your quote."**
 
-No functional changes — the quote flow behavior stays exactly the same.
+## Files
+
+| File | Change |
+|------|--------|
+| `src/components/quote-builder/SaveQuoteDialog.tsx` | Early return in `handleSave` if no motor in quoteData |
+| `src/components/quote-builder/QuoteDisplay.tsx` | Guard `handleSaveQuote` |
+| `src/components/admin/AdminQuoteControls.tsx` | Guard `handleSaveQuote` with `state.motor` check |
+| `src/pages/quote/QuoteSummaryPage.tsx` | Disable save/email buttons and guard PDF download when no motor |
 
