@@ -16,25 +16,24 @@ export function ContactPageSEO() {
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": ["h1", ".contact-info"]
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": SITE_URL
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contact",
+              "item": `${SITE_URL}/contact`
+            }
+          ]
         }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${SITE_URL}/contact#breadcrumblist`,
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": SITE_URL
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Contact",
-            "item": `${SITE_URL}/contact`
-          }
-        ]
       },
       {
         "@type": "ContactPage",

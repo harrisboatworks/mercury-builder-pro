@@ -110,22 +110,28 @@ export function RepowerPageSEO() {
         }))
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": "https://harrisboatworks.ca/repower#breadcrumblist",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://harrisboatworks.ca/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Repower",
-            "item": "https://harrisboatworks.ca/repower"
-          }
-        ]
+        "@type": "WebPage",
+        "@id": "https://harrisboatworks.ca/repower#webpage",
+        "url": "https://harrisboatworks.ca/repower",
+        "name": "Mercury Outboard Repower Ontario | Harris Boat Works",
+        "isPartOf": { "@id": "https://harrisboatworks.ca/#website" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://harrisboatworks.ca/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Repower",
+              "item": "https://harrisboatworks.ca/repower"
+            }
+          ]
+        }
       }
     ]
   };
