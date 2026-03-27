@@ -528,6 +528,7 @@ export default function QuoteSummaryPage() {
       // or to the main site for sub-threshold quotes
       const tradeInForQr = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo.estimatedValue || 0) : 0;
       let qrTargetUrl = `${SITE_URL}`;
+      let savedQuoteIdForSms: string | undefined;
       
       // Always save quote and point QR to saved quote page (works for both cash & financing)
       try {
@@ -563,6 +564,7 @@ export default function QuoteSummaryPage() {
           .single();
         if (savedForQr?.id) {
           qrTargetUrl = `${SITE_URL}/quote/saved/${savedForQr.id}`;
+          savedQuoteIdForSms = savedForQr.id;
         }
       } catch (qrSaveErr) {
         console.warn('Could not save quote for QR code:', qrSaveErr);
@@ -662,7 +664,8 @@ export default function QuoteSummaryPage() {
           ? ` | Trade-in: ${state.tradeInInfo.year || ''} ${state.tradeInInfo.brand || ''} ${state.tradeInInfo.horsepower || ''}HP`
           : '';
         const promoNote = state.selectedPromoOption ? ` | Promo: ${state.selectedPromoOption}` : '';
-        const smsMessage = `📄 Quote Downloaded!\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}\nPkg: ${selectedPackageLabel}`;
+        const quoteLink = savedQuoteIdForSms ? `\nView: https://mercuryrepower.ca/quote/saved/${savedQuoteIdForSms}` : '';
+        const smsMessage = `📄 Quote Downloaded!\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}\nPkg: ${selectedPackageLabel}${quoteLink}`;
         
         await supabase.functions.invoke('send-sms', {
           body: { to: 'admin', message: smsMessage }
