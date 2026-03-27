@@ -2303,6 +2303,7 @@ export type Database = {
           last_accessed: string | null
           quote_pdf_path: string | null
           quote_state: Json
+          reference_number: string | null
           resume_token: string
           session_id: string | null
           updated_at: string | null
@@ -2324,6 +2325,7 @@ export type Database = {
           last_accessed?: string | null
           quote_pdf_path?: string | null
           quote_state: Json
+          reference_number?: string | null
           resume_token: string
           session_id?: string | null
           updated_at?: string | null
@@ -2345,6 +2347,7 @@ export type Database = {
           last_accessed?: string | null
           quote_pdf_path?: string | null
           quote_state?: Json
+          reference_number?: string | null
           resume_token?: string
           session_id?: string | null
           updated_at?: string | null
