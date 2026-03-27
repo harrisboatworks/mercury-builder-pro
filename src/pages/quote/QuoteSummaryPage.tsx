@@ -564,6 +564,7 @@ export default function QuoteSummaryPage() {
           .single();
         if (savedForQr?.id) {
           qrTargetUrl = `${SITE_URL}/quote/saved/${savedForQr.id}`;
+          savedQuoteIdForSms = savedForQr.id;
         }
       } catch (qrSaveErr) {
         console.warn('Could not save quote for QR code:', qrSaveErr);
@@ -663,7 +664,7 @@ export default function QuoteSummaryPage() {
           ? ` | Trade-in: ${state.tradeInInfo.year || ''} ${state.tradeInInfo.brand || ''} ${state.tradeInInfo.horsepower || ''}HP`
           : '';
         const promoNote = state.selectedPromoOption ? ` | Promo: ${state.selectedPromoOption}` : '';
-        const quoteLink = savedForQr?.id ? `\nView: https://mercuryrepower.ca/quote/saved/${savedForQr.id}` : '';
+        const quoteLink = savedQuoteIdForSms ? `\nView: https://mercuryrepower.ca/quote/saved/${savedQuoteIdForSms}` : '';
         const smsMessage = `📄 Quote Downloaded!\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}\nPkg: ${selectedPackageLabel}${quoteLink}`;
         
         await supabase.functions.invoke('send-sms', {
