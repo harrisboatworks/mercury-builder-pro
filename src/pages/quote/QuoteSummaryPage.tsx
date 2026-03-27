@@ -509,7 +509,13 @@ export default function QuoteSummaryPage() {
   const { payment: monthlyPayment, termMonths, rate: financingRate } = calculateMonthlyPayment(amountToFinance, promo?.rate || null);
 
   // CTA handlers
+  const noMotorSelected = !state.motor;
+
   const handleDownloadPDF = async () => {
+    if (noMotorSelected) {
+      toast({ title: 'No motor selected', description: 'Please select a motor before downloading a PDF.', variant: 'destructive' });
+      return;
+    }
     setIsGeneratingPDF(true);
     
     try {
@@ -1088,6 +1094,8 @@ export default function QuoteSummaryPage() {
                       variant="outline"
                       className="w-full"
                       size="lg"
+                      disabled={noMotorSelected}
+                      title={noMotorSelected ? 'Select a motor first' : undefined}
                     >
                       <Download className="w-4 h-4 mr-2" />
                       Save for Later
@@ -1097,7 +1105,8 @@ export default function QuoteSummaryPage() {
                       variant="outline"
                       className="w-full"
                       size="lg"
-                      disabled={isGeneratingPDF}
+                      disabled={isGeneratingPDF || noMotorSelected}
+                      title={noMotorSelected ? 'Select a motor first' : undefined}
                     >
                       <Download className="w-4 h-4 mr-2" />
                       {isGeneratingPDF ? 'PDF' : 'Download PDF'}

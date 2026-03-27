@@ -296,6 +296,10 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
   };
 
   const handleSaveQuote = async () => {
+    if (!quoteData?.motor) {
+      toast({ title: 'No motor selected', description: 'Please select a motor before saving your quote.', variant: 'destructive' });
+      return;
+    }
     if (!user) {
       setAuthModalMode('signup');
       setShowAuthModal(true);
