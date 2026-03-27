@@ -649,6 +649,22 @@ export default function QuoteSummaryPage() {
       const pdfUrl = await generateQuotePDF(pdfData);
       await downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
       
+      // Notify admin via SMS about the PDF download
+      try {
+        const customerLabel = state.customerName || state.customerEmail || 'Anonymous visitor';
+        const tradeInNote = state.tradeInInfo?.hasTradeIn 
+          ? ` | Trade-in: ${state.tradeInInfo.year || ''} ${state.tradeInInfo.brand || ''} ${state.tradeInInfo.horsepower || ''}HP`
+          : '';
+        const promoNote = state.selectedPromoOption ? ` | Promo: ${state.selectedPromoOption}` : '';
+        const smsMessage = `📄 Quote Downloaded!\n${customerLabel}\n${hp}HP ${motorName}\nTotal: $${packageTotal.toLocaleString('en-CA', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}${tradeInNote}${promoNote}\nPkg: ${selectedPackageLabel}`;
+        
+        await supabase.functions.invoke('send-sms', {
+          body: { to: 'admin', message: smsMessage }
+        });
+      } catch (smsErr) {
+        console.warn('Admin SMS notification failed:', smsErr);
+      }
+      
     } catch (error) {
       console.error('PDF generation error:', error);
       toast({
