@@ -128,11 +128,32 @@ function formatPriceForVoice(price: number | null | undefined): string | null {
   }
 }
 
+// Resolve selling price: sale_price → dealer_price (if < msrp) → base_price → msrp
+function getVoiceSellingPrice(m: Record<string, unknown>): number | null {
+  const msrp = (m.msrp as number) || null;
+  const salePrice = (m.sale_price as number) || null;
+  const dealerPrice = (m.dealer_price as number) || null;
+  const basePrice = (m.base_price as number) || null;
+  if (salePrice) return salePrice;
+  if (dealerPrice && msrp && dealerPrice < msrp) return dealerPrice;
+  if (basePrice) return basePrice;
+  return msrp;
+}
+
 // Build motor object with parsed configuration
 function buildMotorResponse(m: Record<string, unknown>) {
   const modelDisplay = (m.model_display || m.model) as string;
   const config = parseMotorConfig(modelDisplay);
-  const price = (m.msrp || m.dealer_price) as number | null;
+  
+  // Use selling price hierarchy: sale_price → dealer_price (if < msrp) → base_price → msrp
+  const msrp = m.msrp as number | null;
+  const salePrice = m.sale_price as number | null;
+  const dealerPrice = m.dealer_price as number | null;
+  const basePrice = m.base_price as number | null;
+  const price = salePrice 
+    || (dealerPrice && msrp && dealerPrice < msrp ? dealerPrice : null)
+    || basePrice 
+    || msrp;
   
   return {
     model: modelDisplay,
@@ -225,7 +246,7 @@ serve(async (req) => {
         // Search inventory by horsepower, family, stock status
         let query = supabase
           .from("motor_models")
-          .select("id, model, model_display, horsepower, family, in_stock, stock_quantity, msrp, dealer_price, availability")
+          .select("id, model, model_display, horsepower, family, in_stock, stock_quantity, msrp, sale_price, dealer_price, base_price, availability")
           .order("horsepower", { ascending: true });
 
         // ROBUST PARAM PARSING: Handle cases where ElevenLabs sends params incorrectly
@@ -427,7 +448,7 @@ serve(async (req) => {
         // Get all in-stock motors
         const { data, error } = await supabase
           .from("motor_models")
-          .select("model, model_display, horsepower, family, stock_quantity, msrp")
+          .select("model, model_display, horsepower, family, stock_quantity, msrp, sale_price, dealer_price, base_price, in_stock")
           .eq("in_stock", true)
           .gt("stock_quantity", 0)
           .order("horsepower", { ascending: true })
@@ -544,7 +565,7 @@ serve(async (req) => {
         
         const { data: motors, error } = await supabase
           .from("motor_models")
-          .select("id, model, model_display, horsepower, family, msrp, dealer_price, in_stock, stock_quantity, specifications")
+          .select("id, model, model_display, horsepower, family, msrp, sale_price, dealer_price, base_price, in_stock, stock_quantity, specifications")
           .or(`model_display.ilike.%${motor1Query}%,model_display.ilike.%${motor2Query}%,model.ilike.%${motor1Query}%,model.ilike.%${motor2Query}%`)
           .limit(10);
         
@@ -573,7 +594,7 @@ serve(async (req) => {
               motor1: {
                 model: motor1.model_display || motor1.model,
                 horsepower: motor1.horsepower,
-                price: motor1.msrp || motor1.dealer_price,
+                price: getVoiceSellingPrice(motor1),
                 family: motor1.family,
                 inStock: motor1.in_stock && (motor1.stock_quantity || 0) > 0,
                 ...config1,
@@ -581,14 +602,14 @@ serve(async (req) => {
               motor2: {
                 model: motor2.model_display || motor2.model,
                 horsepower: motor2.horsepower,
-                price: motor2.msrp || motor2.dealer_price,
+                price: getVoiceSellingPrice(motor2),
                 family: motor2.family,
                 inStock: motor2.in_stock && (motor2.stock_quantity || 0) > 0,
                 ...config2,
               },
               differences: {
                 hpDifference: (motor2.horsepower || 0) - (motor1.horsepower || 0),
-                priceDifference: ((motor2.msrp || motor2.dealer_price || 0) - (motor1.msrp || motor1.dealer_price || 0)),
+                priceDifference: (getVoiceSellingPrice(motor2) || 0) - (getVoiceSellingPrice(motor1) || 0),
               }
             }
           };
