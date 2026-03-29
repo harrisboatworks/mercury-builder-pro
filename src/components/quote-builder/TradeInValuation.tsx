@@ -187,6 +187,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 Get an instant estimate for your current motor
               </p>
             </div>
+          </div>
             
           {!standalone && (
           <div className="flex flex-col gap-4 mt-6">
