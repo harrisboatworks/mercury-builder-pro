@@ -289,8 +289,17 @@ function tryMsrpBasedEstimate(
   console.log(`msrp_trade_estimate brand=Mercury hp=${horsepower} closestHP=${closestHP} msrp=${msrp} age=${motorAge} bracket=${ageBracket} condition=${condition} pct=${pcts[condition]} baseValue=${baseValue}`);
   return baseValue;
 }
+/** Tiered base value by HP — approximates real-world MSRP for unknown/non-bracket brands */
+function getTieredBaseValue(horsepower: number): number {
+  if (horsepower <= 10) return horsepower * 350;
+  if (horsepower <= 30) return horsepower * 250;
+  if (horsepower <= 75) return horsepower * 180;
+  if (horsepower <= 150) return horsepower * 140;
+  if (horsepower <= 300) return horsepower * 120;
+  return horsepower * 100;
+}
 
-export function estimateTradeValue(
+
   tradeInfo: Partial<TradeInInfo>,
   options?: EstimateTradeValueOptions
 ): TradeValueEstimate {
