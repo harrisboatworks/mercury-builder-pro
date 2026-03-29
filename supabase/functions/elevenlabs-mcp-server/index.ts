@@ -7,6 +7,34 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
 };
 
+/**
+ * Resolve the customer-facing selling price using the standard hierarchy:
+ * sale_price → dealer_price (if < msrp) → base_price → msrp
+ */
+function getSellingPrice(m: Record<string, unknown>): number | null {
+  const msrp = m.msrp as number | null;
+  const salePrice = m.sale_price as number | null;
+  const dealerPrice = m.dealer_price as number | null;
+  const basePrice = m.base_price as number | null;
+
+  if (salePrice) return salePrice;
+  if (dealerPrice && msrp && dealerPrice < msrp) return dealerPrice;
+  if (basePrice) return basePrice;
+  return msrp;
+}
+
+/** Format a resolved selling price for display */
+function formatPrice(m: Record<string, unknown>): string {
+  const price = getSellingPrice(m);
+  return price ? `$${price.toLocaleString()}` : "Call for price";
+}
+
+/** Format price with CAD suffix */
+function formatPriceCAD(m: Record<string, unknown>): string {
+  const price = getSellingPrice(m);
+  return price ? `$${price.toLocaleString()} CAD` : "Call for pricing";
+}
+
 // MCP Tool definitions with JSON schemas
 const TOOLS = [
   {
@@ -490,7 +518,7 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
       
       const { data: motors } = await supabase
         .from("motor_models")
-        .select("model_display, horsepower, msrp, family, in_stock")
+        .select("model_display, horsepower, msrp, sale_price, dealer_price, base_price, family, in_stock")
         .gte("horsepower", minHp)
         .lte("horsepower", maxHp)
         .eq("in_stock", true)
@@ -507,7 +535,7 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
       }
       
       const motorList = motors.map(m => 
-        `${m.model_display || m.family + ' ' + m.horsepower + 'HP'}: $${m.msrp?.toLocaleString() || 'Call for price'}`
+        `${m.model_display || m.family + ' ' + m.horsepower + 'HP'}: ${formatPrice(m)}`
       ).join("\n");
       
       return { 
@@ -541,7 +569,7 @@ async function executeTool(toolName: string, args: Record<string, unknown>): Pro
 Comparing ${motor1.model_display || motor1.model} vs ${motor2.model_display || motor2.model}:
 
 HP: ${motor1.horsepower}HP vs ${motor2.horsepower}HP
-Price: $${motor1.msrp?.toLocaleString() || 'Call'} vs $${motor2.msrp?.toLocaleString() || 'Call'}
+Price: ${formatPrice(motor1)} vs ${formatPrice(motor2)}
 Family: ${motor1.family || 'N/A'} vs ${motor2.family || 'N/A'}
 In Stock: ${motor1.in_stock ? 'Yes' : 'No'} vs ${motor2.in_stock ? 'Yes' : 'No'}
 
@@ -626,8 +654,9 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       }
       
       // Build email HTML with motor details
-      const priceSection = includePricing && motor.msrp 
-        ? `<p><strong>Price:</strong> $${motor.msrp.toLocaleString()} CAD</p>` 
+      const emailPrice = getSellingPrice(motor);
+      const priceSection = includePricing && emailPrice 
+        ? `<p><strong>Price:</strong> $${emailPrice.toLocaleString()} CAD</p>` 
         : '';
       
       const emailHtml = `
@@ -788,7 +817,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       const inStockOnly = args.in_stock_only !== false; // Default to true
       let query = supabase
         .from("motor_models")
-        .select("model_display, model, horsepower, msrp, family, in_stock, stock_quantity, shaft, control_type")
+        .select("model_display, model, horsepower, msrp, sale_price, dealer_price, base_price, family, in_stock, stock_quantity, shaft, control_type")
         .order("in_stock", { ascending: false })  // In-stock first!
         .order("horsepower");
       
@@ -817,12 +846,11 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       
       const motorList = motors.map(m => {
         const name = m.model_display || `${m.family} ${m.horsepower}HP`;
-        const price = m.msrp ? `$${m.msrp.toLocaleString()}` : "Call for price";
         const qty = m.stock_quantity || 0;
         const stock = m.in_stock 
           ? `✓ ${qty} in stock` 
           : "Available to order";
-        return `• ${name}: ${price} (${stock})`;
+        return `• ${name}: ${formatPrice(m)} (${stock})`;
       }).join("\n");
       
       const totalInStock = motors
@@ -862,11 +890,12 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       if (motors.length === 1) {
         const m = motors[0];
         const name = m.model_display || `${m.family} ${m.horsepower}HP`;
-        const hasDiscount = m.sale_price && m.sale_price < (m.msrp || 0);
+        const sellingPrice = getSellingPrice(m);
+        const hasDiscount = sellingPrice && m.msrp && sellingPrice < m.msrp;
         
-        let priceText = m.msrp ? `$${m.msrp.toLocaleString()} CAD` : "Call for pricing";
+        let priceText = sellingPrice ? `$${sellingPrice.toLocaleString()} CAD` : "Call for pricing";
         if (hasDiscount) {
-          priceText = `$${m.sale_price!.toLocaleString()} CAD (was $${m.msrp!.toLocaleString()})`;
+          priceText = `$${sellingPrice!.toLocaleString()} CAD (was $${m.msrp!.toLocaleString()})`;
         }
         
         return { 
@@ -880,8 +909,7 @@ ${motor1.horsepower > motor2.horsepower ? `The ${motor1.model_display} has more 
       // Multiple matches
       const priceList = motors.map(m => {
         const name = m.model_display || `${m.family} ${m.horsepower}HP`;
-        const price = m.msrp ? `$${m.msrp.toLocaleString()}` : "Call";
-        return `• ${name}: ${price}`;
+        return `• ${name}: ${formatPrice(m)}`;
       }).join("\n");
       
       return { 
