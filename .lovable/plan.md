@@ -1,38 +1,54 @@
 
 
-# Standalone Trade-In Value Estimator Page
+# Fix Trade-In Valuation for Non-Mercury Small HP Motors
 
-## What We're Building
+## Problem
 
-A new public page at `/trade-in-value` where anyone can check their outboard motor's trade-in value — no quote required. Uses the existing valuation engine and form fields, but wrapped in its own standalone layout with SEO metadata and a CTA to start a full quote.
+A 2020 Tohatsu 6HP in "Good" condition shows $100 — clearly wrong. Two bugs in `estimateTradeValue`:
 
-## Approach
+1. **Unknown brand path skips HP-class floors** — passes `minTradeValue` ($100) instead of the HP-class floor ($200 for under-25HP). The bracket path does this correctly but the unknown-brand path at line 400 does not.
 
-1. **New page `src/pages/TradeInValuePage.tsx`**
-   - Self-contained page with its own state management (no QuoteContext dependency)
-   - Reuses the `TradeInValuation` component in a "standalone" mode — always starts with the form visible (no Yes/No toggle needed)
-   - Hero section with heading like "What's Your Outboard Worth?" and brief copy
-   - After estimate shows, CTA button: "Start a Quote With This Trade-In" → navigates to `/quote/motor-selection` (or `/quote/trade-in` with pre-filled data)
-   - SEO: title, meta description, BreadcrumbList schema for "Home > Trade-In Value"
+2. **Base value formula too low for small motors** — `horsepower × 30` gives $180 for a 6HP. After depreciation and condition multipliers, the value collapses to floor. The voice agent file (`service-estimates.ts`) uses `hp × 400` for ≤10HP motors, which is far more realistic.
 
-2. **Modify `TradeInValuation` component**
-   - Add an optional `standalone?: boolean` prop
-   - When `standalone` is true: skip the Yes/No trade-in toggle, show the form immediately, hide the "No trade-in / Skip" option
-   - Everything else (fields, validation, estimation logic) stays identical
+## Fix
 
-3. **Add route in `App.tsx`**
-   - Lazy-load `TradeInValuePage` at `/trade-in-value`
+### File: `src/lib/trade-valuation.ts`
 
-4. **Navigation link**
-   - Add "Trade-In Value" to the header nav / hamburger menu so it's discoverable
+**Change 1 — Add HP-class floor to unknown brand path** (around lines 392-400):
+- Compute the same `hpFloor` / `effectiveFloor` that the bracket path uses (lines 537-545)
+- Pass `effectiveFloor` instead of `minTradeValue` to `applyBrandPenaltyToRange`
+
+**Change 2 — Fix base value formula for unknown brands** (line 392):
+Replace the flat `hp * 30` with a tiered formula matching real-world MSRP proxies:
+
+```text
+≤10 HP  → hp × 350
+11-30   → hp × 250
+31-75   → hp × 180
+76-150  → hp × 140
+151-300 → hp × 120
+300+    → hp × 100
+```
+
+These tiers align with actual Mercury selling prices (e.g. 6HP ≈ $2,100, 25HP ≈ $6,000).
+
+**Change 3 — Same fix for pre-2005 path** (around lines 429-438):
+Apply the same tiered base value formula and HP-class floor calculation to the pre-2005 motor fallback path, which has the identical bugs.
+
+### Expected result for the screenshot scenario
+
+2020 Tohatsu 6HP Good:
+- Base: 6 × 350 = $2,100
+- Age depreciation (6 years): ~0.5 → $1,050
+- Condition (Good): × 0.75 → $788
+- Brand penalty (Tohatsu 0.7): × 0.7 → $551
+- Range: ~$470 – $635 → displayed median ~$550
+
+Much more reasonable — and the $200 HP-class floor would still catch edge cases.
 
 ## Files Changed
 
 | File | Change |
 |------|--------|
-| `src/pages/TradeInValuePage.tsx` | New standalone page with hero, form, CTA |
-| `src/components/quote-builder/TradeInValuation.tsx` | Add `standalone` prop to skip Yes/No toggle |
-| `src/App.tsx` | Add lazy import + route for `/trade-in-value` |
-| `src/components/ui/luxury-header.tsx` | Add nav link |
-| `src/components/ui/HamburgerMenu.tsx` | Add mobile nav link |
+| `src/lib/trade-valuation.ts` | Fix base value formula (2 locations), add HP-class floor to unknown-brand + pre-2005 paths |
 
