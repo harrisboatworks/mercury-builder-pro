@@ -299,7 +299,7 @@ function getTieredBaseValue(horsepower: number): number {
   return horsepower * 100;
 }
 
-
+export function estimateTradeValue(
   tradeInfo: Partial<TradeInInfo>,
   options?: EstimateTradeValueOptions
 ): TradeValueEstimate {
