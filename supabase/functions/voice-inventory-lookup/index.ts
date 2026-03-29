@@ -437,6 +437,7 @@ serve(async (req) => {
         const { data, error } = await supabase
           .from("motor_models")
           .select("model, model_display, horsepower, family, stock_quantity, msrp, sale_price, dealer_price, base_price, in_stock")
+          .eq("in_stock", true)
           .gt("stock_quantity", 0)
           .order("horsepower", { ascending: true })
           .limit(50);
