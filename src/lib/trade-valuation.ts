@@ -388,8 +388,8 @@ export function estimateTradeValue(
   const brandData = tradeValues[brand as keyof typeof tradeValues];
   
   if (!brandData) {
-    // Generic estimate for unknown brands
-    const baseValue = horsepower * 30;
+    // Generic estimate for unknown brands — tiered base value by HP class
+    const baseValue = getTieredBaseValue(horsepower);
     const ageDepreciation = Math.max(0.3, 1 - ((currentYear - year) * 0.1));
     const conditionMultiplier = { excellent: 1.0, good: 0.75, fair: 0.55, poor: 0.3 }[condition];
     
@@ -397,7 +397,17 @@ export function estimateTradeValue(
     let low = estimatedValue * 0.85;
     let high = estimatedValue * 1.15;
     const factors: string[] = ['Unknown brand', 'Estimated depreciation'];
-    const adj = applyBrandPenaltyToRange(low, high, brand, factors, config, minTradeValue);
+
+    // Apply HP-class floor (same logic as bracket path)
+    const hpFloors = config?.HP_CLASS_FLOORS ?? { under_25: 200, '25_75': 1000, '90_150': 1500, '200_plus': 2500 };
+    let hpFloor = minTradeValue;
+    if (horsepower >= 200) hpFloor = hpFloors['200_plus'] ?? 2500;
+    else if (horsepower >= 90) hpFloor = hpFloors['90_150'] ?? 1500;
+    else if (horsepower >= 25) hpFloor = hpFloors['25_75'] ?? 1000;
+    else hpFloor = hpFloors['under_25'] ?? 200;
+    const effectiveFloor = Math.max(hpFloor, minTradeValue);
+
+    const adj = applyBrandPenaltyToRange(low, high, brand, factors, config, effectiveFloor);
     
     return {
       low: adj.low,
@@ -426,16 +436,26 @@ export function estimateTradeValue(
   } else if (year >= 2005) {
     yearRange = '2005-2009';
   } else {
-    // Very old motor (pre-2005) - improved formula
+    // Very old motor (pre-2005) - improved formula with tiered base value
     const motorAge = currentYear - year;
-    const baseValue = horsepower * 30;
+    const baseValue = getTieredBaseValue(horsepower);
     const ageDepreciation = Math.max(0.3, 1 - (motorAge - 20) * 0.03);
     const conditionMultiplier = { excellent: 0.85, good: 0.65, fair: 0.45, poor: 0.25 }[condition];
     const estimatedValue = baseValue * ageDepreciation * conditionMultiplier;
     let low = estimatedValue * 0.8;
     let high = estimatedValue * 1.2;
     const factors = ['Motor age over 20 years', 'Value based on condition and market demand'];
-    const adj = applyBrandPenaltyToRange(low, high, brand, factors, config, minTradeValue);
+
+    // Apply HP-class floor (same logic as bracket path)
+    const hpFloors = config?.HP_CLASS_FLOORS ?? { under_25: 200, '25_75': 1000, '90_150': 1500, '200_plus': 2500 };
+    let hpFloor = minTradeValue;
+    if (horsepower >= 200) hpFloor = hpFloors['200_plus'] ?? 2500;
+    else if (horsepower >= 90) hpFloor = hpFloors['90_150'] ?? 1500;
+    else if (horsepower >= 25) hpFloor = hpFloors['25_75'] ?? 1000;
+    else hpFloor = hpFloors['under_25'] ?? 200;
+    const effectiveFloor = Math.max(hpFloor, minTradeValue);
+
+    const adj = applyBrandPenaltyToRange(low, high, brand, factors, config, effectiveFloor);
     
     return {
       low: adj.low,
