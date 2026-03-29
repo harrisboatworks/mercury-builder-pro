@@ -293,8 +293,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </motion.button>
               </div>
             </div>
-          </div>
           )}
+
+
 
           {(standalone || tradeInInfo.hasTradeIn) && (
             <motion.div 
