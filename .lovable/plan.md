@@ -1,40 +1,38 @@
 
 
-# Fix Remaining Stale RLS Policies on promotions_rules (and promotions)
+# Standalone Trade-In Value Estimator Page
 
-## Root Cause
+## What We're Building
 
-Previous cleanup migrations dropped policies by name, but **missed the exact names** used in the original `20250811` migration:
+A new public page at `/trade-in-value` where anyone can check their outboard motor's trade-in value — no quote required. Uses the existing valuation engine and form fields, but wrapped in its own standalone layout with SEO metadata and a CTA to start a full quote.
 
-| Policy name that EXISTS in DB | Was it dropped? |
-|------|------|
-| `Admins can insert promotions_rules` (uses `is_admin()`) | **No** — cleanup looked for "promotion rules" not "promotions_rules" |
-| `Admins can update promotions_rules` (uses `is_admin()`) | **No** |
-| `Admins can delete promotions_rules` (uses `is_admin()`) | **No** |
-| `Public read access for promotions_rules` | **No** (harmless SELECT, but should be cleaned for clarity) |
+## Approach
 
-These stale `is_admin()` policies are OR'd with the new `has_role()` ones, and since `is_admin()` may also be permissive, the scanner keeps flagging it.
+1. **New page `src/pages/TradeInValuePage.tsx`**
+   - Self-contained page with its own state management (no QuoteContext dependency)
+   - Reuses the `TradeInValuation` component in a "standalone" mode — always starts with the form visible (no Yes/No toggle needed)
+   - Hero section with heading like "What's Your Outboard Worth?" and brief copy
+   - After estimate shows, CTA button: "Start a Quote With This Trade-In" → navigates to `/quote/motor-selection` (or `/quote/trade-in` with pre-filled data)
+   - SEO: title, meta description, BreadcrumbList schema for "Home > Trade-In Value"
 
-## Fix
+2. **Modify `TradeInValuation` component**
+   - Add an optional `standalone?: boolean` prop
+   - When `standalone` is true: skip the Yes/No trade-in toggle, show the form immediately, hide the "No trade-in / Skip" option
+   - Everything else (fields, validation, estimation logic) stays identical
 
-One new migration that drops every remaining stale policy name variant on both tables, ensuring only the clean `has_role()` policies survive.
+3. **Add route in `App.tsx`**
+   - Lazy-load `TradeInValuePage` at `/trade-in-value`
 
-### Policies to drop (promotions_rules)
-- `Admins can insert promotions_rules`
-- `Admins can update promotions_rules`
-- `Admins can delete promotions_rules`
-- `Public read access for promotions_rules`
+4. **Navigation link**
+   - Add "Trade-In Value" to the header nav / hamburger menu so it's discoverable
 
-### Policies to drop (promotions — belt-and-suspenders)
-- `Admins can insert promotions` (old `is_admin()` version, if still present)
-- `Admins can update promotions` (old `is_admin()` version)
-- `Admins can delete promotions` (old `is_admin()` version)
-
-After dropping, the only surviving policies will be the ones created in `20260327205925` using `has_role()`.
-
-## File
+## Files Changed
 
 | File | Change |
 |------|--------|
-| New migration | `DROP POLICY IF EXISTS` for every missed name variant on both tables |
+| `src/pages/TradeInValuePage.tsx` | New standalone page with hero, form, CTA |
+| `src/components/quote-builder/TradeInValuation.tsx` | Add `standalone` prop to skip Yes/No toggle |
+| `src/App.tsx` | Add lazy import + route for `/trade-in-value` |
+| `src/components/ui/luxury-header.tsx` | Add nav link |
+| `src/components/ui/HamburgerMenu.tsx` | Add mobile nav link |
 
