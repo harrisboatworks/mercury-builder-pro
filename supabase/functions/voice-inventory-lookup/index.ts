@@ -132,7 +132,16 @@ function formatPriceForVoice(price: number | null | undefined): string | null {
 function buildMotorResponse(m: Record<string, unknown>) {
   const modelDisplay = (m.model_display || m.model) as string;
   const config = parseMotorConfig(modelDisplay);
-  const price = (m.msrp || m.dealer_price) as number | null;
+  
+  // Use selling price hierarchy: sale_price → dealer_price (if < msrp) → base_price → msrp
+  const msrp = m.msrp as number | null;
+  const salePrice = m.sale_price as number | null;
+  const dealerPrice = m.dealer_price as number | null;
+  const basePrice = m.base_price as number | null;
+  const price = salePrice 
+    || (dealerPrice && msrp && dealerPrice < msrp ? dealerPrice : null)
+    || basePrice 
+    || msrp;
   
   return {
     model: modelDisplay,
@@ -225,7 +234,7 @@ serve(async (req) => {
         // Search inventory by horsepower, family, stock status
         let query = supabase
           .from("motor_models")
-          .select("id, model, model_display, horsepower, family, in_stock, stock_quantity, msrp, dealer_price, availability")
+          .select("id, model, model_display, horsepower, family, in_stock, stock_quantity, msrp, sale_price, dealer_price, base_price, availability")
           .order("horsepower", { ascending: true });
 
         // ROBUST PARAM PARSING: Handle cases where ElevenLabs sends params incorrectly
@@ -427,8 +436,7 @@ serve(async (req) => {
         // Get all in-stock motors
         const { data, error } = await supabase
           .from("motor_models")
-          .select("model, model_display, horsepower, family, stock_quantity, msrp")
-          .eq("in_stock", true)
+          .select("model, model_display, horsepower, family, stock_quantity, msrp, sale_price, dealer_price, base_price, in_stock")
           .gt("stock_quantity", 0)
           .order("horsepower", { ascending: true })
           .limit(50);
