@@ -553,7 +553,7 @@ serve(async (req) => {
         
         const { data: motors, error } = await supabase
           .from("motor_models")
-          .select("id, model, model_display, horsepower, family, msrp, dealer_price, in_stock, stock_quantity, specifications")
+          .select("id, model, model_display, horsepower, family, msrp, sale_price, dealer_price, base_price, in_stock, stock_quantity, specifications")
           .or(`model_display.ilike.%${motor1Query}%,model_display.ilike.%${motor2Query}%,model.ilike.%${motor1Query}%,model.ilike.%${motor2Query}%`)
           .limit(10);
         
@@ -582,7 +582,7 @@ serve(async (req) => {
               motor1: {
                 model: motor1.model_display || motor1.model,
                 horsepower: motor1.horsepower,
-                price: motor1.msrp || motor1.dealer_price,
+                price: getVoiceSellingPrice(motor1),
                 family: motor1.family,
                 inStock: motor1.in_stock && (motor1.stock_quantity || 0) > 0,
                 ...config1,
@@ -590,14 +590,14 @@ serve(async (req) => {
               motor2: {
                 model: motor2.model_display || motor2.model,
                 horsepower: motor2.horsepower,
-                price: motor2.msrp || motor2.dealer_price,
+                price: getVoiceSellingPrice(motor2),
                 family: motor2.family,
                 inStock: motor2.in_stock && (motor2.stock_quantity || 0) > 0,
                 ...config2,
               },
               differences: {
                 hpDifference: (motor2.horsepower || 0) - (motor1.horsepower || 0),
-                priceDifference: ((motor2.msrp || motor2.dealer_price || 0) - (motor1.msrp || motor1.dealer_price || 0)),
+                priceDifference: (getVoiceSellingPrice(motor2) || 0) - (getVoiceSellingPrice(motor1) || 0),
               }
             }
           };
