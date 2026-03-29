@@ -107,6 +107,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const TikTokCallback = lazy(() => import("./pages/TikTokCallback"));
 const MotorRedirect = lazy(() => import("./pages/MotorRedirect"));
+const TradeInValuePage = lazy(() => import("./pages/TradeInValuePage"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
@@ -446,6 +447,9 @@ function AnimatedRoutes() {
         
         {/* Compare Page */}
         <Route path="/compare" element={<Compare />} />
+        
+        {/* Trade-In Value Estimator */}
+        <Route path="/trade-in-value" element={<TradeInValuePage />} />
         
         {/* About Page */}
         <Route path="/about" element={<About />} />

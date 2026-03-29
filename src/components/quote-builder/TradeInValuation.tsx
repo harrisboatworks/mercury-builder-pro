@@ -20,9 +20,11 @@ interface TradeInValuationProps {
   currentMotorBrand?: string;
   currentHp?: number;
   currentMotorYear?: number;
+  /** When true, skip the Yes/No toggle and show the form immediately */
+  standalone?: boolean;
 }
 
-export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear }: TradeInValuationProps) => {
+export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear, standalone = false }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
   const [showValidation, setShowValidation] = useState(false);
@@ -185,8 +187,10 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 Get an instant estimate for your current motor
               </p>
             </div>
+          </div>
             
-            <div className="flex flex-col gap-4 mt-6">
+          {!standalone && (
+          <div className="flex flex-col gap-4 mt-6">
               <p className="text-lg font-light text-gray-900">Do you have a motor to trade?</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* "No trade-in" card first */}
@@ -290,9 +294,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </motion.button>
               </div>
             </div>
-          </div>
+          )}
 
-          {tradeInInfo.hasTradeIn && (
+
+
+          {(standalone || tradeInInfo.hasTradeIn) && (
             <motion.div 
               ref={formRef}
               initial={{ opacity: 0, height: 0 }}
