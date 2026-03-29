@@ -1,27 +1,26 @@
 
 
-# Generate Trade-In Valuation Rules Document
+# Export Trade Valuation Bracket Data to CSV
 
 ## What
-Create a comprehensive markdown reference document at `/mnt/documents/trade-in-valuation-rules.md` that documents every calculation, rule, and configuration option in the trade-in valuation engine — written so someone could reimplement it from scratch.
+Export all 257 bracket rows for Yamaha, Honda, Suzuki, Tohatsu, Evinrude, and Johnson from the `trade_valuation_brackets` table as a clean CSV file you can plug directly into the other HBW trade value tool.
 
-## Document Structure
+## How
+Run a single `psql` COPY command to export directly to `/mnt/documents/trade_valuation_brackets_export.csv`:
 
-1. **Overview** — Two-path architecture (MSRP-anchored vs bracket-based)
-2. **Input Parameters** — All fields the estimator accepts
-3. **Path 1: MSRP-Anchored (Mercury only)** — Age brackets, condition percentages, MSRP lookup, electric-start anchoring
-4. **Path 2: Bracket-Based** — Year ranges, HP lookup, Mercury bonus
-5. **Fallback Paths** — Unknown brand (tiered base formula), Pre-2005 motors
-6. **Adjustments (apply to all paths)** — 2-stroke/OptiMax penalty, engine hours bonus/penalty
-7. **Brand Penalty System** — All brand factors, config override keys
-8. **HP-Class Floors** — Minimum values by HP range
-9. **Display Rounding** — Median rounded to $25
-10. **Confidence Levels** — How confidence is determined
-11. **Database Configuration** — All config keys and their schemas
-12. **Worked Examples** — Step-by-step calculations for common scenarios
+```sql
+COPY (
+  SELECT brand, year_range, horsepower, excellent, good, fair, poor
+  FROM trade_valuation_brackets
+  WHERE brand IN ('Yamaha','Honda','Suzuki','Tohatsu','Evinrude','Johnson')
+  ORDER BY brand, year_range, horsepower
+) TO STDOUT WITH CSV HEADER
+```
 
-## File
-| File | Action |
-|------|--------|
-| `/mnt/documents/trade-in-valuation-rules.md` | Create — full reference document |
+## Output
+- **File**: `trade_valuation_brackets_export.csv`
+- **Columns**: `brand, year_range, horsepower, excellent, good, fair, poor`
+- **Rows**: 257 (all 6 brands x year ranges x HP classes)
+
+Ready to import into any system — same structure as the `trade_valuation_brackets` table schema.
 
