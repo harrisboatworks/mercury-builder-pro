@@ -70,8 +70,8 @@ export default function AdminNav() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto px-4 h-12 flex items-center justify-between">
-        <div className="flex items-center gap-1">
+      <nav className="container mx-auto px-4 h-12 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-1 overflow-x-auto admin-nav-scroll whitespace-nowrap flex-1 min-w-0">
           {navItems.map((item) => (
             <NavLink
               key={item.to}
