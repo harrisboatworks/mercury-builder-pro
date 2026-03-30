@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Admin nav horizontal scroll — hide scrollbar */
+.admin-nav-scroll::-webkit-scrollbar { display: none; }
+.admin-nav-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
 /* ===== Force Light Mode Globally ===== */
 html {
   color-scheme: light !important;
