@@ -1,24 +1,24 @@
 
 
-# Add Image for 90 ELPT Command Thrust Motor
+# Add Image for 50 ELPT Command Thrust Motor
 
 ## What
-Copy the uploaded 90 CT product photo into the project's public images directory, then update the database record for the 90 ELPT CT motor with the image path.
+Copy the uploaded 50 CT product photo into the project and update the database record.
 
 ## Steps
 
-1. **Copy image** — `user-uploads://90_CT.jpg` → `public/images/motors/90-elpt-ct-fourstroke.jpg`
-2. **Update database** — Set `image_url` on the motor with model_number `1F904532D`
+1. **Copy image** — `user-uploads://50_elpt_ct.jpg` → `public/images/motors/50-elpt-ct-fourstroke.jpg`
+2. **Update database** — Set `image_url` on model `1F51453GZ`
 
 ```sql
 UPDATE motor_models
-SET image_url = '/images/motors/90-elpt-ct-fourstroke.jpg', updated_at = now()
-WHERE model_number = '1F904532D';
+SET image_url = '/images/motors/50-elpt-ct-fourstroke.jpg', updated_at = now()
+WHERE model_number = '1F51453GZ';
 ```
 
 ## Files Changed
 | File | Change |
 |------|--------|
-| `public/images/motors/90-elpt-ct-fourstroke.jpg` | Copy uploaded image |
-| Database | UPDATE `image_url` for model `1F904532D` |
+| `public/images/motors/50-elpt-ct-fourstroke.jpg` | Copy uploaded image |
+| Database | UPDATE `image_url` for model `1F51453GZ` |
 
