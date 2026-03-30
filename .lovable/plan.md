@@ -1,30 +1,32 @@
 
 
-# Fix Google Sheets Sync CT Matching Ambiguity
+# Add Images for 115 Pro XS Command Thrust Motors
 
-## Problem
-The sync function matches motors by HP + rigging code + family with `limit(1)`. Now that CT variants exist for 40, 50, and 90 HP, a non-CT motor from the sheet (e.g., "90 ELPT FourStroke") could incorrectly match the CT variant ("90 ELPT Command Thrust FourStroke") since both contain "ELPT" and "FourStroke".
+## What
+Copy the two uploaded product photos into the project and update the database records for both 115 Pro XS CT variants.
 
-The sync already adds a CT filter when `hasCommandThrust` is true, but does NOT exclude CT models when `hasCommandThrust` is false.
+## Steps
 
-## Current in-stock status (verified correct)
-28/28 matched, 0 unmatched. 16 unique models in stock with correct quantities. All good until the next sync runs with the new CT models in the database.
+1. **Copy images**
+   - `user-uploads://115_elpt_ct_proxs.jpg` → `public/images/motors/115-elpt-ct-proxs.jpg`
+   - `user-uploads://115_exlpt_ct_proxs.jpg` → `public/images/motors/115-exlpt-ct-proxs.jpg`
 
-## Fix
-In `supabase/functions/sync-google-sheets-inventory/index.ts`, add a negative CT filter when the parsed motor does NOT have Command Thrust:
+2. **Update database** — Set `image_url` on both motors
 
-After the existing CT check block (~line 272), add:
-```typescript
-// If NOT a Command Thrust motor, explicitly EXCLUDE CT models to prevent false matches
-if (!parsed.hasCommandThrust) {
-  query = query.not('model_display', 'ilike', '%Command Thrust%');
-}
+```sql
+UPDATE motor_models
+SET image_url = '/images/motors/115-elpt-ct-proxs.jpg', updated_at = now()
+WHERE model_number = '1117F531D';
+
+UPDATE motor_models
+SET image_url = '/images/motors/115-exlpt-ct-proxs.jpg', updated_at = now()
+WHERE model_number = '1117F631D';
 ```
-
-Apply the same fix to the fallback query (~line 305).
 
 ## Files Changed
 | File | Change |
 |------|--------|
-| `supabase/functions/sync-google-sheets-inventory/index.ts` | Add negative CT filter for non-CT motors in both primary and fallback queries |
+| `public/images/motors/115-elpt-ct-proxs.jpg` | Copy uploaded image |
+| `public/images/motors/115-exlpt-ct-proxs.jpg` | Copy uploaded image |
+| Database | UPDATE `image_url` for models `1117F531D` and `1117F631D` |
 
