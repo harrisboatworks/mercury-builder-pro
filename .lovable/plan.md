@@ -1,21 +1,31 @@
 
 
-# Add Image to 40 ELPT Command Thrust Motor
+# Fix Admin Page Scroll Issue
 
 ## Problem
-The newly inserted 40 ELPT CT motor has no image — `image_url`, `hero_image_url`, and `images` are all empty.
+The admin quotes page (and likely other admin pages) can't scroll vertically. Two issues contribute:
+
+1. **AdminNav horizontal overflow** — 20+ nav items in a single `flex` row with no wrapping and no `overflow-x-auto`. The nav items push beyond viewport width, which can break the page layout and interfere with vertical scrolling on some browsers.
+
+2. **No `overflow-x-hidden` on page wrapper** — The `<main>` element in `AdminQuotes.tsx` has no overflow containment, so the overflowing nav bleeds into the document width.
 
 ## Fix
-Run a data UPDATE (via insert tool) to set `image_url` to the full-size extracted URL from the ThumbGenerator link you provided.
 
-### SQL
-```sql
-UPDATE motor_models
-SET
-  image_url = 'https://cdnmedia.endeavorsuite.com/images/organizations/873ce1ca-42a6-40ae-ac55-07757f842998/inventory/13620828/530b8e2f6515c10900e91883-large.jpg',
-  updated_at = now()
-WHERE model_number = '1F41453GZ';
-```
+### 1. AdminNav — Add horizontal scroll to nav container
+Make the nav items horizontally scrollable instead of overflowing the page:
 
-Single data update — no migration needed.
+| Element | Change |
+|---------|--------|
+| Nav items `<div>` | Add `overflow-x-auto` and `whitespace-nowrap` so tabs scroll horizontally within the header |
+| Hide scrollbar | Add CSS to hide the scrollbar visually while keeping scroll functional |
+
+### 2. AdminQuotes — Add overflow containment
+Add `overflow-x-hidden` to the `<main>` wrapper so any overflow from child elements doesn't break page scroll.
+
+## Files Changed
+
+| File | Change |
+|------|--------|
+| `src/components/admin/AdminNav.tsx` | Add `overflow-x-auto`, `flex-shrink-0`, and scrollbar-hide classes to the nav items container |
+| `src/index.css` | Add a small `.admin-nav-scroll` utility to hide the horizontal scrollbar on the admin nav |
 
