@@ -1,26 +1,30 @@
 
 
-# Export Trade Valuation Bracket Data to CSV
+# Add Missing 40 ELPT Command Thrust Motor
 
-## What
-Export all 257 bracket rows for Yamaha, Honda, Suzuki, Tohatsu, Evinrude, and Johnson from the `trade_valuation_brackets` table as a clean CSV file you can plug directly into the other HBW trade value tool.
+## Problem
+Mercury's 40 ELPT Command Thrust (Four-Cylinder) FourStroke — model `1F41453GZ` — exists in both pricing CSVs but was never inserted into `motor_models`. Customers searching for Command Thrust 40HP won't find it.
 
-## How
-Run a single `psql` COPY command to export directly to `/mnt/documents/trade_valuation_brackets_export.csv`:
+## Fix
+Single migration to INSERT the missing motor with correct pricing, flags, and metadata.
 
-```sql
-COPY (
-  SELECT brand, year_range, horsepower, excellent, good, fair, poor
-  FROM trade_valuation_brackets
-  WHERE brand IN ('Yamaha','Honda','Suzuki','Tohatsu','Evinrude','Johnson')
-  ORDER BY brand, year_range, horsepower
-) TO STDOUT WITH CSV HEADER
-```
+### Key values from pricing data
+| Field | Value |
+|-------|-------|
+| Model number | 1F41453GZ |
+| Display | 40 ELPT Command Thrust FourStroke |
+| MSRP | $11,250 |
+| Dealer price | $9,900 |
+| HP | 40 |
+| Family | FourStroke |
+| has_command_thrust | true |
+| has_power_trim | true |
+| Rigging code | ELPT |
+| Shaft | L (20") |
 
-## Output
-- **File**: `trade_valuation_brackets_export.csv`
-- **Columns**: `brand, year_range, horsepower, excellent, good, fair, poor`
-- **Rows**: 257 (all 6 brands x year ranges x HP classes)
+## File
 
-Ready to import into any system — same structure as the `trade_valuation_brackets` table schema.
+| File | Change |
+|------|--------|
+| New migration | INSERT the 40 ELPT CT motor into `motor_models` with availability set to `NULL` (standard brochure catalog item, visible on site) |
 
