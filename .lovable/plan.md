@@ -1,31 +1,73 @@
 
 
-# Fix Admin Page Scroll Issue
+# Add Missing 90 ELPT CT and 50 ELPT CT Motors
 
-## Problem
-The admin quotes page (and likely other admin pages) can't scroll vertically. Two issues contribute:
+## Context
+Both models exist in the pricing CSVs and were in the original seed migration, but the audit showed they're missing from `motor_models`. Same situation as the 40 ELPT CT we just fixed.
 
-1. **AdminNav horizontal overflow** — 20+ nav items in a single `flex` row with no wrapping and no `overflow-x-auto`. The nav items push beyond viewport width, which can break the page layout and interfere with vertical scrolling on some browsers.
+## Plan
+Single migration to INSERT both motors with correct field values (learning from the 40 CT mistake — set `model`, `model_display`, and `display_name` properly, not just "Outboard").
 
-2. **No `overflow-x-hidden` on page wrapper** — The `<main>` element in `AdminQuotes.tsx` has no overflow containment, so the overflowing nav bleeds into the document width.
+### 50 ELPT Command Thrust FourStroke — `1F51453GZ`
+| Field | Value |
+|-------|-------|
+| model_number | 1F51453GZ |
+| display | 50 ELPT Command Thrust FourStroke |
+| HP | 50 |
+| MSRP | $12,645 |
+| Dealer price | $11,127 |
+| has_command_thrust | true |
+| has_power_trim | true |
+| Rigging code | ELPT |
+| model_key | FS_50_ELPT_CT |
 
-## Fix
+### 90 ELPT Command Thrust FourStroke — `1F904532D`
+| Field | Value |
+|-------|-------|
+| model_number | 1F904532D |
+| display | 90 ELPT Command Thrust FourStroke |
+| HP | 90 |
+| MSRP | $17,355 |
+| Dealer price | $15,274 |
+| has_command_thrust | true |
+| has_power_trim | true |
+| Rigging code | ELPT |
+| model_key | FS_90_ELPT_CT |
 
-### 1. AdminNav — Add horizontal scroll to nav container
-Make the nav items horizontally scrollable instead of overflowing the page:
+## SQL (via insert tool — uses ON CONFLICT to skip if already present)
+```sql
+INSERT INTO motor_models (
+  model, model_display, display_name, model_number,
+  horsepower, family, motor_type, make, year, is_brochure,
+  has_command_thrust, has_power_trim, rigging_code,
+  msrp, dealer_price, model_key, availability
+) VALUES
+(
+  '50 ELPT Command Thrust FourStroke',
+  '50 ELPT Command Thrust FourStroke',
+  '50 ELPT Command Thrust FourStroke',
+  '1F51453GZ', 50, 'FourStroke', 'Outboard', 'Mercury', 2025, true,
+  true, true, 'ELPT', 12645, 11127, 'FS_50_ELPT_CT', 'Brochure'
+),
+(
+  '90 ELPT Command Thrust FourStroke',
+  '90 ELPT Command Thrust FourStroke',
+  '90 ELPT Command Thrust FourStroke',
+  '1F904532D', 90, 'FourStroke', 'Outboard', 'Mercury', 2025, true,
+  true, true, 'ELPT', 17355, 15274, 'FS_90_ELPT_CT', 'Brochure'
+)
+ON CONFLICT (model_number) DO NOTHING;
+```
 
-| Element | Change |
-|---------|--------|
-| Nav items `<div>` | Add `overflow-x-auto` and `whitespace-nowrap` so tabs scroll horizontally within the header |
-| Hide scrollbar | Add CSS to hide the scrollbar visually while keeping scroll functional |
-
-### 2. AdminQuotes — Add overflow containment
-Add `overflow-x-hidden` to the `<main>` wrapper so any overflow from child elements doesn't break page scroll.
+Also fix the existing 40 CT's `model` field (currently set to `'Outboard'`):
+```sql
+UPDATE motor_models
+SET model = '40 ELPT Command Thrust FourStroke'
+WHERE model_number = '1F41453GZ' AND model = 'Outboard';
+```
 
 ## Files Changed
-
 | File | Change |
 |------|--------|
-| `src/components/admin/AdminNav.tsx` | Add `overflow-x-auto`, `flex-shrink-0`, and scrollbar-hide classes to the nav items container |
-| `src/index.css` | Add a small `.admin-nav-scroll` utility to hide the horizontal scrollbar on the admin nav |
+| New migration | INSERT 50 + 90 ELPT CT motors, fix 40 CT model field |
 
