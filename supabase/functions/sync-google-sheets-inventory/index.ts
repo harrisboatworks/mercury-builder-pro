@@ -271,6 +271,11 @@ Deno.serve(async (req) => {
         query = query.or('model_display.ilike.%Command Thrust%,model_display.ilike.%CT%');
       }
 
+      // If NOT a Command Thrust motor, explicitly EXCLUDE CT models to prevent false matches
+      if (!parsed.hasCommandThrust) {
+        query = query.not('model_display', 'ilike', '%Command Thrust%');
+      }
+
       query = query.limit(1);
 
       let { data: motors, error: searchError } = await query;
@@ -304,6 +309,11 @@ Deno.serve(async (req) => {
 
         if (parsed.family) {
           fallbackQuery = fallbackQuery.ilike('model_display', `%${parsed.family}%`);
+        }
+
+        // Exclude CT models in fallback too
+        if (!parsed.hasCommandThrust) {
+          fallbackQuery = fallbackQuery.not('model_display', 'ilike', '%Command Thrust%');
         }
 
         fallbackQuery = fallbackQuery.limit(1);
