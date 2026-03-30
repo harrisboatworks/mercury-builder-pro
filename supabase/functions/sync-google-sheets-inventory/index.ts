@@ -311,6 +311,11 @@ Deno.serve(async (req) => {
           fallbackQuery = fallbackQuery.ilike('model_display', `%${parsed.family}%`);
         }
 
+        // Exclude CT models in fallback too
+        if (!parsed.hasCommandThrust) {
+          fallbackQuery = fallbackQuery.not('model_display', 'ilike', '%Command Thrust%');
+        }
+
         fallbackQuery = fallbackQuery.limit(1);
 
         const fallbackResult = await fallbackQuery;
