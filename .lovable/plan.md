@@ -1,24 +1,30 @@
 
 
-# Add Image for 50 ELPT Command Thrust Motor
+# Fix Google Sheets Sync CT Matching Ambiguity
 
-## What
-Copy the uploaded 50 CT product photo into the project and update the database record.
+## Problem
+The sync function matches motors by HP + rigging code + family with `limit(1)`. Now that CT variants exist for 40, 50, and 90 HP, a non-CT motor from the sheet (e.g., "90 ELPT FourStroke") could incorrectly match the CT variant ("90 ELPT Command Thrust FourStroke") since both contain "ELPT" and "FourStroke".
 
-## Steps
+The sync already adds a CT filter when `hasCommandThrust` is true, but does NOT exclude CT models when `hasCommandThrust` is false.
 
-1. **Copy image** — `user-uploads://50_elpt_ct.jpg` → `public/images/motors/50-elpt-ct-fourstroke.jpg`
-2. **Update database** — Set `image_url` on model `1F51453GZ`
+## Current in-stock status (verified correct)
+28/28 matched, 0 unmatched. 16 unique models in stock with correct quantities. All good until the next sync runs with the new CT models in the database.
 
-```sql
-UPDATE motor_models
-SET image_url = '/images/motors/50-elpt-ct-fourstroke.jpg', updated_at = now()
-WHERE model_number = '1F51453GZ';
+## Fix
+In `supabase/functions/sync-google-sheets-inventory/index.ts`, add a negative CT filter when the parsed motor does NOT have Command Thrust:
+
+After the existing CT check block (~line 272), add:
+```typescript
+// If NOT a Command Thrust motor, explicitly EXCLUDE CT models to prevent false matches
+if (!parsed.hasCommandThrust) {
+  query = query.not('model_display', 'ilike', '%Command Thrust%');
+}
 ```
+
+Apply the same fix to the fallback query (~line 305).
 
 ## Files Changed
 | File | Change |
 |------|--------|
-| `public/images/motors/50-elpt-ct-fourstroke.jpg` | Copy uploaded image |
-| Database | UPDATE `image_url` for model `1F51453GZ` |
+| `supabase/functions/sync-google-sheets-inventory/index.ts` | Add negative CT filter for non-CT motors in both primary and fallback queries |
 
