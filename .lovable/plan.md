@@ -1,30 +1,21 @@
 
 
-# Add Missing 40 ELPT Command Thrust Motor
+# Add Image to 40 ELPT Command Thrust Motor
 
 ## Problem
-Mercury's 40 ELPT Command Thrust (Four-Cylinder) FourStroke — model `1F41453GZ` — exists in both pricing CSVs but was never inserted into `motor_models`. Customers searching for Command Thrust 40HP won't find it.
+The newly inserted 40 ELPT CT motor has no image — `image_url`, `hero_image_url`, and `images` are all empty.
 
 ## Fix
-Single migration to INSERT the missing motor with correct pricing, flags, and metadata.
+Run a data UPDATE (via insert tool) to set `image_url` to the full-size extracted URL from the ThumbGenerator link you provided.
 
-### Key values from pricing data
-| Field | Value |
-|-------|-------|
-| Model number | 1F41453GZ |
-| Display | 40 ELPT Command Thrust FourStroke |
-| MSRP | $11,250 |
-| Dealer price | $9,900 |
-| HP | 40 |
-| Family | FourStroke |
-| has_command_thrust | true |
-| has_power_trim | true |
-| Rigging code | ELPT |
-| Shaft | L (20") |
+### SQL
+```sql
+UPDATE motor_models
+SET
+  image_url = 'https://cdnmedia.endeavorsuite.com/images/organizations/873ce1ca-42a6-40ae-ac55-07757f842998/inventory/13620828/530b8e2f6515c10900e91883-large.jpg',
+  updated_at = now()
+WHERE model_number = '1F41453GZ';
+```
 
-## File
-
-| File | Change |
-|------|--------|
-| New migration | INSERT the 40 ELPT CT motor into `motor_models` with availability set to `NULL` (standard brochure catalog item, visible on site) |
+Single data update — no migration needed.
 
