@@ -63,17 +63,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition]);
 
-  // Reset auto-estimate flag when estimate is cleared (fields changed after estimate)
-  useEffect(() => {
-    if (estimate) {
-      // If any required field changes after estimate, clear estimate and allow re-trigger
-      const handler = () => {
-        setEstimate(null);
-        autoEstimateTriggered.current = false;
-      };
-      // We don't actually need this effect — the auto-estimate useEffect handles re-triggering
-    }
-  }, []);
 
   // Check if required fields are missing
   const missingFields = {
@@ -439,7 +428,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                           ? 'border-gray-900 bg-gray-50 shadow-lg' 
                           : 'border-gray-300 hover:border-gray-900 hover:shadow-md'
                       }`}
-                      onTap={() => {
+                      onClick={() => {
                         triggerHaptic('light');
                         setEstimate(null);
                         autoEstimateTriggered.current = false;
