@@ -55,7 +55,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     }
   }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, showValidation]);
 
-  // Auto-estimate when all required fields are filled
+  // Auto-estimate when all required fields are filled (debounced for typing)
   useEffect(() => {
     if (!tradeInInfo.hasTradeIn) {
       autoEstimateTriggered.current = false;
@@ -66,8 +66,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     const allFilled = brand && year && horsepower && condition;
     
     if (allFilled && !isLoading && !estimate && !autoEstimateTriggered.current) {
-      autoEstimateTriggered.current = true;
-      handleGetEstimate();
+      const timer = setTimeout(() => {
+        autoEstimateTriggered.current = true;
+        handleGetEstimate();
+      }, 800);
+      return () => clearTimeout(timer);
     }
   }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, tradeInInfo.hasTradeIn]);
 
