@@ -1,46 +1,41 @@
 
+# Integrate HBW Motor Valuation API + Report Link
 
-# Treat All Promo End Dates as End-of-Day (Inclusive)
+## Overview
+Replace the local `estimateTradeValue()` with a direct fetch to `https://hbw-valuation-hbw.vercel.app/api/motor-valuation`. Map `wholesale` → `estimatedValue`. Add a "View Full Valuation Report" button that links to the HBW tool with URL params + `auto=true`. Keep local math as silent fallback. Customer name comes from `QuoteContext.customerName` (option B).
 
-## Problem
-When a promotion has an `end_date` of `2026-03-31`, `new Date("2026-03-31")` resolves to midnight **start** of that day. Multiple places in the codebase compare this against `new Date()`, causing the promo to appear expired during the final day. We fixed `StaleQuoteAlert` already — now we need to apply the same pattern everywhere.
-
-## Approach
-Create a shared utility function `promoEndOfDay(dateStr)` that returns a `Date` set to 23:59:59.999 of the given day. Use it in every file that compares a promo end date against "now".
-
-## Files to change
-
-| File | What changes |
-|------|-------------|
-| `src/lib/quote-utils.ts` | Add `promoEndOfDay(dateStr: string): Date` utility |
-| `src/components/quote-builder/StaleQuoteAlert.tsx` | Use `promoEndOfDay` instead of inline `setHours` |
-| `src/pages/AdminPromotions.tsx` | Two spots: `getPromoStatus` (line 248) and `activePromotionsForVoice` filter (line 423) — use `promoEndOfDay` |
-| `src/components/quote-builder/MotorSelection.tsx` | `isPromotionActive` (line 542) — use `promoEndOfDay` for end_date check |
-| `src/lib/quote-nudges.ts` | `getDaysUntilEnd` (line 188) — set end-of-day before calculating diff |
-| `src/components/ui/countdown-timer.tsx` | `calculateTimeLeft` and initial `targetDate` — set end-of-day so countdown runs to 11:59 PM, not 12:00 AM |
-
-## Utility function
-
-```typescript
-/** Treat a date-only string as valid through end of that day (23:59:59.999) */
-export function promoEndOfDay(dateStr: string): Date {
-  const d = new Date(dateStr);
-  d.setHours(23, 59, 59, 999);
-  return d;
-}
+## Architecture
+```
+TradeInValuation "Get My Estimate" click
+  → fetch("https://hbw-valuation-hbw.vercel.app/api/motor-valuation", POST body)
+  → Success: use wholesale as estimatedValue, show richer results + report link
+  → Failure: fall back to local estimateTradeValue() silently
+  → estimatedValue feeds into quote pipeline unchanged
 ```
 
-## Key changes per file
+## Changes
 
-**AdminPromotions.tsx line 248-249**: `new Date(promo.end_date)` → `promoEndOfDay(promo.end_date)`
+### 1. `src/lib/trade-valuation.ts` — Add `fetchHBWValuation()`
+New async function that POSTs to the HBW API and returns a `TradeValueEstimate`-compatible result plus extra fields (hstSavings, listing value). No API key header.
 
-**AdminPromotions.tsx line 423**: `new Date(promo.end_date) < now` → `promoEndOfDay(promo.end_date) < now`
+### 2. `src/components/quote-builder/TradeInValuation.tsx` — Use HBW API + add report link
+- Accept optional `customerName` prop (from QuoteContext)
+- In `handleGetEstimate`: try `fetchHBWValuation()` first, fall back to local `estimateTradeValue()` on error
+- After estimate shows: add HST savings callout, private sale comparison, and "View Full Valuation Report →" button
+- Report link format: `https://hbw-valuation-hbw.vercel.app/?brand=X&year=X&hp=X&condition=X&stroke=X&name=X&auto=true`
+- Map stroke: `4-stroke` (default), `2-stroke`, or engine type from form
 
-**MotorSelection.tsx line 542**: `new Date(p.end_date) >= now` → `promoEndOfDay(p.end_date) >= now`
+### 3. `src/pages/quote/TradeInPage.tsx` — Pass customerName prop
+- Pass `state.customerName` to `<TradeInValuation customerName={state.customerName} />`
 
-**quote-nudges.ts line 188**: set `endDate` to end-of-day before diff calculation
+## What stays the same
+- `TradeInInfo` interface — `estimatedValue` field unchanged
+- All downstream: pricing summary, PDF quote, saved quotes — untouched
+- Form fields and flow — identical
 
-**countdown-timer.tsx line 43**: when `endDate` is a string, use `promoEndOfDay` so the timer counts down to 11:59:59 PM instead of midnight start-of-day
-
-**StaleQuoteAlert.tsx**: replace inline `setHours` with `promoEndOfDay` import
-
+## Files changed
+| File | Change |
+|------|--------|
+| `src/lib/trade-valuation.ts` | Add `fetchHBWValuation()` + `HBWValuationResponse` type |
+| `src/components/quote-builder/TradeInValuation.tsx` | Call HBW API with fallback; add report link + richer result UI |
+| `src/pages/quote/TradeInPage.tsx` | Pass `customerName` prop |
