@@ -437,20 +437,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 <Label className="text-base font-light tracking-wide text-gray-900">
                   Motor Condition *
                 </Label>
-                <div className={`grid grid-cols-2 md:grid-cols-4 gap-4 ${
+                <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 ${
                   showValidation && missingFields.condition ? 'ring-2 ring-red-500 rounded-sm p-2' : ''
                 }`}>
                   {conditionOptions.map((option) => (
-                    <motion.div
+                    <motion.button
+                      type="button"
                       key={option.value}
-                      whileHover={{ scale: 1.02, y: -2 }}
                       whileTap={{ scale: 0.98 }}
-                      className={`cursor-pointer border-2 rounded-sm p-4 text-center transition-all duration-300 premium-lift ${
+                      className={`cursor-pointer border-2 rounded-sm p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 ${
                         tradeInInfo.condition === option.value 
-                          ? 'border-gray-900 bg-gray-50 shadow-lg premium-selected' 
+                          ? 'border-gray-900 bg-gray-50 shadow-lg' 
                           : 'border-gray-300 hover:border-gray-900 hover:shadow-md'
                       }`}
-                      onClick={() => {
+                      onTap={() => {
+                        triggerHaptic('light');
                         setEstimate(null);
                         autoEstimateTriggered.current = false;
                         onTradeInChange({ ...tradeInInfo, condition: option.value as any });
@@ -458,7 +459,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     >
                       <div className="font-light text-lg text-gray-900">{option.label}</div>
                       <div className="text-xs font-normal text-gray-600 mt-1">{option.description}</div>
-                    </motion.div>
+                    </motion.button>
                   ))}
                 </div>
                 {showValidation && missingFields.condition && (
