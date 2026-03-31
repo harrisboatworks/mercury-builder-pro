@@ -8,8 +8,9 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 
 import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, Wrench, ChevronDown } from 'lucide-react';
+import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, Wrench, ChevronDown, ExternalLink } from 'lucide-react';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig, type HBWValuationResult } from '@/lib/trade-valuation';
+import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useTradeValuationData } from '@/hooks/useTradeValuationData';
 
@@ -100,7 +101,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     setIsLoading(true);
 
     // Map engine type to stroke for HBW API
-    const stroke = tradeInInfo.engineType === '2-stroke' ? '2-stroke'
+    const strokeType = tradeInInfo.engineType === '2-stroke' ? '2-stroke'
       : tradeInInfo.engineType === 'optimax' ? '2-stroke'
       : '4-stroke';
 
@@ -110,7 +111,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       year: tradeInInfo.year,
       horsepower: tradeInInfo.horsepower,
       condition: tradeInInfo.condition,
-      stroke,
+      stroke: strokeType,
       hours: tradeInInfo.engineHours,
       model: tradeInInfo.model,
     });
@@ -153,6 +154,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     
     // Update the trade-in info with the rounded median value ($25 increments)
     const finalValue = medianRoundedTo25(tradeEstimate.low, tradeEstimate.high);
+    // Build report URL for persistence
+    const stroke = tradeInInfo.engineType === '2-stroke' || tradeInInfo.engineType === 'optimax' ? '2-stroke' : '4-stroke';
+    const reportUrl = (tradeEstimate as HBWValuationResult).fromHBW
+      ? buildHBWReportUrl({
+          brand: tradeInInfo.brand,
+          year: tradeInInfo.year,
+          hp: tradeInInfo.horsepower,
+          condition: tradeInInfo.condition,
+          stroke,
+          hours: tradeInInfo.engineHours,
+          model: tradeInInfo.model,
+          name: customerName || undefined,
+        })
+      : undefined;
+
     onTradeInChange({
       ...tradeInInfo,
       estimatedValue: finalValue,
@@ -166,7 +182,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
         : finalValue,
       tradeinValueFinal: finalValue,
       penaltyApplied: getBrandPenaltyFactor(tradeInInfo.brand) < 1,
-      penaltyFactor: getBrandPenaltyFactor(tradeInInfo.brand)
+      penaltyFactor: getBrandPenaltyFactor(tradeInInfo.brand),
+      valuationReportUrl: reportUrl,
     });
     
     setIsLoading(false);
@@ -523,6 +540,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         max="20000"
                         className="min-h-[48px] rounded-sm border-gray-300 font-light"
                       />
+                      <p className="text-xs text-gray-400 font-light">Not sure? Leave blank — it's optional</p>
                     </div>
 
                     <div className="space-y-2">
@@ -572,33 +590,31 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     <div className="flex items-center gap-3 mb-4">
                       <CircleCheck className="w-6 h-6 text-green-600" />
                       <h3 className="text-lg font-light text-gray-900">Your Estimated Trade Value</h3>
+                      {/* Confidence badge */}
+                      <span className={`ml-auto text-xs font-medium px-2 py-0.5 rounded-full ${
+                        estimate.confidence === 'high' ? 'bg-green-200 text-green-800' :
+                        estimate.confidence === 'medium' ? 'bg-amber-200 text-amber-800' :
+                        'bg-gray-200 text-gray-600'
+                      }`}>
+                        {estimate.confidence === 'high' ? 'High' : estimate.confidence === 'medium' ? 'Medium' : 'Low'} confidence
+                      </span>
                     </div>
                     
                     <div className="text-center space-y-2">
                       <div className="text-4xl font-light text-green-700">
-                        ${medianValue.toLocaleString()}
+                        <AnimatedPrice value={medianValue} prefix="$" duration={0.8} />
                       </div>
                       <div className="text-sm font-normal text-gray-700">
-                        Range: ${Math.round(estimate.low).toLocaleString()} - ${Math.round(estimate.high).toLocaleString()}
+                        Range: ${Math.round(estimate.low).toLocaleString()} – ${Math.round(estimate.high).toLocaleString()}
                       </div>
                     </div>
 
-                    {/* HBW-specific extras */}
-                    {(estimate as HBWValuationResult).fromHBW && (
+                    {/* HBW-specific extras — corrected private sale framing */}
+                    {(estimate as HBWValuationResult).fromHBW && (estimate as HBWValuationResult).hstSavings > 0 && (
                       <div className="mt-4 space-y-3">
-                        {(estimate as HBWValuationResult).hstSavings > 0 && (
-                          <div className="flex items-center gap-2 text-sm font-light text-green-800 bg-green-100 rounded-sm p-3">
-                            <DollarSign className="w-4 h-4 flex-shrink-0" />
-                            <span>
-                              Save <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> in HST by trading in instead of selling privately
-                            </span>
-                          </div>
-                        )}
-                        {(estimate as HBWValuationResult).listingValue > 0 && (
-                          <div className="text-sm font-light text-gray-600 text-center">
-                            Est. private sale value: <span className="font-medium">${Math.round((estimate as HBWValuationResult).listingValue).toLocaleString()}</span>
-                          </div>
-                        )}
+                        <div className="text-sm font-light text-gray-700 bg-green-100 rounded-sm p-3 leading-relaxed">
+                          Private sale might get you <strong className="font-medium">${Math.round((estimate as HBWValuationResult).listingValue).toLocaleString()}</strong> — but you'd owe <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> more in HST on your new motor. Trading in puts <strong className="font-medium">${medianValue.toLocaleString()} + ${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()} in savings</strong> in your pocket.
+                        </div>
                       </div>
                     )}
 
@@ -612,26 +628,28 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     )}
                   </Card>
 
-                  {/* View Full Report link — HBW tool with auto-generate */}
+                  {/* View Full Report — subtle text link */}
                   {(estimate as HBWValuationResult).fromHBW && (
-                    <a
-                      href={buildHBWReportUrl({
-                        brand: tradeInInfo.brand,
-                        year: tradeInInfo.year,
-                        hp: tradeInInfo.horsepower,
-                        condition: tradeInInfo.condition,
-                        stroke: tradeInInfo.engineType === '2-stroke' || tradeInInfo.engineType === 'optimax' ? '2-stroke' : '4-stroke',
-                        hours: tradeInInfo.engineHours,
-                        model: tradeInInfo.model,
-                        name: customerName || undefined,
-                      })}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full min-h-[48px] text-base font-light border-2 border-gray-900 text-gray-900 rounded-[10px] hover:bg-gray-900 hover:text-white transition-all duration-200 px-4"
-                    >
-                      View Full Valuation Report
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
+                    <div className="text-center">
+                      <a
+                        href={tradeInInfo.valuationReportUrl || buildHBWReportUrl({
+                          brand: tradeInInfo.brand,
+                          year: tradeInInfo.year,
+                          hp: tradeInInfo.horsepower,
+                          condition: tradeInInfo.condition,
+                          stroke: tradeInInfo.engineType === '2-stroke' || tradeInInfo.engineType === 'optimax' ? '2-stroke' : '4-stroke',
+                          hours: tradeInInfo.engineHours,
+                          model: tradeInInfo.model,
+                          name: customerName || undefined,
+                        })}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-light text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors"
+                      >
+                        View detailed valuation report
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
                   )}
 
                   <Alert className="border-blue-200 bg-blue-50">
