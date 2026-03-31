@@ -55,24 +55,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     }
   }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, showValidation]);
 
-  // Auto-estimate when all required fields are filled (debounced for typing)
+  // Reset estimate when fields change so button is shown again
   useEffect(() => {
-    if (!tradeInInfo.hasTradeIn) {
-      autoEstimateTriggered.current = false;
-      return;
+    if (estimate) {
+      setEstimate(null);
     }
-    
-    const { brand, year, horsepower, condition } = tradeInInfo;
-    const allFilled = brand && year && horsepower && condition;
-    
-    if (allFilled && !isLoading && !estimate && !autoEstimateTriggered.current) {
-      const timer = setTimeout(() => {
-        autoEstimateTriggered.current = true;
-        handleGetEstimate();
-      }, 800);
-      return () => clearTimeout(timer);
-    }
-  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, tradeInInfo.hasTradeIn]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition]);
 
   // Reset auto-estimate flag when estimate is cleared (fields changed after estimate)
   useEffect(() => {
