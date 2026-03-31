@@ -694,7 +694,10 @@ export async function fetchHBWValuation(params: {
 
     const res = await fetch('https://hbw-valuation-hbw.vercel.app/api/motor-valuation', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'X-API-Key': 'hbw-val-44489cc7ed5d13d2cebcd5fc143fa249',
+      },
       body: JSON.stringify({
         brand: params.brand,
         year: params.year,
