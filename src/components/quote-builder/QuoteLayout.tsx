@@ -62,7 +62,7 @@ export const QuoteLayout = ({
       {showProgress && <QuoteProgressStepper />}
 
       {/* Main Content */}
-      <main className="min-h-screen relative">
+      <main className="relative">
         {children}
       </main>
 
