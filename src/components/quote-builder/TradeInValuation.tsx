@@ -628,26 +628,28 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     )}
                   </Card>
 
-                  {/* View Full Report link — HBW tool with auto-generate */}
+                  {/* View Full Report — subtle text link */}
                   {(estimate as HBWValuationResult).fromHBW && (
-                    <a
-                      href={buildHBWReportUrl({
-                        brand: tradeInInfo.brand,
-                        year: tradeInInfo.year,
-                        hp: tradeInInfo.horsepower,
-                        condition: tradeInInfo.condition,
-                        stroke: tradeInInfo.engineType === '2-stroke' || tradeInInfo.engineType === 'optimax' ? '2-stroke' : '4-stroke',
-                        hours: tradeInInfo.engineHours,
-                        model: tradeInInfo.model,
-                        name: customerName || undefined,
-                      })}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full min-h-[48px] text-base font-light border-2 border-gray-900 text-gray-900 rounded-[10px] hover:bg-gray-900 hover:text-white transition-all duration-200 px-4"
-                    >
-                      View Full Valuation Report
-                      <ArrowRight className="w-4 h-4" />
-                    </a>
+                    <div className="text-center">
+                      <a
+                        href={tradeInInfo.valuationReportUrl || buildHBWReportUrl({
+                          brand: tradeInInfo.brand,
+                          year: tradeInInfo.year,
+                          hp: tradeInInfo.horsepower,
+                          condition: tradeInInfo.condition,
+                          stroke: tradeInInfo.engineType === '2-stroke' || tradeInInfo.engineType === 'optimax' ? '2-stroke' : '4-stroke',
+                          hours: tradeInInfo.engineHours,
+                          model: tradeInInfo.model,
+                          name: customerName || undefined,
+                        })}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-light text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors"
+                      >
+                        View detailed valuation report
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
                   )}
 
                   <Alert className="border-blue-200 bg-blue-50">

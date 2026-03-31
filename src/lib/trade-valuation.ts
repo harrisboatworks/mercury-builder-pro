@@ -22,6 +22,7 @@ export interface TradeInInfo {
   tradeinValueFinal?: number;
   penaltyApplied?: boolean;
   penaltyFactor?: number;
+  valuationReportUrl?: string;
 }
 
 export interface TradeValueEstimate {
