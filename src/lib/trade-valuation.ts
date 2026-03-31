@@ -649,3 +649,110 @@ export function computeRoundedTradeIn(low: number, high: number, brand?: string,
   const { low: l2, high: h2 } = applyBrandPenaltyToRange(low, high, brand, [], config, minValue);
   return { low: l2, high: h2, rounded: medianRoundedTo25(l2, h2, minValue) } as const;
 }
+
+// ─── HBW Motor Valuation API ───────────────────────────────────────────────────
+
+export interface HBWValuationResponse {
+  wholesale: number;
+  listing: number;
+  rangeLow: number;
+  rangeHigh: number;
+  confidence: 'high' | 'medium' | 'low';
+  hstSavings: number;
+  depreciation: number;
+  conditionFactor: number;
+  marketDemand: string;
+  seasonal: string;
+  factors: string[];
+}
+
+export interface HBWValuationResult extends TradeValueEstimate {
+  /** HBW listing (private-sale) value */
+  listingValue: number;
+  /** HST savings from trading in vs private sale */
+  hstSavings: number;
+  /** Whether this came from HBW API (true) or local fallback (false) */
+  fromHBW: boolean;
+}
+
+/**
+ * Fetch a motor valuation from the HBW API.
+ * Returns null on any failure so the caller can fall back to local math.
+ */
+export async function fetchHBWValuation(params: {
+  brand: string;
+  year: number;
+  horsepower: number;
+  condition: string;
+  stroke?: string;
+  hours?: number;
+  model?: string;
+}): Promise<HBWValuationResult | null> {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+
+    const res = await fetch('https://hbw-valuation-hbw.vercel.app/api/motor-valuation', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        brand: params.brand,
+        year: params.year,
+        hp: params.horsepower,
+        condition: params.condition,
+        stroke: params.stroke || '4-stroke',
+        hours: params.hours,
+        model: params.model,
+      }),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeout);
+
+    if (!res.ok) return null;
+
+    const data: HBWValuationResponse = await res.json();
+
+    return {
+      low: data.rangeLow,
+      high: data.rangeHigh,
+      average: data.wholesale,
+      confidence: data.confidence,
+      source: 'HBW Motor Valuation API',
+      factors: data.factors || [],
+      listingValue: data.listing,
+      hstSavings: data.hstSavings,
+      fromHBW: true,
+    };
+  } catch (err) {
+    console.warn('HBW valuation API failed, will use local fallback:', err);
+    return null;
+  }
+}
+
+/**
+ * Build the URL for the HBW valuation report with pre-filled params.
+ */
+export function buildHBWReportUrl(params: {
+  brand: string;
+  year: number;
+  hp: number;
+  condition: string;
+  stroke?: string;
+  hours?: number;
+  model?: string;
+  name?: string;
+}): string {
+  const base = 'https://hbw-valuation-hbw.vercel.app/';
+  const query = new URLSearchParams();
+  query.set('brand', params.brand);
+  query.set('year', String(params.year));
+  query.set('hp', String(params.hp));
+  query.set('condition', params.condition);
+  query.set('stroke', params.stroke || '4-stroke');
+  if (params.hours) query.set('hours', String(params.hours));
+  if (params.model) query.set('model', params.model);
+  if (params.name) query.set('name', params.name);
+  query.set('auto', 'true');
+  return `${base}?${query.toString()}`;
+}

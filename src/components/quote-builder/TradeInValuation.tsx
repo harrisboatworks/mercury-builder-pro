@@ -9,7 +9,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, Wrench, ChevronDown } from 'lucide-react';
-import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig } from '@/lib/trade-valuation';
+import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig, type HBWValuationResult } from '@/lib/trade-valuation';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useTradeValuationData } from '@/hooks/useTradeValuationData';
 
@@ -20,11 +20,13 @@ interface TradeInValuationProps {
   currentMotorBrand?: string;
   currentHp?: number;
   currentMotorYear?: number;
+  /** Customer name from quote context for personalized HBW report */
+  customerName?: string;
   /** When true, skip the Yes/No toggle and show the form immediately */
   standalone?: boolean;
 }
 
-export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear, standalone = false }: TradeInValuationProps) => {
+export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear, customerName, standalone = false }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
   const [showValidation, setShowValidation] = useState(false);
@@ -88,58 +90,81 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   ];
 
   const handleGetEstimate = async () => {
-    console.log('Auto-estimating - Current tradeInInfo:', tradeInInfo);
+    console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
     
     if (!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition) {
-      console.log('Missing required fields:', {
-        brand: tradeInInfo.brand,
-        year: tradeInInfo.year,
-        horsepower: tradeInInfo.horsepower,
-        condition: tradeInInfo.condition
-      });
+      console.log('Missing required fields');
       return;
     }
 
     setIsLoading(true);
-    
-    // Simulate API delay for better UX
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Build config from database data
-    const config: TradeValuationConfig | undefined = valuationData?.config ? {
-      BRAND_PENALTY_JOHNSON: valuationData.config.BRAND_PENALTY_JOHNSON as { factor: number } | undefined,
-      BRAND_PENALTY_EVINRUDE: valuationData.config.BRAND_PENALTY_EVINRUDE as { factor: number } | undefined,
-      BRAND_PENALTY_OMC: valuationData.config.BRAND_PENALTY_OMC as { factor: number } | undefined,
-      MERCURY_BONUS_YEARS: valuationData.config.MERCURY_BONUS_YEARS as { max_age: number; factor: number } | undefined,
-      MIN_TRADE_VALUE: valuationData.config.MIN_TRADE_VALUE as { value: number } | undefined,
-      HP_CLASS_FLOORS: valuationData.config.HP_CLASS_FLOORS as Record<string, number> | undefined,
-      TWO_STROKE_PENALTY: valuationData.config.TWO_STROKE_PENALTY as { factor: number } | undefined,
-      HOURS_ADJUSTMENT: valuationData.config.HOURS_ADJUSTMENT as TradeValuationConfig['HOURS_ADJUSTMENT'] | undefined,
-      MSRP_TRADE_PERCENTAGES: valuationData.config.MSRP_TRADE_PERCENTAGES as unknown as Record<string, Record<string, number>> | undefined,
-    } : undefined;
-    
-    const tradeEstimate = estimateTradeValue(tradeInInfo, {
-      brackets: valuationData?.brackets,
-      config,
-      referenceMsrps: valuationData?.referenceMsrps,
-      referenceMsrpsMax: valuationData?.referenceMsrpsMax,
+
+    // Map engine type to stroke for HBW API
+    const stroke = tradeInInfo.engineType === '2-stroke' ? '2-stroke'
+      : tradeInInfo.engineType === 'optimax' ? '2-stroke'
+      : '4-stroke';
+
+    // Try HBW API first
+    const hbwResult = await fetchHBWValuation({
+      brand: tradeInInfo.brand,
+      year: tradeInInfo.year,
+      horsepower: tradeInInfo.horsepower,
+      condition: tradeInInfo.condition,
+      stroke,
+      hours: tradeInInfo.engineHours,
+      model: tradeInInfo.model,
     });
+
+    let tradeEstimate: TradeValueEstimate & { listingValue?: number; hstSavings?: number; fromHBW?: boolean };
+
+    if (hbwResult) {
+      console.log('✅ HBW API returned valuation:', hbwResult);
+      tradeEstimate = hbwResult;
+    } else {
+      console.log('⚠️ HBW API unavailable, using local fallback');
+      // Simulate brief delay for local calc
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      // Build config from database data
+      const config: TradeValuationConfig | undefined = valuationData?.config ? {
+        BRAND_PENALTY_JOHNSON: valuationData.config.BRAND_PENALTY_JOHNSON as { factor: number } | undefined,
+        BRAND_PENALTY_EVINRUDE: valuationData.config.BRAND_PENALTY_EVINRUDE as { factor: number } | undefined,
+        BRAND_PENALTY_OMC: valuationData.config.BRAND_PENALTY_OMC as { factor: number } | undefined,
+        MERCURY_BONUS_YEARS: valuationData.config.MERCURY_BONUS_YEARS as { max_age: number; factor: number } | undefined,
+        MIN_TRADE_VALUE: valuationData.config.MIN_TRADE_VALUE as { value: number } | undefined,
+        HP_CLASS_FLOORS: valuationData.config.HP_CLASS_FLOORS as Record<string, number> | undefined,
+        TWO_STROKE_PENALTY: valuationData.config.TWO_STROKE_PENALTY as { factor: number } | undefined,
+        HOURS_ADJUSTMENT: valuationData.config.HOURS_ADJUSTMENT as TradeValuationConfig['HOURS_ADJUSTMENT'] | undefined,
+        MSRP_TRADE_PERCENTAGES: valuationData.config.MSRP_TRADE_PERCENTAGES as unknown as Record<string, Record<string, number>> | undefined,
+      } : undefined;
+      
+      tradeEstimate = {
+        ...estimateTradeValue(tradeInInfo, {
+          brackets: valuationData?.brackets,
+          config,
+          referenceMsrps: valuationData?.referenceMsrps,
+          referenceMsrpsMax: valuationData?.referenceMsrpsMax,
+        }),
+        fromHBW: false,
+      };
+    }
+
     setEstimate(tradeEstimate);
     
     // Update the trade-in info with the rounded median value ($25 increments)
+    const finalValue = medianRoundedTo25(tradeEstimate.low, tradeEstimate.high);
     onTradeInChange({
       ...tradeInInfo,
-      estimatedValue: medianRoundedTo25(tradeEstimate.low, tradeEstimate.high),
+      estimatedValue: finalValue,
       confidenceLevel: tradeEstimate.confidence,
-      // Audit fields
       rangePrePenaltyLow: tradeEstimate.prePenaltyLow,
       rangePrePenaltyHigh: tradeEstimate.prePenaltyHigh,
       rangeFinalLow: tradeEstimate.low,
       rangeFinalHigh: tradeEstimate.high,
       tradeinValuePrePenalty: (tradeEstimate.prePenaltyLow !== undefined && tradeEstimate.prePenaltyHigh !== undefined)
         ? medianRoundedTo25(tradeEstimate.prePenaltyLow, tradeEstimate.prePenaltyHigh)
-        : medianRoundedTo25(tradeEstimate.low, tradeEstimate.high),
-      tradeinValueFinal: medianRoundedTo25(tradeEstimate.low, tradeEstimate.high),
+        : finalValue,
+      tradeinValueFinal: finalValue,
       penaltyApplied: getBrandPenaltyFactor(tradeInInfo.brand) < 1,
       penaltyFactor: getBrandPenaltyFactor(tradeInInfo.brand)
     });
@@ -558,6 +583,25 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       </div>
                     </div>
 
+                    {/* HBW-specific extras */}
+                    {(estimate as HBWValuationResult).fromHBW && (
+                      <div className="mt-4 space-y-3">
+                        {(estimate as HBWValuationResult).hstSavings > 0 && (
+                          <div className="flex items-center gap-2 text-sm font-light text-green-800 bg-green-100 rounded-sm p-3">
+                            <DollarSign className="w-4 h-4 flex-shrink-0" />
+                            <span>
+                              Save <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> in HST by trading in instead of selling privately
+                            </span>
+                          </div>
+                        )}
+                        {(estimate as HBWValuationResult).listingValue > 0 && (
+                          <div className="text-sm font-light text-gray-600 text-center">
+                            Est. private sale value: <span className="font-medium">${Math.round((estimate as HBWValuationResult).listingValue).toLocaleString()}</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
                     {(estimate as any).penaltyMessage && (
                       <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-sm">
                         <div className="flex items-start gap-2">
@@ -567,6 +611,28 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       </div>
                     )}
                   </Card>
+
+                  {/* View Full Report link — HBW tool with auto-generate */}
+                  {(estimate as HBWValuationResult).fromHBW && (
+                    <a
+                      href={buildHBWReportUrl({
+                        brand: tradeInInfo.brand,
+                        year: tradeInInfo.year,
+                        hp: tradeInInfo.horsepower,
+                        condition: tradeInInfo.condition,
+                        stroke: tradeInInfo.engineType === '2-stroke' || tradeInInfo.engineType === 'optimax' ? '2-stroke' : '4-stroke',
+                        hours: tradeInInfo.engineHours,
+                        model: tradeInInfo.model,
+                        name: customerName || undefined,
+                      })}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full min-h-[48px] text-base font-light border-2 border-gray-900 text-gray-900 rounded-[10px] hover:bg-gray-900 hover:text-white transition-all duration-200 px-4"
+                    >
+                      View Full Valuation Report
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  )}
 
                   <Alert className="border-blue-200 bg-blue-50">
                     <Wrench className="w-4 h-4 text-blue-600" />
