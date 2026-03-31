@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { FrozenPricing } from '@/contexts/QuoteContext';
 import { money } from '@/lib/money';
+import { promoEndOfDay } from '@/lib/quote-utils';
 import {
   AlertDialog,
   AlertDialogContent,
