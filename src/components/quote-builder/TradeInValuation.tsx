@@ -90,58 +90,81 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   ];
 
   const handleGetEstimate = async () => {
-    console.log('Auto-estimating - Current tradeInInfo:', tradeInInfo);
+    console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
     
     if (!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition) {
-      console.log('Missing required fields:', {
-        brand: tradeInInfo.brand,
-        year: tradeInInfo.year,
-        horsepower: tradeInInfo.horsepower,
-        condition: tradeInInfo.condition
-      });
+      console.log('Missing required fields');
       return;
     }
 
     setIsLoading(true);
-    
-    // Simulate API delay for better UX
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    // Build config from database data
-    const config: TradeValuationConfig | undefined = valuationData?.config ? {
-      BRAND_PENALTY_JOHNSON: valuationData.config.BRAND_PENALTY_JOHNSON as { factor: number } | undefined,
-      BRAND_PENALTY_EVINRUDE: valuationData.config.BRAND_PENALTY_EVINRUDE as { factor: number } | undefined,
-      BRAND_PENALTY_OMC: valuationData.config.BRAND_PENALTY_OMC as { factor: number } | undefined,
-      MERCURY_BONUS_YEARS: valuationData.config.MERCURY_BONUS_YEARS as { max_age: number; factor: number } | undefined,
-      MIN_TRADE_VALUE: valuationData.config.MIN_TRADE_VALUE as { value: number } | undefined,
-      HP_CLASS_FLOORS: valuationData.config.HP_CLASS_FLOORS as Record<string, number> | undefined,
-      TWO_STROKE_PENALTY: valuationData.config.TWO_STROKE_PENALTY as { factor: number } | undefined,
-      HOURS_ADJUSTMENT: valuationData.config.HOURS_ADJUSTMENT as TradeValuationConfig['HOURS_ADJUSTMENT'] | undefined,
-      MSRP_TRADE_PERCENTAGES: valuationData.config.MSRP_TRADE_PERCENTAGES as unknown as Record<string, Record<string, number>> | undefined,
-    } : undefined;
-    
-    const tradeEstimate = estimateTradeValue(tradeInInfo, {
-      brackets: valuationData?.brackets,
-      config,
-      referenceMsrps: valuationData?.referenceMsrps,
-      referenceMsrpsMax: valuationData?.referenceMsrpsMax,
+
+    // Map engine type to stroke for HBW API
+    const stroke = tradeInInfo.engineType === '2-stroke' ? '2-stroke'
+      : tradeInInfo.engineType === 'optimax' ? '2-stroke'
+      : '4-stroke';
+
+    // Try HBW API first
+    const hbwResult = await fetchHBWValuation({
+      brand: tradeInInfo.brand,
+      year: tradeInInfo.year,
+      horsepower: tradeInInfo.horsepower,
+      condition: tradeInInfo.condition,
+      stroke,
+      hours: tradeInInfo.engineHours,
+      model: tradeInInfo.model,
     });
+
+    let tradeEstimate: TradeValueEstimate & { listingValue?: number; hstSavings?: number; fromHBW?: boolean };
+
+    if (hbwResult) {
+      console.log('✅ HBW API returned valuation:', hbwResult);
+      tradeEstimate = hbwResult;
+    } else {
+      console.log('⚠️ HBW API unavailable, using local fallback');
+      // Simulate brief delay for local calc
+      await new Promise(resolve => setTimeout(resolve, 800));
+      
+      // Build config from database data
+      const config: TradeValuationConfig | undefined = valuationData?.config ? {
+        BRAND_PENALTY_JOHNSON: valuationData.config.BRAND_PENALTY_JOHNSON as { factor: number } | undefined,
+        BRAND_PENALTY_EVINRUDE: valuationData.config.BRAND_PENALTY_EVINRUDE as { factor: number } | undefined,
+        BRAND_PENALTY_OMC: valuationData.config.BRAND_PENALTY_OMC as { factor: number } | undefined,
+        MERCURY_BONUS_YEARS: valuationData.config.MERCURY_BONUS_YEARS as { max_age: number; factor: number } | undefined,
+        MIN_TRADE_VALUE: valuationData.config.MIN_TRADE_VALUE as { value: number } | undefined,
+        HP_CLASS_FLOORS: valuationData.config.HP_CLASS_FLOORS as Record<string, number> | undefined,
+        TWO_STROKE_PENALTY: valuationData.config.TWO_STROKE_PENALTY as { factor: number } | undefined,
+        HOURS_ADJUSTMENT: valuationData.config.HOURS_ADJUSTMENT as TradeValuationConfig['HOURS_ADJUSTMENT'] | undefined,
+        MSRP_TRADE_PERCENTAGES: valuationData.config.MSRP_TRADE_PERCENTAGES as unknown as Record<string, Record<string, number>> | undefined,
+      } : undefined;
+      
+      tradeEstimate = {
+        ...estimateTradeValue(tradeInInfo, {
+          brackets: valuationData?.brackets,
+          config,
+          referenceMsrps: valuationData?.referenceMsrps,
+          referenceMsrpsMax: valuationData?.referenceMsrpsMax,
+        }),
+        fromHBW: false,
+      };
+    }
+
     setEstimate(tradeEstimate);
     
     // Update the trade-in info with the rounded median value ($25 increments)
+    const finalValue = medianRoundedTo25(tradeEstimate.low, tradeEstimate.high);
     onTradeInChange({
       ...tradeInInfo,
-      estimatedValue: medianRoundedTo25(tradeEstimate.low, tradeEstimate.high),
+      estimatedValue: finalValue,
       confidenceLevel: tradeEstimate.confidence,
-      // Audit fields
       rangePrePenaltyLow: tradeEstimate.prePenaltyLow,
       rangePrePenaltyHigh: tradeEstimate.prePenaltyHigh,
       rangeFinalLow: tradeEstimate.low,
       rangeFinalHigh: tradeEstimate.high,
       tradeinValuePrePenalty: (tradeEstimate.prePenaltyLow !== undefined && tradeEstimate.prePenaltyHigh !== undefined)
         ? medianRoundedTo25(tradeEstimate.prePenaltyLow, tradeEstimate.prePenaltyHigh)
-        : medianRoundedTo25(tradeEstimate.low, tradeEstimate.high),
-      tradeinValueFinal: medianRoundedTo25(tradeEstimate.low, tradeEstimate.high),
+        : finalValue,
+      tradeinValueFinal: finalValue,
       penaltyApplied: getBrandPenaltyFactor(tradeInInfo.brand) < 1,
       penaltyFactor: getBrandPenaltyFactor(tradeInInfo.brand)
     });
