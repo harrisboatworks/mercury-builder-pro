@@ -540,6 +540,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         max="20000"
                         className="min-h-[48px] rounded-sm border-gray-300 font-light"
                       />
+                      <p className="text-xs text-gray-400 font-light">Not sure? Leave blank — it's optional</p>
                     </div>
 
                     <div className="space-y-2">
