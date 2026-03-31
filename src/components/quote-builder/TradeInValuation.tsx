@@ -9,7 +9,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, Wrench, ChevronDown } from 'lucide-react';
-import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig } from '@/lib/trade-valuation';
+import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig, type HBWValuationResult } from '@/lib/trade-valuation';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useTradeValuationData } from '@/hooks/useTradeValuationData';
 
