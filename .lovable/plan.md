@@ -1,29 +1,40 @@
 
 
-# Improve Condition Button Highlight + Verify Trade-In on PDF
-
-## 1. Condition button selected state (TradeInValuation.tsx ~line 451-453)
-
-Current selected style: `border-gray-900 bg-gray-50 shadow-lg` — too subtle, especially on mobile.
-
-Change to a stronger visual: dark background with white text, plus a checkmark icon.
-
-```
-// Selected state
-'border-gray-900 bg-gray-900 text-white shadow-lg ring-2 ring-gray-900 ring-offset-2'
-
-// Unselected state (unchanged)
-'border-gray-300 hover:border-gray-900 hover:shadow-md'
-```
-
-Also update the text inside the button: when selected, the label/description text should be white instead of gray.
-
-## 2. PDF trade-in verification
-
-The PDF already handles trade-in correctly (lines 699-735 in ProfessionalQuotePDF.tsx): it renders the trade-in value, description, and HST savings when `tradeInValue > 0` and `tradeInInfo` is present. After implementing the button fix, we should test the full flow end-to-end to confirm the value passes through.
+# Trade-In Valuation — 6 Improvements
 
 ## Files changed
-| File | Change |
-|------|--------|
-| `src/components/quote-builder/TradeInValuation.tsx` | Stronger selected state: dark bg, white text, ring offset |
+
+| File | Changes |
+|------|---------|
+| `src/lib/trade-valuation.ts` | Add `valuationReportUrl?: string` to `TradeInInfo` interface |
+| `src/components/quote-builder/TradeInValuation.tsx` | All 6 UI changes below |
+
+---
+
+## 1. "Not sure?" helper on Engine Hours (line 513)
+Add muted text below the label: `"Not sure? Leave blank — it's optional"`
+
+## 2. Report link → subtle text link (lines 617-634)
+Replace the full-width bordered button with a centered inline text link:
+```
+<a className="text-sm text-gray-500 hover:text-gray-900 underline ...">
+  View detailed valuation report →
+</a>
+```
+
+## 3. Save valuation URL to quote state (line 156)
+After computing `finalValue`, build the report URL and include `valuationReportUrl` in the `onTradeInChange` call. Add the field to `TradeInInfo` in `trade-valuation.ts`.
+
+## 4. Confidence badge (line 574)
+Next to "Your Estimated Trade Value" heading, show a small badge: `High confidence` (green) / `Medium` (amber) / `Low` (gray).
+
+## 5. Count-up animation on estimate value (line 578-579)
+Import `AnimatedPrice` from `@/components/ui/AnimatedPrice` and replace the static `$X,XXX` with `<AnimatedPrice value={medianValue} />`.
+
+## 6. Better private sale framing — corrected math (lines 597-601)
+Replace "Est. private sale value: $X" with the user's corrected framing:
+
+> "Private sale might get you $6,675 — but you'd owe $666 more in HST on your new motor. Trading in puts $5,125 + $666 in savings in your pocket."
+
+Using actual values: `listingValue`, `hstSavings`, and `medianValue`.
 
