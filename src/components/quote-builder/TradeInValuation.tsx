@@ -583,6 +583,25 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       </div>
                     </div>
 
+                    {/* HBW-specific extras */}
+                    {(estimate as HBWValuationResult).fromHBW && (
+                      <div className="mt-4 space-y-3">
+                        {(estimate as HBWValuationResult).hstSavings > 0 && (
+                          <div className="flex items-center gap-2 text-sm font-light text-green-800 bg-green-100 rounded-sm p-3">
+                            <DollarSign className="w-4 h-4 flex-shrink-0" />
+                            <span>
+                              Save <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> in HST by trading in instead of selling privately
+                            </span>
+                          </div>
+                        )}
+                        {(estimate as HBWValuationResult).listingValue > 0 && (
+                          <div className="text-sm font-light text-gray-600 text-center">
+                            Est. private sale value: <span className="font-medium">${Math.round((estimate as HBWValuationResult).listingValue).toLocaleString()}</span>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
                     {(estimate as any).penaltyMessage && (
                       <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-sm">
                         <div className="flex items-start gap-2">
@@ -592,6 +611,28 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       </div>
                     )}
                   </Card>
+
+                  {/* View Full Report link — HBW tool with auto-generate */}
+                  {(estimate as HBWValuationResult).fromHBW && (
+                    <a
+                      href={buildHBWReportUrl({
+                        brand: tradeInInfo.brand,
+                        year: tradeInInfo.year,
+                        hp: tradeInInfo.horsepower,
+                        condition: tradeInInfo.condition,
+                        stroke: tradeInInfo.engineType === '2-stroke' || tradeInInfo.engineType === 'optimax' ? '2-stroke' : '4-stroke',
+                        hours: tradeInInfo.engineHours,
+                        model: tradeInInfo.model,
+                        name: customerName || undefined,
+                      })}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full min-h-[48px] text-base font-light border-2 border-gray-900 text-gray-900 rounded-[10px] hover:bg-gray-900 hover:text-white transition-all duration-200 px-4"
+                    >
+                      View Full Valuation Report
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  )}
 
                   <Alert className="border-blue-200 bg-blue-50">
                     <Wrench className="w-4 h-4 text-blue-600" />
