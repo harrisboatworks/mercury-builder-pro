@@ -40,7 +40,14 @@ const getUrgencyLevel = (days: number): 'normal' | 'warning' | 'critical' | 'urg
 };
 
 export function CountdownTimer({ endDate, onExpire, className, compact = false }: CountdownTimerProps) {
-  const targetDate = typeof endDate === 'string' ? new Date(endDate) : endDate;
+  const targetDate = useMemo(() => {
+    if (typeof endDate === 'string') {
+      const d = new Date(endDate);
+      d.setHours(23, 59, 59, 999);
+      return d;
+    }
+    return endDate;
+  }, [endDate]);
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft(targetDate));
   const [hasExpired, setHasExpired] = useState(false);
 

@@ -420,7 +420,7 @@ const AdminPromotions = () => {
     return promotions.filter(promo => {
       if (!promo.is_active) return false;
       if (promo.start_date && new Date(promo.start_date) > now) return false;
-      if (promo.end_date && new Date(promo.end_date) < now) return false;
+      if (promo.end_date && promoEndOfDay(promo.end_date) < now) return false;
       return true;
     });
   }, [promotions]);

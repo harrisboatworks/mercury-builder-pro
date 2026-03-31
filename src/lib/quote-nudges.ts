@@ -185,7 +185,7 @@ export const PROMO_AWARENESS_NUDGES = {
   getDaysUntilEnd: (endDateStr: string | null | undefined): number => {
     if (!endDateStr) return 999;
     try {
-      const endDate = new Date(endDateStr);
+      const endDate = promoEndOfDay(endDateStr);
       const now = new Date();
       return Math.ceil((endDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
     } catch {
