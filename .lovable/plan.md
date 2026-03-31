@@ -1,42 +1,36 @@
 
 
-# Redesign Purchase Path Buttons
+# Verification: Trade-In Value on PDF — Code Trace Results
 
-## Problem
-The current "Loose Motor" and "Professional Install" options look like info cards with too much text, not clear clickable choices. They don't feel like buttons. The navigation already auto-advances (handled in `PurchasePathPage.tsx` via useEffect), so that part works — the issue is purely visual.
+## Status: Data flow is correct ✅
 
-## Design approach
-Replace the verbose card layout with two clean, bold selection tiles — minimal text, strong visual identity, obvious clickability. Think of it like the mounting option gallery but bigger.
+I traced the full path from quote state → PDF generation → PDF rendering:
 
-### Mobile (< md)
-Two stacked full-width tiles:
-- Large icon (Package / Wrench) centered
-- Bold title: "Loose Motor" / "Professional Install"  
-- One-line subtitle: "Pick up & go" / "We handle everything"
-- No bullet lists, no checkmarks
-- Strong tap feedback (scale + border color change)
-- Selected state: dark background, white text, checkmark overlay — then auto-navigates
+### Data flow
 
-### Desktop (≥ md)
-Two side-by-side tiles in a 2-column grid:
-- Same clean layout but larger — icon, title, one-line subtitle
-- Hover: lift + border highlight
-- Click: brief selected state flash → auto-navigate
-- Badge stays ("Quick & Easy" / "Full Service") but smaller and integrated
+```text
+QuoteContext (state.tradeInInfo.estimatedValue)
+  ↓
+QuoteSummaryPage.tsx (lines 609-612)
+  — conditionally includes tradeInValue + tradeInInfo when hasTradeIn && estimatedValue > 0 && brand exists
+  ↓
+react-pdf-generator.tsx (lines 132-133)
+  — passes tradeInValue and tradeInInfo directly to ProfessionalQuotePDF
+  ↓
+ProfessionalQuotePDF.tsx (lines 699-735)
+  — renders "Estimated Trade Value: -$X,XXX.XX"
+  — renders "Tax Savings from Trade-In: You save $XXX.XX"
+  — shows trade-in description (year, brand, HP, model)
+```
 
-### What gets removed
-- All the CheckCircle bullet point lists (6-8 lines of feature text per card)
-- The "Select Loose Motor →" / "Select Installation →" bottom buttons (the whole card is the button)
-- CardHeader / CardContent / CardTitle structure — replaced with simpler div layout
+### What I confirmed
+- The $5,125 (or whatever HBW API returns) maps from `wholesale` → `estimatedValue` → `tradeInValue` through the entire chain
+- The PDF renders both the dollar value and the HST savings ($5,125 × 0.13 = $666.25)
+- The trade-in description (e.g., "2019 Mercury 150 HP") renders from `tradeInInfo`
 
-### What stays
-- The badges ("Quick & Easy" / "Full Service")
-- The Package and Wrench icons
-- The existing `onSelectPath` callback and auto-navigation logic in PurchasePathPage.tsx (unchanged)
+### To fully verify visually
+This requires a live browser test — running through the quote flow, entering a trade-in, and clicking "Download PDF" on the summary page. I can do this once switched to default mode.
 
-## File changed
-
-| File | Change |
-|------|--------|
-| `src/components/quote-builder/PurchasePath.tsx` | Complete redesign of both mobile and desktop layouts — clean selection tiles with minimal text |
+### No code changes needed
+The pipeline is correctly wired. This is a verification-only task.
 
