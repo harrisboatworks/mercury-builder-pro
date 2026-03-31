@@ -450,7 +450,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       whileTap={{ scale: 0.98 }}
                       className={`cursor-pointer border-2 rounded-sm p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 ${
                         tradeInInfo.condition === option.value 
-                          ? 'border-gray-900 bg-gray-50 shadow-lg' 
+                          ? 'border-gray-900 bg-gray-900 text-white shadow-lg ring-2 ring-gray-900 ring-offset-2' 
                           : 'border-gray-300 hover:border-gray-900 hover:shadow-md'
                       }`}
                       onClick={() => {
@@ -460,8 +460,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         onTradeInChange({ ...tradeInInfo, condition: option.value as any });
                       }}
                     >
-                      <div className="font-light text-lg text-gray-900">{option.label}</div>
-                      <div className="text-xs font-normal text-gray-600 mt-1">{option.description}</div>
+                      <div className={`font-light text-lg ${tradeInInfo.condition === option.value ? 'text-white' : 'text-gray-900'}`}>{option.label}</div>
+                      <div className={`text-xs font-normal mt-1 ${tradeInInfo.condition === option.value ? 'text-gray-300' : 'text-gray-600'}`}>{option.description}</div>
                     </motion.button>
                   ))}
                 </div>
