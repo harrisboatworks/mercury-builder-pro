@@ -55,24 +55,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     }
   }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, showValidation]);
 
-  // Auto-estimate when all required fields are filled (debounced for typing)
+  // Reset estimate when fields change so button is shown again
   useEffect(() => {
-    if (!tradeInInfo.hasTradeIn) {
-      autoEstimateTriggered.current = false;
-      return;
+    if (estimate) {
+      setEstimate(null);
     }
-    
-    const { brand, year, horsepower, condition } = tradeInInfo;
-    const allFilled = brand && year && horsepower && condition;
-    
-    if (allFilled && !isLoading && !estimate && !autoEstimateTriggered.current) {
-      const timer = setTimeout(() => {
-        autoEstimateTriggered.current = true;
-        handleGetEstimate();
-      }, 800);
-      return () => clearTimeout(timer);
-    }
-  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, tradeInInfo.hasTradeIn]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition]);
 
   // Reset auto-estimate flag when estimate is cleared (fields changed after estimate)
   useEffect(() => {
@@ -538,7 +527,19 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </CollapsibleContent>
               </Collapsible>
 
-              {/* Loading indicator for auto-estimate */}
+              {/* Get Estimate button */}
+              {!estimate && !isLoading && !hasMissingFields && (
+                <Button
+                  type="button"
+                  onClick={handleGetEstimate}
+                  className="w-full min-h-[56px] text-lg font-light mt-2 bg-[hsl(var(--luxury-black))] text-white rounded-[10px] hover:opacity-90 active:scale-[0.97] transition-all duration-200 gap-2"
+                >
+                  <DollarSign className="w-5 h-5" />
+                  Get My Estimate
+                </Button>
+              )}
+
+              {/* Loading indicator */}
               {isLoading && (
                 <div className="pt-4 flex items-center justify-center gap-3 text-gray-600">
                   <Loader2 className="w-5 h-5 animate-spin" />
