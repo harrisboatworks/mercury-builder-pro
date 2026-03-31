@@ -20,11 +20,13 @@ interface TradeInValuationProps {
   currentMotorBrand?: string;
   currentHp?: number;
   currentMotorYear?: number;
+  /** Customer name from quote context for personalized HBW report */
+  customerName?: string;
   /** When true, skip the Yes/No toggle and show the form immediately */
   standalone?: boolean;
 }
 
-export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear, standalone = false }: TradeInValuationProps) => {
+export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear, customerName, standalone = false }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
   const [showValidation, setShowValidation] = useState(false);
