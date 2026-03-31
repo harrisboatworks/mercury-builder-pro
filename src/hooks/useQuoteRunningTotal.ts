@@ -101,10 +101,14 @@ export function calculateRunningTotal(
     lineItems.push({ label: 'Marine Starting Battery', value: opts.batteryCost });
   }
 
-  // Trade-in credit
+  // Trade-in credit (capped at subtotal — no cash refunds)
   if (opts.tradeInValue) {
-    subtotal -= opts.tradeInValue;
-    lineItems.push({ label: 'Trade-In Credit', value: opts.tradeInValue, isCredit: true });
+    const cappedTradeIn = Math.min(opts.tradeInValue, subtotal);
+    subtotal -= cappedTradeIn;
+    lineItems.push({ label: 'Trade-In Credit', value: cappedTradeIn, isCredit: true });
+    if (opts.tradeInValue > cappedTradeIn) {
+      lineItems.push({ label: 'Trade-in exceeds motor cost (capped)', value: 0 });
+    }
   }
 
   // Admin custom items
