@@ -101,7 +101,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     setIsLoading(true);
 
     // Map engine type to stroke for HBW API
-    const stroke = tradeInInfo.engineType === '2-stroke' ? '2-stroke'
+    const strokeType = tradeInInfo.engineType === '2-stroke' ? '2-stroke'
       : tradeInInfo.engineType === 'optimax' ? '2-stroke'
       : '4-stroke';
 
