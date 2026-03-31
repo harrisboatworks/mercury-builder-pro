@@ -628,6 +628,18 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         </div>
                       </div>
                     )}
+
+                    {/* Warning: trade-in exceeds motor price */}
+                    {selectedMotorPrice && medianValue > selectedMotorPrice && (
+                      <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-sm">
+                        <div className="flex items-start gap-2">
+                          <AlertCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
+                          <p className="text-sm font-light text-amber-800">
+                            Your trade-in value exceeds the cost of your selected motor. The credit will be capped at the motor price — no cash refunds on trade-ins.
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </Card>
 
                   {/* View Full Report — subtle text link */}

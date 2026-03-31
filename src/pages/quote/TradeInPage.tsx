@@ -307,6 +307,7 @@ export default function TradeInPage() {
             currentHp={state.boatInfo?.currentHp}
             currentMotorYear={state.boatInfo?.currentMotorYear}
             customerName={state.customerName}
+            selectedMotorPrice={state.motor?.price || state.motor?.basePrice || state.motor?.msrp}
           />
         </div>
       
