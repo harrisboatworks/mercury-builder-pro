@@ -111,7 +111,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       year: tradeInInfo.year,
       horsepower: tradeInInfo.horsepower,
       condition: tradeInInfo.condition,
-      stroke,
+      stroke: strokeType,
       hours: tradeInInfo.engineHours,
       model: tradeInInfo.model,
     });
