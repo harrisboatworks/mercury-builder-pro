@@ -14,6 +14,7 @@ import FinancingForm, { FinancingFormValues } from '@/components/admin/Financing
 import { toast } from 'sonner';
 import AdminNav from '@/components/admin/AdminNav';
 import { Mic, CheckCircle2, AlertCircle } from 'lucide-react';
+import { promoEndOfDay } from '@/lib/quote-utils';
 interface DbMotor {
   id: string;
   model: string;

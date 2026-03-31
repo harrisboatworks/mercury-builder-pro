@@ -1,3 +1,4 @@
+import { promoEndOfDay } from '@/lib/quote-utils';
 /**
  * Expert Nudges Library
  * Contextual, educational messages that build trust and reduce friction

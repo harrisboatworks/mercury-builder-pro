@@ -50,6 +50,7 @@ import {
   isCounterRotatingMotor
 } from '@/lib/motor-helpers';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
+import { promoEndOfDay } from '@/lib/quote-utils';
 
 // Database types
 interface DbMotor {
