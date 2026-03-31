@@ -1,27 +1,29 @@
 
 
-# Add HBW API Key to Valuation Fetch
+# Improve Condition Button Highlight + Verify Trade-In on PDF
 
-## What
-Add the `X-API-Key` header to the direct client-side fetch call in `fetchHBWValuation()` to authenticate with the HBW API and get the full AI-powered valuation response.
+## 1. Condition button selected state (TradeInValuation.tsx ~line 451-453)
 
-## Change
+Current selected style: `border-gray-900 bg-gray-50 shadow-lg` — too subtle, especially on mobile.
 
-**`src/lib/trade-valuation.ts` ~line 697**
+Change to a stronger visual: dark background with white text, plus a checkmark icon.
 
-Add the API key header to the existing fetch headers:
+```
+// Selected state
+'border-gray-900 bg-gray-900 text-white shadow-lg ring-2 ring-gray-900 ring-offset-2'
 
-```typescript
-headers: {
-  'Content-Type': 'application/json',
-  'X-API-Key': 'hbw-val-44489cc7ed5d13d2cebcd5fc143fa249',
-},
+// Unselected state (unchanged)
+'border-gray-300 hover:border-gray-900 hover:shadow-md'
 ```
 
-That's it — one line added. The 401 error goes away, the full HBW response comes through, and the richer UI (HST savings, report link, confidence) will appear.
+Also update the text inside the button: when selected, the label/description text should be white instead of gray.
+
+## 2. PDF trade-in verification
+
+The PDF already handles trade-in correctly (lines 699-735 in ProfessionalQuotePDF.tsx): it renders the trade-in value, description, and HST savings when `tradeInValue > 0` and `tradeInInfo` is present. After implementing the button fix, we should test the full flow end-to-end to confirm the value passes through.
 
 ## Files changed
 | File | Change |
 |------|--------|
-| `src/lib/trade-valuation.ts` | Add `X-API-Key` header to fetch call |
+| `src/components/quote-builder/TradeInValuation.tsx` | Stronger selected state: dark bg, white text, ring offset |
 
