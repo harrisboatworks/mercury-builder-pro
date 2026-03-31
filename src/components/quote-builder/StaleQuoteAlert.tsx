@@ -76,7 +76,9 @@ export function StaleQuoteAlert({
     }
 
     // Promo expired by date
-    if (promoEndDate && new Date(promoEndDate) < new Date() && frozenPricing.promoSavings > 0 && livePromoSavings > 0) {
+    const promoEnd = promoEndDate ? new Date(promoEndDate) : null;
+    if (promoEnd) promoEnd.setHours(23, 59, 59, 999);
+    if (promoEnd && promoEnd < new Date() && frozenPricing.promoSavings > 0 && livePromoSavings > 0) {
       // Only add if not already caught by savings delta
       if (Math.abs(promoDelta) <= 1) {
         result.push({
