@@ -1,36 +1,43 @@
 
 
-# Verification: Trade-In Value on PDF — Code Trace Results
+# Cap Trade-In Value — No Credits
 
-## Status: Data flow is correct ✅
+## Problem
+A 2.5 HP motor (~$2,000) with a 150 HP trade-in (~$9,150) results in a **negative subtotal**, effectively giving the customer money. The agent API already caps this (`Math.min(tradeInValue, subtotal)`) but the main quote builder pricing engine does not.
 
-I traced the full path from quote state → PDF generation → PDF rendering:
+## Fix
 
-### Data flow
+### 1. `src/hooks/useQuoteRunningTotal.ts` — Cap trade-in at subtotal
 
-```text
-QuoteContext (state.tradeInInfo.estimatedValue)
-  ↓
-QuoteSummaryPage.tsx (lines 609-612)
-  — conditionally includes tradeInValue + tradeInInfo when hasTradeIn && estimatedValue > 0 && brand exists
-  ↓
-react-pdf-generator.tsx (lines 132-133)
-  — passes tradeInValue and tradeInInfo directly to ProfessionalQuotePDF
-  ↓
-ProfessionalQuotePDF.tsx (lines 699-735)
-  — renders "Estimated Trade Value: -$X,XXX.XX"
-  — renders "Tax Savings from Trade-In: You save $XXX.XX"
-  — shows trade-in description (year, brand, HP, model)
+In `calculateRunningTotal`, after computing the subtotal up to the trade-in step (~line 104-108), cap the applied trade-in so the subtotal never goes below zero:
+
+```typescript
+if (opts.tradeInValue) {
+  const cappedTradeIn = Math.min(opts.tradeInValue, subtotal);
+  subtotal -= cappedTradeIn;
+  lineItems.push({ label: 'Trade-In Credit', value: cappedTradeIn, isCredit: true });
+  if (opts.tradeInValue > cappedTradeIn) {
+    lineItems.push({ label: 'Trade-in exceeds motor cost (capped)', value: 0 });
+  }
+}
 ```
 
-### What I confirmed
-- The $5,125 (or whatever HBW API returns) maps from `wholesale` → `estimatedValue` → `tradeInValue` through the entire chain
-- The PDF renders both the dollar value and the HST savings ($5,125 × 0.13 = $666.25)
-- The trade-in description (e.g., "2019 Mercury 150 HP") renders from `tradeInInfo`
+### 2. `src/components/quote-builder/TradeInValuation.tsx` — Warning when trade-in exceeds motor
 
-### To fully verify visually
-This requires a live browser test — running through the quote flow, entering a trade-in, and clicking "Download PDF" on the summary page. I can do this once switched to default mode.
+If the user's selected motor price is available and the trade-in estimate exceeds it, show a warning banner:
 
-### No code changes needed
-The pipeline is correctly wired. This is a verification-only task.
+> "Your trade-in value exceeds the cost of your selected motor. The credit will be capped at the motor price — no cash refunds on trade-ins."
+
+This prevents confusion before they reach the summary.
+
+### 3. `supabase/functions/create-payment/index.ts` — Already safe-ish but add explicit cap
+
+The Stripe payment flow should also cap `tradeInCredit` to never exceed the line items total, preventing a negative charge.
+
+## Files changed
+| File | Change |
+|------|--------|
+| `src/hooks/useQuoteRunningTotal.ts` | Cap trade-in at pre-trade subtotal |
+| `src/components/quote-builder/TradeInValuation.tsx` | Warning banner when estimate > motor price |
+| `supabase/functions/create-payment/index.ts` | Explicit cap on tradeInCredit |
 
