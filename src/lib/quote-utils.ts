@@ -155,6 +155,16 @@ export function calculateQuotePricing(data: {
 }
 
 /**
+ * Treat a date-only string as valid through end of that day (23:59:59.999).
+ * Use everywhere a promo end_date is compared against "now".
+ */
+export function promoEndOfDay(dateStr: string): Date {
+  const d = new Date(dateStr);
+  d.setHours(23, 59, 59, 999);
+  return d;
+}
+
+/**
  * Format expiry countdown message
  */
 export function formatExpiry(endDate: Date | string): string {

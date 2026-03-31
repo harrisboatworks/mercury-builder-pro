@@ -50,6 +50,7 @@ import {
   isCounterRotatingMotor
 } from '@/lib/motor-helpers';
 import { classifyMotorFamily, getMotorFamilyDisplay } from '@/lib/motor-family-classifier';
+import { promoEndOfDay } from '@/lib/quote-utils';
 
 // Database types
 interface DbMotor {
@@ -539,7 +540,7 @@ export const MotorSelection = ({
   const isPromotionActive = (p: Promotion) => {
     const now = new Date();
     const startsOk = !p.start_date || new Date(p.start_date) <= now;
-    const endsOk = !p.end_date || new Date(p.end_date) >= now;
+    const endsOk = !p.end_date || promoEndOfDay(p.end_date) >= now;
     return p.is_active && startsOk && endsOk;
   };
   const ruleMatches = (m: DbMotor, r: PromotionRule) => {

@@ -14,6 +14,7 @@ import FinancingForm, { FinancingFormValues } from '@/components/admin/Financing
 import { toast } from 'sonner';
 import AdminNav from '@/components/admin/AdminNav';
 import { Mic, CheckCircle2, AlertCircle } from 'lucide-react';
+import { promoEndOfDay } from '@/lib/quote-utils';
 interface DbMotor {
   id: string;
   model: string;
@@ -245,7 +246,7 @@ const AdminPromotions = () => {
     }
     
     if (promo.end_date) {
-      const endDate = new Date(promo.end_date);
+      const endDate = promoEndOfDay(promo.end_date);
       if (endDate < now) return 'expired';
     }
     
@@ -420,7 +421,7 @@ const AdminPromotions = () => {
     return promotions.filter(promo => {
       if (!promo.is_active) return false;
       if (promo.start_date && new Date(promo.start_date) > now) return false;
-      if (promo.end_date && new Date(promo.end_date) < now) return false;
+      if (promo.end_date && promoEndOfDay(promo.end_date) < now) return false;
       return true;
     });
   }, [promotions]);

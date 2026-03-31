@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { FrozenPricing } from '@/contexts/QuoteContext';
 import { money } from '@/lib/money';
+import { promoEndOfDay } from '@/lib/quote-utils';
 import {
   AlertDialog,
   AlertDialogContent,
@@ -76,8 +77,7 @@ export function StaleQuoteAlert({
     }
 
     // Promo expired by date
-    const promoEnd = promoEndDate ? new Date(promoEndDate) : null;
-    if (promoEnd) promoEnd.setHours(23, 59, 59, 999);
+    const promoEnd = promoEndDate ? promoEndOfDay(promoEndDate) : null;
     if (promoEnd && promoEnd < new Date() && frozenPricing.promoSavings > 0 && livePromoSavings > 0) {
       // Only add if not already caught by savings delta
       if (Math.abs(promoDelta) <= 1) {
