@@ -527,7 +527,19 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </CollapsibleContent>
               </Collapsible>
 
-              {/* Loading indicator for auto-estimate */}
+              {/* Get Estimate button */}
+              {!estimate && !isLoading && !hasMissingFields && (
+                <Button
+                  type="button"
+                  onClick={handleGetEstimate}
+                  className="w-full min-h-[56px] text-lg font-light mt-2 bg-[hsl(var(--luxury-black))] text-white rounded-[10px] hover:opacity-90 active:scale-[0.97] transition-all duration-200 gap-2"
+                >
+                  <DollarSign className="w-5 h-5" />
+                  Get My Estimate
+                </Button>
+              )}
+
+              {/* Loading indicator */}
               {isLoading && (
                 <div className="pt-4 flex items-center justify-center gap-3 text-gray-600">
                   <Loader2 className="w-5 h-5 animate-spin" />
