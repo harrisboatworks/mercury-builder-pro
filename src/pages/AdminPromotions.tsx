@@ -245,7 +245,7 @@ const AdminPromotions = () => {
     }
     
     if (promo.end_date) {
-      const endDate = new Date(promo.end_date);
+      const endDate = promoEndOfDay(promo.end_date);
       if (endDate < now) return 'expired';
     }
     
