@@ -154,6 +154,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     
     // Update the trade-in info with the rounded median value ($25 increments)
     const finalValue = medianRoundedTo25(tradeEstimate.low, tradeEstimate.high);
+    // Build report URL for persistence
+    const stroke = tradeInInfo.engineType === '2-stroke' || tradeInInfo.engineType === 'optimax' ? '2-stroke' : '4-stroke';
+    const reportUrl = (tradeEstimate as HBWValuationResult).fromHBW
+      ? buildHBWReportUrl({
+          brand: tradeInInfo.brand,
+          year: tradeInInfo.year,
+          hp: tradeInInfo.horsepower,
+          condition: tradeInInfo.condition,
+          stroke,
+          hours: tradeInInfo.engineHours,
+          model: tradeInInfo.model,
+          name: customerName || undefined,
+        })
+      : undefined;
+
     onTradeInChange({
       ...tradeInInfo,
       estimatedValue: finalValue,
@@ -167,7 +182,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
         : finalValue,
       tradeinValueFinal: finalValue,
       penaltyApplied: getBrandPenaltyFactor(tradeInInfo.brand) < 1,
-      penaltyFactor: getBrandPenaltyFactor(tradeInInfo.brand)
+      penaltyFactor: getBrandPenaltyFactor(tradeInInfo.brand),
+      valuationReportUrl: reportUrl,
     });
     
     setIsLoading(false);
