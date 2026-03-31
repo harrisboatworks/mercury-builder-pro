@@ -25,9 +25,11 @@ interface TradeInValuationProps {
   customerName?: string;
   /** When true, skip the Yes/No toggle and show the form immediately */
   standalone?: boolean;
+  /** The price of the motor being quoted — used to warn if trade-in exceeds it */
+  selectedMotorPrice?: number;
 }
 
-export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear, customerName, standalone = false }: TradeInValuationProps) => {
+export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, currentMotorBrand, currentHp, currentMotorYear, customerName, standalone = false, selectedMotorPrice }: TradeInValuationProps) => {
   const [isLoading, setIsLoading] = useState(false);
   const [estimate, setEstimate] = useState<TradeValueEstimate | null>(null);
   const [showValidation, setShowValidation] = useState(false);
