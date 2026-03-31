@@ -428,7 +428,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                           ? 'border-gray-900 bg-gray-50 shadow-lg' 
                           : 'border-gray-300 hover:border-gray-900 hover:shadow-md'
                       }`}
-                      onTap={() => {
+                      onClick={() => {
                         triggerHaptic('light');
                         setEstimate(null);
                         autoEstimateTriggered.current = false;
