@@ -1,40 +1,42 @@
 
 
-# Trade-In Valuation — 6 Improvements
+# Redesign Purchase Path Buttons
 
-## Files changed
+## Problem
+The current "Loose Motor" and "Professional Install" options look like info cards with too much text, not clear clickable choices. They don't feel like buttons. The navigation already auto-advances (handled in `PurchasePathPage.tsx` via useEffect), so that part works — the issue is purely visual.
 
-| File | Changes |
-|------|---------|
-| `src/lib/trade-valuation.ts` | Add `valuationReportUrl?: string` to `TradeInInfo` interface |
-| `src/components/quote-builder/TradeInValuation.tsx` | All 6 UI changes below |
+## Design approach
+Replace the verbose card layout with two clean, bold selection tiles — minimal text, strong visual identity, obvious clickability. Think of it like the mounting option gallery but bigger.
 
----
+### Mobile (< md)
+Two stacked full-width tiles:
+- Large icon (Package / Wrench) centered
+- Bold title: "Loose Motor" / "Professional Install"  
+- One-line subtitle: "Pick up & go" / "We handle everything"
+- No bullet lists, no checkmarks
+- Strong tap feedback (scale + border color change)
+- Selected state: dark background, white text, checkmark overlay — then auto-navigates
 
-## 1. "Not sure?" helper on Engine Hours (line 513)
-Add muted text below the label: `"Not sure? Leave blank — it's optional"`
+### Desktop (≥ md)
+Two side-by-side tiles in a 2-column grid:
+- Same clean layout but larger — icon, title, one-line subtitle
+- Hover: lift + border highlight
+- Click: brief selected state flash → auto-navigate
+- Badge stays ("Quick & Easy" / "Full Service") but smaller and integrated
 
-## 2. Report link → subtle text link (lines 617-634)
-Replace the full-width bordered button with a centered inline text link:
-```
-<a className="text-sm text-gray-500 hover:text-gray-900 underline ...">
-  View detailed valuation report →
-</a>
-```
+### What gets removed
+- All the CheckCircle bullet point lists (6-8 lines of feature text per card)
+- The "Select Loose Motor →" / "Select Installation →" bottom buttons (the whole card is the button)
+- CardHeader / CardContent / CardTitle structure — replaced with simpler div layout
 
-## 3. Save valuation URL to quote state (line 156)
-After computing `finalValue`, build the report URL and include `valuationReportUrl` in the `onTradeInChange` call. Add the field to `TradeInInfo` in `trade-valuation.ts`.
+### What stays
+- The badges ("Quick & Easy" / "Full Service")
+- The Package and Wrench icons
+- The existing `onSelectPath` callback and auto-navigation logic in PurchasePathPage.tsx (unchanged)
 
-## 4. Confidence badge (line 574)
-Next to "Your Estimated Trade Value" heading, show a small badge: `High confidence` (green) / `Medium` (amber) / `Low` (gray).
+## File changed
 
-## 5. Count-up animation on estimate value (line 578-579)
-Import `AnimatedPrice` from `@/components/ui/AnimatedPrice` and replace the static `$X,XXX` with `<AnimatedPrice value={medianValue} />`.
-
-## 6. Better private sale framing — corrected math (lines 597-601)
-Replace "Est. private sale value: $X" with the user's corrected framing:
-
-> "Private sale might get you $6,675 — but you'd owe $666 more in HST on your new motor. Trading in puts $5,125 + $666 in savings in your pocket."
-
-Using actual values: `listingValue`, `hstSavings`, and `medianValue`.
+| File | Change |
+|------|--------|
+| `src/components/quote-builder/PurchasePath.tsx` | Complete redesign of both mobile and desktop layouts — clean selection tiles with minimal text |
 
