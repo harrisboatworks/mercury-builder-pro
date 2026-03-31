@@ -21,7 +21,7 @@ export default function PurchasePath({ selectedMotor, onSelectPath }: PurchasePa
           <Package className="w-10 h-10 sm:w-14 sm:h-14 text-foreground/70 group-hover:text-foreground transition-colors" strokeWidth={1.5} />
           <div>
             <span className="block text-base sm:text-xl font-semibold tracking-tight text-foreground">Loose Motor</span>
-            <span className="block text-xs sm:text-sm text-muted-foreground mt-1">Pick up & go</span>
+            <span className="block text-xs sm:text-sm text-muted-foreground mt-1">Schedule Pickup</span>
           </div>
         </button>
 
