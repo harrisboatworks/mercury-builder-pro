@@ -327,17 +327,43 @@ export default function Promotions() {
 
       {/* No Active Promotions State */}
       {!loading && !hasActivePromos && (
-        <section className="py-20 px-4 text-center">
-          <div className="max-w-xl mx-auto">
-            <Shield className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-            <h1 className="text-3xl font-bold text-foreground mb-3">No Active Promotions</h1>
-            <p className="text-muted-foreground mb-6">
-              We don't have any manufacturer promotions running right now, but new offers
-              launch regularly. Sign up below to be the first to know!
+        <section className="relative py-24 md:py-32 px-4 overflow-hidden bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900">
+          {/* Subtle texture overlay */}
+          <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAyNHYySDI0di0yaDEyeiIvPjwvZz48L2c+PC9zdmc+')]" />
+          
+          <div className="relative max-w-2xl mx-auto text-center">
+            {/* Mercury branding */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/10 mb-8">
+              <span className="text-xs font-medium tracking-wider uppercase text-white/70">Mercury Marine</span>
+            </div>
+
+            <Sparkles className="w-10 h-10 text-amber-400/80 mx-auto mb-6" strokeWidth={1.5} />
+            
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+              No Active Promotions Right Now
+            </h1>
+            <p className="text-base md:text-lg text-white/60 mb-10 max-w-lg mx-auto leading-relaxed">
+              Mercury promotions launch throughout the year. Sign up below to be first in line when the next deal drops.
             </p>
-            <Link to="/quote/motor-selection">
-              <Button size="lg">Build Your Quote</Button>
-            </Link>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Link to="/quote/motor-selection">
+                <Button size="lg" variant="luxuryModern" className="bg-white text-stone-900 hover:bg-white/90 min-w-[180px]">
+                  Build Your Quote
+                </Button>
+              </Link>
+              <Link to="/motors">
+                <Button size="lg" variant="ghost" className="text-white/70 hover:text-white hover:bg-white/10 min-w-[180px]">
+                  Browse Motors
+                </Button>
+              </Link>
+            </div>
+
+            {/* Scroll nudge */}
+            <div className="mt-14 flex flex-col items-center gap-1 text-white/40">
+              <span className="text-xs tracking-wide uppercase">Get notified</span>
+              <ChevronDown className="w-4 h-4 animate-bounce" />
+            </div>
           </div>
         </section>
       )}
