@@ -125,7 +125,7 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
   },
   '/quote/trade-in': {
     primaryLabel: (state) => state.tradeInInfo?.estimatedValue ? 'Apply Trade-In' : 'Skip Trade-In',
-    nextPath: (state) => state.purchasePath === 'installed' ? '/quote/installation' : '/quote/promo-selection',
+    nextPath: (state) => state.purchasePath === 'installed' ? '/quote/installation' : '__promo_or_summary__',
     aiMessage: 'Curious about trade-in values or the process?',
     nudges: {
       idle: [
