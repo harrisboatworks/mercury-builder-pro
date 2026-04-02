@@ -129,8 +129,10 @@ export default function PromoSelectionPage() {
   }, [hasUserInteracted, selectedOption, isEligibleForFinancing]);
 
   useEffect(() => {
-    document.title = 'Choose Your Bonus | Mercury Get 7 Promotion';
-  }, []);
+    document.title = promotions.length > 0
+      ? 'Choose Your Bonus | Mercury Promotion'
+      : 'Quote Builder';
+  }, [promotions.length]);
 
   // Redirect if no motor selected
   useEffect(() => {
@@ -138,6 +140,13 @@ export default function PromoSelectionPage() {
       navigate('/quote/motor-selection');
     }
   }, [state.motor, navigate]);
+
+  // Auto-skip if no active promotions
+  useEffect(() => {
+    if (!activePromo && state.motor) {
+      navigate('/quote/summary', { replace: true });
+    }
+  }, [activePromo, state.motor, navigate]);
 
   const handleOptionSelect = (optionId: PromoOptionId) => {
     setSelectedOption(optionId);
