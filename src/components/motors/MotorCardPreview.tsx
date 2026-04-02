@@ -631,7 +631,7 @@ function MotorCardPreviewInner({
         </AnimatePresence>,
         document.body
       )}
-    </>
+    </div>
   );
 }
 
