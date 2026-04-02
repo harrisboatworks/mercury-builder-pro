@@ -971,33 +971,7 @@ if (event.type === 'filter_motors') {
         />
         
         {/* Promotional Banner — only when active promos exist */}
-        {(() => {
-          // eslint-disable-next-line react-hooks/rules-of-hooks
-          const { promotions: activePromos } = useActivePromotions();
-          const promo = activePromos?.[0];
-          if (!promo) return null;
-          const endLabel = promo.end_date
-            ? `Ends ${new Date(promo.end_date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}`
-            : '';
-          return (
-            <DismissibleBanner
-              storageKey="promo_banner_dismissed"
-              variant="promotional"
-              className="max-w-4xl mx-auto px-4 mb-4"
-              actionLabel="See Your Options"
-              actionHref="/promotions"
-              imageUrl={mercuryGet7Promo}
-              imageAlt={promo.name}
-              mobileImageUrl={mercuryGet7PromoMobile}
-              mobileImageAlt={promo.name}
-            >
-              <div>
-                <p className="font-semibold text-sm">{promo.bonus_title || promo.name}</p>
-                {endLabel && <p className="text-xs opacity-80">{endLabel}</p>}
-              </div>
-            </DismissibleBanner>
-          );
-        })()}
+        <PromoBannerConditional />
         
         {/* Recently Viewed Bar */}
         <RecentlyViewedBar 

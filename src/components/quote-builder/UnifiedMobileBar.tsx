@@ -910,9 +910,16 @@ export const UnifiedMobileBar: React.FC = () => {
       dispatch({ type: 'SET_MOTOR', payload: state.previewMotor });
     }
     // Support dynamic nextPath based on state
-    const targetPath = typeof pageConfig.nextPath === 'function'
+    let targetPath = typeof pageConfig.nextPath === 'function'
       ? pageConfig.nextPath(state)
       : pageConfig.nextPath;
+    
+    // Resolve __promo_or_summary__ sentinel: skip promo step when no active choose-one promos
+    if (targetPath === '__promo_or_summary__') {
+      const hasChooseOne = activePromotions?.some(p => p.promo_options?.type === 'choose_one');
+      targetPath = hasChooseOne ? '/quote/promo-selection' : '/quote/summary';
+    }
+    
     navigate(targetPath);
   };
 
