@@ -4,7 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { 
   Bell, ChevronRight, Calendar, Tag, Gift, Sparkles, Mail, MessageSquare,
-  Award, Wrench, Waves, MapPin, Star, ChevronLeft, BadgeCheck, Shield
+  Award, Wrench, Waves, MapPin, Star, ChevronLeft, ChevronDown, BadgeCheck, Shield
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
