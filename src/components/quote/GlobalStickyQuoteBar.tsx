@@ -14,7 +14,7 @@ export function GlobalStickyQuoteBar() {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const { promo } = useActiveFinancingPromo();
-  const { getRebateForHP, getSpecialFinancingRates } = useActivePromotions();
+  const { getRebateForHP, getSpecialFinancingRates, getChooseOneOptions } = useActivePromotions();
 
   // Pages where bar should NOT show
   const hideOnPages = [
