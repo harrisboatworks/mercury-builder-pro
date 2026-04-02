@@ -360,10 +360,13 @@ export default function Promotions() {
             </div>
 
             {/* Scroll nudge */}
-            <div className="mt-14 flex flex-col items-center gap-1 text-white/40">
+            <button 
+              onClick={() => document.getElementById('promo-signup')?.scrollIntoView({ behavior: 'smooth' })}
+              className="mt-14 flex flex-col items-center gap-1 text-white/40 hover:text-white/60 transition-colors cursor-pointer bg-transparent border-none"
+            >
               <span className="text-xs tracking-wide uppercase">Get notified</span>
               <ChevronDown className="w-4 h-4 animate-bounce" />
-            </div>
+            </button>
           </div>
         </section>
       )}
