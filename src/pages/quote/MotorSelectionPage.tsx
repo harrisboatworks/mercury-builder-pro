@@ -14,6 +14,7 @@ import { useMotorComparison } from '@/hooks/useMotorComparison';
 import { useFavoriteMotors } from '@/hooks/useFavoriteMotors';
 import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { daysUntil } from '@/lib/finance';
 import { Clock } from 'lucide-react';
 import { DismissibleBanner } from '@/components/ui/dismissible-banner';
