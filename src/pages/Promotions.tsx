@@ -360,10 +360,13 @@ export default function Promotions() {
             </div>
 
             {/* Scroll nudge */}
-            <div className="mt-14 flex flex-col items-center gap-1 text-white/40">
+            <button 
+              onClick={() => document.getElementById('promo-signup')?.scrollIntoView({ behavior: 'smooth' })}
+              className="mt-14 flex flex-col items-center gap-1 text-white/40 hover:text-white/60 transition-colors cursor-pointer bg-transparent border-none"
+            >
               <span className="text-xs tracking-wide uppercase">Get notified</span>
               <ChevronDown className="w-4 h-4 animate-bounce" />
-            </div>
+            </button>
           </div>
         </section>
       )}
@@ -474,7 +477,7 @@ export default function Promotions() {
       )}
 
       {/* Newsletter Signup */}
-      <section className="bg-stone-50 py-16 px-4">
+      <section id="promo-signup" className="bg-stone-50 py-16 px-4">
         <div className="max-w-xl mx-auto text-center">
           <div className="flex flex-col items-center gap-2 mb-6">
             <img src={mercuryLogo} alt="Mercury Marine" className="h-8" />
