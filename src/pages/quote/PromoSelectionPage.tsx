@@ -211,6 +211,9 @@ export default function PromoSelectionPage() {
     return calculateMonthly(estimatedFinancingAmount, rate, months);
   };
 
+  // If no active promo, show nothing (auto-skip handles redirect)
+  if (!activePromo) return null;
+
   return (
     <PageTransition>
       <div className="min-h-screen bg-gradient-to-b from-background via-secondary/30 to-accent/50">

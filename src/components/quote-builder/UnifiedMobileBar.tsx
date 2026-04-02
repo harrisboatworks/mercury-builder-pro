@@ -156,7 +156,7 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
   },
   '/quote/fuel-tank': {
     primaryLabel: 'Continue',
-    nextPath: '/quote/promo-selection',
+    nextPath: '__promo_or_summary__',
     aiMessage: 'Need help choosing a fuel tank size?',
     nudges: {
       idle: [

@@ -205,8 +205,8 @@ export function getContextualPrompts(
   if (!motor) {
     return [
       "What motor fits my boat?",
-      "Any good deals right now?",
       "Tell me about financing",
+      "What's new for this year?",
       "Help me pick a motor"
     ];
   }

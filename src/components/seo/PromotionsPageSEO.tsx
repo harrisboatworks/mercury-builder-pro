@@ -13,6 +13,24 @@ interface PromotionsPageSEOProps {
 }
 
 export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
+  const hasActivePromos = promotions.length > 0;
+
+  // Generic SEO when no promos are active
+  if (!hasActivePromos) {
+    return (
+      <Helmet>
+        <title>Mercury Outboard Promotions | Harris Boat Works</title>
+        <meta name="description" content="Check back for the latest Mercury outboard motor promotions, rebates, and financing offers. Ontario's trusted Mercury dealer since 1965." />
+        <link rel="canonical" href={`${SITE_URL}/promotions`} />
+        <meta property="og:title" content="Mercury Promotions | Harris Boat Works" />
+        <meta property="og:description" content="Check back for the latest Mercury outboard promotions and offers." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/promotions`} />
+      </Helmet>
+    );
+  }
+
+  // Active promo SEO (existing rich structured data)
   const faqData = [
     {
       question: "What is the Mercury Get 7 + Choose One promotion?",

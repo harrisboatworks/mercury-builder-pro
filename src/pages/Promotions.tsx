@@ -425,25 +425,27 @@ export default function Promotions() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="max-w-3xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground mb-4">
-          Promotion FAQs
-        </h2>
-        <p className="text-muted-foreground text-center mb-10">
-          Common questions about the Mercury Get 7 + Choose One promotion.
-        </p>
-        <Accordion type="single" collapsible className="space-y-3">
-          {promotionFaqs.map((faq, index) => (
-            <AccordionItem key={index} value={`faq-${index}`} className="bg-white rounded-lg border-0 shadow-sm px-6">
-              <AccordionTrigger className="text-left hover:no-underline py-4">
-                <span className="font-medium text-foreground">{faq.question}</span>
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-4">{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
+      {/* FAQ Section — only when promos are active */}
+      {hasActivePromos && (
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground mb-4">
+            Promotion FAQs
+          </h2>
+          <p className="text-muted-foreground text-center mb-10">
+            Common questions about the current Mercury promotion.
+          </p>
+          <Accordion type="single" collapsible className="space-y-3">
+            {promotionFaqs.map((faq, index) => (
+              <AccordionItem key={index} value={`faq-${index}`} className="bg-white rounded-lg border-0 shadow-sm px-6">
+                <AccordionTrigger className="text-left hover:no-underline py-4">
+                  <span className="font-medium text-foreground">{faq.question}</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-4">{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </section>
+      )}
 
       {/* Newsletter Signup */}
       <section className="bg-stone-50 py-16 px-4">

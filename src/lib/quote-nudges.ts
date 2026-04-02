@@ -216,7 +216,7 @@ export const CHAT_ENGAGEMENT_NUDGES: Record<string, ChatEngagementNudge[]> = {
   ],
   '/quote/promo-selection': [
     { message: "Which bonus is best for you? Ask AI →", icon: 'sparkles', aiPrompt: "Which promo option is best for me?" },
-    { message: "Not sure? AI can explain each option →", icon: 'sparkles', aiPrompt: "Explain the Mercury Get 7 bonus options" },
+    { message: "Not sure? AI can explain each option →", icon: 'sparkles', aiPrompt: "Explain the Mercury bonus options" },
   ],
   '/quote/package-selection': [
     { message: "Complete vs Premium? AI can compare →", icon: 'sparkles', aiPrompt: "Compare Complete and Premium packages" },
