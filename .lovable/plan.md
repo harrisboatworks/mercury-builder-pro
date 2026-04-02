@@ -1,85 +1,48 @@
 
 
-# Performance Optimization — Motor Selection Page
+# Fix Missing Card Image for 60 ELPT FourStroke
 
 ## Problem
-On a cold browser (no cache), the motor cards page is sluggish to load and delayed to interact with. This is caused by several compounding issues.
+The 60 ELPT FourStroke has 5 valid images in its `images` array but no `hero_image_url`, `image_url`, or `hero_media_id`. The parent computes `heroImage` as empty string, passing `img=""` to the card. The card then relies on deferred async resolution via IntersectionObserver + `getMotorImageByPriority`, which can fail to render before the user sees the card. The modal works because it calls `getMotorImageGallery` separately on open.
 
-## Root Causes Identified
+## Root cause
+Two places compute the hero image without falling back to the `images` array:
 
-### 1. Per-card hook explosion (~40 motors × 6 hooks each)
-Every `MotorCardPreview` independently instantiates:
-- `useActivePromotions()` — Supabase query (cached, but still creates state/effect per card)
-- `useMotorComparison()` — context consumer
-- `useFeatureDiscovery()` — localStorage read
-- `useRecentlyViewed()` — context consumer
-- `useHapticFeedback()` — callback creation
-- `useSmartImageScale()` — state + callback
-- `useIsMobile()` — media query listener
+1. **Line 522** in `MotorSelectionPage.tsx`: `heroImage = dbMotor.hero_image_url || dbMotor.image_url || ''` — never checks `images[]`
+2. **Line 1097** in `MotorSelectionPage.tsx`: `heroImageUrl = hero_media?.media_url || image_url || motor.image || ''` — `motor.image` is already empty
 
-That's **~280 hook instances** for 40 motors, all mounting simultaneously.
+## Fix
 
-### 2. Per-card async image resolution
-Each card runs `getMotorImageByPriority()` and `getMotorImageGallery()` on mount — potential Supabase queries per card, all firing at once.
+### `src/pages/quote/MotorSelectionPage.tsx`
 
-### 3. Framer Motion stagger animation fighting CSS `!important`
-The CSS in `premium-motor.css` line 44 has `transform: none !important` on motor cards, which fights framer-motion's transform-based animations, causing layout thrashing as the browser resolves conflicting styles.
+**Line 522**: After computing `dbImages`, use the first image as a fallback for `heroImage`:
+```
+// Before
+const heroImage = dbMotor.hero_image_url || dbMotor.image_url || '';
+const dbImages = ...
 
-### 4. JSON-LD `<script>` injection per card
-Each card injects a `dangerouslySetInnerHTML` script tag for product schema — 40 DOM insertions on render.
+// After  
+const dbImages = ... (move up)
+const firstDbImage = dbImages.length > 0 ? dbImages[0] : null;
+const heroImage = dbMotor.hero_image_url || dbMotor.image_url || firstDbImage || '';
+```
 
-### 5. Auto image scraping fires edge function calls
-`useAutoImageScraping` invokes Supabase edge functions for motors without images on every page load.
+**Line 1097**: Add `motor.images?.[0]` as another fallback:
+```
+const heroImageUrl = (dbMotor as any)?.hero_media?.media_url 
+  || dbMotor?.image_url 
+  || motor.image 
+  || motor.images?.[0] 
+  || '';
+```
 
-## Plan
+### Also reset `imageError` on URL change in `MotorCardPreview.tsx`
 
-### Fix 1: Lift shared hooks to parent, pass as props
-**File:** `src/pages/quote/MotorSelectionPage.tsx`, `src/components/motors/MotorCardPreview.tsx`
-
-Move `useActivePromotions`, `useMotorComparison`, `useFeatureDiscovery`, `useRecentlyViewed` calls to `MotorSelectionContent` and pass the needed values as props to each card. This eliminates ~160 redundant hook instances.
-
-### Fix 2: Wrap MotorCardPreview in React.memo
-**File:** `src/components/motors/MotorCardPreview.tsx`
-
-Prevent re-renders when parent state changes (search, filters) don't affect a specific card's props.
-
-### Fix 3: Remove CSS transform conflict
-**File:** `src/styles/premium-motor.css`
-
-Remove `transform: none !important` from `.motor-card` (line 44). This was added to fix modal stacking but fights framer-motion animations. The modal already uses `createPortal` to document.body, so this override is unnecessary.
-
-### Fix 4: Defer below-fold cards with Intersection Observer
-**File:** `src/components/motors/MotorCardPreview.tsx`
-
-Defer async image resolution (`getMotorImageByPriority`, `getMotorImageGallery`) until the card is near the viewport. The hero image from the parent is used immediately; gallery/priority resolution only fires when the card scrolls into view.
-
-### Fix 5: Batch product schema into single script
-**File:** `src/pages/quote/MotorSelectionPage.tsx`
-
-Instead of 40 individual `<script>` tags, generate one `ItemList` schema with all products in the parent component.
-
-### Fix 6: Throttle auto image scraping
-**File:** `src/hooks/useAutoImageScraping.ts`
-
-Add a `sessionStorage` check to only run scraping once per session, not on every page visit.
-
-### Fix 7: Disable framer-motion stagger on revisit
-**File:** `src/pages/quote/MotorSelectionPage.tsx`
-
-The `hasInitiallyLoaded` flag already exists but only prevents scroll. Use it to also skip the stagger animation entirely on filter changes (set `initial={false}` when `hasInitiallyLoaded` is true — already done on line 1018, confirmed working).
+Add a `useEffect` to reset `imageError` when `imageInfo.url` changes, preventing stale error states from blocking newly resolved images.
 
 ## Files changed
-
-| # | File | Change |
-|---|------|--------|
-| 1 | `src/components/motors/MotorCardPreview.tsx` | Accept shared hooks as props, add React.memo, defer image resolution to viewport entry |
-| 2 | `src/pages/quote/MotorSelectionPage.tsx` | Lift hooks to parent, pass as props, batch product schema |
-| 3 | `src/styles/premium-motor.css` | Remove `transform: none !important` from motor cards |
-| 4 | `src/hooks/useAutoImageScraping.ts` | Add session-once guard |
-
-## Expected Impact
-- **~70% fewer hook instances** on initial mount
-- **~40 fewer async calls** on load (deferred to scroll)
-- **Eliminated layout thrashing** from CSS/framer-motion conflict
-- **Faster Time to Interactive** — cards clickable sooner
+| File | Change |
+|------|--------|
+| `src/pages/quote/MotorSelectionPage.tsx` | Fall back to first image from images array for hero image (lines 522 and 1097) |
+| `src/components/motors/MotorCardPreview.tsx` | Reset `imageError` when image URL changes |
 
