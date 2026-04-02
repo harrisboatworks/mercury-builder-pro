@@ -1,4 +1,5 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useNavigate } from 'react-router-dom';
 import { HomepageSEO } from '@/components/seo/HomepageSEO';
 import { StatusIndicator } from '@/components/StatusIndicator';
