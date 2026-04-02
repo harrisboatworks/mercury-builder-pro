@@ -1,4 +1,5 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useNavigate } from 'react-router-dom';
 import { HomepageSEO } from '@/components/seo/HomepageSEO';
 import { StatusIndicator } from '@/components/StatusIndicator';
@@ -119,6 +120,9 @@ const Index = () => {
     }
   }, [navigate, state.isLoading, emergencyMode, getCompletionStatus]);
 
+  const { getChooseOneOptions } = useActivePromotions();
+  const hasActiveChooseOne = useMemo(() => getChooseOneOptions().length > 0, [getChooseOneOptions]);
+
   const handleContinueQuote = () => {
     const completionStatus = getCompletionStatus();
     
@@ -130,7 +134,7 @@ const Index = () => {
         navigate('/quote/boat-info');
       } else if (!state.completedSteps.includes(4)) {
         navigate('/quote/trade-in');
-      } else if (!state.selectedPromoOption) {
+      } else if (!state.selectedPromoOption && hasActiveChooseOne) {
         navigate('/quote/promo-selection');
       } else {
         navigate('/quote/summary');

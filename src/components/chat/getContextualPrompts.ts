@@ -40,13 +40,13 @@ export function getContextualPrompts(
     ];
   }
 
-  // Promo Selection page - deal comparison focus
+  // Promo Selection page - deal comparison focus (only relevant when promos exist)
   if (currentPage.includes('/quote/promo-selection')) {
     return [
-      "Which promo saves the most money?",
-      "How does 6 months no payments work?",
-      "What's the 2.99% APR deal?",
-      "Can I change my promo later?"
+      "Which option saves the most?",
+      "How does deferred payments work?",
+      "What financing rates are available?",
+      "Can I change my selection later?"
     ];
   }
 
@@ -151,7 +151,7 @@ export function getContextualPrompts(
       return [
         "Help me pick the right motor",
         "What size do I need for my boat?",
-        "Any deals going on right now?",
+        "What's a good motor for fishing?",
         "What's a good motor for fishing?"
       ];
     }
@@ -162,10 +162,10 @@ export function getContextualPrompts(
   // Promotions page
   if (currentPage.includes('/promotions')) {
     return [
-      "What's the best deal right now?",
-      "When do these promos end?",
+      "What deals are available?",
+      "When do promotions usually run?",
       "Can I stack promotions?",
-      "Tell me about the Get 7 deal"
+      "Tell me about current offers"
     ];
   }
 
@@ -205,8 +205,8 @@ export function getContextualPrompts(
   if (!motor) {
     return [
       "What motor fits my boat?",
-      "Any good deals right now?",
       "Tell me about financing",
+      "What's new for this year?",
       "Help me pick a motor"
     ];
   }

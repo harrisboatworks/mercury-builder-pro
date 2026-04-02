@@ -162,16 +162,16 @@ export function PricingTable({
               <LineItemRow
                 label={
                   selectedPromoOption === 'no_payments' 
-                    ? '7-Year Warranty + No Payments'
+                    ? 'Warranty + No Payments'
                     : selectedPromoOption === 'special_financing'
-                    ? `7-Year Warranty + ${selectedPromoValue || '2.99%'} APR`
+                    ? `Warranty + ${selectedPromoValue || '2.99%'} APR`
                     : selectedPromoOption === 'cash_rebate'
-                    ? `7-Year Warranty + ${selectedPromoValue} Rebate`
+                    ? `Warranty + ${selectedPromoValue} Rebate`
                     : 'Promotional Savings'
                 }
                 amount={pricing.promoValue}
                 isDiscount
-                description="Mercury GET 7 Promotion"
+                description="Mercury Promotion"
                 className="pl-2 border-l-2 border-emerald-200"
               />
             )}

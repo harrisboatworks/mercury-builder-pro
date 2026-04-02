@@ -106,21 +106,26 @@ export function GlobalStickyQuoteBar() {
     }
   }, [state.selectedPromoOption, state.motor?.hp, getRebateForHP, getSpecialFinancingRates]);
 
+  // Determine promo-or-summary destination
+  const { getChooseOneOptions } = useActivePromotions();
+  const hasActiveChooseOne = getChooseOneOptions().length > 0;
+  const promoOrSummary = hasActiveChooseOne ? '/quote/promo-selection' : '/quote/summary';
+
   // Handle primary action (Continue)
   const handlePrimary = () => {
     const path = location.pathname;
     
     if (path === '/quote/purchase-path') navigate('/quote/boat-info');
     else if (path === '/quote/boat-info') navigate('/quote/trade-in');
-    else if (path === '/quote/fuel-tank') navigate('/quote/promo-selection');
+    else if (path === '/quote/fuel-tank') navigate(promoOrSummary);
     else if (path === '/quote/trade-in') {
       if (state.purchasePath === 'installed') {
         navigate('/quote/installation');
       } else {
-        navigate('/quote/promo-selection');
+        navigate(promoOrSummary);
       }
     }
-    else if (path === '/quote/installation') navigate('/quote/promo-selection');
+    else if (path === '/quote/installation') navigate(promoOrSummary);
     else if (path === '/quote/promo-selection') navigate('/quote/summary');
     else if (path === '/quote/schedule') navigate('/quote/summary');
     // no-op: unknown page, do nothing

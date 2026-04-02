@@ -315,13 +315,32 @@ export default function Promotions() {
     }
   ];
 
+  const hasActivePromos = promotions.length > 0;
+
   return (
     <div className="min-h-screen bg-background">
       <PromotionsPageSEO promotions={promotions} />
       <LuxuryHeader />
       
-      {/* Hero Section */}
-      <PromotionHero endDate={mainPromotion?.end_date} />
+      {/* Hero Section — only when promos are active */}
+      {hasActivePromos && <PromotionHero endDate={mainPromotion?.end_date} />}
+
+      {/* No Active Promotions State */}
+      {!loading && !hasActivePromos && (
+        <section className="py-20 px-4 text-center">
+          <div className="max-w-xl mx-auto">
+            <Shield className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+            <h1 className="text-3xl font-bold text-foreground mb-3">No Active Promotions</h1>
+            <p className="text-muted-foreground mb-6">
+              We don't have any manufacturer promotions running right now, but new offers
+              launch regularly. Sign up below to be the first to know!
+            </p>
+            <Link to="/quote/motor-selection">
+              <Button size="lg">Build Your Quote</Button>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* Choose One Section */}
       {chooseOneOptions.length > 0 && (
@@ -406,25 +425,27 @@ export default function Promotions() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="max-w-3xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground mb-4">
-          Promotion FAQs
-        </h2>
-        <p className="text-muted-foreground text-center mb-10">
-          Common questions about the Mercury Get 7 + Choose One promotion.
-        </p>
-        <Accordion type="single" collapsible className="space-y-3">
-          {promotionFaqs.map((faq, index) => (
-            <AccordionItem key={index} value={`faq-${index}`} className="bg-white rounded-lg border-0 shadow-sm px-6">
-              <AccordionTrigger className="text-left hover:no-underline py-4">
-                <span className="font-medium text-foreground">{faq.question}</span>
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-4">{faq.answer}</AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </section>
+      {/* FAQ Section — only when promos are active */}
+      {hasActivePromos && (
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground mb-4">
+            Promotion FAQs
+          </h2>
+          <p className="text-muted-foreground text-center mb-10">
+            Common questions about the current Mercury promotion.
+          </p>
+          <Accordion type="single" collapsible className="space-y-3">
+            {promotionFaqs.map((faq, index) => (
+              <AccordionItem key={index} value={`faq-${index}`} className="bg-white rounded-lg border-0 shadow-sm px-6">
+                <AccordionTrigger className="text-left hover:no-underline py-4">
+                  <span className="font-medium text-foreground">{faq.question}</span>
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-4">{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </section>
+      )}
 
       {/* Newsletter Signup */}
       <section className="bg-stone-50 py-16 px-4">
