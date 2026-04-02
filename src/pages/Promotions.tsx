@@ -315,13 +315,32 @@ export default function Promotions() {
     }
   ];
 
+  const hasActivePromos = promotions.length > 0;
+
   return (
     <div className="min-h-screen bg-background">
       <PromotionsPageSEO promotions={promotions} />
       <LuxuryHeader />
       
-      {/* Hero Section */}
-      <PromotionHero endDate={mainPromotion?.end_date} />
+      {/* Hero Section — only when promos are active */}
+      {hasActivePromos && <PromotionHero endDate={mainPromotion?.end_date} />}
+
+      {/* No Active Promotions State */}
+      {!loading && !hasActivePromos && (
+        <section className="py-20 px-4 text-center">
+          <div className="max-w-xl mx-auto">
+            <Shield className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
+            <h1 className="text-3xl font-bold text-foreground mb-3">No Active Promotions</h1>
+            <p className="text-muted-foreground mb-6">
+              We don't have any manufacturer promotions running right now, but new offers
+              launch regularly. Sign up below to be the first to know!
+            </p>
+            <Link to="/quote/motor-selection">
+              <Button size="lg">Build Your Quote</Button>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* Choose One Section */}
       {chooseOneOptions.length > 0 && (
