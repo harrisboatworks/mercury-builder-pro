@@ -106,7 +106,7 @@ export function GlobalStickyQuoteBar() {
     }
   }, [state.selectedPromoOption, state.motor?.hp, getRebateForHP, getSpecialFinancingRates]);
 
-  // Determine promo-or-summary destination
+  // Determine promo-or-summary destination (reuse existing useActivePromotions from line 17)
   const { getChooseOneOptions } = useActivePromotions();
   const hasActiveChooseOne = getChooseOneOptions().length > 0;
   const promoOrSummary = hasActiveChooseOne ? '/quote/promo-selection' : '/quote/summary';
