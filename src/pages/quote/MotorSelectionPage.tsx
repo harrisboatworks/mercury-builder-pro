@@ -54,6 +54,34 @@ import type { MotorGroup } from '@/hooks/useGroupedMotors';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
+// Extracted component to safely call useActivePromotions hook
+function PromoBannerConditional() {
+  const { promotions: activePromos } = useActivePromotions();
+  const promo = activePromos?.[0];
+  if (!promo) return null;
+  const endLabel = promo.end_date
+    ? `Ends ${new Date(promo.end_date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}`
+    : '';
+  return (
+    <DismissibleBanner
+      storageKey="promo_banner_dismissed"
+      variant="promotional"
+      className="max-w-4xl mx-auto px-4 mb-4"
+      actionLabel="See Your Options"
+      actionHref="/promotions"
+      imageUrl={mercuryGet7Promo}
+      imageAlt={promo.name}
+      mobileImageUrl={mercuryGet7PromoMobile}
+      mobileImageAlt={promo.name}
+    >
+      <div>
+        <p className="font-semibold text-sm">{promo.bonus_title || promo.name}</p>
+        {endLabel && <p className="text-xs opacity-80">{endLabel}</p>}
+      </div>
+    </DismissibleBanner>
+  );
+}
+
 // Database types
 interface DbMotor {
   id: string;
