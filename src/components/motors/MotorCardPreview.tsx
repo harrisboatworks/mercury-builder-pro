@@ -96,8 +96,8 @@ function MotorCardPreviewInner({
   ctaTextVariant?: "View Details" | "Build My Quote" | "View Details & Quote";
   sharedData?: SharedCardData;
 }) {
-  const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
-  const { promotions } = useActivePromotions();
+  // Use shared data from parent when available, otherwise keep working standalone
+  const promotions = sharedData?.promotions ?? [];
   const { dispatch } = useQuote();
   const { openChat } = useAIChat();
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
@@ -106,10 +106,14 @@ function MotorCardPreviewInner({
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   
-  // UX feature hooks
-  const { toggleComparison, isInComparison, count: comparisonCount, isFull: comparisonFull } = useMotorComparison();
-  const { hasSeen: hasSeenVoiceCoachMark, markAsSeen: markVoiceCoachMarkSeen } = useFeatureDiscovery('harris-voice-coachmark');
-  const { addToRecentlyViewed } = useRecentlyViewed();
+  // UX feature hooks — use shared data from parent to avoid per-card instantiation
+  const toggleComparison = sharedData?.toggleComparison ?? (() => {});
+  const isInComparison = sharedData?.isInComparison ?? (() => false);
+  const comparisonCount = sharedData?.comparisonCount ?? 0;
+  const comparisonFull = sharedData?.comparisonFull ?? false;
+  const hasSeenVoiceCoachMark = sharedData?.hasSeenVoiceCoachMark ?? true;
+  const markVoiceCoachMarkSeen = sharedData?.markVoiceCoachMarkSeen ?? (() => {});
+  const addToRecentlyViewed = sharedData?.addToRecentlyViewed ?? (() => {});
   const { triggerHaptic } = useHapticFeedback();
   
   // Smart image scaling - moderate scaling for card thumbnails
