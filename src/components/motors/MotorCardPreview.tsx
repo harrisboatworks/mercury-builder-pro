@@ -93,6 +93,7 @@ export default function MotorCardPreview({
   inStock?: boolean | null;
   showSavingsLine?: boolean;
   ctaTextVariant?: "View Details" | "Build My Quote" | "View Details & Quote";
+  sharedData?: SharedCardData;
 }) {
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
   const { promotions } = useActivePromotions();
