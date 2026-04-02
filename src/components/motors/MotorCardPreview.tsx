@@ -451,14 +451,8 @@ function MotorCardPreviewInner({
   const productSchema = getProductSchema();
 
   return (
-    <>
-      {/* Product Schema for SEO */}
-      {productSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-        />
-      )}
+    <div ref={cardRef}>
+      {/* Product schema moved to parent as batched ItemList */}
       <div
         className="group bg-white rounded-2xl border border-gray-100/80 overflow-hidden cursor-pointer touch-action-manipulation
           transition-all duration-500 ease-out
