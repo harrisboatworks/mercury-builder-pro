@@ -154,7 +154,29 @@ function MotorCardPreviewInner({
   // Get photo count for image overlay
   const [photoCount, setPhotoCount] = useState<number>(0);
 
+  // Intersection Observer — defer expensive async image resolution until card is near viewport
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isNearViewport, setIsNearViewport] = useState(false);
+
   useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsNearViewport(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' } // Start loading 200px before visible
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isNearViewport) return; // Defer until near viewport
+
     const loadImageInfo = async () => {
       try {
         if (img && img !== '/lovable-uploads/speedboat-transparent.png') {
@@ -188,7 +210,7 @@ function MotorCardPreviewInner({
     };
 
     loadImageInfo();
-  }, [motor, img]);
+  }, [motor, img, isNearViewport]);
   
   const imageUrl = imageInfo.url || '';
   const [imageError, setImageError] = useState(false);
