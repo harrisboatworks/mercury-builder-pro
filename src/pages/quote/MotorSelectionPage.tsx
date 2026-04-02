@@ -1023,6 +1023,38 @@ if (event.type === 'filter_motors') {
           onClear={clearRecentlyViewed}
         />
 
+        {/* Batched Product Schema — single ItemList instead of per-card scripts */}
+        {finalFilteredMotors.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "Mercury Outboard Motors",
+              "numberOfItems": finalFilteredMotors.length,
+              "itemListElement": finalFilteredMotors.slice(0, 20).map((motor, i) => ({
+                "@type": "ListItem",
+                "position": i + 1,
+                "item": {
+                  "@type": "Product",
+                  "name": motor.model,
+                  "brand": { "@type": "Brand", "name": "Mercury Marine" },
+                  "category": "Outboard Motors",
+                  "sku": motor.id,
+                  ...(motor.price && {
+                    "offers": {
+                      "@type": "Offer",
+                      "priceCurrency": "CAD",
+                      "price": motor.price,
+                      "availability": motor.in_stock ? "https://schema.org/InStock" : "https://schema.org/PreOrder"
+                    }
+                  })
+                }
+              }))
+            }) }}
+          />
+        )}
+
         <div className="bg-gradient-to-b from-stone-50 to-white py-16 motor-grid-section">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
