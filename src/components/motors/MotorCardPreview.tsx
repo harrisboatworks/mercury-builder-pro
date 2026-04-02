@@ -53,7 +53,7 @@ const prefetchModal = () => {
   });
 };
 
-export default function MotorCardPreview({ 
+function MotorCardPreviewInner({ 
   img, 
   title, 
   hp, 
@@ -72,7 +72,8 @@ export default function MotorCardPreview({
   motor,
   inStock,
   showSavingsLine = true,
-  ctaTextVariant = "View Details"
+  ctaTextVariant = "View Details",
+  sharedData
 }: {
   img?: string | null;
   title: string;
