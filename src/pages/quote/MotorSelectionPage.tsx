@@ -22,7 +22,8 @@ import mercuryGet7PromoMobile from '@/assets/mercury-get7-promo-mobile.png';
 import mercuryGet7Promo from '@/assets/mercury-get-7-choose-one.jpg';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
-import MotorCardPreview from '@/components/motors/MotorCardPreview';
+import MotorCardPreview, { type SharedCardData } from '@/components/motors/MotorCardPreview';
+import { useFeatureDiscovery } from '@/hooks/useFeatureDiscovery';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
 import { HPMotorCard } from '@/components/motors/HPMotorCard';
 // ViewModeToggle removed - using expert view only
@@ -175,7 +176,21 @@ function MotorSelectionContent() {
   } = useMotorComparison();
   const { toggleFavorite, isFavorite } = useFavoriteMotors();
   const { recentlyViewed, addToRecentlyViewed, clearRecentlyViewed } = useRecentlyViewed();
+  const { hasSeen: hasSeenVoiceCoachMark, markAsSeen: markVoiceCoachMarkSeen } = useFeatureDiscovery('harris-voice-coachmark');
+  const { promotions: activePromotionsForCards } = useActivePromotions();
   const [showComparison, setShowComparison] = useState(false);
+
+  // Shared data object for motor cards — avoids per-card hook instantiation
+  const sharedCardData: SharedCardData = useMemo(() => ({
+    promotions: activePromotionsForCards,
+    toggleComparison,
+    isInComparison,
+    comparisonCount,
+    comparisonFull,
+    hasSeenVoiceCoachMark,
+    markVoiceCoachMarkSeen,
+    addToRecentlyViewed,
+  }), [activePromotionsForCards, toggleComparison, isInComparison, comparisonCount, comparisonFull, hasSeenVoiceCoachMark, markVoiceCoachMarkSeen, addToRecentlyViewed]);
   
   // Search overlay state - triggered from header search icon
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
@@ -1008,6 +1023,38 @@ if (event.type === 'filter_motors') {
           onClear={clearRecentlyViewed}
         />
 
+        {/* Batched Product Schema — single ItemList instead of per-card scripts */}
+        {finalFilteredMotors.length > 0 && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "Mercury Outboard Motors",
+              "numberOfItems": finalFilteredMotors.length,
+              "itemListElement": finalFilteredMotors.slice(0, 20).map((motor, i) => ({
+                "@type": "ListItem",
+                "position": i + 1,
+                "item": {
+                  "@type": "Product",
+                  "name": motor.model,
+                  "brand": { "@type": "Brand", "name": "Mercury Marine" },
+                  "category": "Outboard Motors",
+                  "sku": motor.id,
+                  ...(motor.price && {
+                    "offers": {
+                      "@type": "Offer",
+                      "priceCurrency": "CAD",
+                      "price": motor.price,
+                      "availability": motor.in_stock ? "https://schema.org/InStock" : "https://schema.org/PreOrder"
+                    }
+                  })
+                }
+              }))
+            }) }}
+          />
+        )}
+
         <div className="bg-gradient-to-b from-stone-50 to-white py-16 motor-grid-section">
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -1084,6 +1131,7 @@ if (event.type === 'filter_motors') {
                    description={dbMotor?.description}
                    specSheetUrl={dbMotor?.detail_url}
                    motor={motor as any}
+                   sharedData={sharedCardData}
                    />
                    </motion.div>
                );

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, lazy, Suspense, useCallback } from "react";
+import React, { useState, useEffect, lazy, Suspense, useCallback, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import { ImageIcon } from "lucide-react";
 import { createPortal } from "react-dom";
@@ -17,13 +17,9 @@ import { ShareLinkButton } from './ShareLinkButton';
 import { VoiceChatButton } from './VoiceChatButton';
 import { VoiceChatCoachMark } from './VoiceChatCoachMark';
 import { AskQuestionButton } from './AskQuestionButton';
-import { useMotorComparison } from '@/hooks/useMotorComparison';
-import { useFeatureDiscovery } from '@/hooks/useFeatureDiscovery';
-import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import type { Motor } from '../../lib/motor-helpers';
 import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeModelName, cleanMotorName } from '../../lib/motor-helpers';
-import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { getFinancingTerm } from '@/lib/finance';
@@ -31,6 +27,18 @@ import { getFinancingTerm } from '@/lib/finance';
 import { preloadConfiguratorImagesHighPriority } from '@/lib/configurator-preload';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { useSmartImageScale } from '@/hooks/useSmartImageScale';
+
+// Shared data passed from parent to avoid per-card hook explosion
+export interface SharedCardData {
+  promotions: Array<{ warranty_extra_years?: number | null; end_date?: string | null; name?: string; bonus_title?: string | null }>;
+  toggleComparison: (motor: any) => void;
+  isInComparison: (id: string) => boolean;
+  comparisonCount: number;
+  comparisonFull: boolean;
+  hasSeenVoiceCoachMark: boolean;
+  markVoiceCoachMarkSeen: () => void;
+  addToRecentlyViewed: (motor: { id: string; model: string; hp: number; price: number; image?: string }) => void;
+}
 
 // Lazy load heavy modal component (~120KB)
 const MotorDetailsPremiumModal = lazy(() => import('./MotorDetailsPremiumModal'));
@@ -45,7 +53,7 @@ const prefetchModal = () => {
   });
 };
 
-export default function MotorCardPreview({ 
+function MotorCardPreviewInner({ 
   img, 
   title, 
   hp, 
@@ -64,7 +72,8 @@ export default function MotorCardPreview({
   motor,
   inStock,
   showSavingsLine = true,
-  ctaTextVariant = "View Details"
+  ctaTextVariant = "View Details",
+  sharedData
 }: {
   img?: string | null;
   title: string;
@@ -85,9 +94,11 @@ export default function MotorCardPreview({
   inStock?: boolean | null;
   showSavingsLine?: boolean;
   ctaTextVariant?: "View Details" | "Build My Quote" | "View Details & Quote";
+  sharedData?: SharedCardData;
 }) {
   const hpNum = typeof hp === "string" ? parseFloat(hp) : (typeof hp === "number" ? hp : undefined);
-  const { promotions } = useActivePromotions();
+  // Use shared data from parent when available, otherwise keep working standalone
+  const promotions = sharedData?.promotions ?? [];
   const { dispatch } = useQuote();
   const { openChat } = useAIChat();
   const [showDetailsSheet, setShowDetailsSheet] = useState(false);
@@ -96,10 +107,14 @@ export default function MotorCardPreview({
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   
-  // UX feature hooks
-  const { toggleComparison, isInComparison, count: comparisonCount, isFull: comparisonFull } = useMotorComparison();
-  const { hasSeen: hasSeenVoiceCoachMark, markAsSeen: markVoiceCoachMarkSeen } = useFeatureDiscovery('harris-voice-coachmark');
-  const { addToRecentlyViewed } = useRecentlyViewed();
+  // UX feature hooks — use shared data from parent to avoid per-card instantiation
+  const toggleComparison = sharedData?.toggleComparison ?? (() => {});
+  const isInComparison = sharedData?.isInComparison ?? (() => false);
+  const comparisonCount = sharedData?.comparisonCount ?? 0;
+  const comparisonFull = sharedData?.comparisonFull ?? false;
+  const hasSeenVoiceCoachMark = sharedData?.hasSeenVoiceCoachMark ?? true;
+  const markVoiceCoachMarkSeen = sharedData?.markVoiceCoachMarkSeen ?? (() => {});
+  const addToRecentlyViewed = sharedData?.addToRecentlyViewed ?? (() => {});
   const { triggerHaptic } = useHapticFeedback();
   
   // Smart image scaling - moderate scaling for card thumbnails
@@ -139,7 +154,29 @@ export default function MotorCardPreview({
   // Get photo count for image overlay
   const [photoCount, setPhotoCount] = useState<number>(0);
 
+  // Intersection Observer — defer expensive async image resolution until card is near viewport
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [isNearViewport, setIsNearViewport] = useState(false);
+
   useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsNearViewport(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' } // Start loading 200px before visible
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isNearViewport) return; // Defer until near viewport
+
     const loadImageInfo = async () => {
       try {
         if (img && img !== '/lovable-uploads/speedboat-transparent.png') {
@@ -173,7 +210,7 @@ export default function MotorCardPreview({
     };
 
     loadImageInfo();
-  }, [motor, img]);
+  }, [motor, img, isNearViewport]);
   
   const imageUrl = imageInfo.url || '';
   const [imageError, setImageError] = useState(false);
@@ -414,14 +451,8 @@ export default function MotorCardPreview({
   const productSchema = getProductSchema();
 
   return (
-    <>
-      {/* Product Schema for SEO */}
-      {productSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-        />
-      )}
+    <div ref={cardRef}>
+      {/* Product schema moved to parent as batched ItemList */}
       <div
         className="group bg-white rounded-2xl border border-gray-100/80 overflow-hidden cursor-pointer touch-action-manipulation
           transition-all duration-500 ease-out
@@ -600,6 +631,10 @@ export default function MotorCardPreview({
         </AnimatePresence>,
         document.body
       )}
-    </>
+    </div>
   );
 }
+
+// React.memo wrapper — prevents re-render when parent filters change but this card's props don't
+const MotorCardPreview = React.memo(MotorCardPreviewInner);
+export default MotorCardPreview;

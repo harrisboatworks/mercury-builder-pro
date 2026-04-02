@@ -14,6 +14,12 @@ export const useAutoImageScraping = (motors: Motor[]) => {
   const scrapeQueue = useRef<string[]>([]);
   const isProcessing = useRef(false);
 
+  // Session-once guard: only scrape once per browser session
+  const sessionKey = 'auto-image-scrape-done';
+  const alreadyScrapedThisSession = useRef(
+    typeof sessionStorage !== 'undefined' && sessionStorage.getItem(sessionKey) === '1'
+  );
+
   // Process scraping queue
   const processQueue = async () => {
     if (isProcessing.current || scrapeQueue.current.length === 0) return;
@@ -58,7 +64,7 @@ export const useAutoImageScraping = (motors: Motor[]) => {
 
   // Check motors and queue ones needing images
   useEffect(() => {
-    if (!motors.length) return;
+    if (!motors.length || alreadyScrapedThisSession.current) return;
 
     const motorsNeedingImages = motors.filter(motor => {
       // Skip if already attempted or no detail URL
@@ -83,6 +89,9 @@ export const useAutoImageScraping = (motors: Motor[]) => {
 
     // Start processing if we have items
     if (scrapeQueue.current.length > 0) {
+      // Mark session as done so we don't re-scrape on navigation
+      try { sessionStorage.setItem(sessionKey, '1'); } catch {}
+      alreadyScrapedThisSession.current = true;
       processQueue();
     }
 
