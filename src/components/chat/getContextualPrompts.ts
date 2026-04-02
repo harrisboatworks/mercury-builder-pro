@@ -162,10 +162,10 @@ export function getContextualPrompts(
   // Promotions page
   if (currentPage.includes('/promotions')) {
     return [
-      "What's the best deal right now?",
-      "When do these promos end?",
+      "What deals are available?",
+      "When do promotions usually run?",
       "Can I stack promotions?",
-      "Tell me about the Get 7 deal"
+      "Tell me about current offers"
     ];
   }
 
