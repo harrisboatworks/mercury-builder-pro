@@ -477,7 +477,7 @@ export default function Promotions() {
       )}
 
       {/* Newsletter Signup */}
-      <section className="bg-stone-50 py-16 px-4">
+      <section id="promo-signup" className="bg-stone-50 py-16 px-4">
         <div className="max-w-xl mx-auto text-center">
           <div className="flex flex-col items-center gap-2 mb-6">
             <img src={mercuryLogo} alt="Mercury Marine" className="h-8" />
