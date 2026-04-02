@@ -176,7 +176,21 @@ function MotorSelectionContent() {
   } = useMotorComparison();
   const { toggleFavorite, isFavorite } = useFavoriteMotors();
   const { recentlyViewed, addToRecentlyViewed, clearRecentlyViewed } = useRecentlyViewed();
+  const { hasSeen: hasSeenVoiceCoachMark, markAsSeen: markVoiceCoachMarkSeen } = useFeatureDiscovery('harris-voice-coachmark');
+  const { promotions: activePromotionsForCards } = useActivePromotions();
   const [showComparison, setShowComparison] = useState(false);
+
+  // Shared data object for motor cards — avoids per-card hook instantiation
+  const sharedCardData: SharedCardData = useMemo(() => ({
+    promotions: activePromotionsForCards,
+    toggleComparison,
+    isInComparison,
+    comparisonCount,
+    comparisonFull,
+    hasSeenVoiceCoachMark,
+    markVoiceCoachMarkSeen,
+    addToRecentlyViewed,
+  }), [activePromotionsForCards, toggleComparison, isInComparison, comparisonCount, comparisonFull, hasSeenVoiceCoachMark, markVoiceCoachMarkSeen, addToRecentlyViewed]);
   
   // Search overlay state - triggered from header search icon
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
