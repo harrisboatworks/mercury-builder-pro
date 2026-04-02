@@ -214,6 +214,12 @@ function MotorCardPreviewInner({
   
   const imageUrl = imageInfo.url || '';
   const [imageError, setImageError] = useState(false);
+  
+  // Reset error state when URL changes (e.g. async resolution provides a new URL)
+  useEffect(() => {
+    setImageError(false);
+  }, [imageUrl]);
+  
   const hasValidImage = imageUrl && !imageError;
 
   const handleCardClick = () => {

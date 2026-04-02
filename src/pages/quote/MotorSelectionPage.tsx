@@ -519,10 +519,11 @@ if (event.type === 'filter_motors') {
       });
 
       // Use database images only - let MotorCardPreview handle fallback via getMotorImageByPriority
-      const heroImage = dbMotor.hero_image_url || dbMotor.image_url || '';
       const dbImages = Array.isArray(dbMotor.images) 
         ? (dbMotor.images as Array<{url: string} | string>).map(img => typeof img === 'string' ? img : img.url)
         : [];
+      const firstDbImage = dbImages.length > 0 ? dbImages[0] : null;
+      const heroImage = dbMotor.hero_image_url || dbMotor.image_url || firstDbImage || '';
       const galleryImages = dbImages.length > 0 ? dbImages : (getMotorImages(dbMotor.horsepower)?.galleryImages || []);
 
       // Convert to Motor type (same as original)
@@ -1094,7 +1095,7 @@ if (event.type === 'filter_motors') {
                    motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
                  
                  // Get hero image URL from joined data or fallback - always provide placeholder
-                 const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || '';
+                 const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || motor.images?.[0] || '';
                  
                  return (
                    <motion.div data-motor-card
