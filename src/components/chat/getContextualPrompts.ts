@@ -151,7 +151,7 @@ export function getContextualPrompts(
       return [
         "Help me pick the right motor",
         "What size do I need for my boat?",
-        "Any deals going on right now?",
+        "What's a good motor for fishing?",
         "What's a good motor for fishing?"
       ];
     }
