@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, lazy, Suspense, useCallback } from "react";
+import React, { useState, useEffect, lazy, Suspense, useCallback, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import { ImageIcon } from "lucide-react";
 import { createPortal } from "react-dom";
@@ -17,13 +17,9 @@ import { ShareLinkButton } from './ShareLinkButton';
 import { VoiceChatButton } from './VoiceChatButton';
 import { VoiceChatCoachMark } from './VoiceChatCoachMark';
 import { AskQuestionButton } from './AskQuestionButton';
-import { useMotorComparison } from '@/hooks/useMotorComparison';
-import { useFeatureDiscovery } from '@/hooks/useFeatureDiscovery';
-import { useRecentlyViewed } from '@/hooks/useRecentlyViewed';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import type { Motor } from '../../lib/motor-helpers';
 import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeModelName, cleanMotorName } from '../../lib/motor-helpers';
-import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
 import { getFinancingTerm } from '@/lib/finance';
@@ -31,6 +27,18 @@ import { getFinancingTerm } from '@/lib/finance';
 import { preloadConfiguratorImagesHighPriority } from '@/lib/configurator-preload';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { useSmartImageScale } from '@/hooks/useSmartImageScale';
+
+// Shared data passed from parent to avoid per-card hook explosion
+export interface SharedCardData {
+  promotions: Array<{ warranty_extra_years?: number | null; end_date?: string | null; name?: string; bonus_title?: string | null }>;
+  toggleComparison: (motor: any) => void;
+  isInComparison: (id: string) => boolean;
+  comparisonCount: number;
+  comparisonFull: boolean;
+  hasSeenVoiceCoachMark: boolean;
+  markVoiceCoachMarkSeen: () => void;
+  addToRecentlyViewed: (motor: { id: string; model: string; hp: number; price: number; image?: string }) => void;
+}
 
 // Lazy load heavy modal component (~120KB)
 const MotorDetailsPremiumModal = lazy(() => import('./MotorDetailsPremiumModal'));

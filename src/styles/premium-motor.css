@@ -39,11 +39,7 @@
   display: none !important;
 }
 
-/* Force remove transforms from all cards to fix modal stacking */
-.motor-card, [class*="motor-card"] {
-  transform: none !important;
-  filter: none !important;
-}
+/* Motor card stacking — modal uses createPortal, no override needed */
 
 /* Ensure modal is truly on top */
 body > div[role="dialog"],
