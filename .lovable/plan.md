@@ -1,33 +1,85 @@
 
 
-# Improve "No Active Promotions" State on Promotions Page
+# Performance Optimization — Motor Selection Page
 
-## Current state
-The page already has a basic empty state (lines 329-343) with a Shield icon, "No Active Promotions" heading, a short message, and a "Build Your Quote" button. It works, but it's minimal and doesn't look polished compared to the rest of the page.
+## Problem
+On a cold browser (no cache), the motor cards page is sluggish to load and delayed to interact with. This is caused by several compounding issues.
+
+## Root Causes Identified
+
+### 1. Per-card hook explosion (~40 motors × 6 hooks each)
+Every `MotorCardPreview` independently instantiates:
+- `useActivePromotions()` — Supabase query (cached, but still creates state/effect per card)
+- `useMotorComparison()` — context consumer
+- `useFeatureDiscovery()` — localStorage read
+- `useRecentlyViewed()` — context consumer
+- `useHapticFeedback()` — callback creation
+- `useSmartImageScale()` — state + callback
+- `useIsMobile()` — media query listener
+
+That's **~280 hook instances** for 40 motors, all mounting simultaneously.
+
+### 2. Per-card async image resolution
+Each card runs `getMotorImageByPriority()` and `getMotorImageGallery()` on mount — potential Supabase queries per card, all firing at once.
+
+### 3. Framer Motion stagger animation fighting CSS `!important`
+The CSS in `premium-motor.css` line 44 has `transform: none !important` on motor cards, which fights framer-motion's transform-based animations, causing layout thrashing as the browser resolves conflicting styles.
+
+### 4. JSON-LD `<script>` injection per card
+Each card injects a `dangerouslySetInnerHTML` script tag for product schema — 40 DOM insertions on render.
+
+### 5. Auto image scraping fires edge function calls
+`useAutoImageScraping` invokes Supabase edge functions for motors without images on every page load.
 
 ## Plan
-Upgrade the empty state section to be visually appealing and useful. Keep all existing promo-conditional structure intact (hero, choose-one, rebate, FAQ all stay gated behind `hasActivePromos`).
 
-### Changes in `src/pages/Promotions.tsx` (lines 328-343)
+### Fix 1: Lift shared hooks to parent, pass as props
+**File:** `src/pages/quote/MotorSelectionPage.tsx`, `src/components/motors/MotorCardPreview.tsx`
 
-Replace the current bare empty state with a more polished section:
+Move `useActivePromotions`, `useMotorComparison`, `useFeatureDiscovery`, `useRecentlyViewed` calls to `MotorSelectionContent` and pass the needed values as props to each card. This eliminates ~160 redundant hook instances.
 
-- **Mercury branding** — Show the Mercury logo at the top for brand continuity
-- **Better icon** — Use `Sparkles` instead of `Shield` (feels more "coming soon" vs. "blocked")
-- **Stronger heading** — "No Active Promotions Right Now"
-- **Friendly subtext** — "Mercury promotions launch throughout the year. Sign up below to be first in line when the next deal drops."
-- **Visual polish** — Soft gradient background matching the hero style (dark stone), white text, rounded container with subtle border
-- **CTA buttons** — "Build Your Quote" primary + "Browse Motors" secondary link
-- **Scroll nudge** — A small arrow or text pointing users down to the newsletter signup form that already exists on the page
+### Fix 2: Wrap MotorCardPreview in React.memo
+**File:** `src/components/motors/MotorCardPreview.tsx`
 
-### What stays the same
-- All conditional rendering logic (`hasActivePromos`) remains
-- The newsletter signup section at the bottom still renders (it's not gated)
-- Testimonials and "Why Buy" sections still render (not promo-dependent)
-- When a new promo is added to the DB, the hero/choose-one/rebate/FAQ all reappear automatically
+Prevent re-renders when parent state changes (search, filters) don't affect a specific card's props.
 
-### File changed
-| File | Change |
-|------|--------|
-| `src/pages/Promotions.tsx` | Replace lines 328-343 with polished empty state |
+### Fix 3: Remove CSS transform conflict
+**File:** `src/styles/premium-motor.css`
+
+Remove `transform: none !important` from `.motor-card` (line 44). This was added to fix modal stacking but fights framer-motion animations. The modal already uses `createPortal` to document.body, so this override is unnecessary.
+
+### Fix 4: Defer below-fold cards with Intersection Observer
+**File:** `src/components/motors/MotorCardPreview.tsx`
+
+Defer async image resolution (`getMotorImageByPriority`, `getMotorImageGallery`) until the card is near the viewport. The hero image from the parent is used immediately; gallery/priority resolution only fires when the card scrolls into view.
+
+### Fix 5: Batch product schema into single script
+**File:** `src/pages/quote/MotorSelectionPage.tsx`
+
+Instead of 40 individual `<script>` tags, generate one `ItemList` schema with all products in the parent component.
+
+### Fix 6: Throttle auto image scraping
+**File:** `src/hooks/useAutoImageScraping.ts`
+
+Add a `sessionStorage` check to only run scraping once per session, not on every page visit.
+
+### Fix 7: Disable framer-motion stagger on revisit
+**File:** `src/pages/quote/MotorSelectionPage.tsx`
+
+The `hasInitiallyLoaded` flag already exists but only prevents scroll. Use it to also skip the stagger animation entirely on filter changes (set `initial={false}` when `hasInitiallyLoaded` is true — already done on line 1018, confirmed working).
+
+## Files changed
+
+| # | File | Change |
+|---|------|--------|
+| 1 | `src/components/motors/MotorCardPreview.tsx` | Accept shared hooks as props, add React.memo, defer image resolution to viewport entry |
+| 2 | `src/pages/quote/MotorSelectionPage.tsx` | Lift hooks to parent, pass as props, batch product schema |
+| 3 | `src/styles/premium-motor.css` | Remove `transform: none !important` from motor cards |
+| 4 | `src/hooks/useAutoImageScraping.ts` | Add session-once guard |
+
+## Expected Impact
+- **~70% fewer hook instances** on initial mount
+- **~40 fewer async calls** on load (deferred to scroll)
+- **Eliminated layout thrashing** from CSS/framer-motion conflict
+- **Faster Time to Interactive** — cards clickable sooner
 
