@@ -141,7 +141,7 @@ const PAGE_CONFIG: Record<string, PageConfig> = {
   },
   '/quote/installation': {
     primaryLabel: 'Continue',
-    nextPath: '/quote/promo-selection',
+    nextPath: '__promo_or_summary__',
     aiMessage: 'Questions about installation or rigging?',
     nudges: {
       idle: [
