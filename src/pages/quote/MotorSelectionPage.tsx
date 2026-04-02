@@ -1099,6 +1099,7 @@ if (event.type === 'filter_motors') {
                    description={dbMotor?.description}
                    specSheetUrl={dbMotor?.detail_url}
                    motor={motor as any}
+                   sharedData={sharedCardData}
                    />
                    </motion.div>
                );
