@@ -22,7 +22,8 @@ import mercuryGet7PromoMobile from '@/assets/mercury-get7-promo-mobile.png';
 import mercuryGet7Promo from '@/assets/mercury-get-7-choose-one.jpg';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
-import MotorCardPreview from '@/components/motors/MotorCardPreview';
+import MotorCardPreview, { type SharedCardData } from '@/components/motors/MotorCardPreview';
+import { useFeatureDiscovery } from '@/hooks/useFeatureDiscovery';
 import { MotorCardSkeleton } from '@/components/motors/MotorCardSkeleton';
 import { HPMotorCard } from '@/components/motors/HPMotorCard';
 // ViewModeToggle removed - using expert view only
