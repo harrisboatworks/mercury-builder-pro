@@ -1095,7 +1095,7 @@ if (event.type === 'filter_motors') {
                    motor.model.includes('DTS') ? 'digital throttle & shift' : undefined);
                  
                  // Get hero image URL from joined data or fallback - always provide placeholder
-                 const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || '';
+                 const heroImageUrl = (dbMotor as any)?.hero_media?.media_url || dbMotor?.image_url || motor.image || motor.images?.[0] || '';
                  
                  return (
                    <motion.div data-motor-card
