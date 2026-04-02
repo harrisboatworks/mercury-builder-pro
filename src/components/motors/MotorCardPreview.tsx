@@ -618,3 +618,7 @@ function MotorCardPreviewInner({
     </>
   );
 }
+
+// React.memo wrapper — prevents re-render when parent filters change but this card's props don't
+const MotorCardPreview = React.memo(MotorCardPreviewInner);
+export default MotorCardPreview;
