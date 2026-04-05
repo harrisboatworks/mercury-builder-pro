@@ -1,48 +1,36 @@
 
 
-# Fix Missing Card Image for 60 ELPT FourStroke
+# Enforce Promo Expiry in Agent Quote API
 
-## Problem
-The 60 ELPT FourStroke has 5 valid images in its `images` array but no `hero_image_url`, `image_url`, or `hero_media_id`. The parent computes `heroImage` as empty string, passing `img=""` to the card. The card then relies on deferred async resolution via IntersectionObserver + `getMotorImageByPriority`, which can fail to render before the user sees the card. The modal works because it calls `getMotorImageGallery` separately on open.
+## What's changing
+The agent API currently applies expired promotions (rebates, bonus warranty years) because it only checks `is_active = true` without verifying `end_date`. Adding a single date filter to two queries fixes this.
 
-## Root cause
-Two places compute the hero image without falling back to the `images` array:
+## Changes in `supabase/functions/agent-quote-api/index.ts`
 
-1. **Line 522** in `MotorSelectionPage.tsx`: `heroImage = dbMotor.hero_image_url || dbMotor.image_url || ''` — never checks `images[]`
-2. **Line 1097** in `MotorSelectionPage.tsx`: `heroImageUrl = hero_media?.media_url || image_url || motor.image || ''` — `motor.image` is already empty
+### 1. `listPromotions()` — line 482
+Add `.or('end_date.is.null,end_date.gte.' + new Date().toISOString())` after the `.eq("is_active", true)` line.
 
-## Fix
+### 2. `createQuote()` — line 828
+Same date filter added after `.eq("is_active", true)`.
 
-### `src/pages/quote/MotorSelectionPage.tsx`
-
-**Line 522**: After computing `dbImages`, use the first image as a fallback for `heroImage`:
+### 3. Add "no promo" warning — after line 832
+When `activePromo` is null after the filtered query, push a warning:
 ```
-// Before
-const heroImage = dbMotor.hero_image_url || dbMotor.image_url || '';
-const dbImages = ...
-
-// After  
-const dbImages = ... (move up)
-const firstDbImage = dbImages.length > 0 ? dbImages[0] : null;
-const heroImage = dbMotor.hero_image_url || dbMotor.image_url || firstDbImage || '';
+if (!activePromo) {
+  promoWarnings.push("No active promotions currently available. Standard 3-year warranty applies.");
+}
 ```
 
-**Line 1097**: Add `motor.images?.[0]` as another fallback:
-```
-const heroImageUrl = (dbMotor as any)?.hero_media?.media_url 
-  || dbMotor?.image_url 
-  || motor.image 
-  || motor.images?.[0] 
-  || '';
-```
+### Why `updateQuote()` doesn't need changes
+It reuses the stored `quoteData.rebateAmount` and `quoteData.warrantyConfig` from the original quote — it doesn't re-fetch promotions. Existing quotes keep their original promo terms, which is correct behavior.
 
-### Also reset `imageError` on URL change in `MotorCardPreview.tsx`
+### What happens automatically
+- `promoWarrantyYears` becomes 0 when no promo is found → warranty reverts to 3 years
+- Rebate stays $0 → no discount applied
+- When a new promo is added with `is_active = true` and a future `end_date`, everything reactivates with zero code changes
 
-Add a `useEffect` to reset `imageError` when `imageInfo.url` changes, preventing stale error states from blocking newly resolved images.
-
-## Files changed
+## File changed
 | File | Change |
 |------|--------|
-| `src/pages/quote/MotorSelectionPage.tsx` | Fall back to first image from images array for hero image (lines 522 and 1097) |
-| `src/components/motors/MotorCardPreview.tsx` | Reset `imageError` when image URL changes |
+| `supabase/functions/agent-quote-api/index.ts` | Add `end_date` filter to `listPromotions()` and `createQuote()` queries; add "no promo" warning |
 
