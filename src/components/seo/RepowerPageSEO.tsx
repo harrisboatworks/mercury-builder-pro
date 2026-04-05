@@ -94,7 +94,7 @@ export function RepowerPageSEO() {
         "name": "Mercury Repower at Harris Boat Works",
         "description": "Learn about repowering your boat with a new Mercury outboard at Harris Boat Works on Rice Lake, Ontario.",
         "thumbnailUrl": "https://img.youtube.com/vi/6uhYCYq9cLk/maxresdefault.jpg",
-        "uploadDate": "2024-01-01",
+        "uploadDate": "2024-01-01T00:00:00-05:00",
         "contentUrl": "https://www.youtube.com/watch?v=6uhYCYq9cLk",
         "embedUrl": "https://www.youtube.com/embed/6uhYCYq9cLk"
       },
