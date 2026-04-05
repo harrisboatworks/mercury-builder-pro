@@ -480,6 +480,7 @@ async function listPromotions(supabase: any) {
     .from("promotions")
     .select("id, name, kind, start_date, end_date, is_active, warranty_extra_years, promo_options, discount_fixed_amount, discount_percentage, bonus_title, bonus_description, bonus_short_badge, terms_url")
     .eq("is_active", true)
+    .or('end_date.is.null,end_date.gte.' + new Date().toISOString())
     .order("priority", { ascending: false });
 
   if (error) throw new Error(`list_promotions failed: ${error.message}`);
@@ -826,10 +827,14 @@ async function createQuote(supabase: any, body: any) {
       .from("promotions")
       .select("id, name, promo_options, warranty_extra_years, end_date")
       .eq("is_active", true)
+      .or('end_date.is.null,end_date.gte.' + new Date().toISOString())
       .order("priority", { ascending: false })
       .limit(1);
 
     const activePromo = (promos || [])[0];
+    if (!activePromo) {
+      promoWarnings.push("No active promotions currently available. Standard 3-year warranty applies.");
+    }
     if (activePromo) {
       promoData = activePromo;
 
