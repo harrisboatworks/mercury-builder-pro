@@ -2959,6 +2959,29 @@ export type Database = {
       }
     }
     Views: {
+      customer_summary: {
+        Row: {
+          cell_phone: string | null
+          city: string | null
+          company_name: string | null
+          customer_id: number | null
+          customer_name: string | null
+          customer_type: string | null
+          email: string | null
+          first_name: string | null
+          first_service_date: string | null
+          home_phone: string | null
+          last_name: string | null
+          last_service_date: string | null
+          lifetime_revenue: number | null
+          loyalty_customer: boolean | null
+          phone: string | null
+          province: string | null
+          total_ros: number | null
+          total_spend: number | null
+        }
+        Relationships: []
+      }
       email_analytics_summary: {
         Row: {
           active: number | null
@@ -2973,6 +2996,265 @@ export type Database = {
           total_opens: number | null
           total_sequences: number | null
           unsubscribed: number | null
+        }
+        Relationships: []
+      }
+      mercury_motor_inventory: {
+        Row: {
+          availability_status: string | null
+          available_for_sale: boolean | null
+          comments: string | null
+          condition: string | null
+          date_received: string | null
+          dealer_price: number | null
+          hp: number | null
+          last_update_date: string | null
+          model: string | null
+          model_year: number | null
+          msrp: number | null
+          new_used: string | null
+          stock_number: string | null
+          synced_at: string | null
+          unit_status: string | null
+          vin: string | null
+        }
+        Insert: {
+          availability_status?: never
+          available_for_sale?: never
+          comments?: string | null
+          condition?: string | null
+          date_received?: string | null
+          dealer_price?: number | null
+          hp?: number | null
+          last_update_date?: string | null
+          model?: string | null
+          model_year?: number | null
+          msrp?: number | null
+          new_used?: string | null
+          stock_number?: string | null
+          synced_at?: string | null
+          unit_status?: string | null
+          vin?: string | null
+        }
+        Update: {
+          availability_status?: never
+          available_for_sale?: never
+          comments?: string | null
+          condition?: string | null
+          date_received?: string | null
+          dealer_price?: number | null
+          hp?: number | null
+          last_update_date?: string | null
+          model?: string | null
+          model_year?: number | null
+          msrp?: number | null
+          new_used?: string | null
+          stock_number?: string | null
+          synced_at?: string | null
+          unit_status?: string | null
+          vin?: string | null
+        }
+        Relationships: []
+      }
+      parts_inventory: {
+        Row: {
+          active_price: number | null
+          available: number | null
+          bin1: string | null
+          bin2: string | null
+          category: string | null
+          cost: number | null
+          date_gathered: string | null
+          description: string | null
+          last_count_date: string | null
+          last_received_date: string | null
+          last_sold_date: string | null
+          last_update_date: string | null
+          movement_code: string | null
+          on_hand: number | null
+          on_order: number | null
+          part_number: string | null
+          retail_price: number | null
+          superseded_to: string | null
+          supplier_code: string | null
+          supplier_name: string | null
+          synced_at: string | null
+          upc: string | null
+        }
+        Insert: {
+          active_price?: number | null
+          available?: number | null
+          bin1?: string | null
+          bin2?: string | null
+          category?: string | null
+          cost?: number | null
+          date_gathered?: string | null
+          description?: string | null
+          last_count_date?: string | null
+          last_received_date?: string | null
+          last_sold_date?: string | null
+          last_update_date?: string | null
+          movement_code?: string | null
+          on_hand?: number | null
+          on_order?: number | null
+          part_number?: string | null
+          retail_price?: number | null
+          superseded_to?: string | null
+          supplier_code?: string | null
+          supplier_name?: string | null
+          synced_at?: string | null
+          upc?: string | null
+        }
+        Update: {
+          active_price?: number | null
+          available?: number | null
+          bin1?: string | null
+          bin2?: string | null
+          category?: string | null
+          cost?: number | null
+          date_gathered?: string | null
+          description?: string | null
+          last_count_date?: string | null
+          last_received_date?: string | null
+          last_sold_date?: string | null
+          last_update_date?: string | null
+          movement_code?: string | null
+          on_hand?: number | null
+          on_order?: number | null
+          part_number?: string | null
+          retail_price?: number | null
+          superseded_to?: string | null
+          supplier_code?: string | null
+          supplier_name?: string | null
+          synced_at?: string | null
+          upc?: string | null
+        }
+        Relationships: []
+      }
+      service_history: {
+        Row: {
+          action_taken: string | null
+          customer_approval: string | null
+          customer_id: number | null
+          customer_name: string | null
+          date_completed: string | null
+          date_completed_parsed: string | null
+          date_sent: string | null
+          job_description: string | null
+          job_name: string | null
+          labor_hours: number | null
+          labor_total: number | null
+          recommendations: string | null
+          resolution: string | null
+          ro_header_id: number | null
+          ro_number: string | null
+          ro_total: number | null
+          service_category: string | null
+          service_writer: string | null
+          technician: string | null
+          technotes: string | null
+          unit: string | null
+          vin: string | null
+          warranty_job: boolean | null
+        }
+        Relationships: []
+      }
+      unit_inventory: {
+        Row: {
+          beam: number | null
+          class: string | null
+          color: string | null
+          comments: string | null
+          condition: string | null
+          date_gathered: string | null
+          date_received: string | null
+          dsrp: number | null
+          exterior_color: string | null
+          floor_layout: string | null
+          fuel_type: string | null
+          hours: number | null
+          hp: number | null
+          hull_construction: string | null
+          interior_color: string | null
+          invoice_amt: number | null
+          last_update_date: string | null
+          length: number | null
+          major_unit_header_id: number | null
+          make: string | null
+          model: string | null
+          model_year: number | null
+          msrp: number | null
+          new_used: string | null
+          odometer: string | null
+          stock_number: string | null
+          synced_at: string | null
+          unit_status: string | null
+          unit_type: string | null
+          vin: string | null
+        }
+        Insert: {
+          beam?: number | null
+          class?: string | null
+          color?: string | null
+          comments?: string | null
+          condition?: string | null
+          date_gathered?: string | null
+          date_received?: string | null
+          dsrp?: number | null
+          exterior_color?: string | null
+          floor_layout?: string | null
+          fuel_type?: string | null
+          hours?: number | null
+          hp?: number | null
+          hull_construction?: string | null
+          interior_color?: string | null
+          invoice_amt?: number | null
+          last_update_date?: string | null
+          length?: number | null
+          major_unit_header_id?: number | null
+          make?: string | null
+          model?: string | null
+          model_year?: number | null
+          msrp?: number | null
+          new_used?: string | null
+          odometer?: string | null
+          stock_number?: string | null
+          synced_at?: string | null
+          unit_status?: string | null
+          unit_type?: string | null
+          vin?: string | null
+        }
+        Update: {
+          beam?: number | null
+          class?: string | null
+          color?: string | null
+          comments?: string | null
+          condition?: string | null
+          date_gathered?: string | null
+          date_received?: string | null
+          dsrp?: number | null
+          exterior_color?: string | null
+          floor_layout?: string | null
+          fuel_type?: string | null
+          hours?: number | null
+          hp?: number | null
+          hull_construction?: string | null
+          interior_color?: string | null
+          invoice_amt?: number | null
+          last_update_date?: string | null
+          length?: number | null
+          major_unit_header_id?: number | null
+          make?: string | null
+          model?: string | null
+          model_year?: number | null
+          msrp?: number | null
+          new_used?: string | null
+          odometer?: string | null
+          stock_number?: string | null
+          synced_at?: string | null
+          unit_status?: string | null
+          unit_type?: string | null
+          vin?: string | null
         }
         Relationships: []
       }
