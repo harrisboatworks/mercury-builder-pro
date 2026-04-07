@@ -22,6 +22,7 @@ Deno.serve(async (req) => {
       .from('mercury_motor_inventory')
       .select('model, model_year, stock_number, dealer_price, msrp, availability_status, available_for_sale')
       .eq('new_used', 'N')
+      .eq('model_year', 2026)
       .eq('available_for_sale', true);
 
     if (inventoryError) {
