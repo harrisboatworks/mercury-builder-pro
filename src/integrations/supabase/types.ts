@@ -3159,6 +3159,28 @@ export type Database = {
         }
         Relationships: []
       }
+      service_parts: {
+        Row: {
+          customer_id: number | null
+          customer_name: string | null
+          date_completed: string | null
+          ext_price: number | null
+          job_description: string | null
+          job_name: string | null
+          part_description: string | null
+          part_number: string | null
+          price: number | null
+          qty: number | null
+          ro_header_id: number | null
+          ro_job_id: number | null
+          ro_number: string | null
+          service_writer: string | null
+          source_code: string | null
+          unit: string | null
+          vin: string | null
+        }
+        Relationships: []
+      }
       unit_inventory: {
         Row: {
           beam: number | null
