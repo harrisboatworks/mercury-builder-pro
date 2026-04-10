@@ -35,6 +35,9 @@ export function PromoSummaryCard({
   
   const promo = promotions?.[0];
   if (!promo) return null;
+
+  const hasChooseOne = promo.promo_options?.type === 'choose_one' && 
+    (promo.promo_options.options?.length ?? 0) > 0;
   
   const rebateAmount = getRebateForHP?.(motorHP) || 0;
   const financingRates = getSpecialFinancingRates?.();
@@ -73,7 +76,7 @@ export function PromoSummaryCard({
         <div className="flex items-center gap-2">
           <img src={mercuryLogo} alt="Mercury" className="h-5" />
           <span className="text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full border border-red-100">
-            GET 7
+            7-YEAR WARRANTY
           </span>
         </div>
         {endDate && (
@@ -102,60 +105,63 @@ export function PromoSummaryCard({
           </div>
         </div>
         
-        {/* Divider */}
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-border"></div>
-          </div>
-          <div className="relative flex justify-center">
-            <span className="px-2 bg-card text-[10px] font-medium text-muted-foreground uppercase tracking-wide">
-              Plus Pick One
-            </span>
-          </div>
-        </div>
-        
-        {/* Compact 3-Column Option Cards */}
-        <div className="grid grid-cols-3 gap-2">
-          {options.map((option) => {
-            const isSelected = selectedOption === option.id;
-            const Icon = option.icon;
+        {/* Choose One Section - only if promo has options */}
+        {hasChooseOne && (
+          <>
+            {/* Divider */}
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-border"></div>
+              </div>
+              <div className="relative flex justify-center">
+                <span className="px-2 bg-card text-[10px] font-medium text-muted-foreground uppercase tracking-wide">
+                  Plus Pick One
+                </span>
+              </div>
+            </div>
             
-            return (
-              <button
-                key={option.id}
-                onClick={() => onChangeOption(option.id)}
-                className={cn(
-                  'relative flex flex-col items-center p-2.5 rounded-lg border-2 transition-all duration-200 text-center',
-                  isSelected
-                    ? 'border-primary bg-primary/5 shadow-sm'
-                    : 'border-border hover:border-primary/40 hover:bg-muted/30'
-                )}
-              >
-                {/* Selected checkmark */}
-                {isSelected && (
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center">
-                    <Check className="w-2.5 h-2.5 text-white" />
-                  </div>
-                )}
+            {/* Compact 3-Column Option Cards */}
+            <div className="grid grid-cols-3 gap-2">
+              {options.map((option) => {
+                const isSelected = selectedOption === option.id;
+                const Icon = option.icon;
                 
-                {/* Icon */}
-                <div className={cn(
-                  'w-9 h-9 rounded-lg flex items-center justify-center mb-1.5 transition-colors',
-                  isSelected ? 'bg-primary/15' : 'bg-primary/10'
-                )}>
-                  <Icon className="w-4 h-4 text-primary" />
-                </div>
-                
-                <span className="text-xs font-semibold text-foreground leading-tight">
-                  {option.title}
-                </span>
-                <span className="text-[10px] text-muted-foreground leading-tight">
-                  {option.subtitle}
-                </span>
-              </button>
-            );
-          })}
-        </div>
+                return (
+                  <button
+                    key={option.id}
+                    onClick={() => onChangeOption(option.id)}
+                    className={cn(
+                      'relative flex flex-col items-center p-2.5 rounded-lg border-2 transition-all duration-200 text-center',
+                      isSelected
+                        ? 'border-primary bg-primary/5 shadow-sm'
+                        : 'border-border hover:border-primary/40 hover:bg-muted/30'
+                    )}
+                  >
+                    {isSelected && (
+                      <div className="absolute -top-1 -right-1 w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+                        <Check className="w-2.5 h-2.5 text-white" />
+                      </div>
+                    )}
+                    
+                    <div className={cn(
+                      'w-9 h-9 rounded-lg flex items-center justify-center mb-1.5 transition-colors',
+                      isSelected ? 'bg-primary/15' : 'bg-primary/10'
+                    )}>
+                      <Icon className="w-4 h-4 text-primary" />
+                    </div>
+                    
+                    <span className="text-xs font-semibold text-foreground leading-tight">
+                      {option.title}
+                    </span>
+                    <span className="text-[10px] text-muted-foreground leading-tight">
+                      {option.subtitle}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </>
+        )}
         
         {/* Link to full details */}
         <Link 
