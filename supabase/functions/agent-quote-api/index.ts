@@ -1097,7 +1097,7 @@ async function createQuote(supabase: any, body: any) {
     is_admin_quote: true,
     lead_status: body.lead_status || "new",
     share_token: generateShareToken(),
-    lead_source: "ai_agent",
+    lead_source: body.source || "ai_agent",
     promotion_id: promoData?.id || null,
     tradein_value_final: tradeInValue || null,
     quote_data: quoteData,
