@@ -108,9 +108,9 @@ export default function Promotions() {
     }
   };
 
-  // Find the main "Get 7 + Choose One" promotion
-  const mainPromotion = promotions.find(p => p.promo_options?.type === 'choose_one');
-  const chooseOneOptions = mainPromotion?.promo_options?.options || [];
+  // Find the main promotion — prefer "choose one" type, fall back to first active
+  const mainPromotion = promotions.find(p => p.promo_options?.type === 'choose_one') || promotions[0] || null;
+  const chooseOneOptions = mainPromotion?.promo_options?.type === 'choose_one' ? mainPromotion.promo_options.options : [];
 
   // Get rebate matrix for the full table display
   const rebateMatrix = chooseOneOptions.find((o: any) => o.id === 'cash_rebate')?.matrix || [];
