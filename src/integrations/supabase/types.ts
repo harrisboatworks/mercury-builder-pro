@@ -899,6 +899,7 @@ export type Database = {
           content: string
           created_at: string | null
           id: string
+          search_vector: unknown
           source: string | null
           tags: string[] | null
           topic: string
@@ -910,6 +911,7 @@ export type Database = {
           content: string
           created_at?: string | null
           id?: string
+          search_vector?: unknown
           source?: string | null
           tags?: string[] | null
           topic: string
@@ -921,6 +923,7 @@ export type Database = {
           content?: string
           created_at?: string | null
           id?: string
+          search_vector?: unknown
           source?: string | null
           tags?: string[] | null
           topic?: string
@@ -2295,6 +2298,36 @@ export type Database = {
         }
         Relationships: []
       }
+      review_monitor_state: {
+        Row: {
+          gbp_account_name: string | null
+          gbp_location_name: string | null
+          gbp_oauth_state: string | null
+          gbp_refresh_token: string | null
+          id: number
+          last_review_time: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          gbp_account_name?: string | null
+          gbp_location_name?: string | null
+          gbp_oauth_state?: string | null
+          gbp_refresh_token?: string | null
+          id?: number
+          last_review_time?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          gbp_account_name?: string | null
+          gbp_location_name?: string | null
+          gbp_oauth_state?: string | null
+          gbp_refresh_token?: string | null
+          id?: number
+          last_review_time?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       saved_comparisons: {
         Row: {
           created_at: string | null
@@ -3502,6 +3535,14 @@ export type Database = {
         Returns: string
       }
       generate_session_id: { Args: never; Returns: string }
+      get_all_knowledge: {
+        Args: never
+        Returns: {
+          category: string
+          content: string
+          topic: string
+        }[]
+      }
       get_cron_job_status: {
         Args: never
         Returns: {
@@ -3539,6 +3580,14 @@ export type Database = {
           _user_id: string
         }
         Returns: undefined
+      }
+      search_knowledge: {
+        Args: { match_count?: number; query_text: string }
+        Returns: {
+          category: string
+          content: string
+          topic: string
+        }[]
       }
       test_single_motor_insert: {
         Args: {
