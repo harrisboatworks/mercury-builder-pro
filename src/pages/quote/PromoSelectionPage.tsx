@@ -141,12 +141,20 @@ export default function PromoSelectionPage() {
     }
   }, [state.motor, navigate]);
 
-  // Auto-skip if no active promotions
+  // Auto-skip if no active promotions OR if promo has no "choose one" options (warranty-only)
+  const hasChooseOneOptions = activePromo?.promo_options?.type === 'choose_one' && 
+    (activePromo.promo_options.options?.length ?? 0) > 0;
+
   useEffect(() => {
-    if (!activePromo && state.motor) {
+    if (state.motor && (!activePromo || !hasChooseOneOptions)) {
+      // For warranty-only promos, auto-apply the warranty and skip
+      if (activePromo && !hasChooseOneOptions) {
+        dispatch({ type: 'SET_SELECTED_PACKAGE', payload: { id: 'good', label: 'Essential', priceBeforeTax: 0 } });
+        dispatch({ type: 'SET_WARRANTY_CONFIG', payload: { extendedYears: 0, warrantyPrice: 0, totalYears: 3 + (activePromo.warranty_extra_years || 0) } });
+      }
       navigate('/quote/summary', { replace: true });
     }
-  }, [activePromo, state.motor, navigate]);
+  }, [activePromo, hasChooseOneOptions, state.motor, navigate]);
 
   const handleOptionSelect = (optionId: PromoOptionId) => {
     setSelectedOption(optionId);

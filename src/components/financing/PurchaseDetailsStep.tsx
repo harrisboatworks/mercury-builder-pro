@@ -140,7 +140,7 @@ export function PurchaseDetailsStep() {
                   Special Financing: {promoRate}% APR for {promoTerm} months
                 </p>
                 <p className="text-xs text-green-700 mt-0.5">
-                  Locked in from your Mercury GET 7 promotion selection
+                  Locked in from your Mercury promotion selection
                 </p>
               </>
             ) : (
@@ -168,7 +168,7 @@ export function PurchaseDetailsStep() {
               6 Months No Payments
             </p>
             <p className="text-xs text-blue-700 mt-0.5">
-              Your first payment will be deferred for 6 months from your Mercury GET 7 promotion
+              Your first payment will be deferred for 6 months from your Mercury promotion
             </p>
           </div>
         </div>
@@ -182,7 +182,7 @@ export function PurchaseDetailsStep() {
               Factory Rebate: {promoValue}
             </p>
             <p className="text-xs text-amber-700 mt-0.5">
-              Applied to your purchase from your Mercury GET 7 promotion
+              Applied to your purchase from your Mercury promotion
             </p>
           </div>
         </div>

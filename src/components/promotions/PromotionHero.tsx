@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion';
-import { Sparkles, Shield, Calendar } from 'lucide-react';
+import { Shield, Calendar } from 'lucide-react';
 import { CountdownTimer } from '@/components/ui/countdown-timer';
 import mercuryLogo from '@/assets/mercury-logo.png';
-import mercuryGet7Promo from '@/assets/mercury-get-7-choose-one.jpg';
+import harris7YearWarranty from '@/assets/harris-7-year-warranty.png';
 
 interface PromotionHeroProps {
   endDate?: string | null;
+  bonusTitle?: string | null;
+  bonusDescription?: string | null;
 }
 
-export function PromotionHero({ endDate }: PromotionHeroProps) {
+export function PromotionHero({ endDate, bonusTitle, bonusDescription }: PromotionHeroProps) {
   return (
     <section className="relative bg-gradient-to-b from-stone-900 via-stone-800 to-stone-900 py-16 px-4 overflow-hidden">
       {/* Background pattern */}
@@ -17,7 +19,7 @@ export function PromotionHero({ endDate }: PromotionHeroProps) {
       </div>
 
       <div className="relative max-w-4xl mx-auto text-center">
-        {/* Mercury logo - inverted for dark background */}
+        {/* Mercury logo */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,7 +33,7 @@ export function PromotionHero({ endDate }: PromotionHeroProps) {
           />
         </motion.div>
 
-        {/* Official Promo Image */}
+        {/* Promo Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -39,21 +41,10 @@ export function PromotionHero({ endDate }: PromotionHeroProps) {
           className="mb-8"
         >
           <img 
-            src={mercuryGet7Promo} 
-            alt="Mercury Get 7 + Choose One Promotion"
+            src={harris7YearWarranty} 
+            alt="Harris Boat Works — Get 7 Years Factory-Backed Warranty on every new Mercury"
             className="max-w-full md:max-w-2xl mx-auto rounded-xl shadow-2xl"
           />
-        </motion.div>
-
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold mb-6 shadow-lg"
-        >
-          <Sparkles className="w-4 h-4" />
-          Limited Time: January 12 – March 31, 2026
         </motion.div>
 
         {/* Main heading */}
@@ -64,8 +55,6 @@ export function PromotionHero({ endDate }: PromotionHeroProps) {
           className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4"
         >
           Get <span className="text-red-500">7 Years</span> of Coverage
-          <br />
-          <span className="text-3xl md:text-4xl lg:text-5xl text-stone-300">+ Choose One Bonus!</span>
         </motion.h1>
 
         {/* Subheading */}
@@ -75,9 +64,8 @@ export function PromotionHero({ endDate }: PromotionHeroProps) {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-lg md:text-xl text-stone-300 max-w-2xl mx-auto mb-8"
         >
-          Every qualifying Mercury outboard comes with 7 years of factory warranty protection
-          <strong className="text-white"> PLUS </strong>
-          your choice of 6 months no payments, special financing, or a factory rebate.
+          {bonusDescription || 
+            'Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance — straight Mercury protection from a Platinum Dealer since 1965.'}
         </motion.p>
 
         {/* Warranty badge */}
@@ -104,7 +92,7 @@ export function PromotionHero({ endDate }: PromotionHeroProps) {
           >
             <div className="flex items-center justify-center gap-2 text-stone-400 text-sm mb-3">
               <Calendar className="w-4 h-4" />
-              <span>Offer ends March 31, 2026</span>
+              <span>Limited time offer</span>
             </div>
             <CountdownTimer endDate={endDate} />
           </motion.div>

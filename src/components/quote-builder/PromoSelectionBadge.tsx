@@ -76,7 +76,7 @@ export function PromoSelectionBadge({
         <div className="flex items-center gap-3">
           <img src={mercuryLogo} alt="Mercury" className="h-5 brightness-0 invert" />
           <span className="text-xs font-bold text-red-400 bg-red-950/50 px-2 py-0.5 rounded-full">
-            GET 7
+            7-YEAR WARRANTY
           </span>
         </div>
         {endDate && (

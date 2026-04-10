@@ -280,7 +280,7 @@ export function getContextualPromptsWithPromo(
       return basePrompts;
     }
     
-    const promoQuestion = "Tell me about the Get 7 deal";
+    const promoQuestion = "Tell me about the 7-year warranty";
     // Insert promo question at position 2 (after first two page-specific questions)
     return [
       ...basePrompts.slice(0, 2),
@@ -396,7 +396,7 @@ export function getPageWelcomeMessage(
   
   if (currentPage.includes('/promotions')) {
     const promoMsg = activePromo?.warranty_extra_years && activePromo.warranty_extra_years >= 4
-      ? " The Get 7 deal is pretty sweet right now!"
+      ? " The 7-year warranty deal is on right now!"
       : "";
     return `Hey! Looking at the current deals?${promoMsg} I can help you find the best one.`;
   }
