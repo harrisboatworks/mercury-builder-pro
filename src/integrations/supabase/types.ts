@@ -892,6 +892,42 @@ export type Database = {
         }
         Relationships: []
       }
+      hbw_knowledge: {
+        Row: {
+          active: boolean | null
+          category: string
+          content: string
+          created_at: string | null
+          id: string
+          source: string | null
+          tags: string[] | null
+          topic: string
+          updated_at: string | null
+        }
+        Insert: {
+          active?: boolean | null
+          category: string
+          content: string
+          created_at?: string | null
+          id?: string
+          source?: string | null
+          tags?: string[] | null
+          topic: string
+          updated_at?: string | null
+        }
+        Update: {
+          active?: boolean | null
+          category?: string
+          content?: string
+          created_at?: string | null
+          id?: string
+          source?: string | null
+          tags?: string[] | null
+          topic?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       heartbeat: {
         Row: {
           created_at: string
@@ -2396,6 +2432,48 @@ export type Database = {
         }
         Relationships: []
       }
+      service_requests: {
+        Row: {
+          boat_description: string | null
+          created_at: string | null
+          customer_id: number | null
+          customer_name: string | null
+          customer_phone: string
+          id: string
+          issue_description: string
+          notes: string | null
+          preferred_date: string | null
+          request_type: string
+          status: string
+        }
+        Insert: {
+          boat_description?: string | null
+          created_at?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          customer_phone: string
+          id?: string
+          issue_description: string
+          notes?: string | null
+          preferred_date?: string | null
+          request_type: string
+          status?: string
+        }
+        Update: {
+          boat_description?: string | null
+          created_at?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          customer_phone?: string
+          id?: string
+          issue_description?: string
+          notes?: string | null
+          preferred_date?: string | null
+          request_type?: string
+          status?: string
+        }
+        Relationships: []
+      }
       share_analytics: {
         Row: {
           article_slug: string
@@ -2455,6 +2533,95 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      sms_conversations: {
+        Row: {
+          assigned_staff: string | null
+          created_at: string | null
+          customer_id: number | null
+          customer_name: string | null
+          from_phone: string
+          id: string
+          last_message_at: string | null
+          messages: Json | null
+          mode: string
+        }
+        Insert: {
+          assigned_staff?: string | null
+          created_at?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          from_phone: string
+          id?: string
+          last_message_at?: string | null
+          messages?: Json | null
+          mode?: string
+        }
+        Update: {
+          assigned_staff?: string | null
+          created_at?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          from_phone?: string
+          id?: string
+          last_message_at?: string | null
+          messages?: Json | null
+          mode?: string
+        }
+        Relationships: []
+      }
+      sms_escalations: {
+        Row: {
+          conversation_id: string | null
+          created_at: string | null
+          customer_name: string | null
+          customer_phone: string
+          id: string
+          reason: string
+          resolution: string | null
+          resolved_at: string | null
+          staff_notified_at: string | null
+          status: string
+          summary: string
+          urgency: string
+        }
+        Insert: {
+          conversation_id?: string | null
+          created_at?: string | null
+          customer_name?: string | null
+          customer_phone: string
+          id?: string
+          reason: string
+          resolution?: string | null
+          resolved_at?: string | null
+          staff_notified_at?: string | null
+          status?: string
+          summary: string
+          urgency?: string
+        }
+        Update: {
+          conversation_id?: string | null
+          created_at?: string | null
+          customer_name?: string | null
+          customer_phone?: string
+          id?: string
+          reason?: string
+          resolution?: string | null
+          resolved_at?: string | null
+          staff_notified_at?: string | null
+          status?: string
+          summary?: string
+          urgency?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sms_escalations_conversation_id_fkey"
+            columns: ["conversation_id"]
+            isOneToOne: false
+            referencedRelation: "sms_conversations"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       sms_logs: {
         Row: {
