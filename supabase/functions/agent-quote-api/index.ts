@@ -436,7 +436,7 @@ function runTradeEstimate(
 
 async function listMotors(supabase: any, body: any) {
   const search = (body.search || "").trim();
-  const limit = Math.min(body.limit || 20, 50);
+  const limit = Math.min(body.limit || 200, 500);
 
   let query = supabase
     .from("motor_models")
