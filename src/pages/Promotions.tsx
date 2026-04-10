@@ -284,34 +284,39 @@ export default function Promotions() {
     );
   };
 
-  const promotionFaqs = [
+  const promotionFaqs = mainPromotion?.promo_options?.type === 'choose_one' ? [
     { 
       question: "What is the Mercury Get 7 + Choose One promotion?", 
-      answer: "This promotion gives you 7 years of factory warranty coverage (3 years standard + 4 years FREE extension) on qualifying Mercury outboard motors. PLUS, you choose one additional bonus: 6 months no payments, special financing rates as low as 2.99% APR, OR a factory rebate up to $1,000 based on your motor's horsepower." 
-    },
-    { 
-      question: "How do I choose my bonus?", 
-      answer: "When you finalize your purchase with us, our sales team will help you select the bonus option that works best for your situation. All three options provide great value — it just depends on whether you prefer deferred payments, lower monthly payments with promotional rates, or cash back." 
-    },
-    { 
-      question: "Can I combine the warranty with all three bonuses?", 
-      answer: "No, you get to choose ONE of the three bonuses (no payments, special financing, or rebate) in addition to the 7-year warranty. However, the 7-year warranty is included with ALL options automatically." 
-    },
-    { 
-      question: "What is the minimum for special financing rates?", 
-      answer: "The special promotional financing rates (2.99% for 24 months, 3.99% for 36 months, 4.49% for 48 months, 5.49% for 60 months) require a minimum financed amount of $5,000. Credit approval required." 
-    },
-    { 
-      question: "How much is the factory rebate for my motor?", 
-      answer: "Rebates range from $100 to $1,000 based on horsepower: 2.5-6HP ($100), 8-20HP ($250), 25HP ($300), 30-60HP ($350), 65-75HP ($400), 80-115HP ($500), 150-200HP ($650), 225-425HP ($1,000)." 
-    },
-    { 
-      question: "When does this promotion end?", 
-      answer: "The Mercury Get 7 + Choose One promotion runs from January 12, 2026 through March 31, 2026. Don't wait — build your quote today to lock in these savings!" 
+      answer: "This promotion gives you 7 years of factory warranty coverage (3 years standard + 4 years FREE extension) on qualifying Mercury outboard motors. PLUS, you choose one additional bonus: 6 months no payments, special financing rates, OR a factory rebate based on your motor's horsepower." 
     },
     { 
       question: "Does this apply to repower installations?", 
-      answer: "Yes! This promotion applies to both new boat packages and repower installations. Our Certified Repower Center can help you maximize savings on your engine replacement project." 
+      answer: "Yes! This promotion applies to both new boat packages and repower installations." 
+    }
+  ] : [
+    { 
+      question: "What is the 7-Year Warranty promotion?", 
+      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage — that's 3 years standard plus 4 bonus years. No third-party insurance, just straight Mercury protection." 
+    },
+    { 
+      question: "Which motors are eligible?", 
+      answer: "Every new Mercury outboard we sell qualifies — from a 2.5hp portable all the way up to a 300hp Verado. If it's new and it's Mercury, you're covered for 7 years." 
+    },
+    { 
+      question: "Is this a third-party warranty?", 
+      answer: "No. This is factory-backed Mercury coverage. Your warranty is honoured at any authorized Mercury dealer, and Harris Boat Works handles all warranty service in-house as a Platinum Dealer." 
+    },
+    { 
+      question: "Does this apply to repowers?", 
+      answer: "Yes! Whether you're buying a new package or dropping off your boat for a full repower, the 7-year warranty applies." 
+    },
+    { 
+      question: "When does this offer end?", 
+      answer: "This offer is available for a limited time. Check this page or contact us for current availability." 
+    },
+    { 
+      question: "Do I need to do anything special to activate the warranty?", 
+      answer: "Nope. Buy your motor from Harris Boat Works and the 7-year coverage is automatically included. We handle all the registration." 
     }
   ];
 
@@ -323,7 +328,7 @@ export default function Promotions() {
       <LuxuryHeader />
       
       {/* Hero Section — only when promos are active */}
-      {hasActivePromos && <PromotionHero endDate={mainPromotion?.end_date} />}
+      {hasActivePromos && <PromotionHero endDate={mainPromotion?.end_date} bonusTitle={mainPromotion?.bonus_title} bonusDescription={mainPromotion?.bonus_description} />}
 
       {/* No Active Promotions State */}
       {!loading && !hasActivePromos && (
