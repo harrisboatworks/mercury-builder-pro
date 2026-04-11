@@ -979,6 +979,48 @@ export type Database = {
         }
         Relationships: []
       }
+      kb_suggestions: {
+        Row: {
+          category: string | null
+          content: string
+          created_at: string | null
+          id: string
+          kb_entry_id: string | null
+          reasoning: string | null
+          reviewed_at: string | null
+          source: string
+          status: string
+          suggestion_type: string
+          topic: string
+        }
+        Insert: {
+          category?: string | null
+          content: string
+          created_at?: string | null
+          id?: string
+          kb_entry_id?: string | null
+          reasoning?: string | null
+          reviewed_at?: string | null
+          source?: string
+          status?: string
+          suggestion_type: string
+          topic: string
+        }
+        Update: {
+          category?: string | null
+          content?: string
+          created_at?: string | null
+          id?: string
+          kb_entry_id?: string | null
+          reasoning?: string | null
+          reviewed_at?: string | null
+          source?: string
+          status?: string
+          suggestion_type?: string
+          topic?: string
+        }
+        Relationships: []
+      }
       mercury_parts_cache: {
         Row: {
           cad_price: number | null
@@ -2693,6 +2735,48 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      sms_review_log: {
+        Row: {
+          created_at: string | null
+          escalations: number | null
+          id: string
+          period_end: string
+          period_start: string
+          raw_analysis: string | null
+          suggestions_generated: number | null
+          summary: string | null
+          total_conversations: number | null
+          total_messages: number | null
+          web_searches: number | null
+        }
+        Insert: {
+          created_at?: string | null
+          escalations?: number | null
+          id?: string
+          period_end: string
+          period_start: string
+          raw_analysis?: string | null
+          suggestions_generated?: number | null
+          summary?: string | null
+          total_conversations?: number | null
+          total_messages?: number | null
+          web_searches?: number | null
+        }
+        Update: {
+          created_at?: string | null
+          escalations?: number | null
+          id?: string
+          period_end?: string
+          period_start?: string
+          raw_analysis?: string | null
+          suggestions_generated?: number | null
+          summary?: string | null
+          total_conversations?: number | null
+          total_messages?: number | null
+          web_searches?: number | null
+        }
+        Relationships: []
       }
       sync_logs: {
         Row: {
