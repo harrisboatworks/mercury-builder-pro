@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 // Known promo banner storage keys for reset utility
 const PROMO_BANNER_KEYS = [
-  'get7_choose_one_banner_dismissed',
+  'promo_banner_dismissed',
   // Add other promo banner keys here as needed
 ];
 

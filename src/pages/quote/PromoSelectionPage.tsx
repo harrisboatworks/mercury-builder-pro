@@ -264,13 +264,13 @@ export default function PromoSelectionPage() {
               className="text-3xl md:text-5xl font-bold text-foreground mb-4"
               style={{ opacity: 1 }}
             >
-              Get 7 Years of Coverage
+              7-Year Factory-Backed Warranty
               <br />
-              <span className="text-primary">+ Choose One Bonus!</span>
+              <span className="text-primary">+ Choose Your Bonus!</span>
             </motion.h1>
 
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-              Every qualifying Mercury outboard comes with 7 years of factory warranty
+              Every new Mercury outboard from Harris Boat Works comes with 7 years of factory warranty
               PLUS your choice of one additional benefit.
             </p>
 

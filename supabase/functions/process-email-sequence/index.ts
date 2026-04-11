@@ -380,7 +380,7 @@ const emailTemplates = {
   6: {
     getSubject: (metadata: any) => {
       const days = daysUntil(metadata?.promoEndDate);
-      return `⏰ Only ${days} Days Left – ${metadata?.promoName || 'Mercury Get 7'} Ends ${formatDate(metadata?.promoEndDate)}`;
+      return `⏰ Only ${days} Days Left – ${metadata?.promoName || '7-Year Warranty'} Ends ${formatDate(metadata?.promoEndDate)}`;
     },
     getHtml: (name: string | null, unsubscribeToken: string, metadata: any) => {
       const days = daysUntil(metadata?.promoEndDate);

@@ -286,8 +286,8 @@ export default function Promotions() {
 
   const promotionFaqs = mainPromotion?.promo_options?.type === 'choose_one' ? [
     { 
-      question: "What is the Mercury Get 7 + Choose One promotion?", 
-      answer: "This promotion gives you 7 years of factory warranty coverage (3 years standard + 4 years FREE extension) on qualifying Mercury outboard motors. PLUS, you choose one additional bonus: 6 months no payments, special financing rates, OR a factory rebate based on your motor's horsepower." 
+      question: "What is the Harris Boat Works 7-Year Warranty + Choose One promotion?", 
+      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage — that's 3 years standard plus 4 bonus years. Plus, you choose one additional bonus: 6 months no payments, special financing rates, OR a factory rebate based on your motor's horsepower." 
     },
     { 
       question: "Does this apply to repower installations?", 

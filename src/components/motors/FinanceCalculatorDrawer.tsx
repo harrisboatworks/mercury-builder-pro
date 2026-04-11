@@ -236,7 +236,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
               </RadioGroup>
             </div>
 
-            {/* Promo Alert - Shows based on user's "Choose One" selection */}
+            {/* Promo Alert - Shows based on selected promo option */}
             {state.selectedPromoOption === 'special_financing' && effectivePromoRate && (
               <div className="p-3 bg-primary/10 rounded-lg text-sm border border-primary/20">
                 <div className="flex items-center gap-2 font-medium">
@@ -244,7 +244,7 @@ export function FinanceCalculatorDrawer({ open, onOpenChange, motor }: FinanceCa
                   Special Financing: {effectivePromoRate}% APR
                 </div>
                 <div className="text-muted-foreground mt-0.5">
-                  Mercury GET 7 promotional rate applied
+                  Promotional rate applied
                 </div>
                 {promotions?.[0]?.end_date && (
                   <div className="text-muted-foreground mt-0.5">

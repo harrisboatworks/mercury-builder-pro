@@ -27,7 +27,7 @@ export const purchaseDetailsSchema = z.object({
   tradeInValue: z.number().min(0, 'Trade-in value cannot be negative').optional(),
   amountToFinance: z.number().min(1, 'Amount to finance must be at least $1'),
   preferredTerm: z.enum(['24', '36', '48', '60', '72', '84', '120', '180']).optional(),
-  // Promo fields for Mercury GET 7 promotion
+  // Promo fields for active promotion
   promoOption: z.enum(['no_payments', 'special_financing', 'cash_rebate']).nullable().optional(),
   promoRate: z.number().nullable().optional(),
   promoTerm: z.number().nullable().optional(),

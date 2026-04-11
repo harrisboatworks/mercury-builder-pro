@@ -649,7 +649,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
                         : 'Promotional Savings'}
                     </Text>
                     <Text style={{ fontSize: 7, color: colors.lightText, marginTop: 1 }}>
-                      Mercury GET 7 Promotion
+                      Harris Boat Works 7-Year Warranty
                     </Text>
                   </View>
                   <Text style={[styles.pricingValue, styles.discountValue]}>-${quoteData.promoSavings}</Text>
@@ -926,11 +926,11 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
               </View>
             )}
               
-            {/* BONUS OFFER (Mercury GET 7 promo warranty) */}
+            {/* BONUS OFFER (7-Year Warranty) */}
             {quoteData.selectedPackage?.coverageYears && quoteData.selectedPackage.coverageYears >= 7 && (
               <View style={{ marginTop: 8, paddingTop: 8, borderTop: `1.5 solid ${colors.border}` }}>
                 <Text style={{ fontSize: 10, fontWeight: 'bold', color: colors.text, marginBottom: 2 }}>
-                  MERCURY GET 7 PROMOTION
+                  7-YEAR FACTORY-BACKED WARRANTY
                 </Text>
                   <Text style={{ fontSize: 9, color: colors.text }}>
                     {quoteData.selectedPackage.coverageYears} Years Factory Warranty Included

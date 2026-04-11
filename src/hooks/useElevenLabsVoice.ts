@@ -934,7 +934,7 @@ async function handleSendMotorPhotos(params: {
   }
 }
 
-// Client tool handler for getting current deals - includes full "Choose One" promo details
+// Client tool handler for getting current deals
 async function handleCheckCurrentDeals(params: {
   motor_model?: string;
   hp_range?: string;

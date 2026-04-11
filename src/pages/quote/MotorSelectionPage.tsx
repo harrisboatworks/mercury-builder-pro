@@ -18,8 +18,7 @@ import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { daysUntil } from '@/lib/finance';
 import { Clock } from 'lucide-react';
 import { DismissibleBanner } from '@/components/ui/dismissible-banner';
-import mercuryGet7PromoMobile from '@/assets/mercury-get7-promo-mobile.png';
-import mercuryGet7Promo from '@/assets/mercury-get-7-choose-one.jpg';
+import harris7YearWarranty from '@/assets/harris-7-year-warranty.png';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
 import MotorCardPreview, { type SharedCardData } from '@/components/motors/MotorCardPreview';
@@ -68,12 +67,10 @@ function PromoBannerConditional() {
       storageKey="promo_banner_dismissed"
       variant="promotional"
       className="max-w-4xl mx-auto px-4 mb-4"
-      actionLabel="See Your Options"
+      actionLabel="Learn More"
       actionHref="/promotions"
-      imageUrl={mercuryGet7Promo}
+      imageUrl={harris7YearWarranty}
       imageAlt={promo.name}
-      mobileImageUrl={mercuryGet7PromoMobile}
-      mobileImageAlt={promo.name}
     >
       <div>
         <p className="font-semibold text-sm">{promo.bonus_title || promo.name}</p>
@@ -223,7 +220,7 @@ function MotorSelectionContent() {
     storageKey: 'promo_reminder_motor_selection'
   });
   
-  // Get 7 promotional banner - state now handled by DismissibleBanner component
+  // Promotional banner state handled by DismissibleBanner component
   
   // Get the currently viewed motor for the promo modal
   const exitIntentMotor = useMemo(() => {
