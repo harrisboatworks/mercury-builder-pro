@@ -47,6 +47,16 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription }: Promoti
           />
         </motion.div>
 
+        {/* Dealer callout */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="text-sm text-amber-400/90 uppercase tracking-wider font-medium mb-3"
+        >
+          Mercury stopped running promos — so we're running our own.
+        </motion.p>
+
         {/* Main heading */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
