@@ -348,7 +348,7 @@ export default function Promotions() {
               No Active Promotions Right Now
             </h1>
             <p className="text-base md:text-lg text-white/60 mb-10 max-w-lg mx-auto leading-relaxed">
-              Mercury promotions launch throughout the year. Sign up below to be first in line when the next deal drops.
+              We run our own deals when Mercury doesn't. Sign up below to be first in line when the next one drops.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
