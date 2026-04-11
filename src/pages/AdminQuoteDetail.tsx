@@ -781,7 +781,7 @@ const AdminQuoteDetail = () => {
                 </h2>
                 <div className="space-y-2 text-sm">
                   <div className="font-medium text-emerald-700 dark:text-emerald-300">
-                    Mercury GET 7 + Choose One
+                    7-Year Factory-Backed Warranty
                   </div>
                   <div className="flex items-center gap-2">
                     <Check className="w-4 h-4 text-emerald-600" />

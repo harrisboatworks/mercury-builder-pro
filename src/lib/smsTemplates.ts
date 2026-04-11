@@ -85,17 +85,13 @@ export const SMS_TEMPLATES: Record<string, SMSTemplate> = {
   get7_campaign: {
     type: 'get7_campaign' as const,
     generateMessage: (data) => {
-      const { customerName, expiresIn, rebateAmount, promoUrl } = data;
+      const { customerName, expiresIn, promoUrl } = data;
       const nameGreeting = customerName ? `Hi ${customerName}! ` : '';
-      const rebateLine = rebateAmount ? `\n💰 Your motor qualifies for $${rebateAmount} cash back!` : '';
-      return `🎉 ${nameGreeting}Mercury Get 7 is HERE!
+      return `🎉 ${nameGreeting}7-Year Factory-Backed Warranty on every new Mercury!
 
-7-Year Warranty PLUS Choose One:
-• 6 Months No Payments
-• Special Financing from 2.99%
-• Up to $1,500 Cash Back${rebateLine}
+Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance — straight Mercury protection.
 
-Ends ${expiresIn || 'Mar 31, 2026'}!
+Ends ${expiresIn || 'Dec 31, 2025'}!
 Build your quote: ${promoUrl || 'mercuryrepower.ca'}
 
 - Harris Boat Works
@@ -106,15 +102,14 @@ Reply STOP to unsubscribe`;
   get7_reminder: {
     type: 'get7_reminder' as const,
     generateMessage: (data) => {
-      const { customerName, daysLeft, motorModel, rebateAmount } = data;
+      const { customerName, daysLeft, motorModel } = data;
       const nameGreeting = customerName ? `${customerName}, ` : '';
       const motorLine = motorModel ? `\nMotor: ${motorModel}` : '';
-      const rebateLine = rebateAmount ? `\n💰 Eligible for $${rebateAmount} rebate!` : '';
       return `⏰ ${nameGreeting}Only ${daysLeft} days left!
 
-Mercury Get 7 + Choose One ends soon:
-✓ 7-Year Factory Warranty
-✓ No Payments OR Low Rates OR Cash Back${motorLine}${rebateLine}
+7-Year Factory-Backed Warranty ends soon:
+✓ 7 years of factory coverage on every new Mercury
+✓ No third-party insurance${motorLine}
 
 Don't miss out: mercuryrepower.ca/promotions
 
