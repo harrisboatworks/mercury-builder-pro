@@ -171,7 +171,7 @@ export function PricingTable({
                 }
                 amount={pricing.promoValue}
                 isDiscount
-                description="Mercury Promotion"
+                description="Dealer Promotion"
                 className="pl-2 border-l-2 border-emerald-200"
               />
             )}
