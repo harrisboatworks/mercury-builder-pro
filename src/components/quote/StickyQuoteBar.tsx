@@ -15,7 +15,7 @@ type Props = {
   secondaryLabel?: string;
   onSecondary?: () => void;
   deltaOnce?: { cash?: number | null; monthly?: number | null } | null;
-  // Selected promo option for "Choose One" promotions
+  // Selected promo option
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoDisplay?: string | null;
   // Indicates financing is unavailable (total < $5,000)

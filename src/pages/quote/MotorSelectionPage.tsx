@@ -220,7 +220,7 @@ function MotorSelectionContent() {
     storageKey: 'promo_reminder_motor_selection'
   });
   
-  // Get 7 promotional banner - state now handled by DismissibleBanner component
+  // Promotional banner state handled by DismissibleBanner component
   
   // Get the currently viewed motor for the promo modal
   const exitIntentMotor = useMemo(() => {

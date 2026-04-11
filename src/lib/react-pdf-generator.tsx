@@ -56,7 +56,7 @@ export interface ReactPdfQuoteData {
   financingRate?: number;
   financingQrCode?: string;
   pricing?: any;
-  // Selected promo option from "Choose One"
+  // Selected promo option
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoValue?: string;
   customerNotes?: string;
