@@ -129,10 +129,8 @@ export default function PromoSelectionPage() {
   }, [hasUserInteracted, selectedOption, isEligibleForFinancing]);
 
   useEffect(() => {
-    document.title = promotions.length > 0
-      ? 'Choose Your Bonus | Mercury Promotion'
-      : 'Quote Builder';
-  }, [promotions.length]);
+    document.title = 'Quote Builder';
+  }, []);
 
   // Redirect if no motor selected
   useEffect(() => {
@@ -240,23 +238,14 @@ export default function PromoSelectionPage() {
         {/* Main Content */}
         <div className="container mx-auto px-4 pb-12">
           <div className="max-w-4xl mx-auto text-center">
-            {/* Mercury Logo — no opacity animation */}
+            {/* Mercury Logo */}
             <img
               src={mercuryLogo}
               alt="Mercury Marine"
               className="h-12 mx-auto mb-6 brightness-0 dark:invert"
             />
 
-            {/* Limited Time Badge — static */}
-            <div className="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-              </span>
-              Limited Time: January 12 – March 31, 2026
-            </div>
-
-            {/* Main Headline — transform-only, no opacity */}
+            {/* Main Headline */}
             <motion.h1
               initial={{ y: 16 }}
               animate={{ y: 0 }}
@@ -265,13 +254,11 @@ export default function PromoSelectionPage() {
               style={{ opacity: 1 }}
             >
               7-Year Factory-Backed Warranty
-              <br />
-              <span className="text-primary">+ Choose Your Bonus!</span>
             </motion.h1>
 
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
-              Every new Mercury outboard from Harris Boat Works comes with 7 years of factory warranty
-              PLUS your choice of one additional benefit.
+              Every new Mercury outboard from Harris Boat Works comes with 7 years of factory warranty.
+              Mercury stopped running promos — so we're running our own.
             </p>
 
             {/* Warranty Badge - Included with Shimmer Effect — no opacity animation */}
@@ -307,7 +294,7 @@ export default function PromoSelectionPage() {
               </motion.div>
             </div>
 
-            {/* Divider — static */}
+            {/* Divider */}
             <div className="flex items-center gap-4 mb-8">
               <div className="flex-1 h-px bg-border"></div>
               <span className="text-muted-foreground text-sm font-medium uppercase tracking-wider">Choose Your Bonus</span>
