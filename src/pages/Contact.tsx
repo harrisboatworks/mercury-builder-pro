@@ -414,13 +414,13 @@ export default function Contact() {
                 <Separator className="my-4" />
                 
                 <a 
-                  href="http://hbw.wiki/service" 
+                  href="https://calendly.com/harrisboatworks/sales-consultation-clone" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="block"
                 >
                   <Button className="w-full" variant="default">
-                    Schedule Service
+                    Book an Appointment
                   </Button>
                 </a>
               </CardContent>
