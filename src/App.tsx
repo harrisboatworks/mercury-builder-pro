@@ -482,6 +482,7 @@ function AnimatedRoutes() {
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
         <Route path="/blog/zh/mercury-repower-guide-gta" element={<MandarinBlogArticle />} />
         <Route path="/blog/zh/:slug" element={<MandarinBlogArticlePage />} />
+        <Route path="/blog/ko/:slug" element={<KoreanBlogArticlePage />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
