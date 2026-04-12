@@ -250,7 +250,7 @@ Mercury Marine offers several distinct motor families, each designed for specifi
 - Excellent fuel efficiency
 - Quiet operation
 - Low maintenance costs
-- Broad HP range (2.5HP - 150HP)
+- Broad HP range (2.5HP - 300HP)
 
 **Why Choose FourStroke**: The FourStroke line offers the best balance of performance, reliability, and value. These are workhorse motors built for everyday boaters who want reliable power without the premium price.
 
@@ -263,7 +263,7 @@ Mercury Marine offers several distinct motor families, each designed for specifi
 - Faster acceleration
 - Higher RPM range
 - Competition-ready performance
-- HP range: 115HP - 400HP
+- HP range: 115HP - 300HP
 
 **Why Choose Pro XS**: When every second counts—whether racing to your fishing spot or competing in tournaments—Pro XS delivers. These motors sacrifice some fuel efficiency for raw performance.
 
@@ -272,14 +272,14 @@ Mercury Marine offers several distinct motor families, each designed for specifi
 **Best For**: Premium boats, offshore use, those wanting the best
 
 **Key Features**:
-- Supercharged performance
+- Naturally aspirated large-displacement powerheads (V8, V10, V12)
 - Exceptionally quiet
 - Advanced Noise-Free steering
 - Digital throttle & shift
 - Premium fit and finish
-- HP range: 175HP - 600HP
+- HP range: 250HP - 600HP
 
-**Why Choose Verado**: Verado represents Mercury's flagship technology. The supercharged powerhead delivers smooth, linear power while operating quieter than any comparable outboard. These are the motors you choose when only the best will do.
+**Why Choose Verado**: Verado represents Mercury's flagship technology. The naturally aspirated powerheads deliver smooth, linear power while operating quieter than any comparable outboard. These are the motors you choose when only the best will do.
 
 ### Mercury SeaPro
 
@@ -290,7 +290,7 @@ Mercury Marine offers several distinct motor families, each designed for specifi
 - Extended service intervals
 - Heavy-duty components
 - Commercial warranty available
-- HP range: 15HP - 300HP
+- HP range: 15HP - 500HP
 
 **Why Choose SeaPro**: If you're putting hundreds of hours on your motor annually, SeaPro is designed for you. These commercial-grade motors handle the demands of professional use.
 
@@ -324,7 +324,7 @@ For most Ontario boaters, the **Mercury FourStroke** offers the best overall val
       },
       {
         question: 'Which Mercury motor is quietest?',
-        answer: 'Verado is the quietest Mercury outboard, featuring advanced sound dampening and smooth supercharged operation. FourStroke motors are also notably quiet, while Pro XS prioritizes performance over noise reduction.'
+        answer: 'Verado is the quietest Mercury outboard, featuring advanced sound dampening and smooth naturally aspirated operation. FourStroke motors are also notably quiet, while Pro XS prioritizes performance over noise reduction.'
       }
     ]
   },
@@ -476,9 +476,9 @@ Skipping or rushing break-in can lead to reduced performance, higher oil consump
 - Avoid extended trolling at same speed
 - Vary your throttle position regularly
 
-### Break-In Oil
+### Factory Oil
 
-Mercury 4-stroke motors come pre-filled with break-in oil. After the first oil change (at 20 hours), switch to standard Mercury 4-Stroke Marine Oil or equivalent.
+Your new Mercury FourStroke comes from the factory filled with standard Mercury FourStroke 10W-30 oil — there is no special break-in formulation. However, we strongly recommend changing the engine oil and gear lube at the 20-hour mark to remove any metal particles from the break-in period.
 
 ### What NOT to Do
 
@@ -533,7 +533,7 @@ When you purchase from Harris Boat Works, we walk you through the break-in proce
       },
       {
         question: 'Do I need to use Mercury oil during break-in?',
-        answer: 'The motor comes with Mercury break-in oil. For subsequent oil changes, we recommend Mercury 4-Stroke Marine Oil, but any quality marine-rated oil meeting Mercury specifications is acceptable.'
+        answer: 'The motor comes from the factory with standard Mercury FourStroke 10W-30 oil — there is no special break-in formulation. For all oil changes, we recommend Mercury 4-Stroke Marine Oil, but any quality marine-rated oil meeting Mercury specifications is acceptable.'
       }
     ]
   },
@@ -727,10 +727,10 @@ Since 1965, we've sold and serviced more Mercury outboards than we can count. Th
 We stock the complete Mercury lineup:
 
 - **Portable**: 2.5HP - 20HP for tenders and small boats
-- **FourStroke**: 25HP - 150HP for recreational boats
-- **Pro XS**: 115HP - 400HP for performance and fishing
-- **Verado**: 175HP - 600HP for premium applications
-- **SeaPro**: 15HP - 300HP for commercial use
+- **FourStroke**: 25HP - 300HP for recreational boats
+- **Pro XS**: 115HP - 300HP for performance and fishing
+- **Verado**: 250HP - 600HP for premium applications
+- **SeaPro**: 15HP - 500HP for commercial use
 
 ### Certified Repower Center
 
@@ -863,10 +863,10 @@ Mercury 115HP EFI FourStroke
 Essential for shallow running and beaching. Standard on most motors 40HP and up.
 
 **Tiller Control Option**
-Available on motors up to 60HP (and some larger). Preferred by many serious anglers for direct control.
+Available on motors from 2.5HP up to 115HP via the Mercury Advanced Tiller system. Preferred by many serious anglers for direct control.
 
 **Command Thrust Lower Unit**
-Available on 40-60HP models. Larger gearcase for more thrust and shallow-water capability.
+Available from 9.9HP (ProKicker) through 115HP. Larger gearcase for more thrust and shallow-water capability.
 
 ### Our Top Aluminum Boat Recommendation
 
@@ -969,7 +969,7 @@ Mercury 150HP EFI FourStroke
 **Premium Performance**
 Mercury Verado 250-300HP
 - Best for 24-28ft tritoons
-- Supercharged smooth power
+- Naturally aspirated V8 smooth power
 - Whisper quiet operation
 - Premium feel matches premium pontoons
 
@@ -1329,7 +1329,7 @@ Rice Lake's shallow bays and weed beds make Command Thrust a smart choice. The l
 - Provides more thrust for heavy loads
 - Handles prop fouling better
 
-Available on 40HP and 60HP models.
+Available from 9.9HP (ProKicker) through 115HP — including 40HP, 60HP, 75HP, 90HP, and 115HP models.
 
 ### Seasonal Considerations
 
@@ -1411,13 +1411,13 @@ Mercury's FourStroke and Verado lines both deliver exceptional performance, but 
 ### The Fundamental Difference
 
 **Mercury FourStroke**: Naturally aspirated, excellent value
-**Mercury Verado**: Supercharged, premium experience
+**Mercury Verado**: Naturally aspirated large-displacement V8/V10/V12, premium experience
 
 ### Technology Comparison
 
 | Feature | FourStroke | Verado |
 |---------|------------|--------|
-| Engine Type | Naturally Aspirated | Supercharged |
+| Engine Type | Naturally Aspirated | Naturally Aspirated (V8/V10/V12) |
 | Power Delivery | Progressive | Linear, immediate |
 | Noise Level | Quiet | Extremely quiet |
 | Steering | Hydraulic or manual | Advanced Noise-Free Steering |
@@ -1433,7 +1433,7 @@ Mercury's FourStroke and Verado lines both deliver exceptional performance, but 
 
 **Efficiency**: Excellent fuel economy across the RPM range
 
-**Range**: Available from 2.5HP to 150HP
+**Range**: Available from 2.5HP to 300HP
 
 **Proven Reliability**: Millions in service worldwide
 
@@ -1446,7 +1446,7 @@ Mercury's FourStroke and Verado lines both deliver exceptional performance, but 
 
 ### Mercury Verado Strengths
 
-**Smooth Power**: Supercharged delivery is unlike any other outboard
+**Smooth Power**: Naturally aspirated large-displacement V8/V10/V12 delivery is unlike any other outboard
 
 **Quiet Operation**: The quietest outboard ever made
 
@@ -1454,7 +1454,7 @@ Mercury's FourStroke and Verado lines both deliver exceptional performance, but 
 
 **Performance**: Exceptional hole-shot and acceleration
 
-**Range**: 175HP to 600HP
+**Range**: 250HP to 600HP
 
 **Best For**:
 - Premium boat owners
@@ -1720,13 +1720,12 @@ Mercury Marine backs their motors with industry-leading warranty coverage. Here'
 
 ### Extended Warranty Options
 
-Mercury offers extended coverage up to **8 years**:
+Mercury offers extended coverage up to **7 years** (3 standard + 4 additional years of Gold coverage):
 
 | Coverage Level | Years | Notes |
 |----------------|-------|-------|
 | Standard | 3 | Included free |
-| Extended | 4-5 | Popular choice |
-| Extended Plus | 6-8 | Maximum protection |
+| Gold | Up to 7 total | 3 + 4 years Gold coverage |
 
 **Extended warranty must be purchased within 1 year of original purchase.**
 
@@ -1836,7 +1835,7 @@ The Mercury Pro XS line is purpose-built for performance:
 - Tuned for higher RPM
 - Faster hole-shot
 - Competition-grade internals
-- Available 115-400HP
+- Available 115-300HP
 
 **Why Pro XS for Bass**:
 - Get to your spots faster
@@ -1861,7 +1860,7 @@ Don't overlook FourStroke for recreational bass fishing:
 
 ### Mercury Verado: Premium Power
 
-Verado brings supercharged performance:
+Verado brings naturally aspirated V8/V10 performance:
 
 **Benefits**:
 - Smoothest power delivery
@@ -2038,8 +2037,8 @@ All current Mercury motors use EFI, which precisely meters fuel for optimal econ
 **SmartCraft Gauges**:
 Monitor fuel flow in real-time to understand consumption.
 
-**ECO Mode** (Verado):
-Limits RPM for maximum fuel economy.
+**Advanced Range Optimization (ARO)** (Verado):
+Continuously optimizes fuel delivery across operating conditions for maximum range — works dynamically based on load, throttle position, and conditions.
 
 ### Real-World Tips
 
@@ -2138,7 +2137,7 @@ Verado dominates the center console market for good reason:
 
 **Why Verado for Center Consoles**:
 - Quiet operation (especially on cruises)
-- Smooth supercharged power
+- Smooth naturally aspirated V8/V10/V12 power
 - Advanced features (Digital Throttle & Shift)
 - Premium appearance
 - Joystick compatibility
@@ -2166,7 +2165,7 @@ Mercury's Joystick Piloting for Outboards is a game-changer for docking:
 - Requires twin engines or more
 - Intuitive directional control
 - Automatic skyhook (holds position)
-- Available on Verado 175HP+
+- Available on Verado 250HP+
 
 ### Installation Considerations
 
@@ -2450,7 +2449,7 @@ One of the first decisions when choosing an outboard is tiller or remote steerin
       },
       {
         question: 'What\'s the biggest motor available in tiller?',
-        answer: 'Mercury offers tiller up to 60HP standard, with some 75HP tiller options. Above that, the forces become too great for comfortable tiller control.'
+        answer: 'Mercury offers tiller handles on FourStroke outboards from 2.5HP up to 115HP via the Mercury Advanced Tiller system. The Advanced Tiller (available on 40–115HP models) features an ergonomic adjustable handle with integrated throttle and shift.'
       },
       {
         question: 'Can I have both tiller and remote?',
@@ -2502,7 +2501,8 @@ The right propeller transforms your boat's performance. The wrong one costs you 
 **Critical**: Your engine should reach its rated Wide Open Throttle (WOT) RPM with normal load.
 
 **Mercury FourStroke Range**: 5,000-6,000 RPM (varies by model)
-**Mercury Pro XS Range**: 5,800-6,400 RPM (varies by model)
+**Mercury Pro XS Range**: 5,000-5,750 RPM (varies by model)
+**Mercury Verado Range**: 5,800-6,400 RPM (varies by model)
 
 **If RPM is too low**: Pitch is too high
 **If RPM is too high**: Pitch is too low
@@ -3337,7 +3337,7 @@ Buying an outboard is a significant investment. Should you buy new or save money
 
 **Warranty Protection**:
 - 3-year factory warranty (Mercury)
-- Extendable up to 8 years
+- Extendable up to 7 years (3 standard + 4 Gold coverage)
 - Covers unexpected failures
 - Peace of mind
 
@@ -3655,12 +3655,12 @@ Mercury's V8 outboard lineup delivers serious power for serious boats. Here's ho
 - Performance boating
 - Competitive situations
 
-### Verado (175-400HP)
+### Verado (250-600HP)
 
-**Engine**: Supercharged 4-cylinder (smaller HP) or V8
+**Engine**: Naturally aspirated V8 (250-300HP), V10 (350/400/425HP), or V12 (600HP)
 
 **Key Characteristics**:
-- Supercharged power delivery
+- Smooth naturally aspirated power delivery
 - Extremely quiet
 - Premium refinement
 - Digital Throttle & Shift standard
@@ -3678,7 +3678,7 @@ Mercury's V8 outboard lineup delivers serious power for serious boats. Here's ho
 |---------|------------|--------|--------|
 | Weight | 555 lbs | 500 lbs | 660 lbs |
 | Displacement | 4.6L | 4.6L | 4.6L |
-| Supercharged | No | No | Yes |
+| Induction | Naturally Aspirated | Naturally Aspirated | Naturally Aspirated |
 | Steering | Hydraulic | Hydraulic | ANS |
 | Shift | Mech/DTS | Mech/DTS | DTS |
 | Price | $$ | $$$ | $$$$ |
@@ -3725,8 +3725,8 @@ The differences are in feel, sound, and refinement—not raw capability.
         answer: 'At 250HP, Pro XS is about 160 lbs lighter than Verado. For twin installations, that\'s 320 lbs. Matters for performance boats, less so for cruisers.'
       },
       {
-        question: 'Is supercharging reliable long-term?',
-        answer: 'Mercury\'s supercharged Verado has proven extremely reliable since introduction in 2004. Millions of hours of operation. Proper maintenance is key, as with any engine.'
+        question: 'Is the Verado reliable long-term?',
+        answer: 'Mercury\'s current Verado lineup (naturally aspirated V8, V10, and V12) has proven extremely reliable. The naturally aspirated design is simpler than the older supercharged L6 platform it replaced, with fewer complex systems to maintain. Proper maintenance is key, as with any engine.'
       },
       {
         question: 'Can I mix V8 models in a twin setup?',
@@ -5101,10 +5101,10 @@ Mercury uses various codes and designations that can be confusing. Here's what t
 
 ### Motor Family Designations
 
-**FourStroke**: Standard 4-stroke recreational motors
-**Pro XS**: Performance-tuned for speed and acceleration  
-**Verado**: Premium supercharged motors
-**SeaPro**: Commercial-duty motors
+**FourStroke**: Standard 4-stroke recreational motors (2.5-300HP)
+**Pro XS**: Performance-tuned for speed and acceleration (115-300HP)
+**Verado**: Premium naturally aspirated V8/V10/V12 motors (250-600HP)
+**SeaPro**: Commercial-duty motors (15-500HP)
 **Racing**: Competition-only motors
 
 ### Common Suffixes
@@ -6135,7 +6135,7 @@ The Mercury 3.4L V6 platform (150-225hp) represents the best balance of power, e
       },
       {
         question: 'How does the V6 compare to the Verado?',
-        answer: 'The V6 FourStroke/Pro XS is naturally aspirated (more simple, less expensive). Verado is supercharged (more power per displacement, quieter, more premium). V6 is best value; Verado is best refinement.'
+        answer: 'Both the V6 FourStroke/Pro XS and Verado are naturally aspirated. The V6 is simpler and less expensive. Verado uses larger-displacement V8/V10/V12 powerheads with premium features like Advanced Noise-Free Steering and DTS. V6 is best value; Verado is best refinement.'
       }
     ]
   },
@@ -7054,7 +7054,7 @@ Market share alone doesn't explain Mercury's position; continuous innovation doe
 
 ### Verado V12 600 HP
 
-When Mercury unveiled the V12 600 HP Verado in 2022, it changed what people thought an outboard could be. Highlights include:
+When Mercury unveiled the V12 600 HP Verado on February 11, 2021 — at the Miami International Boat Show — it changed what people thought an outboard could be. Highlights include:
 
 - A naturally aspirated 7.6L V12 powerhead (no turbo or supercharger)
 - Two-speed automatic transmission for efficient hole shot and optimized cruising
@@ -7122,7 +7122,7 @@ All that tech is impressive, but what matters for Harris Boat Works customers is
 
 Here's why Mercury is such a strong match for Rice Lake boaters:
 
-- **Complete horsepower coverage**: From 2.5 HP portables to 150 HP FourStrokes and beyond, Mercury covers virtually every realistic power need on Rice Lake.
+- **Complete horsepower coverage**: From 2.5 HP portables to 300 HP FourStrokes and beyond, Mercury covers virtually every realistic power need on Rice Lake.
 - **Fuel efficiency**: Mercury's four-stroke engines are among the most fuel-efficient in their classes, which matters when you're running long days trolling or exploring the lake.
 - **Quiet, low-vibration operation**: A quieter motor means less fatigue and can help avoid spooking fish in shallow or clear water.
 - **Reliability in shallow, weedy, variable conditions**: Rice Lake's weeds, fluctuating water levels, and wind shifts demand engines that tolerate real-world use. Mercury's cooling, corrosion resistance, and ignition systems are engineered with these conditions in mind.
@@ -7197,11 +7197,11 @@ Mercury's 2026 lineup has something for every kind of boater, from portable four
 
 Mercury's engines fall into a few key families:
 
-- **Portable and mid-range FourStroke outboards:** 2.5–150 HP
-- **High-output FourStroke / Pro XS performance models:** for bass and multi-species fishing
-- **SeaPro commercial duty models:** for workboats and high-use situations
-- **Verado V6, V8, V10, V12:** premium smooth, quiet, high-tech outboards from 175–600 HP
-- **Avator electric outboards:** low-voltage, quiet, emission-free electric motors
+- **FourStroke outboards:** 2.5–300 HP — the most complete range in Mercury's lineup
+- **Pro XS performance models:** 115–300 HP — for bass and multi-species fishing
+- **SeaPro commercial duty models:** 15–500 HP — for workboats and high-use situations
+- **Verado V8, V10, V12:** premium smooth, quiet, high-tech outboards from 250–600 HP
+- **Avator electric outboards:** 7.5e to 110e — low-voltage, quiet, emission-free electric motors
 
 For Rice Lake and most Ontario inland boating, the sweet spots are:
 
@@ -7213,7 +7213,7 @@ The wild offshore stuff is fun to look at, but you don't need a V12 to fish wall
 
 ## Portable to Mid-Range FourStroke: The Workhorses of Rice Lake
 
-Mercury's **portable and mid-range FourStroke** engines cover 2.5–150 HP. They're the backbone of what we rig and service at Harris Boat Works.
+Mercury's **FourStroke** engines cover 2.5–300 HP. They're the backbone of what we rig and service at Harris Boat Works.
 
 Key traits:
 
@@ -7233,7 +7233,7 @@ Mercury has also focused on **battery-free EFI** in smaller engines and improved
 
 In 2025, Mercury expanded its **V10 Verado** family with an all-new **425 HP** outboard and enhanced **350 HP** model. That's more than most Rice Lake boaters will ever bolt on, but it's still useful to understand what it represents:
 
-- **Faster acceleration:** Mercury notes the updated 350 HP is about 3 seconds quicker 0–50 mph vs. the engine it replaced.
+- **Faster acceleration:** Mercury notes the updated 350 HP is 15% quicker 0–50 mph vs. the previous Mercury 350 HP model. The new 425 HP posts 3 seconds faster 0–30 mph vs. a comparable 450 HP competitor.
 - **Lighter weight:** The new 425 HP is about 254 pounds lighter than comparable high-horsepower competitors, improving performance and efficiency.
 - **Class-leading alternator:** A 150-amp alternator supports the electronics-heavy boats of today.
 - **Quieter operation:** Mercury calls these the quietest in their class, with significantly lower cruise noise than leading competitors.
@@ -7242,11 +7242,13 @@ You probably won't see a V10 on Rice Lake, but the same technologies (quiet runn
 
 ## Avator Electric: Mercury's Growing Electric Family
 
-Mercury's **Avator** sub-brand focuses on low-voltage electric outboards. The family now includes:
+Mercury's **Avator** sub-brand focuses on low-voltage electric outboards. The family now includes five models:
 
-- Avator 7.5e (about 1 HP equivalent)
-- Avator 20e and 35e (roughly 5–10 HP equivalents)
-- New higher-power concepts previewed at CES and shows, intended to push into 15 HP-class territory and small pontoons.
+- Avator 7.5e (750W, roughly equivalent to a 3.5–4 HP gas outboard)
+- Avator 20e (2,000W, approximately 5 HP gas equivalent)
+- Avator 35e (3,500W, approximately 9.9 HP gas equivalent)
+- Avator 75e (7,500W, approximately 10 HP gas equivalent — uses external 5,400Wh Power Center battery packs, up to 4)
+- Avator 110e (11,000W, approximately 15 HP gas equivalent — largest in the lineup, digital remote controls available)
 
 Key features:
 
@@ -7334,13 +7336,15 @@ Key points:
 
 ## The Current Avator Lineup
 
-As of 2026, publicly detailed Avator models include:
+As of 2026, the Mercury Avator family includes five models:
 
-- **Avator 7.5e**: roughly equivalent thrust to a 3.5–4 HP gas outboard, with 750 W output.
-- **Avator 20e and 35e**: electric systems designed to compete with approximately 5–10 HP gas outboards.
-- Higher-power Avator concepts shown at CES that push into 1–15 HP-equivalent range and can push small aluminum fishing boats, compact pontoons, and small fibreglass runabouts.
+- **Avator 7.5e**: 750W output, roughly equivalent thrust to a 3.5–4 HP gas outboard. Uses an integrated single 1 kWh battery pack.
+- **Avator 20e**: 2,000W output, approximately 5 HP gas equivalent. Uses external 2,300Wh battery packs (up to 3).
+- **Avator 35e**: 3,500W output, approximately 9.9 HP gas equivalent. Uses external 2,300Wh battery packs (up to 4).
+- **Avator 75e**: 7,500W output, approximately 10 HP gas equivalent. Uses the Avator 5400 Power Center with up to four 5,400Wh lithium-ion battery packs. SmartCraft Connect integration with GPS range estimates.
+- **Avator 110e**: 11,000W output, approximately 15 HP gas equivalent. Largest electric outboard in the Avator family. Same 5400 Power Center battery system. Digital remote steering compatible.
 
-Each uses a transverse flux electric motor and proprietary battery systems.
+Each uses a transverse flux electric motor and proprietary battery systems. The 75e and 110e launched in June 2024 and are particularly relevant for Ontario cottage owners on HP-restricted lakes.
 
 ## How Far and How Long Can You Run?
 
