@@ -7872,7 +7872,7 @@ Harris Boat Works services Mercury and Mercruiser engines. We do not service Evi
     slug: 'mercury-repower-cost-ontario-2026-cad',
     title: 'How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)',
     description: 'Realistic CAD pricing for complete Mercury repowers in Ontario — from $6,000 for small tillers to $60,000+ for high-performance applications. Includes hidden costs other dealers don\'t mention.',
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-17',
     dateModified: '2026-04-17',
