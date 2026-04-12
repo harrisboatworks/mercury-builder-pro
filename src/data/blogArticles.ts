@@ -7665,7 +7665,7 @@ No. Boost is a factory-backed, manufacturer-approved software calibration. It do
     slug: 'pleasure-craft-licence-update-repower-ontario',
     title: 'What Happens to Your Pleasure Craft Licence When You Repower Your Boat?',
     description: 'When you repower, you must update your PCL within 30 days under Transport Canada rules. Learn the new 2026 rules, the $250 fine, and how to update online for free.',
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-pcl-repower-licence.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-15',
     dateModified: '2026-04-15',
