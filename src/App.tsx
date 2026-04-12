@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { SITE_URL } from "./lib/site";
+import { GlobalSEO } from "./components/seo/GlobalSEO";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -108,6 +109,10 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const TikTokCallback = lazy(() => import("./pages/TikTokCallback"));
 const MotorRedirect = lazy(() => import("./pages/MotorRedirect"));
 const TradeInValuePage = lazy(() => import("./pages/TradeInValuePage"));
+const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
+const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
+const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
+const MandarinBlogArticle = lazy(() => import("./pages/blog/MandarinBlogArticle"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
@@ -464,8 +469,14 @@ function AnimatedRoutes() {
         {/* TikTok OAuth Callback */}
         <Route path="/auth/tiktok/callback" element={<TikTokCallback />} />
         
+        {/* Multilingual Landing Pages */}
+        <Route path="/fr" element={<FrenchLanding />} />
+        <Route path="/zh" element={<MandarinLanding />} />
+        
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
+        <Route path="/blog/zh/mercury-repower-guide-gta" element={<MandarinBlogArticle />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
@@ -505,6 +516,7 @@ const App = () => {
               <GlobalAIChat>
                 <div data-vaul-drawer-wrapper className="min-h-screen bg-background">
                   <ScrollToTop />
+                  <GlobalSEO />
                   <NotificationToast />
                   
                   <AnimatedRoutes />
