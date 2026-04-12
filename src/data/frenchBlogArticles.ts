@@ -522,7 +522,7 @@ Harris Boat Works — famille, Rice Lake, 78 ans d'expérience. On vous aide à 
     slug: 'peche-lac-rice-ontario-guide-plaisanciers',
     title: 'Pêche sur le lac Rice, Ontario : Guide pratique pour les plaisanciers',
     description: 'Guide complet de la pêche sur le lac Rice : espèces (doré, achigan, maskinongé), saisons, zones à explorer et location d\'embarcations chez Harris Boat Works.',
-    image: '/lovable-uploads/fr-blog-rice-lake-fishing.jpg',
+    image: '/src/assets/blog/peche-lac-rice-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
