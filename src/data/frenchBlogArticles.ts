@@ -277,7 +277,7 @@ Le 150 FourStroke coûte plus cher que le 115, tant pour le moteur lui-même que
     slug: 'hivernisation-moteur-mercury-ontario',
     title: 'Guide d\'hivernisation de votre moteur Mercury hors-bord en Ontario',
     description: 'Les étapes essentielles pour préparer votre moteur Mercury pour l\'hiver ontarien : stabilisation du carburant, lubrification interne, vidange d\'huile, entreposage de la batterie.',
-    image: '/lovable-uploads/fr-blog-winterization.jpg',
+    image: '/src/assets/blog/winterization-mercury-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
