@@ -8065,7 +8065,7 @@ If you're in the Kawarthas or Rice Lake region — Mercury makes sense. Not beca
     category: 'Buying Guide',
     readTime: '14 min read',
     keywords: ['mercury 115 vs 150 hp', 'mercury 115 Pro XS', 'mercury 150 Pro XS', 'mercury 115 FourStroke review', 'mercury 150 FourStroke specs', 'which outboard for Ontario boat', 'mercury outboard comparison', 'Pro XS vs FourStroke'],
-    content: \`
+    content: `
 ## Why This Decision Matters More Than It Seems
 
 The 115 vs 150 decision comes up constantly at Harris Boat Works — and increasingly, the conversation includes the **Pro XS** versions of both engines. The Mercury 150 FourStroke is a meaningfully different engine from the 115, not just a bigger version of the same thing. More displacement, more weight, more power, and more capability.
