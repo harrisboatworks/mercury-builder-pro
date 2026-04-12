@@ -7773,7 +7773,7 @@ Set a reminder. When the new motor goes in, update the PCL. It's free, it's fast
     slug: 'evinrude-to-mercury-repower-ontario-guide',
     title: 'Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner\'s Guide',
     description: 'BRP discontinued Evinrude in 2020 and parts are getting scarce. This guide covers everything Ontario boat owners need to know about switching from Evinrude E-TEC or G2 to Mercury.',
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-replace-evinrude.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-16',
     dateModified: '2026-04-16',
