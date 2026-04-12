@@ -5557,15 +5557,15 @@ Conventional wisdom says year-end is deal time. Is that true for boat motors? He
 
 **If Buying Now**:
 - Ask about in-stock specials
-- Consider 2025 closeouts (if available)
+- Ask about dealer warranty promotions
 - Bundle with service for value
 - Start relationship for spring delivery
 
 **If Waiting**:
-- Spring boat shows offer promotions
-- Mercury seasonal programs restart
+- Spring boat shows may offer deals
 - More inventory available
 - Better lake-test conditions
+- Dealer promotions may be available
 
 ### The Bottom Line
 
@@ -5576,19 +5576,19 @@ A fair deal when you need it beats waiting indefinitely for a perfect deal. That
     faqs: [
       {
         question: 'Are boat show prices better than dealer prices?',
-        answer: 'Boat shows often feature manufacturer promotions. However, local dealers may match or beat show prices. Shop around and compare—we welcome price comparisons.'
+        answer: 'Boat shows sometimes feature special offers. However, local dealers may match or beat show prices. Shop around and compare—we welcome price comparisons.'
       },
       {
         question: 'Is waiting for spring sales better than year-end?',
-        answer: 'Spring has more promotional activity, but also more buyers. Year-end may offer quieter negotiations. Best deals depend on specific timing, inventory, and manufacturer programs.'
+        answer: 'Spring may have more promotional activity, but also more buyers. Year-end may offer quieter negotiations. Best deals depend on specific timing, inventory, and dealer programs.'
       },
       {
         question: 'What\'s negotiable on a new motor purchase?',
         answer: 'Price has some flexibility, especially on in-stock units. Bundling installation, service, or accessories may offer value. Extended warranty pricing can be negotiated.'
       },
       {
-        question: 'Should I buy now or wait for 2026 models?',
-        answer: 'Depends on your needs. If 2025 meets your requirements and good pricing is available, buy now. If you want latest features and can wait, 2026 will arrive soon.'
+        question: 'When is the best time to buy?',
+        answer: 'Winter months often offer good value through reduced demand, dealer flexibility, and no missed boating time. Currently, Harris Boat Works includes 7 years of factory-backed warranty with every new Mercury—a significant value.'
       }
     ]
   },
