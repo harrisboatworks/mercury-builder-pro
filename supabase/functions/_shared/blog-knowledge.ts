@@ -73,7 +73,7 @@ export const REPOWER_FAQS = [
   },
   {
     question: "What warranty comes with a repower?",
-    answer: "New Mercury motors come with full factory warranty—typically 3 years for recreational use, with options to extend up to 8 years. The warranty covers the new motor regardless of boat age."
+    answer: "New Mercury motors come with full factory warranty—typically 3 years for recreational use, with options to extend up to 7 years total (3 standard + 4 Gold coverage). The warranty covers the new motor regardless of boat age."
   },
   {
     question: "Is my old aluminum boat worth repowering?",
