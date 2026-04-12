@@ -8264,7 +8264,7 @@ This is an important distinction that gets confused:
     slug: 'mercury-outboard-financing-ontario-2026',
     title: 'Mercury Outboard Financing in Ontario: Your Complete 2026 Guide',
     description: 'Yes, you can finance a Mercury repower without buying a new boat. This guide covers Mercury financing, bank loans, credit unions, and marine-specific lenders in Ontario.',
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-financing-ontario-2026.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
     dateModified: '2026-04-20',
