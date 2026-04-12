@@ -5421,7 +5421,7 @@ If yes to most, repower makes sense.
     category: 'New Products',
     readTime: '7 min read',
     keywords: ['2027 mercury outboard', 'new mercury motors', 'mercury model year', 'mercury updates', 'new outboard models'],
-    content: \`
+    content: `
 ## 2027 Mercury Outboard Preview
 
 As we look toward the 2027 model year, here's what to expect from Mercury Marine's lineup.
@@ -5480,7 +5480,7 @@ We'll provide:
 - Expert recommendations for your needs
 
 **[Discuss Your Plans](/quote)**
-    \`,
+    `,
     faqs: [
       {
         question: 'When are 2027 Mercury models available?',
