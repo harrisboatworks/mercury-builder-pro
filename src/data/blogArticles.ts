@@ -7972,7 +7972,7 @@ Where a new boat makes more sense: structural hull problems, undersized boat for
     slug: 'mercury-vs-yamaha-outboards-ontario',
     title: 'Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners',
     description: 'An honest Mercury vs Yamaha comparison from an Ontario Mercury Platinum dealer. Fuel economy, noise, technology, warranty, and which is right for your boat.',
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-mercury-vs-yamaha.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-18',
     dateModified: '2026-04-18',
