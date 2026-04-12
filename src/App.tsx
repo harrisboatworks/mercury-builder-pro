@@ -112,6 +112,7 @@ const TradeInValuePage = lazy(() => import("./pages/TradeInValuePage"));
 const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
 const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
+const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
 const MandarinBlogArticle = lazy(() => import("./pages/blog/MandarinBlogArticle"));
 
 // Test/Dev pages (low priority)
@@ -476,6 +477,7 @@ function AnimatedRoutes() {
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
+        <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
         <Route path="/blog/zh/mercury-repower-guide-gta" element={<MandarinBlogArticle />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
