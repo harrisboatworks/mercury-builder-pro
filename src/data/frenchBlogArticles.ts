@@ -5,7 +5,7 @@ export const frenchBlogArticles: BlogArticle[] = [
     slug: 'prix-remotorisation-mercury-ontario',
     title: 'Combien coûte une remotorisation Mercury en Ontario?',
     description: 'Le prix d\'une remotorisation Mercury en Ontario varie selon la puissance, la longueur de l\'arbre, le câblage et la main-d\'œuvre. Guide complet avec fourchettes de prix par catégorie.',
-    image: '/src/assets/blog/mercury-repower-cost-ontario-hero.jpg',
+    image: '/lovable-uploads/fr-blog-repower-cost.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
