@@ -8058,7 +8058,7 @@ If you're in the Kawarthas or Rice Lake region — Mercury makes sense. Not beca
     slug: 'mercury-115-vs-150-hp-outboard-ontario',
     title: 'Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?',
     description: 'Detailed Mercury 115 vs 150 comparison — FourStroke and Pro XS models — with specs, pricing, fuel economy, and boat-by-boat recommendations for Ontario lakes.',
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-115-vs-150-proxs.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-19',
     dateModified: '2026-04-19',
