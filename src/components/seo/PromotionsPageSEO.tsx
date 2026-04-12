@@ -44,7 +44,7 @@ export function PromotionsPageSEO({ promotions = [] }: PromotionsPageSEOProps) {
   ] : [
     {
       question: "What is the 7-Year Warranty promotion?",
-      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage — that's 3 years standard plus 4 bonus years. No third-party insurance, just straight Mercury protection."
+      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage — that's 3 years standard plus 4 bonus years of Gold coverage. No third-party insurance, just straight Mercury protection."
     },
     {
       question: "Which motors are eligible?",
