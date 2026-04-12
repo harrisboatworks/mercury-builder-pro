@@ -644,7 +644,7 @@ Le lac Rice est là, à quelques heures de route. Venez voir ce que ça donne de
     slug: 'permis-bateau-ontario-carte-conducteur-embarcation',
     title: 'Permis de conduire une embarcation au Canada : Ce que vous devez savoir',
     description: 'Guide complet sur la Carte de conducteur d\'embarcation de plaisance (CCEP) au Canada : qui en a besoin, comment l\'obtenir, coût, équipements obligatoires et réglementation en Ontario.',
-    image: '/lovable-uploads/fr-blog-boating-licence.jpg',
+    image: '/src/assets/blog/permis-bateau-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
