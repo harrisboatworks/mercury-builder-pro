@@ -302,10 +302,29 @@ export default function MandarinLanding() {
           <p>距多伦多市中心约1.5小时车程</p>
         </section>
 
-        {/* Blog link */}
-        <nav className="mt-4 text-center">
-          <Link to="/blog/zh/mercury-repower-guide-gta" className="text-primary hover:underline text-sm">
-            📖 阅读文章：安大略省Mercury水星舷外机换新指南 →
+        {/* Blog links */}
+        <nav className="mt-4 space-y-2 text-center">
+          <p className="text-sm font-medium text-foreground mb-3">📖 中文文章</p>
+          <Link to="/blog/zh/mercury-repower-guide-gta" className="block text-primary hover:underline text-sm">
+            舷外机换新指南 →
+          </Link>
+          <Link to="/blog/zh/new-immigrant-ontario-boat-buying-guide" className="block text-primary hover:underline text-sm">
+            新移民购船指南 →
+          </Link>
+          <Link to="/blog/zh/rice-lake-fishing-guide-toronto-chinese" className="block text-primary hover:underline text-sm">
+            Rice Lake钓鱼攻略 →
+          </Link>
+          <Link to="/blog/zh/winterization-mercury-guide-zh" className="block text-primary hover:underline text-sm">
+            冬季保养指南 →
+          </Link>
+          <Link to="/blog/zh/mercury-115-vs-150-comparison-zh" className="block text-primary hover:underline text-sm">
+            Mercury 115 vs 150马力对比 →
+          </Link>
+          <Link to="/blog/zh/repower-vs-new-boat-zh" className="block text-primary hover:underline text-sm">
+            换发动机还是买新船？ →
+          </Link>
+          <Link to="/blog/zh/ontario-boating-regulations-zh" className="block text-primary hover:underline text-sm">
+            安大略省船只法规 →
           </Link>
         </nav>
       </main>
