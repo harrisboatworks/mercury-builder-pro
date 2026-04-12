@@ -393,7 +393,7 @@ Harris Boat Works — 5369 Harris Boat Works Rd, Gores Landing, Ontario. Moins d
     slug: 'remotorisation-vs-bateau-neuf',
     title: 'Remotorisation ou achat d\'un bateau neuf : Quelle est la meilleure option?',
     description: 'Guide comparatif pour vous aider à décider entre remotoriser votre embarcation actuelle avec un moteur Mercury neuf ou acheter un nouveau bateau.',
-    image: '/lovable-uploads/fr-blog-repower-vs-new.jpg',
+    image: '/src/assets/blog/remotorisation-vs-neuf-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
