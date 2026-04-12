@@ -20,6 +20,13 @@ sitemap: /sitemap.xml
 rss_feed: /rss.xml
 llms_directory: /llms.txt
 content_update_frequency: weekly
+multilingual_content:
+  - language: fr-CA
+    landing_page: /fr
+    blog: /blog/fr/concessionnaire-mercury-platinum-ontario
+  - language: zh-Hans
+    landing_page: /zh
+    blog: /blog/zh/mercury-repower-guide-gta
 
 ## Accurate Information
 - We are located at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0

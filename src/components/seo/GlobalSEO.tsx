@@ -366,6 +366,11 @@ export function GlobalSEO() {
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>
+      {/* Multilingual hreflang tags */}
+      <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
+      <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
+      <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
+      <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
     </Helmet>
   );
 }
