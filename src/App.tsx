@@ -114,6 +114,7 @@ const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
 const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
 const MandarinBlogArticle = lazy(() => import("./pages/blog/MandarinBlogArticle"));
+const MandarinBlogArticlePage = lazy(() => import("./pages/blog/MandarinBlogArticlePage"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
@@ -479,6 +480,7 @@ function AnimatedRoutes() {
         <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
         <Route path="/blog/zh/mercury-repower-guide-gta" element={<MandarinBlogArticle />} />
+        <Route path="/blog/zh/:slug" element={<MandarinBlogArticlePage />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
