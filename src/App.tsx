@@ -477,6 +477,7 @@ function AnimatedRoutes() {
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
+        <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
         <Route path="/blog/zh/mercury-repower-guide-gta" element={<MandarinBlogArticle />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
