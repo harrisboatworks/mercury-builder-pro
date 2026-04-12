@@ -137,7 +137,7 @@ Si vous habitez en Ontario, on est à Gores Landing — environ 1h30 à l'est de
     slug: 'mercury-115-vs-150-hp-comparaison',
     title: 'Mercury 115 vs 150 HP : Quel moteur choisir pour votre embarcation?',
     description: 'Comparaison complète des moteurs Mercury 115 et 150 FourStroke. Cylindrée, poids, performances, consommation et prix — tout ce que vous devez savoir pour choisir.',
-    image: '/lovable-uploads/fr-blog-115-vs-150.jpg',
+    image: '/src/assets/blog/mercury-115-vs-150-hero.jpg',
     author: 'Harris Boat Works',
     datePublished: '2026-04-12',
     dateModified: '2026-04-12',
