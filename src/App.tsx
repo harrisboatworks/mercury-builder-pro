@@ -112,6 +112,7 @@ const TradeInValuePage = lazy(() => import("./pages/TradeInValuePage"));
 const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
 const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
+const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
 const MandarinBlogArticle = lazy(() => import("./pages/blog/MandarinBlogArticle"));
 
 // Test/Dev pages (low priority)
