@@ -255,11 +255,18 @@ export default function FrenchLanding() {
           <p>Moins de trois heures de Montréal. Sur le lac Rice.</p>
         </section>
 
-        {/* Blog link */}
-        <nav className="mt-8 text-center">
-          <Link to="/blog/fr/concessionnaire-mercury-platinum-ontario" className="text-primary hover:underline text-sm">
-            📖 Lire notre article : Concessionnaire Mercury Platinum en Ontario →
-          </Link>
+        {/* Blog links */}
+        <nav className="mt-8 text-center space-y-2">
+          <p className="text-sm font-medium text-foreground mb-3">📖 Articles en français</p>
+          <div className="flex flex-col gap-1.5">
+            <Link to="/blog/fr/concessionnaire-mercury-platinum-ontario" className="text-primary hover:underline text-sm">Concessionnaire Mercury Platinum en Ontario →</Link>
+            <Link to="/blog/fr/prix-remotorisation-mercury-ontario" className="text-primary hover:underline text-sm">Combien coûte une remotorisation Mercury? →</Link>
+            <Link to="/blog/fr/mercury-115-vs-150-hp-comparaison" className="text-primary hover:underline text-sm">Mercury 115 vs 150 HP : Quel moteur choisir? →</Link>
+            <Link to="/blog/fr/hivernisation-moteur-mercury-ontario" className="text-primary hover:underline text-sm">Guide d'hivernisation de votre moteur Mercury →</Link>
+            <Link to="/blog/fr/remotorisation-vs-bateau-neuf" className="text-primary hover:underline text-sm">Remotorisation ou bateau neuf? →</Link>
+            <Link to="/blog/fr/peche-lac-rice-ontario-guide-plaisanciers" className="text-primary hover:underline text-sm">Pêche sur le lac Rice : Guide pratique →</Link>
+            <Link to="/blog/fr/permis-bateau-ontario-carte-conducteur-embarcation" className="text-primary hover:underline text-sm">Permis bateau au Canada : Ce que vous devez savoir →</Link>
+          </div>
         </nav>
       </main>
 
