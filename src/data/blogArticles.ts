@@ -7543,6 +7543,793 @@ If you want to tune your setup for this year's conditions, or just nail down a p
         answer: 'Yes — Harris Boat Works offers rental boats so you can experience Rice Lake fishing without owning. Rentals are a great way to try different setups and figure out what you\'d want in your own rig before committing to a purchase.'
       }
     ]
+  },
+
+  // ============================================
+  // NEW ARTICLES — Batch 1 (Added from audit recommendations)
+  // ============================================
+
+  {
+    slug: 'mercury-boost-software-upgrade-eligibility-2026',
+    title: 'Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?',
+    description: 'Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5–21% on select FourStroke, Pro XS, and Verado engines. Check eligibility by serial number.',
+    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-14',
+    dateModified: '2026-04-14',
+    category: 'Mercury Technology',
+    readTime: '10 min read',
+    keywords: ['Mercury Boost software upgrade', 'Mercury Boost eligible engines', 'Mercury software calibration', 'Mercury acceleration upgrade', 'Mercury dealer upgrade Ontario'],
+    content: `
+## What Is Mercury Boost?
+
+Mercury Boost is a software-based engine calibration upgrade — not a hardware kit, not an aftermarket add-on. It's a manufacturer-backed update that recalibrates how your engine delivers power through the mid-range RPM band.
+
+The result: faster acceleration from idle to wide-open throttle, with no changes to internal components, no void in your warranty, and no modifications that would concern Transport Canada or your insurance company.
+
+Mercury announced Boost as part of their 2026 technology rollout, calling it the foundation for a broader portfolio of software-based performance upgrades. If your engine is eligible, this is the kind of upgrade that most dealers will have completed in a single service visit.
+
+## What Does Boost Actually Do?
+
+The performance claim is straightforward: **5–21% improvement in mid-range acceleration and zero-to-top-speed performance**.
+
+That range matters. Not every boat will see a 21% gain — hull shape, load, prop selection, and current engine calibration all affect the result. But even a 5% improvement in acceleration off the plane is noticeable, especially on a loaded boat.
+
+What Boost specifically addresses:
+- Mid-range throttle response (the sluggish zone between idle and plane)
+- Zero-to-top-speed run times
+- Overall throttle feel and engine responsiveness
+
+What Boost does not change:
+- Rated horsepower (the engine still makes the same power at wide-open throttle)
+- Fuel consumption (no significant change reported)
+- Physical components of any kind
+- Warranty coverage (this is a factory-backed update)
+
+## Which Engines Are Eligible?
+
+Eligibility is determined by serial number, not model year.
+
+### Dealer-Installed Upgrade for Existing Outboards
+
+| Engine Family | Models | Serial Number Threshold |
+|---|---|---|
+| FourStroke | 175, 200, 250, 300 hp | From **2B529482** |
+| Pro XS | 175, 200, 225, 250, 300 hp | From **2B529482** |
+| Verado | 250, 300 hp | From **2B529482** |
+| Verado | 350 hp | **3B266064 to 3B578266** |
+| Racing 150R | 150R | From **3B547096** |
+
+The 350hp Verado has a **specific serial range** — not just a starting point. If your 350 Verado falls outside 3B266064 to 3B578266, it is not eligible for the dealer-installed version.
+
+### Factory-Installed on 2026 Production Models
+
+If you're buying new in 2026, Boost comes pre-loaded on Pro XS (175–300hp), Verado (250, 300, 350hp), and Racing 150R models manufactured in Q2 2026 and later.
+
+## How to Find Your Mercury Serial Number
+
+Before you call a dealer, you need your serial number. It's the only way to confirm eligibility.
+
+1. **Transom bracket** — The most common location. Look on the port (left) side of the bracket.
+2. **Engine block** — On some models, the serial number is stamped directly into the block.
+3. **Under the cowling** — Some newer outboards include a serial number label inside the cowling.
+
+**Practical tip:** Take a clear photo of the plate before you need it. Store it in your phone.
+
+## How Do I Get the Boost Upgrade Installed?
+
+Boost is a **dealer-installed** update. You cannot download it yourself — Mercury's diagnostic software is dealer-exclusive.
+
+The process at a certified Mercury dealer:
+1. You bring the engine in (or the dealer comes to you)
+2. Dealer confirms serial number eligibility
+3. Boost calibration is applied via Mercury's software interface
+4. A short test run confirms the update
+
+Most dealers will complete it in a single service visit. **Cost:** Mercury has not published a standard retail price. Dealers set their own service rates. Expect to pay a labor charge — likely in the 1–2 hour range.
+
+## Why Is This Significant for Ontario Boaters?
+
+If you run a loaded pontoon on Rice Lake or a family bowrider on the Kawarthas, mid-range acceleration is where you feel your engine most. That 5–21% improvement in mid-range punch is most apparent with heavy loads and quick transitions.
+
+Ontario's boating season is short. If your existing Mercury engine qualifies, getting Boost installed before spring launch is worth the conversation with your dealer.
+
+## Does Boost Affect My Warranty?
+
+No. Boost is a factory-backed, manufacturer-approved software calibration. It does not void your Mercury warranty or affect any extended service plans.
+    `,
+    faqs: [
+      {
+        question: 'Which Mercury engines are eligible for the Boost software upgrade?',
+        answer: 'Eligibility depends on serial number, not model year. FourStroke 175–300hp, Pro XS 175–300hp, Verado 250–350hp, and Racing 150R models with serial numbers from 2B529482 onward are eligible for the dealer-installed upgrade. The 350hp Verado has a specific serial range (3B266064 to 3B578266).'
+      },
+      {
+        question: 'How much does Mercury Boost cost to install?',
+        answer: 'Mercury has not published a standard retail price for the Boost upgrade. Dealers set their own service rates. Expect to pay a labor charge — likely in the 1–2 hour range — since the software itself is the product. Call your dealer for current pricing.'
+      },
+      {
+        question: 'Does Mercury Boost void my warranty?',
+        answer: 'No. Boost is an official Mercury program and a factory-backed software calibration. It does not void your Mercury factory warranty or any Mercury Protection Plan coverage.'
+      },
+      {
+        question: 'Does Boost work on twin-engine setups?',
+        answer: 'Yes, if both engines are eligible, both can be updated. Each engine is updated individually. If your twins have different serial numbers, eligibility is assessed per engine.'
+      },
+      {
+        question: 'How do I find my Mercury serial number?',
+        answer: 'Check the transom bracket (port side), the engine block, or under the cowling. The serial number is on a metal plate or sticker. Take a photo and store it on your phone for easy reference.'
+      }
+    ]
+  },
+  {
+    slug: 'pleasure-craft-licence-update-repower-ontario',
+    title: 'What Happens to Your Pleasure Craft Licence When You Repower Your Boat?',
+    description: 'When you repower, you must update your PCL within 30 days under Transport Canada rules. Learn the new 2026 rules, the $250 fine, and how to update online for free.',
+    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-15',
+    dateModified: '2026-04-15',
+    category: 'Canadian Boating Regulations',
+    readTime: '9 min read',
+    keywords: ['pleasure craft licence update', 'PCL repower Ontario', 'Transport Canada boat licence', 'update boat registration after repower', 'PCL rules 2026'],
+    content: `
+## The Rule Most Boaters Miss After a Repower
+
+Most Ontario boaters know they need a Pleasure Craft Licence. Fewer know that a repower — swapping out your old engine for a new one — triggers a mandatory PCL update.
+
+Under Transport Canada's Small Vessel Regulations (updated December 31, 2025), any change to your vessel information must be reflected in your licence within **30 days**. That includes engine changes. The consequence of ignoring it: a **$250 fine**.
+
+## PCL vs. PCOC — Know the Difference
+
+| | Pleasure Craft Licence (PCL) | Pleasure Craft Operator Card (PCOC) |
+|---|---|---|
+| **What it covers** | The boat | The operator |
+| **What it is** | Unique vessel ID number | Proof of boating safety course |
+| **Who needs it** | Required for any motorized boat 10 hp+ | Required for anyone operating a motorized pleasure craft |
+| **Validity** | Now 5 years; $24 renewal fee | Valid for life |
+| **Affected by 2025 rule changes?** | Yes | No |
+
+When you repower, the PCL is what you need to update. The PCOC stays the same.
+
+## What Changed on December 31, 2025?
+
+### PCLs Are No Longer Lifetime Documents
+
+PCLs that were previously valid for life are now subject to a rolling 5-year renewal schedule. If you have a lifetime PCL, you're on a phased transition schedule:
+
+| Original PCL Issue Date | New Expiry Date |
+|---|---|
+| December 31, 1974 or earlier | March 31, 2026 |
+| January 1, 1975 – December 31, 1985 | December 31, 2026 |
+| January 1, 1986 – December 31, 1995 | December 31, 2027 |
+| January 1, 1996 – December 31, 1999 | December 31, 2028 |
+| January 1, 2000 – December 31, 2005 | December 31, 2029 |
+| January 1, 2006 – April 28, 2010 | December 31, 2030 |
+
+### The $24 Renewal Fee
+
+Renewing, applying for, transferring, or replacing a PCL now costs **$24**. Updating vessel information is still **free**.
+
+### The 30-Day Update Window
+
+Previously, you had 90 days. That window is now **30 days**.
+
+## When You Repower: What Needs to Update
+
+A repower changes information recorded on your PCL:
+- **Engine horsepower** (if different HP rating)
+- **Engine type** (e.g., 2-stroke to 4-stroke, gasoline to electric)
+- **Number of engines** (if going from single to twin)
+
+Your PCL number stays the same — it's tied to your hull, not your engine. Even if HP looks identical, update because the specific engine has changed.
+
+## How to Update Your PCL After a Repower
+
+### What you'll need:
+- Your current PCL number
+- Your vessel information (hull ID, boat make, length)
+- New engine details (HP, engine type — your dealer provides this)
+- Your contact information
+
+### The steps:
+1. Go to Transport Canada's Pleasure Craft Licensing portal
+2. Log in or create an account
+3. Select "Update vessel information"
+4. Enter your PCL number
+5. Update the engine information
+6. Review all other information for accuracy
+7. Submit
+
+There is **no fee** to update vessel information. Online updates are typically processed within a few business days.
+
+## Practical Tips
+
+Update **after** the repower, once the new engine is installed. Your dealer will provide engine serial number, model number, HP rating, and engine type. Get this information before you leave the dealer.
+
+Set a reminder. When the new motor goes in, update the PCL. It's free, it's fast, and the $250 fine isn't worth the inconvenience.
+    `,
+    faqs: [
+      {
+        question: 'Do I need to update my PCL if the new engine is the same horsepower?',
+        answer: 'Yes. Your PCL records the engine details, not just the HP number. Even if the horsepower is identical, the specific engine has changed. Update the record to reflect the current installation.'
+      },
+      {
+        question: 'Is the $24 fee charged when I update engine information after a repower?',
+        answer: 'No. The $24 fee applies to new applications, renewals, transfers, and replacements. Updating vessel information (including engine details) on a current licence is free.'
+      },
+      {
+        question: 'Can my dealer handle the PCL update as part of the repower?',
+        answer: 'Your dealer handles the engine installation and warranty registration. The PCL update is your responsibility as the vessel owner. Your dealer will give you the engine information you need.'
+      },
+      {
+        question: 'Does the PCL update affect my boat insurance?',
+        answer: 'It can. Your insurance policy is based on your vessel specs, including engine type and horsepower. Notify your insurer of the repower separately — the PCL update and insurance notification are different processes.'
+      }
+    ]
+  },
+  {
+    slug: 'evinrude-to-mercury-repower-ontario-guide',
+    title: 'Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner\'s Guide',
+    description: 'BRP discontinued Evinrude in 2020 and parts are getting scarce. This guide covers everything Ontario boat owners need to know about switching from Evinrude E-TEC or G2 to Mercury.',
+    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-16',
+    dateModified: '2026-04-16',
+    category: 'Repower Guides',
+    readTime: '14 min read',
+    keywords: ['Evinrude to Mercury repower', 'replace Evinrude Ontario', 'Evinrude discontinued parts', 'E-TEC to Mercury', 'Evinrude G2 replacement'],
+    content: `
+## Evinrude Is Done. Here's What That Means for Ontario Owners.
+
+In May 2020, BRP announced it was permanently discontinuing Evinrude outboard production. No phased wind-down, no sale to another manufacturer — just a shutdown, effective immediately.
+
+That was over five years ago. Common maintenance parts like impellers, thermostats, and fuel filters remain available through specialty suppliers. But proprietary electronics for the G2 platform are already getting scarce. Software diagnostic tools for E-TEC systems are harder to find as the dealer network shrinks. The technicians who know these engines well are retiring.
+
+This isn't a crisis — it's a slow squeeze. For most Ontario Evinrude owners, the right time to consider a repower is before the engine forces the decision.
+
+## The Honest Part: People Loved Their Evinrudes
+
+A lot of Ontario boaters had real loyalty to their Evinrudes. The E-TEC direct-injection system was genuinely innovative. The engines had strong low-end torque, quick planing, and were light relative to comparable horsepower.
+
+What's changed isn't the engine — it's the support ecosystem. When a manufacturer stops production and the dealer network contracts, owners eventually reach a point where maintaining the engine exceeds the cost of replacing it.
+
+The 2010–2018 E-TEC models in the 60–150hp range have the best remaining parts availability. The 3.4L G2 models (200hp and up) are already in rougher shape for proprietary components.
+
+## Mercury Equivalents for Common Evinrude Models
+
+| Evinrude Engine | Mercury Equivalent(s) | Notes |
+|---|---|---|
+| E-TEC 60hp | Mercury 60 FourStroke | Clean 1:1 replacement; lighter than many expect |
+| E-TEC 90hp | Mercury 90 FourStroke | Very common repower; excellent fit on aluminum fishing boats |
+| E-TEC 115hp | Mercury 115 FourStroke | Strong performer; available in Command Thrust |
+| E-TEC 150hp | Mercury 150 FourStroke or 150 Pro XS | Pro XS adds performance; FourStroke is quieter |
+| E-TEC 200hp | Mercury 200 FourStroke or 200 Pro XS | Multiple paths depending on hull and performance goals |
+| G2 250hp | Mercury 250 Pro XS or 250 Verado | Verado is naturally aspirated V8; Pro XS is lighter with strong performance |
+| G2 300hp | Mercury 300 Pro XS or 300 Verado | Top-end replacements; both excellent on larger hulls |
+
+**Pro XS vs. FourStroke:** The Pro XS runs at higher RPMs and is optimized for acceleration and top speed. The standard FourStroke is quieter, more fuel-efficient at cruise, and better for family boats. Most E-TEC owners who want similar driving feel will find the Pro XS closer to what they're used to.
+
+## What Actually Needs to Change
+
+### Mounting: Usually Compatible
+
+Evinrude outboards used industry-standard transom mounting dimensions. A typical Evinrude on a standard transom mount will accept a Mercury engine on the same footprint. Verify transom height, engine weight capacity, and any jackplate compatibility.
+
+### Controls: Always Change
+
+Evinrude controls — throttle, shift cables, and especially the digital control systems on G2 models — are **not compatible with Mercury**. You cannot reuse them.
+
+What needs replacing:
+- Control box (throttle and shift lever)
+- Shift and throttle cables (or DTS harness for digital)
+- Wiring harness from engine to helm
+- Key switch and neutral safety interlock
+
+### Gauges: Likely Replace
+
+Evinrude's ICON gauges and iCommand system do not communicate with Mercury's SmartCraft protocol. Your options are Mercury-compatible gauges, VesselView digital display, or a third-party multi-brand gauge system.
+
+## Common Questions from Evinrude Owners
+
+### "My E-TEC is only 8 years old. Should I really replace it?"
+
+If your E-TEC is running well and routine parts are available, there's no reason to replace it just because the brand is discontinued. The calculus changes when you need a part that's unavailable, G2 digital components fail, or maintenance costs escalate.
+
+### "Will a Mercury FourStroke feel different to drive?"
+
+Yes. A four-stroke Mercury has different power delivery. The E-TEC had strong low-end torque and felt punchy at low RPMs. Four-stroke Mercury engines deliver power more progressively and run quieter at cruise. Most owners adapt quickly.
+
+### "What about resale value with an Evinrude on it?"
+
+Discontinued engines affect resale. A Mercury-repowered boat is generally easier to sell and commands better prices than an equivalent Evinrude-powered hull.
+
+## For Engine Repairs, We Only Service Mercury and Mercruiser
+
+Harris Boat Works services Mercury and Mercruiser engines. We do not service Evinrude or other brands. If you're ready to move to Mercury, we handle the full repower — and once it's done, we're your service shop going forward.
+    `,
+    faqs: [
+      {
+        question: 'Can I keep my Evinrude fuel tank and use it with a Mercury?',
+        answer: 'Yes, assuming the tank is in good condition. The fuel connector at the motor end will change (different fittings), but the tank and fuel lines can typically be reused or adapted.'
+      },
+      {
+        question: 'Will the Mercury Pro XS feel similar to my E-TEC?',
+        answer: 'The Pro XS is the closest match in performance character — high-RPM bias, strong top-end, built for performance over economy. It won\'t feel identical but it\'s the Mercury engine most E-TEC owners find closest to familiar.'
+      },
+      {
+        question: 'Does repowering to Mercury improve my boat\'s value?',
+        answer: 'Generally yes. A currently supported engine with an active dealer network and available parts is more attractive to buyers than a discontinued engine with shrinking support.'
+      },
+      {
+        question: 'Can Harris Boat Works do a full Evinrude-to-Mercury repower?',
+        answer: 'Yes. We handle the full job — motor selection, removal of the old engine, new controls and rigging, installation, lake test, and warranty registration.'
+      }
+    ]
+  },
+  {
+    slug: 'mercury-repower-cost-ontario-2026-cad',
+    title: 'How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)',
+    description: 'Realistic CAD pricing for complete Mercury repowers in Ontario — from $6,000 for small tillers to $60,000+ for high-performance applications. Includes hidden costs other dealers don\'t mention.',
+    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-17',
+    dateModified: '2026-04-17',
+    category: 'Repower Cost & Pricing',
+    readTime: '12 min read',
+    keywords: ['Mercury repower cost Ontario', 'Mercury repower cost Canada 2026', 'Mercury outboard price CAD', 'boat repower cost Ontario', 'Mercury engine price Canada'],
+    content: `
+## Why This Question Is So Hard to Answer Online
+
+Search "Mercury repower cost Canada" and you'll get American pricing in USD, outdated MSRP lists, and dealers who won't post a number. A Mercury repower isn't a single product — it's a package. The engine is one line item. Controls, cables, rigging, the prop, old-motor removal, installation labour, and a lake test are the others.
+
+This guide gives you realistic CAD ranges for complete repowers by HP category. For exact pricing on a specific motor, use the quote configurator at mercuryrepower.ca.
+
+## What's Included in a Complete Mercury Repower
+
+- **The engine** — the new Mercury outboard, with warranty
+- **Rigging** — fuel lines, cooling connections, wiring harness
+- **Controls** — throttle/shift box, cables or DTS, trim switch
+- **Gauges** — if existing ones aren't SmartCraft compatible
+- **Propeller** — correctly spec'd for your hull and engine
+- **Old motor removal** — labour to remove existing engine
+- **Installation and lake test** — fitting, torquing, and water verification
+- **Warranty registration** — confirming proper coverage
+
+Harris Boat Works includes all of the above in a full repower quote.
+
+## Mercury Repower Cost by Horsepower Category
+
+### 9.9–20 hp (Small Tiller and Remote)
+**Typical total repower range: $5,000 – $9,000 CAD**
+Covers kicker motors, small fishing boats, canoes. Engine: roughly $3,500–$6,000 CAD.
+
+### 25–60 hp (Mid-Range Fishing and Pontoon)
+**Typical total repower range: $9,000 – $18,000 CAD**
+Covers most Ontario aluminum fishing boats, smaller pontoons. Engine: roughly $7,000–$13,000 CAD. Controls and rigging add $1,000–$2,500. Prop: $200–$500.
+
+### 75–115 hp (Larger Fishing Boats, Pontoons, Smaller Runabouts)
+**Typical total repower range: $16,000 – $28,000 CAD**
+The 90 and 115hp FourStroke are two of Mercury's most popular motors in Ontario. Engine: roughly $13,000–$20,000 CAD. Controls and rigging: $1,500–$3,000. Prop: $400–$700.
+
+### 150–200 hp (Performance Fishing, Runabouts, Family Boats)
+**Typical total repower range: $28,000 – $50,000 CAD**
+Includes the 150 and 200 FourStroke, 150–225 Pro XS. Engine: roughly $22,000–$37,000 CAD. Rigging and controls: $2,000–$5,000. Prop: $500–$900.
+
+### 250–300 hp (High-Performance, Larger Hulls)
+**Typical total repower range: $48,000 – $75,000 CAD**
+FourStroke, Pro XS, and Verado V8 options. Engine: roughly $38,000–$58,000 CAD. Twin-engine repowers can cross $100,000+ installed.
+
+### 350–425 hp (Verado V10, High-Performance Applications)
+**Typical total repower range: $65,000+ CAD per engine**
+The 350, 400, and 425hp Verado V10 are Mercury's top-end naturally aspirated outboards. At this level, we'd rather quote you specifically. Use mercuryrepower.ca or call us directly.
+
+## The Hidden Costs Other Dealers Don't Mention
+
+- **The Prop**: Budget $300–$900 for a correctly spec'd prop
+- **Wiring Harness**: Corroded connectors and aging wiring add time and cost
+- **Battery Upgrade**: Mercury recommends 700+ CCA for larger outboards ($200–$400)
+- **Gauge Replacement**: Switching brands means new gauges ($500–$1,500)
+- **Jackplate Adjustment**: New engine dimensions may require repositioning
+- **Old Motor Disposal**: Confirm if it's included in the quote
+
+## Repower vs. New Boat
+
+Your hull is already paid for. A 10–15 year old boat with a sound hull means you're paying only for the engine and installation. A new 19ft runabout with a 150hp Mercury: $55,000–$75,000 CAD. A repower of the same hull: $28,000–$35,000. The repower also delivers a new engine warranty.
+
+Where a new boat makes more sense: structural hull problems, undersized boat for your needs, or wanting a completely different type of boat.
+    `,
+    faqs: [
+      {
+        question: 'Are Mercury prices higher in Canada than the US?',
+        answer: 'Yes, CAD prices are higher than USD prices even at par — different distribution costs, import considerations, and dealer operating costs. Compare CAD to CAD only.'
+      },
+      {
+        question: 'Does Harris Boat Works offer financing on repowers?',
+        answer: 'Yes. Mercury Canada offers financing options through dealer programs. Current promotions vary by season — check mercuryrepower.ca for what\'s available.'
+      },
+      {
+        question: 'How long does a full repower take?',
+        answer: 'A straightforward single-engine repower typically takes 1–3 days in the shop. Twin engines, full gauge replacements, and complex wiring take longer. Best time to book is fall or early winter.'
+      },
+      {
+        question: 'Is there a best time of year to repower in Ontario?',
+        answer: 'Fall and winter. Haul out in October or November and bring the boat in — dealers have capacity and the engine will be ready for spring. Spring repowers compete with commissioning demand.'
+      },
+      {
+        question: 'What is the cheapest way to repower with Mercury?',
+        answer: 'The most affordable complete repowers are in the 9.9–25hp range for small boats with minimal rigging. For larger engines, financing is available. Use mercuryrepower.ca to see current pricing.'
+      }
+    ]
+  },
+
+  // ============================================
+  // NEW ARTICLES — Batch 2
+  // ============================================
+
+  {
+    slug: 'mercury-vs-yamaha-outboards-ontario',
+    title: 'Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners',
+    description: 'An honest Mercury vs Yamaha comparison from an Ontario Mercury Platinum dealer. Fuel economy, noise, technology, warranty, and which is right for your boat.',
+    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-18',
+    dateModified: '2026-04-18',
+    category: 'Buying Guide',
+    readTime: '13 min read',
+    keywords: ['mercury vs yamaha outboard', 'mercury vs yamaha Ontario', 'best outboard for Ontario lakes', 'mercury yamaha comparison Canada', 'outboard motor comparison 2026'],
+    content: `
+## The Honest Version of This Comparison
+
+Harris Boat Works is a Mercury Marine Platinum dealer. We sell Mercury, we service Mercury, and we know Mercury inside out. So yes, there's a bias in our corner.
+
+That said, we're going to give you a fair comparison — because you deserve one, and because the "buy whatever brand your dealer carries" answer is actually true. A great engine with a mediocre dealer behind it will frustrate you. A slightly less perfect engine backed by someone who picks up the phone is a far better deal.
+
+## HP Range: Mercury Has the Top End, Yamaha Wins the Middle
+
+Mercury's range runs from 2.5hp to 600hp. The Verado V12 600 sits at the top. Yamaha caps at 450hp with the XF450, and their strength is in the 40–250hp range where many Ontario boats live.
+
+For most Ontario boat owners running a 17–22ft aluminum, bowrider, or pontoon with a single outboard in the 60–200hp range, both brands have you fully covered.
+
+## Performance and Power Delivery: Different Feels
+
+Mercury's power delivery is more aggressive — quick to plane, responsive throttle. Yamaha's is smoother and more predictable, with excellent VTS trolling speed control ideal for walleye on Kawartha lakes.
+
+## Fuel Efficiency: Yamaha Has the Edge
+
+In real-world comparisons, Yamaha typically burns 10–15% less fuel at mid-range RPMs. Mercury's Active Trim helps offset this but doesn't close the gap entirely. For the average Ontario cottage boater putting 50–80 hours a year on the motor, the fuel difference is meaningful but not decisive.
+
+## Noise and Vibration: Yamaha Is Quieter
+
+Yamaha runs 3–5 decibels quieter than comparable Mercury models. Mercury's V8 and V10 Verado models are smoother than their inline-four counterparts, but even those don't match Yamaha's NVH numbers.
+
+## Technology and Digital Ecosystem: Mercury Leads
+
+Mercury SmartCraft provides real-time data, VesselView integration, joystick piloting on Verado models, and Boost software upgrades. Yamaha's Command Link is solid for essentials but the ecosystem depth doesn't match SmartCraft.
+
+## Warranty: Both Offer 3 Years Standard
+
+Both brands offer a standard 3-year limited warranty. Mercury's extended plans (MPP Gold and Platinum) offer broader coverage for electronic components. Yamaha's Y.E.S. plans are considered simpler to transfer at resale.
+
+Harris Boat Works currently includes 7 years of factory-backed warranty (3 standard + 4 Gold coverage) on every new Mercury purchase — that's the best extended coverage deal either brand offers.
+
+## The Full Comparison Table
+
+| Category | Mercury | Yamaha |
+|---|---|---|
+| HP range | 2.5–600hp | 2.5–450hp |
+| Top model | Verado V12 600hp | XF450 |
+| Power delivery | Aggressive, responsive | Smooth, predictable |
+| Fuel efficiency | Competitive | 10–15% better mid-range |
+| Noise level | More mechanical sound | 3–5 dB quieter |
+| Technology | SmartCraft, VesselView, Boost | Command Link, VTS |
+| Standard warranty | 3-year limited | 3-year limited |
+| Extended coverage | Up to 7 years (MPP Gold) | Comparable (Y.E.S.) |
+
+## Dealer Network: The Real Deciding Factor
+
+Before you pick a brand based on specs, find out who services each brand closest to where you launch. One honest advantage Mercury has in Ontario: mercuryrepower.ca gives you transparent, real-time pricing without calling anyone.
+
+## The Bottom Line
+
+If you're in the Kawarthas or Rice Lake region — Mercury makes sense. Not because Mercury is definitively better, but because you have a Platinum dealer on the water who stocks parts and can give you a real price.
+    `,
+    faqs: [
+      {
+        question: 'Is Mercury or Yamaha more reliable?',
+        answer: 'Both are highly reliable. Yamaha has a slight edge in long-term durability data, particularly in saltwater. In freshwater Ontario use, the reliability difference is minor — dealer support quality affects your experience more.'
+      },
+      {
+        question: 'Does Yamaha get better gas mileage than Mercury?',
+        answer: 'Yes, in most real-world comparisons. Yamaha typically burns 10–15% less fuel at mid-range RPMs. For most Ontario cottage boaters, the annual fuel cost difference isn\'t dramatic but it\'s real.'
+      },
+      {
+        question: 'Can I get a Mercury outboard quote online in Ontario?',
+        answer: 'Yes. mercuryrepower.ca is a live quote configurator run by Harris Boat Works showing real prices — no phone call required. Yamaha dealers don\'t offer an equivalent tool.'
+      },
+      {
+        question: 'Should I buy Mercury or Yamaha for Rice Lake?',
+        answer: 'For Rice Lake and the Kawarthas, Mercury is the practical choice — Harris Boat Works is a Platinum dealer on the water with full service capability. You can build a repower quote at mercuryrepower.ca.'
+      }
+    ]
+  },
+  {
+    slug: 'mercury-115-vs-150-hp-outboard-ontario',
+    title: 'Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?',
+    description: 'Detailed Mercury 115 vs 150 FourStroke comparison with specs, pricing, fuel economy, and boat-by-boat recommendations for Ontario lakes.',
+    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-19',
+    dateModified: '2026-04-19',
+    category: 'Buying Guide',
+    readTime: '11 min read',
+    keywords: ['mercury 115 vs 150 hp', 'mercury 115 FourStroke review', 'mercury 150 FourStroke specs', 'which outboard for Ontario boat', 'mercury outboard comparison'],
+    content: `
+## Why This Decision Matters More Than It Seems
+
+The 115 vs 150 decision comes up constantly at Harris Boat Works. The Mercury 150 FourStroke is a meaningfully different engine from the 115, not just a bigger version of the same thing. More displacement, more weight, more power, and more capability.
+
+## The Specs Side by Side
+
+| Spec | Mercury 115 FourStroke | Mercury 150 FourStroke |
+|---|---|---|
+| Displacement | 2.1L (inline-4) | 3.0L (inline-4) |
+| Dry weight | ~359 lbs | ~456 lbs |
+| Gear ratios | 2.00:1 (std) / 2.38:1 (CT) | 2.00:1 (std) / 2.38:1 (CT) |
+| Full throttle RPM | 5,000–6,000 | 5,000–6,000 |
+| Alternator output | 50A | 60A |
+| Command Thrust option | Yes | Yes |
+| Standard warranty | 3-year limited | 3-year limited |
+
+The weight difference is real: the 150 is about 97 lbs heavier.
+
+## Price: Closer Than You Think
+
+In CAD, the price gap between the 115 and 150 FourStroke is typically $2,500–$3,500. For exact pricing, use mercuryrepower.ca. The 115 at $X isn't a bargain if it's underpowered for your boat.
+
+## Fuel Economy: Surprisingly Close at Cruise
+
+At cruise RPM (3,500–4,000) the 150 doesn't drink dramatically more. The 150 reaches cruising speed at lower RPMs, which offsets some of the smaller engine's efficiency advantage.
+
+## The Right Motor for Each Boat Type
+
+### 16–18ft Aluminum Fishing Boats
+**Best choice: Mercury 115 FourStroke (standard or Command Thrust)**
+The lighter weight helps — less weight on the transom means better bow lift and handling. The 115 Command Thrust is the better fishing motor.
+
+### 18–20ft Bowrider (fiberglass)
+**Best choice: Mercury 150 FourStroke**
+A 19ft fiberglass bowrider with passengers works the 115 harder than it should. The 150 will plane properly and maintain speed in headwind.
+
+### 20–22ft Pontoon
+**Best choice: Mercury 150 FourStroke (standard or Command Thrust)**
+Pontoon boats are heavy and drag-resistant. The 150 handles full loads properly. Command Thrust generates more low-end torque for cleaner hole shots.
+
+### Boat rated to 115hp max
+**Must check the transom rating first.** Don't repower with a 150 on a boat not rated for it.
+
+## The Future-Proofing Argument
+
+You'll own this motor for 10–15 years. The 115 running at 90% load regularly wears faster than the 150 running at 70%. The one-time cost of stepping up is $2,500–$3,500. The value of having the right motor for the boat's life is harder to quantify, but it's real.
+
+## Command Thrust: Worth the Extra Money?
+
+**Buy Command Thrust if:** pontoon, trolling, weedy/shallow water, heavier boat
+**Buy standard if:** top-end speed, lighter aluminum boat, bowrider
+
+## Recommendation by Boat Type
+
+| Boat Type | Best Mercury Choice | Notes |
+|---|---|---|
+| 14–16ft aluminum, light use | 115 FourStroke standard | Right power, right weight |
+| 17–18ft aluminum, fishing | 115 FourStroke CT | Command Thrust for low-end torque |
+| 17–18ft aluminum, versatile | 150 FourStroke standard | Worth the upgrade |
+| 18–20ft fiberglass bowrider | 150 FourStroke standard | Handles load better |
+| 20–22ft pontoon | 150 FourStroke CT | Needs the thrust |
+| Boat rated to 115hp max | 115 FourStroke | Don't exceed the rating |
+    `,
+    faqs: [
+      {
+        question: 'How much does a Mercury 115 FourStroke cost in Canada?',
+        answer: 'Build a current quote at mercuryrepower.ca for exact pricing — it varies by shaft length, gearcase, and controls package. The 115 runs several thousand dollars less than the 150.'
+      },
+      {
+        question: 'How much does the Mercury 150 FourStroke weigh?',
+        answer: 'The Mercury 150 FourStroke weighs approximately 456 lbs dry. The 115 weighs approximately 359 lbs. The 97 lb difference matters more on lighter aluminum hulls.'
+      },
+      {
+        question: 'Is the Mercury 150 worth the extra money over the 115?',
+        answer: 'For most Ontario boats in the 18–22ft range, yes. The price gap is typically $2,500–$3,500, and the 150 handles heavier loads, planes more easily, and runs at lower throttle percentages — less wear over time.'
+      },
+      {
+        question: 'What is Command Thrust on Mercury outboards?',
+        answer: 'Command Thrust is a Mercury gearcase designed for higher low-end torque, using a different gear ratio and four-blade high-thrust propeller. Best for pontoons, heavier boats, or trolling applications.'
+      },
+      {
+        question: 'How long does a Mercury 115 or 150 FourStroke last?',
+        answer: 'With proper maintenance, Mercury FourStroke motors commonly reach 2,000–3,000 hours. At 60–80 hours per year (typical Ontario use), that\'s 25–40 seasons.'
+      }
+    ]
+  },
+  {
+    slug: 'mercury-outboard-financing-ontario-2026',
+    title: 'Mercury Outboard Financing in Ontario: Your Complete 2026 Guide',
+    description: 'Yes, you can finance a Mercury repower without buying a new boat. This guide covers Mercury financing, bank loans, credit unions, and marine-specific lenders in Ontario.',
+    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-20',
+    dateModified: '2026-04-20',
+    category: 'Financing & Value',
+    readTime: '11 min read',
+    keywords: ['mercury outboard financing Ontario', 'finance boat motor Ontario', 'mercury repower financing Canada', 'marine loan Ontario 2026', 'mercury outboard payment plan'],
+    content: `
+## You Can Finance a Repower — Without a New Boat
+
+A lot of Ontario boat owners don't realize that financing a repower is treated similarly to financing a new purchase. You don't need to buy a new boat to access financing.
+
+## Option 1: Mercury Repower Financing
+
+Mercury Marine offers dedicated repower financing through dealer partners in Canada.
+
+- Available through authorized Mercury dealers, including Harris Boat Works
+- Terms typically range from 24 to 60 months
+- Subject to credit qualification
+
+## Option 2: Bank Loans and Personal Lines of Credit
+
+- **Personal loan**: Fixed terms, fixed rates. Most major banks offer personal loans that cover marine equipment.
+- **HELOC**: If you have home equity, typically lower rates than unsecured personal loans.
+- **Personal line of credit**: Variable rate — not ideal if rate-sensitive.
+
+Good-credit borrowers have been seeing 7–12% for unsecured personal loans. HELOCs run prime plus 0.5–1%.
+
+## Option 3: Credit Union Loans
+
+Ontario credit unions — Meridian, DUCA, Libro, and regional co-ops — often offer more flexible personal loan terms for asset purchases. More flexibility for non-traditional income (self-employed, seasonal).
+
+## Option 4: Marine-Specific Lenders
+
+Marine-specific lenders like Acorn Finance understand the asset class and may accept broader credit profiles. Terms can go to 84 months, though rates are typically higher than bank rates.
+
+## What Credit Score Do You Need?
+
+| Credit Score Range | Likely Outcome |
+|---|---|
+| 720+ | Best rates, all lenders available |
+| 680–719 | Good rates, minor review |
+| 640–679 | Approved at higher rates; may need larger down payment |
+| 580–639 | Limited to some lenders; marine lenders may still approve |
+| Below 580 | Difficult; co-signer or secured financing may be required |
+
+## Current Promotion: HBW 7-Year Warranty
+
+When you buy any new Mercury outboard from Harris Boat Works, you get **7 full years of factory-backed warranty** — 3 years standard plus 4 bonus years of Mercury Gold coverage. This applies to both new boat packages and repower purchases. The extended warranty reduces your risk on a financed purchase — if something goes wrong in year four of a 60-month loan, you're still covered.
+
+Current details: harrisboatworks.ca or call 905-342-2153.
+
+## Steps to Finance a Mercury Repower in Ontario
+
+1. **Get your repower quote** — mercuryrepower.ca
+2. **Check your credit score** — Free checks via Equifax, TransUnion, or Borrowell
+3. **Compare options** — Contact your bank/credit union, then ask about Mercury financing
+4. **Apply** — Most lenders give a decision within 24–48 hours
+5. **Confirm the warranty** — Make sure 7-year coverage is included
+6. **Book installation** — Service appointments fill up in spring: hbw.wiki/service
+    `,
+    faqs: [
+      {
+        question: 'Can I finance just a motor without buying a new boat?',
+        answer: 'Yes. Mercury repower financing and most personal loan products cover outboard motor purchases without requiring a new boat purchase. Harris Boat Works processes repower financing regularly.'
+      },
+      {
+        question: 'How long can I finance a Mercury outboard in Ontario?',
+        answer: 'Terms typically range from 24 to 84 months depending on the lender. Standard bank personal loans often go to 60 months. Marine-specific lenders may offer longer terms.'
+      },
+      {
+        question: 'What\'s the difference between Mercury Product Protection Gold and Platinum?',
+        answer: 'Gold covers parts and labor for mechanical failures after the standard warranty expires. Platinum adds broader coverage including SmartCraft electronics modules and dockside assistance.'
+      },
+      {
+        question: 'Can self-employed or seasonal workers get marine financing in Ontario?',
+        answer: 'Yes, though the process may require more documentation. Marine-specific lenders and credit unions have more flexibility for non-traditional income situations.'
+      }
+    ]
+  },
+  {
+    slug: 'best-mercury-outboard-lake-simcoe-walleye-fishing',
+    title: 'Best Mercury Outboard for Lake Simcoe Walleye Fishing',
+    description: 'Motor recommendations for Lake Simcoe walleye: main motor + kicker setup, boat brands, safety considerations, and why you need more power on big water.',
+    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-21',
+    dateModified: '2026-04-21',
+    category: 'Fishing & Local',
+    readTime: '12 min read',
+    keywords: ['best outboard motor Lake Simcoe', 'Lake Simcoe walleye fishing boat', 'Mercury kicker motor trolling', 'best motor for Lake Simcoe', 'Lake Simcoe fishing setup'],
+    content: `
+## Lake Simcoe Is Not a Forgiving Lake
+
+Lake Simcoe is the largest lake entirely within Ontario, covering about 722 km². On a calm June morning, it looks benign. By noon, a southwest wind can kick up 2–3 foot rollers that make a 17ft aluminum boat very uncomfortable and genuinely dangerous.
+
+Power is a safety issue, not just a performance preference. You need enough motor to get home efficiently when conditions change — and on Simcoe, conditions change fast.
+
+## The Two-Motor Setup: Main Plus Kicker
+
+Most serious Simcoe walleye boats run a two-motor setup:
+
+1. **Main motor:** 90–150hp four-stroke for getting on the water and getting home safely
+2. **Kicker motor:** 9.9hp (Mercury ProKicker) for slow trolling at 1.5–3.0 mph
+
+A 115hp motor running at 5–10% throttle for trolling is outside its optimal RPM range. It builds carbon, wastes fuel, and adds wear. A dedicated kicker pays for itself in main motor longevity.
+
+## The Mercury 9.9 ProKicker Command Thrust
+
+What makes it different from a standard 9.9:
+- **Command Thrust gearcase**: 2.42:1 gear ratio, more thrust at low RPM
+- **EFI**: No carburetor, reliable cold starts, no ethanol issues
+- **Power tilt**: Trim up when not in use, reducing drag on main motor
+- **Four-blade aluminum propeller**: Maximum grip at low speed
+
+The 9.9 ProKicker CT weighs approximately 115 lbs. Approximate pricing: around $4,000–$4,200 CAD.
+
+## Main Motor Selection: The Big Lake Factor
+
+- A 17ft aluminum with 90hp: technically works, but struggles at full load in chop
+- A 17ft aluminum with 115hp: comfortable reserve power
+- A 19ft deep-V aluminum: wants 115–150hp
+
+The extra HP isn't for going faster — it's for maintaining control in deteriorating conditions.
+
+## Best Boat Brands for Simcoe Walleye
+
+**Lund** — 1875 Pro-V GL and 1975 Pro-V GL. Deep-V aluminum built for big Canadian walleye lakes.
+**Crestliner** — 1850 Fish Hawk and 2000 Fish Hawk. Solid construction, popular on Simcoe.
+**Alumacraft** — Competitor 185 CS and Trophy 195. Deep-V designs that handle open water.
+**Tracker** — Pro Team 175/195 series. Value-oriented but capable.
+
+## Motor Recommendations by Boat Size
+
+| Boat Size | Main Motor | Kicker | Notes |
+|---|---|---|---|
+| 16ft aluminum | Mercury 90hp FourStroke | 9.9 ProKicker CT | Minimum for Simcoe |
+| 17ft aluminum | Mercury 115hp FourStroke | 9.9 ProKicker CT | Sweet spot |
+| 18–19ft deep-V | Mercury 115–150hp FourStroke | 9.9 ProKicker CT | Better rough water |
+| 19–20ft deep-V | Mercury 150hp FourStroke | 9.9 ProKicker CT | Full load, big days |
+| 18–20ft fiberglass | Mercury 150–175hp FourStroke | 15hp ProKicker | More weight needs more power |
+
+## The Safety Argument
+
+A 90hp motor on a 19ft aluminum at full load in 2-foot chop is running at significant throttle. A 115hp motor has a meaningful buffer. A 150hp motor has reserve power to run confidently when others are crawling.
+
+The motor is the most important safety equipment on your boat after the life jackets.
+
+## SmartCraft Advantage on Big Water
+
+- **Real-time fuel monitoring**: Know your range when you're 10 km out
+- **Engine hours and fault codes**: See problems before they become real issues
+- **Speed and GPS integration**: Precise speed data for trolling presentation
+    `,
+    faqs: [
+      {
+        question: 'What is the best boat size for Lake Simcoe walleye fishing?',
+        answer: 'A 17–19ft deep-V aluminum hull is the sweet spot. Deep-V designs handle chop better. Popular choices include the Lund 1875 Pro-V GL, Crestliner 1850 Fish Hawk, and Alumacraft Competitor 185 CS.'
+      },
+      {
+        question: 'Do I need a kicker motor for Lake Simcoe?',
+        answer: 'You don\'t strictly need one, but serious walleye anglers on Simcoe run a kicker. The Mercury 9.9 ProKicker Command Thrust delivers precise, consistent trolling speeds and extends main motor life.'
+      },
+      {
+        question: 'What HP motor do I need for Lake Simcoe?',
+        answer: 'At minimum 90hp on a 17ft boat. The better answer is 115hp for comfortable reserve power. On a 19ft or heavier boat, 150hp is the right choice. Simcoe demands more power than sheltered inland lakes.'
+      },
+      {
+        question: 'Is the Mercury 9.9 ProKicker different from a regular 9.9?',
+        answer: 'Yes. The ProKicker is engineered for trolling applications. The Command Thrust variant adds a high-gear-ratio gearcase and four-blade prop for more low-speed thrust. The EFI version starts reliably in cold conditions.'
+      },
+      {
+        question: 'Can I run my main motor for trolling instead of buying a kicker?',
+        answer: 'Some anglers do. But running a 115hp+ motor at 5–10% throttle for hours builds carbon deposits, wastes fuel, and adds unnecessary wear hours. A dedicated kicker pays for itself within a few seasons.'
+      }
+    ]
   }
 ];
 
