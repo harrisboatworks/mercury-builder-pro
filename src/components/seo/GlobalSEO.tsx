@@ -103,8 +103,8 @@ export function GlobalSEO() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1167,
-          "longitude": -78.2500
+          "latitude": 44.1456,
+          "longitude": -78.2542
         },
         "url": SITE_URL,
         "openingHoursSpecification": [
@@ -154,7 +154,8 @@ export function GlobalSEO() {
               "itemOffered": {
                 "@type": "Service",
                 "name": "Mercury Outboard Repower",
-                "description": "Complete outboard motor replacement with new Mercury engine, rigging, controls, and professional installation"
+                "description": "Complete outboard motor replacement with new Mercury engine, rigging, controls, and professional installation",
+                "potentialAction": { "@type": "ReserveAction", "target": "https://mercuryrepower.ca" }
               }
             },
             {
@@ -162,15 +163,64 @@ export function GlobalSEO() {
               "itemOffered": {
                 "@type": "Service",
                 "name": "Mercury Outboard Service & Repair",
-                "description": "Certified Mercury outboard maintenance, diagnostics, and repair by factory-trained technicians"
+                "description": "Certified Mercury outboard maintenance, diagnostics, and repair by factory-trained technicians",
+                "potentialAction": { "@type": "ReserveAction", "target": "https://hbw.wiki/service" }
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Winterization & Storage",
-                "description": "Full outboard winterization service and indoor/outdoor boat storage on Rice Lake"
+                "name": "Outboard Motor Winterization",
+                "description": "Complete outboard winterization including fogging, fuel stabilization, and lower unit service"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Spring Commissioning",
+                "description": "Seasonal boat and motor commissioning to get your vessel ready for the Ontario boating season"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Boat Storage",
+                "description": "Indoor and outdoor boat storage on Rice Lake — over 300 boats stored annually"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Boat Rental",
+                "description": "Fleet of 9 rental boats available on Rice Lake in the Kawarthas"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Mercury Warranty Service",
+                "description": "Authorized Mercury Platinum warranty service — claims processed directly with Mercury Marine"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Marine Diagnostics",
+                "description": "Mercury-certified diagnostics and troubleshooting for outboard and sterndrive engines"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "Ethanol-Free Marine Fuel",
+                "description": "Ethanol-free fuel available on-site — ideal for outboard motors"
               }
             }
           ]
