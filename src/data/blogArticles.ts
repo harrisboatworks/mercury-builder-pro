@@ -8224,7 +8224,7 @@ This is an important distinction that gets confused:
 | 18–20ft fiberglass bowrider | 150 FourStroke standard | Handles load better |
 | 20–22ft pontoon | 150 FourStroke CT | Needs the thrust, not speed |
 | Boat rated to 115hp max | 115 Pro XS | Max performance within rating |
-    \`,
+    `,
     faqs: [
       {
         question: 'What is the difference between Mercury Pro XS and FourStroke?',
