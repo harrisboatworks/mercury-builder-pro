@@ -8256,7 +8256,7 @@ This is an important distinction that gets confused:
       },
       {
         question: 'How long does a Mercury 115 or 150 last?',
-        answer: 'With proper maintenance, Mercury FourStroke and Pro XS motors commonly reach 2,000–3,000 hours. At 60–80 hours per year (typical Ontario use), that\\'s 25–40 seasons.'
+        answer: 'With proper maintenance, Mercury FourStroke and Pro XS motors commonly reach 2,000–3,000 hours. At 60–80 hours per year (typical Ontario use), that\'s 25–40 seasons.'
       }
     ]
   },
