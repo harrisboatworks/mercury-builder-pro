@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { SITE_URL } from "./lib/site";
+import { GlobalSEO } from "./components/seo/GlobalSEO";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -515,6 +516,7 @@ const App = () => {
               <GlobalAIChat>
                 <div data-vaul-drawer-wrapper className="min-h-screen bg-background">
                   <ScrollToTop />
+                  <GlobalSEO />
                   <NotificationToast />
                   
                   <AnimatedRoutes />
