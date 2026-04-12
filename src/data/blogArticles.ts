@@ -424,7 +424,7 @@ As a Mercury Certified Repower Center, Harris Boat Works has the expertise to ha
       },
       {
         question: 'What warranty comes with a repower?',
-        answer: 'New Mercury motors come with full factory warranty—typically 3 years for recreational use, with options to extend up to 8 years. The warranty covers the new motor regardless of boat age.'
+        answer: 'New Mercury motors come with a 3-year factory warranty. At Harris Boat Works, we currently include 7 years of total factory-backed warranty coverage (3 standard + 4 bonus years of Gold coverage) with every new motor purchase. The warranty covers the new motor regardless of boat age.'
       }
     ]
   },
@@ -780,7 +780,7 @@ We're boaters ourselves. We fish these lakes, we know these conditions, and we s
       },
       {
         question: 'What warranty do new Mercury motors come with?',
-        answer: 'New Mercury motors include a 3-year factory warranty. Extended warranty options up to 8 years are available at time of purchase. Commercial applications may have different terms.'
+        answer: 'New Mercury motors include a 3-year factory warranty. At Harris Boat Works, we currently include 7 years of total factory-backed coverage (3 standard + 4 bonus years of Gold coverage) with every new purchase. Commercial applications may have different terms.'
       }
     ]
   },
@@ -1580,7 +1580,7 @@ Thinking about putting a new motor on your boat? As the Kawartha region's Mercur
 - Updated wiring
 - Installation and lake test
 
-### Cost Ranges (2025)
+### Cost Ranges (2026)
 
 **40-60HP Repower**: $7,500 - $11,000
 **75-115HP Repower**: $12,000 - $18,000
@@ -3306,7 +3306,7 @@ We offer:
       },
       {
         question: 'Are there seasonal promotions for financing?',
-        answer: 'Mercury often runs financing promotions, especially in winter and spring. These can include reduced rates or deferred payments. Ask about current offers.'
+        answer: 'Promotional offers vary by season. Harris Boat Works currently includes a 7-year factory-backed warranty (3 years standard + 4 bonus years of Gold coverage) with every new Mercury purchase. Ask about current financing and warranty offers.'
       },
       {
         question: 'What happens if I want to sell my boat before the loan is paid?',
@@ -4163,7 +4163,7 @@ Check your specific lake's regulations.
 ### For Electric-Only Lakes
 
 **Electric Options**:
-- Mercury Avator (coming soon)
+- Mercury Avator electric outboards (7.5e to 110e available)
 - Third-party electric motors
 - Trolling motors for small craft
 
@@ -4236,8 +4236,8 @@ Contact us about electric options
         answer: 'For cottage boats on smaller lakes, absolutely. A 9.9HP on a 14ft aluminum provides reasonable speed for fishing and getting around. Expectations differ from big-water boating.'
       },
       {
-        question: 'When will Mercury electric outboards be available?',
-        answer: 'Mercury\'s Avator electric line is expanding. Contact us for current availability and options. Electric is the future for many cottage applications.'
+        question: 'Are Mercury electric outboards available?',
+        answer: 'Yes. Mercury\'s Avator electric line includes models from 7.5e to 110e. Contact us for current availability, pricing, and to discuss whether electric suits your cottage lake application.'
       }
     ]
   },
@@ -5420,11 +5420,11 @@ If yes to most, repower makes sense.
     publishDate: '2026-12-14',
     category: 'New Products',
     readTime: '7 min read',
-    keywords: ['2026 mercury outboard', 'new mercury motors', 'mercury model year', 'mercury updates', 'new outboard models'],
-    content: `
-## 2026 Mercury Outboard Preview
+    keywords: ['2027 mercury outboard', 'new mercury motors', 'mercury model year', 'mercury updates', 'new outboard models'],
+    content: \`
+## 2027 Mercury Outboard Preview
 
-As we look toward the 2026 model year, here's what to expect from Mercury Marine's lineup.
+As we look toward the 2027 model year, here's what to expect from Mercury Marine's lineup.
 
 ### Expected Updates
 
@@ -5432,7 +5432,7 @@ As we look toward the 2026 model year, here's what to expect from Mercury Marine
 
 **Technology Evolution**:
 - Continued EFI refinements
-- Potential electric integration expansion
+- Expanded Avator electric outboard lineup
 - SmartCraft enhancements
 - Connectivity features
 
@@ -5443,13 +5443,13 @@ As we look toward the 2026 model year, here's what to expect from Mercury Marine
 
 ### Buying Now vs Waiting
 
-**Buy 2025 If**:
-- Current promotion is attractive
+**Buy 2026 If**:
+- Current HBW 7-year warranty promotion is attractive
 - You need the motor now
 - Current lineup meets your needs
 - Budget favors current pricing
 
-**Wait for 2026 If**:
+**Wait for 2027 If**:
 - No urgent need
 - Want latest features
 - Specific model expected to change
@@ -5458,14 +5458,14 @@ As we look toward the 2026 model year, here's what to expect from Mercury Marine
 ### Transition Period Tips
 
 **Model Year Changeover**:
-- 2025 closeouts may offer savings
-- Early 2026 models arrive late 2025
+- 2026 closeouts may offer savings
+- Early 2027 models arrive late 2026
 - Inventory varies by model
 - Popular models move fast
 
-### Planning for Spring 2026
+### Planning for Spring 2027
 
-**Timeline for 2026 Models**:
+**Timeline for 2027 Models**:
 - Order early for spring delivery
 - New model inventory builds over winter
 - Popular configurations sell first
@@ -5479,24 +5479,24 @@ We'll provide:
 - Fair pricing on all model years
 - Expert recommendations for your needs
 
-**[Discuss 2026 Plans](/quote)**
-    `,
+**[Discuss Your Plans](/quote)**
+    \`,
     faqs: [
       {
-        question: 'When are 2026 Mercury models available?',
-        answer: 'Model year changeover typically happens in late summer/fall. 2026 models should be available starting fall 2025, with full inventory by early 2026.'
+        question: 'When are 2027 Mercury models available?',
+        answer: 'Model year changeover typically happens in late summer/fall. 2027 models should be available starting fall 2026, with full inventory by early 2027.'
       },
       {
-        question: 'Will 2025 motors go on sale when 2026 comes out?',
-        answer: 'Often yes. Dealers may discount remaining 2025 inventory to make room for 2026 models. Best deals depend on what\'s in stock and demand.'
+        question: 'Will 2026 motors go on sale when 2027 comes out?',
+        answer: 'Often yes. Dealers may discount remaining 2026 inventory to make room for 2027 models. Best deals depend on what\\\'s in stock and demand.'
       },
       {
-        question: 'Are 2026 models significantly different from 2025?',
-        answer: 'It varies by model. Some years bring major changes, others are refinements. We\'ll provide honest assessments of differences when 2026 specs are announced.'
+        question: 'Are 2027 models significantly different from 2026?',
+        answer: 'It varies by model. Some years bring major changes, others are refinements. We\\\'ll provide honest assessments of differences when 2027 specs are announced.'
       },
       {
-        question: 'Should I wait for electric Mercury outboards?',
-        answer: 'Mercury is developing electric options (Avator line). Current offerings are smaller HP. For larger motors, 4-stroke remains the choice for now. Contact us for latest electric availability.'
+        question: 'What about Mercury Avator electric outboards?',
+        answer: 'Mercury\\\'s Avator electric line continues to expand with models from 7.5e to 110e. For larger motors, four-stroke remains the choice. Contact us for latest electric availability and pricing.'
       }
     ]
   },
@@ -6190,31 +6190,31 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 
 *Prices are motor only; rigging adds $1,500-3,000+*
 
-### Seasonal Promotional Programs
+### Seasonal Pricing Patterns
 
 **Spring (February-May)**:
-- Boat show specials
-- Spring Repower promotions
-- Extended warranty offers
-- Financing incentives
+- Boat show season
+- Highest buying activity
+- Dealer promotions available
+- Best selection
 
 **Summer (June-August)**:
-- Minimal promotions
 - Highest demand period
 - Full pricing typical
 - Inventory may be limited
+- Everyone wants to be on the water
 
 **Fall (September-November)**:
-- Fall Into Mercury program typical
-- Extended warranties common
 - End-of-year clearance begins
 - Good negotiation window
+- Less buyer competition
+- Winter repower planning starts
 
 **Winter (December-February)**:
 - Best negotiation leverage
-- Dealers need cash flow
 - Lowest demand = best deals
 - Spring delivery available
+- Ideal for repower projects
 
 ### The Winter Buying Advantage
 
@@ -6233,29 +6233,23 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
 
 **The Trade-Off**:
 - Cannot water test immediately
-- Promotional programs may pause
 - Some models may be sold out
 - Must wait for on-water enjoyment
 
-### Mercury Promotional Programs
+### Dealer Promotional Programs
 
-**Extended Warranty Promotions**:
-- Most common promotion type
-- Extra 1-3 years coverage
-- Significant value ($500-1,500+)
-- Available with new purchase
+Note: Mercury Marine has scaled back manufacturer-level promotional programs in recent years. However, individual dealers like Harris Boat Works run their own promotions to provide value to customers.
 
-**Repower Incentives**:
-- Rebates for replacing old motors
-- Often $500-2,000 depending on model
-- May require trade-in documentation
-- Seasonal availability
+**Harris Boat Works Current Offer**:
+- 7-Year Factory-Backed Warranty included with every new Mercury
+- That's 3 years standard + 4 bonus years of Gold coverage
+- No extra cost — automatically applied
+- Significant value vs. purchasing extended warranty separately
 
-**Financing Promotions**:
-- Reduced APR offers
-- Deferred payment periods
-- Low monthly payments
-- Through Mercury Marine credit
+**Financing Options**:
+- Competitive rates from third-party lenders
+- Multiple term options
+- Pre-approval available
 
 ### Financing Your Mercury
 
@@ -6327,8 +6321,8 @@ Understanding how Mercury pricing works helps you make smarter buying decisions.
     `,
     faqs: [
       {
-        question: 'When do Mercury promotions typically run?',
-        answer: 'Major promotions run spring (Feb-May) and fall (Sept-Nov). Boat show season (Jan-Mar) often has enhanced offers. Summer typically has minimal promotions. Check with your dealer for current programs.'
+        question: 'Are there current promotions available?',
+        answer: 'Mercury has scaled back manufacturer-level promotions, but Harris Boat Works runs our own. Currently, every new Mercury purchase includes 7 years of factory-backed warranty (3 standard + 4 Gold). Contact us for the latest offers.'
       },
       {
         question: 'Can I negotiate below advertised price?',
