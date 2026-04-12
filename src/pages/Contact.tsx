@@ -379,7 +379,7 @@ export default function Contact() {
                 <Separator />
                 
                 <a 
-                  href="https://www.google.com/maps/search/?api=1&query=5369+Harris+Boat+Works+Rd,+Gores+Landing,+ON+K0K+2E0"
+                  href="https://www.google.com/maps/dir/?api=1&destination=Harris+Boat+Works,+Gores+Landing,+ON"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 hover:bg-muted/50 rounded-lg p-2 -m-2 transition-colors cursor-pointer group"
