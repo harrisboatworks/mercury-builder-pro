@@ -431,9 +431,9 @@ export default function Contact() {
                 <div className="flex items-start gap-3">
                   <Zap className="w-5 h-5 text-primary mt-0.5" />
                   <div>
-                    <p className="font-medium text-primary">Need immediate help?</p>
+                    <p className="font-medium text-primary">Prefer to talk?</p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Call us directly at {COMPANY_INFO.contact.phone} for urgent service needs or emergency support.
+                      Give us a call at {COMPANY_INFO.contact.phone} — we're happy to help with questions or quotes.
                     </p>
                   </div>
                 </div>
