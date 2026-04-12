@@ -93,23 +93,23 @@ export const REPOWER_FAQS = [
 export const COMPARISON_FAQS = [
   {
     question: "Is Verado worth the extra cost?",
-    answer: "For premium boats and demanding applications, yes. Verado offers superior refinement, quieter operation, and advanced features. However, for most recreational use, FourStroke provides excellent value without the premium price."
+    answer: "For premium boats and demanding applications, yes. Verado offers superior refinement, quieter operation, and advanced features like Advanced Noise-Free Steering. However, for most recreational use, FourStroke provides excellent value without the premium price. Note: the current Verado lineup is entirely naturally aspirated (V8, V10, V12) — the old supercharged L6 Verado has been discontinued."
   },
   {
     question: "What's the main advantage of Pro XS over FourStroke?",
-    answer: "Pro XS motors are lighter and tuned for higher RPM and faster acceleration. They're designed for performance-focused boaters, especially tournament anglers who need to reach fishing spots quickly."
+    answer: "Pro XS motors are lighter and tuned for higher RPM and faster acceleration. They're designed for performance-focused boaters, especially tournament anglers who need to reach fishing spots quickly. Pro XS is available from 115HP to 300HP."
   },
   {
     question: "Can I use a SeaPro for recreational boating?",
-    answer: "Absolutely. SeaPro motors are built tough for commercial use, but many recreational boaters choose them for their durability. Excellent choice if you boat frequently and want maximum reliability."
+    answer: "Absolutely. SeaPro motors are built tough for commercial use, but many recreational boaters choose them for their durability. Excellent choice if you boat frequently and want maximum reliability. The SeaPro range extends from 15HP to 500HP."
   },
   {
     question: "Which Mercury motor is quietest?",
-    answer: "Verado is the quietest Mercury outboard, featuring advanced sound dampening and smooth supercharged operation. FourStroke motors are also notably quiet, while Pro XS prioritizes performance over noise reduction."
+    answer: "Verado is the quietest Mercury outboard, featuring advanced sound dampening and smooth naturally aspirated V8/V10/V12 operation. FourStroke motors are also notably quiet, while Pro XS prioritizes performance over noise reduction."
   },
   {
     question: "Is Verado more reliable than FourStroke?",
-    answer: "Both are extremely reliable. Verado has more complex systems (supercharger, DTS), but Mercury engineering is excellent. Proper maintenance keeps either running for decades."
+    answer: "Both are extremely reliable. The current Verado uses naturally aspirated V8/V10/V12 powerheads — simpler than the old supercharged design. Mercury engineering is excellent. Proper maintenance keeps either running for decades."
   }
 ];
 
@@ -222,22 +222,22 @@ export const LOCAL_RECOMMENDATIONS = {
 // ========== MOTOR FAMILY QUICK REFERENCE ==========
 export const MOTOR_FAMILIES_QUICK = {
   fourStroke: {
-    hpRange: "2.5HP - 150HP",
+    hpRange: "2.5HP - 300HP",
     bestFor: "General recreational use, pontoons, family boats",
     keyBenefits: "Fuel efficient, quiet, low maintenance, best value"
   },
   proXS: {
-    hpRange: "115HP - 400HP",
+    hpRange: "115HP - 300HP",
     bestFor: "Tournament fishing, bass boats, performance enthusiasts",
     keyBenefits: "Lightweight, faster acceleration, higher RPM"
   },
   verado: {
-    hpRange: "175HP - 600HP",
+    hpRange: "250HP - 600HP",
     bestFor: "Premium boats, offshore use, those wanting the best",
-    keyBenefits: "Supercharged, exceptionally quiet, advanced steering"
+    keyBenefits: "Naturally aspirated V8/V10/V12, exceptionally quiet, advanced steering"
   },
   seaPro: {
-    hpRange: "15HP - 300HP",
+    hpRange: "15HP - 500HP",
     bestFor: "Commercial use, guides, heavy-duty applications",
     keyBenefits: "Built for high-hour operation, extended service intervals"
   }
