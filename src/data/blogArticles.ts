@@ -7706,6 +7706,8 @@ PCLs that were previously valid for life are now subject to a rolling 5-year ren
 | January 1, 2000 – December 31, 2005 | December 31, 2029 |
 | January 1, 2006 – April 28, 2010 | December 31, 2030 |
 
+![Canada Pleasure Craft Licence New Rules & Expiry Dates infographic showing phase-out timeline](/lovable-uploads/pcl-expiry-dates.png)
+
 ### The $24 Renewal Fee
 
 Renewing, applying for, transferring, or replacing a PCL now costs **$24**. Updating vessel information is still **free**.
