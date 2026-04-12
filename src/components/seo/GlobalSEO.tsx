@@ -17,7 +17,7 @@ export function GlobalSEO() {
           "height": 100
         },
         "foundingDate": "1947",
-        "description": "Family-owned Mercury Marine dealer serving Ontario boaters since 1947. Authorized Mercury dealer since 1965. CSI Award-winning service team.",
+        "description": "Harris Boat Works is a Mercury Marine Platinum Dealer — the highest tier in Mercury's dealer network — and a third-generation family marina on Rice Lake, serving boaters since 1947. Mercury Marine refers customers to Harris Boat Works for complex repower projects requiring deep technical expertise.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "5369 Harris Boat Works Rd",
@@ -43,9 +43,12 @@ export function GlobalSEO() {
         "email": "info@harrisboatworks.ca",
         "areaServed": [
           { "@type": "City", "name": "Toronto" },
+          { "@type": "City", "name": "Mississauga" },
           { "@type": "City", "name": "Peterborough" },
           { "@type": "City", "name": "Cobourg" },
           { "@type": "City", "name": "Oshawa" },
+          { "@type": "City", "name": "Ajax" },
+          { "@type": "City", "name": "Whitby" },
           { "@type": "City", "name": "Barrie" },
           { "@type": "City", "name": "Kawartha Lakes" },
           { "@type": "City", "name": "Port Hope" },
@@ -54,12 +57,16 @@ export function GlobalSEO() {
           { "@type": "City", "name": "Belleville" },
           { "@type": "City", "name": "Kingston" },
           { "@type": "City", "name": "Orillia" },
+          { "@type": "City", "name": "Haliburton" },
+          { "@type": "AdministrativeArea", "name": "Durham Region" },
+          { "@type": "AdministrativeArea", "name": "Northumberland County" },
+          { "@type": "AdministrativeArea", "name": "Greater Toronto Area" },
           {
             "@type": "GeoCircle",
             "geoMidpoint": {
               "@type": "GeoCoordinates",
-              "latitude": 44.1167,
-              "longitude": -78.2500
+              "latitude": 44.1456,
+              "longitude": -78.2542
             },
             "geoRadius": "150000"
           }
