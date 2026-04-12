@@ -8440,6 +8440,232 @@ The motor is the most important safety equipment on your boat after the life jac
         answer: 'Some anglers do. But running a 115hp+ motor at 5–10% throttle for hours builds carbon deposits, wastes fuel, and adds unnecessary wear hours. A dedicated kicker pays for itself within a few seasons.'
       }
     ]
+  },
+  {
+    slug: 'best-mercury-outboard-lake-ontario-salmon-trout',
+    title: 'Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing',
+    description: 'Motor recommendations for Lake Ontario salmon and trout: 150–300hp setups, kicker motors, downrigger rigs, and port-by-port guidance from Port Hope to the GTA.',
+    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-04-22',
+    dateModified: '2026-04-22',
+    category: 'Fishing & Local',
+    readTime: '15 min read',
+    keywords: ['Lake Ontario salmon fishing motor', 'best outboard Lake Ontario', 'Mercury outboard salmon trolling', 'Lake Ontario chinook king salmon', 'salmon fishing boat Ontario', 'Mercury 150 200 salmon', 'Lake Ontario fishing charter motor'],
+    content: `
+## Lake Ontario Is Open Water — Treat It Like One
+
+Lake Ontario is the 14th largest lake in the world by surface area. It stretches 311 km east to west and 85 km at its widest point, with a maximum depth of 244 metres (802 feet). On a calm July morning, the north shore looks like a millpond. By early afternoon, a southwest wind can build 1–2 metre rollers in under an hour. Fog banks roll in without warning. The thermocline shifts daily.
+
+This is not Rice Lake. This is not Lake Simcoe. Lake Ontario is functionally an inland sea, and the motor on your transom is the most important piece of safety equipment after your PFDs.
+
+If you're running offshore for kings — and on the Ontario north shore, "offshore" means 5–15 km out — you need enough motor to get home fast when conditions deteriorate, enough electrical capacity to run downriggers and electronics all day, and a kicker motor for trolling.
+
+## The Species: What You're Chasing and When
+
+### Chinook (King) Salmon
+The marquee fish. Lake Ontario kings regularly hit 10–15 kg (20–30+ lbs), with trophy fish exceeding 18 kg. They're the reason the serious rigs exist.
+
+- **Spring (April–May):** Kings stage in the western basin first. On the north shore, early action starts off the GTA — Port Credit, Bronte, Whitby. Fish are at 15–40 metres depth, following baitfish schools.
+- **Summer (June–August):** The thermocline drives kings deeper — 25–50 metres is typical. You're trolling offshore, following temperature breaks on your sonar. This is prime season for the north shore from Cobourg to Brighton and east toward Prince Edward County.
+- **Fall (September–October):** Kings stage at tributary mouths before spawning runs. The Ganaraska River (Port Hope), Cobourg Creek, and the Trent River mouth (Trenton) all draw fish. Trolling shifts to shallower water — 5–15 metres — near river mouths.
+
+### Coho Salmon
+Smaller than kings (typically 3–5 kg) but aggressive fighters. Coho often run higher in the water column than chinook. Available spring through fall, with peak action in late summer.
+
+### Brown Trout
+Excellent nearshore fishing in spring and late fall. Browns hold tight to shoreline structure and creek mouths — Port Hope, Cobourg harbour, and Presqu'ile Bay are consistent producers. Lighter tackle, shallower trolling. A 150hp boat with downriggers handles this perfectly.
+
+### Lake Trout
+Deep-water residents, typically 25–45 metres in summer. Consistent action July through August when other species slow down. Slower trolling speeds (1.5–2.0 mph).
+
+### Steelhead (Rainbow Trout)
+Primarily a tributary fish in spring and fall, but they're caught offshore in summer mixed with salmon. Hard fighters that make spectacular runs.
+
+## The North Shore: Your Backyard Fishery
+
+If you're reading this on mercuryrepower.ca, you're likely an Ontario boat owner. The north shore of Lake Ontario — from the GTA east through Northumberland County and Prince Edward County — offers world-class salmon and trout fishing within reasonable driving distance of millions of people.
+
+### Key Ports and Launch Points
+
+| Port | What's There | Best For |
+|---|---|---|
+| Port Credit (Mississauga) | Full-service marina, charter fleet | Spring kings, coho, all-season access |
+| Whitby Harbour | Public launch, marina | Spring/summer kings, lake trout |
+| Oshawa Harbour | Public launch | Kings, summer trolling |
+| Cobourg Marina | Public launch, fuel, fish cleaning station | Summer kings, fall staging, browns |
+| Port Hope | Public launch, fish cleaning station | Fall salmon runs (Ganaraska River), spring browns |
+| Presqu'ile Bay (Brighton) | Protected launch, marina | Browns, lake trout, sheltered staging area |
+| Trenton (Trent Port Marina) | Full marina, Bay of Quinte access | Fall kings (Trent River mouth), walleye crossover |
+
+**Port Hope and Cobourg** deserve special mention. The Ganaraska River system in Port Hope is one of Ontario's premier salmon and trout rivers. Thousands of chinook and coho run the river each fall, and the Port Hope fish ladder is a genuine spectacle. The municipal boat launch and fish cleaning station make it a practical base for offshore trips.
+
+### The Quebec Connection
+
+During peak salmon season (July through September), the north shore ports — particularly Cobourg, Port Hope, and Brighton — see a significant influx of francophone anglers from Quebec. Many operate guided fishing charters targeting kings and lake trout, running multi-day trips out of local marinas. This is a well-established seasonal pattern. If you're launching from Cobourg Marina in August, expect to hear as much French as English at the fuel dock.
+
+This matters for two reasons: it confirms the quality of the fishery (these operators travel 4–6 hours because the fishing is that good), and it means launch ramps and marina slips fill up fast during peak weeks. Book ahead.
+
+## Why Lake Ontario Demands More Motor
+
+### The Distance Factor
+Productive salmon water on the north shore is typically 5–15 km offshore in summer. A 10 km run at 30 mph takes 20 minutes. At 20 mph, it takes 30 minutes. When a squall line appears on the western horizon, that 10-minute difference matters.
+
+### The Load Factor
+A Lake Ontario salmon rig is heavy. Downriggers (two minimum, often four), planer board masts, multiple rod holders, coolers with ice, electronics, tackle — a fully rigged 21ft deep-V with four anglers aboard is carrying serious weight. A motor that handles a bare boat on calm water isn't the same motor once you add 200+ kg of gear and passengers.
+
+### The Conditions Factor
+Running back to port in 1-metre chop at 2/3 throttle with a loaded boat is fundamentally different from cruising a sheltered inland lake. You need power in reserve — not running at maximum.
+
+## Motor Recommendations by Boat Size
+
+### 18–20ft Deep-V Aluminum (Lund 1875 Pro-V, Crestliner 1950, Alumacraft 185)
+**Main motor: Mercury 150 Pro XS or Mercury 150 FourStroke**
+
+This is the entry point for serious Lake Ontario salmon fishing. The 150 handles the boat well at speed and provides adequate reserve power for rough water returns. The Pro XS is the better choice if you're running 10+ km offshore — the performance calibration and lighter weight matter on long runs.
+
+**Kicker: Mercury 9.9 ProKicker Command Thrust**
+
+The 9.9 CT is the standard kicker for this size boat. The Command Thrust gearcase delivers consistent trolling speeds of 1.5–3.0 mph, and the EFI system starts reliably on cold mornings.
+
+### 20–22ft Deep-V Aluminum or Fiberglass (Lund 2075 Pro-V, Crestliner 2250, Starcraft STX 2050)
+**Main motor: Mercury 200 FourStroke or Mercury 200 Pro XS**
+
+The sweet spot for the north shore fishery. A 200hp motor on a 21ft deep-V provides genuine confidence in Lake Ontario conditions. You're carrying more gear, more people, and running farther offshore. The 200 doesn't just get you there faster — it gets you home safely when conditions change.
+
+The Mercury 200 FourStroke is a 3.4L V6. It's a different class of motor from the 150 — more displacement, more torque, and the 70A alternator handles electronics-heavy rigs without strain.
+
+**Kicker: Mercury 9.9 or 15hp ProKicker**
+
+The 15hp ProKicker is worth considering on heavier 21ft+ boats. More push for maintaining trolling speed in current or wind.
+
+### 22–26ft Fiberglass Sport Fishing (Pursuit, Grady-White, Boston Whaler, Wellcraft)
+**Main motor: Mercury 225–300 FourStroke or Verado**
+
+If you're running a dedicated Lake Ontario sport fishing boat — a centre console or walkaround in the 22–26ft range — you're in Verado territory. The Mercury Verado 250 or 300 delivers the smooth, quiet power these hulls are designed for.
+
+These boats run 15–20 km offshore, carry serious electronics packages, and need to handle 2-metre seas on the way home. A 250–300hp motor isn't overkill — it's appropriate.
+
+**Kicker: Mercury 15hp ProKicker or 20hp FourStroke**
+
+Heavier boats need more kicker power to maintain trolling speed with downriggers deployed.
+
+## The Two-Motor Setup: Non-Negotiable for Salmon
+
+Running a single main motor for both transit and trolling is a compromise you'll regret:
+
+- **Engine wear:** A 200hp motor idling at 800 RPM for 6 hours of trolling operates outside its optimal range. Carbon deposits accumulate, fuel doesn't atomize properly, and you're adding wear hours without productive use.
+- **Fuel waste:** A big motor at trolling speed burns more fuel per km than a dedicated kicker.
+- **Safety redundancy:** If your main motor fails 10 km offshore, a kicker gets you home. Slowly — but it gets you home.
+- **Trolling precision:** A dedicated kicker with Command Thrust gearcase delivers far more consistent trolling speeds than a big motor at minimal throttle.
+
+## Downrigger and Electronics Power Budget
+
+Lake Ontario salmon rigs draw serious electrical current:
+
+| Equipment | Approximate Draw |
+|---|---|
+| Electric downrigger (each) | 5–15A while retrieving |
+| Fish finder / chartplotter | 2–5A |
+| Radar (if equipped) | 3–6A |
+| VHF marine radio | 1–5A (transmit) |
+| LED lighting | 1–3A |
+| Bilge pump | 3–5A |
+| Livewell pump | 3–5A |
+
+With two electric downriggers, sonar, and standard systems running simultaneously, you're drawing 20–40+ amps. The Mercury 150 FourStroke delivers 50A. The 200 FourStroke delivers 70A. The Verado 250/300 delivers 70–85A.
+
+**If you're running four downriggers and a full electronics suite, you need the alternator output of a 200hp+ motor.** This isn't about horsepower — it's about electrical capacity.
+
+## Trolling Setup: The Details That Matter
+
+### Trolling Speed
+- Chinook salmon: 2.0–3.0 mph
+- Coho salmon: 2.5–3.5 mph
+- Lake trout: 1.5–2.5 mph
+- Brown trout: 1.5–2.5 mph
+
+### Downrigger Depths (Summer, North Shore)
+- Chinook: 25–50 metres (80–160 feet), following the thermocline
+- Lake trout: 20–40 metres (65–130 feet)
+- Coho: 10–25 metres (30–80 feet), often higher in the column
+
+The thermocline on Lake Ontario's north shore typically sets up at 12–20 metres in early summer and deepens to 15–25 metres by August. Kings hold just below it. Your fish finder is the most important tool for locating the break.
+
+### Downrigger Recommendations
+- **Minimum:** Two manual downriggers (Cannon Uni-Troll or similar)
+- **Preferred:** Two electric downriggers (Cannon Digi-Troll or Optimax)
+- **Serious rig:** Four electrics — two stern, two midship
+
+Electric downriggers are worth the investment for Lake Ontario. Manually cranking a 5 kg ball from 45 metres while fighting a king is miserable.
+
+## The Safety Argument
+
+Lake Ontario claims boats every season. The most common scenarios:
+
+1. **Sudden weather change.** Southwest winds build waves faster than most people expect on open water.
+2. **Mechanical failure offshore.** A single-motor boat with no kicker, 12 km out, when the main motor won't start.
+3. **Fog.** Lake Ontario generates fog banks that reduce visibility to near zero. GPS and radar aren't luxury items here.
+
+**Required safety equipment for Lake Ontario (beyond regulatory minimums):**
+- Marine VHF radio (handheld backup recommended)
+- GPS / chartplotter
+- Anchor with 30+ metres of line (for emergency positioning)
+- EPIRB or PLB (personal locator beacon) for offshore runs
+- Proper PFDs for all aboard — not cushions, actual wearable PFDs
+- Weather radio or app with marine forecasts
+
+The Canadian Coast Guard monitors VHF Channel 16. Cell coverage is unreliable 10+ km offshore.
+
+## Motor Recommendation Summary
+
+| Boat Type | Main Motor | Kicker | Best For |
+|---|---|---|---|
+| 18–20ft aluminum deep-V | Mercury 150 Pro XS | 9.9 ProKicker CT | Entry-level Lake Ontario salmon |
+| 20–22ft aluminum deep-V | Mercury 200 FourStroke | 9.9–15hp ProKicker | Serious north shore fishing |
+| 20–22ft fiberglass deep-V | Mercury 200 Pro XS | 15hp ProKicker | Performance + offshore capability |
+| 22–26ft fiberglass sport | Mercury 250–300 Verado | 15–20hp FourStroke | Full offshore salmon rig |
+| Charter / guide boat | Mercury 250–300 Verado | 15–20hp ProKicker | All-day, all-season reliability |
+
+## SmartCraft and VesselView: Why They Matter Offshore
+
+When you're 12 km offshore with a full load of fish and the wind is picking up, real-time engine data isn't a gadget — it's critical information:
+
+- **Fuel remaining and range calculation:** Know exactly whether you can make port or need to head in now.
+- **Engine temperature and voltage:** Catch cooling or charging problems before they strand you.
+- **Speed over ground:** Precise trolling speed data for dialing in your presentation.
+- **Engine hours and maintenance alerts:** Professional-grade fleet management for charter operators.
+    `,
+    faqs: [
+      {
+        question: 'What size boat do I need for Lake Ontario salmon fishing?',
+        answer: 'Minimum 18ft deep-V hull, but 20-22ft is the practical standard. Lake Ontario generates significant waves quickly, and you need a hull that handles 1-2 metre chop safely. Flat-bottom and pontoon boats are not appropriate for offshore salmon fishing.'
+      },
+      {
+        question: 'How far offshore do you fish for salmon on Lake Ontario?',
+        answer: 'On the Ontario north shore, productive summer salmon water is typically 5-15 km offshore, following the thermocline at 25-50 metres depth. Spring and fall fishing can be closer to shore as fish stage near tributary mouths.'
+      },
+      {
+        question: 'Do I need a kicker motor for Lake Ontario?',
+        answer: 'Strongly recommended. A dedicated kicker like the Mercury 9.9 ProKicker Command Thrust provides consistent trolling speeds, reduces main motor wear, and serves as critical safety redundancy if your main motor fails offshore.'
+      },
+      {
+        question: 'What HP motor do I need for Lake Ontario salmon fishing?',
+        answer: 'Minimum 150hp on an 18-20ft boat. For 20-22ft boats fishing regularly offshore, 200hp is the right choice. Charter and sport fishing boats in the 22-26ft range typically run 250-300hp. The motor needs to handle loaded weight in rough conditions, not just calm water.'
+      },
+      {
+        question: 'What is the best time of year for Lake Ontario salmon fishing?',
+        answer: 'Kings are available April through October on the north shore. Peak offshore trolling is July through September. Fall staging near river mouths (Port Hope, Cobourg) peaks in September-October. Brown trout are excellent in spring (April-May) and late fall (November).'
+      },
+      {
+        question: 'What ports are best for Lake Ontario salmon fishing near Rice Lake?',
+        answer: 'Port Hope and Cobourg are the closest north shore ports to Rice Lake and Harris Boat Works. Both have public launches, fuel, and fish cleaning stations. Brighton (Presqu\\\'ile Bay) and Trenton are also within easy driving distance.'
+      },
+      {
+        question: 'How many downriggers do I need for Lake Ontario?',
+        answer: 'Minimum two. Most serious salmon anglers run four — two stern-mounted and two midship. Electric downriggers are strongly recommended for Lake Ontario depths. Manually cranking from 40+ metres while fighting a fish is impractical.'
+      }
+    ]
   }
 ];
 
