@@ -7553,7 +7553,7 @@ If you want to tune your setup for this year's conditions, or just nail down a p
     slug: 'mercury-boost-software-upgrade-eligibility-2026',
     title: 'Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?',
     description: 'Mercury Boost is a dealer-installed software calibration that improves mid-range acceleration by 5–21% on select FourStroke, Pro XS, and Verado engines. Check eligibility by serial number.',
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-boost-software-upgrade.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-14',
     dateModified: '2026-04-14',
