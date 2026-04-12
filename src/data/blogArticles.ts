@@ -5488,15 +5488,15 @@ We'll provide:
       },
       {
         question: 'Will 2026 motors go on sale when 2027 comes out?',
-        answer: 'Often yes. Dealers may discount remaining 2026 inventory to make room for 2027 models. Best deals depend on what\\\'s in stock and demand.'
+        answer: 'Often yes. Dealers may discount remaining 2026 inventory to make room for 2027 models. Best deals depend on what\'s in stock and demand.'
       },
       {
         question: 'Are 2027 models significantly different from 2026?',
-        answer: 'It varies by model. Some years bring major changes, others are refinements. We\\\'ll provide honest assessments of differences when 2027 specs are announced.'
+        answer: 'It varies by model. Some years bring major changes, others are refinements. We\'ll provide honest assessments of differences when 2027 specs are announced.'
       },
       {
         question: 'What about Mercury Avator electric outboards?',
-        answer: 'Mercury\\\'s Avator electric line continues to expand with models from 7.5e to 110e. For larger motors, four-stroke remains the choice. Contact us for latest electric availability and pricing.'
+        answer: 'Mercury\'s Avator electric line continues to expand with models from 7.5e to 110e. For larger motors, four-stroke remains the choice. Contact us for latest electric availability and pricing.'
       }
     ]
   },
