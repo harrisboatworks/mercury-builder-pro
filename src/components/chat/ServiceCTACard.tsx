@@ -58,13 +58,15 @@ export function ServiceCTACard({ data }: ServiceCTACardProps) {
             <Phone className="w-3.5 h-3.5" />
             Call Service
           </a>
-          <Link
-            to="/contact"
+          <a
+            href="https://calendly.com/harrisboatworks/sales-consultation-clone"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex-1 py-2.5 px-3 text-sm font-medium text-white bg-orange-600 rounded-lg hover:bg-orange-700 transition-colors flex items-center justify-center gap-1.5"
           >
             <Calendar className="w-3.5 h-3.5" />
             Book Online
-          </Link>
+          </a>
         </div>
       </div>
     </motion.div>
