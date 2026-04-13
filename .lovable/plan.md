@@ -1,36 +1,39 @@
 
 
-# Enforce Promo Expiry in Agent Quote API
+# Fix: Revert Bad sale_price Data on 19 Motors
 
-## What's changing
-The agent API currently applies expired promotions (rebates, bonus warranty years) because it only checks `is_active = true` without verifying `end_date`. Adding a single date filter to two queries fixes this.
+## What happened
+The migration I ran (`20260413102733`) set `sale_price = dealer_price` on 19 motors where `dealer_price >= msrp`. For the motors where `dealer_price == msrp` (all 19 of them), this means `sale_price` now equals `msrp`, which:
 
-## Changes in `supabase/functions/agent-quote-api/index.ts`
+1. **Prevents future discounts from working** — the frontend picks up `sale_price` first (line 476), so even if `dealer_price` later drops below `msrp`, the stale `sale_price = msrp` would be used instead
+2. **Is incorrect data** — `sale_price` should represent an intentional retail sale price, not a copy of `dealer_price` when there's no actual discount
 
-### 1. `listPromotions()` — line 482
-Add `.or('end_date.is.null,end_date.gte.' + new Date().toISOString())` after the `.eq("is_active", true)` line.
+## What the site looked like before
+These 19 motors (9.9hp through 250hp where dealer_price == msrp) showed **no struck-through MSRP** before the migration too — they genuinely have no markup discount. The 40 ELPT at $10,830 never showed a crossed-out price. So the visual display hasn't changed, but the data is now dirty.
 
-### 2. `createQuote()` — line 828
-Same date filter added after `.eq("is_active", true)`.
+## The fix
 
-### 3. Add "no promo" warning — after line 832
-When `activePromo` is null after the filtered query, push a warning:
+### 1. Database migration — revert sale_price to NULL
+```sql
+UPDATE motor_models
+SET sale_price = NULL, updated_at = now()
+WHERE sale_price IS NOT NULL
+  AND dealer_price IS NOT NULL
+  AND msrp IS NOT NULL
+  AND sale_price = dealer_price
+  AND dealer_price >= msrp;
 ```
-if (!activePromo) {
-  promoWarnings.push("No active promotions currently available. Standard 3-year warranty applies.");
-}
-```
+This reverses exactly what the previous migration did — sets `sale_price` back to NULL on those 19 motors.
 
-### Why `updateQuote()` doesn't need changes
-It reuses the stored `quoteData.rebateAmount` and `quoteData.warrantyConfig` from the original quote — it doesn't re-fetch promotions. Existing quotes keep their original promo terms, which is correct behavior.
+### 2. No code changes needed
+The frontend and agent API pricing hierarchies are already correct. The problem was purely a data issue from the migration.
 
-### What happens automatically
-- `promoWarrantyYears` becomes 0 when no promo is found → warranty reverts to 3 years
-- Rebate stays $0 → no discount applied
-- When a new promo is added with `is_active = true` and a future `end_date`, everything reactivates with zero code changes
+## Result
+- Motors where `dealer_price < msrp` (like the 50 ELPT) continue showing the discount correctly
+- Motors where `dealer_price == msrp` (like the 40 ELPT) show no discount — which is correct, there is no discount to show
+- `sale_price` is clean and available for future admin-set promotions
 
-## File changed
-| File | Change |
-|------|--------|
-| `supabase/functions/agent-quote-api/index.ts` | Add `end_date` filter to `listPromotions()` and `createQuote()` queries; add "no promo" warning |
+| Change | Detail |
+|--------|--------|
+| Migration | Revert `sale_price` to NULL on 19 motors where it was incorrectly set to `dealer_price = msrp` |
 
