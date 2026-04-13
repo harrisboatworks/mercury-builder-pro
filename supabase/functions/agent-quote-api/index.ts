@@ -795,11 +795,22 @@ async function createQuote(supabase: any, body: any) {
     .single();
   if (motorErr || !motor) throw new Error(`Motor not found: ${motor_id}`);
 
-  // Match frontend pricing logic: sale_price → dealer_price (if < msrp) → msrp → base_price
-  // Note: base_price is dealer cost on many entries, so msrp must come before it
-  const motorPrice = motor.sale_price || 
-    (motor.dealer_price && motor.dealer_price < motor.msrp ? motor.dealer_price : null) || 
-    motor.msrp || motor.base_price || 0;
+  // Match frontend pricing logic exactly (MotorSelectionPage.tsx):
+  // 1. Check manual_overrides first (admin-set prices)
+  // 2. Then: sale_price → dealer_price (if < msrp) → msrp → base_price
+  const overrides = motor.manual_overrides || {};
+  const msrpVal = overrides.base_price || motor.msrp || motor.base_price || 0;
+  
+  // Check if manual sale price has expired
+  const manualSaleExpired = overrides.sale_price_expires_at 
+    ? new Date(overrides.sale_price_expires_at) < new Date() 
+    : false;
+  
+  const salePrice = (!manualSaleExpired && overrides.sale_price) || 
+    motor.sale_price || 
+    (motor.dealer_price && motor.dealer_price < (motor.msrp || msrpVal) ? motor.dealer_price : null);
+  
+  const motorPrice = salePrice || msrpVal;
   const adminDiscount = Math.max(0, body.admin_discount || 0);
   const customItems: Array<{ name: string; price: number }> = body.custom_items || [];
   const customItemsTotal = customItems.reduce((sum: number, i: any) => sum + (i.price || 0), 0);
@@ -1021,14 +1032,14 @@ async function createQuote(supabase: any, body: any) {
     motorId: motor.id,
     motorModel: motor.model_display || motor.model,
     motorHp: motor.horsepower,
-    motorMsrp: motor.msrp,
+    motorMsrp: msrpVal,
     motorPrice,
     motor: {
       id: motor.id,
       model: motor.model_display || motor.model,
       hp: motor.horsepower,
       price: motorPrice,
-      msrp: motor.msrp,
+      msrp: msrpVal,
       salePrice: motorPrice,
       dealerPrice: motor.dealer_price,
       basePrice: motor.base_price,
