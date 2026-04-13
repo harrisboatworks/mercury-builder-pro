@@ -232,6 +232,30 @@ export type Database = {
         }
         Relationships: []
       }
+      customer_memory: {
+        Row: {
+          created_at: string | null
+          customer_id: number
+          id: string
+          notes: string
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          customer_id: number
+          id?: string
+          notes?: string
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          customer_id?: number
+          id?: string
+          notes?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       customer_quotes: {
         Row: {
           admin_discount: number | null
@@ -2606,6 +2630,36 @@ export type Database = {
           ip_address?: unknown
           user_agent?: string | null
           user_id?: string
+        }
+        Relationships: []
+      }
+      sms_conversation_archive: {
+        Row: {
+          archived_at: string | null
+          customer_id: number | null
+          customer_name: string | null
+          from_phone: string
+          id: string
+          message_count: number | null
+          messages: Json
+        }
+        Insert: {
+          archived_at?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          from_phone: string
+          id?: string
+          message_count?: number | null
+          messages?: Json
+        }
+        Update: {
+          archived_at?: string | null
+          customer_id?: number | null
+          customer_name?: string | null
+          from_phone?: string
+          id?: string
+          message_count?: number | null
+          messages?: Json
         }
         Relationships: []
       }
