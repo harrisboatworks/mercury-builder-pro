@@ -23,19 +23,13 @@ export function getPriceDisplayState(
     return { callForPrice: true, hasSale: false, savingsRounded: 0, percent: 0, isArtificialDiscount: false };
   }
 
-  // Inflate base price if it equals sale price OR if sale is missing and inflateEqualPrices is enabled
+  // Show real prices — no artificial inflation
   let adjustedBase = base as number;
-  let effectiveSale = sale || base as number; // Use base as sale if sale is missing
+  let effectiveSale = sale || base as number;
   let isArtificialDiscount = false;
   
-  if (inflateEqualPrices && (
-    (typeof sale === 'number' && sale > 0 && base === sale) || // Explicit equal prices
-    ((!sale || sale <= 0) && typeof base === 'number' && base > 0) // Missing sale price
-  )) {
-    adjustedBase = (base as number) * 1.1; // Inflate by 10%
-    effectiveSale = base as number; // Use original base as the sale price
-    isArtificialDiscount = true;
-  }
+  // If sale equals base or is missing, there's simply no discount to show
+  // inflateEqualPrices param is kept for API compat but no longer inflates
 
   const hasSale = effectiveSale > 0 && effectiveSale < adjustedBase;
 
