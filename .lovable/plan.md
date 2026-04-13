@@ -1,61 +1,47 @@
 
-Fix the missing MSRP display on the live motor selection page
 
-What I found
-- This is not a database-missing-MSRP problem anymore.
-- I checked live data: `motor_models` has MSRP on 135/135 motors, with 0 missing MSRP rows.
-- The live route `/quote/motor-selection` uses `src/pages/quote/MotorSelectionPage.tsx`, which renders `MotorCardPreview`.
-- Those live components suppress the struck-through MSRP whenever the resolved selling price is equal to MSRP:
-  - `MotorCardPreview.tsx` only shows MSRP when `msrp > price`
-  - `MotorDetailsPremiumModal.tsx` / `MotorDetailsSheet.tsx` only show it when `msrp !== price`
-- Result: about 24 motors currently have MSRP in the DB, but the UI hides it.
-- The older `src/components/quote-builder/MotorSelection.tsx` already has the “always show MSRP/Our Price” display logic via `getPriceDisplayState(..., true)`, but the live page is not using that path.
+# Fix All Motor Pricing — Full Database Correction
 
-Implementation plan
-1. Do not touch the database again
-   - No more `sale_price` data edits.
-   - Keep the rollback in place; this is now a presentation bug, not a data bug.
+## Problem
+26 motors have corrupted `msrp` and/or `dealer_price` values. Some are catastrophically wrong (115 ProXS CT showing $8,599 instead of $20,190). The correct values are already in two CSV files in the project.
 
-2. Centralize the display rule in `src/lib/pricing.ts`
-   - Add a shared helper that returns display values, not just flags:
-     - `displayMsrp`
-     - `displayPrice`
-     - `showMsrp`
-     - `showSavings`
-     - `savingsRounded`
-     - `isArtificialDiscount`
-   - Reuse the existing “inflate equal prices” behavior already in the codebase so equal-price motors still render as “MSRP / Our Price” on selection surfaces.
-   - Keep this display-only. Actual quote totals and saved prices must not change.
+## Data sources
+- `public/mercury-dealer-prices.csv` — has MSRP (col 3) and Our Price (col 4, labeled "Base Price +10%") for all 133 motors
+- `src/data/mercury-official-pricing.csv` — has Our Price (col 3) for all motors (cross-reference)
 
-3. Fix every live pricing surface on `/quote/motor-selection`
-   - Update:
-     - `src/components/motors/MotorCardPreview.tsx`
-     - `src/components/motors/MotorDetailsPremiumModal.tsx`
-     - `src/components/motors/MotorDetailsSheet.tsx`
-     - `src/components/motors/MotorCardPremium.tsx`
-   - Replace the current raw checks (`msrp > price`, `msrp !== price`) with the shared display helper so cards, modal, and detail bar all agree.
+## Plan
 
-4. Fix the shared pricing component too
-   - Update `src/components/pricing/LuxuryPriceDisplay.tsx` so it actually respects artificial/equal-price display states.
-   - Right now it computes `priceState` but still uses raw `msrp !== salePrice` logic, so it can reproduce the same bug elsewhere.
+### 1. Migration: Update all 133 motors from CSV data
+Write a SQL migration that sets correct `msrp` and `dealer_price` for every brochure motor using model_number as the key. Values come directly from `mercury-dealer-prices.csv`:
+- `msrp` = CSV column 3 (MSRP)
+- `dealer_price` = CSV column 4 (Our Price)
 
-5. Remove drift between old and new selection flows
-   - Refactor `src/components/quote-builder/MotorSelection.tsx` to use the same shared display helper instead of its local duplicate calculations.
-   - That keeps the legacy builder, staging pages, and live route from drifting again.
+This fixes all 26 corrupted motors AND ensures the other 107 are still correct.
 
-Validation
-- Confirm equal-price motors now show MSRP + Our Price on the live page:
-  - 40 ELPT FourStroke
-  - 90 ELPT FourStroke
-- Confirm true-discount motors still show real savings, not synthetic-only savings:
-  - examples where `dealer_price < msrp`
-- Confirm card, modal, and detail sheet all show the same pricing presentation.
-- Confirm quote math, financing math, and saved quote records are unchanged.
+**Will preserve your 9.9 manual override pricing** — those use `manual_overrides->sale_price` which is a separate field and takes priority in the UI. The migration only touches `msrp` and `dealer_price`.
 
-Technical note
-- Root cause: UI suppression, not missing MSRP data.
-- Current DB status:
-  - 135 total motors
-  - 135 with MSRP
-  - 0 missing MSRP
-  - about 24 currently hidden by front-end equality checks
+### 2. Remove artificial 10% MSRP inflation from `src/lib/pricing.ts`
+Once every motor has `dealer_price < msrp`, the fake inflation in `getDisplayPrices()` is unnecessary. Remove that branch so the site only shows real prices.
+
+### 3. Verify the 4 motors with manual override sale prices
+Confirm these still display correctly after the fix:
+- 1A10301LK (9.9hp) — override sale $3,299
+- 1A10201LK (9.9hp) — override sale $2,999
+- 1A10311LK (9.9hp) — override sale $3,399
+- 1A10211LK (9.9hp) — override sale $2,999
+
+These will now show: MSRP (from CSV) struck through → Our Price (from override) → SAVE (real difference).
+
+## Result
+- Every motor shows accurate MSRP and Our Price from the official price list
+- Red SAVE badge shows real savings on every motor
+- No fake/inflated pricing anywhere
+- Your 9.9 override promotions continue working
+- Quote math, financing, and saved records unchanged
+
+| Change | Detail |
+|--------|--------|
+| Migration | UPDATE `msrp` and `dealer_price` for all 133 brochure motors from CSV |
+| `src/lib/pricing.ts` | Remove artificial 10% inflation — real data only |
+| Files touched | 1 migration + 1 code file |
+
