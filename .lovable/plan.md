@@ -1,39 +1,61 @@
 
+Fix the missing MSRP display on the live motor selection page
 
-# Fix: Revert Bad sale_price Data on 19 Motors
+What I found
+- This is not a database-missing-MSRP problem anymore.
+- I checked live data: `motor_models` has MSRP on 135/135 motors, with 0 missing MSRP rows.
+- The live route `/quote/motor-selection` uses `src/pages/quote/MotorSelectionPage.tsx`, which renders `MotorCardPreview`.
+- Those live components suppress the struck-through MSRP whenever the resolved selling price is equal to MSRP:
+  - `MotorCardPreview.tsx` only shows MSRP when `msrp > price`
+  - `MotorDetailsPremiumModal.tsx` / `MotorDetailsSheet.tsx` only show it when `msrp !== price`
+- Result: about 24 motors currently have MSRP in the DB, but the UI hides it.
+- The older `src/components/quote-builder/MotorSelection.tsx` already has the “always show MSRP/Our Price” display logic via `getPriceDisplayState(..., true)`, but the live page is not using that path.
 
-## What happened
-The migration I ran (`20260413102733`) set `sale_price = dealer_price` on 19 motors where `dealer_price >= msrp`. For the motors where `dealer_price == msrp` (all 19 of them), this means `sale_price` now equals `msrp`, which:
+Implementation plan
+1. Do not touch the database again
+   - No more `sale_price` data edits.
+   - Keep the rollback in place; this is now a presentation bug, not a data bug.
 
-1. **Prevents future discounts from working** — the frontend picks up `sale_price` first (line 476), so even if `dealer_price` later drops below `msrp`, the stale `sale_price = msrp` would be used instead
-2. **Is incorrect data** — `sale_price` should represent an intentional retail sale price, not a copy of `dealer_price` when there's no actual discount
+2. Centralize the display rule in `src/lib/pricing.ts`
+   - Add a shared helper that returns display values, not just flags:
+     - `displayMsrp`
+     - `displayPrice`
+     - `showMsrp`
+     - `showSavings`
+     - `savingsRounded`
+     - `isArtificialDiscount`
+   - Reuse the existing “inflate equal prices” behavior already in the codebase so equal-price motors still render as “MSRP / Our Price” on selection surfaces.
+   - Keep this display-only. Actual quote totals and saved prices must not change.
 
-## What the site looked like before
-These 19 motors (9.9hp through 250hp where dealer_price == msrp) showed **no struck-through MSRP** before the migration too — they genuinely have no markup discount. The 40 ELPT at $10,830 never showed a crossed-out price. So the visual display hasn't changed, but the data is now dirty.
+3. Fix every live pricing surface on `/quote/motor-selection`
+   - Update:
+     - `src/components/motors/MotorCardPreview.tsx`
+     - `src/components/motors/MotorDetailsPremiumModal.tsx`
+     - `src/components/motors/MotorDetailsSheet.tsx`
+     - `src/components/motors/MotorCardPremium.tsx`
+   - Replace the current raw checks (`msrp > price`, `msrp !== price`) with the shared display helper so cards, modal, and detail bar all agree.
 
-## The fix
+4. Fix the shared pricing component too
+   - Update `src/components/pricing/LuxuryPriceDisplay.tsx` so it actually respects artificial/equal-price display states.
+   - Right now it computes `priceState` but still uses raw `msrp !== salePrice` logic, so it can reproduce the same bug elsewhere.
 
-### 1. Database migration — revert sale_price to NULL
-```sql
-UPDATE motor_models
-SET sale_price = NULL, updated_at = now()
-WHERE sale_price IS NOT NULL
-  AND dealer_price IS NOT NULL
-  AND msrp IS NOT NULL
-  AND sale_price = dealer_price
-  AND dealer_price >= msrp;
-```
-This reverses exactly what the previous migration did — sets `sale_price` back to NULL on those 19 motors.
+5. Remove drift between old and new selection flows
+   - Refactor `src/components/quote-builder/MotorSelection.tsx` to use the same shared display helper instead of its local duplicate calculations.
+   - That keeps the legacy builder, staging pages, and live route from drifting again.
 
-### 2. No code changes needed
-The frontend and agent API pricing hierarchies are already correct. The problem was purely a data issue from the migration.
+Validation
+- Confirm equal-price motors now show MSRP + Our Price on the live page:
+  - 40 ELPT FourStroke
+  - 90 ELPT FourStroke
+- Confirm true-discount motors still show real savings, not synthetic-only savings:
+  - examples where `dealer_price < msrp`
+- Confirm card, modal, and detail sheet all show the same pricing presentation.
+- Confirm quote math, financing math, and saved quote records are unchanged.
 
-## Result
-- Motors where `dealer_price < msrp` (like the 50 ELPT) continue showing the discount correctly
-- Motors where `dealer_price == msrp` (like the 40 ELPT) show no discount — which is correct, there is no discount to show
-- `sale_price` is clean and available for future admin-set promotions
-
-| Change | Detail |
-|--------|--------|
-| Migration | Revert `sale_price` to NULL on 19 motors where it was incorrectly set to `dealer_price = msrp` |
-
+Technical note
+- Root cause: UI suppression, not missing MSRP data.
+- Current DB status:
+  - 135 total motors
+  - 135 with MSRP
+  - 0 missing MSRP
+  - about 24 currently hidden by front-end equality checks
