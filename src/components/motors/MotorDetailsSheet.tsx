@@ -962,14 +962,17 @@ export default function MotorDetailsSheet({
                     )}
                   </>;
                 })()}
-                <div className="text-right">
-                  {typeof price === "number" && <MonthlyPaymentDisplay motorPrice={price} />}
-                  {activePromo && (
-                    <p className="text-xs font-light text-blue-600 mt-0.5">
-                      {activePromo.rate}% APR
-                    </p>
-                  )}
-                </div>
+                {promoText && (
+                  <p className="text-xs font-light text-orange-600 mt-0.5">{promoText}</p>
+                )}
+              </div>
+              <div className="text-right">
+                {typeof price === "number" && <MonthlyPaymentDisplay motorPrice={price} />}
+                {activePromo && (
+                  <p className="text-xs font-light text-blue-600 mt-0.5">
+                    {activePromo.rate}% APR
+                  </p>
+                )}
               </div>
               
             {/* Key Spec Badges - All Features - Mobile */}
