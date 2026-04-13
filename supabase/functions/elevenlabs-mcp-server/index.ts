@@ -9,7 +9,8 @@ const corsHeaders = {
 
 /**
  * Resolve the customer-facing selling price using the standard hierarchy:
- * sale_price → dealer_price (if < msrp) → base_price → msrp
+ * sale_price → dealer_price (if < msrp) → msrp → base_price
+ * Note: base_price is dealer cost on many entries, so msrp must come before it
  */
 function getSellingPrice(m: Record<string, unknown>): number | null {
   const msrp = m.msrp as number | null;
@@ -19,8 +20,8 @@ function getSellingPrice(m: Record<string, unknown>): number | null {
 
   if (salePrice) return salePrice;
   if (dealerPrice && msrp && dealerPrice < msrp) return dealerPrice;
-  if (basePrice) return basePrice;
-  return msrp;
+  if (msrp) return msrp;
+  return basePrice;
 }
 
 /** Format a resolved selling price for display */

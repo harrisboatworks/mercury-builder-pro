@@ -795,10 +795,11 @@ async function createQuote(supabase: any, body: any) {
     .single();
   if (motorErr || !motor) throw new Error(`Motor not found: ${motor_id}`);
 
-  // Match frontend pricing logic: sale_price > dealer_price (if < msrp) > base_price > msrp
+  // Match frontend pricing logic: sale_price → dealer_price (if < msrp) → msrp → base_price
+  // Note: base_price is dealer cost on many entries, so msrp must come before it
   const motorPrice = motor.sale_price || 
     (motor.dealer_price && motor.dealer_price < motor.msrp ? motor.dealer_price : null) || 
-    motor.base_price || motor.msrp || 0;
+    motor.msrp || motor.base_price || 0;
   const adminDiscount = Math.max(0, body.admin_discount || 0);
   const customItems: Array<{ name: string; price: number }> = body.custom_items || [];
   const customItemsTotal = customItems.reduce((sum: number, i: any) => sum + (i.price || 0), 0);

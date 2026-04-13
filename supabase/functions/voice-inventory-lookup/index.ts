@@ -128,7 +128,8 @@ function formatPriceForVoice(price: number | null | undefined): string | null {
   }
 }
 
-// Resolve selling price: sale_price → dealer_price (if < msrp) → base_price → msrp
+// Resolve selling price: sale_price → dealer_price (if < msrp) → msrp → base_price
+// Note: base_price is dealer cost on many entries, so msrp must come before it
 function getVoiceSellingPrice(m: Record<string, unknown>): number | null {
   const msrp = (m.msrp as number) || null;
   const salePrice = (m.sale_price as number) || null;
@@ -136,8 +137,8 @@ function getVoiceSellingPrice(m: Record<string, unknown>): number | null {
   const basePrice = (m.base_price as number) || null;
   if (salePrice) return salePrice;
   if (dealerPrice && msrp && dealerPrice < msrp) return dealerPrice;
-  if (basePrice) return basePrice;
-  return msrp;
+  if (msrp) return msrp;
+  return basePrice;
 }
 
 // Build motor object with parsed configuration
@@ -152,8 +153,8 @@ function buildMotorResponse(m: Record<string, unknown>) {
   const basePrice = m.base_price as number | null;
   const price = salePrice 
     || (dealerPrice && msrp && dealerPrice < msrp ? dealerPrice : null)
-    || basePrice 
-    || msrp;
+    || msrp 
+    || basePrice;
   
   return {
     model: modelDisplay,
