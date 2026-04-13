@@ -50,3 +50,78 @@ export function getPriceDisplayState(
 
   return { callForPrice, hasSale, savingsRounded, percent, isArtificialDiscount };
 }
+
+/**
+ * Shared display helper that resolves the MSRP, selling price, and whether to show the struck-through MSRP.
+ * Uses inflate-equal-prices logic so motors where price == msrp still show "MSRP / Our Price".
+ * This is DISPLAY-ONLY — never use these values for quote math or saved records.
+ */
+export type DisplayPrices = {
+  displayMsrp: number | null;
+  displayPrice: number | null;
+  showMsrp: boolean;
+  showSavings: boolean;
+  savingsRounded: number;
+  isArtificialDiscount: boolean;
+  callForPrice: boolean;
+};
+
+export function getDisplayPrices(
+  msrp?: number | null,
+  sellingPrice?: number | null
+): DisplayPrices {
+  const hasPrice = typeof sellingPrice === 'number' && sellingPrice > 0;
+  const hasMsrp = typeof msrp === 'number' && msrp > 0;
+
+  if (!hasPrice) {
+    return {
+      displayMsrp: null,
+      displayPrice: null,
+      showMsrp: false,
+      showSavings: false,
+      savingsRounded: 0,
+      isArtificialDiscount: false,
+      callForPrice: true,
+    };
+  }
+
+  // Real discount: msrp > price
+  if (hasMsrp && msrp! > sellingPrice!) {
+    const savings = Math.round(msrp! - sellingPrice!);
+    return {
+      displayMsrp: msrp!,
+      displayPrice: sellingPrice!,
+      showMsrp: true,
+      showSavings: savings > 0,
+      savingsRounded: savings,
+      isArtificialDiscount: false,
+      callForPrice: false,
+    };
+  }
+
+  // Equal or no msrp: inflate by 10% for display only
+  if (hasMsrp) {
+    const inflatedMsrp = Math.round(msrp! * 1.1);
+    const savings = Math.round(inflatedMsrp - sellingPrice!);
+    return {
+      displayMsrp: inflatedMsrp,
+      displayPrice: sellingPrice!,
+      showMsrp: true,
+      showSavings: savings > 0,
+      savingsRounded: savings,
+      isArtificialDiscount: true,
+      callForPrice: false,
+    };
+  }
+
+  // No msrp at all — just show the price
+  return {
+    displayMsrp: null,
+    displayPrice: sellingPrice!,
+    showMsrp: false,
+    showSavings: false,
+    savingsRounded: 0,
+    isArtificialDiscount: false,
+    callForPrice: false,
+  };
+}

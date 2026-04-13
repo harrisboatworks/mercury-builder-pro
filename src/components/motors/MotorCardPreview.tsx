@@ -22,6 +22,7 @@ import type { Motor } from '../../lib/motor-helpers';
 import { isTillerMotor, getMotorImageByPriority, getMotorImageGallery, decodeModelName, cleanMotorName } from '../../lib/motor-helpers';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { formatMotorDisplayName } from '@/lib/motor-display-formatter';
+import { getDisplayPrices } from '@/lib/pricing';
 import { getFinancingTerm } from '@/lib/finance';
 
 import { preloadConfiguratorImagesHighPriority } from '@/lib/configurator-preload';
@@ -346,13 +347,8 @@ function MotorCardPreviewInner({
     return null;
   };
 
-  // Calculate savings for display
-  const calculateSavings = () => {
-    if (msrp && price && msrp > price) {
-      return msrp - price;
-    }
-    return 0;
-  };
+  // Use shared display pricing helper — always shows MSRP (inflated if equal)
+  const dp = getDisplayPrices(msrp, price);
 
   // Format promo text elegantly
   const getPromoDisplay = () => {
@@ -576,12 +572,19 @@ function MotorCardPreviewInner({
             
             {/* Pricing - Refined Hierarchy */}
             <div className="pt-4 pb-2">
-              {msrp && price && msrp > price && (
-                <p className="text-sm text-gray-400 font-light line-through">${msrp.toLocaleString()}</p>
+              {dp.showMsrp && dp.displayMsrp && (
+                <p className="text-sm text-gray-400 font-light line-through">${dp.displayMsrp.toLocaleString()}</p>
               )}
               <p className="text-2xl font-semibold tracking-tight text-gray-900">
-                {price ? `$${price.toLocaleString()}` : 'Call for Price'}
+                {dp.callForPrice ? 'Call for Price' : `$${(dp.displayPrice ?? 0).toLocaleString()}`}
               </p>
+              
+              {/* Savings line */}
+              {dp.showSavings && dp.savingsRounded > 0 && (
+                <p className="text-sm text-red-600 font-medium mt-1">
+                  SAVE ${dp.savingsRounded.toLocaleString()}
+                </p>
+              )}
               
               {/* Monthly Payment Estimate */}
               {monthlyPayment && (
