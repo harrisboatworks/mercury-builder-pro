@@ -974,6 +974,7 @@ export default function MotorDetailsSheet({
                   </p>
                 )}
               </div>
+              </div>
               
             {/* Key Spec Badges - All Features - Mobile */}
             <div className="flex flex-wrap gap-1.5 max-h-16 overflow-y-auto">
