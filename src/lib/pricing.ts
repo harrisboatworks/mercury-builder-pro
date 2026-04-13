@@ -93,12 +93,12 @@ export function getDisplayPrices(
     };
   }
 
-  // Equal or no real discount: show real MSRP but NO fake savings
+  // Equal or no real discount: just show the selling price
   if (hasMsrp) {
     return {
-      displayMsrp: msrp!,
+      displayMsrp: null,
       displayPrice: sellingPrice!,
-      showMsrp: true,
+      showMsrp: false,
       showSavings: false,
       savingsRounded: 0,
       isArtificialDiscount: false,
