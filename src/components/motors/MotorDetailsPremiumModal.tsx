@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
+import { getDisplayPrices } from '@/lib/pricing';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useNavigate } from "react-router-dom";
 import { Calculator, CheckCircle, Download, Loader2, Calendar, Shield, BarChart3, X, Wrench, Settings, Package, Gauge, AlertCircle, Gift, ChevronLeft, Bell, Sparkles, ChevronDown, MessageCircle } from "lucide-react";
@@ -870,31 +871,36 @@ export default function MotorDetailsPremiumModal({
                     <p className="text-[10px] tracking-[0.15em] uppercase text-gray-400 font-light mb-2">
                       from
                     </p>
-                    {msrp && typeof msrp === "number" && msrp !== price && (
-                      <p className="text-base text-gray-400 font-normal line-through">
-                        {money(msrp)}
-                      </p>
-                    )}
-                    <p className="text-3xl font-bold tracking-tight text-gray-900 mt-1">
-                      {typeof price === "number" ? money(price) : 'Call for Price'}
-                    </p>
-                    {/* SAVE + Ask AI inline */}
-                    <div className="flex items-center justify-between mt-2">
-                      {msrp && price && msrp > price ? (
-                        <p className="text-sm text-red-600 font-normal">
-                          SAVE {money(msrp - price)}
+                    {(() => {
+                      const dp = getDisplayPrices(msrp, price);
+                      return <>
+                        {dp.showMsrp && dp.displayMsrp && (
+                          <p className="text-base text-gray-400 font-normal line-through">
+                            {money(dp.displayMsrp)}
+                          </p>
+                        )}
+                        <p className="text-3xl font-bold tracking-tight text-gray-900 mt-1">
+                          {dp.callForPrice ? 'Call for Price' : money(dp.displayPrice!)}
                         </p>
-                      ) : (
-                        <div />
-                      )}
-                      <button
-                        onClick={handleAskAI}
-                        className="flex items-center gap-1.5 text-xs text-amber-600 hover:text-amber-700 font-medium transition-colors"
-                      >
-                        <Sparkles className="w-3.5 h-3.5" />
-                        Ask AI
-                      </button>
-                    </div>
+                        {/* SAVE + Ask AI inline */}
+                        <div className="flex items-center justify-between mt-2">
+                          {dp.showSavings && dp.savingsRounded > 0 ? (
+                            <p className="text-sm text-red-600 font-normal">
+                              SAVE {money(dp.savingsRounded)}
+                            </p>
+                          ) : (
+                            <div />
+                          )}
+                          <button
+                            onClick={handleAskAI}
+                            className="flex items-center gap-1.5 text-xs text-amber-600 hover:text-amber-700 font-medium transition-colors"
+                          >
+                            <Sparkles className="w-3.5 h-3.5" />
+                            Ask AI
+                          </button>
+                        </div>
+                      </>;
+                    })()}
                   </div>
                   
                   {/* Key Spec Badges - All Features */}

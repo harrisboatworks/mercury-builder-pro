@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
+import { getDisplayPrices } from '@/lib/pricing';
 import { useNavigate } from "react-router-dom";
 import { Calculator, Ship, Gauge, Fuel, MapPin, Wrench, AlertTriangle, CheckCircle, FileText, ExternalLink, Download, Loader2, Calendar, Shield, BarChart3, X, Settings, Video, Gift, Package, AlertCircle as AlertCircleIcon, ChevronLeft } from "lucide-react";
 import { SpecSheetPDFDownload } from './SpecSheetPDFDownload';
@@ -944,17 +945,23 @@ export default function MotorDetailsSheet({
             <div className="sm:hidden space-y-2">
               {/* Price & Payment Info */}
               <div className="flex justify-between items-start">
-                <div>
-                  {msrp && typeof msrp === "number" && msrp !== price && (
-                    <p className="text-gray-500 line-through text-xs">MSRP {money(msrp)}</p>
-                  )}
-                  <p className="text-lg font-light text-black">
-                    {typeof price === "number" ? money(price) : 'Call for Price'}
-                  </p>
-                  {promoText && (
-                    <p className="text-xs font-light text-orange-600 mt-0.5">{promoText}</p>
-                  )}
-                </div>
+              <div>
+                {(() => {
+                  const dp = getDisplayPrices(msrp, price);
+                  return <>
+                    {dp.showMsrp && dp.displayMsrp && (
+                      <p className="text-gray-500 line-through text-xs">MSRP {money(dp.displayMsrp)}</p>
+                    )}
+                    <p className="text-lg font-light text-black">
+                      {dp.callForPrice ? 'Call for Price' : money(dp.displayPrice!)}
+                    </p>
+                    {dp.showSavings && dp.savingsRounded > 0 && (
+                      <p className="text-xs text-red-600 font-medium mt-0.5">
+                        SAVE {money(dp.savingsRounded)}
+                      </p>
+                    )}
+                  </>;
+                })()}
                 <div className="text-right">
                   {typeof price === "number" && <MonthlyPaymentDisplay motorPrice={price} />}
                   {activePromo && (

@@ -14,6 +14,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { getFinancingDisplay } from '@/lib/finance';
 import { getPriceDisplayState } from '@/lib/pricing';
+import { getDisplayPrices } from '@/lib/pricing';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { ShareLinkButton } from './ShareLinkButton';
 import { AskQuestionButton } from './AskQuestionButton';
@@ -307,12 +308,22 @@ export default function MotorCardPremium({
             
             {/* Pricing - Clean & Direct */}
             <div className="mt-4">
-              {msrp && price && msrp > price && (
-                <p className="text-base text-gray-500 line-through font-light">${msrp.toLocaleString()}</p>
-              )}
-              <p className="text-3xl font-light text-black mt-1">
-                {price ? `$${price.toLocaleString()}` : 'Call for Price'}
-              </p>
+              {(() => {
+                const dp = getDisplayPrices(msrp, price);
+                return <>
+                  {dp.showMsrp && dp.displayMsrp && (
+                    <p className="text-base text-gray-500 line-through font-light">${dp.displayMsrp.toLocaleString()}</p>
+                  )}
+                  <p className="text-3xl font-light text-black mt-1">
+                    {dp.callForPrice ? 'Call for Price' : `$${(dp.displayPrice ?? 0).toLocaleString()}`}
+                  </p>
+                  {dp.showSavings && dp.savingsRounded > 0 && (
+                    <p className="text-sm text-red-600 font-medium mt-1">
+                      SAVE ${dp.savingsRounded.toLocaleString()}
+                    </p>
+                  )}
+                </>;
+              })()}
             </div>
             
             {/* Delivery Status - Subtle with Icon */}

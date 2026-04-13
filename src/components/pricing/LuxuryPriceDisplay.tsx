@@ -1,5 +1,6 @@
 import { cn } from '@/lib/utils';
-import { getPriceDisplayState } from '@/lib/pricing';
+import { getPriceDisplayState, getDisplayPrices } from '@/lib/pricing';
+import { getPriceThemeConfig, type PriceStyle } from '@/config/pricingThemes';
 import { getPriceThemeConfig, type PriceStyle } from '@/config/pricingThemes';
 
 interface LuxuryPriceDisplayProps {
@@ -38,14 +39,15 @@ export function LuxuryPriceDisplay({
       </div>
     );
   }
-
-  const displayPrice = salePrice || msrp;
-  const showMSRP = msrp && salePrice && msrp !== salePrice;
+  // Use shared display helper for consistent MSRP/price resolution
+  const dp = getDisplayPrices(msrp, salePrice);
+  const displayPrice = dp.displayPrice;
+  const showMSRP = dp.showMsrp;
 
   return (
     <div className={cn("space-y-1", className)}>
       {/* MSRP (if showing sale price) */}
-      {showMSRP && (
+      {showMSRP && dp.displayMsrp && (
         <p 
           style={{
             color: themeConfig.msrp.color,
@@ -53,7 +55,7 @@ export function LuxuryPriceDisplay({
             textDecoration: themeConfig.msrp.textDecoration,
           }}
         >
-          MSRP ${msrp?.toLocaleString()}
+          MSRP ${dp.displayMsrp.toLocaleString()}
         </p>
       )}
       
@@ -85,7 +87,7 @@ export function LuxuryPriceDisplay({
       )}
       
       {/* Savings Line */}
-      {showSavings && priceState.hasSale && priceState.savingsRounded > 0 && (
+      {showSavings && dp.showSavings && dp.savingsRounded > 0 && (
         <p 
           style={{
             color: themeConfig.savings.color,
@@ -93,7 +95,7 @@ export function LuxuryPriceDisplay({
             fontWeight: themeConfig.savings.fontWeight,
           }}
         >
-          {themeConfig.savings.format(priceState.savingsRounded)}
+          {themeConfig.savings.format(dp.savingsRounded)}
         </p>
       )}
     </div>
