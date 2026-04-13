@@ -440,7 +440,7 @@ async function listMotors(supabase: any, body: any) {
 
   let query = supabase
     .from("motor_models")
-    .select("id, model_display, model, horsepower, msrp, sale_price, dealer_price, in_stock, model_key, motor_type, year, base_price")
+    .select("id, model_display, model, horsepower, msrp, sale_price, dealer_price, in_stock, model_key, motor_type, year, base_price, manual_overrides")
     .eq("is_brochure", true)
     .order("horsepower", { ascending: true })
     .limit(limit);
@@ -459,18 +459,32 @@ async function listMotors(supabase: any, body: any) {
 
   return json({
     ok: true,
-    motors: (data || []).map((m: any) => ({
-      id: m.id,
-      model_display: m.model_display,
-      horsepower: m.horsepower,
-      msrp: m.msrp,
-      sale_price: m.sale_price || (m.dealer_price && m.dealer_price < m.msrp ? m.dealer_price : null) || m.base_price,
-      dealer_price: m.dealer_price,
-      in_stock: m.in_stock,
-      model_key: m.model_key,
-      motor_type: m.motor_type,
-      year: m.year,
-    })),
+    motors: (data || []).map((m: any) => {
+      const overrides = m.manual_overrides || {};
+      const manualSaleExpired = overrides.sale_price_expires_at
+        ? new Date(overrides.sale_price_expires_at) < new Date()
+        : false;
+
+      const msrpVal = overrides.base_price || m.msrp || m.base_price || 0;
+      const sellingPrice = (!manualSaleExpired && overrides.sale_price) ||
+        m.sale_price ||
+        (m.dealer_price && m.dealer_price < msrpVal ? m.dealer_price : null) ||
+        msrpVal;
+      const savings = msrpVal > sellingPrice ? Math.round(msrpVal - sellingPrice) : 0;
+
+      return {
+        id: m.id,
+        model_display: m.model_display,
+        horsepower: m.horsepower,
+        msrp: msrpVal,
+        our_price: sellingPrice,
+        savings,
+        in_stock: m.in_stock,
+        model_key: m.model_key,
+        motor_type: m.motor_type,
+        year: m.year,
+      };
+    }),
     count: (data || []).length,
   });
 }
