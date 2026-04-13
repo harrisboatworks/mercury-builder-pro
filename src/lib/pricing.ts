@@ -93,15 +93,17 @@ export function getDisplayPrices(
     };
   }
 
-  // Equal or no real discount: just show the selling price
+  // Equal or no real discount: inflate MSRP by 10% for display so every card shows savings
   if (hasMsrp) {
+    const inflatedMsrp = Math.round(msrp! * 1.1);
+    const savings = Math.round(inflatedMsrp - sellingPrice!);
     return {
-      displayMsrp: null,
+      displayMsrp: inflatedMsrp,
       displayPrice: sellingPrice!,
-      showMsrp: false,
-      showSavings: false,
-      savingsRounded: 0,
-      isArtificialDiscount: false,
+      showMsrp: true,
+      showSavings: savings > 0,
+      savingsRounded: savings,
+      isArtificialDiscount: true,
       callForPrice: false,
     };
   }
