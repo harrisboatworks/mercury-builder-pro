@@ -23,19 +23,13 @@ export function getPriceDisplayState(
     return { callForPrice: true, hasSale: false, savingsRounded: 0, percent: 0, isArtificialDiscount: false };
   }
 
-  // Inflate base price if it equals sale price OR if sale is missing and inflateEqualPrices is enabled
+  // Show real prices — no artificial inflation
   let adjustedBase = base as number;
-  let effectiveSale = sale || base as number; // Use base as sale if sale is missing
+  let effectiveSale = sale || base as number;
   let isArtificialDiscount = false;
   
-  if (inflateEqualPrices && (
-    (typeof sale === 'number' && sale > 0 && base === sale) || // Explicit equal prices
-    ((!sale || sale <= 0) && typeof base === 'number' && base > 0) // Missing sale price
-  )) {
-    adjustedBase = (base as number) * 1.1; // Inflate by 10%
-    effectiveSale = base as number; // Use original base as the sale price
-    isArtificialDiscount = true;
-  }
+  // If sale equals base or is missing, there's simply no discount to show
+  // inflateEqualPrices param is kept for API compat but no longer inflates
 
   const hasSale = effectiveSale > 0 && effectiveSale < adjustedBase;
 
@@ -85,7 +79,7 @@ export function getDisplayPrices(
     };
   }
 
-  // Real discount: msrp > price
+  // Real discount: msrp > price — show real MSRP struck through with real savings
   if (hasMsrp && msrp! > sellingPrice!) {
     const savings = Math.round(msrp! - sellingPrice!);
     return {
@@ -99,17 +93,15 @@ export function getDisplayPrices(
     };
   }
 
-  // Equal or no msrp: inflate by 10% for display only
+  // Equal or no real discount: show real MSRP but NO fake savings
   if (hasMsrp) {
-    const inflatedMsrp = Math.round(msrp! * 1.1);
-    const savings = Math.round(inflatedMsrp - sellingPrice!);
     return {
-      displayMsrp: inflatedMsrp,
+      displayMsrp: msrp!,
       displayPrice: sellingPrice!,
       showMsrp: true,
-      showSavings: savings > 0,
-      savingsRounded: savings,
-      isArtificialDiscount: true,
+      showSavings: false,
+      savingsRounded: 0,
+      isArtificialDiscount: false,
       callForPrice: false,
     };
   }
