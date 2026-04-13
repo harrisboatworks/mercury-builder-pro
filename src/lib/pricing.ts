@@ -85,7 +85,7 @@ export function getDisplayPrices(
     };
   }
 
-  // Real discount: msrp > price
+  // Real discount: msrp > price — show real MSRP struck through with real savings
   if (hasMsrp && msrp! > sellingPrice!) {
     const savings = Math.round(msrp! - sellingPrice!);
     return {
@@ -99,17 +99,15 @@ export function getDisplayPrices(
     };
   }
 
-  // Equal or no msrp: inflate by 10% for display only
+  // Equal or no real discount: show real MSRP but NO fake savings
   if (hasMsrp) {
-    const inflatedMsrp = Math.round(msrp! * 1.1);
-    const savings = Math.round(inflatedMsrp - sellingPrice!);
     return {
-      displayMsrp: inflatedMsrp,
+      displayMsrp: msrp!,
       displayPrice: sellingPrice!,
       showMsrp: true,
-      showSavings: savings > 0,
-      savingsRounded: savings,
-      isArtificialDiscount: true,
+      showSavings: false,
+      savingsRounded: 0,
+      isArtificialDiscount: false,
       callForPrice: false,
     };
   }
