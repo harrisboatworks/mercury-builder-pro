@@ -1,7 +1,6 @@
 import { cn } from '@/lib/utils';
 import { getPriceDisplayState, getDisplayPrices } from '@/lib/pricing';
 import { getPriceThemeConfig, type PriceStyle } from '@/config/pricingThemes';
-import { getPriceThemeConfig, type PriceStyle } from '@/config/pricingThemes';
 
 interface LuxuryPriceDisplayProps {
   msrp?: number | null;
