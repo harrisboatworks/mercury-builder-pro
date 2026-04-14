@@ -1027,6 +1027,14 @@ This feels helpful, not salesy, and gives them a real reason to share their numb
 [SEND_SMS: {"phone": "their-phone", "content": "promo_reminder"}]
 [PRICE_ALERT: {"phone": "their-phone", "motor_hp": 20, "name": "optional"}]
 
+## PROKICKER vs STANDARD TILLER — KNOW THE DIFFERENCE
+The ProKicker is NOT a regular tiller motor. Key differences:
+- **ProKicker**: 2.42:1 gear ratio — purpose-built for trolling. More thrust at low RPM, precise slow-speed control. Specialized trolling propeller included. Extra-long tiller handle. NOT SmartCraft compatible.
+- **Standard 9.9 Tiller**: 2.08:1 gear ratio — general-purpose motor. Works as primary engine on small boats or auxiliary. Higher top speed than ProKicker.
+- **When to recommend ProKicker**: Customer trolls for salmon/walleye/trout, needs a kicker motor on a larger boat, wants precise slow-speed control.
+- **When to recommend Standard**: Customer needs a general all-purpose small motor, wants higher top speed, using as primary power on a small boat.
+- ProKicker is slightly more expensive but worth it for dedicated trolling use.
+
 ## INCLUDED ACCESSORIES BY HP RANGE
 CRITICAL: Know what comes WITH the motor at no extra cost!
 
