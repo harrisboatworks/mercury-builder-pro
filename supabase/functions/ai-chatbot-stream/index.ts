@@ -165,7 +165,7 @@ function buildGroupedInventorySummary(motors: any[]): string {
     .sort(([a], [b]) => parseFloat(a) - parseFloat(b))
     .map(([hp, models]) => {
       const totalQty = models.reduce((sum, m) => sum + (m.stock_quantity || 1), 0);
-      const prices = models.map(m => m.sale_price || m.msrp || 0).filter(p => p > 0);
+      const prices = models.map(m => getOurPrice(m)).filter(p => p > 0);
       const minPrice = Math.min(...prices);
       const maxPrice = Math.max(...prices);
       const priceStr = prices.length === 0 ? 'TBD' :
@@ -784,7 +784,7 @@ function buildSystemPrompt(
     
     currentMotorContext = `
 ## MOTOR THEY'RE VIEWING
-**${m.model || m.model_display}** - ${m.horsepower || m.hp}HP @ $${(m.sale_price || m.msrp || m.price || 0).toLocaleString()} CAD
+**${m.model || m.model_display}** - ${m.horsepower || m.hp}HP @ $${getOurPrice(m).toLocaleString()} CAD
 **Decoded from model code: ${decodedStartType}, ${decodedControlType}**
 ${familyInfo ? `${familyInfo}` : ''}`;
 
@@ -1881,11 +1881,11 @@ serve(async (req) => {
 ## COMPARISON REQUEST: ${comparison.hp1}HP vs ${comparison.hp2}HP
 
 **${motor1.horsepower}HP ${motor1.family || 'FourStroke'}**
-- Price: $${(motor1.sale_price || motor1.msrp || 0).toLocaleString()}
+- Price: $${getOurPrice(motor1).toLocaleString()}
 ${family1Info ? `- ${family1Info}` : ''}
 
 **${motor2.horsepower}HP ${motor2.family || 'FourStroke'}**
-- Price: $${(motor2.sale_price || motor2.msrp || 0).toLocaleString()}
+- Price: $${getOurPrice(motor2).toLocaleString()}
 ${family2Info ? `- ${family2Info}` : ''}
 
 Provide a helpful, balanced comparison covering: power difference, price difference, best use cases for each, and your recommendation based on their needs.`;
@@ -1899,7 +1899,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       if (hpMotors.length > 0) {
         hpSpecificContext = `\n\n## ${detectedHP}HP MOTORS - WE HAVE ${hpMotors.length}:\n` + 
           hpMotors.map(m => {
-            const price = m.sale_price || m.msrp || 0;
+            const price = getOurPrice(m);
             // Use relative URLs for cleaner display and proper internal routing
             return `- [${m.model_display}](/quote/motor-selection?motor=${m.id}) - $${price.toLocaleString()}`;
           }).join('\n') +
