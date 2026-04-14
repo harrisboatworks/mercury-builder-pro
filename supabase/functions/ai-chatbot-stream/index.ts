@@ -95,7 +95,7 @@ function detectWhyBuyQuestion(message: string): boolean {
 async function getMotorsForComparison(hp1: number, hp2: number) {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('model, horsepower, msrp, sale_price, family, description, features')
+    .select('model, horsepower, msrp, sale_price, dealer_price, family, description, features')
     .or(`horsepower.eq.${hp1},horsepower.eq.${hp2}`)
     .limit(10);
   return { 
@@ -108,7 +108,7 @@ async function getMotorsForComparison(hp1: number, hp2: number) {
 async function getCurrentMotorInventory() {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('model, model_display, horsepower, msrp, sale_price, family, description, features, specifications, shaft, control, in_stock, stock_quantity')
+    .select('model, model_display, horsepower, msrp, sale_price, dealer_price, family, description, features, specifications, shaft, control, in_stock, stock_quantity')
     .eq('in_stock', true)
     .order('horsepower', { ascending: true });
   return motors || [];
@@ -136,7 +136,7 @@ function detectHPQuery(message: string): number | null {
 async function getMotorsForHP(hp: number) {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('id, model_display, horsepower, msrp, sale_price, family, shaft, control, in_stock, stock_quantity')
+    .select('id, model_display, horsepower, msrp, sale_price, dealer_price, family, shaft, control, in_stock, stock_quantity')
     .eq('horsepower', hp)
     .order('in_stock', { ascending: false })
     .order('msrp', { ascending: true });
