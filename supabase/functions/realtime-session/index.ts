@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "npm:zod@3.22.4";
 
 const corsHeaders = {
@@ -15,6 +16,63 @@ const sessionContextSchema = z.object({
   }).optional(),
   currentPage: z.string().max(500).optional(),
 }).optional();
+
+const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// Fetch active promotions from database
+async function getActivePromotions(): Promise<string> {
+  try {
+    const today = new Date().toISOString().split('T')[0];
+    const { data: promos } = await supabase
+      .from('promotions')
+      .select('name, details, start_date, end_date, warranty_extra_years, promo_options, bonus_title, bonus_description')
+      .eq('is_active', true)
+      .or(`end_date.is.null,end_date.gte.${today}`)
+      .order('priority', { ascending: false });
+
+    if (!promos || promos.length === 0) {
+      return 'No active promotions at this time.';
+    }
+
+    return promos.map(p => {
+      let promoText = `**${p.name}**`;
+      if (p.start_date && p.end_date) {
+        promoText += ` (${p.start_date} – ${p.end_date})`;
+      }
+      if (p.warranty_extra_years) {
+        promoText += `\n- ${3 + p.warranty_extra_years}-year factory warranty (3 standard + ${p.warranty_extra_years} bonus)`;
+      }
+      if (p.bonus_description) {
+        promoText += `\n- ${p.bonus_description}`;
+      }
+      // Extract rebate matrix from promo_options if available
+      if (p.promo_options && typeof p.promo_options === 'object') {
+        const options = p.promo_options as any;
+        if (options.rebate_matrix) {
+          promoText += '\n- Rebate amounts by HP: ' + 
+            Object.entries(options.rebate_matrix).map(([hp, amt]) => `${hp} = $${amt}`).join(', ');
+        }
+        if (options.choices && Array.isArray(options.choices)) {
+          promoText += '\n- Customer picks ONE bonus: ' + options.choices.join(', ');
+        }
+      }
+      // Also check details JSON for rebate info
+      if (p.details && typeof p.details === 'object') {
+        const details = p.details as any;
+        if (details.rebate_matrix && !promoText.includes('Rebate amounts')) {
+          promoText += '\n- Rebate amounts by HP: ' + 
+            Object.entries(details.rebate_matrix).map(([hp, amt]) => `${hp} = $${amt}`).join(', ');
+        }
+      }
+      return promoText;
+    }).join('\n\n');
+  } catch (err) {
+    console.error('[realtime-session] Error fetching promotions:', err);
+    return 'Promotions data unavailable — direct customer to /promotions page.';
+  }
+}
 
 serve(async (req) => {
   // Handle CORS preflight
@@ -54,6 +112,10 @@ serve(async (req) => {
       if (currentPage.includes('summary')) contextInfo += 'They are reviewing their quote. ';
       if (currentPage.includes('financing')) contextInfo += 'They are exploring financing options. ';
     }
+
+    // Fetch current promotions from the database
+    const activePromotions = await getActivePromotions();
+    console.log('[realtime-session] Fetched promotions from DB');
 
     // Request ephemeral token from OpenAI with FULL session configuration
     const response = await fetch("https://api.openai.com/v1/realtime/sessions", {
@@ -113,6 +175,11 @@ COMPETITOR POLICY (CRITICAL):
 NO DELIVERY POLICY:
 All pickups must be in person with photo ID - it's an industry-wide fraud thing. If asked about delivery, say: "All pickups have to be in person with photo ID - industry-wide fraud thing, unfortunately. But we're easy to find!" Then offer directions to Gores Landing.
 
+PROKICKER vs STANDARD TILLER:
+- ProKicker (9.9HP): Purpose-built trolling/kicker motor with a 2.42:1 gear ratio for precise slow-speed control. More thrust at low RPM, specialized trolling propeller, extra-long tiller handle. NOT SmartCraft compatible. Best for: salmon/walleye trolling, kicker motor on larger boats.
+- Standard 9.9 Tiller: General-purpose motor with 2.08:1 gear ratio. Higher top speed, works as primary or auxiliary. Good all-around small motor.
+- If someone asks about trolling or kicker motors, recommend the ProKicker. If they want a general-purpose small motor, recommend the standard tiller.
+
 RESERVING A MOTOR:
 Customers can reserve with a refundable deposit:
 - $200 for small motors (under 25HP)
@@ -124,14 +191,15 @@ Checkout accepts Apple Pay, Google Pay, and Link for quick payment. Just say: "A
 Deposits are fully refundable. Balance due at pickup.
 
 FINANCING MINIMUM:
-**Financing is only available for purchases $5,000 and up (before tax).** For smaller motors under $5k, recommend the Get 7 Factory Cash Rebate instead. Don't offer financing calculations or "6 Months No Payments" for sub-$5k purchases.
+**Financing is only available for purchases $5,000 and up (before tax).** For smaller motors under $5k, recommend the Factory Cash Rebate instead. Don't offer financing calculations or "6 Months No Payments" for sub-$5k purchases.
 
-CURRENT PROMOTION — GET 7 (Jan 12 – Mar 31, 2026):
-- 7-year factory warranty on ALL Mercury outboards (3 standard + 4 bonus)
-- Customer picks ONE bonus: 6 Months No Payments, Special Financing (from 2.99%), OR Factory Cash Rebate
-- Rebate amounts by HP: 2.5-6HP = $100, 8-15HP = $250, 20-30HP = $350, 40-60HP = $500, 75-115HP = $600, 150HP = $750, 175-300HP = $850, 350-400HP = $1,000
-- NEVER say "no rebates" — every HP range qualifies
+CURRENT PROMOTIONS (from database — always use this, never make up promo details):
+${activePromotions}
+
+PROMOTION RULES:
+- NEVER say "no rebates" — every HP range qualifies for some benefit
 - Direct them to the quote builder or /promotions for full details
+- If unsure about specific rebate amounts, check the data above or direct to /promotions
 
 You can discuss motors, pricing, financing, trade-ins, and help them through the quote process. Be helpful but not pushy.`
       }),
