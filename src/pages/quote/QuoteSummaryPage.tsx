@@ -1045,6 +1045,8 @@ export default function QuoteSummaryPage() {
                     onApplyForFinancing={handleApplyForFinancing}
                     selectedPromoOption={state.selectedPromoOption}
                     selectedPromoValue={getPromoDisplayValue(state.selectedPromoOption, hp)}
+                    warrantyPromoYears={promoYears > 0 ? promoYears : undefined}
+                    totalCoverageYears={selectedPackageCoverageYears}
                   />
                 </motion.div>
 
@@ -1149,6 +1151,7 @@ export default function QuoteSummaryPage() {
                   onReserve={handleReserveDeposit}
                   depositAmount={depositAmount}
                   coverageYears={selectedPackageCoverageYears}
+                  promoWarrantyYears={promoYears > 0 ? promoYears : undefined}
                   onDownloadPDF={handleDownloadPDF}
                   onSaveForLater={() => {
                     if (user) {

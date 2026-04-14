@@ -39,9 +39,10 @@ interface PricingTableProps {
   packageName?: string;
   includesInstallation?: boolean;
   onApplyForFinancing?: () => void;
-  // Selected promo option from "Choose One" bonus
   selectedPromoOption?: 'no_payments' | 'special_financing' | 'cash_rebate' | null;
   selectedPromoValue?: string;
+  warrantyPromoYears?: number;
+  totalCoverageYears?: number;
 }
 
 export function PricingTable({ 
@@ -54,7 +55,9 @@ export function PricingTable({
   includesInstallation = false,
   onApplyForFinancing,
   selectedPromoOption,
-  selectedPromoValue
+  selectedPromoValue,
+  warrantyPromoYears,
+  totalCoverageYears
 }: PricingTableProps) {
   return (
     <Card className="p-6 space-y-1 bg-white">
