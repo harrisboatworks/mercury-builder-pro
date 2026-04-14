@@ -39,7 +39,14 @@ const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Detect comparison queries
+// Correct pricing hierarchy: sale_price > dealer_price (if < msrp) > msrp
+function getOurPrice(m: { sale_price?: number | null; dealer_price?: number | null; msrp?: number | null; price?: number | null }): number {
+  if (m.sale_price && m.sale_price > 0) return m.sale_price;
+  if (m.dealer_price && m.msrp && m.dealer_price < m.msrp) return m.dealer_price;
+  return m.msrp || (m as any).price || 0;
+}
+
+
 function detectComparisonQuery(message: string): { isComparison: boolean; hp1?: number; hp2?: number } {
   const patterns = [
     /compare\s+(\d+)\s*hp?\s*(vs|versus|or|and|to|with)\s*(\d+)\s*hp?/i,
