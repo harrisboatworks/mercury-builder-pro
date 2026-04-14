@@ -90,6 +90,29 @@ export const MERCURY_FAMILIES = {
       "Commercial warranty available"
     ]
   },
+  prokicker: {
+    name: "ProKicker",
+    tagline: "Purpose-built trolling and kicker motor",
+    description: "The ProKicker is NOT a regular tiller motor — it's a specialized trolling/kicker engine with a unique high gear ratio (2.42:1 vs standard 2.08:1) designed for precise slow-speed control. Optimized for salmon/walleye trolling and as a kicker motor on larger boats.",
+    key_tech: [
+      "High 2.42:1 gear ratio for slow-speed thrust",
+      "Specialized trolling propeller included",
+      "Extra-long tiller handle with throttle friction",
+      "Shallow water drive standard",
+      "Large alternator for electronics",
+      "NOT compatible with SmartCraft Connect"
+    ],
+    best_for: "Trolling (salmon, walleye, trout), kicker motor on 18-26ft boats, precise slow-speed maneuvering",
+    hp_range: "9.9 HP",
+    price_positioning: "Slight premium over standard 9.9 tiller — worth it for dedicated trolling",
+    selling_points: [
+      "Holds trolling speed with precision — no surging",
+      "More thrust at low RPM than standard 9.9",
+      "Purpose-built propeller for trolling applications",
+      "Extra-long tiller for comfortable reach from helm"
+    ],
+    vs_standard_tiller: "A standard 9.9 tiller (2.08:1 gear ratio) is a general-purpose motor — great as a primary engine on small boats or auxiliary power. The ProKicker's higher gear ratio sacrifices some top speed for dramatically better slow-speed control and thrust. If you're trolling regularly, the ProKicker is the right choice. If you need a general-purpose small motor, go standard."
+  },
   portable: {
     name: "Portable FourStroke",
     tagline: "Take the power with you",
@@ -425,6 +448,10 @@ export function getMotorFamilyInfo(familyName: string): string {
   if (normalizedName.includes('proxs') || normalizedName.includes('pro xs')) {
     const family = MERCURY_FAMILIES.pro_xs;
     return `**${family.name}**: ${family.tagline}. ${family.description} Best for: ${family.best_for}`;
+  }
+  if (normalizedName.includes('prokicker') || normalizedName.includes('pro kicker') || normalizedName.includes('pro-kicker')) {
+    const family = MERCURY_FAMILIES.prokicker;
+    return `**${family.name}**: ${family.tagline}. ${family.description} Best for: ${family.best_for}. ${family.vs_standard_tiller}`;
   }
   if (normalizedName.includes('seapro') || normalizedName.includes('sea pro')) {
     const family = MERCURY_FAMILIES.seapro;

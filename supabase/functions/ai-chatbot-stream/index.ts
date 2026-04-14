@@ -39,7 +39,14 @@ const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Detect comparison queries
+// Correct pricing hierarchy: sale_price > dealer_price (if < msrp) > msrp
+function getOurPrice(m: { sale_price?: number | null; dealer_price?: number | null; msrp?: number | null; price?: number | null }): number {
+  if (m.sale_price && m.sale_price > 0) return m.sale_price;
+  if (m.dealer_price && m.msrp && m.dealer_price < m.msrp) return m.dealer_price;
+  return m.msrp || (m as any).price || 0;
+}
+
+
 function detectComparisonQuery(message: string): { isComparison: boolean; hp1?: number; hp2?: number } {
   const patterns = [
     /compare\s+(\d+)\s*hp?\s*(vs|versus|or|and|to|with)\s*(\d+)\s*hp?/i,
@@ -95,7 +102,7 @@ function detectWhyBuyQuestion(message: string): boolean {
 async function getMotorsForComparison(hp1: number, hp2: number) {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('model, horsepower, msrp, sale_price, family, description, features')
+    .select('model, horsepower, msrp, sale_price, dealer_price, family, description, features')
     .or(`horsepower.eq.${hp1},horsepower.eq.${hp2}`)
     .limit(10);
   return { 
@@ -108,7 +115,7 @@ async function getMotorsForComparison(hp1: number, hp2: number) {
 async function getCurrentMotorInventory() {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('model, model_display, horsepower, msrp, sale_price, family, description, features, specifications, shaft, control, in_stock, stock_quantity')
+    .select('model, model_display, horsepower, msrp, sale_price, dealer_price, family, description, features, specifications, shaft, control, in_stock, stock_quantity')
     .eq('in_stock', true)
     .order('horsepower', { ascending: true });
   return motors || [];
@@ -136,7 +143,7 @@ function detectHPQuery(message: string): number | null {
 async function getMotorsForHP(hp: number) {
   const { data: motors } = await supabase
     .from('motor_models')
-    .select('id, model_display, horsepower, msrp, sale_price, family, shaft, control, in_stock, stock_quantity')
+    .select('id, model_display, horsepower, msrp, sale_price, dealer_price, family, shaft, control, in_stock, stock_quantity')
     .eq('horsepower', hp)
     .order('in_stock', { ascending: false })
     .order('msrp', { ascending: true });
@@ -158,7 +165,7 @@ function buildGroupedInventorySummary(motors: any[]): string {
     .sort(([a], [b]) => parseFloat(a) - parseFloat(b))
     .map(([hp, models]) => {
       const totalQty = models.reduce((sum, m) => sum + (m.stock_quantity || 1), 0);
-      const prices = models.map(m => m.sale_price || m.msrp || 0).filter(p => p > 0);
+      const prices = models.map(m => getOurPrice(m)).filter(p => p > 0);
       const minPrice = Math.min(...prices);
       const maxPrice = Math.max(...prices);
       const priceStr = prices.length === 0 ? 'TBD' :
@@ -777,7 +784,7 @@ function buildSystemPrompt(
     
     currentMotorContext = `
 ## MOTOR THEY'RE VIEWING
-**${m.model || m.model_display}** - ${m.horsepower || m.hp}HP @ $${(m.sale_price || m.msrp || m.price || 0).toLocaleString()} CAD
+**${m.model || m.model_display}** - ${m.horsepower || m.hp}HP @ $${getOurPrice(m).toLocaleString()} CAD
 **Decoded from model code: ${decodedStartType}, ${decodedControlType}**
 ${familyInfo ? `${familyInfo}` : ''}`;
 
@@ -1019,6 +1026,14 @@ This feels helpful, not salesy, and gives them a real reason to share their numb
 [SEND_SMS: {"phone": "their-phone", "content": "comparison", "motors": ["20HP", "25HP"]}]
 [SEND_SMS: {"phone": "their-phone", "content": "promo_reminder"}]
 [PRICE_ALERT: {"phone": "their-phone", "motor_hp": 20, "name": "optional"}]
+
+## PROKICKER vs STANDARD TILLER — KNOW THE DIFFERENCE
+The ProKicker is NOT a regular tiller motor. Key differences:
+- **ProKicker**: 2.42:1 gear ratio — purpose-built for trolling. More thrust at low RPM, precise slow-speed control. Specialized trolling propeller included. Extra-long tiller handle. NOT SmartCraft compatible.
+- **Standard 9.9 Tiller**: 2.08:1 gear ratio — general-purpose motor. Works as primary engine on small boats or auxiliary. Higher top speed than ProKicker.
+- **When to recommend ProKicker**: Customer trolls for salmon/walleye/trout, needs a kicker motor on a larger boat, wants precise slow-speed control.
+- **When to recommend Standard**: Customer needs a general all-purpose small motor, wants higher top speed, using as primary power on a small boat.
+- ProKicker is slightly more expensive but worth it for dedicated trolling use.
 
 ## INCLUDED ACCESSORIES BY HP RANGE
 CRITICAL: Know what comes WITH the motor at no extra cost!
@@ -1874,11 +1889,11 @@ serve(async (req) => {
 ## COMPARISON REQUEST: ${comparison.hp1}HP vs ${comparison.hp2}HP
 
 **${motor1.horsepower}HP ${motor1.family || 'FourStroke'}**
-- Price: $${(motor1.sale_price || motor1.msrp || 0).toLocaleString()}
+- Price: $${getOurPrice(motor1).toLocaleString()}
 ${family1Info ? `- ${family1Info}` : ''}
 
 **${motor2.horsepower}HP ${motor2.family || 'FourStroke'}**
-- Price: $${(motor2.sale_price || motor2.msrp || 0).toLocaleString()}
+- Price: $${getOurPrice(motor2).toLocaleString()}
 ${family2Info ? `- ${family2Info}` : ''}
 
 Provide a helpful, balanced comparison covering: power difference, price difference, best use cases for each, and your recommendation based on their needs.`;
@@ -1892,7 +1907,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       if (hpMotors.length > 0) {
         hpSpecificContext = `\n\n## ${detectedHP}HP MOTORS - WE HAVE ${hpMotors.length}:\n` + 
           hpMotors.map(m => {
-            const price = m.sale_price || m.msrp || 0;
+            const price = getOurPrice(m);
             // Use relative URLs for cleaner display and proper internal routing
             return `- [${m.model_display}](/quote/motor-selection?motor=${m.id}) - $${price.toLocaleString()}`;
           }).join('\n') +
