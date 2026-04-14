@@ -67,34 +67,46 @@ export type Database = {
       }
       chat_conversations: {
         Row: {
+          channel: string
           context: Json | null
           created_at: string
+          customer_name: string | null
+          customer_phone: string | null
           id: string
           is_active: boolean
           last_message_at: string
           session_id: string | null
+          source_site: string
           updated_at: string
           user_id: string | null
           voice_summary: string | null
         }
         Insert: {
+          channel?: string
           context?: Json | null
           created_at?: string
+          customer_name?: string | null
+          customer_phone?: string | null
           id?: string
           is_active?: boolean
           last_message_at?: string
           session_id?: string | null
+          source_site?: string
           updated_at?: string
           user_id?: string | null
           voice_summary?: string | null
         }
         Update: {
+          channel?: string
           context?: Json | null
           created_at?: string
+          customer_name?: string | null
+          customer_phone?: string | null
           id?: string
           is_active?: boolean
           last_message_at?: string
           session_id?: string | null
+          source_site?: string
           updated_at?: string
           user_id?: string | null
           voice_summary?: string | null
@@ -1887,6 +1899,63 @@ export type Database = {
         }
         Relationships: []
       }
+      payments: {
+        Row: {
+          amount_cents: number
+          checkout_url: string | null
+          created_at: string | null
+          currency: string
+          customer_email: string | null
+          customer_name: string | null
+          customer_phone: string | null
+          description: string | null
+          expires_at: string | null
+          id: string
+          metadata: Json | null
+          paid_at: string | null
+          payment_type: string
+          status: string
+          updated_at: string | null
+          zaprite_order_id: string | null
+        }
+        Insert: {
+          amount_cents?: number
+          checkout_url?: string | null
+          created_at?: string | null
+          currency?: string
+          customer_email?: string | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          description?: string | null
+          expires_at?: string | null
+          id?: string
+          metadata?: Json | null
+          paid_at?: string | null
+          payment_type?: string
+          status?: string
+          updated_at?: string | null
+          zaprite_order_id?: string | null
+        }
+        Update: {
+          amount_cents?: number
+          checkout_url?: string | null
+          created_at?: string | null
+          currency?: string
+          customer_email?: string | null
+          customer_name?: string | null
+          customer_phone?: string | null
+          description?: string | null
+          expires_at?: string | null
+          id?: string
+          metadata?: Json | null
+          paid_at?: string | null
+          payment_type?: string
+          status?: string
+          updated_at?: string | null
+          zaprite_order_id?: string | null
+        }
+        Relationships: []
+      }
       pending_motor_matches: {
         Row: {
           confidence_score: number | null
@@ -2964,6 +3033,45 @@ export type Database = {
         }
         Relationships: []
       }
+      unit_site_content: {
+        Row: {
+          created_at: string | null
+          custom_specs: Json | null
+          description: string | null
+          featured: boolean
+          id: string
+          major_unit_header_id: number
+          photos: Json | null
+          site_visible: boolean
+          sort_order: number | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          custom_specs?: Json | null
+          description?: string | null
+          featured?: boolean
+          id?: string
+          major_unit_header_id: number
+          photos?: Json | null
+          site_visible?: boolean
+          sort_order?: number | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          custom_specs?: Json | null
+          description?: string | null
+          featured?: boolean
+          id?: string
+          major_unit_header_id?: number
+          photos?: Json | null
+          site_visible?: boolean
+          sort_order?: number | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string | null
@@ -3708,6 +3816,7 @@ export type Database = {
         }
         Returns: boolean
       }
+      is_admin: { Args: never; Returns: boolean }
       log_security_event: {
         Args: {
           _action: string
@@ -3719,6 +3828,7 @@ export type Database = {
         }
         Returns: undefined
       }
+      normalize_phone: { Args: { p: string }; Returns: string }
       search_knowledge: {
         Args: { match_count?: number; query_text: string }
         Returns: {
