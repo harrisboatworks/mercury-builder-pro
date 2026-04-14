@@ -109,6 +109,22 @@ export function PricingTable({
           />
         </div>
 
+        {/* Warranty Promotion Banner */}
+        {warrantyPromoYears != null && warrantyPromoYears > 0 && (
+          <div className="mt-2 rounded-lg border border-emerald-200 bg-emerald-50/60 p-3 dark:border-emerald-800 dark:bg-emerald-950/30">
+            <div className="flex items-center gap-2 text-sm font-semibold text-emerald-700 dark:text-emerald-300">
+              <span>🛡️</span>
+              <span>{(totalCoverageYears ?? 3 + warrantyPromoYears)}-Year Factory-Backed Warranty Included</span>
+            </div>
+            <div className="mt-1 text-xs text-emerald-600 dark:text-emerald-400">
+              3 yr standard + {warrantyPromoYears} yr bonus coverage
+            </div>
+            <div className="mt-0.5 text-xs text-muted-foreground">
+              Dealer Promotion
+            </div>
+          </div>
+        )}
+
         {/* Accessories & Setup */}
         {accessoryBreakdown.length > 0 && (
           <div className="space-y-1 pt-2">
