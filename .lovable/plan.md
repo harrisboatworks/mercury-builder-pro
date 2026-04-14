@@ -1,39 +1,50 @@
 
 
-# Pricing Accuracy Audit — All Surfaces
+# Fix: Show 7-Year Warranty Promotion on Quote Summary
 
-## Finding: Everything is consistent and correct
+## Problem
+The warranty promotion is correctly applied (7 years coverage), but there's zero visual indication of it on the summary page. The user sees no promo badge, no warranty banner — just "Coverage: 7 years total" buried in small text.
 
-After tracing the full pricing pipeline across every surface, here's what I confirmed:
+## Changes
 
-### Data layer (database)
-All 133 brochure motors have `dealer_price < msrp` — no corrupted values remain. The 9.9hp manual overrides ($2,999–$3,399) are intact in `manual_overrides->sale_price`.
+### 1. Pass `promoWarrantyYears` to StickySummary
+In `QuoteSummaryPage.tsx`, add the missing prop so the sidebar shows "Includes +4 yrs promo warranty":
+```tsx
+<StickySummary
+  ...existing props...
+  promoWarrantyYears={promoYears > 0 ? promoYears : undefined}
+/>
+```
 
-### Pricing hierarchy (identical everywhere)
-Every pricing surface uses the same resolution order:
-1. `manual_overrides.sale_price` (if not expired)
-2. `sale_price`
-3. `dealer_price` (if less than MSRP)
-4. `msrp` (fallback)
+### 2. Add warranty promo banner to PricingTable
+Add a new prop `warrantyPromoYears` and render a visible badge in the pricing breakdown showing the 7-year warranty promotion, even when there's no dollar discount. This goes between the motor price and accessories sections:
+```
+┌─────────────────────────────────┐
+│ 🛡 7-Year Factory-Backed       │
+│   Warranty Included             │
+│   3 yr standard + 4 yr bonus    │
+│   Dealer Promotion              │
+└─────────────────────────────────┘
+```
 
-### Surfaces verified
+### 3. Pass warranty promo data to PricingTable
+From `QuoteSummaryPage.tsx`, pass the warranty promotion details:
+```tsx
+<PricingTable
+  ...existing props...
+  warrantyPromoYears={promoYears}
+  totalCoverageYears={selectedPackageCoverageYears}
+/>
+```
 
-| Surface | File | How it gets price | Status |
-|---------|------|-------------------|--------|
-| Motor cards | `MotorSelectionPage.tsx` → `MotorCardPreview` | `getDisplayPrices(msrp, price)` | Correct |
-| Motor detail sheet | `MotorDetailsSheet.tsx` | `getDisplayPrices(msrp, price)` | Correct |
-| Motor detail modal | `MotorDetailsPremiumModal.tsx` | `getDisplayPrices(msrp, price)` | Correct |
-| Mobile drawer | `MobileQuoteDrawer.tsx` | `useQuoteRunningTotal()` → `motor.price` | Correct |
-| Unified mobile bar | `UnifiedMobileBar.tsx` | `useQuoteRunningTotal()` → `motor.price` | Correct |
-| Global sticky bar | `GlobalStickyQuoteBar.tsx` | `useQuoteRunningTotal()` | Correct |
-| Quote summary | `QuoteSummaryPage.tsx` | `calculateQuotePricing()` | Correct |
-| Pricing table | `PricingTable.tsx` | Receives `PricingBreakdown` from parent | Correct |
-| Hero price | `HeroPrice.tsx` | Receives calculated values from parent | Correct |
-| Sticky summary | `StickySummary.tsx` | Receives calculated values from parent | Correct |
-| Agent API | `agent-quote-api/index.ts` | Same hierarchy, returns `our_price` + `savings` | Correct |
-| `getDisplayPrices()` | `pricing.ts` | No inflation, real data only | Correct |
-| `getPriceDisplayState()` | `pricing.ts` | No inflation, real data only | Correct |
+## Files changed
+| File | Change |
+|------|--------|
+| `src/pages/quote/QuoteSummaryPage.tsx` | Pass `promoWarrantyYears` to StickySummary and warranty data to PricingTable |
+| `src/components/quote-builder/PricingTable.tsx` | Add warranty promo banner section |
 
-### Conclusion
-No code changes needed. The database fix + inflation removal from the previous steps has made all pricing surfaces accurate and consistent. The drawer, sticky bars, quote summary, motor cards, and agent API all pull from the same corrected data using the same pricing hierarchy.
+## Result
+- Sidebar shows "+4 yrs promo warranty" badge in green
+- Pricing breakdown shows a warranty promotion banner with "7-Year Factory-Backed Warranty Included"
+- No pricing math changes — purely visual
 
