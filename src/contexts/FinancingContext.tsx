@@ -210,6 +210,15 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     saveTimeoutRef.current = setTimeout(() => {
       resetInactivityTimer(); // Reset timer on save activity
       
+      // Strip sensitive PII (SIN, DOB) before persisting to localStorage
+      const stripSensitiveFields = (obj: Record<string, any> | null | undefined) => {
+        if (!obj) return obj;
+        const cleaned = { ...obj };
+        delete cleaned.sin;
+        delete cleaned.dateOfBirth;
+        return cleaned;
+      };
+
       const dataToSave = {
         state: {
           applicationId: state.applicationId,
@@ -217,10 +226,10 @@ export const FinancingProvider: React.FC<{ children: React.ReactNode }> = ({ chi
           currentStep: state.currentStep,
           completedSteps: state.completedSteps,
           purchaseDetails: state.purchaseDetails,
-          applicant: state.applicant,
+          applicant: stripSensitiveFields(state.applicant as Record<string, any> | null),
           employment: state.employment,
           financial: state.financial,
-          coApplicant: state.coApplicant,
+          coApplicant: stripSensitiveFields(state.coApplicant as Record<string, any> | null),
           hasCoApplicant: state.hasCoApplicant,
           references: state.references,
           quoteId: state.quoteId,
