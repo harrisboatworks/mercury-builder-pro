@@ -9,8 +9,8 @@ export function HomepageSEO() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/#webpage`,
         "url": SITE_URL,
-        "name": "Mercury Outboard Repower Quote | Harris Boat Works | Ontario Mercury Dealer",
-        "description": "Get an instant Mercury outboard repower quote online. Harris Boat Works — family-owned Mercury dealer since 1947 on Rice Lake. Serving Toronto, Peterborough & Kawartha Lakes. 2.5–300 HP.",
+        "name": "Mercury Repower Quotes Online — Real Prices, No Forms | Harris Boat Works",
+        "description": "Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake — family-owned since 1947, Mercury dealer since 1965.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "speakable": {
@@ -55,14 +55,14 @@ export function HomepageSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Outboard Repower Quote | Harris Boat Works | Ontario Mercury Dealer</title>
-      <meta name="description" content="Get an instant Mercury outboard repower quote online. Harris Boat Works — family-owned Mercury dealer since 1947 on Rice Lake. Serving Toronto, Peterborough & Kawartha Lakes. 2.5–300 HP." />
-      <meta name="keywords" content="Mercury outboard quote, Mercury repower, Mercury dealer Ontario, Harris Boat Works, Rice Lake Mercury dealer, outboard motor quote, Mercury FourStroke, Mercury Pro XS" />
+      <title>Mercury Repower Quotes Online — Real Prices, No Forms | Harris Boat Works</title>
+      <meta name="description" content="Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake — family-owned since 1947, Mercury dealer since 1965." />
+      <meta name="keywords" content="Mercury outboard quote, Mercury repower Ontario, Mercury dealer Toronto, Harris Boat Works, Rice Lake Mercury dealer, outboard motor pricing, Mercury FourStroke, Mercury Pro XS" />
       <link rel="canonical" href={SITE_URL} />
 
       {/* Open Graph */}
-      <meta property="og:title" content="Mercury Outboard Repower Quote | Harris Boat Works" />
-      <meta property="og:description" content="Get an instant Mercury outboard repower quote online. Family-owned Mercury dealer since 1947 on Rice Lake, Ontario." />
+      <meta property="og:title" content="Mercury Repower Quotes Online — Real Prices, No Forms" />
+      <meta property="og:description" content="Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Family-owned since 1947, Mercury dealer since 1965." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={SITE_URL} />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
@@ -71,8 +71,8 @@ export function HomepageSEO() {
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Outboard Repower Quote | Harris Boat Works" />
-      <meta name="twitter:description" content="Instant Mercury outboard quotes. Family-owned dealer since 1947." />
+      <meta name="twitter:title" content="Mercury Repower Quotes Online — Real Prices, No Forms" />
+      <meta name="twitter:description" content="Instant Mercury outboard quotes. Family-owned since 1947." />
       <meta name="twitter:image" content={`${SITE_URL}/social-share.jpg`} />
 
       <script type="application/ld+json">

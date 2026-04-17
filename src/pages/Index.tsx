@@ -1,606 +1,343 @@
-import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
-import { useActivePromotions } from '@/hooks/useActivePromotions';
-import { useNavigate } from 'react-router-dom';
+import { useMemo } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import {
+  ArrowRight, CheckCircle2, Wrench, RotateCcw, Shield, Phone,
+  ChevronRight, Sparkles, Clock, DollarSign,
+} from 'lucide-react';
+
 import { HomepageSEO } from '@/components/seo/HomepageSEO';
-import { StatusIndicator } from '@/components/StatusIndicator';
-import { MobileQuoteForm } from '@/components/ui/mobile-quote-form';
-import { MobileStickyCTA } from '@/components/ui/mobile-sticky-cta';
+import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { SiteFooter } from '@/components/ui/site-footer';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+
 import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ShoppingCart, RotateCcw, ArrowRight, User, FileText, LogOut, Trash2, AlertTriangle, MessageSquare, DollarSign, Calendar, Shield, Wrench } from 'lucide-react';
-import harrisLogo from '@/assets/harris-logo.png';
 import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
-import { money } from '@/lib/money';
-import { calculateMonthly } from '@/lib/finance';
-import TestFunctionButton from '@/components/TestFunctionButton';
 
-const Index = () => {
-  const [showQuoteForm, setShowQuoteForm] = useState(false);
-  const [showLanding, setShowLanding] = useState(false);
-  const [loadingMessage, setLoadingMessage] = useState('Loading Mercury Quote Builder...');
-  const [loadingProgress, setLoadingProgress] = useState(0);
-  const [showDebug, setShowDebug] = useState(false);
-  const [emergencyMode, setEmergencyMode] = useState(false);
-  
+const HOW_IT_WORKS = [
+  {
+    icon: Wrench,
+    title: 'Pick your Mercury',
+    body: 'Browse the full lineup from 2.5 to 300 HP with live CAD pricing. No "call for quote."',
+  },
+  {
+    icon: RotateCcw,
+    title: 'Configure trade-in & financing',
+    body: 'Get an instant trade-in estimate, choose financing or pay-in-full, and see your real monthly payment.',
+  },
+  {
+    icon: Shield,
+    title: 'Lock it with a refundable deposit',
+    body: 'Hold your motor and pricing with a small refundable deposit. We confirm install date and walk you through next steps.',
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    name: 'Mike R.',
+    location: 'Peterborough, ON',
+    quote: 'Quoted my repower online in 5 minutes. The price I saw was the price I paid — exactly. Repower was done in two days.',
+  },
+  {
+    name: 'Sandra L.',
+    location: 'Toronto, ON',
+    quote: 'I had been calling dealers for weeks. Harris was the only one who showed me real prices upfront. Easy decision.',
+  },
+  {
+    name: 'Dave K.',
+    location: 'Cobourg, ON',
+    quote: 'Family-run, fair prices, and they actually know Mercury motors. Best repower experience I\'ve had in 30 years of boating.',
+  },
+];
+
+export default function Index() {
   const navigate = useNavigate();
-  const hasChecked = useRef(false);
-  const loadingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
-  
-  const { state, isQuoteComplete, getQuoteCompletionStatus, clearQuote } = useQuote();
-  const { user, signOut, isAdmin } = useAuth();
+  const { state, getQuoteCompletionStatus } = useQuote();
+  const { user } = useAuth();
 
-  // Memoize the completion status function to prevent unnecessary re-renders
-  const getCompletionStatus = useCallback(() => {
-    return getQuoteCompletionStatus();
-  }, [state.motor, state.purchasePath, state.boatInfo, state.hasTradein, state.tradeInInfo]);
+  const hasInProgressQuote = useMemo(() => {
+    if (!state?.motor) return false;
+    const status = getQuoteCompletionStatus();
+    return status.hasMotor && !status.isComplete;
+  }, [state?.motor, getQuoteCompletionStatus]);
 
-  // Loading timeout and progress effects
-  useEffect(() => {
-    if (state.isLoading) {
-      console.log('🔄 Index: Starting loading timeout and progress tracking...');
-      
-      // Progressive loading messages
-      const messages = [
-        'Loading Mercury Quote Builder...',
-        'Checking for existing quotes...',
-        'Preparing your quote experience...',
-        'Almost ready...'
-      ];
-      
-      let messageIndex = 0;
-      setLoadingMessage(messages[0]);
-      setLoadingProgress(10);
-      
-      // Update loading message and progress
-      const messageInterval = setInterval(() => {
-        messageIndex = (messageIndex + 1) % messages.length;
-        setLoadingMessage(messages[messageIndex]);
-        setLoadingProgress(prev => Math.min(prev + 20, 90));
-      }, 1000);
-      
-      progressIntervalRef.current = messageInterval;
-      
-      // Emergency timeout - if loading takes more than 8 seconds, force emergency mode
-      loadingTimeoutRef.current = setTimeout(() => {
-        console.warn('⚠️ Index: Emergency timeout reached - forcing emergency mode');
-        setEmergencyMode(true);
-        setLoadingMessage('Loading is taking longer than expected...');
-        setLoadingProgress(100);
-      }, 8000);
-      
-      return () => {
-        if (loadingTimeoutRef.current) {
-          clearTimeout(loadingTimeoutRef.current);
-        }
-        if (progressIntervalRef.current) {
-          clearInterval(progressIntervalRef.current);
-        }
-      };
-    } else {
-      // Clear loading states when no longer loading
-      if (loadingTimeoutRef.current) {
-        clearTimeout(loadingTimeoutRef.current);
-      }
-      if (progressIntervalRef.current) {
-        clearInterval(progressIntervalRef.current);
-      }
-      setLoadingProgress(100);
-    }
-  }, [state.isLoading]);
+  const completionPercent = useMemo(() => {
+    if (!hasInProgressQuote) return 0;
+    const status = getQuoteCompletionStatus();
+    const flags = [
+      status.hasMotor,
+      status.hasPath,
+      status.hasRequiredInfo,
+      Boolean(state.hasTradein === true || state.hasTradein === false),
+      Boolean(state.selectedPromoOption),
+      false, // summary review
+    ];
+    return Math.round((flags.filter(Boolean).length / flags.length) * 100);
+  }, [hasInProgressQuote, getQuoteCompletionStatus, state.hasTradein, state.selectedPromoOption]);
 
-  // Main navigation effect - separated from loading logic
-  useEffect(() => {
-    console.log('🔄 Index: Checking quote status...', { 
-      isLoading: state.isLoading, 
-      hasChecked: hasChecked.current 
-    });
-    
-    // Wait for context to load
-    if (state.isLoading && !emergencyMode) {
-      return;
-    }
-    
-    if (hasChecked.current) return;
-    hasChecked.current = true;
-    
-    const completionStatus = getCompletionStatus();
-    const hasExistingQuote = completionStatus.hasMotor;
-    
-    console.log('📊 Quote status:', completionStatus);
-    
-    if (hasExistingQuote) {
-      console.log('📋 Found existing quote, showing landing options');
-      setShowLanding(true);
-    } else {
-      console.log('🆕 No existing quote, redirecting to motor selection');
-      navigate('/quote/motor-selection');
-    }
-  }, [navigate, state.isLoading, emergencyMode, getCompletionStatus]);
-
-  const { getChooseOneOptions } = useActivePromotions();
-  const hasActiveChooseOne = useMemo(() => getChooseOneOptions().length > 0, [getChooseOneOptions]);
-
-  const handleContinueQuote = () => {
-    const completionStatus = getCompletionStatus();
-    
-    if (completionStatus.isComplete) {
-      navigate('/quote/summary');
-    } else if (completionStatus.hasPath) {
-      // Navigate to appropriate next step
-      if (state.purchasePath === 'installed' && !completionStatus.hasRequiredInfo) {
-        navigate('/quote/boat-info');
-      } else if (!state.completedSteps.includes(4)) {
-        navigate('/quote/trade-in');
-      } else if (!state.selectedPromoOption && hasActiveChooseOne) {
-        navigate('/quote/promo-selection');
-      } else {
-        navigate('/quote/summary');
-      }
-    } else {
-      navigate('/quote/purchase-path');
-    }
-  };
-
-  const handleEmergencyClear = () => {
-    console.log('🚨 Index: Emergency clear localStorage');
-    try {
-      localStorage.removeItem('quoteBuilder');
-      console.log('✅ Index: localStorage cleared successfully');
-      
-      // Force reload the page to restart cleanly
-      window.location.reload();
-    } catch (error) {
-      console.error('❌ Index: Failed to clear localStorage:', error);
-    }
-  };
-
-  const handleForceStart = () => {
-    console.log('🚀 Index: Force start new quote');
-    clearQuote();
-    navigate('/quote/motor-selection');
-  };
-
-  const handleStartFresh = () => {
-    clearQuote();
-    navigate('/quote/motor-selection');
-  };
-
-  const getQuoteSummary = () => {
-    if (!state.motor) return null;
-    
-    // Calculate quote total if we have motor price
-    const motorPrice = state.motor.salePrice || state.motor.basePrice || state.motor.price || 0;
-    const accessoryTotal = 0; // TODO: Add accessory calculation when available
-    const tradeInValue = state.hasTradein && state.tradeInInfo?.estimatedValue || 0;
-    const quoteTotal = motorPrice + accessoryTotal - tradeInValue;
-    
-    // Monthly payment if quote is substantial
-    const monthlyPayment = quoteTotal > 5000 ? calculateMonthly(quoteTotal) : null;
-    
-    // Most valuable info to show
-    const valueHighlights = [];
-    
-    // 1. Quote total (most important)
-    if (quoteTotal > 0) {
-      valueHighlights.push({ 
-        icon: DollarSign, 
-        label: 'Quote Total', 
-        value: money(quoteTotal),
-        primary: true
-      });
-    }
-    
-    // 2. Monthly payment if available
-    if (monthlyPayment) {
-      valueHighlights.push({ 
-        icon: Calendar, 
-        label: 'Monthly Payment', 
-        value: money(monthlyPayment) + '/mo',
-        subtext: 'Rates from 6.99% APR*'
-      });
-    }
-    
-    // 3. Trade-in value if exists
-    if (state.hasTradein && state.tradeInInfo?.estimatedValue) {
-      valueHighlights.push({ 
-        icon: RotateCcw, 
-        label: 'Trade-In Credit', 
-        value: money(state.tradeInInfo.estimatedValue),
-        subtext: `${state.tradeInInfo.make} ${state.tradeInInfo.model}`
-      });
-    }
-    
-    // 4. Warranty if selected
-    if (state.warrantyConfig) {
-      const warrantyYears = state.warrantyConfig.totalYears || 3;
-      valueHighlights.push({ 
-        icon: Shield, 
-        label: 'Warranty', 
-        value: `${warrantyYears} Years`,
-        subtext: 'Coverage included'
-      });
-    }
-    
-    // 5. Installation details if configured
-    if (state.purchasePath === 'installed' && state.installConfig?.mounting) {
-      valueHighlights.push({ 
-        icon: Wrench, 
-        label: 'Installation', 
-        value: state.installConfig.mounting === 'transom' ? 'Transom Mount' : 'Remote Steering',
-        subtext: 'Professional install'
-      });
-    }
-    
-    return {
-      motorInfo: `${state.motor.year} Mercury ${state.motor.hp}HP ${state.motor.model}`,
-      pathBadge: state.purchasePath === 'installed' ? 'Installed' : 'Loose Motor',
-      valueHighlights: valueHighlights.slice(0, 3), // Show top 3 most relevant
-      quoteTotal,
-      completionPercent: Math.round((Object.values(getCompletionStatus()).filter(Boolean).length / 6) * 100)
-    };
-  };
-
-  if (state.isLoading && !emergencyMode) {
-    return (
-      <>
-        <div className="container mx-auto px-4 py-2 flex justify-end">
-          <StatusIndicator />
-        </div>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center space-y-6 max-w-md mx-auto">
-            <img 
-              src={harrisLogo} 
-              alt="Harris Boat Works" 
-              className="h-16 w-auto mx-auto mb-4"
-            />
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-            <div className="space-y-3">
-              <p className="text-lg font-medium text-foreground">{loadingMessage}</p>
-              <div className="w-full bg-secondary rounded-full h-2">
-                <div 
-                  className="bg-primary h-2 rounded-full transition-all duration-300 ease-out"
-                  style={{ width: `${loadingProgress}%` }}
-                />
-              </div>
-              <p className="text-sm text-muted-foreground">
-                {loadingProgress < 90 ? 'Please wait...' : 'Just a few more seconds...'}
-              </p>
-            </div>
-            {/* Debug toggle - only show in development */}
-            {process.env.NODE_ENV === 'development' && (
-              <Button 
-                variant="ghost" 
-                size="sm" 
-                onClick={() => setShowDebug(!showDebug)}
-                className="text-xs"
-              >
-                Debug Info
-              </Button>
-            )}
-            {showDebug && (
-              <div className="text-left text-xs text-muted-foreground bg-secondary/50 p-3 rounded">
-                <p>Loading: {state.isLoading ? 'true' : 'false'}</p>
-                <p>Has Motor: {state.motor ? 'true' : 'false'}</p>
-                <p>Has Checked: {hasChecked.current ? 'true' : 'false'}</p>
-                <p>Progress: {loadingProgress}%</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </>
-    );
-  }
-
-  // Emergency mode - show manual options if loading is stuck
-  if (emergencyMode) {
-    return (
-      <>
-        <div className="container mx-auto px-4 py-2 flex justify-end">
-          <StatusIndicator />
-        </div>
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-secondary/30 to-destructive/10">
-          <div className="text-center space-y-6 max-w-md mx-auto p-6">
-            <img 
-              src={harrisLogo} 
-              alt="Harris Boat Works" 
-              className="h-16 w-auto mx-auto mb-2"
-            />
-            <div className="text-destructive">
-              <AlertTriangle className="w-12 h-12 mx-auto mb-4" />
-            </div>
-            <div className="space-y-3">
-              <h2 className="text-xl font-semibold text-foreground">Loading Issue Detected</h2>
-              <p className="text-muted-foreground">
-                We're having trouble loading your quote data. You can try one of these options:
-              </p>
-            </div>
-            <div className="space-y-3">
-              <Button 
-                onClick={handleForceStart} 
-                className="w-full"
-                variant="default"
-              >
-                <ArrowRight className="w-4 h-4 mr-2" />
-                Start New Quote
-              </Button>
-              <Button 
-                onClick={handleEmergencyClear} 
-                variant="destructive" 
-                className="w-full"
-              >
-                <Trash2 className="w-4 h-4 mr-2" />
-                Clear All Data & Restart
-              </Button>
-              <Button 
-                onClick={() => window.location.reload()} 
-                variant="outline" 
-                className="w-full"
-              >
-                <RotateCcw className="w-4 h-4 mr-2" />
-                Reload Page
-              </Button>
-            </div>
-            <p className="text-xs text-muted-foreground">
-              If this problem persists, please contact our support team.
-            </p>
-          </div>
-        </div>
-      </>
-    );
-  }
-
-  if (!showLanding) {
-    // Still redirecting
-    return (
-      <>
-        <div className="container mx-auto px-4 py-2 flex justify-end">
-          <StatusIndicator />
-        </div>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center space-y-4">
-            <img 
-              src={harrisLogo} 
-              alt="Harris Boat Works" 
-              className="h-12 w-auto mx-auto mb-4"
-            />
-            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto"></div>
-            <p className="text-muted-foreground">Loading Mercury Quote Builder...</p>
-          </div>
-        </div>
-      </>
-    );
-  }
-
-  const quoteSummary = getQuoteSummary();
-  const completionStatus = getCompletionStatus();
+  const goBuild = () => navigate('/quote/motor-selection');
 
   return (
-    <>
+    <div className="min-h-screen bg-background flex flex-col">
       <HomepageSEO />
-      {/* Header with Auth */}
-      <header className="border-b border-border bg-background/95 backdrop-blur">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <img 
-                src={harrisLogo} 
-                alt="Harris Boat Works" 
-                className="h-8 w-auto"
-              />
-              <GoogleRatingBadge variant="compact" className="hidden md:flex" />
+      <LuxuryHeader />
+
+      {/* Resume-quote banner */}
+      {hasInProgressQuote && (
+        <div className="border-b border-border bg-muted/40">
+          <div className="container mx-auto px-4 py-2.5 flex flex-wrap items-center justify-between gap-3 text-sm">
+            <div className="flex items-center gap-2 text-foreground">
+              <Clock className="h-4 w-4 text-primary" />
+              <span>
+                Resume your quote — <span className="font-medium">{completionPercent}% complete</span>
+              </span>
             </div>
-            <div className="flex items-center gap-4">
-              <StatusIndicator />
-              {user ? (
-                <div className="flex items-center gap-2">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => navigate('/my-quotes')}
-                    className="flex items-center gap-2"
-                  >
-                    <FileText className="w-4 h-4" />
-                    My Quotes
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => signOut()}
-                    className="flex items-center gap-2"
-                  >
-                    <LogOut className="w-4 h-4" />
-                    Sign Out
-                  </Button>
-                </div>
-              ) : (
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => navigate('/auth')}
-                  className="flex items-center gap-2"
-                >
-                  <User className="w-4 h-4" />
-                  Sign In
-                </Button>
-              )}
-            </div>
+            <Button size="sm" variant="default" onClick={goBuild} className="gap-1.5">
+              Continue <ArrowRight className="h-4 w-4" />
+            </Button>
           </div>
         </div>
-      </header>
-      
-      {/* Quote Landing Page */}
-      <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-4 py-16">
-          <div className="max-w-4xl mx-auto">
-            {/* Header */}
-            <div className="text-center mb-12">
-              <img 
-                src={harrisLogo} 
-                alt="Harris Boat Works" 
-                className="h-20 w-auto mx-auto mb-6"
-              />
-              <h1 className="text-4xl font-bold text-foreground mb-4">
-                Welcome Back
+      )}
+
+      <main className="flex-1">
+        {/* HERO */}
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background pointer-events-none" />
+          <div className="container mx-auto px-4 py-12 md:py-20 relative">
+            <div className="max-w-4xl mx-auto text-center">
+              <Badge variant="secondary" className="mb-5 inline-flex items-center gap-1.5 px-3 py-1">
+                <Sparkles className="h-3.5 w-3.5" />
+                Mercury Platinum Repower Center · Rice Lake, Ontario
+              </Badge>
+
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-5 leading-tight">
+                Real Mercury Repower Prices.
+                <br />
+                <span className="text-primary">No Forms. No Games.</span>
               </h1>
-              <p className="text-lg text-muted-foreground">
-                You have a quote in progress. What would you like to do?
-              </p>
-            </div>
 
-            {/* Test Function Button - Admin Only */}
-            {isAdmin && (
-              <div className="mb-8 text-center">
-                <div className="inline-block p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg shadow-lg">
-                  <h3 className="text-white font-semibold mb-2 text-sm">🧪 Edge Function Testing</h3>
-                  <TestFunctionButton />
-                </div>
+              <p className="hero-description text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
+                Build your live Mercury outboard quote in under 3 minutes.
+                Family-owned since 1947. Authorized Mercury dealer since 1965. Serving Toronto,
+                Peterborough &amp; the Kawarthas.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+                <Button
+                  size="lg"
+                  onClick={goBuild}
+                  className="gap-2 text-base px-8 h-12 w-full sm:w-auto"
+                >
+                  Build Your Quote <ArrowRight className="h-5 w-5" />
+                </Button>
+                {user && (
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    asChild
+                    className="text-base px-8 h-12 w-full sm:w-auto"
+                  >
+                    <Link to="/my-quotes">See Saved Quotes</Link>
+                  </Button>
+                )}
+                {!user && (
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    asChild
+                    className="text-base px-8 h-12 w-full sm:w-auto"
+                  >
+                    <a href="tel:+19053422153" className="gap-2 inline-flex items-center">
+                      <Phone className="h-4 w-4" /> (905) 342-2153
+                    </a>
+                  </Button>
+                )}
               </div>
-            )}
 
-            {/* Current Quote Card */}
-            {quoteSummary && (
-              <Card className="mb-8 border-2 border-primary/20 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <ShoppingCart className="w-5 h-5" />
-                    Your Current Quote
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <p className="font-semibold text-lg">{quoteSummary.motorInfo}</p>
-                      <p className="text-sm text-muted-foreground">
-                        Purchase Type: <span className="font-medium">{quoteSummary.pathBadge}</span>
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-                        completionStatus.isComplete 
-                          ? 'bg-green-100 text-green-800' 
-                          : 'bg-yellow-100 text-yellow-800'
-                      }`}>
-                        {completionStatus.isComplete ? 'Complete' : `${quoteSummary.completionPercent}% Complete`}
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Value Highlights */}
-                  {quoteSummary.valueHighlights.length > 0 && (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-3 border-t border-border">
-                      {quoteSummary.valueHighlights.map((highlight, index) => {
-                        const IconComponent = highlight.icon;
-                        return (
-                          <div key={index} className="flex items-center gap-3">
-                            <div className={`p-2 rounded-full ${highlight.primary ? 'bg-primary/10 text-primary' : 'bg-muted'}`}>
-                              <IconComponent className="w-4 h-4" />
-                            </div>
-                            <div className="min-w-0 flex-1">
-                              <p className="text-xs text-muted-foreground">{highlight.label}</p>
-                              <p className={`font-semibold ${highlight.primary ? 'text-primary text-lg' : 'text-foreground'}`}>
-                                {highlight.value}
-                              </p>
-                              {highlight.subtext && (
-                                <p className="text-xs text-muted-foreground">{highlight.subtext}</p>
-                              )}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Action Cards */}
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={handleContinueQuote}>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <ArrowRight className="w-8 h-8 text-primary" />
-                    <span className="text-sm text-muted-foreground">Recommended</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Continue Your Quote</h3>
-                  <p className="text-muted-foreground mb-4">
-                    {completionStatus.isComplete 
-                      ? "Review and finalize your completed quote"
-                      : "Pick up where you left off and complete your configuration"
-                    }
-                  </p>
-                  <Button className="w-full">
-                    {completionStatus.isComplete ? "View Quote" : "Continue"}
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={handleStartFresh}>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <RotateCcw className="w-8 h-8 text-muted-foreground" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Start Fresh</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Clear your current quote and start over with a new motor selection
-                  </p>
-                  <Button variant="outline" className="w-full">
-                    New Quote
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/deposits')}>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <DollarSign className="w-8 h-8 text-green-600" />
-                    <span className="text-sm text-green-600">Secure Your Motor</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Pay Deposit</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Reserve your Mercury motor with a secure deposit payment
-                  </p>
-                  <Button variant="outline" className="w-full border-green-600 text-green-600 hover:bg-green-50">
-                    Pay Deposit
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Additional Options */}
-            <div className="mt-8 text-center">
-              <p className="text-sm text-muted-foreground mb-4">
-                Need help? Our service team is here to assist you.
-              </p>
-              <div className="flex justify-center space-x-4 mb-6">
-                <Button variant="ghost" size="sm" asChild>
-                  <a href="tel:+16479522153">📞 Call Us</a>
-                </Button>
-                <Button variant="ghost" size="sm" asChild>
-                  <a href="sms:+16479522153">
-                    <MessageSquare className="w-4 h-4 mr-1" />
-                    Text Us
-                  </a>
-                </Button>
-                <Button variant="ghost" size="sm" asChild>
-                  <a href="mailto:sales@harrisboatworks.com">✉️ Email Us</a>
-                </Button>
+              {/* Trust row */}
+              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
+                <span className="inline-flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-primary" /> Mercury Platinum Dealer
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-primary" /> Family-owned since 1947
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <CheckCircle2 className="h-4 w-4 text-primary" /> 7-year warranty available
+                </span>
+                <GoogleRatingBadge variant="compact" />
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      
-      {/* Global Mobile Components */}
-      <MobileStickyCTA onQuoteClick={() => setShowQuoteForm(true)} />
-      <MobileQuoteForm 
-        isOpen={showQuoteForm}
-        onClose={() => setShowQuoteForm(false)}
-      />
-    </>
-  );
-};
+        </section>
 
-export default Index;
+        {/* HOW IT WORKS */}
+        <section className="py-12 md:py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-10 md:mb-14">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+                How it works
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Three steps. Real prices the whole way through.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              {HOW_IT_WORKS.map((step, i) => {
+                const Icon = step.icon;
+                return (
+                  <Card key={step.title} className="border-border/60">
+                    <CardContent className="p-6">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <span className="text-sm font-medium text-muted-foreground">
+                          Step {i + 1}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">{step.body}</p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+
+            <div className="text-center mt-10">
+              <Button size="lg" onClick={goBuild} className="gap-2">
+                Start Building <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* WHY REPOWER */}
+        <section className="py-12 md:py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Why repower beats buying a new boat
+                </h2>
+                <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+                  A new Mercury costs a fraction of a new boat — and you keep the hull
+                  you already know and love. Most repowers are completed in one to three
+                  days at our Gores Landing shop.
+                </p>
+                <ul className="space-y-3 mb-6">
+                  {[
+                    'Pay only for the motor — not a whole new boat',
+                    'Modern Mercury fuel economy &amp; quiet running',
+                    'Coverage up to 7 years with current promotions',
+                    'Mercury-Certified technicians — we sell what we service',
+                  ].map(line => (
+                    <li key={line} className="flex items-start gap-2.5 text-foreground">
+                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                      <span dangerouslySetInnerHTML={{ __html: line }} />
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-3">
+                  <Button asChild variant="default" className="gap-1.5">
+                    <Link to="/quote/motor-selection">
+                      See Mercury Pricing <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" className="gap-1.5">
+                    <Link to="/faq">
+                      Repower FAQ <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+
+              <div className="rounded-xl overflow-hidden border border-border bg-card">
+                <img
+                  src="/repower-assets/hbw-repower-infographic.png"
+                  alt="Mercury repower process diagram from Harris Boat Works"
+                  loading="lazy"
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIALS */}
+        <section className="py-12 md:py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+                What customers say
+              </h2>
+              <div className="flex items-center justify-center">
+                <GoogleRatingBadge variant="full" />
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+              {TESTIMONIALS.map(t => (
+                <Card key={t.name} className="border-border/60">
+                  <CardContent className="p-6">
+                    <div className="flex gap-0.5 text-yellow-400 mb-3" aria-label="5 stars">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <span key={i}>★</span>
+                      ))}
+                    </div>
+                    <p className="text-foreground leading-relaxed mb-4 italic">
+                      &ldquo;{t.quote}&rdquo;
+                    </p>
+                    <div className="text-sm">
+                      <div className="font-medium text-foreground">{t.name}</div>
+                      <div className="text-muted-foreground">{t.location}</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FINAL CTA BAND */}
+        <section className="py-14 md:py-20 bg-primary text-primary-foreground">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Ready to see your real Mercury price?
+            </h2>
+            <p className="text-primary-foreground/80 text-lg mb-7 max-w-2xl mx-auto">
+              Build a live quote in 3 minutes. No commitments, no sales calls until you're ready.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <Button
+                size="lg"
+                variant="secondary"
+                onClick={goBuild}
+                className="gap-2 text-base px-8 h-12 w-full sm:w-auto"
+              >
+                <DollarSign className="h-5 w-5" /> Build Your Quote
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                asChild
+                className="bg-transparent text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground hover:text-primary text-base px-8 h-12 w-full sm:w-auto"
+              >
+                <a href="tel:+19053422153" className="gap-2 inline-flex items-center">
+                  <Phone className="h-4 w-4" /> Call (905) 342-2153
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <SiteFooter />
+    </div>
+  );
+}
