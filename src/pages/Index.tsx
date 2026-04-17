@@ -345,8 +345,17 @@ export default function Index() {
         </section>
 
         {/* FINAL CTA BAND */}
-        <section className="py-14 md:py-20 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4 text-center">
+        <section className="relative py-14 md:py-24 text-primary-foreground overflow-hidden">
+          <img
+            src={ctaLakeImage}
+            alt="Boat with Mercury outboard at sunset on Rice Lake, Ontario"
+            loading="lazy"
+            width={1920}
+            height={1080}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+          <div className="container mx-auto px-4 text-center relative">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to see your real Mercury price?
             </h2>
