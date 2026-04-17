@@ -295,12 +295,14 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="rounded-xl overflow-hidden border border-border bg-card">
+              <div className="rounded-xl overflow-hidden border border-border bg-card shadow-lg">
                 <img
-                  src="/repower-assets/hbw-repower-infographic.png"
-                  alt="Mercury repower process diagram from Harris Boat Works"
+                  src={shopImage}
+                  alt="Mercury-Certified technician installing a new outboard at the Harris Boat Works repower shop"
                   loading="lazy"
-                  className="w-full h-auto"
+                  width={1600}
+                  height={1200}
+                  className="w-full h-auto aspect-[4/3] object-cover"
                 />
               </div>
             </div>
