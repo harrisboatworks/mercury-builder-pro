@@ -70,12 +70,12 @@ export default function Index() {
       status.hasMotor,
       status.hasPath,
       status.hasRequiredInfo,
-      status.hasTradeInDecision,
+      Boolean(state.hasTradein === true || state.hasTradein === false),
       Boolean(state.selectedPromoOption),
       false, // summary review
     ];
     return Math.round((flags.filter(Boolean).length / flags.length) * 100);
-  }, [hasInProgressQuote, getQuoteCompletionStatus, state.selectedPromoOption]);
+  }, [hasInProgressQuote, getQuoteCompletionStatus, state.hasTradein, state.selectedPromoOption]);
 
   const goBuild = () => navigate('/quote/motor-selection');
 
