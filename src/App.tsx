@@ -163,7 +163,7 @@ function RootRedirect() {
     return <RouteLoader />;
   }
 
-  return <Navigate to="/quote/motor-selection" replace />;
+  return <Index />;
 }
 
 function AnimatedRoutes() {
