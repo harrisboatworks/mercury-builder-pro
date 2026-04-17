@@ -31,7 +31,11 @@ serve(async (req: Request): Promise<Response> => {
       .from("saved_quotes")
       .select("*")
       .lt("created_at", cutoffTime.toISOString())
-      .not("customer_email", "is", null)
+      .not("email", "is", null)
+      .neq("email", "")
+      // Skip already-deposited or completed quotes
+      .or("deposit_status.is.null,deposit_status.eq.")
+      .or("is_completed.is.null,is_completed.eq.false")
       .order("created_at", { ascending: false })
       .limit(50);
 
@@ -45,23 +49,28 @@ serve(async (req: Request): Promise<Response> => {
     let skipped = 0;
 
     for (const quote of abandonedQuotes || []) {
+      const customerEmail: string = quote.email;
+      // Pull customer name from quote_state (no top-level column exists)
+      const quoteState = quote.quote_state || {};
+      const customerInfo = quoteState.customerInfo || quoteState.customer || {};
+      const customerName: string | null =
+        customerInfo.name || customerInfo.fullName || customerInfo.firstName || null;
+
       // Check if this email already has an active abandoned_quote sequence
       const { data: existingSequence } = await supabase
         .from("email_sequence_queue")
         .select("id")
-        .eq("email", quote.customer_email)
+        .eq("email", customerEmail)
         .eq("sequence_type", "abandoned_quote")
         .in("status", ["active", "completed"])
-        .single();
+        .maybeSingle();
 
       if (existingSequence) {
-        console.log(`[start-abandoned-quote-sequence] Skipping ${quote.customer_email} - already in sequence`);
+        console.log(`[start-abandoned-quote-sequence] Skipping ${customerEmail} - already in sequence`);
         skipped++;
         continue;
       }
 
-      // Parse quote state to extract relevant data
-      const quoteState = quote.quote_state || {};
       const motor = quoteState.motor || {};
       const selectedPromoOption = quoteState.selectedPromoOption || null;
       
@@ -103,8 +112,8 @@ serve(async (req: Request): Promise<Response> => {
       const { error: insertError } = await supabase
         .from("email_sequence_queue")
         .insert({
-          email: quote.customer_email,
-          customer_name: quote.customer_name || null,
+          email: customerEmail,
+          customer_name: customerName,
           sequence_type: "abandoned_quote",
           current_step: 0,
           emails_sent: 0,
@@ -133,11 +142,11 @@ serve(async (req: Request): Promise<Response> => {
         });
 
       if (insertError) {
-        console.error(`[start-abandoned-quote-sequence] Error creating sequence for ${quote.customer_email}:`, insertError);
+        console.error(`[start-abandoned-quote-sequence] Error creating sequence for ${customerEmail}:`, insertError);
         continue;
       }
 
-      console.log(`[start-abandoned-quote-sequence] Started sequence for ${quote.customer_email} (${motor.model || 'Unknown motor'})`);
+      console.log(`[start-abandoned-quote-sequence] Started sequence for ${customerEmail} (${motor.model || 'Unknown motor'})`);
       started++;
     }
 
