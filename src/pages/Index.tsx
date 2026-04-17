@@ -26,16 +26,19 @@ import ctaLakeImage from '@/assets/landing-cta-lake.jpg';
 const HOW_IT_WORKS = [
   {
     icon: Wrench,
+    image: stepPickImage,
     title: 'Pick your Mercury',
     body: 'Browse the full lineup from 2.5 to 300 HP with live CAD pricing. No "call for quote."',
   },
   {
     icon: RotateCcw,
+    image: stepConfigureImage,
     title: 'Configure trade-in & financing',
     body: 'Get an instant trade-in estimate, choose financing or pay-in-full, and see your real monthly payment.',
   },
   {
     icon: Shield,
+    image: stepPickupImage,
     title: 'Lock it with a refundable deposit',
     body: 'Hold your motor and pricing with a small refundable deposit. We confirm install date and walk you through next steps.',
   },
