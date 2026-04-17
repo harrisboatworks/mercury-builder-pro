@@ -97,18 +97,33 @@ export function ReviewSubmitStep() {
         .select()
         .single();
 
+      // CRITICAL: Check DB error before continuing
+      if (error || !application) {
+        console.error('Financing application DB write failed:', error);
+        throw new Error(error?.message || 'Failed to save application');
+      }
+
       // Send confirmation emails (non-blocking - don't fail submission if email fails)
+      // Field names MUST match the Zod schema in supabase/functions/send-financing-confirmation-email/index.ts
       try {
-        await supabase.functions.invoke('send-financing-confirmation-email', {
-          body: {
-            applicationId: application.id,
-            email: validated.applicant.email,
-            applicantName: `${validated.applicant.firstName} ${validated.applicant.lastName}`,
-            motorInfo: validated.purchaseDetails.motorModel || 'Selected Motor',
-            financingAmount: validated.purchaseDetails.amountToFinance,
-            sendAdminNotification: true,
+        const { data: emailData, error: emailError } = await supabase.functions.invoke(
+          'send-financing-confirmation-email',
+          {
+            body: {
+              applicationId: application.id,
+              applicantEmail: validated.applicant.email,
+              applicantName: `${validated.applicant.firstName} ${validated.applicant.lastName}`,
+              motorModel: validated.purchaseDetails.motorModel || 'Selected Motor',
+              amountToFinance: validated.purchaseDetails.amountToFinance,
+              sendAdminNotification: true,
+            },
           }
-        });
+        );
+        if (emailError) {
+          console.error('Confirmation email invoke error (non-critical):', emailError);
+        } else {
+          console.log('Confirmation email sent:', emailData);
+        }
       } catch (emailError) {
         console.error('Failed to send confirmation email (non-critical):', emailError);
         // Don't show error to user - submission was successful

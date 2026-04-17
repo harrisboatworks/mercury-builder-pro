@@ -219,3 +219,6 @@ verify_jwt = false
 [functions.get-shared-quote]
 verify_jwt = false
 
+[functions.check-partial-financing-apps]
+verify_jwt = false
+
