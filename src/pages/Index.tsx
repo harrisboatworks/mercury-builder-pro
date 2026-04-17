@@ -217,11 +217,21 @@ export default function Index() {
               {HOW_IT_WORKS.map((step, i) => {
                 const Icon = step.icon;
                 return (
-                  <Card key={step.title} className="border-border/60">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                          <Icon className="h-5 w-5" />
+                  <Card key={step.title} className="border-border/60 overflow-hidden flex flex-col">
+                    <div className="aspect-[4/3] bg-muted overflow-hidden">
+                      <img
+                        src={step.image}
+                        alt={step.title}
+                        loading="lazy"
+                        width={800}
+                        height={600}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                    <CardContent className="p-6 flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="h-9 w-9 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                          <Icon className="h-4.5 w-4.5" />
                         </div>
                         <span className="text-sm font-medium text-muted-foreground">
                           Step {i + 1}
