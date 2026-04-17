@@ -16,6 +16,13 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 
+import heroImage from '@/assets/landing-hero-mercury.jpg';
+import shopImage from '@/assets/landing-repower-shop.jpg';
+import stepPickImage from '@/assets/landing-step-pick.jpg';
+import stepConfigureImage from '@/assets/landing-step-configure.jpg';
+import stepPickupImage from '@/assets/landing-step-pickup.jpg';
+import ctaLakeImage from '@/assets/landing-cta-lake.jpg';
+
 const HOW_IT_WORKS = [
   {
     icon: Wrench,
