@@ -2567,6 +2567,36 @@ export type Database = {
           },
         ]
       }
+      schema_docs: {
+        Row: {
+          content: string
+          created_at: string
+          notes: string | null
+          slug: string
+          title: string
+          updated_at: string
+          version: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          notes?: string | null
+          slug: string
+          title: string
+          updated_at?: string
+          version?: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          notes?: string | null
+          slug?: string
+          title?: string
+          updated_at?: string
+          version?: string
+        }
+        Relationships: []
+      }
       security_audit_log: {
         Row: {
           action: string
