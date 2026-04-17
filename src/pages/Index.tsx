@@ -16,19 +16,29 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 
+import heroImage from '@/assets/landing-hero-mercury.jpg';
+import shopImage from '@/assets/landing-repower-shop.jpg';
+import stepPickImage from '@/assets/landing-step-pick.jpg';
+import stepConfigureImage from '@/assets/landing-step-configure.jpg';
+import stepPickupImage from '@/assets/landing-step-pickup.jpg';
+import ctaLakeImage from '@/assets/landing-cta-lake.jpg';
+
 const HOW_IT_WORKS = [
   {
     icon: Wrench,
+    image: stepPickImage,
     title: 'Pick your Mercury',
     body: 'Browse the full lineup from 2.5 to 300 HP with live CAD pricing. No "call for quote."',
   },
   {
     icon: RotateCcw,
+    image: stepConfigureImage,
     title: 'Configure trade-in & financing',
     body: 'Get an instant trade-in estimate, choose financing or pay-in-full, and see your real monthly payment.',
   },
   {
     icon: Shield,
+    image: stepPickupImage,
     title: 'Lock it with a refundable deposit',
     body: 'Hold your motor and pricing with a small refundable deposit. We confirm install date and walk you through next steps.',
   },
@@ -106,68 +116,86 @@ export default function Index() {
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background pointer-events-none" />
           <div className="container mx-auto px-4 py-12 md:py-20 relative">
-            <div className="max-w-4xl mx-auto text-center">
-              <Badge variant="secondary" className="mb-5 inline-flex items-center gap-1.5 px-3 py-1">
-                <Sparkles className="h-3.5 w-3.5" />
-                Mercury Platinum Repower Center · Rice Lake, Ontario
-              </Badge>
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+              {/* Copy column */}
+              <div className="text-center lg:text-left">
+                <Badge variant="secondary" className="mb-5 inline-flex items-center gap-1.5 px-3 py-1">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  Mercury Platinum Repower Center · Rice Lake, Ontario
+                </Badge>
 
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-5 leading-tight">
-                Real Mercury Repower Prices.
-                <br />
-                <span className="text-primary">No Forms. No Games.</span>
-              </h1>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-5 leading-tight">
+                  Real Mercury Repower Prices.
+                  <br />
+                  <span className="text-primary">No Forms. No Games.</span>
+                </h1>
 
-              <p className="hero-description text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed">
-                Build your live Mercury outboard quote in under 3 minutes.
-                Family-owned since 1947. Authorized Mercury dealer since 1965. Serving Toronto,
-                Peterborough &amp; the Kawarthas.
-              </p>
+                <p className="hero-description text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+                  Build your live Mercury outboard quote in under 3 minutes.
+                  Family-owned since 1947. Authorized Mercury dealer since 1965. Serving Toronto,
+                  Peterborough &amp; the Kawarthas.
+                </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
-                <Button
-                  size="lg"
-                  onClick={goBuild}
-                  className="gap-2 text-base px-8 h-12 w-full sm:w-auto"
-                >
-                  Build Your Quote <ArrowRight className="h-5 w-5" />
-                </Button>
-                {user && (
+                <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 mb-8">
                   <Button
                     size="lg"
-                    variant="outline"
-                    asChild
-                    className="text-base px-8 h-12 w-full sm:w-auto"
+                    onClick={goBuild}
+                    className="gap-2 text-base px-8 h-12 w-full sm:w-auto"
                   >
-                    <Link to="/my-quotes">See Saved Quotes</Link>
+                    Build Your Quote <ArrowRight className="h-5 w-5" />
                   </Button>
-                )}
-                {!user && (
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    asChild
-                    className="text-base px-8 h-12 w-full sm:w-auto"
-                  >
-                    <a href="tel:+19053422153" className="gap-2 inline-flex items-center">
-                      <Phone className="h-4 w-4" /> (905) 342-2153
-                    </a>
-                  </Button>
-                )}
+                  {user && (
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      asChild
+                      className="text-base px-8 h-12 w-full sm:w-auto"
+                    >
+                      <Link to="/my-quotes">See Saved Quotes</Link>
+                    </Button>
+                  )}
+                  {!user && (
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      asChild
+                      className="text-base px-8 h-12 w-full sm:w-auto"
+                    >
+                      <a href="tel:+19053422153" className="gap-2 inline-flex items-center">
+                        <Phone className="h-4 w-4" /> (905) 342-2153
+                      </a>
+                    </Button>
+                  )}
+                </div>
+
+                {/* Trust row */}
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-sm text-muted-foreground">
+                  <span className="inline-flex items-center gap-1.5">
+                    <CheckCircle2 className="h-4 w-4 text-primary" /> Mercury Platinum Dealer
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <CheckCircle2 className="h-4 w-4 text-primary" /> Family-owned since 1947
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <CheckCircle2 className="h-4 w-4 text-primary" /> 7-year warranty available
+                  </span>
+                  <GoogleRatingBadge variant="compact" />
+                </div>
               </div>
 
-              {/* Trust row */}
-              <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-primary" /> Mercury Platinum Dealer
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-primary" /> Family-owned since 1947
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-primary" /> 7-year warranty available
-                </span>
-                <GoogleRatingBadge variant="compact" />
+              {/* Hero image column */}
+              <div className="relative order-first lg:order-last">
+                <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl aspect-[4/3] lg:aspect-[5/4] bg-muted">
+                  <img
+                    src={heroImage}
+                    alt="Mercury 4-stroke outboard motor at work on an Ontario lake at golden hour"
+                    width={1920}
+                    height={1280}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    fetchPriority="high"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
+                </div>
               </div>
             </div>
           </div>
@@ -189,11 +217,21 @@ export default function Index() {
               {HOW_IT_WORKS.map((step, i) => {
                 const Icon = step.icon;
                 return (
-                  <Card key={step.title} className="border-border/60">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="h-10 w-10 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                          <Icon className="h-5 w-5" />
+                  <Card key={step.title} className="border-border/60 overflow-hidden flex flex-col">
+                    <div className="aspect-[4/3] bg-muted overflow-hidden">
+                      <img
+                        src={step.image}
+                        alt={step.title}
+                        loading="lazy"
+                        width={800}
+                        height={600}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    </div>
+                    <CardContent className="p-6 flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="h-9 w-9 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                          <Icon className="h-4.5 w-4.5" />
                         </div>
                         <span className="text-sm font-medium text-muted-foreground">
                           Step {i + 1}
@@ -257,12 +295,14 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="rounded-xl overflow-hidden border border-border bg-card">
+              <div className="rounded-xl overflow-hidden border border-border bg-card shadow-lg">
                 <img
-                  src="/repower-assets/hbw-repower-infographic.png"
-                  alt="Mercury repower process diagram from Harris Boat Works"
+                  src={shopImage}
+                  alt="Mercury-Certified technician installing a new outboard at the Harris Boat Works repower shop"
                   loading="lazy"
-                  className="w-full h-auto"
+                  width={1600}
+                  height={1200}
+                  className="w-full h-auto aspect-[4/3] object-cover"
                 />
               </div>
             </div>
@@ -305,8 +345,17 @@ export default function Index() {
         </section>
 
         {/* FINAL CTA BAND */}
-        <section className="py-14 md:py-20 bg-primary text-primary-foreground">
-          <div className="container mx-auto px-4 text-center">
+        <section className="relative py-14 md:py-24 text-primary-foreground overflow-hidden">
+          <img
+            src={ctaLakeImage}
+            alt="Boat with Mercury outboard at sunset on Rice Lake, Ontario"
+            loading="lazy"
+            width={1920}
+            height={1080}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+          <div className="container mx-auto px-4 text-center relative">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to see your real Mercury price?
             </h2>
