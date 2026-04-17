@@ -15,6 +15,7 @@ import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { NotificationToast } from "@/components/notifications/NotificationToast";
 
 import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
+import { PricingRibbon } from "@/components/marketing/PricingRibbon";
 import { RouteLoader } from "@/components/ui/RouteLoader";
 import { GlobalAIChat } from "@/components/chat/GlobalAIChat";
 import { UnifiedMobileBar } from "@/components/quote-builder/UnifiedMobileBar";
@@ -524,6 +525,7 @@ const App = () => {
               <GlobalAIChat>
                 <div data-vaul-drawer-wrapper className="min-h-screen bg-background">
                   <ScrollToTop />
+                  <PricingRibbon />
                   <GlobalSEO />
                   <NotificationToast />
                   
