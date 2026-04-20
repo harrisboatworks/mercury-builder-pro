@@ -128,7 +128,7 @@ export function GlobalSEO() {
             {
               "@type": "Offer",
               "itemOffered": {
-                "@type": "Product",
+                "@type": "Service",
                 "name": "Mercury FourStroke Outboards",
                 "description": "Fuel-efficient four-stroke outboard motors from 2.5HP to 400HP"
               }
@@ -136,17 +136,9 @@ export function GlobalSEO() {
             {
               "@type": "Offer",
               "itemOffered": {
-                "@type": "Product",
+                "@type": "Service",
                 "name": "Mercury Pro XS Outboards",
                 "description": "High-performance bass boat and tournament fishing motors"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Product",
-                "name": "Mercury Verado Outboards",
-                "description": "Premium supercharged outboard motors with advanced features"
               }
             },
             {
