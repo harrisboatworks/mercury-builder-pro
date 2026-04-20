@@ -9614,7 +9614,7 @@ Harris Boat Works has been winterizing boats on Rice Lake since the 1960s. Last 
 Winterization isn't just draining the water. Done right, it's a multi-step process that protects your engine, fuel system, lower unit, and battery from a Canadian winter. Here's what a complete outboard winterization covers:
 
 **Core steps:**
-- **Fogging the engine** — coating cylinder walls and carburetor/throttle body with a protective oil to prevent corrosion during storage
+- **Internal corrosion protection** — for modern Mercury FourStroke EFI engines, this means stabilized fuel circulating through the system; fogging oil is *not* required by Mercury for FourStroke EFI motors stored under 6 months, and is reserved for older carbureted or 2-stroke engines (or any engine going into long-term storage over 6 months)
 - **Fuel stabilization** — adding stabilizer to the tank and running it through the system so you don't start spring with varnished fuel injectors or a gummed carb
 - **Lower unit service** — draining and refilling the gear lube; also tells a technician if there's water in the unit (which usually means a bad seal — better to know now)
 - **Cooling system flush** — removing any remaining water from the powerhead to prevent freeze cracking
@@ -9629,7 +9629,7 @@ These are typical market ranges based on what marina shops across the Kawarthas 
 
 ### Tier 1 — Basic Outboard Winterization (Smaller engines, 2.5–15 hp)
 
-**What's included:** Fogging, fuel stabilizer, cooling flush, lower unit drain and refill, basic grease service.
+**What's included:** Fuel stabilizer (and fogging if the engine is a 2-stroke or carbureted), cooling flush, lower unit drain and refill, basic grease service.
 
 **Typical range:** $150–$300
 
@@ -9641,7 +9641,7 @@ This tier covers smaller tiller outboards — aluminum fishing boat kickers, din
 
 **Typical range:** $300–$550
 
-This is where most Ontario boaters land. A 60 hp four-stroke on an aluminum fishing boat, a 90 hp on a bowrider, a 115 on a pontoon — this is the bread-and-butter winterization tier. At this size, lower unit oil is more expensive, the fogging process takes longer, and inspection matters more.
+This is where most Ontario boaters land. A 60 hp four-stroke on an aluminum fishing boat, a 90 hp on a bowrider, a 115 on a pontoon — this is the bread-and-butter winterization tier. At this size, lower unit oil is more expensive, the cooling flush and inspection take longer, and any fogging required for older carbureted or 2-stroke engines adds time.
 
 ### Tier 3 — Full Winterization (Large outboards, 150–400+ hp)
 
@@ -9678,7 +9678,7 @@ A meaningful step up from outdoor — protected from snow load and freeze-thaw c
 You can winterize your own outboard. For a mechanically inclined boater with the right supplies, a single-engine outboard winterization is a reasonable afternoon project.
 
 **Realistic DIY supply cost:**
-- Fogging oil: $20–$35
+- Fogging oil (only for 2-strokes, carbureted engines, or long-term storage): $20–$35
 - Fuel stabilizer: $15–$25
 - Lower unit gear lube + drain tools: $30–$50
 - Grease: $15–$20
@@ -9717,11 +9717,11 @@ For those weighing whether a motor is worth another season of service, our [repo
       },
       {
         question: 'What is included in a proper outboard winterization?',
-        answer: 'A complete outboard winterization should include: fogging the engine to protect cylinder walls and fuel system components from corrosion; adding fuel stabilizer and running it through the system; draining and refilling the lower unit gear lube; flushing the cooling system to remove residual water; servicing the battery or placing it on a tender; and applying grease and corrosion protection to steering, throttle, tilt/trim, and exposed hardware. Skipping any of these steps — especially the cooling flush or lower unit drain — leaves the engine vulnerable to freeze damage or undetected mechanical problems over winter. A full service typically takes 1.5–3 hours at a shop.'
+        answer: 'A complete outboard winterization should include: adding fuel stabilizer and running it through the system; draining and refilling the lower unit gear lube; flushing the cooling system to remove residual water; servicing the battery or placing it on a tender; and applying grease and corrosion protection to steering, throttle, tilt/trim, and exposed hardware. Mercury FourStroke EFI engines do not require fogging for normal seasonal storage (under 6 months) — fogging is reserved for 2-stroke, carbureted, or long-term storage situations. Skipping the cooling flush or lower unit drain leaves the engine vulnerable to freeze damage or undetected mechanical problems over winter. A full service typically takes 1.5–3 hours at a shop.'
       },
       {
         question: 'Can I winterize my outboard myself to save money?',
-        answer: 'Yes — a mechanically confident boater can winterize a standard four-stroke outboard with about $120–$210 in supplies and 2–4 hours of time. You\'ll need fogging oil, fuel stabilizer, lower unit gear lube, a drain screw tool, and marine grease. The honest trade-off is that a trained technician will catch problems you might miss — water in the lower unit, degrading fuel line, corroding connections — that show up during a thorough service. For newer engines under warranty, check your Mercury warranty terms before DIY, as some maintenance intervals have documentation requirements. For older engines or boats with known issues, a dealer service is the safer call.'
+        answer: 'Yes — a mechanically confident boater can winterize a standard four-stroke outboard with about $100–$180 in supplies and 2–4 hours of time. You\'ll need fuel stabilizer, lower unit gear lube, a drain screw tool, and marine grease. Mercury FourStroke EFI engines do not require fogging for normal seasonal storage, so you can skip fogging oil unless your motor is a 2-stroke, carbureted, or going into long-term storage. The honest trade-off is that a trained technician will catch problems you might miss — water in the lower unit, degrading fuel line, corroding connections — that show up during a thorough service. For newer engines under warranty, check your Mercury warranty terms before DIY, as some maintenance intervals have documentation requirements.'
       },
       {
         question: 'What does boat storage cost in Ontario per season?',
@@ -9737,7 +9737,7 @@ For those weighing whether a motor is worth another season of service, our [repo
       },
       {
         question: 'Is a Mercury winterization different from other brands?',
-        answer: 'Mercury four-stroke outboards follow a standard winterization process — fogging, fuel stabilization, lower unit service, cooling flush, battery service — that\'s broadly consistent across major brands. Mercury-specific considerations include using the correct lower unit gear lube grade specified for your model (Mercury Precision Lubricants are recommended), fogging with Mercury-branded fogging oil for warranty-compliance purposes, and following the maintenance intervals in your engine manual for documentation if your motor is still under warranty. At a Mercury Platinum dealer like Harris Boat Works, technicians are trained on Mercury-specific procedures and use OEM-recommended products throughout.'
+        answer: 'Mercury FourStroke outboards follow a standard winterization process — fuel stabilization, lower unit service, cooling flush, and battery service. A key Mercury-specific point: FourStroke EFI engines do not require fogging for normal seasonal storage (under 6 months), per Mercury\'s own service guidance. Fogging is only recommended for 2-stroke or carbureted engines, or any engine going into long-term storage over 6 months. Other Mercury-specific considerations include using the correct lower unit gear lube grade for your model (Mercury Precision Lubricants are recommended) and following the maintenance intervals in your engine manual for warranty documentation. At a Mercury Platinum dealer like Harris Boat Works, technicians are trained on Mercury-specific procedures and use OEM-recommended products throughout.'
       },
       {
         question: 'Does winterization cost more for a four-stroke than a two-stroke?',
@@ -9745,7 +9745,7 @@ For those weighing whether a motor is worth another season of service, our [repo
       },
       {
         question: 'How much does winterization cost for a twin-engine setup?',
-        answer: 'Twin-engine winterization roughly doubles the labour and parts cost compared to a single-engine service. Two separate lower unit drain/refills, two fogging procedures, two cooling flushes, and corrosion protection for twice the hardware. For twin 115 hp outboards, expect to pay in the range of $700–$1,000+ for a thorough job. Twin 200+ hp setups will run higher. The time savings of getting both motors done by the same technician at the same visit is real — booking one appointment for both engines is more efficient than trying to split the work.'
+        answer: 'Twin-engine winterization roughly doubles the labour and parts cost compared to a single-engine service. Two separate lower unit drain/refills, two cooling flushes, and corrosion protection for twice the hardware. For twin 115 hp FourStroke outboards, expect to pay in the range of $700–$1,000+ for a thorough job. Twin 200+ hp setups will run higher. The time savings of getting both motors done by the same technician at the same visit is real — booking one appointment for both engines is more efficient than trying to split the work.'
       },
       {
         question: 'What\'s the difference between shrink-wrapping and a tarp for winter storage?',
@@ -9757,7 +9757,7 @@ For those weighing whether a motor is worth another season of service, our [repo
       },
       {
         question: 'How do I find reliable winterization near Peterborough or the Kawarthas?',
-        answer: 'Look for an authorized Mercury dealer or a marina with a certified technician on staff. Kawartha-area options include shops in the Peterborough, Lindsay, Bobcaygeon, and Gores Landing areas. Harris Boat Works in Gores Landing (on Rice Lake, 905-342-2153) is a Mercury Platinum dealer that handles winterization and storage — we serve customers from throughout the Rice Lake and Kawarthas region. Wherever you go, ask what\'s included in the quoted price before booking — specifically whether the lower unit drain, fogging, and cooling flush are all part of the standard service.'
+        answer: 'Look for an authorized Mercury dealer or a marina with a certified technician on staff. Kawartha-area options include shops in the Peterborough, Lindsay, Bobcaygeon, and Gores Landing areas. Harris Boat Works in Gores Landing (on Rice Lake, 905-342-2153) is a Mercury Platinum dealer that handles winterization and storage — we serve customers from throughout the Rice Lake and Kawarthas region. Wherever you go, ask what\'s included in the quoted price before booking — specifically whether the lower unit drain and cooling flush are part of the standard service.'
       }
     ]
   },
@@ -9799,7 +9799,7 @@ For a standard Mercury four-stroke outboard (tiller or remote, any HP from 5–1
 
 | Item | Approx. Cost |
 |---|---|
-| Mercury fogging oil (aerosol) | $20–$35 |
+| Mercury fogging oil (aerosol — only needed for 2-stroke, carbureted, or >6-month storage) | $20–$35 |
 | Fuel stabilizer (Marine formula — Mercury or equivalent) | $15–$25 |
 | Lower unit gear lube (Mercury Precision or compatible — check your model) | $20–$35 |
 | Lower unit drain screw and fill screw tool (if not already owned) | $10–$20 |
@@ -9812,7 +9812,7 @@ For a standard Mercury four-stroke outboard (tiller or remote, any HP from 5–1
 
 ## Step-by-Step DIY Winterization for a Mercury Four-Stroke Outboard
 
-Work through these steps in order. Do them outside or in a well-ventilated space — you'll be running the engine briefly during the fogging step.
+Work through these steps in order. Do them outside or in a well-ventilated space — you'll be running the engine briefly. Note: the fogging step below applies only to 2-stroke, carbureted, or long-term-storage situations. Mercury FourStroke EFI engines stored under 6 months do *not* require fogging per Mercury\'s own service guidance — skip Step 3 in that case.
 
 ### Step 1 — Final Flush and Cooling System Clear
 
@@ -9826,9 +9826,9 @@ Add marine-grade fuel stabilizer to your tank according to the bottle's instruct
 
 If your tank is less than half full, consider topping it up before adding stabilizer. A full tank leaves less air space for condensation to form over winter.
 
-### Step 3 — Fog the Engine
+### Step 3 — Fog the Engine (skip for FourStroke EFI under 6-month storage)
 
-With the engine still warm from the flush and fuel stabilization run, remove the air box cover or air intake. With the engine running at idle, spray fogging oil into the air intake in 3-second bursts — the engine will stumble and smoke as the oil coats the cylinder walls. Let it run for 30 seconds, fog again, then shut the engine down while still fogging. The goal is to leave a coat of protective oil on the internal surfaces.
+**Important:** Per Mercury\'s service guidance, FourStroke EFI engines stored under 6 months do *not* require fogging — stabilized fuel circulating through the system provides the necessary protection. This step applies only to 2-stroke engines, carbureted engines, or any engine going into storage longer than 6 months.\n\nWith the engine still warm from the flush and fuel stabilization run, remove the air box cover or air intake. With the engine running at idle, spray fogging oil into the air intake in 3-second bursts — the engine will stumble and smoke as the oil coats the cylinder walls. Let it run for 30 seconds, fog again, then shut the engine down while still fogging. The goal is to leave a coat of protective oil on the internal surfaces.
 
 For carbureted engines, spray directly into the carb throat. For EFI engines with a sealed throttle body, there's a port designed for this — check your owner's manual for the specific access point on your motor.
 
@@ -9868,7 +9868,7 @@ Here's where we'll be straight with you:
 - Your engine is under warranty and you haven't been documenting your own service carefully. Mercury's warranty doesn't require dealer-only service for maintenance, but it does require that maintenance be performed according to spec and documented. If you're not sure you're doing that correctly, have a dealer do it once, watch the process, and take it from there.
 - Your engine has EFI diagnostics issues, hard-starting history, or sensor faults. A winterization is a good time to clear any fault codes and have a technician evaluate the engine management system. That's not a DIY task.
 - The engine is more than 10–12 years old and you're not sure what its maintenance history looks like. Older motors benefit from a dealer eyes-on inspection before they go into storage.
-- You don't have the right supplies or a way to run the motor before fogging. Running it dry or fogging without a proper cooling flush leaves you with a partially winterized engine that might be worse than fully untreated.
+- You don't have the right supplies or a way to run the motor through the cooling flush and fuel stabilization steps. Running it dry leaves you with a partially winterized engine that might be worse than fully untreated.
 
 For questions about what's covered under your Mercury warranty and what documentation you need to maintain it, see our [Mercury warranty guide](https://mercuryrepower.ca/blog/mercury-warranty-what-you-need-to-know).
 
@@ -9885,15 +9885,15 @@ We work on Mercury and Mercruiser engines. Last season we handled 584 winterizat
     faqs: [
       {
         question: 'Can I winterize my Mercury FourStroke outboard myself?',
-        answer: 'Yes. For a standard Mercury four-stroke outboard, DIY winterization is a realistic option for a mechanically comfortable boater. You\'ll need fogging oil, fuel stabilizer, lower unit gear lube and tools, marine grease, and a battery tender — total supply cost typically runs $120–$210. The process takes 2–4 hours and doesn\'t require specialty tools or a lift. The key steps are: flush the cooling system, stabilize the fuel and run it through the system, fog the engine, drain and refill the lower unit, grease all fittings, and service the battery. The main reason to use a dealer instead is if you find water in the lower unit, if the engine is under active warranty and you\'re not documenting service carefully, or if the engine has known diagnostic issues.'
+        answer: 'Yes. For a standard Mercury FourStroke outboard, DIY winterization is a realistic option for a mechanically comfortable boater. You\'ll need fuel stabilizer, lower unit gear lube and tools, marine grease, and a battery tender — total supply cost typically runs $100–$180. (Fogging oil is *not* required for Mercury FourStroke EFI engines stored under 6 months, per Mercury\'s own service guidance — it\'s only needed for 2-stroke, carbureted, or long-term storage.) The process takes 2–4 hours and doesn\'t require specialty tools or a lift. The key steps are: flush the cooling system, stabilize the fuel and run it through the system, drain and refill the lower unit, grease all fittings, and service the battery. The main reason to use a dealer instead is if you find water in the lower unit, if the engine is under active warranty and you\'re not documenting service carefully, or if the engine has known diagnostic issues.'
       },
       {
         question: 'What happens if I don\'t winterize my Mercury outboard?',
         answer: 'Skipping winterization puts your engine at risk of freeze cracking, fuel system degradation, lower unit damage, and battery failure. Water remaining in the powerhead cooling passages freezes and expands — this can crack the block or head, often requiring a complete engine replacement. Untreated fuel forms varnish over the winter that clogs injectors and carburetors, causing starting and running problems in spring. Unchanged gear lube won\'t reveal a leaking lower unit seal, which continues to cause internal damage while the boat sits. A battery that fully discharges over winter may be permanently damaged. Total repair cost from skipped winterization can easily exceed $1,000–$3,000+ depending on what fails.'
       },
       {
-        question: 'What fogging oil should I use on a Mercury outboard?',
-        answer: 'Mercury recommends Mercury Precision Fogging Oil for their four-stroke outboards. Using Mercury-branded fogging oil is advisable if your motor is still under warranty — using compatible OEM-recommended products protects your warranty documentation position. If your engine is out of warranty, a quality marine fogging oil from another reputable brand (such as Yamaha Stor-Rite or Star Brite) will perform the same protective function. The key is using a product specifically designed for marine engine fogging — not a substitute like WD-40 or light oil, which don\'t provide adequate cylinder wall protection over a long storage period.'
+        question: 'Do Mercury FourStroke outboards need to be fogged for winter storage?',
+        answer: 'No — Mercury FourStroke EFI outboards do *not* require fogging for normal seasonal storage under 6 months. This is per Mercury\'s own service guidance. Stabilized fuel circulating through the system provides the necessary protection for the cylinders, valves, and fuel system over a typical Ontario winter. Fogging is only recommended for: 2-stroke outboards, older carbureted engines, or any engine going into long-term storage longer than 6 months. If you do need to fog (for one of those reasons), Mercury recommends Mercury Precision Fogging Oil; for out-of-warranty engines, a quality marine fogging oil like Star Brite is fine. Never substitute WD-40 or light oil — they don\'t provide adequate cylinder protection.'
       },
       {
         question: 'Do I need to run the engine during winterization?',
