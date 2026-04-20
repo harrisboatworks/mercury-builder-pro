@@ -75,6 +75,12 @@ export default function AgentsHub() {
           <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Discovery endpoints</h2>
           <ul className="text-protected space-y-2">
             <li>
+              <code>/.well-known/mcp.json</code> — MCP server manifest (auto-discovery for Claude / Cursor / custom GPTs):{' '}
+              <a href="/.well-known/mcp.json" className="text-primary underline">
+                {SITE_URL}/.well-known/mcp.json
+              </a>
+            </li>
+            <li>
               <code>/llms.txt</code> — site map for LLMs:{' '}
               <a href="/llms.txt" className="text-primary underline">
                 {SITE_URL}/llms.txt
