@@ -7,6 +7,8 @@ import { SITE_URL } from '@/lib/site';
 const SUPABASE_FUNCTIONS_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1';
 const PUBLIC_MOTORS_API = `${SUPABASE_FUNCTIONS_URL}/public-motors-api`;
 const PUBLIC_QUOTE_API = `${SUPABASE_FUNCTIONS_URL}/public-quote-api`;
+const MCP_SERVER = `${SUPABASE_FUNCTIONS_URL}/agent-mcp-server`;
+const MOTORS_MD = `${SUPABASE_FUNCTIONS_URL}/motors-md`;
 
 export default function AgentsHub() {
   return (
@@ -137,6 +139,52 @@ export default function AgentsHub() {
             Returns <code>line_items</code>, <code>pricing</code>, <code>financing</code>, <code>deep_link</code>, and <code>priceValidUntil</code>.
             Final out-the-door price always requires human confirmation.
           </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">MCP server (Model Context Protocol)</h2>
+          <p className="text-protected">
+            Register Harris Boat Works as a tool inside Claude Desktop, Cursor, custom GPTs, or any MCP-compatible client.
+            JSON-RPC 2.0 over HTTP. Public, no-auth.
+          </p>
+          <pre className="bg-muted p-4 rounded text-sm overflow-x-auto">
+            <code>POST {MCP_SERVER}</code>
+          </pre>
+          <p className="text-protected text-sm mt-2">
+            Methods: <code>initialize</code>, <code>tools/list</code>, <code>tools/call</code>.
+            Tools: <code>search_motors</code>, <code>get_motor</code>, <code>estimate_trade_in</code>, <code>build_quote</code>, <code>get_brand_rules</code>.
+            GET the URL for the live tool catalog.
+          </p>
+          <pre className="bg-muted p-4 rounded text-xs overflow-x-auto mt-3">
+{`curl -X POST ${MCP_SERVER} \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "tools/call",
+    "params": {
+      "name": "search_motors",
+      "arguments": { "horsepower": 90, "in_stock_only": true }
+    }
+  }'`}
+          </pre>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Markdown catalog twins</h2>
+          <p className="text-protected">
+            LLM-cheap plain-text representation of the catalog. Use these instead of HTML when ingesting into a context window.
+          </p>
+          <pre className="bg-muted p-4 rounded text-xs overflow-x-auto">
+{`# Catalog index (markdown table of every motor + price + quote URL)
+GET ${MOTORS_MD}
+
+# One motor by id
+GET ${MOTORS_MD}?id={MOTOR_ID}
+
+# One motor by slug
+GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}
+          </pre>
         </section>
 
         <section className="mb-10">
