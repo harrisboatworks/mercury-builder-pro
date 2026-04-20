@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
-import { SiteHeader } from '@/components/SiteHeader';
-import { SiteFooter } from '@/components/SiteFooter';
+import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
 
 const SUPABASE_FUNCTIONS_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1';
@@ -20,7 +20,7 @@ export default function AgentsHub() {
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <SiteHeader />
+      <LuxuryHeader />
 
       <main className="max-w-4xl mx-auto px-4 py-12 prose prose-slate">
         <h1 className="heading-protected text-4xl font-bold mb-4">
