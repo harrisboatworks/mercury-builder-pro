@@ -373,7 +373,7 @@ export default function BlogArticle() {
               Need Help Choosing?
             </h3>
             <p className="text-muted-foreground mb-4">
-              Our team has 60+ years of Mercury expertise. Get personalized recommendations.
+              Our team has been a Mercury dealer since 1965. Get personalized recommendations.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link 
