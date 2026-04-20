@@ -210,7 +210,7 @@ export function GlobalSEO() {
             {
               "@type": "Offer",
               "itemOffered": {
-                "@type": "Product",
+                "@type": "Service",
                 "name": "Ethanol-Free Marine Fuel",
                 "description": "Ethanol-free fuel available on-site — ideal for outboard motors"
               }
