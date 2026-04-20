@@ -118,6 +118,13 @@ No, we do not offer delivery. All pickups are at our Gores Landing location.
   Docs: GET the same URL returns the full schema. See also https://mercuryrepower.ca/agents
 - Deep-link prefilled quote URL pattern (one-shot link to the configurator):
   https://mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}
+- MCP server (JSON-RPC 2.0, Model Context Protocol — register as a tool in Claude Desktop / Cursor / custom GPTs):
+  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server
+  Methods: initialize, tools/list, tools/call. Tools: search_motors, get_motor, estimate_trade_in, build_quote, get_brand_rules.
+- Markdown twins of the catalog (LLM-cheap plain-text):
+  Index:    https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md
+  By id:    https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md?id={MOTOR_ID}
+  By slug:  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md?slug={SLUG}
 
 Source-of-truth rules for agents acting on our behalf:
 - All pricing is CAD. Final out-the-door price requires human confirmation.
