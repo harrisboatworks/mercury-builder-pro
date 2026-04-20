@@ -1,0 +1,107 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/mcp-manifest.json",
+  "mcpVersion": "2024-11-05",
+  "name": "harris-boat-works-mercury",
+  "displayName": "Harris Boat Works — Mercury Repower",
+  "description": "Mercury outboard motor specialist on Rice Lake, Ontario. Search live inventory, estimate trade-ins, and build itemized CAD quotes with deep-link handoff. Family-owned since 1947, Mercury dealer since 1965. Service radius ~150 km from Gores Landing (Toronto, Peterborough, Kawarthas, Cobourg, Belleville).",
+  "version": "1.0.0",
+  "vendor": {
+    "name": "Harris Boat Works Ltd.",
+    "url": "https://mercuryrepower.ca",
+    "email": "info@harrisboatworks.ca",
+    "phone": "+1-905-342-2153"
+  },
+  "license": "proprietary",
+  "homepage": "https://mercuryrepower.ca/agents",
+  "documentation": "https://mercuryrepower.ca/agents",
+  "transport": {
+    "type": "http",
+    "protocol": "json-rpc-2.0",
+    "url": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server",
+    "auth": "none",
+    "cors": "open"
+  },
+  "tools": [
+    {
+      "name": "search_motors",
+      "description": "Search current Mercury outboard inventory by HP, family (FourStroke / Pro XS / SeaPro / Racing), or stock status. Returns CAD pricing. Excludes Verado."
+    },
+    {
+      "name": "get_motor",
+      "description": "Fetch a single Mercury motor by id or slug, including pricing, shaft length, and deep-link URL."
+    },
+    {
+      "name": "estimate_trade_in",
+      "description": "Estimate trade-in value (CAD) for any outboard. Brand penalties apply (Mercury preferred; Yamaha/Honda neutral; Evinrude/Johnson/Force/Chrysler discounted)."
+    },
+    {
+      "name": "build_quote",
+      "description": "Build an itemized CAD quote (motor + installation + propeller + trade-in + HST + financing tier) and return a deep-link the customer can open. Optional contact captures a lead."
+    },
+    {
+      "name": "get_brand_rules",
+      "description": "Authoritative source-of-truth: pricing currency, geography, no-Verado policy, financing minimums, deposits, warranty."
+    }
+  ],
+  "categories": ["e-commerce", "automotive", "marine", "local-business", "quoting"],
+  "tags": [
+    "mercury",
+    "outboard",
+    "marine",
+    "repower",
+    "ontario",
+    "canada",
+    "boat",
+    "quote",
+    "dealer",
+    "trade-in"
+  ],
+  "geography": {
+    "primary": "Ontario, Canada",
+    "radiusKm": 150,
+    "originLat": 44.1147,
+    "originLng": -78.2564,
+    "currency": "CAD",
+    "language": "en-CA"
+  },
+  "examples": [
+    {
+      "title": "Find a Mercury 90 HP in stock",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "search_motors",
+          "arguments": { "horsepower": 90, "in_stock_only": true }
+        }
+      }
+    },
+    {
+      "title": "Build a quote with trade-in",
+      "request": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "tools/call",
+        "params": {
+          "name": "build_quote",
+          "arguments": {
+            "horsepower": 150,
+            "family": "FourStroke",
+            "purchase_path": "installed",
+            "boat_info": { "make": "Lund", "model": "Pro-V 1875" },
+            "trade_in": { "brand": "Mercury", "year": 2008, "horsepower": 115, "condition": "good" }
+          }
+        }
+      }
+    }
+  ],
+  "discovery": {
+    "llmsTxt": "https://mercuryrepower.ca/llms.txt",
+    "aiTxt": "https://mercuryrepower.ca/.well-known/ai.txt",
+    "brandJson": "https://mercuryrepower.ca/.well-known/brand.json",
+    "agentsHub": "https://mercuryrepower.ca/agents",
+    "sitemap": "https://mercuryrepower.ca/sitemap.xml"
+  },
+  "lastUpdated": "2026-04-20"
+}
