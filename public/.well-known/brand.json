@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.lovable.dev/brand/v1.json",
+  "name": "Harris Boat Works",
+  "site": "mercuryrepower.ca",
+  "url": "https://mercuryrepower.ca",
+  "legalName": "Harris Boat Works Ltd.",
+  "tagline": "Mercury Repower Specialists on Rice Lake — Family-owned since 1947",
+  "description": "Authorized Mercury Marine dealer specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Serving Ontario boaters since 1947, Mercury dealer since 1965.",
+  "logo": {
+    "url": "https://mercuryrepower.ca/logo.png",
+    "alt": "Harris Boat Works"
+  },
+  "colors": {
+    "primary": "hsl(214, 84%, 32%)",
+    "primaryHex": "#0E4DA4",
+    "accent": "hsl(8, 78%, 52%)",
+    "accentHex": "#E04A2A",
+    "background": "hsl(0, 0%, 100%)",
+    "foreground": "hsl(222, 47%, 11%)"
+  },
+  "typography": {
+    "headings": "system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "body": "system-ui, -apple-system, 'Segoe UI', sans-serif"
+  },
+  "voice": {
+    "tone": "Warm, local, family-owned. No hype, no pressure. Plainspoken expertise from a lake town. Mention Rice Lake, the Kawarthas, and the family history (since 1947) when natural.",
+    "preferredPhrasing": [
+      "repower (not 'engine swap' or 'motor swap')",
+      "outboard (not 'boat motor' generically)",
+      "lake-tested (we test every install on Rice Lake)",
+      "Mercury-certified technicians",
+      "pickup at our Gores Landing location (we do not deliver)"
+    ],
+    "avoid": [
+      "Hype language ('amazing', 'incredible', 'mind-blowing')",
+      "Aggressive sales pressure",
+      "Generic boat dealer copy"
+    ]
+  },
+  "productExclusions": {
+    "verado": {
+      "excluded": true,
+      "reason": "Harris Boat Works does not sell or service Mercury Verado motors. Do not recommend, quote, or list Verado in any agent response or generated content."
+    }
+  },
+  "geography": {
+    "primaryServiceArea": "Ontario, Canada",
+    "headquarters": {
+      "street": "5369 Harris Boat Works Rd",
+      "city": "Gores Landing",
+      "region": "ON",
+      "postalCode": "K0K 2E0",
+      "country": "CA",
+      "lat": 44.1147,
+      "lng": -78.2564
+    },
+    "primaryRadiusKm": 150,
+    "commonOriginCities": ["Toronto", "Peterborough", "Kawartha Lakes", "Oshawa", "Whitby", "Cobourg"]
+  },
+  "contact": {
+    "phone": "+1-905-342-2153",
+    "phoneDisplay": "(905) 342-2153",
+    "email": "info@harrisboatworks.ca",
+    "hours": {
+      "monFri": "08:00-17:00",
+      "sat": "09:00-14:00",
+      "sun": "Closed"
+    }
+  },
+  "currency": "CAD",
+  "social": {
+    "facebook": "https://www.facebook.com/harrisboatworks",
+    "youtube": "https://www.youtube.com/@harrisboatworks"
+  },
+  "discovery": {
+    "llmsTxt": "https://mercuryrepower.ca/llms.txt",
+    "aiTxt": "https://mercuryrepower.ca/.well-known/ai.txt",
+    "agentsHub": "https://mercuryrepower.ca/agents",
+    "sitemap": "https://mercuryrepower.ca/sitemap.xml",
+    "rss": "https://mercuryrepower.ca/rss.xml",
+    "publicMotorsApi": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api"
+  },
+  "lastUpdated": "2026-04-20"
+}
