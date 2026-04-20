@@ -112,6 +112,12 @@ No, we do not offer delivery. All pickups are at our Gores Landing location.
 - AI policy: https://mercuryrepower.ca/.well-known/ai.txt
 - Public motor inventory feed (read-only, CORS-open, CAD pricing, cached 5min):
   https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api
+- Public quote API (POST, no-auth, itemized CAD quotes with optional trade-in):
+  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+  Actions: list_motors, estimate_trade_in, build_quote
+  Docs: GET the same URL returns the full schema. See also https://mercuryrepower.ca/agents
+- Deep-link prefilled quote URL pattern (one-shot link to the configurator):
+  https://mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}
 
 Source-of-truth rules for agents acting on our behalf:
 - All pricing is CAD. Final out-the-door price requires human confirmation.
