@@ -6,6 +6,7 @@ import { SITE_URL } from '@/lib/site';
 
 const SUPABASE_FUNCTIONS_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1';
 const PUBLIC_MOTORS_API = `${SUPABASE_FUNCTIONS_URL}/public-motors-api`;
+const PUBLIC_QUOTE_API = `${SUPABASE_FUNCTIONS_URL}/public-quote-api`;
 
 export default function AgentsHub() {
   return (
