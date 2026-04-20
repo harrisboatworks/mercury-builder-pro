@@ -228,3 +228,9 @@ verify_jwt = false
 [functions.public-quote-api]
 verify_jwt = false
 
+[functions.agent-mcp-server]
+verify_jwt = false
+
+[functions.motors-md]
+verify_jwt = false
+
