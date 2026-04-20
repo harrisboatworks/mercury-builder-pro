@@ -130,6 +130,7 @@ const StagingImageSizing = lazy(() => import("./pages/StagingImageSizing"));
 const StagingImageSizingV2 = lazy(() => import("./pages/StagingImageSizingV2"));
 const StagingImageSizingFinal = lazy(() => import("./pages/StagingImageSizingFinal"));
 const VoiceTest = lazy(() => import("./pages/VoiceTest"));
+const AgentsHub = lazy(() => import("./pages/AgentsHub"));
 
 function Canonical() {
   useEffect(() => {
@@ -409,6 +410,7 @@ function AnimatedRoutes() {
         <Route path="/financing" element={<Navigate to="/finance-calculator" replace />} />
         <Route path="/finance-calculator" element={<FinanceCalculator />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/agents" element={<AgentsHub />} />
         <Route path="/dev" element={<Dev />} />
         <Route path="/voice-test" element={<VoiceTest />} />
         <Route path="/test/scraper" element={<TestScraper />} />

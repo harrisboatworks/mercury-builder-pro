@@ -141,7 +141,7 @@ export function RepowerPageSEO() {
       <title>Mercury Outboard Repower Ontario | 70% of the Benefit for 30% of the Cost | Harris Boat Works</title>
       <meta name="description" content="Expert Mercury repower in Ontario. Get 70% of a new boat experience for 30% of the cost. 30-40% better fuel economy. Lake tested on Rice Lake. Mercury dealer since 1965. $8,000-$18,000 typical." />
       <meta name="keywords" content="mercury repower ontario, boat repower rice lake, outboard motor replacement, mercury dealer kawarthas, repower cottage boat, mercury four stroke, boat motor upgrade" />
-      <link rel="canonical" href="https://harrisboatworks.ca/repower" />
+      <link rel="canonical" href="https://mercuryrepower.ca/repower" />
       
       {/* Open Graph */}
       <meta property="og:title" content="Mercury Outboard Repower Ontario | Harris Boat Works" />

@@ -406,8 +406,8 @@ export default function FinanceCalculator() {
             <Button size="lg" variant="secondary" onClick={handleApplyForFinancing}>
               Apply Now <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <a href="tel:+17057501414" className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors">
-              <Phone className="h-4 w-4" /> (705) 750-1414
+            <a href="tel:+19053422153" className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground/90 hover:text-primary-foreground transition-colors">
+              <Phone className="h-4 w-4" /> (905) 342-2153
             </a>
           </div>
         </div>
