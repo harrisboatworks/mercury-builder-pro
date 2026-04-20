@@ -88,7 +88,7 @@ export function LuxuryHeader({
               <img 
                 src={mercuryLogo} 
                 alt="Mercury Marine" 
-                className="h-7 md:h-8 lg:h-9 transition-all duration-300"
+                className="h-7 md:h-8 lg:h-9 transition-all duration-300 dark:brightness-0 dark:invert"
               />
             </Link>
 
@@ -103,7 +103,7 @@ export function LuxuryHeader({
               <img 
                 src={mercuryLogo} 
                 alt="Mercury Marine" 
-                className="h-6 sm:h-7 transition-all duration-300"
+                className="h-6 sm:h-7 transition-all duration-300 dark:brightness-0 dark:invert"
               />
             </Link>
 
