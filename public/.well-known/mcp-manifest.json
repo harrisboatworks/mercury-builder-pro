@@ -1,0 +1,4 @@
+{
+  "_comment": "Alias of /.well-known/mcp.json — some agent crawlers probe both filenames.",
+  "see": "https://mercuryrepower.ca/.well-known/mcp.json"
+}

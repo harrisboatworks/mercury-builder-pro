@@ -17,10 +17,46 @@ export default function AgentsHub() {
         <title>For AI Agents & Assistants | Harris Boat Works</title>
         <meta
           name="description"
-          content="Authoritative source-of-truth rules, public APIs, and discovery endpoints for AI agents representing Harris Boat Works (Mercury repower specialists, Ontario)."
+          content="Authoritative source-of-truth rules, public APIs, and MCP server endpoints for AI agents (ChatGPT, Claude, Perplexity, Gemini) representing Harris Boat Works (Mercury repower specialists, Ontario)."
         />
         <link rel="canonical" href={`${SITE_URL}/agents`} />
         <meta name="robots" content="index, follow" />
+        <link rel="alternate" type="application/json" title="MCP Manifest" href="/.well-known/mcp.json" />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebAPI",
+              "name": "Harris Boat Works Mercury Quote API",
+              "description": "Public no-auth API for AI agents to search Mercury inventory, estimate trade-ins, and build itemized CAD quotes on behalf of Harris Boat Works.",
+              "documentation": `${SITE_URL}/agents`,
+              "termsOfService": `${SITE_URL}/.well-known/ai.txt`,
+              "provider": {
+                "@type": "Organization",
+                "name": "Harris Boat Works",
+                "url": SITE_URL,
+                "telephone": "+1-905-342-2153",
+                "areaServed": { "@type": "State", "name": "Ontario, Canada" }
+              },
+              "endpointURL": [PUBLIC_MOTORS_API, PUBLIC_QUOTE_API, MCP_SERVER, MOTORS_MD],
+              "potentialAction": {
+                "@type": "Action",
+                "name": "build_quote",
+                "target": MCP_SERVER
+              }
+            },
+            {
+              "@type": "SoftwareApplication",
+              "name": "Harris Boat Works MCP Server",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Any (HTTP/JSON-RPC 2.0)",
+              "description": "Model Context Protocol server exposing live Mercury outboard inventory, trade-in valuation, and quote-building tools to MCP-compatible AI clients (Claude Desktop, Cursor, custom GPTs).",
+              "url": MCP_SERVER,
+              "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
+              "publisher": { "@type": "Organization", "name": "Harris Boat Works", "url": SITE_URL }
+            }
+          ]
+        })}</script>
       </Helmet>
 
       <LuxuryHeader />
@@ -38,6 +74,12 @@ export default function AgentsHub() {
         <section className="mb-10">
           <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Discovery endpoints</h2>
           <ul className="text-protected space-y-2">
+            <li>
+              <code>/.well-known/mcp.json</code> — MCP server manifest (auto-discovery for Claude / Cursor / custom GPTs):{' '}
+              <a href="/.well-known/mcp.json" className="text-primary underline">
+                {SITE_URL}/.well-known/mcp.json
+              </a>
+            </li>
             <li>
               <code>/llms.txt</code> — site map for LLMs:{' '}
               <a href="/llms.txt" className="text-primary underline">
