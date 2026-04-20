@@ -202,7 +202,7 @@ Every 50-100 hours or monthly during heavy use:
 Proper winterization prevents 90% of spring problems:
 
 1. **Stabilize the fuel** - Use Mercury Quickstor or similar
-2. **Fog the engine** - Protects internal components
+2. **Stabilized fuel run** - For modern Mercury FourStroke EFI engines, run stabilized fuel through the system; fogging is *not* required for FourStroke EFI under 6-month storage and is reserved for 2-stroke, carbureted, or long-term storage
 3. **Change lower unit oil** - Don't let old oil sit all winter
 4. **Disconnect battery** - Store in cool, dry place
 5. **Store motor upright** - Prevents water from pooling in lower unit
@@ -236,7 +236,7 @@ At Harris Boat Works, our Mercury-certified technicians handle everything from b
       },
       {
         name: 'Fall Winterization',
-        text: 'Stabilize the fuel with Mercury Quickstor or similar. Fog the engine to protect internal components. Change lower unit oil. Disconnect battery and store in cool, dry place. Store motor upright to prevent water pooling.',
+        text: 'Stabilize the fuel with Mercury Quickstor or similar and run it through the system. (Mercury FourStroke EFI engines do not require fogging for normal seasonal storage — fogging is only needed for 2-stroke, carbureted, or storage over 6 months.) Change lower unit oil. Disconnect battery and store in cool, dry place. Store motor upright to prevent water pooling.',
       },
       {
         name: 'Schedule Professional Service',
@@ -270,11 +270,11 @@ At Harris Boat Works, our Mercury-certified technicians handle everything from b
       },
       {
         question: 'When should I winterize my outboard in Ontario?',
-        answer: 'In Ontario, winterize your outboard mid to late September through early October — before sustained overnight temperatures drop below 0°C. Rice Lake and most Kawartha Lakes typically see hard freezes starting in late October, but cooling system damage can begin with repeated overnight freezes well before that. The practical target for most Ontario boaters is Canadian Thanksgiving weekend. Winterize the motor before you move it to storage, while the motor can still be run to draw stabilized fuel through the system and fog the cylinders properly.'
+        answer: 'In Ontario, winterize your outboard mid to late September through early October — before sustained overnight temperatures drop below 0°C. Rice Lake and most Kawartha Lakes typically see hard freezes starting in late October, but cooling system damage can begin with repeated overnight freezes well before that. The practical target for most Ontario boaters is Canadian Thanksgiving weekend. Winterize the motor before you move it to storage, while the motor can still be run to draw stabilized fuel through the system. (Note: Mercury FourStroke EFI engines do not require fogging for normal seasonal storage; fogging is only needed for 2-stroke, carbureted, or long-term storage.)'
       },
       {
         question: 'How long does a professional outboard winterization take?',
-        answer: 'A professional outboard winterization at a certified Mercury dealer takes approximately 1.5 to 2.5 hours for a single engine, depending on motor size and additional services. The work covers running stabilized fuel through the system, fogging the cylinders, changing lower unit oil, flushing the cooling system, disconnecting and charging the battery, and a visual inspection. Booking early — before the fall rush in late September — is the best way to get your preferred date.'
+        answer: 'A professional outboard winterization at a certified Mercury dealer takes approximately 1.5 to 2.5 hours for a single engine, depending on motor size and additional services. The work covers running stabilized fuel through the system, changing lower unit oil, flushing the cooling system, disconnecting and charging the battery, and a visual inspection. (Mercury FourStroke EFI engines do not require fogging for normal seasonal storage; fogging is only added for 2-stroke, carbureted, or long-term storage situations.) Booking early — before the fall rush in late September — is the best way to get your preferred date.'
       },
       {
         question: 'Does doing my own winterization void my Mercury warranty?',
@@ -3457,7 +3457,7 @@ Smaller motors have built-in tanks. Larger (15HP+) typically use external.
       },
       {
         question: 'Do portable outboards need winterization?',
-        answer: 'Yes. Follow the same winterization procedures as larger motors: stabilize fuel, fog if stored long-term, store upright. Don\'t let ice form inside.'
+        answer: 'Yes. Follow the same winterization procedures as larger motors: stabilize fuel, change lower unit oil, store upright. Fogging is only needed if the portable is a carbureted/2-stroke model or going into storage longer than 6 months — modern Mercury FourStroke portables under 6-month storage do not require it. Don\'t let ice form inside.'
       }
     ]
   },
@@ -4144,10 +4144,9 @@ Before storing for any extended period:
 - Replace fuel filter if due
 
 **Engine Internals**:
-- Fog engine with fogging oil
-- Prevents corrosion inside cylinders
-- Essential for winter storage
-- Follow Mercury's fogging procedure
+- For Mercury FourStroke EFI engines stored under 6 months: fogging is *not* required — stabilized fuel run through the system provides the needed protection
+- For 2-stroke, carbureted, or long-term storage (over 6 months): fog the engine with marine fogging oil to prevent cylinder corrosion
+- Follow your engine\'s specific Mercury service manual
 
 **Lower Unit**:
 - Drain and refill gear oil
@@ -4211,7 +4210,7 @@ Before storing for any extended period:
 - Protect steering linkages
 
 **Internal Protection**:
-- Fogging oil (essential)
+- Fogging oil (only for 2-stroke, carbureted, or >6-month storage — *not* required for Mercury FourStroke EFI under normal seasonal storage)
 - Fresh lower unit oil
 - Stabilized fuel system
 - Clean fuel system components
@@ -4231,7 +4230,7 @@ When ready to recommission:
     faqs: [
       {
         question: 'Do I need to winterize if I store indoors?',
-        answer: 'Yes. Indoor storage is better, but winterization protects internal components regardless of storage temperature. Fuel stabilization and fogging are still essential.'
+        answer: 'Yes. Indoor storage is better, but winterization protects internal components regardless of storage temperature. Fuel stabilization and lower unit service are still essential. Fogging is only required for 2-stroke, carbureted, or storage longer than 6 months — Mercury FourStroke EFI engines do not need fogging for normal seasonal storage.'
       },
       {
         question: 'Can I run my motor periodically over winter?',
@@ -5122,8 +5121,8 @@ Major service milestone:
 ### Winterization (Annual)
 
 Before winter storage:
-- Stabilize fuel
-- Fog engine
+- Stabilize fuel and run through the system
+- Fog engine *only* if it\'s a 2-stroke, carbureted, or going into storage over 6 months (Mercury FourStroke EFI does not require fogging for normal seasonal storage)
 - Change lower unit oil
 - Disconnect battery
 - Proper storage position
@@ -5864,9 +5863,11 @@ Proper winterization prevents spring headaches and protects your investment. Her
 - Option B: Run system dry (remove fuel)
 - Most recommend stabilized fuel remaining
 
-### Fogging the Engine
+### Fogging the Engine (When Required)
 
-**Purpose**: Protects internal components from corrosion
+**Important — when fogging is and isn\'t required:** Per Mercury\'s service guidance, FourStroke EFI engines stored under 6 months do *not* require fogging. Stabilized fuel circulating through the system provides the needed protection. Fogging is only recommended for: 2-stroke outboards, older carbureted engines, or any engine going into storage longer than 6 months.
+
+**Purpose (when applicable)**: Protects internal components from corrosion in the situations above
 
 **Process**:
 1. Warm up engine
@@ -5939,7 +5940,7 @@ Proper winterization prevents spring headaches and protects your investment. Her
       },
       {
         question: 'Is there a difference winterizing a 4-stroke vs 2-stroke?',
-        answer: 'Principles are similar. 4-strokes require oil draining/refilling. 2-strokes focus on fogging and fuel system. Both need lower unit service and proper storage.'
+        answer: 'Principles overlap but differ in key ways. Mercury FourStroke EFI engines: change engine oil, fuel stabilization, lower unit service, cooling flush — fogging is *not* required for normal seasonal storage under 6 months. 2-strokes: fuel stabilization plus fogging (since they don\'t have a separate engine oil sump and the fuel/oil mix sits in the cylinders), and lower unit service. Both need proper storage and battery service.'
       }
     ]
   },
