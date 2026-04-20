@@ -63,44 +63,52 @@ Choosing the right horsepower for your boat is one of the most important decisio
 
 ### Check Your Boat's HP Rating
 
-Every boat has a maximum horsepower rating on its capacity plate. This is set by Transport Canada and should never be exceeded. However, the maximum isn't always the best choice—it depends on how you'll use your boat.
+Every boat has a maximum horsepower rating on its capacity plate. This is set by Transport Canada and should never be exceeded. However, the maximum isn't always the best choice — it depends on how you'll use your boat.
 
 ### Match HP to Boat Type
 
-**Fishing Boats (14-16ft)**: 25-60HP
+**Fishing Boats (14–16 ft):** 25–60 HP
+
 Perfect for lake fishing, these boats need enough power to reach your spots quickly but don't need speed for watersports.
 
-**Pontoons (16-24ft)**: 40-115HP
-Pontoons need more power due to their hull design. A 20ft pontoon typically runs best with 60-90HP.
+**Pontoons (16–24 ft):** 40–115 HP
 
-**V-Hull Fishing (16-20ft)**: 75-150HP
+Pontoons need more power due to their hull design. A 20 ft pontoon typically runs best with 60–90 HP.
+
+**V-Hull Fishing (16–20 ft):** 75–150 HP
+
 Larger fishing boats benefit from higher horsepower for rough water handling and getting to fishing grounds quickly.
 
-**Center Console (18-24ft)**: 115-300HP
+**Center Console (18–24 ft):** 115–300 HP
+
 These versatile boats often run twin motors for safety and performance on larger bodies of water.
 
 ### Consider Your Use Case
 
-- **Casual cruising**: Mid-range HP is typically sufficient
-- **Watersports**: You'll want higher HP for pulling tubes and skiers
-- **Fishing**: Consider trolling needs—sometimes a smaller kicker motor makes sense
-- **Commercial use**: Reliability matters more than raw power
+**Casual cruising:** Mid-range HP is typically sufficient
+
+**Watersports:** You'll want higher HP for pulling tubes and skiers
+
+**Fishing:** Consider trolling needs — sometimes a smaller kicker motor makes sense
+
+**Commercial use:** Reliability matters more than raw power
 
 ### The Sweet Spot
 
-For most recreational boaters, we recommend 70-80% of maximum rated horsepower. This provides:
+For most recreational boaters, we recommend 70–80% of maximum rated horsepower. This provides:
+
 - Excellent fuel efficiency
-- Good performance in various conditions  
+- Good performance in various conditions
 - Reduced engine strain
 - Lower operating costs
 
-![Infographic showing how to choose the right horsepower for your boat](/lovable-uploads/How_to_Choose_Horsepower_Infographic.png)
+![Infographic showing how to choose the right horsepower for your boat](https://mercuryrepower.ca/lovable-uploads/How_to_Choose_Horsepower_Infographic.png)
 
 ### Get Expert Advice
 
-![Customer consulting with Mercury specialist about horsepower selection](/lovable-uploads/Guy_talking_to_salesperson_Mercury.png)
+![Customer consulting with Mercury specialist about horsepower selection](https://mercuryrepower.ca/lovable-uploads/Guy_talking_to_salesperson_Mercury.png)
 
-At Harris Boat Works, we've helped Ontario boaters choose the right motor for since 1965. Bring in your boat specs, or tell us about your ideal day on the water—we'll recommend the perfect match.
+At Harris Boat Works, we've helped Ontario boaters choose the right motor since 1965 — from small aluminum fishing boats on Rice Lake to large pontoons on the Kawarthas. Bring in your boat specs, or tell us about your ideal day on the water, and we'll recommend the right motor for how you actually use it.
     `,
     faqs: [
       {
@@ -422,72 +430,82 @@ For most Ontario boaters, the **Mercury FourStroke** offers the best overall val
     content: `
 ## Should You Repower Your Boat?
 
-Repowering—replacing your outboard motor—is one of the best investments you can make in your boat. Here's how to know when it's time and what to expect.
+Repowering — replacing your outboard motor — is one of the best investments you can make in a boat you already love. Here's how to know when it's time and what to expect from the process.
 
 ### Signs You Need to Repower
 
-**Reliability Issues**:
-- Frequent breakdowns or repairs
-- Hard starting or rough running
-- Overheating problems
-- Excessive oil consumption
+Reliability Issues:
 
-**Performance Decline**:
-- Noticeable power loss
-- Poor fuel economy
-- Can't reach rated RPM
-- Excessive vibration
+Frequent breakdowns or repairs
+Hard starting or rough running
+Overheating problems
+Excessive oil consumption
 
-**Economic Factors**:
-- Repair costs exceeding motor value
-- Parts becoming scarce
-- Failed components (powerhead, lower unit)
+Performance Decline:
+
+Noticeable power loss
+Poor fuel economy
+Can't reach rated RPM
+Excessive vibration
+
+Economic Factors:
+
+Repair costs exceeding motor value
+Parts becoming scarce
+Failed components (powerhead, lower unit)
 
 ### The Repower Advantage
 
 **Repower vs. Buy New Boat**: For a fraction of the cost of a new boat, repowering gives you:
-- Modern fuel efficiency (often 30-40% better)
-- Improved reliability
-- Better performance
-- Current technology and features
-- Extended boat life
 
-**Cost Comparison**:
-- New 20ft fishing boat: $35,000+
-- Repower same boat with new 115HP: $12,000-$15,000
+Modern fuel efficiency (often 30-40% better)
+Improved reliability
+Better performance
+Current technology and features
+Extended boat life
+
+Cost Comparison:
+
+New 20ft fishing boat: $35,000+
+Repower same boat with new 115HP: $12,000-$15,000
 
 That's 70% of the benefit at 30-40% of the cost.
 
 ### What's Involved in Repowering
 
-1. **Motor Selection**: Choosing the right HP and model
-2. **Rigging Assessment**: Evaluating controls, cables, gauges
-3. **Transom Inspection**: Ensuring structural integrity
-4. **Installation**: Professional mounting and rigging
-5. **Lake Testing**: Verifying performance and setup
-6. **Setup & Tuning**: Propeller selection and trimming
+**Motor Selection**: Choosing the right HP and model
+**Rigging Assessment**: Evaluating controls, cables, gauges
+**Transom Inspection**: Ensuring structural integrity
+**Installation**: Professional mounting and rigging
+**Lake Testing**: Verifying performance and setup
+**Setup & Tuning**: Propeller selection and trimming
 
-![Boat repowering in progress - old motor being replaced with new Mercury Pro XS](/lovable-uploads/Boat_Repowering_In_Progress.png)
+![Boat repowering in progress - old motor being replaced with new Mercury Pro XS](https://mercuryrepower.ca/lovable-uploads/Boat_Repowering_In_Progress.png)
 
 ### Timeline & Cost
 
 Typical repower projects take 3-7 days depending on scope:
 
 **Basic Repower** (motor only, compatible controls): $8,000 - $12,000
+
 **Full Repower** (motor, controls, rigging): $12,000 - $18,000
+
 **Premium Repower** (motor, electronics, full upgrade): $15,000 - $25,000
 
 ### Winter Repower Advantage
 
 Schedule your repower during winter for:
-- Faster turnaround (less demand)
-- No missed boating season
-- Often better pricing
-- Spring-ready boat
+
+Faster turnaround (less demand)
+No missed boating season
+Often better pricing
+Spring-ready boat
 
 ### Trust the Certified Experts
 
-As a Mercury Certified Repower Center, Harris Boat Works has the expertise to handle any repower project. Our 60 years as a Mercury dealer means we know these motors inside and out.
+As a Mercury dealer since 1965 and a Mercury Certified Repower Center, Harris Boat Works has the expertise to handle any repower project — from a straightforward motor swap on a 16ft aluminum boat to a full rigging overhaul on a larger package. We see repowers from all over the Kawarthas, and the most common situation is simple: good hull, tired motor, owner who wants their boat back. We can assess your rig honestly and tell you whether a repower makes sense or whether there's a better path.
+
+[Request service](https://hbw.wiki/service) to get started, or call 905-342-2153.
     `,
     faqs: [
       {
@@ -546,63 +564,71 @@ As a Mercury Certified Repower Center, Harris Boat Works has the expertise to ha
     content: `
 ## Breaking In Your New Mercury Outboard
 
-Congratulations on your new Mercury motor! Proper break-in during the first 10 hours ensures your engine delivers peak performance and long life.
+A new Mercury motor is a significant investment — and the first 10 hours you put on it matter more than any other 10 hours in its life. Proper break-in lets the internal components seat correctly, establishes the right oil film on bearing and cylinder surfaces, and sets the engine up for the long haul. We've sold and serviced Mercury outboards at Harris Boat Works since 1965, and the owners who follow this procedure consistently get more life out of their engines.
 
-![Mercury Motor Break-In Infographic](/lovable-uploads/Break_In_Infographic.png)
+![Mercury Motor Break-In Infographic](https://mercuryrepower.ca/lovable-uploads/Break_In_Infographic.png)
 
 ### Why Break-In Matters
 
-During manufacturing, engine components are machined to precise tolerances. The break-in period allows:
-- Piston rings to seat properly
-- Bearings to wear in evenly
-- Components to mate correctly
-- Optimal oil film to develop
+During manufacturing, engine components are machined to very precise tolerances. The break-in period allows:
 
-Skipping or rushing break-in can lead to reduced performance, higher oil consumption, and shortened engine life.
+- Piston rings to seat properly against the cylinder walls
+- Bearings to wear in evenly
+- Mating components to find their final fit
+- Optimal oil film to develop on all friction surfaces
+
+Skipping or rushing break-in can lead to reduced peak performance, higher long-term oil consumption, and a measurably shorter engine life. The 10 hours is not a formality — it's engineering.
 
 ### The 10-Hour Break-In Procedure
 
-**First Hour (0-1 hours)**:
+**First Hour (0–1 hours):**
+
 - Start engine and warm up at idle for 5 minutes
-- Run at varying speeds below 3000 RPM
-- Never hold steady throttle for more than a few minutes
+- Run at varying speeds below 3,000 RPM
+- Never hold a steady throttle position for more than a few minutes
 - Avoid hard acceleration
 
-**Hours 2-3**:
+**Hours 2–3:**
+
 - Gradually increase to 3/4 throttle
 - Continue varying speed every few minutes
-- Brief full-throttle bursts okay (under 30 seconds)
-- Allow engine to cool between runs
+- Brief full-throttle bursts are okay (under 30 seconds)
+- Allow engine to cool between hard runs
 
-**Hours 4-10**:
+**Hours 4–10:**
+
 - Normal operation at varying speeds
-- Occasional full-throttle runs (1-2 minutes max)
-- Avoid extended trolling at same speed
-- Vary your throttle position regularly
+- Occasional full-throttle runs up to 1–2 minutes
+- Avoid extended trolling at a single constant speed
+- Keep varying your throttle position regularly
 
 ### Factory Oil
 
-Your new Mercury FourStroke comes from the factory filled with standard Mercury FourStroke 10W-30 oil — there is no special break-in formulation. However, we strongly recommend changing the engine oil and gear lube at the 20-hour mark to remove any metal particles from the break-in period.
+Your new Mercury FourStroke comes from the factory filled with standard Mercury FourStroke 10W-30 oil — there is no special break-in formulation. However, we strongly recommend changing the engine oil and gear lube at the **20-hour mark** to remove metal particles shed during the break-in process. Leaving those particles in the oil is the most common mistake we see.
 
 ### What NOT to Do
 
 ❌ Run at constant speed for extended periods
+
 ❌ Immediately run at full throttle
+
 ❌ Let the engine overheat
-❌ Skip the first oil change
+
+❌ Skip the first oil change at 20 hours
+
 ❌ Use non-marine oil
 
 ### First Oil Change
 
-Schedule your first oil change at **20 hours**—this is critical. The oil captures metal particles from the break-in process that need to be removed before they cause wear.
+Schedule your first oil change at **20 hours** — this is not optional. The oil captures metal particles from break-in that need to be removed before they circulate and cause wear. Use Mercury-branded 10W-30 FourStroke oil and replace the gear lube at the same time. On Rice Lake, where many owners put those first 20 hours on fast during opening weeks, this service comes up quickly — book it before you need it.
 
 ### After Break-In
 
-Once you've completed the 10-hour break-in and 20-hour oil change, your motor is ready for normal operation. Continue following the maintenance schedule in your owner's manual.
+Once you've completed the 10-hour break-in and 20-hour oil change, your motor is ready for normal operation. Continue following the maintenance schedule in your owner's manual. From this point forward, annual or 100-hour service intervals apply.
 
 ### Let Us Help
 
-When you purchase from Harris Boat Works, we walk you through the break-in procedure and offer complimentary first oil change at 20 hours. We want your motor to last as long as possible.
+When you purchase from Harris Boat Works, we walk you through the break-in procedure at delivery and offer a complimentary first oil change at 20 hours. We want your motor to last as long as possible — that's how we've been doing business since 1947. Call us at 905-342-2153 or [request service online](https://hbw.wiki/service).
     `,
     howToSteps: [
       {
@@ -1129,90 +1155,109 @@ For the typical Ontario angler fishing inland lakes with a 16ft aluminum boat:
     content: `
 ## Choosing the Right Mercury for Your Pontoon
 
-Pontoons require more power than V-hulls of similar length due to their hull design. Here's how to select the perfect Mercury for your pontoon boat.
+Pontoons require more power than V-hulls of similar length due to their hull design. Here's how to select the right Mercury for your pontoon boat — whether you're buying new, repowering an older pontoon, or figuring out why yours feels sluggish.
+
+We see more underpowered pontoons on Rice Lake than any other mistake. The number one regret buyers have? Not going up one HP class. Here's how to avoid it.
 
 ### Pontoon HP Guidelines
 
 **18-20 Foot Pontoons**
-- Minimum: 40HP (will be slow)
-- Recommended: **60-90HP**
-- Maximum: Usually 90-115HP
-- Best choice: Mercury 75HP FourStroke
+
+Minimum: 40HP (will be slow)
+Recommended: **60-90HP**
+Maximum: Usually 90-115HP
+Best choice: Mercury 75HP FourStroke
 
 **21-24 Foot Pontoons**
-- Minimum: 75HP (underpowered for full loads)
-- Recommended: **90-150HP**
-- Maximum: Usually 115-200HP
-- Best choice: Mercury 115HP FourStroke
+
+Minimum: 75HP (underpowered for full loads)
+Recommended: **90-150HP**
+Maximum: Usually 115-200HP
+Best choice: Mercury 115HP FourStroke
 
 **25-28 Foot Tritoons**
-- Minimum: 150HP
-- Recommended: **200-300HP**
-- Maximum: Up to 400HP on some models
-- Best choice: Mercury Verado 250HP or higher
+
+Minimum: 150HP
+Recommended: **200-300HP**
+Maximum: Up to 400HP on some models
+Best choice: Mercury Verado 250HP or higher
 
 ### The Power-to-Weight Reality
 
 Pontoons are heavy. A loaded 22ft pontoon can weigh 4,000+ lbs. You need sufficient power for:
 
-- Getting on plane with full passenger load
-- Handling wind (pontoons catch wind badly)
-- Maintaining speed upriver/upwind
-- Safety in rough conditions
+Getting on plane with full passenger load
+Handling wind (pontoons catch wind badly)
+Maintaining speed upriver/upwind
+Safety in rough conditions
 
 **Rule of thumb**: For every 50 lbs of weight, add 1HP
 
 ### Best Mercury Motors for Pontoons
 
 **Budget-Friendly Power**
+
 Mercury 115HP EFI FourStroke
-- Great for 20-23ft pontoons
-- Reliable and efficient
-- Adequate power for most families
-- Best value in the lineup
+
+Great for 20-23ft pontoons
+Reliable and efficient
+Adequate power for most families
+Best value in the lineup
 
 **The Sweet Spot**
+
 Mercury 150HP EFI FourStroke
-- Perfect for 22-25ft pontoons
-- Handles wind and load confidently
-- Plenty of power for tubes
-- Excellent resale value
+
+Perfect for 22-25ft pontoons
+Handles wind and load confidently
+Plenty of power for tubes and towables
+Excellent resale value
 
 **Premium Performance**
+
 Mercury Verado 250-300HP
-- Best for 24-28ft tritoons
-- Naturally aspirated V8 smooth power
-- Whisper quiet operation
-- Premium feel matches premium pontoons
+
+Best for 24-28ft tritoons
+Naturally aspirated V8 smooth power
+Whisper quiet operation
+Premium feel matches premium pontoons
 
 ### Tritoon Considerations
 
 Tritoons (3-tube pontoons) typically:
-- Handle higher horsepower
-- Need more power than dual-tube
-- Perform better in rough water
-- Cost more to power adequately
+
+Handle higher horsepower
+Need more power than dual-tube configurations
+Perform better in rough water
+Cost more to power adequately
 
 For a 25ft tritoon, we recommend minimum 200HP.
 
 ### Pontoon Features to Consider
 
 **Hydraulic Steering**
-Essential above 115HP. Reduces steering effort significantly.
+
+Essential above 115HP. Reduces steering effort significantly on a heavy pontoon hull.
 
 **Power Trim**
-Standard on all motors we recommend. Critical for pontoon performance tuning.
+
+Standard on all motors we recommend. Critical for pontoon performance tuning — trim angle has a bigger effect on a pontoon than most boat types.
 
 **Quiet Operation**
-Mercury FourStroke and Verado are notably quiet—important when you're entertaining.
+
+Mercury FourStroke and Verado are notably quiet — important when you're entertaining on the water and want to have a conversation at cruise speed.
 
 ### Our Pontoon Recommendations
 
 **Best Value**: Mercury 115HP FourStroke for 20-22ft pontoons
-**Best Overall**: Mercury 150HP FourStroke for 22-24ft pontoons  
+
+**Best Overall**: Mercury 150HP FourStroke for 22-24ft pontoons
+
 **Best Premium**: Mercury Verado 250HP for 24ft+ tritoons
 
-**[Get a Quote on Your Pontoon Motor](/quote)**
+On Rice Lake, most family pontoons are in the 20–24ft range. A Mercury 115–150HP is the right power band for this water — enough to get the family on plane, handle the open south-end run, and pull a tube without straining the motor. We see too many 20ft pontoons with 60–75HP; they work on flat calm days, but they're miserable in any chop or with a full load.
+
+[Get a quote on your pontoon motor](https://mercuryrepower.ca/quote/motor-selection)
     `,
     faqs: [
       {
@@ -2043,98 +2088,103 @@ Mercury SmartCraft gauges work with older motors. If you're upgrading to a motor
     content: `
 ## Mercury Outboard Warranty Explained
 
-Mercury Marine backs their motors with industry-leading warranty coverage. Here's what you need to know about your protection.
+Mercury backs their motors with one of the strongest warranty packages in the outboard market. The standard coverage is 3 years with no hour limit — and you can extend that to 7 years with Gold coverage. Here's what's actually included, what voids it, and whether the extended plan is worth buying.
+
+We've been selling and servicing Mercury motors on Rice Lake since 1965. Warranty questions come up constantly, and the answers matter. A claim denied for a preventable reason is frustrating for everyone.
 
 ### Standard Warranty Coverage
 
-**Recreational Use**:
-- **3 Years** of factory warranty
-- No hour limitations
-- Covers defects in materials and workmanship
+Recreational Use:
 
-**Commercial Use**:
-- **1 Year** of factory warranty
-- Commercial applications defined by Mercury
-- Extended options available
+**3 Years** of factory warranty
+No hour limitations
+Covers defects in materials and workmanship
+
+Commercial Use:
+
+**1 Year** of factory warranty
+Commercial applications defined by Mercury
+Extended options available
 
 ### What's Covered
 
-**Covered Items**:
-- Engine components (powerhead, lower unit)
-- Fuel system components
-- Electrical system
-- Ignition components
-- Factory-installed accessories
-- Corrosion (specific timeframes)
+Covered Items:
 
-**Not Covered**:
-- Normal wear items (spark plugs, anodes, etc.)
-- Damage from accidents or misuse
-- Improper winterization damage
-- Neglected maintenance
-- Modifications that cause problems
+Engine components (powerhead, lower unit)
+Fuel system components
+Electrical system
+Ignition components
+Factory-installed accessories
+Corrosion (specific timeframes)
+
+Not Covered:
+
+Normal wear items (spark plugs, anodes, etc.)
+Damage from accidents or misuse
+Improper winterization damage
+Neglected maintenance
+Modifications that cause problems
 
 ### Extended Warranty Options
 
 Mercury offers extended coverage up to **7 years** (3 standard + 4 additional years of Gold coverage):
-
-| Coverage Level | Years | Notes |
-|----------------|-------|-------|
-| Standard | 3 | Included free |
-| Gold | Up to 7 total | 3 + 4 years Gold coverage |
 
 **Extended warranty must be purchased within 1 year of original purchase.**
 
 ### Corrosion Protection
 
 Mercury's **3 + 3 Corrosion Warranty**:
-- 3 years standard coverage
-- Additional 3 years corrosion protection
-- Covers powerhead, driveshaft housing, gearcase
-- Both freshwater and saltwater use
+
+3 years standard coverage
+Additional 3 years corrosion protection
+Covers powerhead, driveshaft housing, gearcase
+Both freshwater and saltwater use
 
 ### How to Maintain Warranty
 
-**Required**:
-- Register your motor within 30 days
-- Follow maintenance schedule
-- Use certified technicians for warranty repairs
-- Keep service records
+Required:
 
-**Recommended**:
-- Annual service at authorized dealer
-- Use genuine Mercury parts
-- Document all maintenance
+Register your motor within 30 days
+Follow maintenance schedule
+Use certified technicians for warranty repairs
+Keep service records
+
+Recommended:
+
+Annual service at authorized dealer
+Use genuine Mercury parts
+Document all maintenance
 
 ### Warranty Service at Harris Boat Works
 
-As an authorized Mercury dealer, we:
-- Handle all warranty claims directly
-- Stock common parts for quick repairs
-- Submit claims electronically
-- Get you back on the water fast
+As an authorized Mercury dealer since 1965, we handle warranty work directly — no middleman, no delay waiting for a third party to authorize the claim. We submit claims electronically, stock common parts, and get boats back on Rice Lake as fast as possible.
+
+If your motor develops an issue during the warranty period, call us at 905-342-2153 or [request service](https://hbw.wiki/service). Bring your service records if you have them.
 
 ### Is Extended Warranty Worth It?
 
-**Consider Extended Warranty If**:
-- You're financing (matches protection to loan term)
-- You keep boats long-term
-- Peace of mind matters to you
-- Motor is critical to your livelihood
+Consider Extended Warranty If:
 
-**Maybe Skip If**:
-- Planning to trade up in 3-4 years
-- Comfortable with self-insurance
-- Budget is very tight
+You're financing (matches protection to loan term)
+You keep boats long-term
+Peace of mind matters to you
+Motor is critical to your livelihood
+
+Maybe Skip If:
+
+Planning to trade up in 3-4 years
+Comfortable with self-insurance
+Budget is very tight
 
 ### Transferability
 
 Mercury warranties **can transfer** to new owners:
-- Original warranty terms apply
-- Transfer fee may apply
-- Adds value to boat at resale
 
-**[Get a Quote with Extended Warranty Pricing](/quote)**
+Original warranty terms apply
+Transfer fee may apply
+Adds value to boat at resale
+
+[Build your quote — includes extended warranty pricing options](https://mercuryrepower.ca/quote/motor-selection)
     `,
     faqs: [
       {
@@ -2204,99 +2254,115 @@ Mercury warranties **can transfer** to new owners:
     content: `
 ## Choosing the Right Mercury for Your Bass Boat
 
-Bass boats demand motors that deliver explosive hole-shot, reliable performance, and the power to run hard all day. Here's how to choose.
+Bass boats demand motors that deliver explosive hole-shot, reliable performance, and the power to run hard all day. Whether you're running Rice Lake looking for smallmouth, heading to a tournament trail, or just want a rig that keeps up — here's how to choose the right Mercury.
+
+We've been a Mercury dealer since 1965. These are our honest recommendations.
 
 ### The Bass Boat Motor Segment
 
 Most modern bass boats run between **150HP and 400HP**:
-- **150-200HP**: 18-19ft boats, recreational
-- **200-250HP**: 20-21ft boats, semi-competitive
-- **250-300HP**: 21-22ft boats, tournament
-- **300-400HP**: 22ft+ boats, elite tournament
+
+**150-200HP**: 18-19ft boats, recreational
+**200-250HP**: 20-21ft boats, semi-competitive
+**250-300HP**: 21-22ft boats, tournament
+**300-400HP**: 22ft+ boats, elite tournament
 
 ### Mercury Pro XS: The Tournament Choice
 
 The Mercury Pro XS line is purpose-built for performance:
 
-**Key Features**:
-- Lightweight construction (up to 60 lbs lighter)
-- Tuned for higher RPM
-- Faster hole-shot
-- Competition-grade internals
-- Available 115-300HP
+Key Features:
 
-**Why Pro XS for Bass**:
-- Get to your spots faster
-- Save weight for better handling
-- Tournament-proven reliability
-- Maximum acceleration
+Lightweight construction (up to 60 lbs lighter than comparable FourStroke)
+Tuned for higher RPM
+Faster hole-shot
+Competition-grade internals
+Available 115-300HP
+
+Why Pro XS for Bass:
+
+Get to your spots faster
+Save weight for better handling
+Tournament-proven reliability
+Maximum acceleration
 
 ### Mercury FourStroke: The Value Play
 
 Don't overlook FourStroke for recreational bass fishing:
 
-**Benefits**:
-- Lower price point
-- Excellent fuel economy
-- Proven reliability
-- Quieter operation
+Benefits:
 
-**Best For**:
-- Non-tournament anglers
-- Budget-conscious buyers
-- Those prioritizing fuel efficiency
+Lower price point
+Excellent fuel economy
+Proven reliability
+Quieter operation
+
+Best For:
+
+Non-tournament anglers
+Budget-conscious buyers
+Those prioritizing fuel efficiency over outright performance
 
 ### Mercury Verado: Premium Power
 
 Verado brings naturally aspirated V8/V10 performance:
 
-**Benefits**:
-- Smoothest power delivery
-- Quietest operation
-- Advanced features
-- Premium feel
+Benefits:
 
-**Best For**:
-- Premium bass boat brands
-- Anglers wanting the best
-- Those who value refinement
+Smoothest power delivery
+Quietest operation
+Advanced features
+Premium feel
+
+Best For:
+
+Premium bass boat brands
+Anglers wanting the refinement of V8 torque
+Those who value quiet cruise as much as hole-shot
 
 ### Recommended Setups by Boat Size
 
-**18-19ft Bass Boat**:
-- Mercury 150-175HP Pro XS
-- Good: FourStroke 150HP
+18-19ft Bass Boat:
 
-**20ft Bass Boat**:
-- Mercury 200-225HP Pro XS
-- Alternative: Verado 200HP
+Mercury 150-175HP Pro XS
+Good: FourStroke 150HP
 
-**21ft Bass Boat**:
-- Mercury 225-250HP Pro XS
-- Alternative: Verado 250HP
+20ft Bass Boat:
 
-**22ft+ Tournament Boat**:
-- Mercury 300-400HP Pro XS
-- Alternative: Verado 300HP
+Mercury 200-225HP Pro XS
+Alternative: Verado 200HP
+
+21ft Bass Boat:
+
+Mercury 225-250HP Pro XS
+Alternative: Verado 250HP
+
+22ft+ Tournament Boat:
+
+Mercury 300-400HP Pro XS
+Alternative: Verado 300HP
 
 ### Critical Bass Boat Features
 
-**Jack Plate Compatibility**:
-All Mercury motors work with standard jack plates. Shaft length affects setup.
+Jack Plate Compatibility:
 
-**Quick Lift**:
-Power Trim standard. Vital for running shallow.
+All Mercury motors work with standard jack plates. Shaft length affects setup — confirm 20" or 25" based on your transom configuration.
 
-**Propeller Selection**:
-Pro XS boats often run 4-blade stainless props for best hole-shot.
+Quick Lift:
+
+Power Trim standard. Vital for running shallow water on lakes like Rice Lake, where shoals and weed edges demand constant adjustment.
+
+Propeller Selection:
+
+Pro XS boats often run 4-blade stainless props for best hole-shot. Pitch selection varies by boat weight and use — our team can help you choose the right prop for your hull and fishing style.
 
 ### Our Recommendation
 
 For most bass anglers, the **Mercury Pro XS** in the appropriate HP provides the best combination of performance and value. It's what tournament pros run for good reason.
 
-If budget is tighter and you fish recreationally, the **Mercury FourStroke** at 150HP delivers excellent performance without the premium price.
+If budget is tighter and you fish recreationally — chasing smallmouth on Rice Lake or bass on cottage country waters — the **Mercury FourStroke** at 150HP delivers excellent performance without the Pro XS premium.
 
-**[Build Your Bass Boat Motor Quote](/quote)**
+[Build your bass boat motor quote](https://mercuryrepower.ca/quote/motor-selection)
     `,
     faqs: [
       {
@@ -2677,105 +2743,118 @@ Mercury's Joystick Piloting for Outboards is a game-changer for docking:
     content: `
 ## Spring Commissioning Checklist
 
-Winter's over—time to get your Mercury ready for another season. Follow this checklist for a trouble-free summer.
+The ice is out on Rice Lake. Time to get your Mercury ready for another season. Follow this checklist for a trouble-free summer on the water.
 
 ### Before You Touch the Motor
 
-**Battery Check**:
-- Check voltage (should be 12.6V+ for full charge)
-- Clean terminals (baking soda + water)
-- Verify tight connections
-- Test under load if possible
+Battery Check:
 
-**Fuel System**:
-- Inspect fuel lines for cracks or deterioration
-- Check primer bulb (should hold firm when squeezed)
-- Look for water in fuel filter
-- Replace fuel filter if uncertain
+Check voltage (should be 12.6V+ for full charge)
+Clean terminals (baking soda + water)
+Verify tight connections
+Test under load if possible
+
+Fuel System:
+
+Inspect fuel lines for cracks or deterioration
+Check primer bulb (should hold firm when squeezed)
+Look for water in fuel filter
+Replace fuel filter if uncertain
 
 ### Engine Inspection
 
-**External Check**:
-- Look for corrosion or damage
-- Verify all cowl clips secure
-- Check paint condition
-- Ensure no critters made a home inside
+External Check:
 
-**Propeller**:
-- Remove and inspect for dings
-- Check for fishing line around shaft
-- Verify hub condition
-- Apply marine grease to shaft
+Look for corrosion or damage
+Verify all cowl clips secure
+Check paint condition
+Ensure no critters made a home inside
 
-**Lower Unit**:
-- Check gear oil level
-- Look for milky oil (water intrusion)
-- Inspect for leaks around seals
-- Verify drain/fill plug condition
+Propeller:
+
+Remove and inspect for dings
+Check for fishing line around shaft
+Verify hub condition
+Apply marine grease to shaft
+
+Lower Unit:
+
+Check gear oil level
+Look for milky oil (water intrusion)
+Inspect for leaks around seals
+Verify drain/fill plug condition
 
 ### Controls and Electrical
 
-**Throttle/Shift**:
-- Operate through full range
-- Check for smooth action
-- Lubricate if sticky
-- Verify cable ends secure
+Throttle/Shift:
 
-**Electrical**:
-- Test all switches
-- Verify gauges illuminate
-- Check for corroded connections
-- Test kill switch lanyard
+Operate through full range
+Check for smooth action
+Lubricate if sticky
+Verify cable ends secure
 
-**Steering**:
-- Check fluid level (hydraulic)
-- Verify full lock-to-lock travel
-- Look for cable wear (mechanical)
-- Test tilt/trim operation
+Electrical:
+
+Test all switches
+Verify gauges illuminate
+Check for corroded connections
+Test kill switch lanyard
+
+Steering:
+
+Check fluid level (hydraulic)
+Verify full lock-to-lock travel
+Look for cable wear (mechanical)
+Test tilt/trim operation
 
 ### First Start Procedure
 
-**Before Starting**:
-- Connect battery
-- Connect fuel line and prime bulb
-- Attach flushing muffs and water supply
-- Turn water on (good flow required)
-- Verify in neutral
-- Attach lanyard
+Before Starting:
 
-**Starting**:
-- Turn key or press start button
-- Verify water discharge from telltale
-- Let warm up at idle (2-3 minutes)
-- Check for unusual sounds or vibration
-- Verify oil pressure (4-strokes)
+Connect battery
+Connect fuel line and prime bulb
+Attach flushing muffs and water supply
+Turn water on (good flow required)
+Verify in neutral
+Attach lanyard
 
-**After Warm-Up**:
-- Advance throttle briefly to mid-range
-- Return to idle
-- Check for alarms or warnings
-- Shut down and check for leaks
+Starting:
+
+Turn key or press start button
+Verify water discharge from telltale
+Let warm up at idle (2–3 minutes)
+Check for unusual sounds or vibration
+Verify oil pressure (4-strokes)
+
+After Warm-Up:
+
+Advance throttle briefly to mid-range
+Return to idle
+Check for alarms or warnings
+Shut down and check for leaks
 
 ### Final Checks
 
-**Before First Trip**:
-- Verify registration current
-- Check safety equipment (flares, PFDs, etc.)
-- Confirm fire extinguisher charged
-- Test navigation lights
-- Stock first aid kit
+Before First Trip:
+
+Verify registration current
+Check safety equipment (flares, PFDs, etc.)
+Confirm fire extinguisher charged
+Test navigation lights
+Stock first aid kit
 
 ### Professional Commissioning
 
-**Schedule Professional Service If**:
-- Motor sat for extended period
-- You're unsure about any check
-- Annual service is due
-- Problems were stored from last season
+Schedule Professional Service If:
 
-Harris Boat Works offers complete spring commissioning service. We'll do everything on this list plus a thorough inspection.
+Motor sat for extended period
+You're unsure about any check
+Annual service is due
+Problems were stored from last season
 
-**[Schedule Spring Commissioning](/quote)**
+Harris Boat Works offers complete spring commissioning service on Rice Lake. As a Mercury dealer since 1965, our technicians work through this list and do a thorough inspection — not just a visual once-over. We'll catch what you might miss after a long winter.
+
+[Schedule spring commissioning](https://hbw.wiki/service) — or call 905-342-2153.
     `,
     faqs: [
       {
@@ -2849,7 +2928,7 @@ Harris Boat Works offers complete spring commissioning service. We'll do everyth
     content: `
 ## Tiller vs Remote: Making the Right Choice
 
-One of the first decisions when choosing an outboard is tiller or remote steering. Both have passionate advocates. Here's how to choose.
+One of the first decisions when choosing an outboard is tiller or remote steering. We've been fitting motors to boats on Rice Lake since 1965, and the answer is genuinely different depending on how and where you boat. Here's how to choose.
 
 ### Tiller Steering: The Basics
 
@@ -2865,78 +2944,88 @@ One of the first decisions when choosing an outboard is tiller or remote steerin
 
 ### Tiller Advantages
 
-**Direct Control**:
-- Immediate response
-- No cables or linkages
-- Intuitive operation
+Direct Control:
 
-**Space Efficiency**:
-- No console needed
-- More fishing space
-- Clear sightlines
+Immediate response
+No cables or linkages
+Intuitive operation
 
-**Simplicity**:
-- Fewer parts to maintain
-- Less rigging cost
-- Easy to troubleshoot
+Space Efficiency:
 
-**Fishing Benefits**:
-- Stand at transom
-- Quick directional changes
-- Feel boat response directly
+No console needed
+More fishing space
+Clear sightlines
+
+Simplicity:
+
+Fewer parts to maintain
+Less rigging cost
+Easy to troubleshoot
+
+Fishing Benefits:
+
+Stand at transom
+Quick directional changes
+Feel boat response directly
 
 ### Remote Advantages
 
-**Comfort**:
-- Sit or stand at helm
-- Better for long runs
-- Protection from elements (with console)
+Comfort:
 
-**Handling**:
-- Better for rough water
-- Easier with higher HP
-- More natural for car-drivers
+Sit or stand at helm
+Better for long runs
+Protection from elements (with console)
 
-**Versatility**:
-- Passengers at console
-- Space for electronics
-- Conventional boat layout
+Handling:
+
+Better for rough water
+Easier with higher HP
+More natural for car-drivers
+
+Versatility:
+
+Passengers at console
+Space for electronics
+Conventional boat layout
 
 ### Best Applications
 
-**Choose Tiller For**:
-- Solo or two-person fishing
-- Small boats (14-18ft)
-- Motors under 50HP
-- Value-focused buyers
-- Those who prioritize simplicity
+Choose Tiller For:
 
-**Choose Remote For**:
-- Family boating
-- Larger boats (18ft+)
-- Motors 60HP and above
-- Watersports use
-- Rough water operation
-- Electronics integration
+Solo or two-person fishing
+Small boats (14–18ft)
+Motors under 50HP
+Value-focused buyers
+Those who prioritize simplicity
 
-![Tiller vs Remote Steering comparison infographic](/lovable-uploads/Tiller_vs_Remote_Steering_Comparison.png)
+Choose Remote For:
+
+Family boating
+Larger boats (18ft+)
+Motors 60HP and above
+Watersports use
+Rough water operation
+Electronics integration
+
+![Tiller vs Remote Steering comparison infographic](https://mercuryrepower.ca/lovable-uploads/Tiller_vs_Remote_Steering_Comparison.png)
 
 ### What About Power Steering?
 
-**Remote steering with larger motors often needs hydraulic assist**:
-- Mercury 115HP+: Hydraulic steering recommended
-- Mercury 150HP+: Hydraulic steering essential
-- Adds cost but critical for handling
+Remote steering with larger motors often needs hydraulic assist:
+
+Mercury 115HP+: Hydraulic steering recommended
+Mercury 150HP+: Hydraulic steering essential
+Adds cost but critical for handling
 
 ### Our Recommendation
 
-**For fishing-focused use** on smaller boats, tiller provides unbeatable control and simplicity. Many serious anglers prefer it.
+**For fishing-focused use** on smaller boats, tiller provides unbeatable control and simplicity. On Rice Lake, where most serious walleye and muskie anglers are working weedy bays and shallow flats from 14–17ft aluminum boats, tiller control is still the dominant choice. The ability to make quick, precise directional adjustments without moving from the transom is a real fishing advantage.
 
-**For versatile family use**, remote steering offers comfort and flexibility most boaters expect.
+**For versatile family use**, remote steering offers the comfort and layout flexibility most families expect — especially on bowriders and larger aluminum boats where kids and passengers need to sit forward.
 
 **Don't Assume**: Some experienced boaters run tiller on surprisingly large motors. It's about preference and use case, not just size.
 
-**[Explore Tiller and Remote Mercury Options](/quote)**
+[Browse tiller and remote Mercury motors](https://mercuryrepower.ca/quote/motor-selection) — or call 905-342-2153.
     `,
     faqs: [
       {
