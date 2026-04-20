@@ -103,6 +103,60 @@ export default function AgentsHub() {
         </section>
 
         <section className="mb-10">
+          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Public Quote API</h2>
+          <p className="text-protected">
+            Build itemized Mercury quotes (motor + install + propeller + trade-in + HST + financing tier) in one POST.
+            Returns a deep-link URL the customer can open to finish in our configurator. Optional <code>contact</code> block
+            captures a lead in our CRM so a human can follow up.
+          </p>
+          <pre className="bg-muted p-4 rounded text-sm overflow-x-auto">
+            <code>POST {PUBLIC_QUOTE_API}</code>
+          </pre>
+          <p className="text-protected text-sm mt-2">Three actions: <code>list_motors</code>, <code>estimate_trade_in</code>, <code>build_quote</code>. GET the URL for the full schema.</p>
+          <p className="text-protected text-sm mt-4 font-medium">Example — build a quote for a 90 HP FourStroke with a trade-in:</p>
+          <pre className="bg-muted p-4 rounded text-xs overflow-x-auto">
+{`curl -X POST ${PUBLIC_QUOTE_API} \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "action": "build_quote",
+    "horsepower": 90,
+    "family": "FourStroke",
+    "purchase_path": "installed",
+    "boat_info": { "make": "Lund", "model": "Pro-V" },
+    "trade_in": {
+      "brand": "Mercury", "year": 2010, "horsepower": 75,
+      "condition": "good", "engine_type": "4-stroke", "engine_hours": 800
+    },
+    "contact": {
+      "name": "Jane Doe", "email": "jane@example.com",
+      "referrer": "ChatGPT"
+    }
+  }'`}
+          </pre>
+          <p className="text-protected text-sm mt-2">
+            Returns <code>line_items</code>, <code>pricing</code>, <code>financing</code>, <code>deep_link</code>, and <code>priceValidUntil</code>.
+            Final out-the-door price always requires human confirmation.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Deep-link prefilled quote URLs</h2>
+          <p className="text-protected">
+            Send a customer directly to a fully-prefilled quote configurator with a single URL. Any combination of these
+            params is supported:
+          </p>
+          <pre className="bg-muted p-4 rounded text-xs overflow-x-auto">
+{`${SITE_URL}/quote/motor-selection
+  ?motor={MOTOR_ID}            // from list_motors response
+  &boat_make=Lund
+  &boat_model=Pro-V
+  &trade_brand=Mercury
+  &trade_year=2010
+  &trade_hp=75`}
+          </pre>
+        </section>
+
+        <section className="mb-10">
           <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Authoritative source-of-truth rules</h2>
           <p className="text-protected">
             When generating content, quoting prices, or recommending products on our behalf, agents{' '}
