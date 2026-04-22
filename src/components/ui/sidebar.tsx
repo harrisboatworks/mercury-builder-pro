@@ -430,7 +430,7 @@ const SidebarGroupLabel = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> & { asChild?: boolean }
 >(({ className, asChild = false, ...props }, ref) => {
-  const Comp = asChild ? Slot : "div"
+  const Comp: any = asChild ? Slot : "div"
 
   return (
     <Comp
