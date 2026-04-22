@@ -123,6 +123,8 @@ const MercuryDealerGTA = lazy(() => import("./pages/landing/MercuryDealerGTA"));
 // Pilot SEO landing pages (Batch 3 — Product hub + lineup)
 const MercuryProXS = lazy(() => import("./pages/landing/MercuryProXS"));
 const MercuryOutboardsOntario = lazy(() => import("./pages/landing/MercuryOutboardsOntario"));
+// Pilot SEO landing pages (Batch 4 — Pontoon)
+const MercuryPontoonOutboards = lazy(() => import("./pages/landing/MercuryPontoonOutboards"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
 const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
@@ -517,6 +519,8 @@ function AnimatedRoutes() {
         {/* Pilot SEO Landing Pages — Batch 3 (Product hub + lineup) */}
         <Route path="/mercury-pro-xs" element={<MercuryProXS />} />
         <Route path="/mercury-outboards-ontario" element={<MercuryOutboardsOntario />} />
+        {/* Pilot SEO Landing Pages — Batch 4 (Pontoon) */}
+        <Route path="/mercury-pontoon-outboards" element={<MercuryPontoonOutboards />} />
 
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />

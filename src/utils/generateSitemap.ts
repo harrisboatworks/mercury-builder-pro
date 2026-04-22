@@ -42,6 +42,8 @@ const getStaticPages = (): SitemapEntry[] => {
     // Pilot SEO landing pages — Batch 3 (Product hub + lineup)
     { loc: '/mercury-pro-xs', lastmod: today, changefreq: 'weekly', priority: 0.85 },
     { loc: '/mercury-outboards-ontario', lastmod: today, changefreq: 'weekly', priority: 0.85 },
+    // Pilot SEO landing pages — Batch 4 (Pontoon)
+    { loc: '/mercury-pontoon-outboards', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', lastmod: today, changefreq: 'yearly', priority: 0.3 },
   ];
