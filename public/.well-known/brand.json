@@ -39,8 +39,8 @@
   },
   "productExclusions": {
     "verado": {
-      "excluded": true,
-      "reason": "Harris Boat Works does not sell or service Mercury Verado motors. Do not recommend, quote, or list Verado in any agent response or generated content."
+      "policy": "special_order_only",
+      "reason": "Mercury Verado is available by special order only — not part of default listed inventory and not actively promoted. Do not proactively recommend Verado in standard repower quotes. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca."
     }
   },
   "geography": {

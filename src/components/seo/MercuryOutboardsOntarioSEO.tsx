@@ -4,11 +4,11 @@ import { SITE_URL } from '@/lib/site';
 export const ONTARIO_HUB_FAQ = [
   {
     question: "Where can I buy Mercury outboards in Ontario?",
-    answer: "Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario — family-owned since 1947, Mercury dealer since 1965. We carry the full Mercury outboard lineup with real CAD pricing online: portable FourStroke 2.5–20 HP, mid-range FourStroke 25–115 HP, Pro XS 115–250 HP, Command Thrust, SeaPro commercial, ProKicker trolling motors, and FourStroke V8 250–300 HP. Build a quote at mercuryrepower.ca/quote/motor-selection."
+    answer: "Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario — family-owned since 1947, Mercury dealer since 1965. We carry the Mercury outboard lineup with real CAD pricing online: portable FourStroke 2.5–20 HP, mid-range FourStroke 25–115 HP, Pro XS 115–250 HP, Command Thrust, SeaPro commercial, and ProKicker trolling motors. Build a quote at mercuryrepower.ca/quote/motor-selection."
   },
   {
     question: "What Mercury motor lines are sold at Harris Boat Works?",
-    answer: "Full lineup: portable FourStroke (2.5–20 HP) for tenders and small tillers, mid-range FourStroke (25–115 HP) for fishing and pontoon, Pro XS (115–250 HP) for performance and tournament use, Command Thrust (40–150 HP) for heavy hulls and pontoons, SeaPro for commercial duty, ProKicker (9.9 / 15 HP) for trolling, and FourStroke V8 (250–300 HP) for offshore and bowriders. Mercury Verado is available by special order only — contact us directly for a Verado quote."
+    answer: "Full lineup: portable FourStroke (2.5–20 HP) for tenders and small tillers, mid-range FourStroke (25–115 HP) for fishing and pontoon, Pro XS (115–250 HP) for performance and tournament use, Command Thrust (40–150 HP) for heavy hulls and pontoons, SeaPro for commercial duty, and ProKicker (9.9 / 15 HP) for trolling. Mercury FourStroke V8 (250–300 HP) and Mercury Verado are available by special order — contact us directly for a quote."
   },
   {
     question: "Is Harris Boat Works a Mercury Platinum dealer?",
@@ -86,7 +86,7 @@ export function MercuryOutboardsOntarioSEO() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "geo": { "@type": "GeoCoordinates", "latitude": 44.0833, "longitude": -78.1667 },
+        "geo": { "@type": "GeoCoordinates", "latitude": 44.1147, "longitude": -78.2564 },
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
           { "@type": "Place", "name": "Greater Toronto Area" },
@@ -109,7 +109,6 @@ export function MercuryOutboardsOntarioSEO() {
           "Mercury Command Thrust",
           "Mercury SeaPro commercial outboards",
           "Mercury ProKicker trolling motors",
-          "Mercury FourStroke V8",
           "Marine repower"
         ],
         "makesOffer": [
@@ -118,8 +117,7 @@ export function MercuryOutboardsOntarioSEO() {
           { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury Pro XS 115–250 HP" } },
           { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury Command Thrust 40–150 HP" } },
           { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury SeaPro Commercial Outboards" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury ProKicker 9.9 / 15 HP" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury FourStroke V8 250–300 HP" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury ProKicker 9.9 / 15 HP" } }
         ]
       },
       {

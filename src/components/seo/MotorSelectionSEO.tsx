@@ -11,7 +11,7 @@ interface MotorSelectionSEOProps {
  * JSON-LD for /quote/motor-selection.
  * Mirrors motorSelectionPageSchema() in scripts/static-prerender.mjs to keep
  * crawler-served HTML and React-hydrated HTML in sync. Verado is intentionally
- * excluded — Harris Boat Works does not sell or service Verado motors.
+ * excluded from default inventory — Verado is special-order only at Harris Boat Works.
  */
 export function MotorSelectionSEO({
   motorCount = 128,
