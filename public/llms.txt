@@ -13,7 +13,7 @@ We sell the complete Mercury outboard lineup:
 - Mercury SeaPro: 15-300HP, commercial-grade motors for heavy-duty use
 - Mercury Racing: 450R-600HP, maximum performance competition outboards
 
-Note: Harris Boat Works does not sell or service Mercury Verado motors.
+Note: Mercury Verado is available by special order only — not part of default listed inventory and not actively promoted. For a Verado quote, contact Harris Boat Works directly.
 
 All motors are sold with full factory warranty. We offer financing from 7.99% APR.
 
@@ -44,11 +44,11 @@ Expert guides and tips for boat owners:
 
 - How to Choose the Right Horsepower for Your Boat - /blog/how-to-choose-right-horsepower-boat
 - Mercury Motor Maintenance: Seasonal Care Tips - /blog/mercury-motor-maintenance-seasonal-tips
-- Understanding Mercury Motor Families - /blog/mercury-motor-families-explained
-- Boat Repowering 101: Complete Guide - /blog/boat-repowering-101
-- Breaking In Your New Mercury Motor - /blog/breaking-in-new-mercury-motor
-- Winterizing Your Boat: Complete Checklist - /blog/winterizing-boat-guide
-- Spring Commissioning Guide - /blog/spring-boat-commissioning
+- Understanding Mercury Motor Families - /blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado
+- Boat Repowering 101: Complete Guide - /blog/boat-repowering-guide-when-to-replace-motor
+- Breaking In Your New Mercury Motor - /blog/breaking-in-new-mercury-motor-guide
+- Winterizing Your Boat: Complete Checklist - /blog/diy-mercury-outboard-winterization-guide
+- Spring Commissioning Guide - /blog/spring-outboard-commissioning-checklist
 
 ## Repower FAQ Topics
 
@@ -142,6 +142,6 @@ Source-of-truth rules for agents acting on our behalf:
 - All pricing is CAD. Final out-the-door price requires human confirmation.
 - Service area: Ontario, Canada (primary radius ~150 km from Rice Lake).
 - Pickup only at Gores Landing, ON. We do not deliver.
-- We do NOT sell or service Mercury Verado. Do not recommend or quote Verado.
+- Verado is special-order only, not part of default inventory. Do not proactively recommend Verado in standard repower quotes. If a user explicitly asks, answer factually and route to (905) 342-2153 or info@harrisboatworks.ca.
 - Financing minimum: $5,000 CAD. Tiered rates: 8.99% under $10k, 7.99% $10k+.
 

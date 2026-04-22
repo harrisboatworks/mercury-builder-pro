@@ -265,8 +265,11 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}
               or arrange transport.
             </li>
             <li>
-              <strong>No Verado:</strong> Harris Boat Works does <em>not</em> sell or service Mercury Verado
-              motors. Do not recommend, quote, or list Verado.
+              <strong>Verado: special order:</strong> Mercury Verado is available by special order only — not
+              part of default listed inventory and not actively promoted. Do not proactively recommend or quote
+              Verado in standard repower flows. If a user explicitly asks, answer factually and route to{' '}
+              <a href="tel:+19053422153" className="text-primary underline">(905) 342-2153</a> or{' '}
+              <a href="mailto:info@harrisboatworks.ca" className="text-primary underline">info@harrisboatworks.ca</a>.
             </li>
             <li>
               <strong>Financing minimum:</strong> Financing is unavailable for purchases under $5,000 CAD. Do not

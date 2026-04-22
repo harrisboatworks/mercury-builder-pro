@@ -24,7 +24,7 @@
   "tools": [
     {
       "name": "search_motors",
-      "description": "Search current Mercury outboard inventory by HP, family (FourStroke / Pro XS / SeaPro / Racing), or stock status. Returns CAD pricing. Excludes Verado."
+      "description": "Search current Mercury outboard inventory by HP, family (FourStroke / Pro XS / SeaPro / Racing), or stock status. Returns CAD pricing. Default inventory excludes Verado (Verado is special-order only — contact HBW directly for a Verado quote)."
     },
     {
       "name": "get_motor",
@@ -40,7 +40,7 @@
     },
     {
       "name": "get_brand_rules",
-      "description": "Authoritative source-of-truth: pricing currency, geography, no-Verado policy, financing minimums, deposits, warranty."
+      "description": "Authoritative source-of-truth: pricing currency, geography, Verado special-order policy, financing minimums, deposits, warranty."
     }
   ],
   "categories": ["e-commerce", "automotive", "marine", "local-business", "quoting"],
