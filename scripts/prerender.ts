@@ -19,9 +19,10 @@
  *   1 — chromium failed to launch OR a required route failed
  *       (vite plugin escalates this to a build failure by default)
  */
-import { mkdirSync, writeFileSync, existsSync, statSync } from 'fs';
+import { mkdirSync, writeFileSync, existsSync, statSync, cpSync, mkdtempSync, rmSync } from 'fs';
 import { join, resolve } from 'path';
 import { createServer } from 'http';
+import { tmpdir } from 'os';
 import sirv from 'sirv';
 import puppeteer from 'puppeteer';
 
@@ -46,7 +47,10 @@ async function main() {
     return;
   }
 
-  const handler = sirv(DIST, { single: true, dev: false, etag: false });
+  const serveDist = mkdtempSync(join(tmpdir(), 'lovable-prerender-'));
+  cpSync(DIST, serveDist, { recursive: true });
+
+  const handler = sirv(serveDist, { single: true, dev: false, etag: false });
   const server = createServer((req, res) => handler(req, res));
   await new Promise<void>((r) => server.listen(PORT, r));
   console.log(`[prerender] static server on :${PORT}`);
@@ -66,6 +70,7 @@ async function main() {
   } catch (err) {
     console.error('[prerender] FATAL: failed to launch Chromium:', (err as Error).message);
     server.close();
+    rmSync(serveDist, { recursive: true, force: true });
     process.exit(1);
   }
 
@@ -115,6 +120,7 @@ async function main() {
   } finally {
     await browser.close();
     server.close();
+    rmSync(serveDist, { recursive: true, force: true });
   }
 
   // Post-render sanity check: every route must have produced a substantive file
