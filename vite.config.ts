@@ -35,6 +35,11 @@ function sitemapPlugin(): Plugin {
 // Build-time prerender plugin — runs scripts/prerender.ts after dist/ is written
 // so AI crawlers (Meta-ExternalAgent, Perplexity, social previews) get real HTML
 // for the 8 key public routes instead of an empty SPA shell.
+//
+// In production (STRICT_PRERENDER=1, set in Vercel env), a non-zero prerender
+// exit FAILS the build. This prevents silent regressions where the SPA shell
+// gets shipped to every route. Locally the failure is a warning so dev iteration
+// isn't blocked when Chrome isn't installed.
 function prerenderPlugin(): Plugin {
   return {
     name: 'crawler-prerender',
@@ -47,23 +52,27 @@ function prerenderPlugin(): Plugin {
           console.log('[prerender] skipped (SKIP_PRERENDER=1)');
           return;
         }
-        await new Promise<void>((resolve) => {
+        const strict = process.env.STRICT_PRERENDER === '1';
+        const exitCode = await new Promise<number>((resolve) => {
           const child = spawn(
             'npx',
             ['tsx', 'scripts/prerender.ts'],
             { stdio: 'inherit', shell: true }
           );
-          child.on('exit', (code) => {
-            if (code !== 0) {
-              console.warn(`[prerender] exited with code ${code} — build continues`);
-            }
-            resolve();
-          });
+          child.on('exit', (code) => resolve(code ?? 1));
           child.on('error', (err) => {
             console.warn('[prerender] failed to spawn:', err.message);
-            resolve();
+            resolve(1);
           });
         });
+        if (exitCode !== 0) {
+          const msg = `[prerender] exited with code ${exitCode}`;
+          if (strict) {
+            console.error(`${msg} — failing build (STRICT_PRERENDER=1)`);
+            throw new Error('Prerender failed in strict mode');
+          }
+          console.warn(`${msg} — build continues (set STRICT_PRERENDER=1 to fail loudly)`);
+        }
       }
     }
   };
