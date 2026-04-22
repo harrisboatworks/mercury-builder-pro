@@ -292,6 +292,30 @@ Deno.serve(async (req) => {
       );
     }
 
+    // ── 6b. Update cron_job_logs with success/warning result ──
+    if (cronLogId) {
+      try {
+        await supabase
+          .from('cron_job_logs')
+          .update({
+            status: syncStatus,
+            motors_found: inventory?.length || 0,
+            motors_updated: matchedMotors.length,
+            completed_at: new Date().toISOString(),
+            result: {
+              unique_models: modelGroups.size,
+              matched: matchedMotors.length,
+              unmatched: unmatchedModels.length,
+              suspicious_drop: suspiciousDropDetected,
+              previous_unit_count: lastGoodCount,
+            },
+          })
+          .eq('id', cronLogId);
+      } catch (e) {
+        console.error('Failed to update cron_job_logs (success):', e);
+      }
+    }
+
     // ── 7. Email notification for unmatched motors ──
     if (unmatchedModels.length > 0) {
       const resendApiKey = Deno.env.get('RESEND_API_KEY');
