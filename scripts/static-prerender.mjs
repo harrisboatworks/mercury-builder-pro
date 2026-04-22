@@ -914,6 +914,48 @@ const routes = [
     h1: 'Your Mercury Outboard Quote',
     intro: 'Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and any current promotional savings. Save it, download a PDF, or place a deposit.',
     schemas: [quoteSummaryPageSchema()]
+  },
+  {
+    path: '/mercury-repower-faq',
+    title: 'Mercury Outboard Repower FAQ — Every Question Answered | Harris Boat Works',
+    description: 'Comprehensive Mercury repower FAQ covering 20+ buying, financing, installation, and warranty questions. Mercury Marine Platinum Dealer since 1965 on Rice Lake, Ontario.',
+    h1: 'Mercury Outboard Repower FAQ',
+    intro: 'Every question we get about repowering a boat with a new Mercury outboard — answered by Ontario\'s Mercury Marine Platinum Dealer since 1965. Family-owned on Rice Lake since 1947.',
+    schemas: [mercuryRepowerFaqSchema()],
+    extraNoscript: () =>
+      '<dl>' +
+      faqItems.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
+  },
+  {
+    path: '/how-to-repower-a-boat',
+    title: 'How to Repower a Boat — 7-Step Mercury Repower Process | Harris Boat Works',
+    description: 'Step-by-step guide to repowering a boat with a new Mercury outboard: quote, sizing, deposit, scheduling, install, lake-test, and pickup. Mercury Platinum Dealer since 1965.',
+    h1: 'How to Repower a Boat',
+    intro: 'The seven-step Mercury repower process at Harris Boat Works — from online quote to lake-tested pickup at Gores Landing on Rice Lake. Family-owned since 1947, Mercury Platinum Dealer since 1965.',
+    schemas: [howToRepowerSchema()],
+    extraNoscript: () =>
+      '<ol>' +
+      HOWTO_FAQ_PRERENDER.map(i =>
+        `<li><strong>${escapeHtml(i.question)}</strong> ${escapeHtml(i.answer)}</li>`
+      ).join('') +
+      '</ol>'
+  },
+  {
+    path: '/mercury-dealer-canada-faq',
+    title: 'Why Buy from Harris Boat Works — Mercury Dealer Canada FAQ | Family-Owned Since 1947',
+    description: 'Mercury Marine Platinum Dealer on Rice Lake since 1965. Family-owned since 1947. Real CAD pricing, 7-year warranty, full Mercury lineup, financing available. 12 trust questions answered.',
+    h1: 'Why Buy from Harris Boat Works',
+    intro: '12 trust questions about Harris Boat Works — Mercury Marine Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.',
+    schemas: [mercuryDealerCanadaSchema()],
+    extraNoscript: () =>
+      '<dl>' +
+      TRUST_FAQ_PRERENDER.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
   }
 ];
 
