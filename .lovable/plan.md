@@ -1,53 +1,59 @@
 
 
-## Diagnose & Fix Vercel Prerender Silent-Fail
+## Fix Vercel Prerender — Switch to Bundled Puppeteer
 
-The Wave D `robots.txt` and `.well-known` fixes are now live in production, but per-route prerendering is still not running on Vercel — every route serves the same 83 KB SPA shell. Before I touch code again, I need to confirm which failure mode is happening.
+The build log confirms the failure mode: `@sparticuz/chromium` extracts to `/tmp/chromium`, then Chromium can't load `libnss3.so` because Vercel's **build container** (Amazon Linux 2023, Node 20) doesn't ship that shared library. `@sparticuz/chromium` is built for the Lambda **runtime**, not the build step.
 
-### Step 1 — You check Vercel (2 minutes, no code)
+`puppeteer@24.42.0` is already in `package.json` (it ships its own Chromium with all required `.so` files bundled). I just need to use it.
 
-1. Open Vercel dashboard → this project → **Settings → Environment Variables**.
-   - Confirm `STRICT_PRERENDER=1` exists in **Production** scope.
-   - If missing: add it, then **Deployments → ⋯ → Redeploy** the latest production deploy.
-2. Open the most recent production **Build Logs** and search for `[prerender]`.
-   - Copy any line containing `[prerender]` (success, warn, fail, or fatal) and paste it back to me.
+### Changes
 
-This tells me whether the prerender script is even being invoked and, if so, where it's dying.
+**1. `scripts/prerender.ts` — switch to bundled puppeteer**
+- Replace `import puppeteer from 'puppeteer-core'` → `import puppeteer from 'puppeteer'`
+- Remove `import chromium from '@sparticuz/chromium'`
+- Drop the `resolveExecutablePath()` helper entirely
+- `puppeteer.launch()` with no `executablePath` — it uses its bundled Chromium, which includes NSS / NSPR / fontconfig / etc.
+- Keep `--no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage` args
+- Keep all existing route loop, JSON-LD wait, sanity-check, and exit-code logic unchanged
 
-### Step 2 — I fix based on what the build log shows
+**2. `vite.config.ts` — flip default to strict**
+- Treat any non-zero prerender exit as a build failure by default in production builds. Local dev already skips via `apply: 'build'`, and contributors who hit a Chromium issue locally can set `SKIP_PRERENDER=1`. Removes dependence on `STRICT_PRERENDER=1` being set in Vercel env.
+- (`STRICT_PRERENDER` env var still honored as a no-op for backward compat; the failure becomes the default.)
 
-Three branches, depending on what you find:
+**3. `package.json` cleanup (post-fix verification)**
+- Keep `puppeteer` (now used by prerender)
+- Remove `puppeteer-core` and `@sparticuz/chromium` (no longer used anywhere — confirmed with a search before deleting)
+- Trade-off: Vercel install adds ~170 MB to `node_modules`, which is build-time only and doesn't affect runtime bundle size or cold-start.
 
-**Branch A — `STRICT_PRERENDER` was missing**
-- Adding it + redeploying will make the build fail loudly on the next attempt with the real error.
-- I then fix whatever the real error is (Branch B or C).
+**4. Fix the two unrelated TS errors flagged in the build log**
+- `api/cron/google-sheets-sync.ts` → install `@vercel/node` as a dev dep (resolves `error TS2307`)
+- `src/lib/securityMiddleware.ts` → verify the `@/integrations/supabase/client` import path resolves (the file exists at `src/integrations/supabase/client.ts`; if the error persists it's likely a `tsconfig` `include` gap — confirm and patch). These don't block the build today but pollute the log.
 
-**Branch B — `[prerender] FATAL: failed to launch Chromium: …`**
-- `@sparticuz/chromium` binary mismatch with Vercel's Node 20 / Amazon Linux 2023 build image.
-- Fix: pin `@sparticuz/chromium@138` (current tested-against-Vercel version) and `puppeteer-core@23.x`. Add `NODE_OPTIONS=--max-old-space-size=4096` to the build env so the 50 MB binary extracts cleanly.
+### Acceptance (run after Vercel redeploys)
 
-**Branch C — `[prerender] FAIL /route: …` for specific routes**
-- Page-level error (e.g., Supabase fetch timeout during prerender, missing env var, hydration crash).
-- Fix per route: increase `networkidle2` timeout, add fetch-failure tolerance to the wait condition, or stub the offending data fetch when `navigator.userAgent` matches `LovablePrerender`.
+```bash
+# 1. Build log should now show:
+#    [prerender] ✓ / → dist/index.html (NN.N KB)
+#    [prerender] ✓ /repower → dist/repower/index.html (NN.N KB)
+#    ...for all 8 routes
+#    [prerender] ✓ all 8 routes prerendered
 
-### Step 3 — Re-verify (I run automatically after the fix deploys)
+# 2. Routes serve distinct HTML (8 unique SHAs)
+for r in / /repower /faq /about /contact /blog /agents /quote/motor-selection; do
+  curl -A "Googlebot" -s "https://mercuryrepower.ca$r" | shasum
+done
 
-Same acceptance suite as today, expecting:
-- 8 distinct SHAs across the 8 routes (not all `d29dd04e…`)
-- `/faq` HTML contains `"@type":"FAQPage"` with the photo-ID Q&A inside `mainEntity`
-- `/repower` HTML contains `"@type":"Service"` with `DeliveryModePickUp` (already present from global schema, but should now also appear in the route-specific block)
-- Each route's `<title>` is route-specific
-- Every prerendered file ≥ 50 KB
+# 3. Schema present per route
+curl -A "Googlebot" -s https://mercuryrepower.ca/faq     | grep -c '"@type":"FAQPage"'   # expect ≥1
+curl -A "Googlebot" -s https://mercuryrepower.ca/repower | grep -c 'DeliveryModePickUp'  # expect ≥1
 
-### Optional cleanup while we're here
+# 4. Each prerendered file ≥ 50 KB (script enforces, build fails otherwise)
+```
 
-Once prerender works, send me your real Bing verification token and I'll swap `BING_VERIFICATION_TBD` in `index.html` (one-line change).
+### Risk
+- Larger `node_modules` on Vercel build (~170 MB add). Build time +~30s for the puppeteer Chromium download on cold installs (cached after first build).
+- If puppeteer's bundled Chromium fails to download on Vercel (rare; happens when `PUPPETEER_SKIP_DOWNLOAD=1` is set anywhere): build fails loudly with a clear error — much better than today's silent shell-shipping.
 
-### What I need from you to proceed
-
-Either:
-- (a) the `[prerender]` lines from the Vercel build log, OR
-- (b) confirmation that `STRICT_PRERENDER=1` was missing and you've now added it + redeployed (then send me the new build log)
-
-Without one of these I'd be guessing between Branches B and C, and `@sparticuz/chromium` version churn is the kind of fix that needs evidence before I bump pins.
+### Optional, only if you want it now
+- Send your real Bing verification token; one-line swap of `BING_VERIFICATION_TBD` in `index.html`.
 
