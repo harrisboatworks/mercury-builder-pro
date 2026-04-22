@@ -30,6 +30,23 @@ Deno.serve(async (req) => {
     }
   }
 
+  // Insert cron_job_logs row (running) — captures every invocation
+  let cronLogId: string | null = null;
+  try {
+    const { data: cronLogRow } = await supabase
+      .from('cron_job_logs')
+      .insert({
+        job_name: 'sync-lightspeed-inventory',
+        status: 'running',
+        started_at: startedAt,
+      })
+      .select('id')
+      .single();
+    cronLogId = cronLogRow?.id ?? null;
+  } catch (e) {
+    console.error('Failed to insert cron_job_logs row:', e);
+  }
+
   try {
     console.log('🔄 Starting Lightspeed inventory sync from mercury_motor_inventory view');
 
