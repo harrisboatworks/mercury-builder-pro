@@ -1,40 +1,30 @@
 
 
-## Add root-path redirect rule to vercel.json
+## Add Bing Webmaster verification meta tag to index.html
 
-The existing `/:path*` redirect doesn't match the bare root `/` on Vercel, so `quote.harrisboatworks.ca/` still returns HTTP 200. Add a dedicated rule for root, keeping the catch-all rule intact.
+Replace the existing placeholder Bing verification tag in `index.html` with the real token. The Google Search Console tag is already present with a valid token (`dQ0cAABotsaEYxoKgsE1OhdGpZ_UayYlQHM6vPZLCIw`), so it stays untouched.
 
 ### Change
 
-In `vercel.json`, prepend a new redirect rule before the existing one. Final `redirects` array:
-
-```json
-"redirects": [
-  {
-    "source": "/",
-    "has": [{ "type": "host", "value": "quote.harrisboatworks.ca" }],
-    "destination": "https://www.mercuryrepower.ca/",
-    "statusCode": 301
-  },
-  {
-    "source": "/:path*",
-    "has": [{ "type": "host", "value": "quote.harrisboatworks.ca" }],
-    "destination": "https://www.mercuryrepower.ca/:path*",
-    "statusCode": 301
-  }
-]
+In `index.html`, line 26 currently reads:
+```html
+<meta name="msvalidate.01" content="BING_VERIFICATION_TBD" />
 ```
 
-Nothing else in `vercel.json` changes — rewrites, headers, and the cron rule are untouched.
-
-### Deploy & verify
-
-The commit pushes to GitHub `harrisboatworks/mercury-builder-pro`; Vercel auto-deploys from `main`. Once the deploy completes, I'll run:
-
-```bash
-curl -sI https://quote.harrisboatworks.ca/
-curl -sI https://quote.harrisboatworks.ca/repower
+Replace with:
+```html
+<meta name="msvalidate.01" content="DA6209164BA72CB3C538414AB0F0235F" />
 ```
 
-Expected: both return `HTTP/2 301` with `location:` pointing to the matching `www.mercuryrepower.ca` path.
+The comment above it (`<!-- Bing Webmaster Tools verification — replace placeholder after submitting at bing.com/webmasters -->`) is removed since the token is now real.
+
+Nothing else in `index.html` changes. The existing GSC tag (line 14) stays as-is.
+
+### Deploy
+
+Commit pushes to GitHub `harrisboatworks/mercury-builder-pro`; Vercel auto-deploys from `main`. The tag is then visible in the prerendered HTML on `mercuryrepower.ca` and Bing can verify ownership.
+
+### Note
+
+The instruction says "do not remove after verification" — confirmed. The tag is permanent.
 
