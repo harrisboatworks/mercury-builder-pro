@@ -141,6 +141,10 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      'pako/lib/zlib/zstream.js': path.resolve(__dirname, './node_modules/pako/lib/zlib/zstream.js'),
+      'pako/lib/zlib/deflate.js': path.resolve(__dirname, './node_modules/pako/lib/zlib/deflate.js'),
+      'pako/lib/zlib/inflate.js': path.resolve(__dirname, './node_modules/pako/lib/zlib/inflate.js'),
+      'pako/lib/zlib/constants.js': path.resolve(__dirname, './node_modules/pako/lib/zlib/constants.js'),
     },
   },
 }));
