@@ -116,6 +116,10 @@ const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
 const MercuryRepowerFAQ = lazy(() => import("./pages/landing/MercuryRepowerFAQ"));
 const HowToRepower = lazy(() => import("./pages/landing/HowToRepower"));
 const MercuryDealerCanadaFAQ = lazy(() => import("./pages/landing/MercuryDealerCanadaFAQ"));
+// Pilot SEO landing pages (Batch 2 — Geo)
+const MercuryDealerPeterborough = lazy(() => import("./pages/landing/MercuryDealerPeterborough"));
+const MercuryDealerCobourg = lazy(() => import("./pages/landing/MercuryDealerCobourg"));
+const MercuryDealerGTA = lazy(() => import("./pages/landing/MercuryDealerGTA"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
 const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
@@ -503,6 +507,10 @@ function AnimatedRoutes() {
         <Route path="/mercury-repower-faq" element={<MercuryRepowerFAQ />} />
         <Route path="/how-to-repower-a-boat" element={<HowToRepower />} />
         <Route path="/mercury-dealer-canada-faq" element={<MercuryDealerCanadaFAQ />} />
+        {/* Pilot SEO Landing Pages — Batch 2 (Geo) */}
+        <Route path="/mercury-dealer-peterborough" element={<MercuryDealerPeterborough />} />
+        <Route path="/mercury-dealer-cobourg" element={<MercuryDealerCobourg />} />
+        <Route path="/mercury-dealer-gta" element={<MercuryDealerGTA />} />
 
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
