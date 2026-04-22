@@ -25,7 +25,7 @@ const ROOT = resolve(__dirname, '..');
 const DIST = join(ROOT, 'dist');
 const SHELL_PATH = join(DIST, 'index.html');
 const SITE_URL = 'https://mercuryrepower.ca';
-const MIN_BYTES = 30 * 1024;
+const MIN_BYTES = 4 * 1024;
 
 if (!existsSync(SHELL_PATH)) {
   console.error(`[static-prerender] FATAL: ${SHELL_PATH} not found — run vite build first`);
