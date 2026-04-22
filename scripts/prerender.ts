@@ -56,13 +56,24 @@ async function main() {
         'Mozilla/5.0 (compatible; LovablePrerender/1.0; +https://mercuryrepower.ca)'
       );
       try {
-        await page.goto(url, { waitUntil: 'networkidle2', timeout: 30_000 });
-        // Wait for at least one JSON-LD script (means Helmet hydrated)
+        await page.goto(url, { waitUntil: 'networkidle2', timeout: 45_000 });
+        // Wait for React to hydrate and Helmet to inject schema.
+        // We poll for the JSON-LD script tag rather than relying on a single selector wait,
+        // because heavy pages (Repower, MotorSelection) may take several seconds for
+        // lazy-loaded SEO components to render their <Helmet> contents.
         await page
-          .waitForSelector('script[type="application/ld+json"]', { timeout: 10_000 })
-          .catch(() => {});
-        // Small settle for any late helmet updates
-        await new Promise((r) => setTimeout(r, 500));
+          .waitForFunction(
+            () => {
+              const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+              if (scripts.length === 0) return false;
+              // Ensure at least one has substantive content (>200 chars of JSON)
+              return Array.from(scripts).some((s) => (s.textContent || '').length > 200);
+            },
+            { timeout: 20_000 }
+          )
+          .catch(() => console.warn(`[prerender] WARN ${route}: JSON-LD wait timed out`));
+        // Final settle for any late helmet updates
+        await new Promise((r) => setTimeout(r, 1500));
 
         const html = await page.content();
 
