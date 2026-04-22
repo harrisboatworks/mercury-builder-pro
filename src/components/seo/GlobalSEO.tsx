@@ -214,8 +214,35 @@ export function GlobalSEO() {
                 "name": "Ethanol-Free Marine Fuel",
                 "description": "Ethanol-free fuel available on-site — ideal for outboard motors"
               }
+            },
+            {
+              "@type": "Offer",
+              "name": "Pickup-Only Mercury Outboard Sales",
+              "description": "All Mercury outboard motors and parts are pickup only at our Gores Landing location on Rice Lake. We do not ship motors. A valid government-issued photo ID matching the purchase order is required at pickup.",
+              "availableDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+              "areaServed": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": 44.1456,
+                  "longitude": -78.2542
+                },
+                "geoRadius": "200000"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Mercury Outboard Pickup at Gores Landing",
+                "description": "In-person pickup of new Mercury outboard motors at 5369 Harris Boat Works Rd, Gores Landing, ON. Photo ID required. No shipping or delivery offered."
+              }
             }
           ]
+        },
+        "availableDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModePickUp",
+        "makesOffer": {
+          "@type": "Offer",
+          "name": "Mercury Outboard Repower — Pickup Only",
+          "description": "Pickup-only Mercury outboard motors at Gores Landing, Ontario. No shipping. Government-issued photo ID required at pickup.",
+          "availableDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModePickUp"
         },
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -248,9 +275,9 @@ export function GlobalSEO() {
         "url": "https://mercuryrepower.ca",
         "parentOrganization": {
           "@type": "BoatDealer",
-          "@id": "https://harrisboatworks.ca/#business",
+          "@id": "https://mercuryrepower.ca/#business",
           "name": "Harris Boat Works",
-          "url": "https://harrisboatworks.ca",
+          "url": "https://mercuryrepower.ca",
           "telephone": "905-342-2153",
           "address": {
             "@type": "PostalAddress",

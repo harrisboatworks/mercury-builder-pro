@@ -4,6 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { VitePWA } from "vite-plugin-pwa";
 import { writeFileSync } from "fs";
+import { spawn } from "child_process";
 
 // Sitemap and RSS generation plugin
 function sitemapPlugin(): Plugin {
@@ -31,6 +32,43 @@ function sitemapPlugin(): Plugin {
   };
 }
 
+// Build-time prerender plugin — runs scripts/prerender.ts after dist/ is written
+// so AI crawlers (Meta-ExternalAgent, Perplexity, social previews) get real HTML
+// for the 8 key public routes instead of an empty SPA shell.
+function prerenderPlugin(): Plugin {
+  return {
+    name: 'crawler-prerender',
+    apply: 'build',
+    closeBundle: {
+      sequential: true,
+      order: 'post',
+      async handler() {
+        if (process.env.SKIP_PRERENDER === '1') {
+          console.log('[prerender] skipped (SKIP_PRERENDER=1)');
+          return;
+        }
+        await new Promise<void>((resolve) => {
+          const child = spawn(
+            'npx',
+            ['tsx', 'scripts/prerender.ts'],
+            { stdio: 'inherit', shell: true }
+          );
+          child.on('exit', (code) => {
+            if (code !== 0) {
+              console.warn(`[prerender] exited with code ${code} — build continues`);
+            }
+            resolve();
+          });
+          child.on('error', (err) => {
+            console.warn('[prerender] failed to spawn:', err.message);
+            resolve();
+          });
+        });
+      }
+    }
+  };
+}
+
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
@@ -40,6 +78,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
     mode === 'production' && sitemapPlugin(),
+    mode === 'production' && prerenderPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'assets/**/*'],

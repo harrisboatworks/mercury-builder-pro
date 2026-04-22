@@ -3,73 +3,73 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://mercuryrepower.ca/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/quote/motor-selection</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/promotions</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/repower</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/faq</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/financing-application</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/finance-calculator</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/contact</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/about</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/blog</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/privacy</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://mercuryrepower.ca/terms</loc>
-    <lastmod>2026-03-26</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -254,6 +254,46 @@
     </image:image>
   </url>
   <url>
+    <loc>https://mercuryrepower.ca/blog/spring-outboard-commissioning-checklist</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/Mercury_Maintenance_Schedule.png</image:loc>
+      <image:title><![CDATA[Spring Outboard Commissioning: Complete Checklist for Ontario Boaters]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/Tiller_vs_Remote_Steering_Hero.png</image:loc>
+      <image:title><![CDATA[Tiller vs Remote Steering: Which Is Right for Your Boat?]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/blog/mercury-propeller-selection-guide</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/Mercury_Maintenance_Schedule.png</image:loc>
+      <image:title><![CDATA[Mercury Propeller Selection: Complete Guide to Choosing the Right Prop]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/Mercury_SeaPro.png</image:loc>
+      <image:title><![CDATA[Mercury SeaPro: The Best Commercial Outboard for Guides and Heavy Use]]></image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers</loc>
     <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
@@ -323,36 +363,114 @@
       <image:title><![CDATA[2026 Boating Season Preview: Rice Lake & Ontario Fishing Outlook]]></image:title>
     </image:image>
   </url>
-
-  <!-- Individual Motor Pages (representative samples — full list generated dynamically) -->
   <url>
-    <loc>https://mercuryrepower.ca/motors/fourstroke-25hp-efi-elh</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/hero-boost-software-upgrade.png</image:loc>
+      <image:title><![CDATA[Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?]]></image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://mercuryrepower.ca/motors/fourstroke-150hp-efi-elpt-ct</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/hero-pcl-repower-licence.png</image:loc>
+      <image:title><![CDATA[What Happens to Your Pleasure Craft Licence When You Repower Your Boat?]]></image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://mercuryrepower.ca/motors/proxs-115hp-efi-exlpt</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/hero-replace-evinrude.png</image:loc>
+      <image:title><![CDATA[Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide]]></image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://mercuryrepower.ca/motors/proxs-150hp-efi-xl</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/hero-repower-cost-ontario.png</image:loc>
+      <image:title><![CDATA[How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)]]></image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://mercuryrepower.ca/motors/verado-300hp-v8-exlpt</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/hero-mercury-vs-yamaha.png</image:loc>
+      <image:title><![CDATA[Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners]]></image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://mercuryrepower.ca/motors/seapro-150hp-xl</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario</loc>
+    <lastmod>2026-04-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/hero-115-vs-150-proxs.png</image:loc>
+      <image:title><![CDATA[Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026</loc>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/hero-financing-ontario-2026.png</image:loc>
+      <image:title><![CDATA[Mercury Outboard Financing in Ontario: Your Complete 2026 Guide]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png</image:loc>
+      <image:title><![CDATA[Best Mercury Outboard for Lake Simcoe Walleye Fishing]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png</image:loc>
+      <image:title><![CDATA[Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png</image:loc>
+      <image:title><![CDATA[How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://mercuryrepower.ca/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png</image:loc>
+      <image:title><![CDATA[Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)]]></image:title>
+    </image:image>
   </url>
 </urlset>

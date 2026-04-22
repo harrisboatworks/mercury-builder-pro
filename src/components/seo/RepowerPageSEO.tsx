@@ -21,10 +21,10 @@ export function RepowerPageSEO() {
     "@graph": [
       {
         "@type": "LocalBusiness",
-        "@id": "https://harrisboatworks.ca/#business",
+        "@id": "https://mercuryrepower.ca/#business",
         "name": "Harris Boat Works",
-        "description": "Mercury Certified Repower Center serving Ontario boaters since 1947. Expert outboard motor repowering on Rice Lake.",
-        "url": "https://harrisboatworks.ca",
+        "description": "Mercury Certified Repower Center serving Ontario boaters since 1947. Expert outboard motor repowering on Rice Lake. Pickup only at Gores Landing — no shipping. Valid government-issued photo ID required at pickup.",
+        "url": "https://mercuryrepower.ca",
         "telephone": "(905) 342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
@@ -45,17 +45,18 @@ export function RepowerPageSEO() {
       },
       {
         "@type": "Service",
-        "@id": "https://harrisboatworks.ca/repower#service",
+        "@id": "https://mercuryrepower.ca/repower#service",
         "name": "Mercury Outboard Repower Service",
         "serviceType": "Boat Motor Replacement",
-        "provider": { "@id": "https://harrisboatworks.ca/#business" },
+        "provider": { "@id": "https://mercuryrepower.ca/#business" },
         "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "GTA", "Toronto", "Ontario"],
-        "description": "Professional Mercury outboard motor repower service. Get 70% of the benefit of a new boat for 30% of the cost. Includes professional installation and lake testing.",
+        "description": "Professional Mercury outboard motor repower service. Get 70% of the benefit of a new boat for 30% of the cost. Includes professional installation and lake testing. Pickup only at Gores Landing — no shipping. Valid government-issued photo ID required.",
         "offers": {
           "@type": "Offer",
           "priceRange": "$8,000 - $18,000",
           "priceCurrency": "CAD",
-          "description": "Typical 60-115 HP repower for 16-18ft boats"
+          "description": "Typical 60-115 HP repower for 16-18ft boats. Pickup only.",
+          "availableDeliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModePickUp"
         }
       },
       {
@@ -111,10 +112,10 @@ export function RepowerPageSEO() {
       },
       {
         "@type": "WebPage",
-        "@id": "https://harrisboatworks.ca/repower#webpage",
-        "url": "https://harrisboatworks.ca/repower",
+        "@id": "https://mercuryrepower.ca/repower#webpage",
+        "url": "https://mercuryrepower.ca/repower",
         "name": "Mercury Outboard Repower Ontario | Harris Boat Works",
-        "isPartOf": { "@id": "https://harrisboatworks.ca/#website" },
+        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -122,13 +123,13 @@ export function RepowerPageSEO() {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://harrisboatworks.ca/"
+              "item": "https://mercuryrepower.ca/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Repower",
-              "item": "https://harrisboatworks.ca/repower"
+              "item": "https://mercuryrepower.ca/repower"
             }
           ]
         }
@@ -147,8 +148,8 @@ export function RepowerPageSEO() {
       <meta property="og:title" content="Mercury Outboard Repower Ontario | Harris Boat Works" />
       <meta property="og:description" content="70% of the benefit for 30% of the cost. Expert Mercury repowers on Rice Lake since 1965." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://harrisboatworks.ca/repower" />
-      <meta property="og:image" content="https://harrisboatworks.ca/repower-assets/hbw-repower-infographic.png" />
+      <meta property="og:url" content="https://mercuryrepower.ca/repower" />
+      <meta property="og:image" content="https://mercuryrepower.ca/social-share.jpg" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
