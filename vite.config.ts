@@ -36,6 +36,9 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  optimizeDeps: {
+    exclude: ['@react-pdf/renderer', '@react-pdf/pdfkit', 'pako'],
+  },
   plugins: [
     react(),
     mode === 'development' && componentTagger(),
