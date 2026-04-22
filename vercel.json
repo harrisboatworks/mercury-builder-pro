@@ -8,6 +8,15 @@
     { "source": "/rss.xml", "destination": "/rss.xml" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/llms.txt", "destination": "/llms.txt" },
+    { "source": "/.well-known/(.*)", "destination": "/.well-known/$1" },
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/repower", "destination": "/repower/index.html" },
+    { "source": "/faq", "destination": "/faq/index.html" },
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/contact", "destination": "/contact/index.html" },
+    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/agents", "destination": "/agents/index.html" },
+    { "source": "/quote/motor-selection", "destination": "/quote/motor-selection/index.html" },
     { "source": "/((?!api).*)", "destination": "/" }
   ],
   "headers": [
