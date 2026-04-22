@@ -397,6 +397,24 @@ Deno.serve(async (req) => {
       console.error('Failed to log sync failure:', logErr);
     }
 
+    // Update cron_job_logs with failure
+    if (cronLogId) {
+      try {
+        await supabase
+          .from('cron_job_logs')
+          .update({
+            status: 'failed',
+            motors_found: 0,
+            motors_updated: 0,
+            error_message: errMsg,
+            completed_at: new Date().toISOString(),
+          })
+          .eq('id', cronLogId);
+      } catch (e) {
+        console.error('Failed to update cron_job_logs (failure):', e);
+      }
+    }
+
     // SMS admin on failure
     const ts = new Date().toISOString().replace('T', ' ').slice(0, 16);
     await notifyAdmin(
