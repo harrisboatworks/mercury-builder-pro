@@ -1040,10 +1040,10 @@ function mercuryDealerGTASchema() {
 // ============================================================
 
 const PRO_XS_STATIC_OFFERS_PRERENDER = [
-  { hp: 115, name: 'Mercury 115 Pro XS', startingAt: 14450 },
-  { hp: 150, name: 'Mercury 150 Pro XS', startingAt: 18300 },
-  { hp: 200, name: 'Mercury 200 Pro XS', startingAt: 23800 },
-  { hp: 250, name: 'Mercury 250 Pro XS', startingAt: 29300 },
+  { hp: 115, name: 'Mercury 115 Pro XS', startingAt: 14450, image: `${SITE_URL}/images/seo/proxs-115.webp` },
+  { hp: 150, name: 'Mercury 150 Pro XS', startingAt: 18300, image: `${SITE_URL}/images/seo/proxs-150.jpg` },
+  { hp: 200, name: 'Mercury 200 Pro XS', startingAt: 23800, image: `${SITE_URL}/images/seo/proxs-200.jpg` },
+  { hp: 250, name: 'Mercury 250 Pro XS', startingAt: 29300, image: `${SITE_URL}/images/seo/proxs-250.jpeg` },
 ];
 
 const PRO_XS_FAQ_PRERENDER = [
@@ -1105,6 +1105,7 @@ function mercuryProXSSchema() {
         "hasVariant": PRO_XS_STATIC_OFFERS_PRERENDER.map(v => ({
           "@type": "Product",
           "name": v.name,
+          "image": v.image,
           "brand": { "@type": "Brand", "name": "Mercury Marine" },
           "category": "Outboard Motor",
           "offers": {

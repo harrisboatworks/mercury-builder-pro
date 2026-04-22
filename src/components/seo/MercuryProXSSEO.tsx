@@ -4,16 +4,16 @@ import { SITE_URL } from '@/lib/site';
 // Static "starting at" CAD prices for JSON-LD Offer (rich-result safe).
 // Source: motor_models.base_price (snapshot from inventory at build time).
 // Live in-page pricing is fetched dynamically — these only feed schema.
-// Image URL is required by Google Merchant Listings rich-result eligibility.
-// Using the site's social share image as a stable, publicly-served fallback
-// until per-HP Pro XS hero images are added.
+// Image URLs are required by Google Merchant Listings rich-result eligibility.
+// Per-HP Pro XS product photos served from /public/images/seo/ (absolute URLs
+// for valid JSON-LD). Fallback constant retained for safety.
 const PRO_XS_DEFAULT_IMAGE = `${SITE_URL}/social-share.jpg`;
 
 export const PRO_XS_STATIC_OFFERS = [
-  { hp: 115, name: 'Mercury 115 Pro XS', startingAt: 14450, image: PRO_XS_DEFAULT_IMAGE },
-  { hp: 150, name: 'Mercury 150 Pro XS', startingAt: 18300, image: PRO_XS_DEFAULT_IMAGE },
-  { hp: 200, name: 'Mercury 200 Pro XS', startingAt: 23800, image: PRO_XS_DEFAULT_IMAGE },
-  { hp: 250, name: 'Mercury 250 Pro XS', startingAt: 29300, image: PRO_XS_DEFAULT_IMAGE },
+  { hp: 115, name: 'Mercury 115 Pro XS', startingAt: 14450, image: `${SITE_URL}/images/seo/proxs-115.webp` },
+  { hp: 150, name: 'Mercury 150 Pro XS', startingAt: 18300, image: `${SITE_URL}/images/seo/proxs-150.jpg` },
+  { hp: 200, name: 'Mercury 200 Pro XS', startingAt: 23800, image: `${SITE_URL}/images/seo/proxs-200.jpg` },
+  { hp: 250, name: 'Mercury 250 Pro XS', startingAt: 29300, image: `${SITE_URL}/images/seo/proxs-250.jpeg` },
 ];
 
 export const PRO_XS_FAQ = [
