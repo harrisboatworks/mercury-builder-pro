@@ -1108,6 +1108,48 @@ const routes = [
         `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
       ).join('') +
       '</dl>'
+  },
+  {
+    path: '/mercury-dealer-peterborough',
+    title: 'Mercury Dealer Peterborough Ontario | Harris Boat Works — 35 Min South',
+    description: 'Mercury Marine Platinum Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.',
+    h1: 'Mercury Dealer Near Peterborough, Ontario',
+    intro: 'Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough — about 35 minutes south on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Lakefield, Bridgenorth, Buckhorn, and the Kawartha Lakes region.',
+    schemas: [mercuryDealerPeterboroughSchema()],
+    extraNoscript: () =>
+      '<dl>' +
+      PETERBOROUGH_FAQ_PRERENDER.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
+  },
+  {
+    path: '/mercury-dealer-cobourg',
+    title: 'Mercury Dealer Cobourg Ontario | Harris Boat Works — 20 Min North',
+    description: 'Mercury Marine Platinum Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County.',
+    h1: 'Mercury Dealer Near Cobourg, Ontario',
+    intro: 'Harris Boat Works is the closest Mercury Marine Platinum Dealer to Cobourg — about 20 minutes north on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Cobourg, Port Hope, Grafton, Brighton, and Northumberland County.',
+    schemas: [mercuryDealerCobourgSchema()],
+    extraNoscript: () =>
+      '<dl>' +
+      COBOURG_FAQ_PRERENDER.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
+  },
+  {
+    path: '/mercury-dealer-gta',
+    title: 'Mercury Dealer for the GTA | Harris Boat Works — 90 Min East of Toronto',
+    description: 'Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.',
+    h1: 'Mercury Dealer for the Greater Toronto Area',
+    intro: 'Harris Boat Works on Rice Lake serves GTA, Lake Simcoe, and Lake Scugog Mercury buyers — about 90 minutes east of Toronto on the 401. Family-owned since 1947, Mercury dealer since 1965. Pickup only at Gores Landing.',
+    schemas: [mercuryDealerGTASchema()],
+    extraNoscript: () =>
+      '<dl>' +
+      GTA_FAQ_PRERENDER.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
   }
 ];
 
