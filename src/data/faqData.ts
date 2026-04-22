@@ -132,6 +132,14 @@ export const faqCategories: FAQCategory[] = [
       {
         question: 'Do you offer winterization and storage?',
         answer: 'Yes — Harris Boat Works offers full winterization service to protect your motor and boat through Ontario winters. This includes fogging the engine, stabilizing fuel, changing gear lube, greasing fittings, and preparing the cooling system for freezing temperatures. Proper winterization prevents costly damage from water freezing inside the engine block and lower unit. We also offer indoor storage at our Gores Landing facility. Book your winterization service at <a href="https://hbw.wiki/service" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">hbw.wiki/service</a> or call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a>.'
+      },
+      {
+        question: 'Do you ship Mercury outboards?',
+        answer: 'No — Harris Boat Works does not ship Mercury outboard motors. All motors are pickup only at our Gores Landing location on Rice Lake (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0). This is a deliberate choice: every motor we sell gets a personal walk-through with the customer covering controls, break-in procedure, warranty registration, and any boat-specific rigging questions. That hand-off is part of why we hold Mercury Platinum Dealer status. We serve customers within roughly a 200 km radius — Toronto, Peterborough, Kawartha Lakes, Cobourg, Belleville, Kingston, and the entire GTA — all within easy driving distance.'
+      },
+      {
+        question: 'How do I pick up my Mercury outboard from Harris Boat Works?',
+        answer: 'Pickup takes about 20–30 minutes and is by appointment only. After your deposit is paid and your motor is ready, we book a pickup time that works for you. At pickup, please bring: (1) a valid government-issued photo ID matching the name on the purchase order, (2) your purchase order or quote reference number, and (3) a vehicle and trailer (or appropriate transport) suitable for the motor size. Our address is 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 — about 35 minutes from Peterborough and 90 minutes from Toronto. Call <a href="tel:9053422153" class="text-primary hover:underline">905-342-2153</a> to schedule.'
       }
     ]
   },
