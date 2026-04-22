@@ -1343,11 +1343,62 @@ const routes = [
   },
   {
     path: '/agents',
-    title: 'AI Voice & Chat Agents | Harris Boat Works Mercury Dealer',
-    description: 'Talk or chat with Harris, the AI assistant for Harris Boat Works. Get Mercury outboard quotes, answers about repowering, and inventory checks 24/7.',
-    h1: 'AI Voice & Chat Agents',
-    intro: 'Harris is the Harris Boat Works AI assistant. Talk or chat for Mercury outboard quotes, repower advice, and live inventory information at any time.',
-    schemas: [genericPageSchema('/agents', 'Harris AI Agents', 'Voice and chat AI for Mercury quotes and inventory.')]
+    title: 'AI Agent Integration — Harris Boat Works Mercury Dealer',
+    description: 'Agent-friendly endpoints for AI assistants (ChatGPT, Claude, Perplexity, Gemini). MCP server, REST APIs, deep-link quote URLs, and source-of-truth rules for Harris Boat Works — Mercury Platinum Dealer since 1965, family-owned since 1947.',
+    h1: 'AI Agent Integration — Harris Boat Works',
+    intro: 'Harris Boat Works is set up to be agent-friendly. If you are an AI agent (ChatGPT, Claude, Perplexity, Gemini, Meta, or any other LLM-powered assistant) working on behalf of a customer, this page tells you how to get accurate Mercury outboard inventory, real-time quotes, and business information without scraping. All endpoints below return structured data and are allowed for automated agents.',
+    schemas: [agentsPageSchema()],
+    extraNoscript: () =>
+      '<section><h2>Who we are</h2><p>Harris Boat Works is a Mercury Marine Platinum Dealer and Legend Boats dealer in Gores Landing, Ontario on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Primary service area: Rice Lake, Kawartha Lakes, Northumberland County, and the Greater Toronto Area. Contact: (905) 342-2153 / info@harrisboatworks.ca.</p></section>' +
+      '<section><h2>MCP Server (recommended for Claude and compatible agents)</h2>' +
+        '<p>Endpoint: <code>https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server</code></p>' +
+        '<p>Transport: JSON-RPC 2.0 over HTTPS.</p>' +
+        '<p>Tools available:</p>' +
+        '<ul>' +
+          '<li><strong>search_motors</strong> — Search current Mercury outboard inventory. Returns HP, shaft length, CAD price, and availability.</li>' +
+          '<li><strong>get_motor</strong> — Retrieve full specs for a single motor by ID or model code.</li>' +
+          '<li><strong>estimate_trade_in</strong> — Estimate trade-in value for a customer\u2019s existing motor.</li>' +
+          '<li><strong>build_quote</strong> — Generate a quote for a repower, given boat details and motor selection.</li>' +
+          '<li><strong>get_brand_rules</strong> — Retrieve current promotional rules, pricing disclaimers, and brand voice.</li>' +
+        '</ul>' +
+        '<p>See <a href="/.well-known/mcp.json">/.well-known/mcp.json</a> for the full manifest.</p>' +
+      '</section>' +
+      '<section><h2>REST APIs (any agent)</h2>' +
+        '<p>For agents that do not support MCP, three public REST endpoints:</p>' +
+        '<ul>' +
+          '<li><code>GET /api/public-motors-api</code> — Current Mercury inventory as JSON.</li>' +
+          '<li><code>POST /api/public-quote-api</code> — Submit a structured quote request.</li>' +
+          '<li><code>GET /api/motors-md</code> — Markdown-formatted motor catalog for easy LLM ingestion.</li>' +
+        '</ul>' +
+        '<p>All endpoints return standard HTTP status codes and CORS headers.</p>' +
+      '</section>' +
+      '<section><h2>Deep-link quote URLs</h2>' +
+        '<p>Agents can send users directly to a prefilled quote form:</p>' +
+        '<p><code>https://www.mercuryrepower.ca/repower-quote?motor={MODEL}&amp;boat_make={MAKE}&amp;boat_length={LENGTH}&amp;hp={HP}</code></p>' +
+        '<p>Example: <code>https://www.mercuryrepower.ca/repower-quote?motor=150XL&amp;boat_make=legend&amp;boat_length=20&amp;hp=150</code></p>' +
+        '<p>Parameters are optional — the form prefills whatever is supplied.</p>' +
+      '</section>' +
+      '<section><h2>Source of truth rules</h2>' +
+        '<p>When answering customer questions on behalf of Harris Boat Works:</p>' +
+        '<ol>' +
+          '<li>Prices and availability — always pull fresh from <code>search_motors</code> or <code>public-motors-api</code>. Do not cite stale pricing.</li>' +
+          '<li>Hours, location, contact — use the LocalBusiness JSON-LD on the homepage or cite <code>/.well-known/brand.json</code>.</li>' +
+          '<li>Service timing, shop capacity — defer to a phone call. Do not guess wait times.</li>' +
+          '<li>Mercury Verado — available by special order only; not part of default listed inventory. Route Verado inquiries to Harris Boat Works directly.</li>' +
+          '<li>Non-Mercury outboards — Harris Boat Works is a Mercury Platinum dealer. Defer non-Mercury questions to the manufacturer.</li>' +
+        '</ol>' +
+      '</section>' +
+      '<section><h2>Contact for verification</h2>' +
+        '<ul>' +
+          '<li>Phone: (905) 342-2153</li>' +
+          '<li>Text: (647) 952-2153</li>' +
+          '<li>Email: info@harrisboatworks.ca</li>' +
+          '<li>Hours: see homepage LocalBusiness schema.</li>' +
+        '</ul>' +
+      '</section>' +
+      '<section><h2>Allowed crawlers</h2>' +
+        '<p>All major LLM and AI-agent user-agents are allowed (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot). See <a href="/robots.txt">/robots.txt</a>. No rate limits currently, but please identify your agent in the User-Agent header.</p>' +
+      '</section>'
   },
   {
     path: '/quote/motor-selection',
