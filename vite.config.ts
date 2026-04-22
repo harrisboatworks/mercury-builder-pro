@@ -4,7 +4,6 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { VitePWA } from "vite-plugin-pwa";
 import { writeFileSync } from "fs";
-import { spawn } from "child_process";
 
 // Sitemap and RSS generation plugin
 function sitemapPlugin(): Plugin {
@@ -32,55 +31,6 @@ function sitemapPlugin(): Plugin {
   };
 }
 
-// Build-time prerender plugin — runs scripts/prerender.ts after dist/ is written
-// so AI crawlers (Meta-ExternalAgent, Perplexity, social previews) get real HTML
-// for the 8 key public routes instead of an empty SPA shell.
-//
-// In production (STRICT_PRERENDER=1, set in Vercel env), a non-zero prerender
-// exit FAILS the build. This prevents silent regressions where the SPA shell
-// gets shipped to every route. Locally the failure is a warning so dev iteration
-// isn't blocked when Chrome isn't installed.
-function prerenderPlugin(): Plugin {
-  return {
-    name: 'crawler-prerender',
-    apply: 'build',
-    closeBundle: {
-      sequential: true,
-      order: 'post',
-      async handler() {
-        if (process.env.SKIP_PRERENDER === '1') {
-          console.log('[prerender] skipped (SKIP_PRERENDER=1)');
-          return;
-        }
-        // Strict-by-default: any non-zero prerender exit fails the build.
-        // Set SOFT_PRERENDER=1 (or SKIP_PRERENDER=1 above) to bypass locally.
-        const soft = process.env.SOFT_PRERENDER === '1';
-        const exitCode = await new Promise<number>((resolve) => {
-          const child = spawn(
-            'npx',
-            ['tsx', 'scripts/prerender.ts'],
-            { stdio: 'inherit', shell: true }
-          );
-          child.on('exit', (code) => resolve(code ?? 1));
-          child.on('error', (err) => {
-            console.warn('[prerender] failed to spawn:', err.message);
-            resolve(1);
-          });
-        });
-        if (exitCode !== 0) {
-          const msg = `[prerender] exited with code ${exitCode}`;
-          if (soft) {
-            console.warn(`${msg} — build continues (SOFT_PRERENDER=1)`);
-          } else {
-            console.error(`${msg} — failing build (set SOFT_PRERENDER=1 to bypass)`);
-            throw new Error('Prerender failed');
-          }
-        }
-      }
-    }
-  };
-}
-
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
@@ -90,7 +40,6 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
     mode === 'production' && sitemapPlugin(),
-    mode === 'production' && prerenderPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'assets/**/*'],
