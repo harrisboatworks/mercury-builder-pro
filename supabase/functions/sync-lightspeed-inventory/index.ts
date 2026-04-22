@@ -47,6 +47,34 @@ Deno.serve(async (req) => {
 
     console.log(`📦 Found ${inventory?.length || 0} available new Mercury motors in Lightspeed`);
 
+    // ── Suspicious-empty guard: compare against last successful sync ──
+    const currentUnitCount = inventory?.length || 0;
+    let suspiciousDropDetected = false;
+    let lastGoodCount = 0;
+
+    try {
+      const { data: lastGood } = await supabase
+        .from('sync_logs')
+        .select('motors_processed, details, completed_at')
+        .eq('sync_type', 'lightspeed')
+        .eq('status', 'completed')
+        .order('completed_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      if (lastGood?.details && typeof lastGood.details === 'object') {
+        const prev = (lastGood.details as any).total_units ?? 0;
+        lastGoodCount = prev;
+        // Trigger if we went from >5 motors to either 0 or <50% of previous
+        if (prev >= 5 && (currentUnitCount === 0 || currentUnitCount < prev * 0.5)) {
+          suspiciousDropDetected = true;
+          console.warn(`⚠️ Suspicious drop: previous=${prev}, current=${currentUnitCount}`);
+        }
+      }
+    } catch (e) {
+      console.error('Could not check previous sync for drop detection:', e);
+    }
+
     // ── 2. Group inventory by model to get quantities and best prices ──
     const modelGroups = new Map<string, {
       qty: number;
@@ -218,11 +246,12 @@ Deno.serve(async (req) => {
     }
 
     // ── 6. Log the sync ──
+    const syncStatus = suspiciousDropDetected ? 'warning' : 'completed';
     await supabase
       .from('sync_logs')
       .insert({
         sync_type: 'lightspeed',
-        status: 'completed',
+        status: syncStatus,
         motors_processed: modelGroups.size,
         motors_in_stock: matchedMotors.length,
         details: {
@@ -231,9 +260,20 @@ Deno.serve(async (req) => {
           source: 'mercury_motor_inventory view (Lightspeed 3PA API)',
           total_units: inventory?.length || 0,
           unique_models: modelGroups.size,
+          suspicious_drop: suspiciousDropDetected,
+          previous_unit_count: lastGoodCount,
         },
         completed_at: new Date().toISOString(),
       });
+
+    // ── 6a. SMS admin if motor count dropped suspiciously ──
+    if (suspiciousDropDetected) {
+      const ts = new Date().toISOString().replace('T', ' ').slice(0, 16);
+      await notifyAdmin(
+        'HBW Lightspeed sync WARNING',
+        `Motor count dropped from ${lastGoodCount} → ${currentUnitCount} at ${ts} UTC.\nMatched: ${matchedMotors.length}. Check admin/stock-sync.`
+      );
+    }
 
     // ── 7. Email notification for unmatched motors ──
     if (unmatchedModels.length > 0) {
@@ -295,9 +335,36 @@ Deno.serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('❌ Lightspeed sync error:', error);
+    const errMsg = error instanceof Error ? error.message : String(error);
+    console.error('❌ Lightspeed sync error:', errMsg);
+
+    // Log failure to sync_logs
+    try {
+      await supabase.from('sync_logs').insert({
+        sync_type: 'lightspeed',
+        status: 'failed',
+        motors_processed: 0,
+        motors_in_stock: 0,
+        details: {
+          error: errMsg,
+          source: 'mercury_motor_inventory view (Lightspeed 3PA API)',
+          started_at: startedAt,
+        },
+        completed_at: new Date().toISOString(),
+      });
+    } catch (logErr) {
+      console.error('Failed to log sync failure:', logErr);
+    }
+
+    // SMS admin on failure
+    const ts = new Date().toISOString().replace('T', ' ').slice(0, 16);
+    await notifyAdmin(
+      'HBW Lightspeed sync FAILED',
+      `Error at ${ts} UTC: ${errMsg}\nCheck admin/stock-sync.`
+    );
+
     return new Response(
-      JSON.stringify({ success: false, error: error.message }),
+      JSON.stringify({ success: false, error: errMsg }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }
