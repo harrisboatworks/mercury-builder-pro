@@ -1429,6 +1429,20 @@ const routes = [
         `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
       ).join('') +
       '</dl>'
+  },
+  {
+    path: '/mercury-pontoon-outboards',
+    title: 'Mercury Outboards for Pontoon Boats — Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works',
+    description: 'Mercury Command Thrust outboards for pontoon boats — 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Platinum Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.',
+    h1: 'Mercury Outboards for Pontoon Boats — Command Thrust, Big Tiller & High-Thrust Options (Rice Lake & Kawarthas)',
+    intro: 'Pontoons are heavier than they look. The right Mercury for a pontoon is a Command Thrust gearcase, the right shaft length, and a high-thrust prop. Harris Boat Works has been rigging pontoons on Rice Lake since 1965 — Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington.',
+    schemas: [mercuryPontoonOutboardsSchema()],
+    extraNoscript: () =>
+      '<dl>' +
+      PONTOON_FAQ_PRERENDER.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
   }
 ];
 

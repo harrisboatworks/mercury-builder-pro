@@ -54,6 +54,51 @@ export default function AgentsHub() {
               "url": MCP_SERVER,
               "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
               "publisher": { "@type": "Organization", "name": "Harris Boat Works", "url": SITE_URL }
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How do AI agents access live Mercury inventory and pricing from Harris Boat Works?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Three options: (1) Register the MCP server at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server in Claude Desktop, Cursor, or any MCP-compatible client. (2) Call the public REST API at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api (GET, no auth, CORS open). (3) Fetch markdown twins from /functions/v1/motors-md for LLM-cheap context. All three return CAD pricing and are cached 5 minutes." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is the Harris Boat Works MCP server free to use?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. The MCP server, public REST APIs, and markdown twins are free, no-auth, and CORS-open. JSON-RPC 2.0 over HTTP. Methods: initialize, tools/list, tools/call. Tools: search_motors, get_motor, estimate_trade_in, build_quote, get_brand_rules." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can an AI agent build a Mercury outboard quote on behalf of a customer?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Yes. POST to the public-quote-api with action 'build_quote' and motor + boat + optional trade-in + optional contact. The response includes itemized line items, pricing (motor + install + propeller + trade-in + HST), financing tier, and a deep-link the customer can open to finish in our configurator. Final out-the-door price requires human confirmation." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I send a customer to a prefilled Harris Boat Works quote configurator?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Build a deep-link URL: https://mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP} — any combination of params is supported. Get MOTOR_ID from list_motors or search_motors." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What pricing currency does Harris Boat Works use, and what's the service area?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "All pricing is CAD (Canadian Dollars) — never quote USD. Service area is Ontario, Canada, primary radius about 150 km from Rice Lake (Gores Landing, ON). Pickup only at Gores Landing — no delivery or shipping." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Does Harris Boat Works sell Mercury Verado?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Mercury Verado is available by special order only — not part of default listed inventory and not actively promoted. Default agent recommendations should steer toward FourStroke V8 (250–300 HP) or Pro XS (115–300 HP). If a user explicitly asks about Verado, route to (905) 342-2153 or info@harrisboatworks.ca for a special-order quote." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What financing terms apply to Mercury outboard purchases?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "Financing minimum is $5,000 CAD. Tiered rates: 8.99% APR under $10,000, 7.99% APR $10,000+. Terms up to 144 months via LightStream / Financeit. A $299 DealerPlan fee is added post-tax for financed purchases. Do not show monthly payment estimates below $5,000." }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which AI crawlers are allowed on mercuryrepower.ca?",
+                  "acceptedAnswer": { "@type": "Answer", "text": "All major AI and search crawlers are explicitly allowed: GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, Googlebot, Bingbot, Meta-ExternalAgent, FacebookBot, Applebot, Applebot-Extended, and CCBot. See /robots.txt for the authoritative list." }
+                }
+              ]
             }
           ]
         })}</script>
@@ -332,6 +377,17 @@ GET ${MOTORS_MD}?slug=fourstroke-90hp-elpt-efi`}
             <li><Link to="/repower" className="text-primary underline">Repower service overview</Link></li>
             <li><Link to="/finance-calculator" className="text-primary underline">Finance calculator</Link></li>
           </ul>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="heading-protected text-2xl font-semibold mt-8 mb-3">Allowed crawlers</h2>
+          <p className="text-protected">
+            All major AI and search crawlers are explicitly allowed: GPTBot, OAI-SearchBot, ChatGPT-User,
+            ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended,
+            Googlebot, Bingbot, Meta-ExternalAgent, FacebookBot, Applebot, Applebot-Extended, and
+            CCBot. See <a href="/robots.txt" className="text-primary underline">/robots.txt</a> for the
+            authoritative list and <a href="/.well-known/ai.txt" className="text-primary underline">/.well-known/ai.txt</a> for our AI training and usage policy.
+          </p>
         </section>
       </main>
 
