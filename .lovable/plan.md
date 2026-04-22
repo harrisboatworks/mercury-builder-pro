@@ -1,35 +1,40 @@
 
 
-## Save hosting model as a Core project rule
+## Add root-path redirect rule to vercel.json
 
-No code change. Just persisting the hosting/deploy model to memory so I never re-propose Lovable as production or try to reconnect the domain.
+The existing `/:path*` redirect doesn't match the bare root `/` on Vercel, so `quote.harrisboatworks.ca/` still returns HTTP 200. Add a dedicated rule for root, keeping the catch-all rule intact.
 
-### Memory updates
+### Change
 
-**1. New file: `mem://infrastructure/hosting-and-deploy-model.md`**
+In `vercel.json`, prepend a new redirect rule before the existing one. Final `redirects` array:
 
-Records the production hosting setup:
-- Production host: **Vercel**, deployed from GitHub repo `harrisboatworks/mercury-builder-pro`
-- Lovable's role: code editor only — pushes to GitHub, Vercel auto-deploys from `main`
-- Production domain: `mercuryrepower.ca` (DNS at IONOS → Vercel: apex A `216.150.1.1`, www CNAME `e9563c91757c0a64.vercel-dns-017.com`)
-- Lovable custom-domain binding: removed (do not re-add)
-- Staging: `.lovable.app` preview URL (Lovable-hosted)
-- To change the live site: edit code → commit pushes to GitHub → Vercel deploys
-- Static prerender: handled by `scripts/static-prerender.mjs` during `vite build` on Vercel
-- **Why:** Lovable hosting served a plain SPA shell (no per-route prerendering). Vercel runs the prerender script and serves the 8 stamped HTML files needed for SEO/AI discovery.
-
-**2. Update `mem://index.md` Core section**
-
-Add one line so it's applied to every action:
+```json
+"redirects": [
+  {
+    "source": "/",
+    "has": [{ "type": "host", "value": "quote.harrisboatworks.ca" }],
+    "destination": "https://www.mercuryrepower.ca/",
+    "statusCode": 301
+  },
+  {
+    "source": "/:path*",
+    "has": [{ "type": "host", "value": "quote.harrisboatworks.ca" }],
+    "destination": "https://www.mercuryrepower.ca/:path*",
+    "statusCode": 301
+  }
+]
 ```
-Production hosting is Vercel (from GitHub repo harrisboatworks/mercury-builder-pro). Lovable = code editor only. Never reconnect domain to Lovable.
+
+Nothing else in `vercel.json` changes — rewrites, headers, and the cron rule are untouched.
+
+### Deploy & verify
+
+The commit pushes to GitHub `harrisboatworks/mercury-builder-pro`; Vercel auto-deploys from `main`. Once the deploy completes, I'll run:
+
+```bash
+curl -sI https://quote.harrisboatworks.ca/
+curl -sI https://quote.harrisboatworks.ca/repower
 ```
 
-All existing Core rules and Memories list preserved exactly.
-
-### What this changes for future requests
-
-- "Update the live site" → I make a code change, it commits to GitHub, Vercel deploys. No Lovable publish step matters for production.
-- I won't suggest reconnecting `mercuryrepower.ca` to Lovable, won't propose Lovable-side domain configuration, and won't treat the `.lovable.app` URL as production.
-- SEO/prerender changes → edit `scripts/static-prerender.mjs` or `vercel.json`; verify by checking the Vercel deploy, not the Lovable preview.
+Expected: both return `HTTP/2 301` with `location:` pointing to the matching `www.mercuryrepower.ca` path.
 
