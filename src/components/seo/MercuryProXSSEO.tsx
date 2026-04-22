@@ -4,11 +4,16 @@ import { SITE_URL } from '@/lib/site';
 // Static "starting at" CAD prices for JSON-LD Offer (rich-result safe).
 // Source: motor_models.base_price (snapshot from inventory at build time).
 // Live in-page pricing is fetched dynamically — these only feed schema.
+// Image URL is required by Google Merchant Listings rich-result eligibility.
+// Using the site's social share image as a stable, publicly-served fallback
+// until per-HP Pro XS hero images are added.
+const PRO_XS_DEFAULT_IMAGE = `${SITE_URL}/social-share.jpg`;
+
 export const PRO_XS_STATIC_OFFERS = [
-  { hp: 115, name: 'Mercury 115 Pro XS', startingAt: 14450 },
-  { hp: 150, name: 'Mercury 150 Pro XS', startingAt: 18300 },
-  { hp: 200, name: 'Mercury 200 Pro XS', startingAt: 23800 },
-  { hp: 250, name: 'Mercury 250 Pro XS', startingAt: 29300 },
+  { hp: 115, name: 'Mercury 115 Pro XS', startingAt: 14450, image: PRO_XS_DEFAULT_IMAGE },
+  { hp: 150, name: 'Mercury 150 Pro XS', startingAt: 18300, image: PRO_XS_DEFAULT_IMAGE },
+  { hp: 200, name: 'Mercury 200 Pro XS', startingAt: 23800, image: PRO_XS_DEFAULT_IMAGE },
+  { hp: 250, name: 'Mercury 250 Pro XS', startingAt: 29300, image: PRO_XS_DEFAULT_IMAGE },
 ];
 
 export const PRO_XS_FAQ = [
@@ -81,6 +86,7 @@ export function MercuryProXSSEO() {
         "hasVariant": PRO_XS_STATIC_OFFERS.map(v => ({
           "@type": "Product",
           "name": v.name,
+          "image": v.image,
           "brand": { "@type": "Brand", "name": "Mercury Marine" },
           "category": "Outboard Motor",
           "offers": {
