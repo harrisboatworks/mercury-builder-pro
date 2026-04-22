@@ -1,70 +1,77 @@
 
 
-## Post-Batch-3 cleanup — what's already done and what's left
+## Hydration overwrite fix — stop GlobalSEO from polluting per-page schema
 
-I audited Claude's 6 items against the current codebase. Here's the actual state:
+### Root cause
 
-### ✅ Already done in last commit
-1. **Pontoon page** — built, wired into App.tsx, sitemap, prerender. (Claude's recap was wrong; it shipped.)
-2. **Verado language** — softened in `public/llms.txt`, `public/.well-known/mcp.json`, `src/pages/AgentsHub.tsx`.
-3. **Blog URL fixes** — all 4 slugs corrected in `public/llms.txt`.
-4. **`/agents` page** — expanded with FAQPage JSON-LD + "Allowed crawlers" section.
+`<GlobalSEO />` is mounted globally in `src/App.tsx` (line 557, inside the `<App>` shell, runs on every route). It injects a JSON-LD `@graph` containing 5 nodes — including a **homepage `WebPage @id="…/#webpage"`** with `name: "Mercury Repower Quotes Online…"` — into every page after hydration.
 
-### ❌ Still broken — needs this commit
+The prerender ships the correct per-page `@graph` (e.g. `WebPage @id="…/mercury-pro-xs#webpage"` + `FAQPage @id="…/mercury-pro-xs#faqpage"`). After hydration the global block adds a second JSON-LD script, so Google sees both copies side-by-side. That's why Rich Results Test reports everything 2× and flags "Duplicate field FAQPage" on Pro XS (the page's own `MercuryProXSSEO` also adds `WebPage @id=…#webpage`, `FAQPage @id=…#faqpage`, etc., which collide once GlobalSEO fires the global homepage graph).
 
-**FIX A — Stale Verado language in 3 missed files**
+The "homepage title in live DOM" is most likely the `name` field of the global WebPage JSON-LD node (which reads `Mercury Repower Quotes Online — Real Prices, No Forms…`) being mistaken for `<title>` in Claude's report. Per-page `<Helmet><title>` is correctly set by every landing page's SEO component (verified in MercuryProXSSEO line 110). Either way, the fix is the same: stop GlobalSEO from writing page-level schema on non-home routes.
 
-| File | Line | Current | Action |
-|---|---|---|---|
-| `public/.well-known/brand.json` | 41-44 | `"verado": { "reason": "Harris Boat Works does not sell or service Mercury Verado motors..." }` | Replace block with `"verado": { "policy": "special_order_only", "reason": "Mercury Verado is available by special order only — not part of default listed inventory and not actively promoted. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca." }` |
-| `public/.well-known/ai.txt` | (search) | Verify — check if any "do not sell Verado" line exists; remove if present, leave general "Mercury-only" framing | Soften only if found |
-| `src/components/seo/MotorSelectionSEO.tsx` | 13-14 | Comment: `Verado is intentionally excluded — Harris Boat Works does not sell or service Verado motors.` | Replace with: `Verado is intentionally excluded from default inventory — Verado is special-order only at Harris Boat Works.` |
-| `src/components/seo/MercuryOutboardsOntarioSEO.tsx` | 7 (FAQ answer) | Currently mentions "FourStroke V8 250–300 HP" as in-stock | Already mentions Verado correctly on line 11; **also strip the V8 250-300 reference from line 7** since those aren't in `motor_models` (avoids fabrication) |
+### The fix — 3 targeted changes
 
-**FIX B — Geo coordinate unification (CRITICAL — site-wide inconsistency)**
+**1. Slim down `src/components/seo/GlobalSEO.tsx`**
 
-Three different coordinate sets in the codebase right now:
+Strip the page-level nodes. Keep only the truly site-wide nodes that are safe to duplicate across every page:
 
-| Coords | Files |
-|---|---|
-| `44.1122, -78.0245` | `GlobalSEO.tsx`, `HomepageSEO.tsx`, `ContactPageSEO.tsx`, `static-prerender.mjs` (lines 142, 272) |
-| `44.1147, -78.2564` | `RepowerPageSEO.tsx`, `static-prerender.mjs` (line 342), `mcp.json` (originLat/Lng) |
-| `44.0833, -78.1667` | `MercuryOutboardsOntarioSEO.tsx`, `static-prerender.mjs` (line 1116) |
+- Keep: `WebSite @id=#website`, `Organization @id=#organization`, `LocalBusiness @id=#localbusiness`
+- Remove: `WebPage @id=#webpage` (page-level — must come from each route's SEO component)
+- Remove: `Service @id=#quote-service` (move to `HomepageSEO` only)
 
-**Resolution**: The address `5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0` geocodes to approximately **44.1147, -78.2564** (this is the value already in `mcp.json` and `RepowerPageSEO.tsx` — the other two were likely guesses). Standardize on **44.1147, -78.2564** everywhere unless you tell me different.
+Keep the hreflang `<link rel="alternate">` tags as-is (those are safe site-wide).
 
-**Files to update** (replace whatever coords are there with `44.1147, -78.2564`):
-- `src/components/seo/GlobalSEO.tsx` (line 81-82)
-- `src/components/seo/HomepageSEO.tsx` (line 81-82)
-- `src/components/seo/ContactPageSEO.tsx` (line 37-38)
-- `src/components/seo/MercuryOutboardsOntarioSEO.tsx` (line 89)
-- `scripts/static-prerender.mjs` (lines 142-143, 272-273, 1116)
+Result: every page gets `WebSite + Organization + LocalBusiness` as global context (these have stable `@id`s and Google handles duplicates fine), and each route adds its own `WebPage`, `BreadcrumbList`, `FAQPage`, `ProductGroup`, etc. on top. No conflicts.
 
-**FIX C — "1965" Mercury dealer date (verification needed)**
+**2. Move the `Service @id=#quote-service` node into `src/components/seo/HomepageSEO.tsx`**
 
-Currently used in 13+ SEO files as "Mercury dealer since 1965". Claude flagged this as unverified. Two paths:
+Add it to the `@graph` array there. It only describes the homepage's online quote service — it shouldn't appear on `/mercury-pro-xs` or any other route.
 
-- **Keep it** if you can confirm (HBW historical doc, old Mercury dealer agreement, etc.)
-- **Strip it** to "longtime Mercury Marine Platinum Dealer" + keep "family-owned since 1947" — safer, no fact-check risk
+**3. Fix `MercuryProXSSEO.tsx` ProductGroup variants — add `image` field**
 
-I need your call. **Question below.**
+Each entry in `PRO_XS_STATIC_OFFERS` needs an image URL for Merchant Listings eligibility. Use the Mercury family hero already on the site (or a per-HP placeholder if available). Add an `image` field to `PRO_XS_STATIC_OFFERS` and reference it in the variant Offer object:
 
-### Files touched (if you approve)
+```ts
+{
+  "@type": "Product",
+  "name": v.name,
+  "image": v.image,        // NEW
+  "brand": { ... },
+  "category": "Outboard Motor",
+  "offers": { ... }
+}
+```
+
+I'll use `${SITE_URL}/assets/mercury-pro-xs-hero.jpg` if it exists in `src/assets/` or `public/`, otherwise fall back to the Mercury logo / Harris logo as a temporary valid URL. I'll grep `src/assets` and `public/lovable-uploads` first to pick a real existing image.
+
+### Files touched
 
 | # | File | Action |
 |---|---|---|
-| 1 | `public/.well-known/brand.json` | Soften Verado block |
-| 2 | `public/.well-known/ai.txt` | Audit + soften if needed |
-| 3 | `src/components/seo/MotorSelectionSEO.tsx` | Update Verado comment |
-| 4 | `src/components/seo/MercuryOutboardsOntarioSEO.tsx` | Strip V8 250-300, fix coords |
-| 5 | `src/components/seo/GlobalSEO.tsx` | Coords |
-| 6 | `src/components/seo/HomepageSEO.tsx` | Coords |
-| 7 | `src/components/seo/ContactPageSEO.tsx` | Coords |
-| 8 | `scripts/static-prerender.mjs` | Coords (3 locations) |
-| 9-21 | 13 SEO files | (Optional, only if "1965" stripped) |
+| 1 | `src/components/seo/GlobalSEO.tsx` | Remove `WebPage` + `Service` nodes from `@graph`. Keep `WebSite`, `Organization`, `LocalBusiness`, hreflang. |
+| 2 | `src/components/seo/HomepageSEO.tsx` | Add `Service @id=#quote-service` node to its `@graph`. |
+| 3 | `src/components/seo/MercuryProXSSEO.tsx` | Add `image` field to `PRO_XS_STATIC_OFFERS` and to each `hasVariant` Product. |
 
-### Two questions before I implement
+### Out of scope (not changing)
 
-1. **1965 Mercury dealer date** — keep (verified), strip (not verified), or skip the question for now and only fix Verado + geo coords?
-2. **Geo coords** — confirm `44.1147, -78.2564` is correct, or supply the precise value from Google Maps pin on the marina building?
+- The prerender script (`scripts/static-prerender.mjs`) — it's correct already.
+- The 30+ other per-page SEO components — they're correct, they just got drowned out by GlobalSEO. Once GlobalSEO is slimmed they'll stand alone cleanly.
+- Updating other Product schemas — only Pro XS uses `ProductGroup`/`hasVariant`. Other landing pages use `Service` and `FAQPage` which don't require `image`.
+
+### Verification (post-deploy, manual)
+
+```
+for url in / /mercury-pro-xs /mercury-outboards-ontario /mercury-pontoon-outboards \
+          /mercury-repower-faq /how-to-repower-a-boat /mercury-dealer-peterborough \
+          /mercury-dealer-cobourg /mercury-dealer-gta /agents /contact /about; do
+  echo "=== $url ==="
+  curl -s "https://www.mercuryrepower.ca$url" | grep -oE '"@id":"[^"]*#webpage"' | sort -u
+done
+```
+
+Each URL should return exactly **one** `#webpage` `@id`, matching the URL (e.g. `…/mercury-pro-xs#webpage`, never bare `…/#webpage` on a non-home page). Then re-run Google Rich Results Test on `/mercury-pro-xs`:
+- FAQ: 1 valid (was 2 invalid)
+- Merchant listings: 4 valid (was 8 invalid)
+- Duplicate field FAQPage error: gone
 
