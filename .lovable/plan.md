@@ -1,30 +1,42 @@
 
 
-## Add Bing Webmaster verification meta tag to index.html
+## Sitemap status: already in place — minor expansion recommended
 
-Replace the existing placeholder Bing verification tag in `index.html` with the real token. The Google Search Console tag is already present with a valid token (`dQ0cAABotsaEYxoKgsE1OhdGpZ_UayYlQHM6vPZLCIw`), so it stays untouched.
+A dynamic sitemap is already generated, published, and discoverable. No setup needed. I'll only add a small expansion if you want broader entry-point coverage.
+
+### What already exists
+
+- **Build-time generator**: `vite.config.ts` → `sitemapPlugin` runs on every Vercel production build, calling `generateSitemapXML()` from `src/utils/generateSitemap.ts` and writing `public/sitemap.xml`.
+- **Published**: live at `https://mercuryrepower.ca/sitemap.xml` (52 URLs today: 12 static pages + 40 blog articles, with image entries for blog posts).
+- **Discoverable**: `public/robots.txt` ends with `Sitemap: https://mercuryrepower.ca/sitemap.xml`, and `vercel.json` has a passthrough rewrite for `/sitemap.xml`.
+- **RSS feed** also generated at `/rss.xml` for blog content.
+- **Quote funnel entry**: `/quote/motor-selection` is included with `priority: 0.9, changefreq: daily`.
+
+The deeper quote funnel steps (`/quote/options`, `/quote/trade-in`, `/quote/summary`, etc.) are intentionally excluded — they are session-state pages that have no value (and no content) without an active quote in progress. Indexing them would hurt SEO, not help it.
+
+### Optional expansion
+
+A few public, indexable pages exist as routes but aren't currently in the sitemap. If you want them discoverable, I'd add these to the static list in `src/utils/generateSitemap.ts`:
+
+| Path | Why add | Priority |
+|---|---|---|
+| `/accessories` | Public catalog page, real content | 0.7 |
+| `/compare` | Motor comparison tool, useful entry | 0.7 |
+| `/trade-in-value` | Standalone trade-in estimator, high search intent | 0.8 |
+| `/financing` (already redirects to `/finance-calculator`, skip) | — | — |
+
+Multilingual landing pages (`/fr`, `/zh`) — skip from the main sitemap; they belong in hreflang tags (already handled by `GlobalSEO.tsx`) and ideally a separate locale sitemap if traffic warrants it later.
 
 ### Change
 
-In `index.html`, line 26 currently reads:
-```html
-<meta name="msvalidate.01" content="BING_VERIFICATION_TBD" />
-```
+Edit `src/utils/generateSitemap.ts` → `getStaticPages()` to add the three new entries. Vercel's next deploy regenerates `public/sitemap.xml` automatically. Then ping Google/Bing via Search Console / Webmaster Tools (manual step on your side — they'll also re-crawl on their own within days since the sitemap is referenced in `robots.txt`).
 
-Replace with:
-```html
-<meta name="msvalidate.01" content="DA6209164BA72CB3C538414AB0F0235F" />
-```
+### What you don't need to do
 
-The comment above it (`<!-- Bing Webmaster Tools verification — replace placeholder after submitting at bing.com/webmasters -->`) is removed since the token is now real.
+- No new files, no new build step, no Vercel config change.
+- No need to "publish" — the sitemap is already live.
 
-Nothing else in `index.html` changes. The existing GSC tag (line 14) stays as-is.
+### Confirm before I proceed
 
-### Deploy
-
-Commit pushes to GitHub `harrisboatworks/mercury-builder-pro`; Vercel auto-deploys from `main`. The tag is then visible in the prerendered HTML on `mercuryrepower.ca` and Bing can verify ownership.
-
-### Note
-
-The instruction says "do not remove after verification" — confirmed. The tag is permanent.
+Want me to add the three optional entries (`/accessories`, `/compare`, `/trade-in-value`)? If yes I'll make the one-file change. If no, the sitemap is already doing its job and there's nothing to ship.
 
