@@ -47,6 +47,34 @@ Deno.serve(async (req) => {
 
     console.log(`📦 Found ${inventory?.length || 0} available new Mercury motors in Lightspeed`);
 
+    // ── Suspicious-empty guard: compare against last successful sync ──
+    const currentUnitCount = inventory?.length || 0;
+    let suspiciousDropDetected = false;
+    let lastGoodCount = 0;
+
+    try {
+      const { data: lastGood } = await supabase
+        .from('sync_logs')
+        .select('motors_processed, details, completed_at')
+        .eq('sync_type', 'lightspeed')
+        .eq('status', 'completed')
+        .order('completed_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+
+      if (lastGood?.details && typeof lastGood.details === 'object') {
+        const prev = (lastGood.details as any).total_units ?? 0;
+        lastGoodCount = prev;
+        // Trigger if we went from >5 motors to either 0 or <50% of previous
+        if (prev >= 5 && (currentUnitCount === 0 || currentUnitCount < prev * 0.5)) {
+          suspiciousDropDetected = true;
+          console.warn(`⚠️ Suspicious drop: previous=${prev}, current=${currentUnitCount}`);
+        }
+      }
+    } catch (e) {
+      console.error('Could not check previous sync for drop detection:', e);
+    }
+
     // ── 2. Group inventory by model to get quantities and best prices ──
     const modelGroups = new Map<string, {
       qty: number;
