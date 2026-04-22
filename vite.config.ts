@@ -78,6 +78,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
     mode === 'production' && sitemapPlugin(),
+    mode === 'production' && prerenderPlugin(),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'assets/**/*'],
