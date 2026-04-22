@@ -92,12 +92,59 @@ export default function AdminStockSync() {
   const [showMatchReview, setShowMatchReview] = useState(false);
   const [pendingMatchesCount, setPendingMatchesCount] = useState(0);
   const [syncLogs, setSyncLogs] = useState<SyncLog[]>([]);
+  const [alertsEnabled, setAlertsEnabled] = useState(true);
+  const [alertsToggleSaving, setAlertsToggleSaving] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
     fetchSyncLogs();
     fetchPendingMatchesCount();
+    fetchAlertsToggle();
   }, []);
+
+  const fetchAlertsToggle = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('admin_sources')
+        .select('value')
+        .eq('key', 'lightspeed_alerts_enabled')
+        .maybeSingle();
+      if (error) throw error;
+      // Missing row defaults to enabled
+      setAlertsEnabled(!data || data.value !== 'false');
+    } catch (error) {
+      console.error('Error fetching alerts toggle:', error);
+    }
+  };
+
+  const toggleAlerts = async (next: boolean) => {
+    setAlertsToggleSaving(true);
+    try {
+      const { error } = await supabase
+        .from('admin_sources')
+        .upsert(
+          { key: 'lightspeed_alerts_enabled', value: next ? 'true' : 'false', updated_at: new Date().toISOString() },
+          { onConflict: 'key' }
+        );
+      if (error) throw error;
+      setAlertsEnabled(next);
+      toast({
+        title: next ? 'SMS alerts enabled' : 'SMS alerts disabled',
+        description: next
+          ? 'You will receive SMS on Lightspeed sync failures and suspicious motor count drops.'
+          : 'Lightspeed sync failure alerts are muted. Re-enable any time.',
+      });
+    } catch (error: any) {
+      console.error('Error updating alerts toggle:', error);
+      toast({
+        title: 'Failed to update setting',
+        description: error.message || 'Could not save the toggle.',
+        variant: 'destructive',
+      });
+    } finally {
+      setAlertsToggleSaving(false);
+    }
+  };
 
   const fetchPendingMatchesCount = async () => {
     try {
