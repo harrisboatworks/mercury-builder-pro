@@ -3,7 +3,9 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { AlertCircle, CheckCircle, Clock, RefreshCw, Eye, Play, Users } from 'lucide-react';
+import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
+import { AlertCircle, CheckCircle, Clock, RefreshCw, Eye, Play, Users, Bell, BellOff } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useToast } from '@/hooks/use-toast';
 import {
@@ -90,12 +92,59 @@ export default function AdminStockSync() {
   const [showMatchReview, setShowMatchReview] = useState(false);
   const [pendingMatchesCount, setPendingMatchesCount] = useState(0);
   const [syncLogs, setSyncLogs] = useState<SyncLog[]>([]);
+  const [alertsEnabled, setAlertsEnabled] = useState(true);
+  const [alertsToggleSaving, setAlertsToggleSaving] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
     fetchSyncLogs();
     fetchPendingMatchesCount();
+    fetchAlertsToggle();
   }, []);
+
+  const fetchAlertsToggle = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('admin_sources')
+        .select('value')
+        .eq('key', 'lightspeed_alerts_enabled')
+        .maybeSingle();
+      if (error) throw error;
+      // Missing row defaults to enabled
+      setAlertsEnabled(!data || data.value !== 'false');
+    } catch (error) {
+      console.error('Error fetching alerts toggle:', error);
+    }
+  };
+
+  const toggleAlerts = async (next: boolean) => {
+    setAlertsToggleSaving(true);
+    try {
+      const { error } = await supabase
+        .from('admin_sources')
+        .upsert(
+          { key: 'lightspeed_alerts_enabled', value: next ? 'true' : 'false', updated_at: new Date().toISOString() },
+          { onConflict: 'key' }
+        );
+      if (error) throw error;
+      setAlertsEnabled(next);
+      toast({
+        title: next ? 'SMS alerts enabled' : 'SMS alerts disabled',
+        description: next
+          ? 'You will receive SMS on Lightspeed sync failures and suspicious motor count drops.'
+          : 'Lightspeed sync failure alerts are muted. Re-enable any time.',
+      });
+    } catch (error: any) {
+      console.error('Error updating alerts toggle:', error);
+      toast({
+        title: 'Failed to update setting',
+        description: error.message || 'Could not save the toggle.',
+        variant: 'destructive',
+      });
+    } finally {
+      setAlertsToggleSaving(false);
+    }
+  };
 
   const fetchPendingMatchesCount = async () => {
     try {
@@ -242,6 +291,34 @@ export default function AdminStockSync() {
           model marked as "Exclude".
         </AlertDescription>
       </Alert>
+
+      {/* SMS Alerts Toggle */}
+      <Card>
+        <CardContent className="p-4 flex items-center justify-between gap-4">
+          <div className="flex items-start gap-3">
+            {alertsEnabled ? (
+              <Bell className="w-5 h-5 mt-0.5 text-primary" />
+            ) : (
+              <BellOff className="w-5 h-5 mt-0.5 text-muted-foreground" />
+            )}
+            <div>
+              <Label htmlFor="lightspeed-alerts" className="text-base font-medium cursor-pointer">
+                Lightspeed sync SMS alerts
+              </Label>
+              <p className="text-sm text-muted-foreground mt-1">
+                Send SMS to admin on sync failures and suspicious motor count drops (&gt;50%).
+                Disable temporarily during planned Lightspeed maintenance to avoid noise.
+              </p>
+            </div>
+          </div>
+          <Switch
+            id="lightspeed-alerts"
+            checked={alertsEnabled}
+            onCheckedChange={toggleAlerts}
+            disabled={alertsToggleSaving}
+          />
+        </CardContent>
+      </Card>
 
       {/* Preview Dialog */}
       <Dialog open={showPreview} onOpenChange={setShowPreview}>
