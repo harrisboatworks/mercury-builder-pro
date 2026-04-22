@@ -10,11 +10,27 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  try {
-    const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
-    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-    const supabase = createClient(supabaseUrl, supabaseKey);
+  const startedAt = new Date().toISOString();
+  const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+  const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+  const supabase = createClient(supabaseUrl, supabaseKey);
 
+  // Helper: send admin SMS via existing send-sms function (handles Twilio + ADMIN_PHONE resolution)
+  async function notifyAdmin(subject: string, body: string) {
+    try {
+      await supabase.functions.invoke('send-sms', {
+        body: {
+          to: 'admin',
+          message: `${subject}\n${body}`.slice(0, 1500),
+          messageType: 'manual',
+        },
+      });
+    } catch (e) {
+      console.error('Failed to send admin SMS notification:', e);
+    }
+  }
+
+  try {
     console.log('🔄 Starting Lightspeed inventory sync from mercury_motor_inventory view');
 
     // ── 1. Fetch all available NEW Mercury motors from the Lightspeed view ──
