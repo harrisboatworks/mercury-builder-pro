@@ -2,12 +2,12 @@
   "$schema": "https://schemas.lovable.dev/brand/v1.json",
   "name": "Harris Boat Works",
   "site": "mercuryrepower.ca",
-  "url": "https://mercuryrepower.ca",
+  "url": "https://www.mercuryrepower.ca",
   "legalName": "Harris Boat Works Ltd.",
   "tagline": "Mercury Repower Specialists on Rice Lake — Family-owned since 1947",
   "description": "Authorized Mercury Marine dealer specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Serving Ontario boaters since 1947, Mercury dealer since 1965.",
   "logo": {
-    "url": "https://mercuryrepower.ca/logo.png",
+    "url": "https://www.mercuryrepower.ca/logo.png",
     "alt": "Harris Boat Works"
   },
   "colors": {
@@ -73,11 +73,11 @@
     "youtube": "https://www.youtube.com/@harrisboatworks"
   },
   "discovery": {
-    "llmsTxt": "https://mercuryrepower.ca/llms.txt",
-    "aiTxt": "https://mercuryrepower.ca/.well-known/ai.txt",
-    "agentsHub": "https://mercuryrepower.ca/agents",
-    "sitemap": "https://mercuryrepower.ca/sitemap.xml",
-    "rss": "https://mercuryrepower.ca/rss.xml",
+    "llmsTxt": "https://www.mercuryrepower.ca/llms.txt",
+    "aiTxt": "https://www.mercuryrepower.ca/.well-known/ai.txt",
+    "agentsHub": "https://www.mercuryrepower.ca/agents",
+    "sitemap": "https://www.mercuryrepower.ca/sitemap.xml",
+    "rss": "https://www.mercuryrepower.ca/rss.xml",
     "publicMotorsApi": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api"
   },
   "lastUpdated": "2026-04-20"

@@ -7,13 +7,13 @@
   "version": "1.0.0",
   "vendor": {
     "name": "Harris Boat Works Ltd.",
-    "url": "https://mercuryrepower.ca",
+    "url": "https://www.mercuryrepower.ca",
     "email": "info@harrisboatworks.ca",
     "phone": "+1-905-342-2153"
   },
   "license": "proprietary",
-  "homepage": "https://mercuryrepower.ca/agents",
-  "documentation": "https://mercuryrepower.ca/agents",
+  "homepage": "https://www.mercuryrepower.ca/agents",
+  "documentation": "https://www.mercuryrepower.ca/agents",
   "transport": {
     "type": "http",
     "protocol": "json-rpc-2.0",
@@ -97,11 +97,11 @@
     }
   ],
   "discovery": {
-    "llmsTxt": "https://mercuryrepower.ca/llms.txt",
-    "aiTxt": "https://mercuryrepower.ca/.well-known/ai.txt",
-    "brandJson": "https://mercuryrepower.ca/.well-known/brand.json",
-    "agentsHub": "https://mercuryrepower.ca/agents",
-    "sitemap": "https://mercuryrepower.ca/sitemap.xml"
+    "llmsTxt": "https://www.mercuryrepower.ca/llms.txt",
+    "aiTxt": "https://www.mercuryrepower.ca/.well-known/ai.txt",
+    "brandJson": "https://www.mercuryrepower.ca/.well-known/brand.json",
+    "agentsHub": "https://www.mercuryrepower.ca/agents",
+    "sitemap": "https://www.mercuryrepower.ca/sitemap.xml"
   },
   "lastUpdated": "2026-04-20"
 }
