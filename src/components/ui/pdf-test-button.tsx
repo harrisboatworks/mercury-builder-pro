@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { PDFDownloadLink } from '@react-pdf/renderer';
+import { PDFDownloadLink as _PDFDownloadLink } from '@react-pdf/renderer';
+import type { ComponentType } from 'react';
+const PDFDownloadLink = _PDFDownloadLink as unknown as ComponentType<any>;
 import { ProfessionalQuotePDF } from '@/components/quote-pdf/ProfessionalQuotePDF';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';

@@ -1,5 +1,18 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
+import {
+  Document as _Document,
+  Page as _Page,
+  Text as _Text,
+  View as _View,
+  StyleSheet,
+  Image as _Image,
+} from '@react-pdf/renderer';
+import type { ComponentType } from 'react';
+const Document = _Document as unknown as ComponentType<any>;
+const Page = _Page as unknown as ComponentType<any>;
+const Text = _Text as unknown as ComponentType<any>;
+const View = _View as unknown as ComponentType<any>;
+const Image = _Image as unknown as ComponentType<any>;
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
