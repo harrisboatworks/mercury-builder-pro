@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from '@/lib/helmet';
 import { getAllFAQItems } from '@/data/faqData';
 
 // Select the key repower questions for this page's schema

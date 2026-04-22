@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 
 export const ONTARIO_HUB_FAQ = [

@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from '@/lib/helmet';
 import { blogArticles } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
 
