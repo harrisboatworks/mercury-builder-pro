@@ -404,6 +404,204 @@ function faqPageSchema() {
   };
 }
 
+function motorSelectionPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/quote/motor-selection#webpage`,
+        "url": `${SITE_URL}/quote/motor-selection`,
+        "name": "Mercury Outboard Motors for Sale Ontario | Build Your Quote | Harris Boat Works",
+        "description": "Browse Mercury outboard motors from 2.5HP to 600HP. Configure your motor, compare options, and get instant CAD pricing online.",
+        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
+        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "inLanguage": "en-CA",
+        "breadcrumb": { "@id": `${SITE_URL}/quote/motor-selection#breadcrumb` },
+        "mainEntity": { "@id": `${SITE_URL}/quote/motor-selection#itemlist` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/quote/motor-selection#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Quote Builder", "item": `${SITE_URL}/quote/motor-selection` },
+          { "@type": "ListItem", "position": 3, "name": "Motor Selection", "item": `${SITE_URL}/quote/motor-selection` }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${SITE_URL}/quote/motor-selection#itemlist`,
+        "name": "Mercury Outboard Motor Inventory",
+        "description": "Complete selection of Mercury Marine outboard motors available at Harris Boat Works",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Product",
+              "name": "Mercury FourStroke Outboards",
+              "description": "Fuel-efficient four-stroke outboard motors. Available from 2.5HP to 400HP.",
+              "brand": { "@type": "Brand", "name": "Mercury Marine" },
+              "category": "Outboard Motors",
+              "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 1500,
+                "highPrice": 45000,
+                "priceCurrency": "CAD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://mercuryrepower.ca/#organization" }
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Product",
+              "name": "Mercury Pro XS Outboards",
+              "description": "High-performance outboard motors designed for bass boats and tournament fishing.",
+              "brand": { "@type": "Brand", "name": "Mercury Marine" },
+              "category": "Performance Outboard Motors",
+              "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 8000,
+                "highPrice": 35000,
+                "priceCurrency": "CAD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://mercuryrepower.ca/#organization" }
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Product",
+              "name": "Mercury SeaPro Outboards",
+              "description": "Commercial-grade outboard motors built for heavy-duty use and reliability.",
+              "brand": { "@type": "Brand", "name": "Mercury Marine" },
+              "category": "Commercial Outboard Motors",
+              "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 3500,
+                "highPrice": 30000,
+                "priceCurrency": "CAD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://mercuryrepower.ca/#organization" }
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Product",
+              "name": "Mercury ProKicker Outboards",
+              "description": "Dedicated trolling and kicker motors for fishing boats with high-thrust gearcase.",
+              "brand": { "@type": "Brand", "name": "Mercury Marine" },
+              "category": "Kicker / Trolling Motors",
+              "offers": {
+                "@type": "AggregateOffer",
+                "lowPrice": 4500,
+                "highPrice": 6500,
+                "priceCurrency": "CAD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://mercuryrepower.ca/#organization" }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  };
+}
+
+function boatInfoPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/quote/boat-info#webpage`,
+        "url": `${SITE_URL}/quote/boat-info`,
+        "name": "Boat Information — Mercury Quote Builder | Harris Boat Works",
+        "description": "Tell us about your boat so we can confirm motor compatibility, shaft length, controls, and rigging requirements for your Mercury outboard quote.",
+        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
+        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "inLanguage": "en-CA",
+        "breadcrumb": { "@id": `${SITE_URL}/quote/boat-info#breadcrumb` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/quote/boat-info#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Motor Selection", "item": `${SITE_URL}/quote/motor-selection` },
+          { "@type": "ListItem", "position": 3, "name": "Boat Information", "item": `${SITE_URL}/quote/boat-info` }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": `${SITE_URL}/quote/boat-info#howto`,
+        "name": "Build a Mercury Outboard Quote at Harris Boat Works",
+        "description": "Three-step online configurator for a real Mercury outboard quote with live CAD pricing.",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Select your Mercury motor", "text": "Choose horsepower, shaft length, start type, and controls.", "url": `${SITE_URL}/quote/motor-selection` },
+          { "@type": "HowToStep", "position": 2, "name": "Tell us about your boat", "text": "Provide boat make, model, length, current motor, and rigging details so we can confirm compatibility.", "url": `${SITE_URL}/quote/boat-info` },
+          { "@type": "HowToStep", "position": 3, "name": "Review your quote", "text": "Get itemized CAD pricing, financing estimates, trade-in value, and active promotions.", "url": `${SITE_URL}/quote/summary` }
+        ]
+      }
+    ]
+  };
+}
+
+function quoteSummaryPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/quote/summary#webpage`,
+        "url": `${SITE_URL}/quote/summary`,
+        "name": "Your Mercury Outboard Quote Estimate | Harris Boat Works",
+        "description": "Itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotional savings.",
+        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
+        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "inLanguage": "en-CA",
+        "breadcrumb": { "@id": `${SITE_URL}/quote/summary#breadcrumb` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/quote/summary#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Motor Selection", "item": `${SITE_URL}/quote/motor-selection` },
+          { "@type": "ListItem", "position": 3, "name": "Boat Information", "item": `${SITE_URL}/quote/boat-info` },
+          { "@type": "ListItem", "position": 4, "name": "Quote Summary", "item": `${SITE_URL}/quote/summary` }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": `${SITE_URL}/quote/summary#estimate-service`,
+        "name": "Mercury Outboard Quote Estimate",
+        "serviceType": "Online Motor Quote Estimate",
+        "provider": { "@id": "https://mercuryrepower.ca/#organization" },
+        "areaServed": [
+          { "@type": "State", "name": "Ontario" },
+          { "@type": "Country", "name": "Canada" }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "CAD",
+          "availability": "https://schema.org/InStock",
+          "seller": { "@id": "https://mercuryrepower.ca/#organization" }
+        }
+      }
+    ]
+  };
+}
+
 function genericPageSchema(path, name, description) {
   return {
     "@context": "https://schema.org",
@@ -484,11 +682,27 @@ const routes = [
   },
   {
     path: '/quote/motor-selection',
-    title: 'Build Your Mercury Outboard Quote | Harris Boat Works',
-    description: 'Select your Mercury outboard motor and build a real quote with live pricing, financing, and trade-in. No forms, no waiting — Harris Boat Works since 1965.',
+    title: 'Mercury Outboard Motors for Sale Ontario | 2.5HP-600HP | Harris Boat Works',
+    description: 'Browse Mercury outboard motors from 2.5HP to 600HP. FourStroke, Pro XS, SeaPro, ProKicker. Configure online and get instant CAD pricing — Harris Boat Works since 1965.',
     h1: 'Build Your Mercury Outboard Quote',
     intro: 'Select a Mercury outboard motor to build a real quote with live CAD pricing, financing, and trade-in. No forms, no waiting. Harris Boat Works — Mercury dealer since 1965.',
-    schemas: [genericPageSchema('/quote/motor-selection', 'Build Your Mercury Quote', 'Live Mercury outboard pricing and quote builder.')]
+    schemas: [motorSelectionPageSchema()]
+  },
+  {
+    path: '/quote/boat-info',
+    title: 'Boat Information — Mercury Quote Builder | Harris Boat Works',
+    description: 'Tell us about your boat to confirm motor compatibility, shaft length, controls, and rigging for your Mercury outboard quote. Step 2 of the Harris Boat Works quote builder.',
+    h1: 'Tell Us About Your Boat',
+    intro: 'Provide your boat make, model, length, current motor, and rigging details so we can confirm Mercury motor compatibility and finalize your quote.',
+    schemas: [boatInfoPageSchema()]
+  },
+  {
+    path: '/quote/summary',
+    title: 'Your Mercury Outboard Quote Estimate | Harris Boat Works',
+    description: 'Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotions. Harris Boat Works — Mercury dealer since 1965.',
+    h1: 'Your Mercury Outboard Quote',
+    intro: 'Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and any current promotional savings. Save it, download a PDF, or place a deposit.',
+    schemas: [quoteSummaryPageSchema()]
   }
 ];
 
