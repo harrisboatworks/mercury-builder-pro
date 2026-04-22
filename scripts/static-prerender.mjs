@@ -341,7 +341,7 @@ for (const route of routes) {
     failures++;
     continue;
   }
-  if (!html.includes(route.title)) {
+  if (!html.includes(escapeHtml(route.title))) {
     console.error(`[static-prerender] MISSING TITLE: ${outFile}`);
     failures++;
     continue;
