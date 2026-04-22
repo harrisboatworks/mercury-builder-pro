@@ -31,7 +31,7 @@ export function PricingRibbon() {
   };
 
   return (
-    <div className="bg-primary text-primary-foreground text-sm">
+    <div className="hidden sm:block bg-primary text-primary-foreground text-sm">
       <div className="container mx-auto px-4 py-2 flex items-center justify-between gap-3">
         <Link
           to="/quote/motor-selection"
