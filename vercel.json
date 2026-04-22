@@ -68,10 +68,6 @@
   ],
   "crons": [
     {
-      "path": "/api/cron/stock-sync",
-      "schedule": "0 5 * * *"
-    },
-    {
       "path": "/api/cron/google-sheets-sync",
       "schedule": "0 6 * * 1"
     }

@@ -64,23 +64,22 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/bc5f0a45-f6d8-495a-8ac7-81047b4a4121) and click on Share -> Publish.
 
-# Manual Full Scrape Trigger
+# Manual Inventory Sync Trigger
 
-For manual full inventory scraping (server-side to avoid timeouts), use this curl command:
+Inventory is synced directly from Lightspeed DMS (the `mercury_motor_inventory` view).
+For a manual sync, use:
 
 ```bash
-# Replace PROJECT_REF with your Supabase project ID: eutsoqdpjurknjsshxes
-# Replace SERVICE_ROLE_KEY with your service role key from Supabase Dashboard → Settings → API
-
 curl -X POST \
-  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/scrape-inventory-v2 \
+  https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/sync-lightspeed-inventory \
   -H "Authorization: Bearer YOUR_SERVICE_ROLE_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"mode":"full","batch_size":20,"concurrency":4}'
+  -d '{"trigger":"manual"}'
 ```
 
 **Note:** Service role key can be found in Supabase Dashboard → Settings → API → Service Role Key (secret)
 
-## Automated Scraping
+## Automated Sync
 
-Full inventory scraping runs automatically daily at 5:00 AM EST via Supabase Edge Function schedule.
+Lightspeed sync runs automatically daily at 5:00 AM UTC via Supabase pg_cron, with SMS failure alerts to ADMIN_PHONE.
+

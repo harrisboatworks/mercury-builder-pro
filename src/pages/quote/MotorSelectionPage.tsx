@@ -7,7 +7,6 @@ import { FinancingProvider } from '@/contexts/FinancingContext';
 import { MotorViewProvider } from '@/contexts/MotorViewContext';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
-import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 import { useExitIntent } from '@/hooks/useExitIntent';
 import { useGroupedMotors } from '@/hooks/useGroupedMotors';
 import { useMotorComparison } from '@/hooks/useMotorComparison';
@@ -369,14 +368,7 @@ if (event.type === 'filter_motors') {
     };
   }, [toast]);
 
-  // Auto-trigger background image scraping for motors without images
-  const imageScrapeStatus = useAutoImageScraping(motors.map(motor => ({
-    id: motor.id,
-    model: motor.model,
-    images: motor.images,
-    image_url: motor.image_url,
-    detail_url: motor.detail_url
-  })));
+  // Note: Legacy auto-image-scraping removed. Motor images now come from Dropbox sync + motor_media table.
 
   // Load motors and promotions from Supabase
   const loadData = useCallback(async () => {

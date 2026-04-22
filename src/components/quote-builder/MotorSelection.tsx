@@ -24,7 +24,6 @@ import { useNavigate } from 'react-router-dom';
 import { canadianEncouragement, loadingMessages, emptyStateMessages, friendlyErrors } from '@/lib/canadian-messages';
 import { MonthlyPaymentDisplay } from './MonthlyPaymentDisplay';
 import harrisLogo from '@/assets/harris-logo.png';
-import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 // Mobile optimization imports
 import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
 import { MobileFilterSheet } from '@/components/ui/mobile-filter-sheet';
@@ -222,9 +221,8 @@ export const MotorSelection = ({
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
-  
-  // Auto-trigger background image scraping for motors without images
-  const imageScrapeStatus = useAutoImageScraping(motors);
+
+  // Note: Legacy auto-image-scraping removed. Motor images now come from Dropbox sync + motor_media table.
   const [showCelebration, setShowCelebration] = useState(false);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [celebrationParticles, setCelebrationParticles] = useState<Array<{
@@ -660,7 +658,7 @@ export const MotorSelection = ({
       const {
         data,
         error
-      } = await supabase.functions.invoke('scrape-inventory');
+      } = await supabase.functions.invoke('sync-lightspeed-inventory');
       if (error) throw error;
 
       // Reload motors after update
@@ -858,53 +856,14 @@ export const MotorSelection = ({
     setQuickViewMotor(motor);
   };
 
-  // Fetch rich details on-demand for Quick View
+  // Quick View no longer fetches enrichment from a scraper.
+  // Motor descriptions/features/specs now come from the DB (sync-lightspeed-inventory + motor_models).
   useEffect(() => {
-    const needsEnrichment = (m: Motor | null) => {
-      if (!m) return false;
-      const noDesc = !m.description || m.description.trim().length < 20;
-      const noFeat = !Array.isArray(m.features) || m.features.length === 0;
-      const noSpecs = !m.specifications || Object.keys(m.specifications || {}).length === 0;
-      return noDesc || noFeat || noSpecs;
-    };
-    if (quickViewMotor && needsEnrichment(quickViewMotor)) {
-      setQuickViewLoading(true);
-      supabase.functions.invoke('scrape-motor-details', {
-        body: {
-          motor_id: quickViewMotor.id,
-          detail_url: quickViewMotor.detailUrl
-        }
-      }).then(({
-        data,
-        error
-      }) => {
-        if (error) {
-          console.warn('scrape-motor-details error', error);
-          return;
-        }
-        if (data?.success) {
-          const {
-            description,
-            features,
-            specifications
-          } = data as any;
-          // Update list and quick view motor in place
-          setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
-            ...mm,
-            description,
-            features,
-            specifications
-          } : mm));
-          setQuickViewMotor(prev => prev ? {
-            ...prev,
-            description,
-            features,
-            specifications
-          } as Motor : prev);
-        }
-      }).finally(() => setQuickViewLoading(false));
+    if (quickViewMotor) {
+      setQuickViewLoading(false);
     }
-  }, [quickViewMotor?.id]);
+  }, [quickViewMotor]);
+
 
   // Auto-open motor detail modal when redirected with ?motor=ID
   useEffect(() => {
@@ -1876,22 +1835,15 @@ export const MotorSelection = ({
                         {(!quickViewMotor.description || !quickViewMotor.specifications || Object.keys(quickViewMotor.specifications as any).length === 0) && <Button variant="outline" size="sm" disabled={quickViewLoading} onClick={async () => {
                     try {
                        setQuickViewLoading(true);
-                       
-                       // Check if we have fresh cached data (less than 7 days old)
+
+                       // Pull the latest cached data from the DB (no more web scraping).
                        const { data: freshMotorData } = await supabase
                          .from('motor_models')
-                         .select('description, features, specifications, last_scraped')
+                         .select('description, features, specifications')
                          .eq('id', quickViewMotor.id)
                          .single();
-                       
-                       const sevenDaysAgo = new Date();
-                       sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-                       const lastScraped = freshMotorData?.last_scraped ? new Date(freshMotorData.last_scraped) : null;
-                       
-                       // Use cached data if it's fresh and complete
-                       if (freshMotorData && lastScraped && lastScraped > sevenDaysAgo && 
-                           freshMotorData.description && freshMotorData.features?.length > 0) {
-                         
+
+                       if (freshMotorData && (freshMotorData.description || (freshMotorData.features as any)?.length || Object.keys(freshMotorData.specifications || {}).length)) {
                          const { description, features, specifications } = freshMotorData;
                          setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
                            ...mm,
@@ -1905,51 +1857,21 @@ export const MotorSelection = ({
                            features,
                            specifications
                          } as Motor : prev);
-                         
+
                          toast({
                            title: 'Motor Details Loaded',
-                           description: `Updated ${lastScraped.toLocaleDateString()}`,
+                           description: 'Showing latest available specifications',
                            variant: 'default'
                          });
-                         return;
+                       } else {
+                         toast({
+                           title: 'Motor Details',
+                           description: 'No additional specifications available for this model yet',
+                           variant: 'default'
+                         });
                        }
-                       
-                       // Fallback to real-time scraping for stale or missing data
-                       const {
-                         data,
-                         error
-                       } = await supabase.functions.invoke('scrape-motor-details', {
-                         body: {
-                           motor_id: quickViewMotor.id,
-                           detail_url: quickViewMotor.detailUrl
-                         }
-                       });
-                       if (error) throw error;
-                       const {
-                         description,
-                         features,
-                         specifications
-                       } = data as any || {};
-                       setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
-                         ...mm,
-                         description,
-                         features,
-                         specifications
-                       } : mm));
-                       setQuickViewMotor(prev => prev ? {
-                         ...prev,
-                         description,
-                         features,
-                         specifications
-                       } as Motor : prev);
-                       
-                       toast({
-                         title: 'Motor Details Updated',
-                         description: 'Fresh data loaded from manufacturer',
-                         variant: 'default'
-                       });
                      } catch (e) {
-                      console.log('Motor details sync issue - using available data:', e);
+                      console.log('Motor details load issue - using available data:', e);
                       toast({
                          title: 'Motor Details',
                          description: 'Showing available specifications',

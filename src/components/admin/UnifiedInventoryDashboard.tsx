@@ -230,7 +230,7 @@ export function UnifiedInventoryDashboard() {
         let hasMore = true;
 
         while (hasMore && page <= 4) {
-          const { data, error } = await supabase.functions.invoke('scrape-inventory', {
+          const { data, error } = await supabase.functions.invoke('sync-lightspeed-inventory', {
             body: { 
               trigger: 'manual-admin',
               page: page,
@@ -594,7 +594,7 @@ export function UnifiedInventoryDashboard() {
       setDiagnosticsLoading(true);
       setSyncStatus('Starting inventory sync...');
       
-      const { data, error } = await supabase.functions.invoke('scrape-inventory', {
+      const { data, error } = await supabase.functions.invoke('sync-lightspeed-inventory', {
         body: { 
           trigger: 'manual-diagnostic',
           timestamp: new Date().toISOString(),

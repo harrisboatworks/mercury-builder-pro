@@ -138,7 +138,7 @@ export function InventoryMonitor() {
         while (hasMore && page <= 4) { // Limit to 4 pages to prevent too long execution
           console.log(`Scraping page ${page}...`);
           
-          const { data, error } = await supabase.functions.invoke('scrape-inventory', {
+          const { data, error } = await supabase.functions.invoke('sync-lightspeed-inventory', {
             body: { 
               trigger: 'manual-admin',
               page: page,

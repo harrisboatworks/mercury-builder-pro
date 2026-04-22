@@ -186,29 +186,11 @@ export const SourceManagement: React.FC = () => {
   };
 
   const triggerScraping = async (sourceName: string) => {
-    try {
-      const { error } = await supabase.functions.invoke('scrape-motor-details-batch', {
-        body: {
-          source_filter: sourceName,
-          batch_size: 10,
-          background: true,
-        },
-      });
-
-      if (error) throw error;
-      
-      toast({
-        title: 'Success',
-        description: `Started scraping from ${sourceName}`,
-      });
-    } catch (error) {
-      console.error('Error triggering scraping:', error);
-      toast({
-        title: 'Error',
-        description: 'Failed to trigger scraping',
-        variant: 'destructive',
-      });
-    }
+    // Legacy per-source scraper removed (replaced by Lightspeed DMS direct integration).
+    toast({
+      title: 'Not available',
+      description: `Per-source scraping was removed. Inventory now syncs directly from Lightspeed DMS.`,
+    });
   };
 
   const getSourceIcon = (name: string) => {
