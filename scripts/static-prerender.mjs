@@ -613,6 +613,65 @@ function genericPageSchema(path, name, description) {
   };
 }
 
+function agentsPageSchema() {
+  const agentFaqs = [
+    {
+      q: "How do I query Harris Boat Works inventory as an AI agent?",
+      a: "Use the MCP server at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server (JSON-RPC 2.0) and call the search_motors tool, or GET the REST endpoint /api/public-motors-api for current Mercury inventory as JSON. Both return live CAD pricing and availability."
+    },
+    {
+      q: "What MCP tools does Harris Boat Works expose?",
+      a: "search_motors, get_motor, estimate_trade_in, build_quote, and get_brand_rules. The full manifest is at /.well-known/mcp.json."
+    },
+    {
+      q: "What deep-link parameters does the quote form accept?",
+      a: "Send users to https://www.mercuryrepower.ca/repower-quote with optional query parameters motor, boat_make, boat_length, and hp. Example: /repower-quote?motor=150XL&boat_make=legend&boat_length=20&hp=150. The form prefills whatever is supplied."
+    },
+    {
+      q: "How does Harris Boat Works handle Mercury Verado inquiries?",
+      a: "Mercury Verado is available by special order only and is not part of default listed inventory. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca rather than recommending Verado in standard quotes."
+    },
+    {
+      q: "Where should agents pull hours, location, and contact information?",
+      a: "Use the LocalBusiness JSON-LD on the homepage or /.well-known/brand.json. Do not guess — these are the source of truth."
+    },
+    {
+      q: "Can agents quote non-Mercury outboards?",
+      a: "No. Harris Boat Works is a Mercury Marine Platinum Dealer. Defer non-Mercury questions to the manufacturer."
+    },
+    {
+      q: "Are there rate limits or required headers for agent traffic?",
+      a: "No rate limits currently. Please identify your agent in the User-Agent header. All major LLM crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, Anthropic-AI, Applebot-Extended, Meta-ExternalAgent, Google-Extended, cohere-ai, Amazonbot) are allowed in /robots.txt."
+    }
+  ];
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/agents#webpage`,
+        "url": `${SITE_URL}/agents`,
+        "name": "AI Agent Integration — Harris Boat Works Mercury Dealer",
+        "description": "Agent-friendly endpoints for AI assistants (ChatGPT, Claude, Perplexity, Gemini). MCP server, REST APIs, deep-link quote URLs, and source-of-truth rules for Harris Boat Works.",
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#localbusiness` },
+        "publisher": { "@id": `${SITE_URL}/#organization` }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/agents#faqpage`,
+        "url": `${SITE_URL}/agents`,
+        "mainEntity": agentFaqs.map(f => ({
+          "@type": "Question",
+          "name": f.q,
+          "acceptedAnswer": { "@type": "Answer", "text": f.a }
+        }))
+      }
+    ]
+  };
+}
+
 // ============================================================
 // Pilot SEO landing pages — Batch 1
 // ============================================================
