@@ -34,8 +34,8 @@ export function ContactPageSEO() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1122,
-          "longitude": -78.0245
+          "latitude": 44.1147,
+          "longitude": -78.2564
         },
         "contactPoint": [
           {
