@@ -9,7 +9,6 @@
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/llms.txt", "destination": "/llms.txt" },
     { "source": "/", "destination": "/index.html" },
-    { "source": "/", "destination": "/index.html" },
     { "source": "/repower", "destination": "/repower/index.html" },
     { "source": "/faq", "destination": "/faq/index.html" },
     { "source": "/about", "destination": "/about/index.html" },
