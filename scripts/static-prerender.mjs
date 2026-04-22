@@ -24,7 +24,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const DIST = join(ROOT, 'dist');
 const SHELL_PATH = join(DIST, 'index.html');
-const SITE_URL = 'https://mercuryrepower.ca';
+const SITE_URL = 'https://www.mercuryrepower.ca';
 const MIN_BYTES = 4 * 1024;
 
 if (!existsSync(SHELL_PATH)) {
@@ -68,33 +68,33 @@ function homepageSchema() {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://mercuryrepower.ca/#website",
-        "url": "https://mercuryrepower.ca/",
+        "@id": "https://www.mercuryrepower.ca/#website",
+        "url": "https://www.mercuryrepower.ca/",
         "name": "Mercury Repower Quote Builder",
-        "publisher": { "@id": "https://mercuryrepower.ca/#organization" },
+        "publisher": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA"
       },
       {
         "@type": "WebPage",
-        "@id": "https://mercuryrepower.ca/#webpage",
-        "url": "https://mercuryrepower.ca/",
+        "@id": "https://www.mercuryrepower.ca/#webpage",
+        "url": "https://www.mercuryrepower.ca/",
         "name": "Mercury Repower Quotes Online — Real Prices, No Forms | Harris Boat Works",
         "description": "Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake — family-owned since 1947, Mercury dealer since 1965.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#organization" },
-        "primaryImageOfPage": { "@id": "https://mercuryrepower.ca/#logo" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
+        "primaryImageOfPage": { "@id": "https://www.mercuryrepower.ca/#logo" },
         "inLanguage": "en-CA"
       },
       {
         "@type": "Organization",
-        "@id": "https://mercuryrepower.ca/#organization",
+        "@id": "https://www.mercuryrepower.ca/#organization",
         "name": "Harris Boat Works",
         "alternateName": "HBW",
         "legalName": "Harris Boat Works",
         "url": "https://www.harrisboatworks.ca/",
         "logo": {
           "@type": "ImageObject",
-          "@id": "https://mercuryrepower.ca/#logo",
+          "@id": "https://www.mercuryrepower.ca/#logo",
           "url": "https://www.harrisboatworks.ca/logo.png",
           "caption": "Harris Boat Works"
         },
@@ -121,14 +121,14 @@ function homepageSchema() {
       },
       {
         "@type": ["LocalBusiness", "Store", "AutoRepair"],
-        "@id": "https://mercuryrepower.ca/#localbusiness",
+        "@id": "https://www.mercuryrepower.ca/#localbusiness",
         "name": "Harris Boat Works",
         "image": "https://www.harrisboatworks.ca/logo.png",
         "url": "https://www.harrisboatworks.ca/",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "priceRange": "$$",
-        "parentOrganization": { "@id": "https://mercuryrepower.ca/#organization" },
+        "parentOrganization": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "5369 Harris Boat Works Rd",
@@ -164,10 +164,10 @@ function homepageSchema() {
       },
       {
         "@type": "Service",
-        "@id": "https://mercuryrepower.ca/#quote-service",
+        "@id": "https://www.mercuryrepower.ca/#quote-service",
         "name": "Mercury Outboard Online Quote Builder",
         "serviceType": "Online Motor Quote",
-        "provider": { "@id": "https://mercuryrepower.ca/#organization" },
+        "provider": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "areaServed": [
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" }
@@ -183,17 +183,17 @@ function aboutPageSchema() {
     "@graph": [
       {
         "@type": "AboutPage",
-        "@id": "https://mercuryrepower.ca/about#webpage",
-        "url": "https://mercuryrepower.ca/about",
+        "@id": "https://www.mercuryrepower.ca/about#webpage",
+        "url": "https://www.mercuryrepower.ca/about",
         "name": "About Harris Boat Works",
         "description": "Family-owned Mercury dealer on Rice Lake, Ontario since 1947.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#organization" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "inLanguage": "en-CA"
       },
       {
         "@type": "Organization",
-        "@id": "https://mercuryrepower.ca/#organization",
+        "@id": "https://www.mercuryrepower.ca/#organization",
         "name": "Harris Boat Works",
         "alternateName": "HBW",
         "url": "https://www.harrisboatworks.ca/",
@@ -242,17 +242,17 @@ function contactPageSchema() {
     "@graph": [
       {
         "@type": "ContactPage",
-        "@id": "https://mercuryrepower.ca/contact#webpage",
-        "url": "https://mercuryrepower.ca/contact",
+        "@id": "https://www.mercuryrepower.ca/contact#webpage",
+        "url": "https://www.mercuryrepower.ca/contact",
         "name": "Contact Harris Boat Works",
         "description": "Mercury dealer on Rice Lake — phone (905) 342-2153, text (647) 952-2153, email info@harrisboatworks.ca.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#localbusiness" },
         "inLanguage": "en-CA"
       },
       {
         "@type": ["LocalBusiness", "Store", "AutoRepair"],
-        "@id": "https://mercuryrepower.ca/#localbusiness",
+        "@id": "https://www.mercuryrepower.ca/#localbusiness",
         "name": "Harris Boat Works",
         "image": "https://www.harrisboatworks.ca/logo.png",
         "url": "https://www.harrisboatworks.ca/",
@@ -414,8 +414,8 @@ function motorSelectionPageSchema() {
         "url": `${SITE_URL}/quote/motor-selection`,
         "name": "Mercury Outboard Motors for Sale Ontario | Build Your Quote | Harris Boat Works",
         "description": "Browse Mercury outboard motors from 2.5HP to 600HP. Configure your motor, compare options, and get instant CAD pricing online.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#localbusiness" },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/quote/motor-selection#breadcrumb` },
         "mainEntity": { "@id": `${SITE_URL}/quote/motor-selection#itemlist` }
@@ -450,7 +450,7 @@ function motorSelectionPageSchema() {
                 "highPrice": 45000,
                 "priceCurrency": "CAD",
                 "availability": "https://schema.org/InStock",
-                "seller": { "@id": "https://mercuryrepower.ca/#organization" }
+                "seller": { "@id": "https://www.mercuryrepower.ca/#organization" }
               }
             }
           },
@@ -469,7 +469,7 @@ function motorSelectionPageSchema() {
                 "highPrice": 35000,
                 "priceCurrency": "CAD",
                 "availability": "https://schema.org/InStock",
-                "seller": { "@id": "https://mercuryrepower.ca/#organization" }
+                "seller": { "@id": "https://www.mercuryrepower.ca/#organization" }
               }
             }
           },
@@ -488,7 +488,7 @@ function motorSelectionPageSchema() {
                 "highPrice": 30000,
                 "priceCurrency": "CAD",
                 "availability": "https://schema.org/InStock",
-                "seller": { "@id": "https://mercuryrepower.ca/#organization" }
+                "seller": { "@id": "https://www.mercuryrepower.ca/#organization" }
               }
             }
           },
@@ -507,7 +507,7 @@ function motorSelectionPageSchema() {
                 "highPrice": 6500,
                 "priceCurrency": "CAD",
                 "availability": "https://schema.org/InStock",
-                "seller": { "@id": "https://mercuryrepower.ca/#organization" }
+                "seller": { "@id": "https://www.mercuryrepower.ca/#organization" }
               }
             }
           }
@@ -527,8 +527,8 @@ function boatInfoPageSchema() {
         "url": `${SITE_URL}/quote/boat-info`,
         "name": "Boat Information — Mercury Quote Builder | Harris Boat Works",
         "description": "Tell us about your boat so we can confirm motor compatibility, shaft length, controls, and rigging requirements for your Mercury outboard quote.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#localbusiness" },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/quote/boat-info#breadcrumb` }
       },
@@ -566,8 +566,8 @@ function quoteSummaryPageSchema() {
         "url": `${SITE_URL}/quote/summary`,
         "name": "Your Mercury Outboard Quote Estimate | Harris Boat Works",
         "description": "Itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotional savings.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#localbusiness" },
+        "isPartOf": { "@id": "https://www.mercuryrepower.ca/#website" },
+        "about": { "@id": "https://www.mercuryrepower.ca/#localbusiness" },
         "inLanguage": "en-CA",
         "breadcrumb": { "@id": `${SITE_URL}/quote/summary#breadcrumb` }
       },
@@ -586,7 +586,7 @@ function quoteSummaryPageSchema() {
         "@id": `${SITE_URL}/quote/summary#estimate-service`,
         "name": "Mercury Outboard Quote Estimate",
         "serviceType": "Online Motor Quote Estimate",
-        "provider": { "@id": "https://mercuryrepower.ca/#organization" },
+        "provider": { "@id": "https://www.mercuryrepower.ca/#organization" },
         "areaServed": [
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" }
@@ -595,7 +595,7 @@ function quoteSummaryPageSchema() {
           "@type": "Offer",
           "priceCurrency": "CAD",
           "availability": "https://schema.org/InStock",
-          "seller": { "@id": "https://mercuryrepower.ca/#organization" }
+          "seller": { "@id": "https://www.mercuryrepower.ca/#organization" }
         }
       }
     ]

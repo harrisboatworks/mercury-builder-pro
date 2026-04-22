@@ -1,5 +1,5 @@
 # Harris Boat Works - Mercury Outboard Quote Builder
-# https://mercuryrepower.ca
+# https://www.mercuryrepower.ca
 
 # Standard Search Engine Crawlers
 User-agent: Googlebot
@@ -56,4 +56,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://mercuryrepower.ca/sitemap.xml
+Sitemap: https://www.mercuryrepower.ca/sitemap.xml

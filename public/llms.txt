@@ -20,14 +20,14 @@ All motors are sold with full factory warranty. We offer financing from 7.99% AP
 ## Individual Motor Pages
 
 Every Mercury motor has a direct page at:
-  https://mercuryrepower.ca/motors/{slug}
+  https://www.mercuryrepower.ca/motors/{slug}
 
 Example URLs:
-- https://mercuryrepower.ca/motors/fourstroke-150hp-efi-elpt-ct
-- https://mercuryrepower.ca/motors/proxs-115hp-efi-exlpt
-- https://mercuryrepower.ca/motors/verado-300hp-v8-exlpt
-- https://mercuryrepower.ca/motors/fourstroke-25hp-efi-elh
-- https://mercuryrepower.ca/motors/seapro-150hp-xl
+- https://www.mercuryrepower.ca/motors/fourstroke-150hp-efi-elpt-ct
+- https://www.mercuryrepower.ca/motors/proxs-115hp-efi-exlpt
+- https://www.mercuryrepower.ca/motors/verado-300hp-v8-exlpt
+- https://www.mercuryrepower.ca/motors/fourstroke-25hp-efi-elh
+- https://www.mercuryrepower.ca/motors/seapro-150hp-xl
 
 Each motor page includes pricing in CAD, availability, specifications, and a link to build a quote.
 
@@ -93,24 +93,24 @@ No, we do not offer delivery. All pickups are at our Gores Landing location.
 
 ## Key Links
 
-- Home: https://mercuryrepower.ca/
-- Quote Builder: https://mercuryrepower.ca/quote/motor-selection
-- Promotions: https://mercuryrepower.ca/promotions
-- Repower Services: https://mercuryrepower.ca/repower
-- FAQ (24 answers): https://mercuryrepower.ca/faq
-- Blog: https://mercuryrepower.ca/blog
-- Finance Calculator: https://mercuryrepower.ca/finance-calculator
-- Financing Application: https://mercuryrepower.ca/financing-application
-- Contact: https://mercuryrepower.ca/contact
-- About Us: https://mercuryrepower.ca/about
-- Sitemap: https://mercuryrepower.ca/sitemap.xml
+- Home: https://www.mercuryrepower.ca/
+- Quote Builder: https://www.mercuryrepower.ca/quote/motor-selection
+- Promotions: https://www.mercuryrepower.ca/promotions
+- Repower Services: https://www.mercuryrepower.ca/repower
+- FAQ (24 answers): https://www.mercuryrepower.ca/faq
+- Blog: https://www.mercuryrepower.ca/blog
+- Finance Calculator: https://www.mercuryrepower.ca/finance-calculator
+- Financing Application: https://www.mercuryrepower.ca/financing-application
+- Contact: https://www.mercuryrepower.ca/contact
+- About Us: https://www.mercuryrepower.ca/about
+- Sitemap: https://www.mercuryrepower.ca/sitemap.xml
 
 ## For AI Agents
 
-- Agent Hub (rules, voice, endpoints): https://mercuryrepower.ca/agents
-- Brand identity (JSON): https://mercuryrepower.ca/.well-known/brand.json
-- AI policy: https://mercuryrepower.ca/.well-known/ai.txt
-- MCP manifest (auto-discovery): https://mercuryrepower.ca/.well-known/mcp.json
+- Agent Hub (rules, voice, endpoints): https://www.mercuryrepower.ca/agents
+- Brand identity (JSON): https://www.mercuryrepower.ca/.well-known/brand.json
+- AI policy: https://www.mercuryrepower.ca/.well-known/ai.txt
+- MCP manifest (auto-discovery): https://www.mercuryrepower.ca/.well-known/mcp.json
 
 ### MCP Server (Model Context Protocol)
 
@@ -132,7 +132,7 @@ on behalf of mercuryrepower.ca.
   Actions: list_motors, estimate_trade_in, build_quote
   Docs: GET the same URL returns the full schema.
 - Deep-link prefilled quote URL pattern (one-shot link to the configurator):
-  https://mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}
+  https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&boat_make={MAKE}&boat_model={MODEL}&trade_brand={BRAND}&trade_year={YEAR}&trade_hp={HP}
 - Markdown twins of the catalog (LLM-cheap plain-text):
   Index:    https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md
   By id:    https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md?id={MOTOR_ID}
