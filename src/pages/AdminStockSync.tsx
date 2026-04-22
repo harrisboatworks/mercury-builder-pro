@@ -133,50 +133,27 @@ export default function AdminStockSync() {
   };
 
   const runPreview = async () => {
-    setLoading(true);
-    try {
-      const response = await supabase.functions.invoke('stock-inventory-sync', {
-        body: { preview: true }
-      });
-
-      if (response.error) throw response.error;
-      
-      setPreviewData(response.data);
-      setShowPreview(true);
-      
-      // Refresh pending matches count after preview
-      await fetchPendingMatchesCount();
-      
-      toast({
-        title: "Preview Complete",
-        description: `Found ${response.data.matches_found} matches from ${response.data.xml_motors_found} XML motors`,
-      });
-    } catch (error) {
-      console.error('Error running preview:', error);
-      toast({
-        title: "Preview Failed",
-        description: error.message || "Failed to run stock sync preview",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
+    // Preview mode is no longer supported by the Lightspeed sync (it's an authoritative source).
+    toast({
+      title: "Preview not available",
+      description: "Lightspeed sync runs as a direct authoritative update. Click Apply Sync to run.",
+    });
   };
 
   const runSync = async () => {
     setLoading(true);
     try {
-      const response = await supabase.functions.invoke('stock-inventory-sync', {
-        body: { preview: false }
+      const response = await supabase.functions.invoke('sync-lightspeed-inventory', {
+        body: { trigger: 'manual-admin' }
       });
 
       if (response.error) throw response.error;
-      
+
       toast({
-        title: "Sync Complete",
-        description: `Updated ${response.data.updates_applied} motor records`,
+        title: "Lightspeed Sync Complete",
+        description: `Matched ${response.data?.matched ?? 0} of ${response.data?.uniqueModels ?? 0} unique models from Lightspeed (${response.data?.totalUnitsAvailable ?? 0} units total)`,
       });
-      
+
       // Refresh logs
       await fetchSyncLogs();
       setPreviewData(null);
@@ -185,7 +162,7 @@ export default function AdminStockSync() {
       console.error('Error running sync:', error);
       toast({
         title: "Sync Failed",
-        description: error.message || "Failed to run stock sync",
+        description: error.message || "Failed to run Lightspeed sync",
         variant: "destructive",
       });
     } finally {
@@ -222,7 +199,7 @@ export default function AdminStockSync() {
         <div>
           <h1 className="text-3xl font-bold">Stock Inventory Sync</h1>
           <p className="text-muted-foreground mt-1">
-            Sync stock status from Harris Boat Works XML feed
+            Sync stock status from Lightspeed DMS (mercury_motor_inventory view)
           </p>
         </div>
         <div className="flex gap-2">
@@ -260,8 +237,9 @@ export default function AdminStockSync() {
       <Alert>
         <AlertCircle className="h-4 w-4" />
         <AlertDescription>
-          This sync only updates stock status (in_stock, stock_quantity, availability) on existing motor records. 
-          No new motors are created and no catalog data is modified.
+          This sync pulls available new Mercury motors directly from Lightspeed DMS and updates stock status,
+          quantity, and dealer pricing on existing motor records. It does not create new motors and skips any
+          model marked as "Exclude".
         </AlertDescription>
       </Alert>
 
