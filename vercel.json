@@ -2,6 +2,19 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "quote.harrisboatworks.ca"
+        }
+      ],
+      "destination": "https://www.mercuryrepower.ca/:path*",
+      "statusCode": 301
+    }
+  ],
   "rewrites": [
     { "source": "/googlebdeec341596163e7.html", "destination": "/googlebdeec341596163e7.html" },
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
