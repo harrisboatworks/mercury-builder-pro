@@ -111,6 +111,11 @@ const TikTokCallback = lazy(() => import("./pages/TikTokCallback"));
 const MotorRedirect = lazy(() => import("./pages/MotorRedirect"));
 const TradeInValuePage = lazy(() => import("./pages/TradeInValuePage"));
 const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
+
+// Pilot SEO landing pages (Batch 1 — FAQ / Trust / HowTo)
+const MercuryRepowerFAQ = lazy(() => import("./pages/landing/MercuryRepowerFAQ"));
+const HowToRepower = lazy(() => import("./pages/landing/HowToRepower"));
+const MercuryDealerCanadaFAQ = lazy(() => import("./pages/landing/MercuryDealerCanadaFAQ"));
 const MandarinLanding = lazy(() => import("./pages/MandarinLanding"));
 const FrenchBlogArticle = lazy(() => import("./pages/blog/FrenchBlogArticle"));
 const FrenchBlogArticlePage = lazy(() => import("./pages/blog/FrenchBlogArticlePage"));
@@ -494,6 +499,11 @@ function AnimatedRoutes() {
         {/* Unsubscribe Route */}
         <Route path="/unsubscribe/:token" element={<Unsubscribe />} />
         
+        {/* Pilot SEO Landing Pages — Batch 1 */}
+        <Route path="/mercury-repower-faq" element={<MercuryRepowerFAQ />} />
+        <Route path="/how-to-repower-a-boat" element={<HowToRepower />} />
+        <Route path="/mercury-dealer-canada-faq" element={<MercuryDealerCanadaFAQ />} />
+
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

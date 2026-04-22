@@ -31,6 +31,10 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/contact', lastmod: today, changefreq: 'monthly', priority: 0.6 },
     { loc: '/about', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/blog', lastmod: today, changefreq: 'weekly', priority: 0.8 },
+    // Pilot SEO landing pages — Batch 1
+    { loc: '/mercury-repower-faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    { loc: '/how-to-repower-a-boat', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    { loc: '/mercury-dealer-canada-faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', lastmod: today, changefreq: 'yearly', priority: 0.3 },
   ];
