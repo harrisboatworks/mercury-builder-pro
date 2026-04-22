@@ -6,48 +6,26 @@ export function AboutPageSEO() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
-        "@id": `${SITE_URL}/about`,
-        "url": `${SITE_URL}/about`,
-        "name": "About Harris Boat Works | Family-Owned Since 1947 | Mercury Dealer",
-        "description": "Learn about Harris Boat Works' 77-year history serving Ontario boaters. Mercury Marine dealer since 1965. CSI Award-winning service on Rice Lake.",
-        "isPartOf": {
-          "@id": `${SITE_URL}/#website`
-        },
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "@id": `${SITE_URL}/about#breadcrumblist`,
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": SITE_URL
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "About Us",
-              "item": `${SITE_URL}/about`
-            }
-          ]
-        }
+        "@type": "AboutPage",
+        "@id": "https://mercuryrepower.ca/about#webpage",
+        "url": "https://mercuryrepower.ca/about",
+        "name": "About Harris Boat Works",
+        "description": "Family-owned Mercury dealer on Rice Lake, Ontario since 1947.",
+        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
+        "about": { "@id": "https://mercuryrepower.ca/#organization" },
+        "inLanguage": "en-CA"
       },
       {
-        "@type": "LocalBusiness",
-        "@id": `${SITE_URL}/about#localbusiness`,
+        "@type": "Organization",
+        "@id": "https://mercuryrepower.ca/#organization",
         "name": "Harris Boat Works",
-        "image": `${SITE_URL}/assets/harris-logo-black.png`,
-        "description": "Family-owned marine dealership serving Ontario boaters since 1947. Authorized Mercury Marine dealer since 1965. CSI Award-winning service team specializing in outboard sales, service, and repowering.",
+        "alternateName": "HBW",
+        "url": "https://www.harrisboatworks.ca/",
+        "logo": "https://www.harrisboatworks.ca/logo.png",
         "foundingDate": "1947",
-        "foundingLocation": {
-          "@type": "Place",
-          "name": "Gores Landing, Ontario"
-        },
-        "slogan": "Serving Boaters Since 1947",
-        "priceRange": "$$$",
-        "currenciesAccepted": "CAD",
-        "paymentAccepted": "Cash, Credit Card, Debit, Financing",
+        "founder": { "@type": "Person", "name": "Harris family" },
+        "description": "Third-generation family marina established in 1947 on Rice Lake in Gores Landing, Ontario. Mercury Marine dealer since 1965 and current Mercury Marine Platinum Dealer. Authorized Legend Boats dealer.",
+        "slogan": "Real prices. Family-owned. Since 1947.",
         "telephone": "+1-905-342-2153",
         "email": "info@harrisboatworks.ca",
         "address": {
@@ -58,127 +36,24 @@ export function AboutPageSEO() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 44.1167,
-          "longitude": -78.2500
-        },
-        "url": SITE_URL,
-        "hasMap": "https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "08:00",
-            "closes": "17:00"
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": "Saturday",
-            "opens": "09:00",
-            "closes": "14:00"
-          }
-        ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "127",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
         "award": [
-          "Mercury CSI Award Winner",
-          "Mercury Certified Repower Center"
+          "Mercury Marine Platinum Dealer",
+          "Authorized Legend Boats Dealer"
         ],
         "knowsAbout": [
-          "Mercury Marine Outboard Motors",
-          "Boat Engine Repowering",
-          "Marine Engine Service and Repair",
-          "Mercury Parts and Accessories",
-          "Boat Storage"
+          "Mercury outboard motors",
+          "MerCruiser sterndrives",
+          "Marine repower",
+          "Boat winterization",
+          "Boat storage",
+          "Legend Boats"
         ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Mercury Outboard Sales",
-                "description": "New Mercury outboard motor sales from 2.5HP to 600HP"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Boat Repowering",
-                "description": "Professional engine replacement and installation services"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Marine Service & Repair",
-                "description": "Factory-trained technicians for all Mercury service needs"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Parts & Accessories",
-                "description": "Genuine Mercury parts and marine accessories"
-              }
-            }
-          ]
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How long has Harris Boat Works been in business?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Harris Boat Works was founded in 1947, making us a family-owned business serving Ontario boaters for over 79 years. We've been an authorized Mercury Marine dealer since 1965 - over 60 years of Mercury expertise."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where is Harris Boat Works located?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We're located at 5369 Harris Boat Works Rd in Gores Landing, Ontario (K0K 2E0), right on the shores of Rice Lake. We're easily accessible from Toronto (about 1.5 hours), Peterborough (30 minutes), and the Kawartha Lakes region."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What brands does Harris Boat Works carry?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We are an authorized Mercury Marine dealer, carrying the full line of Mercury outboard motors including FourStroke, Pro XS, Verado, SeaPro, and ProKicker models. We also stock genuine Mercury parts and accessories."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What services does Harris Boat Works offer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We offer new Mercury motor sales, professional repower installations, factory-authorized service and repair, parts and accessories, and seasonal boat storage. Our technicians are Mercury-certified and trained at Mercury Marine facilities."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is Harris Boat Works a certified Mercury dealer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we are a Mercury Premier Dealer, Mercury Certified Repower Center, and CSI Award winner. These certifications reflect our commitment to sales excellence, service quality, and customer satisfaction."
-            }
-          }
+        "sameAs": [
+          "https://www.harrisboatworks.ca/",
+          "https://www.facebook.com/harrisboatworks",
+          "https://www.instagram.com/harrisboatworks",
+          "https://www.youtube.com/@HarrisBoatWorks",
+          "https://g.page/harrisboatworks"
         ]
       }
     ]
