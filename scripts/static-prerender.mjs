@@ -38,7 +38,7 @@ const shell = readFileSync(SHELL_PATH, 'utf8');
 // We only need question/answer strings, stripped of HTML tags.
 function loadFaqItems() {
   const dumpScript = `
-    import { getAllFAQItems } from './src/data/faqData.ts';
+    import { getAllFAQItems } from '../src/data/faqData.ts';
     const items = getAllFAQItems().map(i => ({
       question: i.question,
       answer: i.answer.replace(/<[^>]*>/g, '')
