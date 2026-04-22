@@ -246,11 +246,12 @@ Deno.serve(async (req) => {
     }
 
     // ── 6. Log the sync ──
+    const syncStatus = suspiciousDropDetected ? 'warning' : 'completed';
     await supabase
       .from('sync_logs')
       .insert({
         sync_type: 'lightspeed',
-        status: 'completed',
+        status: syncStatus,
         motors_processed: modelGroups.size,
         motors_in_stock: matchedMotors.length,
         details: {
@@ -259,9 +260,20 @@ Deno.serve(async (req) => {
           source: 'mercury_motor_inventory view (Lightspeed 3PA API)',
           total_units: inventory?.length || 0,
           unique_models: modelGroups.size,
+          suspicious_drop: suspiciousDropDetected,
+          previous_unit_count: lastGoodCount,
         },
         completed_at: new Date().toISOString(),
       });
+
+    // ── 6a. SMS admin if motor count dropped suspiciously ──
+    if (suspiciousDropDetected) {
+      const ts = new Date().toISOString().replace('T', ' ').slice(0, 16);
+      await notifyAdmin(
+        'HBW Lightspeed sync WARNING',
+        `Motor count dropped from ${lastGoodCount} → ${currentUnitCount} at ${ts} UTC.\nMatched: ${matchedMotors.length}. Check admin/stock-sync.`
+      );
+    }
 
     // ── 7. Email notification for unmatched motors ──
     if (unmatchedModels.length > 0) {
