@@ -292,6 +292,34 @@ export default function AdminStockSync() {
         </AlertDescription>
       </Alert>
 
+      {/* SMS Alerts Toggle */}
+      <Card>
+        <CardContent className="p-4 flex items-center justify-between gap-4">
+          <div className="flex items-start gap-3">
+            {alertsEnabled ? (
+              <Bell className="w-5 h-5 mt-0.5 text-primary" />
+            ) : (
+              <BellOff className="w-5 h-5 mt-0.5 text-muted-foreground" />
+            )}
+            <div>
+              <Label htmlFor="lightspeed-alerts" className="text-base font-medium cursor-pointer">
+                Lightspeed sync SMS alerts
+              </Label>
+              <p className="text-sm text-muted-foreground mt-1">
+                Send SMS to admin on sync failures and suspicious motor count drops (&gt;50%).
+                Disable temporarily during planned Lightspeed maintenance to avoid noise.
+              </p>
+            </div>
+          </div>
+          <Switch
+            id="lightspeed-alerts"
+            checked={alertsEnabled}
+            onCheckedChange={toggleAlerts}
+            disabled={alertsToggleSaving}
+          />
+        </CardContent>
+      </Card>
+
       {/* Preview Dialog */}
       <Dialog open={showPreview} onOpenChange={setShowPreview}>
         <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
