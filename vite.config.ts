@@ -52,7 +52,9 @@ function prerenderPlugin(): Plugin {
           console.log('[prerender] skipped (SKIP_PRERENDER=1)');
           return;
         }
-        const strict = process.env.STRICT_PRERENDER === '1';
+        // Strict-by-default: any non-zero prerender exit fails the build.
+        // Set SOFT_PRERENDER=1 (or SKIP_PRERENDER=1 above) to bypass locally.
+        const soft = process.env.SOFT_PRERENDER === '1';
         const exitCode = await new Promise<number>((resolve) => {
           const child = spawn(
             'npx',
@@ -67,11 +69,12 @@ function prerenderPlugin(): Plugin {
         });
         if (exitCode !== 0) {
           const msg = `[prerender] exited with code ${exitCode}`;
-          if (strict) {
-            console.error(`${msg} — failing build (STRICT_PRERENDER=1)`);
-            throw new Error('Prerender failed in strict mode');
+          if (soft) {
+            console.warn(`${msg} — build continues (SOFT_PRERENDER=1)`);
+          } else {
+            console.error(`${msg} — failing build (set SOFT_PRERENDER=1 to bypass)`);
+            throw new Error('Prerender failed');
           }
-          console.warn(`${msg} — build continues (set STRICT_PRERENDER=1 to fail loudly)`);
         }
       }
     }
