@@ -2,6 +2,9 @@ import { Helmet } from 'react-helmet-async';
 import { SITE_URL } from '@/lib/site';
 
 export function GlobalSEO() {
+  // Site-wide JSON-LD only. Page-level nodes (WebPage, Service, FAQPage, etc.)
+  // must come from each route's own SEO component to avoid duplicate @id collisions
+  // after hydration (e.g. two "#webpage" nodes on /mercury-pro-xs).
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -11,17 +14,6 @@ export function GlobalSEO() {
         "url": "https://mercuryrepower.ca/",
         "name": "Mercury Repower Quote Builder",
         "publisher": { "@id": "https://mercuryrepower.ca/#organization" },
-        "inLanguage": "en-CA"
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://mercuryrepower.ca/#webpage",
-        "url": "https://mercuryrepower.ca/",
-        "name": "Mercury Repower Quotes Online — Real Prices, No Forms | Harris Boat Works",
-        "description": "Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake — family-owned since 1947, Mercury dealer since 1965.",
-        "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
-        "about": { "@id": "https://mercuryrepower.ca/#organization" },
-        "primaryImageOfPage": { "@id": "https://mercuryrepower.ca/#logo" },
         "inLanguage": "en-CA"
       },
       {
@@ -100,24 +92,14 @@ export function GlobalSEO() {
           { "@type": "Brand", "name": "Legend Boats" }
         ],
         "award": "Mercury Marine Platinum Dealer"
-      },
-      {
-        "@type": "Service",
-        "@id": "https://mercuryrepower.ca/#quote-service",
-        "name": "Mercury Outboard Online Quote Builder",
-        "serviceType": "Online Motor Quote",
-        "provider": { "@id": "https://mercuryrepower.ca/#organization" },
-        "areaServed": [
-          { "@type": "State", "name": "Ontario" },
-          { "@type": "Country", "name": "Canada" }
-        ]
       }
     ]
   };
 
   return (
     <Helmet>
-      {/* Global structured data for organization recognition */}
+      {/* Site-wide structured data: WebSite, Organization, LocalBusiness only.
+          Page-level schema (WebPage, FAQPage, ProductGroup, Service) is owned by each route. */}
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>

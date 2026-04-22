@@ -6,14 +6,6 @@ export function HomepageSEO() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebSite",
-        "@id": "https://mercuryrepower.ca/#website",
-        "url": "https://mercuryrepower.ca/",
-        "name": "Mercury Repower Quote Builder",
-        "publisher": { "@id": "https://mercuryrepower.ca/#organization" },
-        "inLanguage": "en-CA"
-      },
-      {
         "@type": "WebPage",
         "@id": "https://mercuryrepower.ca/#webpage",
         "url": "https://mercuryrepower.ca/",
