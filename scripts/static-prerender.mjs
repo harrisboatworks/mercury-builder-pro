@@ -456,7 +456,7 @@ const routes = [
     description: 'Family-owned Mercury Marine Platinum Dealer on Rice Lake, Ontario. Founded in 1947, selling Mercury outboards since 1965. Repower specialists serving Ontario boaters.',
     h1: 'About Harris Boat Works',
     intro: 'Harris Boat Works is a family-owned Mercury Marine Platinum Dealer on Rice Lake, Ontario. Founded in 1947 and selling Mercury since 1965, we are repower and outboard specialists serving Ontario boaters.',
-    schemas: [genericPageSchema('/about', 'About Harris Boat Works', 'Family-owned Mercury dealer on Rice Lake, Ontario since 1947.')]
+    schemas: [aboutPageSchema()]
   },
   {
     path: '/contact',
@@ -464,7 +464,7 @@ const routes = [
     description: 'Contact Harris Boat Works in Gores Landing on Rice Lake. Phone (905) 342-2153. Mercury repower quotes, service, and parts. Pickup only — no shipping.',
     h1: 'Contact Harris Boat Works',
     intro: 'Reach Harris Boat Works at 5369 Harris Boat Works Rd, Gores Landing, Ontario. Phone (905) 342-2153. Email info@harrisboatworks.ca. Pickup only at Gores Landing — no shipping.',
-    schemas: [genericPageSchema('/contact', 'Contact Harris Boat Works', 'Mercury dealer on Rice Lake — phone (905) 342-2153.')]
+    schemas: [contactPageSchema()]
   },
   {
     path: '/blog',
