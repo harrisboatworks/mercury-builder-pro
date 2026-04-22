@@ -8,7 +8,6 @@
     { "source": "/rss.xml", "destination": "/rss.xml" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/llms.txt", "destination": "/llms.txt" },
-    { "source": "/.well-known/(.*)", "destination": "/.well-known/$1" },
     { "source": "/", "destination": "/index.html" },
     { "source": "/repower", "destination": "/repower/index.html" },
     { "source": "/faq", "destination": "/faq/index.html" },
