@@ -139,8 +139,8 @@ function homepageSchema() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1122,
-          "longitude": -78.0245
+          "latitude": 44.1147,
+          "longitude": -78.2564
         },
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Rice Lake" },
@@ -269,8 +269,8 @@ function contactPageSchema() {
         },
         "geo": {
           "@type": "GeoCoordinates",
-          "latitude": 44.1122,
-          "longitude": -78.0245
+          "latitude": 44.1147,
+          "longitude": -78.2564
         },
         "contactPoint": [
           {
@@ -1113,7 +1113,7 @@ function mercuryOutboardsOntarioSchema() {
           "postalCode": "K0K 2E0",
           "addressCountry": "CA"
         },
-        "geo": { "@type": "GeoCoordinates", "latitude": 44.0833, "longitude": -78.1667 },
+        "geo": { "@type": "GeoCoordinates", "latitude": 44.1147, "longitude": -78.2564 },
         "areaServed": [
           { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
           { "@type": "Place", "name": "Greater Toronto Area" },
