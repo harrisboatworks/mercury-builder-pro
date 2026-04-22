@@ -1,51 +1,70 @@
 
 
-## Install Puppeteer's Chromium during Vercel build
+## Abandon Puppeteer — Switch to Static HTML Stamping
 
-The build is failing because puppeteer v22+ no longer auto-downloads Chromium during `npm install`. The launch step then can't find it at `/vercel/.cache/puppeteer`. Two minimal changes fix it.
+The Round 3 build proved the diagnosis: even with Chromium downloaded into the cached path, Vercel's build container is missing `libnspr4.so` (and ~20 other shared libs Chromium dynamically links against). Amazon Linux 2023 build sandboxes don't let us `apt-get install` them. **No puppeteer-based prerender will ever launch on a Vercel build.** Time to change approach.
+
+### What we're switching to
+
+Instead of running a real browser, stamp out per-route HTML files at build time by cloning `dist/index.html` (the SPA shell Vite produces) and injecting per-route `<title>`, `<meta name="description">`, JSON-LD schema, and a `<noscript>` fallback. Crawlers (Googlebot, Meta-ExternalAgent, Perplexity, ChatGPT) get real page-specific content. Real users still get the React app — it hydrates over the stamped shell exactly like before.
+
+No browser. No shared libraries. No cache directory. Pure Node.
 
 ### Changes
 
-**1. New file: `.puppeteerrc.cjs` (repo root)**
+**1. Delete the puppeteer pipeline**
+- Delete `scripts/prerender.ts`
+- Delete `.puppeteerrc.cjs`
+- Remove `prerenderPlugin()` from `vite.config.ts` (drop the function definition + the line that includes it in the plugins array; keep `sitemapPlugin` untouched)
+- `package.json` `build` script → `vite build && node scripts/static-prerender.mjs` (drop the `npx puppeteer browsers install chrome &&` prefix; do **not** add `tsc -b` — current build has never run it and adding it now would surface unrelated TS errors)
+- Remove deps: `puppeteer`, `puppeteer-core`, `@sparticuz/chromium`, `sirv` (sirv was only used by the prerender server). Keep `tsx` (used elsewhere) and `@vercel/node`.
 
-Point puppeteer's cache inside the project so Vercel's build cache persists it across deploys:
+**2. New file: `scripts/static-prerender.mjs`**
 
-```js
-const { join } = require('path');
-module.exports = {
-  cacheDirectory: join(__dirname, '.cache', 'puppeteer'),
-};
-```
+A ~150-line Node ESM script that:
+- Reads `dist/index.html`
+- Iterates over an 8-route config (`/`, `/repower`, `/faq`, `/about`, `/contact`, `/blog`, `/agents`, `/quote/motor-selection`) — same routes Vercel's `vercel.json` already rewrites
+- For each route: replaces `<title>`, replaces/inserts `<meta name="description">`, injects JSON-LD `<script>` blocks before `</head>`, injects a `<noscript>` semantic fallback (`<h1>` + key paragraph + for FAQ a Q&A list) into `<div id="root">`
+- Writes output to `dist/{route}/index.html` (and overwrites `dist/index.html` for `/`)
+- Includes a sanity check: each output ≥ 30 KB and contains the expected title; non-zero exit on failure → fails the build
 
-**2. `package.json` — prefix `build` with the browser install**
+**3. Schema content — extracted from existing React components**
 
-```json
-"build": "npx puppeteer browsers install chrome && vite build"
-```
+The schema objects already exist in `src/components/seo/*SEO.tsx` (FAQPageSEO, RepowerPageSEO, HomepageSEO, etc.) and in `src/data/faqData.ts`. The script will **import** these directly rather than duplicating them:
+- `import { getAllFAQItems } from '../src/data/faqData.ts'` (loaded via `tsx` if needed, or read as a static JSON dump produced as part of the script)
+- For complex schemas (Repower's HowTo + LocalBusiness + Service), copy the JSON-LD object literal from the matching `*SEO.tsx` into a new `scripts/seo-schemas.mjs` module that's the single source of truth, then `import` it from both the React component and the prerender script
 
-That's the postinstall hook puppeteer v22+ removed; it must now be invoked explicitly.
+This avoids drift: schema lives in one place, both runtime React (for users with JS) and build-time stamping (for crawlers) use the same data.
 
-### One deviation from your instructions
+**4. `vercel.json` — already correct**
 
-You also asked me to roll `scripts/prerender.ts` back to pre-`ce6ba15` (drop the `serveDist` / `mkdtempSync` copy). I'd like to **keep that change**. It fixed a real, separate bug last round: when the script wrote `dist/index.html` for `/`, sirv's SPA fallback (`single: true`) then served that prerendered homepage as the shell for every later route, causing `/repower` to hydrate as the homepage and fail the 50 KB sanity check. The temp-dir copy keeps the served shell pristine across routes. It's ~5 lines and orthogonal to the Chromium issue.
-
-If you'd still rather I revert it, say the word and I'll drop it — but I want to flag it explicitly rather than silently override your instruction.
-
-### Optional cleanup (only if you confirm)
-
-`puppeteer-core` and `@sparticuz/chromium` are still in `package.json` from the previous attempt. Nothing imports them anymore. Removing them shaves ~80 MB off `node_modules`. Skip if you want a strictly minimal diff.
+The `rewrites` array already maps each of the 8 routes to its `/{route}/index.html`. No change needed. (The catch-all `/((?!api).*)` → `/` falls through correctly for unknown routes.)
 
 ### Acceptance
 
-Build log should show:
+After deploy, build log should show:
 ```
-Downloading Chrome 147.0.7727.57...
-[prerender] static server on :4173
-[prerender] chromium launched (bundled puppeteer)
-[prerender] ✓ / → dist/index.html (NN.N KB)
-... all 8 routes ...
-[prerender] ✓ all 8 routes prerendered
+[static-prerender] wrote dist/index.html (NN KB)
+[static-prerender] wrote dist/repower/index.html (NN KB)
+... 8 routes ...
+[static-prerender] ✓ 8 routes prerendered
 ```
 
-Then `curl -A Googlebot https://mercuryrepower.ca/faq | grep -c '"@type":"FAQPage"'` returns ≥1, and the 8 routes produce 8 distinct SHAs.
+Then:
+```bash
+# 8 distinct SHAs
+for r in / /repower /faq /about /contact /blog /agents /quote/motor-selection; do
+  curl -A Googlebot -s "https://mercuryrepower.ca$r" | shasum
+done
+
+# Schema present
+curl -A Googlebot -s https://mercuryrepower.ca/faq | grep -c '"@type":"FAQPage"'   # ≥ 1
+curl -A Googlebot -s https://mercuryrepower.ca/repower | grep -c '"@type":"Service"' # ≥ 1
+```
+
+### Risk & trade-offs
+
+- **No JS-rendered content in the stamped HTML.** Whatever React generates dynamically (e.g. live promo prices, motor counts) won't appear in crawler-visible HTML. For SEO/AI-discovery purposes this is fine — the fixed schema and meta tags are what crawlers index. If you ever want live data in the prerendered HTML, the script can `fetch()` from Supabase at build time (separate follow-up).
+- **Schema must stay manually synced** if React components change. Mitigated by extracting to `scripts/seo-schemas.mjs` as the single source of truth (step 3).
+- Build is now ~30 seconds faster (no Chromium download) and uses ~250 MB less in `node_modules`.
 
