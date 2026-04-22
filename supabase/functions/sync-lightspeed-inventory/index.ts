@@ -16,8 +16,22 @@ Deno.serve(async (req) => {
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   // Helper: send admin SMS via existing send-sms function (handles Twilio + ADMIN_PHONE resolution)
+  // Honors the 'lightspeed_alerts_enabled' toggle in admin_sources (default: enabled)
   async function notifyAdmin(subject: string, body: string) {
     try {
+      // Check the admin toggle — missing row or 'true' = alerts on; 'false' = alerts off
+      const { data: toggleRow } = await supabase
+        .from('admin_sources')
+        .select('value')
+        .eq('key', 'lightspeed_alerts_enabled')
+        .maybeSingle();
+
+      const enabled = !toggleRow || toggleRow.value !== 'false';
+      if (!enabled) {
+        console.log('🔕 Lightspeed SMS alerts disabled via admin_sources — skipping notification');
+        return;
+      }
+
       await supabase.functions.invoke('send-sms', {
         body: {
           to: 'admin',
