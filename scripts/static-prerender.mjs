@@ -1000,7 +1000,7 @@ const PRO_XS_FAQ_PRERENDER = [
 
 const ONTARIO_HUB_FAQ_PRERENDER = [
   { question: "Where can I buy Mercury outboards in Ontario?", answer: "Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario — family-owned since 1947, Mercury dealer since 1965. We carry the full Mercury outboard lineup with real CAD pricing online: portable FourStroke 2.5–20 HP, mid-range FourStroke 25–115 HP, Pro XS 115–250 HP, Command Thrust, SeaPro commercial, ProKicker trolling motors, and FourStroke V8 250–300 HP. Build a quote at mercuryrepower.ca/quote/motor-selection." },
-  { question: "What Mercury motor lines are sold at Harris Boat Works?", answer: "Full lineup: portable FourStroke (2.5–20 HP) for tenders and small tillers, mid-range FourStroke (25–115 HP) for fishing and pontoon, Pro XS (115–250 HP) for performance and tournament use, Command Thrust (40–150 HP) for heavy hulls and pontoons, SeaPro for commercial duty, ProKicker (9.9 / 15 HP) for trolling, and FourStroke V8 (250–300 HP) for offshore and bowriders. We do not sell or service Mercury Verado." },
+  { question: "What Mercury motor lines are sold at Harris Boat Works?", answer: "Full lineup: portable FourStroke (2.5–20 HP) for tenders and small tillers, mid-range FourStroke (25–115 HP) for fishing and pontoon, Pro XS (115–250 HP) for performance and tournament use, Command Thrust (40–150 HP) for heavy hulls and pontoons, SeaPro for commercial duty, ProKicker (9.9 / 15 HP) for trolling, and FourStroke V8 (250–300 HP) for offshore and bowriders. Mercury Verado is available by special order only — contact us directly for a Verado quote." },
   { question: "Is Harris Boat Works a Mercury Platinum dealer?", answer: "Yes. Mercury Marine Platinum Dealer status — Mercury's top dealer tier in North America. Awarded for sales volume, technician certification, warranty CSI scores, and parts availability. Re-qualified annually." },
   { question: "What areas of Ontario does Harris Boat Works serve?", answer: "Our location at Gores Landing on Rice Lake (Northumberland County) puts us within easy reach of Peterborough (35 min), Cobourg (20 min), Port Hope, the Kawartha Lakes, the Trent-Severn Waterway, and the Greater Toronto Area (90 min via 401). Customers come from across Ontario including Lake Simcoe, Lake Scugog, Bay of Quinte, and the GTA. Pickup only at our Gores Landing location." },
   { question: "Are Mercury outboard prices in Canadian dollars?", answer: "Yes — every price on mercuryrepower.ca is in CAD, all-in (plus HST). No US conversions, no hidden fees, no \"call for price\" games. The configurator shows live pricing direct from inventory plus financing payment estimates." },
@@ -1163,8 +1163,69 @@ function mercuryOutboardsOntarioSchema() {
 }
 
 // ============================================================
-// Route configuration
+// Batch 4 — Pontoon outboards
 // ============================================================
+
+const PONTOON_FAQ_PRERENDER = [
+  { question: "What size Mercury outboard do I need for a pontoon?", answer: "It depends on tube count, length, and load. Rule of thumb: 16–18 ft single-tube pontoons run 40–60 HP Command Thrust; 20–22 ft two-tube pontoons want 90–115 HP Command Thrust; 22–25 ft tri-toon take 150 HP and up. Heavier loads, water sports, or rougher water push you higher. Build a quote at mercuryrepower.ca and we'll confirm the right HP." },
+  { question: "What is Mercury Command Thrust and why does it matter for pontoons?", answer: "Command Thrust (CT) pairs the engine with a larger gearcase, lower gear ratio, and bigger high-thrust prop. The same powerhead pushes more water at lower RPM — better hole shot with a heavy pontoon load, more pushing power at slow speeds, cleaner reverse at the dock. For pontoons, Command Thrust is almost always the right call." },
+  { question: "Do I need a long shaft (20 in) or extra-long shaft (25 in) for my pontoon?", answer: "Most pontoons want a long shaft (20 in / 'L') because the transom on a pontoon log is taller than a typical aluminum tin boat. Some larger tri-toon platforms with a higher transom take an extra-long shaft (25 in / 'XL'). Measure from the top of the transom to the bottom of the hull at centerline. Send us a photo if unsure." },
+  { question: "Will a Mercury Command Thrust fit my Legend, Princecraft, or Sylvan pontoon?", answer: "Yes — Mercury Command Thrust 40–150 HP is a common factory option on Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington pontoons. Harris Boat Works is an authorized Legend Boats dealer. For other brands we confirm bolt pattern, controls, and harness compatibility when you build your quote." },
+  { question: "How much does a pontoon repower cost in Ontario?", answer: "Most pontoon repowers run $9,000 to $18,000 CAD installed, depending on horsepower (90–150 HP Command Thrust is typical), controls (mechanical vs digital), and rigging. That includes motor, controls/cables, propeller, install, lake test, and warranty registration. Build a quote at mercuryrepower.ca for live CAD pricing. Pickup only at Gores Landing." }
+];
+
+function mercuryPontoonOutboardsSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/mercury-pontoon-outboards#webpage`,
+        "url": `${SITE_URL}/mercury-pontoon-outboards`,
+        "name": "Mercury Outboards for Pontoon Boats — Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works",
+        "description": "Mercury Command Thrust outboards for pontoon boats — 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Platinum Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.",
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "inLanguage": "en-CA",
+        "breadcrumb": { "@id": `${SITE_URL}/mercury-pontoon-outboards#breadcrumb` },
+        "mainEntity": { "@id": `${SITE_URL}/mercury-pontoon-outboards#faqpage` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/mercury-pontoon-outboards#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Mercury Outboards for Pontoon Boats", "item": `${SITE_URL}/mercury-pontoon-outboards` }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": `${SITE_URL}/mercury-pontoon-outboards#service`,
+        "name": "Mercury Pontoon Outboard Sales & Repower",
+        "description": "Mercury Command Thrust outboards (40–150 HP) and high-thrust repower service for pontoon boats. Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington compatible.",
+        "provider": { "@id": `${SITE_URL}/#organization` },
+        "areaServed": [
+          { "@type": "Place", "name": "Rice Lake, Ontario" },
+          { "@type": "Place", "name": "Kawartha Lakes" },
+          { "@type": "Place", "name": "Trent-Severn Waterway" },
+          { "@type": "Place", "name": "Greater Toronto Area" },
+          { "@type": "AdministrativeArea", "name": "Ontario, Canada" }
+        ],
+        "serviceType": "Pontoon outboard repower",
+        "url": `${SITE_URL}/mercury-pontoon-outboards`
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/mercury-pontoon-outboards#faqpage`,
+        "mainEntity": PONTOON_FAQ_PRERENDER.map(i => ({
+          "@type": "Question",
+          "name": i.question,
+          "acceptedAnswer": { "@type": "Answer", "text": i.answer }
+        }))
+      }
+    ]
+  };
+}
 
 const routes = [
   {
