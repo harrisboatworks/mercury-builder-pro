@@ -977,6 +977,192 @@ function mercuryDealerGTASchema() {
 }
 
 // ============================================================
+// Batch 3 — Product hub + Ontario lineup
+// ============================================================
+
+const PRO_XS_STATIC_OFFERS_PRERENDER = [
+  { hp: 115, name: 'Mercury 115 Pro XS', startingAt: 14450 },
+  { hp: 150, name: 'Mercury 150 Pro XS', startingAt: 18300 },
+  { hp: 200, name: 'Mercury 200 Pro XS', startingAt: 23800 },
+  { hp: 250, name: 'Mercury 250 Pro XS', startingAt: 29300 },
+];
+
+const PRO_XS_FAQ_PRERENDER = [
+  { question: "What is a Mercury Pro XS outboard?", answer: "Pro XS is Mercury Marine's high-performance FourStroke outboard line, engineered for tournament-grade acceleration, top speed, and hole-shot. Pro XS models are tuned more aggressively than standard FourStroke motors and ship with performance prop pitches, premium gearcases, and enhanced engine calibration. Available 115 to 300 HP." },
+  { question: "What HP Pro XS models does Harris Boat Works carry?", answer: "We stock the full Pro XS lineup in CAD pricing: 115 HP (ELPT and EXLPT), 150 HP (ELPT and EXLPT), 200 HP (ELPT), and 250 HP (ELPT). All in stock, real prices online. Mercury Platinum Dealer — full warranty registration at pickup." },
+  { question: "Pro XS vs FourStroke — which should I buy?", answer: "Pro XS for performance: tournament bass, fast bowriders, ski/wake boats, and anyone chasing top-end speed and hole-shot. Standard FourStroke for cruising, fishing, pontoons, and fuel economy. Same Mercury reliability, different tuning. We can walk you through the right choice for your hull at (905) 342-2153 or via the configurator." },
+  { question: "Are Pro XS prices in Canadian dollars?", answer: "Yes — every price on mercuryrepower.ca is in CAD, all-in (plus HST). No US conversions, no \"call for price\" games. The configurator shows real out-the-door pricing including standard rigging." },
+  { question: "What's the warranty on a new Pro XS?", answer: "Standard Mercury warranty is 3 years. Right now Harris Boat Works includes 7 years of full Mercury factory-backed coverage on new Pro XS purchases — straight from Mercury Marine, not third-party insurance. We register the warranty at pickup." },
+  { question: "Can I finance a Pro XS purchase?", answer: "Yes — financing is available through DealerPlan and other lenders. Estimated monthly payments are shown alongside each motor at mercuryrepower.ca (8.99% under $10K total / 7.99% over $10K total). Minimum financed amount is $5,000." },
+  { question: "How do I take delivery of a Pro XS from Harris Boat Works?", answer: "Pickup only at our Gores Landing location on Rice Lake. Two paths: (1) bring your boat for full installation including controls, prop, and lake test, or (2) pick up the loose motor for self-install. We do not ship motors. Pickup ensures every customer gets a personal walk-through and clean Mercury warranty registration." },
+  { question: "Where can I see current Pro XS inventory and pricing?", answer: "Build a quote at mercuryrepower.ca/quote/motor-selection — filter by Pro XS family. Live CAD pricing, in-stock indicators, and monthly payment estimates update directly from our inventory." }
+];
+
+const ONTARIO_HUB_FAQ_PRERENDER = [
+  { question: "Where can I buy Mercury outboards in Ontario?", answer: "Harris Boat Works is a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario — family-owned since 1947, Mercury dealer since 1965. We carry the full Mercury outboard lineup with real CAD pricing online: portable FourStroke 2.5–20 HP, mid-range FourStroke 25–115 HP, Pro XS 115–250 HP, Command Thrust, SeaPro commercial, ProKicker trolling motors, and FourStroke V8 250–300 HP. Build a quote at mercuryrepower.ca/quote/motor-selection." },
+  { question: "What Mercury motor lines are sold at Harris Boat Works?", answer: "Full lineup: portable FourStroke (2.5–20 HP) for tenders and small tillers, mid-range FourStroke (25–115 HP) for fishing and pontoon, Pro XS (115–250 HP) for performance and tournament use, Command Thrust (40–150 HP) for heavy hulls and pontoons, SeaPro for commercial duty, ProKicker (9.9 / 15 HP) for trolling, and FourStroke V8 (250–300 HP) for offshore and bowriders. We do not sell or service Mercury Verado." },
+  { question: "Is Harris Boat Works a Mercury Platinum dealer?", answer: "Yes. Mercury Marine Platinum Dealer status — Mercury's top dealer tier in North America. Awarded for sales volume, technician certification, warranty CSI scores, and parts availability. Re-qualified annually." },
+  { question: "What areas of Ontario does Harris Boat Works serve?", answer: "Our location at Gores Landing on Rice Lake (Northumberland County) puts us within easy reach of Peterborough (35 min), Cobourg (20 min), Port Hope, the Kawartha Lakes, the Trent-Severn Waterway, and the Greater Toronto Area (90 min via 401). Customers come from across Ontario including Lake Simcoe, Lake Scugog, Bay of Quinte, and the GTA. Pickup only at our Gores Landing location." },
+  { question: "Are Mercury outboard prices in Canadian dollars?", answer: "Yes — every price on mercuryrepower.ca is in CAD, all-in (plus HST). No US conversions, no hidden fees, no \"call for price\" games. The configurator shows live pricing direct from inventory plus financing payment estimates." },
+  { question: "Can I finance a Mercury outboard purchase?", answer: "Yes. Financing is available through DealerPlan and other lenders on purchases of $5,000 or more. Monthly payment estimates appear next to every qualifying motor (8.99% under $10K total / 7.99% over $10K total). Apply online at mercuryrepower.ca/financing-application." },
+  { question: "What warranty comes with a new Mercury motor?", answer: "Standard Mercury Marine factory warranty is 3 years. Right now, Harris Boat Works includes 7 years of full Mercury factory-backed coverage on new outboard purchases — direct from Mercury, not third-party insurance. We register every warranty at pickup." },
+  { question: "Do you ship Mercury motors across Ontario?", answer: "No — pickup only at our Gores Landing location on Rice Lake. This is intentional. Every motor includes a personal walk-through (controls, break-in, warranty registration) and we hold Platinum status partly because of that hand-off. Bring your boat for install, or pick up a loose motor for self-install." },
+  { question: "Do you take trade-ins on Mercury outboard purchases?", answer: "Yes. We accept trade-ins on Mercury and most other outboard brands. Get an instant trade-in estimate at mercuryrepower.ca/trade-in-value — values are anchored to our actual selling prices, not blue-book guesses. Trade credit applies directly to the new motor quote." },
+  { question: "Is Harris Boat Works near me?", answer: "If you're in Ontario, probably yes. Travel times: Peterborough 35 min, Cobourg 20 min, Port Hope 25 min, Lindsay 50 min, Bowmanville 45 min, Oshawa 55 min, Port Perry 50 min, downtown Toronto 90 min via 401. We also serve Northumberland County, Hastings County, the Kawarthas, and the GTA. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0." }
+];
+
+function mercuryProXSSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/mercury-pro-xs#webpage`,
+        "url": `${SITE_URL}/mercury-pro-xs`,
+        "name": "Mercury Pro XS Outboards in Ontario | 115–250 HP, Real CAD Pricing | Harris Boat Works",
+        "description": "Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Platinum Dealer on Rice Lake — family-owned since 1947, Mercury dealer since 1965.",
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "inLanguage": "en-CA",
+        "breadcrumb": { "@id": `${SITE_URL}/mercury-pro-xs#breadcrumb` },
+        "mainEntity": { "@id": `${SITE_URL}/mercury-pro-xs#productgroup` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/mercury-pro-xs#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Mercury Pro XS", "item": `${SITE_URL}/mercury-pro-xs` }
+        ]
+      },
+      {
+        "@type": "ProductGroup",
+        "@id": `${SITE_URL}/mercury-pro-xs#productgroup`,
+        "name": "Mercury Pro XS Outboard Series",
+        "description": "Mercury Pro XS high-performance FourStroke outboard motors, 115–250 HP, available at Harris Boat Works (Mercury Platinum Dealer, Ontario).",
+        "brand": { "@type": "Brand", "name": "Mercury Marine" },
+        "url": `${SITE_URL}/mercury-pro-xs`,
+        "variesBy": ["horsepower"],
+        "hasVariant": PRO_XS_STATIC_OFFERS_PRERENDER.map(v => ({
+          "@type": "Product",
+          "name": v.name,
+          "brand": { "@type": "Brand", "name": "Mercury Marine" },
+          "category": "Outboard Motor",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "CAD",
+            "price": v.startingAt,
+            "availability": "https://schema.org/InStock",
+            "seller": { "@id": `${SITE_URL}/#organization` },
+            "url": `${SITE_URL}/quote/motor-selection`
+          }
+        }))
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/mercury-pro-xs#faqpage`,
+        "mainEntity": PRO_XS_FAQ_PRERENDER.map(i => ({
+          "@type": "Question",
+          "name": i.question,
+          "acceptedAnswer": { "@type": "Answer", "text": i.answer }
+        }))
+      }
+    ]
+  };
+}
+
+function mercuryOutboardsOntarioSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/mercury-outboards-ontario#webpage`,
+        "url": `${SITE_URL}/mercury-outboards-ontario`,
+        "name": "Mercury Outboards Ontario — Full Lineup at Harris Boat Works | Platinum Dealer Since 1965",
+        "description": "Mercury Marine outboards in Ontario — full lineup (portable, FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Platinum Dealer on Rice Lake, family-owned since 1947.",
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "inLanguage": "en-CA",
+        "breadcrumb": { "@id": `${SITE_URL}/mercury-outboards-ontario#breadcrumb` },
+        "mainEntity": { "@id": `${SITE_URL}/mercury-outboards-ontario#localbusiness` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/mercury-outboards-ontario#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Mercury Outboards Ontario", "item": `${SITE_URL}/mercury-outboards-ontario` }
+        ]
+      },
+      {
+        "@type": ["LocalBusiness", "AutomotiveBusiness"],
+        "@id": `${SITE_URL}/mercury-outboards-ontario#localbusiness`,
+        "name": "Harris Boat Works — Mercury Platinum Dealer",
+        "description": "Mercury Marine Platinum Dealer serving Ontario. Full Mercury outboard lineup, real CAD pricing online, repower specialists. Family-owned since 1947, Mercury dealer since 1965.",
+        "url": `${SITE_URL}/mercury-outboards-ontario`,
+        "telephone": "+1-905-342-2153",
+        "email": "info@harrisboatworks.ca",
+        "image": `${SITE_URL}/lovable-uploads/logo-dark.png`,
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "5369 Harris Boat Works Rd",
+          "addressLocality": "Gores Landing",
+          "addressRegion": "ON",
+          "postalCode": "K0K 2E0",
+          "addressCountry": "CA"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 44.0833, "longitude": -78.1667 },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+          { "@type": "Place", "name": "Greater Toronto Area" },
+          { "@type": "Place", "name": "Peterborough, Ontario" },
+          { "@type": "Place", "name": "Cobourg, Ontario" },
+          { "@type": "Place", "name": "Kawartha Lakes" },
+          { "@type": "Place", "name": "Northumberland County" },
+          { "@type": "Place", "name": "Trent-Severn Waterway" },
+          { "@type": "Place", "name": "Lake Simcoe" },
+          { "@type": "Place", "name": "Lake Scugog" },
+          { "@type": "Place", "name": "Rice Lake" }
+        ],
+        "award": [
+          "Mercury Marine Platinum Dealer",
+          "Authorized Legend Boats Dealer"
+        ],
+        "knowsAbout": [
+          "Mercury FourStroke outboards",
+          "Mercury Pro XS outboards",
+          "Mercury Command Thrust",
+          "Mercury SeaPro commercial outboards",
+          "Mercury ProKicker trolling motors",
+          "Mercury FourStroke V8",
+          "Marine repower"
+        ],
+        "makesOffer": [
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury Portable FourStroke 2.5–20 HP" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury Mid-Range FourStroke 25–115 HP" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury Pro XS 115–250 HP" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury Command Thrust 40–150 HP" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury SeaPro Commercial Outboards" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury ProKicker 9.9 / 15 HP" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mercury FourStroke V8 250–300 HP" } }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/mercury-outboards-ontario#faqpage`,
+        "mainEntity": ONTARIO_HUB_FAQ_PRERENDER.map(i => ({
+          "@type": "Question",
+          "name": i.question,
+          "acceptedAnswer": { "@type": "Answer", "text": i.answer }
+        }))
+      }
+    ]
+  };
+}
+
+// ============================================================
 // Route configuration
 // ============================================================
 
@@ -1147,6 +1333,38 @@ const routes = [
     extraNoscript: () =>
       '<dl>' +
       GTA_FAQ_PRERENDER.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
+  },
+  {
+    path: '/mercury-pro-xs',
+    title: 'Mercury Pro XS Outboards in Ontario | 115–250 HP, Real CAD Pricing | Harris Boat Works',
+    description: 'Mercury Pro XS performance outboards 115–250 HP in stock at Harris Boat Works. Real CAD pricing, 7-year warranty, financing. Mercury Platinum Dealer on Rice Lake — family-owned since 1947, Mercury dealer since 1965.',
+    h1: 'Mercury Pro XS Outboards in Ontario',
+    intro: 'Tournament-grade performance from 115 to 250 HP. Real CAD pricing, in stock at Harris Boat Works — Mercury Marine Platinum Dealer on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.',
+    schemas: [mercuryProXSSchema()],
+    extraNoscript: () =>
+      '<ul>' +
+      PRO_XS_STATIC_OFFERS_PRERENDER.map(v =>
+        `<li><strong>${escapeHtml(v.name)}</strong> — from CAD $${v.startingAt.toLocaleString('en-CA')}</li>`
+      ).join('') +
+      '</ul><dl>' +
+      PRO_XS_FAQ_PRERENDER.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
+  },
+  {
+    path: '/mercury-outboards-ontario',
+    title: 'Mercury Outboards Ontario — Full Lineup at Harris Boat Works | Platinum Dealer Since 1965',
+    description: 'Mercury Marine outboards in Ontario — full lineup (FourStroke, Pro XS, Command Thrust, SeaPro, ProKicker, V8). Real CAD pricing online. Mercury Platinum Dealer on Rice Lake, family-owned since 1947.',
+    h1: 'Mercury Outboards in Ontario',
+    intro: 'The full Mercury Marine outboard lineup at Harris Boat Works — Platinum Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Cobourg, the GTA, the Kawarthas, and Northumberland County.',
+    schemas: [mercuryOutboardsOntarioSchema()],
+    extraNoscript: () =>
+      '<dl>' +
+      ONTARIO_HUB_FAQ_PRERENDER.map(i =>
         `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
       ).join('') +
       '</dl>'
