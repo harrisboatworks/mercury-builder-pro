@@ -18,7 +18,7 @@ import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 
 import heroImage from '@/assets/landing-hero-mercury.jpg';
 import shopImage from '@/assets/landing-repower-shop.jpg';
-import stepPickImage from '@/assets/landing-step-pick.jpg';
+import stepPickImage from '@/assets/landing-step-pick.png';
 import stepConfigureImage from '@/assets/landing-step-configure.jpg';
 import stepPickupImage from '@/assets/landing-step-pickup.jpg';
 import ctaLakeImage from '@/assets/landing-cta-lake.jpg';
