@@ -825,6 +825,158 @@ function mercuryDealerCanadaSchema() {
 }
 
 // ============================================================
+// Batch 2 — Geo landing pages (Peterborough, Cobourg, GTA)
+// ============================================================
+
+const PETERBOROUGH_FAQ_PRERENDER = [
+  { question: "Is there a Mercury dealer near Peterborough, Ontario?", answer: "Yes — Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, located about 35 minutes south on Rice Lake at 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury dealer since 1965, family-owned since 1947." },
+  { question: "Do you serve Peterborough customers for Mercury repower and service?", answer: "Yes. We regularly repower boats from Peterborough, Lakefield, Bridgenorth, Buckhorn, and the wider Kawartha Lakes region. Customers tow boats down to Gores Landing, or pick up loose motors for self-installation. Pickup only — no delivery or shipping." },
+  { question: "How far is Harris Boat Works from downtown Peterborough?", answer: "About 35 minutes (45 km) via County Rd 28 south to Gores Landing on the south shore of Rice Lake. Easy run for Peterborough, Trent University, and Lakefield-area boaters." },
+  { question: "Can I get Mercury financing as a Peterborough customer?", answer: "Yes — Mercury financing through DealerPlan is available to all Ontario residents. Build a quote at mercuryrepower.ca to see live monthly payment estimates (8.99% under $10K total / 7.99% over $10K), then complete the financing application online. Minimum financed amount $5,000." },
+  { question: "What Mercury motors do you stock for Peterborough-area boaters?", answer: "The full Mercury outboard lineup: portable FourStroke (2.5–20hp), mid-range FourStroke (25–115hp), Command Thrust (40–150hp for pontoons), Pro XS performance (115–300hp), SeaPro commercial, ProKicker trolling motors (9.9hp/15hp), and FourStroke V8 (250–300hp). Live inventory and CAD pricing at mercuryrepower.ca." }
+];
+
+const COBOURG_FAQ_PRERENDER = [
+  { question: "Where can I buy a Mercury outboard near Cobourg, Ontario?", answer: "Harris Boat Works in Gores Landing — about 20 minutes north of Cobourg on Rice Lake — is the closest Mercury Marine Platinum Dealer. Mercury dealer since 1965, family-owned since 1947. Address: 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0." },
+  { question: "How far is Harris Boat Works from Cobourg?", answer: "About 20 minutes (25 km) north via County Rd 18 to Gores Landing on the south shore of Rice Lake. Convenient for Cobourg, Port Hope, Grafton, and Northumberland County boaters." },
+  { question: "Do you serve Northumberland County for Mercury repower?", answer: "Yes — we regularly repower boats from Cobourg, Port Hope, Grafton, Brighton, and the wider Northumberland region. Bring your boat down for full installation, or pick up a loose Mercury for self-install. Pickup only at Gores Landing." },
+  { question: "Can I get a Mercury quote online from Cobourg?", answer: "Yes — build a real Mercury outboard quote in three minutes at mercuryrepower.ca. Live CAD pricing, financing estimates, and trade-in valuations. No phone calls or forms needed to see the price." },
+  { question: "What about Lake Ontario boaters out of Cobourg Harbour?", answer: "We work with Cobourg Harbour and Port Hope Harbour boaters on Mercury repowers and service for Lake Ontario use. Mercury Pro XS, FourStroke V8, and SeaPro models are common for the bigger water — talk to us about HP and shaft length for your specific hull." }
+];
+
+const GTA_FAQ_PRERENDER = [
+  { question: "Is there a Mercury dealer that serves the GTA?", answer: "Harris Boat Works on Rice Lake serves GTA boaters from across the Greater Toronto Area. We're 90 minutes east of Toronto via Highway 401 — closer than most GTA boaters realize for a Mercury Marine Platinum Dealer. Family-owned since 1947, Mercury dealer since 1965." },
+  { question: "How do GTA customers handle pickup?", answer: "Two ways: bring your boat down to Gores Landing for full installation, or pick up a loose Mercury motor and install it yourself (or with your local mechanic). We do not ship motors and we do not deliver — pickup only at our Rice Lake location, which keeps pricing transparent and warranty registration clean." },
+  { question: "Is it worth driving from Toronto for a Mercury outboard?", answer: "GTA boaters tell us yes — for three reasons. (1) Real CAD pricing online with no \"call for price\" runaround. (2) Mercury Platinum Dealer status (top tier in North America). (3) Family-owned, so the same people quote, install, and service the motor. Combined with a one-hour easy run on the 401, the math usually works out better than buying in the GTA." },
+  { question: "Do you handle Lake Simcoe and Lake Scugog Mercury repowers?", answer: "Yes — Lake Simcoe (Barrie, Orillia, Innisfil), Lake Scugog (Port Perry), and the Trent-Severn Waterway are core Mercury repower markets for us. Common configurations: Pro XS 150–250 for performance hulls, FourStroke 90–150 with Command Thrust for pontoons, FourStroke V8 250–300 for larger Lake Simcoe boats." },
+  { question: "How long does a GTA Mercury repower take?", answer: "Typical timeline once you've picked the motor: 1–3 weeks for in-stock motors (longer for special orders), about 1 day in the shop for the install, then a lake-test before pickup. Plan one trip down for drop-off and one for pickup — or one trip total if you're picking up a loose motor for self-install." }
+];
+
+function geoServicePageSchema({ slug, name, description, areaName, areaLocality, faqArr }) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}${slug}#webpage`,
+        "url": `${SITE_URL}${slug}`,
+        "name": name,
+        "description": description,
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "inLanguage": "en-CA",
+        "breadcrumb": { "@id": `${SITE_URL}${slug}#breadcrumb` },
+        "mainEntity": { "@id": `${SITE_URL}${slug}#faqpage` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}${slug}#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": areaName, "item": `${SITE_URL}${slug}` }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": `${SITE_URL}${slug}#service`,
+        "name": `Mercury Outboard Sales & Repower — ${areaName}`,
+        "description": description,
+        "provider": { "@id": `${SITE_URL}/#organization` },
+        "areaServed": {
+          "@type": "Place",
+          "name": areaName,
+          "address": { "@type": "PostalAddress", "addressLocality": areaLocality, "addressRegion": "ON", "addressCountry": "CA" }
+        },
+        "serviceType": "Mercury outboard sales and repower",
+        "url": `${SITE_URL}${slug}`
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}${slug}#faqpage`,
+        "mainEntity": faqArr.map(i => ({
+          "@type": "Question",
+          "name": i.question,
+          "acceptedAnswer": { "@type": "Answer", "text": i.answer }
+        }))
+      }
+    ]
+  };
+}
+
+function mercuryDealerPeterboroughSchema() {
+  return geoServicePageSchema({
+    slug: '/mercury-dealer-peterborough',
+    name: 'Mercury Dealer Peterborough Ontario | Harris Boat Works — 35 Min South',
+    description: 'Mercury Marine Platinum Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.',
+    areaName: 'Peterborough, Ontario',
+    areaLocality: 'Peterborough',
+    faqArr: PETERBOROUGH_FAQ_PRERENDER
+  });
+}
+
+function mercuryDealerCobourgSchema() {
+  return geoServicePageSchema({
+    slug: '/mercury-dealer-cobourg',
+    name: 'Mercury Dealer Cobourg Ontario | Harris Boat Works — 20 Min North',
+    description: 'Mercury Marine Platinum Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County.',
+    areaName: 'Cobourg, Ontario',
+    areaLocality: 'Cobourg',
+    faqArr: COBOURG_FAQ_PRERENDER
+  });
+}
+
+function mercuryDealerGTASchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/mercury-dealer-gta#webpage`,
+        "url": `${SITE_URL}/mercury-dealer-gta`,
+        "name": "Mercury Dealer for the GTA | Harris Boat Works — 90 Min East of Toronto",
+        "description": "Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.",
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "inLanguage": "en-CA",
+        "breadcrumb": { "@id": `${SITE_URL}/mercury-dealer-gta#breadcrumb` },
+        "mainEntity": { "@id": `${SITE_URL}/mercury-dealer-gta#faqpage` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}/mercury-dealer-gta#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Mercury Dealer GTA", "item": `${SITE_URL}/mercury-dealer-gta` }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": `${SITE_URL}/mercury-dealer-gta#service`,
+        "name": "Mercury Outboard Sales & Repower — GTA",
+        "description": "Mercury outboard sales, repower, and service for the Greater Toronto Area, Lake Simcoe, Lake Scugog, and the Trent-Severn Waterway. Bring boat for install or pick up loose motor for self-install. Pickup only at Gores Landing.",
+        "provider": { "@id": `${SITE_URL}/#organization` },
+        "areaServed": [
+          { "@type": "Place", "name": "Greater Toronto Area", "address": { "@type": "PostalAddress", "addressLocality": "Toronto", "addressRegion": "ON", "addressCountry": "CA" } },
+          { "@type": "Place", "name": "Lake Simcoe", "address": { "@type": "PostalAddress", "addressLocality": "Barrie", "addressRegion": "ON", "addressCountry": "CA" } },
+          { "@type": "Place", "name": "Lake Scugog", "address": { "@type": "PostalAddress", "addressLocality": "Port Perry", "addressRegion": "ON", "addressCountry": "CA" } }
+        ],
+        "serviceType": "Mercury outboard sales and repower",
+        "url": `${SITE_URL}/mercury-dealer-gta`
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${SITE_URL}/mercury-dealer-gta#faqpage`,
+        "mainEntity": GTA_FAQ_PRERENDER.map(i => ({
+          "@type": "Question",
+          "name": i.question,
+          "acceptedAnswer": { "@type": "Answer", "text": i.answer }
+        }))
+      }
+    ]
+  };
+}
+
+// ============================================================
 // Route configuration
 // ============================================================
 
@@ -953,6 +1105,48 @@ const routes = [
     extraNoscript: () =>
       '<dl>' +
       TRUST_FAQ_PRERENDER.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
+  },
+  {
+    path: '/mercury-dealer-peterborough',
+    title: 'Mercury Dealer Peterborough Ontario | Harris Boat Works — 35 Min South',
+    description: 'Mercury Marine Platinum Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.',
+    h1: 'Mercury Dealer Near Peterborough, Ontario',
+    intro: 'Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough — about 35 minutes south on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Lakefield, Bridgenorth, Buckhorn, and the Kawartha Lakes region.',
+    schemas: [mercuryDealerPeterboroughSchema()],
+    extraNoscript: () =>
+      '<dl>' +
+      PETERBOROUGH_FAQ_PRERENDER.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
+  },
+  {
+    path: '/mercury-dealer-cobourg',
+    title: 'Mercury Dealer Cobourg Ontario | Harris Boat Works — 20 Min North',
+    description: 'Mercury Marine Platinum Dealer 20 minutes north of Cobourg on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Sales, repower, and service for Cobourg, Port Hope, and Northumberland County.',
+    h1: 'Mercury Dealer Near Cobourg, Ontario',
+    intro: 'Harris Boat Works is the closest Mercury Marine Platinum Dealer to Cobourg — about 20 minutes north on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Serving Cobourg, Port Hope, Grafton, Brighton, and Northumberland County.',
+    schemas: [mercuryDealerCobourgSchema()],
+    extraNoscript: () =>
+      '<dl>' +
+      COBOURG_FAQ_PRERENDER.map(i =>
+        `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
+      ).join('') +
+      '</dl>'
+  },
+  {
+    path: '/mercury-dealer-gta',
+    title: 'Mercury Dealer for the GTA | Harris Boat Works — 90 Min East of Toronto',
+    description: 'Mercury Marine Platinum Dealer 90 minutes east of Toronto on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving GTA, Lake Simcoe, and Lake Scugog Mercury repowers.',
+    h1: 'Mercury Dealer for the Greater Toronto Area',
+    intro: 'Harris Boat Works on Rice Lake serves GTA, Lake Simcoe, and Lake Scugog Mercury buyers — about 90 minutes east of Toronto on the 401. Family-owned since 1947, Mercury dealer since 1965. Pickup only at Gores Landing.',
+    schemas: [mercuryDealerGTASchema()],
+    extraNoscript: () =>
+      '<dl>' +
+      GTA_FAQ_PRERENDER.map(i =>
         `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
       ).join('') +
       '</dl>'

@@ -35,6 +35,10 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/mercury-repower-faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/how-to-repower-a-boat', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/mercury-dealer-canada-faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    // Pilot SEO landing pages — Batch 2 (Geo)
+    { loc: '/mercury-dealer-peterborough', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    { loc: '/mercury-dealer-cobourg', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    { loc: '/mercury-dealer-gta', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', lastmod: today, changefreq: 'yearly', priority: 0.3 },
   ];
