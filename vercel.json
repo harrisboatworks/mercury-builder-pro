@@ -16,7 +16,7 @@
     { "source": "/blog", "destination": "/blog/index.html" },
     { "source": "/agents", "destination": "/agents/index.html" },
     { "source": "/quote/motor-selection", "destination": "/quote/motor-selection/index.html" },
-    { "source": "/((?!api).*)", "destination": "/" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {
