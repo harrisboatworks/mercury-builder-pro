@@ -1,106 +1,75 @@
 
 
-## Wave E — Inventory Code Cleanup + Lightspeed Sync Failure Alerts
+## Wave D Deploy Gap Fix
 
-Two small, independent pieces of work bundled together. Total estimated time: ~1 hour to ship.
+The audit is right and I've confirmed it locally. **All six fixes already exist in source code.** The problem is that prerender silently fails on Vercel's build, so your last deploy shipped only the unprerendered SPA shell.
 
----
+### What's already in source (verified)
+- ✅ Bing meta placeholder — `index.html` line 48: `<meta name="msvalidate.01" content="BING_VERIFICATION_TBD" />`
+- ✅ No `<noscript>` meta-refresh anywhere in `index.html` or `public/`
+- ✅ `public/.well-known/` contains `mcp.json`, `mcp-manifest.json`, `brand.json`, `ai.txt`, `security.txt`
+- ✅ `robots.txt` already lists `Meta-ExternalAgent`, `OAI-SearchBot` (but missing `ClaudeBot` — will add)
+- ✅ `DeliveryModePickUp` schema in `RepowerPageSEO.tsx`; "photo ID" Q&A in `faqData.ts`
+- ✅ `scripts/prerender.ts` exists, wired in `vite.config.ts` via `closeBundle` hook
+- ✅ Local `npm run build` produces `dist/repower/index.html` (145 KB, 2 JSON-LD blocks) — **the prerender works locally**
 
-### Part 1: Dead Scraper Code Cleanup
+### Root cause — why production is broken
 
-**Goal**: Remove the legacy DealerSpike/Harris-website scraper code that's been replaced by Lightspeed DMS direct integration. Stop the 5am cron from firing into a dead function. Eliminate broken `scrape-inventory` calls scattered through the customer-facing UI.
+**Puppeteer on Vercel doesn't have Chromium.** Vercel's build container doesn't ship Chrome, and `puppeteer@24`'s download step is often skipped/cached out. When `scripts/prerender.ts` calls `puppeteer.launch()`, it throws "Could not find Chrome" — but the vite plugin **swallows the error** (`console.warn` and `resolve()` regardless of exit code) so the build succeeds with no prerendered files. Vercel then serves only the SPA shell `dist/index.html` for every route.
 
-**Files to delete**:
-- `supabase/functions/scrape-inventory-v2/` (if present — referenced in old docs)
-- `supabase/functions/scrape-motor-details/` + `scrape-motor-details-batch/` + `scrape-motor-images/` + `scrape-motor-prices/` + `multi-source-scraper/` + `test-scraper-simple/` + `debug-xml-inventory/`
-- `supabase/functions/firecrawl-inventory-agent/` (old scraping)
-- `api/cron/stock-sync.ts` and `api/cron/scrape-motor-details.ts` (calls dead functions)
-- `src/pages/TestXMLInventory.tsx` and route in `App.tsx`
-- `src/pages/TestScraper.tsx` if present, route in `App.tsx`
-- `README_XML_INTEGRATION.md`
-- `src/hooks/useAutoImageScraping.ts` (calls dead `scrape-motor-details`)
+### Fixes
 
-**Files to edit (remove dead `scrape-inventory` / `scrape-motor-details` invocations)**:
-- `src/components/quote-builder/MotorSelection.tsx` — remove the manual-refresh button calling `scrape-inventory` (line ~663) and the quick-view enrichment call (lines ~870, ~1921)
-- `src/components/admin/InventoryDiagnostics.tsx`, `UnifiedInventoryDashboard.tsx`, `InventoryMonitor.tsx`, `ScrapeMotorSpecs.tsx` — replace the "manual refresh" buttons with a single button that calls `sync-lightspeed-inventory` instead, or remove the buttons entirely. I'll consolidate into one "Sync Lightspeed Inventory now" admin button on the existing `AdminStockSync.tsx` page.
-- `src/pages/AdminStockSync.tsx` — currently calls `stock-inventory-sync` (deleted). Repoint to `sync-lightspeed-inventory`.
-- `vercel.json` — remove the `0 5 * * *` cron entry pointing at `/api/cron/stock-sync`. Replace with a daily call to `sync-lightspeed-inventory` via Supabase pg_cron (cleaner than Vercel cron for this).
-- `supabase/config.toml` — remove the `[functions.scrape-motor-details]` and `[functions.scrape-motor-details-batch]` `verify_jwt` blocks
-- `README.md` — remove the curl examples for `scrape-inventory-v2`
+#### 1. Switch to `@sparticuz/chromium` for Vercel-compatible Chromium *(critical)*
+- Add deps: `@sparticuz/chromium` (Vercel-friendly bundled Chromium binary, ~50MB) + `puppeteer-core` (no auto-download)
+- Replace the `puppeteer` import in `scripts/prerender.ts` with `puppeteer-core` and pass `executablePath: await chromium.executablePath()`, `args: chromium.args`
+- Locally fall back to system Chrome if `@sparticuz/chromium` can't resolve a binary (dev-mode guard)
+- Remove the heavyweight `puppeteer` dep — it's unused at runtime and bloats install
 
-**Add the daily Lightspeed sync via pg_cron** (replaces the Vercel cron):
-```sql
-SELECT cron.schedule(
-  'lightspeed-daily-sync',
-  '0 5 * * *',  -- 5am UTC daily, same as before
-  $$ SELECT net.http_post(
-    url := 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/sync-lightspeed-inventory',
-    headers := jsonb_build_object('Authorization', 'Bearer <service-role-key>', 'Content-Type', 'application/json'),
-    body := '{"trigger":"cron"}'::jsonb
-  ) $$
-);
-```
+#### 2. Make prerender a hard failure when it can't render *(critical)*
+- In `vite.config.ts` `prerenderPlugin`, fail the build with `process.exit(1)` if the spawn exits non-zero **AND** the env var `STRICT_PRERENDER=1` is set (Vercel will set this). This way local dev keeps the soft-fail; production breaks loudly so we never ship a regression like this again.
+- Add a post-prerender sanity check: count files in `dist/{route}/index.html` for each of the 8 routes; if any are missing or under 50 KB, exit 1.
 
----
+#### 3. Add `ClaudeBot` to `robots.txt`
+- One missing UA from the audit. `Meta-ExternalAgent` and `OAI-SearchBot` are already there.
 
-### Part 2: Lightspeed Sync Failure Alerts
+#### 4. Tighten `vercel.json` rewrites
+- The current `/.well-known/(.*)` rewrite to itself is redundant (Vercel auto-serves static files) but harmless. Remove for clarity.
+- Confirm explicit per-route rewrites (`/repower → /repower/index.html`, etc.) come **before** the SPA catch-all — they already do. ✓
+- Add `/quote/motor-selection` index already listed. ✓
+- No structural changes needed beyond the cleanup.
 
-**Goal**: When the daily Lightspeed sync fails (or returns suspiciously few motors), get notified immediately so stale `in_stock` data doesn't poison the AI agent / MCP responses for days.
+#### 5. Document the env var Vercel needs
+- After this ships, Vercel project settings need `STRICT_PRERENDER=1` added (one-time, takes 10 seconds). I'll note this in the post-deploy step. If you'd rather I not add the strict flag and just rely on `@sparticuz/chromium` working, say so — but the strict flag is what prevents this exact silent-fail from happening again.
 
-**Approach**: SMS via Twilio to `ADMIN_PHONE` on failure. Email is overkill — you already have ADMIN_PHONE configured and a Twilio sender, and a text gets your attention faster than email-buried-in-inbox.
-
-**Implementation**:
-1. **Edit `supabase/functions/sync-lightspeed-inventory/index.ts`** — wrap the body in try/catch. On failure (or if `motors found = 0` when there were motors yesterday), call a new `notify-admin-sms` helper with the error context. Also write a row to `cron_job_logs` (table already exists with the right schema — `job_name`, `status`, `motors_found`, `motors_updated`, `error_message`, `result`).
-2. **Create `supabase/functions/notify-admin-sms/index.ts`** — small wrapper that takes `{ subject, body }` and sends an SMS via Twilio's REST API to `ADMIN_PHONE` from `TWILIO_FROM_NUMBER`. Auth uses Twilio account SID + auth token (we'll confirm secrets exist; if not, ask to add them).
-   - Alternative: connect via the **Twilio connector** (`standard_connectors--connect twilio`) so we don't manage the SID/auth-token directly. Cleaner. I'll use the connector.
-3. **Smart "suspiciously empty" guard**: after sync, compare `motors_found` to the most recent successful run in `cron_job_logs`. If today's count drops by more than 50%, send an SMS alert even on technical "success" — this catches Lightspeed API silently returning empty results.
-4. **Optional toggle**: add a row to `admin_sources` table with `key = 'lightspeed_alerts_enabled'`, `value = 'true'` so you can mute alerts during planned maintenance without redeploying.
-
-**SMS content** (kept short — SMS is cramped):
-```
-HBW Lightspeed sync FAILED 5:01am Apr 22.
-Error: Failed to read mercury_motor_inventory: timeout
-Last good sync: yesterday 5:02am, 47 motors.
-Check: mercuryrepower.ca/admin/stock-sync
-```
-
-**Twilio secrets check**: `TWILIO_FROM_NUMBER` and `ADMIN_PHONE` exist. The Twilio account SID + auth token (or connector connection) need to be confirmed. If missing, I'll ask before proceeding.
-
----
-
-### Diagram
+### Files to change
 
 ```text
-Daily 5am UTC
-    │
-    └──> pg_cron triggers sync-lightspeed-inventory
-              │
-              ├── SUCCESS (with sane motor count)
-              │      └─ insert cron_job_logs row, status=completed
-              │
-              ├── SUCCESS but motors_found dropped >50% from yesterday
-              │      ├─ insert cron_job_logs row, status=warning
-              │      └─ invoke notify-admin-sms ──> Twilio SMS to ADMIN_PHONE
-              │
-              └── FAILURE (exception, timeout, auth error)
-                     ├─ insert cron_job_logs row, status=failed, error_message=...
-                     └─ invoke notify-admin-sms ──> Twilio SMS to ADMIN_PHONE
+package.json
+  - remove: "puppeteer"
+  + add:    "puppeteer-core", "@sparticuz/chromium"
+
+scripts/prerender.ts
+  - puppeteer.launch({ headless, args: [...] })
+  + chromium-aware launch with fallback for local dev
+
+vite.config.ts
+  prerenderPlugin: hard-fail on non-zero exit when STRICT_PRERENDER=1
+                   + post-render existence/size sanity check
+
+vercel.json
+  drop redundant /.well-known/(.*) self-rewrite
+
+public/robots.txt
+  + ClaudeBot Allow: /
 ```
 
----
+### What you do after I ship
+1. In Vercel project settings → Environment Variables, add `STRICT_PRERENDER=1` (Production scope). One-time setup.
+2. Trigger a redeploy (push or manual).
+3. Run your six acceptance curls. All should pass — different SHAs, schema present, well-known files 200, no meta-refresh, msvalidate present, pickup schema present.
+4. Send me your real Bing verification token so I can swap `BING_VERIFICATION_TBD`.
 
-### Risk + mitigation
-- **Removing `useAutoImageScraping.ts`**: This hook auto-fetches images for motors missing them. Since you've moved to Dropbox-folder-sync for images (per memory), this is dead weight. Confirmed safe to remove. Motor cards have a 7-tier fallback that doesn't depend on this hook.
-- **Removing manual refresh buttons in admin**: I'll consolidate to one button on the existing Stock Sync admin page rather than scatter them across 4 components. Less surface area, less confusion.
-- **Customer-facing scraper call in `MotorSelection.tsx`**: This is a stale "refresh inventory" button that's been silently failing for users. Removing it is a bug fix, not a regression.
-
-### What you'll do
-Nothing for Part 1 — pure cleanup. For Part 2, after the alert function is shipped:
-1. Confirm the Twilio connector is connected (or provide Account SID + Auth Token if you want me to use them directly without the connector)
-2. Wait for tomorrow's 5am sync — if it succeeds you get nothing (silent good news); if it fails you get a text within 30 seconds
-3. Test manually by hitting `Sync Lightspeed Inventory now` in admin and verifying `cron_job_logs` gets a row
-
-### Question before I start
-
-**Twilio access**: Do you want me to use the **Twilio connector** (cleaner — no manual secret management, gateway handles auth refresh) or the **direct Twilio REST API** with raw secrets you'd add? Connector is recommended unless you already have Twilio credentials in your secrets you'd rather use.
+### Risk
+- `@sparticuz/chromium` adds ~50 MB to `node_modules` but **only at build time** (not bundled into the deployed app). Vercel builds will be ~30s slower. Acceptable trade for crawler visibility.
+- If `@sparticuz/chromium`'s prebuilt binary doesn't match Vercel's runtime, the build will fail loudly (not silently like today). I'll pin a known-good version (`@sparticuz/chromium@131`) compatible with current Vercel build images.
 
