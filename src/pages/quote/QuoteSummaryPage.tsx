@@ -41,6 +41,7 @@ import { Download } from 'lucide-react';
 import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
+import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
 
 // Package warranty year constants
 const COMPLETE_TARGET_YEARS = 7;
@@ -955,6 +956,7 @@ export default function QuoteSummaryPage() {
 
   return (
     <>
+      <QuoteSummaryPageSEO />
       {/* Deposit Info Dialog */}
       <DepositInfoDialog
         open={showDepositDialog}

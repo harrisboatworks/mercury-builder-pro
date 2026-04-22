@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { BoatInformation } from '@/components/quote-builder/BoatInformation';
+import { BoatInfoPageSEO } from '@/components/seo/BoatInfoPageSEO';
 import { useQuote } from '@/contexts/QuoteContext';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
@@ -71,6 +72,7 @@ export default function BoatInfoPage() {
 
   return (
     <PageTransition>
+      <BoatInfoPageSEO />
       <QuoteLayout>
         <div className="space-y-6">
           <div className="flex items-center gap-4">
