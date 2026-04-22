@@ -1,4 +1,17 @@
-import { Document, Page, Text, View, StyleSheet, Font } from '@react-pdf/renderer';
+import {
+  Document as PDFDocument,
+  Page as PDFPage,
+  Text as PDFText,
+  View as PDFView,
+  StyleSheet,
+  Font,
+} from '@react-pdf/renderer';
+
+// Cast to any to work around @react-pdf/renderer + React 18 JSX type mismatch.
+const Document = PDFDocument as any;
+const Page = PDFPage as any;
+const Text = PDFText as any;
+const View = PDFView as any;
 import { COMPANY_INFO } from '@/lib/companyInfo';
 
 // Define styles
