@@ -30,6 +30,23 @@ Deno.serve(async (req) => {
     }
   }
 
+  // Insert cron_job_logs row (running) — captures every invocation
+  let cronLogId: string | null = null;
+  try {
+    const { data: cronLogRow } = await supabase
+      .from('cron_job_logs')
+      .insert({
+        job_name: 'sync-lightspeed-inventory',
+        status: 'running',
+        started_at: startedAt,
+      })
+      .select('id')
+      .single();
+    cronLogId = cronLogRow?.id ?? null;
+  } catch (e) {
+    console.error('Failed to insert cron_job_logs row:', e);
+  }
+
   try {
     console.log('🔄 Starting Lightspeed inventory sync from mercury_motor_inventory view');
 
@@ -275,6 +292,30 @@ Deno.serve(async (req) => {
       );
     }
 
+    // ── 6b. Update cron_job_logs with success/warning result ──
+    if (cronLogId) {
+      try {
+        await supabase
+          .from('cron_job_logs')
+          .update({
+            status: syncStatus,
+            motors_found: inventory?.length || 0,
+            motors_updated: matchedMotors.length,
+            completed_at: new Date().toISOString(),
+            result: {
+              unique_models: modelGroups.size,
+              matched: matchedMotors.length,
+              unmatched: unmatchedModels.length,
+              suspicious_drop: suspiciousDropDetected,
+              previous_unit_count: lastGoodCount,
+            },
+          })
+          .eq('id', cronLogId);
+      } catch (e) {
+        console.error('Failed to update cron_job_logs (success):', e);
+      }
+    }
+
     // ── 7. Email notification for unmatched motors ──
     if (unmatchedModels.length > 0) {
       const resendApiKey = Deno.env.get('RESEND_API_KEY');
@@ -354,6 +395,24 @@ Deno.serve(async (req) => {
       });
     } catch (logErr) {
       console.error('Failed to log sync failure:', logErr);
+    }
+
+    // Update cron_job_logs with failure
+    if (cronLogId) {
+      try {
+        await supabase
+          .from('cron_job_logs')
+          .update({
+            status: 'failed',
+            motors_found: 0,
+            motors_updated: 0,
+            error_message: errMsg,
+            completed_at: new Date().toISOString(),
+          })
+          .eq('id', cronLogId);
+      } catch (e) {
+        console.error('Failed to update cron_job_logs (failure):', e);
+      }
     }
 
     // SMS admin on failure
