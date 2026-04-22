@@ -1,77 +1,79 @@
 
 
-## Hydration overwrite fix — stop GlobalSEO from polluting per-page schema
+## What's actually wrong
 
-### Root cause
+Production is **not** broken the way the audit claims. `www.mercuryrepower.ca/mercury-pro-xs`, `/faq`, and the other landing pages all return real prerendered HTML with correct titles, H1s, and JSON-LD. Verified directly against the deployed bundle.
 
-`<GlobalSEO />` is mounted globally in `src/App.tsx` (line 557, inside the `<App>` shell, runs on every route). It injects a JSON-LD `@graph` containing 5 nodes — including a **homepage `WebPage @id="…/#webpage"`** with `name: "Mercury Repower Quotes Online…"` — into every page after hydration.
+The audit was run against the **apex** `mercuryrepower.ca` (no `www`), which 307-redirects to `www.`. The auditor's headless tool didn't follow the redirect, so it saw the 1-line "Redirecting..." body and reported `h1: 404`, `jsonLd: 0`. False alarm.
 
-The prerender ships the correct per-page `@graph` (e.g. `WebPage @id="…/mercury-pro-xs#webpage"` + `FAQPage @id="…/mercury-pro-xs#faqpage"`). After hydration the global block adds a second JSON-LD script, so Google sees both copies side-by-side. That's why Rich Results Test reports everything 2× and flags "Duplicate field FAQPage" on Pro XS (the page's own `MercuryProXSSEO` also adds `WebPage @id=…#webpage`, `FAQPage @id=…#faqpage`, etc., which collide once GlobalSEO fires the global homepage graph).
+But the audit did surface a real, separate problem worth fixing.
 
-The "homepage title in live DOM" is most likely the `name` field of the global WebPage JSON-LD node (which reads `Mercury Repower Quotes Online — Real Prices, No Forms…`) being mistaken for `<title>` in Claude's report. Per-page `<Helmet><title>` is correctly set by every landing page's SEO component (verified in MercuryProXSSEO line 110). Either way, the fix is the same: stop GlobalSEO from writing page-level schema on non-home routes.
+## The real bug: canonical/host mismatch
 
-### The fix — 3 targeted changes
+- Vercel forces all traffic to `www.mercuryrepower.ca` (307 from apex).
+- Every prerendered page emits `<link rel="canonical" href="https://mercuryrepower.ca/...">` — the apex, no `www`.
+- So Google fetches `www.mercuryrepower.ca/mercury-pro-xs`, reads "the canonical is the apex," follows the apex, gets 307'd back. Self-conflicting signal.
+- `SITE_URL` in `src/lib/site.ts` is hardcoded to `https://mercuryrepower.ca` (apex), which feeds every canonical, OG URL, JSON-LD `@id`, sitemap entry, and RSS link.
 
-**1. Slim down `src/components/seo/GlobalSEO.tsx`**
+This needs to be reconciled to one host. Pick the one Vercel actually serves.
 
-Strip the page-level nodes. Keep only the truly site-wide nodes that are safe to duplicate across every page:
+## Plan
 
-- Keep: `WebSite @id=#website`, `Organization @id=#organization`, `LocalBusiness @id=#localbusiness`
-- Remove: `WebPage @id=#webpage` (page-level — must come from each route's SEO component)
-- Remove: `Service @id=#quote-service` (move to `HomepageSEO` only)
+### 1. Decide canonical host
+Vercel currently serves `www`. Two options:
 
-Keep the hreflang `<link rel="alternate">` tags as-is (those are safe site-wide).
+**Option A (recommended — least risk):** Make `www` canonical everywhere.
+- Change `SITE_URL` default in `src/lib/site.ts` from `https://mercuryrepower.ca` → `https://www.mercuryrepower.ca`.
+- Set Vercel env `VITE_SITE_URL=https://www.mercuryrepower.ca` for the production environment so every build picks it up regardless of source.
+- Keep apex → www 307 (or upgrade to 301 in Vercel domain settings for stronger SEO signal).
+- Result: canonical, OG, JSON-LD, sitemap, RSS, prerendered HTML all agree on `www.`. Apex still works via redirect.
 
-Result: every page gets `WebSite + Organization + LocalBusiness` as global context (these have stable `@id`s and Google handles duplicates fine), and each route adds its own `WebPage`, `BreadcrumbList`, `FAQPage`, `ProductGroup`, etc. on top. No conflicts.
+**Option B:** Make apex canonical.
+- Flip Vercel's preferred domain from `www` → apex (Project → Domains → set apex as primary).
+- `www` will then 307 → apex, matching the existing canonical strings.
+- Riskier because every external link, share, and historical Google index entry currently points at `www.` after the redirect.
 
-**2. Move the `Service @id=#quote-service` node into `src/components/seo/HomepageSEO.tsx`**
+I'll proceed with **Option A** unless you say otherwise — it requires no Vercel domain reconfiguration and matches what production already serves.
 
-Add it to the `@graph` array there. It only describes the homepage's online quote service — it shouldn't appear on `/mercury-pro-xs` or any other route.
+### 2. Apply the change
+- Edit `src/lib/site.ts`: default `SITE_URL` to `https://www.mercuryrepower.ca`.
+- Verify nothing else hardcodes the apex string. Search `src/`, `scripts/static-prerender.mjs`, `public/sitemap.xml`, `public/rss.xml`, `public/llms.txt`, `public/robots.txt` for `mercuryrepower.ca` without `www.` and update.
+- Rebuild and redeploy (Vercel auto-deploys from `main`).
 
-**3. Fix `MercuryProXSSEO.tsx` ProductGroup variants — add `image` field**
+### 3. Verify
+For each route below, confirm with `curl` against `www.mercuryrepower.ca`:
+- title is page-specific (not the generic site title)
+- H1 is unique and not "404"
+- `application/ld+json` count ≥ 1
+- `<link rel="canonical">` matches the requested URL exactly (with `www`)
 
-Each entry in `PRO_XS_STATIC_OFFERS` needs an image URL for Merchant Listings eligibility. Use the Mercury family hero already on the site (or a per-HP placeholder if available). Add an `image` field to `PRO_XS_STATIC_OFFERS` and reference it in the variant Offer object:
-
-```ts
-{
-  "@type": "Product",
-  "name": v.name,
-  "image": v.image,        // NEW
-  "brand": { ... },
-  "category": "Outboard Motor",
-  "offers": { ... }
-}
+Routes to verify:
+```
+/mercury-pro-xs
+/mercury-outboards-ontario
+/mercury-pontoon-outboards
+/mercury-repower-faq
+/how-to-repower-a-boat
+/mercury-dealer-peterborough
+/mercury-dealer-cobourg
+/mercury-dealer-gta
+/agents
+/about
+/contact
+/faq
 ```
 
-I'll use `${SITE_URL}/assets/mercury-pro-xs-hero.jpg` if it exists in `src/assets/` or `public/`, otherwise fall back to the Mercury logo / Harris logo as a temporary valid URL. I'll grep `src/assets` and `public/lovable-uploads` first to pick a real existing image.
+### 4. Pro XS variant images (separate item from prior audit)
+Add a real image URL per Pro XS variant (`PRO_XS_STATIC_OFFERS` in `src/components/seo/MercuryProXSSEO.tsx` and the prerender mirror in `scripts/static-prerender.mjs`). Currently all four point to `/social-share.jpg` as a placeholder, which technically satisfies the schema but won't get Merchant Listings rich results.
+- Need from you: 4 hosted image URLs (115/150/200/250 Pro XS) from Mercury's catalog or HBW's own product photography. If unavailable today, keep the shared placeholder — schema stays valid.
 
-### Files touched
+### 5. Reply to the auditor
+Once verified, the response is: production was always serving correct content on `www.`; the audit hit the apex redirect and misread it. Canonical mismatch has been fixed so headless audits and Google now see a consistent host.
 
-| # | File | Action |
-|---|---|---|
-| 1 | `src/components/seo/GlobalSEO.tsx` | Remove `WebPage` + `Service` nodes from `@graph`. Keep `WebSite`, `Organization`, `LocalBusiness`, hreflang. |
-| 2 | `src/components/seo/HomepageSEO.tsx` | Add `Service @id=#quote-service` node to its `@graph`. |
-| 3 | `src/components/seo/MercuryProXSSEO.tsx` | Add `image` field to `PRO_XS_STATIC_OFFERS` and to each `hasVariant` Product. |
+## Technical details
 
-### Out of scope (not changing)
-
-- The prerender script (`scripts/static-prerender.mjs`) — it's correct already.
-- The 30+ other per-page SEO components — they're correct, they just got drowned out by GlobalSEO. Once GlobalSEO is slimmed they'll stand alone cleanly.
-- Updating other Product schemas — only Pro XS uses `ProductGroup`/`hasVariant`. Other landing pages use `Service` and `FAQPage` which don't require `image`.
-
-### Verification (post-deploy, manual)
-
-```
-for url in / /mercury-pro-xs /mercury-outboards-ontario /mercury-pontoon-outboards \
-          /mercury-repower-faq /how-to-repower-a-boat /mercury-dealer-peterborough \
-          /mercury-dealer-cobourg /mercury-dealer-gta /agents /contact /about; do
-  echo "=== $url ==="
-  curl -s "https://www.mercuryrepower.ca$url" | grep -oE '"@id":"[^"]*#webpage"' | sort -u
-done
-```
-
-Each URL should return exactly **one** `#webpage` `@id`, matching the URL (e.g. `…/mercury-pro-xs#webpage`, never bare `…/#webpage` on a non-home page). Then re-run Google Rich Results Test on `/mercury-pro-xs`:
-- FAQ: 1 valid (was 2 invalid)
-- Merchant listings: 4 valid (was 8 invalid)
-- Duplicate field FAQPage error: gone
+- Files touched: `src/lib/site.ts`, possibly small string updates in `scripts/static-prerender.mjs`, `public/sitemap.xml`, `public/rss.xml`, `public/llms.txt`, `src/components/seo/MercuryProXSSEO.tsx`.
+- No route changes needed in `App.tsx` — routing is correct, prerender is correct, Vercel rewrites are correct.
+- No Vercel config change required for Option A (the apex → www redirect already exists at the platform level).
+- Build/deploy: `npm run build` runs the static prerender; Vercel deploys on push to `main`.
 
