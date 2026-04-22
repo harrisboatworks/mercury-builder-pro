@@ -4,6 +4,17 @@
   "framework": "vite",
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "quote.harrisboatworks.ca"
+        }
+      ],
+      "destination": "https://www.mercuryrepower.ca/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*",
       "has": [
         {
