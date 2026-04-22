@@ -335,9 +335,36 @@ Deno.serve(async (req) => {
     });
 
   } catch (error) {
-    console.error('❌ Lightspeed sync error:', error);
+    const errMsg = error instanceof Error ? error.message : String(error);
+    console.error('❌ Lightspeed sync error:', errMsg);
+
+    // Log failure to sync_logs
+    try {
+      await supabase.from('sync_logs').insert({
+        sync_type: 'lightspeed',
+        status: 'failed',
+        motors_processed: 0,
+        motors_in_stock: 0,
+        details: {
+          error: errMsg,
+          source: 'mercury_motor_inventory view (Lightspeed 3PA API)',
+          started_at: startedAt,
+        },
+        completed_at: new Date().toISOString(),
+      });
+    } catch (logErr) {
+      console.error('Failed to log sync failure:', logErr);
+    }
+
+    // SMS admin on failure
+    const ts = new Date().toISOString().replace('T', ' ').slice(0, 16);
+    await notifyAdmin(
+      'HBW Lightspeed sync FAILED',
+      `Error at ${ts} UTC: ${errMsg}\nCheck admin/stock-sync.`
+    );
+
     return new Response(
-      JSON.stringify({ success: false, error: error.message }),
+      JSON.stringify({ success: false, error: errMsg }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
   }
