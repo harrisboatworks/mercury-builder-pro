@@ -8,22 +8,22 @@
  * Crawlers that don't run JS (Meta-ExternalAgent, some citation bots,
  * social previews) get real content instead of an empty <div id="root">.
  *
- * Chromium resolution:
- *   1. PUPPETEER_EXECUTABLE_PATH (explicit override)
- *   2. @sparticuz/chromium (bundled, works on Vercel build containers)
- *   3. System Chrome at common dev paths (local fallback)
+ * Uses the full `puppeteer` package (not puppeteer-core + @sparticuz/chromium)
+ * because Vercel's BUILD container (Amazon Linux 2023) does not ship libnss3,
+ * which @sparticuz/chromium's runtime-targeted binary depends on. The bundled
+ * Chromium that comes with `puppeteer` includes every required shared lib
+ * (NSS, NSPR, fontconfig, etc.) and works in Vercel's build environment.
  *
  * Exit codes:
  *   0 — all routes prerendered successfully
  *   1 — chromium failed to launch OR a required route failed
- *       (vite plugin escalates this to a build failure when STRICT_PRERENDER=1)
+ *       (vite plugin escalates this to a build failure by default)
  */
 import { mkdirSync, writeFileSync, existsSync, statSync } from 'fs';
 import { join, resolve } from 'path';
 import { createServer } from 'http';
 import sirv from 'sirv';
-import puppeteer from 'puppeteer-core';
-import chromium from '@sparticuz/chromium';
+import puppeteer from 'puppeteer';
 
 const DIST = resolve(process.cwd(), 'dist');
 const PORT = 4173;
@@ -40,31 +40,6 @@ const ROUTES = [
   '/quote/motor-selection',
 ];
 
-async function resolveExecutablePath(): Promise<string> {
-  if (process.env.PUPPETEER_EXECUTABLE_PATH) {
-    return process.env.PUPPETEER_EXECUTABLE_PATH;
-  }
-  try {
-    const p = await chromium.executablePath();
-    if (p) return p;
-  } catch (err) {
-    console.warn('[prerender] @sparticuz/chromium executablePath failed:', (err as Error).message);
-  }
-  // Local-dev fallbacks
-  const candidates = [
-    '/usr/bin/google-chrome',
-    '/usr/bin/chromium',
-    '/usr/bin/chromium-browser',
-    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-  ];
-  for (const c of candidates) {
-    if (existsSync(c)) return c;
-  }
-  throw new Error(
-    'No Chromium executable found. Set PUPPETEER_EXECUTABLE_PATH or install Chrome locally.'
-  );
-}
-
 async function main() {
   if (!existsSync(DIST)) {
     console.warn('[prerender] dist/ not found — skipping');
@@ -78,19 +53,16 @@ async function main() {
 
   let browser;
   try {
-    const executablePath = await resolveExecutablePath();
-    console.log(`[prerender] using chromium at: ${executablePath}`);
     browser = await puppeteer.launch({
-      executablePath,
       headless: true,
       args: [
-        ...chromium.args,
         '--no-sandbox',
         '--disable-setuid-sandbox',
         '--disable-dev-shm-usage',
       ],
       defaultViewport: { width: 1280, height: 800 },
     });
+    console.log('[prerender] chromium launched (bundled puppeteer)');
   } catch (err) {
     console.error('[prerender] FATAL: failed to launch Chromium:', (err as Error).message);
     server.close();
