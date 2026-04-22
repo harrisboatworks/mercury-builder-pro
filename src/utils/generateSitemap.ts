@@ -39,6 +39,9 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/mercury-dealer-peterborough', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/mercury-dealer-cobourg', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/mercury-dealer-gta', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    // Pilot SEO landing pages — Batch 3 (Product hub + lineup)
+    { loc: '/mercury-pro-xs', lastmod: today, changefreq: 'weekly', priority: 0.85 },
+    { loc: '/mercury-outboards-ontario', lastmod: today, changefreq: 'weekly', priority: 0.85 },
     { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', lastmod: today, changefreq: 'yearly', priority: 0.3 },
   ];
