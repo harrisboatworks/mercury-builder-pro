@@ -24,7 +24,6 @@ import { useNavigate } from 'react-router-dom';
 import { canadianEncouragement, loadingMessages, emptyStateMessages, friendlyErrors } from '@/lib/canadian-messages';
 import { MonthlyPaymentDisplay } from './MonthlyPaymentDisplay';
 import harrisLogo from '@/assets/harris-logo.png';
-import { useAutoImageScraping } from '@/hooks/useAutoImageScraping';
 // Mobile optimization imports
 import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
 import { MobileFilterSheet } from '@/components/ui/mobile-filter-sheet';
@@ -222,9 +221,8 @@ export const MotorSelection = ({
   const [loading, setLoading] = useState(true);
   const [updating, setUpdating] = useState(false);
   const [selectedMotor, setSelectedMotor] = useState<Motor | null>(null);
-  
-  // Auto-trigger background image scraping for motors without images
-  const imageScrapeStatus = useAutoImageScraping(motors);
+
+  // Note: Legacy auto-image-scraping removed. Motor images now come from Dropbox sync + motor_media table.
   const [showCelebration, setShowCelebration] = useState(false);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [celebrationParticles, setCelebrationParticles] = useState<Array<{
@@ -660,7 +658,7 @@ export const MotorSelection = ({
       const {
         data,
         error
-      } = await supabase.functions.invoke('scrape-inventory');
+      } = await supabase.functions.invoke('sync-lightspeed-inventory');
       if (error) throw error;
 
       // Reload motors after update

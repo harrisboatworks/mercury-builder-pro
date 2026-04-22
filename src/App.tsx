@@ -123,7 +123,6 @@ const SpanishBlogArticlePage = lazy(() => import("./pages/blog/SpanishBlogArticl
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
 // Vite replaces `import.meta.env.DEV` at build time, so the Dev import is tree-shaken from production.
 const Dev = lazy(() => import("./pages/Dev"));
-const TestScraper = lazy(() => import("./pages/TestScraper"));
 const TestEmail = lazy(() => import("./pages/TestEmail"));
 const TestFinancingEmails = lazy(() => import("./pages/TestFinancingEmails"));
 const StagingImageSizing = lazy(() => import("./pages/StagingImageSizing"));
@@ -413,7 +412,6 @@ function AnimatedRoutes() {
         <Route path="/agents" element={<AgentsHub />} />
         <Route path="/dev" element={<Dev />} />
         <Route path="/voice-test" element={<VoiceTest />} />
-        <Route path="/test/scraper" element={<TestScraper />} />
         {/* Removed obsolete test routes */}
         <Route path="/quotes/new" element={<NewQuote />} />
         <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
