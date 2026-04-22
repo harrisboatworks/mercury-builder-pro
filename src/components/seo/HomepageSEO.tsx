@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 
 export function HomepageSEO() {

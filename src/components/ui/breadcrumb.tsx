@@ -45,7 +45,7 @@ const BreadcrumbLink = React.forwardRef<
     asChild?: boolean
   }
 >(({ asChild, className, ...props }, ref) => {
-  const Comp = asChild ? Slot : "a"
+  const Comp: any = asChild ? Slot : "a"
 
   return (
     <Comp

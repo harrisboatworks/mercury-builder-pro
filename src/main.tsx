@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ThemeProvider } from 'next-themes'
-import { HelmetProvider } from 'react-helmet-async'
+import { HelmetProvider } from '@/lib/helmet'
 import App from './App.tsx'
 import './index.css'
 
