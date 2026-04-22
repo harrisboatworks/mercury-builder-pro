@@ -1,42 +1,37 @@
 
 
-## Sitemap status: already in place — minor expansion recommended
+## Replace JSON-LD on Home, About, and Contact pages
 
-A dynamic sitemap is already generated, published, and discoverable. No setup needed. I'll only add a small expansion if you want broader entry-point coverage.
+Three SEO components hold the existing `<script type="application/ld+json">` blocks. Per your instructions, I will **replace** the `structuredData` object in each — no merging, no second block — keeping the existing `Helmet` / meta / og / twitter tags intact.
 
-### What already exists
+### Files changed
 
-- **Build-time generator**: `vite.config.ts` → `sitemapPlugin` runs on every Vercel production build, calling `generateSitemapXML()` from `src/utils/generateSitemap.ts` and writing `public/sitemap.xml`.
-- **Published**: live at `https://mercuryrepower.ca/sitemap.xml` (52 URLs today: 12 static pages + 40 blog articles, with image entries for blog posts).
-- **Discoverable**: `public/robots.txt` ends with `Sitemap: https://mercuryrepower.ca/sitemap.xml`, and `vercel.json` has a passthrough rewrite for `/sitemap.xml`.
-- **RSS feed** also generated at `/rss.xml` for blog content.
-- **Quote funnel entry**: `/quote/motor-selection` is included with `priority: 0.9, changefreq: daily`.
-
-The deeper quote funnel steps (`/quote/options`, `/quote/trade-in`, `/quote/summary`, etc.) are intentionally excluded — they are session-state pages that have no value (and no content) without an active quote in progress. Indexing them would hurt SEO, not help it.
-
-### Optional expansion
-
-A few public, indexable pages exist as routes but aren't currently in the sitemap. If you want them discoverable, I'd add these to the static list in `src/utils/generateSitemap.ts`:
-
-| Path | Why add | Priority |
+| Page | File | What changes |
 |---|---|---|
-| `/accessories` | Public catalog page, real content | 0.7 |
-| `/compare` | Motor comparison tool, useful entry | 0.7 |
-| `/trade-in-value` | Standalone trade-in estimator, high search intent | 0.8 |
-| `/financing` (already redirects to `/finance-calculator`, skip) | — | — |
+| `/` | `src/components/seo/GlobalSEO.tsx` | Replace the entire `structuredData` `@graph` (currently 4 nodes: Organization, LocalBusiness, WebSite, second Organization) with the new 5-node graph (WebSite, WebPage, Organization, LocalBusiness+Store+AutoRepair, Service). Keep the `hreflang` `<link>` tags and the `Helmet` wrapper. |
+| `/about` | `src/components/seo/AboutPageSEO.tsx` | Replace `structuredData` with the new 2-node graph (AboutPage, Organization). Keep `<title>`, `<meta>`, OG, Twitter, canonical. |
+| `/contact` | `src/components/seo/ContactPageSEO.tsx` | Replace `structuredData` with the new 2-node graph (ContactPage, LocalBusiness+Store+AutoRepair with two ContactPoints). Keep `<title>`, `<meta>`, OG, Twitter, canonical. |
 
-Multilingual landing pages (`/fr`, `/zh`) — skip from the main sitemap; they belong in hreflang tags (already handled by `GlobalSEO.tsx`) and ideally a separate locale sitemap if traffic warrants it later.
+JSON is pasted exactly as provided in `lovable-schema-prompt-2.md` — same `@id`s, same URLs, same fields, same casing. `SITE_URL` is not used; the new schema hardcodes `https://mercuryrepower.ca` per your spec.
 
-### Change
+### Things you should know before I ship
 
-Edit `src/utils/generateSitemap.ts` → `getStaticPages()` to add the three new entries. Vercel's next deploy regenerates `public/sitemap.xml` automatically. Then ping Google/Bing via Search Console / Webmaster Tools (manual step on your side — they'll also re-crawl on their own within days since the sitemap is referenced in `robots.txt`).
+1. **You're trading away some signals on the home page.** The current `GlobalSEO` graph includes `aggregateRating` (4.9 / 127 reviews), `openingHoursSpecification`, a 12-item `hasOfferCatalog`, and a `WebSite.potentialAction` SearchAction. The new graph drops all of those in favor of a leaner, cleaner Organization + LocalBusiness + Service shape. Your instruction says "replace, do not merge" — confirming I'll do exactly that. If you'd rather keep the rating + hours + offer catalog and merge them in, say so before approval.
 
-### What you don't need to do
+2. **Logo URL.** New schema points to `https://www.harrisboatworks.ca/logo.png`. The current code points to `${SITE_URL}/assets/harris-logo-black.png`. I'll use the new path verbatim. The TODO at the bottom of your prompt acknowledges this — flagging so you can confirm `harrisboatworks.ca/logo.png` actually resolves.
 
-- No new files, no new build step, no Vercel config change.
-- No need to "publish" — the sitemap is already live.
+3. **Geo coordinates differ.** New: `44.1122, -78.0245`. Existing: `44.1456, -78.2542` (GlobalSEO) and `44.1167, -78.2500` (About/Contact). I'll use the new ones as instructed; your prompt notes they're approximate.
 
-### Confirm before I proceed
+4. **No opening hours.** New schema intentionally omits hours (seasonal). Existing About + Contact hardcode Mon–Fri 8–5, Sat 9–2. Those will be removed. Confirming this is intentional per your prompt.
 
-Want me to add the three optional entries (`/accessories`, `/compare`, `/trade-in-value`)? If yes I'll make the one-file change. If no, the sitemap is already doing its job and there's nothing to ship.
+5. **Out of scope, but worth noting.** `AboutPageSEO.tsx` still has a `FAQPage` block that mentions `Verado` in an answer (line 163). Your new schema for About drops the FAQPage entirely, so this gets removed as a side effect — which actually aligns with the Verado exclusion memory. Net positive.
+
+### Deploy
+
+Commit pushes to GitHub `harrisboatworks/mercury-builder-pro`; Vercel auto-deploys. After deploy, verify each page with the Rich Results Test:
+- `https://mercuryrepower.ca/`
+- `https://mercuryrepower.ca/about`
+- `https://mercuryrepower.ca/contact`
+
+Then re-submit the home URL in GSC → URL Inspection → Request Indexing.
 
