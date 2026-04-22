@@ -856,51 +856,13 @@ export const MotorSelection = ({
     setQuickViewMotor(motor);
   };
 
-  // Fetch rich details on-demand for Quick View
+  // Quick View no longer fetches enrichment from a scraper.
+  // Motor descriptions/features/specs now come from the DB (sync-lightspeed-inventory + motor_models).
   useEffect(() => {
-    const needsEnrichment = (m: Motor | null) => {
-      if (!m) return false;
-      const noDesc = !m.description || m.description.trim().length < 20;
-      const noFeat = !Array.isArray(m.features) || m.features.length === 0;
-      const noSpecs = !m.specifications || Object.keys(m.specifications || {}).length === 0;
-      return noDesc || noFeat || noSpecs;
-    };
-    if (quickViewMotor && needsEnrichment(quickViewMotor)) {
-      setQuickViewLoading(true);
-      supabase.functions.invoke('scrape-motor-details', {
-        body: {
-          motor_id: quickViewMotor.id,
-          detail_url: quickViewMotor.detailUrl
-        }
-      }).then(({
-        data,
-        error
-      }) => {
-        if (error) {
-          console.warn('scrape-motor-details error', error);
-          return;
-        }
-        if (data?.success) {
-          const {
-            description,
-            features,
-            specifications
-          } = data as any;
-          // Update list and quick view motor in place
-          setMotors(prev => prev.map(mm => mm.id === quickViewMotor.id ? {
-            ...mm,
-            description,
-            features,
-            specifications
-          } : mm));
-          setQuickViewMotor(prev => prev ? {
-            ...prev,
-            description,
-            features,
-            specifications
-          } as Motor : prev);
-        }
-      }).finally(() => setQuickViewLoading(false));
+    if (quickViewMotor) {
+      setQuickViewLoading(false);
+    }
+  }, [quickViewMotor]);
     }
   }, [quickViewMotor?.id]);
 
