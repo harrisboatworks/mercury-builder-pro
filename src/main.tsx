@@ -9,6 +9,33 @@ const queryClient = new QueryClient()
 
 console.log('🚀 Main.tsx executing...');
 
+// One-time cleanup: unregister any previously installed service workers and
+// purge their caches. The PWA was disabled because it served stale app shell
+// HTML/JS to returning visitors, masking SEO and canonical fixes. This block
+// lets existing visitors recover automatically on their next visit without
+// having to manually clear browser data.
+if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+  navigator.serviceWorker
+    .getRegistrations()
+    .then((regs) => {
+      regs.forEach((r) => {
+        r.unregister().catch(() => {});
+      });
+    })
+    .catch(() => {});
+
+  if (typeof caches !== 'undefined' && caches?.keys) {
+    caches
+      .keys()
+      .then((names) => {
+        names.forEach((n) => {
+          caches.delete(n).catch(() => {});
+        });
+      })
+      .catch(() => {});
+  }
+}
+
 // Helper to create error fallback using safe DOM methods (no innerHTML)
 function createErrorFallback(isRootMissing: boolean, errorDetails?: string) {
   const container = document.createElement('div');
