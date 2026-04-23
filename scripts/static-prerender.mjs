@@ -1573,11 +1573,18 @@ function escapeHtml(s) {
 function stamp(route) {
   let html = shell;
 
+  // NOTE: All Helmet-managed tags (title, description, canonical, JSON-LD) are
+  // stamped with data-rh="true" so react-helmet-async adopts them on hydration
+  // instead of appending duplicate tags after mount.
+
   // <title>
-  html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(route.title)}</title>`);
+  html = html.replace(
+    /<title>[\s\S]*?<\/title>/i,
+    `<title data-rh="true">${escapeHtml(route.title)}</title>`
+  );
 
   // <meta name="description">
-  const metaDesc = `<meta name="description" content="${escapeHtml(route.description)}" />`;
+  const metaDesc = `<meta data-rh="true" name="description" content="${escapeHtml(route.description)}" />`;
   if (/<meta\s+name=["']description["'][^>]*>/i.test(html)) {
     html = html.replace(/<meta\s+name=["']description["'][^>]*>/i, metaDesc);
   } else {
@@ -1585,16 +1592,17 @@ function stamp(route) {
   }
 
   // canonical
-  const canonical = `<link rel="canonical" href="${SITE_URL}${route.path === '/' ? '' : route.path}" />`;
+  const canonical = `<link data-rh="true" rel="canonical" href="${SITE_URL}${route.path === '/' ? '' : route.path}" />`;
   if (/<link\s+rel=["']canonical["'][^>]*>/i.test(html)) {
     html = html.replace(/<link\s+rel=["']canonical["'][^>]*>/i, canonical);
   } else {
     html = html.replace(/<\/head>/i, `${canonical}\n  </head>`);
   }
 
-  // JSON-LD blocks
+  // JSON-LD blocks (Helmet-managed → must carry data-rh marker so per-route
+  // <Helmet> components own them on hydration instead of appending duplicates)
   const jsonLdBlocks = route.schemas
-    .map(s => `<script type="application/ld+json">${JSON.stringify(s)}</script>`)
+    .map(s => `<script data-rh="true" type="application/ld+json">${JSON.stringify(s)}</script>`)
     .join('\n  ');
   html = html.replace(/<\/head>/i, `${jsonLdBlocks}\n  </head>`);
 
