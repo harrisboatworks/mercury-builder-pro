@@ -16,7 +16,7 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 
-import heroImage from '@/assets/landing-hero-mercury.jpg';
+import heroImage from '@/assets/hero-proxs-sunset.jpg';
 import shopImage from '@/assets/landing-repower-shop.jpg';
 import stepPickImage from '@/assets/landing-step-pick.png';
 import stepConfigureImage from '@/assets/landing-step-configure.jpg';
@@ -188,7 +188,7 @@ export default function Index() {
                 <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl aspect-[4/3] lg:aspect-[5/4] bg-muted">
                   <img
                     src={heroImage}
-                    alt="Mercury 4-stroke outboard motor at work on an Ontario lake at golden hour"
+                    alt="Mercury Pro XS outboard motor running on an Ontario lake at sunset"
                     width={1920}
                     height={1280}
                     className="absolute inset-0 w-full h-full object-cover"
