@@ -1634,8 +1634,9 @@ for (const route of routes) {
     failures++;
     continue;
   }
-  // Title presence check: confirm the stamping replaced the shell <title>
-  if (!html.includes('<title>')) {
+  // Title presence check: confirm the stamping replaced the shell <title>.
+  // Match either bare `<title>` or attributed `<title data-rh="true">`.
+  if (!/<title[\s>]/i.test(html)) {
     console.error(`[static-prerender] NO TITLE TAG: ${outFile}`);
     failures++;
     continue;
