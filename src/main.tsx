@@ -68,7 +68,7 @@ try {
   
   console.log('✅ React root created, rendering App...');
   root.render(
-    <HelmetProvider>
+    <HelmetProvider context={{}}>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider
           defaultTheme="light"
