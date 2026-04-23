@@ -147,14 +147,19 @@ const AgentsHub = lazy(() => import("./pages/AgentsHub"));
 
 function Canonical() {
   useEffect(() => {
-    const href = `${SITE_URL}${window.location.pathname}`;
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) {
-      link = document.createElement("link");
-      link.rel = "canonical";
-      document.head.appendChild(link);
+    // Only set a canonical if the prerendered HTML did NOT already provide one,
+    // and only if no per-page SEO component (with data-rh="true") owns it.
+    // This prevents the runtime override from clobbering page-specific canonicals
+    // (e.g. /mercury-pro-xs) with the generic origin+pathname value.
+    const existing = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (existing) {
+      // Respect prerendered or Helmet-managed canonicals.
+      return;
     }
-    link.href = href;
+    const link = document.createElement("link");
+    link.rel = "canonical";
+    link.href = `${SITE_URL}${window.location.pathname}`;
+    document.head.appendChild(link);
   }, []);
   return null;
 }
