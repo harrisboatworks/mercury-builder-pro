@@ -1,7 +1,7 @@
 import { blogArticles, isArticlePublished } from '../data/blogArticles';
 import { supabase } from '../integrations/supabase/client';
 
-const BASE_URL = 'https://mercuryrepower.ca';
+const BASE_URL = 'https://www.mercuryrepower.ca';
 
 interface SitemapEntry {
   loc: string;
@@ -44,6 +44,8 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/mercury-outboards-ontario', lastmod: today, changefreq: 'weekly', priority: 0.85 },
     // Pilot SEO landing pages — Batch 4 (Pontoon)
     { loc: '/mercury-pontoon-outboards', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    // AI agent integration landing page
+    { loc: '/agents', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/privacy', lastmod: today, changefreq: 'yearly', priority: 0.3 },
     { loc: '/terms', lastmod: today, changefreq: 'yearly', priority: 0.3 },
   ];
