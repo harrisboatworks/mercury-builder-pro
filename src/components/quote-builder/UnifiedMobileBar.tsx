@@ -1083,15 +1083,20 @@ export const UnifiedMobileBar: React.FC = () => {
         )}
       </AnimatePresence>
 
+      {/* Overscroll shield — sibling of bar so it stays glued to viewport bottom
+          during iOS rubber-band overscroll (the bar lifts; this stays put). */}
+      <div
+        aria-hidden="true"
+        className="fixed left-0 right-0 bg-white pointer-events-none"
+        style={{ bottom: '-120px', height: '120px', zIndex: 79 }}
+      />
+
       {/* Unified Mobile Bar */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-[80] 
+        className="ios-fixed-bottom fixed bottom-0 left-0 right-0 z-[80] pb-safe
           bg-white border-t border-gray-200
           shadow-[0_-2px_20px_rgba(0,0,0,0.06)]"
-        style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       >
-        {/* Overscroll shield — prevents iOS rubber-band bounce from revealing gap */}
-        <div className="absolute left-0 right-0 top-full h-[120px] bg-white" />
         {/* Always-Visible Tappable Prompt Bar */}
         <motion.button
           onClick={handleNudgeClick}

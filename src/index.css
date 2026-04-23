@@ -150,6 +150,17 @@ body {
       backface-visibility: hidden;
     }
   }
+
+  /* Stabilize fixed bottom bars against Safari URL-bar collapse jitter.
+     Forces GPU compositing so position: fixed elements stay glued to the
+     visual viewport during URL-bar transitions and rubber-band scrolling. */
+  .ios-fixed-bottom {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 }
 
 /* Scroll containers get momentum scrolling */
