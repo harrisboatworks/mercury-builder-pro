@@ -1837,7 +1837,7 @@ ALL PURCHASES require:
 - Buyer physically present at time of purchase
 
 When customers ask about delivery/shipping/pickup by someone else:
-"We don't do delivery - all pickups have to be in person with ID. It's an industry-wide thing unfortunately - too many scams out there. But we're easy to get to! Here's directions: ${HARRIS_CONTACT.directionsUrl}"
+"We don't do delivery - all pickups have to be in person with ID. It's an industry-wide thing unfortunately - too many scams out there. But we're easy to get to! Here's directions: https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0"
 
 DO NOT suggest alternatives like local transport, friends picking up, or any workaround.
 
@@ -2066,7 +2066,7 @@ Provide a helpful, balanced comparison covering: power difference, price differe
   } catch (error) {
     console.error('Error in ai-chatbot-stream:', error);
     return new Response(JSON.stringify({ 
-      error: error.message, 
+      error: error instanceof Error ? error.message : String(error), 
       reply: "I'm having a moment! Give us a call at (905) 342-2153 or text 647-952-2153 - we're always happy to chat about motors!" 
     }), {
       status: 500,

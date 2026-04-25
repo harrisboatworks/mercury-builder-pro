@@ -57,10 +57,10 @@ async function getActivePromotions() {
 }
 
 // Helper function to format motor data for AI
-function formatMotorData(motors) {
-  const motorsByType = {};
+function formatMotorData(motors: any[]) {
+  const motorsByType: Record<string, any[]> = {};
   
-  motors.forEach(motor => {
+  motors.forEach((motor: any) => {
     const type = motor.motor_type || 'Other';
     if (!motorsByType[type]) {
       motorsByType[type] = [];
@@ -78,7 +78,7 @@ function formatMotorData(motors) {
   
   Object.entries(motorsByType).forEach(([type, typeMotors]) => {
     formatted += `**${type} Motors:**\n`;
-    typeMotors.slice(0, 10).forEach(motor => { // Limit to prevent prompt bloat
+    typeMotors.slice(0, 10).forEach((motor: any) => { // Limit to prevent prompt bloat
       const price = motor.price ? `$${motor.price.toLocaleString()}` : 'Call for pricing';
       formatted += `- ${motor.model} (${motor.hp}HP) - ${price} - ${motor.availability}\n`;
     });
@@ -89,12 +89,12 @@ function formatMotorData(motors) {
 }
 
 // Helper function to format promotion data for AI
-function formatPromotionData(promotions) {
+function formatPromotionData(promotions: any[]) {
   if (!promotions.length) return "";
   
   let formatted = "\n## CURRENT PROMOTIONS & SPECIAL OFFERS:\n\n";
   
-  promotions.slice(0, 5).forEach(promo => {
+  promotions.slice(0, 5).forEach((promo: any) => {
     formatted += `**${promo.name}**\n`;
     
     if (promo.discount_percentage > 0) {
@@ -877,7 +877,7 @@ serve(async (req) => {
   } catch (error) {
     console.error('Error in ai-chatbot function:', error);
     return new Response(JSON.stringify({ 
-      error: error.message,
+      error: error instanceof Error ? error.message : String(error),
       reply: "I'm sorry, I'm having trouble right now. Please try texting us at 647-952-2153 or call for immediate assistance."
     }), {
       status: 500,

@@ -8,7 +8,44 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// ... keep existing code (interfaces)
+interface PriceListMotor {
+  model_number: string;
+  model_display: string;
+  dealer_price: number;
+  horsepower: number;
+}
+
+interface DatabaseMotor {
+  id: string;
+  model_number: string | null;
+  model_display: string | null;
+  dealer_price: number | null;
+  msrp: number | null;
+  horsepower: number | null;
+  is_brochure: boolean | null;
+}
+
+interface Discrepancy {
+  model_number: string;
+  model_display?: string;
+  field?: string;
+  type?: string;
+  db_value?: number | string | null;
+  pricelist_value?: number | string | null;
+  diff?: number;
+  fixed?: boolean;
+  details?: string;
+  [key: string]: any;
+}
+
+interface ChangeRecord {
+  model_number: string;
+  field?: string;
+  old_value?: number | string | null;
+  new_value?: number | string | null;
+  model_display?: string;
+  [key: string]: any;
+}
 
 Deno.serve(async (req) => {
   // Handle CORS preflight
@@ -410,7 +447,7 @@ Deno.serve(async (req) => {
         status: 'failed',
         started_at: new Date().toISOString(),
         completed_at: new Date().toISOString(),
-        error_message: error.message || 'Unknown error',
+        error_message: error instanceof Error ? error.message : String(error),
       });
     } catch (logError) {
       console.error('[audit-price-list] Failed to log error:', logError);
@@ -419,7 +456,7 @@ Deno.serve(async (req) => {
     return new Response(
       JSON.stringify({
         success: false,
-        error: error.message || 'Unknown error',
+        error: error instanceof Error ? error.message : String(error),
       }),
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
