@@ -126,7 +126,7 @@ Deno.serve(async (req) => {
       docs: `${SITE_URL}/agents`,
       brand: `${SITE_URL}/.well-known/brand.json`,
       notice:
-        'Read-only public feed. Prices in CAD. Final out-the-door price requires human confirmation. Pickup only at Gores Landing, ON. We do not sell or service Mercury Verado.',
+        'Read-only public feed. Prices in CAD. Final out-the-door price requires human confirmation. Pickup only at Gores Landing, ON. Mercury Verado is special-order only and not in the default inventory feed — contact us by phone or email for Verado quotes.',
       motors,
     };
 
