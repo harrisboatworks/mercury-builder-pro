@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
-import { Pencil, Percent, CalendarOff, Banknote, AlertCircle } from 'lucide-react';
+import { Pencil, Percent, CalendarOff, Banknote, AlertCircle, Info, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { money } from '@/lib/money';
 import { calculateMonthlyPayment, calculateMonthly, getFinancingTermOptions, FINANCING_MINIMUM } from '@/lib/finance';
@@ -55,17 +55,29 @@ export function PurchaseDetailsStep() {
   const promoValue = state.purchaseDetails?.promoValue;
 
   // Validate promo against currently-active promotions (prevents stale/expired promos
-  // from saved or restored quotes from showing — e.g., March factory rebate after expiry)
-  const { getChooseOneOptions, loading: promosLoading } = useActivePromotions();
+  // from saved or restored quotes from showing — e.g., March factory rebate after expiry).
+  // forceRefresh ensures we always pull the latest promotions on financing-app entry,
+  // bypassing the in-memory 5-minute cache.
+  const { getChooseOneOptions, loading: promosLoading } = useActivePromotions({ forceRefresh: true });
   const activeOptionIds = getChooseOneOptions().map((o) => o.id);
   const isPromoStillActive =
     !promoOption || (activeOptionIds.length > 0 && activeOptionIds.includes(promoOption));
 
+  // Track which expired promo (if any) we removed, so we can show a clear notice to the user.
+  const [expiredPromoNotice, setExpiredPromoNotice] = useState<{
+    option: string;
+    value: string | null;
+  } | null>(null);
+  const [noticeDismissed, setNoticeDismissed] = useState(false);
+
   // If a stale promo is detected after promotions load, clear it from context so
-  // downstream totals don't subtract a rebate that no longer exists.
+  // downstream totals don't subtract a rebate that no longer exists, and surface
+  // a notice to the user explaining what was removed.
   useEffect(() => {
     if (!promosLoading && promoOption && activeOptionIds.length > 0 && !activeOptionIds.includes(promoOption)) {
       console.warn('[FinancingApplication] Clearing stale promo:', promoOption, '— not in active promotions');
+      setExpiredPromoNotice({ option: promoOption, value: promoValue ?? null });
+      setNoticeDismissed(false);
       dispatch({
         type: 'SET_PURCHASE_DETAILS',
         payload: {
@@ -148,6 +160,38 @@ export function PurchaseDetailsStep() {
         <h2 className="text-2xl font-bold text-foreground">Let's Get You Financed</h2>
         <p className="text-muted-foreground font-light">First, confirm your motor selection</p>
       </div>
+
+      {/* Expired Promo Notice — shown when a stale promotion was removed from a saved/restored quote */}
+      {expiredPromoNotice && !noticeDismissed && (
+        <div
+          role="status"
+          className="bg-muted border border-border rounded-lg p-4 flex items-start gap-3 animate-fade-in"
+        >
+          <Info className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-semibold text-foreground">
+              {expiredPromoNotice.option === 'cash_rebate' && 'Factory rebate has expired'}
+              {expiredPromoNotice.option === 'special_financing' && 'Special financing offer has expired'}
+              {expiredPromoNotice.option === 'no_payments' && '6 months no payments offer has expired'}
+              {!['cash_rebate', 'special_financing', 'no_payments'].includes(expiredPromoNotice.option) &&
+                'A promotion on your quote has expired'}
+            </p>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              {expiredPromoNotice.option === 'cash_rebate' && expiredPromoNotice.value
+                ? `The ${expiredPromoNotice.value} factory rebate from your saved quote is no longer available and has been removed from your application. Your totals have been updated. Check below for any current offers.`
+                : 'The promotion saved with your quote is no longer available and has been removed from your application. Your totals have been updated. Check below for any current offers.'}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setNoticeDismissed(true)}
+            aria-label="Dismiss expired promotion notice"
+            className="text-muted-foreground hover:text-foreground transition-colors flex-shrink-0"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
 
       {/* Promo Status Banners */}
       {isPromoStillActive && promoOption === 'special_financing' && promoRate && (

@@ -31,7 +31,8 @@ let cachedPromotions: ActivePromotion[] | null = null;
 let cacheTimestamp: number = 0;
 const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
-export function useActivePromotions() {
+export function useActivePromotions(options?: { forceRefresh?: boolean }) {
+  const forceRefresh = options?.forceRefresh ?? false;
   const [promotions, setPromotions] = useState<ActivePromotion[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -39,9 +40,9 @@ export function useActivePromotions() {
   useEffect(() => {
     async function fetchPromotions() {
       try {
-        // Check cache first
+        // Check cache first (skipped when forceRefresh is true)
         const now = Date.now();
-        if (cachedPromotions && (now - cacheTimestamp) < CACHE_DURATION) {
+        if (!forceRefresh && cachedPromotions && (now - cacheTimestamp) < CACHE_DURATION) {
           setPromotions(cachedPromotions);
           setLoading(false);
           return;
@@ -87,7 +88,7 @@ export function useActivePromotions() {
     }
 
     fetchPromotions();
-  }, []);
+  }, [forceRefresh]);
 
   // Helper function to get total warranty bonus years from all applicable promotions
   const getTotalWarrantyBonusYears = () => {
