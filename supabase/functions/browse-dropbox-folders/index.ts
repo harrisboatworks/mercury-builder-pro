@@ -18,15 +18,15 @@ async function listFolders(dropboxToken: string, path: string): Promise<DropboxF
   let hasMore = true
 
   while (hasMore) {
-    const endpoint = cursor
+    const endpoint: string = cursor
       ? 'https://api.dropboxapi.com/2/files/list_folder/continue'
       : 'https://api.dropboxapi.com/2/files/list_folder'
 
-    const body = cursor
+    const body: Record<string, unknown> = cursor
       ? { cursor }
       : { path: path || '', include_deleted: false, include_mounted_folders: true }
 
-    const response = await fetch(endpoint, {
+    const response: Response = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${dropboxToken}`,
@@ -41,7 +41,7 @@ async function listFolders(dropboxToken: string, path: string): Promise<DropboxF
       throw new Error(`Dropbox API error: ${response.status} - ${errorText}`)
     }
 
-    const data = await response.json()
+    const data: { entries: Array<{ '.tag': string; name: string; path_lower?: string; path_display?: string }>; has_more: boolean; cursor: string } = await response.json()
 
     for (const entry of data.entries) {
       if (entry['.tag'] === 'folder') {
