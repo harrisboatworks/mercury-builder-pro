@@ -1,4 +1,5 @@
 import { blogArticles, isArticlePublished } from '../data/blogArticles';
+import { caseStudies } from '../data/caseStudies';
 import { supabase } from '../integrations/supabase/client';
 
 const BASE_URL = 'https://www.mercuryrepower.ca';
@@ -207,8 +208,25 @@ export async function generateFullSitemapXML(): Promise<string> {
   }));
 
   const motorEntries = await getMotorSitemapEntries();
-  
-  const allEntries = [...getStaticPages(), ...blogEntries, ...motorEntries];
+
+  const today = new Date().toISOString().split('T')[0];
+  const caseStudyEntries: SitemapEntry[] = [
+    { loc: '/case-studies', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    ...caseStudies.map((study) => ({
+      loc: `/case-studies/${study.slug}`,
+      lastmod: today,
+      changefreq: 'monthly' as const,
+      priority: 0.75,
+      image: study.heroImage
+        ? {
+            url: study.heroImage.startsWith('/') ? `${BASE_URL}${study.heroImage}` : study.heroImage,
+            title: study.title,
+          }
+        : undefined,
+    })),
+  ];
+
+  const allEntries = [...getStaticPages(), ...blogEntries, ...motorEntries, ...caseStudyEntries];
   
   const urlEntries = allEntries.map(entry => {
     let xml = `  <url>

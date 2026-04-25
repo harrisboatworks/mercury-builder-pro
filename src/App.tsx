@@ -112,6 +112,8 @@ const MotorRedirect = lazy(() => import("./pages/MotorRedirect"));
 const MotorPage = lazy(() => import("./pages/MotorPage"));
 const TradeInValuePage = lazy(() => import("./pages/TradeInValuePage"));
 const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
 
 // Pilot SEO landing pages (Batch 1 — FAQ / Trust / HowTo)
 const MercuryRepowerFAQ = lazy(() => import("./pages/landing/MercuryRepowerFAQ"));
@@ -510,6 +512,10 @@ function AnimatedRoutes() {
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
         <Route path="/admin/blog" element={<SecureRoute><AdminBlog /></SecureRoute>} />
+
+        {/* Case Studies */}
+        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
         
         {/* Unsubscribe Route */}
         <Route path="/unsubscribe/:token" element={<Unsubscribe />} />
