@@ -361,6 +361,14 @@ function AnimatedRoutes() {
           }
         />
         <Route
+          path="/admin/agent-funnel"
+          element={
+            <SecureRoute requireAdmin={true}>
+              <AdminAgentFunnel />
+            </SecureRoute>
+          }
+        />
+        <Route
           path="/admin/stock-sync"
           element={
             <SecureRoute requireAdmin={true}>
