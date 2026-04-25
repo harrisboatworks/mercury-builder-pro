@@ -98,6 +98,14 @@ export default function QuoteSummaryPage() {
     if (softLeadSavedRef.current || state.isLoading || !state.motor) return;
     softLeadSavedRef.current = true;
 
+    // Analytics: a quote was generated and viewed
+    trackAgentEvent({
+      event_type: 'quote_generated',
+      motor_model: state.motor?.model || state.motor?.model_display || null,
+      motor_hp: state.motor?.horsepower ?? null,
+      motor_id: state.motor?.id ?? null,
+    });
+
     const sessionId = getOrCreateSessionId();
     (async () => {
       try {
