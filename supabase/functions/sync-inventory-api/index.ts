@@ -102,6 +102,19 @@ serve(async (req) => {
 
     console.log('✅ Sync completed:', summary);
 
+    // Fire IndexNow ping for in-stock motors (non-blocking).
+    try {
+      const { data: inStockMotors } = await supabase
+        .from('motor_models')
+        .select('model_key')
+        .eq('availability', 'In Stock')
+        .not('model_key', 'is', null);
+      const keys = (inStockMotors || []).map((m: any) => m.model_key).filter(Boolean);
+      pingMotorUpdates(keys, 'inventory-api-sync');
+    } catch (pingErr) {
+      console.error('IndexNow ping skipped:', pingErr);
+    }
+
     return new Response(JSON.stringify(summary), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
