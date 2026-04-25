@@ -1,4 +1,5 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { pingMotorUpdates } from "../_shared/indexnow.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
