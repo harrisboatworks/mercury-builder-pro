@@ -536,7 +536,7 @@ serve(async (req: Request): Promise<Response> => {
           // Repower guide templates
           html = nextStep === 3 
             ? template.getHtml(sequence.customer_name, sequence.unsubscribe_token, hasBoat)
-            : template.getHtml(sequence.customer_name, sequence.unsubscribe_token);
+            : (template.getHtml as any)(sequence.customer_name, sequence.unsubscribe_token);
           subject = (template as any).subject;
         }
 
@@ -544,7 +544,7 @@ serve(async (req: Request): Promise<Response> => {
         const emailResponse = await resend.emails.send({
           from: "Harris Boat Works <noreply@hbwsales.ca>",
           to: [sequence.email],
-          replyTo: "info@harrisboatworks.ca",
+          reply_to: "info@harrisboatworks.ca",
           subject,
           html,
         });

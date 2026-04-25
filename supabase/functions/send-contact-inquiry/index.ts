@@ -253,7 +253,7 @@ const handler = async (req: Request): Promise<Response> => {
     return new Response(
       JSON.stringify({
         success: false,
-        error: error.message || 'Failed to process inquiry'
+        error: (error instanceof Error ? error.message : String(error)) || 'Failed to process inquiry'
       }),
       {
         status: 500,

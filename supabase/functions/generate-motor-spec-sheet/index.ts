@@ -81,7 +81,7 @@ serve(async (req) => {
   } catch (error) {
     console.error('Error generating spec sheet:', error);
     return new Response(
-      JSON.stringify({ error: 'Internal server error', details: error.message }),
+      JSON.stringify({ error: 'Internal server error', details: (error instanceof Error ? error.message : String(error)) }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
     );
   }

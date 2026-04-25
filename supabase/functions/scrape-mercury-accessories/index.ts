@@ -6,7 +6,15 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// ... keep existing code (interfaces, scrapeProductImage, extractProductImage functions)
+// Stub: actual scraper implementation removed; returns null to use placeholder
+async function scrapeProductImage(
+  _apiKey: string,
+  _supabase: any,
+  _partNumber: string,
+  _name: string
+): Promise<string | null> {
+  return null;
+}
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -27,7 +35,7 @@ Deno.serve(async (req) => {
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    const results: ScrapedImage[] = [];
+    const results: Array<{ productName: string; partNumber: string; category: string; imageUrl: string }> = [];
 
     // Define all products with their part numbers - prioritize covers first
     const allProducts = [

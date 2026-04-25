@@ -202,7 +202,7 @@ serve(async (req: Request): Promise<Response> => {
     const emailResponse = await resend.emails.send({
       from: "Harris Boat Works <noreply@hbwsales.ca>",
       to: [email],
-      replyTo: "info@harrisboatworks.ca",
+      reply_to: "info@harrisboatworks.ca",
       subject: "Your Repower Guide is Ready 📘",
       html: emailHtml,
     });

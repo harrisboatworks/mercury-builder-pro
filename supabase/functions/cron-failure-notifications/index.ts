@@ -93,7 +93,7 @@ ${notificationData.error_message}
     }
 
     // Send daily summary even for successful runs
-    if (!notificationData.error_message && notificationData.motors_found > 0) {
+    if (!notificationData.error_message && (notificationData.motors_found ?? 0) > 0) {
       const summaryEmail = await resend.emails.send({
         from: "Mercury Sync <noreply@hbwsales.ca>",
         to: ["info@harrisboatworks.ca"],
@@ -138,7 +138,7 @@ ${notificationData.error_message}
     return new Response(
       JSON.stringify({ 
         success: false, 
-        error: error.message,
+        error: (error instanceof Error ? error.message : String(error)),
         timestamp: new Date().toISOString()
       }),
       {

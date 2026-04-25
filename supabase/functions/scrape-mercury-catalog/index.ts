@@ -772,7 +772,7 @@ async function scrapeMotor(
       .eq('id', motor.id);
 
     if (error) {
-      result.error = `Database update failed: ${error.message}`;
+      result.error = `Database update failed: ${(error instanceof Error ? error.message : String(error))}`;
       return result;
     }
     
@@ -876,7 +876,7 @@ serve(async (req) => {
     const { data: motors, error } = await query;
 
     if (error) {
-      throw new Error(`Failed to fetch motors: ${error.message}`);
+      throw new Error(`Failed to fetch motors: ${(error instanceof Error ? error.message : String(error))}`);
     }
 
     if (!motors || motors.length === 0) {
@@ -896,7 +896,7 @@ serve(async (req) => {
     async function processMotors() {
       const results: ScrapeResult[] = [];
       
-      for (const motor of motors) {
+      for (const motor of (motors ?? [])) {
         const motorResult = await scrapeMotor(motor, supabase, firecrawlKey, perplexityKey, refresh);
         results.push(motorResult);
         
@@ -922,6 +922,7 @@ serve(async (req) => {
     }
 
     if (background) {
+      // @ts-ignore - EdgeRuntime is provided by Supabase Edge Runtime
       EdgeRuntime.waitUntil(processMotors());
       
       return new Response(
@@ -955,7 +956,7 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({
         success: false,
-        error: error.message
+        error: (error instanceof Error ? error.message : String(error))
       }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     );
