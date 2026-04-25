@@ -45,15 +45,17 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
       {HP_FILTERS.map(({ label, value }) => {
         const isActive = activeFilter === value || (value === '' && !activeFilter);
         const hasStock = hasMotors(value);
+        const count = getCount(value);
         
         return (
           <button
             key={value}
             onClick={() => onFilterChange(value)}
             disabled={!hasStock && value !== ''}
+            aria-label={`${label === 'All' ? 'All motors' : `${label} HP`} — ${count} ${count === 1 ? 'motor' : 'motors'}`}
             className={cn(
               'flex-shrink-0 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-light tracking-wide',
-              'whitespace-nowrap relative overflow-hidden',
+              'whitespace-nowrap relative overflow-hidden inline-flex items-center gap-1.5 md:gap-2',
               'transition-all duration-300 ease-out',
               'active:scale-[0.97]',
               isActive 
@@ -66,6 +68,18 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
             <span className="relative z-10">
               <span className="md:hidden">{label === 'All' ? 'All' : label}</span>
               <span className="hidden md:inline">{label === 'All' ? 'All Motors' : `${label} HP`}</span>
+            </span>
+            <span
+              className={cn(
+                'relative z-10 text-[10px] md:text-[11px] font-medium tabular-nums px-1.5 py-0.5 rounded-full leading-none',
+                isActive
+                  ? 'bg-white/20 text-white'
+                  : hasStock
+                    ? 'bg-gray-100 text-gray-500'
+                    : 'bg-transparent text-gray-300'
+              )}
+            >
+              {count}
             </span>
           </button>
         );
