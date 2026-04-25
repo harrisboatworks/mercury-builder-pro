@@ -80,10 +80,16 @@ export default function Repower() {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/">
+            <Link to="/quote/motor-selection">
               <Button size="lg" className="w-full sm:w-auto gap-2">
-                Build Your Quote
+                Build Your Mercury Quote (Ontario, CAD)
                 <ChevronRight className="w-4 h-4" />
+              </Button>
+            </Link>
+            <Link to="/locations/rice-lake-mercury-repower">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2 bg-transparent">
+                <MapPin className="w-4 h-4" />
+                Mercury Repower on Rice Lake
               </Button>
             </Link>
             <a href="tel:9053422153">

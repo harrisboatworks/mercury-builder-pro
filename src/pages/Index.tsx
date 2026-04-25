@@ -284,7 +284,12 @@ export default function Index() {
                 <div className="flex flex-wrap gap-3">
                   <Button asChild variant="default" className="gap-1.5">
                     <Link to="/quote/motor-selection">
-                      See Mercury Pricing <ChevronRight className="h-4 w-4" />
+                      Build a Mercury outboard quote (Ontario, CAD) <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" className="gap-1.5">
+                    <Link to="/locations/rice-lake-mercury-repower">
+                      Mercury repower on Rice Lake <ChevronRight className="h-4 w-4" />
                     </Link>
                   </Button>
                   <Button asChild variant="outline" className="gap-1.5">
