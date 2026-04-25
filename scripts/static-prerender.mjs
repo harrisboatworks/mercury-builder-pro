@@ -3251,9 +3251,80 @@ if (sitemapLocationMatches !== expectedLocationUrls) {
   verifyErrors.push(`sitemap.xml location URL count ${sitemapLocationMatches} != ${expectedLocationUrls}.`);
 }
 
+// ============================================================
+// PHASE 4 — Markdown twin verification gates
+// ============================================================
+function verifyMd({ relPath, requireSubstrings = [], label }) {
+  const p = join(DIST, relPath.replace(/^\//, ''));
+  if (!existsSync(p)) {
+    verifyErrors.push(`${label}: missing markdown twin at ${p}`);
+    return;
+  }
+  const txt = readFileSync(p, 'utf8');
+  if (txt.length < 200) {
+    verifyErrors.push(`${label}: ${relPath} is suspiciously short (${txt.length} bytes).`);
+  }
+  if (!txt.startsWith('---\n')) {
+    verifyErrors.push(`${label}: ${relPath} does not start with YAML frontmatter — possibly returned HTML instead of markdown.`);
+  }
+  if (/<html[\s>]/i.test(txt) || /<!doctype html/i.test(txt)) {
+    verifyErrors.push(`${label}: ${relPath} contains HTML — should be pure markdown.`);
+  }
+  for (const sub of requireSubstrings) {
+    if (!txt.includes(sub)) {
+      verifyErrors.push(`${label}: ${relPath} missing required substring "${sub}".`);
+    }
+  }
+}
+
+// Catalog index
+verifyMd({
+  relPath: '/catalog.md',
+  label: 'Catalog index',
+  requireSubstrings: ['## Motors', '## Case studies', '## Locations', 'CAD', 'Pickup only', 'mcp.json'],
+});
+
+// Sample motor twin
+if (motorTwinSummaries.length > 0) {
+  verifyMd({
+    relPath: motorTwinSummaries[0].path,
+    label: 'Sample motor twin',
+    requireSubstrings: ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Agent API', 'agent-quote-api'],
+  });
+}
+
+// Sample case study twin
+if (caseStudyTwinSummaries.length > 0) {
+  verifyMd({
+    relPath: caseStudyTwinSummaries[0].path,
+    label: 'Sample case study twin',
+    requireSubstrings: ['canonical:', 'Mercury', '## Customer quote', '## Recommendation'],
+  });
+}
+
+// Sample location twin
+if (locationTwinSummaries.length > 0) {
+  verifyMd({
+    relPath: locationTwinSummaries[0].path,
+    label: 'Sample location twin',
+    requireSubstrings: ['canonical:', 'Gores Landing', '## FAQs', '## Common boat types'],
+  });
+}
+
+// Count parity
+if (motorTwinSummaries.length !== motorPageRoutes.length) {
+  verifyErrors.push(`Motor markdown twin count ${motorTwinSummaries.length} != motor HTML route count ${motorPageRoutes.length}.`);
+}
+if (caseStudyTwinSummaries.length !== caseStudies.length) {
+  verifyErrors.push(`Case study markdown twin count ${caseStudyTwinSummaries.length} != ${caseStudies.length}.`);
+}
+if (locationTwinSummaries.length !== locations.length) {
+  verifyErrors.push(`Location markdown twin count ${locationTwinSummaries.length} != ${locations.length}.`);
+}
+
 if (verifyErrors.length > 0) {
   console.error('\n[static-prerender] ❌ Build verification failed:');
   for (const e of verifyErrors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`[static-prerender] ✓ Verification passed — ${motorPageRoutes.length} motor pages, ${caseStudyDetailRoutes.length} case studies, ${locationDetailRoutes.length} locations, ${tableRoutes.length} table pages, Verado consistent, ai.txt clean.`);
+console.log(`[static-prerender] ✓ Verification passed — ${motorPageRoutes.length} motor pages, ${caseStudyDetailRoutes.length} case studies, ${locationDetailRoutes.length} locations, ${tableRoutes.length} table pages, ${motorTwinSummaries.length}+${caseStudyTwinSummaries.length}+${locationTwinSummaries.length}+1 markdown twins, Verado consistent, ai.txt clean.`);
