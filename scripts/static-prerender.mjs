@@ -2262,3 +2262,84 @@ if (failures > 0) {
 }
 
 console.log(`[static-prerender] ✓ ${routes.length} routes prerendered`);
+
+// ============================================================
+// Sitemap regeneration — include all motor URLs and the orphan
+// SEO routes we just stamped. Writes both dist/sitemap.xml (served
+// by Vercel) and public/sitemap.xml (kept in sync for repo).
+// ============================================================
+const today = new Date().toISOString().split('T')[0];
+const staticSitemapEntries = [
+  { loc: '/', priority: 1.0, changefreq: 'daily' },
+  { loc: '/quote/motor-selection', priority: 0.9, changefreq: 'daily' },
+  { loc: '/promotions', priority: 0.8, changefreq: 'weekly' },
+  { loc: '/repower', priority: 0.9, changefreq: 'monthly' },
+  { loc: '/trade-in-value', priority: 0.8, changefreq: 'weekly' },
+  { loc: '/accessories', priority: 0.7, changefreq: 'weekly' },
+  { loc: '/compare', priority: 0.7, changefreq: 'weekly' },
+  { loc: '/faq', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/financing-application', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/finance-calculator', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
+  { loc: '/about', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
+  { loc: '/mercury-repower-faq', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/mercury-dealer-canada-faq', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/mercury-dealer-peterborough', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/mercury-dealer-cobourg', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/mercury-dealer-gta', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/mercury-pro-xs', priority: 0.85, changefreq: 'weekly' },
+  { loc: '/mercury-outboards-ontario', priority: 0.85, changefreq: 'weekly' },
+  { loc: '/mercury-pontoon-outboards', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/agents', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/privacy', priority: 0.3, changefreq: 'yearly' },
+  { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
+];
+
+const blogSitemapEntries = blogArticles.map(a => ({
+  loc: `/blog/${a.slug}`,
+  priority: 0.7,
+  changefreq: 'monthly',
+  lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
+  imageUrl: a.image ? (a.image.startsWith('/') ? `${SITE_URL}${a.image}` : a.image) : null,
+  imageTitle: a.title,
+}));
+
+const motorSitemapEntries = motorPageRoutes.map(r => {
+  const rec = motorRecords.find(m => `/motors/${motorSlug(m.model_key)}` === r.path);
+  const lastmod = rec?.updated_at ? rec.updated_at.split('T')[0] : today;
+  return { loc: r.path, priority: 0.7, changefreq: 'weekly', lastmod };
+});
+
+const allSitemapEntries = [
+  ...staticSitemapEntries.map(e => ({ ...e, lastmod: today })),
+  ...blogSitemapEntries,
+  ...motorSitemapEntries,
+];
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${allSitemapEntries.map(e => {
+  let block = `  <url>
+    <loc>${SITE_URL}${e.loc}</loc>
+    <lastmod>${e.lastmod || today}</lastmod>
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority}</priority>`;
+  if (e.imageUrl) {
+    block += `
+    <image:image>
+      <image:loc>${e.imageUrl}</image:loc>
+      <image:title><![CDATA[${e.imageTitle}]]></image:title>
+    </image:image>`;
+  }
+  block += `
+  </url>`;
+  return block;
+}).join('\n')}
+</urlset>`;
+
+writeFileSync(join(DIST, 'sitemap.xml'), sitemapXml, 'utf8');
+writeFileSync(join(ROOT, 'public', 'sitemap.xml'), sitemapXml, 'utf8');
+console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries.length} URLs (${motorSitemapEntries.length} motors, ${blogSitemapEntries.length} blog, ${staticSitemapEntries.length} static)`);
