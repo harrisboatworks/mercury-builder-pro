@@ -12,6 +12,7 @@ import { money } from '@/lib/money';
 import { calculateMonthlyPayment, calculateMonthly, getFinancingTermOptions, FINANCING_MINIMUM } from '@/lib/finance';
 import { FormErrorMessage, FieldValidationIndicator } from './FormErrorMessage';
 import { MobileFormNavigation } from './MobileFormNavigation';
+import { useActivePromotions } from '@/hooks/useActivePromotions';
 
 export function PurchaseDetailsStep() {
   const { state, dispatch } = useFinancing();
@@ -53,9 +54,34 @@ export function PurchaseDetailsStep() {
   const promoTerm = state.purchaseDetails?.promoTerm;
   const promoValue = state.purchaseDetails?.promoValue;
 
+  // Validate promo against currently-active promotions (prevents stale/expired promos
+  // from saved or restored quotes from showing — e.g., March factory rebate after expiry)
+  const { getChooseOneOptions, loading: promosLoading } = useActivePromotions();
+  const activeOptionIds = getChooseOneOptions().map((o) => o.id);
+  const isPromoStillActive =
+    !promoOption || (activeOptionIds.length > 0 && activeOptionIds.includes(promoOption));
+
+  // If a stale promo is detected after promotions load, clear it from context so
+  // downstream totals don't subtract a rebate that no longer exists.
+  useEffect(() => {
+    if (!promosLoading && promoOption && activeOptionIds.length > 0 && !activeOptionIds.includes(promoOption)) {
+      console.warn('[FinancingApplication] Clearing stale promo:', promoOption, '— not in active promotions');
+      dispatch({
+        type: 'SET_PURCHASE_DETAILS',
+        payload: {
+          promoOption: null,
+          promoRate: null,
+          promoTerm: null,
+          promoValue: null,
+        },
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [promosLoading, promoOption, activeOptionIds.join(',')]);
+
   // Check if special financing is still eligible
   const isEligibleForSpecialFinancing = amountToFinance >= FINANCING_MINIMUM;
-  const hasSpecialFinancing = promoOption === 'special_financing' && promoRate;
+  const hasSpecialFinancing = isPromoStillActive && promoOption === 'special_financing' && promoRate;
 
   // Sync local state with form
   useEffect(() => {
