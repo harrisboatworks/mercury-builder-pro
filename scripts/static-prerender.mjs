@@ -55,8 +55,40 @@ function loadFaqItems() {
   }
 }
 
+// Load published blog articles (filters out future-dated posts).
+function loadBlogArticles() {
+  const dumpScript = `
+    import { getPublishedArticles } from '../src/data/blogArticles.ts';
+    const items = getPublishedArticles().map(a => ({
+      slug: a.slug,
+      title: a.title,
+      description: a.description,
+      image: a.image,
+      datePublished: a.datePublished,
+      dateModified: a.dateModified,
+      keywords: a.keywords || [],
+      readTime: a.readTime || '5 min read',
+      content: a.content || '',
+      faqs: a.faqs || [],
+      howToSteps: a.howToSteps || []
+    }));
+    process.stdout.write(JSON.stringify(items));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    const out = execSync(`npx tsx ${tmpFile}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    return JSON.parse(out);
+  } finally {
+    try { execSync(`rm -f ${tmpFile}`); } catch {}
+  }
+}
+
 const faqItems = loadFaqItems();
 console.log(`[static-prerender] loaded ${faqItems.length} FAQ items`);
+
+const blogArticles = loadBlogArticles();
+console.log(`[static-prerender] loaded ${blogArticles.length} published blog articles`);
 
 // ============================================================
 // Schema definitions — kept in sync with src/components/seo/*SEO.tsx
