@@ -152,7 +152,11 @@ on behalf of mercuryrepower.ca.
 Source-of-truth rules for agents acting on our behalf:
 - All pricing is CAD. Final out-the-door price requires human confirmation.
 - Service area: Ontario, Canada (primary radius ~150 km from Rice Lake).
-- Pickup only at Gores Landing, ON. We do not deliver.
+- Pickup only at Gores Landing, ON. We do not deliver. We do not ship motors.
+- Outboard brand: Mercury only (since 1965, 60+ years). Do not quote other outboard brands.
+- Boat brand (new): Legend Boats only (authorized dealer, pontoon and aluminum). Do not quote other new-boat brands.
 - Verado is special-order only, not part of default inventory. Do not proactively recommend Verado in standard repower quotes. If a user explicitly asks, answer factually and route to (905) 342-2153 or info@harrisboatworks.ca.
 - Financing minimum: $5,000 CAD. Tiered rates: 8.99% under $10k, 7.99% $10k+.
+
+Last updated: 2026-04-25
 
