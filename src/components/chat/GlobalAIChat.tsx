@@ -5,6 +5,7 @@ import { VoiceIndicator } from './VoiceIndicator';
 import { VoiceProvider } from '@/contexts/VoiceContext';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { AIChatButton } from './AIChatButton';
+import { trackAgentEvent } from '@/lib/agentEvents';
 
 interface AIChatContextType {
   openChat: (initialMessage?: string) => void;
