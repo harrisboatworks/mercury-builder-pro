@@ -27,7 +27,7 @@ Deno.serve(async (req) => {
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    const results: ScrapedImage[] = [];
+    const results: Array<{ partNumber: string; name: string; category: string; imageUrl?: string; success: boolean; error?: string }> = [];
 
     // Define all products with their part numbers - prioritize covers first
     const allProducts = [

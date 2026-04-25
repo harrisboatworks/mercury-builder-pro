@@ -51,7 +51,7 @@ Deno.serve(async (req) => {
       await supabase
         .from("saved_quotes")
         .update({ 
-          access_count: (savedQuote.access_count || 0) + 1,
+          access_count: ((savedQuote as any).access_count || 0) + 1,
           last_accessed: new Date().toISOString()
         })
         .eq("id", quoteId);
