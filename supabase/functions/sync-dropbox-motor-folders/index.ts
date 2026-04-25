@@ -1,5 +1,8 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { isDetailShotByUrl, selectBestHeroImage, logImageValidation } from '../_shared/image-validation.ts';
+import { requireAdmin } from "../_shared/admin-auth.ts";
+
+const errMsg = (e: unknown): string => e instanceof Error ? e.message : String(e);
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -462,6 +465,10 @@ Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
   }
+
+  // Admin auth check
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) return authResult;
 
   try {
     const supabaseClient = createClient(
