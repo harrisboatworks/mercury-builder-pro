@@ -1,8 +1,8 @@
 # Harris Boat Works - Mercury Marine Dealer
 
-> Family-owned since 1947. Authorized Mercury Marine dealer since 1965 (60+ years). Authorized Legend Boats dealer (pontoons and aluminum). Located on Rice Lake in Gores Landing, Ontario, Canada. Pickup only — we do not deliver.
+> **mercuryrepower.ca is the online Mercury outboard quote builder for Ontario, Canada.** Run by Harris Boat Works — Mercury Marine Platinum Dealer since 1965, family-owned in Gores Landing on Rice Lake since 1947. Build a complete itemized Mercury outboard quote in CAD — motor, controls, propeller, install, financing, and trade-in — in about three minutes. All pricing in CAD. Pickup only at Gores Landing, ON — we do not ship outboards and we do not deliver. Authorized Legend Boats dealer (pontoons and aluminum) for new boat sales.
 
-Harris Boat Works is an authorized Mercury Marine dealer specializing in outboard motor sales, repowering, and factory-authorized service. CSI Award winner for customer satisfaction. We also sell new Legend Boats (pontoons and aluminum). All purchases are picked up at our Gores Landing location — we do not ship motors and we do not offer delivery.
+Harris Boat Works is an authorized Mercury Marine dealer specializing in outboard motor sales, repowering, and factory-authorized service. CSI Award winner for customer satisfaction. mercuryrepower.ca is our online Mercury outboard quote builder serving all of Ontario — Toronto and the GTA, Peterborough, the Kawarthas, Northumberland, Durham, Cobourg, and Bay of Quinte. We also sell new Legend Boats (pontoons and aluminum). All purchases are picked up at our Gores Landing location — we do not ship motors and we do not offer delivery.
 
 ## Markdown twins for AI agents
 
@@ -46,7 +46,7 @@ Each motor page includes pricing in CAD, availability, specifications, and a lin
 
 ## Services
 
-- **Online Quote Builder**: Configure and price any Mercury motor with instant quotes at /quote/motor-selection
+- **Online Mercury Outboard Quote Builder (Ontario)**: mercuryrepower.ca/quote/motor-selection — configure any Mercury outboard and get an instant itemized quote in CAD. Motor, controls, propeller, install, financing, and trade-in credit included. No phone call required, no "call for pricing" runaround. Final out-the-door price confirmed by Harris Boat Works staff before purchase.
 - **Professional Repower**: Complete motor replacement and rigging installation
 - **Factory Service**: Mercury-certified technicians for maintenance and repair
 - **Parts & Accessories**: Genuine Mercury parts and PropMD propeller services
