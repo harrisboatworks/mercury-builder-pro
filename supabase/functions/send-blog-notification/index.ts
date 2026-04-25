@@ -136,6 +136,17 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log(`[send-blog-notification] Complete: ${successCount} sent, ${errorCount} failed`);
 
+    // Fire-and-forget IndexNow ping for the new article + key landing pages
+    // so search engines/AI crawlers re-index quickly. Excludes .md twins.
+    pingIndexNow(
+      [
+        articleUrl,
+        ...KEY_URLS.map((p) => `https://www.mercuryrepower.ca${p}`),
+        'https://www.mercuryrepower.ca/blog',
+      ],
+      'blog-notification',
+    );
+
     return new Response(
       JSON.stringify({ 
         message: `Notifications sent to ${successCount} subscribers`,
