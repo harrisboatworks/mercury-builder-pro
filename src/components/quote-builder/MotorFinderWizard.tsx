@@ -239,6 +239,21 @@ export const MotorFinderWizard: React.FC<MotorFinderWizardProps> = ({
                 </div>
               </div>
 
+              {/* Live match count — validated against cached inventory */}
+              <div
+                className={`mb-3 rounded-md border px-3 py-2 text-center text-sm font-medium tabular-nums transition-colors ${
+                  liveMatchCount > 0
+                    ? "border-primary/30 bg-primary/10 text-primary"
+                    : "border-destructive/30 bg-destructive/10 text-destructive"
+                }`}
+                aria-live="polite"
+                role="status"
+              >
+                {liveMatchCount > 0
+                  ? `${liveMatchCount} ${liveMatchCount === 1 ? "motor matches" : "motors match"}`
+                  : "No motors match — try widening your filters"}
+              </div>
+
               {/* Smart recommendation */}
               <div className="recommendation-box rounded border border-border bg-accent/20 p-3">
                 <p className="text-sm font-medium text-foreground">
