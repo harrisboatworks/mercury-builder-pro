@@ -112,7 +112,9 @@ async function fetchGooglePlaceData(): Promise<PlaceData | null> {
     if (error) throw error;
     
     if (!data || data.error) {
-      console.warn('[useGooglePlaceData] No data or error returned:', data?.error);
+      if (import.meta.env.DEV) {
+        console.warn('[useGooglePlaceData] No data or error returned:', data?.error);
+      }
       return null;
     }
     
@@ -130,8 +132,10 @@ async function fetchGooglePlaceData(): Promise<PlaceData | null> {
     
     return data;
   } catch (err) {
-    // Downgraded to warn — transient network/edge errors should not appear as errors
-    console.warn('[useGooglePlaceData] Could not fetch place data (will use defaults):', err);
+    // Transient network/edge errors fall back to default UI silently in production.
+    if (import.meta.env.DEV) {
+      console.warn('[useGooglePlaceData] Could not fetch place data (will use defaults):', err);
+    }
     return null;
   }
 }

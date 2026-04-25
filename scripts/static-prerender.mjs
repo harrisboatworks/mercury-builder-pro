@@ -55,8 +55,40 @@ function loadFaqItems() {
   }
 }
 
+// Load published blog articles (filters out future-dated posts).
+function loadBlogArticles() {
+  const dumpScript = `
+    import { getPublishedArticles } from '../src/data/blogArticles.ts';
+    const items = getPublishedArticles().map(a => ({
+      slug: a.slug,
+      title: a.title,
+      description: a.description,
+      image: a.image,
+      datePublished: a.datePublished,
+      dateModified: a.dateModified,
+      keywords: a.keywords || [],
+      readTime: a.readTime || '5 min read',
+      content: a.content || '',
+      faqs: a.faqs || [],
+      howToSteps: a.howToSteps || []
+    }));
+    process.stdout.write(JSON.stringify(items));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    const out = execSync(`npx tsx ${tmpFile}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    return JSON.parse(out);
+  } finally {
+    try { execSync(`rm -f ${tmpFile}`); } catch {}
+  }
+}
+
 const faqItems = loadFaqItems();
 console.log(`[static-prerender] loaded ${faqItems.length} FAQ items`);
+
+const blogArticles = loadBlogArticles();
+console.log(`[static-prerender] loaded ${blogArticles.length} published blog articles`);
 
 // ============================================================
 // Schema definitions — kept in sync with src/components/seo/*SEO.tsx
@@ -1287,6 +1319,150 @@ function mercuryPontoonOutboardsSchema() {
   };
 }
 
+// ============================================================
+// Promotions page (mirrors PromotionsPageSEO no-active-promo state — safe
+// crawler snapshot; live React still hydrates dynamic offer catalog).
+// ============================================================
+
+function promotionsPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/promotions#webpage`,
+        "url": `${SITE_URL}/promotions`,
+        "name": "Mercury Outboard Promotions | Harris Boat Works",
+        "description": "Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works — Mercury Marine Platinum Dealer on Rice Lake.",
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "inLanguage": "en-CA",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Promotions", "item": `${SITE_URL}/promotions` }
+          ]
+        }
+      }
+    ]
+  };
+}
+
+// ============================================================
+// Blog article schema — kept in sync with src/components/seo/BlogSEO.tsx
+// ============================================================
+
+function blogArticleSchema(article) {
+  const url = `${SITE_URL}/blog/${article.slug}`;
+  const wordCount = (article.content || '').trim().split(/\s+/).filter(Boolean).length;
+  const readTimeMinutes = parseInt(article.readTime, 10) || 5;
+
+  const graph = [
+    {
+      "@type": "Article",
+      "@id": `${url}#article`,
+      "headline": article.title,
+      "description": article.description,
+      "image": `${SITE_URL}${article.image}`,
+      "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+      "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+      "datePublished": article.datePublished,
+      "dateModified": article.dateModified,
+      "mainEntityOfPage": url,
+      "keywords": (article.keywords || []).join(", "),
+      "wordCount": wordCount,
+      "inLanguage": "en-CA",
+      "isAccessibleForFree": true,
+      "timeRequired": `PT${readTimeMinutes}M`,
+      "about": [
+        { "@type": "Thing", "name": "Mercury Marine Outboard Motors" },
+        { "@type": "Thing", "name": "Boat Motors" }
+      ],
+      "mentions": [{ "@type": "Organization", "name": "Mercury Marine" }]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      "url": url,
+      "name": article.title,
+      "inLanguage": "en-CA",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog` },
+          { "@type": "ListItem", "position": 3, "name": article.title, "item": url }
+        ]
+      }
+    }
+  ];
+
+  if (article.howToSteps && article.howToSteps.length > 0) {
+    graph.push({
+      "@type": "HowTo",
+      "@id": `${url}#howto`,
+      "name": article.title,
+      "description": article.description,
+      "totalTime": `PT${readTimeMinutes}M`,
+      "step": article.howToSteps.map((step, i) => ({
+        "@type": "HowToStep",
+        "position": i + 1,
+        "name": step.name,
+        "text": step.text,
+        ...(step.image ? { "image": `${SITE_URL}${step.image}` } : {})
+      }))
+    });
+  }
+
+  if (article.faqs && article.faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      "mainEntity": article.faqs.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+      }))
+    });
+  }
+
+  return { "@context": "https://schema.org", "@graph": graph };
+}
+
+// Extract first ~280 chars of plain text from blog content for noscript intro.
+function firstParagraph(content, fallback) {
+  if (!content) return fallback;
+  const stripped = String(content)
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/[#*_>`]/g, ' ')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!stripped) return fallback;
+  return stripped.length > 280 ? stripped.slice(0, 277) + '...' : stripped;
+}
+
+// Build blog article route configs.
+const blogArticleRoutes = blogArticles.map(article => ({
+  path: `/blog/${article.slug}`,
+  title: `${article.title} | Harris Boat Works Blog`,
+  description: article.description,
+  ogImage: `${SITE_URL}${article.image}`,
+  ogType: 'article',
+  h1: article.title,
+  intro: firstParagraph(article.content, article.description),
+  schemas: [blogArticleSchema(article)],
+  extraNoscript: () => {
+    const faqHtml = (article.faqs && article.faqs.length > 0)
+      ? '<dl>' + article.faqs.map(f =>
+          `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`
+        ).join('') + '</dl>'
+      : '';
+    return faqHtml;
+  }
+}));
+
 const routes = [
   {
     path: '/',
@@ -1554,7 +1730,16 @@ const routes = [
         `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
       ).join('') +
       '</dl>'
-  }
+  },
+  {
+    path: '/promotions',
+    title: '7-Year Factory-Backed Warranty on Every New Mercury | Harris Boat Works',
+    description: 'Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. No third-party insurance — straight Mercury protection from a Platinum Dealer since 1965.',
+    h1: 'Mercury Outboard Promotions',
+    intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works — Mercury Marine Platinum Dealer on Rice Lake since 1965. Factory-backed 7-year warranty on every new Mercury.',
+    schemas: [promotionsPageSchema()]
+  },
+  ...blogArticleRoutes
 ];
 
 // ============================================================
@@ -1605,6 +1790,40 @@ function stamp(route) {
     .map(s => `<script data-rh="true" type="application/ld+json">${JSON.stringify(s)}</script>`)
     .join('\n  ');
   html = html.replace(/<\/head>/i, `${jsonLdBlocks}\n  </head>`);
+
+  // Open Graph + Twitter social tags (Helmet-managed → data-rh marker so per-route
+  // <Helmet> components adopt them on hydration without appending duplicates).
+  // Crawlers (Facebook, Slack, iMessage, X) and AI agents (ChatGPT, Perplexity)
+  // read these from raw HTML — without per-route stamping every page would ship
+  // with the homepage Open Graph values from index.html.
+  const ogUrl = `${SITE_URL}${route.path === '/' ? '/' : route.path}`;
+  const ogImage = route.ogImage || `${SITE_URL}/social-share.jpg`;
+  const ogType = route.ogType || 'website';
+
+  const socialReplacements = [
+    { re: /<meta\s+property=["']og:title["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:title" content="${escapeHtml(route.title)}" />` },
+    { re: /<meta\s+property=["']og:description["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:description" content="${escapeHtml(route.description)}" />` },
+    { re: /<meta\s+property=["']og:url["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:url" content="${ogUrl}" />` },
+    { re: /<meta\s+property=["']og:type["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:type" content="${ogType}" />` },
+    { re: /<meta\s+property=["']og:image["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:image" content="${ogImage}" />` },
+    { re: /<meta\s+name=["']twitter:title["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:title" content="${escapeHtml(route.title)}" />` },
+    { re: /<meta\s+name=["']twitter:description["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:description" content="${escapeHtml(route.description)}" />` },
+    { re: /<meta\s+name=["']twitter:url["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:url" content="${ogUrl}" />` },
+    { re: /<meta\s+name=["']twitter:image["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:image" content="${ogImage}" />` }
+  ];
+  for (const { re, tag } of socialReplacements) {
+    if (re.test(html)) {
+      // Replace the FIRST occurrence (any duplicates already in shell) and strip
+      // any additional duplicates so we end with exactly one canonical version.
+      let replaced = false;
+      html = html.replace(re, () => {
+        if (!replaced) { replaced = true; return tag; }
+        return '';
+      });
+    } else {
+      html = html.replace(/<\/head>/i, `${tag}\n  </head>`);
+    }
+  }
 
   // <noscript> semantic fallback inside <div id="root">
   const extra = route.extraNoscript ? route.extraNoscript() : '';
