@@ -115,6 +115,19 @@ export async function streamChat({
   onError
 }: StreamChatParams): Promise<void> {
   try {
+    // Tool-intent fast path: skip SSE entirely so the server can run the
+    // create_quote function-calling loop and return a JSON reply with share_url.
+    if (detectQuoteIntent(message)) {
+      try {
+        await fetchNonStreaming(message, conversationHistory, context, onDelta, onDone);
+        return;
+      } catch (err) {
+        console.error('[StreamChat] Tool-intent non-streaming call failed:', err);
+        onError(err instanceof Error ? err : new Error('Quote creation failed'));
+        return;
+      }
+    }
+
     // Attempt streaming request with timeout
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), STREAM_TIMEOUT_MS);
