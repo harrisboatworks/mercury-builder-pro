@@ -4,6 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Helmet } from '@/lib/helmet';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { trackAgentEvent } from '@/lib/agentEvents';
 
 /**
  * Public-facing motor detail page rendered at /motors/{slug}.
