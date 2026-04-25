@@ -1102,6 +1102,12 @@ async function createQuote(supabase: any, body: any) {
     ...pricing,
   };
 
+  // --- Transcript linkage (for chat/voice traceability) ---
+  if (body.conversation_id && typeof body.conversation_id === "string") {
+    quoteData.conversationId = body.conversation_id;
+    quoteData.conversationChannel = body.conversation_channel || "unknown";
+  }
+
   const payload = {
     customer_name: customer_name.trim(),
     customer_email: customer_email.trim(),
