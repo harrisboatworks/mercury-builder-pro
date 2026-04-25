@@ -4,6 +4,19 @@
 
 Harris Boat Works is an authorized Mercury Marine dealer specializing in outboard motor sales, repowering, and factory-authorized service. CSI Award winner for customer satisfaction. We also sell new Legend Boats (pontoons and aluminum). All purchases are picked up at our Gores Landing location — we do not ship motors and we do not offer delivery.
 
+## Markdown twins for AI agents
+
+Every motor, case study, and location has a lightweight markdown twin at the same path with `.md` appended. These are the preferred ingestion format for AI agents — cheaper to parse than HTML, with explicit business rules in YAML frontmatter.
+
+- Catalog index: https://www.mercuryrepower.ca/catalog.md
+- Motor twin: https://www.mercuryrepower.ca/motors/{slug}.md
+- Case study twin: https://www.mercuryrepower.ca/case-studies/{slug}.md
+- Location twin: https://www.mercuryrepower.ca/locations/{slug}.md
+
+Markdown twins are served as `Content-Type: text/markdown; charset=utf-8` with `X-Robots-Tag: noindex, follow`. HTML at the same path (without `.md`) remains canonical for humans and search engines. Start at `/catalog.md` for the full agent-readable index.
+
+All prices in CAD. Pickup only at Gores Landing, ON. Final price confirmed by dealer.
+
 ## Products
 
 We sell the complete Mercury outboard lineup:
