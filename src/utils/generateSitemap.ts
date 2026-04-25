@@ -237,7 +237,7 @@ export async function generateFullSitemapXML(): Promise<string> {
     })),
   ];
 
-  const allEntries = [...getStaticPages(), ...blogEntries, ...motorEntries, ...caseStudyEntries];
+  const allEntries = [...getStaticPages(), ...blogEntries, ...motorEntries, ...caseStudyEntries, ...locationEntries];
   
   const urlEntries = allEntries.map(entry => {
     let xml = `  <url>
