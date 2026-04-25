@@ -42,6 +42,7 @@ import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
+import { trackAgentEvent } from '@/lib/agentEvents';
 
 // Package warranty year constants
 const COMPLETE_TARGET_YEARS = 7;
@@ -96,6 +97,14 @@ export default function QuoteSummaryPage() {
   useEffect(() => {
     if (softLeadSavedRef.current || state.isLoading || !state.motor) return;
     softLeadSavedRef.current = true;
+
+    // Analytics: a quote was generated and viewed
+    trackAgentEvent({
+      event_type: 'quote_generated',
+      motor_model: state.motor?.model || null,
+      motor_hp: (state.motor as any)?.hp ?? (state.motor as any)?.horsepower ?? null,
+      motor_id: state.motor?.id ?? null,
+    });
 
     const sessionId = getOrCreateSessionId();
     (async () => {
@@ -876,6 +885,13 @@ export default function QuoteSummaryPage() {
         adminDiscount: state.adminDiscount || 0,
         customerNotes: state.customerNotes || '',
       };
+
+      trackAgentEvent({
+        event_type: 'deposit_started',
+        motor_model: motorName,
+        motor_hp: hp,
+        quote_value: depositAmount,
+      });
 
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: {

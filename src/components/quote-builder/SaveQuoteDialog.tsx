@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Loader2, CheckCircle, Mail } from "lucide-react";
 import { saveLead } from "@/lib/leadCapture";
+import { trackAgentEvent } from "@/lib/agentEvents";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { generateSocialProofMessage } from "@/lib/activityGenerator";
@@ -122,6 +123,20 @@ export function SaveQuoteDialog({
         localStorage.setItem('current_saved_quote_id', savedQuote.id);
         console.log('Saved quote ID for QR code:', savedQuote.id);
       }
+
+      // Analytics: quote_saved + lead_submitted
+      trackAgentEvent({
+        event_type: 'quote_saved',
+        motor_model: motorModel ?? null,
+        quote_value: finalPrice ?? null,
+        metadata: { has_phone: !!phone, has_name: !!name },
+      });
+      trackAgentEvent({
+        event_type: 'lead_submitted',
+        motor_model: motorModel ?? null,
+        quote_value: finalPrice ?? null,
+        metadata: { source: 'save_quote_dialog' },
+      });
 
       // If user is not logged in, send magic link for account creation
       if (!user) {

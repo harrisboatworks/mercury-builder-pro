@@ -4,6 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Helmet } from '@/lib/helmet';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { trackAgentEvent } from '@/lib/agentEvents';
 
 /**
  * Public-facing motor detail page rendered at /motors/{slug}.
@@ -111,6 +112,12 @@ export default function MotorPage() {
       }
       setMotor(data as MotorRow);
       setLoading(false);
+      trackAgentEvent({
+        event_type: 'motor_viewed',
+        motor_id: (data as MotorRow).id,
+        motor_model: (data as MotorRow).model_display || (data as MotorRow).model || null,
+        motor_hp: (data as MotorRow).horsepower ?? null,
+      });
     };
     resolve();
     return () => { cancelled = true; };

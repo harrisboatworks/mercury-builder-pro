@@ -1,5 +1,6 @@
 import { blogArticles, isArticlePublished } from '../data/blogArticles';
 import { caseStudies } from '../data/caseStudies';
+import { locations } from '../data/locations';
 import { supabase } from '../integrations/supabase/client';
 
 const BASE_URL = 'https://www.mercuryrepower.ca';
@@ -226,7 +227,17 @@ export async function generateFullSitemapXML(): Promise<string> {
     })),
   ];
 
-  const allEntries = [...getStaticPages(), ...blogEntries, ...motorEntries, ...caseStudyEntries];
+  const locationEntries: SitemapEntry[] = [
+    { loc: '/locations', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    ...locations.map((loc) => ({
+      loc: `/locations/${loc.slug}`,
+      lastmod: today,
+      changefreq: 'monthly' as const,
+      priority: 0.8,
+    })),
+  ];
+
+  const allEntries = [...getStaticPages(), ...blogEntries, ...motorEntries, ...caseStudyEntries, ...locationEntries];
   
   const urlEntries = allEntries.map(entry => {
     let xml = `  <url>

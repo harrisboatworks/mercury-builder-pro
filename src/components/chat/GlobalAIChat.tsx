@@ -5,6 +5,7 @@ import { VoiceIndicator } from './VoiceIndicator';
 import { VoiceProvider } from '@/contexts/VoiceContext';
 import { useIsMobileOrTablet } from '@/hooks/use-mobile';
 import { AIChatButton } from './AIChatButton';
+import { trackAgentEvent } from '@/lib/agentEvents';
 
 interface AIChatContextType {
   openChat: (initialMessage?: string) => void;
@@ -43,6 +44,10 @@ export const GlobalAIChat: React.FC<{ children?: React.ReactNode }> = ({ childre
     setInitialMessage(message);
     setIsOpen(true);
     setUnreadCount(0); // Clear unread when opening
+    trackAgentEvent({
+      event_type: 'agent_opened',
+      metadata: { has_initial_message: !!message },
+    });
   }, []);
 
   const closeChat = useCallback(() => {
