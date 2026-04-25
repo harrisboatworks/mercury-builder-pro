@@ -1995,6 +1995,16 @@ const routes = [
     intro: 'The full Mercury Marine outboard lineup at Harris Boat Works — Platinum Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Cobourg, the GTA, the Kawarthas, and Northumberland County.',
     schemas: [mercuryOutboardsOntarioSchema()],
     extraNoscript: () =>
+      '<table><caption>Mercury Outboard Lineup — HP, MSRP, and Best Use (CAD, Ontario, 2026)</caption>' +
+      '<thead><tr><th scope="col">Series</th><th scope="col">HP range</th><th scope="col">MSRP range (CAD)</th><th scope="col">Best use</th></tr></thead>' +
+      '<tbody>' +
+      '<tr><th scope="row">FourStroke</th><td>2.5–150 HP</td><td>$1,385–$22,000</td><td>Recreation, fishing, family boating, kickers</td></tr>' +
+      '<tr><th scope="row">FourStroke Command Thrust</th><td>25–150 HP</td><td>$5,400–$23,500</td><td>Pontoons and heavy aluminum boats</td></tr>' +
+      '<tr><th scope="row">Pro XS</th><td>115–300 HP</td><td>$15,500–$32,000</td><td>Bass boats, tournament fishing, performance</td></tr>' +
+      '<tr><th scope="row">SeaPro</th><td>15–300 HP</td><td>$4,500–$33,000</td><td>Commercial, charter, heavy-duty use</td></tr>' +
+      '<tr><th scope="row">ProKicker</th><td>9.9–25 HP</td><td>$4,500–$6,500</td><td>Trolling/kicker on larger fishing boats</td></tr>' +
+      '<tr><th scope="row">V8 / V10 (350–400 HP)</th><td>350–400 HP</td><td>$36,000–$48,000</td><td>Offshore, large center consoles</td></tr>' +
+      '</tbody></table>' +
       '<dl>' +
       ONTARIO_HUB_FAQ_PRERENDER.map(i =>
         `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
@@ -2009,6 +2019,16 @@ const routes = [
     intro: 'Pontoons are heavier than they look. The right Mercury for a pontoon is a Command Thrust gearcase, the right shaft length, and a high-thrust prop. Harris Boat Works has been rigging pontoons on Rice Lake since 1965 — Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington.',
     schemas: [mercuryPontoonOutboardsSchema()],
     extraNoscript: () =>
+      '<table><caption>Pontoon HP Sizing Guide — Mercury Command Thrust Recommendations</caption>' +
+      '<thead><tr><th scope="col">Pontoon length</th><th scope="col">Recommended HP</th><th scope="col">Command Thrust required?</th><th scope="col">Typical shaft</th></tr></thead>' +
+      '<tbody>' +
+      '<tr><th scope="row">16–18 ft</th><td>40–60 HP</td><td>Recommended</td><td>20" (L)</td></tr>' +
+      '<tr><th scope="row">18–20 ft</th><td>60–90 HP</td><td>Yes</td><td>20" (L)</td></tr>' +
+      '<tr><th scope="row">20–22 ft</th><td>90–115 HP</td><td>Yes</td><td>20" (L)</td></tr>' +
+      '<tr><th scope="row">22–24 ft</th><td>115–150 HP</td><td>Yes</td><td>20" (L) or 25" (XL) on tritoon</td></tr>' +
+      '<tr><th scope="row">24–26 ft (tritoon)</th><td>150–200 HP</td><td>Yes (or V8 250)</td><td>25" (XL)</td></tr>' +
+      '<tr><th scope="row">26+ ft (tritoon)</th><td>200–300 HP</td><td>V8/V10</td><td>25" (XL)</td></tr>' +
+      '</tbody></table>' +
       '<dl>' +
       PONTOON_FAQ_PRERENDER.map(i =>
         `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
