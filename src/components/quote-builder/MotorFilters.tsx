@@ -193,7 +193,8 @@ export const MotorFilters = ({
                       onClick={() => setFilters({ ...filters, stockStatus: status })}
                       className="justify-start text-xs"
                     >
-                      {status === 'all' ? 'All' : status}
+                      <span className="flex-1 text-left">{status === 'all' ? 'All' : status}</span>
+                      <span className="ml-2 text-muted-foreground tabular-nums">({stockCounts[status] ?? 0})</span>
                     </Button>
                   ))}
                 </div>
@@ -216,6 +217,21 @@ export const MotorFilters = ({
                   <span>$0</span>
                   <span>$50k</span>
                 </div>
+              </div>
+
+              {/* Live match summary */}
+              <div
+                className={`rounded-md border px-3 py-2 text-center text-sm font-medium tabular-nums transition-colors ${
+                  liveMatchCount > 0
+                    ? 'border-primary/30 bg-primary/10 text-primary'
+                    : 'border-destructive/30 bg-destructive/10 text-destructive'
+                }`}
+                aria-live="polite"
+                role="status"
+              >
+                {liveMatchCount > 0
+                  ? `${liveMatchCount} ${liveMatchCount === 1 ? 'motor matches' : 'motors match'} these filters`
+                  : 'No motors match — try widening your filters'}
               </div>
 
               {/* Clear Filters */}
