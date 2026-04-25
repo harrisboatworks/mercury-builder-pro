@@ -1536,7 +1536,8 @@ const blogArticleRoutes = blogArticles.map(article => ({
           `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`
         ).join('') + '</dl>'
       : '';
-    return faqHtml;
+    const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
+    return tableHtml + faqHtml;
   }
 }));
 
