@@ -86,7 +86,7 @@ serve(async (req) => {
     
     if (searchData.error) {
       console.error('[google-places] Search API error:', searchData.error);
-      throw new Error(`Google Places API error: ${searchData.(error instanceof Error ? error.message : String(error)) || searchData.error.status}`);
+      throw new Error(`Google Places API error: ${searchData.error?.message || searchData.error?.status}`);
     }
 
     if (!searchData.places || searchData.places.length === 0) {
