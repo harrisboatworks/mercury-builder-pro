@@ -1696,7 +1696,8 @@ const motorPageRoutes = motorRecords
     const inStock = m.in_stock || m.availability === 'In Stock';
     const modelNo = m.model_number || m.mercury_model_no || '';
     const shaft = m.shaft_code || m.shaft || '';
-    const image = m.hero_image_url || m.image_url || null;
+    const rawImage = m.hero_image_url || m.image_url || null;
+    const image = isVerifiedMotorImage(rawImage) ? rawImage : null;
     const priceStr = price
       ? new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(price)
       : 'Contact for pricing';
@@ -1708,7 +1709,10 @@ const motorPageRoutes = motorRecords
       path: `/motors/${slug}`,
       title,
       description: description.slice(0, 320),
-      ogImage: image || `${SITE_URL}/social-share.jpg`,
+      // Only emit og:image when we have a verified asset; otherwise let stamp()
+      // fall back to the site-wide social-share image (a Harris-controlled asset),
+      // never a guessed Mercury URL.
+      ...(image ? { ogImage: image } : {}),
       ogType: 'product',
       h1: display,
       intro: `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
