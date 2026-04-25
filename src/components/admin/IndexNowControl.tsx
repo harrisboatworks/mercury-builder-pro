@@ -5,6 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { Loader2, Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import { caseStudies } from '@/data/caseStudies';
+import { locations } from '@/data/locations';
 
 const SITE = 'https://www.mercuryrepower.ca';
 
@@ -14,6 +16,7 @@ const KEY_URLS = [
   '/motors',
   '/quote',
   '/case-studies',
+  '/locations',
   '/agents',
   '/sitemap.xml',
 ];
