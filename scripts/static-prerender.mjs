@@ -1549,6 +1549,9 @@ function motorSlug(modelKey) {
 }
 
 function resolveMotorSellingPrice(m) {
+  if (typeof m._resolvedSellingPrice === 'number' && m._resolvedSellingPrice > 0) {
+    return m._resolvedSellingPrice;
+  }
   const overrides = m.manual_overrides || {};
   const candidates = [
     overrides.sale_price, overrides.base_price,
