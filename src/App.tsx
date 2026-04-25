@@ -512,6 +512,10 @@ function AnimatedRoutes() {
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />
         <Route path="/admin/blog" element={<SecureRoute><AdminBlog /></SecureRoute>} />
+
+        {/* Case Studies */}
+        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
         
         {/* Unsubscribe Route */}
         <Route path="/unsubscribe/:token" element={<Unsubscribe />} />
