@@ -88,7 +88,7 @@ export function useActivePromotions(options?: { forceRefresh?: boolean }) {
     }
 
     fetchPromotions();
-  }, []);
+  }, [forceRefresh]);
 
   // Helper function to get total warranty bonus years from all applicable promotions
   const getTotalWarrantyBonusYears = () => {
