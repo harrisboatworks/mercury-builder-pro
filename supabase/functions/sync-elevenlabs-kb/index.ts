@@ -321,7 +321,7 @@ async function syncStaticDocuments(): Promise<{ docs: Array<{ id: string; name: 
       }
     } catch (error) {
       console.error(`Error syncing ${docConfig.name}:`, error);
-      results.push({ name: docConfig.name, success: false, error: error.message });
+      results.push({ name: docConfig.name, success: false, error: (error instanceof Error ? error.message : String(error)) });
     }
   }
 
@@ -459,7 +459,7 @@ serve(async (req) => {
         .upsert({
           agent_id: ELEVENLABS_AGENT_ID,
           sync_status: "error",
-          error_message: error.message,
+          error_message: (error instanceof Error ? error.message : String(error)),
           last_synced_at: new Date().toISOString(),
         }, { onConflict: "agent_id" });
     } catch (logError) {
@@ -469,7 +469,7 @@ serve(async (req) => {
     return new Response(
       JSON.stringify({
         success: false,
-        error: error.message,
+        error: (error instanceof Error ? error.message : String(error)),
       }),
       {
         status: 500,

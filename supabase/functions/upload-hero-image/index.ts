@@ -143,7 +143,7 @@ serve(async (req) => {
       return new Response(
         JSON.stringify({ 
           success: false, 
-          error: `Image processing failed: ${downloadError.message}`,
+          error: `Image processing failed: ${(downloadError instanceof Error ? downloadError.message : String(downloadError))}`,
           stored: false,
           model_key
         }),
@@ -154,7 +154,7 @@ serve(async (req) => {
   } catch (error) {
     console.error('upload-hero-image error:', error)
     return new Response(
-      JSON.stringify({ success: false, error: error.message, stored: false }),
+      JSON.stringify({ success: false, error: (error instanceof Error ? error.message : String(error)), stored: false }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 500 }
     )
   }

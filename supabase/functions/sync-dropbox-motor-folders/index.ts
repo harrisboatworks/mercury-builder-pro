@@ -384,7 +384,7 @@ async function listFolderContents(
     
   } catch (error) {
     console.error('Error listing folder:', error)
-    return { entries: [], error: error.message }
+    return { entries: [], error: (error instanceof Error ? error.message : String(error)) }
   }
 }
 
@@ -419,7 +419,7 @@ async function downloadFile(
     const data = await response.arrayBuffer()
     return { data }
   } catch (error) {
-    return { data: null, error: error.message }
+    return { data: null, error: (error instanceof Error ? error.message : String(error)) }
   }
 }
 
@@ -457,7 +457,7 @@ async function resolveSharedLinkToPath(
     return { path }
   } catch (error) {
     console.error('resolveSharedLinkToPath error:', error)
-    return { path: null, error: error.message }
+    return { path: null, error: (error instanceof Error ? error.message : String(error)) }
   }
 }
 
@@ -828,7 +828,7 @@ Deno.serve(async (req) => {
 
           } catch (fileError) {
             console.error(`Error syncing ${file.name}:`, fileError)
-            folderResult.errors.push(`${file.name}: ${fileError.message}`)
+            folderResult.errors.push(`${file.name}: ${(fileError instanceof Error ? fileError.message : String(fileError))}`)
           }
         }
 
@@ -917,7 +917,7 @@ Deno.serve(async (req) => {
 
           } catch (fileError) {
             console.error(`Error syncing PDF ${file.name}:`, fileError)
-            folderResult.errors.push(`${file.name}: ${fileError.message}`)
+            folderResult.errors.push(`${file.name}: ${(fileError instanceof Error ? fileError.message : String(fileError))}`)
           }
         }
 
@@ -949,7 +949,7 @@ Deno.serve(async (req) => {
 
       } catch (folderError) {
         console.error(`Error processing folder ${folder.name}:`, folderError)
-        folderResult.errors.push(folderError.message)
+        folderResult.errors.push((folderError instanceof Error ? folderError.message : String(folderError)))
       }
 
       results.push(folderResult)
@@ -987,7 +987,7 @@ Deno.serve(async (req) => {
     console.error('Smart folder sync error:', error)
     
     return new Response(
-      JSON.stringify({ success: false, error: error.message }),
+      JSON.stringify({ success: false, error: (error instanceof Error ? error.message : String(error)) }),
       { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
     )
   }
