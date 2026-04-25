@@ -30,6 +30,8 @@ interface MotorFiltersProps {
   isOpen: boolean;
   onToggle: () => void;
   categoryCounts?: Record<string, number>;
+  /** Optional cached inventory used to compute live HP/price/stock match counts. */
+  motors?: FilterMotor[];
 }
 
 export const MotorFilters = ({ 
@@ -41,7 +43,47 @@ export const MotorFilters = ({
   isOpen,
   onToggle,
   categoryCounts,
+  motors,
 }: MotorFiltersProps) => {
+  // Live count for the current HP/price/stock combo, validated against cached inventory.
+  const liveMatchCount = useMemo(() => {
+    if (!motors || motors.length === 0) return resultsCount;
+    const [hpMin, hpMax] = filters.hpRange;
+    const [priceMin, priceMax] = filters.priceRange;
+    const wantInStock = filters.stockStatus === 'In Stock';
+    const wantOnOrder = filters.stockStatus === 'On Order' || filters.stockStatus === 'Order Now';
+    return motors.reduce((acc, m) => {
+      const hp = (m.hp ?? m.horsepower ?? 0) as number;
+      const price = (m.price ?? 0) as number;
+      if (hp < hpMin || hp > hpMax) return acc;
+      if (price < priceMin || price > priceMax) return acc;
+      if (wantInStock && !m.in_stock) return acc;
+      if (wantOnOrder && m.in_stock) return acc;
+      return acc + 1;
+    }, 0);
+  }, [motors, filters.hpRange, filters.priceRange, filters.stockStatus, resultsCount]);
+
+  // Per-stock-status counts (independent of stockStatus filter, but respect HP + price ranges)
+  const stockCounts = useMemo(() => {
+    const base: Record<string, number> = { all: 0, 'In Stock': 0, 'On Order': 0, 'Order Now': 0 };
+    if (!motors || motors.length === 0) return base;
+    const [hpMin, hpMax] = filters.hpRange;
+    const [priceMin, priceMax] = filters.priceRange;
+    for (const m of motors) {
+      const hp = (m.hp ?? m.horsepower ?? 0) as number;
+      const price = (m.price ?? 0) as number;
+      if (hp < hpMin || hp > hpMax) continue;
+      if (price < priceMin || price > priceMax) continue;
+      base.all += 1;
+      if (m.in_stock) base['In Stock'] += 1;
+      else {
+        base['On Order'] += 1;
+        base['Order Now'] += 1;
+      }
+    }
+    return base;
+  }, [motors, filters.hpRange, filters.priceRange]);
+
   const categories = [
     { key: 'all', label: 'All Motors', color: 'primary' },
     { key: 'portable', label: 'Portable (2.5-20hp)', color: 'portable' },
