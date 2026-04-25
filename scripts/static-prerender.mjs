@@ -1495,6 +1495,166 @@ const blogArticleRoutes = blogArticles.map(article => ({
   }
 }));
 
+// ============================================================
+// Per-motor /motors/{slug} routes — Product + Offer JSON-LD
+// ============================================================
+
+function motorSlug(modelKey) {
+  return String(modelKey).toLowerCase().replace(/_/g, '-');
+}
+
+function resolveMotorSellingPrice(m) {
+  const overrides = m.manual_overrides || {};
+  const candidates = [
+    overrides.sale_price, overrides.base_price,
+    m.sale_price, m.dealer_price, m.msrp, m.base_price,
+  ];
+  for (const v of candidates) {
+    const n = typeof v === 'string' ? parseFloat(v) : v;
+    if (typeof n === 'number' && !isNaN(n) && n > 0) return n;
+  }
+  return null;
+}
+
+function detectMotorFamily(m) {
+  if (m.family) return m.family;
+  const s = (m.model_display || m.model || '').toLowerCase();
+  if (s.includes('proxs') || s.includes('pro xs')) return 'Pro XS';
+  if (s.includes('seapro') || s.includes('sea pro')) return 'SeaPro';
+  if (s.includes('racing')) return 'Racing';
+  if (s.includes('verado')) return 'Verado';
+  return 'FourStroke';
+}
+
+function motorPageSchema(m, slug) {
+  const url = `${SITE_URL}/motors/${slug}`;
+  const display = m.model_display || m.model || `Mercury ${m.horsepower}HP`;
+  const family = detectMotorFamily(m);
+  const price = resolveMotorSellingPrice(m);
+  const inStock = m.in_stock || m.availability === 'In Stock';
+  const modelNo = m.model_number || m.mercury_model_no || null;
+  const image = m.hero_image_url || m.image_url || `${SITE_URL}/social-share.jpg`;
+  const validUntil = new Date(Date.now() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+  const additionalProperty = [
+    { "@type": "PropertyValue", "name": "Horsepower", "value": `${m.horsepower} HP` },
+    { "@type": "PropertyValue", "name": "Family", "value": `Mercury ${family}` },
+  ];
+  if (m.shaft_code || m.shaft) additionalProperty.push({ "@type": "PropertyValue", "name": "Shaft", "value": m.shaft_code || m.shaft });
+  if (m.start_type) additionalProperty.push({ "@type": "PropertyValue", "name": "Start", "value": m.start_type });
+  if (m.control_type) additionalProperty.push({ "@type": "PropertyValue", "name": "Control", "value": m.control_type });
+
+  const product = {
+    "@type": "Product",
+    "@id": `${url}#product`,
+    "name": display,
+    "description": `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. Sold and serviced by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.`,
+    "brand": { "@type": "Brand", "name": "Mercury Marine" },
+    "manufacturer": { "@type": "Organization", "name": "Mercury Marine" },
+    "category": "Outboard Motor",
+    "image": image,
+    "url": url,
+    ...(modelNo ? { "mpn": modelNo, "sku": modelNo } : {}),
+    "additionalProperty": additionalProperty,
+  };
+
+  if (price) {
+    product.offers = {
+      "@type": "Offer",
+      "@id": `${url}#offer`,
+      "url": url,
+      "priceCurrency": "CAD",
+      "price": price,
+      "priceValidUntil": validUntil,
+      "availability": inStock ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": { "@id": `${SITE_URL}/#organization` },
+      "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+    };
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      product,
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Mercury Outboards Ontario", "item": `${SITE_URL}/mercury-outboards-ontario` },
+          { "@type": "ListItem", "position": 3, "name": `Mercury ${family}`, "item": `${SITE_URL}/quote/motor-selection?family=${encodeURIComponent(family)}` },
+          { "@type": "ListItem", "position": 4, "name": display, "item": url },
+        ],
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        "url": url,
+        "name": `${display} — Mercury Outboard | Harris Boat Works`,
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "inLanguage": "en-CA",
+        "primaryImageOfPage": image,
+        "mainEntity": { "@id": `${url}#product` },
+        "breadcrumb": { "@id": `${url}#breadcrumb` },
+      },
+    ],
+  };
+}
+
+const motorPageRoutes = motorRecords
+  .filter(m => {
+    if (!m.model_key) return false;
+    // Skip Verado per company policy (special-order only, not promoted)
+    const s = (m.model_display || m.model || '').toLowerCase();
+    if (s.includes('verado')) return false;
+    return true;
+  })
+  .map(m => {
+    const slug = motorSlug(m.model_key);
+    const display = m.model_display || m.model || `Mercury ${m.horsepower}HP`;
+    const family = detectMotorFamily(m);
+    const price = resolveMotorSellingPrice(m);
+    const inStock = m.in_stock || m.availability === 'In Stock';
+    const modelNo = m.model_number || m.mercury_model_no || '';
+    const shaft = m.shaft_code || m.shaft || '';
+    const image = m.hero_image_url || m.image_url || null;
+    const priceStr = price
+      ? new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(price)
+      : 'Contact for pricing';
+
+    const title = `${display} — Mercury Outboard${modelNo ? ` ${modelNo}` : ''} | Harris Boat Works`;
+    const description = `${display}: Mercury ${family} ${m.horsepower} HP${shaft ? ` ${shaft} shaft` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD · ${inStock ? 'In stock' : 'Special order'} · 7-yr warranty available · Pickup at Gores Landing, ON. Mercury Marine Platinum Dealer since 1965.`;
+
+    return {
+      path: `/motors/${slug}`,
+      title,
+      description: description.slice(0, 320),
+      ogImage: image || `${SITE_URL}/social-share.jpg`,
+      ogType: 'product',
+      h1: display,
+      intro: `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
+      schemas: [motorPageSchema(m, slug)],
+      extraNoscript: () =>
+        '<table><caption>Specifications</caption><tbody>' +
+        `<tr><th scope="row">Horsepower</th><td>${m.horsepower} HP</td></tr>` +
+        `<tr><th scope="row">Family</th><td>Mercury ${escapeHtml(family)}</td></tr>` +
+        (shaft ? `<tr><th scope="row">Shaft</th><td>${escapeHtml(shaft)}</td></tr>` : '') +
+        (m.start_type ? `<tr><th scope="row">Start</th><td>${escapeHtml(m.start_type)}</td></tr>` : '') +
+        (m.control_type ? `<tr><th scope="row">Control</th><td>${escapeHtml(m.control_type)}</td></tr>` : '') +
+        (modelNo ? `<tr><th scope="row">Model number</th><td>${escapeHtml(modelNo)}</td></tr>` : '') +
+        `<tr><th scope="row">Price (CAD)</th><td>${escapeHtml(priceStr)}</td></tr>` +
+        `<tr><th scope="row">Availability</th><td>${inStock ? 'In stock' : 'Special order'}</td></tr>` +
+        `<tr><th scope="row">Warranty</th><td>3-year factory; up to 7 years available</td></tr>` +
+        `<tr><th scope="row">Pickup</th><td>Gores Landing, ON (no shipping)</td></tr>` +
+        '</tbody></table>' +
+        `<p><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}">Build a quote with this motor →</a></p>`,
+    };
+  });
+
+console.log(`[static-prerender] generated ${motorPageRoutes.length} /motors/{slug} routes`);
+
 const routes = [
   {
     path: '/',
