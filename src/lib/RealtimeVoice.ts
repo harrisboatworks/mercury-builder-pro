@@ -1107,6 +1107,38 @@ export class RealtimeVoiceChat {
     }
   }
 
+  private async handleFunctionCall(event: any) {
+    const { name, call_id, arguments: argsRaw } = event;
+    if (!this.dc || this.dc.readyState !== 'open') return;
+
+    let args: any = {};
+    try { args = JSON.parse(argsRaw || '{}'); } catch (e) { console.error('Bad function args:', argsRaw); }
+
+    let output: any = { ok: false, error: 'Unknown function' };
+
+    if (name === 'create_quote') {
+      try {
+        const resp = await fetch(
+          'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/voice-create-quote',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ...args, conversation_channel: 'voice', source: 'voice_agent' }),
+          }
+        );
+        output = await resp.json();
+      } catch (err: any) {
+        output = { ok: false, error: err?.message || 'Network error' };
+      }
+    }
+
+    this.dc.send(JSON.stringify({
+      type: 'conversation.item.create',
+      item: { type: 'function_call_output', call_id, output: JSON.stringify(output) },
+    }));
+    this.dc.send(JSON.stringify({ type: 'response.create' }));
+  }
+
   sendTextMessage(text: string) {
     if (!this.dc || this.dc.readyState !== 'open') {
       throw new Error('Data channel not ready');
