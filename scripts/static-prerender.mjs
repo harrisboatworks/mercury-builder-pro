@@ -1574,6 +1574,31 @@ function detectMotorFamily(m) {
   return 'FourStroke';
 }
 
+// Returns true only for verified Mercury / Harris-hosted asset URLs.
+// Image policy: never use synthesized, AI-generated, or placeholder images on
+// /motors pages. If the upstream record has no real image, omit it entirely.
+function isVerifiedMotorImage(url) {
+  if (!url || typeof url !== 'string') return false;
+  const u = url.trim();
+  if (!u.startsWith('http')) return false;
+  // Allow only known-good asset hosts (Mercury official, Harris-hosted on the site,
+  // or our Supabase storage CDN). Reject any random external host.
+  const allowed = [
+    'mercurymarine.com',
+    'mercurymarine.ca',
+    'cdn.mercurymarine.com',
+    'mercuryrepower.ca',
+    'harrisboatworks.ca',
+    'eutsoqdpjurknjsshxes.supabase.co',
+  ];
+  try {
+    const host = new URL(u).hostname.toLowerCase();
+    return allowed.some(a => host === a || host.endsWith('.' + a));
+  } catch {
+    return false;
+  }
+}
+
 function motorPageSchema(m, slug) {
   const url = `${SITE_URL}/motors/${slug}`;
   const display = m.model_display || m.model || `Mercury ${m.horsepower}HP`;
@@ -1581,7 +1606,9 @@ function motorPageSchema(m, slug) {
   const price = resolveMotorSellingPrice(m);
   const inStock = m.in_stock || m.availability === 'In Stock';
   const modelNo = m.model_number || m.mercury_model_no || null;
-  const image = m.hero_image_url || m.image_url || `${SITE_URL}/social-share.jpg`;
+  const rawImage = m.hero_image_url || m.image_url || null;
+  // Strict image policy: only include verified image. Otherwise omit.
+  const image = isVerifiedMotorImage(rawImage) ? rawImage : null;
   const validUntil = new Date(Date.now() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
 
   const additionalProperty = [
@@ -1600,8 +1627,8 @@ function motorPageSchema(m, slug) {
     "brand": { "@type": "Brand", "name": "Mercury Marine" },
     "manufacturer": { "@type": "Organization", "name": "Mercury Marine" },
     "category": "Outboard Motor",
-    "image": image,
     "url": url,
+    ...(image ? { image } : {}),
     ...(modelNo ? { "mpn": modelNo, "sku": modelNo } : {}),
     "additionalProperty": additionalProperty,
   };
@@ -1621,6 +1648,19 @@ function motorPageSchema(m, slug) {
     };
   }
 
+  const webPage = {
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    "url": url,
+    "name": `${display} — Mercury Outboard | Harris Boat Works`,
+    "isPartOf": { "@id": `${SITE_URL}/#website` },
+    "about": { "@id": `${SITE_URL}/#organization` },
+    "inLanguage": "en-CA",
+    "mainEntity": { "@id": `${url}#product` },
+    "breadcrumb": { "@id": `${url}#breadcrumb` },
+  };
+  if (image) webPage.primaryImageOfPage = image;
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -1635,18 +1675,7 @@ function motorPageSchema(m, slug) {
           { "@type": "ListItem", "position": 4, "name": display, "item": url },
         ],
       },
-      {
-        "@type": "WebPage",
-        "@id": `${url}#webpage`,
-        "url": url,
-        "name": `${display} — Mercury Outboard | Harris Boat Works`,
-        "isPartOf": { "@id": `${SITE_URL}/#website` },
-        "about": { "@id": `${SITE_URL}/#organization` },
-        "inLanguage": "en-CA",
-        "primaryImageOfPage": image,
-        "mainEntity": { "@id": `${url}#product` },
-        "breadcrumb": { "@id": `${url}#breadcrumb` },
-      },
+      webPage,
     ],
   };
 }
