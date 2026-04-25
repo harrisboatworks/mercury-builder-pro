@@ -1,7 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { pdf } from '@react-pdf/renderer';
 import { Download, Loader2 } from 'lucide-react';
-import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
