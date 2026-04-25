@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { pingMotorUpdates } from "../_shared/indexnow.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -69,6 +70,9 @@ serve(async (req) => {
     if (error) throw error;
 
     console.log(`Marked ${model_keys.length} models as out of stock:`, model_keys);
+
+    // Fire-and-forget IndexNow ping so search engines re-crawl these motor pages
+    pingMotorUpdates(model_keys, 'mark-out-of-stock');
 
     return new Response(JSON.stringify({
       success: true,
