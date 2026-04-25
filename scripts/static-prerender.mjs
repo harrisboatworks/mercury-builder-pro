@@ -2533,6 +2533,10 @@ const routes = [
   },
   ...blogArticleRoutes,
   ...motorPageRoutes,
+  caseStudiesIndexRoute,
+  ...caseStudyDetailRoutes,
+  locationsIndexRoute,
+  ...locationDetailRoutes,
 ];
 
 // ============================================================
