@@ -1094,6 +1094,12 @@ export class RealtimeVoiceChat {
         console.log("User stopped speaking");
         break;
         
+      case 'response.function_call_arguments.done':
+        this.handleFunctionCall(event).catch(err => {
+          console.error('Function call handler failed:', err);
+        });
+        break;
+
       case 'error':
         console.error("Realtime API error:", event.error);
         this.onError(new Error(event.error?.message || 'Unknown error'));
