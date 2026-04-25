@@ -84,11 +84,43 @@ function loadBlogArticles() {
   }
 }
 
+// Load active motor catalog from Supabase (anon key, public read access).
+// Used to prerender /motors/{slug} pages with Product/Offer JSON-LD so
+// crawlers and lightweight LLM fetchers see real per-motor content.
+async function loadMotors() {
+  const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
+  const SUPABASE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY || process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+  if (!SUPABASE_KEY) {
+    console.warn('[static-prerender] No SUPABASE_PUBLISHABLE_KEY in env — skipping /motors/{slug} prerender');
+    return [];
+  }
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
+  try {
+    const res = await fetch(url, {
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+      },
+    });
+    if (!res.ok) {
+      console.warn(`[static-prerender] Motors fetch failed: ${res.status} ${res.statusText}`);
+      return [];
+    }
+    return await res.json();
+  } catch (err) {
+    console.warn('[static-prerender] Motors fetch error:', err.message);
+    return [];
+  }
+}
+
 const faqItems = loadFaqItems();
 console.log(`[static-prerender] loaded ${faqItems.length} FAQ items`);
 
 const blogArticles = loadBlogArticles();
 console.log(`[static-prerender] loaded ${blogArticles.length} published blog articles`);
+
+const motorRecords = await loadMotors();
+console.log(`[static-prerender] loaded ${motorRecords.length} motor records for /motors/{slug}`);
 
 // ============================================================
 // Schema definitions — kept in sync with src/components/seo/*SEO.tsx
