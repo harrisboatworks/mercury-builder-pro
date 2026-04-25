@@ -50,15 +50,11 @@ export function IndexNowControl() {
         }
       }
 
-      // Case studies (static slugs from src/data/caseStudies.ts)
-      const caseSlugs = [
-        'aluminum-fishing-60-to-90-fourstroke',
-        'pontoon-family-40-to-115-command-thrust',
-        'bass-boat-150-2stroke-to-pro-xs',
-        'cedar-strip-9-9-fourstroke',
-        'walkaround-cuddy-90-to-115-efi',
-      ];
-      for (const slug of caseSlugs) urls.push(`${SITE}/case-studies/${slug}`);
+      // Case studies (sourced from src/data/caseStudies.ts — single source of truth)
+      for (const s of caseStudies) urls.push(`${SITE}/case-studies/${s.slug}`);
+
+      // Location hubs (sourced from src/data/locations.ts)
+      for (const l of locations) urls.push(`${SITE}/locations/${l.slug}`);
 
       const { data, error } = await supabase.functions.invoke('indexnow-ping', {
         body: { urls },
