@@ -2856,9 +2856,70 @@ for (const r of tableRoutes) {
   }
 }
 
+// ============================================================
+// Case study + location verification gates
+// ============================================================
+function verifyAuxRoute({ routePath, expectedTitleSnippet, expectedSchemaType, label }) {
+  const p = join(DIST, routePath.replace(/^\//, ''), 'index.html');
+  if (!existsSync(p)) {
+    verifyErrors.push(`${label}: missing stamped HTML at ${p}`);
+    return;
+  }
+  const html = readFileSync(p, 'utf8');
+  if (/<title[^>]*>Mercury Repower Quotes Online[^<]*<\/title>/i.test(html)) {
+    verifyErrors.push(`${label}: ${routePath} still has homepage <title> — prerender stamping failed.`);
+  }
+  if (expectedTitleSnippet && !html.includes(expectedTitleSnippet)) {
+    verifyErrors.push(`${label}: ${routePath} <title> missing expected snippet "${expectedTitleSnippet}".`);
+  }
+  const expectedCanonical = `${SITE_URL}${routePath}`;
+  if (!html.includes(`href="${expectedCanonical}"`)) {
+    verifyErrors.push(`${label}: ${routePath} canonical missing or wrong (expected ${expectedCanonical}).`);
+  }
+  if (expectedSchemaType && !html.includes(`"@type":"${expectedSchemaType}"`) && !html.includes(`"@type": "${expectedSchemaType}"`)) {
+    verifyErrors.push(`${label}: ${routePath} missing JSON-LD @type ${expectedSchemaType}.`);
+  }
+}
+
+// Index pages
+verifyAuxRoute({ routePath: '/case-studies', expectedTitleSnippet: 'Case Studies', expectedSchemaType: 'CollectionPage', label: 'Case studies index' });
+verifyAuxRoute({ routePath: '/locations', expectedTitleSnippet: 'Service Areas', expectedSchemaType: 'CollectionPage', label: 'Locations index' });
+
+// Sample detail pages
+if (caseStudies.length > 0) {
+  const sample = caseStudies[0];
+  verifyAuxRoute({
+    routePath: `/case-studies/${sample.slug}`,
+    expectedTitleSnippet: sample.title.slice(0, 30),
+    expectedSchemaType: 'Article',
+    label: 'Sample case study',
+  });
+}
+if (locations.length > 0) {
+  const sample = locations[0];
+  verifyAuxRoute({
+    routePath: `/locations/${sample.slug}`,
+    expectedTitleSnippet: sample.title.slice(0, 30),
+    expectedSchemaType: 'LocalBusiness',
+    label: 'Sample location',
+  });
+}
+
+// Sitemap parity
+const expectedCaseStudyUrls = caseStudies.length + 1;
+const sitemapCaseStudyMatches = (writtenSitemap.match(/<loc>[^<]*\/case-studies(\/[^<]+)?<\/loc>/g) || []).length;
+if (sitemapCaseStudyMatches !== expectedCaseStudyUrls) {
+  verifyErrors.push(`sitemap.xml case-study URL count ${sitemapCaseStudyMatches} != ${expectedCaseStudyUrls}.`);
+}
+const expectedLocationUrls = locations.length + 1;
+const sitemapLocationMatches = (writtenSitemap.match(/<loc>[^<]*\/locations(\/[^<]+)?<\/loc>/g) || []).length;
+if (sitemapLocationMatches !== expectedLocationUrls) {
+  verifyErrors.push(`sitemap.xml location URL count ${sitemapLocationMatches} != ${expectedLocationUrls}.`);
+}
+
 if (verifyErrors.length > 0) {
   console.error('\n[static-prerender] ❌ Build verification failed:');
   for (const e of verifyErrors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`[static-prerender] ✓ Verification passed — ${motorPageRoutes.length} motor pages, ${tableRoutes.length} table pages, Verado consistent, ai.txt clean.`);
+console.log(`[static-prerender] ✓ Verification passed — ${motorPageRoutes.length} motor pages, ${caseStudyDetailRoutes.length} case studies, ${locationDetailRoutes.length} locations, ${tableRoutes.length} table pages, Verado consistent, ai.txt clean.`);
