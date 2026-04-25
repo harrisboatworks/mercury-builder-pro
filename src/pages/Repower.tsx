@@ -300,6 +300,68 @@ export default function Repower() {
             <p className="text-3xl md:text-4xl font-bold mb-2">$8,000 - $18,000</p>
             <p className="text-primary-foreground/80">For a 16-18ft boat with 60-115 HP, all-in</p>
           </div>
+
+          {/* Repower cost-by-HP table */}
+          <div className="mt-12 max-w-4xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3 text-center">
+              Mercury Repower Cost by Horsepower (Ontario, 2026 CAD)
+            </h3>
+            <p className="text-sm text-muted-foreground text-center mb-5">
+              Complete installed packages — engine, controls, rigging, propeller, removal, install, and lake test. Final pricing is configured at the quote builder.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border bg-white">
+              <table className="w-full text-sm">
+                <caption className="sr-only">
+                  Typical complete Mercury outboard repower price ranges in CAD by horsepower category for Ontario boaters.
+                </caption>
+                <thead className="bg-muted/40">
+                  <tr>
+                    <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">HP Category</th>
+                    <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Typical Boat</th>
+                    <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Complete Repower (CAD)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-t border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">9.9 – 20 HP</td>
+                    <td className="px-4 py-3 text-muted-foreground">Tiller, kicker, small aluminum, canoe</td>
+                    <td className="px-4 py-3 text-foreground">$5,000 – $9,000</td>
+                  </tr>
+                  <tr className="border-t border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">25 – 60 HP</td>
+                    <td className="px-4 py-3 text-muted-foreground">Mid-size aluminum, small pontoon</td>
+                    <td className="px-4 py-3 text-foreground">$9,000 – $18,000</td>
+                  </tr>
+                  <tr className="border-t border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">75 – 115 HP</td>
+                    <td className="px-4 py-3 text-muted-foreground">Larger fishing boats, pontoons, smaller runabouts</td>
+                    <td className="px-4 py-3 text-foreground">$16,000 – $28,000</td>
+                  </tr>
+                  <tr className="border-t border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">150 – 200 HP</td>
+                    <td className="px-4 py-3 text-muted-foreground">Performance fishing, runabouts, family boats</td>
+                    <td className="px-4 py-3 text-foreground">$28,000 – $50,000</td>
+                  </tr>
+                  <tr className="border-t border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">250 – 300 HP</td>
+                    <td className="px-4 py-3 text-muted-foreground">High-performance, larger hulls, twin setups</td>
+                    <td className="px-4 py-3 text-foreground">$48,000 – $75,000</td>
+                  </tr>
+                  <tr className="border-t border-border">
+                    <td className="px-4 py-3 font-medium text-foreground">350 – 425 HP (Verado V10)</td>
+                    <td className="px-4 py-3 text-muted-foreground">Special-order — call for pricing</td>
+                    <td className="px-4 py-3 text-foreground">$65,000+ per engine</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground text-center mt-3">
+              Detailed line-item math:{' '}
+              <Link to="/blog/mercury-repower-cost-ontario-2026-cad" className="text-primary underline">
+                2026 Ontario repower cost guide
+              </Link>.
+            </p>
+          </div>
         </div>
       </section>
 
