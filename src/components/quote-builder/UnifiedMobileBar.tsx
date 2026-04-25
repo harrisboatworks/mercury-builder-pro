@@ -20,6 +20,8 @@ import { getHPRange, HP_SPECIFIC_MESSAGES, MOTOR_FAMILY_TIPS, getMotorFamilyKey,
 import { getRecommendedDeposit } from '@/components/quote-builder/PaymentPreferenceSelector';
 import { EXPERT_NUDGES, getRecommendedHPRange, isUnderpowered, getRotatingNudge, PROMO_AWARENESS_NUDGES, getChatNudgesForPath, ChatEngagementNudge } from '@/lib/quote-nudges';
 import { usePageSpecificInsights } from '@/hooks/usePageSpecificInsights';
+import { getQuoteStepGate } from '@/lib/quote-step-gate';
+import { toast } from 'sonner';
 
 // Nudge types for different visual treatments
 type NudgeType = 'tip' | 'success' | 'celebration' | 'progress' | 'social-proof' | 'info' | 'comparison';
@@ -896,9 +898,19 @@ export const UnifiedMobileBar: React.FC = () => {
     }
   };
 
+  // Per-step validation gate (must be computed before handlePrimary so the
+  // disabled prop on the CTA matches the actual block behavior).
+  const stepGate = getQuoteStepGate(location.pathname, state);
+
   const handlePrimary = () => {
     triggerHaptic('light');
-    
+
+    // Block if required selection on this step is missing
+    if (stepGate.disabled) {
+      if (stepGate.reason) toast.error(stepGate.reason);
+      return;
+    }
+
     // Summary page: trigger deposit payment via custom event
     if (location.pathname === '/quote/summary') {
       window.dispatchEvent(new CustomEvent('initiate-deposit'));
@@ -1417,7 +1429,9 @@ export const UnifiedMobileBar: React.FC = () => {
                 y: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
               }}
               onClick={handlePrimary}
-              disabled={!hasMotor}
+              disabled={!hasMotor || stepGate.disabled}
+              aria-disabled={!hasMotor || stepGate.disabled}
+              title={stepGate.disabled ? stepGate.reason : undefined}
               className={cn(
                 "shrink-0 rounded-xl font-semibold",
                 "h-10 px-2.5 text-xs min-[375px]:h-11 min-[375px]:px-3 min-[375px]:text-sm min-[428px]:px-4",
