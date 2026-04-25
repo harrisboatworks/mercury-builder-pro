@@ -3943,6 +3943,8 @@ We offer:
 - Trade-in assistance
 
 **[Get Financing Information](/quote)**
+
+For real CAD pricing on what you'd actually be financing, see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) — it breaks down complete repower totals by HP class so you can size your loan accurately.
     `,
     faqs: [
       {
@@ -6221,6 +6223,8 @@ Conventional wisdom says year-end is deal time. Is that true for boat motors? He
 A fair deal when you need it beats waiting indefinitely for a perfect deal. That said, winter months often offer good value through reduced demand and dealer flexibility.
 
 **[Get Year-End Pricing](/quote)**
+
+Before you negotiate, anchor your expectations to real numbers — our [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) is the canonical CAD price reference for complete repowers at every HP tier.
     `,
     faqs: [
       {
@@ -6967,6 +6971,8 @@ Note: Mercury Marine has scaled back manufacturer-level promotional programs in 
 **Total Rigged Cost**: Add $2,000-5,000+ to motor price
 
 **[Get Current Pricing](/quote)**
+
+For complete installed-repower pricing in CAD — including the rigging, controls, prop, and labour components above — see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
     `,
     faqs: [
       {
@@ -8713,6 +8719,8 @@ Discontinued engines affect resale. A Mercury-repowered boat is generally easier
 ## For Engine Repairs, We Only Service Mercury and Mercruiser
 
 Harris Boat Works services Mercury and Mercruiser engines. We do not service Evinrude or other brands. If you're ready to move to Mercury, we handle the full repower — and once it's done, we're your service shop going forward.
+
+For full installed-repower pricing in CAD across every HP class — what most Evinrude owners actually budget against — see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
     `,
     faqs: [
       {
@@ -9229,6 +9237,8 @@ Current details: harrisboatworks.ca or call 905-342-2153.
 4. **Apply** — Most lenders give a decision within 24–48 hours
 5. **Confirm the warranty** — Make sure 7-year coverage is included
 6. **Book installation** — Service appointments fill up in spring: hbw.wiki/service
+
+Before you apply, get an accurate financed amount: our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) lays out real CAD repower totals by HP class so your loan request matches the real installed price.
     `,
     faqs: [
       {
@@ -9991,6 +10001,25 @@ Speaking of freight: in Canada, most motors ship to dealers, and dealer freight 
 
 The CAD-USD relationship also matters. If the Canadian dollar weakens, Mercury's cost basis for importing motors rises — and that typically flows through to retail pricing over time. The ranges in this guide reflect our current inventory as of spring 2026 — treat them as real prices, not planning estimates.
 
+## 2026 Mercury Entry-Level Price Table (CAD, In-Stock at Harris Boat Works)
+
+The table below is the quick-reference for every entry-level Mercury we currently carry. All prices are MSRP in Canadian dollars, before HST, rigging, prop, and installation. Sale prices reflect current floor pricing as of spring 2026.
+
+| HP | Model | Start / Steering | Shaft | MSRP (CAD) | Sale Price (CAD) | Best For |
+|---:|---|---|---|---:|---:|---|
+| 2.5 | 2026 Mercury 2.5 MH | Manual / Tiller | Short | $1,385 | — | Dinghies, tenders, canoes |
+| 6 | 2026 Mercury 6 MH | Manual / Tiller | Short | $2,275 | — | 12–14 ft aluminum, small fishing |
+| 9.9 | 2026 Mercury 9.9 MH | Manual / Tiller | Short | $3,875 | — | Restricted lakes, kicker, small fishing |
+| 9.9 | 2026 Mercury 9.9 EH | Electric / Tiller | Short | $4,230 | — | Easier starting on small fishing rigs |
+| 9.9 | 2026 Mercury 9.9 ELH | Electric / Tiller | Long | $4,435 | — | Long-shaft transoms, kicker on larger boats |
+| 9.9 | 2026 Mercury 9.9 ELH EFI | Electric / Tiller | Long | $3,925 | **$3,299.99** | Best entry-level value, EFI fuel injection |
+| 15 | 2026 Mercury 15 MH | Manual / Tiller | Short | $4,225 | — | 14–16 ft aluminum primary motor |
+| 15 | 2026 Mercury 15 EXLHPT ProKicker | Electric / Tiller, Power Trim | Extra-Long | $6,080 | **$5,572** | Walleye trolling, kicker on larger fishing boats |
+| 20 | 2026 Mercury 20 EH | Electric / Tiller | Short | $5,110 | — | 14 ft aluminum on plane with one or two people |
+| 20 | 2026 Mercury 20 ELH | Electric / Tiller | Long | $5,005 | — | 16 ft aluminum, mid-size fishing rigs |
+| 20 | 2021 Mercury 20 ELH (used) | Electric / Tiller | Long | — | **$3,978** | Lightly used; lowest-cost path to 20 HP |
+
+Need a quote with rigging, prop, installation, and HST included? [Build it at mercuryrepower.ca](https://mercuryrepower.ca/quote/motor-selection) — no phone tag.
 ## The Absolute Cheapest: Mercury 2.5 hp FourStroke
 
 **HBW in-stock price: $1,385 MSRP** (2026 Mercury 2.5 MH)
