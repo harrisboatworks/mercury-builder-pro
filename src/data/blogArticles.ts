@@ -810,6 +810,8 @@ When you buy a ProKicker through us, you get:
 Whether you're chasing walleye along the weed lines near Gores Landing, trolling for muskie from Bewdley to Hastings, or working smallmouth structure around the islands, a properly installed Mercury ProKicker will transform your fishing game.
 
 **Ready to add a ProKicker to your boat?** [Build a quote in our online configurator](/quote/motor-selection) — all three ProKicker models are available — or [submit a service request](https://hbw.wiki/service) to discuss installation.
+
+Prefer a non-ProKicker 9.9 as a true main-engine kicker on smaller hulls? See the [Mercury 9.9 ELH FourStroke](/motors/fourstroke-9-9hp-9-9elh-fourstroke) — electric-start, long-shaft, remote-ready, priced in CAD with pickup at our Gores Landing dealership on Rice Lake.
     `,
     howToSteps: [
       {
@@ -1256,6 +1258,8 @@ Mercury FourStroke and Verado are notably quiet — important when you're entert
 **Best Premium**: Mercury Verado 250HP for 24ft+ tritoons
 
 On Rice Lake, most family pontoons are in the 20–24ft range. A Mercury 115–150HP is the right power band for this water — enough to get the family on plane, handle the open south-end run, and pull a tube without straining the motor. We see too many 20ft pontoons with 60–75HP; they work on flat calm days, but they're miserable in any chop or with a full load.
+
+For smaller 18–20ft pontoons and heavier 16–18ft aluminum hulls, the [Mercury 60 ELPT Command Thrust FourStroke](/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke) is our most-quoted Ontario repower — bigger gearcase, larger prop, real hole-shot under load. CAD pricing, pickup at Gores Landing, dealer since 1965.
 
 [Get a quote on your pontoon motor](https://mercuryrepower.ca/quote/motor-selection)
     `,
@@ -2358,7 +2362,7 @@ Pro XS boats often run 4-blade stainless props for best hole-shot. Pitch selecti
 
 ### Our Recommendation
 
-For most bass anglers, the **Mercury Pro XS** in the appropriate HP provides the best combination of performance and value. It's what tournament pros run for good reason.
+For most bass anglers, the **Mercury Pro XS** in the appropriate HP provides the best combination of performance and value. It's what tournament pros run for good reason. The [Mercury 150 ELPT Pro XS](/motors/proxs-150hp-150-elpt-proxs) is the single most-popular bass-boat repower we sell in Ontario — lighter than the FourStroke 150, tuned for top-end and hole-shot, priced in CAD with pickup at Gores Landing on Rice Lake.
 
 If budget is tighter and you fish recreationally — chasing smallmouth on Rice Lake or bass on cottage country waters — the **Mercury FourStroke** at 150HP delivers excellent performance without the Pro XS premium.
 
