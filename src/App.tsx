@@ -109,6 +109,7 @@ const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const TikTokCallback = lazy(() => import("./pages/TikTokCallback"));
 const MotorRedirect = lazy(() => import("./pages/MotorRedirect"));
+const MotorPage = lazy(() => import("./pages/MotorPage"));
 const TradeInValuePage = lazy(() => import("./pages/TradeInValuePage"));
 const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
 
@@ -211,7 +212,7 @@ function AnimatedRoutes() {
           } 
         />
         <Route path="/" element={<RootRedirect />} />
-        <Route path="/motors/:slug" element={<MotorRedirect />} />
+        <Route path="/motors/:slug" element={<MotorPage />} />
         <Route path="/index" element={<Index />} />
                 
         {/* Quote Builder Routes */}

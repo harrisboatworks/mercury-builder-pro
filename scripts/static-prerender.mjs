@@ -84,11 +84,43 @@ function loadBlogArticles() {
   }
 }
 
+// Load active motor catalog from Supabase (anon key, public read access).
+// Used to prerender /motors/{slug} pages with Product/Offer JSON-LD so
+// crawlers and lightweight LLM fetchers see real per-motor content.
+async function loadMotors() {
+  const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
+  const SUPABASE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY || process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+  if (!SUPABASE_KEY) {
+    console.warn('[static-prerender] No SUPABASE_PUBLISHABLE_KEY in env — skipping /motors/{slug} prerender');
+    return [];
+  }
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
+  try {
+    const res = await fetch(url, {
+      headers: {
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
+      },
+    });
+    if (!res.ok) {
+      console.warn(`[static-prerender] Motors fetch failed: ${res.status} ${res.statusText}`);
+      return [];
+    }
+    return await res.json();
+  } catch (err) {
+    console.warn('[static-prerender] Motors fetch error:', err.message);
+    return [];
+  }
+}
+
 const faqItems = loadFaqItems();
 console.log(`[static-prerender] loaded ${faqItems.length} FAQ items`);
 
 const blogArticles = loadBlogArticles();
 console.log(`[static-prerender] loaded ${blogArticles.length} published blog articles`);
+
+const motorRecords = await loadMotors();
+console.log(`[static-prerender] loaded ${motorRecords.length} motor records for /motors/{slug}`);
 
 // ============================================================
 // Schema definitions — kept in sync with src/components/seo/*SEO.tsx
@@ -1463,6 +1495,166 @@ const blogArticleRoutes = blogArticles.map(article => ({
   }
 }));
 
+// ============================================================
+// Per-motor /motors/{slug} routes — Product + Offer JSON-LD
+// ============================================================
+
+function motorSlug(modelKey) {
+  return String(modelKey).toLowerCase().replace(/_/g, '-');
+}
+
+function resolveMotorSellingPrice(m) {
+  const overrides = m.manual_overrides || {};
+  const candidates = [
+    overrides.sale_price, overrides.base_price,
+    m.sale_price, m.dealer_price, m.msrp, m.base_price,
+  ];
+  for (const v of candidates) {
+    const n = typeof v === 'string' ? parseFloat(v) : v;
+    if (typeof n === 'number' && !isNaN(n) && n > 0) return n;
+  }
+  return null;
+}
+
+function detectMotorFamily(m) {
+  if (m.family) return m.family;
+  const s = (m.model_display || m.model || '').toLowerCase();
+  if (s.includes('proxs') || s.includes('pro xs')) return 'Pro XS';
+  if (s.includes('seapro') || s.includes('sea pro')) return 'SeaPro';
+  if (s.includes('racing')) return 'Racing';
+  if (s.includes('verado')) return 'Verado';
+  return 'FourStroke';
+}
+
+function motorPageSchema(m, slug) {
+  const url = `${SITE_URL}/motors/${slug}`;
+  const display = m.model_display || m.model || `Mercury ${m.horsepower}HP`;
+  const family = detectMotorFamily(m);
+  const price = resolveMotorSellingPrice(m);
+  const inStock = m.in_stock || m.availability === 'In Stock';
+  const modelNo = m.model_number || m.mercury_model_no || null;
+  const image = m.hero_image_url || m.image_url || `${SITE_URL}/social-share.jpg`;
+  const validUntil = new Date(Date.now() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+  const additionalProperty = [
+    { "@type": "PropertyValue", "name": "Horsepower", "value": `${m.horsepower} HP` },
+    { "@type": "PropertyValue", "name": "Family", "value": `Mercury ${family}` },
+  ];
+  if (m.shaft_code || m.shaft) additionalProperty.push({ "@type": "PropertyValue", "name": "Shaft", "value": m.shaft_code || m.shaft });
+  if (m.start_type) additionalProperty.push({ "@type": "PropertyValue", "name": "Start", "value": m.start_type });
+  if (m.control_type) additionalProperty.push({ "@type": "PropertyValue", "name": "Control", "value": m.control_type });
+
+  const product = {
+    "@type": "Product",
+    "@id": `${url}#product`,
+    "name": display,
+    "description": `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. Sold and serviced by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.`,
+    "brand": { "@type": "Brand", "name": "Mercury Marine" },
+    "manufacturer": { "@type": "Organization", "name": "Mercury Marine" },
+    "category": "Outboard Motor",
+    "image": image,
+    "url": url,
+    ...(modelNo ? { "mpn": modelNo, "sku": modelNo } : {}),
+    "additionalProperty": additionalProperty,
+  };
+
+  if (price) {
+    product.offers = {
+      "@type": "Offer",
+      "@id": `${url}#offer`,
+      "url": url,
+      "priceCurrency": "CAD",
+      "price": price,
+      "priceValidUntil": validUntil,
+      "availability": inStock ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": { "@id": `${SITE_URL}/#organization` },
+      "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+    };
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      product,
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+          { "@type": "ListItem", "position": 2, "name": "Mercury Outboards Ontario", "item": `${SITE_URL}/mercury-outboards-ontario` },
+          { "@type": "ListItem", "position": 3, "name": `Mercury ${family}`, "item": `${SITE_URL}/quote/motor-selection?family=${encodeURIComponent(family)}` },
+          { "@type": "ListItem", "position": 4, "name": display, "item": url },
+        ],
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        "url": url,
+        "name": `${display} — Mercury Outboard | Harris Boat Works`,
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "inLanguage": "en-CA",
+        "primaryImageOfPage": image,
+        "mainEntity": { "@id": `${url}#product` },
+        "breadcrumb": { "@id": `${url}#breadcrumb` },
+      },
+    ],
+  };
+}
+
+const motorPageRoutes = motorRecords
+  .filter(m => {
+    if (!m.model_key) return false;
+    // Skip Verado per company policy (special-order only, not promoted)
+    const s = (m.model_display || m.model || '').toLowerCase();
+    if (s.includes('verado')) return false;
+    return true;
+  })
+  .map(m => {
+    const slug = motorSlug(m.model_key);
+    const display = m.model_display || m.model || `Mercury ${m.horsepower}HP`;
+    const family = detectMotorFamily(m);
+    const price = resolveMotorSellingPrice(m);
+    const inStock = m.in_stock || m.availability === 'In Stock';
+    const modelNo = m.model_number || m.mercury_model_no || '';
+    const shaft = m.shaft_code || m.shaft || '';
+    const image = m.hero_image_url || m.image_url || null;
+    const priceStr = price
+      ? new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(price)
+      : 'Contact for pricing';
+
+    const title = `${display} — Mercury Outboard${modelNo ? ` ${modelNo}` : ''} | Harris Boat Works`;
+    const description = `${display}: Mercury ${family} ${m.horsepower} HP${shaft ? ` ${shaft} shaft` : ''}${modelNo ? ` (${modelNo})` : ''}. ${priceStr} CAD · ${inStock ? 'In stock' : 'Special order'} · 7-yr warranty available · Pickup at Gores Landing, ON. Mercury Marine Platinum Dealer since 1965.`;
+
+    return {
+      path: `/motors/${slug}`,
+      title,
+      description: description.slice(0, 320),
+      ogImage: image || `${SITE_URL}/social-share.jpg`,
+      ogType: 'product',
+      h1: display,
+      intro: `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
+      schemas: [motorPageSchema(m, slug)],
+      extraNoscript: () =>
+        '<table><caption>Specifications</caption><tbody>' +
+        `<tr><th scope="row">Horsepower</th><td>${m.horsepower} HP</td></tr>` +
+        `<tr><th scope="row">Family</th><td>Mercury ${escapeHtml(family)}</td></tr>` +
+        (shaft ? `<tr><th scope="row">Shaft</th><td>${escapeHtml(shaft)}</td></tr>` : '') +
+        (m.start_type ? `<tr><th scope="row">Start</th><td>${escapeHtml(m.start_type)}</td></tr>` : '') +
+        (m.control_type ? `<tr><th scope="row">Control</th><td>${escapeHtml(m.control_type)}</td></tr>` : '') +
+        (modelNo ? `<tr><th scope="row">Model number</th><td>${escapeHtml(modelNo)}</td></tr>` : '') +
+        `<tr><th scope="row">Price (CAD)</th><td>${escapeHtml(priceStr)}</td></tr>` +
+        `<tr><th scope="row">Availability</th><td>${inStock ? 'In stock' : 'Special order'}</td></tr>` +
+        `<tr><th scope="row">Warranty</th><td>3-year factory; up to 7 years available</td></tr>` +
+        `<tr><th scope="row">Pickup</th><td>Gores Landing, ON (no shipping)</td></tr>` +
+        '</tbody></table>' +
+        `<p><a href="/quote/motor-selection?motor=${encodeURIComponent(m.id)}">Build a quote with this motor →</a></p>`,
+    };
+  });
+
+console.log(`[static-prerender] generated ${motorPageRoutes.length} /motors/{slug} routes`);
+
 const routes = [
   {
     path: '/',
@@ -1739,7 +1931,208 @@ const routes = [
     intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works — Mercury Marine Platinum Dealer on Rice Lake since 1965. Factory-backed 7-year warranty on every new Mercury.',
     schemas: [promotionsPageSchema()]
   },
-  ...blogArticleRoutes
+  // ============================================================
+  // P2 — Orphan SEO routes (previously inherited homepage metadata)
+  // ============================================================
+  {
+    path: '/trade-in-value',
+    title: 'Trade-In Value Estimator — Mercury & Other Outboards | Harris Boat Works',
+    description: 'Estimate your outboard trade-in value in CAD. Anchored to our actual selling prices — not blue-book guesses. Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, Johnson accepted. Mercury Platinum Dealer since 1965.',
+    h1: 'Trade-In Value Estimator',
+    intro: 'Get an instant CAD trade-in estimate for your outboard motor. Our valuation engine is anchored to Harris Boat Works\' real selling prices, not stale blue-book numbers. Trade credit applies directly to a new Mercury repower quote.',
+    schemas: [{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/trade-in-value#webpage`,
+          "url": `${SITE_URL}/trade-in-value`,
+          "name": "Trade-In Value Estimator | Harris Boat Works",
+          "description": "Estimate your outboard trade-in value in CAD anchored to Harris Boat Works selling prices.",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "about": { "@id": `${SITE_URL}/#organization` },
+          "inLanguage": "en-CA",
+          "breadcrumb": { "@id": `${SITE_URL}/trade-in-value#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/trade-in-value#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Trade-In Value", "item": `${SITE_URL}/trade-in-value` },
+          ],
+        },
+        {
+          "@type": "Service",
+          "@id": `${SITE_URL}/trade-in-value#service`,
+          "name": "Outboard Motor Trade-In Valuation",
+          "serviceType": "Outboard trade-in appraisal",
+          "provider": { "@id": `${SITE_URL}/#organization` },
+          "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+          "offers": { "@type": "Offer", "priceCurrency": "CAD", "price": "0" },
+        },
+      ],
+    }],
+  },
+  {
+    path: '/accessories',
+    title: 'Mercury Outboard Accessories — Genuine OEM Parts in CAD | Harris Boat Works',
+    description: 'Genuine Mercury OEM accessories — propellers, controls, gauges, batteries, fuel systems. Real CAD pricing, included in your repower quote. Mercury Platinum Dealer on Rice Lake since 1965.',
+    h1: 'Mercury Outboard Accessories',
+    intro: 'Genuine Mercury OEM accessories — propellers, controls, SmartCraft gauges, starting batteries, fuel tanks, fuel/water separators, and rigging — at real CAD pricing. Add them to your Mercury repower quote in one step.',
+    schemas: [{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/accessories#webpage`,
+          "url": `${SITE_URL}/accessories`,
+          "name": "Mercury Outboard Accessories | Harris Boat Works",
+          "description": "Genuine Mercury OEM accessories at real CAD pricing.",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "about": { "@id": `${SITE_URL}/#organization` },
+          "inLanguage": "en-CA",
+          "breadcrumb": { "@id": `${SITE_URL}/accessories#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/accessories#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Accessories", "item": `${SITE_URL}/accessories` },
+          ],
+        },
+        {
+          "@type": "ItemList",
+          "@id": `${SITE_URL}/accessories#itemlist`,
+          "name": "Mercury Outboard Accessory Categories",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Propellers (Mercury OEM)" },
+            { "@type": "ListItem", "position": 2, "name": "Controls & Cables" },
+            { "@type": "ListItem", "position": 3, "name": "SmartCraft Gauges" },
+            { "@type": "ListItem", "position": 4, "name": "Starting Batteries" },
+            { "@type": "ListItem", "position": 5, "name": "Fuel Tanks & Lines" },
+            { "@type": "ListItem", "position": 6, "name": "Rigging & Hardware" },
+          ],
+        },
+      ],
+    }],
+  },
+  {
+    path: '/compare',
+    title: 'Compare Mercury Outboards Side-by-Side — HP, Weight & CAD Price | Harris Boat Works',
+    description: 'Compare Mercury outboard motors side-by-side: horsepower, dry weight, shaft length, family, real CAD pricing, and availability. Mercury Platinum Dealer since 1965 on Rice Lake, Ontario.',
+    h1: 'Compare Mercury Outboards',
+    intro: 'Compare any two or three Mercury outboards side-by-side — horsepower, weight, shaft length, family, CAD price, and availability. Pull from our live inventory and decide between the FourStroke, Pro XS, Command Thrust, SeaPro, or ProKicker that fits your boat.',
+    schemas: [{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/compare#webpage`,
+          "url": `${SITE_URL}/compare`,
+          "name": "Compare Mercury Outboards | Harris Boat Works",
+          "description": "Compare Mercury outboard motors side-by-side — HP, weight, shaft, CAD price, availability.",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "about": { "@id": `${SITE_URL}/#organization` },
+          "inLanguage": "en-CA",
+          "breadcrumb": { "@id": `${SITE_URL}/compare#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/compare#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Compare", "item": `${SITE_URL}/compare` },
+          ],
+        },
+      ],
+    }],
+  },
+  {
+    path: '/finance-calculator',
+    title: 'Mercury Outboard Finance Calculator (CAD) — Monthly Payment Estimate | Harris Boat Works',
+    description: 'Estimate your Mercury outboard monthly payment in CAD. 8.99% under $10K, 7.99% over $10K. Terms up to 144 months through DealerPlan. Mercury dealer since 1965.',
+    h1: 'Mercury Outboard Finance Calculator',
+    intro: 'Estimate your monthly payment for any Mercury outboard in Canadian dollars. Tiered rates of 8.99% APR under $10,000 and 7.99% APR over $10,000, with terms up to 144 months through DealerPlan. Minimum financed amount $5,000.',
+    schemas: [{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/finance-calculator#webpage`,
+          "url": `${SITE_URL}/finance-calculator`,
+          "name": "Mercury Outboard Finance Calculator | Harris Boat Works",
+          "description": "Estimate Mercury outboard monthly payments in CAD.",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "about": { "@id": `${SITE_URL}/#organization` },
+          "inLanguage": "en-CA",
+          "breadcrumb": { "@id": `${SITE_URL}/finance-calculator#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/finance-calculator#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Finance Calculator", "item": `${SITE_URL}/finance-calculator` },
+          ],
+        },
+        {
+          "@type": "FinancialProduct",
+          "@id": `${SITE_URL}/finance-calculator#product`,
+          "name": "Mercury Outboard Financing (DealerPlan)",
+          "provider": { "@id": `${SITE_URL}/#organization` },
+          "feesAndCommissionsSpecification": "$299 DealerPlan processing fee applies to financed purchases.",
+          "interestRate": "7.99% over $10,000 CAD; 8.99% under $10,000 CAD",
+          "annualPercentageRate": "7.99",
+          "areaServed": { "@type": "AdministrativeArea", "name": "Canada" },
+        },
+      ],
+    }],
+  },
+  {
+    path: '/financing-application',
+    title: 'Mercury Outboard Financing Application — Apply Online (CAD) | Harris Boat Works',
+    description: 'Apply online for Mercury outboard financing through DealerPlan. 7.99–8.99% APR, $5,000 minimum, terms to 144 months. Mercury Platinum Dealer since 1965 on Rice Lake.',
+    h1: 'Mercury Outboard Financing Application',
+    intro: 'Apply for Mercury outboard financing online through DealerPlan. Approval typically within 1 business day. Tiered rates: 8.99% under $10,000 and 7.99% over $10,000. $5,000 minimum financed amount, terms up to 144 months. Submitted information is encrypted and stored securely.',
+    schemas: [{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/financing-application#webpage`,
+          "url": `${SITE_URL}/financing-application`,
+          "name": "Mercury Outboard Financing Application | Harris Boat Works",
+          "description": "Apply online for Mercury outboard financing in Canada.",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "about": { "@id": `${SITE_URL}/#organization` },
+          "inLanguage": "en-CA",
+          "breadcrumb": { "@id": `${SITE_URL}/financing-application#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/financing-application#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Financing Application", "item": `${SITE_URL}/financing-application` },
+          ],
+        },
+        {
+          "@type": "FinancialProduct",
+          "@id": `${SITE_URL}/financing-application#product`,
+          "name": "Mercury Outboard Financing — DealerPlan",
+          "provider": { "@id": `${SITE_URL}/#organization` },
+          "interestRate": "7.99% over $10,000 CAD; 8.99% under $10,000 CAD",
+          "annualPercentageRate": "7.99",
+          "feesAndCommissionsSpecification": "$299 DealerPlan processing fee.",
+          "areaServed": { "@type": "AdministrativeArea", "name": "Canada" },
+        },
+      ],
+    }],
+  },
+  ...blogArticleRoutes,
+  ...motorPageRoutes,
 ];
 
 // ============================================================
@@ -1869,3 +2262,84 @@ if (failures > 0) {
 }
 
 console.log(`[static-prerender] ✓ ${routes.length} routes prerendered`);
+
+// ============================================================
+// Sitemap regeneration — include all motor URLs and the orphan
+// SEO routes we just stamped. Writes both dist/sitemap.xml (served
+// by Vercel) and public/sitemap.xml (kept in sync for repo).
+// ============================================================
+const today = new Date().toISOString().split('T')[0];
+const staticSitemapEntries = [
+  { loc: '/', priority: 1.0, changefreq: 'daily' },
+  { loc: '/quote/motor-selection', priority: 0.9, changefreq: 'daily' },
+  { loc: '/promotions', priority: 0.8, changefreq: 'weekly' },
+  { loc: '/repower', priority: 0.9, changefreq: 'monthly' },
+  { loc: '/trade-in-value', priority: 0.8, changefreq: 'weekly' },
+  { loc: '/accessories', priority: 0.7, changefreq: 'weekly' },
+  { loc: '/compare', priority: 0.7, changefreq: 'weekly' },
+  { loc: '/faq', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/financing-application', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/finance-calculator', priority: 0.7, changefreq: 'monthly' },
+  { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
+  { loc: '/about', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
+  { loc: '/mercury-repower-faq', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/mercury-dealer-canada-faq', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/mercury-dealer-peterborough', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/mercury-dealer-cobourg', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/mercury-dealer-gta', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/mercury-pro-xs', priority: 0.85, changefreq: 'weekly' },
+  { loc: '/mercury-outboards-ontario', priority: 0.85, changefreq: 'weekly' },
+  { loc: '/mercury-pontoon-outboards', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/agents', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/privacy', priority: 0.3, changefreq: 'yearly' },
+  { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
+];
+
+const blogSitemapEntries = blogArticles.map(a => ({
+  loc: `/blog/${a.slug}`,
+  priority: 0.7,
+  changefreq: 'monthly',
+  lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
+  imageUrl: a.image ? (a.image.startsWith('/') ? `${SITE_URL}${a.image}` : a.image) : null,
+  imageTitle: a.title,
+}));
+
+const motorSitemapEntries = motorPageRoutes.map(r => {
+  const rec = motorRecords.find(m => `/motors/${motorSlug(m.model_key)}` === r.path);
+  const lastmod = rec?.updated_at ? rec.updated_at.split('T')[0] : today;
+  return { loc: r.path, priority: 0.7, changefreq: 'weekly', lastmod };
+});
+
+const allSitemapEntries = [
+  ...staticSitemapEntries.map(e => ({ ...e, lastmod: today })),
+  ...blogSitemapEntries,
+  ...motorSitemapEntries,
+];
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${allSitemapEntries.map(e => {
+  let block = `  <url>
+    <loc>${SITE_URL}${e.loc}</loc>
+    <lastmod>${e.lastmod || today}</lastmod>
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority}</priority>`;
+  if (e.imageUrl) {
+    block += `
+    <image:image>
+      <image:loc>${e.imageUrl}</image:loc>
+      <image:title><![CDATA[${e.imageTitle}]]></image:title>
+    </image:image>`;
+  }
+  block += `
+  </url>`;
+  return block;
+}).join('\n')}
+</urlset>`;
+
+writeFileSync(join(DIST, 'sitemap.xml'), sitemapXml, 'utf8');
+writeFileSync(join(ROOT, 'public', 'sitemap.xml'), sitemapXml, 'utf8');
+console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries.length} URLs (${motorSitemapEntries.length} motors, ${blogSitemapEntries.length} blog, ${staticSitemapEntries.length} static)`);
