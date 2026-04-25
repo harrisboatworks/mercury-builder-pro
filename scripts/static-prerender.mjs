@@ -2716,10 +2716,39 @@ const motorSitemapEntries = motorPageRoutes.map(r => {
   return { loc: r.path, priority: 0.7, changefreq: 'weekly', lastmod };
 });
 
+const caseStudySitemapEntries = [
+  { loc: '/case-studies', priority: 0.8, changefreq: 'monthly', lastmod: today },
+  ...caseStudies.map((s) => {
+    const imageUrl = s.heroImage
+      ? (s.heroImage.startsWith('/') ? `${SITE_URL}${s.heroImage}` : s.heroImage)
+      : null;
+    return {
+      loc: `/case-studies/${s.slug}`,
+      priority: 0.75,
+      changefreq: 'monthly',
+      lastmod: today,
+      imageUrl,
+      imageTitle: s.title,
+    };
+  }),
+];
+
+const locationSitemapEntries = [
+  { loc: '/locations', priority: 0.8, changefreq: 'monthly', lastmod: today },
+  ...locations.map((l) => ({
+    loc: `/locations/${l.slug}`,
+    priority: 0.8,
+    changefreq: 'monthly',
+    lastmod: today,
+  })),
+];
+
 const allSitemapEntries = [
   ...staticSitemapEntries.map(e => ({ ...e, lastmod: today })),
   ...blogSitemapEntries,
   ...motorSitemapEntries,
+  ...caseStudySitemapEntries,
+  ...locationSitemapEntries,
 ];
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -2746,7 +2775,7 @@ ${allSitemapEntries.map(e => {
 
 writeFileSync(join(DIST, 'sitemap.xml'), sitemapXml, 'utf8');
 writeFileSync(join(ROOT, 'public', 'sitemap.xml'), sitemapXml, 'utf8');
-console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries.length} URLs (${motorSitemapEntries.length} motors, ${blogSitemapEntries.length} blog, ${staticSitemapEntries.length} static)`);
+console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries.length} URLs (${motorSitemapEntries.length} motors, ${blogSitemapEntries.length} blog, ${caseStudySitemapEntries.length} case studies, ${locationSitemapEntries.length} locations, ${staticSitemapEntries.length} static)`);
 
 // ============================================================
 // Hardened post-build verification — fail the build on any issue.
