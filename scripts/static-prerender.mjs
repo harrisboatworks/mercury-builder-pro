@@ -23,6 +23,7 @@ import { execSync } from 'child_process';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const DIST = join(ROOT, 'dist');
+const PUBLIC = join(ROOT, 'public');
 const SHELL_PATH = join(DIST, 'index.html');
 const SITE_URL = 'https://www.mercuryrepower.ca';
 const MIN_BYTES = 4 * 1024;
@@ -3079,9 +3080,14 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
 }
 
 function writeMd(relPath, content) {
-  const outFile = join(DIST, relPath.replace(/^\//, ''));
-  mkdirSync(dirname(outFile), { recursive: true });
-  writeFileSync(outFile, content, 'utf8');
+  // Write into both dist/ (post-build verification + Vercel output) and public/
+  // (copied by Vite before prerender). This prevents .md URLs from falling
+  // through to the SPA shell if the host snapshots static assets pre-prerender.
+  for (const baseDir of [DIST, PUBLIC]) {
+    const outFile = join(baseDir, relPath.replace(/^\//, ''));
+    mkdirSync(dirname(outFile), { recursive: true });
+    writeFileSync(outFile, content, 'utf8');
+  }
 }
 
 const motorTwinSummaries = [];
