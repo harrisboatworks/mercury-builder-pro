@@ -1818,6 +1818,212 @@ const motorPageRoutes = motorRecords
 
 console.log(`[static-prerender] generated ${motorPageRoutes.length} /motors/{slug} routes`);
 
+// ============================================================
+// Case study + location schemas and route generators
+// ============================================================
+
+function caseStudiesIndexSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${SITE_URL}/case-studies#webpage`,
+    url: `${SITE_URL}/case-studies`,
+    name: "Mercury Repower Case Studies",
+    description: "Real Mercury outboard repower scenarios from Harris Boat Works — aluminum fishing, pontoon, bass boat, walkaround cuddy and small utility setups in Ontario.",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    inLanguage: "en-CA",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: caseStudies.map((s, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${SITE_URL}/case-studies/${s.slug}`,
+        name: s.title,
+      })),
+    },
+  };
+}
+
+function caseStudyDetailSchema(study) {
+  const url = `${SITE_URL}/case-studies/${study.slug}`;
+  const image = study.heroImage
+    ? (study.heroImage.startsWith('/') ? `${SITE_URL}${study.heroImage}` : study.heroImage)
+    : undefined;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${url}#article`,
+        headline: study.title,
+        description: study.excerpt,
+        image,
+        author: { "@id": `${SITE_URL}/#organization` },
+        publisher: { "@id": `${SITE_URL}/#organization` },
+        mainEntityOfPage: { "@id": `${url}#webpage` },
+        inLanguage: "en-CA",
+        about: {
+          "@type": "Thing",
+          name: `${study.boatType} repower — ${study.beforeMotor} to ${study.afterMotor}`,
+        },
+        articleSection: "Mercury repower case study",
+        keywords: [study.scenario, study.boatType, study.region, "Mercury", "repower", "Ontario"].join(", "),
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: study.title,
+        description: study.excerpt,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        inLanguage: "en-CA",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+          { "@type": "ListItem", position: 2, name: "Case Studies", item: `${SITE_URL}/case-studies` },
+          { "@type": "ListItem", position: 3, name: study.title, item: url },
+        ],
+      },
+    ],
+  };
+}
+
+function locationsIndexSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${SITE_URL}/locations#webpage`,
+    url: `${SITE_URL}/locations`,
+    name: "Service Areas — Harris Boat Works Mercury Dealer",
+    description: "Service areas covered by Harris Boat Works for Mercury outboard sales, repowers, and pickup at Gores Landing on Rice Lake, Ontario.",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    inLanguage: "en-CA",
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: locations.map((loc, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${SITE_URL}/locations/${loc.slug}`,
+        name: loc.title,
+      })),
+    },
+  };
+}
+
+function locationDetailSchema(loc) {
+  const url = `${SITE_URL}/locations/${loc.slug}`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        url,
+        name: loc.title,
+        description: loc.intro,
+        isPartOf: { "@id": `${SITE_URL}/#website` },
+        about: { "@id": `${SITE_URL}/#localbusiness` },
+        inLanguage: "en-CA",
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": `${url}#localbusiness`,
+        name: "Harris Boat Works",
+        parentOrganization: { "@id": `${SITE_URL}/#organization` },
+        url,
+        telephone: "+1-905-342-2153",
+        email: "info@harrisboatworks.ca",
+        priceRange: "$$",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "5369 Harris Boat Works Rd",
+          addressLocality: "Gores Landing",
+          addressRegion: "ON",
+          postalCode: "K0K 2E0",
+          addressCountry: "CA",
+        },
+        areaServed: { "@type": "AdministrativeArea", name: loc.region },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        mainEntity: loc.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+          { "@type": "ListItem", position: 2, name: "Service Areas", item: `${SITE_URL}/locations` },
+          { "@type": "ListItem", position: 3, name: loc.title, item: url },
+        ],
+      },
+    ],
+  };
+}
+
+const caseStudyDetailRoutes = caseStudies.map((s) => ({
+  path: `/case-studies/${s.slug}`,
+  title: `${s.title} | Mercury Repower Case Study | Harris Boat Works`,
+  description: `${s.excerpt} ${s.beforeMotor} to ${s.afterMotor}. Mercury repower case study from Harris Boat Works.`.slice(0, 320),
+  h1: s.title,
+  intro: `${s.excerpt} Scenario: ${s.scenario}. Boat type: ${s.boatType}. Region: ${s.region}. Repower path: ${s.beforeMotor} → ${s.afterMotor}.`,
+  schemas: [caseStudyDetailSchema(s)],
+  extraNoscript: () =>
+    `<section><h2>What changed</h2><p><strong>Before:</strong> ${escapeHtml(s.beforeMotor)}. <strong>After:</strong> ${escapeHtml(s.afterMotor)}. <strong>Region:</strong> ${escapeHtml(s.region)}.</p></section>` +
+    `<section><h2>Recommendation</h2><p>${escapeHtml(s.recommendation)}</p></section>` +
+    `<section><h2>Why it worked</h2><ul>${s.whyItWorked.map((w) => `<li>${escapeHtml(w)}</li>`).join('')}</ul></section>` +
+    `<blockquote><p>${escapeHtml(s.customerQuote)}</p></blockquote>` +
+    `<p><a href="${escapeHtml(s.quoteUrl)}">Build a Mercury quote based on this case study →</a></p>` +
+    `<p><a href="/case-studies">← All Mercury repower case studies</a></p>` +
+    (s.isIllustrative ? `<p><em>Note: imagery for this case study is illustrative pending real photography.</em></p>` : ''),
+}));
+
+const locationDetailRoutes = locations.map((loc) => ({
+  path: `/locations/${loc.slug}`,
+  title: `${loc.title} | Harris Boat Works`,
+  description: loc.intro.slice(0, 300),
+  h1: loc.title,
+  intro: loc.intro,
+  schemas: [locationDetailSchema(loc)],
+  extraNoscript: () =>
+    `<section><h2>About this service area</h2><p>${escapeHtml(loc.intro)} Travel: ${escapeHtml(loc.driveTime)}. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, Ontario.</p></section>` +
+    `<section><h2>Popular boat uses in ${escapeHtml(loc.region)}</h2><ul>${loc.popularBoats.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul></section>` +
+    `<section><h2>Recommended next steps</h2><ul>${loc.recommendedLinks.map((l) => `<li><a href="${escapeHtml(l.href)}">${escapeHtml(l.label)}</a></li>`).join('')}</ul></section>` +
+    `<section><h2>FAQ</h2><dl>${loc.faqs.map((f) => `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`).join('')}</dl></section>` +
+    `<p><a href="/locations">← All service areas</a></p>`,
+}));
+
+console.log(`[static-prerender] generated ${caseStudyDetailRoutes.length} /case-studies/{slug} routes`);
+console.log(`[static-prerender] generated ${locationDetailRoutes.length} /locations/{slug} routes`);
+
+const caseStudiesIndexRoute = {
+  path: '/case-studies',
+  title: 'Mercury Outboard Repower Case Studies | Harris Boat Works',
+  description: 'Real Mercury outboard repower case studies from Ontario — aluminum fishing boats, pontoons, bass boats, walkaround cuddies, and small utility setups.',
+  h1: 'Mercury Repower Case Studies',
+  intro: 'Real Ontario repower scenarios from Harris Boat Works showing where specific Mercury outboard recommendations make sense — aluminum fishing boats, pontoons, bass boats, walkaround cuddies, and small utility setups.',
+  schemas: [caseStudiesIndexSchema()],
+  extraNoscript: () =>
+    `<ul>${caseStudies.map((s) => `<li><a href="/case-studies/${s.slug}"><strong>${escapeHtml(s.title)}</strong></a> — ${escapeHtml(s.excerpt)}</li>`).join('')}</ul>`,
+};
+
+const locationsIndexRoute = {
+  path: '/locations',
+  title: 'Mercury Dealer Service Areas in Ontario | Harris Boat Works',
+  description: 'Harris Boat Works service areas — Peterborough, Kawartha Lakes, Rice Lake, Cobourg & Northumberland, Durham & GTA. Mercury outboard sales and repower with pickup at Gores Landing.',
+  h1: 'Service Areas',
+  intro: 'Harris Boat Works serves Mercury outboard buyers across central and eastern Ontario from our Gores Landing location on Rice Lake. All sales are pickup only — no shipping or delivery.',
+  schemas: [locationsIndexSchema()],
+  extraNoscript: () =>
+    `<ul>${locations.map((l) => `<li><a href="/locations/${l.slug}"><strong>${escapeHtml(l.title)}</strong></a> — ${escapeHtml(l.intro)}</li>`).join('')}</ul>`,
+};
+
 const routes = [
   {
     path: '/',
