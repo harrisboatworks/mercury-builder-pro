@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
 import { Badge } from '@/components/ui/badge';
 import { Label } from '@/components/ui/label';
 import { Filter, Grid, List, X } from 'lucide-react';
+
+type FilterMotor = {
+  hp?: number;
+  horsepower?: number;
+  price?: number;
+  in_stock?: boolean;
+  stockStatus?: string;
+};
 
 interface FilterState {
   category: string;
