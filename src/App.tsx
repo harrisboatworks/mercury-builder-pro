@@ -114,6 +114,8 @@ const TradeInValuePage = lazy(() => import("./pages/TradeInValuePage"));
 const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));
+const Locations = lazy(() => import("./pages/Locations"));
+const LocationDetail = lazy(() => import("./pages/LocationDetail"));
 
 // Pilot SEO landing pages (Batch 1 — FAQ / Trust / HowTo)
 const MercuryRepowerFAQ = lazy(() => import("./pages/landing/MercuryRepowerFAQ"));
