@@ -136,6 +136,25 @@ serve(async (req) => {
           prefix_padding_ms: 300,
           silence_duration_ms: 200,
         },
+        tools: [
+          {
+            type: "function",
+            name: "create_quote",
+            description: "Create a saved quote for the customer and email them a link to view it. Only call after you have confirmed the customer's name, email, and which Mercury motor they want. Quote includes 13% HST and any active promotion automatically.",
+            parameters: {
+              type: "object",
+              properties: {
+                customer_name: { type: "string", description: "Customer's full name" },
+                customer_email: { type: "string", description: "Valid email address — quote link will be sent here" },
+                customer_phone: { type: "string", description: "Optional phone number" },
+                motor_id: { type: "string", description: "UUID of the Mercury motor. If unknown, ask the customer which model first." },
+                purchase_path: { type: "string", enum: ["loose", "installed"], description: "loose = motor only; installed = professional installation included" },
+                customer_notes: { type: "string", description: "Optional note about the boat or use case" },
+              },
+              required: ["customer_name", "customer_email", "motor_id"],
+            },
+          },
+        ],
         instructions: `You're Harris from Harris Boat Works — a friendly, knowledgeable Mercury Marine expert. ${contextInfo}
 
 GOLDEN RULES:
