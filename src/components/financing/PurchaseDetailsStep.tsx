@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
-import { Pencil, Percent, CalendarOff, Banknote, AlertCircle } from 'lucide-react';
+import { Pencil, Percent, CalendarOff, Banknote, AlertCircle, Info, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { money } from '@/lib/money';
 import { calculateMonthlyPayment, calculateMonthly, getFinancingTermOptions, FINANCING_MINIMUM } from '@/lib/finance';
