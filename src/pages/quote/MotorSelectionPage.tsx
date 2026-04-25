@@ -41,6 +41,7 @@ import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModa
 import { VoiceStatusBanner } from '@/components/voice/VoiceStatusBanner';
 import { MobileQuoteCTA } from '@/components/motors/MobileQuoteCTA';
 import { EmailCaptureInline } from '@/components/motors/EmailCaptureInline';
+import { MotorSelectionFAQ } from '@/components/quote-builder/MotorSelectionFAQ';
 
 import { fuzzySearch } from '@/lib/fuzzySearch';
 import { preloadConfiguratorImages, preloadModalChunk } from '@/lib/configurator-preload';
@@ -1176,6 +1177,9 @@ if (event.type === 'filter_motors') {
 
           {/* Email Capture — after motor grid */}
           <EmailCaptureInline />
+
+          {/* AI-answer FAQ — targets "Can I build a Mercury outboard quote online in Ontario?" */}
+          <MotorSelectionFAQ />
         </div>
           </div>
         </QuoteLayout>

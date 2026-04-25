@@ -244,10 +244,40 @@ export default function MotorPage() {
               are sold with full factory warranty, registered to you on pickup at our Gores Landing location. We do not
               ship outboards.
             </p>
+
+            {/* Model-aware AI-answer copy for high-intent Ontario queries */}
+            {hp === 9.9 && family.toLowerCase().includes('fourstroke') && (
+              <p>
+                The Mercury 9.9 FourStroke is the most popular small outboard for Ontario tin boats, cottage tenders,
+                and second-motor / kicker setups on Rice Lake and the Kawarthas. Quiet, EFI-equipped, fuel-efficient,
+                and easy to lift on and off the transom. Live CAD pricing online, real Ontario stock, pickup only at
+                our Gores Landing shop on Rice Lake — Mercury dealer since 1965.
+              </p>
+            )}
+            {hp === 60 && (display.toLowerCase().includes('command thrust') || (motor.model_display || '').toLowerCase().includes('command thrust')) && (
+              <p>
+                The Mercury 60 ELPT Command Thrust FourStroke is our go-to repower for Ontario aluminum fishing boats
+                and lighter pontoons in the 16–18 ft range. The Command Thrust gearcase swings a bigger prop for more
+                hole-shot and load-carrying ability — exactly what Rice Lake, Kawartha, and Bay of Quinte boats need.
+                Real CAD pricing, in stock at Harris Boat Works, pickup only at Gores Landing. Mercury Platinum Dealer
+                since 1965.
+              </p>
+            )}
+            {hp === 150 && family.toLowerCase().includes('proxs') && (
+              <p>
+                The Mercury 150 Pro XS is the tournament-grade choice for Ontario bass boats and high-performance
+                fibreglass — best-in-class hole-shot, top-end, and lightweight 4-cylinder design. Sold with live CAD
+                pricing and full factory warranty by Harris Boat Works on Rice Lake — Mercury Marine Platinum Dealer
+                since 1965, family-owned since 1947. Pickup only at Gores Landing, Ontario; we do not ship outboards.
+              </p>
+            )}
+
             <p>
               Build a real, itemized quote in three minutes — motor, controls, propeller, install, financing, and
               trade-in credit — with live CAD pricing. No forms, no waiting.{' '}
-              <Link to={`/quote/motor-selection?motor=${motor.id}`}>Start your quote →</Link>
+              <Link to={`/quote/motor-selection?motor=${motor.id}`}>Start your quote →</Link>{' '}
+              Local to Rice Lake?{' '}
+              <Link to="/locations/rice-lake-mercury-repower">See our Rice Lake Mercury repower page →</Link>
             </p>
           </section>
         </div>
