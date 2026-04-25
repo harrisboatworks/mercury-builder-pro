@@ -1319,6 +1319,150 @@ function mercuryPontoonOutboardsSchema() {
   };
 }
 
+// ============================================================
+// Promotions page (mirrors PromotionsPageSEO no-active-promo state — safe
+// crawler snapshot; live React still hydrates dynamic offer catalog).
+// ============================================================
+
+function promotionsPageSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/promotions#webpage`,
+        "url": `${SITE_URL}/promotions`,
+        "name": "Mercury Outboard Promotions | Harris Boat Works",
+        "description": "Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works — Mercury Marine Platinum Dealer on Rice Lake.",
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "inLanguage": "en-CA",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Promotions", "item": `${SITE_URL}/promotions` }
+          ]
+        }
+      }
+    ]
+  };
+}
+
+// ============================================================
+// Blog article schema — kept in sync with src/components/seo/BlogSEO.tsx
+// ============================================================
+
+function blogArticleSchema(article) {
+  const url = `${SITE_URL}/blog/${article.slug}`;
+  const wordCount = (article.content || '').trim().split(/\s+/).filter(Boolean).length;
+  const readTimeMinutes = parseInt(article.readTime, 10) || 5;
+
+  const graph = [
+    {
+      "@type": "Article",
+      "@id": `${url}#article`,
+      "headline": article.title,
+      "description": article.description,
+      "image": `${SITE_URL}${article.image}`,
+      "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+      "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+      "datePublished": article.datePublished,
+      "dateModified": article.dateModified,
+      "mainEntityOfPage": url,
+      "keywords": (article.keywords || []).join(", "),
+      "wordCount": wordCount,
+      "inLanguage": "en-CA",
+      "isAccessibleForFree": true,
+      "timeRequired": `PT${readTimeMinutes}M`,
+      "about": [
+        { "@type": "Thing", "name": "Mercury Marine Outboard Motors" },
+        { "@type": "Thing", "name": "Boat Motors" }
+      ],
+      "mentions": [{ "@type": "Organization", "name": "Mercury Marine" }]
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      "url": url,
+      "name": article.title,
+      "inLanguage": "en-CA",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": `${SITE_URL}/blog` },
+          { "@type": "ListItem", "position": 3, "name": article.title, "item": url }
+        ]
+      }
+    }
+  ];
+
+  if (article.howToSteps && article.howToSteps.length > 0) {
+    graph.push({
+      "@type": "HowTo",
+      "@id": `${url}#howto`,
+      "name": article.title,
+      "description": article.description,
+      "totalTime": `PT${readTimeMinutes}M`,
+      "step": article.howToSteps.map((step, i) => ({
+        "@type": "HowToStep",
+        "position": i + 1,
+        "name": step.name,
+        "text": step.text,
+        ...(step.image ? { "image": `${SITE_URL}${step.image}` } : {})
+      }))
+    });
+  }
+
+  if (article.faqs && article.faqs.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      "mainEntity": article.faqs.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+      }))
+    });
+  }
+
+  return { "@context": "https://schema.org", "@graph": graph };
+}
+
+// Extract first ~280 chars of plain text from blog content for noscript intro.
+function firstParagraph(content, fallback) {
+  if (!content) return fallback;
+  const stripped = String(content)
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/[#*_>`]/g, ' ')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!stripped) return fallback;
+  return stripped.length > 280 ? stripped.slice(0, 277) + '...' : stripped;
+}
+
+// Build blog article route configs.
+const blogArticleRoutes = blogArticles.map(article => ({
+  path: `/blog/${article.slug}`,
+  title: `${article.title} | Harris Boat Works Blog`,
+  description: article.description,
+  ogImage: `${SITE_URL}${article.image}`,
+  ogType: 'article',
+  h1: article.title,
+  intro: firstParagraph(article.content, article.description),
+  schemas: [blogArticleSchema(article)],
+  extraNoscript: () => {
+    const faqHtml = (article.faqs && article.faqs.length > 0)
+      ? '<dl>' + article.faqs.map(f =>
+          `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`
+        ).join('') + '</dl>'
+      : '';
+    return faqHtml;
+  }
+}));
+
 const routes = [
   {
     path: '/',
