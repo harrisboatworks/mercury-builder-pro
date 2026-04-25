@@ -227,6 +227,16 @@ export async function generateFullSitemapXML(): Promise<string> {
     })),
   ];
 
+  const locationEntries: SitemapEntry[] = [
+    { loc: '/locations', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    ...locations.map((loc) => ({
+      loc: `/locations/${loc.slug}`,
+      lastmod: today,
+      changefreq: 'monthly' as const,
+      priority: 0.8,
+    })),
+  ];
+
   const allEntries = [...getStaticPages(), ...blogEntries, ...motorEntries, ...caseStudyEntries];
   
   const urlEntries = allEntries.map(entry => {
