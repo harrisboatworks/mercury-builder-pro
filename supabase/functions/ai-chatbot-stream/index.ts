@@ -2138,38 +2138,143 @@ The user wants to create a quote. ${motorContextLine}
       });
     }
 
-    // Handle non-streaming response
+    // Handle non-streaming response — with optional create_quote tool loop
+    const openaiBody: Record<string, any> = {
+      model: 'gpt-4o-mini',
+      messages,
+      max_tokens: 350,
+      temperature: 0.7,
+    };
+    if (hasQuoteIntent) {
+      openaiBody.tools = [CREATE_QUOTE_TOOL];
+      openaiBody.tool_choice = 'auto';
+    }
+
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
-      headers: { 
-        'Authorization': `Bearer ${OPENAI_API_KEY}`, 
-        'Content-Type': 'application/json' 
+      headers: {
+        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ 
-        model: 'gpt-4o-mini', 
-        messages, 
-        max_tokens: 250, 
-        temperature: 0.7 
-      }),
+      body: JSON.stringify(openaiBody),
     });
 
     if (!response.ok) {
-      const error = await response.json();
+      const error = await response.json().catch(() => ({}));
       throw new Error(error.error?.message || `OpenAI API error: ${response.status}`);
     }
 
     const data = await response.json();
-    const reply = data.choices[0].message.content;
+    const choice = data.choices?.[0];
+    const assistantMsg = choice?.message || {};
+    const toolCalls = assistantMsg.tool_calls || [];
 
-    return new Response(JSON.stringify({ 
-      reply, 
+    let reply: string = assistantMsg.content || '';
+    let quoteResult: any = null;
+    let shareUrl: string | null = null;
+    let quoteId: string | null = null;
+
+    // If model called create_quote, execute it and feed result back for the natural-language reply
+    if (hasQuoteIntent && toolCalls.length > 0) {
+      const conversationId = context?.conversation_id || context?.conversationId;
+      const followupMessages: any[] = [...messages, assistantMsg];
+
+      for (const tc of toolCalls) {
+        if (tc?.function?.name !== 'create_quote') {
+          followupMessages.push({
+            role: 'tool',
+            tool_call_id: tc.id,
+            content: JSON.stringify({ ok: false, error: 'Unknown tool' }),
+          });
+          continue;
+        }
+        let parsedArgs: Record<string, any> = {};
+        try {
+          parsedArgs = JSON.parse(tc.function.arguments || '{}');
+        } catch (e) {
+          followupMessages.push({
+            role: 'tool',
+            tool_call_id: tc.id,
+            content: JSON.stringify({ ok: false, error: 'Invalid tool arguments JSON' }),
+          });
+          continue;
+        }
+
+        // Default motor_id from currently viewed motor when omitted
+        if (!parsedArgs.motor_id && context?.currentMotor?.id) {
+          parsedArgs.motor_id = context.currentMotor.id;
+        }
+
+        console.log('Executing create_quote tool with args:', {
+          ...parsedArgs,
+          customer_email: parsedArgs.customer_email ? '***@***' : null,
+        });
+
+        const toolResult = await callCreateQuoteTool(parsedArgs, conversationId);
+        if (toolResult?.ok) {
+          quoteResult = toolResult;
+          shareUrl = toolResult.share_url || null;
+          quoteId = toolResult.quote_id || null;
+        }
+
+        followupMessages.push({
+          role: 'tool',
+          tool_call_id: tc.id,
+          content: JSON.stringify(
+            toolResult?.ok
+              ? {
+                  ok: true,
+                  quote_id: toolResult.quote_id,
+                  share_url: toolResult.share_url,
+                  motor: toolResult.motor,
+                  pricing: toolResult.pricing,
+                }
+              : { ok: false, error: toolResult?.error || 'Quote creation failed' }
+          ),
+        });
+      }
+
+      // Second OpenAI call to produce the natural confirmation
+      const followupResp = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${OPENAI_API_KEY}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          model: 'gpt-4o-mini',
+          messages: followupMessages,
+          max_tokens: 250,
+          temperature: 0.6,
+        }),
+      });
+
+      if (followupResp.ok) {
+        const followupData = await followupResp.json();
+        reply = followupData.choices?.[0]?.message?.content || reply || '';
+      } else {
+        console.error('Follow-up OpenAI call failed:', followupResp.status);
+      }
+
+      // Always append a clean clickable share link when we have one and the model didn't already
+      if (shareUrl && !reply.includes(shareUrl)) {
+        const cleanReply = (reply || '').trim();
+        const refLine = quoteId ? ` (ref: ${String(quoteId).slice(0, 8)})` : '';
+        reply = `${cleanReply ? cleanReply + '\n\n' : ''}✅ Quote created${refLine} — emailed to you.\n[View your quote →](${shareUrl})`;
+      }
+    }
+
+    return new Response(JSON.stringify({
+      reply,
       isComparison: comparison.isComparison,
       detectedTopics,
+      quote_id: quoteId,
+      share_url: shareUrl,
       conversationHistory: [
-        ...recentHistory, 
-        { role: 'user', content: message }, 
+        ...recentHistory,
+        { role: 'user', content: message },
         { role: 'assistant', content: reply }
-      ] 
+      ]
     }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
