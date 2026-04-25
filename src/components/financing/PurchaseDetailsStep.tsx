@@ -161,6 +161,38 @@ export function PurchaseDetailsStep() {
         <p className="text-muted-foreground font-light">First, confirm your motor selection</p>
       </div>
 
+      {/* Expired Promo Notice — shown when a stale promotion was removed from a saved/restored quote */}
+      {expiredPromoNotice && !noticeDismissed && (
+        <div
+          role="status"
+          className="bg-muted border border-border rounded-lg p-4 flex items-start gap-3 animate-fade-in"
+        >
+          <Info className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-semibold text-foreground">
+              {expiredPromoNotice.option === 'cash_rebate' && 'Factory rebate has expired'}
+              {expiredPromoNotice.option === 'special_financing' && 'Special financing offer has expired'}
+              {expiredPromoNotice.option === 'no_payments' && '6 months no payments offer has expired'}
+              {!['cash_rebate', 'special_financing', 'no_payments'].includes(expiredPromoNotice.option) &&
+                'A promotion on your quote has expired'}
+            </p>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              {expiredPromoNotice.option === 'cash_rebate' && expiredPromoNotice.value
+                ? `The ${expiredPromoNotice.value} factory rebate from your saved quote is no longer available and has been removed from your application. Your totals have been updated. Check below for any current offers.`
+                : 'The promotion saved with your quote is no longer available and has been removed from your application. Your totals have been updated. Check below for any current offers.'}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setNoticeDismissed(true)}
+            aria-label="Dismiss expired promotion notice"
+            className="text-muted-foreground hover:text-foreground transition-colors flex-shrink-0"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
+      )}
+
       {/* Promo Status Banners */}
       {isPromoStillActive && promoOption === 'special_financing' && promoRate && (
         <div className={`rounded-lg p-4 flex items-start gap-3 ${
