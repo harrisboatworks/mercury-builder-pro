@@ -518,6 +518,8 @@ function AnimatedRoutes() {
         {/* Case Studies */}
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+        <Route path="/locations" element={<Locations />} />
+        <Route path="/locations/:slug" element={<LocationDetail />} />
         
         {/* Unsubscribe Route */}
         <Route path="/unsubscribe/:token" element={<Unsubscribe />} />
