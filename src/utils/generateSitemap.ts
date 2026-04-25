@@ -1,5 +1,6 @@
 import { blogArticles, isArticlePublished } from '../data/blogArticles';
 import { caseStudies } from '../data/caseStudies';
+import { locations } from '../data/locations';
 import { supabase } from '../integrations/supabase/client';
 
 const BASE_URL = 'https://www.mercuryrepower.ca';
