@@ -68,6 +68,7 @@ const AdminAbandonedQuoteAnalytics = lazy(() => import("./pages/AdminAbandonedQu
 const AdminPayments = lazy(() => import("./pages/AdminPayments"));
 const AdminSMS = lazy(() => import("./pages/AdminSMS"));
 const AdminInventory = lazy(() => import("./pages/AdminInventory"));
+const AdminAgentFunnel = lazy(() => import("./pages/admin/AgentFunnel"));
 const AdminStockSync = lazy(() => import("./pages/AdminStockSync"));
 const AdminConnectors = lazy(() => import("./pages/AdminConnectors"));
 const AdminSources = lazy(() => import("./pages/AdminSources"));
