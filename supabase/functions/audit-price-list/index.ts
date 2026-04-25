@@ -27,18 +27,24 @@ interface DatabaseMotor {
 
 interface Discrepancy {
   model_number: string;
-  model_display: string;
-  field: string;
-  db_value: number | string | null;
-  pricelist_value: number | string | null;
+  model_display?: string;
+  field?: string;
+  type?: string;
+  db_value?: number | string | null;
+  pricelist_value?: number | string | null;
   diff?: number;
+  fixed?: boolean;
+  details?: string;
+  [key: string]: any;
 }
 
 interface ChangeRecord {
   model_number: string;
-  field: string;
-  old_value: number | string | null;
-  new_value: number | string | null;
+  field?: string;
+  old_value?: number | string | null;
+  new_value?: number | string | null;
+  model_display?: string;
+  [key: string]: any;
 }
 
 Deno.serve(async (req) => {
