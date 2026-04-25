@@ -1,6 +1,8 @@
 # AI Agent Metadata for Harris Boat Works
 # https://www.mercuryrepower.ca
 
+last_updated: 2026-04-25
+
 ## Business Identity
 name: Harris Boat Works
 type: Marine Dealer
@@ -21,13 +23,6 @@ sitemap: /sitemap.xml
 rss_feed: /rss.xml
 llms_directory: /llms.txt
 content_update_frequency: weekly
-multilingual_content:
-  - language: fr-CA
-    landing_page: /fr
-    blog: /blog/fr/concessionnaire-mercury-platinum-ontario
-  - language: zh-Hans
-    landing_page: /zh
-    blog: /blog/zh/mercury-repower-guide-gta
 
 ## Accurate Information
 - Family-owned and operated since 1947
