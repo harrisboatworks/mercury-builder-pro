@@ -1,7 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { pdf } from '@react-pdf/renderer';
 import { Download, Loader2 } from 'lucide-react';
-import { CleanSpecSheetPDF } from './CleanSpecSheetPDF';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
@@ -54,7 +52,8 @@ export function SpecSheetPDFDownload({
         // Continue without content - it's optional
       }
 
-      // Generate PDF with all content
+      // Generate PDF with all content. Keep @react-pdf out of the motor-card modal chunk
+      // so opening a motor card does not eagerly load PDFKit/base64 dependencies.
       const motorData = {
         motor,
         promotions,
@@ -64,6 +63,10 @@ export function SpecSheetPDFDownload({
         mercuryAdvantages
       };
 
+      const [{ pdf }, { CleanSpecSheetPDF }] = await Promise.all([
+        import('@react-pdf/renderer'),
+        import('./CleanSpecSheetPDF')
+      ]);
       const blob = await pdf(<CleanSpecSheetPDF motorData={motorData} />).toBlob();
       
       // Create download link
