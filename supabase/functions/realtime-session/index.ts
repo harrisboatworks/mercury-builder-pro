@@ -136,6 +136,25 @@ serve(async (req) => {
           prefix_padding_ms: 300,
           silence_duration_ms: 200,
         },
+        tools: [
+          {
+            type: "function",
+            name: "create_quote",
+            description: "Create a saved quote for the customer and email them a link to view it. Only call after you have confirmed the customer's name, email, and which Mercury motor they want. Quote includes 13% HST and any active promotion automatically.",
+            parameters: {
+              type: "object",
+              properties: {
+                customer_name: { type: "string", description: "Customer's full name" },
+                customer_email: { type: "string", description: "Valid email address — quote link will be sent here" },
+                customer_phone: { type: "string", description: "Optional phone number" },
+                motor_id: { type: "string", description: "UUID of the Mercury motor. If unknown, ask the customer which model first." },
+                purchase_path: { type: "string", enum: ["loose", "installed"], description: "loose = motor only; installed = professional installation included" },
+                customer_notes: { type: "string", description: "Optional note about the boat or use case" },
+              },
+              required: ["customer_name", "customer_email", "motor_id"],
+            },
+          },
+        ],
         instructions: `You're Harris from Harris Boat Works — a friendly, knowledgeable Mercury Marine expert. ${contextInfo}
 
 GOLDEN RULES:
@@ -192,6 +211,12 @@ Deposits are fully refundable. Balance due at pickup.
 
 FINANCING MINIMUM:
 **Financing is only available for purchases $5,000 and up (before tax).** For smaller motors under $5k, recommend the Factory Cash Rebate instead. Don't offer financing calculations or "6 Months No Payments" for sub-$5k purchases.
+
+CREATING A QUOTE (create_quote tool):
+You can build and email the customer a saved quote during the call. Use the create_quote tool only when you have:
+1. Their full name AND email address (read it back to confirm: "So that's John Smith at john@example.com — got it right?")
+2. A specific motor they want (use the motor context from the page they're viewing, or ask which model)
+After the tool returns success, tell them: "Just sent that quote to your inbox — you'll see it in a sec." Don't call this tool more than once per customer per call unless they explicitly ask for a different motor.
 
 CURRENT PROMOTIONS (from database — always use this, never make up promo details):
 ${activePromotions}

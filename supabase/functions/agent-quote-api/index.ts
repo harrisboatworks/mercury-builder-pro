@@ -1102,6 +1102,12 @@ async function createQuote(supabase: any, body: any) {
     ...pricing,
   };
 
+  // --- Transcript linkage (for chat/voice traceability) ---
+  if (body.conversation_id && typeof body.conversation_id === "string") {
+    (quoteData as any).conversationId = body.conversation_id;
+    (quoteData as any).conversationChannel = body.conversation_channel || "unknown";
+  }
+
   const payload = {
     customer_name: customer_name.trim(),
     customer_email: customer_email.trim(),
@@ -1176,6 +1182,55 @@ async function createQuote(supabase: any, body: any) {
     });
   } catch (smsErr: any) {
     console.error("Admin SMS notification failed (non-fatal):", smsErr.message);
+  }
+
+  // --- Customer email (branded "quote saved" with link) ---
+  // Skip when caller explicitly opts out (e.g., admin-created quotes that don't want to notify yet)
+  if (body.send_customer_email !== false) {
+    try {
+      await fetch(`${Deno.env.get("SUPABASE_URL")}/functions/v1/send-saved-quote-email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")}`,
+        },
+        body: JSON.stringify({
+          customerEmail: customer_email.trim(),
+          customerName: customer_name.trim(),
+          quoteId: data.id,
+          savedQuoteId: data.id,
+          motorModel: motor.model_display || motor.model || `${motor.horsepower}HP Mercury`,
+          finalPrice: pricing.finalPrice,
+          includeAccountInfo: false,
+        }),
+      });
+      console.log("Customer quote email sent to:", customer_email.trim());
+    } catch (emailErr: any) {
+      console.error("Customer quote email failed (non-fatal):", emailErr.message);
+    }
+  }
+
+  // --- Link transcript to quote in chat_conversations.context ---
+  if (body.conversation_id && typeof body.conversation_id === "string") {
+    try {
+      const { data: convo } = await supabase
+        .from("chat_conversations")
+        .select("context")
+        .eq("id", body.conversation_id)
+        .maybeSingle();
+      const existingCtx = (convo?.context && typeof convo.context === "object") ? convo.context : {};
+      const quoteIds: string[] = Array.isArray((existingCtx as any).quote_ids) ? (existingCtx as any).quote_ids : [];
+      if (!quoteIds.includes(data.id)) quoteIds.push(data.id);
+      await supabase
+        .from("chat_conversations")
+        .update({
+          context: { ...existingCtx, quote_ids: quoteIds, last_quote_id: data.id },
+          last_message_at: new Date().toISOString(),
+        })
+        .eq("id", body.conversation_id);
+    } catch (linkErr: any) {
+      console.error("Conversation linkage failed (non-fatal):", linkErr.message);
+    }
   }
 
   const response: any = {
