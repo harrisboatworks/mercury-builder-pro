@@ -2499,3 +2499,89 @@ ${allSitemapEntries.map(e => {
 writeFileSync(join(DIST, 'sitemap.xml'), sitemapXml, 'utf8');
 writeFileSync(join(ROOT, 'public', 'sitemap.xml'), sitemapXml, 'utf8');
 console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries.length} URLs (${motorSitemapEntries.length} motors, ${blogSitemapEntries.length} blog, ${staticSitemapEntries.length} static)`);
+
+// ============================================================
+// Hardened post-build verification — fail the build on any issue.
+// ============================================================
+const verifyErrors = [];
+
+if (motorPageRoutes.length === 0) {
+  verifyErrors.push('Zero /motors/{slug} routes generated. Refusing to ship empty motor SEO. Check public-motors-api and VITE_SUPABASE_PUBLISHABLE_KEY.');
+}
+
+const expectedMotorCount = motorRecords.filter(m => {
+  if (!m.model_key) return false;
+  const s = (m.model_display || m.model || '').toLowerCase();
+  return !s.includes('verado');
+}).length;
+if (motorPageRoutes.length !== expectedMotorCount) {
+  verifyErrors.push(`Motor route parity: ${motorPageRoutes.length} routes vs ${expectedMotorCount} eligible motors.`);
+}
+
+const writtenSitemap = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
+const sitemapMotorMatches = writtenSitemap.match(/<loc>[^<]*\/motors\/[^<]+<\/loc>/g) || [];
+if (sitemapMotorMatches.length !== motorPageRoutes.length) {
+  verifyErrors.push(`sitemap.xml motor URL count ${sitemapMotorMatches.length} != ${motorPageRoutes.length}.`);
+}
+
+if (motorPageRoutes.length > 0) {
+  const sample = motorPageRoutes.find(r => r.path === '/motors/fourstroke-9-9hp-9-9eh-fourstroke') || motorPageRoutes[0];
+  const samplePath = join(DIST, sample.path.replace(/^\//, ''), 'index.html');
+  if (!existsSync(samplePath)) {
+    verifyErrors.push(`Sample motor page missing: ${samplePath}`);
+  } else {
+    const sampleHtml = readFileSync(samplePath, 'utf8');
+    const expectedCanonical = `${SITE_URL}${sample.path}`;
+    if (!sampleHtml.includes(`href="${expectedCanonical}"`)) verifyErrors.push(`Sample ${sample.path}: canonical missing/wrong.`);
+    if (sampleHtml.includes(`rel="canonical" href="${SITE_URL}/"`)) verifyErrors.push(`Sample ${sample.path}: canonicalizes to homepage.`);
+    if (!/<title[^>]*>[^<]*Mercury[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing/wrong.`);
+    if (!sampleHtml.includes('"@type":"Product"')) verifyErrors.push(`Sample ${sample.path}: Product JSON-LD missing.`);
+    if (!sampleHtml.includes('"priceCurrency":"CAD"')) verifyErrors.push(`Sample ${sample.path}: priceCurrency CAD missing.`);
+  }
+}
+
+const veradoFiles = [
+  { path: join(DIST, 'llms.txt'), name: 'llms.txt' },
+  { path: join(DIST, '.well-known', 'brand.json'), name: 'brand.json' },
+  { path: join(DIST, '.well-known', 'mcp.json'), name: 'mcp.json' },
+  { path: join(DIST, '.well-known', 'ai.txt'), name: 'ai.txt' },
+];
+const forbiddenVerado = [/we do not sell .*verado/i, /we do not service .*verado/i, /do not sell or service.*verado/i];
+for (const f of veradoFiles) {
+  if (!existsSync(f.path)) { verifyErrors.push(`Discovery file missing: ${f.name}`); continue; }
+  const txt = readFileSync(f.path, 'utf8');
+  for (const re of forbiddenVerado) {
+    if (re.test(txt)) verifyErrors.push(`${f.name}: forbidden Verado phrasing matching ${re}.`);
+  }
+  if (!/special[\s_-]order/i.test(txt)) verifyErrors.push(`${f.name}: missing "special-order" Verado language.`);
+}
+
+const aiTxtPath = join(DIST, '.well-known', 'ai.txt');
+if (existsSync(aiTxtPath)) {
+  const aiTxt = readFileSync(aiTxtPath, 'utf8');
+  if (/multilingual_content/.test(aiTxt)) verifyErrors.push('ai.txt still has multilingual_content.');
+  if (/\/fr\b/.test(aiTxt)) verifyErrors.push('ai.txt still references /fr.');
+  if (/\/zh\b/.test(aiTxt)) verifyErrors.push('ai.txt still references /zh.');
+}
+
+const tableRoutes = [
+  '/repower', '/mercury-outboards-ontario', '/mercury-pontoon-outboards',
+  '/blog/mercury-repower-cost-ontario-2026-cad',
+  '/blog/cheapest-mercury-outboard-canada-2026',
+  '/blog/mercury-115-vs-150-hp-outboard-ontario',
+];
+for (const r of tableRoutes) {
+  const p = join(DIST, r.replace(/^\//, ''), 'index.html');
+  if (!existsSync(p)) { verifyErrors.push(`SEO route missing: ${r}`); continue; }
+  const html = readFileSync(p, 'utf8');
+  if (!/<table[\s>]/i.test(html) || !/<thead[\s>]/i.test(html) || !/<tbody[\s>]/i.test(html)) {
+    verifyErrors.push(`${r}: missing real <table>/<thead>/<tbody> in raw HTML.`);
+  }
+}
+
+if (verifyErrors.length > 0) {
+  console.error('\n[static-prerender] ❌ Build verification failed:');
+  for (const e of verifyErrors) console.error('  - ' + e);
+  process.exit(1);
+}
+console.log(`[static-prerender] ✓ Verification passed — ${motorPageRoutes.length} motor pages, ${tableRoutes.length} table pages, Verado consistent, ai.txt clean.`);
