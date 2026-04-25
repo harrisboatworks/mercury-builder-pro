@@ -227,7 +227,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/Best_Mercury_Outboard_Aluminum_Fishing_Boats.png</image:loc>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/aluminum-fishing-hero-real.png</image:loc>
       <image:title><![CDATA[Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)]]></image:title>
     </image:image>
   </url>
@@ -237,7 +237,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/Mercury_Pontoon_Buyers_Guide.png</image:loc>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/pontoon-115-ct-detail-real.png</image:loc>
       <image:title><![CDATA[Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide]]></image:title>
     </image:image>
   </url>
@@ -307,7 +307,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing.png</image:loc>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/bass-boat-150-proxs-hero-real.png</image:loc>
       <image:title><![CDATA[Best Mercury Motor for Bass Boats: 2026 Buyer's Guide]]></image:title>
     </image:image>
   </url>
@@ -497,7 +497,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/hero-115-vs-150-proxs.png</image:loc>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/cuddy-115-hero-real.png</image:loc>
       <image:title><![CDATA[Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?]]></image:title>
     </image:image>
   </url>
@@ -754,5 +754,97 @@
     <lastmod>2026-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/case-studies</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/case-studies/aluminum-fishing-60-to-90-fourstroke</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/aluminum-fishing-hero-real.png</image:loc>
+      <image:title><![CDATA[18-foot aluminum fishing boat: 60HP to 90HP FourStroke]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/case-studies/pontoon-family-40-to-115-command-thrust</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/pontoon-115-ct-detail-real.png</image:loc>
+      <image:title><![CDATA[Family pontoon: 40HP to 115HP Command Thrust]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/case-studies/bass-boat-150-to-150-pro-xs</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/bass-boat-150-proxs-hero-real.png</image:loc>
+      <image:title><![CDATA[Bass boat refresh: older 150 to Mercury 150 Pro XS]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/case-studies/cedar-strip-9-9-fourstroke</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/placeholder.svg</image:loc>
+      <image:title><![CDATA[Cedar-strip utility setup: small 9.9HP FourStroke]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/case-studies/walkaround-cuddy-90-to-115-efi</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://www.mercuryrepower.ca/lovable-uploads/cuddy-115-hero-real.png</image:loc>
+      <image:title><![CDATA[Walkaround cuddy: 90HP to 115HP EFI]]></image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/locations</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/locations/peterborough-mercury-dealer</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/locations/kawartha-lakes-mercury-outboards</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/locations/rice-lake-mercury-repower</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/locations/cobourg-northumberland-mercury</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mercuryrepower.ca/locations/durham-gta-mercury-pickup</loc>
+    <lastmod>2026-04-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
