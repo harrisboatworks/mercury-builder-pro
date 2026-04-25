@@ -1,4 +1,5 @@
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { pingMotorUpdates } from "../_shared/indexnow.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -384,6 +385,19 @@ Deno.serve(async (req) => {
     };
 
     console.log('✅ Lightspeed sync complete:', JSON.stringify(result));
+
+    // Fire IndexNow ping for in-stock motors (non-blocking, never throws).
+    try {
+      const { data: inStockMotors } = await supabase
+        .from('motor_models')
+        .select('model_key')
+        .eq('availability', 'In Stock')
+        .not('model_key', 'is', null);
+      const keys = (inStockMotors || []).map((m: any) => m.model_key).filter(Boolean);
+      pingMotorUpdates(keys, 'lightspeed-sync');
+    } catch (pingErr) {
+      console.error('IndexNow ping skipped:', pingErr);
+    }
 
     return new Response(JSON.stringify(result), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
