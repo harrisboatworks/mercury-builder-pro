@@ -55,6 +55,38 @@ function loadFaqItems() {
   }
 }
 
+// Load case studies (src/data/caseStudies.ts).
+function loadCaseStudies() {
+  const dumpScript = `
+    import { caseStudies } from '../src/data/caseStudies.ts';
+    process.stdout.write(JSON.stringify(caseStudies));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.casestudies-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    const out = execSync(`npx tsx ${tmpFile}`, { cwd: ROOT, encoding: 'utf8' });
+    return JSON.parse(out);
+  } finally {
+    try { execSync(`rm -f ${tmpFile}`); } catch {}
+  }
+}
+
+// Load location hub data (src/data/locations.ts).
+function loadLocations() {
+  const dumpScript = `
+    import { locations } from '../src/data/locations.ts';
+    process.stdout.write(JSON.stringify(locations));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.locations-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    const out = execSync(`npx tsx ${tmpFile}`, { cwd: ROOT, encoding: 'utf8' });
+    return JSON.parse(out);
+  } finally {
+    try { execSync(`rm -f ${tmpFile}`); } catch {}
+  }
+}
+
 // Load published blog articles (filters out future-dated posts).
 function loadBlogArticles() {
   const dumpScript = `
