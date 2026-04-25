@@ -150,7 +150,7 @@ export function PurchaseDetailsStep() {
       </div>
 
       {/* Promo Status Banners */}
-      {promoOption === 'special_financing' && promoRate && (
+      {isPromoStillActive && promoOption === 'special_financing' && promoRate && (
         <div className={`rounded-lg p-4 flex items-start gap-3 ${
           isEligibleForSpecialFinancing 
             ? 'bg-green-50 border border-green-200' 
@@ -186,7 +186,7 @@ export function PurchaseDetailsStep() {
         </div>
       )}
 
-      {promoOption === 'no_payments' && (
+      {isPromoStillActive && promoOption === 'no_payments' && (
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 flex items-start gap-3">
           <CalendarOff className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
           <div>
@@ -200,7 +200,7 @@ export function PurchaseDetailsStep() {
         </div>
       )}
 
-      {promoOption === 'cash_rebate' && promoValue && (
+      {isPromoStillActive && promoOption === 'cash_rebate' && promoValue && (
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 flex items-start gap-3">
           <Banknote className="w-5 h-5 text-amber-600 mt-0.5 flex-shrink-0" />
           <div>
