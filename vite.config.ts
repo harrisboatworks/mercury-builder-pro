@@ -12,24 +12,20 @@ import { writeFileSync } from "fs";
 // Sitemap and RSS generation plugin
 function sitemapPlugin(): Plugin {
   return {
-    name: 'generate-sitemap-and-rss',
+    name: 'generate-rss',
     async buildStart() {
       try {
-        const { generateSitemapXML, generateRssXML } = await import('./src/utils/generateSitemap');
-        
-        // Generate sitemap with images
-        const sitemap = generateSitemapXML();
-        writeFileSync('public/sitemap.xml', sitemap);
-        const urlCount = (sitemap.match(/<url>/g) || []).length;
-        console.log(`✓ Sitemap generated with ${urlCount} URLs (including images)`);
-        
-        // Generate RSS feed
+        // NOTE: sitemap.xml is authoritatively written by scripts/static-prerender.mjs
+        // after vite build (it includes motor, case-study, and location URLs that
+        // require async data fetching). Writing it here would race and ship a
+        // stale sitemap missing those URLs. RSS stays here — blog-only, no async.
+        const { generateRssXML } = await import('./src/utils/generateSitemap');
         const rss = generateRssXML();
         writeFileSync('public/rss.xml', rss);
         const itemCount = (rss.match(/<item>/g) || []).length;
         console.log(`✓ RSS feed generated with ${itemCount} articles`);
       } catch (error) {
-        console.warn('Sitemap/RSS generation skipped:', error);
+        console.warn('RSS generation skipped:', error);
       }
     }
   };
