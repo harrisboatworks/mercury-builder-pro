@@ -4,6 +4,7 @@ import { RawHTMLViewer } from '@/components/admin/RawHTMLViewer';
 import { XMLDebugAnalyzer } from '@/components/admin/XMLDebugAnalyzer';
 import { ScrapeMotorSpecs } from '@/components/admin/ScrapeMotorSpecs';
 import { ElevenLabsKBSync } from '@/components/admin/ElevenLabsKBSync';
+import { IndexNowControl } from '@/components/admin/IndexNowControl';
 import AdminNav from '@/components/admin/AdminNav';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
@@ -185,6 +186,7 @@ export default function AdminInventory() {
             </CardContent>
           </Card>
           
+          <IndexNowControl />
           <ElevenLabsKBSync />
           <ScrapeMotorSpecs />
           <XMLDebugAnalyzer />
