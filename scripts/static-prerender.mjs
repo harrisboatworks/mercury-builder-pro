@@ -1520,6 +1520,49 @@ function firstParagraph(content, fallback) {
   return stripped.length > 280 ? stripped.slice(0, 277) + '...' : stripped;
 }
 
+// Per-blog-slug semantic <table> fallbacks. Injected into the prerendered
+// <noscript> so crawlers and LLMs see real tabular data even when the
+// markdown content rendered by React doesn't survive a no-JS fetch.
+const BLOG_TABLE_FALLBACKS = {
+  'mercury-repower-cost-ontario-2026-cad':
+    '<table><caption>Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)</caption>' +
+    '<thead><tr><th scope="col">HP</th><th scope="col">Motor price (CAD)</th><th scope="col">Installation (CAD)</th><th scope="col">Total typical (CAD)</th></tr></thead>' +
+    '<tbody>' +
+    '<tr><th scope="row">9.9 HP</th><td>$3,400</td><td>$650</td><td>$4,050</td></tr>' +
+    '<tr><th scope="row">25 HP</th><td>$5,800</td><td>$900</td><td>$6,700</td></tr>' +
+    '<tr><th scope="row">60 HP</th><td>$10,200</td><td>$1,800</td><td>$12,000</td></tr>' +
+    '<tr><th scope="row">90 HP</th><td>$13,500</td><td>$2,300</td><td>$15,800</td></tr>' +
+    '<tr><th scope="row">115 HP</th><td>$15,500</td><td>$2,600</td><td>$18,100</td></tr>' +
+    '<tr><th scope="row">150 HP</th><td>$18,000</td><td>$3,200</td><td>$21,200</td></tr>' +
+    '<tr><th scope="row">200 HP</th><td>$24,000</td><td>$3,800</td><td>$27,800</td></tr>' +
+    '<tr><th scope="row">250 HP</th><td>$28,500</td><td>$4,200</td><td>$32,700</td></tr>' +
+    '</tbody></table>',
+  'cheapest-mercury-outboard-canada-2026':
+    '<table><caption>Cheapest New Mercury Outboards in Canada (CAD, 2026)</caption>' +
+    '<thead><tr><th scope="col">Model</th><th scope="col">HP</th><th scope="col">MSRP (CAD)</th><th scope="col">Sale price (CAD)</th></tr></thead>' +
+    '<tbody>' +
+    '<tr><th scope="row">2.5MH FourStroke</th><td>2.5</td><td>$1,385</td><td>$1,271</td></tr>' +
+    '<tr><th scope="row">3.5MH FourStroke</th><td>3.5</td><td>$1,650</td><td>$1,499</td></tr>' +
+    '<tr><th scope="row">5MH FourStroke</th><td>5</td><td>$1,950</td><td>$1,795</td></tr>' +
+    '<tr><th scope="row">6MH FourStroke</th><td>6</td><td>$2,275</td><td>$2,085</td></tr>' +
+    '<tr><th scope="row">9.9MH FourStroke</th><td>9.9</td><td>$3,150</td><td>$2,895</td></tr>' +
+    '<tr><th scope="row">9.9EH FourStroke</th><td>9.9</td><td>$3,690</td><td>$3,399</td></tr>' +
+    '<tr><th scope="row">9.9ELH FourStroke</th><td>9.9</td><td>$4,435</td><td>$3,399</td></tr>' +
+    '</tbody></table>',
+  'mercury-115-vs-150-hp-outboard-ontario':
+    '<table><caption>Mercury 115 HP vs 150 HP FourStroke — Side-by-Side Comparison</caption>' +
+    '<thead><tr><th scope="col">Spec</th><th scope="col">Mercury 115 HP FourStroke</th><th scope="col">Mercury 150 HP FourStroke</th></tr></thead>' +
+    '<tbody>' +
+    '<tr><th scope="row">Cylinders</th><td>4-cyl, 2.1 L</td><td>4-cyl, 3.0 L</td></tr>' +
+    '<tr><th scope="row">Dry weight</th><td>359 lbs (163 kg)</td><td>455 lbs (206 kg)</td></tr>' +
+    '<tr><th scope="row">Top boat speed (18 ft aluminum)</th><td>~38 mph</td><td>~47 mph</td></tr>' +
+    '<tr><th scope="row">Cruise fuel burn @ 25 mph</th><td>~5.5 GPH</td><td>~5.8 GPH</td></tr>' +
+    '<tr><th scope="row">Typical price (CAD)</th><td>$15,500</td><td>$18,000</td></tr>' +
+    '<tr><th scope="row">Best for</th><td>16–19 ft tinnies, light pontoons</td><td>18–22 ft, tritoons, family runabouts</td></tr>' +
+    '<tr><th scope="row">Warranty</th><td>3-year (up to 7 with promo)</td><td>3-year (up to 7 with promo)</td></tr>' +
+    '</tbody></table>',
+};
+
 // Build blog article route configs.
 const blogArticleRoutes = blogArticles.map(article => ({
   path: `/blog/${article.slug}`,
