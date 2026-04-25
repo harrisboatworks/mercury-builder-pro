@@ -896,7 +896,7 @@ serve(async (req) => {
     async function processMotors() {
       const results: ScrapeResult[] = [];
       
-      for (const motor of motors) {
+      for (const motor of (motors ?? [])) {
         const motorResult = await scrapeMotor(motor, supabase, firecrawlKey, perplexityKey, refresh);
         results.push(motorResult);
         
@@ -922,6 +922,7 @@ serve(async (req) => {
     }
 
     if (background) {
+      // @ts-ignore - EdgeRuntime is provided by Supabase Edge Runtime
       EdgeRuntime.waitUntil(processMotors());
       
       return new Response(
