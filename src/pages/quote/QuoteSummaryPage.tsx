@@ -101,8 +101,8 @@ export default function QuoteSummaryPage() {
     // Analytics: a quote was generated and viewed
     trackAgentEvent({
       event_type: 'quote_generated',
-      motor_model: state.motor?.model || state.motor?.model_display || null,
-      motor_hp: state.motor?.horsepower ?? null,
+      motor_model: state.motor?.model || null,
+      motor_hp: (state.motor as any)?.hp ?? (state.motor as any)?.horsepower ?? null,
       motor_id: state.motor?.id ?? null,
     });
 
