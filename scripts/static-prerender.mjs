@@ -1791,6 +1791,40 @@ function stamp(route) {
     .join('\n  ');
   html = html.replace(/<\/head>/i, `${jsonLdBlocks}\n  </head>`);
 
+  // Open Graph + Twitter social tags (Helmet-managed → data-rh marker so per-route
+  // <Helmet> components adopt them on hydration without appending duplicates).
+  // Crawlers (Facebook, Slack, iMessage, X) and AI agents (ChatGPT, Perplexity)
+  // read these from raw HTML — without per-route stamping every page would ship
+  // with the homepage Open Graph values from index.html.
+  const ogUrl = `${SITE_URL}${route.path === '/' ? '/' : route.path}`;
+  const ogImage = route.ogImage || `${SITE_URL}/social-share.jpg`;
+  const ogType = route.ogType || 'website';
+
+  const socialReplacements = [
+    { re: /<meta\s+property=["']og:title["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:title" content="${escapeHtml(route.title)}" />` },
+    { re: /<meta\s+property=["']og:description["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:description" content="${escapeHtml(route.description)}" />` },
+    { re: /<meta\s+property=["']og:url["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:url" content="${ogUrl}" />` },
+    { re: /<meta\s+property=["']og:type["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:type" content="${ogType}" />` },
+    { re: /<meta\s+property=["']og:image["'][^>]*>/gi, tag: `<meta data-rh="true" property="og:image" content="${ogImage}" />` },
+    { re: /<meta\s+name=["']twitter:title["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:title" content="${escapeHtml(route.title)}" />` },
+    { re: /<meta\s+name=["']twitter:description["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:description" content="${escapeHtml(route.description)}" />` },
+    { re: /<meta\s+name=["']twitter:url["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:url" content="${ogUrl}" />` },
+    { re: /<meta\s+name=["']twitter:image["'][^>]*>/gi, tag: `<meta data-rh="true" name="twitter:image" content="${ogImage}" />` }
+  ];
+  for (const { re, tag } of socialReplacements) {
+    if (re.test(html)) {
+      // Replace the FIRST occurrence (any duplicates already in shell) and strip
+      // any additional duplicates so we end with exactly one canonical version.
+      let replaced = false;
+      html = html.replace(re, () => {
+        if (!replaced) { replaced = true; return tag; }
+        return '';
+      });
+    } else {
+      html = html.replace(/<\/head>/i, `${tag}\n  </head>`);
+    }
+  }
+
   // <noscript> semantic fallback inside <div id="root">
   const extra = route.extraNoscript ? route.extraNoscript() : '';
   const noscript =
