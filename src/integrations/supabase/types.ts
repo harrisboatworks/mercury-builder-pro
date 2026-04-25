@@ -32,6 +32,51 @@ export type Database = {
         }
         Relationships: []
       }
+      agent_events: {
+        Row: {
+          created_at: string
+          event_type: string
+          id: string
+          metadata: Json | null
+          motor_hp: number | null
+          motor_id: string | null
+          motor_model: string | null
+          page_path: string | null
+          quote_value: number | null
+          session_id: string | null
+          source: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          event_type: string
+          id?: string
+          metadata?: Json | null
+          motor_hp?: number | null
+          motor_id?: string | null
+          motor_model?: string | null
+          page_path?: string | null
+          quote_value?: number | null
+          session_id?: string | null
+          source?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          event_type?: string
+          id?: string
+          metadata?: Json | null
+          motor_hp?: number | null
+          motor_id?: string | null
+          motor_model?: string | null
+          page_path?: string | null
+          quote_value?: number | null
+          session_id?: string | null
+          source?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       blog_subscriptions: {
         Row: {
           created_at: string
