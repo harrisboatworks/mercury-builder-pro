@@ -1751,7 +1751,18 @@ const routes = [
     description: 'Expert Mercury repower in Ontario. Get 70% of a new boat experience for 30% of the cost. 30-40% better fuel economy. Lake tested on Rice Lake. Mercury dealer since 1965. $8,000-$18,000 typical.',
     h1: 'Mercury Outboard Repower in Ontario',
     intro: 'Repowering your boat with a new Mercury outboard delivers about 70 percent of the benefit of buying a new boat at roughly 30 percent of the cost. Most repowers run $8,000 to $18,000 depending on horsepower and rigging. Pickup only at Gores Landing on Rice Lake — no shipping. Mercury Marine Platinum Dealer since 1965.',
-    schemas: [repowerSchema()]
+    schemas: [repowerSchema()],
+    extraNoscript: () =>
+      '<table><caption>Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)</caption>' +
+      '<thead><tr><th scope="col">HP tier</th><th scope="col">Typical boat size</th><th scope="col">Motor price (CAD)</th><th scope="col">Installation (CAD)</th><th scope="col">Typical total (CAD)</th></tr></thead>' +
+      '<tbody>' +
+      '<tr><th scope="row">9.9–25 HP</th><td>12–16 ft tiller boats</td><td>$3,400–$6,500</td><td>$600–$1,200</td><td>$4,000–$7,700</td></tr>' +
+      '<tr><th scope="row">40–60 HP</th><td>14–18 ft aluminum</td><td>$7,500–$10,500</td><td>$1,200–$2,000</td><td>$8,700–$12,500</td></tr>' +
+      '<tr><th scope="row">75–115 HP</th><td>17–20 ft fishing/family</td><td>$11,000–$15,500</td><td>$1,800–$3,000</td><td>$12,800–$18,500</td></tr>' +
+      '<tr><th scope="row">150 HP</th><td>18–22 ft runabout/pontoon</td><td>$16,500–$19,500</td><td>$2,500–$3,500</td><td>$19,000–$23,000</td></tr>' +
+      '<tr><th scope="row">175–250 HP</th><td>20–24 ft</td><td>$22,000–$32,000</td><td>$3,000–$5,000</td><td>$25,000–$37,000</td></tr>' +
+      '<tr><th scope="row">300+ HP</th><td>24+ ft offshore</td><td>$32,000+</td><td>$4,500+</td><td>$36,500+</td></tr>' +
+      '</tbody></table>'
   },
   {
     path: '/faq',
