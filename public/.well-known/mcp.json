@@ -103,5 +103,15 @@
     "agentsHub": "https://www.mercuryrepower.ca/agents",
     "sitemap": "https://www.mercuryrepower.ca/sitemap.xml"
   },
+  "markdownTwins": {
+    "description": "Lightweight text/markdown twins of every motor, case study, and location. Preferred over HTML for AI ingestion. Served with Content-Type: text/markdown; charset=utf-8 and X-Robots-Tag: noindex, follow.",
+    "catalog": "https://www.mercuryrepower.ca/catalog.md",
+    "patterns": {
+      "motor": "https://www.mercuryrepower.ca/motors/{slug}.md",
+      "caseStudy": "https://www.mercuryrepower.ca/case-studies/{slug}.md",
+      "location": "https://www.mercuryrepower.ca/locations/{slug}.md"
+    },
+    "frontmatter": ["canonical", "last_updated", "currency", "pickup_only", "delivery_offered", "location", "final_quote_requires_dealer_confirmation", "verado_status"]
+  },
   "lastUpdated": "2026-04-25"
 }
