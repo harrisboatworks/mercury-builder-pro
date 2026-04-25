@@ -39,7 +39,19 @@ export interface StreamChatParams {
   onError: (error: Error) => void;
 }
 
-// Non-streaming fallback request (used when SSE fails on mobile)
+// Detect quote-creation intent — mirrors the server-side regex so we can
+// skip the SSE attempt and go straight to the non-streaming tool path.
+const QUOTE_INTENT_RE = [
+  /(create|send|make|build|generate|email|prepare)\s+(me\s+)?(a\s+)?quote/i,
+  /(book|reserve)\b[^.?!]{0,40}\b(this|the|a|that)\s+(motor|engine|outboard)\b/i,
+];
+export function detectQuoteIntent(message: string): boolean {
+  if (!message) return false;
+  return QUOTE_INTENT_RE.some((p) => p.test(message));
+}
+
+// Non-streaming fallback request (used when SSE fails on mobile or when a
+// tool-intent message is detected up front).
 async function fetchNonStreaming(
   message: string,
   conversationHistory: Array<{ role: string; content: string }>,
@@ -69,7 +81,14 @@ async function fetchNonStreaming(
     }
 
     const data = await response.json();
-    const reply = data.reply || data.error || 'No response received';
+    let reply: string = data.reply || data.error || 'No response received';
+
+    // If the server returned a share_url and the model didn't already embed it,
+    // append a clickable markdown link so the chat UI can render it.
+    if (data.share_url && typeof reply === 'string' && !reply.includes(data.share_url)) {
+      const trimmed = reply.trim();
+      reply = `${trimmed ? trimmed + '\n\n' : ''}[View your quote →](${data.share_url})`;
+    }
 
     // Simulate typewriter effect for non-streaming response
     const words = reply.split(' ');
@@ -78,7 +97,7 @@ async function fetchNonStreaming(
       const word = words[i] + (i < words.length - 1 ? ' ' : '');
       fullResponse += word;
       onDelta(word);
-      await new Promise(r => setTimeout(r, 30));
+      await new Promise(r => setTimeout(r, 20));
     }
     onDone(fullResponse);
   } catch (err) {
