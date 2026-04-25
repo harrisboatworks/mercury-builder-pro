@@ -7,9 +7,9 @@ interface PricingRecord {
   msrp: number
   dealer_price: number
   model_display?: string
-  horsepower?: number
+  horsepower?: number | null
   family?: string
-  rigging_code?: string
+  rigging_code?: string | null
   is_new?: boolean
 }
 
