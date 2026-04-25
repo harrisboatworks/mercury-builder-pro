@@ -55,17 +55,29 @@ export function PurchaseDetailsStep() {
   const promoValue = state.purchaseDetails?.promoValue;
 
   // Validate promo against currently-active promotions (prevents stale/expired promos
-  // from saved or restored quotes from showing — e.g., March factory rebate after expiry)
-  const { getChooseOneOptions, loading: promosLoading } = useActivePromotions();
+  // from saved or restored quotes from showing — e.g., March factory rebate after expiry).
+  // forceRefresh ensures we always pull the latest promotions on financing-app entry,
+  // bypassing the in-memory 5-minute cache.
+  const { getChooseOneOptions, loading: promosLoading } = useActivePromotions({ forceRefresh: true });
   const activeOptionIds = getChooseOneOptions().map((o) => o.id);
   const isPromoStillActive =
     !promoOption || (activeOptionIds.length > 0 && activeOptionIds.includes(promoOption));
 
+  // Track which expired promo (if any) we removed, so we can show a clear notice to the user.
+  const [expiredPromoNotice, setExpiredPromoNotice] = useState<{
+    option: string;
+    value: string | null;
+  } | null>(null);
+  const [noticeDismissed, setNoticeDismissed] = useState(false);
+
   // If a stale promo is detected after promotions load, clear it from context so
-  // downstream totals don't subtract a rebate that no longer exists.
+  // downstream totals don't subtract a rebate that no longer exists, and surface
+  // a notice to the user explaining what was removed.
   useEffect(() => {
     if (!promosLoading && promoOption && activeOptionIds.length > 0 && !activeOptionIds.includes(promoOption)) {
       console.warn('[FinancingApplication] Clearing stale promo:', promoOption, '— not in active promotions');
+      setExpiredPromoNotice({ option: promoOption, value: promoValue ?? null });
+      setNoticeDismissed(false);
       dispatch({
         type: 'SET_PURCHASE_DETAILS',
         payload: {
