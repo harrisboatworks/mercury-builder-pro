@@ -221,7 +221,7 @@ You can discuss motors, pricing, financing, trade-ins, and help them through the
   } catch (error) {
     console.error("Error creating realtime session:", error);
     return new Response(
-      JSON.stringify({ error: error.message || 'Failed to create session' }),
+      JSON.stringify({ error: (error instanceof Error ? error.message : String(error)) || 'Failed to create session' }),
       {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
