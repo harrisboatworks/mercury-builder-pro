@@ -2784,6 +2784,334 @@ writeFileSync(join(ROOT, 'public', 'sitemap.xml'), sitemapXml, 'utf8');
 console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries.length} URLs (${motorSitemapEntries.length} motors, ${blogSitemapEntries.length} blog, ${caseStudySitemapEntries.length} case studies, ${locationSitemapEntries.length} locations, ${staticSitemapEntries.length} static)`);
 
 // ============================================================
+// PHASE 4 — Markdown twins for AI agents
+// Lightweight `text/markdown` files at:
+//   /motors/{slug}.md, /case-studies/{slug}.md, /locations/{slug}.md, /catalog.md
+// Vercel serves these directly from dist/ with custom headers
+// (Content-Type: text/markdown; charset=utf-8 + X-Robots-Tag: noindex,follow).
+// HTML stays the canonical surface for humans + Google.
+// ============================================================
+
+const TWIN_DATE = today; // YYYY-MM-DD; same date used for sitemap lastmod
+const AGENT_API = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api';
+
+function mdFrontmatter(canonicalPath, extraLines = []) {
+  return [
+    '---',
+    `canonical: ${SITE_URL}${canonicalPath}`,
+    `last_updated: ${TWIN_DATE}`,
+    'currency: CAD',
+    'pickup_only: true',
+    'delivery_offered: false',
+    'location: Gores Landing, ON, Canada',
+    'final_quote_requires_dealer_confirmation: true',
+    'verado_status: special-order only — not in default inventory',
+    ...extraLines,
+    '---',
+    '',
+  ].join('\n');
+}
+
+function motorBestFit(family, hp) {
+  if (family === 'Pro XS') return 'Tournament bass anglers, performance bay boats, and high-output fishing rigs that prioritize hole-shot and top speed.';
+  if (family === 'SeaPro') return 'Commercial users, guides, and high-hour applications where a heavier-duty drivetrain matters.';
+  if (family === 'Racing') return 'Specialty performance and competition use only. Confirm rigging compatibility with dealer.';
+  if (family === 'Verado') return 'Larger center-consoles and powerboats where supercharged smoothness is preferred. Special-order only.';
+  if (hp <= 9.9) return 'Small tenders, canoes, sailboat kickers, and very light fishing setups.';
+  if (hp <= 30) return 'Small aluminum fishing boats, jon boats, and light tiller setups.';
+  if (hp <= 60) return 'Mid-size aluminum fishing boats 14–18 ft and small pontoons.';
+  if (hp <= 115) return 'Aluminum fishing boats 16–20 ft, pontoons up to ~22 ft, and family runabouts.';
+  if (hp <= 200) return 'Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.';
+  return 'Larger offshore and high-performance hulls. Confirm transom rating and rigging with dealer.';
+}
+
+function motorNotIdeal(family, hp) {
+  if (family === 'Pro XS') return 'Pontoons, low-speed cruising, or fuel-economy-first family use — a FourStroke is usually the better fit.';
+  if (family === 'SeaPro') return 'Recreational-only owners with light annual hours — FourStroke offers better value for typical use.';
+  if (family === 'Racing') return 'Any general recreational use — these are not appropriate for typical pontoons, fishing, or family boats.';
+  if (family === 'Verado') return 'Smaller hulls or buyers seeking the simplest service path — Verado is supercharged and special-order only.';
+  if (hp <= 9.9) return 'Boats 16 ft and over, loaded family boats, or anything that needs to plane with multiple passengers.';
+  if (hp <= 30) return 'Pontoons, family runabouts, or any 18+ ft boat carrying more than two adults with gear.';
+  if (hp <= 60) return 'Heavy pontoons over 22 ft or fiberglass family boats — consider 90–115 HP.';
+  if (hp <= 115) return 'Tournament bass setups (see Pro XS) and large 24+ ft pontoons with watersports loads.';
+  return 'Small tenders or boats rated under this HP — match HP to transom rating, never exceed it.';
+}
+
+function motorMarkdown(m) {
+  const slug = motorSlug(m.model_key);
+  const url = `${SITE_URL}/motors/${slug}`;
+  const display = m.model_display || m.model || `Mercury ${m.horsepower}HP`;
+  const family = detectMotorFamily(m);
+  const price = resolveMotorSellingPrice(m);
+  const inStock = m.in_stock || m.availability === 'In Stock';
+  const modelNo = m.model_number || m.mercury_model_no || '';
+  const shaft = m.shaft_code || m.shaft || '';
+  const priceStr = price
+    ? new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(price)
+    : 'Contact for pricing';
+  const isVerado = family === 'Verado';
+
+  const front = mdFrontmatter(`/motors/${slug}`, [
+    `motor_id: ${m.id}`,
+    `slug: ${slug}`,
+    `family: ${family}`,
+    `horsepower: ${m.horsepower}`,
+    modelNo ? `model_number: ${modelNo}` : null,
+    `availability: ${inStock ? 'in_stock' : 'special_order'}`,
+    `price_cad: ${price ?? 'null'}`,
+  ].filter(Boolean));
+
+  const lines = [
+    front,
+    `# ${display}`,
+    '',
+    `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}.`,
+    `Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.`,
+    '',
+    '## Quick facts',
+    '',
+    `- **Model:** ${display}`,
+    `- **Family:** Mercury ${family}`,
+    `- **Horsepower:** ${m.horsepower} HP`,
+    modelNo ? `- **Model number:** ${modelNo}` : null,
+    shaft ? `- **Shaft:** ${shaft}` : null,
+    m.start_type ? `- **Start type:** ${m.start_type}` : null,
+    m.control_type ? `- **Control type:** ${m.control_type}` : null,
+    '',
+    '## Pricing (CAD)',
+    '',
+    `- **Selling price:** ${priceStr}`,
+    m.msrp && price && m.msrp > price ? `- **MSRP:** ${new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(m.msrp)}` : null,
+    '- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.',
+    '- **Final price** is confirmed by Harris Boat Works staff before purchase.',
+    '',
+    '## Availability',
+    '',
+    `- **Status:** ${inStock ? 'In stock at Gores Landing' : 'Special order — contact dealer for ETA'}`,
+    '- **Pickup:** Required at Gores Landing, ON. We do not ship and we do not deliver.',
+    '',
+    '## Best fit for',
+    '',
+    motorBestFit(family, m.horsepower),
+    '',
+    '## Not ideal for',
+    '',
+    motorNotIdeal(family, m.horsepower),
+    '',
+    '## Build a quote',
+    '',
+    `- HTML page (canonical for humans): ${url}`,
+    `- Quote builder deep link: ${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(m.id)}`,
+    '',
+    '## Agent API',
+    '',
+    `Programmatic quotes: \`POST ${AGENT_API}\``,
+    '',
+    '```json',
+    '{',
+    `  "motor_id": "${m.id}",`,
+    '  "trade_in": null,',
+    '  "contact": null',
+    '}',
+    '```',
+    '',
+    '## Notes',
+    '',
+    isVerado
+      ? '- Verado is special-order only and not part of default inventory. Contact Harris Boat Works directly for Verado availability and lead time.'
+      : null,
+    '- Financing available on totals over $5,000 CAD (tiered: 8.99% under $10K, 7.99% over $10K).',
+    '- Standard 3-year Mercury factory warranty; up to 7 years available on select promotions.',
+    '- We are pickup-only at Gores Landing, ON. Final price confirmed by dealer.',
+  ].filter(l => l !== null);
+
+  return lines.join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+}
+
+function caseStudyMarkdown(s) {
+  const url = `${SITE_URL}/case-studies/${s.slug}`;
+  const front = mdFrontmatter(`/case-studies/${s.slug}`, [
+    `case_study_id: ${s.id}`,
+    `slug: ${s.slug}`,
+    `boat_type: ${JSON.stringify(s.boatType)}`,
+    `region: ${JSON.stringify(s.region)}`,
+  ]);
+  const why = (s.whyItWorked || []).map(w => `- ${w}`).join('\n');
+  return [
+    front,
+    `# ${s.title}`,
+    '',
+    s.excerpt,
+    '',
+    '## Factbox',
+    '',
+    `- **Boat type:** ${s.boatType}`,
+    `- **Region:** ${s.region}`,
+    `- **Scenario:** ${s.scenario}`,
+    `- **HP jump:** ${s.hpJump}`,
+    '',
+    '## Before → After',
+    '',
+    `- **Before:** ${s.beforeMotor}`,
+    `- **After:** ${s.afterMotor}`,
+    '',
+    '## Recommendation',
+    '',
+    s.recommendation,
+    '',
+    '## Why it worked',
+    '',
+    why || '_(no notes recorded)_',
+    '',
+    '## Customer quote',
+    '',
+    `> ${s.customerQuote}`,
+    '',
+    '## Quote a similar repower',
+    '',
+    `- HTML page (canonical for humans): ${url}`,
+    `- Start a Mercury quote: ${SITE_URL}/quote/motor-selection`,
+    '',
+    '## Notes',
+    '',
+    '- All pricing in CAD. Pickup only at Gores Landing, ON.',
+    '- Final motor recommendation confirmed by Harris Boat Works staff.',
+    '- Verado not used in default repower recommendations (special-order only).',
+    '',
+  ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+}
+
+function locationMarkdown(loc) {
+  const url = `${SITE_URL}/locations/${loc.slug}`;
+  const related = caseStudies.filter(s => {
+    const r = (s.region || '').toLowerCase();
+    const lr = (loc.region || '').toLowerCase();
+    return r.includes(lr) || lr.includes(r.split(' ')[0]);
+  });
+  const front = mdFrontmatter(`/locations/${loc.slug}`, [
+    `slug: ${loc.slug}`,
+    `region: ${JSON.stringify(loc.region)}`,
+    `keyword: ${JSON.stringify(loc.keyword)}`,
+  ]);
+  const popular = (loc.popularBoats || []).map(b => `- ${b}`).join('\n');
+  const links = (loc.recommendedLinks || []).map(l => `- [${l.label}](${SITE_URL}${l.href})`).join('\n');
+  const faqs = (loc.faqs || []).map(f => `### ${f.question}\n\n${f.answer}\n`).join('\n');
+  const relatedMd = related.length
+    ? related.map(s => `- [${s.title}](${SITE_URL}/case-studies/${s.slug}.md)`).join('\n')
+    : '_No matching case studies recorded for this region yet._';
+
+  return [
+    front,
+    `# ${loc.title}`,
+    '',
+    loc.intro,
+    '',
+    '## Factbox',
+    '',
+    `- **Region:** ${loc.region}`,
+    `- **Drive time:** ${loc.driveTime}`,
+    `- **Pickup policy:** Pickup only at Gores Landing, ON. We do not deliver.`,
+    `- **Currency:** CAD only.`,
+    '',
+    '## Common boat types',
+    '',
+    popular || '_(none recorded)_',
+    '',
+    '## Recommended links',
+    '',
+    links || '_(none)_',
+    '',
+    '## Related case studies',
+    '',
+    relatedMd,
+    '',
+    '## FAQs',
+    '',
+    faqs || '_(none recorded)_',
+    '',
+    '## Notes',
+    '',
+    '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
+    '- Verado is special-order only — not in default inventory.',
+    '- HTML page (canonical for humans): ' + url,
+    '',
+  ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+}
+
+function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
+  return [
+    mdFrontmatter('/catalog.md', ['index_type: agent_catalog']),
+    '# Harris Boat Works — Agent Catalog',
+    '',
+    'This is the markdown index for AI agents. Each entry below links to a `.md` twin of an HTML page on https://www.mercuryrepower.ca.',
+    '',
+    '## Business rules (apply to every entry)',
+    '',
+    '- All pricing in **CAD**.',
+    '- **Pickup only** at Gores Landing, ON. We do not ship outboards. We do not deliver.',
+    '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
+    '- **Verado** is special-order only — not part of default inventory and not actively promoted.',
+    '- Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.',
+    '',
+    '## Agent quote API',
+    '',
+    `\`POST ${AGENT_API}\` — programmatic quote builder. See any motor twin for an example body.`,
+    '',
+    '## MCP discovery',
+    '',
+    `- MCP manifest: ${SITE_URL}/.well-known/mcp.json`,
+    `- llms.txt: ${SITE_URL}/llms.txt`,
+    `- Sitemap (HTML, for search engines): ${SITE_URL}/sitemap.xml`,
+    '',
+    '## Motors',
+    '',
+    motorTwins.map(t => `- [${t.title}](${SITE_URL}${t.path})`).join('\n'),
+    '',
+    '## Case studies',
+    '',
+    caseStudyTwins.map(t => `- [${t.title}](${SITE_URL}${t.path})`).join('\n'),
+    '',
+    '## Locations',
+    '',
+    locationTwins.map(t => `- [${t.title}](${SITE_URL}${t.path})`).join('\n'),
+    '',
+  ].join('\n') + '\n';
+}
+
+function writeMd(relPath, content) {
+  const outFile = join(DIST, relPath.replace(/^\//, ''));
+  mkdirSync(dirname(outFile), { recursive: true });
+  writeFileSync(outFile, content, 'utf8');
+}
+
+const motorTwinSummaries = [];
+for (const m of motorRecords) {
+  if (!m.model_key) continue;
+  const s = (m.model_display || m.model || '').toLowerCase();
+  if (s.includes('verado')) continue;
+  const slug = motorSlug(m.model_key);
+  const path = `/motors/${slug}.md`;
+  writeMd(path, motorMarkdown(m));
+  motorTwinSummaries.push({ path, title: m.model_display || m.model || `Mercury ${m.horsepower}HP` });
+}
+
+const caseStudyTwinSummaries = caseStudies.map(s => {
+  const path = `/case-studies/${s.slug}.md`;
+  writeMd(path, caseStudyMarkdown(s));
+  return { path, title: s.title };
+});
+
+const locationTwinSummaries = locations.map(loc => {
+  const path = `/locations/${loc.slug}.md`;
+  writeMd(path, locationMarkdown(loc));
+  return { path, title: loc.title };
+});
+
+writeMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries));
+
+console.log(`[static-prerender] ✓ markdown twins written: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, 1 catalog`);
+
+// ============================================================
 // Hardened post-build verification — fail the build on any issue.
 // ============================================================
 const verifyErrors = [];
@@ -2923,9 +3251,80 @@ if (sitemapLocationMatches !== expectedLocationUrls) {
   verifyErrors.push(`sitemap.xml location URL count ${sitemapLocationMatches} != ${expectedLocationUrls}.`);
 }
 
+// ============================================================
+// PHASE 4 — Markdown twin verification gates
+// ============================================================
+function verifyMd({ relPath, requireSubstrings = [], label }) {
+  const p = join(DIST, relPath.replace(/^\//, ''));
+  if (!existsSync(p)) {
+    verifyErrors.push(`${label}: missing markdown twin at ${p}`);
+    return;
+  }
+  const txt = readFileSync(p, 'utf8');
+  if (txt.length < 200) {
+    verifyErrors.push(`${label}: ${relPath} is suspiciously short (${txt.length} bytes).`);
+  }
+  if (!txt.startsWith('---\n')) {
+    verifyErrors.push(`${label}: ${relPath} does not start with YAML frontmatter — possibly returned HTML instead of markdown.`);
+  }
+  if (/<html[\s>]/i.test(txt) || /<!doctype html/i.test(txt)) {
+    verifyErrors.push(`${label}: ${relPath} contains HTML — should be pure markdown.`);
+  }
+  for (const sub of requireSubstrings) {
+    if (!txt.includes(sub)) {
+      verifyErrors.push(`${label}: ${relPath} missing required substring "${sub}".`);
+    }
+  }
+}
+
+// Catalog index
+verifyMd({
+  relPath: '/catalog.md',
+  label: 'Catalog index',
+  requireSubstrings: ['## Motors', '## Case studies', '## Locations', 'CAD', 'Pickup only', 'mcp.json'],
+});
+
+// Sample motor twin
+if (motorTwinSummaries.length > 0) {
+  verifyMd({
+    relPath: motorTwinSummaries[0].path,
+    label: 'Sample motor twin',
+    requireSubstrings: ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Agent API', 'agent-quote-api'],
+  });
+}
+
+// Sample case study twin
+if (caseStudyTwinSummaries.length > 0) {
+  verifyMd({
+    relPath: caseStudyTwinSummaries[0].path,
+    label: 'Sample case study twin',
+    requireSubstrings: ['canonical:', 'Mercury', '## Customer quote', '## Recommendation'],
+  });
+}
+
+// Sample location twin
+if (locationTwinSummaries.length > 0) {
+  verifyMd({
+    relPath: locationTwinSummaries[0].path,
+    label: 'Sample location twin',
+    requireSubstrings: ['canonical:', 'Gores Landing', '## FAQs', '## Common boat types'],
+  });
+}
+
+// Count parity
+if (motorTwinSummaries.length !== motorPageRoutes.length) {
+  verifyErrors.push(`Motor markdown twin count ${motorTwinSummaries.length} != motor HTML route count ${motorPageRoutes.length}.`);
+}
+if (caseStudyTwinSummaries.length !== caseStudies.length) {
+  verifyErrors.push(`Case study markdown twin count ${caseStudyTwinSummaries.length} != ${caseStudies.length}.`);
+}
+if (locationTwinSummaries.length !== locations.length) {
+  verifyErrors.push(`Location markdown twin count ${locationTwinSummaries.length} != ${locations.length}.`);
+}
+
 if (verifyErrors.length > 0) {
   console.error('\n[static-prerender] ❌ Build verification failed:');
   for (const e of verifyErrors) console.error('  - ' + e);
   process.exit(1);
 }
-console.log(`[static-prerender] ✓ Verification passed — ${motorPageRoutes.length} motor pages, ${caseStudyDetailRoutes.length} case studies, ${locationDetailRoutes.length} locations, ${tableRoutes.length} table pages, Verado consistent, ai.txt clean.`);
+console.log(`[static-prerender] ✓ Verification passed — ${motorPageRoutes.length} motor pages, ${caseStudyDetailRoutes.length} case studies, ${locationDetailRoutes.length} locations, ${tableRoutes.length} table pages, ${motorTwinSummaries.length}+${caseStudyTwinSummaries.length}+${locationTwinSummaries.length}+1 markdown twins, Verado consistent, ai.txt clean.`);

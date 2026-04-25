@@ -38,6 +38,10 @@
     { "source": "/rss.xml", "destination": "/rss.xml" },
     { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/llms.txt", "destination": "/llms.txt" },
+    { "source": "/catalog.md", "destination": "/catalog.md" },
+    { "source": "/motors/:slug.md", "destination": "/motors/:slug.md" },
+    { "source": "/case-studies/:slug.md", "destination": "/case-studies/:slug.md" },
+    { "source": "/locations/:slug.md", "destination": "/locations/:slug.md" },
     { "source": "/", "destination": "/index.html" },
     { "source": "/repower", "destination": "/repower/index.html" },
     { "source": "/faq", "destination": "/faq/index.html" },
@@ -104,6 +108,15 @@
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
         }
+      ]
+    },
+    {
+      "source": "/(.*\\.md)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
+        { "key": "X-Robots-Tag", "value": "noindex, follow" },
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
     },
     {
