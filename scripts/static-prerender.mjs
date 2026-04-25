@@ -196,6 +196,12 @@ console.log(`[static-prerender] loaded ${faqItems.length} FAQ items`);
 const blogArticles = loadBlogArticles();
 console.log(`[static-prerender] loaded ${blogArticles.length} published blog articles`);
 
+const caseStudies = loadCaseStudies();
+console.log(`[static-prerender] loaded ${caseStudies.length} case studies`);
+
+const locations = loadLocations();
+console.log(`[static-prerender] loaded ${locations.length} location hubs`);
+
 const motorRecords = await loadMotors();
 console.log(`[static-prerender] loaded ${motorRecords.length} motor records for /motors/{slug}`);
 
