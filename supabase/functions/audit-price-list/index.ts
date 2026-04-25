@@ -447,7 +447,7 @@ Deno.serve(async (req) => {
         status: 'failed',
         started_at: new Date().toISOString(),
         completed_at: new Date().toISOString(),
-        error_message: error.message || 'Unknown error',
+        error_message: error instanceof Error ? error.message : String(error),
       });
     } catch (logError) {
       console.error('[audit-price-list] Failed to log error:', logError);
@@ -456,7 +456,7 @@ Deno.serve(async (req) => {
     return new Response(
       JSON.stringify({
         success: false,
-        error: error.message || 'Unknown error',
+        error: error instanceof Error ? error.message : String(error),
       }),
       { 
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
