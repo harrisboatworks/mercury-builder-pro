@@ -7,6 +7,8 @@ import { calculateMonthlyPayment, DEALERPLAN_FEE, FINANCING_MINIMUM } from '@/li
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useQuoteRunningTotal } from '@/hooks/useQuoteRunningTotal';
 import StickyQuoteBar from './StickyQuoteBar';
+import { getQuoteStepGate } from '@/lib/quote-step-gate';
+import { toast } from 'sonner';
 
 export function GlobalStickyQuoteBar() {
   const { state } = useQuote();
@@ -110,8 +112,16 @@ export function GlobalStickyQuoteBar() {
   const hasActiveChooseOne = getChooseOneOptions().length > 0;
   const promoOrSummary = hasActiveChooseOne ? '/quote/promo-selection' : '/quote/summary';
 
+  // Per-step validation gate (disable Continue when required selection missing)
+  const gate = getQuoteStepGate(location.pathname, state);
+
   // Handle primary action (Continue)
   const handlePrimary = () => {
+    if (gate.disabled) {
+      if (gate.reason) toast.error(gate.reason);
+      return;
+    }
+
     const path = location.pathname;
     
     if (path === '/quote/purchase-path') navigate('/quote/boat-info');
@@ -151,6 +161,8 @@ export function GlobalStickyQuoteBar() {
       selectedPromoOption={state.selectedPromoOption}
       selectedPromoDisplay={selectedPromoDisplay}
       financingUnavailable={financingUnavailable}
+      primaryDisabled={gate.disabled}
+      primaryDisabledReason={gate.reason}
     />
   );
 }

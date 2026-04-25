@@ -130,7 +130,8 @@ async function fetchGooglePlaceData(): Promise<PlaceData | null> {
     
     return data;
   } catch (err) {
-    console.error('[useGooglePlaceData] Error fetching place data:', err);
+    // Downgraded to warn — transient network/edge errors should not appear as errors
+    console.warn('[useGooglePlaceData] Could not fetch place data (will use defaults):', err);
     return null;
   }
 }

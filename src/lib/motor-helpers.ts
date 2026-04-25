@@ -769,19 +769,8 @@ export const getMotorImageByPriority = async (motor: any): Promise<{ url: string
     }
   }
   
-  // Priority 7: Mercury CDN static image map fallback
-  const hp = motor?.horsepower ?? motor?.hp;
-  if (typeof hp === 'number') {
-    try {
-      const { getMotorHeroImage } = await import('@/lib/mercury-product-images');
-      const cdnImage = getMotorHeroImage(hp);
-      if (cdnImage) {
-        return { url: cdnImage, isInventory: false };
-      }
-    } catch (err) {
-      console.warn('Failed to load Mercury CDN fallback:', err);
-    }
-  }
+  // Priority 7: Mercury CDN fallback DISABLED — Mercury rotates these CDN paths
+  // and they 404 in production, polluting the console. Local placeholder is preferred.
 
   // Priority 8: Fallback to Mercury placeholder
   return { url: fallbackImage, isInventory: false };

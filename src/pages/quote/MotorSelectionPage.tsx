@@ -514,7 +514,8 @@ if (event.type === 'filter_motors') {
         : [];
       const firstDbImage = dbImages.length > 0 ? dbImages[0] : null;
       const heroImage = dbMotor.hero_image_url || dbMotor.image_url || firstDbImage || '';
-      const galleryImages = dbImages.length > 0 ? dbImages : (getMotorImages(dbMotor.horsepower)?.galleryImages || []);
+      // Use database images only — Mercury CDN URLs are unreliable (404 frequently)
+      const galleryImages = dbImages;
 
       // Convert to Motor type (same as original)
       const convertedMotor: Motor = {
