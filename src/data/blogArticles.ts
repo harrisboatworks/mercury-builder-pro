@@ -10001,6 +10001,25 @@ Speaking of freight: in Canada, most motors ship to dealers, and dealer freight 
 
 The CAD-USD relationship also matters. If the Canadian dollar weakens, Mercury's cost basis for importing motors rises — and that typically flows through to retail pricing over time. The ranges in this guide reflect our current inventory as of spring 2026 — treat them as real prices, not planning estimates.
 
+## 2026 Mercury Entry-Level Price Table (CAD, In-Stock at Harris Boat Works)
+
+The table below is the quick-reference for every entry-level Mercury we currently carry. All prices are MSRP in Canadian dollars, before HST, rigging, prop, and installation. Sale prices reflect current floor pricing as of spring 2026.
+
+| HP | Model | Start / Steering | Shaft | MSRP (CAD) | Sale Price (CAD) | Best For |
+|---:|---|---|---|---:|---:|---|
+| 2.5 | 2026 Mercury 2.5 MH | Manual / Tiller | Short | $1,385 | — | Dinghies, tenders, canoes |
+| 6 | 2026 Mercury 6 MH | Manual / Tiller | Short | $2,275 | — | 12–14 ft aluminum, small fishing |
+| 9.9 | 2026 Mercury 9.9 MH | Manual / Tiller | Short | $3,875 | — | Restricted lakes, kicker, small fishing |
+| 9.9 | 2026 Mercury 9.9 EH | Electric / Tiller | Short | $4,230 | — | Easier starting on small fishing rigs |
+| 9.9 | 2026 Mercury 9.9 ELH | Electric / Tiller | Long | $4,435 | — | Long-shaft transoms, kicker on larger boats |
+| 9.9 | 2026 Mercury 9.9 ELH EFI | Electric / Tiller | Long | $3,925 | **$3,299.99** | Best entry-level value, EFI fuel injection |
+| 15 | 2026 Mercury 15 MH | Manual / Tiller | Short | $4,225 | — | 14–16 ft aluminum primary motor |
+| 15 | 2026 Mercury 15 EXLHPT ProKicker | Electric / Tiller, Power Trim | Extra-Long | $6,080 | **$5,572** | Walleye trolling, kicker on larger fishing boats |
+| 20 | 2026 Mercury 20 EH | Electric / Tiller | Short | $5,110 | — | 14 ft aluminum on plane with one or two people |
+| 20 | 2026 Mercury 20 ELH | Electric / Tiller | Long | $5,005 | — | 16 ft aluminum, mid-size fishing rigs |
+| 20 | 2021 Mercury 20 ELH (used) | Electric / Tiller | Long | — | **$3,978** | Lightly used; lowest-cost path to 20 HP |
+
+Need a quote with rigging, prop, installation, and HST included? [Build it at mercuryrepower.ca](https://mercuryrepower.ca/quote/motor-selection) — no phone tag.
 ## The Absolute Cheapest: Mercury 2.5 hp FourStroke
 
 **HBW in-stock price: $1,385 MSRP** (2026 Mercury 2.5 MH)
