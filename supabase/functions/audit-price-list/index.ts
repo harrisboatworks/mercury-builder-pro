@@ -8,7 +8,38 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-// ... keep existing code (interfaces)
+interface PriceListMotor {
+  model_number: string;
+  model_display: string;
+  dealer_price: number;
+  horsepower: number;
+}
+
+interface DatabaseMotor {
+  id: string;
+  model_number: string | null;
+  model_display: string | null;
+  dealer_price: number | null;
+  msrp: number | null;
+  horsepower: number | null;
+  is_brochure: boolean | null;
+}
+
+interface Discrepancy {
+  model_number: string;
+  model_display: string;
+  field: string;
+  db_value: number | string | null;
+  pricelist_value: number | string | null;
+  diff?: number;
+}
+
+interface ChangeRecord {
+  model_number: string;
+  field: string;
+  old_value: number | string | null;
+  new_value: number | string | null;
+}
 
 Deno.serve(async (req) => {
   // Handle CORS preflight

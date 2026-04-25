@@ -314,7 +314,7 @@ function runTradeEstimate(
   }
 
   // --- MSRP-based path for Mercury motors ---
-  const msrpPcts = config?.MSRP_TRADE_PERCENTAGES as Record<string, Record<string, number>> | undefined;
+  const msrpPcts = config?.MSRP_TRADE_PERCENTAGES as unknown as Record<string, Record<string, number>> | undefined;
   if (brand === "Mercury" && msrpLookup && msrpPcts) {
     const motorAge = currentYear - year;
     let ageBracket: string | null = null;
@@ -1064,7 +1064,6 @@ async function createQuote(supabase: any, body: any) {
     },
     purchasePath,
     boatInfo: customerHasProp ? { hasCompatibleProp: true } : undefined,
-    adminDiscount,
     adminNotes: body.admin_notes || "",
     customerNotes: body.customer_notes || "",
     customerName: customer_name.trim(),
@@ -1088,7 +1087,6 @@ async function createQuote(supabase: any, body: any) {
     warrantyConfig,
     warrantyYears: totalWarrantyYears,
     warrantyYearsExtra,
-    warrantyCost,
     // Package — use 'selectedPackage' key that SavedQuotePage restores
     selectedPackage: {
       id: packageTier,
