@@ -66,13 +66,15 @@ serve(async (req) => {
       return json({ ok: false, error: data.error || "Failed to create quote" }, upstream.status);
     }
 
+    const refShort = data.quote_id?.slice(0, 8).toUpperCase();
+    const priceStr = (data.pricing?.finalPrice || 0).toLocaleString("en-CA", { minimumFractionDigits: 2 });
     return json({
       ok: true,
       quote_id: data.quote_id,
       share_url: data.share_url,
       final_price: data.pricing?.finalPrice,
       motor: data.motor,
-      summary: `Quote ${data.quote_id?.slice(0, 8).toUpperCase()} for $${(data.pricing?.finalPrice || 0).toLocaleString("en-CA", { minimumFractionDigits: 2 })} CAD has been created and emailed to ${body.customer_email}.`,
+      summary: `Quote ${refShort} for $${priceStr} CAD created and emailed to ${body.customer_email}.${data.share_url ? ` Share link: ${data.share_url}` : ""} Tell the customer the quote is in their inbox and mention you can also text them the link if they want it on their phone.`,
     });
   } catch (err: any) {
     console.error("voice-create-quote error:", err);
