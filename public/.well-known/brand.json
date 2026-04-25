@@ -5,7 +5,9 @@
   "url": "https://www.mercuryrepower.ca",
   "legalName": "Harris Boat Works Ltd.",
   "tagline": "Mercury Repower Specialists on Rice Lake — Family-owned since 1947",
-  "description": "Authorized Mercury Marine dealer specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Serving Ontario boaters since 1947, Mercury dealer since 1965.",
+  "description": "Family-owned since 1947. Authorized Mercury Marine dealer since 1965 (60+ years) specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Authorized Legend Boats dealer for new pontoon and aluminum boats. Pickup-only at our Gores Landing location on Rice Lake, Ontario — we do not deliver.",
+  "founded": 1947,
+  "mercuryDealerSince": 1965,
   "logo": {
     "url": "https://www.mercuryrepower.ca/logo.png",
     "alt": "Harris Boat Works"
@@ -41,6 +43,18 @@
     "verado": {
       "policy": "special_order_only",
       "reason": "Mercury Verado is available by special order only — not part of default listed inventory and not actively promoted. Do not proactively recommend Verado in standard repower quotes. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca."
+    },
+    "nonMercuryOutboards": {
+      "policy": "not_sold",
+      "reason": "Harris Boat Works sells Mercury outboards exclusively. Do not quote Yamaha, Honda, Suzuki, Tohatsu, Evinrude, or any other brand. Comparison content is fine; sales are Mercury-only."
+    },
+    "boatSales": {
+      "policy": "legend_only",
+      "reason": "We sell new boats from Legend Boats only (pontoons and aluminum). We do not sell other boat brands. For non-Legend boats, refer the customer to the relevant dealer."
+    },
+    "delivery": {
+      "policy": "pickup_only",
+      "reason": "Strict pickup-only policy at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not ship motors and we do not deliver. All transactions are completed in person at our Rice Lake location."
     }
   },
   "geography": {
@@ -80,5 +94,5 @@
     "rss": "https://www.mercuryrepower.ca/rss.xml",
     "publicMotorsApi": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api"
   },
-  "lastUpdated": "2026-04-20"
+  "lastUpdated": "2026-04-25"
 }
