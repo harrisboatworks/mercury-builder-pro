@@ -1730,7 +1730,16 @@ const routes = [
         `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
       ).join('') +
       '</dl>'
-  }
+  },
+  {
+    path: '/promotions',
+    title: '7-Year Factory-Backed Warranty on Every New Mercury | Harris Boat Works',
+    description: 'Get 7 years of factory-backed warranty coverage on every new Mercury outboard from Harris Boat Works. No third-party insurance — straight Mercury protection from a Platinum Dealer since 1965.',
+    h1: 'Mercury Outboard Promotions',
+    intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works — Mercury Marine Platinum Dealer on Rice Lake since 1965. Factory-backed 7-year warranty on every new Mercury.',
+    schemas: [promotionsPageSchema()]
+  },
+  ...blogArticleRoutes
 ];
 
 // ============================================================
