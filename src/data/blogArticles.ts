@@ -3943,6 +3943,8 @@ We offer:
 - Trade-in assistance
 
 **[Get Financing Information](/quote)**
+
+For real CAD pricing on what you'd actually be financing, see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) — it breaks down complete repower totals by HP class so you can size your loan accurately.
     `,
     faqs: [
       {
@@ -6221,6 +6223,8 @@ Conventional wisdom says year-end is deal time. Is that true for boat motors? He
 A fair deal when you need it beats waiting indefinitely for a perfect deal. That said, winter months often offer good value through reduced demand and dealer flexibility.
 
 **[Get Year-End Pricing](/quote)**
+
+Before you negotiate, anchor your expectations to real numbers — our [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) is the canonical CAD price reference for complete repowers at every HP tier.
     `,
     faqs: [
       {
@@ -6967,6 +6971,8 @@ Note: Mercury Marine has scaled back manufacturer-level promotional programs in 
 **Total Rigged Cost**: Add $2,000-5,000+ to motor price
 
 **[Get Current Pricing](/quote)**
+
+For complete installed-repower pricing in CAD — including the rigging, controls, prop, and labour components above — see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
     `,
     faqs: [
       {
@@ -8713,6 +8719,8 @@ Discontinued engines affect resale. A Mercury-repowered boat is generally easier
 ## For Engine Repairs, We Only Service Mercury and Mercruiser
 
 Harris Boat Works services Mercury and Mercruiser engines. We do not service Evinrude or other brands. If you're ready to move to Mercury, we handle the full repower — and once it's done, we're your service shop going forward.
+
+For full installed-repower pricing in CAD across every HP class — what most Evinrude owners actually budget against — see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
     `,
     faqs: [
       {
@@ -9229,6 +9237,8 @@ Current details: harrisboatworks.ca or call 905-342-2153.
 4. **Apply** — Most lenders give a decision within 24–48 hours
 5. **Confirm the warranty** — Make sure 7-year coverage is included
 6. **Book installation** — Service appointments fill up in spring: hbw.wiki/service
+
+Before you apply, get an accurate financed amount: our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) lays out real CAD repower totals by HP class so your loan request matches the real installed price.
     `,
     faqs: [
       {
