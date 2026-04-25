@@ -15,6 +15,14 @@ type FilterState = {
   hpRange: [number, number];
 };
 
+type WizardMotor = {
+  hp?: number;
+  horsepower?: number;
+  price?: number;
+  in_stock?: boolean;
+  stockStatus?: string;
+};
+
 interface MotorFinderWizardProps {
   filters: FilterState;
   setFilters: (filters: FilterState) => void;
@@ -23,6 +31,8 @@ interface MotorFinderWizardProps {
   resultsCount: number;
   isOpen: boolean;
   onToggle: () => void;
+  /** Optional cached inventory used to show live "X motors match" counts as filters change. */
+  motors?: WizardMotor[];
 }
 
 export const MotorFinderWizard: React.FC<MotorFinderWizardProps> = ({
@@ -33,6 +43,7 @@ export const MotorFinderWizard: React.FC<MotorFinderWizardProps> = ({
   resultsCount,
   isOpen,
   onToggle,
+  motors,
 }) => {
   const [boatLength, setBoatLength] = useState<number>(18);
   const [priority, setPriority] = useState<"speed" | "economy" | "price" | null>(null);
