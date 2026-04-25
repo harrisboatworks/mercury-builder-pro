@@ -47,7 +47,7 @@ async function listFolders(dropboxToken: string, path: string): Promise<DropboxF
       if (entry['.tag'] === 'folder') {
         folders.push({
           name: entry.name,
-          path: entry.path_lower || entry.path_display,
+          path: (entry.path_lower || entry.path_display) as string,
         })
       }
     }
