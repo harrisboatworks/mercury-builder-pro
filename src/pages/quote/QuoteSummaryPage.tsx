@@ -886,6 +886,13 @@ export default function QuoteSummaryPage() {
         customerNotes: state.customerNotes || '',
       };
 
+      trackAgentEvent({
+        event_type: 'deposit_started',
+        motor_model: motorName,
+        motor_hp: hp,
+        quote_value: depositAmount,
+      });
+
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: {
           paymentType: 'deposit',
