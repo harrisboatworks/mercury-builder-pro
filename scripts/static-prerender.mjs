@@ -1931,7 +1931,208 @@ const routes = [
     intro: 'Current Mercury outboard motor promotions, rebates, and financing offers from Harris Boat Works — Mercury Marine Platinum Dealer on Rice Lake since 1965. Factory-backed 7-year warranty on every new Mercury.',
     schemas: [promotionsPageSchema()]
   },
-  ...blogArticleRoutes
+  // ============================================================
+  // P2 — Orphan SEO routes (previously inherited homepage metadata)
+  // ============================================================
+  {
+    path: '/trade-in-value',
+    title: 'Trade-In Value Estimator — Mercury & Other Outboards | Harris Boat Works',
+    description: 'Estimate your outboard trade-in value in CAD. Anchored to our actual selling prices — not blue-book guesses. Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, Johnson accepted. Mercury Platinum Dealer since 1965.',
+    h1: 'Trade-In Value Estimator',
+    intro: 'Get an instant CAD trade-in estimate for your outboard motor. Our valuation engine is anchored to Harris Boat Works\' real selling prices, not stale blue-book numbers. Trade credit applies directly to a new Mercury repower quote.',
+    schemas: [{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/trade-in-value#webpage`,
+          "url": `${SITE_URL}/trade-in-value`,
+          "name": "Trade-In Value Estimator | Harris Boat Works",
+          "description": "Estimate your outboard trade-in value in CAD anchored to Harris Boat Works selling prices.",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "about": { "@id": `${SITE_URL}/#organization` },
+          "inLanguage": "en-CA",
+          "breadcrumb": { "@id": `${SITE_URL}/trade-in-value#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/trade-in-value#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Trade-In Value", "item": `${SITE_URL}/trade-in-value` },
+          ],
+        },
+        {
+          "@type": "Service",
+          "@id": `${SITE_URL}/trade-in-value#service`,
+          "name": "Outboard Motor Trade-In Valuation",
+          "serviceType": "Outboard trade-in appraisal",
+          "provider": { "@id": `${SITE_URL}/#organization` },
+          "areaServed": { "@type": "AdministrativeArea", "name": "Ontario, Canada" },
+          "offers": { "@type": "Offer", "priceCurrency": "CAD", "price": "0" },
+        },
+      ],
+    }],
+  },
+  {
+    path: '/accessories',
+    title: 'Mercury Outboard Accessories — Genuine OEM Parts in CAD | Harris Boat Works',
+    description: 'Genuine Mercury OEM accessories — propellers, controls, gauges, batteries, fuel systems. Real CAD pricing, included in your repower quote. Mercury Platinum Dealer on Rice Lake since 1965.',
+    h1: 'Mercury Outboard Accessories',
+    intro: 'Genuine Mercury OEM accessories — propellers, controls, SmartCraft gauges, starting batteries, fuel tanks, fuel/water separators, and rigging — at real CAD pricing. Add them to your Mercury repower quote in one step.',
+    schemas: [{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/accessories#webpage`,
+          "url": `${SITE_URL}/accessories`,
+          "name": "Mercury Outboard Accessories | Harris Boat Works",
+          "description": "Genuine Mercury OEM accessories at real CAD pricing.",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "about": { "@id": `${SITE_URL}/#organization` },
+          "inLanguage": "en-CA",
+          "breadcrumb": { "@id": `${SITE_URL}/accessories#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/accessories#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Accessories", "item": `${SITE_URL}/accessories` },
+          ],
+        },
+        {
+          "@type": "ItemList",
+          "@id": `${SITE_URL}/accessories#itemlist`,
+          "name": "Mercury Outboard Accessory Categories",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Propellers (Mercury OEM)" },
+            { "@type": "ListItem", "position": 2, "name": "Controls & Cables" },
+            { "@type": "ListItem", "position": 3, "name": "SmartCraft Gauges" },
+            { "@type": "ListItem", "position": 4, "name": "Starting Batteries" },
+            { "@type": "ListItem", "position": 5, "name": "Fuel Tanks & Lines" },
+            { "@type": "ListItem", "position": 6, "name": "Rigging & Hardware" },
+          ],
+        },
+      ],
+    }],
+  },
+  {
+    path: '/compare',
+    title: 'Compare Mercury Outboards Side-by-Side — HP, Weight & CAD Price | Harris Boat Works',
+    description: 'Compare Mercury outboard motors side-by-side: horsepower, dry weight, shaft length, family, real CAD pricing, and availability. Mercury Platinum Dealer since 1965 on Rice Lake, Ontario.',
+    h1: 'Compare Mercury Outboards',
+    intro: 'Compare any two or three Mercury outboards side-by-side — horsepower, weight, shaft length, family, CAD price, and availability. Pull from our live inventory and decide between the FourStroke, Pro XS, Command Thrust, SeaPro, or ProKicker that fits your boat.',
+    schemas: [{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/compare#webpage`,
+          "url": `${SITE_URL}/compare`,
+          "name": "Compare Mercury Outboards | Harris Boat Works",
+          "description": "Compare Mercury outboard motors side-by-side — HP, weight, shaft, CAD price, availability.",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "about": { "@id": `${SITE_URL}/#organization` },
+          "inLanguage": "en-CA",
+          "breadcrumb": { "@id": `${SITE_URL}/compare#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/compare#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Compare", "item": `${SITE_URL}/compare` },
+          ],
+        },
+      ],
+    }],
+  },
+  {
+    path: '/finance-calculator',
+    title: 'Mercury Outboard Finance Calculator (CAD) — Monthly Payment Estimate | Harris Boat Works',
+    description: 'Estimate your Mercury outboard monthly payment in CAD. 8.99% under $10K, 7.99% over $10K. Terms up to 144 months through DealerPlan. Mercury dealer since 1965.',
+    h1: 'Mercury Outboard Finance Calculator',
+    intro: 'Estimate your monthly payment for any Mercury outboard in Canadian dollars. Tiered rates of 8.99% APR under $10,000 and 7.99% APR over $10,000, with terms up to 144 months through DealerPlan. Minimum financed amount $5,000.',
+    schemas: [{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/finance-calculator#webpage`,
+          "url": `${SITE_URL}/finance-calculator`,
+          "name": "Mercury Outboard Finance Calculator | Harris Boat Works",
+          "description": "Estimate Mercury outboard monthly payments in CAD.",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "about": { "@id": `${SITE_URL}/#organization` },
+          "inLanguage": "en-CA",
+          "breadcrumb": { "@id": `${SITE_URL}/finance-calculator#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/finance-calculator#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Finance Calculator", "item": `${SITE_URL}/finance-calculator` },
+          ],
+        },
+        {
+          "@type": "FinancialProduct",
+          "@id": `${SITE_URL}/finance-calculator#product`,
+          "name": "Mercury Outboard Financing (DealerPlan)",
+          "provider": { "@id": `${SITE_URL}/#organization` },
+          "feesAndCommissionsSpecification": "$299 DealerPlan processing fee applies to financed purchases.",
+          "interestRate": "7.99% over $10,000 CAD; 8.99% under $10,000 CAD",
+          "annualPercentageRate": "7.99",
+          "areaServed": { "@type": "AdministrativeArea", "name": "Canada" },
+        },
+      ],
+    }],
+  },
+  {
+    path: '/financing-application',
+    title: 'Mercury Outboard Financing Application — Apply Online (CAD) | Harris Boat Works',
+    description: 'Apply online for Mercury outboard financing through DealerPlan. 7.99–8.99% APR, $5,000 minimum, terms to 144 months. Mercury Platinum Dealer since 1965 on Rice Lake.',
+    h1: 'Mercury Outboard Financing Application',
+    intro: 'Apply for Mercury outboard financing online through DealerPlan. Approval typically within 1 business day. Tiered rates: 8.99% under $10,000 and 7.99% over $10,000. $5,000 minimum financed amount, terms up to 144 months. Submitted information is encrypted and stored securely.',
+    schemas: [{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}/financing-application#webpage`,
+          "url": `${SITE_URL}/financing-application`,
+          "name": "Mercury Outboard Financing Application | Harris Boat Works",
+          "description": "Apply online for Mercury outboard financing in Canada.",
+          "isPartOf": { "@id": `${SITE_URL}/#website` },
+          "about": { "@id": `${SITE_URL}/#organization` },
+          "inLanguage": "en-CA",
+          "breadcrumb": { "@id": `${SITE_URL}/financing-application#breadcrumb` },
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${SITE_URL}/financing-application#breadcrumb`,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": `${SITE_URL}/` },
+            { "@type": "ListItem", "position": 2, "name": "Financing Application", "item": `${SITE_URL}/financing-application` },
+          ],
+        },
+        {
+          "@type": "FinancialProduct",
+          "@id": `${SITE_URL}/financing-application#product`,
+          "name": "Mercury Outboard Financing — DealerPlan",
+          "provider": { "@id": `${SITE_URL}/#organization` },
+          "interestRate": "7.99% over $10,000 CAD; 8.99% under $10,000 CAD",
+          "annualPercentageRate": "7.99",
+          "feesAndCommissionsSpecification": "$299 DealerPlan processing fee.",
+          "areaServed": { "@type": "AdministrativeArea", "name": "Canada" },
+        },
+      ],
+    }],
+  },
+  ...blogArticleRoutes,
+  ...motorPageRoutes,
 ];
 
 // ============================================================
