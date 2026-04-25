@@ -1849,6 +1849,10 @@ function caseStudyDetailSchema(study) {
   const image = study.heroImage
     ? (study.heroImage.startsWith('/') ? `${SITE_URL}${study.heroImage}` : study.heroImage)
     : undefined;
+  // Stable publication date for case studies (not tied to build time so it doesn't churn).
+  // Phase 1 launch baseline; can be overridden per-study via study.datePublished later.
+  const datePublished = study.datePublished || '2026-04-01';
+  const dateModified = study.dateModified || datePublished;
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -1860,6 +1864,8 @@ function caseStudyDetailSchema(study) {
         image,
         author: { "@id": `${SITE_URL}/#organization` },
         publisher: { "@id": `${SITE_URL}/#organization` },
+        datePublished,
+        dateModified,
         mainEntityOfPage: { "@id": `${url}#webpage` },
         inLanguage: "en-CA",
         about: {
