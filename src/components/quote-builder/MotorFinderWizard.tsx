@@ -48,6 +48,23 @@ export const MotorFinderWizard: React.FC<MotorFinderWizardProps> = ({
   const [boatLength, setBoatLength] = useState<number>(18);
   const [priority, setPriority] = useState<"speed" | "economy" | "price" | null>(null);
 
+  // Live "X motors match" count derived from cached inventory + active filter values.
+  // Falls back to the parent-provided resultsCount when no inventory is passed in.
+  const liveMatchCount = useMemo(() => {
+    if (!motors || motors.length === 0) return resultsCount;
+    const [hpMin, hpMax] = filters.hpRange;
+    const [priceMin, priceMax] = filters.priceRange;
+    const wantInStock = filters.stockStatus === "In Stock";
+    return motors.reduce((acc, m) => {
+      const hp = (m.hp ?? m.horsepower ?? 0) as number;
+      const price = (m.price ?? 0) as number;
+      if (hp < hpMin || hp > hpMax) return acc;
+      if (price < priceMin || price > priceMax) return acc;
+      if (wantInStock && !m.in_stock) return acc;
+      return acc + 1;
+    }, 0);
+  }, [motors, filters.hpRange, filters.priceRange, filters.stockStatus, resultsCount]);
+
   const recommendedHP = useMemo(() => {
     const len = boatLength;
     if (len <= 12) return 6;
