@@ -1104,8 +1104,8 @@ async function createQuote(supabase: any, body: any) {
 
   // --- Transcript linkage (for chat/voice traceability) ---
   if (body.conversation_id && typeof body.conversation_id === "string") {
-    quoteData.conversationId = body.conversation_id;
-    quoteData.conversationChannel = body.conversation_channel || "unknown";
+    (quoteData as any).conversationId = body.conversation_id;
+    (quoteData as any).conversationChannel = body.conversation_channel || "unknown";
   }
 
   const payload = {
