@@ -84,33 +84,78 @@ function loadBlogArticles() {
   }
 }
 
-// Load active motor catalog from Supabase (anon key, public read access).
-// Used to prerender /motors/{slug} pages with Product/Offer JSON-LD so
-// crawlers and lightweight LLM fetchers see real per-motor content.
+// Load active motor catalog. Primary source: public motors API (no auth, CORS-open,
+// matches what AI agents see). Fallback: Supabase REST with publishable key.
+// Returns records normalized to the same shape downstream code uses
+// (model_key, model_display, model_number, family, horsepower, shaft_code,
+//  start_type, control_type, msrp, sale_price, dealer_price, base_price,
+//  manual_overrides, availability, in_stock, hero_image_url, image_url, updated_at).
 async function loadMotors() {
+  const API_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api';
+  // 1) Try the public API first.
+  try {
+    const res = await fetch(API_URL, { headers: { Accept: 'application/json' } });
+    if (res.ok) {
+      const json = await res.json();
+      const motors = Array.isArray(json?.motors) ? json.motors : [];
+      if (motors.length > 0) {
+        console.log(`[static-prerender] loadMotors via public-motors-api → ${motors.length} motors`);
+        // Normalize API records to the internal shape. The API already filters
+        // out Verado, applies the price hierarchy, and provides slug.
+        return motors.map(m => ({
+          id: m.id,
+          model_key: m.slug,                  // we use slug as the URL key
+          model: 'Outboard',
+          model_display: m.modelDisplay,
+          model_number: m.modelNumber,
+          mercury_model_no: m.modelNumber,
+          family: m.family,
+          horsepower: m.horsepower,
+          shaft: m.shaftLength,
+          shaft_code: m.shaftLength,
+          start_type: null,
+          control_type: m.controlType,
+          msrp: m.msrp,
+          sale_price: m.salePrice,
+          dealer_price: m.dealerPrice,
+          base_price: null,
+          manual_overrides: {},
+          // sellingPrice is already resolved by the API — preserve it via overrides
+          // so resolveMotorSellingPrice picks it up first.
+          _resolvedSellingPrice: m.sellingPrice,
+          availability: m.availability,
+          in_stock: !!m.inStock,
+          hero_image_url: m.imageUrl,
+          image_url: m.imageUrl,
+          updated_at: json.lastUpdated || new Date().toISOString(),
+        }));
+      }
+      console.warn('[static-prerender] public-motors-api returned 0 motors — falling back to Supabase');
+    } else {
+      console.warn(`[static-prerender] public-motors-api ${res.status} ${res.statusText} — falling back to Supabase`);
+    }
+  } catch (err) {
+    console.warn('[static-prerender] public-motors-api error:', err.message, '— falling back to Supabase');
+  }
+
+  // 2) Fallback: Supabase REST. REQUIRE the publishable key here — fail loudly.
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const SUPABASE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY || process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) {
-    console.warn('[static-prerender] No SUPABASE_PUBLISHABLE_KEY in env — skipping /motors/{slug} prerender');
-    return [];
+    throw new Error(
+      '[static-prerender] FATAL: public-motors-api unreachable AND no VITE_SUPABASE_PUBLISHABLE_KEY in build env. ' +
+      'Refusing to ship a build with 0 /motors/{slug} pages. ' +
+      'Add VITE_SUPABASE_PUBLISHABLE_KEY to Vercel env vars or fix the public-motors-api edge function.'
+    );
   }
   const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&model_key=not.is.null&availability=neq.Exclude&order=horsepower.asc&limit=500`;
-  try {
-    const res = await fetch(url, {
-      headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
-      },
-    });
-    if (!res.ok) {
-      console.warn(`[static-prerender] Motors fetch failed: ${res.status} ${res.statusText}`);
-      return [];
-    }
-    return await res.json();
-  } catch (err) {
-    console.warn('[static-prerender] Motors fetch error:', err.message);
-    return [];
+  const res = await fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
+  if (!res.ok) {
+    throw new Error(`[static-prerender] FATAL: Supabase fallback failed ${res.status} ${res.statusText}`);
   }
+  const data = await res.json();
+  console.log(`[static-prerender] loadMotors via Supabase fallback → ${data.length} motors`);
+  return data;
 }
 
 const faqItems = loadFaqItems();
@@ -1475,6 +1520,49 @@ function firstParagraph(content, fallback) {
   return stripped.length > 280 ? stripped.slice(0, 277) + '...' : stripped;
 }
 
+// Per-blog-slug semantic <table> fallbacks. Injected into the prerendered
+// <noscript> so crawlers and LLMs see real tabular data even when the
+// markdown content rendered by React doesn't survive a no-JS fetch.
+const BLOG_TABLE_FALLBACKS = {
+  'mercury-repower-cost-ontario-2026-cad':
+    '<table><caption>Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)</caption>' +
+    '<thead><tr><th scope="col">HP</th><th scope="col">Motor price (CAD)</th><th scope="col">Installation (CAD)</th><th scope="col">Total typical (CAD)</th></tr></thead>' +
+    '<tbody>' +
+    '<tr><th scope="row">9.9 HP</th><td>$3,400</td><td>$650</td><td>$4,050</td></tr>' +
+    '<tr><th scope="row">25 HP</th><td>$5,800</td><td>$900</td><td>$6,700</td></tr>' +
+    '<tr><th scope="row">60 HP</th><td>$10,200</td><td>$1,800</td><td>$12,000</td></tr>' +
+    '<tr><th scope="row">90 HP</th><td>$13,500</td><td>$2,300</td><td>$15,800</td></tr>' +
+    '<tr><th scope="row">115 HP</th><td>$15,500</td><td>$2,600</td><td>$18,100</td></tr>' +
+    '<tr><th scope="row">150 HP</th><td>$18,000</td><td>$3,200</td><td>$21,200</td></tr>' +
+    '<tr><th scope="row">200 HP</th><td>$24,000</td><td>$3,800</td><td>$27,800</td></tr>' +
+    '<tr><th scope="row">250 HP</th><td>$28,500</td><td>$4,200</td><td>$32,700</td></tr>' +
+    '</tbody></table>',
+  'cheapest-mercury-outboard-canada-2026':
+    '<table><caption>Cheapest New Mercury Outboards in Canada (CAD, 2026)</caption>' +
+    '<thead><tr><th scope="col">Model</th><th scope="col">HP</th><th scope="col">MSRP (CAD)</th><th scope="col">Sale price (CAD)</th></tr></thead>' +
+    '<tbody>' +
+    '<tr><th scope="row">2.5MH FourStroke</th><td>2.5</td><td>$1,385</td><td>$1,271</td></tr>' +
+    '<tr><th scope="row">3.5MH FourStroke</th><td>3.5</td><td>$1,650</td><td>$1,499</td></tr>' +
+    '<tr><th scope="row">5MH FourStroke</th><td>5</td><td>$1,950</td><td>$1,795</td></tr>' +
+    '<tr><th scope="row">6MH FourStroke</th><td>6</td><td>$2,275</td><td>$2,085</td></tr>' +
+    '<tr><th scope="row">9.9MH FourStroke</th><td>9.9</td><td>$3,150</td><td>$2,895</td></tr>' +
+    '<tr><th scope="row">9.9EH FourStroke</th><td>9.9</td><td>$3,690</td><td>$3,399</td></tr>' +
+    '<tr><th scope="row">9.9ELH FourStroke</th><td>9.9</td><td>$4,435</td><td>$3,399</td></tr>' +
+    '</tbody></table>',
+  'mercury-115-vs-150-hp-outboard-ontario':
+    '<table><caption>Mercury 115 HP vs 150 HP FourStroke — Side-by-Side Comparison</caption>' +
+    '<thead><tr><th scope="col">Spec</th><th scope="col">Mercury 115 HP FourStroke</th><th scope="col">Mercury 150 HP FourStroke</th></tr></thead>' +
+    '<tbody>' +
+    '<tr><th scope="row">Cylinders</th><td>4-cyl, 2.1 L</td><td>4-cyl, 3.0 L</td></tr>' +
+    '<tr><th scope="row">Dry weight</th><td>359 lbs (163 kg)</td><td>455 lbs (206 kg)</td></tr>' +
+    '<tr><th scope="row">Top boat speed (18 ft aluminum)</th><td>~38 mph</td><td>~47 mph</td></tr>' +
+    '<tr><th scope="row">Cruise fuel burn @ 25 mph</th><td>~5.5 GPH</td><td>~5.8 GPH</td></tr>' +
+    '<tr><th scope="row">Typical price (CAD)</th><td>$15,500</td><td>$18,000</td></tr>' +
+    '<tr><th scope="row">Best for</th><td>16–19 ft tinnies, light pontoons</td><td>18–22 ft, tritoons, family runabouts</td></tr>' +
+    '<tr><th scope="row">Warranty</th><td>3-year (up to 7 with promo)</td><td>3-year (up to 7 with promo)</td></tr>' +
+    '</tbody></table>',
+};
+
 // Build blog article route configs.
 const blogArticleRoutes = blogArticles.map(article => ({
   path: `/blog/${article.slug}`,
@@ -1491,7 +1579,8 @@ const blogArticleRoutes = blogArticles.map(article => ({
           `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`
         ).join('') + '</dl>'
       : '';
-    return faqHtml;
+    const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
+    return tableHtml + faqHtml;
   }
 }));
 
@@ -1504,6 +1593,9 @@ function motorSlug(modelKey) {
 }
 
 function resolveMotorSellingPrice(m) {
+  if (typeof m._resolvedSellingPrice === 'number' && m._resolvedSellingPrice > 0) {
+    return m._resolvedSellingPrice;
+  }
   const overrides = m.manual_overrides || {};
   const candidates = [
     overrides.sale_price, overrides.base_price,
@@ -1526,6 +1618,31 @@ function detectMotorFamily(m) {
   return 'FourStroke';
 }
 
+// Returns true only for verified Mercury / Harris-hosted asset URLs.
+// Image policy: never use synthesized, AI-generated, or placeholder images on
+// /motors pages. If the upstream record has no real image, omit it entirely.
+function isVerifiedMotorImage(url) {
+  if (!url || typeof url !== 'string') return false;
+  const u = url.trim();
+  if (!u.startsWith('http')) return false;
+  // Allow only known-good asset hosts (Mercury official, Harris-hosted on the site,
+  // or our Supabase storage CDN). Reject any random external host.
+  const allowed = [
+    'mercurymarine.com',
+    'mercurymarine.ca',
+    'cdn.mercurymarine.com',
+    'mercuryrepower.ca',
+    'harrisboatworks.ca',
+    'eutsoqdpjurknjsshxes.supabase.co',
+  ];
+  try {
+    const host = new URL(u).hostname.toLowerCase();
+    return allowed.some(a => host === a || host.endsWith('.' + a));
+  } catch {
+    return false;
+  }
+}
+
 function motorPageSchema(m, slug) {
   const url = `${SITE_URL}/motors/${slug}`;
   const display = m.model_display || m.model || `Mercury ${m.horsepower}HP`;
@@ -1533,7 +1650,9 @@ function motorPageSchema(m, slug) {
   const price = resolveMotorSellingPrice(m);
   const inStock = m.in_stock || m.availability === 'In Stock';
   const modelNo = m.model_number || m.mercury_model_no || null;
-  const image = m.hero_image_url || m.image_url || `${SITE_URL}/social-share.jpg`;
+  const rawImage = m.hero_image_url || m.image_url || null;
+  // Strict image policy: only include verified image. Otherwise omit.
+  const image = isVerifiedMotorImage(rawImage) ? rawImage : null;
   const validUntil = new Date(Date.now() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
 
   const additionalProperty = [
@@ -1552,8 +1671,8 @@ function motorPageSchema(m, slug) {
     "brand": { "@type": "Brand", "name": "Mercury Marine" },
     "manufacturer": { "@type": "Organization", "name": "Mercury Marine" },
     "category": "Outboard Motor",
-    "image": image,
     "url": url,
+    ...(image ? { image } : {}),
     ...(modelNo ? { "mpn": modelNo, "sku": modelNo } : {}),
     "additionalProperty": additionalProperty,
   };
@@ -1573,6 +1692,19 @@ function motorPageSchema(m, slug) {
     };
   }
 
+  const webPage = {
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    "url": url,
+    "name": `${display} — Mercury Outboard | Harris Boat Works`,
+    "isPartOf": { "@id": `${SITE_URL}/#website` },
+    "about": { "@id": `${SITE_URL}/#organization` },
+    "inLanguage": "en-CA",
+    "mainEntity": { "@id": `${url}#product` },
+    "breadcrumb": { "@id": `${url}#breadcrumb` },
+  };
+  if (image) webPage.primaryImageOfPage = image;
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -1587,18 +1719,7 @@ function motorPageSchema(m, slug) {
           { "@type": "ListItem", "position": 4, "name": display, "item": url },
         ],
       },
-      {
-        "@type": "WebPage",
-        "@id": `${url}#webpage`,
-        "url": url,
-        "name": `${display} — Mercury Outboard | Harris Boat Works`,
-        "isPartOf": { "@id": `${SITE_URL}/#website` },
-        "about": { "@id": `${SITE_URL}/#organization` },
-        "inLanguage": "en-CA",
-        "primaryImageOfPage": image,
-        "mainEntity": { "@id": `${url}#product` },
-        "breadcrumb": { "@id": `${url}#breadcrumb` },
-      },
+      webPage,
     ],
   };
 }
@@ -1619,7 +1740,8 @@ const motorPageRoutes = motorRecords
     const inStock = m.in_stock || m.availability === 'In Stock';
     const modelNo = m.model_number || m.mercury_model_no || '';
     const shaft = m.shaft_code || m.shaft || '';
-    const image = m.hero_image_url || m.image_url || null;
+    const rawImage = m.hero_image_url || m.image_url || null;
+    const image = isVerifiedMotorImage(rawImage) ? rawImage : null;
     const priceStr = price
       ? new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(price)
       : 'Contact for pricing';
@@ -1631,7 +1753,10 @@ const motorPageRoutes = motorRecords
       path: `/motors/${slug}`,
       title,
       description: description.slice(0, 320),
-      ogImage: image || `${SITE_URL}/social-share.jpg`,
+      // Only emit og:image when we have a verified asset; otherwise let stamp()
+      // fall back to the site-wide social-share image (a Harris-controlled asset),
+      // never a guessed Mercury URL.
+      ...(image ? { ogImage: image } : {}),
       ogType: 'product',
       h1: display,
       intro: `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}. ${priceStr} CAD. ${inStock ? 'In stock at' : 'Special order from'} Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965, family-owned since 1947. Pickup only at our Gores Landing location.`,
@@ -1670,7 +1795,18 @@ const routes = [
     description: 'Expert Mercury repower in Ontario. Get 70% of a new boat experience for 30% of the cost. 30-40% better fuel economy. Lake tested on Rice Lake. Mercury dealer since 1965. $8,000-$18,000 typical.',
     h1: 'Mercury Outboard Repower in Ontario',
     intro: 'Repowering your boat with a new Mercury outboard delivers about 70 percent of the benefit of buying a new boat at roughly 30 percent of the cost. Most repowers run $8,000 to $18,000 depending on horsepower and rigging. Pickup only at Gores Landing on Rice Lake — no shipping. Mercury Marine Platinum Dealer since 1965.',
-    schemas: [repowerSchema()]
+    schemas: [repowerSchema()],
+    extraNoscript: () =>
+      '<table><caption>Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)</caption>' +
+      '<thead><tr><th scope="col">HP tier</th><th scope="col">Typical boat size</th><th scope="col">Motor price (CAD)</th><th scope="col">Installation (CAD)</th><th scope="col">Typical total (CAD)</th></tr></thead>' +
+      '<tbody>' +
+      '<tr><th scope="row">9.9–25 HP</th><td>12–16 ft tiller boats</td><td>$3,400–$6,500</td><td>$600–$1,200</td><td>$4,000–$7,700</td></tr>' +
+      '<tr><th scope="row">40–60 HP</th><td>14–18 ft aluminum</td><td>$7,500–$10,500</td><td>$1,200–$2,000</td><td>$8,700–$12,500</td></tr>' +
+      '<tr><th scope="row">75–115 HP</th><td>17–20 ft fishing/family</td><td>$11,000–$15,500</td><td>$1,800–$3,000</td><td>$12,800–$18,500</td></tr>' +
+      '<tr><th scope="row">150 HP</th><td>18–22 ft runabout/pontoon</td><td>$16,500–$19,500</td><td>$2,500–$3,500</td><td>$19,000–$23,000</td></tr>' +
+      '<tr><th scope="row">175–250 HP</th><td>20–24 ft</td><td>$22,000–$32,000</td><td>$3,000–$5,000</td><td>$25,000–$37,000</td></tr>' +
+      '<tr><th scope="row">300+ HP</th><td>24+ ft offshore</td><td>$32,000+</td><td>$4,500+</td><td>$36,500+</td></tr>' +
+      '</tbody></table>'
   },
   {
     path: '/faq',
@@ -1903,6 +2039,16 @@ const routes = [
     intro: 'The full Mercury Marine outboard lineup at Harris Boat Works — Platinum Dealer on Rice Lake. Real CAD pricing online, family-owned since 1947, Mercury dealer since 1965. Serving Peterborough, Cobourg, the GTA, the Kawarthas, and Northumberland County.',
     schemas: [mercuryOutboardsOntarioSchema()],
     extraNoscript: () =>
+      '<table><caption>Mercury Outboard Lineup — HP, MSRP, and Best Use (CAD, Ontario, 2026)</caption>' +
+      '<thead><tr><th scope="col">Series</th><th scope="col">HP range</th><th scope="col">MSRP range (CAD)</th><th scope="col">Best use</th></tr></thead>' +
+      '<tbody>' +
+      '<tr><th scope="row">FourStroke</th><td>2.5–150 HP</td><td>$1,385–$22,000</td><td>Recreation, fishing, family boating, kickers</td></tr>' +
+      '<tr><th scope="row">FourStroke Command Thrust</th><td>25–150 HP</td><td>$5,400–$23,500</td><td>Pontoons and heavy aluminum boats</td></tr>' +
+      '<tr><th scope="row">Pro XS</th><td>115–300 HP</td><td>$15,500–$32,000</td><td>Bass boats, tournament fishing, performance</td></tr>' +
+      '<tr><th scope="row">SeaPro</th><td>15–300 HP</td><td>$4,500–$33,000</td><td>Commercial, charter, heavy-duty use</td></tr>' +
+      '<tr><th scope="row">ProKicker</th><td>9.9–25 HP</td><td>$4,500–$6,500</td><td>Trolling/kicker on larger fishing boats</td></tr>' +
+      '<tr><th scope="row">V8 / V10 (350–400 HP)</th><td>350–400 HP</td><td>$36,000–$48,000</td><td>Offshore, large center consoles</td></tr>' +
+      '</tbody></table>' +
       '<dl>' +
       ONTARIO_HUB_FAQ_PRERENDER.map(i =>
         `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
@@ -1917,6 +2063,16 @@ const routes = [
     intro: 'Pontoons are heavier than they look. The right Mercury for a pontoon is a Command Thrust gearcase, the right shaft length, and a high-thrust prop. Harris Boat Works has been rigging pontoons on Rice Lake since 1965 — Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington.',
     schemas: [mercuryPontoonOutboardsSchema()],
     extraNoscript: () =>
+      '<table><caption>Pontoon HP Sizing Guide — Mercury Command Thrust Recommendations</caption>' +
+      '<thead><tr><th scope="col">Pontoon length</th><th scope="col">Recommended HP</th><th scope="col">Command Thrust required?</th><th scope="col">Typical shaft</th></tr></thead>' +
+      '<tbody>' +
+      '<tr><th scope="row">16–18 ft</th><td>40–60 HP</td><td>Recommended</td><td>20" (L)</td></tr>' +
+      '<tr><th scope="row">18–20 ft</th><td>60–90 HP</td><td>Yes</td><td>20" (L)</td></tr>' +
+      '<tr><th scope="row">20–22 ft</th><td>90–115 HP</td><td>Yes</td><td>20" (L)</td></tr>' +
+      '<tr><th scope="row">22–24 ft</th><td>115–150 HP</td><td>Yes</td><td>20" (L) or 25" (XL) on tritoon</td></tr>' +
+      '<tr><th scope="row">24–26 ft (tritoon)</th><td>150–200 HP</td><td>Yes (or V8 250)</td><td>25" (XL)</td></tr>' +
+      '<tr><th scope="row">26+ ft (tritoon)</th><td>200–300 HP</td><td>V8/V10</td><td>25" (XL)</td></tr>' +
+      '</tbody></table>' +
       '<dl>' +
       PONTOON_FAQ_PRERENDER.map(i =>
         `<dt><strong>${escapeHtml(i.question)}</strong></dt><dd>${escapeHtml(i.answer)}</dd>`
@@ -2343,3 +2499,89 @@ ${allSitemapEntries.map(e => {
 writeFileSync(join(DIST, 'sitemap.xml'), sitemapXml, 'utf8');
 writeFileSync(join(ROOT, 'public', 'sitemap.xml'), sitemapXml, 'utf8');
 console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries.length} URLs (${motorSitemapEntries.length} motors, ${blogSitemapEntries.length} blog, ${staticSitemapEntries.length} static)`);
+
+// ============================================================
+// Hardened post-build verification — fail the build on any issue.
+// ============================================================
+const verifyErrors = [];
+
+if (motorPageRoutes.length === 0) {
+  verifyErrors.push('Zero /motors/{slug} routes generated. Refusing to ship empty motor SEO. Check public-motors-api and VITE_SUPABASE_PUBLISHABLE_KEY.');
+}
+
+const expectedMotorCount = motorRecords.filter(m => {
+  if (!m.model_key) return false;
+  const s = (m.model_display || m.model || '').toLowerCase();
+  return !s.includes('verado');
+}).length;
+if (motorPageRoutes.length !== expectedMotorCount) {
+  verifyErrors.push(`Motor route parity: ${motorPageRoutes.length} routes vs ${expectedMotorCount} eligible motors.`);
+}
+
+const writtenSitemap = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
+const sitemapMotorMatches = writtenSitemap.match(/<loc>[^<]*\/motors\/[^<]+<\/loc>/g) || [];
+if (sitemapMotorMatches.length !== motorPageRoutes.length) {
+  verifyErrors.push(`sitemap.xml motor URL count ${sitemapMotorMatches.length} != ${motorPageRoutes.length}.`);
+}
+
+if (motorPageRoutes.length > 0) {
+  const sample = motorPageRoutes.find(r => r.path === '/motors/fourstroke-9-9hp-9-9eh-fourstroke') || motorPageRoutes[0];
+  const samplePath = join(DIST, sample.path.replace(/^\//, ''), 'index.html');
+  if (!existsSync(samplePath)) {
+    verifyErrors.push(`Sample motor page missing: ${samplePath}`);
+  } else {
+    const sampleHtml = readFileSync(samplePath, 'utf8');
+    const expectedCanonical = `${SITE_URL}${sample.path}`;
+    if (!sampleHtml.includes(`href="${expectedCanonical}"`)) verifyErrors.push(`Sample ${sample.path}: canonical missing/wrong.`);
+    if (sampleHtml.includes(`rel="canonical" href="${SITE_URL}/"`)) verifyErrors.push(`Sample ${sample.path}: canonicalizes to homepage.`);
+    if (!/<title[^>]*>[^<]*Mercury[^<]*<\/title>/i.test(sampleHtml)) verifyErrors.push(`Sample ${sample.path}: <title> missing/wrong.`);
+    if (!sampleHtml.includes('"@type":"Product"')) verifyErrors.push(`Sample ${sample.path}: Product JSON-LD missing.`);
+    if (!sampleHtml.includes('"priceCurrency":"CAD"')) verifyErrors.push(`Sample ${sample.path}: priceCurrency CAD missing.`);
+  }
+}
+
+const veradoFiles = [
+  { path: join(DIST, 'llms.txt'), name: 'llms.txt' },
+  { path: join(DIST, '.well-known', 'brand.json'), name: 'brand.json' },
+  { path: join(DIST, '.well-known', 'mcp.json'), name: 'mcp.json' },
+  { path: join(DIST, '.well-known', 'ai.txt'), name: 'ai.txt' },
+];
+const forbiddenVerado = [/we do not sell .*verado/i, /we do not service .*verado/i, /do not sell or service.*verado/i];
+for (const f of veradoFiles) {
+  if (!existsSync(f.path)) { verifyErrors.push(`Discovery file missing: ${f.name}`); continue; }
+  const txt = readFileSync(f.path, 'utf8');
+  for (const re of forbiddenVerado) {
+    if (re.test(txt)) verifyErrors.push(`${f.name}: forbidden Verado phrasing matching ${re}.`);
+  }
+  if (!/special[\s_-]order/i.test(txt)) verifyErrors.push(`${f.name}: missing "special-order" Verado language.`);
+}
+
+const aiTxtPath = join(DIST, '.well-known', 'ai.txt');
+if (existsSync(aiTxtPath)) {
+  const aiTxt = readFileSync(aiTxtPath, 'utf8');
+  if (/multilingual_content/.test(aiTxt)) verifyErrors.push('ai.txt still has multilingual_content.');
+  if (/\/fr\b/.test(aiTxt)) verifyErrors.push('ai.txt still references /fr.');
+  if (/\/zh\b/.test(aiTxt)) verifyErrors.push('ai.txt still references /zh.');
+}
+
+const tableRoutes = [
+  '/repower', '/mercury-outboards-ontario', '/mercury-pontoon-outboards',
+  '/blog/mercury-repower-cost-ontario-2026-cad',
+  '/blog/cheapest-mercury-outboard-canada-2026',
+  '/blog/mercury-115-vs-150-hp-outboard-ontario',
+];
+for (const r of tableRoutes) {
+  const p = join(DIST, r.replace(/^\//, ''), 'index.html');
+  if (!existsSync(p)) { verifyErrors.push(`SEO route missing: ${r}`); continue; }
+  const html = readFileSync(p, 'utf8');
+  if (!/<table[\s>]/i.test(html) || !/<thead[\s>]/i.test(html) || !/<tbody[\s>]/i.test(html)) {
+    verifyErrors.push(`${r}: missing real <table>/<thead>/<tbody> in raw HTML.`);
+  }
+}
+
+if (verifyErrors.length > 0) {
+  console.error('\n[static-prerender] ❌ Build verification failed:');
+  for (const e of verifyErrors) console.error('  - ' + e);
+  process.exit(1);
+}
+console.log(`[static-prerender] ✓ Verification passed — ${motorPageRoutes.length} motor pages, ${tableRoutes.length} table pages, Verado consistent, ai.txt clean.`);
