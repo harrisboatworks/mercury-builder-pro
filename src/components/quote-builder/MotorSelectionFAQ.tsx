@@ -59,7 +59,7 @@ export function MotorSelectionFAQ() {
   return (
     <section
       aria-labelledby="motor-selection-faq-heading"
-      className="mt-16 border-t border-gray-200 pt-10 max-w-3xl mx-auto"
+      className="mt-16 border-t border-border pt-10 max-w-3xl mx-auto"
     >
       <Helmet>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
