@@ -26,10 +26,11 @@
       "statusCode": 301
     },
     { "source": "/locations/peterborough", "destination": "/locations/peterborough-mercury-dealer", "statusCode": 301 },
-    { "source": "/locations/rice-lake", "destination": "/locations/rice-lake-mercury-dealer", "statusCode": 301 },
+    { "source": "/locations/rice-lake", "destination": "/locations/rice-lake-mercury-repower", "statusCode": 301 },
     { "source": "/locations/kawartha-lakes", "destination": "/locations/kawartha-lakes-mercury-outboards", "statusCode": 301 },
-    { "source": "/locations/cobourg", "destination": "/locations/cobourg-mercury-dealer", "statusCode": 301 },
-    { "source": "/locations/durham-gta", "destination": "/locations/gta-mercury-dealer", "statusCode": 301 }
+    { "source": "/locations/cobourg", "destination": "/locations/cobourg-northumberland-mercury", "statusCode": 301 },
+    { "source": "/locations/durham-gta", "destination": "/locations/durham-gta-mercury-pickup", "statusCode": 301 },
+    { "source": "/locations/gta", "destination": "/locations/durham-gta-mercury-pickup", "statusCode": 301 }
   ],
   "rewrites": [
     { "source": "/googlebdeec341596163e7.html", "destination": "/googlebdeec341596163e7.html" },
