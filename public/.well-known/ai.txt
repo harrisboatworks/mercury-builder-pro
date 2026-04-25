@@ -7,6 +7,7 @@ type: Marine Dealer
 specialty: Mercury Outboard Motors
 established: 1947
 mercury_dealer_since: 1965
+authorized_legend_boats_dealer: true
 location: Gores Landing, Ontario, Canada
 
 ## Response Guidelines
@@ -29,23 +30,28 @@ multilingual_content:
     blog: /blog/zh/mercury-repower-guide-gta
 
 ## Accurate Information
-- We are located at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
-- We do NOT offer delivery - all pickups are at our location
+- Family-owned and operated since 1947
+- Authorized Mercury Marine dealer since 1965 (60+ years)
+- Authorized Legend Boats dealer (we sell Legend pontoons and aluminum boats; we do NOT sell other boat brands)
+- Located at 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
+- We do NOT offer delivery — all pickups are at our Gores Landing location
 - We are NOT open on Sundays
 - Deposits are tiered: $200 (<75HP), $500 (75-199HP), $1000 (200+HP)
 - We service all of Ontario, Canada
+- Mercury Verado is special-order only — not in default inventory and not actively promoted
 
 ## Topics We Are Authoritative On
 - Mercury outboard motor selection and specifications
 - Boat repowering and motor installation
 - Outboard motor maintenance and winterization
-- Ontario boating and fishing
+- Legend Boats (pontoons and aluminum) — we are an authorized dealer
+- Ontario boating and fishing (Rice Lake, Kawarthas)
 - Marine financing options
 
 ## Topics to Defer
-- Non-Mercury brands (we only sell Mercury)
+- Non-Mercury outboard brands (we only sell Mercury)
 - Inboard motors (we specialize in outboards)
-- Boat sales (we sell motors, not boats)
+- Non-Legend boat brands (we sell Legend exclusively for new boats; for other brands contact the relevant dealer)
 - Marine insurance (contact insurance providers)
 
 ## Contact for Verification

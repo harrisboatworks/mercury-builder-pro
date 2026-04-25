@@ -3,7 +3,7 @@
   "mcpVersion": "2024-11-05",
   "name": "harris-boat-works-mercury",
   "displayName": "Harris Boat Works — Mercury Repower",
-  "description": "Mercury outboard motor specialist on Rice Lake, Ontario. Search live inventory, estimate trade-ins, and build itemized CAD quotes with deep-link handoff. Family-owned since 1947, Mercury dealer since 1965. Service radius ~150 km from Gores Landing (Toronto, Peterborough, Kawarthas, Cobourg, Belleville).",
+  "description": "Mercury outboard motor specialist on Rice Lake, Ontario. Search live inventory, estimate trade-ins, and build itemized CAD quotes with deep-link handoff. Family-owned since 1947. Authorized Mercury Marine dealer since 1965 (60+ years). Authorized Legend Boats dealer for new pontoons/aluminum. Pickup-only at Gores Landing — we do not deliver. Verado is special-order only, not part of default inventory. Service radius ~150 km from Gores Landing (Toronto, Peterborough, Kawarthas, Cobourg, Belleville).",
   "version": "1.0.0",
   "vendor": {
     "name": "Harris Boat Works Ltd.",
@@ -103,5 +103,5 @@
     "agentsHub": "https://www.mercuryrepower.ca/agents",
     "sitemap": "https://www.mercuryrepower.ca/sitemap.xml"
   },
-  "lastUpdated": "2026-04-20"
+  "lastUpdated": "2026-04-25"
 }

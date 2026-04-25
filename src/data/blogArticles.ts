@@ -8831,26 +8831,6 @@ Where a new boat makes more sense: structural hull problems, undersized boat for
     `,
     faqs: [
       {
-        question: 'Are Mercury prices higher in Canada than the US?',
-        answer: 'Yes, CAD prices are higher than USD prices even at par — different distribution costs, import considerations, and dealer operating costs. Compare CAD to CAD only.'
-      },
-      {
-        question: 'Does Harris Boat Works offer financing on repowers?',
-        answer: 'Yes. Mercury Canada offers financing options through dealer programs. Current promotions vary by season — check mercuryrepower.ca for what\'s available.'
-      },
-      {
-        question: 'How long does a full repower take?',
-        answer: 'A straightforward single-engine repower typically takes 1–3 days in the shop. Twin engines, full gauge replacements, and complex wiring take longer. Best time to book is fall or early winter.'
-      },
-      {
-        question: 'Is there a best time of year to repower in Ontario?',
-        answer: 'Fall and winter. Haul out in October or November and bring the boat in — dealers have capacity and the engine will be ready for spring. Spring repowers compete with commissioning demand.'
-      },
-      {
-        question: 'What is the cheapest way to repower with Mercury?',
-        answer: 'The most affordable complete repowers are in the 9.9–25hp range for small boats with minimal rigging. For larger engines, financing is available. Use mercuryrepower.ca to see current pricing.'
-      },
-      {
         question: 'Are Mercury outboard prices higher in Canada than the US?',
         answer: 'Yes — Mercury outboard prices in Canada are higher than US MSRP, typically by 15–30% depending on the model and exchange rate at the time of import. The difference reflects the USD/CAD exchange rate, import duties, and Canadian dealer cost structure. US prices found online are in USD and don\'t reflect any of these factors. For accurate 2026 Canadian pricing, Harris Boat Works posts live CAD pricing at mercuryrepower.ca — no call required. Pricing can also shift through the year as exchange rates move.'
       },
