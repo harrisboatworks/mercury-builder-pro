@@ -978,16 +978,28 @@ if (event.type === 'filter_motors') {
             
             <div className="flex items-center justify-between mt-3">
               {(searchQuery || configFilters) && (
-                <div className="text-xs text-luxury-gray">
-                  {finalFilteredMotors.length} results
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span
+                    className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
+                      finalFilteredMotors.length > 0
+                        ? 'bg-primary/10 text-primary border border-primary/20'
+                        : 'bg-destructive/10 text-destructive border border-destructive/20'
+                    }`}
+                    aria-live="polite"
+                    role="status"
+                  >
+                    {finalFilteredMotors.length > 0
+                      ? `${finalFilteredMotors.length} ${finalFilteredMotors.length === 1 ? 'motor matches' : 'motors match'}`
+                      : 'No motors match'}
+                  </span>
                   {configFilters && (
-                    <span className="ml-2 text-primary">
-                      (filtered by: {[
+                    <span className="text-xs text-luxury-gray">
+                      Filtered by: {[
                         configFilters.inStock && 'in stock',
                         configFilters.startType,
                         configFilters.controlType,
                         configFilters.shaftLength && `${configFilters.shaftLength} shaft`
-                      ].filter(Boolean).join(', ')})
+                      ].filter(Boolean).join(', ')}
                     </span>
                   )}
                 </div>

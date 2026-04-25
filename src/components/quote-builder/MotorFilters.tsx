@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
 import { Badge } from '@/components/ui/badge';
 import { Label } from '@/components/ui/label';
 import { Filter, Grid, List, X } from 'lucide-react';
+
+type FilterMotor = {
+  hp?: number;
+  horsepower?: number;
+  price?: number;
+  in_stock?: boolean;
+  stockStatus?: string;
+};
 
 interface FilterState {
   category: string;
@@ -22,6 +30,8 @@ interface MotorFiltersProps {
   isOpen: boolean;
   onToggle: () => void;
   categoryCounts?: Record<string, number>;
+  /** Optional cached inventory used to compute live HP/price/stock match counts. */
+  motors?: FilterMotor[];
 }
 
 export const MotorFilters = ({ 
@@ -33,7 +43,47 @@ export const MotorFilters = ({
   isOpen,
   onToggle,
   categoryCounts,
+  motors,
 }: MotorFiltersProps) => {
+  // Live count for the current HP/price/stock combo, validated against cached inventory.
+  const liveMatchCount = useMemo(() => {
+    if (!motors || motors.length === 0) return resultsCount;
+    const [hpMin, hpMax] = filters.hpRange;
+    const [priceMin, priceMax] = filters.priceRange;
+    const wantInStock = filters.stockStatus === 'In Stock';
+    const wantOnOrder = filters.stockStatus === 'On Order' || filters.stockStatus === 'Order Now';
+    return motors.reduce((acc, m) => {
+      const hp = (m.hp ?? m.horsepower ?? 0) as number;
+      const price = (m.price ?? 0) as number;
+      if (hp < hpMin || hp > hpMax) return acc;
+      if (price < priceMin || price > priceMax) return acc;
+      if (wantInStock && !m.in_stock) return acc;
+      if (wantOnOrder && m.in_stock) return acc;
+      return acc + 1;
+    }, 0);
+  }, [motors, filters.hpRange, filters.priceRange, filters.stockStatus, resultsCount]);
+
+  // Per-stock-status counts (independent of stockStatus filter, but respect HP + price ranges)
+  const stockCounts = useMemo(() => {
+    const base: Record<string, number> = { all: 0, 'In Stock': 0, 'On Order': 0, 'Order Now': 0 };
+    if (!motors || motors.length === 0) return base;
+    const [hpMin, hpMax] = filters.hpRange;
+    const [priceMin, priceMax] = filters.priceRange;
+    for (const m of motors) {
+      const hp = (m.hp ?? m.horsepower ?? 0) as number;
+      const price = (m.price ?? 0) as number;
+      if (hp < hpMin || hp > hpMax) continue;
+      if (price < priceMin || price > priceMax) continue;
+      base.all += 1;
+      if (m.in_stock) base['In Stock'] += 1;
+      else {
+        base['On Order'] += 1;
+        base['Order Now'] += 1;
+      }
+    }
+    return base;
+  }, [motors, filters.hpRange, filters.priceRange]);
+
   const categories = [
     { key: 'all', label: 'All Motors', color: 'primary' },
     { key: 'portable', label: 'Portable (2.5-20hp)', color: 'portable' },
@@ -143,7 +193,8 @@ export const MotorFilters = ({
                       onClick={() => setFilters({ ...filters, stockStatus: status })}
                       className="justify-start text-xs"
                     >
-                      {status === 'all' ? 'All' : status}
+                      <span className="flex-1 text-left">{status === 'all' ? 'All' : status}</span>
+                      <span className="ml-2 text-muted-foreground tabular-nums">({stockCounts[status] ?? 0})</span>
                     </Button>
                   ))}
                 </div>
@@ -166,6 +217,21 @@ export const MotorFilters = ({
                   <span>$0</span>
                   <span>$50k</span>
                 </div>
+              </div>
+
+              {/* Live match summary */}
+              <div
+                className={`rounded-md border px-3 py-2 text-center text-sm font-medium tabular-nums transition-colors ${
+                  liveMatchCount > 0
+                    ? 'border-primary/30 bg-primary/10 text-primary'
+                    : 'border-destructive/30 bg-destructive/10 text-destructive'
+                }`}
+                aria-live="polite"
+                role="status"
+              >
+                {liveMatchCount > 0
+                  ? `${liveMatchCount} ${liveMatchCount === 1 ? 'motor matches' : 'motors match'} these filters`
+                  : 'No motors match — try widening your filters'}
               </div>
 
               {/* Clear Filters */}

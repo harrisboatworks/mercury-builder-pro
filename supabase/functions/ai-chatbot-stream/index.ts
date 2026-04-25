@@ -1849,6 +1849,95 @@ DO NOT suggest alternatives like local transport, friends picking up, or any wor
 Remember: Be helpful, be brief, be human. And if they want to talk to a person, make it easy - get their info!`;
 }
 
+// =====================================================================
+// Tool-intent detection + create_quote tool wiring (non-streaming path)
+// =====================================================================
+
+const QUOTE_INTENT_PATTERNS = [
+  /\b(create|send|make|build|generate|email|draft|prepare)\b[^.?!]{0,40}\bquote\b/i,
+  /\bquote\s+me\b/i,
+  /\bget\s+(me\s+)?a\s+quote\b/i,
+  /\b(book|reserve)\b[^.?!]{0,40}\b(this|the|a|that)\s+(motor|engine|outboard)\b/i,
+];
+
+function detectQuoteIntent(message: string): boolean {
+  if (!message) return false;
+  return QUOTE_INTENT_PATTERNS.some((p) => p.test(message));
+}
+
+const CREATE_QUOTE_TOOL = {
+  type: "function" as const,
+  function: {
+    name: "create_quote",
+    description:
+      "Create a saved customer quote that is emailed to the customer and produces a shareable web link to the PDF summary. Use ONLY when the customer has provided their full name, email, and a specific motor (selected on the page or named clearly). If anything is missing, ask for it instead of calling this tool.",
+    parameters: {
+      type: "object",
+      properties: {
+        customer_name: { type: "string", description: "Customer full name (first and last)." },
+        customer_email: { type: "string", description: "Customer email address." },
+        customer_phone: { type: "string", description: "Customer phone (optional but preferred)." },
+        motor_id: {
+          type: "string",
+          description: "UUID of the motor from the inventory list. Use the currently viewed motor when context.currentMotor.id is available.",
+        },
+        purchase_path: {
+          type: "string",
+          enum: ["loose", "installed"],
+          description: "Whether the motor is being bought loose (motor only) or installed by Harris.",
+        },
+        customer_notes: {
+          type: "string",
+          description: "Optional short note from the customer (boat info, timing, questions).",
+        },
+      },
+      required: ["customer_name", "customer_email", "motor_id"],
+      additionalProperties: false,
+    },
+  },
+};
+
+async function callCreateQuoteTool(args: Record<string, any>, conversationId?: string) {
+  const agentKey = Deno.env.get("AGENT_QUOTE_API_KEY");
+  if (!agentKey) {
+    return { ok: false, error: "AGENT_QUOTE_API_KEY not configured on server" };
+  }
+
+  const payload: Record<string, any> = {
+    action: "create_quote",
+    customer_name: args.customer_name,
+    customer_email: args.customer_email,
+    customer_phone: args.customer_phone || null,
+    motor_id: args.motor_id,
+    purchase_path: args.purchase_path || "installed",
+    customer_notes: args.customer_notes || null,
+    source: "web_chat_agent",
+    conversation_channel: "web_chat",
+  };
+  if (conversationId) payload.conversation_id = conversationId;
+
+  try {
+    const res = await fetch(`${supabaseUrl}/functions/v1/agent-quote-api`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-agent-key": agentKey,
+        "Authorization": `Bearer ${supabaseKey}`,
+      },
+      body: JSON.stringify(payload),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      return { ok: false, error: data?.error || `HTTP ${res.status}` };
+    }
+    return data;
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : String(err) };
+  }
+}
+
+// =====================================================================
+
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -1860,6 +1949,11 @@ serve(async (req) => {
 
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
     if (!OPENAI_API_KEY) throw new Error('OpenAI API key not configured');
+
+    // Detect tool-intent up front. When matched we force the non-streaming path
+    // so we can run the function-calling loop reliably.
+    const hasQuoteIntent = detectQuoteIntent(message);
+    const useStreaming = stream && !hasQuoteIntent;
 
     // Detect topics, comparisons, categories, and HP-specific queries
     const detectedTopics = detectTopics(message);
@@ -1976,6 +2070,22 @@ Provide a helpful, balanced comparison covering: power difference, price differe
     if (perplexityContext) systemPrompt += perplexityContext;
     if (partsContext) systemPrompt += partsContext;
 
+    // When the user is asking us to create a quote, give the model crisp instructions
+    // for collecting just the missing fields and then calling create_quote.
+    if (hasQuoteIntent) {
+      const motorContextLine = context?.currentMotor?.id
+        ? `Currently viewed motor: ${context.currentMotor.model || ''} (id: ${context.currentMotor.id}). Use this id for create_quote unless the customer asks for a different one.`
+        : `No motor is currently selected — confirm which motor they want before calling create_quote.`;
+      systemPrompt += `
+
+## QUOTE CREATION MODE
+The user wants to create a quote. ${motorContextLine}
+- If you already have full name + email + a motor, call the create_quote tool right away. Do not ask for confirmation first.
+- If anything is missing, ask for the missing pieces in ONE short message (e.g. "Sure — what's your full name and email?").
+- Never invent a motor_id. Only use IDs from the inventory list above or context.currentMotor.id.
+- After the tool returns successfully, the wrapper will append the share link automatically — do NOT paste a URL yourself.`;
+    }
+
     // Prepare messages
     const recentHistory = conversationHistory.slice(-8);
     const messages = [
@@ -1992,11 +2102,12 @@ Provide a helpful, balanced comparison covering: power difference, price differe
       detectedTopics,
       hasMotorContext: !!context?.currentMotor,
       usedPerplexity: !!perplexityContext,
-      streaming: stream 
+      hasQuoteIntent,
+      streaming: useStreaming,
     });
 
-    // Handle streaming response
-    if (stream) {
+    // Handle streaming response (only when no tool intent detected)
+    if (useStreaming) {
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: { 
