@@ -20,6 +20,9 @@ type Props = {
   selectedPromoDisplay?: string | null;
   // Indicates financing is unavailable (total < $5,000)
   financingUnavailable?: boolean;
+  // Disable primary CTA (e.g., when required selection is missing on this step)
+  primaryDisabled?: boolean;
+  primaryDisabledReason?: string;
 };
 
 export default function StickyQuoteBar({
@@ -35,7 +38,9 @@ export default function StickyQuoteBar({
   deltaOnce,
   selectedPromoOption,
   selectedPromoDisplay,
-  financingUnavailable
+  financingUnavailable,
+  primaryDisabled,
+  primaryDisabledReason
 }: Props) {
   const [showDelta, setShowDelta] = React.useState(true);
   React.useEffect(() => {
@@ -111,7 +116,13 @@ export default function StickyQuoteBar({
             </button>
           )}
           {onPrimary && (
-            <button onClick={onPrimary} className="rounded-lg bg-slate-900 px-3 py-2 sm:px-3.5 lg:px-4 text-xs md:text-sm font-semibold text-white shadow-md transition hover:bg-slate-800 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-slate-700 min-h-[44px] whitespace-nowrap">
+            <button
+              onClick={onPrimary}
+              disabled={!!primaryDisabled}
+              aria-disabled={!!primaryDisabled}
+              title={primaryDisabled ? primaryDisabledReason : undefined}
+              className="rounded-lg bg-slate-900 px-3 py-2 sm:px-3.5 lg:px-4 text-xs md:text-sm font-semibold text-white shadow-md transition hover:bg-slate-800 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-slate-700 min-h-[44px] whitespace-nowrap disabled:bg-slate-400 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-slate-400 disabled:hover:shadow-md"
+            >
               {primaryLabel}
             </button>
           )}
