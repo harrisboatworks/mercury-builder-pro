@@ -1278,6 +1278,7 @@ export const MotorSelection = ({
                 resultsCount={filteredMotors.length} 
                 isOpen={filtersOpen} 
                 onToggle={() => setFiltersOpen(!filtersOpen)} 
+                motors={motors}
               />
               
               {/* Live Activities Section */}
