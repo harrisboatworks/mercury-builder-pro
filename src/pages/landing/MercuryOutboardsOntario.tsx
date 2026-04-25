@@ -170,6 +170,45 @@ export default function MercuryOutboardsOntario() {
           </div>
         </section>
 
+        {/* HP-to-CAD price table */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold text-foreground mb-2 text-center">
+            Mercury Outboard Pricing in Ontario (2026 CAD)
+          </h2>
+          <p className="text-sm text-muted-foreground text-center mb-6">
+            Starting MSRPs from current Harris Boat Works inventory. Build a fully configured quote at the motor selector.
+          </p>
+          <div className="overflow-x-auto rounded-xl border border-border bg-card">
+            <table className="w-full text-sm">
+              <caption className="sr-only">Starting Mercury outboard MSRP prices in CAD by horsepower at Harris Boat Works.</caption>
+              <thead className="bg-muted/40">
+                <tr>
+                  <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Mercury Model</th>
+                  <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Family</th>
+                  <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Starting MSRP (CAD)</th>
+                  <th scope="col" className="text-left px-4 py-3 font-medium text-foreground">Best For</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">2.5 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke Portable</td><td className="px-4 py-3 text-foreground">$1,385</td><td className="px-4 py-3 text-muted-foreground">Dinghy, tender, canoe</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">6 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke Portable</td><td className="px-4 py-3 text-foreground">$2,275</td><td className="px-4 py-3 text-muted-foreground">12–14 ft aluminum</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">9.9 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke</td><td className="px-4 py-3 text-foreground">$3,875</td><td className="px-4 py-3 text-muted-foreground">10 HP-restricted lakes, kicker</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">15 MH</td><td className="px-4 py-3 text-muted-foreground">FourStroke</td><td className="px-4 py-3 text-foreground">$4,225</td><td className="px-4 py-3 text-muted-foreground">14–16 ft aluminum, ProKicker</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">20 ELH</td><td className="px-4 py-3 text-muted-foreground">FourStroke</td><td className="px-4 py-3 text-foreground">$5,005</td><td className="px-4 py-3 text-muted-foreground">16 ft aluminum fishing</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">60 ELPT CT</td><td className="px-4 py-3 text-muted-foreground">FourStroke Command Thrust</td><td className="px-4 py-3 text-foreground">~$14,170</td><td className="px-4 py-3 text-muted-foreground">Pontoon, heavier aluminum</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">115 Pro XS</td><td className="px-4 py-3 text-muted-foreground">Pro XS</td><td className="px-4 py-3 text-foreground">Configure online</td><td className="px-4 py-3 text-muted-foreground">17–18 ft fishing boat</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">150 Pro XS</td><td className="px-4 py-3 text-muted-foreground">Pro XS</td><td className="px-4 py-3 text-foreground">Configure online</td><td className="px-4 py-3 text-muted-foreground">18–20 ft aluminum (#1 seller)</td></tr>
+                <tr className="border-t border-border"><td className="px-4 py-3 font-medium text-foreground">250 L Pro XS</td><td className="px-4 py-3 text-muted-foreground">Pro XS</td><td className="px-4 py-3 text-foreground">$41,525</td><td className="px-4 py-3 text-muted-foreground">Bass, ski/wake, performance</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-muted-foreground text-center mt-3">
+            Current HBW inventory MSRPs (CAD), before HST and rigging.{' '}
+            <Link to="/blog/cheapest-mercury-outboard-canada-2026" className="text-primary underline">Entry-level price guide</Link>{' '}·{' '}
+            <Link to="/blog/mercury-repower-cost-ontario-2026-cad" className="text-primary underline">Complete repower cost guide</Link>
+          </p>
+        </section>
+
         {/* Service area */}
         <section className="mb-16">
           <h2 className="text-2xl font-semibold text-foreground mb-2 text-center">
