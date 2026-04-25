@@ -108,8 +108,15 @@ export function useChatPersistence() {
       setConversationId(newConvo.id);
       setHasHistory(false);
       return newConvo.id;
-    } catch (error) {
-      console.error('Failed to initialize conversation:', error);
+    } catch (error: any) {
+      // RLS-blocked inserts for anonymous users are expected — silently skip persistence
+      const code = error?.code || error?.status;
+      const msg = String(error?.message || '');
+      if (code === '42501' || msg.toLowerCase().includes('row-level security') || msg.toLowerCase().includes('row level security')) {
+        // Silently no-op: chat works locally without persistence
+        return null;
+      }
+      console.warn('Could not initialize conversation persistence (chat will continue locally):', error);
       return null;
     }
   }, [sessionId]);
