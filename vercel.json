@@ -57,6 +57,10 @@
     { "source": "/mercury-pro-xs", "destination": "/mercury-pro-xs/index.html" },
     { "source": "/mercury-outboards-ontario", "destination": "/mercury-outboards-ontario/index.html" },
     { "source": "/mercury-pontoon-outboards", "destination": "/mercury-pontoon-outboards/index.html" },
+    { "source": "/case-studies", "destination": "/case-studies/index.html" },
+    { "source": "/case-studies/:slug", "destination": "/case-studies/:slug/index.html" },
+    { "source": "/locations", "destination": "/locations/index.html" },
+    { "source": "/locations/:slug", "destination": "/locations/:slug/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
