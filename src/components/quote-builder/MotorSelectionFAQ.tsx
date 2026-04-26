@@ -81,6 +81,20 @@ export function MotorSelectionFAQ() {
             About our Rice Lake location →
           </Link>
         </p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Popular Mercury motors in Ontario:{' '}
+          <Link to="/motors/fourstroke-9-9hp-9-9elh-fourstroke" className="underline hover:text-primary">
+            9.9 FourStroke
+          </Link>
+          {' · '}
+          <Link to="/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke" className="underline hover:text-primary">
+            60 Command Thrust
+          </Link>
+          {' · '}
+          <Link to="/motors/proxs-150hp-150-elpt-proxs" className="underline hover:text-primary">
+            150 Pro XS
+          </Link>
+        </p>
       </header>
 
       <Accordion type="single" collapsible className="space-y-2">
