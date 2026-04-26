@@ -1,98 +1,60 @@
-# Plan: Filter Counts, Share Link, and Tool-Intent Fallback
+## Status check first
 
-Three independent improvements addressing UX confidence on filters, instant quote access in chat, and reliable quote creation from web chat.
+- ✅ **FAQ on /quote/motor-selection** — already shipped as `MotorSelectionFAQ.tsx` last turn (includes the exact "Can I build a Mercury outboard quote online in Ontario?" Q&A, CAD + pickup-only notes, and FAQPage JSON-LD). **No work needed.**
+- ✅ **Model-aware Ontario/CAD/dealer-since-1965 paragraphs** on the 9.9, 60 CT, 150 Pro XS pages — already in `MotorPage.tsx` (lines 248-273).
+- ❌ **Related Motors strip + secondary "Get a quote online" CTA + Rice Lake link card** on those three pages — not done yet. This is the real remaining gap.
 
----
+## What I'll add to `src/pages/MotorPage.tsx`
 
-## 1. Validate filters & show "X motors match" counts
+A single new component block, rendered only for the three target motors (9.9 FourStroke, 60 Command Thrust, 150 Pro XS), placed right after the existing model-aware paragraph. Keeps the file change small and won't disturb the prerender or other ~40 motor pages.
 
-**Goal:** Show live match counts on HP / Price / Stock filters as the user adjusts them, validated against the cached inventory dataset.
+### 1. New `RelatedMotorsAndCTA` inline component (in same file, no new file needed)
 
-**Current state:**
-- `MotorSelectionPage.tsx` already shows `{finalFilteredMotors.length} results` (line 982), but only as a small grey label after filtering.
-- `ConfigFilterSheet.tsx` already computes per-pill counts for HP/start/control/shaft/in-stock.
-- `MotorFilters.tsx` (older sidebar) and `MotorFinderWizard.tsx` (HP/price range sliders) do **not** show counts as you drag.
-- `QuickHPFilters.tsx` already computes counts but doesn't display them on the pill.
+A 3-card grid:
 
-**Changes:**
-- **`QuickHPFilters.tsx`** — render the count next to each HP label (e.g. `25 HP · 4`, dimmed when 0). Re-use the existing `getCount()` function.
-- **`MotorFinderWizard.tsx`** — accept the live `motors` array as a prop, compute matches for the current `hpRange` + `priceRange` + `stockStatus`, and display "**12 motors match**" prominently above the Apply button. Disable Apply when 0.
-- **`MotorFilters.tsx`** — same: add a memoized count line ("12 motors match these filters") under the sliders, plus per-stock-status counts on those buttons (mirroring the existing category counts pattern).
-- **`MotorSelectionPage.tsx`** — promote the `{N} results` label from tiny grey text to a small badge ("**12 motors match**") so it's visible after Apply.
+- **Card 1 — Build a Quote (primary CTA card)**: Headline "Build your Mercury {hp} HP quote online", one line of CAD/pickup-only copy, big primary button → `/quote/motor-selection?motor={motor.id}`. This is the second, more prominent CTA the user asked for.
+- **Card 2 — Rice Lake repower context**: Headline "Repowering on Rice Lake?", short copy ("90 min east of Toronto, Mercury Platinum Dealer since 1965, pickup at Gores Landing"), link → `/locations/rice-lake-mercury-repower`.
+- **Card 3 — Related motors**: Curated, hand-picked siblings per model so we don't need a DB query. Each item links to `/motors/{slug}` with a small label.
+  - **For the 9.9 FourStroke** (`fourstroke-9-9hp-9-9elh-fourstroke`): show 9.9EH (manual-start sibling), 15 ELH, and "ProKicker 9.9" if available — links to their motor pages.
+  - **For the 60 Command Thrust** (`fourstroke-60hp-60-elpt-command-thrust-fourstroke`): show 50 ELPT, 90 ELPT, and 115 ELPT.
+  - **For the 150 Pro XS ELPT** (`proxs-150hp-150-elpt-proxs`): show 150 EXLPT Pro XS (XL shaft sibling), 115 Pro XS, and 175 Pro XS.
 
-**Validation:** All counts derive from the same `processedMotors` list the grid renders, so they are guaranteed to match.
+Each related-motor entry is a plain `<Link>` with the model name + "View motor page →" — no DB call, no images, no flicker. Slugs match `public/motors/*.md` so they resolve through the existing prerender.
 
----
+### 2. Specs highlights mini-callout
 
-## 2. Clickable share/view link in web chat after quote creation
+Inside the primary CTA card, add a 3-pill row with the most relevant fast-fact spec for each target motor (so the user gets "key specs highlights" per the request):
 
-**Goal:** When a quote is created via the web chat agent, the assistant's reply includes a tappable link to open the PDF/summary page immediately.
+- **9.9 FourStroke**: "EFI · Tiller-friendly · 84 lb"
+- **60 Command Thrust**: "Big-prop gearcase · Power-trim · Best for 16–18 ft"
+- **150 Pro XS**: "3.0L 4-cyl · 6300 RPM · Tournament-grade hole-shot"
 
-**Approach:**
-- The new `create_quote` tool (added in step 3 below) returns `{ quote_id, share_url, summary, … }` from `voice-create-quote`.
-- After a successful tool call, the chat appends a final assistant message in the format:
-  ```
-  ✅ Quote HBW-XXXXX created — emailed to you.
-  [View your quote →](https://mercuryquote.ca/q/<share_token>)
-  ```
-- The existing `ChatBubble.tsx` already parses markdown `[text](url)` links via `parseMessageText` and routes external URLs as new-tab anchors. No new render code needed — the link will be clickable automatically.
-- For the share URL we use the existing `share_token` already returned by `agent-quote-api` (which generates `/q/:token` shareable URLs).
+These are static strings inside the model-conditional block — already-verified specs from memory (`mem://knowledge/motor-specs/voice-hardcoded-spec-data` and `proxs-vs-fourstroke-content-logic`). No new DB columns.
 
----
+### 3. Internal link from the Rice Lake FAQ chip back to motor pages
 
-## 3. Non-streaming fallback in web chat for tool-intent messages
-
-**Current gap:** `ai-chatbot-stream/index.ts` has **no tool definitions** in either the streaming or non-streaming OpenAI calls. So today it cannot create quotes — it can only discuss them.
-
-**Approach (per earlier approval — "Non-streaming fallback when tool intent detected"):**
-
-### Edge function: `supabase/functions/ai-chatbot-stream/index.ts`
-
-1. **Detect tool intent before model call** — lightweight regex check on the incoming `message`:
-   ```
-   /(create|send|make|build|generate|email)\s+(me\s+)?(a\s+)?quote/i
-   /(book|reserve)\b.*\b(me|this|the)\b/i
-   ```
-   If matched, set `forceNonStreaming = true` AND inject the `create_quote` tool spec into the OpenAI request.
-
-2. **Add `create_quote` tool definition** (OpenAI function-calling schema) with required fields: `customer_name`, `customer_email`, `motor_id`, optional `customer_phone`, `purchase_path`, `customer_notes`. Description tells the model: "Use ONLY when the customer has provided their full name, email, and selected a specific motor. Otherwise ask for missing info first."
-
-3. **Tool-call execution path (non-streaming only):**
-   - Run the OpenAI request without `stream: true` and with `tools: [createQuoteTool]`, `tool_choice: 'auto'`.
-   - If the response contains `tool_calls`, parse the args, POST internally to `voice-create-quote` (or `agent-quote-api` directly with the server-side `AGENT_QUOTE_API_KEY`), passing `conversation_id` from `context` and `conversation_channel: 'web_chat'`.
-   - Feed the tool result back into a second OpenAI call (standard tool-loop pattern) so the model produces the final natural-language confirmation including the share link.
-   - Return the final reply as a normal JSON `{ reply, quote_id, share_url, … }` response.
-
-4. **Streaming path stays unchanged** for normal chat (no tools, lowest latency).
-
-### Client: `src/lib/streamParser.ts`
-
-5. **Add tool-intent detection mirror** on the client (same regex). When matched, call the function with `stream: false` directly — skipping the SSE attempt entirely. This avoids the wasted streaming round-trip and the brief "fallback warning" log.
-
-6. **Surface returned `share_url`** — when the JSON response contains `share_url`, append the `[View your quote →](url)` markdown to the reply before invoking `onDone`, so existing chat surfaces (`InlineChatDrawer`, `EnhancedChatWidget`, `MotorInlineChatPanel`) render it without changes.
-
-### Conversation linking (already wired in agent-quote-api per last turn)
-- `conversation_id` is read from chat context and threaded through, so the new quote row links back to the transcript via `customer_quotes.quote_data.conversation_id` and `chat_conversations.context.quote_ids`.
-
----
+Tiny addition: in `MotorSelectionFAQ.tsx`, append "Popular Mercury motors in Ontario:" line under the heading paragraph with three links to `/motors/fourstroke-9-9hp-9-9elh-fourstroke`, `/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke`, and `/motors/proxs-150hp-150-elpt-proxs`. This closes the internal link loop both directions.
 
 ## Files touched
 
-**Frontend (4):**
-- `src/components/motors/QuickHPFilters.tsx` — show counts on pills
-- `src/components/quote-builder/MotorFinderWizard.tsx` — live match count above Apply
-- `src/components/quote-builder/MotorFilters.tsx` — match count + per-stock counts
-- `src/pages/quote/MotorSelectionPage.tsx` — promote results badge
-- `src/lib/streamParser.ts` — tool-intent detection + share-link injection
+1. `src/pages/MotorPage.tsx` — add the conditional `RelatedMotorsAndCTA` block (≈60 lines, all inside the existing model-aware `if` blocks). No prop changes, no new hooks, no DB queries.
+2. `src/components/quote-builder/MotorSelectionFAQ.tsx` — add a one-line "Popular motors:" links row under the existing intro paragraph.
 
-**Edge function (1):**
-- `supabase/functions/ai-chatbot-stream/index.ts` — `create_quote` tool, non-streaming tool loop
+## What I'm NOT doing (and why)
 
-**No DB migrations, no new secrets, no new edge functions.** Re-uses `voice-create-quote` from the previous turn.
+- **Not creating a separate `RelatedMotors.tsx` component file** — only used in three places, conditional, simpler inline.
+- **Not querying `motor_models` for siblings dynamically** — would add a request and risk SSR/prerender drift; hand-curated lists are stable and crawler-friendly.
+- **Not touching the FAQ block on /quote/motor-selection itself** — already complete.
+- **Not touching sitemap/schema/markdown** — per your instruction, leaving Codex-verified items alone. The new internal links are pure HTML `<Link>` elements; they'll be picked up by the existing prerender without any sitemap changes.
+- **Not adding a "Related" block to the other ~40 motor pages** — out of scope for these 3 AI-target queries; can be generalized later if desired.
 
----
+## Expected outcome
 
-## Out of scope
-- Voice agent share-link rendering (already returned in the tool result; voice agent will speak it naturally).
-- Server-side PDF attachment (deferred per earlier decision — link-only email).
-- Refactoring the streaming path to support tools (kept fast & simple per "Non-streaming fallback" choice).
+After this turn, the 9.9, 60 CT, and 150 Pro XS pages will each have:
+- The existing Ontario/CAD/dealer paragraph (already shipped)
+- A new specs-highlights pill row
+- A prominent secondary "Build your Mercury {hp} HP quote online" CTA card
+- A Rice Lake repower link card
+- A 3-link "Related motors" card
+
+…all reinforcing the AI-answer query targets and creating tight internal-link loops between the motor pages, the quote builder, and the Rice Lake location page.

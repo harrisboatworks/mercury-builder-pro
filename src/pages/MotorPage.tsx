@@ -280,8 +280,149 @@ export default function MotorPage() {
               <Link to="/locations/rice-lake-mercury-repower">See our Rice Lake Mercury repower page →</Link>
             </p>
           </section>
+
+          <RelatedMotorsAndCTA motor={motor} display={display} />
         </div>
       </article>
     </>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Related Motors + secondary CTA + Rice Lake link card               */
+/*  Rendered only for the three high-intent AI-answer target motors:   */
+/*    - 9.9 FourStroke ELH                                             */
+/*    - 60 Command Thrust ELPT                                         */
+/*    - 150 Pro XS ELPT                                                */
+/* ------------------------------------------------------------------ */
+
+interface TargetConfig {
+  highlights: string[];
+  related: Array<{ slug: string; label: string; note: string }>;
+}
+
+function getTargetConfig(motor: MotorRow, display: string): TargetConfig | null {
+  const hp = motor.horsepower;
+  const family = (motor.family || '').toLowerCase();
+  const displayLc = display.toLowerCase();
+  const modelDisplayLc = (motor.model_display || '').toLowerCase();
+
+  if (hp === 9.9 && family.includes('fourstroke')) {
+    return {
+      highlights: ['EFI fuel injection', 'Tiller-friendly', '~84 lb'],
+      related: [
+        { slug: 'fourstroke-9-9hp-9-9mh-fourstroke', label: '9.9 MH FourStroke', note: 'Manual-start, lighter sibling' },
+        { slug: 'fourstroke-9-9hp-9-9eh-fourstroke', label: '9.9 EH FourStroke', note: 'Electric-start tiller' },
+        { slug: 'fourstroke-15hp-15-mh-fourstroke', label: '15 MH FourStroke', note: 'Step-up portable, same footprint' },
+      ],
+    };
+  }
+
+  if (
+    hp === 60 &&
+    (displayLc.includes('command thrust') || modelDisplayLc.includes('command thrust'))
+  ) {
+    return {
+      highlights: ['Big-prop Command Thrust gearcase', 'Power trim & tilt', 'Best for 16–18 ft'],
+      related: [
+        { slug: 'fourstroke-50hp-50-elpt-fourstroke', label: '50 ELPT FourStroke', note: 'Lighter mid-range option' },
+        { slug: 'fourstroke-90hp-90-elpt-command-thrust-fourstroke', label: '90 ELPT Command Thrust', note: 'More power, same gearcase advantage' },
+        { slug: 'fourstroke-115hp-115elpt-fourstroke', label: '115 ELPT FourStroke', note: 'Step-up for heavier pontoons' },
+      ],
+    };
+  }
+
+  if (hp === 150 && family.includes('proxs')) {
+    return {
+      highlights: ['3.0L 4-cylinder', '6300 RPM redline', 'Tournament-grade hole-shot'],
+      related: [
+        { slug: 'proxs-150hp-150-exlpt-proxs', label: '150 EXLPT Pro XS', note: 'Same motor, XL (25") shaft' },
+        { slug: 'proxs-115hp-115-elpt-proxs', label: '115 ELPT Pro XS', note: 'Lighter Pro XS sibling' },
+        { slug: 'proxs-200hp-200-elpt-proxs', label: '200 ELPT Pro XS', note: 'V6 step-up for big bass rigs' },
+      ],
+    };
+  }
+
+  return null;
+}
+
+function RelatedMotorsAndCTA({ motor, display }: { motor: MotorRow; display: string }) {
+  const config = getTargetConfig(motor, display);
+  if (!config) return null;
+
+  const hp = motor.horsepower;
+
+  return (
+    <aside
+      aria-labelledby="motor-related-heading"
+      className="mt-12 border-t border-border pt-10"
+    >
+      <h2 id="motor-related-heading" className="sr-only">
+        Build a quote, Rice Lake info, and related Mercury motors
+      </h2>
+
+      <div className="grid gap-6 md:grid-cols-3">
+        {/* Card 1 — Build a Quote (primary CTA) */}
+        <div className="rounded-xl border-2 border-primary bg-primary/5 p-6 flex flex-col">
+          <h3 className="text-lg font-semibold text-foreground mb-2">
+            Build your Mercury {hp} HP quote online
+          </h3>
+          <p className="text-sm text-muted-foreground mb-4">
+            Live CAD pricing. Pickup-only at Gores Landing, ON. About three minutes — no phone call required.
+          </p>
+          <ul className="flex flex-wrap gap-2 mb-5">
+            {config.highlights.map((h) => (
+              <li
+                key={h}
+                className="text-xs font-medium px-2.5 py-1 rounded-full bg-background border border-border text-foreground"
+              >
+                {h}
+              </li>
+            ))}
+          </ul>
+          <Button asChild size="lg" className="mt-auto w-full">
+            <Link to={`/quote/motor-selection?motor=${motor.id}`}>
+              Get a quote online →
+            </Link>
+          </Button>
+        </div>
+
+        {/* Card 2 — Rice Lake repower context */}
+        <div className="rounded-xl border border-border bg-card p-6 flex flex-col">
+          <h3 className="text-lg font-semibold text-foreground mb-2">
+            Repowering on Rice Lake?
+          </h3>
+          <p className="text-sm text-muted-foreground mb-4">
+            We're 90 minutes east of Toronto via the 401, 35 minutes south of Peterborough — Mercury Marine Platinum
+            Dealer since 1965, family-owned in Gores Landing since 1947. Pickup only.
+          </p>
+          <Button asChild variant="outline" className="mt-auto w-full">
+            <Link to="/locations/rice-lake-mercury-repower">
+              About our Rice Lake location →
+            </Link>
+          </Button>
+        </div>
+
+        {/* Card 3 — Related motors */}
+        <div className="rounded-xl border border-border bg-card p-6 flex flex-col">
+          <h3 className="text-lg font-semibold text-foreground mb-3">
+            Related Mercury motors
+          </h3>
+          <ul className="space-y-3 text-sm">
+            {config.related.map((r) => (
+              <li key={r.slug}>
+                <Link
+                  to={`/motors/${r.slug}`}
+                  className="font-medium text-foreground hover:text-primary hover:underline"
+                >
+                  {r.label} →
+                </Link>
+                <p className="text-xs text-muted-foreground mt-0.5">{r.note}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </aside>
   );
 }
