@@ -2,6 +2,25 @@ import { useCallback } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 
 const SESSION_KEY = 'chat_session_id';
+const SUPABASE_URL = 'https://eutsoqdpjurknjsshxes.supabase.co';
+
+// Fetch chat history via secure Edge Function (validates session ownership server-side)
+async function fetchChatHistoryFromEdge(sessionId: string): Promise<{
+  conversation: { id: string; last_message_at: string } | null;
+  messages: Array<{ content: string; role: string; created_at: string; metadata: Record<string, unknown> | null }>;
+}> {
+  try {
+    const response = await fetch(`${SUPABASE_URL}/functions/v1/chat-history`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ session_id: sessionId }),
+    });
+    if (!response.ok) return { conversation: null, messages: [] };
+    return await response.json();
+  } catch {
+    return { conversation: null, messages: [] };
+  }
+}
 
 export interface VoiceContextForText {
   hasRecentVoice: boolean;
@@ -124,32 +143,22 @@ export function useCrossChannelContext() {
         return { hasRecentText: false, recentMessages: [], motorsDiscussed: [], lastTextAt: null };
       }
 
-      // Find active conversation for this session
-      const { data: conversation, error: convError } = await supabase
-        .from('chat_conversations')
-        .select('id')
-        .eq('session_id', sessionId)
-        .eq('is_active', true)
-        .order('last_message_at', { ascending: false })
-        .limit(1)
-        .single();
+      // Fetch conversation + recent messages via secure edge function
+      // (anonymous direct table reads are no longer allowed by RLS)
+      const { conversation, messages: allMessages } = await fetchChatHistoryFromEdge(sessionId);
 
-      if (convError || !conversation) {
+      if (!conversation || !allMessages || allMessages.length === 0) {
         return { hasRecentText: false, recentMessages: [], motorsDiscussed: [], lastTextAt: null };
       }
 
-      // Get recent messages from the last hour
-      const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000).toISOString();
-      
-      const { data: messages, error: msgError } = await supabase
-        .from('chat_messages')
-        .select('content, role, created_at, metadata')
-        .eq('conversation_id', conversation.id)
-        .gte('created_at', oneHourAgo)
-        .order('created_at', { ascending: false })
-        .limit(10);
+      // Filter to last hour and take the 10 most recent
+      const oneHourAgo = Date.now() - 60 * 60 * 1000;
+      const messages = allMessages
+        .filter((m) => m.created_at && new Date(m.created_at).getTime() >= oneHourAgo)
+        .slice(-10)
+        .reverse(); // newest first to match prior behavior below
 
-      if (msgError || !messages || messages.length === 0) {
+      if (messages.length === 0) {
         return { hasRecentText: false, recentMessages: [], motorsDiscussed: [], lastTextAt: null };
       }
 
