@@ -3480,6 +3480,35 @@ export type Database = {
       }
     }
     Views: {
+      customer_lifecycle: {
+        Row: {
+          cell_phone: string | null
+          city: string | null
+          customer_id: number | null
+          customer_name: string | null
+          customer_type: string | null
+          email: string | null
+          first_deal_date: string | null
+          first_name: string | null
+          first_service_date: string | null
+          last_activity_date: string | null
+          last_deal_date: string | null
+          last_name: string | null
+          last_parts_purchase: string | null
+          last_service_date: string | null
+          lifetime_deal_revenue: number | null
+          lifetime_parts_revenue: number | null
+          lifetime_service_revenue: number | null
+          lifetime_total_revenue: number | null
+          loyalty_customer: boolean | null
+          phone: string | null
+          province: string | null
+          total_deals: number | null
+          total_parts_lines: number | null
+          total_ros: number | null
+        }
+        Relationships: []
+      }
       customer_summary: {
         Row: {
           cell_phone: string | null
@@ -3500,6 +3529,79 @@ export type Database = {
           province: string | null
           total_ros: number | null
           total_spend: number | null
+        }
+        Relationships: []
+      }
+      deals: {
+        Row: {
+          amt_financed: number | null
+          balance_to_finance: number | null
+          be_margin: number | null
+          cobuyer_cust_id: string | null
+          cobuyer_name: string | null
+          common_invoice_id: number | null
+          contract_date: string | null
+          create_date: string | null
+          cust_id: string | null
+          customer_email: string | null
+          customer_name: string | null
+          customer_phone: string | null
+          deal_description: string | null
+          deal_no: string | null
+          dealid: string | null
+          delivery_date: string | null
+          deposit: number | null
+          extra_lines_count: number | null
+          fe_margin: number | null
+          fin_invoice_id: number | null
+          finance_date: string | null
+          last_modified_date: string | null
+          lienholder: string | null
+          originating_date: string | null
+          payment: number | null
+          rate: number | null
+          raw_extra_lines: Json | null
+          raw_trades: Json | null
+          raw_units: Json | null
+          sales_tax_total: number | null
+          salesman_id: number | null
+          salesman_name: string | null
+          salesmanager: string | null
+          source: string | null
+          source_type: string | null
+          stage_name: string | null
+          synced_at: string | null
+          term: number | null
+          total_cash_price: number | null
+          total_of_payments: number | null
+          trades_count: number | null
+          units_count: number | null
+          vehicle_tax_total: number | null
+        }
+        Relationships: []
+      }
+      deals_units: {
+        Row: {
+          contract_date: string | null
+          cost: number | null
+          cust_id: string | null
+          customer_name: string | null
+          deal_no: string | null
+          deal_unit_id: number | null
+          dealid: string | null
+          delivery_date: string | null
+          gross_margin: number | null
+          major_unit_header_id: number | null
+          make: string | null
+          model: string | null
+          model_year: string | null
+          raw: Json | null
+          sale_price: number | null
+          salesman_name: string | null
+          stock_number: string | null
+          synced_at: string | null
+          trade_allowance: number | null
+          vin: string | null
         }
         Relationships: []
       }
@@ -3577,6 +3679,33 @@ export type Database = {
         }
         Relationships: []
       }
+      open_service_board: {
+        Row: {
+          category: string | null
+          cust_id: number | null
+          customer_email: string | null
+          customer_name: string | null
+          customer_phone: string | null
+          date_in: string | null
+          last_modified_date: string | null
+          promised_date: string | null
+          raw_units: Json | null
+          ro_header_id: number | null
+          ro_no: string | null
+          ro_status: number | null
+          service_writer_name: string | null
+          status: string | null
+          synced_at: string | null
+          total_owed: number | null
+          unit_make: string | null
+          unit_model: string | null
+          unit_stock_number: string | null
+          unit_vin: string | null
+          unit_year: string | null
+          units_count: number | null
+        }
+        Relationships: []
+      }
       parts_inventory: {
         Row: {
           active_price: number | null
@@ -3649,6 +3778,51 @@ export type Database = {
           supplier_name?: string | null
           synced_at?: string | null
           upc?: string | null
+        }
+        Relationships: []
+      }
+      parts_invoices: {
+        Row: {
+          cashier_name: string | null
+          category: string | null
+          common_invoice_id: number | null
+          cost: number | null
+          cust_id: string | null
+          customer_email: string | null
+          customer_name: string | null
+          customer_phone: string | null
+          each_price: number | null
+          invoice_collect_amt: number | null
+          invoice_date: string | null
+          invoice_discount: number | null
+          invoice_handling_amt: number | null
+          invoice_id: number | null
+          invoice_line_no: number | null
+          invoice_no: number | null
+          invoice_subtotal: number | null
+          invoice_tax: number | null
+          is_resale: number | null
+          is_special_order: number | null
+          layaway_number: string | null
+          line_discount: number | null
+          line_total: number | null
+          major_unit_id: number | null
+          part_desc: string | null
+          part_no: string | null
+          po_number: string | null
+          price: number | null
+          qty: number | null
+          repair_order_id: number | null
+          sale_type_description: string | null
+          salesman_id: string | null
+          salesman_name: string | null
+          source: string | null
+          special_order_number: string | null
+          std_price: number | null
+          synced_at: string | null
+          warranty: number | null
+          weborder_number: string | null
+          weborder_partnumber: string | null
         }
         Relationships: []
       }
@@ -3810,6 +3984,9 @@ export type Database = {
           table_name: string
         }[]
       }
+      bulk_upsert_deals: { Args: { payload: Json }; Returns: number }
+      bulk_upsert_open_ros: { Args: { payload: Json }; Returns: number }
+      bulk_upsert_parts_invoices: { Args: { payload: Json }; Returns: number }
       check_rate_limit: {
         Args: {
           _action: string
