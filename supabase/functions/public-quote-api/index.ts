@@ -312,14 +312,63 @@ async function listMotors(supabase: any, body: any) {
   });
 }
 
+// Map quote-api engine_type → HBW stroke values
+function toHbwStroke(engineType?: string): string {
+  const t = (engineType || "").toLowerCase().trim();
+  if (t === "2-stroke" || t === "optimax" || t === "etec" || t === "proxs") return t;
+  return "4-stroke";
+}
+
+async function fetchHbwValuation(input: {
+  brand: string;
+  year: number;
+  hp: number;
+  condition: string;
+  stroke: string;
+  hours?: number;
+  model?: string;
+}): Promise<any | null> {
+  const apiKey = Deno.env.get("HBW_API_KEY");
+  if (!apiKey) {
+    console.error("HBW_API_KEY not configured");
+    return null;
+  }
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 8000);
+  try {
+    const res = await fetch("https://hbw-valuation-hbw.vercel.app/api/motor-valuation", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-API-Key": apiKey },
+      body: JSON.stringify(input),
+      signal: controller.signal,
+    });
+    clearTimeout(timer);
+    const text = await res.text();
+    if (!res.ok) {
+      console.error("HBW upstream error", res.status, text);
+      return null;
+    }
+    try {
+      return JSON.parse(text);
+    } catch {
+      return null;
+    }
+  } catch (err) {
+    clearTimeout(timer);
+    console.error("HBW fetch failed:", err);
+    return null;
+  }
+}
+
 async function estimateTradeIn(_supabase: any, body: any) {
   const brand = String(body?.brand || "").trim();
   const year = Number(body?.year);
   const hp = Number(body?.horsepower);
   const condition = String(body?.condition || "good").toLowerCase();
+  const model = body?.model ? String(body.model).trim() : undefined;
   if (!brand || !year || !hp) {
     return json(
-      { error: "Required: brand, year, horsepower. Optional: condition, engine_type, engine_hours" },
+      { error: "Required: brand, year, horsepower. Optional: condition, engine_type, engine_hours, model" },
       400,
     );
   }
@@ -327,29 +376,55 @@ async function estimateTradeIn(_supabase: any, body: any) {
     return json({ error: "condition must be one of: excellent, good, fair, poor" }, 400);
   }
 
-  const est = ballparkTradeValue({
-    brand,
-    year,
-    hp,
-    condition: condition as any,
-    engine_type: body?.engine_type,
-    engine_hours: body?.engine_hours,
-  });
+  const stroke = toHbwStroke(body?.engine_type);
+  const hours =
+    typeof body?.engine_hours === "number" && Number.isFinite(body.engine_hours)
+      ? body.engine_hours
+      : undefined;
+
+  const hbw = await fetchHbwValuation({ brand, year, hp, condition, stroke, hours, model });
+
+  if (!hbw || typeof hbw.rangeLow !== "number" || typeof hbw.rangeHigh !== "number") {
+    return json(
+      {
+        error: "Trade-in valuation service unavailable",
+        notes: [
+          "HBW valuation API did not return a valid response.",
+          "Please retry, or refer the customer to https://mercuryrepower.ca/trade-in-value",
+        ],
+      },
+      502,
+    );
+  }
 
   return json({
     site: SITE,
     currency: "CAD",
-    input: { brand, year, horsepower: hp, condition, engine_type: body?.engine_type, engine_hours: body?.engine_hours },
-    estimate: {
-      low: est.low,
-      high: est.high,
-      average: est.average,
-      confidence:
-        year < 2010 ? "low" : year < 2018 ? "medium" : "high",
+    input: {
+      brand,
+      year,
+      horsepower: hp,
+      condition,
+      engine_type: body?.engine_type,
+      engine_hours: hours,
+      model,
+      stroke,
     },
+    estimate: {
+      low: hbw.rangeLow,
+      high: hbw.rangeHigh,
+      average: hbw.wholesale,
+      listing: hbw.listing,
+      hst_savings: hbw.hstSavings,
+      confidence: hbw.confidence,
+      market_demand: hbw.marketDemand,
+      seasonal: hbw.seasonal,
+      factors: hbw.factors || [],
+    },
+    source: "HBW Motor Valuation API (canonical)",
     notes: [
-      "Ballpark only. Final value requires in-person inspection at Gores Landing, ON.",
-      "Customer can get a more detailed report at https://mercuryrepower.ca/trade-in-value",
+      "Trade-in estimate from HBW canonical valuation engine. Final value requires in-person inspection at Gores Landing, ON.",
+      "Customer can get a detailed report at https://mercuryrepower.ca/trade-in-value",
     ],
     lastUpdated: nowISO(),
     priceValidUntil: validUntilISO(),
