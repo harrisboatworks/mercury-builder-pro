@@ -449,6 +449,42 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   {showValidation && missingFields.horsepower && (
                     <p className="text-sm text-red-600 font-light mt-1">Required</p>
                   )}
+                  {(() => {
+                    const raw = (tradeInInfo.model || '').trim();
+                    if (!raw) return null;
+                    const upper = raw.toUpperCase();
+                    const hpMatch = upper.match(/(\d{1,3}(?:\.\d)?)/);
+                    const detectedHp = hpMatch ? parseFloat(hpMatch[1]) : null;
+                    let detectedStroke: string | null = null;
+                    if (/^DF/.test(upper) || /^F\d/.test(upper) || /^BF/.test(upper) || /4S|FOURSTROKE/.test(upper)) {
+                      detectedStroke = '4-Stroke';
+                    } else if (/OPTIMAX|OPTI/.test(upper)) {
+                      detectedStroke = 'OptiMax';
+                    } else if (/2S|TWOSTROKE|DT\d/.test(upper)) {
+                      detectedStroke = '2-Stroke';
+                    } else if (/^\d/.test(upper)) {
+                      // Modern Mercury bare number — assume 4-stroke
+                      detectedStroke = '4-Stroke';
+                    }
+                    if (!detectedHp && !detectedStroke) return null;
+                    return (
+                      <div className="flex flex-wrap gap-1.5 mt-1.5">
+                        {detectedHp && (
+                          <span className="inline-flex items-center rounded-full bg-primary/10 text-primary px-2.5 py-0.5 text-xs font-medium">
+                            {detectedHp} HP
+                          </span>
+                        )}
+                        {detectedStroke && (
+                          <span className="inline-flex items-center rounded-full bg-muted text-muted-foreground px-2.5 py-0.5 text-xs font-medium">
+                            {detectedStroke}
+                          </span>
+                        )}
+                        <span className="text-xs text-muted-foreground font-light self-center">
+                          (auto-detected)
+                        </span>
+                      </div>
+                    );
+                  })()}
                 </div>
 
                 <div className="space-y-2">
