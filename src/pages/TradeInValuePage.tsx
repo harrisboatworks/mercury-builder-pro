@@ -1,14 +1,16 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Helmet } from '@/lib/helmet';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, DollarSign } from 'lucide-react';
+import { ArrowRight, DollarSign, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
 import { type TradeInInfo } from '@/lib/trade-valuation';
 import { SITE_URL } from '@/lib/site';
+
+const DRAFT_KEY = 'tradeInValuePage:draft';
 
 const INITIAL_TRADE_IN: TradeInInfo = {
   hasTradeIn: true,
@@ -22,9 +24,56 @@ const INITIAL_TRADE_IN: TradeInInfo = {
   confidenceLevel: 'medium' as const,
 };
 
+function loadDraft(): { data: TradeInInfo; restored: boolean } {
+  if (typeof window === 'undefined') return { data: INITIAL_TRADE_IN, restored: false };
+  try {
+    const raw = localStorage.getItem(DRAFT_KEY);
+    if (!raw) return { data: INITIAL_TRADE_IN, restored: false };
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object') return { data: INITIAL_TRADE_IN, restored: false };
+    const merged = { ...INITIAL_TRADE_IN, ...parsed } as TradeInInfo;
+    // Only count as "restored" if user actually entered something
+    const hasContent = Boolean(
+      merged.brand || merged.year || merged.horsepower || (merged.model && merged.model.trim())
+    );
+    return { data: merged, restored: hasContent };
+  } catch {
+    return { data: INITIAL_TRADE_IN, restored: false };
+  }
+}
+
 export default function TradeInValuePage() {
-  const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>(INITIAL_TRADE_IN);
+  const initial = useRef(loadDraft());
+  const [tradeInInfo, setTradeInInfo] = useState<TradeInInfo>(initial.current.data);
+  const [showRestored, setShowRestored] = useState(initial.current.restored);
   const navigate = useNavigate();
+
+  // Auto-hide restored banner
+  useEffect(() => {
+    if (!showRestored) return;
+    const t = setTimeout(() => setShowRestored(false), 4000);
+    return () => clearTimeout(t);
+  }, [showRestored]);
+
+  // Debounced autosave to localStorage
+  useEffect(() => {
+    const t = setTimeout(() => {
+      try {
+        localStorage.setItem(DRAFT_KEY, JSON.stringify(tradeInInfo));
+      } catch (e) {
+        console.error('Failed to autosave trade-in draft:', e);
+      }
+    }, 300);
+    return () => clearTimeout(t);
+  }, [tradeInInfo]);
+
+  const handleClearDraft = () => {
+    try {
+      localStorage.removeItem(DRAFT_KEY);
+    } catch {}
+    setTradeInInfo(INITIAL_TRADE_IN);
+    setShowRestored(false);
+  };
 
   const handleStartQuote = () => {
     // Store trade-in data so the quote builder can pick it up
@@ -36,6 +85,10 @@ export default function TradeInValuePage() {
     } catch (e) {
       console.error('Failed to persist trade-in to localStorage:', e);
     }
+    // Clear the standalone draft — it has now been promoted into the quote flow
+    try {
+      localStorage.removeItem(DRAFT_KEY);
+    } catch {}
     navigate('/quote/motor-selection');
   };
 
@@ -88,6 +141,26 @@ export default function TradeInValuePage() {
 
         {/* Form */}
         <section className="max-w-3xl mx-auto px-4 -mt-4 pb-16">
+          {showRestored && (
+            <motion.div
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mb-4 flex items-center justify-between gap-3 rounded-md border border-border bg-muted/40 px-4 py-2.5 text-sm"
+            >
+              <span className="text-muted-foreground">
+                Restored your previous entries.
+              </span>
+              <button
+                type="button"
+                onClick={handleClearDraft}
+                className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground hover:text-primary transition-colors"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                Start over
+              </button>
+            </motion.div>
+          )}
+
           <TradeInValuation
             standalone
             tradeInInfo={tradeInInfo}
