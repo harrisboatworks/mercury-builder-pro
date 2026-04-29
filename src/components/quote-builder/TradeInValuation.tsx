@@ -8,7 +8,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 
 import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, AlertTriangle, Wrench, ChevronDown, ExternalLink } from 'lucide-react';
+import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, AlertTriangle, Info, Wrench, ChevronDown, ExternalLink } from 'lucide-react';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig, type HBWValuationResult } from '@/lib/trade-valuation';
 import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
@@ -21,20 +21,37 @@ interface DecodeResult {
   stroke: string | null;
   hpConfidence: Confidence;
   strokeConfidence: Confidence;
+  hpReasons: string[];
+  strokeReasons: string[];
   warnings: string[];
   suggestions: string[];
 }
+
+interface DecodeContext {
+  brand?: string;
+  year?: number;
+}
+
+const BRAND_FROM_PREFIX: Record<string, string> = {
+  F: 'Yamaha',
+  DF: 'Suzuki',
+  BF: 'Honda',
+  DT: 'Suzuki 2-stroke',
+};
 
 /**
  * Decodes a trade-in motor model string with confidence + suggestions.
  * Pattern-based heuristics only (no DB lookup).
  */
-export function decodeTradeInModel(raw: string, brand?: string): DecodeResult {
+export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): DecodeResult {
+  const { brand, year } = ctx;
   const result: DecodeResult = {
     hp: null,
     stroke: null,
     hpConfidence: 'unknown',
     strokeConfidence: 'unknown',
+    hpReasons: [],
+    strokeReasons: [],
     warnings: [],
     suggestions: [],
   };
@@ -43,9 +60,7 @@ export function decodeTradeInModel(raw: string, brand?: string): DecodeResult {
   const upper = trimmed.toUpperCase();
 
   // ---- HP extraction ----
-  // Strong patterns: F115, DF150, BF90, DT85, bare "150"
   const strong = upper.match(/^(?:F|DF|BF|DT)?(\d{1,3}(?:\.\d)?)/);
-  // Embedded numbers (e.g. "MERC 150 ELPT 4S")
   const embedded = Array.from(upper.matchAll(/\b(\d{1,3}(?:\.\d)?)\b/g))
     .map((m) => parseFloat(m[1]))
     .filter((n) => n >= 2 && n <= 450 && !(n >= 1950 && n <= 2050));
@@ -54,36 +69,67 @@ export function decodeTradeInModel(raw: string, brand?: string): DecodeResult {
     const n = parseFloat(strong[1]);
     if (n >= 2 && n <= 450) {
       result.hp = n;
-      result.hpConfidence = /^(F|DF|BF|DT|\d)/.test(upper) ? 'high' : 'medium';
+      const prefixMatch = upper.match(/^(F|DF|BF|DT)\d/);
+      if (prefixMatch) {
+        result.hpConfidence = 'high';
+        result.hpReasons.push(`"${prefixMatch[1]}${n}" prefix is a standard ${BRAND_FROM_PREFIX[prefixMatch[1]]} HP code`);
+      } else if (/^\d/.test(upper)) {
+        result.hpConfidence = 'high';
+        result.hpReasons.push(`Leading number "${n}" parsed as HP`);
+      } else {
+        result.hpConfidence = 'medium';
+        result.hpReasons.push(`Number "${n}" found near start of model text`);
+      }
     } else {
       result.hp = n;
       result.hpConfidence = 'low';
+      result.hpReasons.push(`Number "${n}" found but outside plausible HP range`);
       result.warnings.push(`HP "${n}" outside typical 2–450 range`);
     }
   } else if (embedded.length === 1) {
     result.hp = embedded[0];
     result.hpConfidence = 'medium';
+    result.hpReasons.push(`Single number "${embedded[0]}" embedded in model text`);
   } else if (embedded.length > 1) {
     result.hp = embedded[0];
     result.hpConfidence = 'low';
+    result.hpReasons.push(`${embedded.length} numbers found (${embedded.join(', ')}) — picked first`);
     result.warnings.push(`Multiple numbers found — using ${embedded[0]} HP`);
   }
 
   // ---- Stroke detection ----
-  if (/^DF\d/.test(upper) || /^F\d/.test(upper) || /^BF\d/.test(upper) || /4S\b|FOURSTROKE|FOUR.STROKE/.test(upper)) {
+  const fourStrokeHit = upper.match(/^(?:DF|F|BF)\d|4S\b|FOURSTROKE|FOUR.STROKE/);
+  const optiHit = upper.match(/OPTIMAX|OPTI\b/);
+  const twoStrokeHit = upper.match(/2S\b|TWOSTROKE|TWO.STROKE|^DT\d/);
+
+  if (fourStrokeHit) {
     result.stroke = '4-Stroke';
     result.strokeConfidence = 'high';
-  } else if (/OPTIMAX|OPTI\b/.test(upper)) {
+    result.strokeReasons.push(`Matched "${fourStrokeHit[0]}" in model text → 4-Stroke marker`);
+  } else if (optiHit) {
     result.stroke = 'OptiMax';
     result.strokeConfidence = 'high';
-  } else if (/2S\b|TWOSTROKE|TWO.STROKE|^DT\d/.test(upper)) {
+    result.strokeReasons.push(`Matched "${optiHit[0]}" → Mercury OptiMax`);
+  } else if (twoStrokeHit) {
     result.stroke = '2-Stroke';
     result.strokeConfidence = 'high';
+    result.strokeReasons.push(`Matched "${twoStrokeHit[0]}" → 2-Stroke marker`);
   } else if (/^\d/.test(upper) && result.hp) {
-    // Bare number — ambiguous without era
-    result.stroke = null;
-    result.strokeConfidence = 'low';
-    result.warnings.push("Stroke unclear from bare HP — modern Mercury (2007+) is 4-Stroke; older may be 2-Stroke");
+    // Bare number — try to use year as a tiebreaker
+    if (year && year >= 2007) {
+      result.stroke = '4-Stroke';
+      result.strokeConfidence = 'medium';
+      result.strokeReasons.push(`Bare HP + year ${year} (≥ 2007) → likely 4-Stroke (modern Mercury era)`);
+    } else if (year && year < 2000) {
+      result.stroke = '2-Stroke';
+      result.strokeConfidence = 'medium';
+      result.strokeReasons.push(`Bare HP + year ${year} (< 2000) → likely 2-Stroke era`);
+    } else {
+      result.stroke = null;
+      result.strokeConfidence = 'low';
+      result.strokeReasons.push('Bare HP with no year — stroke ambiguous');
+      result.warnings.push("Stroke unclear from bare HP — enter year to refine, or add '4S' / '2S'");
+    }
   }
 
   // ---- Unrecognized ----
@@ -110,7 +156,6 @@ export function decodeTradeInModel(raw: string, brand?: string): DecodeResult {
       result.suggestions = all.slice(0, 3).map((s) => s.text);
     }
   } else if (/^F[\s-]+\d/.test(upper) || /^DF[\s-]+\d/.test(upper) || /^BF[\s-]+\d/.test(upper)) {
-    // Typo'd separators
     const normalized = upper.replace(/[\s-]+/g, '');
     result.suggestions = [normalized];
   }
@@ -545,8 +590,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   {(() => {
                     const raw = (tradeInInfo.model || '').trim();
                     if (!raw) return null;
-                    const decoded = decodeTradeInModel(raw, tradeInInfo.brand);
-                    const { hp, stroke, hpConfidence, strokeConfidence, warnings, suggestions } = decoded;
+                    const decoded = decodeTradeInModel(raw, { brand: tradeInInfo.brand, year: tradeInInfo.year });
+                    const { hp, stroke, hpConfidence, strokeConfidence, hpReasons, strokeReasons, warnings, suggestions } = decoded;
                     if (!hp && !stroke && warnings.length === 0 && suggestions.length === 0) return null;
 
                     const chipClass = (conf: Confidence, base: 'hp' | 'stroke') => {
@@ -562,18 +607,41 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     };
                     const prefix = (conf: Confidence) =>
                       conf === 'high' ? '' : conf === 'medium' ? '~ ' : '? ';
+                    const badgeFor = (conf: Confidence) => {
+                      if (conf === 'high') return { label: 'High', cls: 'bg-emerald-100 text-emerald-700 border-emerald-200' };
+                      if (conf === 'medium') return { label: 'Medium', cls: 'bg-amber-100 text-amber-700 border-amber-200' };
+                      if (conf === 'low') return { label: 'Low', cls: 'bg-rose-100 text-rose-700 border-rose-200' };
+                      return null;
+                    };
+                    const hpBadge = hp !== null ? badgeFor(hpConfidence) : null;
+                    const strokeBadge = stroke ? badgeFor(strokeConfidence) : null;
+                    const hasReasons = hpReasons.length > 0 || strokeReasons.length > 0;
 
                     return (
                       <div className="mt-1.5 space-y-1.5">
                         <div className="flex flex-wrap items-center gap-1.5">
                           {hp !== null && (
-                            <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(hpConfidence, 'hp')}`}>
-                              {prefix(hpConfidence)}{hp} HP
+                            <span className="inline-flex items-center gap-1">
+                              <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(hpConfidence, 'hp')}`}>
+                                {prefix(hpConfidence)}{hp} HP
+                              </span>
+                              {hpBadge && (
+                                <span className={`inline-flex items-center rounded-full border px-1.5 py-0 text-[10px] font-medium uppercase tracking-wide ${hpBadge.cls}`}>
+                                  {hpBadge.label}
+                                </span>
+                              )}
                             </span>
                           )}
                           {stroke && (
-                            <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(strokeConfidence, 'stroke')}`}>
-                              {prefix(strokeConfidence)}{stroke}
+                            <span className="inline-flex items-center gap-1">
+                              <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(strokeConfidence, 'stroke')}`}>
+                                {prefix(strokeConfidence)}{stroke}
+                              </span>
+                              {strokeBadge && (
+                                <span className={`inline-flex items-center rounded-full border px-1.5 py-0 text-[10px] font-medium uppercase tracking-wide ${strokeBadge.cls}`}>
+                                  {strokeBadge.label}
+                                </span>
+                              )}
                             </span>
                           )}
                           {(hp !== null || stroke) && (
@@ -582,6 +650,22 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                             </span>
                           )}
                         </div>
+                        {hasReasons && (
+                          <div className="flex items-start gap-1.5 text-xs text-muted-foreground font-light">
+                            <Info className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
+                            <div className="space-y-0.5">
+                              <div>Based on:</div>
+                              <ul className="list-disc pl-4 space-y-0.5">
+                                {hpReasons.map((r, i) => (
+                                  <li key={`hp-${i}`}><span className="font-medium">HP:</span> {r}</li>
+                                ))}
+                                {strokeReasons.map((r, i) => (
+                                  <li key={`st-${i}`}><span className="font-medium">Stroke:</span> {r}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        )}
                         {warnings.map((w, i) => (
                           <div key={i} className="flex items-start gap-1.5 text-xs text-amber-700 font-light">
                             <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
