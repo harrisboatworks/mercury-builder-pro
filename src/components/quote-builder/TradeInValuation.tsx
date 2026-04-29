@@ -533,19 +533,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-gray-900">
-                        Model
-                      </Label>
-                      <Input
-                        id="trade-model"
-                        value={tradeInInfo.model}
-                        onChange={(e) => onTradeInChange({ ...tradeInInfo, model: e.target.value })}
-                        placeholder="e.g., OptiMax Pro XS"
-                        className="min-h-[48px] rounded-sm border-gray-300 font-light"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
                       <Label htmlFor="trade-hours" className="text-sm font-light tracking-wide text-gray-900">
                         Engine Hours
                       </Label>
