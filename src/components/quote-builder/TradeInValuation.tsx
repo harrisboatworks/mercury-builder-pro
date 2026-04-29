@@ -146,6 +146,19 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   // Fetch trade valuation data from Supabase (with fallback to hardcoded values)
   const { data: valuationData } = useTradeValuationData();
 
+  // Shared writer for the model input + suggestion clicks.
+  const applyModelText = (raw: string) => {
+    setEstimate(null);
+    autoEstimateTriggered.current = false;
+    const trimmed = raw.trim();
+    const numericOnly = /^\d+(\.\d+)?$/.test(trimmed);
+    onTradeInChange({
+      ...tradeInInfo,
+      model: raw,
+      horsepower: numericOnly ? parseFloat(trimmed) : 0,
+    });
+  };
+
   // Auto-scroll to form when "Yes, I have a trade-in" is clicked
   useEffect(() => {
     if (tradeInInfo.hasTradeIn && formRef.current) {
