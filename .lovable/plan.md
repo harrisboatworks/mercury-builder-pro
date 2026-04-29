@@ -1,21 +1,31 @@
 ## Goal
 
-Remove the now-redundant **Engine Type** dropdown from the trade-in form. The Vercel HBW API auto-decodes stroke from the model code, and the small preview chip already shows the detected stroke — so the dropdown adds friction without value.
+Persist user inputs on the standalone `/trade-in-value` form so that a refresh or back-navigation restores everything (brand, year, model/HP text, condition, hours, serial, and the last computed estimate).
 
-## Changes
+## Approach
 
-### `src/components/quote-builder/TradeInValuation.tsx`
+Use `localStorage` with a dedicated key (`tradeInValuePage:draft`) scoped to the standalone page only. The in-quote `/quote/trade-in` page already persists through the QuoteContext, so it doesn't need a separate draft.
 
-1. **Remove the Engine Type `<div>` block** (lines ~490–507) — the entire `<Select>` for `tradeInInfo.engineType`.
+### Changes
 
-2. **Stop forwarding `engineType` to the API** so the decoder always wins:
-   - Line ~111–116: drop the `explicitStroke` ternary; pass `stroke: undefined` (or just omit) in the `fetchHBWValuation` call at line 125.
-   - Line ~169 / ~176: same — remove the `engineType`-based stroke calc in the local fallback path; default to `'4-stroke'` (the proxy/API will decode the real value from the model anyway).
-   - Line ~702 (the "View full report" `buildHBWReportUrl` call): remove the `stroke` argument so the report URL relies on model decoding.
+**1. `src/pages/TradeInValuePage.tsx`**
 
-3. **No layout change needed** — the grid is `md:grid-cols-2` (Year + Model or HP), so removing the third cell leaves a clean two-column layout.
+- On mount, hydrate `tradeInInfo` from `localStorage.getItem('tradeInValuePage:draft')` if present (merged over `INITIAL_TRADE_IN` for safety on schema drift).
+- Add a `useEffect` that writes `tradeInInfo` to `localStorage` whenever it changes (debounced ~300ms via `setTimeout`/cleanup to avoid thrash on every keystroke).
+- On `handleStartQuote`, after pushing into `quoteBuilder` localStorage, clear the draft key so it doesn't shadow the quote flow next visit.
+- Add a small "Clear" link/button next to the form heading area only when a draft was restored, so users can wipe saved inputs (optional but low effort — include it).
+
+**2. Restore UX signal**
+
+- When draft is restored on mount, briefly show a subtle inline note: "Restored your previous entries" (auto-hide after ~3s) using existing toast or a local state flag rendered above the form.
+
+### Edge cases handled
+
+- Corrupt/invalid JSON in localStorage → wrapped in try/catch, falls back to `INITIAL_TRADE_IN`.
+- Schema additions later → spread over defaults so missing fields don't break the form.
+- Estimate value is persisted too, so the CTA card ("Ready to see how much you'll save…") reappears after refresh without re-running the API call.
 
 ### Out of scope
-- `TradeInInfo.engineType` type stays (still used elsewhere in the codebase / saved quotes); we just stop collecting it on this form.
-- Proxy and API contracts unchanged — they already treat `stroke` as optional.
-- Quote-builder `/quote/trade-in` step inherits the same component automatically.
+
+- The in-quote `/quote/trade-in` page (already persisted via QuoteContext + `quoteBuilder` localStorage).
+- Server-side draft persistence (not needed for this lightweight standalone form).
