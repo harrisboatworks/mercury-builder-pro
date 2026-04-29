@@ -590,8 +590,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   {(() => {
                     const raw = (tradeInInfo.model || '').trim();
                     if (!raw) return null;
-                    const decoded = decodeTradeInModel(raw, tradeInInfo.brand);
-                    const { hp, stroke, hpConfidence, strokeConfidence, warnings, suggestions } = decoded;
+                    const decoded = decodeTradeInModel(raw, { brand: tradeInInfo.brand, year: tradeInInfo.year });
+                    const { hp, stroke, hpConfidence, strokeConfidence, hpReasons, strokeReasons, warnings, suggestions } = decoded;
                     if (!hp && !stroke && warnings.length === 0 && suggestions.length === 0) return null;
 
                     const chipClass = (conf: Confidence, base: 'hp' | 'stroke') => {
@@ -607,18 +607,41 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     };
                     const prefix = (conf: Confidence) =>
                       conf === 'high' ? '' : conf === 'medium' ? '~ ' : '? ';
+                    const badgeFor = (conf: Confidence) => {
+                      if (conf === 'high') return { label: 'High', cls: 'bg-emerald-100 text-emerald-700 border-emerald-200' };
+                      if (conf === 'medium') return { label: 'Medium', cls: 'bg-amber-100 text-amber-700 border-amber-200' };
+                      if (conf === 'low') return { label: 'Low', cls: 'bg-rose-100 text-rose-700 border-rose-200' };
+                      return null;
+                    };
+                    const hpBadge = hp !== null ? badgeFor(hpConfidence) : null;
+                    const strokeBadge = stroke ? badgeFor(strokeConfidence) : null;
+                    const hasReasons = hpReasons.length > 0 || strokeReasons.length > 0;
 
                     return (
                       <div className="mt-1.5 space-y-1.5">
                         <div className="flex flex-wrap items-center gap-1.5">
                           {hp !== null && (
-                            <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(hpConfidence, 'hp')}`}>
-                              {prefix(hpConfidence)}{hp} HP
+                            <span className="inline-flex items-center gap-1">
+                              <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(hpConfidence, 'hp')}`}>
+                                {prefix(hpConfidence)}{hp} HP
+                              </span>
+                              {hpBadge && (
+                                <span className={`inline-flex items-center rounded-full border px-1.5 py-0 text-[10px] font-medium uppercase tracking-wide ${hpBadge.cls}`}>
+                                  {hpBadge.label}
+                                </span>
+                              )}
                             </span>
                           )}
                           {stroke && (
-                            <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(strokeConfidence, 'stroke')}`}>
-                              {prefix(strokeConfidence)}{stroke}
+                            <span className="inline-flex items-center gap-1">
+                              <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(strokeConfidence, 'stroke')}`}>
+                                {prefix(strokeConfidence)}{stroke}
+                              </span>
+                              {strokeBadge && (
+                                <span className={`inline-flex items-center rounded-full border px-1.5 py-0 text-[10px] font-medium uppercase tracking-wide ${strokeBadge.cls}`}>
+                                  {strokeBadge.label}
+                                </span>
+                              )}
                             </span>
                           )}
                           {(hp !== null || stroke) && (
@@ -627,6 +650,22 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                             </span>
                           )}
                         </div>
+                        {hasReasons && (
+                          <div className="flex items-start gap-1.5 text-xs text-muted-foreground font-light">
+                            <Info className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
+                            <div className="space-y-0.5">
+                              <div>Based on:</div>
+                              <ul className="list-disc pl-4 space-y-0.5">
+                                {hpReasons.map((r, i) => (
+                                  <li key={`hp-${i}`}><span className="font-medium">HP:</span> {r}</li>
+                                ))}
+                                {strokeReasons.map((r, i) => (
+                                  <li key={`st-${i}`}><span className="font-medium">Stroke:</span> {r}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        )}
                         {warnings.map((w, i) => (
                           <div key={i} className="flex items-start gap-1.5 text-xs text-amber-700 font-light">
                             <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
