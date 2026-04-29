@@ -683,7 +683,7 @@ export interface HBWValuationResult extends TradeValueEstimate {
 export async function fetchHBWValuation(params: {
   brand: string;
   year: number;
-  horsepower: number;
+  horsepower?: number;
   condition: string;
   stroke?: string;
   hours?: number;
@@ -693,16 +693,21 @@ export async function fetchHBWValuation(params: {
     // Lazy import to avoid pulling the supabase client into non-React contexts
     const { supabase } = await import('@/integrations/supabase/client');
 
+    // Build body with only the fields we have. The Vercel API can decode HP
+    // and stroke from the model code, so omit empty values rather than sending
+    // defaults that would override the decoder.
+    const body: Record<string, unknown> = {
+      brand: params.brand,
+      year: params.year,
+      condition: params.condition,
+    };
+    if (params.horsepower && params.horsepower > 0) body.hp = params.horsepower;
+    if (params.model && params.model.trim()) body.model = params.model.trim();
+    if (params.stroke) body.stroke = params.stroke;
+    if (params.hours !== undefined) body.hours = params.hours;
+
     const { data, error } = await supabase.functions.invoke('hbw-valuation-proxy', {
-      body: {
-        brand: params.brand,
-        year: params.year,
-        hp: params.horsepower,
-        condition: params.condition,
-        stroke: params.stroke || '4-stroke',
-        hours: params.hours,
-        model: params.model,
-      },
+      body,
     });
 
     if (error) {

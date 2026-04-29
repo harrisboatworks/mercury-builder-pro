@@ -53,12 +53,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     }
   }, [tradeInInfo.hasTradeIn]);
 
+  // A "model or hp" identifier counts as filled when either model text exists
+  // or a numeric HP has been parsed from it.
+  const hasModelOrHp = Boolean((tradeInInfo.model && tradeInInfo.model.trim()) || tradeInInfo.horsepower);
+
   // Clear validation when all required fields are filled
   useEffect(() => {
-    if (showValidation && tradeInInfo.brand && tradeInInfo.year && tradeInInfo.horsepower && tradeInInfo.condition) {
+    if (showValidation && tradeInInfo.brand && tradeInInfo.year && hasModelOrHp && tradeInInfo.condition) {
       setShowValidation(false);
     }
-  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, showValidation]);
+  }, [tradeInInfo.brand, tradeInInfo.year, hasModelOrHp, tradeInInfo.condition, showValidation]);
 
   // Reset estimate when fields change so button is shown again
   useEffect(() => {
@@ -66,14 +70,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       setEstimate(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition]);
+  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.model, tradeInInfo.condition]);
 
 
   // Check if required fields are missing
   const missingFields = {
     brand: !tradeInInfo.brand,
     year: !tradeInInfo.year,
-    horsepower: !tradeInInfo.horsepower,
+    horsepower: !hasModelOrHp,
     condition: !tradeInInfo.condition
   };
   const hasMissingFields = Object.values(missingFields).some(Boolean);
@@ -95,17 +99,22 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const handleGetEstimate = async () => {
     console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
     
-    if (!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition) {
+    if (!tradeInInfo.brand || !tradeInInfo.year || !hasModelOrHp || !tradeInInfo.condition) {
       console.log('Missing required fields');
       return;
     }
 
     setIsLoading(true);
 
-    // Map engine type to stroke for HBW API
-    const strokeType = tradeInInfo.engineType === '2-stroke' ? '2-stroke'
-      : tradeInInfo.engineType === 'optimax' ? '2-stroke'
-      : '4-stroke';
+    // Stroke is now an optional override — when the user picked one we forward
+    // it, otherwise let the HBW API infer it from the model code.
+    const explicitStroke = tradeInInfo.engineType === '2-stroke'
+      ? '2-stroke'
+      : tradeInInfo.engineType === 'optimax'
+        ? 'optimax'
+        : tradeInInfo.engineType === '4-stroke'
+          ? '4-stroke'
+          : undefined;
 
     // Try HBW API first
     const hbwResult = await fetchHBWValuation({
@@ -113,7 +122,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       year: tradeInInfo.year,
       horsepower: tradeInInfo.horsepower,
       condition: tradeInInfo.condition,
-      stroke: strokeType,
+      stroke: explicitStroke,
       hours: tradeInInfo.engineHours,
       model: tradeInInfo.model,
     });
@@ -407,22 +416,30 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-hp" className="text-sm font-light tracking-wide text-gray-900">
-                    Horsepower *
+                  <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-gray-900">
+                    Model or HP *
                   </Label>
                   <Input
-                    id="trade-hp"
-                    type="number"
-                    step="0.1"
-                    value={tradeInInfo.horsepower || ''}
+                    id="trade-model"
+                    type="text"
+                    value={tradeInInfo.model || (tradeInInfo.horsepower ? String(tradeInInfo.horsepower) : '')}
                     onChange={(e) => {
+                      const raw = e.target.value;
                       setEstimate(null);
                       autoEstimateTriggered.current = false;
-                      onTradeInChange({ ...tradeInInfo, horsepower: parseFloat(e.target.value) || 0 });
+                      // If the user typed a plain number, mirror it into
+                      // horsepower so existing local-fallback math keeps
+                      // working. Otherwise rely on the API decoder.
+                      const trimmed = raw.trim();
+                      const numericOnly = /^\d+(\.\d+)?$/.test(trimmed);
+                      onTradeInChange({
+                        ...tradeInInfo,
+                        model: raw,
+                        horsepower: numericOnly ? parseFloat(trimmed) : 0,
+                      });
                     }}
-                    placeholder="e.g., 9.9 or 115"
-                    min="1"
-                    max="600"
+                    placeholder="e.g. 150 ELPT, F115LB, or just 150"
+                    maxLength={120}
                     className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.horsepower 
                         ? 'border-red-500 ring-1 ring-red-500' 
@@ -436,14 +453,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
                 <div className="space-y-2">
                   <Label htmlFor="trade-engine-type" className="text-sm font-light tracking-wide text-gray-900">
-                    Engine Type
+                    Engine Type (optional)
                   </Label>
                   <Select 
                     value={tradeInInfo.engineType || ''} 
                     onValueChange={(value) => onTradeInChange({ ...tradeInInfo, engineType: value as TradeInInfo['engineType'] })}
                   >
                     <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
-                      <SelectValue placeholder="Select engine type" />
+                      <SelectValue placeholder="Auto-detect from model" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="4-stroke" className="font-light">4-Stroke</SelectItem>
@@ -513,19 +530,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                           <SelectItem value="electric" className="font-light">Electric Start</SelectItem>
                         </SelectContent>
                       </Select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-gray-900">
-                        Model
-                      </Label>
-                      <Input
-                        id="trade-model"
-                        value={tradeInInfo.model}
-                        onChange={(e) => onTradeInChange({ ...tradeInInfo, model: e.target.value })}
-                        placeholder="e.g., OptiMax Pro XS"
-                        className="min-h-[48px] rounded-sm border-gray-300 font-light"
-                      />
                     </div>
 
                     <div className="space-y-2">
