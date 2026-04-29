@@ -14,6 +14,111 @@ import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useTradeValuationData } from '@/hooks/useTradeValuationData';
 
+type Confidence = 'high' | 'medium' | 'low' | 'unknown';
+
+interface DecodeResult {
+  hp: number | null;
+  stroke: string | null;
+  hpConfidence: Confidence;
+  strokeConfidence: Confidence;
+  warnings: string[];
+  suggestions: string[];
+}
+
+/**
+ * Decodes a trade-in motor model string with confidence + suggestions.
+ * Pattern-based heuristics only (no DB lookup).
+ */
+export function decodeTradeInModel(raw: string, brand?: string): DecodeResult {
+  const result: DecodeResult = {
+    hp: null,
+    stroke: null,
+    hpConfidence: 'unknown',
+    strokeConfidence: 'unknown',
+    warnings: [],
+    suggestions: [],
+  };
+  const trimmed = (raw || '').trim();
+  if (!trimmed) return result;
+  const upper = trimmed.toUpperCase();
+
+  // ---- HP extraction ----
+  // Strong patterns: F115, DF150, BF90, DT85, bare "150"
+  const strong = upper.match(/^(?:F|DF|BF|DT)?(\d{1,3}(?:\.\d)?)/);
+  // Embedded numbers (e.g. "MERC 150 ELPT 4S")
+  const embedded = Array.from(upper.matchAll(/\b(\d{1,3}(?:\.\d)?)\b/g))
+    .map((m) => parseFloat(m[1]))
+    .filter((n) => n >= 2 && n <= 450 && !(n >= 1950 && n <= 2050));
+
+  if (strong) {
+    const n = parseFloat(strong[1]);
+    if (n >= 2 && n <= 450) {
+      result.hp = n;
+      result.hpConfidence = /^(F|DF|BF|DT|\d)/.test(upper) ? 'high' : 'medium';
+    } else {
+      result.hp = n;
+      result.hpConfidence = 'low';
+      result.warnings.push(`HP "${n}" outside typical 2–450 range`);
+    }
+  } else if (embedded.length === 1) {
+    result.hp = embedded[0];
+    result.hpConfidence = 'medium';
+  } else if (embedded.length > 1) {
+    result.hp = embedded[0];
+    result.hpConfidence = 'low';
+    result.warnings.push(`Multiple numbers found — using ${embedded[0]} HP`);
+  }
+
+  // ---- Stroke detection ----
+  if (/^DF\d/.test(upper) || /^F\d/.test(upper) || /^BF\d/.test(upper) || /4S\b|FOURSTROKE|FOUR.STROKE/.test(upper)) {
+    result.stroke = '4-Stroke';
+    result.strokeConfidence = 'high';
+  } else if (/OPTIMAX|OPTI\b/.test(upper)) {
+    result.stroke = 'OptiMax';
+    result.strokeConfidence = 'high';
+  } else if (/2S\b|TWOSTROKE|TWO.STROKE|^DT\d/.test(upper)) {
+    result.stroke = '2-Stroke';
+    result.strokeConfidence = 'high';
+  } else if (/^\d/.test(upper) && result.hp) {
+    // Bare number — ambiguous without era
+    result.stroke = null;
+    result.strokeConfidence = 'low';
+    result.warnings.push("Stroke unclear from bare HP — modern Mercury (2007+) is 4-Stroke; older may be 2-Stroke");
+  }
+
+  // ---- Unrecognized ----
+  if (!result.hp && !result.stroke) {
+    result.warnings.push('Couldn\'t recognize this code — try "F115", "150 ELPT", or just the HP number');
+  }
+
+  // ---- Suggestions ----
+  const numericOnly = /^\d+(\.\d+)?$/.test(trimmed);
+  if (numericOnly && result.hp) {
+    const n = result.hp;
+    const brandLower = (brand || '').toLowerCase();
+    const all = [
+      { tag: 'mercury', text: `${n} ELPT` },
+      { tag: 'yamaha', text: `F${n}` },
+      { tag: 'suzuki', text: `DF${n}` },
+      { tag: 'honda', text: `BF${n}` },
+    ];
+    if (brandLower) {
+      const matched = all.find((s) => s.tag === brandLower);
+      if (matched) result.suggestions = [matched.text];
+      else result.suggestions = all.slice(0, 3).map((s) => s.text);
+    } else {
+      result.suggestions = all.slice(0, 3).map((s) => s.text);
+    }
+  } else if (/^F[\s-]+\d/.test(upper) || /^DF[\s-]+\d/.test(upper) || /^BF[\s-]+\d/.test(upper)) {
+    // Typo'd separators
+    const normalized = upper.replace(/[\s-]+/g, '');
+    result.suggestions = [normalized];
+  }
+
+  return result;
+}
+
+
 interface TradeInValuationProps {
   tradeInInfo: TradeInInfo;
   onTradeInChange: (tradeInfo: TradeInInfo) => void;
