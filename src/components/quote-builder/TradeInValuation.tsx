@@ -516,19 +516,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     type="text"
                     value={tradeInInfo.model || (tradeInInfo.horsepower ? String(tradeInInfo.horsepower) : '')}
                     onChange={(e) => {
-                      const raw = e.target.value;
-                      setEstimate(null);
-                      autoEstimateTriggered.current = false;
-                      // If the user typed a plain number, mirror it into
-                      // horsepower so existing local-fallback math keeps
-                      // working. Otherwise rely on the API decoder.
-                      const trimmed = raw.trim();
-                      const numericOnly = /^\d+(\.\d+)?$/.test(trimmed);
-                      onTradeInChange({
-                        ...tradeInInfo,
-                        model: raw,
-                        horsepower: numericOnly ? parseFloat(trimmed) : 0,
-                      });
+                      applyModelText(e.target.value);
                     }}
                     placeholder="e.g. 150 ELPT, F115LB, or just 150"
                     maxLength={120}
@@ -544,36 +532,64 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   {(() => {
                     const raw = (tradeInInfo.model || '').trim();
                     if (!raw) return null;
-                    const upper = raw.toUpperCase();
-                    const hpMatch = upper.match(/(\d{1,3}(?:\.\d)?)/);
-                    const detectedHp = hpMatch ? parseFloat(hpMatch[1]) : null;
-                    let detectedStroke: string | null = null;
-                    if (/^DF/.test(upper) || /^F\d/.test(upper) || /^BF/.test(upper) || /4S|FOURSTROKE/.test(upper)) {
-                      detectedStroke = '4-Stroke';
-                    } else if (/OPTIMAX|OPTI/.test(upper)) {
-                      detectedStroke = 'OptiMax';
-                    } else if (/2S|TWOSTROKE|DT\d/.test(upper)) {
-                      detectedStroke = '2-Stroke';
-                    } else if (/^\d/.test(upper)) {
-                      // Modern Mercury bare number — assume 4-stroke
-                      detectedStroke = '4-Stroke';
-                    }
-                    if (!detectedHp && !detectedStroke) return null;
+                    const decoded = decodeTradeInModel(raw, tradeInInfo.brand);
+                    const { hp, stroke, hpConfidence, strokeConfidence, warnings, suggestions } = decoded;
+                    if (!hp && !stroke && warnings.length === 0 && suggestions.length === 0) return null;
+
+                    const chipClass = (conf: Confidence, base: 'hp' | 'stroke') => {
+                      if (conf === 'high') {
+                        return base === 'hp'
+                          ? 'bg-primary/10 text-primary border border-primary/20'
+                          : 'bg-muted text-muted-foreground border border-border';
+                      }
+                      if (conf === 'medium') {
+                        return 'bg-background text-foreground border border-border';
+                      }
+                      return 'bg-muted/50 text-muted-foreground border border-dashed border-border';
+                    };
+                    const prefix = (conf: Confidence) =>
+                      conf === 'high' ? '' : conf === 'medium' ? '~ ' : '? ';
+
                     return (
-                      <div className="flex flex-wrap gap-1.5 mt-1.5">
-                        {detectedHp && (
-                          <span className="inline-flex items-center rounded-full bg-primary/10 text-primary px-2.5 py-0.5 text-xs font-medium">
-                            {detectedHp} HP
-                          </span>
+                      <div className="mt-1.5 space-y-1.5">
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          {hp !== null && (
+                            <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(hpConfidence, 'hp')}`}>
+                              {prefix(hpConfidence)}{hp} HP
+                            </span>
+                          )}
+                          {stroke && (
+                            <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(strokeConfidence, 'stroke')}`}>
+                              {prefix(strokeConfidence)}{stroke}
+                            </span>
+                          )}
+                          {(hp !== null || stroke) && (
+                            <span className="text-xs text-muted-foreground font-light self-center">
+                              (auto-detected)
+                            </span>
+                          )}
+                        </div>
+                        {warnings.map((w, i) => (
+                          <div key={i} className="flex items-start gap-1.5 text-xs text-amber-700 font-light">
+                            <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
+                            <span>{w}</span>
+                          </div>
+                        ))}
+                        {suggestions.length > 0 && (
+                          <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
+                            <span className="text-xs text-muted-foreground font-light">Did you mean:</span>
+                            {suggestions.map((s) => (
+                              <button
+                                key={s}
+                                type="button"
+                                onClick={() => applyModelText(s)}
+                                className="inline-flex items-center rounded-full border border-primary/40 bg-background px-2.5 py-0.5 text-xs font-medium text-primary hover:bg-primary/10 transition-colors"
+                              >
+                                {s}
+                              </button>
+                            ))}
+                          </div>
                         )}
-                        {detectedStroke && (
-                          <span className="inline-flex items-center rounded-full bg-muted text-muted-foreground px-2.5 py-0.5 text-xs font-medium">
-                            {detectedStroke}
-                          </span>
-                        )}
-                        <span className="text-xs text-muted-foreground font-light self-center">
-                          (auto-detected)
-                        </span>
                       </div>
                     );
                   })()}
