@@ -67,6 +67,52 @@ describe('decodeTradeInModel — model tokens', () => {
     expect(r.hp).toBe(2);
   });
 
+  // Natural phrasings — these previously fell through to the year-based tiebreaker
+  // and were silently misclassified. They MUST be honored at high confidence.
+  it('"60 2 stroke" + modern year → 2-Stroke high (user text wins over year)', () => {
+    const r = decodeTradeInModel('60 2 stroke', { year: 2023 });
+    expect(r.hp).toBe(60);
+    expect(r.stroke).toBe('2-Stroke');
+    expect(r.strokeConfidence).toBe('high');
+  });
+
+  it('"60 2-stroke" → 2-Stroke high', () => {
+    const r = decodeTradeInModel('60 2-stroke');
+    expect(r.stroke).toBe('2-Stroke');
+    expect(r.strokeConfidence).toBe('high');
+  });
+
+  it('"90 4 stroke" + old year → 4-Stroke high (user text wins over year)', () => {
+    const r = decodeTradeInModel('90 4 stroke', { year: 1985 });
+    expect(r.hp).toBe(90);
+    expect(r.stroke).toBe('4-Stroke');
+    expect(r.strokeConfidence).toBe('high');
+  });
+
+  it('"115 4-stroke" → 4-Stroke high', () => {
+    const r = decodeTradeInModel('115 4-stroke');
+    expect(r.stroke).toBe('4-Stroke');
+    expect(r.strokeConfidence).toBe('high');
+  });
+
+  it('"two stroke 50" → 2-Stroke high', () => {
+    const r = decodeTradeInModel('two stroke 50');
+    expect(r.stroke).toBe('2-Stroke');
+    expect(r.strokeConfidence).toBe('high');
+  });
+
+  it('"four stroke 90" → 4-Stroke high', () => {
+    const r = decodeTradeInModel('four stroke 90');
+    expect(r.stroke).toBe('4-Stroke');
+    expect(r.strokeConfidence).toBe('high');
+  });
+
+  it('"60 2 strokes" (plural) → 2-Stroke high', () => {
+    const r = decodeTradeInModel('60 2 strokes');
+    expect(r.stroke).toBe('2-Stroke');
+    expect(r.strokeConfidence).toBe('high');
+  });
+
   it('empty string → all null/unknown, no warnings', () => {
     const r = decodeTradeInModel('   ');
     expect(r.hp).toBeNull();

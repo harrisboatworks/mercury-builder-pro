@@ -82,9 +82,13 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
   }
 
   // ---- Stroke detection ----
-  const fourStrokeHit = upper.match(/^(?:DF|F|BF)\d|4S\b|FOURSTROKE|FOUR.STROKE/);
+  // Match natural phrasings users actually type:
+  //   "4S", "4-S", "4 STROKE", "4-STROKE", "4STROKE", "FOUR STROKE", "FOURSTROKE", "FOUR-STROKE"
+  //   plus brand prefixes that imply 4-stroke (F<digit>, DF<digit>, BF<digit>).
+  const fourStrokeHit = upper.match(/\b4[\s-]?S(?:TROKES?)?\b|\bFOUR[\s-]?STROKES?\b|^(?:DF|F|BF)\d/);
   const optiHit = upper.match(/OPTIMAX|OPTI\b/);
-  const twoStrokeHit = upper.match(/2S\b|TWOSTROKE|TWO.STROKE|^DT\d/);
+  // "2S", "2-S", "2 STROKE", "2-STROKE", "2STROKE", "TWO STROKE", "TWOSTROKE", "TWO-STROKE", or DT<digit>.
+  const twoStrokeHit = upper.match(/\b2[\s-]?S(?:TROKES?)?\b|\bTWO[\s-]?STROKES?\b|^DT\d/);
 
   if (fourStrokeHit) {
     result.stroke = '4-Stroke';
