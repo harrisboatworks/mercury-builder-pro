@@ -46,18 +46,27 @@ Deno.serve(async (req) => {
   // Lightweight validation (avoid extra deps)
   const brand = typeof raw?.brand === "string" ? raw.brand.trim() : "";
   const year = Number(raw?.year);
-  const hp = Number(raw?.hp);
+  const hasHp = raw?.hp !== undefined && raw?.hp !== null && raw?.hp !== "";
+  const hp = hasHp ? Number(raw.hp) : undefined;
   const condition = typeof raw?.condition === "string" ? raw.condition.toLowerCase() : "";
-  const stroke = typeof raw?.stroke === "string" ? raw.stroke.toLowerCase() : "4-stroke";
+  const hasStroke = typeof raw?.stroke === "string" && raw.stroke.trim().length > 0;
+  const stroke = hasStroke ? raw.stroke.toLowerCase() : undefined;
   const hours = raw?.hours === undefined || raw?.hours === null ? undefined : Number(raw.hours);
   const model = typeof raw?.model === "string" && raw.model.trim() ? raw.model.trim() : undefined;
 
   const errors: Record<string, string> = {};
   if (!brand || brand.length > 64) errors.brand = "required (1-64 chars)";
   if (!Number.isFinite(year) || year < 1950 || year > 2100) errors.year = "required (1950-2100)";
-  if (!Number.isFinite(hp) || hp < 1 || hp > 1000) errors.hp = "required (1-1000)";
+  if (!model && (hp === undefined || !Number.isFinite(hp) || hp < 1 || hp > 1000)) {
+    errors.model = "model code or hp (1-1000) required";
+  }
+  if (hp !== undefined && (!Number.isFinite(hp) || hp < 1 || hp > 1000)) {
+    errors.hp = "1-1000";
+  }
   if (!ALLOWED_CONDITIONS.has(condition)) errors.condition = "excellent|good|fair|poor";
-  if (!ALLOWED_STROKES.has(stroke)) errors.stroke = "4-stroke|2-stroke|proxs|optimax|etec";
+  if (stroke !== undefined && !ALLOWED_STROKES.has(stroke)) {
+    errors.stroke = "4-stroke|2-stroke|proxs|optimax|etec";
+  }
   if (hours !== undefined && (!Number.isFinite(hours) || hours < 0 || hours > 100000)) {
     errors.hours = "0-100000";
   }
@@ -66,6 +75,14 @@ Deno.serve(async (req) => {
   if (Object.keys(errors).length > 0) {
     return json({ error: "Invalid request", details: errors }, 400);
   }
+
+  // Build upstream payload — omit undefined fields so the API's decoder can
+  // infer hp/stroke from the model code when those aren't provided.
+  const upstreamBody: Record<string, unknown> = { brand, year, condition };
+  if (hp !== undefined) upstreamBody.hp = hp;
+  if (stroke !== undefined) upstreamBody.stroke = stroke;
+  if (hours !== undefined) upstreamBody.hours = hours;
+  if (model) upstreamBody.model = model;
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 8000);
@@ -76,7 +93,7 @@ Deno.serve(async (req) => {
         "Content-Type": "application/json",
         "X-API-Key": apiKey,
       },
-      body: JSON.stringify({ brand, year, hp, condition, stroke, hours, model }),
+      body: JSON.stringify(upstreamBody),
       signal: controller.signal,
     });
     clearTimeout(timer);
