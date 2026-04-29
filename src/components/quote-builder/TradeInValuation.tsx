@@ -8,8 +8,9 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/component
 
 import { motion } from 'framer-motion';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, AlertTriangle, Info, Wrench, ChevronDown, ExternalLink, Pencil } from 'lucide-react';
+import { Loader2, DollarSign, ArrowRight, CheckCircle2, CircleCheck, AlertCircle, AlertTriangle, Info, Wrench, ChevronDown, ExternalLink, Pencil, HelpCircle } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { decodeTradeInModel, type Confidence, type DecodeResult } from './tradeInModelDecoder';
 import { estimateTradeValue, medianRoundedTo25, getBrandPenaltyFactor, fetchHBWValuation, buildHBWReportUrl, type TradeValueEstimate, type TradeInInfo, type TradeValuationConfig, type HBWValuationResult } from '@/lib/trade-valuation';
 import { AnimatedPrice } from '@/components/ui/AnimatedPrice';
@@ -442,8 +443,36 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-gray-900">
+                  <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-gray-900 inline-flex items-center gap-1.5">
                     Year *
+                    <TooltipProvider delayDuration={150}>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <button
+                            type="button"
+                            aria-label="Why year matters"
+                            className="text-muted-foreground hover:text-foreground transition-colors"
+                          >
+                            <HelpCircle className="h-3.5 w-3.5" aria-hidden="true" />
+                          </button>
+                        </TooltipTrigger>
+                        <TooltipContent side="top" align="start" className="max-w-xs text-xs leading-relaxed">
+                          <p className="font-medium mb-1">Why the year matters</p>
+                          <p className="font-light">
+                            When the model text is just an HP number (like "90"), the year decides
+                            whether it's likely a 2-Stroke or 4-Stroke:
+                          </p>
+                          <ul className="list-disc pl-4 mt-1 space-y-0.5 font-light">
+                            <li><span className="font-medium">2007 or newer</span> → 4-Stroke (medium confidence)</li>
+                            <li><span className="font-medium">Before 2000</span> → 2-Stroke (medium confidence)</li>
+                            <li><span className="font-medium">2000–2006</span> → ambiguous, please add "4S" or "2S"</li>
+                          </ul>
+                          <p className="font-light mt-1">
+                            Picking a year updates the "Based on" reasons under the model field automatically.
+                          </p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
                   </Label>
                   <Select 
                     value={tradeInInfo.year?.toString() || ''} 
