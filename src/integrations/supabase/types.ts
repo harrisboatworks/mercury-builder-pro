@@ -291,25 +291,70 @@ export type Database = {
       }
       customer_memory: {
         Row: {
+          archived_at: string | null
+          archived_by: string | null
+          category: string
+          confidence: string
           created_at: string | null
-          customer_id: number
+          created_by: string | null
+          customer_id: string
+          customer_name: string | null
           id: string
+          last_used_at: string | null
           notes: string
+          raw_note: string
+          search_vector: unknown
+          sensitivity: string
+          source: string
+          source_channel: string | null
+          summary: string
           updated_at: string | null
+          use_in_customer_messages: boolean
+          use_in_staff_brief: boolean
         }
         Insert: {
+          archived_at?: string | null
+          archived_by?: string | null
+          category?: string
+          confidence?: string
           created_at?: string | null
-          customer_id: number
+          created_by?: string | null
+          customer_id: string
+          customer_name?: string | null
           id?: string
+          last_used_at?: string | null
           notes?: string
+          raw_note: string
+          search_vector?: unknown
+          sensitivity?: string
+          source?: string
+          source_channel?: string | null
+          summary: string
           updated_at?: string | null
+          use_in_customer_messages?: boolean
+          use_in_staff_brief?: boolean
         }
         Update: {
+          archived_at?: string | null
+          archived_by?: string | null
+          category?: string
+          confidence?: string
           created_at?: string | null
-          customer_id?: number
+          created_by?: string | null
+          customer_id?: string
+          customer_name?: string | null
           id?: string
+          last_used_at?: string | null
           notes?: string
+          raw_note?: string
+          search_vector?: unknown
+          sensitivity?: string
+          source?: string
+          source_channel?: string | null
+          summary?: string
           updated_at?: string | null
+          use_in_customer_messages?: boolean
+          use_in_staff_brief?: boolean
         }
         Relationships: []
       }
@@ -970,6 +1015,93 @@ export type Database = {
           sheet_url?: string
           sync_frequency?: string
           updated_at?: string
+        }
+        Relationships: []
+      }
+      hbw_bot_brief_receipts: {
+        Row: {
+          brief_type: string
+          channel_id: string | null
+          created_at: string
+          error_message: string | null
+          id: string
+          metadata: Json
+          row_counts: Json
+          slack_ts: string | null
+          status: string
+          text_length: number | null
+        }
+        Insert: {
+          brief_type?: string
+          channel_id?: string | null
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          metadata?: Json
+          row_counts?: Json
+          slack_ts?: string | null
+          status?: string
+          text_length?: number | null
+        }
+        Update: {
+          brief_type?: string
+          channel_id?: string | null
+          created_at?: string
+          error_message?: string | null
+          id?: string
+          metadata?: Json
+          row_counts?: Json
+          slack_ts?: string | null
+          status?: string
+          text_length?: number | null
+        }
+        Relationships: []
+      }
+      hbw_bot_events: {
+        Row: {
+          channel_id: string | null
+          command: string | null
+          created_at: string
+          error_message: string | null
+          event_type: string
+          id: string
+          intent_type: string | null
+          message_ts: string | null
+          metadata: Json
+          rpc: string | null
+          severity: string
+          slack_event_id: string | null
+          status: string
+        }
+        Insert: {
+          channel_id?: string | null
+          command?: string | null
+          created_at?: string
+          error_message?: string | null
+          event_type: string
+          id?: string
+          intent_type?: string | null
+          message_ts?: string | null
+          metadata?: Json
+          rpc?: string | null
+          severity?: string
+          slack_event_id?: string | null
+          status?: string
+        }
+        Update: {
+          channel_id?: string | null
+          command?: string | null
+          created_at?: string
+          error_message?: string | null
+          event_type?: string
+          id?: string
+          intent_type?: string | null
+          message_ts?: string | null
+          metadata?: Json
+          rpc?: string | null
+          severity?: string
+          slack_event_id?: string | null
+          status?: string
         }
         Relationships: []
       }
@@ -1941,6 +2073,84 @@ export type Database = {
           trigger_type?: string
           updated_at?: string | null
           variant_id?: string
+        }
+        Relationships: []
+      }
+      openclaw_slack_fallback_jobs: {
+        Row: {
+          attempts: number
+          available_at: string
+          claimed_at: string | null
+          claimed_by: string | null
+          completed_at: string | null
+          created_at: string
+          error: string | null
+          id: string
+          max_attempts: number
+          payload: Json
+          priority: number
+          response_text: string | null
+          slack_event_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          attempts?: number
+          available_at?: string
+          claimed_at?: string | null
+          claimed_by?: string | null
+          completed_at?: string | null
+          created_at?: string
+          error?: string | null
+          id?: string
+          max_attempts?: number
+          payload: Json
+          priority?: number
+          response_text?: string | null
+          slack_event_id: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          attempts?: number
+          available_at?: string
+          claimed_at?: string | null
+          claimed_by?: string | null
+          completed_at?: string | null
+          created_at?: string
+          error?: string | null
+          id?: string
+          max_attempts?: number
+          payload?: Json
+          priority?: number
+          response_text?: string | null
+          slack_event_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      openclaw_worker_heartbeats: {
+        Row: {
+          last_seen_at: string
+          metadata: Json
+          status: string
+          updated_at: string
+          worker_id: string
+        }
+        Insert: {
+          last_seen_at?: string
+          metadata?: Json
+          status?: string
+          updated_at?: string
+          worker_id: string
+        }
+        Update: {
+          last_seen_at?: string
+          metadata?: Json
+          status?: string
+          updated_at?: string
+          worker_id?: string
         }
         Relationships: []
       }
@@ -3480,6 +3690,57 @@ export type Database = {
       }
     }
     Views: {
+      counter_sales: {
+        Row: {
+          cashier_name: string | null
+          category: string | null
+          common_invoice_id: number | null
+          cost: number | null
+          cust_id: string | null
+          customer_email: string | null
+          customer_id: string | null
+          customer_name: string | null
+          customer_phone: string | null
+          description: string | null
+          each_price: number | null
+          ext_price: number | null
+          invoice_collect_amt: number | null
+          invoice_date: string | null
+          invoice_discount: number | null
+          invoice_handling_amt: number | null
+          invoice_id: number | null
+          invoice_line_no: number | null
+          invoice_no: number | null
+          invoice_number: number | null
+          invoice_subtotal: number | null
+          invoice_tax: number | null
+          is_resale: number | null
+          is_special_order: number | null
+          layaway_number: string | null
+          line_discount: number | null
+          line_total: number | null
+          major_unit_id: number | null
+          part_desc: string | null
+          part_description: string | null
+          part_no: string | null
+          part_number: string | null
+          po_number: string | null
+          price: number | null
+          qty: number | null
+          repair_order_id: number | null
+          sale_type_description: string | null
+          salesman_id: string | null
+          salesman_name: string | null
+          source: string | null
+          special_order_number: string | null
+          std_price: number | null
+          synced_at: string | null
+          warranty: number | null
+          weborder_number: string | null
+          weborder_partnumber: string | null
+        }
+        Relationships: []
+      }
       customer_lifecycle: {
         Row: {
           cell_phone: string | null
@@ -3527,6 +3788,7 @@ export type Database = {
           loyalty_customer: boolean | null
           phone: string | null
           province: string | null
+          total_repair_orders: number | null
           total_ros: number | null
           total_spend: number | null
         }
@@ -3619,6 +3881,57 @@ export type Database = {
           total_opens: number | null
           total_sequences: number | null
           unsubscribed: number | null
+        }
+        Relationships: []
+      }
+      invoice_lines: {
+        Row: {
+          cashier_name: string | null
+          category: string | null
+          common_invoice_id: number | null
+          cost: number | null
+          cust_id: string | null
+          customer_email: string | null
+          customer_id: string | null
+          customer_name: string | null
+          customer_phone: string | null
+          description: string | null
+          each_price: number | null
+          ext_price: number | null
+          invoice_collect_amt: number | null
+          invoice_date: string | null
+          invoice_discount: number | null
+          invoice_handling_amt: number | null
+          invoice_id: number | null
+          invoice_line_no: number | null
+          invoice_no: number | null
+          invoice_number: number | null
+          invoice_subtotal: number | null
+          invoice_tax: number | null
+          is_resale: number | null
+          is_special_order: number | null
+          layaway_number: string | null
+          line_discount: number | null
+          line_total: number | null
+          major_unit_id: number | null
+          part_desc: string | null
+          part_description: string | null
+          part_no: string | null
+          part_number: string | null
+          po_number: string | null
+          price: number | null
+          qty: number | null
+          repair_order_id: number | null
+          sale_type_description: string | null
+          salesman_id: string | null
+          salesman_name: string | null
+          source: string | null
+          special_order_number: string | null
+          std_price: number | null
+          synced_at: string | null
+          warranty: number | null
+          weborder_number: string | null
+          weborder_partnumber: string | null
         }
         Relationships: []
       }
@@ -3789,9 +4102,12 @@ export type Database = {
           cost: number | null
           cust_id: string | null
           customer_email: string | null
+          customer_id: string | null
           customer_name: string | null
           customer_phone: string | null
+          description: string | null
           each_price: number | null
+          ext_price: number | null
           invoice_collect_amt: number | null
           invoice_date: string | null
           invoice_discount: number | null
@@ -3799,6 +4115,7 @@ export type Database = {
           invoice_id: number | null
           invoice_line_no: number | null
           invoice_no: number | null
+          invoice_number: number | null
           invoice_subtotal: number | null
           invoice_tax: number | null
           is_resale: number | null
@@ -3808,7 +4125,9 @@ export type Database = {
           line_total: number | null
           major_unit_id: number | null
           part_desc: string | null
+          part_description: string | null
           part_no: string | null
+          part_number: string | null
           po_number: string | null
           price: number | null
           qty: number | null
@@ -3829,16 +4148,21 @@ export type Database = {
       service_history: {
         Row: {
           action_taken: string | null
+          close_date: string | null
           customer_approval: string | null
           customer_id: number | null
           customer_name: string | null
           date_completed: string | null
           date_completed_parsed: string | null
+          date_in: string | null
           date_sent: string | null
+          description: string | null
           job_description: string | null
           job_name: string | null
+          job_title: string | null
           labor_hours: number | null
           labor_total: number | null
+          open_date: string | null
           recommendations: string | null
           resolution: string | null
           ro_header_id: number | null
@@ -3847,8 +4171,13 @@ export type Database = {
           service_category: string | null
           service_writer: string | null
           technician: string | null
+          technician_name: string | null
+          technician_notes: string | null
           technotes: string | null
+          total_labor: number | null
+          total_parts: number | null
           unit: string | null
+          unit_description: string | null
           vin: string | null
           warranty_job: boolean | null
         }
@@ -3862,6 +4191,7 @@ export type Database = {
           ext_price: number | null
           job_description: string | null
           job_name: string | null
+          job_title: string | null
           part_description: string | null
           part_number: string | null
           price: number | null
@@ -3872,6 +4202,7 @@ export type Database = {
           service_writer: string | null
           source_code: string | null
           unit: string | null
+          unit_description: string | null
           vin: string | null
         }
         Relationships: []
@@ -3883,9 +4214,13 @@ export type Database = {
           color: string | null
           comments: string | null
           condition: string | null
+          customer_id: number | null
           date_gathered: string | null
           date_received: string | null
           dsrp: number | null
+          engine_make: string | null
+          engine_model: string | null
+          engine_serial: string | null
           exterior_color: string | null
           floor_layout: string | null
           fuel_type: string | null
@@ -3903,11 +4238,14 @@ export type Database = {
           msrp: number | null
           new_used: string | null
           odometer: string | null
+          serial_number: string | null
           stock_number: string | null
           synced_at: string | null
+          unit_id: number | null
           unit_status: string | null
           unit_type: string | null
           vin: string | null
+          year: number | null
         }
         Insert: {
           beam?: number | null
@@ -3915,9 +4253,13 @@ export type Database = {
           color?: string | null
           comments?: string | null
           condition?: string | null
+          customer_id?: never
           date_gathered?: string | null
           date_received?: string | null
           dsrp?: number | null
+          engine_make?: never
+          engine_model?: never
+          engine_serial?: never
           exterior_color?: string | null
           floor_layout?: string | null
           fuel_type?: string | null
@@ -3935,11 +4277,14 @@ export type Database = {
           msrp?: number | null
           new_used?: string | null
           odometer?: string | null
+          serial_number?: string | null
           stock_number?: string | null
           synced_at?: string | null
+          unit_id?: number | null
           unit_status?: string | null
           unit_type?: string | null
           vin?: string | null
+          year?: number | null
         }
         Update: {
           beam?: number | null
@@ -3947,9 +4292,13 @@ export type Database = {
           color?: string | null
           comments?: string | null
           condition?: string | null
+          customer_id?: never
           date_gathered?: string | null
           date_received?: string | null
           dsrp?: number | null
+          engine_make?: never
+          engine_model?: never
+          engine_serial?: never
           exterior_color?: string | null
           floor_layout?: string | null
           fuel_type?: string | null
@@ -3967,16 +4316,55 @@ export type Database = {
           msrp?: number | null
           new_used?: string | null
           odometer?: string | null
+          serial_number?: string | null
           stock_number?: string | null
           synced_at?: string | null
+          unit_id?: number | null
           unit_status?: string | null
           unit_type?: string | null
           vin?: string | null
+          year?: number | null
         }
         Relationships: []
       }
     }
     Functions: {
+      add_customer_memory: {
+        Args: {
+          p_category: string
+          p_created_by?: string
+          p_customer_id: string
+          p_customer_name: string
+          p_gateway_secret: string
+          p_raw_note: string
+          p_sensitivity?: string
+          p_source?: string
+          p_source_channel?: string
+          p_summary: string
+        }
+        Returns: {
+          category: string
+          created_at: string
+          customer_id: string
+          customer_name: string
+          id: string
+          sensitivity: string
+          summary: string
+          use_in_customer_messages: boolean
+          use_in_staff_brief: boolean
+        }[]
+      }
+      archive_customer_memory: {
+        Args: {
+          p_actor?: string
+          p_gateway_secret: string
+          p_memory_id: string
+        }
+        Returns: {
+          archived_at: string
+          id: string
+        }[]
+      }
       audit_orphaned_customer_data: {
         Args: never
         Returns: {
@@ -3996,6 +4384,21 @@ export type Database = {
         }
         Returns: boolean
       }
+      claim_openclaw_slack_fallback_jobs: {
+        Args: {
+          p_limit?: number
+          p_stale_after_seconds?: number
+          p_worker_id: string
+          p_worker_secret: string
+        }
+        Returns: {
+          attempts: number
+          claimed_at: string
+          id: string
+          payload: Json
+          slack_event_id: string
+        }[]
+      }
       cleanup_expired_sessions: { Args: never; Returns: number }
       cleanup_motor_duplicates_by_display: {
         Args: never
@@ -4011,8 +4414,277 @@ export type Database = {
           table_name: string
         }[]
       }
+      cleanup_openclaw_slack_fallback_jobs: {
+        Args: {
+          p_failed_days?: number
+          p_succeeded_days?: number
+          p_worker_secret: string
+        }
+        Returns: {
+          deleted_failed_or_dead: number
+          deleted_succeeded: number
+        }[]
+      }
+      complete_openclaw_slack_fallback_job: {
+        Args: {
+          p_id: string
+          p_response_text?: string
+          p_worker_secret: string
+        }
+        Returns: undefined
+      }
+      customer_brief: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          address1: string
+          address2: string
+          cell_phone: string
+          city: string
+          company_name: string
+          customer_id: number
+          customer_name: string
+          customer_type: string
+          email: string
+          first_service_date: string
+          home_phone: string
+          known_units: Json
+          last_service_date: string
+          lifetime_revenue: number
+          major_units: Json
+          match_rank: number
+          open_recommendations: Json
+          open_ro_count: number
+          open_ros: Json
+          phone: string
+          province: string
+          recent_service: Json
+          total_repair_orders: number
+          total_ros: number
+          total_spend: number
+          work_phone: string
+        }[]
+      }
+      customer_issue_history: {
+        Args: {
+          p_customer_query: string
+          p_issue_query: string
+          p_limit?: number
+        }
+        Returns: {
+          action_taken: string
+          customer_id: number
+          customer_name: string
+          date_completed: string
+          job_description: string
+          job_name: string
+          match_rank: number
+          recommendations: string
+          resolution: string
+          ro_number: string
+          ro_total: number
+          technician: string
+          unit: string
+          vin: string
+        }[]
+      }
+      customer_lookup: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          cell_phone: string
+          city: string
+          company_name: string
+          customer_id: number
+          customer_name: string
+          customer_type: string
+          email: string
+          first_service_date: string
+          home_phone: string
+          last_service_date: string
+          lifetime_revenue: number
+          loyalty_customer: boolean
+          match_rank: number
+          phone: string
+          province: string
+          total_repair_orders: number
+          total_ros: number
+          total_spend: number
+        }[]
+      }
+      customer_memory_lookup: {
+        Args: { p_customer_query: string; p_limit?: number }
+        Returns: {
+          category: string
+          confidence: string
+          created_at: string
+          created_by: string
+          customer_id: string
+          customer_name: string
+          id: string
+          last_used_at: string
+          match_rank: number
+          sensitivity: string
+          summary: string
+          use_in_customer_messages: boolean
+          use_in_staff_brief: boolean
+        }[]
+      }
+      customer_product_history: {
+        Args: {
+          p_customer_query: string
+          p_end_date?: string
+          p_limit?: number
+          p_product_query?: string
+          p_start_date?: string
+        }
+        Returns: {
+          activity_date: string
+          customer_name: string
+          document_label: string
+          document_no: string
+          ext_price: number
+          job_name: string
+          part_description: string
+          part_number: string
+          qty: number
+          source: string
+          staff_name: string
+          unit: string
+        }[]
+      }
+      customer_service_history: {
+        Args: {
+          p_customer_query: string
+          p_end_date: string
+          p_limit?: number
+          p_start_date: string
+        }
+        Returns: {
+          customer_id: number
+          customer_name: string
+          date_completed: string
+          job_name: string
+          labor_hours: number
+          labor_total: number
+          match_rank: number
+          recommendations: string
+          resolution: string
+          ro_number: string
+          ro_total: number
+          technician: string
+          unit: string
+          vin: string
+        }[]
+      }
+      customer_service_parts_used: {
+        Args: {
+          p_customer_query: string
+          p_end_date?: string
+          p_limit?: number
+          p_start_date?: string
+          p_unit_query?: string
+        }
+        Returns: {
+          customer_id: number
+          customer_name: string
+          date_completed: string
+          ext_price: number
+          job_name: string
+          match_rank: number
+          part_description: string
+          part_number: string
+          price: number
+          qty: number
+          ro_number: string
+          technician: string
+          unit: string
+          vin: string
+        }[]
+      }
+      customer_service_red_flags: {
+        Args: {
+          p_customer_query: string
+          p_end_date?: string
+          p_limit?: number
+          p_start_date?: string
+          p_unit_query?: string
+        }
+        Returns: {
+          action_taken: string
+          customer_id: number
+          customer_name: string
+          date_completed: string
+          job_description: string
+          job_name: string
+          labor_hours: number
+          match_rank: number
+          recommendations: string
+          resolution: string
+          ro_number: string
+          ro_total: number
+          signal_rank: number
+          signal_type: string
+          technician: string
+          unit: string
+          vin: string
+        }[]
+      }
+      customer_service_work_summary: {
+        Args: {
+          p_customer_query: string
+          p_end_date?: string
+          p_limit?: number
+          p_start_date?: string
+          p_unit_query?: string
+        }
+        Returns: {
+          action_taken: string
+          customer_id: number
+          customer_name: string
+          date_completed: string
+          job_description: string
+          job_name: string
+          labor_hours: number
+          labor_total: number
+          match_rank: number
+          recommendations: string
+          resolution: string
+          ro_number: string
+          ro_total: number
+          technician: string
+          unit: string
+          vin: string
+        }[]
+      }
       decrypt_sin: { Args: { sin_encrypted: string }; Returns: string }
       encrypt_sin: { Args: { sin_plaintext: string }; Returns: string }
+      enqueue_openclaw_slack_fallback_job: {
+        Args: {
+          p_available_at?: string
+          p_gateway_secret: string
+          p_payload: Json
+          p_priority?: number
+          p_slack_event_id: string
+        }
+        Returns: {
+          duplicate: boolean
+          id: string
+          status: string
+        }[]
+      }
+      fail_openclaw_slack_fallback_job: {
+        Args: {
+          p_error: string
+          p_id: string
+          p_retry_after_seconds?: number
+          p_worker_secret: string
+        }
+        Returns: {
+          attempts: number
+          available_at: string
+          id: string
+          status: string
+        }[]
+      }
       fix_auto_generated_model_numbers_comprehensive: {
         Args: never
         Returns: {
@@ -4068,7 +4740,63 @@ export type Database = {
         }
         Returns: boolean
       }
+      hbw_bot_admin_status: {
+        Args: never
+        Returns: {
+          dead_jobs: number
+          errors_1h: number
+          errors_24h: number
+          failed_jobs: number
+          generated_at: string
+          last_brief_at: string
+          last_brief_channel_id: string
+          last_brief_slack_ts: string
+          last_brief_status: string
+          last_error_at: string
+          last_event_at: string
+          last_worker_seen_at: string
+          pending_jobs: number
+          processing_jobs: number
+          stale_pending_jobs: number
+          stale_processing_jobs: number
+          worker_status: string
+        }[]
+      }
+      hbw_bot_recent_errors: {
+        Args: { p_limit?: number }
+        Returns: {
+          command: string
+          created_at: string
+          error_message: string
+          event_type: string
+          intent_type: string
+          rpc: string
+          severity: string
+          status: string
+        }[]
+      }
       is_admin: { Args: never; Returns: boolean }
+      last_service_summary: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          action_taken: string
+          customer_id: number
+          customer_name: string
+          date_completed: string
+          job_description: string
+          job_name: string
+          labor_hours: number
+          match_rank: number
+          parts: Json
+          recommendations: string
+          resolution: string
+          ro_number: string
+          ro_total: number
+          technician: string
+          unit: string
+          vin: string
+        }[]
+      }
       log_security_event: {
         Args: {
           _action: string
@@ -4081,12 +4809,276 @@ export type Database = {
         Returns: undefined
       }
       normalize_phone: { Args: { p: string }; Returns: string }
+      open_ro_brief: {
+        Args: { p_limit?: number; p_mode?: string }
+        Returns: {
+          category: string
+          customer_name: string
+          date_in: string
+          days_open: number
+          priority_rank: number
+          promised_date: string
+          ro_header_id: number
+          ro_no: string
+          status: string
+          synced_at: string
+          technicians: string
+          total_owed: number
+          unit_make: string
+          unit_model: string
+          unit_stock_number: string
+          unit_vin: string
+          unit_year: string
+          units_count: number
+        }[]
+      }
+      open_ro_detail: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          category: string
+          customer_name: string
+          date_in: string
+          days_open: number
+          match_rank: number
+          promised_date: string
+          ro_header_id: number
+          ro_no: string
+          status: string
+          synced_at: string
+          technicians: string
+          total_owed: number
+          unit_make: string
+          unit_model: string
+          unit_stock_number: string
+          unit_vin: string
+          unit_year: string
+          units_count: number
+        }[]
+      }
+      open_ro_lookup: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          category: string
+          customer_name: string
+          date_in: string
+          match_rank: number
+          promised_date: string
+          ro_header_id: number
+          ro_no: string
+          service_writer_name: string
+          status: string
+          synced_at: string
+          total_owed: number
+          unit_make: string
+          unit_model: string
+          unit_stock_number: string
+          unit_vin: string
+          unit_year: string
+          units_count: number
+        }[]
+      }
+      openclaw_queue_health: {
+        Args: { p_stale_after_minutes?: number }
+        Returns: {
+          dead_jobs: number
+          failed_jobs: number
+          last_worker_seen_at: string
+          oldest_pending_at: string
+          pending_jobs: number
+          processing_jobs: number
+          stale_pending_jobs: number
+          stale_processing_jobs: number
+          worker_status: string
+        }[]
+      }
+      part_lookup: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          active_price: number
+          available: number
+          bin1: string
+          bin2: string
+          category: string
+          cost: number
+          description: string
+          last_received_date: string
+          last_sold_date: string
+          match_rank: number
+          movement_code: string
+          on_hand: number
+          on_order: number
+          part_number: string
+          retail_price: number
+          superseded_to: string
+          supplier_code: string
+          supplier_name: string
+          synced_at: string
+          upc: string
+        }[]
+      }
+      part_lookup_context: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          active_price: number
+          available: number
+          bin1: string
+          bin2: string
+          category: string
+          cost: number
+          counter_qty_12m: number
+          description: string
+          invoice_qty_12m: number
+          last_counter_sale_date: string
+          last_received_date: string
+          last_service_sale_date: string
+          last_sold_date: string
+          match_rank: number
+          movement_code: string
+          on_hand: number
+          on_order: number
+          part_number: string
+          recent_sales: Json
+          retail_price: number
+          service_qty_12m: number
+          superseded_to: string
+          supplier_code: string
+          supplier_name: string
+          synced_at: string
+          upc: string
+        }[]
+      }
+      part_sales_summary: {
+        Args: {
+          p_end_date?: string
+          p_part_number: string
+          p_start_date?: string
+        }
+        Returns: {
+          counter_qty: number
+          counter_sales: number
+          current_available: number
+          current_on_hand: number
+          description: string
+          end_date: string
+          generated_at: string
+          invoice_lines: Json
+          invoice_qty: number
+          invoice_sales: number
+          last_sold_date: string
+          matched_part_number: string
+          query_part: string
+          retail_price: number
+          service_lines: Json
+          service_qty: number
+          service_sales: number
+          start_date: string
+          total_qty: number
+        }[]
+      }
+      record_hbw_bot_brief_receipt: {
+        Args: {
+          p_brief_type?: string
+          p_channel_id?: string
+          p_error_message?: string
+          p_gateway_secret: string
+          p_metadata?: Json
+          p_row_counts?: Json
+          p_slack_ts?: string
+          p_status?: string
+          p_text_length?: number
+        }
+        Returns: string
+      }
+      record_hbw_bot_event: {
+        Args: {
+          p_channel_id?: string
+          p_command?: string
+          p_error_message?: string
+          p_event_type: string
+          p_gateway_secret: string
+          p_intent_type?: string
+          p_message_ts?: string
+          p_metadata?: Json
+          p_rpc?: string
+          p_severity?: string
+          p_slack_event_id?: string
+          p_status?: string
+        }
+        Returns: string
+      }
+      record_openclaw_worker_heartbeat: {
+        Args: {
+          p_metadata?: Json
+          p_status?: string
+          p_worker_id: string
+          p_worker_secret: string
+        }
+        Returns: undefined
+      }
       search_knowledge: {
         Args: { match_count?: number; query_text: string }
         Returns: {
           category: string
           content: string
           topic: string
+        }[]
+      }
+      service_recommendation_followups: {
+        Args: { p_limit?: number; p_months_back?: number; p_query?: string }
+        Returns: {
+          cell_phone: string
+          city: string
+          customer_id: number
+          customer_name: string
+          email: string
+          home_phone: string
+          latest_recommendation_at: string
+          lifetime_revenue: number
+          open_ro_count: number
+          phone: string
+          priority_rank: number
+          province: string
+          recommendation_count: number
+          recommendations: Json
+          total_ros: number
+        }[]
+      }
+      service_recommendations_due: {
+        Args: { p_limit?: number; p_months_back?: number; p_query?: string }
+        Returns: {
+          customer_id: number
+          customer_name: string
+          date_completed: string
+          job_name: string
+          recommendations: string
+          ro_number: string
+          ro_total: number
+          service_writer: string
+          technician: string
+          unit: string
+          vin: string
+        }[]
+      }
+      service_ro_detail: {
+        Args: { p_limit?: number; p_ro_number: string }
+        Returns: {
+          action_taken: string
+          customer_id: number
+          customer_name: string
+          date_completed: string
+          job_description: string
+          job_name: string
+          labor_hours: number
+          labor_total: number
+          match_rank: number
+          parts: Json
+          recommendations: string
+          resolution: string
+          ro_number: string
+          ro_total: number
+          technician: string
+          unit: string
+          vin: string
         }[]
       }
       test_single_motor_insert: {
@@ -4096,6 +5088,26 @@ export type Database = {
           p_model_number: string
         }
         Returns: string
+      }
+      unit_inventory_lookup: {
+        Args: { p_limit?: number; p_query?: string }
+        Returns: {
+          availability_status: string
+          available_for_sale: boolean
+          comments: string
+          hp: number
+          make: string
+          match_rank: number
+          model: string
+          model_year: number
+          new_used: string
+          price: number
+          source: string
+          stock_number: string
+          synced_at: string
+          unit_status: string
+          vin: string
+        }[]
       }
       update_brochure_models_bulk: { Args: { p_rows: Json }; Returns: number }
       update_brochure_models_bulk_v2: {
@@ -4117,6 +5129,10 @@ export type Database = {
       validate_user_data_access: {
         Args: { _record_id: string; _table_name: string }
         Returns: boolean
+      }
+      verify_openclaw_worker_secret: {
+        Args: { p_worker_secret: string }
+        Returns: undefined
       }
     }
     Enums: {
