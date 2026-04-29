@@ -41,7 +41,15 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const formRef = useRef<HTMLDivElement>(null);
   const { triggerHaptic } = useHapticFeedback();
   const autoEstimateTriggered = useRef(false);
-  
+
+  // Manual overrides for the decoded HP / Stroke chips. `undefined` means
+  // "no override — use parser value". `null` clears a parser value.
+  const [decodeOverride, setDecodeOverride] = useState<{
+    hp?: number | null;
+    stroke?: '4-Stroke' | '2-Stroke' | 'OptiMax' | null;
+  }>({});
+  const [hpOverrideInput, setHpOverrideInput] = useState<string>('');
+
   // Fetch trade valuation data from Supabase (with fallback to hardcoded values)
   const { data: valuationData } = useTradeValuationData();
 
@@ -49,6 +57,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const applyModelText = (raw: string) => {
     setEstimate(null);
     autoEstimateTriggered.current = false;
+    setDecodeOverride({}); // fresh model text → drop any prior overrides
     const trimmed = raw.trim();
     const numericOnly = /^\d+(\.\d+)?$/.test(trimmed);
     onTradeInChange({
@@ -57,6 +66,49 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       horsepower: numericOnly ? parseFloat(trimmed) : 0,
     });
   };
+
+  const strokeToEngineType = (s: '4-Stroke' | '2-Stroke' | 'OptiMax' | null | undefined):
+    '4-stroke' | '2-stroke' | 'optimax' | undefined => {
+    if (s === '4-Stroke') return '4-stroke';
+    if (s === '2-Stroke') return '2-stroke';
+    if (s === 'OptiMax') return 'optimax';
+    return undefined;
+  };
+
+  const commitHpOverride = (n: number | null) => {
+    setEstimate(null);
+    autoEstimateTriggered.current = false;
+    setDecodeOverride((prev) => ({ ...prev, hp: n }));
+    if (n !== null) {
+      onTradeInChange({ ...tradeInInfo, horsepower: n });
+    }
+  };
+
+  const commitStrokeOverride = (s: '4-Stroke' | '2-Stroke' | 'OptiMax' | null) => {
+    setEstimate(null);
+    autoEstimateTriggered.current = false;
+    setDecodeOverride((prev) => ({ ...prev, stroke: s }));
+    const et = strokeToEngineType(s);
+    onTradeInChange({ ...tradeInInfo, engineType: et });
+  };
+
+  const clearHpOverride = () => {
+    setEstimate(null);
+    setDecodeOverride((prev) => {
+      const { hp, ...rest } = prev;
+      return rest;
+    });
+  };
+
+  const clearStrokeOverride = () => {
+    setEstimate(null);
+    setDecodeOverride((prev) => {
+      const { stroke, ...rest } = prev;
+      return rest;
+    });
+    onTradeInChange({ ...tradeInInfo, engineType: undefined });
+  };
+
 
   // Auto-scroll to form when "Yes, I have a trade-in" is clicked
   useEffect(() => {
