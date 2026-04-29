@@ -416,22 +416,30 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-hp" className="text-sm font-light tracking-wide text-gray-900">
-                    Horsepower *
+                  <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-gray-900">
+                    Model or HP *
                   </Label>
                   <Input
-                    id="trade-hp"
-                    type="number"
-                    step="0.1"
-                    value={tradeInInfo.horsepower || ''}
+                    id="trade-model"
+                    type="text"
+                    value={tradeInInfo.model || (tradeInInfo.horsepower ? String(tradeInInfo.horsepower) : '')}
                     onChange={(e) => {
+                      const raw = e.target.value;
                       setEstimate(null);
                       autoEstimateTriggered.current = false;
-                      onTradeInChange({ ...tradeInInfo, horsepower: parseFloat(e.target.value) || 0 });
+                      // If the user typed a plain number, mirror it into
+                      // horsepower so existing local-fallback math keeps
+                      // working. Otherwise rely on the API decoder.
+                      const trimmed = raw.trim();
+                      const numericOnly = /^\d+(\.\d+)?$/.test(trimmed);
+                      onTradeInChange({
+                        ...tradeInInfo,
+                        model: raw,
+                        horsepower: numericOnly ? parseFloat(trimmed) : 0,
+                      });
                     }}
-                    placeholder="e.g., 9.9 or 115"
-                    min="1"
-                    max="600"
+                    placeholder="e.g. 150 ELPT, F115LB, or just 150"
+                    maxLength={120}
                     className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.horsepower 
                         ? 'border-red-500 ring-1 ring-red-500' 
@@ -445,14 +453,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
                 <div className="space-y-2">
                   <Label htmlFor="trade-engine-type" className="text-sm font-light tracking-wide text-gray-900">
-                    Engine Type
+                    Engine Type (optional)
                   </Label>
                   <Select 
                     value={tradeInInfo.engineType || ''} 
                     onValueChange={(value) => onTradeInChange({ ...tradeInInfo, engineType: value as TradeInInfo['engineType'] })}
                   >
                     <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
-                      <SelectValue placeholder="Select engine type" />
+                      <SelectValue placeholder="Auto-detect from model" />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="4-stroke" className="font-light">4-Stroke</SelectItem>
