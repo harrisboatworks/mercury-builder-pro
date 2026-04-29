@@ -668,7 +668,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                           hp: tradeInInfo.horsepower,
                           condition: tradeInInfo.condition,
                           hours: tradeInInfo.engineHours,
-                          hours: tradeInInfo.engineHours,
                           model: tradeInInfo.model,
                           name: customerName || undefined,
                         })}
