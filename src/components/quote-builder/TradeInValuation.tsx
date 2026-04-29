@@ -53,12 +53,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     }
   }, [tradeInInfo.hasTradeIn]);
 
+  // A "model or hp" identifier counts as filled when either model text exists
+  // or a numeric HP has been parsed from it.
+  const hasModelOrHp = Boolean((tradeInInfo.model && tradeInInfo.model.trim()) || tradeInInfo.horsepower);
+
   // Clear validation when all required fields are filled
   useEffect(() => {
-    if (showValidation && tradeInInfo.brand && tradeInInfo.year && tradeInInfo.horsepower && tradeInInfo.condition) {
+    if (showValidation && tradeInInfo.brand && tradeInInfo.year && hasModelOrHp && tradeInInfo.condition) {
       setShowValidation(false);
     }
-  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition, showValidation]);
+  }, [tradeInInfo.brand, tradeInInfo.year, hasModelOrHp, tradeInInfo.condition, showValidation]);
 
   // Reset estimate when fields change so button is shown again
   useEffect(() => {
@@ -66,14 +70,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       setEstimate(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.condition]);
+  }, [tradeInInfo.brand, tradeInInfo.year, tradeInInfo.horsepower, tradeInInfo.model, tradeInInfo.condition]);
 
 
   // Check if required fields are missing
   const missingFields = {
     brand: !tradeInInfo.brand,
     year: !tradeInInfo.year,
-    horsepower: !tradeInInfo.horsepower,
+    horsepower: !hasModelOrHp,
     condition: !tradeInInfo.condition
   };
   const hasMissingFields = Object.values(missingFields).some(Boolean);
