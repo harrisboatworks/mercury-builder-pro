@@ -497,10 +497,41 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     const raw = (tradeInInfo.model || '').trim();
                     if (!raw) return null;
                     const decoded = decodeTradeInModel(raw, { brand: tradeInInfo.brand, year: tradeInInfo.year });
-                    const { hp, stroke, hpConfidence, strokeConfidence, hpReasons, strokeReasons, warnings, suggestions } = decoded;
+
+                    // Apply manual overrides
+                    const hpOverridden = decodeOverride.hp !== undefined;
+                    const strokeOverridden = decodeOverride.stroke !== undefined;
+                    const hp = hpOverridden ? decodeOverride.hp! : decoded.hp;
+                    const stroke = strokeOverridden ? decodeOverride.stroke! : decoded.stroke;
+                    const hpConfidence: Confidence = hpOverridden ? 'high' : decoded.hpConfidence;
+                    const strokeConfidence: Confidence = strokeOverridden ? 'high' : decoded.strokeConfidence;
+
+                    // Recompute warnings/suggestions to drop entries the user resolved
+                    let warnings = decoded.warnings;
+                    if (hpOverridden) {
+                      warnings = warnings.filter((w) => !/HP|Multiple numbers|outside typical/i.test(w));
+                    }
+                    if (strokeOverridden) {
+                      warnings = warnings.filter((w) => !/stroke/i.test(w));
+                    }
+                    let suggestions = decoded.suggestions;
+                    if (hpOverridden) suggestions = [];
+
+                    const hpReasons = hpOverridden
+                      ? ['Manually set by you (click chip again to clear)']
+                      : decoded.hpReasons;
+                    const strokeReasons = strokeOverridden
+                      ? ['Manually set by you (click chip again to clear)']
+                      : decoded.strokeReasons;
+
                     if (!hp && !stroke && warnings.length === 0 && suggestions.length === 0) return null;
 
-                    const chipClass = (conf: Confidence, base: 'hp' | 'stroke') => {
+                    const chipClass = (conf: Confidence, base: 'hp' | 'stroke', overridden: boolean) => {
+                      if (overridden) {
+                        return base === 'hp'
+                          ? 'bg-primary/10 text-primary border border-primary/30'
+                          : 'bg-slate-100 text-slate-700 border border-slate-300';
+                      }
                       if (conf === 'high') {
                         return base === 'hp'
                           ? 'bg-primary/10 text-primary border border-primary/20'
@@ -511,26 +542,95 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       }
                       return 'bg-muted/50 text-muted-foreground border border-dashed border-border';
                     };
-                    const prefix = (conf: Confidence) =>
-                      conf === 'high' ? '' : conf === 'medium' ? '~ ' : '? ';
-                    const badgeFor = (conf: Confidence) => {
+                    const prefix = (conf: Confidence, overridden: boolean) =>
+                      overridden ? '' : conf === 'high' ? '' : conf === 'medium' ? '~ ' : '? ';
+                    const badgeFor = (conf: Confidence, overridden: boolean) => {
+                      if (overridden) return { label: 'Manual', cls: 'bg-slate-100 text-slate-700 border-slate-300' };
                       if (conf === 'high') return { label: 'High', cls: 'bg-emerald-100 text-emerald-700 border-emerald-200' };
                       if (conf === 'medium') return { label: 'Medium', cls: 'bg-amber-100 text-amber-700 border-amber-200' };
                       if (conf === 'low') return { label: 'Low', cls: 'bg-rose-100 text-rose-700 border-rose-200' };
                       return null;
                     };
-                    const hpBadge = hp !== null ? badgeFor(hpConfidence) : null;
-                    const strokeBadge = stroke ? badgeFor(strokeConfidence) : null;
+                    const hpBadge = hp !== null ? badgeFor(hpConfidence, hpOverridden) : null;
+                    const strokeBadge = stroke ? badgeFor(strokeConfidence, strokeOverridden) : null;
                     const hasReasons = hpReasons.length > 0 || strokeReasons.length > 0;
+
+                    const baseHp = hp ?? 25;
+                    const quickHps = Array.from(new Set(
+                      [baseHp - 25, baseHp - 10, baseHp, baseHp + 10, baseHp + 25]
+                        .map((n) => Math.max(2, Math.min(450, Math.round(n))))
+                    ));
 
                     return (
                       <div className="mt-1.5 space-y-1.5">
                         <div className="flex flex-wrap items-center gap-1.5">
                           {hp !== null && (
                             <span className="inline-flex items-center gap-1">
-                              <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(hpConfidence, 'hp')}`}>
-                                {prefix(hpConfidence)}{hp} HP
-                              </span>
+                              <Popover onOpenChange={(open) => { if (open) setHpOverrideInput(String(hp)); }}>
+                                <PopoverTrigger asChild>
+                                  <button
+                                    type="button"
+                                    aria-label="Override detected HP"
+                                    title="Click to override detected HP"
+                                    className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium transition-colors hover:brightness-95 ${chipClass(hpConfidence, 'hp', hpOverridden)}`}
+                                  >
+                                    {prefix(hpConfidence, hpOverridden)}{hp} HP
+                                    <Pencil className="h-3 w-3 opacity-70" aria-hidden="true" />
+                                  </button>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-64 p-3 space-y-2" align="start">
+                                  <div className="text-xs font-medium">Override HP</div>
+                                  <div className="flex items-center gap-1.5">
+                                    <Input
+                                      type="number"
+                                      min={2}
+                                      max={450}
+                                      step="0.1"
+                                      value={hpOverrideInput}
+                                      onChange={(e) => setHpOverrideInput(e.target.value)}
+                                      onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                          const n = parseFloat(hpOverrideInput);
+                                          if (!isNaN(n) && n >= 2 && n <= 450) commitHpOverride(n);
+                                        }
+                                      }}
+                                      className="h-8 text-sm"
+                                    />
+                                    <Button
+                                      type="button"
+                                      size="sm"
+                                      className="h-8"
+                                      onClick={() => {
+                                        const n = parseFloat(hpOverrideInput);
+                                        if (!isNaN(n) && n >= 2 && n <= 450) commitHpOverride(n);
+                                      }}
+                                    >
+                                      Apply
+                                    </Button>
+                                  </div>
+                                  <div className="flex flex-wrap gap-1">
+                                    {quickHps.map((q) => (
+                                      <button
+                                        key={q}
+                                        type="button"
+                                        onClick={() => commitHpOverride(q)}
+                                        className="inline-flex items-center rounded-full border border-border bg-background px-2 py-0.5 text-xs hover:bg-muted"
+                                      >
+                                        {q}
+                                      </button>
+                                    ))}
+                                  </div>
+                                  {hpOverridden && (
+                                    <button
+                                      type="button"
+                                      onClick={clearHpOverride}
+                                      className="text-xs text-muted-foreground underline hover:text-foreground"
+                                    >
+                                      Clear override
+                                    </button>
+                                  )}
+                                </PopoverContent>
+                              </Popover>
                               {hpBadge && (
                                 <span className={`inline-flex items-center rounded-full border px-1.5 py-0 text-[10px] font-medium uppercase tracking-wide ${hpBadge.cls}`}>
                                   {hpBadge.label}
@@ -538,11 +638,43 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                               )}
                             </span>
                           )}
-                          {stroke && (
+                          {(stroke || hp !== null) && (
                             <span className="inline-flex items-center gap-1">
-                              <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${chipClass(strokeConfidence, 'stroke')}`}>
-                                {prefix(strokeConfidence)}{stroke}
-                              </span>
+                              <Popover>
+                                <PopoverTrigger asChild>
+                                  <button
+                                    type="button"
+                                    aria-label="Override detected stroke type"
+                                    title="Click to override detected stroke"
+                                    className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium transition-colors hover:brightness-95 ${chipClass(strokeConfidence, 'stroke', strokeOverridden)}`}
+                                  >
+                                    {stroke ? `${prefix(strokeConfidence, strokeOverridden)}${stroke}` : 'Set stroke'}
+                                    <Pencil className="h-3 w-3 opacity-70" aria-hidden="true" />
+                                  </button>
+                                </PopoverTrigger>
+                                <PopoverContent className="w-48 p-2 space-y-1" align="start">
+                                  <div className="text-xs font-medium px-1 pb-1">Override stroke</div>
+                                  {(['4-Stroke', '2-Stroke', 'OptiMax'] as const).map((s) => (
+                                    <button
+                                      key={s}
+                                      type="button"
+                                      onClick={() => commitStrokeOverride(s)}
+                                      className={`block w-full text-left rounded-sm px-2 py-1 text-sm hover:bg-muted ${stroke === s ? 'bg-muted font-medium' : ''}`}
+                                    >
+                                      {s}
+                                    </button>
+                                  ))}
+                                  {strokeOverridden && (
+                                    <button
+                                      type="button"
+                                      onClick={clearStrokeOverride}
+                                      className="block w-full text-left rounded-sm px-2 py-1 text-xs text-muted-foreground underline hover:text-foreground"
+                                    >
+                                      Clear override
+                                    </button>
+                                  )}
+                                </PopoverContent>
+                              </Popover>
                               {strokeBadge && (
                                 <span className={`inline-flex items-center rounded-full border px-1.5 py-0 text-[10px] font-medium uppercase tracking-wide ${strokeBadge.cls}`}>
                                   {strokeBadge.label}
@@ -552,7 +684,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                           )}
                           {(hp !== null || stroke) && (
                             <span className="text-xs text-muted-foreground font-light self-center">
-                              (auto-detected)
+                              {(hpOverridden || strokeOverridden) ? '(manual override)' : '(auto-detected — click to edit)'}
                             </span>
                           )}
                         </div>
