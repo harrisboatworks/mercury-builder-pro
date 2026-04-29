@@ -99,17 +99,22 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const handleGetEstimate = async () => {
     console.log('Getting estimate - Current tradeInInfo:', tradeInInfo);
     
-    if (!tradeInInfo.brand || !tradeInInfo.year || !tradeInInfo.horsepower || !tradeInInfo.condition) {
+    if (!tradeInInfo.brand || !tradeInInfo.year || !hasModelOrHp || !tradeInInfo.condition) {
       console.log('Missing required fields');
       return;
     }
 
     setIsLoading(true);
 
-    // Map engine type to stroke for HBW API
-    const strokeType = tradeInInfo.engineType === '2-stroke' ? '2-stroke'
-      : tradeInInfo.engineType === 'optimax' ? '2-stroke'
-      : '4-stroke';
+    // Stroke is now an optional override — when the user picked one we forward
+    // it, otherwise let the HBW API infer it from the model code.
+    const explicitStroke = tradeInInfo.engineType === '2-stroke'
+      ? '2-stroke'
+      : tradeInInfo.engineType === 'optimax'
+        ? 'optimax'
+        : tradeInInfo.engineType === '4-stroke'
+          ? '4-stroke'
+          : undefined;
 
     // Try HBW API first
     const hbwResult = await fetchHBWValuation({
@@ -117,7 +122,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       year: tradeInInfo.year,
       horsepower: tradeInInfo.horsepower,
       condition: tradeInInfo.condition,
-      stroke: strokeType,
+      stroke: explicitStroke,
       hours: tradeInInfo.engineHours,
       model: tradeInInfo.model,
     });
