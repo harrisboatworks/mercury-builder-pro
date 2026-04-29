@@ -25,6 +25,7 @@ import { GoogleRatingBadge } from "@/components/business/GoogleRatingBadge";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SoundProvider } from "@/contexts/SoundContext";
 import { useAuth } from "@/components/auth/AuthProvider";
+import { lazyWithRetry } from "@/lib/lazyWithRetry";
 
 // Note: Removed framer-motion AnimatePresence (~120KB) to reduce initial bundle
 // Page transitions now use CSS instead of JavaScript animations
@@ -111,7 +112,10 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const TikTokCallback = lazy(() => import("./pages/TikTokCallback"));
 const MotorRedirect = lazy(() => import("./pages/MotorRedirect"));
 const MotorPage = lazy(() => import("./pages/MotorPage"));
-const TradeInValuePage = lazy(() => import("./pages/TradeInValuePage"));
+const TradeInValuePage = lazyWithRetry(
+  () => import("./pages/TradeInValuePage"),
+  "TradeInValuePage"
+);
 const FrenchLanding = lazy(() => import("./pages/FrenchLanding"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const CaseStudyDetail = lazy(() => import("./pages/CaseStudyDetail"));

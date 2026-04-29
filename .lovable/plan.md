@@ -1,31 +1,48 @@
 ## Goal
 
-Persist user inputs on the standalone `/trade-in-value` form so that a refresh or back-navigation restores everything (brand, year, model/HP text, condition, hours, serial, and the last computed estimate).
+Prevent `/trade-in-value` from rendering a stale 404 when:
+- A new deploy ships and the user's already-loaded HTML references chunk hashes that no longer exist on the CDN (the lazy import throws → currently bubbles up and can fall through to the `*` route's `NotFound`).
+- A preview refresh briefly races a rolling deploy.
+
+The route exists in `src/App.tsx` (`/trade-in-value` → `lazy(() => import("./pages/TradeInValuePage"))`), so this is purely a chunk-load resilience problem, not a routing problem.
 
 ## Approach
 
-Use `localStorage` with a dedicated key (`tradeInValuePage:draft`) scoped to the standalone page only. The in-quote `/quote/trade-in` page already persists through the QuoteContext, so it doesn't need a separate draft.
+Add a small `lazyWithRetry` helper and apply it to the trade-in route (and we can later opt other high-traffic public routes in the same way).
 
 ### Changes
 
-**1. `src/pages/TradeInValuePage.tsx`**
+**1. New file: `src/lib/lazyWithRetry.ts`**
 
-- On mount, hydrate `tradeInInfo` from `localStorage.getItem('tradeInValuePage:draft')` if present (merged over `INITIAL_TRADE_IN` for safety on schema drift).
-- Add a `useEffect` that writes `tradeInInfo` to `localStorage` whenever it changes (debounced ~300ms via `setTimeout`/cleanup to avoid thrash on every keystroke).
-- On `handleStartQuote`, after pushing into `quoteBuilder` localStorage, clear the draft key so it doesn't shadow the quote flow next visit.
-- Add a small "Clear" link/button next to the form heading area only when a draft was restored, so users can wipe saved inputs (optional but low effort — include it).
+Wraps `React.lazy` with:
+- Up to 2 retries with brief backoff (200ms, 400ms) on dynamic-import failure.
+- If retries fail AND the error looks like a chunk-load error (`Loading chunk`, `Failed to fetch dynamically imported module`, `Importing a module script failed`, `ChunkLoadError`), force a **one-time** `window.location.reload()` guarded by a `sessionStorage` flag (`chunkReload:<key>`) to prevent reload loops.
+- After the reload trigger, return a never-resolving promise so Suspense keeps showing the route loader instead of bubbling the error to the catch-all `NotFound` route.
+- Clears the sessionStorage flag on a successful load so the next stale-deploy can reload again.
 
-**2. Restore UX signal**
+**2. `src/App.tsx`**
 
-- When draft is restored on mount, briefly show a subtle inline note: "Restored your previous entries" (auto-hide after ~3s) using existing toast or a local state flag rendered above the form.
+- Import `lazyWithRetry`.
+- Change the `TradeInValuePage` lazy declaration from:
+  ```ts
+  const TradeInValuePage = lazy(() => import("./pages/TradeInValuePage"));
+  ```
+  to:
+  ```ts
+  const TradeInValuePage = lazyWithRetry(
+    () => import("./pages/TradeInValuePage"),
+    "TradeInValuePage"
+  );
+  ```
 
-### Edge cases handled
+That's it — no router config changes, no NotFound changes, no service-worker work needed. Existing `<Suspense fallback={<RouteLoader />}>` continues to cover the load.
 
-- Corrupt/invalid JSON in localStorage → wrapped in try/catch, falls back to `INITIAL_TRADE_IN`.
-- Schema additions later → spread over defaults so missing fields don't break the form.
-- Estimate value is persisted too, so the CTA card ("Ready to see how much you'll save…") reappears after refresh without re-running the API call.
+### Why this works
+
+- Vercel's SPA fallback already serves `index.html` for unknown paths, so the URL itself is never 404. The real failure mode is the JS chunk 404 after a deploy, which the retry+reload pattern handles correctly.
+- The `sessionStorage` flag prevents an infinite reload if the failure is unrelated to a stale deploy (e.g., user is offline).
 
 ### Out of scope
 
-- The in-quote `/quote/trade-in` page (already persisted via QuoteContext + `quoteBuilder` localStorage).
-- Server-side draft persistence (not needed for this lightweight standalone form).
+- Other lazy-loaded routes — easy to migrate later by swapping `lazy(...)` → `lazyWithRetry(..., "Name")`. Keeping this PR scoped to the trade-in route as requested.
+- Service worker / offline handling.
