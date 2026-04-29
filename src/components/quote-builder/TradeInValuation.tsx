@@ -106,23 +106,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
     setIsLoading(true);
 
-    // Stroke is now an optional override — when the user picked one we forward
-    // it, otherwise let the HBW API infer it from the model code.
-    const explicitStroke = tradeInInfo.engineType === '2-stroke'
-      ? '2-stroke'
-      : tradeInInfo.engineType === 'optimax'
-        ? 'optimax'
-        : tradeInInfo.engineType === '4-stroke'
-          ? '4-stroke'
-          : undefined;
-
-    // Try HBW API first
+    // Stroke is always inferred by the HBW API from the model code.
     const hbwResult = await fetchHBWValuation({
       brand: tradeInInfo.brand,
       year: tradeInInfo.year,
       horsepower: tradeInInfo.horsepower,
       condition: tradeInInfo.condition,
-      stroke: explicitStroke,
       hours: tradeInInfo.engineHours,
       model: tradeInInfo.model,
     });
@@ -165,15 +154,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     
     // Update the trade-in info with the rounded median value ($25 increments)
     const finalValue = medianRoundedTo25(tradeEstimate.low, tradeEstimate.high);
-    // Build report URL for persistence
-    const stroke = tradeInInfo.engineType === '2-stroke' || tradeInInfo.engineType === 'optimax' ? '2-stroke' : '4-stroke';
+    // Build report URL for persistence — let the API decode stroke from model.
     const reportUrl = (tradeEstimate as HBWValuationResult).fromHBW
       ? buildHBWReportUrl({
           brand: tradeInInfo.brand,
           year: tradeInInfo.year,
           hp: tradeInInfo.horsepower,
           condition: tradeInInfo.condition,
-          stroke,
           hours: tradeInInfo.engineHours,
           model: tradeInInfo.model,
           name: customerName || undefined,
@@ -486,25 +473,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     );
                   })()}
                 </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="trade-engine-type" className="text-sm font-light tracking-wide text-gray-900">
-                    Engine Type (optional)
-                  </Label>
-                  <Select 
-                    value={tradeInInfo.engineType || ''} 
-                    onValueChange={(value) => onTradeInChange({ ...tradeInInfo, engineType: value as TradeInInfo['engineType'] })}
-                  >
-                    <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
-                      <SelectValue placeholder="Auto-detect from model" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="4-stroke" className="font-light">4-Stroke</SelectItem>
-                      <SelectItem value="2-stroke" className="font-light">2-Stroke</SelectItem>
-                      <SelectItem value="optimax" className="font-light">OptiMax</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
               </div>
 
               {/* Condition Selection */}
@@ -699,7 +667,6 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                           year: tradeInInfo.year,
                           hp: tradeInInfo.horsepower,
                           condition: tradeInInfo.condition,
-                          stroke: tradeInInfo.engineType === '2-stroke' || tradeInInfo.engineType === 'optimax' ? '2-stroke' : '4-stroke',
                           hours: tradeInInfo.engineHours,
                           model: tradeInInfo.model,
                           name: customerName || undefined,
