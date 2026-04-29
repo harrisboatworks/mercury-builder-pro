@@ -690,16 +690,11 @@ export async function fetchHBWValuation(params: {
   model?: string;
 }): Promise<HBWValuationResult | null> {
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 8000);
+    // Lazy import to avoid pulling the supabase client into non-React contexts
+    const { supabase } = await import('@/integrations/supabase/client');
 
-    const res = await fetch('https://hbw-valuation-hbw.vercel.app/api/motor-valuation', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-API-Key': 'hbw-val-44489cc7ed5d13d2cebcd5fc143fa249',
-      },
-      body: JSON.stringify({
+    const { data, error } = await supabase.functions.invoke('hbw-valuation-proxy', {
+      body: {
         brand: params.brand,
         year: params.year,
         hp: params.horsepower,
@@ -707,25 +702,33 @@ export async function fetchHBWValuation(params: {
         stroke: params.stroke || '4-stroke',
         hours: params.hours,
         model: params.model,
-      }),
-      signal: controller.signal,
+      },
     });
 
-    clearTimeout(timeout);
+    if (error) {
+      console.warn('HBW valuation proxy error, using local fallback:', error);
+      return null;
+    }
+    if (!data || typeof data !== 'object' || (data as any).error) {
+      console.warn('HBW valuation proxy returned error payload:', data);
+      return null;
+    }
 
-    if (!res.ok) return null;
-
-    const data: HBWValuationResponse = await res.json();
+    const v = data as HBWValuationResponse;
+    if (typeof v.rangeLow !== 'number' || typeof v.rangeHigh !== 'number') {
+      console.warn('HBW valuation proxy returned unexpected shape:', data);
+      return null;
+    }
 
     return {
-      low: data.rangeLow,
-      high: data.rangeHigh,
-      average: data.wholesale,
-      confidence: data.confidence,
+      low: v.rangeLow,
+      high: v.rangeHigh,
+      average: v.wholesale,
+      confidence: v.confidence,
       source: 'HBW Motor Valuation API',
-      factors: data.factors || [],
-      listingValue: data.listing,
-      hstSavings: data.hstSavings,
+      factors: v.factors || [],
+      listingValue: v.listing,
+      hstSavings: v.hstSavings,
       fromHBW: true,
     };
   } catch (err) {

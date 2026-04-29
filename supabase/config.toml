@@ -213,6 +213,9 @@ verify_jwt = false
 [functions.public-quote-api]
 verify_jwt = false
 
+[functions.hbw-valuation-proxy]
+verify_jwt = false
+
 [functions.agent-mcp-server]
 verify_jwt = false
 
