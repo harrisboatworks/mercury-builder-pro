@@ -1,60 +1,48 @@
-## Status check first
+# Unify Trade-In Valuation on HBW API
 
-- ✅ **FAQ on /quote/motor-selection** — already shipped as `MotorSelectionFAQ.tsx` last turn (includes the exact "Can I build a Mercury outboard quote online in Ontario?" Q&A, CAD + pickup-only notes, and FAQPage JSON-LD). **No work needed.**
-- ✅ **Model-aware Ontario/CAD/dealer-since-1965 paragraphs** on the 9.9, 60 CT, 150 Pro XS pages — already in `MotorPage.tsx` (lines 248-273).
-- ❌ **Related Motors strip + secondary "Get a quote online" CTA + Rice Lake link card** on those three pages — not done yet. This is the real remaining gap.
+All three calculators (frontend, standalone, public-quote-api) will return identical values by routing through one HBW proxy. API key stays server-side. Model code (e.g. `90 ELPT`) passes through.
 
-## What I'll add to `src/pages/MotorPage.tsx`
+## Why three values today
 
-A single new component block, rendered only for the three target motors (9.9 FourStroke, 60 Command Thrust, 150 Pro XS), placed right after the existing model-aware paragraph. Keeps the file change small and won't disturb the prerender or other ~40 motor pages.
+- **Frontend $7,050** — `src/components/quote-builder/TradeInValuation.tsx` calls `fetchHBWValuation()` in `src/lib/trade-valuation.ts:683`. It tries the HBW API but **hardcodes the key in browser code** (line 700). On any failure it silently falls back to local MSRP-anchored math (`estimateTradeValue`) — which is almost certainly what's producing $7,050 vs the canonical $6,400.
+- **Standalone $6,400** — direct hit on `hbw-valuation-hbw.vercel.app/api/motor-valuation`. Source of truth.
+- **public-quote-api $2,189** — `ballparkTradeValue()` at `supabase/functions/public-quote-api/index.ts:206`, a crude `hp × $40 × age × condition` formula with no MSRP awareness.
 
-### 1. New `RelatedMotorsAndCTA` inline component (in same file, no new file needed)
+## Changes
 
-A 3-card grid:
+### 1. Add secret (you handle this)
+You're rotating the key and adding `HBW_API_KEY` to Supabase secrets + Vercel env. I won't deploy code that depends on it until you confirm it's set.
 
-- **Card 1 — Build a Quote (primary CTA card)**: Headline "Build your Mercury {hp} HP quote online", one line of CAD/pickup-only copy, big primary button → `/quote/motor-selection?motor={motor.id}`. This is the second, more prominent CTA the user asked for.
-- **Card 2 — Rice Lake repower context**: Headline "Repowering on Rice Lake?", short copy ("90 min east of Toronto, Mercury Platinum Dealer since 1965, pickup at Gores Landing"), link → `/locations/rice-lake-mercury-repower`.
-- **Card 3 — Related motors**: Curated, hand-picked siblings per model so we don't need a DB query. Each item links to `/motors/{slug}` with a small label.
-  - **For the 9.9 FourStroke** (`fourstroke-9-9hp-9-9elh-fourstroke`): show 9.9EH (manual-start sibling), 15 ELH, and "ProKicker 9.9" if available — links to their motor pages.
-  - **For the 60 Command Thrust** (`fourstroke-60hp-60-elpt-command-thrust-fourstroke`): show 50 ELPT, 90 ELPT, and 115 ELPT.
-  - **For the 150 Pro XS ELPT** (`proxs-150hp-150-elpt-proxs`): show 150 EXLPT Pro XS (XL shaft sibling), 115 Pro XS, and 175 Pro XS.
+### 2. New edge function `supabase/functions/hbw-valuation-proxy/index.ts`
+- Public, `verify_jwt = false`, full CORS (incl. `x-session-id`).
+- Zod-validated body: `brand`, `year`, `hp`, `condition` required; `stroke`, `hours`, `model` optional. `stroke` enum: `4-stroke | 2-stroke | proxs | optimax | etec`.
+- POSTs to HBW with `X-API-Key: Deno.env.get('HBW_API_KEY')`, 8s timeout.
+- Returns upstream JSON unchanged on 200; normalized error body on failure.
+- Also added to `supabase/config.toml`.
 
-Each related-motor entry is a plain `<Link>` with the model name + "View motor page →" — no DB call, no images, no flicker. Slugs match `public/motors/*.md` so they resolve through the existing prerender.
+### 3. Update `src/lib/trade-valuation.ts` → `fetchHBWValuation()`
+- Replace direct fetch + hardcoded key with `supabase.functions.invoke('hbw-valuation-proxy', { body: {...} })`.
+- Same `HBWValuationResult` return shape — no changes needed in `TradeInValuation.tsx`.
+- `model` already passed through; verified the call site sends it.
+- Returns `null` on failure → local fallback still acts as last-resort safety net.
 
-### 2. Specs highlights mini-callout
+### 4. Update `supabase/functions/public-quote-api/index.ts` → `estimateTradeIn`
+- Replace `ballparkTradeValue()` call with a direct edge-to-edge fetch to HBW (no need to round-trip through the proxy).
+- Accept new optional `model` field in the request body and forward it.
+- Map `engine_type` → `stroke`: pass through `2-stroke | optimax | etec | proxs`, otherwise default `4-stroke`.
+- Response includes `low`, `high`, `average` (wholesale), `listing`, `hst_savings`, `confidence`, `market_demand`, `seasonal`, `factors`.
+- On HBW failure return **502** with a clear error — do NOT silently fall back to bad ballpark math. Agents need to know the valuation is unavailable rather than quote the wrong number.
+- `ballparkTradeValue()` function stays in the file (still used by `build_quote`, which you said not to touch).
+- Update the action's docs block to reflect the new `model` parameter.
 
-Inside the primary CTA card, add a 3-pill row with the most relevant fast-fact spec for each target motor (so the user gets "key specs highlights" per the request):
+### 5. Verification (after deploy)
+- Curl the proxy with Mercury 2022 90hp 4-stroke good → expect ~$6,400 range.
+- Frontend trade-in page → same number as standalone tool.
+- Curl `public-quote-api` `estimate_trade_in` with same payload → matching numbers, plus listing/HST fields.
 
-- **9.9 FourStroke**: "EFI · Tiller-friendly · 84 lb"
-- **60 Command Thrust**: "Big-prop gearcase · Power-trim · Best for 16–18 ft"
-- **150 Pro XS**: "3.0L 4-cyl · 6300 RPM · Tournament-grade hole-shot"
+## Out of scope (per your instructions)
+- `build_quote` action still uses local `ballparkTradeValue` — flagged for a future follow-up if you want.
+- `agent-mcp-server`, `ai-chatbot-stream`, `process-email-sequence` reference ballpark logic; not changed.
 
-These are static strings inside the model-conditional block — already-verified specs from memory (`mem://knowledge/motor-specs/voice-hardcoded-spec-data` and `proxs-vs-fourstroke-content-logic`). No new DB columns.
-
-### 3. Internal link from the Rice Lake FAQ chip back to motor pages
-
-Tiny addition: in `MotorSelectionFAQ.tsx`, append "Popular Mercury motors in Ontario:" line under the heading paragraph with three links to `/motors/fourstroke-9-9hp-9-9elh-fourstroke`, `/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke`, and `/motors/proxs-150hp-150-elpt-proxs`. This closes the internal link loop both directions.
-
-## Files touched
-
-1. `src/pages/MotorPage.tsx` — add the conditional `RelatedMotorsAndCTA` block (≈60 lines, all inside the existing model-aware `if` blocks). No prop changes, no new hooks, no DB queries.
-2. `src/components/quote-builder/MotorSelectionFAQ.tsx` — add a one-line "Popular motors:" links row under the existing intro paragraph.
-
-## What I'm NOT doing (and why)
-
-- **Not creating a separate `RelatedMotors.tsx` component file** — only used in three places, conditional, simpler inline.
-- **Not querying `motor_models` for siblings dynamically** — would add a request and risk SSR/prerender drift; hand-curated lists are stable and crawler-friendly.
-- **Not touching the FAQ block on /quote/motor-selection itself** — already complete.
-- **Not touching sitemap/schema/markdown** — per your instruction, leaving Codex-verified items alone. The new internal links are pure HTML `<Link>` elements; they'll be picked up by the existing prerender without any sitemap changes.
-- **Not adding a "Related" block to the other ~40 motor pages** — out of scope for these 3 AI-target queries; can be generalized later if desired.
-
-## Expected outcome
-
-After this turn, the 9.9, 60 CT, and 150 Pro XS pages will each have:
-- The existing Ontario/CAD/dealer paragraph (already shipped)
-- A new specs-highlights pill row
-- A prominent secondary "Build your Mercury {hp} HP quote online" CTA card
-- A Rice Lake repower link card
-- A 3-link "Related motors" card
-
-…all reinforcing the AI-answer query targets and creating tight internal-link loops between the motor pages, the quote builder, and the Rice Lake location page.
+## Confirm before I implement
+After approval I'll execute the four code changes above. Please make sure `HBW_API_KEY` is set in Supabase secrets before testing — I'll remind you in the implementation message.
