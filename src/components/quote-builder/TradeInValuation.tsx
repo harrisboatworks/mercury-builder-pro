@@ -106,23 +106,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
     setIsLoading(true);
 
-    // Stroke is now an optional override — when the user picked one we forward
-    // it, otherwise let the HBW API infer it from the model code.
-    const explicitStroke = tradeInInfo.engineType === '2-stroke'
-      ? '2-stroke'
-      : tradeInInfo.engineType === 'optimax'
-        ? 'optimax'
-        : tradeInInfo.engineType === '4-stroke'
-          ? '4-stroke'
-          : undefined;
-
-    // Try HBW API first
+    // Stroke is always inferred by the HBW API from the model code.
     const hbwResult = await fetchHBWValuation({
       brand: tradeInInfo.brand,
       year: tradeInInfo.year,
       horsepower: tradeInInfo.horsepower,
       condition: tradeInInfo.condition,
-      stroke: explicitStroke,
       hours: tradeInInfo.engineHours,
       model: tradeInInfo.model,
     });
