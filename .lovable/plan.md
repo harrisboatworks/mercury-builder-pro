@@ -1,59 +1,55 @@
-# Year Field Tooltip — Explain HP/Stroke Confidence Boost
+# Harden Lazy Route Loading — Prevent Spurious 404s
 
-## Goal
+## Problem
 
-Add a small help tooltip next to the "Year *" label in the trade-in form that explains how the year improves stroke detection and updates the "Based on" reasons live.
+The `/trade-in-value` preview briefly showed the app's NotFound 404 even though the route is registered and the server returns HTTP 200. Root cause is most likely a transient lazy-chunk fetch failure that didn't match our chunk-error regex, so the import threw and React Router fell through to the catch-all NotFound route.
 
-## Change
+## Goals
 
-Single file: `src/components/quote-builder/TradeInValuation.tsx`.
+1. Catch more failure shapes as "stale chunk" so the auto-reload kicks in.
+2. Make any future occurrence trivial to diagnose via console logs.
+3. Add a lightweight error boundary around lazy routes so a failed import shows a "Reload" button instead of a confusing 404.
 
-### 1. Imports
+## Changes
 
-- Add `HelpCircle` to the existing `lucide-react` import line.
-- Add `import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';`.
+### 1. `src/lib/lazyWithRetry.ts` — broaden detection + log
 
-### 2. Label JSX (around line 445)
+- Expand the chunk-error regex to also match:
+  - `TypeError: Failed to fetch` (generic network error during dynamic import)
+  - `NetworkError when attempting to fetch resource` (Firefox)
+  - `error loading dynamically imported module` (Vite variant)
+  - `Unable to preload CSS` (Vite CSS chunk)
+- On every failure, `console.warn('[lazyWithRetry]', key, attempt, message)` so the logs make the path obvious.
+- On final failure (post retries) that ISN'T classified as a chunk error, `console.error('[lazyWithRetry] FATAL', key, lastError)` before re-throwing.
 
-Replace the plain `Year *` label with a flex label that includes a `HelpCircle` button wrapped in a Radix Tooltip:
+### 2. New `src/components/LazyRouteBoundary.tsx`
 
-```tsx
-<Label htmlFor="trade-year" className="... inline-flex items-center gap-1.5">
-  Year *
-  <TooltipProvider delayDuration={150}>
-    <Tooltip>
-      <TooltipTrigger asChild>
-        <button type="button" aria-label="Why year matters"
-          className="text-muted-foreground hover:text-foreground transition-colors">
-          <HelpCircle className="h-3.5 w-3.5" aria-hidden="true" />
-        </button>
-      </TooltipTrigger>
-      <TooltipContent side="top" align="start" className="max-w-xs text-xs leading-relaxed">
-        ...content...
-      </TooltipContent>
-    </Tooltip>
-  </TooltipProvider>
-</Label>
-```
+Small error boundary specifically for lazy routes:
+- Catches errors thrown by `React.lazy` after retries are exhausted.
+- Renders a minimal centered card: "Couldn't load this page" + a "Reload" button that calls `window.location.reload()`.
+- Logs the error with `[LazyRouteBoundary]` prefix.
 
-### 3. Tooltip content
+### 3. `src/App.tsx` — wrap `<Routes>` with the boundary
 
-Mirrors the actual decoder rules so it stays accurate:
+Wrap the existing `<Suspense>` block with `<LazyRouteBoundary>` so any lazy import failure that escapes `lazyWithRetry` shows the recovery card instead of falling through to NotFound.
 
-> **Why the year matters**
->
-> When the model text is just an HP number (like "90"), the year decides whether it's likely a 2-Stroke or 4-Stroke:
-> - **2007 or newer** → 4-Stroke (medium confidence)
-> - **Before 2000** → 2-Stroke (medium confidence)
-> - **2000–2006** → ambiguous, please add "4S" or "2S"
->
-> Picking a year updates the "Based on" reasons under the model field automatically.
+### 4. No changes to `TradeInValuePage.tsx` or `TradeInValuation.tsx`
 
-## No behavior changes
-
-The decoder already reads `tradeInInfo.year` and re-runs on every render of the preview block, so no logic changes are needed — the tooltip is purely educational. The "Based on" reasons already update live when the user picks a year.
+Those files are correct as-is. Verified:
+- `App.tsx:499` registers `<Route path="/trade-in-value" element={<TradeInValuePage />} />`
+- `TradeInValuePage.tsx` has `export default function TradeInValuePage()`
+- `TradeInValuation.tsx` exports `TradeInValuation` (named) — matches the import
+- Dev server returns HTTP 200, no Vite errors in the log
 
 ## Out of scope
 
-- Inline (non-tooltip) help text below the year — kept as a hover-only tooltip to keep the form compact.
-- Tooltip on the model field (covered by the existing reasons block + warnings).
+- Changing the route registration or page code.
+- Adding server-side logging — Vite already logs everything we need; the gap is on the client.
+- Changing the NotFound component itself.
+
+## Verification
+
+After changes:
+1. Hard-refresh `/trade-in-value` in the preview — should load normally.
+2. In DevTools, manually throttle/offline and navigate to a lazy route — should see `[lazyWithRetry]` warnings, then the recovery card (not NotFound).
+3. Existing routes continue to work; no behavior change on the happy path.
