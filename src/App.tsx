@@ -554,9 +554,10 @@ function AnimatedRoutes() {
         <Route path="/mercury-pontoon-outboards" element={<MercuryPontoonOutboards />} />
 
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </LazyRouteBoundary>
   );
 }
 
