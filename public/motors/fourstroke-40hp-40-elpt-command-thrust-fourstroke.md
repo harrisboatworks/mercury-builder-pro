@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke
-last_updated: 2026-04-25
+last_updated: 2026-04-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -53,17 +53,23 @@ Heavy pontoons over 22 ft or fiberglass family boats — consider 90–115 HP.
 - HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke
 - Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=9917d204-6d85-4124-ad1a-df01f259a843
 
-## Agent API
+## Public Quote API
 
-Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
+  "action": "build_quote",
   "motor_id": "9917d204-6d85-4124-ad1a-df01f259a843",
   "trade_in": null,
   "contact": null
 }
 ```
+
+## Source provenance
+
+- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure.
+- Harris Boat Works pricing, availability, pickup policy, and quote terms are dealer-provided and should be treated as the local commercial source of truth.
 
 ## Notes
 

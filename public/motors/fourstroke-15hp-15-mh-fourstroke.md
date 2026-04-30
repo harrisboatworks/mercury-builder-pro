@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke
-last_updated: 2026-04-25
+last_updated: 2026-04-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -53,17 +53,23 @@ Pontoons, family runabouts, or any 18+ ft boat carrying more than two adults wit
 - HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke
 - Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=54c38ffc-923e-4a88-b0ad-3338f8d0eeab
 
-## Agent API
+## Public Quote API
 
-Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
+  "action": "build_quote",
   "motor_id": "54c38ffc-923e-4a88-b0ad-3338f8d0eeab",
   "trade_in": null,
   "contact": null
 }
 ```
+
+## Source provenance
+
+- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure.
+- Harris Boat Works pricing, availability, pickup policy, and quote terms are dealer-provided and should be treated as the local commercial source of truth.
 
 ## Notes
 

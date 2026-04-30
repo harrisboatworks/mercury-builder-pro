@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke
-last_updated: 2026-04-25
+last_updated: 2026-04-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -53,17 +53,23 @@ Tournament bass setups (see Pro XS) and large 24+ ft pontoons with watersports l
 - HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke
 - Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=eee34e36-54e0-4563-b276-aa5c4f751798
 
-## Agent API
+## Public Quote API
 
-Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
+  "action": "build_quote",
   "motor_id": "eee34e36-54e0-4563-b276-aa5c4f751798",
   "trade_in": null,
   "contact": null
 }
 ```
+
+## Source provenance
+
+- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure.
+- Harris Boat Works pricing, availability, pickup policy, and quote terms are dealer-provided and should be treated as the local commercial source of truth.
 
 ## Notes
 

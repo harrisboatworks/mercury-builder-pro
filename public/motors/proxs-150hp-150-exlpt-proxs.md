@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs
-last_updated: 2026-04-25
+last_updated: 2026-04-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -53,17 +53,23 @@ Small tenders or boats rated under this HP — match HP to transom rating, never
 - HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs
 - Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=ffb1f5fd-fc8a-4a0a-bd21-5a1ac1af917b
 
-## Agent API
+## Public Quote API
 
-Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
+  "action": "build_quote",
   "motor_id": "ffb1f5fd-fc8a-4a0a-bd21-5a1ac1af917b",
   "trade_in": null,
   "contact": null
 }
 ```
+
+## Source provenance
+
+- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure.
+- Harris Boat Works pricing, availability, pickup policy, and quote terms are dealer-provided and should be treated as the local commercial source of truth.
 
 ## Notes
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke
-last_updated: 2026-04-25
+last_updated: 2026-04-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -53,17 +53,23 @@ Boats 16 ft and over, loaded family boats, or anything that needs to plane with 
 - HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke
 - Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=1e47ff24-472a-4bb9-b0d1-bd522801bc61
 
-## Agent API
+## Public Quote API
 
-Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api`
+Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api`
 
 ```json
 {
+  "action": "build_quote",
   "motor_id": "1e47ff24-472a-4bb9-b0d1-bd522801bc61",
   "trade_in": null,
   "contact": null
 }
 ```
+
+## Source provenance
+
+- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure.
+- Harris Boat Works pricing, availability, pickup policy, and quote terms are dealer-provided and should be treated as the local commercial source of truth.
 
 ## Notes
 

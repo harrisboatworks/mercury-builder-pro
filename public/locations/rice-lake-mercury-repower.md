@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/rice-lake-mercury-repower
-last_updated: 2026-04-25
+last_updated: 2026-04-30
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -18,16 +18,12 @@ Harris Boat Works is the Rice Lake Mercury repower specialist — Mercury Marine
 
 ## Factbox
 
-- **Business:** Harris Boat Works (family-owned since 1947)
-- **Mercury status:** Mercury Marine Platinum Dealer since 1965
-- **Region served from:** Rice Lake, south shore (Gores Landing, Ontario)
-- **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, Canada
+- **Region:** Rice Lake
 - **Drive time:** local to Gores Landing on the south shore of Rice Lake
-- **Pickup policy:** Pickup only at Gores Landing, ON. We do not ship Mercury outboards. We do not deliver.
+- **Pickup policy:** Pickup only at Gores Landing, ON. We do not deliver.
 - **Currency:** CAD only.
-- **Online quote builder:** https://www.mercuryrepower.ca/quote/motor-selection
 
-## Common boat types we repower on Rice Lake
+## Common boat types
 
 - Aluminum fishing boats (14–18 ft)
 - Bass boats
@@ -63,7 +59,7 @@ No. We are pickup-only at Gores Landing on Rice Lake. All Mercury outboard purch
 
 Yes. Mercury is our only outboard brand and has been since 1965. We are Mercury Platinum-certified for the highest customer satisfaction tier. Every repower at Harris Boat Works is performed by Mercury-certified technicians and lake-tested on Rice Lake before pickup.
 
-### What does a Mercury repower on Rice Lake typically cost in CAD?
+### What does a Mercury repower in Rice Lake typically cost in CAD?
 
 A complete installed Mercury repower at Harris Boat Works typically runs $8,000–$18,000 CAD all-in for a 16–18 ft boat with a 60–115 HP outboard, including engine, controls, rigging, propeller, removal, install, and lake test. See the live cost-by-HP table at /repower or build an exact quote at /quote/motor-selection.
 
@@ -76,3 +72,4 @@ About 90 minutes from downtown Toronto via the 401, 35 minutes south of Peterbor
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Verado is special-order only — not in default inventory.
 - HTML page (canonical for humans): https://www.mercuryrepower.ca/locations/rice-lake-mercury-repower
+

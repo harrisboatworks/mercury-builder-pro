@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/kawartha-lakes-mercury-outboards
-last_updated: 2026-04-25
+last_updated: 2026-04-30
 currency: CAD
 pickup_only: true
 delivery_offered: false

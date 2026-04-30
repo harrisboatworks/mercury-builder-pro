@@ -15,7 +15,7 @@
  * Replaces the puppeteer-based prerender pipeline, which couldn't run on
  * Vercel's build container (missing Chromium shared libs).
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, rmSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
@@ -27,6 +27,8 @@ const PUBLIC = join(ROOT, 'public');
 const SHELL_PATH = join(DIST, 'index.html');
 const SITE_URL = 'https://www.mercuryrepower.ca';
 const MIN_BYTES = 4 * 1024;
+
+const shellPath = (path) => JSON.stringify(path);
 
 if (!existsSync(SHELL_PATH)) {
   console.error(`[static-prerender] FATAL: ${SHELL_PATH} not found — run vite build first`);
@@ -49,10 +51,10 @@ function loadFaqItems() {
   const tmpFile = join(ROOT, 'scripts', '.faq-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${tmpFile}`, { cwd: ROOT, encoding: 'utf8' });
+    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' });
     return JSON.parse(out);
   } finally {
-    try { execSync(`rm -f ${tmpFile}`); } catch {}
+    try { rmSync(tmpFile); } catch {}
   }
 }
 
@@ -65,10 +67,10 @@ function loadCaseStudies() {
   const tmpFile = join(ROOT, 'scripts', '.casestudies-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${tmpFile}`, { cwd: ROOT, encoding: 'utf8' });
+    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' });
     return JSON.parse(out);
   } finally {
-    try { execSync(`rm -f ${tmpFile}`); } catch {}
+    try { rmSync(tmpFile); } catch {}
   }
 }
 
@@ -81,10 +83,10 @@ function loadLocations() {
   const tmpFile = join(ROOT, 'scripts', '.locations-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${tmpFile}`, { cwd: ROOT, encoding: 'utf8' });
+    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' });
     return JSON.parse(out);
   } finally {
-    try { execSync(`rm -f ${tmpFile}`); } catch {}
+    try { rmSync(tmpFile); } catch {}
   }
 }
 
@@ -110,10 +112,10 @@ function loadBlogArticles() {
   const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    const out = execSync(`npx tsx ${tmpFile}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
     return JSON.parse(out);
   } finally {
-    try { execSync(`rm -f ${tmpFile}`); } catch {}
+    try { rmSync(tmpFile); } catch {}
   }
 }
 
@@ -765,7 +767,7 @@ function agentsPageSchema() {
   const agentFaqs = [
     {
       q: "How do I query Harris Boat Works inventory as an AI agent?",
-      a: "Use the MCP server at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server (JSON-RPC 2.0) and call the search_motors tool, or GET the REST endpoint /api/public-motors-api for current Mercury inventory as JSON. Both return live CAD pricing and availability."
+      a: "Use the MCP server at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-mcp-server (JSON-RPC 2.0) and call the search_motors tool, or GET the public REST endpoint https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api for current Mercury inventory as JSON. Both return live CAD pricing and availability."
     },
     {
       q: "What MCP tools does Harris Boat Works expose?",
@@ -773,7 +775,7 @@ function agentsPageSchema() {
     },
     {
       q: "What deep-link parameters does the quote form accept?",
-      a: "Send users to https://www.mercuryrepower.ca/repower-quote with optional query parameters motor, boat_make, boat_length, and hp. Example: /repower-quote?motor=150XL&boat_make=legend&boat_length=20&hp=150. The form prefills whatever is supplied."
+      a: "Send users to https://www.mercuryrepower.ca/quote/motor-selection with optional query parameters motor, boat_make, boat_model, trade_brand, trade_year, and trade_hp. Example: /quote/motor-selection?motor={MOTOR_ID}&boat_make=Legend&boat_model=Pontoon&trade_hp=90. The configurator prefills whatever is supplied."
     },
     {
       q: "How does Harris Boat Works handle Mercury Verado inquiries?",
@@ -2122,16 +2124,16 @@ const routes = [
       '<section><h2>REST APIs (any agent)</h2>' +
         '<p>For agents that do not support MCP, three public REST endpoints:</p>' +
         '<ul>' +
-          '<li><code>GET /api/public-motors-api</code> — Current Mercury inventory as JSON.</li>' +
-          '<li><code>POST /api/public-quote-api</code> — Submit a structured quote request.</li>' +
-          '<li><code>GET /api/motors-md</code> — Markdown-formatted motor catalog for easy LLM ingestion.</li>' +
+          '<li><code>GET https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api</code> — Current Mercury inventory as JSON.</li>' +
+          '<li><code>POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api</code> — Submit a structured quote request.</li>' +
+          '<li><code>GET https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md</code> — Markdown-formatted motor catalog for easy LLM ingestion.</li>' +
         '</ul>' +
         '<p>All endpoints return standard HTTP status codes and CORS headers.</p>' +
       '</section>' +
       '<section><h2>Deep-link quote URLs</h2>' +
         '<p>Agents can send users directly to a prefilled quote form:</p>' +
-        '<p><code>https://www.mercuryrepower.ca/repower-quote?motor={MODEL}&amp;boat_make={MAKE}&amp;boat_length={LENGTH}&amp;hp={HP}</code></p>' +
-        '<p>Example: <code>https://www.mercuryrepower.ca/repower-quote?motor=150XL&amp;boat_make=legend&amp;boat_length=20&amp;hp=150</code></p>' +
+        '<p><code>https://www.mercuryrepower.ca/quote/motor-selection?motor={MOTOR_ID}&amp;boat_make={MAKE}&amp;boat_model={MODEL}&amp;trade_brand={BRAND}&amp;trade_year={YEAR}&amp;trade_hp={HP}</code></p>' +
+        '<p>Example: <code>https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7&amp;boat_make=legend&amp;boat_model=pontoon&amp;trade_hp=90</code></p>' +
         '<p>Parameters are optional — the form prefills whatever is supplied.</p>' +
       '</section>' +
       '<section><h2>Source of truth rules</h2>' +
@@ -2810,7 +2812,7 @@ console.log(`[static-prerender] ✓ sitemap.xml written with ${allSitemapEntries
 // ============================================================
 
 const TWIN_DATE = today; // YYYY-MM-DD; same date used for sitemap lastmod
-const AGENT_API = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api';
+const PUBLIC_QUOTE_API = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api';
 
 function mdFrontmatter(canonicalPath, extraLines = []) {
   return [
@@ -2920,17 +2922,23 @@ function motorMarkdown(m) {
     `- HTML page (canonical for humans): ${url}`,
     `- Quote builder deep link: ${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(m.id)}`,
     '',
-    '## Agent API',
+    '## Public Quote API',
     '',
-    `Programmatic quotes: \`POST ${AGENT_API}\``,
+    `Programmatic quotes: \`POST ${PUBLIC_QUOTE_API}\``,
     '',
     '```json',
     '{',
+    '  "action": "build_quote",',
     `  "motor_id": "${m.id}",`,
     '  "trade_in": null,',
     '  "contact": null',
     '}',
     '```',
+    '',
+    '## Source provenance',
+    '',
+    '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure.',
+    '- Harris Boat Works pricing, availability, pickup policy, and quote terms are dealer-provided and should be treated as the local commercial source of truth.',
     '',
     '## Notes',
     '',
@@ -3069,10 +3077,11 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only — not part of default inventory and not actively promoted.',
     '- Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.',
+    '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
-    '## Agent quote API',
+    '## Public quote API',
     '',
-    `\`POST ${AGENT_API}\` — programmatic quote builder. See any motor twin for an example body.`,
+    `\`POST ${PUBLIC_QUOTE_API}\` — public programmatic quote builder. See any motor twin for an example body.`,
     '',
     '## MCP discovery',
     '',
@@ -3311,7 +3320,7 @@ if (motorTwinSummaries.length > 0) {
   verifyMd({
     relPath: motorTwinSummaries[0].path,
     label: 'Sample motor twin',
-    requireSubstrings: ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Agent API', 'agent-quote-api'],
+    requireSubstrings: ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api'],
   });
 }
 

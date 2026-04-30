@@ -1,4 +1,4 @@
-import { writeFileSync, mkdirSync, rmSync, existsSync } from 'fs';
+import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
@@ -7,8 +7,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const PUBLIC = join(ROOT, 'public');
 const SITE_URL = 'https://www.mercuryrepower.ca';
-const AGENT_API = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/agent-quote-api';
+const PUBLIC_QUOTE_API = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api';
 const TWIN_DATE = new Date().toISOString().split('T')[0];
+
+const shellPath = (path) => JSON.stringify(path);
 
 function loadCaseStudies() {
   const dumpScript = `
@@ -18,7 +20,7 @@ function loadCaseStudies() {
   const tmpFile = join(ROOT, 'scripts', '.casestudies-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    return JSON.parse(execSync(`npx tsx ${tmpFile}`, { cwd: ROOT, encoding: 'utf8' }));
+    return JSON.parse(execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' }));
   } finally {
     try { rmSync(tmpFile); } catch {}
   }
@@ -32,7 +34,7 @@ function loadLocations() {
   const tmpFile = join(ROOT, 'scripts', '.locations-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    return JSON.parse(execSync(`npx tsx ${tmpFile}`, { cwd: ROOT, encoding: 'utf8' }));
+    return JSON.parse(execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' }));
   } finally {
     try { rmSync(tmpFile); } catch {}
   }
@@ -218,17 +220,23 @@ function motorMarkdown(m) {
     `- HTML page (canonical for humans): ${url}`,
     `- Quote builder deep link: ${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(m.id)}`,
     '',
-    '## Agent API',
+    '## Public Quote API',
     '',
-    `Programmatic quotes: \`POST ${AGENT_API}\``,
+    `Programmatic quotes: \`POST ${PUBLIC_QUOTE_API}\``,
     '',
     '```json',
     '{',
+    '  "action": "build_quote",',
     `  "motor_id": "${m.id}",`,
     '  "trade_in": null,',
     '  "contact": null',
     '}',
     '```',
+    '',
+    '## Source provenance',
+    '',
+    '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure.',
+    '- Harris Boat Works pricing, availability, pickup policy, and quote terms are dealer-provided and should be treated as the local commercial source of truth.',
     '',
     '## Notes',
     '',
@@ -361,10 +369,11 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only — not part of default inventory and not actively promoted.',
     '- Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.',
+    '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
-    '## Agent quote API',
+    '## Public quote API',
     '',
-    `\`POST ${AGENT_API}\` — programmatic quote builder. See any motor twin for an example body.`,
+    `\`POST ${PUBLIC_QUOTE_API}\` — public programmatic quote builder. See any motor twin for an example body.`,
     '',
     '## MCP discovery',
     '',
@@ -393,6 +402,16 @@ function writePublicMd(relPath, content) {
   writeFileSync(outFile, content, 'utf8');
 }
 
+function cleanMarkdownDir(relDir) {
+  const dir = join(PUBLIC, relDir);
+  if (!existsSync(dir)) return;
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isFile() && entry.name.endsWith('.md')) {
+      rmSync(join(dir, entry.name), { force: true });
+    }
+  }
+}
+
 function verifyPublicMd(relPath, label, required = []) {
   const path = join(PUBLIC, relPath.replace(/^\//, ''));
   if (!existsSync(path)) throw new Error(`[markdown-twins] ${label} missing at ${path}`);
@@ -410,7 +429,7 @@ const motorRecords = await loadMotors();
 
 rmSync(join(PUBLIC, 'catalog.md'), { force: true });
 for (const dir of ['motors', 'case-studies', 'locations']) {
-  rmSync(join(PUBLIC, dir), { recursive: true, force: true });
+  cleanMarkdownDir(dir);
 }
 
 const motorTwinSummaries = [];
@@ -439,7 +458,7 @@ const locationTwinSummaries = locations.map(loc => {
 writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries));
 
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', 'CAD', 'Pickup only', 'mcp.json']);
-if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Agent API', 'agent-quote-api']);
+if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Common boat types']);
 

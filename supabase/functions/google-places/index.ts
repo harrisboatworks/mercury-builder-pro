@@ -3,11 +3,31 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-session-id, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
 };
 
 const CACHE_KEY = 'harris-boat-works-gores-landing';
 const CACHE_TTL_HOURS = 24;
+
+type PlaceLocalizedText = {
+  text?: string;
+};
+
+type GooglePlaceReview = {
+  authorAttribution?: {
+    displayName?: string;
+    photoUri?: string;
+  };
+  rating?: number;
+  text?: PlaceLocalizedText;
+  originalText?: PlaceLocalizedText;
+  publishTime?: string;
+  relativePublishTimeDescription?: string;
+};
+
+type GooglePlacePhoto = {
+  name: string;
+};
 
 serve(async (req) => {
   if (req.method === 'OPTIONS') {
@@ -107,7 +127,7 @@ serve(async (req) => {
       name: place.displayName?.text,
       rating: place.rating,
       totalReviews: place.userRatingCount,
-      reviews: place.reviews?.map((review: any) => ({
+      reviews: place.reviews?.map((review: GooglePlaceReview) => ({
         authorName: review.authorAttribution?.displayName || 'Customer',
         authorPhoto: review.authorAttribution?.photoUri,
         rating: review.rating,
@@ -123,7 +143,7 @@ serve(async (req) => {
       address: place.formattedAddress,
       website: place.websiteUri,
       location: place.location,
-      photos: place.photos?.slice(0, 5).map((photo: any) => ({
+      photos: place.photos?.slice(0, 5).map((photo: GooglePlacePhoto) => ({
         name: photo.name,
         url: `https://places.googleapis.com/v1/${photo.name}/media?maxHeightPx=800&key=${apiKey}`,
       })) || [],
