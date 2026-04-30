@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { Helmet } from '@/lib/helmet';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Award, MapPin, ShieldCheck, DollarSign } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { getMotorImageByPriority } from '@/lib/motor-helpers';
+import { DealerTrustStrip } from '@/components/trust/DealerTrustStrip';
 
 /**
  * Public-facing motor detail page rendered at /motors/{slug}.
