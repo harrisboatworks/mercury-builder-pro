@@ -1,136 +1,123 @@
+## Scope guarantees (will NOT change)
 
-# mercuryrepower.ca — AI Search, Local SEO & Conversion Audit
+- No Supabase RLS, schema, Edge Functions, auth, pricing math, inventory inclusion/exclusion, sitemap or markdown twin generation, MCP/agent endpoints, public API contracts.
+- No change to the 24 public motor listing strategy.
+- No invented specs. Motor detail page continues to read specs from the DB row exactly as today.
+- Harris Boat Works positioning preserved (Mercury Platinum dealer, Gores Landing pickup-only, family-owned 1947, dealer since 1965, real CAD pricing).
 
-This plan tightens what's already in place rather than rebuilding it. The AI-agent docs (`/agents`, `/llms.txt`, `/.well-known/mcp.json`, `/.well-known/ai.txt`, `/catalog.md`) and the public Edge Functions (`public-motors-api`, `public-quote-api`, `motors-md`, `agent-mcp-server`) are already real and consistent. No `/api/public-motors-api` or `/repower-quote` references exist in the codebase or public files — that part of the audit is already clean. The work below adds proof, intent-targeted content, and conversion clarity using only verified facts (1947, 1965 Mercury dealer, Gores Landing pickup, CAD, Verado special-order, Legend new-boat exclusivity).
-
----
-
-## 1. AI-agent documentation — small consistency fixes
-
-Current state is good. Only minor tightening needed:
-
-- **`/llms.txt`** — line 39–43 lists example motor URLs that include a Verado example and slugs that don't match real catalog slugs. Replace with 4 real slugs from `public/catalog.md` (e.g. `proxs-115hp-115-elpt-proxs`, `fourstroke-90hp-90-elpt-command-thrust-fourstroke`, `fourstroke-25hp-25-elpt-fourstroke`, `fourstroke-9-9hp-9-9elh-fourstroke`) and drop the Verado example to stay consistent with the "not actively promoted" rule.
-- **`/llms.txt`** — line 27 advertises "Mercury Racing 450R-600HP" as if it's part of the lineup we sell. Soften to "available by special order" to match the Verado treatment, since it's not in the public feed.
-- **`/.well-known/mcp.json`** — already correct. No change.
-- **`/.well-known/ai.txt`** — already correct. No change.
-- **`/catalog.md`** — already correct.
-- **`/agents` page (`AgentsHub.tsx`)** — already references the real Supabase Function URLs. No change.
-- **Quote deep-link** — every doc already uses `/quote/motor-selection`. Verified. No change.
+This is a small, visual/UX-only pass on three surfaces.
 
 ---
 
-## 2. Trust & proof — new homepage section + repower page section
+## 1. Mobile homepage — first viewport (`src/pages/Index.tsx`)
 
-Add one new section to **`src/pages/Index.tsx`** (above the existing testimonials block) and one to **`src/pages/Repower.tsx`**:
+Problem: on a ~390px viewport the hero stacks image first, then a long Badge → H1 → 3-line subhead → primary CTA → secondary CTA → 4-chip trust row. The "Build Your Quote" button sits well below the fold.
 
-### "What's included in an installed Mercury repower quote" (Repower page)
-A clear bulleted breakdown using facts already used elsewhere in the app:
-- New Mercury outboard (your selection) at real CAD pricing
-- Standard rigging package (controls, harness, gauges as required by motor)
-- Propeller allowance applied (per HP tier — already in `propeller-allowance.ts`)
-- Professional installation by Mercury-certified technicians
-- Lake-test on Rice Lake before pickup
-- Standard 3-year Mercury factory warranty (up to 7 years on select promos)
-- HST shown line-by-line
-- Optional trade-in credit applied against motor subtotal
-- Optional financing (8.99% under $10K, 7.99% $10K+, $5K minimum)
-- Final out-the-door price confirmed by Harris Boat Works before purchase
-- Pickup at our Gores Landing location (we do not deliver)
+Changes (mobile-only, desktop untouched):
 
-### "Why buyers trust Harris Boat Works" (Homepage, replaces nothing — adds a new section)
-Five short cards, all verifiable:
-1. Family-owned since 1947
-2. Authorized Mercury Marine dealer since 1965 (60+ years)
-3. Mercury-certified service technicians on-site
-4. Real CAD pricing online — not "call for price"
-5. Local pickup at Gores Landing on Rice Lake
+- Tighten hero vertical rhythm on `< md`: reduce `py-12` → `py-6`, `mb-5` → `mb-3`, subhead `mb-8` → `mb-5`.
+- Shrink hero image aspect on mobile from `aspect-[4/3]` to `aspect-[16/10]` so the H1 + CTA land in the first viewport.
+- Trim the mobile subhead to one line of value + one line of trust ("Live CAD pricing. Pickup in Gores Landing. ~3 minutes."). Keep the longer version on `md+`.
+- Primary CTA: add a small subline under the button on mobile only — "No forms. No sales calls." — and keep the existing `goBuild` handler.
+- Move the secondary CTA (Phone / Saved Quotes) below the trust row on mobile so it stops competing with the primary action.
+- Trust row on mobile: collapse 4 chips to 2 most credible ones ("Mercury Platinum Dealer · Family-owned since 1947") + the Google rating badge. Full 4 chips remain on `md+`.
 
-### "Real dealer quote vs 'call for price' listings" (Repower page subsection)
-Short two-column compare — left: generic listings ("price on request", "contact for availability", no trade-in math, no financing math), right: HBW quote builder (live CAD, itemized, trade-in math, financing math, refundable deposit, dealer-confirmed). No competitor names.
+No copy invented beyond the boundaries above; everything is already true on the site.
 
 ---
 
-## 3. AI-readable motor & location content
+## 2. Mobile motor selection — reduce CTA crowding (`src/components/quote-builder/MotorSelection.tsx`)
 
-### Motor markdown twins
-Already include model, HP, family, CAD price, stock status, pickup-only, dealer confirmation, best-fit. **No change to existing twins.**
+Current mobile stack creates 3–4 simultaneous floating elements:
 
-Action: confirm `scripts/generate-markdown-twins.mjs` continues to exclude motors with `availability = 'Exclude'` so private/excluded motors stay out of public flows. (One-line read-only verification, no rewrite expected.)
+```text
+[ sticky search bar ]            top
+   ... motor cards ...
+[ AIChatButton (global) ]        bottom-right, fixed
+[ MobileStickyCTA quote button ] bottom-right, fixed   <-- overlaps chat
+[ Sticky bottom price bar ]      bottom, full-width    <-- when motor selected
+```
 
-### Location markdown twins — buyer-intent rewrite
-Current `peterborough-mercury-dealer.md`, `durham-gta-mercury-pickup.md`, etc. are thin. Rewrite each to include:
-- A 2–3 sentence intro that names the buyer intent (e.g. "Mercury outboard repower near Toronto", "Mercury dealer GTA", "Mercury outboard pricing Ontario", "boat repower Ontario") naturally in prose — not stuffed.
-- Drive time + nearest highway anchor (verified facts only — Peterborough ~35 min, Cobourg ~20 min, Toronto/east GTA ~90 min, Durham ~75 min, Kawarthas ~30 min).
-- Common boats in that region (e.g. Kawarthas → pontoons + aluminum fishing; GTA → runabouts + bowriders; Cobourg → small fishing + family boats).
-- A clear 3-link CTA block: Build Quote → Trade-In Estimate → Phone.
-- Same FAQ block but answers tightened to reinforce pickup-only and CAD pricing.
+The `MobileStickyCTA` (floating "Get a Quote" pill) and `AIChatButton` both sit at `bottom-4 right-4 z-40/50` and visually collide. When a motor is selected, the bottom price bar adds a third layer.
 
-Apply to all 5 location twins under `public/locations/`.
+Changes:
 
-### Location HTML pages
-The matching HTML routes (`/locations/:slug` via `LocationDetail.tsx`) read from `src/data/locations.ts`. Mirror the same intent copy there so humans see the same value props as agents.
+- Remove the `MobileStickyCTA` from `MotorSelection` only. The sticky bottom price bar already provides the primary "Continue" CTA the moment the user picks a motor, and every motor card has its own quote button. The floating pill is redundant and the source of the crowding.
+- Keep `MobileStickyCTA` available for other pages that import it — only the mount inside `MotorSelection.tsx` (~line 2060) is removed.
+- Keep the global `AIChatButton`/`GlobalAIChat` as-is, but on this page only, raise the bottom price bar's safe-area padding so the chat bubble doesn't tuck under it. Add `pb-[env(safe-area-inset-bottom)]` to the price bar container.
+- Sticky search bar stays; reduce its vertical padding on mobile from `p-3` to `px-3 py-2` to claw back ~12px of viewport.
+- Mobile spacer (`.mobile-cta-spacer`) — keep, but gate it so it only adds height when the bottom price bar is actually visible (i.e. when a motor is selected). Currently it always reserves space.
 
----
-
-## 4. New buyer-intent pages / blog content
-
-These are the highest-leverage content adds. Each is a real page with a route, SEO component, and JSON-LD where relevant.
-
-| Page | Route | Type |
-|---|---|---|
-| How much does a Mercury repower cost in Ontario? | `/blog/mercury-repower-cost-ontario-2026-cad` | **Already exists** in `llms.txt` index — verify content covers itemized breakdown; expand if thin. |
-| What's included in a Mercury repower quote? | `/repower/whats-included` | **New** landing page |
-| Mercury repower for pontoon boats | `/mercury-pontoon-outboards` | **Already exists** (`MercuryPontoonOutboards.tsx`) — verify, no rebuild. |
-| Evinrude to Mercury repower in Ontario | `/blog/evinrude-to-mercury-repower-ontario-guide` | **Already exists** — verify content. |
-| 90 HP / 115 HP / 150 HP Mercury repower guide | `/repower/horsepower-guide` | **New** — single page with 3 anchor sections (#90hp, #115hp, #150hp), each linking to matching motor pages. |
-| Toronto / GTA pickup guide for Mercury outboards | `/locations/durham-gta-mercury-pickup` | **Exists** — expand per section 3 above. |
-
-Two genuinely new pages to add:
-1. **`/repower/whats-included`** — long-form version of the trust section in #2, with FAQ JSON-LD.
-2. **`/repower/horsepower-guide`** — buyer-intent guide with 3 anchored sections, each with: typical boats, real motor links from the catalog (90/115/150), expected install-quote range pulled from existing pricing logic, and a "Build a 90 HP quote" CTA that prefills via the deep-link pattern.
-
-Add both to the React Router in `src/App.tsx`, the sitemap generator, and `llms.txt`.
+Result: at most one floating action (chat) plus the contextual bottom price bar when a motor is selected. No floating pill collision.
 
 ---
 
-## 5. Conversion clarity
+## 3. Motor detail page — premium + trust polish (`src/pages/MotorPage.tsx`)
 
-- **Hero CTA** — already says "Build Your Quote" with "Real Mercury Repower Prices. No Forms. No Games." Keep. Add a tiny subline directly under the CTA: "No forms before price. Live CAD. ~3 minutes."
-- **Sticky "Build Quote" CTA** — `GlobalStickyQuoteBar` already exists; verify it shows on the new `/repower/*` pages.
-- **"Next step" block** at the end of every new page: 3 buttons — "Build my quote", "Estimate my trade-in", "Call (905) 342-2153".
-- **NotFound** — confirm 404 page links to `/quote/motor-selection` and `/repower` so dead-end traffic still converts.
+Current page is functional but reads as a thin record view: H1, image, price, raw spec table, single CTA, prose.
+
+Changes (no spec invention — every value already comes from the DB row or from existing site facts):
+
+a. **Header band**: wrap `<header>` in a subtle bordered card; add a small Mercury family chip (Pro XS / FourStroke / SeaPro) next to the H1 using the existing `family` value. Add a "Mercury Platinum Dealer · Gores Landing, ON" eyebrow above the H1.
+
+b. **Price block**: reorganize the right column so price + stock + CTA are visually grouped in a card, separated from the spec table below. Add three short trust lines under the CTA, each with an existing-site icon:
+   - "Real CAD pricing — no hidden fees"
+   - "Pickup at Gores Landing, ON (no shipping)"
+   - "3-year Mercury factory warranty included"
+
+   These lines are already true and already implied elsewhere on the site; the page just makes them explicit at the decision point.
+
+c. **Spec table provenance**: add a small footer line under the spec table — "Specifications from Mercury Marine official brochures." No new spec rows are added, no values are altered. This is the provenance line you asked for.
+
+d. **Trust strip below the fold**: a single horizontal strip with four short modules (existing facts only):
+   - Mercury Marine Platinum Dealer
+   - Family-owned since 1947 · Mercury dealer since 1965
+   - Serving Toronto, GTA, Peterborough, Kawarthas
+   - Quote-builder in ~3 minutes, live CAD pricing
+
+e. **Secondary CTA**: keep the existing inline "Start your quote →" link, but add a sticky-on-mobile bottom bar mirroring the price + "Build a Quote" button so users scrolling the prose section can convert without scrolling back up. Desktop unchanged.
+
+f. **Breadcrumb + nav**: leave structure intact; only add `aria-current="page"` on the trailing crumb for a11y.
+
+No JSON-LD, canonical, prerender, or routing logic is touched. The static prerender output remains the source of truth for crawlers.
 
 ---
 
-## Technical details
+## 4. Trust/proof modules (small, reusable)
 
-### Files to edit
-- `public/llms.txt` — fix lines 27 (Racing softening) and 39–43 (real slugs, drop Verado example).
-- `public/locations/*.md` (all 5) — rewrite per section 3.
-- `src/data/locations.ts` — mirror new location intent copy.
-- `src/pages/Index.tsx` — add "Why buyers trust HBW" section + CTA subline.
-- `src/pages/Repower.tsx` — add "What's included" + "Real quote vs call-for-price" sections.
-- `src/pages/NotFound.tsx` — verify CTAs.
+Add one new presentational component, used by both the homepage hero trust row and the motor detail trust strip:
 
-### Files to create
-- `src/pages/repower/WhatsIncluded.tsx` + route in `App.tsx`.
-- `src/pages/repower/HorsepowerGuide.tsx` + route in `App.tsx`.
-- Markdown twins: `public/repower/whats-included.md`, `public/repower/horsepower-guide.md`.
+- `src/components/trust/DealerTrustStrip.tsx` — pure presentational, no data fetching. Props: `variant: 'compact' | 'full'`. Renders the four trust facts above using existing `lucide-react` icons. No new images, no new copy beyond the verified facts.
 
-### Files to verify only (no edit expected)
-- `scripts/generate-markdown-twins.mjs` — exclusion rule for private motors.
-- `scripts/generate-sitemap.ts` — add the 2 new routes.
-- All edge function references in `/agents`, `/llms.txt`, `/.well-known/mcp.json` — already correct.
+This gives us one place to maintain trust copy and keeps both surfaces consistent.
 
-### Strict guardrails (apply everywhere)
-- No fake reviews, testimonials, awards, or numbers. Existing testimonials in `Index.tsx` stay as-is (already in production).
-- No claim of delivery, shipping, or off-site service.
-- No proactive Verado promotion. Verado mention only as "special-order, contact us".
-- All prices CAD. No USD anywhere.
-- No new brands implied. Mercury outboards + Legend boats only.
+---
 
-### Out of scope
-- No backend / DB changes.
-- No edge-function changes (they're already correct).
-- No design system or theme changes.
-- No new images generated.
+## 5. What stays exactly the same
+
+- All routes, lazy boundaries, prerender, sitemap, markdown twins.
+- All quote-flow logic, pricing, trade-in, financing, deposits.
+- Global chat (`GlobalAIChat`, `AIChatButton`), voice context, ElevenLabs hooks.
+- `MobileStickyCTA` component itself (still used elsewhere).
+- All Supabase queries in `MotorPage.tsx` (`MOTOR_SELECT`, fuzzy resolver, agent event tracking).
+- Desktop layouts on all three surfaces.
+
+---
+
+## Files touched
+
+- `src/pages/Index.tsx` — mobile hero spacing, copy trim, trust-row variant.
+- `src/components/quote-builder/MotorSelection.tsx` — remove the in-page `MobileStickyCTA` mount; tighten sticky search padding; gate spacer.
+- `src/pages/MotorPage.tsx` — header eyebrow, price card, trust lines under CTA, spec provenance footer, trust strip, mobile sticky bottom bar.
+- `src/components/trust/DealerTrustStrip.tsx` — new, small presentational component.
+
+Estimated diff: ~300 lines across 4 files, no new dependencies.
+
+---
+
+## Review checklist after implementation
+
+1. Mobile (390×844): screenshot homepage first viewport — H1 + primary CTA + at least one trust signal must be visible without scrolling.
+2. Mobile motor selection: screenshot with no motor selected (only chat bubble visible at bottom-right) and with a motor selected (price bar + chat, no overlap).
+3. Motor detail (e.g. `/motors/proxs-200hp-200-elpt-proxs`): screenshot desktop and mobile showing the new price card, trust lines, and provenance footer.
+4. Confirm desktop hero, desktop motor grid, and desktop motor detail look unchanged.
