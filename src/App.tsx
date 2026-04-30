@@ -12,6 +12,7 @@ import { AuthProvider } from "@/components/auth/AuthProvider";
 import { SecureRoute } from "@/components/auth/SecureRoute";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { LazyRouteBoundary } from "@/components/LazyRouteBoundary";
 import { NotificationToast } from "@/components/notifications/NotificationToast";
 
 import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
@@ -200,8 +201,9 @@ function AnimatedRoutes() {
   usePageViewTracker();
   
   return (
-    <Suspense fallback={<RouteLoader />}>
-      <Routes location={location} key={location.pathname}>
+    <LazyRouteBoundary>
+      <Suspense fallback={<RouteLoader />}>
+        <Routes location={location} key={location.pathname}>
         <Route path="/auth" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route 
