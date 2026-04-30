@@ -2544,6 +2544,22 @@ const routes = [
   ...caseStudyDetailRoutes,
   locationsIndexRoute,
   ...locationDetailRoutes,
+  {
+    path: '/privacy',
+    title: 'Privacy Policy | Harris Boat Works — mercuryrepower.ca',
+    description: 'Privacy Policy for Harris Boat Works (mercuryrepower.ca). How we collect, use, and protect personal information under PIPEDA and Canadian privacy law.',
+    h1: 'Privacy Policy',
+    intro: 'Privacy Policy for Harris Boat Works Ltd. (mercuryrepower.ca). Describes the personal information we collect, how we use it, and your rights under PIPEDA and Canadian privacy legislation.',
+    schemas: [genericPageSchema('/privacy', 'Privacy Policy — Harris Boat Works', 'Privacy Policy for Harris Boat Works (mercuryrepower.ca).')]
+  },
+  {
+    path: '/terms',
+    title: 'Terms & Conditions | Harris Boat Works — mercuryrepower.ca',
+    description: 'Terms and Conditions for Harris Boat Works (mercuryrepower.ca). Service, repair and storage terms, plus website use terms governed by the laws of Ontario.',
+    h1: 'Terms & Conditions',
+    intro: 'Terms and Conditions for Harris Boat Works Ltd. (mercuryrepower.ca). Includes service, repair and storage terms and website use terms governed by the laws of Ontario, Canada.',
+    schemas: [genericPageSchema('/terms', 'Terms & Conditions — Harris Boat Works', 'Terms and Conditions for Harris Boat Works (mercuryrepower.ca).')]
+  },
 ];
 
 // ============================================================

@@ -71,6 +71,8 @@
     { "source": "/case-studies/:slug", "destination": "/case-studies/:slug/index.html" },
     { "source": "/locations", "destination": "/locations/index.html" },
     { "source": "/locations/:slug", "destination": "/locations/:slug/index.html" },
+    { "source": "/privacy", "destination": "/privacy/index.html" },
+    { "source": "/terms", "destination": "/terms/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
