@@ -27,7 +27,7 @@ import harrisLogo from '@/assets/harris-logo.png';
 // Mobile optimization imports
 import { MobileTrustAccordion } from '@/components/ui/mobile-trust-accordion';
 import { MobileFilterSheet } from '@/components/ui/mobile-filter-sheet';
-import { MobileStickyCTA } from '@/components/ui/mobile-sticky-cta';
+// MobileStickyCTA removed from this page (was colliding with global chat bubble)
 import { MobileQuoteForm } from '@/components/ui/mobile-quote-form';
 // HP Category Selector
 import { HPCategorySelector, HP_CATEGORIES, HPCategory } from './HPCategorySelector';
