@@ -366,26 +366,8 @@ export default function MotorPage() {
           <RelatedMotorsAndCTA motor={motor} display={display} />
         </div>
 
-        {/* Mobile sticky bottom CTA — mirrors price + primary action */}
-        <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-sm border-t border-border px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-lg">
-          <div className="flex items-center justify-between gap-3">
-            <div className="min-w-0">
-              <div className="text-[10px] uppercase tracking-wide text-muted-foreground font-medium">
-                {inStock ? 'In Stock · CAD' : 'Special Order · CAD'}
-              </div>
-              <div className="text-lg font-bold text-foreground leading-tight truncate">
-                {formatCAD(price)}
-              </div>
-            </div>
-            <Button
-              size="lg"
-              className="flex-shrink-0"
-              onClick={() => navigate(`/quote/motor-selection?motor=${motor.id}`)}
-            >
-              Build Quote →
-            </Button>
-          </div>
-        </div>
+        {/* NOTE: No page-local sticky bottom CTA — the global UnifiedMobileBar
+            already provides a contextual mobile bottom action across the app. */}
       </article>
     </>
   );
