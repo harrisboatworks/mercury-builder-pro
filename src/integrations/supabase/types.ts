@@ -3318,6 +3318,93 @@ export type Database = {
         }
         Relationships: []
       }
+      trade_valuation_leads: {
+        Row: {
+          asset_summary: string | null
+          condition: string | null
+          confidence: string | null
+          created_at: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          drive_folder_url: string | null
+          drive_report_url: string | null
+          hours: number | null
+          id: string
+          mode: string | null
+          motor_brand: string | null
+          motor_hp: number | null
+          motor_model: string | null
+          motor_stroke: string | null
+          motor_year: number | null
+          notes: string | null
+          online_url: string | null
+          preferred_contact: string | null
+          private_sale_value: number | null
+          raw_payload: Json
+          report_audience: string
+          source: string
+          status: string
+          wholesale_value: number | null
+        }
+        Insert: {
+          asset_summary?: string | null
+          condition?: string | null
+          confidence?: string | null
+          created_at?: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string
+          drive_folder_url?: string | null
+          drive_report_url?: string | null
+          hours?: number | null
+          id?: string
+          mode?: string | null
+          motor_brand?: string | null
+          motor_hp?: number | null
+          motor_model?: string | null
+          motor_stroke?: string | null
+          motor_year?: number | null
+          notes?: string | null
+          online_url?: string | null
+          preferred_contact?: string | null
+          private_sale_value?: number | null
+          raw_payload?: Json
+          report_audience?: string
+          source?: string
+          status?: string
+          wholesale_value?: number | null
+        }
+        Update: {
+          asset_summary?: string | null
+          condition?: string | null
+          confidence?: string | null
+          created_at?: string
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string
+          drive_folder_url?: string | null
+          drive_report_url?: string | null
+          hours?: number | null
+          id?: string
+          mode?: string | null
+          motor_brand?: string | null
+          motor_hp?: number | null
+          motor_model?: string | null
+          motor_stroke?: string | null
+          motor_year?: number | null
+          notes?: string | null
+          online_url?: string | null
+          preferred_contact?: string | null
+          private_sale_value?: number | null
+          raw_payload?: Json
+          report_audience?: string
+          source?: string
+          status?: string
+          wholesale_value?: number | null
+        }
+        Relationships: []
+      }
       unit_site_content: {
         Row: {
           created_at: string | null
