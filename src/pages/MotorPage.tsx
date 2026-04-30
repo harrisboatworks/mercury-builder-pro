@@ -223,7 +223,7 @@ export default function MotorPage() {
       </Helmet>
 
       <article className="min-h-screen bg-background">
-        <div className="max-w-4xl mx-auto px-4 py-8 pb-28 md:pb-8">
+        <div className="max-w-4xl mx-auto px-4 py-8">
           <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground mb-4">
             <Link to="/" className="hover:underline">Home</Link>
             {' › '}
