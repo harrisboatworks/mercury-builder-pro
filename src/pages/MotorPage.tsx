@@ -223,19 +223,28 @@ export default function MotorPage() {
       </Helmet>
 
       <article className="min-h-screen bg-background">
-        <div className="max-w-4xl mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto px-4 py-8 pb-28 md:pb-8">
           <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground mb-4">
             <Link to="/" className="hover:underline">Home</Link>
             {' › '}
             <Link to="/mercury-outboards-ontario" className="hover:underline">Mercury Outboards</Link>
             {' › '}
-            <span>{display}</span>
+            <span aria-current="page">{display}</span>
           </nav>
 
-          <header className="mb-6">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">{display}</h1>
-            <p className="text-lg text-muted-foreground">
-              Mercury {family} · {hp} HP{shaft ? ` · ${shaft} shaft` : ''}
+          <header className="mb-6 rounded-2xl border border-border bg-card p-5 md:p-6">
+            <div className="flex items-center gap-2 text-xs font-medium text-primary mb-2">
+              <Award className="h-3.5 w-3.5" />
+              <span>Mercury Marine Platinum Dealer · Gores Landing, ON</span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2 mb-1.5">
+              <h1 className="text-3xl md:text-4xl font-bold leading-tight">{display}</h1>
+              <span className="inline-flex items-center rounded-full bg-primary/10 text-primary text-xs font-semibold px-2.5 py-1">
+                Mercury {family}
+              </span>
+            </div>
+            <p className="text-base md:text-lg text-muted-foreground">
+              {hp} HP{shaft ? ` · ${shaft} shaft` : ''}
               {modelNo ? ` · Model ${modelNo}` : ''}
             </p>
           </header>
@@ -250,39 +259,64 @@ export default function MotorPage() {
             </div>
 
             <div className="space-y-4">
-              <div>
-                <p className="text-3xl font-bold text-primary">
+              {/* Price + stock + CTA card */}
+              <div className="rounded-xl border border-border bg-card p-5 shadow-sm">
+                <p className="text-3xl font-bold text-primary leading-tight">
                   {formatCAD(price)}
                   {price ? <span className="text-base font-normal text-muted-foreground"> CAD</span> : null}
                 </p>
-                <p className={`text-sm font-medium ${inStock ? 'text-green-600' : 'text-amber-600'}`}>
+                <p className={`text-sm font-medium mt-1 ${inStock ? 'text-green-600' : 'text-amber-600'}`}>
                   {inStock ? '✓ In Stock' : 'Special Order'}
                 </p>
+
+                <Button
+                  size="lg"
+                  className="w-full mt-4"
+                  onClick={() => navigate(`/quote/motor-selection?motor=${motor.id}`)}
+                >
+                  Build a Quote with This Motor
+                </Button>
+
+                <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <DollarSign className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                    <span>Real CAD pricing — no hidden fees</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <MapPin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                    <span>Pickup at Gores Landing, ON (no shipping)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <ShieldCheck className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                    <span>3-year Mercury factory warranty included</span>
+                  </li>
+                </ul>
               </div>
 
-              <table className="w-full text-sm">
-                <caption className="sr-only">Specifications for {display}</caption>
-                <tbody>
-                  <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Horsepower</th><td className="py-2">{hp} HP</td></tr>
-                  <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Family</th><td className="py-2">Mercury {family}</td></tr>
-                  {shaft && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Shaft</th><td className="py-2">{shaft}</td></tr>}
-                  {motor.start_type && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Start</th><td className="py-2">{motor.start_type}</td></tr>}
-                  {motor.control_type && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Control</th><td className="py-2">{motor.control_type}</td></tr>}
-                  {modelNo && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Model #</th><td className="py-2">{modelNo}</td></tr>}
-                  <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Warranty</th><td className="py-2">3-year factory + bonus coverage available (up to 7 years)</td></tr>
-                  <tr><th scope="row" className="text-left py-2 pr-4 font-medium">Pickup</th><td className="py-2">Gores Landing, ON (no shipping)</td></tr>
-                </tbody>
-              </table>
-
-              <Button
-                size="lg"
-                className="w-full"
-                onClick={() => navigate(`/quote/motor-selection?motor=${motor.id}`)}
-              >
-                Build a Quote with This Motor
-              </Button>
+              {/* Spec table */}
+              <div className="rounded-xl border border-border bg-card p-5">
+                <table className="w-full text-sm">
+                  <caption className="sr-only">Specifications for {display}</caption>
+                  <tbody>
+                    <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Horsepower</th><td className="py-2">{hp} HP</td></tr>
+                    <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Family</th><td className="py-2">Mercury {family}</td></tr>
+                    {shaft && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Shaft</th><td className="py-2">{shaft}</td></tr>}
+                    {motor.start_type && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Start</th><td className="py-2">{motor.start_type}</td></tr>}
+                    {motor.control_type && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Control</th><td className="py-2">{motor.control_type}</td></tr>}
+                    {modelNo && <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Model #</th><td className="py-2">{modelNo}</td></tr>}
+                    <tr className="border-b"><th scope="row" className="text-left py-2 pr-4 font-medium">Warranty</th><td className="py-2">3-year factory + bonus coverage available (up to 7 years)</td></tr>
+                    <tr><th scope="row" className="text-left py-2 pr-4 font-medium">Pickup</th><td className="py-2">Gores Landing, ON (no shipping)</td></tr>
+                  </tbody>
+                </table>
+                <p className="mt-3 text-xs text-muted-foreground italic">
+                  Specifications sourced from Mercury Marine official brochures.
+                </p>
+              </div>
             </div>
           </div>
+
+          {/* Trust strip — verified facts only */}
+          <DealerTrustStrip variant="full" className="mb-8" />
 
           <section className="prose dark:prose-invert max-w-none">
             <h2>About the {display}</h2>
@@ -330,6 +364,27 @@ export default function MotorPage() {
           </section>
 
           <RelatedMotorsAndCTA motor={motor} display={display} />
+        </div>
+
+        {/* Mobile sticky bottom CTA — mirrors price + primary action */}
+        <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-background/95 backdrop-blur-sm border-t border-border px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-lg">
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0">
+              <div className="text-[10px] uppercase tracking-wide text-muted-foreground font-medium">
+                {inStock ? 'In Stock · CAD' : 'Special Order · CAD'}
+              </div>
+              <div className="text-lg font-bold text-foreground leading-tight truncate">
+                {formatCAD(price)}
+              </div>
+            </div>
+            <Button
+              size="lg"
+              className="flex-shrink-0"
+              onClick={() => navigate(`/quote/motor-selection?motor=${motor.id}`)}
+            >
+              Build Quote →
+            </Button>
+          </div>
         </div>
       </article>
     </>
