@@ -5,6 +5,7 @@ import { Helmet } from '@/lib/helmet';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { trackAgentEvent } from '@/lib/agentEvents';
+import { getMotorImageByPriority } from '@/lib/motor-helpers';
 
 /**
  * Public-facing motor detail page rendered at /motors/{slug}.
@@ -28,6 +29,7 @@ interface MotorRow {
   model_number: string | null;
   mercury_model_no: string | null;
   family: string | null;
+  motor_type: string | null;
   horsepower: number | null;
   shaft: string | null;
   shaft_code: string | null;
@@ -37,15 +39,21 @@ interface MotorRow {
   sale_price: number | null;
   dealer_price: number | null;
   base_price: number | null;
-  manual_overrides: Record<string, any> | null;
+  manual_overrides: Record<string, unknown> | null;
   availability: string | null;
   in_stock: boolean | null;
+  hero_media_id: string | null;
   hero_image_url: string | null;
   image_url: string | null;
 }
 
+type ManualOverrides = {
+  sale_price?: number | string | null;
+  base_price?: number | string | null;
+};
+
 function resolveSellingPrice(m: MotorRow): number | null {
-  const overrides = m.manual_overrides || {};
+  const overrides = (m.manual_overrides || {}) as ManualOverrides;
   const candidates = [
     overrides.sale_price,
     overrides.base_price,
@@ -66,10 +74,36 @@ function formatCAD(n: number | null): string {
   return new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
 }
 
+function slugify(s: string): string {
+  return (s || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function detectFamily(model: string | null, motorType: string | null, family: string | null): string {
+  if (family) return family;
+  const source = `${model || ''} ${motorType || ''}`.toLowerCase();
+  if (source.includes('proxs') || source.includes('pro xs')) return 'Pro XS';
+  if (source.includes('seapro') || source.includes('sea pro')) return 'SeaPro';
+  if (source.includes('racing')) return 'Racing';
+  if (source.includes('verado')) return 'Verado';
+  return 'FourStroke';
+}
+
+function publicMotorSlug(motor: MotorRow): string {
+  const family = detectFamily(motor.model_display || motor.model, motor.motor_type, motor.family);
+  return slugify(`${family}-${motor.horsepower}hp-${motor.model_display || motor.model || ''}`);
+}
+
+const MOTOR_SELECT =
+  'id, model_key, model_display, model, model_number, mercury_model_no, family, motor_type, horsepower, shaft, shaft_code, start_type, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, hero_media_id, hero_image_url, image_url';
+
 export default function MotorPage() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [motor, setMotor] = useState<MotorRow | null>(null);
+  const [motorImageUrl, setMotorImageUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
@@ -80,14 +114,14 @@ export default function MotorPage() {
     }
     let cancelled = false;
     const resolve = async () => {
-      // Try canonical model_key match first (slug = model_key.toLowerCase().replace(/_/g, '-'))
+      // Try legacy model_key slugs first, then the public SEO slug used by
+      // sitemap, markdown twins, public-motors-api, and motors-md.
       const modelKey = slug.toUpperCase().replace(/-/g, '_');
       let { data } = await supabase
         .from('motor_models')
-        .select(
-          'id, model_key, model_display, model, model_number, mercury_model_no, family, horsepower, shaft, shaft_code, start_type, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, hero_image_url, image_url'
-        )
+        .select(MOTOR_SELECT)
         .eq('model_key', modelKey)
+        .neq('availability', 'Exclude')
         .limit(1)
         .maybeSingle();
 
@@ -95,13 +129,22 @@ export default function MotorPage() {
         // Fuzzy fallback for legacy slugs
         const { data: fuzzy } = await supabase
           .from('motor_models')
-          .select(
-            'id, model_key, model_display, model, model_number, mercury_model_no, family, horsepower, shaft, shaft_code, start_type, control_type, msrp, sale_price, dealer_price, base_price, manual_overrides, availability, in_stock, hero_image_url, image_url'
-          )
+          .select(MOTOR_SELECT)
           .ilike('model_key', `%${modelKey}%`)
+          .neq('availability', 'Exclude')
           .limit(1)
           .maybeSingle();
         data = fuzzy;
+      }
+
+      if (!data) {
+        const { data: candidates } = await supabase
+          .from('motor_models')
+          .select(MOTOR_SELECT)
+          .neq('availability', 'Exclude')
+          .order('horsepower', { ascending: true })
+          .limit(500);
+        data = ((candidates || []) as MotorRow[]).find((candidate) => publicMotorSlug(candidate) === slug) || null;
       }
 
       if (cancelled) return;
@@ -110,13 +153,17 @@ export default function MotorPage() {
         setLoading(false);
         return;
       }
-      setMotor(data as MotorRow);
+      const resolvedMotor = data as MotorRow;
+      const imageInfo = await getMotorImageByPriority(resolvedMotor);
+      if (cancelled) return;
+      setMotor(resolvedMotor);
+      setMotorImageUrl(imageInfo.url);
       setLoading(false);
       trackAgentEvent({
         event_type: 'motor_viewed',
-        motor_id: (data as MotorRow).id,
-        motor_model: (data as MotorRow).model_display || (data as MotorRow).model || null,
-        motor_hp: (data as MotorRow).horsepower ?? null,
+        motor_id: resolvedMotor.id,
+        motor_model: resolvedMotor.model_display || resolvedMotor.model || null,
+        motor_hp: resolvedMotor.horsepower ?? null,
       });
     };
     resolve();
@@ -157,7 +204,7 @@ export default function MotorPage() {
   const modelNo = motor.model_number || motor.mercury_model_no || '';
   const price = resolveSellingPrice(motor);
   const inStock = motor.in_stock || motor.availability === 'In Stock';
-  const image = motor.hero_image_url || motor.image_url || '/social-share.jpg';
+  const image = motorImageUrl || motor.hero_image_url || motor.image_url || '/lovable-uploads/speedboat-transparent.png';
 
   const title = `${display} — Mercury Outboard | Harris Boat Works`;
   const description = `${display} (${hp} HP ${family}${shaft ? `, ${shaft} shaft` : ''}${
