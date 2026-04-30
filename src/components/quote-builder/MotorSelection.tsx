@@ -998,7 +998,7 @@ export const MotorSelection = ({
       )}
       {/* Mobile-Only Sticky Search Bar - Compact Single Row */}
       <div className="sticky top-0 z-30 bg-white border-b shadow-sm lg:hidden">
-        <div className="p-3">
+        <div className="px-3 py-2">
           {/* Single Row: Search + Stock Toggle + Filter Button */}
           <div className="flex items-center gap-2 h-11">
             {/* Search Input - Full Width with iOS zoom prevention */}
@@ -2056,17 +2056,10 @@ export const MotorSelection = ({
         </DialogContent>
       </Dialog>
 
-      {/* Mobile Sticky CTA */}
-      <MobileStickyCTA onQuoteClick={() => {
-        // Fire analytics event
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'cta_quote_open', {
-            source: 'sticky_mobile_cta'
-          });
-        }
-        setQuoteFormModel(''); // Clear any previous selection
-        setShowQuoteForm(true);
-      }} />
+      {/* NOTE: MobileStickyCTA removed on this page — it collided with the
+          global chat bubble and the contextual price bar below. Each motor
+          card already exposes its own quote action, and the bottom price bar
+          appears the moment a motor is selected. */}
 
       {/* Mobile Quote Form */}
       <MobileQuoteForm 
@@ -2080,7 +2073,9 @@ export const MotorSelection = ({
 
       {/* Sticky Bottom Price Bar - Mobile Only */}
       {selectedMotor && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-primary/20 shadow-2xl p-4 z-40 lg:hidden backdrop-blur-sm">
+        <div
+          className="fixed bottom-0 left-0 right-0 bg-white border-t-2 border-primary/20 shadow-2xl px-4 pt-4 pb-[calc(1rem+env(safe-area-inset-bottom))] z-40 lg:hidden backdrop-blur-sm"
+        >
           <div className="flex items-center justify-between gap-4">
             {/* Price Display */}
             <div className="flex-shrink-0">
@@ -2100,8 +2095,8 @@ export const MotorSelection = ({
         </div>
       )}
 
-      {/* Mobile spacer to prevent sticky CTA from covering content */}
-      <div className="mobile-cta-spacer lg:hidden" />
+      {/* Mobile spacer — only reserves space when the bottom price bar is shown */}
+      {selectedMotor && <div className="mobile-cta-spacer lg:hidden" />}
 
     </div>
   </div>;
