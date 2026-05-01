@@ -1,67 +1,171 @@
-## Goal
+## Audit: current state
 
-Make the global `UnifiedMobileBar` less intrusive on mobile by being route-aware. No new desktop bars, no compare drawer, no spec provenance toggle, no backend/inventory/spec changes.
+Two parallel "location" systems exist today and they are inconsistent:
 
-## Current state (verified)
+1. **Data-driven hub** (`/locations` + `/locations/:slug`)
+   - Source: `src/data/locations.ts` (5 entries: peterborough, kawartha-lakes, rice-lake, cobourg-northumberland, durham-gta)
+   - Renderer: `src/pages/LocationDetail.tsx` (clean, has `LocalBusiness` + `FAQPage` JSON-LD)
+   - Auto-included in sitemap (`src/utils/generateSitemap.ts`)
+   - Auto-emits markdown twins to `public/locations/*.md` via `scripts/generate-markdown-twins.mjs`
+   - Auto-prerendered by `scripts/static-prerender.mjs`
+   - Quality of copy: thin/generic for Peterborough, Kawartha, Cobourg, Durham/GTA. Only Rice Lake reads premium.
+   - Some FAQ wording on Cobourg ("Is pickup at the coast?") is awkward.
 
-- `UnifiedMobileBar` is mounted globally in `src/App.tsx` and gates show/hide via two arrays inside `src/components/quote-builder/UnifiedMobileBar.tsx`:
-  - `SHOW_ON_PAGES = ['/', '/motors', '/quote', '/financing', '/accessories', '/repower']`
-  - `HIDE_ON_PAGES = ['/quote/success', '/login', '/auth', '/dashboard', '/settings', '/admin', '/test', '/staging', '/my-quotes', '/deposits', '/contact']`
-- On `/` (homepage) the bar currently renders with the fallback config (label "Continue", target `/quote/summary`) — irrelevant and confusing. There is no `'/' ` entry in `PAGE_CONFIG`.
-- On `/motors/:slug` (motor detail) the bar renders immediately on page load, overlapping the new price/trust card.
-- On `/quote/motor-selection` the bar already shows; it currently renders even when no motor is selected and no preview is open (label "Configure"), creating a second visible CTA stack near the top picker.
-- Chat/Voice on mobile is **integrated into** the UnifiedMobileBar itself (the standalone `AIChatButton` is desktop-only via `useIsMobileOrTablet`), so the only collision risk is the bar's own height vs sticky page content. Need to ensure spacing.
+2. **Hand-built landing pages** (`/mercury-dealer-peterborough`, `/mercury-dealer-cobourg`, `/mercury-dealer-gta`)
+   - One bespoke `.tsx` + matching `*SEO.tsx` per page
+   - Premium design, FAQ accordion, factbox, JSON-LD
+   - Not in `/locations` hub, duplicates Peterborough/Cobourg/GTA topics → competing URLs
 
-## Changes (single file: `src/components/quote-builder/UnifiedMobileBar.tsx`)
+**Problems**
+- Two systems cover the same cities with different URLs → keyword cannibalization, AI-citation confusion.
+- The data-driven hub is the right scaling model but its content is too thin to be premium.
+- No coverage at all for Whitby, Ajax, Oshawa, Pickering, Bowmanville/Courtice — the core Durham cities the old HarrisBoatWorks.ca pages ranked for.
+- No clear policy in the schema about "we do NOT come to your city" — risky for AI summaries.
+- `caseStudies.heroImage` is referenced in sitemap but field name should be verified; not blocking.
 
-All edits are scoped to the visibility gate and the motor-detail/motor-selection branches. No styling overhaul.
+---
 
-### 1. Homepage (`/`) — hide the bar entirely
+## Proposed URL structure
 
-Add `'/'` handling that returns `false` from `shouldShow`. The homepage already has its own prominent "Build Your Quote" hero CTA + trust chips above the fold (just polished in the prior pass). A second floating CTA competes with it and shows an irrelevant "Continue → /quote/summary" fallback.
+**Single canonical system** = the data-driven `/locations/:slug` hub. The hand-built `/mercury-dealer-*` pages stay live but become 301-style React redirects to the new canonical `/locations/...` slugs (handled with `<Navigate>`), so existing AI citations don't break.
 
-Implementation: in the `shouldShow` `useMemo`, special-case `location.pathname === '/'` to return `false`. Leave other `SHOW_ON_PAGES` behavior intact.
+Canonical slug convention: `/locations/{city-or-region}-mercury-{intent}` where intent is one of `dealer`, `repower`, `pickup`, `outboards`.
 
-### 2. Motor detail (`/motors/:slug`) — scroll-gated, compact, contextual
+```text
+/locations                                      (hub index — already exists)
+/locations/rice-lake-mercury-repower            (exists, premium — keep)
+/locations/peterborough-mercury-dealer          (exists — rewrite premium)
+/locations/cobourg-northumberland-mercury       (exists — rewrite + rename to cobourg-mercury-dealer; keep old slug as redirect)
+/locations/kawartha-lakes-mercury-outboards     (exists — rewrite premium)
+/locations/durham-gta-mercury-pickup            (exists — rewrite as regional hub)
 
-Show the bar only after the user scrolls past the in-page price/CTA card so it never overlaps the trust block. When shown, render a compact variant: motor price + "Build Quote" only (no nudge row, no progress chip).
+# NEW Durham-region city pages (priority for old HBW.ca parity)
+/locations/whitby-mercury-dealer
+/locations/ajax-mercury-dealer
+/locations/oshawa-mercury-dealer
+/locations/pickering-mercury-dealer
+/locations/bowmanville-courtice-mercury-dealer
 
-Implementation:
-- Detect motor-detail route: `location.pathname.startsWith('/motors/')`.
-- Add a local `useState` + `useEffect` that listens to `window.scrollY > 600` (approx height of hero + price card on 390-wide viewport) to flip a `revealed` flag with a small debounce.
-- Until `revealed`, return `null` from the bar's render (or render an empty fragment) for this route.
-- When revealed: render an existing compact branch — title = motor model from a lightweight URL-derived fallback or skip if no `state.motor`; label = "Build Quote"; nextPath = `/quote/motor-selection`. Suppress the nudge row and comparison strip on this route to keep it small and reviewable.
-- Bottom padding: keep `pb-[env(safe-area-inset-bottom)]` (already set on inner sticky containers) so it sits above iOS home indicator. Chat is in-bar on mobile so no collision.
+# NEW GTA umbrella
+/locations/gta-mercury-outboards               (regional — links to each Durham city)
+```
 
-### 3. Motor selection (`/quote/motor-selection`) — only show after a motor is chosen
+Redirects (kept for backlinks / AI memory):
+- `/mercury-dealer-peterborough` → `/locations/peterborough-mercury-dealer`
+- `/mercury-dealer-cobourg` → `/locations/cobourg-northumberland-mercury`
+- `/mercury-dealer-gta` → `/locations/gta-mercury-outboards`
+- `/mercury-outboards-whitby` (if anyone hits it from old HBW backlinks) → `/locations/whitby-mercury-dealer`
 
-The selected-motor price bar should only appear once the user has a motor (selected or previewing in the configurator). Right now it renders the "Configure" CTA at all times, which acts as a second CTA bar over the selection grid.
+---
 
-Implementation:
-- In `shouldShow`, add: if `pathname === '/quote/motor-selection'` and neither `state.motor` nor `state.previewMotor` is set, return `false`.
-- Leave existing logic for the preview/selected states untouched (Configure/Select This Motor/Continue labels still work).
-- Confirm no other duplicate bar exists on this page: `MotorSelection.tsx` already had its `MobileStickyCTA` removed in the prior pass; `GlobalStickyQuoteBar` is desktop-only and already excludes all `/quote/*` routes. Verified — no duplicates.
+## Upgraded data model
 
-### 4. Chat/Voice non-collision
+Extend `src/data/locations.ts` `LocationPageData` so every page has the same premium fields. Markdown twin + JSON-LD generators read from this — no per-city bespoke React components needed.
 
-- Mobile: `AIChatButton` is hidden via `useIsMobileOrTablet`, so the only "chat" affordance on mobile lives inside `UnifiedMobileBar` itself — no overlay collision possible.
-- Voice button (`useVoiceSafe`) is also rendered inside the bar; no separate floating element on these routes.
-- Action item: when the bar is hidden (homepage, pre-selection on motor-selection, pre-scroll on motor detail), no chat affordance disappears on mobile because the in-bar chat goes with it. To preserve access on those routes, render a **minimal** mobile chat-only pill (just the existing AI button, no nudges, no price) in those states. Reuse the existing `<motion.button>` chat trigger inside the bar by extracting it into a tiny `<MobileChatOnlyPill />` sub-render at the bottom of `UnifiedMobileBar.tsx`. Position: `fixed bottom-4 right-4 z-40`, same look as desktop chat button, mobile-only.
+```ts
+export interface LocationPageData {
+  slug: string;
+  title: string;                  // <title> + H1
+  metaDescription: string;        // <meta name="description">
+  region: string;                 // "Whitby", "Durham & GTA", etc
+  regionType: 'city' | 'region';
+  keyword: string;
+  driveTime: string;              // "about 75 minutes from Gores Landing via 401"
+  driveRoute?: string;            // "401 East → Cobourg → County Rd 18"
+  intro: string;                  // 2–3 sentence premium intro
+  localContext: string[];         // bullet facts about local boating (lakes, marinas they boat from, NOT services we deliver there)
+  popularBoats: string[];
+  popularHpRanges: string[];      // e.g. ["9.9–25 HP kicker", "60–90 HP fishing", "115–150 HP family"]
+  whyChooseUs: string[];          // trust facts (since 1947, Platinum since 1965, CAD pricing, lake-tested)
+  recommendedLinks: { label: string; href: string }[];
+  relatedCaseStudySlugs?: string[]; // explicit pin instead of fuzzy match
+  faqs: { question: string; answer: string }[];
+  // Strict policy block — rendered verbatim and used in schema description
+  pickupPolicy: string;           // canonical sentence about pickup-only at Gores Landing
+  serviceBoundary: string;        // canonical "we do NOT travel to {city}" disclaimer, phrased politely
+}
+```
 
-This guarantees: Chat/Voice always reachable on mobile, but never stacked on top of a full bar.
+---
 
-## Files touched
+## Wording rules baked into the template
 
-- `src/components/quote-builder/UnifiedMobileBar.tsx` — visibility gate updates + scroll listener for motor-detail + extract a small mobile chat-only pill for hidden-bar states.
+The `LocationDetail.tsx` component will render two fixed banners on every page so we cannot accidentally imply mobile service:
 
-No other files modified. No CSS files, no routes, no contexts, no backend, no specs.
+1. **Pickup policy banner** (already exists, keep):
+   > Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.
 
-## Verification (post-implementation)
+2. **Service boundary banner** (NEW):
+   > Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in {city}. Customers from {city} bring their boat to our Gores Landing shop, or pick up a loose Mercury motor for self-install.
 
-Use `browser--navigate_to_sandbox` at 390×844 and `browser--screenshot` for:
+All copy in `localContext`, `whyChooseUs`, `intro`, and `faqs` will use approved phrasing only:
+- "serving buyers from Whitby"
+- "customers from Oshawa can build a quote online"
+- "pickup and installation are handled at Harris Boat Works in Gores Landing"
+- "bring the boat to our Gores Landing shop"
 
-1. `/` — confirm no bottom bar; floating chat-only pill bottom-right; hero CTA unobstructed.
-2. `/quote/motor-selection` — bar hidden until a motor is tapped/previewed; chat-only pill visible; after selecting, full bar appears with price + Continue.
-3. One motor detail page (e.g., `/motors/proxs-150hp-150-elpt-proxs`) — on first paint no bar over the price card; chat-only pill visible; after scrolling ~600px down, compact bar appears with price + "Build Quote".
+Forbidden phrases (added as a build-time lint in `generate-markdown-twins.mjs` so future edits can't reintroduce them):
+- "we service {city}", "mobile service", "on-site repower", "in your driveway", "at your marina", "delivery to", "we come to", "ship to"
 
-Report back with the three screenshots and a one-line summary per route.
+---
+
+## Schema upgrades on each page
+
+`LocationDetail.tsx` will emit a richer `@graph`:
+
+1. `LocalBusiness` — Harris Boat Works (real address = Gores Landing; `areaServed` lists the region/city as a *sales catchment*, not a service area).
+2. `Service` — name = "Mercury Outboard Sales & Repower", `serviceType: "Sales"`, `availableAtOrFrom` = the Gores Landing PostalAddress, `areaServed` = the city, `provider.@id` points to the LocalBusiness. Explicitly **omit** `ServiceArea` for "service calls" — this prevents AI from inferring mobile service.
+3. `WebPage` with `breadcrumb` BreadcrumbList → Home › Service Areas › {City}.
+4. `FAQPage` from `faqs[]`.
+5. `Place` for the city (with name + containedInPlace = Ontario) so AI knows the city we mean.
+
+---
+
+## Markdown twin upgrades
+
+`scripts/generate-markdown-twins.mjs` `locationMarkdown()` will be extended to emit the new fields (drive route, popular HP ranges, why-choose, service boundary line, related case studies). Frontmatter gains:
+
+```yaml
+service_area_type: sales-catchment
+mobile_service_offered: false
+on_site_install_offered: false
+delivery_offered: false
+```
+
+These flags are explicit signals AI scrapers can read.
+
+---
+
+## Sitemap
+
+Already auto-pulls from `locations[]`, so adding 6 new entries (Whitby, Ajax, Oshawa, Pickering, Bowmanville-Courtice, GTA umbrella) automatically inserts them. No code change needed beyond data.
+
+---
+
+## Implementation steps
+
+1. **Extend types & banners**: update `LocationPageData`, rewrite `LocationDetail.tsx` to render the new sections (factbox, drive route, popular HP, why-choose, service boundary banner, richer schema graph).
+2. **Rewrite existing 5 entries** in `src/data/locations.ts` to populate the new fields with premium, factual copy. Cobourg FAQ "Is pickup at the coast?" gets fixed.
+3. **Add 6 new entries**: Whitby, Ajax, Oshawa, Pickering, Bowmanville/Courtice, GTA umbrella. Each gets distinct intro / drive route / local lakes referenced (e.g., Whitby boaters often launch on Lake Ontario, Scugog, Simcoe; Bowmanville near Rice Lake/Scugog access). No duplicated paragraphs across cities.
+4. **Add redirects** in `src/App.tsx` from the 3 old `/mercury-dealer-*` routes and `/mercury-outboards-whitby` to the new `/locations/...` canonicals using `<Navigate replace>`. The bespoke `MercuryDealerPeterborough.tsx` / `MercuryDealerCobourg.tsx` / `MercuryDealerGTA.tsx` files stay in repo but unmount from routes (or are kept as the redirect target's source — we'll just unmount and remove the routes).
+5. **Update `Locations.tsx`** hub to group cards by region (Northumberland & Kawarthas / Durham / GTA umbrella).
+6. **Markdown twin script**: extend `locationMarkdown()` for new fields + add the forbidden-phrases lint that throws if any twin contains banned wording.
+7. **Sitemap**: no code change — verifies the 6 new URLs appear after `npm run` build.
+8. **Static prerender**: `scripts/static-prerender.mjs` already iterates `locations[]` for `locationDetailSchema` — extend that schema function to emit the new `Service` + `Place` nodes.
+9. **QA**: visit each new route in preview, confirm copy reads premium and schema validates, confirm `/quote/motor-selection` is unchanged.
+
+---
+
+## Out of scope (explicitly not touched)
+
+- `/quote/motor-selection` and the entire quote builder
+- Pricing logic, inventory rules, motor filters
+- Verado / SeaPro recommendations
+- No mention of sterndrives anywhere
+- No new edge functions or DB changes
+
+---
+
+## Deliverable summary
+
+One canonical, premium, scalable location system at `/locations/:slug` with 11 pages (5 rewritten + 6 new), strict "no mobile service" wording enforced by template + lint, full JSON-LD graph including a `Service` node that signals sales-only, markdown twins, and sitemap inclusion. Old `/mercury-dealer-*` URLs preserved via redirects so existing AI citations still resolve.

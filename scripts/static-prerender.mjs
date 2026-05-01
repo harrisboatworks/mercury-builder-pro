@@ -1923,6 +1923,15 @@ function locationsIndexSchema() {
 
 function locationDetailSchema(loc) {
   const url = `${SITE_URL}/locations/${loc.slug}`;
+  const description = loc.metaDescription || loc.intro;
+  const address = {
+    "@type": "PostalAddress",
+    streetAddress: "5369 Harris Boat Works Rd",
+    addressLocality: "Gores Landing",
+    addressRegion: "ON",
+    postalCode: "K0K 2E0",
+    addressCountry: "CA",
+  };
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -1931,9 +1940,9 @@ function locationDetailSchema(loc) {
         "@id": `${url}#webpage`,
         url,
         name: loc.title,
-        description: loc.intro,
+        description,
         isPartOf: { "@id": `${SITE_URL}/#website` },
-        about: { "@id": `${SITE_URL}/#localbusiness` },
+        about: { "@id": `${url}#localbusiness` },
         inLanguage: "en-CA",
       },
       {
@@ -1945,15 +1954,24 @@ function locationDetailSchema(loc) {
         telephone: "+1-905-342-2153",
         email: "info@harrisboatworks.ca",
         priceRange: "$$",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "5369 Harris Boat Works Rd",
-          addressLocality: "Gores Landing",
-          addressRegion: "ON",
-          postalCode: "K0K 2E0",
-          addressCountry: "CA",
-        },
+        address,
         areaServed: { "@type": "AdministrativeArea", name: loc.region },
+      },
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: "Mercury Outboard Sales & Repower",
+        serviceType: "Sales",
+        provider: { "@id": `${url}#localbusiness` },
+        availableAtOrFrom: { "@type": "Place", name: "Harris Boat Works", address },
+        areaServed: { "@type": "Place", name: loc.region },
+        description: `${loc.pickupPolicy || 'Pickup only at Gores Landing.'} ${loc.serviceBoundary || ''}`.trim(),
+      },
+      {
+        "@type": "Place",
+        "@id": `${url}#place`,
+        name: loc.region,
+        containedInPlace: { "@type": "AdministrativeArea", name: "Ontario, Canada" },
       },
       {
         "@type": "FAQPage",
@@ -1975,6 +1993,7 @@ function locationDetailSchema(loc) {
     ],
   };
 }
+
 
 const caseStudyDetailRoutes = caseStudies.map((s) => ({
   path: `/case-studies/${s.slug}`,

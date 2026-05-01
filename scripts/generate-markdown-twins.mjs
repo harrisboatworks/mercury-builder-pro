@@ -302,7 +302,10 @@ function caseStudyMarkdown(s) {
 
 function locationMarkdown(loc, caseStudies) {
   const url = `${SITE_URL}/locations/${loc.slug}`;
-  const related = caseStudies.filter(s => {
+  const pinned = (loc.relatedCaseStudySlugs || [])
+    .map(s => caseStudies.find(cs => cs.slug === s))
+    .filter(Boolean);
+  const related = pinned.length ? pinned : caseStudies.filter(s => {
     const r = (s.region || '').toLowerCase();
     const lr = (loc.region || '').toLowerCase();
     return r.includes(lr) || lr.includes(r.split(' ')[0]);
@@ -310,9 +313,19 @@ function locationMarkdown(loc, caseStudies) {
   const front = mdFrontmatter(`/locations/${loc.slug}`, [
     `slug: ${loc.slug}`,
     `region: ${JSON.stringify(loc.region)}`,
+    `region_type: ${loc.regionType || 'region'}`,
     `keyword: ${JSON.stringify(loc.keyword)}`,
+    'service_area_type: sales-catchment',
+    'mobile_service_offered: false',
+    'on_site_install_offered: false',
+    'delivery_offered: false',
+    'pickup_only: true',
+    'currency: CAD',
   ]);
+  const localCtx = (loc.localContext || []).map(b => `- ${b}`).join('\n');
   const popular = (loc.popularBoats || []).map(b => `- ${b}`).join('\n');
+  const hp = (loc.popularHpRanges || []).map(b => `- ${b}`).join('\n');
+  const trust = (loc.whyChooseUs || []).map(b => `- ${b}`).join('\n');
   const links = (loc.recommendedLinks || []).map(l => `- [${l.label}](${SITE_URL}${l.href})`).join('\n');
   const faqs = (loc.faqs || []).map(f => `### ${f.question}\n\n${f.answer}\n`).join('\n');
   const relatedMd = related.length ? related.map(s => `- [${s.title}](${SITE_URL}/case-studies/${s.slug}.md)`).join('\n') : '_No matching case studies recorded for this region yet._';
@@ -327,12 +340,26 @@ function locationMarkdown(loc, caseStudies) {
     '',
     `- **Region:** ${loc.region}`,
     `- **Drive time:** ${loc.driveTime}`,
-    '- **Pickup policy:** Pickup only at Gores Landing, ON. We do not deliver.',
+    loc.driveRoute ? `- **Route:** ${loc.driveRoute}` : '',
+    '- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.',
+    '- **Service model:** Shop-based only. No mobile service, no on-site installs, no driveway or marina visits.',
     '- **Currency:** CAD only.',
     '',
-    '## Common boat types',
+    '## Local boating context',
+    '',
+    localCtx || '_(none recorded)_',
+    '',
+    '## Common local boats',
     '',
     popular || '_(none recorded)_',
+    '',
+    '## Popular Mercury HP ranges',
+    '',
+    hp || '_(none recorded)_',
+    '',
+    '## Why customers choose Harris Boat Works',
+    '',
+    trust || '_(none recorded)_',
     '',
     '## Recommended links',
     '',
@@ -346,14 +373,56 @@ function locationMarkdown(loc, caseStudies) {
     '',
     faqs || '_(none recorded)_',
     '',
+    '## Service boundary',
+    '',
+    loc.serviceBoundary || '_(none recorded)_',
+    '',
     '## Notes',
     '',
     '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
     '- Verado is special-order only — not in default inventory.',
     '- HTML page (canonical for humans): ' + url,
     '',
-  ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+  ].filter(line => line !== '').join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
+
+// Forbidden phrases that would imply mobile service / delivery. Build fails if any twin contains these.
+const FORBIDDEN_LOCATION_PHRASES = [
+  'mobile service',
+  'mobile mercury service',
+  'on-site install',
+  'on-site repower',
+  'in your driveway',
+  'at your marina',
+  'we come to',
+  'delivery to',
+  'we deliver to',
+  'we ship to',
+  'service calls in',
+];
+
+function lintLocationTwin(slug, md) {
+  // Strip FAQ question headings (### ...) — they are interrogative, not assertions.
+  const lines = md.split('\n').filter(line => !/^###\s/.test(line));
+  const lower = lines.join('\n').toLowerCase();
+  const hits = FORBIDDEN_LOCATION_PHRASES.filter(p => {
+    let from = 0;
+    while (true) {
+      const idx = lower.indexOf(p, from);
+      if (idx === -1) return false;
+      const window = lower.slice(Math.max(0, idx - 60), idx);
+      // Allow when preceded (within ~60 chars, no period) by a negation word.
+      const allowed = /\b(no|not|don'?t|does not|do not|never|without|zero)\b[^.]*$/.test(window);
+      if (!allowed) return true;
+      from = idx + p.length;
+    }
+  });
+  if (hits.length) {
+    throw new Error(`[markdown-twins] Forbidden phrase(s) in /locations/${slug}.md: ${hits.join(', ')}`);
+  }
+}
+
+
 
 function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
   return [
@@ -451,7 +520,9 @@ const caseStudyTwinSummaries = caseStudies.map(s => {
 
 const locationTwinSummaries = locations.map(loc => {
   const path = `/locations/${loc.slug}.md`;
-  writePublicMd(path, locationMarkdown(loc, caseStudies));
+  const md = locationMarkdown(loc, caseStudies);
+  lintLocationTwin(loc.slug, md);
+  writePublicMd(path, md);
   return { path, title: loc.title };
 });
 
@@ -460,7 +531,8 @@ writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSu
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', 'CAD', 'Pickup only', 'mcp.json']);
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
-if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Common boat types']);
+if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
+
 
 if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0) {
   throw new Error(`[markdown-twins] Refusing empty generation: motors=${motorTwinSummaries.length}, caseStudies=${caseStudyTwinSummaries.length}, locations=${locationTwinSummaries.length}`);

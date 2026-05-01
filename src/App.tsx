@@ -543,10 +543,15 @@ function AnimatedRoutes() {
         <Route path="/mercury-repower-faq" element={<MercuryRepowerFAQ />} />
         <Route path="/how-to-repower-a-boat" element={<HowToRepower />} />
         <Route path="/mercury-dealer-canada-faq" element={<MercuryDealerCanadaFAQ />} />
-        {/* Pilot SEO Landing Pages — Batch 2 (Geo) */}
-        <Route path="/mercury-dealer-peterborough" element={<MercuryDealerPeterborough />} />
-        <Route path="/mercury-dealer-cobourg" element={<MercuryDealerCobourg />} />
-        <Route path="/mercury-dealer-gta" element={<MercuryDealerGTA />} />
+        {/* Geo landing pages — canonicalized to /locations/:slug. Old URLs redirect for backlink/AI-citation continuity. */}
+        <Route path="/mercury-dealer-peterborough" element={<Navigate to="/locations/peterborough-mercury-dealer" replace />} />
+        <Route path="/mercury-dealer-cobourg" element={<Navigate to="/locations/cobourg-northumberland-mercury" replace />} />
+        <Route path="/mercury-dealer-gta" element={<Navigate to="/locations/gta-mercury-outboards" replace />} />
+        <Route path="/mercury-outboards-whitby" element={<Navigate to="/locations/whitby-mercury-dealer" replace />} />
+        <Route path="/mercury-outboards-ajax" element={<Navigate to="/locations/ajax-mercury-dealer" replace />} />
+        <Route path="/mercury-outboards-pickering" element={<Navigate to="/locations/pickering-mercury-dealer" replace />} />
+        <Route path="/mercury-outboards-oshawa" element={<Navigate to="/locations/oshawa-mercury-dealer" replace />} />
+        <Route path="/mercury-outboards-bowmanville" element={<Navigate to="/locations/bowmanville-courtice-mercury-dealer" replace />} />
         {/* Pilot SEO Landing Pages — Batch 3 (Product hub + lineup) */}
         <Route path="/mercury-pro-xs" element={<MercuryProXS />} />
         <Route path="/mercury-outboards-ontario" element={<MercuryOutboardsOntario />} />

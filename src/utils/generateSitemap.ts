@@ -36,10 +36,8 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/mercury-repower-faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/how-to-repower-a-boat', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/mercury-dealer-canada-faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },
-    // Pilot SEO landing pages — Batch 2 (Geo)
-    { loc: '/mercury-dealer-peterborough', lastmod: today, changefreq: 'monthly', priority: 0.8 },
-    { loc: '/mercury-dealer-cobourg', lastmod: today, changefreq: 'monthly', priority: 0.8 },
-    { loc: '/mercury-dealer-gta', lastmod: today, changefreq: 'monthly', priority: 0.8 },
+    // Geo landing pages now live under /locations/:slug — see locationEntries below.
+    // Old /mercury-dealer-* URLs are kept as redirects in App.tsx (not in sitemap).
     // Pilot SEO landing pages — Batch 3 (Product hub + lineup)
     { loc: '/mercury-pro-xs', lastmod: today, changefreq: 'weekly', priority: 0.85 },
     { loc: '/mercury-outboards-ontario', lastmod: today, changefreq: 'weekly', priority: 0.85 },
