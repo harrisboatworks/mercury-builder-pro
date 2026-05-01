@@ -86,6 +86,14 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Cap voice Perplexity queries: 30 / 10 minutes per IP
+  const allowed = await checkRateLimit(req, {
+    action: 'voice_perplexity',
+    maxAttempts: 30,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   try {
     const { query, category: providedCategory, motor_context } = await req.json();
     
