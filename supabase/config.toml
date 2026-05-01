@@ -222,3 +222,6 @@ verify_jwt = false
 [functions.motors-md]
 verify_jwt = false
 
+
+[functions.admin-asset-gap-backfill]
+verify_jwt = false
