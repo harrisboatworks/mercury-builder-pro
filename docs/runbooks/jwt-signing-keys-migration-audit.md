@@ -236,7 +236,7 @@ If you prefer to keep the simpler "just re-embed new JWTs" approach for this rot
 2. For service_role jobs migrated to `x-internal-secret`: confirm `command` no longer contains the substring `Bearer eyJ`.
 3. `cron.job_run_details` shows status `succeeded` for the next scheduled run of each of the 16 jobs.
 4. `supabase--curl_edge_functions` (anonymous) → `sync-google-sheets-inventory` returns **401** (proves admin gate still works).
-5. `supabase--curl_edge_functions` → `public-motors-api` returns **24 motors**.
+5. `supabase--curl_edge_functions` → `public-motors-api` returns **200** and every returned motor passes public catalog rules: no Verado, `inStock=true`, `availability="In Stock"`, `currency="CAD"`, positive `sellingPrice`. (Current expected count is **25** as of this audit; do not hard-code future verification to 25 — verify the rules, not the number.)
 6. `agent-mcp-server` → `tools/list` returns **5 tools**.
 7. `mercuryrepower.ca` loads, no Supabase auth/key console errors.
 8. `/api/quotes` returns 200 (or proper 401 for unauth) — not 500.
