@@ -6,9 +6,28 @@
 -- bearer JWT in its `command` becomes broken. This script re-embeds the
 -- new tokens in a single transaction.
 --
--- Inputs (replace the two placeholders BEFORE running):
+-- Job coverage:
+--   7 service_role-token cron jobs
+--   9 Lightspeed anon-token cron jobs
+--   16 total bearer-token cron jobs
+--
+-- This file is written for psql variable substitution. It will NOT run
+-- unchanged in the Supabase SQL Editor because :'NEW_SERVICE_ROLE_JWT'
+-- and :'NEW_ANON_JWT' are psql variables, not ordinary SQL placeholders.
+--
+-- Inputs:
 --   :'NEW_SERVICE_ROLE_JWT'  -- new service_role JWT from dashboard
 --   :'NEW_ANON_JWT'          -- new anon (publishable) JWT from dashboard
+--
+-- Exact psql execution shape:
+--   psql "$DATABASE_URL" \
+--     -v NEW_SERVICE_ROLE_JWT='paste-new-service-role-jwt-here' \
+--     -v NEW_ANON_JWT='paste-new-anon-jwt-here' \
+--     -f docs/runbooks/post-rotation-cron-rewrite.sql
+--
+-- If running in Supabase SQL Editor instead, first make a one-off copy of
+-- this file and manually replace every :'NEW_SERVICE_ROLE_JWT' and
+-- :'NEW_ANON_JWT' token with quoted string literals containing the new JWTs.
 --
 -- Run as: postgres / supabase_admin (must own cron.job rows or be superuser)
 -- Order: run AFTER rotation completes in Supabase dashboard, BEFORE the
@@ -21,7 +40,7 @@
 
 BEGIN;
 
--- ---- service_role-token jobs (8) -----------------------------------
+-- ---- service_role-token jobs (7) -----------------------------------
 
 -- 1. check-partial-financing-apps-hourly  (jobid 36, schedule '15 * * * *')
 SELECT cron.schedule(
@@ -135,7 +154,7 @@ SELECT cron.schedule(
   $cmd$, :'NEW_SERVICE_ROLE_JWT')
 );
 
--- ---- anon-token Lightspeed jobs (8) --------------------------------
+-- ---- anon-token Lightspeed jobs (9) --------------------------------
 -- These were not hardened by the prior internal-cron migration. After
 -- rotation, the embedded anon JWT becomes invalid. We re-embed the new
 -- anon JWT to preserve current behavior. (If you want them upgraded to
