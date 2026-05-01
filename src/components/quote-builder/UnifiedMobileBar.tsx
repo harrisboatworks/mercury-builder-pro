@@ -509,8 +509,15 @@ export const UnifiedMobileBar: React.FC = () => {
     return { completed, total, remaining: total - completed };
   }, [state.motor, state.purchasePath, state.boatInfo, state.tradeInInfo, state.installConfig, state.fuelTankConfig]);
 
-  // Get page config with dynamic label resolution
-  const pageConfig = PAGE_CONFIG[location.pathname] || {
+  // Get page config with dynamic label resolution.
+  // Motor detail pages (/motors/:slug) use a compact "Build Quote" config.
+  const motorDetailConfig: PageConfig = {
+    primaryLabel: 'Build Quote',
+    nextPath: '/quote/motor-selection',
+    aiMessage: 'Questions about this motor?',
+    nudges: { idle: [] },
+  };
+  const pageConfig = PAGE_CONFIG[location.pathname] || (isMotorDetail ? motorDetailConfig : {
     primaryLabel: 'Continue',
     nextPath: '/quote/summary',
     aiMessage: 'Questions about your motor configuration?',
@@ -519,7 +526,7 @@ export const UnifiedMobileBar: React.FC = () => {
         { delay: 20, message: 'Questions? Tap AI for help', icon: 'sparkles' },
       ]
     }
-  };
+  });
 
   const getPrimaryLabel = (): string => {
     // Summary page shows dynamic Reserve CTA based on motor HP
