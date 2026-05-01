@@ -386,19 +386,31 @@ function locationMarkdown(loc, caseStudies) {
   ].filter(line => line !== '').join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
 
-// Forbidden phrases that would imply mobile service / delivery. Build fails if any twin contains these.
+// Forbidden phrases that would imply mobile service / delivery / on-site work.
+// Build fails if any twin contains these unless explicitly negated within ~60 chars.
 const FORBIDDEN_LOCATION_PHRASES = [
   'mobile service',
   'mobile mercury service',
   'on-site install',
   'on-site repower',
+  'on site install',
+  'on site repower',
   'in your driveway',
   'at your marina',
   'we come to',
+  'we service ',
+  'service area',
+  'service areas',
+  'service call',
+  'service calls',
   'delivery to',
   'we deliver to',
+  'we deliver',
   'we ship to',
-  'service calls in',
+  'we ship',
+  'driveway service',
+  'marina visit',
+  'marina visits',
 ];
 
 function lintLocationTwin(slug, md) {
