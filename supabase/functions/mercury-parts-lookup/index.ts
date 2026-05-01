@@ -38,6 +38,14 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Cap parts lookups: 60 / 10 minutes per IP
+  const allowed = await checkRateLimit(req, {
+    action: 'parts_lookup',
+    maxAttempts: 60,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   try {
     const { partNumber } = await req.json();
 
