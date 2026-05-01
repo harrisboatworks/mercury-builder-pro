@@ -302,7 +302,10 @@ function caseStudyMarkdown(s) {
 
 function locationMarkdown(loc, caseStudies) {
   const url = `${SITE_URL}/locations/${loc.slug}`;
-  const related = caseStudies.filter(s => {
+  const pinned = (loc.relatedCaseStudySlugs || [])
+    .map(s => caseStudies.find(cs => cs.slug === s))
+    .filter(Boolean);
+  const related = pinned.length ? pinned : caseStudies.filter(s => {
     const r = (s.region || '').toLowerCase();
     const lr = (loc.region || '').toLowerCase();
     return r.includes(lr) || lr.includes(r.split(' ')[0]);
@@ -310,9 +313,19 @@ function locationMarkdown(loc, caseStudies) {
   const front = mdFrontmatter(`/locations/${loc.slug}`, [
     `slug: ${loc.slug}`,
     `region: ${JSON.stringify(loc.region)}`,
+    `region_type: ${loc.regionType || 'region'}`,
     `keyword: ${JSON.stringify(loc.keyword)}`,
+    'service_area_type: sales-catchment',
+    'mobile_service_offered: false',
+    'on_site_install_offered: false',
+    'delivery_offered: false',
+    'pickup_only: true',
+    'currency: CAD',
   ]);
+  const localCtx = (loc.localContext || []).map(b => `- ${b}`).join('\n');
   const popular = (loc.popularBoats || []).map(b => `- ${b}`).join('\n');
+  const hp = (loc.popularHpRanges || []).map(b => `- ${b}`).join('\n');
+  const trust = (loc.whyChooseUs || []).map(b => `- ${b}`).join('\n');
   const links = (loc.recommendedLinks || []).map(l => `- [${l.label}](${SITE_URL}${l.href})`).join('\n');
   const faqs = (loc.faqs || []).map(f => `### ${f.question}\n\n${f.answer}\n`).join('\n');
   const relatedMd = related.length ? related.map(s => `- [${s.title}](${SITE_URL}/case-studies/${s.slug}.md)`).join('\n') : '_No matching case studies recorded for this region yet._';
@@ -327,12 +340,26 @@ function locationMarkdown(loc, caseStudies) {
     '',
     `- **Region:** ${loc.region}`,
     `- **Drive time:** ${loc.driveTime}`,
-    '- **Pickup policy:** Pickup only at Gores Landing, ON. We do not deliver.',
+    loc.driveRoute ? `- **Route:** ${loc.driveRoute}` : '',
+    '- **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.',
+    '- **Service model:** Shop-based only. No mobile service, no on-site installs, no driveway or marina visits.',
     '- **Currency:** CAD only.',
     '',
-    '## Common boat types',
+    '## Local boating context',
+    '',
+    localCtx || '_(none recorded)_',
+    '',
+    '## Common local boats',
     '',
     popular || '_(none recorded)_',
+    '',
+    '## Popular Mercury HP ranges',
+    '',
+    hp || '_(none recorded)_',
+    '',
+    '## Why customers choose Harris Boat Works',
+    '',
+    trust || '_(none recorded)_',
     '',
     '## Recommended links',
     '',
@@ -346,14 +373,50 @@ function locationMarkdown(loc, caseStudies) {
     '',
     faqs || '_(none recorded)_',
     '',
+    '## Service boundary',
+    '',
+    loc.serviceBoundary || '_(none recorded)_',
+    '',
     '## Notes',
     '',
     '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
     '- Verado is special-order only — not in default inventory.',
     '- HTML page (canonical for humans): ' + url,
     '',
-  ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+  ].filter(line => line !== '').join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
+
+// Forbidden phrases that would imply mobile service / delivery. Build fails if any twin contains these.
+const FORBIDDEN_LOCATION_PHRASES = [
+  'mobile service',
+  'mobile mercury service',
+  'on-site install',
+  'on-site repower',
+  'in your driveway',
+  'at your marina',
+  'we come to',
+  'delivery to',
+  'we deliver to',
+  'we ship to',
+  'service calls in',
+];
+
+function lintLocationTwin(slug, md) {
+  const lower = md.toLowerCase();
+  const hits = FORBIDDEN_LOCATION_PHRASES.filter(p => {
+    // Allow phrases inside negation context like "no mobile service" or "we do not deliver to"
+    const idx = lower.indexOf(p);
+    if (idx === -1) return false;
+    const window = lower.slice(Math.max(0, idx - 40), idx);
+    if (/\b(no|not|don'?t|does not|do not|never|without|no\s+\w+\s+)\s*$/.test(window)) return false;
+    if (/\b(no|not|never)\b[^.]{0,40}$/.test(window)) return false;
+    return true;
+  });
+  if (hits.length) {
+    throw new Error(`[markdown-twins] Forbidden phrase(s) in /locations/${slug}.md: ${hits.join(', ')}`);
+  }
+}
+
 
 function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
   return [
