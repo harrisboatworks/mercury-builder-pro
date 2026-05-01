@@ -815,6 +815,14 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Lightweight abuse protection: 30 AI chats / 10 minutes per IP
+  const allowed = await checkRateLimit(req, {
+    action: 'ai_chat',
+    maxAttempts: 30,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   try {
     const { message, conversationHistory = [] } = await req.json();
 
