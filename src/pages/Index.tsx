@@ -216,7 +216,7 @@ export default function Index() {
                     <CheckCircle2 className="h-4 w-4 text-primary" /> Family-owned since 1947
                   </span>
                   <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-primary" /> 7-year warranty available
+                    <CheckCircle2 className="h-4 w-4 text-primary" /> Bonus warranty during current Mercury promotions
                   </span>
                   <GoogleRatingBadge variant="compact" />
                 </div>
@@ -311,7 +311,7 @@ export default function Index() {
                   {[
                     'Pay only for the motor — not a whole new boat',
                     'Modern Mercury fuel economy &amp; quiet running',
-                    'Coverage up to 7 years with current promotions',
+                    'Bonus warranty coverage may be available during current Mercury promotions',
                     'Mercury-Certified technicians — we sell what we service',
                   ].map(line => (
                     <li key={line} className="flex items-start gap-2.5 text-foreground">
