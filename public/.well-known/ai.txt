@@ -1,7 +1,8 @@
 # AI Agent Metadata for Harris Boat Works
 # https://www.mercuryrepower.ca
 
-last_updated: 2026-04-25
+freshness_policy: Inventory & pricing are dynamic — see /sitemap.xml and the public motors API for the live source of truth. This file is updated when policy changes.
+inventory_source_of_truth: Lightspeed DMS (as of 2026-05-01). The Google Sheets inventory feed is deprecated.
 
 ## Business Identity
 name: Harris Boat Works

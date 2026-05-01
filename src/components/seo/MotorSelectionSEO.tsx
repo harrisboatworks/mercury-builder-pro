@@ -2,6 +2,7 @@ import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
 
 interface MotorSelectionSEOProps {
+  /** Live count of motors visible on the page. Omit to skip the numberOfItems claim entirely. */
   motorCount?: number;
   minPrice?: number;
   maxPrice?: number;
@@ -12,9 +13,13 @@ interface MotorSelectionSEOProps {
  * Mirrors motorSelectionPageSchema() in scripts/static-prerender.mjs to keep
  * crawler-served HTML and React-hydrated HTML in sync. Verado is intentionally
  * excluded from default inventory — Verado is special-order only at Harris Boat Works.
+ *
+ * No fixed motor count is hard-coded. If the caller does not yet know the live count
+ * (e.g. data still loading), `numberOfItems` is omitted from the ItemList rather than
+ * shipping a misleading static number.
  */
 export function MotorSelectionSEO({
-  motorCount = 128,
+  motorCount,
   minPrice = 1500,
   maxPrice = 45000,
 }: MotorSelectionSEOProps) {
@@ -47,7 +52,7 @@ export function MotorSelectionSEO({
         "@id": `${SITE_URL}/quote/motor-selection#itemlist`,
         "name": "Mercury Outboard Motor Inventory",
         "description": "Complete selection of Mercury Marine outboard motors available at Harris Boat Works",
-        "numberOfItems": motorCount,
+        ...(typeof motorCount === 'number' && motorCount > 0 ? { "numberOfItems": motorCount } : {}),
         "itemListElement": [
           {
             "@type": "ListItem",

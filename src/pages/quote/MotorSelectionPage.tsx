@@ -947,7 +947,7 @@ if (event.type === 'filter_motors') {
 
   return (
     <PageTransition>
-      <MotorSelectionSEO motorCount={motors.length || 128} />
+      <MotorSelectionSEO motorCount={motors.length > 0 ? motors.length : undefined} />
       <FinancingProvider>
         <QuoteLayout 
           showProgress={false}
