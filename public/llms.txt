@@ -35,12 +35,14 @@ All motors are sold with full factory warranty. We offer financing from 7.99% AP
 Every Mercury motor has a direct page at:
   https://www.mercuryrepower.ca/motors/{slug}
 
-Example URLs:
-- https://www.mercuryrepower.ca/motors/fourstroke-150hp-efi-elpt-ct
-- https://www.mercuryrepower.ca/motors/proxs-115hp-efi-exlpt
-- https://www.mercuryrepower.ca/motors/verado-300hp-v8-exlpt
-- https://www.mercuryrepower.ca/motors/fourstroke-25hp-efi-elh
-- https://www.mercuryrepower.ca/motors/seapro-150hp-xl
+Example URLs (all from current public catalog — Verado is intentionally excluded):
+- https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke
+- https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs
+- https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke
+- https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs
+- https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke
+
+For the authoritative live list of motor URLs, see https://www.mercuryrepower.ca/sitemap.xml or query the public motors API at https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api.
 
 Each motor page includes pricing in CAD, availability, specifications, and a link to build a quote.
 
@@ -171,5 +173,5 @@ Source-of-truth rules for agents acting on our behalf:
 - Verado is special-order only, not part of default inventory. Do not proactively recommend Verado in standard repower quotes. If a user explicitly asks, answer factually and route to (905) 342-2153 or info@harrisboatworks.ca.
 - Financing minimum: $5,000 CAD. Tiered rates: 8.99% under $10k, 7.99% $10k+.
 
-Last updated: 2026-04-25
+Freshness: Inventory and pricing are dynamic. The authoritative live source is the public motors API (https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api), refreshed continuously from the dealer DMS. The sitemap (/sitemap.xml) is regenerated on every deploy. This llms.txt is updated as policy changes.
 
