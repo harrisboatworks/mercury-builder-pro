@@ -10,16 +10,16 @@ export default function Locations() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Mercury Service Areas | Harris Boat Works</title>
-        <meta name="description" content="Mercury outboard quotes, repowers, and pickup for Peterborough, Cobourg, Northumberland, the Kawarthas, Rice Lake, Durham Region (Whitby, Ajax, Pickering, Oshawa, Bowmanville/Courtice), and the GTA. Pickup only at Gores Landing." />
+        <title>Mercury Outboard Pickup Areas | Harris Boat Works</title>
+        <meta name="description" content="Regional Mercury buyer guides for Peterborough, Cobourg, Northumberland, the Kawarthas, Rice Lake, Durham Region (Whitby, Ajax, Pickering, Oshawa, Bowmanville/Courtice), and the GTA. Pickup only at Gores Landing — not mobile service areas." />
         <link rel="canonical" href={`${SITE_URL}/locations`} />
       </Helmet>
       <LuxuryHeader />
       <main className="container mx-auto px-4 py-12">
         <header className="max-w-3xl mb-10">
-          <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">Mercury outboard service areas</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">Mercury outboard pickup areas</h1>
           <p className="text-lg text-muted-foreground mb-3">
-            Region-specific guidance for Ontario buyers, always with pickup at Gores Landing on Rice Lake and CAD-only pricing. Harris Boat Works is shop-based — we do not perform mobile service, on-site installs, or driveway/marina visits in any listed city.
+            Regional buyer guides for Ontario Mercury customers. These are sales catchments — not mobile service areas. Every order is picked up at our Gores Landing shop on Rice Lake, with CAD-only pricing. Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in any listed city.
           </p>
         </header>
         {groups.map((group) => (

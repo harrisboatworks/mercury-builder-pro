@@ -35,7 +35,7 @@ export default function LocationDetail() {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: 'Service Areas', item: `${SITE_URL}/locations` },
+          { '@type': 'ListItem', position: 2, name: 'Pickup Areas', item: `${SITE_URL}/locations` },
           { '@type': 'ListItem', position: 3, name: location.title, item: url },
         ],
       },
@@ -55,30 +55,13 @@ export default function LocationDetail() {
           postalCode: COMPANY_INFO.address.postal,
           addressCountry: 'CA',
         },
-        // Sales catchment, NOT service-call coverage
-        areaServed: { '@type': 'AdministrativeArea', name: location.region },
-      },
-      {
-        '@type': 'Service',
-        '@id': `${url}#service`,
-        name: 'Mercury Outboard Sales & Repower',
-        serviceType: 'Sales',
-        provider: { '@id': `${url}#localbusiness` },
-        // Where the work happens — explicit Gores Landing
-        availableAtOrFrom: {
-          '@type': 'Place',
-          name: COMPANY_INFO.name,
-          address: {
-            '@type': 'PostalAddress',
-            streetAddress: COMPANY_INFO.address.street,
-            addressLocality: COMPANY_INFO.address.city,
-            addressRegion: COMPANY_INFO.address.province,
-            postalCode: COMPANY_INFO.address.postal,
-            addressCountry: 'CA',
-          },
+        // Sales catchment / buyer catchment ONLY — represents where customers travel from to pick up at Gores Landing.
+        // This is NOT mobile service coverage. Harris Boat Works performs all work on-site at Gores Landing.
+        areaServed: {
+          '@type': 'AdministrativeArea',
+          name: location.region,
+          description: 'Sales catchment — customers from this area travel to Gores Landing for pickup. Not a mobile service area.',
         },
-        areaServed: { '@type': 'Place', name: location.region },
-        description: `${location.pickupPolicy} ${location.serviceBoundary}`,
       },
       {
         '@type': 'Place',
@@ -109,7 +92,7 @@ export default function LocationDetail() {
       <LuxuryHeader />
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
-          <Link to="/locations" className="text-primary hover:underline text-sm">← Back to service areas</Link>
+          <Link to="/locations" className="text-primary hover:underline text-sm">← Back to pickup areas</Link>
 
           <header className="mt-6 mb-8">
             <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">{location.title}</h1>

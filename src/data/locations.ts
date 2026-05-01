@@ -233,7 +233,7 @@ export const locations: LocationPageData[] = [
       { question: 'How far is Harris Boat Works from Whitby?', answer: 'About 70 minutes east via Hwy 401 — exit at Cobourg, then County Rd 18 north to Gores Landing.' },
       { question: 'Do you deliver Mercury outboards to Whitby?', answer: 'No. Pickup only at Gores Landing. Bring the boat for installation, or pick up a loose Mercury motor for self-install.' },
       { question: 'Can I finalize a Whitby Mercury quote online?', answer: 'You can build a complete itemized CAD quote online and we confirm the build by phone before pickup.' },
-      { question: 'Do you do mobile service in Whitby?', answer: 'No. We are a shop-based Mercury dealer and service centre at Gores Landing — no mobile service, no on-site installs.' },
+      { question: 'Do you do mobile service in Whitby?', answer: 'No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing — no mobile service, no on-site installs in Whitby.' },
     ],
     pickupPolicy: PICKUP_POLICY,
     serviceBoundary: boundary('Whitby'),
@@ -302,7 +302,7 @@ export const locations: LocationPageData[] = [
     relatedCaseStudySlugs: ['cedar-strip-9-9-fourstroke', 'aluminum-fishing-60-to-90-fourstroke'],
     faqs: [
       { question: 'How far is Harris Boat Works from Pickering?', answer: 'About 80 minutes east on the 401, exiting at Cobourg.' },
-      { question: 'Do you do mobile Mercury service in Pickering?', answer: 'No. We are a shop-based dealer and service centre — no mobile service. Customers from Pickering bring the boat to our Gores Landing shop.' },
+      { question: 'Do you do mobile Mercury service in Pickering?', answer: 'No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing — no mobile service in Pickering. Customers from Pickering bring the boat to our Gores Landing shop.' },
       { question: 'Do you sell small kicker and sailboat outboards?', answer: 'Yes. We carry the full Mercury FourStroke lineup from 2.5 HP up.' },
     ],
     pickupPolicy: PICKUP_POLICY,
@@ -372,7 +372,7 @@ export const locations: LocationPageData[] = [
     relatedCaseStudySlugs: ['pontoon-family-40-to-115-command-thrust', 'aluminum-fishing-60-to-90-fourstroke'],
     faqs: [
       { question: 'How far is Harris Boat Works from Bowmanville?', answer: 'About 50 minutes east on Hwy 401 — the closest GTA-edge community to our shop.' },
-      { question: 'Do you do mobile service in Bowmanville or Courtice?', answer: 'No. We are a shop-based Mercury dealer and service centre at Gores Landing. Customers bring the boat to us.' },
+      { question: 'Do you do mobile service in Bowmanville or Courtice?', answer: 'No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing. Customers from Bowmanville and Courtice bring the boat to us.' },
       { question: 'Can I pick up just the motor for self-install?', answer: 'Yes. Loose-motor pickups are a common path for Bowmanville and Courtice customers.' },
     ],
     pickupPolicy: PICKUP_POLICY,
@@ -413,7 +413,7 @@ export const locations: LocationPageData[] = [
     faqs: [
       { question: 'How far is Harris Boat Works from Toronto?', answer: 'About 90 minutes east of downtown via Hwy 401 — exit at Cobourg, then County Rd 18 north to Gores Landing on Rice Lake.' },
       { question: 'Do you deliver Mercury outboards to the GTA?', answer: 'No. Pickup only at Gores Landing with photo ID. We do not ship motors and we do not deliver — strict industry-wide fraud-prevention policy.' },
-      { question: 'Do you do mobile service in the GTA?', answer: 'No. Harris Boat Works is a shop-based Mercury dealer and service centre at Gores Landing. We do not perform on-site installs, driveway service, or marina visits in any GTA city.' },
+      { question: 'Do you do mobile service in the GTA?', answer: 'No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing. We do not perform on-site installs, driveway service, or marina visits in any GTA city.' },
       { question: 'Why would a GTA buyer drive to Rice Lake?', answer: 'For real CAD pricing online, Mercury-only expertise since 1965, Platinum-tier customer-satisfaction status, and a clean pickup walk-through that protects your warranty registration.' },
       { question: 'Can I finance a Mercury motor as a GTA customer?', answer: 'Yes — financing is available on outboards $5,000+ in CAD. Build a quote and finance options appear with the price.' },
     ],
