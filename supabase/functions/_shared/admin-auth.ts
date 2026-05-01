@@ -8,6 +8,11 @@ export async function requireAdmin(
   req: Request,
   corsHeaders: Record<string, string>
 ): Promise<{ userId: string } | Response> {
+  const internalSecret = Deno.env.get('EDGE_INTERNAL_SECRET') || Deno.env.get('CRON_SECRET');
+  if (internalSecret && req.headers.get('x-internal-secret') === internalSecret) {
+    return { userId: 'internal' };
+  }
+
   const authHeader = req.headers.get('Authorization');
   if (!authHeader) {
     return new Response(
@@ -17,6 +22,11 @@ export async function requireAdmin(
   }
 
   const jwt = authHeader.replace('Bearer ', '');
+  const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+
+  if (serviceRoleKey && jwt === serviceRoleKey) {
+    return { userId: 'service_role' };
+  }
 
   // Verify JWT with anon key
   const supabaseAuth = createClient(
