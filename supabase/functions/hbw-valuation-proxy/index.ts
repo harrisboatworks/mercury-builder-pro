@@ -3,6 +3,7 @@
 // to the canonical hbw-valuation tool on Vercel. Keeps the API key out of
 // browser code so frontend, public-quote-api, and the standalone tool all
 // return identical valuations.
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
