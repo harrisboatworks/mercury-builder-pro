@@ -31,6 +31,14 @@ Deno.serve(async (req) => {
     return json({ error: "Method not allowed. Use POST." }, 405);
   }
 
+  // Cap upstream paid API calls: 20 valuations / 10 minutes per IP
+  const allowed = await checkRateLimit(req, {
+    action: "hbw_valuation",
+    maxAttempts: 20,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   const apiKey = Deno.env.get("HBW_API_KEY");
   if (!apiKey) {
     console.error("HBW_API_KEY not configured");
