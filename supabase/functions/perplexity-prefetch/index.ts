@@ -188,6 +188,14 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Limit Perplexity calls: 20 / 10 minutes per IP (cache covers most repeats)
+  const allowed = await checkRateLimit(req, {
+    action: 'perplexity_prefetch',
+    maxAttempts: 20,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   try {
     const { motor } = await req.json();
     
