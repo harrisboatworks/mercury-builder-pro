@@ -1,5 +1,5 @@
 ---
-canonical: https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke
+canonical: https://www.mercuryrepower.ca/motors/proxs-175hp-175-exlpt-proxs
 last_updated: 2026-05-01
 currency: CAD
 pickup_only: true
@@ -7,31 +7,31 @@ delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
-motor_id: 782de8b4-6f7e-459f-ac58-400a6b49ad0b
-slug: fourstroke-20hp-20-eh-fourstroke
-family: FourStroke
-horsepower: 20
-model_number: 1A20301LK
+motor_id: 06c0da2c-c54d-4bfe-bbc1-c6af3534cd19
+slug: proxs-175hp-175-exlpt-proxs
+family: ProXS
+horsepower: 175
+model_number: 11750002A
 availability: in_stock
-price_cad: 4686
+price_cad: 28006
 ---
 
-# 20 EH FourStroke
+# 175 EXLPT ProXS
 
-Mercury FourStroke 20 HP outboard motor (model 1A20301LK).
+Mercury ProXS 175 HP outboard motor (model 11750002A).
 Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
 
 ## Quick facts
 
-- **Model:** 20 EH FourStroke
-- **Family:** Mercury FourStroke
-- **Horsepower:** 20 HP
-- **Model number:** 1A20301LK
+- **Model:** 175 EXLPT ProXS
+- **Family:** Mercury ProXS
+- **Horsepower:** 175 HP
+- **Model number:** 11750002A
 
 ## Pricing (CAD)
 
-- **Selling price:** $4,686
-- **MSRP:** $5,110
+- **Selling price:** $28,006
+- **MSRP:** $31,825
 - **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
@@ -42,16 +42,16 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 ## Best fit for
 
-Small aluminum fishing boats, jon boats, and light tiller setups.
+Larger pontoons, fiberglass runabouts, and walkaround/cuddy boats 20–24 ft.
 
 ## Not ideal for
 
-Pontoons, family runabouts, or any 18+ ft boat carrying more than two adults with gear.
+Small tenders or boats rated under this HP — match HP to transom rating, never exceed it.
 
 ## Build a quote
 
-- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke
-- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=782de8b4-6f7e-459f-ac58-400a6b49ad0b
+- HTML page (canonical for humans): https://www.mercuryrepower.ca/motors/proxs-175hp-175-exlpt-proxs
+- Quote builder deep link: https://www.mercuryrepower.ca/quote/motor-selection?motor=06c0da2c-c54d-4bfe-bbc1-c6af3534cd19
 
 ## Public Quote API
 
@@ -60,7 +60,7 @@ Programmatic quotes: `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1
 ```json
 {
   "action": "build_quote",
-  "motor_id": "782de8b4-6f7e-459f-ac58-400a6b49ad0b",
+  "motor_id": "06c0da2c-c54d-4bfe-bbc1-c6af3534cd19",
   "trade_in": null,
   "contact": null
 }

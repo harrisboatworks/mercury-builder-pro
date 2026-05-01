@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke
-last_updated: 2026-04-30
+last_updated: 2026-05-01
 currency: CAD
 pickup_only: true
 delivery_offered: false
