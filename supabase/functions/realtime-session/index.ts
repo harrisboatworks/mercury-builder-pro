@@ -81,6 +81,14 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Cap realtime session creations: 15 / 10 minutes per IP
+  const allowed = await checkRateLimit(req, {
+    action: 'realtime_session',
+    maxAttempts: 15,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   try {
     const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
     if (!OPENAI_API_KEY) {
