@@ -110,16 +110,17 @@ The `api/cron/google-sheets-sync.ts` Vercel route should also be removed in Step
 
 ---
 
-## What I did NOT do
+## Step C — Pending (≥30 days, not before 2026-05-31)
 
-- Did **not** disable the cron job.
-- Did **not** flip `auto_sync_enabled`.
-- Did **not** delete the Edge Function.
-- Did **not** remove `api/cron/google-sheets-sync.ts`.
-- Did **not** change `motor_models` data.
+Only proceed with explicit approval from Jay. Order of operations:
 
-## Open questions for Jay
+1. `SELECT cron.unschedule(33);`
+2. `supabase--delete_edge_functions(['sync-google-sheets-inventory'])`
+3. Remove `api/cron/google-sheets-sync.ts` from the repo + the matching entry in `vercel.json` if present.
+4. Decide whether to keep or hide the manual trigger in `src/pages/AdminStockSync.tsx`.
+5. Optionally `DROP TABLE public.google_sheets_config;` once nothing else references it.
 
-1. **Approve Step A + Step B now?** (recommended — stops the 06:00 UTC overwrite as soon as tonight)
-2. **Keep the AdminStockSync UI button** that manually triggers the Sheets sync, or hide it? (currently surfaces in `src/pages/AdminStockSync.tsx`)
-3. **Grace period length** — 30 days before Step C, or shorter?
+## Open questions for Jay (deferred to Step C)
+
+1. **Keep the AdminStockSync UI button** that manually triggers the Sheets sync, or hide it now? (Currently it would short-circuit on `auto_sync_enabled=false`, so it's harmless but misleading.)
+2. **Grace period length** — confirm 30 days, or extend?
