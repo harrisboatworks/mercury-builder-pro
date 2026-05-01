@@ -1,8 +1,22 @@
 # Audit: Google Sheets Inventory Sync — Deprecate in Favor of Lightspeed
 
-**Status:** Audit only. No changes executed. Awaiting approval.
+**Status:** Step A + Step B EXECUTED in production on 2026-05-01. Step C (hard removal) deferred ≥30 days.
 **Date:** 2026-05-01
 **Trigger:** Jay confirmed Lightspeed is now the source of truth for inventory.
+
+---
+
+## Production State (as of 2026-05-01)
+
+- ✅ **Step A done:** `cron.job` id 33 (`google-sheets-inventory-daily`, schedule `0 6 * * *`) set `active = false`.
+- ✅ **Step B done:** `public.google_sheets_config.auto_sync_enabled = false`. `last_sync` remains `2026-04-07 06:00:07.63+00`.
+- ⏸ **Not done (intentional):** cron job NOT unscheduled/dropped, Edge Function `sync-google-sheets-inventory` NOT deleted, `api/cron/google-sheets-sync.ts` NOT removed, `motor_models` data NOT touched.
+
+**Post-change verification:**
+- `public-motors-api` returns 200, 25 motors, all pass catalog rules.
+- `agent-mcp-server` `tools/list` returns 5 tools.
+
+**Business decision:** Google Sheets inventory pipeline stays disabled indefinitely. Do NOT re-enable without explicit approval from Jay. Lightspeed is the sole source of truth.
 
 ---
 
@@ -96,16 +110,17 @@ The `api/cron/google-sheets-sync.ts` Vercel route should also be removed in Step
 
 ---
 
-## What I did NOT do
+## Step C — Pending (≥30 days, not before 2026-05-31)
 
-- Did **not** disable the cron job.
-- Did **not** flip `auto_sync_enabled`.
-- Did **not** delete the Edge Function.
-- Did **not** remove `api/cron/google-sheets-sync.ts`.
-- Did **not** change `motor_models` data.
+Only proceed with explicit approval from Jay. Order of operations:
 
-## Open questions for Jay
+1. `SELECT cron.unschedule(33);`
+2. `supabase--delete_edge_functions(['sync-google-sheets-inventory'])`
+3. Remove `api/cron/google-sheets-sync.ts` from the repo + the matching entry in `vercel.json` if present.
+4. Decide whether to keep or hide the manual trigger in `src/pages/AdminStockSync.tsx`.
+5. Optionally `DROP TABLE public.google_sheets_config;` once nothing else references it.
 
-1. **Approve Step A + Step B now?** (recommended — stops the 06:00 UTC overwrite as soon as tonight)
-2. **Keep the AdminStockSync UI button** that manually triggers the Sheets sync, or hide it? (currently surfaces in `src/pages/AdminStockSync.tsx`)
-3. **Grace period length** — 30 days before Step C, or shorter?
+## Open questions for Jay (deferred to Step C)
+
+1. **Keep the AdminStockSync UI button** that manually triggers the Sheets sync, or hide it now? (Currently it would short-circuit on `auto_sync_enabled=false`, so it's harmless but misleading.)
+2. **Grace period length** — confirm 30 days, or extend?
