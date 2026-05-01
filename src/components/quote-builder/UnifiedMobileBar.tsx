@@ -999,7 +999,24 @@ export const UnifiedMobileBar: React.FC = () => {
     }
   };
 
-  if (!shouldShow) return null;
+  if (!shouldShow) {
+    if (!showChatOnlyPill) return null;
+    return (
+      <button
+        onClick={() => handleOpenAI()}
+        aria-label="Open AI Chat Assistant"
+        className="fixed bottom-4 right-4 z-40 flex items-center justify-center h-12 w-12 rounded-full bg-foreground text-background shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+        style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
+      >
+        <MessageCircle className="h-5 w-5" />
+        {unreadCount > 0 && (
+          <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-red-500 text-white text-xs font-bold flex items-center justify-center shadow-lg">
+            {unreadCount > 9 ? '9+' : unreadCount}
+          </span>
+        )}
+      </button>
+    );
+  }
 
   // Shorten motor name for mobile - remove "FourStroke" suffix
   const getCompactMotorName = (model?: string): string => {
