@@ -361,14 +361,57 @@ export const UnifiedMobileBar: React.FC = () => {
     selectionTimeRef.current = null;
   }, [location.pathname]);
 
-  // Check if we should show the bar (mobile + tablet, under 1024px)
+  // Scroll-gated reveal for motor detail pages so the bar doesn't overlap
+  // the price/trust card on first paint.
+  const isMotorDetail = location.pathname.startsWith('/motors/');
+  const [motorDetailRevealed, setMotorDetailRevealed] = useState(false);
+  useEffect(() => {
+    if (!isMotorDetail) {
+      setMotorDetailRevealed(false);
+      return;
+    }
+    const onScroll = () => {
+      if (window.scrollY > 600) setMotorDetailRevealed(true);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [isMotorDetail, location.pathname]);
+
+  // Check if we should show the full bar (mobile + tablet, under 1024px).
+  // Route-aware: hidden on homepage entirely; on motor detail until scrolled;
+  // on motor-selection until a motor is chosen or being previewed.
   const shouldShow = useMemo(() => {
     if (!isMobileOrTablet) return false;
     if (HIDE_ON_PAGES.some(path => location.pathname.startsWith(path))) return false;
-    return SHOW_ON_PAGES.some(path => 
+
+    // Homepage: never show full bar (page has its own hero CTA)
+    if (location.pathname === '/') return false;
+
+    // Motor detail pages: only after the user scrolls past the price card
+    if (isMotorDetail && !motorDetailRevealed) return false;
+
+    // Quote motor-selection: only once a motor is selected or being previewed
+    if (location.pathname === '/quote/motor-selection') {
+      if (!state.motor && !state.previewMotor) return false;
+    }
+
+    return SHOW_ON_PAGES.some(path =>
       location.pathname === path || location.pathname.startsWith(path + '/')
     );
-  }, [isMobileOrTablet, location.pathname]);
+  }, [isMobileOrTablet, location.pathname, isMotorDetail, motorDetailRevealed, state.motor, state.previewMotor]);
+
+  // Whether the bar is suppressed on a route where we still want a minimal
+  // chat-only affordance (so users keep AI access without a full CTA bar).
+  const showChatOnlyPill = useMemo(() => {
+    if (!isMobileOrTablet) return false;
+    if (shouldShow) return false;
+    if (HIDE_ON_PAGES.some(path => location.pathname.startsWith(path))) return false;
+    if (location.pathname === '/') return true;
+    if (isMotorDetail && !motorDetailRevealed) return true;
+    if (location.pathname === '/quote/motor-selection' && !state.motor && !state.previewMotor) return true;
+    return false;
+  }, [isMobileOrTablet, shouldShow, location.pathname, isMotorDetail, motorDetailRevealed, state.motor, state.previewMotor]);
 
   // Use preview motor if available (viewing modal), otherwise use selected motor
   const displayMotor = state.previewMotor || state.motor;
@@ -466,8 +509,15 @@ export const UnifiedMobileBar: React.FC = () => {
     return { completed, total, remaining: total - completed };
   }, [state.motor, state.purchasePath, state.boatInfo, state.tradeInInfo, state.installConfig, state.fuelTankConfig]);
 
-  // Get page config with dynamic label resolution
-  const pageConfig = PAGE_CONFIG[location.pathname] || {
+  // Get page config with dynamic label resolution.
+  // Motor detail pages (/motors/:slug) use a compact "Build Quote" config.
+  const motorDetailConfig: PageConfig = {
+    primaryLabel: 'Build Quote',
+    nextPath: '/quote/motor-selection',
+    aiMessage: 'Questions about this motor?',
+    nudges: { idle: [] },
+  };
+  const pageConfig = PAGE_CONFIG[location.pathname] || (isMotorDetail ? motorDetailConfig : {
     primaryLabel: 'Continue',
     nextPath: '/quote/summary',
     aiMessage: 'Questions about your motor configuration?',
@@ -476,7 +526,7 @@ export const UnifiedMobileBar: React.FC = () => {
         { delay: 20, message: 'Questions? Tap AI for help', icon: 'sparkles' },
       ]
     }
-  };
+  });
 
   const getPrimaryLabel = (): string => {
     // Summary page shows dynamic Reserve CTA based on motor HP
@@ -956,7 +1006,24 @@ export const UnifiedMobileBar: React.FC = () => {
     }
   };
 
-  if (!shouldShow) return null;
+  if (!shouldShow) {
+    if (!showChatOnlyPill) return null;
+    return (
+      <button
+        onClick={() => handleOpenAI()}
+        aria-label="Open AI Chat Assistant"
+        className="fixed bottom-4 right-4 z-40 flex items-center justify-center h-12 w-12 rounded-full bg-foreground text-background shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+        style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
+      >
+        <MessageCircle className="h-5 w-5" />
+        {unreadCount > 0 && (
+          <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-red-500 text-white text-xs font-bold flex items-center justify-center shadow-lg">
+            {unreadCount > 9 ? '9+' : unreadCount}
+          </span>
+        )}
+      </button>
+    );
+  }
 
   // Shorten motor name for mobile - remove "FourStroke" suffix
   const getCompactMotorName = (model?: string): string => {
