@@ -756,7 +756,15 @@ serve(async (req) => {
         { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
       );
     }
-    
+
+    // Cap real ElevenLabs token requests: 15 / 10 minutes per IP (warmups skipped above)
+    const allowed = await checkRateLimit(req, {
+      action: 'voice_token',
+      maxAttempts: 15,
+      windowMinutes: 10,
+    });
+    if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
     const ELEVENLABS_API_KEY = Deno.env.get('ELEVENLABS_API_KEY');
     if (!ELEVENLABS_API_KEY) {
       console.error('ELEVENLABS_API_KEY is not set');
