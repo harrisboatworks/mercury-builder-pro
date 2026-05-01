@@ -15,6 +15,7 @@
 // so external agents have one canonical MCP endpoint.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -329,6 +330,21 @@ Deno.serve(async (req) => {
   }
 
   const { id = null, method, params = {} } = payload;
+
+  const methodKey = typeof method === "string" ? method.replace(/[^a-z0-9_/-]/gi, "_") : "unknown";
+  const toolName = method === "tools/call" && typeof params?.name === "string"
+    ? params.name.replace(/[^a-z0-9_-]/gi, "_")
+    : null;
+  const limit =
+    toolName === "build_quote" ? { maxAttempts: 40, windowMinutes: 10 } :
+    method === "tools/call" ? { maxAttempts: 80, windowMinutes: 10 } :
+    { maxAttempts: 180, windowMinutes: 10 };
+  const allowed = await checkRateLimit(req, {
+    action: `agent_mcp_${toolName || methodKey}`.slice(0, 128),
+    ...limit,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   const supabase = createClient(
     Deno.env.get("SUPABASE_URL")!,
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!

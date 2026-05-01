@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.39.3";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -84,6 +85,13 @@ serve(async (req) => {
     } else {
       console.log('[google-places] Force refresh requested');
     }
+
+    const upstreamAllowed = await checkRateLimit(req, {
+      action: 'google_places_upstream',
+      maxAttempts: 10,
+      windowMinutes: 60,
+    });
+    if (!upstreamAllowed) return rateLimitedResponse(corsHeaders, 300);
 
     // Step 2: Fetch from Google Places API
     console.log('[google-places] Searching for place:', searchQuery);

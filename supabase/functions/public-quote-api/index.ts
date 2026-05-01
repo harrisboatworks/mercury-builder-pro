@@ -10,6 +10,7 @@
 // All responses include `priceValidUntil` (24h) and a disclaimer.
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -50,6 +51,17 @@ Deno.serve(async (req) => {
 
     const body = await req.json().catch(() => ({}));
     const action = body?.action;
+
+    const actionKey = typeof action === "string" ? action : "unknown";
+    const actionLimit =
+      actionKey === "build_quote" ? { maxAttempts: 40, windowMinutes: 10 } :
+      actionKey === "estimate_trade_in" ? { maxAttempts: 30, windowMinutes: 10 } :
+      { maxAttempts: 120, windowMinutes: 10 };
+    const allowed = await checkRateLimit(req, {
+      action: `public_quote_${actionKey}`.slice(0, 128),
+      ...actionLimit,
+    });
+    if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
     switch (action) {
       case "list_motors":

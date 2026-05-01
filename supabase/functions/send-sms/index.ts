@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -39,6 +40,28 @@ serve(async (req) => {
     const smsData: SMSRequest = await req.json();
     
     console.log('SMS request:', smsData);
+
+    if (!smsData.message || smsData.message.length > 1500) {
+      return new Response(JSON.stringify({ success: false, error: 'Invalid SMS message length' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    const ipAllowed = await checkRateLimit(req, {
+      action: 'send_sms_ip',
+      maxAttempts: 60,
+      windowMinutes: 60,
+    });
+    if (!ipAllowed) return rateLimitedResponse(corsHeaders, 300);
+
+    const recipientAllowed = await checkRateLimit(req, {
+      identifier: String(smsData.to || 'unknown').replace(/\s+/g, ''),
+      action: 'send_sms_recipient',
+      maxAttempts: 6,
+      windowMinutes: 60,
+    });
+    if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
 
     // Resolve 'admin' to ADMIN_PHONE env var
     if (smsData.to === 'admin') {

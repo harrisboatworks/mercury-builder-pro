@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import Stripe from "https://esm.sh/stripe@18.5.0";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -55,6 +56,13 @@ serve(async (req) => {
   }
 
   try {
+    const allowed = await checkRateLimit(req, {
+      action: "create_payment_session",
+      maxAttempts: 20,
+      windowMinutes: 10,
+    });
+    if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
     logStep("Function started");
 
     const stripeKey = Deno.env.get("STRIPE_SECRET_KEY");

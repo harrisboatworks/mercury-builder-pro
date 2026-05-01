@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
 import { corsHeaders } from "../_shared/cors.ts";
 import { createBrandedEmailTemplate, createButtonHtml } from "../_shared/email-template.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -34,6 +35,21 @@ const handler = async (req: Request): Promise<Response> => {
     }: SavedQuoteEmailRequest = await req.json();
 
     console.log('Sending saved quote email to:', customerEmail);
+
+    const ipAllowed = await checkRateLimit(req, {
+      action: 'send_saved_quote_email_ip',
+      maxAttempts: 30,
+      windowMinutes: 60,
+    });
+    if (!ipAllowed) return rateLimitedResponse(corsHeaders, 300);
+
+    const recipientAllowed = await checkRateLimit(req, {
+      identifier: String(customerEmail || 'unknown').toLowerCase(),
+      action: 'send_saved_quote_email_recipient',
+      maxAttempts: 8,
+      windowMinutes: 60,
+    });
+    if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
 
     const siteUrl = Deno.env.get("SITE_URL") || "https://mercuryrepower.ca";
     

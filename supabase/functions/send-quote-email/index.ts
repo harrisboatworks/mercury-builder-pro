@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -304,6 +305,21 @@ serve(async (req) => {
     }
 
     const emailData = validationResult.data;
+
+    const ipAllowed = await checkRateLimit(req, {
+      action: 'send_quote_email_ip',
+      maxAttempts: 30,
+      windowMinutes: 60,
+    });
+    if (!ipAllowed) return rateLimitedResponse(corsHeaders, 300);
+
+    const recipientAllowed = await checkRateLimit(req, {
+      identifier: emailData.customerEmail.toLowerCase(),
+      action: 'send_quote_email_recipient',
+      maxAttempts: 8,
+      windowMinutes: 60,
+    });
+    if (!recipientAllowed) return rateLimitedResponse(corsHeaders, 300);
     
     console.log('Sending email:', emailData.emailType, 'to:', emailData.customerEmail);
 
