@@ -514,7 +514,9 @@ const caseStudyTwinSummaries = caseStudies.map(s => {
 
 const locationTwinSummaries = locations.map(loc => {
   const path = `/locations/${loc.slug}.md`;
-  writePublicMd(path, locationMarkdown(loc, caseStudies));
+  const md = locationMarkdown(loc, caseStudies);
+  lintLocationTwin(loc.slug, md);
+  writePublicMd(path, md);
   return { path, title: loc.title };
 });
 
@@ -523,7 +525,8 @@ writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSu
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', 'CAD', 'Pickup only', 'mcp.json']);
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
-if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Common boat types']);
+if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
+
 
 if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0) {
   throw new Error(`[markdown-twins] Refusing empty generation: motors=${motorTwinSummaries.length}, caseStudies=${caseStudyTwinSummaries.length}, locations=${locationTwinSummaries.length}`);
