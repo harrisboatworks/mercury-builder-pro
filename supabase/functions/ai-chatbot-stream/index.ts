@@ -1944,6 +1944,14 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Lightweight abuse protection: 30 streamed AI chats / 10 minutes per IP
+  const allowed = await checkRateLimit(req, {
+    action: 'ai_chat_stream',
+    maxAttempts: 30,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
+
   try {
     const { message, conversationHistory = [], context = {}, stream = false } = await req.json();
     if (!message) throw new Error('Message is required');
