@@ -361,14 +361,57 @@ export const UnifiedMobileBar: React.FC = () => {
     selectionTimeRef.current = null;
   }, [location.pathname]);
 
-  // Check if we should show the bar (mobile + tablet, under 1024px)
+  // Scroll-gated reveal for motor detail pages so the bar doesn't overlap
+  // the price/trust card on first paint.
+  const isMotorDetail = location.pathname.startsWith('/motors/');
+  const [motorDetailRevealed, setMotorDetailRevealed] = useState(false);
+  useEffect(() => {
+    if (!isMotorDetail) {
+      setMotorDetailRevealed(false);
+      return;
+    }
+    const onScroll = () => {
+      if (window.scrollY > 600) setMotorDetailRevealed(true);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [isMotorDetail, location.pathname]);
+
+  // Check if we should show the full bar (mobile + tablet, under 1024px).
+  // Route-aware: hidden on homepage entirely; on motor detail until scrolled;
+  // on motor-selection until a motor is chosen or being previewed.
   const shouldShow = useMemo(() => {
     if (!isMobileOrTablet) return false;
     if (HIDE_ON_PAGES.some(path => location.pathname.startsWith(path))) return false;
-    return SHOW_ON_PAGES.some(path => 
+
+    // Homepage: never show full bar (page has its own hero CTA)
+    if (location.pathname === '/') return false;
+
+    // Motor detail pages: only after the user scrolls past the price card
+    if (isMotorDetail && !motorDetailRevealed) return false;
+
+    // Quote motor-selection: only once a motor is selected or being previewed
+    if (location.pathname === '/quote/motor-selection') {
+      if (!state.motor && !state.previewMotor) return false;
+    }
+
+    return SHOW_ON_PAGES.some(path =>
       location.pathname === path || location.pathname.startsWith(path + '/')
     );
-  }, [isMobileOrTablet, location.pathname]);
+  }, [isMobileOrTablet, location.pathname, isMotorDetail, motorDetailRevealed, state.motor, state.previewMotor]);
+
+  // Whether the bar is suppressed on a route where we still want a minimal
+  // chat-only affordance (so users keep AI access without a full CTA bar).
+  const showChatOnlyPill = useMemo(() => {
+    if (!isMobileOrTablet) return false;
+    if (shouldShow) return false;
+    if (HIDE_ON_PAGES.some(path => location.pathname.startsWith(path))) return false;
+    if (location.pathname === '/') return true;
+    if (isMotorDetail && !motorDetailRevealed) return true;
+    if (location.pathname === '/quote/motor-selection' && !state.motor && !state.previewMotor) return true;
+    return false;
+  }, [isMobileOrTablet, shouldShow, location.pathname, isMotorDetail, motorDetailRevealed, state.motor, state.previewMotor]);
 
   // Use preview motor if available (viewing modal), otherwise use selected motor
   const displayMotor = state.previewMotor || state.motor;
