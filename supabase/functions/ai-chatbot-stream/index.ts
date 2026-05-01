@@ -1,6 +1,7 @@
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { createClient } from "npm:@supabase/supabase-js@2.53.1";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 // Import knowledge bases
 import { 
@@ -1942,6 +1943,14 @@ serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  // Lightweight abuse protection: 30 streamed AI chats / 10 minutes per IP
+  const allowed = await checkRateLimit(req, {
+    action: 'ai_chat_stream',
+    maxAttempts: 30,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
   try {
     const { message, conversationHistory = [], context = {}, stream = false } = await req.json();

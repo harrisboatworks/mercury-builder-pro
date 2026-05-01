@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -84,6 +85,14 @@ serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
+
+  // Cap voice Perplexity queries: 30 / 10 minutes per IP
+  const allowed = await checkRateLimit(req, {
+    action: 'voice_perplexity',
+    maxAttempts: 30,
+    windowMinutes: 10,
+  });
+  if (!allowed) return rateLimitedResponse(corsHeaders, 60);
 
   try {
     const { query, category: providedCategory, motor_context } = await req.json();
