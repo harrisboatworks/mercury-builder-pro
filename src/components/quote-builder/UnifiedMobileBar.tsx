@@ -769,7 +769,7 @@ export const UnifiedMobileBar: React.FC = () => {
     
     if (nudges.idle && idleSeconds >= minIdleForRotation) {
       // Build dynamic nudges array with page-specific additions
-      let allNudges = [...nudges.idle];
+      const allNudges = [...nudges.idle];
       
       // Dynamic boat-info nudge: show HP range based on boat length
       if (location.pathname === '/quote/boat-info' && state.boatInfo?.length) {
@@ -956,7 +956,7 @@ export const UnifiedMobileBar: React.FC = () => {
     triggerHaptic('light');
 
     // Block if required selection on this step is missing
-    if (stepGate.disabled) {
+    if (!isMotorDetail && stepGate.disabled) {
       if (stepGate.reason) toast.error(stepGate.reason);
       return;
     }
@@ -1006,6 +1006,8 @@ export const UnifiedMobileBar: React.FC = () => {
     }
   };
 
+  const primaryDisabled = isMotorDetail ? false : (!hasMotor || stepGate.disabled);
+
   if (!shouldShow) {
     if (!showChatOnlyPill) return null;
     return (
@@ -1041,6 +1043,7 @@ export const UnifiedMobileBar: React.FC = () => {
   // Get contextual empty state message based on current page
   const getEmptyStateMessage = () => {
     if (location.pathname === '/') return 'Browse Mercury Motors';
+    if (isMotorDetail) return 'Ready for a quote?';
     if (location.pathname.startsWith('/promotions')) return 'View Current Promos';
     if (location.pathname.startsWith('/financing')) return 'Explore Financing';
     return 'Select a motor to begin';
@@ -1177,77 +1180,79 @@ export const UnifiedMobileBar: React.FC = () => {
           shadow-[0_-2px_20px_rgba(0,0,0,0.06)]"
       >
         {/* Always-Visible Tappable Prompt Bar */}
-        <motion.button
-          onClick={handleNudgeClick}
-          whileTap={{ scale: 0.98 }}
-          className="w-full overflow-hidden text-left relative"
-        >
-          {/* Tap ripple effect overlay */}
-          <motion.span
-            initial={false}
-            className="absolute inset-0 bg-black/5 opacity-0 pointer-events-none"
-            whileTap={{ opacity: 1 }}
-            transition={{ duration: 0.15 }}
-          />
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={isOpen ? 'chat-open' : (isLoading ? 'typing' : (activeNudge?.message || 'default-prompt'))}
-              initial={{ opacity: 0, y: -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 5 }}
-              transition={{ duration: 0.2 }}
-              className={cn(
-                "px-4 py-2 border-b text-center transition-colors",
-                isOpen && "bg-gradient-to-r from-primary/15 to-primary/10 border-primary/30 text-primary",
-                !isOpen && isLoading && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
-                !isOpen && !isLoading && activeNudge?.type === 'comparison' && "bg-gradient-to-r from-indigo-50 to-purple-100/50 border-indigo-200/60 text-indigo-700",
-                !isOpen && !isLoading && activeNudge?.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600",
-                !isOpen && !isLoading && activeNudge?.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700",
-                !isOpen && !isLoading && activeNudge?.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
-                !isOpen && !isLoading && activeNudge?.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700",
-                !isOpen && !isLoading && activeNudge?.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600",
-                !isOpen && !isLoading && !activeNudge && "bg-gray-50/80 border-gray-200/50 text-gray-500",
-              )}
-            >
-              <span className="text-xs font-medium inline-flex items-center justify-center">
-                {isOpen ? (
-                  <>
-                    <MessageCircle className="h-3.5 w-3.5 mr-1.5 inline-block" />
-                    Chat is open • Swipe down to close
-                  </>
-                ) : isLoading ? (
-                  <>
-                    <span className="mr-1.5">AI is thinking</span>
-                    <span className="inline-flex gap-0.5">
-                      {[0, 1, 2].map((i) => (
-                        <motion.span
-                          key={i}
-                          className="w-1 h-1 bg-current rounded-full"
-                          animate={{ y: [0, -3, 0] }}
-                          transition={{ duration: 0.5, repeat: Infinity, delay: i * 0.12 }}
-                        />
-                      ))}
-                    </span>
-                  </>
-                ) : activeNudge ? (
-                  <>
-                    {extractPhoneAction(activeNudge.message) ? (
-                      <Phone className="h-3.5 w-3.5 mr-1.5 inline-block" />
-                    ) : (
-                      <NudgeIcon icon={activeNudge.icon} />
-                    )}
-                    {activeNudge.message}
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="h-3.5 w-3.5 mr-1.5 inline-block" />
-                    {getDefaultPromptMessage()}
-                  </>
+        {!isMotorDetail && (
+          <motion.button
+            onClick={handleNudgeClick}
+            whileTap={{ scale: 0.98 }}
+            className="w-full overflow-hidden text-left relative"
+          >
+            {/* Tap ripple effect overlay */}
+            <motion.span
+              initial={false}
+              className="absolute inset-0 bg-black/5 opacity-0 pointer-events-none"
+              whileTap={{ opacity: 1 }}
+              transition={{ duration: 0.15 }}
+            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={isOpen ? 'chat-open' : (isLoading ? 'typing' : (activeNudge?.message || 'default-prompt'))}
+                initial={{ opacity: 0, y: -5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 5 }}
+                transition={{ duration: 0.2 }}
+                className={cn(
+                  "px-4 py-2 border-b text-center transition-colors",
+                  isOpen && "bg-gradient-to-r from-primary/15 to-primary/10 border-primary/30 text-primary",
+                  !isOpen && isLoading && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
+                  !isOpen && !isLoading && activeNudge?.type === 'comparison' && "bg-gradient-to-r from-indigo-50 to-purple-100/50 border-indigo-200/60 text-indigo-700",
+                  !isOpen && !isLoading && activeNudge?.type === 'tip' && "bg-gradient-to-r from-gray-50 to-gray-100/80 border-gray-200/60 text-gray-600",
+                  !isOpen && !isLoading && activeNudge?.type === 'success' && "bg-gradient-to-r from-emerald-50 to-emerald-100/50 border-emerald-200/60 text-emerald-700",
+                  !isOpen && !isLoading && activeNudge?.type === 'celebration' && "bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20 text-primary",
+                  !isOpen && !isLoading && activeNudge?.type === 'progress' && "bg-gradient-to-r from-amber-50 to-amber-100/50 border-amber-200/60 text-amber-700",
+                  !isOpen && !isLoading && activeNudge?.type === 'social-proof' && "bg-gradient-to-r from-slate-50 to-slate-100/80 border-slate-200/60 text-slate-600",
+                  !isOpen && !isLoading && !activeNudge && "bg-gray-50/80 border-gray-200/50 text-gray-500",
                 )}
-              </span>
-            </motion.div>
-          </AnimatePresence>
-        </motion.button>
+              >
+                <span className="text-xs font-medium inline-flex items-center justify-center">
+                  {isOpen ? (
+                    <>
+                      <MessageCircle className="h-3.5 w-3.5 mr-1.5 inline-block" />
+                      Chat is open • Swipe down to close
+                    </>
+                  ) : isLoading ? (
+                    <>
+                      <span className="mr-1.5">AI is thinking</span>
+                      <span className="inline-flex gap-0.5">
+                        {[0, 1, 2].map((i) => (
+                          <motion.span
+                            key={i}
+                            className="w-1 h-1 bg-current rounded-full"
+                            animate={{ y: [0, -3, 0] }}
+                            transition={{ duration: 0.5, repeat: Infinity, delay: i * 0.12 }}
+                          />
+                        ))}
+                      </span>
+                    </>
+                  ) : activeNudge ? (
+                    <>
+                      {extractPhoneAction(activeNudge.message) ? (
+                        <Phone className="h-3.5 w-3.5 mr-1.5 inline-block" />
+                      ) : (
+                        <NudgeIcon icon={activeNudge.icon} />
+                      )}
+                      {activeNudge.message}
+                    </>
+                  ) : (
+                    <>
+                      <Sparkles className="h-3.5 w-3.5 mr-1.5 inline-block" />
+                      {getDefaultPromptMessage()}
+                    </>
+                  )}
+                </span>
+              </motion.div>
+            </AnimatePresence>
+          </motion.button>
+        )}
 
         <div 
           className="flex flex-row items-center h-14 min-[375px]:h-16 keep-flex
@@ -1469,7 +1474,9 @@ export const UnifiedMobileBar: React.FC = () => {
                   <Sparkles className="h-3.5 w-3.5 min-[375px]:h-4 min-[375px]:w-4" />
                   {getEmptyStateMessage()}
                 </span>
-                <span className="text-[9px] min-[375px]:text-[10px] text-gray-400 mt-0.5">Tap to explore</span>
+                <span className="text-[9px] min-[375px]:text-[10px] text-gray-400 mt-0.5">
+                  {isMotorDetail ? 'Tap Build Quote' : 'Tap to explore'}
+                </span>
               </div>
             )}
           </motion.button>
@@ -1496,9 +1503,9 @@ export const UnifiedMobileBar: React.FC = () => {
                 y: { duration: 2, repeat: Infinity, ease: 'easeInOut' }
               }}
               onClick={handlePrimary}
-              disabled={!hasMotor || stepGate.disabled}
-              aria-disabled={!hasMotor || stepGate.disabled}
-              title={stepGate.disabled ? stepGate.reason : undefined}
+              disabled={primaryDisabled}
+              aria-disabled={primaryDisabled}
+              title={!isMotorDetail && stepGate.disabled ? stepGate.reason : undefined}
               className={cn(
                 "shrink-0 rounded-xl font-semibold",
                 "h-10 px-2.5 text-xs min-[375px]:h-11 min-[375px]:px-3 min-[375px]:text-sm min-[428px]:px-4",
