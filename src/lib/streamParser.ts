@@ -1,7 +1,8 @@
 // SSE Stream Parser for AI Chat with Typewriter Effect + Mobile Fallback
 
-const SUPABASE_URL = 'https://eutsoqdpjurknjsshxes.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
+const runtimeEnv = (import.meta as any).env ?? {};
+const SUPABASE_URL = runtimeEnv.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
+const SUPABASE_ANON_KEY = runtimeEnv.VITE_SUPABASE_PUBLISHABLE_KEY || '';
 
 const STREAM_TIMEOUT_MS = 25_000; // 25s timeout for mobile connections
 

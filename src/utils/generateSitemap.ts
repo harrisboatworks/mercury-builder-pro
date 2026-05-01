@@ -1,7 +1,6 @@
 import { blogArticles, isArticlePublished } from '../data/blogArticles';
 import { caseStudies } from '../data/caseStudies';
 import { locations } from '../data/locations';
-import { supabase } from '../integrations/supabase/client';
 
 const BASE_URL = 'https://www.mercuryrepower.ca';
 
@@ -166,6 +165,7 @@ function buildSlug(source: string): string {
 // Fetch motor slugs from Supabase for sitemap generation
 export async function getMotorSitemapEntries(): Promise<SitemapEntry[]> {
   try {
+    const { supabase } = await import('../integrations/supabase/client');
     const { data: motors, error } = await supabase
       .from('motor_models')
       .select('model_key, model, model_display, updated_at, horsepower')
