@@ -402,20 +402,26 @@ const FORBIDDEN_LOCATION_PHRASES = [
 ];
 
 function lintLocationTwin(slug, md) {
-  const lower = md.toLowerCase();
+  // Strip FAQ question headings (### ...) — they are interrogative, not assertions.
+  const lines = md.split('\n').filter(line => !/^###\s/.test(line));
+  const lower = lines.join('\n').toLowerCase();
   const hits = FORBIDDEN_LOCATION_PHRASES.filter(p => {
-    // Allow phrases inside negation context like "no mobile service" or "we do not deliver to"
-    const idx = lower.indexOf(p);
-    if (idx === -1) return false;
-    const window = lower.slice(Math.max(0, idx - 40), idx);
-    if (/\b(no|not|don'?t|does not|do not|never|without|no\s+\w+\s+)\s*$/.test(window)) return false;
-    if (/\b(no|not|never)\b[^.]{0,40}$/.test(window)) return false;
-    return true;
+    let from = 0;
+    while (true) {
+      const idx = lower.indexOf(p, from);
+      if (idx === -1) return false;
+      const window = lower.slice(Math.max(0, idx - 60), idx);
+      // Allow when preceded (within ~60 chars, no period) by a negation word.
+      const allowed = /\b(no|not|don'?t|does not|do not|never|without|zero)\b[^.]*$/.test(window);
+      if (!allowed) return true;
+      from = idx + p.length;
+    }
   });
   if (hits.length) {
     throw new Error(`[markdown-twins] Forbidden phrase(s) in /locations/${slug}.md: ${hits.join(', ')}`);
   }
 }
+
 
 
 function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
