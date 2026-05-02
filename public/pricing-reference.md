@@ -59,6 +59,18 @@ motor_count: 24
 | 90 | 90 ELPT Command Thrust FourStroke | 1F904532D | — | — | $15,274 _(MSRP $17,355)_ | In stock | [md](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke.md) | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=41acbe10-27ef-4502-a968-21c1723705c7) |
 | 115 | 115ELPT FourStroke | 1115F132D | — | — | $16,913 _(MSRP $19,220)_ | In stock | [md](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md) | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=eee34e36-54e0-4563-b276-aa5c4f751798) |
 
+## Pro XS
+
+| HP | Model | Model # | Shaft | Control | Price (CAD) | Status | Twin | Quote |
+|---:|---|---|---|---|---:|---|---|---|
+| 115 | 115 EXLPT ProXS | 1117F231D | — | — | $17,666 _(MSRP $20,075)_ | In stock | [md](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md) | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=d9239f6d-639a-42b0-8436-1645329ecfa4) |
+| 115 | 115 ELPT ProXS | 1117F131D | — | — | $17,320 _(MSRP $19,680)_ | In stock | [md](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md) | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=5587d161-617b-4b71-ad24-4d44df14f035) |
+| 150 | 150 EXLPT ProXS | 1152F231D | — | — | $24,233 _(MSRP $27,540)_ | In stock | [md](https://www.mercuryrepower.ca/motors/proxs-150hp-150-exlpt-proxs.md) | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=ffb1f5fd-fc8a-4a0a-bd21-5a1ac1af917b) |
+| 150 | 150 ELPT ProXS | 1152F131D | — | — | $24,107 _(MSRP $27,395)_ | In stock | [md](https://www.mercuryrepower.ca/motors/proxs-150hp-150-elpt-proxs.md) | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=e5317ef2-8420-494f-8d84-a6abef00e5d8) |
+| 175 | 175 EXLPT ProXS | 11750002A | — | — | $28,006 _(MSRP $31,825)_ | In stock | [md](https://www.mercuryrepower.ca/motors/proxs-175hp-175-exlpt-proxs.md) | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=06c0da2c-c54d-4bfe-bbc1-c6af3534cd19) |
+| 200 | 200 ELPT ProXS | 12000039A | — | — | $28,122 _(MSRP $31,955)_ | In stock | [md](https://www.mercuryrepower.ca/motors/proxs-200hp-200-elpt-proxs.md) | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=9e7a8b58-bc3f-401e-b24e-25b2b102d0fd) |
+| 250 | 250 ELPT ProXS | 12500094A | — | — | $36,542 _(MSRP $41,525)_ | In stock | [md](https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs.md) | [build](https://www.mercuryrepower.ca/quote/motor-selection?motor=0f6192df-bdfe-4ca4-add5-1e8042ade8d8) |
+
 ## Related
 
 - Agent catalog index: https://www.mercuryrepower.ca/catalog.md
