@@ -1,4 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.53.1'
+import { requireAdmin } from '../_shared/admin-auth.ts'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -67,6 +68,10 @@ Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders })
   }
+
+  // Admin auth gate (also accepts internal cron secret via x-internal-secret)
+  const authResult = await requireAdmin(req, corsHeaders)
+  if (authResult instanceof Response) return authResult
 
   try {
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!

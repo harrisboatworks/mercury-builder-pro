@@ -1,69 +1,131 @@
-## Goal
+# Targeted Security Plan
 
-Add an agent-friendly `/pricing-reference.md` generated from the same live data source the quote builder uses (`public-motors-api`), strengthen explicit negative service definitions in `catalog.md` and `llms.txt`, and confirm there are no stale duplicate markdown artifacts.
+Scoped exactly to the five priorities. No changes to `/quote/motor-selection`, pricing logic, inventory filters, or motor data.
 
-## Findings from exploration
+---
 
-- Markdown twins are generated at build time by `scripts/generate-markdown-twins.mjs` (wired into `package.json` `build` script before `vite build`).
-- That script already loads motors via `loadMotors()` → `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api` (the same public source the quote builder uses), with a Supabase fallback. Verado is filtered out, matching "curated quote-builder/listed motors only".
-- The script already wipes and regenerates `public/motors`, `public/case-studies`, `public/locations`, `public/blog`, and `public/catalog.md` on every build — so there is no risk of stale ` 2.md` / ` 3.md` artifacts being kept around.
-- Audit ran: `find public -name "* 2.md" -o -name "* 3.md" -o -name "* [0-9].md" -o -name "*copy*.md"` → **zero hits**. Nothing to delete.
-- `public/llms.txt` and `public/catalog.md` already mention "pickup only" and Verado-special-order, but do not have a single explicit, scannable "What we do NOT do" block. We will add one to both.
+## 1. Storage policies — restrict writes to admins only
 
-## Changes
+**Current state on `storage.objects`:**
 
-### 1. Extend `scripts/generate-markdown-twins.mjs`
+| Policy | Op | Who |
+|---|---|---|
+| `Authenticated users can upload hero images` | INSERT | any authenticated → `motor-images/mercury/heroes/%` |
+| `Authenticated users can upload inventory images` | INSERT | any authenticated → `motor-images/mercury/inventory/%` |
+| `Authenticated users can update motor images` | UPDATE | any authenticated → `motor-images/mercury/{heroes,inventory}/%` |
+| `Authenticated users can delete motor images` | DELETE | any authenticated → `motor-images/mercury/{heroes,inventory}/%` |
+| `Authenticated users can upload inventory photos` | INSERT | any authenticated → `inventory-photos` |
+| `Admins can upload motor images` | INSERT | admin → `motor-images` (already correct) |
+| `Admins can delete inventory photos` | DELETE | admin → `inventory-photos` (already correct) |
+| `Public can view motor images` / `Public read access for motor images` / `public read motor-images` | SELECT | public → `motor-images` (KEEP — site needs this) |
+| `Public can view inventory photos` | SELECT | public → `inventory-photos` (KEEP) |
 
-- Add a new `pricingReferenceMarkdown(motorRecords)` function. Build it from the **same `motorRecords` array** already loaded for motor twins (so it stays in lockstep with the quote builder's data source). Filter out Verado just like motor twins do.
-- For each curated/listed motor, include: model display, Mercury family, HP, model number, shaft / control notes (when present in API), in-stock vs special-order status, selling price in CAD (using `resolveMotorSellingPrice`), MSRP if higher than selling, motor twin link `/motors/{slug}.md`, and quote-builder deep link `/quote/motor-selection?motor={id}`.
-- Group output by family (FourStroke, Pro XS, SeaPro), then by HP ascending. Render as a markdown table per family for fast LLM scanning.
-- Write to `public/pricing-reference.md`. Frontmatter: canonical `https://www.mercuryrepower.ca/pricing-reference.md`, `last_updated`, `currency: CAD`, `pickup_only: true`, `delivery_offered: false`, `verado_status: special-order only`, `data_source: public-motors-api (same source as /quote/motor-selection)`, `index_type: pricing_reference`.
-- Add a "What is NOT in this reference" section: Verado (special order), sterndrives (not sold on this site), used motors, parts/accessories.
-- Add a `verifyPublicMd('/pricing-reference.md', ...)` call covering: `currency: CAD`, `pickup_only: true`, `## FourStroke`, `## Pro XS`, and the negative-definitions block.
-- Refuse-empty guard: throw if zero priced motors were found.
+**Action (migration):**
+- DROP the four `Authenticated users can {upload hero,upload inventory,update,delete} motor images` policies.
+- DROP `Authenticated users can upload inventory photos`.
+- ADD admin-gated equivalents using `has_role(auth.uid(), 'admin'::app_role)`:
+  - `Admins can upload hero images` (INSERT, `motor-images`, path `mercury/heroes/%`)
+  - `Admins can upload inventory images` (INSERT, `motor-images`, path `mercury/inventory/%`)
+  - `Admins can update motor images` (UPDATE, `motor-images`, those paths)
+  - `Admins can delete motor images` (DELETE, `motor-images`, those paths)
+  - `Admins can upload inventory photos` (INSERT, `inventory-photos`)
+- Public SELECT policies left untouched.
 
-### 2. Update `catalogMarkdown(...)` in the same script
+Service-role uploads (Edge Functions like `update-motor-images`, `scrape-motor-images`, Dropbox sync) bypass RLS and continue to work.
 
-- Add an explicit "What we do NOT offer" bullet block after the existing "Business rules" section, with these exact items:
-  - Pickup only at Gores Landing, ON — no delivery, no shipping of outboards.
-  - No mobile service, no on-site installs, no dock/marina/driveway visits.
-  - No sterndrives sold on mercuryrepower.ca (outboards only).
-  - Verado is special order only — not part of default inventory and not actively promoted.
-  - No non-Mercury outboards (no Yamaha / Honda / Suzuki / Tohatsu).
-- Add a new top-level link to `/pricing-reference.md` under a "## Pricing reference" section, positioned right after "## Public quote API".
+---
 
-### 3. Update `public/llms.txt` (hand-edited file, not script-generated)
+## 2. Auth health summary — add admin gate
 
-- Add a new section **"What we do NOT offer (negative definitions)"** with the same 5 bullets as above, near the top so agents see it before product lists.
-- Add `/pricing-reference.md` to the "Markdown twins for AI agents" section as: `Pricing reference (curated, listed motors only): https://www.mercuryrepower.ca/pricing-reference.md`.
-- Keep all other content untouched (REST API URLs, MCP info, contact, etc.).
+`supabase/functions/auth-health-summary/index.ts` currently returns placeholder zeros, but is structurally designed to expose lockouts/IPs. Already `verify_jwt = true` in config, but that allows any signed-in user.
 
-### 4. Duplicate-artifact audit
+**Action:**
+- Add `requireAdmin(req, corsHeaders)` at the top of the handler (same pattern as `update-motor-images`). Internal cron calls already supported via `EDGE_INTERNAL_SECRET` / `CRON_SECRET` header inside `requireAdmin`.
 
-- Already verified clean. Add a one-line note to the script header comment: "This generator wipes the target dirs before each run; no ` 2.md` / ` 3.md` duplicates can persist."
-- No files to delete.
+---
 
-## Explicitly NOT touched
+## 3. Dealer pricing — audit result: FALSE POSITIVE, no removal
 
-- `src/pages/quote/*` and the motor selection flow.
-- Pricing logic (`src/lib/pricing.ts`, `useQuoteRunningTotal`, `build-accessory-breakdown`).
-- Inventory filters, motor data tables, Supabase schema, edge functions, cron jobs, auth.
-- No new regional pages, no new per-motor pages.
-- No changes to existing motor / case-study / location / blog twin formats.
+**Audit findings** (sampled `motor_models` rows + code search):
 
-## Files changed
+| Field | Sample (2.5MH FourStroke) | Role |
+|---|---|---|
+| `msrp` | 1385 | Manufacturer suggested retail |
+| `base_price` | 2075 | Legacy/base reference (often inflated) |
+| `dealer_price` | 1271 | **Customer sale price** (what we charge — below MSRP) |
+| `dealer_price_live` | 1385 | Lightspeed-synced live price (matches retail) |
+| `sale_price` | null | Promotional override |
 
-- `scripts/generate-markdown-twins.mjs` — add pricing-reference generator + extend catalog content.
-- `public/llms.txt` — add negative-definitions section + pricing-reference link.
+This matches the documented pricing hierarchy in project memory:
+`manual_overrides > sale_price > dealer_price > msrp > base_price`
 
-## Files created (at build time)
+`dealer_price` is consumed as the customer-facing selling price across:
+- `src/pages/quote/MotorSelectionPage.tsx` (the protected page)
+- `src/pages/MotorPage.tsx`, `Compare.tsx`, `account/MyQuotesPage.tsx`
+- `src/hooks/useTradeValuationData.ts`
+- `src/pages/landing/MercuryProXS.tsx`
+- Edge function `public-motors-api` exposes it as `dealerPrice` and resolves `sellingPrice` from it
+- Spec sheet PDF, admin pages
 
-- `public/pricing-reference.md`
+The column name is misleading (it implies wholesale cost) but the actual values are the **selling price to customers**. The scanner flagged it based on the column name, not the data.
 
-## Verification (will be reported after implementation)
+**Action:** Mark `motor_models_dealer_price_exposed` as **ignored** with a clear explanation in the security memory:
+- "`dealer_price` and `dealer_price_live` in `motor_models` are misnamed — they hold the customer-facing selling price (typically ≤ MSRP), not wholesale cost. They are intentionally readable by anonymous users so the public quote builder, motor pages, landing pages, and `public-motors-api` can resolve `sellingPrice`. Do not restrict or remove."
+- Optional follow-up (NOT in this PR): rename to `selling_price` / `selling_price_live` in a future migration with full code sweep. Flag for user approval separately.
 
-- `public/pricing-reference.md` exists, has CAD prices, lists only curated/listed motors, excludes Verado.
-- `public/catalog.md` includes the pricing-reference link and the explicit "What we do NOT offer" block.
-- `public/llms.txt` includes the same negative-definitions block and the pricing-reference link.
-- `find public -name "* [0-9].md"` returns empty.
-- `/quote/motor-selection`, pricing logic, inventory filters, Supabase, and cron are untouched (diff scope is limited to the two files above).
+No DB or code changes here.
+
+---
+
+## 4. SECURITY DEFINER audit + search_path
+
+**Scope:** all SECURITY DEFINER functions in `public` schema (~80+). Almost all already have `SET search_path = public` (or `public, pg_temp`). A handful do not.
+
+**Plan:**
+1. **List + classify** (deliverable in PR description, not the migration):
+   - **Intentionally callable by anon/authenticated** — gateway-secret-guarded RPCs (`add_customer_memory`, `archive_customer_memory`, `claim_openclaw_slack_fallback_jobs`, `complete_openclaw_slack_fallback_job`, `cleanup_openclaw_slack_fallback_jobs`, customer_* lookup helpers, etc.). These take a `p_gateway_secret` first arg and validate it inside the function. Keep as-is.
+   - **Trigger functions** (`enforce_*_user_id`, validation triggers). Not directly callable in practice. Keep as-is.
+   - **Maintenance/cron** (`cleanup_expired_sessions`, `cleanup_old_data`, `cleanup_motor_duplicates_by_display`, `audit_orphaned_customer_data`). Should not be public-EXECUTE.
+   - **Sensitive helpers** (`encrypt_sin`, `decrypt_sin`, `check_rate_limit`, `bulk_upsert_*`). Should not be anon-EXECUTE.
+2. **Migration actions:**
+   - For every SECURITY DEFINER function in `public` where `proconfig` is NULL or doesn't include `search_path`: `ALTER FUNCTION ... SET search_path = public, pg_temp;` — fixes Supabase linter `0011_function_search_path_mutable` and is safe.
+   - For `bulk_upsert_deals`, `bulk_upsert_open_ros`, `bulk_upsert_parts_invoices`, `cleanup_expired_sessions`, `cleanup_old_data`, `cleanup_motor_duplicates_by_display`, `audit_orphaned_customer_data`, `encrypt_sin`, `decrypt_sin`: `REVOKE EXECUTE ... FROM PUBLIC, anon, authenticated;` (service role retains access). This addresses the Supabase `0028`/`0029` linter findings without touching gateway-secret-guarded RPCs the app or external integrations rely on.
+   - Do NOT change `SECURITY DEFINER` → `SECURITY INVOKER` on anything.
+3. **Views** flagged by `0010_security_definer_view`: enumerate via linter output and report inline; no automatic recreation in this PR. Recreating views requires verifying every column-level dependency. Will be a separate, explicit follow-up if needed.
+
+---
+
+## 5. Admin read policies on SMS / customer_memory / trade_valuation_leads
+
+**Decision:** Keep `service_role`-only. The admin UIs for these areas (chat history, customer memory, trade valuation leads) already go through Edge Functions that use the service-role client — they don't need direct JWT SELECT from the browser. Adding `has_role(auth.uid(), 'admin')` SELECT policies would expose phone numbers and PII to whatever JWT path the SDK is using and broaden the attack surface for no functional gain.
+
+**Action:** Mark these four findings as **ignored** with a note in the security memory:
+- `sms_conversations_service_role_bypass`
+- `customer_memory_no_admin_read`
+- `sms_conversation_archive_no_admin_read`
+- `trade_valuation_leads_no_admin_select`
+
+Reason recorded: "Admin access to these PII tables flows through service-role Edge Functions, not direct JWT SELECT. Keeping service-role-only RLS is intentional to minimize the surface for phone/email exposure."
+
+---
+
+## Out of scope (NOT touched)
+
+- HTML/SMS injection findings (`html_injection_email`, `sms_injection_admin`) — not in your priority list.
+- Any change to `motor_models` columns, RLS, or selects.
+- Any change to `/quote/motor-selection`, pricing hierarchy, or inventory filters.
+- Any view recreation.
+- Changing `SECURITY DEFINER` to `SECURITY INVOKER`.
+
+---
+
+## Deliverables
+
+1. One DB migration:
+   - Storage policies swap (drop 5, add 5).
+   - `ALTER FUNCTION ... SET search_path` on the SECURITY DEFINER functions missing it.
+   - `REVOKE EXECUTE` on the sensitive maintenance/crypto/bulk-upsert functions.
+2. Edit `supabase/functions/auth-health-summary/index.ts` to call `requireAdmin`.
+3. Update security memory: mark dealer_price + the four service-role PII findings as accepted-risk with reasons.
+4. Mark findings as `fixed` / `ignored` via the security tool.
+5. Post the SECURITY DEFINER classification table in the chat reply for your review.
