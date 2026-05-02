@@ -1,131 +1,105 @@
-# Targeted Security Plan
 
-Scoped exactly to the five priorities. No changes to `/quote/motor-selection`, pricing logic, inventory filters, or motor data.
+# /repower Restyle — Audit & Phase 1 Plan
 
----
+Per the brief: surgical reskin of `/repower` only. No changes to `/quote/*`, pricing, financing, motor data, global Header/Footer, or any other route.
 
-## 1. Storage policies — restrict writes to admins only
+## A. Audit of current `/repower`
 
-**Current state on `storage.objects`:**
+**File:** `src/pages/Repower.tsx` (552 lines).
 
-| Policy | Op | Who |
-|---|---|---|
-| `Authenticated users can upload hero images` | INSERT | any authenticated → `motor-images/mercury/heroes/%` |
-| `Authenticated users can upload inventory images` | INSERT | any authenticated → `motor-images/mercury/inventory/%` |
-| `Authenticated users can update motor images` | UPDATE | any authenticated → `motor-images/mercury/{heroes,inventory}/%` |
-| `Authenticated users can delete motor images` | DELETE | any authenticated → `motor-images/mercury/{heroes,inventory}/%` |
-| `Authenticated users can upload inventory photos` | INSERT | any authenticated → `inventory-photos` |
-| `Admins can upload motor images` | INSERT | admin → `motor-images` (already correct) |
-| `Admins can delete inventory photos` | DELETE | admin → `inventory-photos` (already correct) |
-| `Public can view motor images` / `Public read access for motor images` / `public read motor-images` | SELECT | public → `motor-images` (KEEP — site needs this) |
-| `Public can view inventory photos` | SELECT | public → `inventory-photos` (KEEP) |
+**Components currently used:**
+- `LuxuryHeader` (global header — will not modify; will wrap with transparent-over-hero behavior via per-page state, not by editing the component)
+- `RepowerPageSEO` (keep)
+- `RepowerFAQ` (`src/components/repower/RepowerFAQ.tsx` — keep, restyle wrapper)
+- `RepowerGuideDownloadDialog` (keep)
+- `RepowerROICalculator` (exists in `src/components/repower/` — the cost calculator; keep, restyle wrapper)
+- `ExpandableImage` for the infographic PNG (keep)
+- shadcn `Button`, lucide icons
 
-**Action (migration):**
-- DROP the four `Authenticated users can {upload hero,upload inventory,update,delete} motor images` policies.
-- DROP `Authenticated users can upload inventory photos`.
-- ADD admin-gated equivalents using `has_role(auth.uid(), 'admin'::app_role)`:
-  - `Admins can upload hero images` (INSERT, `motor-images`, path `mercury/heroes/%`)
-  - `Admins can upload inventory images` (INSERT, `motor-images`, path `mercury/inventory/%`)
-  - `Admins can update motor images` (UPDATE, `motor-images`, those paths)
-  - `Admins can delete motor images` (DELETE, `motor-images`, those paths)
-  - `Admins can upload inventory photos` (INSERT, `inventory-photos`)
-- Public SELECT policies left untouched.
+**Existing sections on the page (in order):**
+1. Hero (Mercury Certified Repower Center logo, H1, 70%/30% pill, 3 CTAs)
+2. Warning Signs (Hard Starting / Smoke / Loss of Power / Frequent Repairs) + "One More Season Trap" amber callout
+3. YouTube video
+4. Repower vs Buy New (two-column compare)
+5. Modern Technology Benefits (3 cards) + SmartCraft blue panel
+6. Infographic PNG + "Download Full Repower Guide"
+7. Transparent Pricing (3 cost cards + "$8,000–$18,000" callout + HP cost table)
+8. (further down) ROI calculator, Why Harris pillars, Repower Process, FAQ, Testimonials, final CTA
 
-Service-role uploads (Edge Functions like `update-motor-images`, `scrape-motor-images`, Dropbox sync) bypass RLS and continue to work.
+**Existing brand assets found in project (will be reused — not regenerated):**
+- Mercury Certified Repower Center logo: `/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png` (currently in hero)
+- Mercury logo: `src/assets/mercury-logo.png`
+- HBW logo lockups: `src/assets/harris-logo.png`, `harris-logo-black.png`, `harris-logo-white.png`, `harris-logo-original.png`
+- 7-Year Warranty mark: `src/assets/harris-7-year-warranty.png`
+- Pro XS logo: `src/assets/pro-xs-logo.png`
+- Hero photography on hand: `landing-hero-mercury.jpg`, `hero-proxs-sunset.jpg`, `landing-cta-lake.jpg`
+- Infographic: `public/repower-assets/hbw-repower-infographic.png`
 
----
+**Not found in repo (will need to be added later, or substituted):**
+- Standalone "Mercury Platinum Dealer" badge image
+- Standalone "CSI Award" badge image
+  → For Phase 1's TrustStrip I will use the assets we *do* have (Repower Center logo, Mercury wordmark, 7-Year Warranty mark, HBW Since 1947 lockup) and a clean text + lucide-icon treatment for "Mercury Platinum Dealer" and "CSI Award" until you provide the real badge files. No invented circle/letter graphics.
 
-## 2. Auth health summary — add admin gate
+**Copy that will be reused verbatim** (from current page):
+- Headline "Mercury Outboard Repower" / "Keep Your Boat. Upgrade Your Engine." + 70%/30%
+- All four warning-sign cards
+- "Avoid the One More Season Trap" body copy
+- Repower vs New comparison bullets
+- "Transparent Pricing" 3-card breakdown + "Typical Rice Lake Repower $8,000–$18,000"
+- HP cost table
+- All FAQ Q&A inside `RepowerFAQ`
+- "Build Your Quote" → `/quote/motor-selection`, phone `(905) 342-2153`
+- Existing ROI calculator logic (presentation only, not logic)
 
-`supabase/functions/auth-health-summary/index.ts` currently returns placeholder zeros, but is structurally designed to expose lockouts/IPs. Already `verify_jwt = true` in config, but that allows any signed-in user.
+## B. What's new vs. restyled vs. left alone
 
-**Action:**
-- Add `requireAdmin(req, corsHeaders)` at the top of the handler (same pattern as `update-motor-images`). Internal cron calls already supported via `EDGE_INTERNAL_SECRET` / `CRON_SECRET` header inside `requireAdmin`.
+| Status | Item |
+|---|---|
+| **New (Phase 1)** | Tailwind theme extension (navy/mercury-red/gold/cream/paper), Inter Tight + Inter fonts, `repowerImages.ts` constants file, `HeroRepower.tsx`, `TrustStrip.tsx`, `RepowerMath.tsx`, `RepowerLayout.tsx` (transparent-header behavior scoped to /repower) |
+| **New (Phase 2)** | `WhyHarrisRepower.tsx`, `RepowerProcess.tsx`, `WinterPro.tsx`, `FinalCTARepower.tsx`, restyled FAQ wrapper, floating sticky "Build Your Quote" CTA |
+| **Restyled wrapper** | Existing `RepowerFAQ`, existing `RepowerROICalculator`, infographic section, HP cost table, Warning Signs grid, Repower-vs-New compare, Transparent Pricing 3-card block |
+| **Left alone** | `LuxuryHeader` source, `RepowerPageSEO`, `RepowerGuideDownloadDialog`, all `/quote/*` code, pricing/financing/inventory, Footer, every other route |
 
----
+## C. Mapping existing sections into the new visual rhythm
 
-## 3. Dealer pricing — audit result: FALSE POSITIVE, no removal
+```
+1. HeroRepower                  ← replaces current hero
+2. TrustStrip                   ← NEW row of credentials
+3. RepowerMath                  ← NEW 70%/30% feature, absorbs hero pill
+4. WarningSigns (restyled)      ← keep current 4 cards + "One More Season"
+5. RepowerVsNew (restyled)      ← keep two-column compare
+6. ModernBenefits (restyled)    ← keep 3 cards + SmartCraft, no blue panel
+7. WhyHarrisRepower             ← NEW 4-pillar
+8. RepowerProcess               ← NEW 4 steps (uses existing repowerStepsData)
+9. ROI Calculator (restyled)    ← existing component, new shell
+10. Transparent Pricing + HP table (restyled)  ← keep all data
+11. Infographic + Guide download (restyled)
+12. Video (restyled)
+13. WinterPro                   ← NEW pro tip section
+14. RepowerFAQ (restyled)       ← reuse all Q&A
+15. FinalCTA                    ← NEW closing hero
+```
 
-**Audit findings** (sampled `motor_models` rows + code search):
+## D. Phase 1 deliverables (this approval)
 
-| Field | Sample (2.5MH FourStroke) | Role |
-|---|---|---|
-| `msrp` | 1385 | Manufacturer suggested retail |
-| `base_price` | 2075 | Legacy/base reference (often inflated) |
-| `dealer_price` | 1271 | **Customer sale price** (what we charge — below MSRP) |
-| `dealer_price_live` | 1385 | Lightspeed-synced live price (matches retail) |
-| `sale_price` | null | Promotional override |
+1. **Extend Tailwind theme** in `tailwind.config.ts` — add `repower-navy-900/800/700`, `repower-mercury-red`, `repower-mercury-red-deep`, `repower-gold`, `repower-cream`, `repower-paper`. Add `font-display` (Inter Tight) and keep existing `font-sans` mapped to Inter for the repower components. Existing tokens untouched.
+2. **Add Google Fonts** to `index.html` (`Inter Tight` 400-800, `Inter` 300-700) — preconnect + display=swap.
+3. **Create `src/components/repower/repowerImages.ts`** — single source for hero photo URLs (Unsplash placeholders per brief) and brand asset paths.
+4. **Create `src/components/repower/HeroRepower.tsx`** — full-bleed 100vh, photo bg with slow zoom-out, dark gradient overlay, eyebrow + H1 + subhead + 3-stat row + dual CTA (Build Your Quote → `/quote/motor-selection`, tel:9053422153) + scroll cue. Staggered fade-up via framer-motion (already installed). Will render BOTH heading treatments side-by-side via a `?headline=a|b` query param so you can pick before we commit.
+5. **Create `src/components/repower/TrustStrip.tsx`** — navy-900 band, 5 items using real assets we have + clean text-mark for the two badges we don't yet have. Mobile wraps to 2-3 rows.
+6. **Create `src/components/repower/RepowerMath.tsx`** — paper bg, navy gradient card with giant 70% / 30%, three stat blocks on right (30-40% / $8-18k / 1-2 days). Pulls verbatim copy from current hero pill + pricing callout.
+7. **Create `src/components/repower/RepowerLayout.tsx`** — wraps children, manages scroll-state to toggle `LuxuryHeader` between transparent and solid navy via a CSS class on the page root. Does NOT modify `LuxuryHeader` source.
+8. **Edit `src/pages/Repower.tsx`** — wrap in `RepowerLayout`, render `HeroRepower` + `TrustStrip` + `RepowerMath` at the top, keep all existing sections below them untouched for now (so nothing regresses while you review). The old hero JSX will be commented out at the bottom of the file as the brief requests.
 
-This matches the documented pricing hierarchy in project memory:
-`manual_overrides > sale_price > dealer_price > msrp > base_price`
+## E. Explicitly NOT doing in Phase 1
+- No edits to `LuxuryHeader`, Footer, routing, SEO components, quote builder, pricing, financing, motor data, FAQ data.
+- Not regenerating any logo or badge.
+- Not deleting any existing component.
+- Not touching Phase 2 sections yet.
 
-`dealer_price` is consumed as the customer-facing selling price across:
-- `src/pages/quote/MotorSelectionPage.tsx` (the protected page)
-- `src/pages/MotorPage.tsx`, `Compare.tsx`, `account/MyQuotesPage.tsx`
-- `src/hooks/useTradeValuationData.ts`
-- `src/pages/landing/MercuryProXS.tsx`
-- Edge function `public-motors-api` exposes it as `dealerPrice` and resolves `sellingPrice` from it
-- Spec sheet PDF, admin pages
+## F. Open questions before I build (will use defaults if you don't answer)
+1. **Hero headline:** brief offers two — original ("Mercury Outboard Repower" + "Keep Your Boat…") or new ("Keep your boat. Get your weekends back."). **Default:** render both behind a query param toggle so you can A/B in preview.
+2. **Missing Platinum Dealer + CSI Award badges:** **Default:** clean type lockup with a small lucide `Award`/`BadgeCheck` icon in gold, sized to match other logos. Drop in real PNGs later by editing `repowerImages.ts` only.
+3. **Header transparency:** brief says transparent over hero → solid navy on scroll. `LuxuryHeader` is shared, so I'll do this with a wrapper that adds a `data-repower-transparent` attribute and a few targeted CSS rules in a `repower.css` file scoped under that attribute. **No changes to the Header component itself.**
 
-The column name is misleading (it implies wholesale cost) but the actual values are the **selling price to customers**. The scanner flagged it based on the column name, not the data.
-
-**Action:** Mark `motor_models_dealer_price_exposed` as **ignored** with a clear explanation in the security memory:
-- "`dealer_price` and `dealer_price_live` in `motor_models` are misnamed — they hold the customer-facing selling price (typically ≤ MSRP), not wholesale cost. They are intentionally readable by anonymous users so the public quote builder, motor pages, landing pages, and `public-motors-api` can resolve `sellingPrice`. Do not restrict or remove."
-- Optional follow-up (NOT in this PR): rename to `selling_price` / `selling_price_live` in a future migration with full code sweep. Flag for user approval separately.
-
-No DB or code changes here.
-
----
-
-## 4. SECURITY DEFINER audit + search_path
-
-**Scope:** all SECURITY DEFINER functions in `public` schema (~80+). Almost all already have `SET search_path = public` (or `public, pg_temp`). A handful do not.
-
-**Plan:**
-1. **List + classify** (deliverable in PR description, not the migration):
-   - **Intentionally callable by anon/authenticated** — gateway-secret-guarded RPCs (`add_customer_memory`, `archive_customer_memory`, `claim_openclaw_slack_fallback_jobs`, `complete_openclaw_slack_fallback_job`, `cleanup_openclaw_slack_fallback_jobs`, customer_* lookup helpers, etc.). These take a `p_gateway_secret` first arg and validate it inside the function. Keep as-is.
-   - **Trigger functions** (`enforce_*_user_id`, validation triggers). Not directly callable in practice. Keep as-is.
-   - **Maintenance/cron** (`cleanup_expired_sessions`, `cleanup_old_data`, `cleanup_motor_duplicates_by_display`, `audit_orphaned_customer_data`). Should not be public-EXECUTE.
-   - **Sensitive helpers** (`encrypt_sin`, `decrypt_sin`, `check_rate_limit`, `bulk_upsert_*`). Should not be anon-EXECUTE.
-2. **Migration actions:**
-   - For every SECURITY DEFINER function in `public` where `proconfig` is NULL or doesn't include `search_path`: `ALTER FUNCTION ... SET search_path = public, pg_temp;` — fixes Supabase linter `0011_function_search_path_mutable` and is safe.
-   - For `bulk_upsert_deals`, `bulk_upsert_open_ros`, `bulk_upsert_parts_invoices`, `cleanup_expired_sessions`, `cleanup_old_data`, `cleanup_motor_duplicates_by_display`, `audit_orphaned_customer_data`, `encrypt_sin`, `decrypt_sin`: `REVOKE EXECUTE ... FROM PUBLIC, anon, authenticated;` (service role retains access). This addresses the Supabase `0028`/`0029` linter findings without touching gateway-secret-guarded RPCs the app or external integrations rely on.
-   - Do NOT change `SECURITY DEFINER` → `SECURITY INVOKER` on anything.
-3. **Views** flagged by `0010_security_definer_view`: enumerate via linter output and report inline; no automatic recreation in this PR. Recreating views requires verifying every column-level dependency. Will be a separate, explicit follow-up if needed.
-
----
-
-## 5. Admin read policies on SMS / customer_memory / trade_valuation_leads
-
-**Decision:** Keep `service_role`-only. The admin UIs for these areas (chat history, customer memory, trade valuation leads) already go through Edge Functions that use the service-role client — they don't need direct JWT SELECT from the browser. Adding `has_role(auth.uid(), 'admin')` SELECT policies would expose phone numbers and PII to whatever JWT path the SDK is using and broaden the attack surface for no functional gain.
-
-**Action:** Mark these four findings as **ignored** with a note in the security memory:
-- `sms_conversations_service_role_bypass`
-- `customer_memory_no_admin_read`
-- `sms_conversation_archive_no_admin_read`
-- `trade_valuation_leads_no_admin_select`
-
-Reason recorded: "Admin access to these PII tables flows through service-role Edge Functions, not direct JWT SELECT. Keeping service-role-only RLS is intentional to minimize the surface for phone/email exposure."
-
----
-
-## Out of scope (NOT touched)
-
-- HTML/SMS injection findings (`html_injection_email`, `sms_injection_admin`) — not in your priority list.
-- Any change to `motor_models` columns, RLS, or selects.
-- Any change to `/quote/motor-selection`, pricing hierarchy, or inventory filters.
-- Any view recreation.
-- Changing `SECURITY DEFINER` to `SECURITY INVOKER`.
-
----
-
-## Deliverables
-
-1. One DB migration:
-   - Storage policies swap (drop 5, add 5).
-   - `ALTER FUNCTION ... SET search_path` on the SECURITY DEFINER functions missing it.
-   - `REVOKE EXECUTE` on the sensitive maintenance/crypto/bulk-upsert functions.
-2. Edit `supabase/functions/auth-health-summary/index.ts` to call `requireAdmin`.
-3. Update security memory: mark dealer_price + the four service-role PII findings as accepted-risk with reasons.
-4. Mark findings as `fixed` / `ignored` via the security tool.
-5. Post the SECURITY DEFINER classification table in the chat reply for your review.
+After Phase 1 is approved and looks right in preview, Phase 2 builds sections 7/8/13/15 + sticky CTA + responsive polish.
