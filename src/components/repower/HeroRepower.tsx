@@ -37,35 +37,21 @@ export function HeroRepower() {
           Ontario's Mercury Repower Centre · Rice Lake
         </motion.p>
 
-        {useNew ? (
-          <motion.h1
-            {...fadeUp(0.2)}
-            className="font-display font-bold tracking-tight leading-[1.02] text-[clamp(48px,7vw,104px)] mb-8"
-            style={{ letterSpacing: '-0.035em' }}
-          >
-            Keep your boat.
-            <br />
-            Get your <span className="text-[#C8102E]">weekends</span> back.
-          </motion.h1>
-        ) : (
-          <motion.h1
-            {...fadeUp(0.2)}
-            className="font-display font-bold tracking-tight leading-[1.02] text-[clamp(48px,7vw,104px)] mb-8"
-            style={{ letterSpacing: '-0.035em' }}
-          >
-            Mercury Outboard
-            <br />
-            <span className="text-[#C8102E]">Repower.</span>
-          </motion.h1>
-        )}
+        <motion.h1
+          {...fadeUp(0.2)}
+          className="font-display font-bold tracking-tight leading-[1.02] text-[clamp(48px,7vw,104px)] mb-8"
+          style={{ letterSpacing: '-0.035em' }}
+        >
+          Keep your boat.
+          <br />
+          Get your <span className="text-[#C8102E]">weekends</span> back.
+        </motion.h1>
 
         <motion.p
           {...fadeUp(0.4)}
           className="font-sans font-light text-lg md:text-2xl text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-12"
         >
-          {useNew
-            ? 'A nearly-new boat experience — at a fraction of the price. Mercury Marine Platinum Dealer, family-owned on Rice Lake since 1947.'
-            : 'Keep Your Boat. Upgrade Your Engine. Mercury Marine Platinum Dealer, family-owned on Rice Lake since 1947.'}
+          A nearly-new boat experience — at a fraction of the price. Mercury Marine Platinum Dealer, family-owned on Rice Lake since 1947.
         </motion.p>
 
         {/* Stat row */}
