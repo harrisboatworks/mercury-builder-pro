@@ -450,7 +450,7 @@ function lintLocationTwin(slug, md) {
 
 
 
-function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
+function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = []) {
   return [
     mdFrontmatter('/catalog.md', ['index_type: agent_catalog']),
     '# Harris Boat Works — Agent Catalog',
@@ -463,6 +463,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
     '- **Pickup only** at Gores Landing, ON. We do not ship outboards. We do not deliver.',
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only — not part of default inventory and not actively promoted.',
+    '- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.',
     '- Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.',
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
@@ -487,6 +488,14 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
     '## Locations',
     '',
     locationTwins.map(t => `- [${t.title}](${SITE_URL}${t.path})`).join('\n'),
+    '',
+    '## Guides (Blog)',
+    '',
+    'Selected high-intent buyer guides. Full blog index (HTML) at ' + SITE_URL + '/blog.',
+    '',
+    blogTwins.length
+      ? blogTwins.map(t => `- [${t.title}](${SITE_URL}${t.path})`).join('\n')
+      : '_(no twins generated)_',
     '',
   ].join('\n') + '\n';
 }
