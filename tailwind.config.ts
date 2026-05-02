@@ -23,6 +23,7 @@ export default {
 			'sans': ['Inter', 'system-ui', 'sans-serif'],
 			'playfair': ['Playfair Display', 'Georgia', 'serif'],
 			'outfit': ['Outfit', 'Inter', 'sans-serif'],
+			'display': ['"Inter Tight"', 'Inter', 'system-ui', 'sans-serif'],
 		},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -107,7 +108,20 @@ export default {
 				'special-order': {
 					DEFAULT: 'hsl(var(--special-order))',
 					foreground: 'hsl(var(--special-order-foreground))'
-				}
+				},
+				// Repower landing page palette (scoped via `repower-` prefix)
+				'repower-navy': {
+					900: '#050E1C',
+					800: '#0A1628',
+					700: '#122039',
+				},
+				'repower-mercury-red': {
+					DEFAULT: '#C8102E',
+					deep: '#9A0C24',
+				},
+				'repower-gold': '#C9A24A',
+				'repower-cream': '#F5F1EA',
+				'repower-paper': '#FAF8F4',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
