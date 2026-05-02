@@ -63,7 +63,10 @@ function loadBlogArticles() {
 // replaced with public-motors-api (which only returns in-stock motors).
 async function loadAllQuoteBuilderMotors() {
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
+  // Publishable (anon) key is safe to embed — same key is committed in src/integrations/supabase/client.ts
+  // Fallback ensures Vercel builds succeed even if VITE_SUPABASE_PUBLISHABLE_KEY env var isn't set in the build environment.
+  const FALLBACK_PUBLISHABLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_PUBLISHABLE_KEY;
   if (!SUPABASE_KEY) {
     throw new Error('[markdown-twins] FATAL: no publishable Supabase key available for quote-builder motor universe load.');
   }
