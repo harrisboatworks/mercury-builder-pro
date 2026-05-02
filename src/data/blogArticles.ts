@@ -469,7 +469,7 @@ Cost Comparison:
 New 20ft fishing boat: $35,000+
 Repower same boat with new 115HP: $12,000-$15,000
 
-That's 70% of the benefit at 30-40% of the cost.
+Repowering keeps the boat you already trust on the water with a modern outboard, at a fraction of the cost of a new package.
 
 ### What's Involved in Repowering
 
@@ -6099,7 +6099,7 @@ As we look toward the 2027 model year, here's what to expect from Mercury Marine
 ### Buying Now vs Waiting
 
 **Buy 2026 If**:
-- Current HBW 7-year warranty promotion is attractive
+- A current Mercury bonus warranty promotion is active and attractive (standard coverage is 3 years; bonus years apply only when a Mercury promotion is running)
 - You need the motor now
 - Current lineup meets your needs
 - Budget favors current pricing
@@ -8082,7 +8082,7 @@ If you're thinking about a new engine for 2026, [talk to us](/contact) about how
       },
       {
         question: 'What Mercury motors does Harris Boat Works stock for 2026?',
-        answer: 'Harris Boat Works in Gores Landing, Ontario is a Mercury Platinum dealer and carries the full 2026 Mercury lineup for order, with common models in stock. This includes the complete FourStroke range from 2.5–300 HP, Pro XS performance motors, Verado models, and Mercury Avator electric outboards. Use the quote builder at mercuryrepower.ca/quote/motor-selection to see current availability and pricing, or call 905-342-2153. Real pricing is provided — no call-for-quote games.'
+        answer: 'Harris Boat Works in Gores Landing, Ontario is a Mercury Platinum dealer. Default in-stock and orderable inventory covers the FourStroke range from 2.5–300 HP, Pro XS performance motors, and Mercury Avator electric outboards. Verado is special order only — not part of default inventory and quoted on request. Use the quote builder at mercuryrepower.ca/quote/motor-selection to see current availability and CAD pricing, or call 905-342-2153 for Verado or special configurations.'
       },
       {
         question: 'How much does a Mercury FourStroke outboard cost in Ontario in 2026?',
@@ -8492,7 +8492,7 @@ No. Boost is a factory-backed, manufacturer-approved software calibration. It do
       },
       {
         question: 'How much does Mercury Boost cost to install in Canada?',
-        answer: 'Mercury has not published a standard retail price for the Boost calibration. Dealers set their own labour rates, and the installation is billed as a service call — typically in the 1–2 hour range. At most Mercury dealers in Ontario, shop rates run $120–$175 per hour, so expect to pay roughly $150–$350 CAD for the Boost installation labour, not including any other service work done at the same visit. Since there\'s no hardware involved, the cost is primarily technician time. If you\'re already bringing the engine in for spring commissioning or another service, ask to have Boost done at the same time to minimize total labour cost.'
+        answer: 'Mercury has not published a standard retail price for the Boost calibration. Dealers set their own labour rates, and the installation is billed as in-shop labour — typically in the 1–2 hour range. At most Mercury dealers in Ontario, shop rates run $120–$175 per hour, so expect to pay roughly $150–$350 CAD for the Boost installation labour, not including any other in-shop work done at the same visit. Since there\'s no hardware involved, the cost is primarily technician time. If you\'re already bringing the engine in for spring commissioning or other in-shop service, ask to have Boost done at the same time to minimize total labour cost.'
       },
       {
         question: 'How do I find my Mercury outboard serial number?',
@@ -9227,11 +9227,13 @@ Marine-specific lenders like Acorn Finance understand the asset class and may ac
 | 580–639 | Limited to some lenders; marine lenders may still approve |
 | Below 580 | Difficult; co-signer or secured financing may be required |
 
-## Current Promotion: HBW 7-Year Warranty
+## Mercury Warranty Coverage
 
-When you buy any new Mercury outboard from Harris Boat Works, you get **7 full years of factory-backed warranty** — 3 years standard plus 4 bonus years of Mercury Gold coverage. This applies to both new boat packages and repower purchases. The extended warranty reduces your risk on a financed purchase — if something goes wrong in year four of a 60-month loan, you're still covered.
+Every new Mercury outboard from Harris Boat Works includes **3 years of standard factory warranty**. When Mercury is running a bonus warranty promotion, additional years of Mercury Product Protection (Gold) coverage may be available — bringing total coverage up to 7 years on eligible motors. Bonus warranty terms revert to the 3-year standard once a promotion ends, so confirm the current offer at the time of purchase.
 
-Current details: harrisboatworks.ca or call 905-342-2153.
+Extended factory-backed coverage reduces risk on a financed purchase — if something goes wrong in year four of a 60-month loan and a bonus warranty is in place, you're still covered.
+
+Check the live promotion at mercuryrepower.ca or call 905-342-2153.
 
 ## Steps to Finance a Mercury Repower in Ontario
 

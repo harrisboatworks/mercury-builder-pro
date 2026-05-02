@@ -40,6 +40,20 @@ function loadLocations() {
   }
 }
 
+function loadBlogArticles() {
+  const dumpScript = `
+    import { blogArticles, isArticlePublished } from '../src/data/blogArticles.ts';
+    process.stdout.write(JSON.stringify(blogArticles.filter(isArticlePublished)));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' }));
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+
 async function loadMotors() {
   const API_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api';
   try {
@@ -436,7 +450,7 @@ function lintLocationTwin(slug, md) {
 
 
 
-function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
+function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = []) {
   return [
     mdFrontmatter('/catalog.md', ['index_type: agent_catalog']),
     '# Harris Boat Works — Agent Catalog',
@@ -449,6 +463,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
     '- **Pickup only** at Gores Landing, ON. We do not ship outboards. We do not deliver.',
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
     '- **Verado** is special-order only — not part of default inventory and not actively promoted.',
+    '- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.',
     '- Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.',
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
@@ -474,6 +489,14 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins) {
     '',
     locationTwins.map(t => `- [${t.title}](${SITE_URL}${t.path})`).join('\n'),
     '',
+    '## Guides (Blog)',
+    '',
+    'Selected high-intent buyer guides. Full blog index (HTML) at ' + SITE_URL + '/blog.',
+    '',
+    blogTwins.length
+      ? blogTwins.map(t => `- [${t.title}](${SITE_URL}${t.path})`).join('\n')
+      : '_(no twins generated)_',
+    '',
   ].join('\n') + '\n';
 }
 
@@ -483,6 +506,77 @@ function writePublicMd(relPath, content) {
   writeFileSync(outFile, content, 'utf8');
 }
 
+// Top 12 high-intent blog posts to mirror as markdown twins.
+// Order = display order in catalog.md "Guides" section.
+const BLOG_TWIN_SLUGS = [
+  'mercury-repower-cost-ontario-2026-cad',
+  'mercury-vs-yamaha-outboards-ontario',
+  'mercury-vs-yamaha-vs-honda-reliability-2026',
+  'mercury-115-vs-150-hp-outboard-ontario',
+  'mercury-outboard-financing-ontario-2026',
+  'cheapest-mercury-outboard-canada-2026',
+  'evinrude-to-mercury-repower-ontario-guide',
+  'complete-guide-boat-repower-kawarthas',
+  'best-mercury-outboard-rice-lake-fishing',
+  'mercury-fourstroke-vs-verado-comparison',
+  'boat-winterization-cost-ontario-2026',
+  'mercury-prokicker-rice-lake-fishing-guide',
+];
+
+function blogMarkdown(article) {
+  const url = `${SITE_URL}/blog/${article.slug}`;
+  const extra = [
+    `title: ${JSON.stringify(article.title)}`,
+    `description: ${JSON.stringify(article.description)}`,
+    `category: ${JSON.stringify(article.category || 'Guide')}`,
+    `date_published: ${article.datePublished}`,
+    `date_modified: ${article.dateModified}`,
+    `keywords: ${JSON.stringify(article.keywords || [])}`,
+    `author: Harris Boat Works`,
+    `content_type: blog_article`,
+  ];
+  const faqs = Array.isArray(article.faqs) ? article.faqs : [];
+  const faqMd = faqs.length
+    ? faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n')
+    : '_(no FAQs)_';
+
+  return [
+    mdFrontmatter(`/blog/${article.slug}.md`, extra),
+    `# ${article.title}`,
+    '',
+    `> ${article.description}`,
+    '',
+    `**Category:** ${article.category || 'Guide'}  `,
+    `**Published:** ${article.datePublished}  `,
+    `**Last updated:** ${article.dateModified}  `,
+    `**Read time:** ${article.readTime || ''}  `,
+    `**Canonical (HTML for humans):** ${url}`,
+    '',
+    '## Article',
+    '',
+    (article.content || '').trim(),
+    '',
+    '## FAQs',
+    '',
+    faqMd,
+    '',
+    '## Next steps',
+    '',
+    `- Build a quote: ${SITE_URL}/quote/motor-selection`,
+    `- Browse Mercury motors: ${SITE_URL}/quote/motor-selection`,
+    `- Repower information: ${SITE_URL}/repower`,
+    `- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153`,
+    '',
+    '## Notes for AI agents',
+    '',
+    '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
+    '- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.',
+    '- Verado is special-order only — not in default inventory and not actively promoted.',
+    '- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.',
+    '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
+    '',
+  ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+}
 function cleanMarkdownDir(relDir) {
   const dir = join(PUBLIC, relDir);
   if (!existsSync(dir)) return;
@@ -507,9 +601,10 @@ function verifyPublicMd(relPath, label, required = []) {
 const caseStudies = loadCaseStudies();
 const locations = loadLocations();
 const motorRecords = await loadMotors();
+const blogArticlesAll = loadBlogArticles();
 
 rmSync(join(PUBLIC, 'catalog.md'), { force: true });
-for (const dir of ['motors', 'case-studies', 'locations']) {
+for (const dir of ['motors', 'case-studies', 'locations', 'blog']) {
   cleanMarkdownDir(dir);
 }
 
@@ -538,16 +633,33 @@ const locationTwinSummaries = locations.map(loc => {
   return { path, title: loc.title };
 });
 
-writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries));
+// Blog twins — only the curated top-12 high-intent posts.
+const blogBySlug = new Map(blogArticlesAll.map(a => [a.slug, a]));
+const blogTwinSummaries = [];
+const missingBlog = [];
+for (const slug of BLOG_TWIN_SLUGS) {
+  const article = blogBySlug.get(slug);
+  if (!article) { missingBlog.push(slug); continue; }
+  const path = `/blog/${slug}.md`;
+  writePublicMd(path, blogMarkdown(article));
+  blogTwinSummaries.push({ path, title: article.title });
+}
+if (missingBlog.length) {
+  throw new Error(`[markdown-twins] Blog twin slugs not found in published articles: ${missingBlog.join(', ')}`);
+}
 
-verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', 'CAD', 'Pickup only', 'mcp.json']);
+writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
+
+verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json']);
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
+if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Article', '## FAQs', '## Next steps']);
 
 
-if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0) {
-  throw new Error(`[markdown-twins] Refusing empty generation: motors=${motorTwinSummaries.length}, caseStudies=${caseStudyTwinSummaries.length}, locations=${locationTwinSummaries.length}`);
+if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0 || blogTwinSummaries.length === 0) {
+  throw new Error(`[markdown-twins] Refusing empty generation: motors=${motorTwinSummaries.length}, caseStudies=${caseStudyTwinSummaries.length}, locations=${locationTwinSummaries.length}, blog=${blogTwinSummaries.length}`);
 }
 
-console.log(`[markdown-twins] ✓ public markdown twins written before Vite build: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, 1 catalog`);
+console.log(`[markdown-twins] ✓ public markdown twins written before Vite build: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, ${blogTwinSummaries.length} blog guides, 1 catalog`);
+
