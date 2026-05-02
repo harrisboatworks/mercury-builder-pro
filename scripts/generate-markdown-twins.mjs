@@ -40,6 +40,20 @@ function loadLocations() {
   }
 }
 
+function loadBlogArticles() {
+  const dumpScript = `
+    import { blogArticles, isArticlePublished } from '../src/data/blogArticles.ts';
+    process.stdout.write(JSON.stringify(blogArticles.filter(isArticlePublished)));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    return JSON.parse(execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' }));
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+
 async function loadMotors() {
   const API_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api';
   try {
