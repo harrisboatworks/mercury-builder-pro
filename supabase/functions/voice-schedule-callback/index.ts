@@ -114,9 +114,25 @@ serve(async (req) => {
 
   try {
     const { customer_name, customer_phone, preferred_time, notes, motor_interest, motor_context } = await req.json();
-    
-    console.log('Scheduling callback:', { customer_name, customer_phone, preferred_time, motor_interest });
-    
+
+    // Sanitize free-text fields that get inlined into outbound SMS bodies.
+    // Strip URLs, phone numbers, and any non-basic punctuation so an attacker
+    // cannot inject "Call 1-800-... to claim your prize" into a Harris-branded SMS.
+    const sanitizeForSms = (val: unknown, max = 80): string => {
+      const s = typeof val === 'string' ? val : '';
+      return s
+        .replace(/https?:\/\/\S+/gi, '')
+        .replace(/\b\d[\d\s().-]{6,}\d\b/g, '')
+        .replace(/[^A-Za-z0-9 ,.\-']/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, max);
+    };
+    const safeCustomerName = sanitizeForSms(customer_name, 60);
+    const safeMotorInterest = sanitizeForSms(motor_interest, 80);
+
+    console.log('Scheduling callback:', { customer_name: safeCustomerName, customer_phone, preferred_time, motor_interest: safeMotorInterest });
+
     // Validate phone number (basic check)
     const cleanPhone = (customer_phone || '').replace(/\D/g, '');
     if (cleanPhone.length < 10) {
