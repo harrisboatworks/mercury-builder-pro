@@ -51,64 +51,15 @@ export default function Repower() {
   const reviewCount = useMemo(() => generateReviewCount(), []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <RepowerLayout>
       <RepowerPageSEO />
-      <LuxuryHeader />
-      
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-stone-100 to-white py-16 md:py-24 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 mb-6">
-              <img 
-                src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" 
-                alt="Mercury Certified Repower Center" 
-                className="h-16 md:h-20 lg:h-24" 
-              />
-            </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
-            Mercury Outboard Repower
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-3">
-            Keep Your Boat. Upgrade Your Engine.
-          </p>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-            Ontario's Mercury Repower Centre on Rice Lake. Mercury Marine Platinum Dealer,
-            Mercury-only since 1965, family-owned since 1947. Transparent CAD pricing,
-            pickup at Gores Landing, every install lake-tested on Rice Lake.
-          </p>
-          
-          {/* Hero Stat */}
-          <div className="inline-flex items-center gap-3 bg-primary/10 text-primary px-6 py-3 rounded-full mb-8">
-            <span className="text-2xl md:text-3xl font-bold">70%</span>
-            <span className="text-left text-sm md:text-base">
-              of the Benefit<br />
-              for <strong>30%</strong> of the Cost
-            </span>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/quote/motor-selection">
-              <Button size="lg" className="w-full sm:w-auto gap-2">
-                Build Your Mercury Quote (Ontario, CAD)
-                <ChevronRight className="w-4 h-4" />
-              </Button>
-            </Link>
-            <Link to="/locations/rice-lake-mercury-repower">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2 bg-transparent">
-                <MapPin className="w-4 h-4" />
-                Mercury Repower on Rice Lake
-              </Button>
-            </Link>
-            <a href="tel:9053422153">
-              <Button variant="outline" size="lg" className="w-full sm:w-auto gap-2 bg-transparent">
-                <Phone className="w-4 h-4" />
-                (905) 342-2153
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+
+      {/* === Phase 1: New premium top sections === */}
+      <HeroRepower />
+      <TrustStrip />
+      <RepowerMath />
+
+      {/* === Existing sections (Phase 2 will restyle these wrappers) === */}
 
       {/* Warning Signs Section */}
       <section className="py-16 px-4 bg-white">
