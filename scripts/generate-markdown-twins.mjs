@@ -54,6 +54,33 @@ function loadBlogArticles() {
   }
 }
 
+// Loads the FULL quote-builder motor universe directly from motor_models,
+// mirroring the filters used in src/pages/quote/MotorSelectionPage.tsx:
+//   - exclude availability = 'Exclude'
+//   - exclude horsepower > 600
+//   - exclude model containing "jet"
+// This is the source of truth for /pricing-reference.md and must NOT be
+// replaced with public-motors-api (which only returns in-stock motors).
+async function loadAllQuoteBuilderMotors() {
+  const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
+  if (!SUPABASE_KEY) {
+    throw new Error('[markdown-twins] FATAL: no publishable Supabase key available for quote-builder motor universe load.');
+  }
+  // Match MotorSelectionPage: select all, order by hp asc, then JS-filter.
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&order=horsepower.asc&limit=2000`;
+  const res = await fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
+  if (!res.ok) throw new Error(`[markdown-twins] FATAL: motor_models fetch failed ${res.status} ${res.statusText}`);
+  const all = await res.json();
+  return (all || []).filter(m => {
+    const model = (m.model || '').toLowerCase();
+    if (model.includes('jet')) return false;
+    if (typeof m.horsepower === 'number' && m.horsepower > 600) return false;
+    if (m.availability === 'Exclude') return false;
+    return true;
+  });
+}
+
 async function loadMotors() {
   const API_URL = 'https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api';
   try {
