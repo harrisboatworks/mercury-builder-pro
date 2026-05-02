@@ -7,9 +7,15 @@
   "tagline": "Ontario's Mercury Repower Centre on Rice Lake — Family-owned since 1947",
   "positioning": {
     "phrase": "Ontario's Mercury Repower Centre",
-    "note": "Self-applied descriptive positioning. NOT a separate official Mercury certification. The official Mercury Marine credential held by Harris Boat Works is 'Mercury Marine Platinum Dealer'.",
+    "spelling_note": "Canadian 'Centre' spelling is intentional for our positioning copy. Mercury Marine's own badge uses American 'Center' — keep that spelling whenever referring to the official Mercury asset.",
+    "note": "'Ontario's Mercury Repower Centre' is our own descriptive positioning (geographic + specialty). It is NOT the same thing as a Mercury-issued certification. Harris Boat Works does, however, hold two real Mercury credentials that pair with this positioning: (1) Mercury Marine Platinum Dealer, and (2) Mercury Certified Repower Center (American spelling — Mercury's official program badge).",
+    "officialMercuryCredentials": [
+      "Mercury Marine Platinum Dealer",
+      "Mercury Certified Repower Center"
+    ],
     "pairWith": [
       "Mercury Marine Platinum Dealer",
+      "Mercury Certified Repower Center",
       "Mercury-only dealer since 1965",
       "Family-owned since 1947",
       "Transparent CAD pricing",
