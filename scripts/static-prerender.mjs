@@ -3193,9 +3193,21 @@ const locationTwinSummaries = locations.map(loc => {
   return { path, title: loc.title };
 });
 
-writeMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries));
+// Build blog twin summaries (twins themselves are written by
+// scripts/generate-markdown-twins.mjs into public/blog/{slug}.md before Vite
+// build; we only need link metadata here for the catalog Guides section).
+const blogBySlugForCatalog = new Map(blogArticles.map(a => [a.slug, a]));
+const catalogBlogTwinSummaries = CATALOG_BLOG_TWIN_SLUGS
+  .map(slug => {
+    const a = blogBySlugForCatalog.get(slug);
+    if (!a) return null;
+    return { path: `/blog/${slug}.md`, title: a.title };
+  })
+  .filter(Boolean);
 
-console.log(`[static-prerender] ✓ markdown twins written: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, 1 catalog`);
+writeMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, catalogBlogTwinSummaries));
+
+console.log(`[static-prerender] ✓ markdown twins written: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, ${catalogBlogTwinSummaries.length} blog guide links, 1 catalog`);
 
 // ============================================================
 // Hardened post-build verification — fail the build on any issue.
