@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/pickering-mercury-dealer
-last_updated: 2026-05-01
+last_updated: 2026-05-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -61,7 +61,7 @@ About 80 minutes east on the 401, exiting at Cobourg.
 
 ### Do you do mobile Mercury service in Pickering?
 
-No. We are a shop-based dealer and service centre — no mobile service. Customers from Pickering bring the boat to our Gores Landing shop.
+No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing — no mobile service in Pickering. Customers from Pickering bring the boat to our Gores Landing shop.
 
 ### Do you sell small kicker and sailboat outboards?
 

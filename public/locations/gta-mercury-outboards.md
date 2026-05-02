@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/gta-mercury-outboards
-last_updated: 2026-05-01
+last_updated: 2026-05-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -71,7 +71,7 @@ No. Pickup only at Gores Landing with photo ID. We do not ship motors and we do 
 
 ### Do you do mobile service in the GTA?
 
-No. Harris Boat Works is a shop-based Mercury dealer and service centre at Gores Landing. We do not perform on-site installs, driveway service, or marina visits in any GTA city.
+No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing. We do not perform on-site installs, driveway service, or marina visits in any GTA city.
 
 ### Why would a GTA buyer drive to Rice Lake?
 

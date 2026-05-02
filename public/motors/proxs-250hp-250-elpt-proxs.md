@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-250hp-250-elpt-proxs
-last_updated: 2026-05-01
+last_updated: 2026-05-02
 currency: CAD
 pickup_only: true
 delivery_offered: false

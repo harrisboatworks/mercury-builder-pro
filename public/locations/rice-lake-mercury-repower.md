@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/rice-lake-mercury-repower
-last_updated: 2026-05-01
+last_updated: 2026-05-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -69,10 +69,6 @@ Yes. Build a complete itemized Mercury repower quote at /quote/motor-selection �
 ### Do you ship or deliver outboards?
 
 No. Pickup only at Gores Landing with photo ID. We do not ship motors and we do not deliver — strict industry-wide fraud-prevention policy.
-
-### What does a typical Rice Lake repower cost?
-
-A complete installed Mercury repower at Harris Boat Works typically runs $8,000–$18,000 CAD all-in for a 16–18 ft boat with a 60–115 HP outboard, including engine, controls, rigging, propeller, removal, install, and lake test.
 
 ## Service boundary
 Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in Rice Lake area. Customers from Rice Lake area bring their boat to our Gores Landing shop, or pick up a loose Mercury motor for self-install.

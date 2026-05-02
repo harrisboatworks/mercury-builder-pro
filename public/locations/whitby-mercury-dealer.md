@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/whitby-mercury-dealer
-last_updated: 2026-05-01
+last_updated: 2026-05-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -69,7 +69,7 @@ You can build a complete itemized CAD quote online and we confirm the build by p
 
 ### Do you do mobile service in Whitby?
 
-No. We are a shop-based Mercury dealer and service centre at Gores Landing — no mobile service, no on-site installs.
+No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing — no mobile service, no on-site installs in Whitby.
 
 ## Service boundary
 Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in Whitby. Customers from Whitby bring their boat to our Gores Landing shop, or pick up a loose Mercury motor for self-install.
