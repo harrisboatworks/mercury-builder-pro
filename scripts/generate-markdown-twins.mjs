@@ -600,7 +600,12 @@ function pricingReferenceMarkdown(motorRecords) {
     })
     .map(m => {
       const slug = motorSlug(m.model_key);
-      const family = detectMotorFamily(m);
+      const familyRaw = detectMotorFamily(m);
+      const family = /pro\s*xs/i.test(familyRaw) ? 'Pro XS'
+        : /sea\s*pro/i.test(familyRaw) ? 'SeaPro'
+        : /verado/i.test(familyRaw) ? 'Verado'
+        : /racing/i.test(familyRaw) ? 'Racing'
+        : 'FourStroke';
       const price = resolveMotorSellingPrice(m);
       const inStock = m.in_stock || m.availability === 'In Stock';
       return {
