@@ -497,7 +497,79 @@ function writePublicMd(relPath, content) {
   writeFileSync(outFile, content, 'utf8');
 }
 
-function cleanMarkdownDir(relDir) {
+// Top 12 high-intent blog posts to mirror as markdown twins.
+// Order = display order in catalog.md "Guides" section.
+const BLOG_TWIN_SLUGS = [
+  'mercury-repower-cost-ontario-2026-cad',
+  'mercury-vs-yamaha-outboards-ontario',
+  'mercury-vs-yamaha-vs-honda-reliability-2026',
+  'mercury-115-vs-150-hp-outboard-ontario',
+  'mercury-outboard-financing-ontario-2026',
+  'cheapest-mercury-outboard-canada-2026',
+  'evinrude-to-mercury-repower-ontario-guide',
+  'complete-guide-boat-repower-kawarthas',
+  'best-mercury-outboard-rice-lake-fishing',
+  'mercury-fourstroke-vs-verado-comparison',
+  'boat-winterization-cost-ontario-2026',
+  'mercury-prokicker-rice-lake-fishing-guide',
+];
+
+function blogMarkdown(article) {
+  const url = `${SITE_URL}/blog/${article.slug}`;
+  const extra = [
+    `title: ${JSON.stringify(article.title)}`,
+    `description: ${JSON.stringify(article.description)}`,
+    `category: ${JSON.stringify(article.category || 'Guide')}`,
+    `date_published: ${article.datePublished}`,
+    `date_modified: ${article.dateModified}`,
+    `keywords: ${JSON.stringify(article.keywords || [])}`,
+    `author: Harris Boat Works`,
+    `content_type: blog_article`,
+  ];
+  const faqs = Array.isArray(article.faqs) ? article.faqs : [];
+  const faqMd = faqs.length
+    ? faqs.map(f => `### ${f.question}\n\n${f.answer}`).join('\n\n')
+    : '_(no FAQs)_';
+
+  return [
+    mdFrontmatter(`/blog/${article.slug}.md`, extra),
+    `# ${article.title}`,
+    '',
+    `> ${article.description}`,
+    '',
+    `**Category:** ${article.category || 'Guide'}  `,
+    `**Published:** ${article.datePublished}  `,
+    `**Last updated:** ${article.dateModified}  `,
+    `**Read time:** ${article.readTime || ''}  `,
+    `**Canonical (HTML for humans):** ${url}`,
+    '',
+    '## Article',
+    '',
+    (article.content || '').trim(),
+    '',
+    '## FAQs',
+    '',
+    faqMd,
+    '',
+    '## Next steps',
+    '',
+    `- Build a quote: ${SITE_URL}/quote/motor-selection`,
+    `- Browse Mercury motors: ${SITE_URL}/quote/motor-selection`,
+    `- Repower information: ${SITE_URL}/repower`,
+    `- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153`,
+    '',
+    '## Notes for AI agents',
+    '',
+    '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
+    '- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.',
+    '- Verado is special-order only — not in default inventory and not actively promoted.',
+    '- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.',
+    '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
+    '',
+  ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+}
+
+
   const dir = join(PUBLIC, relDir);
   if (!existsSync(dir)) return;
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
