@@ -109,8 +109,8 @@ export function HomepageSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Repower Quotes Online — Real Prices, No Forms | Harris Boat Works</title>
-      <meta name="description" content="Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake — family-owned since 1947, Mercury dealer since 1965." />
+      <title>Ontario's Mercury Repower Centre — Real Mercury Quotes Online | Harris Boat Works</title>
+      <meta name="description" content="Harris Boat Works is Ontario's Mercury Repower Centre on Rice Lake. Mercury Marine Platinum Dealer, Mercury-only since 1965, family-owned since 1947. Live CAD quotes in 3 minutes. Pickup at Gores Landing." />
       <meta name="keywords" content="Mercury outboard quote, Mercury repower Ontario, Mercury dealer Toronto, Harris Boat Works, Rice Lake Mercury dealer, outboard motor pricing, Mercury FourStroke, Mercury Pro XS" />
       <link rel="canonical" href={SITE_URL} />
 
