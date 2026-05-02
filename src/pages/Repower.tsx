@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { RepowerFAQ } from '@/components/repower/RepowerFAQ';
 import { RepowerPageSEO } from '@/components/seo/RepowerPageSEO';
-import { RepowerROICalculator } from '@/components/repower/RepowerROICalculator';
+
 import { RepowerGuideDownloadDialog } from '@/components/repower/RepowerGuideDownloadDialog';
 import { ExpandableImage } from '@/components/ui/expandable-image';
 import { Button } from '@/components/ui/button';
@@ -262,11 +262,6 @@ export default function Repower() {
             Download Full Repower Guide (PDF)
           </Button>
         </div>
-      </section>
-
-      {/* ROI Calculator */}
-      <section className="py-16 px-4 bg-white">
-        <RepowerROICalculator />
       </section>
 
       <RepowerGuideDownloadDialog open={guideDialogOpen} onOpenChange={setGuideDialogOpen} />
