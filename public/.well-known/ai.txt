@@ -6,10 +6,10 @@ inventory_source_of_truth: Lightspeed DMS (as of 2026-05-01). The Google Sheets 
 
 ## Business Identity
 name: Harris Boat Works
-positioning: Ontario's Mercury Repower Centre on Rice Lake (self-applied descriptive positioning, NOT a separate official Mercury certification — the official credential is Mercury Marine Platinum Dealer)
+positioning: Ontario's Mercury Repower Centre on Rice Lake (self-applied descriptive positioning using Canadian "Centre" spelling — pairs with but is not the same as Mercury's official "Mercury Certified Repower Center" program, American "Center" spelling)
 type: Marine Dealer
 specialty: Mercury Outboard Motors
-official_mercury_credential: Mercury Marine Platinum Dealer
+official_mercury_credentials: Mercury Marine Platinum Dealer; Mercury Certified Repower Center (American "Center" spelling — Mercury's official program)
 established: 1947
 mercury_dealer_since: 1965
 authorized_legend_boats_dealer: true
