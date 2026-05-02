@@ -741,6 +741,10 @@ function verifyPublicMd(relPath, label, required = []) {
 const caseStudies = loadCaseStudies();
 const locations = loadLocations();
 const motorRecords = await loadMotors();
+// Full quote-builder universe — same selection rules as MotorSelectionPage.
+// Used by /pricing-reference.md so the reference matches the quote builder
+// (both in-stock and available-to-order motors), not just public-motors-api.
+const quoteBuilderMotorRecords = await loadAllQuoteBuilderMotors();
 const blogArticlesAll = loadBlogArticles();
 
 rmSync(join(PUBLIC, 'catalog.md'), { force: true });
