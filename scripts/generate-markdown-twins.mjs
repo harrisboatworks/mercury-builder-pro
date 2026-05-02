@@ -793,8 +793,6 @@ if (missingBlog.length) {
 }
 
 writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
-writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(motorRecords));
-
 writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMotorRecords));
 
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md']);
