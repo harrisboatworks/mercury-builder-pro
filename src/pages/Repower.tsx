@@ -264,11 +264,6 @@ export default function Repower() {
         </div>
       </section>
 
-      {/* ROI Calculator */}
-      <section className="py-16 px-4 bg-white">
-        <RepowerROICalculator />
-      </section>
-
       <RepowerGuideDownloadDialog open={guideDialogOpen} onOpenChange={setGuideDialogOpen} />
 
       {/* Pricing Section */}
