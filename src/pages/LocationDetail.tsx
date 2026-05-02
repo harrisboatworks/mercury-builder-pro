@@ -108,7 +108,7 @@ export default function LocationDetail() {
   const h1 = `Mercury Outboards for ${location.region} Buyers`;
   const contextBullets = location.localContext.slice(0, 3);
   const faqs = location.faqs.slice(0, 4);
-  const useCases = USE_CASES(location.region);
+  const useCases = USE_CASES_BY_SLUG[location.slug] ?? DEFAULT_USE_CASES;
   const telHref = `tel:${COMPANY_INFO.contact.phone.replace(/[^0-9+]/g, '')}`;
 
   const jsonLdGraph = {
