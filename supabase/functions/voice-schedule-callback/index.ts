@@ -217,8 +217,8 @@ serve(async (req) => {
     
     if (twilioSid && twilioToken && twilioFrom) {
       try {
-        const message = `Thanks ${customer_name || 'there'}! Harris Boat Works will call you ${description}. ` +
-          `${motor_interest ? `Re: ${motor_interest}. ` : ''}` +
+        const message = `Thanks ${safeCustomerName || 'there'}! Harris Boat Works will call you ${description}. ` +
+          `${safeMotorInterest ? `Re: ${safeMotorInterest}. ` : ''}` +
           `Questions? Reply to this text or call 905-342-9980.`;
         
         const formData = new URLSearchParams();
@@ -247,10 +247,10 @@ serve(async (req) => {
       if (adminPhone) {
         try {
           const adminMessage = `🔔 NEW VOICE LEAD\n` +
-            `${customer_name || 'Unknown'}\n` +
+            `${safeCustomerName || 'Unknown'}\n` +
             `📞 ${cleanPhone}\n` +
             `⏰ Wants call: ${description}\n` +
-            `${motor_interest ? `🚤 Interest: ${motor_interest}` : ''}`;
+            `${safeMotorInterest ? `🚤 Interest: ${safeMotorInterest}` : ''}`;
           
           const adminFormData = new URLSearchParams();
           adminFormData.append('To', adminPhone.startsWith('+') ? adminPhone : '+1' + adminPhone);
