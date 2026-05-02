@@ -3379,7 +3379,19 @@ function verifyMd({ relPath, requireSubstrings = [], label }) {
 verifyMd({
   relPath: '/catalog.md',
   label: 'Catalog index',
-  requireSubstrings: ['## Motors', '## Case studies', '## Locations', 'CAD', 'Pickup only', 'mcp.json'],
+  requireSubstrings: [
+    '## Motors',
+    '## Case studies',
+    '## Locations',
+    '## Guides (Blog)',
+    '## Pricing reference',
+    'pricing-reference.md',
+    '## What we do NOT offer',
+    'No sterndrives',
+    'CAD',
+    'Pickup only',
+    'mcp.json',
+  ],
 });
 
 // Sample motor twin
