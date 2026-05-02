@@ -795,8 +795,31 @@ if (missingBlog.length) {
 writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
 writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(motorRecords));
 
+writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMotorRecords));
+
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md']);
-verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'public-motors-api']);
+verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection']);
+
+// Verify pricing-reference motor count matches the quote-builder selection
+// (NOT public-motors-api). Compare the count in frontmatter against the
+// expected quote-builder universe (priced, non-Verado).
+{
+  const expectedCount = quoteBuilderMotorRecords.filter(m => {
+    const s = (m.model_display || m.model || '').toLowerCase();
+    if (s.includes('verado')) return false;
+    return resolveMotorSellingPrice(m) > 0;
+  }).length;
+  const path = join(PUBLIC, 'pricing-reference.md');
+  const text = readFileSync(path, 'utf8');
+  const match = text.match(/^motor_count:\s*(\d+)\s*$/m);
+  if (!match) throw new Error('[markdown-twins] pricing-reference.md missing motor_count in frontmatter');
+  const written = Number(match[1]);
+  if (written !== expectedCount) {
+    throw new Error(`[markdown-twins] pricing-reference.md motor_count mismatch: frontmatter=${written}, quote-builder selection=${expectedCount}`);
+  }
+  console.log(`[markdown-twins] ✓ pricing-reference.md motor_count=${written} matches quote-builder selection (${expectedCount})`);
+}
+
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
