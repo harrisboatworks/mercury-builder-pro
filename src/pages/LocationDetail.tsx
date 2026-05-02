@@ -21,7 +21,9 @@ const TRUST_ROW = [
   { icon: MapPin, label: 'Pickup in Gores Landing' },
 ];
 
-const USE_CASES = (region: string) => [
+type UseCase = { title: string; body: string; href: string };
+
+const DEFAULT_USE_CASES: UseCase[] = [
   {
     title: 'Small & kicker motors',
     body: '2.5–25 HP for tenders, sailboat auxiliaries, and trolling kickers.',
@@ -38,6 +40,64 @@ const USE_CASES = (region: string) => [
     href: '/mercury-pro-xs',
   },
 ];
+
+const USE_CASES_BY_SLUG: Record<string, UseCase[]> = {
+  'rice-lake-mercury-repower': [
+    { title: '9.9–25 HP kickers & tillers', body: 'Trolling kickers and tiller fishing rigs for Rice Lake walleye and bass.', href: '/quote/motor-selection' },
+    { title: '40–115 HP fishing & pontoon', body: 'The most common Rice Lake repower — aluminum fishing boats and family pontoons, lake-tested before pickup.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS bass', body: 'Mercury Pro XS for Rice Lake and Trent–Severn bass tournaments.', href: '/mercury-pro-xs' },
+  ],
+  'peterborough-mercury-dealer': [
+    { title: '9.9–25 HP kickers', body: 'Trolling kickers for Kawartha and Trent–Severn fishing rigs.', href: '/quote/motor-selection' },
+    { title: '60–115 HP pontoon & cottage', body: 'Pontoon and cottage-boat repowers sized for Stoney, Buckhorn, and Chemong.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS performance', body: 'Mercury Pro XS for Kawartha bass and performance fibreglass.', href: '/mercury-pro-xs' },
+  ],
+  'kawartha-lakes-mercury-outboards': [
+    { title: '9.9–25 HP kickers', body: 'Tiller and kicker setups for Kawartha cottage boats and trolling.', href: '/quote/motor-selection' },
+    { title: '60–115 HP pontoon repowers', body: 'Pontoon and family-boat repowers — the most common Mercury choice across the Kawarthas.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS', body: 'Mercury Pro XS for Sturgeon, Pigeon, and Trent–Severn bass.', href: '/mercury-pro-xs' },
+  ],
+  'cobourg-northumberland-mercury': [
+    { title: 'Small & kicker motors', body: '2.5–25 HP for sailboat auxiliaries out of Cobourg Marina and Lake Ontario tenders.', href: '/quote/motor-selection' },
+    { title: '60–115 HP fishing & pontoon', body: 'Inland-lake pontoons and aluminum fishing boats — short trailer up Hwy 45 to Gores Landing.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS', body: 'Mercury Pro XS for Lake Ontario and Trent–Severn performance boats.', href: '/mercury-pro-xs' },
+  ],
+  'whitby-mercury-dealer': [
+    { title: 'Small & kicker motors', body: '2.5–25 HP kickers and tenders for Whitby Harbour and Lake Scugog fishing rigs.', href: '/quote/motor-selection' },
+    { title: '60–115 HP fishing & pontoon', body: 'The common Durham repower — Lake Scugog and Lake Ontario aluminum boats and pontoons.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS bass', body: 'Mercury Pro XS for Lake Scugog and Kawartha bass anglers trailering from Whitby.', href: '/mercury-pro-xs' },
+  ],
+  'ajax-mercury-dealer': [
+    { title: 'Small & kicker motors', body: '2.5–25 HP kickers and tenders for Lake Ontario and inland fishing rigs.', href: '/quote/motor-selection' },
+    { title: '60–115 HP fishing & pontoon', body: 'Lake Scugog and Kawartha-bound aluminum boats and pontoons — easy 401 trailer to Gores Landing.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS bass', body: 'Mercury Pro XS for Ajax-area anglers fishing Scugog and the Trent system.', href: '/mercury-pro-xs' },
+  ],
+  'pickering-mercury-dealer': [
+    { title: 'Sailboat auxiliaries & kickers', body: '2.5–15 HP Mercury auxiliaries for Frenchman’s Bay sailboats and Lake Ontario tenders.', href: '/quote/motor-selection' },
+    { title: '60–115 HP fishing & pontoon', body: 'Inland-lake pontoons and Scugog/Kawartha fishing boats trailered from Pickering.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS', body: 'Mercury Pro XS for performance fibreglass and bass anglers.', href: '/mercury-pro-xs' },
+  ],
+  'oshawa-mercury-dealer': [
+    { title: 'Small & kicker motors', body: '2.5–25 HP kickers and tenders for Oshawa Harbour and Scugog fishing.', href: '/quote/motor-selection' },
+    { title: '60–115 HP fishing & pontoon', body: 'The common Durham repower — Lake Scugog and inland-lake aluminum boats and pontoons.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS bass', body: 'Mercury Pro XS for Lake Scugog and Kawartha bass anglers.', href: '/mercury-pro-xs' },
+  ],
+  'bowmanville-courtice-mercury-dealer': [
+    { title: 'Small & kicker motors', body: '2.5–25 HP kickers for cottage tenders and trolling rigs.', href: '/quote/motor-selection' },
+    { title: '60–115 HP cottage & pontoon', body: 'Cottage boats and pontoons — the closest Durham drive to Gores Landing, straight up 115/35.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS', body: 'Mercury Pro XS for Kawartha bass anglers and performance fibreglass.', href: '/mercury-pro-xs' },
+  ],
+  'gta-mercury-outboards': [
+    { title: 'Small & kicker motors', body: '2.5–25 HP for sailboat auxiliaries, tenders, and trolling kickers across the GTA.', href: '/quote/motor-selection' },
+    { title: '60–115 HP fishing & pontoon', body: 'The most common GTA repower — inland-lake aluminum boats and family pontoons.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS performance', body: 'Mercury Pro XS for bass and performance fibreglass owners trailering east.', href: '/mercury-pro-xs' },
+  ],
+  'durham-gta-mercury-pickup': [
+    { title: 'Small & kicker motors', body: '2.5–25 HP kickers and tenders for Durham-area boats and Scugog fishing rigs.', href: '/quote/motor-selection' },
+    { title: '60–115 HP fishing & pontoon', body: 'The common Durham repower — Scugog and inland-lake aluminum boats and pontoons.', href: '/quote/motor-selection' },
+    { title: '150+ Pro XS bass', body: 'Mercury Pro XS for Lake Scugog and Kawartha bass anglers.', href: '/mercury-pro-xs' },
+  ],
+};
 
 export default function LocationDetail() {
   const { slug } = useParams<{ slug: string }>();
