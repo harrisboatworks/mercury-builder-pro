@@ -20,6 +20,7 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 - **Pickup only** at Gores Landing, ON. We do not ship outboards. We do not deliver.
 - **Final price** is always confirmed by Harris Boat Works staff before purchase.
 - **Verado** is special-order only — not part of default inventory and not actively promoted.
+- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.
 - Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.
 - Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.
 
@@ -36,22 +37,21 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 ## Motors
 
 - [2.5MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-2-5hp-2-5mh-fourstroke.md)
-- [9.9EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9eh-fourstroke.md)
-- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
 - [9.9MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9mh-fourstroke.md)
+- [9.9ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9elh-fourstroke.md)
+- [9.9EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-9-9hp-9-9eh-fourstroke.md)
 - [15 MH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-15hp-15-mh-fourstroke.md)
+- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
 - [20 EH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-eh-fourstroke.md)
 - [20 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elhpt-fourstroke.md)
-- [20 ELH FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-20hp-20-elh-fourstroke.md)
-- [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
 - [25 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elpt-fourstroke.md)
-- [40 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke.md)
+- [25 ELHPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-25hp-25-elhpt-fourstroke.md)
 - [40 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-fourstroke.md)
+- [40 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke.md)
 - [50 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-50hp-50-elpt-fourstroke.md)
 - [60 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-fourstroke.md)
-- [60 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke.md)
-- [90 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke.md)
 - [90 ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-fourstroke.md)
+- [90 ELPT Command Thrust FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke.md)
 - [115 EXLPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs.md)
 - [115ELPT FourStroke](https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke.md)
 - [115 ELPT ProXS](https://www.mercuryrepower.ca/motors/proxs-115hp-115-elpt-proxs.md)
@@ -82,4 +82,21 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 - [Mercury Dealer for Bowmanville & Courtice — Harris Boat Works](https://www.mercuryrepower.ca/locations/bowmanville-courtice-mercury-dealer.md)
 - [Mercury Outboards for the Greater Toronto Area — Harris Boat Works](https://www.mercuryrepower.ca/locations/gta-mercury-outboards.md)
 - [Mercury Outboard Pickup for Durham Region — Harris Boat Works](https://www.mercuryrepower.ca/locations/durham-gta-mercury-pickup.md)
+
+## Guides (Blog)
+
+Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
+
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md)
+- [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md)
+- [Mercury vs Yamaha vs Honda — Which Outboard Is Most Reliable in 2026?](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md)
+- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario.md)
+- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md)
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md)
+- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide](https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md)
+- [Complete Guide to Repowering Your Boat in the Kawarthas](https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md)
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md)
+- [Mercury FourStroke vs Verado: Which Premium Motor Is Right for You?](https://www.mercuryrepower.ca/blog/mercury-fourstroke-vs-verado-comparison.md)
+- [How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)](https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md)
+- [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md)
 
