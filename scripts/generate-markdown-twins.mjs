@@ -662,21 +662,20 @@ function pricingReferenceMarkdown(motorRecords) {
     if (famRows.length === 0) continue;
     sections.push(`## ${fam}`);
     sections.push('');
-    sections.push('| HP | Model | Model # | Shaft | Control | Price (CAD) | Status | Twin | Quote |');
-    sections.push('|---:|---|---|---|---|---:|---|---|---|');
+    sections.push('| HP | Model | Model # | Shaft | Control | Price (CAD) | Status | Quote |');
+    sections.push('|---:|---|---|---|---|---:|---|---|');
     for (const r of famRows) {
       const priceStr = fmtCAD(r.price) + (r.msrp && r.msrp > r.price ? ` _(MSRP ${fmtCAD(r.msrp)})_` : '');
-      const status = r.inStock ? 'In stock' : 'Special order';
-      const twin = `[md](${SITE_URL}/motors/${r.slug}.md)`;
+      const status = r.inStock ? 'In stock' : 'Available to order';
       const quote = `[build](${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(r.id)})`;
-      sections.push(`| ${r.hp} | ${r.display} | ${r.modelNo || '—'} | ${r.shaft || '—'} | ${r.control || '—'} | ${priceStr} | ${status} | ${twin} | ${quote} |`);
+      sections.push(`| ${r.hp} | ${r.display} | ${r.modelNo || '—'} | ${r.shaft || '—'} | ${r.control || '—'} | ${priceStr} | ${status} | ${quote} |`);
     }
     sections.push('');
   }
 
   const front = mdFrontmatter('/pricing-reference.md', [
     'index_type: pricing_reference',
-    'data_source: public-motors-api (same source as /quote/motor-selection)',
+    'data_source: motor_models (same selection rules as /quote/motor-selection)',
     `motor_count: ${rows.length}`,
   ]);
 
@@ -684,11 +683,11 @@ function pricingReferenceMarkdown(motorRecords) {
     front,
     '# Mercury Outboard Pricing Reference (CAD)',
     '',
-    `> Curated reference of Mercury outboards listed in the Harris Boat Works quote builder. Generated from the same live data source as \`/quote/motor-selection\`. All prices in **CAD**. Last updated ${TWIN_DATE}.`,
+    `> Curated Mercury outboards listed in the Harris Boat Works quote builder. Generated using the same selection rules as \`/quote/motor-selection\` (excludes Jet drives, motors over 600 HP, and any model marked Exclude). All prices in **CAD**. Last updated ${TWIN_DATE}.`,
     '',
     '## How to use this page',
     '',
-    '- These are the **only Mercury outboards actively listed** for online quoting on mercuryrepower.ca.',
+    '- These are the Mercury outboards available for online quoting on mercuryrepower.ca. Some are **in stock** and some are **available to order** — the Status column tells you which.',
     '- Prices are the dealer selling price in CAD before tax, trade-in, install, controls, propeller, or financing.',
     '- **Final out-the-door price is always confirmed by Harris Boat Works staff.**',
     '- Use the "build" link in the table to open a prefilled quote in `/quote/motor-selection`, or POST to the public quote API:',
