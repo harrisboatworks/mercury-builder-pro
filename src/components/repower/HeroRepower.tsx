@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, Phone, ChevronDown } from 'lucide-react';
 import { repowerImages } from './repowerImages';
@@ -11,10 +11,6 @@ const fadeUp = (delay = 0) => ({
 });
 
 export function HeroRepower() {
-  const [params] = useSearchParams();
-  // ?headline=b for the new treatment, default = original
-  const useNew = params.get('headline') === 'b';
-
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#050E1C] text-[#F5F1EA] flex items-center">
       {/* Background photo with slow zoom */}
@@ -41,35 +37,21 @@ export function HeroRepower() {
           Ontario's Mercury Repower Centre · Rice Lake
         </motion.p>
 
-        {useNew ? (
-          <motion.h1
-            {...fadeUp(0.2)}
-            className="font-display font-bold tracking-tight leading-[1.02] text-[clamp(48px,7vw,104px)] mb-8"
-            style={{ letterSpacing: '-0.035em' }}
-          >
-            Keep your boat.
-            <br />
-            Get your <span className="text-[#C8102E]">weekends</span> back.
-          </motion.h1>
-        ) : (
-          <motion.h1
-            {...fadeUp(0.2)}
-            className="font-display font-bold tracking-tight leading-[1.02] text-[clamp(48px,7vw,104px)] mb-8"
-            style={{ letterSpacing: '-0.035em' }}
-          >
-            Mercury Outboard
-            <br />
-            <span className="text-[#C8102E]">Repower.</span>
-          </motion.h1>
-        )}
+        <motion.h1
+          {...fadeUp(0.2)}
+          className="font-display font-bold tracking-tight leading-[1.02] text-[clamp(48px,7vw,104px)] mb-8"
+          style={{ letterSpacing: '-0.035em' }}
+        >
+          Keep your boat.
+          <br />
+          Get your <span className="text-[#C8102E]">weekends</span> back.
+        </motion.h1>
 
         <motion.p
           {...fadeUp(0.4)}
           className="font-sans font-light text-lg md:text-2xl text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-12"
         >
-          {useNew
-            ? 'A nearly-new boat experience — at a fraction of the price. Mercury Marine Platinum Dealer, family-owned on Rice Lake since 1947.'
-            : 'Keep Your Boat. Upgrade Your Engine. Mercury Marine Platinum Dealer, family-owned on Rice Lake since 1947.'}
+          A nearly-new boat experience — at a fraction of the price. Mercury Marine Platinum Dealer, family-owned on Rice Lake since 1947.
         </motion.p>
 
         {/* Stat row */}
