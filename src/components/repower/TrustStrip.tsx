@@ -1,8 +1,9 @@
-import { Award, BadgeCheck, Shield, Calendar } from 'lucide-react';
-import mercuryRepowerLogo from '/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png?url';
+import { Award, BadgeCheck } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import warranty7 from '@/assets/harris-7-year-warranty.png';
 import hbwLogo from '@/assets/harris-logo-white.png';
+
+const mercuryRepowerLogo = '/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png';
 
 interface TrustItem {
   label: string;
