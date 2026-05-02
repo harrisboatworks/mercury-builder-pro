@@ -1,171 +1,95 @@
-## Audit: current state
+## Goal
 
-Two parallel "location" systems exist today and they are inconsistent:
+Simplify `/locations/:slug` so each page feels premium, calm, and scannable — like a high-end dealer page, not an SEO landing page. No changes to quote builder, pricing, inventory, redirects, sitemap, or markdown twin generation.
 
-1. **Data-driven hub** (`/locations` + `/locations/:slug`)
-   - Source: `src/data/locations.ts` (5 entries: peterborough, kawartha-lakes, rice-lake, cobourg-northumberland, durham-gta)
-   - Renderer: `src/pages/LocationDetail.tsx` (clean, has `LocalBusiness` + `FAQPage` JSON-LD)
-   - Auto-included in sitemap (`src/utils/generateSitemap.ts`)
-   - Auto-emits markdown twins to `public/locations/*.md` via `scripts/generate-markdown-twins.mjs`
-   - Auto-prerendered by `scripts/static-prerender.mjs`
-   - Quality of copy: thin/generic for Peterborough, Kawartha, Cobourg, Durham/GTA. Only Rice Lake reads premium.
-   - Some FAQ wording on Cobourg ("Is pickup at the coast?") is awkward.
+## What changes
 
-2. **Hand-built landing pages** (`/mercury-dealer-peterborough`, `/mercury-dealer-cobourg`, `/mercury-dealer-gta`)
-   - One bespoke `.tsx` + matching `*SEO.tsx` per page
-   - Premium design, FAQ accordion, factbox, JSON-LD
-   - Not in `/locations` hub, duplicates Peterborough/Cobourg/GTA topics → competing URLs
+Only two files get meaningful edits:
 
-**Problems**
-- Two systems cover the same cities with different URLs → keyword cannibalization, AI-citation confusion.
-- The data-driven hub is the right scaling model but its content is too thin to be premium.
-- No coverage at all for Whitby, Ajax, Oshawa, Pickering, Bowmanville/Courtice — the core Durham cities the old HarrisBoatWorks.ca pages ranked for.
-- No clear policy in the schema about "we do NOT come to your city" — risky for AI summaries.
-- `caseStudies.heroImage` is referenced in sitemap but field name should be verified; not blocking.
+1. `src/pages/LocationDetail.tsx` — full visual redesign (less density, fewer sections).
+2. `src/data/locations.ts` — light trims: cap FAQs at 4, remove ROI/cost-claim FAQs, ensure each city has exactly one "no mobile service" FAQ.
 
----
+Everything else (data interface fields, slugs, JSON-LD shape, markdown twin output, sitemap, redirects, lint rules) stays as-is so we don't disturb the SEO/AI infrastructure we just built.
 
-## Proposed URL structure
-
-**Single canonical system** = the data-driven `/locations/:slug` hub. The hand-built `/mercury-dealer-*` pages stay live but become 301-style React redirects to the new canonical `/locations/...` slugs (handled with `<Navigate>`), so existing AI citations don't break.
-
-Canonical slug convention: `/locations/{city-or-region}-mercury-{intent}` where intent is one of `dealer`, `repower`, `pickup`, `outboards`.
+## New page structure
 
 ```text
-/locations                                      (hub index — already exists)
-/locations/rice-lake-mercury-repower            (exists, premium — keep)
-/locations/peterborough-mercury-dealer          (exists — rewrite premium)
-/locations/cobourg-northumberland-mercury       (exists — rewrite + rename to cobourg-mercury-dealer; keep old slug as redirect)
-/locations/kawartha-lakes-mercury-outboards     (exists — rewrite premium)
-/locations/durham-gta-mercury-pickup            (exists — rewrite as regional hub)
+┌─ Premium hero (navy bg, gold accent) ────────────────────┐
+│  H1: Mercury Outboards for {Region} Buyers              │
+│  1 short intro paragraph                                 │
+│  [Build Your Quote]  [Call Harris Boat Works]            │
+│  Trust row (inline, small): Platinum · Since 1947 ·      │
+│    Mercury since 1965 · Pickup in Gores Landing          │
+└──────────────────────────────────────────────────────────┘
 
-# NEW Durham-region city pages (priority for old HBW.ca parity)
-/locations/whitby-mercury-dealer
-/locations/ajax-mercury-dealer
-/locations/oshawa-mercury-dealer
-/locations/pickering-mercury-dealer
-/locations/bowmanville-courtice-mercury-dealer
+┌─ Local context ──────────────────────────────────────────┐
+│  3 short bullets (first 3 of localContext)               │
+└──────────────────────────────────────────────────────────┘
 
-# NEW GTA umbrella
-/locations/gta-mercury-outboards               (regional — links to each Durham city)
+┌─ Common motor use cases (3 cards) ───────────────────────┐
+│  Small / kicker  │  60–115 fishing & pontoon  │ 150+ Pro XS │
+│  → /quote/motor-selection (with hp hint in link copy)    │
+└──────────────────────────────────────────────────────────┘
+
+┌─ Pickup boundary (one polished box) ─────────────────────┐
+│  Bring the boat to Gores Landing, or pick up a loose     │
+│  motor. No mobile service, delivery, driveway installs,  │
+│  or marina visits.                                       │
+└──────────────────────────────────────────────────────────┘
+
+┌─ FAQ (max 4, short answers) ─────────────────────────────┐
+│  Accordion or simple stacked cards                       │
+└──────────────────────────────────────────────────────────┘
+
+Footer CTA: single line + Build Your Quote button.
 ```
 
-Redirects (kept for backlinks / AI memory):
-- `/mercury-dealer-peterborough` → `/locations/peterborough-mercury-dealer`
-- `/mercury-dealer-cobourg` → `/locations/cobourg-northumberland-mercury`
-- `/mercury-dealer-gta` → `/locations/gta-mercury-outboards`
-- `/mercury-outboards-whitby` (if anyone hits it from old HBW backlinks) → `/locations/whitby-mercury-dealer`
+## What gets removed from the rendered page
 
----
+- 4-tile factbox grid (drive time / pickup / Platinum / phone) — drive time folded into intro, phone into footer CTA.
+- "Why customers from {region} choose us" bullet list (covered by hero trust row).
+- "Common local boats" + "Popular HP ranges" twin grid (replaced by 3 use-case cards).
+- "Recommended next steps" link grid.
+- "Related repower case studies" block.
+- The duplicate amber "Shop-based service only" banner (merged into the single pickup boundary box).
+- Drive route paragraph (kept in data; not rendered on the page).
 
-## Upgraded data model
+Data fields stay in `LocationPageData` so markdown twins and JSON-LD still emit them — we just stop showing them in the React UI.
 
-Extend `src/data/locations.ts` `LocationPageData` so every page has the same premium fields. Markdown twin + JSON-LD generators read from this — no per-city bespoke React components needed.
+## Data trims (`src/data/locations.ts`)
 
-```ts
-export interface LocationPageData {
-  slug: string;
-  title: string;                  // <title> + H1
-  metaDescription: string;        // <meta name="description">
-  region: string;                 // "Whitby", "Durham & GTA", etc
-  regionType: 'city' | 'region';
-  keyword: string;
-  driveTime: string;              // "about 75 minutes from Gores Landing via 401"
-  driveRoute?: string;            // "401 East → Cobourg → County Rd 18"
-  intro: string;                  // 2–3 sentence premium intro
-  localContext: string[];         // bullet facts about local boating (lakes, marinas they boat from, NOT services we deliver there)
-  popularBoats: string[];
-  popularHpRanges: string[];      // e.g. ["9.9–25 HP kicker", "60–90 HP fishing", "115–150 HP family"]
-  whyChooseUs: string[];          // trust facts (since 1947, Platinum since 1965, CAD pricing, lake-tested)
-  recommendedLinks: { label: string; href: string }[];
-  relatedCaseStudySlugs?: string[]; // explicit pin instead of fuzzy match
-  faqs: { question: string; answer: string }[];
-  // Strict policy block — rendered verbatim and used in schema description
-  pickupPolicy: string;           // canonical sentence about pickup-only at Gores Landing
-  serviceBoundary: string;        // canonical "we do NOT travel to {city}" disclaimer, phrased politely
-}
-```
+- Cap `faqs` at 4 entries per location.
+- Remove FAQs that quote dollar ranges or ROI claims (e.g. Rice Lake "What does a typical Rice Lake repower cost?").
+- For each city page, ensure exactly one FAQ answers the "do you do mobile service / deliver" question — collapse duplicates.
+- No interface changes. No removed fields. Other consumers (markdown twin generator, JSON-LD) keep working unchanged.
 
----
+## Design
 
-## Wording rules baked into the template
+- Hero: deep navy background (`bg-slate-900` / brand navy token), white H1, thin gold rule under H1, white intro.
+- Body: white background, generous vertical spacing (`py-16` between sections), `max-w-3xl` for body content (narrower than today's `max-w-4xl`) so it feels editorial.
+- Cards: subtle border, no heavy shadows, single accent color.
+- One CTA color (gold/primary) used sparingly — hero primary CTA + footer CTA only.
+- Use existing tokens (`bg-card`, `border-border`, `text-primary`) — no new color additions.
 
-The `LocationDetail.tsx` component will render two fixed banners on every page so we cannot accidentally imply mobile service:
+## JSON-LD
 
-1. **Pickup policy banner** (already exists, keep):
-   > Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.
+Kept exactly as today: `WebPage`, `BreadcrumbList`, `LocalBusiness` (with sales-catchment `areaServed`), `Place`, `FAQPage`. No `Service` node. FAQ schema will reflect the trimmed (≤4) FAQ list automatically since it iterates `location.faqs`.
 
-2. **Service boundary banner** (NEW):
-   > Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in {city}. Customers from {city} bring their boat to our Gores Landing shop, or pick up a loose Mercury motor for self-install.
+## Explicitly NOT touched
 
-All copy in `localContext`, `whyChooseUs`, `intro`, and `faqs` will use approved phrasing only:
-- "serving buyers from Whitby"
-- "customers from Oshawa can build a quote online"
-- "pickup and installation are handled at Harris Boat Works in Gores Landing"
-- "bring the boat to our Gores Landing shop"
+- `/quote/motor-selection` and any quote/pricing/inventory code
+- `src/App.tsx` redirects
+- `vercel.json` 301s
+- `scripts/generate-markdown-twins.mjs` (lint + frontmatter)
+- `scripts/static-prerender.mjs`
+- `src/utils/generateSitemap.ts`
+- `src/pages/Locations.tsx` hub (already correct after last pass)
+- `LocationPageData` interface
 
-Forbidden phrases (added as a build-time lint in `generate-markdown-twins.mjs` so future edits can't reintroduce them):
-- "we service {city}", "mobile service", "on-site repower", "in your driveway", "at your marina", "delivery to", "we come to", "ship to"
+## Acceptance
 
----
-
-## Schema upgrades on each page
-
-`LocationDetail.tsx` will emit a richer `@graph`:
-
-1. `LocalBusiness` — Harris Boat Works (real address = Gores Landing; `areaServed` lists the region/city as a *sales catchment*, not a service area).
-2. `Service` — name = "Mercury Outboard Sales & Repower", `serviceType: "Sales"`, `availableAtOrFrom` = the Gores Landing PostalAddress, `areaServed` = the city, `provider.@id` points to the LocalBusiness. Explicitly **omit** `ServiceArea` for "service calls" — this prevents AI from inferring mobile service.
-3. `WebPage` with `breadcrumb` BreadcrumbList → Home › Service Areas › {City}.
-4. `FAQPage` from `faqs[]`.
-5. `Place` for the city (with name + containedInPlace = Ontario) so AI knows the city we mean.
-
----
-
-## Markdown twin upgrades
-
-`scripts/generate-markdown-twins.mjs` `locationMarkdown()` will be extended to emit the new fields (drive route, popular HP ranges, why-choose, service boundary line, related case studies). Frontmatter gains:
-
-```yaml
-service_area_type: sales-catchment
-mobile_service_offered: false
-on_site_install_offered: false
-delivery_offered: false
-```
-
-These flags are explicit signals AI scrapers can read.
-
----
-
-## Sitemap
-
-Already auto-pulls from `locations[]`, so adding 6 new entries (Whitby, Ajax, Oshawa, Pickering, Bowmanville-Courtice, GTA umbrella) automatically inserts them. No code change needed beyond data.
-
----
-
-## Implementation steps
-
-1. **Extend types & banners**: update `LocationPageData`, rewrite `LocationDetail.tsx` to render the new sections (factbox, drive route, popular HP, why-choose, service boundary banner, richer schema graph).
-2. **Rewrite existing 5 entries** in `src/data/locations.ts` to populate the new fields with premium, factual copy. Cobourg FAQ "Is pickup at the coast?" gets fixed.
-3. **Add 6 new entries**: Whitby, Ajax, Oshawa, Pickering, Bowmanville/Courtice, GTA umbrella. Each gets distinct intro / drive route / local lakes referenced (e.g., Whitby boaters often launch on Lake Ontario, Scugog, Simcoe; Bowmanville near Rice Lake/Scugog access). No duplicated paragraphs across cities.
-4. **Add redirects** in `src/App.tsx` from the 3 old `/mercury-dealer-*` routes and `/mercury-outboards-whitby` to the new `/locations/...` canonicals using `<Navigate replace>`. The bespoke `MercuryDealerPeterborough.tsx` / `MercuryDealerCobourg.tsx` / `MercuryDealerGTA.tsx` files stay in repo but unmount from routes (or are kept as the redirect target's source — we'll just unmount and remove the routes).
-5. **Update `Locations.tsx`** hub to group cards by region (Northumberland & Kawarthas / Durham / GTA umbrella).
-6. **Markdown twin script**: extend `locationMarkdown()` for new fields + add the forbidden-phrases lint that throws if any twin contains banned wording.
-7. **Sitemap**: no code change — verifies the 6 new URLs appear after `npm run` build.
-8. **Static prerender**: `scripts/static-prerender.mjs` already iterates `locations[]` for `locationDetailSchema` — extend that schema function to emit the new `Service` + `Place` nodes.
-9. **QA**: visit each new route in preview, confirm copy reads premium and schema validates, confirm `/quote/motor-selection` is unchanged.
-
----
-
-## Out of scope (explicitly not touched)
-
-- `/quote/motor-selection` and the entire quote builder
-- Pricing logic, inventory rules, motor filters
-- Verado / SeaPro recommendations
-- No mention of sterndrives anywhere
-- No new edge functions or DB changes
-
----
-
-## Deliverable summary
-
-One canonical, premium, scalable location system at `/locations/:slug` with 11 pages (5 rewritten + 6 new), strict "no mobile service" wording enforced by template + lint, full JSON-LD graph including a `Service` node that signals sales-only, markdown twins, and sitemap inclusion. Old `/mercury-dealer-*` URLs preserved via redirects so existing AI citations still resolve.
+- Each `/locations/:slug` page has ≤5 visible sections (hero, context, use-cases, boundary, faq) plus footer CTA.
+- "No mobile service" / "no delivery" wording appears in exactly one visible box plus at most one FAQ.
+- Build still passes the markdown-twin lint.
+- JSON-LD validates and includes FAQ + LocalBusiness + Breadcrumb.
+- No dollar amounts or ROI claims rendered on city pages.

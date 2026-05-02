@@ -4,9 +4,40 @@ import { SITE_URL } from '@/lib/site';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { COMPANY_INFO } from '@/lib/companyInfo';
-import { caseStudies } from '@/data/caseStudies';
 import { getLocationBySlug } from '@/data/locations';
-import { Anchor, MapPin, Clock, Award, Wrench, Phone, AlertCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+import { Anchor, Phone, Award, MapPin, Calendar, Wrench } from 'lucide-react';
+
+const TRUST_ROW = [
+  { icon: Award, label: 'Mercury Platinum Dealer' },
+  { icon: Calendar, label: 'Family-owned since 1947' },
+  { icon: Wrench, label: 'Mercury dealer since 1965' },
+  { icon: MapPin, label: 'Pickup in Gores Landing' },
+];
+
+const USE_CASES = (region: string) => [
+  {
+    title: 'Small & kicker motors',
+    body: '2.5–25 HP for tenders, sailboat auxiliaries, and trolling kickers.',
+    href: '/quote/motor-selection',
+  },
+  {
+    title: '60–115 HP fishing & pontoon',
+    body: 'The most common Mercury repower for Ontario aluminum boats and pontoons.',
+    href: '/quote/motor-selection',
+  },
+  {
+    title: '150+ Pro XS & performance',
+    body: 'Mercury Pro XS for bass and high-performance fibreglass.',
+    href: '/mercury-pro-xs',
+  },
+];
 
 export default function LocationDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -14,11 +45,11 @@ export default function LocationDetail() {
   if (!location) return <Navigate to="/locations" replace />;
 
   const url = `${SITE_URL}/locations/${location.slug}`;
-
-  const relatedCaseStudies = (location.relatedCaseStudySlugs ?? [])
-    .map((s) => caseStudies.find((cs) => cs.slug === s))
-    .filter(Boolean)
-    .slice(0, 3) as typeof caseStudies;
+  const h1 = `Mercury Outboards for ${location.region} Buyers`;
+  const contextBullets = location.localContext.slice(0, 3);
+  const faqs = location.faqs.slice(0, 4);
+  const useCases = USE_CASES(location.region);
+  const telHref = `tel:${COMPANY_INFO.contact.phone.replace(/[^0-9+]/g, '')}`;
 
   const jsonLdGraph = {
     '@context': 'https://schema.org',
@@ -55,12 +86,13 @@ export default function LocationDetail() {
           postalCode: COMPANY_INFO.address.postal,
           addressCountry: 'CA',
         },
-        // Sales catchment / buyer catchment ONLY — represents where customers travel from to pick up at Gores Landing.
-        // This is NOT mobile service coverage. Harris Boat Works performs all work on-site at Gores Landing.
+        // Sales catchment only — represents where customers travel from to pick up at Gores Landing.
+        // NOT a mobile service area. All work happens at Gores Landing.
         areaServed: {
           '@type': 'AdministrativeArea',
           name: location.region,
-          description: 'Sales catchment — customers from this area travel to Gores Landing for pickup. Not a mobile service area.',
+          description:
+            'Sales catchment — customers from this area travel to Gores Landing for pickup. Not a mobile service area.',
         },
       },
       {
@@ -72,7 +104,7 @@ export default function LocationDetail() {
       {
         '@type': 'FAQPage',
         '@id': `${url}#faq`,
-        mainEntity: location.faqs.map((faq) => ({
+        mainEntity: faqs.map((faq) => ({
           '@type': 'Question',
           name: faq.question,
           acceptedAnswer: { '@type': 'Answer', text: faq.answer },
@@ -90,124 +122,144 @@ export default function LocationDetail() {
         <script type="application/ld+json">{JSON.stringify(jsonLdGraph)}</script>
       </Helmet>
       <LuxuryHeader />
-      <main className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <Link to="/locations" className="text-primary hover:underline text-sm">← Back to pickup areas</Link>
+      <main>
+        {/* HERO */}
+        <section className="bg-slate-900 text-white">
+          <div className="container mx-auto px-4 py-16 md:py-24 max-w-3xl">
+            <Link to="/locations" className="text-sm text-white/60 hover:text-white">
+              ← Pickup areas
+            </Link>
+            <h1 className="mt-6 text-4xl md:text-5xl font-semibold tracking-tight">
+              {h1}
+            </h1>
+            <div className="mt-5 h-px w-16 bg-amber-400" aria-hidden="true" />
+            <p className="mt-6 text-lg text-white/80 leading-relaxed">
+              {location.intro}
+            </p>
 
-          <header className="mt-6 mb-8">
-            <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">{location.title}</h1>
-            <p className="text-lg text-muted-foreground mb-6">{location.intro}</p>
-
-            {/* Factbox */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-              <div className="rounded-lg border border-border bg-card p-3 flex flex-col items-start gap-1">
-                <Clock className="h-4 w-4 text-primary" />
-                <div className="text-xs text-muted-foreground">Drive time</div>
-                <div className="text-sm font-medium text-foreground">{location.driveTime}</div>
-              </div>
-              <div className="rounded-lg border border-border bg-card p-3 flex flex-col items-start gap-1">
-                <MapPin className="h-4 w-4 text-primary" />
-                <div className="text-xs text-muted-foreground">Pickup</div>
-                <div className="text-sm font-medium text-foreground">Gores Landing, ON</div>
-              </div>
-              <div className="rounded-lg border border-border bg-card p-3 flex flex-col items-start gap-1">
-                <Award className="h-4 w-4 text-primary" />
-                <div className="text-xs text-muted-foreground">Status</div>
-                <div className="text-sm font-medium text-foreground">Mercury Platinum</div>
-              </div>
-              <div className="rounded-lg border border-border bg-card p-3 flex flex-col items-start gap-1">
-                <Phone className="h-4 w-4 text-primary" />
-                <div className="text-xs text-muted-foreground">Call</div>
-                <div className="text-sm font-medium text-foreground">{COMPANY_INFO.contact.phone}</div>
-              </div>
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
+              <Button asChild size="lg" className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold">
+                <Link to="/quote/motor-selection">Build Your Quote</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/30 text-white hover:bg-white/10 hover:text-white"
+              >
+                <a href={telHref}>
+                  <Phone className="h-4 w-4 mr-2" />
+                  Call Harris Boat Works
+                </a>
+              </Button>
             </div>
 
-            {/* Pickup policy banner */}
-            <div className="rounded-lg border border-border bg-card p-4 text-sm text-foreground mb-3 flex gap-3">
-              <Anchor className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-              <div><strong>Pickup policy.</strong> {location.pickupPolicy}</div>
-            </div>
+            <ul className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-3">
+              {TRUST_ROW.map(({ icon: Icon, label }) => (
+                <li key={label} className="flex items-center gap-2 text-xs text-white/70">
+                  <Icon className="h-3.5 w-3.5 text-amber-400 shrink-0" />
+                  <span>{label}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
-            {/* Service boundary banner — explicit "we don't come to you" */}
-            <div className="rounded-lg border border-amber-200 bg-amber-50 dark:border-amber-900 dark:bg-amber-950/40 p-4 text-sm text-foreground flex gap-3">
-              <AlertCircle className="h-5 w-5 text-amber-700 dark:text-amber-400 shrink-0 mt-0.5" />
-              <div><strong>Shop-based service only.</strong> {location.serviceBoundary}</div>
-            </div>
+        {/* LOCAL CONTEXT */}
+        <section className="container mx-auto px-4 py-16 max-w-3xl">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-5">
+            Local context
+          </h2>
+          <ul className="space-y-3">
+            {contextBullets.map((c) => (
+              <li key={c} className="flex gap-3 text-foreground leading-relaxed">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" aria-hidden="true" />
+                <span>{c}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-            {location.driveRoute && (
-              <p className="text-sm text-muted-foreground mt-3"><strong>Route:</strong> {location.driveRoute}</p>
-            )}
-          </header>
-
-          <section className="grid gap-6 md:grid-cols-2 mb-10">
-            <div className="rounded-lg border border-border bg-card p-5">
-              <h2 className="text-xl font-semibold text-foreground mb-3">Local boating context</h2>
-              <ul className="space-y-2 text-muted-foreground list-disc ml-5">
-                {location.localContext.map((c) => <li key={c}>{c}</li>)}
-              </ul>
-            </div>
-            <div className="rounded-lg border border-border bg-card p-5">
-              <h2 className="text-xl font-semibold text-foreground mb-3">Why customers from {location.region} choose us</h2>
-              <ul className="space-y-2 text-muted-foreground list-disc ml-5">
-                {location.whyChooseUs.map((f) => <li key={f}>{f}</li>)}
-              </ul>
-            </div>
-          </section>
-
-          <section className="grid gap-6 md:grid-cols-2 mb-10">
-            <div className="rounded-lg border border-border bg-card p-5">
-              <h2 className="text-xl font-semibold text-foreground mb-3">Common local boats</h2>
-              <ul className="space-y-2 text-muted-foreground list-disc ml-5">
-                {location.popularBoats.map((b) => <li key={b}>{b}</li>)}
-              </ul>
-            </div>
-            <div className="rounded-lg border border-border bg-card p-5">
-              <h2 className="text-xl font-semibold text-foreground mb-3">Popular Mercury HP ranges</h2>
-              <ul className="space-y-2 text-muted-foreground list-disc ml-5">
-                {location.popularHpRanges.map((h) => <li key={h}>{h}</li>)}
-              </ul>
-            </div>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">Recommended next steps</h2>
-            <div className="grid gap-3 md:grid-cols-2">
-              {location.recommendedLinks.map((item) => (
-                <Link key={item.href + item.label} to={item.href} className="rounded-lg border border-border bg-card p-4 hover:border-primary/40 transition-colors flex items-center gap-3">
-                  <Wrench className="h-4 w-4 text-primary shrink-0" />
-                  <div className="font-medium text-foreground">{item.label}</div>
+        {/* USE CASES */}
+        <section className="border-t border-border bg-muted/30">
+          <div className="container mx-auto px-4 py-16 max-w-5xl">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-8 text-center">
+              Common Mercury choices for {location.region}
+            </h2>
+            <div className="grid gap-5 md:grid-cols-3">
+              {useCases.map((u) => (
+                <Link
+                  key={u.title}
+                  to={u.href}
+                  className="group rounded-lg border border-border bg-card p-6 hover:border-amber-500/60 transition-colors"
+                >
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{u.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{u.body}</p>
+                  <span className="text-sm font-medium text-amber-700 group-hover:text-amber-600">
+                    Build a quote →
+                  </span>
                 </Link>
               ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {relatedCaseStudies.length > 0 && (
-            <section className="mb-10">
-              <h2 className="text-2xl font-semibold text-foreground mb-4">Related repower case studies</h2>
-              <div className="grid gap-4 md:grid-cols-2">
-                {relatedCaseStudies.map((study) => (
-                  <Link key={study.id} to={`/case-studies/${study.slug}`} className="rounded-lg border border-border bg-card p-4 hover:border-primary/40 transition-colors">
-                    <div className="text-xs uppercase tracking-wide text-primary mb-2">{study.id}</div>
-                    <div className="font-medium text-foreground mb-2">{study.title}</div>
-                    <div className="text-sm text-muted-foreground">{study.excerpt}</div>
-                  </Link>
-                ))}
+        {/* PICKUP BOUNDARY — single polished box */}
+        <section className="container mx-auto px-4 py-16 max-w-3xl">
+          <div className="rounded-xl border border-border bg-card p-6 md:p-8">
+            <div className="flex items-start gap-4">
+              <div className="h-10 w-10 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center shrink-0">
+                <Anchor className="h-5 w-5" />
               </div>
-            </section>
-          )}
-
-          <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-foreground mb-4">FAQ</h2>
-            <div className="space-y-4">
-              {location.faqs.map((faq) => (
-                <div key={faq.question} className="rounded-lg border border-border bg-card p-5">
-                  <h3 className="font-semibold text-foreground mb-2">{faq.question}</h3>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </div>
-              ))}
+              <div>
+                <h2 className="text-xl font-semibold text-foreground mb-2">
+                  Pickup at Gores Landing
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Customers from {location.region} bring the boat to our shop at{' '}
+                  {COMPANY_INFO.address.street}, {COMPANY_INFO.address.city}, ON for installation,
+                  or pick up a loose Mercury motor for self-install. We do not offer mobile
+                  service, delivery, driveway installs, or marina visits.
+                </p>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        {faqs.length > 0 && (
+          <section className="container mx-auto px-4 pb-20 max-w-3xl">
+            <h2 className="text-2xl font-semibold text-foreground mb-6">Questions</h2>
+            <Accordion type="single" collapsible className="w-full space-y-2">
+              {faqs.map((faq, i) => (
+                <AccordionItem
+                  key={faq.question}
+                  value={`item-${i}`}
+                  className="border border-border rounded-lg px-4 data-[state=open]:bg-muted/40"
+                >
+                  <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-4">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-4 leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </section>
-        </div>
+        )}
+
+        {/* FOOTER CTA */}
+        <section className="bg-slate-900 text-white">
+          <div className="container mx-auto px-4 py-14 max-w-3xl text-center">
+            <p className="text-lg text-white/80 mb-6">
+              Build a Mercury quote with real CAD pricing — or call {COMPANY_INFO.contact.phone}.
+            </p>
+            <Button asChild size="lg" className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold">
+              <Link to="/quote/motor-selection">Build Your Quote</Link>
+            </Button>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>
