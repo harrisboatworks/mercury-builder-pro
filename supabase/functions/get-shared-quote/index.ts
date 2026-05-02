@@ -56,25 +56,26 @@ Deno.serve(async (req) => {
         })
         .eq("id", quoteId);
 
-      const quoteData = savedQuote.quote_state;
+      // Strip admin-only fields from public-facing quote_state before returning.
+      const rawQuote = savedQuote.quote_state ?? {};
+      const { adminNotes: _adminNotes, adminDiscount: _adminDiscount, ...safeQuoteData } = rawQuote as Record<string, unknown>;
       return new Response(
         JSON.stringify({
           id: savedQuote.id,
-          quote_data: quoteData,
-          customer_name: quoteData?.customerName ?? "",
-          is_admin_quote: quoteData?.isAdminQuote ?? false,
-          admin_discount: quoteData?.adminDiscount ?? 0,
-          admin_notes: quoteData?.adminNotes ?? "",
-          customer_notes: quoteData?.customerNotes ?? "",
+          quote_data: safeQuoteData,
+          customer_name: (rawQuote as any)?.customerName ?? "",
+          is_admin_quote: (rawQuote as any)?.isAdminQuote ?? false,
+          customer_notes: (rawQuote as any)?.customerNotes ?? "",
         }),
         { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
-    // Fall back to customer_quotes table (used by share links)
+    // Fall back to customer_quotes table (used by share links).
+    // Do NOT select admin_notes / admin_discount — these are internal-only.
     const { data: quote, error } = await supabase
       .from("customer_quotes")
-      .select("id, quote_data, customer_name, is_admin_quote, admin_discount, admin_notes, customer_notes")
+      .select("id, quote_data, customer_name, is_admin_quote, customer_notes")
       .eq("id", quoteId)
       .single();
 
@@ -85,14 +86,16 @@ Deno.serve(async (req) => {
       );
     }
 
+    // Strip any admin-only fields that may live inside quote_data JSON.
+    const rawQuoteData = (quote.quote_data ?? {}) as Record<string, unknown>;
+    const { adminNotes: _adminNotes2, adminDiscount: _adminDiscount2, ...safeQuoteData } = rawQuoteData;
+
     return new Response(
       JSON.stringify({
         id: quote.id,
-        quote_data: quote.quote_data,
+        quote_data: safeQuoteData,
         customer_name: quote.customer_name ?? "",
         is_admin_quote: quote.is_admin_quote,
-        admin_discount: quote.admin_discount,
-        admin_notes: quote.admin_notes,
         customer_notes: quote.customer_notes,
       }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
