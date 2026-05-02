@@ -1,4 +1,4 @@
-import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from 'fs';
+import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync, readFileSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
@@ -52,6 +52,33 @@ function loadBlogArticles() {
   } finally {
     try { rmSync(tmpFile); } catch {}
   }
+}
+
+// Loads the FULL quote-builder motor universe directly from motor_models,
+// mirroring the filters used in src/pages/quote/MotorSelectionPage.tsx:
+//   - exclude availability = 'Exclude'
+//   - exclude horsepower > 600
+//   - exclude model containing "jet"
+// This is the source of truth for /pricing-reference.md and must NOT be
+// replaced with public-motors-api (which only returns in-stock motors).
+async function loadAllQuoteBuilderMotors() {
+  const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
+  const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY;
+  if (!SUPABASE_KEY) {
+    throw new Error('[markdown-twins] FATAL: no publishable Supabase key available for quote-builder motor universe load.');
+  }
+  // Match MotorSelectionPage: select all, order by hp asc, then JS-filter.
+  const url = `${SUPABASE_URL}/rest/v1/motor_models?select=id,model_key,model,model_display,model_number,mercury_model_no,family,horsepower,shaft,shaft_code,start_type,control_type,msrp,sale_price,dealer_price,base_price,manual_overrides,availability,in_stock,hero_image_url,image_url,updated_at&order=horsepower.asc&limit=2000`;
+  const res = await fetch(url, { headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` } });
+  if (!res.ok) throw new Error(`[markdown-twins] FATAL: motor_models fetch failed ${res.status} ${res.statusText}`);
+  const all = await res.json();
+  return (all || []).filter(m => {
+    const model = (m.model || '').toLowerCase();
+    if (model.includes('jet')) return false;
+    if (typeof m.horsepower === 'number' && m.horsepower > 600) return false;
+    if (m.availability === 'Exclude') return false;
+    return true;
+  });
 }
 
 async function loadMotors() {
@@ -594,12 +621,10 @@ function pricingReferenceMarkdown(motorRecords) {
   const fmtCAD = (n) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
   const rows = motorRecords
     .filter(m => {
-      if (!m.model_key) return false;
       const s = (m.model_display || m.model || '').toLowerCase();
       return !s.includes('verado');
     })
     .map(m => {
-      const slug = motorSlug(m.model_key);
       const familyRaw = detectMotorFamily(m);
       const family = /pro\s*xs/i.test(familyRaw) ? 'Pro XS'
         : /sea\s*pro/i.test(familyRaw) ? 'SeaPro'
@@ -607,9 +632,8 @@ function pricingReferenceMarkdown(motorRecords) {
         : /racing/i.test(familyRaw) ? 'Racing'
         : 'FourStroke';
       const price = resolveMotorSellingPrice(m);
-      const inStock = m.in_stock || m.availability === 'In Stock';
+      const inStock = m.in_stock === true || m.availability === 'In Stock';
       return {
-        slug,
         id: m.id,
         family,
         hp: Number(m.horsepower) || 0,
@@ -631,25 +655,27 @@ function pricingReferenceMarkdown(motorRecords) {
   const families = ['FourStroke', 'Pro XS', 'SeaPro', 'Racing'];
   const sections = [];
   for (const fam of families) {
-    const famRows = rows.filter(r => r.family === fam).sort((a, b) => a.hp - b.hp);
+    // In-stock first, then by HP ascending — mirrors MotorSelectionPage default order.
+    const famRows = rows
+      .filter(r => r.family === fam)
+      .sort((a, b) => (Number(b.inStock) - Number(a.inStock)) || (a.hp - b.hp));
     if (famRows.length === 0) continue;
     sections.push(`## ${fam}`);
     sections.push('');
-    sections.push('| HP | Model | Model # | Shaft | Control | Price (CAD) | Status | Twin | Quote |');
-    sections.push('|---:|---|---|---|---|---:|---|---|---|');
+    sections.push('| HP | Model | Model # | Shaft | Control | Price (CAD) | Status | Quote |');
+    sections.push('|---:|---|---|---|---|---:|---|---|');
     for (const r of famRows) {
       const priceStr = fmtCAD(r.price) + (r.msrp && r.msrp > r.price ? ` _(MSRP ${fmtCAD(r.msrp)})_` : '');
-      const status = r.inStock ? 'In stock' : 'Special order';
-      const twin = `[md](${SITE_URL}/motors/${r.slug}.md)`;
+      const status = r.inStock ? 'In stock' : 'Available to order';
       const quote = `[build](${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(r.id)})`;
-      sections.push(`| ${r.hp} | ${r.display} | ${r.modelNo || '—'} | ${r.shaft || '—'} | ${r.control || '—'} | ${priceStr} | ${status} | ${twin} | ${quote} |`);
+      sections.push(`| ${r.hp} | ${r.display} | ${r.modelNo || '—'} | ${r.shaft || '—'} | ${r.control || '—'} | ${priceStr} | ${status} | ${quote} |`);
     }
     sections.push('');
   }
 
   const front = mdFrontmatter('/pricing-reference.md', [
     'index_type: pricing_reference',
-    'data_source: public-motors-api (same source as /quote/motor-selection)',
+    'data_source: motor_models (same selection rules as /quote/motor-selection)',
     `motor_count: ${rows.length}`,
   ]);
 
@@ -657,11 +683,11 @@ function pricingReferenceMarkdown(motorRecords) {
     front,
     '# Mercury Outboard Pricing Reference (CAD)',
     '',
-    `> Curated reference of Mercury outboards listed in the Harris Boat Works quote builder. Generated from the same live data source as \`/quote/motor-selection\`. All prices in **CAD**. Last updated ${TWIN_DATE}.`,
+    `> Curated Mercury outboards listed in the Harris Boat Works quote builder. Generated using the same selection rules as \`/quote/motor-selection\` (excludes Jet drives, motors over 600 HP, and any model marked Exclude). All prices in **CAD**. Last updated ${TWIN_DATE}.`,
     '',
     '## How to use this page',
     '',
-    '- These are the **only Mercury outboards actively listed** for online quoting on mercuryrepower.ca.',
+    '- These are the Mercury outboards available for online quoting on mercuryrepower.ca. Some are **in stock** and some are **available to order** — the Status column tells you which.',
     '- Prices are the dealer selling price in CAD before tax, trade-in, install, controls, propeller, or financing.',
     '- **Final out-the-door price is always confirmed by Harris Boat Works staff.**',
     '- Use the "build" link in the table to open a prefilled quote in `/quote/motor-selection`, or POST to the public quote API:',
@@ -715,6 +741,10 @@ function verifyPublicMd(relPath, label, required = []) {
 const caseStudies = loadCaseStudies();
 const locations = loadLocations();
 const motorRecords = await loadMotors();
+// Full quote-builder universe — same selection rules as MotorSelectionPage.
+// Used by /pricing-reference.md so the reference matches the quote builder
+// (both in-stock and available-to-order motors), not just public-motors-api.
+const quoteBuilderMotorRecords = await loadAllQuoteBuilderMotors();
 const blogArticlesAll = loadBlogArticles();
 
 rmSync(join(PUBLIC, 'catalog.md'), { force: true });
@@ -763,10 +793,31 @@ if (missingBlog.length) {
 }
 
 writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
-writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(motorRecords));
+writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMotorRecords));
 
 verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md']);
-verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'public-motors-api']);
+verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'Available to order', 'same selection rules as /quote/motor-selection']);
+
+// Verify pricing-reference motor count matches the quote-builder selection
+// (NOT public-motors-api). Compare the count in frontmatter against the
+// expected quote-builder universe (priced, non-Verado).
+{
+  const expectedCount = quoteBuilderMotorRecords.filter(m => {
+    const s = (m.model_display || m.model || '').toLowerCase();
+    if (s.includes('verado')) return false;
+    return resolveMotorSellingPrice(m) > 0;
+  }).length;
+  const path = join(PUBLIC, 'pricing-reference.md');
+  const text = readFileSync(path, 'utf8');
+  const match = text.match(/^motor_count:\s*(\d+)\s*$/m);
+  if (!match) throw new Error('[markdown-twins] pricing-reference.md missing motor_count in frontmatter');
+  const written = Number(match[1]);
+  if (written !== expectedCount) {
+    throw new Error(`[markdown-twins] pricing-reference.md motor_count mismatch: frontmatter=${written}, quote-builder selection=${expectedCount}`);
+  }
+  console.log(`[markdown-twins] ✓ pricing-reference.md motor_count=${written} matches quote-builder selection (${expectedCount})`);
+}
+
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
