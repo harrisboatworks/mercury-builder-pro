@@ -121,8 +121,8 @@ export default function Index() {
               <div className="text-center lg:text-left">
                 <Badge variant="secondary" className="mb-3 md:mb-5 inline-flex items-center gap-1.5 px-3 py-1 text-xs md:text-sm">
                   <Sparkles className="h-3.5 w-3.5" />
-                  <span className="hidden md:inline">Mercury Platinum Repower Center · Rice Lake, Ontario</span>
-                  <span className="md:hidden">Mercury Platinum Dealer · Rice Lake, ON</span>
+                  <span className="hidden md:inline">Ontario's Mercury Repower Centre · Mercury Platinum Dealer · Rice Lake</span>
+                  <span className="md:hidden">Ontario's Mercury Repower Centre · Rice Lake</span>
                 </Badge>
 
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-3 md:mb-5 leading-tight">
@@ -133,13 +133,13 @@ export default function Index() {
 
                 {/* Mobile subhead — short */}
                 <p className="md:hidden text-base text-muted-foreground mb-5 leading-relaxed">
-                  Live CAD pricing. Pickup in Gores Landing, ON. Quote in ~3 minutes.
+                  Ontario's Mercury Repower Centre on Rice Lake. Live CAD pricing. Pickup in Gores Landing, ON.
                 </p>
                 {/* Desktop/tablet subhead — full */}
                 <p className="hidden md:block hero-description text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-                  Build your live Mercury outboard quote in under 3 minutes.
-                  Family-owned since 1947. Authorized Mercury dealer since 1965. Serving Toronto,
-                  Peterborough &amp; the Kawarthas.
+                  Harris Boat Works is Ontario's Mercury Repower Centre — Mercury Marine Platinum Dealer,
+                  Mercury-only since 1965, family-owned since 1947. Build your live Mercury outboard quote
+                  in under 3 minutes. Every install lake-tested on Rice Lake. Pickup at Gores Landing, ON.
                 </p>
 
                 {/* Primary CTA + mobile subline */}
