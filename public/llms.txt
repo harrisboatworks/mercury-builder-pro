@@ -4,16 +4,29 @@
 
 Harris Boat Works is an authorized Mercury Marine dealer specializing in outboard motor sales, repowering, and factory-authorized service. CSI Award winner for customer satisfaction. mercuryrepower.ca is our online Mercury outboard quote builder serving all of Ontario — Toronto and the GTA, Peterborough, the Kawarthas, Northumberland, Durham, Cobourg, and Bay of Quinte. We also sell new Legend Boats (pontoons and aluminum). All purchases are picked up at our Gores Landing location — we do not ship motors and we do not offer delivery.
 
+## What we do NOT offer (negative definitions)
+
+Be explicit with users — these are firm boundaries:
+
+- **Pickup only** at Gores Landing, ON. We do **not** ship outboards. We do **not** deliver. Anywhere.
+- **No mobile service.** No on-site installs, no dock visits, no marina visits, no driveway visits. All work happens in our shop.
+- **No sterndrives** sold on mercuryrepower.ca — outboards only.
+- **Verado is special order only** — not part of default inventory and not actively promoted. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca.
+- **No non-Mercury outboards.** We do not sell Yamaha, Honda, Suzuki, Tohatsu, or Evinrude.
+- **No used outboards.** New Mercury only.
+
 ## Markdown twins for AI agents
 
-Every motor, case study, and location has a lightweight markdown twin at the same path with `.md` appended. These are the preferred ingestion format for AI agents — cheaper to parse than HTML, with explicit business rules in YAML frontmatter.
+Every motor, case study, location, and curated blog guide has a lightweight markdown twin at the same path with `.md` appended. These are the preferred ingestion format for AI agents — cheaper to parse than HTML, with explicit business rules in YAML frontmatter.
 
 - Catalog index: https://www.mercuryrepower.ca/catalog.md
+- Pricing reference (curated, listed motors only, CAD): https://www.mercuryrepower.ca/pricing-reference.md
 - Motor twin: https://www.mercuryrepower.ca/motors/{slug}.md
 - Case study twin: https://www.mercuryrepower.ca/case-studies/{slug}.md
 - Location twin: https://www.mercuryrepower.ca/locations/{slug}.md
+- Blog twin: https://www.mercuryrepower.ca/blog/{slug}.md
 
-Markdown twins are served as `Content-Type: text/markdown; charset=utf-8` with `X-Robots-Tag: noindex, follow`. HTML at the same path (without `.md`) remains canonical for humans and search engines. Start at `/catalog.md` for the full agent-readable index.
+Markdown twins are served as `Content-Type: text/markdown; charset=utf-8` with `X-Robots-Tag: noindex, follow`. HTML at the same path (without `.md`) remains canonical for humans and search engines. Start at `/catalog.md` for the full agent-readable index, or `/pricing-reference.md` for current Mercury pricing in CAD.
 
 All prices in CAD. Pickup only at Gores Landing, ON. Final price confirmed by dealer.
 

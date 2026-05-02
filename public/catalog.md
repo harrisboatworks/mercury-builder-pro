@@ -24,9 +24,22 @@ This is the markdown index for AI agents. Each entry below links to a `.md` twin
 - Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.
 - Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.
 
+## What we do NOT offer (negative definitions)
+
+- **Pickup only** at Gores Landing, ON — no delivery, no shipping of outboards, anywhere.
+- **No mobile service.** No on-site installs, no dock visits, no marina visits, no driveway visits.
+- **No sterndrives** sold on mercuryrepower.ca — outboards only.
+- **Verado is special order only** — not part of default inventory and not actively promoted. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca.
+- **No non-Mercury outboards.** We do not sell Yamaha, Honda, Suzuki, Tohatsu, or Evinrude.
+- **No used outboards.** New Mercury only.
+
 ## Public quote API
 
 `POST https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api` — public programmatic quote builder. See any motor twin for an example body.
+
+## Pricing reference
+
+- [Curated Mercury pricing reference (CAD)](https://www.mercuryrepower.ca/pricing-reference.md) — listed motors only, generated from the same data source as the quote builder.
 
 ## MCP discovery
 

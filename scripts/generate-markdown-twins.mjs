@@ -467,9 +467,22 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '- Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.',
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
+    '## What we do NOT offer (negative definitions)',
+    '',
+    '- **Pickup only** at Gores Landing, ON — no delivery, no shipping of outboards, anywhere.',
+    '- **No mobile service.** No on-site installs, no dock visits, no marina visits, no driveway visits.',
+    '- **No sterndrives** sold on mercuryrepower.ca — outboards only.',
+    '- **Verado is special order only** — not part of default inventory and not actively promoted. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca.',
+    '- **No non-Mercury outboards.** We do not sell Yamaha, Honda, Suzuki, Tohatsu, or Evinrude.',
+    '- **No used outboards.** New Mercury only.',
+    '',
     '## Public quote API',
     '',
     `\`POST ${PUBLIC_QUOTE_API}\` — public programmatic quote builder. See any motor twin for an example body.`,
+    '',
+    '## Pricing reference',
+    '',
+    `- [Curated Mercury pricing reference (CAD)](${SITE_URL}/pricing-reference.md) — listed motors only, generated from the same data source as the quote builder.`,
     '',
     '## MCP discovery',
     '',
@@ -577,6 +590,107 @@ function blogMarkdown(article) {
     '',
   ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
+function pricingReferenceMarkdown(motorRecords) {
+  const fmtCAD = (n) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
+  const rows = motorRecords
+    .filter(m => {
+      if (!m.model_key) return false;
+      const s = (m.model_display || m.model || '').toLowerCase();
+      return !s.includes('verado');
+    })
+    .map(m => {
+      const slug = motorSlug(m.model_key);
+      const familyRaw = detectMotorFamily(m);
+      const family = /pro\s*xs/i.test(familyRaw) ? 'Pro XS'
+        : /sea\s*pro/i.test(familyRaw) ? 'SeaPro'
+        : /verado/i.test(familyRaw) ? 'Verado'
+        : /racing/i.test(familyRaw) ? 'Racing'
+        : 'FourStroke';
+      const price = resolveMotorSellingPrice(m);
+      const inStock = m.in_stock || m.availability === 'In Stock';
+      return {
+        slug,
+        id: m.id,
+        family,
+        hp: Number(m.horsepower) || 0,
+        display: m.model_display || m.model || `Mercury ${m.horsepower}HP`,
+        modelNo: m.model_number || m.mercury_model_no || '',
+        shaft: m.shaft_code || m.shaft || '',
+        control: m.control_type || '',
+        price,
+        msrp: m.msrp || null,
+        inStock,
+      };
+    })
+    .filter(r => r.price && r.price > 0);
+
+  if (rows.length === 0) {
+    throw new Error('[markdown-twins] FATAL: pricing-reference.md would be empty (no priced motors).');
+  }
+
+  const families = ['FourStroke', 'Pro XS', 'SeaPro', 'Racing'];
+  const sections = [];
+  for (const fam of families) {
+    const famRows = rows.filter(r => r.family === fam).sort((a, b) => a.hp - b.hp);
+    if (famRows.length === 0) continue;
+    sections.push(`## ${fam}`);
+    sections.push('');
+    sections.push('| HP | Model | Model # | Shaft | Control | Price (CAD) | Status | Twin | Quote |');
+    sections.push('|---:|---|---|---|---|---:|---|---|---|');
+    for (const r of famRows) {
+      const priceStr = fmtCAD(r.price) + (r.msrp && r.msrp > r.price ? ` _(MSRP ${fmtCAD(r.msrp)})_` : '');
+      const status = r.inStock ? 'In stock' : 'Special order';
+      const twin = `[md](${SITE_URL}/motors/${r.slug}.md)`;
+      const quote = `[build](${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(r.id)})`;
+      sections.push(`| ${r.hp} | ${r.display} | ${r.modelNo || '—'} | ${r.shaft || '—'} | ${r.control || '—'} | ${priceStr} | ${status} | ${twin} | ${quote} |`);
+    }
+    sections.push('');
+  }
+
+  const front = mdFrontmatter('/pricing-reference.md', [
+    'index_type: pricing_reference',
+    'data_source: public-motors-api (same source as /quote/motor-selection)',
+    `motor_count: ${rows.length}`,
+  ]);
+
+  return [
+    front,
+    '# Mercury Outboard Pricing Reference (CAD)',
+    '',
+    `> Curated reference of Mercury outboards listed in the Harris Boat Works quote builder. Generated from the same live data source as \`/quote/motor-selection\`. All prices in **CAD**. Last updated ${TWIN_DATE}.`,
+    '',
+    '## How to use this page',
+    '',
+    '- These are the **only Mercury outboards actively listed** for online quoting on mercuryrepower.ca.',
+    '- Prices are the dealer selling price in CAD before tax, trade-in, install, controls, propeller, or financing.',
+    '- **Final out-the-door price is always confirmed by Harris Boat Works staff.**',
+    '- Use the "build" link in the table to open a prefilled quote in `/quote/motor-selection`, or POST to the public quote API:',
+    `  \`POST ${PUBLIC_QUOTE_API}\` with \`{ "action": "build_quote", "motor_id": "<id>" }\`.`,
+    '',
+    '## What is NOT in this reference',
+    '',
+    '- **Mercury Verado** — special order only, not part of default inventory. Contact (905) 342-2153 for Verado.',
+    '- **Sterndrives** — not sold on mercuryrepower.ca (outboards only).',
+    '- **Used motors** — new Mercury only.',
+    '- **Parts and accessories** — see the quote builder for accessory pricing.',
+    '- **Non-Mercury brands** — we do not sell Yamaha, Honda, Suzuki, Tohatsu, or Evinrude.',
+    '',
+    '## Pickup & service boundary',
+    '',
+    '- **Pickup only** at 5369 Harris Boat Works Rd, Gores Landing, ON. We do **not** ship outboards and we do **not** deliver.',
+    '- **No mobile service.** No on-site installs, no marina visits, no driveway visits.',
+    '',
+    ...sections,
+    '## Related',
+    '',
+    `- Agent catalog index: ${SITE_URL}/catalog.md`,
+    `- llms.txt: ${SITE_URL}/llms.txt`,
+    `- Public motors API (live JSON): https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api`,
+    `- Public quote API: ${PUBLIC_QUOTE_API}`,
+    '',
+  ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
+}
+
 function cleanMarkdownDir(relDir) {
   const dir = join(PUBLIC, relDir);
   if (!existsSync(dir)) return;
@@ -649,8 +763,10 @@ if (missingBlog.length) {
 }
 
 writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
+writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(motorRecords));
 
-verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json']);
+verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json', 'What we do NOT offer', 'No sterndrives', 'pricing-reference.md']);
+verifyPublicMd('/pricing-reference.md', 'pricing-reference.md', ['currency: CAD', 'pickup_only: true', '## FourStroke', '## Pro XS', 'What is NOT in this reference', 'Verado', 'Sterndrives', 'public-motors-api']);
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
@@ -661,5 +777,5 @@ if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || lo
   throw new Error(`[markdown-twins] Refusing empty generation: motors=${motorTwinSummaries.length}, caseStudies=${caseStudyTwinSummaries.length}, locations=${locationTwinSummaries.length}, blog=${blogTwinSummaries.length}`);
 }
 
-console.log(`[markdown-twins] ✓ public markdown twins written before Vite build: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, ${blogTwinSummaries.length} blog guides, 1 catalog`);
+console.log(`[markdown-twins] ✓ public markdown twins written before Vite build: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, ${blogTwinSummaries.length} blog guides, 1 catalog, 1 pricing-reference`);
 
