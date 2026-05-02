@@ -601,9 +601,10 @@ function verifyPublicMd(relPath, label, required = []) {
 const caseStudies = loadCaseStudies();
 const locations = loadLocations();
 const motorRecords = await loadMotors();
+const blogArticlesAll = loadBlogArticles();
 
 rmSync(join(PUBLIC, 'catalog.md'), { force: true });
-for (const dir of ['motors', 'case-studies', 'locations']) {
+for (const dir of ['motors', 'case-studies', 'locations', 'blog']) {
   cleanMarkdownDir(dir);
 }
 
@@ -632,16 +633,33 @@ const locationTwinSummaries = locations.map(loc => {
   return { path, title: loc.title };
 });
 
-writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries));
+// Blog twins — only the curated top-12 high-intent posts.
+const blogBySlug = new Map(blogArticlesAll.map(a => [a.slug, a]));
+const blogTwinSummaries = [];
+const missingBlog = [];
+for (const slug of BLOG_TWIN_SLUGS) {
+  const article = blogBySlug.get(slug);
+  if (!article) { missingBlog.push(slug); continue; }
+  const path = `/blog/${slug}.md`;
+  writePublicMd(path, blogMarkdown(article));
+  blogTwinSummaries.push({ path, title: article.title });
+}
+if (missingBlog.length) {
+  throw new Error(`[markdown-twins] Blog twin slugs not found in published articles: ${missingBlog.join(', ')}`);
+}
 
-verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', 'CAD', 'Pickup only', 'mcp.json']);
+writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
+
+verifyPublicMd('/catalog.md', 'catalog.md', ['## Motors', '## Case studies', '## Locations', '## Guides (Blog)', 'CAD', 'Pickup only', 'mcp.json']);
 if (motorTwinSummaries[0]) verifyPublicMd(motorTwinSummaries[0].path, 'sample motor twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'Build a quote', 'Public Quote API', 'public-quote-api']);
 if (caseStudyTwinSummaries[0]) verifyPublicMd(caseStudyTwinSummaries[0].path, 'sample case study twin', ['canonical:', 'Mercury', '## Customer quote', '## Recommendation']);
 if (locationTwinSummaries[0]) verifyPublicMd(locationTwinSummaries[0].path, 'sample location twin', ['canonical:', 'Gores Landing', '## FAQs', '## Popular Mercury HP ranges', 'service_area_type: sales-catchment']);
+if (blogTwinSummaries[0]) verifyPublicMd(blogTwinSummaries[0].path, 'sample blog twin', ['canonical:', 'currency: CAD', 'pickup_only: true', 'content_type: blog_article', '## Article', '## FAQs', '## Next steps']);
 
 
-if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0) {
-  throw new Error(`[markdown-twins] Refusing empty generation: motors=${motorTwinSummaries.length}, caseStudies=${caseStudyTwinSummaries.length}, locations=${locationTwinSummaries.length}`);
+if (motorTwinSummaries.length === 0 || caseStudyTwinSummaries.length === 0 || locationTwinSummaries.length === 0 || blogTwinSummaries.length === 0) {
+  throw new Error(`[markdown-twins] Refusing empty generation: motors=${motorTwinSummaries.length}, caseStudies=${caseStudyTwinSummaries.length}, locations=${locationTwinSummaries.length}, blog=${blogTwinSummaries.length}`);
 }
 
-console.log(`[markdown-twins] ✓ public markdown twins written before Vite build: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, 1 catalog`);
+console.log(`[markdown-twins] ✓ public markdown twins written before Vite build: ${motorTwinSummaries.length} motors, ${caseStudyTwinSummaries.length} case studies, ${locationTwinSummaries.length} locations, ${blogTwinSummaries.length} blog guides, 1 catalog`);
+
