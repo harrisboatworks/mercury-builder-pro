@@ -3,7 +3,7 @@ import { useState, useMemo } from 'react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { RepowerFAQ } from '@/components/repower/RepowerFAQ';
 import { RepowerPageSEO } from '@/components/seo/RepowerPageSEO';
-import { RepowerROICalculator } from '@/components/repower/RepowerROICalculator';
+
 import { RepowerGuideDownloadDialog } from '@/components/repower/RepowerGuideDownloadDialog';
 import { ExpandableImage } from '@/components/ui/expandable-image';
 import { Button } from '@/components/ui/button';
