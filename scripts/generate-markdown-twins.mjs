@@ -489,7 +489,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Positioning',
     '',
-    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake. This is our own descriptive positioning — it reflects what we specialize in (Mercury outboard repower work, lake-tested on Rice Lake) and is **not** a separate official Mercury certification. The official Mercury Marine credential we hold is **Mercury Marine Platinum Dealer**. Verified facts to pair with the positioning phrase: Mercury Marine Platinum Dealer · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
+    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty) — it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Platinum Dealer** and **Mercury Certified Repower Center** (American "Center" spelling — Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Platinum Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
     '',
     '## Business rules (apply to every entry)',
     '',
