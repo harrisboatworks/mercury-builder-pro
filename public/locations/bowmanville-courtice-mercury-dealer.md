@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/bowmanville-courtice-mercury-dealer
-last_updated: 2026-05-01
+last_updated: 2026-05-02
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -61,7 +61,7 @@ About 50 minutes east on Hwy 401 — the closest GTA-edge community to our shop.
 
 ### Do you do mobile service in Bowmanville or Courtice?
 
-No. We are a shop-based Mercury dealer and service centre at Gores Landing. Customers bring the boat to us.
+No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing. Customers from Bowmanville and Courtice bring the boat to us.
 
 ### Can I pick up just the motor for self-install?
 
