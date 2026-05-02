@@ -501,6 +501,6 @@ export default function Repower() {
           </p>
         </div>
       </section>
-    </div>
+    </RepowerLayout>
   );
 }
