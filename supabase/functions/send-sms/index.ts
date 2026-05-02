@@ -23,6 +23,13 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
+  // Authentication gate: require admin JWT or internal secret. This prevents
+  // anonymous abuse of Twilio credit and outbound SMS to arbitrary recipients.
+  const authResult = await requireAdmin(req, corsHeaders);
+  if (authResult instanceof Response) {
+    return authResult;
+  }
+
   try {
     // Initialize Supabase client
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
