@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useState, useMemo } from 'react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerLayout } from '@/components/repower/RepowerLayout';
+import { HeroRepower } from '@/components/repower/HeroRepower';
+import { TrustStrip } from '@/components/repower/TrustStrip';
+import { RepowerMath } from '@/components/repower/RepowerMath';
 import { RepowerFAQ } from '@/components/repower/RepowerFAQ';
 import { RepowerPageSEO } from '@/components/seo/RepowerPageSEO';
 
