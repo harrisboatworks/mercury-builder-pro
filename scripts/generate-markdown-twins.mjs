@@ -568,8 +568,7 @@ function blogMarkdown(article) {
     '',
   ].join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
 }
-
-
+function cleanMarkdownDir(relDir) {
   const dir = join(PUBLIC, relDir);
   if (!existsSync(dir)) return;
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
