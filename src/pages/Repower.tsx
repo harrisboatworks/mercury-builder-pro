@@ -66,8 +66,13 @@ export default function Repower() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-4">
             Mercury Outboard Repower
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-6">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-3">
             Keep Your Boat. Upgrade Your Engine.
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
+            Ontario's Mercury Repower Centre on Rice Lake. Mercury Marine Platinum Dealer,
+            Mercury-only since 1965, family-owned since 1947. Transparent CAD pricing,
+            pickup at Gores Landing, every install lake-tested on Rice Lake.
           </p>
           
           {/* Hero Stat */}

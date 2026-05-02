@@ -4,8 +4,20 @@
   "site": "mercuryrepower.ca",
   "url": "https://www.mercuryrepower.ca",
   "legalName": "Harris Boat Works Ltd.",
-  "tagline": "Mercury Repower Specialists on Rice Lake — Family-owned since 1947",
-  "description": "Family-owned since 1947. Authorized Mercury Marine dealer since 1965 (60+ years) specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Authorized Legend Boats dealer for new pontoon and aluminum boats. Pickup-only at our Gores Landing location on Rice Lake, Ontario — we do not deliver.",
+  "tagline": "Ontario's Mercury Repower Centre on Rice Lake — Family-owned since 1947",
+  "positioning": {
+    "phrase": "Ontario's Mercury Repower Centre",
+    "note": "Self-applied descriptive positioning. NOT a separate official Mercury certification. The official Mercury Marine credential held by Harris Boat Works is 'Mercury Marine Platinum Dealer'.",
+    "pairWith": [
+      "Mercury Marine Platinum Dealer",
+      "Mercury-only dealer since 1965",
+      "Family-owned since 1947",
+      "Transparent CAD pricing",
+      "Pickup at Gores Landing",
+      "Every install lake-tested on Rice Lake"
+    ]
+  },
+  "description": "Ontario's Mercury Repower Centre on Rice Lake. Family-owned since 1947. Mercury Marine Platinum Dealer, Mercury-only since 1965, specializing in outboard sales, repowering, and factory-authorized service. CSI Award winner. Authorized Legend Boats dealer for new pontoon and aluminum boats. Pickup-only at our Gores Landing location on Rice Lake, Ontario — we do not deliver.",
   "founded": 1947,
   "mercuryDealerSince": 1965,
   "logo": {

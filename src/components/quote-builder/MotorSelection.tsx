@@ -1354,12 +1354,12 @@ export const MotorSelection = ({
             {/* Divider */}
             <div className="hidden md:block h-10 w-px bg-border" />
 
-            {/* Repower Center */}
+            {/* Repower Centre positioning */}
             <div className="credential-group flex items-center gap-3">
-              <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center badge" loading="lazy" className="h-12 md:h-16 w-auto" />
+              <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Repower badge" loading="lazy" className="h-12 md:h-16 w-auto" />
               <div className="text-left">
-                <p className="font-semibold text-foreground">Certified Repower Center</p>
-                <p className="text-sm text-muted-foreground">Expert Repower Consultation</p>
+                <p className="font-semibold text-foreground">Ontario's Mercury Repower Centre</p>
+                <p className="text-sm text-muted-foreground">Lake-tested on Rice Lake</p>
               </div>
             </div>
 
