@@ -89,7 +89,6 @@ export const locations: LocationPageData[] = [
       { question: 'Is Harris Boat Works on Rice Lake?', answer: 'Yes. We are at 5369 Harris Boat Works Rd, Gores Landing, ON, on the south shore of Rice Lake — the closest Mercury Marine Platinum Dealer to the lake, family-owned since 1947 and an authorized Mercury dealer since 1965.' },
       { question: 'Can I get a Mercury repower quote in CAD before driving here?', answer: 'Yes. Build a complete itemized Mercury repower quote at /quote/motor-selection — motor, controls, propeller, install, financing, and trade-in credit. The price you see is the price you pay.' },
       { question: 'Do you ship or deliver outboards?', answer: 'No. Pickup only at Gores Landing with photo ID. We do not ship motors and we do not deliver — strict industry-wide fraud-prevention policy.' },
-      { question: 'What does a typical Rice Lake repower cost?', answer: 'A complete installed Mercury repower at Harris Boat Works typically runs $8,000–$18,000 CAD all-in for a 16–18 ft boat with a 60–115 HP outboard, including engine, controls, rigging, propeller, removal, install, and lake test.' },
     ],
     pickupPolicy: PICKUP_POLICY,
     serviceBoundary: boundary('Rice Lake area'),
