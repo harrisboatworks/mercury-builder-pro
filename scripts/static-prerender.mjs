@@ -500,7 +500,7 @@ function repowerSchema() {
         "serviceType": "Boat Motor Replacement",
         "provider": { "@id": `${SITE_URL}/#business` },
         "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "GTA", "Toronto", "Ontario"],
-        "description": "Professional Mercury outboard motor repower service. Includes installation and lake testing on Rice Lake. Pickup only at Gores Landing — no shipping, no mobile service.",
+        "description": "Professional Mercury outboard motor repower service. 70% of the benefit of a new boat for 30% of the cost.",
         "offers": {
           "@type": "Offer",
           "priceRange": "$8,000 - $18,000",
@@ -2059,10 +2059,10 @@ const routes = [
   },
   {
     path: '/repower',
-    title: 'Mercury Outboard Repower Ontario | Harris Boat Works',
-    description: 'Mercury outboard repower in Ontario. Live CAD pricing, Mercury-certified install, lake tested on Rice Lake. Mercury dealer since 1965. Pickup only at Gores Landing — no shipping, no mobile service.',
+    title: 'Mercury Outboard Repower Ontario | 70% of the Benefit for 30% of the Cost | Harris Boat Works',
+    description: 'Expert Mercury repower in Ontario. Get 70% of a new boat experience for 30% of the cost. 30-40% better fuel economy. Lake tested on Rice Lake. Mercury dealer since 1965. $8,000-$18,000 typical.',
     h1: 'Mercury Outboard Repower in Ontario',
-    intro: 'Repower your boat with a new Mercury outboard. Real CAD pricing in the configurator, Mercury-certified installation, and lake testing on Rice Lake. Pickup only at Gores Landing — no shipping, no mobile service. Family-owned since 1947, Mercury Marine Platinum Dealer since 1965.',
+    intro: 'Repowering your boat with a new Mercury outboard delivers about 70 percent of the benefit of buying a new boat at roughly 30 percent of the cost. Most repowers run $8,000 to $18,000 depending on horsepower and rigging. Pickup only at Gores Landing on Rice Lake — no shipping. Mercury Marine Platinum Dealer since 1965.',
     schemas: [repowerSchema()],
     extraNoscript: () =>
       '<table><caption>Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)</caption>' +
