@@ -621,12 +621,10 @@ function pricingReferenceMarkdown(motorRecords) {
   const fmtCAD = (n) => new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(n);
   const rows = motorRecords
     .filter(m => {
-      if (!m.model_key) return false;
       const s = (m.model_display || m.model || '').toLowerCase();
       return !s.includes('verado');
     })
     .map(m => {
-      const slug = motorSlug(m.model_key);
       const familyRaw = detectMotorFamily(m);
       const family = /pro\s*xs/i.test(familyRaw) ? 'Pro XS'
         : /sea\s*pro/i.test(familyRaw) ? 'SeaPro'
@@ -634,9 +632,8 @@ function pricingReferenceMarkdown(motorRecords) {
         : /racing/i.test(familyRaw) ? 'Racing'
         : 'FourStroke';
       const price = resolveMotorSellingPrice(m);
-      const inStock = m.in_stock || m.availability === 'In Stock';
+      const inStock = m.in_stock === true || m.availability === 'In Stock';
       return {
-        slug,
         id: m.id,
         family,
         hp: Number(m.horsepower) || 0,
@@ -658,7 +655,10 @@ function pricingReferenceMarkdown(motorRecords) {
   const families = ['FourStroke', 'Pro XS', 'SeaPro', 'Racing'];
   const sections = [];
   for (const fam of families) {
-    const famRows = rows.filter(r => r.family === fam).sort((a, b) => a.hp - b.hp);
+    // In-stock first, then by HP ascending — mirrors MotorSelectionPage default order.
+    const famRows = rows
+      .filter(r => r.family === fam)
+      .sort((a, b) => (Number(b.inStock) - Number(a.inStock)) || (a.hp - b.hp));
     if (famRows.length === 0) continue;
     sections.push(`## ${fam}`);
     sections.push('');
