@@ -1,4 +1,4 @@
-import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync } from 'fs';
+import { writeFileSync, mkdirSync, rmSync, existsSync, readdirSync, readFileSync } from 'fs';
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
