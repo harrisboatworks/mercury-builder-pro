@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, Phone, ChevronDown } from 'lucide-react';
 import { repowerImages } from './repowerImages';
@@ -11,10 +11,6 @@ const fadeUp = (delay = 0) => ({
 });
 
 export function HeroRepower() {
-  const [params] = useSearchParams();
-  // ?headline=b for the new treatment, default = original
-  const useNew = params.get('headline') === 'b';
-
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#050E1C] text-[#F5F1EA] flex items-center">
       {/* Background photo with slow zoom */}
