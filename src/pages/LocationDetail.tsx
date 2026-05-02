@@ -147,12 +147,12 @@ export default function LocationDetail() {
           addressCountry: 'CA',
         },
         // Sales catchment only — represents where customers travel from to pick up at Gores Landing.
-        // NOT a mobile service area. All work happens at Gores Landing.
+        // Sales catchment only. All work happens at Gores Landing.
         areaServed: {
           '@type': 'AdministrativeArea',
           name: location.region,
           description:
-            'Sales catchment — customers from this area travel to Gores Landing for pickup. Not a mobile service area.',
+            'Sales catchment only — customers from this area travel to Gores Landing for pickup. No mobile service, no delivery.',
         },
       },
       {

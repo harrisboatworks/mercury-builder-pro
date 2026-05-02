@@ -1906,7 +1906,7 @@ function locationsIndexSchema() {
     "@id": `${SITE_URL}/locations#webpage`,
     url: `${SITE_URL}/locations`,
     name: "Mercury Outboard Pickup Areas — Harris Boat Works",
-    description: "Regional Mercury buyer guides for Ontario customers — sales catchments only, with pickup at Gores Landing on Rice Lake. Not mobile service areas.",
+    description: "Regional Mercury buyer guides for Ontario customers — sales catchments only, with pickup at Gores Landing on Rice Lake. No mobile service or delivery.",
     isPartOf: { "@id": `${SITE_URL}/#website` },
     inLanguage: "en-CA",
     mainEntity: {
@@ -1960,7 +1960,7 @@ function locationDetailSchema(loc) {
         areaServed: {
           "@type": "AdministrativeArea",
           name: loc.region,
-          description: "Sales catchment — customers from this area travel to Gores Landing for pickup. Not a mobile service area.",
+          description: "Sales catchment only — customers from this area travel to Gores Landing for pickup. No mobile service, no delivery.",
         },
       },
       {
@@ -2016,7 +2016,7 @@ const locationDetailRoutes = locations.map((loc) => ({
   intro: loc.intro,
   schemas: [locationDetailSchema(loc)],
   extraNoscript: () =>
-    `<section><h2>About this pickup area</h2><p>${escapeHtml(loc.intro)} Travel: ${escapeHtml(loc.driveTime)}. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, Ontario. This is a sales catchment, not a mobile service area.</p></section>` +
+    `<section><h2>About this pickup area</h2><p>${escapeHtml(loc.intro)} Travel: ${escapeHtml(loc.driveTime)}. Pickup only at 5369 Harris Boat Works Rd, Gores Landing, Ontario. Sales catchment only — no mobile service, no delivery.</p></section>` +
     `<section><h2>Popular boat uses in ${escapeHtml(loc.region)}</h2><ul>${loc.popularBoats.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul></section>` +
     `<section><h2>Recommended next steps</h2><ul>${loc.recommendedLinks.map((l) => `<li><a href="${escapeHtml(l.href)}">${escapeHtml(l.label)}</a></li>`).join('')}</ul></section>` +
     `<section><h2>FAQ</h2><dl>${loc.faqs.map((f) => `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`).join('')}</dl></section>` +
@@ -2040,9 +2040,9 @@ const caseStudiesIndexRoute = {
 const locationsIndexRoute = {
   path: '/locations',
   title: 'Mercury Outboard Pickup Areas in Ontario | Harris Boat Works',
-  description: 'Regional Mercury buyer guides for Peterborough, Kawartha Lakes, Rice Lake, Cobourg & Northumberland, Durham & GTA. Sales catchments only — pickup at Gores Landing, not mobile service areas.',
+  description: 'Regional Mercury buyer guides for Peterborough, Kawartha Lakes, Rice Lake, Cobourg & Northumberland, Durham & GTA. Sales catchments only — pickup at Gores Landing. No mobile service or delivery.',
   h1: 'Mercury Outboard Pickup Areas',
-  intro: 'Harris Boat Works serves Mercury outboard buyers across central and eastern Ontario from our Gores Landing location on Rice Lake. These are pickup-only sales catchments — not mobile service areas. We do not ship and we do not deliver.',
+  intro: 'Harris Boat Works serves Mercury outboard buyers across central and eastern Ontario from our Gores Landing location on Rice Lake. These are pickup-only sales catchments. We do not perform mobile service, we do not ship, and we do not deliver.',
   schemas: [locationsIndexSchema()],
   extraNoscript: () =>
     `<ul>${locations.map((l) => `<li><a href="/locations/${l.slug}"><strong>${escapeHtml(l.title)}</strong></a> — ${escapeHtml(l.intro)}</li>`).join('')}</ul>`,
