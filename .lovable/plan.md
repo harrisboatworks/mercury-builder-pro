@@ -1,95 +1,69 @@
 ## Goal
 
-Simplify `/locations/:slug` so each page feels premium, calm, and scannable — like a high-end dealer page, not an SEO landing page. No changes to quote builder, pricing, inventory, redirects, sitemap, or markdown twin generation.
+Add an agent-friendly `/pricing-reference.md` generated from the same live data source the quote builder uses (`public-motors-api`), strengthen explicit negative service definitions in `catalog.md` and `llms.txt`, and confirm there are no stale duplicate markdown artifacts.
 
-## What changes
+## Findings from exploration
 
-Only two files get meaningful edits:
+- Markdown twins are generated at build time by `scripts/generate-markdown-twins.mjs` (wired into `package.json` `build` script before `vite build`).
+- That script already loads motors via `loadMotors()` → `https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api` (the same public source the quote builder uses), with a Supabase fallback. Verado is filtered out, matching "curated quote-builder/listed motors only".
+- The script already wipes and regenerates `public/motors`, `public/case-studies`, `public/locations`, `public/blog`, and `public/catalog.md` on every build — so there is no risk of stale ` 2.md` / ` 3.md` artifacts being kept around.
+- Audit ran: `find public -name "* 2.md" -o -name "* 3.md" -o -name "* [0-9].md" -o -name "*copy*.md"` → **zero hits**. Nothing to delete.
+- `public/llms.txt` and `public/catalog.md` already mention "pickup only" and Verado-special-order, but do not have a single explicit, scannable "What we do NOT do" block. We will add one to both.
 
-1. `src/pages/LocationDetail.tsx` — full visual redesign (less density, fewer sections).
-2. `src/data/locations.ts` — light trims: cap FAQs at 4, remove ROI/cost-claim FAQs, ensure each city has exactly one "no mobile service" FAQ.
+## Changes
 
-Everything else (data interface fields, slugs, JSON-LD shape, markdown twin output, sitemap, redirects, lint rules) stays as-is so we don't disturb the SEO/AI infrastructure we just built.
+### 1. Extend `scripts/generate-markdown-twins.mjs`
 
-## New page structure
+- Add a new `pricingReferenceMarkdown(motorRecords)` function. Build it from the **same `motorRecords` array** already loaded for motor twins (so it stays in lockstep with the quote builder's data source). Filter out Verado just like motor twins do.
+- For each curated/listed motor, include: model display, Mercury family, HP, model number, shaft / control notes (when present in API), in-stock vs special-order status, selling price in CAD (using `resolveMotorSellingPrice`), MSRP if higher than selling, motor twin link `/motors/{slug}.md`, and quote-builder deep link `/quote/motor-selection?motor={id}`.
+- Group output by family (FourStroke, Pro XS, SeaPro), then by HP ascending. Render as a markdown table per family for fast LLM scanning.
+- Write to `public/pricing-reference.md`. Frontmatter: canonical `https://www.mercuryrepower.ca/pricing-reference.md`, `last_updated`, `currency: CAD`, `pickup_only: true`, `delivery_offered: false`, `verado_status: special-order only`, `data_source: public-motors-api (same source as /quote/motor-selection)`, `index_type: pricing_reference`.
+- Add a "What is NOT in this reference" section: Verado (special order), sterndrives (not sold on this site), used motors, parts/accessories.
+- Add a `verifyPublicMd('/pricing-reference.md', ...)` call covering: `currency: CAD`, `pickup_only: true`, `## FourStroke`, `## Pro XS`, and the negative-definitions block.
+- Refuse-empty guard: throw if zero priced motors were found.
 
-```text
-┌─ Premium hero (navy bg, gold accent) ────────────────────┐
-│  H1: Mercury Outboards for {Region} Buyers              │
-│  1 short intro paragraph                                 │
-│  [Build Your Quote]  [Call Harris Boat Works]            │
-│  Trust row (inline, small): Platinum · Since 1947 ·      │
-│    Mercury since 1965 · Pickup in Gores Landing          │
-└──────────────────────────────────────────────────────────┘
+### 2. Update `catalogMarkdown(...)` in the same script
 
-┌─ Local context ──────────────────────────────────────────┐
-│  3 short bullets (first 3 of localContext)               │
-└──────────────────────────────────────────────────────────┘
+- Add an explicit "What we do NOT offer" bullet block after the existing "Business rules" section, with these exact items:
+  - Pickup only at Gores Landing, ON — no delivery, no shipping of outboards.
+  - No mobile service, no on-site installs, no dock/marina/driveway visits.
+  - No sterndrives sold on mercuryrepower.ca (outboards only).
+  - Verado is special order only — not part of default inventory and not actively promoted.
+  - No non-Mercury outboards (no Yamaha / Honda / Suzuki / Tohatsu).
+- Add a new top-level link to `/pricing-reference.md` under a "## Pricing reference" section, positioned right after "## Public quote API".
 
-┌─ Common motor use cases (3 cards) ───────────────────────┐
-│  Small / kicker  │  60–115 fishing & pontoon  │ 150+ Pro XS │
-│  → /quote/motor-selection (with hp hint in link copy)    │
-└──────────────────────────────────────────────────────────┘
+### 3. Update `public/llms.txt` (hand-edited file, not script-generated)
 
-┌─ Pickup boundary (one polished box) ─────────────────────┐
-│  Bring the boat to Gores Landing, or pick up a loose     │
-│  motor. No mobile service, delivery, driveway installs,  │
-│  or marina visits.                                       │
-└──────────────────────────────────────────────────────────┘
+- Add a new section **"What we do NOT offer (negative definitions)"** with the same 5 bullets as above, near the top so agents see it before product lists.
+- Add `/pricing-reference.md` to the "Markdown twins for AI agents" section as: `Pricing reference (curated, listed motors only): https://www.mercuryrepower.ca/pricing-reference.md`.
+- Keep all other content untouched (REST API URLs, MCP info, contact, etc.).
 
-┌─ FAQ (max 4, short answers) ─────────────────────────────┐
-│  Accordion or simple stacked cards                       │
-└──────────────────────────────────────────────────────────┘
+### 4. Duplicate-artifact audit
 
-Footer CTA: single line + Build Your Quote button.
-```
-
-## What gets removed from the rendered page
-
-- 4-tile factbox grid (drive time / pickup / Platinum / phone) — drive time folded into intro, phone into footer CTA.
-- "Why customers from {region} choose us" bullet list (covered by hero trust row).
-- "Common local boats" + "Popular HP ranges" twin grid (replaced by 3 use-case cards).
-- "Recommended next steps" link grid.
-- "Related repower case studies" block.
-- The duplicate amber "Shop-based service only" banner (merged into the single pickup boundary box).
-- Drive route paragraph (kept in data; not rendered on the page).
-
-Data fields stay in `LocationPageData` so markdown twins and JSON-LD still emit them — we just stop showing them in the React UI.
-
-## Data trims (`src/data/locations.ts`)
-
-- Cap `faqs` at 4 entries per location.
-- Remove FAQs that quote dollar ranges or ROI claims (e.g. Rice Lake "What does a typical Rice Lake repower cost?").
-- For each city page, ensure exactly one FAQ answers the "do you do mobile service / deliver" question — collapse duplicates.
-- No interface changes. No removed fields. Other consumers (markdown twin generator, JSON-LD) keep working unchanged.
-
-## Design
-
-- Hero: deep navy background (`bg-slate-900` / brand navy token), white H1, thin gold rule under H1, white intro.
-- Body: white background, generous vertical spacing (`py-16` between sections), `max-w-3xl` for body content (narrower than today's `max-w-4xl`) so it feels editorial.
-- Cards: subtle border, no heavy shadows, single accent color.
-- One CTA color (gold/primary) used sparingly — hero primary CTA + footer CTA only.
-- Use existing tokens (`bg-card`, `border-border`, `text-primary`) — no new color additions.
-
-## JSON-LD
-
-Kept exactly as today: `WebPage`, `BreadcrumbList`, `LocalBusiness` (with sales-catchment `areaServed`), `Place`, `FAQPage`. No `Service` node. FAQ schema will reflect the trimmed (≤4) FAQ list automatically since it iterates `location.faqs`.
+- Already verified clean. Add a one-line note to the script header comment: "This generator wipes the target dirs before each run; no ` 2.md` / ` 3.md` duplicates can persist."
+- No files to delete.
 
 ## Explicitly NOT touched
 
-- `/quote/motor-selection` and any quote/pricing/inventory code
-- `src/App.tsx` redirects
-- `vercel.json` 301s
-- `scripts/generate-markdown-twins.mjs` (lint + frontmatter)
-- `scripts/static-prerender.mjs`
-- `src/utils/generateSitemap.ts`
-- `src/pages/Locations.tsx` hub (already correct after last pass)
-- `LocationPageData` interface
+- `src/pages/quote/*` and the motor selection flow.
+- Pricing logic (`src/lib/pricing.ts`, `useQuoteRunningTotal`, `build-accessory-breakdown`).
+- Inventory filters, motor data tables, Supabase schema, edge functions, cron jobs, auth.
+- No new regional pages, no new per-motor pages.
+- No changes to existing motor / case-study / location / blog twin formats.
 
-## Acceptance
+## Files changed
 
-- Each `/locations/:slug` page has ≤5 visible sections (hero, context, use-cases, boundary, faq) plus footer CTA.
-- "No mobile service" / "no delivery" wording appears in exactly one visible box plus at most one FAQ.
-- Build still passes the markdown-twin lint.
-- JSON-LD validates and includes FAQ + LocalBusiness + Breadcrumb.
-- No dollar amounts or ROI claims rendered on city pages.
+- `scripts/generate-markdown-twins.mjs` — add pricing-reference generator + extend catalog content.
+- `public/llms.txt` — add negative-definitions section + pricing-reference link.
+
+## Files created (at build time)
+
+- `public/pricing-reference.md`
+
+## Verification (will be reported after implementation)
+
+- `public/pricing-reference.md` exists, has CAD prices, lists only curated/listed motors, excludes Verado.
+- `public/catalog.md` includes the pricing-reference link and the explicit "What we do NOT offer" block.
+- `public/llms.txt` includes the same negative-definitions block and the pricing-reference link.
+- `find public -name "* [0-9].md"` returns empty.
+- `/quote/motor-selection`, pricing logic, inventory filters, Supabase, and cron are untouched (diff scope is limited to the two files above).
