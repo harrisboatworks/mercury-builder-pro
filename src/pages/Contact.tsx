@@ -135,32 +135,41 @@ export default function Contact() {
     <>
       <ContactPageSEO />
       <LuxuryHeader />
-      <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">Get In Touch</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Have questions about our motors, need a custom quote, or require service support? 
-            We're here to help you get back on the water.
-          </p>
-        </div>
+      <div className="min-h-screen bg-repower-paper">
+        <div className="container mx-auto px-6 md:px-14 py-14 md:py-20">
+          {/* Header */}
+          <div className="text-center mb-14 max-w-[880px] mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <span className="h-px w-8 bg-repower-mercury-red" />
+              <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+                Get in Touch
+              </p>
+            </div>
+            <h1 className="font-display font-bold text-repower-navy-900 mb-5" style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}>
+              Get In Touch
+            </h1>
+            <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed">
+              Have questions about our motors, need a custom quote, or require service support?
+              We're here to help you get back on the water.
+            </p>
+            <div className="mt-10 h-px w-16 bg-repower-navy-900/15 mx-auto" />
+          </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MessageSquare className="w-5 h-5" />
-                  Contact Form
-                </CardTitle>
-                <CardDescription>
-                  Fill out the form below and we'll get back to you as soon as possible.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <div className="grid lg:grid-cols-3 gap-8 max-w-[1100px] mx-auto">
+            {/* Contact Form */}
+            <div className="lg:col-span-2">
+              <Card className="border-repower-navy-900/10 bg-white shadow-none">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 font-display text-repower-navy-900">
+                    <MessageSquare className="w-5 h-5 text-repower-mercury-red" strokeWidth={1.5} />
+                    Contact Form
+                  </CardTitle>
+                  <CardDescription className="text-repower-navy-900/60">
+                    Fill out the form below and we'll get back to you as soon as possible.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   {/* Step 1: Basic Info */}
                   {step === 1 && (
                     <div className="space-y-6">
