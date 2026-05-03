@@ -331,7 +331,7 @@ export default function MotorDetailsPremiumModal({
               }
             }}>
               {/* Mobile/Tablet Sticky Navigation - Back/X buttons only */}
-              <div className="lg:hidden sticky top-0 z-40 bg-white">
+              <div className="lg:hidden sticky top-0 z-40 bg-[#FAF8F4]">
                 <div className="flex justify-between items-center p-4">
                   <button 
                     onClick={onClose} 
