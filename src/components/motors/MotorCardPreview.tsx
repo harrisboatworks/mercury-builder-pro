@@ -530,7 +530,11 @@ function MotorCardPreviewInner({
               
               {/* Compare, Voice, Ask, Share — kept */}
               {motor && (
-                <div className="absolute bottom-3 left-3 flex flex-col items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 [&_button]:!w-7 [&_button]:!h-7">
+                <div
+                  onClick={(e) => e.stopPropagation()}
+                  onTouchStart={(e) => e.stopPropagation()}
+                  className="absolute bottom-3 left-3 flex flex-col items-center gap-1 transition-opacity duration-200 [&_button]:!w-7 [&_button]:!h-7 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100 [@media(hover:none)]:opacity-100"
+                >
                   <CompareButton 
                     isInComparison={isInComparison(motor.id)}
                     isFull={comparisonFull}
