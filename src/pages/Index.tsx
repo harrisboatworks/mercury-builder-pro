@@ -161,51 +161,57 @@ export default function Index() {
         </section>
 
         {/* WHY REPOWER */}
-        <section className="py-12 md:py-20">
+        <section className="py-16 md:py-24 bg-repower-navy-900 text-repower-cream">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-4">
+                  Why repower
+                </p>
+                <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-repower-cream mb-5 leading-[1.05]" style={{ letterSpacing: '-0.02em' }}>
                   Why repower beats buying a new boat
                 </h2>
-                <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+                <p className="font-sans font-light text-repower-cream/75 text-base md:text-lg mb-7 leading-relaxed">
                   A new Mercury costs a fraction of a new boat — and you keep the hull
                   you already know and love. Most repowers are completed in one to three
                   days at our Gores Landing shop.
                 </p>
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-3 mb-8">
                   {[
                     'Pay only for the motor — not a whole new boat',
                     'Modern Mercury fuel economy &amp; quiet running',
                     'Bonus warranty coverage may be available during current Mercury promotions',
                     'Mercury-Certified technicians — we sell what we service',
                   ].map(line => (
-                    <li key={line} className="flex items-start gap-2.5 text-foreground">
-                      <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                    <li key={line} className="flex items-start gap-3 text-repower-cream/90">
+                      <CheckCircle2 className="h-5 w-5 text-repower-gold mt-0.5 shrink-0" />
                       <span dangerouslySetInnerHTML={{ __html: line }} />
                     </li>
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-3">
-                  <Button asChild variant="default" className="gap-1.5">
-                    <Link to="/quote/motor-selection">
-                      Build a Mercury outboard quote (Ontario, CAD) <ChevronRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" className="gap-1.5">
-                    <Link to="/locations/rice-lake-mercury-repower">
-                      Mercury repower on Rice Lake <ChevronRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" className="gap-1.5">
-                    <Link to="/faq">
-                      Repower FAQ <ChevronRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
+                  <Link
+                    to="/quote/motor-selection"
+                    className="inline-flex items-center gap-1.5 bg-[#C8102E] hover:bg-[#A50D26] text-repower-cream px-6 py-3 rounded uppercase tracking-wider text-xs font-semibold transition-colors"
+                  >
+                    Build a Mercury outboard quote <ChevronRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    to="/locations/rice-lake-mercury-repower"
+                    className="inline-flex items-center gap-1.5 border border-repower-cream/30 hover:border-repower-gold hover:text-repower-gold text-repower-cream px-6 py-3 rounded uppercase tracking-wider text-xs font-semibold transition-colors"
+                  >
+                    Mercury repower on Rice Lake <ChevronRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    to="/faq"
+                    className="inline-flex items-center gap-1.5 border border-repower-cream/30 hover:border-repower-gold hover:text-repower-gold text-repower-cream px-6 py-3 rounded uppercase tracking-wider text-xs font-semibold transition-colors"
+                  >
+                    Repower FAQ <ChevronRight className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
 
-              <div className="rounded-xl overflow-hidden border border-border bg-card shadow-lg">
+              <div className="rounded-xl overflow-hidden border border-repower-cream/10 bg-repower-navy-900/40 shadow-2xl">
                 <img
                   src={shopImage}
                   alt="Mercury-Certified technician installing a new outboard at the Harris Boat Works repower shop"
