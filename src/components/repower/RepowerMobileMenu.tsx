@@ -1,5 +1,5 @@
 import { X, ChevronRight, Phone } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 interface Props {
   isOpen: boolean;
@@ -21,6 +21,9 @@ const NAV_LINKS = [
 ];
 
 export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
+  const location = useLocation();
+  const isActive = (to: string) =>
+    to === '/' ? location.pathname === '/' : location.pathname === to || location.pathname.startsWith(to + '/');
   if (!isOpen) return null;
 
   return (
@@ -47,19 +50,39 @@ export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
           Navigation
         </p>
         <ul className="space-y-1">
-          {NAV_LINKS.map((link) => (
-            <li key={link.to}>
-              <Link
-                to={link.to}
-                onClick={onClose}
-                className="flex items-center justify-between py-4 border-b border-[#F5F1EA]/8 font-display text-2xl text-[#F5F1EA] hover:text-[#C9A24A] transition-colors"
-                style={{ letterSpacing: '-0.02em' }}
-              >
-                {link.label}
-                <ChevronRight className="w-5 h-5 text-[#F5F1EA]/40" />
-              </Link>
-            </li>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const active = isActive(link.to);
+            return (
+              <li key={link.to}>
+                <Link
+                  to={link.to}
+                  onClick={onClose}
+                  aria-current={active ? 'page' : undefined}
+                  className={`group flex items-center justify-between py-4 border-b border-[#F5F1EA]/8 font-display text-2xl transition-colors ${
+                    active
+                      ? 'text-[#C9A24A]'
+                      : 'text-[#F5F1EA] hover:text-[#C9A24A]'
+                  }`}
+                  style={{ letterSpacing: '-0.02em' }}
+                >
+                  <span className="flex items-center gap-3">
+                    {active && (
+                      <span
+                        aria-hidden
+                        className="inline-block h-[2px] w-6 bg-[#C8102E]"
+                      />
+                    )}
+                    {link.label}
+                  </span>
+                  <ChevronRight
+                    className={`w-5 h-5 transition-colors ${
+                      active ? 'text-[#C9A24A]' : 'text-[#F5F1EA]/40 group-hover:text-[#C9A24A]'
+                    }`}
+                  />
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         {/* CTAs */}
