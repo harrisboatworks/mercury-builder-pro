@@ -319,8 +319,8 @@ export default function Contact() {
                           <div className="flex items-center space-x-2">
                             <RadioGroupItem value="urgent" id="urgent-urgency" />
                             <Label htmlFor="urgent-urgency" className="flex items-center gap-2">
-                              <Zap className="w-4 h-4 text-orange-500" />
-                              Urgent <span className="text-muted-foreground text-sm">(2-4 hour response)</span>
+                              <Zap className="w-4 h-4 text-repower-mercury-red" strokeWidth={1.5} />
+                              Urgent <span className="text-repower-navy-900/60 text-sm">(2-4 hour response)</span>
                             </Label>
                           </div>
                         </RadioGroup>
@@ -331,14 +331,14 @@ export default function Contact() {
                           type="button"
                           variant="outline"
                           onClick={() => setStep(1)}
-                          className="flex-1"
+                          className="flex-1 border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5"
                         >
                           Back
                         </Button>
                         <Button
                           type="submit"
                           disabled={isSubmitting}
-                          className="flex-1 flex items-center gap-2"
+                          className="flex-1 flex items-center gap-2 bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep"
                         >
                           {isSubmitting ? (
                             <>
