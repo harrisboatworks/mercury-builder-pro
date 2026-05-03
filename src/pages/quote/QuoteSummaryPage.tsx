@@ -1202,6 +1202,7 @@ export default function QuoteSummaryPage() {
               </div>
             </div>
           </div>
+          </div>
           )}
           
           <SaveQuoteDialog 
