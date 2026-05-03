@@ -530,7 +530,7 @@ function MotorCardPreviewInner({
               
               {/* Compare, Voice, Ask, Share — kept */}
               {motor && (
-                <div className="absolute bottom-3 left-3 flex flex-nowrap items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <div className="absolute bottom-3 left-3 flex flex-col items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 [&_button]:!w-7 [&_button]:!h-7">
                   <CompareButton 
                     isInComparison={isInComparison(motor.id)}
                     isFull={comparisonFull}
