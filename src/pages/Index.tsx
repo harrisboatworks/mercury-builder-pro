@@ -210,20 +210,20 @@ export default function Index() {
                   Why repower beats buying a new boat
                 </h2>
                 <p className="font-sans font-light text-repower-cream/75 text-sm md:text-lg mb-4 md:mb-7 leading-relaxed">
-                  A new Mercury costs a fraction of a new boat — and you keep the hull
+                  A new Mercury costs a fraction of a new boat, and you keep the hull
                   you already know and love. Most repowers are completed in one to three
                   days at our Gores Landing shop.
                 </p>
-                <ul className="space-y-2 md:space-y-3 mb-5 md:mb-8">
+                <ul className="flex flex-col gap-4 mb-5 md:mb-8">
                   {[
-                    'Pay only for the motor — not a whole new boat',
-                    'Modern Mercury fuel economy &amp; quiet running',
-                    'Bonus warranty coverage may be available during current Mercury promotions',
-                    'Mercury-Certified technicians — we sell what we service',
+                    'Pay only for the motor, not a whole new boat.',
+                    'Modern Mercury fuel economy and quiet running.',
+                    'Bonus warranty coverage may be available during current Mercury promotions.',
+                    'Mercury-Certified technicians who sell what they service.',
                   ].map(line => (
-                    <li key={line} className="flex items-start gap-3 text-repower-cream/90 text-sm md:text-base leading-snug md:leading-relaxed">
-                      <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-repower-gold shrink-0 translate-y-[3px]" aria-hidden="true" />
-                      <span className="flex-1" dangerouslySetInnerHTML={{ __html: line }} />
+                    <li key={line} className="flex flex-row items-start gap-3 text-repower-cream/90 text-sm md:text-base leading-snug md:leading-relaxed">
+                      <CheckCircle2 className="w-5 h-5 text-repower-gold flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <span className="flex-1 min-w-0">{line}</span>
                     </li>
                   ))}
                 </ul>
