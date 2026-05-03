@@ -95,10 +95,10 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
       onClick={handleCardClick}
     >
       {/* Image Section */}
-      <div className="relative p-6 overflow-hidden" style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}>
+      <div className="relative p-6 overflow-hidden" style={{ background: 'var(--gradient-image-bg)' }}>
         {/* Shimmer loading overlay */}
         {!imageLoaded && (
-          <div className="absolute inset-0 animate-shimmer z-10" style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }} />
+          <div className="absolute inset-0 animate-shimmer z-10" style={{ background: 'var(--gradient-image-bg)' }} />
         )}
         <img 
           src={heroImage} 

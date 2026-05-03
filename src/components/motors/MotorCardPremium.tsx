@@ -234,7 +234,7 @@ export default function MotorCardPremium({
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
-            <div className="relative p-4 overflow-hidden" style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}>
+            <div className="relative p-4 overflow-hidden" style={{ background: 'var(--gradient-image-bg)' }}>
               <img 
                 src={imageUrl} 
                 alt={title} 

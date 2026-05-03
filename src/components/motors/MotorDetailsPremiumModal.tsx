@@ -480,7 +480,7 @@ export default function MotorDetailsPremiumModal({
                     {/* Enhanced Image Gallery - Fetched from motor_media table */}
                     <div
                       className="py-2 rounded-lg"
-                      style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}
+                      style={{ background: 'var(--gradient-image-bg)' }}
                     >
                       {imagesLoading ? (
                         <div className="flex items-center justify-center h-64">
