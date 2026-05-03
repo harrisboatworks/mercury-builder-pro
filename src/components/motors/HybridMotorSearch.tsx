@@ -433,9 +433,9 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   return (
     <div className={`relative ${!isDark ? 'max-w-[640px] mx-auto' : ''} ${className}`}>
       {/* Search Input + Filter row */}
-      <div className={isDark ? 'relative' : 'flex items-stretch gap-2'}>
+      <div className="relative">
         <div
-          className={isDark ? 'relative w-full' : 'relative flex-1'}
+          className="relative w-full"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -490,7 +490,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           onBlur={handleBlur}
           onKeyDown={handleKeyDownWithSave}
           className={`
-            w-full ${isDark ? 'h-11 md:h-16 pl-14' : 'h-11 md:h-12 pl-12'} pr-12 text-[14px] ${isDark ? 'md:text-[15px]' : ''} font-light tracking-wide rounded-md
+            w-full ${isDark ? 'h-11 md:h-16 pl-14' : 'h-11 md:h-12 pl-12'} ${filterSlot ? 'pr-16' : 'pr-12'} text-[14px] ${isDark ? 'md:text-[15px]' : ''} font-light tracking-wide rounded-md
             focus:outline-none transition-all duration-300
             ${isDark
               ? `bg-[#0A1628] text-[#F5F1EA] caret-[#C9A24A] ${
@@ -547,25 +547,18 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         {query && (
           <button
             onClick={handleClear}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 transition-colors"
+            className={`absolute ${filterSlot ? 'right-14' : 'right-4'} top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 transition-colors`}
           >
             <X className="w-5 h-5" />
           </button>
         )}
-        {/* Filter Slot - dark variant: absolute inside input (legacy) */}
-        {isDark && filterSlot && (
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10">
+        {/* Filter Slot - integrated inside input on right */}
+        {filterSlot && (
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 z-10">
             {filterSlot}
           </div>
         )}
         </div>
-
-        {/* Filter Slot - light variant: tight to the right of input */}
-        {!isDark && filterSlot && (
-          <div className="shrink-0 flex items-center">
-            {filterSlot}
-          </div>
-        )}
       </div>
 
       {/* HP Suggestions Dropdown (for numeric queries) */}
