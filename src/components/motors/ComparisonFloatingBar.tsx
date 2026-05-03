@@ -41,37 +41,29 @@ export function ComparisonFloatingBar({
               </span>
             </div>
 
-            {/* Motor thumbnail chips */}
-            <div className="flex items-center gap-1.5 min-w-0 flex-1 overflow-x-auto scrollbar-hide">
-              {motors.map((m) => (
-                <div
+            {/* Numbered model name list */}
+            <ul className="flex flex-col min-w-0 flex-1 gap-0.5 py-0.5">
+              {motors.map((m, i) => (
+                <li
                   key={m.id}
-                  className="relative shrink-0 group"
-                  title={m.model}
+                  className="flex items-center gap-2 min-w-0 group"
                 >
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-repower-cream/10 border border-repower-cream/15 flex items-center justify-center overflow-hidden">
-                    {m.image ? (
-                      <img
-                        src={m.image}
-                        alt={m.model}
-                        className="w-full h-full object-contain mix-blend-screen opacity-90"
-                      />
-                    ) : (
-                      <span className="text-[10px] font-bold text-repower-cream/70">
-                        {m.hp}HP
-                      </span>
-                    )}
-                  </div>
+                  <span className="text-[11px] font-bold text-repower-gold/80 shrink-0 tabular-nums w-4">
+                    {i + 1}.
+                  </span>
+                  <span className="text-xs sm:text-sm font-medium text-repower-cream truncate">
+                    {m.model}
+                  </span>
                   <button
                     onClick={() => onRemove(m.id)}
                     aria-label={`Remove ${m.model} from comparison`}
-                    className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-repower-mercury-red text-white flex items-center justify-center opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity"
+                    className="ml-auto shrink-0 w-4 h-4 rounded-full text-repower-cream/40 hover:text-repower-mercury-red opacity-60 hover:opacity-100 focus:opacity-100 transition flex items-center justify-center"
                   >
-                    <X size={10} strokeWidth={3} />
+                    <X size={12} strokeWidth={2.5} />
                   </button>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
 
             <button
               onClick={onOpen}
