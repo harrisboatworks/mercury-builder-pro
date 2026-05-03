@@ -37,7 +37,7 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   optimizeDeps: {
-    exclude: ['@react-pdf/renderer', '@react-pdf/pdfkit', 'pako'],
+    exclude: ['@react-pdf/renderer', '@react-pdf/pdfkit', 'pako', 'base64-js'],
   },
   plugins: [
     react(),
