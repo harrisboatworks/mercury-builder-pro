@@ -42,16 +42,16 @@ export function ComparisonFloatingBar({
             </div>
 
             {/* Numbered model name list */}
-            <ul className="flex flex-col min-w-0 flex-1 gap-0.5 py-0.5">
+            <ul className="flex flex-col min-w-0 flex-1 leading-tight">
               {motors.map((m, i) => (
                 <li
                   key={m.id}
-                  className="flex items-center gap-2 min-w-0 group"
+                  className="flex items-center gap-1.5 min-w-0 h-5"
                 >
-                  <span className="text-[11px] font-bold text-repower-gold/80 shrink-0 tabular-nums w-4">
+                  <span className="text-[11px] font-bold text-repower-gold/80 shrink-0 tabular-nums w-3.5 leading-none">
                     {i + 1}.
                   </span>
-                  <span className="text-xs sm:text-sm font-medium text-repower-cream truncate">
+                  <span className="text-xs sm:text-sm font-medium text-repower-cream truncate leading-none">
                     {m.model}
                   </span>
                   <button
@@ -59,7 +59,7 @@ export function ComparisonFloatingBar({
                     aria-label={`Remove ${m.model} from comparison`}
                     className="ml-auto shrink-0 w-4 h-4 rounded-full text-repower-cream/40 hover:text-repower-mercury-red opacity-60 hover:opacity-100 focus:opacity-100 transition flex items-center justify-center"
                   >
-                    <X size={12} strokeWidth={2.5} />
+                    <X size={11} strokeWidth={2.5} />
                   </button>
                 </li>
               ))}
