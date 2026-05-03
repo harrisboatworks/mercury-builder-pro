@@ -242,7 +242,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
         {/* Click to expand hint - only show for non-placeholder */}
         {displayImages[0] !== PLACEHOLDER_IMAGE && (
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200">
-            <div className="bg-white/90 text-slate-700 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+            <div className="px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 text-[#050E1C]" style={{ backgroundColor: 'rgba(245, 241, 234, 0.95)' }}>
               {lightboxImageLoading ? (
                 <>
                   <Loader2 className="h-3 w-3 animate-spin" />
@@ -272,7 +272,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
                 e.stopPropagation();
                 handlePrevious();
               }}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-800 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#F5F1EA]/85 hover:bg-[#F5F1EA] text-[#050E1C] opacity-0 group-hover:opacity-100 transition-opacity"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -283,7 +283,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
                 e.stopPropagation();
                 handleNext();
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-800 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#F5F1EA]/85 hover:bg-[#F5F1EA] text-[#050E1C] opacity-0 group-hover:opacity-100 transition-opacity"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
