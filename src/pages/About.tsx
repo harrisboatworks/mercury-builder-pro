@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { AboutPageSEO } from '@/components/seo/AboutPageSEO';
 import { GoogleReviewsCarousel } from '@/components/reviews/GoogleReviewsCarousel';
 import { GoogleMapEmbed } from '@/components/maps/GoogleMapEmbed';
@@ -103,9 +103,9 @@ export default function About() {
   return (
     <>
       <AboutPageSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
       
-      <main className="min-h-screen bg-repower-paper">
+      <main className="min-h-screen bg-repower-paper pt-[64px] lg:pt-[72px]">
         {/* Hero Section */}
         <section aria-labelledby="about-hero" className="relative py-14 md:py-20">
           <div className="max-w-[880px] mx-auto px-6 md:px-14">
