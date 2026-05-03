@@ -21,7 +21,7 @@ const statNumberStyle = {
   lineHeight: 1,
 } as const;
 const statLabelClass =
-  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/55 mt-2 leading-tight';
+  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/55 mt-2 leading-tight whitespace-nowrap overflow-hidden text-ellipsis';
 const statLabelStyle = {
   letterSpacing: '0.16em',
 } as const;
