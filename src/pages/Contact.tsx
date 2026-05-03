@@ -15,7 +15,7 @@ import { toast } from 'sonner';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { COMPANY_INFO } from '@/lib/companyInfo';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { ContactPageSEO } from '@/components/seo/ContactPageSEO';
 import { 
   Mail, 
@@ -110,8 +110,8 @@ export default function Contact() {
   if (submitted) {
     return (
       <>
-        <LuxuryHeader />
-        <div className="min-h-screen bg-repower-paper">
+        <RepowerHeader />
+        <div className="min-h-screen bg-repower-paper pt-[64px] lg:pt-[72px]">
           <div className="container mx-auto px-6 md:px-14 py-16">
             <div className="max-w-2xl mx-auto text-center">
               <CheckCircle2 className="w-12 h-12 text-repower-mercury-red mx-auto mb-6" strokeWidth={1.5} />
@@ -134,8 +134,8 @@ export default function Contact() {
   return (
     <>
       <ContactPageSEO />
-      <LuxuryHeader />
-      <div className="min-h-screen bg-repower-paper">
+      <RepowerHeader />
+      <div className="min-h-screen bg-repower-paper pt-[64px] lg:pt-[72px]">
         <div className="container mx-auto px-6 md:px-14 py-14 md:py-20">
           {/* Header */}
           <div className="text-center mb-14 max-w-[880px] mx-auto">

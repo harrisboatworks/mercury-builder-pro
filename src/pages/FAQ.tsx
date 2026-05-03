@@ -59,9 +59,9 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-repower-paper">
       <FAQPageSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
 
-      <main>
+      <main className="pt-[64px] lg:pt-[72px]">
         {/* Breadcrumb */}
         <div className="container mx-auto px-6 md:px-14 pt-6 max-w-[880px]">
           <Breadcrumb>
