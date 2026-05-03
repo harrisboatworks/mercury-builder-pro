@@ -481,7 +481,7 @@ function MotorCardPreviewInner({
               {!imageLoaded && (
                 <div className="absolute inset-0 bg-repower-paper animate-shimmer z-10" />
               )}
-              <div className="absolute inset-0 flex items-center justify-center p-[12%] transition-transform duration-500 ease-out group-hover:scale-[1.04]">
+              <div className="absolute inset-0 flex items-center justify-center p-[12%]">
                 {hasValidImage ? (
                   <img 
                     src={imageUrl} 
