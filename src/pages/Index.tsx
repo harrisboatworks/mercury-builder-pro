@@ -150,12 +150,9 @@ export default function Index() {
             </HowItWorksGrid>
 
             <div className="text-center">
-              <button
-                onClick={goBuild}
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#C8102E] hover:bg-[#A50D26] text-[#F5F1EA] px-8 sm:px-10 py-4 rounded uppercase tracking-wider text-sm font-semibold transition-all duration-300"
-              >
-                Start Building <ArrowRight className="h-4 w-4" />
-              </button>
+              <RepowerCta as="button" onClick={goBuild} variant="primary" size="lg">
+                Start Building <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </RepowerCta>
             </div>
           </div>
         </section>
