@@ -132,8 +132,8 @@ export function PricingTable({
 
         {/* Accessories & Setup */}
         {accessoryBreakdown.length > 0 && (
-          <div className="space-y-1 pt-2">
-            <div className="text-sm font-medium text-primary py-1">
+          <div className="space-y-1 pt-4">
+            <div className="font-sans font-semibold uppercase text-repower-navy-900/65 py-2" style={{ fontSize: 12, letterSpacing: '0.18em' }}>
               {packageName}
             </div>
             {accessoryBreakdown.map((item, index) => {
