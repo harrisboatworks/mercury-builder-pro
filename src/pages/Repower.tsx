@@ -105,23 +105,23 @@ export default function Repower() {
       </section>
 
       {/* Repower vs New Boat */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-[#0A1828] text-[#F5F1EA]">
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-navy-900 text-repower-cream">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+          <div className="max-w-3xl mb-14 md:mb-20">
+            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+              <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               The Big Question
             </p>
             <h2
-              className="font-display font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05]"
-              style={{ letterSpacing: '-0.03em' }}
+              className="font-display font-bold text-[clamp(36px,4.5vw,64px)] tracking-[-0.03em] leading-[1.05]"
             >
-              Repower or buy <em className="not-italic italic text-[#C8102E]">new?</em>
+              Repower or buy <em className="not-italic italic text-repower-mercury-red">new?</em>
             </h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="border border-[#C9A24A]/30 bg-[#C9A24A]/[0.04] rounded p-8 md:p-10">
-              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-4">
+            <div className="border border-repower-gold/40 bg-repower-gold/[0.04] rounded p-8 md:p-10">
+              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-4">
                 Repower if...
               </p>
               <ul className="space-y-4">
@@ -130,16 +130,16 @@ export default function Repower() {
                   'You like your boat, it fits your needs and the right size',
                   'The numbers work: 70% of the benefit for 30% of the cost',
                 ].map((item) => (
-                  <li key={item} className="flex gap-3 font-sans text-base text-[#F5F1EA]/80 leading-relaxed">
-                    <span className="text-[#C9A24A] font-display font-bold mt-0.5">✓</span>
+                  <li key={item} className="flex gap-3 font-sans text-base text-repower-cream/85 leading-relaxed">
+                    <span className="text-repower-gold font-display font-bold mt-0.5">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="border border-[#F5F1EA]/10 rounded p-8 md:p-10">
-              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#F5F1EA]/50 mb-4">
+            <div className="border border-repower-cream/15 rounded p-8 md:p-10">
+              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-cream/55 mb-4">
                 Buy new if...
               </p>
               <ul className="space-y-4">
@@ -148,8 +148,8 @@ export default function Repower() {
                   "You've outgrown your current boat",
                   'You want completely different features or layout',
                 ].map((item) => (
-                  <li key={item} className="flex gap-3 font-sans text-base text-[#F5F1EA]/60 leading-relaxed">
-                    <span className="text-[#F5F1EA]/40 mt-0.5">—</span>
+                  <li key={item} className="flex gap-3 font-sans text-base text-repower-cream/65 leading-relaxed">
+                    <span className="text-repower-cream/40 mt-0.5">·</span>
                     <span>{item}</span>
                   </li>
                 ))}
