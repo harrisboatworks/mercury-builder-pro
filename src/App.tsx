@@ -590,7 +590,7 @@ const App = () => {
               <GlobalAIChat>
                 <div data-vaul-drawer-wrapper className="min-h-screen bg-background">
                   <ScrollToTop />
-                  <PricingRibbon />
+                  
                   <GlobalSEO />
                   <NotificationToast />
                   
