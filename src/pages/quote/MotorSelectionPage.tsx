@@ -98,17 +98,17 @@ function PromoBannerConditional() {
           ·
         </span>
         {/* Mobile row 2 / desktop inline: date + learn more */}
-        <div className="flex items-center justify-between basis-full md:basis-auto md:flex-1 md:ml-0 ml-12 md:gap-0 gap-3 md:contents">
+        <div className="flex items-center basis-full md:basis-auto md:flex-1 md:contents">
           {/* Date */}
           <span
-            className="text-repower-cream/60 font-normal whitespace-nowrap truncate md:min-w-0 md:flex-shrink"
+            className="text-repower-cream/60 font-normal whitespace-nowrap truncate md:min-w-0 md:flex-shrink ml-12 md:ml-0"
             style={{ fontSize: 13 }}
           >
             {endLabel}
           </span>
 
-          {/* Action group — anchored right on desktop */}
-          <div className="flex items-center md:ml-auto shrink-0 gap-6 md:pl-6">
+          {/* Action group — anchored right */}
+          <div className="flex items-center ml-auto shrink-0 gap-6 pl-6">
             <a
               href="/promotions"
               className="group inline-flex items-center gap-1.5 text-repower-gold hover:text-repower-gold/80 transition-colors font-semibold uppercase whitespace-nowrap"
