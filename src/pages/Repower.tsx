@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useMemo } from 'react';
 import { RepowerLayout } from '@/components/repower/RepowerLayout';
-import { HeroRepower } from '@/components/repower/HeroRepower';
-import { TrustStrip } from '@/components/repower/TrustStrip';
+import { RepowerHero } from '@/components/repower/RepowerHero';
 import { RepowerMath } from '@/components/repower/RepowerMath';
 import { RepowerFAQRestyled } from '@/components/repower/RepowerFAQRestyled';
 import { WhyHarrisRepower } from '@/components/repower/WhyHarrisRepower';
@@ -58,10 +57,8 @@ export default function Repower() {
     <RepowerLayout>
       <RepowerPageSEO />
 
-      {/* === Phase 1: New premium top sections === */}
-      <HeroRepower />
-      <TrustStrip />
-      <RepowerMath />
+      {/* === Compact content-page hero (replaces duplicate landing-page blocks) === */}
+      <RepowerHero />
 
       {/* === Existing sections (Phase 2 will restyle these wrappers) === */}
 
@@ -161,6 +158,9 @@ export default function Repower() {
           </div>
         </div>
       </section>
+
+      {/* Repower math (70% benefit / 30% cost), relocated from top */}
+      <RepowerMath />
 
       {/* Modern Technology Benefits */}
       <section className="py-24 md:py-32 px-6 md:px-14 bg-[#050E1C] text-[#F5F1EA]">

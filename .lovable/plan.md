@@ -1,75 +1,45 @@
-# /quote/summary visual redesign plan
+## Pass 1 — Replace landing-page hero on /repower
 
-## Scope guarantee
-Visual layer only. I will NOT touch:
-- `src/lib/react-pdf-generator.tsx`, `pdf-executive.ts`, `pdf-helpers.ts`, `professional-quote-pdf.tsx`, vite config, shims, or anything in the PDF pipeline.
-- `handleDownloadPDF`, `handleReserveDeposit`, `handleApplyForFinancing`, `handleStepComplete`, `handleDepositSubmit`, soft-lead save, Supabase calls, edge-function invokes.
-- `useQuoteRunningTotal`, `finance.ts`, `quote-utils.ts`, `build-accessory-breakdown.ts`, the line items array, taxes, financing math.
-- Any user-facing copy, labels, button text, helper text, error toasts, terms.
-- Field set, action set, or behavior. Same things, restyled.
+### Scope
+Visual layer only. Hero swap. No copy invention beyond reusing existing on-page text. No changes to calculator, FAQ, video, or any logic.
 
-## Files I plan to touch
+### Files touched
+1. **NEW** `src/components/repower/RepowerHero.tsx` — compact, paper-background, content-page hero.
+2. **EDIT** `src/pages/Repower.tsx` — remove the three duplicate landing blocks at the top, mount the new hero, keep RepowerMath in place lower (decision below).
 
-1. `src/pages/quote/QuoteSummaryPage.tsx` — replace ONLY the JSX layout shell inside the existing `return (...)` (the part starting at the `<div className="max-w-7xl ...">` wrapper, lines ~1024-1194). All hooks, handlers, state, effects, data computations stay byte-identical. I'll wrap the page in `QuotePageShell` (eyebrow / H1 / subhead / hairline) and the existing two-column grid becomes the prescribed 60/40 layout with cream sticky card on the right.
-
-2. `src/components/quote-builder/PricingTable.tsx` — visual restyle only of row markup (typography, spacing, hairline dividers, gold edit links). Props, data, conditional logic, totals, line item ordering, copy stay identical. No prop changes.
-
-3. `src/components/quote-builder/StickySummary.tsx` — visual restyle of the desktop sticky card (cream `#F5F1EA`, hairline border, 12px radius, 32px padding, eyebrow TOTAL, big total in Inter Tight, mini-line items, mercury-red primary CTA, ghost secondary). All props, handlers, animations, AnimatePresence blocks, confetti, sound, conditional rendering preserved. Mobile aside currently doesn't exist here; mobile CTA section in the page file gets the same restyle.
-
-4. `src/components/quote-builder/QuoteProgressStepper.tsx` — verify it can render "step 6 of 6 active, all others complete"; if it already does (it's used elsewhere), I'll re-enable it on this page (currently `showProgress={false}` in `QuoteLayout`). If its visual treatment doesn't match the design system, I'll restyle visually only.
-
-No new files needed; I'll reuse `QuotePageShell`, `QuoteFormField`, `QuoteInput` already locked in for other steps.
-
-## Layout result
-
-```text
-+------------------------------------------------------------+
-| RepowerHeader (solid)                                      |
-| QuoteProgressStepper (step 6 active)                       |
-+------------------------------------------------------------+
-|  max-w-1100 py-12 px-6                                     |
-|                                                            |
-|  STEP 6 . YOUR QUOTE   (eyebrow, mercury-red)              |
-|  H1 (existing heading copy, untouched)                     |
-|  Subhead (existing copy, untouched)                        |
-|  ----------------------------- hairline                    |
-|                                                            |
-|  +-------------------+  +---------------------------+      |
-|  |  60%              |  | 40% sticky cream card      |     |
-|  |  Line items       |  | TOTAL eyebrow              |     |
-|  |  (PricingTable    |  | $XX,XXX (48px Inter Tight) |     |
-|  |   restyled rows)  |  | tax line                   |     |
-|  |                   |  | --------- hairline         |     |
-|  |  BonusOffers      |  | mini line items            |     |
-|  |  AdminControls    |  | --------- hairline         |     |
-|  |                   |  | financing snippet          |     |
-|  |  Back ghost btn   |  | --------- hairline         |     |
-|  |                   |  | Primary CTA (mercury-red)  |     |
-|  |                   |  | Secondary ghost btns       |     |
-|  |                   |  | trust line                 |     |
-|  +-------------------+  +---------------------------+      |
-|                                                            |
-|  Mobile: stack, sticky CTA bar at viewport bottom          |
-+------------------------------------------------------------+
+### Removals from `src/pages/Repower.tsx`
+Delete lines 62–64:
 ```
+<HeroRepower />
+<TrustStrip />
+<RepowerMath />
+```
+- `HeroRepower` and `TrustStrip` are dropped from this page entirely (still used on `/`).
+- `RepowerMath` is **kept** but moved further down, inserted between the "Repower vs New Boat" section and the "Modern Technology Benefits" section, where the math story actually fits the educational flow. (Open Q from audit, going with: keep, relocate.)
 
-## What stays exactly as-is
-- All data passed into `<PricingTable>` and `<StickySummary>`.
-- The `noMotorSelected` gating, `disabled` states, tooltips/titles.
-- `QuoteRevealCinematic`, `StaleQuoteAlert`, `DepositInfoDialog`, `SaveQuoteDialog`, `SaveQuoteWithAuth`, `PhoneCapture` rendering.
-- All `framer-motion` variants, delays, and the iOS opacity guards already in place.
-- The existing `quoteValidUntil` computation and prop flow.
-- Every button's `onClick` wiring, every label string.
+### Header shell
+`RepowerLayout` currently mounts `RepowerHeader` without the `solid` prop, which means on `/` it stays transparent until scroll, but on every non-`/` route the component already auto-forces solid (line 31 of `RepowerHeader.tsx`: `forceSolid = solid || location.pathname !== '/'`). So `/repower` already renders with a solid navy header from first paint. **No layout swap needed.** Leaving `RepowerLayout` as-is.
 
-## Token reference (from locked design system)
-- bg paper `#FAF8F4`, cream card `#F5F1EA`, navy-900, mercury-red, gold accent
-- Inter Tight 700 for H1 and big total; Inter for body; uppercase tracked eyebrows
-- Hairline = `1px solid rgba(10,22,40,0.10)`
-- Field styling already in `QuoteInput` / `QuoteFormField` (will not be needed unless this page has a customer info form — current code shows it does NOT; customer info is collected via `DepositInfoDialog`/`SaveQuoteDialog` modals, so no inline form fields to restyle on this page).
+### New hero spec (`RepowerHero.tsx`)
 
-## Verification I'll do after implementing
-- Read the rendered file end-to-end to confirm no handler signature changed.
-- Confirm `handleDownloadPDF`, `handleReserveDeposit`, `handleApplyForFinancing` are referenced from JSX exactly as before.
-- Confirm no edits leaked into PDF/finance/quote-utils files.
+- **Section**: `bg-repower-paper`, `pt-28 md:pt-32 pb-20 md:pb-28`, `px-6 md:px-14`, hairline bottom border `border-repower-navy-900/10`. Top padding clears the fixed header.
+- **Eyebrow**: "MERCURY OUTBOARD REPOWER · ONTARIO", Inter 600, 11–12px, uppercase, letter-spacing 0.22em, `text-repower-mercury-red`. Preceded by an 8-unit hairline `bg-repower-mercury-red/60`.
+- **H1**: "Keep your boat. Upgrade your engine." Inter Tight 700, `clamp(40px, 5vw, 72px)`, `text-repower-navy-900`, tracking `-0.025em`, leading 1.05, max-width 18ch.
+- **Subhead**: existing 70%/30% framing reworded into one sentence reusing on-page copy: "A new Mercury costs a fraction of a new boat, and you keep the hull you already know. Most repowers are completed in one to three days at our Gores Landing shop on Rice Lake." Inter 400, 17–18px, `text-repower-navy-900/65`, max-width 60ch. (Sourced verbatim from existing /repower content; no new copy.)
+- **Hairline + 70/30 pill**: 12-unit gold hairline, then a small inline pill — `border border-repower-gold/40 bg-repower-cream rounded-full px-5 py-2`, contents: "70% of the benefit · 30% of the cost" with display numerals at 20–22px navy and labels in 12px uppercase navy at 60%.
+- **CTAs**: primary mercury-red `<RepowerCta to="/quote/motor-selection">` "Build Your Quote" with chevron; ghost secondary `<a href="tel:+19053422153">` styled with navy hairline border, navy text, hover `bg-repower-navy-900/[0.03]`.
+- **Background**: solid paper. No video. No photo (keeps it lightweight; we can add a static photo in a follow-up if Jay wants).
 
-Awaiting your OK before I make any changes.
+### Hard rules respected
+- No em dashes; uses periods and middots.
+- No Tailwind defaults; only `repower-paper / navy-900 / mercury-red / gold / cream` tokens (and existing rgba opacity variants).
+- No icons in colored circles.
+- Reuses existing copy. No new marketing claims.
+- Phone CTA dials the same number that already appears on the page.
+
+### Out of scope for this pass
+- Restyling sections 4–14 (Pass 2/3).
+- Replacing the infographic PNG (Pass 3).
+- Any copy fixes to comma-as-range-separator prices (flagged for Jay separately).
+
+After approval and implementation, screenshot the new top of /repower for review before moving to Pass 2.
