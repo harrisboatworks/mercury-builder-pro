@@ -13,6 +13,7 @@ import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import jimHarrisHeritage from '@/assets/heritage/jim-harris-mercury-1960s.jpg';
 
 const timelineEvents = [
   {
@@ -159,32 +160,53 @@ export default function About() {
         </section>
 
         {/* Our Story Timeline */}
-        <section aria-labelledby="our-story" className="py-16 md:py-20">
+        <section aria-labelledby="our-story" className="py-16 md:py-24 bg-repower-cream">
           <div className="max-w-4xl mx-auto px-4 md:px-6">
-            <h2 id="our-story" className="text-2xl md:text-3xl font-light text-center mb-12">
-              Our <span className="font-medium">Story</span>
-            </h2>
-            
+            <div className="text-center mb-14">
+              <p className="font-sans font-semibold text-[10px] sm:text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-4">
+                Our Heritage
+              </p>
+              <h2
+                id="our-story"
+                className="font-display font-bold text-[clamp(28px,6vw,52px)] tracking-tight leading-[1.05] text-repower-navy-900"
+                style={{ letterSpacing: '-0.03em' }}
+              >
+                Our <em className="not-italic italic text-[#C8102E]">story</em>, in milestones.
+              </h2>
+            </div>
+
             <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-              
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-repower-navy-900/20 md:-translate-x-px" />
+
               <ol className="list-none p-0 m-0">
                 {timelineEvents.map((event, index) => (
-                  <li 
+                  <li
                     key={event.year}
-                    className={`relative flex items-start gap-6 mb-10 ${
+                    className={`relative flex items-start gap-6 mb-12 ${
                       index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                     }`}
                   >
-                    {/* Timeline dot */}
-                    <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-primary border-4 border-background -translate-x-1.5 md:-translate-x-1.5 z-10" />
-                    
-                    {/* Content */}
+                    <div className="absolute left-4 md:left-1/2 w-3.5 h-3.5 rounded-full bg-[#C9A24A] border-4 border-repower-cream -translate-x-1.5 md:-translate-x-1.5 z-10" />
+
                     <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                      <time className="text-sm font-medium text-primary">{event.year}</time>
-                      <h3 className="text-lg font-medium text-foreground mt-1">{event.title}</h3>
-                      <p className="text-muted-foreground mt-2">{event.description}</p>
+                      <time className="font-sans font-semibold text-xs uppercase tracking-[0.22em] text-[#C9A24A]">{event.year}</time>
+                      <h3 className="font-display font-bold text-xl md:text-2xl text-repower-navy-900 mt-2 leading-tight">{event.title}</h3>
+                      {event.year === "1965" && (
+                        <figure className={`my-4 ${index % 2 === 0 ? 'md:ml-auto' : ''}`} style={{ maxWidth: '320px' }}>
+                          <div className="rounded-md overflow-hidden border border-repower-navy-900/15 shadow-md bg-white">
+                            <img
+                              src={jimHarrisHeritage}
+                              alt="Jim Harris rigging a Mercury outboard, mid-1960s"
+                              loading="lazy"
+                              className="w-full h-auto object-cover"
+                            />
+                          </div>
+                          <figcaption className={`mt-2 text-xs italic text-repower-navy-900/60 ${index % 2 === 0 ? 'md:text-right' : 'text-left'}`}>
+                            Jim Harris — Mercury rigging, mid-1960s
+                          </figcaption>
+                        </figure>
+                      )}
+                      <p className="font-sans font-light text-repower-navy-900/75 mt-2 leading-relaxed">{event.description}</p>
                     </div>
                   </li>
                 ))}
