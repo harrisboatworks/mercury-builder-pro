@@ -60,19 +60,20 @@ export function PricingTable({
   totalCoverageYears
 }: PricingTableProps) {
   return (
-    <Card className="p-6 space-y-1 bg-white">
-      <div className="mb-4 space-y-1">
-        <h3 className="text-lg font-semibold text-primary">
+    <div className="rounded-[12px] border border-repower-navy-900/10 bg-white p-8">
+      <div className="mb-6 space-y-2">
+        <div className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-repower-mercury-red">
           Pricing Breakdown
-        </h3>
+        </div>
         {motorName && (
-          <p className="text-base font-semibold text-slate-900">
+          <h3 className="font-display font-bold text-repower-navy-900 text-[24px] tracking-[-0.02em] leading-tight">
             {motorName}
-          </p>
+          </h3>
         )}
-        <p className="text-sm text-muted-foreground">
+        <p className="font-sans text-[14px] text-repower-navy-900/55">
           Complete cost breakdown for your quote
         </p>
+        <div className="mt-4 h-px w-full bg-repower-navy-900/10" aria-hidden />
       </div>
 
       <div className="space-y-1">
