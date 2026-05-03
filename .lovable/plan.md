@@ -1,14 +1,16 @@
-## Fix Trust Strip Label Truncation on Mobile
+## Rename nav labels
 
-The 5 trust badges sit in a 2-col mobile grid with uppercase + heavy letter-spacing (`tracking-[0.18em]`), so labels like "Family-Owned Since 1947" and "7-Year Warranty Available" get clipped/squished.
+Agreed — the `/` route is the marketing landing page, and `/quote/motor-selection` is where engines are actually browsed. The labels are backwards.
 
-### Fix in `src/components/repower/TrustStrip.tsx`
+### Changes
 
-- Tighter mobile letter-spacing (`tracking-[0.12em]`), back to `0.18em` at `md:`.
-- Slightly smaller mobile font (`text-[10px]`) → `text-[11px]` at `md:`.
-- Less horizontal padding inside cells on mobile (`px-2` vs `px-4`).
-- Tighter gutter (`gap-x-3`) and remove `divide-x` on mobile (it eats horizontal room and looks messy with wrapping); keep dividers from `md:` up.
-- `leading-snug` + `break-words hyphens-auto` so two-line labels read cleanly.
-- Trim section padding a hair on mobile (`py-8`).
+1. **`src/components/repower/RepowerHeader.tsx`** (line 10)
+   - Change `{ to: '/', label: 'Engines' }` → `{ to: '/', label: 'Home' }`
+   - Add a new nav item: `{ to: '/quote/motor-selection', label: 'Motors' }`
 
-Result: every label has room to render fully on a 375–390px screen without truncation.
+2. **`src/components/repower/RepowerMobileMenu.tsx`** (line 14)
+   - Same change in the mobile nav array.
+
+### Notes
+- Using "Motors" (not "Engines") to stay consistent with existing app terminology like "motor-selection", "Build Your Quote", and trust strip copy ("Mercury Motors").
+- The header already has a "Build Your Quote" CTA button pointing to `/quote/motor-selection`; the new "Motors" nav link is a secondary text link for browsing without committing to the quote flow.
