@@ -55,13 +55,13 @@ import type { MotorGroup } from '@/hooks/useGroupedMotors';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
-// Refined navy promo strip with localStorage dismiss
-const PROMO_DISMISS_KEY = 'promo_banner_dismissed_v2';
+// Refined navy promo strip — single-line on desktop, 2-line on mobile, dismissible
+const PROMO_DISMISS_KEY = 'repower_promo_dismissed_v1';
 function PromoBannerConditional() {
   const { promotions: activePromos } = useActivePromotions();
   const [dismissed, setDismissed] = useState(() => {
     if (typeof window === 'undefined') return false;
-    return localStorage.getItem(PROMO_DISMISS_KEY) === '1';
+    return localStorage.getItem(PROMO_DISMISS_KEY) === 'true';
   });
   const promo = activePromos?.[0];
   if (!promo || dismissed) return null;
@@ -70,40 +70,71 @@ function PromoBannerConditional() {
     : 'Ends May 17, 2026';
   const title = promo.bonus_title || promo.name || 'Get 7 Years of Zero-Worry Boating';
   const handleDismiss = () => {
-    localStorage.setItem(PROMO_DISMISS_KEY, '1');
+    localStorage.setItem(PROMO_DISMISS_KEY, 'true');
     setDismissed(true);
   };
   return (
-    <div className="w-full bg-repower-navy-900 border-y border-repower-gold/25">
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-14 py-3 sm:py-0 sm:h-14 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div className="flex items-center gap-3 min-w-0">
-          <img src={harris7YearWarranty} alt="" className="h-8 w-auto shrink-0" />
-          <div className="flex flex-wrap items-center text-repower-cream">
-            <span className="font-semibold text-[14px]">{title}</span>
-            <span className="text-repower-gold mx-2">·</span>
-            <span className="text-[13px] text-repower-cream/60">{endLabel}</span>
-          </div>
-        </div>
-        <div className="flex items-center gap-4 shrink-0">
-          <a
-            href="/promotions"
-            className="group inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-repower-gold hover:text-repower-gold/80 transition-colors"
-          >
-            Learn More
-            <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
-          </a>
-          <button
-            onClick={handleDismiss}
-            aria-label="Dismiss promotion"
-            className="text-repower-cream/60 hover:text-repower-cream transition-colors p-1"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
+    <div
+      className="relative w-full bg-repower-navy-900 border-b border-repower-gold/20 px-4 md:px-14"
+      style={{ minHeight: 56 }}
+    >
+      <div className="flex flex-wrap md:flex-nowrap items-center md:h-14 py-2 md:py-0 gap-y-1 md:gap-y-0 pr-10 md:pr-0">
+        {/* Badge */}
+        <img
+          src={harris7YearWarranty}
+          alt=""
+          className="h-8 w-auto shrink-0"
+          style={{ height: 32 }}
+        />
+        {/* Title */}
+        <span
+          className="text-repower-cream font-semibold whitespace-nowrap ml-4"
+          style={{ fontSize: 14 }}
+        >
+          {title}
+        </span>
+        {/* Middot */}
+        <span
+          className="hidden md:inline text-repower-gold"
+          style={{ margin: '0 10px', fontSize: 14 }}
+        >
+          ·
+        </span>
+        {/* Date */}
+        <span
+          className="text-repower-cream/60 font-normal whitespace-nowrap truncate basis-full md:basis-auto md:ml-0 ml-12"
+          style={{ fontSize: 13 }}
+        >
+          {endLabel}
+        </span>
+
+        {/* Spacer */}
+        <div className="hidden md:block flex-1" />
+
+        {/* Learn More */}
+        <a
+          href="/promotions"
+          className="group inline-flex items-center gap-1.5 text-repower-gold hover:text-repower-gold/80 transition-colors font-semibold uppercase whitespace-nowrap ml-12 md:ml-0 md:mr-6"
+          style={{ fontSize: 13, letterSpacing: '0.12em' }}
+        >
+          Learn More
+          <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
+        </a>
       </div>
+
+      {/* Close X — top-right on mobile, inline on desktop */}
+      <button
+        onClick={handleDismiss}
+        aria-label="Dismiss promotion"
+        className="absolute top-2 right-3 md:top-1/2 md:-translate-y-1/2 md:right-6 inline-flex items-center justify-center text-repower-cream/50 hover:text-repower-cream transition-colors"
+        style={{ width: 24, height: 24 }}
+      >
+        <X className="w-4 h-4" />
+      </button>
     </div>
   );
 }
+
 
 // Database types
 interface DbMotor {
