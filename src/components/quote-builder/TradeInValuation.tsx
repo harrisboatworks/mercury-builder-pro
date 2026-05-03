@@ -559,7 +559,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       if (overridden) {
                         return base === 'hp'
                           ? 'bg-primary/10 text-primary border border-primary/30'
-                          : 'bg-slate-100 text-repower-navy-900/75 border border-slate-300';
+                          : 'bg-repower-navy-900/[0.06] text-repower-navy-900/75 border border-repower-navy-900/20';
                       }
                       if (conf === 'high') {
                         return base === 'hp'
@@ -574,9 +574,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     const prefix = (conf: Confidence, overridden: boolean) =>
                       overridden ? '' : conf === 'high' ? '' : conf === 'medium' ? '~ ' : '? ';
                     const badgeFor = (conf: Confidence, overridden: boolean) => {
-                      if (overridden) return { label: 'Manual', cls: 'bg-slate-100 text-repower-navy-900/75 border-slate-300' };
-                      if (conf === 'high') return { label: 'High', cls: 'bg-emerald-100 text-repower-mercury-red border-repower-navy-900/10' };
-                      if (conf === 'medium') return { label: 'Medium', cls: 'bg-amber-100 text-repower-gold border-repower-gold/30' };
+                      if (overridden) return { label: 'Manual', cls: 'bg-repower-navy-900/[0.06] text-repower-navy-900/75 border-repower-navy-900/20' };
+                      if (conf === 'high') return { label: 'High', cls: 'bg-repower-cream text-repower-mercury-red border-repower-navy-900/10' };
+                      if (conf === 'medium') return { label: 'Medium', cls: 'bg-repower-cream text-repower-gold border-repower-gold/30' };
                       if (conf === 'low') return { label: 'Low', cls: 'bg-rose-100 text-rose-700 border-rose-200' };
                       return null;
                     };
@@ -775,7 +775,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       whileTap={{ scale: 0.98 }}
                       className={`cursor-pointer border-2 rounded-sm p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 ${
                         tradeInInfo.condition === option.value 
-                          ? 'border-repower-navy-900 bg-repower-navy-900 text-white shadow-lg ring-2 ring-gray-900 ring-offset-2' 
+                          ? 'border-repower-navy-900 bg-repower-navy-900 text-white shadow-lg ring-2 ring-repower-navy-900 ring-offset-2' 
                           : 'border-repower-navy-900/20 hover:border-repower-navy-900 hover:shadow-md'
                       }`}
                       onClick={() => {
@@ -786,7 +786,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       }}
                     >
                       <div className={`font-light text-lg ${tradeInInfo.condition === option.value ? 'text-white' : 'text-repower-navy-900'}`}>{option.label}</div>
-                      <div className={`text-xs font-normal mt-1 ${tradeInInfo.condition === option.value ? 'text-gray-300' : 'text-repower-navy-900/65'}`}>{option.description}</div>
+                      <div className={`text-xs font-normal mt-1 ${tradeInInfo.condition === option.value ? 'text-repower-cream/85' : 'text-repower-navy-900/65'}`}>{option.description}</div>
                     </motion.button>
                   ))}
                 </div>
@@ -888,8 +888,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       {/* Confidence badge */}
                       <span className={`ml-auto text-xs font-medium px-2 py-0.5 rounded-full ${
                         estimate.confidence === 'high' ? 'bg-green-200 text-green-800' :
-                        estimate.confidence === 'medium' ? 'bg-amber-200 text-amber-800' :
-                        'bg-gray-200 text-repower-navy-900/65'
+                        estimate.confidence === 'medium' ? 'bg-repower-cream text-repower-gold' :
+                        'bg-repower-navy-900/[0.08] text-repower-navy-900/65'
                       }`}>
                         {estimate.confidence === 'high' ? 'High' : estimate.confidence === 'medium' ? 'Medium' : 'Low'} confidence
                       </span>
@@ -925,7 +925,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       <div className="mt-4 p-3 bg-repower-cream border border-repower-gold/30 rounded-sm">
                         <div className="flex items-start gap-2">
                           <AlertCircle className="w-4 h-4 text-repower-gold mt-0.5 flex-shrink-0" />
-                          <p className="text-sm font-light text-amber-800">{(estimate as any).penaltyMessage}</p>
+                          <p className="text-sm font-light text-repower-gold">{(estimate as any).penaltyMessage}</p>
                         </div>
                       </div>
                     )}
@@ -935,7 +935,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       <div className="mt-4 p-3 bg-repower-cream border border-repower-gold/30 rounded-sm">
                         <div className="flex items-start gap-2">
                           <AlertCircle className="w-4 h-4 text-repower-gold mt-0.5 flex-shrink-0" />
-                          <p className="text-sm font-light text-amber-800">
+                          <p className="text-sm font-light text-repower-gold">
                             Your trade-in value exceeds the cost of your selected motor. The credit will be capped at the motor price, no cash refunds on trade-ins.
                           </p>
                         </div>
@@ -966,9 +966,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </div>
                   )}
 
-                  <Alert className="border-blue-200 bg-blue-50">
-                    <Wrench className="w-4 h-4 text-blue-600" />
-                    <AlertDescription className="text-sm font-light text-blue-800">
+                  <Alert className="border-repower-navy-900/10 bg-repower-cream">
+                    <Wrench className="w-4 h-4 text-repower-mercury-red" />
+                    <AlertDescription className="text-sm font-light text-repower-navy-900/75">
                       Final trade value confirmed after in-person inspection. This estimate helps you plan your budget.
                     </AlertDescription>
                   </Alert>
