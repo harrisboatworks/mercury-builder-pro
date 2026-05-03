@@ -88,8 +88,8 @@ export default function QuoteSuccessPage() {
   }, [showConfetti]);
 
   return (
-    <div className="min-h-screen bg-repower-paper flex items-center justify-center px-6 md:px-14 py-14 md:py-20">
-      <div className="bg-white border border-repower-navy-900/10 p-8 md:p-12 max-w-2xl w-full">
+    <div className="min-h-screen bg-repower-paper flex items-center justify-center px-4 sm:px-6 md:px-14 py-10 sm:py-14 md:py-20">
+      <div className="bg-white border border-repower-navy-900/10 p-6 sm:p-8 md:p-12 max-w-2xl w-full">
         <div className="text-center">
           {/* Success Icon */}
           <div className="flex justify-center mb-8">
