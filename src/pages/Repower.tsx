@@ -132,9 +132,9 @@ export default function Repower() {
                   'You like your boat, it fits your needs and the right size',
                   'The numbers work: 70% of the benefit for 30% of the cost',
                 ].map((item) => (
-                  <li key={item} className="flex gap-3 font-sans text-base text-repower-navy-900/80 leading-relaxed">
-                    <Check className="w-4 h-4 text-repower-gold flex-shrink-0 mt-1.5" strokeWidth={2.5} />
-                    <span>{item}</span>
+                  <li key={item} className="flex flex-row flex-nowrap items-start gap-3 font-sans text-base text-repower-navy-900/80 leading-relaxed">
+                    <Check className="w-5 h-5 text-repower-gold flex-shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
+                    <span className="flex-1 min-w-0">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -150,9 +150,9 @@ export default function Repower() {
                   "You've outgrown your current boat",
                   'You want completely different features or layout',
                 ].map((item) => (
-                  <li key={item} className="flex gap-3 font-sans text-base text-repower-navy-900/65 leading-relaxed">
-                    <X className="w-4 h-4 text-repower-navy-900/50 flex-shrink-0 mt-1.5" strokeWidth={2} />
-                    <span>{item}</span>
+                  <li key={item} className="flex flex-row flex-nowrap items-start gap-3 font-sans text-base text-repower-navy-900/65 leading-relaxed">
+                    <X className="w-5 h-5 text-repower-navy-900/50 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                    <span className="flex-1 min-w-0">{item}</span>
                   </li>
                 ))}
               </ul>
