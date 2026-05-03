@@ -218,45 +218,7 @@ export async function generateMotorSpecSheet(data: ReactPdfQuoteData): Promise<s
 export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string> {
   try {
     console.log('Generating quote PDF for:', data.quoteNumber);
-    
-    // Transform ReactPdfQuoteData to match QuotePDFProps format
-    const transformedData = {
-      quoteNumber: data.quoteNumber,
-      date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-      customerName: data.customerName,
-      customerEmail: data.customerEmail,
-      customerPhone: data.customerPhone || '',
-      customerId: '',
-      productName: data.motor?.model || '',
-      horsepower: `${data.motor?.hp || 0}HP`,
-      category: data.motor?.category || 'FourStroke',
-      modelYear: data.motor?.model_year || 2025,
-      msrp: (data.motor?.msrp || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      dealerDiscount: (data.pricing?.discount || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      promoSavings: (data.pricing?.promoValue || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      motorSubtotal: (data.pricing?.motorSubtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      subtotal: (data.pricing?.subtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      tax: (data.pricing?.hst || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      total: (data.pricing?.totalCashPrice || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      totalSavings: (data.pricing?.savings || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      accessoryBreakdown: data.accessoryBreakdown || data.accessories,
-      tradeInValue: data.tradeInValue,
-      tradeInInfo: data.tradeInInfo,
-      selectedPackage: data.selectedPackage || undefined,
-      warrantyTargets: [],
-      monthlyPayment: data.monthlyPayment,
-      financingTerm: data.financingTerm,
-      financingRate: data.financingRate,
-      financingQrCode: data.financingQrCode,
-      includesInstallation: data.includesInstallation,
-      selectedPromoOption: data.selectedPromoOption,
-      selectedPromoValue: data.selectedPromoValue,
-      pricing: data.pricing,
-      customerNotes: data.customerNotes,
-      depositInfo: data.depositInfo,
-    };
-    
-    const blob = await pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
+    const blob = await buildQuotePDFBlob(data);
     const url = URL.createObjectURL(blob);
     return url;
   } catch (error) {
@@ -271,46 +233,7 @@ export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string>
 export async function generatePDFBlob(data: ReactPdfQuoteData): Promise<Blob> {
   try {
     console.log('Generating PDF blob for:', data.quoteNumber);
-    
-    // Transform ReactPdfQuoteData to match QuotePDFProps format
-    const transformedData = {
-      quoteNumber: data.quoteNumber,
-      date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-      customerName: data.customerName,
-      customerEmail: data.customerEmail,
-      customerPhone: data.customerPhone || '',
-      customerId: '',
-      productName: data.motor?.model || '',
-      horsepower: `${data.motor?.hp || 0}HP`,
-      category: data.motor?.category || 'FourStroke',
-      modelYear: data.motor?.model_year || 2025,
-      msrp: (data.motor?.msrp || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      dealerDiscount: (data.pricing?.discount || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      promoSavings: (data.pricing?.promoValue || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      motorSubtotal: (data.pricing?.motorSubtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      subtotal: (data.pricing?.subtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      tax: (data.pricing?.hst || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      total: (data.pricing?.totalCashPrice || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      totalSavings: (data.pricing?.savings || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      accessoryBreakdown: data.accessoryBreakdown || data.accessories,
-      tradeInValue: data.tradeInValue,
-      tradeInInfo: data.tradeInInfo,
-      selectedPackage: data.selectedPackage || undefined,
-      warrantyTargets: [],
-      monthlyPayment: data.monthlyPayment,
-      financingTerm: data.financingTerm,
-      financingRate: data.financingRate,
-      financingQrCode: data.financingQrCode,
-      includesInstallation: data.includesInstallation,
-      selectedPromoOption: data.selectedPromoOption,
-      selectedPromoValue: data.selectedPromoValue,
-      pricing: data.pricing,
-      customerNotes: data.customerNotes,
-      depositInfo: data.depositInfo,
-    };
-    
-    const blob = await pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
-    return blob;
+    return buildQuotePDFBlob(data);
   } catch (error) {
     console.error('Failed to generate PDF blob:', error);
     throw error;
