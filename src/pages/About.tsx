@@ -13,6 +13,7 @@ import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 import { useGooglePlaceData } from '@/hooks/useGooglePlaceData';
 import harrisLogo from '@/assets/harris-logo.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
+import jimHarrisHeritage from '@/assets/heritage/jim-harris-mercury-1960s.jpg';
 
 const timelineEvents = [
   {
