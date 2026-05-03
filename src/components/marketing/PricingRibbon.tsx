@@ -19,6 +19,8 @@ export function PricingRibbon() {
 
   // Hide inside the configurator itself — redundant there
   if (location.pathname.startsWith('/quote/')) return null;
+  // Hide on /repower so the full-bleed hero owns the top of the page
+  if (location.pathname === '/repower' || location.pathname.startsWith('/repower/')) return null;
   if (!visible) return null;
 
   const dismiss = () => {
