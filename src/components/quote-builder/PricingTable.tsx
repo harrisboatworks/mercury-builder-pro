@@ -248,6 +248,6 @@ export function PricingTable({
           )}
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
