@@ -111,7 +111,7 @@ export function RepowerHeader() {
         </div>
       </header>
 
-      <HamburgerMenu
+      <RepowerMobileMenu
         isOpen={menuOpen}
         onClose={() => setMenuOpen(false)}
         user={user}
