@@ -79,10 +79,12 @@ export function PricingTable({
       <div className="space-y-1">
         {/* Motor Pricing */}
         <div className="space-y-1">
-          <div className="flex items-baseline justify-between py-2">
-            <div className="text-sm text-muted-foreground">MSRP</div>
+          <div className="flex items-baseline justify-between py-3 border-b border-repower-navy-900/10">
+            <div className="font-sans font-medium text-repower-navy-900" style={{ fontSize: 16 }}>MSRP</div>
             <div className="text-right">
-              <s className="text-muted-foreground">${pricing.msrp.toLocaleString()}</s>
+              <s className="font-display font-semibold tabular-nums text-repower-navy-900/50" style={{ fontSize: 18, letterSpacing: '-0.01em' }}>
+                ${pricing.msrp.toLocaleString()}
+              </s>
             </div>
           </div>
           
