@@ -33,28 +33,31 @@ export function RepowerHero() {
           A new Mercury costs a fraction of a new boat, and you keep the hull you already know. Most repowers are completed in one to three days at our Gores Landing shop on Rice Lake.
         </p>
 
-        <div className="flex items-center gap-4 mb-10 flex-wrap">
+        <div className="flex flex-col items-center text-center gap-4 mb-10">
           <div className="h-px w-12 bg-repower-gold" aria-hidden="true" />
-          <div className="inline-flex items-baseline gap-3 rounded-full border border-repower-gold/40 bg-repower-cream px-5 py-2 flex-wrap">
-            <span
-              className="font-display font-bold text-repower-navy-900 text-[20px] md:text-[22px] tabular-nums"
-              style={{ letterSpacing: '-0.03em' }}
-            >
-              70%
-            </span>
-            <span className="font-sans text-[12px] uppercase tracking-[0.18em] text-repower-navy-900/60">
-              of the benefit
-            </span>
-            <span className="text-repower-navy-900/30">·</span>
-            <span
-              className="font-display font-bold text-repower-navy-900 text-[20px] md:text-[22px] tabular-nums"
-              style={{ letterSpacing: '-0.03em' }}
-            >
-              30%
-            </span>
-            <span className="font-sans text-[12px] uppercase tracking-[0.18em] text-repower-navy-900/60">
-              of the cost
-            </span>
+          <div className="inline-flex flex-col items-center gap-2 rounded-2xl border border-repower-gold/40 bg-repower-cream px-6 py-4">
+            <div className="inline-flex items-baseline gap-2">
+              <span
+                className="font-display font-bold text-repower-navy-900 text-[20px] md:text-[22px] tabular-nums"
+                style={{ letterSpacing: '-0.03em' }}
+              >
+                70%
+              </span>
+              <span className="font-sans text-[12px] uppercase tracking-[0.18em] text-repower-navy-900/60">
+                of the benefit
+              </span>
+            </div>
+            <div className="inline-flex items-baseline gap-2">
+              <span
+                className="font-display font-bold text-repower-navy-900 text-[20px] md:text-[22px] tabular-nums"
+                style={{ letterSpacing: '-0.03em' }}
+              >
+                30%
+              </span>
+              <span className="font-sans text-[12px] uppercase tracking-[0.18em] text-repower-navy-900/60">
+                of the cost
+              </span>
+            </div>
           </div>
         </div>
 
