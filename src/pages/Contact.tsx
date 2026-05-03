@@ -111,22 +111,22 @@ export default function Contact() {
     return (
       <>
         <LuxuryHeader />
-        <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-        <div className="container mx-auto px-4 py-16">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle2 className="w-8 h-8 text-primary" />
+        <div className="min-h-screen bg-repower-paper">
+          <div className="container mx-auto px-6 md:px-14 py-16">
+            <div className="max-w-2xl mx-auto text-center">
+              <CheckCircle2 className="w-12 h-12 text-repower-mercury-red mx-auto mb-6" strokeWidth={1.5} />
+              <h1 className="font-display font-bold text-[clamp(32px,4vw,48px)] text-repower-navy-900 mb-4" style={{ letterSpacing: '-0.025em' }}>
+                Thank You!
+              </h1>
+              <p className="font-sans text-repower-navy-900/70 text-lg mb-8">
+                Your inquiry has been submitted successfully. We'll get back to you soon!
+              </p>
+              <Button onClick={() => setSubmitted(false)} variant="outline" className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5">
+                Submit Another Inquiry
+              </Button>
             </div>
-            <h1 className="text-3xl font-bold text-foreground mb-4">Thank You!</h1>
-            <p className="text-muted-foreground text-lg mb-8">
-              Your inquiry has been submitted successfully. We'll get back to you soon!
-            </p>
-            <Button onClick={() => setSubmitted(false)} variant="outline">
-              Submit Another Inquiry
-            </Button>
           </div>
         </div>
-      </div>
       </>
     );
   }
