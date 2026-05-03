@@ -41,10 +41,10 @@ export function RepowerHeader() {
             : 'bg-gradient-to-b from-[#050E1C]/65 to-transparent py-5'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-14 flex items-center justify-between gap-6">
-          {/* Logo lockup */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0 min-w-0">
-            <img src={harrisLogo} alt="Harris Boat Works" className="h-7 sm:h-8 md:h-9 w-auto shrink-0" />
+        <div className="max-w-[1400px] mx-auto px-4 md:px-14 flex items-center justify-between gap-3 md:gap-6">
+          {/* Logo lockup — always horizontal */}
+          <Link to="/" className="flex flex-row flex-nowrap items-center gap-2 sm:gap-3 md:gap-4 shrink min-w-0">
+            <img src={harrisLogo} alt="Harris Boat Works" className="h-7 md:h-9 w-auto shrink-0" />
             <div className="hidden sm:block w-px h-7 bg-[#F5F1EA]/20 shrink-0" />
             <img
               src={mercuryLogo}
@@ -55,7 +55,7 @@ export function RepowerHeader() {
               <img
                 src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
                 alt="Mercury Certified Repower Centre"
-                className="h-9 sm:h-9 md:h-10 lg:h-11 w-auto"
+                className="h-7 md:h-10 lg:h-11 w-auto"
               />
             </div>
           </Link>
