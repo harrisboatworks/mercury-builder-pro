@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useMemo } from 'react';
 import { RepowerLayout } from '@/components/repower/RepowerLayout';
-import { HeroRepower } from '@/components/repower/HeroRepower';
-import { TrustStrip } from '@/components/repower/TrustStrip';
+import { RepowerHero } from '@/components/repower/RepowerHero';
 import { RepowerMath } from '@/components/repower/RepowerMath';
 import { RepowerFAQRestyled } from '@/components/repower/RepowerFAQRestyled';
 import { WhyHarrisRepower } from '@/components/repower/WhyHarrisRepower';
