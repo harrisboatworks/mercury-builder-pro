@@ -65,7 +65,7 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden xl:flex flex-1 items-center justify-center gap-5 2xl:gap-7 min-w-0">
+          <nav className="hidden lg:flex flex-1 items-center justify-center gap-5 2xl:gap-7 min-w-0">
             {NAV_LINKS.map((link) => {
               const active =
                 link.to === '/'
@@ -99,13 +99,13 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
             {!user && (
               <button
                 onClick={() => navigate('/auth')}
-                className="hidden xl:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
+                className="hidden lg:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
               >
                 Sign In
               </button>
             )}
             <button
-              className="xl:hidden p-2 text-[#F5F1EA]"
+              className="lg:hidden p-2 text-[#F5F1EA]"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
             >
