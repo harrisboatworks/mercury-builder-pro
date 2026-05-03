@@ -931,7 +931,7 @@ if (event.type === 'filter_motors') {
     return (
       <PageTransition>
         <div className="min-h-screen bg-repower-paper">
-          <RepowerHeader />
+          <RepowerHeader solid />
           <main className="pt-[88px]">
             <div className="bg-repower-paper py-12">
               <div className="max-w-[1400px] mx-auto px-6 md:px-14">
@@ -953,7 +953,7 @@ if (event.type === 'filter_motors') {
       <MotorSelectionSEO motorCount={motors.length > 0 ? motors.length : undefined} />
       <FinancingProvider>
         <div className="min-h-screen bg-repower-paper">
-          <RepowerHeader />
+          <RepowerHeader solid />
           <main className="pt-[88px]">
 
         <VoiceStatusBanner />
