@@ -55,29 +55,53 @@ import type { MotorGroup } from '@/hooks/useGroupedMotors';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
-// Extracted component to safely call useActivePromotions hook
+// Refined navy promo strip with localStorage dismiss
+const PROMO_DISMISS_KEY = 'promo_banner_dismissed_v2';
 function PromoBannerConditional() {
   const { promotions: activePromos } = useActivePromotions();
+  const [dismissed, setDismissed] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return localStorage.getItem(PROMO_DISMISS_KEY) === '1';
+  });
   const promo = activePromos?.[0];
-  if (!promo) return null;
+  if (!promo || dismissed) return null;
   const endLabel = promo.end_date
     ? `Ends ${new Date(promo.end_date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}`
-    : '';
+    : 'Ends May 17, 2026';
+  const title = promo.bonus_title || promo.name || 'Get 7 Years of Zero-Worry Boating';
+  const handleDismiss = () => {
+    localStorage.setItem(PROMO_DISMISS_KEY, '1');
+    setDismissed(true);
+  };
   return (
-    <DismissibleBanner
-      storageKey="promo_banner_dismissed"
-      variant="promotional"
-      className="max-w-4xl mx-auto px-4 mb-4"
-      actionLabel="Learn More"
-      actionHref="/promotions"
-      imageUrl={harris7YearWarranty}
-      imageAlt={promo.name}
-    >
-      <div>
-        <p className="font-semibold text-sm">{promo.bonus_title || promo.name}</p>
-        {endLabel && <p className="text-xs opacity-80">{endLabel}</p>}
+    <div className="w-full bg-repower-navy-900 border-y border-repower-gold/25">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-14 py-3 sm:py-0 sm:h-14 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="flex items-center gap-3 min-w-0">
+          <img src={harris7YearWarranty} alt="" className="h-8 w-auto shrink-0" />
+          <div className="flex flex-wrap items-center text-repower-cream">
+            <span className="font-semibold text-[14px]">{title}</span>
+            <span className="text-repower-gold mx-2">·</span>
+            <span className="text-[13px] text-repower-cream/60">{endLabel}</span>
+          </div>
+        </div>
+        <div className="flex items-center gap-4 shrink-0">
+          <a
+            href="/promotions"
+            className="group inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-repower-gold hover:text-repower-gold/80 transition-colors"
+          >
+            Learn More
+            <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
+          </a>
+          <button
+            onClick={handleDismiss}
+            aria-label="Dismiss promotion"
+            className="text-repower-cream/60 hover:text-repower-cream transition-colors p-1"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
       </div>
-    </DismissibleBanner>
+    </div>
   );
 }
 
