@@ -56,9 +56,10 @@ export function HeroRepower() {
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-14 py-20 md:py-28">
         <motion.p
           {...fadeUp(0)}
-          className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6"
+          className="font-sans font-semibold text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.24em] text-[#C9A24A] mb-6 whitespace-nowrap"
         >
-          Mercury Repower · Rice Lake · Since 1947
+          <span className="sm:hidden">Mercury Repower · Since 1947</span>
+          <span className="hidden sm:inline">Mercury Repower · Rice Lake · Since 1947</span>
         </motion.p>
 
         <motion.h1
