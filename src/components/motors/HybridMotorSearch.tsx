@@ -121,8 +121,10 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   motors,
   onHpSelect,
   className = '',
-  filterSlot
+  filterSlot,
+  variant = 'light',
 }) => {
+  const isDark = variant === 'dark';
   const [isFocused, setIsFocused] = useState(false);
   const [showHpSuggestions, setShowHpSuggestions] = useState(false);
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
