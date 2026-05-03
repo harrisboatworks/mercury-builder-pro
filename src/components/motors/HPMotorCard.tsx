@@ -177,14 +177,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
           </p>
         </div>
         
-        {/* Stock Status */}
-        <p className="text-sm font-normal text-gray-600 mt-2">
-          {inStockCount > 0 ? (
-            <>🟢 {inStockCount} in stock today</>
-          ) : (
-            <>○ Available to order</>
-          )}
-        </p>
+        {/* Stock status removed from browse cards */}
         
         {/* CTA Button */}
         <button 
