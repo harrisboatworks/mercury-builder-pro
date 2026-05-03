@@ -447,7 +447,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           } : {}}
           transition={{ duration: 0.4, ease: "easeOut" }}
           className={`
-            absolute left-4 top-1/2 -translate-y-1/2 transition-colors duration-300
+            absolute ${isDark ? 'left-5' : 'left-4'} top-1/2 -translate-y-1/2 transition-colors duration-300
             ${isAIQuery
               ? 'text-amber-500'
               : isDark
@@ -464,9 +464,9 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         
         {/* Static placeholder */}
         {!query && (
-          <div className="absolute left-12 top-1/2 -translate-y-1/2 pointer-events-none">
-            <span className={`text-[14px] font-normal ${isDark ? 'text-[#F5F1EA]/40' : 'text-repower-navy-900/40'}`}>
-              Find a motor
+          <div className={`absolute ${isDark ? 'left-14' : 'left-12'} top-1/2 -translate-y-1/2 pointer-events-none`}>
+            <span className={`${isDark ? 'text-[15px]' : 'text-[14px]'} font-normal ${isDark ? 'text-[#F5F1EA]/40' : 'text-repower-navy-900/40'}`}>
+              {isDark ? 'Search motors by HP, model, or feature…' : 'Find a motor'}
             </span>
           </div>
         )}
