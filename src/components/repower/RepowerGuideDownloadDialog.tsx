@@ -115,7 +115,7 @@ export function RepowerGuideDownloadDialog({ open, onOpenChange }: RepowerGuideD
       <p className="text-sm font-medium mb-2">This 15-page guide covers:</p>
       <ul className="space-y-1.5">
         {guideHighlights.map((item) => (
-          <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+          <li key={item} className="flex flex-row items-start gap-2 text-sm text-muted-foreground">
             <Check className="w-4 h-4 text-repower-gold flex-shrink-0" />
             {item}
           </li>

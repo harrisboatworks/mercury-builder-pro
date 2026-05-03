@@ -746,7 +746,7 @@ export default function UpdateMotorImages() {
                       <p className="font-medium mb-1">Updated Motors:</p>
                       <ul className="text-xs space-y-1 max-h-32 overflow-y-auto">
                         {publicResult.updatedMotors.map((motor: { id: string; display: string }, i: number) => (
-                          <li key={i} className="flex items-center gap-1">
+                          <li key={i} className="flex flex-row items-start gap-1">
                             <CheckCircle2 className="h-3 w-3 text-green-500" />
                             {motor.display || motor.id}
                           </li>
