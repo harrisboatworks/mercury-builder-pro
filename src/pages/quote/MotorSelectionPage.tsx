@@ -931,9 +931,9 @@ if (event.type === 'filter_motors') {
     return (
       <PageTransition>
         <QuoteLayout>
-          <div className="bg-stone-50 py-12">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
-              <div className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+          <div className="bg-repower-paper py-12">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-14">
+              <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
                 {Array.from({ length: 8 }).map((_, i) => (
                   <MotorCardSkeleton key={i} index={i} />
                 ))}
