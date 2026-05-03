@@ -38,7 +38,7 @@ export default defineConfig(({ mode }) => ({
   },
   optimizeDeps: {
     exclude: ['@react-pdf/renderer', '@react-pdf/pdfkit', 'pako'],
-    include: ['base64-js', 'unicode-trie'],
+    include: ['base64-js', 'unicode-trie', 'brotli/decompress.js'],
   },
   plugins: [
     react(),
