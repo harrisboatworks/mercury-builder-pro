@@ -93,9 +93,8 @@ export default function Index() {
   const goBuild = () => navigate('/quote/motor-selection');
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <RepowerLayout>
       <HomepageSEO />
-      <LuxuryHeader />
 
       {/* Resume-quote banner */}
       {hasInProgressQuote && (
@@ -115,134 +114,9 @@ export default function Index() {
       )}
 
       <main className="flex-1">
-        {/* HERO */}
-        <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background pointer-events-none" />
-          <div className="container mx-auto px-4 py-6 md:py-20 relative">
-            <div className="grid lg:grid-cols-2 gap-6 md:gap-10 lg:gap-14 items-center">
-              {/* Copy column */}
-              <div className="text-center lg:text-left">
-                <Badge variant="secondary" className="mb-3 md:mb-5 inline-flex items-center gap-1.5 px-3 py-1 text-xs md:text-sm">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  <span className="hidden md:inline">Ontario's Mercury Repower Centre · Mercury Platinum Dealer · Rice Lake</span>
-                  <span className="md:hidden">Ontario's Mercury Repower Centre · Rice Lake</span>
-                </Badge>
-
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-3 md:mb-5 leading-tight">
-                  Real Mercury Repower Prices.
-                  <br />
-                  <span className="text-primary">No Forms. No Games.</span>
-                </h1>
-
-                {/* Mobile subhead — short */}
-                <p className="md:hidden text-base text-muted-foreground mb-5 leading-relaxed">
-                  Ontario's Mercury Repower Centre on Rice Lake. Live CAD pricing. Pickup in Gores Landing, ON.
-                </p>
-                {/* Desktop/tablet subhead — full */}
-                <p className="hidden md:block hero-description text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
-                  Harris Boat Works is Ontario's Mercury Repower Centre — Mercury Marine Platinum Dealer,
-                  Mercury-only since 1965, family-owned since 1947. Build your live Mercury outboard quote
-                  in under 3 minutes. Every install lake-tested on Rice Lake. Pickup at Gores Landing, ON.
-                </p>
-
-                {/* Primary CTA + mobile subline */}
-                <div className="mb-3 md:mb-0">
-                  <Button
-                    size="lg"
-                    onClick={goBuild}
-                    className="gap-2 text-base px-8 h-12 w-full sm:w-auto"
-                  >
-                    Build Your Quote <ArrowRight className="h-5 w-5" />
-                  </Button>
-                  <p className="md:hidden text-xs text-muted-foreground mt-2">
-                    No forms. No sales calls until you're ready.
-                  </p>
-                </div>
-
-                {/* Mobile trust row — compact */}
-                <div className="md:hidden mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-primary" /> Mercury Platinum Dealer
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-primary" /> Family-owned since 1947
-                  </span>
-                  <GoogleRatingBadge variant="compact" />
-                </div>
-
-                {/* Mobile secondary CTA — below trust row */}
-                <div className="md:hidden mt-4 flex flex-col gap-2">
-                  {user ? (
-                    <Button size="lg" variant="outline" asChild className="text-base h-11 w-full">
-                      <Link to="/my-quotes">See Saved Quotes</Link>
-                    </Button>
-                  ) : (
-                    <Button size="lg" variant="outline" asChild className="text-base h-11 w-full">
-                      <a href="tel:+19053422153" className="gap-2 inline-flex items-center justify-center">
-                        <Phone className="h-4 w-4" /> (905) 342-2153
-                      </a>
-                    </Button>
-                  )}
-                </div>
-
-                {/* Desktop/tablet CTA cluster + trust row */}
-                <div className="hidden md:flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 mb-8 mt-5">
-                  {user && (
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      asChild
-                      className="text-base px-8 h-12 w-full sm:w-auto"
-                    >
-                      <Link to="/my-quotes">See Saved Quotes</Link>
-                    </Button>
-                  )}
-                  {!user && (
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      asChild
-                      className="text-base px-8 h-12 w-full sm:w-auto"
-                    >
-                      <a href="tel:+19053422153" className="gap-2 inline-flex items-center">
-                        <Phone className="h-4 w-4" /> (905) 342-2153
-                      </a>
-                    </Button>
-                  )}
-                </div>
-
-                <div className="hidden md:flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-sm text-muted-foreground">
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-primary" /> Mercury Platinum Dealer
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-primary" /> Family-owned since 1947
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <CheckCircle2 className="h-4 w-4 text-primary" /> Bonus warranty during current Mercury promotions
-                  </span>
-                  <GoogleRatingBadge variant="compact" />
-                </div>
-              </div>
-
-              {/* Hero image column */}
-              <div className="relative order-first lg:order-last">
-                <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl aspect-[16/10] md:aspect-[4/3] lg:aspect-[5/4] bg-muted">
-                  <img
-                    src={heroImage}
-                    alt="Mercury Pro XS outboard motor running on an Ontario lake at sunset"
-                    width={1920}
-                    height={1280}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    fetchPriority="high"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <HeroRepower />
+        <TrustStrip />
+        <RepowerMath />
         {/* HOW IT WORKS */}
         <section className="py-12 md:py-20 bg-muted/30">
           <div className="container mx-auto px-4">
