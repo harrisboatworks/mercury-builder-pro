@@ -267,14 +267,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Card className="p-8 border-gray-200 bg-white">
+      <Card className="p-8 border-repower-navy-900/10 bg-white">
         <div className="space-y-8">
           <div className="space-y-4">
             <div className="space-y-2">
-              <h2 className="text-3xl font-light tracking-wide text-gray-900">
+              <h2 className="text-3xl font-light tracking-wide text-repower-navy-900">
                 Trade-In Valuation
               </h2>
-              <p className="text-base font-normal text-gray-700">
+              <p className="text-base font-normal text-repower-navy-900/75">
                 Get an instant estimate for your current motor
               </p>
             </div>
@@ -282,7 +282,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
             
           {!standalone && (
           <div className="flex flex-col gap-4 mt-6">
-              <p className="text-lg font-light text-gray-900">Do you have a motor to trade?</p>
+              <p className="text-lg font-light text-repower-navy-900">Do you have a motor to trade?</p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* "No trade-in" card first */}
                 <motion.button
@@ -336,17 +336,17 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   aria-pressed={!tradeInInfo.hasTradeIn}
                   className={`relative p-6 border-2 rounded-sm transition-all duration-300 bg-white text-left group premium-lift ${
                     !tradeInInfo.hasTradeIn 
-                      ? 'border-gray-900 shadow-xl premium-selected' 
-                      : 'border-gray-300 hover:border-gray-900 hover:shadow-xl'
+                      ? 'border-repower-navy-900 shadow-xl premium-selected' 
+                      : 'border-repower-navy-900/20 hover:border-repower-navy-900 hover:shadow-xl'
                   }`}
                   type="button"
                 >
                   <ArrowRight className={`w-6 h-6 mb-3 transition-transform ${
-                    !tradeInInfo.hasTradeIn ? 'text-gray-900' : 'text-gray-400'
+                    !tradeInInfo.hasTradeIn ? 'text-repower-navy-900' : 'text-repower-navy-900/40'
                   }`} />
-                  <div className="font-light text-lg text-gray-900 tracking-wide">No trade-in</div>
-                  <div className="text-sm font-normal text-gray-700 mt-1">Skip and continue</div>
-                  <div className="text-xs font-normal text-gray-500 mt-2">Most customers skip this step</div>
+                  <div className="font-light text-lg text-repower-navy-900 tracking-wide">No trade-in</div>
+                  <div className="text-sm font-normal text-repower-navy-900/75 mt-1">Skip and continue</div>
+                  <div className="text-xs font-normal text-repower-navy-900/55 mt-2">Most customers skip this step</div>
                 </motion.button>
 
                 {/* "Yes" card second */}
@@ -372,16 +372,16 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   aria-pressed={tradeInInfo.hasTradeIn}
                   className={`relative p-6 border-2 rounded-sm transition-all duration-300 bg-white text-left group premium-lift ${
                     tradeInInfo.hasTradeIn 
-                      ? 'border-gray-900 shadow-xl premium-selected' 
-                      : 'border-gray-300 hover:border-gray-900 hover:shadow-xl'
+                      ? 'border-repower-navy-900 shadow-xl premium-selected' 
+                      : 'border-repower-navy-900/20 hover:border-repower-navy-900 hover:shadow-xl'
                   }`}
                   type="button"
                 >
                   <CheckCircle2 className={`w-6 h-6 mb-3 transition-transform ${
-                    tradeInInfo.hasTradeIn ? 'text-gray-900 animate-check-pop' : 'text-gray-400'
+                    tradeInInfo.hasTradeIn ? 'text-repower-navy-900 animate-check-pop' : 'text-repower-navy-900/40'
                   }`} />
-                  <div className="font-light text-lg text-gray-900 tracking-wide">Yes, I have a trade-in</div>
-                  <div className="text-sm font-normal text-gray-700 mt-1">We'll estimate your value instantly</div>
+                  <div className="font-light text-lg text-repower-navy-900 tracking-wide">Yes, I have a trade-in</div>
+                  <div className="text-sm font-normal text-repower-navy-900/75 mt-1">We'll estimate your value instantly</div>
                 </motion.button>
               </div>
             </div>
@@ -401,19 +401,19 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
               
               {/* Pre-filled notice */}
               {currentMotorBrand && currentMotorBrand !== 'No Current Motor' && (
-                <div className="bg-gray-50 border border-gray-200 rounded-sm p-4">
-                  <div className="flex items-center gap-2 text-gray-900">
+                <div className="bg-repower-navy-900/[0.04] border border-repower-navy-900/10 rounded-sm p-4">
+                  <div className="flex items-center gap-2 text-repower-navy-900">
                     <CheckCircle2 className="w-4 h-4" />
                     <span className="text-sm font-light">Pre-filled from your current motor details</span>
                   </div>
-                  <p className="text-xs font-normal text-gray-600 mt-1">You can adjust any details below if needed.</p>
+                  <p className="text-xs font-normal text-repower-navy-900/65 mt-1">You can adjust any details below if needed.</p>
                 </div>
               )}
               
               {/* Required fields: Brand, Year, HP, Engine Type */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="trade-brand" className="text-sm font-light tracking-wide text-gray-900">
+                  <Label htmlFor="trade-brand" className="text-sm font-light tracking-wide text-repower-navy-900">
                     Brand *
                   </Label>
                   <Select 
@@ -427,7 +427,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.brand 
                         ? 'border-red-500 ring-1 ring-red-500' 
-                        : 'border-gray-300'
+                        : 'border-repower-navy-900/20'
                     }`}>
                       <SelectValue placeholder="Select brand" />
                     </SelectTrigger>
@@ -443,7 +443,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-gray-900 inline-flex items-center gap-1.5">
+                  <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-repower-navy-900 inline-flex items-center gap-1.5">
                     Year *
                     <TooltipProvider delayDuration={150}>
                       <Tooltip>
@@ -485,7 +485,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.year 
                         ? 'border-red-500 ring-1 ring-red-500' 
-                        : 'border-gray-300'
+                        : 'border-repower-navy-900/20'
                     }`}>
                       <SelectValue placeholder="Select year" />
                     </SelectTrigger>
@@ -501,7 +501,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-gray-900">
+                  <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-repower-navy-900">
                     Model or HP *
                   </Label>
                   <Input
@@ -516,7 +516,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.horsepower 
                         ? 'border-red-500 ring-1 ring-red-500' 
-                        : 'border-gray-300'
+                        : 'border-repower-navy-900/20'
                     }`}
                   />
                   {showValidation && missingFields.horsepower && (
@@ -559,7 +559,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       if (overridden) {
                         return base === 'hp'
                           ? 'bg-primary/10 text-primary border border-primary/30'
-                          : 'bg-slate-100 text-slate-700 border border-slate-300';
+                          : 'bg-repower-navy-900/[0.06] text-repower-navy-900/75 border border-repower-navy-900/20';
                       }
                       if (conf === 'high') {
                         return base === 'hp'
@@ -574,9 +574,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     const prefix = (conf: Confidence, overridden: boolean) =>
                       overridden ? '' : conf === 'high' ? '' : conf === 'medium' ? '~ ' : '? ';
                     const badgeFor = (conf: Confidence, overridden: boolean) => {
-                      if (overridden) return { label: 'Manual', cls: 'bg-slate-100 text-slate-700 border-slate-300' };
-                      if (conf === 'high') return { label: 'High', cls: 'bg-emerald-100 text-emerald-700 border-emerald-200' };
-                      if (conf === 'medium') return { label: 'Medium', cls: 'bg-amber-100 text-amber-700 border-amber-200' };
+                      if (overridden) return { label: 'Manual', cls: 'bg-repower-navy-900/[0.06] text-repower-navy-900/75 border-repower-navy-900/20' };
+                      if (conf === 'high') return { label: 'High', cls: 'bg-repower-cream text-repower-mercury-red border-repower-navy-900/10' };
+                      if (conf === 'medium') return { label: 'Medium', cls: 'bg-repower-cream text-repower-gold border-repower-gold/30' };
                       if (conf === 'low') return { label: 'Low', cls: 'bg-rose-100 text-rose-700 border-rose-200' };
                       return null;
                     };
@@ -734,7 +734,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                           </div>
                         )}
                         {warnings.map((w, i) => (
-                          <div key={i} className="flex items-start gap-1.5 text-xs text-amber-700 font-light">
+                          <div key={i} className="flex items-start gap-1.5 text-xs text-repower-gold font-light">
                             <AlertTriangle className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden="true" />
                             <span>{w}</span>
                           </div>
@@ -762,7 +762,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
               {/* Condition Selection */}
               <div className="space-y-4">
-                <Label className="text-base font-light tracking-wide text-gray-900">
+                <Label className="text-base font-light tracking-wide text-repower-navy-900">
                   Motor Condition *
                 </Label>
                 <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 ${
@@ -775,8 +775,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       whileTap={{ scale: 0.98 }}
                       className={`cursor-pointer border-2 rounded-sm p-4 text-center transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5 ${
                         tradeInInfo.condition === option.value 
-                          ? 'border-gray-900 bg-gray-900 text-white shadow-lg ring-2 ring-gray-900 ring-offset-2' 
-                          : 'border-gray-300 hover:border-gray-900 hover:shadow-md'
+                          ? 'border-repower-navy-900 bg-repower-navy-900 text-white shadow-lg ring-2 ring-repower-navy-900 ring-offset-2' 
+                          : 'border-repower-navy-900/20 hover:border-repower-navy-900 hover:shadow-md'
                       }`}
                       onClick={() => {
                         triggerHaptic('light');
@@ -785,8 +785,8 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         onTradeInChange({ ...tradeInInfo, condition: option.value as any });
                       }}
                     >
-                      <div className={`font-light text-lg ${tradeInInfo.condition === option.value ? 'text-white' : 'text-gray-900'}`}>{option.label}</div>
-                      <div className={`text-xs font-normal mt-1 ${tradeInInfo.condition === option.value ? 'text-gray-300' : 'text-gray-600'}`}>{option.description}</div>
+                      <div className={`font-light text-lg ${tradeInInfo.condition === option.value ? 'text-white' : 'text-repower-navy-900'}`}>{option.label}</div>
+                      <div className={`text-xs font-normal mt-1 ${tradeInInfo.condition === option.value ? 'text-repower-cream/85' : 'text-repower-navy-900/65'}`}>{option.description}</div>
                     </motion.button>
                   ))}
                 </div>
@@ -797,21 +797,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
               {/* Collapsible optional fields */}
               <Collapsible open={moreDetailsOpen} onOpenChange={setMoreDetailsOpen}>
-                <CollapsibleTrigger className="flex items-center gap-2 text-sm font-light text-gray-600 hover:text-gray-900 transition-colors cursor-pointer">
+                <CollapsibleTrigger className="flex items-center gap-2 text-sm font-light text-repower-navy-900/65 hover:text-repower-navy-900 transition-colors cursor-pointer">
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${moreDetailsOpen ? 'rotate-180' : ''}`} />
                   Add more details for a better estimate
                 </CollapsibleTrigger>
                 <CollapsibleContent className="pt-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="trade-start-type" className="text-sm font-light tracking-wide text-gray-900">
+                      <Label htmlFor="trade-start-type" className="text-sm font-light tracking-wide text-repower-navy-900">
                         Start Type
                       </Label>
                       <Select 
                         value={tradeInInfo.startType || ''} 
                         onValueChange={(value) => onTradeInChange({ ...tradeInInfo, startType: value as TradeInInfo['startType'] })}
                       >
-                        <SelectTrigger className="min-h-[48px] rounded-sm font-light border-gray-300">
+                        <SelectTrigger className="min-h-[48px] rounded-sm font-light border-repower-navy-900/20">
                           <SelectValue placeholder="Manual (default)" />
                         </SelectTrigger>
                         <SelectContent>
@@ -822,7 +822,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="trade-hours" className="text-sm font-light tracking-wide text-gray-900">
+                      <Label htmlFor="trade-hours" className="text-sm font-light tracking-wide text-repower-navy-900">
                         Engine Hours
                       </Label>
                       <Input
@@ -833,13 +833,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         placeholder="e.g., 250"
                         min="0"
                         max="20000"
-                        className="min-h-[48px] rounded-sm border-gray-300 font-light"
+                        className="min-h-[48px] rounded-sm border-repower-navy-900/20 font-light"
                       />
-                      <p className="text-xs text-gray-400 font-light">Not sure? Leave blank, it's optional</p>
+                      <p className="text-xs text-repower-navy-900/40 font-light">Not sure? Leave blank, it's optional</p>
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="trade-serial" className="text-sm font-light tracking-wide text-gray-900">
+                      <Label htmlFor="trade-serial" className="text-sm font-light tracking-wide text-repower-navy-900">
                         Serial Number
                       </Label>
                       <Input
@@ -847,7 +847,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         value={tradeInInfo.serialNumber}
                         onChange={(e) => onTradeInChange({ ...tradeInInfo, serialNumber: e.target.value })}
                         placeholder="Motor serial number"
-                        className="min-h-[48px] rounded-sm border-gray-300 font-light"
+                        className="min-h-[48px] rounded-sm border-repower-navy-900/20 font-light"
                       />
                     </div>
                   </div>
@@ -868,7 +868,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
               {/* Loading indicator */}
               {isLoading && (
-                <div className="pt-4 flex items-center justify-center gap-3 text-gray-600">
+                <div className="pt-4 flex items-center justify-center gap-3 text-repower-navy-900/65">
                   <Loader2 className="w-5 h-5 animate-spin" />
                   <span className="text-lg font-light">Calculating your estimate...</span>
                 </div>
@@ -884,12 +884,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   <Card className="p-6 bg-green-50 border-green-200">
                     <div className="flex items-center gap-3 mb-4">
                       <CircleCheck className="w-6 h-6 text-green-600" />
-                      <h3 className="text-lg font-light text-gray-900">Your Estimated Trade Value</h3>
+                      <h3 className="text-lg font-light text-repower-navy-900">Your Estimated Trade Value</h3>
                       {/* Confidence badge */}
                       <span className={`ml-auto text-xs font-medium px-2 py-0.5 rounded-full ${
                         estimate.confidence === 'high' ? 'bg-green-200 text-green-800' :
-                        estimate.confidence === 'medium' ? 'bg-amber-200 text-amber-800' :
-                        'bg-gray-200 text-gray-600'
+                        estimate.confidence === 'medium' ? 'bg-repower-cream text-repower-gold' :
+                        'bg-repower-navy-900/[0.08] text-repower-navy-900/65'
                       }`}>
                         {estimate.confidence === 'high' ? 'High' : estimate.confidence === 'medium' ? 'Medium' : 'Low'} confidence
                       </span>
@@ -899,7 +899,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       <div className="text-4xl font-light text-green-700">
                         <AnimatedPrice value={medianValue} prefix="$" duration={0.8} />
                       </div>
-                      <div className="text-sm font-normal text-gray-700">
+                      <div className="text-sm font-normal text-repower-navy-900/75">
                         Range: ${Math.round(estimate.low).toLocaleString()}, ${Math.round(estimate.high).toLocaleString()}
                       </div>
                     </div>
@@ -907,7 +907,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     {/* HBW-specific extras, corrected private sale framing */}
                     {(estimate as HBWValuationResult).fromHBW && (estimate as HBWValuationResult).hstSavings > 0 && (
                       <div className="mt-4 space-y-3">
-                        <div className="text-sm font-light text-gray-700 bg-green-100 rounded-sm p-3 leading-relaxed">
+                        <div className="text-sm font-light text-repower-navy-900/75 bg-green-100 rounded-sm p-3 leading-relaxed">
                           {selectedMotorPrice ? (
                             <>
                               Private sale might get you <strong className="font-medium">${Math.round((estimate as HBWValuationResult).listingValue).toLocaleString()}</strong>, but you'd owe <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> more in HST on your new motor. Trading in puts <strong className="font-medium">${medianValue.toLocaleString()} + ${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()} in savings</strong> in your pocket.
@@ -922,20 +922,20 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     )}
 
                     {(estimate as any).penaltyMessage && (
-                      <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-sm">
+                      <div className="mt-4 p-3 bg-repower-cream border border-repower-gold/30 rounded-sm">
                         <div className="flex items-start gap-2">
-                          <AlertCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                          <p className="text-sm font-light text-amber-800">{(estimate as any).penaltyMessage}</p>
+                          <AlertCircle className="w-4 h-4 text-repower-gold mt-0.5 flex-shrink-0" />
+                          <p className="text-sm font-light text-repower-gold">{(estimate as any).penaltyMessage}</p>
                         </div>
                       </div>
                     )}
 
                     {/* Warning: trade-in exceeds motor price */}
                     {selectedMotorPrice && medianValue > selectedMotorPrice && (
-                      <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-sm">
+                      <div className="mt-4 p-3 bg-repower-cream border border-repower-gold/30 rounded-sm">
                         <div className="flex items-start gap-2">
-                          <AlertCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
-                          <p className="text-sm font-light text-amber-800">
+                          <AlertCircle className="w-4 h-4 text-repower-gold mt-0.5 flex-shrink-0" />
+                          <p className="text-sm font-light text-repower-gold">
                             Your trade-in value exceeds the cost of your selected motor. The credit will be capped at the motor price, no cash refunds on trade-ins.
                           </p>
                         </div>
@@ -958,7 +958,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         })}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-light text-gray-500 hover:text-gray-900 underline underline-offset-2 transition-colors"
+                        className="inline-flex items-center gap-1.5 text-sm font-light text-repower-navy-900/55 hover:text-repower-navy-900 underline underline-offset-2 transition-colors"
                       >
                         View detailed valuation report
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -966,9 +966,9 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </div>
                   )}
 
-                  <Alert className="border-blue-200 bg-blue-50">
-                    <Wrench className="w-4 h-4 text-blue-600" />
-                    <AlertDescription className="text-sm font-light text-blue-800">
+                  <Alert className="border-repower-navy-900/10 bg-repower-cream">
+                    <Wrench className="w-4 h-4 text-repower-mercury-red" />
+                    <AlertDescription className="text-sm font-light text-repower-navy-900/75">
                       Final trade value confirmed after in-person inspection. This estimate helps you plan your budget.
                     </AlertDescription>
                   </Alert>
