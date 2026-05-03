@@ -95,15 +95,15 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
       onClick={handleCardClick}
     >
       {/* Image Section */}
-      <div className="relative bg-white p-6 overflow-hidden">
+      <div className="relative p-6 overflow-hidden" style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}>
         {/* Shimmer loading overlay */}
         {!imageLoaded && (
-          <div className="absolute inset-0 bg-white animate-shimmer z-10" />
+          <div className="absolute inset-0 animate-shimmer z-10" style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }} />
         )}
         <img 
           src={heroImage} 
           alt={`${hp} HP Mercury Outboard`}
-          className={`h-48 md:h-72 w-full object-contain transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          className={`h-48 md:h-72 w-full object-contain mix-blend-multiply transition-all duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
           loading="lazy"
           onLoad={onImageLoad}
           style={{ transform: `scale(${imageScale})` }}
