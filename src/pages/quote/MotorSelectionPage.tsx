@@ -1062,15 +1062,13 @@ if (event.type === 'filter_motors') {
               </span>
             </div>
             <h1
-              className="font-display font-bold text-[40px] md:text-[56px] leading-[1.05] text-[#050E1C]"
+              className="font-display font-bold text-[40px] md:text-[56px] leading-[1.05] text-[#050E1C] mb-5"
               style={{ letterSpacing: '-0.035em' }}
             >
               Choose your power.
             </h1>
-            {/* Gold hairline accent */}
-            <span className="block mt-6 mb-6 h-px w-16 bg-[#C9A24A]" />
-            <p className="text-[18px] font-normal text-[#050E1C]/65 max-w-[60ch]">
-              {(finalFilteredMotors.length || processedMotors.length).toLocaleString()} motors in stock. Live pricing, transparent quotes, financing from $50/wk. Build yours in three minutes.
+            <p className="text-[18px] font-normal text-[#050E1C]/65 mb-10">
+              Live pricing. Real quotes. Three minutes.
             </p>
           </div>
         </div>
