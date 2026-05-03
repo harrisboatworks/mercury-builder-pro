@@ -148,8 +148,8 @@ export default function Repower() {
                   "You've outgrown your current boat",
                   'You want completely different features or layout',
                 ].map((item) => (
-                  <li key={item} className="flex gap-3 font-sans text-base text-repower-cream/65 leading-relaxed">
-                    <span className="text-repower-cream/40 mt-0.5">·</span>
+                  <li key={item} className="flex items-start gap-3 font-sans text-base text-repower-cream/65 leading-relaxed">
+                    <span aria-hidden="true" className="shrink-0 text-repower-cream/40 leading-relaxed">·</span>
                     <span>{item}</span>
                   </li>
                 ))}
