@@ -1,29 +1,32 @@
-# /repower Header Restyle
+## Problem
 
-Match the mockup's premium dark header on `/repower` only — without touching the shared `LuxuryHeader` used by every other page.
+At ~1024–1280px the desktop nav in `RepowerHeader` gets crowded:
+- "Trade-In" wraps to two lines
+- The Repower Center logo (now full-color) eats horizontal space, squeezing the 9 nav links + Build Quote + Sign In
+- Nav only appears at `lg` (1024px), but there isn't enough room until ~1280px
 
-## What changes
+## Fix (in `src/components/repower/RepowerHeader.tsx`)
 
-1. **Create `src/components/repower/RepowerHeader.tsx`**
-   - Fixed-position header, transparent over hero, fades to dark navy `#050E1C/92` with blur after 60px scroll.
-   - Left lockup: `harris-logo-white.png` + divider + `mercury-logo.png` (inverted to white) + small "Mercury Repower / Centre · Rice Lake" wordmark in cream + gold (matches mockup's logo-text block).
-   - Center: full nav row in cream text — Engines, Promotions, Repower, Trade-In, Financing, About, Blog, FAQ, Contact (collapses to hamburger under `lg`).
-   - Right: red "Build Quote" CTA (`#C8102E` → `#9A0C24` hover, uppercase tracked) + Sign In link (or user state) + mobile menu trigger.
-   - Reuses existing `HamburgerMenu` for mobile.
-   - Typography: Inter Tight for display elements, Inter for nav (already in use via `font-display` / `font-sans` tokens established in Phase 1).
+1. **Prevent label wrapping** on every nav `<Link>` — add `whitespace-nowrap`.
+2. **Tighten the logo lockup at mid sizes**:
+   - Repower Center logo: `h-7 md:h-8 lg:h-9 xl:h-10` (was up to `h-11`)
+   - Reduce gaps: `gap-2 lg:gap-3` instead of `gap-2 sm:gap-3 md:gap-4`
+   - Reduce left padding before Repower badge: `pl-2 lg:pl-3` (was up to `pl-4`)
+3. **Push nav to a higher breakpoint** so it only shows when it actually fits:
+   - Hide desktop nav until `xl` (1280px): `hidden xl:flex`
+   - Show hamburger below `xl`: `xl:hidden`
+   - Tighten nav gaps: `gap-5 2xl:gap-7`
+4. **Right cluster compaction**:
+   - Build Quote button: `px-4 py-2 text-[11px]` at base, `lg:px-5 lg:py-2.5 lg:text-xs`
+   - Sign In moves to `xl:inline-flex` (matches nav visibility)
+5. **Allow nav row to shrink gracefully**: add `min-w-0` to the logo Link container and `flex-1 justify-center` to the nav so it centers in remaining space.
 
-2. **Edit `src/components/repower/RepowerLayout.tsx`**
-   - Replace the imported `LuxuryHeader` with the new `RepowerHeader`.
-   - Remove the `<style>` injection that was hacking transparency onto the global header (no longer needed).
-   - Keep the scroll-state tracking off — the new header owns its own scroll behavior.
+## Result
 
-3. **No other pages affected.** `LuxuryHeader` continues to render on `/`, `/promotions`, etc.
-
-## Notes on hero offset
-
-`HeroRepower` is already `min-h-screen` with `flex items-center` and heavy top padding (`py-32 md:py-40`), so the fixed header sits cleanly over it without adding a top spacer.
+- 1024–1279px: clean header with logo lockup + Build Quote + hamburger (no cramped half-nav)
+- ≥1280px: full nav, no wrapping, balanced spacing
+- Logo lockup stays readable at all sizes
 
 ## Files
 
-- create: `src/components/repower/RepowerHeader.tsx`
-- edit:   `src/components/repower/RepowerLayout.tsx`
+- edit: `src/components/repower/RepowerHeader.tsx`
