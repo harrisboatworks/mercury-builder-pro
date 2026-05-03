@@ -957,25 +957,45 @@ if (event.type === 'filter_motors') {
 
         <VoiceStatusBanner />
         
-{/* Search Bar - Scrolls naturally with content */}
-        <div className="bg-stone-50 border-b border-gray-200">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-            <HybridMotorSearch
-              query={searchQuery}
-              onQueryChange={handleSearchChange}
-              motors={processedMotors}
-              onHpSelect={handleHpSuggestionSelect}
-              className="w-full"
-              filterSlot={
-                <ConfigFilterSheet
-                  motors={processedMotors}
-                  activeHpFilter={searchQuery}
-                  onHpFilterChange={handleHpFilterChange}
-                  filters={configFilters}
-                  onFilterChange={setConfigFilters}
-                />
-              }
-            />
+        {/* Page header */}
+        <div className="bg-repower-paper">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-10 md:pt-14 pb-2">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="block h-px w-6 bg-repower-mercury-red" />
+              <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-repower-mercury-red">
+                Mercury Outboards
+              </span>
+            </div>
+            <h1 className="font-display font-bold text-[28px] md:text-[36px] tracking-[-0.025em] leading-[1.05] text-repower-navy-900">
+              Every motor, transparently priced
+            </h1>
+            <p className="mt-3 text-[14px] text-repower-navy-900/55">
+              {(finalFilteredMotors.length || processedMotors.length).toLocaleString()} motors · Live pricing · Built &amp; quoted in 3 minutes
+            </p>
+          </div>
+        </div>
+
+        {/* Search Bar */}
+        <div className="bg-repower-paper">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-6 pb-4">
+            <div className="rounded-md bg-white border border-[rgba(10,22,40,0.10)] focus-within:border-repower-gold focus-within:shadow-[0_0_0_3px_rgba(201,162,74,0.15)] transition-all">
+              <HybridMotorSearch
+                query={searchQuery}
+                onQueryChange={handleSearchChange}
+                motors={processedMotors}
+                onHpSelect={handleHpSuggestionSelect}
+                className="w-full"
+                filterSlot={
+                  <ConfigFilterSheet
+                    motors={processedMotors}
+                    activeHpFilter={searchQuery}
+                    onHpFilterChange={handleHpFilterChange}
+                    filters={configFilters}
+                    onFilterChange={setConfigFilters}
+                  />
+                }
+              />
+            </div>
             
             <div className="flex items-center justify-between mt-3">
               {(searchQuery || configFilters) && (
@@ -983,8 +1003,8 @@ if (event.type === 'filter_motors') {
                   <span
                     className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
                       finalFilteredMotors.length > 0
-                        ? 'bg-primary/10 text-primary border border-primary/20'
-                        : 'bg-destructive/10 text-destructive border border-destructive/20'
+                        ? 'bg-repower-navy-900/5 text-repower-navy-900 border border-[rgba(10,22,40,0.10)]'
+                        : 'bg-repower-mercury-red/10 text-repower-mercury-red border border-repower-mercury-red/20'
                     }`}
                     aria-live="polite"
                     role="status"
@@ -994,7 +1014,7 @@ if (event.type === 'filter_motors') {
                       : 'No motors match'}
                   </span>
                   {configFilters && (
-                    <span className="text-xs text-luxury-gray">
+                    <span className="text-xs text-repower-navy-900/55">
                       Filtered by: {[
                         configFilters.inStock && 'in stock',
                         configFilters.startType,
