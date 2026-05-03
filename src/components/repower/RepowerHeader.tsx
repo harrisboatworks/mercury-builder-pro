@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, ChevronRight } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo-white.png';
-import mercuryLogo from '@/assets/mercury-logo.png';
+import mercuryLogo from '@/assets/mercury-logo-white.png';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { RepowerMobileMenu } from './RepowerMobileMenu';
 
@@ -50,7 +50,6 @@ export function RepowerHeader() {
               src={mercuryLogo}
               alt="Mercury Marine"
               className="hidden sm:block h-6 md:h-7 w-auto shrink-0"
-              style={{ filter: 'brightness(0) invert(1)' }}
             />
             <div className="flex items-center pl-2 sm:pl-3 md:pl-4 border-l border-[#F5F1EA]/15 shrink-0">
               <img
