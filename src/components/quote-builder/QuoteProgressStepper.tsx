@@ -144,7 +144,7 @@ export const QuoteProgressStepper = () => {
           </div>
           <div className="w-full h-[2px] bg-repower-navy-900/10 overflow-hidden">
             <div
-              className="h-full bg-repower-navy-900 transition-all duration-300"
+              className="h-full bg-repower-gold transition-all duration-300"
               style={{ width: `${progressPct}%` }}
             />
           </div>

@@ -36,7 +36,7 @@ export function LineItemRow({
         <div className={cn(
           "text-sm",
           isTotal ? "text-primary font-semibold" : "text-foreground",
-          isDiscount && "text-emerald-600 dark:text-emerald-400"
+          isDiscount && "text-repower-mercury-red"
         )}>
           {label}
         </div>
@@ -49,7 +49,7 @@ export function LineItemRow({
       <div className={cn(
         "text-right font-medium tabular-nums",
         isTotal ? "text-lg font-semibold text-primary" : "text-foreground",
-        isDiscount ? "text-emerald-600 dark:text-emerald-400" : "text-foreground"
+        isDiscount ? "text-repower-mercury-red" : "text-foreground"
       )}>
         {isDiscount && "−"}{money(amount)}
       </div>

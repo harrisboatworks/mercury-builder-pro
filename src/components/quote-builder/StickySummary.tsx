@@ -178,7 +178,7 @@ export default function StickySummary({
                 </div>
                 <div className="mt-1 text-sm text-slate-700 dark:text-slate-300">
                   Upgrade to <span className="font-semibold">{upgradeToLabel}</span> for just{' '}
-                  <span className="font-semibold text-emerald-600 dark:text-emerald-400">
+                  <span className="font-semibold text-repower-mercury-red">
                     +{money(Math.round(upgradeCostDelta))}/mo
                   </span>
                 </div>
