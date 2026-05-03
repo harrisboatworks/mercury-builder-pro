@@ -1081,13 +1081,13 @@ if (event.type === 'filter_motors') {
           />
         )}
 
-        <div className="bg-gradient-to-b from-stone-50 to-white py-16 motor-grid-section">
+        <div className="bg-repower-paper py-10 md:py-14 motor-grid-section">
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Motors Grid - Expert View Only */}
+        <div className="max-w-[1400px] mx-auto px-6 md:px-14">
+          {/* Motors Grid */}
           {finalFilteredMotors.length > 0 ? (
             <motion.div 
-              className="grid gap-8 sm:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+              className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
               initial={hasInitiallyLoaded ? false : "hidden"}
               animate="visible"
               variants={{
