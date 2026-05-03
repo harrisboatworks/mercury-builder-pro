@@ -57,6 +57,7 @@ export function RepowerHeader() {
                 src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
                 alt="Mercury Certified Repower Centre"
                 className="h-7 md:h-10 lg:h-11 w-auto"
+                style={{ filter: 'brightness(0) invert(1)' }}
               />
             </div>
           </Link>
