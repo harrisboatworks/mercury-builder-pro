@@ -19,7 +19,7 @@ const NAV_LINKS = [
   { to: '/contact', label: 'Contact' },
 ];
 
-export function RepowerHeader() {
+export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
@@ -27,18 +27,21 @@ export function RepowerHeader() {
   const { user, signOut } = useAuth();
 
   useEffect(() => {
+    if (solid) return;
     const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [solid]);
+
+  const isSolid = solid || scrolled;
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-[#050E1C]/95 backdrop-blur-xl border-b border-[#F5F1EA]/10 py-3'
+          isSolid
+            ? 'bg-[#050E1C] border-b border-[#F5F1EA]/10 py-3'
             : 'bg-gradient-to-b from-[#050E1C]/65 to-transparent py-5'
         }`}
       >
