@@ -71,6 +71,7 @@ interface HybridMotorSearchProps {
   onHpSelect: (hp: number) => void;
   className?: string;
   filterSlot?: React.ReactNode;
+  variant?: 'light' | 'dark';
 }
 
 const RECENT_SEARCHES_KEY = 'motor-search-recent';
@@ -120,8 +121,10 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   motors,
   onHpSelect,
   className = '',
-  filterSlot
+  filterSlot,
+  variant = 'light',
 }) => {
+  const isDark = variant === 'dark';
   const [isFocused, setIsFocused] = useState(false);
   const [showHpSuggestions, setShowHpSuggestions] = useState(false);
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(0);
@@ -546,7 +549,13 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           transition={{ duration: 0.4, ease: "easeOut" }}
           className={`
             absolute left-5 top-1/2 -translate-y-1/2 transition-colors duration-300
-            ${isListening ? 'text-red-500' : isAIQuery ? 'text-amber-500' : 'text-gray-400'}
+            ${isListening
+              ? 'text-red-500'
+              : isAIQuery
+                ? 'text-amber-500'
+                : isDark
+                  ? (isFocused ? 'text-[#F5F1EA]' : 'text-[#F5F1EA]/50')
+                  : 'text-gray-400'}
           `}
         >
           {isListening ? (
@@ -566,7 +575,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         {/* Static placeholder */}
         {!query && !isListening && (
           <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none">
-            <span className="text-[15px] font-normal text-repower-navy-900/40">
+            <span className={`text-[15px] font-normal ${isDark ? 'text-[#F5F1EA]/40' : 'text-repower-navy-900/40'}`}>
               Search motors by HP, model, or feature…
             </span>
           </div>
@@ -598,16 +607,27 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           onBlur={handleBlur}
           onKeyDown={handleKeyDownWithSave}
           className={`
-            w-full h-16 pl-14 pr-12 text-base font-light tracking-wide rounded-sm
-            bg-white text-gray-900
+            w-full h-16 pl-14 pr-12 text-[15px] font-light tracking-wide rounded-md
             focus:outline-none transition-all duration-300
-            ${isListening
-              ? 'border-2 border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]'
-              : isAIQuery 
-                ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]' 
-                : isFocused
-                  ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
-                  : 'border border-gray-200 hover:border-gray-300'
+            ${isDark
+              ? `bg-[#0A1628] text-[#F5F1EA] caret-[#C9A24A] ${
+                  isListening
+                    ? 'border-2 border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.15)]'
+                    : isAIQuery
+                      ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.15)]'
+                      : isFocused
+                        ? 'border border-[#C9A24A] bg-[#122039] shadow-[0_0_0_3px_rgba(201,162,74,0.20)]'
+                        : 'border border-[rgba(201,162,74,0.20)] hover:border-[rgba(201,162,74,0.40)]'
+                }`
+              : `bg-white text-gray-900 ${
+                  isListening
+                    ? 'border-2 border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]'
+                    : isAIQuery
+                      ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]'
+                      : isFocused
+                        ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
+                        : 'border border-gray-200 hover:border-gray-300'
+                }`
             }
           `}
         />
@@ -635,7 +655,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
               {speechSupported && (
                 <button
                   onClick={toggleVoiceSearch}
-                  className="md:hidden p-2 text-gray-400 hover:text-gray-600 transition-colors"
+                  className={`md:hidden p-2 transition-colors ${isDark ? 'text-[#F5F1EA]/50 hover:text-[#F5F1EA]' : 'text-gray-400 hover:text-gray-600'}`}
                   aria-label="Voice search"
                 >
                   <Mic className="w-5 h-5" />
@@ -644,10 +664,10 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
               
               {/* Keyboard Shortcut - Desktop Only */}
               <div className="hidden md:flex items-center gap-1.5">
-                <kbd className="px-2 py-1 text-xs font-mono bg-gray-100 border border-gray-200 rounded text-gray-500 shadow-sm">
+                <kbd className={`px-2 py-1 text-xs font-mono rounded shadow-sm ${isDark ? 'bg-[#F5F1EA]/5 border border-[#F5F1EA]/15 text-[#F5F1EA]/60' : 'bg-gray-100 border border-gray-200 text-gray-500'}`}>
                   /
                 </kbd>
-                <span className="text-xs text-gray-400 font-light">to search</span>
+                <span className={`text-xs font-light ${isDark ? 'text-[#F5F1EA]/50' : 'text-gray-400'}`}>to search</span>
               </div>
             </motion.div>
           )}

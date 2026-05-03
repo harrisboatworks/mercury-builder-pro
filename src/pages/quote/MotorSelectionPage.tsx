@@ -1043,35 +1043,35 @@ if (event.type === 'filter_motors') {
           </div>
         </div>
 
-        {/* Sticky Search Bar */}
-        <div className="sticky top-[64px] lg:top-[72px] z-40 bg-[rgba(250,248,244,0.85)] supports-[backdrop-filter]:backdrop-blur-xl border-b border-[rgba(10,22,40,0.08)]">
+        {/* Sticky Search Bar — dark variant, merges with navy header */}
+        <div className="sticky top-[64px] lg:top-[72px] z-40 bg-[rgba(10,22,40,0.85)] supports-[backdrop-filter]:backdrop-blur-xl border-b border-[rgba(201,162,74,0.12)]">
           <div className="max-w-[1400px] mx-auto px-6 md:px-14 py-3 md:py-4">
-            <div className="rounded-md bg-white border border-[rgba(10,22,40,0.10)] focus-within:border-[#C9A24A] focus-within:shadow-[0_0_0_3px_rgba(201,162,74,0.15)] transition-all">
-              <HybridMotorSearch
-                query={searchQuery}
-                onQueryChange={handleSearchChange}
-                motors={processedMotors}
-                onHpSelect={handleHpSuggestionSelect}
-                className="w-full"
-                filterSlot={
-                  <ConfigFilterSheet
-                    motors={processedMotors}
-                    activeHpFilter={searchQuery}
-                    onHpFilterChange={handleHpFilterChange}
-                    filters={configFilters}
-                    onFilterChange={setConfigFilters}
-                  />
-                }
-              />
-            </div>
+            <HybridMotorSearch
+              query={searchQuery}
+              onQueryChange={handleSearchChange}
+              motors={processedMotors}
+              onHpSelect={handleHpSuggestionSelect}
+              className="w-full"
+              variant="dark"
+              filterSlot={
+                <ConfigFilterSheet
+                  motors={processedMotors}
+                  activeHpFilter={searchQuery}
+                  onHpFilterChange={handleHpFilterChange}
+                  filters={configFilters}
+                  onFilterChange={setConfigFilters}
+                  className="bg-[#0A1628] border border-[rgba(201,162,74,0.20)] text-[#F5F1EA]/70 hover:text-[#F5F1EA] hover:border-[#C9A24A] hover:bg-[#122039]"
+                />
+              }
+            />
 
             {(searchQuery || configFilters) && (
               <div className="flex items-center gap-2 flex-wrap mt-3">
                 <span
                   className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
                     finalFilteredMotors.length > 0
-                      ? 'bg-[#050E1C]/5 text-[#050E1C] border border-[rgba(10,22,40,0.10)]'
-                      : 'bg-[#C8102E]/10 text-[#C8102E] border border-[#C8102E]/20'
+                      ? 'bg-[#F5F1EA]/10 text-[#F5F1EA] border border-[rgba(201,162,74,0.20)]'
+                      : 'bg-[#C8102E]/15 text-[#F5F1EA] border border-[#C8102E]/40'
                   }`}
                   aria-live="polite"
                   role="status"
@@ -1081,7 +1081,7 @@ if (event.type === 'filter_motors') {
                     : 'No motors match'}
                 </span>
                 {configFilters && (
-                  <span className="text-xs text-[#050E1C]/55">
+                  <span className="text-xs text-[#F5F1EA]/60">
                     Filtered by: {[
                       configFilters.inStock && 'in stock',
                       configFilters.startType,
