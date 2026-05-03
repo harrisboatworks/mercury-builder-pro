@@ -655,7 +655,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
               {speechSupported && (
                 <button
                   onClick={toggleVoiceSearch}
-                  className="md:hidden p-2 text-gray-400 hover:text-gray-600 transition-colors"
+                  className={`md:hidden p-2 transition-colors ${isDark ? 'text-[#F5F1EA]/50 hover:text-[#F5F1EA]' : 'text-gray-400 hover:text-gray-600'}`}
                   aria-label="Voice search"
                 >
                   <Mic className="w-5 h-5" />
@@ -664,10 +664,10 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
               
               {/* Keyboard Shortcut - Desktop Only */}
               <div className="hidden md:flex items-center gap-1.5">
-                <kbd className="px-2 py-1 text-xs font-mono bg-gray-100 border border-gray-200 rounded text-gray-500 shadow-sm">
+                <kbd className={`px-2 py-1 text-xs font-mono rounded shadow-sm ${isDark ? 'bg-[#F5F1EA]/5 border border-[#F5F1EA]/15 text-[#F5F1EA]/60' : 'bg-gray-100 border border-gray-200 text-gray-500'}`}>
                   /
                 </kbd>
-                <span className="text-xs text-gray-400 font-light">to search</span>
+                <span className={`text-xs font-light ${isDark ? 'text-[#F5F1EA]/50' : 'text-gray-400'}`}>to search</span>
               </div>
             </motion.div>
           )}
