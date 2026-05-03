@@ -129,25 +129,18 @@ export default function StickySummary({
         </div>
 
 
-        <div className="mt-1 text-sm text-muted-foreground">
-          {monthly != null && (
-            <>From <span className="font-semibold text-foreground">{money(Math.round(monthly))}/mo</span> • </>
-          )}
-          You save <span className="font-semibold text-foreground">{money(totalSavings)}</span>
-        </div>
-
         {typeof coverageYears === "number" && (
-          <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Coverage: <span className="font-medium">{coverageYears} years total</span>
+          <div className="mt-2 font-sans text-[14px] text-repower-navy-900/70">
+            Coverage: <span className="font-medium text-repower-navy-900">{coverageYears} years total</span>
           </div>
         )}
         {typeof monthlyDelta === "number" && monthlyDelta > 0 && (
-          <div className="mt-1 text-sm text-slate-700 dark:text-slate-300">
+          <div className="mt-1 font-sans text-[13px] text-repower-navy-900/70">
             +{money(Math.round(monthlyDelta))}/mo for Extended Warranty
           </div>
         )}
         {promoWarrantyYears ? (
-          <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
+          <div className="mt-1 font-sans text-[12px] text-repower-mercury-red">
             Includes +{promoWarrantyYears} yrs promo warranty
           </div>
         ) : null}
