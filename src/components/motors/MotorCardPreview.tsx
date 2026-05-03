@@ -504,16 +504,21 @@ function MotorCardPreviewInner({
                 )}
               </div>
               
-              {/* Top-left tag (sale or status — sale wins) */}
-              {showSaleTag ? (
-                <div className="absolute top-[14px] left-[14px] bg-repower-mercury-red text-white text-[10px] font-bold uppercase tracking-[0.14em] leading-none px-[11px] py-[6px] rounded-[4px]">
-                  ${saleAmount.toLocaleString()} Off
-                </div>
-              ) : popularityType ? (
+              {/* Top-left tag — STATUS only (Best Seller / Popular / New). Sale state is communicated typographically in the price block, not as a flashy pill. */}
+              {popularityType ? (
                 <div className="absolute top-[14px] left-[14px]">
                   <PopularityBadge type={popularityType} />
                 </div>
               ) : null}
+
+              {/* Quiet sale indicator — single 6px gold dot, bottom-right of image area */}
+              {showSaleTag && (
+                <div
+                  className="absolute bottom-[14px] right-[44px] w-[6px] h-[6px] rounded-full"
+                  style={{ backgroundColor: '#C9A24A' }}
+                  aria-label="On sale"
+                />
+              )}
               
               {/* HP Badge - top-right */}
               {hpNum && (
@@ -554,9 +559,9 @@ function MotorCardPreviewInner({
             </div>
           
           {/* Content Section */}
-          <div className="p-6 space-y-0">
+          <div className="p-[18px] md:p-6 space-y-0">
             {/* Title */}
-            <h3 className="font-display font-semibold text-[22px] tracking-[-0.02em] leading-[1.15] text-repower-navy-900">
+            <h3 className="font-display font-semibold text-[19px] md:text-[22px] tracking-[-0.02em] leading-[1.15] text-repower-navy-900">
               {formatTitle(title)}
             </h3>
             
@@ -568,7 +573,7 @@ function MotorCardPreviewInner({
             )}
             
             {/* Specs line */}
-            <p className="mt-[14px] text-[13.5px] font-normal leading-[1.45] text-repower-navy-900/65 min-h-[38px]">
+            <p className="mt-[14px] text-[13px] md:text-[13.5px] font-normal leading-[1.45] text-repower-navy-900/65 min-h-[38px]">
               {specsParts.length > 0 ? specsParts.map((part, i) => (
                 <React.Fragment key={i}>
                   {i > 0 && <span className="text-repower-navy-900/30 mx-[6px]">·</span>}
@@ -582,7 +587,7 @@ function MotorCardPreviewInner({
               <p className="text-[13px] font-normal leading-[18px] h-[18px] text-repower-navy-900/40 line-through">
                 {dp.displayMsrp ? `$${dp.displayMsrp.toLocaleString()}` : '\u00A0'}
               </p>
-              <p className="font-display font-bold text-[32px] tracking-[-0.025em] leading-none mt-1 text-repower-navy-900">
+              <p className="font-display font-bold text-[28px] md:text-[32px] tracking-[-0.025em] leading-none mt-1 text-repower-navy-900">
                 {dp.callForPrice ? 'Call for Price' : `$${(dp.displayPrice ?? 0).toLocaleString()}`}
               </p>
               <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.18em] text-repower-mercury-red leading-none h-[14px]">

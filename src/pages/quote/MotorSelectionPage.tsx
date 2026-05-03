@@ -99,9 +99,9 @@ function PromoBannerConditional() {
         </span>
         {/* Mobile row 2 / desktop inline: date + learn more */}
         <div className="flex items-center basis-full md:basis-auto md:flex-1 md:contents">
-          {/* Date */}
+          {/* Date — hidden on the smallest viewports to keep the strip to one line */}
           <span
-            className="text-repower-cream/60 font-normal whitespace-nowrap truncate md:min-w-0 md:flex-shrink ml-12 md:ml-0"
+            className="hidden min-[480px]:inline text-repower-cream/60 font-normal whitespace-nowrap truncate md:min-w-0 md:flex-shrink ml-12 md:ml-0"
             style={{ fontSize: 13 }}
           >
             {endLabel}
@@ -1054,7 +1054,7 @@ if (event.type === 'filter_motors') {
         
         {/* Page header */}
         <div className="bg-[#FAF8F4]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-14 md:pt-16 pb-6 md:pb-8">
+          <div className="max-w-[1400px] mx-auto px-5 md:px-14 py-8 md:pt-16 md:pb-8">
             <div className="flex items-center gap-3 mb-3">
               <span className="block h-px w-6 bg-[#C8102E]" />
               <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-[#C8102E]">
