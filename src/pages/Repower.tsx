@@ -345,25 +345,25 @@ export default function Repower() {
       <WhyHarrisRepower />
 
       {/* Service Area */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-[#0A1828] text-[#F5F1EA]">
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+          <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 inline-flex items-center gap-3">
+            <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
             Service Area
           </p>
           <h2
-            className="font-display font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05] mb-6"
-            style={{ letterSpacing: '-0.03em' }}
+            className="font-display font-bold text-[clamp(36px,4.5vw,64px)] tracking-[-0.03em] leading-[1.05] mb-6"
           >
-            Serving Ontario <em className="not-italic italic text-[#C8102E]">boaters.</em>
+            Serving Ontario <em className="not-italic italic text-repower-mercury-red">boaters.</em>
           </h2>
-          <p className="font-sans font-light text-lg text-[#F5F1EA]/70 mb-10 leading-relaxed max-w-2xl mx-auto">
+          <p className="font-sans text-[17px] md:text-[18px] text-repower-navy-900/65 mb-10 leading-relaxed max-w-2xl mx-auto">
             Located in Gores Landing with our own private boat launch on Rice Lake.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {['Rice Lake', 'Kawarthas', 'Peterborough', 'Cobourg', 'Port Hope', 'Northumberland', 'Durham', 'GTA', 'Toronto'].map((area) => (
               <span
                 key={area}
-                className="border border-[#F5F1EA]/20 text-[#F5F1EA]/80 px-4 py-2 rounded font-sans text-xs uppercase tracking-[0.18em]"
+                className="border border-repower-navy-900/15 text-repower-navy-900/75 px-4 py-2 rounded font-sans text-xs uppercase tracking-[0.18em]"
               >
                 {area}
               </span>
@@ -373,7 +373,7 @@ export default function Repower() {
             href="https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 border border-[#F5F1EA]/30 text-[#F5F1EA] px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-repower-cream/5 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 border border-repower-navy-900/30 text-repower-navy-900 px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-repower-navy-900/[0.03] transition-all duration-300"
           >
             <MapPin className="w-4 h-4" />
             Get Directions
@@ -382,43 +382,42 @@ export default function Repower() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-[#050E1C] text-[#F5F1EA]">
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-navy-900 text-repower-cream">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+          <div className="max-w-3xl mb-14 md:mb-20">
+            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+              <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               Customer Stories
             </p>
             <h2
-              className="font-display font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05] mb-4"
-              style={{ letterSpacing: '-0.03em' }}
+              className="font-display font-bold text-[clamp(36px,4.5vw,64px)] tracking-[-0.03em] leading-[1.05] mb-4"
             >
-              What customers <em className="not-italic italic text-[#C8102E]">say.</em>
+              What customers <em className="not-italic italic text-repower-mercury-red">say.</em>
             </h2>
-            <p className="font-sans text-base text-[#F5F1EA]/65">
-              <span className="font-medium text-[#F5F1EA]">{reviewCount}+</span> five-star reviews from Ontario boaters
+            <p className="font-sans text-base text-repower-cream/65">
+              <span className="font-medium text-repower-cream">{reviewCount}+</span> five-star reviews from Ontario boaters
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {dailyTestimonials.map((testimonial, index) => (
-              <div key={index} className="border border-[#F5F1EA]/10 bg-repower-cream/[0.02] rounded p-8">
+              <div key={index} className="border border-repower-cream/10 bg-repower-cream/[0.03] rounded p-8">
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#C9A24A] text-[#C9A24A]" />
+                    <Star key={i} className="w-4 h-4 fill-repower-gold text-repower-gold" />
                   ))}
                 </div>
-                <p className="font-display text-lg text-[#F5F1EA] mb-6 leading-relaxed italic" style={{ letterSpacing: '-0.01em' }}>
+                <p className="font-display text-lg text-repower-cream mb-6 leading-relaxed italic tracking-[-0.01em]">
                   "{testimonial.quote}"
                 </p>
-                <p className="font-sans text-xs uppercase tracking-[0.18em] text-[#F5F1EA]/55">
-                  <span className="text-[#C9A24A]">{testimonial.name}</span> · {testimonial.location}
+                <p className="font-sans text-xs uppercase tracking-[0.18em] text-repower-cream/55">
+                  <span className="text-repower-gold">{testimonial.name}</span> · {testimonial.location}
                 </p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
       {/* Final CTA, restyled */}
       <FinalCTARepower />
     </RepowerLayout>
