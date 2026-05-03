@@ -560,9 +560,9 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         )}
         </div>
 
-        {/* Filter Slot - light variant: tight to the right of input, matching height */}
+        {/* Filter Slot - light variant: tight to the right of input */}
         {!isDark && filterSlot && (
-          <div className="flex items-center [&>*]:h-11 [&>*]:md:h-12 [&>*]:w-11 [&>*]:md:w-12">
+          <div className="shrink-0 flex items-center">
             {filterSlot}
           </div>
         )}

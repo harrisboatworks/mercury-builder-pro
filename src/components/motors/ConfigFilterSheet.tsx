@@ -194,7 +194,7 @@ export function ConfigFilterSheet({
         <Button 
           variant="outline" 
           size="icon"
-          className={cn("h-10 w-10 shrink-0", className)}
+          className={cn("h-11 w-11 md:h-12 md:w-12 shrink-0", className)}
         >
           <SlidersHorizontal className="h-4 w-4" />
           {activeCount > 0 && (
