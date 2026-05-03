@@ -11,7 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/components/auth/AuthProvider';
 import { supabase } from '@/integrations/supabase/client';
 import { contactInfoSchema, sanitizeInput, formatPhoneNumber } from '@/lib/validation';
-import { ArrowLeft, Calendar, Download, Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Calendar, Download, Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
 import { QuoteData } from '../QuoteBuilder';
 import { computeTotals } from '@/lib/finance';
 import { z } from 'zod';
