@@ -39,7 +39,7 @@ export default function MercuryDealerCanadaFAQ() {
             Why Buy from Harris Boat Works
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            12 trust questions about Harris Boat Works — Mercury Marine Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.
+            12 trust questions about Harris Boat Works, Mercury Marine Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           {/* Trust badges */}

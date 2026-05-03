@@ -13,8 +13,8 @@ export default function MandarinLanding() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/zh#webpage`,
         "url": `${SITE_URL}/zh`,
-        "name": "欢迎来到Harris Boat Works — 安大略省Mercury白金级授权经销商",
-        "description": "Harris Boat Works — 安大略省Mercury Marine白金级授权经销商。在线透明报价，无需电话谈价。服务GTA华人船主。",
+        "name": "欢迎来到Harris Boat Works, 安大略省Mercury白金级授权经销商",
+        "description": "Harris Boat Works, 安大略省Mercury Marine白金级授权经销商。在线透明报价，无需电话谈价。服务GTA华人船主。",
         "inLanguage": "zh-Hans",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
@@ -79,12 +79,12 @@ export default function MandarinLanding() {
     <div className="min-h-screen bg-background" lang="zh-Hans">
       <Helmet>
         <title>Mercury水星舷外机经销商 | Harris Boat Works 安大略省</title>
-        <meta name="description" content="Harris Boat Works — 安大略省Mercury Marine白金级授权经销商。在线透明报价，无需电话谈价。服务大多伦多地区（GTA）华人船主。" />
+        <meta name="description" content="Harris Boat Works, 安大略省Mercury Marine白金级授权经销商。在线透明报价，无需电话谈价。服务大多伦多地区（GTA）华人船主。" />
         <link rel="canonical" href={`${SITE_URL}/zh`} />
         <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
         <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
         <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
-        <meta property="og:title" content="欢迎来到Harris Boat Works — Mercury白金级授权经销商" />
+        <meta property="og:title" content="欢迎来到Harris Boat Works, Mercury白金级授权经销商" />
         <meta property="og:description" content="安大略省Mercury Marine白金级授权经销商。在线透明报价。" />
         <meta property="og:url" content={`${SITE_URL}/zh`} />
         <meta property="og:locale" content="zh_CN" />
@@ -212,7 +212,7 @@ export default function MandarinLanding() {
               <div>
                 <h3 className="font-medium text-foreground">📞 电话</h3>
                 <p className="text-muted-foreground text-sm">
-                  905-342-2153 — 我们会尽量放慢语速，耐心沟通。
+                  905-342-2153, 我们会尽量放慢语速，耐心沟通。
                 </p>
               </div>
             </div>

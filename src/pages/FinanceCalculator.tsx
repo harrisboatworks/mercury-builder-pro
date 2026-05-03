@@ -28,7 +28,7 @@ const STEPS = [
 ];
 
 const BENEFITS = [
-  { icon: Calendar, title: 'Flexible Terms', desc: '36 to 180 months — find the payment that fits your budget.' },
+  { icon: Calendar, title: 'Flexible Terms', desc: '36 to 180 months, find the payment that fits your budget.' },
   { icon: Percent, title: 'Competitive Rates', desc: 'Tiered rates starting at 7.99% APR, with promotional rates when available.' },
   { icon: CreditCard, title: 'Payment Options', desc: 'Choose weekly, bi-weekly, or monthly payments.' },
   { icon: ShieldCheck, title: 'No Early Payoff Penalty', desc: 'Pay off your motor anytime with zero extra fees.' },
@@ -39,7 +39,7 @@ const FAQ_ITEMS = [
   { q: 'What documents do I need to apply?', a: 'A valid government-issued ID, proof of income (recent pay stubs or tax returns), and proof of address. The application itself takes about 5 minutes.' },
   { q: 'How long does approval take?', a: 'Most applications receive a decision within 1–2 business days. Some are approved same-day.' },
   { q: "What's the minimum amount for financing?", a: 'Financing is available on purchases of $5,000 or more. For smaller purchases, we recommend our cash rebate options when available.' },
-  { q: 'Can I pay off my loan early?', a: 'Absolutely. There are no prepayment penalties — pay off your balance anytime without extra fees.' },
+  { q: 'Can I pay off my loan early?', a: 'Absolutely. There are no prepayment penalties, pay off your balance anytime without extra fees.' },
   { q: "What's included in the financed amount?", a: 'The financed total includes the motor price, 13% HST, and a $299 finance administration fee. Your down payment and any trade-in value are subtracted before calculating payments.' },
 ];
 
@@ -400,7 +400,7 @@ export default function FinanceCalculator() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div>
             <h2 className="text-2xl font-bold mb-1">Ready to Get Started?</h2>
-            <p className="text-primary-foreground/80">Apply online or give us a call — we're here to help.</p>
+            <p className="text-primary-foreground/80">Apply online or give us a call, we're here to help.</p>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-3">
             <Button size="lg" variant="secondary" onClick={handleApplyForFinancing}>

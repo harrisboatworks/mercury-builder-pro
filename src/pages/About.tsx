@@ -69,7 +69,7 @@ const services = [
 const faqs = [
   {
     question: "How long has Harris Boat Works been in business?",
-    answer: "Harris Boat Works was founded in 1947, making us a family-owned business serving Ontario boaters for over 79 years. We've been an authorized Mercury Marine dealer since 1965 — over 60 years of Mercury expertise."
+    answer: "Harris Boat Works was founded in 1947, making us a family-owned business serving Ontario boaters for over 79 years. We've been an authorized Mercury Marine dealer since 1965, over 60 years of Mercury expertise."
   },
   {
     question: "Where exactly are you located?",
@@ -93,7 +93,7 @@ const faqs = [
   },
   {
     question: "Do you offer delivery or shipping?",
-    answer: "All motor purchases must be completed in-person with valid photo ID at our Gores Landing location. This is an industry-wide policy to prevent fraud. We're easy to get to — just ask us for directions!"
+    answer: "All motor purchases must be completed in-person with valid photo ID at our Gores Landing location. This is an industry-wide policy to prevent fraud. We're easy to get to, just ask us for directions!"
   }
 ];
 
@@ -202,7 +202,7 @@ export default function About() {
                             />
                           </div>
                           <figcaption className={`mt-2 text-xs italic text-repower-navy-900/60 ${index % 2 === 0 ? 'md:text-right' : 'text-left'}`}>
-                            Jim Harris — Mercury rigging, mid-1960s
+                            Jim Harris, Mercury rigging, mid-1960s
                           </figcaption>
                         </figure>
                       )}

@@ -493,7 +493,7 @@ export interface QuotePDFProps {
 }
 
 export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => {
-  // Calculate valid until date — use promoEndDate if earlier than 30 days
+  // Calculate valid until date, use promoEndDate if earlier than 30 days
   const thirtyDaysOut = new Date();
   thirtyDaysOut.setDate(thirtyDaysOut.getDate() + 30);
   const promoEnd = quoteData.promoEndDate ? new Date(quoteData.promoEndDate) : null;
@@ -1014,7 +1014,7 @@ export const ProfessionalQuotePDF: React.FC<QuotePDFProps> = ({ quoteData }) => 
           </View>
         )}
 
-        {/* Terms — wrapped with CTA to prevent page break */}
+        {/* Terms, wrapped with CTA to prevent page break */}
         <View wrap={false}>
           {/* Terms */}
           <View style={styles.termsSection}>

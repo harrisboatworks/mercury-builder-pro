@@ -56,7 +56,7 @@ import type { MotorGroup } from '@/hooks/useGroupedMotors';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
-// Refined navy promo strip — single-line on desktop, 2-line on mobile, dismissible
+// Refined navy promo strip, single-line on desktop, 2-line on mobile, dismissible
 const PROMO_DISMISS_KEY = 'repower_promo_dismissed_v1';
 function PromoBannerConditional() {
   const { promotions: activePromos } = useActivePromotions();
@@ -100,7 +100,7 @@ function PromoBannerConditional() {
         </span>
         {/* Mobile row 2 / desktop inline: date + learn more */}
         <div className="flex items-center basis-full md:basis-auto md:flex-1 md:contents">
-          {/* Date — hidden on the smallest viewports to keep the strip to one line */}
+          {/* Date, hidden on the smallest viewports to keep the strip to one line */}
           <span
             className="hidden min-[480px]:inline text-repower-cream/60 font-normal whitespace-nowrap truncate md:min-w-0 md:flex-shrink ml-12 md:ml-0"
             style={{ fontSize: 13 }}
@@ -108,7 +108,7 @@ function PromoBannerConditional() {
             {endLabel}
           </span>
 
-          {/* Action group — anchored right */}
+          {/* Action group, anchored right */}
           <div className="flex items-center ml-auto shrink-0 gap-6 pl-6">
             <a
               href="/promotions"
@@ -130,7 +130,7 @@ function PromoBannerConditional() {
         </div>
       </div>
 
-      {/* Close X — mobile only top-right */}
+      {/* Close X, mobile only top-right */}
       <button
         onClick={handleDismiss}
         aria-label="Dismiss promotion"
@@ -241,7 +241,7 @@ function MotorSelectionContent() {
   const { promotions: activePromotionsForCards } = useActivePromotions();
   const [showComparison, setShowComparison] = useState(false);
 
-  // Shared data object for motor cards — avoids per-card hook instantiation
+  // Shared data object for motor cards, avoids per-card hook instantiation
   const sharedCardData: SharedCardData = useMemo(() => ({
     promotions: activePromotionsForCards,
     toggleComparison,
@@ -610,7 +610,7 @@ if (event.type === 'filter_motors') {
         : [];
       const firstDbImage = dbImages.length > 0 ? dbImages[0] : null;
       const heroImage = dbMotor.hero_image_url || dbMotor.image_url || firstDbImage || '';
-      // Use database images only — Mercury CDN URLs are unreliable (404 frequently)
+      // Use database images only, Mercury CDN URLs are unreliable (404 frequently)
       const galleryImages = dbImages;
 
       // Convert to Motor type (same as original)
@@ -1074,10 +1074,10 @@ if (event.type === 'filter_motors') {
           </div>
         </div>
 
-        {/* Sentinel — detects when search bar pins to top */}
+        {/* Sentinel, detects when search bar pins to top */}
         <div ref={searchSentinelRef} aria-hidden className="h-px w-full" />
 
-        {/* Search Bar — light at rest, dark glass when sticky */}
+        {/* Search Bar, light at rest, dark glass when sticky */}
         <div
           className={`sticky top-[64px] lg:top-[72px] z-40 transition-all duration-200 ease-out ${
             isSearchStuck
@@ -1157,7 +1157,7 @@ if (event.type === 'filter_motors') {
           onClear={clearRecentlyViewed}
         />
 
-        {/* Batched Product Schema — single ItemList instead of per-card scripts */}
+        {/* Batched Product Schema, single ItemList instead of per-card scripts */}
         {finalFilteredMotors.length > 0 && (
           <script
             type="application/ld+json"
@@ -1289,10 +1289,10 @@ if (event.type === 'filter_motors') {
             </div>
           )}
 
-          {/* Email Capture — after motor grid */}
+          {/* Email Capture, after motor grid */}
           <EmailCaptureInline />
 
-          {/* AI-answer FAQ — targets "Can I build a Mercury outboard quote online in Ontario?" */}
+          {/* AI-answer FAQ, targets "Can I build a Mercury outboard quote online in Ontario?" */}
           <MotorSelectionFAQ />
         </div>
           </div>
@@ -1338,7 +1338,7 @@ if (event.type === 'filter_motors') {
         
         {/* Comparison Floating Pill removed - now integrated into UnifiedMobileBar */}
         
-        {/* Persistent floating bar — appears as soon as a motor is added so users
+        {/* Persistent floating bar, appears as soon as a motor is added so users
             know what to do next ("Compare X/3 →"). */}
         <ComparisonFloatingBar
           motors={comparisonList}

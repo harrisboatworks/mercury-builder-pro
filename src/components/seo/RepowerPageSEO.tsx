@@ -23,7 +23,7 @@ export function RepowerPageSEO() {
         "@type": "LocalBusiness",
         "@id": "https://mercuryrepower.ca/#business",
         "name": "Harris Boat Works",
-        "description": "Mercury Certified Repower Center serving Ontario boaters since 1947. Expert outboard motor repowering on Rice Lake. Pickup only at Gores Landing — no shipping. Valid government-issued photo ID required at pickup.",
+        "description": "Mercury Certified Repower Center serving Ontario boaters since 1947. Expert outboard motor repowering on Rice Lake. Pickup only at Gores Landing, no shipping. Valid government-issued photo ID required at pickup.",
         "url": "https://mercuryrepower.ca",
         "telephone": "(905) 342-2153",
         "email": "info@harrisboatworks.ca",
@@ -50,7 +50,7 @@ export function RepowerPageSEO() {
         "serviceType": "Boat Motor Replacement",
         "provider": { "@id": "https://mercuryrepower.ca/#business" },
         "areaServed": ["Rice Lake", "Kawarthas", "Peterborough", "GTA", "Toronto", "Ontario"],
-        "description": "Professional Mercury outboard motor repower service. Get 70% of the benefit of a new boat for 30% of the cost. Includes professional installation and lake testing. Pickup only at Gores Landing — no shipping. Valid government-issued photo ID required.",
+        "description": "Professional Mercury outboard motor repower service. Get 70% of the benefit of a new boat for 30% of the cost. Includes professional installation and lake testing. Pickup only at Gores Landing, no shipping. Valid government-issued photo ID required.",
         "offers": {
           "@type": "Offer",
           "priceRange": "$8,000 - $18,000",
@@ -140,7 +140,7 @@ export function RepowerPageSEO() {
   return (
     <Helmet>
       <title>Ontario's Mercury Repower Centre on Rice Lake | Harris Boat Works</title>
-      <meta name="description" content="Harris Boat Works is Ontario's Mercury Repower Centre — Mercury Marine Platinum Dealer, Mercury-only since 1965, family-owned since 1947. Transparent CAD pricing. Every install lake-tested on Rice Lake. Pickup at Gores Landing." />
+      <meta name="description" content="Harris Boat Works is Ontario's Mercury Repower Centre, Mercury Marine Platinum Dealer, Mercury-only since 1965, family-owned since 1947. Transparent CAD pricing. Every install lake-tested on Rice Lake. Pickup at Gores Landing." />
       <meta name="keywords" content="mercury repower ontario, boat repower rice lake, outboard motor replacement, mercury dealer kawarthas, repower cottage boat, mercury four stroke, boat motor upgrade" />
       <link rel="canonical" href="https://mercuryrepower.ca/repower" />
       

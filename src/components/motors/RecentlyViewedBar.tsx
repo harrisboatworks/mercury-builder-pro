@@ -24,7 +24,7 @@ export function RecentlyViewedBar({ items, onSelect, onClear, className }: Recen
     <div className={cn('block bg-repower-paper border-y border-repower-gold/10', className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 sm:py-3">
         <div className="grid grid-cols-[minmax(0,1fr)_28px] min-[480px]:grid-cols-[auto_minmax(0,1fr)_28px] items-center gap-2 sm:gap-3 min-w-0">
-          {/* Label — hidden on smallest viewports */}
+          {/* Label, hidden on smallest viewports */}
           <div className="hidden min-[480px]:flex items-center gap-1.5 text-xs text-repower-navy-900/55 flex-shrink-0">
             <Clock size={14} />
             <span>Recently Viewed</span>

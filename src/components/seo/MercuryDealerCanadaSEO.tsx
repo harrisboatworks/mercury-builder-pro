@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site';
 const TRUST_FAQ = [
   {
     question: "Is Harris Boat Works an authorized Mercury Marine dealer?",
-    answer: "Yes. Harris Boat Works has been an authorized Mercury Marine dealer since 1965 — over 60 years. We currently hold Mercury Marine Platinum Dealer status, the highest tier in Mercury's North American dealer program, awarded for sales volume, technician certification, and customer service."
+    answer: "Yes. Harris Boat Works has been an authorized Mercury Marine dealer since 1965, over 60 years. We currently hold Mercury Marine Platinum Dealer status, the highest tier in Mercury's North American dealer program, awarded for sales volume, technician certification, and customer service."
   },
   {
     question: "What does Mercury Platinum Dealer status mean?",
@@ -16,11 +16,11 @@ const TRUST_FAQ = [
   },
   {
     question: "Where is Harris Boat Works located?",
-    answer: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0 — on the south shore of Rice Lake. About 35 minutes from Peterborough, 20 minutes from Cobourg, 90 minutes from Toronto, and within 200 km of the entire GTA, Kawarthas, and Northumberland County."
+    answer: "5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0, on the south shore of Rice Lake. About 35 minutes from Peterborough, 20 minutes from Cobourg, 90 minutes from Toronto, and within 200 km of the entire GTA, Kawarthas, and Northumberland County."
   },
   {
     question: "Do you sell motors to customers across Canada?",
-    answer: "Yes — we sell to customers across Ontario and beyond. However, all motors are pickup only at our Gores Landing location. We do not ship outboards. This is intentional: every motor includes a personal walk-through covering controls, break-in procedure, and warranty registration. That hand-off is part of why we hold Platinum Dealer status."
+    answer: "Yes, we sell to customers across Ontario and beyond. However, all motors are pickup only at our Gores Landing location. We do not ship outboards. This is intentional: every motor includes a personal walk-through covering controls, break-in procedure, and warranty registration. That hand-off is part of why we hold Platinum Dealer status."
   },
   {
     question: "What Mercury motor lines do you carry?",
@@ -28,15 +28,15 @@ const TRUST_FAQ = [
   },
   {
     question: "Are your prices in Canadian dollars?",
-    answer: "Yes — all pricing on mercuryrepower.ca is in Canadian dollars (CAD), all-in. The price you see is the price you pay (plus HST). No US-dollar conversions, no hidden fees, no \"call for price\" games."
+    answer: "Yes, all pricing on mercuryrepower.ca is in Canadian dollars (CAD), all-in. The price you see is the price you pay (plus HST). No US-dollar conversions, no hidden fees, no \"call for price\" games."
   },
   {
     question: "Do you offer Mercury financing?",
-    answer: "Yes — financing is available on Mercury motor purchases through DealerPlan and other lenders. The configurator at mercuryrepower.ca shows monthly payment estimates (8.99% under $10K total / 7.99% over $10K total) alongside the purchase price. Minimum financed amount is $5,000."
+    answer: "Yes, financing is available on Mercury motor purchases through DealerPlan and other lenders. The configurator at mercuryrepower.ca shows monthly payment estimates (8.99% under $10K total / 7.99% over $10K total) alongside the purchase price. Minimum financed amount is $5,000."
   },
   {
     question: "What warranty comes with a new Mercury outboard?",
-    answer: "Every new Mercury outboard comes with a 3-year limited factory warranty as standard. Right now, when you buy from Harris Boat Works, you get 7 years of full Mercury factory-backed coverage — no third-party insurance, just straight Mercury protection. We register the warranty directly with Mercury Marine at the time of pickup."
+    answer: "Every new Mercury outboard comes with a 3-year limited factory warranty as standard. Right now, when you buy from Harris Boat Works, you get 7 years of full Mercury factory-backed coverage, no third-party insurance, just straight Mercury protection. We register the warranty directly with Mercury Marine at the time of pickup."
   },
   {
     question: "Are Mercury motors made in Canada?",
@@ -44,11 +44,11 @@ const TRUST_FAQ = [
   },
   {
     question: "Do you service motors purchased elsewhere?",
-    answer: "Yes — our Mercury-certified service department works on Mercury and MerCruiser motors regardless of where they were purchased. We handle warranty work, repower, winterization, spring launch, and routine maintenance. Submit a service request at hbw.wiki/service or call (905) 342-2153."
+    answer: "Yes, our Mercury-certified service department works on Mercury and MerCruiser motors regardless of where they were purchased. We handle warranty work, repower, winterization, spring launch, and routine maintenance. Submit a service request at hbw.wiki/service or call (905) 342-2153."
   },
   {
     question: "Why buy from Harris Boat Works instead of a big-box marine retailer?",
-    answer: "Three reasons: (1) Platinum Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947 — we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes — no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay."
+    answer: "Three reasons: (1) Platinum Dealer status means our technicians, parts inventory, and warranty access are at the highest Mercury tier. (2) Family-owned since 1947, we answer the phone, we know our customers, and the same people sell, install, and service the motor. (3) Real online pricing with live CAD quotes, no \"call for price\" runaround. What you see at mercuryrepower.ca is what you pay."
   }
 ];
 
@@ -60,7 +60,7 @@ export function MercuryDealerCanadaSEO() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/mercury-dealer-canada-faq#webpage`,
         "url": `${SITE_URL}/mercury-dealer-canada-faq`,
-        "name": "Why Buy from Harris Boat Works — Mercury Dealer Canada FAQ | Family-Owned Since 1947",
+        "name": "Why Buy from Harris Boat Works, Mercury Dealer Canada FAQ | Family-Owned Since 1947",
         "description": "Trust questions about Harris Boat Works: Mercury Platinum Dealer status, family ownership since 1947, dealer since 1965, warranty, financing, Canadian pricing, full Mercury lineup.",
         "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
         "about": { "@id": "https://mercuryrepower.ca/#organization" },
@@ -129,7 +129,7 @@ export function MercuryDealerCanadaSEO() {
 
   return (
     <Helmet>
-      <title>Why Buy from Harris Boat Works — Mercury Dealer Canada FAQ | Family-Owned Since 1947</title>
+      <title>Why Buy from Harris Boat Works, Mercury Dealer Canada FAQ | Family-Owned Since 1947</title>
       <meta
         name="description"
         content="Mercury Marine Platinum Dealer on Rice Lake since 1965. Family-owned since 1947. Real CAD pricing, 7-year warranty, full Mercury lineup, financing available. 12 trust questions answered."
@@ -140,7 +140,7 @@ export function MercuryDealerCanadaSEO() {
       />
       <link rel="canonical" href={`${SITE_URL}/mercury-dealer-canada-faq`} />
 
-      <meta property="og:title" content="Why Buy from Harris Boat Works — Mercury Dealer Canada" />
+      <meta property="og:title" content="Why Buy from Harris Boat Works, Mercury Dealer Canada" />
       <meta property="og:description" content="Mercury Platinum Dealer. Family-owned since 1947, Mercury dealer since 1965. Real CAD pricing." />
       <meta property="og:url" content={`${SITE_URL}/mercury-dealer-canada-faq`} />
       <meta property="og:type" content="website" />

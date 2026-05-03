@@ -29,7 +29,7 @@ export function RepowerMath() {
               of the benefit
             </div>
             <div className="font-sans text-[10px] uppercase tracking-[0.3em] text-[#F5F1EA]/40 my-6">
-              — for —
+             , for —
             </div>
             <div
               className="font-display font-bold leading-none text-[#F5F1EA]"
@@ -48,12 +48,12 @@ export function RepowerMath() {
               {
                 n: '30–40%',
                 t: 'Better Fuel Economy',
-                d: 'Modern Mercury four-strokes sip fuel compared to older two-strokes — and they idle quietly enough to hold a conversation at cruise.',
+                d: 'Modern Mercury four-strokes sip fuel compared to older two-strokes, and they idle quietly enough to hold a conversation at cruise.',
               },
               {
                 n: '$8–18k',
                 t: 'Typical Rice Lake Repower',
-                d: 'Complete installed package for a 16–18 ft boat with 60–115 HP. Engine, controls, rigging, prop, removal, install, and lake test — all in.',
+                d: 'Complete installed package for a 16–18 ft boat with 60–115 HP. Engine, controls, rigging, prop, removal, install, and lake test, all in.',
               },
               {
                 n: '1–2 days',

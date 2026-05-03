@@ -5,7 +5,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 /**
- * Lightweight inline email capture — shows after the motor grid.
+ * Lightweight inline email capture, shows after the motor grid.
  * Writes to email_sequence_queue with sequence_type = 'pricing_updates'.
  */
 export function EmailCaptureInline() {

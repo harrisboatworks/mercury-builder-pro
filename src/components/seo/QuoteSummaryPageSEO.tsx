@@ -55,12 +55,12 @@ export function QuoteSummaryPageSEO() {
       <title>Your Mercury Outboard Quote Estimate | Harris Boat Works</title>
       <meta
         name="description"
-        content="Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotions. Harris Boat Works — Mercury dealer since 1965."
+        content="Review your itemized Mercury outboard quote with live CAD pricing, financing estimates, trade-in credit, and current promotions. Harris Boat Works, Mercury dealer since 1965."
       />
       <link rel="canonical" href={`${SITE_URL}/quote/summary`} />
 
       <meta property="og:title" content="Your Mercury Outboard Quote Estimate" />
-      <meta property="og:description" content="Itemized Mercury outboard quote — live CAD pricing, financing, trade-in, and current promotions." />
+      <meta property="og:description" content="Itemized Mercury outboard quote, live CAD pricing, financing, trade-in, and current promotions." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${SITE_URL}/quote/summary`} />
 

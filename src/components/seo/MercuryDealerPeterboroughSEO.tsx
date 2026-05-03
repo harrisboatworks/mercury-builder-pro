@@ -4,11 +4,11 @@ import { SITE_URL } from '@/lib/site';
 const PETERBOROUGH_FAQ = [
   {
     question: "Is there a Mercury dealer near Peterborough, Ontario?",
-    answer: "Yes — Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, located about 35 minutes south on Rice Lake at 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury dealer since 1965, family-owned since 1947."
+    answer: "Yes, Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, located about 35 minutes south on Rice Lake at 5369 Harris Boat Works Rd, Gores Landing, ON. Mercury dealer since 1965, family-owned since 1947."
   },
   {
     question: "Do you serve Peterborough customers for Mercury repower and service?",
-    answer: "Yes. We regularly repower boats from Peterborough, Lakefield, Bridgenorth, Buckhorn, and the wider Kawartha Lakes region. Customers tow boats down to Gores Landing, or pick up loose motors for self-installation. Pickup only — no delivery or shipping."
+    answer: "Yes. We regularly repower boats from Peterborough, Lakefield, Bridgenorth, Buckhorn, and the wider Kawartha Lakes region. Customers tow boats down to Gores Landing, or pick up loose motors for self-installation. Pickup only, no delivery or shipping."
   },
   {
     question: "How far is Harris Boat Works from downtown Peterborough?",
@@ -16,7 +16,7 @@ const PETERBOROUGH_FAQ = [
   },
   {
     question: "Can I get Mercury financing as a Peterborough customer?",
-    answer: "Yes — Mercury financing through DealerPlan is available to all Ontario residents. Build a quote at mercuryrepower.ca to see live monthly payment estimates (8.99% under $10K total / 7.99% over $10K), then complete the financing application online. Minimum financed amount $5,000."
+    answer: "Yes, Mercury financing through DealerPlan is available to all Ontario residents. Build a quote at mercuryrepower.ca to see live monthly payment estimates (8.99% under $10K total / 7.99% over $10K), then complete the financing application online. Minimum financed amount $5,000."
   },
   {
     question: "What Mercury motors do you stock for Peterborough-area boaters?",
@@ -32,7 +32,7 @@ export function MercuryDealerPeterboroughSEO() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/mercury-dealer-peterborough#webpage`,
         "url": `${SITE_URL}/mercury-dealer-peterborough`,
-        "name": "Mercury Dealer Peterborough Ontario | Harris Boat Works — 35 Min South",
+        "name": "Mercury Dealer Peterborough Ontario | Harris Boat Works, 35 Min South",
         "description": "Mercury Marine Platinum Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters.",
         "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
         "about": { "@id": "https://mercuryrepower.ca/#organization" },
@@ -51,7 +51,7 @@ export function MercuryDealerPeterboroughSEO() {
       {
         "@type": "Service",
         "@id": `${SITE_URL}/mercury-dealer-peterborough#service`,
-        "name": "Mercury Outboard Sales & Repower — Peterborough Area",
+        "name": "Mercury Outboard Sales & Repower, Peterborough Area",
         "description": "Mercury outboard sales, repower, and service for Peterborough, Lakefield, Bridgenorth, Buckhorn, and Kawartha Lakes boaters. Pickup only at Gores Landing on Rice Lake.",
         "provider": { "@id": "https://mercuryrepower.ca/#organization" },
         "areaServed": {
@@ -81,7 +81,7 @@ export function MercuryDealerPeterboroughSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Dealer Peterborough Ontario | Harris Boat Works — 35 Min South</title>
+      <title>Mercury Dealer Peterborough Ontario | Harris Boat Works, 35 Min South</title>
       <meta
         name="description"
         content="Mercury Marine Platinum Dealer 35 minutes from Peterborough on Rice Lake. Family-owned since 1947, Mercury dealer since 1965. Repower, sales, parts, service for Peterborough and Kawartha Lakes boaters."

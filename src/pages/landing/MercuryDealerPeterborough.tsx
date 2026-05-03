@@ -37,7 +37,7 @@ export default function MercuryDealerPeterborough() {
             Mercury Dealer Near Peterborough, Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough — about 35 minutes south on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
+            Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, about 35 minutes south on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
@@ -62,10 +62,10 @@ export default function MercuryDealerPeterborough() {
         <section className="mb-12 prose prose-neutral max-w-none dark:prose-invert">
           <h2 className="text-2xl font-semibold text-foreground mb-4">Serving Peterborough & the Kawartha Lakes</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Peterborough boaters have been buying Mercury outboards from Harris Boat Works for over 60 years. Our location on the south shore of Rice Lake puts us about 35 minutes from downtown Peterborough via County Rd 28 — easy access for Lakefield, Bridgenorth, Buckhorn, and the wider Kawartha Lakes region.
+            Peterborough boaters have been buying Mercury outboards from Harris Boat Works for over 60 years. Our location on the south shore of Rice Lake puts us about 35 minutes from downtown Peterborough via County Rd 28, easy access for Lakefield, Bridgenorth, Buckhorn, and the wider Kawartha Lakes region.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-4">
-            We carry the full Mercury outboard lineup with live CAD pricing online — no "call for price" runaround. Bring your boat down for installation, or pick up a loose motor for self-install. Pickup only at Gores Landing.
+            We carry the full Mercury outboard lineup with live CAD pricing online, no "call for price" runaround. Bring your boat down for installation, or pick up a loose motor for self-install. Pickup only at Gores Landing.
           </p>
         </section>
 
@@ -92,7 +92,7 @@ export default function MercuryDealerPeterborough() {
             Ready to repower from Peterborough?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            Build a Mercury quote with real CAD pricing in 3 minutes — or call us at (905) 342-2153.
+            Build a Mercury quote with real CAD pricing in 3 minutes, or call us at (905) 342-2153.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg">

@@ -178,7 +178,7 @@ export const VoiceButtonInline: React.FC<VoiceButtonProps & { label?: string }> 
   };
 
   const getLabel = () => {
-    if (textOnlyMode) return 'Voice unavailable – tap to retry';
+    if (textOnlyMode) return 'Voice unavailable, tap to retry';
     if (isConnecting) return 'Connecting...';
     if (isSpeaking) return 'Harris is speaking...';
     if (isListening) return 'Listening...';

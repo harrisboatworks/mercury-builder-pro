@@ -77,8 +77,8 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
   } else if (embedded.length > 1) {
     result.hp = embedded[0];
     result.hpConfidence = 'low';
-    result.hpReasons.push(`${embedded.length} numbers found (${embedded.join(', ')}) — picked first`);
-    result.warnings.push(`Multiple numbers found — using ${embedded[0]} HP`);
+    result.hpReasons.push(`${embedded.length} numbers found (${embedded.join(', ')}), picked first`);
+    result.warnings.push(`Multiple numbers found, using ${embedded[0]} HP`);
   }
 
   // ---- Stroke detection ----
@@ -103,7 +103,7 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
     result.strokeConfidence = 'high';
     result.strokeReasons.push(`Matched "${twoStrokeHit[0]}" → 2-Stroke marker`);
   } else if (/^\d/.test(upper) && result.hp) {
-    // Bare number — try to use year as a tiebreaker
+    // Bare number, try to use year as a tiebreaker
     if (year && year >= 2007) {
       result.stroke = '4-Stroke';
       result.strokeConfidence = 'medium';
@@ -115,14 +115,14 @@ export function decodeTradeInModel(raw: string, ctx: DecodeContext = {}): Decode
     } else {
       result.stroke = null;
       result.strokeConfidence = 'low';
-      result.strokeReasons.push('Bare HP with no year — stroke ambiguous');
-      result.warnings.push("Stroke unclear from bare HP — enter year to refine, or add '4S' / '2S'");
+      result.strokeReasons.push('Bare HP with no year, stroke ambiguous');
+      result.warnings.push("Stroke unclear from bare HP, enter year to refine, or add '4S' / '2S'");
     }
   }
 
   // ---- Unrecognized ----
   if (!result.hp && !result.stroke) {
-    result.warnings.push('Couldn\'t recognize this code — try "F115", "150 ELPT", or just the HP number');
+    result.warnings.push('Couldn\'t recognize this code, try "F115", "150 ELPT", or just the HP number');
   }
 
   // ---- Suggestions ----

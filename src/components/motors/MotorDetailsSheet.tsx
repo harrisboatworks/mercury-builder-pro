@@ -922,7 +922,7 @@ export default function MotorDetailsSheet({
                         "{smartReview.comment}"
                       </p>
                       <footer className="text-xs text-muted-foreground mt-2">
-                        — {smartReview.reviewer}, {smartReview.location}
+                       , {smartReview.reviewer}, {smartReview.location}
                       </footer>
                     </blockquote>
                   </div>

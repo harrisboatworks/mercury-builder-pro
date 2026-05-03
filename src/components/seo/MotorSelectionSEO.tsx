@@ -12,7 +12,7 @@ interface MotorSelectionSEOProps {
  * JSON-LD for /quote/motor-selection.
  * Mirrors motorSelectionPageSchema() in scripts/static-prerender.mjs to keep
  * crawler-served HTML and React-hydrated HTML in sync. Verado is intentionally
- * excluded from default inventory — Verado is special-order only at Harris Boat Works.
+ * excluded from default inventory, Verado is special-order only at Harris Boat Works.
  *
  * No fixed motor count is hard-coded. If the caller does not yet know the live count
  * (e.g. data still loading), `numberOfItems` is omitted from the ItemList rather than
@@ -137,20 +137,20 @@ export function MotorSelectionSEO({
 
   return (
     <Helmet>
-      <title>Mercury Outboard Motors — Browse 2.5HP–600HP & Build a Quote | Harris Boat Works</title>
+      <title>Mercury Outboard Motors, Browse 2.5HP, 600HP & Build a Quote | Harris Boat Works</title>
       <meta
         name="description"
-        content={`Shop Mercury FourStroke, Pro XS, SeaPro and ProKicker outboards from $${minPrice.toLocaleString()}–$${maxPrice.toLocaleString()} CAD. Configure your motor and get instant CAD pricing online — Harris Boat Works, Mercury dealer since 1965.`}
+        content={`Shop Mercury FourStroke, Pro XS, SeaPro and ProKicker outboards from $${minPrice.toLocaleString()}–$${maxPrice.toLocaleString()} CAD. Configure your motor and get instant CAD pricing online, Harris Boat Works, Mercury dealer since 1965.`}
       />
       <link rel="canonical" href={`${SITE_URL}/quote/motor-selection`} />
 
-      <meta property="og:title" content="Mercury Outboard Motors — Browse & Build a Quote" />
+      <meta property="og:title" content="Mercury Outboard Motors, Browse & Build a Quote" />
       <meta property="og:description" content="Shop the full Mercury outboard lineup: FourStroke, Pro XS, SeaPro, ProKicker. Configure online and get instant CAD pricing." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${SITE_URL}/quote/motor-selection`} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Outboard Motors — Browse & Build a Quote" />
+      <meta name="twitter:title" content="Mercury Outboard Motors, Browse & Build a Quote" />
       <meta name="twitter:description" content="Shop Mercury outboards: FourStroke, Pro XS, SeaPro, ProKicker. Instant CAD pricing." />
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>

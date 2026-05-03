@@ -52,7 +52,7 @@ export function QuickHPFilters({ motors, activeFilter, onFilterChange, className
             key={value}
             onClick={() => onFilterChange(value)}
             disabled={!hasStock && value !== ''}
-            aria-label={`${label === 'All' ? 'All motors' : `${label} HP`} — ${count} ${count === 1 ? 'motor' : 'motors'}`}
+            aria-label={`${label === 'All' ? 'All motors' : `${label} HP`}, ${count} ${count === 1 ? 'motor' : 'motors'}`}
             className={cn(
               'flex-shrink-0 px-3 py-1.5 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-light tracking-wide',
               'whitespace-nowrap relative overflow-hidden inline-flex items-center gap-1.5 md:gap-2',

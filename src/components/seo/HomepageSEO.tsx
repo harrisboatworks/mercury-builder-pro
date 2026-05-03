@@ -9,8 +9,8 @@ export function HomepageSEO() {
         "@type": "WebPage",
         "@id": "https://mercuryrepower.ca/#webpage",
         "url": "https://mercuryrepower.ca/",
-        "name": "Mercury Repower Quotes Online — Real Prices, No Forms | Harris Boat Works",
-        "description": "Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake — family-owned since 1947, Mercury dealer since 1965.",
+        "name": "Mercury Repower Quotes Online, Real Prices, No Forms | Harris Boat Works",
+        "description": "Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake, family-owned since 1947, Mercury dealer since 1965.",
         "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
         "about": { "@id": "https://mercuryrepower.ca/#organization" },
         "primaryImageOfPage": { "@id": "https://mercuryrepower.ca/#logo" },
@@ -109,13 +109,13 @@ export function HomepageSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Repower Ontario — Trade-In, Financing & Online Quotes | Harris Boat Works</title>
-      <meta name="description" content="Ontario's Mercury Repower Centre on Rice Lake. Family-owned since 1947, Mercury Platinum Dealer since 1965. Trade-in valuations, financing, and live CAD quotes — pickup at Gores Landing." />
+      <title>Mercury Repower Ontario, Trade-In, Financing & Online Quotes | Harris Boat Works</title>
+      <meta name="description" content="Ontario's Mercury Repower Centre on Rice Lake. Family-owned since 1947, Mercury Platinum Dealer since 1965. Trade-in valuations, financing, and live CAD quotes, pickup at Gores Landing." />
       <meta name="keywords" content="Mercury repower Ontario, Mercury dealer Toronto, Harris Boat Works, Rice Lake Mercury dealer, Mercury trade-in, Mercury financing" />
       <link rel="canonical" href={SITE_URL} />
 
       {/* Open Graph */}
-      <meta property="og:title" content="Mercury Repower Ontario — Trade-In, Financing & Quotes" />
+      <meta property="og:title" content="Mercury Repower Ontario, Trade-In, Financing & Quotes" />
       <meta property="og:description" content="Ontario's Mercury Repower Centre. Trade-in your old motor, finance a new one, or build a quote in 3 minutes. Family-owned since 1947." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={SITE_URL} />
@@ -125,7 +125,7 @@ export function HomepageSEO() {
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Repower Quotes Online — Real Prices, No Forms" />
+      <meta name="twitter:title" content="Mercury Repower Quotes Online, Real Prices, No Forms" />
       <meta name="twitter:description" content="Instant Mercury outboard quotes. Family-owned since 1947." />
       <meta name="twitter:image" content={`${SITE_URL}/social-share.jpg`} />
 

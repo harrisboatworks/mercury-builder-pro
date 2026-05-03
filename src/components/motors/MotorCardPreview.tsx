@@ -108,7 +108,7 @@ function MotorCardPreviewInner({
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   
-  // UX feature hooks — use shared data from parent to avoid per-card instantiation
+  // UX feature hooks, use shared data from parent to avoid per-card instantiation
   const toggleComparison = sharedData?.toggleComparison ?? (() => {});
   const isInComparison = sharedData?.isInComparison ?? (() => false);
   const comparisonCount = sharedData?.comparisonCount ?? 0;
@@ -155,7 +155,7 @@ function MotorCardPreviewInner({
   // Get photo count for image overlay
   const [photoCount, setPhotoCount] = useState<number>(0);
 
-  // Intersection Observer — defer expensive async image resolution until card is near viewport
+  // Intersection Observer, defer expensive async image resolution until card is near viewport
   const cardRef = useRef<HTMLDivElement>(null);
   const [isNearViewport, setIsNearViewport] = useState(false);
 
@@ -272,7 +272,7 @@ function MotorCardPreviewInner({
 
   const getAvailabilityText = () => {
     if (inStock) return "In Stock Today";
-    return "Factory Order — 2–3 Week Lead Time";
+    return "Factory Order, 2–3 Week Lead Time";
   };
 
   const getAvailabilityDotColor = () => {
@@ -347,7 +347,7 @@ function MotorCardPreviewInner({
     return null;
   };
 
-  // Use shared display pricing helper — always shows MSRP (inflated if equal)
+  // Use shared display pricing helper, always shows MSRP (inflated if equal)
   const dp = getDisplayPrices(msrp, price);
 
   // Format promo text elegantly
@@ -504,14 +504,14 @@ function MotorCardPreviewInner({
                 )}
               </div>
               
-              {/* Top-left tag — STATUS only (Best Seller / Popular / New). Sale state is communicated typographically in the price block, not as a flashy pill. */}
+              {/* Top-left tag, STATUS only (Best Seller / Popular / New). Sale state is communicated typographically in the price block, not as a flashy pill. */}
               {popularityType ? (
                 <div className="absolute top-[14px] left-[14px]">
                   <PopularityBadge type={popularityType} />
                 </div>
               ) : null}
 
-              {/* Quiet sale indicator — single 6px gold dot, bottom-right of image area */}
+              {/* Quiet sale indicator, single 6px gold dot, bottom-right of image area */}
               {showSaleTag && (
                 <div
                   className="absolute bottom-[14px] right-[44px] w-[6px] h-[6px] rounded-full"
@@ -528,7 +528,7 @@ function MotorCardPreviewInner({
                 </div>
               )}
               
-              {/* Compare, Voice, Ask, Share — kept */}
+              {/* Compare, Voice, Ask, Share, kept */}
               {motor && (
                 <div
                   onClick={(e) => e.stopPropagation()}
@@ -588,7 +588,7 @@ function MotorCardPreviewInner({
               )) : <>&nbsp;</>}
             </p>
             
-            {/* Price block — always 3 rows */}
+            {/* Price block, always 3 rows */}
             <div className="mt-[22px] mb-[18px]">
               <p className="text-[13px] font-normal leading-[18px] h-[18px] text-repower-navy-900/40 line-through">
                 {dp.displayMsrp ? `$${dp.displayMsrp.toLocaleString()}` : '\u00A0'}
@@ -672,6 +672,6 @@ function MotorCardPreviewInner({
   );
 }
 
-// React.memo wrapper — prevents re-render when parent filters change but this card's props don't
+// React.memo wrapper, prevents re-render when parent filters change but this card's props don't
 const MotorCardPreview = React.memo(MotorCardPreviewInner);
 export default MotorCardPreview;

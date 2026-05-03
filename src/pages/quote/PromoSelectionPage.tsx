@@ -258,10 +258,10 @@ export default function PromoSelectionPage() {
 
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               Every new Mercury outboard from Harris Boat Works comes with 7 years of factory warranty.
-              Mercury stopped running promos — so we're running our own.
+              Mercury stopped running promos, so we're running our own.
             </p>
 
-            {/* Warranty Badge - Included with Shimmer Effect — no opacity animation */}
+            {/* Warranty Badge - Included with Shimmer Effect, no opacity animation */}
             <div className="relative inline-flex items-center gap-4 bg-green-50 dark:bg-green-950/30 backdrop-blur-sm border border-green-200 dark:border-green-800 rounded-xl px-6 py-4 mb-10 overflow-hidden">
               {/* Shimmer overlay */}
               <div 
@@ -301,7 +301,7 @@ export default function PromoSelectionPage() {
               <div className="flex-1 h-px bg-border"></div>
             </div>
 
-            {/* Option Cards — transform-only entrance, no opacity */}
+            {/* Option Cards, transform-only entrance, no opacity */}
             <div className={cn(
               "grid gap-6 mb-6",
               eligibleOptions.length === 2 ? "md:grid-cols-2 max-w-2xl mx-auto" : "md:grid-cols-3"
@@ -434,7 +434,7 @@ export default function PromoSelectionPage() {
               </div>
             )}
 
-            {/* Continue Button — static */}
+            {/* Continue Button, static */}
             <div>
               <Button
                 size="lg"

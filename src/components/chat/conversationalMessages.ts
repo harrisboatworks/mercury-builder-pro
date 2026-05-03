@@ -11,15 +11,15 @@ export interface ConversationalNudge {
 export const WELCOME_MESSAGES: Record<string, ConversationalNudge[]> = {
   '/quote/motor-selection': [
     { message: "Tap any motor to check it out", icon: 'sparkles' },
-    { message: "Browse around — I'm here if you need help", icon: 'heart' },
+    { message: "Browse around, I'm here if you need help", icon: 'heart' },
   ],
   '/repower': [
     { message: "Thinking about a new motor? You're in the right place", icon: 'check' },
     { message: "Your boat + new power = best of both worlds", icon: 'heart' },
-    { message: "Repowering saves big vs buying new — let me show you", icon: 'dollar' },
+    { message: "Repowering saves big vs buying new, let me show you", icon: 'dollar' },
   ],
   '/quote/options': [
-    { message: "Pick a package or skip — totally up to you", icon: 'check' },
+    { message: "Pick a package or skip, totally up to you", icon: 'check' },
     { message: "Most folks grab Complete, but you do you", icon: 'shield' },
   ],
   '/quote/purchase-path': [
@@ -27,7 +27,7 @@ export const WELCOME_MESSAGES: Record<string, ConversationalNudge[]> = {
     { message: "Pick what works best for you", icon: 'heart' },
   ],
   '/quote/boat-info': [
-    { message: "Tell me about your boat — helps with the fit", icon: 'check' },
+    { message: "Tell me about your boat, helps with the fit", icon: 'check' },
     { message: "Quick question about your boat setup", icon: 'sparkles' },
   ],
   '/quote/trade-in': [
@@ -39,12 +39,12 @@ export const WELCOME_MESSAGES: Record<string, ConversationalNudge[]> = {
     { message: "Our techs can handle everything if you want", icon: 'shield' },
   ],
   '/quote/fuel-tank': [
-    { message: "Last step — pick your fuel tank", icon: 'check' },
+    { message: "Last step, pick your fuel tank", icon: 'check' },
     { message: "Almost there! Just the tank left", icon: 'flag' },
   ],
   '/quote/schedule': [
     { message: "Looking good! Review and submit when ready", icon: 'check' },
-    { message: "You're all set — just hit submit", icon: 'flag' },
+    { message: "You're all set, just hit submit", icon: 'flag' },
   ],
 };
 
@@ -57,9 +57,9 @@ export const ACTION_PROMPTS: Record<string, ConversationalNudge[]> = {
   ],
   '/repower': [
     { message: "Our ROI calculator shows your exact savings", icon: 'dollar', aiPrompt: "Help me calculate if repowering makes sense" },
-    { message: "Download the free guide — no strings attached", icon: 'check' },
+    { message: "Download the free guide, no strings attached", icon: 'check' },
     { message: "Questions about the process? Ask away →", icon: 'sparkles', aiPrompt: "How does the repower process work?" },
-    { message: "Build a quote in 2 minutes — see real pricing", icon: 'sparkles', aiPrompt: "Help me build a quote for repowering" },
+    { message: "Build a quote in 2 minutes, see real pricing", icon: 'sparkles', aiPrompt: "Help me build a quote for repowering" },
   ],
   '/quote/options': [
     { message: "Complete covers you for pretty much everything", icon: 'shield' },
@@ -130,12 +130,12 @@ export const ENGAGING_QUESTIONS: Record<string, ConversationalNudge[]> = {
 // Gentle correction nudges - when user might be missing something
 export const CORRECTION_NUDGES: Record<string, ConversationalNudge> = {
   'skipping-options-fast': { 
-    message: "Heads up — packages actually save you money", 
+    message: "Heads up, packages actually save you money", 
     icon: 'dollar',
     aiPrompt: "Tell me more about the package savings"
   },
   'essential-on-big-motor': { 
-    message: "Just so you know — bigger motors usually benefit from more coverage", 
+    message: "Just so you know, bigger motors usually benefit from more coverage", 
     icon: 'shield',
     aiPrompt: "Should I get more warranty on a larger motor?"
   },
@@ -145,7 +145,7 @@ export const CORRECTION_NUDGES: Record<string, ConversationalNudge> = {
     aiPrompt: "What motors do you accept for trade-in?"
   },
   'rushing-boat-info': { 
-    message: "Take a sec here — this helps us get the fit right", 
+    message: "Take a sec here, this helps us get the fit right", 
     icon: 'check',
     aiPrompt: "Why does my boat info matter?"
   },
@@ -156,10 +156,10 @@ export const REACTION_MESSAGES: Record<string, ConversationalNudge[]> = {
   'motor-selected': [
     { message: "Nice pick! Solid motor 👍", icon: 'check' },
     { message: "Good choice! That's a popular one", icon: 'heart' },
-    { message: "Great motor — let's set it up for you", icon: 'sparkles' },
+    { message: "Great motor, let's set it up for you", icon: 'sparkles' },
   ],
   'high-hp-selected': [
-    { message: "Going for the power — I like it 💪", icon: 'sparkles' },
+    { message: "Going for the power, I like it 💪", icon: 'sparkles' },
     { message: "Nice! That'll move some water", icon: 'check' },
   ],
   'prokicker-selected': [
@@ -167,7 +167,7 @@ export const REACTION_MESSAGES: Record<string, ConversationalNudge[]> = {
     { message: "ProKicker's perfect for fishing boats", icon: 'heart' },
   ],
   'package-selected': [
-    { message: "Smart — that covers you for everything", icon: 'shield' },
+    { message: "Smart, that covers you for everything", icon: 'shield' },
     { message: "Good call! Peace of mind included", icon: 'check' },
   ],
   'trade-in-applied': [
@@ -175,7 +175,7 @@ export const REACTION_MESSAGES: Record<string, ConversationalNudge[]> = {
     { message: "Nice! Good savings right there", icon: 'check' },
   ],
   'boat-info-complete': [
-    { message: "Perfect — now I can make sure it fits", icon: 'check' },
+    { message: "Perfect, now I can make sure it fits", icon: 'check' },
     { message: "Got it! Everything's looking compatible", icon: 'shield' },
   ],
 };
@@ -193,14 +193,14 @@ export const PROGRESS_MESSAGES: Record<number, ConversationalNudge> = {
 // Social proof (occasional, builds trust)
 export const SOCIAL_PROOF: ConversationalNudge[] = [
   { message: "127+ quotes generated this month", icon: 'award' },
-  { message: "Trusted since 1947 — that's 78 years", icon: 'award' },
-  { message: "Mercury dealer since 1965 — 60 years of expertise", icon: 'award' },
+  { message: "Trusted since 1947, that's 78 years", icon: 'award' },
+  { message: "Mercury dealer since 1965, 60 years of expertise", icon: 'award' },
   { message: "Our techs average 15+ years experience", icon: 'shield' },
 ];
 
 // Offer help messages (after 30s+ idle)
 export const OFFER_HELP: ConversationalNudge[] = [
-  { message: "Stuck? No shame in asking — that's what I'm here for →", icon: 'sparkles', aiPrompt: "I need help with my quote" },
+  { message: "Stuck? No shame in asking, that's what I'm here for →", icon: 'sparkles', aiPrompt: "I need help with my quote" },
   { message: "Need a hand? Just tap here →", icon: 'sparkles', aiPrompt: "Help me with my motor selection" },
   { message: "Questions? I've got answers →", icon: 'sparkles', aiPrompt: "I have questions about my options" },
 ];
@@ -214,13 +214,13 @@ export const REPOWER_MESSAGES: ConversationalNudge[] = [
   { message: "No more worrying about breakdowns with a new engine", icon: 'shield', aiPrompt: "Tell me about Mercury reliability" },
   { message: "Your old boat + new power = best of both worlds", icon: 'heart', aiPrompt: "Why should I repower instead of buying a new boat?" },
   { message: "Modern engines have tech that didn't exist 10 years ago", icon: 'sparkles', aiPrompt: "What new technology do Mercury motors have?" },
-  { message: "Fresh warranty, fresh start — peace of mind included", icon: 'shield', aiPrompt: "What warranty comes with a new Mercury?" },
+  { message: "Fresh warranty, fresh start, peace of mind included", icon: 'shield', aiPrompt: "What warranty comes with a new Mercury?" },
 ];
 
 // Technology highlights for mid/high HP motors
 export const TECHNOLOGY_HIGHLIGHTS: ConversationalNudge[] = [
   { message: "VesselView connects to your phone for real-time data", icon: 'sparkles', aiPrompt: "Tell me about VesselView" },
-  { message: "Active Trim adjusts automatically — set it and forget it", icon: 'check', aiPrompt: "What is Active Trim?" },
+  { message: "Active Trim adjusts automatically, set it and forget it", icon: 'check', aiPrompt: "What is Active Trim?" },
   { message: "Digital Throttle & Shift = butter-smooth shifting", icon: 'sparkles', aiPrompt: "How does digital throttle work?" },
   { message: "Troll Control lets you dial in 10 RPM increments", icon: 'heart', aiPrompt: "What is Troll Control?" },
   { message: "SmartCraft tells you everything about your engine", icon: 'check', aiPrompt: "What does SmartCraft do?" },
@@ -229,7 +229,7 @@ export const TECHNOLOGY_HIGHLIGHTS: ConversationalNudge[] = [
 // Emotional "love your boat" messages (great for trade-in page)
 export const EMOTIONAL_REPOWER_MESSAGES: ConversationalNudge[] = [
   { message: "Keep making memories with the boat you love", icon: 'heart' },
-  { message: "Your boat, your setup — just better power", icon: 'heart' },
+  { message: "Your boat, your setup, just better power", icon: 'heart' },
   { message: "Repowering breathes new life into your favorite boat", icon: 'refresh' },
   { message: "Why start over? Upgrade what you already know", icon: 'check' },
 ];
@@ -237,7 +237,7 @@ export const EMOTIONAL_REPOWER_MESSAGES: ConversationalNudge[] = [
 // Motor-family-specific messages
 export const MOTOR_FAMILY_TIPS: Record<string, ConversationalNudge[]> = {
   'pro xs': [
-    { message: "Pro XS is built for speed — tournament-ready", icon: 'sparkles' },
+    { message: "Pro XS is built for speed, tournament-ready", icon: 'sparkles' },
     { message: "Pro XS owners love the extra punch", icon: 'check' },
   ],
   'fourstroke': [
@@ -267,13 +267,13 @@ export const getHPRange = (hp: number | undefined): HPRange => {
 // HP-specific messages for each range
 export const HP_SPECIFIC_MESSAGES: Record<HPRange, ConversationalNudge[]> = {
   'portable': [
-    { message: "Light and easy to carry — perfect for small boats", icon: 'check' },
+    { message: "Light and easy to carry, perfect for small boats", icon: 'check' },
     { message: "Great for dinghies, inflatables, and jon boats", icon: 'heart' },
     { message: "This size is super fuel-efficient", icon: 'dollar' },
-    { message: "Simple and reliable — that's what portables are all about", icon: 'shield' },
+    { message: "Simple and reliable, that's what portables are all about", icon: 'shield' },
   ],
   'mid-range': [
-    { message: "Solid mid-range choice — handles most boats well", icon: 'check' },
+    { message: "Solid mid-range choice, handles most boats well", icon: 'check' },
     { message: "Think about tiller vs remote for your setup", icon: 'sparkles' },
     { message: "Good balance of power and fuel economy", icon: 'dollar' },
   ],
@@ -345,25 +345,25 @@ export const getMotorFamilyKey = (model: string | undefined): string | null => {
 // Motor family-specific configurator tips - highlighting unique features per family
 export const MOTOR_FAMILY_CONFIGURATOR_TIPS: Record<string, Array<{ step: string; message: string; icon: string }>> = {
   'pro xs': [
-    { step: 'start', message: 'Electric start standard on Pro XS — race-ready', icon: 'sparkles' },
+    { step: 'start', message: 'Electric start standard on Pro XS, race-ready', icon: 'sparkles' },
     { step: 'shaft', message: 'Torque Master II HD gearcase handles the extra power', icon: 'shield' },
     { step: 'control', message: 'Digital Throttle & Shift for instant response', icon: 'sparkles' },
     { step: 'features', message: 'Transient Spark tech = fastest hole shot in class', icon: 'check' },
-    { step: 'result', message: 'Tournament-proven — built to win', icon: 'heart' },
+    { step: 'result', message: 'Tournament-proven, built to win', icon: 'heart' },
   ],
   'fourstroke': [
-    { step: 'start', message: 'Electric start adds convenience — worth it!', icon: 'check' },
-    { step: 'shaft', message: '20" fits most boats — measure if unsure', icon: 'check' },
+    { step: 'start', message: 'Electric start adds convenience, worth it!', icon: 'check' },
+    { step: 'shaft', message: '20" fits most boats, measure if unsure', icon: 'check' },
     { step: 'control', message: 'Tiller for simplicity, remote for larger boats', icon: 'check' },
     { step: 'features', message: "FourStroke's known for reliability and fuel economy", icon: 'dollar' },
-    { step: 'result', message: 'Solid all-rounder — great choice', icon: 'heart' },
+    { step: 'result', message: 'Solid all-rounder, great choice', icon: 'heart' },
   ],
   'seapro': [
-    { step: 'start', message: 'Built for commercial duty — electric start standard', icon: 'shield' },
+    { step: 'start', message: 'Built for commercial duty, electric start standard', icon: 'shield' },
     { step: 'shaft', message: 'Extra-long shafts available for commercial hulls', icon: 'check' },
     { step: 'control', message: 'Remote control with heavy-duty throttle', icon: 'check' },
     { step: 'features', message: 'Commercial-grade durability for daily use', icon: 'shield' },
-    { step: 'result', message: 'Workhorse reliability — tap to review specs', icon: 'heart' },
+    { step: 'result', message: 'Workhorse reliability, tap to review specs', icon: 'heart' },
   ],
   'prokicker': [
     { step: 'start', message: 'Electric start for easy trolling motor operation', icon: 'check' },
@@ -385,11 +385,11 @@ export interface ConfiguratorOptionsForTips {
 // Fallback tips when only one option is available
 const SINGLE_OPTION_TIPS: Record<string, Record<string, { message: string; icon: string }>> = {
   start: {
-    onlyManual: { message: "Manual start — simple & proven reliable", icon: 'check' },
-    onlyElectric: { message: "Electric start standard — push-button easy", icon: 'sparkles' },
+    onlyManual: { message: "Manual start, simple & proven reliable", icon: 'check' },
+    onlyElectric: { message: "Electric start standard, push-button easy", icon: 'sparkles' },
   },
   control: {
-    onlyTiller: { message: "Tiller control — direct and responsive", icon: 'check' },
+    onlyTiller: { message: "Tiller control, direct and responsive", icon: 'check' },
     onlyRemote: { message: "Remote control standard on this model", icon: 'check' },
   },
 };
@@ -441,18 +441,18 @@ export const getMotorFamilyConfiguratorTip = (
 // Warranty promo messages per page
 export const PROMO_MESSAGES: Record<string, ConversationalNudge[]> = {
   '/quote/motor-selection': [
-    { message: "FYI — there's a +{years}yr warranty bonus running right now 🎁", icon: 'gift' },
+    { message: "FYI, there's a +{years}yr warranty bonus running right now 🎁", icon: 'gift' },
     { message: "Good news: extra warranty on all motors till {endDate}", icon: 'shield' },
     { message: "Bonus warranty included free on any motor right now", icon: 'gift' },
   ],
   '/quote/options': [
-    { message: "The promo stacks — bonus warranty on top of any package", icon: 'shield' },
+    { message: "The promo stacks, bonus warranty on top of any package", icon: 'shield' },
     { message: "Extended warranty included free with current promo", icon: 'gift' },
     { message: "+{years}yr warranty bonus applies to your quote", icon: 'shield' },
   ],
   '/quote/schedule': [
     { message: "Your quote includes the +{years}yr warranty promo ✓", icon: 'check' },
-    { message: "Good timing — this promo ends {endDate}", icon: 'gift' },
+    { message: "Good timing, this promo ends {endDate}", icon: 'gift' },
   ],
 };
 
@@ -460,12 +460,12 @@ export const PROMO_MESSAGES: Record<string, ConversationalNudge[]> = {
 export const FINANCING_PROMO_MESSAGES: ConversationalNudge[] = [
   { message: "Financing as low as {rate}% if you need it", icon: 'dollar' },
   { message: "Special {rate}% financing available right now", icon: 'dollar' },
-  { message: "Low rate financing at {rate}% — promo ends {endDate}", icon: 'dollar' },
+  { message: "Low rate financing at {rate}%, promo ends {endDate}", icon: 'dollar' },
 ];
 
 // Promo reaction after motor selection
 export const PROMO_REACTION_MESSAGES: ConversationalNudge[] = [
-  { message: "Nice pick — plus you get +{years}yr warranty bonus 👍", icon: 'gift' },
+  { message: "Nice pick, plus you get +{years}yr warranty bonus 👍", icon: 'gift' },
   { message: "Great choice! Bonus warranty included with this one", icon: 'shield' },
 ];
 

@@ -10,7 +10,7 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.9, delay, ease },
 });
 
-// Hero stat row styling — tweak here to adjust all three stats together
+// Hero stat row styling, tweak here to adjust all three stats together
 // Mobile (<700px): vertical stacked list with gold left-border on each item.
 // >=sm: horizontal row with hairline top/bottom border.
 const statRowClass =
@@ -52,7 +52,7 @@ export function HeroRepower() {
         <source src="/hero/hero-loop.webm" type="video/webm" />
         <source src="/hero/hero-loop.mp4" type="video/mp4" />
       </video>
-      {/* Gradient overlay — softened so the video reads more clearly while keeping bottom legible */}
+      {/* Gradient overlay, softened so the video reads more clearly while keeping bottom legible */}
       <div
         className="absolute inset-0"
         style={{

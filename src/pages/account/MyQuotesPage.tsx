@@ -102,7 +102,7 @@ export default function MyQuotesPage() {
       : quote.quote_pdf_path;
     
     if (!pdfPath) {
-      // No stored PDF — regenerate on-the-fly
+      // No stored PDF, regenerate on-the-fly
       try {
         setDownloadingId(quote.id);
         const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
@@ -259,7 +259,7 @@ export default function MyQuotesPage() {
                           {isDepositPaid ? (
                             <Badge className="bg-emerald-600 text-primary-foreground gap-1">
                               <CheckCircle className="h-3 w-3" />
-                              Deposit Paid — ${quote.deposit_amount?.toLocaleString()}
+                              Deposit Paid, ${quote.deposit_amount?.toLocaleString()}
                             </Badge>
                           ) : isDepositPending ? (
                             <Badge variant="secondary" className="gap-1">

@@ -140,7 +140,7 @@ export function StaleQuoteAlert({
                     <IconForChange type={change.icon} />
                     <div>
                       <span className="font-medium text-foreground">{change.label}</span>
-                      <span className="text-muted-foreground"> — {change.detail}</span>
+                      <span className="text-muted-foreground">, {change.detail}</span>
                     </div>
                   </li>
                 ))}

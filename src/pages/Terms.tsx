@@ -15,7 +15,7 @@ export default function Terms() {
           <div className="prose prose-sm md:prose-base max-w-none text-foreground prose-headings:text-foreground prose-h2:text-2xl prose-h2:font-light prose-h2:mt-12 prose-h2:mb-6 prose-h3:text-lg prose-h3:font-medium prose-h3:mt-8 prose-h3:mb-3 prose-p:text-muted-foreground prose-li:text-muted-foreground prose-strong:text-foreground prose-hr:border-border">
 
             {/* ===== PART A ===== */}
-            <h2>Part A — Service, Repair &amp; Storage Terms</h2>
+            <h2>Part A, Service, Repair &amp; Storage Terms</h2>
 
             <h3>1. Application</h3>
             <p>
@@ -81,7 +81,7 @@ export default function Terms() {
             </p>
 
             {/* ===== PART B ===== */}
-            <h2 className="!mt-16">Part B — Website Use Terms</h2>
+            <h2 className="!mt-16">Part B, Website Use Terms</h2>
             <p>
               The following terms govern use of the <strong>{COMPANY_INFO.name}</strong> quote tool website (mercuryrepower.ca). These cover website browsing, e-commerce, and online content.
             </p>

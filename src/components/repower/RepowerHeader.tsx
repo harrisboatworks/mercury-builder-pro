@@ -49,7 +49,7 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 xl:px-14 flex flex-row flex-nowrap items-center justify-between gap-3 md:gap-4 xl:gap-6">
-          {/* Logo lockup — always horizontal */}
+          {/* Logo lockup, always horizontal */}
           <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-1.5 sm:gap-2 lg:gap-3 min-w-0 overflow-hidden shrink-0">
             <img src={harrisLogo} alt="Harris Boat Works" className="h-6 sm:h-7 md:h-8 lg:h-9 w-auto shrink-0" />
             <div className="w-px h-6 sm:h-7 bg-[#F5F1EA]/20 shrink-0" />

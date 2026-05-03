@@ -30,7 +30,7 @@ export function MobileQuoteCTA({ triggerCardCount = 2, onStartQuote }: MobileQuo
       const cards = gridSection.querySelectorAll('[data-motor-card]');
       const targetCard = cards[triggerCardCount]; // 0-indexed, so index 2 = 3rd card
       if (!targetCard) {
-        // Fewer cards than threshold — show after a delay instead
+        // Fewer cards than threshold, show after a delay instead
         setTimeout(() => setVisible(true), 4000);
         return;
       }

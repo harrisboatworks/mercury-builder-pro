@@ -77,7 +77,7 @@ export const caseStudies: CaseStudy[] = [
     hpJump: '150 → 150 Pro XS',
     heroImage: '/lovable-uploads/bass-boat-150-proxs-hero-real.png',
     detailImage: '/lovable-uploads/bass-boat-150-proxs-detail-real.png',
-    customerQuote: 'The right bass-boat repower is not just about peak speed — it is about repeatable performance, setup confidence, and running hard all day.',
+    customerQuote: 'The right bass-boat repower is not just about peak speed, it is about repeatable performance, setup confidence, and running hard all day.',
     recommendation: 'Best for bass-boat owners who already know they want Mercury Pro XS character and cleaner modern rigging.',
     whyItWorked: [
       'Performance-oriented Mercury Pro XS fit for bass hulls',

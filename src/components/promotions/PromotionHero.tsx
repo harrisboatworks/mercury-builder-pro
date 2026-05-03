@@ -42,7 +42,7 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription }: Promoti
         >
           <img 
             src={harris7YearWarranty} 
-            alt="Harris Boat Works — Get 7 Years Factory-Backed Warranty on every new Mercury"
+            alt="Harris Boat Works, Get 7 Years Factory-Backed Warranty on every new Mercury"
             className="max-w-full md:max-w-2xl mx-auto rounded-xl shadow-2xl"
           />
         </motion.div>
@@ -54,7 +54,7 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription }: Promoti
           transition={{ duration: 0.4, delay: 0.15 }}
           className="text-sm text-amber-400/90 uppercase tracking-wider font-medium mb-3"
         >
-          Mercury stopped running promos — so we're running our own.
+          Mercury stopped running promos, so we're running our own.
         </motion.p>
 
         {/* Main heading */}
@@ -75,7 +75,7 @@ export function PromotionHero({ endDate, bonusTitle, bonusDescription }: Promoti
           className="text-lg md:text-xl text-stone-300 max-w-2xl mx-auto mb-8"
         >
           {bonusDescription || 
-            'Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance — straight Mercury protection from a Platinum Dealer since 1965.'}
+            'Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance, straight Mercury protection from a Platinum Dealer since 1965.'}
         </motion.p>
 
         {/* Warranty badge */}

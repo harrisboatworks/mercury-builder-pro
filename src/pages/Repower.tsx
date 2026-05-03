@@ -79,7 +79,7 @@ export default function Repower() {
               Is your old motor stealing your <em className="not-italic italic text-[#C8102E]">weekends?</em>
             </h2>
             <p className="font-sans font-light text-lg md:text-xl text-[#F5F1EA]/70 max-w-2xl mx-auto leading-relaxed">
-              Being out there — not worrying about getting back — that's what boating should be.
+              Being out there, not worrying about getting back, that's what boating should be.
             </p>
           </div>
 
@@ -129,8 +129,8 @@ export default function Repower() {
               </p>
               <ul className="space-y-4">
                 {[
-                  'Your hull is solid — aluminum & fiberglass last decades',
-                  'You like your boat — it fits your needs and the right size',
+                  'Your hull is solid, aluminum & fiberglass last decades',
+                  'You like your boat, it fits your needs and the right size',
                   'The numbers work: 70% of the benefit for 30% of the cost',
                 ].map((item) => (
                   <li key={item} className="flex gap-3 font-sans text-base text-[#F5F1EA]/80 leading-relaxed">
@@ -198,7 +198,7 @@ export default function Repower() {
             <div>
               <h3 className="font-display font-semibold text-lg text-[#F5F1EA] mb-1">Mercury SmartCraft® Technology</h3>
               <p className="font-sans text-sm text-[#F5F1EA]/65 leading-relaxed">
-                Real-time engine monitoring, fuel economy tracking, and maintenance alerts — from your phone with the Mercury Marine app.
+                Real-time engine monitoring, fuel economy tracking, and maintenance alerts, from your phone with the Mercury Marine app.
               </p>
             </div>
           </div>
@@ -254,9 +254,9 @@ export default function Repower() {
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { n: '1', t: 'The Motor', p: '$1,500 – $35,000+', d: 'Priced by HP. Quote builder shows exact pricing for any motor.' },
-              { n: '2', t: 'Rigging & Controls', p: '$1,500 – $4,000', d: "Depends on your boat's existing setup. Sometimes minimal work needed." },
-              { n: '3', t: 'Installation', p: '$800 – $1,500', d: 'Includes professional mounting and lake testing on Rice Lake.' },
+              { n: '1', t: 'The Motor', p: '$1,500, $35,000+', d: 'Priced by HP. Quote builder shows exact pricing for any motor.' },
+              { n: '2', t: 'Rigging & Controls', p: '$1,500, $4,000', d: "Depends on your boat's existing setup. Sometimes minimal work needed." },
+              { n: '3', t: 'Installation', p: '$800, $1,500', d: 'Includes professional mounting and lake testing on Rice Lake.' },
             ].map((item) => (
               <div key={item.n} className="border border-[#F5F1EA]/10 bg-repower-cream/[0.02] rounded p-8">
                 <div className="font-display font-bold text-5xl text-[#C9A24A]/50 mb-4" style={{ letterSpacing: '-0.04em' }}>
@@ -279,7 +279,7 @@ export default function Repower() {
               className="font-display font-bold text-[clamp(40px,6vw,80px)] tracking-tight text-[#F5F1EA] mb-3"
               style={{ letterSpacing: '-0.035em' }}
             >
-              $8,000 – $18,000
+              $8,000, $18,000
             </p>
             <p className="font-sans text-base md:text-lg text-[#F5F1EA]/65">
               For a 16–18ft boat with 60–115 HP, all-in.
@@ -292,7 +292,7 @@ export default function Repower() {
               Mercury Repower Cost by Horsepower
             </h3>
             <p className="font-sans text-sm text-[#F5F1EA]/55 text-center mb-8">
-              Ontario, 2026 CAD — complete installed packages
+              Ontario, 2026 CAD, complete installed packages
             </p>
             <div className="overflow-x-auto rounded border border-[#F5F1EA]/10">
               <table className="w-full text-sm">
@@ -308,12 +308,12 @@ export default function Repower() {
                 </thead>
                 <tbody className="font-sans">
                   {[
-                    ['9.9 – 20 HP', 'Tiller, kicker, small aluminum, canoe', '$5,000 – $9,000'],
-                    ['25 – 60 HP', 'Mid-size aluminum, small pontoon', '$9,000 – $18,000'],
-                    ['75 – 115 HP', 'Larger fishing boats, pontoons, smaller runabouts', '$16,000 – $28,000'],
-                    ['150 – 200 HP', 'Performance fishing, runabouts, family boats', '$28,000 – $50,000'],
-                    ['250 – 300 HP', 'High-performance, larger hulls, twin setups', '$48,000 – $75,000'],
-                    ['350 – 425 HP (Verado V10)', 'Special-order — call for pricing', '$65,000+ per engine'],
+                    ['9.9, 20 HP', 'Tiller, kicker, small aluminum, canoe', '$5,000, $9,000'],
+                    ['25, 60 HP', 'Mid-size aluminum, small pontoon', '$9,000, $18,000'],
+                    ['75, 115 HP', 'Larger fishing boats, pontoons, smaller runabouts', '$16,000, $28,000'],
+                    ['150, 200 HP', 'Performance fishing, runabouts, family boats', '$28,000, $50,000'],
+                    ['250, 300 HP', 'High-performance, larger hulls, twin setups', '$48,000, $75,000'],
+                    ['350, 425 HP (Verado V10)', 'Special-order, call for pricing', '$65,000+ per engine'],
                   ].map(([hp, boat, price]) => (
                     <tr key={hp} className="border-t border-[#F5F1EA]/10">
                       <td className="px-6 py-4 font-medium text-[#F5F1EA]">{hp}</td>
@@ -334,16 +334,16 @@ export default function Repower() {
         </div>
       </section>
 
-      {/* Winter Pro Tip — restyled */}
+      {/* Winter Pro Tip, restyled */}
       <WinterPro />
 
-      {/* Repower Process — restyled */}
+      {/* Repower Process, restyled */}
       <RepowerProcess />
 
-      {/* FAQ — restyled */}
+      {/* FAQ, restyled */}
       <RepowerFAQRestyled />
 
-      {/* Why Harris — restyled */}
+      {/* Why Harris, restyled */}
       <WhyHarrisRepower />
 
       {/* Service Area */}
@@ -421,7 +421,7 @@ export default function Repower() {
         </div>
       </section>
 
-      {/* Final CTA — restyled */}
+      {/* Final CTA, restyled */}
       <FinalCTARepower />
     </RepowerLayout>
   );

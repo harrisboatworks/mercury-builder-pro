@@ -30,7 +30,7 @@ interface TradeInValuationProps {
   customerName?: string;
   /** When true, skip the Yes/No toggle and show the form immediately */
   standalone?: boolean;
-  /** The price of the motor being quoted — used to warn if trade-in exceeds it */
+  /** The price of the motor being quoted, used to warn if trade-in exceeds it */
   selectedMotorPrice?: number;
 }
 
@@ -44,7 +44,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
   const autoEstimateTriggered = useRef(false);
 
   // Manual overrides for the decoded HP / Stroke chips. `undefined` means
-  // "no override — use parser value". `null` clears a parser value.
+  // "no override, use parser value". `null` clears a parser value.
   const [decodeOverride, setDecodeOverride] = useState<{
     hp?: number | null;
     stroke?: '4-Stroke' | '2-Stroke' | 'OptiMax' | null;
@@ -224,7 +224,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
     
     // Update the trade-in info with the rounded median value ($25 increments)
     const finalValue = medianRoundedTo25(tradeEstimate.low, tradeEstimate.high);
-    // Build report URL for persistence — let the API decode stroke from model.
+    // Build report URL for persistence, let the API decode stroke from model.
     const reportUrl = (tradeEstimate as HBWValuationResult).fromHBW
       ? buildHBWReportUrl({
           brand: tradeInInfo.brand,
@@ -713,7 +713,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                           )}
                           {(hp !== null || stroke) && (
                             <span className="text-xs text-muted-foreground font-light self-center">
-                              {(hpOverridden || strokeOverridden) ? '(manual override)' : '(auto-detected — click to edit)'}
+                              {(hpOverridden || strokeOverridden) ? '(manual override)' : '(auto-detected, click to edit)'}
                             </span>
                           )}
                         </div>
@@ -835,7 +835,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         max="20000"
                         className="min-h-[48px] rounded-sm border-gray-300 font-light"
                       />
-                      <p className="text-xs text-gray-400 font-light">Not sure? Leave blank — it's optional</p>
+                      <p className="text-xs text-gray-400 font-light">Not sure? Leave blank, it's optional</p>
                     </div>
 
                     <div className="space-y-2">
@@ -900,21 +900,21 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         <AnimatedPrice value={medianValue} prefix="$" duration={0.8} />
                       </div>
                       <div className="text-sm font-normal text-gray-700">
-                        Range: ${Math.round(estimate.low).toLocaleString()} – ${Math.round(estimate.high).toLocaleString()}
+                        Range: ${Math.round(estimate.low).toLocaleString()}, ${Math.round(estimate.high).toLocaleString()}
                       </div>
                     </div>
 
-                    {/* HBW-specific extras — corrected private sale framing */}
+                    {/* HBW-specific extras, corrected private sale framing */}
                     {(estimate as HBWValuationResult).fromHBW && (estimate as HBWValuationResult).hstSavings > 0 && (
                       <div className="mt-4 space-y-3">
                         <div className="text-sm font-light text-gray-700 bg-green-100 rounded-sm p-3 leading-relaxed">
                           {selectedMotorPrice ? (
                             <>
-                              Private sale might get you <strong className="font-medium">${Math.round((estimate as HBWValuationResult).listingValue).toLocaleString()}</strong> — but you'd owe <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> more in HST on your new motor. Trading in puts <strong className="font-medium">${medianValue.toLocaleString()} + ${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()} in savings</strong> in your pocket.
+                              Private sale might get you <strong className="font-medium">${Math.round((estimate as HBWValuationResult).listingValue).toLocaleString()}</strong>, but you'd owe <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> more in HST on your new motor. Trading in puts <strong className="font-medium">${medianValue.toLocaleString()} + ${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()} in savings</strong> in your pocket.
                             </>
                           ) : (
                             <>
-                              When you trade in instead of selling privately, you save <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> in HST on your new motor — because you only pay tax on the difference.
+                              When you trade in instead of selling privately, you save <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> in HST on your new motor, because you only pay tax on the difference.
                             </>
                           )}
                         </div>
@@ -936,14 +936,14 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                         <div className="flex items-start gap-2">
                           <AlertCircle className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
                           <p className="text-sm font-light text-amber-800">
-                            Your trade-in value exceeds the cost of your selected motor. The credit will be capped at the motor price — no cash refunds on trade-ins.
+                            Your trade-in value exceeds the cost of your selected motor. The credit will be capped at the motor price, no cash refunds on trade-ins.
                           </p>
                         </div>
                       </div>
                     )}
                   </Card>
 
-                  {/* View Full Report — subtle text link */}
+                  {/* View Full Report, subtle text link */}
                   {(estimate as HBWValuationResult).fromHBW && (
                     <div className="text-center">
                       <a
