@@ -1020,27 +1020,22 @@ if (event.type === 'filter_motors') {
 
         <VoiceStatusBanner />
         
-        {/* Page header */}
+        {/* Page header + search */}
         <div className="bg-repower-paper">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-14 py-14">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 py-14 md:py-20">
             <div className="flex items-center gap-3 mb-3">
               <span className="block h-px w-6 bg-repower-mercury-red" />
               <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-repower-mercury-red">
                 In-Stock Mercury Outboards
               </span>
             </div>
-            <h1 className="font-display font-bold text-[36px] md:text-[48px] tracking-[-0.025em] leading-[1.05] text-repower-navy-900">
+            <h1 className="font-display font-bold text-[36px] md:text-[48px] tracking-[-0.025em] leading-[1.05] text-repower-navy-900 mb-5">
               Choose your power.
             </h1>
-            <p className="mt-3 text-[18px] font-normal text-repower-navy-900/65 max-w-[60ch]">
+            <p className="text-[18px] font-normal text-repower-navy-900/65 max-w-[60ch] mb-10">
               {(finalFilteredMotors.length || processedMotors.length).toLocaleString()} motors in stock. Live pricing, transparent quotes, financing from $50/wk. Build yours in three minutes.
             </p>
-          </div>
-        </div>
 
-        {/* Search Bar */}
-        <div className="bg-repower-paper">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-6 pb-4">
             <div className="rounded-md bg-white border border-[rgba(10,22,40,0.10)] focus-within:border-repower-gold focus-within:shadow-[0_0_0_3px_rgba(201,162,74,0.15)] transition-all">
               <HybridMotorSearch
                 query={searchQuery}
