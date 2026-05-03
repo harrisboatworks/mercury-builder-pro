@@ -199,52 +199,52 @@ export default function Promotions() {
     const reviewCount = useMemo(() => generateReviewCount(), []);
 
     return (
-      <section className="bg-stone-50 py-16 px-4">
-        <div className="max-w-6xl mx-auto">
+      <section className="bg-white py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
+        <div className="max-w-[1100px] mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
+            <h2 className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-3" style={{ letterSpacing: '-0.025em' }}>
               What Our Customers Say
             </h2>
-            <p className="text-muted-foreground">
-              <span className="font-medium text-foreground">{reviewCount}+</span> five-star reviews from Ontario boaters
+            <p className="font-sans text-repower-navy-900/65">
+              <span className="font-medium text-repower-navy-900">{reviewCount}+</span> five-star reviews from Ontario boaters
             </p>
           </div>
-          
+
           <div className="relative">
             <div className="overflow-hidden" ref={emblaRef}>
               <div className="flex gap-6">
                 {dailyTestimonials.map((testimonial, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
                   >
-                    <div className="bg-white rounded-xl border border-border p-6 h-full">
+                    <div className="bg-white border border-repower-navy-900/10 rounded-lg p-6 h-full transition-shadow hover:shadow-md">
                       <div className="flex gap-1 mb-4">
                         {Array.from({ length: testimonial.rating }).map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                          <Star key={i} className="w-4 h-4 fill-repower-gold text-repower-gold" />
                         ))}
                       </div>
-                      
-                      <p className="text-foreground mb-4 italic">
+
+                      <p className="font-sans text-repower-navy-900 mb-4 italic">
                         "{testimonial.quote}"
                       </p>
-                      
+
                       <div className="text-sm">
-                        <span className="font-medium text-foreground">{testimonial.name}</span>
-                        <span className="text-muted-foreground">, {testimonial.location}</span>
+                        <span className="font-medium text-repower-navy-900">{testimonial.name}</span>
+                        <span className="text-repower-navy-900/60">, {testimonial.location}</span>
                       </div>
-                      
-                      <p className="text-xs text-muted-foreground mt-1 mb-3">
+
+                      <p className="text-xs text-repower-navy-900/60 mt-1 mb-3">
                         {testimonial.dateLabel}
                       </p>
-                      
-                      <div className="flex items-center justify-between pt-3 border-t border-border">
+
+                      <div className="flex items-center justify-between pt-3 border-t border-repower-navy-900/10">
                         <div className="flex items-center gap-2">
                           <img src={mercuryLogo} alt="Mercury" className="h-4" />
-                          <span className="text-xs text-muted-foreground">Mercury Owner</span>
+                          <span className="text-xs text-repower-navy-900/60">Mercury Owner</span>
                         </div>
-                        <div className="flex items-center gap-1 text-emerald-600">
-                          <BadgeCheck className="w-3.5 h-3.5" />
+                        <div className="flex items-center gap-1 text-repower-navy-900">
+                          <BadgeCheck className="w-3.5 h-3.5" strokeWidth={1.5} />
                           <span className="text-xs font-medium">Verified</span>
                         </div>
                       </div>
@@ -256,15 +256,15 @@ export default function Promotions() {
 
             <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full border border-border shadow-sm flex items-center justify-center hover:bg-stone-50 transition-colors hidden md:flex"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 bg-white rounded-full border border-repower-navy-900/10 shadow-sm hidden md:flex items-center justify-center hover:border-repower-navy-900/30 transition-colors"
             >
-              <ChevronLeft className="w-5 h-5 text-foreground" />
+              <ChevronLeft className="w-5 h-5 text-repower-navy-900" />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full border border-border shadow-sm flex items-center justify-center hover:bg-stone-50 transition-colors hidden md:flex"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 bg-white rounded-full border border-repower-navy-900/10 shadow-sm hidden md:flex items-center justify-center hover:border-repower-navy-900/30 transition-colors"
             >
-              <ChevronRight className="w-5 h-5 text-foreground" />
+              <ChevronRight className="w-5 h-5 text-repower-navy-900" />
             </button>
           </div>
 
@@ -274,7 +274,7 @@ export default function Promotions() {
                 key={index}
                 onClick={() => emblaApi?.scrollTo(index)}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  selectedIndex === index ? 'bg-foreground' : 'bg-border'
+                  selectedIndex === index ? 'bg-repower-gold' : 'bg-repower-navy-900/20'
                 }`}
               />
             ))}
