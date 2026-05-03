@@ -224,17 +224,29 @@ export function RepowerROICalculator() {
               }}
               className="space-y-3"
             >
-              {Object.entries(riggingCosts).map(([key, value]) => (
-                <div key={key} className="flex items-center gap-3">
-                  <RadioGroupItem value={key} id={key} />
-                  <Label htmlFor={key} className="flex-1 cursor-pointer font-sans text-sm text-repower-navy-900">
-                    <span className="font-medium">{value.label}</span>
-                    <span className="text-repower-navy-900/55 ml-2">
-                      ({formatCurrency(value.min)} to {formatCurrency(value.max)})
+              {Object.entries(riggingCosts).map(([key, value]) => {
+                const selected = riggingCondition === key;
+                return (
+                  <label
+                    key={key}
+                    htmlFor={key}
+                    className={cn(
+                      "flex items-center gap-3 p-4 rounded-none border cursor-pointer transition-colors",
+                      selected
+                        ? "border-repower-gold bg-repower-gold/[0.06]"
+                        : "border-repower-navy-900/10 bg-white hover:border-repower-navy-900/30"
+                    )}
+                  >
+                    <RadioGroupItem value={key} id={key} />
+                    <span className="flex-1 font-sans text-sm text-repower-navy-900">
+                      <span className="font-medium">{value.label}</span>
+                      <span className="text-repower-navy-900/55 ml-2">
+                        ({formatCurrency(value.min)} to {formatCurrency(value.max)})
+                      </span>
                     </span>
-                  </Label>
-                </div>
-              ))}
+                  </label>
+                );
+              })}
             </RadioGroup>
           </div>
 
