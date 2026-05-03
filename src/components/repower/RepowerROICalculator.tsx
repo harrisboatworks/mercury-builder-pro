@@ -224,17 +224,29 @@ export function RepowerROICalculator() {
               }}
               className="space-y-3"
             >
-              {Object.entries(riggingCosts).map(([key, value]) => (
-                <div key={key} className="flex items-center gap-3">
-                  <RadioGroupItem value={key} id={key} />
-                  <Label htmlFor={key} className="flex-1 cursor-pointer font-sans text-sm text-repower-navy-900">
-                    <span className="font-medium">{value.label}</span>
-                    <span className="text-repower-navy-900/55 ml-2">
-                      ({formatCurrency(value.min)} to {formatCurrency(value.max)})
+              {Object.entries(riggingCosts).map(([key, value]) => {
+                const selected = riggingCondition === key;
+                return (
+                  <label
+                    key={key}
+                    htmlFor={key}
+                    className={cn(
+                      "flex items-center gap-3 p-4 rounded-none border cursor-pointer transition-colors",
+                      selected
+                        ? "border-repower-gold bg-repower-gold/[0.06]"
+                        : "border-repower-navy-900/10 bg-white hover:border-repower-navy-900/30"
+                    )}
+                  >
+                    <RadioGroupItem value={key} id={key} />
+                    <span className="flex-1 font-sans text-sm text-repower-navy-900">
+                      <span className="font-medium">{value.label}</span>
+                      <span className="text-repower-navy-900/55 ml-2">
+                        ({formatCurrency(value.min)} to {formatCurrency(value.max)})
+                      </span>
                     </span>
-                  </Label>
-                </div>
-              ))}
+                  </label>
+                );
+              })}
             </RadioGroup>
           </div>
 
@@ -264,7 +276,7 @@ export function RepowerROICalculator() {
         </div>
 
         {/* Results Panel */}
-        <div className="bg-repower-navy-900 text-repower-cream rounded-none p-6 md:p-8">
+        <div className="bg-repower-cream border border-repower-navy-900/10 rounded-none p-6 md:p-8">
           <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-6 flex items-center gap-3">
             <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
             Cost Comparison
@@ -278,22 +290,22 @@ export function RepowerROICalculator() {
                 <div
                   key={calc.hp}
                   className={cn(
-                    "rounded-none p-5 border transition-colors",
+                    "rounded-none p-5 border transition-colors bg-white",
                     isBest
-                      ? "border-repower-gold bg-repower-gold/[0.06]"
-                      : "border-repower-cream/15 bg-repower-cream/[0.03]"
+                      ? "border-repower-gold"
+                      : "border-repower-navy-900/10"
                   )}
                 >
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-start justify-between mb-4 gap-4">
                     <div className="flex items-center gap-3">
-                      <span className="font-display font-bold text-xl text-repower-cream">{calc.hp} HP</span>
+                      <span className="font-sans font-semibold text-xs uppercase tracking-[0.18em] text-repower-navy-900/55">{calc.hp} HP</span>
                       {isBest && (
                         <span className="px-2 py-0.5 font-sans text-[10px] uppercase tracking-[0.18em] text-repower-gold border border-repower-gold/60">
                           Best Value
                         </span>
                       )}
                     </div>
-                    <span className="font-display font-bold text-2xl text-repower-cream">
+                    <span className="font-display font-bold text-[clamp(28px,3vw,40px)] tracking-[-0.025em] leading-none text-repower-navy-900">
                       {formatCurrency(calc.totalRepower)}
                     </span>
                   </div>
@@ -305,11 +317,11 @@ export function RepowerROICalculator() {
                       { label: 'Rigging', value: calc.riggingCost },
                       { label: 'Install', value: calc.installCost },
                     ].map((row) => (
-                      <div key={row.label} className="text-center p-3 border border-repower-cream/10">
-                        <div className="font-sans text-[10px] uppercase tracking-[0.18em] text-repower-cream/55 mb-1">
+                      <div key={row.label} className="text-center p-3 border border-repower-navy-900/10">
+                        <div className="font-sans text-[10px] uppercase tracking-[0.18em] text-repower-navy-900/55 mb-1">
                           {row.label}
                         </div>
-                        <div className="font-sans font-semibold text-sm text-repower-cream">
+                        <div className="font-sans font-semibold text-sm text-repower-navy-900">
                           {formatCurrency(row.value)}
                         </div>
                       </div>
@@ -317,19 +329,19 @@ export function RepowerROICalculator() {
                   </div>
 
                   {/* Visual Bar */}
-                  <div className="relative h-2 bg-repower-cream/10 overflow-hidden mb-3">
+                  <div className="relative h-1.5 bg-repower-navy-900/10 overflow-hidden mb-3">
                     <div
                       className="absolute inset-y-0 left-0 bg-repower-gold transition-all duration-500"
                       style={{ width: `${calc.costPercent}%` }}
                     />
                   </div>
-                  <div className="flex items-center justify-between font-sans text-xs text-repower-cream/65 mb-2">
+                  <div className="flex items-center justify-between font-sans text-xs text-repower-navy-900/55 mb-3">
                     <span>{calc.costPercent}% of new boat cost</span>
                   </div>
 
-                  <div className="flex items-center justify-between font-sans text-sm pt-3 border-t border-repower-cream/10">
-                    <span className="text-repower-cream/65">You save</span>
-                    <span className="font-display font-bold text-repower-gold">
+                  <div className="flex items-center justify-between pt-3 border-t border-repower-navy-900/10">
+                    <span className="font-sans text-[11px] uppercase tracking-[0.18em] text-repower-mercury-red font-semibold">You save</span>
+                    <span className="font-sans text-[11px] uppercase tracking-[0.18em] text-repower-mercury-red font-semibold">
                       {formatCurrency(calc.savings)} ({calc.savingsPercent}%)
                     </span>
                   </div>
@@ -338,9 +350,9 @@ export function RepowerROICalculator() {
             })}
 
             {/* New Boat Reference */}
-            <div className="border border-repower-cream/15 p-5 flex items-center justify-between">
-              <span className="font-sans text-sm text-repower-cream/65">Comparable new boat</span>
-              <span className="font-display font-bold text-xl text-repower-cream">
+            <div className="border border-repower-navy-900/10 bg-white p-5 flex items-center justify-between">
+              <span className="font-sans text-xs uppercase tracking-[0.18em] text-repower-navy-900/55">Comparable new boat</span>
+              <span className="font-display font-bold text-xl text-repower-navy-900">
                 {formatCurrency(newBoatValue)}
               </span>
             </div>

@@ -11,11 +11,12 @@ import { FinalCTARepower } from '@/components/repower/FinalCTARepower';
 import { RepowerPageSEO } from '@/components/seo/RepowerPageSEO';
 
 import { RepowerGuideDownloadDialog } from '@/components/repower/RepowerGuideDownloadDialog';
-import { ExpandableImage } from '@/components/ui/expandable-image';
+
 import { Button } from '@/components/ui/button';
 import { 
   AlertTriangle, Zap, Fuel, Volume2, Wrench, Calendar, Award, 
-  MapPin, Phone, Download, Play, ChevronRight, Snowflake, BadgeCheck, Star
+  MapPin, Phone, Download, Play, ChevronRight, Snowflake, BadgeCheck, Star,
+  Check, X
 } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { generateDailyTestimonials, generateReviewCount } from '@/lib/activityGenerator';
@@ -84,17 +85,18 @@ export default function Repower() {
             {warningSignsData.map((sign, index) => (
               <div
                 key={index}
-                className="border border-repower-navy-900/10 bg-white rounded p-8 hover:border-repower-mercury-red/40 transition-all duration-300"
+                className="border border-repower-navy-900/10 bg-white rounded-none p-8 hover:border-repower-mercury-red/40 transition-colors duration-300"
               >
-                <sign.icon className="w-6 h-6 text-repower-mercury-red mb-4" />
-                <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-2">{sign.title}</h3>
+                <sign.icon className="w-6 h-6 text-repower-mercury-red mb-4" strokeWidth={1.75} />
+                <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-2 tracking-tight">{sign.title}</h3>
                 <p className="font-sans text-sm text-repower-navy-900/65 leading-relaxed">{sign.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="border-l-2 border-repower-gold pl-6 md:pl-8 py-4">
-            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-3">
+          <div className="bg-repower-cream border-l-2 border-repower-gold p-8 md:p-10">
+            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-3 flex items-center gap-3">
+              <AlertTriangle className="w-4 h-4 text-repower-gold" strokeWidth={2} />
               The "One More Season" Trap
             </p>
             <p className="font-sans text-base md:text-lg text-repower-navy-900/80 leading-relaxed">
@@ -105,7 +107,7 @@ export default function Repower() {
       </section>
 
       {/* Repower vs New Boat */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-navy-900 text-repower-cream">
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-14 md:mb-20">
             <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
@@ -120,8 +122,8 @@ export default function Repower() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="border border-repower-gold/40 bg-repower-gold/[0.04] rounded p-8 md:p-10">
-              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-4">
+            <div className="bg-repower-cream border border-repower-navy-900/10 rounded-none p-8 md:p-10">
+              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-6">
                 Repower if...
               </p>
               <ul className="space-y-4 list-none">
@@ -130,16 +132,16 @@ export default function Repower() {
                   'You like your boat, it fits your needs and the right size',
                   'The numbers work: 70% of the benefit for 30% of the cost',
                 ].map((item) => (
-                  <li key={item} className="font-sans text-base text-repower-cream/85 leading-relaxed">
-                    <span aria-hidden="true" className="inline-block w-4 mr-2 text-repower-gold font-bold">✓</span>
+                  <li key={item} className="flex gap-3 font-sans text-base text-repower-navy-900/80 leading-relaxed">
+                    <Check className="w-4 h-4 text-repower-gold flex-shrink-0 mt-1.5" strokeWidth={2.5} />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="border border-repower-cream/15 rounded p-8 md:p-10">
-              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-cream/55 mb-4">
+            <div className="bg-repower-cream border border-repower-navy-900/10 rounded-none p-8 md:p-10">
+              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-navy-900/55 mb-6">
                 Buy new if...
               </p>
               <ul className="space-y-4 list-none">
@@ -148,8 +150,8 @@ export default function Repower() {
                   "You've outgrown your current boat",
                   'You want completely different features or layout',
                 ].map((item) => (
-                  <li key={item} className="font-sans text-base text-repower-cream/65 leading-relaxed">
-                    <span aria-hidden="true" className="inline-block w-4 mr-2 text-repower-cream/40">·</span>
+                  <li key={item} className="flex gap-3 font-sans text-base text-repower-navy-900/65 leading-relaxed">
+                    <X className="w-4 h-4 text-repower-navy-900/50 flex-shrink-0 mt-1.5" strokeWidth={2} />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -180,23 +182,25 @@ export default function Repower() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid md:grid-cols-3 border-t border-l border-repower-navy-900/10 mb-10">
             {modernBenefitsData.map((benefit, index) => (
               <div
                 key={index}
-                className="border border-repower-navy-900/10 bg-white rounded p-8 hover:border-repower-gold/50 transition-all duration-300"
+                className="border-r border-b border-repower-navy-900/10 p-8 md:p-10"
               >
-                <benefit.icon className="w-6 h-6 text-repower-gold mb-4" />
-                <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-2">{benefit.title}</h3>
-                <p className="font-sans text-sm text-repower-navy-900/65 leading-relaxed">{benefit.description}</p>
+                <benefit.icon className="w-6 h-6 text-repower-mercury-red mb-6" strokeWidth={1.75} />
+                <h3 className="font-display font-bold text-[clamp(22px,2.2vw,32px)] text-repower-navy-900 mb-3 tracking-[-0.02em] leading-[1.1]">
+                  {benefit.title}
+                </h3>
+                <p className="font-sans text-sm md:text-base text-repower-navy-900/65 leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="border border-repower-navy-900/10 bg-white rounded p-6 md:p-8 flex items-center gap-6">
+          <div className="bg-repower-cream border-l-2 border-repower-gold p-6 md:p-8 flex items-center gap-6">
             <img src={mercuryLogo} alt="Mercury" className="h-10 hidden sm:block" />
             <div>
-              <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-1">Mercury SmartCraft® Technology</h3>
+              <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-1 tracking-tight">Mercury SmartCraft® Technology</h3>
               <p className="font-sans text-sm text-repower-navy-900/65 leading-relaxed">
                 Real-time engine monitoring, fuel economy tracking, and maintenance alerts, from your phone with the Mercury Marine app.
               </p>
@@ -205,30 +209,66 @@ export default function Repower() {
         </div>
       </section>
 
-      {/* Infographic Section */}
+      {/* Native repower guide sections (replaces infographic image) */}
       <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-navy-900 text-repower-cream">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 inline-flex items-center gap-3">
-            <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
-            Reference
-          </p>
-          <h2
-            className="font-display font-bold text-[clamp(32px,4.5vw,56px)] tracking-[-0.03em] leading-[1.05] mb-10"
-          >
-            The complete repower guide.
-          </h2>
-          <ExpandableImage
-            src="/repower-assets/hbw-repower-infographic.png"
-            alt="Harris Boat Works Mercury Repower Infographic - 70% of the benefit for 30% of the cost. Warning signs, process, and pricing guide for boat motor replacement"
-            className="w-full rounded shadow-2xl shadow-black/40 mb-8 border border-repower-cream/10"
-          />
-          <button
-            onClick={() => setGuideDialogOpen(true)}
-            className="inline-flex items-center justify-center gap-2 border border-repower-cream/30 text-repower-cream px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-repower-cream/5 transition-all duration-300"
-          >
-            <Download className="w-4 h-4" />
-            Download Full Guide (PDF)
-          </button>
+        <div className="max-w-[1400px] mx-auto">
+          <div className="max-w-3xl mb-14 md:mb-20">
+            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 inline-flex items-center gap-3">
+              <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
+              Reference
+            </p>
+            <h2 className="font-display font-bold text-[clamp(36px,4.5vw,64px)] tracking-[-0.03em] leading-[1.05]">
+              The complete repower <em className="not-italic italic text-repower-mercury-red">guide.</em>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-px bg-repower-cream/10 border border-repower-cream/10">
+            {[
+              {
+                Icon: AlertTriangle, color: 'text-repower-mercury-red', eyebrow: 'The Problem',
+                title: 'Your motor is costing you more than money.',
+                body: 'Aging two-strokes drink fuel, fail to start, and turn weekends into shop visits. Every season you wait, the resale value of your boat drops with the motor.',
+              },
+              {
+                Icon: Wrench, color: 'text-repower-gold', eyebrow: 'The Solution',
+                title: 'Repower with a modern Mercury.',
+                body: 'New FourStroke EFI technology delivers 30 to 40% better fuel economy, near-silent cruising, and key-turn reliability with SmartCraft monitoring built in.',
+              },
+              {
+                Icon: BadgeCheck, color: 'text-repower-gold', eyebrow: 'The Math',
+                title: '70% of the benefit. 30% of the cost.',
+                body: 'A typical Rice Lake repower runs $8,000 to $18,000 all-in. A comparable new boat is $35,000 to $70,000. You keep the hull you love and skip the depreciation hit.',
+              },
+              {
+                Icon: ChevronRight, color: 'text-repower-gold', eyebrow: 'The Steps',
+                title: 'Four steps from quote to lake test.',
+                body: '01 Consultation and quote. 02 Scheduling, shortest waits in the region. 03 Mercury-certified install in 1 to 2 days. 04 Lake test on Rice Lake before you take her home.',
+              },
+            ].map((s) => (
+              <div key={s.eyebrow} className="bg-repower-navy-900 p-8 md:p-12 motion-safe:animate-fade-in">
+                <s.Icon className={`w-7 h-7 ${s.color} mb-6`} strokeWidth={1.75} />
+                <p className={`font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] ${s.color} mb-3`}>
+                  {s.eyebrow}
+                </p>
+                <h3 className="font-display font-bold text-[clamp(22px,2.4vw,32px)] text-repower-cream mb-4 tracking-[-0.02em] leading-[1.1]">
+                  {s.title}
+                </h3>
+                <p className="font-sans text-base md:text-lg text-repower-cream/65 leading-relaxed">
+                  {s.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={() => setGuideDialogOpen(true)}
+              className="inline-flex items-center justify-center gap-2 border border-repower-cream/30 text-repower-cream px-8 py-4 rounded-none uppercase tracking-wider text-sm font-semibold hover:bg-repower-cream/5 transition-colors duration-300"
+            >
+              <Download className="w-4 h-4" />
+              Download Full Guide (PDF)
+            </button>
+          </div>
         </div>
       </section>
 
@@ -271,7 +311,7 @@ export default function Repower() {
             ))}
           </div>
 
-          <div className="border border-repower-gold/40 bg-repower-cream rounded p-10 md:p-14 text-center">
+          <div className="bg-repower-cream border-l-2 border-repower-gold rounded-none p-10 md:p-14">
             <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-mercury-red mb-4">
               Typical Rice Lake Repower
             </p>
