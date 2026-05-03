@@ -51,13 +51,12 @@ export function RepowerHeader() {
               alt="Mercury Marine"
               className="hidden sm:block h-7 md:h-8 w-auto brightness-0 invert"
             />
-            <div className="hidden md:flex flex-col leading-none ml-2 border-l border-[#F5F1EA]/15 pl-4">
-              <span className="font-display font-bold text-[#F5F1EA] text-sm tracking-wide">
-                Mercury Repower
-              </span>
-              <span className="font-sans text-[10px] uppercase tracking-[0.22em] text-[#C9A24A] mt-1">
-                Centre · Rice Lake
-              </span>
+            <div className="hidden md:flex items-center ml-2 border-l border-[#F5F1EA]/15 pl-4">
+              <img
+                src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
+                alt="Mercury Certified Repower Centre"
+                className="h-10 lg:h-11 w-auto"
+              />
             </div>
           </Link>
 
