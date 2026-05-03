@@ -85,7 +85,7 @@ export function HeroRepower() {
               <div className={statNumberClass} style={statNumberStyle}>
                 {s.n}
               </div>
-              <div className={statLabelClass}>{s.l}</div>
+              <div className={statLabelClass} style={statLabelStyle}>{s.l}</div>
             </div>
           ))}
         </motion.div>
