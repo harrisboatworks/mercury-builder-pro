@@ -15,7 +15,8 @@ import { ExpandableImage } from '@/components/ui/expandable-image';
 import { Button } from '@/components/ui/button';
 import { 
   AlertTriangle, Zap, Fuel, Volume2, Wrench, Calendar, Award, 
-  MapPin, Phone, Download, Play, ChevronRight, Snowflake, BadgeCheck, Star
+  MapPin, Phone, Download, Play, ChevronRight, Snowflake, BadgeCheck, Star,
+  Check, X
 } from 'lucide-react';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { generateDailyTestimonials, generateReviewCount } from '@/lib/activityGenerator';
