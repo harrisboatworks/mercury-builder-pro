@@ -1150,22 +1150,10 @@ if (event.type === 'filter_motors') {
         <div className="max-w-[1400px] mx-auto px-6 md:px-14">
           {/* Motors Grid */}
           {finalFilteredMotors.length > 0 ? (
-            <motion.div 
+            <div
               className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
-              initial={hasInitiallyLoaded ? false : "hidden"}
-              animate="visible"
-              variants={{
-                hidden: { opacity: 0 },
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    staggerChildren: 0.06,
-                    delayChildren: 0.08
-                  }
-                }
-              }}
             >
-              {finalFilteredMotors.map(motor => {
+              {finalFilteredMotors.map((motor, index) => {
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
                 const specs = dbMotor?.specifications || {};
@@ -1189,18 +1177,14 @@ if (event.type === 'filter_motors') {
                  return (
                    <motion.div data-motor-card
                      key={motor.id}
-                      variants={{
-                        hidden: { opacity: 0, y: 16, scale: 0.97 },
-                        visible: {
-                          opacity: 1,
-                          y: 0,
-                          scale: 1,
-                          transition: {
-                            duration: 0.4,
-                            ease: [0.25, 0.1, 0.25, 1]
-                          }
-                        }
-                      }}
+                     initial={{ opacity: 0, y: 12 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true, margin: '0px 0px -10% 0px' }}
+                     transition={{
+                       duration: 0.6,
+                       delay: (index % 4) * 0.08,
+                       ease: [0.2, 0.8, 0.2, 1],
+                     }}
                    >
                    <MotorCardPreview
                    img={heroImageUrl}
@@ -1226,7 +1210,7 @@ if (event.type === 'filter_motors') {
                    </motion.div>
                );
              })}
-           </motion.div>
+           </div>
           ) : (
             <div className="bg-repower-cream/40 border border-[rgba(10,22,40,0.10)] rounded-lg p-12 text-center max-w-2xl mx-auto">
               <h3 className="font-display font-bold text-[24px] tracking-[-0.02em] text-repower-navy-900 mb-2">
