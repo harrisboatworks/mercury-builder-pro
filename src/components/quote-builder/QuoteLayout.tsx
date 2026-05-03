@@ -7,7 +7,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { HamburgerMenu } from '@/components/ui/hamburger-menu';
 import { useState } from 'react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { QuoteProgressStepper } from './QuoteProgressStepper';
 import { useQuoteActivityTracker } from '@/hooks/useQuoteActivityTracker';
 import { useQuote } from '@/contexts/QuoteContext';
@@ -45,11 +45,11 @@ export const QuoteLayout = ({
         </div>
       )}
 
-      {/* Luxury Header System */}
-      <LuxuryHeader 
-        onSearchClick={onSearchClick}
-        showSearchIcon={showSearchIcon}
-      />
+      {/* Site-wide solid navy header */}
+      <RepowerHeader solid />
+
+      {/* Spacer to offset fixed header */}
+      <div className="h-[64px] lg:h-[72px]" aria-hidden />
 
       {/* Quote Progress Stepper */}
       {showProgress && <QuoteProgressStepper />}
