@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { 
   Bell, ChevronRight, Calendar, Tag, Gift, Sparkles, Mail, MessageSquare,
   Award, Wrench, Waves, MapPin, Star, ChevronLeft, ChevronDown, BadgeCheck, Shield
@@ -325,7 +325,8 @@ export default function Promotions() {
   return (
     <div className="min-h-screen bg-repower-paper">
       <PromotionsPageSEO promotions={promotions} />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       {/* Hero Section, only when promos are active */}
       {hasActivePromos && <PromotionHero endDate={mainPromotion?.end_date} bonusTitle={mainPromotion?.bonus_title} bonusDescription={mainPromotion?.bonus_description} />}
