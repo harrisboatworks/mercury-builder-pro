@@ -478,10 +478,13 @@ export default function MotorDetailsPremiumModal({
               <div className="p-6 pt-4 pb-24 space-y-8">
                 <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - Fetched from motor_media table */}
-                    <div className="py-2 bg-gradient-to-b from-stone-50 to-white rounded-lg">
+                    <div
+                      className="py-2 rounded-lg"
+                      style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}
+                    >
                       {imagesLoading ? (
                         <div className="flex items-center justify-center h-64">
-                          <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
+                          <Loader2 className="w-8 h-8 animate-spin" style={{ color: 'rgba(5, 14, 28, 0.45)' }} />
                         </div>
                       ) : (
                         <MotorImageGallery 
@@ -546,7 +549,7 @@ export default function MotorDetailsPremiumModal({
                     {/* About This Motor - Description with fallback */}
                     {displayDescription && (
                       <div className="space-y-3">
-                        <h3 className="text-lg font-semibold tracking-wide text-gray-900">
+                        <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C]">
                           About This Motor
                         </h3>
                         <p className="text-base text-gray-700 font-normal leading-relaxed">
@@ -558,13 +561,13 @@ export default function MotorDetailsPremiumModal({
                     {/* Key Takeaways - Customer Benefits */}
                     {motor?.spec_json?.keyTakeaways && Array.isArray(motor.spec_json.keyTakeaways) && motor.spec_json.keyTakeaways.length > 0 && (
                       <div className="space-y-3">
-                        <h3 className="text-lg font-semibold tracking-wide text-gray-900">
+                        <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C]">
                           Why You'll Love It
                         </h3>
                         <div className="space-y-3">
                           {motor.spec_json.keyTakeaways.map((takeaway: string, idx: number) => (
                             <div key={idx} className="flex flex-row items-start gap-3">
-                              <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                              <CheckCircle className="w-5 h-5 text-[#C9A24A] shrink-0 mt-0.5" />
                               <span className="text-base text-gray-700">{takeaway}</span>
                             </div>
                           ))}
@@ -575,13 +578,13 @@ export default function MotorDetailsPremiumModal({
                     {/* What's Included */}
                     {includedAccessories.length > 0 && (
                       <div className="space-y-3">
-                        <h3 className="text-lg font-semibold tracking-wide text-gray-900">
+                        <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C]">
                           What's Included
                         </h3>
                         <div className="space-y-3">
                           {includedAccessories.map((item, idx) => (
                             <div key={idx} className="flex flex-row items-start gap-3">
-                              <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                              <CheckCircle className="w-5 h-5 text-[#C9A24A] shrink-0 mt-0.5" />
                               <span className="text-base text-gray-700">{item}</span>
                             </div>
                           ))}
@@ -592,13 +595,13 @@ export default function MotorDetailsPremiumModal({
                     {/* Key Features - Top 4 only */}
                     {features.length > 0 && (
                       <div className="space-y-4">
-                        <h3 className="text-lg font-semibold tracking-wide text-gray-900">
+                        <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C]">
                           Key Features
                         </h3>
                         <div className="space-y-3">
                           {features.slice(0, 4).map((feature, idx) => (
                             <div key={idx} className="flex flex-row items-start gap-3">
-                              <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                              <CheckCircle className="w-5 h-5 text-[#C9A24A] shrink-0 mt-0.5" />
                               <span className="text-base text-gray-700">{feature}</span>
                             </div>
                           ))}
@@ -609,11 +612,11 @@ export default function MotorDetailsPremiumModal({
                     {/* Customer Review */}
                     {smartReview && (
                       <div className="border-t border-gray-100 pt-6">
-                        <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
+                        <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4">
                           Customer Review
                         </h3>
                         <div className="space-y-3">
-                          <div className="flex items-center gap-1 text-yellow-500 text-sm">
+                          <div className="flex items-center gap-1 text-[#C9A24A] text-sm">
                             <span>★★★★★</span>
                           </div>
                           <blockquote className="text-sm font-normal italic text-gray-700 pl-4 border-l-2 border-gray-200">
@@ -629,24 +632,30 @@ export default function MotorDetailsPremiumModal({
                     {/* Controls Notice */}
                     {motor && (
                       requiresMercuryControls(motor) ? (
-                        <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                        <div
+                          className="p-4 rounded-lg"
+                          style={{ backgroundColor: '#F5F1EA', border: '1px solid rgba(10, 22, 40, 0.10)' }}
+                        >
                           <div className="flex items-start gap-3">
-                            <Wrench className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                            <Wrench className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: 'rgba(5, 14, 28, 0.70)' }} />
                             <div>
-                              <h4 className="font-medium text-blue-900 text-sm">Mercury Controls Required</h4>
-                              <p className="text-sm text-blue-800 font-normal mt-1">
+                              <h4 className="font-display font-semibold text-[16px] tracking-[-0.015em] text-[#050E1C]">Mercury Controls Required</h4>
+                              <p className="text-sm font-normal mt-1 text-[#050E1C]/65">
                                 Installation requires throttle & shift controls ($800-1,500)
                               </p>
                             </div>
                           </div>
                         </div>
                       ) : (
-                        <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                        <div
+                          className="p-4 rounded-lg"
+                          style={{ backgroundColor: '#F5F1EA', border: '1px solid rgba(10, 22, 40, 0.10)' }}
+                        >
                           <div className="flex items-start gap-3">
-                            <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                            <CheckCircle className="w-5 h-5 text-[#C9A24A] flex-shrink-0 mt-0.5" />
                             <div>
-                              <h4 className="font-medium text-green-900 text-sm">No Additional Controls Required</h4>
-                              <p className="text-sm text-green-800 font-normal mt-1">
+                              <h4 className="font-display font-semibold text-[16px] tracking-[-0.015em] text-[#050E1C]">No Additional Controls Required</h4>
+                              <p className="text-sm font-normal mt-1 text-[#050E1C]/65">
                                 Tiller motor includes integrated controls - mount and go!
                               </p>
                             </div>
@@ -662,7 +671,7 @@ export default function MotorDetailsPremiumModal({
                       {/* Model Code Breakdown - First in Specs */}
                       {decoded.length > 0 && (
                         <div>
-                          <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                          <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4 flex items-center gap-2">
                             📖 Model Code Breakdown
                           </h3>
                           <div className="bg-gradient-to-br from-stone-50 to-slate-50 rounded-lg border border-gray-100 divide-y divide-gray-100">
@@ -688,7 +697,7 @@ export default function MotorDetailsPremiumModal({
 
                       {/* Engine Specifications */}
                     <div>
-                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                      <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4 flex items-center gap-2">
                         <Settings className="w-5 h-5 text-primary" />
                         Engine Specifications
                       </h3>
@@ -710,7 +719,7 @@ export default function MotorDetailsPremiumModal({
 
                     {/* Physical Specifications */}
                     <div>
-                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                      <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4 flex items-center gap-2">
                         <Package className="w-5 h-5 text-primary" />
                         Physical Specifications
                       </h3>
@@ -724,7 +733,7 @@ export default function MotorDetailsPremiumModal({
 
                     {/* Performance Data */}
                     <div>
-                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                      <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4 flex items-center gap-2">
                         <Gauge className="w-5 h-5 text-primary" />
                         Performance Estimates
                       </h3>
@@ -738,7 +747,7 @@ export default function MotorDetailsPremiumModal({
 
                       {/* Requirements */}
                       <div>
-                        <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4 flex items-center gap-2">
+                        <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4 flex items-center gap-2">
                           <AlertCircle className="w-5 h-5 text-primary" />
                           Requirements
                         </h3>
@@ -763,13 +772,13 @@ export default function MotorDetailsPremiumModal({
                   {/* INCLUDED TAB */}
                   <TabsContent value="included" className="space-y-6 mt-0 pt-6">
                     <div>
-                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
+                      <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4">
                         What's Included
                       </h3>
                       <div className="space-y-3">
                         {includedAccessories.map((item, idx) => (
                           <div key={idx} className="flex flex-row items-start gap-3">
-                            <CheckCircle className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
+                            <CheckCircle className="w-5 h-5 text-[#C9A24A] shrink-0 mt-0.5" />
                             <span className="text-base text-gray-700">{item}</span>
                           </div>
                         ))}
@@ -778,12 +787,12 @@ export default function MotorDetailsPremiumModal({
                     
                     {/* Warranty Info */}
                     <div className="border-t border-gray-100 pt-6">
-                      <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
+                      <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4">
                         Warranty Coverage
                       </h3>
                       <div className="space-y-3">
                         <div className="flex flex-row items-center gap-3 text-left">
-                          <Shield className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                          <Shield className="w-5 h-5 flex-shrink-0" style={{ color: "rgba(5, 14, 28, 0.70)" }} />
                           <span className="text-sm font-normal text-gray-700 flex-1">
                             3-Year Mercury Factory Warranty
                           </span>
@@ -794,7 +803,7 @@ export default function MotorDetailsPremiumModal({
                             const totalYears = 3 + promoYears;
                             return (
                               <div className="flex flex-row items-center gap-3 text-left">
-                                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-[#C9A24A] flex-shrink-0" />
                                 <span className="text-sm font-normal text-gray-700 flex-1">
                                   +{promoYears} Year Extended Coverage = <strong>{totalYears} Years Total</strong>
                                 </span>
@@ -813,7 +822,7 @@ export default function MotorDetailsPremiumModal({
                       {/* Videos Section - First for engagement */}
                       {motor?.id && (
                         <div>
-                          <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
+                          <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4">
                             Videos & Demonstrations
                           </h3>
                           <MotorVideosSection 
@@ -826,7 +835,7 @@ export default function MotorDetailsPremiumModal({
                       {/* Documents Section */}
                       {motor?.id && (
                         <div className="border-t border-gray-100 pt-6">
-                          <h3 className="text-lg font-semibold tracking-wide text-gray-900 mb-4">
+                          <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4">
                             Downloads & Documentation
                           </h3>
                           <MotorDocumentsSection motorId={motor.id} />
@@ -871,7 +880,7 @@ export default function MotorDetailsPremiumModal({
                 >
                   {/* Motor Name & Thumbnail */}
                   <div>
-                    <h3 className="text-lg font-semibold tracking-wide text-gray-900">
+                    <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C]">
                       {title}
                     </h3>
                   </div>
