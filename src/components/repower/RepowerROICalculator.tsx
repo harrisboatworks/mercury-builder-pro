@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Calculator, TrendingUp, Check, Zap, Info } from 'lucide-react';
+// icons removed: design uses typography + hairlines, no icon chrome
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
