@@ -30,36 +30,39 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
   const rebateOption = options.find(o => o.id === 'cash_rebate');
 
   return (
-    <section className="max-w-6xl mx-auto px-4 py-16">
-      {/* Section header */}
-      <div className="text-center mb-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-4"
-        >
-          Choose Your Bonus
-        </motion.div>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold text-foreground mb-4"
-        >
-          Pick One of These Exclusive Benefits
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-lg text-muted-foreground max-w-2xl mx-auto"
-        >
-          In addition to 7 years of factory coverage, choose the bonus that works best for you.
-        </motion.p>
-      </div>
+    <section className="bg-repower-paper text-repower-navy-900 py-20 md:py-28 px-6 md:px-14">
+      <div className="max-w-6xl mx-auto">
+        {/* Section header */}
+        <div className="text-center mb-14 max-w-3xl mx-auto">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-mercury-red mb-5 inline-flex items-center gap-3"
+          >
+            <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
+            Choose Your Bonus
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.05 }}
+            className="font-display font-bold text-repower-navy-900 mb-5"
+            style={{ fontSize: 'clamp(32px, 4vw, 44px)', letterSpacing: '-0.025em', lineHeight: 1.1 }}
+          >
+            Pick One of These Exclusive Benefits
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="font-sans text-[17px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed"
+          >
+            In addition to 7 years of factory coverage, choose the bonus that works best for you.
+          </motion.p>
+        </div>
 
       {/* Three option cards */}
       <div className="grid md:grid-cols-3 gap-6 mb-12">
