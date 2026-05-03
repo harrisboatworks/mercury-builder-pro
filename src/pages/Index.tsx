@@ -215,35 +215,44 @@ export default function Index() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="py-12 md:py-20 bg-repower-paper">
+        <section className="py-12 md:py-20 bg-repower-navy-800 border-t border-repower-cream/10">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-repower-navy-900 mb-3">
+              <p className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
+                Customers
+              </p>
+              <h2
+                className="font-display font-bold tracking-tight text-3xl md:text-5xl text-repower-cream mb-4 leading-[1.1]"
+                style={{ letterSpacing: '-0.02em' }}
+              >
                 What customers say
               </h2>
               <div className="flex items-center justify-center">
-                <GoogleRatingBadge variant="full" />
+                <div className="inline-flex items-center rounded-full bg-repower-cream/5 border border-repower-cream/10 px-3 py-1.5">
+                  <GoogleRatingBadge variant="full" />
+                </div>
               </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
               {TESTIMONIALS.map(t => (
-                <Card key={t.name} className="border-border/60">
-                  <CardContent className="p-6">
-                    <div className="flex gap-0.5 text-yellow-400 mb-3" aria-label="5 stars">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <span key={i}>★</span>
-                      ))}
-                    </div>
-                    <p className="text-foreground leading-relaxed mb-4 italic">
-                      &ldquo;{t.quote}&rdquo;
-                    </p>
-                    <div className="text-sm">
-                      <div className="font-medium text-foreground">{t.name}</div>
-                      <div className="text-muted-foreground">{t.location}</div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <div
+                  key={t.name}
+                  className="rounded-xl bg-repower-navy-900/60 border border-repower-cream/10 backdrop-blur-sm p-6"
+                >
+                  <div className="flex gap-0.5 text-repower-gold mb-3" aria-label="5 stars">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <span key={i}>★</span>
+                    ))}
+                  </div>
+                  <p className="text-repower-cream/90 leading-relaxed mb-4 italic">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <div className="text-sm">
+                    <div className="font-medium text-repower-cream">{t.name}</div>
+                    <div className="text-repower-cream/60">{t.location}</div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
