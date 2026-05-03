@@ -1064,8 +1064,6 @@ if (event.type === 'filter_motors') {
           onHpSelect={handleHpSuggestionSelect}
         />
         
-        {/* Promotional Banner — only when active promos exist */}
-        <PromoBannerConditional />
         
         {/* Recently Viewed Bar */}
         <RecentlyViewedBar 
@@ -1228,8 +1226,9 @@ if (event.type === 'filter_motors') {
           <MotorSelectionFAQ />
         </div>
           </div>
-          </main>
-        </div>
+            </main>
+          </div>
+        </RepowerLayout>
         
         {/* Motor Recommendation Quiz Modal */}
         <MotorRecommendationQuiz
