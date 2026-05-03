@@ -242,7 +242,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
         {/* Click to expand hint - only show for non-placeholder */}
         {displayImages[0] !== PLACEHOLDER_IMAGE && (
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200">
-            <div className="bg-white/90 text-slate-700 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+            <div className="px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 text-[#050E1C]" style={{ backgroundColor: 'rgba(245, 241, 234, 0.95)' }}>
               {lightboxImageLoading ? (
                 <>
                   <Loader2 className="h-3 w-3 animate-spin" />
