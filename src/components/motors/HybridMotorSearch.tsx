@@ -563,32 +563,12 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           )}
         </motion.div>
         
-        {/* Animated Placeholder Overlay with Typing Cursor */}
+        {/* Static placeholder */}
         {!query && !isListening && (
-          <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none overflow-hidden flex items-center">
-            <AnimatePresence mode="wait">
-              <motion.span
-                key={placeholderIndex}
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="text-gray-400 font-light text-base"
-              >
-                {PLACEHOLDER_PHRASES[placeholderIndex]}
-              </motion.span>
-            </AnimatePresence>
-            {/* Blinking Typing Cursor */}
-            <motion.span
-              animate={{ opacity: [1, 0] }}
-              transition={{ 
-                duration: 0.7, 
-                repeat: Infinity, 
-                repeatType: "reverse",
-                ease: "easeInOut"
-              }}
-              className="inline-block w-0.5 h-5 bg-gray-400 ml-0.5"
-            />
+          <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none">
+            <span className="text-[15px] font-normal text-repower-navy-900/40">
+              Search motors by HP, model, or feature…
+            </span>
           </div>
         )}
 

@@ -16,7 +16,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { daysUntil } from '@/lib/finance';
 import { Clock } from 'lucide-react';
-import { DismissibleBanner } from '@/components/ui/dismissible-banner';
+import { X } from 'lucide-react';
 import harris7YearWarranty from '@/assets/harris-7-year-warranty.png';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
@@ -33,7 +33,7 @@ import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
 // ComparisonFloatingPill removed - comparison now integrated into UnifiedMobileBar
 import { Button } from '@/components/ui/button';
-import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { RepowerLayout } from '@/components/repower/RepowerLayout';
 import { MotorSelectionSEO } from '@/components/seo/MotorSelectionSEO';
 import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
@@ -55,29 +55,53 @@ import type { MotorGroup } from '@/hooks/useGroupedMotors';
 import { hasElectricStart, hasManualStart, hasTillerControl, hasRemoteControl } from '@/lib/motor-config-utils';
 import { parseMercuryRigCodes } from '@/lib/mercury-codes';
 
-// Extracted component to safely call useActivePromotions hook
+// Refined navy promo strip with localStorage dismiss
+const PROMO_DISMISS_KEY = 'promo_banner_dismissed_v2';
 function PromoBannerConditional() {
   const { promotions: activePromos } = useActivePromotions();
+  const [dismissed, setDismissed] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return localStorage.getItem(PROMO_DISMISS_KEY) === '1';
+  });
   const promo = activePromos?.[0];
-  if (!promo) return null;
+  if (!promo || dismissed) return null;
   const endLabel = promo.end_date
     ? `Ends ${new Date(promo.end_date).toLocaleDateString('en-CA', { month: 'long', day: 'numeric', year: 'numeric' })}`
-    : '';
+    : 'Ends May 17, 2026';
+  const title = promo.bonus_title || promo.name || 'Get 7 Years of Zero-Worry Boating';
+  const handleDismiss = () => {
+    localStorage.setItem(PROMO_DISMISS_KEY, '1');
+    setDismissed(true);
+  };
   return (
-    <DismissibleBanner
-      storageKey="promo_banner_dismissed"
-      variant="promotional"
-      className="max-w-4xl mx-auto px-4 mb-4"
-      actionLabel="Learn More"
-      actionHref="/promotions"
-      imageUrl={harris7YearWarranty}
-      imageAlt={promo.name}
-    >
-      <div>
-        <p className="font-semibold text-sm">{promo.bonus_title || promo.name}</p>
-        {endLabel && <p className="text-xs opacity-80">{endLabel}</p>}
+    <div className="w-full bg-repower-navy-900 border-y border-repower-gold/25">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-14 py-3 sm:py-0 sm:h-14 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="flex items-center gap-3 min-w-0">
+          <img src={harris7YearWarranty} alt="" className="h-8 w-auto shrink-0" />
+          <div className="flex flex-wrap items-center text-repower-cream">
+            <span className="font-semibold text-[14px]">{title}</span>
+            <span className="text-repower-gold mx-2">·</span>
+            <span className="text-[13px] text-repower-cream/60">{endLabel}</span>
+          </div>
+        </div>
+        <div className="flex items-center gap-4 shrink-0">
+          <a
+            href="/promotions"
+            className="group inline-flex items-center gap-1.5 text-[13px] font-semibold uppercase tracking-[0.12em] text-repower-gold hover:text-repower-gold/80 transition-colors"
+          >
+            Learn More
+            <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
+          </a>
+          <button
+            onClick={handleDismiss}
+            aria-label="Dismiss promotion"
+            className="text-repower-cream/60 hover:text-repower-cream transition-colors p-1"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        </div>
       </div>
-    </DismissibleBanner>
+    </div>
   );
 }
 
@@ -930,9 +954,8 @@ if (event.type === 'filter_motors') {
   if (loading) {
     return (
       <PageTransition>
-        <div className="min-h-screen bg-repower-paper">
-          <RepowerHeader solid />
-          <main className="pt-[88px]">
+        <RepowerLayout>
+          <div className="bg-repower-paper pt-20">
             <div className="bg-repower-paper py-12">
               <div className="max-w-[1400px] mx-auto px-6 md:px-14">
                 <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
@@ -942,8 +965,8 @@ if (event.type === 'filter_motors') {
                 </div>
               </div>
             </div>
-          </main>
-        </div>
+          </div>
+        </RepowerLayout>
       </PageTransition>
     );
   }
@@ -952,26 +975,27 @@ if (event.type === 'filter_motors') {
     <PageTransition>
       <MotorSelectionSEO motorCount={motors.length > 0 ? motors.length : undefined} />
       <FinancingProvider>
-        <div className="min-h-screen bg-repower-paper">
-          <RepowerHeader solid />
-          <main className="pt-[88px]">
+        <RepowerLayout>
+          <div className="bg-repower-paper pt-20">
+            <PromoBannerConditional />
+            <main>
 
         <VoiceStatusBanner />
         
         {/* Page header */}
         <div className="bg-repower-paper">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-10 md:pt-14 pb-2">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 py-14">
             <div className="flex items-center gap-3 mb-3">
               <span className="block h-px w-6 bg-repower-mercury-red" />
               <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-repower-mercury-red">
-                Mercury Outboards
+                In-Stock Mercury Outboards
               </span>
             </div>
-            <h1 className="font-display font-bold text-[28px] md:text-[36px] tracking-[-0.025em] leading-[1.05] text-repower-navy-900">
-              Every motor, transparently priced
+            <h1 className="font-display font-bold text-[36px] md:text-[48px] tracking-[-0.025em] leading-[1.05] text-repower-navy-900">
+              Choose your power.
             </h1>
-            <p className="mt-3 text-[14px] text-repower-navy-900/55">
-              {(finalFilteredMotors.length || processedMotors.length).toLocaleString()} motors · Live pricing · Built &amp; quoted in 3 minutes
+            <p className="mt-3 text-[18px] font-normal text-repower-navy-900/65 max-w-[60ch]">
+              {(finalFilteredMotors.length || processedMotors.length).toLocaleString()} motors in stock. Live pricing, transparent quotes, financing from $50/wk. Build yours in three minutes.
             </p>
           </div>
         </div>
@@ -1040,8 +1064,6 @@ if (event.type === 'filter_motors') {
           onHpSelect={handleHpSuggestionSelect}
         />
         
-        {/* Promotional Banner — only when active promos exist */}
-        <PromoBannerConditional />
         
         {/* Recently Viewed Bar */}
         <RecentlyViewedBar 
@@ -1204,8 +1226,9 @@ if (event.type === 'filter_motors') {
           <MotorSelectionFAQ />
         </div>
           </div>
-          </main>
-        </div>
+            </main>
+          </div>
+        </RepowerLayout>
         
         {/* Motor Recommendation Quiz Modal */}
         <MotorRecommendationQuiz
