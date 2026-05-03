@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams, useLocation } from 'react-router-dom';
-import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { CheckCircle2, ArrowRight, Phone, Mail, MessageSquare } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { COMPANY_INFO } from '@/lib/companyInfo';
