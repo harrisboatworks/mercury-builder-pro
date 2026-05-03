@@ -504,16 +504,21 @@ function MotorCardPreviewInner({
                 )}
               </div>
               
-              {/* Top-left tag (sale or status — sale wins) */}
-              {showSaleTag ? (
-                <div className="absolute top-[14px] left-[14px] bg-repower-mercury-red text-white text-[10px] font-bold uppercase tracking-[0.14em] leading-none px-[11px] py-[6px] rounded-[4px]">
-                  ${saleAmount.toLocaleString()} Off
-                </div>
-              ) : popularityType ? (
+              {/* Top-left tag — STATUS only (Best Seller / Popular / New). Sale state is communicated typographically in the price block, not as a flashy pill. */}
+              {popularityType ? (
                 <div className="absolute top-[14px] left-[14px]">
                   <PopularityBadge type={popularityType} />
                 </div>
               ) : null}
+
+              {/* Quiet sale indicator — single 6px gold dot, bottom-right of image area */}
+              {showSaleTag && (
+                <div
+                  className="absolute bottom-[14px] right-[44px] w-[6px] h-[6px] rounded-full"
+                  style={{ backgroundColor: '#C9A24A' }}
+                  aria-label="On sale"
+                />
+              )}
               
               {/* HP Badge - top-right */}
               {hpNum && (
