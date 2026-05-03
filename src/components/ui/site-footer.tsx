@@ -11,6 +11,10 @@ interface SiteFooterProps {
 export function SiteFooter({ className = '' }: SiteFooterProps) {
   const currentYear = new Date().getFullYear();
   const { data: placeData, isLoading: hoursLoading, error: hoursError } = useGooglePlaceData();
+  const sectionTitleClass = 'font-sans text-xs font-semibold uppercase tracking-[0.2em] text-repower-gold mb-5';
+  const footerLinkClass = 'font-sans text-sm text-repower-cream/60 hover:text-repower-cream transition-colors';
+  const footerTextClass = 'font-sans text-sm text-repower-cream/55 leading-relaxed';
+  const footerIconClass = 'h-4 w-4 shrink-0 text-repower-gold';
 
   const navigationLinks = [
     { label: 'Motors', href: '/quote/motor-selection' },
@@ -32,20 +36,20 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
   const phoneLink = COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '');
 
   return (
-    <footer className={`bg-muted/50 border-t border-border ${className}`}>
-      <div className="container mx-auto px-4 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12">
+    <footer className={`bg-repower-navy-900 text-repower-cream border-t border-repower-cream/10 ${className}`}>
+      <div className="mx-auto w-full max-w-[1400px] px-6 py-12 md:px-14 md:py-16">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           {/* Navigation - full width on mobile */}
-          <div className="col-span-2 md:col-span-1">
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+          <div>
+            <h3 className={sectionTitleClass}>
               Navigation
             </h3>
-            <ul className="grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-2">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-1">
               {navigationLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     to={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                    className={footerLinkClass}
                   >
                     {link.label}
                   </Link>
@@ -56,12 +60,12 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+            <h3 className={sectionTitleClass}>
               Contact
             </h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
+              <li className={`flex items-start gap-3 ${footerTextClass}`}>
+                <MapPin className={`${footerIconClass} mt-0.5`} />
                 <span>
                   {COMPANY_INFO.address.street}<br />
                   {COMPANY_INFO.address.city}, {COMPANY_INFO.address.province} {COMPANY_INFO.address.postal}
@@ -70,18 +74,18 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
               <li>
                 <a 
                   href={`tel:+1${phoneLink}`} 
-                  className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className={`flex items-center gap-3 ${footerLinkClass}`}
                 >
-                  <Phone className="h-4 w-4 shrink-0 text-primary" />
+                  <Phone className={footerIconClass} />
                   {COMPANY_INFO.contact.phone}
                 </a>
               </li>
               <li>
                 <a 
                   href={`mailto:${COMPANY_INFO.contact.email}`} 
-                  className="flex items-center gap-2.5 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className={`flex items-center gap-3 ${footerLinkClass}`}
                 >
-                  <Mail className="h-4 w-4 shrink-0 text-primary" />
+                  <Mail className={footerIconClass} />
                   {COMPANY_INFO.contact.email}
                 </a>
               </li>
@@ -90,13 +94,14 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
 
           {/* Hours - Live from Google */}
           <div>
-            <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+            <h3 className={sectionTitleClass}>
               Hours
             </h3>
             <OpeningHoursDisplay 
               openingHours={placeData?.openingHours}
               loading={hoursLoading}
               error={!!hoursError}
+              tone="dark"
             />
           </div>
 
