@@ -12,7 +12,6 @@ import { useQuote } from '@/contexts/QuoteContext';
 import { useToast } from '@/hooks/use-toast';
 import { useAuth } from '@/components/auth/AuthProvider';
 import AdminNav from '@/components/admin/AdminNav';
-import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { SITE_URL } from '@/lib/site';
 import { DEALERPLAN_FEE } from '@/lib/finance';
@@ -492,6 +491,7 @@ const AdminQuoteDetail = () => {
         selectedPromoValue: qd.selectedPromoValue
       };
       
+      const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
       const pdfUrl = await generateQuotePDF(pdfData);
       downloadPDF(pdfUrl, `Quote-${q.customer_name.replace(/\s+/g, '-')}.pdf`);
       toast({ title: 'PDF Downloaded', description: 'Quote PDF generated successfully.' });

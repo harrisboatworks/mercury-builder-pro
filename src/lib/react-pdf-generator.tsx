@@ -1,8 +1,6 @@
 // Simplified PDF generator - Quote PDFs still use this
 // Motor spec sheets now use server-side generation via edge function
 import { supabase } from '@/integrations/supabase/client';
-import { pdf } from '@react-pdf/renderer';
-import ProfessionalQuotePDF from '@/components/quote-pdf/ProfessionalQuotePDF';
 
 export interface ReactPdfQuoteData {
   quoteNumber: string;
@@ -71,6 +69,63 @@ export interface ReactPdfQuoteData {
   };
 }
 
+type QuotePdfRenderer = {
+  pdf: typeof import('@react-pdf/renderer')['pdf'];
+  ProfessionalQuotePDF: typeof import('@/components/quote-pdf/ProfessionalQuotePDF')['default'];
+};
+
+let quotePdfRendererPromise: Promise<QuotePdfRenderer> | null = null;
+
+async function loadQuotePdfRenderer(): Promise<QuotePdfRenderer> {
+  quotePdfRendererPromise ??= Promise.all([
+    import('@react-pdf/renderer'),
+    import('@/components/quote-pdf/ProfessionalQuotePDF'),
+  ]).then(([renderer, pdfModule]) => ({
+    pdf: renderer.pdf,
+    ProfessionalQuotePDF: pdfModule.default,
+  }));
+
+  return quotePdfRendererPromise;
+}
+
+function buildProfessionalQuotePdfData(data: ReactPdfQuoteData) {
+  return {
+    quoteNumber: data.quoteNumber,
+    date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+    customerName: data.customerName,
+    customerEmail: data.customerEmail,
+    customerPhone: data.customerPhone || '',
+    customerId: '',
+    productName: data.motor?.model || '',
+    horsepower: `${data.motor?.hp || 0}HP`,
+    category: data.motor?.category || 'FourStroke',
+    modelYear: data.motor?.model_year || 2025,
+    msrp: (data.motor?.msrp || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    dealerDiscount: (data.pricing?.discount || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    promoSavings: (data.pricing?.promoValue || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    motorSubtotal: (data.pricing?.motorSubtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    subtotal: (data.pricing?.subtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    tax: (data.pricing?.hst || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    total: (data.pricing?.totalCashPrice || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    totalSavings: (data.pricing?.savings || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+    accessoryBreakdown: data.accessoryBreakdown || data.accessories,
+    tradeInValue: data.tradeInValue,
+    tradeInInfo: data.tradeInInfo,
+    selectedPackage: data.selectedPackage || undefined,
+    warrantyTargets: [],
+    monthlyPayment: data.monthlyPayment,
+    financingTerm: data.financingTerm,
+    financingRate: data.financingRate,
+    financingQrCode: data.financingQrCode,
+    includesInstallation: data.includesInstallation,
+    selectedPromoOption: data.selectedPromoOption,
+    selectedPromoValue: data.selectedPromoValue,
+    pricing: data.pricing,
+    customerNotes: data.customerNotes,
+    depositInfo: data.depositInfo,
+  };
+}
+
 /**
  * Generate a motor spec sheet PDF using the edge function
  */
@@ -122,41 +177,8 @@ export async function generateQuotePDF(data: ReactPdfQuoteData): Promise<string>
 export async function generatePDFBlob(data: ReactPdfQuoteData): Promise<Blob> {
   try {
     console.log('Generating PDF blob for:', data.quoteNumber);
-    const transformedData = {
-      quoteNumber: data.quoteNumber,
-      date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
-      customerName: data.customerName,
-      customerEmail: data.customerEmail,
-      customerPhone: data.customerPhone || '',
-      customerId: '',
-      productName: data.motor?.model || '',
-      horsepower: `${data.motor?.hp || 0}HP`,
-      category: data.motor?.category || 'FourStroke',
-      modelYear: data.motor?.model_year || 2025,
-      msrp: (data.motor?.msrp || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      dealerDiscount: (data.pricing?.discount || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      promoSavings: (data.pricing?.promoValue || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      motorSubtotal: (data.pricing?.motorSubtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      subtotal: (data.pricing?.subtotal || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      tax: (data.pricing?.hst || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      total: (data.pricing?.totalCashPrice || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      totalSavings: (data.pricing?.savings || 0).toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
-      accessoryBreakdown: data.accessoryBreakdown || data.accessories,
-      tradeInValue: data.tradeInValue,
-      tradeInInfo: data.tradeInInfo,
-      selectedPackage: data.selectedPackage || undefined,
-      warrantyTargets: [],
-      monthlyPayment: data.monthlyPayment,
-      financingTerm: data.financingTerm,
-      financingRate: data.financingRate,
-      financingQrCode: data.financingQrCode,
-      includesInstallation: data.includesInstallation,
-      selectedPromoOption: data.selectedPromoOption,
-      selectedPromoValue: data.selectedPromoValue,
-      pricing: data.pricing,
-      customerNotes: data.customerNotes,
-      depositInfo: data.depositInfo,
-    };
+    const { pdf, ProfessionalQuotePDF } = await loadQuotePdfRenderer();
+    const transformedData = buildProfessionalQuotePdfData(data);
 
     return pdf(<ProfessionalQuotePDF quoteData={transformedData} />).toBlob();
   } catch (error) {

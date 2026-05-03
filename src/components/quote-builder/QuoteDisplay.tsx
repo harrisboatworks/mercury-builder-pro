@@ -17,7 +17,6 @@ import { toast } from '@/hooks/use-toast';
 import confetti from 'canvas-confetti';
 import { supabase } from '@/integrations/supabase/client';
 import { buildEnhancedPdfData } from '@/lib/pdf-helpers';
-import { generateQuotePDF } from '@/lib/react-pdf-generator';
 import { motion } from 'framer-motion';
 import { xpActions } from '@/config/xpActions';
 import { xpRewards, getCurrentReward, getNextReward } from '@/config/xpRewards';
@@ -341,7 +340,9 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         tradeInValue: tradeInValue
       };
 
-      // Generate PDF using PDF.co API  
+      const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
+
+      // Generate PDF
       const pdfUrl = await generateQuotePDF({
         quoteNumber: `HBW-${Date.now().toString().slice(-6)}`,
         customerName: pdfData.customerName,
@@ -375,8 +376,6 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         }
       });
       
-      // Download the PDF
-      const { downloadPDF } = await import('@/lib/react-pdf-generator');
       downloadPDF(pdfUrl, `mercury-quote-${Date.now()}.pdf`);
       
       // Silent success - browser download provides feedback
