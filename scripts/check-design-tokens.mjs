@@ -32,20 +32,30 @@ const ALLOWLIST = new Set([
 ]);
 
 // Patterns that indicate a hardcoded surface gradient or palette value.
+// Scope: only flag *background* and *gradient* uses of the cream palette.
+// Foreground uses (text-/border-/ring-/caret-/divide-) of #F5F1EA on dark
+// surfaces are legitimate and not surface tokens.
 const RULES = [
   {
     id: 'hardcoded-image-gradient',
-    // Any linear-gradient that mentions our cream/paper hexes.
+    // Any linear-gradient that mentions our cream/paper hexes — must use --gradient-image-bg.
     pattern: /linear-gradient\([^)]*#(?:F5F1EA|FAF8F4|ECE4D2)[^)]*\)/i,
     message:
       'Use `var(--gradient-image-bg)` instead of a hardcoded cream/paper linear-gradient.',
   },
   {
-    id: 'hardcoded-surface-hex',
-    // Hex literal of one of the surface colors anywhere in code (CSS or JSX).
-    pattern: /#(?:F5F1EA|FAF8F4|ECE4D2)\b/i,
+    id: 'hardcoded-bg-class',
+    // Tailwind arbitrary bg- using cream/paper hex.
+    pattern: /\bbg-\[#(?:F5F1EA|FAF8F4|ECE4D2)(?:\/\d+)?\]/i,
     message:
-      'Use a surface token (`bg-repower-paper`, `bg-repower-cream`, `bg-surface-page`, `bg-surface-card`, or `var(--gradient-image-bg)`) instead of a raw hex.',
+      'Use `bg-surface-page` / `bg-surface-card` (or `bg-repower-paper` / `bg-repower-cream`) instead of `bg-[#FAF8F4]` / `bg-[#F5F1EA]`.',
+  },
+  {
+    id: 'hardcoded-bg-style',
+    // Inline style background / backgroundColor using cream/paper hex.
+    pattern: /background(?:Color)?\s*:\s*['"`]#(?:F5F1EA|FAF8F4|ECE4D2)\b/i,
+    message:
+      'Use a surface token (CSS var or Tailwind class) instead of a raw hex `background:` value.',
   },
 ];
 
