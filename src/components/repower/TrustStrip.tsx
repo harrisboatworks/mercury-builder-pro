@@ -23,14 +23,17 @@ const items: TrustItem[] = [
 export function TrustStrip() {
   return (
     <section className="bg-[#050E1C] border-y border-[#F5F1EA]/10">
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-14 py-8 md:py-12">
-        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-3 gap-y-7 md:gap-y-0 md:divide-x md:divide-[#F5F1EA]/10">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-14 py-6 md:py-12">
+        {/* Mobile: horizontal scroll-snap row. sm+: grid with dividers. */}
+        <ul
+          className="flex sm:grid sm:grid-cols-3 md:grid-cols-5 gap-x-3 gap-y-7 md:gap-y-0 md:divide-x md:divide-[#F5F1EA]/10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0"
+        >
           {items.map((item) => {
             const Icon = item.icon;
             return (
               <li
                 key={item.label}
-                className="group flex flex-col items-center justify-start gap-2.5 md:gap-3 px-2 md:px-4 md:first:pl-0 md:last:pr-0"
+                className="group flex flex-col items-center justify-start gap-2.5 md:gap-3 px-2 md:px-4 md:first:pl-0 md:last:pr-0 snap-center shrink-0 basis-[40%] sm:basis-auto"
               >
                 <div className="h-9 md:h-10 flex items-center justify-center">
                   {item.img ? (
@@ -43,7 +46,7 @@ export function TrustStrip() {
                     <Icon className="h-7 w-7 md:h-8 md:w-8 text-[#C9A24A]" strokeWidth={1.5} />
                   ) : null}
                 </div>
-                <span className="font-sans text-[10px] md:text-[11px] uppercase tracking-[0.12em] md:tracking-[0.18em] text-[#C9A24A] text-center leading-snug break-words hyphens-auto">
+                <span className="font-sans text-[10px] md:text-[11px] uppercase tracking-[0.12em] md:tracking-[0.18em] text-[#C9A24A] text-center leading-snug whitespace-nowrap sm:whitespace-normal">
                   {item.label}
                 </span>
               </li>
@@ -54,3 +57,4 @@ export function TrustStrip() {
     </section>
   );
 }
+
