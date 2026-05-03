@@ -1,7 +1,7 @@
 import { X, ChevronRight, Phone } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import harrisLogo from '@/assets/harris-logo-white.png';
-import mercuryLogo from '@/assets/mercury-logo.png';
+import mercuryLogo from '@/assets/mercury-logo-white.png';
 
 interface Props {
   isOpen: boolean;
