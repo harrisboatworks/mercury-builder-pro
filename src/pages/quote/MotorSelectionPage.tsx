@@ -16,7 +16,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { daysUntil } from '@/lib/finance';
 import { Clock } from 'lucide-react';
-import { DismissibleBanner } from '@/components/ui/dismissible-banner';
+import { X } from 'lucide-react';
 import harris7YearWarranty from '@/assets/harris-7-year-warranty.png';
 // useScrollDirection removed - search bar scrolls naturally now
 import { HybridMotorSearch } from '@/components/motors/HybridMotorSearch';
@@ -33,7 +33,7 @@ import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
 // ComparisonFloatingPill removed - comparison now integrated into UnifiedMobileBar
 import { Button } from '@/components/ui/button';
-import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { RepowerLayout } from '@/components/repower/RepowerLayout';
 import { MotorSelectionSEO } from '@/components/seo/MotorSelectionSEO';
 import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
