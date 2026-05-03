@@ -1,24 +1,17 @@
-# Match motor image background to card
+# Remove white halo around motor images
 
-Change the motor card image area background from the cream gradient (`#F5F1EA → #ECE4D2`) to plain white, matching the card body.
+The motor PNGs have a baked-in white background that clashes with the cream card. Fix by blending the image into the cream surface.
 
 ## Change
 
-**`src/components/motors/MotorCardPreview.tsx`** (~line 476):
+**`src/components/motors/MotorCardPreview.tsx`** (line 489):
 
-Replace:
+Add `mix-blend-multiply` to the motor `<img>` className so its white background drops out and the cream shows through:
+
 ```tsx
-<div
-  className="relative aspect-[4/3] overflow-hidden"
-  style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}
->
+className={`max-h-full max-w-full object-contain mix-blend-multiply transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'} ${!inStock ? 'grayscale-[0.5]' : ''}`}
 ```
 
-With:
-```tsx
-<div className="relative aspect-[4/3] overflow-hidden bg-white">
-```
+This is a one-line fix. `mix-blend-multiply` is the standard CSS technique for knocking out white product-photo backgrounds against a non-white surface — black/dark motor parts stay intact, white pixels disappear into the cream.
 
-Also update the shimmer placeholder inside (currently `bg-repower-cream`) → `bg-repower-paper` so the loading state blends with the page rather than fighting the white card.
-
-That's it — single visual swap, no other changes.
+If any image still shows a faint edge, fallback is to swap to white card body instead, but blend should handle it cleanly.
