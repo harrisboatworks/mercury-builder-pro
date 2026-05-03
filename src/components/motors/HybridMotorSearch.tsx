@@ -431,13 +431,14 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   );
 
   return (
-    <div className={`relative ${className}`}>
-      {/* Search Input */}
-      <div 
-        className="relative"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+    <div className={`relative ${!isDark ? 'max-w-[640px] mx-auto' : ''} ${className}`}>
+      {/* Search Input + Filter row */}
+      <div className="flex items-stretch gap-2">
+        <div
+          className="relative flex-1"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
         {/* Animated Search Icon with Pulse */}
         <motion.div
           animate={iconPulse ? { 
@@ -446,24 +447,15 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           } : {}}
           transition={{ duration: 0.4, ease: "easeOut" }}
           className={`
-            absolute left-5 top-1/2 -translate-y-1/2 transition-colors duration-300
-            ${isListening
-              ? 'text-red-500'
-              : isAIQuery
-                ? 'text-amber-500'
-                : isDark
-                  ? (isFocused ? 'text-[#F5F1EA]' : 'text-[#F5F1EA]/50')
-                  : 'text-gray-400'}
+            absolute left-4 top-1/2 -translate-y-1/2 transition-colors duration-300
+            ${isAIQuery
+              ? 'text-amber-500'
+              : isDark
+                ? (isFocused ? 'text-[#F5F1EA]' : 'text-[#F5F1EA]/50')
+                : 'text-gray-400'}
           `}
         >
-          {isListening ? (
-            <motion.div
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 0.5, repeat: Infinity }}
-            >
-              <Mic className="w-5 h-5" />
-            </motion.div>
-          ) : isAIQuery ? (
+          {isAIQuery ? (
             <Sparkles className="w-5 h-5" />
           ) : (
             <Search className="w-5 h-5" />
@@ -471,18 +463,11 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         </motion.div>
         
         {/* Static placeholder */}
-        {!query && !isListening && (
-          <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none">
-            <span className={`text-[15px] font-normal ${isDark ? 'text-[#F5F1EA]/40' : 'text-repower-navy-900/40'}`}>
-              Search motors by HP, model, or feature…
+        {!query && (
+          <div className="absolute left-12 top-1/2 -translate-y-1/2 pointer-events-none">
+            <span className={`text-[14px] font-normal ${isDark ? 'text-[#F5F1EA]/40' : 'text-repower-navy-900/40'}`}>
+              Find a motor
             </span>
-          </div>
-        )}
-
-        {/* Listening indicator */}
-        {isListening && !query && (
-          <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none">
-            <span className="text-red-500 font-light text-base">Listening...</span>
           </div>
         )}
         
@@ -505,96 +490,41 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           onBlur={handleBlur}
           onKeyDown={handleKeyDownWithSave}
           className={`
-            w-full h-11 md:h-16 pl-14 pr-12 text-[14px] md:text-[15px] font-light tracking-wide rounded-md
+            w-full h-11 md:h-12 pl-12 pr-12 text-[14px] font-light tracking-wide rounded-md
             focus:outline-none transition-all duration-300
             ${isDark
               ? `bg-[#0A1628] text-[#F5F1EA] caret-[#C9A24A] ${
-                  isListening
-                    ? 'border-2 border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.15)]'
-                    : isAIQuery
-                      ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.15)]'
-                      : isFocused
-                        ? 'border border-[#C9A24A] bg-[#122039] shadow-[0_0_0_3px_rgba(201,162,74,0.20)]'
-                        : 'border border-[rgba(201,162,74,0.20)] hover:border-[rgba(201,162,74,0.40)]'
+                  isAIQuery
+                    ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.15)]'
+                    : isFocused
+                      ? 'border border-[#C9A24A] bg-[#122039] shadow-[0_0_0_3px_rgba(201,162,74,0.20)]'
+                      : 'border border-[rgba(201,162,74,0.20)] hover:border-[rgba(201,162,74,0.40)]'
                 }`
               : `bg-white text-gray-900 ${
-                  isListening
-                    ? 'border-2 border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]'
-                    : isAIQuery
-                      ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]'
-                      : isFocused
-                        ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
-                        : 'border border-gray-200 hover:border-gray-300'
+                  isAIQuery
+                    ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]'
+                    : isFocused
+                      ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
+                      : 'border border-gray-200 hover:border-gray-300'
                 }`
             }
           `}
         />
-        
-        {/* Filter Slot - Integrated inside search bar */}
-        {filterSlot && (
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10">
-            {filterSlot}
-          </div>
-        )}
 
-        {/* Keyboard Shortcut Hint & Voice Search */}
+        {/* Keyboard Shortcut Hint */}
         <AnimatePresence>
-          {!isFocused && !query && !isListening && (
+          {!isFocused && !query && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className={cn(
-                "absolute top-1/2 -translate-y-1/2 flex items-center gap-2",
-                filterSlot ? "right-14" : "right-4"
-              )}
+              className="absolute top-1/2 -translate-y-1/2 right-4 hidden md:flex items-center gap-1.5"
             >
-              {/* Voice Search Button - Mobile Only */}
-              {speechSupported && (
-                <button
-                  onClick={toggleVoiceSearch}
-                  className={`md:hidden p-2 transition-colors ${isDark ? 'text-[#F5F1EA]/50 hover:text-[#F5F1EA]' : 'text-gray-400 hover:text-gray-600'}`}
-                  aria-label="Voice search"
-                >
-                  <Mic className="w-5 h-5" />
-                </button>
-              )}
-              
-              {/* Keyboard Shortcut - Desktop Only */}
-              <div className="hidden md:flex items-center gap-1.5">
-                <kbd className={`px-2 py-1 text-xs font-mono rounded shadow-sm ${isDark ? 'bg-[#F5F1EA]/5 border border-[#F5F1EA]/15 text-[#F5F1EA]/60' : 'bg-gray-100 border border-gray-200 text-gray-500'}`}>
-                  /
-                </kbd>
-                <span className={`text-xs font-light ${isDark ? 'text-[#F5F1EA]/50' : 'text-gray-400'}`}>to search</span>
-              </div>
+              <kbd className={`px-2 py-1 text-xs font-mono rounded shadow-sm ${isDark ? 'bg-[#F5F1EA]/5 border border-[#F5F1EA]/15 text-[#F5F1EA]/60' : 'bg-gray-100 border border-gray-200 text-gray-500'}`}>
+                /
+              </kbd>
+              <span className={`text-xs font-light ${isDark ? 'text-[#F5F1EA]/50' : 'text-gray-400'}`}>to search</span>
             </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Voice Search Active Indicator */}
-        <AnimatePresence>
-          {isListening && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              onClick={toggleVoiceSearch}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-2"
-              aria-label="Stop listening"
-            >
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1, repeat: Infinity }}
-                className="relative"
-              >
-                <Mic className="w-5 h-5 text-red-500" />
-                <motion.div
-                  className="absolute inset-0 rounded-full bg-red-500/20"
-                  animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                />
-              </motion.div>
-            </motion.button>
           )}
         </AnimatePresence>
 
