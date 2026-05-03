@@ -26,15 +26,19 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
   const navigate = useNavigate();
   const { user, signOut } = useAuth();
 
+  // Transparent-fade behavior is reserved for the home page (over the video hero).
+  // Every other route renders a solid navy header from first paint.
+  const forceSolid = solid || location.pathname !== '/';
+
   useEffect(() => {
-    if (solid) return;
+    if (forceSolid) return;
     const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, [solid]);
+  }, [forceSolid]);
 
-  const isSolid = solid || scrolled;
+  const isSolid = forceSolid || scrolled;
 
   return (
     <>
