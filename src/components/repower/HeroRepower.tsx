@@ -58,7 +58,7 @@ export function HeroRepower() {
           {...fadeUp(0)}
           className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6"
         >
-          Ontario's Mercury Repower Centre · Rice Lake
+          Mercury Repower · Rice Lake · Since 1947
         </motion.p>
 
         <motion.h1
@@ -73,9 +73,9 @@ export function HeroRepower() {
 
         <motion.p
           {...fadeUp(0.4)}
-          className="font-sans font-light text-base md:text-xl text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-8"
+          className="font-sans font-light text-xl md:text-2xl text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-8"
         >
-          A nearly-new boat experience — at a fraction of the price. Mercury Marine Platinum Dealer, family-owned on Rice Lake since 1947.
+          New motor. Same boat. Way better mornings.
         </motion.p>
 
         {/* Stat row */}

@@ -13,11 +13,11 @@ interface TrustItem {
 }
 
 const items: TrustItem[] = [
-  { label: 'Mercury Repower Centre', img: mercuryRepowerLogo, imgAlt: 'Mercury Repower Center' },
-  { label: 'Mercury Platinum Dealer', icon: Award },
-  { label: 'CSI Award Winner', icon: BadgeCheck },
-  { label: '7-Year Warranty', img: warranty7, imgAlt: '7-Year Warranty' },
   { label: 'Family-Owned Since 1947', img: hbwLogo, imgAlt: 'Harris Boat Works' },
+  { label: 'Mercury Certified Dealer', icon: Award },
+  { label: 'Mercury Repower Centre', img: mercuryRepowerLogo, imgAlt: 'Mercury Repower Center' },
+  { label: '7-Year Warranty Available', img: warranty7, imgAlt: '7-Year Warranty' },
+  { label: 'CSI Award Winner', icon: BadgeCheck },
 ];
 
 export function TrustStrip() {
