@@ -1020,23 +1020,33 @@ if (event.type === 'filter_motors') {
 
         <VoiceStatusBanner />
         
-        {/* Page header + search */}
-        <div className="bg-repower-paper">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-14 py-14 md:py-20">
+        {/* Page header */}
+        <div className="bg-[#FAF8F4]">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-14 md:pt-16 pb-8 md:pb-10">
             <div className="flex items-center gap-3 mb-3">
-              <span className="block h-px w-6 bg-repower-mercury-red" />
-              <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-repower-mercury-red">
+              <span className="block h-px w-6 bg-[#C8102E]" />
+              <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-[#C8102E]">
                 In-Stock Mercury Outboards
               </span>
             </div>
-            <h1 className="font-display font-bold text-[36px] md:text-[48px] tracking-[-0.025em] leading-[1.05] text-repower-navy-900 mb-5">
+            <h1
+              className="font-display font-bold text-[40px] md:text-[56px] leading-[1.05] text-[#050E1C]"
+              style={{ letterSpacing: '-0.035em' }}
+            >
               Choose your power.
             </h1>
-            <p className="text-[18px] font-normal text-repower-navy-900/65 max-w-[60ch] mb-10">
+            {/* Gold hairline accent */}
+            <span className="block mt-6 mb-6 h-px w-16 bg-[#C9A24A]" />
+            <p className="text-[18px] font-normal text-[#050E1C]/65 max-w-[60ch]">
               {(finalFilteredMotors.length || processedMotors.length).toLocaleString()} motors in stock. Live pricing, transparent quotes, financing from $50/wk. Build yours in three minutes.
             </p>
+          </div>
+        </div>
 
-            <div className="rounded-md bg-white border border-[rgba(10,22,40,0.10)] focus-within:border-repower-gold focus-within:shadow-[0_0_0_3px_rgba(201,162,74,0.15)] transition-all">
+        {/* Sticky Search Bar */}
+        <div className="sticky top-[64px] lg:top-[72px] z-40 bg-[rgba(250,248,244,0.85)] supports-[backdrop-filter]:backdrop-blur-xl border-b border-[rgba(10,22,40,0.08)]">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 py-3 md:py-4">
+            <div className="rounded-md bg-white border border-[rgba(10,22,40,0.10)] focus-within:border-[#C9A24A] focus-within:shadow-[0_0_0_3px_rgba(201,162,74,0.15)] transition-all">
               <HybridMotorSearch
                 query={searchQuery}
                 onQueryChange={handleSearchChange}
@@ -1054,36 +1064,34 @@ if (event.type === 'filter_motors') {
                 }
               />
             </div>
-            
-            <div className="flex items-center justify-between mt-3">
-              {(searchQuery || configFilters) && (
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span
-                    className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
-                      finalFilteredMotors.length > 0
-                        ? 'bg-repower-navy-900/5 text-repower-navy-900 border border-[rgba(10,22,40,0.10)]'
-                        : 'bg-repower-mercury-red/10 text-repower-mercury-red border border-repower-mercury-red/20'
-                    }`}
-                    aria-live="polite"
-                    role="status"
-                  >
-                    {finalFilteredMotors.length > 0
-                      ? `${finalFilteredMotors.length} ${finalFilteredMotors.length === 1 ? 'motor matches' : 'motors match'}`
-                      : 'No motors match'}
+
+            {(searchQuery || configFilters) && (
+              <div className="flex items-center gap-2 flex-wrap mt-3">
+                <span
+                  className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
+                    finalFilteredMotors.length > 0
+                      ? 'bg-[#050E1C]/5 text-[#050E1C] border border-[rgba(10,22,40,0.10)]'
+                      : 'bg-[#C8102E]/10 text-[#C8102E] border border-[#C8102E]/20'
+                  }`}
+                  aria-live="polite"
+                  role="status"
+                >
+                  {finalFilteredMotors.length > 0
+                    ? `${finalFilteredMotors.length} ${finalFilteredMotors.length === 1 ? 'motor matches' : 'motors match'}`
+                    : 'No motors match'}
+                </span>
+                {configFilters && (
+                  <span className="text-xs text-[#050E1C]/55">
+                    Filtered by: {[
+                      configFilters.inStock && 'in stock',
+                      configFilters.startType,
+                      configFilters.controlType,
+                      configFilters.shaftLength && `${configFilters.shaftLength} shaft`
+                    ].filter(Boolean).join(', ')}
                   </span>
-                  {configFilters && (
-                    <span className="text-xs text-repower-navy-900/55">
-                      Filtered by: {[
-                        configFilters.inStock && 'in stock',
-                        configFilters.startType,
-                        configFilters.controlType,
-                        configFilters.shaftLength && `${configFilters.shaftLength} shaft`
-                      ].filter(Boolean).join(', ')}
-                    </span>
-                  )}
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
         
