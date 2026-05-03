@@ -2,10 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Helmet } from '@/lib/helmet';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, DollarSign, RotateCcw } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { ArrowRight, RotateCcw } from 'lucide-react';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
 import { type TradeInInfo } from '@/lib/trade-valuation';
 import { SITE_URL } from '@/lib/site';
@@ -113,47 +111,45 @@ export default function TradeInValuePage() {
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
-      <LuxuryHeader />
+      <RepowerHeader />
 
-      <main className="min-h-screen bg-background">
-        {/* Hero */}
-        <section className="bg-gradient-to-b from-muted/60 to-background py-12 md:py-16">
-          <div className="max-w-3xl mx-auto px-4 text-center space-y-4">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-4">
-                <DollarSign className="w-4 h-4" />
+      <main className="min-h-screen bg-repower-paper pt-[64px] lg:pt-[72px]">
+        <div className="max-w-[1100px] mx-auto px-6 md:px-14 py-14 md:py-20">
+          {/* Heading zone */}
+          <div className="text-center mb-10 md:mb-14">
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <span className="h-px w-8 bg-repower-mercury-red" />
+              <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
                 Free Instant Estimate
-              </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-foreground">
-                What's Your Outboard Worth?
-              </h1>
-              <p className="text-lg text-muted-foreground font-light mt-3 max-w-xl mx-auto">
-                Find out your motor's trade-in value in seconds, no account needed. 
-                When you're ready, roll it right into a full quote.
               </p>
-            </motion.div>
+              <span className="h-px w-8 bg-repower-mercury-red" />
+            </div>
+            <h1
+              className="font-display font-bold text-repower-navy-900 mb-5"
+              style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}
+            >
+              What's Your Outboard Worth?
+            </h1>
+            <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto">
+              Find out your motor's trade-in value in seconds, no account needed.
+              When you're ready, roll it right into a full quote.
+            </p>
+            <div className="h-px bg-repower-navy-900/10 mt-10 max-w-[200px] mx-auto" />
           </div>
-        </section>
 
-        {/* Form */}
-        <section className="max-w-3xl mx-auto px-4 -mt-4 pb-16">
           {showRestored && (
             <motion.div
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-4 flex items-center justify-between gap-3 rounded-md border border-border bg-muted/40 px-4 py-2.5 text-sm"
+              className="mb-6 flex items-center justify-between gap-3 rounded border border-repower-navy-900/10 bg-white px-4 py-2.5 text-sm"
             >
-              <span className="text-muted-foreground">
+              <span className="font-sans text-repower-navy-900/65">
                 Restored your previous entries.
               </span>
               <button
                 type="button"
                 onClick={handleClearDraft}
-                className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground hover:text-primary transition-colors"
+                className="inline-flex items-center gap-1.5 font-sans text-[13px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 Start over
@@ -168,29 +164,25 @@ export default function TradeInValuePage() {
             onAutoAdvance={handleStartQuote}
           />
 
-          {/* CTA below estimate */}
           {tradeInInfo.estimatedValue > 0 && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-6"
+              className="mt-8 rounded border border-repower-navy-900/10 bg-repower-cream p-8 text-center"
             >
-              <Card className="p-6 border-border bg-muted/30 text-center space-y-4">
-                <p className="text-lg font-light text-foreground">
-                  Ready to see how much you'll save on a new Mercury?
-                </p>
-                <Button
-                  size="lg"
-                  onClick={handleStartQuote}
-                  className="min-h-[52px] text-base gap-2"
-                >
-                  Start a Quote With This Trade-In
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Card>
+              <p className="font-display text-[22px] text-repower-navy-900 mb-5">
+                Ready to see how much you'll save on a new Mercury?
+              </p>
+              <button
+                onClick={handleStartQuote}
+                className="group inline-flex items-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
+              >
+                Start a Quote With This Trade-In
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
             </motion.div>
           )}
-        </section>
+        </div>
       </main>
     </>
   );
