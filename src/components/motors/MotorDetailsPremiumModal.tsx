@@ -402,65 +402,73 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Desktop Header */}
-              <div className="hidden lg:block sticky top-0 z-50 bg-white shadow-md">
-                <div className="p-6 pb-0 border-b border-gray-100 bg-white">
+              <div className="hidden lg:block sticky top-0 z-50 bg-[#F5F1EA]">
+                <div className="px-12 pt-12 pb-0">
                   <button 
                     onClick={onClose} 
-                    className="absolute top-6 right-6 p-3 bg-gray-100/90 text-gray-700 rounded-full shadow-sm z-50
-                      transition-all duration-300 ease-out
-                      hover:bg-gray-200 hover:text-gray-900 hover:scale-110 hover:shadow-md
-                      active:scale-95" 
+                    className="absolute top-6 right-6 w-10 h-10 p-2 flex items-center justify-center rounded-full text-[#050E1C]/60 hover:text-[#050E1C] hover:rotate-[5deg] transition-all duration-200"
+                    style={{ transitionTimingFunction: 'cubic-bezier(0.2, 0.8, 0.2, 1)' }}
                     aria-label="Close"
                   >
-                    <X className="w-6 h-6" />
+                    <X className="w-5 h-5" />
                   </button>
                   
-                  {/* Flexbox Column Layout - crystal clear hierarchy */}
-                  <div className="flex flex-col space-y-3 pr-12">
-                    {/* Motor Name */}
-                    <h2 className="text-2xl font-semibold tracking-wide text-gray-900 leading-tight">
+                  <div className="flex flex-col pr-12">
+                    {/* Eyebrow: HP · FAMILY */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="block w-7 h-px bg-[#C8102E]" />
+                      <span className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#C8102E]">
+                        {hp} HP{motor?.family ? ` · ${String(motor.family).toUpperCase()}` : ''}
+                      </span>
+                    </div>
+                    
+                    {/* H1 — motor name */}
+                    <h2 className="font-display font-bold text-[32px] tracking-[-0.025em] leading-tight text-[#050E1C]">
                       {title}
                     </h2>
                     {motor?.model_number && (
-                      <p className="text-sm font-mono text-gray-400">{motor.model_number}</p>
+                      <p className="text-[13px] font-mono text-[#050E1C]/45 mt-2">{motor.model_number}</p>
                     )}
                     
                     {/* Stock Status Indicator */}
-                    {motor && <StockStatusIndicator motor={motor} />}
+                    {motor && <div className="mt-3"><StockStatusIndicator motor={motor} /></div>}
                   </div>
+                  
+                  {/* Hairline divider */}
+                  <div className="mt-8 border-t" style={{ borderColor: 'rgba(10, 22, 40, 0.08)' }} />
                 </div>
                 
                 {/* 3. Tabs - new line, clear separation */}
-                <TabsList className="w-full justify-start border-b border-gray-100 rounded-none bg-white p-0 h-auto mt-5">
+                <TabsList className="w-full justify-start rounded-none bg-[#F5F1EA] p-0 h-auto px-12" style={{ borderBottom: '1px solid rgba(10, 22, 40, 0.08)' }}>
                   <TabsTrigger 
                     value="overview" 
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                    className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Overview
                   </TabsTrigger>
                   <TabsTrigger 
                     value="specs"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                    className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Specs
                   </TabsTrigger>
                   <TabsTrigger 
                     value="included"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                    className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Included
                   </TabsTrigger>
                   <TabsTrigger 
                     value="resources"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                    className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Resources
                   </TabsTrigger>
                   <TabsTrigger 
                     value="chat"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                    className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
-                    <MessageCircle className="w-4 h-4 inline mr-1" />
+                    <MessageCircle className="w-3.5 h-3.5 inline mr-1" />
                     Chat
                   </TabsTrigger>
                 </TabsList>
