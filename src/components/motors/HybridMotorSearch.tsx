@@ -607,16 +607,27 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           onBlur={handleBlur}
           onKeyDown={handleKeyDownWithSave}
           className={`
-            w-full h-16 pl-14 pr-12 text-base font-light tracking-wide rounded-sm
-            bg-white text-gray-900
+            w-full h-16 pl-14 pr-12 text-[15px] font-light tracking-wide rounded-md
             focus:outline-none transition-all duration-300
-            ${isListening
-              ? 'border-2 border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]'
-              : isAIQuery 
-                ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]' 
-                : isFocused
-                  ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
-                  : 'border border-gray-200 hover:border-gray-300'
+            ${isDark
+              ? `bg-[#0A1628] text-[#F5F1EA] caret-[#C9A24A] ${
+                  isListening
+                    ? 'border-2 border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.15)]'
+                    : isAIQuery
+                      ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.15)]'
+                      : isFocused
+                        ? 'border border-[#C9A24A] bg-[#122039] shadow-[0_0_0_3px_rgba(201,162,74,0.20)]'
+                        : 'border border-[rgba(201,162,74,0.20)] hover:border-[rgba(201,162,74,0.40)]'
+                }`
+              : `bg-white text-gray-900 ${
+                  isListening
+                    ? 'border-2 border-red-400 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]'
+                    : isAIQuery
+                      ? 'border-2 border-amber-400 shadow-[0_0_0_3px_rgba(251,191,36,0.1)]'
+                      : isFocused
+                        ? 'border border-gray-400 shadow-[0_0_20px_rgba(0,0,0,0.08),0_0_0_3px_rgba(0,0,0,0.03)]'
+                        : 'border border-gray-200 hover:border-gray-300'
+                }`
             }
           `}
         />
