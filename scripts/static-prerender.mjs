@@ -2051,8 +2051,8 @@ const locationsIndexRoute = {
 const routes = [
   {
     path: '/',
-    title: 'Mercury Repower Quotes Online — Real Prices, No Forms | Harris Boat Works',
-    description: 'Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Mercury Platinum Dealer on Rice Lake — family-owned since 1947, Mercury dealer since 1965.',
+    title: 'Mercury Repower Ontario — Trade-In, Financing & Online Quotes | Harris Boat Works',
+    description: "Ontario's Mercury Repower Centre on Rice Lake. Family-owned since 1947, Mercury Platinum Dealer since 1965. Trade-in valuations, financing, and live CAD quotes — pickup at Gores Landing.",
     h1: 'Mercury Outboard Quotes — Real Prices, No Forms',
     intro: 'Build a real Mercury outboard quote online in three minutes. Live CAD pricing, financing options, and trade-in estimates. Family-owned Mercury Platinum Dealer on Rice Lake since 1947, selling Mercury since 1965.',
     schemas: [homepageSchema()]
@@ -2175,8 +2175,8 @@ const routes = [
   },
   {
     path: '/quote/motor-selection',
-    title: 'Mercury Outboard Motors for Sale Ontario | 2.5HP-600HP | Harris Boat Works',
-    description: 'Browse Mercury outboard motors from 2.5HP to 600HP. FourStroke, Pro XS, SeaPro, ProKicker. Configure online and get instant CAD pricing — Harris Boat Works since 1965.',
+    title: 'Mercury Outboard Motors — Browse 2.5HP–600HP & Build a Quote | Harris Boat Works',
+    description: 'Shop Mercury FourStroke, Pro XS, SeaPro and ProKicker outboards. Configure your motor and get instant CAD pricing online — Harris Boat Works, Mercury dealer since 1965.',
     h1: 'Build Your Mercury Outboard Quote',
     intro: 'Select a Mercury outboard motor to build a real quote with live CAD pricing, financing, and trade-in. No forms, no waiting. Harris Boat Works — Mercury dealer since 1965.',
     schemas: [motorSelectionPageSchema()]
