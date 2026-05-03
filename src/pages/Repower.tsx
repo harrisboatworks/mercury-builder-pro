@@ -163,20 +163,20 @@ export default function Repower() {
       <RepowerMath />
 
       {/* Modern Technology Benefits */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-[#050E1C] text-[#F5F1EA]">
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+          <div className="max-w-3xl mb-14 md:mb-20">
+            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+              <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               Mercury Technology
             </p>
             <h2
-              className="font-display font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05] mb-6"
-              style={{ letterSpacing: '-0.03em' }}
+              className="font-display font-bold text-[clamp(36px,4.5vw,64px)] tracking-[-0.03em] leading-[1.05] mb-6"
             >
-              Not a replacement. A <em className="not-italic italic text-[#C8102E]">revolution.</em>
+              Not a replacement. A <em className="not-italic italic text-repower-mercury-red">revolution.</em>
             </h2>
-            <p className="font-sans font-light text-lg md:text-xl text-[#F5F1EA]/70 max-w-2xl mx-auto leading-relaxed">
-              If your motor is 10–15+ years old, technology has transformed. Modern four-strokes deliver performance that wasn't possible a decade ago.
+            <p className="font-sans text-[17px] md:text-[18px] text-repower-navy-900/65 max-w-[60ch] leading-relaxed">
+              If your motor is 10 to 15+ years old, technology has transformed. Modern four-strokes deliver performance that wasn't possible a decade ago.
             </p>
           </div>
 
@@ -184,20 +184,20 @@ export default function Repower() {
             {modernBenefitsData.map((benefit, index) => (
               <div
                 key={index}
-                className="border border-[#F5F1EA]/10 bg-repower-cream/[0.02] rounded p-8 hover:border-[#C9A24A]/40 transition-all duration-300"
+                className="border border-repower-navy-900/10 bg-white rounded p-8 hover:border-repower-gold/50 transition-all duration-300"
               >
-                <benefit.icon className="w-6 h-6 text-[#C9A24A] mb-4" />
-                <h3 className="font-display font-semibold text-lg text-[#F5F1EA] mb-2">{benefit.title}</h3>
-                <p className="font-sans text-sm text-[#F5F1EA]/60 leading-relaxed">{benefit.description}</p>
+                <benefit.icon className="w-6 h-6 text-repower-gold mb-4" />
+                <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-2">{benefit.title}</h3>
+                <p className="font-sans text-sm text-repower-navy-900/65 leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="border border-[#F5F1EA]/10 rounded p-6 md:p-8 flex items-center gap-6 bg-repower-cream/[0.02]">
-            <img src={mercuryLogo} alt="Mercury" className="h-10 hidden sm:block opacity-90" />
+          <div className="border border-repower-navy-900/10 bg-white rounded p-6 md:p-8 flex items-center gap-6">
+            <img src={mercuryLogo} alt="Mercury" className="h-10 hidden sm:block" />
             <div>
-              <h3 className="font-display font-semibold text-lg text-[#F5F1EA] mb-1">Mercury SmartCraft® Technology</h3>
-              <p className="font-sans text-sm text-[#F5F1EA]/65 leading-relaxed">
+              <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-1">Mercury SmartCraft® Technology</h3>
+              <p className="font-sans text-sm text-repower-navy-900/65 leading-relaxed">
                 Real-time engine monitoring, fuel economy tracking, and maintenance alerts, from your phone with the Mercury Marine app.
               </p>
             </div>
@@ -206,25 +206,25 @@ export default function Repower() {
       </section>
 
       {/* Infographic Section */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-[#0A1828] text-[#F5F1EA]">
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-navy-900 text-repower-cream">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+          <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 inline-flex items-center gap-3">
+            <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
             Reference
           </p>
           <h2
-            className="font-display font-bold text-[clamp(32px,4.5vw,56px)] tracking-tight leading-[1.05] mb-10"
-            style={{ letterSpacing: '-0.03em' }}
+            className="font-display font-bold text-[clamp(32px,4.5vw,56px)] tracking-[-0.03em] leading-[1.05] mb-10"
           >
             The complete repower guide.
           </h2>
           <ExpandableImage
             src="/repower-assets/hbw-repower-infographic.png"
             alt="Harris Boat Works Mercury Repower Infographic - 70% of the benefit for 30% of the cost. Warning signs, process, and pricing guide for boat motor replacement"
-            className="w-full rounded shadow-2xl shadow-black/40 mb-8 border border-[#F5F1EA]/10"
+            className="w-full rounded shadow-2xl shadow-black/40 mb-8 border border-repower-cream/10"
           />
           <button
             onClick={() => setGuideDialogOpen(true)}
-            className="inline-flex items-center justify-center gap-2 border border-[#F5F1EA]/30 text-[#F5F1EA] px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-repower-cream/5 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 border border-repower-cream/30 text-repower-cream px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-repower-cream/5 transition-all duration-300"
           >
             <Download className="w-4 h-4" />
             Download Full Guide (PDF)
@@ -235,105 +235,103 @@ export default function Repower() {
       <RepowerGuideDownloadDialog open={guideDialogOpen} onOpenChange={setGuideDialogOpen} />
 
       {/* Pricing Section */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-[#050E1C] text-[#F5F1EA]">
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+          <div className="max-w-3xl mb-14 md:mb-20">
+            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+              <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               Transparent Pricing
             </p>
             <h2
-              className="font-display font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05] mb-6"
-              style={{ letterSpacing: '-0.03em' }}
+              className="font-display font-bold text-[clamp(36px,4.5vw,64px)] tracking-[-0.03em] leading-[1.05] mb-6"
             >
-              Real CAD pricing. <em className="not-italic italic text-[#C8102E]">No surprises.</em>
+              Real CAD pricing. <em className="not-italic italic text-repower-mercury-red">No surprises.</em>
             </h2>
-            <p className="font-sans font-light text-lg md:text-xl text-[#F5F1EA]/70 max-w-2xl mx-auto leading-relaxed">
+            <p className="font-sans text-[17px] md:text-[18px] text-repower-navy-900/65 max-w-[60ch] leading-relaxed">
               A clear and honest look at your investment.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {[
-              { n: '1', t: 'The Motor', p: '$1,500, $35,000+', d: 'Priced by HP. Quote builder shows exact pricing for any motor.' },
-              { n: '2', t: 'Rigging & Controls', p: '$1,500, $4,000', d: "Depends on your boat's existing setup. Sometimes minimal work needed." },
-              { n: '3', t: 'Installation', p: '$800, $1,500', d: 'Includes professional mounting and lake testing on Rice Lake.' },
+              { n: '1', t: 'The Motor', p: '$1,500 to $35,000+', d: 'Priced by HP. Quote builder shows exact pricing for any motor.' },
+              { n: '2', t: 'Rigging & Controls', p: '$1,500 to $4,000', d: "Depends on your boat's existing setup. Sometimes minimal work needed." },
+              { n: '3', t: 'Installation', p: '$800 to $1,500', d: 'Includes professional mounting and lake testing on Rice Lake.' },
             ].map((item) => (
-              <div key={item.n} className="border border-[#F5F1EA]/10 bg-repower-cream/[0.02] rounded p-8">
-                <div className="font-display font-bold text-5xl text-[#C9A24A]/50 mb-4" style={{ letterSpacing: '-0.04em' }}>
+              <div key={item.n} className="border border-repower-navy-900/10 bg-white rounded p-8">
+                <div className="font-display font-bold text-5xl text-repower-gold/60 mb-4 tracking-[-0.04em]">
                   {item.n}
                 </div>
-                <h3 className="font-display font-semibold text-lg text-[#F5F1EA] mb-3">{item.t}</h3>
-                <p className="font-display font-bold text-2xl text-[#F5F1EA] mb-3" style={{ letterSpacing: '-0.02em' }}>
+                <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-3">{item.t}</h3>
+                <p className="font-display font-bold text-2xl text-repower-navy-900 mb-3 tracking-[-0.02em]">
                   {item.p}
                 </p>
-                <p className="font-sans text-sm text-[#F5F1EA]/60 leading-relaxed">{item.d}</p>
+                <p className="font-sans text-sm text-repower-navy-900/65 leading-relaxed">{item.d}</p>
               </div>
             ))}
           </div>
 
-          <div className="border border-[#C8102E]/40 bg-gradient-to-br from-[#C8102E]/15 to-transparent rounded p-10 md:p-14 text-center">
-            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-4">
+          <div className="border border-repower-gold/40 bg-repower-cream rounded p-10 md:p-14 text-center">
+            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-mercury-red mb-4">
               Typical Rice Lake Repower
             </p>
             <p
-              className="font-display font-bold text-[clamp(40px,6vw,80px)] tracking-tight text-[#F5F1EA] mb-3"
-              style={{ letterSpacing: '-0.035em' }}
+              className="font-display font-bold text-[clamp(40px,6vw,80px)] tracking-[-0.035em] leading-[1.05] text-repower-navy-900 mb-3"
             >
-              $8,000, $18,000
+              $8,000 to $18,000
             </p>
-            <p className="font-sans text-base md:text-lg text-[#F5F1EA]/65">
-              For a 16–18ft boat with 60–115 HP, all-in.
+            <p className="font-sans text-base md:text-lg text-repower-navy-900/65">
+              For a 16 to 18ft boat with 60 to 115 HP, all-in.
             </p>
           </div>
 
           {/* Repower cost-by-HP table */}
           <div className="mt-20 max-w-5xl mx-auto">
-            <h3 className="font-display font-semibold text-2xl md:text-3xl text-[#F5F1EA] mb-3 text-center" style={{ letterSpacing: '-0.02em' }}>
+            <h3 className="font-display font-semibold text-2xl md:text-3xl text-repower-navy-900 mb-3 text-center tracking-[-0.02em]">
               Mercury Repower Cost by Horsepower
             </h3>
-            <p className="font-sans text-sm text-[#F5F1EA]/55 text-center mb-8">
+            <p className="font-sans text-sm text-repower-navy-900/55 text-center mb-8">
               Ontario, 2026 CAD, complete installed packages
             </p>
-            <div className="overflow-x-auto rounded border border-[#F5F1EA]/10">
+            <div className="overflow-x-auto rounded border border-repower-navy-900/10 bg-white">
               <table className="w-full text-sm">
                 <caption className="sr-only">
                   Typical complete Mercury outboard repower price ranges in CAD by horsepower category for Ontario boaters.
                 </caption>
                 <thead>
-                  <tr className="bg-repower-cream/[0.04]">
-                    <th scope="col" className="text-left px-6 py-4 font-sans font-semibold text-xs uppercase tracking-[0.18em] text-[#C9A24A]">HP Category</th>
-                    <th scope="col" className="text-left px-6 py-4 font-sans font-semibold text-xs uppercase tracking-[0.18em] text-[#C9A24A]">Typical Boat</th>
-                    <th scope="col" className="text-left px-6 py-4 font-sans font-semibold text-xs uppercase tracking-[0.18em] text-[#C9A24A]">Complete Repower (CAD)</th>
+                  <tr className="bg-repower-paper">
+                    <th scope="col" className="text-left px-6 py-4 font-sans font-semibold text-xs uppercase tracking-[0.18em] text-repower-mercury-red">HP Category</th>
+                    <th scope="col" className="text-left px-6 py-4 font-sans font-semibold text-xs uppercase tracking-[0.18em] text-repower-mercury-red">Typical Boat</th>
+                    <th scope="col" className="text-left px-6 py-4 font-sans font-semibold text-xs uppercase tracking-[0.18em] text-repower-mercury-red">Complete Repower (CAD)</th>
                   </tr>
                 </thead>
                 <tbody className="font-sans">
                   {[
-                    ['9.9, 20 HP', 'Tiller, kicker, small aluminum, canoe', '$5,000, $9,000'],
-                    ['25, 60 HP', 'Mid-size aluminum, small pontoon', '$9,000, $18,000'],
-                    ['75, 115 HP', 'Larger fishing boats, pontoons, smaller runabouts', '$16,000, $28,000'],
-                    ['150, 200 HP', 'Performance fishing, runabouts, family boats', '$28,000, $50,000'],
-                    ['250, 300 HP', 'High-performance, larger hulls, twin setups', '$48,000, $75,000'],
-                    ['350, 425 HP (Verado V10)', 'Special-order, call for pricing', '$65,000+ per engine'],
+                    ['9.9 to 20 HP', 'Tiller, kicker, small aluminum, canoe', '$5,000 to $9,000'],
+                    ['25 to 60 HP', 'Mid-size aluminum, small pontoon', '$9,000 to $18,000'],
+                    ['75 to 115 HP', 'Larger fishing boats, pontoons, smaller runabouts', '$16,000 to $28,000'],
+                    ['150 to 200 HP', 'Performance fishing, runabouts, family boats', '$28,000 to $50,000'],
+                    ['250 to 300 HP', 'High-performance, larger hulls, twin setups', '$48,000 to $75,000'],
+                    ['350 to 425 HP (Verado V10)', 'Special-order, call for pricing', '$65,000+ per engine'],
                   ].map(([hp, boat, price]) => (
-                    <tr key={hp} className="border-t border-[#F5F1EA]/10">
-                      <td className="px-6 py-4 font-medium text-[#F5F1EA]">{hp}</td>
-                      <td className="px-6 py-4 text-[#F5F1EA]/65">{boat}</td>
-                      <td className="px-6 py-4 text-[#F5F1EA] font-medium">{price}</td>
+                    <tr key={hp} className="border-t border-repower-navy-900/10">
+                      <td className="px-6 py-4 font-medium text-repower-navy-900">{hp}</td>
+                      <td className="px-6 py-4 text-repower-navy-900/65">{boat}</td>
+                      <td className="px-6 py-4 text-repower-navy-900 font-medium">{price}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <p className="font-sans text-xs text-[#F5F1EA]/50 text-center mt-4">
+            <p className="font-sans text-xs text-repower-navy-900/55 text-center mt-4">
               Detailed line-item math:{' '}
-              <Link to="/blog/mercury-repower-cost-ontario-2026-cad" className="text-[#C9A24A] hover:text-[#F5F1EA] underline transition-colors">
+              <Link to="/blog/mercury-repower-cost-ontario-2026-cad" className="text-repower-mercury-red hover:text-repower-navy-900 underline transition-colors">
                 2026 Ontario repower cost guide
               </Link>.
             </p>
           </div>
         </div>
       </section>
-
       {/* Winter Pro Tip, restyled */}
       <WinterPro />
 
