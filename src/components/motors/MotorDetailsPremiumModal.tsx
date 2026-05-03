@@ -296,24 +296,26 @@ export default function MotorDetailsPremiumModal({
       {/* Click-blocker - starts below header so header remains clickable */}
       <div className="absolute inset-x-0 top-14 bottom-0 pointer-events-auto" onClick={onClose} />
       
-      {/* Visible backdrop - only below header so header remains visible */}
+      {/* Visible backdrop - navy tint + blur (reduced blur on mobile to save GPU) */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.2 }}
-        className="absolute inset-x-0 top-14 bottom-0 bg-black/70 pointer-events-auto" 
+        transition={{ duration: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
+        className="absolute inset-x-0 top-14 bottom-0 pointer-events-auto backdrop-blur-[4px] sm:backdrop-blur-[8px]"
+        style={{ backgroundColor: 'rgba(5, 14, 28, 0.65)', WebkitBackdropFilter: 'blur(4px)' }}
         onClick={onClose} 
       />
       
       {/* Modal Container - TWO COLUMN LAYOUT (60/40) */}
       <div className="absolute inset-x-0 top-14 bottom-0 sm:inset-0 flex items-start sm:items-center justify-center sm:p-4 pointer-events-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 10, scale: 0.98 }}
-          transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-          className="relative bg-white w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.97 }}
+          transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
+          style={{ boxShadow: '0 30px 80px rgba(10, 22, 40, 0.25)' }}
+          className="relative bg-[#FAF8F4] sm:bg-[#F5F1EA] w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-[12px] 
           lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl lg:h-[90vh] lg:overflow-hidden
           flex flex-col">
           
