@@ -13,18 +13,20 @@ const fadeUp = (delay = 0) => ({
 export function HeroRepower() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#050E1C] text-[#F5F1EA] flex items-center">
-      {/* Background photo with slow zoom */}
-      <motion.div
-        initial={{ scale: 1.12 }}
-        animate={{ scale: 1.0 }}
-        transition={{ duration: 12, ease: 'easeOut' }}
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `url(${repowerImages.hero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      />
+      {/* Background hero video loop */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        poster="/hero/hero-poster.jpg"
+        aria-hidden="true"
+      >
+        <source src="/hero/hero-loop.webm" type="video/webm" />
+        <source src="/hero/hero-loop.mp4" type="video/mp4" />
+      </video>
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#050E1C]/85 via-[#050E1C]/55 to-[#050E1C]/95" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#050E1C]/80 via-transparent to-transparent" />
