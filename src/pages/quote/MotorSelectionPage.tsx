@@ -255,6 +255,21 @@ function MotorSelectionContent() {
   // Search overlay state - triggered from header search icon
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
 
+  // Sentinel-based sticky detection for search bar (light at rest, dark glass when stuck)
+  const searchSentinelRef = useRef<HTMLDivElement | null>(null);
+  const [isSearchStuck, setIsSearchStuck] = useState(false);
+  useEffect(() => {
+    const el = searchSentinelRef.current;
+    if (!el) return;
+    const headerOffset = window.innerWidth >= 1024 ? 72 : 64;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsSearchStuck(!entry.isIntersecting),
+      { rootMargin: `-${headerOffset}px 0px 0px 0px`, threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   // Track grid columns based on viewport so animation stagger reflects actual rows.
   // Matches Tailwind: grid-cols-1 / sm:2 / lg:3 / 2xl:4
   const getGridColumns = () => {
