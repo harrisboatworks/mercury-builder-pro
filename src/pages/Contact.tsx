@@ -243,7 +243,7 @@ export default function Contact() {
                         type="button"
                         onClick={() => setStep(2)}
                         disabled={!watchedValues.name || !watchedValues.email || !watchedValues.inquiry_type}
-                        className="w-full"
+                        className="w-full bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep"
                       >
                         Continue
                       </Button>
