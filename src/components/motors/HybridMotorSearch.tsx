@@ -544,13 +544,21 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           )}
         </AnimatePresence>
 
-        {query && !isListening && (
+        {query && (
           <button
             onClick={handleClear}
             className="absolute right-4 top-1/2 -translate-y-1/2 p-1 text-gray-400 hover:text-gray-600 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
+        )}
+        </div>
+
+        {/* Filter Slot - tight to the right of the input, matching height */}
+        {filterSlot && (
+          <div className="flex items-center [&>*]:h-11 [&>*]:md:h-12 [&>*]:w-11 [&>*]:md:w-12">
+            {filterSlot}
+          </div>
         )}
       </div>
 
