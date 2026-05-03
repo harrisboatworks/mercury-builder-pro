@@ -106,7 +106,7 @@ export default function Repower() {
       </section>
 
       {/* Repower vs New Boat */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-navy-900 text-repower-cream">
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
           <div className="max-w-3xl mb-14 md:mb-20">
             <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
@@ -121,8 +121,8 @@ export default function Repower() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="border border-repower-gold/40 bg-repower-gold/[0.04] rounded p-8 md:p-10">
-              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-4">
+            <div className="bg-repower-cream border border-repower-navy-900/10 rounded-none p-8 md:p-10">
+              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-6">
                 Repower if...
               </p>
               <ul className="space-y-4 list-none">
@@ -131,16 +131,16 @@ export default function Repower() {
                   'You like your boat, it fits your needs and the right size',
                   'The numbers work: 70% of the benefit for 30% of the cost',
                 ].map((item) => (
-                  <li key={item} className="font-sans text-base text-repower-cream/85 leading-relaxed">
-                    <span aria-hidden="true" className="inline-block w-4 mr-2 text-repower-gold font-bold">✓</span>
+                  <li key={item} className="flex gap-3 font-sans text-base text-repower-navy-900/80 leading-relaxed">
+                    <Check className="w-4 h-4 text-repower-gold flex-shrink-0 mt-1.5" strokeWidth={2.5} />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="border border-repower-cream/15 rounded p-8 md:p-10">
-              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-cream/55 mb-4">
+            <div className="bg-repower-cream border border-repower-navy-900/10 rounded-none p-8 md:p-10">
+              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-navy-900/55 mb-6">
                 Buy new if...
               </p>
               <ul className="space-y-4 list-none">
@@ -149,8 +149,8 @@ export default function Repower() {
                   "You've outgrown your current boat",
                   'You want completely different features or layout',
                 ].map((item) => (
-                  <li key={item} className="font-sans text-base text-repower-cream/65 leading-relaxed">
-                    <span aria-hidden="true" className="inline-block w-4 mr-2 text-repower-cream/40">·</span>
+                  <li key={item} className="flex gap-3 font-sans text-base text-repower-navy-900/65 leading-relaxed">
+                    <X className="w-4 h-4 text-repower-navy-900/50 flex-shrink-0 mt-1.5" strokeWidth={2} />
                     <span>{item}</span>
                   </li>
                 ))}
