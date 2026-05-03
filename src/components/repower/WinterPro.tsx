@@ -8,7 +8,7 @@ const benefits = [
 
 export function WinterPro() {
   return (
-    <section className="bg-[#FAF8F4]">
+    <section className="bg-repower-paper">
       <div className="mx-auto max-w-[1400px] px-6 md:px-14 py-20 md:py-[140px]">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5">

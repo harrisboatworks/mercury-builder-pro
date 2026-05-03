@@ -9,7 +9,7 @@ const pillars = [
 
 export function WhyHarrisRepower() {
   return (
-    <section className="bg-[#FAF8F4]">
+    <section className="bg-repower-paper">
       <div className="mx-auto max-w-[1400px] px-6 md:px-14 py-20 md:py-[140px]">
         <div className="max-w-3xl mb-14 md:mb-20">
           <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C8102E] mb-4">
@@ -31,7 +31,7 @@ export function WhyHarrisRepower() {
             return (
               <div
                 key={p.t}
-                className="bg-[#FAF8F4] p-8 md:p-10 flex flex-col group hover:bg-white transition-colors duration-500"
+                className="bg-repower-paper p-8 md:p-10 flex flex-col group hover:bg-white transition-colors duration-500"
               >
                 <Icon className="w-7 h-7 text-[#C9A24A] mb-6" strokeWidth={1.5} />
                 <div
