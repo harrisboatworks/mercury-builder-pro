@@ -11,17 +11,20 @@ const fadeUp = (delay = 0) => ({
 });
 
 // Hero stat row styling — tweak here to adjust all three stats together
+// Mobile (<700px): vertical stacked list with gold left-border on each item.
+// >=sm: horizontal row with hairline top/bottom border.
 const statRowClass =
-  'flex flex-row flex-nowrap items-baseline gap-6 sm:gap-10 md:gap-14 max-w-2xl mb-8 border-y border-[#F5F1EA]/15 py-4';
-const statItemClass = 'min-w-0 flex-1';
+  'flex flex-col sm:flex-row sm:flex-nowrap items-stretch sm:items-baseline gap-3 sm:gap-10 md:gap-14 max-w-2xl mb-8 sm:border-y sm:border-[#F5F1EA]/15 sm:py-4 hidden min-[380px]:flex';
+const statItemClass =
+  'min-w-0 flex-1 pl-3 sm:pl-0 border-l-2 sm:border-l-0 border-[#C9A24A]';
 const statNumberClass =
-  'font-display font-bold text-[clamp(24px,3.6vw,42px)] text-[#F5F1EA] tabular-nums';
+  'font-display font-bold text-[clamp(22px,3.6vw,42px)] text-[#F5F1EA] tabular-nums';
 const statNumberStyle = {
   letterSpacing: '-0.035em',
   lineHeight: 1,
 } as const;
 const statLabelClass =
-  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/55 mt-2 leading-tight whitespace-nowrap overflow-hidden text-ellipsis';
+  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/55 mt-1 sm:mt-2 leading-tight whitespace-nowrap overflow-hidden text-ellipsis';
 const statLabelStyle = {
   letterSpacing: '0.16em',
 } as const;
