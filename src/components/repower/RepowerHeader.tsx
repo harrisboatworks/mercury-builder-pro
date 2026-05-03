@@ -44,19 +44,19 @@ export function RepowerHeader() {
       >
         <div className="max-w-[1400px] mx-auto px-4 md:px-8 xl:px-14 flex flex-row flex-nowrap items-center justify-between gap-3 md:gap-4 xl:gap-6">
           {/* Logo lockup — always horizontal */}
-          <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-2 lg:gap-3 min-w-0 overflow-hidden shrink-0">
-            <img src={harrisLogo} alt="Harris Boat Works" className="h-7 md:h-8 lg:h-9 w-auto shrink-0" />
-            <div className="hidden sm:block w-px h-7 bg-[#F5F1EA]/20 shrink-0" />
+          <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-1.5 sm:gap-2 lg:gap-3 min-w-0 overflow-hidden shrink-0">
+            <img src={harrisLogo} alt="Harris Boat Works" className="h-6 sm:h-7 md:h-8 lg:h-9 w-auto shrink-0" />
+            <div className="w-px h-6 sm:h-7 bg-[#F5F1EA]/20 shrink-0" />
             <img
               src={mercuryLogo}
               alt="Mercury Marine"
-              className="hidden sm:block h-6 md:h-7 w-auto shrink-0"
+              className="h-5 sm:h-6 md:h-7 w-auto shrink-0"
             />
-            <div className="flex items-center pl-2 lg:pl-3 border-l border-[#F5F1EA]/15 shrink-0">
+            <div className="flex items-center pl-1.5 sm:pl-2 lg:pl-3 border-l border-[#F5F1EA]/15 shrink-0">
               <img
                 src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
                 alt="Mercury Repower Center"
-                className="h-7 md:h-8 lg:h-9 xl:h-10 w-auto"
+                className="h-6 sm:h-7 md:h-8 lg:h-9 xl:h-10 w-auto"
               />
             </div>
           </Link>
