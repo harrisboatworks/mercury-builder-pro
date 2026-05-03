@@ -21,7 +21,7 @@ export function RecentlyViewedBar({ items, onSelect, onClear, className }: Recen
   if (items.length === 0) return null;
 
   return (
-    <div className={cn('block bg-gradient-to-br from-repower-cream to-repower-paper border-y border-repower-gold/10', className)}>
+    <div className={cn('block bg-repower-paper border-y border-repower-gold/10', className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 sm:py-3">
         <div className="grid grid-cols-[minmax(0,1fr)_28px] min-[480px]:grid-cols-[auto_minmax(0,1fr)_28px] items-center gap-2 sm:gap-3 min-w-0">
           {/* Label — hidden on smallest viewports */}
