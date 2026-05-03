@@ -183,9 +183,9 @@ export default function Index() {
                     'Bonus warranty coverage may be available during current Mercury promotions',
                     'Mercury-Certified technicians — we sell what we service',
                   ].map(line => (
-                    <li key={line} className="flex items-start gap-3 text-repower-cream/90">
-                      <CheckCircle2 className="h-5 w-5 text-repower-gold mt-0.5 shrink-0" />
-                      <span dangerouslySetInnerHTML={{ __html: line }} />
+                    <li key={line} className="flex items-start gap-3 text-repower-cream/90 leading-relaxed">
+                      <CheckCircle2 className="h-5 w-5 text-repower-gold shrink-0 translate-y-[3px]" aria-hidden="true" />
+                      <span className="flex-1" dangerouslySetInnerHTML={{ __html: line }} />
                     </li>
                   ))}
                 </ul>
