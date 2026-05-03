@@ -452,20 +452,31 @@ function MotorCardPreviewInner({
 
   const productSchema = getProductSchema();
 
+  // Specs string with styled separators
+  const specsRaw = getSimplifiedSpecs();
+  const specsParts = specsRaw ? specsRaw.split(/\s*[•·]\s*/).filter(Boolean) : [];
+  // Sale tag takes priority over status tags
+  const saleAmount = dp.savingsRounded > 0 ? dp.savingsRounded : 0;
+  const popularityType = motor && !motor.hasManualSalePrice ? getMotorPopularity(motor) : null;
+  const showSaleTag = saleAmount > 0;
+
   return (
     <div ref={cardRef}>
       {/* Product schema moved to parent as batched ItemList */}
       <div
-        className="group bg-white rounded-2xl border border-gray-100/80 overflow-hidden cursor-pointer touch-action-manipulation
-          transition-all duration-500 ease-out
-          hover:shadow-[0_25px_80px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.03)] 
-          hover:-translate-y-1.5 hover:border-gray-200/90
-          active:scale-[0.98] active:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)]"
+        className="group bg-white rounded-lg border border-[rgba(10,22,40,0.10)] overflow-hidden cursor-pointer touch-action-manipulation
+          transition-all duration-[350ms] [transition-timing-function:cubic-bezier(0.2,0.8,0.2,1)]
+          hover:-translate-y-[3px] hover:border-[rgba(10,22,40,0.18)]
+          hover:shadow-[0_16px_40px_rgba(10,22,40,0.10),0_4px_12px_rgba(10,22,40,0.05)]
+          active:scale-[0.99]"
         onClick={handleCardClick}
         onMouseEnter={() => { preloadConfiguratorImagesHighPriority(); prefetchModal(); }}
         onTouchStart={() => { preloadConfiguratorImagesHighPriority(); prefetchModal(); }}
       >
-        <div className="relative bg-white p-8 overflow-hidden">
+        <div
+          className="relative aspect-[4/3] overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}
+        >
               {/* Shimmer loading overlay */}
               {!imageLoaded && (
                 <div className="absolute inset-0 bg-gray-50 animate-shimmer z-10" />
