@@ -10,6 +10,22 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.9, delay, ease },
 });
 
+// Hero stat row styling — tweak here to adjust all three stats together
+const statRowClass =
+  'grid grid-cols-3 gap-4 md:gap-12 max-w-2xl mb-12 border-y border-[#F5F1EA]/15 py-6 items-start';
+const statItemClass = 'min-w-0';
+const statNumberClass =
+  'font-display font-bold text-[clamp(28px,4.5vw,56px)] text-[#F5F1EA] leading-none tabular-nums';
+const statNumberStyle = { letterSpacing: '-0.03em' } as const;
+const statLabelClass =
+  'font-sans text-xs uppercase tracking-[0.18em] text-[#F5F1EA]/55 mt-3';
+
+const heroStats = [
+  { n: '70%', l: 'of the benefit' },
+  { n: '30%', l: 'of the cost' },
+  { n: '79', l: 'years on the water' },
+] as const;
+
 export function HeroRepower() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-[#050E1C] text-[#F5F1EA] flex items-center">
