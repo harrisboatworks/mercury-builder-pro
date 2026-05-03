@@ -478,10 +478,13 @@ export default function MotorDetailsPremiumModal({
               <div className="p-6 pt-4 pb-24 space-y-8">
                 <TabsContent value="overview" className="space-y-8 mt-4">
                     {/* Enhanced Image Gallery - Fetched from motor_media table */}
-                    <div className="py-2 bg-gradient-to-b from-stone-50 to-white rounded-lg">
+                    <div
+                      className="py-2 rounded-lg"
+                      style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}
+                    >
                       {imagesLoading ? (
                         <div className="flex items-center justify-center h-64">
-                          <Loader2 className="w-8 h-8 animate-spin text-gray-400" />
+                          <Loader2 className="w-8 h-8 animate-spin" style={{ color: 'rgba(5, 14, 28, 0.45)' }} />
                         </div>
                       ) : (
                         <MotorImageGallery 
