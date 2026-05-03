@@ -194,14 +194,14 @@ export default function QuoteSuccessPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => navigate('/')}
-              className="group inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
             >
               Return Home
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={1.75} />
             </button>
             <button
               onClick={() => navigate('/quote/motor-selection')}
-              className="inline-flex items-center justify-center border border-repower-navy-900/20 bg-white text-repower-navy-900 px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center border border-repower-navy-900/20 bg-white text-repower-navy-900 px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
             >
               Get Another Quote
             </button>
