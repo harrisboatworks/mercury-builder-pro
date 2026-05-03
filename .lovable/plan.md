@@ -1,45 +1,102 @@
-## Pass 1 — Replace landing-page hero on /repower
+# /repower Pass 2 — Restyle Plan
 
-### Scope
-Visual layer only. Hero swap. No copy invention beyond reusing existing on-page text. No changes to calculator, FAQ, video, or any logic.
+Scope: bring the remaining old-styled sections into the locked design system (white/cream/navy surfaces, hairline borders, Inter Tight headlines, Inter body, mercury-red eyebrows, gold accents). No copy, math, or behavior changes. No SEO/meta/schema changes.
 
-### Files touched
-1. **NEW** `src/components/repower/RepowerHero.tsx` — compact, paper-background, content-page hero.
-2. **EDIT** `src/pages/Repower.tsx` — remove the three duplicate landing blocks at the top, mount the new hero, keep RepowerMath in place lower (decision below).
+## Files to edit
 
-### Removals from `src/pages/Repower.tsx`
-Delete lines 62–64:
-```
-<HeroRepower />
-<TrustStrip />
-<RepowerMath />
-```
-- `HeroRepower` and `TrustStrip` are dropped from this page entirely (still used on `/`).
-- `RepowerMath` is **kept** but moved further down, inserted between the "Repower vs New Boat" section and the "Modern Technology Benefits" section, where the math story actually fits the educational flow. (Open Q from audit, going with: keep, relocate.)
+1. `src/pages/Repower.tsx`
+2. `src/components/repower/WinterPro.tsx`
+3. `src/components/repower/RepowerROICalculator.tsx`
 
-### Header shell
-`RepowerLayout` currently mounts `RepowerHeader` without the `solid` prop, which means on `/` it stays transparent until scroll, but on every non-`/` route the component already auto-forces solid (line 31 of `RepowerHeader.tsx`: `forceSolid = solid || location.pathname !== '/'`). So `/repower` already renders with a solid navy header from first paint. **No layout swap needed.** Leaving `RepowerLayout` as-is.
+No new files; the infographic replacement is built inline as 4 native sections in `Repower.tsx`.
 
-### New hero spec (`RepowerHero.tsx`)
+---
 
-- **Section**: `bg-repower-paper`, `pt-28 md:pt-32 pb-20 md:pb-28`, `px-6 md:px-14`, hairline bottom border `border-repower-navy-900/10`. Top padding clears the fixed header.
-- **Eyebrow**: "MERCURY OUTBOARD REPOWER · ONTARIO", Inter 600, 11–12px, uppercase, letter-spacing 0.22em, `text-repower-mercury-red`. Preceded by an 8-unit hairline `bg-repower-mercury-red/60`.
-- **H1**: "Keep your boat. Upgrade your engine." Inter Tight 700, `clamp(40px, 5vw, 72px)`, `text-repower-navy-900`, tracking `-0.025em`, leading 1.05, max-width 18ch.
-- **Subhead**: existing 70%/30% framing reworded into one sentence reusing on-page copy: "A new Mercury costs a fraction of a new boat, and you keep the hull you already know. Most repowers are completed in one to three days at our Gores Landing shop on Rice Lake." Inter 400, 17–18px, `text-repower-navy-900/65`, max-width 60ch. (Sourced verbatim from existing /repower content; no new copy.)
-- **Hairline + 70/30 pill**: 12-unit gold hairline, then a small inline pill — `border border-repower-gold/40 bg-repower-cream rounded-full px-5 py-2`, contents: "70% of the benefit · 30% of the cost" with display numerals at 20–22px navy and labels in 12px uppercase navy at 60%.
-- **CTAs**: primary mercury-red `<RepowerCta to="/quote/motor-selection">` "Build Your Quote" with chevron; ghost secondary `<a href="tel:+19053422153">` styled with navy hairline border, navy text, hover `bg-repower-navy-900/[0.03]`.
-- **Background**: solid paper. No video. No photo (keeps it lightweight; we can add a static photo in a follow-up if Jay wants).
+## 1. Symptoms of an Aging Motor (Repower.tsx, ~line 66 block)
 
-### Hard rules respected
-- No em dashes; uses periods and middots.
-- No Tailwind defaults; only `repower-paper / navy-900 / mercury-red / gold / cream` tokens (and existing rgba opacity variants).
-- No icons in colored circles.
-- Reuses existing copy. No new marketing claims.
-- Phone CTA dials the same number that already appears on the page.
+Already mostly on system. Tighten:
+- Keep white card, hairline `border-repower-navy-900/10`, `rounded-none` to match rest of page.
+- Icon: `AlertTriangle` in `text-repower-mercury-red`, no circle (already correct).
+- Title: `font-display font-semibold` (Inter Tight), body `font-sans` (Inter).
+- Grid: `md:grid-cols-2 lg:grid-cols-4 gap-px bg-repower-navy-900/10` style or keep `gap-6` — match the rest of site (use `gap-6` like FourStroke grid).
 
-### Out of scope for this pass
-- Restyling sections 4–14 (Pass 2/3).
-- Replacing the infographic PNG (Pass 3).
-- Any copy fixes to comma-as-range-separator prices (flagged for Jay separately).
+## 2. "One More Season Trap" callout (Repower.tsx ~line 96)
 
-After approval and implementation, screenshot the new top of /repower for review before moving to Pass 2.
+Currently a left gold border on paper bg. Restyle to:
+- `bg-repower-cream border-l-2 border-repower-gold p-8 md:p-10`
+- Eyebrow gold uppercase tracked, body navy.
+- Add small `AlertTriangle` icon in `text-repower-gold` (no circle) before eyebrow.
+
+## 3. Repower or Buy New comparison (Repower.tsx ~line 108)
+
+Currently navy section. Convert to paper section with two cream/paper cards:
+- Section bg: `bg-repower-paper text-repower-navy-900` (match other content sections).
+- Both columns: `bg-repower-cream border border-repower-navy-900/10 rounded-none p-8 md:p-10`.
+- Replace `✓` text marker with `<Check>` icon in `text-repower-gold w-4 h-4`.
+- Replace `·` marker with `<X>` icon in `text-repower-navy-900/50 w-4 h-4`.
+- Eyebrows stay (gold for Repower, navy/55 for Buy New). Headers Inter Tight, body Inter.
+
+## 4. FourStroke Benefits — "Not a replacement. A revolution." (Repower.tsx ~line 166)
+
+Convert 3-card grid into 3-stat anchor grid:
+- Each cell: large `font-display font-bold text-repower-mercury-red text-[clamp(40px,5vw,64px)]` extracting numeric anchor from title (`30-40%`, `Whisper`, `Instant`). Where there is no number, use the icon glyph as the anchor — instead, restructure: keep the icon small at top in mercury-red, then keep title as Inter Tight 700, body Inter. The "stat anchor" treatment here means the **title is the anchor in mercury-red** (pulling the % or word out is risky given the copy lock). Implementation: render title as `font-display font-bold text-[clamp(28px,3vw,40px)] text-repower-mercury-red` with description below in `font-sans text-repower-navy-900/65`.
+- Remove white card chrome; use hairline divider grid (`divide-x divide-y divide-repower-navy-900/10` on a 3-col grid, no individual card borders) — matches "more than a replacement" stat treatment elsewhere.
+- SmartCraft callout below: `bg-repower-cream border-l-2 border-repower-gold` (no white box), Mercury logo + Inter Tight title + Inter body.
+
+## 5. Infographic replacement (Repower.tsx ~line 209)
+
+Remove `<ExpandableImage>` PNG block. Build 4 stacked native sub-sections inside the same outer navy section, each with eyebrow + Inter Tight headline + Inter body + real lucide icon in brand color. Add fade-up via existing `motion-safe` Tailwind utility (`motion-safe:animate-fade-in` or simple `opacity-0 translate-y-4` with `IntersectionObserver` — use the simplest CSS-only `motion-safe:animate-fade-in` from existing Tailwind config; if not present, use `transition-opacity` with no JS, or `framer-motion` `whileInView` consistent with site).
+
+Subsections (content from existing infographic):
+1. **The Problem** — `AlertTriangle` icon (mercury-red), eyebrow "The Problem", H3 "Your motor is costing you more than money.", body summarizing aging-motor pain.
+2. **The Solution** — `Wrench` icon (gold), eyebrow "The Solution", H3 "Repower with Mercury.", body about modern tech.
+3. **The Math** — `BadgeCheck` icon (gold), eyebrow "The Math", H3 "70% of the benefit. 30% of the cost.", body referencing $8k–$18k vs $35k–$70k new.
+4. **The Steps** — numbered 01–04 mini list mirroring `RepowerProcess` 4 steps in compact form.
+
+Keep the "Download Full Guide (PDF)" button below the 4 sections, restyled as outline button.
+
+## 6. Pricing section "$8,000 to $18,000" callout (Repower.tsx ~line 274)
+
+Already cream + gold border. Tighten:
+- Remove `border-repower-gold/40` full border, replace with `border-l-2 border-repower-gold` only, left-aligned content.
+- Anchor `$8,000 to $18,000` stays Inter Tight 700; eyebrow mercury-red uppercase tracked; supporting line Inter body navy/65.
+- `rounded-none`.
+
+## 7. WinterPro panel (WinterPro.tsx)
+
+Convert from paper bg with navy snowflake circle → solid navy panel with gold accents:
+- Section bg: `bg-repower-navy-900 text-repower-cream`.
+- Snowflake: `text-repower-gold w-10 h-10`, no circle wrapper.
+- Eyebrow `text-repower-gold` uppercase tracked.
+- H2 in cream with mercury-red italic accent word ("winter").
+- Convert benefits list to bulleted list with gold `Check` icons (replace the 12-col baseline grid).
+
+## 8. Cost Calculator (RepowerROICalculator.tsx)
+
+Inputs adopt quote-builder form-field system:
+- Wrap each control in a structure mirroring `QuoteFormField` (label + control + helper). Use the `quoteInputClass` look for any text input. Since this calculator has no text input (only pills, radios, slider), apply equivalent treatment:
+  - HP pills: keep but adopt `border border-repower-navy-900/15`, selected → `bg-repower-navy-900 text-repower-cream`. (Already close.)
+  - Rigging: convert RadioGroup rows to **radio cards** — each option a bordered cell `border border-repower-navy-900/10 bg-white p-4 rounded-none`, selected → `border-repower-gold bg-repower-gold/[0.04]`.
+  - Slider: keep but use cream track via existing slider tokens.
+- Right-side results panel: change from `bg-repower-navy-900` slab → `bg-repower-cream border border-repower-navy-900/10 rounded-none`.
+  - Total uses `font-display font-bold text-[clamp(36px,4vw,56px)] text-repower-navy-900` as anchor.
+  - Savings line: `font-sans text-xs uppercase tracking-[0.18em] text-repower-mercury-red`.
+  - Per-card breakdown: hairline borders, navy text, gold "Best Value" tag.
+- All math, state, and CTA logic untouched.
+
+---
+
+## Hard rules enforced
+
+- No em dashes anywhere (use commas / periods / "to").
+- No Tailwind default colors — only `repower-*` tokens and brand hexes.
+- No icons in colored circle backgrounds — all icons inline, sized with `w-* h-*`, color via brand token.
+- Zero copy, calculator math, FAQ logic, or video changes.
+- SEO components, meta tags, JSON-LD untouched.
+
+## Out of scope (Pass 3, awaiting approval)
+
+- FAQ accordion restyle
+- WhyHarrisRepower pillars
+- Testimonials section
+- Service Area chips
