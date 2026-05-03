@@ -518,7 +518,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute top-1/2 -translate-y-1/2 right-4 hidden md:flex items-center gap-1.5"
+              className={`absolute top-1/2 -translate-y-1/2 ${isDark && filterSlot ? 'right-14' : 'right-4'} hidden md:flex items-center gap-1.5`}
             >
               <kbd className={`px-2 py-1 text-xs font-mono rounded shadow-sm ${isDark ? 'bg-[#F5F1EA]/5 border border-[#F5F1EA]/15 text-[#F5F1EA]/60' : 'bg-gray-100 border border-gray-200 text-gray-500'}`}>
                 /
@@ -552,10 +552,16 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
             <X className="w-5 h-5" />
           </button>
         )}
+        {/* Filter Slot - dark variant: absolute inside input (legacy) */}
+        {isDark && filterSlot && (
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 z-10">
+            {filterSlot}
+          </div>
+        )}
         </div>
 
-        {/* Filter Slot - tight to the right of the input, matching height */}
-        {filterSlot && (
+        {/* Filter Slot - light variant: tight to the right of input, matching height */}
+        {!isDark && filterSlot && (
           <div className="flex items-center [&>*]:h-11 [&>*]:md:h-12 [&>*]:w-11 [&>*]:md:w-12">
             {filterSlot}
           </div>
