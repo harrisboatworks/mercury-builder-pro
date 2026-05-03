@@ -141,12 +141,12 @@ export default function Index() {
                 return (
                   <li
                     key={step.title}
-                    className="relative bg-[#0A1828] flex flex-col group overflow-hidden transition-all duration-500 ring-1 ring-[#F5F1EA]/10 md:ring-transparent rounded md:rounded-none hover:ring-[#C9A24A]/40 hover:shadow-[0_0_40px_-8px_rgba(201,162,74,0.35)] hover:z-10"
+                    className="relative bg-[#0A1828] flex flex-col group overflow-hidden transition-all duration-500 ring-1 ring-[#F5F1EA]/10 md:ring-transparent rounded md:rounded-none hover:ring-[#C9A24A]/40 hover:shadow-[0_0_40px_-8px_rgba(201,162,74,0.35)] hover:z-10 active:ring-[#C9A24A]/50 active:shadow-[0_0_30px_-8px_rgba(201,162,74,0.4)]"
                   >
                     {/* Gold glow accent */}
                     <span
                       aria-hidden
-                      className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(ellipse_at_top,_rgba(201,162,74,0.12),_transparent_60%)]"
+                      className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-500 bg-[radial-gradient(ellipse_at_top,_rgba(201,162,74,0.12),_transparent_60%)]"
                     />
                     <div className="aspect-[16/10] md:aspect-[4/3] overflow-hidden border-b border-[#F5F1EA]/10 relative">
                       <img
@@ -155,7 +155,7 @@ export default function Index() {
                         loading="lazy"
                         width={800}
                         height={600}
-                        className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110 group-active:scale-105"
                       />
                       <span
                         aria-hidden
@@ -164,7 +164,7 @@ export default function Index() {
                     </div>
                     <div className="p-6 sm:p-8 md:p-10 flex-1 flex flex-col relative">
                       <div className="flex items-center gap-3 mb-4 md:mb-5">
-                        <div className="h-9 w-9 md:h-10 md:w-10 rounded-full border border-[#C9A24A]/40 bg-[#C9A24A]/10 text-[#C9A24A] flex items-center justify-center transition-all duration-500 group-hover:bg-[#C9A24A]/20 group-hover:border-[#C9A24A]/70">
+                        <div className="h-9 w-9 md:h-10 md:w-10 shrink-0 rounded-full border border-[#C9A24A]/40 bg-[#C9A24A]/10 text-[#C9A24A] flex items-center justify-center transition-all duration-500 group-hover:bg-[#C9A24A]/20 group-hover:border-[#C9A24A]/70">
                           <Icon className="h-4 w-4" />
                         </div>
                         <span className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.22em] md:tracking-[0.24em] text-[#C9A24A]">
