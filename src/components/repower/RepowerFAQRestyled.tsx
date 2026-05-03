@@ -1,9 +1,5 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { ChevronDown } from 'lucide-react';
 import { getAllFAQItems } from '@/data/faqData';
 
 const REPOWER_FAQ_QUESTIONS = [
@@ -26,38 +22,51 @@ export function RepowerFAQRestyled() {
     .filter(Boolean) as { question: string; answer: string }[];
 
   return (
-    <section className="bg-[#FAF8F4]">
+    <section className="bg-repower-paper">
       <div className="mx-auto max-w-[1100px] px-6 md:px-14 py-20 md:py-[140px]">
         <div className="max-w-3xl mb-14 md:mb-20">
-          <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C8102E] mb-4">
+          <p className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-mercury-red mb-4 flex items-center gap-3">
+            <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
             Frequently Asked
           </p>
           <h2
-            className="font-display font-bold text-[clamp(40px,5vw,72px)] tracking-tight leading-[1.05] text-[#050E1C]"
-            style={{ letterSpacing: '-0.035em' }}
+            className="font-display font-bold text-[clamp(36px,4.5vw,64px)] tracking-[-0.03em] leading-[1.05] text-repower-navy-900"
           >
-            Everything you need
-            <br />
-            to know about <em className="not-italic italic text-[#C8102E]">repowering.</em>
+            Everything you need to know about <em className="not-italic italic text-repower-mercury-red">repowering.</em>
           </h2>
         </div>
 
-        <Accordion type="single" collapsible className="border-t border-[#050E1C]/10">
+        <AccordionPrimitive.Root
+          type="single"
+          collapsible
+          className="border-t border-repower-navy-900/10"
+        >
           {faqItems.map((item, i) => (
-            <AccordionItem
+            <AccordionPrimitive.Item
               key={item.question}
               value={`faq-${i}`}
-              className="border-b border-[#050E1C]/10"
+              className="border-b border-repower-navy-900/10 group"
             >
-              <AccordionTrigger className="font-display font-semibold text-lg md:text-xl text-[#050E1C] hover:text-[#C8102E] hover:no-underline tracking-tight py-6 md:py-7 text-left">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="font-sans font-light text-base md:text-lg text-[#050E1C]/65 leading-relaxed pb-6 md:pb-8 max-w-3xl">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
+              <AccordionPrimitive.Header className="flex">
+                <AccordionPrimitive.Trigger
+                  className="flex flex-1 items-center justify-between gap-6 py-5 md:py-6 px-4 md:px-6 -mx-4 md:-mx-6 text-left font-sans font-semibold text-[16px] md:text-[17px] text-repower-navy-900 leading-snug transition-colors hover:bg-repower-navy-900/[0.04] focus:outline-none focus-visible:bg-repower-navy-900/[0.04] [&[data-state=open]>span:last-child>svg]:rotate-180"
+                >
+                  <span className="flex-1 relative inline-block group-data-[state=open]:after:content-[''] group-data-[state=open]:after:absolute group-data-[state=open]:after:left-0 group-data-[state=open]:after:-bottom-1 group-data-[state=open]:after:h-[2px] group-data-[state=open]:after:w-10 group-data-[state=open]:after:bg-repower-gold">
+                    {item.question}
+                  </span>
+                  <span className="flex-shrink-0 inline-flex items-center justify-center w-8 h-8 text-repower-navy-900/55">
+                    <ChevronDown className="w-4 h-4 transition-transform duration-200" strokeWidth={2} />
+                  </span>
+                </AccordionPrimitive.Trigger>
+              </AccordionPrimitive.Header>
+              <AccordionPrimitive.Content className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
+                <div className="font-sans font-normal text-[15px] text-repower-navy-900/75 leading-relaxed pb-6 md:pb-8 pt-2 max-w-3xl">
+                  {item.answer}
+                </div>
+              </AccordionPrimitive.Content>
+            </AccordionPrimitive.Item>
           ))}
-        </Accordion>
+        </AccordionPrimitive.Root>
       </div>
     </section>
   );
