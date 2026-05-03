@@ -23,6 +23,7 @@ import { GoogleRatingBadge } from '@/components/business/GoogleRatingBadge';
 
 import heroImage from '@/assets/hero-proxs-sunset.jpg';
 import shopImage from '@/assets/landing-repower-shop.jpg';
+import jimHarrisHeritage from '@/assets/heritage/jim-harris-mercury-1960s.jpg';
 import stepPickImage from '@/assets/landing-step-pick.png';
 import stepConfigureImage from '@/assets/landing-step-configure.jpg';
 import stepPickupImage from '@/assets/landing-step-pickup.jpg';
@@ -118,6 +119,45 @@ export default function Index() {
       <main className="flex-1">
         <HeroRepower />
         <TrustStrip />
+
+        {/* HERITAGE BAND */}
+        <section className="py-16 md:py-28 px-4 sm:px-6 md:px-14 bg-repower-cream">
+          <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+            <figure className="m-0">
+              <div className="rounded-md overflow-hidden border border-repower-navy-900/15 shadow-xl bg-white">
+                <img
+                  src={jimHarrisHeritage}
+                  alt="Jim Harris working on a Mercury outboard at Harris Boat Works, mid-1960s"
+                  loading="lazy"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 text-xs italic text-repower-navy-900/60 text-center md:text-left">
+                Jim Harris, Gores Landing — c.1965
+              </figcaption>
+            </figure>
+            <div>
+              <p className="font-sans font-semibold text-[10px] sm:text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-4">
+                Since 1947
+              </p>
+              <h2
+                className="font-display font-bold text-[clamp(28px,6vw,52px)] tracking-tight leading-[1.05] text-repower-navy-900 mb-5"
+                style={{ letterSpacing: '-0.03em' }}
+              >
+                Three generations. <em className="not-italic italic text-[#C8102E]">One</em> Mercury dealer.
+              </h2>
+              <p className="font-sans font-light text-base md:text-lg text-repower-navy-900/75 leading-relaxed mb-6">
+                Jim Harris started rigging Mercurys in Gores Landing in the mid-1960s.
+                We've been a Mercury dealer ever since — same family, same lake, same
+                handshake. The motors got faster. The promise didn't.
+              </p>
+              <RepowerCta to="/about" variant="outline" size="md">
+                Read our story <ArrowRight className="h-4 w-4" />
+              </RepowerCta>
+            </div>
+          </div>
+        </section>
+
         <RepowerMath />
         {/* HOW IT WORKS */}
         <section className="py-16 md:py-32 px-4 sm:px-6 md:px-14 bg-[#0A1828] text-[#F5F1EA]">
