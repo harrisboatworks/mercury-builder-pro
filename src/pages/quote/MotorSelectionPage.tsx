@@ -30,6 +30,7 @@ import { ConfigFilterSheet, type ConfigFiltersState } from '@/components/motors/
 
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
+import { ComparisonFloatingBar } from '@/components/motors/ComparisonFloatingBar';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
 // ComparisonFloatingPill removed - comparison now integrated into UnifiedMobileBar
 import { Button } from '@/components/ui/button';
@@ -1337,6 +1338,15 @@ if (event.type === 'filter_motors') {
         
         {/* Comparison Floating Pill removed - now integrated into UnifiedMobileBar */}
         
+        {/* Persistent floating bar — appears as soon as a motor is added so users
+            know what to do next ("Compare X/3 →"). */}
+        <ComparisonFloatingBar
+          motors={comparisonList}
+          onOpen={() => setShowComparison(true)}
+          onRemove={removeFromComparison}
+          onClear={clearComparison}
+        />
+
         {/* Comparison Drawer */}
         <ComparisonDrawer 
           isOpen={showComparison}
@@ -1346,6 +1356,7 @@ if (event.type === 'filter_motors') {
           onClear={clearComparison}
           onSelectMotor={handleComparisonSelect}
         />
+
       </FinancingProvider>
     </PageTransition>
   );
