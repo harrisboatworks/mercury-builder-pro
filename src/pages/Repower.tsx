@@ -130,8 +130,8 @@ export default function Repower() {
                   'You like your boat, it fits your needs and the right size',
                   'The numbers work: 70% of the benefit for 30% of the cost',
                 ].map((item) => (
-                  <li key={item} className="flex gap-3 font-sans text-base text-repower-cream/85 leading-relaxed">
-                    <span className="text-repower-gold font-display font-bold mt-0.5">✓</span>
+                  <li key={item} className="flex items-start gap-3 font-sans text-base text-repower-cream/85 leading-relaxed">
+                    <span aria-hidden="true" className="shrink-0 text-repower-gold font-display font-bold leading-relaxed">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
