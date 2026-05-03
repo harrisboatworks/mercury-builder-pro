@@ -1023,6 +1023,26 @@ export default function MotorDetailsPremiumModal({
             </AnimatePresence>
           </div>
 
+          {/* Mobile sticky CTA */}
+          <div
+            className="lg:hidden sticky bottom-0 left-0 right-0 bg-[#FAF8F4] px-4 py-3 z-40"
+            style={{ borderTop: '1px solid rgba(10, 22, 40, 0.08)', paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)' }}
+          >
+            <button
+              onClick={() => {
+                triggerHaptic('medium');
+                handleSelectMotor();
+              }}
+              style={{ transitionTimingFunction: 'cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+              className="group w-full flex items-center justify-between bg-[#C8102E] text-white px-7 py-4 rounded-[4px] text-[13px] font-bold uppercase tracking-[0.06em]
+                transition-all duration-300 ease-out
+                hover:bg-[#9A0C24] active:translate-y-0"
+            >
+              <span>Configure This Motor</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </button>
+          </div>
+
           {/* Mobile scroll hint - fades out after scrolling */}
           <AnimatePresence>
             {canScrollMore && !hasScrolled && (
