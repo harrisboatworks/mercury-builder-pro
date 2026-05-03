@@ -1,26 +1,37 @@
-## Fix testimonials section to match the new repower design
+## Homepage copy refresh — premium tone
 
-You're right — switching the section to cream `bg-repower-paper` clashed with the dark luxury navy/gold theme used by Hero, Why Repower, and the final CTA band. The shadcn `Card` defaults (light card + muted-foreground text) also looked like a stray light island in an otherwise dark page.
+Apply audit-approved copy changes to the homepage. Tone: quiet confidence, ≤14 words above the fold over video.
 
-### What I'll change in `src/pages/Index.tsx`
+### 1. `src/components/repower/HeroRepower.tsx`
 
-Restyle the TESTIMONIALS section (lines 217–250) so it reads as part of the same dark, premium system:
+- **Eyebrow**: `Ontario's Mercury Repower Centre · Rice Lake` → **`Mercury Repower · Rice Lake · Since 1947`**
+- **H1**: unchanged ("Keep your boat. Get your weekends back.")
+- **Sub**: replace the two-sentence "nearly-new boat experience…" line with a single line — **"New motor. Same boat. Way better mornings."** Bump size to `text-xl md:text-2xl` so the shorter line still anchors the hero.
 
-- **Section background**: `bg-repower-navy-800` (one shade lighter than Why Repower's `navy-900`) so adjacent dark sections still have visual separation, with a subtle top border `border-t border-repower-cream/10`.
-- **Eyebrow + heading** (matching Why Repower):
-  - Gold eyebrow: `text-repower-gold` uppercase tracked label "Customers"
-  - Heading: `font-display`, `text-repower-cream`, same tracking/letter-spacing as the other section titles
-- **Google rating badge**: keep `GoogleRatingBadge variant="full"` but wrap in a translucent pill (`bg-repower-cream/5 border border-repower-cream/10`) so it reads on dark.
-- **Testimonial cards**: drop default shadcn Card styling, use:
-  - `bg-repower-navy-900/60 border border-repower-cream/10 backdrop-blur-sm rounded-xl`
-  - Quote: `text-repower-cream/90 italic`
-  - Name: `text-repower-cream font-medium`
-  - Location: `text-repower-cream/60`
-  - Stars: keep gold (`text-repower-gold`) instead of generic yellow-400 to match the palette
-- Replace the `Card`/`CardContent` imports usage here with a plain `<div>` so we're not fighting shadcn defaults (Card import stays — used elsewhere if needed; otherwise leave untouched).
+### 2. `src/components/repower/TrustStrip.tsx`
 
-### Result
+Reorder + relabel the items array to lead with human/local trust and translate Mercury jargon:
 
-The reviews section becomes a continuous dark band between "Why repower" (navy-900) and the final CTA (navy + image overlay), with gold accents and cream text — consistent with the rest of the new repower landing design.
+1. `Family-Owned Since 1947` (HBW logo)
+2. `Mercury Certified Dealer` (Award icon — was "Mercury Platinum Dealer")
+3. `Mercury Repower Centre` (Mercury Repower logo)
+4. `7-Year Warranty Available` (warranty graphic — was "7-Year Warranty")
+5. `CSI Award Winner` (BadgeCheck icon)
 
-No other files change.
+### 3. `src/pages/Index.tsx` — How It Works section (lines 122–159)
+
+- **Eyebrow**: `How It Works` → **`The Process`**
+- **H2**: "Three steps. *Real prices* the whole way through." → **"See your real price. *Lock it.* Pick it up."** (keep the red-italic accent on the middle phrase)
+- **Sub**: "No 'call for quote.' No surprises. Build it, lock it, pick it up." → **"No phone tag. No fine print. No surprises."**
+- **CTA button**: `Start Building` → **`Build Your Quote`** (matches hero CTA wording)
+
+### Out of scope this round
+
+- Testimonials section copy — waiting on real Google reviews from user before swapping the placeholder Mike R. / Sandra L. / Dave K. quotes. Will handle in a follow-up.
+- All other pages (Repower, Promotions, Trade-in, About, FAQ, Contact) — handled page-by-page in subsequent approvals.
+
+### Files edited
+
+- `src/components/repower/HeroRepower.tsx`
+- `src/components/repower/TrustStrip.tsx`
+- `src/pages/Index.tsx`

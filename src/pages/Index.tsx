@@ -124,16 +124,16 @@ export default function Index() {
           <div className="max-w-[1400px] mx-auto">
             <div className="text-center mb-10 md:mb-16">
               <p className="font-sans font-semibold text-[10px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.24em] text-[#C9A24A] mb-4 md:mb-6">
-                How It Works
+                The Process
               </p>
               <h2
                 className="font-display font-bold text-[clamp(28px,8vw,64px)] tracking-tight leading-[1.1] md:leading-[1.05] mb-4 md:mb-6"
                 style={{ letterSpacing: '-0.03em' }}
               >
-                Three steps. <em className="not-italic italic text-[#C8102E]">Real prices</em> the whole way through.
+                See your real price. <em className="not-italic italic text-[#C8102E]">Lock it.</em> Pick it up.
               </h2>
               <p className="font-sans font-light text-base md:text-xl text-[#F5F1EA]/70 max-w-2xl mx-auto leading-relaxed px-2">
-                No "call for quote." No surprises. Build it, lock it, pick it up.
+                No phone tag. No fine print. No surprises.
               </p>
             </div>
 
@@ -152,7 +152,7 @@ export default function Index() {
 
             <div className="text-center">
               <RepowerCta as="button" onClick={goBuild} variant="primary" size="lg">
-                Start Building <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                Build Your Quote <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </RepowerCta>
             </div>
           </div>
