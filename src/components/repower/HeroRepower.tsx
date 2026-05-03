@@ -11,17 +11,20 @@ const fadeUp = (delay = 0) => ({
 });
 
 // Hero stat row styling — tweak here to adjust all three stats together
+// Mobile (<700px): vertical stacked list with gold left-border on each item.
+// >=sm: horizontal row with hairline top/bottom border.
 const statRowClass =
-  'flex flex-row flex-nowrap items-baseline gap-6 sm:gap-10 md:gap-14 max-w-2xl mb-8 border-y border-[#F5F1EA]/15 py-4';
-const statItemClass = 'min-w-0 flex-1';
+  'flex flex-col sm:flex-row sm:flex-nowrap items-stretch sm:items-baseline gap-3 sm:gap-10 md:gap-14 max-w-2xl mb-8 sm:border-y sm:border-[#F5F1EA]/15 sm:py-4 hidden min-[380px]:flex';
+const statItemClass =
+  'min-w-0 flex-1 pl-3 sm:pl-0 border-l-2 sm:border-l-0 border-[#C9A24A]';
 const statNumberClass =
-  'font-display font-bold text-[clamp(24px,3.6vw,42px)] text-[#F5F1EA] tabular-nums';
+  'font-display font-bold text-[clamp(22px,3.6vw,42px)] text-[#F5F1EA] tabular-nums';
 const statNumberStyle = {
   letterSpacing: '-0.035em',
   lineHeight: 1,
 } as const;
 const statLabelClass =
-  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/55 mt-2 leading-tight whitespace-nowrap overflow-hidden text-ellipsis';
+  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/55 mt-1 sm:mt-2 leading-tight whitespace-nowrap overflow-hidden text-ellipsis';
 const statLabelStyle = {
   letterSpacing: '0.16em',
 } as const;
@@ -49,11 +52,17 @@ export function HeroRepower() {
         <source src="/hero/hero-loop.webm" type="video/webm" />
         <source src="/hero/hero-loop.mp4" type="video/mp4" />
       </video>
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050E1C]/85 via-[#050E1C]/55 to-[#050E1C]/95" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#050E1C]/80 via-transparent to-transparent" />
+      {/* Gradient overlay — softened so the video reads more clearly while keeping bottom legible */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(5,14,28,0.10) 0%, rgba(5,14,28,0.0) 30%, rgba(5,14,28,0.25) 60%, rgba(5,14,28,0.85) 100%)',
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#050E1C]/70 via-transparent to-transparent" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-14 py-20 md:py-28">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-5 sm:px-6 md:px-14 py-24 sm:py-20 md:py-28">
         <motion.p
           {...fadeUp(0)}
           className="font-sans font-semibold uppercase text-[#C9A24A] mb-6 whitespace-nowrap"
@@ -67,8 +76,12 @@ export function HeroRepower() {
 
         <motion.h1
           {...fadeUp(0.2)}
-          className="font-display font-bold tracking-tight leading-[1.02] text-[clamp(48px,7vw,104px)] mb-8"
-          style={{ letterSpacing: '-0.035em' }}
+          className="font-display font-bold tracking-tight leading-[1.05] sm:leading-[1.02] mb-8"
+          style={{
+            letterSpacing: '-0.035em',
+            fontSize: 'clamp(36px, 9vw, 104px)',
+            textWrap: 'balance',
+          }}
         >
           Keep your boat.
           <br />
