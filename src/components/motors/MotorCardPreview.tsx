@@ -486,7 +486,7 @@ function MotorCardPreviewInner({
                   <img 
                     src={imageUrl} 
                     alt={title} 
-                    className={`max-h-full max-w-full object-contain mix-blend-multiply transition-[opacity,transform] duration-500 ease-out group-hover:scale-[1.04] ${imageLoaded ? 'opacity-100' : 'opacity-0'} ${!inStock ? 'grayscale-[0.5]' : ''}`}
+                    className={`max-h-full max-w-full object-contain mix-blend-multiply transition-[opacity,transform] duration-500 ease-out group-hover:scale-[1.04] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                     loading="lazy"
                     decoding="async"
                     onLoad={onImageLoad}
@@ -522,7 +522,7 @@ function MotorCardPreviewInner({
               
               {/* HP Badge - top-right */}
               {hpNum && (
-                <div className={`absolute top-[14px] right-[14px] font-display leading-none px-[14px] py-[8px] rounded-[4px] text-[14px] tracking-[-0.01em] ${inStock ? 'bg-repower-navy-900 text-repower-cream' : 'bg-repower-navy-900/50 text-repower-cream'}`}>
+                <div className="absolute top-[14px] right-[14px] font-display leading-none px-[14px] py-[8px] rounded-[4px] text-[14px] tracking-[-0.01em] bg-repower-navy-900 text-repower-cream">
                   <span className="font-bold">{hpNum}</span>
                   <span className="font-medium opacity-70"> HP</span>
                 </div>
@@ -606,7 +606,7 @@ function MotorCardPreviewInner({
               <span className="flex items-center gap-1.5">
                 <span className="text-repower-gold text-[14px] leading-none">✓</span>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900">
-                  {inStock ? 'In Stock' : 'Order Now'}
+                  {inStock ? 'In Stock' : 'Order Now · 4 to 6 weeks'}
                 </span>
               </span>
               <span className="flex items-center gap-1.5">
@@ -617,19 +617,12 @@ function MotorCardPreviewInner({
               </span>
             </div>
             
-            {/* Out-of-stock secondary line */}
-            {!inStock && (
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-repower-mercury-red mb-3">
-                Order Now · 4–6 weeks
-              </p>
-            )}
-            
             {/* CTA button */}
             <button 
-              className={`w-full flex items-center justify-between px-[22px] py-[16px] rounded-[4px] text-[12px] font-bold uppercase tracking-[0.12em] text-repower-cream transition-all duration-300 ${inStock ? 'bg-repower-navy-900 group-hover:bg-repower-mercury-red' : 'bg-repower-navy-900/85 group-hover:bg-repower-navy-900'}`}
+              className="w-full flex items-center justify-between px-[22px] py-[16px] rounded-[4px] text-[12px] font-bold uppercase tracking-[0.12em] text-repower-cream transition-all duration-300 bg-repower-navy-900 group-hover:bg-repower-mercury-red"
               onClick={handleMoreInfoClick}
             >
-              <span>{inStock ? 'Build & Price' : 'Notify When In Stock'}</span>
+              <span>Build & Price</span>
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </button>
 
