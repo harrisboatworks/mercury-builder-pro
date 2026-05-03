@@ -975,26 +975,27 @@ if (event.type === 'filter_motors') {
     <PageTransition>
       <MotorSelectionSEO motorCount={motors.length > 0 ? motors.length : undefined} />
       <FinancingProvider>
-        <div className="min-h-screen bg-repower-paper">
-          <RepowerHeader solid />
-          <main className="pt-[88px]">
+        <RepowerLayout>
+          <div className="bg-repower-paper pt-20">
+            <PromoBannerConditional />
+            <main>
 
         <VoiceStatusBanner />
         
         {/* Page header */}
         <div className="bg-repower-paper">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-10 md:pt-14 pb-2">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 py-14">
             <div className="flex items-center gap-3 mb-3">
               <span className="block h-px w-6 bg-repower-mercury-red" />
               <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-repower-mercury-red">
-                Mercury Outboards
+                In-Stock Mercury Outboards
               </span>
             </div>
-            <h1 className="font-display font-bold text-[28px] md:text-[36px] tracking-[-0.025em] leading-[1.05] text-repower-navy-900">
-              Every motor, transparently priced
+            <h1 className="font-display font-bold text-[36px] md:text-[48px] tracking-[-0.025em] leading-[1.05] text-repower-navy-900">
+              Choose your power.
             </h1>
-            <p className="mt-3 text-[14px] text-repower-navy-900/55">
-              {(finalFilteredMotors.length || processedMotors.length).toLocaleString()} motors · Live pricing · Built &amp; quoted in 3 minutes
+            <p className="mt-3 text-[18px] font-normal text-repower-navy-900/65 max-w-[60ch]">
+              {(finalFilteredMotors.length || processedMotors.length).toLocaleString()} motors in stock. Live pricing, transparent quotes, financing from $50/wk. Build yours in three minutes.
             </p>
           </div>
         </div>
