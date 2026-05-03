@@ -137,21 +137,21 @@ export function MotorSelectionSEO({
 
   return (
     <Helmet>
-      <title>Mercury Outboard Motors for Sale Ontario | 2.5HP-600HP | Harris Boat Works</title>
+      <title>Mercury Outboard Motors — Browse 2.5HP–600HP & Build a Quote | Harris Boat Works</title>
       <meta
         name="description"
-        content={`Browse Mercury outboard motors from $${minPrice.toLocaleString()} to $${maxPrice.toLocaleString()} CAD. FourStroke, Pro XS, SeaPro, ProKicker. Configure online and get instant CAD pricing — Harris Boat Works since 1965.`}
+        content={`Shop Mercury FourStroke, Pro XS, SeaPro and ProKicker outboards from $${minPrice.toLocaleString()}–$${maxPrice.toLocaleString()} CAD. Configure your motor and get instant CAD pricing online — Harris Boat Works, Mercury dealer since 1965.`}
       />
       <link rel="canonical" href={`${SITE_URL}/quote/motor-selection`} />
 
-      <meta property="og:title" content="Mercury Outboard Motors for Sale | Harris Boat Works" />
-      <meta property="og:description" content="Browse our complete Mercury outboard inventory. Configure your motor and get instant pricing online." />
+      <meta property="og:title" content="Mercury Outboard Motors — Browse & Build a Quote" />
+      <meta property="og:description" content="Shop the full Mercury outboard lineup: FourStroke, Pro XS, SeaPro, ProKicker. Configure online and get instant CAD pricing." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={`${SITE_URL}/quote/motor-selection`} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Mercury Outboard Motors | Harris Boat Works" />
-      <meta name="twitter:description" content="Shop Mercury outboard motors online. FourStroke, Pro XS, SeaPro, ProKicker." />
+      <meta name="twitter:title" content="Mercury Outboard Motors — Browse & Build a Quote" />
+      <meta name="twitter:description" content="Shop Mercury outboards: FourStroke, Pro XS, SeaPro, ProKicker. Instant CAD pricing." />
 
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
     </Helmet>
