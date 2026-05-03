@@ -362,86 +362,86 @@ export default function Contact() {
 
           {/* Contact Information */}
           <div className="space-y-6">
-            <Card>
+            <Card className="border-repower-navy-900/10 bg-white shadow-none">
               <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
+                <CardTitle className="font-display text-repower-navy-900">Contact Information</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-primary mt-0.5" />
+                  <Phone className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <p className="font-medium">{COMPANY_INFO.contact.phone}</p>
-                    <p className="text-sm text-muted-foreground">Monday - Saturday, 8 AM - 5 PM</p>
+                    <p className="font-medium text-repower-navy-900">{COMPANY_INFO.contact.phone}</p>
+                    <p className="text-sm text-repower-navy-900/60">Monday - Saturday, 8 AM - 5 PM</p>
                   </div>
                 </div>
-                
-                <Separator />
-                
+
+                <Separator className="bg-repower-navy-900/10" />
+
                 <div className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-primary mt-0.5" />
+                  <Mail className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <p className="font-medium">{COMPANY_INFO.contact.email}</p>
-                    <p className="text-sm text-muted-foreground">We respond within 24 hours</p>
+                    <p className="font-medium text-repower-navy-900">{COMPANY_INFO.contact.email}</p>
+                    <p className="text-sm text-repower-navy-900/60">We respond within 24 hours</p>
                   </div>
                 </div>
-                
-                <Separator />
-                
-                <a 
+
+                <Separator className="bg-repower-navy-900/10" />
+
+                <a
                   href="https://www.google.com/maps/dir/?api=1&destination=Harris+Boat+Works,+Gores+Landing,+ON"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-3 hover:bg-muted/50 rounded-lg p-2 -m-2 transition-colors cursor-pointer group"
+                  className="flex items-start gap-3 hover:bg-repower-navy-900/[0.04] rounded-lg p-2 -m-2 transition-colors cursor-pointer group"
                 >
-                  <MapPin className="w-5 h-5 text-primary mt-0.5 group-hover:scale-110 transition-transform" />
+                  <MapPin className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <p className="font-medium group-hover:text-primary transition-colors">Visit Our Location</p>
-                    <p className="text-sm text-muted-foreground">{COMPANY_INFO.address.full}</p>
-                    <p className="text-xs text-primary mt-1">Get Directions →</p>
+                    <p className="font-medium text-repower-navy-900 group-hover:text-repower-mercury-red transition-colors">Visit Our Location</p>
+                    <p className="text-sm text-repower-navy-900/60">{COMPANY_INFO.address.full}</p>
+                    <p className="text-xs text-repower-mercury-red mt-1">Get Directions →</p>
                   </div>
                 </a>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="border-repower-navy-900/10 bg-white shadow-none">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Clock className="w-5 h-5" />
+                <CardTitle className="flex items-center gap-2 font-display text-repower-navy-900">
+                  <Clock className="w-5 h-5 text-repower-mercury-red" strokeWidth={1.5} />
                   Response Times
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm">Normal Inquiries</span>
-                  <Badge variant="secondary">24 hours</Badge>
+                  <span className="text-sm text-repower-navy-900">Normal Inquiries</span>
+                  <Badge variant="secondary" className="bg-repower-navy-900/10 text-repower-navy-900 hover:bg-repower-navy-900/15">24 hours</Badge>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm">Urgent Requests</span>
-                  <Badge variant="destructive">2-4 hours</Badge>
+                  <span className="text-sm text-repower-navy-900">Urgent Requests</span>
+                  <Badge className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">2-4 hours</Badge>
                 </div>
-                
-                <Separator className="my-4" />
-                
-                <a 
-                  href="https://calendly.com/harrisboatworks/sales-consultation-clone" 
-                  target="_blank" 
+
+                <Separator className="my-4 bg-repower-navy-900/10" />
+
+                <a
+                  href="https://calendly.com/harrisboatworks/sales-consultation-clone"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <Button className="w-full" variant="default">
+                  <Button className="w-full bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
                     Book an Appointment
                   </Button>
                 </a>
               </CardContent>
             </Card>
 
-            <Card className="bg-primary/5 border-primary/20">
+            <Card className="bg-repower-cream border-l-2 border-repower-gold border-y border-r border-y-repower-navy-900/10 border-r-repower-navy-900/10 shadow-none">
               <CardContent className="p-4">
                 <div className="flex items-start gap-3">
-                  <Zap className="w-5 h-5 text-primary mt-0.5" />
+                  <Zap className="w-5 h-5 text-repower-mercury-red mt-0.5" strokeWidth={1.5} />
                   <div>
-                    <p className="font-medium text-primary">Prefer to talk?</p>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="font-medium text-repower-navy-900">Prefer to talk?</p>
+                    <p className="text-sm text-repower-navy-900/70 mt-1">
                       Give us a call at {COMPANY_INFO.contact.phone}, we're happy to help with questions or quotes.
                     </p>
                   </div>
