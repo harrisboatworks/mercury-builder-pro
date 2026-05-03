@@ -268,9 +268,7 @@ export default function Index() {
                 What customers say
               </h2>
               <div className="flex items-center justify-center">
-                <div className="inline-flex items-center rounded-full bg-repower-cream/5 border border-repower-cream/10 px-3 py-1.5">
-                  <GoogleRatingBadge variant="full" />
-                </div>
+                <GoogleRatingBadge variant="full" tone="dark" />
               </div>
             </div>
 
