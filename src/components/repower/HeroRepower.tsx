@@ -53,7 +53,7 @@ export function HeroRepower() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#050E1C]/85 via-[#050E1C]/55 to-[#050E1C]/95" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#050E1C]/80 via-transparent to-transparent" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-14 py-32 md:py-40">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-14 py-20 md:py-28">
         <motion.p
           {...fadeUp(0)}
           className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6"
