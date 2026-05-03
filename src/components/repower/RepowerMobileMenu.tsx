@@ -48,7 +48,7 @@ export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
           <img
             src={mercuryLogo}
             alt="Mercury"
-            className="h-5 w-auto brightness-0 invert shrink-0"
+            className="h-5 w-auto shrink-0"
           />
           <div className="w-px h-6 bg-[#F5F1EA]/20 shrink-0" />
           <img
