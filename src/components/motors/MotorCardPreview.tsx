@@ -530,7 +530,7 @@ function MotorCardPreviewInner({
               
               {/* Compare, Voice, Ask, Share — kept */}
               {motor && (
-                <div className="absolute bottom-4 left-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                <div className="absolute bottom-3 left-3 flex flex-nowrap items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   <CompareButton 
                     isInComparison={isInComparison(motor.id)}
                     isFull={comparisonFull}
@@ -544,12 +544,14 @@ function MotorCardPreviewInner({
                     />
                     <VoiceChatButton 
                       motor={motor as any}
+                      size="sm"
                       onInteraction={markVoiceCoachMarkSeen}
                     />
                   </div>
                   <AskQuestionButton motor={motor} />
-                  <ShareLinkButton modelKey={motor.model_key} modelFallback={motor.model} />
+                  <ShareLinkButton modelKey={motor.model_key} modelFallback={motor.model} size="sm" />
                 </div>
+
               )}
 
               {/* Mercury logo - bottom-right */}
