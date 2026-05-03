@@ -193,69 +193,71 @@ export default function StickySummary({
           )}
         </AnimatePresence>
 
-        <ul className="mt-3 space-y-0.5 lg:space-y-1 text-sm text-slate-700 dark:text-slate-300">
+        <ul className="mt-4 space-y-1.5 font-sans text-[14px] text-repower-navy-900/70">
           {bullets.slice(0, 3).map((b, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span aria-hidden className="mt-0.5 h-1.5 w-1.5 rounded-full bg-slate-400/80 dark:bg-slate-500 flex-shrink-0" />
+              <span aria-hidden className="mt-1.5 h-1 w-1 rounded-full bg-repower-navy-900/40 flex-shrink-0" />
               <span>{b}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-4 space-y-2">
-          {onSaveForLater && (
-            <Button
-              onClick={onSaveForLater}
-              variant="outline"
-              className="w-full"
-            >
-              {user ? (
-                <>
-                  <Bookmark className="w-4 h-4 mr-2" />
-                  Save Quote
-                </>
-              ) : (
-                <>
-                  <Bookmark className="w-4 h-4 mr-2" />
-                  Save My Quote
-                </>
-              )}
-            </Button>
-          )}
-          
-          {onDownloadPDF && (
-            <Button
-              onClick={onDownloadPDF}
-              variant="outline"
-              className="w-full"
-              disabled={isGeneratingPDF}
-            >
-              <Download className="w-4 h-4 mr-2" />
-              {isGeneratingPDF ? 'Generating PDF...' : 'Download PDF Quote'}
-            </Button>
-          )}
+        <div className="my-5 h-px w-full bg-repower-navy-900/10" aria-hidden />
 
-          {onApplyForFinancing && (
-            <Button
-              onClick={onApplyForFinancing}
-              variant="default"
-              className="w-full"
-            >
-              <CreditCard className="w-4 h-4 mr-2" />
-              Apply for Financing
-            </Button>
-          )}
-
+        <div className="space-y-3">
           <button
             onClick={handleReserveClick}
             disabled={isProcessingPayment}
-            className={`w-full rounded-xl bg-primary px-4 py-3 text-center text-primary-foreground shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-50 disabled:cursor-not-allowed ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
+            className={`group w-full rounded bg-repower-mercury-red px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-mercury-red disabled:opacity-50 disabled:cursor-not-allowed ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
           >
-            {isProcessingPayment 
-              ? 'Processing...' 
-              : `Reserve with ${money(depositAmount)} deposit`
-            }
+            <span className="inline-flex items-center justify-center gap-2">
+              {isProcessingPayment
+                ? 'Processing...'
+                : `Reserve with ${money(depositAmount)} deposit`
+              }
+              {!isProcessingPayment && (
+                <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              )}
+            </span>
           </button>
+
+          {onApplyForFinancing && (
+            <button
+              onClick={onApplyForFinancing}
+              className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
+            >
+              <span className="inline-flex items-center justify-center gap-2">
+                <CreditCard className="w-4 h-4" />
+                Apply for Financing
+              </span>
+            </button>
+          )}
+
+          {onDownloadPDF && (
+            <button
+              onClick={onDownloadPDF}
+              disabled={isGeneratingPDF}
+              className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40 disabled:opacity-50"
+            >
+              <span className="inline-flex items-center justify-center gap-2">
+                <Download className="w-4 h-4" />
+                {isGeneratingPDF ? 'Generating PDF...' : 'Download PDF Quote'}
+              </span>
+            </button>
+          )}
+
+          {onSaveForLater && (
+            <button
+              onClick={onSaveForLater}
+              className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
+            >
+              <span className="inline-flex items-center justify-center gap-2">
+                <Bookmark className="w-4 h-4" />
+                {user ? 'Save Quote' : 'Save My Quote'}
+              </span>
+            </button>
+          )}
+
           <PaymentMethodBadges className="mt-2" />
         </div>
       </aside>
