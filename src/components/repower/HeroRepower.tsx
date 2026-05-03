@@ -12,18 +12,18 @@ const fadeUp = (delay = 0) => ({
 
 // Hero stat row styling — tweak here to adjust all three stats together
 const statRowClass =
-  'grid grid-cols-3 gap-4 md:gap-12 max-w-2xl mb-12 border-y border-[#F5F1EA]/15 py-6 items-baseline';
-const statItemClass = 'min-w-0 flex flex-col';
+  'flex flex-row flex-nowrap items-baseline gap-6 sm:gap-10 md:gap-14 max-w-2xl mb-8 border-y border-[#F5F1EA]/15 py-4';
+const statItemClass = 'min-w-0 flex-1';
 const statNumberClass =
-  'font-display font-bold text-[clamp(32px,4.2vw,52px)] text-[#F5F1EA] tabular-nums';
+  'font-display font-bold text-[clamp(24px,3.6vw,42px)] text-[#F5F1EA] tabular-nums';
 const statNumberStyle = {
   letterSpacing: '-0.035em',
-  lineHeight: 1, // lock baseline so '79' and '70%' share the same y-axis
+  lineHeight: 1,
 } as const;
 const statLabelClass =
-  'font-sans text-[11px] md:text-xs uppercase text-[#F5F1EA]/55 mt-3 leading-tight';
+  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/55 mt-2 leading-tight';
 const statLabelStyle = {
-  letterSpacing: '0.18em',
+  letterSpacing: '0.16em',
 } as const;
 
 const heroStats = [
@@ -53,7 +53,7 @@ export function HeroRepower() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#050E1C]/85 via-[#050E1C]/55 to-[#050E1C]/95" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#050E1C]/80 via-transparent to-transparent" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-14 py-32 md:py-40">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-14 py-20 md:py-28">
         <motion.p
           {...fadeUp(0)}
           className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6"
@@ -73,7 +73,7 @@ export function HeroRepower() {
 
         <motion.p
           {...fadeUp(0.4)}
-          className="font-sans font-light text-lg md:text-2xl text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-12"
+          className="font-sans font-light text-base md:text-xl text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-8"
         >
           A nearly-new boat experience — at a fraction of the price. Mercury Marine Platinum Dealer, family-owned on Rice Lake since 1947.
         </motion.p>
