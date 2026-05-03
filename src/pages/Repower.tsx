@@ -84,17 +84,18 @@ export default function Repower() {
             {warningSignsData.map((sign, index) => (
               <div
                 key={index}
-                className="border border-repower-navy-900/10 bg-white rounded p-8 hover:border-repower-mercury-red/40 transition-all duration-300"
+                className="border border-repower-navy-900/10 bg-white rounded-none p-8 hover:border-repower-mercury-red/40 transition-colors duration-300"
               >
-                <sign.icon className="w-6 h-6 text-repower-mercury-red mb-4" />
-                <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-2">{sign.title}</h3>
+                <sign.icon className="w-6 h-6 text-repower-mercury-red mb-4" strokeWidth={1.75} />
+                <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-2 tracking-tight">{sign.title}</h3>
                 <p className="font-sans text-sm text-repower-navy-900/65 leading-relaxed">{sign.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="border-l-2 border-repower-gold pl-6 md:pl-8 py-4">
-            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-3">
+          <div className="bg-repower-cream border-l-2 border-repower-gold p-8 md:p-10">
+            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-3 flex items-center gap-3">
+              <AlertTriangle className="w-4 h-4 text-repower-gold" strokeWidth={2} />
               The "One More Season" Trap
             </p>
             <p className="font-sans text-base md:text-lg text-repower-navy-900/80 leading-relaxed">
