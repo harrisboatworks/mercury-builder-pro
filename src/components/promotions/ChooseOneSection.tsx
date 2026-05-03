@@ -81,8 +81,8 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
               icon={noPaymentsOption.icon}
               highlight="Buy Now, Pay Later"
             >
-              <div className="mt-4 p-4 bg-muted/50 rounded-lg">
-                <p className="text-sm text-muted-foreground">
+              <div className="mt-2 p-4 bg-repower-cream border border-repower-navy-900/10">
+                <p className="font-sans text-[13px] text-repower-navy-900/70 leading-relaxed">
                   Perfect for buyers who want to enjoy their new motor now and start payments in 6 months.
                 </p>
               </div>
