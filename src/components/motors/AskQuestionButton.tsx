@@ -73,7 +73,7 @@ export function AskQuestionButton({ motor, className = '', variant = 'icon' }: A
       <TooltipTrigger asChild>
         <button
           onClick={handleClick}
-          className={`h-8 w-8 rounded-full flex items-center justify-center transition-all duration-200 bg-white/90 backdrop-blur-sm text-gray-600 border border-gray-200 hover:bg-gray-100 hover:shadow-md hover:shadow-primary/10 hover:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 ${className}`}
+          className={`h-8 w-8 rounded-full flex items-center justify-center transition-all duration-200 bg-repower-cream/95 backdrop-blur-sm text-repower-navy-900 border border-repower-navy-900/15 hover:bg-repower-paper hover:shadow-md hover:shadow-primary/10 hover:border-primary/30 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 ${className}`}
           aria-label={`Ask a question about ${motor.model_display || motor.model}`}
         >
           <MessageCircle className="h-4 w-4" />
