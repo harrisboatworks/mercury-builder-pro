@@ -1053,7 +1053,7 @@ if (event.type === 'filter_motors') {
         <VoiceStatusBanner />
         
         {/* Page header */}
-        <div className="bg-[#FAF8F4]">
+        <div className="bg-repower-paper">
           <div className="max-w-[1400px] mx-auto px-5 md:px-14 py-8 md:pt-16 md:pb-8">
             <div className="flex items-center gap-3 mb-3">
               <span className="block h-px w-6 bg-[#C8102E]" />
@@ -1113,7 +1113,7 @@ if (event.type === 'filter_motors') {
                 <span
                   className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
                     finalFilteredMotors.length > 0
-                      ? 'bg-[#F5F1EA]/10 text-[#F5F1EA] border border-[rgba(201,162,74,0.20)]'
+                      ? 'bg-repower-cream/10 text-[#F5F1EA] border border-[rgba(201,162,74,0.20)]'
                       : 'bg-[#C8102E]/15 text-[#F5F1EA] border border-[#C8102E]/40'
                   }`}
                   aria-live="polite"

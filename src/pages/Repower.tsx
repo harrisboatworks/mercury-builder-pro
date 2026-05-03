@@ -87,7 +87,7 @@ export default function Repower() {
             {warningSignsData.map((sign, index) => (
               <div
                 key={index}
-                className="border border-[#F5F1EA]/10 bg-[#F5F1EA]/[0.02] rounded p-8 hover:border-[#C8102E]/40 transition-all duration-300"
+                className="border border-[#F5F1EA]/10 bg-repower-cream/[0.02] rounded p-8 hover:border-[#C8102E]/40 transition-all duration-300"
               >
                 <sign.icon className="w-6 h-6 text-[#C8102E] mb-4" />
                 <h3 className="font-display font-semibold text-lg text-[#F5F1EA] mb-2">{sign.title}</h3>
@@ -184,7 +184,7 @@ export default function Repower() {
             {modernBenefitsData.map((benefit, index) => (
               <div
                 key={index}
-                className="border border-[#F5F1EA]/10 bg-[#F5F1EA]/[0.02] rounded p-8 hover:border-[#C9A24A]/40 transition-all duration-300"
+                className="border border-[#F5F1EA]/10 bg-repower-cream/[0.02] rounded p-8 hover:border-[#C9A24A]/40 transition-all duration-300"
               >
                 <benefit.icon className="w-6 h-6 text-[#C9A24A] mb-4" />
                 <h3 className="font-display font-semibold text-lg text-[#F5F1EA] mb-2">{benefit.title}</h3>
@@ -193,7 +193,7 @@ export default function Repower() {
             ))}
           </div>
 
-          <div className="border border-[#F5F1EA]/10 rounded p-6 md:p-8 flex items-center gap-6 bg-[#F5F1EA]/[0.02]">
+          <div className="border border-[#F5F1EA]/10 rounded p-6 md:p-8 flex items-center gap-6 bg-repower-cream/[0.02]">
             <img src={mercuryLogo} alt="Mercury" className="h-10 hidden sm:block opacity-90" />
             <div>
               <h3 className="font-display font-semibold text-lg text-[#F5F1EA] mb-1">Mercury SmartCraft® Technology</h3>
@@ -224,7 +224,7 @@ export default function Repower() {
           />
           <button
             onClick={() => setGuideDialogOpen(true)}
-            className="inline-flex items-center justify-center gap-2 border border-[#F5F1EA]/30 text-[#F5F1EA] px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-[#F5F1EA]/5 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 border border-[#F5F1EA]/30 text-[#F5F1EA] px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-repower-cream/5 transition-all duration-300"
           >
             <Download className="w-4 h-4" />
             Download Full Guide (PDF)
@@ -258,7 +258,7 @@ export default function Repower() {
               { n: '2', t: 'Rigging & Controls', p: '$1,500 – $4,000', d: "Depends on your boat's existing setup. Sometimes minimal work needed." },
               { n: '3', t: 'Installation', p: '$800 – $1,500', d: 'Includes professional mounting and lake testing on Rice Lake.' },
             ].map((item) => (
-              <div key={item.n} className="border border-[#F5F1EA]/10 bg-[#F5F1EA]/[0.02] rounded p-8">
+              <div key={item.n} className="border border-[#F5F1EA]/10 bg-repower-cream/[0.02] rounded p-8">
                 <div className="font-display font-bold text-5xl text-[#C9A24A]/50 mb-4" style={{ letterSpacing: '-0.04em' }}>
                   {item.n}
                 </div>
@@ -300,7 +300,7 @@ export default function Repower() {
                   Typical complete Mercury outboard repower price ranges in CAD by horsepower category for Ontario boaters.
                 </caption>
                 <thead>
-                  <tr className="bg-[#F5F1EA]/[0.04]">
+                  <tr className="bg-repower-cream/[0.04]">
                     <th scope="col" className="text-left px-6 py-4 font-sans font-semibold text-xs uppercase tracking-[0.18em] text-[#C9A24A]">HP Category</th>
                     <th scope="col" className="text-left px-6 py-4 font-sans font-semibold text-xs uppercase tracking-[0.18em] text-[#C9A24A]">Typical Boat</th>
                     <th scope="col" className="text-left px-6 py-4 font-sans font-semibold text-xs uppercase tracking-[0.18em] text-[#C9A24A]">Complete Repower (CAD)</th>
@@ -375,7 +375,7 @@ export default function Repower() {
             href="https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 border border-[#F5F1EA]/30 text-[#F5F1EA] px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-[#F5F1EA]/5 transition-all duration-300"
+            className="inline-flex items-center justify-center gap-2 border border-[#F5F1EA]/30 text-[#F5F1EA] px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-repower-cream/5 transition-all duration-300"
           >
             <MapPin className="w-4 h-4" />
             Get Directions
@@ -403,7 +403,7 @@ export default function Repower() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {dailyTestimonials.map((testimonial, index) => (
-              <div key={index} className="border border-[#F5F1EA]/10 bg-[#F5F1EA]/[0.02] rounded p-8">
+              <div key={index} className="border border-[#F5F1EA]/10 bg-repower-cream/[0.02] rounded p-8">
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-[#C9A24A] text-[#C9A24A]" />
