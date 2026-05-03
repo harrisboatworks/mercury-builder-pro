@@ -1054,7 +1054,7 @@ if (event.type === 'filter_motors') {
         
         {/* Page header */}
         <div className="bg-[#FAF8F4]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-14 md:pt-16 pb-6 md:pb-8">
+          <div className="max-w-[1400px] mx-auto px-5 md:px-14 py-8 md:pt-16 md:pb-8">
             <div className="flex items-center gap-3 mb-3">
               <span className="block h-px w-6 bg-[#C8102E]" />
               <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-[#C8102E]">
