@@ -268,14 +268,16 @@ export default function Promotions() {
             </button>
           </div>
 
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex flex-row keep-flex justify-center gap-2 mt-6">
             {dailyTestimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => emblaApi?.scrollTo(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
+                aria-label={`Go to testimonial ${index + 1}`}
+                className={`w-2 h-2 p-0 rounded-full transition-colors ${
                   selectedIndex === index ? 'bg-repower-gold' : 'bg-repower-navy-900/20'
                 }`}
+                style={{ minHeight: 8, minWidth: 8 }}
               />
             ))}
           </div>
