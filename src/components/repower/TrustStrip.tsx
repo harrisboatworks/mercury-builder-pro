@@ -23,27 +23,27 @@ const items: TrustItem[] = [
 export function TrustStrip() {
   return (
     <section className="bg-[#050E1C] border-y border-[#F5F1EA]/10">
-      <div className="mx-auto max-w-[1400px] px-6 md:px-14 py-10 md:py-12">
-        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-8 md:gap-y-0 divide-x divide-[#F5F1EA]/10">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 md:px-14 py-8 md:py-12">
+        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-3 gap-y-7 md:gap-y-0 md:divide-x md:divide-[#F5F1EA]/10">
           {items.map((item) => {
             const Icon = item.icon;
             return (
               <li
                 key={item.label}
-                className="group flex flex-col items-center justify-center gap-3 px-4 first:pl-0 last:pr-0"
+                className="group flex flex-col items-center justify-start gap-2.5 md:gap-3 px-2 md:px-4 md:first:pl-0 md:last:pr-0"
               >
-                <div className="h-10 flex items-center justify-center">
+                <div className="h-9 md:h-10 flex items-center justify-center">
                   {item.img ? (
                     <img
                       src={item.img}
                       alt={item.imgAlt ?? item.label}
-                      className="h-10 w-auto object-contain opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-500"
+                      className="h-9 md:h-10 w-auto object-contain opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-500"
                     />
                   ) : Icon ? (
-                    <Icon className="h-8 w-8 text-[#C9A24A]" strokeWidth={1.5} />
+                    <Icon className="h-7 w-7 md:h-8 md:w-8 text-[#C9A24A]" strokeWidth={1.5} />
                   ) : null}
                 </div>
-                <span className="font-sans text-[11px] uppercase tracking-[0.18em] text-[#C9A24A] text-center leading-tight">
+                <span className="font-sans text-[10px] md:text-[11px] uppercase tracking-[0.12em] md:tracking-[0.18em] text-[#C9A24A] text-center leading-snug break-words hyphens-auto">
                   {item.label}
                 </span>
               </li>
