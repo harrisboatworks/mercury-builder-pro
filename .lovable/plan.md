@@ -1,32 +1,26 @@
-## Problem
+## Fix testimonials section to match the new repower design
 
-At ~1024–1280px the desktop nav in `RepowerHeader` gets crowded:
-- "Trade-In" wraps to two lines
-- The Repower Center logo (now full-color) eats horizontal space, squeezing the 9 nav links + Build Quote + Sign In
-- Nav only appears at `lg` (1024px), but there isn't enough room until ~1280px
+You're right — switching the section to cream `bg-repower-paper` clashed with the dark luxury navy/gold theme used by Hero, Why Repower, and the final CTA band. The shadcn `Card` defaults (light card + muted-foreground text) also looked like a stray light island in an otherwise dark page.
 
-## Fix (in `src/components/repower/RepowerHeader.tsx`)
+### What I'll change in `src/pages/Index.tsx`
 
-1. **Prevent label wrapping** on every nav `<Link>` — add `whitespace-nowrap`.
-2. **Tighten the logo lockup at mid sizes**:
-   - Repower Center logo: `h-7 md:h-8 lg:h-9 xl:h-10` (was up to `h-11`)
-   - Reduce gaps: `gap-2 lg:gap-3` instead of `gap-2 sm:gap-3 md:gap-4`
-   - Reduce left padding before Repower badge: `pl-2 lg:pl-3` (was up to `pl-4`)
-3. **Push nav to a higher breakpoint** so it only shows when it actually fits:
-   - Hide desktop nav until `xl` (1280px): `hidden xl:flex`
-   - Show hamburger below `xl`: `xl:hidden`
-   - Tighten nav gaps: `gap-5 2xl:gap-7`
-4. **Right cluster compaction**:
-   - Build Quote button: `px-4 py-2 text-[11px]` at base, `lg:px-5 lg:py-2.5 lg:text-xs`
-   - Sign In moves to `xl:inline-flex` (matches nav visibility)
-5. **Allow nav row to shrink gracefully**: add `min-w-0` to the logo Link container and `flex-1 justify-center` to the nav so it centers in remaining space.
+Restyle the TESTIMONIALS section (lines 217–250) so it reads as part of the same dark, premium system:
 
-## Result
+- **Section background**: `bg-repower-navy-800` (one shade lighter than Why Repower's `navy-900`) so adjacent dark sections still have visual separation, with a subtle top border `border-t border-repower-cream/10`.
+- **Eyebrow + heading** (matching Why Repower):
+  - Gold eyebrow: `text-repower-gold` uppercase tracked label "Customers"
+  - Heading: `font-display`, `text-repower-cream`, same tracking/letter-spacing as the other section titles
+- **Google rating badge**: keep `GoogleRatingBadge variant="full"` but wrap in a translucent pill (`bg-repower-cream/5 border border-repower-cream/10`) so it reads on dark.
+- **Testimonial cards**: drop default shadcn Card styling, use:
+  - `bg-repower-navy-900/60 border border-repower-cream/10 backdrop-blur-sm rounded-xl`
+  - Quote: `text-repower-cream/90 italic`
+  - Name: `text-repower-cream font-medium`
+  - Location: `text-repower-cream/60`
+  - Stars: keep gold (`text-repower-gold`) instead of generic yellow-400 to match the palette
+- Replace the `Card`/`CardContent` imports usage here with a plain `<div>` so we're not fighting shadcn defaults (Card import stays — used elsewhere if needed; otherwise leave untouched).
 
-- 1024–1279px: clean header with logo lockup + Build Quote + hamburger (no cramped half-nav)
-- ≥1280px: full nav, no wrapping, balanced spacing
-- Logo lockup stays readable at all sizes
+### Result
 
-## Files
+The reviews section becomes a continuous dark band between "Why repower" (navy-900) and the final CTA (navy + image overlay), with gold accents and cream text — consistent with the rest of the new repower landing design.
 
-- edit: `src/components/repower/RepowerHeader.tsx`
+No other files change.
