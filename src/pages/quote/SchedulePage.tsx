@@ -38,19 +38,43 @@ export default function SchedulePage() {
   return (
     <PageTransition>
       <QuoteLayout>
-        <div className="space-y-6">
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" onClick={handleBack} className="bg-white border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Quote
-            </Button>
+        <div className="max-w-[1100px] mx-auto px-6 md:px-14 py-14 md:py-20 space-y-10">
+          <button
+            onClick={handleBack}
+            className="inline-flex items-center gap-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70 hover:text-repower-mercury-red transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Quote
+          </button>
+
+          {/* Heading zone */}
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <span className="h-px w-8 bg-repower-mercury-red" />
+              <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+                Step 7 · Schedule
+              </p>
+              <span className="h-px w-8 bg-repower-mercury-red" />
+            </div>
+            <h1
+              className="font-display font-bold text-repower-navy-900 mb-5"
+              style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}
+            >
+              Pick a time
+            </h1>
+            <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto">
+              Choose a time that works for you and we'll confirm the details.
+            </p>
+            <div className="h-px bg-repower-navy-900/10 mt-10 max-w-[200px] mx-auto" />
           </div>
-          
-          <ScheduleConsultation 
-            quoteData={quoteData}
-            onBack={handleBack}
-            purchasePath={state.purchasePath}
-          />
+
+          <div className="bg-white border border-repower-navy-900/10 p-6 md:p-10">
+            <ScheduleConsultation
+              quoteData={quoteData}
+              onBack={handleBack}
+              purchasePath={state.purchasePath}
+            />
+          </div>
         </div>
       </QuoteLayout>
     </PageTransition>
