@@ -254,6 +254,23 @@ function MotorSelectionContent() {
   
   // Search overlay state - triggered from header search icon
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
+
+  // Track grid columns based on viewport so animation stagger reflects actual rows.
+  // Matches Tailwind: grid-cols-1 / sm:2 / lg:3 / 2xl:4
+  const getGridColumns = () => {
+    if (typeof window === 'undefined') return 3;
+    const w = window.innerWidth;
+    if (w >= 1536) return 4;
+    if (w >= 1024) return 3;
+    if (w >= 640) return 2;
+    return 1;
+  };
+  const [gridColumns, setGridColumns] = useState(getGridColumns);
+  useEffect(() => {
+    const onResize = () => setGridColumns(getGridColumns());
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
   
   const [motors, setMotors] = useState<DbMotor[]>([]);
   const [promotions, setPromotions] = useState<Promotion[]>([]);
