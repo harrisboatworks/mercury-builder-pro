@@ -433,9 +433,9 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   return (
     <div className={`relative ${!isDark ? 'max-w-[640px] mx-auto' : ''} ${className}`}>
       {/* Search Input + Filter row */}
-      <div className="flex items-stretch gap-2">
+      <div className={isDark ? 'relative' : 'flex items-stretch gap-2'}>
         <div
-          className="relative flex-1"
+          className={isDark ? 'relative w-full' : 'relative flex-1'}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
