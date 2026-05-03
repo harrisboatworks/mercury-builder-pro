@@ -151,32 +151,34 @@ export function RepowerROICalculator() {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <div className="text-center mb-10">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-          <Calculator className="w-4 h-4" />
-          Interactive ROI Calculator
-        </div>
-        <h2 className="text-3xl md:text-4xl font-light text-foreground mb-4">
-          Compare Your Savings
-        </h2>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
-          Select up to 3 horsepower options to see a side-by-side comparison of repower costs vs. buying new.
+      <div className="mb-10">
+        <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+          <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
+          Interactive Calculator
+        </p>
+        <h3 className="font-display font-bold text-repower-navy-900 leading-[1.05] mb-4 text-[clamp(28px,3.5vw,44px)] tracking-[-0.03em]">
+          Compare your savings.
+        </h3>
+        <p className="font-sans text-[16px] md:text-[17px] text-repower-navy-900/65 max-w-[60ch]">
+          Select up to 3 horsepower options to see a side by side comparison of repower costs vs. buying new.
         </p>
       </div>
 
       {/* Preset Scenarios */}
       <div className="mb-8">
-        <Label className="text-sm text-muted-foreground mb-3 block">Quick Scenarios</Label>
+        <Label className="font-sans text-xs uppercase tracking-[0.18em] text-repower-navy-900/55 mb-3 block">
+          Quick Scenarios
+        </Label>
         <div className="flex flex-wrap gap-2">
           {presetScenarios.map((preset) => (
             <button
               key={preset.name}
               onClick={() => applyPreset(preset)}
               className={cn(
-                "px-4 py-2 rounded-full text-sm font-medium transition-all",
+                "px-4 py-2 rounded-none text-sm font-medium font-sans transition-colors border",
                 activePreset === preset.name
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-muted hover:bg-muted/80 text-foreground"
+                  ? "bg-repower-navy-900 text-repower-cream border-repower-navy-900"
+                  : "bg-transparent text-repower-navy-900 border-repower-navy-900/20 hover:border-repower-navy-900/60"
               )}
             >
               {preset.name}
@@ -187,10 +189,10 @@ export function RepowerROICalculator() {
 
       <div className="grid lg:grid-cols-2 gap-8 mb-10">
         {/* Configuration Panel */}
-        <div className="bg-card border border-border rounded-2xl p-6 space-y-6">
+        <div className="bg-white border border-repower-navy-900/10 rounded-none p-6 md:p-8 space-y-8">
           <div>
-            <Label className="text-sm font-medium mb-3 block">
-              Select Horsepower Options <span className="text-muted-foreground">(up to 3)</span>
+            <Label className="font-sans text-xs uppercase tracking-[0.18em] text-repower-navy-900/55 mb-3 block">
+              Horsepower <span className="normal-case tracking-normal text-repower-navy-900/45">(up to 3)</span>
             </Label>
             <div className="flex flex-wrap gap-2">
               {hpOptions.map((hp) => (
@@ -198,10 +200,10 @@ export function RepowerROICalculator() {
                   key={hp}
                   onClick={() => toggleHP(hp)}
                   className={cn(
-                    "px-4 py-2 rounded-lg text-sm font-medium transition-all border-2",
+                    "px-4 py-2 rounded-none text-sm font-medium font-sans transition-colors border",
                     selectedHPs.includes(hp)
-                      ? "bg-primary text-primary-foreground border-primary"
-                      : "bg-background hover:bg-muted border-border text-foreground"
+                      ? "bg-repower-navy-900 text-repower-cream border-repower-navy-900"
+                      : "bg-transparent text-repower-navy-900 border-repower-navy-900/20 hover:border-repower-navy-900/60"
                   )}
                 >
                   {hp} HP
@@ -211,22 +213,24 @@ export function RepowerROICalculator() {
           </div>
 
           <div>
-            <Label className="text-sm font-medium mb-3 block">Rigging Condition</Label>
+            <Label className="font-sans text-xs uppercase tracking-[0.18em] text-repower-navy-900/55 mb-3 block">
+              Rigging Condition
+            </Label>
             <RadioGroup
               value={riggingCondition}
               onValueChange={(value) => {
                 setRiggingCondition(value);
                 setActivePreset(null);
               }}
-              className="space-y-2"
+              className="space-y-3"
             >
               {Object.entries(riggingCosts).map(([key, value]) => (
-                <div key={key} className="flex items-center space-x-3">
+                <div key={key} className="flex items-center gap-3">
                   <RadioGroupItem value={key} id={key} />
-                  <Label htmlFor={key} className="flex-1 cursor-pointer">
+                  <Label htmlFor={key} className="flex-1 cursor-pointer font-sans text-sm text-repower-navy-900">
                     <span className="font-medium">{value.label}</span>
-                    <span className="text-muted-foreground ml-2">
-                      ({formatCurrency(value.min)} - {formatCurrency(value.max)})
+                    <span className="text-repower-navy-900/55 ml-2">
+                      ({formatCurrency(value.min)} to {formatCurrency(value.max)})
                     </span>
                   </Label>
                 </div>
@@ -235,8 +239,11 @@ export function RepowerROICalculator() {
           </div>
 
           <div>
-            <Label className="text-sm font-medium mb-3 block">
-              Comparable New Boat Value: {formatCurrency(newBoatValue)}
+            <Label className="font-sans text-xs uppercase tracking-[0.18em] text-repower-navy-900/55 mb-3 block">
+              Comparable New Boat Value:{' '}
+              <span className="normal-case tracking-normal text-repower-navy-900 font-semibold">
+                {formatCurrency(newBoatValue)}
+              </span>
             </Label>
             <Slider
               value={[newBoatValue]}
@@ -249,7 +256,7 @@ export function RepowerROICalculator() {
               step={1000}
               className="w-full"
             />
-            <div className="flex justify-between text-xs text-muted-foreground mt-1">
+            <div className="flex justify-between font-sans text-xs text-repower-navy-900/55 mt-2">
               <span>$25,000</span>
               <span>$100,000</span>
             </div>
@@ -257,121 +264,117 @@ export function RepowerROICalculator() {
         </div>
 
         {/* Results Panel */}
-        <div className="bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-6">
-          <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
-            <TrendingUp className="w-5 h-5 text-primary" />
+        <div className="bg-repower-navy-900 text-repower-cream rounded-none p-6 md:p-8">
+          <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-6 flex items-center gap-3">
+            <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
             Cost Comparison
-          </h3>
+          </p>
 
           {/* Comparison Cards */}
           <div className="space-y-4">
-            {calculations.map((calc) => (
-              <div
-                key={calc.hp}
-                className={cn(
-                  "bg-background rounded-xl p-4 border-2 transition-all",
-                  bestValue?.hp === calc.hp && calculations.length > 1
-                    ? "border-green-500 ring-2 ring-green-500/20"
-                    : "border-border"
-                )}
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-lg font-semibold">{calc.hp} HP</span>
-                    {bestValue?.hp === calc.hp && calculations.length > 1 && (
-                      <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded-full">
-                        Best Value
-                      </span>
-                    )}
+            {calculations.map((calc) => {
+              const isBest = bestValue?.hp === calc.hp && calculations.length > 1;
+              return (
+                <div
+                  key={calc.hp}
+                  className={cn(
+                    "rounded-none p-5 border transition-colors",
+                    isBest
+                      ? "border-repower-gold bg-repower-gold/[0.06]"
+                      : "border-repower-cream/15 bg-repower-cream/[0.03]"
+                  )}
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <span className="font-display font-bold text-xl text-repower-cream">{calc.hp} HP</span>
+                      {isBest && (
+                        <span className="px-2 py-0.5 font-sans text-[10px] uppercase tracking-[0.18em] text-repower-gold border border-repower-gold/60">
+                          Best Value
+                        </span>
+                      )}
+                    </div>
+                    <span className="font-display font-bold text-2xl text-repower-cream">
+                      {formatCurrency(calc.totalRepower)}
+                    </span>
                   </div>
-                  <span className="text-2xl font-bold text-primary">
-                    {formatCurrency(calc.totalRepower)}
-                  </span>
-                </div>
 
-                {/* Cost Breakdown */}
-                <div className="grid grid-cols-3 gap-2 text-sm mb-3">
-                  <div className="text-center p-2 bg-muted rounded-lg">
-                    <div className="text-muted-foreground text-xs">Motor</div>
-                    <div className="font-medium">{formatCurrency(calc.motorCost)}</div>
+                  {/* Cost Breakdown */}
+                  <div className="grid grid-cols-3 gap-2 mb-4">
+                    {[
+                      { label: 'Motor', value: calc.motorCost },
+                      { label: 'Rigging', value: calc.riggingCost },
+                      { label: 'Install', value: calc.installCost },
+                    ].map((row) => (
+                      <div key={row.label} className="text-center p-3 border border-repower-cream/10">
+                        <div className="font-sans text-[10px] uppercase tracking-[0.18em] text-repower-cream/55 mb-1">
+                          {row.label}
+                        </div>
+                        <div className="font-sans font-semibold text-sm text-repower-cream">
+                          {formatCurrency(row.value)}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                  <div className="text-center p-2 bg-muted rounded-lg">
-                    <div className="text-muted-foreground text-xs">Rigging</div>
-                    <div className="font-medium">{formatCurrency(calc.riggingCost)}</div>
-                  </div>
-                  <div className="text-center p-2 bg-muted rounded-lg">
-                    <div className="text-muted-foreground text-xs">Install</div>
-                    <div className="font-medium">{formatCurrency(calc.installCost)}</div>
-                  </div>
-                </div>
 
-                {/* Visual Bar */}
-                <div className="relative h-6 bg-muted rounded-full overflow-hidden mb-2">
-                  <div
-                    className="absolute inset-y-0 left-0 bg-primary/80 rounded-full transition-all duration-500"
-                    style={{ width: `${calc.costPercent}%` }}
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center text-xs font-medium">
-                    {calc.costPercent}% of new boat cost
+                  {/* Visual Bar */}
+                  <div className="relative h-2 bg-repower-cream/10 overflow-hidden mb-3">
+                    <div
+                      className="absolute inset-y-0 left-0 bg-repower-gold transition-all duration-500"
+                      style={{ width: `${calc.costPercent}%` }}
+                    />
+                  </div>
+                  <div className="flex items-center justify-between font-sans text-xs text-repower-cream/65 mb-2">
+                    <span>{calc.costPercent}% of new boat cost</span>
+                  </div>
+
+                  <div className="flex items-center justify-between font-sans text-sm pt-3 border-t border-repower-cream/10">
+                    <span className="text-repower-cream/65">You save</span>
+                    <span className="font-display font-bold text-repower-gold">
+                      {formatCurrency(calc.savings)} ({calc.savingsPercent}%)
+                    </span>
                   </div>
                 </div>
-
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">You Save:</span>
-                  <span className="font-bold text-green-600">
-                    {formatCurrency(calc.savings)} ({calc.savingsPercent}%)
-                  </span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
 
             {/* New Boat Reference */}
-            <div className="bg-muted/50 rounded-xl p-4 border border-border">
-              <div className="flex items-center justify-between">
-                <span className="text-muted-foreground">Comparable New Boat</span>
-                <span className="text-xl font-semibold">{formatCurrency(newBoatValue)}</span>
-              </div>
+            <div className="border border-repower-cream/15 p-5 flex items-center justify-between">
+              <span className="font-sans text-sm text-repower-cream/65">Comparable new boat</span>
+              <span className="font-display font-bold text-xl text-repower-cream">
+                {formatCurrency(newBoatValue)}
+              </span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Quote from guide */}
-      <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-transparent rounded-2xl p-6 md:p-8 mb-8 border border-primary/20">
-        <div className="flex items-start gap-4">
-          <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-            <Zap className="w-6 h-6 text-primary" />
-          </div>
-          <div>
-            <p className="text-xl md:text-2xl font-light text-foreground mb-2">
-              "You get <span className="font-semibold text-primary">70% of the benefit</span> for{' '}
-              <span className="font-semibold text-primary">{calculations[0]?.costPercent || 28}% of the cost</span>"
-            </p>
-            <p className="text-muted-foreground">
-              Based on your selections, repowering gives you a nearly-new boat experience at a fraction of the price.
-            </p>
-          </div>
-        </div>
+      <div className="border border-repower-navy-900/10 bg-white rounded-none p-6 md:p-10 mb-8">
+        <p className="font-display text-xl md:text-2xl text-repower-navy-900 leading-snug mb-3">
+          You get{' '}
+          <span className="text-repower-mercury-red font-bold">70% of the benefit</span>{' '}
+          for{' '}
+          <span className="text-repower-mercury-red font-bold">
+            {calculations[0]?.costPercent || 28}% of the cost.
+          </span>
+        </p>
+        <p className="font-sans text-sm md:text-base text-repower-navy-900/65 max-w-[60ch]">
+          Based on your selections, repowering gives you a nearly new boat experience at a fraction of the price.
+        </p>
       </div>
 
       {/* CTAs */}
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button asChild size="lg" className="text-base">
-          <Link to="/quote/motor-selection">
-            <Check className="w-5 h-5 mr-2" />
-            Build Your Repower Quote
-          </Link>
+      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <Button asChild size="lg" className="bg-repower-navy-900 text-repower-cream hover:bg-repower-navy-900/90 rounded-none font-sans">
+          <Link to="/quote/motor-selection">Build your repower quote</Link>
         </Button>
-        <Button asChild variant="outline" size="lg" className="text-base">
-          <a href="tel:9053422153">
-            Talk to a Repower Expert
-          </a>
+        <Button asChild variant="outline" size="lg" className="border-repower-navy-900/30 text-repower-navy-900 hover:bg-repower-navy-900 hover:text-repower-cream rounded-none font-sans">
+          <a href="tel:9053422153">Talk to a repower expert</a>
         </Button>
       </div>
 
       {/* Disclaimer */}
-      <p className="text-center text-xs text-muted-foreground mt-6 flex items-center justify-center gap-1">
-        <Info className="w-3 h-3" />
+      <p className="text-center font-sans text-xs text-repower-navy-900/55 mt-6">
         Estimates based on typical repower projects. Final pricing depends on specific motor selection and boat condition.
       </p>
     </div>
