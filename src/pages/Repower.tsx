@@ -4,7 +4,11 @@ import { RepowerLayout } from '@/components/repower/RepowerLayout';
 import { HeroRepower } from '@/components/repower/HeroRepower';
 import { TrustStrip } from '@/components/repower/TrustStrip';
 import { RepowerMath } from '@/components/repower/RepowerMath';
-import { RepowerFAQ } from '@/components/repower/RepowerFAQ';
+import { RepowerFAQRestyled } from '@/components/repower/RepowerFAQRestyled';
+import { WhyHarrisRepower } from '@/components/repower/WhyHarrisRepower';
+import { RepowerProcess } from '@/components/repower/RepowerProcess';
+import { WinterPro } from '@/components/repower/WinterPro';
+import { FinalCTARepower } from '@/components/repower/FinalCTARepower';
 import { RepowerPageSEO } from '@/components/seo/RepowerPageSEO';
 
 import { RepowerGuideDownloadDialog } from '@/components/repower/RepowerGuideDownloadDialog';
