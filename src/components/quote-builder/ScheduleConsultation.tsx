@@ -744,19 +744,19 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
     <div className="max-w-6xl mx-auto space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <h2 className="text-4xl md:text-5xl font-light tracking-wide text-slate-900">Submit Your Quote</h2>
-        <p className="text-lg text-slate-700 font-normal">
+        <h2 className="text-4xl md:text-5xl font-light tracking-wide text-repower-navy-900">Submit Your Quote</h2>
+        <p className="text-lg text-repower-navy-900/75 font-normal">
           Complete your contact information and we'll reach out to finalize the details
         </p>
       </div>
 
       <div className="max-w-2xl mx-auto">
         {/* Contact Form */}
-        <Card className="p-6 border-gray-200 rounded-sm hover:border-gray-300 transition-colors duration-300">
+        <Card className="p-6 border-repower-navy-900/10 rounded-sm hover:border-repower-navy-900/20 transition-colors duration-300">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <h3 className="text-xl font-light tracking-wide">Contact Information</h3>
-              <p className="text-slate-700 font-normal mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
+              <p className="text-repower-navy-900/75 font-normal mt-2">We'll reach out as soon as possible to discuss your quote and schedule your consultation</p>
             </div>
             
             <div className="space-y-2">
@@ -766,7 +766,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 value={contactInfo.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 placeholder="Enter your full name"
-                className={`border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300 ${errors.name ? 'border-destructive' : ''}`}
+                className={`border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300 ${errors.name ? 'border-destructive' : ''}`}
               />
               {errors.name && (
                 <p className="text-sm text-destructive font-light">{errors.name}</p>
@@ -781,7 +781,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 value={contactInfo.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
                 placeholder="Enter your email"
-                className={`border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300 ${errors.email ? 'border-destructive' : ''}`}
+                className={`border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300 ${errors.email ? 'border-destructive' : ''}`}
               />
               {errors.email && (
                 <p className="text-sm text-destructive font-light">{errors.email}</p>
@@ -796,19 +796,19 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 value={contactInfo.phone}
                 onChange={(e) => handleInputChange('phone', e.target.value)}
                 placeholder="(705) 555-1234"
-                className={`border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300 ${errors.phone ? 'border-destructive' : ''}`}
+                className={`border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300 ${errors.phone ? 'border-destructive' : ''}`}
                 maxLength={14}
               />
               {errors.phone && (
                 <p className="text-sm text-destructive font-light">{errors.phone}</p>
               )}
-              <p className="text-xs text-muted-foreground dark:text-gray-400 font-light">Enter 10 digits (with or without formatting)</p>
+              <p className="text-xs text-muted-foreground dark:text-repower-navy-900/40 font-light">Enter 10 digits (with or without formatting)</p>
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="contactMethod" className="font-light">Preferred Contact Method *</Label>
               <Select value={contactInfo.contactMethod} onValueChange={(value) => handleInputChange('contactMethod', value)}>
-                <SelectTrigger className="border-gray-200 rounded-sm">
+                <SelectTrigger className="border-repower-navy-900/10 rounded-sm">
                   <SelectValue placeholder="How would you like us to contact you?" />
                 </SelectTrigger>
                 <SelectContent className="rounded-sm">
@@ -828,9 +828,9 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 placeholder="Any additional information about your boat or installation requirements"
                 rows={3}
                 maxLength={500}
-                className="border-gray-200 focus:border-gray-400 rounded-sm transition-colors duration-300"
+                className="border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300"
               />
-              <p className="text-xs text-muted-foreground dark:text-gray-400 font-light">{contactInfo.notes.length}/500 characters</p>
+              <p className="text-xs text-muted-foreground dark:text-repower-navy-900/40 font-light">{contactInfo.notes.length}/500 characters</p>
             </div>
 
             {/* Send Quote Options */}
@@ -842,7 +842,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 onClick={handleSendByEmail}
                 disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
                 variant="outline" 
-                className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide disabled:opacity-50"
+                className="w-full border-repower-navy-900 text-repower-navy-900 hover:bg-repower-navy-900/[0.04] rounded-sm font-light tracking-wide disabled:opacity-50"
               >
                 <Mail className="w-4 h-4 mr-2" />
                 {isSendingEmail ? 'Sending...' : 'Send to Email'}
@@ -853,7 +853,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 onClick={handleSendByText}
                 disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
                 variant="outline" 
-                className="w-full border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide disabled:opacity-50"
+                className="w-full border-repower-navy-900 text-repower-navy-900 hover:bg-repower-navy-900/[0.04] rounded-sm font-light tracking-wide disabled:opacity-50"
               >
                 <MessageSquare className="w-4 h-4 mr-2" />
                 {isSendingText ? 'Sending...' : 'Send by Text'}
@@ -863,14 +863,14 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               <Button 
                 onClick={generatePDF}
                 variant="ghost" 
-                className="w-full text-muted-foreground hover:text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide"
+                className="w-full text-muted-foreground hover:text-repower-navy-900 hover:bg-repower-navy-900/[0.04] rounded-sm font-light tracking-wide"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download PDF
               </Button>
             </div>
 
-            <Button type="submit" className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-sm border border-gray-900 font-light tracking-wide" disabled={isSubmitting}>
+            <Button type="submit" className="w-full bg-repower-navy-900 hover:bg-repower-navy-800 text-white rounded-sm border border-repower-navy-900 font-light tracking-wide" disabled={isSubmitting}>
               <Calendar className="w-4 h-4 mr-2" />
               {isSubmitting ? 'Submitting...' : 'Submit Quote'}
             </Button>
@@ -880,7 +880,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
 
       {/* Contact Information */}
-      <Card className="p-6 border-gray-200 rounded-sm">
+      <Card className="p-6 border-repower-navy-900/10 rounded-sm">
         <h3 className="text-xl font-light tracking-wide mb-4">Harris Boat Works</h3>
         <div className="w-full grid grid-cols-3 gap-2 md:gap-6">
           <a href="tel:9053422153" className="flex flex-col items-center gap-1 p-2 hover:text-primary transition-colors">
@@ -897,12 +897,12 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
           </a>
         </div>
         
-        <div className="mt-6 p-4 bg-stone-50 rounded-sm border border-gray-200">
+        <div className="mt-6 p-4 bg-repower-cream rounded-sm border border-repower-navy-900/10">
           <div className="flex items-start gap-3">
-            <Clock className="w-5 h-5 text-gray-700 mt-0.5" />
+            <Clock className="w-5 h-5 text-repower-navy-900/75 mt-0.5" />
             <div>
               <p className="font-light tracking-wide mb-2">What happens next?</p>
-              <ul className="text-sm text-muted-foreground dark:text-gray-400 font-light space-y-1">
+              <ul className="text-sm text-muted-foreground dark:text-repower-navy-900/40 font-light space-y-1">
                 <li>• We'll contact you within 24 hours to schedule your consultation</li>
                 <li>• Our technician will inspect your boat and verify all specifications</li>
                 <li>• You'll receive a final quote including installation costs</li>
@@ -915,7 +915,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
       {/* Navigation */}
       <div className="flex justify-between">
-        <Button variant="outline" onClick={onBack} className="border-gray-900 text-gray-900 hover:bg-gray-50 rounded-sm font-light tracking-wide">
+        <Button variant="outline" onClick={onBack} className="border-repower-navy-900 text-repower-navy-900 hover:bg-repower-navy-900/[0.04] rounded-sm font-light tracking-wide">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Quote Review
         </Button>
