@@ -124,14 +124,14 @@ export default function Repower() {
               <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-4">
                 Repower if...
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 list-none">
                 {[
                   'Your hull is solid, aluminum & fiberglass last decades',
                   'You like your boat, it fits your needs and the right size',
                   'The numbers work: 70% of the benefit for 30% of the cost',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 font-sans text-base text-repower-cream/85 leading-relaxed">
-                    <span aria-hidden="true" className="shrink-0 text-repower-gold font-display font-bold leading-relaxed">✓</span>
+                  <li key={item} className="font-sans text-base text-repower-cream/85 leading-relaxed">
+                    <span aria-hidden="true" className="inline-block w-4 mr-2 text-repower-gold font-bold">✓</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -142,14 +142,14 @@ export default function Repower() {
               <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-cream/55 mb-4">
                 Buy new if...
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-4 list-none">
                 {[
                   'Your hull has structural damage or significant issues',
                   "You've outgrown your current boat",
                   'You want completely different features or layout',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 font-sans text-base text-repower-cream/65 leading-relaxed">
-                    <span aria-hidden="true" className="shrink-0 text-repower-cream/40 leading-relaxed">·</span>
+                  <li key={item} className="font-sans text-base text-repower-cream/65 leading-relaxed">
+                    <span aria-hidden="true" className="inline-block w-4 mr-2 text-repower-cream/40">·</span>
                     <span>{item}</span>
                   </li>
                 ))}
