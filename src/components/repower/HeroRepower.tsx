@@ -92,20 +92,14 @@ export function HeroRepower() {
 
         {/* CTAs */}
         <motion.div {...fadeUp(0.8)} className="flex flex-col sm:flex-row gap-4">
-          <Link
-            to="/quote/motor-selection"
-            className="group inline-flex items-center justify-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold shadow-lg shadow-[#C8102E]/30 hover:-translate-y-0.5 transition-all duration-300"
-          >
+          <RepowerCta to="/quote/motor-selection" variant="primary" size="lg">
             Build Your Quote
             <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-          <a
-            href="tel:9053422153"
-            className="inline-flex items-center justify-center gap-2 border border-[#F5F1EA]/30 text-[#F5F1EA] px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-[#F5F1EA]/5 transition-all duration-300"
-          >
+          </RepowerCta>
+          <RepowerCta href="tel:9053422153" variant="secondary" size="lg">
             <Phone className="w-4 h-4" />
             (905) 342-2153
-          </a>
+          </RepowerCta>
         </motion.div>
       </div>
 
