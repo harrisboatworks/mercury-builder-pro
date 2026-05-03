@@ -71,6 +71,7 @@ interface HybridMotorSearchProps {
   onHpSelect: (hp: number) => void;
   className?: string;
   filterSlot?: React.ReactNode;
+  variant?: 'light' | 'dark';
 }
 
 const RECENT_SEARCHES_KEY = 'motor-search-recent';
