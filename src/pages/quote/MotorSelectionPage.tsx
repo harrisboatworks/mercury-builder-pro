@@ -39,7 +39,7 @@ import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
 import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModal';
 import { VoiceStatusBanner } from '@/components/voice/VoiceStatusBanner';
-import { MobileQuoteCTA } from '@/components/motors/MobileQuoteCTA';
+
 import { EmailCaptureInline } from '@/components/motors/EmailCaptureInline';
 import { MotorSelectionFAQ } from '@/components/quote-builder/MotorSelectionFAQ';
 
@@ -1206,13 +1206,6 @@ if (event.type === 'filter_motors') {
           </div>
           </main>
         </div>
-        
-        {/* Floating mobile CTA — nudge browsers to tap a motor */}
-        <MobileQuoteCTA onStartQuote={() => {
-          // Scroll to the top of the motor grid so first card is visible
-          const grid = document.querySelector('.motor-grid-section');
-          grid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }} />
         
         {/* Motor Recommendation Quiz Modal */}
         <MotorRecommendationQuiz
