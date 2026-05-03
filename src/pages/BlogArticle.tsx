@@ -222,10 +222,10 @@ export default function BlogArticle() {
   const articleUrl = `${SITE_URL}/blog/${article.slug}`;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <BlogSEO article={article} />
       <LuxuryHeader />
-      
+
       {/* Floating Share Bar */}
       <FloatingShareBar
         url={articleUrl}
@@ -233,34 +233,34 @@ export default function BlogArticle() {
         description={article.description}
         articleSlug={article.slug}
       />
-      
-      <main className="container mx-auto px-4 py-8 md:py-12">
+
+      <main className="container mx-auto px-6 md:px-14 py-10 md:py-14">
         {/* Breadcrumb */}
-        <Breadcrumb className="mb-8">
+        <Breadcrumb className="mb-8 max-w-[880px] mx-auto">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/">Home</Link>
+                <Link to="/" className="text-repower-navy-900/60 hover:text-repower-mercury-red">Home</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator />
+            <BreadcrumbSeparator className="text-repower-navy-900/40" />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/blog">Blog</Link>
+                <Link to="/blog" className="text-repower-navy-900/60 hover:text-repower-mercury-red">Blog</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator />
+            <BreadcrumbSeparator className="text-repower-navy-900/40" />
             <BreadcrumbItem>
-              <BreadcrumbPage className="truncate max-w-[200px]">{article.title}</BreadcrumbPage>
+              <BreadcrumbPage className="truncate max-w-[200px] text-repower-navy-900">{article.title}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
 
-        <article className="max-w-3xl mx-auto" aria-labelledby="article-title">
+        <article className="max-w-[880px] mx-auto" aria-labelledby="article-title">
           {/* Back Link */}
-          <Link 
-            to="/blog" 
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-6"
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-sm text-repower-navy-900/60 hover:text-repower-mercury-red transition-colors mb-6"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to Blog
@@ -268,23 +268,30 @@ export default function BlogArticle() {
 
           {/* Header */}
           <header className="mb-8">
-            <span className="text-sm font-medium text-primary uppercase tracking-wider">
-              {article.category}
-            </span>
-            <h1 id="article-title" className="text-3xl md:text-4xl font-light text-foreground mt-2 mb-4">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="h-px w-8 bg-repower-mercury-red" />
+              <span className="font-sans text-[11px] font-semibold text-repower-mercury-red uppercase tracking-[0.24em]">
+                {article.category}
+              </span>
+            </div>
+            <h1
+              id="article-title"
+              className="font-display font-bold text-repower-navy-900 mb-5"
+              style={{ fontSize: 'clamp(32px, 4.5vw, 56px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}
+            >
               {article.title}
             </h1>
-            <p className="text-lg text-muted-foreground font-light mb-4">
+            <p className="font-sans text-[18px] text-repower-navy-900/65 mb-6 leading-relaxed">
               {article.description}
             </p>
-            <div className="flex items-center justify-between flex-wrap gap-4">
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
+              <div className="flex items-center gap-4 text-sm text-repower-navy-900/60">
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
-                  {new Date(article.datePublished).toLocaleDateString('en-US', { 
-                    month: 'long', 
-                    day: 'numeric', 
-                    year: 'numeric' 
+                  {new Date(article.datePublished).toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
                   })}
                 </span>
                 <span className="flex items-center gap-1.5">
@@ -305,17 +312,17 @@ export default function BlogArticle() {
           </header>
 
           {/* Featured Image */}
-          <div className="aspect-[16/9] overflow-hidden rounded-xl bg-muted mb-8">
+          <div className="aspect-[16/9] overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10">
             {heroImgError ? (
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#c8102e] to-[#8b0000] text-white">
+              <div className="w-full h-full flex items-center justify-center bg-repower-navy-900 text-white">
                 <div className="text-center px-4">
-                  <span className="block text-3xl font-bold tracking-tight">Harris Boat Works</span>
+                  <span className="block text-3xl font-display font-bold tracking-tight">Harris Boat Works</span>
                   <span className="block text-sm mt-1 opacity-80 uppercase tracking-widest">Mercury Authorized Dealer</span>
                 </div>
               </div>
             ) : (
-              <img 
-                src={article.image} 
+              <img
+                src={article.image}
                 alt={article.title}
                 className="w-full h-full object-contain"
                 onError={() => setHeroImgError(true)}
@@ -335,17 +342,19 @@ export default function BlogArticle() {
 
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
-            <section aria-labelledby="faq-heading" className="mt-12 pt-8 border-t border-border">
-              <h2 id="faq-heading" className="text-2xl font-semibold text-foreground mb-6">
+            <section aria-labelledby="faq-heading" className="mt-14 pt-10 border-t border-repower-navy-900/10">
+              <h2 id="faq-heading" className="font-display font-bold text-2xl md:text-[28px] text-repower-navy-900 mb-6" style={{ letterSpacing: '-0.02em' }}>
                 Frequently Asked Questions
               </h2>
-              <Accordion type="single" collapsible className="w-full">
+              <Accordion type="single" collapsible className="border-t border-repower-navy-900/10">
                 {article.faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`faq-${index}`}>
-                    <AccordionTrigger className="text-left font-medium">
-                      {faq.question}
+                  <AccordionItem key={index} value={`faq-${index}`} className="border-b border-repower-navy-900/10 group">
+                    <AccordionTrigger className="text-left font-sans font-semibold text-[16px] md:text-[17px] text-repower-navy-900 hover:no-underline py-5 px-2 hover:bg-repower-navy-900/[0.04] rounded-sm transition-colors [&>svg]:text-repower-navy-900">
+                      <span className="relative inline-block group-data-[state=open]:after:content-[''] group-data-[state=open]:after:absolute group-data-[state=open]:after:left-0 group-data-[state=open]:after:-bottom-1 group-data-[state=open]:after:h-[2px] group-data-[state=open]:after:w-10 group-data-[state=open]:after:bg-repower-gold">
+                        {faq.question}
+                      </span>
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground faq-answer">
+                    <AccordionContent className="font-sans text-[15px] text-repower-navy-900/75 pb-5 px-2 leading-relaxed faq-answer">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -355,7 +364,7 @@ export default function BlogArticle() {
           )}
 
           {/* Share Section */}
-          <div className="mt-12 pt-8 border-t border-border">
+          <div className="mt-14 pt-10 border-t border-repower-navy-900/10">
             <BlogShareButtons
               url={articleUrl}
               title={article.title}
@@ -368,23 +377,24 @@ export default function BlogArticle() {
           </div>
 
           {/* CTA */}
-          <div className="mt-12 p-6 md:p-8 bg-muted/30 rounded-xl text-center">
-            <h3 className="text-xl font-medium text-foreground mb-2">
+          <div className="mt-14 p-8 md:p-10 bg-repower-cream border border-repower-navy-900/10 rounded-lg text-center">
+            <div className="h-px w-12 bg-repower-gold mx-auto mb-6" />
+            <h3 className="font-display font-bold text-xl md:text-2xl text-repower-navy-900 mb-3" style={{ letterSpacing: '-0.02em' }}>
               Need Help Choosing?
             </h3>
-            <p className="text-muted-foreground mb-4">
+            <p className="font-sans text-repower-navy-900/70 mb-6">
               Our team has been a Mercury dealer since 1965. Get personalized recommendations.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link 
+              <Link
                 to="/quote/motor-selection"
-                className="inline-flex items-center justify-center px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center justify-center px-5 py-2.5 bg-repower-mercury-red text-white rounded-lg font-medium hover:bg-repower-mercury-red-deep transition-colors"
               >
                 Browse Motors
               </Link>
-              <Link 
+              <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-5 py-2.5 border border-border text-foreground rounded-lg font-medium hover:bg-muted transition-colors"
+                className="inline-flex items-center justify-center px-5 py-2.5 border border-repower-navy-900/20 text-repower-navy-900 rounded-lg font-medium hover:bg-repower-navy-900/5 transition-colors"
               >
                 Contact Us
               </Link>
@@ -394,8 +404,8 @@ export default function BlogArticle() {
 
         {/* Related Articles */}
         {relatedArticles.length > 0 && (
-          <nav aria-label="Related Articles" className="mt-16">
-            <h2 className="text-2xl font-light text-foreground mb-6 text-center">
+          <nav aria-label="Related Articles" className="mt-20 max-w-[1100px] mx-auto">
+            <h2 className="font-display font-bold text-2xl md:text-[28px] text-repower-navy-900 mb-8 text-center" style={{ letterSpacing: '-0.02em' }}>
               Related Articles
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
@@ -408,7 +418,7 @@ export default function BlogArticle() {
           </nav>
         )}
       </main>
-      
+
       <SiteFooter />
     </div>
   );
