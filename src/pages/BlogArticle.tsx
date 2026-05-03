@@ -3,7 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { SITE_URL } from '@/lib/site';
 import { ExpandableImage } from '@/components/ui/expandable-image';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogSEO } from '@/components/seo/BlogSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
@@ -224,7 +224,8 @@ export default function BlogArticle() {
   return (
     <div className="min-h-screen bg-repower-paper">
       <BlogSEO article={article} />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       {/* Floating Share Bar */}
       <FloatingShareBar

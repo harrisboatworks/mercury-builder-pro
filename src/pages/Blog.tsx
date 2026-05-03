@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogIndexSEO } from '@/components/seo/BlogIndexSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
@@ -12,9 +12,9 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-repower-paper">
       <BlogIndexSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
 
-      <main className="container mx-auto px-6 md:px-14 py-14 md:py-20">
+      <main className="container mx-auto px-6 md:px-14 py-14 md:py-20 pt-[calc(64px+3.5rem)] lg:pt-[calc(72px+5rem)]">
         {/* Page Header */}
         <header className="max-w-[880px] mx-auto text-center mb-14">
           <div className="flex items-center justify-center gap-3 mb-5">

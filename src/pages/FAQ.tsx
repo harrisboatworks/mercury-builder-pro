@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import DOMPurify from 'dompurify';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { FAQPageSEO } from '@/components/seo/FAQPageSEO';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -59,9 +59,9 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-repower-paper">
       <FAQPageSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
 
-      <main>
+      <main className="pt-[64px] lg:pt-[72px]">
         {/* Breadcrumb */}
         <div className="container mx-auto px-6 md:px-14 pt-6 max-w-[880px]">
           <Breadcrumb>
