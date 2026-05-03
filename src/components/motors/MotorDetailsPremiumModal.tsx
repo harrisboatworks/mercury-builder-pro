@@ -296,24 +296,26 @@ export default function MotorDetailsPremiumModal({
       {/* Click-blocker - starts below header so header remains clickable */}
       <div className="absolute inset-x-0 top-14 bottom-0 pointer-events-auto" onClick={onClose} />
       
-      {/* Visible backdrop - only below header so header remains visible */}
+      {/* Visible backdrop - navy tint + blur (reduced blur on mobile to save GPU) */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.2 }}
-        className="absolute inset-x-0 top-14 bottom-0 bg-black/70 pointer-events-auto" 
+        transition={{ duration: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
+        className="absolute inset-x-0 top-14 bottom-0 pointer-events-auto backdrop-blur-[4px] sm:backdrop-blur-[8px]"
+        style={{ backgroundColor: 'rgba(5, 14, 28, 0.65)', WebkitBackdropFilter: 'blur(4px)' }}
         onClick={onClose} 
       />
       
       {/* Modal Container - TWO COLUMN LAYOUT (60/40) */}
       <div className="absolute inset-x-0 top-14 bottom-0 sm:inset-0 flex items-start sm:items-center justify-center sm:p-4 pointer-events-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 10, scale: 0.98 }}
-          transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-          className="relative bg-white w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-xl 
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.97 }}
+          transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
+          style={{ boxShadow: '0 30px 80px rgba(10, 22, 40, 0.25)' }}
+          className="relative bg-[#FAF8F4] sm:bg-[#F5F1EA] w-full h-full sm:h-auto sm:max-h-[90vh] sm:rounded-[12px] 
           lg:grid lg:grid-cols-[60fr_40fr] lg:max-w-6xl lg:h-[90vh] lg:overflow-hidden
           flex flex-col">
           
@@ -329,7 +331,7 @@ export default function MotorDetailsPremiumModal({
               }
             }}>
               {/* Mobile/Tablet Sticky Navigation - Back/X buttons only */}
-              <div className="lg:hidden sticky top-0 z-40 bg-white">
+              <div className="lg:hidden sticky top-0 z-40 bg-[#FAF8F4]">
                 <div className="flex justify-between items-center p-4">
                   <button 
                     onClick={onClose} 
@@ -351,7 +353,7 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Mobile/Tablet Scrollable Header - Title and Tabs */}
-              <div className="lg:hidden bg-white border-t border-gray-100">
+              <div className="lg:hidden bg-[#FAF8F4]" style={{ borderTop: '1px solid rgba(10, 22, 40, 0.08)' }}>
                 {/* Stock Status and Title */}
                 <div className="px-4 py-3 border-b border-gray-200">
                   <div className="flex items-center gap-2 mb-1">
@@ -400,65 +402,73 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Desktop Header */}
-              <div className="hidden lg:block sticky top-0 z-50 bg-white shadow-md">
-                <div className="p-6 pb-0 border-b border-gray-100 bg-white">
+              <div className="hidden lg:block sticky top-0 z-50 bg-[#F5F1EA]">
+                <div className="px-12 pt-12 pb-0">
                   <button 
                     onClick={onClose} 
-                    className="absolute top-6 right-6 p-3 bg-gray-100/90 text-gray-700 rounded-full shadow-sm z-50
-                      transition-all duration-300 ease-out
-                      hover:bg-gray-200 hover:text-gray-900 hover:scale-110 hover:shadow-md
-                      active:scale-95" 
+                    className="absolute top-6 right-6 w-10 h-10 p-2 flex items-center justify-center rounded-full text-[#050E1C]/60 hover:text-[#050E1C] hover:rotate-[5deg] transition-all duration-200"
+                    style={{ transitionTimingFunction: 'cubic-bezier(0.2, 0.8, 0.2, 1)' }}
                     aria-label="Close"
                   >
-                    <X className="w-6 h-6" />
+                    <X className="w-5 h-5" />
                   </button>
                   
-                  {/* Flexbox Column Layout - crystal clear hierarchy */}
-                  <div className="flex flex-col space-y-3 pr-12">
-                    {/* Motor Name */}
-                    <h2 className="text-2xl font-semibold tracking-wide text-gray-900 leading-tight">
+                  <div className="flex flex-col pr-12">
+                    {/* Eyebrow: HP · FAMILY */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="block w-7 h-px bg-[#C8102E]" />
+                      <span className="text-[12px] font-semibold uppercase tracking-[0.24em] text-[#C8102E]">
+                        {hp} HP{motor?.family ? ` · ${String(motor.family).toUpperCase()}` : ''}
+                      </span>
+                    </div>
+                    
+                    {/* H1 — motor name */}
+                    <h2 className="font-display font-bold text-[32px] tracking-[-0.025em] leading-tight text-[#050E1C]">
                       {title}
                     </h2>
                     {motor?.model_number && (
-                      <p className="text-sm font-mono text-gray-400">{motor.model_number}</p>
+                      <p className="text-[13px] font-mono text-[#050E1C]/45 mt-2">{motor.model_number}</p>
                     )}
                     
                     {/* Stock Status Indicator */}
-                    {motor && <StockStatusIndicator motor={motor} />}
+                    {motor && <div className="mt-3"><StockStatusIndicator motor={motor} /></div>}
                   </div>
+                  
+                  {/* Hairline divider */}
+                  <div className="mt-8 border-t" style={{ borderColor: 'rgba(10, 22, 40, 0.08)' }} />
                 </div>
                 
                 {/* 3. Tabs - new line, clear separation */}
-                <TabsList className="w-full justify-start border-b border-gray-100 rounded-none bg-white p-0 h-auto mt-5">
+                <TabsList className="w-full justify-start rounded-none bg-[#F5F1EA] p-0 h-auto px-12" style={{ borderBottom: '1px solid rgba(10, 22, 40, 0.08)' }}>
                   <TabsTrigger 
                     value="overview" 
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                    className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Overview
                   </TabsTrigger>
                   <TabsTrigger 
                     value="specs"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                    className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Specs
                   </TabsTrigger>
                   <TabsTrigger 
                     value="included"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                    className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Included
                   </TabsTrigger>
                   <TabsTrigger 
                     value="resources"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                    className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
                     Resources
                   </TabsTrigger>
                   <TabsTrigger 
                     value="chat"
-                    className="text-sm uppercase tracking-widest border-b-2 border-transparent data-[state=active]:border-black rounded-none font-medium px-6 py-4"
+                    className="text-[12px] uppercase tracking-[0.14em] border-b-2 border-transparent data-[state=active]:border-[#050E1C] data-[state=active]:text-[#050E1C] text-[#050E1C]/60 rounded-none font-semibold px-5 py-4 bg-transparent"
                   >
-                    <MessageCircle className="w-4 h-4 inline mr-1" />
+                    <MessageCircle className="w-3.5 h-3.5 inline mr-1" />
                     Chat
                   </TabsTrigger>
                 </TabsList>
@@ -948,19 +958,20 @@ export default function MotorDetailsPremiumModal({
                   {/* Trust Signals */}
                   <TrustSignals />
                   
-                  {/* ADD TO QUOTE Button */}
+                  {/* ADD TO QUOTE Button — hero CTA spec */}
                   <button
                     onClick={() => {
                       triggerHaptic('medium');
                       handleSelectMotor();
                     }}
-                    className="w-full bg-black text-white py-4 text-xs tracking-widest uppercase font-medium rounded-sm 
+                    style={{ transitionTimingFunction: 'cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+                    className="group w-full flex items-center justify-between bg-[#C8102E] text-white px-7 py-4 rounded-[4px] text-[13px] font-bold uppercase tracking-[0.06em]
                       transition-all duration-300 ease-out
-                      hover:bg-gray-900 hover:shadow-lg hover:scale-[1.01]
-                      active:scale-[0.98]
-                      premium-pulse"
+                      hover:bg-[#9A0C24] hover:-translate-y-px hover:shadow-[0_12px_30px_rgba(154,12,36,0.35)]
+                      active:translate-y-0"
                   >
-                    Configure This Motor
+                    <span>Configure This Motor</span>
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </button>
                   
                   {/* Calculate Payment Link */}
@@ -1010,6 +1021,26 @@ export default function MotorDetailsPremiumModal({
                 </motion.div>
               )}
             </AnimatePresence>
+          </div>
+
+          {/* Mobile sticky CTA */}
+          <div
+            className="lg:hidden sticky bottom-0 left-0 right-0 bg-[#FAF8F4] px-4 py-3 z-40"
+            style={{ borderTop: '1px solid rgba(10, 22, 40, 0.08)', paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)' }}
+          >
+            <button
+              onClick={() => {
+                triggerHaptic('medium');
+                handleSelectMotor();
+              }}
+              style={{ transitionTimingFunction: 'cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+              className="group w-full flex items-center justify-between bg-[#C8102E] text-white px-7 py-4 rounded-[4px] text-[13px] font-bold uppercase tracking-[0.06em]
+                transition-all duration-300 ease-out
+                hover:bg-[#9A0C24] active:translate-y-0"
+            >
+              <span>Configure This Motor</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </button>
           </div>
 
           {/* Mobile scroll hint - fades out after scrolling */}
