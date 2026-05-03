@@ -11,7 +11,7 @@ import { FinalCTARepower } from '@/components/repower/FinalCTARepower';
 import { RepowerPageSEO } from '@/components/seo/RepowerPageSEO';
 
 import { RepowerGuideDownloadDialog } from '@/components/repower/RepowerGuideDownloadDialog';
-import { ExpandableImage } from '@/components/ui/expandable-image';
+
 import { Button } from '@/components/ui/button';
 import { 
   AlertTriangle, Zap, Fuel, Volume2, Wrench, Calendar, Award, 
