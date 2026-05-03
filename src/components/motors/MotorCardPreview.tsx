@@ -464,7 +464,7 @@ function MotorCardPreviewInner({
     <div ref={cardRef}>
       {/* Product schema moved to parent as batched ItemList */}
       <div
-        className="group bg-white rounded-lg border border-[rgba(10,22,40,0.10)] overflow-hidden cursor-pointer touch-action-manipulation
+        className="group bg-repower-cream rounded-lg border border-[rgba(10,22,40,0.10)] overflow-hidden cursor-pointer touch-action-manipulation
           transition-all duration-[350ms] [transition-timing-function:cubic-bezier(0.2,0.8,0.2,1)]
           hover:-translate-y-[3px] hover:border-[rgba(10,22,40,0.18)]
           hover:shadow-[0_16px_40px_rgba(10,22,40,0.10),0_4px_12px_rgba(10,22,40,0.05)]
