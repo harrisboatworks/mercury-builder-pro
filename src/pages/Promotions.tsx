@@ -458,80 +458,84 @@ export default function Promotions() {
 
       {/* FAQ Section, only when promos are active */}
       {hasActivePromos && (
-        <section className="max-w-3xl mx-auto px-4 py-16">
-          <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground mb-4">
-            Promotion FAQs
-          </h2>
-          <p className="text-muted-foreground text-center mb-10">
-            Common questions about the current Mercury promotion.
-          </p>
-          <Accordion type="single" collapsible className="space-y-3">
-            {promotionFaqs.map((faq, index) => (
-              <AccordionItem key={index} value={`faq-${index}`} className="bg-white rounded-lg border-0 shadow-sm px-6">
-                <AccordionTrigger className="text-left hover:no-underline py-4">
-                  <span className="font-medium text-foreground">{faq.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-4">{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        <section className="bg-white py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
+          <div className="max-w-[880px] mx-auto">
+            <h2 className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-center text-repower-navy-900 mb-3" style={{ letterSpacing: '-0.025em' }}>
+              Promotion FAQs
+            </h2>
+            <p className="font-sans text-repower-navy-900/65 text-center mb-10">
+              Common questions about the current Mercury promotion.
+            </p>
+            <Accordion type="single" collapsible className="border-t border-repower-navy-900/10">
+              {promotionFaqs.map((faq, index) => (
+                <AccordionItem key={index} value={`faq-${index}`} className="border-b border-repower-navy-900/10 group">
+                  <AccordionTrigger className="text-left hover:no-underline py-5 px-2 hover:bg-repower-navy-900/[0.04] rounded-sm transition-colors [&>svg]:text-repower-navy-900">
+                    <span className="font-sans font-semibold text-[16px] md:text-[17px] text-repower-navy-900 pr-4 relative inline-block group-data-[state=open]:after:content-[''] group-data-[state=open]:after:absolute group-data-[state=open]:after:left-0 group-data-[state=open]:after:-bottom-1 group-data-[state=open]:after:h-[2px] group-data-[state=open]:after:w-10 group-data-[state=open]:after:bg-repower-gold">
+                      {faq.question}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="font-sans text-[15px] text-repower-navy-900/75 pb-5 px-2 leading-relaxed">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </section>
       )}
 
       {/* Newsletter Signup */}
-      <section id="promo-signup" className="bg-stone-50 py-16 px-4">
+      <section id="promo-signup" className="bg-repower-cream py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
         <div className="max-w-xl mx-auto text-center">
           <div className="flex flex-col items-center gap-2 mb-6">
             <img src={mercuryLogo} alt="Mercury Marine" className="h-8" />
-            <span className="text-xs text-muted-foreground">Authorized Mercury Dealer</span>
+            <span className="text-xs text-repower-navy-900/60">Authorized Mercury Dealer</span>
           </div>
-          <Bell className="w-10 h-10 text-muted-foreground mx-auto mb-4" />
-          <h2 className="text-2xl font-semibold text-foreground mb-2">
+          <Bell className="w-10 h-10 text-repower-mercury-red mx-auto mb-4" strokeWidth={1.5} />
+          <h2 className="font-display font-bold text-[clamp(24px,3vw,32px)] text-repower-navy-900 mb-3" style={{ letterSpacing: '-0.025em' }}>
             Get Notified of Future Sales
           </h2>
-          <p className="text-muted-foreground mb-6">
+          <p className="font-sans text-repower-navy-900/70 mb-6">
             Be the first to know when we launch new promotions. No spam, just savings.
           </p>
-          
+
           <form onSubmit={handleGeneralSubscribe} className="max-w-md mx-auto space-y-4">
             <div className="space-y-3">
-              <Label className="text-sm font-medium text-left block">How should we notify you?</Label>
+              <Label className="text-sm font-medium text-left block text-repower-navy-900">How should we notify you?</Label>
               <RadioGroup
                 value={channel}
                 onValueChange={(v) => setChannel(v as 'email' | 'sms' | 'both')}
                 className="flex gap-2"
               >
                 <label
-                  className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border cursor-pointer transition-colors ${
-                    channel === 'email' 
-                      ? 'border-primary bg-primary/5' 
-                      : 'border-border hover:border-muted-foreground'
+                  className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border bg-white cursor-pointer transition-colors ${
+                    channel === 'email'
+                      ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red'
+                      : 'border-repower-navy-900/10 hover:border-repower-navy-900/30'
                   }`}
                 >
                   <RadioGroupItem value="email" id="general-email-option" className="sr-only" />
-                  <Mail className="h-4 w-4" />
-                  <span className="text-sm font-medium">Email</span>
+                  <Mail className="h-4 w-4 text-repower-mercury-red" strokeWidth={1.5} />
+                  <span className="text-sm font-medium text-repower-navy-900">Email</span>
                 </label>
                 <label
-                  className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border cursor-pointer transition-colors ${
-                    channel === 'sms' 
-                      ? 'border-primary bg-primary/5' 
-                      : 'border-border hover:border-muted-foreground'
+                  className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border bg-white cursor-pointer transition-colors ${
+                    channel === 'sms'
+                      ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red'
+                      : 'border-repower-navy-900/10 hover:border-repower-navy-900/30'
                   }`}
                 >
                   <RadioGroupItem value="sms" id="general-sms-option" className="sr-only" />
-                  <MessageSquare className="h-4 w-4" />
-                  <span className="text-sm font-medium">Text</span>
+                  <MessageSquare className="h-4 w-4 text-repower-mercury-red" strokeWidth={1.5} />
+                  <span className="text-sm font-medium text-repower-navy-900">Text</span>
                 </label>
                 <label
-                  className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border cursor-pointer transition-colors ${
-                    channel === 'both' 
-                      ? 'border-primary bg-primary/5' 
-                      : 'border-border hover:border-muted-foreground'
+                  className={`flex-1 flex items-center justify-center gap-2 p-3 rounded-lg border bg-white cursor-pointer transition-colors ${
+                    channel === 'both'
+                      ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red'
+                      : 'border-repower-navy-900/10 hover:border-repower-navy-900/30'
                   }`}
                 >
                   <RadioGroupItem value="both" id="general-both-option" className="sr-only" />
-                  <span className="text-sm font-medium">Both</span>
+                  <span className="text-sm font-medium text-repower-navy-900">Both</span>
                 </label>
               </RadioGroup>
             </div>
@@ -543,7 +547,7 @@ export default function Promotions() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required={channel === 'email' || channel === 'both'}
-                className="bg-white"
+                className="bg-white border-repower-navy-900/15"
               />
             )}
 
@@ -554,16 +558,16 @@ export default function Promotions() {
                 value={phone}
                 onChange={(e) => setPhone(formatPhone(e.target.value))}
                 required={channel === 'sms' || channel === 'both'}
-                className="bg-white"
+                className="bg-white border-repower-navy-900/15"
               />
             )}
 
-            <Button type="submit" disabled={subscribing} className="w-full">
+            <Button type="submit" disabled={subscribing} className="w-full bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
               {subscribing ? 'Subscribing...' : 'Subscribe'}
             </Button>
           </form>
-          
-          <p className="text-xs text-muted-foreground mt-4">
+
+          <p className="text-xs text-repower-navy-900/55 mt-4">
             You can unsubscribe at any time. We respect your privacy.
           </p>
         </div>
