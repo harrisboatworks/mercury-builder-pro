@@ -30,6 +30,7 @@ import { ConfigFilterSheet, type ConfigFiltersState } from '@/components/motors/
 
 import { RecentlyViewedBar } from '@/components/motors/RecentlyViewedBar';
 import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
+import { ComparisonFloatingBar } from '@/components/motors/ComparisonFloatingBar';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
 // ComparisonFloatingPill removed - comparison now integrated into UnifiedMobileBar
 import { Button } from '@/components/ui/button';
