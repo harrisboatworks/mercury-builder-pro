@@ -272,7 +272,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
                 e.stopPropagation();
                 handlePrevious();
               }}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-800 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#F5F1EA]/85 hover:bg-[#F5F1EA] text-[#050E1C] opacity-0 group-hover:opacity-100 transition-opacity"
             >
               <ChevronLeft className="h-4 w-4" />
             </Button>
@@ -283,7 +283,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
                 e.stopPropagation();
                 handleNext();
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white dark:bg-slate-800/80 dark:hover:bg-slate-800 opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#F5F1EA]/85 hover:bg-[#F5F1EA] text-[#050E1C] opacity-0 group-hover:opacity-100 transition-opacity"
             >
               <ChevronRight className="h-4 w-4" />
             </Button>
