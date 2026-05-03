@@ -606,7 +606,7 @@ function MotorCardPreviewInner({
               <span className="flex items-center gap-1.5">
                 <span className="text-repower-gold text-[14px] leading-none">✓</span>
                 <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900">
-                  {inStock ? 'In Stock' : 'Order Now · 4 to 6 weeks'}
+                  Available
                 </span>
               </span>
               <span className="flex items-center gap-1.5">
