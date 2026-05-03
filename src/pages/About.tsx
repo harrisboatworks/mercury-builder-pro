@@ -105,54 +105,61 @@ export default function About() {
       <AboutPageSEO />
       <LuxuryHeader />
       
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-repower-paper">
         {/* Hero Section */}
-        <section aria-labelledby="about-hero" className="relative py-16 md:py-24 bg-gradient-to-b from-muted/50 to-background">
-          <div className="max-w-6xl mx-auto px-4 md:px-6">
+        <section aria-labelledby="about-hero" className="relative py-14 md:py-20">
+          <div className="max-w-[880px] mx-auto px-6 md:px-14">
             <div className="text-center mb-12">
-              <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="flex items-center justify-center gap-4 mb-8">
                 <img src={harrisLogo} alt="Harris Boat Works" className="h-12 md:h-16" />
-                <div className="w-px h-10 bg-border" />
+                <div className="w-px h-10 bg-repower-navy-900/15" />
                 <img src={mercuryLogo} alt="Mercury Marine" className="h-12 md:h-16" />
               </div>
-              <h1 id="about-hero" className="text-3xl md:text-5xl font-light text-foreground mb-4">
-                Family-Owned Since <span className="font-medium">1947</span>
+              <div className="flex items-center justify-center gap-3 mb-5">
+                <span className="h-px w-8 bg-repower-mercury-red" />
+                <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+                  About Harris Boat Works
+                </p>
+              </div>
+              <h1 id="about-hero" className="font-display font-bold text-repower-navy-900 mb-5" style={{ fontSize: 'clamp(40px, 5vw, 64px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}>
+                Family-Owned Since <span className="italic text-repower-mercury-red">1947</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="font-sans text-[18px] text-repower-navy-900/65 max-w-[60ch] mx-auto leading-relaxed">
                 Three generations of marine expertise on the beautiful shores of Rice Lake, Ontario.
                 Your trusted Mercury dealer for nearly 60 years.
               </p>
+              <div className="mt-10 h-px w-16 bg-repower-navy-900/15 mx-auto" />
             </div>
-            
+
             {/* Trust Badges */}
             <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
               <div className="flex items-center gap-3">
-                <img 
-                  src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" 
-                  alt="Mercury CSI Award Winner" 
+                <img
+                  src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png"
+                  alt="Mercury CSI Award Winner"
                   className="h-12 md:h-16"
                 />
                 <div className="text-left">
-                  <p className="text-sm font-medium text-foreground">CSI Award</p>
-                  <p className="text-xs text-muted-foreground">Winner</p>
+                  <p className="text-sm font-medium text-repower-navy-900">CSI Award</p>
+                  <p className="text-xs text-repower-navy-900/60">Winner</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <img 
-                  src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" 
-                  alt="Mercury Certified Repower Center" 
+                <img
+                  src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
+                  alt="Mercury Certified Repower Center"
                   className="h-12 md:h-16"
                 />
                 <div className="text-left">
-                  <p className="text-sm font-medium text-foreground">Certified</p>
-                  <p className="text-xs text-muted-foreground">Repower Center</p>
+                  <p className="text-sm font-medium text-repower-navy-900">Certified</p>
+                  <p className="text-xs text-repower-navy-900/60">Repower Center</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 bg-muted/50 rounded-lg px-4 py-2">
-                <Calendar className="h-8 w-8 text-primary" />
+              <div className="flex items-center gap-3">
+                <Calendar className="h-7 w-7 text-repower-mercury-red" strokeWidth={1.5} />
                 <div className="text-left">
-                  <p className="text-sm font-medium text-foreground">79 Years</p>
-                  <p className="text-xs text-muted-foreground">In Business</p>
+                  <p className="text-sm font-medium text-repower-navy-900">79 Years</p>
+                  <p className="text-xs text-repower-navy-900/60">In Business</p>
                 </div>
               </div>
             </div>
