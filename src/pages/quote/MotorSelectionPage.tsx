@@ -255,6 +255,21 @@ function MotorSelectionContent() {
   // Search overlay state - triggered from header search icon
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
 
+  // Sentinel-based sticky detection for search bar (light at rest, dark glass when stuck)
+  const searchSentinelRef = useRef<HTMLDivElement | null>(null);
+  const [isSearchStuck, setIsSearchStuck] = useState(false);
+  useEffect(() => {
+    const el = searchSentinelRef.current;
+    if (!el) return;
+    const headerOffset = window.innerWidth >= 1024 ? 72 : 64;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsSearchStuck(!entry.isIntersecting),
+      { rootMargin: `-${headerOffset}px 0px 0px 0px`, threshold: 0 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   // Track grid columns based on viewport so animation stagger reflects actual rows.
   // Matches Tailwind: grid-cols-1 / sm:2 / lg:3 / 2xl:4
   const getGridColumns = () => {
@@ -1060,8 +1075,17 @@ if (event.type === 'filter_motors') {
           </div>
         </div>
 
-        {/* Sticky Search Bar — dark variant, merges with navy header */}
-        <div className="sticky top-[64px] lg:top-[72px] z-40 bg-[rgba(10,22,40,0.85)] supports-[backdrop-filter]:backdrop-blur-xl border-b border-[rgba(201,162,74,0.12)]">
+        {/* Sentinel — detects when search bar pins to top */}
+        <div ref={searchSentinelRef} aria-hidden className="h-px w-full" />
+
+        {/* Search Bar — light at rest, dark glass when sticky */}
+        <div
+          className={`sticky top-[64px] lg:top-[72px] z-40 transition-all duration-200 ease-out ${
+            isSearchStuck
+              ? 'bg-[rgba(10,22,40,0.85)] supports-[backdrop-filter]:backdrop-blur-xl border-b border-[rgba(201,162,74,0.12)]'
+              : 'bg-transparent'
+          }`}
+        >
           <div className="max-w-[1400px] mx-auto px-6 md:px-14 py-3 md:py-4">
             <HybridMotorSearch
               query={searchQuery}
@@ -1069,7 +1093,7 @@ if (event.type === 'filter_motors') {
               motors={processedMotors}
               onHpSelect={handleHpSuggestionSelect}
               className="w-full"
-              variant="dark"
+              variant={isSearchStuck ? 'dark' : 'light'}
               filterSlot={
                 <ConfigFilterSheet
                   motors={processedMotors}
@@ -1077,7 +1101,11 @@ if (event.type === 'filter_motors') {
                   onHpFilterChange={handleHpFilterChange}
                   filters={configFilters}
                   onFilterChange={setConfigFilters}
-                  className="bg-[#0A1628] border border-[rgba(201,162,74,0.20)] text-[#F5F1EA]/70 hover:text-[#F5F1EA] hover:border-[#C9A24A] hover:bg-[#122039]"
+                  className={
+                    isSearchStuck
+                      ? 'bg-[#0A1628] border border-[rgba(201,162,74,0.20)] text-[#F5F1EA]/70 hover:text-[#F5F1EA] hover:border-[#C9A24A] hover:bg-[#122039] transition-colors duration-200'
+                      : 'bg-white border border-[rgba(10,22,40,0.10)] text-[#050E1C]/70 hover:text-[#050E1C] hover:border-[#C9A24A] transition-colors duration-200'
+                  }
                 />
               }
             />
