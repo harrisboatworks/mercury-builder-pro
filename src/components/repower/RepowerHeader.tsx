@@ -41,27 +41,27 @@ export function RepowerHeader() {
             : 'bg-gradient-to-b from-[#050E1C]/65 to-transparent py-5'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 md:px-14 flex flex-row flex-nowrap items-center justify-between gap-3 md:gap-6">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 xl:px-14 flex flex-row flex-nowrap items-center justify-between gap-3 md:gap-4 xl:gap-6">
           {/* Logo lockup — always horizontal */}
-          <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-2 sm:gap-3 md:gap-4 min-w-0 max-w-[calc(100%-3rem)] overflow-hidden">
-            <img src={harrisLogo} alt="Harris Boat Works" className="h-7 md:h-9 w-auto shrink-0" />
+          <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-2 lg:gap-3 min-w-0 overflow-hidden shrink-0">
+            <img src={harrisLogo} alt="Harris Boat Works" className="h-7 md:h-8 lg:h-9 w-auto shrink-0" />
             <div className="hidden sm:block w-px h-7 bg-[#F5F1EA]/20 shrink-0" />
             <img
               src={mercuryLogo}
               alt="Mercury Marine"
               className="hidden sm:block h-6 md:h-7 w-auto shrink-0"
             />
-            <div className="flex items-center pl-2 sm:pl-3 md:pl-4 border-l border-[#F5F1EA]/15 shrink-0">
+            <div className="flex items-center pl-2 lg:pl-3 border-l border-[#F5F1EA]/15 shrink-0">
               <img
                 src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
                 alt="Mercury Repower Center"
-                className="h-7 md:h-10 lg:h-11 w-auto"
+                className="h-7 md:h-8 lg:h-9 xl:h-10 w-auto"
               />
             </div>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7 xl:gap-9">
+          <nav className="hidden xl:flex flex-1 items-center justify-center gap-5 2xl:gap-7 min-w-0">
             {NAV_LINKS.map((link) => {
               const active =
                 link.to === '/'
@@ -71,7 +71,7 @@ export function RepowerHeader() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`font-sans text-sm font-medium tracking-wide transition-opacity duration-200 ${
+                  className={`font-sans text-sm font-medium tracking-wide whitespace-nowrap transition-opacity duration-200 ${
                     active
                       ? 'text-[#F5F1EA] opacity-100'
                       : 'text-[#F5F1EA]/85 hover:opacity-100'
@@ -87,7 +87,7 @@ export function RepowerHeader() {
           <div className="ml-auto flex items-center justify-end gap-3 shrink-0">
             <Link
               to="/quote/motor-selection"
-              className="hidden sm:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-5 py-2.5 rounded uppercase tracking-wider text-xs font-semibold transition-colors duration-200"
+              className="hidden sm:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded uppercase tracking-wider text-[11px] lg:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
             >
               Build Quote
               <ChevronRight className="w-3.5 h-3.5" />
@@ -95,13 +95,13 @@ export function RepowerHeader() {
             {!user && (
               <button
                 onClick={() => navigate('/auth')}
-                className="hidden md:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
+                className="hidden xl:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
               >
                 Sign In
               </button>
             )}
             <button
-              className="lg:hidden p-2 text-[#F5F1EA]"
+              className="xl:hidden p-2 text-[#F5F1EA]"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
             >
