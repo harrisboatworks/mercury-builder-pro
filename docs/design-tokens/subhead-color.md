@@ -29,6 +29,11 @@ If a stricter AAA pass is required, drop opacity to ~50% (darker effective color
 
 - `src/pages/quote/MotorSelectionPage.tsx` — "Live pricing. Real quotes. Three minutes." subhead under the "Choose your power." H1.
 
+## Wrapping rules
+
+- Always pair with `text-wrap: balance` (Tailwind `text-balance`) so individual sentences (e.g., "Three minutes.") never break across lines.
+- For short H1s above the subhead, use `font-size: clamp(40px, 5vw, 72px)` to keep one-line fit at common laptop widths (≥ 1100px).
+
 ## Semantics
 
 Subhead must be a sibling `<p>` of the `<h1>`, never nested inside the heading element. Decorative eyebrow labels stay as `<span>` so the heading hierarchy is unambiguous to screen readers.
