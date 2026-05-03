@@ -46,7 +46,7 @@ export function ComparisonFloatingBar({
               {motors.map((m, i) => (
                 <li
                   key={m.id}
-                  className="flex items-center gap-1.5 min-w-0 h-5"
+                  className="flex flex-row items-start gap-1.5 min-w-0 h-5"
                 >
                   <span className="text-[11px] font-bold text-repower-gold/80 shrink-0 tabular-nums w-3.5 leading-none">
                     {i + 1}.

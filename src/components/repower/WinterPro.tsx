@@ -32,7 +32,7 @@ export function WinterPro() {
 
           <ul className="lg:col-span-7 space-y-6">
             {benefits.map((b) => (
-              <li key={b.t} className="flex gap-4 border-b border-repower-cream/10 pb-6 last:border-b-0">
+              <li key={b.t} className="flex flex-row items-start gap-4 border-b border-repower-cream/10 pb-6 last:border-b-0">
                 <Check className="w-5 h-5 text-repower-gold flex-shrink-0 mt-1" strokeWidth={2} />
                 <div>
                   <h3 className="font-display font-semibold text-xl md:text-2xl text-repower-cream tracking-tight mb-1">
