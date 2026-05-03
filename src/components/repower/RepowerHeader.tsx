@@ -54,9 +54,8 @@ export function RepowerHeader() {
             <div className="flex items-center pl-2 sm:pl-3 md:pl-4 border-l border-[#F5F1EA]/15 shrink-0">
               <img
                 src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
-                alt="Mercury Certified Repower Centre"
+                alt="Mercury Repower Center"
                 className="h-7 md:h-10 lg:h-11 w-auto"
-                style={{ filter: 'brightness(0) invert(1)' }}
               />
             </div>
           </Link>
