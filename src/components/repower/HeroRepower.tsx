@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronRight, Phone, ChevronDown } from 'lucide-react';
 import { repowerImages } from './repowerImages';
+import { RepowerCta } from './RepowerCta';
 
 const ease = [0.2, 0.8, 0.2, 1] as const;
 const fadeUp = (delay = 0) => ({
