@@ -88,14 +88,14 @@ export default function QuoteSuccessPage() {
   }, [showConfetti]);
 
   return (
-    <div className="min-h-screen bg-repower-paper flex items-center justify-center px-6 md:px-14 py-14 md:py-20">
-      <div className="bg-white border border-repower-navy-900/10 p-8 md:p-12 max-w-2xl w-full">
+    <div className="min-h-screen bg-repower-paper flex items-center justify-center px-4 sm:px-6 md:px-14 py-10 sm:py-14 md:py-20">
+      <div className="bg-white border border-repower-navy-900/10 p-6 sm:p-8 md:p-12 max-w-2xl w-full">
         <div className="text-center">
           {/* Success Icon */}
-          <div className="flex justify-center mb-8">
-            <div className="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-repower-cream border border-repower-gold/40">
+          <div className="flex justify-center mb-6 sm:mb-8">
+            <div className="relative inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-repower-cream border border-repower-gold/40">
               <span className="absolute inset-0 rounded-full bg-repower-gold/15 animate-ping" />
-              <CheckCircle2 className="w-10 h-10 text-repower-gold relative" strokeWidth={1.75} />
+              <CheckCircle2 className="w-8 h-8 sm:w-10 sm:h-10 text-repower-gold relative" strokeWidth={1.75} />
             </div>
           </div>
 
@@ -117,9 +117,9 @@ export default function QuoteSuccessPage() {
           </p>
 
           {/* Reference Number */}
-          <div className="bg-repower-cream border border-repower-navy-900/10 p-6 mb-8">
+          <div className="bg-repower-cream border border-repower-navy-900/10 p-5 sm:p-6 mb-8">
             <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-navy-900/55 mb-2">Your Quote Reference Number</p>
-            <code className="block font-display text-[28px] md:text-[32px] font-bold text-repower-navy-900 tracking-[0.1em]">
+            <code className="block font-display text-[24px] sm:text-[28px] md:text-[32px] font-bold text-repower-navy-900 tracking-[0.1em] break-all">
               {referenceNumber}
             </code>
             <p className="font-sans text-[12px] text-repower-navy-900/55 mt-2">
@@ -140,8 +140,8 @@ export default function QuoteSuccessPage() {
           {/* Timeline */}
           <div className="space-y-8 text-left mb-8">
             <div>
-              <h2 className="font-display font-bold text-[22px] text-repower-navy-900 mb-5 flex items-center gap-2" style={{ letterSpacing: '-0.02em' }}>
-                <ArrowRight className="h-5 w-5 text-repower-mercury-red" strokeWidth={1.75} />
+              <h2 className="font-display font-bold text-[20px] sm:text-[22px] text-repower-navy-900 mb-5 flex items-center gap-2" style={{ letterSpacing: '-0.02em' }}>
+                <ArrowRight className="h-5 w-5 text-repower-mercury-red shrink-0" strokeWidth={1.75} />
                 What Happens Next?
               </h2>
               <ol className="space-y-3">
@@ -155,9 +155,9 @@ export default function QuoteSuccessPage() {
                     <div className="flex-shrink-0 w-8 h-8 rounded-full border border-repower-navy-900/20 bg-white flex items-center justify-center font-display font-bold text-[14px] text-repower-navy-900">
                       {i + 1}
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <p className="font-display font-semibold text-[15px] text-repower-navy-900">{step.title}</p>
-                      <p className="font-sans text-[13px] text-repower-navy-900/65 mt-0.5">{step.desc}</p>
+                      <p className="font-sans text-[13px] text-repower-navy-900/65 mt-0.5 leading-relaxed">{step.desc}</p>
                     </div>
                   </li>
                 ))}
@@ -167,23 +167,23 @@ export default function QuoteSuccessPage() {
             {/* Contact Information */}
             <div className="border-t border-repower-navy-900/10 pt-6">
               <h3 className="font-display font-semibold text-[16px] text-repower-navy-900 mb-3 flex items-center gap-2">
-                <MessageSquare className="h-5 w-5 text-repower-mercury-red" strokeWidth={1.75} />
+                <MessageSquare className="h-5 w-5 text-repower-mercury-red shrink-0" strokeWidth={1.75} />
                 Questions?
               </h3>
               <p className="font-sans text-[14px] text-repower-navy-900/65 mb-3">
                 Our team is here to help:
               </p>
               <div className="flex flex-col gap-2">
-                <a href={`sms:${COMPANY_INFO.contact.sms.replace(/[^0-9]/g, '')}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors">
-                  <MessageSquare className="h-4 w-4" />
+                <a href={`sms:${COMPANY_INFO.contact.sms.replace(/[^0-9]/g, '')}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors break-all">
+                  <MessageSquare className="h-4 w-4 shrink-0" strokeWidth={1.75} />
                   Text Us: {COMPANY_INFO.contact.sms}
                 </a>
-                <a href={`tel:${COMPANY_INFO.contact.phone}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors">
-                  <Phone className="h-4 w-4" />
+                <a href={`tel:${COMPANY_INFO.contact.phone}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors break-all">
+                  <Phone className="h-4 w-4 shrink-0" strokeWidth={1.75} />
                   Call: {COMPANY_INFO.contact.phone}
                 </a>
-                <a href={`mailto:${COMPANY_INFO.contact.email}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors">
-                  <Mail className="h-4 w-4" />
+                <a href={`mailto:${COMPANY_INFO.contact.email}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors break-all">
+                  <Mail className="h-4 w-4 shrink-0" strokeWidth={1.75} />
                   {COMPANY_INFO.contact.email}
                 </a>
               </div>
@@ -194,14 +194,14 @@ export default function QuoteSuccessPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
               onClick={() => navigate('/')}
-              className="group inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
+              className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
             >
               Return Home
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={1.75} />
             </button>
             <button
               onClick={() => navigate('/quote/motor-selection')}
-              className="inline-flex items-center justify-center border border-repower-navy-900/20 bg-white text-repower-navy-900 px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center border border-repower-navy-900/20 bg-white text-repower-navy-900 px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
             >
               Get Another Quote
             </button>

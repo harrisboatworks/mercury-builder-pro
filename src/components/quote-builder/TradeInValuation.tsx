@@ -426,7 +426,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   >
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.brand 
-                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red' 
+                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
                     }`}>
                       <SelectValue placeholder="Select brand" />
@@ -438,7 +438,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </SelectContent>
                   </Select>
                   {showValidation && missingFields.brand && (
-                    <p className="font-sans text-[13px] text-repower-mercury-red mt-1">Required</p>
+                    <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
                   )}
                 </div>
 
@@ -484,7 +484,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   >
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.year 
-                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red' 
+                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
                     }`}>
                       <SelectValue placeholder="Select year" />
@@ -496,7 +496,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </SelectContent>
                   </Select>
                   {showValidation && missingFields.year && (
-                    <p className="font-sans text-[13px] text-repower-mercury-red mt-1">Required</p>
+                    <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
                   )}
                 </div>
 
@@ -515,12 +515,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     maxLength={120}
                     className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.horsepower 
-                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red' 
+                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
                     }`}
                   />
                   {showValidation && missingFields.horsepower && (
-                    <p className="font-sans text-[13px] text-repower-mercury-red mt-1">Required</p>
+                    <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Required</p>
                   )}
                   {(() => {
                     const raw = (tradeInInfo.model || '').trim();
@@ -791,7 +791,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   ))}
                 </div>
                 {showValidation && missingFields.condition && (
-                  <p className="font-sans text-[13px] text-repower-mercury-red">Please select a condition</p>
+                  <p className="font-sans text-[12px] font-medium text-repower-mercury-red mt-1.5 inline-flex items-center gap-1.5"><AlertCircle className="h-3.5 w-3.5 shrink-0" strokeWidth={2} aria-hidden="true" />Please select a condition</p>
                 )}
               </div>
 
