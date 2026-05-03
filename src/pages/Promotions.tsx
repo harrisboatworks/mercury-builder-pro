@@ -379,27 +379,26 @@ export default function Promotions() {
 
       {/* Full Rebate Matrix Table with Interactive Calculator */}
       {rebateMatrix.length > 0 && (
-        <section className="bg-stone-50 py-16 px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
+        <section className="bg-repower-cream py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
+          <div className="max-w-[1100px] mx-auto">
+            <div className="text-center mb-10">
+              <h2 className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-3" style={{ letterSpacing: '-0.025em' }}>
                 Factory Rebate by Horsepower
               </h2>
-              <p className="text-muted-foreground">
+              <p className="font-sans text-repower-navy-900/65">
                 If you choose the rebate option, here's what you'll get based on your motor
               </p>
             </div>
-            
-            {/* Interactive Calculator */}
+
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <RebateCalculator matrix={rebateMatrix} initialHP={115} />
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">All Rebate Tiers</h3>
+                <h3 className="font-display text-lg font-semibold text-repower-navy-900">All Rebate Tiers</h3>
                 <RebateMatrix matrix={rebateMatrix} />
               </div>
             </div>
-            
-            <p className="text-center text-sm text-muted-foreground">
+
+            <p className="text-center text-sm text-repower-navy-900/60">
               Rebate applied at time of purchase. See dealer for complete details.
             </p>
           </div>
@@ -408,13 +407,13 @@ export default function Promotions() {
 
       {/* Loading state for other promotions */}
       {loading && (
-        <section className="max-w-6xl mx-auto px-4 py-12">
+        <section className="max-w-[1100px] mx-auto px-6 md:px-14 py-12">
           <div className="grid md:grid-cols-2 gap-6">
             {[1, 2].map((i) => (
-              <div key={i} className="bg-white rounded-xl border border-border p-6 animate-pulse">
-                <div className="h-6 bg-muted rounded w-3/4 mb-4" />
-                <div className="h-4 bg-muted rounded w-1/2 mb-2" />
-                <div className="h-4 bg-muted rounded w-2/3" />
+              <div key={i} className="bg-white rounded-lg border border-repower-navy-900/10 p-6 animate-pulse">
+                <div className="h-6 bg-repower-navy-900/10 rounded w-3/4 mb-4" />
+                <div className="h-4 bg-repower-navy-900/10 rounded w-1/2 mb-2" />
+                <div className="h-4 bg-repower-navy-900/10 rounded w-2/3" />
               </div>
             ))}
           </div>
@@ -425,33 +424,35 @@ export default function Promotions() {
       <TestimonialsSection />
 
       {/* Why Buy from Harris */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground mb-12">
-          Why Buy from Harris Boat Works
-        </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {whyBuyReasons.map((reason, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-xl border border-border p-6 hover:shadow-md transition-shadow"
-            >
-              {reason.useCsiLogo ? (
-                <div className="h-10 md:h-12 flex items-center mb-4">
-                  <img src={csiAwardBadge} alt="Mercury CSI Award" className="h-8 md:h-10" />
-                </div>
-              ) : reason.useMercuryLogo ? (
-                <div className="h-10 md:h-12 flex items-center mb-4">
-                  <img src={mercuryLogo} alt="Mercury Marine" className="h-6 md:h-8" />
-                </div>
-              ) : (
-                <div className="w-10 h-10 md:w-12 md:h-12 bg-stone-100 rounded-full flex items-center justify-center mb-4">
-                  {reason.icon && <reason.icon className="w-5 h-5 md:w-6 md:h-6 text-foreground" />}
-                </div>
-              )}
-              <h3 className="font-semibold text-foreground mb-2">{reason.title}</h3>
-              <p className="text-sm text-muted-foreground">{reason.description}</p>
-            </div>
-          ))}
+      <section className="bg-repower-paper py-20 md:py-24 px-6 md:px-14 border-t border-repower-navy-900/10">
+        <div className="max-w-[1100px] mx-auto">
+          <h2 className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-center text-repower-navy-900 mb-12" style={{ letterSpacing: '-0.025em' }}>
+            Why Buy from Harris Boat Works
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyBuyReasons.map((reason, index) => (
+              <div
+                key={index}
+                className="bg-white border border-repower-navy-900/10 rounded-lg p-6 transition-shadow hover:shadow-md"
+              >
+                {reason.useCsiLogo ? (
+                  <div className="h-10 md:h-12 flex items-center mb-4">
+                    <img src={csiAwardBadge} alt="Mercury CSI Award" className="h-8 md:h-10" />
+                  </div>
+                ) : reason.useMercuryLogo ? (
+                  <div className="h-10 md:h-12 flex items-center mb-4">
+                    <img src={mercuryLogo} alt="Mercury Marine" className="h-6 md:h-8" />
+                  </div>
+                ) : (
+                  <div className="h-10 md:h-12 flex items-center mb-4">
+                    {reason.icon && <reason.icon className="w-6 h-6 md:w-7 md:h-7 text-repower-mercury-red" strokeWidth={1.5} />}
+                  </div>
+                )}
+                <h3 className="font-display font-semibold text-repower-navy-900 mb-2">{reason.title}</h3>
+                <p className="font-sans text-sm text-repower-navy-900/70 leading-relaxed">{reason.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
