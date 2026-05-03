@@ -140,8 +140,8 @@ export default function QuoteSuccessPage() {
           {/* Timeline */}
           <div className="space-y-8 text-left mb-8">
             <div>
-              <h2 className="font-display font-bold text-[22px] text-repower-navy-900 mb-5 flex items-center gap-2" style={{ letterSpacing: '-0.02em' }}>
-                <ArrowRight className="h-5 w-5 text-repower-mercury-red" strokeWidth={1.75} />
+              <h2 className="font-display font-bold text-[20px] sm:text-[22px] text-repower-navy-900 mb-5 flex items-center gap-2" style={{ letterSpacing: '-0.02em' }}>
+                <ArrowRight className="h-5 w-5 text-repower-mercury-red shrink-0" strokeWidth={1.75} />
                 What Happens Next?
               </h2>
               <ol className="space-y-3">
@@ -155,9 +155,9 @@ export default function QuoteSuccessPage() {
                     <div className="flex-shrink-0 w-8 h-8 rounded-full border border-repower-navy-900/20 bg-white flex items-center justify-center font-display font-bold text-[14px] text-repower-navy-900">
                       {i + 1}
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <p className="font-display font-semibold text-[15px] text-repower-navy-900">{step.title}</p>
-                      <p className="font-sans text-[13px] text-repower-navy-900/65 mt-0.5">{step.desc}</p>
+                      <p className="font-sans text-[13px] text-repower-navy-900/65 mt-0.5 leading-relaxed">{step.desc}</p>
                     </div>
                   </li>
                 ))}
@@ -167,23 +167,23 @@ export default function QuoteSuccessPage() {
             {/* Contact Information */}
             <div className="border-t border-repower-navy-900/10 pt-6">
               <h3 className="font-display font-semibold text-[16px] text-repower-navy-900 mb-3 flex items-center gap-2">
-                <MessageSquare className="h-5 w-5 text-repower-mercury-red" strokeWidth={1.75} />
+                <MessageSquare className="h-5 w-5 text-repower-mercury-red shrink-0" strokeWidth={1.75} />
                 Questions?
               </h3>
               <p className="font-sans text-[14px] text-repower-navy-900/65 mb-3">
                 Our team is here to help:
               </p>
               <div className="flex flex-col gap-2">
-                <a href={`sms:${COMPANY_INFO.contact.sms.replace(/[^0-9]/g, '')}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors">
-                  <MessageSquare className="h-4 w-4" />
+                <a href={`sms:${COMPANY_INFO.contact.sms.replace(/[^0-9]/g, '')}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors break-all">
+                  <MessageSquare className="h-4 w-4 shrink-0" strokeWidth={1.75} />
                   Text Us: {COMPANY_INFO.contact.sms}
                 </a>
-                <a href={`tel:${COMPANY_INFO.contact.phone}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors">
-                  <Phone className="h-4 w-4" />
+                <a href={`tel:${COMPANY_INFO.contact.phone}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors break-all">
+                  <Phone className="h-4 w-4 shrink-0" strokeWidth={1.75} />
                   Call: {COMPANY_INFO.contact.phone}
                 </a>
-                <a href={`mailto:${COMPANY_INFO.contact.email}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors">
-                  <Mail className="h-4 w-4" />
+                <a href={`mailto:${COMPANY_INFO.contact.email}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors break-all">
+                  <Mail className="h-4 w-4 shrink-0" strokeWidth={1.75} />
                   {COMPANY_INFO.contact.email}
                 </a>
               </div>
