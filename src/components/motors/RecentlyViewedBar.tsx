@@ -21,23 +21,23 @@ export function RecentlyViewedBar({ items, onSelect, onClear, className }: Recen
   if (items.length === 0) return null;
 
   return (
-    <div className={cn('hidden sm:block bg-white border-b border-gray-100', className)}>
+    <div className={cn('block bg-white border-b border-gray-100', className)}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center gap-3">
-          {/* Label */}
-          <div className="flex items-center gap-1.5 text-xs text-gray-500 flex-shrink-0">
+          {/* Label — hidden on smallest viewports */}
+          <div className="hidden min-[480px]:flex items-center gap-1.5 text-xs text-gray-500 flex-shrink-0">
             <Clock size={14} />
-            <span className="hidden sm:inline">Recently Viewed</span>
+            <span>Recently Viewed</span>
           </div>
           
-          {/* Scrollable items */}
-          <div className="flex-1 overflow-x-auto scrollbar-hide">
+          {/* Scrollable items with scroll-snap on mobile */}
+          <div className="flex-1 overflow-x-auto scrollbar-hide snap-x snap-mandatory sm:snap-none">
             <div className="flex gap-2">
               {items.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => onSelect(item.id)}
-                  className="flex items-center gap-2 px-3 py-1.5 bg-gray-50 hover:bg-gray-100 rounded-full transition-colors flex-shrink-0 group"
+                  className="snap-start flex items-center gap-2 px-3 py-1.5 bg-gray-50 hover:bg-gray-100 rounded-full transition-colors flex-shrink-0 group"
                 >
                   {item.image && (
                     <img 
