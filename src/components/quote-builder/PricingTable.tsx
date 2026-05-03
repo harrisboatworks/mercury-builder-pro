@@ -114,18 +114,37 @@ export function PricingTable({
 
         {/* Warranty Promotion Banner */}
         {warrantyPromoYears != null && warrantyPromoYears > 0 && (
-          <div className="mt-2 rounded-[12px] border bg-[#F5F1EA] p-4" style={{ borderColor: 'rgba(201, 162, 74, 0.4)' }}>
-            <div className="flex items-center gap-2">
-              <span className="text-repower-gold" aria-hidden>🛡️</span>
-              <span className="font-display font-semibold text-repower-navy-900 text-[16px]">
+          <div
+            className="mt-2 flex items-center gap-3.5 rounded-lg border bg-[#F5F1EA] px-[18px] py-[14px]"
+            style={{ borderColor: 'rgba(201, 162, 74, 0.4)' }}
+          >
+            <svg
+              className="text-repower-gold flex-shrink-0"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <div className="flex flex-col gap-0.5 min-w-0">
+              <div
+                className="font-sans font-semibold text-repower-navy-900"
+                style={{ fontSize: 14, letterSpacing: '-0.005em', lineHeight: 1.3 }}
+              >
                 {(totalCoverageYears ?? 3 + warrantyPromoYears)}-Year Factory-Backed Warranty Included
-              </span>
-            </div>
-            <div className="mt-1 font-sans text-[13px] text-repower-navy-900/65">
-              3 yr standard + {warrantyPromoYears} yr bonus coverage
-            </div>
-            <div className="mt-0.5 font-sans text-[13px] text-repower-navy-900/65">
-              Dealer Promotion
+              </div>
+              <div
+                className="font-sans text-repower-navy-900/60"
+                style={{ fontSize: 12, lineHeight: 1.4 }}
+              >
+                3 yr standard + {warrantyPromoYears} yr bonus coverage · Dealer Promotion
+              </div>
             </div>
           </div>
         )}
