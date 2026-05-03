@@ -952,11 +952,9 @@ if (event.type === 'filter_motors') {
     <PageTransition>
       <MotorSelectionSEO motorCount={motors.length > 0 ? motors.length : undefined} />
       <FinancingProvider>
-        <QuoteLayout 
-          showProgress={false}
-          onSearchClick={() => setShowSearchOverlay(true)}
-          showSearchIcon={true}
-        >
+        <div className="min-h-screen bg-repower-paper">
+          <RepowerHeader />
+          <main className="pt-[88px]">
 
         <VoiceStatusBanner />
         
