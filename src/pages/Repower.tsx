@@ -159,6 +159,9 @@ export default function Repower() {
         </div>
       </section>
 
+      {/* Repower math (70% benefit / 30% cost), relocated from top */}
+      <RepowerMath />
+
       {/* Modern Technology Benefits */}
       <section className="py-24 md:py-32 px-6 md:px-14 bg-[#050E1C] text-[#F5F1EA]">
         <div className="max-w-[1400px] mx-auto">
