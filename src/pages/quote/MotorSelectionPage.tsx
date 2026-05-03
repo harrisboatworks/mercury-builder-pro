@@ -33,7 +33,7 @@ import { ComparisonDrawer } from '@/components/motors/ComparisonDrawer';
 import { SearchOverlay } from '@/components/ui/SearchOverlay';
 // ComparisonFloatingPill removed - comparison now integrated into UnifiedMobileBar
 import { Button } from '@/components/ui/button';
-import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { MotorSelectionSEO } from '@/components/seo/MotorSelectionSEO';
 import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
@@ -930,17 +930,20 @@ if (event.type === 'filter_motors') {
   if (loading) {
     return (
       <PageTransition>
-        <QuoteLayout>
-          <div className="bg-repower-paper py-12">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-14">
-              <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <MotorCardSkeleton key={i} index={i} />
-                ))}
+        <div className="min-h-screen bg-repower-paper">
+          <RepowerHeader />
+          <main className="pt-[88px]">
+            <div className="bg-repower-paper py-12">
+              <div className="max-w-[1400px] mx-auto px-6 md:px-14">
+                <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+                  {Array.from({ length: 8 }).map((_, i) => (
+                    <MotorCardSkeleton key={i} index={i} />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </QuoteLayout>
+          </main>
+        </div>
       </PageTransition>
     );
   }
@@ -949,11 +952,9 @@ if (event.type === 'filter_motors') {
     <PageTransition>
       <MotorSelectionSEO motorCount={motors.length > 0 ? motors.length : undefined} />
       <FinancingProvider>
-        <QuoteLayout 
-          showProgress={false}
-          onSearchClick={() => setShowSearchOverlay(true)}
-          showSearchIcon={true}
-        >
+        <div className="min-h-screen bg-repower-paper">
+          <RepowerHeader />
+          <main className="pt-[88px]">
 
         <VoiceStatusBanner />
         
@@ -1203,7 +1204,8 @@ if (event.type === 'filter_motors') {
           <MotorSelectionFAQ />
         </div>
           </div>
-        </QuoteLayout>
+          </main>
+        </div>
         
         {/* Floating mobile CTA — nudge browsers to tap a motor */}
         <MobileQuoteCTA onStartQuote={() => {

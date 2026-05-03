@@ -1,17 +1,39 @@
-# Remove white halo around motor images
+# Use Repower header on Motor Selection page
 
-The motor PNGs have a baked-in white background that clashes with the cream card. Fix by blending the image into the cream surface.
+Replace the legacy `QuoteLayout` (LuxuryHeader) on `/quote/motor-selection` with the same `RepowerHeader` used on Home (`/`), so the chrome matches.
 
-## Change
+## Approach
 
-**`src/components/motors/MotorCardPreview.tsx`** (line 489):
+`RepowerLayout` is hard-coded to a dark `#050E1C` background, which is wrong for the cream Motors page. So we'll **use `RepowerHeader` directly** (not `RepowerLayout`) and keep the page's existing `bg-repower-paper` sections.
 
-Add `mix-blend-multiply` to the motor `<img>` className so its white background drops out and the cream shows through:
+## Changes
 
-```tsx
-className={`max-h-full max-w-full object-contain mix-blend-multiply transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'} ${!inStock ? 'grayscale-[0.5]' : ''}`}
-```
+**`src/pages/quote/MotorSelectionPage.tsx`**
 
-This is a one-line fix. `mix-blend-multiply` is the standard CSS technique for knocking out white product-photo backgrounds against a non-white surface — black/dark motor parts stay intact, white pixels disappear into the cream.
+1. Swap the import:
+   ```tsx
+   // remove
+   import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
+   // add
+   import { RepowerHeader } from '@/components/repower/RepowerHeader';
+   ```
 
-If any image still shows a faint edge, fallback is to swap to white card body instead, but blend should handle it cleanly.
+2. Replace both `<QuoteLayout>...</QuoteLayout>` wrappers (loading state ~L933, main render ~L952) with a plain wrapper that mounts `RepowerHeader` and adds top padding to clear the fixed header (~80px):
+   ```tsx
+   <div className="min-h-screen bg-repower-paper">
+     <RepowerHeader />
+     <main className="pt-[88px]">
+       {/* existing children */}
+     </main>
+   </div>
+   ```
+
+3. The existing `onSearchClick` / `showSearchIcon` props on `QuoteLayout` are dropped — search is already accessible via the page's own search bar section. Keep `setShowSearchOverlay` wired in case other CTAs use it; otherwise it's a no-op visually.
+
+4. `VoiceStatusBanner` stays as the first child inside `<main>`.
+
+## Notes
+
+- Admin Mode banner from `QuoteLayout` is removed on this page. If needed, re-add a small inline banner above `<RepowerHeader>` gated on `state.isAdminQuote && isAdmin`.
+- Hamburger / mobile menu is already built into `RepowerHeader` via `RepowerMobileMenu`.
+- No other quote-flow pages are touched — they keep `QuoteLayout` with the progress stepper.
