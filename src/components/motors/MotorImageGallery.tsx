@@ -211,7 +211,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
       <div className="relative group cursor-pointer overflow-hidden rounded-xl" onClick={handleMainImageClick}>
         {/* Shimmer overlay while loading */}
         {!imageLoaded && (
-          <div className="absolute inset-0 rounded-xl overflow-hidden z-10" style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}>
+          <div className="absolute inset-0 rounded-xl overflow-hidden z-10" style={{ background: 'var(--gradient-image-bg)' }}>
             <div className="absolute inset-0 animate-shimmer" />
           </div>
         )}
@@ -219,7 +219,7 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
         <div 
           ref={containerRef}
           className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl flex items-center justify-center overflow-hidden`}
-          style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)', touchAction: 'pan-y' }}
+          style={{ background: 'var(--gradient-image-bg)', touchAction: 'pan-y' }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={handleTouchStart}

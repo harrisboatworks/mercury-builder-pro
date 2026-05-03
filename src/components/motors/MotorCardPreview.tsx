@@ -475,7 +475,7 @@ function MotorCardPreviewInner({
       >
         <div
           className="relative aspect-[4/3] overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}
+          style={{ background: 'var(--gradient-image-bg)' }}
         >
               {/* Shimmer loading overlay */}
               {!imageLoaded && (
