@@ -575,7 +575,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
         {/* Static placeholder */}
         {!query && !isListening && (
           <div className="absolute left-14 top-1/2 -translate-y-1/2 pointer-events-none">
-            <span className="text-[15px] font-normal text-repower-navy-900/40">
+            <span className={`text-[15px] font-normal ${isDark ? 'text-[#F5F1EA]/40' : 'text-repower-navy-900/40'}`}>
               Search motors by HP, model, or feature…
             </span>
           </div>
