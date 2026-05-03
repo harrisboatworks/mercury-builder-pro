@@ -161,50 +161,50 @@ export default function Index() {
         </section>
 
         {/* WHY REPOWER */}
-        <section className="py-16 md:py-24 bg-repower-navy-900 text-repower-cream">
+        <section className="py-10 md:py-24 bg-repower-navy-900 text-repower-cream">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center max-w-6xl mx-auto">
               <div>
-                <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-4">
+                <p className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.24em] text-repower-gold mb-2 md:mb-4">
                   Why repower
                 </p>
-                <h2 className="font-display font-bold tracking-tight text-3xl md:text-5xl text-repower-cream mb-5 leading-[1.05]" style={{ letterSpacing: '-0.02em' }}>
+                <h2 className="font-display font-bold tracking-tight text-2xl md:text-5xl text-repower-cream mb-3 md:mb-5 leading-[1.1]" style={{ letterSpacing: '-0.02em' }}>
                   Why repower beats buying a new boat
                 </h2>
-                <p className="font-sans font-light text-repower-cream/75 text-base md:text-lg mb-7 leading-relaxed">
+                <p className="font-sans font-light text-repower-cream/75 text-sm md:text-lg mb-4 md:mb-7 leading-relaxed">
                   A new Mercury costs a fraction of a new boat — and you keep the hull
                   you already know and love. Most repowers are completed in one to three
                   days at our Gores Landing shop.
                 </p>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2 md:space-y-3 mb-5 md:mb-8">
                   {[
                     'Pay only for the motor — not a whole new boat',
                     'Modern Mercury fuel economy &amp; quiet running',
                     'Bonus warranty coverage may be available during current Mercury promotions',
                     'Mercury-Certified technicians — we sell what we service',
                   ].map(line => (
-                    <li key={line} className="flex items-start gap-3 text-repower-cream/90 leading-relaxed">
-                      <CheckCircle2 className="h-5 w-5 text-repower-gold shrink-0 translate-y-[3px]" aria-hidden="true" />
+                    <li key={line} className="flex items-start gap-3 text-repower-cream/90 text-sm md:text-base leading-snug md:leading-relaxed">
+                      <CheckCircle2 className="h-4 w-4 md:h-5 md:w-5 text-repower-gold shrink-0 translate-y-[3px]" aria-hidden="true" />
                       <span className="flex-1" dangerouslySetInnerHTML={{ __html: line }} />
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2 md:gap-3">
                   <Link
                     to="/quote/motor-selection"
-                    className="inline-flex items-center gap-1.5 bg-[#C8102E] hover:bg-[#A50D26] text-repower-cream px-6 py-3 rounded uppercase tracking-wider text-xs font-semibold transition-colors"
+                    className="inline-flex items-center gap-1.5 bg-[#C8102E] hover:bg-[#A50D26] text-repower-cream px-4 md:px-6 py-2.5 md:py-3 rounded uppercase tracking-wider text-[11px] md:text-xs font-semibold transition-colors"
                   >
                     Build a Mercury outboard quote <ChevronRight className="h-4 w-4" />
                   </Link>
                   <Link
                     to="/locations/rice-lake-mercury-repower"
-                    className="inline-flex items-center gap-1.5 border border-repower-cream/30 hover:border-repower-gold hover:text-repower-gold text-repower-cream px-6 py-3 rounded uppercase tracking-wider text-xs font-semibold transition-colors"
+                    className="inline-flex items-center gap-1.5 border border-repower-cream/30 hover:border-repower-gold hover:text-repower-gold text-repower-cream px-4 md:px-6 py-2.5 md:py-3 rounded uppercase tracking-wider text-[11px] md:text-xs font-semibold transition-colors"
                   >
                     Mercury repower on Rice Lake <ChevronRight className="h-4 w-4" />
                   </Link>
                   <Link
                     to="/faq"
-                    className="inline-flex items-center gap-1.5 border border-repower-cream/30 hover:border-repower-gold hover:text-repower-gold text-repower-cream px-6 py-3 rounded uppercase tracking-wider text-xs font-semibold transition-colors"
+                    className="inline-flex items-center gap-1.5 border border-repower-cream/30 hover:border-repower-gold hover:text-repower-gold text-repower-cream px-4 md:px-6 py-2.5 md:py-3 rounded uppercase tracking-wider text-[11px] md:text-xs font-semibold transition-colors"
                   >
                     Repower FAQ <ChevronRight className="h-4 w-4" />
                   </Link>
