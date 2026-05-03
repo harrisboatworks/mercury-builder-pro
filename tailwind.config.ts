@@ -109,19 +109,23 @@ export default {
 					DEFAULT: 'hsl(var(--special-order))',
 					foreground: 'hsl(var(--special-order-foreground))'
 				},
-				// Repower landing page palette (scoped via `repower-` prefix)
+				// Repower landing page palette — sourced from CSS vars in index.css
 				'repower-navy': {
-					900: '#050E1C',
-					800: '#0A1628',
-					700: '#122039',
+					900: 'hsl(var(--repower-navy-900))',
+					800: 'hsl(var(--repower-navy-800))',
+					700: 'hsl(var(--repower-navy-700))',
 				},
 				'repower-mercury-red': {
-					DEFAULT: '#C8102E',
-					deep: '#9A0C24',
+					DEFAULT: 'hsl(var(--repower-mercury-red))',
+					deep: 'hsl(var(--repower-mercury-red-deep))',
 				},
-				'repower-gold': '#C9A24A',
-				'repower-cream': '#F5F1EA',
-				'repower-paper': '#FAF8F4',
+				'repower-gold': 'hsl(var(--repower-gold))',
+				'repower-cream': 'hsl(var(--repower-cream))',
+				'repower-paper': 'hsl(var(--repower-paper))',
+				// Semantic surface tokens — prefer these for new components
+				'surface-page': 'hsl(var(--surface-page))',
+				'surface-card': 'hsl(var(--surface-card))',
+				'surface-image': 'hsl(var(--surface-image))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
