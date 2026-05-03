@@ -97,43 +97,36 @@ function PromoBannerConditional() {
         >
           ·
         </span>
-        {/* Date — hidden if not enough room */}
-        <span
-          className="text-repower-cream/60 font-normal whitespace-nowrap truncate basis-full md:basis-auto md:min-w-0 md:flex-shrink ml-12 md:ml-0"
-          style={{ fontSize: 13 }}
-        >
-          {endLabel}
-        </span>
+        {/* Mobile row 2 / desktop inline: date + learn more */}
+        <div className="flex items-center justify-between basis-full md:basis-auto md:flex-1 md:ml-0 ml-12 md:gap-0 gap-3 md:contents">
+          {/* Date */}
+          <span
+            className="text-repower-cream/60 font-normal whitespace-nowrap truncate md:min-w-0 md:flex-shrink"
+            style={{ fontSize: 13 }}
+          >
+            {endLabel}
+          </span>
 
-        {/* Action group — anchored right */}
-        <div className="hidden md:flex items-center ml-auto shrink-0 gap-6 pl-6">
-          <a
-            href="/promotions"
-            className="group inline-flex items-center gap-1.5 text-repower-gold hover:text-repower-gold/80 transition-colors font-semibold uppercase whitespace-nowrap"
-            style={{ fontSize: 13, letterSpacing: '0.12em' }}
-          >
-            Learn More
-            <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
-          </a>
-          <button
-            onClick={handleDismiss}
-            aria-label="Dismiss promotion"
-            className="inline-flex items-center justify-center text-repower-cream/50 hover:text-repower-cream transition-colors"
-            style={{ width: 24, height: 24 }}
-          >
-            <X className="w-4 h-4" />
-          </button>
+          {/* Action group — anchored right on desktop */}
+          <div className="flex items-center md:ml-auto shrink-0 gap-6 md:pl-6">
+            <a
+              href="/promotions"
+              className="group inline-flex items-center gap-1.5 text-repower-gold hover:text-repower-gold/80 transition-colors font-semibold uppercase whitespace-nowrap"
+              style={{ fontSize: 13, letterSpacing: '0.12em' }}
+            >
+              Learn More
+              <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
+            </a>
+            <button
+              onClick={handleDismiss}
+              aria-label="Dismiss promotion"
+              className="hidden md:inline-flex items-center justify-center text-repower-cream/50 hover:text-repower-cream transition-colors"
+              style={{ width: 24, height: 24 }}
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
         </div>
-
-        {/* Mobile-only Learn More */}
-        <a
-          href="/promotions"
-          className="md:hidden group inline-flex items-center gap-1.5 text-repower-gold hover:text-repower-gold/80 transition-colors font-semibold uppercase whitespace-nowrap ml-12"
-          style={{ fontSize: 13, letterSpacing: '0.12em' }}
-        >
-          Learn More
-          <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
-        </a>
       </div>
 
       {/* Close X — mobile only top-right */}
