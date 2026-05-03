@@ -118,37 +118,37 @@ export default function Index() {
         <TrustStrip />
         <RepowerMath />
         {/* HOW IT WORKS */}
-        <section className="py-24 md:py-32 px-6 md:px-14 bg-[#0A1828] text-[#F5F1EA]">
+        <section className="py-16 md:py-32 px-4 sm:px-6 md:px-14 bg-[#0A1828] text-[#F5F1EA]">
           <div className="max-w-[1400px] mx-auto">
-            <div className="text-center mb-16">
-              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+            <div className="text-center mb-10 md:mb-16">
+              <p className="font-sans font-semibold text-[10px] sm:text-xs uppercase tracking-[0.22em] sm:tracking-[0.24em] text-[#C9A24A] mb-4 md:mb-6">
                 How It Works
               </p>
               <h2
-                className="font-display font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05] mb-6"
+                className="font-display font-bold text-[clamp(28px,8vw,64px)] tracking-tight leading-[1.1] md:leading-[1.05] mb-4 md:mb-6"
                 style={{ letterSpacing: '-0.03em' }}
               >
                 Three steps. <em className="not-italic italic text-[#C8102E]">Real prices</em> the whole way through.
               </h2>
-              <p className="font-sans font-light text-lg md:text-xl text-[#F5F1EA]/70 max-w-2xl mx-auto leading-relaxed">
+              <p className="font-sans font-light text-base md:text-xl text-[#F5F1EA]/70 max-w-2xl mx-auto leading-relaxed px-2">
                 No "call for quote." No surprises. Build it, lock it, pick it up.
               </p>
             </div>
 
-            <ol className="grid md:grid-cols-3 gap-px bg-[#F5F1EA]/10 mb-12">
+            <ol className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-px md:bg-[#F5F1EA]/10 mb-10 md:mb-12">
               {HOW_IT_WORKS.map((step, i) => {
                 const Icon = step.icon;
                 return (
                   <li
                     key={step.title}
-                    className="relative bg-[#0A1828] flex flex-col group overflow-hidden transition-all duration-500 ring-1 ring-transparent hover:ring-[#C9A24A]/40 hover:shadow-[0_0_40px_-8px_rgba(201,162,74,0.35)] hover:z-10"
+                    className="relative bg-[#0A1828] flex flex-col group overflow-hidden transition-all duration-500 ring-1 ring-[#F5F1EA]/10 md:ring-transparent rounded md:rounded-none hover:ring-[#C9A24A]/40 hover:shadow-[0_0_40px_-8px_rgba(201,162,74,0.35)] hover:z-10"
                   >
                     {/* Gold glow accent */}
                     <span
                       aria-hidden
                       className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(ellipse_at_top,_rgba(201,162,74,0.12),_transparent_60%)]"
                     />
-                    <div className="aspect-[4/3] overflow-hidden border-b border-[#F5F1EA]/10 relative">
+                    <div className="aspect-[16/10] md:aspect-[4/3] overflow-hidden border-b border-[#F5F1EA]/10 relative">
                       <img
                         src={step.image}
                         alt={step.title}
@@ -162,19 +162,19 @@ export default function Index() {
                         className="absolute inset-0 bg-gradient-to-t from-[#0A1828]/60 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-500"
                       />
                     </div>
-                    <div className="p-8 md:p-10 flex-1 flex flex-col relative">
-                      <div className="flex items-center gap-3 mb-5">
-                        <div className="h-10 w-10 rounded-full border border-[#C9A24A]/40 bg-[#C9A24A]/10 text-[#C9A24A] flex items-center justify-center transition-all duration-500 group-hover:bg-[#C9A24A]/20 group-hover:border-[#C9A24A]/70">
+                    <div className="p-6 sm:p-8 md:p-10 flex-1 flex flex-col relative">
+                      <div className="flex items-center gap-3 mb-4 md:mb-5">
+                        <div className="h-9 w-9 md:h-10 md:w-10 rounded-full border border-[#C9A24A]/40 bg-[#C9A24A]/10 text-[#C9A24A] flex items-center justify-center transition-all duration-500 group-hover:bg-[#C9A24A]/20 group-hover:border-[#C9A24A]/70">
                           <Icon className="h-4 w-4" />
                         </div>
-                        <span className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A]">
+                        <span className="font-sans font-semibold text-[11px] md:text-xs uppercase tracking-[0.22em] md:tracking-[0.24em] text-[#C9A24A]">
                           Step {i + 1}
                         </span>
                       </div>
-                      <h3 className="font-display font-semibold text-xl md:text-2xl text-[#F5F1EA] mb-3 tracking-tight transition-colors duration-500 group-hover:text-white">
+                      <h3 className="font-display font-semibold text-lg sm:text-xl md:text-2xl text-[#F5F1EA] mb-2 md:mb-3 tracking-tight transition-colors duration-500 group-hover:text-white">
                         {step.title}
                       </h3>
-                      <p className="font-sans font-light text-sm md:text-base text-[#F5F1EA]/65 leading-relaxed">
+                      <p className="font-sans font-light text-sm md:text-base text-[#F5F1EA]/70 md:text-[#F5F1EA]/65 leading-relaxed">
                         {step.body}
                       </p>
                     </div>
@@ -186,7 +186,7 @@ export default function Index() {
             <div className="text-center">
               <button
                 onClick={goBuild}
-                className="inline-flex items-center justify-center gap-2 bg-[#C8102E] hover:bg-[#A50D26] text-[#F5F1EA] px-10 py-4 rounded uppercase tracking-wider text-sm font-semibold transition-all duration-300"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#C8102E] hover:bg-[#A50D26] text-[#F5F1EA] px-8 sm:px-10 py-4 rounded uppercase tracking-wider text-sm font-semibold transition-all duration-300"
               >
                 Start Building <ArrowRight className="h-4 w-4" />
               </button>
