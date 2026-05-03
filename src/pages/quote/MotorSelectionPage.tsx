@@ -99,9 +99,9 @@ function PromoBannerConditional() {
         </span>
         {/* Mobile row 2 / desktop inline: date + learn more */}
         <div className="flex items-center basis-full md:basis-auto md:flex-1 md:contents">
-          {/* Date */}
+          {/* Date — hidden on the smallest viewports to keep the strip to one line */}
           <span
-            className="text-repower-cream/60 font-normal whitespace-nowrap truncate md:min-w-0 md:flex-shrink ml-12 md:ml-0"
+            className="hidden min-[480px]:inline text-repower-cream/60 font-normal whitespace-nowrap truncate md:min-w-0 md:flex-shrink ml-12 md:ml-0"
             style={{ fontSize: 13 }}
           >
             {endLabel}
