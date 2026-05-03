@@ -41,9 +41,9 @@ export function RepowerHeader() {
             : 'bg-gradient-to-b from-[#050E1C]/65 to-transparent py-5'
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 md:px-14 flex items-center justify-between gap-3 md:gap-6">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-14 flex flex-row flex-nowrap items-center justify-between gap-3 md:gap-6">
           {/* Logo lockup — always horizontal */}
-          <Link to="/" className="flex flex-row flex-nowrap items-center gap-2 sm:gap-3 md:gap-4 shrink min-w-0">
+          <Link to="/" className="flex flex-row flex-nowrap items-center justify-start gap-2 sm:gap-3 md:gap-4 min-w-0 max-w-[calc(100%-3rem)] overflow-hidden">
             <img src={harrisLogo} alt="Harris Boat Works" className="h-7 md:h-9 w-auto shrink-0" />
             <div className="hidden sm:block w-px h-7 bg-[#F5F1EA]/20 shrink-0" />
             <img
@@ -84,7 +84,7 @@ export function RepowerHeader() {
           </nav>
 
           {/* Right cluster */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="ml-auto flex items-center justify-end gap-3 shrink-0">
             <Link
               to="/quote/motor-selection"
               className="hidden sm:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-5 py-2.5 rounded uppercase tracking-wider text-xs font-semibold transition-colors duration-200"
