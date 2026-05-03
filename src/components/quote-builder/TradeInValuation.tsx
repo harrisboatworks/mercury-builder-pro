@@ -426,7 +426,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   >
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.brand 
-                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red' 
+                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
                     }`}>
                       <SelectValue placeholder="Select brand" />
@@ -484,7 +484,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   >
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.year 
-                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red' 
+                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
                     }`}>
                       <SelectValue placeholder="Select year" />
@@ -515,7 +515,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     maxLength={120}
                     className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.horsepower 
-                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red' 
+                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red focus-visible:ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
                     }`}
                   />
