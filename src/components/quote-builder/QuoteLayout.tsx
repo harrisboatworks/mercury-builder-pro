@@ -7,7 +7,7 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { HamburgerMenu } from '@/components/ui/hamburger-menu';
 import { useState } from 'react';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { QuoteProgressStepper } from './QuoteProgressStepper';
 import { useQuoteActivityTracker } from '@/hooks/useQuoteActivityTracker';
 import { useQuote } from '@/contexts/QuoteContext';
