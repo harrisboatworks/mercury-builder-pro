@@ -6,8 +6,11 @@ import {
 } from 'lucide-react';
 
 import { HomepageSEO } from '@/components/seo/HomepageSEO';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
+import { RepowerLayout } from '@/components/repower/RepowerLayout';
+import { HeroRepower } from '@/components/repower/HeroRepower';
+import { TrustStrip } from '@/components/repower/TrustStrip';
+import { RepowerMath } from '@/components/repower/RepowerMath';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
