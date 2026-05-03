@@ -124,7 +124,7 @@ export function QuoteRevealCinematic({
   const priceCompleteRef = useRef(false);
   const isMobile = useIsMobile();
   
-  // Keep refs in sync — prevents dependency changes from restarting effects
+  // Keep refs in sync, prevents dependency changes from restarting effects
   onCompleteRef.current = onComplete;
   const playRevealRef = useRef(playReveal);
   playRevealRef.current = playReveal;
@@ -282,11 +282,11 @@ export function QuoteRevealCinematic({
       timeouts.forEach(clearTimeout);
       if (priceIntervalRef.current) clearInterval(priceIntervalRef.current);
     };
-  // Sound functions stored in refs — only isVisible triggers
+  // Sound functions stored in refs, only isVisible triggers
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isVisible]);
 
-  // Smoother price counting animation — runs exactly once
+  // Smoother price counting animation, runs exactly once
   useEffect(() => {
     if (stage !== 'price' && stage !== 'savings' && stage !== 'details' && stage !== 'complete') return;
     // Ref-based guards: prevent restart even if React re-renders or stage changes

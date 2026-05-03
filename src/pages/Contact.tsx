@@ -433,7 +433,7 @@ export default function Contact() {
                   <div>
                     <p className="font-medium text-primary">Prefer to talk?</p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Give us a call at {COMPANY_INFO.contact.phone} — we're happy to help with questions or quotes.
+                      Give us a call at {COMPANY_INFO.contact.phone}, we're happy to help with questions or quotes.
                     </p>
                   </div>
                 </div>

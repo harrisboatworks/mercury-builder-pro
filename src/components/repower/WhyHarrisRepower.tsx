@@ -1,7 +1,7 @@
 import { Award, Calendar, BadgeCheck, Wrench } from 'lucide-react';
 
 const pillars = [
-  { icon: Award, n: 'CSI', t: 'Award Winner', d: "Mercury's highest honor for customer satisfaction — earned year after year." },
+  { icon: Award, n: 'CSI', t: 'Award Winner', d: "Mercury's highest honor for customer satisfaction, earned year after year." },
   { icon: Calendar, n: '1947', t: 'Family Owned', d: '78 years on the same shoreline. Three generations of marine expertise.' },
   { icon: BadgeCheck, n: '1965', t: 'Mercury Dealer', d: '60 years as an authorized Mercury dealer. Mercury-only since day one.' },
   { icon: Wrench, n: 'Certified', t: 'Repower Centre', d: "Mercury's top-tier repower certification. Specialised tooling, training, and parts." },

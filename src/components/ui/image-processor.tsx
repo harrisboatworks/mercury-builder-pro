@@ -1,4 +1,4 @@
-// DEV-ONLY component – shows a UI for background removal (uses heavy @huggingface/transformers).
+// DEV-ONLY component, shows a UI for background removal (uses heavy @huggingface/transformers).
 import { useState } from 'react';
 import { Button } from './button';
 import { Loader2, Download } from 'lucide-react';

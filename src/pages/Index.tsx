@@ -54,7 +54,7 @@ const TESTIMONIALS = [
   {
     name: 'Mike R.',
     location: 'Peterborough, ON',
-    quote: 'Quoted my repower online in 5 minutes. The price I saw was the price I paid — exactly. Repower was done in two days.',
+    quote: 'Quoted my repower online in 5 minutes. The price I saw was the price I paid, exactly. Repower was done in two days.',
   },
   {
     name: 'Sandra L.',
@@ -106,7 +106,7 @@ export default function Index() {
             <div className="flex items-center gap-2 text-foreground">
               <Clock className="h-4 w-4 text-primary" />
               <span>
-                Resume your quote — <span className="font-medium">{completionPercent}% complete</span>
+                Resume your quote, <span className="font-medium">{completionPercent}% complete</span>
               </span>
             </div>
             <Button size="sm" variant="default" onClick={goBuild} className="gap-1.5">
@@ -133,7 +133,7 @@ export default function Index() {
                 />
               </div>
               <figcaption className="mt-3 text-xs italic text-repower-navy-900/60 text-center md:text-left">
-                Jim Harris, Gores Landing — c.1965
+                Jim Harris, Gores Landing, c.1965
               </figcaption>
             </figure>
             <div>
@@ -148,7 +148,7 @@ export default function Index() {
               </h2>
               <p className="font-sans font-light text-base md:text-lg text-repower-navy-900/75 leading-relaxed mb-6">
                 Jim Harris started rigging Mercurys in Gores Landing in the mid-1960s.
-                We've been a Mercury dealer ever since — same family, same lake, same
+                We've been a Mercury dealer ever since, same family, same lake, same
                 handshake. The motors got faster. The promise didn't.
               </p>
               <RepowerCta to="/about" variant="outline" size="md">

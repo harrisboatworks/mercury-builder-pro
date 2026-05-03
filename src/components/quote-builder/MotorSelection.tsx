@@ -918,7 +918,7 @@ export const MotorSelection = ({
     setCelebrationParticles(particles);
     toast({
       title: pick(canadianEncouragement.motorSelected),
-      description: `${motor.model} selected — let's continue, eh!`,
+      description: `${motor.model} selected, let's continue, eh!`,
       duration: 2200
     });
 
@@ -1590,7 +1590,7 @@ export const MotorSelection = ({
           </Card>;
         })}
         </div>}
-                                <p>Mercury’s Repower Rebate Program — trade in or repower for potential savings. See details.</p>
+                                <p>Mercury’s Repower Rebate Program, trade in or repower for potential savings. See details.</p>
 
 
         {selectedMotor && !showStickyBar && (selectedMotor as any).stockStatus !== 'Sold' && <div className="flex justify-center pt-8 animate-in slide-in-from-bottom-4 duration-500">
@@ -1925,7 +1925,7 @@ export const MotorSelection = ({
                     <strong>Tiller Handle:</strong> Perfect if you sit at the back of the boat. Great for fishing where precise control matters.
                   </div>}
                 {!quickViewMotor.model.includes('E') && quickViewMotor.model.includes('M') && <div className="mt-3 p-3 bg-secondary text-secondary-foreground rounded text-sm">
-                    <strong>Manual Start:</strong> No battery needed — ideal for occasional use or as a backup motor. Very reliable.
+                    <strong>Manual Start:</strong> No battery needed, ideal for occasional use or as a backup motor. Very reliable.
                   </div>}
               </div>
 
@@ -2056,7 +2056,7 @@ export const MotorSelection = ({
         </DialogContent>
       </Dialog>
 
-      {/* NOTE: MobileStickyCTA removed on this page — it collided with the
+      {/* NOTE: MobileStickyCTA removed on this page, it collided with the
           global chat bubble and the contextual price bar below. Each motor
           card already exposes its own quote action, and the bottom price bar
           appears the moment a motor is selected. */}
@@ -2095,7 +2095,7 @@ export const MotorSelection = ({
         </div>
       )}
 
-      {/* Mobile spacer — only reserves space when the bottom price bar is shown */}
+      {/* Mobile spacer, only reserves space when the bottom price bar is shown */}
       {selectedMotor && <div className="mobile-cta-spacer lg:hidden" />}
 
     </div>

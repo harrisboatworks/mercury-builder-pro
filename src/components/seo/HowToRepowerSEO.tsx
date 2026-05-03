@@ -4,7 +4,7 @@ import { SITE_URL } from '@/lib/site';
 const HOWTO_FAQ = [
   {
     question: "How long does the full repower process take?",
-    answer: "From quote to keys-in-hand, most repowers take two to four weeks. The actual install is one to three days once your boat is on site. Spring (March–May) is busiest — book in fall or winter for priority scheduling."
+    answer: "From quote to keys-in-hand, most repowers take two to four weeks. The actual install is one to three days once your boat is on site. Spring (March, May) is busiest, book in fall or winter for priority scheduling."
   },
   {
     question: "Do I need to bring my boat for the consultation?",
@@ -16,11 +16,11 @@ const HOWTO_FAQ = [
   },
   {
     question: "What if my old motor is not a Mercury?",
-    answer: "We repower all brands to Mercury — Yamaha, Honda, Suzuki, Johnson, Evinrude, Tohatsu. Full controls, rigging, and gauge changeover is included so the new Mercury runs correctly. Your old motor can be traded in or disposed of through us."
+    answer: "We repower all brands to Mercury, Yamaha, Honda, Suzuki, Johnson, Evinrude, Tohatsu. Full controls, rigging, and gauge changeover is included so the new Mercury runs correctly. Your old motor can be traded in or disposed of through us."
   },
   {
     question: "How do I pay the deposit and final balance?",
-    answer: "Deposit is paid online when you build the quote — between $200 and $1,000 depending on motor HP, fully refundable on stock motors. Final balance is due at pickup. We accept e-transfer, debit, credit card, certified cheque, and dealer financing."
+    answer: "Deposit is paid online when you build the quote, between $200 and $1,000 depending on motor HP, fully refundable on stock motors. Final balance is due at pickup. We accept e-transfer, debit, credit card, certified cheque, and dealer financing."
   }
 ];
 
@@ -32,7 +32,7 @@ export function HowToRepowerSEO() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/how-to-repower-a-boat#webpage`,
         "url": `${SITE_URL}/how-to-repower-a-boat`,
-        "name": "How to Repower a Boat — 7-Step Mercury Repower Process | Harris Boat Works",
+        "name": "How to Repower a Boat, 7-Step Mercury Repower Process | Harris Boat Works",
         "description": "Step-by-step guide to repowering a boat with a new Mercury outboard: quote, sizing, deposit, scheduling, install, lake-test, and pickup. Mercury Marine Platinum Dealer since 1965 on Rice Lake, Ontario.",
         "isPartOf": { "@id": "https://mercuryrepower.ca/#website" },
         "about": { "@id": "https://mercuryrepower.ca/#organization" },
@@ -52,7 +52,7 @@ export function HowToRepowerSEO() {
         "@type": "HowTo",
         "@id": `${SITE_URL}/how-to-repower-a-boat#howto`,
         "name": "How to Repower a Boat with a New Mercury Outboard",
-        "description": "The seven-step Harris Boat Works Mercury repower process — from online quote to lake-tested pickup at Gores Landing on Rice Lake.",
+        "description": "The seven-step Harris Boat Works Mercury repower process, from online quote to lake-tested pickup at Gores Landing on Rice Lake.",
         "totalTime": "P21D",
         "estimatedCost": {
           "@type": "MonetaryAmount",
@@ -73,7 +73,7 @@ export function HowToRepowerSEO() {
             "@type": "HowToStep",
             "position": 1,
             "name": "Build Your Quote Online",
-            "text": "Use the configurator at mercuryrepower.ca to choose your Mercury motor (FourStroke, Pro XS, SeaPro, or ProKicker), shaft length, and controls. You'll see live CAD pricing, financing estimates, and any active promotions instantly — no forms, no waiting.",
+            "text": "Use the configurator at mercuryrepower.ca to choose your Mercury motor (FourStroke, Pro XS, SeaPro, or ProKicker), shaft length, and controls. You'll see live CAD pricing, financing estimates, and any active promotions instantly, no forms, no waiting.",
             "url": `${SITE_URL}/quote/motor-selection`
           },
           {
@@ -98,7 +98,7 @@ export function HowToRepowerSEO() {
             "@type": "HowToStep",
             "position": 5,
             "name": "Professional Install & Rigging",
-            "text": "Our Mercury-certified technicians remove your old motor, install the new Mercury, and replace throttle, shift, steering, fuel lines, and gauges as needed. Full rigging is included in every repower package — no surprise add-ons."
+            "text": "Our Mercury-certified technicians remove your old motor, install the new Mercury, and replace throttle, shift, steering, fuel lines, and gauges as needed. Full rigging is included in every repower package, no surprise add-ons."
           },
           {
             "@type": "HowToStep",
@@ -110,7 +110,7 @@ export function HowToRepowerSEO() {
             "@type": "HowToStep",
             "position": 7,
             "name": "Pickup & Walk-Through",
-            "text": "Pickup is by appointment at Gores Landing — about 20–30 minutes. Bring photo ID and your purchase order. We register the warranty, walk you through controls and break-in, and you're on the water. Pickup only — no shipping."
+            "text": "Pickup is by appointment at Gores Landing, about 20–30 minutes. Bring photo ID and your purchase order. We register the warranty, walk you through controls and break-in, and you're on the water. Pickup only, no shipping."
           }
         ]
       },
@@ -128,7 +128,7 @@ export function HowToRepowerSEO() {
 
   return (
     <Helmet>
-      <title>How to Repower a Boat — 7-Step Mercury Repower Process | Harris Boat Works</title>
+      <title>How to Repower a Boat, 7-Step Mercury Repower Process | Harris Boat Works</title>
       <meta
         name="description"
         content="Complete 7-step guide to repowering your boat with a new Mercury outboard. Quote online, confirm fit, deposit, install, lake-test, pickup. Mercury Platinum Dealer on Rice Lake since 1965."
@@ -139,13 +139,13 @@ export function HowToRepowerSEO() {
       />
       <link rel="canonical" href={`${SITE_URL}/how-to-repower-a-boat`} />
 
-      <meta property="og:title" content="How to Repower a Boat — 7-Step Mercury Process" />
+      <meta property="og:title" content="How to Repower a Boat, 7-Step Mercury Process" />
       <meta property="og:description" content="Quote, fit, deposit, install, lake-test, pickup. The complete Mercury repower process at Harris Boat Works." />
       <meta property="og:url" content={`${SITE_URL}/how-to-repower-a-boat`} />
       <meta property="og:type" content="article" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="How to Repower a Boat — 7 Steps" />
+      <meta name="twitter:title" content="How to Repower a Boat, 7 Steps" />
       <meta name="twitter:description" content="Mercury Platinum Dealer's full repower process, start to finish." />
 
       <script type="application/ld+json">

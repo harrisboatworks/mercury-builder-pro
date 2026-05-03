@@ -55,7 +55,7 @@ export function PurchaseDetailsStep() {
   const promoValue = state.purchaseDetails?.promoValue;
 
   // Validate promo against currently-active promotions (prevents stale/expired promos
-  // from saved or restored quotes from showing — e.g., March factory rebate after expiry).
+  // from saved or restored quotes from showing, e.g., March factory rebate after expiry).
   // forceRefresh ensures we always pull the latest promotions on financing-app entry,
   // bypassing the in-memory 5-minute cache.
   const { getChooseOneOptions, loading: promosLoading } = useActivePromotions({ forceRefresh: true });
@@ -161,7 +161,7 @@ export function PurchaseDetailsStep() {
         <p className="text-muted-foreground font-light">First, confirm your motor selection</p>
       </div>
 
-      {/* Expired Promo Notice — shown when a stale promotion was removed from a saved/restored quote */}
+      {/* Expired Promo Notice, shown when a stale promotion was removed from a saved/restored quote */}
       {expiredPromoNotice && !noticeDismissed && (
         <div
           role="status"

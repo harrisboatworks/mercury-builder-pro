@@ -231,7 +231,7 @@ export const MotorFilters = ({
               >
                 {liveMatchCount > 0
                   ? `${liveMatchCount} ${liveMatchCount === 1 ? 'motor matches' : 'motors match'} these filters`
-                  : 'No motors match — try widening your filters'}
+                  : 'No motors match, try widening your filters'}
               </div>
 
               {/* Clear Filters */}

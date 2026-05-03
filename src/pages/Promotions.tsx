@@ -29,7 +29,7 @@ const whyBuyReasons = [
     icon: null,
     useCsiLogo: true,
     title: "CSI Award-Winning Service",
-    description: "Mercury's highest honor for customer satisfaction — earned, not given"
+    description: "Mercury's highest honor for customer satisfaction, earned, not given"
   },
   {
     icon: Calendar,
@@ -108,7 +108,7 @@ export default function Promotions() {
     }
   };
 
-  // Find the main promotion — prefer "choose one" type, fall back to first active
+  // Find the main promotion, prefer "choose one" type, fall back to first active
   const mainPromotion = promotions.find(p => p.promo_options?.type === 'choose_one') || promotions[0] || null;
   const chooseOneOptions = mainPromotion?.promo_options?.type === 'choose_one' ? mainPromotion.promo_options.options : [];
 
@@ -231,7 +231,7 @@ export default function Promotions() {
                       
                       <div className="text-sm">
                         <span className="font-medium text-foreground">{testimonial.name}</span>
-                        <span className="text-muted-foreground"> — {testimonial.location}</span>
+                        <span className="text-muted-foreground">, {testimonial.location}</span>
                       </div>
                       
                       <p className="text-xs text-muted-foreground mt-1 mb-3">
@@ -287,7 +287,7 @@ export default function Promotions() {
   const promotionFaqs = mainPromotion?.promo_options?.type === 'choose_one' ? [
     { 
       question: "What is the Harris Boat Works 7-Year Warranty + Choose One promotion?", 
-      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage — that's 3 years standard plus 4 bonus years. Plus, you choose one additional bonus: 6 months no payments, special financing rates, OR a factory rebate based on your motor's horsepower." 
+      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage, that's 3 years standard plus 4 bonus years. Plus, you choose one additional bonus: 6 months no payments, special financing rates, OR a factory rebate based on your motor's horsepower." 
     },
     { 
       question: "Does this apply to repower installations?", 
@@ -296,11 +296,11 @@ export default function Promotions() {
   ] : [
     { 
       question: "What is the 7-Year Warranty promotion?", 
-      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage — that's 3 years standard plus 4 bonus years. No third-party insurance, just straight Mercury protection." 
+      answer: "When you buy any new Mercury outboard from Harris Boat Works, you get 7 full years of factory-backed warranty coverage, that's 3 years standard plus 4 bonus years. No third-party insurance, just straight Mercury protection." 
     },
     { 
       question: "Which motors are eligible?", 
-      answer: "Every new Mercury outboard we sell qualifies — from a 2.5hp portable all the way up to a 300hp Verado. If it's new and it's Mercury, you're covered for 7 years." 
+      answer: "Every new Mercury outboard we sell qualifies, from a 2.5hp portable all the way up to a 300hp Verado. If it's new and it's Mercury, you're covered for 7 years." 
     },
     { 
       question: "Is this a third-party warranty?", 
@@ -327,7 +327,7 @@ export default function Promotions() {
       <PromotionsPageSEO promotions={promotions} />
       <LuxuryHeader />
       
-      {/* Hero Section — only when promos are active */}
+      {/* Hero Section, only when promos are active */}
       {hasActivePromos && <PromotionHero endDate={mainPromotion?.end_date} bonusTitle={mainPromotion?.bonus_title} bonusDescription={mainPromotion?.bonus_description} />}
 
       {/* No Active Promotions State */}
@@ -459,7 +459,7 @@ export default function Promotions() {
         </div>
       </section>
 
-      {/* FAQ Section — only when promos are active */}
+      {/* FAQ Section, only when promos are active */}
       {hasActivePromos && (
         <section className="max-w-3xl mx-auto px-4 py-16">
           <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground mb-4">

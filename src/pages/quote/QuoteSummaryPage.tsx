@@ -83,7 +83,7 @@ export default function QuoteSummaryPage() {
   const [completeWarrantyCost, setCompleteWarrantyCost] = useState<number>(0);
   const [premiumWarrantyCost, setPremiumWarrantyCost] = useState<number>(0);
   const [warrantyCostsLoaded, setWarrantyCostsLoaded] = useState(false);
-  const isMounted = true; // Render immediately — no artificial delay
+  const isMounted = true; // Render immediately, no artificial delay
   const [showSaveDialog, setShowSaveDialog] = useState(false);
   const [showAuthSaveDialog, setShowAuthSaveDialog] = useState(false);
   const [showPhoneCapture, setShowPhoneCapture] = useState(false);
@@ -92,7 +92,7 @@ export default function QuoteSummaryPage() {
   // Auto-save quote when returning from Google OAuth
   useAutoSaveQuoteOnAuth();
 
-  // Silent soft-lead save — auto-persist quote snapshot for anonymous visitors
+  // Silent soft-lead save, auto-persist quote snapshot for anonymous visitors
   const softLeadSavedRef = useRef(false);
   useEffect(() => {
     if (softLeadSavedRef.current || state.isLoading || !state.motor) return;
@@ -138,7 +138,7 @@ export default function QuoteSummaryPage() {
             } as any);
         }
       } catch {
-        // Silently fail — analytics should never break the app
+        // Silently fail, analytics should never break the app
       }
     })();
   }, [state.isLoading, state.motor]); // eslint-disable-line react-hooks/exhaustive-deps
@@ -208,7 +208,7 @@ export default function QuoteSummaryPage() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // isMounted gate removed — content renders immediately from context
+  // isMounted gate removed, content renders immediately from context
 
   // Set document title
   useEffect(() => {
@@ -325,7 +325,7 @@ export default function QuoteSummaryPage() {
     : 0;
   const warrantyPrice = state.warrantyConfig?.warrantyPrice || 0;
   
-  // Calculate pricing — use frozen snapshot if available (shared/QR links),
+  // Calculate pricing, use frozen snapshot if available (shared/QR links),
   // otherwise calculate live from current promo data
   const motorMSRP = state.frozenPricing?.motorMSRP ?? (quoteData.motor?.msrp || quoteData.motor?.basePrice || 0);
   const motorSalePrice = quoteData.motor?.salePrice || quoteData.motor?.price || motorMSRP;
@@ -447,7 +447,7 @@ export default function QuoteSummaryPage() {
 
 
   // Note: calculateRunningTotal doesn't model promotion-level discounts (discount_fixed_amount,
-  // discount_percentage) — those are only applied in the summary page via getTotalPromotionalSavings.
+  // discount_percentage), those are only applied in the summary page via getTotalPromotionalSavings.
   // We subtract basePromoSavings from the effective price to align the two systems, then compare.
   useEffect(() => {
     if (import.meta.env.DEV && motor) {
@@ -531,7 +531,7 @@ export default function QuoteSummaryPage() {
       const packageTax = displayPricing.subtotal * 0.13;
       const packageTotal = displayPricing.subtotal + packageTax;
       
-      // Generate QR code — always generate for all quotes (cash & financing)
+      // Generate QR code, always generate for all quotes (cash & financing)
       // Points to financing app with prefilled params for financing-eligible quotes,
       // or to the main site for sub-threshold quotes
       const tradeInForQr = state.tradeInInfo?.hasTradeIn ? (state.tradeInInfo.estimatedValue || 0) : 0;
@@ -1010,7 +1010,7 @@ export default function QuoteSummaryPage() {
           livePromoSavings={livePromoSavings}
           liveTotal={liveTotalForComparison}
           promoEndDate={promotions?.[0]?.end_date ?? null}
-          onKeepOriginal={() => {/* keep frozen — do nothing */}}
+          onKeepOriginal={() => {/* keep frozen, do nothing */}}
           onUpdatePricing={() => dispatch({ type: 'SET_FROZEN_PRICING', payload: undefined })}
         />
       )}

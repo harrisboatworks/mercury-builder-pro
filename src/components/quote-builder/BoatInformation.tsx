@@ -593,7 +593,7 @@ export const BoatInformation = ({
                            <img src="/lovable-uploads/1d6d06c4-3b2d-477c-ae3c-042a3ca1a076.png" alt="Skip boat type selection" className="h-20 w-full h-auto object-contain" loading="lazy" />
                       </div>
                       <h3 className="font-light tracking-wide heading-protected">Not Sure?</h3>
-                      <p className="text-sm font-light text-protected">Skip — we'll confirm later</p>
+                      <p className="text-sm font-light text-protected">Skip, we'll confirm later</p>
                      </button>
                    </div>
 

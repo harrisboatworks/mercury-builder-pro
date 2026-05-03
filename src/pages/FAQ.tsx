@@ -93,7 +93,7 @@ export default function FAQ() {
               className="text-lg text-muted-foreground font-light"
             >
               Repowering means replacing your boat's existing outboard motor with a new one.
-              At Harris Boat Works, we specialize in Mercury outboard repowers — from 2.5hp kickers
+              At Harris Boat Works, we specialize in Mercury outboard repowers, from 2.5hp kickers
               to 300hp performance engines. We handle the full process: motor selection, rigging,
               controls, gauges, and installation.
             </p>
@@ -196,7 +196,7 @@ export default function FAQ() {
               Ready to Get a <span className="font-medium">Quote</span>?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Build your Mercury repower quote online — live pricing, sale prices, and monthly payment
+              Build your Mercury repower quote online, live pricing, sale prices, and monthly payment
               estimates on every motor from 2.5hp to 300hp. No phone call required.
             </p>
             <div className="flex flex-wrap justify-center gap-4">

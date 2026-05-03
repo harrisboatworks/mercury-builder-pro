@@ -64,7 +64,7 @@ export function FinanceCalculatorSEO() {
             "name": "What are the current financing rates for Mercury outboards?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Standard rates start at 7.99% APR for purchases $10,000 and up, and 8.99% APR for purchases under $10,000. Promotional rates may be available — check the calculator for current offers."
+              "text": "Standard rates start at 7.99% APR for purchases $10,000 and up, and 8.99% APR for purchases under $10,000. Promotional rates may be available, check the calculator for current offers."
             }
           },
           {

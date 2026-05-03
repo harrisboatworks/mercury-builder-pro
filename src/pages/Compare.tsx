@@ -639,7 +639,7 @@ export default function Compare() {
                           {decoded.slice(0, 6).map((item, idx) => (
                             <li key={idx} className="text-xs">
                               <span className="font-semibold text-primary">{item.code}</span>
-                              <span className="text-muted-foreground"> — {item.meaning}</span>
+                              <span className="text-muted-foreground">, {item.meaning}</span>
                             </li>
                           ))}
                           {decoded.length === 0 && (

@@ -13,14 +13,14 @@ import {
  * online in Ontario?" and reinforces Ontario / CAD / pickup-only
  * positioning for AI agents and search crawlers.
  *
- * Emits matching FAQPage JSON-LD via Helmet — separate from
+ * Emits matching FAQPage JSON-LD via Helmet, separate from
  * MotorSelectionSEO so this content is colocated with the visible Q&A.
  */
 const FAQS = [
   {
     question: 'Can I build a Mercury outboard quote online in Ontario?',
     answer:
-      'Yes. mercuryrepower.ca is the online Mercury outboard quote builder for Ontario, run by Harris Boat Works — Mercury Marine Platinum Dealer since 1965, family-owned in Gores Landing on Rice Lake since 1947. Build a complete itemized quote in CAD — motor, controls, propeller, install, financing, and trade-in credit — in about three minutes. The price you see is the price you pay. No phone call required.',
+      'Yes. mercuryrepower.ca is the online Mercury outboard quote builder for Ontario, run by Harris Boat Works, Mercury Marine Platinum Dealer since 1965, family-owned in Gores Landing on Rice Lake since 1947. Build a complete itemized quote in CAD, motor, controls, propeller, install, financing, and trade-in credit, in about three minutes. The price you see is the price you pay. No phone call required.',
   },
   {
     question: 'Is the pricing in CAD?',
@@ -30,7 +30,7 @@ const FAQS = [
   {
     question: 'Do you ship Mercury outboards anywhere in Ontario?',
     answer:
-      'No. Harris Boat Works is pickup-only at our Gores Landing location on Rice Lake (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0). All Mercury motors are picked up in person with photo ID — we do not ship outboards and we do not deliver. It is a strict industry-wide fraud-prevention policy.',
+      'No. Harris Boat Works is pickup-only at our Gores Landing location on Rice Lake (5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0). All Mercury motors are picked up in person with photo ID, we do not ship outboards and we do not deliver. It is a strict industry-wide fraud-prevention policy.',
   },
   {
     question: 'Where do Ontario customers drive from?',
@@ -40,7 +40,7 @@ const FAQS = [
   {
     question: 'How do I lock in a Mercury quote price?',
     answer:
-      'Reserve your motor with a refundable deposit on the summary page — $200 for motors under 75 HP, $500 for 75–199 HP, $1,000 for 200 HP and up. Deposits are fully refundable within 7 days, and the balance is paid at pickup at Gores Landing.',
+      'Reserve your motor with a refundable deposit on the summary page, $200 for motors under 75 HP, $500 for 75–199 HP, $1,000 for 200 HP and up. Deposits are fully refundable within 7 days, and the balance is paid at pickup at Gores Landing.',
   },
 ];
 
@@ -70,7 +70,7 @@ export function MotorSelectionFAQ() {
           id="motor-selection-faq-heading"
           className="text-2xl md:text-3xl font-semibold text-foreground mb-2"
         >
-          Mercury outboard quote builder — FAQ
+          Mercury outboard quote builder, FAQ
         </h2>
         <p className="text-sm text-muted-foreground">
           Ontario / CAD / pickup-only at Gores Landing on Rice Lake.{' '}

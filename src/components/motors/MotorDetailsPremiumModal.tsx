@@ -422,7 +422,7 @@ export default function MotorDetailsPremiumModal({
                       </span>
                     </div>
                     
-                    {/* H1 — motor name */}
+                    {/* H1, motor name */}
                     <h2 className="font-display font-bold text-[32px] tracking-[-0.025em] leading-tight text-[#050E1C]">
                       {title}
                     </h2>
@@ -623,7 +623,7 @@ export default function MotorDetailsPremiumModal({
                             "{smartReview.comment}"
                           </blockquote>
                           <footer className="text-xs text-gray-500">
-                            — {smartReview.reviewer}, {smartReview.location}
+                           , {smartReview.reviewer}, {smartReview.location}
                           </footer>
                         </div>
                       </div>
@@ -967,7 +967,7 @@ export default function MotorDetailsPremiumModal({
                   {/* Trust Signals */}
                   <TrustSignals />
                   
-                  {/* ADD TO QUOTE Button — hero CTA spec */}
+                  {/* ADD TO QUOTE Button, hero CTA spec */}
                   <button
                     onClick={() => {
                       triggerHaptic('medium');

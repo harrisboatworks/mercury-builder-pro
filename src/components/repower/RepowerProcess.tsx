@@ -1,5 +1,5 @@
 const steps = [
-  { n: '01', t: 'Consultation & Quote', d: 'We assess your boat and recommend the right Mercury — sized to your hull, your water, and your weekends.' },
+  { n: '01', t: 'Consultation & Quote', d: 'We assess your boat and recommend the right Mercury, sized to your hull, your water, and your weekends.' },
   { n: '02', t: 'Scheduling', d: 'Book your installation with the shortest wait times in the region. Winter slots fill first.' },
   { n: '03', t: 'Professional Installation', d: 'Mercury-certified techs install in 1–2 days. Rigging, controls, and propeller dialled in.' },
   { n: '04', t: 'Lake Test', d: 'We test on Rice Lake and walk you through every feature before you take her home.' },

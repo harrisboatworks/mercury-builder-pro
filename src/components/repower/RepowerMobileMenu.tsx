@@ -41,7 +41,7 @@ export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
         className="pointer-events-none absolute -bottom-40 -left-32 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,_rgba(200,16,46,0.12),_transparent_70%)] blur-2xl"
       />
 
-      {/* Header — full brand lockup */}
+      {/* Header, full brand lockup */}
       <div className="relative flex items-center justify-between px-5 py-4 border-b border-[#F5F1EA]/10 bg-[#050E1C]/80 backdrop-blur-sm">
         <Link to="/" onClick={onClose} className="flex items-center gap-2.5 min-w-0">
           <img src={harrisLogo} alt="Harris Boat Works" className="h-8 w-auto shrink-0" />

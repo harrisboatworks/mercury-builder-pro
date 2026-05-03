@@ -61,7 +61,7 @@ export function BatteryOptionPrompt({
             <div className="flex-1">
               <p className="font-medium">Yes, add battery</p>
               <p className="text-sm text-muted-foreground">
-                Marine starting battery — ${batteryCost.toFixed(2)}
+                Marine starting battery, ${batteryCost.toFixed(2)}
               </p>
             </div>
           </CardContent>

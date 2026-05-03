@@ -18,7 +18,7 @@ import { DealerTrustStrip } from '@/components/trust/DealerTrustStrip';
  * On hydration this React component takes over: it resolves the slug to
  * a motor record, renders a friendly summary, and exposes a CTA that
  * sends the user to /quote/motor-selection?motor={id}. Unlike the legacy
- * MotorRedirect, it does NOT auto-redirect — that broke the prerendered
+ * MotorRedirect, it does NOT auto-redirect, that broke the prerendered
  * crawler experience and prevented users from sharing motor URLs.
  */
 
@@ -207,7 +207,7 @@ export default function MotorPage() {
   const inStock = motor.in_stock || motor.availability === 'In Stock';
   const image = motorImageUrl || motor.hero_image_url || motor.image_url || '/lovable-uploads/speedboat-transparent.png';
 
-  const title = `${display} — Mercury Outboard | Harris Boat Works`;
+  const title = `${display}, Mercury Outboard | Harris Boat Works`;
   const description = `${display} (${hp} HP ${family}${shaft ? `, ${shaft} shaft` : ''}${
     modelNo ? `, model ${modelNo}` : ''
   }). ${price ? `${formatCAD(price)} CAD` : 'Contact for pricing'} · ${
@@ -280,7 +280,7 @@ export default function MotorPage() {
                 <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <DollarSign className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                    <span>Real CAD pricing — no hidden fees</span>
+                    <span>Real CAD pricing, no hidden fees</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <MapPin className="h-4 w-4 text-primary mt-0.5 shrink-0" />
@@ -315,14 +315,14 @@ export default function MotorPage() {
             </div>
           </div>
 
-          {/* Trust strip — verified facts only */}
+          {/* Trust strip, verified facts only */}
           <DealerTrustStrip variant="full" className="mb-8" />
 
           <section className="prose dark:prose-invert max-w-none">
             <h2>About the {display}</h2>
             <p>
               The {display} is a Mercury {family} outboard rated at {hp} HP, sold and serviced by Harris Boat Works on Rice
-              Lake, Ontario — Mercury Marine Platinum Dealer since 1965 and family-owned since 1947. All Mercury motors
+              Lake, Ontario, Mercury Marine Platinum Dealer since 1965 and family-owned since 1947. All Mercury motors
               are sold with full factory warranty, registered to you on pickup at our Gores Landing location. We do not
               ship outboards.
             </p>
@@ -333,14 +333,14 @@ export default function MotorPage() {
                 The Mercury 9.9 FourStroke is the most popular small outboard for Ontario tin boats, cottage tenders,
                 and second-motor / kicker setups on Rice Lake and the Kawarthas. Quiet, EFI-equipped, fuel-efficient,
                 and easy to lift on and off the transom. Live CAD pricing online, real Ontario stock, pickup only at
-                our Gores Landing shop on Rice Lake — Mercury dealer since 1965.
+                our Gores Landing shop on Rice Lake, Mercury dealer since 1965.
               </p>
             )}
             {hp === 60 && (display.toLowerCase().includes('command thrust') || (motor.model_display || '').toLowerCase().includes('command thrust')) && (
               <p>
                 The Mercury 60 ELPT Command Thrust FourStroke is our go-to repower for Ontario aluminum fishing boats
                 and lighter pontoons in the 16–18 ft range. The Command Thrust gearcase swings a bigger prop for more
-                hole-shot and load-carrying ability — exactly what Rice Lake, Kawartha, and Bay of Quinte boats need.
+                hole-shot and load-carrying ability, exactly what Rice Lake, Kawartha, and Bay of Quinte boats need.
                 Real CAD pricing, in stock at Harris Boat Works, pickup only at Gores Landing. Mercury Platinum Dealer
                 since 1965.
               </p>
@@ -348,15 +348,15 @@ export default function MotorPage() {
             {hp === 150 && family.toLowerCase().includes('proxs') && (
               <p>
                 The Mercury 150 Pro XS is the tournament-grade choice for Ontario bass boats and high-performance
-                fibreglass — best-in-class hole-shot, top-end, and lightweight 4-cylinder design. Sold with live CAD
-                pricing and full factory warranty by Harris Boat Works on Rice Lake — Mercury Marine Platinum Dealer
+                fibreglass, best-in-class hole-shot, top-end, and lightweight 4-cylinder design. Sold with live CAD
+                pricing and full factory warranty by Harris Boat Works on Rice Lake, Mercury Marine Platinum Dealer
                 since 1965, family-owned since 1947. Pickup only at Gores Landing, Ontario; we do not ship outboards.
               </p>
             )}
 
             <p>
-              Build a real, itemized quote in three minutes — motor, controls, propeller, install, financing, and
-              trade-in credit — with live CAD pricing. No forms, no waiting.{' '}
+              Build a real, itemized quote in three minutes, motor, controls, propeller, install, financing, and
+              trade-in credit, with live CAD pricing. No forms, no waiting.{' '}
               <Link to={`/quote/motor-selection?motor=${motor.id}`}>Start your quote →</Link>{' '}
               Local to Rice Lake?{' '}
               <Link to="/locations/rice-lake-mercury-repower">See our Rice Lake Mercury repower page →</Link>
@@ -366,7 +366,7 @@ export default function MotorPage() {
           <RelatedMotorsAndCTA motor={motor} display={display} />
         </div>
 
-        {/* NOTE: No page-local sticky bottom CTA — the global UnifiedMobileBar
+        {/* NOTE: No page-local sticky bottom CTA, the global UnifiedMobileBar
             already provides a contextual mobile bottom action across the app. */}
       </article>
     </>
@@ -447,13 +447,13 @@ function RelatedMotorsAndCTA({ motor, display }: { motor: MotorRow; display: str
       </h2>
 
       <div className="grid gap-6 md:grid-cols-3">
-        {/* Card 1 — Build a Quote (primary CTA) */}
+        {/* Card 1, Build a Quote (primary CTA) */}
         <div className="rounded-xl border-2 border-primary bg-primary/5 p-6 flex flex-col">
           <h3 className="text-lg font-semibold text-foreground mb-2">
             Build your Mercury {hp} HP quote online
           </h3>
           <p className="text-sm text-muted-foreground mb-4">
-            Live CAD pricing. Pickup-only at Gores Landing, ON. About three minutes — no phone call required.
+            Live CAD pricing. Pickup-only at Gores Landing, ON. About three minutes, no phone call required.
           </p>
           <ul className="flex flex-wrap gap-2 mb-5">
             {config.highlights.map((h) => (
@@ -472,13 +472,13 @@ function RelatedMotorsAndCTA({ motor, display }: { motor: MotorRow; display: str
           </Button>
         </div>
 
-        {/* Card 2 — Rice Lake repower context */}
+        {/* Card 2, Rice Lake repower context */}
         <div className="rounded-xl border border-border bg-card p-6 flex flex-col">
           <h3 className="text-lg font-semibold text-foreground mb-2">
             Repowering on Rice Lake?
           </h3>
           <p className="text-sm text-muted-foreground mb-4">
-            We're 90 minutes east of Toronto via the 401, 35 minutes south of Peterborough — Mercury Marine Platinum
+            We're 90 minutes east of Toronto via the 401, 35 minutes south of Peterborough, Mercury Marine Platinum
             Dealer since 1965, family-owned in Gores Landing since 1947. Pickup only.
           </p>
           <Button asChild variant="outline" className="mt-auto w-full">
@@ -488,7 +488,7 @@ function RelatedMotorsAndCTA({ motor, display }: { motor: MotorRow; display: str
           </Button>
         </div>
 
-        {/* Card 3 — Related motors */}
+        {/* Card 3, Related motors */}
         <div className="rounded-xl border border-border bg-card p-6 flex flex-col">
           <h3 className="text-lg font-semibold text-foreground mb-3">
             Related Mercury motors

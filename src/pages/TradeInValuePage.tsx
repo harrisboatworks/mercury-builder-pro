@@ -85,7 +85,7 @@ export default function TradeInValuePage() {
     } catch (e) {
       console.error('Failed to persist trade-in to localStorage:', e);
     }
-    // Clear the standalone draft — it has now been promoted into the quote flow
+    // Clear the standalone draft, it has now been promoted into the quote flow
     try {
       localStorage.removeItem(DRAFT_KEY);
     } catch {}
@@ -107,7 +107,7 @@ export default function TradeInValuePage() {
         <title>What's Your Outboard Worth? | Free Trade-In Estimator | Harris Boat Works</title>
         <meta
           name="description"
-          content="Get a free instant estimate for your outboard motor trade-in value. Mercury, Yamaha, Honda, Suzuki and more — check what your motor is worth in seconds."
+          content="Get a free instant estimate for your outboard motor trade-in value. Mercury, Yamaha, Honda, Suzuki and more, check what your motor is worth in seconds."
         />
         <link rel="canonical" href={`${SITE_URL}/trade-in-value`} />
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
@@ -132,7 +132,7 @@ export default function TradeInValuePage() {
                 What's Your Outboard Worth?
               </h1>
               <p className="text-lg text-muted-foreground font-light mt-3 max-w-xl mx-auto">
-                Find out your motor's trade-in value in seconds — no account needed. 
+                Find out your motor's trade-in value in seconds, no account needed. 
                 When you're ready, roll it right into a full quote.
               </p>
             </motion.div>

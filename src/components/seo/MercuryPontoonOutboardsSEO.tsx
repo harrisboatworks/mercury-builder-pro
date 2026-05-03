@@ -8,7 +8,7 @@ const PONTOON_FAQ = [
   },
   {
     question: "What is Mercury Command Thrust and why does it matter for pontoons?",
-    answer: "Command Thrust (CT) is a Mercury option that pairs the engine with a larger gearcase, lower gear ratio, and a bigger high-thrust prop. The result is more grunt at low RPM — better hole shot with a heavy pontoon load, more pushing power at slow speeds, and better handling in wind. For pontoons, Command Thrust is almost always the right call over the standard gearcase."
+    answer: "Command Thrust (CT) is a Mercury option that pairs the engine with a larger gearcase, lower gear ratio, and a bigger high-thrust prop. The result is more grunt at low RPM, better hole shot with a heavy pontoon load, more pushing power at slow speeds, and better handling in wind. For pontoons, Command Thrust is almost always the right call over the standard gearcase."
   },
   {
     question: "Do I need a long shaft (20 in) or extra-long shaft (25 in) for my pontoon?",
@@ -16,7 +16,7 @@ const PONTOON_FAQ = [
   },
   {
     question: "Will a Mercury Command Thrust fit my Legend, Princecraft, or Sylvan pontoon?",
-    answer: "Yes — Mercury Command Thrust 40–150 HP is a common factory option on Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington pontoons. Harris Boat Works is an authorized Legend Boats dealer, so we know those rigging packages well. For other brands, we'll confirm bolt pattern, controls, and harness compatibility when you build your quote."
+    answer: "Yes, Mercury Command Thrust 40–150 HP is a common factory option on Legend, Princecraft, Sylvan, Manitou, Sunchaser, and Bennington pontoons. Harris Boat Works is an authorized Legend Boats dealer, so we know those rigging packages well. For other brands, we'll confirm bolt pattern, controls, and harness compatibility when you build your quote."
   },
   {
     question: "How much does a pontoon repower cost in Ontario?",
@@ -32,8 +32,8 @@ export function MercuryPontoonOutboardsSEO() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/mercury-pontoon-outboards#webpage`,
         "url": `${SITE_URL}/mercury-pontoon-outboards`,
-        "name": "Mercury Outboards for Pontoon Boats — Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works",
-        "description": "Mercury Command Thrust outboards for pontoon boats — 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Platinum Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.",
+        "name": "Mercury Outboards for Pontoon Boats, Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works",
+        "description": "Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Platinum Dealer on Rice Lake serving Kawarthas, GTA, and Ontario.",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
         "about": { "@id": `${SITE_URL}/#organization` },
         "inLanguage": "en-CA",
@@ -78,10 +78,10 @@ export function MercuryPontoonOutboardsSEO() {
 
   return (
     <Helmet>
-      <title>Mercury Outboards for Pontoon Boats — Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works</title>
+      <title>Mercury Outboards for Pontoon Boats, Command Thrust, Big Tiller & High-Thrust Options | Harris Boat Works</title>
       <meta
         name="description"
-        content="Mercury Command Thrust outboards for pontoon boats — 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Platinum Dealer on Rice Lake."
+        content="Mercury Command Thrust outboards for pontoon boats, 40 to 150 HP. HP sizing, shaft length, and Legend/Princecraft pairings. Mercury Platinum Dealer on Rice Lake."
       />
       <meta
         name="keywords"
@@ -89,14 +89,14 @@ export function MercuryPontoonOutboardsSEO() {
       />
       <link rel="canonical" href={`${SITE_URL}/mercury-pontoon-outboards`} />
 
-      <meta property="og:title" content="Mercury Outboards for Pontoon Boats — Command Thrust & High-Thrust Options" />
+      <meta property="og:title" content="Mercury Outboards for Pontoon Boats, Command Thrust & High-Thrust Options" />
       <meta property="og:description" content="Mercury Command Thrust 40–150 HP for pontoon boats. Mercury Platinum Dealer on Rice Lake." />
       <meta property="og:url" content={`${SITE_URL}/mercury-pontoon-outboards`} />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Mercury Outboards for Pontoon Boats" />
-      <meta name="twitter:description" content="Command Thrust 40–150 HP for pontoons — Mercury Platinum Dealer." />
+      <meta name="twitter:description" content="Command Thrust 40–150 HP for pontoons, Mercury Platinum Dealer." />
 
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}

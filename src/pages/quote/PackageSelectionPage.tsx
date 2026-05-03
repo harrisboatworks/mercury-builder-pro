@@ -408,7 +408,7 @@ export default function PackageSelectionPage() {
                     Recommended: {recommendation.packageId === 'good' ? 'Essential' : recommendation.packageId === 'better' ? 'Complete' : 'Premium'}
                   </span>
                   <span className="text-xs text-stone-200 hidden sm:inline">
-                    — {recommendation.reason}
+                   , {recommendation.reason}
                   </span>
                   
                   {/* Inline Tooltip */}

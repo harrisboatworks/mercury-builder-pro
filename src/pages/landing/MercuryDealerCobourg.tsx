@@ -37,7 +37,7 @@ export default function MercuryDealerCobourg() {
             Mercury Dealer Near Cobourg, Ontario
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Harris Boat Works is the closest Mercury Marine Platinum Dealer to Cobourg — about 20 minutes north on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
+            Harris Boat Works is the closest Mercury Marine Platinum Dealer to Cobourg, about 20 minutes north on Rice Lake. Family-owned since 1947, Mercury dealer since 1965.
           </p>
 
           <ul className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
@@ -62,10 +62,10 @@ export default function MercuryDealerCobourg() {
         <section className="mb-12 prose prose-neutral max-w-none dark:prose-invert">
           <h2 className="text-2xl font-semibold text-foreground mb-4">Serving Cobourg & Northumberland County</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Cobourg, Port Hope, Grafton, and Brighton boaters have a Mercury Marine Platinum Dealer 20 minutes up the road. Take County Rd 18 north from Cobourg to the south shore of Rice Lake — easy back-road run with a boat trailer.
+            Cobourg, Port Hope, Grafton, and Brighton boaters have a Mercury Marine Platinum Dealer 20 minutes up the road. Take County Rd 18 north from Cobourg to the south shore of Rice Lake, easy back-road run with a boat trailer.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-4">
-            Whether you're running Cobourg Harbour on Lake Ontario or fishing Rice Lake from a tin boat, we carry the right Mercury for the job — Pro XS, FourStroke, SeaPro, ProKicker, FourStroke V8. Real CAD pricing online. Pickup only at Gores Landing.
+            Whether you're running Cobourg Harbour on Lake Ontario or fishing Rice Lake from a tin boat, we carry the right Mercury for the job, Pro XS, FourStroke, SeaPro, ProKicker, FourStroke V8. Real CAD pricing online. Pickup only at Gores Landing.
           </p>
         </section>
 
@@ -92,7 +92,7 @@ export default function MercuryDealerCobourg() {
             Ready to repower from Cobourg?
           </h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            Build a Mercury quote with real CAD pricing in 3 minutes — or call us at (905) 342-2153.
+            Build a Mercury quote with real CAD pricing in 3 minutes, or call us at (905) 342-2153.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg">

@@ -13,7 +13,7 @@ export default function FrenchLanding() {
         "@type": "WebPage",
         "@id": `${SITE_URL}/fr#webpage`,
         "url": `${SITE_URL}/fr`,
-        "name": "Bienvenue chez Harris Boat Works — Concessionnaire Mercury Platinum en Ontario",
+        "name": "Bienvenue chez Harris Boat Works, Concessionnaire Mercury Platinum en Ontario",
         "description": "Concessionnaire Mercury Marine Platinum à Gores Landing, Ontario. Prix transparents en ligne, techniciens certifiés, service en anglais avec assistance pour clients francophones.",
         "inLanguage": "fr-CA",
         "isPartOf": { "@id": `${SITE_URL}/#website` },
@@ -43,7 +43,7 @@ export default function FrenchLanding() {
             "name": "Puis-je obtenir un devis en ligne?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Oui — mercuryrepower.ca vous permet de choisir votre moteur, vos options, et de voir le prix réel en dollars canadiens, en temps réel. Pas de formulaire à remplir, pas d'appel obligatoire."
+              "text": "Oui, mercuryrepower.ca vous permet de choisir votre moteur, vos options, et de voir le prix réel en dollars canadiens, en temps réel. Pas de formulaire à remplir, pas d'appel obligatoire."
             }
           },
           {
@@ -79,12 +79,12 @@ export default function FrenchLanding() {
     <div className="min-h-screen bg-background" lang="fr">
       <Helmet>
         <title>Concessionnaire Mercury Platinum Ontario | Harris Boat Works</title>
-        <meta name="description" content="Harris Boat Works — concessionnaire Mercury Marine Platinum à Gores Landing, Ontario. Prix transparents en ligne à mercuryrepower.ca. Service pour plaisanciers francophones." />
+        <meta name="description" content="Harris Boat Works, concessionnaire Mercury Marine Platinum à Gores Landing, Ontario. Prix transparents en ligne à mercuryrepower.ca. Service pour plaisanciers francophones." />
         <link rel="canonical" href={`${SITE_URL}/fr`} />
         <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
         <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
         <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
-        <meta property="og:title" content="Bienvenue chez Harris Boat Works — Concessionnaire Mercury Platinum" />
+        <meta property="og:title" content="Bienvenue chez Harris Boat Works, Concessionnaire Mercury Platinum" />
         <meta property="og:description" content="Prix transparents en ligne pour moteurs Mercury. Concessionnaire Platinum en Ontario." />
         <meta property="og:url" content={`${SITE_URL}/fr`} />
         <meta property="og:locale" content="fr_CA" />
@@ -110,7 +110,7 @@ export default function FrenchLanding() {
         {/* Intro */}
         <section className="prose prose-lg max-w-none mb-12 text-foreground">
           <p>
-            Si vous êtes un plaisancier du Québec, de l'est de l'Ontario ou d'ailleurs au Canada francophone, vous êtes au bon endroit. Le configurateur de prix en ligne fonctionne dans toutes les langues, les demandes de service se font par formulaire, et on prend le temps qu'il faut pour communiquer clairement — par courriel, par téléphone ou par écrit.
+            Si vous êtes un plaisancier du Québec, de l'est de l'Ontario ou d'ailleurs au Canada francophone, vous êtes au bon endroit. Le configurateur de prix en ligne fonctionne dans toutes les langues, les demandes de service se font par formulaire, et on prend le temps qu'il faut pour communiquer clairement, par courriel, par téléphone ou par écrit.
           </p>
         </section>
 
@@ -122,7 +122,7 @@ export default function FrenchLanding() {
               Harris Boat Works est une marina familiale de troisième génération établie en 1947 à Gores Landing, en Ontario, sur le lac Rice. Depuis presque 80 ans, on sert des plaisanciers de partout en Ontario et au-delà.
             </p>
             <p>
-              On est concessionnaire <strong>Mercury Marine Platinum</strong> — le niveau le plus élevé du réseau Mercury. Ça veut dire : accès complet aux pièces, techniciens certifiés, garanties honorées, et une relation directe avec Mercury Marine. Quand Mercury Canada recommande un concessionnaire de confiance dans notre région, ils envoient les clients chez nous.
+              On est concessionnaire <strong>Mercury Marine Platinum</strong>, le niveau le plus élevé du réseau Mercury. Ça veut dire : accès complet aux pièces, techniciens certifiés, garanties honorées, et une relation directe avec Mercury Marine. Quand Mercury Canada recommande un concessionnaire de confiance dans notre région, ils envoient les clients chez nous.
             </p>
           </div>
         </section>
@@ -132,11 +132,11 @@ export default function FrenchLanding() {
           <h2 className="text-2xl font-light text-foreground mb-6">Nos services</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              { icon: Ship, title: "Vente et remotorisations", desc: "Gamme complète Mercury — de 2,5 HP aux séries Verado et V8 400R." },
+              { icon: Ship, title: "Vente et remotorisations", desc: "Gamme complète Mercury, de 2,5 HP aux séries Verado et V8 400R." },
               { icon: Wrench, title: "Entretien et réparations", desc: "Atelier de service complet pour moteurs Mercury et Mercruiser." },
               { icon: Warehouse, title: "Entreposage hivernal", desc: "Des centaines d'embarcations passent l'hiver avec nous chaque année." },
               { icon: Anchor, title: "Location d'embarcations", desc: "Neuf embarcations disponibles sur le lac Rice." },
-              { icon: Fuel, title: "Carburant sans éthanol", desc: "Essence sans éthanol sur place — idéal pour les moteurs hors-bord." },
+              { icon: Fuel, title: "Carburant sans éthanol", desc: "Essence sans éthanol sur place, idéal pour les moteurs hors-bord." },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="flex gap-3 p-4 rounded-lg bg-muted/30">
                 <Icon className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
@@ -158,7 +158,7 @@ export default function FrenchLanding() {
               <div>
                 <h3 className="font-medium text-foreground">Le configurateur de prix en ligne</h3>
                 <p className="text-muted-foreground text-sm">
-                  <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a> — bâtissez votre soumission Mercury en temps réel, voyez les vrais prix, choisissez votre moteur sans négocier au téléphone.
+                  <a href="https://mercuryrepower.ca" className="text-primary hover:underline">mercuryrepower.ca</a>, bâtissez votre soumission Mercury en temps réel, voyez les vrais prix, choisissez votre moteur sans négocier au téléphone.
                 </p>
               </div>
             </div>
@@ -185,7 +185,7 @@ export default function FrenchLanding() {
               <div>
                 <h3 className="font-medium text-foreground">Par téléphone</h3>
                 <p className="text-muted-foreground text-sm">
-                  905-342-2153 — on répond en anglais, mais on va parler lentement, clairement, et on va prendre le temps qu'il faut.
+                  905-342-2153, on répond en anglais, mais on va parler lentement, clairement, et on va prendre le temps qu'il faut.
                 </p>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function FrenchLanding() {
             <p><strong>Les prix sont transparents.</strong> mercuryrepower.ca montre les vrais prix, en temps réel. Vous pouvez comparer avant même de nous appeler.</p>
             <p><strong>Concessionnaire Mercury Platinum.</strong> Le niveau le plus élevé du réseau Mercury en Amérique du Nord.</p>
             <p><strong>Mercury nous recommande.</strong> Quand des clients contactent Mercury Canada dans notre région, Mercury les dirige souvent vers nous.</p>
-            <p><strong>Marina de lac.</strong> Le lac Rice et les Kawarthas — à moins de trois heures de Montréal.</p>
+            <p><strong>Marina de lac.</strong> Le lac Rice et les Kawarthas, à moins de trois heures de Montréal.</p>
           </div>
         </section>
 
@@ -209,7 +209,7 @@ export default function FrenchLanding() {
           <div className="space-y-6">
             {[
               { q: "Parlez-vous français?", a: "Notre équipe travaille principalement en anglais. On préfère être honnêtes là-dessus plutôt que de vous créer de fausses attentes. Mais on est sincèrement heureux de vous accueillir. Le configurateur en ligne à mercuryrepower.ca n'a pas de barrière linguistique, et le courriel nous permet de gérer les échanges écrits avec soin." },
-              { q: "Puis-je obtenir un devis en ligne?", a: "Oui — c'est exactement pour ça qu'on a construit mercuryrepower.ca. Vous choisissez votre moteur, vos options, et vous voyez le prix réel en dollars canadiens, en temps réel." },
+              { q: "Puis-je obtenir un devis en ligne?", a: "Oui, c'est exactement pour ça qu'on a construit mercuryrepower.ca. Vous choisissez votre moteur, vos options, et vous voyez le prix réel en dollars canadiens, en temps réel." },
               { q: "Offrez-vous la livraison au Québec?", a: "On peut en discuter. La majorité de nos clients viennent chercher leur moteur en personne, mais si la livraison est une nécessité, appelez-nous au 905-342-2153 ou écrivez-nous via hbw.wiki/service." },
               { q: "Quelles marques de moteurs vendez-vous?", a: "On est concessionnaire exclusif Mercury Marine. Gamme complète : moteurs hors-bord de 2,5 HP à 600 HP, MerCruiser, et moteurs électriques Avator." },
               { q: "Est-ce que vos prix sont en dollars canadiens?", a: "Oui, tous nos prix sont en dollars canadiens (CAD). Pas de surprise à la conversion." },
@@ -227,7 +227,7 @@ export default function FrenchLanding() {
         <section className="text-center bg-primary/5 rounded-2xl p-8 md:p-12 mb-12">
           <h2 className="text-2xl font-light text-foreground mb-3">Commencez ici</h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-            Bâtissez votre soumission Mercury en ligne — prix en temps réel, en dollars canadiens, sans obligation.
+            Bâtissez votre soumission Mercury en ligne, prix en temps réel, en dollars canadiens, sans obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
