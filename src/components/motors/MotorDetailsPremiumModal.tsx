@@ -632,24 +632,30 @@ export default function MotorDetailsPremiumModal({
                     {/* Controls Notice */}
                     {motor && (
                       requiresMercuryControls(motor) ? (
-                        <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                        <div
+                          className="p-4 rounded-lg"
+                          style={{ backgroundColor: '#F5F1EA', border: '1px solid rgba(10, 22, 40, 0.10)' }}
+                        >
                           <div className="flex items-start gap-3">
-                            <Wrench className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                            <Wrench className="w-5 h-5 flex-shrink-0 mt-0.5" style={{ color: 'rgba(5, 14, 28, 0.70)' }} />
                             <div>
-                              <h4 className="font-medium text-blue-900 text-sm">Mercury Controls Required</h4>
-                              <p className="text-sm text-blue-800 font-normal mt-1">
+                              <h4 className="font-display font-semibold text-[16px] tracking-[-0.015em] text-[#050E1C]">Mercury Controls Required</h4>
+                              <p className="text-sm font-normal mt-1 text-[#050E1C]/65">
                                 Installation requires throttle & shift controls ($800-1,500)
                               </p>
                             </div>
                           </div>
                         </div>
                       ) : (
-                        <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                        <div
+                          className="p-4 rounded-lg"
+                          style={{ backgroundColor: '#F5F1EA', border: '1px solid rgba(10, 22, 40, 0.10)' }}
+                        >
                           <div className="flex items-start gap-3">
                             <CheckCircle className="w-5 h-5 text-[#C9A24A] flex-shrink-0 mt-0.5" />
                             <div>
-                              <h4 className="font-medium text-green-900 text-sm">No Additional Controls Required</h4>
-                              <p className="text-sm text-green-800 font-normal mt-1">
+                              <h4 className="font-display font-semibold text-[16px] tracking-[-0.015em] text-[#050E1C]">No Additional Controls Required</h4>
+                              <p className="text-sm font-normal mt-1 text-[#050E1C]/65">
                                 Tiller motor includes integrated controls - mount and go!
                               </p>
                             </div>
