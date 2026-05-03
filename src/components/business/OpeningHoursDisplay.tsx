@@ -6,14 +6,20 @@ interface OpeningHoursDisplayProps {
   openingHours?: OpeningHours;
   loading?: boolean;
   error?: boolean;
+  tone?: 'default' | 'dark';
 }
 
-export function OpeningHoursDisplay({ openingHours, loading, error }: OpeningHoursDisplayProps) {
+export function OpeningHoursDisplay({ openingHours, loading, error, tone = 'default' }: OpeningHoursDisplayProps) {
+  const isDark = tone === 'dark';
+  const textClass = isDark ? 'text-repower-cream/55' : 'text-muted-foreground';
+  const linkClass = isDark ? 'text-repower-gold hover:text-repower-cream' : 'text-primary hover:underline';
+  const skeletonClass = isDark ? 'bg-repower-cream/10' : '';
+
   if (loading) {
     return (
       <div className="space-y-2">
         {[1, 2, 3, 4, 5, 6, 7].map((i) => (
-          <Skeleton key={i} className="h-4 w-40" />
+          <Skeleton key={i} className={`h-4 w-40 ${skeletonClass}`} />
         ))}
       </div>
     );
@@ -26,12 +32,12 @@ export function OpeningHoursDisplay({ openingHours, loading, error }: OpeningHou
     const phoneLink = COMPANY_INFO.contact.phone.replace(/[^0-9]/g, '');
     return (
       <div className="space-y-1">
-        <p className="text-muted-foreground text-sm">
+        <p className={`${textClass} text-sm`}>
           Contact us for current hours
         </p>
         <a
           href={`tel:+1${phoneLink}`}
-          className="text-primary text-sm hover:underline"
+          className={`${linkClass} text-sm transition-colors`}
         >
           {COMPANY_INFO.contact.phone}
         </a>
@@ -49,10 +55,10 @@ export function OpeningHoursDisplay({ openingHours, loading, error }: OpeningHou
       {isOpen !== undefined && isOpen !== null && (
         <div className="mb-2">
           <span
-            className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
+            className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
               isOpen
-                ? 'bg-green-100 text-green-800'
-                : 'bg-red-100 text-red-800'
+                ? isDark ? 'border border-in-stock/30 bg-in-stock/20 text-repower-cream' : 'bg-green-100 text-green-800'
+                : isDark ? 'border border-repower-mercury-red/30 bg-repower-mercury-red/15 text-repower-cream' : 'bg-red-100 text-red-800'
             }`}
           >
             {isOpen ? 'Open Now' : 'Closed'}
@@ -62,7 +68,7 @@ export function OpeningHoursDisplay({ openingHours, loading, error }: OpeningHou
       
       {/* Hours List */}
       {hours.map((dayHours, index) => (
-        <p key={index} className="text-muted-foreground text-sm">
+        <p key={index} className={`${textClass} text-sm leading-relaxed`}>
           {dayHours}
         </p>
       ))}
