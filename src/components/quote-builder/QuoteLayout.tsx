@@ -45,11 +45,11 @@ export const QuoteLayout = ({
         </div>
       )}
 
-      {/* Luxury Header System */}
-      <LuxuryHeader 
-        onSearchClick={onSearchClick}
-        showSearchIcon={showSearchIcon}
-      />
+      {/* Site-wide solid navy header */}
+      <RepowerHeader solid />
+
+      {/* Spacer to offset fixed header */}
+      <div className="h-[64px] lg:h-[72px]" aria-hidden />
 
       {/* Quote Progress Stepper */}
       {showProgress && <QuoteProgressStepper />}
