@@ -21,6 +21,9 @@ const NAV_LINKS = [
 ];
 
 export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
+  const location = useLocation();
+  const isActive = (to: string) =>
+    to === '/' ? location.pathname === '/' : location.pathname === to || location.pathname.startsWith(to + '/');
   if (!isOpen) return null;
 
   return (
