@@ -94,7 +94,7 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
           <div className="ml-auto flex items-center justify-end gap-3 shrink-0">
             <Link
               to="/quote/motor-selection"
-              className="hidden sm:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded uppercase tracking-wider text-[11px] lg:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
+              className="hidden lg:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded uppercase tracking-wider text-[11px] lg:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
             >
               Build Quote
               <ChevronRight className="w-3.5 h-3.5" />

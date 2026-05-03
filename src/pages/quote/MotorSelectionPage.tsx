@@ -1021,7 +1021,7 @@ if (event.type === 'filter_motors') {
       <MotorSelectionSEO motorCount={motors.length > 0 ? motors.length : undefined} />
       <FinancingProvider>
         <RepowerLayout>
-          <div className="bg-repower-paper pt-20">
+          <div className="bg-repower-paper pt-[64px] lg:pt-[72px]">
             <PromoBannerConditional />
             <main>
 
