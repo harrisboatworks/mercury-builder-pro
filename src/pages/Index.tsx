@@ -268,24 +268,12 @@ export default function Index() {
               Build a live quote in 3 minutes. No commitments, no sales calls until you're ready.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button
-                size="lg"
-                variant="secondary"
-                onClick={goBuild}
-                className="gap-2 text-base px-8 h-12 w-full sm:w-auto"
-              >
+              <RepowerCta as="button" onClick={goBuild} variant="primary" size="lg" className="w-full sm:w-auto">
                 <DollarSign className="h-5 w-5" /> Build Your Quote
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="bg-transparent text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground hover:text-primary text-base px-8 h-12 w-full sm:w-auto"
-              >
-                <a href="tel:+19053422153" className="gap-2 inline-flex items-center">
-                  <Phone className="h-4 w-4" /> Call (905) 342-2153
-                </a>
-              </Button>
+              </RepowerCta>
+              <RepowerCta href="tel:+19053422153" variant="secondary" size="lg" className="w-full sm:w-auto">
+                <Phone className="h-4 w-4" /> Call (905) 342-2153
+              </RepowerCta>
             </div>
           </div>
         </section>
