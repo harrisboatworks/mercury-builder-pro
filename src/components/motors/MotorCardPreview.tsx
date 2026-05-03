@@ -452,30 +452,41 @@ function MotorCardPreviewInner({
 
   const productSchema = getProductSchema();
 
+  // Specs string with styled separators
+  const specsRaw = getSimplifiedSpecs();
+  const specsParts = specsRaw ? specsRaw.split(/\s*[•·]\s*/).filter(Boolean) : [];
+  // Sale tag takes priority over status tags
+  const saleAmount = dp.savingsRounded > 0 ? dp.savingsRounded : 0;
+  const popularityType = motor && !motor.hasManualSalePrice ? getMotorPopularity(motor) : null;
+  const showSaleTag = saleAmount > 0;
+
   return (
     <div ref={cardRef}>
       {/* Product schema moved to parent as batched ItemList */}
       <div
-        className="group bg-white rounded-2xl border border-gray-100/80 overflow-hidden cursor-pointer touch-action-manipulation
-          transition-all duration-500 ease-out
-          hover:shadow-[0_25px_80px_-15px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.03)] 
-          hover:-translate-y-1.5 hover:border-gray-200/90
-          active:scale-[0.98] active:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)]"
+        className="group bg-white rounded-lg border border-[rgba(10,22,40,0.10)] overflow-hidden cursor-pointer touch-action-manipulation
+          transition-all duration-[350ms] [transition-timing-function:cubic-bezier(0.2,0.8,0.2,1)]
+          hover:-translate-y-[3px] hover:border-[rgba(10,22,40,0.18)]
+          hover:shadow-[0_16px_40px_rgba(10,22,40,0.10),0_4px_12px_rgba(10,22,40,0.05)]
+          active:scale-[0.99]"
         onClick={handleCardClick}
         onMouseEnter={() => { preloadConfiguratorImagesHighPriority(); prefetchModal(); }}
         onTouchStart={() => { preloadConfiguratorImagesHighPriority(); prefetchModal(); }}
       >
-        <div className="relative bg-white p-8 overflow-hidden">
+        <div
+          className="relative aspect-[4/3] overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}
+        >
               {/* Shimmer loading overlay */}
               {!imageLoaded && (
-                <div className="absolute inset-0 bg-gray-50 animate-shimmer z-10" />
+                <div className="absolute inset-0 bg-repower-cream animate-shimmer z-10" />
               )}
-              <div className="flex items-center justify-center h-48 md:h-64 max-h-[220px] md:max-h-[280px]">
+              <div className="absolute inset-0 flex items-center justify-center p-[12%] transition-transform duration-500 ease-out group-hover:scale-[1.04]">
                 {hasValidImage ? (
                   <img 
                     src={imageUrl} 
                     alt={title} 
-                    className={`max-h-full max-w-full object-contain transition-all duration-700 ease-out group-hover:scale-[1.03] ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    className={`max-h-full max-w-full object-contain transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'} ${!inStock ? 'grayscale-[0.5]' : ''}`}
                     loading="lazy"
                     decoding="async"
                     onLoad={onImageLoad}
@@ -486,44 +497,33 @@ function MotorCardPreviewInner({
                     style={{ transform: `scale(${imageScale})` }}
                   />
                 ) : (
-                  <div className="flex flex-col items-center justify-center h-full text-slate-400">
+                  <div className="flex flex-col items-center justify-center h-full text-repower-navy-900/40">
                     <ImageIcon className="h-16 w-16 mb-3 opacity-40" />
                     <span className="text-sm font-medium">No Image</span>
-                    <span className="text-xs opacity-70">Available</span>
                   </div>
                 )}
               </div>
               
-              {/* Popularity Badge - Top Left */}
-              {motor && (motor.hasManualSalePrice ? (
-                <div className="absolute top-4 left-4">
-                  <PopularityBadge type="special-price" />
+              {/* Top-left tag (sale or status — sale wins) */}
+              {showSaleTag ? (
+                <div className="absolute top-[14px] left-[14px] bg-repower-mercury-red text-white text-[10px] font-bold uppercase tracking-[0.14em] leading-none px-[11px] py-[6px] rounded-[4px]">
+                  ${saleAmount.toLocaleString()} Off
                 </div>
-              ) : getMotorPopularity(motor) ? (
-                <div className="absolute top-4 left-4">
-                  <PopularityBadge type={getMotorPopularity(motor)!} />
+              ) : popularityType ? (
+                <div className="absolute top-[14px] left-[14px]">
+                  <PopularityBadge type={popularityType} />
                 </div>
-              ) : null)}
+              ) : null}
               
-              {/* HP Badge - Premium pill style */}
+              {/* HP Badge - top-right */}
               {hpNum && (
-                <div className="absolute top-4 right-4 bg-gray-900 text-white px-4 py-1.5 text-xs tracking-[0.15em] font-medium rounded-full shadow-lg">
-                  {hpNum} HP
+                <div className={`absolute top-[14px] right-[14px] font-display leading-none px-[14px] py-[8px] rounded-[4px] text-[14px] tracking-[-0.01em] ${inStock ? 'bg-repower-navy-900 text-repower-cream' : 'bg-repower-navy-900/50 text-repower-cream'}`}>
+                  <span className="font-bold">{hpNum}</span>
+                  <span className="font-medium opacity-70"> HP</span>
                 </div>
               )}
               
-              
-              
-              {/* Mercury Logo - Enhanced interaction */}
-              <div className="absolute bottom-4 right-4 opacity-30 group-hover:opacity-50 transition-opacity duration-300">
-                <img 
-                  src={mercuryLogo}
-                  alt="Mercury Marine"
-                  className="h-6 w-auto"
-                />
-              </div>
-              
-              {/* Compare, Favorite & Ask Buttons */}
+              {/* Compare, Voice, Ask, Share — kept */}
               {motor && (
                 <div className="absolute bottom-4 left-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   <CompareButton 
@@ -546,71 +546,88 @@ function MotorCardPreviewInner({
                   <ShareLinkButton modelKey={motor.model_key} modelFallback={motor.model} />
                 </div>
               )}
+
+              {/* Mercury logo - bottom-right */}
+              <div className="absolute bottom-[14px] right-[14px] opacity-30 group-hover:opacity-50 transition-opacity duration-300">
+                <img src={mercuryLogo} alt="Mercury Marine" className="h-5 w-auto" />
+              </div>
             </div>
           
-          {/* Subtle Top Border */}
-          <div className="border-t border-gray-200"></div>
-          
-          {/* Content Section - Premium Layout */}
-          <div className="p-6 md:p-8 space-y-4">
-            {/* Model Name - Refined Typography */}
-            <h3 className="text-lg md:text-xl font-medium tracking-tight text-gray-900">
+          {/* Content Section */}
+          <div className="p-6 space-y-0">
+            {/* Title */}
+            <h3 className="font-display font-semibold text-[22px] tracking-[-0.02em] leading-[1.15] text-repower-navy-900">
               {formatTitle(title)}
             </h3>
             
-            {/* Model Number - Very Subtle */}
+            {/* Model code */}
             {motor?.model_number && (
-              <p className="text-xs font-light text-gray-400 tracking-wide">
+              <p className="mt-2 text-[11px] uppercase tracking-[0.16em] font-medium text-repower-navy-900/45">
                 {motor.model_number}
               </p>
             )}
             
-            {/* Simplified Specs - Elegant Single Line */}
-            <p className="text-sm font-light text-gray-500 leading-relaxed">
-              {getSimplifiedSpecs()}
+            {/* Specs line */}
+            <p className="mt-[14px] text-[13.5px] font-normal leading-[1.45] text-repower-navy-900/65 min-h-[38px]">
+              {specsParts.length > 0 ? specsParts.map((part, i) => (
+                <React.Fragment key={i}>
+                  {i > 0 && <span className="text-repower-navy-900/30 mx-[6px]">·</span>}
+                  {part}
+                </React.Fragment>
+              )) : <>&nbsp;</>}
             </p>
             
-            {/* Pricing - Refined Hierarchy */}
-            <div className="pt-4 pb-2">
-              {dp.showMsrp && dp.displayMsrp && (
-                <p className="text-sm text-gray-400 font-light line-through">${dp.displayMsrp.toLocaleString()}</p>
-              )}
-              <p className="text-2xl font-semibold tracking-tight text-gray-900">
+            {/* Price block — always 3 rows */}
+            <div className="mt-[22px] mb-[18px]">
+              <p className="text-[13px] font-normal leading-[18px] h-[18px] text-repower-navy-900/40 line-through">
+                {dp.displayMsrp ? `$${dp.displayMsrp.toLocaleString()}` : '\u00A0'}
+              </p>
+              <p className="font-display font-bold text-[32px] tracking-[-0.025em] leading-none mt-1 text-repower-navy-900">
                 {dp.callForPrice ? 'Call for Price' : `$${(dp.displayPrice ?? 0).toLocaleString()}`}
               </p>
-              
-              {/* Savings line */}
-              {dp.showSavings && dp.savingsRounded > 0 && (
-                <p className="text-sm text-red-600 font-medium mt-1">
-                  SAVE ${dp.savingsRounded.toLocaleString()}
-                </p>
-              )}
-              
-              {/* Monthly Payment Estimate */}
-              {monthlyPayment && (
-                <p className="text-sm font-light text-gray-500 mt-1">
-                  or ${monthlyPayment}/mo*
-                </p>
-              )}
+              <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.18em] text-repower-mercury-red leading-none h-[14px]">
+                {dp.savingsRounded > 0 ? `You Save $${dp.savingsRounded.toLocaleString()}` : '\u00A0'}
+              </p>
             </div>
             
-            {/* Delivery & Warranty - Compact */}
-            <div className="space-y-1.5 text-sm font-light text-gray-500">
-              <p>{deliveryStatus.text}</p>
-              {warrantyText && <p>{warrantyText}</p>}
+            {/* Trust line */}
+            <div className="border-t border-[rgba(10,22,40,0.10)] py-[14px] mb-[18px] flex items-center gap-4">
+              <span className="flex items-center gap-1.5">
+                <span className="text-repower-gold text-[14px] leading-none">✓</span>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900">
+                  {inStock ? 'In Stock' : 'Order Now'}
+                </span>
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="text-repower-gold text-[14px] leading-none">✓</span>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-repower-navy-900">
+                  {warrantyText ? warrantyText.replace('✓ ', '') : '7-Yr Warranty'}
+                </span>
+              </span>
             </div>
             
-            {/* Premium CTA Button */}
+            {/* Out-of-stock secondary line */}
+            {!inStock && (
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-repower-mercury-red mb-3">
+                Order Now · 4–6 weeks
+              </p>
+            )}
+            
+            {/* CTA button */}
             <button 
-              className="w-full bg-gray-900 text-white py-3.5 text-xs tracking-[0.2em] uppercase font-medium rounded-lg 
-                transition-all duration-300 ease-out mt-4 shadow-sm
-                hover:bg-gray-800 hover:shadow-lg hover:scale-[1.01] hover:-translate-y-0.5
-                active:scale-[0.98] active:shadow-sm
-                premium-pulse"
+              className={`w-full flex items-center justify-between px-[22px] py-[16px] rounded-[4px] text-[12px] font-bold uppercase tracking-[0.12em] text-repower-cream transition-all duration-300 ${inStock ? 'bg-repower-navy-900 group-hover:bg-repower-mercury-red' : 'bg-repower-navy-900/85 group-hover:bg-repower-navy-900'}`}
               onClick={handleMoreInfoClick}
             >
-              Build & Price
+              <span>{inStock ? 'Build & Price' : 'Notify When In Stock'}</span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </button>
+
+            {/* Monthly payment estimate (kept, secondary) */}
+            {monthlyPayment && (
+              <p className="mt-3 text-[12px] font-light text-repower-navy-900/55 text-center">
+                or ${monthlyPayment}/mo*
+              </p>
+            )}
           </div>
         </div>
       

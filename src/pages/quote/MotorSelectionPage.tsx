@@ -931,9 +931,9 @@ if (event.type === 'filter_motors') {
     return (
       <PageTransition>
         <QuoteLayout>
-          <div className="bg-stone-50 py-12">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
-              <div className="grid gap-6 sm:gap-8 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+          <div className="bg-repower-paper py-12">
+            <div className="max-w-[1400px] mx-auto px-6 md:px-14">
+              <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
                 {Array.from({ length: 8 }).map((_, i) => (
                   <MotorCardSkeleton key={i} index={i} />
                 ))}
@@ -957,25 +957,45 @@ if (event.type === 'filter_motors') {
 
         <VoiceStatusBanner />
         
-{/* Search Bar - Scrolls naturally with content */}
-        <div className="bg-stone-50 border-b border-gray-200">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4">
-            <HybridMotorSearch
-              query={searchQuery}
-              onQueryChange={handleSearchChange}
-              motors={processedMotors}
-              onHpSelect={handleHpSuggestionSelect}
-              className="w-full"
-              filterSlot={
-                <ConfigFilterSheet
-                  motors={processedMotors}
-                  activeHpFilter={searchQuery}
-                  onHpFilterChange={handleHpFilterChange}
-                  filters={configFilters}
-                  onFilterChange={setConfigFilters}
-                />
-              }
-            />
+        {/* Page header */}
+        <div className="bg-repower-paper">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-10 md:pt-14 pb-2">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="block h-px w-6 bg-repower-mercury-red" />
+              <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-repower-mercury-red">
+                Mercury Outboards
+              </span>
+            </div>
+            <h1 className="font-display font-bold text-[28px] md:text-[36px] tracking-[-0.025em] leading-[1.05] text-repower-navy-900">
+              Every motor, transparently priced
+            </h1>
+            <p className="mt-3 text-[14px] text-repower-navy-900/55">
+              {(finalFilteredMotors.length || processedMotors.length).toLocaleString()} motors · Live pricing · Built &amp; quoted in 3 minutes
+            </p>
+          </div>
+        </div>
+
+        {/* Search Bar */}
+        <div className="bg-repower-paper">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-6 pb-4">
+            <div className="rounded-md bg-white border border-[rgba(10,22,40,0.10)] focus-within:border-repower-gold focus-within:shadow-[0_0_0_3px_rgba(201,162,74,0.15)] transition-all">
+              <HybridMotorSearch
+                query={searchQuery}
+                onQueryChange={handleSearchChange}
+                motors={processedMotors}
+                onHpSelect={handleHpSuggestionSelect}
+                className="w-full"
+                filterSlot={
+                  <ConfigFilterSheet
+                    motors={processedMotors}
+                    activeHpFilter={searchQuery}
+                    onHpFilterChange={handleHpFilterChange}
+                    filters={configFilters}
+                    onFilterChange={setConfigFilters}
+                  />
+                }
+              />
+            </div>
             
             <div className="flex items-center justify-between mt-3">
               {(searchQuery || configFilters) && (
@@ -983,8 +1003,8 @@ if (event.type === 'filter_motors') {
                   <span
                     className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium tabular-nums ${
                       finalFilteredMotors.length > 0
-                        ? 'bg-primary/10 text-primary border border-primary/20'
-                        : 'bg-destructive/10 text-destructive border border-destructive/20'
+                        ? 'bg-repower-navy-900/5 text-repower-navy-900 border border-[rgba(10,22,40,0.10)]'
+                        : 'bg-repower-mercury-red/10 text-repower-mercury-red border border-repower-mercury-red/20'
                     }`}
                     aria-live="polite"
                     role="status"
@@ -994,7 +1014,7 @@ if (event.type === 'filter_motors') {
                       : 'No motors match'}
                   </span>
                   {configFilters && (
-                    <span className="text-xs text-luxury-gray">
+                    <span className="text-xs text-repower-navy-900/55">
                       Filtered by: {[
                         configFilters.inStock && 'in stock',
                         configFilters.startType,
@@ -1061,13 +1081,13 @@ if (event.type === 'filter_motors') {
           />
         )}
 
-        <div className="bg-gradient-to-b from-stone-50 to-white py-16 motor-grid-section">
+        <div className="bg-repower-paper py-10 md:py-14 motor-grid-section">
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Motors Grid - Expert View Only */}
+        <div className="max-w-[1400px] mx-auto px-6 md:px-14">
+          {/* Motors Grid */}
           {finalFilteredMotors.length > 0 ? (
             <motion.div 
-              className="grid gap-8 sm:gap-10 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+              className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
               initial={hasInitiallyLoaded ? false : "hidden"}
               animate="visible"
               variants={{
@@ -1144,18 +1164,19 @@ if (event.type === 'filter_motors') {
              })}
            </motion.div>
           ) : (
-            <div className="bg-white rounded-2xl border border-gray-100 p-8 text-center">
-              <p className="text-gray-500 font-light mb-4">
-                No motors match your current filters.
+            <div className="bg-repower-cream/40 border border-[rgba(10,22,40,0.10)] rounded-lg p-12 text-center max-w-2xl mx-auto">
+              <h3 className="font-display font-bold text-[24px] tracking-[-0.02em] text-repower-navy-900 mb-2">
+                No motors match those filters.
+              </h3>
+              <p className="text-[14px] text-repower-navy-900/60 mb-6">
+                Try widening your HP range or removing filters.
               </p>
-              <Button
-                variant="outline"
-                size="sm"
-                className="rounded-full border-gray-200 text-gray-600 hover:bg-gray-50"
-                onClick={() => setSearchQuery('')}
+              <button
+                className="inline-flex items-center gap-2 bg-repower-mercury-red hover:bg-repower-mercury-red-deep text-white px-6 py-3 rounded-[4px] text-[12px] font-bold uppercase tracking-[0.12em] transition-colors"
+                onClick={() => { setSearchQuery(''); setConfigFilters(null); }}
               >
-                Clear search
-              </Button>
+                Clear Filters
+              </button>
             </div>
           )}
           
