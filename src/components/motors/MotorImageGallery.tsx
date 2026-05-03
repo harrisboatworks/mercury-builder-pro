@@ -219,13 +219,12 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
         <div 
           ref={containerRef}
           className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl flex items-center justify-center overflow-hidden`}
-          style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}
+          style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)', touchAction: 'pan-y' }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          style={{ touchAction: 'pan-y' }}
         >
           <img
             src={displayImages[selectedIndex]}
