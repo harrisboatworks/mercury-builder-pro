@@ -188,24 +188,15 @@ export default function Index() {
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-2 md:gap-3">
-                  <Link
-                    to="/quote/motor-selection"
-                    className="inline-flex items-center gap-1.5 bg-[#C8102E] hover:bg-[#A50D26] text-repower-cream px-4 md:px-6 py-2.5 md:py-3 rounded uppercase tracking-wider text-[11px] md:text-xs font-semibold transition-colors"
-                  >
+                  <RepowerCta to="/quote/motor-selection" variant="primary" size="md">
                     Build a Mercury outboard quote <ChevronRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    to="/locations/rice-lake-mercury-repower"
-                    className="inline-flex items-center gap-1.5 border border-repower-cream/30 hover:border-repower-gold hover:text-repower-gold text-repower-cream px-4 md:px-6 py-2.5 md:py-3 rounded uppercase tracking-wider text-[11px] md:text-xs font-semibold transition-colors"
-                  >
+                  </RepowerCta>
+                  <RepowerCta to="/locations/rice-lake-mercury-repower" variant="outline" size="md">
                     Mercury repower on Rice Lake <ChevronRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    to="/faq"
-                    className="inline-flex items-center gap-1.5 border border-repower-cream/30 hover:border-repower-gold hover:text-repower-gold text-repower-cream px-4 md:px-6 py-2.5 md:py-3 rounded uppercase tracking-wider text-[11px] md:text-xs font-semibold transition-colors"
-                  >
+                  </RepowerCta>
+                  <RepowerCta to="/faq" variant="outline" size="md">
                     Repower FAQ <ChevronRight className="h-4 w-4" />
-                  </Link>
+                  </RepowerCta>
                 </div>
               </div>
 
