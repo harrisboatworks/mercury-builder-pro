@@ -792,7 +792,7 @@ export default function MotorDetailsPremiumModal({
                       </h3>
                       <div className="space-y-3">
                         <div className="flex flex-row items-center gap-3 text-left">
-                          <Shield className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                          <Shield className="w-5 h-5 flex-shrink-0" style={{ color: "rgba(5, 14, 28, 0.70)" }} />
                           <span className="text-sm font-normal text-gray-700 flex-1">
                             3-Year Mercury Factory Warranty
                           </span>
