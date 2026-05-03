@@ -12,13 +12,19 @@ const fadeUp = (delay = 0) => ({
 
 // Hero stat row styling — tweak here to adjust all three stats together
 const statRowClass =
-  'grid grid-cols-3 gap-4 md:gap-12 max-w-2xl mb-12 border-y border-[#F5F1EA]/15 py-6 items-start';
-const statItemClass = 'min-w-0';
+  'grid grid-cols-3 gap-4 md:gap-12 max-w-2xl mb-12 border-y border-[#F5F1EA]/15 py-6 items-baseline';
+const statItemClass = 'min-w-0 flex flex-col';
 const statNumberClass =
-  'font-display font-bold text-[clamp(28px,4.5vw,56px)] text-[#F5F1EA] leading-none tabular-nums';
-const statNumberStyle = { letterSpacing: '-0.03em' } as const;
+  'font-display font-bold text-[clamp(32px,4.2vw,52px)] text-[#F5F1EA] tabular-nums';
+const statNumberStyle = {
+  letterSpacing: '-0.035em',
+  lineHeight: 1, // lock baseline so '79' and '70%' share the same y-axis
+} as const;
 const statLabelClass =
-  'font-sans text-xs uppercase tracking-[0.18em] text-[#F5F1EA]/55 mt-3';
+  'font-sans text-[11px] md:text-xs uppercase text-[#F5F1EA]/55 mt-3 leading-tight';
+const statLabelStyle = {
+  letterSpacing: '0.18em',
+} as const;
 
 const heroStats = [
   { n: '70%', l: 'of the benefit' },
@@ -79,7 +85,7 @@ export function HeroRepower() {
               <div className={statNumberClass} style={statNumberStyle}>
                 {s.n}
               </div>
-              <div className={statLabelClass}>{s.l}</div>
+              <div className={statLabelClass} style={statLabelStyle}>{s.l}</div>
             </div>
           ))}
         </motion.div>
