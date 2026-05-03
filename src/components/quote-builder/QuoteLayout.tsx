@@ -37,14 +37,7 @@ export const QuoteLayout = ({
   // Track anonymous quote-building activity in the background
   useQuoteActivityTracker();
   
-  return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
-      {/* Ambient gradient orbs for glassmorphism effect - Desktop only */}
-      <div className="hidden md:block fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-40 right-1/4 w-80 h-80 bg-purple-100/30 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-72 h-72 bg-emerald-100/20 rounded-full blur-3xl" />
-      </div>
-
+  return <div className="min-h-screen bg-repower-paper relative">
       {/* Admin Mode Banner */}
       {state.isAdminQuote && isAdmin && (
         <div className="bg-yellow-500 text-yellow-950 text-center text-sm py-1 font-medium z-50 relative">

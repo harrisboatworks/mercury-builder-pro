@@ -1,9 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Battery, Check, X } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Battery, X } from 'lucide-react';
+import { QuoteRadioTile } from '@/components/quote-builder/redesign/QuoteRadioTile';
 
 interface BatteryOptionPromptProps {
   onSelect: (wantsBattery: boolean) => void;
@@ -13,10 +11,10 @@ interface BatteryOptionPromptProps {
 
 const BATTERY_COST = 179.99;
 
-export function BatteryOptionPrompt({ 
-  onSelect, 
+export function BatteryOptionPrompt({
+  onSelect,
   selectedOption,
-  batteryCost = BATTERY_COST 
+  batteryCost = BATTERY_COST,
 }: BatteryOptionPromptProps) {
   return (
     <motion.div
@@ -27,78 +25,33 @@ export function BatteryOptionPrompt({
     >
       <div className="space-y-2">
         <div className="flex items-center gap-2">
-          <Battery className="w-5 h-5 text-primary" />
-          <h3 className="text-lg font-medium">Starting Battery Required</h3>
+          <Battery className="w-5 h-5 text-repower-navy-900/70" />
+          <h3 className="font-display text-lg font-bold text-repower-navy-900">Starting Battery Required</h3>
         </div>
-        <p className="text-sm text-muted-foreground">
-          Your motor has electric start. A marine starting battery is required to operate it. 
+        <p className="font-sans text-[14px] text-repower-navy-900/65 leading-relaxed">
+          Your motor has electric start. A marine starting battery is required to operate it.
           Would you like to add one?
         </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {/* Yes, add battery */}
-        <Card 
-          className={cn(
-            "cursor-pointer transition-all duration-200 border-2",
-            selectedOption === true 
-              ? "border-primary bg-primary/5 ring-2 ring-primary/20" 
-              : "border-border hover:border-primary/50"
-          )}
+        <QuoteRadioTile
+          selected={selectedOption === true}
           onClick={() => onSelect(true)}
-        >
-          <CardContent className="p-4 flex items-center gap-3">
-            <div className={cn(
-              "w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0",
-              selectedOption === true ? "bg-primary text-primary-foreground" : "bg-muted"
-            )}>
-              {selectedOption === true ? (
-                <Check className="w-5 h-5" />
-              ) : (
-                <Battery className="w-5 h-5 text-muted-foreground" />
-              )}
-            </div>
-            <div className="flex-1">
-              <p className="font-medium">Yes, add battery</p>
-              <p className="text-sm text-muted-foreground">
-                Marine starting battery, ${batteryCost.toFixed(2)}
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* No, I have my own */}
-        <Card 
-          className={cn(
-            "cursor-pointer transition-all duration-200 border-2",
-            selectedOption === false 
-              ? "border-primary bg-primary/5 ring-2 ring-primary/20" 
-              : "border-border hover:border-primary/50"
-          )}
+          icon={<Battery className="w-5 h-5" />}
+          label="Yes, add battery"
+          description={`Marine starting battery, $${batteryCost.toFixed(2)}`}
+        />
+        <QuoteRadioTile
+          selected={selectedOption === false}
           onClick={() => onSelect(false)}
-        >
-          <CardContent className="p-4 flex items-center gap-3">
-            <div className={cn(
-              "w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0",
-              selectedOption === false ? "bg-primary text-primary-foreground" : "bg-muted"
-            )}>
-              {selectedOption === false ? (
-                <Check className="w-5 h-5" />
-              ) : (
-                <X className="w-5 h-5 text-muted-foreground" />
-              )}
-            </div>
-            <div className="flex-1">
-              <p className="font-medium">No, I have my own</p>
-              <p className="text-sm text-muted-foreground">
-                I'll supply my own battery
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+          icon={<X className="w-5 h-5" />}
+          label="No, I have my own"
+          description="I'll supply my own battery"
+        />
       </div>
 
-      <p className="text-xs text-muted-foreground">
+      <p className="font-sans text-[12px] text-repower-navy-900/55">
         Note: A 12V marine starting battery is required for electric start motors.
       </p>
     </motion.div>
