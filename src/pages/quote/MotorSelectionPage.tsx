@@ -39,7 +39,7 @@ import { PageTransition } from '@/components/ui/page-transition';
 import { MotorRecommendationQuiz } from '@/components/quote-builder/MotorRecommendationQuiz';
 import { PromoReminderModal } from '@/components/quote-builder/PromoReminderModal';
 import { VoiceStatusBanner } from '@/components/voice/VoiceStatusBanner';
-import { MobileQuoteCTA } from '@/components/motors/MobileQuoteCTA';
+
 import { EmailCaptureInline } from '@/components/motors/EmailCaptureInline';
 import { MotorSelectionFAQ } from '@/components/quote-builder/MotorSelectionFAQ';
 
