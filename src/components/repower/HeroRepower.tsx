@@ -12,18 +12,18 @@ const fadeUp = (delay = 0) => ({
 
 // Hero stat row styling — tweak here to adjust all three stats together
 const statRowClass =
-  'grid grid-cols-3 gap-4 md:gap-12 max-w-2xl mb-12 border-y border-[#F5F1EA]/15 py-6 items-baseline';
-const statItemClass = 'min-w-0 flex flex-col';
+  'flex flex-row flex-nowrap items-baseline gap-6 sm:gap-10 md:gap-14 max-w-2xl mb-8 border-y border-[#F5F1EA]/15 py-4';
+const statItemClass = 'min-w-0 flex-1';
 const statNumberClass =
-  'font-display font-bold text-[clamp(32px,4.2vw,52px)] text-[#F5F1EA] tabular-nums';
+  'font-display font-bold text-[clamp(24px,3.6vw,42px)] text-[#F5F1EA] tabular-nums';
 const statNumberStyle = {
   letterSpacing: '-0.035em',
-  lineHeight: 1, // lock baseline so '79' and '70%' share the same y-axis
+  lineHeight: 1,
 } as const;
 const statLabelClass =
-  'font-sans text-[11px] md:text-xs uppercase text-[#F5F1EA]/55 mt-3 leading-tight';
+  'font-sans text-[10px] md:text-[11px] uppercase text-[#F5F1EA]/55 mt-2 leading-tight whitespace-nowrap';
 const statLabelStyle = {
-  letterSpacing: '0.18em',
+  letterSpacing: '0.16em',
 } as const;
 
 const heroStats = [
