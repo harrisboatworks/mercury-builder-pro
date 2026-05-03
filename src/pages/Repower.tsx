@@ -182,23 +182,25 @@ export default function Repower() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid md:grid-cols-3 border-t border-l border-repower-navy-900/10 mb-10">
             {modernBenefitsData.map((benefit, index) => (
               <div
                 key={index}
-                className="border border-repower-navy-900/10 bg-white rounded p-8 hover:border-repower-gold/50 transition-all duration-300"
+                className="border-r border-b border-repower-navy-900/10 p-8 md:p-10"
               >
-                <benefit.icon className="w-6 h-6 text-repower-gold mb-4" />
-                <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-2">{benefit.title}</h3>
-                <p className="font-sans text-sm text-repower-navy-900/65 leading-relaxed">{benefit.description}</p>
+                <benefit.icon className="w-6 h-6 text-repower-mercury-red mb-6" strokeWidth={1.75} />
+                <h3 className="font-display font-bold text-[clamp(22px,2.2vw,32px)] text-repower-navy-900 mb-3 tracking-[-0.02em] leading-[1.1]">
+                  {benefit.title}
+                </h3>
+                <p className="font-sans text-sm md:text-base text-repower-navy-900/65 leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="border border-repower-navy-900/10 bg-white rounded p-6 md:p-8 flex items-center gap-6">
+          <div className="bg-repower-cream border-l-2 border-repower-gold p-6 md:p-8 flex items-center gap-6">
             <img src={mercuryLogo} alt="Mercury" className="h-10 hidden sm:block" />
             <div>
-              <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-1">Mercury SmartCraft® Technology</h3>
+              <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-1 tracking-tight">Mercury SmartCraft® Technology</h3>
               <p className="font-sans text-sm text-repower-navy-900/65 leading-relaxed">
                 Real-time engine monitoring, fuel economy tracking, and maintenance alerts, from your phone with the Mercury Marine app.
               </p>
