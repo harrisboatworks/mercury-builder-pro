@@ -86,10 +86,8 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
   const [isHovered, setIsHovered] = useState(false);
   const [iconPulse, setIconPulse] = useState(false);
   
-  // Voice search state
-  const [isListening, setIsListening] = useState(false);
-  const [speechSupported, setSpeechSupported] = useState(false);
-  const recognitionRef = useRef<SpeechRecognitionInstance | null>(null);
+  // Voice search removed
+  const isListening = false;
   
   // Recent searches state
   const [recentSearches, setRecentSearches] = useState<string[]>([]);
