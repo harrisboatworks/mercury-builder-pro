@@ -110,7 +110,7 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
                 highlight="As Low As 2.99% APR"
               >
                 <CollapsibleTrigger asChild>
-                  <button className="w-full flex items-center justify-center gap-2 text-sm text-primary font-medium mt-2 py-2 hover:underline">
+                  <button className="w-full inline-flex items-center justify-center gap-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-mercury-red mt-3 py-2 border-t border-repower-navy-900/10 hover:text-repower-mercury-red-deep transition-colors">
                     {expandedOption === 'special_financing' ? (
                       <>Hide Rates <ChevronUp className="w-4 h-4" /></>
                     ) : (
@@ -154,7 +154,7 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
                 highlight="Up To $1,000 Back"
               >
                 <CollapsibleTrigger asChild>
-                  <button className="w-full flex items-center justify-center gap-2 text-sm text-primary font-medium mt-2 py-2 hover:underline">
+                  <button className="w-full inline-flex items-center justify-center gap-2 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-mercury-red mt-3 py-2 border-t border-repower-navy-900/10 hover:text-repower-mercury-red-deep transition-colors">
                     {expandedOption === 'cash_rebate' ? (
                       <>Hide Rebate Chart <ChevronUp className="w-4 h-4" /></>
                     ) : (
