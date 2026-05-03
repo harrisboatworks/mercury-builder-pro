@@ -58,25 +58,41 @@ export function RepowerMobileMenu({ isOpen, onClose, user, signOut }: Props) {
                   to={link.to}
                   onClick={onClose}
                   aria-current={active ? 'page' : undefined}
-                  className={`group flex items-center justify-between py-4 border-b border-[#F5F1EA]/8 font-display text-2xl transition-colors ${
+                  className={`group relative flex items-center justify-between py-4 pl-4 pr-2 -mx-4 border-b border-[#F5F1EA]/8 font-display text-2xl transition-colors duration-300 ${
                     active
                       ? 'text-[#C9A24A]'
                       : 'text-[#F5F1EA] hover:text-[#C9A24A]'
                   }`}
                   style={{ letterSpacing: '-0.02em' }}
                 >
-                  <span className="flex items-center gap-3">
-                    {active && (
-                      <span
-                        aria-hidden
-                        className="inline-block h-[2px] w-6 bg-[#C8102E]"
-                      />
-                    )}
+                  {/* Active indicator bar — animates in from left */}
+                  <span
+                    aria-hidden
+                    className={`absolute left-0 top-1/2 -translate-y-1/2 h-7 w-[3px] bg-[#C8102E] rounded-r origin-left transition-transform duration-300 ease-out ${
+                      active ? 'scale-x-100' : 'scale-x-0'
+                    }`}
+                  />
+                  {/* Subtle gold tint background on active */}
+                  <span
+                    aria-hidden
+                    className={`absolute inset-0 bg-gradient-to-r from-[#C9A24A]/8 to-transparent transition-opacity duration-300 ${
+                      active ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  />
+                  <span className="relative flex items-center gap-3 transition-transform duration-300 ease-out group-hover:translate-x-1">
+                    <span
+                      aria-hidden
+                      className={`inline-block h-[2px] bg-[#C9A24A] transition-all duration-300 ease-out ${
+                        active ? 'w-6 opacity-100' : 'w-0 opacity-0'
+                      }`}
+                    />
                     {link.label}
                   </span>
                   <ChevronRight
-                    className={`w-5 h-5 transition-colors ${
-                      active ? 'text-[#C9A24A]' : 'text-[#F5F1EA]/40 group-hover:text-[#C9A24A]'
+                    className={`relative w-5 h-5 transition-all duration-300 ${
+                      active
+                        ? 'text-[#C9A24A] translate-x-0'
+                        : 'text-[#F5F1EA]/40 group-hover:text-[#C9A24A] group-hover:translate-x-1'
                     }`}
                   />
                 </Link>
