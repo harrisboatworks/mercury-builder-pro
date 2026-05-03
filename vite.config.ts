@@ -50,6 +50,7 @@ export default defineConfig(({ mode }) => ({
       'jay-peg',
       '@react-pdf/png-js',
       'crypto-js',
+      'crypto-js/md5.js',
       'bidi-js',
       'hyphen',
     ],
@@ -65,6 +66,7 @@ export default defineConfig(({ mode }) => ({
       'jay-peg',
       '@react-pdf/png-js',
       'crypto-js',
+      'crypto-js/md5.js',
       'bidi-js',
       'hyphen',
     ],
@@ -82,6 +84,7 @@ export default defineConfig(({ mode }) => ({
       'pako/lib/zlib/deflate.js': path.resolve(__dirname, './node_modules/pako/lib/zlib/deflate.js'),
       'pako/lib/zlib/inflate.js': path.resolve(__dirname, './node_modules/pako/lib/zlib/inflate.js'),
       'pako/lib/zlib/constants.js': path.resolve(__dirname, './node_modules/pako/lib/zlib/constants.js'),
+      'crypto-js/md5.js': path.resolve(__dirname, './src/shims/crypto-js-md5.ts'),
     },
   },
 }));
