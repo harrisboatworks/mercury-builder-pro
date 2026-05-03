@@ -38,7 +38,6 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { useToast } from '@/hooks/use-toast';
 import { Download } from 'lucide-react';
-import { generateQuotePDF, downloadPDF } from '@/lib/react-pdf-generator';
 import QRCode from 'qrcode';
 import { SITE_URL } from '@/lib/site';
 import { QuoteSummaryPageSEO } from '@/components/seo/QuoteSummaryPageSEO';
@@ -664,6 +663,7 @@ export default function QuoteSummaryPage() {
         console.error('Failed to save lead:', leadError);
       }
       
+      const { generateQuotePDF, downloadPDF } = await import('@/lib/react-pdf-generator');
       const pdfUrl = await generateQuotePDF(pdfData);
       await downloadPDF(pdfUrl, `Mercury-Quote-${quoteNumber}.pdf`);
       
