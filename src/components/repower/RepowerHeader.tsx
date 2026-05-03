@@ -49,7 +49,8 @@ export function RepowerHeader() {
             <img
               src={mercuryLogo}
               alt="Mercury Marine"
-              className="hidden sm:block h-6 md:h-7 w-auto brightness-0 invert shrink-0"
+              className="hidden sm:block h-6 md:h-7 w-auto shrink-0"
+              style={{ filter: 'brightness(0) invert(1)' }}
             />
             <div className="flex items-center pl-2 sm:pl-3 md:pl-4 border-l border-[#F5F1EA]/15 shrink-0">
               <img
