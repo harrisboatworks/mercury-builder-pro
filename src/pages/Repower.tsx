@@ -311,7 +311,7 @@ export default function Repower() {
             ))}
           </div>
 
-          <div className="border border-repower-gold/40 bg-repower-cream rounded p-10 md:p-14 text-center">
+          <div className="bg-repower-cream border-l-2 border-repower-gold rounded-none p-10 md:p-14">
             <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-mercury-red mb-4">
               Typical Rice Lake Repower
             </p>
