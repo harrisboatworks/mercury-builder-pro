@@ -329,92 +329,17 @@ export default function Repower() {
         </div>
       </section>
 
-      {/* Winter Pro Tip */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-            <div className="flex-shrink-0">
-              <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
-                <Snowflake className="w-10 h-10 text-white" />
-              </div>
-            </div>
-            <div>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-4 flex items-center gap-2">
-                Pro Tip: Repower in Winter
-              </h2>
-              <ul className="space-y-2 text-blue-100">
-                <li className="flex items-start gap-2">
-                  <span>✓</span>
-                  <strong>Best Availability</strong> — First pick before the spring rush
-                </li>
-                <li className="flex items-start gap-2">
-                  <span>✓</span>
-                  <strong>No Wait</strong> — Quietest shop time means fastest turnaround
-                </li>
-                <li className="flex items-start gap-2">
-                  <span>✓</span>
-                  <strong>Ready for Launch Day</strong> — When the ice comes off Rice Lake, you're good to go
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Winter Pro Tip — restyled */}
+      <WinterPro />
 
-      {/* Repower Process */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-              The Harris Repower Process
-            </h2>
-            <p className="text-muted-foreground">Simple, transparent, and professional</p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            {repowerStepsData.map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                  {item.step}
-                </div>
-                <h3 className="font-medium text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Repower Process — restyled */}
+      <RepowerProcess />
 
-      {/* FAQ Section */}
-      <RepowerFAQ />
+      {/* FAQ — restyled */}
+      <RepowerFAQRestyled />
 
-      {/* Why Harris Section */}
-      <section className="py-16 px-4 bg-stone-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-              Why Choose Harris Boat Works
-            </h2>
-            <p className="text-muted-foreground">Your neighbours on the water since 1947</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {whyHarrisData.map((item, index) => (
-              <div key={index} className="bg-white border border-border rounded-xl p-6 text-center">
-                <item.icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                <h3 className="font-medium text-foreground mb-1">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </div>
-            ))}
-          </div>
-          
-          {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center gap-6">
-            <img src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" alt="Mercury CSI Award Winner" className="h-16 opacity-80" />
-            <img src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" alt="Mercury Certified Repower Center" className="h-16 opacity-80" />
-          </div>
-        </div>
-      </section>
+      {/* Why Harris — restyled */}
+      <WhyHarrisRepower />
 
       {/* Service Area */}
       <section className="py-16 px-4 bg-white">
@@ -432,7 +357,7 @@ export default function Repower() {
               </span>
             ))}
           </div>
-          <a 
+          <a
             href="https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0"
             target="_blank"
             rel="noopener noreferrer"
@@ -456,7 +381,7 @@ export default function Repower() {
               <span className="font-medium text-foreground">{reviewCount}+</span> five-star reviews from Ontario boaters
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-6">
             {dailyTestimonials.map((testimonial, index) => (
               <div key={index} className="bg-white border border-border rounded-xl p-6">
@@ -475,36 +400,8 @@ export default function Repower() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-primary to-primary/90 text-primary-foreground">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Your Adventure, Repowered
-          </h2>
-          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            No pressure. No games. Real pricing from a dealer who's been on this lake over 75 years.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/">
-              <Button size="lg" variant="secondary" className="w-full sm:w-auto gap-2">
-                Build Your Quote
-                <ChevronRight className="w-4 h-4" />
-              </Button>
-            </Link>
-            <a href="tel:9053422153">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto gap-2 bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                <Phone className="w-4 h-4" />
-                (905) 342-2153
-              </Button>
-            </a>
-          </div>
-          
-          <p className="text-sm text-primary-foreground/70 mt-8">
-            5369 Harris Boat Works Rd, Gores Landing, ON • info@harrisboatworks.ca
-          </p>
-        </div>
-      </section>
+      {/* Final CTA — restyled */}
+      <FinalCTARepower />
     </RepowerLayout>
   );
 }
