@@ -12,7 +12,7 @@ import { useActiveFinancingPromo } from '@/hooks/useActiveFinancingPromo';
 import { useActivePromotions } from '@/hooks/useActivePromotions';
 import { findMotorSpecs } from '@/lib/data/mercury-motors';
 import { calculatePaymentWithFrequency, getDefaultFinancingRate, getFinancingTerm, type PaymentFrequency } from '@/lib/finance';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { FinanceCalculatorSEO } from '@/components/seo/FinanceCalculatorSEO';
 import { useQuote } from '@/contexts/QuoteContext';
