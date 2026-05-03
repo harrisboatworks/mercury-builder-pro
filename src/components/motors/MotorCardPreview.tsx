@@ -486,7 +486,7 @@ function MotorCardPreviewInner({
                   <img 
                     src={imageUrl} 
                     alt={title} 
-                    className={`max-h-full max-w-full object-contain mix-blend-multiply transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'} ${!inStock ? 'grayscale-[0.5]' : ''}`}
+                    className={`max-h-full max-w-full object-contain mix-blend-multiply transition-[opacity,transform] duration-500 ease-out group-hover:scale-[1.04] ${imageLoaded ? 'opacity-100' : 'opacity-0'} ${!inStock ? 'grayscale-[0.5]' : ''}`}
                     loading="lazy"
                     decoding="async"
                     onLoad={onImageLoad}
