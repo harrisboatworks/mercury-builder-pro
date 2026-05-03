@@ -254,6 +254,23 @@ function MotorSelectionContent() {
   
   // Search overlay state - triggered from header search icon
   const [showSearchOverlay, setShowSearchOverlay] = useState(false);
+
+  // Track grid columns based on viewport so animation stagger reflects actual rows.
+  // Matches Tailwind: grid-cols-1 / sm:2 / lg:3 / 2xl:4
+  const getGridColumns = () => {
+    if (typeof window === 'undefined') return 3;
+    const w = window.innerWidth;
+    if (w >= 1536) return 4;
+    if (w >= 1024) return 3;
+    if (w >= 640) return 2;
+    return 1;
+  };
+  const [gridColumns, setGridColumns] = useState(getGridColumns);
+  useEffect(() => {
+    const onResize = () => setGridColumns(getGridColumns());
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
   
   const [motors, setMotors] = useState<DbMotor[]>([]);
   const [promotions, setPromotions] = useState<Promotion[]>([]);
@@ -1154,6 +1171,7 @@ if (event.type === 'filter_motors') {
               className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
             >
               {finalFilteredMotors.map((motor, index) => {
+                const colIndex = index % gridColumns;
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
                 const specs = dbMotor?.specifications || {};
@@ -1182,7 +1200,7 @@ if (event.type === 'filter_motors') {
                      viewport={{ once: true, margin: '0px 0px -10% 0px' }}
                      transition={{
                        duration: 0.6,
-                       delay: (index % 4) * 0.08,
+                       delay: colIndex * 0.08,
                        ease: [0.2, 0.8, 0.2, 1],
                      }}
                    >
