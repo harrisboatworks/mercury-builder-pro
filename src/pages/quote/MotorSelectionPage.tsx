@@ -1204,7 +1204,8 @@ if (event.type === 'filter_motors') {
           <MotorSelectionFAQ />
         </div>
           </div>
-        </QuoteLayout>
+          </main>
+        </div>
         
         {/* Floating mobile CTA — nudge browsers to tap a motor */}
         <MobileQuoteCTA onStartQuote={() => {
