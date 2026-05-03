@@ -117,9 +117,9 @@ export default function QuoteSuccessPage() {
           </p>
 
           {/* Reference Number */}
-          <div className="bg-repower-cream border border-repower-navy-900/10 p-6 mb-8">
+          <div className="bg-repower-cream border border-repower-navy-900/10 p-5 sm:p-6 mb-8">
             <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-navy-900/55 mb-2">Your Quote Reference Number</p>
-            <code className="block font-display text-[28px] md:text-[32px] font-bold text-repower-navy-900 tracking-[0.1em]">
+            <code className="block font-display text-[24px] sm:text-[28px] md:text-[32px] font-bold text-repower-navy-900 tracking-[0.1em] break-all">
               {referenceNumber}
             </code>
             <p className="font-sans text-[12px] text-repower-navy-900/55 mt-2">
