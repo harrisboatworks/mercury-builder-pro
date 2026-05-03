@@ -106,11 +106,11 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
           </div>
 
           {/* Social & Trust - full width on mobile */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex flex-row items-start justify-between md:flex-col gap-4">
+          <div>
+            <div className="flex flex-row items-start justify-between gap-4 sm:flex-col">
               {/* Social Icons */}
               <div>
-                <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider mb-4">
+                <h3 className={sectionTitleClass}>
                   Follow Us
                 </h3>
                 <div className="flex flex-row gap-3">
@@ -120,7 +120,7 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-repower-cream/15 bg-repower-cream/[0.04] text-repower-cream/65 transition-colors hover:border-repower-gold hover:text-repower-cream"
                       aria-label={social.label}
                     >
                       <social.icon className="h-4 w-4" />
@@ -134,31 +134,31 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
                 <img 
                   src="/lovable-uploads/5d3b9997-5798-47af-8034-82bf5dcdd04c.png" 
                   alt="Mercury CSI Award Winner" 
-                  className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  className="h-12 w-auto opacity-85 transition-opacity hover:opacity-100"
                 />
                 <img 
                   src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png" 
                   alt="Mercury Certified Repower Center" 
-                  className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  className="h-12 w-auto opacity-85 transition-opacity hover:opacity-100"
                 />
               </div>
             </div>
-            <p className="text-xs text-muted-foreground mt-4">
+            <p className="mt-4 font-sans text-xs uppercase tracking-[0.18em] text-repower-cream/40">
               Serving Ontario Since 1947
             </p>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-repower-cream/10 pt-8 md:flex-row">
+          <p className="font-sans text-sm text-repower-cream/45">
             © {currentYear} {COMPANY_INFO.name}. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <Link to="/privacy" className="hover:text-primary transition-colors">
+          <div className="flex gap-6 font-sans text-sm text-repower-cream/45">
+            <Link to="/privacy" className="transition-colors hover:text-repower-cream">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="hover:text-primary transition-colors">
+            <Link to="/terms" className="transition-colors hover:text-repower-cream">
               Terms of Service
             </Link>
           </div>
