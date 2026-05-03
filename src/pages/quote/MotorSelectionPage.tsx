@@ -1154,6 +1154,7 @@ if (event.type === 'filter_motors') {
               className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
             >
               {finalFilteredMotors.map((motor, index) => {
+                const colIndex = index % gridColumns;
                 // Find original DB motor to get specifications
                 const dbMotor = motors.find(m => m.id === motor.id);
                 const specs = dbMotor?.specifications || {};
