@@ -835,45 +835,50 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
 
             {/* Send Quote Options */}
             <div className="space-y-3">
-              <h4 className="text-sm font-light text-muted-foreground">Send Quote To:</h4>
-              
+              <h4 className="font-sans font-semibold text-[11px] uppercase tracking-[0.14em] text-repower-navy-900/55">Send Quote To:</h4>
+
               {/* Send via Email */}
-              <Button 
+              <button
+                type="button"
                 onClick={handleSendByEmail}
                 disabled={!contactInfo.email || !/\S+@\S+\.\S+/.test(contactInfo.email) || isSendingEmail}
-                variant="outline" 
-                className="w-full border-repower-navy-900 text-repower-navy-900 hover:bg-repower-navy-900/[0.04] rounded-sm font-light tracking-wide disabled:opacity-50"
+                className="group w-full inline-flex items-center justify-center gap-2 bg-white border border-repower-navy-900/15 text-repower-navy-900 px-5 py-3.5 font-sans font-semibold text-[14px] transition-colors hover:border-repower-navy-900 hover:bg-repower-navy-900/[0.04] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-repower-navy-900/15 disabled:hover:bg-white"
               >
-                <Mail className="w-4 h-4 mr-2" />
+                <Mail className="w-4 h-4" />
                 {isSendingEmail ? 'Sending...' : 'Send to Email'}
-              </Button>
-              
+              </button>
+
               {/* Send via Text */}
-              <Button 
+              <button
+                type="button"
                 onClick={handleSendByText}
                 disabled={!contactInfo.phone || contactInfo.phone.replace(/\D/g, '').length !== 10 || isSendingText}
-                variant="outline" 
-                className="w-full border-repower-navy-900 text-repower-navy-900 hover:bg-repower-navy-900/[0.04] rounded-sm font-light tracking-wide disabled:opacity-50"
+                className="group w-full inline-flex items-center justify-center gap-2 bg-white border border-repower-navy-900/15 text-repower-navy-900 px-5 py-3.5 font-sans font-semibold text-[14px] transition-colors hover:border-repower-navy-900 hover:bg-repower-navy-900/[0.04] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-repower-navy-900/15 disabled:hover:bg-white"
               >
-                <MessageSquare className="w-4 h-4 mr-2" />
+                <MessageSquare className="w-4 h-4" />
                 {isSendingText ? 'Sending...' : 'Send by Text'}
-              </Button>
-              
+              </button>
+
               {/* Download as tertiary option */}
-              <Button 
+              <button
+                type="button"
                 onClick={generatePDF}
-                variant="ghost" 
-                className="w-full text-muted-foreground hover:text-repower-navy-900 hover:bg-repower-navy-900/[0.04] rounded-sm font-light tracking-wide"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 font-sans text-[13px] text-repower-navy-900/65 hover:text-repower-navy-900 transition-colors"
               >
-                <Download className="w-4 h-4 mr-2" />
+                <Download className="w-4 h-4" />
                 Download PDF
-              </Button>
+              </button>
             </div>
 
-            <Button type="submit" className="w-full bg-repower-navy-900 hover:bg-repower-navy-800 text-white rounded-sm border border-repower-navy-900 font-light tracking-wide" disabled={isSubmitting}>
-              <Calendar className="w-4 h-4 mr-2" />
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="group w-full inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Calendar className="w-4 h-4" />
               {isSubmitting ? 'Submitting...' : 'Submit Quote'}
-            </Button>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </button>
           </form>
         </Card>
       </div>
