@@ -958,19 +958,20 @@ export default function MotorDetailsPremiumModal({
                   {/* Trust Signals */}
                   <TrustSignals />
                   
-                  {/* ADD TO QUOTE Button */}
+                  {/* ADD TO QUOTE Button — hero CTA spec */}
                   <button
                     onClick={() => {
                       triggerHaptic('medium');
                       handleSelectMotor();
                     }}
-                    className="w-full bg-black text-white py-4 text-xs tracking-widest uppercase font-medium rounded-sm 
+                    style={{ transitionTimingFunction: 'cubic-bezier(0.2, 0.8, 0.2, 1)' }}
+                    className="group w-full flex items-center justify-between bg-[#C8102E] text-white px-7 py-4 rounded-[4px] text-[13px] font-bold uppercase tracking-[0.06em]
                       transition-all duration-300 ease-out
-                      hover:bg-gray-900 hover:shadow-lg hover:scale-[1.01]
-                      active:scale-[0.98]
-                      premium-pulse"
+                      hover:bg-[#9A0C24] hover:-translate-y-px hover:shadow-[0_12px_30px_rgba(154,12,36,0.35)]
+                      active:translate-y-0"
                   >
-                    Configure This Motor
+                    <span>Configure This Motor</span>
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
                   </button>
                   
                   {/* Calculate Payment Link */}
