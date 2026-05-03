@@ -353,7 +353,7 @@ export default function MotorDetailsPremiumModal({
               </div>
 
               {/* Mobile/Tablet Scrollable Header - Title and Tabs */}
-              <div className="lg:hidden bg-white border-t border-gray-100">
+              <div className="lg:hidden bg-[#FAF8F4]" style={{ borderTop: '1px solid rgba(10, 22, 40, 0.08)' }}>
                 {/* Stock Status and Title */}
                 <div className="px-4 py-3 border-b border-gray-200">
                   <div className="flex items-center gap-2 mb-1">
