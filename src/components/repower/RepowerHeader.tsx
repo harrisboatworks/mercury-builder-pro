@@ -7,7 +7,8 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { RepowerMobileMenu } from './RepowerMobileMenu';
 
 const NAV_LINKS = [
-  { to: '/', label: 'Engines' },
+  { to: '/', label: 'Home' },
+  { to: '/quote/motor-selection', label: 'Motors' },
   { to: '/promotions', label: 'Promotions' },
   { to: '/repower', label: 'Repower' },
   { to: '/trade-in-value', label: 'Trade-In' },

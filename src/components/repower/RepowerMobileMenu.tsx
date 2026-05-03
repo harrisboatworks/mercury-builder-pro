@@ -11,7 +11,8 @@ interface Props {
 }
 
 const NAV_LINKS = [
-  { to: '/', label: 'Engines' },
+  { to: '/', label: 'Home' },
+  { to: '/quote/motor-selection', label: 'Motors' },
   { to: '/promotions', label: 'Promotions' },
   { to: '/repower', label: 'Repower' },
   { to: '/trade-in-value', label: 'Trade-In Value' },
