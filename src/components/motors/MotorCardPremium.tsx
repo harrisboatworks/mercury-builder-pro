@@ -234,11 +234,11 @@ export default function MotorCardPremium({
         <div className="relative">
           {/* Image Section */}
           {imageUrl && (
-            <div className="relative bg-white p-4 overflow-hidden">
+            <div className="relative p-4 overflow-hidden" style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}>
               <img 
                 src={imageUrl} 
                 alt={title} 
-                className="h-32 md:h-48 w-full object-contain aspect-[4/3] transition-transform duration-500 group-hover:scale-105"
+                className="h-32 md:h-48 w-full object-contain aspect-[4/3] mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   if (!target.src.includes('speedboat-transparent.png')) {
