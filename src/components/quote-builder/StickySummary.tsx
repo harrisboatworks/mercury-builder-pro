@@ -93,27 +93,41 @@ export default function StickySummary({
 
   return (
     <>
-      {/* Desktop sticky card - Premium glassmorphism */}
+      {/* Desktop sticky card */}
       <aside
         aria-label="Summary"
-        className="sticky top-28 hidden h-fit max-w-sm rounded-2xl glass-card p-5 lg:block animate-card-entrance premium-glow-hover ml-auto"
+        className="sticky top-24 hidden h-fit rounded-[12px] border border-repower-navy-900/10 bg-[#F5F1EA] p-8 lg:block"
       >
-        <div className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-          {packageLabel}
-        </div>
-        
-        <div className="mt-1">
-          <CoverageComparisonTooltip />
+        <div className="font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-mercury-red">
+          TOTAL
         </div>
 
-        <div className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
+        <div className="mt-3 font-display font-bold text-repower-navy-900 leading-none tracking-[-0.03em]" style={{ fontSize: '48px' }}>
           {money(totalWithTax ?? yourPriceBeforeTax)}
         </div>
         {totalWithTax != null && (
-          <div className="mt-0.5 text-xs text-muted-foreground">
+          <div className="mt-2 font-sans text-[13px] text-repower-navy-900/55">
             Before tax: {money(yourPriceBeforeTax)}
           </div>
         )}
+
+        <div className="my-5 h-px w-full bg-repower-navy-900/10" aria-hidden />
+
+        <div className="font-sans text-[14px] text-repower-navy-900/70">
+          {monthly != null && (
+            <>From <span className="font-display font-semibold text-repower-gold tabular-nums">{money(Math.round(monthly))}/mo</span> · </>
+          )}
+          You save <span className="font-display font-semibold text-repower-navy-900 tabular-nums">{money(totalSavings)}</span>
+        </div>
+
+        <div className="mt-2 font-sans text-[12px] uppercase tracking-[0.12em] text-repower-navy-900/55">
+          {packageLabel}
+        </div>
+
+        <div className="mt-3">
+          <CoverageComparisonTooltip />
+        </div>
+
 
         <div className="mt-1 text-sm text-muted-foreground">
           {monthly != null && (
