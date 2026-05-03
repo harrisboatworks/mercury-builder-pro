@@ -378,10 +378,6 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
     onQueryChange('');
     setShowHpSuggestions(false);
     setAiResponse(null);
-    if (isListening && recognitionRef.current) {
-      recognitionRef.current.stop();
-      setIsListening(false);
-    }
     inputRef.current?.focus();
   };
 
