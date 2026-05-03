@@ -533,7 +533,7 @@ function MotorCardPreviewInner({
                 <div
                   onClick={(e) => e.stopPropagation()}
                   onTouchStart={(e) => e.stopPropagation()}
-                  className="absolute bottom-3 left-3 flex flex-col items-center gap-1 transition-opacity duration-200 [&_button]:!w-7 [&_button]:!h-7 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 sm:group-focus-within:opacity-100 [@media(hover:none)]:opacity-100"
+                  className="absolute bottom-3 left-3 flex flex-col items-center gap-1 [&_button]:!w-7 [&_button]:!h-7 opacity-0 -translate-x-1 pointer-events-none transition-[opacity,transform] duration-200 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:opacity-100 group-hover:translate-x-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-x-0 group-focus-within:pointer-events-auto [@media(hover:none)]:opacity-100 [@media(hover:none)]:translate-x-0 [@media(hover:none)]:pointer-events-auto"
                 >
                   <CompareButton 
                     isInComparison={isInComparison(motor.id)}
