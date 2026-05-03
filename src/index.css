@@ -387,6 +387,24 @@ a, button, [role="button"], .cursor-pointer {
 
     --radius: 0.5rem;
 
+    /* Repower palette (HSL) — single source of truth for page surfaces */
+    --repower-paper: 39 50% 97%;          /* #FAF8F4 — page background */
+    --repower-cream: 36 38% 94%;          /* #F5F1EA — card / elevated surface */
+    --repower-cream-deep: 36 38% 88%;     /* #ECE4D2 — gradient stop */
+    --repower-navy-900: 217 75% 7%;       /* #050E1C */
+    --repower-navy-800: 217 60% 10%;      /* #0A1628 */
+    --repower-navy-700: 217 52% 15%;      /* #122039 */
+    --repower-gold: 41 53% 54%;           /* #C9A24A */
+    --repower-mercury-red: 351 86% 42%;   /* #C8102E */
+    --repower-mercury-red-deep: 351 86% 33%;
+
+    /* Semantic surface tokens — use these instead of raw color names */
+    --surface-page: var(--repower-paper);     /* matches motor-selection page */
+    --surface-card: var(--repower-cream);     /* matches motor card body */
+    --surface-image: var(--repower-paper);    /* background behind motor images — matches page */
+    --gradient-image-bg: linear-gradient(135deg, hsl(var(--repower-paper)) 0%, hsl(var(--repower-cream)) 100%);
+
+
     /* Motor Category Colors */
     --portable: 207 85% 35%;
     --portable-foreground: 0 0% 100%;
