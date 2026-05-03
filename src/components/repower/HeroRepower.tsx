@@ -59,21 +59,21 @@ export function HeroRepower() {
         {/* Stat row */}
         <motion.div
           {...fadeUp(0.6)}
-          className="grid grid-cols-3 gap-4 md:gap-12 max-w-2xl mb-12 border-y border-[#F5F1EA]/15 py-6"
+          className="grid grid-cols-3 gap-4 md:gap-12 max-w-2xl mb-12 border-y border-[#F5F1EA]/15 py-6 items-start"
         >
           {[
             { n: '70%', l: 'of the benefit' },
             { n: '30%', l: 'of the cost' },
-            { n: '78', l: 'years on the water' },
+            { n: '79', l: 'years on the water' },
           ].map((s) => (
-            <div key={s.l}>
+            <div key={s.l} className="min-w-0">
               <div
-                className="font-display font-bold text-[clamp(28px,4.5vw,56px)] text-[#F5F1EA]"
+                className="font-display font-bold text-[clamp(28px,4.5vw,56px)] text-[#F5F1EA] leading-none tabular-nums"
                 style={{ letterSpacing: '-0.03em' }}
               >
                 {s.n}
               </div>
-              <div className="font-sans text-xs uppercase tracking-[0.18em] text-[#F5F1EA]/55 mt-1">
+              <div className="font-sans text-xs uppercase tracking-[0.18em] text-[#F5F1EA]/55 mt-3">
                 {s.l}
               </div>
             </div>
