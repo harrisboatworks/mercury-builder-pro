@@ -215,10 +215,10 @@ export default function Index() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="py-12 md:py-20 bg-muted/30">
+        <section className="py-12 md:py-20 bg-repower-paper">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+              <h2 className="text-3xl md:text-4xl font-bold text-repower-navy-900 mb-3">
                 What customers say
               </h2>
               <div className="flex items-center justify-center">
