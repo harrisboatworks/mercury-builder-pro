@@ -19,7 +19,7 @@ import { GlobalStickyQuoteBar } from "@/components/quote/GlobalStickyQuoteBar";
 import { PricingRibbon } from "@/components/marketing/PricingRibbon";
 import { RouteLoader } from "@/components/ui/RouteLoader";
 import { GlobalAIChat } from "@/components/chat/GlobalAIChat";
-import { UnifiedMobileBar } from "@/components/quote-builder/UnifiedMobileBar";
+
 import { ComparisonDesktopButton } from "@/components/motors/ComparisonDesktopButton";
 import { usePageViewTracker } from "@/hooks/usePageViewTracker";
 import { GoogleRatingBadge } from "@/components/business/GoogleRatingBadge";
@@ -596,7 +596,7 @@ const App = () => {
                   
                   <AnimatedRoutes />
                   <GlobalStickyQuoteBar />
-                  <UnifiedMobileBar />
+                  
                   <ComparisonDesktopButton />
                   <Canonical />
 
