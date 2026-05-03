@@ -175,23 +175,24 @@ export function ChooseOneSection({ options }: ChooseOneSectionProps) {
         )}
       </div>
 
-      {/* CTA */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center"
-      >
-        <Link to="/">
-          <Button size="lg" className="gap-2">
-            Build Your Quote & Choose Your Bonus
-            <ArrowRight className="w-4 h-4" />
-          </Button>
-        </Link>
-        <p className="text-sm text-muted-foreground mt-3">
-          Your selected bonus will be applied when you finalize your purchase
-        </p>
-      </motion.div>
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <Link to="/">
+            <button className="group inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors">
+              Build Your Quote & Choose Your Bonus
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth={1.75} />
+            </button>
+          </Link>
+          <p className="font-sans text-[13px] text-repower-navy-900/55 mt-4">
+            Your selected bonus will be applied when you finalize your purchase
+          </p>
+        </motion.div>
+      </div>
     </section>
   );
 }
