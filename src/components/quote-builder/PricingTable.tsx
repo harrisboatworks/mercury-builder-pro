@@ -142,7 +142,7 @@ export function PricingTable({
                   label={item.name}
                   amount={item.price}
                   description={item.description}
-                  className={cn("pl-4 border-l-2", isExistingProp ? "border-emerald-300 bg-emerald-50/50 rounded" : "border-muted")}
+                  className={cn("pl-4 border-l-2", isExistingProp ? "border-repower-gold/40 bg-[#F5F1EA]/60 rounded" : "border-muted")}
                 />
               );
             })}
@@ -152,8 +152,8 @@ export function PricingTable({
         {/* Your Savings Section - only show if there are savings */}
         {(tradeInValue > 0 || pricing.promoValue > 0) && (
           <div className="space-y-1 pt-3">
-            <div className="flex items-center gap-2 py-1 border-t border-dashed border-emerald-200">
-              <span className="text-xs font-medium text-emerald-600 uppercase tracking-wide">
+            <div className="flex items-center gap-2 py-1 border-t border-dashed border-repower-navy-900/15">
+              <span className="text-xs font-medium text-repower-mercury-red uppercase tracking-wide">
                 Your Savings
               </span>
             </div>
@@ -166,10 +166,10 @@ export function PricingTable({
                   amount={tradeInValue}
                   isDiscount
                   description={formatTradeInDescription(tradeInInfo)}
-                  className="pl-2 border-l-2 border-emerald-200"
+                  className="pl-2 border-l-2 border-repower-mercury-red/30"
                 />
-                <div className="pl-2 border-l-2 border-emerald-200 py-1">
-                  <div className="text-xs text-emerald-600 font-medium">
+                <div className="pl-2 border-l-2 border-repower-mercury-red/30 py-1">
+                  <div className="text-xs text-repower-mercury-red font-medium">
                     💡 Tax Savings from Trade-In: ${Math.round(tradeInValue * 0.13).toLocaleString()}
                   </div>
                   <div className="text-xs text-muted-foreground">
@@ -194,7 +194,7 @@ export function PricingTable({
                 amount={pricing.promoValue}
                 isDiscount
                 description="Dealer Promotion"
-                className="pl-2 border-l-2 border-emerald-200"
+                className="pl-2 border-l-2 border-repower-mercury-red/30"
               />
             )}
           </div>
@@ -244,7 +244,7 @@ export function PricingTable({
         <div className="text-xs text-muted-foreground">
           All prices in Canadian dollars. Installation, rigging, and trade-in values subject to inspection and verification.
           {pricing.savings > 0 && (
-            <span className="inline-block mt-2 px-2 py-1 bg-emerald-50 text-emerald-700 rounded-md text-xs font-semibold">
+            <span className="inline-block mt-2 px-2 py-1 bg-repower-mercury-red/10 text-repower-mercury-red rounded-md text-xs font-semibold">
               {tradeInValue > 0 ? `Dealer + Promo Savings` : 'Total savings'} of ${pricing.savings.toLocaleString()} vs MSRP
             </span>
           )}
