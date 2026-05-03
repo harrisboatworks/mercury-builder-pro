@@ -1121,49 +1121,49 @@ export default function QuoteSummaryPage() {
                 )}
 
                 {/* Mobile CTA Section */}
-                <div className="lg:hidden space-y-4">
-                  <div className="grid grid-cols-2 gap-3">
-                    <Button 
-                      onClick={() => user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)}
-                      variant="outline"
-                      className="w-full"
-                      size="lg"
-                      disabled={noMotorSelected}
-                      title={noMotorSelected ? 'Select a motor first' : undefined}
-                    >
-                      <Download className="w-4 h-4 mr-2" />
-                      Save for Later
-                    </Button>
-                    <Button 
-                      onClick={handleDownloadPDF}
-                      variant="outline"
-                      className="w-full"
-                      size="lg"
-                      disabled={isGeneratingPDF || noMotorSelected}
-                      title={noMotorSelected ? 'Select a motor first' : undefined}
-                    >
-                      <Download className="w-4 h-4 mr-2" />
-                      {isGeneratingPDF ? 'PDF' : 'Download PDF'}
-                    </Button>
-                  </div>
-                  {displayPricing.total >= FINANCING_MINIMUM && (
-                    <Button 
-                      onClick={handleApplyForFinancing}
-                      variant="default"
-                      className="w-full"
-                      size="lg"
-                    >
-                      <CreditCard className="w-4 h-4 mr-2" />
-                      Apply for Financing
-                    </Button>
-                  )}
-                  <Button 
-                    onClick={handleStepComplete}
-                    className="w-full bg-primary hover:opacity-90 text-primary-foreground premium-pulse"
-                    size="lg"
+                <div className="lg:hidden space-y-3">
+                  <button
+                    onClick={() => user ? setShowSaveDialog(true) : setShowAuthSaveDialog(true)}
+                    disabled={noMotorSelected}
+                    title={noMotorSelected ? 'Select a motor first' : undefined}
+                    className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 disabled:opacity-50"
                   >
-                    Continue to Schedule
-                  </Button>
+                    <span className="inline-flex items-center justify-center gap-2">
+                      <Download className="w-4 h-4" />
+                      Save for Later
+                    </span>
+                  </button>
+                  <button
+                    onClick={handleDownloadPDF}
+                    disabled={isGeneratingPDF || noMotorSelected}
+                    title={noMotorSelected ? 'Select a motor first' : undefined}
+                    className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 disabled:opacity-50"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      <Download className="w-4 h-4" />
+                      {isGeneratingPDF ? 'PDF' : 'Download PDF'}
+                    </span>
+                  </button>
+                  <button
+                    onClick={handleStepComplete}
+                    className="group w-full rounded bg-repower-mercury-red px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 hover:-translate-y-px hover:shadow-md"
+                  >
+                    <span className="inline-flex items-center justify-center gap-2">
+                      Continue to Schedule
+                      <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </span>
+                  </button>
+                  {displayPricing.total >= FINANCING_MINIMUM && (
+                    <button
+                      onClick={handleApplyForFinancing}
+                      className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40"
+                    >
+                      <span className="inline-flex items-center justify-center gap-2">
+                        <CreditCard className="w-4 h-4" />
+                        Apply for Financing
+                      </span>
+                    </button>
+                  )}
                 </div>
               </div>
 
