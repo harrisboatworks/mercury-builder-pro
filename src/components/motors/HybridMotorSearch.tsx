@@ -549,7 +549,13 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           transition={{ duration: 0.4, ease: "easeOut" }}
           className={`
             absolute left-5 top-1/2 -translate-y-1/2 transition-colors duration-300
-            ${isListening ? 'text-red-500' : isAIQuery ? 'text-amber-500' : 'text-gray-400'}
+            ${isListening
+              ? 'text-red-500'
+              : isAIQuery
+                ? 'text-amber-500'
+                : isDark
+                  ? (isFocused ? 'text-[#F5F1EA]' : 'text-[#F5F1EA]/50')
+                  : 'text-gray-400'}
           `}
         >
           {isListening ? (
