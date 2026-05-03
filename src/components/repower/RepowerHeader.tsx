@@ -4,7 +4,7 @@ import { Menu, ChevronRight } from 'lucide-react';
 import harrisLogo from '@/assets/harris-logo-white.png';
 import mercuryLogo from '@/assets/mercury-logo.png';
 import { useAuth } from '@/components/auth/AuthProvider';
-import { HamburgerMenu } from '@/components/ui/hamburger-menu';
+import { RepowerMobileMenu } from './RepowerMobileMenu';
 
 const NAV_LINKS = [
   { to: '/', label: 'Engines' },
