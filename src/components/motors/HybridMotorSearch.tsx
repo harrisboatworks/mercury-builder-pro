@@ -490,7 +490,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
           onBlur={handleBlur}
           onKeyDown={handleKeyDownWithSave}
           className={`
-            w-full ${isDark ? 'h-11 md:h-16 pl-14' : 'h-11 md:h-12 pl-12'} pr-12 text-[14px] ${isDark ? 'md:text-[15px]' : ''} font-light tracking-wide rounded-md
+            w-full ${isDark ? 'h-11 md:h-16 pl-14' : 'h-11 md:h-12 pl-12'} ${filterSlot ? 'pr-16' : 'pr-12'} text-[14px] ${isDark ? 'md:text-[15px]' : ''} font-light tracking-wide rounded-md
             focus:outline-none transition-all duration-300
             ${isDark
               ? `bg-[#0A1628] text-[#F5F1EA] caret-[#C9A24A] ${
