@@ -413,7 +413,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
               {/* Required fields: Brand, Year, HP, Engine Type */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="trade-brand" className="text-sm font-light tracking-wide text-repower-navy-900">
+                  <Label htmlFor="trade-brand" className="font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">
                     Brand *
                   </Label>
                   <Select 
@@ -426,7 +426,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   >
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.brand 
-                        ? 'border-red-500 ring-1 ring-red-500' 
+                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
                     }`}>
                       <SelectValue placeholder="Select brand" />
@@ -438,12 +438,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </SelectContent>
                   </Select>
                   {showValidation && missingFields.brand && (
-                    <p className="text-sm text-red-600 font-light mt-1">Required</p>
+                    <p className="font-sans text-[13px] text-repower-mercury-red mt-1">Required</p>
                   )}
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-year" className="text-sm font-light tracking-wide text-repower-navy-900 inline-flex items-center gap-1.5">
+                  <Label htmlFor="trade-year" className="font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70 inline-flex items-center gap-1.5">
                     Year *
                     <TooltipProvider delayDuration={150}>
                       <Tooltip>
@@ -484,7 +484,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   >
                     <SelectTrigger className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.year 
-                        ? 'border-red-500 ring-1 ring-red-500' 
+                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
                     }`}>
                       <SelectValue placeholder="Select year" />
@@ -496,12 +496,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </SelectContent>
                   </Select>
                   {showValidation && missingFields.year && (
-                    <p className="text-sm text-red-600 font-light mt-1">Required</p>
+                    <p className="font-sans text-[13px] text-repower-mercury-red mt-1">Required</p>
                   )}
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="trade-model" className="text-sm font-light tracking-wide text-repower-navy-900">
+                  <Label htmlFor="trade-model" className="font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">
                     Model or HP *
                   </Label>
                   <Input
@@ -515,12 +515,12 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     maxLength={120}
                     className={`min-h-[48px] rounded-sm font-light ${
                       showValidation && missingFields.horsepower 
-                        ? 'border-red-500 ring-1 ring-red-500' 
+                        ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red' 
                         : 'border-repower-navy-900/20'
                     }`}
                   />
                   {showValidation && missingFields.horsepower && (
-                    <p className="text-sm text-red-600 font-light mt-1">Required</p>
+                    <p className="font-sans text-[13px] text-repower-mercury-red mt-1">Required</p>
                   )}
                   {(() => {
                     const raw = (tradeInInfo.model || '').trim();
@@ -762,11 +762,11 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
 
               {/* Condition Selection */}
               <div className="space-y-4">
-                <Label className="text-base font-light tracking-wide text-repower-navy-900">
+                <Label className="font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">
                   Motor Condition *
                 </Label>
                 <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 ${
-                  showValidation && missingFields.condition ? 'ring-2 ring-red-500 rounded-sm p-2' : ''
+                  showValidation && missingFields.condition ? 'ring-2 ring-repower-mercury-red rounded-sm p-2' : ''
                 }`}>
                   {conditionOptions.map((option) => (
                     <motion.button
@@ -791,7 +791,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   ))}
                 </div>
                 {showValidation && missingFields.condition && (
-                  <p className="text-sm text-red-600 font-light">Please select a condition</p>
+                  <p className="font-sans text-[13px] text-repower-mercury-red">Please select a condition</p>
                 )}
               </div>
 
@@ -804,7 +804,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                 <CollapsibleContent className="pt-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="trade-start-type" className="text-sm font-light tracking-wide text-repower-navy-900">
+                      <Label htmlFor="trade-start-type" className="font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">
                         Start Type
                       </Label>
                       <Select 
@@ -822,7 +822,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="trade-hours" className="text-sm font-light tracking-wide text-repower-navy-900">
+                      <Label htmlFor="trade-hours" className="font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">
                         Engine Hours
                       </Label>
                       <Input
@@ -839,7 +839,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="trade-serial" className="text-sm font-light tracking-wide text-repower-navy-900">
+                      <Label htmlFor="trade-serial" className="font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-repower-navy-900/70">
                         Serial Number
                       </Label>
                       <Input
