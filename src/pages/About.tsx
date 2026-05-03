@@ -223,132 +223,131 @@ export default function About() {
         </section>
 
         {/* Photo Gallery Section */}
-        <section aria-labelledby="gallery" className="py-16 md:py-20 bg-muted/30">
-          <div className="max-w-6xl mx-auto px-4 md:px-6">
-            <h2 id="gallery" className="text-2xl md:text-3xl font-light text-center mb-4">
-              Our <span className="font-medium">Location</span>
+        <section aria-labelledby="gallery" className="py-20 md:py-24 bg-white border-t border-repower-navy-900/10">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-14">
+            <h2 id="gallery" className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 text-center mb-3" style={{ letterSpacing: '-0.025em' }}>
+              Our <span className="italic text-repower-mercury-red">Location</span>
             </h2>
-            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+            <p className="font-sans text-repower-navy-900/65 text-center max-w-2xl mx-auto mb-10">
               Photos from our shop on the shores of Rice Lake.
             </p>
-            
+
             <GooglePhotoGallery />
           </div>
         </section>
 
         {/* Services Section */}
-        <section aria-labelledby="services" className="py-16 md:py-20">
-          <div className="max-w-6xl mx-auto px-4 md:px-6">
-            <h2 id="services" className="text-2xl md:text-3xl font-light text-center mb-4">
-              What We <span className="font-medium">Offer</span>
+        <section aria-labelledby="services" className="py-20 md:py-24 bg-repower-paper border-t border-repower-navy-900/10">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-14">
+            <h2 id="services" className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 text-center mb-3" style={{ letterSpacing: '-0.025em' }}>
+              What We <span className="italic text-repower-mercury-red">Offer</span>
             </h2>
-            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+            <p className="font-sans text-repower-navy-900/65 text-center max-w-2xl mx-auto mb-12">
               From sales to service, we're your complete Mercury Marine destination.
             </p>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               {services.map((service) => (
-                <Card key={service.title} className="border-0 shadow-sm bg-background">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 rounded-lg bg-primary/10">
-                        <service.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-foreground mb-2">{service.title}</h3>
-                        <p className="text-sm text-muted-foreground">{service.description}</p>
-                      </div>
+                <div
+                  key={service.title}
+                  className="bg-white border border-repower-navy-900/10 rounded-lg p-6 transition-shadow hover:shadow-md"
+                >
+                  <div className="flex items-start gap-4">
+                    <service.icon className="h-7 w-7 text-repower-mercury-red shrink-0" strokeWidth={1.5} />
+                    <div>
+                      <h3 className="font-display font-semibold text-repower-navy-900 text-lg mb-2">{service.title}</h3>
+                      <p className="font-sans text-sm text-repower-navy-900/70 leading-relaxed">{service.description}</p>
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Google Reviews Section */}
-        <section aria-labelledby="reviews" className="py-16 md:py-20">
-          <div className="max-w-6xl mx-auto px-4 md:px-6">
-            <h2 id="reviews" className="text-2xl md:text-3xl font-light text-center mb-4">
-              What Our <span className="font-medium">Customers Say</span>
+        <section aria-labelledby="reviews" className="py-20 md:py-24 bg-white border-t border-repower-navy-900/10">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-14">
+            <h2 id="reviews" className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 text-center mb-3" style={{ letterSpacing: '-0.025em' }}>
+              What Our <span className="italic text-repower-mercury-red">Customers Say</span>
             </h2>
-            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+            <p className="font-sans text-repower-navy-900/65 text-center max-w-2xl mx-auto mb-10">
               Real reviews from real boaters in the Kawartha Lakes region.
             </p>
-            
+
             <GoogleReviewsCarousel />
           </div>
         </section>
 
         {/* Location Section */}
-        <section aria-labelledby="visit-us" className="py-16 md:py-20">
-          <div className="max-w-6xl mx-auto px-4 md:px-6">
+        <section aria-labelledby="visit-us" className="py-20 md:py-24 bg-repower-paper border-t border-repower-navy-900/10">
+          <div className="max-w-[1100px] mx-auto px-6 md:px-14">
             <div className="grid md:grid-cols-2 gap-10 items-center">
               <div>
-                <h2 id="visit-us" className="text-2xl md:text-3xl font-light mb-6">
-                  Visit <span className="font-medium">Us</span>
+                <h2 id="visit-us" className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-6" style={{ letterSpacing: '-0.025em' }}>
+                  Visit <span className="italic text-repower-mercury-red">Us</span>
                 </h2>
-                
-                <address className="not-italic space-y-4">
+
+                <address className="not-italic space-y-5">
                   <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <MapPin className="h-5 w-5 text-repower-mercury-red mt-0.5 flex-shrink-0" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-foreground">Address</p>
-                      <p className="text-muted-foreground">5369 Harris Boat Works Rd</p>
-                      <p className="text-muted-foreground">Gores Landing, ON K0K 2E0</p>
+                      <p className="font-medium text-repower-navy-900">Address</p>
+                      <p className="text-repower-navy-900/70">5369 Harris Boat Works Rd</p>
+                      <p className="text-repower-navy-900/70">Gores Landing, ON K0K 2E0</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <Phone className="h-5 w-5 text-repower-mercury-red mt-0.5 flex-shrink-0" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-foreground">Phone</p>
-                      <a href="tel:+19053422153" className="text-muted-foreground hover:text-primary transition-colors">
+                      <p className="font-medium text-repower-navy-900">Phone</p>
+                      <a href="tel:+19053422153" className="text-repower-navy-900/70 hover:text-repower-mercury-red transition-colors">
                         (905) 342-2153
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <Mail className="h-5 w-5 text-repower-mercury-red mt-0.5 flex-shrink-0" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-foreground">Email</p>
-                      <a href="mailto:info@harrisboatworks.ca" className="text-muted-foreground hover:text-primary transition-colors">
+                      <p className="font-medium text-repower-navy-900">Email</p>
+                      <a href="mailto:info@harrisboatworks.ca" className="text-repower-navy-900/70 hover:text-repower-mercury-red transition-colors">
                         info@harrisboatworks.ca
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <Clock className="h-5 w-5 text-repower-mercury-red mt-0.5 flex-shrink-0" strokeWidth={1.5} />
                     <div>
-                      <p className="font-medium text-foreground">Hours</p>
-                      <OpeningHoursDisplay 
-                        openingHours={placeData?.openingHours} 
+                      <p className="font-medium text-repower-navy-900">Hours</p>
+                      <OpeningHoursDisplay
+                        openingHours={placeData?.openingHours}
                         loading={hoursLoading}
                         error={!!hoursError}
                       />
                     </div>
                   </div>
                 </address>
-                
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Button asChild>
-                    <a 
-                      href="https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0" 
-                      target="_blank" 
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  <Button asChild className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
+                    <a
+                      href="https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0"
+                      target="_blank"
                       rel="noopener noreferrer"
                     >
                       Get Directions
                       <ChevronRight className="h-4 w-4 ml-1" />
                     </a>
                   </Button>
-                  <Button variant="outline" asChild>
+                  <Button variant="outline" asChild className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5">
                     <Link to="/contact">Contact Us</Link>
                   </Button>
                 </div>
               </div>
-              
+
               {/* Google Map */}
               <GoogleMapEmbed className="aspect-video md:aspect-square" />
             </div>
@@ -356,26 +355,28 @@ export default function About() {
         </section>
 
         {/* FAQ Section */}
-        <section aria-labelledby="about-faq" className="py-16 md:py-20 bg-muted/30">
-          <div className="max-w-3xl mx-auto px-4 md:px-6">
-            <h2 id="about-faq" className="text-2xl md:text-3xl font-light text-center mb-4">
-              Frequently Asked <span className="font-medium">Questions</span>
+        <section aria-labelledby="about-faq" className="py-20 md:py-24 bg-white border-t border-repower-navy-900/10">
+          <div className="max-w-[880px] mx-auto px-6 md:px-14">
+            <h2 id="about-faq" className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 text-center mb-3" style={{ letterSpacing: '-0.025em' }}>
+              Frequently Asked <span className="italic text-repower-mercury-red">Questions</span>
             </h2>
-            <p className="text-muted-foreground text-center mb-10">
+            <p className="font-sans text-repower-navy-900/65 text-center mb-10">
               Common questions about Harris Boat Works and our services.
             </p>
-            
-            <Accordion type="single" collapsible className="space-y-3">
+
+            <Accordion type="single" collapsible className="border-t border-repower-navy-900/10">
               {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
+                <AccordionItem
+                  key={index}
                   value={`faq-${index}`}
-                  className="bg-background rounded-lg border-0 shadow-sm px-6"
+                  className="border-b border-repower-navy-900/10 group"
                 >
-                  <AccordionTrigger className="text-left hover:no-underline py-4">
-                    <span className="font-medium text-foreground">{faq.question}</span>
+                  <AccordionTrigger className="text-left hover:no-underline py-5 px-2 hover:bg-repower-navy-900/[0.04] rounded-sm transition-colors [&>svg]:text-repower-navy-900">
+                    <span className="font-sans font-semibold text-[16px] md:text-[17px] text-repower-navy-900 pr-4 relative inline-block group-data-[state=open]:after:content-[''] group-data-[state=open]:after:absolute group-data-[state=open]:after:left-0 group-data-[state=open]:after:-bottom-1 group-data-[state=open]:after:h-[2px] group-data-[state=open]:after:w-10 group-data-[state=open]:after:bg-repower-gold">
+                      {faq.question}
+                    </span>
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-4">
+                  <AccordionContent className="font-sans text-[15px] text-repower-navy-900/75 pb-5 px-2 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -385,22 +386,23 @@ export default function About() {
         </section>
 
         {/* CTA Section */}
-        <section aria-labelledby="about-cta" className="py-16 md:py-20">
-          <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
-            <h2 id="about-cta" className="text-2xl md:text-3xl font-light mb-4">
-              Ready to Get <span className="font-medium">Started</span>?
+        <section aria-labelledby="about-cta" className="py-20 md:py-24 bg-repower-cream border-t border-repower-navy-900/10">
+          <div className="max-w-[880px] mx-auto px-6 md:px-14 text-center">
+            <div className="h-px w-12 bg-repower-gold mx-auto mb-8" />
+            <h2 id="about-cta" className="font-display font-bold text-[clamp(28px,3.5vw,40px)] text-repower-navy-900 mb-4" style={{ letterSpacing: '-0.025em' }}>
+              Ready to Get <span className="italic text-repower-mercury-red">Started</span>?
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="font-sans text-repower-navy-900/70 mb-8 max-w-2xl mx-auto">
               Build your custom Mercury outboard quote online, or visit us at Rice Lake to see our inventory in person.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button size="lg" asChild>
+              <Button size="lg" asChild className="bg-repower-mercury-red text-white hover:bg-repower-mercury-red-deep">
                 <Link to="/quote/motor-selection">
                   Browse Motors
                   <ChevronRight className="h-4 w-4 ml-1" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" asChild className="border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-navy-900/5">
                 <Link to="/repower">Learn About Repowering</Link>
               </Button>
             </div>
