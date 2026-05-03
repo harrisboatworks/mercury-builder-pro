@@ -211,14 +211,15 @@ export function MotorImageGallery({ images, motorTitle, enhanced = false }: Moto
       <div className="relative group cursor-pointer overflow-hidden rounded-xl" onClick={handleMainImageClick}>
         {/* Shimmer overlay while loading */}
         {!imageLoaded && (
-          <div className="absolute inset-0 rounded-xl bg-white overflow-hidden z-10">
+          <div className="absolute inset-0 rounded-xl overflow-hidden z-10" style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}>
             <div className="absolute inset-0 animate-shimmer" />
           </div>
         )}
         {/* Fixed-height container that centers the scaled image */}
         <div 
           ref={containerRef}
-          className={`${enhanced ? 'h-96' : 'h-48'} w-full bg-white rounded-xl flex items-center justify-center overflow-hidden border border-stone-100 shadow-sm`}
+          className={`${enhanced ? 'h-96' : 'h-48'} w-full rounded-xl flex items-center justify-center overflow-hidden`}
+          style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           onTouchStart={handleTouchStart}
