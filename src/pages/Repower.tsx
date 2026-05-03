@@ -63,19 +63,19 @@ export default function Repower() {
       {/* === Existing sections (Phase 2 will restyle these wrappers) === */}
 
       {/* Warning Signs Section */}
-      <section className="py-24 md:py-32 px-6 md:px-14 bg-[#050E1C] text-[#F5F1EA]">
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-repower-paper text-repower-navy-900">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+          <div className="max-w-3xl mb-14 md:mb-20">
+            <p className="font-sans font-semibold text-[11px] md:text-xs uppercase text-repower-mercury-red mb-4 flex items-center gap-3">
+              <span className="inline-block h-px w-8 bg-repower-mercury-red/60" />
               Warning Signs
             </p>
             <h2
-              className="font-display font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05] mb-6"
-              style={{ letterSpacing: '-0.03em' }}
+              className="font-display font-bold text-[clamp(36px,4.5vw,64px)] tracking-[-0.03em] leading-[1.05] mb-6"
             >
-              Is your old motor stealing your <em className="not-italic italic text-[#C8102E]">weekends?</em>
+              Is your old motor stealing your <em className="not-italic italic text-repower-mercury-red">weekends?</em>
             </h2>
-            <p className="font-sans font-light text-lg md:text-xl text-[#F5F1EA]/70 max-w-2xl mx-auto leading-relaxed">
+            <p className="font-sans text-[17px] md:text-[18px] text-repower-navy-900/65 max-w-[60ch] leading-relaxed">
               Being out there, not worrying about getting back, that's what boating should be.
             </p>
           </div>
@@ -84,21 +84,21 @@ export default function Repower() {
             {warningSignsData.map((sign, index) => (
               <div
                 key={index}
-                className="border border-[#F5F1EA]/10 bg-repower-cream/[0.02] rounded p-8 hover:border-[#C8102E]/40 transition-all duration-300"
+                className="border border-repower-navy-900/10 bg-white rounded p-8 hover:border-repower-mercury-red/40 transition-all duration-300"
               >
-                <sign.icon className="w-6 h-6 text-[#C8102E] mb-4" />
-                <h3 className="font-display font-semibold text-lg text-[#F5F1EA] mb-2">{sign.title}</h3>
-                <p className="font-sans text-sm text-[#F5F1EA]/60 leading-relaxed">{sign.description}</p>
+                <sign.icon className="w-6 h-6 text-repower-mercury-red mb-4" />
+                <h3 className="font-display font-semibold text-lg text-repower-navy-900 mb-2">{sign.title}</h3>
+                <p className="font-sans text-sm text-repower-navy-900/65 leading-relaxed">{sign.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="border-l-2 border-[#C9A24A] pl-6 md:pl-8 py-4">
-            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-3">
+          <div className="border-l-2 border-repower-gold pl-6 md:pl-8 py-4">
+            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-repower-gold mb-3">
               The "One More Season" Trap
             </p>
-            <p className="font-sans text-base md:text-lg text-[#F5F1EA]/80 leading-relaxed">
-              A new motor isn't just about reliability. It's about <span className="text-[#F5F1EA] font-medium">using your boat instead of worrying about it.</span> Stop nursing an old motor, paying for repairs, and worrying on every trip.
+            <p className="font-sans text-base md:text-lg text-repower-navy-900/80 leading-relaxed">
+              A new motor isn't just about reliability. It's about <span className="text-repower-navy-900 font-medium">using your boat instead of worrying about it.</span> Stop nursing an old motor, paying for repairs, and worrying on every trip.
             </p>
           </div>
         </div>
