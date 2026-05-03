@@ -73,7 +73,7 @@ export function HeroRepower() {
 
         <motion.p
           {...fadeUp(0.4)}
-          className="font-sans font-light text-lg md:text-2xl text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-12"
+          className="font-sans font-light text-base md:text-xl text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-8"
         >
           A nearly-new boat experience — at a fraction of the price. Mercury Marine Platinum Dealer, family-owned on Rice Lake since 1947.
         </motion.p>
