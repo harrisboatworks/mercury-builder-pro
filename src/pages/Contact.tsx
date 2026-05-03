@@ -216,21 +216,21 @@ export default function Contact() {
                         <div className="grid md:grid-cols-2 gap-3 mt-3">
                           {inquiryTypes.map((type) => {
                             const Icon = type.icon;
+                            const active = watchedValues.inquiry_type === type.value;
                             return (
-                              <Card
+                              <button
                                 key={type.value}
-                                className={`cursor-pointer transition-all hover:ring-2 hover:ring-primary/20 ${
-                                  watchedValues.inquiry_type === type.value
-                                    ? 'ring-2 ring-primary bg-primary/5'
-                                    : 'hover:bg-muted/50'
-                                }`}
+                                type="button"
                                 onClick={() => setValue('inquiry_type', type.value)}
+                                className={`text-left rounded-lg border bg-white p-4 flex items-center gap-3 transition-colors ${
+                                  active
+                                    ? 'border-repower-mercury-red ring-1 ring-repower-mercury-red'
+                                    : 'border-repower-navy-900/10 hover:border-repower-navy-900/30'
+                                }`}
                               >
-                                <CardContent className="p-4 flex items-center gap-3">
-                                  <Icon className="w-5 h-5 text-primary" />
-                                  <span className="text-sm font-medium">{type.label}</span>
-                                </CardContent>
-                              </Card>
+                                <Icon className="w-5 h-5 text-repower-mercury-red" strokeWidth={1.5} />
+                                <span className="text-sm font-medium text-repower-navy-900">{type.label}</span>
+                              </button>
                             );
                           })}
                         </div>
