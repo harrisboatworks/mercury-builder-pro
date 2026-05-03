@@ -1164,18 +1164,19 @@ if (event.type === 'filter_motors') {
              })}
            </motion.div>
           ) : (
-            <div className="bg-white rounded-2xl border border-gray-100 p-8 text-center">
-              <p className="text-gray-500 font-light mb-4">
-                No motors match your current filters.
+            <div className="bg-repower-cream/40 border border-[rgba(10,22,40,0.10)] rounded-lg p-12 text-center max-w-2xl mx-auto">
+              <h3 className="font-display font-bold text-[24px] tracking-[-0.02em] text-repower-navy-900 mb-2">
+                No motors match those filters.
+              </h3>
+              <p className="text-[14px] text-repower-navy-900/60 mb-6">
+                Try widening your HP range or removing filters.
               </p>
-              <Button
-                variant="outline"
-                size="sm"
-                className="rounded-full border-gray-200 text-gray-600 hover:bg-gray-50"
-                onClick={() => setSearchQuery('')}
+              <button
+                className="inline-flex items-center gap-2 bg-repower-mercury-red hover:bg-repower-mercury-red-deep text-white px-6 py-3 rounded-[4px] text-[12px] font-bold uppercase tracking-[0.12em] transition-colors"
+                onClick={() => { setSearchQuery(''); setConfigFilters(null); }}
               >
-                Clear search
-              </Button>
+                Clear Filters
+              </button>
             </div>
           )}
           
