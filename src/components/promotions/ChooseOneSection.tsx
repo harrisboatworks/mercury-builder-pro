@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { ChooseOneCard } from './ChooseOneCard';
 import { RebateMatrix } from './RebateMatrix';
 import { FinancingRatesCard } from './FinancingRatesCard';
-import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
 interface PromoOption {
