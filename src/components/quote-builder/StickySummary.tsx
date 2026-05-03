@@ -93,47 +93,54 @@ export default function StickySummary({
 
   return (
     <>
-      {/* Desktop sticky card - Premium glassmorphism */}
+      {/* Desktop sticky card */}
       <aside
         aria-label="Summary"
-        className="sticky top-28 hidden h-fit max-w-sm rounded-2xl glass-card p-5 lg:block animate-card-entrance premium-glow-hover ml-auto"
+        className="sticky top-24 hidden h-fit rounded-[12px] border border-repower-navy-900/10 bg-[#F5F1EA] p-8 lg:block"
       >
-        <div className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
-          {packageLabel}
-        </div>
-        
-        <div className="mt-1">
-          <CoverageComparisonTooltip />
+        <div className="font-sans text-[12px] font-semibold uppercase tracking-[0.14em] text-repower-mercury-red">
+          TOTAL
         </div>
 
-        <div className="mt-2 text-2xl font-semibold tracking-tight text-foreground">
+        <div className="mt-3 font-display font-bold text-repower-navy-900 leading-none tracking-[-0.03em]" style={{ fontSize: '48px' }}>
           {money(totalWithTax ?? yourPriceBeforeTax)}
         </div>
         {totalWithTax != null && (
-          <div className="mt-0.5 text-xs text-muted-foreground">
+          <div className="mt-2 font-sans text-[13px] text-repower-navy-900/55">
             Before tax: {money(yourPriceBeforeTax)}
           </div>
         )}
 
-        <div className="mt-1 text-sm text-muted-foreground">
+        <div className="my-5 h-px w-full bg-repower-navy-900/10" aria-hidden />
+
+        <div className="font-sans text-[14px] text-repower-navy-900/70">
           {monthly != null && (
-            <>From <span className="font-semibold text-foreground">{money(Math.round(monthly))}/mo</span> • </>
+            <>From <span className="font-display font-semibold text-repower-gold tabular-nums">{money(Math.round(monthly))}/mo</span> · </>
           )}
-          You save <span className="font-semibold text-foreground">{money(totalSavings)}</span>
+          You save <span className="font-display font-semibold text-repower-navy-900 tabular-nums">{money(totalSavings)}</span>
         </div>
 
+        <div className="mt-2 font-sans text-[12px] uppercase tracking-[0.12em] text-repower-navy-900/55">
+          {packageLabel}
+        </div>
+
+        <div className="mt-3">
+          <CoverageComparisonTooltip />
+        </div>
+
+
         {typeof coverageYears === "number" && (
-          <div className="mt-1 text-sm text-slate-600 dark:text-slate-300">
-            Coverage: <span className="font-medium">{coverageYears} years total</span>
+          <div className="mt-2 font-sans text-[14px] text-repower-navy-900/70">
+            Coverage: <span className="font-medium text-repower-navy-900">{coverageYears} years total</span>
           </div>
         )}
         {typeof monthlyDelta === "number" && monthlyDelta > 0 && (
-          <div className="mt-1 text-sm text-slate-700 dark:text-slate-300">
+          <div className="mt-1 font-sans text-[13px] text-repower-navy-900/70">
             +{money(Math.round(monthlyDelta))}/mo for Extended Warranty
           </div>
         )}
         {promoWarrantyYears ? (
-          <div className="mt-1 text-xs text-emerald-700 dark:text-emerald-300">
+          <div className="mt-1 font-sans text-[12px] text-repower-mercury-red">
             Includes +{promoWarrantyYears} yrs promo warranty
           </div>
         ) : null}
@@ -186,69 +193,71 @@ export default function StickySummary({
           )}
         </AnimatePresence>
 
-        <ul className="mt-3 space-y-0.5 lg:space-y-1 text-sm text-slate-700 dark:text-slate-300">
+        <ul className="mt-4 space-y-1.5 font-sans text-[14px] text-repower-navy-900/70">
           {bullets.slice(0, 3).map((b, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span aria-hidden className="mt-0.5 h-1.5 w-1.5 rounded-full bg-slate-400/80 dark:bg-slate-500 flex-shrink-0" />
+              <span aria-hidden className="mt-1.5 h-1 w-1 rounded-full bg-repower-navy-900/40 flex-shrink-0" />
               <span>{b}</span>
             </li>
           ))}
         </ul>
 
-        <div className="mt-4 space-y-2">
-          {onSaveForLater && (
-            <Button
-              onClick={onSaveForLater}
-              variant="outline"
-              className="w-full"
-            >
-              {user ? (
-                <>
-                  <Bookmark className="w-4 h-4 mr-2" />
-                  Save Quote
-                </>
-              ) : (
-                <>
-                  <Bookmark className="w-4 h-4 mr-2" />
-                  Save My Quote
-                </>
-              )}
-            </Button>
-          )}
-          
-          {onDownloadPDF && (
-            <Button
-              onClick={onDownloadPDF}
-              variant="outline"
-              className="w-full"
-              disabled={isGeneratingPDF}
-            >
-              <Download className="w-4 h-4 mr-2" />
-              {isGeneratingPDF ? 'Generating PDF...' : 'Download PDF Quote'}
-            </Button>
-          )}
+        <div className="my-5 h-px w-full bg-repower-navy-900/10" aria-hidden />
 
-          {onApplyForFinancing && (
-            <Button
-              onClick={onApplyForFinancing}
-              variant="default"
-              className="w-full"
-            >
-              <CreditCard className="w-4 h-4 mr-2" />
-              Apply for Financing
-            </Button>
-          )}
-
+        <div className="space-y-3">
           <button
             onClick={handleReserveClick}
             disabled={isProcessingPayment}
-            className={`w-full rounded-xl bg-primary px-4 py-3 text-center text-primary-foreground shadow-sm transition hover:scale-[1.01] hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary disabled:opacity-50 disabled:cursor-not-allowed ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
+            className={`group w-full rounded bg-repower-mercury-red px-6 py-4 text-center font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-cream transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-mercury-red disabled:opacity-50 disabled:cursor-not-allowed ${showPulse && !isProcessingPayment ? 'premium-pulse' : ''}`}
           >
-            {isProcessingPayment 
-              ? 'Processing...' 
-              : `Reserve with ${money(depositAmount)} deposit`
-            }
+            <span className="inline-flex items-center justify-center gap-2">
+              {isProcessingPayment
+                ? 'Processing...'
+                : `Reserve with ${money(depositAmount)} deposit`
+              }
+              {!isProcessingPayment && (
+                <span aria-hidden className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              )}
+            </span>
           </button>
+
+          {onApplyForFinancing && (
+            <button
+              onClick={onApplyForFinancing}
+              className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
+            >
+              <span className="inline-flex items-center justify-center gap-2">
+                <CreditCard className="w-4 h-4" />
+                Apply for Financing
+              </span>
+            </button>
+          )}
+
+          {onDownloadPDF && (
+            <button
+              onClick={onDownloadPDF}
+              disabled={isGeneratingPDF}
+              className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40 disabled:opacity-50"
+            >
+              <span className="inline-flex items-center justify-center gap-2">
+                <Download className="w-4 h-4" />
+                {isGeneratingPDF ? 'Generating PDF...' : 'Download PDF Quote'}
+              </span>
+            </button>
+          )}
+
+          {onSaveForLater && (
+            <button
+              onClick={onSaveForLater}
+              className="w-full rounded border border-repower-navy-900/15 bg-transparent px-6 py-4 font-sans text-[13px] font-bold uppercase tracking-[0.12em] text-repower-navy-900 transition hover:border-repower-navy-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-gold/40"
+            >
+              <span className="inline-flex items-center justify-center gap-2">
+                <Bookmark className="w-4 h-4" />
+                {user ? 'Save Quote' : 'Save My Quote'}
+              </span>
+            </button>
+          )}
+
           <PaymentMethodBadges className="mt-2" />
         </div>
       </aside>

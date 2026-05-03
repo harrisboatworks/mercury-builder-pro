@@ -1,86 +1,75 @@
-## Phase 4 Quote Builder Redesign — Audit + Pass 1 Plan
+# /quote/summary visual redesign plan
 
-This is a visual-only redesign. Zero changes to state, validation, routing, copy, fields, pricing, or data. All work is restricted to JSX/className surfaces and new presentational shared components.
+## Scope guarantee
+Visual layer only. I will NOT touch:
+- `src/lib/react-pdf-generator.tsx`, `pdf-executive.ts`, `pdf-helpers.ts`, `professional-quote-pdf.tsx`, vite config, shims, or anything in the PDF pipeline.
+- `handleDownloadPDF`, `handleReserveDeposit`, `handleApplyForFinancing`, `handleStepComplete`, `handleDepositSubmit`, soft-lead save, Supabase calls, edge-function invokes.
+- `useQuoteRunningTotal`, `finance.ts`, `quote-utils.ts`, `build-accessory-breakdown.ts`, the line items array, taxes, financing math.
+- Any user-facing copy, labels, button text, helper text, error toasts, terms.
+- Field set, action set, or behavior. Same things, restyled.
 
----
+## Files I plan to touch
 
-### Audit: files in scope (steps 2–6 + wrapper)
+1. `src/pages/quote/QuoteSummaryPage.tsx` — replace ONLY the JSX layout shell inside the existing `return (...)` (the part starting at the `<div className="max-w-7xl ...">` wrapper, lines ~1024-1194). All hooks, handlers, state, effects, data computations stay byte-identical. I'll wrap the page in `QuotePageShell` (eyebrow / H1 / subhead / hairline) and the existing two-column grid becomes the prescribed 60/40 layout with cream sticky card on the right.
 
-**Layout wrapper (shared across all steps)**
-- `src/components/quote-builder/QuoteLayout.tsx` — Wraps every step. Renders `LuxuryHeader`, `QuoteProgressStepper`, and ambient slate/blue gradient orbs. Currently uses `bg-gradient-to-br from-slate-50 via-white to-blue-50/30` (Tailwind defaults — out of palette).
-- `src/components/quote-builder/QuoteProgressStepper.tsx` — Stepper strip rendered below header. 9 conditional steps total; mobile shows label + progress bar + dots; desktop shows numbered circles + connectors. Uses `primary` / `border` / `muted-foreground` tokens (off-palette for the new system).
+2. `src/components/quote-builder/PricingTable.tsx` — visual restyle only of row markup (typography, spacing, hairline dividers, gold edit links). Props, data, conditional logic, totals, line item ordering, copy stay identical. No prop changes.
 
-**Step 2 — Options** (`/quote/options`)
-- Page: `src/pages/quote/OptionsPage.tsx` — wraps in `QuoteLayout`, renders required/recommended/available sections, sticky desktop footer with Back / total / Continue.
-- Components used: `OptionsSection` (local), `OptionCard` (local, list-tile), `VisualOptionCard` (`src/components/options/VisualOptionCard.tsx`), `OptionDetailsModal`, `BatteryOptionPrompt`, `Card`, `Badge`, `Checkbox`, `Button`.
-- Form fields: none — only toggleable option tiles + the binary battery prompt.
+3. `src/components/quote-builder/StickySummary.tsx` — visual restyle of the desktop sticky card (cream `#F5F1EA`, hairline border, 12px radius, 32px padding, eyebrow TOTAL, big total in Inter Tight, mini-line items, mercury-red primary CTA, ghost secondary). All props, handlers, animations, AnimatePresence blocks, confetti, sound, conditional rendering preserved. Mobile aside currently doesn't exist here; mobile CTA section in the page file gets the same restyle.
 
-**Step 3 — Purchase Path** (`/quote/purchase-path`)
-- Page: `src/pages/quote/PurchasePathPage.tsx` (uses `QuoteLayout` + `PageTransition`).
-- Component: `src/components/quote-builder/PurchasePath.tsx` — two-tile grid (Loose Motor / Professional Install) with `Package` and `Wrench` icons. No form fields.
+4. `src/components/quote-builder/QuoteProgressStepper.tsx` — verify it can render "step 6 of 6 active, all others complete"; if it already does (it's used elsewhere), I'll re-enable it on this page (currently `showProgress={false}` in `QuoteLayout`). If its visual treatment doesn't match the design system, I'll restyle visually only.
 
-**Step 4 — Boat Info** (`/quote/boat-info`)
-- Page: `src/pages/quote/BoatInfoPage.tsx`.
-- Component: `src/components/quote-builder/BoatInformation.tsx` (1022 lines). Form fields: boat type (select/cards), make, model, length, current motor brand, current HP, year, serial, control type (radio), shaft length (radio), hasBattery, hasCompatibleProp. Uses `Input`, `Label`, `Select`, `Card`, `Slider`, `Tooltip`, `Alert`, `Collapsible`, `TransomHeightCalculator`, plus optional `TradeInValuation` (only when `includeTradeIn` is true — but here always called with `includeTradeIn={false}`).
+No new files needed; I'll reuse `QuotePageShell`, `QuoteFormField`, `QuoteInput` already locked in for other steps.
 
-**Step 5 — Promo** (`/quote/promo-selection`)
-- Page: `src/pages/quote/PromoSelectionPage.tsx` — three-option choice (no payments / special financing / cash rebate) + conditional financing rate selector. Uses framer-motion, `Button`, custom card markup with `Check`, `ArrowRight`, `Banknote`, `Percent`, `CalendarOff`, `Shield` icons, `CountdownTimer`.
+## Layout result
 
-**Step 6 — Summary** (`/quote/summary`)
-- Page: `src/pages/quote/QuoteSummaryPage.tsx` (1221 lines).
-- Components: `PricingTable`, `BonusOffers`, `StickySummary`, `QuoteRevealCinematic`, `SaveQuoteDialog`, `SaveQuoteWithAuth`, `PhoneCapture`, `DepositInfoDialog`, `StaleQuoteAlert`, `AdminQuoteControls`, `QuoteSummarySkeleton`. Lots of CTAs (PDF, deposit, save, schedule).
+```text
++------------------------------------------------------------+
+| RepowerHeader (solid)                                      |
+| QuoteProgressStepper (step 6 active)                       |
++------------------------------------------------------------+
+|  max-w-1100 py-12 px-6                                     |
+|                                                            |
+|  STEP 6 . YOUR QUOTE   (eyebrow, mercury-red)              |
+|  H1 (existing heading copy, untouched)                     |
+|  Subhead (existing copy, untouched)                        |
+|  ----------------------------- hairline                    |
+|                                                            |
+|  +-------------------+  +---------------------------+      |
+|  |  60%              |  | 40% sticky cream card      |     |
+|  |  Line items       |  | TOTAL eyebrow              |     |
+|  |  (PricingTable    |  | $XX,XXX (48px Inter Tight) |     |
+|  |   restyled rows)  |  | tax line                   |     |
+|  |                   |  | --------- hairline         |     |
+|  |  BonusOffers      |  | mini line items            |     |
+|  |  AdminControls    |  | --------- hairline         |     |
+|  |                   |  | financing snippet          |     |
+|  |  Back ghost btn   |  | --------- hairline         |     |
+|  |                   |  | Primary CTA (mercury-red)  |     |
+|  |                   |  | Secondary ghost btns       |     |
+|  |                   |  | trust line                 |     |
+|  +-------------------+  +---------------------------+      |
+|                                                            |
+|  Mobile: stack, sticky CTA bar at viewport bottom          |
++------------------------------------------------------------+
+```
 
-**Other steps in flow but out of Phase 4 scope per request** (still rendered through `QuoteLayout`, so the new stepper/header will affect them visually): TradeIn, FuelTank, Installation, MotorSelection, Schedule, Success. We will not touch their content; only the wrapper they share is upgraded.
+## What stays exactly as-is
+- All data passed into `<PricingTable>` and `<StickySummary>`.
+- The `noMotorSelected` gating, `disabled` states, tooltips/titles.
+- `QuoteRevealCinematic`, `StaleQuoteAlert`, `DepositInfoDialog`, `SaveQuoteDialog`, `SaveQuoteWithAuth`, `PhoneCapture` rendering.
+- All `framer-motion` variants, delays, and the iOS opacity guards already in place.
+- The existing `quoteValidUntil` computation and prop flow.
+- Every button's `onClick` wiring, every label string.
 
----
+## Token reference (from locked design system)
+- bg paper `#FAF8F4`, cream card `#F5F1EA`, navy-900, mercury-red, gold accent
+- Inter Tight 700 for H1 and big total; Inter for body; uppercase tracked eyebrows
+- Hairline = `1px solid rgba(10,22,40,0.10)`
+- Field styling already in `QuoteInput` / `QuoteFormField` (will not be needed unless this page has a customer info form — current code shows it does NOT; customer info is collected via `DepositInfoDialog`/`SaveQuoteDialog` modals, so no inline form fields to restyle on this page).
 
-### Shared design primitives to create
+## Verification I'll do after implementing
+- Read the rendered file end-to-end to confirm no handler signature changed.
+- Confirm `handleDownloadPDF`, `handleReserveDeposit`, `handleApplyForFinancing` are referenced from JSX exactly as before.
+- Confirm no edits leaked into PDF/finance/quote-utils files.
 
-All new files live under `src/components/quote-builder/redesign/`:
-
-1. `QuotePageShell.tsx` — Wraps each step's content. Props: `eyebrow`, `title`, `subhead?`, `children`. Renders paper bg, max-width 880px, `py-12 px-6 md:py-16 md:px-0`, eyebrow (mercury-red uppercase + leading hairline), H1 (Inter Tight 700, fluid clamp, navy-900), optional subhead, hairline divider, then children with `gap-7` between blocks. Used by all 5 step pages.
-
-2. `QuoteStepNav.tsx` — Bottom nav. Props: `onBack`, `onContinue`, `backLabel`, `continueLabel`, `continueDisabled?`, `rightSlot?` (for the optional total readout on Options). Desktop: inline row, secondary left / primary right. Mobile: full-width sticky-bottom with hairline border-top, primary on top, secondary below.
-
-3. `QuoteRadioTile.tsx` — Single tile (radio or checkbox visual). Props: `selected`, `onClick`, `icon?`, `label`, `description?`, `priceTag?`, `multi?` (controls aria semantics only). Hairline border, p `18px 22px`, radius 8, white→cream hover, selected = 2px navy-900 border + mercury-red dot top-right. Used on Options (replaces local `OptionCard`) and Purchase Path tiles.
-
-4. `QuoteFormField.tsx` — Label + control wrapper. Props: `label`, `required?`, `helper?`, `error?`, `htmlFor`, `children`. Renders the spec'd label (Inter 600, 12px, uppercase, 0.14em, navy-900/70%), gold asterisk when required, helper / error text below. Used on Boat Info inputs in Pass 2.
-
-5. `QuoteInput.tsx`, `QuoteSelect.tsx`, `QuoteTextarea.tsx` — Thin restyles wrapping the existing `<Input>`, Radix `<Select>`, `<Textarea>` with the spec'd visual layer (white bg, hairline border, 4px radius, 14×16 padding, 15px Inter, gold focus ring, mercury-red error border). They forward all props and `ref`s; no behavior changes. Used by Boat Info and Promo in Pass 2 and Summary in Pass 3.
-
-6. `QuoteCheckbox.tsx` — 18×18 hairline-border box, navy-900 fill on check, cream check icon, gold focus ring. Wraps the existing Radix checkbox.
-
-These are all presentational. They contain no state, no validation, no submit logic.
-
----
-
-### File plan (what changes where)
-
-**Restyled in place**
-- `QuoteLayout.tsx` — swap background to `bg-repower-paper`, drop the gradient orbs, keep `LuxuryHeader` (already navy-900 solid in non-hero pages — verify; if not, switch to the established solid header variant). Continue rendering `QuoteProgressStepper`. No prop or behavior change.
-- `QuoteProgressStepper.tsx` — full visual rewrite to spec (active = filled navy-900 + cream number; completed = gold-outlined circle + gold check; upcoming = hairline circle + 30% navy; connectors hairline → gold when both adjacent are completed; mobile collapses to "Step X of N · Label" + thin progress bar, hides dots). State machine, conditional-step filtering, click-to-navigate, and `isStepAccessible` logic untouched.
-- `OptionsPage.tsx` — replace the outer container + header block with `<QuotePageShell eyebrow="STEP 2 · OPTIONS" title="…existing heading string…" subhead="…existing subhead if present…">`. Replace local `OptionCard` JSX with `<QuoteRadioTile>` (same props/handlers — `isSelected`, `onToggle`, `disabled`, details button). Replace section headers with a small uppercase navy-900/70% label + hairline. Replace the sticky desktop footer with `<QuoteStepNav>` (and surface the existing options-total readout via `rightSlot`). Mobile gets the new sticky nav for free. All copy strings, handlers, `dispatch` calls, localStorage save, and `navigate()` calls preserved verbatim.
-- `VisualOptionCard.tsx` — minor border/hover tweak so it shares the radio-tile selected visual (2px navy border, mercury-red dot). Image, layout, copy, click handler unchanged.
-- `BatteryOptionPrompt.tsx` — restyle the two choice tiles to match `QuoteRadioTile` aesthetic (or render through it). Copy and `onSelect` payload untouched.
-
-**Untouched in Pass 1**
-- `PurchasePath.tsx`, `PurchasePathPage.tsx`, `BoatInformation.tsx`, `BoatInfoPage.tsx`, `PromoSelectionPage.tsx`, `QuoteSummaryPage.tsx`, all summary subcomponents — Pass 2 and Pass 3.
-- All hooks, contexts, pricing, `QuoteContext`, `useMotorOptions`, deposit/Stripe/PDF logic — never touched in any pass.
-
----
-
-### Pass 1 deliverable (what I'll build when you approve)
-
-1. Create the 6 shared primitives under `src/components/quote-builder/redesign/`.
-2. Rewrite `QuoteProgressStepper.tsx` visuals to spec (logic intact).
-3. Reskin `QuoteLayout.tsx` background.
-4. Reskin `OptionsPage.tsx` to use `QuotePageShell`, `QuoteRadioTile`, `QuoteStepNav`. Reskin `VisualOptionCard` and `BatteryOptionPrompt` selected/hover states.
-5. No copy edits anywhere. No em dashes introduced. Palette locked to repower tokens.
-
-Then I stop and you review step 2 in the preview before I start Pass 2.
-
----
-
-### Open question
-
-The brief references a "SolidHeaderLayout already established for non-hero pages." The current `QuoteLayout` uses `LuxuryHeader`. I'll inspect `LuxuryHeader` to confirm whether it already renders the solid navy-900 variant on internal pages, or whether I should switch to the repower header used on `/repower` and the new motor selection page. If unclear, I'll match whatever the post-redesign motor selection page renders so step 2 is visually continuous with step 1. No new header component will be invented.
+Awaiting your OK before I make any changes.
