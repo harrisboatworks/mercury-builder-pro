@@ -178,42 +178,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
     }
   }, []);
 
-  // Check for Speech Recognition support
-  useEffect(() => {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    setSpeechSupported(!!SpeechRecognition);
-    
-    if (SpeechRecognition) {
-      const recognition = new SpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = true;
-      recognition.lang = 'en-US';
-      
-      recognition.onresult = (event) => {
-        const transcript = Array.from(event.results)
-          .map(result => result[0].transcript)
-          .join('');
-        onQueryChange(transcript);
-      };
-      
-      recognition.onend = () => {
-        setIsListening(false);
-      };
-      
-      recognition.onerror = (event) => {
-        console.error('Speech recognition error:', event.error);
-        setIsListening(false);
-      };
-      
-      recognitionRef.current = recognition;
-    }
-    
-    return () => {
-      if (recognitionRef.current) {
-        recognitionRef.current.abort();
-      }
-    };
-  }, [onQueryChange]);
+  // Voice search removed
 
   // Save search to recent searches
   const saveRecentSearch = useCallback((searchQuery: string) => {
@@ -245,19 +210,7 @@ export const HybridMotorSearch: React.FC<HybridMotorSearchProps> = ({
     triggerHaptic('light');
   }, [triggerHaptic]);
 
-  // Toggle voice search
-  const toggleVoiceSearch = useCallback(() => {
-    if (!recognitionRef.current) return;
-    
-    if (isListening) {
-      recognitionRef.current.stop();
-      setIsListening(false);
-    } else {
-      triggerHaptic('medium');
-      recognitionRef.current.start();
-      setIsListening(true);
-    }
-  }, [isListening, triggerHaptic]);
+  // Voice search removed
 
   // Handle recent search click
   const handleRecentSearchClick = useCallback((search: string) => {
