@@ -44,18 +44,18 @@ export function RepowerHeader() {
         <div className="max-w-[1400px] mx-auto px-6 md:px-14 flex items-center justify-between gap-6">
           {/* Logo lockup */}
           <Link to="/" className="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0 min-w-0">
-            <img src={harrisLogo} alt="Harris Boat Works" className="h-8 md:h-9 w-auto shrink-0" />
-            <div className="w-px h-6 sm:h-7 bg-[#F5F1EA]/20 shrink-0" />
+            <img src={harrisLogo} alt="Harris Boat Works" className="h-7 sm:h-8 md:h-9 w-auto shrink-0" />
+            <div className="hidden sm:block w-px h-7 bg-[#F5F1EA]/20 shrink-0" />
             <img
               src={mercuryLogo}
               alt="Mercury Marine"
-              className="h-5 sm:h-7 md:h-8 w-auto brightness-0 invert shrink-0"
+              className="hidden sm:block h-6 md:h-7 w-auto brightness-0 invert shrink-0"
             />
-            <div className="flex items-center sm:ml-1 md:ml-2 sm:border-l sm:border-[#F5F1EA]/15 sm:pl-3 md:pl-4 shrink-0">
+            <div className="flex items-center pl-2 sm:pl-3 md:pl-4 border-l border-[#F5F1EA]/15 shrink-0">
               <img
                 src="/lovable-uploads/87369838-a18b-413c-bacb-f7bcfbbcbc17.png"
                 alt="Mercury Certified Repower Centre"
-                className="h-8 sm:h-9 md:h-10 lg:h-11 w-auto"
+                className="h-9 sm:h-9 md:h-10 lg:h-11 w-auto"
               />
             </div>
           </Link>
