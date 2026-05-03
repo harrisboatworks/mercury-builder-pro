@@ -90,40 +90,48 @@ export default function QuoteSuccessPage() {
   }, [showConfetti]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-muted/30 to-background flex items-center justify-center px-4 py-12">
-      <Card className="p-8 max-w-2xl w-full shadow-xl">
+    <div className="min-h-screen bg-repower-paper flex items-center justify-center px-6 md:px-14 py-14 md:py-20">
+      <div className="bg-white border border-repower-navy-900/10 p-8 md:p-12 max-w-2xl w-full">
         <div className="text-center">
           {/* Success Icon */}
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-green-500/20 rounded-full animate-ping"></div>
-              <CheckCircle2 className="w-20 h-20 text-green-500 relative" />
+          <div className="flex justify-center mb-8">
+            <div className="relative inline-flex items-center justify-center w-20 h-20 rounded-full bg-repower-cream border border-repower-gold/40">
+              <span className="absolute inset-0 rounded-full bg-repower-gold/15 animate-ping" />
+              <CheckCircle2 className="w-10 h-10 text-repower-gold relative" strokeWidth={1.75} />
             </div>
           </div>
-          
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+
+          {/* Eyebrow + H1 */}
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="h-px w-8 bg-repower-mercury-red" />
+            <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-mercury-red">
+              Confirmed
+            </p>
+            <span className="h-px w-8 bg-repower-mercury-red" />
+          </div>
+
+          <h1 className="font-display font-bold text-repower-navy-900 mb-4" style={{ fontSize: 'clamp(32px, 4vw, 44px)', letterSpacing: '-0.025em', lineHeight: 1.05 }}>
             Quote Submitted!
           </h1>
-          
-          <p className="text-muted-foreground mb-6 text-lg">
+
+          <p className="font-sans text-[16px] text-repower-navy-900/65 mb-8 max-w-[52ch] mx-auto">
             Thank you for requesting a quote. We've received your information and will be in touch shortly.
           </p>
-          
+
           {/* Reference Number */}
-          <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-xl p-6 mb-8 border border-primary/20">
-            <p className="text-sm text-muted-foreground mb-2">Your Quote Reference Number</p>
-            <code className="text-3xl font-mono font-bold text-primary tracking-wider">
+          <div className="bg-repower-cream border border-repower-navy-900/10 p-6 mb-8">
+            <p className="font-sans font-semibold text-[11px] uppercase tracking-[0.24em] text-repower-navy-900/55 mb-2">Your Quote Reference Number</p>
+            <code className="block font-display text-[28px] md:text-[32px] font-bold text-repower-navy-900 tracking-[0.1em]">
               {referenceNumber}
             </code>
-            <p className="text-xs text-muted-foreground mt-2">
+            <p className="font-sans text-[12px] text-repower-navy-900/55 mt-2">
               Save this number for your records
             </p>
           </div>
 
-          {/* Save Quote Prompt - Only show if not logged in */}
           {!user && (
             <div className="mb-8">
-              <SaveQuotePrompt 
+              <SaveQuotePrompt
                 referenceNumber={referenceNumber}
                 contactInfo={contactInfo}
                 quoteId={quoteId}
@@ -132,84 +140,51 @@ export default function QuoteSuccessPage() {
           )}
 
           {/* Timeline */}
-          <div className="space-y-6 text-left mb-8">
+          <div className="space-y-8 text-left mb-8">
             <div>
-              <h2 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <ArrowRight className="h-6 w-6 text-primary" />
+              <h2 className="font-display font-bold text-[22px] text-repower-navy-900 mb-5 flex items-center gap-2" style={{ letterSpacing: '-0.02em' }}>
+                <ArrowRight className="h-5 w-5 text-repower-mercury-red" strokeWidth={1.75} />
                 What Happens Next?
               </h2>
-              <div className="space-y-4">
-                <div className="flex gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    1
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-foreground">Review</p>
-                    <p className="text-sm text-muted-foreground">Our team will review your quote and prepare your motor</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    2
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-foreground">Confirmation Call</p>
-                    <p className="text-sm text-muted-foreground">You'll receive a call within 24 hours to discuss details</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    3
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-foreground">Schedule</p>
-                    <p className="text-sm text-muted-foreground">We'll schedule your pickup at our Gores Landing location</p>
-                  </div>
-                </div>
-                
-                <div className="flex gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    4
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-medium text-foreground">Complete Purchase</p>
-                    <p className="text-sm text-muted-foreground">Finalize payment and take home your new Mercury motor</p>
-                  </div>
-                </div>
-              </div>
+              <ol className="space-y-3">
+                {[
+                  { title: 'Review', desc: 'Our team will review your quote and prepare your motor' },
+                  { title: 'Confirmation Call', desc: "You'll receive a call within 24 hours to discuss details" },
+                  { title: 'Schedule', desc: "We'll schedule your pickup at our Gores Landing location" },
+                  { title: 'Complete Purchase', desc: 'Finalize payment and take home your new Mercury motor' },
+                ].map((step, i) => (
+                  <li key={i} className="flex gap-4 p-4 bg-repower-paper border border-repower-navy-900/10">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full border border-repower-navy-900/20 bg-white flex items-center justify-center font-display font-bold text-[14px] text-repower-navy-900">
+                      {i + 1}
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-display font-semibold text-[15px] text-repower-navy-900">{step.title}</p>
+                      <p className="font-sans text-[13px] text-repower-navy-900/65 mt-0.5">{step.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </div>
 
             {/* Contact Information */}
-            <div className="border-t border-border pt-6">
-              <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                <MessageSquare className="h-5 w-5 text-primary" />
+            <div className="border-t border-repower-navy-900/10 pt-6">
+              <h3 className="font-display font-semibold text-[16px] text-repower-navy-900 mb-3 flex items-center gap-2">
+                <MessageSquare className="h-5 w-5 text-repower-mercury-red" strokeWidth={1.75} />
                 Questions?
               </h3>
-              <p className="text-muted-foreground text-sm mb-2">
+              <p className="font-sans text-[14px] text-repower-navy-900/65 mb-3">
                 Our team is here to help:
               </p>
               <div className="flex flex-col gap-2">
-                {/* SMS - Primary option */}
-                <a 
-                  href={`sms:${COMPANY_INFO.contact.sms.replace(/[^0-9]/g, '')}`}
-                  className="text-primary hover:underline flex items-center gap-2 font-medium"
-                >
+                <a href={`sms:${COMPANY_INFO.contact.sms.replace(/[^0-9]/g, '')}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors">
                   <MessageSquare className="h-4 w-4" />
                   Text Us: {COMPANY_INFO.contact.sms}
                 </a>
-                <a 
-                  href={`tel:${COMPANY_INFO.contact.phone}`}
-                  className="text-primary hover:underline flex items-center gap-2 font-medium"
-                >
+                <a href={`tel:${COMPANY_INFO.contact.phone}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors">
                   <Phone className="h-4 w-4" />
                   Call: {COMPANY_INFO.contact.phone}
                 </a>
-                <a 
-                  href={`mailto:${COMPANY_INFO.contact.email}`}
-                  className="text-primary hover:underline flex items-center gap-2 font-medium"
-                >
+                <a href={`mailto:${COMPANY_INFO.contact.email}`} className="inline-flex items-center gap-2 font-sans text-[14px] font-semibold text-repower-navy-900 hover:text-repower-mercury-red transition-colors">
                   <Mail className="h-4 w-4" />
                   {COMPANY_INFO.contact.email}
                 </a>
@@ -218,25 +193,23 @@ export default function QuoteSuccessPage() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <button
               onClick={() => navigate('/')}
-              size="lg"
-              className="gap-2"
+              className="group inline-flex items-center justify-center gap-2 bg-repower-mercury-red text-repower-cream px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:bg-repower-mercury-red-deep transition-colors"
             >
               Return Home
-            </Button>
-            <Button
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </button>
+            <button
               onClick={() => navigate('/quote/motor-selection')}
-              variant="outline"
-              size="lg"
-              className="gap-2"
+              className="inline-flex items-center justify-center border border-repower-navy-900/20 bg-white text-repower-navy-900 px-7 py-4 font-sans font-bold text-[13px] uppercase tracking-[0.14em] hover:border-repower-navy-900 transition-colors"
             >
               Get Another Quote
-            </Button>
+            </button>
           </div>
         </div>
-      </Card>
+      </div>
     </div>
   );
 }
