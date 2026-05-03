@@ -347,17 +347,26 @@ export default function Repower() {
       <WhyHarrisRepower />
 
       {/* Service Area */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-[#0A1828] text-[#F5F1EA]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-            Serving Ontario Boaters
-          </h2>
-          <p className="text-muted-foreground mb-6">
-            Located in Gores Landing with our own private boat launch on Rice Lake. We serve boaters throughout:
+          <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+            Service Area
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
+          <h2
+            className="font-display font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05] mb-6"
+            style={{ letterSpacing: '-0.03em' }}
+          >
+            Serving Ontario <em className="not-italic italic text-[#C8102E]">boaters.</em>
+          </h2>
+          <p className="font-sans font-light text-lg text-[#F5F1EA]/70 mb-10 leading-relaxed max-w-2xl mx-auto">
+            Located in Gores Landing with our own private boat launch on Rice Lake.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {['Rice Lake', 'Kawarthas', 'Peterborough', 'Cobourg', 'Port Hope', 'Northumberland', 'Durham', 'GTA', 'Toronto'].map((area) => (
-              <span key={area} className="bg-stone-100 text-foreground px-4 py-2 rounded-full text-sm">
+              <span
+                key={area}
+                className="border border-[#F5F1EA]/20 text-[#F5F1EA]/80 px-4 py-2 rounded font-sans text-xs uppercase tracking-[0.18em]"
+              >
                 {area}
               </span>
             ))}
@@ -366,38 +375,45 @@ export default function Repower() {
             href="https://www.google.com/maps/dir/?api=1&destination=5369+Harris+Boat+Works+Rd+Gores+Landing+ON+K0K+2E0"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 border border-[#F5F1EA]/30 text-[#F5F1EA] px-8 py-4 rounded uppercase tracking-wider text-sm font-semibold hover:bg-[#F5F1EA]/5 transition-all duration-300"
           >
-            <Button variant="outline" className="gap-2">
-              <MapPin className="w-4 h-4" />
-              Get Directions
-            </Button>
+            <MapPin className="w-4 h-4" />
+            Get Directions
           </a>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-4 bg-stone-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-2">
-              What Customers Say
+      <section className="py-24 md:py-32 px-6 md:px-14 bg-[#050E1C] text-[#F5F1EA]">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-center mb-16">
+            <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+              Customer Stories
+            </p>
+            <h2
+              className="font-display font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05] mb-4"
+              style={{ letterSpacing: '-0.03em' }}
+            >
+              What customers <em className="not-italic italic text-[#C8102E]">say.</em>
             </h2>
-            <p className="text-muted-foreground">
-              <span className="font-medium text-foreground">{reviewCount}+</span> five-star reviews from Ontario boaters
+            <p className="font-sans text-base text-[#F5F1EA]/65">
+              <span className="font-medium text-[#F5F1EA]">{reviewCount}+</span> five-star reviews from Ontario boaters
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {dailyTestimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white border border-border rounded-xl p-6">
-                <div className="flex gap-1 mb-3">
+              <div key={index} className="border border-[#F5F1EA]/10 bg-[#F5F1EA]/[0.02] rounded p-8">
+                <div className="flex gap-1 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    <Star key={i} className="w-4 h-4 fill-[#C9A24A] text-[#C9A24A]" />
                   ))}
                 </div>
-                <p className="text-foreground mb-3 italic">"{testimonial.quote}"</p>
-                <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">{testimonial.name}</span> — {testimonial.location}
+                <p className="font-display text-lg text-[#F5F1EA] mb-6 leading-relaxed italic" style={{ letterSpacing: '-0.01em' }}>
+                  "{testimonial.quote}"
+                </p>
+                <p className="font-sans text-xs uppercase tracking-[0.18em] text-[#F5F1EA]/55">
+                  <span className="text-[#C9A24A]">{testimonial.name}</span> · {testimonial.location}
                 </p>
               </div>
             ))}
