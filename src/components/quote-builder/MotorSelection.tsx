@@ -1439,30 +1439,7 @@ export const MotorSelection = ({
                          </div>
                        </div>
 
-                       {/* Stock Badge - Top right, aligned with HP badge */}
-                       <div className="absolute top-3 right-3 z-20">
-                         {motor.stockStatus === 'In Stock' && (
-                           <span className="in-stock-badge px-2 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
-                             IN STOCK
-                           </span>
-                         )}
-                         {motor.stockStatus === 'Order Now' && (
-                           <span className="px-2 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">
-                             ORDER NOW
-                           </span>
-                         )}
-                         {motor.stockStatus === 'On Order' && (
-                           <span className="px-2 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full">
-                             ON ORDER
-                           </span>
-                         )}
-                         {motor.stockStatus === 'Sold' && (
-                           <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-bold rounded-full">
-                             SOLD
-                           </span>
-                         )}
-                       </div>
-
+                       {/* Stock badges removed from browse cards, real stock surfaces later in the flow */}
                       {/* Urgency: low stock */}
                       {typeof stockCount === 'number' && stockCount > 0 && stockCount <= 2 && (
                         <div className="absolute top-3 left-3 z-20 animate-fade-in" style={{ marginTop: '2.5rem' }}>
