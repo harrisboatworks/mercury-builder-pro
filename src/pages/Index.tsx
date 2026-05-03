@@ -308,6 +308,6 @@ export default function Index() {
       </main>
 
       <SiteFooter />
-    </div>
+    </RepowerLayout>
   );
 }
