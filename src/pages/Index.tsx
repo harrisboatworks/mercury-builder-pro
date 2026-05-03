@@ -9,6 +9,7 @@ import { HomepageSEO } from '@/components/seo/HomepageSEO';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { RepowerLayout } from '@/components/repower/RepowerLayout';
 import { HeroRepower } from '@/components/repower/HeroRepower';
+import { RepowerCta } from '@/components/repower/RepowerCta';
 import { TrustStrip } from '@/components/repower/TrustStrip';
 import { RepowerMath } from '@/components/repower/RepowerMath';
 import { HowItWorksCard, HowItWorksGrid } from '@/components/repower/HowItWorksCard';
@@ -150,12 +151,9 @@ export default function Index() {
             </HowItWorksGrid>
 
             <div className="text-center">
-              <button
-                onClick={goBuild}
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-[#C8102E] hover:bg-[#A50D26] text-[#F5F1EA] px-8 sm:px-10 py-4 rounded uppercase tracking-wider text-sm font-semibold transition-all duration-300"
-              >
-                Start Building <ArrowRight className="h-4 w-4" />
-              </button>
+              <RepowerCta as="button" onClick={goBuild} variant="primary" size="lg">
+                Start Building <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </RepowerCta>
             </div>
           </div>
         </section>
@@ -190,24 +188,15 @@ export default function Index() {
                   ))}
                 </ul>
                 <div className="flex flex-wrap gap-2 md:gap-3">
-                  <Link
-                    to="/quote/motor-selection"
-                    className="inline-flex items-center gap-1.5 bg-[#C8102E] hover:bg-[#A50D26] text-repower-cream px-4 md:px-6 py-2.5 md:py-3 rounded uppercase tracking-wider text-[11px] md:text-xs font-semibold transition-colors"
-                  >
+                  <RepowerCta to="/quote/motor-selection" variant="primary" size="md">
                     Build a Mercury outboard quote <ChevronRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    to="/locations/rice-lake-mercury-repower"
-                    className="inline-flex items-center gap-1.5 border border-repower-cream/30 hover:border-repower-gold hover:text-repower-gold text-repower-cream px-4 md:px-6 py-2.5 md:py-3 rounded uppercase tracking-wider text-[11px] md:text-xs font-semibold transition-colors"
-                  >
+                  </RepowerCta>
+                  <RepowerCta to="/locations/rice-lake-mercury-repower" variant="outline" size="md">
                     Mercury repower on Rice Lake <ChevronRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    to="/faq"
-                    className="inline-flex items-center gap-1.5 border border-repower-cream/30 hover:border-repower-gold hover:text-repower-gold text-repower-cream px-4 md:px-6 py-2.5 md:py-3 rounded uppercase tracking-wider text-[11px] md:text-xs font-semibold transition-colors"
-                  >
+                  </RepowerCta>
+                  <RepowerCta to="/faq" variant="outline" size="md">
                     Repower FAQ <ChevronRight className="h-4 w-4" />
-                  </Link>
+                  </RepowerCta>
                 </div>
               </div>
 
@@ -279,24 +268,12 @@ export default function Index() {
               Build a live quote in 3 minutes. No commitments, no sales calls until you're ready.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <Button
-                size="lg"
-                variant="secondary"
-                onClick={goBuild}
-                className="gap-2 text-base px-8 h-12 w-full sm:w-auto"
-              >
+              <RepowerCta as="button" onClick={goBuild} variant="primary" size="lg" className="w-full sm:w-auto">
                 <DollarSign className="h-5 w-5" /> Build Your Quote
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                asChild
-                className="bg-transparent text-primary-foreground border-primary-foreground/40 hover:bg-primary-foreground hover:text-primary text-base px-8 h-12 w-full sm:w-auto"
-              >
-                <a href="tel:+19053422153" className="gap-2 inline-flex items-center">
-                  <Phone className="h-4 w-4" /> Call (905) 342-2153
-                </a>
-              </Button>
+              </RepowerCta>
+              <RepowerCta href="tel:+19053422153" variant="secondary" size="lg" className="w-full sm:w-auto">
+                <Phone className="h-4 w-4" /> Call (905) 342-2153
+              </RepowerCta>
             </div>
           </div>
         </section>
