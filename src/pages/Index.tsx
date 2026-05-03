@@ -118,55 +118,69 @@ export default function Index() {
         <TrustStrip />
         <RepowerMath />
         {/* HOW IT WORKS */}
-        <section className="py-12 md:py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-10 md:mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-                How it works
+        <section className="py-24 md:py-32 px-6 md:px-14 bg-[#0A1828] text-[#F5F1EA]">
+          <div className="max-w-[1400px] mx-auto">
+            <div className="text-center mb-16">
+              <p className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A] mb-6">
+                How It Works
+              </p>
+              <h2
+                className="font-display font-bold text-[clamp(36px,5vw,64px)] tracking-tight leading-[1.05] mb-6"
+                style={{ letterSpacing: '-0.03em' }}
+              >
+                Three steps. <em className="not-italic italic text-[#C8102E]">Real prices</em> the whole way through.
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Three steps. Real prices the whole way through.
+              <p className="font-sans font-light text-lg md:text-xl text-[#F5F1EA]/70 max-w-2xl mx-auto leading-relaxed">
+                No "call for quote." No surprises. Build it, lock it, pick it up.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            <ol className="grid md:grid-cols-3 gap-px bg-[#F5F1EA]/10 mb-12">
               {HOW_IT_WORKS.map((step, i) => {
                 const Icon = step.icon;
                 return (
-                  <Card key={step.title} className="border-border/60 overflow-hidden flex flex-col">
-                    <div className="aspect-[4/3] bg-muted overflow-hidden">
+                  <li
+                    key={step.title}
+                    className="bg-[#0A1828] flex flex-col group relative overflow-hidden"
+                  >
+                    <div className="aspect-[4/3] overflow-hidden border-b border-[#F5F1EA]/10">
                       <img
                         src={step.image}
                         alt={step.title}
                         loading="lazy"
                         width={800}
                         height={600}
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
-                    <CardContent className="p-6 flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="h-9 w-9 rounded-full bg-primary/10 text-primary flex items-center justify-center">
-                          <Icon className="h-4.5 w-4.5" />
+                    <div className="p-8 md:p-10 flex-1 flex flex-col">
+                      <div className="flex items-center gap-3 mb-5">
+                        <div className="h-10 w-10 rounded-full border border-[#C9A24A]/40 bg-[#C9A24A]/10 text-[#C9A24A] flex items-center justify-center">
+                          <Icon className="h-4 w-4" />
                         </div>
-                        <span className="text-sm font-medium text-muted-foreground">
+                        <span className="font-sans font-semibold text-xs uppercase tracking-[0.24em] text-[#C9A24A]">
                           Step {i + 1}
                         </span>
                       </div>
-                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                      <h3 className="font-display font-semibold text-xl md:text-2xl text-[#F5F1EA] mb-3 tracking-tight">
                         {step.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed">{step.body}</p>
-                    </CardContent>
-                  </Card>
+                      <p className="font-sans font-light text-sm md:text-base text-[#F5F1EA]/65 leading-relaxed">
+                        {step.body}
+                      </p>
+                    </div>
+                  </li>
                 );
               })}
-            </div>
+            </ol>
 
-            <div className="text-center mt-10">
-              <Button size="lg" onClick={goBuild} className="gap-2">
+            <div className="text-center">
+              <button
+                onClick={goBuild}
+                className="inline-flex items-center justify-center gap-2 bg-[#C8102E] hover:bg-[#A50D26] text-[#F5F1EA] px-10 py-4 rounded uppercase tracking-wider text-sm font-semibold transition-all duration-300"
+              >
                 Start Building <ArrowRight className="h-4 w-4" />
-              </Button>
+              </button>
             </div>
           </div>
         </section>
