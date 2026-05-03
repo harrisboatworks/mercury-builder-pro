@@ -57,10 +57,8 @@ export default function Repower() {
     <RepowerLayout>
       <RepowerPageSEO />
 
-      {/* === Phase 1: New premium top sections === */}
-      <HeroRepower />
-      <TrustStrip />
-      <RepowerMath />
+      {/* === Compact content-page hero (replaces duplicate landing-page blocks) === */}
+      <RepowerHero />
 
       {/* === Existing sections (Phase 2 will restyle these wrappers) === */}
 
