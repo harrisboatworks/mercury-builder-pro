@@ -1207,13 +1207,6 @@ if (event.type === 'filter_motors') {
           </main>
         </div>
         
-        {/* Floating mobile CTA — nudge browsers to tap a motor */}
-        <MobileQuoteCTA onStartQuote={() => {
-          // Scroll to the top of the motor grid so first card is visible
-          const grid = document.querySelector('.motor-grid-section');
-          grid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }} />
-        
         {/* Motor Recommendation Quiz Modal */}
         <MotorRecommendationQuiz
           isOpen={showQuiz}
