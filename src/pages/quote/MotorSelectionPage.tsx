@@ -1054,7 +1054,7 @@ if (event.type === 'filter_motors') {
         
         {/* Page header */}
         <div className="bg-[#FAF8F4]">
-          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-14 md:pt-16 pb-8 md:pb-10">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-14 md:pt-16 pb-6 md:pb-8">
             <div className="flex items-center gap-3 mb-3">
               <span className="block h-px w-6 bg-[#C8102E]" />
               <span className="text-[11px] uppercase tracking-[0.18em] font-semibold text-[#C8102E]">
@@ -1062,12 +1062,12 @@ if (event.type === 'filter_motors') {
               </span>
             </div>
             <h1
-              className="font-display font-bold text-[40px] md:text-[56px] leading-[1.05] text-[#050E1C] mb-5"
-              style={{ letterSpacing: '-0.035em' }}
+              className="font-display font-bold leading-[1.05] text-[#050E1C] mb-5 text-balance"
+              style={{ letterSpacing: '-0.035em', fontSize: 'clamp(40px, 5vw, 72px)' }}
             >
               Choose your power.
             </h1>
-            <p className="text-[18px] font-normal text-[#050E1C]/65 mb-10">
+            <p className="text-[18px] font-normal text-[#050E1C]/65 text-balance mb-0">
               Live pricing. Real quotes. Three minutes.
             </p>
           </div>
@@ -1084,7 +1084,7 @@ if (event.type === 'filter_motors') {
               : 'bg-transparent'
           }`}
         >
-          <div className="max-w-[1400px] mx-auto px-6 md:px-14 py-3 md:py-4">
+          <div className="max-w-[1400px] mx-auto px-6 md:px-14 pt-0 pb-3 md:pb-4">
             <HybridMotorSearch
               query={searchQuery}
               onQueryChange={handleSearchChange}
