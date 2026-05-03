@@ -109,14 +109,14 @@ export function HomepageSEO() {
 
   return (
     <Helmet>
-      <title>Ontario's Mercury Repower Centre — Real Mercury Quotes Online | Harris Boat Works</title>
-      <meta name="description" content="Harris Boat Works is Ontario's Mercury Repower Centre on Rice Lake. Mercury Marine Platinum Dealer, Mercury-only since 1965, family-owned since 1947. Live CAD quotes in 3 minutes. Pickup at Gores Landing." />
-      <meta name="keywords" content="Mercury outboard quote, Mercury repower Ontario, Mercury dealer Toronto, Harris Boat Works, Rice Lake Mercury dealer, outboard motor pricing, Mercury FourStroke, Mercury Pro XS" />
+      <title>Mercury Repower Ontario — Trade-In, Financing & Online Quotes | Harris Boat Works</title>
+      <meta name="description" content="Ontario's Mercury Repower Centre on Rice Lake. Family-owned since 1947, Mercury Platinum Dealer since 1965. Trade-in valuations, financing, and live CAD quotes — pickup at Gores Landing." />
+      <meta name="keywords" content="Mercury repower Ontario, Mercury dealer Toronto, Harris Boat Works, Rice Lake Mercury dealer, Mercury trade-in, Mercury financing" />
       <link rel="canonical" href={SITE_URL} />
 
       {/* Open Graph */}
-      <meta property="og:title" content="Mercury Repower Quotes Online — Real Prices, No Forms" />
-      <meta property="og:description" content="Build a real Mercury outboard quote in 3 minutes. Live CAD pricing, financing, trade-in. Family-owned since 1947, Mercury dealer since 1965." />
+      <meta property="og:title" content="Mercury Repower Ontario — Trade-In, Financing & Quotes" />
+      <meta property="og:description" content="Ontario's Mercury Repower Centre. Trade-in your old motor, finance a new one, or build a quote in 3 minutes. Family-owned since 1947." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={SITE_URL} />
       <meta property="og:image" content={`${SITE_URL}/social-share.jpg`} />
