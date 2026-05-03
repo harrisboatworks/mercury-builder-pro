@@ -1200,7 +1200,7 @@ if (event.type === 'filter_motors') {
                      viewport={{ once: true, margin: '0px 0px -10% 0px' }}
                      transition={{
                        duration: 0.6,
-                       delay: (index % 4) * 0.08,
+                       delay: colIndex * 0.08,
                        ease: [0.2, 0.8, 0.2, 1],
                      }}
                    >
