@@ -1017,12 +1017,22 @@ export default function QuoteSummaryPage() {
 
       <ScrollToTop />
       <PageTransition>
-        <QuoteLayout showProgress={false}>
+        <QuoteLayout>
           {!isMounted ? (
             <QuoteSummarySkeleton />
           ) : (
-          <div className="max-w-7xl mx-auto space-y-8">
-            <div className="grid lg:grid-cols-[1fr_360px] gap-8">
+          <div className="bg-repower-paper">
+          <div className="mx-auto w-full max-w-[1100px] py-12 px-6 md:py-16 md:px-0">
+            <header className="mb-7">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="block h-px w-8 bg-repower-mercury-red/70" aria-hidden />
+                <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-repower-mercury-red">
+                  STEP 6 · YOUR QUOTE
+                </span>
+              </div>
+              <div className="mt-7 h-px w-full bg-repower-navy-900/10" aria-hidden />
+            </header>
+            <div className="grid lg:grid-cols-[1fr_440px] gap-12">
               {/* Main Content - Left Column */}
               <div className="space-y-6">
                 {/* Package Header with Change Link */}
