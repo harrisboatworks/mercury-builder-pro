@@ -930,17 +930,20 @@ if (event.type === 'filter_motors') {
   if (loading) {
     return (
       <PageTransition>
-        <QuoteLayout>
-          <div className="bg-repower-paper py-12">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-14">
-              <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-                {Array.from({ length: 8 }).map((_, i) => (
-                  <MotorCardSkeleton key={i} index={i} />
-                ))}
+        <div className="min-h-screen bg-repower-paper">
+          <RepowerHeader />
+          <main className="pt-[88px]">
+            <div className="bg-repower-paper py-12">
+              <div className="max-w-[1400px] mx-auto px-6 md:px-14">
+                <div className="grid gap-6 sm:gap-8 lg:gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+                  {Array.from({ length: 8 }).map((_, i) => (
+                    <MotorCardSkeleton key={i} index={i} />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </QuoteLayout>
+          </main>
+        </div>
       </PageTransition>
     );
   }
