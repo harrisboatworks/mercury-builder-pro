@@ -4,7 +4,6 @@ import { QuoteLayout } from '@/components/quote-builder/QuoteLayout';
 import { PageTransition } from '@/components/ui/page-transition';
 import { ScheduleConsultation } from '@/components/quote-builder/ScheduleConsultation';
 import { useQuote } from '@/contexts/QuoteContext';
-import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
 export default function SchedulePage() {
