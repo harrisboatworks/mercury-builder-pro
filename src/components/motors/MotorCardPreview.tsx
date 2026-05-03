@@ -473,13 +473,10 @@ function MotorCardPreviewInner({
         onMouseEnter={() => { preloadConfiguratorImagesHighPriority(); prefetchModal(); }}
         onTouchStart={() => { preloadConfiguratorImagesHighPriority(); prefetchModal(); }}
       >
-        <div
-          className="relative aspect-[4/3] overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #F5F1EA 0%, #ECE4D2 100%)' }}
-        >
+        <div className="relative aspect-[4/3] overflow-hidden bg-white">
               {/* Shimmer loading overlay */}
               {!imageLoaded && (
-                <div className="absolute inset-0 bg-repower-cream animate-shimmer z-10" />
+                <div className="absolute inset-0 bg-repower-paper animate-shimmer z-10" />
               )}
               <div className="absolute inset-0 flex items-center justify-center p-[12%] transition-transform duration-500 ease-out group-hover:scale-[1.04]">
                 {hasValidImage ? (
