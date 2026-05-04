@@ -210,14 +210,14 @@ export function ConfigFilterSheet({
           )}
         </Button>
       </DrawerTrigger>
-      <DrawerContent>
+      <DrawerContent className="bg-[#050E1C] text-[#F5F1EA] border-t border-[#F5F1EA]/10 [&>div:first-child]:bg-[#F5F1EA]/25">
         <DrawerHeader className="text-left">
           <div className="flex items-center justify-between">
-            <DrawerTitle>Filter Motors</DrawerTitle>
+            <DrawerTitle className="text-[#F5F1EA] tracking-tight">Filter Motors</DrawerTitle>
             {activeCount > 0 && (
               <button
                 onClick={handleClearAll}
-                className="text-sm text-primary hover:underline font-medium"
+                className="text-sm text-[#C9A24A] hover:text-[#D9B868] font-medium"
               >
                 Reset all
               </button>
@@ -227,7 +227,7 @@ export function ConfigFilterSheet({
         <div className="px-4 pb-4 space-y-5 overflow-y-auto max-h-[60vh]">
           {/* HP Filter Section */}
           <div>
-            <h4 className="text-sm font-medium text-muted-foreground mb-2">Horsepower</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.16em] text-[#F5F1EA]/55 mb-2">Horsepower</h4>
             <div className="flex flex-wrap gap-1.5">
               {hpFilters.map(({ label, value, popular }) => {
                 const isActive = activeHpFilter === value || (value === '' && !activeHpFilter);
@@ -241,16 +241,16 @@ export function ConfigFilterSheet({
                     className={cn(
                       'inline-flex items-center gap-1 w-fit px-3 py-1.5 rounded-full text-sm font-light shrink-0',
                       'transition-all duration-200',
-                      isActive 
-                        ? 'bg-primary text-primary-foreground' 
+                      isActive
+                        ? 'bg-[#C9A24A] text-[#050E1C]'
                         : hasStock
-                          ? 'bg-muted text-muted-foreground hover:bg-muted/80'
-                          : 'bg-muted/50 text-muted-foreground/50 cursor-not-allowed'
+                          ? 'bg-[#F5F1EA]/[0.08] text-[#F5F1EA] hover:bg-[#F5F1EA]/[0.14]'
+                          : 'bg-[#F5F1EA]/[0.04] text-[#F5F1EA]/30 cursor-not-allowed'
                     )}
                   >
                     {label === 'All' ? 'All' : `${label} HP`}
                     {popular && !isActive && (
-                      <span className="text-[10px] text-amber-600 font-medium">Popular</span>
+                      <span className="text-[10px] text-[#C9A24A] font-medium">Popular</span>
                     )}
                   </button>
                 );
@@ -258,11 +258,11 @@ export function ConfigFilterSheet({
             </div>
           </div>
 
-          <div className="border-t border-border" />
+          <div className="border-t border-[#F5F1EA]/10" />
 
           {/* Availability */}
           <div>
-            <h4 className="text-sm font-medium text-muted-foreground mb-2">Availability</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.16em] text-[#F5F1EA]/55 mb-2">Availability</h4>
             <div className="flex flex-row flex-wrap gap-2">
               <FilterPill 
                 label="In Stock" 
@@ -273,11 +273,11 @@ export function ConfigFilterSheet({
             </div>
           </div>
 
-          <div className="border-t border-border" />
+          <div className="border-t border-[#F5F1EA]/10" />
 
           {/* Start Type */}
           <div>
-            <h4 className="text-sm font-medium text-muted-foreground mb-2">Start Type</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.16em] text-[#F5F1EA]/55 mb-2">Start Type</h4>
             <div className="flex flex-row flex-wrap gap-2">
               <FilterPill 
                 label="Electric" 
@@ -294,11 +294,11 @@ export function ConfigFilterSheet({
             </div>
           </div>
 
-          <div className="border-t border-border" />
+          <div className="border-t border-[#F5F1EA]/10" />
 
           {/* Control Type */}
           <div>
-            <h4 className="text-sm font-medium text-muted-foreground mb-2">Control</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.16em] text-[#F5F1EA]/55 mb-2">Control</h4>
             <div className="flex flex-row flex-wrap gap-2">
               <FilterPill 
                 label="Tiller" 
@@ -315,11 +315,11 @@ export function ConfigFilterSheet({
             </div>
           </div>
 
-          <div className="border-t border-border" />
+          <div className="border-t border-[#F5F1EA]/10" />
 
           {/* Shaft Length */}
           <div>
-            <h4 className="text-sm font-medium text-muted-foreground mb-2">Shaft Length</h4>
+            <h4 className="text-[11px] uppercase tracking-[0.16em] text-[#F5F1EA]/55 mb-2">Shaft Length</h4>
             <div className="flex flex-row flex-wrap gap-2">
               <FilterPill 
                 label="15&quot; Short" 
@@ -342,18 +342,18 @@ export function ConfigFilterSheet({
             </div>
           </div>
         </div>
-        <DrawerFooter className="flex-row gap-2 pt-2">
+        <DrawerFooter className="flex-row gap-2 pt-2 border-t border-[#F5F1EA]/10 bg-[#050E1C]">
           <Button 
             variant="outline" 
             onClick={handleClearAll}
-            className="flex-1"
+            className="flex-1 border-[#F5F1EA]/25 text-[#F5F1EA] bg-transparent hover:bg-[#F5F1EA]/[0.08] hover:text-[#F5F1EA] disabled:opacity-40"
             disabled={activeCount === 0}
           >
             Clear All
           </Button>
           <Button 
             onClick={handleDone}
-            className="flex-1"
+            className="flex-1 bg-[#C9A24A] text-[#050E1C] hover:bg-[#D9B868]"
           >
             Done
           </Button>
