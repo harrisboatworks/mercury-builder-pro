@@ -132,7 +132,7 @@ Mercury SmartCraft gauges work with older motors. If you're upgrading to a motor
 - Professional installation by certified technicians
 - All work lake-tested before handoff
 - Full Mercury factory warranty
-- since 1965 of experience backing every job
+- 60+ years of experience backing every job (since 1965)
 
 **[Get Your Free Repower Quote](/quote)**
 
