@@ -307,95 +307,182 @@ At Harris Boat Works, our Mercury-certified technicians handle everything from b
   },
   {
     slug: 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
-    title: 'Understanding Mercury Motor Families: FourStroke vs Pro XS vs Verado',
-    description: 'Compare Mercury\'s motor families to find the perfect match. Learn the key differences between FourStroke, Pro XS, SeaPro, and Verado outboards.',
+    title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)',
+    description: 'Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the supercharged premium line, 250 to 600+ HP, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the motor selection page.',
     image: '/lovable-uploads/Comparing_Motor_Families.png',
     author: 'Harris Boat Works',
     datePublished: '2024-04-10',
-    dateModified: '2024-12-10',
+    dateModified: '2026-05-04',
     category: 'Comparison',
     readTime: '12 min read',
     keywords: ['mercury fourstroke vs verado', 'pro xs vs fourstroke', 'mercury motor comparison', 'best mercury outboard', 'verado vs pro xs'],
-    content: `
-## Mercury's Motor Families Explained
+    content: `# Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)
 
-Mercury Marine offers several distinct motor families, each designed for specific applications. Understanding these differences helps you choose the right motor for your needs.
+Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the supercharged premium line, 250 to 600+ HP, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the [motor selection page](/quote/motor-selection).
 
-### Mercury FourStroke
+## Quick recommendation
 
-**Best For**: General recreational use, pontoons, family boats
+For most Ontario boaters reading this article, the right Mercury family is FourStroke. It is what we sell most of, what most factory boats come rigged with, and what fits the typical Rice Lake / Kawartha use case (cruising, family fishing, pontoons, mid-size runabouts).
 
-**Key Features**:
-- Excellent fuel efficiency
-- Quiet operation
-- Low maintenance costs
-- Broad HP range (2.5HP - 300HP)
+Pro XS is the right answer when you want performance: tournament fishing, fast morning runs to beat the wind, bass boats, performance pontoons. It costs more than FourStroke at the same HP rating, and it earns the difference if you actually use the performance.
 
-**Why Choose FourStroke**: The FourStroke line offers the best balance of performance, reliability, and value. These are workhorse motors built for everyday boaters who want reliable power without the premium price.
+SeaPro is for commercial use: charter operators, fishing guides, rental fleets, anyone running a motor 500+ hours a season under heavy load. It is more durable than the recreational lines and built for daily-use abuse.
 
-### Mercury Pro XS
+Verado is special-order only at HBW. It is a premium supercharged line built for high-HP applications (twin and triple installations on offshore center consoles, large yachts). Almost no Ontario freshwater boater needs it. If you genuinely do, [contact us](/contact) and we will price it as a special order.
 
-**Best For**: Tournament fishing, bass boats, performance enthusiasts
+Avator is Mercury's electric line. The technology is still maturing. We have not seen a strong use case for it yet on Rice Lake.
 
-**Key Features**:
-- Lightweight construction
-- Faster acceleration
-- Higher RPM range
-- Competition-ready performance
-- HP range: 115HP - 300HP
+## What changes the answer
 
-**Why Choose Pro XS**: When every second counts—whether racing to your fishing spot or competing in tournaments—Pro XS delivers. These motors sacrifice some fuel efficiency for raw performance.
+Five things move the right Mercury family for your boat:
 
-### Mercury Verado
+- **Boat type and weight.** A 17-foot bass boat asks for different power delivery than a 22-foot pontoon. Pro XS suits the bass boat. FourStroke (with Command Thrust on bigger pontoons) suits the pontoon.
+- **HP rating.** FourStroke covers the entire range from 2.5 to 300 HP. Pro XS starts at 115 HP. Below 115 HP, FourStroke is your only Mercury option in the recreational lineup.
+- **Use case.** Tournament fishing or active water sports favors Pro XS. Cruising, trolling, family use favors FourStroke. Commercial charter or fleet use favors SeaPro.
+- **Budget.** Pro XS costs more than FourStroke at the same HP. Verado costs more than Pro XS. SeaPro costs more than recreational FourStroke. Build a real quote on the [motor selection page](/quote/motor-selection) to see your actual CAD numbers.
+- **Resale and parts supply.** FourStroke and Pro XS have the deepest dealer support and best resale in Ontario. Verado has thinner support inland. SeaPro is a niche but well-supported.
 
-**Best For**: Premium boats, offshore use, those wanting the best
+## Side-by-side comparison
 
-**Key Features**:
-- Naturally aspirated large-displacement powerheads (V8, V10, V12)
-- Exceptionally quiet
-- Advanced Noise-Free steering
-- Digital throttle & shift
-- Premium fit and finish
-- HP range: 250HP - 600HP
+| Family | HP range | Best for | Performance focus | Availability at HBW |
+|---|---|---|---|---|
+| FourStroke | 2.5 - 300 HP | Cruising, family use, fishing, pontoons | Fuel economy, smooth running, reliability | In stock and on-order |
+| Pro XS | 115 - 300 HP | Tournament fishing, bass boats, performance pontoons | Fast acceleration, top speed, hole shot | In stock and on-order |
+| SeaPro | 25 - 300 HP | Commercial use, charter, guides, fleet | Durability under heavy load | On-order |
+| Verado | 250 - 600+ HP | Offshore center consoles, twin/triple installs, yachts | Supercharged smooth power, quiet operation | Special-order only |
+| Avator | Electric | Eco-conscious low-HP applications | Zero emissions, quiet | On-order, evolving lineup |
 
-**About Verado**: Verado is Mercury's flagship line. The naturally aspirated V8/V10/V12 powerheads deliver smooth, linear power while operating quieter than any comparable outboard. Verado is special-order only at Harris Boat Works — not part of default inventory. Contact us by phone or email if you'd like a Verado quote.
+For your specific motor and HBW pricing in CAD, see the [motor selection page](/quote/motor-selection).
 
-### Mercury SeaPro
+## FourStroke deep dive
 
-**Best For**: Commercial use, guides, heavy-duty applications
+FourStroke is Mercury's standard recreational line and the bread-and-butter motor for Ontario boating. It covers everything from the 2.5 portable tiller up to the 300 HP V8.
 
-**Key Features**:
-- Built for high-hour operation
-- Extended service intervals
-- Heavy-duty components
-- Commercial warranty available
-- HP range: 15HP - 500HP
+What it is good at: fuel efficiency (modern FourStrokes use 30 to 40% less fuel than the 2-stroke generation they replaced), smooth running, reliability, and being the motor most factory boats come rigged with. The 9.9 ProKicker (a FourStroke variant) is the standard kicker motor on Canadian fishing boats.
 
-**Why Choose SeaPro**: If you're putting hundreds of hours on your motor annually, SeaPro is designed for you. These commercial-grade motors handle the demands of professional use.
+Where it shines: aluminum fishing boats, pontoons, runabouts, family use, trolling, cruising. Most repowers we do at HBW are FourStroke installs. The 90 to 115 HP range with Command Thrust is the most common pontoon repower on Rice Lake.
 
-### Head-to-Head Comparison
+Trade-off: not the fastest motor at a given HP rating. If you want to win tournaments or pull skiers behind a heavy boat at maximum speed, you want Pro XS instead.
 
-| Feature | FourStroke | Pro XS | Verado | SeaPro |
-|---------|------------|--------|--------|--------|
-| Price | $$ | $$$ | $$$$ | $$ |
-| Weight | Medium | Light | Heavy | Heavy |
-| Fuel Efficiency | Excellent | Good | Very Good | Good |
-| Noise Level | Quiet | Moderate | Very Quiet | Moderate |
-| Acceleration | Good | Excellent | Excellent | Good |
-| Best Use | Recreation | Performance | Premium | Commercial |
+## Pro XS deep dive
 
-### Our Recommendation
+Pro XS is Mercury's performance line, derived from racing technology and built for fast acceleration, high top speed, and aggressive hole shot. Available from 115 HP up to 300 HP.
 
-For most Ontario boaters, the **Mercury FourStroke** offers the best overall value. If you fish competitively or prioritize performance, consider the **Pro XS**. Verado is special-order only at Harris Boat Works and not part of default inventory.
+What it is good at: getting on plane quickly, holding speed against wind and load, tournament-grade reliability under throttle. The Pro XS line is the standard motor in tournament bass fishing for a reason.
+
+Where it shines: bass boats, performance fishing boats, performance pontoons, anyone who actually uses the performance. The 250 ProXS V8 is a popular choice on 19-21 ft bass boats.
+
+Trade-off: costs more than the equivalent HP FourStroke. If you cruise at half-throttle and never push the boat hard, you are paying for performance you are not using. Honest answer: most pontoons do not need Pro XS. Most aluminum fishing boats do not need Pro XS. Pro XS earns its premium when you actually run hard.
+
+## SeaPro deep dive
+
+SeaPro is Mercury's commercial-duty line. Available from 25 HP to 300 HP. Built heavier and tuned for daily use under load.
+
+What it is good at: running 500+ hours a season under commercial conditions without faltering. Charter operators, fishing guides, rental fleets, government boats, and rescue services run SeaPro because it survives the duty cycle.
+
+Where it shines: any commercial application where the motor is the business. We have set up SeaPro motors for guides on the Trent-Severn and rental operators on smaller Kawartha lakes.
+
+Trade-off: costs more than recreational FourStroke. Overkill for typical recreational use.
+
+## Verado: why it is special-order only at HBW
+
+Verado is Mercury's supercharged premium line, available from 250 HP up to 600+ HP. It is engineered for high-HP applications, twin and triple installations, and offshore use where smoothness, quiet operation, and instant power are worth a premium.
+
+We do not stock Verado at HBW. The reason is straightforward: almost no Ontario freshwater boater has a use case that fits Verado. Our customers are running aluminum fishing boats, pontoons, runabouts, bass boats, and small center consoles. Pro XS or FourStroke covers all of those at a better cost-per-capability for our market.
+
+If you genuinely have a Verado-appropriate application (a 28+ ft offshore center console, twin or triple engines, premium yacht), [contact us](/contact) and we will price it as a special-order. Lead time is longer than recreational lines and pricing is configuration-specific. The [promotions page](/promotions) shows current Mercury promotional offers, which sometimes include Verado configurations.
+
+For most readers of this article, Verado is not the right call. We are not pushing you toward it because we do not stock it, and because it is rarely the honest right answer for Ontario freshwater boating.
+
+## Decision rules
+
+If you are not sure which family fits your boat, work through these rules in order:
+
+1. **What is the HP rating on your boat's capacity plate?** That sets your ceiling. Below 115 HP, FourStroke is your only recreational Mercury option.
+2. **Is this a recreational, performance, or commercial use case?** Recreational = FourStroke. Performance (tournament fishing, fast runs) = Pro XS. Commercial = SeaPro.
+3. **Do you actually use the performance?** If yes, Pro XS earns the price. If no, FourStroke gives you better fuel economy and resale at the same HP rating.
+4. **Are you running twin or triple engines on a 28+ ft offshore boat?** Verado is the special-order conversation.
+
+If you are still unsure, build a quote on the [motor selection page](/quote/motor-selection) with your boat type and use case selected, and the system will recommend appropriate motors. We can also walk through it on the phone in five minutes.
+
+## What HBW checks before recommending a family
+
+When customers ask "should I get the Pro XS or the FourStroke?" we want to know:
+
+- **What boat are you running?** Hull weight and type drives the answer.
+- **What do you actually do on the water?** Tournament fishing is different from family cruising.
+- **What is your launch and storage situation?** Affects practical motor selection.
+- **What is your budget tolerance for the performance premium?** Pro XS earns the cost when you use it. If you do not, FourStroke is the better value.
+- **Are you keeping the boat 5 years or 15 years?** Longer holds favor the more durable family for your use.
+
+The honest answer most often comes back: FourStroke is the right call. Pro XS for the customers who actually run hard. SeaPro for commercial. Verado for the rare offshore special order.
 
 ## Related guides
 
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat) — matching HP to boat size and use
-- [What Size Motor Does My Boat Need? Complete Calculator Guide](/blog/boat-motor-size-calculator-guide) — sizing calculator walkthrough
-- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison) — mid-range Mercury head-to-head
-- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario) — the 115 vs 150 decision
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), match HP to your hull
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), specific to mid-range FourStroke choices
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the FourStroke-to-Pro XS step-up question
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop choice changes by family
+- [How Much Does a Mercury Repower Cost in Ontario?](/blog/mercury-repower-cost-ontario-2026-cad), pricing by HP class
 
-    `,
+## Ready to pick your motor?
+
+Build a quote on the [motor selection page](/quote/motor-selection) in three minutes. Live Mercury pricing across every family in CAD, including FourStroke, Pro XS, SeaPro, and Avator. Verado is special-order, [contact us](/contact) for that conversation.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through which family fits your boat before you build, [give us a call at (905) 342-2153](tel:9053422153). We will give you the honest answer, including the answer that does not maximize the sale.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**What is the difference between Mercury FourStroke and Pro XS?**
+FourStroke is Mercury's standard recreational line, tuned for fuel economy, smooth running, and reliability. Pro XS is Mercury's performance line, tuned for fast acceleration, high top speed, and aggressive hole shot. Pro XS costs more than FourStroke at the same HP rating. The premium pays off if you actually run the boat hard. For typical cruising, family use, and pontoons, FourStroke is the better value.
+
+**Do I need a Pro XS for fishing?**
+For tournament fishing, bass boats, or anyone who wants the fastest possible runs to beat morning wind, Pro XS earns the price. For typical recreational fishing on Rice Lake or Kawartha lakes (trolling, drifting, working structure at slow speed), FourStroke is plenty. The Pro XS premium does not catch you more fish unless wind or distance is the limiting factor.
+
+**Is Verado available at HBW?**
+Verado is special-order only at HBW. We do not stock it because almost no Ontario freshwater boater has a use case that fits the Verado premium. If you have a 28+ ft offshore boat, twin or triple engine setup, or a premium yacht application, [contact us](/contact) and we will price a Verado special order. Lead time is longer than recreational lines.
+
+**What is Mercury SeaPro for?**
+SeaPro is Mercury's commercial-duty line, built for charter operators, fishing guides, rental fleets, government boats, and any application running 500+ hours a season under heavy load. It is more durable than recreational FourStroke at the same HP rating, and it costs more. For typical recreational use, SeaPro is overkill. For commercial use, it is the right answer.
+
+**What is Mercury Avator?**
+Avator is Mercury's electric outboard line. The lineup is still maturing in 2026 with limited HP options compared to gasoline lines. We have not yet seen a strong recreational use case for Avator on Rice Lake or in the Kawarthas. Marina rental fleets and eco-conscious low-HP applications are the most common customers so far.
+
+**Which Mercury family is most fuel efficient?**
+FourStroke is the most fuel-efficient family across the recreational range. Modern FourStrokes use 30 to 40% less fuel than the 2-stroke generation they replaced, and they run cleaner and quieter. Pro XS is tuned for performance, which means slightly higher fuel use at the same HP. SeaPro fuel use is similar to FourStroke at low load, slightly higher at heavy commercial load.
+
+**Which Mercury family has the best resale value?**
+FourStroke and Pro XS hold resale strongest in Ontario because demand is highest. SeaPro holds resale well in commercial markets. Verado has lower demand inland and resale reflects that. For most recreational buyers in our market, FourStroke and Pro XS are the safest resale bets.
+
+**Is FourStroke or Pro XS better for pontoons?**
+For pontoons, FourStroke is the standard recommendation. Specifically, FourStroke with Command Thrust gearcase on motors 115 HP and up. Command Thrust is purpose-built for the load and speed profile of pontoons, with better hole shot and load-carrying than standard gearcases. Pro XS is unusual on pontoons unless you have a specific performance pontoon application.
+
+**Is FourStroke or Pro XS better for bass boats?**
+For tournament-grade bass boats, Pro XS. The acceleration, top speed, and hole shot match what bass anglers need. The 250 ProXS V8 is one of the most popular tournament bass motors. For recreational bass fishing without tournament-level demands, FourStroke at the same HP also works and saves money.
+
+**Can I switch motor families during a repower?**
+Yes. The motor itself is the choice, and the rigging adjusts to fit the new motor. Most existing controls, prop, and harness can stay if you are going Mercury-to-Mercury. The cost varies by motor selection. Build a quote on the [motor selection page](/quote/motor-selection) to see exact CAD pricing for the family swap.
+
+**How do I know if I have a FourStroke or Pro XS?**
+Look at the cowl. Mercury FourStrokes have a "FourStroke" badge, a "Verado" badge for the supercharged line, a "Pro XS" badge for the performance line, or a "SeaPro" badge for commercial. The model number on the lower cowl plate also identifies the family. If you are not sure, send us a photo of the motor and we will identify it.
+
+**What is Mercury Command Thrust?**
+Command Thrust is a Mercury gearcase option (not a separate family) available on FourStroke motors 115 HP and up. It uses a larger gearcase, larger prop, and torque-tuned gear ratios designed for heavy boats (pontoons, work boats, heavy fishing rigs). The result is better hole shot and load-carrying than the standard gearcase, with similar fuel economy. We recommend Command Thrust on most pontoon repowers.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)`,
     faqs: [
       {
         question: 'What\'s the main advantage of Pro XS over FourStroke?',
@@ -10160,180 +10247,197 @@ When you're 12 km offshore with a full load of fish and the wind is picking up, 
   {
     slug: 'boat-winterization-cost-ontario-2026',
     title: 'How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)',
-    description: 'What does boat winterization cost in Ontario in 2026? Real Harris Boat Works 2025 published rates by HP tier and storage type — no guessing.',
+    description: 'Boat winterization cost in Ontario varies by motor size, boat type, and which services you bundle (motor only, motor + hull, motor + storage). A basic motor winterization is the smallest line item. A full package with hull shrink-wrap, indoor storage, and spring commissioning is the largest. We do winterization on Mercury motors at HBW. For a real quote on your specific boat, contact us or visit our service page.',
     image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
-    dateModified: '2026-04-21',
+    dateModified: '2026-05-04',
     publishDate: '2026-04-21',
     category: 'Maintenance',
     readTime: '12 min read',
     keywords: ['boat winterization cost ontario', 'mercury outboard winterization price', 'harris boat works winter storage'],
-    content: `
-Most marina websites in Ontario won't post their winterization prices. You call, leave a message, wait two days, and eventually get a number that doesn't include half of what you thought it did. We think that's frustrating, and we've never done it that way.
+    content: `# How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)
 
-Harris Boat Works has been winterizing boats on Rice Lake since the 1960s. In Aug–Nov 2025 alone, we processed 584 winterizations and 311 storage contracts out of our shop in Gores Landing. We know what proper winterization costs, what it includes, and where the hidden variables are. This guide gives you our actual 2025 published rates — by engine class and storage type — so you can plan your fall without the runaround. We publish these numbers. Most regional marinas don't.
+Boat winterization cost in Ontario varies by motor size, boat type, and which services you bundle (motor only, motor + hull, motor + storage). A basic motor winterization is the smallest line item. A full package with hull shrink-wrap, indoor storage, and spring commissioning is the largest. We do winterization on Mercury motors at HBW. For a real quote on your specific boat, [contact us](/contact) or visit our [service page](https://hbw.wiki/service).
 
-## What Winterization Actually Is
+## Quick recommendation
 
-Winterization isn't just draining the water. Done right, it's a multi-step process that protects your engine, fuel system, lower unit, and battery from a Canadian winter. Here's what a complete outboard winterization covers:
+Winterizing the motor properly is the single most important thing you do all year. A motor that freezes with water in the powerhead is a destroyed motor. We replace lower units every spring on customers who skipped or rushed the previous fall's winterization. That is not a small mistake. That is buying the same lower unit twice.
 
-**Core steps:**
-- **Fogging the engine** — coating cylinder walls and carburetor/throttle body with a protective oil to prevent corrosion during storage
-- **Fuel stabilization** — adding stabilizer to the tank and running it through the system so you don't start spring with varnished fuel injectors or a gummed carb
-- **Lower unit service** — draining and refilling the gear lube; also tells a technician if there's water in the unit (which usually means a bad seal — better to know now)
-- **Cooling system flush** — removing any remaining water from the powerhead to prevent freeze cracking
-- **Battery service** — putting the battery on a tender or storing it properly so it holds a charge through to spring
-- **Grease and corrosion protection** — steering, throttle, tilt/trim pivot points, and any exposed hardware
+If you are confident enough in your skills to winterize a Mercury yourself, our [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) walks through the steps. If you want it done right and you do not want to find out in May whether you got it right, bring the boat to us in October. We do this every year for hundreds of customers across the Rice Lake and Kawartha region.
 
-If any of those steps get skipped, you're rolling the dice. Freeze cracking in a powerhead is a multi-thousand-dollar repair. Varnished injectors in spring aren't cheap either.
+Everyone wants the lowest possible price on winterization. The honest answer is that a $300 motor winterization done right is cheaper than a $50 winterization done wrong, because the wrong one shows up as a $4,000 lower unit in spring. Pay attention to what is actually being done, not just the line on the invoice.
 
-## HBW's 2025 Published Winterization Rates
+## What changes the answer
 
-These are our actual 2025 published rates — the same numbers on our website at harrisboatworks.ca/winter-storage. All prices exclude HST (13%) and shop supplies.
+Six things move your winterization cost up or down:
 
-### Outboard Winterize & Service (service labor, does not include storage)
+- **Motor size and type.** A 9.9 HP tiller has fewer fluids and fewer steps than a 250 HP V8. Bigger motors take more time and more lubricant.
+- **Whether you bundle storage.** Outdoor uncovered storage is the cheapest option. Outdoor with shrink-wrap is more. Indoor unheated is more again. Indoor heated is the highest tier. Most of the price difference between "basic winterization" and "full package" is storage, not the motor work itself.
+- **What is included.** A basic motor winterization covers fogging, fuel stabilizer, lower unit lube change, and gearcase drain. A full service adds water-pump impeller inspection, anode replacement, plug replacement (if due), thermostat check, and a full visual inspection. Both are valid; they cost different amounts because they include different scope.
+- **Hull and trailer work.** Shrink-wrapping the hull adds cost. Trailer service (bearings, tires, lights) is sometimes bundled. Battery removal and storage is a small line.
+- **Old motor vs. new motor.** Older motors (especially older 2-strokes) often need additional fuel system attention because they were running on premium gas with oil mix. Modern FourStrokes with EFI are cleaner to winterize.
+- **Timing.** Bookings in late October are less rushed and we have more time to do thorough work. November rush bookings can be more expensive because we are shoehorning them in before freeze-up. Booking early is usually cheaper.
 
-| Engine Type | HBW Published Rate |
-|---|---|
-| 0–30 HP 2-stroke | **$171.26** |
-| 40–200 HP 2-stroke | **$206.89** |
-| 0–20 HP 4-stroke | **$260.28** |
-| 25–30 HP 4-stroke | **$289.27** |
-| 40–60 HP 4-stroke | **$337.84** |
-| 75–115 HP 4-stroke | **$425.71** |
-| 150 HP 4-stroke | **$479.66** |
-| 175–300 HP 4-stroke | **$495.01** |
-| Optimax / E-Tec | **$242.72** |
+For an exact quote on your specific motor and boat, [contact us](/contact) or visit our [service page](https://hbw.wiki/service). Pricing varies by configuration, and we do not list a flat rate because no two boats are the same.
 
-### Inboard/Sterndrive Winterize Only (no oil change)
+## What is included in winterization at HBW
 
-| Engine | HBW Published Rate |
-|---|---|
-| 4 & 6 cylinder I/O | **$327.67** |
-| V6 & V8 I/O | **$350.67** |
-| Bravo I/O | **$380.67** |
-| Inboard | **$358.31** |
+A proper Mercury winterization at HBW includes the following on the motor:
 
-### Inboard/Sterndrive Winterize WITH Oil & Filter
+- Stabilize the fuel system (fuel stabilizer, run motor through to coat the carbs or injectors)
+- Fog the engine internals (fogging oil through cylinders to coat moving parts)
+- Drain the gearcase and check for water in the lube (if water is present, that is a seal problem we identify before it becomes a winter freeze problem)
+- Refill gearcase with fresh lower-unit lube
+- Drain water from cooling system passages (the step that prevents freeze damage)
+- Inspect the water-pump impeller (replace if worn or due)
+- Check anodes and replace if depleted
+- Lubricate steering, throttle, shift cables, and pivot points
+- Check spark plugs and replace if due
+- Battery service (charge, clean, optionally remove and store)
+- Final visual inspection and write-up of any service work needed before spring
 
-| Engine | HBW Published Rate |
-|---|---|
-| 4 & 6 cylinder I/O | **$488.28** |
-| V6 & V8 I/O | **$520.48** |
-| Bravo I/O | **$569.82** |
-| Inboard | **$482.12** |
+Hull and trailer services that we offer separately or as a package:
 
-For engine repairs, we only service Mercury and Mercruiser. Winterize and storage service is available for all brands.
+- Shrink-wrap the hull for outdoor storage
+- Trailer bearing service
+- Battery removal and indoor storage
+- Bilge clean-out
+- Cabin or seating winterization (if applicable)
+- Spring commissioning service (booked in fall, performed in spring)
 
-## Storage: What It Adds to the Total
+Bundling the spring commissioning at the time of winterization booking usually nets you a small discount versus booking it separately in March.
 
-Winterization and storage are quoted separately. Here are our published storage rates — all include shrinkwrap. Prices are per foot of boat length.
+## What HBW checks before quoting winterization
 
-### Winter Storage WITH Shrinkwrap (per foot)
+When you bring a boat to us in October, the price depends on what is in front of us. Before we quote, we look at:
 
-| Storage Type | HBW Published Rate |
-|---|---|
-| No trailer, up to 21 ft | **$36/ft** |
-| No trailer, 22–28 ft | **$39/ft** |
-| With trailer, up to 21 ft | **$33/ft** |
-| With trailer, 22–28 ft | **$35/ft** |
+- **Motor make, model, and year.** Mercury winterization at HBW is straightforward because we know these motors. We can also winterize Yamaha, Honda, and Evinrude/Johnson motors though our parts and tooling are Mercury-focused.
+- **Motor condition.** A clean, regularly-serviced motor takes less time. A neglected motor takes more, and we will tell you what additional service is needed before we touch the winterization.
+- **Hull and storage requirements.** What size shrink-wrap, indoor or outdoor, single hull or dual (boat plus dinghy).
+- **Trailer condition.** Bearings due? Lights working? Tires aged out?
+- **Booking timing.** Earlier in the season is easier to schedule. Late October and early November is the busy window.
 
-**We do not take boats over 30 ft for winter storage.**
+We give an honest quote based on what we see. No surprise charges at pickup. If we find something that needs additional service, we call you before we do the work.
 
-### Shrinkwrap & Add-Ons (if purchased separately)
+## When to DIY and when to bring it to us
 
-| Service | Rate |
-|---|---|
-| Shrinkwrap only (done indoors) | **$20/ft** |
-| Shrinkwrap only (done outdoors) | **$25/ft** |
-| Bio-wash chemical hull cleaning | **$10/ft** |
-| Pontoon enclosure removal & install | **$5/ft** |
+Winterization is one of the few service jobs that a confident, careful boater can DIY successfully. The Mercury manual and our [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) cover the steps. For a 9.9 HP tiller, DIY is reasonable. For most smaller motors that you store in your garage, DIY is reasonable.
 
-### What's Included with Storage (at no extra charge)
+DIY makes sense when:
 
-Every HBW storage contract includes:
-- **FREE spring check** ($99 value)
-- **FREE shrinkwrap recycling** ($35 value)
-- **FREE summer trailer storage** ($150 value)
+- You have done it before and you are confident in the process
+- The motor is smaller (under 60 HP) and accessible
+- You have a clean indoor space to do the work
+- You have the right tools (gear lube pump, fogging oil applicator, fuel stabilizer)
+- You are willing to take the risk if you miss a step
 
-Those three inclusions are worth roughly $284 combined. We don't charge separately for them.
+Bring it to us when:
 
-## Real Package Examples
+- The motor is bigger (90 HP and up) and harder to access
+- You have not done it before
+- The boat lives outside year-round and freeze-protection is critical
+- You are not sure whether last year's winterization was done correctly
+- You want spring commissioning included so the boat is ready May 1 with no spring to-do list
 
-The numbers above combine into actual invoices. Here's what three common Rice Lake setups look like based on our own published rates:
+The most common DIY mistake we see in spring: customer drained the gearcase and forgot to refill it. The motor runs in spring without lower-unit lube, the gears destroy themselves in 30 minutes of operation, and the customer is buying a new lower unit ($1,500 to $4,500 CAD depending on motor). Cheap mistake. Expensive lesson.
 
-**19-ft bowrider, 115 HP 4-stroke, on trailer:**
-- Winterize + service (75–115 HP): **$425.71**
-- Storage with shrinkwrap, with trailer, up to 21 ft: 19 ft × $33 = **$627**
-- **Subtotal: ~$1,053** + HST + shop supplies
+The second most common: missing the cooling system drain. Water freezes in the powerhead. Block cracks. Motor scrap. We see this every spring on at least a few customers who tried DIY and missed the step.
 
-**23-ft pontoon, 60 HP 4-stroke, no trailer:**
-- Winterize + service (40–60 HP): **$337.84**
-- Storage with shrinkwrap, no trailer, 22–28 ft: 23 ft × $39 = **$897**
-- Pontoon enclosure removal & install: 23 ft × $5 = **$115**
-- **Subtotal: ~$1,350** + HST + shop supplies
+## Storage options ranked by cost
 
-**16-ft aluminum fishing boat, 20 HP 4-stroke, on trailer:**
-- Winterize + service (0–20 HP): **$260.28**
-- Storage with shrinkwrap, with trailer, up to 21 ft: 16 ft × $33 = **$528**
-- **Subtotal: ~$788** + HST + shop supplies
+In rough order from cheapest to most expensive:
 
-**26-ft cruiser, V8 sterndrive, on trailer:**
-- Winterize + oil/filter (V6/V8): **$520.48**
-- Storage with shrinkwrap, with trailer, 22–28 ft: 26 ft × $35 = **$910**
-- **Subtotal: ~$1,430** + HST + shop supplies
+1. **Outdoor uncovered, customer supplies tarp.** Cheapest. Higher risk of UV damage to seats and electronics, snow load on canvas, animal nesting in fall.
+2. **Outdoor with shrink-wrap.** Better protection. Shrink-wrap cost depends on hull size.
+3. **Outdoor on a concrete pad with proper tie-downs.** Adds stability for windy winters.
+4. **Indoor unheated.** Protected from snow load, animals, UV. Most popular for higher-value boats.
+5. **Indoor heated.** Premium. Protects upholstery, electronics, and any sensitive systems. Most expensive.
 
-These are our actual published rates doing their job — turning a vague "it depends" into a real planning number before you pick up the phone.
+We offer multiple storage tiers at HBW. Pricing is per square foot of storage and varies by tier. [Contact us](/contact) for current rates.
 
-## DIY Winterization vs. Dealer Service
+## Spring commissioning context
 
-You can winterize your own outboard. For a mechanically inclined boater with the right supplies, a single-engine outboard winterization is a reasonable afternoon project.
+Spring commissioning is the inverse of winterization. Booking it at the same time as winterization (fall) usually saves money over booking separately (spring rush).
 
-**Realistic DIY supply cost:**
-- Fogging oil: ~$20–$35
-- Fuel stabilizer (AMSOIL or equivalent): ~$19
-- Lower unit gear lube + drain tools: ~$30–$50
-- 4-stroke oil (if oil change is needed): ~$19/L or ~$65/3.78L
-- Grease: ~$15–$20
-- Battery tender (if you don't have one): ~$40–$80
+A typical spring commissioning at HBW includes:
 
-Total supplies: roughly $120–$220 for a standard outboard. Labour is your time — typically 2–4 hours for a first-timer.
+- Refill gearcase with fresh lube (if it was drained for winter, it needs to be refilled)
+- Battery reinstall and load test
+- Fuel system check (replace fuel filter if due)
+- Cooling system flush
+- Visual inspection
+- Test run on muffs or in water
+- Hull and trailer prep for launch
 
-The trade-off: a dealer technician will spot problems you might miss. Water in the lower unit, a corroded battery terminal, a fuel line developing a crack, a tell-tale screen that's starting to block — these show up during a proper winterization if a trained tech is doing it. Our shop rate is $140/hr. At that rate, even a 2-hour winterization visit pays for itself quickly if the tech catches one issue that would have turned into a $500 spring repair.
-
-We've written a detailed guide on [spring outboard commissioning](https://mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) that shows you the reverse side of the winterization process — reading that alongside this one gives you the full picture of what proper seasonal care involves.
-
-## Why Timing Matters
-
-Book early. Every year, the same thing happens: boaters wait until October long weekend to call, and every shop from Peterborough to Lindsay is suddenly booked 3–4 weeks out. The boats that get the best attention are the ones that show up in September.
-
-Boats winterized late — especially if they sit with untreated fuel through freeze-thaw cycles before they're properly serviced — show up in spring with problems that early booking would have avoided. A varnished injector in May isn't the way you want to start the season.
-
-See our [seasonal maintenance guide](https://mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips) for a full calendar of what to do and when.
-
-## What HBW Charges and How We Work
-
-We handle winterization at our shop in Gores Landing — on the south shore of Rice Lake, 90 minutes from the 401. In Aug–Nov 2025, we processed 584 winterizations and 311 storage contracts. The workflow is efficient; we've been doing this long enough that we don't cut corners to keep up with volume.
-
-We quote the work before we do it. If our tech finds something during the lower unit check or inspection that changes the scope, we call before we proceed. That's how it should work.
-
-If you're coming to us for storage as well, we can bundle winterization and yard storage. [Submit a service request](https://hbw.wiki/service) and we'll get back to you, or call 905-342-2153.
-
-For those weighing whether a motor is worth another season of service, our [repower guide for Ontario cottage owners](https://mercuryrepower.ca/blog/ontario-cottage-boat-motor-repower-guide) walks through the decision honestly.
-
----
-
-**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
+Customers who book the full winterize-plus-spring-commission package walk in May to a boat that is ready to launch. No DIY scramble. No "did I do this right" anxiety.
 
 ## Related guides
 
-- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) — the full Mercury service schedule
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips) — seasonal maintenance tips
-- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist) — spring commissioning checklist
-- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips) — off-season storage tips
+- [Can I Winterize My Mercury Outboard Myself? Complete DIY Guide](/blog/diy-mercury-outboard-winterization-guide), step-by-step DIY walkthrough with when to call a dealer
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), the broader seasonal service picture
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), what spring service includes
+- [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), if you are repowering this year and need first-year service guidance
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up issues and what to check
 
-`,
+## Ready to book winterization?
+
+Book your fall winterization at HBW through our [service page](https://hbw.wiki/service) or by calling (905) 342-2153. We start scheduling in late September and the calendar fills through October. Booking early gets you the easier appointment slots and (usually) the better pricing.
+
+[**Request Service**](https://hbw.wiki/service)
+
+If you want to talk through whether DIY or professional winterization is the right call for your specific motor, [give us a call](tel:9053422153). We will give you an honest answer, including the answer where DIY is fine for your situation.
+
+---
+
+_Pricing for winterization services varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) or [request service](https://hbw.wiki/service) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**How much does it cost to winterize a boat motor in Ontario?**
+The cost varies by motor size, boat type, and what is included. A basic Mercury motor winterization is the smallest line item. A full package with shrink-wrap and indoor storage is significantly more. For a real quote on your specific motor and boat, [contact us](/contact) or visit our [service page](https://hbw.wiki/service). We do not list a flat rate because no two boats are the same configuration.
+
+**What does boat winterization include?**
+A proper Mercury winterization at HBW includes fuel stabilization, fogging, gearcase drain and refill, water-pump impeller inspection, anode check, lubrication of cables and pivot points, spark plug check, battery service, and a written inspection report. Optional add-ons include shrink-wrap, indoor storage, trailer service, and pre-booked spring commissioning.
+
+**How long does winterization take?**
+A motor-only winterization typically takes 2 to 4 hours of shop time. Full packages with hull shrink-wrap and trailer service run a full day. Booking earlier in the fall (October) is easier to schedule than November rush bookings.
+
+**Can I winterize my own Mercury outboard?**
+Yes, if you have done it before, the motor is accessible, and you have the right tools and supplies. Our [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) walks through the process step by step. The most common DIY mistakes we see in spring are skipping the gearcase refill and missing the cooling system drain. Both are expensive mistakes ($1,500 to $4,500+ in motor damage).
+
+**What happens if I do not winterize my boat?**
+Water in the cooling system freezes and expands, cracking the powerhead block. Water in the gearcase freezes and damages internal seals. Fuel left without stabilizer breaks down, gums up carburetors and injectors, and requires fuel system rebuild in spring. Skipping winterization can turn into a multi-thousand-dollar repair bill or a destroyed motor.
+
+**When should I book winterization?**
+Book in late September or early October to get the easier appointment slots. We start the winterization season in late September and the calendar fills through October. November bookings work but are more rushed. Last-minute bookings before freeze-up sometimes are not possible because the calendar is full.
+
+**Should I winterize a Mercury that gets stored indoors?**
+Yes. Indoor storage protects from physical damage but does not protect from internal freeze damage if water is in the powerhead. Cold garages get below freezing in Ontario. The motor still needs full winterization regardless of storage location.
+
+**Can you winterize Yamaha or Honda outboards too?**
+Yes, we can winterize Yamaha, Honda, and Evinrude/Johnson motors. Our parts and tooling are Mercury-focused, so service may take slightly longer or require part-sourcing on non-Mercury motors. For Mercury we are the most efficient. [Contact us](/contact) for non-Mercury winterization quotes.
+
+**What is the difference between basic and full winterization?**
+Basic winterization typically covers the freeze-protection essentials: fuel stabilizer, fogging, cooling system drain, gearcase drain. Full winterization adds the wear-item replacements (impeller, anodes, plugs if due), full inspection, and any additional service identified during the inspection. Full winterization costs more and gives you a motor ready to launch in May with no surprises.
+
+**Does winterization include shrink-wrap?**
+Not by default. Shrink-wrap is an add-on, priced by hull size. Most customers who store outside opt for shrink-wrap. Customers storing inside often skip it. We can include or exclude shrink-wrap when you [request service](https://hbw.wiki/service).
+
+**Should I bundle spring commissioning with winterization?**
+Usually yes. Bundling fall winterization plus spring commissioning saves a small percentage versus booking each separately. More importantly, your spring commissioning slot is locked in before the spring rush, which means the boat is ready when you want to launch instead of waiting in a March-April backlog.
+
+**What does spring commissioning include?**
+Gearcase lube refill (if drained for winter), battery reinstall and load test, fuel system check, cooling system flush, visual inspection, test run on muffs or in water, hull and trailer launch prep. The boat is ready to launch when commissioning is complete.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)`,
     faqs: [
       {
         question: 'How much does outboard winterization cost in Ontario in 2026?',
@@ -10388,142 +10492,208 @@ For those weighing whether a motor is worth another season of service, our [repo
   {
     slug: 'diy-mercury-outboard-winterization-guide',
     title: 'Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)',
-    description: 'Step-by-step DIY winterization for your Mercury outboard, plus the warning signs that mean it\'s time to call a dealer. Real HBW shop rates included.',
+    description: 'Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter: stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor by spring. For motors you would rather not DIY, request service at HBW.',
     image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-04-22',
+    dateModified: '2026-05-04',
     publishDate: '2026-04-22',
     category: 'Maintenance',
     readTime: '12 min read',
     keywords: ['diy mercury outboard winterization', 'how to winterize mercury outboard', 'winterize 4-stroke outboard'],
-    content: `
-The honest answer is: yes, for most four-stroke outboards, a mechanically comfortable boater can do a solid winterization at home. The supplies run $120–$220, the process takes 2–4 hours, and there's nothing here that requires a lift or a dealer tool.
+    content: `# Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)
 
-The longer answer is: there are situations where DIY winterization creates more risk than it saves in cost. Knowing the difference is what this guide is about.
+Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter: stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor by spring. For motors you would rather not DIY, [request service at HBW](https://hbw.wiki/service).
 
-We're Harris Boat Works — a Mercury Platinum dealer in Gores Landing, on Rice Lake. We've been doing this work since 1947. In Aug–Nov 2025, our shop logged 584 winterizations. We also genuinely believe that an informed boater who maintains their own engine is a good thing. So this is a real guide, not a sales pitch. We'll tell you exactly how to do it yourself, what you'll need, and where we'd tell you to stop and bring it in.
+## Quick recommendation
 
-## Why Winterization Matters
+DIY winterization works for confident owners on smaller motors (under 60 HP) with garage-accessible storage. The procedure is the same on bigger motors but the parts and access get harder. We would not recommend DIY on a 250 HP V8 unless you have done it before.
 
-Rice Lake freezes. The Kawarthas freeze. And what's left in your outboard when that happens — water in the powerhead, water in the lower unit, unstabilized fuel in the system — can cause thousands of dollars in damage.
+The five steps below cover the essential freeze-protection and corrosion-protection. Do them in order. Do not skip any one of them. If at any step you are not sure what you are looking at, stop and bring the motor in. We see at least a dozen DIY mistakes every May, and the cheapest one is usually a $1,500 lower unit. The expensive ones are cracked powerheads, which mean the motor is scrap.
 
-Here's what you're protecting against:
+## What you need before starting
 
-- **Freeze cracking**: Residual water in the cooling passages of the powerhead or mid-section expands when it freezes. It doesn't matter how well-built the engine is — water expands roughly 9% when it freezes, and aluminum and cast iron aren't flexible. A cracked block or head often means an engine replacement.
-- **Fuel degradation**: Modern gasoline (with ethanol) starts breaking down in 30–60 days. Over a winter, untreated fuel oxidizes into a varnish that clogs fuel injectors, gums up carburetors, and gunks up fuel pumps. Spring start-up after unstabilized winter storage can mean a $400–$900 fuel system cleaning job. Based on our own repair order history, a "won't start" diagnostic averages $540 — a preventable cost for most boats.
-- **Lower unit failure**: Water in the gear lube means a failing seal — and the longer it sits, the more internal damage occurs. The lower unit drain is also an early warning system; what you find in the gear lube tells you a lot about what's happening inside.
-- **Battery damage**: A lead-acid or AGM battery left to discharge completely over winter can be permanently damaged. A battery on a tender through the winter typically lasts 2–3x longer than one that's left to die.
+Supplies (under $100 total at a Canadian Tire or marine store):
 
-For more on what good seasonal habits look like across the full year, see our [seasonal maintenance guide](https://mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips).
+- Mercury Quickstor or equivalent fuel stabilizer
+- Mercury Storage Seal fogging oil, or Mercury Premium Fogging Oil
+- Mercury High-Performance Gear Lube (volume depends on motor size; a quart usually does it for under 60 HP, larger motors need 1.5 to 2 quarts)
+- New gear lube fill drain plug gaskets (cheap, replace every year)
+- Spark plug socket (size varies by motor; 13/16" is common)
+- Anti-seize compound for spark plug threads
+- Marine grease for grease points
+- A bucket and rags
+- A fuel system disconnect or earmuffs (depending on flush method)
 
-## What You Need: DIY Winterization Supplies
+You also need a way to run the motor briefly. Either a flush attachment (earmuffs that go over the lower unit cooling intake), a fuel-system disconnect that lets you run the motor on a fuel can while it is on a hose, or a tank of water deep enough to submerge the cooling intake.
 
-For a standard Mercury four-stroke outboard (tiller or remote, any HP from 5–150), you'll need:
+## Step 1: Stabilize the fuel
 
-| Item | Real Cost (HBW parts pricing) |
-|---|---|
-| Mercury fogging oil (aerosol) | ~$20–$35 |
-| Fuel stabilizer (AMSOIL marine formula) | **$19.19** |
-| 4-stroke oil, 1L (10W-30) | **$18.88/L** |
-| 4-stroke oil, 3.78L jug | **$64.80** |
-| Lower unit gear lube (AMSOIL synthetic) | **$24.99–$26.49/L** |
-| Lower unit drain screw tool (if not owned) | $10–$20 |
-| Marine grease (Mercury 2-4-C or equivalent) | $15–$20 |
-| Clean rags, drain pan | $5–$10 |
-| Battery tender / maintainer (if not owned) | $40–$80 |
-| Garden hose + flush muffs (if not owned) | $15–$25 |
+Before the last run of the season:
 
-**Total estimated supply cost: $120–$220** (lower end if you already own the battery tender and basic tools)
+1. Add fuel stabilizer to the gas tank at the rate the bottle says (usually 1 oz per 2.5 gallons / 10L)
+2. Run the motor for at least 10 minutes to circulate the stabilized fuel through the fuel lines, carbs (on older 2-strokes), or fuel injectors (on modern FourStrokes)
+3. The stabilizer prevents fuel breakdown and gum formation over the winter
 
-Parts pricing above reflects our own inventory — available at [marinecatalogue.ca](https://www.marinecatalogue.ca/).
+If your last run is already done, run the motor on muffs for 10 minutes with a small amount of stabilized fuel to reach the same state.
 
-## Step-by-Step DIY Winterization for a Mercury Four-Stroke Outboard
+## Step 2: Fog the engine
 
-Work through these steps in order. Do them outside or in a well-ventilated space — you'll be running the engine briefly during the fogging step.
+While the motor is still running warm from the stabilization run:
 
-### Step 1 — Final Flush and Cooling System Clear
+1. Disconnect the fuel line from the motor (or shut off fuel valve)
+2. While the motor is still running, spray fogging oil into each cylinder through the spark plug holes (after pulling the plugs) OR into the air intake while the motor draws it in
+3. The motor will sputter and stall as it consumes the fogging oil. That is correct.
+4. Once the motor has stalled from fogging oil consumption, you are done with this step.
 
-Attach flush muffs to your lower unit water intakes and connect a garden hose. Run the motor at idle for 5 minutes with fresh water flowing. This removes salt, sediment, and lake water from the cooling passages. Let the engine reach operating temperature. When done, shut off the fuel, let the engine run itself out of fuel, then shut off the key and disconnect the hose.
+The fogging oil coats internal cylinder walls, valves, and bearings with a corrosion-resistant film that prevents rust over the winter.
 
-With the engine tilted up slightly, the remaining cooling water will drain through the water pump outlet. Leave the motor trimmed slightly down overnight to allow any residual water to drain completely.
+## Step 3: Drain the gearcase
 
-### Step 2 — Stabilize the Fuel
+This is the step DIYers most often get wrong:
 
-Add marine-grade fuel stabilizer to your tank according to the bottle's instructions (typically 1 oz per gallon). Run the engine briefly — at least 5–10 minutes — so the stabilized fuel reaches the fuel injectors or carb. On EFI engines, this matters. You can't just add stabilizer and call it done; the stabilizer needs to actually circulate through the system.
+1. Position the motor in a vertical (down) position. The vent screw must be at the top, the drain screw at the bottom.
+2. Have a clean container ready under the drain screw.
+3. Remove the drain screw FIRST, then the vent screw. (Vent first traps the lube; drain first lets it flow.)
+4. Catch all the lube. Inspect it as it drains. Should be clean honey-amber color.
+5. **If the lube comes out milky or grey, that is water in the gearcase from a failed seal.** Stop. Bring the motor in. We will diagnose and fix the seal before winter freeze damages the gears.
+6. **If the lube has metal flakes or chunks**, that is a bigger problem. Stop. Bring the motor in.
+7. If the lube is clean, proceed to step 4.
 
-If your tank is less than half full, consider topping it up before adding stabilizer. A full tank leaves less air space for condensation to form over winter.
+## Step 4: Refill with fresh gear lube
 
-### Step 3 — Fog the Engine
+This is the step that turns a working motor into scrap if you skip it:
 
-With the engine still warm from the flush and fuel stabilization run, remove the air box cover or air intake. With the engine running at idle, spray fogging oil into the air intake in 3-second bursts — the engine will stumble and smoke as the oil coats the cylinder walls. Let it run for 30 seconds, fog again, then shut the engine down while still fogging. The goal is to leave a coat of protective oil on the internal surfaces.
+1. Use only Mercury High-Performance Gear Lube. Do not substitute automotive gear oil. The viscosity and additive packages are different.
+2. Pump fresh lube into the bottom drain hole using a pump bottle until lube comes out the top vent hole.
+3. Quickly install and tighten the vent screw. Then the drain screw. Both with new gaskets.
+4. Wipe up any spilled lube. Done.
 
-For carbureted engines, spray directly into the carb throat. For EFI engines with a sealed throttle body, there's a port designed for this — check your owner's manual for the specific access point on your motor.
+The motor cannot run without lube in the gearcase. If you forget this step, the gears destroy themselves in 30 minutes of operation. We replace at least three lower units every spring on customers who skipped this step. The lower unit costs more than a full year of professional winterization.
 
-### Step 4 — Drain and Refill the Lower Unit
+## Step 5: Clear the cooling system and final touches
 
-Position a drain pan under the lower unit. Remove both the fill plug (upper) and the drain plug (lower). Let the old gear lube drain completely — and pay attention to what comes out. Milky or water-contaminated lube means a seal is failing. Clear brownish oil is normal. Metallic particles are not.
+The freeze-protection step:
 
-If you find water contamination, note it — this is a job for a dealer before spring, not something to ignore. Based on our repair order history, a lower unit seal job caught early is far cheaper than the alternative.
+1. Run the motor on muffs (or in water) for one or two minutes to confirm cooling water flow
+2. Then disconnect the water source while the motor is still running for 10 to 15 seconds
+3. Tilt the motor up to drain residual water from cooling passages
+4. Lower the motor and confirm no water is dripping from anywhere it should not be
 
-Refill through the lower drain hole using a pump-style applicator. Fill until lube appears at the upper hole, then replace the upper plug first, then the lower plug. Torque to spec (check your manual — these shouldn't be over-tightened).
+Final touches:
 
-### Step 5 — Grease the Fittings
+1. Replace spark plugs if they are over a year old or showing wear. Use anti-seize on the threads.
+2. Lubricate steering, throttle, and shift cable pivot points with marine grease
+3. Check anodes (zincs) on the motor. Replace if more than 30% depleted.
+4. Disconnect and remove the battery. Store on a wood block in an insulated indoor space (basement, garage). Trickle charge once a month over winter.
+5. Cover the motor or store the boat covered (shrink-wrap, tarp, or indoor)
 
-Apply marine grease to all zerk fittings on your motor — tilt tube, steering pivot points, swivel bracket, trim tab pivot. Work the grease in until fresh grease appears at the edges. Apply a thin coat of corrosion inhibitor (Mercury Corrosion Guard or equivalent) to all exposed metal, wiring connections, and the top of the engine head.
+## When to call us instead
 
-### Step 6 — Battery Service
+DIY makes sense for confident owners on smaller motors. Bring the motor to HBW when:
 
-Remove the battery and bring it inside or store it in a heated space. Connect it to a smart battery tender that maintains a float charge throughout the winter. A proper tender cycles on and off to maintain charge without overcharging — a simple trickle charger can overcharge and damage a battery over months of continuous connection.
+- You have not done it before and you are not sure where the gear lube drain plug is on your specific motor
+- The motor is bigger than 60 HP (parts cost more, mistakes cost more)
+- The boat is fiberglass and lives outside (we can shrink-wrap and store it indoors at HBW)
+- You found water in the gear lube during step 3 (seal repair before winter freeze)
+- You are not going to use the boat until late next spring (we time spring commissioning to your launch date)
+- You want a written inspection report of motor condition for resale or insurance
+- You just do not want to fight with the gear lube pump in November
 
-Check the battery terminals. If there's corrosion (white/greenish buildup), clean it with a baking soda solution and a wire brush, dry it completely, and apply dielectric grease before reconnecting.
+[Request service at HBW](https://hbw.wiki/service) and we will give you an honest quote. We do this in volume from October through November and we are good at it.
 
-### Step 7 — Final Checks
+## What HBW checks during winterization that DIY usually misses
 
-- Disconnect the fuel line from the engine side and let any residual pressure release
-- Check the engine cover for cracks or damage — replace if needed; a compromised cowl lets moisture in
-- Inspect the lower unit for cracks or nicks from underwater impacts
-- Make a note of anything that needs attention in spring so you're not starting fresh in April trying to remember what you noticed in October
+When customers DIY their own winterization, they cover the basics. When we do it, we also check:
 
-For the spring side of this process — commissioning, first-start checklist, what to do before launch — see our [spring commissioning guide](https://mercuryrepower.ca/blog/spring-outboard-commissioning-checklist).
+- Water-pump impeller condition (replace if cracked, swollen, or worn; pump failure in spring is a real risk if you skip this)
+- Spark plug condition and gap on every cylinder
+- Anode (zinc) depletion across all locations on the motor
+- Fuel filter condition (replace if dirty or due)
+- Steering and shift cable smoothness (lube reaches the inside of the cable, not just the visible ends)
+- Trim and tilt fluid level
+- Battery terminal corrosion
+- Hull and trailer prep if storage is included
 
-## When to Call a Dealer Instead of DIY
+A full-service winterization at HBW catches problems before they become spring-launch surprises. If you are confident on the freeze-protection basics but want the wear-item check too, ask for a "DIY plus check" service. We do the inspection while you handle the consumables.
 
-Here's where we'll be straight with you:
+## Common DIY mistakes (in order of frequency)
 
-**Call a dealer if:**
-- You found water in the lower unit gear lube. This means a seal is failing. The seal won't heal itself over winter, and the longer it sits, the more water infiltration damages the gears. This needs attention before or right after spring launch.
-- Your engine is under warranty and you haven't been documenting your own service carefully. Mercury's warranty doesn't require dealer-only service for maintenance, but it does require that maintenance be performed according to spec and documented. If you're not sure you're doing that correctly, have a dealer do it once, watch the process, and take it from there.
-- Your engine has EFI diagnostics issues, hard-starting history, or sensor faults. A winterization is a good time to clear any fault codes and have a technician evaluate the engine management system. That's not a DIY task.
-- The engine is more than 10–12 years old and you're not sure what its maintenance history looks like. Older motors benefit from a dealer eyes-on inspection before they go into storage.
-- You don't have the right supplies or a way to run the motor before fogging. Running it dry or fogging without a proper cooling flush leaves you with a partially winterized engine that might be worse than fully untreated.
+We see the same mistakes every spring. In order:
 
-For questions about what's covered under your Mercury warranty and what documentation you need to maintain it, see our [Mercury warranty guide](https://mercuryrepower.ca/blog/mercury-warranty-what-you-need-to-know).
+1. **Forgot to refill the gear lube after draining.** The motor runs in spring, gears destroy themselves in 30 minutes. Cost: $1,500 to $4,500 CAD lower unit replacement.
+2. **Skipped fogging.** Cylinders rust over winter. Motor runs but with reduced compression. Cost: top-end rebuild or replacement.
+3. **Did not stabilize fuel.** Fuel system gums up over winter. Spring start-up requires carb cleaning or injector cleaning. Cost: $200 to $800 CAD service.
+4. **Forgot to clear cooling water from the powerhead.** Water freezes, expands, cracks the block. Motor scrap. Cost: replace the motor.
+5. **Used the wrong gear lube.** Automotive gear oil instead of marine gear lube causes seal damage and gear wear. Cost: lower unit rebuild.
+6. **Did not check for water in the old gear lube.** Missed a failing seal. Water enters in winter, freezes, damages internal seals and gears. Cost: lower unit rebuild plus seal replacement.
 
-## What We Do at HBW
-
-When a motor comes into our shop for winterization, our technician does every step above — plus a visual inspection of the impeller (we recommend replacing it every 2–3 years as a matter of course), a check of spark plug condition, and a note on any findings from the lower unit drain. If we see something that needs addressing before storage, we call you before we do anything beyond the quoted scope.
-
-For engine repairs, we only service Mercury and Mercruiser. Winterize and storage service is available for all brands.
-
-Our shop rate is $140/hr. Our published winterization rates start at $260.28 for a 0–20 HP 4-stroke and run to $495.01 for 175–300 HP — see the full rate card at harrisboatworks.ca/winter-storage. Last season we handled 584 winterizations. The workflow is efficient, the pricing is transparent, and you get a service record that protects your warranty position.
-
-When spring comes, a typical spring startup at our shop averages $480–$510 (based on 232 startup jobs we logged). The cost of a proper fall winterization is partly what keeps the spring startup bill that low.
-
-[Submit a service request](https://hbw.wiki/service) to book your winterization, or call 905-342-2153. We're in Gores Landing on Rice Lake — 90 minutes from the 401.
-
----
-
-**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
+The first one is the most common. Most often, DIYers drain the gear lube, get distracted, and never get back to refilling. They start the boat in May and the gears destroy themselves before they realize what happened.
 
 ## Related guides
 
-- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) — the full Mercury service schedule
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips) — seasonal maintenance tips
-- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist) — spring commissioning checklist
-- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips) — off-season storage tips
+- [How Much Does Boat Winterization Cost in Ontario?](/blog/boat-winterization-cost-ontario-2026), HBW pricing and what's included
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), full seasonal service overview
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), what to do in spring after winterization
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up issues and what to check
+- [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), if you are repowering this year
 
-`,
+## Ready to book service?
+
+If you decide DIY is not the right call for your motor this year, [request service at HBW](https://hbw.wiki/service) or call (905) 342-2153. We start scheduling winterization in late September and the calendar fills through October. Booking early gets you the easier appointment slots.
+
+[**Request Service**](https://hbw.wiki/service)
+
+---
+
+_Service pricing varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Can I winterize my Mercury outboard myself?**
+Yes, if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter are stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor.
+
+**What supplies do I need to winterize a Mercury outboard?**
+Mercury fuel stabilizer (Quickstor), Mercury fogging oil, Mercury High-Performance Gear Lube, new drain plug gaskets, spark plug socket, anti-seize, marine grease, a bucket, and rags. Total under $100 CAD at a Canadian Tire or marine store. Plus a way to run the motor (muffs, fuel disconnect, or water tank).
+
+**What happens if I skip winterization?**
+Water in the cooling system freezes and cracks the powerhead block. Water in the gearcase freezes and damages seals. Fuel left without stabilizer breaks down and gums up the fuel system. Skipping winterization can turn into a multi-thousand-dollar repair or a destroyed motor.
+
+**What is the most common DIY winterization mistake?**
+Forgetting to refill the gearcase after draining. The motor runs in spring without lower-unit lube and the gears destroy themselves in 30 minutes. Cost: $1,500 to $4,500 CAD lower unit replacement. We see at least three of these every May.
+
+**Can I use automotive gear oil in my Mercury gearcase?**
+No. Mercury High-Performance Gear Lube has different viscosity and additives designed for marine gear use. Automotive gear oil causes seal damage and gear wear. Use only Mercury or equivalent marine gear lube.
+
+**How long does DIY winterization take?**
+About one hour for an under-60 HP motor if you have done it before. First-timers should plan for two hours. Bigger motors take longer because parts are heavier and access is harder.
+
+**Should I winterize my motor if it's stored in a heated garage?**
+Yes. Even in a heated garage, fuel breaks down and corrosion accumulates without the protective layer fogging oil provides. The cooling system drain step is less critical with heated storage but the other four steps still apply.
+
+**What is fogging oil and why do I need it?**
+Fogging oil is a heavy oil designed to coat internal engine surfaces (cylinder walls, valves, bearings) with a corrosion-resistant film over winter. Without it, internal metal surfaces rust during the storage period and the motor loses compression. Fogging is non-negotiable for proper winterization.
+
+**Do I need to remove the battery for winter?**
+Yes. Disconnect and remove the battery, store it on a wood block in an insulated indoor space (basement, garage), and trickle charge once a month. A battery left in a freezing boat over winter can crack from internal freezing and is unlikely to start the motor in spring even if it survives.
+
+**How do I know if my gearcase has water in it?**
+Drain a sample of gear lube. Clean lube is honey-amber color and translucent. Lube with water is milky or grey. If you see milky lube, stop the DIY winterization and bring the motor to HBW or another Mercury dealer for seal diagnosis before winter freeze damages the internal gears.
+
+**When should I winterize my outboard in Ontario?**
+Late September through early November is the standard window. Earlier is fine. Later than first hard freeze is risky. By mid-November you are racing the calendar. Booking professional service in October gives you the easiest scheduling.
+
+**Should I call HBW for winterization or DIY?**
+DIY makes sense if you have done it before, the motor is under 60 HP, and you have garage access. Call HBW if it is your first time, the motor is bigger than 60 HP, you found water in the gearcase, you want a wear-item inspection included, or you just do not want to spend an hour wrestling with a gear lube pump in November. [Request service](https://hbw.wiki/service) to get on our schedule.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)`,
     faqs: [
       {
         question: 'Can I winterize my Mercury FourStroke outboard myself?',
@@ -11913,165 +12083,162 @@ For more on [repower costs in Ontario](/blog/mercury-repower-cost-ontario-2026-c
   {
     slug: 'mercury-boost-upgrade-150hp-pontoon-analysis',
     title: 'Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)',
-    description: 'Is the Mercury Boost software upgrade worth it for a 150 hp pontoon owner? Real-world analysis of cost, performance gains, and when to skip it.',
+    description: 'For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. The performance gains are minimal in real-world pontoon use (where load and hull design cap top speed regardless of motor tweaks). The interesting part of Boost is what it signals about how Mercury will deliver future upgrades, not whether this specific upgrade pays off today. For your specific motor and use, see live pricing or contact us before committing.',
     image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-30',
-    dateModified: '2026-04-30',
+    dateModified: '2026-05-04',
     publishDate: '2026-04-30',
     category: 'Performance',
     readTime: '12 min read',
     keywords: ['mercury boost upgrade pontoon', 'mercury boost 150hp', 'mercury software upgrade'],
-    content: `
-Mercury Boost is one of the more interesting things to come out of the software-defined boat motor era: a factory upgrade, delivered as a calibration change, that unlocks additional torque from motors that are already installed on your boat. No hardware. No trip to a machine shop. A certified dealer connects to your motor's ECM and changes how the engine management system operates.
+    content: `# Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)
 
-For pontoon owners — specifically those running a 150 HP Mercury FourStroke — this is one of the most common questions we hear at the marina: does it actually work, and is it worth paying for?
+For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. The performance gains are minimal in real-world pontoon use (where load and hull design cap top speed regardless of motor tweaks). The interesting part of Boost is what it signals about how Mercury will deliver future upgrades, not whether this specific upgrade pays off today. For your specific motor and use, see [live pricing](/quote/motor-selection) or [contact us](/contact) before committing.
 
-We're a Mercury Platinum dealer on Rice Lake, established 1947. We sold approximately 65 new Mercury motors in 2025, and we run a 9-boat rental fleet (346 rentals, $119K gross revenue in 2025) — a meaningful portion of which are 150 HP setups on pontoons. We know exactly how these boats behave on Rice Lake under real loads. This is our honest read.
+## Quick recommendation
 
-The short answer is yes, with an important qualifier about what you're actually buying. The longer answer depends on how you use your boat.
+Skip Boost on a typical 150 HP pontoon. Here is why: a pontoon's top speed is governed by hull drag, weight, and pontoon-tube design, not by motor output. Adding a few horsepower through a software-only Boost upgrade gives you small gains that customers usually cannot feel.
 
----
+Boost makes more sense on lighter performance boats where the hull responds to small power changes (bass boats, performance fishing boats, some runabouts). For a 22-foot tritoon hauling four adults, a cooler, and a tube, Boost is a hundred or two hundred dollars in horsepower bragging rights without much practical change.
 
-## What Mercury Boost Is (Brief Recap)
+The bigger story is what Boost tells us about Mercury's roadmap. Software-defined performance upgrades are how the next decade of motor improvements will arrive. Buying a 150 HP today and adding software upgrades later is going to be more common, more granular, and probably more interesting than today's first Boost iteration.
 
-Mercury Boost is a software calibration upgrade delivered through Mercury's VesselView or digital throttle-and-shift (DTS) capable engines. It adjusts the engine's fueling and timing maps to increase low-end and mid-range torque output without changing the motor's rated maximum horsepower.
+## What Boost actually is
 
-The key phrase is low-end and mid-range torque. Boost doesn't make your motor faster at wide-open throttle. It changes how the motor behaves getting there.
+Mercury Boost is a software upgrade that increases the maximum output of certain Mercury outboard motors without changing the hardware. The motor itself stays the same. What changes is the engine management map, allowing the motor to deliver more power at the top end.
 
-For the full eligibility list and technical overview, see our [Mercury Boost software upgrade eligibility guide](https://mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026).
+Boost-eligible motors as of 2026 include specific FourStroke and Pro XS models. For eligibility on your specific motor and the current Boost upgrade pricing, see our [Boost software upgrade eligibility guide](/blog/mercury-boost-software-upgrade-eligibility-2026) or [build a quote](/quote/motor-selection) and the system will flag whether your motor configuration is upgrade-eligible.
 
----
+The upgrade itself takes about an hour of dealer service time and requires Mercury's authorized tooling. We do these at HBW. [Live pricing](/quote/motor-selection) shows the cost; current promotion details, if any, are on the [promotions page](/promotions).
 
-## Why the 150 HP Pontoon Scenario Is Representative
+## What changes the answer for your boat
 
-A 20–22 foot pontoon with a 150 HP Mercury FourStroke is one of the most common boat configurations in Ontario. It's the workhorse of the Kawarthas and Rice Lake: enough boat for a family plus guests, enough motor to move it, priced accessibly enough that they're everywhere on the water.
+Five things move whether Boost is worth it for you:
 
-For context on real 2026 pricing: a new 2026 Mercury 150 L Pro XS is $27,395 MSRP at HBW, and a 2026 Mercury 150 XL Pro XS is $27,265 MSRP. That's a significant motor investment. Whether to add a Boost calibration on top of that is a real decision.
+- **Hull type.** Performance boats (bass, performance fishing) feel small power gains. Pontoons (especially heavier tritoons with seating, gear, and passengers) absorb small gains into hull drag.
+- **Loading.** A two-passenger pontoon at half-load might feel a small Boost gain on hole shot. The same pontoon with four adults and a tube load will not.
+- **What you do.** Tournament-style fishing where every minute of plane time matters values small gains. Cruising and family pontoon use does not.
+- **Whether you have already optimized everything else.** If your prop is wrong or your hull is heavy with old gear and water, fix those first. Those gains are bigger than Boost gains.
+- **Budget tolerance.** Some customers buy Boost as a gift to themselves, knowing the practical return is minimal. That is a fine reason if you have the budget. We just want to be honest that the math does not pencil out as a "performance upgrade" the way a new prop or hydraulic steering does.
 
-The challenge with this setup is physics. A pontoon is a high-drag hull form. Two aluminum tubes pushing through the water require more energy to plane than a comparable-weight V-hull. A fully loaded pontoon — six adults, cooler, gear, a tube or two — is a heavy, blunt object that needs the motor to work hard off the line.
+## Real-world pontoon performance reality
 
-This is exactly the use case where Boost's torque characteristics have the most effect. Here's what that looks like in practice.
+We rig a lot of pontoon repowers at HBW. Here is what actually drives pontoon performance, in order of impact:
 
----
+1. **Pontoon tube design.** A tritoon with three logs planes faster, runs smoother, and carries more weight than a two-log pontoon, regardless of motor. This is the biggest variable.
+2. **Pontoon size and weight.** A 20-foot pontoon is faster than a 24-foot pontoon at the same HP. Smaller and lighter wins.
+3. **Loading.** Empty pontoon vs. four passengers plus gear is a meaningful speed difference. Often more difference than the entire Boost gain.
+4. **Motor HP class.** Going from 90 HP to 115 HP Command Thrust is a felt difference. Going from 115 to 150 is felt. Adding software-Boost to a 150 is barely felt.
+5. **Prop selection.** A correctly sized prop is the single most overlooked performance factor on pontoons. We swap props all the time on customers who never thought about it.
+6. **Trim adjustment.** A pontoon trimmed correctly accelerates faster and runs more efficiently. Not free horsepower, but free improvement.
 
-## Real-World Acceleration Analysis: Loaded Pontoon, 6 Adults
+Boost lands somewhere below all of those. If you have already optimized hull, load, motor selection, prop, and trim, then Boost is a small additional gain. If any of those upstream factors are wrong, fix them first. The dollars per MPH gained are much better.
 
-The physics of getting a heavy pontoon on plane are straightforward: you need torque at low RPM to break inertia and begin displacing weight to the back tubes, allowing the front to rise.
+## When Boost actually makes sense
 
-A stock 150 HP Mercury FourStroke produces its rated torque at a specific RPM band. What Boost does is fill in the torque curve below that band — you get more grunt earlier in the throttle travel. In practical terms:
+There are real scenarios where Boost earns its price:
 
-**Before Boost:** A loaded 20-foot pontoon with 6 adults typically takes 6–10 seconds to get on plane. There's a pronounced "wallow" phase where the bow is high and the boat is churning through displacement mode before the hull transitions. The throttle needs to be pushed near wide-open to complete the transition reliably.
+- **Performance bass boats.** Lighter hull, performance prop already dialed in, every tournament minute counts. Boost adds enough hole shot and top speed to be felt.
+- **Mid-size runabouts with under-prop'd setups.** Same logic.
+- **Smaller two-log pontoons (18 to 20 ft) with lighter loading.** The "feels it" threshold is lower on these. Some customers report a noticeable difference.
+- **Customers who have already optimized everything else.** If hull, load, prop, and trim are all dialed, Boost is the next small step.
 
-**After Boost:** The same boat, same load, gets on plane noticeably faster — typically in the range of 4–7 seconds depending on load distribution and water conditions. More importantly, the driver doesn't need to push the throttle as aggressively to initiate and complete the planing transition. The motor responds to a more moderate throttle input.
+For a 22-foot tritoon with full family loading, none of those apply. The boat is what it is and Boost is not going to change that meaningfully.
 
-What you're buying is not top-end speed. Cruise speed and WOT speed are essentially unchanged. What you're buying is a better hole shot and more confident mid-throttle response — particularly for the 40–70% throttle range where most pontoon operators actually spend their time.
+## What HBW checks before recommending Boost
 
----
+When customers ask about Boost, we want to know:
 
-## The Throttle Response Effect
+- **What boat are you running?** Hull type and weight matter most.
+- **What is your typical loading?** Two passengers vs. six is a different math problem.
+- **What is the current prop?** If the prop is wrong, Boost is putting lipstick on a different problem.
+- **Have you optimized trim?** Free improvement before paid improvement.
+- **What are you trying to achieve?** "Faster top speed" is different from "better hole shot" is different from "stronger pulling power for tubing." Each has different right answers, and Boost is rarely the best answer for any of them.
 
-This is where Boost earns its money on pontoons beyond the pure hole shot. The mid-range throttle response — the motor's willingness to push harder when you ask for it at partial throttle — improves noticeably after Boost.
+If after that conversation Boost still seems like the right call for your situation, we will install it. Honestly, most pontoon customers walk out without Boost. We tell them where the bigger gains are first.
 
-For pontoon use cases this matters in specific situations:
-- Passing another vessel when running at cruise
-- Accelerating away from a dock in current or wind
-- Getting back on plane quickly after decelerating for a wake zone
-- Pulling a tuber who wants to start from a dead stop
+## The future signal
 
-In all of these situations, the stock 150 HP is capable but sometimes sluggish. With Boost, the mid-range response is sharper. It doesn't feel like a different motor — but it feels like a more willing version of the same motor.
+The reason Boost is interesting beyond its current performance impact: it is the first widely-deployed example of Mercury delivering motor upgrades through software instead of hardware.
 
----
+Look at what is coming:
 
-## Fuel Economy: Honest Numbers
+- **Granular HP tiers.** Today you choose 115 or 150 HP at purchase. In a few years you might choose a base HP and unlock more through software when you need it.
+- **Use-case profiles.** A "tow mode" that boosts low-end torque for skiing and tubing, separate from a "cruise mode" tuned for fuel efficiency.
+- **Diagnostic integration.** Boost-style upgrades come with telemetry. Mercury sees how the motor behaves before and after, which feeds back into product development.
+- **Subscription-style features.** Likely. Some Mercury features may eventually be subscription-unlocked rather than one-time purchases. Whether you like that or not, it is the direction.
 
-People ask whether Boost increases fuel consumption. The honest answer: at equivalent speeds, minimally. Here's why:
+If you are buying a Mercury today and thinking about a 5-to-10-year ownership window, the platform is moving toward more software-defined capabilities. Buying a current motor positions you to participate. Buying a 12-year-old used motor probably does not.
 
-Boost changes the torque delivery in the lower and mid RPM range. If you're cruising at 25 mph at 3,800 RPM, the motor is producing similar power with or without Boost at that operating point. Fuel consumption at a given speed and RPM is essentially unchanged.
-
-Where fuel consumption can increase: if Boost's improved throttle response encourages operators to run the boat harder — accelerating more aggressively, running at higher speeds — fuel use goes up. But that's a behavioural change, not a calibration effect. The upgrade itself doesn't make the motor thirstier.
-
-Note: we sell ethanol-free fuel on-site at Harris Boat Works. If you're running a 150 HP on a pontoon, using ethanol-free fuel is worth factoring into your operating costs regardless of whether you add Boost.
-
----
-
-## Cost-Benefit Analysis
-
-**Typical cost of Mercury Boost (Canada, 2026):** The upgrade is typically priced in the range of a few hundred to around $1,000 CAD at a certified Mercury dealer, depending on the model year and dealer. To put this in context: the 2026 Mercury 150 motors on our floor are priced at $27,265–$27,395 MSRP. A Boost calibration on that motor represents roughly 2–4% of the motor's purchase price. Verify current Boost pricing directly with us — program pricing can change. Call 905-342-2153 or reach out at [mercuryrepower.ca/contact](https://mercuryrepower.ca/contact).
-
-**What you get:**
-- Improved hole shot on a loaded pontoon
-- Better mid-throttle response in the 40–70% range
-- No hardware installation — purely calibration
-- Mercury factory supported, doesn't void warranty
-
-**What you don't get:**
-- Faster top-end speed
-- Better fuel economy
-- Meaningfully different WOT performance
-
-**The math:** If you run a loaded pontoon every weekend from May to October — roughly 25–30 use days per year — and the upgrade costs $600–$800, you're paying $20–30 per day of boating for a noticeably improved experience on hole shot and mid-range. For a family that launches with full loads regularly, most people find that worth it.
-
----
-
-## Warranty and Resale
-
-Mercury Boost is a factory-approved, dealer-installed calibration change. It does not void the motor's warranty. Mercury treats it as an authorized upgrade, not a modification.
-
-On resale: a boat with Mercury Boost installed is a modest selling point in the used market. Buyers who know what it is respond positively; buyers who don't know what it is generally aren't moved by it either way. It doesn't hurt resale, but don't count on recovering the full cost of the upgrade in your sale price.
-
----
-
-## When Boost Is NOT Worth It
-
-Be honest about your use case before spending money on Boost:
-
-**Lightly-loaded boats.** If you're regularly running your 20-foot pontoon with two or three people and modest gear, you're not spending much time in the part of the power curve Boost improves. Your hole shot is already decent. The upgrade delivers less benefit.
-
-**Performance use cases.** If your priority is top-end speed for ski pulling or performance cruising, Boost doesn't move that number. You need a different motor or a different boat for that goal. For that use case, look at the 2026 Mercury 200 L Pro XS ($31,955 MSRP) or 2026 Mercury 250 L Pro XS ($41,525 MSRP) — more motor is the answer, not a calibration change on a 150 HP.
-
-**Newer, larger motors.** A 200 HP or 250 HP motor on the same 20-foot pontoon may not need Boost — it has enough displacement to pull the hull through without the torque gap that makes Boost valuable on a 150 HP. The benefit-cost ratio is lower.
-
-**Boats where re-propping is the real solution.** See next section.
-
----
-
-## The Alternative: Re-Propping vs. Boost
-
-Before buying Boost, check your propeller. An improperly pitched prop is one of the most common causes of poor hole shot and laboured planing on pontoons — and a prop change is often in the same or lower price range as the Boost upgrade.
-
-If your motor is over-propped (too much pitch, not enough blade area for the load), it labours off the line. Reducing pitch by 1–2 inches, or switching to a four-blade prop with more cup, can dramatically improve hole shot without any software changes.
-
-From our repair order history, a simple prop replacement averages around **$819** at our shop — similar to the cost of a Boost upgrade, but addressing a completely different part of the system. We'd recommend a prop assessment before the Boost conversation for any pontoon owner experiencing poor hole shot. See our [Mercury propeller selection guide](https://mercuryrepower.ca/blog/mercury-propeller-selection-guide) for the basics.
-
-If the prop is already right for your setup and you're still unhappy with hole shot, Boost is the natural next step.
-
----
-
-## HBW's Real-World Verdict
-
-For a 150 HP pontoon that's regularly loaded — family, guests, gear, tubes — Mercury Boost is worth it. The improvement in hole shot and mid-throttle response is genuine and noticeable. It doesn't transform the motor, but it makes loaded planing meaningfully more confident.
-
-For lightly-loaded operation, or for operators whose priority is top-end performance, the case is weaker.
-
-The right sequence: check your prop first. If the prop is correct and hole shot still bothers you, Boost is a reasonable, warranty-safe upgrade that costs less than any hardware alternative.
-
-We're a Mercury Platinum dealer at Gores Landing and we've done Boost installs on a variety of pontoon setups across Rice Lake and the Kawarthas. We publish our pricing and our process — no games. If you want to know whether it makes sense for your specific motor and hull, give us a call at 905-342-2153 or [reach out online](https://mercuryrepower.ca/contact).
-
-For more on pontoon motor selection in general, see our [guide to the best Mercury outboards for pontoon boats](https://mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats).
-
----
-
-**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
+That is a more interesting reason to think about Boost than the current $200 in horsepower it adds.
 
 ## Related guides
 
-- [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) — choosing the right propeller
-- [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide) — maximizing fuel efficiency
-- [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide) — SmartCraft gauges explained
-- [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide) — Digital Throttle & Shift basics
+- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026), specific eligibility by motor model
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon motor selection guide
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), the upgrade that usually pays back better than Boost
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), if you are still in motor selection mode
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the 115 to 150 step-up math
 
-`,
+## Ready to talk through your pontoon setup?
+
+If you are wondering whether Boost makes sense for your specific pontoon, the honest answer is probably no. But the right answer might be a different optimization (a new prop, trim adjustment, load management) that gives you bigger gains for less money.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific pontoon and what would actually make a difference, [give us a call at (905) 342-2153](tel:9053422153) or [send us an email](/contact). We do this for our customers every spring before pontoon season.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for Boost upgrade and other configurations is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Is the Mercury Boost upgrade worth it for a 150 HP pontoon?**
+For most 150 HP pontoon owners, no. Pontoon performance is driven by hull design, loading, and prop selection more than by small motor output changes. Boost gains are absorbed by pontoon drag and rarely felt in real-world use. Boost makes more sense on lighter performance boats (bass, performance fishing) where small power changes are felt.
+
+**What is Mercury Boost?**
+Mercury Boost is a software-only upgrade that increases the maximum output of certain FourStroke and Pro XS motors without changing the hardware. The motor stays the same; the engine management map is updated to deliver more peak power. Installation takes about an hour of dealer service time using Mercury's authorized tooling.
+
+**How much does the Mercury Boost upgrade cost?**
+Pricing varies by motor model and current Mercury promotional offers. For your specific motor and live pricing, see the [motor selection page](/quote/motor-selection) or [contact us](/contact). Current Mercury promotional offers (if any) on Boost are on the [promotions page](/promotions).
+
+**Which Mercury motors are eligible for Boost?**
+Specific FourStroke and Pro XS models in the 115 HP and up range as of 2026. For eligibility on your specific motor, see our [Boost eligibility guide](/blog/mercury-boost-software-upgrade-eligibility-2026) or build a quote on the [motor selection page](/quote/motor-selection) and the system will flag whether your motor is upgrade-eligible.
+
+**How much performance does Boost actually add?**
+The horsepower increase varies by model. The real-world performance change depends heavily on the boat and use case. Performance boats (bass, smaller runabouts) feel the gain. Heavier pontoons with full loading typically do not feel a meaningful difference.
+
+**What gives bigger pontoon performance gains than Boost?**
+In rough order of impact: tritoon (three-log) hull design, lighter loading, correct prop selection, correct trim adjustment, and bigger motor HP class. All of those typically give more performance per dollar than software Boost on a heavy pontoon.
+
+**Does Boost void my warranty?**
+No. Mercury Boost is a Mercury-authorized upgrade installed using Mercury tooling at an authorized dealer. Warranty stays in effect. Improperly modified ECU maps from non-Mercury sources will void warranty.
+
+**Can I install Boost myself?**
+No. Boost requires Mercury's authorized tooling and authentication. It is a dealer-installed upgrade only.
+
+**Should I buy Boost when I buy a new motor or wait?**
+Buying a motor and adding Boost later is the same end result as buying a Boost-equipped motor today (assuming both options exist for your model). If you are not sure whether you want it, wait. The upgrade can be added at any future service appointment.
+
+**Will Mercury offer more software upgrades like Boost in the future?**
+Probably yes. Software-defined upgrades are the direction the marine industry is heading. Mercury has already signaled interest in more granular performance tiers, use-case profiles, and connected services. Boost is the first widely-deployed example, not the last.
+
+**Will I notice the Boost upgrade on a 22-foot tritoon?**
+Honestly, probably not. Heavier tritoons absorb small power gains into hull drag. Customers running smaller pontoons with lighter loading sometimes report a noticeable difference. Customers on full-load family tritoons usually do not.
+
+**What should I do instead of Boost on a 150 HP pontoon?**
+Check your prop first. A wrong prop costs you 4 mph and 15% fuel economy. Then check your loading and trim. Most pontoon customers have at least one of those wrong, and fixing them gives bigger gains than Boost. If everything else is optimized, then Boost is a small additional gain. [Contact us](/contact) for a prop and trim assessment.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)`,
     faqs: [
       {
         question: 'Is Mercury Boost worth it for a pontoon boat?',
