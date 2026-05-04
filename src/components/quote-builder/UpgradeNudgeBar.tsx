@@ -51,7 +51,7 @@ export function UpgradeNudgeBar({
         >
           {/* Animated background shimmer */}
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-100/50 to-transparent"
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-repower-cream to-transparent"
             animate={{
               x: ['-100%', '100%'],
             }}

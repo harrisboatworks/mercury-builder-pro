@@ -1420,7 +1420,7 @@ export const MotorSelection = ({
           });
           const stockCount = (motor as any)?.stockCount as number | undefined;
           const recentSales = (motor as any)?.recentSales as number | undefined;
-           return <Card key={motor.id} className={`motor-card relative bg-white rounded-xl shadow-md border border-repower-navy-900/10 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-3 ring-repower-gold/300 shadow-xl shadow-green-500/20 scale-[1.02] motor-selected border-repower-gold/300' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
+           return <Card key={motor.id} className={`motor-card relative bg-white rounded-xl shadow-md border border-repower-navy-900/10 overflow-hidden hover:shadow-lg transition-all duration-200 cursor-pointer group ${selectedMotor?.id === motor.id ? 'ring-2 ring-repower-gold/30 shadow-xl scale-[1.02] motor-selected border-repower-gold/40' : 'hover:scale-[1.01] active:scale-[0.98]'} ${selectedMotor && selectedMotor.id !== motor.id ? 'opacity-70' : ''} ${(motor as any).stockStatus === 'Sold' ? 'opacity-50 cursor-not-allowed' : ''} flex flex-col`} onClick={() => (motor as any).stockStatus !== 'Sold' && handleMotorSelection(motor)}>
 
                    {/* Image Section - Moved to top for better layout consistency */}
                    {motor.image && motor.image !== '/placeholder.svg' && (
