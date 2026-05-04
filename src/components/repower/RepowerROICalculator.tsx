@@ -315,8 +315,8 @@ export function RepowerROICalculator() {
                   <div className="grid grid-cols-3 gap-2 mb-4">
                     {[
                       { label: 'Motor', value: calc.motorCost },
-                      { label: 'Rigging', value: calc.riggingCost },
-                      { label: 'Install', value: calc.installCost },
+                      { label: 'Controls', value: calc.riggingCost },
+                      { label: 'Install & Prop', value: calc.installCost },
                     ].map((row) => (
                       <div key={row.label} className="text-center p-3 border border-repower-navy-900/10">
                         <div className="font-sans text-[10px] uppercase tracking-[0.18em] text-repower-navy-900/55 mb-1">
