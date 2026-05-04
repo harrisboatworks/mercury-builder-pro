@@ -881,13 +881,13 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                   animate={{ opacity: 1, y: 0 }}
                   className="space-y-4"
                 >
-                  <Card className="p-6 bg-green-50 border-green-200">
+                  <Card className="p-6 bg-repower-cream border-repower-gold/30">
                     <div className="flex items-center gap-3 mb-4">
-                      <CircleCheck className="w-6 h-6 text-green-600" />
+                      <CircleCheck className="w-6 h-6 text-repower-gold" />
                       <h3 className="text-lg font-light text-repower-navy-900">Your Estimated Trade Value</h3>
                       {/* Confidence badge */}
                       <span className={`ml-auto text-xs font-medium px-2 py-0.5 rounded-full ${
-                        estimate.confidence === 'high' ? 'bg-green-200 text-green-800' :
+                        estimate.confidence === 'high' ? 'bg-repower-gold/15 text-repower-navy-900' :
                         estimate.confidence === 'medium' ? 'bg-repower-cream text-repower-gold' :
                         'bg-repower-navy-900/[0.08] text-repower-navy-900/65'
                       }`}>
@@ -896,7 +896,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     </div>
                     
                     <div className="text-center space-y-2">
-                      <div className="text-4xl font-light text-green-700">
+                      <div className="text-4xl font-light text-repower-navy-900">
                         <AnimatedPrice value={medianValue} prefix="$" duration={0.8} />
                       </div>
                       <div className="text-sm font-normal text-repower-navy-900/75">
@@ -907,7 +907,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                     {/* HBW-specific extras, corrected private sale framing */}
                     {(estimate as HBWValuationResult).fromHBW && (estimate as HBWValuationResult).hstSavings > 0 && (
                       <div className="mt-4 space-y-3">
-                        <div className="text-sm font-light text-repower-navy-900/75 bg-green-100 rounded-sm p-3 leading-relaxed">
+                        <div className="text-sm font-light text-repower-navy-900/75 bg-repower-paper border border-repower-navy-900/10 rounded-sm p-3 leading-relaxed">
                           {selectedMotorPrice ? (
                             <>
                               Private sale might get you <strong className="font-medium">${Math.round((estimate as HBWValuationResult).listingValue).toLocaleString()}</strong>, but you'd owe <strong className="font-medium">${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()}</strong> more in HST on your new motor. Trading in puts <strong className="font-medium">${medianValue.toLocaleString()} + ${Math.round((estimate as HBWValuationResult).hstSavings).toLocaleString()} in savings</strong> in your pocket.
