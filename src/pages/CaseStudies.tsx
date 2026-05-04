@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { caseStudies } from '@/data/caseStudies';
 
 export default function CaseStudies() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <Helmet>
         <title>Mercury Repower Case Studies | Harris Boat Works</title>
         <meta
@@ -24,7 +24,8 @@ export default function CaseStudies() {
         })}</script>
       </Helmet>
 
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-10 md:py-14">
         <header className="max-w-3xl mb-10">

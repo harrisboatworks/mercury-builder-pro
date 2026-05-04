@@ -1,20 +1,21 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { getGroupedLocations } from '@/data/locations';
 
 export default function Locations() {
   const groups = getGroupedLocations();
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <Helmet>
         <title>Mercury Outboard Pickup Areas | Harris Boat Works</title>
         <meta name="description" content="Regional Mercury buyer guides for Peterborough, Cobourg, Northumberland, the Kawarthas, Rice Lake, Durham Region (Whitby, Ajax, Pickering, Oshawa, Bowmanville/Courtice), and the GTA. Pickup only at Gores Landing, sales catchments only, no mobile service or delivery." />
         <link rel="canonical" href={`${SITE_URL}/locations`} />
       </Helmet>
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
       <main className="container mx-auto px-4 py-12">
         <header className="max-w-3xl mb-10">
           <h1 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">Mercury outboard pickup areas</h1>
