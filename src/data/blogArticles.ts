@@ -1619,7 +1619,7 @@ Then repowering makes tremendous financial sense.
 1. **Assessment**: We evaluate your boat and current motor
 2. **Recommendation**: Right-sized motor for your needs
 3. **Quote**: Complete pricing including installation and rigging
-4. **Scheduling**: Winter repower means ready for spring
+4. **Scheduling**: [Winter repower](/blog/winter-repower-planning-guide) means ready for spring
 5. **Installation**: Professional mounting and rigging
 6. **Lake Test**: We ensure everything runs properly
 7. **Handoff**: Keys to your refreshed boat
@@ -3610,7 +3610,7 @@ This setup covers every fishing situation.
     content: `
 ## How to Size Your Boat Motor
 
-Choosing the right horsepower involves more than just checking your capacity plate. Here's how to think through motor sizing.
+[Choosing the right horsepower](/blog/how-to-choose-right-horsepower-boat) involves more than just checking your capacity plate. Here's how to think through motor sizing.
 
 ### The Starting Point: Capacity Plate
 
@@ -3911,7 +3911,7 @@ A new Mercury motor is an investment. Financing makes it manageable and can get 
 
 **General Guidance**:
 - Shorter term = lower total cost
-- Longer term = lower monthly payment
+- Longer term = lower [monthly payment](/blog/mercury-outboard-financing-ontario-2026)
 - Match term to expected ownership
 
 ### What Affects Approval
@@ -4311,7 +4311,7 @@ Mercury's V8 outboard lineup delivers serious power for serious boats. Here's ho
 ### V8 Lineup Overview
 
 **Mercury V8 FourStroke**: 175-250HP
-**Mercury V8 Pro XS**: 175-300HP
+**Mercury V8 [Pro XS](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)**: 175-300HP
 **Mercury Verado**: 175-400HP
 
 ### V8 FourStroke (175-250HP)
@@ -5881,7 +5881,7 @@ Mercury uses various codes and designations that can be confusing. Here's what t
 ### Motor Family Designations
 
 **FourStroke**: Standard 4-stroke recreational motors (2.5-300HP)
-**Pro XS**: Performance-tuned for speed and acceleration (115-300HP)
+**[Pro XS](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)**: Performance-tuned for speed and acceleration (115-300HP)
 **Verado**: Premium naturally aspirated V8/V10/V12 motors (250-600HP)
 **SeaPro**: Commercial-duty motors (15-500HP)
 **Racing**: Competition-only motors
@@ -6813,7 +6813,7 @@ The Mercury 3.4L V6 platform (150-225hp) represents the best balance of power, e
 | 175 V6 FourStroke | 175 | 498 lbs | Best balance |
 | 200 V6 FourStroke | 200 | 498 lbs | More performance |
 | 225 V6 FourStroke | 225 | 498 lbs | Maximum power |
-| 175 V6 Pro XS | 175 | 498 lbs | Sport performance |
+| 175 V6 [Pro XS](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) | 175 | 498 lbs | Sport performance |
 | 200 V6 Pro XS | 200 | 498 lbs | Top seller |
 | 225 V6 Pro XS | 225 | 498 lbs | Ultimate performance |
 
@@ -7091,7 +7091,7 @@ Note: Mercury Marine has scaled back manufacturer-level promotional programs in 
 - No extra cost — automatically applied
 - Significant value vs. purchasing extended warranty separately
 
-**Financing Options**:
+**[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders
 - Multiple term options
 - Pre-approval available
@@ -7493,7 +7493,7 @@ Budget 2025 confirmed that the luxury tax on pleasure craft would be removed. Fo
 
 ## Interest Rates Are Finally Easing
 
-One of the biggest headwinds in 2023–2025 was the cost of borrowing; higher benchmark rates translated into higher monthly payments on boat loans, pushing some buyers out of the market.
+One of the biggest headwinds in 2023–2025 was the cost of borrowing; higher benchmark rates translated into higher [monthly payments](/blog/mercury-outboard-financing-ontario-2026) on boat loans, pushing some buyers out of the market.
 
 By early 2026, the rate environment is shifting. Major marine finance commentators note that rate cuts are beginning to filter through, and dealers expect that lower monthly payments will help "payment buyers" re-engage in the market.
 
@@ -9336,7 +9336,7 @@ If you're in the Kawarthas or Rice Lake region — Mercury makes sense. Not beca
     content: `
 ## Why This Decision Matters More Than It Seems
 
-The 115 vs 150 decision comes up constantly at Harris Boat Works — and increasingly, the conversation includes the **Pro XS** versions of both engines. The Mercury 150 FourStroke is a meaningfully different engine from the 115, not just a bigger version of the same thing. More displacement, more weight, more power, and more capability.
+The 115 vs 150 decision comes up constantly at Harris Boat Works — and increasingly, the conversation includes the **[Pro XS](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)** versions of both engines. The Mercury 150 FourStroke is a meaningfully different engine from the 115, not just a bigger version of the same thing. More displacement, more weight, more power, and more capability.
 
 But there's now a second question: **FourStroke or Pro XS?** Both HP classes offer a performance-tuned Pro XS variant, and they've become the more popular choice at our dealership. Here's the complete breakdown.
 
@@ -9549,7 +9549,7 @@ This is an important distinction that gets confused:
     keywords: ['mercury outboard financing Ontario', 'finance boat motor Ontario', 'mercury repower financing Canada', 'marine loan Ontario 2026', 'mercury outboard payment plan'],
     content: `
 
-Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR. Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).
+Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR. Mercury runs seasonal promotional rate offers throughout the year. You can [finance the motor](/blog/boat-motor-financing-guide-ontario), the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).
 
 ## Quick recommendation
 
@@ -10472,7 +10472,7 @@ A few moves that genuinely save money without compromising the boat:
 - **Trade in your old motor.** Even a dead motor has aluminum and parts value. Our [trade-in valuation tool](/trade-in-value) gives you an instant credit estimate. Trade-in credit reduces the financed amount or the cash you owe at the end.
 - **Mercury to Mercury repower.** Most existing controls and cables can stay. Rigging stays at the low end ($500 to $1,000 CAD for a Mercury-to-Mercury swap, versus $2,000 to $3,000 for a brand conversion). [Live pricing here.](/quote/motor-selection)
 - **Aluminum prop on smaller motors.** On motors up to 115 HP, a standard aluminum prop is $450 CAD and works fine for the typical boater. Stainless steel props are required on 150 HP and up but are not cost-effective on smaller motors unless you have a specific performance reason.
-- **Finance instead of stretching cash.** If your money is earning more than 7.99% in other investments, it is mathematically cheaper to finance the motor at 7.99% (or a promo rate) and keep your money working. See the [financing page](/financing) for the full math.
+- **Finance instead of stretching cash.** If your money is earning more than 7.99% in other investments, it is mathematically cheaper to [finance the motor](/blog/boat-motor-financing-guide-ontario) at 7.99% (or a promo rate) and keep your money working. See the [financing page](/financing) for the full math.
 
 ## What HBW checks before recommending the "cheapest" motor for your boat
 
@@ -11511,7 +11511,7 @@ Even when the hull passes a structural inspection, older boats carry hidden cost
 
 **Hardware and fittings:** Older boats need running light replacement, updated navigation electronics, possibly a new helm station depending on condition.
 
-**Regulatory compliance:** A repower changes the horsepower on the boat, which has implications for the pleasure craft licence. See our [Ontario repower licensing guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) for specifics.
+**Regulatory compliance:** A repower changes the horsepower on the boat, which has implications for the [pleasure craft licence](/blog/pleasure-craft-licence-update-repower-ontario). See our [Ontario repower licensing guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) for specifics.
 
 None of these costs are automatic, but they're common on older boats, and they should be part of your budgeting. Our shop rate is $140/hr and older boats tend to find surprises once work starts.
 
@@ -11571,7 +11571,7 @@ If you're unsure whether your boat is a good repower candidate, we can assess it
 
 For a quick price check before you come in, use our quote configurator at [mercuryrepower.ca](https://mercuryrepower.ca) — real numbers, same pricing the sales team sees. For service scheduling, [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
 
-For more on repower costs in Ontario, see our [2026 repower cost guide](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) and our [complete Kawarthas repower guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas).
+For more on [repower costs in Ontario](/blog/mercury-repower-cost-ontario-2026-cad), see our [2026 repower cost guide](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) and our [complete Kawarthas repower guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas).
 
 ---
 
