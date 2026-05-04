@@ -1265,8 +1265,8 @@ For smaller 18–20ft pontoons and heavier 16–18ft aluminum hulls, the [Mercur
         answer: 'Yes, with adequate power. For pulling tubes reliably, we recommend at least 90HP. For skiing or wakeboarding, 115HP minimum, with 150HP+ preferred.'
       },
       {
-        question: 'FourStroke or Verado for my pontoon?',
-        answer: 'FourStroke offers better value for most applications. Verado makes sense on premium 24ft+ pontoons where you want the smoothest, quietest operation and have the budget for premium power.'
+        question: 'FourStroke or Pro XS for my pontoon?',
+        answer: 'For most pontoons, the FourStroke is the right choice — better fuel economy at cruise and lower cost. The Pro XS makes sense on premium 24ft+ tritoons where you want stronger hole-shot under heavy loads or higher cruise speeds.'
       },
       {
         question: 'What about prop selection for pontoons?',
