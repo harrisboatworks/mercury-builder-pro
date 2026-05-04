@@ -1209,12 +1209,12 @@ Excellent resale value
 
 **Premium Performance**
 
-Mercury Verado 250-300HP
+Mercury 200-300HP Pro XS
 
-Best for 24-28ft tritoons
-Naturally aspirated V8 smooth power
-Whisper quiet operation
-Premium feel matches premium pontoons
+Best for 24-28ft tritoons and performance pontoons
+V8 power with strong hole-shot
+Excellent fuel economy at cruise
+Lighter than comparable Verado options
 
 ### Tritoon Considerations
 
