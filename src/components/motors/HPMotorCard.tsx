@@ -91,7 +91,7 @@ export function HPMotorCard({ group, onConfigure }: HPMotorCardProps) {
   
   return (
     <div 
-      className="group bg-white shadow-sm rounded-lg border border-gray-100 overflow-hidden transition-all duration-200 ease-out hover:shadow-2xl hover:-translate-y-2 cursor-pointer active:scale-[0.98] active:opacity-95"
+      className="group bg-white shadow-sm rounded-lg border border-repower-navy-900/10 overflow-hidden card-hover cursor-pointer active:scale-[0.98] active:opacity-95"
       onClick={handleCardClick}
     >
       {/* Image Section */}
