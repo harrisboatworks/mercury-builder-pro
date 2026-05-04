@@ -383,10 +383,6 @@ For most Ontario boaters, the **Mercury FourStroke** offers the best overall val
         answer: 'Verado is the quietest Mercury outboard, featuring advanced sound dampening and smooth naturally aspirated operation. FourStroke motors are also notably quiet, while Pro XS prioritizes performance over noise reduction.'
       },
       {
-        question: 'Is the Mercury Verado worth the extra cost?',
-        answer: 'For most recreational boaters, the FourStroke provides everything you need at a much lower price. The Verado is worth the premium in specific circumstances: you own a premium boat where quiet operation and refined electronics complete the package, you run long offshore distances, or budget isn\'t a decisive factor. For a typical Ontario cottage boat or fishing rig on an inland lake, the Verado\'s advantages are real but rarely decisive. The FourStroke is quiet, reliable, and efficient enough for 90% of Ontario boating applications.'
-      },
-      {
         question: 'What\'s the main advantage of Mercury Pro XS over FourStroke?',
         answer: 'The Pro XS is lighter and faster off the line. Pro XS motors use a high-performance powerhead tuned for a higher RPM range and faster acceleration, giving quicker hole-shots and faster runs to fishing spots. Tournament anglers value every second. The trade-off is modest: Pro XS burns slightly more fuel than an equivalent FourStroke at cruise and is priced above FourStroke for the same horsepower. If you don\'t race to spots or fish tournaments, the FourStroke\'s lower cost and better fuel economy make more sense.'
       },
