@@ -1,5 +1,23 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+
+// In jsdom, framer-motion's AnimatePresence mode="wait" never completes its
+// exit animation, so the new keyed child never mounts. Stub it out so we can
+// assert the rebate amount actually transitions across multiple values.
+vi.mock('framer-motion', () => ({
+  AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+  motion: new Proxy(
+    {},
+    {
+      get: () => (props: React.HTMLAttributes<HTMLElement> & { children?: React.ReactNode }) => {
+        const { children, ...rest } = props;
+        return <div {...rest}>{children}</div>;
+      },
+    }
+  ),
+}));
+
 import { RebateCalculator } from '../RebateCalculator';
 
 const matrix = [
