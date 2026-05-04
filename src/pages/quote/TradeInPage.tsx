@@ -272,7 +272,7 @@ export default function TradeInPage() {
                 variant="outline" 
                 size="sm" 
                 onClick={handleBack}
-                className="border-gray-300 hover:border-gray-900 font-light"
+                className="border-repower-navy-900/20 hover:border-repower-navy-900/30 font-light"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back
@@ -280,7 +280,7 @@ export default function TradeInPage() {
             </div>
           
           {showSaveIndicator && (
-            <div className="flex items-center gap-2 text-xs text-green-600 animate-in fade-in slide-in-from-top-1 duration-300">
+            <div className="flex items-center gap-2 text-xs text-repower-gold animate-in fade-in slide-in-from-top-1 duration-300">
               <svg 
                 className="w-3.5 h-3.5" 
                 fill="none" 

@@ -27,7 +27,7 @@ export default function MotorHeader({
   onBack,
 }: Props) {
   return (
-    <section className="mb-6 rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm">
+    <section className="mb-6 rounded-2xl border border-repower-navy-900/10 bg-white p-6 shadow-sm">
       <div className="flex items-start gap-4">
         {onBack && (
           <Button
@@ -41,39 +41,39 @@ export default function MotorHeader({
           </Button>
         )}
         {imageUrl ? (
-          <div className="relative h-20 w-20 overflow-hidden rounded-xl border border-slate-200">
+          <div className="relative h-20 w-20 overflow-hidden rounded-xl border border-repower-navy-900/10">
             <img src={imageUrl} alt={name} className="h-full w-full object-contain" />
           </div>
         ) : null}
 
         <div className="min-w-0 flex-1">
-          <h1 className="text-xl lg:text-2xl font-bold leading-tight text-slate-900 mb-1">
+          <h1 className="text-xl lg:text-2xl font-bold leading-tight text-repower-navy-900 mb-1">
             {name}
-            {modelYear ? <span className="ml-2 text-base lg:text-lg text-slate-500 font-normal">({modelYear})</span> : null}
+            {modelYear ? <span className="ml-2 text-base lg:text-lg text-repower-navy-900/400 font-normal">({modelYear})</span> : null}
           </h1>
           <div className="mt-2 flex flex-wrap gap-2">
             {specs.map((s, i) => (
               <span
                 key={i}
-                className="inline-flex items-center rounded-full border border-slate-200 px-2.5 py-1 text-xs text-slate-700"
+                className="inline-flex items-center rounded-full border border-repower-navy-900/10 px-2.5 py-1 text-xs text-repower-navy-900"
                 title={s.label}
               >
                 <span className="mr-1 font-medium">{s.label}:</span> {s.value}
               </span>
             ))}
             {sku ? (
-              <span className="inline-flex items-center rounded-full bg-slate-50 px-2.5 py-1 text-xs text-slate-600 ring-1 ring-inset ring-slate-200">
+              <span className="inline-flex items-center rounded-full bg-repower-paper px-2.5 py-1 text-xs text-repower-navy-900/65 ring-1 ring-inset ring-repower-navy-900/10">
                 SKU: {sku}
               </span>
             ) : null}
           </div>
 
           {why.length ? (
-            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-700">
+            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-repower-navy-900">
               {why.slice(0, 3).map((w, i) => (
                 <li key={i} className="flex items-center gap-2.5">
                   <svg 
-                    className="h-4 w-4 flex-shrink-0 text-blue-600" 
+                    className="h-4 w-4 flex-shrink-0 text-repower-navy-900" 
                     fill="currentColor" 
                     viewBox="0 0 20 20"
                   >

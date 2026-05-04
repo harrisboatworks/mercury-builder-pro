@@ -105,7 +105,7 @@ export function PackageComparisonTable({
       className={cn(
         "flex items-center justify-center w-6 h-6 rounded-full flex-shrink-0",
         hasFeature 
-          ? "bg-emerald-100 text-emerald-600" 
+          ? "bg-repower-cream text-repower-gold" 
           : "bg-muted text-muted-foreground/40"
       )}
     >
@@ -279,7 +279,7 @@ export function PackageComparisonTable({
                       initial={{ width: 0 }}
                       animate={{ width: `${(currentCoverageYears / 8) * 100}%` }}
                       transition={{ delay: 0.2, duration: 0.5 }}
-                      className="absolute left-0 top-0 h-full bg-slate-400 rounded-l-full"
+                      className="absolute left-0 top-0 h-full bg-repower-cream rounded-l-full"
                     />
                     
                     {/* Complete extension */}
@@ -296,7 +296,7 @@ export function PackageComparisonTable({
                       initial={{ width: 0 }}
                       animate={{ width: `${(1 / 8) * 100}%` }}
                       transition={{ delay: 0.6, duration: 0.5 }}
-                      className="absolute top-0 h-full bg-amber-500 rounded-r-full"
+                      className="absolute top-0 h-full bg-repower-cream0 rounded-r-full"
                       style={{ left: `${(7 / 8) * 100}%` }}
                     />
 
@@ -315,7 +315,7 @@ export function PackageComparisonTable({
                   {/* Legend */}
                   <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-3 text-xs">
                     <div className="flex items-center gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-slate-400" />
+                      <div className="w-3 h-3 rounded-full bg-repower-cream" />
                       <span className="text-muted-foreground">Essential ({currentCoverageYears}yr)</span>
                     </div>
                     <div className="flex items-center gap-1.5">
@@ -323,7 +323,7 @@ export function PackageComparisonTable({
                       <span className="text-muted-foreground">Complete (7yr)</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <div className="w-3 h-3 rounded-full bg-amber-500" />
+                      <div className="w-3 h-3 rounded-full bg-repower-cream0" />
                       <span className="text-muted-foreground">Premium (8yr)</span>
                     </div>
                   </div>

@@ -802,7 +802,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
               {errors.phone && (
                 <p className="text-sm text-destructive font-light">{errors.phone}</p>
               )}
-              <p className="text-xs text-muted-foreground dark:text-repower-navy-900/40 font-light">Enter 10 digits (with or without formatting)</p>
+              <p className="text-xs text-muted-foreground  font-light">Enter 10 digits (with or without formatting)</p>
             </div>
 
             <div className="space-y-2">
@@ -830,7 +830,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
                 maxLength={500}
                 className="border-repower-navy-900/10 focus:border-repower-gold rounded-sm transition-colors duration-300"
               />
-              <p className="text-xs text-muted-foreground dark:text-repower-navy-900/40 font-light">{contactInfo.notes.length}/500 characters</p>
+              <p className="text-xs text-muted-foreground  font-light">{contactInfo.notes.length}/500 characters</p>
             </div>
 
             {/* Send Quote Options */}
@@ -907,7 +907,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             <Clock className="w-5 h-5 text-repower-navy-900/75 mt-0.5" />
             <div>
               <p className="font-light tracking-wide mb-2">What happens next?</p>
-              <ul className="text-sm text-muted-foreground dark:text-repower-navy-900/40 font-light space-y-1">
+              <ul className="text-sm text-muted-foreground  font-light space-y-1">
                 <li>• We'll contact you within 24 hours to schedule your consultation</li>
                 <li>• Our technician will inspect your boat and verify all specifications</li>
                 <li>• You'll receive a final quote including installation costs</li>

@@ -141,11 +141,11 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
           onDragEnd={handleDragEnd}
         >
           {/* Drag handle for mobile */}
-          <div className="w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-4 cursor-grab md:hidden" />
+          <div className="w-12 h-1.5 bg-repower-cream rounded-full mx-auto mb-4 cursor-grab md:hidden" />
           
           <DialogHeader>
             <DialogTitle className="flex items-center gap-2 text-xl font-light tracking-wide text-black">
-              <Lightbulb className="w-5 h-5 text-gray-700" />
+              <Lightbulb className="w-5 h-5 text-repower-navy-900" />
               Find Your Perfect Motor
             </DialogTitle>
           </DialogHeader>
@@ -158,7 +158,7 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
                 <div
                   key={step.id}
                   className={`flex-1 h-2 rounded-full transition-colors ${
-                    idx <= currentStep ? 'bg-black' : 'bg-gray-200'
+                    idx <= currentStep ? 'bg-black' : 'bg-repower-cream'
                   }`}
                 />
               ))}
@@ -166,9 +166,9 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
 
             {/* Question */}
             <div className="text-center space-y-2">
-              {StepIcon && <StepIcon className="w-12 h-12 mx-auto text-gray-700" />}
+              {StepIcon && <StepIcon className="w-12 h-12 mx-auto text-repower-navy-900" />}
               <h3 className="text-2xl font-light tracking-wide text-black">{currentQuizStep.title}</h3>
-              <p className="text-sm uppercase tracking-widest text-gray-600">
+              <p className="text-sm uppercase tracking-widest text-repower-navy-900/65">
                 Step {currentStep + 1} of {quizSteps.length}
               </p>
             </div>
@@ -180,14 +180,14 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
                   key={option.value}
                   className={`p-4 cursor-pointer transition-all hover:border-black hover:shadow-md ${
                     answers[currentQuizStep.id as keyof QuizAnswers] === option.value
-                      ? 'border-black bg-stone-50'
+                      ? 'border-black bg-repower-paper'
                       : ''
                   }`}
                   onClick={() => handleAnswer(currentQuizStep.id, option.value)}
                 >
                   <div className="flex items-center justify-between">
                     <span className="font-normal tracking-wide">{option.label}</span>
-                    <ChevronRight className="w-5 h-5 text-gray-300" />
+                    <ChevronRight className="w-5 h-5 text-repower-navy-900/40" />
                   </div>
                 </Card>
               ))}
@@ -196,7 +196,7 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
             {/* Navigation */}
             {currentStep > 0 && (
               <div className="flex justify-start">
-                <Button variant="ghost" onClick={handleBack} className="font-normal text-gray-700 hover:text-black">
+                <Button variant="ghost" onClick={handleBack} className="font-normal text-repower-navy-900 hover:text-black">
                   ← Back
                 </Button>
               </div>
@@ -239,13 +239,13 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
                           ${motor.price.toLocaleString()}
                         </span>
                       </div>
-                      <div className="bg-stone-50 border-l-2 border-gray-300 p-3 rounded">
+                      <div className="bg-repower-paper border-l-2 border-repower-navy-900/20 p-3 rounded">
                         <p className="text-sm">
                           <span className="font-medium">Why we recommend this:</span> {motor.reason}
                         </p>
                       </div>
                       <Button
-                        className="w-full bg-black text-white font-light tracking-wider uppercase rounded-none hover:bg-gray-900"
+                        className="w-full bg-black text-white font-light tracking-wider uppercase rounded-none hover:bg-repower-navy-900"
                         onClick={() => handleSelectMotor(motor)}
                       >
                         Select This Motor
@@ -257,10 +257,10 @@ export function MotorRecommendationQuiz({ isOpen, onClose, motors, onSelectMotor
             </div>
 
             <div className="flex gap-3">
-              <Button variant="outline" onClick={handleBack} className="flex-1 border-black text-black hover:bg-stone-50">
+              <Button variant="outline" onClick={handleBack} className="flex-1 border-black text-black hover:bg-repower-paper">
                 ← Back to Quiz
               </Button>
-              <Button variant="ghost" onClick={handleClose} className="flex-1 font-normal text-gray-700 hover:text-black hover:bg-transparent">
+              <Button variant="ghost" onClick={handleClose} className="flex-1 font-normal text-repower-navy-900 hover:text-black hover:bg-transparent">
                 Browse All Motors
               </Button>
             </div>

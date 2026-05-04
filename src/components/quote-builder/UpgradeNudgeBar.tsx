@@ -47,7 +47,7 @@ export function UpgradeNudgeBar({
             damping: 25,
             delay: 0.2
           }}
-          className="relative overflow-hidden rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50 via-white to-blue-50 p-3 sm:p-4 shadow-sm"
+          className="relative overflow-hidden rounded-xl border border-repower-navy-900/20 bg-gradient-to-r from-repower-cream via-white to-repower-cream p-3 sm:p-4 shadow-sm"
         >
           {/* Animated background shimmer */}
           <motion.div
@@ -83,13 +83,13 @@ export function UpgradeNudgeBar({
               
               <div className="space-y-1 text-center sm:text-left">
                 <div className="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
-                  <Sparkles className="h-4 w-4 text-amber-500" />
-                  <span className="text-sm font-semibold text-slate-900">
+                  <Sparkles className="h-4 w-4 text-repower-gold0" />
+                  <span className="text-sm font-semibold text-repower-navy-900">
                     {coverageGain > 0 ? (
                       <>
                         Get{' '}
                         <motion.span 
-                          className="text-blue-600"
+                          className="text-repower-navy-900"
                           animate={{ scale: [1, 1.05, 1] }}
                           transition={{ duration: 1.5, repeat: Infinity }}
                         >
@@ -102,14 +102,14 @@ export function UpgradeNudgeBar({
                     )}
                   </span>
                   {promoMessage && (
-                    <span className="px-2 py-0.5 text-xs rounded-full bg-emerald-100 text-emerald-700 font-medium">
+                    <span className="px-2 py-0.5 text-xs rounded-full bg-repower-cream text-repower-gold font-medium">
                       {promoMessage}
                     </span>
                   )}
                 </div>
-                <p className="text-xs sm:text-sm text-slate-600">
+                <p className="text-xs sm:text-sm text-repower-navy-900/65">
                   Upgrade to {upgradeToLabel} for just{' '}
-                  <span className="font-semibold text-emerald-600">
+                  <span className="font-semibold text-repower-gold">
                     +{money(Math.round(monthlyDelta))}/mo
                   </span>
                 </p>
@@ -121,7 +121,7 @@ export function UpgradeNudgeBar({
               onClick={handleUpgrade}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+              className="flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-repower-navy-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-repower-navy-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-repower-navy-900/200 focus-visible:ring-offset-2"
             >
               <span>Upgrade to {upgradeToLabel}</span>
               <motion.span

@@ -161,7 +161,7 @@ export default function QuoteBuilder() {
             <div className="flex items-center justify-between w-full">
               <button 
                 id="hamburger" 
-                className="p-2 text-gray-900 hover:bg-gray-100 rounded-lg -ml-2 w-11 h-11 flex items-center justify-center"
+                className="p-2 text-repower-navy-900 hover:bg-repower-paper rounded-lg -ml-2 w-11 h-11 flex items-center justify-center"
                 onClick={() => setHamburgerOpen(true)}
                 aria-label="Open menu"
               >
@@ -206,12 +206,12 @@ export default function QuoteBuilder() {
                       animate={{ scale: 1 }}
                       className={`flex items-center justify-center w-10 h-10 rounded-full font-bold transition-all
                         ${currentStep === step.number 
-                          ? 'bg-blue-600 text-white shadow-lg animate-pulse' 
+                          ? 'bg-repower-navy-900 text-white shadow-lg animate-pulse' 
                           : currentStep > step.number 
-                            ? 'bg-green-500 text-white hover:scale-110 cursor-pointer' 
+                            ? 'bg-repower-cream0 text-white hover:scale-110 cursor-pointer' 
                             : step.number <= maxStepReached
-                              ? 'bg-gray-200 text-gray-400 hover:scale-110 cursor-pointer'
-                              : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                              ? 'bg-repower-cream text-repower-navy-900/55 hover:scale-110 cursor-pointer'
+                              : 'bg-repower-cream text-repower-navy-900/55 cursor-not-allowed'
                         }`}
                       aria-label={step.label}
                     >
@@ -219,7 +219,7 @@ export default function QuoteBuilder() {
                     </motion.button>
                     {index < steps.length - 1 && (
                       <div className={`w-12 h-1 mx-2 rounded
-                        ${currentStep > step.number ? 'bg-green-500' : 'bg-gray-200'}`} 
+                        ${currentStep > step.number ? 'bg-repower-cream0' : 'bg-repower-cream'}`} 
                       />
                     )}
                   </div>
@@ -229,15 +229,15 @@ export default function QuoteBuilder() {
             
             {/* Desktop Right side: Live Inventory + Price + Admin */}
             <div className="flex items-center gap-3">
-              <div className="flex items-center gap-2 px-3 py-1 bg-green-50 rounded-full">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-xs text-green-700 font-medium">Live Inventory</span>
+              <div className="flex items-center gap-2 px-3 py-1 bg-repower-cream rounded-full">
+                <div className="w-2 h-2 bg-repower-cream0 rounded-full animate-pulse"></div>
+                <span className="text-xs text-repower-gold font-medium">Live Inventory</span>
               </div>
               
               {selectedMotor && (
                 <div className="text-right">
-                  <div className="text-lg font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
-                  <div className="text-xs text-gray-500">Your Build</div>
+                  <div className="text-lg font-bold text-repower-navy-900">${selectedMotor.price.toLocaleString()}</div>
+                  <div className="text-xs text-repower-navy-900/400">Your Build</div>
                 </div>
               )}
 
@@ -274,14 +274,14 @@ export default function QuoteBuilder() {
 
       {/* Sticky Mobile Bottom Bar - Only show on motor selection step */}
       {currentStep === 1 && selectedMotor && (
-        <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-white border-t border-gray-200 p-3 z-40">
+        <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-white border-t border-repower-navy-900/10 p-3 z-40">
           <div className="flex justify-between items-center">
             <div>
-              <div className="text-2xl font-bold text-gray-900">${selectedMotor.price.toLocaleString()}</div>
-              <div className="text-xs text-gray-500">Total Build</div>
+              <div className="text-2xl font-bold text-repower-navy-900">${selectedMotor.price.toLocaleString()}</div>
+              <div className="text-xs text-repower-navy-900/400">Total Build</div>
             </div>
             <Button 
-              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold"
+              className="bg-repower-mercury-red hover:bg-repower-mercury-red text-white px-6 py-3 rounded-lg font-semibold"
               onClick={() => handleMotorSelect(selectedMotor)}
             >
               Complete Quote →
@@ -379,7 +379,7 @@ export default function QuoteBuilder() {
                   setCurrentStep(2); // Back to purchase path
                 }
               }}>Back</Button>
-              <Button className="w-full md:w-auto py-3 bg-red-600 rounded-xl min-h-[48px]" onClick={() => {
+              <Button className="w-full md:w-auto py-3 bg-repower-mercury-red rounded-xl min-h-[48px]" onClick={() => {
                 console.log('Trade-in continue clicked', { isSmallTillerLoose, purchasePath });
                 if (isSmallTillerLoose) {
                   setCurrentStep(5); // Quote display for small tiller loose path

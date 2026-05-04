@@ -105,8 +105,8 @@ export const PromoReminderModal = ({
   // Shared success content
   const successContent = (
     <div className="flex flex-col items-center justify-center py-8 text-center">
-      <div className="rounded-full bg-green-100 p-3 mb-4">
-        <CheckCircle className="h-8 w-8 text-green-600" />
+      <div className="rounded-full bg-repower-cream p-3 mb-4">
+        <CheckCircle className="h-8 w-8 text-repower-gold" />
       </div>
       <div className="text-xl font-semibold mb-2">You're All Set!</div>
       <p className="text-muted-foreground">

@@ -242,7 +242,7 @@ export default function PromoSelectionPage() {
             <img
               src={mercuryLogo}
               alt="Mercury Marine"
-              className="h-12 mx-auto mb-6 brightness-0 dark:invert"
+              className="h-12 mx-auto mb-6 brightness-0 "
             />
 
             {/* Main Headline */}

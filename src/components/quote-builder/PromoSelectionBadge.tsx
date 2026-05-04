@@ -18,23 +18,23 @@ const optionConfig = {
   no_payments: {
     icon: CalendarOff,
     title: '6 Months No Payments',
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-50',
-    borderColor: 'border-blue-100',
+    color: 'text-repower-navy-900',
+    bgColor: 'bg-repower-cream',
+    borderColor: 'border-repower-navy-900/20',
   },
   special_financing: {
     icon: Percent,
     title: 'Special Financing',
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-50',
-    borderColor: 'border-purple-100',
+    color: 'text-repower-navy-900',
+    bgColor: 'bg-repower-cream',
+    borderColor: 'border-repower-navy-900/20',
   },
   cash_rebate: {
     icon: Banknote,
     title: 'Factory Rebate',
-    color: 'text-green-600',
-    bgColor: 'bg-green-50',
-    borderColor: 'border-green-100',
+    color: 'text-repower-gold',
+    bgColor: 'bg-repower-cream',
+    borderColor: 'border-repower-gold/30',
   },
 };
 
@@ -70,12 +70,12 @@ export function PromoSelectionBadge({
   const value = getSelectedValue();
 
   return (
-    <div className="bg-gradient-to-br from-stone-50 to-white rounded-xl border border-stone-200 shadow-sm overflow-hidden">
+    <div className="bg-gradient-to-br from-repower-paper to-white rounded-xl border border-repower-navy-900/10 shadow-sm overflow-hidden">
       {/* Compact Header */}
-      <div className="flex items-center justify-between px-4 py-3 bg-stone-900 text-white">
+      <div className="flex items-center justify-between px-4 py-3 bg-repower-navy-900 text-white">
         <div className="flex items-center gap-3">
           <img src={mercuryLogo} alt="Mercury" className="h-5 brightness-0 invert" />
-          <span className="text-xs font-bold text-red-400 bg-red-950/50 px-2 py-0.5 rounded-full">
+          <span className="text-xs font-bold text-repower-mercury-red bg-repower-mercury-red/50 px-2 py-0.5 rounded-full">
             7-YEAR WARRANTY
           </span>
         </div>
@@ -91,8 +91,8 @@ export function PromoSelectionBadge({
           <div className="flex items-center gap-4 flex-1 min-w-0">
             {/* Warranty Badge */}
             <div className="flex items-center gap-2 shrink-0">
-              <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-                <Shield className="w-5 h-5 text-green-600" />
+              <div className="w-10 h-10 rounded-lg bg-repower-cream flex items-center justify-center">
+                <Shield className="w-5 h-5 text-repower-gold" />
               </div>
               <div className="hidden sm:block">
                 <div className="text-sm font-semibold text-foreground">7 Years</div>
@@ -100,7 +100,7 @@ export function PromoSelectionBadge({
               </div>
             </div>
 
-            <div className="text-xl text-stone-300 font-light">+</div>
+            <div className="text-xl text-repower-navy-900/40 font-light">+</div>
 
             {/* Selected Bonus */}
             {config ? (

@@ -40,7 +40,7 @@ export const QuoteLayout = ({
   return <div className="min-h-screen bg-repower-paper relative">
       {/* Admin Mode Banner */}
       {state.isAdminQuote && isAdmin && (
-        <div className="bg-yellow-500 text-yellow-950 text-center text-sm py-1 font-medium z-50 relative">
+        <div className="bg-repower-cream0 text-repower-gold text-center text-sm py-1 font-medium z-50 relative">
           Admin Mode, Quote controls will appear on summary page
         </div>
       )}

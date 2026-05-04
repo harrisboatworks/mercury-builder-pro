@@ -72,10 +72,10 @@ export function PromoSummaryCard({
       className="rounded-xl border border-border bg-card overflow-hidden shadow-sm"
     >
       {/* Compact Header */}
-      <div className="flex items-center justify-between px-4 py-2.5 bg-gradient-to-r from-stone-100 to-stone-50 border-b border-border">
+      <div className="flex items-center justify-between px-4 py-2.5 bg-gradient-to-r from-repower-paper to-repower-cream border-b border-border">
         <div className="flex items-center gap-2">
           <img src={mercuryLogo} alt="Mercury" className="h-5" />
-          <span className="text-xs font-bold text-red-600 bg-red-50 px-2 py-0.5 rounded-full border border-red-100">
+          <span className="text-xs font-bold text-repower-mercury-red bg-repower-mercury-red/5 px-2 py-0.5 rounded-full border border-repower-mercury-red/30">
             7-YEAR WARRANTY
           </span>
         </div>
@@ -89,14 +89,14 @@ export function PromoSummaryCard({
       
       <div className="p-4 space-y-4">
         {/* Warranty Badge - Left Aligned */}
-        <div className="flex items-center gap-3 bg-green-50/70 rounded-lg p-3 border border-green-100/50">
-          <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+        <div className="flex items-center gap-3 bg-repower-cream/70 rounded-lg p-3 border border-repower-gold/30">
+          <div className="w-10 h-10 rounded-full bg-repower-cream0 flex items-center justify-center flex-shrink-0">
             <Shield className="w-5 h-5 text-white" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <span className="text-sm font-semibold text-foreground">7 Years Warranty</span>
-              <span className="text-[10px] font-medium text-green-700 bg-green-100 px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
+              <span className="text-[10px] font-medium text-repower-gold bg-repower-cream px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
                 <Check className="w-2.5 h-2.5" />
                 Included
               </span>
