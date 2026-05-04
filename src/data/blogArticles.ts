@@ -850,7 +850,7 @@ Whether you're chasing walleye along the weed lines near Gores Landing, trolling
 
 Prefer a non-ProKicker 9.9 as a true main-engine kicker on smaller hulls? See the [Mercury 9.9 ELH FourStroke](/motors/fourstroke-9-9hp-9-9elh-fourstroke) — electric-start, long-shaft, remote-ready, priced in CAD with pickup at our Gores Landing dealership on Rice Lake.
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -1150,7 +1150,7 @@ For the typical Ontario angler fishing inland lakes with a 16ft aluminum boat:
 
 **[Build Your Quote on a Mercury Outboard](/quote)**
 
-**See also:** [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats) and [Best Mercury Motor for Bass Boats: 2026 Buyer\](/blog/bass-boat-mercury-motor-buying-guide).
+**See also:** [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) and [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide).
 
 ## Related guides
 
@@ -1331,7 +1331,7 @@ For smaller 18–20ft pontoons and heavier 16–18ft aluminum hulls, the [Mercur
 
 [Get a quote on your pontoon motor](https://mercuryrepower.ca/quote/motor-selection)
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Motor for Bass Boats: 2026 Buyer\](/blog/bass-boat-mercury-motor-buying-guide).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide).
 
 ## Related guides
 
@@ -2317,7 +2317,7 @@ If budget is tighter and you fish recreationally — chasing smallmouth on Rice 
 
 [Build your bass boat motor quote](https://mercuryrepower.ca/quote/motor-selection)
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -2638,7 +2638,7 @@ Mercury's Joystick Piloting for Outboards is a game-changer for docking:
 
 **[Get a Quote on Center Console Power](/quote)**
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -3330,7 +3330,7 @@ We support fishing guides throughout the Kawarthas with SeaPro motors. They appr
 
 **[Get a SeaPro Quote](/quote)**
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -3594,7 +3594,7 @@ This setup covers every fishing situation.
 
 **[Explore Kicker Motor Options](/quote)**
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -4850,7 +4850,7 @@ This covers all musky fishing scenarios in the Kawarthas.
 
 **[Build Your Musky Motor Setup](/quote)**
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -4984,7 +4984,7 @@ Contact us about electric options
 
 **[Explore Small Lake Motor Options](/quote)**
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -6609,7 +6609,7 @@ Family runabouts need motors that balance power, reliability, and ease of use. H
 
 **[Get a Family Runabout Quote](/quote)**
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -6808,7 +6808,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 
 **[Get Watersports Motor Quote](/quote)**
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -8526,7 +8526,7 @@ If you're curious about whether an Avator fits your situation, [talk to us](/con
 
 Then we'll give you a frank recommendation on gas, electric, or a hybrid of both. You can also [explore motor options and pricing in our quote builder](/quote/motor-selection).
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -8667,7 +8667,7 @@ For the 2026 season, here's how we can make your life easier:
 
 If you want to tune your setup for this year's conditions, or just nail down a plan for opening day, [come see us](/contact) in Gores Landing, call **(905) 342-2153**, or [explore motors and pricing in our quote builder](/quote/motor-selection).
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -9812,7 +9812,7 @@ The motor is the most important safety equipment on your boat after the life jac
 - **Engine hours and fault codes**: See problems before they become real issues
 - **Speed and GPS integration**: Precise speed data for trolling presentation
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout).
 
 ## Related guides
 
@@ -10040,7 +10040,7 @@ When you're 12 km offshore with a full load of fish and the wind is picking up, 
 - **Speed over ground:** Precise trolling speed data for dialing in your presentation.
 - **Engine hours and maintenance alerts:** Professional-grade fleet management for charter operators.
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -10871,7 +10871,7 @@ Buying a turnkey boat outright makes sense when:
 
 Most $30,000 budgets do better with a repower path. The savings on the hull (used vs. new) are bigger than the savings on the motor (since you are buying a current Mercury either way).
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -11068,7 +11068,7 @@ Read more about [the best Mercury outboards for Rice Lake fishing](https://mercu
 
 ---
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -11452,7 +11452,7 @@ The lake will be there. The right time to buy is when it makes sense for you, no
 
 ---
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
