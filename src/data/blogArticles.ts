@@ -4160,10 +4160,9 @@ Mercury's V8 outboard lineup delivers serious power for serious boats. Here's ho
 - Maximum acceleration needed
 
 **Choose Verado If**:
-- Budget allows premium
-- Quietest operation essential
-- Want best technology
-- Premium boat deserves premium power
+- Verado is special-order only at Harris Boat Works — not part of default inventory
+- Best when matched to a premium build where quiet operation and DTS controls are part of the package
+- Contact us by phone or email for Verado spec and ordering
 
 ### Real-World Differences
 
