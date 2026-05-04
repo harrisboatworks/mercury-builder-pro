@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Phone, ChevronDown } from 'lucide-react';
-import { repowerImages } from './repowerImages';
 import { RepowerCta } from './RepowerCta';
+import { HERO_VARIATIONS } from './heroVariations';
 
 const ease = [0.2, 0.8, 0.2, 1] as const;
 const fadeUp = (delay = 0) => ({
@@ -29,15 +30,57 @@ const statLabelStyle = {
   letterSpacing: '0.16em',
 } as const;
 
-const heroStats = [
-  { n: '70%', l: 'of the benefit' },
-  { n: '30%', l: 'of the cost' },
-  { n: '79', l: 'years on the water' },
-] as const;
+const STORAGE_KEY = 'hero-variant';
+const DEFAULT_EYEBROW = 'Mercury Repower · Rice Lake · Since 1947';
+
+/**
+ * Pick a hero variation index, with priority:
+ *  1. ?v=N query string (clamped to valid range, persisted)
+ *  2. sessionStorage (stable per tab)
+ *  3. Random (uniform), then persisted
+ * Returns 0 (baseline) on the server / before hydration to avoid mismatch.
+ */
+function pickVariationIndex(): number {
+  if (typeof window === 'undefined') return 0;
+  const max = HERO_VARIATIONS.length;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const qv = params.get('v');
+    if (qv !== null) {
+      const idx = parseInt(qv, 10);
+      if (Number.isInteger(idx) && idx >= 0 && idx < max) {
+        sessionStorage.setItem(STORAGE_KEY, String(idx));
+        return idx;
+      }
+    }
+    const stored = sessionStorage.getItem(STORAGE_KEY);
+    if (stored !== null) {
+      const idx = parseInt(stored, 10);
+      if (Number.isInteger(idx) && idx >= 0 && idx < max) return idx;
+    }
+    const idx = Math.floor(Math.random() * max);
+    sessionStorage.setItem(STORAGE_KEY, String(idx));
+    return idx;
+  } catch {
+    return 0;
+  }
+}
 
 export function HeroRepower() {
+  // SSR/prerender renders baseline (0); hydration picks the real variation.
+  const [variantIndex, setVariantIndex] = useState(0);
+
+  useEffect(() => {
+    setVariantIndex(pickVariationIndex());
+  }, []);
+
+  const variation = HERO_VARIATIONS[variantIndex] ?? HERO_VARIATIONS[0];
+
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#050E1C] text-[#F5F1EA] flex items-center">
+    <section
+      data-hero-variant={variation.id}
+      className="relative min-h-screen w-full overflow-hidden bg-[#050E1C] text-[#F5F1EA] flex items-center"
+    >
       {/* Background hero video loop */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -71,7 +114,7 @@ export function HeroRepower() {
             letterSpacing: 'clamp(0.08em, 0.4vw, 0.24em)',
           }}
         >
-          Mercury Repower · Rice Lake · Since 1947
+          {variation.eyebrow ?? DEFAULT_EYEBROW}
         </motion.p>
 
         <motion.h1
@@ -83,21 +126,19 @@ export function HeroRepower() {
             textWrap: 'balance',
           }}
         >
-          Keep your boat.
-          <br />
-          Get your <span className="text-[#C8102E]">weekends</span> back.
+          {variation.heading}
         </motion.h1>
 
         <motion.p
           {...fadeUp(0.4)}
           className="font-sans font-light text-xl md:text-2xl text-[#F5F1EA]/85 max-w-2xl leading-relaxed mb-8"
         >
-          New motor. Same boat. Way better mornings.
+          {variation.subheading}
         </motion.p>
 
         {/* Stat row */}
         <motion.div {...fadeUp(0.6)} className={statRowClass}>
-          {heroStats.map((s) => (
+          {variation.stats.map((s) => (
             <div key={s.l} className={statItemClass}>
               <div className={statNumberClass} style={statNumberStyle}>
                 {s.n}
@@ -110,7 +151,7 @@ export function HeroRepower() {
         {/* CTAs */}
         <motion.div {...fadeUp(0.8)} className="flex flex-col sm:flex-row gap-4">
           <RepowerCta to="/quote/motor-selection" variant="primary" size="lg">
-            Build Your Quote
+            {variation.ctaLabel}
             <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </RepowerCta>
           <RepowerCta href="tel:9053422153" variant="secondary" size="lg">
