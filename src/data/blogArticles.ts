@@ -1239,7 +1239,7 @@ Standard on all motors we recommend. Critical for pontoon performance tuning —
 
 **Quiet Operation**
 
-Mercury FourStroke and Verado are notably quiet — important when you're entertaining on the water and want to have a conversation at cruise speed.
+Mercury FourStroke motors are notably quiet — important when you're entertaining on the water and want to have a conversation at cruise speed.
 
 ### Our Pontoon Recommendations
 
