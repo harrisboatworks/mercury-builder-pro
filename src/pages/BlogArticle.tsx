@@ -15,6 +15,8 @@ import { FloatingShareBar } from '@/components/blog/FloatingShareBar';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
+import { stripMarkdown } from '@/lib/strip-markdown';
+import { BlogCTA } from '@/components/blog/BlogCTA';
 import { 
   Accordion, 
   AccordionContent, 
@@ -41,6 +43,7 @@ export default function BlogArticle() {
 
   const relatedArticles = getRelatedArticles(article.slug, 3);
   const tocItems = extractHeaders(article.content);
+  const cleanDescription = stripMarkdown(article.description);
 
   // Process inline markdown formatting (bold, italic, links, code)
   const processInlineFormatting = (text: string): React.ReactNode[] => {
@@ -234,7 +237,7 @@ export default function BlogArticle() {
       <FloatingShareBar
         url={articleUrl}
         title={article.title}
-        description={article.description}
+        description={cleanDescription}
         articleSlug={article.slug}
       />
 
@@ -286,7 +289,7 @@ export default function BlogArticle() {
               {article.title}
             </h1>
             <p className="font-sans text-[18px] text-repower-navy-900/65 mb-6 leading-relaxed">
-              {article.description}
+              {cleanDescription}
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
@@ -307,7 +310,7 @@ export default function BlogArticle() {
               <BlogShareButtons
                 url={articleUrl}
                 title={article.title}
-                description={article.description}
+                description={cleanDescription}
                 image={article.image}
                 variant="inline"
                 articleSlug={article.slug}
@@ -334,6 +337,9 @@ export default function BlogArticle() {
               />
             )}
           </div>
+
+          {/* Top contextual CTA */}
+          <BlogCTA category={article.category} slug={article.slug} variant="inline" />
 
           {/* Table of Contents */}
           {tocItems.length > 0 && (
@@ -410,7 +416,7 @@ export default function BlogArticle() {
             <BlogShareButtons
               url={articleUrl}
               title={article.title}
-              description={article.description}
+              description={cleanDescription}
               image={article.image}
               variant="full"
               articleSlug={article.slug}
@@ -418,30 +424,8 @@ export default function BlogArticle() {
             />
           </div>
 
-          {/* CTA */}
-          <div className="mt-14 p-8 md:p-10 bg-repower-cream border border-repower-navy-900/10 rounded-lg text-center">
-            <div className="h-px w-12 bg-repower-gold mx-auto mb-6" />
-            <h3 className="font-display font-bold text-xl md:text-2xl text-repower-navy-900 mb-3" style={{ letterSpacing: '-0.02em' }}>
-              Need Help Choosing?
-            </h3>
-            <p className="font-sans text-repower-navy-900/70 mb-6">
-              Our team has been a Mercury dealer since 1965. Get personalized recommendations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
-                to="/quote/motor-selection"
-                className="inline-flex items-center justify-center px-5 py-2.5 bg-repower-mercury-red text-white rounded-lg font-medium hover:bg-repower-mercury-red-deep transition-colors"
-              >
-                Browse Motors
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center px-5 py-2.5 border border-repower-navy-900/20 text-repower-navy-900 rounded-lg font-medium hover:bg-repower-navy-900/5 transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
+          {/* Bottom contextual CTA */}
+          <BlogCTA category={article.category} slug={article.slug} variant="banner" />
         </article>
 
         {/* Related Articles */}

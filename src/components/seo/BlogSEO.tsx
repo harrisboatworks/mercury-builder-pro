@@ -1,6 +1,7 @@
 import { Helmet } from '@/lib/helmet';
 import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
+import { stripMarkdown } from '@/lib/strip-markdown';
 
 interface BlogSEOProps {
   article: BlogArticle;
@@ -8,7 +9,8 @@ interface BlogSEOProps {
 
 export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
-  
+  const cleanDescription = stripMarkdown(article.description);
+
   // Calculate word count from content
   const wordCount = article.content.trim().split(/\s+/).length;
   
@@ -22,7 +24,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "@type": "Article",
         "@id": `${url}#article`,
         "headline": article.title,
-        "description": article.description,
+        "description": cleanDescription,
         "image": `${SITE_URL}${article.image}`,
         "author": {
           "@type": "Person",
@@ -94,7 +96,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "@type": "HowTo",
         "@id": `${url}#howto`,
         "name": article.title,
-        "description": article.description,
+        "description": cleanDescription,
         "totalTime": `PT${readTimeMinutes}M`,
         "step": article.howToSteps.map((step, index) => ({
           "@type": "HowToStep",
@@ -123,13 +125,13 @@ export function BlogSEO({ article }: BlogSEOProps) {
   return (
     <Helmet>
       <title>{article.title} | Harris Boat Works Blog</title>
-      <meta name="description" content={article.description} />
+      <meta name="description" content={cleanDescription} />
       <meta name="keywords" content={article.keywords.join(", ")} />
       <link rel="canonical" href={url} />
       
       {/* Open Graph */}
       <meta property="og:title" content={article.title} />
-      <meta property="og:description" content={article.description} />
+      <meta property="og:description" content={cleanDescription} />
       <meta property="og:image" content={`${SITE_URL}${article.image}`} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="article" />
@@ -141,7 +143,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={article.title} />
-      <meta name="twitter:description" content={article.description} />
+      <meta name="twitter:description" content={cleanDescription} />
       <meta name="twitter:image" content={`${SITE_URL}${article.image}`} />
       
       <script type="application/ld+json">
