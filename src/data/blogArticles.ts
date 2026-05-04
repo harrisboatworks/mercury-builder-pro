@@ -1282,7 +1282,7 @@ For smaller 18–20ft pontoons and heavier 16–18ft aluminum hulls, the [Mercur
       },
       {
         question: 'How much does it cost to repower a pontoon boat in Ontario?',
-        answer: 'A basic repower on a 20–22ft pontoon with a Mercury 115HP FourStroke typically runs $18,000–$22,000 CAD all-in including installation. Upgrading to a Mercury 150HP FourStroke is approximately $22,000–$27,000. If the rigging also needs replacing, add $2,000–$4,000. A premium repower to a Mercury Verado 250HP on a larger tritoon can run $35,000–$45,000 including rigging. These are approximate 2026 figures. Harris Boat Works provides repower assessments and full project quotes before any work begins.'
+        answer: 'A basic repower on a 20–22ft pontoon with a Mercury 115HP FourStroke typically runs $18,000–$22,000 CAD all-in including installation. Upgrading to a Mercury 150HP FourStroke is approximately $22,000–$27,000. If the rigging also needs replacing, add $2,000–$4,000. A premium repower to a Mercury 250HP Pro XS on a larger tritoon can run $32,000–$42,000 including rigging. These are approximate 2026 figures. Harris Boat Works provides repower assessments and full project quotes before any work begins.'
       },
       {
         question: 'What\'s the best motor for a family pontoon on Kawartha Lakes cottage country?',
