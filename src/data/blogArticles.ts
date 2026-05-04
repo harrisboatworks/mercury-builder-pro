@@ -2143,23 +2143,6 @@ Non-tournament anglers
 Budget-conscious buyers
 Those prioritizing fuel efficiency over outright performance
 
-### Mercury Verado: Premium Power
-
-Verado brings naturally aspirated V8/V10 performance:
-
-Benefits:
-
-Smoothest power delivery
-Quietest operation
-Advanced features
-Premium feel
-
-Best For:
-
-Premium bass boat brands
-Anglers wanting the refinement of V8 torque
-Those who value quiet cruise as much as hole-shot
-
 ### Recommended Setups by Boat Size
 
 18-19ft Bass Boat:
@@ -2170,17 +2153,15 @@ Good: FourStroke 150HP
 20ft Bass Boat:
 
 Mercury 200-225HP Pro XS
-Alternative: Verado 200HP
+Alternative: FourStroke 200HP
 
 21ft Bass Boat:
 
 Mercury 225-250HP Pro XS
-Alternative: Verado 250HP
 
 22ft+ Tournament Boat:
 
-Mercury 300-400HP Pro XS
-Alternative: Verado 300HP
+Mercury 300HP Pro XS
 
 ### Critical Bass Boat Features
 
