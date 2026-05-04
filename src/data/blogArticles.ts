@@ -1619,7 +1619,7 @@ Then repowering makes tremendous financial sense.
 1. **Assessment**: We evaluate your boat and current motor
 2. **Recommendation**: Right-sized motor for your needs
 3. **Quote**: Complete pricing including installation and rigging
-4. **Scheduling**: Winter repower means ready for spring
+4. **Scheduling**: [Winter repower](/blog/winter-repower-planning-guide) means ready for spring
 5. **Installation**: Professional mounting and rigging
 6. **Lake Test**: We ensure everything runs properly
 7. **Handoff**: Keys to your refreshed boat
@@ -3610,7 +3610,7 @@ This setup covers every fishing situation.
     content: `
 ## How to Size Your Boat Motor
 
-Choosing the right horsepower involves more than just checking your capacity plate. Here's how to think through motor sizing.
+[Choosing the right horsepower](/blog/how-to-choose-right-horsepower-boat) involves more than just checking your capacity plate. Here's how to think through motor sizing.
 
 ### The Starting Point: Capacity Plate
 
@@ -7091,7 +7091,7 @@ Note: Mercury Marine has scaled back manufacturer-level promotional programs in 
 - No extra cost — automatically applied
 - Significant value vs. purchasing extended warranty separately
 
-**Financing Options**:
+**[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
 - Competitive rates from third-party lenders
 - Multiple term options
 - Pre-approval available
@@ -11571,7 +11571,7 @@ If you're unsure whether your boat is a good repower candidate, we can assess it
 
 For a quick price check before you come in, use our quote configurator at [mercuryrepower.ca](https://mercuryrepower.ca) — real numbers, same pricing the sales team sees. For service scheduling, [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
 
-For more on repower costs in Ontario, see our [2026 repower cost guide](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) and our [complete Kawarthas repower guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas).
+For more on [repower costs in Ontario](/blog/mercury-repower-cost-ontario-2026-cad), see our [2026 repower cost guide](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) and our [complete Kawarthas repower guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas).
 
 ---
 
