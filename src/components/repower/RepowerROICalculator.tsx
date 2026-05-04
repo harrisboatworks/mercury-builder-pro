@@ -56,20 +56,19 @@ export function RepowerROICalculator() {
     queryFn: async () => {
       const { data, error } = await supabase
         .from('motor_models')
-        .select('horsepower, base_price')
-        .in('horsepower', hpOptions)
-        .not('base_price', 'is', null)
-        .gt('base_price', 0);
+        .select('horsepower, base_price, dealer_price, sale_price, msrp')
+        .in('horsepower', hpOptions);
 
       if (error) throw error;
 
-      // Group by HP and calculate min/max/avg
+      // Group by HP using selling-price hierarchy: sale_price → dealer_price → msrp → base_price
       const grouped: Record<number, number[]> = {};
-      data?.forEach(motor => {
+      data?.forEach((motor: any) => {
         const hp = motor.horsepower;
-        if (hp && hpOptions.includes(hp)) {
+        const price = motor.sale_price ?? motor.dealer_price ?? motor.msrp ?? motor.base_price;
+        if (hp && hpOptions.includes(hp) && price && price > 0) {
           if (!grouped[hp]) grouped[hp] = [];
-          grouped[hp].push(motor.base_price);
+          grouped[hp].push(Number(price));
         }
       });
 
