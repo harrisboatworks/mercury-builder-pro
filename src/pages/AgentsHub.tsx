@@ -1,6 +1,6 @@
 import { Helmet } from '@/lib/helmet';
 import { Link } from 'react-router-dom';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
 
@@ -12,7 +12,7 @@ const MOTORS_MD = `${SUPABASE_FUNCTIONS_URL}/motors-md`;
 
 export default function AgentsHub() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <Helmet>
         <title>For AI Agents & Assistants | Harris Boat Works</title>
         <meta
@@ -104,7 +104,8 @@ export default function AgentsHub() {
         })}</script>
       </Helmet>
 
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="max-w-4xl mx-auto px-4 py-12 prose prose-slate">
         <h1 className="heading-protected text-4xl font-bold mb-4">

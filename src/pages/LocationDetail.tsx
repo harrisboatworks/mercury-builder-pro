@@ -1,7 +1,7 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import { getLocationBySlug } from '@/data/locations';
@@ -174,37 +174,38 @@ export default function LocationDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <Helmet>
         <title>{location.title}</title>
         <meta name="description" content={location.metaDescription} />
         <link rel="canonical" href={url} />
         <script type="application/ld+json">{JSON.stringify(jsonLdGraph)}</script>
       </Helmet>
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
       <main>
         {/* HERO */}
-        <section className="bg-slate-900 text-white">
+        <section className="bg-repower-navy-900 text-repower-cream">
           <div className="container mx-auto px-4 py-16 md:py-24 max-w-3xl">
-            <Link to="/locations" className="text-sm text-white/60 hover:text-white">
+            <Link to="/locations" className="text-sm text-repower-cream/60 hover:text-repower-cream">
               ← Pickup areas
             </Link>
             <h1 className="mt-6 text-4xl md:text-5xl font-semibold tracking-tight">
               {h1}
             </h1>
-            <div className="mt-5 h-px w-16 bg-amber-400" aria-hidden="true" />
-            <p className="mt-6 text-lg text-white/80 leading-relaxed">
+            <div className="mt-5 h-px w-16 bg-repower-gold" aria-hidden="true" />
+            <p className="mt-6 text-lg text-repower-cream/80 leading-relaxed">
               {location.intro}
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Button asChild size="lg" className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold">
+              <Button asChild size="lg" className="bg-repower-mercury-red hover:bg-repower-mercury-red-deep text-white font-semibold">
                 <Link to="/quote/motor-selection">Build Your Quote</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
-                className="bg-transparent border border-white/40 text-white hover:bg-white/10"
+                className="bg-transparent border border-repower-cream/40 text-repower-cream hover:bg-repower-cream/10"
               >
                 <a href={telHref}>
                   <Phone className="h-4 w-4 mr-2" />
@@ -215,8 +216,8 @@ export default function LocationDetail() {
 
             <ul className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-3">
               {TRUST_ROW.map(({ icon: Icon, label }) => (
-                <li key={label} className="flex items-center gap-2 text-xs text-white/70">
-                  <Icon className="h-3.5 w-3.5 text-amber-400 shrink-0" />
+                <li key={label} className="flex items-center gap-2 text-xs text-repower-cream/70">
+                  <Icon className="h-3.5 w-3.5 text-repower-gold shrink-0" />
                   <span>{label}</span>
                 </li>
               ))}
@@ -232,7 +233,7 @@ export default function LocationDetail() {
           <ul className="space-y-3">
             {contextBullets.map((c) => (
               <li key={c} className="flex gap-3 text-foreground leading-relaxed">
-                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" aria-hidden="true" />
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-repower-gold shrink-0" aria-hidden="true" />
                 <span>{c}</span>
               </li>
             ))}
@@ -250,11 +251,11 @@ export default function LocationDetail() {
                 <Link
                   key={u.title}
                   to={u.href}
-                  className="group rounded-lg border border-border bg-card p-6 hover:border-amber-500/60 transition-colors"
+                  className="group rounded-lg border border-border bg-card p-6 hover:border-repower-gold/60 transition-colors"
                 >
                   <h3 className="text-lg font-semibold text-foreground mb-2">{u.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">{u.body}</p>
-                  <span className="text-sm font-medium text-amber-700 group-hover:text-amber-600">
+                  <span className="text-sm font-medium text-repower-navy-900 group-hover:text-repower-mercury-red">
                     Build a quote →
                   </span>
                 </Link>
@@ -267,9 +268,7 @@ export default function LocationDetail() {
         <section className="container mx-auto px-4 py-16 max-w-3xl">
           <div className="rounded-xl border border-border bg-card p-6 md:p-8">
             <div className="flex items-start gap-4">
-              <div className="h-10 w-10 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center shrink-0">
-                <Anchor className="h-5 w-5" />
-              </div>
+              <Anchor className="h-6 w-6 text-repower-gold shrink-0 mt-1" />
               <div>
                 <h2 className="text-xl font-semibold text-foreground mb-2">
                   Pickup at Gores Landing
@@ -309,12 +308,12 @@ export default function LocationDetail() {
         )}
 
         {/* FOOTER CTA */}
-        <section className="bg-slate-900 text-white">
+        <section className="bg-repower-navy-900 text-repower-cream">
           <div className="container mx-auto px-4 py-14 max-w-3xl text-center">
-            <p className="text-lg text-white/80 mb-6">
+            <p className="text-lg text-repower-cream/80 mb-6">
               Build a Mercury quote with real CAD pricing, or call {COMPANY_INFO.contact.phone}.
             </p>
-            <Button asChild size="lg" className="bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold">
+            <Button asChild size="lg" className="bg-repower-mercury-red hover:bg-repower-mercury-red-deep text-white font-semibold">
               <Link to="/quote/motor-selection">Build Your Quote</Link>
             </Button>
           </div>

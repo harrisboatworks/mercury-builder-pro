@@ -10,7 +10,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { MercuryProXSSEO, PRO_XS_FAQ, PRO_XS_STATIC_OFFERS } from '@/components/seo/MercuryProXSSEO';
 import { ChevronRight, Zap, Trophy, Gauge, Award } from 'lucide-react';
 
@@ -82,9 +83,10 @@ export default function MercuryProXS() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <MercuryProXSSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-12 max-w-5xl">
         {/* Breadcrumb */}
@@ -218,6 +220,7 @@ export default function MercuryProXS() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

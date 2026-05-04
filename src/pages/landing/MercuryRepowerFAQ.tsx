@@ -1,16 +1,18 @@
 import { Link } from 'react-router-dom';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { MercuryRepowerFAQSEO } from '@/components/seo/MercuryRepowerFAQSEO';
 import { faqCategories } from '@/data/faqData';
 import { ChevronRight } from 'lucide-react';
 
 export default function MercuryRepowerFAQ() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <MercuryRepowerFAQSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Breadcrumb */}
@@ -86,6 +88,7 @@ export default function MercuryRepowerFAQ() {
           </Button>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

@@ -7,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { trackAgentEvent } from '@/lib/agentEvents';
 import { getMotorImageByPriority } from '@/lib/motor-helpers';
 import { DealerTrustStrip } from '@/components/trust/DealerTrustStrip';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 
 /**
  * Public-facing motor detail page rendered at /motors/{slug}.
@@ -222,7 +224,9 @@ export default function MotorPage() {
         <link rel="canonical" href={`https://www.mercuryrepower.ca/motors/${slug}`} />
       </Helmet>
 
-      <article className="min-h-screen bg-background">
+      <article className="min-h-screen bg-repower-paper">
+        <RepowerHeader />
+        <div className="pt-[64px] lg:pt-[72px]" />
         <div className="max-w-4xl mx-auto px-4 py-8">
           <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground mb-4">
             <Link to="/" className="hover:underline">Home</Link>
@@ -265,7 +269,7 @@ export default function MotorPage() {
                   {formatCAD(price)}
                   {price ? <span className="text-base font-normal text-muted-foreground"> CAD</span> : null}
                 </p>
-                <p className={`text-sm font-medium mt-1 ${inStock ? 'text-green-600' : 'text-amber-600'}`}>
+                <p className={`text-sm font-medium mt-1 ${inStock ? 'text-repower-gold' : 'text-repower-navy-900/55'}`}>
                   {inStock ? '✓ In Stock' : 'Special Order'}
                 </p>
 
@@ -369,6 +373,7 @@ export default function MotorPage() {
         {/* NOTE: No page-local sticky bottom CTA, the global UnifiedMobileBar
             already provides a contextual mobile bottom action across the app. */}
       </article>
+      <SiteFooter />
     </>
   );
 }

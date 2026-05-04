@@ -1,7 +1,7 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { Helmet } from '@/lib/helmet';
 import { SITE_URL } from '@/lib/site';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { caseStudies, getCaseStudyBySlug } from '@/data/caseStudies';
 
@@ -14,7 +14,7 @@ export default function CaseStudyDetail() {
   const url = `${SITE_URL}/case-studies/${study.slug}`;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <Helmet>
         <title>{study.title} | Harris Boat Works</title>
         <meta name="description" content={study.excerpt} />
@@ -42,7 +42,8 @@ export default function CaseStudyDetail() {
         })}</script>
       </Helmet>
 
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-10 md:py-14">
         <div className="max-w-4xl mx-auto">

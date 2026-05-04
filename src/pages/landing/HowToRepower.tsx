@@ -6,7 +6,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { HowToRepowerSEO, HOWTO_FAQ } from '@/components/seo/HowToRepowerSEO';
 import { ChevronRight, FileText, Ruler, CreditCard, CalendarDays, Wrench, Waves, Key } from 'lucide-react';
 
@@ -51,9 +52,10 @@ const steps = [
 
 export default function HowToRepower() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <HowToRepowerSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Breadcrumb */}
@@ -150,6 +152,7 @@ export default function HowToRepower() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }
