@@ -237,7 +237,7 @@ export default function BlogArticle() {
       <FloatingShareBar
         url={articleUrl}
         title={article.title}
-        description={article.description}
+        description={cleanDescription}
         articleSlug={article.slug}
       />
 
@@ -289,7 +289,7 @@ export default function BlogArticle() {
               {article.title}
             </h1>
             <p className="font-sans text-[18px] text-repower-navy-900/65 mb-6 leading-relaxed">
-              {article.description}
+              {cleanDescription}
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
@@ -310,7 +310,7 @@ export default function BlogArticle() {
               <BlogShareButtons
                 url={articleUrl}
                 title={article.title}
-                description={article.description}
+                description={cleanDescription}
                 image={article.image}
                 variant="inline"
                 articleSlug={article.slug}
@@ -413,7 +413,7 @@ export default function BlogArticle() {
             <BlogShareButtons
               url={articleUrl}
               title={article.title}
-              description={article.description}
+              description={cleanDescription}
               image={article.image}
               variant="full"
               articleSlug={article.slug}
