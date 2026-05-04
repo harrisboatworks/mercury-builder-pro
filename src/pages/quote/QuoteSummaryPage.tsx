@@ -1000,7 +1000,7 @@ export default function QuoteSummaryPage() {
       />
       {/* Cinematic Quote Reveal */}
       <QuoteRevealCinematic
-        isVisible={showCinematic && isMounted && !promoLoading && warrantyCostsLoaded}
+        isVisible={showCinematic && isMounted && !promoLoading && warrantyCostsLoaded && subtotalStable}
         onComplete={handleCinematicComplete}
         motorName={motorName}
         finalPrice={displayPricing.subtotal}
