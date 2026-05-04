@@ -25,9 +25,14 @@ export function BlogSEO({ article }: BlogSEOProps) {
         "description": article.description,
         "image": `${SITE_URL}${article.image}`,
         "author": {
-          "@type": "Organization",
-          "name": "Harris Boat Works",
-          "@id": `${SITE_URL}/#organization`
+          "@type": "Person",
+          "name": "Jay Harris",
+          "jobTitle": "3rd-Generation Owner",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Harris Boat Works",
+            "@id": `${SITE_URL}/#organization`
+          }
         },
         "publisher": {
           "@type": "Organization",
@@ -131,7 +136,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
       <meta property="og:locale" content="en_CA" />
       <meta property="article:published_time" content={article.datePublished} />
       <meta property="article:modified_time" content={article.dateModified} />
-      <meta property="article:author" content="Harris Boat Works" />
+      <meta property="article:author" content="Jay Harris" />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
