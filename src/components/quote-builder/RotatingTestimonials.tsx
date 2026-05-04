@@ -135,7 +135,7 @@ export const RotatingTestimonials: React.FC = () => {
           <p className="text-xs text-muted-foreground mb-2">
             "{testimonial.text}"
           </p>
-          <p className="text-xs font-medium">— {testimonial.author}, {testimonial.source}</p>
+          <p className="text-xs font-medium">{testimonial.author}, {testimonial.source}</p>
         </div>
       ))}
     </div>

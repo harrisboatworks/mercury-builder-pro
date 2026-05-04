@@ -411,7 +411,7 @@ export default function FinanceCalculator() {
                   {promo && (
                     <div className="bg-repower-cream border border-repower-gold/40 p-4 font-sans text-[13px] text-repower-navy-900">
                       <span className="font-semibold">Promo APR applied:</span> {promo.rate}%{' '}
-                      {promo.promo_text && <span>— {promo.promo_text}</span>}{' '}
+                      {promo.promo_text && <span>· {promo.promo_text}</span>}{' '}
                       {promo.promo_end_date && <span>(ends {new Date(promo.promo_end_date).toLocaleDateString()})</span>}
                     </div>
                   )}

@@ -40,9 +40,7 @@ export function FinancingCTACard({ data }: FinancingCTACardProps) {
       {/* Header */}
       <div className="px-4 py-3 border-b border-gray-100 bg-white/50">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center">
-            <Calculator className="w-3.5 h-3.5 text-blue-600" />
-          </div>
+          <Calculator className="w-4 h-4 text-repower-mercury-red" strokeWidth={1.75} />
           <span className="text-sm font-medium text-gray-800">
             {motorModel ? `Financing for ${motorModel}` : 'Financing Estimate'}
           </span>

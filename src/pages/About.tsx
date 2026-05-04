@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { AboutPageSEO } from '@/components/seo/AboutPageSEO';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { GoogleReviewsCarousel } from '@/components/reviews/GoogleReviewsCarousel';
 import { GoogleMapEmbed } from '@/components/maps/GoogleMapEmbed';
 import { OpeningHoursDisplay } from '@/components/business/OpeningHoursDisplay';
@@ -409,6 +410,7 @@ export default function About() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </>
   );
 }

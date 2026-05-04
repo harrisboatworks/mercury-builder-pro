@@ -235,8 +235,8 @@ export function SaveQuoteDialog({
   // Shared success content
   const successContent = (
     <div className="flex flex-col items-center text-center py-6 space-y-4">
-      <div className="h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
-        <CheckCircle className="h-8 w-8 text-green-600" />
+      <div className="flex items-center justify-center">
+        <CheckCircle className="h-12 w-12 text-repower-gold" strokeWidth={1.5} />
       </div>
       <div className="text-xl font-semibold">Quote Saved!</div>
       <div className="space-y-3 text-muted-foreground">

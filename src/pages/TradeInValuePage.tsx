@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, RotateCcw } from 'lucide-react';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { TradeInValuation } from '@/components/quote-builder/TradeInValuation';
 import { type TradeInInfo } from '@/lib/trade-valuation';
 import { SITE_URL } from '@/lib/site';
@@ -184,6 +185,7 @@ export default function TradeInValuePage() {
           )}
         </div>
       </main>
+      <SiteFooter />
     </>
   );
 }

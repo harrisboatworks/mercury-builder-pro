@@ -76,9 +76,9 @@ export function UpgradeNudgeBar({
                   repeat: Infinity,
                   repeatType: "reverse"
                 }}
-                className="hidden sm:flex flex-shrink-0 rounded-full bg-blue-100 p-2"
+                className="hidden sm:flex flex-shrink-0 p-2"
               >
-                <Shield className="h-5 w-5 text-blue-600" />
+                <Shield className="h-5 w-5 text-repower-navy-900" strokeWidth={1.5} />
               </motion.div>
               
               <div className="space-y-1 text-center sm:text-left">

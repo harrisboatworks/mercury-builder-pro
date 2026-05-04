@@ -9,6 +9,7 @@ import { RepowerProcess } from '@/components/repower/RepowerProcess';
 import { WinterPro } from '@/components/repower/WinterPro';
 import { FinalCTARepower } from '@/components/repower/FinalCTARepower';
 import { RepowerPageSEO } from '@/components/seo/RepowerPageSEO';
+import { SiteFooter } from '@/components/ui/site-footer';
 
 import { RepowerGuideDownloadDialog } from '@/components/repower/RepowerGuideDownloadDialog';
 
@@ -460,6 +461,7 @@ export default function Repower() {
       </section>
       {/* Final CTA, restyled */}
       <FinalCTARepower />
+      <SiteFooter />
     </RepowerLayout>
   );
 }

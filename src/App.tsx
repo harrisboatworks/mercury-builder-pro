@@ -449,15 +449,18 @@ function AnimatedRoutes() {
         <Route path="/finance-calculator" element={<FinanceCalculator />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/agents" element={<AgentsHub />} />
-        <Route path="/dev" element={<Dev />} />
-        <Route path="/voice-test" element={<VoiceTest />} />
-        {/* Removed obsolete test routes */}
-        <Route path="/quotes/new" element={<NewQuote />} />
-        <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
-        <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
-        <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
-        <Route path="/test-email" element={<TestEmail />} />
-        <Route path="/test-financing-emails" element={<TestFinancingEmails />} />
+        {import.meta.env.DEV && (
+          <>
+            <Route path="/dev" element={<Dev />} />
+            <Route path="/voice-test" element={<VoiceTest />} />
+            <Route path="/quotes/new" element={<NewQuote />} />
+            <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
+            <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
+            <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
+            <Route path="/test-email" element={<TestEmail />} />
+            <Route path="/test-financing-emails" element={<TestFinancingEmails />} />
+          </>
+        )}
         {/* Removed obsolete test pricing routes */}
         
         {/* Admin Import Routes */}
