@@ -722,6 +722,7 @@ export default function Compare() {
           button { display: none !important; }
         }
       `}</style>
+      <SiteFooter />
     </div>
   );
 }
