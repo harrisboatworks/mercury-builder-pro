@@ -25,9 +25,7 @@ export function TradeInCTACard({ data }: TradeInCTACardProps) {
       {/* Header */}
       <div className="px-4 py-3 border-b border-gray-100 bg-white/50">
         <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center">
-            <DollarSign className="w-3.5 h-3.5 text-emerald-600" />
-          </div>
+          <DollarSign className="w-4 h-4 text-repower-mercury-red" strokeWidth={1.75} />
           <span className="text-sm font-medium text-gray-800">
             Get Your Trade-In Value
           </span>

@@ -47,8 +47,8 @@ export const PromoDetailsModal: React.FC<PromoDetailsModalProps> = ({ promo, ope
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold mb-2 text-foreground">{title}</h2>
           {(amount || details.amount) && (
-            <div className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full">
-              <span className="text-2xl">✨</span>
+            <div className="inline-flex items-center gap-2 bg-repower-cream text-repower-navy-900 border border-repower-gold/30 px-4 py-2 rounded-full">
+              <span className="text-2xl text-repower-gold">✨</span>
               <span className="font-bold text-xl">Save {amount}</span>
             </div>
           )}
