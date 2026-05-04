@@ -9,7 +9,8 @@ const matrix = [
   { hp_min: 150, hp_max: 300, rebate: 1500 },
 ];
 
-const anchor = () => screen.getByTestId('rebate-anchor');
+const anchorText = () =>
+  screen.getAllByTestId('rebate-anchor').map((el) => el.textContent).join(' ');
 
 describe('RebateCalculator animated rebate transitions', () => {
   it('renders the initial rebate amount', () => {
