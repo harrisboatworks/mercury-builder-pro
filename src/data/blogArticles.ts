@@ -11936,12 +11936,11 @@ For more on pontoon motor selection in general, see our [guide to the best Mercu
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
-  const article = blogArticles.find(article => article.slug === slug);
-  // Return undefined if article exists but is not yet published
-  if (article && !isArticlePublished(article)) {
-    return undefined;
-  }
-  return article;
+  // Return the article whether or not its publishDate is in the future.
+  // The /blog index uses getPublishedArticles() to hide unpublished entries
+  // from listings, but direct URLs (internal links, sitemap, shared links)
+  // must always render so we never silently redirect to /blog.
+  return blogArticles.find(article => article.slug === slug);
 }
 
 export function getRelatedArticles(currentSlug: string, limit: number = 3): BlogArticle[] {
