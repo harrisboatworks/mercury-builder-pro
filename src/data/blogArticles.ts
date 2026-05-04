@@ -1577,128 +1577,280 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     description: 'Discover why Harris Boat Works has been Ontario\'s trusted Mercury dealer since 1965. Learn about our expertise, inventory, service, and commitment to boaters.',
     image: '/lovable-uploads/Boaters_Trust_HBW.png',
     author: 'Harris Boat Works',
-    datePublished: '2026-01-05',
-    dateModified: '2026-01-05',
-    publishDate: '2026-01-05',
+    datePublished: '2026-05-04',
+    dateModified: '2026-05-04',
+    publishDate: '2026-05-04',
     category: 'About Us',
     readTime: '8 min read',
     keywords: ['mercury dealer ontario', 'harris boat works', 'mercury outboard dealer', 'mercury sales peterborough', 'trusted boat dealer ontario'],
     content: `
-## Why Harris Boat Works?
+Harris Boat Works has been a Mercury dealer since 1965. Three generations of HBW have rigged Mercurys, serviced them, and stood behind them. We are a Mercury Platinum dealer, which gives us factory-direct access to support, training, and inventory. We sell Mercury exclusively because the math works for our customers and our shop. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-For over 60 years, Harris Boat Works has been the Mercury dealer Ontario boaters trust for new motors, expert service, and honest advice. Here's what makes us different.
+## Quick recommendation
 
-### 60+ Years of Mercury Expertise
+If you are buying a Mercury outboard in southern Ontario, HBW is one of a small group of dealers worth considering. Mercury has more dealers than any other outboard brand in Canada, but most are multi-brand shops with split focus. HBW is exclusive Mercury. We are also a Mercury Platinum dealer (the highest dealer tier), which means factory-direct support and faster parts and service.
 
-Since 1965, we've sold and serviced more Mercury outboards than we can count. That experience means:
+We are biased. We sell only Mercury and we want your business. But the bias is downstream of the math. Our exclusive Mercury focus produces deeper expertise and faster service than multi-brand shops can typically deliver. That is why three generations of customers have repowered at HBW.
 
-- **Deep product knowledge** across every Mercury family
-- **Technicians who've seen it all** and can diagnose quickly
-- **Trusted relationships** with Mercury Marine for priority support
-- **Real-world testing** on the Kawarthas and beyond
+## What sets HBW apart
 
-### Full-Line Mercury Dealer
+Five things that distinguish HBW from typical marine dealers:
 
-We stock the complete Mercury lineup:
+### 1. Three generations of family ownership
 
-- **Portable**: 2.5HP - 20HP for tenders and small boats
-- **FourStroke**: 25HP - 300HP for recreational boats
-- **Pro XS**: 115HP - 300HP for performance and fishing
-- **Verado**: 250HP - 600HP for premium applications
-- **SeaPro**: 15HP - 500HP for commercial use
+HBW was founded in 1947 by my grandfather. Mercury dealership came in 1965. My father carried the business through the 1970s, 80s, and 90s. I'm running it now in 2026. Three generations of HBW have learned Mercury inside and out.
 
-### Certified Repower Center
+That continuity matters. Some of our long-term customers have done business with three generations of Harris family. The institutional knowledge transfers. The relationships outlast specific transactions.
 
-Looking to breathe new life into your boat? As a Mercury Certified Repower Center, we have:
+### 2. Mercury Platinum dealer status
 
-- Factory training for all repower installations
-- Complete rigging capabilities
-- Lake testing on Rice Lake
-- Proper setup and propeller matching
+Mercury rates dealers in tiers based on volume, service quality, customer satisfaction, and operational standards. Platinum is the top tier.
 
-### On-Site Service Department
+What Platinum status gives our customers:
 
-Our service bay handles everything:
+- **Priority parts allocation** during high-demand periods
+- **Earlier access to new product launches**
+- **Factory-direct technical support** for complex service issues
+- **Mercury-certified technician training** at higher levels
+- **Better warranty support** with faster claim processing
 
-- **Seasonal maintenance**: Spring commissioning and fall winterization
-- **Warranty repairs**: Full factory warranty service
-- **Diagnostics**: Computer interface for all Mercury EFI motors
-- **Emergency repairs**: We understand when you need to get back on the water
+Most multi-brand dealers do not reach Platinum status because they split focus across multiple brands. Exclusive Mercury focus is part of why we maintain Platinum.
 
-### Real Inventory, Real Answers
+### 3. Exclusive Mercury focus
 
-When you visit Harris Boat Works:
+We sell Mercury exclusively. No Yamaha. No Honda. No Suzuki.
 
-- See motors in person before buying
-- Get honest advice based on your actual needs
-- Receive accurate pricing (including rigging and installation)
-- Take advantage of current Mercury promotions
+This is not because other brands are bad motors. It's because the depth-vs-breadth tradeoff strongly favors depth for our customer base. Our customers are mostly Ontario freshwater boaters whose boats came Mercury-rigged from the factory. Building exclusive Mercury expertise serves them better than splitting attention across brands.
 
-### The Bottom Line
+The expertise compounds over time:
 
-We're boaters ourselves. We fish these lakes, we know these conditions, and we stand behind every motor we sell. That's why generations of Ontario families have trusted Harris Boat Works with their boating needs.
+- **Three generations of technicians** have learned only Mercury
+- **Parts inventory and tooling** is Mercury-specific and deep
+- **Training investments** focus on Mercury
+- **Customer expectations** are calibrated to Mercury
 
-**[Get a Quote on Your Next Mercury](/quote)**
+### 4. Local Ontario freshwater specialization
 
-**See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario).
+We rig boats for Rice Lake, Kawartha lakes, Lake Simcoe, Lake Ontario, and connected waters. The local knowledge matters.
+
+What the local specialization gives our customers:
+
+- **Boat-to-motor matching** specific to Ontario hulls and use cases
+- **Prop selection** based on actual sea-trial experience on local lakes
+- **Service patterns** matched to Ontario seasonal cycles
+- **Customer base** that overlaps with yours (you may know other HBW customers)
+- **Reputation accountability** in a small enough market that quality matters
+
+We are not a generic marine dealer. We are an Ontario freshwater Mercury dealer.
+
+### 5. Full-service marina capabilities
+
+HBW is more than a sales counter. We are a full-service marina:
+
+- **Mercury sales and service** (the core business)
+- **Legend Boats sales** (we are also a Legend dealer)
+- **Boat hauling** for Rice Lake and Kawartha customers
+- **Indoor and outdoor storage** through winter
+- **Winterization and spring commissioning** services
+- **Used boat sales and trade-ins**
+- **Pleasure Craft Licence (PCL) administration** for repower customers
+
+The integrated services let customers do everything in one place.
+
+## What HBW does for repower customers
+
+When customers come to HBW for a Mercury repower, they get:
+
+- **Honest hull walk-around** to confirm the boat is repower-worthy
+- **Use-case-driven motor selection** matched to the specific boat and use
+- **Live pricing transparency** on the [motor selection page](/quote/motor-selection)
+- **Prop selection during sea-trial** to confirm performance
+- **PCL update** as part of the project
+- **Service log entry** for warranty support and resale value
+- **Mercury Repower Financing** at 7.99% APR (qualified buyers)
+- **Trade-in evaluation** for old motors
+
+We do not push repowers that are not warranted. Sometimes customers come in with a motor that has years of life left. We tell them that and they go fish.
+
+## What HBW does for service customers
+
+For ongoing service customers (whether HBW repower customers or not):
+
+- **Spring commissioning** to bring the motor back from winter
+- **Mid-season service** as needed
+- **Fall winterization** to protect through storage
+- **Annual diagnostic** with detailed service log
+- **Warranty work** for in-warranty Mercurys
+- **Parts inventory** for common Mercury service items
+- **Computer diagnostic** for modern Mercury fault codes
+
+For HBW service, [request service](https://hbw.wiki/service) or [call (905) 342-2153](tel:9053422153).
+
+## What HBW does for new Mercury buyers
+
+For new Mercury buyers (not repower):
+
+- **New Mercury 2026 inventory** across the lineup
+- **New boat-and-motor packages** with Legend Boats
+- **Sales financing options** including Mercury Repower Financing
+- **Delivery and break-in coaching**
+- **Warranty registration** with Mercury
+- **First-year service appointment** booked at delivery
+
+For new Mercury pricing, [build a quote](/quote/motor-selection).
+
+## Common questions about HBW
+
+We get these regularly:
+
+### "Are you the most competitive on Mercury pricing?"
+
+Mercury sets MSRP. Dealer pricing is competitive across the dealer network. Our pricing is in line with other Mercury dealers. We compete on service quality, expertise, and long-term relationships, not on cutting corners on price.
+
+### "Can I get a better deal at a multi-brand dealer?"
+
+Sometimes nominally on motor price, but the long-term math usually favors HBW. Multi-brand dealers have split focus and may not have the parts depth, technician training, or factory relationships that exclusive Mercury Platinum gives us.
+
+### "Do you handle non-Mercury motors?"
+
+Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer and require part-sourcing. [Contact us](/contact) for non-Mercury service quotes.
+
+### "What if I bought my boat elsewhere?"
+
+We service Mercurys regardless of where they were purchased. Many of our service customers bought elsewhere and now come to HBW for service. Mercury warranty applies regardless of original dealer.
+
+### "How long has HBW been in business?"
+
+Founded 1947 by my grandfather. Mercury dealership since 1965. Three generations of family ownership. Continuous operation in Gores Landing on Rice Lake.
+
+## What HBW does not do
+
+We are honest about our limits:
+
+- **Saltwater servicing.** We are an Ontario freshwater shop. Saltwater applications are outside our core expertise.
+- **Sailboat-specific outfitting.** We service Mercury auxiliary motors on sailboats but we are not a sailboat dealer.
+- **Personal watercraft (PWC).** Mercury makes outboards, not PWC. We do not sell or service PWCs.
+- **Jet boats or jet drives.** Outboard-specific shop.
+- **Most non-Mercury repowers.** We can do them but Mercury is our depth.
+
+We refer to other shops or specialists when the work falls outside our core. Honest answers help customers find the right shop for their specific need.
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
-- [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario) — Mercury vs Yamaha for Ontario
-- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
-- [2027 Mercury Outboard Preview: What's New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
+- [Why Mercury Dominates the Outboard Market](/blog/why-mercury-dominates-outboard-market), the case for Mercury
+- [Mercury vs Yamaha vs Honda Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), brand comparison
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), pricing details
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), financing options
+- [Complete Guide to Boat Repowering in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full repower process
 
+## Ready to talk Mercury at HBW?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration including rigging, prop, and install.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific Mercury needs before quoting, [give us a call at (905) 342-2153](tel:9053422153). We are at the shop most weekdays. Saturday hours during the boating season. [Visit us](/contact) at the marina in Gores Landing.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**How long has Harris Boat Works been a Mercury dealer?**
+Since 1965. Three generations of family ownership. The marina itself was founded in 1947. Continuous operation in Gores Landing on Rice Lake.
+
+**What is a Mercury Platinum dealer?**
+The highest dealer tier in Mercury's dealer rating system. Platinum status reflects volume, service quality, customer satisfaction, and operational standards. Gives dealers priority access to parts, training, and factory support. HBW is a Mercury Platinum dealer.
+
+**Why does HBW only sell Mercury?**
+Three generations of expertise, parts inventory, and tooling are Mercury-specific. Multi-brand dealers split focus. Exclusive Mercury focus produces deeper expertise that serves our customer base better. Mercury is also the dominant brand in Ontario freshwater so the math works.
+
+**Where is HBW located?**
+Gores Landing, Ontario, on the south shore of Rice Lake. Roughly 90 minutes east of Toronto, 30 minutes north of Cobourg.
+
+**What does HBW sell?**
+Mercury outboard motors (the core business). Legend Boats. Used boats. Service and storage. Repower projects. We do not sell saltwater motors, PWCs, jet boats, or non-Mercury outboards as a primary line.
+
+**Can I bring a non-Mercury motor to HBW for service?**
+Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer and require part-sourcing. [Contact us](/contact) for quotes.
+
+**Does HBW offer financing?**
+Yes. Mercury Repower Financing at 7.99% APR for qualified buyers. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
+
+**Does HBW offer storage?**
+Yes. Indoor and outdoor storage available through winter. Pricing varies by boat size and storage tier. [Contact us](/contact) for specifics.
+
+**Does HBW pick up boats?**
+For Rice Lake and local Kawartha customers, yes. Hauling and full marina services are available. [Contact us](/contact) for hauling quotes.
+
+**Who runs HBW now?**
+Jay Harris, 3rd-generation owner. The Harris family has run the marina continuously since 1947.
+
+**How can I get in touch with HBW?**
+Phone: (905) 342-2153. Text: (647) 952-2153. Email: info@harrisboatworks.ca. [Contact us](/contact). Visit in person in Gores Landing during business hours.
+
+**What are HBW's hours?**
+Vary seasonally. Generally weekdays year-round, with Saturday hours during the boating season (May through October). [Contact us](/contact) for current hours.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
     `,
     faqs: [
       {
-        question: 'Where is Harris Boat Works located?',
-        answer: 'We\'re located at 5369 Harris Boat Works Rd in Gores Landing, Ontario, right on Rice Lake. We\'re easily accessible from Peterborough, Cobourg, Port Hope, and the greater Kawarthas region.'
+        question: 'How long has Harris Boat Works been a Mercury dealer?',
+        answer: 'Since 1965. Three generations of family ownership. The marina itself was founded in 1947. Continuous operation in Gores Landing on Rice Lake.'
       },
       {
-        question: 'Do you offer financing on Mercury motors?',
-        answer: 'Yes! We offer competitive financing options on all new Mercury motors. Visit our quote builder to see estimated monthly payments, or ask about current financing promotions.'
+        question: 'What is a Mercury Platinum dealer?',
+        answer: 'The highest dealer tier in Mercury\'s dealer rating system. Platinum status reflects volume, service quality, customer satisfaction, and operational standards. Gives dealers priority access to parts, training, and factory support. HBW is a Mercury Platinum dealer.'
       },
       {
-        question: 'Can I trade in my old motor?',
-        answer: 'Absolutely. We accept trade-ins on most outboard motors in running condition. We\'ll provide a fair assessment and apply the value toward your new Mercury purchase.'
+        question: 'Why does HBW only sell Mercury?',
+        answer: 'Three generations of expertise, parts inventory, and tooling are Mercury-specific. Multi-brand dealers split focus. Exclusive Mercury focus produces deeper expertise that serves our customer base better. Mercury is also the dominant brand in Ontario freshwater so the math works.'
       },
       {
-        question: 'What warranty do new Mercury motors come with?',
-        answer: 'New Mercury motors include a 3-year factory warranty. At Harris Boat Works, we currently include 7 years of total factory-backed coverage (3 standard + 4 bonus years of Gold coverage) with every new purchase. Commercial applications may have different terms.'
+        question: 'Where is HBW located?',
+        answer: 'Gores Landing, Ontario, on the south shore of Rice Lake. Roughly 90 minutes east of Toronto, 30 minutes north of Cobourg.'
       },
       {
-        question: 'Does Harris Boat Works offer financing on Mercury motors?',
-        answer: 'Yes. Mercury Marine financing options are available through Harris Boat Works. Terms depend on purchase amount, credit profile, and current Mercury promotions. Financing often makes sense when bundling a motor with an extended warranty. Call 905-342-2153 or visit in person to discuss current terms, or build a quote first at mercuryrepower.ca/quote/motor-selection.'
+        question: 'What does HBW sell?',
+        answer: 'Mercury outboard motors (the core business). Legend Boats. Used boats. Service and storage. Repower projects. We do not sell saltwater motors, PWCs, jet boats, or non-Mercury outboards as a primary line.'
       },
       {
-        question: 'Can I trade in my old motor at Harris Boat Works?',
-        answer: 'Trade-in possibilities depend on the age, condition, and model of your old motor. A relatively recent Mercury in running condition has trade-in value. Very old motors, non-Mercury brands, or motors in poor condition are typically not accepted as trade-ins. Call 905-342-2153 for an honest assessment of what your old motor is worth.'
+        question: 'Can I bring a non-Mercury motor to HBW for service?',
+        answer: 'Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer and require part-sourcing. [Contact us](/contact) for quotes.'
       },
       {
-        question: 'What warranty do new Mercury motors come with at Harris Boat Works?',
-        answer: 'New Mercury outboards for recreational use come with a 3-year factory warranty with no hour limitations. Extended coverage up to 7 years is available (must be purchased within 1 year). Mercury also offers a 3 + 3 Corrosion Warranty covering the powerhead, driveshaft housing, and gearcase. Harris Boat Works handles all warranty registration and can process warranty claims directly.'
+        question: 'Does HBW offer financing?',
+        answer: 'Yes. Mercury Repower Financing at 7.99% APR for qualified buyers. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).'
       },
       {
-        question: 'How far do customers travel to buy Mercury motors from Harris Boat Works?',
-        answer: 'Harris Boat Works serves customers from across the Kawarthas, Northumberland County, and the Greater Toronto Area — roughly a 2-hour radius around Rice Lake. Many GTA customers come specifically because they cottage on Rice Lake or the Trent-Severn system and want a local dealer who will also service their motor. Buying locally means service is available when needed, without trailering hours away.'
+        question: 'Does HBW offer storage?',
+        answer: 'Yes. Indoor and outdoor storage available through winter. Pricing varies by boat size and storage tier. [Contact us](/contact) for specifics.'
       },
       {
-        question: 'What does Mercury Platinum Dealer status mean?',
-        answer: 'Mercury Platinum Dealer is Mercury Marine\'s highest dealer designation, awarded for meeting strict criteria across sales volume, service capability, technician certification, customer satisfaction, and facility standards. Harris Boat Works holds Platinum status, earned through being a Mercury dealer since 1965, volume of outboards sold and serviced, and investment in technician training. Platinum dealers get priority access to parts and factory support from Mercury.'
+        question: 'Does HBW pick up boats?',
+        answer: 'For Rice Lake and local Kawartha customers, yes. Hauling and full marina services are available. [Contact us](/contact) for hauling quotes.'
       },
       {
-        question: 'Can I buy a Mercury motor from Harris Boat Works if I don\'t live near Rice Lake?',
-        answer: 'Yes. Harris Boat Works sells Mercury motors to customers throughout Ontario. For motor-only purchases, shipping or delivery can be arranged. For complete repower and rigging jobs, the boat needs to come to the shop for installation and lake testing. Build a quote at mercuryrepower.ca/quote/motor-selection — pricing is transparent, no \'contact us for pricing\' runaround.'
+        question: 'Who runs HBW now?',
+        answer: 'Jay Harris, 3rd-generation owner. The Harris family has run the marina continuously since 1947.'
       },
       {
-        question: 'How long does service typically take at Harris Boat Works?',
-        answer: 'Routine service during off-peak months (October through March) can often be turned around in a few days. Spring season is the busiest — book commissioning by early April or expect to wait. Major warranty repairs or diagnostic work take longer depending on parts availability. Emergency repairs are accommodated when possible — call 905-342-2153. Request service online at hbw.wiki/service.'
+        question: 'How can I get in touch with HBW?',
+        answer: 'Phone: (905) 342-2153. Text: (647) 952-2153. Email: info@harrisboatworks.ca. [Contact us](/contact). Visit in person in Gores Landing during business hours.'
       },
       {
-        question: 'Is Harris Boat Works the closest Mercury dealer to Peterborough?',
-        answer: 'Harris Boat Works is located in Gores Landing on Rice Lake, approximately 35 minutes south of Peterborough. As a Mercury Platinum dealer and full-service repower centre, we serve customers from Peterborough, Cobourg, Belleville, Lindsay, and across the Kawarthas. Customers from Peterborough typically find us convenient for both sales and ongoing service — especially if their boat is kept on Rice Lake or the Trent-Severn Waterway. Call 905-342-2153 or visit harrisboatworks.ca.'
-      }
+        question: 'What are HBW\'s hours?',
+        answer: 'Vary seasonally. Generally weekdays year-round, with Saturday hours during the boating season (May through October). [Contact us](/contact) for current hours.\n\n---\n\n**By Jay Harris**\n3rd-Generation Owner, Harris Boat Works\nMercury Platinum Dealer · Rice Lake, Ontario\n[About Jay and Harris Boat Works →](/about)'
+      },
     ]
   },
 
@@ -11781,98 +11933,248 @@ Build a quote on this site in three minutes, or give us a call at (905) 342-2153
 
   {
     slug: 'mercury-vs-yamaha-outboards-ontario',
-    title: 'Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners',
+    title: 'Mercury vs Yamaha Outboards in Ontario (2026)',
     description: 'An honest Mercury vs Yamaha comparison from an Ontario Mercury Platinum dealer. Fuel economy, noise, technology, warranty, and which is right for your boat.',
     image: '/lovable-uploads/hero-mercury-vs-yamaha.png',
     author: 'Harris Boat Works',
-    datePublished: '2026-04-18',
-    dateModified: '2026-04-18',
+    datePublished: '2026-05-04',
+    dateModified: '2026-05-04',
     category: 'Buying Guide',
     readTime: '13 min read',
     keywords: ['mercury vs yamaha outboard', 'mercury vs yamaha Ontario', 'best outboard for Ontario lakes', 'mercury yamaha comparison Canada', 'outboard motor comparison 2026'],
     content: `
-## The Honest Version of This Comparison
+For Ontario freshwater boating, Mercury wins on dealer network, parts availability, and factory-OEM relationships with Canadian boat builders. Yamaha is a strong motor mechanically but has a thinner Canadian dealer network and fewer factory-rigged Yamaha boats. The mechanical reliability difference is small; the practical service difference favors Mercury. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-Harris Boat Works is a Mercury Marine Platinum dealer. We sell Mercury, we service Mercury, and we know Mercury inside out. So yes, there's a bias in our corner.
+## Quick recommendation
 
-That said, we're going to give you a fair comparison — because you deserve one, and because the "buy whatever brand your dealer carries" answer is actually true. A great engine with a mediocre dealer behind it will frustrate you. A slightly less perfect engine backed by someone who picks up the phone is a far better deal.
+Mercury and Yamaha are both excellent outboards mechanically. The decision between them in Ontario comes down to where you boat, how easy it is to get service, and what came with your boat from the factory.
 
-## HP Range: Mercury Has the Top End, Yamaha Wins the Middle
+For most Ontario freshwater customers (Rice Lake, Kawarthas, Lake Simcoe, Lake Ontario), Mercury wins on the practical metrics: dealer network density, parts supply speed, factory-OEM relationships with Canadian aluminum builders, and resale demand. We are not arguing Mercury is mechanically superior. We are arguing the practical reliability picture (mechanical durability + service availability + parts speed) favors Mercury for the typical Ontario freshwater customer.
 
-Mercury's range runs from 2.5hp to 600hp. The Verado V12 600 sits at the top. Yamaha caps at 450hp with the XF450, and their strength is in the 40–250hp range where many Ontario boats live.
+We have been a Mercury dealer since 1965. The bias is real but downstream of the market reality. Mercury is the brand we sell because Mercury is the brand most Ontario freshwater customers want.
 
-For most Ontario boat owners running a 17–22ft aluminum, bowrider, or pontoon with a single outboard in the 60–200hp range, both brands have you fully covered.
+## What changes the answer
 
-## Performance and Power Delivery: Different Feels
+Five things move whether Mercury or Yamaha is right for your specific situation:
 
-Mercury's power delivery is more aggressive — quick to plane, responsive throttle. Yamaha's is smoother and more predictable, with excellent VTS trolling speed control ideal for walleye on Kawartha lakes.
+- **Where you boat.** Ontario freshwater favors Mercury. Coastal saltwater regions sometimes favor Yamaha (especially US Gulf Coast and Pacific Northwest).
+- **What came factory-rigged on your boat.** A Yamaha-rigged factory boat is most cost-effective to keep Yamaha. A Mercury-rigged factory boat is most cost-effective to keep Mercury.
+- **Local dealer access.** A nearby Mercury dealer favors Mercury. A nearby Yamaha dealer favors Yamaha. Travel to dealers is meaningful for service.
+- **Brand-conversion cost during repower.** Switching brands adds $1,500 to $3,000 CAD in rigging. Worth the cost in some cases; not in others.
+- **Resale plan.** In Ontario, Mercury holds resale value slightly stronger than Yamaha. Sell-through is faster on Mercury.
 
-## Fuel Efficiency: Yamaha Has the Edge
+## Mercury advantages in Ontario
 
-In real-world comparisons, Yamaha typically burns 10–15% less fuel at mid-range RPMs. Mercury's Active Trim helps offset this but doesn't close the gap entirely. For the average Ontario cottage boater putting 50–80 hours a year on the motor, the fuel difference is meaningful but not decisive.
+The reasons Mercury dominates the Ontario freshwater market:
 
-## Noise and Vibration: Yamaha Is Quieter
+### 1. Dealer network density
 
-Yamaha runs 3–5 decibels quieter than comparable Mercury models. Mercury's V8 and V10 Verado models are smoother than their inline-four counterparts, but even those don't match Yamaha's NVH numbers.
+Mercury has more dealers across Ontario than Yamaha. That means:
 
-## Technology and Digital Ecosystem: Mercury Leads
+- **Parts availability.** Common service parts are on a Mercury dealer's shelf, not 6 weeks away from a regional warehouse.
+- **Service expertise.** More marine technicians are Mercury-certified or Mercury-experienced in Ontario.
+- **Travel-friendly service.** A Mercury motor gets serviced at any Mercury dealer across Canada and the US.
+- **Resale support.** A used Mercury sells faster in Ontario because more buyers are looking for Mercury.
 
-Mercury SmartCraft provides real-time data, VesselView integration, joystick piloting on Verado models, and Boost software upgrades. Yamaha's Command Link is solid for essentials but the ecosystem depth doesn't match SmartCraft.
+### 2. Factory-OEM relationships
 
-## Warranty: Both Offer 3 Years Standard
+Most Canadian-built aluminum boats (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. The supply chain is Mercury-centric. Buying a Mercury-rigged factory boat is the most cost-effective way into a new aluminum boat.
 
-Both brands offer a standard 3-year limited warranty. Mercury's extended plans (MPP Gold and Platinum) offer broader coverage for electronic components. Yamaha's Y.E.S. plans are considered simpler to transfer at resale.
+### 3. Complete lineup coverage
 
-Harris Boat Works currently includes 7 years of factory-backed warranty (3 standard + 4 Gold coverage) on every new Mercury purchase — that's the best extended coverage deal either brand offers.
+Mercury covers every recreational HP class from 2.5 portable up through 600+ HP Verado. Pro XS for performance. SeaPro for commercial. Avator for electric.
 
-## The Full Comparison Table
+Yamaha has gaps in the lineup at certain HP classes and use cases, particularly in commercial-duty and small-portable applications.
 
-| Category | Mercury | Yamaha |
+### 4. Local Ontario presence
+
+Mercury has been the dominant Ontario freshwater brand for decades. The local ecosystem (dealers, mechanics, parts, used market, customer familiarity) is Mercury-centric. Switching brands means swimming upstream.
+
+## Yamaha strengths to acknowledge
+
+Yamaha is not a bad choice. Mechanically, modern Yamaha outboards are reliable, fuel-efficient, and well-engineered.
+
+Yamaha's strengths:
+
+- **Saltwater corrosion resistance.** Yamaha has historically been strong in saltwater applications. For Ontario freshwater this matters less.
+- **Smooth running and quiet operation.** Yamaha's V6 motors have a refined feel some customers prefer.
+- **Specific factory relationships.** Some boat brands (especially in the bass and offshore segments) have Yamaha factory relationships.
+- **Strong brand reputation in some regions.** Particularly US coastal markets.
+
+If you have a Yamaha-rigged boat that you like and your local Yamaha dealer treats you well, there is no reason to switch.
+
+## Side-by-side: Mercury vs Yamaha for Ontario freshwater
+
+| Factor | Mercury | Yamaha |
 |---|---|---|
-| HP range | 2.5–600hp | 2.5–450hp |
-| Top model | Verado V12 600hp | XF450 |
-| Power delivery | Aggressive, responsive | Smooth, predictable |
-| Fuel efficiency | Competitive | 10–15% better mid-range |
-| Noise level | More mechanical sound | 3–5 dB quieter |
-| Technology | SmartCraft, VesselView, Boost | Command Link, VTS |
-| Standard warranty | 3-year limited | 3-year limited |
-| Extended coverage | Up to 7 years (MPP Gold) | Comparable (Y.E.S.) |
+| Mechanical reliability | Excellent | Excellent |
+| Ontario dealer network density | High | Lower |
+| Factory rigging on Canadian boats | Most common | Less common |
+| Parts availability speed | Faster | Slower |
+| Service expertise availability | Wider | Narrower |
+| Lineup HP coverage | Full (2.5 to 600+) | Strong but with some gaps |
+| Resale value in Ontario | Holds well | Holds, slightly less |
+| Best fit | Ontario freshwater | Coastal saltwater, specific applications |
 
-## Dealer Network: The Real Deciding Factor
+For Mercury pricing in CAD, [build a quote](/quote/motor-selection).
 
-Before you pick a brand based on specs, find out who services each brand closest to where you launch. One honest advantage Mercury has in Ontario: mercuryrepower.ca gives you transparent, real-time pricing without calling anyone.
+## When to switch from Yamaha to Mercury
 
-## The Bottom Line
+Repower-time is the cheapest moment to switch brands. Reasons that justify a switch:
 
-If you're in the Kawarthas or Rice Lake region — Mercury makes sense. Not because Mercury is definitively better, but because you have a Platinum dealer on the water who stocks parts and can give you a real price.
+- **Yamaha dealer access is poor** in your area
+- **You travel boating regions** where Mercury support is much stronger
+- **You plan to sell in 2 to 5 years** and want stronger resale demand
+- **Your existing Yamaha is at end of life** and you have to repower anyway
 
-**See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer).
+Reasons that don't justify a switch:
+
+- **Your Yamaha is running fine** and you have a Yamaha dealer nearby
+- **You like the Yamaha feel** and the boat is rigged for it
+- **Switching costs would not pay back** in your specific situation
+
+We do Yamaha-to-Mercury conversions at HBW. The brand-conversion rigging cost is the same as Evinrude-to-Mercury (about $1,500 to $3,000 CAD over standard rigging). See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide) for the conversion cost picture.
+
+## What HBW checks before recommending a switch
+
+When Yamaha owners come to HBW asking about a Mercury repower, we want to know:
+
+- **Year and HP of the existing Yamaha**
+- **Hours and condition of the motor**
+- **Local Yamaha dealer access and your relationship with them**
+- **Boat make, model, and how often you boat**
+- **Where you boat (sheltered Kawarthas vs travel to other regions)**
+- **Long-term ownership plan**
+- **Budget and financing tolerance**
+
+We will not push the switch on customers whose Yamaha is running fine and whose service relationship works. We recommend the switch when the math actually favors it.
+
+## Common mistakes in the Mercury vs Yamaha decision
+
+We see these every season:
+
+1. **Picking on spec sheet alone.** Brand specs are similar. The decision is about service network and use case, not about peak HP or fuel curve.
+2. **Ignoring local dealer access.** A theoretically better motor 2 hours away is worse in practice than an adequate motor at the local marina.
+3. **Switching for marketing reasons.** Magazine reviews and dealer claims do not pay your service bills. Use case and local support matter.
+4. **Mismatching boat brand and motor brand factory rigging.** A Yamaha-rigged boat that gets a Mercury repower has higher rigging cost than necessary.
+5. **Buying based on what's "best" globally rather than what fits your situation.** Mercury wins in Ontario freshwater. Yamaha wins in some saltwater applications. Honda wins in some small-portable applications. Pick the right tool for your job.
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
-- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer) — why Harris Boat Works is Mercury
-- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
-- [2027 Mercury Outboard Preview: What's New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
+- [Mercury vs Yamaha vs Honda Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), full three-brand comparison
+- [Why Mercury Dominates the Outboard Market](/blog/why-mercury-dominates-outboard-market), the practical case for Mercury
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion cost picture
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
+- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for HBW
 
+## Ready to talk Mercury for your boat?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration including brand-conversion rigging where it applies.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through Mercury vs Yamaha for your specific boat before quoting, [give us a call at (905) 342-2153](tel:9053422153). We will give you the honest math.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Is Mercury better than Yamaha?**
+Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, factory-OEM relationships with Canadian aluminum boat builders, and resale demand. The practical reliability picture favors Mercury for typical Ontario customers.
+
+**Should I switch from Yamaha to Mercury during a repower?**
+Depends on local dealer access, hull condition, and ownership plan. If your Yamaha dealer access is good and your motor is fine, no need to switch. If you're repowering anyway and Mercury support is stronger in your area, switching makes sense.
+
+**How much does it cost to switch from Yamaha to Mercury?**
+The Mercury motor cost plus an extra $1,500 to $3,000 CAD in brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, [build a quote](/quote/motor-selection).
+
+**Is Yamaha more reliable than Mercury?**
+Mechanically, similar. Both brands have demonstrated long service life with proper maintenance. Reliability in real life is mechanical durability plus service availability. The service availability favors Mercury in Ontario.
+
+**Why do most Canadian aluminum boats come Mercury-rigged?**
+Decades of supply chain integration between Mercury and Canadian boat builders (Lund, Crestliner, Princecraft, Lowe). Customers ask for Mercury, factories rig with Mercury, dealer service network is built around Mercury.
+
+**Is Mercury more expensive than Yamaha?**
+Comparable HP at comparable trim. Pricing varies by model, current promotions, and market conditions. The total cost of ownership math (including service, parts, and resale) tends to favor Mercury in Ontario.
+
+**Should I buy a Mercury or Yamaha for Lake Ontario fishing?**
+For Lake Ontario freshwater fishing, Mercury wins on dealer network and resale support. Both brands handle freshwater well. Local dealer access matters most.
+
+**What about Mercury vs Yamaha for saltwater?**
+For US Gulf Coast and some Pacific Northwest saltwater applications, Yamaha is more competitive. Mercury also makes saltwater motors (SeaPro). For Canadian boating, this is rarely a deciding factor.
+
+**Which has better fuel economy, Mercury or Yamaha?**
+Comparable across HP classes. Both brands' modern FourStrokes are fuel-efficient. Prop selection and operating discipline matter much more than brand for fuel economy. See our [fuel efficiency guide](/blog/mercury-outboard-fuel-efficiency-guide).
+
+**Will my Yamaha controls work with a Mercury motor?**
+No. Brand controls and rigging are not compatible. Brand conversion requires new throttle, shift, and harness systems. We handle this at HBW during conversion repowers.
+
+**Does HBW service Yamaha outboards?**
+Some Yamaha service we handle, particularly for HBW customers with Yamaha-rigged boats. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer. [Contact us](/contact) for non-Mercury service quotes.
+
+**What's the most popular outboard in Ontario, Mercury or Yamaha?**
+Mercury, by a significant margin. Mercury is the dominant brand on Ontario freshwater. Yamaha is well-represented but has a smaller market share than Mercury locally.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
     `,
     faqs: [
       {
-        question: 'Is Mercury or Yamaha more reliable?',
-        answer: 'Both are highly reliable. Yamaha has a slight edge in long-term durability data, particularly in saltwater. In freshwater Ontario use, the reliability difference is minor — dealer support quality affects your experience more.'
+        question: 'Is Mercury better than Yamaha?',
+        answer: 'Mechanically, both brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, factory-OEM relationships with Canadian aluminum boat builders, and resale demand. The practical reliability picture favors Mercury for typical Ontario customers.'
       },
       {
-        question: 'Does Yamaha get better gas mileage than Mercury?',
-        answer: 'Yes, in most real-world comparisons. Yamaha typically burns 10–15% less fuel at mid-range RPMs. For most Ontario cottage boaters, the annual fuel cost difference isn\'t dramatic but it\'s real.'
+        question: 'Should I switch from Yamaha to Mercury during a repower?',
+        answer: 'Depends on local dealer access, hull condition, and ownership plan. If your Yamaha dealer access is good and your motor is fine, no need to switch. If you\'re repowering anyway and Mercury support is stronger in your area, switching makes sense.'
       },
       {
-        question: 'Can I get a Mercury outboard quote online in Ontario?',
-        answer: 'Yes. mercuryrepower.ca is a live quote configurator run by Harris Boat Works showing real prices — no phone call required. Yamaha dealers don\'t offer an equivalent tool.'
+        question: 'How much does it cost to switch from Yamaha to Mercury?',
+        answer: 'The Mercury motor cost plus an extra $1,500 to $3,000 CAD in brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing, [build a quote](/quote/motor-selection).'
       },
       {
-        question: 'Should I buy Mercury or Yamaha for Rice Lake?',
-        answer: 'For Rice Lake and the Kawarthas, Mercury is the practical choice — Harris Boat Works is a Platinum dealer on the water with full service capability. You can build a repower quote at mercuryrepower.ca.'
-      }
+        question: 'Is Yamaha more reliable than Mercury?',
+        answer: 'Mechanically, similar. Both brands have demonstrated long service life with proper maintenance. Reliability in real life is mechanical durability plus service availability. The service availability favors Mercury in Ontario.'
+      },
+      {
+        question: 'Why do most Canadian aluminum boats come Mercury-rigged?',
+        answer: 'Decades of supply chain integration between Mercury and Canadian boat builders (Lund, Crestliner, Princecraft, Lowe). Customers ask for Mercury, factories rig with Mercury, dealer service network is built around Mercury.'
+      },
+      {
+        question: 'Is Mercury more expensive than Yamaha?',
+        answer: 'Comparable HP at comparable trim. Pricing varies by model, current promotions, and market conditions. The total cost of ownership math (including service, parts, and resale) tends to favor Mercury in Ontario.'
+      },
+      {
+        question: 'Should I buy a Mercury or Yamaha for Lake Ontario fishing?',
+        answer: 'For Lake Ontario freshwater fishing, Mercury wins on dealer network and resale support. Both brands handle freshwater well. Local dealer access matters most.'
+      },
+      {
+        question: 'What about Mercury vs Yamaha for saltwater?',
+        answer: 'For US Gulf Coast and some Pacific Northwest saltwater applications, Yamaha is more competitive. Mercury also makes saltwater motors (SeaPro). For Canadian boating, this is rarely a deciding factor.'
+      },
+      {
+        question: 'Which has better fuel economy, Mercury or Yamaha?',
+        answer: 'Comparable across HP classes. Both brands\' modern FourStrokes are fuel-efficient. Prop selection and operating discipline matter much more than brand for fuel economy. See our [fuel efficiency guide](/blog/mercury-outboard-fuel-efficiency-guide).'
+      },
+      {
+        question: 'Will my Yamaha controls work with a Mercury motor?',
+        answer: 'No. Brand controls and rigging are not compatible. Brand conversion requires new throttle, shift, and harness systems. We handle this at HBW during conversion repowers.'
+      },
+      {
+        question: 'Does HBW service Yamaha outboards?',
+        answer: 'Some Yamaha service we handle, particularly for HBW customers with Yamaha-rigged boats. Our parts inventory and tooling are Mercury-focused, so non-Mercury service may take longer. [Contact us](/contact) for non-Mercury service quotes.'
+      },
+      {
+        question: 'What\'s the most popular outboard in Ontario, Mercury or Yamaha?',
+        answer: 'Mercury, by a significant margin. Mercury is the dominant brand on Ontario freshwater. Yamaha is well-represented but has a smaller market share than Mercury locally.\n\n---\n\n**By Jay Harris**\n3rd-Generation Owner, Harris Boat Works\nMercury Platinum Dealer · Rice Lake, Ontario\n[About Jay and Harris Boat Works →](/about)'
+      },
     ]
   },
   {
