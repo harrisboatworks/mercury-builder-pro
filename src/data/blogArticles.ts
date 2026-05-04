@@ -6279,7 +6279,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 - Handle weighted boats
 - Power at 18-24 MPH
 
-**Recommended**: Mercury 200-225hp V6 or 250hp Verado
+**Recommended**: Mercury 200-225hp V6 or 250hp Pro XS
 
 #### Wakesurfing (Outboard)
 
@@ -6288,7 +6288,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 - Smooth idle-to-surf transition
 - Outboard-specific considerations
 
-**Recommended**: Mercury 250-300hp Verado (twin configuration ideal)
+**Recommended**: Mercury 250-300hp Pro XS (twin configuration ideal)
 
 ### Motor Recommendations by Boat Size
 
