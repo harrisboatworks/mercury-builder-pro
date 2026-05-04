@@ -34,6 +34,8 @@ export function RebateMatrix({ matrix, highlightHP, compact = false, className }
           return (
             <div
               key={index}
+              data-testid="rebate-matrix-row"
+              data-highlighted={active ? 'true' : 'false'}
               className={cn(
                 'flex items-center justify-between px-3 py-2 rounded-[10px] border transition-colors',
                 active
@@ -41,7 +43,15 @@ export function RebateMatrix({ matrix, highlightHP, compact = false, className }
                   : 'bg-white border-repower-navy-900/10'
               )}
             >
-              <span className="font-medium text-[13px] text-repower-navy-900">
+              <span className="flex items-center gap-2 font-medium text-[13px] text-repower-navy-900">
+                <span
+                  data-testid="rebate-matrix-dot"
+                  className={cn(
+                    'inline-block w-1.5 h-1.5 rounded-full',
+                    active ? 'bg-repower-gold' : 'bg-transparent'
+                  )}
+                  aria-hidden="true"
+                />
                 {formatHPRange(row)}
               </span>
               <span className="font-display font-bold text-[14px] text-repower-mercury-red">
