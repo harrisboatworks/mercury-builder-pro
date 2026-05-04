@@ -6319,7 +6319,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 |-------|-------------|-------|
 | Twin 150hp | Wakesurfing | Surf wake on either side |
 | Twin 175-200hp | Serious surfing | Better wave shaping |
-| 300hp Verado | Single-engine power | Maximum single power |
+| 300hp Pro XS | Single-engine power | Maximum single power |
 
 **Our Pick**: Twin Mercury 175-200hp V6 for wakesurfing
 
