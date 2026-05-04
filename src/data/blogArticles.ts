@@ -47,78 +47,193 @@ export const blogArticles: BlogArticle[] = [
   // ============================================
   {
     slug: 'how-to-choose-right-horsepower-boat',
-    title: 'How to Choose the Right Horsepower for Your Boat',
-    description: 'A complete guide to selecting the perfect HP outboard motor for your boat size, type, and intended use. Learn from 60 years of Mercury dealer expertise.',
+    title: "How to Choose the Right Horsepower for Your Boat (2026 Guide)",
+    description: "The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. The shortcut: aim for 70 to 90% of your maximum rating for typical recreational use. Going lower leaves you underpowered, going to 100% maxes out fuel economy. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
     datePublished: '2024-06-15',
-    dateModified: '2024-12-01',
+    dateModified: '2026-05-04',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['boat motor horsepower', 'how to choose outboard motor', 'mercury motor sizing', 'boat hp guide', 'outboard motor selection'],
-    content: `
-## Understanding Horsepower Requirements
+    content: `# How to Choose the Right Horsepower for Your Boat (2026 Guide)
 
-Choosing the right horsepower for your boat is one of the most important decisions you'll make. Too little power means struggling against wind and waves. Too much power can be dangerous and wasteful. Here's how to get it right.
+The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. The shortcut: aim for 70 to 90% of your maximum rating for typical recreational use. Going lower leaves you underpowered, going to 100% maxes out fuel economy. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).
 
-### Check Your Boat's HP Rating
+## Quick recommendation
 
-Every boat has a maximum horsepower rating on its capacity plate. This is set by Transport Canada and should never be exceeded. However, the maximum isn't always the best choice — it depends on how you'll use your boat.
+If you ignore everything else in this article, remember this: do not buy too small a motor. Underpowering a boat is the most expensive mistake recreational boaters make. We see it every season at HBW. Customer buys the smallest motor they can afford, fights the boat for two seasons, then trades up at full price for what they should have bought the first time. That is paying twice for the same job.
 
-### Match HP to Boat Type
+The right HP for your specific boat is usually one or two classes above the absolute minimum that will move it. The fuel economy gains from going smaller are real but small. The frustration of underpowering is real and not small.
 
-**Fishing Boats (14–16 ft):** 25–60 HP
+## What changes the answer
 
-Perfect for lake fishing, these boats need enough power to reach your spots quickly but don't need speed for watersports.
+Six things move the right HP for your boat:
 
-**Pontoons (16–24 ft):** 40–115 HP
+- **Hull weight and design.** A 16-foot aluminum tin boat needs less HP than a 16-foot fiberglass runabout because aluminum is lighter. Pontoons need more HP than runabouts of the same length because pontoon hulls have more drag.
+- **Intended use.** Solo fishing at 5 mph has totally different HP requirements than family cruising at 30 mph, which is different again from pulling a tube. Same boat, different right answer.
+- **Passenger and gear loading.** A two-person boat needs less HP than a six-person boat. Adding 800 lbs of crew and gear changes the math meaningfully.
+- **Where you launch and run.** Sheltered private dock vs. Bewdley public ramp vs. Lake Ontario open water all change the practical HP minimum. Wind exposure punishes underpowering.
+- **Maximum HP rating.** The capacity plate sets the ceiling. Mercury voids the warranty if we over-power a hull. We will not install a motor above the rated HP.
+- **Long-term ownership plan.** A boat you plan to keep 15 years justifies a bigger motor than a boat you plan to flip in 3 years.
 
-Pontoons need more power due to their hull design. A 20 ft pontoon typically runs best with 60–90 HP.
+## HP class recommendations by boat type
 
-**V-Hull Fishing (16–20 ft):** 75–150 HP
+The honest 2026 picture for typical recreational use on Kawartha and Ontario freshwater. For your specific motor and live pricing, see [/quote/motor-selection](/quote/motor-selection).
 
-Larger fishing boats benefit from higher horsepower for rough water handling and getting to fishing grounds quickly.
+### Aluminum fishing boats (12 to 14 ft)
 
-**Center Console (18–24 ft):** 115–300 HP
+Solo fishing on sheltered water: 9.9 to 15 HP tiller. Drop-in install, no rigging needed. Pure motor cost on the [motor selection page](/quote/motor-selection).
 
-These versatile boats often run twin motors for safety and performance on larger bodies of water.
+Two-person fishing or rougher water: 20 to 25 HP. Still tiller-friendly, still drop-in.
 
-### Consider Your Use Case
+### Aluminum fishing boats (14 to 16 ft)
 
-**Casual cruising:** Mid-range HP is typically sufficient
+Solo or two-person at slow trolling speeds: 25 to 40 HP remote.
 
-**Watersports:** You'll want higher HP for pulling tubes and skiers
+Two to three people who want to plane and run reasonably: 40 to 60 HP. This is the sweet spot for typical 14 to 16 ft aluminum repowers.
 
-**Fishing:** Consider trolling needs — sometimes a smaller kicker motor makes sense
+### Aluminum or fiberglass console boats (16 to 18 ft)
 
-**Commercial use:** Reliability matters more than raw power
+Family use, moderate loading, recreational running: 90 to 115 HP. This is the most common Kawartha repower we do at HBW. The 90 ELPT FourStroke or 115 ELPT FourStroke / Pro XS lands here. [Live pricing here.](/quote/motor-selection)
 
-### The Sweet Spot
+### Pontoons (18 to 20 ft)
 
-For most recreational boaters, we recommend 70–80% of maximum rated horsepower. This provides:
+Cruising and fishing without active water sports: 90 HP FourStroke is plenty for most setups, especially with Command Thrust.
 
-- Excellent fuel efficiency
-- Good performance in various conditions
-- Reduced engine strain
-- Lower operating costs
+Family use including occasional tubing or skiing: 115 HP Command Thrust. The Command Thrust gearcase makes a real difference on pontoon hole shot and load-carrying.
 
-![Infographic showing how to choose the right horsepower for your boat](https://mercuryrepower.ca/lovable-uploads/How_to_Choose_Horsepower_Infographic.png)
+### Pontoons (20 to 24 ft)
 
-### Get Expert Advice
+Cruising and fishing only: 115 HP Command Thrust.
 
-![Customer consulting with Mercury specialist about horsepower selection](https://mercuryrepower.ca/lovable-uploads/Guy_talking_to_salesperson_Mercury.png)
+Active water sports, tubing, skiing, multiple passengers: 150 HP. Above 150 HP starts to be diminishing returns on most pontoons unless you have a tritoon and want speed.
 
-At Harris Boat Works, we've helped Ontario boaters choose the right motor since 1965 — from small aluminum fishing boats on Rice Lake to large pontoons on the Kawarthas. Bring in your boat specs, or tell us about your ideal day on the water, and we'll recommend the right motor for how you actually use it.
+### Runabouts and bowriders (18 to 22 ft)
+
+Recreational use: 150 to 200 HP. The exact answer depends on hull weight (fiberglass vs. aluminum, deep-V vs. modified V) and use case.
+
+### Bass boats (17 to 21 ft)
+
+Tournament-level performance: 200 to 250 HP Pro XS. The Pro XS line is the standard tournament motor.
+
+Recreational bass fishing: 150 HP FourStroke or Pro XS lands here, depending on whether you want the performance step-up.
+
+### Center consoles (22 to 28 ft, freshwater)
+
+Light loading, cruising and fishing: 200 to 250 HP single. 
+
+Heavier loading, more passengers, performance-oriented: 250 to 300 HP Pro XS or twin 150 HP setup.
+
+For Mercury Verado-class applications (offshore center consoles, twin/triple installs at the high end), see our [motor families guide](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). Verado is special-order at HBW.
+
+## What HBW checks before recommending HP
+
+When customers ask "what HP should I get?" we want to know:
+
+- **Boat make, model, year, and length.** Hull weight is the biggest single variable.
+- **Capacity plate HP rating.** That is the legal and warranty-backed ceiling.
+- **What you actually do on the water.** Fishing, family cruising, tubing, multi-purpose. Same hull, different right answer for each.
+- **Typical passenger and gear loading.** Solo or family of six is a different motor.
+- **Where you launch and run.** Sheltered or open water.
+- **How long you plan to keep the boat.** Longer holds favor more HP.
+- **Existing prop and rigging.** Sometimes the existing setup is wrong and a different prop with the same motor solves the problem.
+
+We will not over-power your boat. We will not under-power it on purpose to fit a tighter budget if we know it will leave you frustrated. We will give you the honest answer for your specific situation.
+
+## Common HP mistakes
+
+We see these every season:
+
+1. **Buying too small to save money.** A 9.9 on a 16-foot boat that should have a 25 will leave you fighting wind and tide every day. You will trade up in two seasons at full price. Pay once.
+2. **Buying too big because more is better.** A 250 HP on a 17-foot pontoon that the hull is rated for 150 HP is illegal and unsafe. Mercury voids warranty. The motor outpowers the hull and feels twitchy.
+3. **Buying for one specific use case and ignoring others.** "I just need it for fishing" is fine until your kids want to tube. Plan for the full use case.
+4. **Picking HP without checking prop.** A correctly-sized motor with a wrong prop loses 4 mph and 15% fuel economy. The HP you bought never reaches the water.
+5. **Ignoring loading.** Empty boat numbers are aspirational. Loaded boat numbers are real life.
+
+## When to step up HP and when to stay
+
+Step up to the next HP class when:
+
+- You routinely run with full passenger and gear loading
+- You plan to add active water sports (tubing, skiing) to the use case
+- You launch on bigger water (Lake Ontario, Lake Simcoe, Bay of Quinte)
+- You want to plane quickly to beat afternoon wind
+- You plan to keep the boat 10+ years
+
+Stay at the current HP class when:
+
+- Your typical loading is light (solo or two-person)
+- Your use is consistent (fishing only, cruising only) and not changing
+- You launch on sheltered water (small Kawartha lakes, bays)
+- You are comfortable with current performance
 
 ## Related guides
 
-- [What Size Motor Does My Boat Need? Complete Calculator Guide](/blog/boat-motor-size-calculator-guide) — sizing calculator walkthrough
-- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison) — mid-range Mercury head-to-head
-- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario) — the 115 vs 150 decision
-- [Mercury 150-200hp V6: Performance Made Practical](/blog/mercury-150-200hp-v6-performance) — V6 150–200 HP performance
-- [Mercury V8 Outboards: Comparing the 200-300HP Powerhouses](/blog/mercury-v8-outboard-comparison) — V8 Mercury options compared
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), specific to mid-range FourStroke choices
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the FourStroke-to-Pro XS step-up question
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits which use case
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), the often-overlooked variable that changes performance
+- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), how HP, prop, and trim interact
 
-    `,
+## Ready to pick your motor?
+
+Build a quote on the [motor selection page](/quote/motor-selection) in three minutes. Live Mercury pricing across every HP class. The system asks for your boat info and use case and recommends appropriate motors.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through HP for your specific boat before you build, [give us a call at (905) 342-2153](tel:9053422153) or [send us an email](/contact). We do this for our customers every year. The honest answer is sometimes "you have the right motor already" and we will tell you that too.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**How do I choose the right horsepower for my boat?**
+Look at three things: hull weight and length, intended use (fishing vs cruising vs tubing), and the maximum HP on the capacity plate. Aim for 70 to 90% of the rated maximum for typical recreational use. Going below that often leaves you underpowered. We will help match a motor to your specific boat at [HBW](/quote/motor-selection).
+
+**What HP do I need for a 16-foot aluminum fishing boat?**
+For solo or two-person trolling, 25 to 40 HP. For three or more passengers who want to plane and run reasonably, 40 to 60 HP. Most 16 ft aluminum fishing boats land in the 40 to 60 HP range for typical Kawartha use.
+
+**What HP do I need for an 18-foot pontoon?**
+For cruising and fishing without water sports, 90 HP FourStroke is plenty. For family use with occasional tubing or skiing, 115 HP Command Thrust. Command Thrust matters on pontoons because the gearcase is purpose-built for the load.
+
+**What HP do I need for a 20-foot pontoon?**
+For cruising and fishing, 115 HP Command Thrust. For active water sports, tubing, or skiing with multiple passengers, 150 HP. Above 150 HP starts to be diminishing returns unless you have a tritoon.
+
+**What HP do I need for a 22-foot pontoon?**
+For cruising, 115 to 150 HP. For tubing and skiing with full family loading, 150 to 200 HP. Tritoons can take more HP and feel a meaningful difference; two-log pontoons hit a drag wall above 150 HP.
+
+**What HP do I need for a bass boat?**
+For tournament-level performance, 200 to 250 HP Pro XS. For recreational bass fishing, 150 to 200 HP FourStroke or Pro XS. The Pro XS line is the standard for tournament fishing.
+
+**Can I put a bigger motor than the capacity plate says?**
+No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty if we install a motor above the rated maximum. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
+
+**Can I put a smaller motor than recommended?**
+Yes, but for most recreational boaters that is the wrong call. Underpowering means you fight the boat against wind and load. Most customers who buy smaller than recommended trade up within 2 to 3 seasons.
+
+**Does prop selection affect the HP I need?**
+Yes. A wrong prop can cost you 4 mph and 15% fuel economy on the same motor. Sometimes the right answer is a different prop with the existing motor, not a bigger motor. We test props on the water during the sea-trial of every repower.
+
+**What is Mercury Command Thrust and when do I need it?**
+Command Thrust is a Mercury gearcase option (not a separate motor family) available on FourStroke 115 HP and up. It uses a larger gearcase, larger prop, and torque-tuned gear ratios designed for heavy boats (pontoons, work boats, heavy fishing rigs). On pontoons specifically, Command Thrust is usually the right call.
+
+**Should I get a 90 HP or a 115 HP for my pontoon?**
+For a 18 to 20 ft two-log pontoon doing cruising and fishing, 90 HP is plenty. For a 20 to 22 ft pontoon, especially a tritoon, or anything with active water sports in mind, jump to 115 HP Command Thrust. The price difference is meaningful but the capability difference is bigger.
+
+**How does loading affect HP requirements?**
+A two-person boat needs much less HP than a six-person boat. Adding 800 lbs of crew, gear, and a cooler turns marginal performance into stranded performance. Plan for your full use case loading, not your empty-boat numbers.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)`,
     faqs: [
       {
         question: 'What happens if I choose too little horsepower?',
@@ -168,82 +283,213 @@ At Harris Boat Works, we've helped Ontario boaters choose the right motor since 
   },
   {
     slug: 'mercury-motor-maintenance-seasonal-tips',
-    title: 'Mercury Motor Maintenance: Seasonal Care Tips',
-    description: 'Essential maintenance tips to keep your Mercury outboard running smoothly. Learn spring startup, mid-season checks, and winterization from certified technicians.',
+    title: "Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)",
+    description: "Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service) or call (905) 342-2153.",
     image: '/lovable-uploads/Mercury_Maintenance_Schedule.png',
     author: 'Harris Boat Works',
     datePublished: '2024-05-20',
-    dateModified: '2024-11-15',
+    dateModified: '2026-05-04',
     category: 'Maintenance',
     readTime: '10 min read',
     keywords: ['mercury motor maintenance', 'outboard winterization', 'boat motor service', 'mercury service schedule', 'outboard maintenance tips'],
-    content: `
-## Year-Round Mercury Motor Care
+    content: `# Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
 
-Proper maintenance is the key to long engine life and reliable performance. Here's a seasonal guide to keeping your Mercury running like new.
+Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service) or call (905) 342-2153.
 
-![Mercury Marine Seasonal Performance and Maintenance Guide](/images/blog/mercury-seasonal-maintenance-guide.png)
+## Quick recommendation
 
-### Spring Startup Checklist
+Most Mercury motors fail because of skipped maintenance, not because the motor itself is bad. Modern Mercurys are built to last 1,500 to 2,000+ hours when serviced on schedule. They die at half that mileage when service gets skipped two or three years running.
 
-Before your first trip:
+The annual maintenance budget for a typical Mercury repower is small compared to the cost of replacing a destroyed motor. The customers who skip service to save money end up paying more in spring repairs, mid-season tow bills, and shortened motor life.
 
-1. **Check the lower unit oil** - Look for milky color indicating water intrusion
-2. **Inspect the propeller** - Look for dings, bends, or fishing line wrapped around the shaft
-3. **Replace fuel filters** - Especially if the boat sat all winter
-4. **Check battery connections** - Clean corrosion with baking soda solution
-5. **Inspect fuel lines** - Look for cracks, especially at connections
-6. **Test the kill switch** - Critical safety equipment
+We have been servicing Mercury motors at HBW since 1965. The mistakes we see are the same every year. Stick to the seasonal cycle below and your Mercury will outlast the rest of the boat.
 
-### Mid-Season Maintenance
+## What changes the maintenance picture
 
-Every 50-100 hours or monthly during heavy use:
+Five things move how often and how aggressively you should service:
 
-- **Check oil level** (4-stroke motors)
-- **Inspect spark plugs** - Look for fouling or wear
-- **Clean the fuel/water separator**
-- **Lubricate all grease fittings**
-- **Check steering cable play**
-- **Inspect sacrificial anodes**
+- **Hours of use per year.** A motor running 50 hours a season needs different service than a motor running 200 hours a season. More hours means earlier service intervals.
+- **Operating environment.** Sheltered Rice Lake fishing is gentle on a motor. Lake Ontario salmon fishing in 4-foot chop is hard. Saltwater is harder still (most Mercury motors in Canada do not see saltwater regularly).
+- **Storage conditions.** Indoor heated storage is gentlest. Outdoor uncovered with snow load is hardest. Affects what you do at winterization and spring commissioning.
+- **Motor age.** Newer motors under warranty get a different service cadence than older motors. Modern FourStrokes (post-2010) are more service-tolerant than 2-strokes from the 1990s.
+- **Fuel quality.** Ethanol-blended pump gas is the standard fuel in Ontario and is fine for modern motors as long as you do not let it sit untreated. Old gas in old motors is the leading cause of fuel system problems we see at HBW.
 
-### Fall Winterization
+## The seasonal cycle
 
-Proper winterization prevents 90% of spring problems:
+### Spring commissioning (April to early May)
 
-1. **Stabilize the fuel** - Use Mercury Quickstor or similar
-2. **Fog the engine** - Protects internal components
-3. **Change lower unit oil** - Don't let old oil sit all winter
-4. **Disconnect battery** - Store in cool, dry place
-5. **Store motor upright** - Prevents water from pooling in lower unit
+After winter storage, the motor needs to be brought back to operational state before the boating season starts.
 
-### Professional Service Schedule
+Spring commissioning at HBW includes:
+- Refill gearcase with fresh lube (if drained for winter)
+- Battery reinstall and load test
+- Fuel system check (replace fuel filter if due)
+- Cooling system flush
+- Spark plug inspection or replacement
+- Anode inspection
+- Visual inspection of harness, controls, prop, hull
+- Test run on muffs or in water
+- Trailer prep (bearings, tires, lights)
 
-**Annual Service** (100 hours or yearly):
-- Full inspection
-- Gear oil change
-- Spark plug replacement
-- Thermostat check
-- Water pump inspection
+Spring service times start filling up in March. The customers who book in February or early March get their boats ready for May 1 launch with no rush. The customers who book in late April get their boats ready in late May or early June, after the rush. Plan ahead.
 
-**Major Service** (300 hours or every 3 years):
-- Water pump impeller replacement
-- Comprehensive inspection
-- All fluids changed
+[Spring outboard commissioning checklist](/blog/spring-outboard-commissioning-checklist) walks through this in more detail.
 
-### Trust the Experts
+### Summer mid-season service (mid-July if running heavy hours)
 
-At Harris Boat Works, our Mercury-certified technicians handle everything from basic maintenance to major repairs. We've been servicing Mercury motors since 1965 and know these engines inside and out.
+Recreational boaters running 50 to 100 hours a season usually do not need a mid-season service. The motor goes from spring to fall with no intervention.
 
-**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist).
+Boaters running 200+ hours a season should consider a mid-season check. Quick visual, oil top-up if needed, prop check, anode check. Catches small problems before they become big ones in August when the shop is busiest.
+
+### Fall winterization (October to early November)
+
+The single most important maintenance event of the year. Skipping winterization is the leading cause of Mercury motor failures we see in spring.
+
+Winterization at HBW includes:
+- Fuel stabilization
+- Fogging the engine
+- Gearcase drain and refill with fresh lube
+- Cooling system clear-out
+- Water-pump impeller inspection
+- Anode replacement if depleted
+- Spark plug check or replacement
+- Lubrication of cables and pivot points
+- Battery service
+
+Some boaters DIY winterization, which is fine for confident owners on smaller motors. The [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) walks through the procedure. For bigger motors or owners who want it done right without doing it themselves, [request service at HBW](https://hbw.wiki/service).
+
+For pricing context, see the [boat winterization cost guide](/blog/boat-winterization-cost-ontario-2026).
+
+### Winter storage (November to March)
+
+If winterization is done correctly, the motor mostly takes care of itself over winter. A few things to do or avoid:
+
+- Battery: trickle charge once a month if removed and stored indoors
+- Storage cover: snow load can damage seats, electronics, and canvas
+- Indoor temperature: heated indoor is best, unheated indoor is fine, outdoor is hardest on the motor
+- Mid-winter check: a 5-minute visual once a month catches mouse intrusion, cover damage, or other issues before spring
+
+We offer indoor and outdoor storage at HBW. For pricing, [contact us](/contact).
+
+## Common maintenance mistakes
+
+We see these every year:
+
+1. **Skipping winterization.** The single biggest mistake. Costs: cracked powerhead block ($motor replacement), damaged gearcase seals ($1,500 to $4,500 lower unit replacement), fuel system gum-up ($200 to $800 spring repair).
+
+2. **Ignoring the impeller.** Water-pump impellers wear out at predictable intervals (typically every 2 to 3 years for recreational use). A failed impeller in mid-July overheats the motor and can cause cylinder head damage. Inspect and replace on schedule.
+
+3. **Letting old gas sit.** Pump gas with ethanol breaks down over months, especially without stabilizer. Old gas gums up carburetors and injectors. Run tanks down or stabilize.
+
+4. **Skipping anodes.** Sacrificial anodes (zincs) protect the motor from electrolytic corrosion. They wear down. Replace at 30% depletion or the motor metal becomes the next sacrifice.
+
+5. **Wrong oil for FourStroke motors.** Modern Mercury FourStrokes need full-synthetic Mercury 25W-50 oil, not generic motor oil or 2-stroke pre-mix.
+
+6. **Running on dead batteries.** A dying battery makes the starter struggle, which over time burns out the starter motor or wears the flywheel. Replace batteries every 4 to 6 years on schedule.
+
+7. **Ignoring the prop.** A nicked or bent prop costs you fuel economy and stresses the motor. We inspect and recommend prop replacement when needed during winterization.
+
+## What HBW checks at every service visit
+
+Even a basic spring or fall service includes:
+- Visual inspection of motor cowl, lower unit, and prop
+- Oil and filter check (FourStroke)
+- Spark plug inspection
+- Anode inspection
+- Steering, throttle, and shift cable smoothness
+- Battery condition
+- Hose and connection condition
+- Fuel filter condition
+
+We log everything. The service records travel with the motor and matter for warranty support and resale value.
+
+## Service intervals at a glance
+
+For typical recreational use (50 to 150 hours per season) on a modern FourStroke:
+
+| Service item | Interval |
+|---|---|
+| Oil and filter change | Every 100 hours or annually |
+| Spark plugs | Every 200 hours or every 2 years |
+| Water-pump impeller | Every 200 hours or every 3 years |
+| Gearcase lube | Annually (during winterization) |
+| Anodes | Inspect annually, replace at 30% depletion |
+| Fuel filter | Every 100 hours or annually |
+| Trim and tilt fluid | Inspect annually, top off as needed |
+| Steering grease | Annually |
+| Battery replacement | Every 4 to 6 years |
+| Prop inspection | Every service visit, replace as needed |
+
+For motors running heavy hours (200+ per season), shorten the calendar intervals proportionally. For commercial-duty SeaPro motors, follow Mercury's heavy-duty service schedule.
+
+For exact intervals on your specific motor model, the Mercury owner's manual is the authoritative source. We follow Mercury's published schedules at HBW.
 
 ## Related guides
 
-- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) — the full Mercury service schedule
-- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist) — spring commissioning checklist
-- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips) — off-season storage tips
-- [Complete Fall Winterization Guide for Mercury Outboards](/blog/fall-winterization-guide-complete) — complete fall winterization
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), what to do at spring service
+- [How Much Does Boat Winterization Cost?](/blog/boat-winterization-cost-ontario-2026), winterization pricing and what's included
+- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide), step-by-step DIY walkthrough
+- [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), first-year service for repowered or new motors
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up diagnostics
 
-    `,
+## Ready to book service?
+
+Spring service slots fill up in March and April. Fall winterization slots fill in October. Booking early gets you the easier appointment slots and your boat is ready when you want it.
+
+[**Request Service**](https://hbw.wiki/service)
+
+If you want to talk through what your specific motor needs, [give us a call at (905) 342-2153](tel:9053422153). We can pull up your service history (if we have serviced the motor before) and give you a real recommendation.
+
+---
+
+_Service pricing varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**How often should I service my Mercury outboard?**
+Annually at minimum. Spring commissioning to bring the motor back from winter storage, and fall winterization to put it away. Boaters running heavy hours (200+ per season) should add a mid-season check in July. Most service intervals are tied to hours, not just calendar time, so heavy-use boaters need more frequent attention.
+
+**What is the most important Mercury maintenance task?**
+Winterization. Skipping winterization is the single most common cause of major motor failure we see at HBW. Done right, winterization protects against freeze damage, fuel system gum-up, and corrosion over the storage period. Skipped or done wrong, it can destroy a motor in one winter.
+
+**How much does annual Mercury maintenance cost?**
+Cost varies by motor size, boat type, and what's included. A basic spring commissioning plus fall winterization is the smallest bill. Bundles that include water-pump impeller replacement, anode replacement, and other wear items run more. For your specific quote, [contact HBW](/contact).
+
+**Can I do my own Mercury motor maintenance?**
+Some of it. DIY makes sense for confident owners on smaller motors for tasks like fluid checks, oil changes, prop inspection, and basic visual maintenance. Tasks like water-pump impeller replacement, fuel system service on EFI motors, and anything involving lower-unit disassembly should be left to a Mercury dealer. The [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) covers winterization specifically.
+
+**How long does a Mercury outboard last with proper maintenance?**
+Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours before major service is required. For a recreational boater running 50 to 150 hours a season, that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily.
+
+**What kind of oil does my Mercury motor use?**
+Modern Mercury FourStrokes use full-synthetic Mercury 25W-50 four-stroke oil. Older motors and 2-strokes use different oil specifications. Check your owner's manual or [contact HBW](/contact) for the specific oil for your motor.
+
+**Should I winterize even if my boat is stored indoors?**
+Yes. Even in heated indoor storage, fuel breaks down and corrosion accumulates without the protective layer fogging oil provides. The cooling system drain step is less critical with heated storage but the other winterization steps still apply.
+
+**When should I replace my water-pump impeller?**
+Every 200 hours of operation or every 3 years, whichever comes first. We inspect impellers during fall winterization. A failed impeller can overheat the motor and damage the cylinder head, which is much more expensive than the preventive impeller replacement.
+
+**How often should I replace anodes?**
+Inspect annually. Replace when 30% or more depleted. A fully-depleted anode means the motor's metal becomes the next sacrifice, which leads to corrosion damage that is far more expensive to fix than a $50 anode.
+
+**Does Mercury warranty cover service work?**
+Mercury warranty covers manufacturing defects and material failures, not normal wear-item replacement (oil changes, plugs, anodes, impellers). Some service work needed to address a warranty issue is covered. Check with HBW or Mercury directly for your specific warranty coverage.
+
+**What is the cost of skipping maintenance?**
+Highly variable. Skipped winterization can cost a destroyed motor (multiple thousands). Skipped impeller replacement can cost a damaged cylinder head ($1,000 to $3,000 repair). Skipped fuel system service can cost spring start-up problems ($200 to $800). Skipped anode replacement can cost corrosion damage ($500 to $2,000). The math always favors regular service.
+
+**Can I bring a non-Mercury motor to HBW for service?**
+Yes, but our parts inventory and tooling are Mercury-focused. Non-Mercury service may take longer and require part-sourcing. For Mercury motors we are the most efficient. [Contact us](/contact) for non-Mercury service quotes.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)`,
     howToSteps: [
       {
         name: 'Spring Startup Checklist',
@@ -1144,110 +1390,160 @@ We're boaters ourselves. We fish these lakes, we know these conditions, and we s
   // Week 2: January 12, 2026
   {
     slug: 'best-mercury-outboard-aluminum-fishing-boats',
-    title: 'Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)',
-    description: 'Find the perfect Mercury outboard for your aluminum fishing boat. Compare the best motors from 25HP to 150HP for Lund, Tracker, Crestliner, and more.',
+    title: "Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)",
+    description: "The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing. Remote-control 40 to 60 HP suits 14 to 16 ft consoles. The 90 to 115 HP class is the sweet spot for 16 to 19 ft fishing boats with two or three anglers and gear. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/aluminum-fishing-hero-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-12',
-    dateModified: '2026-01-12',
+    dateModified: '2026-05-04',
     publishDate: '2026-01-12',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury for aluminum boat', 'best outboard aluminum fishing boat', 'mercury 60hp fishing', 'lund boat motor', 'tracker boat outboard'],
-    content: `
-## Choosing the Right Mercury for Your Aluminum Fishing Boat
+    content: `# Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)
 
-Aluminum fishing boats are the workhorses of Ontario waters—practical, durable, and perfectly matched to Mercury outboards. Here's how to choose the right motor for your tinny.
+The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing. Remote-control 40 to 60 HP suits 14 to 16 ft consoles. The 90 to 115 HP class is the sweet spot for 16 to 19 ft fishing boats with two or three anglers and gear. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-### Boat Size Matters
+## Quick recommendation
 
-**14-16 Foot Boats** (Lund Rebel, Tracker Guide V-14, etc.)
-- Recommended: **Mercury 25-40HP FourStroke**
-- Sweet spot: **Mercury 40HP** for most applications
-- Maximum transom capacity usually 40-60HP
+For most aluminum fishing boats on Rice Lake and Kawartha lakes, the Mercury FourStroke is the right family. The 9.9 ProKicker is the standard kicker motor. The 60 to 115 HP FourStroke range covers most main-motor needs. Pro XS makes sense if you want tournament-level acceleration on a bass-style hull.
 
-**16-18 Foot Boats** (Lund 1675, Crestliner 1750, etc.)
-- Recommended: **Mercury 50-90HP FourStroke**
-- Sweet spot: **Mercury 75HP** balances power and efficiency
-- Maximum transom capacity usually 75-115HP
+We rig aluminum fishing boats every year at HBW. The mistakes we see are consistent: customers underbuy on HP, ignore the kicker, run the wrong prop, or skip Command Thrust on heavier hulls. Fix any one of those and the boat performs better than the spec sheet would suggest.
 
-**18-20 Foot Boats** (Lund 1875, Tracker Targa V-19, etc.)
-- Recommended: **Mercury 90-150HP FourStroke**
-- Sweet spot: **Mercury 115HP** handles wind and load
-- Maximum transom capacity usually 115-200HP
+## What changes the answer
 
-### Top Picks by Use Case
+Five things move the right Mercury for your aluminum fishing boat:
 
-**Best for Inland Lakes (Light Use)**
-Mercury 40HP EFI FourStroke
-- Perfect for 14-16ft boats
-- Excellent fuel economy
-- Simple, reliable operation
-- Great for trolling speed range
+- **Hull length and weight.** A 14 ft tin boat needs less HP than a 19 ft console. Aluminum is lighter than fiberglass at the same length, so HP requirements are lower than equivalent fiberglass boats.
+- **Console or tiller.** Tiller boats up to 20 HP are drop-in installs (no rigging). Console boats need remote-control motors with rigging, controls, and prop.
+- **Solo or family.** Solo angler at trolling speed has different HP needs than a family with three or four people who want to plane and run between spots.
+- **Where you fish.** Sheltered Rice Lake bays vs. Lake Ontario open water vs. the Trent-Severn system. Bigger water needs more HP for safety and speed.
+- **Whether you have a kicker.** A 9.9 ProKicker on a fishing boat is the standard for trolling speed control. Without one, you compromise either main-motor performance or trolling control.
 
-**Best for Multi-Species (Moderate Use)**
-Mercury 75HP EFI FourStroke
-- Ideal for 16-18ft boats
-- Handles rough water confidently
-- Power for trolling to hole-shot
-- Tiller or remote options
+## Best Mercury matches by aluminum boat size
 
-**Best for Big Water / Heavy Load**
-Mercury 115HP EFI FourStroke
-- Best for 18ft+ boats
-- Command Thrust for shallow running
-- Power to handle 3-4 anglers with gear
-- Excellent resale value
+### 12 to 14 ft tin boat (solo or two-person, sheltered water)
 
-### FourStroke vs Pro XS for Fishing
+**Best fit:** 9.9 to 15 HP tiller (Mercury 9.9 MH, 15 MH, or 15 EH for electric start). All drop-in, no rigging.
 
-**Mercury FourStroke**: Choose for:
-- Fuel efficiency priority
-- Quieter trolling
-- Lower maintenance costs
-- Recreational fishing focus
+For pure solo fishing on small lakes, a 9.9 MH is plenty. Step up to 15 if you want a little more cruise speed or you have a heavier hull. Both motors are tiller-only, just-the-motor purchases. See live pricing on the [motor selection page](/quote/motor-selection).
 
-**Mercury Pro XS**: Choose for:
-- Tournament fishing
-- Maximum hole-shot
-- Lightweight is important
-- Performance priority
+### 14 to 16 ft tiller or console aluminum
 
-### Features Fishermen Love
+**Best fit:** 25 to 60 HP. Tiller versions (25 EFI, 30 EFI, 40 EH) for boats without consoles. Remote versions (40 ELHPT, 50 ELHPT, 60 ELHPT) for console boats.
 
-**Power Trim & Tilt**
-Essential for shallow running and beaching. Standard on most motors 40HP and up.
+The 60 HP FourStroke is a popular sweet-spot motor for 16 ft aluminum consoles. Plenty of power for two anglers and gear, planes reliably with three people, fuel efficient, and the install fits inside most repower budgets. The all-in repower for this class lands $11,000 to $15,000 CAD. [Live pricing here.](/quote/motor-selection)
 
-**Tiller Control Option**
-Available on motors from 2.5HP up to 115HP via the Mercury Advanced Tiller system. Preferred by many serious anglers for direct control.
+### 16 to 18 ft console aluminum (the most common Kawartha repower)
 
-**Command Thrust Lower Unit**
-Available from 9.9HP (ProKicker) through 115HP. Larger gearcase for more thrust and shallow-water capability.
+**Best fit:** 90 to 115 HP FourStroke. The Mercury 90 EXLPT and 115 EXLPT FourStroke are the most common motors we install on aluminum console boats.
 
-### Our Top Aluminum Boat Recommendation
+For tournament-style fishing on bigger water, step up to 115 Pro XS. The Pro XS earns the price difference if you actually run it hard. For typical recreational fishing, 90 to 115 FourStroke is plenty.
 
-For the typical Ontario angler fishing inland lakes with a 16ft aluminum boat:
+### 18 to 20 ft aluminum (deep V, heavier hull)
 
-**Mercury 60HP EFI Command Thrust FourStroke**
-- Perfect power-to-weight ratio
-- Command Thrust gearcase for shallow running
-- Excellent fuel economy
-- Available in tiller configuration
-- Price point that makes sense
+**Best fit:** 115 to 150 HP. Larger aluminum fishing boats with deep-V hulls (think Lund Rebel XS or Crestliner Tournament series) need real HP to plane reliably. 115 Pro XS or 150 FourStroke or Pro XS are typical.
 
-**[Build Your Quote on a Mercury Outboard](/quote)**
+## What HBW checks before recommending a motor
 
-**See also:** [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) and [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide).
+When customers come to HBW with an aluminum fishing boat for repower or new motor, we want to know:
+
+- Boat make, model, year, and length
+- Maximum HP rating on the capacity plate
+- Number of anglers typical
+- Sheltered vs. open water use
+- Trolling vs. cruising emphasis
+- Whether they want a kicker
+- Existing electronics and rigging condition
+- Budget and financing tolerance
+
+Then we recommend a setup. Most often it is FourStroke 60 to 115 HP plus a 9.9 ProKicker, with a properly sized prop for the specific hull. The right answer is rarely the smallest motor that will fit.
+
+## The kicker question
+
+For serious fishing on Rice Lake or Kawartha lakes, a kicker motor is not optional. The reasons:
+
+- **Trolling speed control.** A main motor at idle is often too fast for walleye trolling. The 9.9 ProKicker idles down to true trolling speed.
+- **Backup propulsion.** A failed main motor on the water is a tow back to the dock. A kicker gets you home.
+- **Fuel economy at slow speeds.** A 90 HP main motor at 1.5 mph is wasteful. A 9.9 at the same speed sips fuel.
+- **Stealth.** Quieter motor in shallow water.
+
+The Mercury 9.9 ProKicker is the standard. Long shaft, heavy-thrust prop, integrated tiller mount or remote-control variant. We rig kickers as part of most fishing boat repower projects. See our [Mercury ProKicker Rice Lake fishing guide](/blog/mercury-prokicker-rice-lake-fishing-guide) for details.
+
+## Common mistakes on aluminum fishing boat repowers
+
+1. **Underbuying HP.** A 25 on a 16 ft aluminum that should have a 40 or 60 leaves you fighting the wind.
+2. **Skipping the kicker.** Customers think they can save $4,000 on the kicker and use the main motor for trolling. Two seasons later they wish they had bought the kicker. The customers who buy a kicker rarely regret it.
+3. **Wrong prop.** A 4-blade aluminum on a boat that wants a 3-blade for top end, or vice versa. We test props on the water during sea-trial of every repower.
+4. **Skipping Command Thrust on heavier hulls.** On 18 to 20 ft deep-V aluminum, Command Thrust gives meaningful hole shot improvement.
+5. **Buying Pro XS when FourStroke would work.** Pro XS earns the cost on tournament hulls. On recreational fishing boats, FourStroke is the better value.
 
 ## Related guides
 
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
-- [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
-- [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts) — family-runabout recommendations
-- [Best Mercury for Ski and Wakeboard Boats](/blog/best-mercury-for-ski-wakeboard-boats) — ski and wakeboard motor picks
+- [Mercury ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), the standard kicker setup
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), if you also have a pontoon
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), specific to mid-range FourStroke
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits your use
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop matters more than most owners realize
 
-    `,
+## Ready to find your motor?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD, full configuration including main motor, kicker (if needed), rigging, prop, and install.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific aluminum fishing boat, [give us a call at (905) 342-2153](tel:9053422153). We rig fishing boats every week.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**What is the best Mercury outboard for a 16-foot aluminum fishing boat?**
+For 16 ft aluminum console boats with two or three people, a 60 to 90 HP Mercury FourStroke is the typical sweet spot. The 60 EFI handles solo and two-person fishing well. The 90 EXLPT FourStroke gives you more headroom for a family with gear. Both are popular Kawartha repower choices.
+
+**What is the best Mercury for a 14-foot aluminum tiller boat?**
+A 15 to 25 HP tiller motor. Mercury 15 MH, 15 EH (electric start), or 25 EFI. All are drop-in tiller installs with no rigging. Choose based on whether you want manual or electric start and how heavily loaded the boat typically is.
+
+**Should I get FourStroke or Pro XS for fishing?**
+For tournament fishing or anyone who wants the fastest acceleration to beat morning wind to a fishing spot, Pro XS earns its price. For recreational fishing (trolling, drifting, working structure), FourStroke at the same HP is the better value and saves about $1,500 on the motor.
+
+**Do I need a kicker motor for fishing?**
+For serious fishing on Rice Lake or Kawartha lakes, a kicker is the standard answer. The 9.9 ProKicker provides trolling speed control, backup propulsion, fuel-efficient slow-speed running, and stealth in shallow water. Most fishing boat repowers we do at HBW include a kicker.
+
+**What HP do I need for a 16-foot aluminum fishing boat?**
+For solo trolling, 25 to 40 HP is plenty. For two or three anglers who want to plane and run between spots, 40 to 60 HP. Add a 9.9 ProKicker for trolling speed control. The 60 HP FourStroke plus 9.9 ProKicker is the classic Rice Lake setup.
+
+**What is the best Mercury for a 19-foot aluminum console fishing boat?**
+For typical recreational use, 90 to 115 HP FourStroke. For tournament-level performance or bigger-water use (Lake Ontario, Bay of Quinte), 115 to 150 Pro XS. Pair with a 9.9 ProKicker for trolling.
+
+**Should I get Command Thrust on a fishing boat?**
+On heavier deep-V aluminum hulls (18+ ft), Command Thrust gives meaningful hole shot and load-carrying improvement. On lighter standard-V hulls under 18 ft, the standard gearcase is fine. We assess this per boat.
+
+**Is Mercury 9.9 ProKicker worth the price over a regular 9.9?**
+Yes for fishing applications. The ProKicker has a high-thrust gearcase, larger prop, longer shaft for big transoms, and integrated tiller mount. The standard 9.9 is for general use. ProKicker is the purpose-built fishing kicker.
+
+**Can I use a kicker as my main motor?**
+On very small aluminum boats (12 to 14 ft), yes. A 9.9 or 15 can be the only motor on a small fishing boat. On 16 ft and bigger, you need a real main motor and the kicker is the auxiliary.
+
+**What is the cost to repower my aluminum fishing boat?**
+Depends on HP. A 25 to 60 HP repower lands $11,000 to $15,000 CAD all-in. A 90 to 115 HP repower lands $17,000 to $22,000 CAD. Add a kicker if needed. See our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for full HP class ranges and [build a quote](/quote/motor-selection) for your specific boat.
+
+**Should I keep my old controls and rigging on a Mercury repower?**
+Mercury-to-Mercury usually keeps existing controls if they are post-2010 and in good condition. Older mechanical Mercury controls often need replacement. Brand conversions (Evinrude, Yamaha to Mercury) need new everything. We assess during the hull walk-around.
+
+**What is the most popular Mercury for fishing boats?**
+The 9.9 ProKicker is the most-installed Mercury kicker in Canada. The 90 EXLPT and 115 EXLPT FourStroke are the most common main motors on 16 to 18 ft aluminum console boats. The combination is the standard Kawartha fishing setup.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)`,
     faqs: [
       {
         question: 'What\'s the minimum HP I should get for my aluminum boat?',
@@ -1798,107 +2094,163 @@ Repower during winter for:
   // Week 6: February 9, 2026
   {
     slug: 'best-mercury-outboard-rice-lake-fishing',
-    title: 'Best Mercury Outboard for Rice Lake Fishing: Local Expert\'s Guide',
-    description: 'Discover the ideal Mercury outboard for Rice Lake fishing. Local recommendations for walleye, bass, and musky boats from 14-20ft on Kawartha waters.',
+    title: "Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)",
+    description: "The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-09',
-    dateModified: '2026-02-09',
+    dateModified: '2026-05-04',
     publishDate: '2026-02-09',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['rice lake fishing boat motor', 'kawartha lakes outboard', 'best motor rice lake', 'walleye boat motor', 'mercury fishing motor ontario'],
-    content: `
-## Mercury Motors for Rice Lake and the Kawarthas
+    content: `# Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)
 
-We're located right on Rice Lake, and we've helped local anglers choose motors for decades. Here's what actually works on Kawartha waters.
+The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-### Understanding Rice Lake Conditions
+## Quick recommendation
 
-Rice Lake presents unique challenges:
-- **Shallow sections** with weeds and stumps
-- **Open stretches** that get rough in wind
-- **Variable conditions** that change quickly
-- **Long runs** if you're chasing fish
+For most Rice Lake anglers, the right setup is:
 
-You need a motor that handles all of these.
+- **Main motor:** 60 to 115 HP FourStroke (Mercury 60 EFI for smaller aluminum, 90 to 115 EXLPT for 16+ ft consoles)
+- **Kicker:** Mercury 9.9 ProKicker, long shaft, with tiller mount or remote-control variant
+- **Hull:** 16 to 18 ft aluminum console (Lund, Crestliner, Princecraft) or modified-V fishing boat
 
-### Recommended Motors by Boat Size
+We rig fishing boats every week at HBW. The customers who come in confused about motor selection usually have one or two specific questions: "do I need a kicker?" (yes) and "what HP for my boat?" (depends on hull length and use, usually one or two classes above the minimum).
 
-**14-16ft Aluminum (Walleye/Panfish)**
-- **Best Choice**: Mercury 40HP Command Thrust
-- Why: Shallow running capability, tiller available
-- Alternative: Mercury 50HP for more open water
+## What changes the answer
 
-**16-18ft Deep V (Multi-Species)**
-- **Best Choice**: Mercury 75HP or 90HP FourStroke
-- Why: Handles rough water, good trolling speeds
-- Alternative: Mercury 60HP Command Thrust if you fish shallower areas
+Rice Lake-specific factors:
 
-**18-20ft Bass/Musky Boat**
-- **Best Choice**: Mercury 115HP or 150HP FourStroke
-- Why: Power for long runs, handles wind and waves
-- Alternative: Mercury Pro XS if you tournament fish
+- **Wind exposure.** Rice Lake is shallow and open. Wind picks up across Sugar Island and the northern shore around 2 PM most days in July. Underpowered motors get exposed at that hour.
+- **Weed beds.** Summer weeds are heavy on Rice Lake. Props pick up weeds, and slower-revving FourStrokes work better in weeds than older 2-strokes.
+- **Trolling depth and speed.** Walleye trolling is the classic Rice Lake fishery. True trolling speeds are 1 to 2 mph, which most main motors cannot idle down to. A 9.9 ProKicker handles this perfectly.
+- **Bass tournament traffic.** Rice Lake hosts regular bass tournaments. Tournament anglers want fast morning runs to spots, which is where Pro XS earns its price over FourStroke.
+- **Public ramp access.** Bewdley, Hastings, and Roseneath are the main public ramps. Each has its own characteristics (ramp slope, parking, wind exposure) that affect what motor and boat combo works.
+- **Trent-Severn access.** The east end of Rice Lake connects to the Trent-Severn lock system, opening up the larger Kawartha chain. Boats that travel the system want reliable mid-range cruising performance.
 
-### Why Command Thrust Matters Here
+## Best Mercury for Rice Lake by use case
 
-Rice Lake's shallow bays and weed beds make Command Thrust a smart choice. The larger gearcase:
-- Runs shallower than standard lower units
-- Provides more thrust for heavy loads
-- Handles prop fouling better
+### Walleye trolling (the classic Rice Lake fishery)
 
-Available from 9.9HP (ProKicker) through 115HP — including 40HP, 60HP, 75HP, 90HP, and 115HP models.
+**Best setup:** 16 to 18 ft aluminum with 60 to 90 HP FourStroke main + 9.9 ProKicker.
 
-### Seasonal Considerations
+The main motor handles cruising between spots and run-back at end of day. The kicker handles actual trolling. Without a kicker, you compromise on trolling speed control because main motors do not idle low enough for proper walleye presentation.
 
-**Spring (Opener)**:
-- Waters still cool—EFI starts instantly
-- Wind can blow hard—need adequate power
-- Still some ice-out debris—prop protection matters
+### Smallmouth bass fishing
 
-**Summer**:
-- Weeds thick in shallow areas
-- Long runs to find cooler water
-- Full boat loads common
+**Best setup:** 17 to 19 ft fishing boat with 90 to 115 HP FourStroke or Pro XS, with or without a kicker.
 
-**Fall**:
-- Best musky fishing
-- Rough conditions common
-- Reliability critical for late-season trips
+Bass fishing is more "run and gun" than walleye trolling. You move between rocky structure, drop-offs, and weed edges throughout the day. Some anglers run a kicker for slow-speed work; others rely on the main motor and a trolling motor (electric) for fine positioning. Both work.
 
-### Local Pro Tips
+### Muskie fishing
 
-**Trolling Setup**:
-Many Rice Lake anglers pair a Mercury 60-90HP main motor with a smaller kicker (9.9HP or 15HP) for trolling. This is ideal for walleye.
+**Best setup:** 18 to 21 ft deep-V or modified-V fishing boat with 115 to 150 HP, often with a 9.9 ProKicker.
 
-**Prop Selection**:
-We stock props specifically suited to Rice Lake conditions. The right prop makes a huge difference in shallow water performance.
+Muskie fishing means longer days, bigger water (Rice Lake plus Trent-Severn), and bigger lures requiring more boat stability. Bigger boats need more HP to plane reliably with full gear and two anglers. See the [Mercury 115 vs 150 comparison](/blog/mercury-115-vs-150-hp-outboard-ontario) for the step-up math.
 
-### Our Top Pick for Rice Lake
+### Tournament bass
 
-**Mercury 60HP EFI Command Thrust FourStroke**
+**Best setup:** 19 to 21 ft bass boat with 200 to 250 HP Pro XS V8.
 
-- Perfect for 16-18ft boats
-- Runs shallow in the bays
-- Plenty of power for open crossings
-- Available in tiller
-- Excellent fuel economy for all-day fishing
+Tournament-level performance, fast acceleration, top speed for travel between distant spots. The Pro XS V8 is the standard for serious tournament anglers.
 
-Stop by and we'll set you up with exactly what you need for Rice Lake success.
+### Family fishing (mixed use)
 
-**[Build Your Rice Lake Motor Quote](/quote)**
+**Best setup:** 16 to 18 ft aluminum console with 90 to 115 HP FourStroke and Command Thrust if loading is heavy.
 
-**See also:** [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) and [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout).
+Family fishing means more passengers, more gear, slower trolling, and probably no tournament aspirations. FourStroke gives you the fuel economy and quiet running that family use rewards.
+
+## What HBW checks before recommending a Rice Lake fishing setup
+
+When fishing customers come into HBW for a repower or new boat assessment, we want to know:
+
+- Boat hull length, type, and weight
+- Capacity plate HP rating
+- Primary fishery (walleye, bass, muskie, mixed)
+- Solo or family use
+- Trolling-heavy or run-and-gun style
+- Where you launch (Bewdley, Hastings, Roseneath, private dock)
+- Whether you want a kicker
+- Existing electronics (Garmin, Lowrance, Humminbird, etc.)
+- Budget and financing tolerance
+
+We rig boats specifically for Rice Lake fishing. Three generations of HBW have done this. The local knowledge matters when matching motor to use.
+
+## Common Rice Lake fishing mistakes
+
+1. **No kicker.** Customer thinks they will use the main motor for trolling. Two seasons in they realize the main motor is too fast and too loud for walleye presentation. Kicker installs are easier as part of a repower than retrofitted later.
+2. **Wrong prop.** A bass-style 4-blade aluminum on a fishing boat that wants a 3-blade for top end. A wrong prop costs you 4 mph and 15% fuel economy. We test props on the water during sea-trial.
+3. **Underbuying HP for muskie or open-water use.** A 60 HP on a 19 ft fishing boat in Lake Ontario chop is going to leave you frustrated. Muskie and bigger-water use rewards bigger HP.
+4. **Skipping Command Thrust on heavier hulls.** Command Thrust gearcase makes meaningful difference on heavier fishing boats with full gear loading.
+5. **Ignoring electronics integration.** Modern Mercury motors talk to Garmin, Lowrance, Raymarine, and Simrad units via SmartCraft. Plan the electronics integration during the repower, not after.
 
 ## Related guides
 
-- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) — Lake Simcoe walleye picks
-- [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
-- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
-- [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
-- [Best Outboard Motors for Ontario's Small Lakes and Cottage Country](/blog/best-motor-small-lakes-ontario) — best motor for small Ontario lakes
+- [Mercury ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), the kicker specifically
+- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), bigger water differences
+- [Best Mercury Outboard for Lake Ontario Salmon and Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout), open-water big-fish setups
+- [Walleye Opener Boat Prep](/blog/walleye-opener-boat-prep), pre-season checklist
+- [2026 Rice Lake Fishing Season Outlook](/blog/2026-rice-lake-fishing-season-outlook), local fishing season guide
 
-    `,
+## Ready to find your motor?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD, full configuration including main motor, kicker, rigging, and prop.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific Rice Lake fishing setup, [give us a call at (905) 342-2153](tel:9053422153). We rig fishing boats for this lake every week.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**What is the best Mercury outboard for fishing on Rice Lake?**
+For most Rice Lake anglers, a Mercury FourStroke 60 to 115 HP main motor paired with a 9.9 ProKicker for trolling. The exact main motor depends on hull length and use case. For your specific boat, [build a quote](/quote/motor-selection) or [call HBW](tel:9053422153).
+
+**Do I need a kicker motor for Rice Lake fishing?**
+For serious walleye fishing, yes. Main motors do not idle slow enough for proper walleye trolling speeds. The Mercury 9.9 ProKicker is the standard. For run-and-gun bass fishing, a kicker is optional. For muskie or mixed use, usually yes.
+
+**What size boat is best for Rice Lake fishing?**
+16 to 18 ft aluminum console is the sweet spot for most Rice Lake fishing. Smaller (14 ft) works for solo or two-person sheltered-water fishing. Bigger (19+ ft) is for bigger water (Trent-Severn travel, Lake Ontario) or tournament fishing.
+
+**What HP do I need for a 17-foot fishing boat on Rice Lake?**
+For solo or two-person trolling, 60 to 90 HP. For three or more anglers with gear, 90 to 115 HP. Most 17 ft Rice Lake fishing boats run 90 EXLPT FourStroke as the standard answer.
+
+**Is Mercury Pro XS worth it for Rice Lake fishing?**
+For tournament-level bass anglers who need fast morning runs, yes. For typical recreational fishing (walleye trolling, mixed use), Pro XS is overkill and FourStroke at the same HP is the better value.
+
+**What's the best Mercury for muskie fishing?**
+18 to 21 ft deep-V or modified-V fishing boat with 115 to 150 HP main motor and a 9.9 ProKicker. Muskie fishing means longer days, bigger water, and bigger boats. Bigger boats need more HP.
+
+**Where do most Rice Lake anglers launch?**
+Bewdley, Hastings, and Roseneath are the main public ramps. Each has its own characteristics. Bewdley is closest to Sugar Island and the deeper basin. Hastings has the easiest access to the eastern Trent-Severn entry. Roseneath is on the south shore. Many anglers also launch from private cottage docks.
+
+**Can I troll for walleye with my main motor only?**
+You can, but it is a compromise. Main motors do not idle low enough for true walleye trolling speeds (1 to 2 mph). They are also louder, which can spook fish in shallow water. A 9.9 ProKicker is the proper answer for walleye trolling.
+
+**What electronics should I integrate with my Mercury motor?**
+Modern Mercury FourStrokes (post-2010) integrate with Garmin, Lowrance, Raymarine, and Simrad units via SmartCraft. Plan electronics integration during the repower, not after. We can route Mercury data to your existing fish finder or recommend a unit if you are upgrading both.
+
+**What's the cost of a typical Rice Lake fishing boat repower?**
+For a 16 to 18 ft aluminum console with a 60 to 115 HP main and a 9.9 kicker, the all-in repower at HBW lands $20,000 to $30,000 CAD before HST. Smaller setups lower, bigger setups higher. [Live pricing here.](/quote/motor-selection)
+
+**Should I buy a new fishing boat or repower my old one?**
+For most Rice Lake anglers with a hull that's still solid and fits their use, repower wins on the math. A used 5-to-15-year-old aluminum hull with a current Mercury repower gives 80% of the new-boat experience for half the money. See the [hull replacement vs repower guide](/blog/boat-hull-replacement-vs-repower-decision) for the honest decision tree.
+
+**When is the best time to repower a fishing boat for next season?**
+Winter (November through March). Mercury inventory is best, our shop is quietest, and you can sometimes catch promotional rates. Booking early in fall locks in the appointment slot before the spring rush.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)`,
     faqs: [
       {
         question: 'What HP do I really need for Rice Lake?',
@@ -1946,133 +2298,213 @@ Stop by and we'll set you up with exactly what you need for Rice Lake success.
   // Week 8: February 23, 2026
   {
     slug: 'complete-guide-boat-repower-kawarthas',
-    title: 'Complete Guide to Repowering Your Boat in the Kawarthas',
-    description: 'Everything you need to know about repowering your boat in Kawartha Lakes. Costs, timeline, motor selection, and what to expect from start to finish.',
+    title: "Complete Guide to Repowering Your Boat in the Kawarthas (2026)",
+    description: "Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake. Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/Repowering_Boat_Kawarthas_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-23',
-    dateModified: '2026-02-23',
+    dateModified: '2026-05-04',
     publishDate: '2026-02-23',
     category: 'Repowering',
     readTime: '12 min read',
     keywords: ['boat repower kawarthas', 'repower cost ontario', 'mercury repower', 'outboard replacement', 'boat motor upgrade'],
-    content: `
-## Repowering in the Kawarthas: Everything You Need to Know
+    content: `# Complete Guide to Repowering Your Boat in the Kawarthas (2026)
 
-Thinking about putting a new motor on your boat? As the Kawartha region's Mercury Certified Repower Center, we handle dozens of repowers every year. Here's the complete guide.
+Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake. Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-### Is Your Boat a Good Repower Candidate?
+## Quick recommendation
 
-**Good Candidates**:
-- Solid hull with no structural issues
-- Firm transom (no soft spots)
-- Functional interior
-- Good trailer condition
-- Quality boat that's worth investing in
+If your hull is solid and the boat fits your family, repower it. Three out of four boats that come into HBW for assessment turn out to be better repower candidates than buy-new candidates. The math is simple: a quality used hull plus a current Mercury costs significantly less than a new boat with comparable capabilities, and you skip the depreciation hit that hammers new-boat owners in their first 5 years.
 
-**Poor Candidates**:
-- Soft or rotted transom (can be fixed, but adds cost)
-- Significant hull damage
-- Outdated design you've outgrown
-- Boat with little remaining value
+We have done roughly 50 repowers a year on Kawartha boats since the early 2000s. The boats coming in have not changed much. The customers want the same thing every time: a real number, no surprises, and a motor that runs right when they pick it up. That is what this guide walks through.
 
-### What's Included in a Repower
+## What changes the answer
 
-**Basic Repower**:
-- New motor
-- Controls (if compatible)
-- Basic rigging
-- Installation
-- Lake test
+Six things move whether a repower is the right call for your specific boat:
 
-**Complete Repower**:
-- New motor
-- New controls and cables
-- New gauges
-- New steering (if needed)
-- Updated wiring
-- Installation and lake test
+- **Hull condition.** A solid aluminum hull or fiberglass with a good transom can last 30+ more years. A soft transom, rotten floor, or major structural damage means walk away from the repower path.
+- **Boat fit.** Does the boat actually fit your family and your use? If you have outgrown it (more passengers, different water, different use), buy new. If it still fits, repower.
+- **Motor age and condition.** A 2-stroke from 1995 with hard starting, excessive smoke, and frequent repairs is the textbook repower candidate. A 5-year-old FourStroke that ran fine last summer is not (yet).
+- **Budget vs. payment tolerance.** Repowering at 7.99% APR over 60 to 84 months is usually cheaper monthly than financing a new boat. See the [financing guide](/blog/mercury-outboard-financing-ontario-2026) for math.
+- **How long you plan to keep the boat.** A 5-year hold favors a lower-investment repower. A 15-year hold justifies a bigger Mercury investment because the new motor will outlast the rest of the boat.
+- **Brand of existing motor.** Mercury-to-Mercury repowers usually keep most existing controls (rigging stays at the low end). Brand conversions (Evinrude, Yamaha, Honda to Mercury) require new everything in the control system.
 
-### Cost Ranges (2026)
+## The repower process at HBW, step by step
 
-**40-60HP Repower**: $7,500 - $11,000
-**75-115HP Repower**: $12,000 - $18,000
-**150-200HP Repower**: $18,000 - $28,000
-**200HP+ Repower**: $25,000+
+### Step 1: Build a quote on this site
 
-These include motor, rigging, and installation. Controls and steering add cost if needed.
+Three minutes. The [motor selection page](/quote/motor-selection) shows live CAD pricing on every Mercury we sell, including the rigging, install, and prop based on your boat configuration. You see the all-in number before you ever talk to us. No phone tag, no salesman.
 
-### Timeline: What to Expect
+### Step 2: Hull and transom assessment
 
-**Consultation** (1-2 hours):
-- Assess your boat
-- Discuss your needs
-- Measure and evaluate transom
-- Review motor options
-- Provide written quote
+If the quote configuration looks right and you want to move forward, bring the boat to HBW for a hull inspection. We check:
 
-**Ordering** (1-4 weeks):
-- Order motor (often in stock)
-- Order any required rigging parts
-- Schedule installation
+- Transom condition with a moisture meter (soft transoms cannot safely hold a heavy motor)
+- Capacity plate HP rating (we will not over-power the hull; Mercury voids warranty if we do)
+- Floor and stringer integrity
+- Wiring condition (modern motors do not talk to 25-year-old gauges)
+- Fuel system condition (8-year-old gas can clog new injectors)
+- Existing controls and steering (some carry forward, some need replacement)
 
-**Installation** (3-7 days):
-- Remove old motor
-- Prep transom/rigging
-- Install new motor
-- Wire controls/gauges
-- Set up motor
+This walk-around takes about 30 minutes. If the hull is not worth the repower, we tell you. If it is, we confirm the quote configuration matches what your specific boat needs.
 
-**Lake Test** (1-2 hours):
-- Verify operation
-- Adjust trim and prop
-- Set cruising speeds
-- Final check
+### Step 3: Confirm and order
 
-### The Best Time to Repower
+Once the assessment confirms the quote, we order the motor. Lead times vary by HP class and time of year. Standard delivery is 2 to 4 weeks from order to install start. Repowering in winter (November to March) is the fastest because Mercury inventory is best and our shop is quietest.
 
-**Winter (January-March)**:
-- Fastest turnaround
-- No missed boating time
-- Often best pricing
-- Ready for spring
+### Step 4: Install
 
-**Fall (October-November)**:
-- Good availability
-- Weather still allows testing
-- Ready for ice-out
+A clean install is 1 to 2 days of shop time. We:
 
-**Avoid**: June-August (busiest season, longest wait)
+- Remove the old motor and dispose responsibly (or apply trade-in credit)
+- Mount the new Mercury, set transom height correctly, torque to spec
+- Run new throttle, shift, and steering as needed
+- Install gauges and SmartCraft displays
+- Wire battery and harness
+- Mount and pitch the new prop
+- Fill and prime fuel system
+- Bench-test before water test
 
-### Common Repower Questions Answered
+For boats with hydraulic steering conversion or major rigging changes, install can run longer.
 
-**Can I increase horsepower?**
-Often yes. Modern motors are lighter than older ones. If your transom rating allows it and the boat handles the power, upgrading HP is popular.
+### Step 5: Sea-trial on Rice Lake
 
-**What about my old controls?**
-Mercury controls from 2004+ are usually compatible with new motors. Older controls may need replacement, which we'll quote.
+Every repower gets a real water test before you take the boat home. We run it through the throttle range, check WOT RPM, measure speed, and confirm prop selection. If the prop is wrong (and sometimes it is), we swap it before you leave. The sea-trial is part of the price; it is not an upcharge.
 
-**Do I need new gauges?**
-Mercury SmartCraft gauges work with older motors. If you're upgrading to a motor with SmartCraft, you may want new gauges to access all features.
+### Step 6: Pickup and break-in
 
-### Our Repower Guarantee
+When you pick up the boat, we walk you through the new motor controls, the SmartCraft display (if applicable), and the break-in procedure for the first 10 to 20 hours of operation. Modern Mercurys have a structured break-in schedule that affects long-term durability. Skipping it shortens the motor's life.
 
-- Professional installation by certified technicians
-- All work lake-tested before handoff
-- Full Mercury factory warranty
-- 60+ years of experience backing every job (since 1965)
+### Step 7: Service relationship
 
-**[Get Your Free Repower Quote](/quote)**
+Once your motor is in, we are your service shop. Annual service, winterization, troubleshooting, parts, warranty work. We have been on Rice Lake since 1947 and we plan to be here when you need us in 10 years.
+
+## What HBW checks before recommending a repower
+
+Before we tell you "repower" vs. "buy new" vs. "walk away," we want to know:
+
+- Hull make, model, year, and length
+- Maximum HP rating on the capacity plate
+- Hull condition (transom moisture, floor integrity)
+- Existing motor make, model, year, and condition
+- Existing controls and gauges (mechanical or digital, brand)
+- What you actually do with the boat (fishing, family, tubing, cruising, mixed)
+- Where you launch (Bewdley, Hastings, Roseneath, Gores Landing, Lakefield, Buckhorn, etc.)
+- How long you plan to keep the boat
+- Your budget tolerance and financing preference
+
+We will give you the honest answer, including the answer where the right call is to walk away from the boat entirely. We have told customers more than once that their hull is too far gone for a repower to be worth it. That conversation costs us a sale and earns us a reputation.
+
+## When repowering makes sense
+
+Repowering is the right call when:
+
+- The hull is solid (aluminum or fiberglass with good transom)
+- The boat still fits your family and use
+- The motor is the only thing wrong with it
+- You do not want to start a new payment book at 8.9% on a new boat
+- You like the boat you have and the layout works
+
+A meaningful share of Kawartha boats come in for repower assessment and the math holds up. Roughly 70% of the boat-experience for 30% of the cost is the rough rule. The actual numbers vary by boat and motor selection. [Live pricing here.](/quote/motor-selection)
+
+## When repowering does not make sense
+
+Skip the repower and look at new (or different used) when:
+
+- The hull has structural problems (soft transom, rotten floor, stress cracks in fiberglass)
+- You have outgrown the boat (more passengers, different water, different use case)
+- You have not bought a new boat in 25 years and you genuinely want to (fine reason)
+- The boat layout no longer fits your needs even with a fresh motor
+
+For the in-between cases (decent hull but you are tempted by a new boat), the [hull replacement vs. repower decision guide](/blog/boat-hull-replacement-vs-repower-decision) walks through the honest math.
+
+## Repower process for non-Mercury motors
+
+If your existing motor is Yamaha, Honda, or an older Evinrude/Johnson, the repower to Mercury is the same process with two differences:
+
+- Rigging is more involved because the controls and harness need to swap, which adds $2,000 to $3,000 CAD over a Mercury-to-Mercury repower.
+- Steering may need replacement (cable-to-hydraulic conversion if going to bigger HP).
+
+The [Evinrude-to-Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide) covers brand-conversion specifics. We do these every year. The process is well-understood.
+
+## Local Kawarthas considerations
+
+A few things that matter specifically for Kawartha boating:
+
+- **Wind on Rice Lake.** Builds across Sugar Island around 2 PM most July days. Underpowered motors get exposed at that hour.
+- **Trent-Severn lock system.** Slow no-wake zones in locks favor reliable low-RPM operation. Modern FourStrokes handle this much better than older 2-strokes.
+- **Walleye and bass fishing.** Mostly trolling and structure work. Favors fishing setups with a kicker (9.9 ProKicker) plus a main motor for cruising.
+- **Cottage owner usage patterns.** Weekend use, May to October, often launching from public ramps (Bewdley, Hastings, Roseneath, Lakefield, Buckhorn). Reliability matters because help is far away mid-week if something goes wrong.
+- **Lock-fee considerations.** Trent-Severn fees are HP-based. Bigger motors cost more to operate the locks.
+
+We rig boats for these specific conditions because we operate in them. Three generations of HBW have worked the Kawartha boating market. We know what works and what does not.
 
 ## Related guides
 
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
-- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide](/blog/evinrude-to-mercury-repower-ontario-guide) — switching from Evinrude to Mercury
-- [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide) — why winter is the smart time to plan
+- [How Much Does a Mercury Repower Cost in Ontario?](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that walks through every HP class
+- [Replacing Your Evinrude with a Mercury Outboard](/blog/evinrude-to-mercury-repower-ontario-guide), specific guidance for brand conversions
+- [Mercury Outboard Financing in Ontario](/blog/mercury-outboard-financing-ontario-2026), payment math, terms, what counts toward the loan
+- [Boat Hull Replacement vs Repower](/blog/boat-hull-replacement-vs-repower-decision), the honest version of the buy-new vs. repower decision
+- [Ontario Cottage Owner's Guide: Is It Time to Repower?](/blog/ontario-cottage-boat-motor-repower-guide), specifically for cottage boat repowers
 
-    `,
+## Ready to start your repower?
+
+Build a quote on the [motor selection page](/quote/motor-selection) in three minutes. Live Mercury pricing, real CAD numbers, full configuration including rigging and install. You see the motor, rigging, install, prop, and total before you ever talk to us.
+
+[**Build Your Mercury Repower Quote**](/quote/motor-selection)
+
+If you want to walk through your specific boat before you build, [give us a call at (905) 342-2153](tel:9053422153) or [send us an email](/contact). We will tell you honestly whether the repower path makes sense for your hull.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**What is a boat repower?**
+Replacing your existing outboard motor with a new Mercury while keeping the hull you already own. The process includes motor selection, rigging (controls, cables, gauges), new prop, install labour, and a sea-trial. Total all-in cost depends on HP class, motor family, and existing rigging condition.
+
+**How long does a Mercury repower take?**
+A clean install is 1 to 2 days of shop time at HBW. From the day you confirm the order to the day you pick up the boat is usually 2 to 4 weeks, depending on motor availability. Repowering in winter (November to March) is the fastest because Mercury inventory is best and our shop is quietest.
+
+**How much does a Mercury repower cost in the Kawarthas?**
+Cost depends on HP class. The 90 to 115 HP range (most common Kawartha repowers) lands $17,000 to $22,000 CAD all-in before HST. Smaller and bigger projects scale up or down. See the [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for full HP class ranges, and [build a quote](/quote/motor-selection) for your specific number.
+
+**Is repowering worth it on an older boat?**
+Depends on the hull. Aluminum hulls last basically forever if the transom is solid. Fiberglass with a good transom can run 30+ years. We check the transom with a moisture meter before quoting. If the hull has structural problems, we tell you to walk away from the repower path.
+
+**Can I keep my existing controls and gauges?**
+Mercury-to-Mercury repowers usually keep most existing controls if they are post-2010. Mechanical Mercury controls older than that often need replacement. Digital throttle and shift on newer motors requires new controls regardless. Brand conversions (Evinrude, Yamaha, Honda to Mercury) require new everything in the control system.
+
+**What happens to my old motor?**
+Trade-in credit, even on dead motors. Aluminum and parts have value. Our [trade-in valuation tool](/trade-in-value) gives you an instant credit estimate. Trade-in works the same as a down payment for financing or reduces the cash you owe.
+
+**Do you finance repowers?**
+Yes. Mercury Repower Financing is available on most jobs. Standard non-promo rate is 7.99% APR. Terms run 24 to 84 months. Promotional rates lower than 7.99% are sometimes active. See the [financing page](/financing) for details and [promotions page](/promotions) for current offers.
+
+**Can you repower boats with non-Mercury motors?**
+Yes. We do Evinrude-to-Mercury, Yamaha-to-Mercury, Honda-to-Mercury repowers every year. Rigging cost is higher than Mercury-to-Mercury because the entire control system needs to swap, but the process is the same. See the [Evinrude-to-Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide) for brand conversion specifics.
+
+**What is included in a Mercury repower at HBW?**
+Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial on Rice Lake, hydraulic steering conversion (if required), battery and harness refresh as needed, and a written walk-through of the new motor at pickup. Every line item appears on every quote. No surprise charges.
+
+**Should I repower in winter or wait until spring?**
+Winter (November to March) is the fastest and easiest time. Mercury inventory is best, our shop is quietest, lead times are shortest, and you can sometimes catch promotional rates. Spring is busier, slower, and more expensive. If you can plan ahead, winter wins.
+
+**What about the Pleasure Craft License when I repower?**
+Your PCL travels with the boat (the hull), not the motor. Repowering does not require a PCL update unless the new motor's HP class moves the boat into a different licensing category. See our [Pleasure Craft License update guide](/blog/pleasure-craft-licence-update-repower-ontario) for specifics.
+
+**How do I know if my boat is a good repower candidate?**
+Build a quote on the [motor selection page](/quote/motor-selection) and bring the boat in for a 30-minute hull assessment. We check transom, floor, capacity, and existing rigging. If the boat is a good repower candidate, we confirm the quote. If not, we tell you honestly and you can decide whether to keep looking.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)`,
     faqs: [
       {
         question: 'How much does a typical repower cost?',
@@ -8126,150 +8558,175 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
 
   {
     slug: 'why-mercury-dominates-outboard-market',
-    title: 'Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them',
-    description: 'Mercury Marine is the world\'s leading outboard brand, with dominant market share and relentless innovation. Here\'s why Harris Boat Works proudly sells, services, and trusts Mercury outboards for every boat on Rice Lake.',
+    title: "Why Mercury Dominates the Outboard Market in 2026",
+    description: "Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP supercharged Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for 60 years and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-02-06',
+    dateModified: '2026-05-04',
     publishDate: '2026-02-06',
     category: 'Buying Guide',
     readTime: '12 min read',
     keywords: ['mercury marine market share', 'best outboard brand', 'mercury vs yamaha', 'mercury verado v12', 'mercury innovation', 'mercury prokicker'],
-    content: `
-When someone comes into Harris Boat Works and asks, "What motor should I put on my boat?", our answer is almost always Mercury. That isn't a slogan — it's the conclusion we've reached after decades of selling, installing, and servicing outboards on Rice Lake.
+    content: `# Why Mercury Dominates the Outboard Market in 2026
 
-Mercury Marine doesn't just have a big name; they have dominant market share, deep technology, and a track record that shows up on dealer lots and in customer satisfaction surveys across the world. Here's why that matters for you.
+Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP supercharged Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for 60 years and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-## Mercury's Market Position: The Clear Leader
+## Quick recommendation
 
-Mercury Marine, a division of Brunswick Corporation, is the largest outboard manufacturer in the world. Its competitive advantages widened substantially after BRP discontinued the Evinrude brand in 2020, leaving Mercury as the most complete, full-line competitor in the outboard space.
+If you are buying an outboard in Ontario in 2026, the practical answer is Mercury. Not because the metal is significantly better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the manufacturer-OEM relationships with Canadian boat builders are deeper.
 
-Show-floor data highlights how dominant Mercury has become:
+Reliability and service availability are the same conversation in Canada. A theoretically more reliable motor that takes 6 weeks to get parts for is less reliable in practice than a slightly less perfect motor that gets fixed in 4 days. Mercury wins on the practical version.
 
-- At major international shows like Venice and Sydney, Mercury has powered 50–80% of the outboard-equipped boats on display, according to Brunswick.
-- At the 2025 Sydney International Boat Show, Mercury captured 50% of the outboards on display across all brands, and at Venice, Mercury engines appeared on more than 80% of the boats.
+We are biased. We sell Mercury exclusively at HBW. We have been a Mercury dealer since 1965. But the bias is downstream of the market reality, not upstream of it. Mercury has been the dominant outboard brand in Canada for decades, and the customers we serve are the customers buying Mercury.
 
-Boat builders choose Mercury because their customers ask for it, and because Mercury delivers performance, reliability, and support that makes boat packages easier to sell and own.
+## Why Mercury wins in Canada (the practical reasons)
 
-Mercury's strategic partnerships reinforce this lead. In early 2026, Mercury and De Antonio Yachts announced an exclusive five-year supply agreement for outboard power, adding another premium builder to the Mercury portfolio. These deals are a signal: top-tier boat brands want Mercury on the transom.
+### 1. Dealer network density
 
-## Innovation: Why Mercury Stays Ahead
+Mercury has more dealers across Ontario and Canada than any other outboard brand. That means:
 
-Market share alone doesn't explain Mercury's position; continuous innovation does. Across internal combustion, digital systems, and electric propulsion, Mercury consistently pushes the industry forward.
+- **Parts availability.** A common service part is on a Mercury dealer's shelf, not 6 weeks away from a regional warehouse.
+- **Service expertise.** Most marine technicians in Ontario are Mercury-certified or Mercury-experienced. Yamaha and Honda techs are rarer in this region.
+- **Support when traveling.** A Mercury motor gets serviced at any Mercury dealer across Canada and the US. The dealer network is meaningful when your motor fails on a road trip.
+- **Resale support.** A 7-year-old Mercury in Ontario sells faster than a 7-year-old Yamaha or Honda because the local market for Mercury parts and service is bigger.
 
-### Verado V12 600 HP
+### 2. Factory OEM relationships with Canadian boat builders
 
-When Mercury unveiled the V12 600 HP Verado on February 11, 2021 — at the Miami International Boat Show — it changed what people thought an outboard could be. Highlights include:
+Most Canadian-built aluminum boats (Lund, Crestliner, Princecraft, Lowe, and similar) come Mercury-rigged from the factory. The reasons go back decades:
 
-- A naturally aspirated 7.6L V12 powerhead (no turbo or supercharger)
-- Two-speed automatic transmission for efficient hole shot and optimized cruising
-- Steerable gearcase with fixed powerhead, improving manoeuvrability and reducing transom space used by steering hardware
-- Extremely low noise and vibration levels for the power class
+- Parts supply chains are built around Mercury for the Canadian market
+- Boat manufacturers can offer Mercury packages at attractive prices because of volume
+- Customers ask for Mercury, so factories rig with Mercury
+- Service support is easier when boat brand and motor brand both have strong dealer networks
 
-No competitor has an outboard that matches this combination of horsepower and integrated features.
+Buying a Mercury-rigged factory boat is the most cost-effective way into a new aluminum boat in Canada. Switching brands during a repower adds $2,000 to $3,000 CAD in rigging costs because the entire control system has to swap.
 
-### V10 Verado 350–425 HP
+### 3. Complete lineup coverage
 
-Mercury's V10 Verado family extends Verado-level refinement down into the 350–425 HP range. The latest 425 HP model and updated 350 HP variant deliver:
+Mercury covers every recreational HP class from the 2.5 portable tiller up through 600+ HP Verado:
 
-- Up to 15% quicker 0–50 mph acceleration vs. previous models
-- A 150-amp alternator, the highest in class, supporting today's power-hungry electronics
-- Around 22% quieter operation at cruise, enhancing comfort on long runs
+- FourStroke (2.5 to 300 HP) for cruising, fishing, family use
+- Pro XS (115 to 300 HP) for performance fishing and tournament use
+- SeaPro (25 to 300 HP) for commercial duty
+- Verado (250 to 600+ HP) for offshore and high-performance applications (special-order at HBW)
+- Avator (electric) for emerging eco-conscious applications
 
-These engines are ideal for offshore centre consoles and high-performance freshwater rigs that demand big power without sacrificing refinement.
+If your boat needs an outboard, Mercury makes one that fits. Yamaha and Honda have gaps in the lineup at certain HP classes or use cases.
 
-### SmartCraft and VesselView: Mercury's Digital Backbone
+### 4. Innovation track record
 
-Mercury's SmartCraft ecosystem is a major differentiator, tying engines, helm displays, and mobile devices into one integrated data and control network. Core components include:
+Mercury has been the early leader on several modern outboard innovations:
 
-- **VesselView displays**: High-resolution helm screens that show engine RPM, speed, fuel burn, range, trim, temperatures, alerts, and more.
-- **SmartCraft Connect**: A module that opens up VesselView data on compatible Garmin and Raymarine multi-function displays, turning them into full Mercury engine monitors.
-- **Mercury Marine app**: Lets owners connect via Bluetooth, view engine data, track maintenance schedules, log trips, and receive notifications.
-- **Active Trim**: Automatically optimizes trim for speed and efficiency.
-- **Troll Control, Smart Tow, and other modes** tailored to fishing and watersports.
+- Modern four-stroke transition (early 2000s, with Yamaha as the other early mover)
+- Pro XS performance line as the standard tournament motor
+- Verado supercharged technology
+- SmartCraft engine management and connectivity
+- Joystick Piloting for Outboards (twin/triple installations)
+- Avator electric outboards
+- Boost software upgrades (early example of software-defined motor performance)
 
-For Rice Lake anglers running Garmin, Lowrance, Raymarine, or Simrad units, this matters: one screen can show sonar, charts, and engine data together.
+Innovation alone is not the reason Mercury wins, but it is part of why the brand stays relevant year after year. They are not coasting on dealer network and brand recognition.
 
-### Joystick Piloting for Outboards (JPO)
+## What changes the answer for specific buyers
 
-On multi-engine boats, Mercury's Joystick Piloting for Outboards (JPO) makes docking and low-speed manoeuvres dramatically easier. You push the joystick, and the system independently controls throttle, shift, and steering on each engine to move the boat forward, sideways, or diagonally.
+Mercury is not always the right answer. Specific situations where another brand might fit:
 
-For big water and tight marinas, that's a huge quality-of-life improvement.
+- **Coastal saltwater (US Gulf Coast, Pacific Northwest, parts of Florida).** Yamaha has a stronger saltwater service network in some coastal regions and is a legitimate choice there.
+- **Specific hull factory rigging.** A boat that came from the factory rigged with Yamaha or Honda may be most cost-effective to keep that way during a repower (avoiding the $2,000 to $3,000 brand-conversion rigging cost).
+- **Honda small-engine niche.** Honda has a strong reputation in the small-portable class (sub-15 HP). For some buyers in some markets, Honda small portables are competitive with Mercury 9.9 and 15 HP class.
 
-### Avator Electric Outboards
+For the typical Ontario freshwater customer (Rice Lake, Kawarthas, Lake Simcoe, Lake Ontario), Mercury wins on the practical metrics that actually matter.
 
-Mercury's Avator electric outboard line shows they're serious about the future of low-impact propulsion. Early models like the 7.5e, 20e, 35e and larger 75e/110e units feature:
+## What HBW checks before recommending Mercury (or any motor)
 
-- Quiet, emission-free operation ideal for eco-sensitive waters and small craft
-- Modular, swappable battery packs with integrated chargers
-- Digital displays integrated into the tiller or remote helm
-- SmartCraft connectivity, so electric and combustion engines live in the same data ecosystem
+When customers ask "should I get Mercury?" we want to know:
 
-Avator won't replace combustion outboards on Rice Lake tomorrow, but it's an important illustration of where the brand is headed and gives HBW customers options for specific use cases.
+- What boat are you running? Hull type and what came factory-rigged matters.
+- Where do you live? Dealer network matters more than spec sheets.
+- What is your service plan? A motor you will service religiously will outlast any brand you neglect.
+- What is your budget tolerance? Brand switching during a repower costs more.
+- Resale plan? Mercury holds resale strongest in Ontario.
 
-### ProKicker: Purpose-Built for Trolling
+We will not pretend Mercury is mechanically superior to Yamaha or Honda when it comes to the metal itself. We will tell you that for Ontario freshwater, the dealer network and service reality favors Mercury, and that is a meaningful part of "reliability" that brand-comparison articles often skip.
 
-For serious anglers, Mercury's [ProKicker line](/blog/mercury-prokicker-rice-lake-fishing-guide) offers 9.9–15 HP four-stroke outboards engineered specifically as kicker/trolling motors. Features include:
+## Why HBW chose Mercury (and stays with Mercury)
 
-- High-thrust propellers and gearing optimized for slow-speed control
-- Extended tillers and brackets for easier integration on larger transoms
-- SmartCraft compatibility via VesselView Mobile
+We have been a Mercury dealer since 1965. That is 60 years of exclusive partnership. The reasons we have not switched:
 
-On a lake known for trolling walleye and muskie like Rice Lake, a ProKicker is one of the most practical add-ons you can rig.
+- The depth of Mercury expertise compounds. Three generations of HBW technicians have learned Mercury inside and out. Switching brands means starting that curve over.
+- Mercury parts inventory and tooling investment is significant. A new brand would mean new parts shelf, new tooling, new training. Not impossible, but expensive and slow.
+- Our customer base is Mercury. The boats coming in for service and repower are mostly Mercury-rigged. Adding a second brand splits our focus without adding revenue.
+- The Mercury Platinum dealer relationship gives HBW factory-direct access to support, training, and inventory that a multi-brand dealer does not have.
 
-### 808 HP V12 Concept: The Future Signal
-
-At CES 2026, Mercury made headlines by unveiling an 808 HP V12 concept outboard, demonstrating where ultra-high-performance marine propulsion may be headed. While still a prototype, it sends a clear signal: Mercury intends to lead at the extreme performance edge of the market as well.
-
-## Why Mercury Is the Right Fit for Rice Lake
-
-All that tech is impressive, but what matters for Harris Boat Works customers is how Mercury performs on this lake, in your boat.
-
-Here's why Mercury is such a strong match for Rice Lake boaters:
-
-- **Complete horsepower coverage**: From 2.5 HP portables to 300 HP FourStrokes and beyond, Mercury covers virtually every realistic power need on Rice Lake.
-- **Fuel efficiency**: Mercury's four-stroke engines are among the most fuel-efficient in their classes, which matters when you're running long days trolling or exploring the lake.
-- **Quiet, low-vibration operation**: A quieter motor means less fatigue and can help avoid spooking fish in shallow or clear water.
-- **Reliability in shallow, weedy, variable conditions**: Rice Lake's weeds, fluctuating water levels, and wind shifts demand engines that tolerate real-world use. Mercury's cooling, corrosion resistance, and ignition systems are engineered with these conditions in mind.
-- **Smart integration with electronics**: SmartCraft Connect and compatibility with major electronics brands allow you to monitor engine vitals where you already look for depth and fish.
-
-Just as importantly, Mercury is already the dominant presence on Rice Lake. Walk any marina — Gores Landing, Bewdley, Hastings — and you'll see Mercury cowlings everywhere because local boaters have voted with their wallets over many seasons.
-
-## Why Harris Boat Works Sticks With Mercury
-
-Harris Boat Works has been serving Rice Lake since 1947, and we've seen multiple engine brands come and go over that time. We choose to sell and service Mercury because:
-
-- The engines are reliable and give our customers fewer headaches.
-- The parts and support infrastructure are strong in Ontario.
-- Mercury continues to innovate, keeping our customers' rigs current with modern tech.
-- We can stand behind every Mercury we rig, knowing we'll still be here to service it years down the line.
-
-When you buy a Mercury from HBW, you're also buying our local expertise:
-
-- Proper horsepower and prop selection for Rice Lake hulls and usage.
-- Professional installation and rigging, including controls and electronics integration.
-- Ongoing maintenance and warranty support just minutes from your dock or launch.
-
-We're not interested in selling you whatever happens to be on a crate this month. We're interested in putting the right Mercury engine on the back of your boat, so it starts reliably, runs efficiently, and carries you and your family safely for many seasons of Rice Lake memories.
-
-## Ready to Talk Outboards?
-
-Whether you're repowering an older boat, spec'ing a new Legend package, [adding a ProKicker for trolling](/blog/mercury-prokicker-rice-lake-fishing-guide), or planning your first serious fishing rig — we're here to help you choose and set up the right Mercury outboard.
-
-[Browse Mercury motors and get pricing](/quote/motor-selection) — or call us at (905) 342-2153 to start the conversation.
-
-**See also:** [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer) and [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario).
+There are dealerships that handle multiple brands. They serve a different market. Our market is Mercury customers, and the depth of focus pays off in service quality.
 
 ## Related guides
 
-- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer) — why Harris Boat Works is Mercury
-- [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario) — Mercury vs Yamaha for Ontario
-- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
-- [2027 Mercury Outboard Preview: What's New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
-- [Inside Mercury's 2026 Outboard Lineup: What Actually Matters for Ontario Boaters](/blog/mercury-2026-outboard-lineup-ontario) — 2026 Mercury lineup for Ontario
+- [Why Harris Boat Works is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for HBW specifically
+- [Mercury vs Yamaha vs Honda Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), brand-by-brand reliability comparison
+- [Mercury vs Yamaha Outboards Ontario](/blog/mercury-vs-yamaha-outboards-ontario), focused Mercury vs Yamaha comparison
+- [Mercury 2026 Outboard Lineup Ontario](/blog/mercury-2026-outboard-lineup-ontario), the full current Mercury lineup
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which Mercury family fits your use
 
-    `,
+## Ready to switch to (or stay with) Mercury?
+
+If you are buying your next Mercury or switching brands during a repower, build a quote on the [motor selection page](/quote/motor-selection). Live CAD pricing on every Mercury family. Full configuration including rigging.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you have questions about whether Mercury is right for your specific boat or use case, [give us a call at (905) 342-2153](tel:9053422153). We will tell you the honest answer, including the answer where staying with your current brand makes sense.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Is Mercury actually the best outboard brand?**
+"Best" depends on context. Mechanically, Mercury, Yamaha, and Honda all make reliable outboards. In practical terms (dealer network, parts availability, service speed) for Ontario and Canadian freshwater, Mercury wins. In coastal saltwater regions, Yamaha is more competitive. The right brand for you depends on where you live and where you launch.
+
+**Why does HBW only sell Mercury?**
+We have been a Mercury dealer since 1965. Three generations of expertise, parts inventory, tooling, and a Mercury Platinum dealer relationship that gives factory-direct support. Multi-brand dealers serve a different market. We focus on Mercury depth instead of brand breadth, and that focus pays off in service quality.
+
+**What is Mercury's market share?**
+Mercury Marine is the largest outboard manufacturer in the world by volume and dealer count. Specific market share percentages vary by region. In Canada, Mercury has the deepest dealer network and the strongest factory-OEM relationships with major boat builders. In coastal US markets, Yamaha is more competitive.
+
+**Why do most Canadian boats come Mercury-rigged?**
+Decades of supply chain integration between Mercury and Canadian boat builders (Lund, Crestliner, Princecraft, Lowe). Customers ask for Mercury, factories rig with Mercury, dealer service network is built around Mercury. Buying a Mercury-rigged factory boat is the most cost-effective way into a new Canadian aluminum boat.
+
+**Is Mercury more expensive than Yamaha or Honda?**
+Comparable HP at comparable trim. Pricing varies by model and current promotions. The total cost of ownership math (including service, parts, and resale) tends to favor Mercury in Ontario because the dealer network drives down practical costs. For specific Mercury pricing in CAD, see the [motor selection page](/quote/motor-selection).
+
+**What is Mercury's most popular model?**
+The Mercury 9.9 ProKicker is the most-installed Mercury kicker motor in Canada. The 90 EXLPT FourStroke is the most common main motor on 16 to 18 ft aluminum console boats. The 115 EXLPT FourStroke is close behind. These are the workhorses of the Canadian recreational fleet.
+
+**Does Mercury make electric outboards?**
+Yes. The Avator line covers the electric category from small portables (7.5e, 20e, 35e) up to larger units (75e, 110e). The lineup is still maturing. We are on-order for Avator at HBW for customers with specific use cases.
+
+**What is Mercury Verado and why is it special-order at HBW?**
+Verado is Mercury's supercharged premium line, 250 to 600+ HP, built for offshore center consoles, twin/triple installations, and yachts. We do not stock Verado at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. If you do, [contact us](/contact) for a special-order quote.
+
+**Should I switch from Yamaha or Honda to Mercury?**
+If you are doing a full repower anyway and the rigging investment is unavoidable, switching to Mercury during the repower makes sense for Ontario boaters. The dealer network and parts supply argument favors Mercury once the rigging cost is committed either way. If your existing motor is running fine and you are not repowering, no reason to switch.
+
+**How long has Mercury been making outboards?**
+Mercury Marine was founded in 1939 by Carl Kiekhaefer in Cedarburg, Wisconsin. The brand has evolved from small post-war outboards through the modern FourStroke, Pro XS, Verado, and Avator lineup. As of 2026, Mercury is part of Brunswick Corporation and remains the largest outboard manufacturer globally.
+
+**Is Mercury reliable for cottage use on Rice Lake?**
+Yes, demonstrably. Mercury has been the dominant outboard brand on Rice Lake and Kawartha lakes for decades. Most cottage boats come from the factory or from previous owners with Mercury motors. The local service network is built around Mercury. For typical cottage use (50 to 150 hours a season), a properly maintained Mercury lasts 10 to 30 years.
+
+**What is the difference between Mercury and other outboard brands?**
+Mechanically, modern Mercury, Yamaha, and Honda are all reliable four-stroke outboards. The differences come down to dealer network density, parts availability, factory-OEM relationships with boat builders, and resale demand in your specific region. For Ontario, Mercury wins on all four. For other regions, the answer might differ.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)`,
     faqs: [
       {
         question: 'Why does Mercury have such a large market share?',
