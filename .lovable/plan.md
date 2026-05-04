@@ -1,68 +1,56 @@
-## Goal
+# Restyle Filter Motors sheet to cinematic dark theme
 
-Rotate the homepage hero (`HeroRepower` on `/`) across 7 cohesive copy sets — current baseline + 6 new variations from `landing_page_content.md`, each paired with the recommended CTA from `Landing_CTA.md`. One variation per visitor, stable for the session, so a customer never sees the heading flip mid-scroll.
+The "Filter Motors" drawer (HP grid, Availability, Start Type, Control, Shaft Length, Clear All / Done) currently uses the default light/muted shadcn palette. Restyle it to match the new Repower hero look used elsewhere on the site.
 
-## Variation set (cohesive bundles)
+## Visual target
 
-Each bundle = heading (with optional red-accent word), subheading, 3 stats, primary CTA label.
+Pulled from the existing hero/RepowerLayout palette:
 
-1. **Baseline** — *Keep your boat. Get your weekends back.* / New motor. Same boat. Way better mornings. / 70% benefit · 30% cost · 79 years on the water / `Build My Quote`
-2. **Math** — *Your boat isn't the problem. Your motor is.* / fraction of a new boat… / Save up to 70% vs. new · Quote in 3 minutes · Real CAD prices / `See How Much I'd Save`
-3. **Season** — *This season deserves a motor that keeps up.* / Stop nursing an old engine… / 1–3 day install · 7-year warranty · On Rice Lake since 1947 / `Get My Quote Before the Season Starts`
-4. **Frustration** — *Tired of watching other boats pull away?* / Modern Mercury power… / 295 Google reviews · 4.6 stars · Mercury Platinum Dealer / `See My Mercury Price`
-5. **Legacy** — *Three generations. One Mercury dealer.* / Jim Harris started rigging Mercurys… / Family-owned since 1947 · Mercury Certified · CSI Award Winner / `Get a Quote — No Obligation`
-6. **No-BS** — *See your real Mercury price before you call anyone.* / Live CAD pricing… / Price you see = price you pay · Trade-in estimate included · Financing in minutes / `Show Me Real Prices`
-7. **Emotional** — *You've had good years on that boat. Have more.* / A repower gives you a nearly new experience… / 70% of the benefit · 30% of the cost · Done in 1–3 days / `Repower My Boat`
+- Surface (sheet bg): `#050E1C` (deep navy)
+- Text primary: `#F5F1EA` (cream)
+- Text muted / section labels: `#F5F1EA / 55–70%`
+- Hairlines / dividers: `#F5F1EA / 15%`
+- Active chip: solid gold `#C9A24A`, dark text `#050E1C`
+- Inactive chip: `#F5F1EA / 8%` bg, cream text, subtle hover `#F5F1EA / 14%`
+- Disabled chip: `#F5F1EA / 4%` bg, `#F5F1EA / 30%` text
+- "Popular" tag stays amber/gold but slightly brighter on dark
+- Drag handle: `#F5F1EA / 25%`
+- Done button: gold `#C9A24A` on navy text; Clear All: ghost outline in `#F5F1EA / 25%` border with cream text
+- Reset all link / count badge: gold
 
-(Per the "My"-pronoun A/B tip, baseline CTA upgraded from "Build Your Quote" → "Build My Quote".)
+## Files to change
 
-## Selection logic
+1. `src/components/motors/ConfigFilterSheet.tsx` — the sheet shown in the screenshot.
+2. `src/components/ui/mobile-filter-sheet.tsx` — older variant, restyle for parity in case it renders elsewhere.
+3. (Optional, scoped override only) `src/components/ui/drawer.tsx` — only if we need to override the default `bg-background` on the `DrawerContent`. Preferred: pass `className` on the consumer side instead, so we don't affect every drawer in the app.
 
-- On first hero render, pick a variation index `0–6` and persist to `sessionStorage` under `hero-variant`.
-- Reuse on subsequent renders within the same tab session, so the hero is stable while the user scrolls/navigates.
-- A new tab/session = new random pick.
-- Weighting: uniform for now (easy to switch to weighted later).
-- **Query-string override** for testing/marketing: `?v=2` forces variation 2 and persists it for that session. Useful for ad-campaign deep links.
+## Implementation details
 
-## Technical implementation
+In `ConfigFilterSheet.tsx`:
 
-Single file change: `src/components/repower/HeroRepower.tsx`.
+- `DrawerContent`: add `className="bg-[#050E1C] text-[#F5F1EA] border-t border-[#F5F1EA]/10"`. Override the built-in handle color via a child selector or by adding `[&>div:first-child]:bg-[#F5F1EA]/25`.
+- `DrawerTitle`: `text-[#F5F1EA] font-display tracking-tight`.
+- "Reset all" link: `text-[#C9A24A] hover:text-[#D9B868]`.
+- Section headings (`Horsepower`, `Availability`, ...): `text-[#F5F1EA]/55 uppercase tracking-[0.16em] text-[11px]`.
+- Dividers: replace `border-border` with `border-[#F5F1EA]/10`.
+- HP pill (active): `bg-[#C9A24A] text-[#050E1C]`.
+- HP pill (inactive, has stock): `bg-[#F5F1EA]/8 text-[#F5F1EA] hover:bg-[#F5F1EA]/14`.
+- HP pill (disabled): `bg-[#F5F1EA]/[0.04] text-[#F5F1EA]/30`.
+- "Popular" suffix: `text-[#C9A24A]` (replace `text-amber-600`).
+- Update `FilterPill` with the same active / inactive token set; count text becomes `text-[#050E1C]/70` when active, `text-[#F5F1EA]/55` when inactive.
+- `DrawerFooter`: add top border `border-t border-[#F5F1EA]/10 bg-[#050E1C]`.
+- `Clear All` (outline): `border-[#F5F1EA]/25 text-[#F5F1EA] hover:bg-[#F5F1EA]/8 bg-transparent`.
+- `Done` (primary): `bg-[#C9A24A] text-[#050E1C] hover:bg-[#D9B868]`.
+- Trigger button (the gear icon on the toolbar) is outside the sheet — leave it alone unless the user calls it out.
 
-```text
-src/components/repower/
-  HeroRepower.tsx        ← reads variation, renders dynamic copy
-  heroVariations.ts      ← NEW: typed array of 7 bundles
-```
-
-1. **`heroVariations.ts`** — exports `HERO_VARIATIONS: HeroVariation[]` with shape:
-   ```ts
-   { id: string; eyebrow?: string; heading: ReactNode; subheading: string;
-     stats: { n: string; l: string }[]; ctaLabel: string }
-   ```
-   `heading` supports the red-accent word via a small `<span>` (e.g. `weekends`). For variations without a natural accent word, no span is used.
-
-2. **`HeroRepower.tsx`**:
-   - Add `useMemo` selector that:
-     - reads `?v=N` from `window.location.search`; if valid index, use + persist.
-     - else reads `sessionStorage.getItem('hero-variant')`; if valid, use.
-     - else `Math.floor(Math.random() * HERO_VARIATIONS.length)`, persist.
-   - Render `variation.eyebrow ?? 'Mercury Repower · Rice Lake · Since 1947'`, `variation.heading`, `variation.subheading`, `.map` over `variation.stats`, and use `variation.ctaLabel` as the primary button text.
-   - Keep all existing animations, motion timings, classes, video background, and phone CTA untouched.
-   - SSR/prerender safety: default to baseline (index 0) until `useEffect` hydration sets the chosen variant — prevents hydration mismatch in static prerender.
-
-3. **No tracking added** (per "rotation system, no A/B"). Easy hook point left for analytics later: a single `data-hero-variant` attribute on the `<section>` so any future analytics can filter without code changes.
+In `mobile-filter-sheet.tsx`: apply the same token set to `DrawerContent`, labels, selects, and Apply/Clear buttons so the two sheets stay visually consistent.
 
 ## Out of scope
 
-- A/B test logging, conversion attribution, admin picker UI — can be layered on later.
-- Other heros (`RepowerHero` on `/repower`) untouched unless you ask.
-- No memory file added; this is content config, not a project rule.
+- Trigger button styling on the motor selection toolbar.
+- Drawer overlay / scrim color (the default works on dark sheets).
+- Other drawers in the app (settings, comparison, etc.) — we keep changes scoped to these two files.
 
-## Verification
+## Acceptance check
 
-After implementation:
-1. Load `/` several times in a fresh tab (or clear sessionStorage) — should see different headings/subs/stats/CTA cycling.
-2. Within one tab, refresh — same variation persists.
-3. Visit `/?v=3` — frustration variation appears; refresh keeps it.
-4. Visit `/?v=99` — falls back to random.
-5. Confirm baseline still renders correctly with the red `weekends` accent.
+After implementation, on `/quote/motor-selection` (mobile viewport) opening the filter sheet shows: navy sheet, cream headings, gold active chips matching the hero/CTA on `/`, and a gold "Done" button. The non-active HP chips read clearly against the navy background.
