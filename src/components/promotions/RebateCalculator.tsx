@@ -1,8 +1,5 @@
 import { useState, useMemo } from 'react';
 import { Slider } from '@/components/ui/slider';
-import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { DollarSign, Gauge } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -19,15 +16,14 @@ interface RebateCalculatorProps {
   className?: string;
 }
 
-export function RebateCalculator({ 
-  matrix, 
-  initialHP = 115, 
+export function RebateCalculator({
+  matrix,
+  initialHP = 115,
   onHPChange,
-  className 
+  className,
 }: RebateCalculatorProps) {
   const [selectedHP, setSelectedHP] = useState(initialHP);
 
-  // Calculate min/max HP from matrix
   const { minHP, maxHP } = useMemo(() => {
     if (!matrix.length) return { minHP: 2.5, maxHP: 425 };
     const min = Math.min(...matrix.map(r => r.hp_min));
@@ -35,13 +31,11 @@ export function RebateCalculator({
     return { minHP: min, maxHP: max };
   }, [matrix]);
 
-  // Find the rebate for selected HP
   const currentRebate = useMemo(() => {
     const match = matrix.find(row => selectedHP >= row.hp_min && selectedHP <= row.hp_max);
     return match ? match.rebate : 0;
   }, [matrix, selectedHP]);
 
-  // Find the current tier
   const currentTier = useMemo(() => {
     return matrix.find(row => selectedHP >= row.hp_min && selectedHP <= row.hp_max);
   }, [matrix, selectedHP]);
@@ -60,32 +54,64 @@ export function RebateCalculator({
   };
 
   return (
-    <Card className={cn('p-6 bg-gradient-to-br from-white to-stone-50 border-border', className)}>
-      <div className="space-y-6">
-        {/* Header */}
-        <div className="text-center space-y-2">
-          <div className="flex items-center justify-center gap-2">
-            <div className="p-2 bg-primary/10 rounded-full">
-              <DollarSign className="h-5 w-5 text-primary" />
-            </div>
-            <h3 className="text-lg font-semibold text-foreground">Factory Rebate Calculator</h3>
+    <div
+      className={cn(
+        'rounded-[12px] border border-repower-navy-900/10 bg-repower-cream p-8',
+        className
+      )}
+    >
+      <div className="space-y-7">
+        {/* Eyebrow + Anchor */}
+        <div className="space-y-2">
+          <div
+            className="text-[12px] font-semibold uppercase text-repower-mercury-red"
+            style={{ letterSpacing: '0.14em' }}
+          >
+            Your Rebate
           </div>
-          <p className="text-sm text-muted-foreground">
-            Slide to see your rebate based on motor horsepower
-          </p>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentRebate}
+              initial={{ y: 6, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -6, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="font-display font-bold text-[36px] leading-none text-repower-navy-900"
+              style={{ letterSpacing: '-0.02em' }}
+            >
+              ${currentRebate.toLocaleString()}
+            </motion.div>
+          </AnimatePresence>
+          {currentTier && (
+            <div
+              className="font-display font-semibold text-[14px] text-repower-navy-900"
+              style={{ color: 'hsl(var(--repower-navy-900) / 0.7)' }}
+            >
+              {formatHPRange(currentTier)} tier
+            </div>
+          )}
         </div>
 
-        {/* HP Slider */}
-        <div className="space-y-4">
+        {/* Slider */}
+        <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">{minHP}HP</span>
-            <div className="flex items-center gap-2">
-              <Gauge className="h-4 w-4 text-muted-foreground" />
-              <span className="text-2xl font-bold text-foreground">{selectedHP}HP</span>
-            </div>
-            <span className="text-sm text-muted-foreground">{maxHP}HP</span>
+            <span
+              className="text-[12px] text-repower-navy-900"
+              style={{ color: 'hsl(var(--repower-navy-900) / 0.6)' }}
+            >
+              {minHP}HP
+            </span>
+            <span className="font-display font-semibold text-[16px] text-repower-navy-900">
+              {selectedHP}HP
+            </span>
+            <span
+              className="text-[12px] text-repower-navy-900"
+              style={{ color: 'hsl(var(--repower-navy-900) / 0.6)' }}
+            >
+              {maxHP}HP
+            </span>
           </div>
-          
+
           <Slider
             value={[selectedHP]}
             onValueChange={handleSliderChange}
@@ -96,33 +122,12 @@ export function RebateCalculator({
           />
         </div>
 
-        {/* Rebate Result */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentRebate}
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 text-center"
-          >
-            <div className="text-sm text-green-700 font-medium mb-1">
-              Your Factory Rebate
-            </div>
-            <div className="text-4xl font-bold text-green-600">
-              ${currentRebate.toLocaleString()}
-            </div>
-            {currentTier && (
-              <Badge variant="secondary" className="mt-3 bg-green-100 text-green-700 border-green-200">
-                {formatHPRange(currentTier)} tier
-              </Badge>
-            )}
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Quick Reference Tiers */}
+        {/* Tier Pills */}
         <div className="space-y-2">
-          <div className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+          <div
+            className="text-[11px] font-semibold uppercase text-repower-navy-900"
+            style={{ letterSpacing: '0.14em', color: 'hsl(var(--repower-navy-900) / 0.55)' }}
+          >
             All Rebate Tiers
           </div>
           <div className="grid grid-cols-2 gap-2">
@@ -131,32 +136,46 @@ export function RebateCalculator({
               return (
                 <button
                   key={index}
+                  type="button"
                   onClick={() => {
-                    // Set to middle of range
                     const midHP = Math.round((row.hp_min + row.hp_max) / 2);
                     setSelectedHP(midHP);
                     onHPChange?.(midHP);
                   }}
                   className={cn(
-                    'flex justify-between items-center px-3 py-2 rounded-lg text-sm transition-all',
+                    'flex items-center justify-between gap-2 px-3 py-2 rounded-[10px] bg-white border text-[13px] transition-all',
                     isActive
-                      ? 'bg-primary text-primary-foreground font-semibold ring-2 ring-primary ring-offset-2'
-                      : 'bg-muted hover:bg-muted/80 text-foreground'
+                      ? 'border-repower-navy-900 ring-1 ring-repower-navy-900'
+                      : 'border-repower-navy-900/10 hover:border-repower-navy-900/30'
                   )}
                 >
-                  <span>{formatHPRange(row)}</span>
-                  <span className="font-semibold">${row.rebate}</span>
+                  <span className="flex items-center gap-2 font-medium text-repower-navy-900">
+                    <span
+                      className={cn(
+                        'inline-block w-1.5 h-1.5 rounded-full',
+                        isActive ? 'bg-repower-mercury-red' : 'bg-transparent'
+                      )}
+                      aria-hidden="true"
+                    />
+                    {formatHPRange(row)}
+                  </span>
+                  <span className="font-display font-bold text-repower-mercury-red">
+                    ${row.rebate}
+                  </span>
                 </button>
               );
             })}
           </div>
         </div>
 
-        {/* CTA */}
-        <p className="text-xs text-center text-muted-foreground">
+        {/* Footnote */}
+        <p
+          className="text-[12px] text-repower-navy-900"
+          style={{ color: 'hsl(var(--repower-navy-900) / 0.6)' }}
+        >
           Rebates applied at checkout when you choose the Cash Rebate option
         </p>
       </div>
-    </Card>
+    </div>
   );
 }
