@@ -6,7 +6,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { MercuryDealerCanadaSEO, TRUST_FAQ } from '@/components/seo/MercuryDealerCanadaSEO';
 import { ChevronRight, Award, Calendar, MapPin, Shield } from 'lucide-react';
 
@@ -19,9 +20,10 @@ const trustPoints = [
 
 export default function MercuryDealerCanadaFAQ() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <MercuryDealerCanadaSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         {/* Breadcrumb */}
@@ -108,6 +110,7 @@ export default function MercuryDealerCanadaFAQ() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

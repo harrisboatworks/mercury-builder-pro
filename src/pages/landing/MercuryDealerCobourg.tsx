@@ -6,7 +6,8 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { LuxuryHeader } from '@/components/ui/luxury-header';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { MercuryDealerCobourgSEO, COBOURG_FAQ } from '@/components/seo/MercuryDealerCobourgSEO';
 import { ChevronRight, MapPin, Clock, Award, Phone } from 'lucide-react';
 
@@ -19,9 +20,10 @@ const facts = [
 
 export default function MercuryDealerCobourg() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-repower-paper">
       <MercuryDealerCobourgSEO />
-      <LuxuryHeader />
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         <nav aria-label="Breadcrumb" className="mb-6 text-sm text-muted-foreground">
@@ -107,6 +109,7 @@ export default function MercuryDealerCobourg() {
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }
