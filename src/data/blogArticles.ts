@@ -1026,94 +1026,194 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   },
   {
     slug: 'breaking-in-new-mercury-motor-guide',
-    title: 'Breaking In Your New Mercury Motor: Complete Guide',
-    description: 'Proper break-in ensures long engine life. Learn the correct procedure for breaking in your new Mercury outboard motor from certified technicians.',
+    title: 'Breaking In a New Mercury Motor (2026)',
+    description: 'The first 10 hours of a new Mercury are the most important hours of its service life. Mercury\'s break-in protocol calls for graduated load and RPM during this period: vary throttle, avoid sustained WOT, and follow the specific RPM guidance for the motor model. The first oil change at 20 hours is...',
     image: '/lovable-uploads/Breaking_In_New_Mercury_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-02-20',
-    dateModified: '2024-11-20',
+    dateModified: '2026-05-04',
     category: 'New Owner',
     readTime: '7 min read',
     keywords: ['mercury motor break in', 'new outboard break in procedure', 'mercury break in period', 'outboard motor break in', 'new boat motor care'],
-    content: `
-## Breaking In Your New Mercury Outboard
+    content: `# Breaking In a New Mercury Motor (2026)
 
-A new Mercury motor is a significant investment — and the first 10 hours you put on it matter more than any other 10 hours in its life. Proper break-in lets the internal components seat correctly, establishes the right oil film on bearing and cylinder surfaces, and sets the engine up for the long haul. We've sold and serviced Mercury outboards at Harris Boat Works since 1965, and the owners who follow this procedure consistently get more life out of their engines.
+The first 10 hours of a new Mercury are the most important hours of its service life. Mercury's break-in protocol calls for graduated load and RPM during this period: vary throttle, avoid sustained WOT, and follow the specific RPM guidance for the motor model. The first oil change at 20 hours is also important on FourStrokes. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-![Mercury Motor Break-In Infographic](https://mercuryrepower.ca/lovable-uploads/Break_In_Infographic.png)
+## Quick recommendation
 
-### Why Break-In Matters
+Mercury motors that get a proper break-in last decades longer than motors that get hammered from day one. The customers who skip break-in are the same customers who come back complaining about reduced fuel economy, premature wear, and shorter motor life. Worth doing right.
 
-During manufacturing, engine components are machined to very precise tolerances. The break-in period allows:
+The break-in is not complicated. Modern Mercury FourStrokes have a specific 10-hour break-in window with manufacturer guidance on RPM ranges and load. Follow it. The first oil change at 20 hours catches break-in particles. After that, normal operation.
 
-- Piston rings to seat properly against the cylinder walls
-- Bearings to wear in evenly
-- Mating components to find their final fit
-- Optimal oil film to develop on all friction surfaces
+## What changes the break-in picture
 
-Skipping or rushing break-in can lead to reduced peak performance, higher long-term oil consumption, and a measurably shorter engine life. The 10 hours is not a formality — it's engineering.
+Mercury publishes specific break-in procedures by motor family and model. The general principles are consistent:
 
-### The 10-Hour Break-In Procedure
+- **First hour:** Idle, no-wake, gentle break-in. No sustained throttle.
+- **Hours 1 to 10:** Graduated RPM with frequent throttle variation. Avoid WOT for sustained periods.
+- **Hours 10 to 20:** Normal operation but still varying load.
+- **Hour 20:** First oil and filter change (FourStroke).
+- **Hour 100:** First major service interval.
 
-**First Hour (0–1 hours):**
+The specifics vary by motor. Always follow the owner's manual for your specific Mercury. If you bought through HBW, we walk you through the break-in protocol at delivery.
 
-- Start engine and warm up at idle for 5 minutes
-- Run at varying speeds below 3,000 RPM
-- Never hold a steady throttle position for more than a few minutes
-- Avoid hard acceleration
+## The Mercury 10-hour break-in protocol
 
-**Hours 2–3:**
+For most modern Mercury FourStrokes:
 
-- Gradually increase to 3/4 throttle
-- Continue varying speed every few minutes
-- Brief full-throttle bursts are okay (under 30 seconds)
-- Allow engine to cool between hard runs
+### First 5 minutes
 
-**Hours 4–10:**
+- Run at idle to circulate fluids
+- Check telltale water flow
+- Confirm no warning lights or unusual sounds
+- Allow motor to warm up
 
-- Normal operation at varying speeds
-- Occasional full-throttle runs up to 1–2 minutes
-- Avoid extended trolling at a single constant speed
-- Keep varying your throttle position regularly
+### First hour
 
-### Factory Oil
+- Run at no-wake speed (under 5 mph) for 10 to 15 minutes
+- Then graduate to about 3,000 RPM (cruise speed for most boats)
+- Vary throttle between 2,500 and 3,500 RPM
+- Avoid sustained throttle position
 
-Your new Mercury FourStroke comes from the factory filled with standard Mercury FourStroke 10W-30 oil — there is no special break-in formulation. However, we strongly recommend changing the engine oil and gear lube at the **20-hour mark** to remove metal particles shed during the break-in process. Leaving those particles in the oil is the most common mistake we see.
+### Hours 1 to 2
 
-### What NOT to Do
+- Continue varying throttle in the 2,500 to 4,000 RPM range
+- Brief bursts up to 4,500 RPM are okay
+- Do not run at WOT for more than 1 minute at a time
 
-❌ Run at constant speed for extended periods
+### Hours 2 to 10
 
-❌ Immediately run at full throttle
+- Vary throttle through full RPM range
+- Sustained cruise at 3,500 to 4,500 RPM is okay
+- WOT for short periods (1 to 3 minutes) is okay
+- Continue varying load and throttle position throughout
 
-❌ Let the engine overheat
+### After 10 hours
 
-❌ Skip the first oil change at 20 hours
+- Normal operation
+- WOT for sustained periods is okay (within Mercury's WOT RPM band)
+- Continue varying throttle and load through normal use
 
-❌ Use non-marine oil
+## Why varying RPM matters
 
-### First Oil Change
+Modern engine break-in is about seating the piston rings against the cylinder walls. Sustained RPM at one position glazes the cylinder walls and prevents proper ring seating. Varying RPM forces the rings to seat across the full range of cylinder geometry.
 
-Schedule your first oil change at **20 hours** — this is not optional. The oil captures metal particles from break-in that need to be removed before they circulate and cause wear. Use Mercury-branded 10W-30 FourStroke oil and replace the gear lube at the same time. On Rice Lake, where many owners put those first 20 hours on fast during opening weeks, this service comes up quickly — book it before you need it.
+This is why Mercury (and every other modern outboard manufacturer) emphasizes RPM variation during break-in. It is not about being gentle on the engine. It is about ensuring proper ring seating for long-term durability.
 
-### After Break-In
+## The 20-hour oil change
 
-Once you've completed the 10-hour break-in and 20-hour oil change, your motor is ready for normal operation. Continue following the maintenance schedule in your owner's manual. From this point forward, annual or 100-hour service intervals apply.
+For Mercury FourStrokes, the first oil and filter change at 20 hours is critical. The break-in process produces metal particles as components seat together. Those particles end up in the oil. Changing oil at 20 hours flushes them out before they can cause wear.
 
-### Let Us Help
+After the 20-hour change, normal Mercury service intervals apply: oil and filter every 100 hours or annually, whichever comes first.
 
-When you purchase from Harris Boat Works, we walk you through the break-in procedure at delivery and offer a complimentary first oil change at 20 hours. We want your motor to last as long as possible — that's how we've been doing business since 1947. Call us at 905-342-2153 or [request service online](https://hbw.wiki/service).
+For 2-stroke motors, the equivalent break-in period uses Mercury's recommended TC-W3 oil through the autoblend or pre-mix system, with similar throttle variation principles.
 
-**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
+## Common break-in mistakes
+
+We see these every spring:
+
+1. **Running WOT during the first hour.** New owners eager to test top speed. Bad for ring seating and motor longevity.
+2. **Sustained cruise at one RPM.** Setting cruise control mentally and running 3,500 RPM for 2 hours straight. Worse than varying throttle.
+3. **Skipping the 20-hour oil change.** Customer thinks "the motor's barely broken in, why change oil?" The 20-hour change catches break-in particles. Skipping it shortens motor life.
+4. **Ignoring the owner's manual specifics.** Mercury publishes specific break-in procedures by model. Following the generic advice rather than the model-specific procedure misses some important details.
+5. **Loading the boat heavy during break-in.** A new motor under heavy load during break-in works harder than necessary. Lighter loads are easier on a fresh motor.
+
+## What HBW does on new motor delivery
+
+When customers take delivery of a new Mercury at HBW:
+
+- **Initial sea-trial.** We run the motor briefly to verify cooling, charging, and basic operation.
+- **Owner's manual review.** We walk through the break-in protocol specific to the motor model.
+- **Service schedule discussion.** We explain the 20-hour change, 100-hour service, and ongoing maintenance.
+- **Warranty registration.** We complete Mercury warranty registration with serial number and customer info.
+- **First-year service appointment.** We book the 20-hour service in advance so it's not forgotten.
+
+For specific Mercury pricing, [build a quote](/quote/motor-selection).
+
+## What about break-in for used motors?
+
+Used Mercury motors don't need new-motor break-in. They have already broken in. After purchase or transfer, you should:
+
+- **Check oil condition** (FourStroke). Change if old or unknown service history.
+- **Check fuel system** for stale fuel.
+- **Run motor briefly** at HBW or under qualified supervision to verify operation.
+- **Plan first major service** based on motor age and service history.
+
+For repower customers buying new Mercurys at HBW, the break-in protocol applies to the new motor. The hull is the same; the motor is the new component.
+
+## Break-in and warranty
+
+Mercury warranty requires break-in compliance. The published break-in procedure in the owner's manual is the binding standard. Customers who damage motors by skipping break-in may have warranty claims denied.
+
+We document break-in compliance during HBW deliveries and follow up on first-year service. The records support warranty support if anything comes up.
 
 ## Related guides
 
-- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) — the full Mercury service schedule
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips) — seasonal maintenance tips
-- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist) — spring commissioning checklist
-- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips) — off-season storage tips
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), the annual maintenance cycle
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), spring service after first season
+- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), getting peak efficiency from a broken-in motor
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop testing during break-in sea-trial
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early-life issue diagnostics
 
-    `,
+## Ready to take delivery of a new Mercury?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration. Break-in protocol is part of every HBW delivery.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through break-in for a specific Mercury before purchase, [give us a call at (905) 342-2153](tel:9053422153). We deliver new Mercurys every week and walk every customer through the break-in protocol.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**How long is the Mercury break-in period?**
+For modern Mercury FourStrokes, the break-in period is typically 10 hours of graduated operation. Followed by a 20-hour oil and filter change. Specific procedures vary by motor model; check the owner's manual.
+
+**Can I run my new Mercury at full throttle during break-in?**
+For brief periods (1 to 3 minutes) after the first 1 to 2 hours, yes. Sustained WOT during the first 10 hours is not recommended. Vary throttle throughout the break-in period.
+
+**Why does Mercury require an oil change at 20 hours?**
+Break-in produces metal particles as engine components seat together. Those particles end up in the oil. The 20-hour oil change flushes them out before they cause wear. Skipping this shortens motor life.
+
+**Do I need to do anything special with a 2-stroke Mercury during break-in?**
+2-stroke break-in uses Mercury's recommended oil through autoblend or pre-mix system, with similar throttle variation. Specifics vary by motor; check the owner's manual.
+
+**Can I tube or ski with a new Mercury during break-in?**
+Light water sports are okay after the first hour. Sustained heavy load (multiple skiers, full crew tubing) should wait until break-in is complete.
+
+**Will my new Mercury feel different after break-in?**
+Yes, slightly. Properly broken-in motors typically run smoother, achieve full power, and reach full fuel economy potential. The differences are subtle but real.
+
+**What if I bought a new Mercury and skipped break-in?**
+Run a careful inspection (compression test, oil analysis) to see if any damage occurred. Sometimes no harm done; sometimes accelerated wear has begun. Future motor life may be shorter. Going forward, follow normal maintenance and avoid overloading.
+
+**Does break-in affect Mercury warranty?**
+Yes. Mercury warranty requires break-in compliance per the owner's manual. Damage from improper break-in may not be covered. We document break-in compliance at HBW deliveries to support warranty.
+
+**Can I tow my boat home from HBW and break in on my own lake?**
+Yes. Many customers do this. The break-in protocol works regardless of which lake you're on. Start with idle and no-wake speed, then graduate over the first hour.
+
+**Should I run break-in fuel or special oil?**
+For modern Mercury FourStrokes, no. Use Mercury 25W-50 four-stroke oil from day one. For 2-strokes, use Mercury TC-W3 oil per manufacturer spec. No special "break-in" formulations needed.
+
+**What's the cost of the 20-hour service at HBW?**
+Standard 20-hour service includes oil and filter change plus inspection. For specific pricing, [contact HBW](/contact). Often booked at delivery so it's not forgotten.
+
+**Do used Mercury motors need break-in?**
+No. Used motors are already broken in. After purchase, check oil condition and fuel system, run briefly to verify operation, and follow normal Mercury service intervals.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     howToSteps: [
       {
         name: 'First Hour (0-1 hours)',
@@ -3548,142 +3648,226 @@ Mercury's Joystick Piloting for Outboards is a game-changer for docking:
   // Week 13: March 30, 2026
   {
     slug: 'spring-outboard-commissioning-checklist',
-    title: 'Spring Outboard Commissioning: Complete Checklist for Ontario Boaters',
-    description: 'Get your Mercury outboard ready for the season. Complete spring commissioning checklist covering everything from fuel to propeller before your first trip.',
+    title: 'Spring Outboard Commissioning Checklist (2026 Ontario)',
+    description: 'Spring commissioning brings your Mercury back to operational state after winter storage. The process covers fuel system, cooling system, lubrication, electrical, and hull inspection. Most Mercury motors that fail in May are motors that skipped a step in commissioning. We do spring service on hund...',
     image: '/lovable-uploads/Mercury_Maintenance_Schedule.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-30',
-    dateModified: '2026-03-30',
+    dateModified: '2026-05-04',
     publishDate: '2026-03-30',
     category: 'Maintenance',
     readTime: '9 min read',
     keywords: ['spring boat commissioning', 'outboard commissioning', 'spring boat startup', 'mercury spring maintenance', 'boat season prep'],
-    content: `
-## Spring Commissioning Checklist
+    content: `# Spring Outboard Commissioning Checklist (2026 Ontario)
 
-The ice is out on Rice Lake. Time to get your Mercury ready for another season. Follow this checklist for a trouble-free summer on the water.
+Spring commissioning brings your Mercury back to operational state after winter storage. The process covers fuel system, cooling system, lubrication, electrical, and hull inspection. Most Mercury motors that fail in May are motors that skipped a step in commissioning. We do spring service on hundreds of motors at HBW each year. Book early; April and May slots fill up by March.
 
-### Before You Touch the Motor
+## Quick recommendation
 
-Battery Check:
+Spring commissioning is not optional. The motor sat for 5 to 6 months. Fluids settled, batteries discharged, fuel sat, and rubber components stiffened. Putting the boat in the water without commissioning is gambling.
 
-Check voltage (should be 12.6V+ for full charge)
-Clean terminals (baking soda + water)
-Verify tight connections
-Test under load if possible
+For most Ontario boaters, spring commissioning is a 2 to 4 hour shop service or a half-day DIY project. The cost at HBW is small relative to the cost of a mid-season failure. The customers who book in February or early March get their boats ready for May 1 launch with no rush. The customers who book in late April get their boats ready in late May or early June, after the rush.
 
-Fuel System:
+If you DIY winterized correctly in October or November, spring commissioning is mostly verification. If winterization was skipped or done badly, spring commissioning becomes a rescue mission.
 
-Inspect fuel lines for cracks or deterioration
-Check primer bulb (should hold firm when squeezed)
-Look for water in fuel filter
-Replace fuel filter if uncertain
+## What changes the spring commissioning picture
 
-### Engine Inspection
+Five things move how aggressive spring commissioning needs to be:
 
-External Check:
+- **Quality of last fall's winterization.** Properly winterized motor needs verification only. Skipped winterization needs full diagnostic.
+- **Storage conditions.** Indoor heated storage is gentlest. Outdoor uncovered storage is hardest.
+- **Motor age.** Newer motors generally need less. Older motors (2-stroke or pre-2010 FourStroke) often need more attention to fuel system and electrical.
+- **Hours of use last season.** A motor that ran 200 hours last summer is in different shape than one that ran 30 hours.
+- **Boat use plans for the new season.** Heavy-use plans warrant more thorough commissioning.
 
-Look for corrosion or damage
-Verify all cowl clips secure
-Check paint condition
-Ensure no critters made a home inside
+## The spring commissioning checklist
 
-Propeller:
+Below is the checklist HBW uses for typical recreational Mercury motors. Cottage boaters who DIY can follow this. Customers who want it done by us, [book service](https://hbw.wiki/service).
 
-Remove and inspect for dings
-Check for fishing line around shaft
-Verify hub condition
-Apply marine grease to shaft
+### 1. Visual inspection (before starting anything)
 
-Lower Unit:
+- **Walk around the boat.** Check hull for damage, mouse intrusion in the cabin or storage, cover damage, loose or missing hardware.
+- **Inspect motor cowl.** Check for cracks, missing fasteners, mouse damage to wiring or hoses.
+- **Check transom area.** Soft spots, cracks, mounting bolts.
+- **Look at trailer.** Bearings, tires, lights, brakes, safety chains, ball coupler.
 
-Check gear oil level
-Look for milky oil (water intrusion)
-Inspect for leaks around seals
-Verify drain/fill plug condition
+### 2. Battery and electrical
 
-### Controls and Electrical
+- **Reinstall the battery** (if removed for winter storage).
+- **Load test the battery.** A battery that drops below 10.5V under load is at end of life. Replace.
+- **Check battery terminals.** Clean and tighten as needed.
+- **Test all electrical systems** with the key on but engine off: bilge pump, lights, gauges, electronics.
 
-Throttle/Shift:
+### 3. Fuel system
 
-Operate through full range
-Check for smooth action
-Lubricate if sticky
-Verify cable ends secure
+- **Check fuel tank** for water intrusion or contamination.
+- **Replace fuel filter** if at or past service interval (typically annual or 100 hours).
+- **Inspect fuel lines** for cracks, brittleness, or leaks.
+- **Add fresh fuel** to the tank. Old gas (over 6 months) should be drained or used up before fishing season.
+- **Run fuel stabilizer** if you did not last fall (treats the residual old gas in lines).
 
-Electrical:
+### 4. Cooling system
 
-Test all switches
-Verify gauges illuminate
-Check for corroded connections
-Test kill switch lanyard
+- **Check cooling system** for visible damage or blockage.
+- **Inspect water-pump impeller** if at service interval (typically every 200 hours or 3 years).
+- **Verify telltale stream** when motor first runs (the small water stream from the side of the cowl).
+- **Check anti-corrosion anodes.** Replace if 30% or more depleted.
 
-Steering:
+### 5. Lubrication
 
-Check fluid level (hydraulic)
-Verify full lock-to-lock travel
-Look for cable wear (mechanical)
-Test tilt/trim operation
+- **Top off engine oil** (FourStroke). Should be at full mark on dipstick.
+- **Check gearcase lube level** (should have been refreshed at winterization). Top off if needed.
+- **Lubricate steering** and shift cables.
+- **Grease swivel pivots** and other zerk fittings on the motor and rigging.
 
-### First Start Procedure
+### 6. Spark plugs and ignition
 
-Before Starting:
+- **Inspect spark plugs.** Replace if at service interval (typically every 200 hours or 2 years).
+- **Check spark plug wires** for damage or cracks.
+- **Test ignition system** by starting motor on muffs (see step 8).
 
-Connect battery
-Connect fuel line and prime bulb
-Attach flushing muffs and water supply
-Turn water on (good flow required)
-Verify in neutral
-Attach lanyard
+### 7. Propeller and lower unit
 
-Starting:
+- **Inspect prop** for nicks, bends, or damage. Repair or replace as needed.
+- **Check lower unit** for visible damage or fluid leaks.
+- **Verify shift smoothness** through full forward, neutral, reverse range.
 
-Turn key or press start button
-Verify water discharge from telltale
-Let warm up at idle (2–3 minutes)
-Check for unusual sounds or vibration
-Verify oil pressure (4-strokes)
+### 8. Test run on muffs (or in water)
 
-After Warm-Up:
+- **Connect muffs** to the lower unit cooling intake (or launch the boat).
+- **Start the motor.** Should start within 3 to 5 cranks.
+- **Check telltale stream** within 10 seconds of starting.
+- **Run for 5 to 10 minutes** to circulate fluids and warm up the motor.
+- **Check for unusual sounds, smoke, or vibration.**
+- **Test all motor functions:** trim/tilt, shift, throttle response.
 
-Advance throttle briefly to mid-range
-Return to idle
-Check for alarms or warnings
-Shut down and check for leaks
+### 9. Trailer and accessories
 
-### Final Checks
+- **Inspect trailer bearings.** Repack if older than 2 years.
+- **Check trailer tires** for cracks, age, and pressure. Tires older than 6 years should be replaced regardless of tread.
+- **Test trailer lights** including brake lights and signals.
+- **Verify safety chains** and breakaway brake systems.
 
-Before First Trip:
+### 10. Documentation
 
-Verify registration current
-Check safety equipment (flares, PFDs, etc.)
-Confirm fire extinguisher charged
-Test navigation lights
-Stock first aid kit
+- **Update service log** with date, hours, and work performed.
+- **Verify Pleasure Craft Licence (PCL)** is current.
+- **Check insurance** is renewed for the season.
+- **Verify Pleasure Craft Operator Card (PCOC)** is in the boat or with you.
 
-### Professional Commissioning
+## What HBW does at every spring service
 
-Schedule Professional Service If:
+HBW spring commissioning includes the full checklist above plus:
 
-Motor sat for extended period
-You're unsure about any check
-Annual service is due
-Problems were stored from last season
+- **Computer diagnostic scan** of motor management system (modern Mercurys post-2010)
+- **Inspection of warranty-coverable items** with documentation for any warranty work
+- **Sea-trial** for repower customers and as needed
+- **Service log entry** with mileage, work performed, and any concerns flagged
+- **Recommendations for upcoming service intervals** (impeller replacement, plug change, etc.)
 
-Harris Boat Works offers complete spring commissioning service on Rice Lake. As a Mercury dealer since 1965, our technicians work through this list and do a thorough inspection — not just a visual once-over. We'll catch what you might miss after a long winter.
+For specific service quotes, [contact HBW](/contact) or [call (905) 342-2153](tel:9053422153).
 
-[Schedule spring commissioning](https://hbw.wiki/service) — or call 905-342-2153.
+## Common spring commissioning mistakes
 
-**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
+We see these every season:
+
+1. **Skipping commissioning entirely.** Customer launches the boat in May and the motor seizes by July. The cost of skipped service was much smaller than the cost of repair.
+2. **Trying to commission while booking is full.** Spring service times start filling up in March. Customers who wait until late April get their boats ready in late May or June, missing peak boating season.
+3. **Old gas left in the tank.** Gas over 6 months old is suspect. Drain or run down before adding fresh fuel.
+4. **Skipping the impeller.** Impellers wear at predictable intervals. A failed impeller in mid-July overheats the motor and can cause cylinder head damage. Replace on schedule.
+5. **Forgetting the trailer.** A boat is only as useful as the trailer that gets it to the water. Bearings, tires, and lights are critical.
+6. **Battery replacement deferred.** A weak battery causes hard starts and stresses the starter motor. Replace at end of life rather than dragging it through another season.
+
+## DIY vs. HBW: when to bring it in
+
+DIY spring commissioning makes sense if:
+
+- You did the winterization yourself and know the motor is in good shape
+- You are mechanically confident and have the tools
+- You have time before the season starts
+- The motor is a smaller standard FourStroke (under 100 HP, post-2010)
+
+Bring it to HBW if:
+
+- The motor was winterized somewhere else (or skipped)
+- The motor is older or has had reliability issues
+- You want a Mercury-certified technician's eyes on it
+- You are time-constrained and want it done right
+- You want the work documented for warranty support
+- The motor is high-HP (150+) or has complex rigging (twin engines, advanced electronics)
+
+For HBW commissioning, [book service](https://hbw.wiki/service). Slots fill up by March most years.
 
 ## Related guides
 
-- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) — the full Mercury service schedule
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips) — seasonal maintenance tips
-- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips) — off-season storage tips
-- [Complete Fall Winterization Guide for Mercury Outboards](/blog/fall-winterization-guide-complete) — complete fall winterization
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), the full annual cycle
+- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide), what should have happened in October
+- [How Much Does Boat Winterization Cost?](/blog/boat-winterization-cost-ontario-2026), winterization pricing
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up diagnostics
+- [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep), pre-fishing-season prep
 
-    `,
+## Ready to book spring service?
+
+Spring service slots fill up in March and April. Booking early gets you the easier appointment slots and your boat is ready when you want it.
+
+[**Request Service**](https://hbw.wiki/service)
+
+If you want to talk through what your specific motor needs for spring, [give us a call at (905) 342-2153](tel:9053422153). We can pull up your service history (if we have serviced the motor before) and give you a real recommendation.
+
+---
+
+_Service pricing varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**When should I book spring commissioning?**
+February or early March for a May 1 launch. Service times start filling up in March and the late-April bookings often push delivery into late May or early June. Plan ahead.
+
+**How long does spring commissioning take?**
+At HBW, typical spring service is 2 to 4 hours of shop time depending on motor size and what needs work. DIY commissioning is usually a half-day project.
+
+**How much does spring commissioning cost?**
+Varies by motor size, boat type, and what's included. Basic spring service is the smallest bill. Bundles that include impeller replacement, plug change, or other wear items run more. For your specific quote, [contact HBW](/contact).
+
+**Can I skip spring commissioning if I winterized properly?**
+Mostly no. Even properly winterized motors need verification, fluid checks, battery test, and fuel system top-off. The 30 minutes of commissioning is far cheaper than mid-season failure.
+
+**What if I didn't winterize?**
+Bring the boat in. The motor needs a full diagnostic before launch. Skipped winterization is the leading cause of spring start-up problems. Sometimes the motor is fine; sometimes it has fuel system or cooling system damage that needs repair.
+
+**What's the most important spring commissioning task?**
+The cooling system. A failed water-pump impeller or blocked cooling passage causes overheating within minutes of running. Verify telltale water flow before running the motor more than 10 seconds.
+
+**How do I know if my battery is dead?**
+Load test it. A 12V battery should hold 12.4V or higher at rest and 10.5V or higher under load. Below 10.5V under load means replace. Most marinas and auto stores can load-test for free.
+
+**What about my trailer at spring commissioning?**
+Inspect bearings (repack if over 2 years old), check tire age (replace at 6 years regardless of tread), test lights including brakes and signals, verify safety chains. The trailer is part of the system.
+
+**Should I change my prop at spring commissioning?**
+Inspect for damage. A bent or chipped prop should be repaired or replaced before launch. If the prop is fine, replace at scheduled intervals (typically every 5 to 10 years for aluminum, 10 to 20 years for stainless).
+
+**Does my boat need a sea-trial at spring service?**
+For repower customers and customers with motor or rigging changes, yes. For straightforward annual commissioning of an existing setup, sea-trial is optional but recommended. We do sea-trials at HBW when warranted.
+
+**What about my electronics?**
+Power up everything (fish finder, GPS, VHF, stereo) and test functionality. Update software/firmware where applicable. Check all transducer cables and connections. Cottage boats often have outdated electronics that benefit from a software refresh.
+
+**Should I add fuel stabilizer in spring?**
+If you used stabilizer in fall, no. If you skipped fall stabilizer, run a dose now to treat residual old gas as you transition to fresh fuel.
+
+**Can HBW commission a boat that was not winterized at HBW?**
+Yes. We service all Mercury motors regardless of where they were winterized. Some non-Mercury motors we also handle. [Contact us](/contact) for non-Mercury service.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'How long should I flush the motor before first start?',
@@ -3743,126 +3927,227 @@ Harris Boat Works offers complete spring commissioning service on Rice Lake. As 
   // Week 14: April 6, 2026
   {
     slug: 'tiller-vs-remote-steering-outboard-guide',
-    title: 'Tiller vs Remote Steering: Which Is Right for Your Boat?',
-    description: 'Compare tiller and remote steering for outboard motors. Learn the pros, cons, and best applications for each control type. Expert guide for boat owners.',
+    title: 'Tiller vs Remote Steering Outboard: Which to Choose (2026)',
+    description: 'Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want direct hands-on control. Remote-control steering (steering wheel from helm) is best for console boats, family use, and any application where the operator is not at the back of the boat. The...',
     image: '/lovable-uploads/Tiller_vs_Remote_Steering_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-06',
-    dateModified: '2026-04-06',
+    dateModified: '2026-05-04',
     publishDate: '2026-04-06',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['tiller vs remote outboard', 'tiller steering boat', 'outboard remote steering', 'boat steering options', 'mercury tiller motor'],
-    content: `
-## Tiller vs Remote: Making the Right Choice
+    content: `# Tiller vs Remote Steering Outboard: Which to Choose (2026)
 
-One of the first decisions when choosing an outboard is tiller or remote steering. We've been fitting motors to boats on Rice Lake since 1965, and the answer is genuinely different depending on how and where you boat. Here's how to choose.
+Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want direct hands-on control. Remote-control steering (steering wheel from helm) is best for console boats, family use, and any application where the operator is not at the back of the boat. The dividing line is usually around 15 to 20 HP and 14 to 16 ft hull length. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-### Tiller Steering: The Basics
+## Quick recommendation
 
-**What It Is**: Direct control at the motor. Throttle, shift, and steering all controlled from the tiller handle mounted on the motor.
+Most small boats want tiller. Most bigger boats want remote-control. The boundary cases are 14 to 16 ft hulls in the 25 to 40 HP range, where either could work depending on use case.
 
-**Available On**: Mercury motors from 2.5HP to 60HP (some models to 75HP)
+We sell both at HBW. The decision comes from honest analysis of how you use the boat: solo fishing where you sit in the back wants tiller. Family fishing where the captain is at the helm wants remote-control. Crossover use cases (fishing solo sometimes, family use other times) is the harder decision.
 
-### Remote Steering: The Basics
+## What changes the answer
 
-**What It Is**: Helm-mounted controls separate from the motor. Steering wheel with throttle/shift at the console.
+Five things move whether tiller or remote-control fits your boat:
 
-**Available On**: Most Mercury motors 25HP and up
+- **Hull length.** Under 14 ft: tiller almost always. 14 to 16 ft: depends on use. 16 ft and up: remote almost always.
+- **HP class.** 2.5 to 20 HP: tiller almost always. 25 to 40 HP: either. 50+ HP: remote almost always (some 60 HP tillers exist for specific applications).
+- **Console vs no console.** Console boats almost always want remote (the console exists for the helm).
+- **Use case.** Solo fishing favors tiller; family use favors remote.
+- **Personal preference.** Some experienced operators prefer the direct feel of tiller even on bigger boats. Personal call.
 
-### Tiller Advantages
+## Tiller motors: when they fit
 
-Direct Control:
+The clear yes for tiller:
 
-Immediate response
-No cables or linkages
-Intuitive operation
+- **Small tin boats (10 to 14 ft).** No console; tiller is the natural fit.
+- **Solo fishing applications.** Operator sits at back of boat; tiller is right at hand.
+- **Kicker motors on bigger boats.** ProKicker tiller for direct trolling speed control.
+- **Sailboat auxiliaries.** Tiller fits the back of the sailboat naturally.
+- **Dinghies and yacht tenders.** Small motors with tiller are standard.
 
-Space Efficiency:
+The clear no for tiller:
 
-No console needed
-More fishing space
-Clear sightlines
+- **Console boats over 16 ft.** Helm exists for steering; tiller is awkward.
+- **Family use boats.** Captain at the helm wants remote-control to talk to passengers.
+- **Bigger HP main motors (50+ HP).** Tiller becomes physically awkward at higher HP and torque.
 
-Simplicity:
+## Remote-control steering: when it fits
 
-Fewer parts to maintain
-Less rigging cost
-Easy to troubleshoot
+The clear yes for remote:
 
-Fishing Benefits:
+- **Console boats over 16 ft.** Standard configuration.
+- **Family fishing and recreation boats.** Operator at the helm.
+- **Bigger HP main motors.** Power steering integration available at higher HP.
+- **Pontoons.** Helm seating with remote-control is the standard pontoon configuration.
+- **Larger boats with hardtops or T-tops.** Remote is required for the helm setup.
 
-Stand at transom
-Quick directional changes
-Feel boat response directly
+The clear no for remote:
 
-### Remote Advantages
+- **Very small boats (10 to 14 ft) without console.** Console adds cost and complexity for small boats.
+- **Sailboat auxiliaries.** Remote rigging on a sailboat is unnecessarily complex.
+- **Kicker applications where tiller direct control is preferred.**
 
-Comfort:
+## The crossover zone: 14 to 16 ft hulls, 25 to 40 HP
 
-Sit or stand at helm
-Better for long runs
-Protection from elements (with console)
+This is where the decision gets harder. Some configurations work either way:
 
-Handling:
+### Tiller advantages on this size class
 
-Better for rough water
-Easier with higher HP
-More natural for car-drivers
+- **Lower cost** (no console, no rigging cables, no helm controls)
+- **Simpler installation** (drop-in vs full rigging)
+- **Direct fishing control** for solo or two-person fishing
+- **Lighter weight** (no console structure)
 
-Versatility:
+### Remote advantages on this size class
 
-Passengers at console
-Space for electronics
-Conventional boat layout
+- **Easier passenger interaction** (captain at helm can talk to people in front)
+- **More comfortable for long runs** (sit at the helm vs. crouch at the back)
+- **Better visibility** (helm is usually higher and more forward)
+- **Standard for family use** (most family-oriented small boats use remote)
 
-### Best Applications
+We see customers go either way on this size class. The deciding factor is usually use case.
 
-Choose Tiller For:
+## What HBW checks before recommending tiller or remote
 
-Solo or two-person fishing
-Small boats (14–18ft)
-Motors under 50HP
-Value-focused buyers
-Those who prioritize simplicity
+When customers come for a small-to-medium boat motor purchase, we want to know:
 
-Choose Remote For:
+- **Boat make, model, year, length**
+- **Existing console or no console**
+- **HP class and motor specifics**
+- **Primary use case (solo fishing, family, mixed)**
+- **Operator preference and physical comfort**
+- **Budget tolerance**
 
-Family boating
-Larger boats (18ft+)
-Motors 60HP and above
-Watersports use
-Rough water operation
-Electronics integration
+For boats with consoles already in place, remote is almost always the right answer. For boats without consoles, the decision is more open. Some customers retrofit consoles during repower; others stay tiller.
 
-![Tiller vs Remote Steering comparison infographic](https://mercuryrepower.ca/lovable-uploads/Tiller_vs_Remote_Steering_Comparison.png)
+## Tiller variants: what to know
 
-### What About Power Steering?
+Tiller motors come in several variants:
 
-Remote steering with larger motors often needs hydraulic assist:
+### Standard tiller
 
-Mercury 115HP+: Hydraulic steering recommended
-Mercury 150HP+: Hydraulic steering essential
-Adds cost but critical for handling
+- **Manual or electric start**
+- **Tiller arm with throttle and shift integrated**
+- **Standard for portable Mercury motors 2.5 to 20 HP**
 
-### Our Recommendation
+### Power tiller
 
-**For fishing-focused use** on smaller boats, tiller provides unbeatable control and simplicity. On Rice Lake, where most serious walleye and muskie anglers are working weedy bays and shallow flats from 14–17ft aluminum boats, tiller control is still the dominant choice. The ability to make quick, precise directional adjustments without moving from the transom is a real fishing advantage.
+- **Power tilt assist** (motor handles trim/tilt with switch on tiller)
+- **Common on bigger tiller motors (40+ HP)**
+- **Adds cost but reduces operator effort**
 
-**For versatile family use**, remote steering offers the comfort and layout flexibility most families expect — especially on bowriders and larger aluminum boats where kids and passengers need to sit forward.
+### High-thrust tiller (ProKicker variants)
 
-**Don't Assume**: Some experienced boaters run tiller on surprisingly large motors. It's about preference and use case, not just size.
+- **Built for fishing kicker applications**
+- **High-thrust gearcase, larger prop**
+- **Longer shaft for big-boat transoms**
+- **See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide)**
 
-[Browse tiller and remote Mercury motors](https://mercuryrepower.ca/quote/motor-selection) — or call 905-342-2153.
+## Remote-control variants: what to know
+
+Remote-control rigging comes in several configurations:
+
+### Mechanical remote control
+
+- **Cable-driven throttle, shift, and steering**
+- **Standard on most non-DTS Mercury setups**
+- **Reliable and serviceable**
+- **Lower cost than DTS systems**
+
+### Digital Throttle and Shift (DTS)
+
+- **Electronic throttle and shift control**
+- **Smoother operation, no cable wear**
+- **Available on higher-HP Mercury motors (typically 150 HP and up)**
+- **More complex but more refined feel**
+
+### Hydraulic vs cable steering
+
+- **Cable steering:** Standard on smaller motors (under 90 HP typical). Direct, simple, lower cost.
+- **Hydraulic steering:** Standard on bigger motors (90 HP and up). Easier feel at speed, less feedback, more comfortable for long runs.
+- **Power-assist steering:** Some high-HP applications. Easiest feel, most refined.
+
+We rig both at HBW. Specifics depend on motor HP and customer preference.
+
+## Common tiller/remote mistakes
+
+We see these every season:
+
+1. **Buying tiller on a console boat.** Customer has a console boat but picks tiller to save money. Console becomes useless and the tiller is awkward to reach. Should have bought remote.
+2. **Buying remote on a small tin boat.** Customer adds console and remote rigging to a 12 ft tin boat. Cost is enormous relative to motor price; functionality is worse than tiller. Should have stayed tiller.
+3. **Underspeccing the tiller.** A 60 HP on a tiller can be physically demanding. Some customers underestimate the effort and regret the choice.
+4. **Mixing tiller and remote on the same boat.** Some customers run a tiller kicker and remote main. This works, but the kicker tiller setup needs proper rigging to integrate.
+5. **Forgetting the steering type decision.** Cable vs hydraulic affects feel and comfort. Worth thinking through during the repower.
 
 ## Related guides
 
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat) — matching HP to boat size and use
-- [What Size Motor Does My Boat Need? Complete Calculator Guide](/blog/boat-motor-size-calculator-guide) — sizing calculator walkthrough
-- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison) — mid-range Mercury head-to-head
-- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario) — the 115 vs 150 decision
+- [Portable Mercury Outboard Guide: 2.5 to 20 HP](/blog/portable-outboard-mercury-guide-2-20hp), small motor selection
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), tiller kicker specifically
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP and tiller/remote interact
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), small aluminum applications
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific (always remote)
 
-    `,
+## Ready to pick tiller or remote?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration including tiller or remote setup.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through tiller vs remote for your specific boat, [give us a call at (905) 342-2153](tel:9053422153). We rig both configurations every week and can give you the honest answer for your use case.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Should I get a tiller or remote-control Mercury?**
+For boats under 14 ft and small fishing applications, tiller. For console boats over 16 ft and family use, remote. The crossover zone (14 to 16 ft, 25 to 40 HP) depends on use case.
+
+**What's the biggest tiller Mercury available?**
+Mercury makes tiller variants up to about 60 HP. Above 60 HP, remote-control is the standard configuration. Tiller above 60 HP is physically demanding and rare.
+
+**Can I add a console to my tiller boat?**
+Yes, but it's a major project. Adding a console means new console structure, new dash, new rigging cables, new helm controls. Often more cost-effective to buy a console-equipped boat instead.
+
+**Is tiller cheaper than remote-control?**
+Yes, typically by $1,500 to $3,500 CAD on small to mid-HP motors. Tiller saves the cost of rigging cables, helm controls, and console hardware.
+
+**Can I troll with a tiller motor?**
+Yes, easily. Tiller is actually preferred for trolling because direct speed and direction control is responsive. The 9.9 ProKicker tiller is the classic Rice Lake walleye setup.
+
+**What about a tiller kicker on a remote-control main motor boat?**
+Common configuration. The main motor uses remote-control from the helm; the kicker is a separate tiller motor for trolling. Works well for fishing applications.
+
+**Is hydraulic steering required on a remote-control setup?**
+On smaller motors (under 90 HP), cable steering is standard and adequate. On bigger motors (90+ HP), hydraulic steering is more comfortable and is often standard. Power-assist steering is available on higher-HP setups.
+
+**What's Digital Throttle and Shift (DTS)?**
+DTS is Mercury's electronic throttle and shift system. Replaces cable controls with electronic actuation. Smoother operation, no cable wear. Available on higher-HP Mercury motors (typically 150 HP and up).
+
+**Can I convert from tiller to remote-control later?**
+Yes, but the conversion is significant. New helm controls, new rigging cables, possibly new console hardware. Often most cost-effective during a planned repower.
+
+**What's the most popular tiller Mercury?**
+The 9.9 MH for general small-boat use. The 9.9 ProKicker for fishing kicker applications. Both are workhorses of the Canadian small-boat segment.
+
+**Should I get power tilt on my tiller motor?**
+For motors 25 HP and up, power tilt is convenient and common. For smaller portables (under 20 HP), manual tilt is standard and adequate.
+
+**Does a tiller motor have throttle and shift integrated?**
+Yes. The tiller arm typically includes throttle (rotating handle) and shift (forward, neutral, reverse selector). Integrated design.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'Can I convert from tiller to remote later?',
@@ -12679,180 +12964,236 @@ Read more about [the best Mercury outboards for Rice Lake fishing](https://mercu
   },
   {
     slug: 'mercury-outboard-wont-start-troubleshooting',
-    title: 'Mercury Outboard Won\'t Start? 7 Common Causes & Fixes (2026 Troubleshooting Guide)',
-    description: 'Mercury outboard won\'t start? 7 most common causes and fixes for 2026 — with real HBW diagnostic averages and when to stop DIYing and call the shop.',
+    title: 'Mercury Outboard Won\'t Start Troubleshooting (2026)',
+    description: 'Most Mercury motors that won\'t start in spring are battery, fuel, or skipped winterization. Run through the basics in order: battery voltage, fuel system, ignition, and starting circuit. If the motor still won\'t start after the basics, get it to HBW. The cost of a proper diagnostic is much smalle...',
     image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
-    dateModified: '2026-04-27',
+    dateModified: '2026-05-04',
     publishDate: '2026-04-27',
     category: 'Troubleshooting',
     readTime: '12 min read',
     keywords: ['mercury outboard wont start', 'outboard troubleshooting', 'mercury starting problems'],
-    content: `
-It's 7:00 a.m. on a Saturday. You're at the dock, everyone's loaded, and the motor won't start. It cranks, or it doesn't. Either way, the day is on hold.
+    content: `# Mercury Outboard Won't Start Troubleshooting (2026)
 
-Most of the time — and this is the honest answer from a Mercury dealer that has been diagnosing these motors since 1947 — the problem is something simple. Not always, but often. Before you call the shop or load the boat back on the trailer, work through this list. We've organized it from the most likely causes to the least likely, with the fixes that actually work.
+Most Mercury motors that won't start in spring are battery, fuel, or skipped winterization. Run through the basics in order: battery voltage, fuel system, ignition, and starting circuit. If the motor still won't start after the basics, get it to HBW. The cost of a proper diagnostic is much smaller than the cost of damaging the motor by running it without addressing the underlying issue.
 
-We run a busy service shop at Gores Landing on Rice Lake. In Aug–Nov 2025 alone we completed 507 paid customer service jobs; across the past two seasons, our Lightspeed system shows 5,350 customer-taxable service jobs. From that data we can tell you what "won't start" actually costs to fix: a diagnostic typically runs around $540 on average, and when it turns into a real repair, the numbers go up from there. We'll put those figures where they're relevant below.
+## Quick recommendation
 
-A few things this guide covers: motors that won't crank at all, motors that crank but don't fire, motors that start and then die, and motors that are intermittently hard to start after sitting over winter. We see all of these at our Rice Lake service shop every spring.
+Spring "won't start" calls follow a predictable pattern. The most common causes, in order:
 
----
+1. **Dead or weak battery** (about 40% of spring no-start calls)
+2. **Stale or contaminated fuel** (about 25%)
+3. **Skipped winterization** (about 20%)
+4. **Spark plug or ignition issue** (about 10%)
+5. **Other** (about 5%)
 
-## The 5-Minute Quick Check
+The good news: most of these are diagnosable in 15 to 30 minutes by an owner with basic tools. The cost-of-mistake on a wrong diagnosis is sometimes serious. If you are not confident, bring it to HBW.
 
-Do this before anything else. Half of all "won't start" calls we get resolve at this stage.
+## Before you do anything: safety first
 
-1. **Kill switch / engine cut-off lanyard.** Is the clip attached? Mercury's safety cut-off system will prevent the motor from starting if the lanyard is missing or partially seated. Pull it out and clip it back in firmly.
-2. **Gear selector.** Motor must be in neutral to start. Move the shifter through forward, neutral, and reverse, then settle firmly in neutral.
-3. **Battery.** Do you have voltage? Are the terminals clean and tight? A battery that shows 12.2V but drops to 9V under cranking load won't fire the motor.
-4. **Fuel.** Is there fuel in the tank? Is the primer bulb firm? Is the fuel shutoff valve open?
-5. **Throttle position.** Most Mercury FourStrokes start at idle position. If the throttle is pushed forward, the motor may be in fast idle or protective cut mode.
+- **Disconnect the battery** if you are going to inspect the motor cowl interior or wiring
+- **Never crank a motor without water** for more than 5 to 10 seconds (overheats water pump)
+- **Do not use starting fluid** (ether) on Mercury motors. It can damage piston rings on 2-strokes and is bad practice on FourStrokes.
+- **Have a fire extinguisher accessible** when troubleshooting fuel systems
 
-If none of those resolve it, work through the seven causes below.
+## Step 1: Check the battery
 
----
+Most spring no-starts are battery problems.
 
-## Cause 1: Stale or Contaminated Fuel
+- **Voltage at rest:** Should be 12.4V or higher. Below 12.0V is a weak battery.
+- **Voltage under crank load:** Should stay above 10.5V during cranking. Below 10.5V is a failing battery.
+- **Terminals:** Clean, tight, and free of corrosion.
+- **Battery age:** Marine batteries last 4 to 6 years typically. A 7-year-old battery is at end of life regardless of how it tests.
 
-This is the number one reason outboards fail to start after sitting over winter, and one of the most common causes year-round. Gasoline degrades. Ethanol-blended fuel (which is virtually all fuel sold in Ontario) absorbs water over time, separates, and leaves varnish deposits in carburetors and fuel injectors. Fuel that sat in a tank from October to May is already past its ideal shelf life.
+If the battery is weak or dead, replace it before any further troubleshooting. A weak battery causes false positives on every other test.
 
-We sell ethanol-free fuel on-site at Harris Boat Works — it's not available everywhere, and it makes a real difference for motors that sit between seasons.
+## Step 2: Check the fuel system
 
-**Signs:** Motor cranks normally but won't fire. May start briefly then die. Black smoke or rough running if it does start.
+If the battery is good, fuel is the next most common issue.
 
-**Fix:**
-- Check the fuel — pull a small sample in a clear container and look for cloudiness, phase separation (water layer at bottom), or discolouration
-- If the fuel looks bad, drain the tank and replace with fresh premium fuel (higher ethanol resistance)
-- Check and replace the fuel filter — it's often the cheapest fix available. Based on our repair order data, a simple fuel filter replacement averages about $351; a more involved fuel filter job (with diagnosis and related work) runs around $901.
-- If you have a carbureted motor, the carb may need to be cleaned or the float bowl drained and refilled with fresh fuel
+- **Fuel age:** Gas over 6 months old is suspect. Drain or use up before fishing season.
+- **Fuel tank:** Check for water at the bottom of the tank (water sinks below gas). Common on cottage boats stored outside without sealed fuel caps.
+- **Fuel filter:** Replace if at service interval (typically annual or 100 hours). A clogged filter restricts flow.
+- **Fuel lines:** Inspect for cracks, brittleness, or leaks. Old rubber fuel lines harden and crack.
+- **Primer bulb:** Should pump up firm. If it stays soft, there's an air leak in the fuel system.
+- **Carburetor or EFI:** If the motor cranks but doesn't fire, it may need fuel system service. EFI motors can sometimes be diagnosed with a fault code reader.
 
-**Prevention:** Add a quality fuel stabilizer at the end of every season. See our [Mercury motor maintenance and seasonal tips guide](https://mercuryrepower.ca/blog/mercury-motor-maintenance-seasonal-tips) for the right products and timing.
+For badly contaminated fuel, draining the tank is the proper fix. Trying to "run through" bad fuel can damage modern EFI systems.
 
----
+## Step 3: Check the ignition
 
-## Cause 2: Dead or Weak Battery
+If battery and fuel are good, ignition is next.
 
-An outboard that cranks slowly, cranks and won't fire, or clicks when you turn the key often has a battery problem rather than an engine problem. Batteries lose capacity over winter, especially if they weren't on a tender. A 12V battery that reads 12.4V on a resting meter but drops below 10V under load won't reliably fire an EFI outboard.
+- **Spark plugs:** Pull plugs and inspect. Black/wet means flooded or fuel issue. Tan/dry means okay. Glazed/white means lean or overheated. Replace at service interval (200 hours or 2 years).
+- **Spark plug wires:** Check for cracks or damage.
+- **Spark test:** With plug grounded against engine block, crank the motor. Should see strong blue spark. Weak orange spark or no spark indicates ignition issue.
+- **Kill switch:** Make sure the lanyard is in place. A pulled or missing kill switch lanyard prevents starting.
 
-**Signs:** Slow cranking. Clicking noise. Instruments come on but motor doesn't crank.
+Ignition system diagnostics beyond spark testing usually need a Mercury-certified technician. CDI box or stator failures can mimic other symptoms.
 
-**Fix:**
-- Put the battery on a smart charger overnight and retest
-- Check terminal connections — corrosion at the battery posts is extremely common; a wire brush and baking soda solution cleans terminals fast
-- Test battery under load with a load tester (most auto parts stores do this free)
-- If battery is more than 4–5 years old and failing load tests, replace it
+## Step 4: Check the starting circuit
 
-**Important:** Mercury EFI systems are sensitive to low voltage during cranking. A weak battery that works on a carbureted motor may not reliably start an EFI FourStroke.
+If battery, fuel, and ignition are all good but the motor still won't crank:
 
----
+- **Starter solenoid:** Listen for a click when you turn the key. No click means solenoid issue.
+- **Starter motor:** Listen for grinding or labored cranking. Indicates worn starter.
+- **Neutral safety switch:** The motor will not crank unless the shifter is in neutral. Make sure the shifter is fully in neutral.
+- **Key switch:** Older key switches can fail. Try with a known-good replacement if available.
+- **Wiring:** Check for corroded or loose connections at the starter, solenoid, and ignition switch.
 
-## Cause 3: Kill Switch, Neutral Safety, or Engine Cut-Off
+Starting circuit issues are usually diagnosable by symptoms (no click, click but no crank, slow crank, etc.). Replacement parts (solenoid, starter motor, key switch) are common Mercury service items.
 
-Mercury outboards have multiple safety interlocks that prevent starting. Beyond the lanyard (covered in the quick check), there's also a neutral safety switch that prevents starting in gear, and on some models, additional interlock systems.
+## Step 5: Check for compression issues
 
-**Signs:** Motor won't crank at all. No clicking, no cranking — just silence when you turn the key.
+If basics are all good but the motor still won't run, compression may be the issue. This is usually a diagnostic-tool job:
 
-**Fix:**
-- Verify lanyard clip is fully seated (not just loosely clipped)
-- Verify gear selector is firmly in neutral — not floating between positions
-- On older motors, the neutral safety switch itself can fail; it's a relatively inexpensive part and can be tested with a multimeter
+- **Low compression:** Indicates worn piston rings, damaged cylinder, or head gasket failure.
+- **Inconsistent compression across cylinders:** Indicates a specific cylinder problem.
+- **Zero compression:** Indicates major internal damage.
 
----
+Compression testing requires a compression gauge and removing spark plugs. We do this at HBW as part of any "won't start" diagnostic.
 
-## Cause 4: Fouled or Failed Spark Plugs
+## Common spring no-start scenarios
 
-Spark plugs are wear items. On a motor that's been sitting all winter, fouled plugs — coated with carbon, varnish, or oil — are common. Plugs that misfired occasionally last season may have failed over winter.
+### "It cranked fine last fall"
 
-**Signs:** Motor cranks normally. No start, or very rough start with misfires. May smell of unburned fuel.
+- Most likely battery (sat all winter and discharged)
+- Second most likely fuel (sat all winter and gummed up if untreated)
+- Third most likely water-pump impeller failure if it cranks but you skip the cooling check
 
-**Fix:**
-- Pull the plugs and inspect them. A fouled plug has carbon buildup, wet fuel residue, or oil fouling. A failed plug has a cracked insulator or eroded electrode.
-- Check the gap against Mercury's spec for your motor (typically 0.040 inches / 1.0 mm for most FourStrokes, but verify with your manual)
-- Replace plugs if in doubt — they're inexpensive and they're a common failure point. Do the full set, not just the one that looks bad.
+### "It won't crank at all"
 
-**Pro tip:** If you pull the plugs and they're wet with fuel, the motor is flooding. Let it sit with the plugs out for 10–15 minutes before reinstalling, or crank it briefly with plugs out to clear the cylinders.
+- Battery dead or weak
+- Starting circuit issue (solenoid, starter, key switch)
+- Neutral safety switch not engaged
+- Battery cable corrosion
 
----
+### "It cranks but won't fire"
 
-## Cause 5: Clogged Primer Bulb or Fuel Line Issue
+- Fuel issue (no fuel, stale fuel, water in fuel)
+- Ignition issue (no spark, weak spark)
+- Compression issue (rare in modern motors unless major damage)
 
-The primer bulb in your fuel line has a check valve on each end. Over time, those valves harden, crack, or stick — and the bulb either won't pump up firm, or pumps firm but fuel delivery to the motor is restricted.
+### "It starts but dies"
 
-**Signs:** Primer bulb won't get firm, or goes soft immediately after you release it. Motor may start briefly with a shot of starting fluid but won't sustain.
+- Fuel system restriction (clogged filter, restricted fuel line)
+- Idle issue (carb adjustment, EFI fault code)
+- Cooling issue causing thermal shutdown
+- Air leak in fuel system
 
-**Fix:**
-- Squeeze the bulb repeatedly and watch: it should firm up and stay firm for at least a few minutes
-- If it goes flat immediately, the downstream check valve is leaking back
-- Inspect the entire fuel line for cracks, kinks, or pinching — especially the section that flexes when the motor tilts
-- A primer bulb kit is under $30 at most marine parts suppliers and is worth replacing on any motor that wintered with the original bulb in place
+### "It runs rough"
 
-**Note:** On Mercury EFI models with an inline fuel pump, the primer bulb is less critical — but fuel line integrity still matters.
+- Spark plug fouling
+- One cylinder not firing
+- EFI sensor fault
+- Fuel system contamination
 
----
+## What HBW does on a "won't start" diagnostic
 
-## Cause 6: EFI, Sensor, or Computer Issues (This One Needs a Dealer)
+When customers bring no-start motors to HBW:
 
-Modern Mercury FourStrokes are controlled by an Engine Control Module (ECM) that monitors a range of sensors — throttle position, manifold air temperature, crankshaft position, water temp, and more. When a sensor fails or reads out of range, the ECM may prevent the motor from starting as a protective measure.
+- **Visual inspection** for obvious damage, mouse intrusion, or recent service issues
+- **Battery load test** with a marine-grade battery analyzer
+- **Fuel system inspection** including fuel filter, lines, tank
+- **Computer diagnostic** for EFI motors (post-2010) to check fault codes
+- **Spark test** on each cylinder
+- **Compression test** if needed
+- **Cooling system verification** before any extended running
 
-**Signs:** Quick-check items are all good. Fuel is fresh. Battery is strong. Motor cranks normally but won't fire, or fires and immediately shuts down. May have a warning horn or check engine light on the gauge.
+Diagnostic time is typically 30 minutes to 2 hours. Cost is much smaller than the cost of damaging the motor by running it with an undiagnosed issue. For pricing, [contact HBW](/contact).
 
-**What to do:** This requires a Mercury diagnostic scan tool to read fault codes. You can't resolve an ECM or sensor fault without proper diagnostic equipment and a trained technician. Don't waste time guessing at parts.
+## Common no-start mistakes
 
-From our own repair order data, a "Won't Start" diagnostic at our shop averages around **$540** based on 26 completed jobs. When the diagnosis leads to heavier repair — replacing sensors, ECM work, more serious engine issues — the costs climb: we've seen "Engine Won't Start" heavy repair jobs average around $1,972 across the repair orders where that was the root cause. That's why getting the diagnosis right first matters — chasing the wrong part wastes both money and your season.
+We see these every spring:
 
-**At Harris Boat Works:** We carry Mercury's diagnostic software and can read fault codes on any current Mercury FourStroke or Verado. [Book service online](https://hbw.wiki/service) or call 905-342-2153. For engine repairs, we only service Mercury and Mercruiser.
+1. **Cranking too long.** Cranking for more than 10 seconds straight overheats the starter and the water pump. Wait between attempts.
+2. **Adding fresh gas to bad gas.** Doesn't fix anything. Drain bad gas first.
+3. **Using starting fluid.** Damages 2-strokes and is bad practice on FourStrokes. Don't.
+4. **Forcing a flooded engine.** A flooded engine needs to dry out. Pump throttle to wide open and crank with key on (no spark) for 10 seconds to clear excess fuel.
+5. **Ignoring warning lights.** Modern Mercurys have fault codes. Reading them with a diagnostic tool tells you exactly what's wrong instead of guessing.
 
----
+## When to bring it to HBW
 
-## Cause 7: Water in the Engine or Fuel System
+DIY troubleshooting makes sense if:
 
-This is the one people least want to hear. Water can enter a marine engine several ways: through a compromised fuel system (especially with phase-separated ethanol fuel), through a failed water separator, through the air intake if the motor was submerged or swamped, or in extreme cases through a failed head gasket.
+- You've checked battery, fuel, ignition basics
+- The motor is a smaller standard FourStroke or 2-stroke
+- You have basic tools and confidence
+- The diagnosis is straightforward
 
-**Signs:** Motor cranks hard, makes unusual noises when cranking, or produces white smoke when it does briefly fire. Very rough running with possible hydraulic locking (where the motor won't crank through a full revolution). If you've recently swamped or had water over the transom, this is your likely culprit.
+Bring it to HBW if:
 
-**Fix:**
-- Water in the fuel system: replace the fuel filter and water separator; drain and replace all fuel
-- Water in the engine from swamping: this is a dealer job — do not repeatedly crank a motor that may have water in the cylinders (it causes catastrophic connecting rod damage)
-- Pull the spark plugs and look for steam or water droplets on the plugs or in the plug wells
-- If you suspect serious water intrusion, stop cranking and call us
+- Basics are good but it still won't start
+- The motor is high-HP, complex, or under warranty
+- You suspect compression or internal damage
+- You don't want to risk further damage with wrong diagnosis
+- You want it documented for warranty support
 
----
-
-## When to Stop DIYing and Call the Shop
-
-There's a real cost to replacing parts you don't need while the actual problem persists. Here's when to stop:
-
-- Motor still won't start after working through all seven causes above
-- You have a confirmed fault code you can't clear
-- Motor runs but immediately shuts down with a warning horn (overheating, oil pressure, or sensor fault)
-- Any signs of hydraulic lock or possible water in the cylinders
-- You're on water warranty and want to preserve coverage — some DIY repairs can void specific warranty terms. See our [Mercury warranty explainer](https://mercuryrepower.ca/blog/mercury-warranty-what-you-need-to-know) before doing anything that touches warranted components.
-
-To put real context around what you're dealing with: from our own repair history, an overheating job averages around **$370**, a trim-not-working job averages around **$1,213**, and a propeller replacement averages **$819** for a straightforward swap. Not all "won't start" diagnoses are cheap, but knowing the numbers going in means no surprises.
-
-We publish these numbers because you shouldn't have to guess. Most regional marinas don't show you this data. We do.
-
-**Book service:** [hbw.wiki/service](https://hbw.wiki/service) | **Call:** 905-342-2153
-
----
-
-## Starting Fresh This Season? Check the Commissioning List
-
-If your motor sat all winter and you're working through a start-up for the first time, our [spring outboard commissioning checklist](https://mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers the full sequence of checks to run before the first launch. It'll help you catch the easy fixes before they become ramp-side problems.
-
----
-
-**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
+For HBW service, [request service](https://hbw.wiki/service) or [call (905) 342-2153](tel:9053422153).
 
 ## Related guides
 
-- [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) — choosing the right propeller
-- [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide) — maximizing fuel efficiency
-- [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide) — SmartCraft gauges explained
-- [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide) — Digital Throttle & Shift basics
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), preventing no-starts in the first place
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), full annual cycle
+- [DIY Mercury Outboard Winterization Guide](/blog/diy-mercury-outboard-winterization-guide), proper winterization prevents most spring no-starts
+- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), fuel system maintenance
+- [Boat Repowering Guide: When to Replace Your Motor](/blog/boat-repowering-guide-when-to-replace-motor), if no-start diagnosis points to repower
 
+## Need a diagnostic?
+
+[**Request Service**](https://hbw.wiki/service) or [give us a call at (905) 342-2153](tel:9053422153). We will walk through the symptoms and either troubleshoot over the phone or get you a service slot.
+
+---
+
+_Service pricing varies by motor size, boat type, and what's included. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Why won't my Mercury outboard start in the spring?**
+Most spring no-starts are battery (about 40%), fuel (25%), or skipped winterization (20%). Run through battery voltage, fuel age and quality, and basic ignition checks first.
+
+**How can I tell if my battery is bad?**
+Voltage at rest should be 12.4V or higher. Voltage under crank load should stay above 10.5V. Below those thresholds means a weak or failing battery. Marine batteries typically last 4 to 6 years.
+
+**My Mercury cranks but won't fire. What is it?**
+Most likely fuel-related (stale fuel, contaminated fuel, restricted fuel system) or ignition-related (no spark, weak spark, fouled plugs). Check fuel age first, then spark plugs.
+
+**Should I use starting fluid on my Mercury?**
+No. Starting fluid (ether) can damage piston rings on 2-strokes and is bad practice on FourStrokes. If the motor isn't getting fuel, fix the fuel system instead.
+
+**My Mercury starts then immediately dies. What's wrong?**
+Usually fuel system restriction (clogged filter, brittle fuel line) or air leak. Could also be cooling issue causing thermal shutdown. Check primer bulb (should pump up firm), fuel filter, and cooling telltale.
+
+**My Mercury runs rough at idle but okay at speed. What's wrong?**
+Usually spark plug fouling or low-speed circuit issue (carb or EFI). Try fresh plugs first; if no improvement, fuel system service may be needed.
+
+**How do I know if I have water in my fuel?**
+Look for water at the bottom of the fuel filter or in fuel sample drained from the tank. Water in fuel causes hard starts, rough running, and stalls. Drain the fuel system to remove water.
+
+**Can old gas cause a no-start?**
+Yes. Gas over 6 months old can gum up carburetors and clog injectors. Always use stabilizer (Mercury Quickstor) if storing fuel longer than a month.
+
+**Why did my Mercury start fine last fall but not this spring?**
+Most likely battery discharged over winter, fuel went stale, or winterization was skipped. Modern motors that ran well in fall don't develop major issues in storage if winterized properly.
+
+**Should I crank longer if it doesn't start right away?**
+No. Cranking longer than 10 seconds at a time overheats the starter and water pump. Wait 30 seconds between attempts. If it doesn't start in 3 attempts, troubleshoot before continuing.
+
+**How much does a "won't start" diagnostic cost at HBW?**
+Diagnostic time is typically 30 minutes to 2 hours. Cost varies by motor size and complexity. For specific quotes, [contact HBW](/contact). The diagnostic cost is much smaller than damaging the motor with a wrong DIY repair.
+
+**Could a no-start mean my motor needs replacement?**
+Sometimes. If diagnostic shows major internal damage (compression failure, gearcase damage, severe corrosion), replacement may be the right answer. Most no-starts are not repower triggers though. See our [repower guide](/blog/boat-repowering-guide-when-to-replace-motor).
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
 `,
     faqs: [
       {
