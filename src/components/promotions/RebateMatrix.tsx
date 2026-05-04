@@ -89,6 +89,8 @@ export function RebateMatrix({ matrix, highlightHP, compact = false, className }
           return (
             <li
               key={index}
+              data-testid="rebate-matrix-row"
+              data-highlighted={active ? 'true' : 'false'}
               className={cn(
                 'flex items-center justify-between py-3 px-3 -mx-3 rounded-[8px] transition-colors',
                 active && 'bg-[hsl(var(--repower-cream-deep))]'
@@ -96,6 +98,7 @@ export function RebateMatrix({ matrix, highlightHP, compact = false, className }
             >
               <span className="flex items-center gap-3">
                 <span
+                  data-testid="rebate-matrix-dot"
                   className={cn(
                     'inline-block w-1.5 h-1.5 rounded-full',
                     active ? 'bg-repower-gold' : 'bg-transparent'
