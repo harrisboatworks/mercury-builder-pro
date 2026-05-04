@@ -204,7 +204,7 @@ export default function AdminQuoteActivity() {
       <div className="container mx-auto px-4 py-6 space-y-6">
         <div>
           <h1 className="text-2xl font-bold">Quote Activity</h1>
-          <p className="text-muted-foreground text-sm">See what visitors are building — even anonymous ones</p>
+          <p className="text-muted-foreground text-sm">See what visitors are building, including anonymous ones</p>
         </div>
 
         {/* Stats Cards */}

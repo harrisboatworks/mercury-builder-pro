@@ -764,7 +764,7 @@ const AdminPromotions = () => {
                 <h4 className="font-semibold mb-2">Rules</h4>
                 {(rulesByPromo[p.id] || []).length === 0 ? (
                   <div className="flex items-center justify-between rounded border border-dashed p-3">
-                    <p className="text-sm text-muted-foreground">No rules yet — this promotion won't apply to anything.</p>
+                    <p className="text-sm text-muted-foreground">No rules yet. This promotion won't apply to anything.</p>
                     <Button size="sm" variant="outline" onClick={async () => {
                       const { error } = await supabase.from('promotions_rules').insert({
                         promotion_id: p.id,

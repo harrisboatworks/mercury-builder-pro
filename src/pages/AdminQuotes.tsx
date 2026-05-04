@@ -427,7 +427,7 @@ const AdminQuotes = () => {
                               </TooltipTrigger>
                               <TooltipContent>
                                 <div className="max-w-[260px]">
-                                  Penalty applied: -{percent}% — {r.penalty_reason}
+                                  Penalty applied: -{percent}%. {r.penalty_reason}
                                 </div>
                               </TooltipContent>
                             </Tooltip>
