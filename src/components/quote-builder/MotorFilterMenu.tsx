@@ -59,37 +59,37 @@ export default function MotorFilterMenu({
       <SheetTrigger asChild>
         <Button 
           variant="outline" 
-          className="relative h-12 px-3 md:px-6 rounded-r-full rounded-l-none border-gray-300 border-l-0 bg-white hover:bg-gray-50 text-gray-700"
+          className="relative h-12 px-3 md:px-6 rounded-r-full rounded-l-none border-repower-navy-900/20 border-l-0 bg-repower-paper hover:bg-repower-cream text-repower-navy-900"
         >
           <Filter className="h-4 w-4 md:mr-2" />
           <span className="font-medium hidden md:inline">Filter</span>
           {activeFilterCount > 0 && (
-            <div className="absolute -top-1 -right-1 h-5 w-5 bg-gray-900 text-white text-xs rounded-full flex items-center justify-center">
+            <div className="absolute -top-1 -right-1 h-5 w-5 bg-repower-navy-900 text-repower-cream text-xs rounded-full flex items-center justify-center">
               {activeFilterCount}
             </div>
           )}
         </Button>
       </SheetTrigger>
       
-      <SheetContent side="right" className="w-full sm:max-w-md bg-white">
+      <SheetContent side="right" className="w-full sm:max-w-md bg-repower-paper">
         <SheetHeader className="pb-8">
-          <SheetTitle className="text-left text-xl font-light text-gray-900">Filter</SheetTitle>
+          <SheetTitle className="text-left text-xl font-light text-repower-navy-900">Filter</SheetTitle>
         </SheetHeader>
         
         <div className="space-y-8">
           {/* HP Range Filter */}
           <div className="space-y-4">
-            <h3 className="text-sm font-medium text-gray-900 uppercase tracking-wide">Horsepower</h3>
+            <h3 className="text-sm font-medium text-repower-navy-900 uppercase tracking-wide">Horsepower</h3>
             <div className="space-y-2">
               {HP_RANGES.map(range => {
                 const isSelected = selectedHpRange.min === range.min && selectedHpRange.max === range.max;
                 return (
                   <button
                     key={range.id}
-                    className={`w-full text-left py-3 px-0 text-base transition-colors border-b border-gray-100 ${
+                    className={`w-full text-left py-3 px-0 text-base transition-colors border-b border-repower-navy-900/10 ${
                       isSelected 
-                        ? 'text-gray-900 font-medium' 
-                        : 'text-gray-600 hover:text-gray-900'
+                        ? 'text-repower-navy-900 font-medium' 
+                        : 'text-repower-navy-900/65 hover:text-repower-navy-900'
                     }`}
                     onClick={() => handleHpRangeSelect({ min: range.min, max: range.max })}
                   >
@@ -103,12 +103,12 @@ export default function MotorFilterMenu({
 
           {/* Stock Filter */}
           <div className="space-y-4">
-            <h3 className="text-sm font-medium text-gray-900 uppercase tracking-wide">Availability</h3>
+            <h3 className="text-sm font-medium text-repower-navy-900 uppercase tracking-wide">Availability</h3>
             <button
-              className={`w-full text-left py-3 px-0 text-base transition-colors border-b border-gray-100 ${
+              className={`w-full text-left py-3 px-0 text-base transition-colors border-b border-repower-navy-900/10 ${
                 inStockOnly 
-                  ? 'text-gray-900 font-medium' 
-                  : 'text-gray-600 hover:text-gray-900'
+                  ? 'text-repower-navy-900 font-medium' 
+                  : 'text-repower-navy-900/65 hover:text-repower-navy-900'
               }`}
               onClick={() => onInStockChange(!inStockOnly)}
             >
@@ -121,13 +121,13 @@ export default function MotorFilterMenu({
           <div className="flex gap-4 pt-8">
             <Button 
               variant="outline" 
-              className="flex-1 h-12 rounded-full border-gray-300 text-gray-700 hover:bg-gray-50"
+              className="flex-1 h-12 rounded-full border-repower-navy-900/20 text-repower-navy-900 hover:bg-repower-cream"
               onClick={handleClearFilters}
             >
               Clear All
             </Button>
             <Button 
-              className="flex-1 h-12 rounded-full bg-gray-900 hover:bg-gray-800 text-white"
+              className="flex-1 h-12 rounded-full bg-repower-navy-900 hover:bg-repower-navy-900/90 text-repower-cream"
               onClick={() => setIsOpen(false)}
             >
               Apply
