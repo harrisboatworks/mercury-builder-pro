@@ -373,7 +373,7 @@ export default function BlogArticle() {
                 ),
               }}
             >
-              {article.content}
+              {article.content.replace(/^\s*#\s+.+\n+/, '')}
             </ReactMarkdown>
           </div>
 
