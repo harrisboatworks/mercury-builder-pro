@@ -367,7 +367,7 @@ Mercury Marine offers several distinct motor families, each designed for specifi
 
 ### Our Recommendation
 
-For most Ontario boaters, the **Mercury FourStroke** offers the best overall value. If you fish competitively or prioritize performance, consider the **Pro XS**. For premium boats or offshore use, **Verado** is worth the investment.
+For most Ontario boaters, the **Mercury FourStroke** offers the best overall value. If you fish competitively or prioritize performance, consider the **Pro XS**. Verado is special-order only at Harris Boat Works and not part of default inventory.
     `,
     faqs: [
       {
