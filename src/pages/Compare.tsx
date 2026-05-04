@@ -437,7 +437,7 @@ export default function Compare() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-border overflow-hidden relative"
+          className="bg-card rounded-xl sm:rounded-2xl shadow-lg border border-border overflow-hidden relative"
         >
           {/* Swipe Hint for Mobile */}
           {showSwipeHint && (
@@ -459,7 +459,7 @@ export default function Compare() {
             <div style={{ minWidth: `${Math.max(500, 120 + motors.length * 140)}px` }}>
               {/* Motor Headers */}
               <div 
-                className="grid border-b border-border bg-white" 
+                className="grid border-b border-border bg-card" 
                 style={{ gridTemplateColumns: `minmax(100px, 140px) repeat(${motors.length}, minmax(130px, 1fr))` }}
               >
                 <div className="p-3 sm:p-6 bg-muted/30" />
@@ -512,17 +512,17 @@ export default function Compare() {
                             key={motor.id} 
                             className={cn(
                               'p-3 sm:p-4 text-center text-xs sm:text-sm border-l border-border/50',
-                              isWinner && 'bg-green-50'
+                              isWinner && 'bg-repower-gold/10'
                             )}
                           >
                             <span className={cn(
                               'font-medium',
-                              isWinner && 'text-green-700'
+                              isWinner && 'text-repower-navy-900'
                             )}>
                               {field.format ? field.format(value, motor) : String(value || '—')}
                             </span>
                             {isWinner && (
-                              <Check size={14} className="inline-block ml-1 text-green-600" />
+                              <Check size={14} className="inline-block ml-1 text-repower-gold" />
                             )}
                           </div>
                         );
@@ -557,17 +557,17 @@ export default function Compare() {
                             key={motor.id} 
                             className={cn(
                               'p-3 sm:p-4 text-center text-xs sm:text-sm border-l border-border/50',
-                              isWinner && 'bg-green-50'
+                              isWinner && 'bg-repower-gold/10'
                             )}
                           >
                             <span className={cn(
                               'font-medium',
-                              isWinner && 'text-green-700'
+                              isWinner && 'text-repower-navy-900'
                             )}>
                               {field.format ? field.format(value, motor) : String(value || '—')}
                             </span>
                             {isWinner && (
-                              <Check size={14} className="inline-block ml-1 text-green-600" />
+                              <Check size={14} className="inline-block ml-1 text-repower-gold" />
                             )}
                           </div>
                         );
@@ -602,17 +602,17 @@ export default function Compare() {
                             key={motor.id} 
                             className={cn(
                               'p-3 sm:p-4 text-center text-xs sm:text-sm border-l border-border/50',
-                              isWinner && 'bg-green-50'
+                              isWinner && 'bg-repower-gold/10'
                             )}
                           >
                             <span className={cn(
                               'font-medium',
-                              isWinner && 'text-green-700'
+                              isWinner && 'text-repower-navy-900'
                             )}>
                               {field.format ? field.format(value, motor) : String(value || '—')}
                             </span>
                             {isWinner && (
-                              <Check size={14} className="inline-block ml-1 text-green-600" />
+                              <Check size={14} className="inline-block ml-1 text-repower-gold" />
                             )}
                           </div>
                         );
