@@ -1619,7 +1619,7 @@ Then repowering makes tremendous financial sense.
 1. **Assessment**: We evaluate your boat and current motor
 2. **Recommendation**: Right-sized motor for your needs
 3. **Quote**: Complete pricing including installation and rigging
-4. **Scheduling**: Winter repower means ready for spring
+4. **Scheduling**: [Winter repower](/blog/winter-repower-planning-guide) means ready for spring
 5. **Installation**: Professional mounting and rigging
 6. **Lake Test**: We ensure everything runs properly
 7. **Handoff**: Keys to your refreshed boat
