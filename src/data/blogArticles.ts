@@ -2436,30 +2436,20 @@ Center consoles range from 18-foot bay boats to 43-foot offshore warriors. Here'
 - Alternative: Single 175-200HP for performance
 
 **22-25ft Coastal**:
-- Single Mercury 250-300HP Verado
+- Single Mercury 250-300HP Pro XS
 - Or Twin Mercury 115-150HP FourStroke
 
 **26-30ft Offshore**:
-- Twin Mercury 200-300HP Verado
-- Performance: Twin Pro XS 250-300HP
+- Twin Mercury 200-300HP Pro XS
 
 **31-36ft Offshore**:
-- Twin Mercury 300-400HP Verado
+- Twin Mercury 300HP Pro XS
 - Or Triple Mercury 250-300HP
 
 **37ft+**:
 - Triple or Quad Mercury 300-450HP
 
-### Mercury Verado: The Center Console Standard
-
-Verado dominates the center console market for good reason:
-
-**Why Verado for Center Consoles**:
-- Quiet operation (especially on cruises)
-- Smooth naturally aspirated V8/V10/V12 power
-- Advanced features (Digital Throttle & Shift)
-- Premium appearance
-- Joystick compatibility
+Note: For premium twin or triple Verado-powered builds, Verado is special-order only at Harris Boat Works — contact us by phone or email to spec it.
 
 ### Single vs Twin: The Debate
 
