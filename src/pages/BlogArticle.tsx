@@ -8,6 +8,7 @@ import { SiteFooter } from '@/components/ui/site-footer';
 import { BlogSEO } from '@/components/seo/BlogSEO';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
+import { AuthorByline } from '@/components/blog/AuthorByline';
 import { FloatingShareBar } from '@/components/blog/FloatingShareBar';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
@@ -286,7 +287,8 @@ export default function BlogArticle() {
               {article.description}
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
-              <div className="flex items-center gap-4 text-sm text-repower-navy-900/60">
+              <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
+                <AuthorByline />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
                   {new Date(article.datePublished).toLocaleDateString('en-US', {
