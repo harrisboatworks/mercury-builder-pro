@@ -68,7 +68,7 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden xl:flex flex-1 items-center justify-center gap-5 2xl:gap-7 min-w-0">
+          <nav className="hidden min-[1320px]:flex flex-1 items-center justify-center gap-5 2xl:gap-7 min-w-0">
             {NAV_LINKS.map((link) => {
               const active =
                 link.to === '/'
@@ -94,7 +94,7 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
           <div className="ml-auto flex items-center justify-end gap-3 shrink-0">
             <Link
               to="/quote/motor-selection"
-              className="hidden xl:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded uppercase tracking-wider text-[11px] lg:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
+              className="hidden min-[1320px]:inline-flex items-center gap-2 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded uppercase tracking-wider text-[11px] lg:text-xs font-semibold whitespace-nowrap transition-colors duration-200"
             >
               Build Quote
               <ChevronRight className="w-3.5 h-3.5" />
@@ -102,13 +102,13 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
             {!user && (
               <button
                 onClick={() => navigate('/auth')}
-                className="hidden xl:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
+                className="hidden min-[1320px]:inline-flex font-sans text-sm text-[#F5F1EA]/80 hover:text-[#F5F1EA] transition-colors"
               >
                 Sign In
               </button>
             )}
             <button
-              className="xl:hidden p-2 text-[#F5F1EA]"
+              className="min-[1320px]:hidden p-2 text-[#F5F1EA]"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
             >
