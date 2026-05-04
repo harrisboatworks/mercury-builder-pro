@@ -159,6 +159,7 @@ export default function QuoteSummaryPage() {
   
   // Cinematic reveal - show for fresh quotes coming from package selection
   const [showCinematic, setShowCinematic] = useState(false);
+  const [subtotalStable, setSubtotalStable] = useState(false);
   const cinematicTriggeredRef = useRef(false);
   
   // Extract stable motor ID outside the effect to prevent re-triggers on object reference changes
