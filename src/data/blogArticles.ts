@@ -339,7 +339,7 @@ Mercury Marine offers several distinct motor families, each designed for specifi
 - Premium fit and finish
 - HP range: 250HP - 600HP
 
-**Why Choose Verado**: Verado represents Mercury's flagship technology. The naturally aspirated powerheads deliver smooth, linear power while operating quieter than any comparable outboard. These are the motors you choose when only the best will do.
+**About Verado**: Verado is Mercury's flagship line. The naturally aspirated V8/V10/V12 powerheads deliver smooth, linear power while operating quieter than any comparable outboard. Verado is special-order only at Harris Boat Works — not part of default inventory. Contact us by phone or email if you'd like a Verado quote.
 
 ### Mercury SeaPro
 
