@@ -6309,7 +6309,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 |-------|-------------|-------|
 | 200hp V6 | Skiing, light boarding | Adequate power |
 | 225hp Pro XS | Most watersports | Excellent choice |
-| 250hp Verado | Heavy boarding, ballast | Premium option |
+| 250hp Pro XS | Heavy boarding, ballast | Premium option |
 
 **Our Pick**: Mercury 225hp Pro XS
 
