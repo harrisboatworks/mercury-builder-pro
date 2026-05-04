@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md
-last_updated: 2026-05-02
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)"
 description: "Realistic CAD pricing for complete Mercury repowers in Ontario — from $6,000 for small tillers to $60,000+ for high-performance applications. Includes hidden costs other dealers don't mention."
 category: "Repower Cost & Pricing"
 date_published: 2026-04-17
-date_modified: 2026-04-17
+date_modified: 2026-05-04
 keywords: ["Mercury repower cost Ontario","Mercury repower cost Canada 2026","Mercury outboard price CAD","boat repower cost Ontario","Mercury engine price Canada"]
 author: Harris Boat Works
 content_type: blog_article
@@ -19,126 +19,182 @@ content_type: blog_article
 
 # How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)
 
-> Realistic CAD pricing for complete Mercury repowers in Ontario — from $6,000 for small tillers to $60,000+ for high-performance applications. Includes hidden costs other dealers don't mention.
+A Mercury repower in Ontario in 2026 typically runs $8,000 to $22,000 CAD all-in for the most common 25 to 115 HP projects, before HST. Bigger HP scales up from there, with 250 to 300 HP repowers landing $35,000 to $40,000 CAD. Tiller motors 20 HP and under are just the motor price, no rigging or extras needed. The motor itself is the biggest line on any repower. Rigging, prop, and labour add a smaller share, especially on Mercury-to-Mercury repowers where most existing controls and cables can stay. The most accurate number is the one we build for your specific hull. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-**Category:** Repower Cost & Pricing  
-**Published:** 2026-04-17  
-**Last updated:** 2026-04-17  
-**Read time:** 12 min read  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad
+## Quick recommendation
 
-## Article
+If you want a real repower number for your boat, build a quote on this site. It takes three minutes. You see the motor cost, the rigging, the install, and the total before you ever talk to us. No phone tag. No "call for price" games.
 
-## Why This Question Is So Hard to Answer Online
+If you want to ballpark before you build, here is the honest 2026 picture in CAD. These are ranges. For your specific motor and configuration, the live site has the actual number.
 
-Search "Mercury repower cost Canada" and you'll get American pricing in USD, outdated MSRP lists, and dealers who won't post a number. A Mercury repower isn't a single product — it's a package. The engine is one line item. Controls, cables, rigging, the prop, old-motor removal, installation labour, and a lake test are the others.
+- **Tiller motors 20 HP and under** (kickers, tenders, small aluminum tillers) are drop-in installs. No rigging, no extras. You pay the motor price and that is it. [See live pricing on the motor selection page.](/quote/motor-selection)
+- **Small remote (25 to 60 HP)** repowers land $8,000 to $15,000 all-in. [Live pricing here.](/quote/motor-selection)
+- **Mid (90 to 115 HP)**, the most common range we do, lands $17,000 to $22,000 all-in. [Live pricing here.](/quote/motor-selection)
+- **Higher (150 to 200 HP)** lands $23,000 to $36,000. [Live pricing here.](/quote/motor-selection)
+- **High-HP (250 to 300 HP)** lands $35,000 to $40,000. [Live pricing here.](/quote/motor-selection)
 
-This guide gives you realistic CAD ranges for complete repowers by HP category. For exact pricing on a specific motor, use the quote configurator at mercuryrepower.ca.
+Add 13% HST on top of any of those numbers. The live site shows your specific number after a three-minute build.
 
-## What's Included in a Complete Mercury Repower
+We have rigged enough boats on Rice Lake to know that the customers who get burned are the ones who treat the motor as the whole price. The boat is not done when the motor bolts to the transom. It is done when the steering, controls, gauges, prop, and battery are all matched and the boat has been on Rice Lake under power.
 
-- **The engine** — the new Mercury outboard, with warranty
-- **Rigging** — fuel lines, cooling connections, wiring harness
-- **Controls** — throttle/shift box, cables or DTS, trim switch
-- **Gauges** — if existing ones aren't SmartCraft compatible
-- **Propeller** — correctly spec'd for your hull and engine
-- **Old motor removal** — labour to remove existing engine
-- **Installation and lake test** — fitting, torquing, and water verification
-- **Warranty registration** — confirming proper coverage
+## What changes the answer
 
-Harris Boat Works includes all of the above in a full repower quote.
+A repower quote moves up or down based on six things:
 
-## Mercury Repower Cost by Horsepower Category
+- **Motor HP and family.** A 9.9 ProKicker is a small line. A 250 ProXS V8 is the biggest single purchase most boaters make. The motor itself drives most of the price.
+- **Whether you keep your existing controls.** Mercury-to-Mercury repowers usually keep the existing control box and cables, which keeps rigging at the low end ($500 to $1,000 CAD). Going from a non-Mercury brand or to digital throttle and shift adds new everything in the control system, which pushes rigging to $2,000 to $3,000 CAD.
+- **Steering.** Cable steering on a small motor is fine. Hydraulic steering on anything 150 HP and up is mandatory. Hydraulic conversion runs $1,650 to $3,500 CAD.
+- **Prop selection.** A wrong prop on a perfect motor will cost you 4 mph and 15% fuel economy. We test on the water before you take the boat home. Aluminum props on motors up to 115 HP are $450 CAD. Stainless steel props on 150 HP and up run $800 to $2,000 CAD depending on motor size.
+- **Gauges and wiring.** Old analog gauges do not talk to modern Mercury motors. SmartCraft displays add a line, sized to whatever screen you want. Battery and harness refresh runs $275 to $975 CAD.
+- **Boat condition.** A clean transom and good wiring takes a day to install ($1,400 in labour). A rotten transom, mouse-eaten wiring harness, or a fuel system full of 8-year-old gas pushes labour to $2,500 to $3,500.
 
-### 9.9–20 hp (Small Tiller and Remote)
-**Typical total repower range: $5,000 – $9,000 CAD**
-Covers kicker motors, small fishing boats, canoes. Engine: roughly $3,500–$6,000 CAD.
+## All-in repower ranges by HP class
 
-### 25–60 hp (Mid-Range Fishing and Pontoon)
-**Typical total repower range: $9,000 – $18,000 CAD**
-Covers most Ontario aluminum fishing boats, smaller pontoons. Engine: roughly $7,000–$13,000 CAD. Controls and rigging add $1,000–$2,500. Prop: $200–$500.
+This is the 2026 CAD picture before HST. Your specific number comes from the live quote builder.
 
-### 75–115 hp (Larger Fishing Boats, Pontoons, Smaller Runabouts)
-**Typical total repower range: $16,000 – $28,000 CAD**
-The 90 and 115hp FourStroke are two of Mercury's most popular motors in Ontario. Engine: roughly $13,000–$20,000 CAD. Controls and rigging: $1,500–$3,000. Prop: $400–$700.
+| Project tier | HP range | All-in range (CAD) | Common boats |
+|---|---|---|---|
+| Tiller, drop-in | 2.5 - 20 HP | Motor price only, no rigging | Tenders, dinghies, kickers, small aluminum tillers |
+| Small remote | 25 - 60 HP | $8,000 - $15,000 | 14-16 ft aluminum, small consoles |
+| Mid | 90 - 115 HP | $17,000 - $22,000 | 16-19 ft aluminum, small pontoons, fishing boats |
+| Higher | 150 - 200 HP | $23,000 - $36,000 | 18-22 ft pontoons, runabouts, mid-size fishing |
+| High-HP | 250 - 300 HP | $35,000 - $40,000 | Performance bass, large pontoons, center consoles |
 
-### 150–200 hp (Performance Fishing, Runabouts, Family Boats)
-**Typical total repower range: $28,000 – $50,000 CAD**
-Includes the 150 and 200 FourStroke, 150–225 Pro XS. Engine: roughly $22,000–$37,000 CAD. Rigging and controls: $2,000–$5,000. Prop: $500–$900.
+The ranges above are 2026 working estimates. The actual price for your motor, your hull, and your configuration is on the [motor selection page](/quote/motor-selection). That is the source of truth. Tiller motors 20 HP and under are essentially drop-in installs (no rigging, no controls, no extras), and the motor itself is the whole purchase. For specific tiller motor pricing (a 9.9 MH versus a 15 MH versus a 20 MH), see [live pricing](/quote/motor-selection).
 
-### 250–300 hp (High-Performance, Larger Hulls)
-**Typical total repower range: $48,000 – $75,000 CAD**
-FourStroke, Pro XS, and Verado V8 options. Engine: roughly $38,000–$58,000 CAD. Twin-engine repowers can cross $100,000+ installed.
+These are HBW's actual working ranges. For your specific motor, hull, and configuration, the live quote builder gives you the real CAD number in three minutes.
 
-### 350–425 hp (Verado V10, High-Performance Applications)
-**Typical total repower range: $65,000+ CAD per engine**
-The 350, 400, and 425hp Verado V10 are Mercury's top-end naturally aspirated outboards. At this level, we'd rather quote you specifically. Use mercuryrepower.ca or call us directly.
+[**Build Your Mercury Repower Quote**](/quote/motor-selection)
 
-## The Hidden Costs Other Dealers Don't Mention
+## What goes into the bill
 
-- **The Prop**: Budget $300–$900 for a correctly spec'd prop
-- **Wiring Harness**: Corroded connectors and aging wiring add time and cost
-- **Battery Upgrade**: Mercury recommends 700+ CCA for larger outboards ($200–$400)
-- **Gauge Replacement**: Switching brands means new gauges ($500–$1,500)
-- **Jackplate Adjustment**: New engine dimensions may require repositioning
-- **Old Motor Disposal**: Confirm if it's included in the quote
+Here is what each line on a repower bill covers and what makes it move.
 
-## Repower vs. New Boat
+| Line item | What it covers | What changes the cost |
+|---|---|---|
+| Motor | The Mercury outboard itself | HP, family (FourStroke, ProXS, Verado), shaft length, controls type |
+| Rigging ($500 - $3,000 CAD) | Controls, cables, gauges, harness | Mercury-to-Mercury usually low end (existing controls stay); brand conversions or digital upgrades push higher |
+| Prop, aluminum ($450 CAD) | Standard aluminum prop on up to 115 HP | Sized to motor HP and intended use |
+| Prop, stainless steel ($800 - $2,000 CAD) | Stainless prop on 150 HP and up | Required for performance and durability on bigger motors |
+| Steering ($0 - $3,500 CAD) | Cable, hydraulic, or power-assist | Motor HP and existing setup; hydraulic mandatory at 150 HP+ |
+| Battery and harness ($275 - $975 CAD) | New battery, connectors, fuse panel | Boat age and existing wiring condition |
+| Install labour ($1,400 - $3,500 CAD) | 1 to 2 days shop time for clean installs | Boat condition (transom, wiring, fuel system) |
+| Sea-trial and break-in | We test on Rice Lake before delivery | Included in every install |
+| **Add HST (13% Ontario)** | On the total | Standard for Ontario |
 
-Your hull is already paid for. A 10–15 year old boat with a sound hull means you're paying only for the engine and installation. A new 19ft runabout with a 150hp Mercury: $55,000–$75,000 CAD. A repower of the same hull: $28,000–$35,000. The repower also delivers a new engine warranty.
+Every motor on this site shows live pricing. The quote builder adds the rigging, install, and prop based on your configuration so you see your actual all-in number, not a range.
 
-Where a new boat makes more sense: structural hull problems, undersized boat for your needs, or wanting a completely different type of boat.
+## Why we do not quote specific motor prices in articles
 
-## FAQs
+Quick aside on this. Most dealer websites that quote prices in blog posts have prices that are 1 to 3 years stale, in the wrong currency, or for the wrong shaft length. We do not do that for two reasons.
 
-### Are Mercury outboard prices higher in Canada than the US?
+First, our actual prices are on the live site. Always current. Always CAD. Always for the specific configuration you are buying. There is no point copying them into an article that we have to update every time a price changes.
 
-Yes — Mercury outboard prices in Canada are higher than US MSRP, typically by 15–30% depending on the model and exchange rate at the time of import. The difference reflects the USD/CAD exchange rate, import duties, and Canadian dealer cost structure. US prices found online are in USD and don't reflect any of these factors. For accurate 2026 Canadian pricing, Harris Boat Works posts live CAD pricing at mercuryrepower.ca — no call required. Pricing can also shift through the year as exchange rates move.
+Second, our whole point is that you should not have to call us or read a blog post to find out what something costs. The motor selection page does that job, and it does it better than this article ever could.
 
-### Does Harris Boat Works offer financing on Mercury repowers?
+If you want a number for a specific motor, [build a quote](/quote/motor-selection). It takes three minutes.
 
-Yes — Harris Boat Works offers financing on Mercury repowers through approved financing programs. Most customers finance repowers similarly to a vehicle purchase — fixed-rate monthly payments over a term. A $28,000–$35,000 repower amortized over 5 years at current rates represents a manageable monthly payment for most boat owners, often less than an equivalent new boat payment. For current financing terms and rates, call 905-342-2153 or contact Harris Boat Works at mercuryrepower.ca/contact.
+## What HBW checks before recommending a motor
 
-### How long does a full Mercury repower take?
+We have rigged enough boats to know that the answer is rarely "buy whatever fits your budget." A bad recommendation costs you money in the wrong prop, the wrong controls, or a motor that overworks itself for the next 15 years. Before we quote, we want to know:
 
-A typical Mercury repower at Harris Boat Works takes 3–7 business days from engine delivery to completed lake test, depending on scope. Simple repowers with compatible controls and no wiring issues are at the shorter end. Repowers requiring new controls, gauge replacement, or wiring harness work take longer. The lake test adds a half day. Spring repowers may need to be scheduled further out due to demand — fall and winter repowers typically have shorter lead times.
+- **Boat make, model, year, and length.** Older hulls have transom limits not all customers know about.
+- **Maximum HP rating on the capacity plate.** We will not over-power a hull. Mercury voids the warranty if we do.
+- **Hull condition.** Soft transoms cannot hold a heavy motor safely. A walk-around with a moisture meter takes 10 minutes and saves you a lot of money on a mistake.
+- **Existing controls and gauges.** Some are fine. Some need to go in the bin.
+- **What you actually do with the boat.** A guy fishing two mornings a week wants different power than a family pulling tubes on weekends. Same hull, different right answer.
+- **Where you launch.** A pontoon at the Bewdley ramp deals with a different wind situation than one parked at a private dock in Roseneath. The wind picks up across Sugar Island around 2 PM most days in July. If your motor is underpowered, that is when you feel it.
 
-### Is there a best time of year to repower an outboard in Ontario?
+We will not quote a motor blind. If you build a quote on this site and the configuration is wrong for your hull, we will reach out before you go to install.
 
-Fall and early winter are the best times for most Ontario boaters to repower. Demand is lower, scheduling is more flexible, and some dealers offer off-season pricing. The practical advantage: your new engine is installed and verified by the time the ice goes out on Rice Lake. Spring repowers are possible but you're competing for shop time with seasonal maintenance and last-minute work, which can push your launch date back. If you're planning a repower for next season, start the conversation in fall.
+## When to repower vs. buy new
 
-### What is the cheapest way to repower with Mercury in Ontario?
+Repowering makes sense when:
 
-The lowest-cost repower path is a Mercury FourStroke in the smallest HP category that actually fits your hull's needs. In the 9.9–25HP range, a complete repower can run $5,000–$12,000 CAD. You can reduce total cost by keeping compatible existing controls (saves $1,000–$2,500), using an aluminum prop (saves $200–$500), and booking in fall or winter. The cheapest option that under-powers your hull isn't actually cheap — efficiency drops and the engine works harder. Call 905-342-2153 to discuss what's actually right for your boat.
+- Your hull is solid (aluminum lasts decades, fiberglass with a good transom can go just as long)
+- The boat fits your family and use
+- The motor is the only thing wrong with it
+- You do not want to start a new payment book at 7.99% APR (the standard non-promo rate)
 
-### What should I expect on the day my Mercury repower is installed?
+Buying new makes sense when:
 
-On the day your repower is installed at Harris Boat Works: the old motor is removed, the new engine is mounted and torqued to spec, fuel and cooling connections are made, controls are connected and calibrated, and the prop is installed. Before delivery, we run the engine through a lake test on Rice Lake — checking for leaks, verifying gauge readings, confirming controls work correctly, and making sure the motor reaches its rated RPM with a normal load. You'll receive completed warranty registration documentation and break-in instructions before you leave.
+- The hull has structural problems (soft transom, rotten floor, stress cracks)
+- You have outgrown the boat (more passengers, different water, different use)
+- You have not bought a new boat in 25 years and you want to (this is a fine reason)
 
-### Does my old outboard motor have any trade-in or resale value?
+A meaningful share of the boats we see can be repowered for a fraction of what a comparable new boat costs. The math holds up most of the time. Some of the time, a new boat is the right call. We will tell you which one your boat is, even if it is the answer that costs us the sale.
 
-Possibly — it depends on the motor's age, brand, condition, and running status. A Mercury or Mercruiser motor in running condition has the best trade-in appeal. A 5-year-old four-stroke Mercury in good condition can be worth $2,000–$8,000 depending on horsepower. A 10-year-old two-stroke that barely runs has minimal value. Harris Boat Works will give you an honest assessment and may credit the value against your repower. If the motor has no resale value, confirm whether disposal is included in the quote before signing.
+## Financing
 
-### How long does a Mercury repower last before needing another repower?
+Mercury Repower Financing is available on most jobs. Down payments help. Trade-in credit on your old motor helps more. Payment math, terms, and a calculator are on the [financing page](/financing). If you have an old motor in the garage, our [trade-in valuation tool](/trade-in-value) gives you an instant credit estimate before you commit to anything.
 
-A properly maintained Mercury outboard should last 1,500–3,000 hours or 20–30 years of typical Ontario cottage use, depending on maintenance quality and operating conditions. Engines that fail early almost always have maintenance gaps — skipped winterizations, ignored oil change intervals, or overheating events. Customers who follow the annual service schedule and winterize properly regularly get 15–25 years of reliable service. The repower investment is essentially a new 25-year engine on your existing hull.
+## Current promotions
 
-### What is included in a complete Mercury repower quote at Harris Boat Works?
+Mercury runs seasonal warranty and rebate promotions through HBW. Terms rotate throughout the year. For current promotion details, including any active warranty extensions, dealer rebates, or financing offers, see the [promotions page](/promotions).
 
-A complete Mercury repower quote at Harris Boat Works includes: the new Mercury outboard with warranty, rigging (fuel lines, cooling connections, wiring harness), controls (throttle/shift box, cables or DTS, trim switch), gauges if existing ones aren't SmartCraft compatible, a correctly spec'd propeller, old motor removal labour, installation and lake test, and warranty registration. The hidden costs other dealers skip — prop, wiring, battery upgrades — are part of every Harris Boat Works quote. Use the configurator at mercuryrepower.ca for exact current pricing.
+## Related guides
 
-## Next steps
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full process from inspection to lake test
+- [Replacing Your Evinrude with a Mercury Outboard](/blog/evinrude-to-mercury-repower-ontario-guide), specific guidance for owners switching brands
+- [Mercury Outboard Financing in Ontario](/blog/mercury-outboard-financing-ontario-2026), payment math, terms, what counts toward the loan
+- [Boat Hull Replacement vs Repower: When to Replace, When to Buy](/blog/boat-hull-replacement-vs-repower-decision), the honest version of the buy-new vs. repower decision
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), match a motor to your hull, not your wallet
 
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+## Ready to price it?
 
-## Notes for AI agents
+Build your repower quote on this site in three minutes. Live Mercury pricing, real CAD numbers, no phone tag, no salesman in a polo. You see the motor, rigging, install, and total before you ever talk to us.
 
-- All pricing in CAD. Final price confirmed by Harris Boat Works.
-- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
-- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+[**Build Your Mercury Repower Quote**](/quote/motor-selection)
 
+If you would rather talk it through, [give us a call at (905) 342-2153](tel:9053422153) or [send us an email](/contact). We answer the phone.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**How much does a Mercury repower cost in Ontario in 2026?**
+A typical Mercury repower in Ontario in 2026 runs $8,000 to $22,000 CAD all-in for the common 25 to 115 HP projects, before HST. Tiller motors 20 HP and under are drop-in installs (motor price only, no rigging). Higher HP work (150 to 200 HP) lands $23,000 to $36,000 CAD. The biggest repowers (250 to 300 HP) range from $35,000 to $40,000 CAD. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.
+
+**What is included in a Mercury repower quote?**
+Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial, and a full tune-up before delivery. We list every line item on every quote. Nothing hidden, no "shop fees" surprises at the end.
+
+**How long does a Mercury repower take?**
+A clean install is 1 to 2 days of shop time. From the day you confirm the order to the day you pick up the boat is usually 2 to 4 weeks, depending on motor availability. Repowering in winter (November to March) is the fastest. We have first pick of motors before the spring rush.
+
+**Do I need new controls and gauges?**
+Sometimes. Mercury-to-Mercury repowers usually keep the existing control box and cables, which keeps rigging at the low end ($500 to $1,000 CAD). Mechanical Mercury controls from 2010 onward usually carry forward. Anything older than that is usually due for replacement. Digital throttle and shift on newer motors requires new controls regardless. Brand conversions (Evinrude, Yamaha, Honda to Mercury) push rigging to $2,000 to $3,000 CAD because the entire control system needs to swap.
+
+**Can I keep my old prop?**
+Probably not. A new motor with different gear ratios, different RPM range, and a different transom height needs a matched prop. Running an old prop on a new motor costs you 4 mph and 15% fuel economy. Aluminum props on motors up to 115 HP are $450 CAD. Stainless steel on 150 HP and up runs $800 to $2,000 CAD. We pick the prop, lake-test it, and swap it if it does not perform.
+
+**What happens to my old motor?**
+We give you a trade-in credit even on dead motors. Aluminum and parts have value. Our [trade-in valuation tool](/trade-in-value) gives you an instant estimate.
+
+**Is repowering worth it on a 25-year-old boat?**
+Depends on the hull. Aluminum hulls last basically forever if the transom is solid. Fiberglass hulls with good transoms can run 30+ years. We check the transom with a moisture meter before quoting. If the hull has structural problems, we will tell you to walk away.
+
+**Do you finance repowers?**
+Yes. Mercury Repower Financing is available on most jobs. Full details and a payment calculator on our [financing page](/financing).
+
+**Can you handle Evinrude, Yamaha, or Honda repowers to Mercury?**
+Yes. We do this every year. The biggest variables are the controls and the steering. Going from a 1990s Evinrude to a modern Mercury usually means new everything in the control system, which adds $2,000 to $3,000 CAD in rigging on top of the motor. We have a specific guide on [replacing Evinrudes with Mercury](/blog/evinrude-to-mercury-repower-ontario-guide).
+
+**Why is Mercury more expensive in Canada than the US?**
+Three reasons: CAD-USD exchange, freight, and Canadian regulatory requirements. Cross-border purchasing is technically possible but the warranty servicing, customs paperwork, and freight usually erase the savings. We sell at the dealer-allowed Canadian MSRP minus our HBW discount. Both numbers are on the website for every motor.
+
+**What is the warranty on a new Mercury motor?**
+Mercury Marine includes 3 years of standard factory warranty on new outboards. HBW also runs seasonal dealer promotions that may extend warranty coverage. For current promotion terms, see the [promotions page](/promotions).
+
+**How do I get started?**
+Build a quote on this site in three minutes, or give us a call at (905) 342-2153. The quote includes motor selection, rigging, install, and total. We do not require an account, an email, or a phone call to see prices.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
