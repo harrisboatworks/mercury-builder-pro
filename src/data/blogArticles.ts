@@ -2082,7 +2082,7 @@ Adds value to boat at resale
   {
     slug: 'bass-boat-mercury-motor-buying-guide',
     title: 'Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide',
-    description: 'Find the perfect Mercury outboard for your bass boat. Compare Pro XS, FourStroke, and Verado options for tournament and recreational bass fishing.',
+    description: 'Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament and recreational bass fishing.',
     image: '/lovable-uploads/bass-boat-150-proxs-hero-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-09',
