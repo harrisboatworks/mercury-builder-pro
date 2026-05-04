@@ -8447,7 +8447,17 @@ If you're curious about whether an Avator fits your situation, [talk to us](/con
 - Your access to shore power and charging
 - Your expectations for speed and range
 
-Then we'll give you a frank recommendation on gas, electric, or a hybrid of both. You can also [explore motor options and pricing in our quote builder](/quote/motor-selection).`,
+Then we'll give you a frank recommendation on gas, electric, or a hybrid of both. You can also [explore motor options and pricing in our quote builder](/quote/motor-selection).
+
+## Related guides
+
+- [Best Mercury Outboards for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
+- [Electric Trolling Motor & Kicker Guide](/blog/electric-trolling-motor-kicker-guide) — electric trolling and kicker setups
+- [Best Motor for Small Lakes in Ontario](/blog/best-motor-small-lakes-ontario) — best motor for small Ontario lakes
+- [Portable Mercury Outboard Guide (2–20 HP)](/blog/portable-outboard-mercury-guide-2-20hp) — portable 2–20 HP options
+- [Inside Mercury's 2026 Outboard Lineup](/blog/mercury-2026-outboard-lineup-ontario) — 2026 Mercury lineup for Ontario
+
+    `,
     faqs: [
       {
         question: 'How far can a Mercury Avator go on a single charge?',
@@ -8576,7 +8586,17 @@ For the 2026 season, here's how we can make your life easier:
 
 2026 looks like a season with solid fishing, stable market conditions, and a lot of flexibility in how you get on the water — owning, renting, or something in between.
 
-If you want to tune your setup for this year's conditions, or just nail down a plan for opening day, [come see us](/contact) in Gores Landing, call **(905) 342-2153**, or [explore motors and pricing in our quote builder](/quote/motor-selection).`,
+If you want to tune your setup for this year's conditions, or just nail down a plan for opening day, [come see us](/contact) in Gores Landing, call **(905) 342-2153**, or [explore motors and pricing in our quote builder](/quote/motor-selection).
+
+## Related guides
+
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
+- [Mercury Pro Kicker on Rice Lake](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
+- [Musky Boat Motor Guide — Kawarthas](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
+- [Walleye Opener Boat Prep](/blog/walleye-opener-boat-prep) — walleye-opener boat prep
+- [Trailering from Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide) — trailering from Toronto to Rice Lake
+
+    `,
     faqs: [
       {
         question: 'What fish species can you target on Rice Lake in 2026?',
