@@ -8287,7 +8287,16 @@ Looking at 2026 from the Rice Lake shoreline, here's how we'd map Mercury's line
 
 The absolute top end (V10, V12, 808 HP concepts) might not land on Rice Lake, but the same engineering culture that produced those engines is baked into the 25–150 HP range we rig every day.
 
-If you're thinking about a new engine for 2026, [talk to us](/contact) about how you actually use your boat — trolling, cruising, family, fishing — and we'll map you to the right corner of Mercury's lineup. Or [explore motors and pricing in our quote builder](/quote/motor-selection).`,
+If you're thinking about a new engine for 2026, [talk to us](/contact) about how you actually use your boat — trolling, cruising, family, fishing — and we'll map you to the right corner of Mercury's lineup. Or [explore motors and pricing in our quote builder](/quote/motor-selection).
+
+## Related guides
+
+- [Why Mercury Dominates the Outboard Market](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
+- [2026 Mercury Model Preview](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
+- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) — FourStroke vs Pro XS vs Verado families
+- [Mercury 2026 Pricing & Promotions](/blog/mercury-pricing-promotions-2026) — live 2026 promotions and rebates
+`,
     faqs: [
       {
         question: 'What is the best Mercury motor for a Rice Lake fishing boat?',
