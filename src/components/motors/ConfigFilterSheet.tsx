@@ -171,16 +171,16 @@ export function ConfigFilterSheet({
         'inline-flex items-center gap-1.5 w-auto max-w-fit px-3 py-1.5 rounded-full text-sm font-light',
         'shrink-0 whitespace-nowrap',
         'transition-all duration-200',
-        isActive 
-          ? 'bg-primary text-primary-foreground' 
-          : 'bg-muted text-muted-foreground hover:bg-muted/80'
+        isActive
+          ? 'bg-[#C9A24A] text-[#050E1C]'
+          : 'bg-[#F5F1EA]/[0.08] text-[#F5F1EA] hover:bg-[#F5F1EA]/[0.14]'
       )}
     >
       {label}
       {count !== undefined && (
         <span className={cn(
           'text-xs',
-          isActive ? 'text-primary-foreground/70' : 'text-muted-foreground/60'
+          isActive ? 'text-[#050E1C]/70' : 'text-[#F5F1EA]/55'
         )}>
           ({count})
         </span>
