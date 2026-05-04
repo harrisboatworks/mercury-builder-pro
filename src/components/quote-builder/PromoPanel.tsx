@@ -39,7 +39,7 @@ export function PromoPanel({ motorHp }: PromoPanelProps) {
   const totalWarranty = 3 + warrantyYears;
 
   return (
-    <Card className="border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
+    <Card className="border border-repower-navy-900/10 bg-white p-5  ">
       {promotions.map((promo) => (
         <div key={promo.id} className="space-y-3">
           <div className="flex items-center justify-between">
@@ -56,7 +56,7 @@ export function PromoPanel({ motorHp }: PromoPanelProps) {
           </div>
           
           {warrantyYears > 0 && (
-            <div className="flex items-center gap-2 bg-green-50 text-green-700 dark:bg-green-900/20 dark:text-green-400 px-3 py-2 rounded-lg">
+            <div className="flex items-center gap-2 bg-repower-cream text-repower-gold   px-3 py-2 rounded-lg">
               <Shield className="w-4 h-4" />
               <span className="font-medium">{totalWarranty} Years Factory Coverage</span>
             </div>

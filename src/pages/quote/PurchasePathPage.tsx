@@ -96,7 +96,7 @@ export default function PurchasePathPage() {
           {/* Premium Back Button */}
           <button 
             onClick={handleBack}
-            className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px]"
+            className="flex items-center gap-1.5 text-repower-navy-900/65 hover:text-repower-navy-900 transition-colors active:scale-95 touch-action-manipulation min-h-[44px]"
             aria-label="Back to options"
           >
             <ChevronLeft className="h-5 w-5" />

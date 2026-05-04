@@ -74,7 +74,7 @@ export function MobileSummaryBar({
                 </div>
                 <div className="flex items-center gap-2">
                   {pricing.savings > 0 && (
-                    <Badge variant="secondary" className="bg-green-100 text-green-800 border-green-200">
+                    <Badge variant="secondary" className="bg-repower-cream text-repower-gold border-repower-gold/30">
                       Save {money(pricing.savings)}
                     </Badge>
                   )}
@@ -97,7 +97,7 @@ export function MobileSummaryBar({
                 <div className="grid grid-cols-1 gap-2">
                   {packageInclusions.map((inclusion, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm">
-                      <Check className="w-4 h-4 text-green-600 flex-shrink-0" />
+                      <Check className="w-4 h-4 text-repower-gold flex-shrink-0" />
                       <span>{inclusion}</span>
                     </div>
                   ))}
@@ -117,7 +117,7 @@ export function MobileSummaryBar({
                 {pricing.savings > 0 && (
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">Total Savings:</span>
-                    <span className="font-medium text-green-600">{money(pricing.savings)}</span>
+                    <span className="font-medium text-repower-gold">{money(pricing.savings)}</span>
                   </div>
                 )}
               </div>

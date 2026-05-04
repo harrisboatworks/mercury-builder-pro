@@ -456,7 +456,7 @@ export function QuoteRevealCinematic({
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
-                  className="absolute top-1/2 left-0 right-0 h-0.5 bg-red-500/70 origin-left"
+                  className="absolute top-1/2 left-0 right-0 h-0.5 bg-repower-mercury-red/50/70 origin-left"
                 />
               </motion.span>
             </motion.div>
@@ -703,7 +703,7 @@ export function QuoteRevealCinematic({
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
-              className="absolute bottom-16 text-xs text-gray-400"
+              className="absolute bottom-16 text-xs text-repower-navy-900/55"
             >
               Tap anywhere to continue
             </motion.div>

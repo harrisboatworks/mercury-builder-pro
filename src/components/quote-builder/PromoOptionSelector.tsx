@@ -112,9 +112,9 @@ export function PromoOptionSelector({
   const getColorClasses = (color: string, isSelected: boolean) => {
     if (isSelected) {
       switch (color) {
-        case 'blue': return 'bg-blue-50 border-blue-500 ring-2 ring-blue-500';
-        case 'purple': return 'bg-purple-50 border-purple-500 ring-2 ring-purple-500';
-        case 'green': return 'bg-green-50 border-green-500 ring-2 ring-green-500';
+        case 'blue': return 'bg-repower-cream border-repower-navy-900/200 ring-2 ring-repower-navy-900/200';
+        case 'purple': return 'bg-repower-cream border-repower-navy-900/200 ring-2 ring-repower-navy-900/200';
+        case 'green': return 'bg-repower-cream border-repower-gold/300 ring-2 ring-repower-gold/300';
         default: return 'bg-primary/5 border-primary ring-2 ring-primary';
       }
     }
@@ -123,9 +123,9 @@ export function PromoOptionSelector({
 
   const getIconColorClasses = (color: string) => {
     switch (color) {
-      case 'blue': return 'text-blue-600 bg-blue-100';
-      case 'purple': return 'text-purple-600 bg-purple-100';
-      case 'green': return 'text-green-600 bg-green-100';
+      case 'blue': return 'text-repower-navy-900 bg-repower-cream';
+      case 'purple': return 'text-repower-navy-900 bg-repower-cream';
+      case 'green': return 'text-repower-gold bg-repower-cream';
       default: return 'text-primary bg-primary/10';
     }
   };
@@ -139,14 +139,14 @@ export function PromoOptionSelector({
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-            <Sparkles className="h-5 w-5 text-amber-500" />
+            <Sparkles className="h-5 w-5 text-repower-gold0" />
             Choose Your Bonus
           </h3>
           <p className="text-sm text-muted-foreground">
             Select one promotional benefit to add to your purchase
           </p>
         </div>
-        <Badge variant="secondary" className="bg-amber-50 text-amber-700 border-amber-200">
+        <Badge variant="secondary" className="bg-repower-cream text-repower-gold border-repower-gold/30">
           Pick One
         </Badge>
       </div>
@@ -174,7 +174,7 @@ export function PromoOptionSelector({
             <div key={option.id} className="relative">
               {isRecommended && !isSelected && (
                 <div className="absolute -top-2 left-1/2 -translate-x-1/2 z-10">
-                  <Badge className="bg-amber-500 text-white text-xs px-2 py-0.5">
+                  <Badge className="bg-repower-cream0 text-white text-xs px-2 py-0.5">
                     Recommended
                   </Badge>
                 </div>
@@ -184,7 +184,7 @@ export function PromoOptionSelector({
                 className={cn(
                   'relative cursor-pointer transition-all duration-200 border-2',
                   getColorClasses(option.color, isSelected),
-                  isRecommended && !isSelected && 'ring-2 ring-amber-300 ring-offset-2'
+                  isRecommended && !isSelected && 'ring-2 ring-repower-gold/30 ring-offset-2'
                 )}
                 onClick={() => onSelect(option.id)}
               >

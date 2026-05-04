@@ -1275,12 +1275,12 @@ if (event.type === 'filter_motors') {
           
           {/* Financing Disclaimer */}
           {finalFilteredMotors.length > 0 && (
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <p className="text-xs font-light text-gray-500 text-center max-w-3xl mx-auto">
+            <div className="mt-12 pt-8 border-t border-repower-navy-900/10">
+              <p className="text-xs font-light text-repower-navy-900/400 text-center max-w-3xl mx-auto">
                 * Monthly payment estimates based on recommended financing term at {currentFinancingRate}% APR with $0 down, 
                 including HST and finance fee. Terms vary by purchase amount. Subject to credit approval.
                 {financingPromo?.promo_end_date && (
-                  <span className="ml-2 inline-flex items-center gap-1 text-emerald-600 font-medium">
+                  <span className="ml-2 inline-flex items-center gap-1 text-repower-gold font-medium">
                     <Clock className="h-3 w-3" />
                     Promo rate ends in {daysUntil(financingPromo.promo_end_date)} days
                   </span>
