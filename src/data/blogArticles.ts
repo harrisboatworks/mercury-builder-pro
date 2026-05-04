@@ -234,7 +234,7 @@ Proper winterization prevents 90% of spring problems:
 
 At Harris Boat Works, our Mercury-certified technicians handle everything from basic maintenance to major repairs. We've been servicing Mercury motors since 1965 and know these engines inside and out.
 
-**See also:** [mercury-service-schedule-complete-guide](/blog/mercury-service-schedule-complete-guide) and [spring-outboard-commissioning-checklist](/blog/spring-outboard-commissioning-checklist).
+**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist).
 
 ## Related guides
 
@@ -657,7 +657,7 @@ Once you've completed the 10-hour break-in and 20-hour oil change, your motor is
 
 When you purchase from Harris Boat Works, we walk you through the break-in procedure at delivery and offer a complimentary first oil change at 20 hours. We want your motor to last as long as possible — that's how we've been doing business since 1947. Call us at 905-342-2153 or [request service online](https://hbw.wiki/service).
 
-**See also:** [mercury-service-schedule-complete-guide](/blog/mercury-service-schedule-complete-guide) and [mercury-motor-maintenance-seasonal-tips](/blog/mercury-motor-maintenance-seasonal-tips).
+**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
 
 ## Related guides
 
@@ -850,7 +850,7 @@ Whether you're chasing walleye along the weed lines near Gores Landing, trolling
 
 Prefer a non-ProKicker 9.9 as a true main-engine kicker on smaller hulls? See the [Mercury 9.9 ELH FourStroke](/motors/fourstroke-9-9hp-9-9elh-fourstroke) — electric-start, long-shaft, remote-ready, priced in CAD with pickup at our Gores Landing dealership on Rice Lake.
 
-**See also:** [best-mercury-outboard-rice-lake-fishing](/blog/best-mercury-outboard-rice-lake-fishing) and [best-mercury-outboard-lake-simcoe-walleye-fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -992,7 +992,7 @@ We're boaters ourselves. We fish these lakes, we know these conditions, and we s
 
 **[Get a Quote on Your Next Mercury](/quote)**
 
-**See also:** [why-mercury-dominates-outboard-market](/blog/why-mercury-dominates-outboard-market) and [mercury-vs-yamaha-outboards-ontario](/blog/mercury-vs-yamaha-outboards-ontario).
+**See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario).
 
 ## Related guides
 
@@ -1150,7 +1150,7 @@ For the typical Ontario angler fishing inland lakes with a 16ft aluminum boat:
 
 **[Build Your Quote on a Mercury Outboard](/quote)**
 
-**See also:** [best-mercury-outboard-pontoon-boats](/blog/best-mercury-outboard-pontoon-boats) and [bass-boat-mercury-motor-buying-guide](/blog/bass-boat-mercury-motor-buying-guide).
+**See also:** [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats) and [Best Mercury Motor for Bass Boats: 2026 Buyer\](/blog/bass-boat-mercury-motor-buying-guide).
 
 ## Related guides
 
@@ -1331,7 +1331,7 @@ For smaller 18–20ft pontoons and heavier 16–18ft aluminum hulls, the [Mercur
 
 [Get a quote on your pontoon motor](https://mercuryrepower.ca/quote/motor-selection)
 
-**See also:** [best-mercury-outboard-aluminum-fishing-boats](/blog/best-mercury-outboard-aluminum-fishing-boats) and [bass-boat-mercury-motor-buying-guide](/blog/bass-boat-mercury-motor-buying-guide).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Motor for Bass Boats: 2026 Buyer\](/blog/bass-boat-mercury-motor-buying-guide).
 
 ## Related guides
 
@@ -1801,7 +1801,7 @@ Stop by and we'll set you up with exactly what you need for Rice Lake success.
 
 **[Build Your Rice Lake Motor Quote](/quote)**
 
-**See also:** [best-mercury-outboard-lake-simcoe-walleye-fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) and [best-mercury-outboard-lake-ontario-salmon-trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout).
+**See also:** [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) and [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout).
 
 ## Related guides
 
@@ -2148,7 +2148,7 @@ Adds value to boat at resale
 
 [Build your quote — includes extended warranty pricing options](https://mercuryrepower.ca/quote/motor-selection)
 
-**See also:** [mercury-propeller-selection-guide](/blog/mercury-propeller-selection-guide) and [mercury-outboard-fuel-efficiency-guide](/blog/mercury-outboard-fuel-efficiency-guide).
+**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
 
 ## Related guides
 
@@ -2317,7 +2317,7 @@ If budget is tighter and you fish recreationally — chasing smallmouth on Rice 
 
 [Build your bass boat motor quote](https://mercuryrepower.ca/quote/motor-selection)
 
-**See also:** [best-mercury-outboard-aluminum-fishing-boats](/blog/best-mercury-outboard-aluminum-fishing-boats) and [best-mercury-outboard-pontoon-boats](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -2491,7 +2491,7 @@ Continuously optimizes fuel delivery across operating conditions for maximum ran
 
 **[Get Your Motor Serviced for Peak Efficiency](/quote)**
 
-**See also:** [mercury-propeller-selection-guide](/blog/mercury-propeller-selection-guide) and [mercury-smartcraft-gauges-guide](/blog/mercury-smartcraft-gauges-guide).
+**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide).
 
 ## Related guides
 
@@ -2638,7 +2638,7 @@ Mercury's Joystick Piloting for Outboards is a game-changer for docking:
 
 **[Get a Quote on Center Console Power](/quote)**
 
-**See also:** [best-mercury-outboard-aluminum-fishing-boats](/blog/best-mercury-outboard-aluminum-fishing-boats) and [best-mercury-outboard-pontoon-boats](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -2829,7 +2829,7 @@ Harris Boat Works offers complete spring commissioning service on Rice Lake. As 
 
 [Schedule spring commissioning](https://hbw.wiki/service) — or call 905-342-2153.
 
-**See also:** [mercury-service-schedule-complete-guide](/blog/mercury-service-schedule-complete-guide) and [mercury-motor-maintenance-seasonal-tips](/blog/mercury-motor-maintenance-seasonal-tips).
+**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
 
 ## Related guides
 
@@ -3174,7 +3174,7 @@ Many boats leave the factory with a "one size fits most" prop. A proper selectio
 
 **[Get a Prop Recommendation](/quote)**
 
-**See also:** [mercury-outboard-fuel-efficiency-guide](/blog/mercury-outboard-fuel-efficiency-guide) and [mercury-smartcraft-gauges-guide](/blog/mercury-smartcraft-gauges-guide).
+**See also:** [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide) and [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide).
 
 ## Related guides
 
@@ -3330,7 +3330,7 @@ We support fishing guides throughout the Kawarthas with SeaPro motors. They appr
 
 **[Get a SeaPro Quote](/quote)**
 
-**See also:** [best-mercury-outboard-aluminum-fishing-boats](/blog/best-mercury-outboard-aluminum-fishing-boats) and [best-mercury-outboard-pontoon-boats](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -3594,7 +3594,7 @@ This setup covers every fishing situation.
 
 **[Explore Kicker Motor Options](/quote)**
 
-**See also:** [best-mercury-outboard-aluminum-fishing-boats](/blog/best-mercury-outboard-aluminum-fishing-boats) and [best-mercury-outboard-pontoon-boats](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -3869,7 +3869,7 @@ We can help you plan and install the right SmartCraft setup.
 
 **[Explore SmartCraft Options](/quote)**
 
-**See also:** [mercury-propeller-selection-guide](/blog/mercury-propeller-selection-guide) and [mercury-outboard-fuel-efficiency-guide](/blog/mercury-outboard-fuel-efficiency-guide).
+**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
 
 ## Related guides
 
@@ -4294,7 +4294,7 @@ When ready to recommission:
 
 **[Schedule Winterization Service](/quote)**
 
-**See also:** [mercury-service-schedule-complete-guide](/blog/mercury-service-schedule-complete-guide) and [mercury-motor-maintenance-seasonal-tips](/blog/mercury-motor-maintenance-seasonal-tips).
+**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
 
 ## Related guides
 
@@ -4579,7 +4579,7 @@ Upgrading your outboard? Your current motor has value. Here's how to get the bes
 
 **[Get a Trade-In Estimate](/quote)**
 
-**See also:** [mercury-propeller-selection-guide](/blog/mercury-propeller-selection-guide) and [mercury-outboard-fuel-efficiency-guide](/blog/mercury-outboard-fuel-efficiency-guide).
+**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
 
 ## Related guides
 
@@ -4718,7 +4718,7 @@ DTS enables Mercury Joystick Piloting:
 
 **[Learn About DTS Options](/quote)**
 
-**See also:** [mercury-propeller-selection-guide](/blog/mercury-propeller-selection-guide) and [mercury-outboard-fuel-efficiency-guide](/blog/mercury-outboard-fuel-efficiency-guide).
+**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
 
 ## Related guides
 
@@ -4850,7 +4850,7 @@ This covers all musky fishing scenarios in the Kawarthas.
 
 **[Build Your Musky Motor Setup](/quote)**
 
-**See also:** [best-mercury-outboard-rice-lake-fishing](/blog/best-mercury-outboard-rice-lake-fishing) and [best-mercury-outboard-lake-simcoe-walleye-fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -4984,7 +4984,7 @@ Contact us about electric options
 
 **[Explore Small Lake Motor Options](/quote)**
 
-**See also:** [best-mercury-outboard-rice-lake-fishing](/blog/best-mercury-outboard-rice-lake-fishing) and [best-mercury-outboard-lake-simcoe-walleye-fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -5289,7 +5289,7 @@ Before first use:
 
 **[Schedule Your Service](/quote)**
 
-**See also:** [mercury-motor-maintenance-seasonal-tips](/blog/mercury-motor-maintenance-seasonal-tips) and [spring-outboard-commissioning-checklist](/blog/spring-outboard-commissioning-checklist).
+**See also:** [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips) and [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist).
 
 ## Related guides
 
@@ -5436,7 +5436,7 @@ An overheating outboard can cause serious damage in minutes. Know the causes, pr
 
 ### [Schedule Cooling System Service](/quote)
 
-**See also:** [mercury-propeller-selection-guide](/blog/mercury-propeller-selection-guide) and [mercury-outboard-fuel-efficiency-guide](/blog/mercury-outboard-fuel-efficiency-guide).
+**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
 
 ## Related guides
 
@@ -5583,7 +5583,7 @@ Ontario's walleye opener is one of the most anticipated days on the fishing cale
 
 **[Book Pre-Season Motor Service](/contact)**
 
-**See also:** [mercury-service-schedule-complete-guide](/blog/mercury-service-schedule-complete-guide) and [mercury-motor-maintenance-seasonal-tips](/blog/mercury-motor-maintenance-seasonal-tips).
+**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
 
 ## Related guides
 
@@ -5759,7 +5759,7 @@ Proper fall shutdown protects your motor for spring. Schedule winterization befo
 
 **[Schedule Winterization Service](/contact)**
 
-**See also:** [mercury-service-schedule-complete-guide](/blog/mercury-service-schedule-complete-guide) and [mercury-motor-maintenance-seasonal-tips](/blog/mercury-motor-maintenance-seasonal-tips).
+**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
 
 ## Related guides
 
@@ -5882,7 +5882,7 @@ Ontario's boating season is precious—roughly May through October. Here's how t
 
 **[Schedule Seasonal Service](/quote)**
 
-**See also:** [mercury-service-schedule-complete-guide](/blog/mercury-service-schedule-complete-guide) and [mercury-motor-maintenance-seasonal-tips](/blog/mercury-motor-maintenance-seasonal-tips).
+**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
 
 ## Related guides
 
@@ -6114,7 +6114,7 @@ Proper winterization prevents spring headaches and protects your investment. Her
 
 **[Schedule Professional Winterization](/quote)**
 
-**See also:** [mercury-service-schedule-complete-guide](/blog/mercury-service-schedule-complete-guide) and [mercury-motor-maintenance-seasonal-tips](/blog/mercury-motor-maintenance-seasonal-tips).
+**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
 
 ## Related guides
 
@@ -6338,7 +6338,7 @@ We'll provide:
 
 **[Discuss Your Plans](/quote)**
 
-**See also:** [why-mercury-dominates-outboard-market](/blog/why-mercury-dominates-outboard-market) and [why-harris-boat-works-mercury-dealer](/blog/why-harris-boat-works-mercury-dealer).
+**See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer).
 
 ## Related guides
 
@@ -6609,7 +6609,7 @@ Family runabouts need motors that balance power, reliability, and ease of use. H
 
 **[Get a Family Runabout Quote](/quote)**
 
-**See also:** [best-mercury-outboard-aluminum-fishing-boats](/blog/best-mercury-outboard-aluminum-fishing-boats) and [best-mercury-outboard-pontoon-boats](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -6808,7 +6808,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 
 **[Get Watersports Motor Quote](/quote)**
 
-**See also:** [best-mercury-outboard-aluminum-fishing-boats](/blog/best-mercury-outboard-aluminum-fishing-boats) and [best-mercury-outboard-pontoon-boats](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -7768,7 +7768,7 @@ We're optimistic that CUSMA will be renewed and that common sense will prevail. 
 
 [Browse Mercury motors and get pricing](/quote/motor-selection) — or give us a call at (905) 342-2153.
 
-**See also:** [why-mercury-dominates-outboard-market](/blog/why-mercury-dominates-outboard-market) and [why-harris-boat-works-mercury-dealer](/blog/why-harris-boat-works-mercury-dealer).
+**See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer).
 
 ## Related guides
 
@@ -7991,7 +7991,7 @@ Whether you want to spend a Saturday exploring Rice Lake with your family, plan 
 
 Boating doesn't have to start with a purchase. With Harris Boat Works, it can start with a rental — and go wherever you want from there.
 
-**See also:** [why-mercury-dominates-outboard-market](/blog/why-mercury-dominates-outboard-market) and [why-harris-boat-works-mercury-dealer](/blog/why-harris-boat-works-mercury-dealer).
+**See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer).
 
 ## Related guides
 
@@ -8172,7 +8172,7 @@ Whether you're repowering an older boat, spec'ing a new Legend package, [adding 
 
 [Browse Mercury motors and get pricing](/quote/motor-selection) — or call us at (905) 342-2153 to start the conversation.
 
-**See also:** [why-harris-boat-works-mercury-dealer](/blog/why-harris-boat-works-mercury-dealer) and [mercury-vs-yamaha-outboards-ontario](/blog/mercury-vs-yamaha-outboards-ontario).
+**See also:** [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer) and [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario).
 
 ## Related guides
 
@@ -8355,7 +8355,7 @@ The absolute top end (V10, V12, 808 HP concepts) might not land on Rice Lake, bu
 
 If you're thinking about a new engine for 2026, [talk to us](/contact) about how you actually use your boat — trolling, cruising, family, fishing — and we'll map you to the right corner of Mercury's lineup. Or [explore motors and pricing in our quote builder](/quote/motor-selection).
 
-**See also:** [why-mercury-dominates-outboard-market](/blog/why-mercury-dominates-outboard-market) and [why-harris-boat-works-mercury-dealer](/blog/why-harris-boat-works-mercury-dealer).
+**See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer).
 
 ## Related guides
 
@@ -8526,7 +8526,7 @@ If you're curious about whether an Avator fits your situation, [talk to us](/con
 
 Then we'll give you a frank recommendation on gas, electric, or a hybrid of both. You can also [explore motor options and pricing in our quote builder](/quote/motor-selection).
 
-**See also:** [best-mercury-outboard-aluminum-fishing-boats](/blog/best-mercury-outboard-aluminum-fishing-boats) and [best-mercury-outboard-pontoon-boats](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -8667,7 +8667,7 @@ For the 2026 season, here's how we can make your life easier:
 
 If you want to tune your setup for this year's conditions, or just nail down a plan for opening day, [come see us](/contact) in Gores Landing, call **(905) 342-2153**, or [explore motors and pricing in our quote builder](/quote/motor-selection).
 
-**See also:** [best-mercury-outboard-rice-lake-fishing](/blog/best-mercury-outboard-rice-lake-fishing) and [best-mercury-outboard-lake-simcoe-walleye-fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -8807,7 +8807,7 @@ Ontario's boating season is short. If your existing Mercury engine qualifies, ge
 
 No. Boost is a factory-backed, manufacturer-approved software calibration. It does not void your Mercury warranty or affect any extended service plans.
 
-**See also:** [mercury-propeller-selection-guide](/blog/mercury-propeller-selection-guide) and [mercury-outboard-fuel-efficiency-guide](/blog/mercury-outboard-fuel-efficiency-guide).
+**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
 
 ## Related guides
 
@@ -9369,7 +9369,7 @@ Before you pick a brand based on specs, find out who services each brand closest
 
 If you're in the Kawarthas or Rice Lake region — Mercury makes sense. Not because Mercury is definitively better, but because you have a Platinum dealer on the water who stocks parts and can give you a real price.
 
-**See also:** [why-mercury-dominates-outboard-market](/blog/why-mercury-dominates-outboard-market) and [why-harris-boat-works-mercury-dealer](/blog/why-harris-boat-works-mercury-dealer).
+**See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer).
 
 ## Related guides
 
@@ -9812,7 +9812,7 @@ The motor is the most important safety equipment on your boat after the life jac
 - **Engine hours and fault codes**: See problems before they become real issues
 - **Speed and GPS integration**: Precise speed data for trolling presentation
 
-**See also:** [best-mercury-outboard-rice-lake-fishing](/blog/best-mercury-outboard-rice-lake-fishing) and [best-mercury-outboard-lake-ontario-salmon-trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout).
 
 ## Related guides
 
@@ -10040,7 +10040,7 @@ When you're 12 km offshore with a full load of fish and the wind is picking up, 
 - **Speed over ground:** Precise trolling speed data for dialing in your presentation.
 - **Engine hours and maintenance alerts:** Professional-grade fleet management for charter operators.
 
-**See also:** [best-mercury-outboard-rice-lake-fishing](/blog/best-mercury-outboard-rice-lake-fishing) and [best-mercury-outboard-lake-simcoe-walleye-fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -10248,7 +10248,7 @@ For those weighing whether a motor is worth another season of service, our [repo
 
 ---
 
-**See also:** [mercury-service-schedule-complete-guide](/blog/mercury-service-schedule-complete-guide) and [mercury-motor-maintenance-seasonal-tips](/blog/mercury-motor-maintenance-seasonal-tips).
+**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
 
 ## Related guides
 
@@ -10438,7 +10438,7 @@ When spring comes, a typical spring startup at our shop averages $480–$510 (ba
 
 ---
 
-**See also:** [mercury-service-schedule-complete-guide](/blog/mercury-service-schedule-complete-guide) and [mercury-motor-maintenance-seasonal-tips](/blog/mercury-motor-maintenance-seasonal-tips).
+**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
 
 ## Related guides
 
@@ -10727,7 +10727,7 @@ Switch brands when:
 
 For most Ontario boaters, switching to Mercury makes sense if you are doing a full repower anyway. The new rigging is required either way. The dealer network and parts supply argument tilts toward Mercury once the rigging investment is unavoidable.
 
-**See also:** [why-mercury-dominates-outboard-market](/blog/why-mercury-dominates-outboard-market) and [why-harris-boat-works-mercury-dealer](/blog/why-harris-boat-works-mercury-dealer).
+**See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer).
 
 ## Related guides
 
@@ -10871,7 +10871,7 @@ Buying a turnkey boat outright makes sense when:
 
 Most $30,000 budgets do better with a repower path. The savings on the hull (used vs. new) are bigger than the savings on the motor (since you are buying a current Mercury either way).
 
-**See also:** [best-mercury-outboard-aluminum-fishing-boats](/blog/best-mercury-outboard-aluminum-fishing-boats) and [best-mercury-outboard-pontoon-boats](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -11068,7 +11068,7 @@ Read more about [the best Mercury outboards for Rice Lake fishing](https://mercu
 
 ---
 
-**See also:** [best-mercury-outboard-rice-lake-fishing](/blog/best-mercury-outboard-rice-lake-fishing) and [best-mercury-outboard-lake-simcoe-walleye-fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert\](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -11296,7 +11296,7 @@ If your motor sat all winter and you're working through a start-up for the first
 
 ---
 
-**See also:** [mercury-propeller-selection-guide](/blog/mercury-propeller-selection-guide) and [mercury-outboard-fuel-efficiency-guide](/blog/mercury-outboard-fuel-efficiency-guide).
+**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
 
 ## Related guides
 
@@ -11452,7 +11452,7 @@ The lake will be there. The right time to buy is when it makes sense for you, no
 
 ---
 
-**See also:** [best-mercury-outboard-aluminum-fishing-boats](/blog/best-mercury-outboard-aluminum-fishing-boats) and [best-mercury-outboard-pontoon-boats](/blog/best-mercury-outboard-pontoon-boats).
+**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
 
@@ -11876,7 +11876,7 @@ For more on pontoon motor selection in general, see our [guide to the best Mercu
 
 ---
 
-**See also:** [mercury-propeller-selection-guide](/blog/mercury-propeller-selection-guide) and [mercury-outboard-fuel-efficiency-guide](/blog/mercury-outboard-fuel-efficiency-guide).
+**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
 
 ## Related guides
 
