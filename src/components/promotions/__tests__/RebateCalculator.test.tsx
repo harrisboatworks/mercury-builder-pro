@@ -9,34 +9,35 @@ const matrix = [
   { hp_min: 150, hp_max: 300, rebate: 1500 },
 ];
 
+const anchor = () => screen.getByTestId('rebate-anchor');
+
 describe('RebateCalculator animated rebate transitions', () => {
   it('renders the initial rebate amount', () => {
     render(<RebateCalculator matrix={matrix} initialHP={90} />);
-    expect(screen.getByText('$500')).toBeInTheDocument();
+    expect(anchor()).toHaveTextContent('$500');
     expect(screen.getByText('40–115HP tier')).toBeInTheDocument();
   });
 
   it('updates the displayed rebate when a different tier pill is clicked', () => {
     render(<RebateCalculator matrix={matrix} initialHP={90} />);
-    expect(screen.getByText('$500')).toBeInTheDocument();
+    expect(anchor()).toHaveTextContent('$500');
 
-    const pill = screen.getByRole('button', { name: /150–300HP/ });
-    fireEvent.click(pill);
-    expect(screen.getByText('$1,500')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: /150–300HP/ }));
+    expect(anchor()).toHaveTextContent('$1,500');
     expect(screen.getByText('150–300HP tier')).toBeInTheDocument();
   });
 
   it('cycles through multiple rebate values cleanly (animation key changes)', () => {
     render(<RebateCalculator matrix={matrix} initialHP={5} />);
-    expect(screen.getByText('$100')).toBeInTheDocument();
+    expect(anchor()).toHaveTextContent('$100');
 
     fireEvent.click(screen.getByRole('button', { name: /10–30HP/ }));
-    expect(screen.getByText('$250')).toBeInTheDocument();
+    expect(anchor()).toHaveTextContent('$250');
 
     fireEvent.click(screen.getByRole('button', { name: /40–115HP/ }));
-    expect(screen.getByText('$500')).toBeInTheDocument();
+    expect(anchor()).toHaveTextContent('$500');
 
     fireEvent.click(screen.getByRole('button', { name: /150–300HP/ }));
-    expect(screen.getByText('$1,500')).toBeInTheDocument();
+    expect(anchor()).toHaveTextContent('$1,500');
   });
 });
