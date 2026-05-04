@@ -1330,7 +1330,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
       resetInactivityTimer();
       toast({
         title: "Voice chat connected",
-        description: "Harris is here — say something!",
+        description: "Harris is here. Say something!",
       });
     },
     onDisconnect: () => {
@@ -1648,7 +1648,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
             ...prev,
             transcript: userTranscript,
             isThinking: true,
-            thinkingMessage: "Hang on — checking…",
+            thinkingMessage: "Hang on, checking…",
             currentPhase: 'thinking',
             turnTiming: {
               turnStart: now,
@@ -2073,7 +2073,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
         
         return JSON.stringify({
           success: true,
-          message: "I've opened our contact page. Feel free to fill out the form — someone will get back to you within 24 hours!",
+          message: "I've opened our contact page. Feel free to fill out the form. Someone will get back to you within 24 hours!",
           navigated: true
         });
       },
@@ -2243,7 +2243,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
             });
             return JSON.stringify({
               success: false,
-              error: "Quote creation failed — no share link was returned. Please try again.",
+              error: "Quote creation failed. No share link was returned. Please try again.",
             });
           }
 
@@ -2255,7 +2255,7 @@ export function useElevenLabsVoice(options: UseElevenLabsVoiceOptions = {}) {
           // Show toast with quote link
           toast({
             title: "Your quote is ready! 🎉",
-            description: `${params.motor_model} — $${safePrice.toLocaleString('en-CA', { minimumFractionDigits: 2 })}`,
+            description: `${params.motor_model} · $${safePrice.toLocaleString('en-CA', { minimumFractionDigits: 2 })}`,
             duration: 15000,
           });
           

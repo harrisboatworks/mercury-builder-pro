@@ -17,7 +17,7 @@ export const allTestimonials: Testimonial[] = [
   { quote: "My whole family buys from Harris. Trusted for generations.", name: "Peter Schmidt", location: "Oakville" },
   
   // Service quality themes
-  { quote: "Superb experience! First boat, first motor — couldn't be happier.", name: "Derek Thompson", location: "Whitby" },
+  { quote: "Superb experience! First boat, first motor. Couldn't be happier.", name: "Derek Thompson", location: "Whitby" },
   { quote: "Honest guys, fair prices, and they stand behind their work.", name: "Mike Johnson", location: "Port Hope" },
   { quote: "Best motor shop in Ontario. Period.", name: "Steve Williams", location: "Belleville" },
   { quote: "No pressure sales. Just honest advice and fair pricing.", name: "Chris Martin", location: "Clarington" },
@@ -33,7 +33,7 @@ export const allTestimonials: Testimonial[] = [
   { quote: "They took my boat out and dialed in the prop. Runs like a dream.", name: "Mark Stevens", location: "Innisfil" },
   
   // Warranty support themes
-  { quote: "Had a warranty issue — resolved same week, no hassle.", name: "Brian Murphy", location: "Lindsay" },
+  { quote: "Had a warranty issue, resolved same week, no hassle.", name: "Brian Murphy", location: "Lindsay" },
   { quote: "The warranty support is excellent. No questions asked.", name: "Maria Garcia", location: "Burlington" },
   { quote: "Mercury warranty claim was handled quickly. Harris made it easy.", name: "Kevin Walsh", location: "Haliburton" },
   { quote: "Warranty work done right the first time. Very impressed.", name: "Susan Campbell", location: "Milton" },
@@ -57,7 +57,7 @@ export const allTestimonials: Testimonial[] = [
   // Quick turnaround themes
   { quote: "Quick turnaround and excellent communication.", name: "Jennifer Lee", location: "North York" },
   { quote: "They went above and beyond to get my boat ready for the long weekend.", name: "Arjun Singh", location: "Markham" },
-  { quote: "Needed a fast turnaround before opener — they delivered.", name: "Ryan Garcia", location: "Scarborough" },
+  { quote: "Needed a fast turnaround before opener, and they delivered.", name: "Ryan Garcia", location: "Scarborough" },
   { quote: "Service was done in 2 days. Couldn't believe it.", name: "Emily Le", location: "Mississauga" },
   
   // Parts and advice themes
