@@ -59,7 +59,6 @@ export default defineConfig(({ mode }) => ({
       'pako/lib/zlib/deflate.js': path.resolve(__dirname, './src/lib/vendor/pako-deflate-compat.ts'),
       'pako/lib/zlib/inflate.js': path.resolve(__dirname, './src/lib/vendor/pako-inflate-compat.ts'),
       'pako/lib/zlib/constants.js': path.resolve(__dirname, './src/lib/vendor/pako-constants-compat.ts'),
-      'fontkit': path.resolve(__dirname, './node_modules/fontkit/dist/browser-module.mjs'),
       'base64-js': path.resolve(__dirname, './src/lib/vendor/base64-js-compat.ts'),
       'js-md5': path.resolve(__dirname, './src/lib/vendor/js-md5-compat.ts'),
       'hsl-to-hex': path.resolve(__dirname, './src/lib/vendor/hsl-to-hex-compat.ts'),
