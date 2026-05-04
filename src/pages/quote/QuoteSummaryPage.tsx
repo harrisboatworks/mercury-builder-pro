@@ -159,6 +159,7 @@ export default function QuoteSummaryPage() {
   
   // Cinematic reveal - show for fresh quotes coming from package selection
   const [showCinematic, setShowCinematic] = useState(false);
+  const [subtotalStable, setSubtotalStable] = useState(false);
   const cinematicTriggeredRef = useRef(false);
   
   // Extract stable motor ID outside the effect to prevent re-triggers on object reference changes
@@ -423,6 +424,17 @@ export default function QuoteSummaryPage() {
     }
     return packageSpecificTotals;
   }, [packageSpecificTotals, state.frozenPricing]);
+
+  // Wait for displayPricing.subtotal to settle before triggering the cinematic.
+  // accessoryBreakdown (which adds prop allowance, package extras, etc.) computes
+  // after first paint, so without this gate the cinematic counter can finish on
+  // the motor-only price ($28,122) instead of the true subtotal ($29,322).
+  useEffect(() => {
+    if (subtotalStable) return;
+    if (displayPricing.subtotal <= 0) return;
+    const t = setTimeout(() => setSubtotalStable(true), 150);
+    return () => clearTimeout(t);
+  }, [displayPricing.subtotal, subtotalStable]);
 
   // Live total for stale-quote comparison (always calculated from current data, ignoring frozen)
   const liveTotalForComparison = useMemo(() => {
@@ -988,7 +1000,7 @@ export default function QuoteSummaryPage() {
       />
       {/* Cinematic Quote Reveal */}
       <QuoteRevealCinematic
-        isVisible={showCinematic && isMounted && !promoLoading && warrantyCostsLoaded}
+        isVisible={showCinematic && isMounted && !promoLoading && warrantyCostsLoaded && subtotalStable}
         onComplete={handleCinematicComplete}
         motorName={motorName}
         finalPrice={displayPricing.subtotal}
