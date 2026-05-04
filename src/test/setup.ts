@@ -20,5 +20,7 @@ class ResizeObserverPolyfill {
   unobserve() {}
   disconnect() {}
 }
-// @ts-expect-error attach polyfill
-window.ResizeObserver = window.ResizeObserver || ResizeObserverPolyfill;
+(window as unknown as { ResizeObserver: typeof ResizeObserverPolyfill }).ResizeObserver =
+  (window as unknown as { ResizeObserver?: typeof ResizeObserverPolyfill }).ResizeObserver ||
+  ResizeObserverPolyfill;
+
