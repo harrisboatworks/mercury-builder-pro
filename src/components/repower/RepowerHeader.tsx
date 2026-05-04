@@ -107,6 +107,13 @@ export function RepowerHeader({ solid = false }: { solid?: boolean } = {}) {
                 Sign In
               </button>
             )}
+            <Link
+              to="/quote/motor-selection"
+              className="hidden md:inline-flex min-[1320px]:hidden items-center gap-1.5 bg-[#C8102E] hover:bg-[#9A0C24] text-white px-3 py-2 rounded uppercase tracking-wider text-[11px] font-semibold whitespace-nowrap transition-colors duration-200"
+            >
+              Quote
+              <ChevronRight className="w-3.5 h-3.5" />
+            </Link>
             <button
               className="min-[1320px]:hidden p-2 text-[#F5F1EA]"
               onClick={() => setMenuOpen(true)}
