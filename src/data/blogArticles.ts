@@ -8498,8 +8498,8 @@ The 2010–2018 E-TEC models in the 60–150hp range have the best remaining par
 | E-TEC 115hp | Mercury 115 FourStroke | Strong performer; available in Command Thrust |
 | E-TEC 150hp | Mercury 150 FourStroke or 150 Pro XS | Pro XS adds performance; FourStroke is quieter |
 | E-TEC 200hp | Mercury 200 FourStroke or 200 Pro XS | Multiple paths depending on hull and performance goals |
-| G2 250hp | Mercury 250 Pro XS or 250 Verado | Verado is naturally aspirated V8; Pro XS is lighter with strong performance |
-| G2 300hp | Mercury 300 Pro XS or 300 Verado | Top-end replacements; both excellent on larger hulls |
+| G2 250hp | Mercury 250 Pro XS | Pro XS is lighter with strong performance |
+| G2 300hp | Mercury 300 Pro XS | Top-end replacement, excellent on larger hulls |
 
 **Pro XS vs. FourStroke:** The Pro XS runs at higher RPMs and is optimized for acceleration and top speed. The standard FourStroke is quieter, more fuel-efficient at cruise, and better for family boats. Most E-TEC owners who want similar driving feel will find the Pro XS closer to what they're used to.
 
