@@ -158,7 +158,7 @@ export function PackageCards({
                 {p.label.split(' • ')[0]}
               </div>
               {p.label.includes(' • ') && (
-                <div className="text-sm font-medium text-gray-700 mt-0.5">
+                <div className="text-sm font-medium text-repower-navy-900/65 mt-0.5">
                   {p.label.split(' • ')[1]}
                 </div>
               )}
@@ -168,7 +168,7 @@ export function PackageCards({
               {money(p.priceBeforeTax)}
             </div>
 
-            <div className="mt-1 text-sm text-gray-700">
+            <div className="mt-1 text-sm text-repower-navy-900/65">
               From <span className="font-semibold text-primary">{money(Math.round(monthly))}/mo</span>
             </div>
 
@@ -181,13 +181,13 @@ export function PackageCards({
                   className="mt-2 flex flex-wrap gap-1.5"
                 >
                   {coverageDelta > 0 && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-200">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-repower-cream px-2 py-0.5 text-xs font-medium text-repower-gold ring-1 ring-inset ring-repower-gold/30">
                       <Shield className="h-3 w-3" />
                       +{coverageDelta}yr coverage
                     </span>
                   )}
                   {Math.ceil(monthlyDelta) >= 1 && (
-                    <span className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-200">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-repower-cream px-2 py-0.5 text-xs font-medium text-repower-navy-900 ring-1 ring-inset ring-repower-navy-900/15">
                       <TrendingUp className="h-3 w-3" />
                       +{money(Math.ceil(monthlyDelta))}/mo
                     </span>
@@ -197,16 +197,16 @@ export function PackageCards({
             )}
 
             {p.coverageYears != null && (
-              <div className="mt-2 text-sm text-gray-700">
+              <div className="mt-2 text-sm text-repower-navy-900/65">
                 Coverage: <span className="font-medium text-foreground">{p.coverageYears} years total</span>
               </div>
             )}
 
-            <div className="mt-2 inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-200">
+            <div className="mt-2 inline-flex items-center rounded-full bg-repower-cream px-2.5 py-0.5 text-xs font-medium text-repower-gold ring-1 ring-inset ring-repower-gold/30">
               Save {money(p.savings)}
             </div>
 
-            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-gray-700">
+            <ul className="mt-4 space-y-2 text-sm leading-relaxed text-repower-navy-900/65">
               {p.features.slice(0, maxFeatures).map((f, i) => (
                 <li 
                   key={i} 
@@ -234,7 +234,7 @@ export function PackageCards({
             
             {/* Mobile "Tap to select" hint for unselected packages */}
             {!isSelected && (
-              <span className="mt-3 text-center text-xs text-gray-600 sm:hidden">
+              <span className="mt-3 text-center text-xs text-repower-navy-900/55 sm:hidden">
                 Tap to select
               </span>
             )}

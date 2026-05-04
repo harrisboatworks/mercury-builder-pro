@@ -436,7 +436,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="bg-gradient-to-r from-red-500 to-pink-600 text-white p-4 rounded-lg text-center font-bold"
+          className="bg-repower-mercury-red text-repower-cream p-4 rounded-lg text-center font-bold"
         >
           💥 FLASH SALE: Save ${saleSavings.toLocaleString()} on this motor!
         </motion.div>
@@ -446,7 +446,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
         <motion.div
           initial={{ scale: 0.95, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-lg text-center font-bold"
+          className="bg-repower-navy-900 text-repower-cream p-4 rounded-lg text-center font-bold"
         >
           🎉 SPECIAL FINANCING: {activePromo.rate}% APR for qualified buyers!
         </motion.div>
@@ -501,7 +501,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                       <span>MSRP:</span>
                       <span className="line-through">{formatCurrency(quoteData.motor.basePrice)}</span>
                     </div>
-                    <div className="flex justify-between text-green-600">
+                    <div className="flex justify-between text-repower-gold">
                       <span>Discount:</span>
                       <span className="font-medium">-{formatCurrency(saleSavings)}</span>
                     </div>
@@ -537,40 +537,40 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
               {/* Active Promotions */}
               {promotions.length > 0 && (
-                <div className="space-y-1 bg-gradient-to-r from-green-50 to-emerald-50 p-3 rounded-lg border border-green-200">
-                  <div className="font-medium text-green-800 text-xs uppercase tracking-wide flex items-center gap-1">
+                <div className="space-y-1 bg-repower-cream p-3 rounded-lg border border-repower-gold/30">
+                  <div className="font-medium text-repower-navy-900 text-xs uppercase tracking-wide flex items-center gap-1">
                     🎉 Active Promotions
                   </div>
                   {promotions.map((promo, index) => (
                     <div key={index} className="space-y-1">
-                      <div className="text-xs font-medium text-green-700">{promo.name}</div>
+                      <div className="text-xs font-medium text-repower-navy-900">{promo.name}</div>
                       {promo.discount_fixed_amount > 0 && (
-                        <div className="flex justify-between text-green-600">
+                        <div className="flex justify-between text-repower-gold">
                           <span className="text-xs">Cash Discount:</span>
                           <span className="font-medium">-{formatCurrency(promo.discount_fixed_amount)}</span>
                         </div>
                       )}
                       {promo.discount_percentage > 0 && (
-                        <div className="flex justify-between text-green-600">
+                        <div className="flex justify-between text-repower-gold">
                           <span className="text-xs">{promo.discount_percentage}% Discount:</span>
                           <span className="font-medium">-{formatCurrency(motorPrice * promo.discount_percentage / 100)}</span>
                         </div>
                       )}
                       {promo.warranty_extra_years && promo.warranty_extra_years > 0 && (
-                        <div className="flex justify-between text-green-600">
+                        <div className="flex justify-between text-repower-gold">
                           <span className="text-xs">+{promo.warranty_extra_years} Year Warranty:</span>
                           <span className="font-medium">{formatCurrency(promo.warranty_extra_years * 200)} Value</span>
                         </div>
                       )}
                       {promo.end_date && (
-                        <div className="text-xs text-orange-600 font-medium">
+                        <div className="text-xs text-repower-mercury-red font-medium">
                           Expires: {format(new Date(promo.end_date), 'MMM d, yyyy')}
                         </div>
                       )}
                     </div>
                   ))}
                   {promotionSavings.totalPromoValue > 0 && (
-                    <div className="flex justify-between font-bold text-green-700 border-t border-green-200 pt-2 mt-2">
+                    <div className="flex justify-between font-bold text-repower-navy-900 border-t border-repower-gold/30 pt-2 mt-2">
                       <span>Total Promotional Value:</span>
                       <span>{formatCurrency(promotionSavings.totalPromoValue)}</span>
                     </div>
@@ -588,7 +588,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
 
               {/* Estimated Trade Value */}
               {hasTradeIn && (
-                <div className="flex justify-between text-green-600">
+                <div className="flex justify-between text-repower-gold">
                   <span>Estimated Trade Value:</span>
                   <span>-{formatCurrency(tradeInValue)}</span>
                 </div>
@@ -633,14 +633,14 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             {/* Cash Payment */}
             <Card 
               className={`p-4 cursor-pointer transition-all border-2 w-full max-w-xs ${
-                paymentPreference === 'cash' ? 'border-green-500 bg-green-50' : 'border-border hover:border-green-300'
+                paymentPreference === 'cash' ? 'border-repower-gold bg-repower-cream' : 'border-border hover:border-repower-gold/40'
               }`}
               onClick={() => handlePaymentSelection('cash')}
             >
               <div className="text-center space-y-2">
-                <DollarSign className="w-8 h-8 mx-auto text-green-600" />
+                <DollarSign className="w-8 h-8 mx-auto text-repower-gold" />
                 <h4 className="font-semibold">Pay Cash</h4>
-                <p className="text-2xl font-bold text-green-600">{formatCurrency(totalCashPrice)}</p>
+                <p className="text-2xl font-bold text-repower-gold">{formatCurrency(totalCashPrice)}</p>
                 <p className="text-sm text-muted-foreground">
                   {motorPrice >= FINANCING_MINIMUM ? `Save ${formatCurrency(cashSavings)} in interest!` : 'Best price for this motor'}
                 </p>
@@ -651,21 +651,21 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             {motorPrice >= FINANCING_MINIMUM && (
               <Card 
                 className={`p-4 cursor-pointer transition-all border-2 w-full max-w-xs ${
-                  paymentPreference === 'finance' ? 'border-blue-500 bg-blue-50' : 'border-border hover:border-blue-300'
+                  paymentPreference === 'finance' ? 'border-repower-navy-900 bg-repower-cream' : 'border-border hover:border-repower-navy-900/30'
                 }`}
                 onClick={() => handlePaymentSelection('finance')}
               >
                 <div className="text-center space-y-2">
-                  <Calculator className="w-8 h-8 mx-auto text-blue-600" />
+                  <Calculator className="w-8 h-8 mx-auto text-repower-navy-900" />
                   <h4 className="font-semibold">Finance</h4>
-                  <p className="text-2xl font-bold text-blue-600">
+                  <p className="text-2xl font-bold text-repower-navy-900">
                     {formatCurrency(payments.monthly)}/mo
                   </p>
                   <p className="text-sm text-muted-foreground">
                     {effectiveRate}% APR for {term} months
                   </p>
                   {activePromo && (
-                    <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                    <Badge variant="secondary" className="bg-repower-cream text-repower-navy-900 border border-repower-navy-900/10">
                       Promotional Rate!
                     </Badge>
                   )}
@@ -692,21 +692,21 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                       key={tier.amount}
                       className={`p-4 cursor-pointer transition-all border-2 w-full max-w-[180px] relative ${
                         isSelected 
-                          ? 'border-green-500 bg-green-50 ring-2 ring-green-200' 
-                          : 'border-border hover:border-green-300'
+                          ? 'border-repower-gold bg-repower-cream ring-2 ring-repower-gold/30' 
+                          : 'border-border hover:border-repower-gold/40'
                       }`}
                       onClick={() => setSelectedDeposit(tier.amount)}
                     >
                       {isRecommended && (
-                        <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs">
+                        <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 bg-repower-navy-900 text-repower-cream text-xs">
                           Recommended
                         </Badge>
                       )}
                       <div className="text-center space-y-1 pt-1">
-                        <p className="text-xl font-bold text-green-600">{tier.label}</p>
+                        <p className="text-xl font-bold text-repower-gold">{tier.label}</p>
                         <p className="text-xs text-muted-foreground">{tier.description}</p>
                         {isSelected && (
-                          <CheckCircle2 className="w-5 h-5 mx-auto text-green-600 mt-2" />
+                          <CheckCircle2 className="w-5 h-5 mx-auto text-repower-gold mt-2" />
                         )}
                       </div>
                     </Card>
@@ -718,7 +718,7 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
                 <Button 
                   onClick={handleStripePayment}
                   size="lg"
-                  className="bg-green-600 hover:bg-green-700 text-white"
+                  className="bg-repower-mercury-red hover:bg-repower-mercury-red/90 text-repower-cream"
                 >
                   <CreditCard className="w-4 h-4 mr-2" />
                   Pay {DEPOSIT_TIERS.find(t => t.amount === selectedDeposit)?.label} Deposit
@@ -762,13 +762,13 @@ export const QuoteDisplay = ({ quoteData, onStepComplete, onBack, totalXP = 0, o
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             className={`bg-white rounded-lg p-6 max-w-md w-full text-center ${
-              achievement.color === 'gold' ? 'border-4 border-yellow-400' : 'border-4 border-blue-400'
+              achievement.color === 'gold' ? 'border-4 border-repower-gold' : 'border-4 border-repower-navy-900'
             }`}
           >
             <div className="text-6xl mb-4">{achievement.icon}</div>
             <h3 className="text-xl font-bold mb-2">{achievement.title}</h3>
             <p className="text-muted-foreground mb-4">{achievement.message}</p>
-            <div className="text-lg font-semibold text-green-600 mb-4">{achievement.points}</div>
+            <div className="text-lg font-semibold text-repower-gold mb-4">{achievement.points}</div>
             {isMobile && countdownSeconds > 0 && (
               <p className="text-sm text-muted-foreground mb-4">
                 Auto-continuing in {countdownSeconds}s...

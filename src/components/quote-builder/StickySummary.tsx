@@ -152,7 +152,7 @@ export default function StickySummary({
               const diffDays = Math.ceil((quoteValidUntil.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
               const formatted = quoteValidUntil.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
               if (diffDays <= 0) return <span className="text-destructive font-medium">Quote pricing has expired</span>;
-              if (diffDays <= 7) return <span className="text-amber-600 dark:text-amber-400 font-medium">Pricing expires in {diffDays} day{diffDays !== 1 ? 's' : ''}, {formatted}</span>;
+              if (diffDays <= 7) return <span className="text-repower-mercury-red font-medium">Pricing expires in {diffDays} day{diffDays !== 1 ? 's' : ''}, {formatted}</span>;
               return <>Pricing valid until {formatted}</>;
             })()}
           </div>
@@ -170,20 +170,20 @@ export default function StickySummary({
             >
               <button
                 onClick={onUpgradeClick}
-                className="w-full rounded-lg border border-blue-200 bg-blue-50/50 p-3 text-left transition hover:bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30 dark:hover:bg-blue-950/50"
+                className="w-full rounded-lg border border-repower-navy-900/10 bg-repower-cream p-3 text-left transition hover:bg-repower-paper"
               >
-                <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400">
+                <div className="flex items-center gap-2 text-xs font-semibold text-repower-navy-900">
                   <Sparkles className="h-3.5 w-3.5" />
                   <span>Want more coverage?</span>
                 </div>
-                <div className="mt-1 text-sm text-slate-700 dark:text-slate-300">
+                <div className="mt-1 text-sm text-repower-navy-900/75">
                   Upgrade to <span className="font-semibold">{upgradeToLabel}</span> for just{' '}
                   <span className="font-semibold text-repower-mercury-red">
                     +{money(Math.round(upgradeCostDelta))}/mo
                   </span>
                 </div>
                 {upgradeCoverageGain != null && upgradeCoverageGain > 0 && (
-                  <div className="mt-0.5 flex items-center gap-1 text-xs text-blue-600 dark:text-blue-400">
+                  <div className="mt-0.5 flex items-center gap-1 text-xs text-repower-navy-900/65">
                     <ArrowUp className="h-3 w-3" />
                     <span>+{upgradeCoverageGain} years extra protection</span>
                   </div>
