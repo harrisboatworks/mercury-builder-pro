@@ -1286,7 +1286,7 @@ For smaller 18–20ft pontoons and heavier 16–18ft aluminum hulls, the [Mercur
       },
       {
         question: 'What\'s the best motor for a family pontoon on Kawartha Lakes cottage country?',
-        answer: 'For a family pontoon on Kawartha Lakes or Rice Lake in Ontario, the Mercury 150HP EFI FourStroke is the best overall choice for a 22–24ft pontoon. It planes a full family load confidently, handles afternoon chop, provides power for tubing, and runs quietly and efficiently for slow cruising. For a 20–21ft pontoon, the Mercury 115HP FourStroke is strong value. Both motors are fuel-efficient, quiet enough for conversation at cruise, and reliable for long weekend use. For premium or larger pontoons (25ft+), the Verado 250HP is the upgrade worth considering.'
+        answer: 'For a family pontoon on Kawartha Lakes or Rice Lake in Ontario, the Mercury 150HP EFI FourStroke is the best overall choice for a 22–24ft pontoon. It planes a full family load confidently, handles afternoon chop, provides power for tubing, and runs quietly and efficiently for slow cruising. For a 20–21ft pontoon, the Mercury 115HP FourStroke is strong value. Both motors are fuel-efficient, quiet enough for conversation at cruise, and reliable for long weekend use. For premium or larger pontoons (25ft+), a 250HP Pro XS is the upgrade worth considering.'
       }
     ]
   },
