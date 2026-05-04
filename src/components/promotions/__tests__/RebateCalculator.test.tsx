@@ -20,26 +20,29 @@ describe('RebateCalculator animated rebate transitions', () => {
     expect(screen.getByText('40–115HP tier')).toBeInTheDocument();
   });
 
-  it('updates the displayed rebate when a different tier pill is clicked', () => {
+  it('updates the displayed rebate when a different tier pill is clicked', async () => {
     render(<RebateCalculator matrix={matrix} initialHP={90} />);
     expect(anchorText()).toContain('$500');
 
     fireEvent.click(screen.getByRole('button', { name: /150–300HP/ }));
+    await screen.findByText('150–300HP tier');
     expect(anchorText()).toContain('$1,500');
-    expect(screen.getByText('150–300HP tier')).toBeInTheDocument();
   });
 
-  it('cycles through multiple rebate values cleanly (animation key changes)', () => {
+  it('cycles through multiple rebate values cleanly (animation key changes)', async () => {
     render(<RebateCalculator matrix={matrix} initialHP={5} />);
     expect(anchorText()).toContain('$100');
 
     fireEvent.click(screen.getByRole('button', { name: /10–30HP/ }));
+    await screen.findByText('10–30HP tier');
     expect(anchorText()).toContain('$250');
 
     fireEvent.click(screen.getByRole('button', { name: /40–115HP/ }));
+    await screen.findByText('40–115HP tier');
     expect(anchorText()).toContain('$500');
 
     fireEvent.click(screen.getByRole('button', { name: /150–300HP/ }));
+    await screen.findByText('150–300HP tier');
     expect(anchorText()).toContain('$1,500');
   });
 });
