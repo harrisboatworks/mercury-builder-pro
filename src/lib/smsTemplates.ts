@@ -89,7 +89,7 @@ export const SMS_TEMPLATES: Record<string, SMSTemplate> = {
       const nameGreeting = customerName ? `Hi ${customerName}! ` : '';
       return `🎉 ${nameGreeting}7-Year Factory-Backed Warranty on every new Mercury!
 
-Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance — straight Mercury protection.
+Buy any new Mercury outboard from Harris Boat Works and get 7 full years of factory-backed warranty coverage. No third-party insurance. Straight Mercury protection.
 
 Ends ${expiresIn || 'Dec 31, 2025'}!
 Build your quote: ${promoUrl || 'mercuryrepower.ca'}
