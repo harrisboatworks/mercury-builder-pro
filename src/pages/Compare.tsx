@@ -17,6 +17,8 @@ import {
 import { ShareComparisonModal } from '@/components/motors/ShareComparisonModal';
 import { SaveComparisonModal } from '@/components/motors/SaveComparisonModal';
 import { ComparisonEmptyState } from '@/components/motors/ComparisonEmptyState';
+import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 
 interface MotorWithDetails extends ComparisonMotor {
   specifications?: any;
@@ -328,9 +330,11 @@ export default function Compare() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
+    <div className="min-h-screen bg-repower-paper">
+      <RepowerHeader />
+      <div className="pt-[64px] lg:pt-[72px]" />
       {/* Header */}
-      <div className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75 shadow-sm pt-[env(safe-area-inset-top)]">
+      <div className="sticky top-[64px] lg:top-[72px] z-40 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75 shadow-sm">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2 sm:py-3">
           
           {/* Mobile/Tablet: Two rows */}
@@ -473,11 +477,11 @@ export default function Compare() {
                       ${motor.price?.toLocaleString()}
                     </p>
                     {motor.in_stock ? (
-                      <span className="inline-flex items-center gap-1 text-xs text-green-600 mt-1 sm:mt-2">
+                      <span className="inline-flex items-center gap-1 text-xs text-repower-gold mt-1 sm:mt-2">
                         <Check size={12} /> In Stock
                       </span>
                     ) : (
-                      <span className="text-xs text-muted-foreground mt-1 sm:mt-2 block">Special Order</span>
+                      <span className="text-xs text-repower-navy-900/55 mt-1 sm:mt-2 block">Special Order</span>
                     )}
                   </div>
                 ))}
