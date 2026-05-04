@@ -130,7 +130,7 @@ Mercury and Yamaha have broadly comparable parts availability and pricing for st
 
 We became a Mercury dealer in 1947 for practical reasons: it was the motor that Ontario cottage-country boaters were buying, and the dealer network support made running a marina business viable. Nearly eighty years later, those same practical factors still apply — and Mercury has added a technology lead on top of them.
 
-What we see on Rice Lake every season reinforces the decision. Mercury FourStrokes on aluminum fishing boats, Verado twins on performance pontoons, ProKickers for walleye trolling — the breadth of the lineup means we can fit almost any boating need with one brand and service it all in-house. That matters when a customer brings a boat in and we need to source parts quickly. We stock Mercury parts and run a full service shop — 507 paid customer service jobs in the fall of 2025 alone.
+What we see on Rice Lake every season reinforces the decision. Mercury FourStrokes on aluminum fishing boats, Pro XS on performance pontoons and bass boats, ProKickers for walleye trolling — the breadth of the lineup means we can fit almost any boating need with one brand and service it all in-house. That matters when a customer brings a boat in and we need to source parts quickly. We stock Mercury parts and run a full service shop — 507 paid customer service jobs in the fall of 2025 alone.
 
 That said: if you're buying a boat with a Yamaha or Honda that's already on it, and the motor is in good shape, there's no reason to replace a working engine just to switch brands. The motors are genuinely competitive. The question of which brand is "most reliable" in 2026 is less important than whether you have convenient access to service for whichever brand you own.
 

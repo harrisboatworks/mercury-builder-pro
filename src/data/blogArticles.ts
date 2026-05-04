@@ -339,7 +339,7 @@ Mercury Marine offers several distinct motor families, each designed for specifi
 - Premium fit and finish
 - HP range: 250HP - 600HP
 
-**Why Choose Verado**: Verado represents Mercury's flagship technology. The naturally aspirated powerheads deliver smooth, linear power while operating quieter than any comparable outboard. These are the motors you choose when only the best will do.
+**About Verado**: Verado is Mercury's flagship line. The naturally aspirated V8/V10/V12 powerheads deliver smooth, linear power while operating quieter than any comparable outboard. Verado is special-order only at Harris Boat Works — not part of default inventory. Contact us by phone or email if you'd like a Verado quote.
 
 ### Mercury SeaPro
 
@@ -367,13 +367,9 @@ Mercury Marine offers several distinct motor families, each designed for specifi
 
 ### Our Recommendation
 
-For most Ontario boaters, the **Mercury FourStroke** offers the best overall value. If you fish competitively or prioritize performance, consider the **Pro XS**. For premium boats or offshore use, **Verado** is worth the investment.
+For most Ontario boaters, the **Mercury FourStroke** offers the best overall value. If you fish competitively or prioritize performance, consider the **Pro XS**. Verado is special-order only at Harris Boat Works and not part of default inventory.
     `,
     faqs: [
-      {
-        question: 'Is the Verado worth the extra cost?',
-        answer: 'For premium boats and demanding applications, yes. Verado offers superior refinement, quieter operation, and advanced features. However, for most recreational use, FourStroke provides excellent value without the premium price.'
-      },
       {
         question: 'What\'s the main advantage of Pro XS over FourStroke?',
         answer: 'Pro XS motors are lighter and tuned for higher RPM and faster acceleration. They\'re designed for performance-focused boaters, especially tournament anglers who need to reach fishing spots quickly.'
@@ -385,10 +381,6 @@ For most Ontario boaters, the **Mercury FourStroke** offers the best overall val
       {
         question: 'Which Mercury motor is quietest?',
         answer: 'Verado is the quietest Mercury outboard, featuring advanced sound dampening and smooth naturally aspirated operation. FourStroke motors are also notably quiet, while Pro XS prioritizes performance over noise reduction.'
-      },
-      {
-        question: 'Is the Mercury Verado worth the extra cost?',
-        answer: 'For most recreational boaters, the FourStroke provides everything you need at a much lower price. The Verado is worth the premium in specific circumstances: you own a premium boat where quiet operation and refined electronics complete the package, you run long offshore distances, or budget isn\'t a decisive factor. For a typical Ontario cottage boat or fishing rig on an inland lake, the Verado\'s advantages are real but rarely decisive. The FourStroke is quiet, reliable, and efficient enough for 90% of Ontario boating applications.'
       },
       {
         question: 'What\'s the main advantage of Mercury Pro XS over FourStroke?',
@@ -1145,7 +1137,7 @@ For the typical Ontario angler fishing inland lakes with a 16ft aluminum boat:
   {
     slug: 'best-mercury-outboard-pontoon-boats',
     title: 'Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide',
-    description: 'Find the ideal Mercury outboard for your pontoon. Compare FourStroke, Verado, and SeaPro options for 18-28ft pontoons from Bennington, Harris, and more.',
+    description: 'Find the ideal Mercury outboard for your pontoon. Compare FourStroke and Pro XS options for 18-28ft pontoons from Bennington, Harris, and more.',
     image: '/lovable-uploads/pontoon-115-ct-detail-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-19',
@@ -1153,7 +1145,7 @@ For the typical Ontario angler fishing inland lakes with a 16ft aluminum boat:
     publishDate: '2026-01-19',
     category: 'Buying Guide',
     readTime: '10 min read',
-    keywords: ['mercury for pontoon boat', 'best pontoon outboard', 'pontoon motor hp', 'verado pontoon', 'mercury 115 pontoon'],
+    keywords: ['mercury for pontoon boat', 'best pontoon outboard', 'pontoon motor hp', 'pro xs pontoon', 'mercury 115 pontoon'],
     content: `
 ## Choosing the Right Mercury for Your Pontoon
 
@@ -1182,7 +1174,7 @@ Best choice: Mercury 115HP FourStroke
 Minimum: 150HP
 Recommended: **200-300HP**
 Maximum: Up to 400HP on some models
-Best choice: Mercury Verado 250HP or higher
+Best choice: Mercury 250-300HP Pro XS
 
 ### The Power-to-Weight Reality
 
@@ -1217,12 +1209,12 @@ Excellent resale value
 
 **Premium Performance**
 
-Mercury Verado 250-300HP
+Mercury 200-300HP Pro XS
 
-Best for 24-28ft tritoons
-Naturally aspirated V8 smooth power
-Whisper quiet operation
-Premium feel matches premium pontoons
+Best for 24-28ft tritoons and performance pontoons
+V8 power with strong hole-shot
+Excellent fuel economy at cruise
+Lighter than comparable Verado options
 
 ### Tritoon Considerations
 
@@ -1247,7 +1239,7 @@ Standard on all motors we recommend. Critical for pontoon performance tuning —
 
 **Quiet Operation**
 
-Mercury FourStroke and Verado are notably quiet — important when you're entertaining on the water and want to have a conversation at cruise speed.
+Mercury FourStroke motors are notably quiet — important when you're entertaining on the water and want to have a conversation at cruise speed.
 
 ### Our Pontoon Recommendations
 
@@ -1255,7 +1247,7 @@ Mercury FourStroke and Verado are notably quiet — important when you're entert
 
 **Best Overall**: Mercury 150HP FourStroke for 22-24ft pontoons
 
-**Best Premium**: Mercury Verado 250HP for 24ft+ tritoons
+**Best Premium**: Mercury 250-300HP Pro XS for 24ft+ tritoons
 
 On Rice Lake, most family pontoons are in the 20–24ft range. A Mercury 115–150HP is the right power band for this water — enough to get the family on plane, handle the open south-end run, and pull a tube without straining the motor. We see too many 20ft pontoons with 60–75HP; they work on flat calm days, but they're miserable in any chop or with a full load.
 
@@ -1273,8 +1265,8 @@ For smaller 18–20ft pontoons and heavier 16–18ft aluminum hulls, the [Mercur
         answer: 'Yes, with adequate power. For pulling tubes reliably, we recommend at least 90HP. For skiing or wakeboarding, 115HP minimum, with 150HP+ preferred.'
       },
       {
-        question: 'FourStroke or Verado for my pontoon?',
-        answer: 'FourStroke offers better value for most applications. Verado makes sense on premium 24ft+ pontoons where you want the smoothest, quietest operation and have the budget for premium power.'
+        question: 'FourStroke or Pro XS for my pontoon?',
+        answer: 'For most pontoons, the FourStroke is the right choice — better fuel economy at cruise and lower cost. The Pro XS makes sense on premium 24ft+ tritoons where you want stronger hole-shot under heavy loads or higher cruise speeds.'
       },
       {
         question: 'What about prop selection for pontoons?',
@@ -1290,11 +1282,11 @@ For smaller 18–20ft pontoons and heavier 16–18ft aluminum hulls, the [Mercur
       },
       {
         question: 'How much does it cost to repower a pontoon boat in Ontario?',
-        answer: 'A basic repower on a 20–22ft pontoon with a Mercury 115HP FourStroke typically runs $18,000–$22,000 CAD all-in including installation. Upgrading to a Mercury 150HP FourStroke is approximately $22,000–$27,000. If the rigging also needs replacing, add $2,000–$4,000. A premium repower to a Mercury Verado 250HP on a larger tritoon can run $35,000–$45,000 including rigging. These are approximate 2026 figures. Harris Boat Works provides repower assessments and full project quotes before any work begins.'
+        answer: 'A basic repower on a 20–22ft pontoon with a Mercury 115HP FourStroke typically runs $18,000–$22,000 CAD all-in including installation. Upgrading to a Mercury 150HP FourStroke is approximately $22,000–$27,000. If the rigging also needs replacing, add $2,000–$4,000. A premium repower to a Mercury 250HP Pro XS on a larger tritoon can run $32,000–$42,000 including rigging. These are approximate 2026 figures. Harris Boat Works provides repower assessments and full project quotes before any work begins.'
       },
       {
         question: 'What\'s the best motor for a family pontoon on Kawartha Lakes cottage country?',
-        answer: 'For a family pontoon on Kawartha Lakes or Rice Lake in Ontario, the Mercury 150HP EFI FourStroke is the best overall choice for a 22–24ft pontoon. It planes a full family load confidently, handles afternoon chop, provides power for tubing, and runs quietly and efficiently for slow cruising. For a 20–21ft pontoon, the Mercury 115HP FourStroke is strong value. Both motors are fuel-efficient, quiet enough for conversation at cruise, and reliable for long weekend use. For premium or larger pontoons (25ft+), the Verado 250HP is the upgrade worth considering.'
+        answer: 'For a family pontoon on Kawartha Lakes or Rice Lake in Ontario, the Mercury 150HP EFI FourStroke is the best overall choice for a 22–24ft pontoon. It planes a full family load confidently, handles afternoon chop, provides power for tubing, and runs quietly and efficiently for slow cruising. For a 20–21ft pontoon, the Mercury 115HP FourStroke is strong value. Both motors are fuel-efficient, quiet enough for conversation at cruise, and reliable for long weekend use. For premium or larger pontoons (25ft+), a 250HP Pro XS is the upgrade worth considering.'
       }
     ]
   },
@@ -1751,162 +1743,6 @@ Stop by and we'll set you up with exactly what you need for Rice Lake success.
     ]
   },
 
-  // Week 7: February 16, 2026
-  {
-    slug: 'mercury-fourstroke-vs-verado-comparison',
-    title: 'Mercury FourStroke vs Verado: Which Premium Motor Is Right for You?',
-    description: 'Compare Mercury FourStroke and Verado outboards. Learn the key differences in technology, performance, and value to make the right choice.',
-    image: '/lovable-uploads/Comparing_Motor_Families.png',
-    author: 'Harris Boat Works',
-    datePublished: '2026-02-16',
-    dateModified: '2026-02-16',
-    publishDate: '2026-02-16',
-    category: 'Comparison',
-    readTime: '11 min read',
-    keywords: ['mercury fourstroke vs verado', 'verado worth it', 'mercury outboard comparison', 'verado review', 'best mercury motor'],
-    content: `
-## FourStroke vs Verado: Making the Right Choice
-
-Mercury's FourStroke and Verado lines both deliver exceptional performance, but they're built for different buyers. Let's break down the differences.
-
-### The Fundamental Difference
-
-**Mercury FourStroke**: Naturally aspirated, excellent value
-**Mercury Verado**: Naturally aspirated large-displacement V8/V10/V12, premium experience
-
-### Technology Comparison
-
-| Feature | FourStroke | Verado |
-|---------|------------|--------|
-| Engine Type | Naturally Aspirated | Naturally Aspirated (V8/V10/V12) |
-| Power Delivery | Progressive | Linear, immediate |
-| Noise Level | Quiet | Extremely quiet |
-| Steering | Hydraulic or manual | Advanced Noise-Free Steering |
-| Shift/Throttle | Mechanical or DTS | Digital Throttle & Shift (DTS) |
-| Weight | Medium | Heavier |
-| Price | $$ | $$$$ |
-
-### Mercury FourStroke Strengths
-
-**Value**: Best performance per dollar in the industry
-
-**Simplicity**: Fewer complex systems = easier maintenance
-
-**Efficiency**: Excellent fuel economy across the RPM range
-
-**Range**: Available from 2.5HP to 300HP
-
-**Proven Reliability**: Millions in service worldwide
-
-**Best For**:
-- Recreational boaters
-- Fishing boats
-- Pontoons
-- Budget-conscious buyers
-- Those who value simplicity
-
-### Mercury Verado Strengths
-
-**Smooth Power**: Naturally aspirated large-displacement V8/V10/V12 delivery is unlike any other outboard
-
-**Quiet Operation**: The quietest outboard ever made
-
-**Premium Features**: Digital controls, Advanced Noise-Free Steering
-
-**Performance**: Exceptional hole-shot and acceleration
-
-**Range**: 250HP to 600HP
-
-**Best For**:
-- Premium boat owners
-- Offshore applications
-- Those who demand the best
-- Walkaround/cabin boats
-- Large center consoles
-
-### Real-World Differences
-
-**Starting and Idle**:
-Both start instantly with EFI. Verado idles so quietly you'll check if it's running.
-
-**Acceleration**:
-FourStroke builds power progressively—very predictable. Verado delivers immediate, linear acceleration that feels almost electric.
-
-**Cruising**:
-Both are efficient and smooth. Verado is noticeably quieter, especially at higher speeds.
-
-**Docking**:
-Verado's Digital Throttle & Shift provides precise low-speed control. FourStroke with mechanical controls is still excellent.
-
-### The Price Gap
-
-A Mercury 150HP FourStroke vs Mercury Verado 200HP represents a significant price difference ($15,000+). You're paying for:
-
-- Advanced technology
-- Superior refinement
-- Exclusive features
-- Premium fit and finish
-
-### How to Decide
-
-**Choose FourStroke if**:
-- Value matters more than absolute refinement
-- Your boat is under 25 feet
-- You're fishing or recreational boating
-- Simplicity appeals to you
-- Budget is a consideration
-
-**Choose Verado if**:
-- You own a premium boat
-- Quiet operation is essential
-- You want the absolute best
-- You boat offshore or long distances
-- Budget is secondary to experience
-
-### Our Take
-
-For most Ontario boaters on inland lakes, the **FourStroke** provides everything you need at a price that makes sense. It's Mercury's best-selling line for good reason.
-
-**Verado** is worth the premium if you're matching it to a high-end boat and want an uncompromising experience. On a nice cruiser or center console, Verado completes the package.
-
-**[Compare FourStroke and Verado Pricing](/quote)**
-    `,
-    faqs: [
-      {
-        question: 'Is Verado worth twice the price of FourStroke?',
-        answer: 'For the right buyer, yes. If you own a premium boat and value refinement, Verado delivers. For most recreational use, FourStroke provides 90% of the experience at much lower cost.'
-      },
-      {
-        question: 'Is Verado more reliable than FourStroke?',
-        answer: 'Both are extremely reliable. Verado has more complex systems (supercharger, DTS), but Mercury engineering is excellent. Proper maintenance keeps either running for decades.'
-      },
-      {
-        question: 'Can I use FourStroke on a saltwater boat?',
-        answer: 'Absolutely. Mercury FourStroke is used worldwide in salt and fresh water. Follow proper flushing procedures and maintenance, and it handles salt water beautifully.'
-      },
-      {
-        question: 'Why doesn\'t FourStroke go above 150HP?',
-        answer: 'Mercury\'s design philosophy positions FourStroke for recreational use up to 150HP. Above that power level, Verado or Pro XS technology better serves the applications.'
-      },
-      {
-        question: 'How much does a Mercury FourStroke vs Verado cost in Canada in 2026?',
-        answer: 'As a general guide in CAD: a 115HP FourStroke runs roughly $16,000–$20,000 installed, while a 200HP FourStroke is approximately $28,000–$36,000 installed. The Verado starts at 250HP, with installed pricing typically in the $42,000–$55,000 range depending on configuration. These are complete installation prices — engine, rigging, controls, prop, and labour. US-sourced pricing doesn\'t account for exchange rates, import duties, or Canadian dealer costs. Harris Boat Works posts live pricing at mercuryrepower.ca — no call required to get a real number.'
-      },
-      {
-        question: 'Which Mercury motor is better for Rice Lake and Ontario inland lakes?',
-        answer: 'For most Ontario inland lake boating — Rice Lake, Kawartha Lakes, Lake Simcoe, Muskoka — the Mercury FourStroke is the better all-around choice. Rice Lake averages under 20 feet deep, which means you\'re running moderate speeds, not offshore distances. The FourStroke\'s fuel efficiency, reliability, and lower purchase price make it the practical choice for 90% of local boats. The Verado shines in conditions where its advantages matter most: long offshore runs, or on premium boats where quiet idle and electronic refinement are part of the ownership experience.'
-      },
-      {
-        question: 'What is the maintenance difference between Mercury FourStroke and Verado?',
-        answer: 'Both require annual service, but the Verado\'s digital systems and larger powerhead add complexity. FourStroke annual maintenance covers oil and filter, lower unit gear lube, spark plugs, fuel filter, and water pump inspection at 300-hour intervals. Verado maintenance covers the same items plus the digital throttle and shift system, steering actuator, and additional electronic diagnostics — work that requires a trained Mercury technician with proper diagnostic equipment. FourStroke owners can handle some tasks themselves while still bringing it in annually. For engine repairs at Harris Boat Works, we only service Mercury and Mercruiser.'
-      },
-      {
-        question: 'Can I put a Verado on my older boat?',
-        answer: 'Possibly — but there are important compatibility factors to verify. Verado engines start at 250HP, so your transom must be rated for the weight and power. Verado uses Digital Throttle and Shift (DTS), which is not compatible with older mechanical cable controls — you\'ll need new controls as part of the installation. Verado also requires SmartCraft gauges; analog gauges won\'t work. A full Verado installation on an older boat can add $5,000–$8,000 in controls and rigging costs beyond the engine itself. In many cases, a high-horsepower FourStroke is a better fit for older hulls at lower total installed cost.'
-      }
-    ]
-  },
-
   // Week 8: February 23, 2026
   {
     slug: 'complete-guide-boat-repower-kawarthas',
@@ -2246,7 +2082,7 @@ Adds value to boat at resale
   {
     slug: 'bass-boat-mercury-motor-buying-guide',
     title: 'Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide',
-    description: 'Find the perfect Mercury outboard for your bass boat. Compare Pro XS, FourStroke, and Verado options for tournament and recreational bass fishing.',
+    description: 'Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament and recreational bass fishing.',
     image: '/lovable-uploads/bass-boat-150-proxs-hero-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-09',
@@ -2307,23 +2143,6 @@ Non-tournament anglers
 Budget-conscious buyers
 Those prioritizing fuel efficiency over outright performance
 
-### Mercury Verado: Premium Power
-
-Verado brings naturally aspirated V8/V10 performance:
-
-Benefits:
-
-Smoothest power delivery
-Quietest operation
-Advanced features
-Premium feel
-
-Best For:
-
-Premium bass boat brands
-Anglers wanting the refinement of V8 torque
-Those who value quiet cruise as much as hole-shot
-
 ### Recommended Setups by Boat Size
 
 18-19ft Bass Boat:
@@ -2334,17 +2153,15 @@ Good: FourStroke 150HP
 20ft Bass Boat:
 
 Mercury 200-225HP Pro XS
-Alternative: Verado 200HP
+Alternative: FourStroke 200HP
 
 21ft Bass Boat:
 
 Mercury 225-250HP Pro XS
-Alternative: Verado 250HP
 
 22ft+ Tournament Boat:
 
-Mercury 300-400HP Pro XS
-Alternative: Verado 300HP
+Mercury 300HP Pro XS
 
 ### Critical Bass Boat Features
 
@@ -2619,30 +2436,20 @@ Center consoles range from 18-foot bay boats to 43-foot offshore warriors. Here'
 - Alternative: Single 175-200HP for performance
 
 **22-25ft Coastal**:
-- Single Mercury 250-300HP Verado
+- Single Mercury 250-300HP Pro XS
 - Or Twin Mercury 115-150HP FourStroke
 
 **26-30ft Offshore**:
-- Twin Mercury 200-300HP Verado
-- Performance: Twin Pro XS 250-300HP
+- Twin Mercury 200-300HP Pro XS
 
 **31-36ft Offshore**:
-- Twin Mercury 300-400HP Verado
+- Twin Mercury 300HP Pro XS
 - Or Triple Mercury 250-300HP
 
 **37ft+**:
 - Triple or Quad Mercury 300-450HP
 
-### Mercury Verado: The Center Console Standard
-
-Verado dominates the center console market for good reason:
-
-**Why Verado for Center Consoles**:
-- Quiet operation (especially on cruises)
-- Smooth naturally aspirated V8/V10/V12 power
-- Advanced features (Digital Throttle & Shift)
-- Premium appearance
-- Joystick compatibility
+Note: For premium twin or triple Verado-powered builds, Verado is special-order only at Harris Boat Works — contact us by phone or email to spec it.
 
 ### Single vs Twin: The Debate
 
@@ -4353,10 +4160,9 @@ Mercury's V8 outboard lineup delivers serious power for serious boats. Here's ho
 - Maximum acceleration needed
 
 **Choose Verado If**:
-- Budget allows premium
-- Quietest operation essential
-- Want best technology
-- Premium boat deserves premium power
+- Verado is special-order only at Harris Boat Works — not part of default inventory
+- Best when matched to a premium build where quiet operation and DTS controls are part of the package
+- Contact us by phone or email for Verado spec and ordering
 
 ### Real-World Differences
 
@@ -6462,7 +6268,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 - Handle weighted boats
 - Power at 18-24 MPH
 
-**Recommended**: Mercury 200-225hp V6 or 250hp Verado
+**Recommended**: Mercury 200-225hp V6 or 250hp Pro XS
 
 #### Wakesurfing (Outboard)
 
@@ -6471,7 +6277,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 - Smooth idle-to-surf transition
 - Outboard-specific considerations
 
-**Recommended**: Mercury 250-300hp Verado (twin configuration ideal)
+**Recommended**: Mercury 250-300hp Pro XS (twin configuration ideal)
 
 ### Motor Recommendations by Boat Size
 
@@ -6492,7 +6298,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 |-------|-------------|-------|
 | 200hp V6 | Skiing, light boarding | Adequate power |
 | 225hp Pro XS | Most watersports | Excellent choice |
-| 250hp Verado | Heavy boarding, ballast | Premium option |
+| 250hp Pro XS | Heavy boarding, ballast | Premium option |
 
 **Our Pick**: Mercury 225hp Pro XS
 
@@ -6502,7 +6308,7 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 |-------|-------------|-------|
 | Twin 150hp | Wakesurfing | Surf wake on either side |
 | Twin 175-200hp | Serious surfing | Better wave shaping |
-| 300hp Verado | Single-engine power | Maximum single power |
+| 300hp Pro XS | Single-engine power | Maximum single power |
 
 **Our Pick**: Twin Mercury 175-200hp V6 for wakesurfing
 
@@ -8681,8 +8487,8 @@ The 2010–2018 E-TEC models in the 60–150hp range have the best remaining par
 | E-TEC 115hp | Mercury 115 FourStroke | Strong performer; available in Command Thrust |
 | E-TEC 150hp | Mercury 150 FourStroke or 150 Pro XS | Pro XS adds performance; FourStroke is quieter |
 | E-TEC 200hp | Mercury 200 FourStroke or 200 Pro XS | Multiple paths depending on hull and performance goals |
-| G2 250hp | Mercury 250 Pro XS or 250 Verado | Verado is naturally aspirated V8; Pro XS is lighter with strong performance |
-| G2 300hp | Mercury 300 Pro XS or 300 Verado | Top-end replacements; both excellent on larger hulls |
+| G2 250hp | Mercury 250 Pro XS | Pro XS is lighter with strong performance |
+| G2 300hp | Mercury 300 Pro XS | Top-end replacement, excellent on larger hulls |
 
 **Pro XS vs. FourStroke:** The Pro XS runs at higher RPMs and is optimized for acceleration and top speed. The standard FourStroke is quieter, more fuel-efficient at cruise, and better for family boats. Most E-TEC owners who want similar driving feel will find the Pro XS closer to what they're used to.
 
