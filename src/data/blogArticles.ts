@@ -1860,7 +1860,7 @@ Mercury SmartCraft gauges work with older motors. If you're upgrading to a motor
 - Professional installation by certified technicians
 - All work lake-tested before handoff
 - Full Mercury factory warranty
-- since 1965 of experience backing every job
+- 60+ years of experience backing every job (since 1965)
 
 **[Get Your Free Repower Quote](/quote)**
     `,
@@ -7174,7 +7174,7 @@ Stop by the marina in Gores Landing, give us a call at (905) 342-2153, or [brows
 
   {
     slug: 'tariffs-trade-canadian-boating-2026',
-    title: 'Tariffs, Trade, and Canadian Boating — What Harris Boat Works Customers Should Know in 2026',
+    title: 'Tariffs, Trade, and Canadian Boating: What Harris Boat Works Customers Should Know in 2026',
     description: 'U.S.–Canada tariffs, retaliatory measures, and the 2026 CUSMA review are creating uncertainty in the boating world. Here\'s a plain-language breakdown of what it all means for Mercury outboard and boat pricing in Ontario.',
     image: '/lovable-uploads/Tariffs_and_Trade_Blog_Hero_Image.png',
     author: 'Harris Boat Works',
@@ -7356,7 +7356,7 @@ We're optimistic that CUSMA will be renewed and that common sense will prevail. 
 
   {
     slug: 'boat-rentals-shared-access-booming-2026',
-    title: 'Why Boat Rentals and Shared Access Are Booming in 2026 — And How Harris Boat Works Gets You on the Water',
+    title: 'Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water',
     description: 'The boat rental market is surging across North America. Here\'s why shared boating is exploding, what\'s driving the trend, and how Harris Boat Works\' rental fleet on Rice Lake fits into the picture.',
     image: '/lovable-uploads/Why_Boat_Rentals_and_Shared_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
@@ -7553,7 +7553,7 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
 
   {
     slug: 'why-mercury-dominates-outboard-market',
-    title: 'Why Mercury Dominates the Outboard Market — And Why Harris Boat Works Chose Them',
+    title: 'Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them',
     description: 'Mercury Marine is the world\'s leading outboard brand, with dominant market share and relentless innovation. Here\'s why Harris Boat Works proudly sells, services, and trusts Mercury outboards for every boat on Rice Lake.',
     image: '/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
@@ -7748,7 +7748,7 @@ Whether you're repowering an older boat, spec'ing a new Legend package, [adding 
 
   {
     slug: 'mercury-2026-outboard-lineup-ontario',
-    title: "Inside Mercury's 2026 Outboard Lineup — What Actually Matters for Ontario Boaters",
+    title: "Inside Mercury's 2026 Outboard Lineup: What Actually Matters for Ontario Boaters",
     description: "Mercury's 2026 outboard lineup runs from tiny portables to fire-breathing V12s and advanced electric Avator motors. Here's what really matters for Harris Boat Works customers on Rice Lake.",
     image: '/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
@@ -9956,7 +9956,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
   },
   {
     slug: 'mercury-vs-yamaha-vs-honda-reliability-2026',
-    title: 'Mercury vs Yamaha vs Honda — Which Outboard Is Most Reliable in 2026?',
+    title: 'Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?',
     description: 'Mercury vs Yamaha vs Honda — which outboard is most reliable in 2026? An honest dealer comparison from a Mercury Platinum dealer who has sold all three.',
     image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
@@ -11085,7 +11085,7 @@ For more on repower costs in Ontario, see our [2026 repower cost guide](https://
   },
   {
     slug: 'mercury-boost-upgrade-150hp-pontoon-analysis',
-    title: 'Mercury Boost Upgrade — Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)',
+    title: 'Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)',
     description: 'Is the Mercury Boost software upgrade worth it for a 150 hp pontoon owner? Real-world analysis of cost, performance gains, and when to skip it.',
     image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
