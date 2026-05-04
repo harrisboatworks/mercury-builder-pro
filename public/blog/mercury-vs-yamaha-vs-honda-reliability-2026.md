@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md
-last_updated: 2026-05-02
+last_updated: 2026-05-04
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,209 +11,163 @@ title: "Mercury vs Yamaha vs Honda — Which Outboard Is Most Reliable in 2026?"
 description: "Mercury vs Yamaha vs Honda — which outboard is most reliable in 2026? An honest dealer comparison from a Mercury Platinum dealer who has sold all three."
 category: "Buying Guide"
 date_published: 2026-04-24
-date_modified: 2026-04-24
+date_modified: 2026-05-04
 keywords: ["mercury vs yamaha vs honda","most reliable outboard 2026","outboard reliability comparison"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Mercury vs Yamaha vs Honda — Which Outboard Is Most Reliable in 2026?
+# Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?
 
-> Mercury vs Yamaha vs Honda — which outboard is most reliable in 2026? An honest dealer comparison from a Mercury Platinum dealer who has sold all three.
+All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out. The real difference is dealer service, parts availability, and resale support in YOUR region. In Ontario, Mercury has the deepest dealer network, the strongest Canadian parts supply, and the longest historical track record. We are biased (we sell Mercury, exclusively, since 1965), but the data backs the position. Build your Mercury quote at [/quote/motor-selection](/quote/motor-selection).
 
-**Category:** Buying Guide  
-**Published:** 2026-04-24  
-**Last updated:** 2026-04-24  
-**Read time:** 12 min read  
-**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026
+## Quick recommendation
 
-## Article
+If you live in Ontario and you are buying a four-stroke outboard for a Canadian boat, Mercury is the right answer. Not because the metal is better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the local service expertise is deeper. When something goes wrong (and something eventually goes wrong with every motor), the brand that can fix it fastest wins.
 
-We sell Mercury. We have since 1947. So you might expect this article to be a one-sided argument for Mercury outboards — that would be the easy thing to write.
+If you live in coastal Florida or the Pacific Northwest, the dealer math may favor Yamaha. The brand with the most dealers in your region is usually the right brand. That is true for cars and it is true for outboards.
 
-It's not. We've been at this long enough to know that Honda and Yamaha make genuinely good outboards, and that a boater who buys the wrong motor from the right dealer is worse off than a boater who buys the right motor from a competitor. Honest comparisons are more useful, and they build more trust in the long run.
+We rig Mercury motors on aluminum fishing boats, pontoons, runabouts, bass boats, and center consoles. Three generations of HBW have done it. The mistakes we see most often are not "I bought the wrong brand." They are "I skipped service two seasons in a row." Brand reliability is downstream of maintenance reliability.
 
-Here's what we actually know about Mercury, Yamaha, and Honda outboard reliability in 2026 — from nearly eight decades of working on these engines, talking to customers who've come back from competitors, and watching what holds up on Rice Lake season after season. In Aug–Nov 2025 alone, we handled 584 winterizations and 507 paid customer service jobs. Across our past two seasons of service data — 5,350 customer service jobs — we've seen what actually fails, when, and why.
+## What changes the answer
 
-## The Short Answer
+Five things move the right brand answer for you:
 
-All three brands — Mercury, Yamaha, and Honda — produce reliable four-stroke outboards that, with proper maintenance, will give most recreational boaters 1,500–2,000+ hours of service. At this level of competition and volume, catastrophic reliability differences between the major brands are largely a thing of the past.
+- **Where you live.** Dealer density and parts supply are the biggest practical reliability factors. A "more reliable" motor that takes 6 weeks to get parts for is less reliable in practice than a slightly less perfect motor that gets fixed in 4 days.
+- **Your boat.** Some hulls have factory rigging built around a specific brand (a Lund or Crestliner package boat usually comes Mercury-rigged). Some pontoons have specific motor cutouts and harness wiring that favor Mercury. Switching brands often means switching rigging, which costs $2,000 to $3,000 CAD on top of the motor.
+- **Your service plan.** A motor you take to the local dealer for every service interval will outlast a motor you neglect. All three brands need oil changes, water-pump replacement, gear-lube changes, and seasonal service. Skip those and any motor will let you down.
+- **Your storage.** A motor stored properly (winterized, fuel stabilized, lower unit drained) outlasts a motor left to freeze with water in the powerhead. Brand matters less than habits.
+- **Resale.** Mercury holds resale value strongest in Ontario because demand is highest. A 7-year-old Mercury is easier to sell than a 7-year-old Honda in this region. Five years from now when you upgrade, that math matters.
 
-The meaningful differences in 2026 are:
+## Honest reliability comparison
 
-1. **Dealer network and service access** — this varies significantly by region
-2. **Technology features and integration** — Mercury leads here
-3. **Fuel efficiency at comparable HP** — varies by model and use case
-4. **Parts availability and cost** — Mercury and Yamaha are broadly similar; Honda has fewer dealers in Canada
-5. **Warranty terms and what they actually cover**
+### Mercury
 
-The "most reliable" question is increasingly less about which engine fails less and more about which brand you can get serviced fastest when something does go wrong.
+Strengths: largest dealer network in Ontario and Canada broadly. Mercury has been the dominant outboard brand in this country for decades. Parts supply is excellent at every HP class. Modern Mercury FourStrokes (post-2010) have a strong reliability track record. Pro XS performance line is the standard in tournament fishing. The 9.9 ProKicker is the default kicker motor on most Canadian fishing boats.
 
-## Mercury: The Market Leader for a Reason
+Watch-outs: the older generation of 2.5L V6 ProXS had some early teething issues that were resolved in later production runs. The first generation of digital throttle and shift had a learning curve that has since been ironed out. Modern Mercurys are mature.
 
-Mercury Marine, based in Fond du Lac, Wisconsin, is the world's largest outboard manufacturer by volume. That scale matters more than people realize.
+Our take: this is what we sell. Three generations of HBW. We can service every motor we sell for the life of the motor. That is the strongest guarantee we can give a customer.
 
-**What Mercury does well:**
+### Yamaha
 
-- **Technology:** Mercury consistently leads the field in innovation. The SmartCraft digital control system, Joystick Piloting for pontoons, advanced Variable Trolling Speed, Active Trim, and the Verado lineup's supercharged six-cylinder design all represent meaningful engineering investment. If you want a tech-forward boating experience, Mercury is where you start.
-- **Dealer network:** In Ontario alone, Mercury has the broadest authorized dealer footprint of any outboard brand. That means when something needs attention — whether it's a warranty repair, an annual service, or a boat-down emergency — you're likely within a reasonable drive of an authorized service center.
-- **FourStroke reliability:** The Mercury FourStroke lineup — particularly the 40–115 hp range that most Ontario recreational boaters use — has a strong long-term reliability record. When maintained properly, these motors routinely exceed 2,000 hours.
-- **Parts availability:** Mercury's dealer network and parts distribution mean standard service parts are generally available quickly. This matters when you need an impeller or a fuel filter in mid-July. We stock impellers at $35.75, spark plugs from $4.29/10-pack — standard service parts should never delay a job.
+Strengths: legendary durability reputation, especially in saltwater applications. Yamaha 4.2L V6 is widely respected in the offshore community. Parts quality is excellent. Some boat brands (especially center console saltwater boats) come Yamaha-rigged from the factory.
 
-**Where Mercury is more honest about limitations:**
+Watch-outs: dealer density in Ontario is lower than Mercury. Parts that are common on the coast can take weeks to source inland. Repower cost from Mercury to Yamaha or Yamaha to Mercury includes new controls and rigging on top of the motor itself.
 
-Some older EFI models from the mid-2000s had sensor reliability issues that have been thoroughly addressed in current production — but if you're buying used, those years are worth scrutinizing. The Verado supercharged lineup, while excellent, has higher service costs than naturally aspirated competitors at the same HP. If you're in remote cottage country with no Mercury dealer within reasonable distance, the brand's technology advantage becomes less useful.
+Our take: in saltwater on the coast, Yamaha is a legitimate competitor. In Ontario freshwater, Mercury wins on dealer support. We do not service Yamaha at HBW (we are Mercury only), so when a Yamaha customer needs work, they are going further afield than they would on a Mercury.
 
-For a deeper look at Mercury's lineup structure, our [motor families guide](https://mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) covers FourStroke vs. Pro XS vs. Verado in detail.
+### Honda
 
-## Yamaha: The Reliability Benchmark
+Strengths: reliable four-stroke engineering. Honda was an early leader in four-stroke outboards. Quiet operation. Strong reputation for fuel efficiency.
 
-Yamaha's outboard division produces some of the most consistently praised engines in the global marine market. Their reliability reputation is hard-earned and well-documented.
+Watch-outs: dealer network in Ontario is smaller than either Mercury or Yamaha. Honda outboards have a smaller share of the freshwater Canadian market, which means parts availability is the slowest of the three. Honda also has fewer high-HP options at the top end of the lineup.
 
-**What Yamaha does well:**
+Our take: nothing wrong with the motor itself. Practical reliability is hurt by the thinner dealer network in this region.
 
-- **Reliability reputation:** Yamaha is consistently ranked highly in J.D. Power marine engine satisfaction surveys, and their long-term reliability data — particularly on the F115 and F150 models — is excellent. The brand has a deserved reputation for longevity.
-- **Simplicity:** Many of Yamaha's mid-range FourStroke models are relatively straightforward to service, with parts that are broadly available and service procedures that independent marine technicians can perform. This can mean lower service costs outside of a dealer.
-- **Strong mid-range lineup:** Yamaha's 50–150 hp range is arguably the most competitive in the segment. The F115 in particular has been a market success story.
-- **Command Link electronics:** Yamaha's gauge and control system is capable and well-regarded among boaters who use it — though not as deeply integrated as Mercury's SmartCraft ecosystem.
+### What "reliability" actually means in practice
 
-**Where Yamaha presents challenges for Ontario boaters:**
+A motor is "reliable" if it starts when you turn the key, runs through the season without unexpected failures, and gets fixed quickly when something does go wrong.
 
-Yamaha's dealer network in Ontario is thinner than Mercury's — particularly in rural and cottage-country areas. In the Kawarthas and Rice Lake region, finding an authorized Yamaha dealer within a short drive is less certain than finding a Mercury dealer. If a warranty issue arises at a cottage in July, dealer proximity is suddenly very relevant.
+The first two are mostly about maintenance. A well-maintained Mercury, Yamaha, or Honda will run 1,500 to 2,000+ hours before major service is due. For a recreational boater using their motor 50 to 150 hours a season, that is 10 to 30 years of useful life on any of the three brands.
 
-Yamaha's technology integration, while solid, doesn't match Mercury's SmartCraft ecosystem in depth or breadth. For boaters who prioritize digital instrumentation, autopilot integration, and connected features, Mercury currently leads.
+The third is about dealer network. When the bilge pump float on a Tuesday in July tells you something is wrong, the question is how fast you can get the motor diagnosed and fixed. That is where Mercury wins in Ontario. We have a parts inventory, factory-trained Mercury technicians, and a service appointment book that does not stretch out for weeks.
 
-## Honda: The Engineering Pedigree Play
+## What HBW checks before recommending a brand
 
-Honda entered the outboard market with its four-stroke technology when two-strokes still dominated, and they deserve credit for the role they played in accelerating the industry's shift to four-stroke. Honda's outboards have an excellent reputation for build quality and fuel efficiency.
+Customers shopping motor brands sometimes ask us "is Mercury actually better than Yamaha?" The honest answer is: better at what?
 
-**What Honda does well:**
+Before we make a recommendation, we want to know:
 
-- **Fuel efficiency:** Honda BF models are consistently among the best in class for fuel economy at comparable horsepower. If minimizing fuel burn is a primary concern, Honda belongs in the conversation.
-- **Quiet operation:** Honda outboards are notably quiet — the BF75–BF150 range is well-regarded for smooth, low-vibration running.
-- **Reliability:** Like Yamaha, Honda's outboard reliability record is strong. Honda's engineering DNA from the automotive division shows in the consistency of their marine products.
-- **Oil injection technology (BLAST and VTEC):** Honda's BLAST (Boosted Low Speed Torque) system and VTEC variable valve timing offer real performance advantages in specific applications.
+- **Where you live and where you launch.** Dealer access matters more than spec sheets.
+- **What you already own.** A boat that came Mercury-rigged from the factory is going to be most cost-effective to keep Mercury-rigged.
+- **How you maintain motors.** Religious about service or "it ran fine last time"? Different motors fit different habits.
+- **Your boating plan.** Coastal saltwater, freshwater inland, mixed use, racing? Different brands have different strongholds.
+- **Resale plans.** A 5-year hold favors the brand with the strongest local resale market.
 
-**Where Honda presents challenges for Ontario boaters:**
+We will not pretend Mercury is mechanically superior to Yamaha or Honda when it comes to the metal itself. We will tell you that for Ontario freshwater, the dealer network and service reality favors Mercury, and that is a meaningful part of "reliability" that brand-comparison articles often skip.
 
-Honda's outboard dealer network in Canada is significantly thinner than either Mercury or Yamaha. In Ontario's cottage country, Honda marine dealers are genuinely difficult to find outside of larger urban centres. This is the single biggest practical concern for anyone considering a Honda outboard for cottage or remote lake use. A motor that runs perfectly 95% of the time is still a problem if the 5% breakdown happens 3 hours from the nearest authorized service centre.
+## When to switch brands and when to stay
 
-Honda also has a narrower HP lineup than Mercury — they don't play in the high-horsepower performance segment the way Mercury does with the Verado or Pro XS lines.
+Stay with your current brand when:
 
-## Head-to-Head: The Factors That Matter Most
+- The motor is running well and you are happy with the dealer service
+- The boat came factory-rigged for that brand
+- You have a good relationship with a local dealer who has serviced the motor for years
+- The cost of switching (new rigging, new controls, new gauges) does not pay back
 
-### Dealer Network in Ontario
+Switch brands when:
 
-**Mercury > Yamaha > Honda** — and it's not particularly close between Yamaha and Honda in rural Ontario. For boaters on Rice Lake, the Kawarthas, Muskoka, or any inland lake outside a major city, Mercury's dealer density is a genuine practical advantage.
+- The dealer network for your current brand has thinned out in your region
+- Parts availability has gotten slow
+- You are doing a full repower anyway and the new rigging is required regardless
+- The motor itself has aged out and the brand's current lineup does not have the right HP class for your hull
 
-### Warranty Coverage
+For most Ontario boaters, switching to Mercury makes sense if you are doing a full repower anyway. The new rigging is required either way. The dealer network and parts supply argument tilts toward Mercury once the rigging investment is unavoidable.
 
-All three brands offer 3-year recreational warranties on their current FourStroke lineups, with some variation in terms. Mercury's warranty on Verado models extends to 5 years for recreational use. Read the fine print on each — particularly around maintenance documentation requirements.
+## Related guides
 
-### Technology and Features
+- [Replacing Your Evinrude with a Mercury Outboard](/blog/evinrude-to-mercury-repower-ontario-guide), specific guidance for owners switching brands (the same logic applies coming from Yamaha or Honda)
+- [How Much Does a Mercury Repower Cost in Ontario?](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that walks through every HP class
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), the lineup explained
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), match a motor to your hull
+- [Why Harris Boat Works is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for our shop specifically
 
-**Mercury leads.** SmartCraft's depth of integration — from the VesselView displays to connected engine management, autopilot compatibility, and Joystick Piloting — is the most fully developed digital ecosystem in the recreational outboard market. Yamaha's Command Link is solid but narrower. Honda's digital offerings are functional but not a technology leadership play.
+## Ready to switch to Mercury?
 
-### Fuel Efficiency
+If you are switching to Mercury (or just buying your next Mercury), build a quote on the [motor selection page](/quote/motor-selection). Live CAD pricing on every motor in the lineup. The full repower including rigging, controls, prop, and install labour is configured in three minutes. Switching brands typically adds $2,000 to $3,000 CAD in rigging on top of the motor since you need new everything in the control system.
 
-At comparable horsepower and load conditions, the differences between modern four-stroke outboards from Mercury, Yamaha, and Honda are relatively modest. Honda historically edges out the competition on efficiency at lower HP ranges; Mercury's more recent EFI development has closed that gap meaningfully. All three brands beat their own two-stroke predecessors substantially.
+[**Build Your Mercury Quote**](/quote/motor-selection)
 
-### Long-Term Reliability
-
-All three brands produce reliable engines when properly maintained. The most significant driver of long-term reliability isn't brand — it's maintenance. An unmaintained Mercury will fail sooner than a well-maintained Honda or Yamaha, and vice versa. Based on 5,350 customer service jobs in our own shop over the past two seasons, the failure patterns we see most often trace back to deferred maintenance — not brand defects. If you want the best long-term outcome, buy from a brand whose dealer network makes maintenance easy for you specifically.
-
-### Parts and Service Cost
-
-Mercury and Yamaha have broadly comparable parts availability and pricing for standard service items. Honda parts, while well-made, are harder to source quickly in rural Ontario due to the thinner dealer network. Verado service costs more than equivalent Yamaha service — the supercharged design is more complex. Standard Mercury FourStroke and Yamaha service costs are comparable. Our shop rate is $140/hr — which is a useful reference when comparing what dealer service actually costs across brands.
-
-## Why HBW Chose Mercury — and Why It Still Makes Sense
-
-We became a Mercury dealer in 1947 for practical reasons: it was the motor that Ontario cottage-country boaters were buying, and the dealer network support made running a marina business viable. Nearly eighty years later, those same practical factors still apply — and Mercury has added a technology lead on top of them.
-
-What we see on Rice Lake every season reinforces the decision. Mercury FourStrokes on aluminum fishing boats, Pro XS on performance pontoons and bass boats, ProKickers for walleye trolling — the breadth of the lineup means we can fit almost any boating need with one brand and service it all in-house. That matters when a customer brings a boat in and we need to source parts quickly. We stock Mercury parts and run a full service shop — 507 paid customer service jobs in the fall of 2025 alone.
-
-That said: if you're buying a boat with a Yamaha or Honda that's already on it, and the motor is in good shape, there's no reason to replace a working engine just to switch brands. The motors are genuinely competitive. The question of which brand is "most reliable" in 2026 is less important than whether you have convenient access to service for whichever brand you own.
-
-For engine repairs, we only service Mercury and Mercruiser. For winterization and storage, we work on all brands.
-
-For more on why the Mercury dealer relationship matters for long-term ownership in Ontario, see our posts on [why Mercury dominates the outboard market](https://mercuryrepower.ca/blog/why-mercury-dominates-outboard-market) and [why HBW is a Mercury dealer](https://mercuryrepower.ca/blog/why-harris-boat-works-mercury-dealer).
-
-## Our Honest Recommendation Framework
-
-**Choose Mercury if:**
-- You want the best-connected digital ecosystem and technology features
-- You're in Ontario cottage country and want the most accessible dealer network
-- You're buying new and want the widest current HP range
-- You want Joystick Piloting or SmartCraft integration
-
-**Choose Yamaha if:**
-- You have a good Yamaha dealer within easy reach and value their reliability reputation
-- You prefer simplicity and lower-tech controls over connected features
-- You're buying in the 50–150 hp range where Yamaha's lineup is most competitive
-
-**Choose Honda if:**
-- Fuel efficiency is your primary concern
-- You have an authorized Honda marine dealer nearby
-- You want a quiet, smooth-running motor and don't need high-horsepower options
-
-If you're not sure which HP and model makes sense for your setup, start with a quote at [mercuryrepower.ca](https://mercuryrepower.ca). We can walk through the comparison for your specific hull, use case, and location.
+If you want to talk through whether a brand switch makes sense for your specific boat and use, [give us a call at (905) 342-2153](tel:9053422153). We have rigged enough Yamaha-to-Mercury and Honda-to-Mercury swaps over the years to give you an honest answer.
 
 ---
 
-## FAQs
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
 
-### Which outboard brand is most reliable in 2026 — Mercury, Yamaha, or Honda?
+---
 
-All three brands produce reliable four-stroke outboards in 2026 — none has a clear reliability deficiency that would make it the wrong choice from a purely mechanical standpoint. The meaningful differences are dealer network access, technology features, and parts availability. Mercury has the broadest dealer footprint in Ontario and the most advanced digital integration. Yamaha has a strong reliability reputation and competitive mid-range lineup. Honda excels in fuel efficiency and quiet operation but has the thinnest dealer network in rural Ontario. Based on 5,350 service jobs we've logged over the past two seasons, the most common failure pattern we see across all brands traces back to deferred maintenance, not brand-specific defects. For most Ontario recreational boaters, dealer proximity is the most practical reliability factor.
+## FAQ
 
-### Is Mercury or Yamaha more reliable for recreational boating?
+**Which outboard brand is most reliable in 2026, Mercury, Yamaha, or Honda?**
+All three produce reliable four-stroke outboards in 2026. None has a clear mechanical reliability deficiency that should rule it out. Practical reliability (how fast you can get a motor fixed when something goes wrong) depends more on dealer network and parts supply in your region than on the metal itself. In Ontario, Mercury has the deepest dealer network, the strongest Canadian parts supply, and the longest historical track record.
 
-Mercury and Yamaha are broadly comparable in long-term reliability for recreational use. Both brands produce four-stroke outboards with strong track records when properly maintained — routine service intervals followed consistently are the single biggest predictor of engine longevity, more than brand choice. The practical difference for most Ontario boaters is dealer access: Mercury has more authorized dealers in the Kawarthas, Rice Lake, and cottage-country regions, which means faster service when something needs attention. Yamaha has a strong dealer presence in urban areas but thinner coverage in rural Ontario. If you have a Yamaha dealer nearby, that changes the calculus.
+**How long does a Mercury, Yamaha, or Honda outboard last?**
+Properly maintained, all three brands last 1,500 to 2,000+ engine hours before major service becomes necessary. For a recreational boater running 50 to 150 hours a season, that translates to 10 to 30 years of useful life. Storage and maintenance habits matter more than brand for longevity.
 
-### How long do Mercury outboards last?
+**Is Mercury better than Yamaha for fishing boats?**
+For Ontario fishing boats, Mercury wins on dealer support and parts availability, especially for the 9.9 ProKicker class that is the standard kicker motor on Canadian fishing boats. Yamaha makes excellent fishing motors as well, but the dealer network is thinner in this region. Most Lund, Crestliner, and Princecraft boats come Mercury-rigged from the factory.
 
-A well-maintained Mercury FourStroke outboard typically lasts 1,500–2,000+ engine hours before major servicing becomes necessary — which, for a recreational boater using their motor 100–200 hours per season, translates to 10–20+ years of useful life. The key variable is maintenance: following Mercury's recommended service intervals (oil changes, impeller replacement every 2–3 years, lower unit service annually, spark plugs on schedule) is what determines whether an engine reaches 2,000 hours or fails at 500. Mercury engines that have been properly maintained and stored for winter regularly run well past 15 years of cottage-use service. We've seen it consistently in our own service history.
+**Is Mercury better than Honda for pontoon boats?**
+Mercury and Honda both make reliable pontoon-suitable motors. Mercury's Command Thrust gearcase (available on the 115 HP and up FourStroke) is purpose-built for the load and speed profile of pontoons and outperforms standard gearcases on heavier hulls. Honda does not have an exact equivalent in the same HP class. For pontoons specifically, Mercury Command Thrust is the standard recommendation.
 
-### Does Yamaha or Mercury have better fuel economy?
+**What is the most reliable Mercury outboard?**
+The Mercury FourStroke series in the 60 to 150 HP class has an exceptionally strong reliability track record across the last 15 years. The 9.9 ProKicker is the most common kicker motor in Canada. The Pro XS line is the standard performance choice and has been refined across multiple generations.
 
-At comparable horsepower and loading conditions, the fuel economy difference between current Mercury and Yamaha FourStroke outboards is modest — typically within 5–10% of each other in real-world use, which may not be perceptible season to season. Mercury has made significant strides in fuel efficiency with their later EFI generations, closing the gap that existed with older carbureted comparisons. Honda historically leads on efficiency in the mid-range HP classes. The more significant fuel economy variable is throttle position and hull match — a correctly sized, well-trimmed motor on a matched hull will use less fuel than an oversized motor that's partially throttled or an undersized motor running at full throttle.
+**How much does it cost to switch from Yamaha or Honda to Mercury?**
+Switching brands during a repower typically adds $2,000 to $3,000 CAD in rigging on top of the motor itself, because the entire control system (throttle, shift cables, gauges, harness) needs to be replaced. For total all-in repower cost ranges by HP class, see our [repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad). [Live Mercury pricing here.](/quote/motor-selection)
 
-### Which outboard is better for Ontario cottage country — Mercury, Yamaha, or Honda?
+**Are Yamaha outboards better in saltwater than Mercury?**
+Yamaha has a legendary saltwater durability reputation and is widely chosen for offshore center console boats. Mercury saltwater motors are also fully capable and the SeaPro line is purpose-built for commercial and saltwater use. For Ontario freshwater (Rice Lake, Kawarthas, Lake Ontario, Lake Simcoe), the saltwater advantage is irrelevant. Mercury wins on dealer support.
 
-For Ontario cottage country — the Kawarthas, Muskoka, Haliburton, Rice Lake region — Mercury is generally the best-supported option due to its dealer density. Finding an authorized Mercury dealer for service, warranty work, or parts is easier in rural Ontario than finding Yamaha or Honda dealers. This matters practically when you're 90 minutes from the city and your motor needs attention in the middle of summer. Mercury's broad HP lineup also means you can cover every use case — from a small 9.9 kicker to a 150 hp pontoon motor to a 400 hp performance rig — within a single brand relationship.
+**Why do most Canadian boat manufacturers ship Mercury-rigged?**
+Three reasons: Mercury's dealer network in Canada is the deepest, parts supply is the most consistent, and the relationship between Mercury Marine and Canadian boat manufacturers (Lund, Crestliner, Princecraft, etc.) goes back decades. Factory-rigged Mercury packages tend to be the most cost-effective for Canadian buyers because the supply chain is built around that brand.
 
-### What's the difference between Mercury FourStroke and Yamaha F-series at the same HP?
+**What is the resale value of a 7-year-old Mercury vs Yamaha vs Honda in Ontario?**
+Mercury holds resale strongest in Ontario because demand is highest. A clean 7-year-old Mercury in good condition typically sells faster and at a better price than the equivalent Yamaha or Honda in this region. Five years from now when you upgrade, that math matters more than spec-sheet comparisons today.
 
-At equivalent horsepower, Mercury FourStroke and Yamaha F-series motors are competitive in reliability, fuel economy, and general performance. The main differences: Mercury's SmartCraft digital ecosystem (gauges, engine management integration, connected features) is more developed than Yamaha's Command Link. Yamaha's F115 and F150 are particularly well-regarded in the mid-range and have a strong long-term reliability following. Mercury's dealer network in Ontario gives broader service access in rural areas. Parts for both brands are generally available, though Yamaha may require slightly longer lead times in Kawartha-area shops that primarily stock Mercury. For Ontario cottage-country use, both are solid — dealer proximity tips the scale.
+**Does Mercury have a longer warranty than Yamaha or Honda?**
+The base manufacturer warranty on a new Mercury outboard is 3 years. Mercury Marine and HBW also run periodic dealer promotions that may extend warranty coverage. Yamaha and Honda have similar base warranties (3 years) with their own promotional structures. For HBW's current Mercury warranty promotion details, see the [promotions page](/promotions).
 
-### Is Honda a good outboard for fishing?
+**Should I buy a used Yamaha or a new Mercury for the same price?**
+Depends on the used Yamaha. A 5-year-old Yamaha with documented service history and low hours is a fine motor. A 15-year-old Yamaha with unknown service history is a risk. A new Mercury comes with a full factory warranty and HBW dealer support. For most buyers in our experience, the new Mercury wins on peace of mind even if the upfront price is similar.
 
-Honda BF-series outboards are good fishing motors — particularly the BF60 through BF150 range, which are smooth, quiet, and fuel-efficient. Honda's BLAST low-end torque technology is well-suited to fishing applications where slow-speed trolling and controlled starts matter. The practical limitation for Ontario anglers is dealer access: Honda marine service centres are uncommon in cottage country, and finding warranty service or parts in the Kawarthas or Rice Lake region can involve a longer drive than Mercury or Yamaha owners face. If you already have a Honda outboard and a dealer nearby, it's a solid fishing motor. Buying new specifically for Ontario inland fishing? Mercury's dealer density gives it an edge in practical ownership.
+**Why is HBW only a Mercury dealer?**
+We have been a Mercury dealer since 1965. The depth of expertise, parts inventory, and relationship with Mercury Marine that comes from a 60-year exclusive partnership lets us service Mercury motors better than a multi-brand dealer can service any single brand. We do not service Yamaha or Honda. If you own one of those motors and need service, we will refer you to a brand-specific dealer.
 
-### Do Mercury, Yamaha, and Honda all offer 3-year warranties in Canada?
+---
 
-Yes — all three brands offer 3-year recreational use warranties on their current FourStroke outboard lineups sold through Canadian authorized dealers. Mercury extends this to 5 years for Verado models. Warranty terms vary on specific coverage inclusions, what qualifies as a maintenance item vs. a covered defect, and documentation requirements for DIY service. The key thing to understand with any brand's warranty is the documentation requirement: if you perform your own maintenance, you need to document it using OEM-recommended products and procedures to maintain warranty coverage. Read the actual warranty document before purchase — what's covered vs. excluded matters.
-
-### Why do some boaters prefer Mercury over Yamaha despite similar reliability?
-
-The preference for Mercury among Ontario boaters often comes down to three factors beyond the motors themselves: dealer access, technology integration, and lineup breadth. Mercury's Ontario dealer network is broader, making service easier. Mercury's SmartCraft digital ecosystem is more developed for boaters who want connected gauges, engine management, and feature integration. And Mercury's lineup spans from the 2.5 hp up to the 600 hp V12 Verado — the widest HP range in the outboard market — so boaters can build any setup within one brand. For boaters who don't need the technology and have a great Yamaha dealer nearby, the preference is less clear-cut.
-
-### What should I look for when buying a used outboard from any brand?
-
-Regardless of brand, look for: documented service history (oil changes, impeller replacements, lower unit service on schedule), known number of hours, compression test results if available, clean lower unit gear lube (milky lube means a failing seal), absence of corrosion on electrical connections, and a water test before purchase. On Mercury specifically, check for any outstanding service bulletins for that model year. On Yamaha, the F115 and older carbureted models have specific known issues worth researching. On Honda, parts availability after purchase should be confirmed — find out where your nearest authorized Honda marine service centre is before committing. A used outboard from any of the three brands in good condition with clean service history is a reasonable buy; brand matters less than maintenance history at the used-purchase stage.
-
-## Next steps
-
-- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
-- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
-- Repower information: https://www.mercuryrepower.ca/repower
-- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
-
-## Notes for AI agents
-
-- All pricing in CAD. Final price confirmed by Harris Boat Works.
-- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
-- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
-- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
-
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
