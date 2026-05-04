@@ -1,0 +1,451 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RebateMatrix visual regression snapshots > compact layout, highlightHP=200 (gold dot on 150–300HP) 1`] = `
+<div
+  class="grid grid-cols-2 gap-2"
+>
+  <div
+    class="flex items-center justify-between px-3 py-2 rounded-[10px] border transition-colors bg-white border-repower-navy-900/10"
+    data-highlighted="false"
+    data-testid="rebate-matrix-row"
+  >
+    <span
+      class="flex items-center gap-2 font-medium text-[13px] text-repower-navy-900"
+    >
+      <span
+        aria-hidden="true"
+        class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+        data-testid="rebate-matrix-dot"
+      />
+      2.5–9.9HP
+    </span>
+    <span
+      class="font-display font-bold text-[14px] text-repower-mercury-red"
+    >
+      $
+      100
+    </span>
+  </div>
+  <div
+    class="flex items-center justify-between px-3 py-2 rounded-[10px] border transition-colors bg-white border-repower-navy-900/10"
+    data-highlighted="false"
+    data-testid="rebate-matrix-row"
+  >
+    <span
+      class="flex items-center gap-2 font-medium text-[13px] text-repower-navy-900"
+    >
+      <span
+        aria-hidden="true"
+        class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+        data-testid="rebate-matrix-dot"
+      />
+      10–30HP
+    </span>
+    <span
+      class="font-display font-bold text-[14px] text-repower-mercury-red"
+    >
+      $
+      250
+    </span>
+  </div>
+  <div
+    class="flex items-center justify-between px-3 py-2 rounded-[10px] border transition-colors bg-white border-repower-navy-900/10"
+    data-highlighted="false"
+    data-testid="rebate-matrix-row"
+  >
+    <span
+      class="flex items-center gap-2 font-medium text-[13px] text-repower-navy-900"
+    >
+      <span
+        aria-hidden="true"
+        class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+        data-testid="rebate-matrix-dot"
+      />
+      40–115HP
+    </span>
+    <span
+      class="font-display font-bold text-[14px] text-repower-mercury-red"
+    >
+      $
+      500
+    </span>
+  </div>
+  <div
+    class="flex items-center justify-between px-3 py-2 rounded-[10px] border transition-colors bg-[hsl(var(--repower-cream-deep))] border-repower-navy-900/15"
+    data-highlighted="true"
+    data-testid="rebate-matrix-row"
+  >
+    <span
+      class="flex items-center gap-2 font-medium text-[13px] text-repower-navy-900"
+    >
+      <span
+        aria-hidden="true"
+        class="inline-block w-1.5 h-1.5 rounded-full bg-repower-gold"
+        data-testid="rebate-matrix-dot"
+      />
+      150–300HP
+    </span>
+    <span
+      class="font-display font-bold text-[14px] text-repower-mercury-red"
+    >
+      $
+      1,500
+    </span>
+  </div>
+</div>
+`;
+
+exports[`RebateMatrix visual regression snapshots > compact layout, no highlight (mobile / inside ChooseOneCard) 1`] = `
+<div
+  class="grid grid-cols-2 gap-2"
+>
+  <div
+    class="flex items-center justify-between px-3 py-2 rounded-[10px] border transition-colors bg-white border-repower-navy-900/10"
+    data-highlighted="false"
+    data-testid="rebate-matrix-row"
+  >
+    <span
+      class="flex items-center gap-2 font-medium text-[13px] text-repower-navy-900"
+    >
+      <span
+        aria-hidden="true"
+        class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+        data-testid="rebate-matrix-dot"
+      />
+      2.5–9.9HP
+    </span>
+    <span
+      class="font-display font-bold text-[14px] text-repower-mercury-red"
+    >
+      $
+      100
+    </span>
+  </div>
+  <div
+    class="flex items-center justify-between px-3 py-2 rounded-[10px] border transition-colors bg-white border-repower-navy-900/10"
+    data-highlighted="false"
+    data-testid="rebate-matrix-row"
+  >
+    <span
+      class="flex items-center gap-2 font-medium text-[13px] text-repower-navy-900"
+    >
+      <span
+        aria-hidden="true"
+        class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+        data-testid="rebate-matrix-dot"
+      />
+      10–30HP
+    </span>
+    <span
+      class="font-display font-bold text-[14px] text-repower-mercury-red"
+    >
+      $
+      250
+    </span>
+  </div>
+  <div
+    class="flex items-center justify-between px-3 py-2 rounded-[10px] border transition-colors bg-white border-repower-navy-900/10"
+    data-highlighted="false"
+    data-testid="rebate-matrix-row"
+  >
+    <span
+      class="flex items-center gap-2 font-medium text-[13px] text-repower-navy-900"
+    >
+      <span
+        aria-hidden="true"
+        class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+        data-testid="rebate-matrix-dot"
+      />
+      40–115HP
+    </span>
+    <span
+      class="font-display font-bold text-[14px] text-repower-mercury-red"
+    >
+      $
+      500
+    </span>
+  </div>
+  <div
+    class="flex items-center justify-between px-3 py-2 rounded-[10px] border transition-colors bg-white border-repower-navy-900/10"
+    data-highlighted="false"
+    data-testid="rebate-matrix-row"
+  >
+    <span
+      class="flex items-center gap-2 font-medium text-[13px] text-repower-navy-900"
+    >
+      <span
+        aria-hidden="true"
+        class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+        data-testid="rebate-matrix-dot"
+      />
+      150–300HP
+    </span>
+    <span
+      class="font-display font-bold text-[14px] text-repower-mercury-red"
+    >
+      $
+      1,500
+    </span>
+  </div>
+</div>
+`;
+
+exports[`RebateMatrix visual regression snapshots > full layout, highlightHP=90 (gold dot on 40–115HP) 1`] = `
+<div
+  class="rounded-[12px] border border-repower-navy-900/10 bg-repower-cream p-8"
+>
+  <div
+    class="mb-5 space-y-1"
+  >
+    <h3
+      class="font-display font-semibold text-[22px] text-repower-navy-900"
+    >
+      Rebate by Horsepower
+    </h3>
+    <p
+      class="text-[14px] text-repower-navy-900"
+      style="color: hsl(var(--repower-navy-900) / 0.65);"
+    >
+      Find your factory rebate based on motor horsepower.
+    </p>
+  </div>
+  <ul
+    class="divide-y divide-repower-navy-900/10"
+  >
+    <li
+      class="flex items-center justify-between py-3 px-3 -mx-3 rounded-[8px] transition-colors"
+      data-highlighted="false"
+      data-testid="rebate-matrix-row"
+    >
+      <span
+        class="flex items-center gap-3"
+      >
+        <span
+          aria-hidden="true"
+          class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+          data-testid="rebate-matrix-dot"
+        />
+        <span
+          class="font-medium text-[14px] text-repower-navy-900"
+        >
+          2.5–9.9HP
+        </span>
+      </span>
+      <span
+        class="font-display font-bold text-[16px] text-repower-mercury-red"
+      >
+        $
+        100
+      </span>
+    </li>
+    <li
+      class="flex items-center justify-between py-3 px-3 -mx-3 rounded-[8px] transition-colors"
+      data-highlighted="false"
+      data-testid="rebate-matrix-row"
+    >
+      <span
+        class="flex items-center gap-3"
+      >
+        <span
+          aria-hidden="true"
+          class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+          data-testid="rebate-matrix-dot"
+        />
+        <span
+          class="font-medium text-[14px] text-repower-navy-900"
+        >
+          10–30HP
+        </span>
+      </span>
+      <span
+        class="font-display font-bold text-[16px] text-repower-mercury-red"
+      >
+        $
+        250
+      </span>
+    </li>
+    <li
+      class="flex items-center justify-between py-3 px-3 -mx-3 rounded-[8px] transition-colors bg-[hsl(var(--repower-cream-deep))]"
+      data-highlighted="true"
+      data-testid="rebate-matrix-row"
+    >
+      <span
+        class="flex items-center gap-3"
+      >
+        <span
+          aria-hidden="true"
+          class="inline-block w-1.5 h-1.5 rounded-full bg-repower-gold"
+          data-testid="rebate-matrix-dot"
+        />
+        <span
+          class="font-medium text-[14px] text-repower-navy-900"
+        >
+          40–115HP
+        </span>
+      </span>
+      <span
+        class="font-display font-bold text-[16px] text-repower-mercury-red"
+      >
+        $
+        500
+      </span>
+    </li>
+    <li
+      class="flex items-center justify-between py-3 px-3 -mx-3 rounded-[8px] transition-colors"
+      data-highlighted="false"
+      data-testid="rebate-matrix-row"
+    >
+      <span
+        class="flex items-center gap-3"
+      >
+        <span
+          aria-hidden="true"
+          class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+          data-testid="rebate-matrix-dot"
+        />
+        <span
+          class="font-medium text-[14px] text-repower-navy-900"
+        >
+          150–300HP
+        </span>
+      </span>
+      <span
+        class="font-display font-bold text-[16px] text-repower-mercury-red"
+      >
+        $
+        1,500
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`RebateMatrix visual regression snapshots > full layout, no highlight (desktop default) 1`] = `
+<div
+  class="rounded-[12px] border border-repower-navy-900/10 bg-repower-cream p-8"
+>
+  <div
+    class="mb-5 space-y-1"
+  >
+    <h3
+      class="font-display font-semibold text-[22px] text-repower-navy-900"
+    >
+      Rebate by Horsepower
+    </h3>
+    <p
+      class="text-[14px] text-repower-navy-900"
+      style="color: hsl(var(--repower-navy-900) / 0.65);"
+    >
+      Find your factory rebate based on motor horsepower.
+    </p>
+  </div>
+  <ul
+    class="divide-y divide-repower-navy-900/10"
+  >
+    <li
+      class="flex items-center justify-between py-3 px-3 -mx-3 rounded-[8px] transition-colors"
+      data-highlighted="false"
+      data-testid="rebate-matrix-row"
+    >
+      <span
+        class="flex items-center gap-3"
+      >
+        <span
+          aria-hidden="true"
+          class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+          data-testid="rebate-matrix-dot"
+        />
+        <span
+          class="font-medium text-[14px] text-repower-navy-900"
+        >
+          2.5–9.9HP
+        </span>
+      </span>
+      <span
+        class="font-display font-bold text-[16px] text-repower-mercury-red"
+      >
+        $
+        100
+      </span>
+    </li>
+    <li
+      class="flex items-center justify-between py-3 px-3 -mx-3 rounded-[8px] transition-colors"
+      data-highlighted="false"
+      data-testid="rebate-matrix-row"
+    >
+      <span
+        class="flex items-center gap-3"
+      >
+        <span
+          aria-hidden="true"
+          class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+          data-testid="rebate-matrix-dot"
+        />
+        <span
+          class="font-medium text-[14px] text-repower-navy-900"
+        >
+          10–30HP
+        </span>
+      </span>
+      <span
+        class="font-display font-bold text-[16px] text-repower-mercury-red"
+      >
+        $
+        250
+      </span>
+    </li>
+    <li
+      class="flex items-center justify-between py-3 px-3 -mx-3 rounded-[8px] transition-colors"
+      data-highlighted="false"
+      data-testid="rebate-matrix-row"
+    >
+      <span
+        class="flex items-center gap-3"
+      >
+        <span
+          aria-hidden="true"
+          class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+          data-testid="rebate-matrix-dot"
+        />
+        <span
+          class="font-medium text-[14px] text-repower-navy-900"
+        >
+          40–115HP
+        </span>
+      </span>
+      <span
+        class="font-display font-bold text-[16px] text-repower-mercury-red"
+      >
+        $
+        500
+      </span>
+    </li>
+    <li
+      class="flex items-center justify-between py-3 px-3 -mx-3 rounded-[8px] transition-colors"
+      data-highlighted="false"
+      data-testid="rebate-matrix-row"
+    >
+      <span
+        class="flex items-center gap-3"
+      >
+        <span
+          aria-hidden="true"
+          class="inline-block w-1.5 h-1.5 rounded-full bg-transparent"
+          data-testid="rebate-matrix-dot"
+        />
+        <span
+          class="font-medium text-[14px] text-repower-navy-900"
+        >
+          150–300HP
+        </span>
+      </span>
+      <span
+        class="font-display font-bold text-[16px] text-repower-mercury-red"
+      >
+        $
+        1,500
+      </span>
+    </li>
+  </ul>
+</div>
+`;

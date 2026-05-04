@@ -76,6 +76,7 @@ export function RebateCalculator({
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -6, opacity: 0 }}
               transition={{ duration: 0.2 }}
+              data-testid="rebate-anchor"
               className="font-display font-bold text-[36px] leading-none text-repower-navy-900"
               style={{ letterSpacing: '-0.02em' }}
             >
