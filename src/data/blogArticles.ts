@@ -1290,121 +1290,202 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
   {
     slug: 'mercury-prokicker-rice-lake-fishing-guide',
-    title: 'The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide',
-    description: 'Everything you need to know about the Mercury ProKicker kicker motor for Rice Lake fishing — model comparison, tiller vs remote, installation tips, and why it\'s the best trolling upgrade for walleye and muskie.',
+    title: "Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)",
+    description: "The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/ProKicker_Rice_Lake_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-02-06',
+    dateModified: '2026-05-04',
     category: 'Fishing',
     readTime: '10 min read',
     keywords: ['mercury prokicker', 'kicker motor rice lake', 'trolling motor ontario', 'prokicker installation', 'mercury 9.9 prokicker', 'kicker motor fishing boat', 'rice lake walleye trolling'],
     content: `
-## Why a Kicker Motor Changes Everything on Rice Lake
+The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).
 
-If you fish Rice Lake, you already know — it's shallow, weedy, and the fish are structure-oriented. Maximum depth is about 27 feet, and the best walleye and muskie water sits along weed edges, mudflats, and contour breaks between Gores Landing, Bewdley, and the islands.
+## Quick recommendation
 
-That's precision trolling territory. And precision trolling means you need a dedicated kicker motor.
+If you fish Rice Lake or the Kawarthas seriously, you want a 9.9 ProKicker. The math is consistent: customers who skip the kicker compromise either main-motor performance or trolling control. Customers who buy the ProKicker rarely regret it.
 
-Running your main outboard at trolling speed is hard on the engine, burns more fuel than it should, and gives you sloppy speed control. A purpose-built kicker like the Mercury ProKicker lets you dial in speeds down to a tenth of a mile per hour — the 0.8 to 3 mph window where walleye rigs, crankbaits, and muskie presentations do their best work.
+The ProKicker is not the same as a standard 9.9. It is purpose-built for fishing: larger prop, longer shaft for big transoms, high-thrust gearcase, and integrated tiller or remote-control variants. The price difference over a standard 9.9 is real but small relative to the all-in fishing setup.
 
-If you've been making do without one, a ProKicker is the single upgrade that'll change your fishing the most. Here's everything you need to know.
+For a typical 16 to 18 ft aluminum console fishing boat at HBW, the all-in repower with main motor plus 9.9 ProKicker lands $20,000 to $30,000 CAD. The ProKicker portion of that is $4,000 to $6,000 CAD installed. [Live pricing here.](/quote/motor-selection)
 
-## What Makes the ProKicker Different from a Regular Small Outboard
+## What the 9.9 ProKicker actually is
 
-Not all small motors are created equal. Mercury didn't just shrink a standard outboard — the ProKicker lineup is purpose-engineered for fishing:
+The Mercury 9.9 ProKicker is a kicker motor specifically designed for fishing applications. The differences from a standard 9.9:
 
-- **High-thrust four-blade propeller and matched gear ratio** for precise low-speed control
-- **Deeper gearcase and heavy-duty skeg** to handle big boats and rough water
-- **Fastest power tilt in the industry** — deploy or stow without leaning over the transom
-- **Exceptionally quiet operation** with soft-rubber vibration isolation, critical in Rice Lake's shallow water where fish spook easily
-- **EFI technology** for reliable cold-morning starts during early spring walleye season
-- **Strong alternator output at low RPM** to keep your fish finder, GPS, and electronics charged while trolling
+- **High-thrust gearcase.** Larger gearcase optimized for low-speed thrust rather than top speed.
+- **Longer prop shaft.** Designed to fit big-boat transoms (20 to 25 inch shaft options).
+- **Larger high-thrust prop.** More water moved per revolution at low RPM.
+- **Tiller or remote-control variants.** Tiller for hands-on trolling control; remote-control for steering wheel integration with the main motor.
+- **Heavier transom bracket.** Built for fishing-boat mounting and steady use.
+- **Integrated charging system.** Some variants include alternator output for trolling motor batteries and electronics.
 
-These aren't marketing bullet points — they're the features that separate a real kicker motor from a cheap outboard bolted to a bracket.
+Standard 9.9 motors are general-purpose kicker or main-on-small-boat units. ProKickers are purpose-built fishing tools.
 
-## Choosing the Right ProKicker: 9.9 vs 15 vs 25 HP
+## Why a kicker matters for Rice Lake fishing
 
-Mercury offers three ProKicker models. Here's how to pick the right one for your Rice Lake setup:
+Rice Lake's primary fishery is walleye trolling. The classic technique:
 
-| Feature | 9.9 HP ProKicker | 15 HP ProKicker | 25 HP ProKicker |
-|---------|-----------------|-----------------|-----------------|
-| Engine | Inline 2-cylinder | Inline 2-cylinder | Inline 3-cylinder |
-| Displacement | 333cc | 333cc | 500cc |
-| Dry Weight | ~122 lbs | ~122 lbs | ~146 lbs |
-| Alternator | 12A / 145W | 12A / 145W | 17A / 210W |
-| SmartCraft | No | No | Yes |
-| Trim System | Power tilt | Power tilt | Power trim & tilt |
+- **Slow trolling speeds** (1 to 2 mph)
+- **Specific lure presentation** (worm harness, crawler harness, crankbaits)
+- **Quiet running** (walleye spook in shallow water)
+- **Long trolling passes** (working specific structure or weed edges)
 
-**The 9.9 HP** is the most popular choice and handles most Rice Lake fishing boats in the 16- to 22-foot range. It covers typical walleye trolling speeds of 0.5–2.5 mph with ease.
+Main motors do not handle this well. Mercury 60 to 115 HP main motors at idle run too fast (typically 3 to 4 mph at idle), too loud, and burn fuel inefficiently at slow speeds. Trying to troll walleye with a main motor is fighting the tool.
 
-**The 15 HP** shares the same block as the 9.9 with more power — a good step up if you run a heavier aluminum boat or fish in wind frequently.
+A 9.9 ProKicker handles trolling perfectly:
 
-**The 25 HP** is the choice for larger boats (20ft+) with multiple downriggers, dual electronics, or if you want SmartCraft integration and extra charging capacity. It also gives you the ability to run the kicker as a "get home" motor at reasonable speed.
+- **Idles down to 1 to 2 mph** (true walleye speed)
+- **Quiet running** (does not spook fish in shallow water)
+- **Fuel-efficient at low speeds**
+- **Easy to control with tiller** for fine-tuning trolling speed and direction
 
-## Tiller vs Remote Steering
+This is why the 9.9 ProKicker is the standard Rice Lake fishing setup. Three generations of HBW have rigged this combination. It works.
 
-This comes down to how you fish:
+## Tiller vs remote-control ProKicker
 
-**Tiller steering** gives you instant, hands-on directional control. It's the preferred setup for slow-trolling tight contours along Rice Lake's weed edges and island structures. Many dedicated walleye anglers swear by tiller because you can feel the motor's response and make micro-adjustments without looking away from the water.
+The 9.9 ProKicker comes in two configurations:
 
-**Remote steering** connects the kicker to your main outboard via a tie bar, letting you steer from the helm while watching your electronics. This is the go-to for open-water trolling patterns and for muskie anglers who want to monitor multiple screens at the console.
+### Tiller ProKicker
 
-There's no wrong answer — it depends on your fishing style. If you're not sure, come talk to us and we'll help you figure out what suits your setup.
+- **Direct hands-on control** of speed and steering with tiller arm
+- **Best for solo or two-person fishing** where the angler at the back operates the kicker
+- **More common configuration** for fishing-only boats
+- **Lower cost** than remote-control variant
 
-## Installation: What's Involved
+The tiller ProKicker is the classic Rice Lake setup. Angler operates the kicker tiller while fishing. Trolling speed adjustments are direct and responsive.
 
-### Replacing an Existing Kicker
+### Remote-control ProKicker
 
-If your boat already has a kicker motor, swapping in a new ProKicker is straightforward:
+- **Steering wheel integration** with main motor control
+- **Best for boats where one angler runs the boat** while others fish
+- **Required if you want kicker steering linked to main motor steering**
+- **Higher cost** than tiller variant
+- **Common on bigger fishing boats and family-fishing setups**
 
-1. **Mount the engine** to the transom or existing bracket using the included hardware, following torque specs in the manual
-2. **Connect fuel lines** using the new fuel line kit included with the motor
-3. **Wire the power connections** — positive and negative cables to your cranking battery for electric start and power tilt
-4. **Add fluids** — gear lube comes pre-installed, add engine oil per the owner's manual
+The remote-control variant lets the captain steer from the helm while trolling. Useful when the back of the boat is full of anglers and gear.
 
-A handy boat owner can handle this in an afternoon. The manual walks you through every step.
+For specific pricing, [build a quote](/quote/motor-selection) with the right ProKicker configuration for your boat.
 
-### New Installation (No Previous Kicker)
+## Best boats for the 9.9 ProKicker setup
 
-If your boat has never had a kicker, there's more involved — drilling transom holes, installing a dedicated kicker-mounting bracket (common on fiberglass boats and boats with swim platforms), and routing fuel lines. This is where professional installation pays for itself.
+The ProKicker fits most Rice Lake and Kawartha fishing boats:
 
-**Key tip:** Position the kicker far enough from the primary engine that neither outboard contacts the other during full turns, and avoid mounting directly over your transducer.
+- **16 to 19 ft aluminum console fishing boats** (Lund, Crestliner, Princecraft, Lowe). Most common Kawartha fishing setup.
+- **Pontoon boats used for fishing.** Fish-pontoons benefit from a ProKicker for trolling.
+- **Larger center console fishing boats (20+ ft).** ProKicker as a backup motor and trolling tool.
+- **Walleye-specific or muskie fishing rigs.** Long days on the water with multiple fishing techniques.
 
-Not sure which situation you're in? [Submit a service request](https://hbw.wiki/service) and we'll walk you through it.
+The ProKicker is overkill on small tin boats (12 to 14 ft) where a 9.9 is the main motor. It is also overkill on bass boats focused on running fast and using the trolling motor for fine positioning. For everything in between, the ProKicker fits.
 
-## Don't Skip the Break-In
+## What HBW checks before recommending a ProKicker
 
-Every new Mercury motor requires a proper break-in period — for ProKicker models, that's the first 10 hours of operation. This lets piston rings seat, bearings wear in evenly, and the oil film develop properly.
+When fishing customers come to HBW for a repower or new fishing boat assessment, we want to know:
 
-We've got a [complete break-in guide](/blog/breaking-in-new-mercury-motor-guide) that walks you through the procedure step by step. Follow it and your ProKicker will reward you with years of reliable service.
+- **Boat make, model, year, length, and transom configuration**
+- **Main motor (existing or planned)**
+- **Primary fishery (walleye, bass, muskie, mixed)**
+- **Solo or family use**
+- **Trolling-heavy or run-and-gun style**
+- **Whether you want tiller or remote-control kicker**
+- **Existing electronics (Garmin, Lowrance, Humminbird, etc.) and charging needs**
+- **Budget and financing tolerance**
 
-## Why Harris Boat Works for Your ProKicker
+Most customers fall into "9.9 ProKicker tiller for fishing" or "9.9 ProKicker remote for family-fishing." Different setups need different rigging.
 
-We've been a Mercury Marine dealer since 1965 and a Platinum-certified dealer for over a decade. Our technicians are factory-trained on every Mercury product line, including the full ProKicker range.
+## ProKicker rigging considerations
 
-When you buy a ProKicker through us, you get:
+A ProKicker installation involves more than just bolting a motor to the transom:
 
-- **Expert model selection** — we'll match the right HP and control setup to your boat and fishing style
-- **Professional installation** with proper bracket selection, rigging, and wiring
-- **A lake test on Rice Lake** to verify everything runs perfectly before you take delivery
-- **Break-in guidance** and ongoing [seasonal maintenance](/blog/mercury-motor-maintenance-seasonal-tips) support
-- **79 years of Rice Lake expertise** — nobody knows this lake's unique conditions better
+- **Transom bracket** sized for the ProKicker weight and prop torque
+- **Wiring harness** to integrate with main motor systems if remote-control
+- **Steering linkage** for remote-control variant (mechanical or hydraulic)
+- **Fuel system tap** to share main motor fuel tank or separate kicker tank
+- **Charging integration** if the kicker is wired to charge batteries or run electronics
+- **Throttle cables** for tiller or remote variant
 
-Whether you're chasing walleye along the weed lines near Gores Landing, trolling for muskie from Bewdley to Hastings, or working smallmouth structure around the islands, a properly installed Mercury ProKicker will transform your fishing game.
+We rig kickers as part of most fishing boat repower projects at HBW. Rigging cost is included in the all-in install pricing on the [motor selection page](/quote/motor-selection).
 
-**Ready to add a ProKicker to your boat?** [Build a quote in our online configurator](/quote/motor-selection) — all three ProKicker models are available — or [submit a service request](https://hbw.wiki/service) to discuss installation.
+## Common kicker mistakes
 
-Prefer a non-ProKicker 9.9 as a true main-engine kicker on smaller hulls? See the [Mercury 9.9 ELH FourStroke](/motors/fourstroke-9-9hp-9-9elh-fourstroke) — electric-start, long-shaft, remote-ready, priced in CAD with pickup at our Gores Landing dealership on Rice Lake.
+We see these every season:
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+1. **Skipping the kicker entirely.** Customer thinks they will use the main motor for trolling. Two seasons in they realize the main motor is too fast and too loud for walleye presentation. Should have bought the ProKicker.
+2. **Buying a standard 9.9 instead of a ProKicker.** The standard 9.9 is a general-purpose motor. ProKicker is built for fishing. The price difference is small; the performance difference for fishing is meaningful.
+3. **Wrong shaft length.** Big-transom fishing boats need long-shaft ProKickers. Standard-shaft kickers will cavitate at low speeds.
+4. **Wrong prop on the kicker.** ProKicker comes with a high-thrust prop optimized for trolling. Generic props give up the gearcase advantage.
+5. **Skipping the charging integration.** Modern fishing boats have heavy electronics loads. Wiring the ProKicker to charge batteries during trolling is a smart addition.
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
-- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) — Lake Simcoe walleye picks
-- [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
-- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), full Rice Lake setup guide
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
+- [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep), pre-season prep
+- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), how main motor and kicker affect fuel use
+- [2026 Rice Lake Fishing Season Outlook](/blog/2026-rice-lake-fishing-season-outlook), local season guide
+
+## Ready to add a ProKicker to your fishing setup?
+
+Build a quote including the 9.9 ProKicker on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full kicker configuration including rigging, prop, and tiller or remote-control options.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through ProKicker setup for your specific fishing boat before quoting, [give us a call at (905) 342-2153](tel:9053422153). We rig fishing boats every week and can give you the honest answer for your hull and fishing style.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Do I need a kicker motor for Rice Lake fishing?**
+For serious walleye fishing, yes. Main motors do not idle slow enough for proper walleye trolling speeds (1 to 2 mph). The Mercury 9.9 ProKicker is the standard. For run-and-gun bass fishing, a kicker is optional. For muskie or mixed-use fishing, usually yes.
+
+**What's the difference between a Mercury 9.9 and a 9.9 ProKicker?**
+The ProKicker has a high-thrust gearcase, larger high-thrust prop, longer shaft for big transoms, and integrated tiller mount or remote-control variant. The standard 9.9 is for general-purpose use. The ProKicker is the purpose-built fishing kicker.
+
+**How much does a Mercury 9.9 ProKicker cost?**
+The ProKicker installed lands $4,000 to $6,000 CAD at HBW depending on shaft length, tiller vs remote-control configuration, and rigging requirements. For specific pricing, [build a quote](/quote/motor-selection).
+
+**Tiller or remote-control ProKicker for Rice Lake?**
+Tiller is the classic and most common for fishing-focused boats. Remote-control is better for family-fishing where one person runs the boat while others fish. Choose based on how you fish.
+
+**Can I add a ProKicker to my existing fishing boat without a repower?**
+Yes. ProKicker installs as a standalone project. Cost is the kicker plus rigging (typically $4,000 to $6,000 CAD all-in). Most fishing boats have transom space and rigging compatibility for adding a kicker.
+
+**Will a ProKicker fit my pontoon?**
+Yes for most pontoon configurations. Transom-mount or platform-mount options exist for pontoons. Useful for fishing pontoons on Kawartha lakes.
+
+**Should I run a kicker on a bass boat?**
+For tournament bass fishing focused on running fast and using the bow trolling motor for fine positioning, no. For recreational bass fishing on Kawartha lakes, a kicker is a useful tool.
+
+**Can I troll for walleye with my main motor?**
+You can, but it's a compromise. Main motors do not idle low enough for true walleye trolling speeds (1 to 2 mph). They are also louder, which can spook fish in shallow water. A 9.9 ProKicker is the proper answer.
+
+**Will the ProKicker charge my batteries while trolling?**
+Most ProKicker variants include alternator output that can charge batteries while running. Useful for boats with heavy electronics loads. Specific charging integration varies by ProKicker model and rigging configuration.
+
+**How long does a Mercury 9.9 ProKicker last?**
+Properly maintained, 1,500 to 2,000+ hours of life. ProKickers run at lower RPM and lower loads than main motors, so they often outlast the main motor. Annual winterization and gearcase lube changes are critical.
+
+**Can I use a kicker as my main motor on a small boat?**
+On 12 to 14 ft tin boats, yes. A 9.9 (standard or ProKicker) can be the only motor on a small fishing boat. On 16 ft and bigger, you need a real main motor and the kicker is the auxiliary.
+
+**What's the most popular kicker setup at HBW?**
+A 9.9 ProKicker tiller, long shaft, paired with a 60 to 115 HP main motor on a 16 to 18 ft aluminum console fishing boat. The classic Rice Lake walleye setup.
+
+**Do I need to register the kicker separately?**
+The kicker is part of the boat's overall motor configuration on the Pleasure Craft Licence (PCL). Adding a kicker may require a PCL update. We handle this paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
 
     `,
     howToSteps: [
@@ -1431,37 +1512,57 @@ Prefer a non-ProKicker 9.9 as a true main-engine kicker on smaller hulls? See th
     ],
     faqs: [
       {
-        question: 'Should I choose tiller or remote steering for my Mercury ProKicker?',
-        answer: 'Tiller steering is the better choice for slow-trolling tight structure — weed edges, island points, mudflat contour breaks — because you feel the motor\'s response directly and can make instant micro-corrections. Remote steering is better if you spend most of your time running open-water trolling patterns and want to steer from the console while watching multiple screens. Most dedicated walleye anglers on Rice Lake prefer tiller for the control it gives in close quarters. Muskie anglers who run longer open-water passes often prefer remote.'
+        question: 'Do I need a kicker motor for Rice Lake fishing?',
+        answer: 'For serious walleye fishing, yes. Main motors do not idle slow enough for proper walleye trolling speeds (1 to 2 mph). The Mercury 9.9 ProKicker is the standard. For run-and-gun bass fishing, a kicker is optional. For muskie or mixed-use fishing, usually yes.'
       },
       {
-        question: 'Can I install a Mercury ProKicker myself?',
-        answer: 'If your boat already has a kicker bracket and an existing small motor, swapping in a new ProKicker is something a mechanically competent boat owner can do in a few hours — mounting, connecting the fuel line, wiring battery connections, and adding engine oil. If your boat has never had a kicker motor, professional installation is strongly recommended — it involves selecting and mounting the right bracket, drilling transom holes, routing fuel and electrical lines, and positioning the motor correctly relative to your main engine and transducer.'
+        question: 'What\'s the difference between a Mercury 9.9 and a 9.9 ProKicker?',
+        answer: 'The ProKicker has a high-thrust gearcase, larger high-thrust prop, longer shaft for big transoms, and integrated tiller mount or remote-control variant. The standard 9.9 is for general-purpose use. The ProKicker is the purpose-built fishing kicker.'
       },
       {
-        question: 'What break-in does a new Mercury ProKicker need?',
-        answer: 'A new Mercury ProKicker requires a 10-hour break-in period during which you vary the engine speed and avoid running at full throttle for extended periods. The procedure involves idling for the first few minutes, then varying RPM through the range during the first 2 hours, gradually increasing operating time at higher RPM through hours 2–10, and changing the engine oil and lower unit gear lube after the break-in is complete. Running the motor hard before the rings have seated can cause accelerated wear and reduce the engine\'s useful life.'
+        question: 'How much does a Mercury 9.9 ProKicker cost?',
+        answer: 'The ProKicker installed lands $4,000 to $6,000 CAD at HBW depending on shaft length, tiller vs remote-control configuration, and rigging requirements. For specific pricing, [build a quote](/quote/motor-selection).'
       },
       {
-        question: 'Will a Mercury ProKicker fit my boat?',
-        answer: 'Almost any boat with a transom rated for a small outboard can accommodate a ProKicker. Key factors to check: transom height (standard 20-inch short shaft is most common; long shaft 25-inch is available for higher transoms), available mounting width next to your main engine, and transom thickness and material. For boats with swim platforms or bracket-mounted main engines, a kicker bracket accessory is usually required. The ProKicker\'s power tilt means it deploys and stows fast, which matters on boats with limited transom clearance.'
+        question: 'Tiller or remote-control ProKicker for Rice Lake?',
+        answer: 'Tiller is the classic and most common for fishing-focused boats. Remote-control is better for family-fishing where one person runs the boat while others fish. Choose based on how you fish.'
       },
       {
-        question: 'How much does a Mercury ProKicker cost in Canada?',
-        answer: 'A Mercury ProKicker 9.9 HP typically runs approximately $4,000–$5,500 CAD for the motor alone (tiller or remote). The 15 HP ProKicker is roughly $5,000–$6,500 CAD, and the 25 HP is approximately $7,000–$9,000 CAD. Professional installation adds $500–$1,500 depending on whether a new bracket and wiring is required. For exact pricing, build a quote at mercuryrepower.ca — all three ProKicker models are available with live pricing, no phone call required.'
+        question: 'Can I add a ProKicker to my existing fishing boat without a repower?',
+        answer: 'Yes. ProKicker installs as a standalone project. Cost is the kicker plus rigging (typically $4,000 to $6,000 CAD all-in). Most fishing boats have transom space and rigging compatibility for adding a kicker.'
       },
       {
-        question: 'Mercury ProKicker vs electric trolling motor — which is better for Rice Lake?',
-        answer: 'For serious walleye and muskie trolling on Rice Lake, a Mercury ProKicker outperforms a typical electric trolling motor. The ProKicker handles a full day on the water without battery management concerns — a high-thrust electric trolling motor can drain batteries in 4–6 hours of continuous use. The ProKicker also handles a 20-knot crosswind better than most electric motors, letting you maintain your trolling line in real conditions. Electric trolling motors suit bass fishing with frequent spot changes and calm-water presentations. For covering open-water trolling structure all day in variable conditions, the ProKicker is the more capable tool.'
+        question: 'Will a ProKicker fit my pontoon?',
+        answer: 'Yes for most pontoon configurations. Transom-mount or platform-mount options exist for pontoons. Useful for fishing pontoons on Kawartha lakes.'
       },
       {
-        question: 'Can I use a Mercury ProKicker as a backup main motor in an emergency?',
-        answer: 'Yes, in a limited way. The ProKicker 25 HP can run a moderately sized fishing boat at a get-home speed — slower than normal cruising, but enough to reach the dock safely if your main engine fails. The 9.9 and 15 HP models can also move a loaded boat, but at very slow speeds on larger hulls. The ProKicker is not designed as a primary propulsion motor, but as an emergency backup it\'s more than adequate for most Rice Lake situations, where you\'re never more than a few kilometres from shore or a marina.'
+        question: 'Should I run a kicker on a bass boat?',
+        answer: 'For tournament bass fishing focused on running fast and using the bow trolling motor for fine positioning, no. For recreational bass fishing on Kawartha lakes, a kicker is a useful tool.'
       },
       {
-        question: 'How much does professional ProKicker installation cost at Harris Boat Works?',
-        answer: 'Professional ProKicker installation at Harris Boat Works typically runs $500–$1,500 CAD depending on what\'s involved. A straight swap replacing an existing kicker on an existing bracket is at the lower end — a few hours of labour for mounting, wiring, and a lake test. A new installation with no existing bracket, requiring new transom hardware, bracket mounting, fuel line routing, and electrical work, is at the higher end. All installations include a lake test on Rice Lake to verify correct operation before delivery. Call 905-342-2153 or submit a service request at hbw.wiki/service to discuss your specific boat.'
-      }
+        question: 'Can I troll for walleye with my main motor?',
+        answer: 'You can, but it\'s a compromise. Main motors do not idle low enough for true walleye trolling speeds (1 to 2 mph). They are also louder, which can spook fish in shallow water. A 9.9 ProKicker is the proper answer.'
+      },
+      {
+        question: 'Will the ProKicker charge my batteries while trolling?',
+        answer: 'Most ProKicker variants include alternator output that can charge batteries while running. Useful for boats with heavy electronics loads. Specific charging integration varies by ProKicker model and rigging configuration.'
+      },
+      {
+        question: 'How long does a Mercury 9.9 ProKicker last?',
+        answer: 'Properly maintained, 1,500 to 2,000+ hours of life. ProKickers run at lower RPM and lower loads than main motors, so they often outlast the main motor. Annual winterization and gearcase lube changes are critical.'
+      },
+      {
+        question: 'Can I use a kicker as my main motor on a small boat?',
+        answer: 'On 12 to 14 ft tin boats, yes. A 9.9 (standard or ProKicker) can be the only motor on a small fishing boat. On 16 ft and bigger, you need a real main motor and the kicker is the auxiliary.'
+      },
+      {
+        question: 'What\'s the most popular kicker setup at HBW?',
+        answer: 'A 9.9 ProKicker tiller, long shaft, paired with a 60 to 115 HP main motor on a 16 to 18 ft aluminum console fishing boat. The classic Rice Lake walleye setup.'
+      },
+      {
+        question: 'Do I need to register the kicker separately?',
+        answer: 'The kicker is part of the boat\'s overall motor configuration on the Pleasure Craft Licence (PCL). Adding a kicker may require a PCL update. We handle this paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).'
+      },
     ],
   },
 
@@ -7368,147 +7469,218 @@ An overheating outboard can cause serious damage in minutes. Know the causes, pr
   // Week 31.5: Getting Your Boat Ready for Walleye Opener
   {
     slug: 'walleye-opener-boat-prep',
-    title: 'Getting Your Boat Ready for Walleye Opener',
-    description: 'Complete checklist for Ontario walleye opener. Boat, motor, and tackle preparation for opening day success on Kawartha waters.',
+    title: "Walleye Opener Boat Prep Checklist (2026)",
+    description: "The Ontario walleye opener (typically the second Saturday of May for Zone 17 Kawartha lakes) is the highest-stakes morning of the fishing season. The boat must run reliably, fish the way it did last fall, and not cost you opening morning to a dead battery or stale gas. This checklist covers what to do in the 2 weeks before opener so you're fishing instead of fixing. We do walleye opener prep at HBW; book early.",
     image: '/lovable-uploads/Walleye_Opener_Ready_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-01',
-    dateModified: '2026-05-01',
+    dateModified: '2026-05-04',
     publishDate: '2026-05-01',
     category: 'Tips',
     readTime: '8 min read',
     keywords: ['walleye opener', 'ontario walleye season', 'boat prep checklist', 'fishing opener prep', 'walleye opener checklist'],
     content: `
-## Getting Your Boat Ready for Walleye Opener
+The Ontario walleye opener (typically the second Saturday of May for Zone 17 Kawartha lakes) is the highest-stakes morning of the fishing season. The boat must run reliably, fish the way it did last fall, and not cost you opening morning to a dead battery or stale gas. This checklist covers what to do in the 2 weeks before opener so you're fishing instead of fixing. We do walleye opener prep at HBW; book early.
 
-Ontario's walleye opener is one of the most anticipated days on the fishing calendar. Here's how to make sure you're ready.
+## Quick recommendation
 
-### Pre-Season Motor Checks
+The boats that fail on walleye opener morning are usually boats that skipped a step in spring commissioning. Battery dead, fuel stale, kicker won't start, electronics not working. All preventable.
 
-**Essential Motor Prep**:
-- Change lower unit oil
-- Inspect propeller for damage
-- Check fuel lines and primer bulb
-- Test battery and connections
-- Run motor to operating temperature
+The 2-week window before opener is the right time to do final checks. Spring commissioning should already be done by April. The opener-specific prep is a final once-over on fishing-critical items: kicker, electronics, fishing gear, fuel, and bait.
 
-**Fuel System**:
-- Fresh fuel with stabilizer
-- New fuel filter if needed
-- Check for ethanol damage
-- Inspect tank and lines
+## What changes the answer
 
-### Electronics Readiness
+Five things move how thorough opener prep needs to be:
 
-**Fish Finder/GPS**:
-- Update software and maps
-- Check transducer mounting
-- Test all functions on water
-- Pre-load waypoints for your lake
+- **How you stored the boat over winter.** Indoor heated vs outdoor uncovered changes the prep burden.
+- **How recently you ran the motor.** A motor that ran in October needs less prep than one that hasn't run in 8 months.
+- **Whether you did spring commissioning at HBW or DIY.** Professional commissioning is more thorough.
+- **Your fishing plans for opener day.** A solo trolling trip needs less prep than a 4-person tournament effort.
+- **Travel distance to your launch.** A boat at the cottage needs different prep than a trailer-launched setup.
 
-**Communication**:
-- VHF radio test
-- Charged phone/backup battery
-- Emergency contact plan
+## The 2-week walleye opener prep checklist
 
-### Safety Gear Check
+### 2 weeks before opener
 
-**Required Equipment**:
-- PFDs (one per person, proper size)
-- Throwable flotation device
-- Fire extinguisher (charged)
-- Sound signaling device
-- Navigation lights (working)
+- [ ] **Schedule any final service** at HBW if needed. Last-minute service is harder to get.
+- [ ] **Confirm boat is ready** for water (commissioning done, running well).
+- [ ] **Check fishing licence is valid** for the new season. Renew if needed.
+- [ ] **Check Pleasure Craft Operator Card (PCOC)** is current.
+- [ ] **Confirm Pleasure Craft Licence (PCL)** is on the boat and current.
 
-**Recommended Additions**:
-- First aid kit
-- Anchor and line
-- Paddle or oar
-- Bailing device
+### 1 week before opener
 
-### Tackle Preparation
+- [ ] **Test the motor on the water** if possible. Confirm cooling, charging, throttle response, shift smoothness.
+- [ ] **Test the kicker.** Make sure it starts, runs, and shifts cleanly. Trolling tests speed at typical 1.5 mph walleye trolling speed.
+- [ ] **Test all electronics:** GPS, sonar, VHF, stereo, lights.
+- [ ] **Check live well** operation (pump, drain, valves).
+- [ ] **Inspect fishing gear:** rods, reels, lines, lures, terminal tackle.
+- [ ] **Stock essentials:** licenses, PFDs (current standard), throwable cushion, anchor and rope, paddle, first aid kit, fire extinguisher, emergency radio.
+- [ ] **Top off fuel** with fresh gas. Avoid running tank to empty.
 
-![Walleye opener success on Ontario waters](/lovable-uploads/Walleye_Opener_Catch.png)
+### 3 days before opener
 
-**Must-Have Walleye Tackle**:
-- Jigging combos ready
-- Trolling rods rigged
-- Fresh line on reels
-- Tackle organized
+- [ ] **Verify weather forecast** for opener morning. Plan accordingly.
+- [ ] **Pack the cooler** with food, drinks, ice.
+- [ ] **Pre-tie leaders** and rig rods if you fish from a console with a vertical rod holder.
+- [ ] **Charge electronics, phones, batteries** that need it.
+- [ ] **Confirm fishing partners** if you're not going solo. Coordinate launch time and meet point.
 
-**Live Bait Plan**:
-- Order minnows early
-- Know bait shop hours
-- Have backup plan
-- Proper bait bucket/aerator
+### Opener morning
 
-### Trailer and Towing
+- [ ] **Arrive at the launch early.** Public ramps are busy on opener morning.
+- [ ] **Pre-launch checks:** safety equipment in boat, plug installed, lights working.
+- [ ] **Launch and run motor briefly** to confirm operation before going far from the dock.
+- [ ] **Verify fish finder and GPS** are working before reaching fishing zone.
+- [ ] **Confirm walleye opener legal start time** (usually sunrise; check current OMNR regulations).
 
-**Trailer Checklist**:
-- Wheel bearings greased
-- Lights working
-- Tires properly inflated
-- Winch strap in good condition
-- Safety chains connected
+## What HBW does for walleye opener prep customers
 
-**Launching Practice**:
-- Do a practice launch before opener
-- Check ramp conditions
-- Know backup ramps
+For HBW customers who book walleye opener prep:
 
-### Day-Before Prep
+- **Final motor inspection** and test run on muffs or in water
+- **Kicker startup and trolling test**
+- **Battery condition check** and replacement if at end of life
+- **Fuel system top-off and stabilizer dose** as needed
+- **Electronics power-up** and basic functionality verification
+- **Fishing gear review** if requested
+- **Service log entry** with notes for any issues found
 
-**Night Before**:
-- Load and organize boat
-- Check weather forecast
-- Gas up truck and boat
-- Set alarms
-- Confirm plans with fishing partners
+Cost is minimal relative to a missed opener morning. For specific quotes, [contact HBW](/contact).
 
-**Pack**:
-- Licenses (on phone or paper)
-- Warm layers (it's cold in May!)
-- Rain gear
-- Snacks and drinks
-- Camera for trophy shots
+## Common opener morning failures
 
-### Opening Morning
+We see these every year:
 
-**Early Start Essentials**:
-- Coffee/breakfast ready
-- Route planned to avoid traffic
-- Launch time scheduled
-- Patience at the ramp
+1. **Dead battery.** Battery sat all winter and discharged. Customer launches, motor won't crank, opener morning lost. Fix: charge or replace battery 1 week before.
+2. **Kicker won't start.** Kicker stored without fresh gas, fuel system gummed up. Customer goes to troll walleye, kicker dies. Fix: start and run kicker 1 week before.
+3. **Stale fuel in main tank.** Old gas from last fall causes hard start or rough running. Fix: stabilize last fall or run down before adding fresh.
+4. **Forgotten safety gear.** PFD shortage, missing throwable cushion, expired flares. OPP marine patrols on opener weekend will fine you.
+5. **Unfamiliar regulations.** Slot limits, possession limits, or special seasons changed. Check current OMNR regulations before opener.
 
-**[Book Pre-Season Motor Service](/contact)**
+## Pre-opener fishing intel
 
-**See also:** [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) and [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips).
+A few practical notes for Kawartha-area walleye opener:
+
+- **Opener date:** Typically the Saturday closest to May 15 for Zone 17 (Kawarthas, Rice Lake area). Confirm current year date from OMNR.
+- **Walleye location early season:** Fish are typically in the warmer, shallower bays where spawning has just finished. Mouths of streams and creek inlets are productive.
+- **Best techniques:** Slow trolling crawler harnesses with kicker motor, jigging in 8 to 15 ft of water, casting jerk baits along weed edges.
+- **Weather:** Early May Ontario weather is variable. Wind can build quickly. Have rain gear and warm layers.
+- **Launches:** Public ramps are crowded on opener morning. Bewdley, Hastings, and Roseneath on Rice Lake all see opener traffic.
 
 ## Related guides
 
-- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) — the full Mercury service schedule
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips) — seasonal maintenance tips
-- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist) — spring commissioning checklist
-- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips) — off-season storage tips
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), full Rice Lake setup
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker setup
+- [Spring Outboard Commissioning Checklist](/blog/spring-outboard-commissioning-checklist), what should already be done
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), if something's wrong
+- [2026 Rice Lake Fishing Season Outlook](/blog/2026-rice-lake-fishing-season-outlook), local fishing intel
+
+## Need walleye opener prep?
+
+[**Request Service**](https://hbw.wiki/service) or [give us a call at (905) 342-2153](tel:9053422153). Book early; opener prep slots fill up by late April.
+
+---
+
+_Service pricing varies by motor size and what's included. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**When is the Ontario walleye opener?**
+Typically the Saturday closest to May 15 for Zone 17 (Kawarthas, Rice Lake area). Confirm current year date from the OMNR Fishing Regulations Summary.
+
+**What should I do 2 weeks before walleye opener?**
+Confirm spring commissioning is complete, schedule any final service, check fishing licence and PCL status. Two weeks gives time to fix anything that comes up.
+
+**My kicker hasn't been started since last fall. What should I do?**
+Start it before opener day. Stale fuel and gummed carburetors are the top kicker failures. Run it for 5 to 10 minutes a week before opener to confirm it operates.
+
+**Should I bring a backup motor for opener?**
+For most Kawartha lake fishing, no, but the kicker functions as backup propulsion. For Lake Simcoe or Lake Ontario, a working kicker is more important.
+
+**What safety gear is required for walleye fishing in Ontario?**
+PFD for each person on board (Transport Canada-approved), throwable cushion, anchor and rope, paddle or oar, bailer, sound signaling device, lights for navigation after sunset, fire extinguisher (depending on boat type), watertight flashlight.
+
+**What's the legal walleye fishing start time on opener day?**
+Usually sunrise. Confirm current year regulations. Some lakes have special early-season slot limits or possession restrictions.
+
+**How do I prevent stale fuel from ruining my opener?**
+Treat fuel with stabilizer in fall (Mercury Quickstor or equivalent). Run motor with stabilized fuel before storage. In spring, top off with fresh fuel before opener.
+
+**Should I replace my battery before opener?**
+If the battery is over 4 to 5 years old, yes. Marine batteries decline gradually. A weak battery causes hard starts and stresses the starter motor. Cheaper to replace before opener than to lose opener morning.
+
+**What if my motor won't start on opener morning?**
+Run through battery, fuel, ignition basics. See our [troubleshooting guide](/blog/mercury-outboard-wont-start-troubleshooting). If you can't fix it, the day is unfortunately lost. This is why we recommend prep 1 to 2 weeks before opener.
+
+**Can HBW pick up my boat for opener prep?**
+For Rice Lake and local Kawartha customers, yes, we can arrange hauling and service. [Contact us](/contact) to schedule.
+
+**What's the most common opener morning failure?**
+Dead battery (about 40% of failures), followed by stale fuel and kicker problems. Almost all preventable with prep 1 to 2 weeks before opener.
+
+**Where do most Kawartha anglers launch on opener?**
+Bewdley, Hastings, and Roseneath are the main public ramps on Rice Lake. Each has different ramp characteristics and gets crowded on opener morning. Arrive early.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
 
     `,
     faqs: [
       {
-        question: 'When is Ontario walleye opener?',
-        answer: 'The third Saturday in May for most zones. Always check current Ontario Fishing Regulations for your specific zone as dates can vary.'
+        question: 'When is the Ontario walleye opener?',
+        answer: 'Typically the Saturday closest to May 15 for Zone 17 (Kawarthas, Rice Lake area). Confirm current year date from the OMNR Fishing Regulations Summary.'
       },
       {
-        question: "What if my motor won't start on opener morning?",
-        answer: 'This is why pre-season service matters! If you face issues, check basics: fuel, battery, kill switch. Better yet, run your motor a week before opener to catch problems early.'
+        question: 'What should I do 2 weeks before walleye opener?',
+        answer: 'Confirm spring commissioning is complete, schedule any final service, check fishing licence and PCL status. Two weeks gives time to fix anything that comes up.'
       },
       {
-        question: 'Should I service my motor before opener?',
-        answer: 'Absolutely. Schedule service in April to avoid the May rush. Basic service includes oil change, lower unit oil, and inspection. This ensures reliability on opening day.'
+        question: 'My kicker hasn\'t been started since last fall. What should I do?',
+        answer: 'Start it before opener day. Stale fuel and gummed carburetors are the top kicker failures. Run it for 5 to 10 minutes a week before opener to confirm it operates.'
       },
       {
-        question: "What's the best time to launch on opener?",
-        answer: 'Arrive at least 30-45 minutes before legal fishing time. Popular ramps get crowded. First light is prime time, but afternoon can be excellent too with less pressure.'
-      }
+        question: 'Should I bring a backup motor for opener?',
+        answer: 'For most Kawartha lake fishing, no, but the kicker functions as backup propulsion. For Lake Simcoe or Lake Ontario, a working kicker is more important.'
+      },
+      {
+        question: 'What safety gear is required for walleye fishing in Ontario?',
+        answer: 'PFD for each person on board (Transport Canada-approved), throwable cushion, anchor and rope, paddle or oar, bailer, sound signaling device, lights for navigation after sunset, fire extinguisher (depending on boat type), watertight flashlight.'
+      },
+      {
+        question: 'What\'s the legal walleye fishing start time on opener day?',
+        answer: 'Usually sunrise. Confirm current year regulations. Some lakes have special early-season slot limits or possession restrictions.'
+      },
+      {
+        question: 'How do I prevent stale fuel from ruining my opener?',
+        answer: 'Treat fuel with stabilizer in fall (Mercury Quickstor or equivalent). Run motor with stabilized fuel before storage. In spring, top off with fresh fuel before opener.'
+      },
+      {
+        question: 'Should I replace my battery before opener?',
+        answer: 'If the battery is over 4 to 5 years old, yes. Marine batteries decline gradually. A weak battery causes hard starts and stresses the starter motor. Cheaper to replace before opener than to lose opener morning.'
+      },
+      {
+        question: 'What if my motor won\'t start on opener morning?',
+        answer: 'Run through battery, fuel, ignition basics. See our [troubleshooting guide](/blog/mercury-outboard-wont-start-troubleshooting). If you can\'t fix it, the day is unfortunately lost. This is why we recommend prep 1 to 2 weeks before opener.'
+      },
+      {
+        question: 'Can HBW pick up my boat for opener prep?',
+        answer: 'For Rice Lake and local Kawartha customers, yes, we can arrange hauling and service. [Contact us](/contact) to schedule.'
+      },
+      {
+        question: 'What\'s the most common opener morning failure?',
+        answer: 'Dead battery (about 40% of failures), followed by stale fuel and kicker problems. Almost all preventable with prep 1 to 2 weeks before opener.'
+      },
+      {
+        question: 'Where do most Kawartha anglers launch on opener?',
+        answer: 'Bewdley, Hastings, and Roseneath are the main public ramps on Rice Lake. Each has different ramp characteristics and gets crowded on opener morning. Arrive early.'
+      },
     ]
   },
 
@@ -10585,130 +10757,261 @@ Then we'll give you a frank recommendation on gas, electric, or a hybrid of both
 
   {
     slug: '2026-rice-lake-fishing-season-outlook',
-    title: '2026 Boating Season Preview: Rice Lake & Ontario Fishing Outlook',
-    description: "From walleye and muskie on Rice Lake to broader Ontario boating trends, here's what the 2026 season looks like — and how Harris Boat Works can help you get ready.",
+    title: "2026 Rice Lake Fishing Season Outlook",
+    description: "Rice Lake's 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are managed; ice-out timing and water temperatures will set the early-season pattern. The classic species mix and structure on Rice Lake have been consistent for decades. We are looking forward to another good season.",
     image: '/lovable-uploads/2026_Rice_Lake_Fishing_Season_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-02-06',
+    dateModified: '2026-05-04',
     publishDate: '2026-02-06',
     category: 'Lifestyle',
     readTime: '10 min read',
     keywords: ['rice lake fishing 2026', 'ontario fishing season', 'rice lake walleye', 'rice lake muskie', 'boating season preview', 'kawartha fishing', 'ontario boating trends', 'rice lake bass fishing'],
-    content: `Every boating season feels a bit different. Water levels change, weather patterns shift, and the fishing can be a little better (or a little tougher) than last year. Layer on top of that a changing boat market and new engine technology, and it's fair to ask: what does 2026 look like for Rice Lake and Ontario boating?
+    content: `
+Rice Lake's 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are managed; ice-out timing and water temperatures will set the early-season pattern. The classic species mix and structure on Rice Lake have been consistent for decades. We are looking forward to another good season.
 
-The short answer: a stable, opportunity-rich year with lots of reasons to be on the water — especially if you love fishing.
+## Quick recommendation
 
-## Rice Lake: Still One of Ontario's Most Productive Fisheries
+Rice Lake is one of the most productive freshwater fisheries in southern Ontario. The 2026 season looks like a continuation of recent strong years. Walleye are the headline species, but smallmouth bass, muskie, and panfish all produce good fishing through the season.
 
-Rice Lake has been drawing anglers for more than 150 years. It's shallow, fertile, and full of structure — weedbeds, sandflats, and channels that create ideal feeding grounds for predator fish.
+If you fish Rice Lake regularly, the 2026 patterns are likely to look like 2025 with normal weather variability. If you're new to the lake or haven't fished it in a few years, the basics still apply: shallow weedy bays for spring, structure and weed edges for summer, deeper water for fall, and ice fishing in winter for those equipped for it.
 
-Fish you can expect to target in 2026 include:
+## What changes the season picture
 
-- **Walleye (pickerel)**
-- **Muskie**
-- **Smallmouth and largemouth bass**
-- **Panfish** like perch, crappie, sunfish, and bluegill
+Five things move how the Rice Lake season plays out:
 
-Local guides often note that Rice Lake has "more fish per acre than almost any other lake in Ontario," thanks to its fertility and forage base.
+- **Spring weather and ice-out timing.** Late ice-out delays the opener pattern. Early ice-out advances it.
+- **Water temperatures through May and June.** Walleye spawning timing and post-spawn dispersal depend on temps.
+- **Water levels through the Trent-Severn system.** Parks Canada manages levels; high or low water affects shoreline fishing.
+- **Wind and weather patterns through summer.** Heavy summer wind affects pontoon and small-boat use.
+- **Bait fish populations.** Forage fish abundance affects gamefish location and size.
 
-## Seasonal Patterns to Watch
+## The Rice Lake fishery by species
 
-While every year is different, long-standing patterns and recent observations give a good sense of what to expect:
+### Walleye
 
-- **Spring (post-season opener for walleye and bass):** Walleye are often found along emerging weedlines and shallow flats, especially in the south end and off Gores Landing.
-- **Mid-summer:** Walleye commonly school in deeper channels in the 17–21 ft range off Gores Landing and the south end; slow trolling with worm harnesses and live bait rigs is a staple tactic. Muskie fishing picks up as water temps climb — trolling big crankbaits along deeper weed edges is productive.
-- **Late summer into fall:** Bass (both largemouth and smallmouth) hold on weed edges, rock/weed transitions, and around islands and shoals. Jigs, crankbaits, and topwaters all produce depending on conditions.
+The headline species. Rice Lake has historically been one of the strongest walleye fisheries in southern Ontario.
 
-Solunar and conditions-based forecasting tools suggest that in-season, peak activity periods often cluster around early morning and evening, especially on stable weather days.
+- **Opener (May):** Walleye in shallow bays where spawning has just finished. Crawler harnesses on slow-troll, jigs in 8 to 15 ft.
+- **Early summer (June to July):** Fish move to weed edges and structure. Trolling crank baits, casting jerk baits.
+- **Mid-summer (July to August):** Deeper structure, weed lines, edges of basins. Trolling with kicker motor at 1.5 to 2 mph is the classic technique.
+- **Fall (September to October):** Pre-winter feeding, larger fish. Trolling, jigging, casting.
 
-## Ontario Boating Participation: Still Strong
+Bewdley, Sugar Island, and the central basin are reliable walleye zones.
 
-On the broader Ontario/Canadian level:
+### Smallmouth bass
 
-- Canada's recreational boating industry generates roughly **$13.9 billion** in annual economic impact and supports tens of thousands of jobs.
-- Post-COVID participation in boating and fishing remains high; people are still prioritizing outdoor and local recreation.
-- While new-boat sales normalized in 2024–2025, **the number of people getting on the water has stayed strong**, with rental, club, and shared access models helping fill gaps.
+Strong fishery through the open-water season.
 
-For Rice Lake and the Kawartha region, that means you should expect:
+- **Spring (post-opener):** Spawning in shallow rocky areas and weed edges.
+- **Summer:** Rocky structure, drop-offs, weed edges. Tube jigs, drop-shots, soft plastic jerk baits.
+- **Fall:** Deeper rocky structure as fish prepare for winter.
 
-- Busy weekends with lots of cottage and day-trip traffic.
-- Increased demand for rentals and short-term access.
-- A healthy level of fishing pressure — but also plenty of fish to go around if you adjust and fish smart.
+Tournament bass anglers fish Rice Lake throughout the season.
 
-## 2026: A Good Year to Upgrade or Dial In Your Rig
+### Muskie
 
-Because the broader market has settled and inventory has normalized (as discussed in our [boating market outlook](/blog/boat-rentals-shared-access-booming-2026)), 2026 is a good time to:
+Smaller muskie population than some Kawartha lakes but present.
 
-- **Repower:** Upgrade an older engine to a modern [Mercury FourStroke](/quote/motor-selection) or add a [ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide) for more precise trolling.
-- **Refine electronics:** Leverage SmartCraft Connect and modern sonar to better map Rice Lake structure.
-- **Optimize for your primary species:**
-  - Walleye/muskie: focus on precise speed control and fuel-efficient trollers.
-  - Bass: ensure good positioning control and reliable starting for run-and-gun days.
+- **Summer to fall:** Bigger lures, weed edges, structure transitions.
+- **Fall:** Pre-winter feeding produces some big fish.
 
-Given Rice Lake's weedbeds and channels, we often recommend:
+Muskie fishing is a more specialized pursuit. Most Rice Lake muskie anglers also fish other species.
 
-- Reliable primary outboard (40–150 HP range)
-- Trolling motor with good thrust and weed-handling
-- Optional kicker for serious trolling sets
+### Panfish (perch, bluegill, crappie)
 
-## How Harris Boat Works Can Help You Own 2026 on Rice Lake
+Reliable fishery for kids, casual anglers, and ice fishers.
 
-For the 2026 season, here's how we can make your life easier:
+- **Summer:** Bays, weed pockets, structure for crappie and bluegill.
+- **Winter (ice fishing):** Yellow perch and crappie are the headline ice species.
 
-- **Boat setup or upgrade:** We can help you choose a Legend package or optimize your current boat for how you actually fish and boat on Rice Lake.
-- **Mercury engine advice:** From choosing horsepower to deciding between FourStroke, Pro XS, ProKicker, or even exploring [Avator](/blog/mercury-avator-electric-boating-ontario) for specific use cases.
-- **Service and prep:** Spring commissioning, mid-season service, and fall winterizing to keep your equipment reliable all season.
-- **Rentals:** If you're not ready to own, you can still have a full Rice Lake season via our [rental fleet](https://www.harrisboatworks.ca/rentals) — browse models, check availability, and book online, then use that experience to decide what you'd buy later.
+### Carp
 
-2026 looks like a season with solid fishing, stable market conditions, and a lot of flexibility in how you get on the water — owning, renting, or something in between.
+Often underappreciated but present in good size on Rice Lake. Some specialty carp anglers target them.
 
-If you want to tune your setup for this year's conditions, or just nail down a plan for opening day, [come see us](/contact) in Gores Landing, call **(905) 342-2153**, or [explore motors and pricing in our quote builder](/quote/motor-selection).
+## What changes the answer for fishing setup
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+Five things move which Mercury setup fits Rice Lake fishing:
+
+- **Primary species.** Walleye trolling rewards a kicker; bass run-and-gun rewards a stronger main motor.
+- **Solo or family.** Family fishing balances different priorities than solo serious fishing.
+- **Tournament involvement.** Tournament anglers want faster acceleration and bigger HP.
+- **Hull type.** Aluminum console, deep-V, pontoon all fish Rice Lake but have different sweet spots.
+- **Where you launch.** Bewdley, Hastings, Roseneath each have different launch characteristics.
+
+For most Rice Lake fishing, the standard setup is:
+
+- 16 to 18 ft aluminum console boat
+- Mercury 60 to 115 HP FourStroke main motor
+- Mercury 9.9 ProKicker for walleye trolling
+- Modern fish finder with GPS
+
+For specific pricing, [build a quote](/quote/motor-selection).
+
+## What HBW checks for Rice Lake fishing customers
+
+When fishing customers come to HBW for repower, new boat, or service, we want to know:
+
+- **Boat type, length, and condition**
+- **Primary species (walleye, bass, muskie, mixed)**
+- **Solo or family use**
+- **Trolling-heavy or run-and-gun preference**
+- **Tournament involvement**
+- **Existing electronics (Garmin, Lowrance, Humminbird, Raymarine)**
+- **Where you launch (Bewdley, Hastings, Roseneath, private dock)**
+- **Where you store (cottage, home, marina)**
+- **Long-term ownership plan**
+
+Three generations of HBW have rigged boats for Rice Lake fishing. The local knowledge matters when matching motor to lake.
+
+## Common Rice Lake fishing setup mistakes
+
+We see these every season:
+
+1. **No kicker.** Walleye trolling without a 9.9 ProKicker is a compromise. The savings are not worth the trolling control loss.
+2. **Underbuying HP.** A 25 HP on a 16 ft fishing boat used for serious walleye fishing leaves you fighting wind. Right-size for actual use.
+3. **Wrong electronics for Rice Lake structure.** Modern fish finders with GPS chartplotter and side imaging matter for working specific structure.
+4. **Skipping the opener prep.** The opener morning is the highest-stakes morning. Customers who skip prep lose fishing time.
+5. **Storage that hurts the boat.** Outdoor uncovered storage shortens hull and motor life. Indoor or covered storage matters.
+
+## Rice Lake regulatory environment
+
+A few practical notes for Rice Lake fishing:
+
+- **Provincial fishing licence** required for all anglers 18 to 64 (Outdoors Card and tag).
+- **Pleasure Craft Operator Card (PCOC)** required for all motorized vessel operators.
+- **Pleasure Craft Licence (PCL)** required for any boat with motor over 9.9 HP.
+- **Slot limits and possession limits** apply to walleye, bass, and muskie. Check current OMNR regulations.
+- **Special seasons** apply to certain species. Walleye opener is the second Saturday of May for Zone 17. Bass opener is later.
+- **Catch and release** requirements vary by species and time of year.
+
+We recommend the OMNR Fishing Regulations Summary as the authoritative source. Available online and at most marinas including HBW.
+
+## What's special about Rice Lake fishing
+
+Three things distinguish Rice Lake from other Kawartha lakes:
+
+1. **Walleye productivity.** Rice Lake has historically produced more walleye than many comparable lakes. The mix of structure, weed beds, and water clarity favors walleye.
+2. **Trent-Severn access.** The east end connects to the Trent-Severn lock system, opening up the larger Kawartha chain. Some anglers travel between lakes.
+3. **Local knowledge concentration.** Generations of anglers have fished Rice Lake. Local guides, marinas, and fishing reports are detailed.
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
-- [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
-- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
-- [Getting Your Boat Ready for Walleye Opener](/blog/walleye-opener-boat-prep) — walleye-opener boat prep
-- [How to Trailer a Boat from Toronto to Rice Lake (Complete 2026 Guide)](/blog/trailer-boat-toronto-to-rice-lake-guide) — trailering from Toronto to Rice Lake
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), full setup guide
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker setup
+- [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep), pre-opener prep
+- [Best Pontoon Boats for Rice Lake Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoon-specific guide
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum setup
+
+## Ready for the 2026 Rice Lake season?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific Rice Lake fishing setup, [give us a call at (905) 342-2153](tel:9053422153). We rig fishing boats for Rice Lake every week and can give you the honest answer for your hull and fishing style.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**When does walleye season open on Rice Lake?**
+Typically the second Saturday of May for Zone 17 (Kawartha lakes including Rice Lake). Confirm current year date from OMNR.
+
+**What is the most popular species on Rice Lake?**
+Walleye. Rice Lake has historically been one of the stronger walleye fisheries in southern Ontario. Smallmouth bass and panfish are also strong.
+
+**Where do most anglers launch on Rice Lake?**
+Bewdley, Hastings, and Roseneath are the main public ramps. Bewdley is closest to Sugar Island and the deeper basin. Hastings has the easiest Trent-Severn access. Roseneath is on the south shore.
+
+**What's the best time of year to fish Rice Lake?**
+Walleye is best from opener (mid-May) through October, with peaks in June and September. Bass season opens later (mid-June for Zone 17) and runs through fall.
+
+**Do I need a fishing licence to fish Rice Lake?**
+Yes. Residents 18 to 64 need an Outdoors Card and tag. Non-residents need an Outdoors Card and tag. Children under 18 can fish without a licence under certain conditions. Confirm current OMNR regulations.
+
+**What's the size of Rice Lake?**
+About 130 km² (50 sq mi). Roughly 30 km long east-west, 5 km wide at the widest point. Average depth is 4 to 5 m, max around 12 m.
+
+**Can I keep walleye on Rice Lake?**
+Yes within OMNR limits. Slot limits and possession limits apply. Check current regulations. Most Rice Lake walleye are in the slot, with some bigger fish protected.
+
+**What's the best lure for Rice Lake walleye?**
+Crawler harnesses are the classic spring and summer trolling lure. Crank baits work well in summer. Jigs work year-round in 8 to 15 ft of water. Local bait shops have current intel.
+
+**Do I need a kicker motor for Rice Lake fishing?**
+For serious walleye fishing, yes. The 9.9 ProKicker is the standard. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).
+
+**What's the best boat for Rice Lake?**
+For most fishing use, 16 to 18 ft aluminum console with 60 to 115 HP main + 9.9 ProKicker. For pontoon cottage use, 18 to 22 ft pontoon with 90 to 150 HP CT. Specifics depend on use case.
+
+**Are there fishing charters on Rice Lake?**
+Yes, several local guides operate on Rice Lake. Online directories and word of mouth are the typical way to find them. HBW does not run charters but can recommend operators.
+
+**How are 2026 fishing conditions expected?**
+Recent years have been strong on Rice Lake. Continued normal weather and water levels should produce a good 2026 season. Specific patterns will become clear after ice-out and through May.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
 
     `,
     faqs: [
       {
-        question: 'What fish species can you target on Rice Lake in 2026?',
-        answer: 'Rice Lake offers walleye (pickerel), muskie, smallmouth and largemouth bass, and panfish including perch, crappie, sunfish, and bluegill. The lake\'s shallow, fertile waters and abundant structure make it one of Ontario\'s most productive multi-species fisheries.'
+        question: 'When does walleye season open on Rice Lake?',
+        answer: 'Typically the second Saturday of May for Zone 17 (Kawartha lakes including Rice Lake). Confirm current year date from OMNR.'
       },
       {
-        question: 'What are the best seasonal fishing patterns on Rice Lake?',
-        answer: 'Spring walleye are found along emerging weedlines and shallow flats. Mid-summer walleye school in 17–21 ft channels off Gores Landing, and muskie fishing picks up along deeper weed edges. Late summer through fall is prime for bass on weed edges, rock transitions, and around islands. Early morning and evening typically produce the best activity.'
+        question: 'What is the most popular species on Rice Lake?',
+        answer: 'Walleye. Rice Lake has historically been one of the stronger walleye fisheries in southern Ontario. Smallmouth bass and panfish are also strong.'
       },
       {
-        question: 'What motor setup do you recommend for fishing Rice Lake?',
-        answer: 'We recommend a reliable primary outboard in the 40–150 HP range depending on boat size, a trolling motor with good thrust and weed-handling capability, and an optional ProKicker for serious trolling sets. The specific horsepower depends on your boat — use our quote builder to explore options.'
+        question: 'Where do most anglers launch on Rice Lake?',
+        answer: 'Bewdley, Hastings, and Roseneath are the main public ramps. Bewdley is closest to Sugar Island and the deeper basin. Hastings has the easiest Trent-Severn access. Roseneath is on the south shore.'
       },
       {
-        question: 'Can I rent a boat for fishing Rice Lake?',
-        answer: 'Yes — Harris Boat Works offers rental boats so you can experience Rice Lake fishing without owning. Rentals are a great way to try different setups and figure out what you\'d want in your own rig before committing to a purchase.'
+        question: 'What\'s the best time of year to fish Rice Lake?',
+        answer: 'Walleye is best from opener (mid-May) through October, with peaks in June and September. Bass season opens later (mid-June for Zone 17) and runs through fall.'
       },
       {
-        question: 'Is Rice Lake good for fishing compared to other Kawartha Lakes?',
-        answer: 'Rice Lake stands out among the Kawarthas because of its shallow, fertile water and diverse species. It consistently ranks among the top Ontario lakes for muskie and walleye. Its average depth of under 20 feet (maximum around 27 feet) creates extensive weed growth supporting a rich forage base — producing more fish per acre than many Ontario lakes. The lake is also larger than most Kawartha options. The trade-off is that Rice Lake can get rough quickly in wind, so having at least 60HP on most boats and watching the forecast matters more here than on smaller sheltered lakes.'
+        question: 'Do I need a fishing licence to fish Rice Lake?',
+        answer: 'Yes. Residents 18 to 64 need an Outdoors Card and tag. Non-residents need an Outdoors Card and tag. Children under 18 can fish without a licence under certain conditions. Confirm current OMNR regulations.'
       },
       {
-        question: 'What are the Ontario walleye fishing regulations for Rice Lake in 2026?',
-        answer: 'Ontario walleye regulations on Rice Lake fall under the province\'s freshwater fishing framework. Regulations can change year to year, so always verify the current Ontario Fishing Regulations Summary from the Ministry of Natural Resources at ontario.ca/fishing before heading out. Rice Lake is in Ontario Zone 17. A valid Ontario fishing licence is required for all anglers 18 and older. Check current rules for the specific season opener, size limits, and daily bag limits — do not rely on prior-season information.'
+        question: 'What\'s the size of Rice Lake?',
+        answer: 'About 130 km² (50 sq mi). Roughly 30 km long east-west, 5 km wide at the widest point. Average depth is 4 to 5 m, max around 12 m.'
       },
       {
-        question: 'What\'s the best time of year to visit Rice Lake for the first time?',
-        answer: 'Late May through early June is the best window for a first-time visit to Rice Lake. The walleye and bass seasons are open, the weather is pleasant, and weeds aren\'t yet at peak summer thickness. Fishing is typically excellent in these post-opener weeks as fish are active in relatively shallow water. If you\'re primarily interested in the full cottage-country boating experience, late June through August is peak season. Fall (September–October) is underrated for muskie fishing and quieter conditions. Rice Lake is about 90 minutes from the 401, making it an easy day trip from the GTA.'
+        question: 'Can I keep walleye on Rice Lake?',
+        answer: 'Yes within OMNR limits. Slot limits and possession limits apply. Check current regulations. Most Rice Lake walleye are in the slot, with some bigger fish protected.'
       },
       {
-        question: 'Do I need special equipment to fish Rice Lake\'s shallow weedbeds?',
-        answer: 'Rice Lake\'s extensive weed growth calls for specific equipment choices. A motor with a Command Thrust lower unit (available on Mercury models from 9.9HP through 115HP) runs shallower and handles vegetation fouling better than standard gearcases. Stainless steel props tend to handle weed strikes better than aluminum. A trolling motor with weed-shedding capability helps for working weed edges. Harris Boat Works stocks props suited to Rice Lake conditions — the right prop choice makes a meaningful difference in shallow-water performance.'
-      }
+        question: 'What\'s the best lure for Rice Lake walleye?',
+        answer: 'Crawler harnesses are the classic spring and summer trolling lure. Crank baits work well in summer. Jigs work year-round in 8 to 15 ft of water. Local bait shops have current intel.'
+      },
+      {
+        question: 'Do I need a kicker motor for Rice Lake fishing?',
+        answer: 'For serious walleye fishing, yes. The 9.9 ProKicker is the standard. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).'
+      },
+      {
+        question: 'What\'s the best boat for Rice Lake?',
+        answer: 'For most fishing use, 16 to 18 ft aluminum console with 60 to 115 HP main + 9.9 ProKicker. For pontoon cottage use, 18 to 22 ft pontoon with 90 to 150 HP CT. Specifics depend on use case.'
+      },
+      {
+        question: 'Are there fishing charters on Rice Lake?',
+        answer: 'Yes, several local guides operate on Rice Lake. Online directories and word of mouth are the typical way to find them. HBW does not run charters but can recommend operators.'
+      },
+      {
+        question: 'How are 2026 fishing conditions expected?',
+        answer: 'Recent years have been strong on Rice Lake. Continued normal weather and water levels should produce a good 2026 season. Specific patterns will become clear after ice-out and through May.'
+      },
     ]
   },
 
@@ -11956,345 +12259,465 @@ Build a quote on the [motor selection page](/quote/motor-selection). Three minut
   },
   {
     slug: 'best-mercury-outboard-lake-simcoe-walleye-fishing',
-    title: 'Best Mercury Outboard for Lake Simcoe Walleye Fishing',
-    description: 'Motor recommendations for Lake Simcoe walleye: main motor + kicker setup, boat brands, safety considerations, and why you need more power on big water.',
+    title: "Best Mercury Outboard for Lake Simcoe Walleye Fishing (2026)",
+    description: "Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed. The right Mercury for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-21',
-    dateModified: '2026-04-21',
+    dateModified: '2026-05-04',
     category: 'Fishing & Local',
     readTime: '12 min read',
     keywords: ['best outboard motor Lake Simcoe', 'Lake Simcoe walleye fishing boat', 'Mercury kicker motor trolling', 'best motor for Lake Simcoe', 'Lake Simcoe fishing setup'],
     content: `
-## Lake Simcoe Is Not a Forgiving Lake
+Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed. The right Mercury for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-Lake Simcoe is the largest lake entirely within Ontario, covering about 722 km². On a calm June morning, it looks benign. By noon, a southwest wind can kick up 2–3 foot rollers that make a 17ft aluminum boat very uncomfortable and genuinely dangerous.
+## Quick recommendation
 
-Power is a safety issue, not just a performance preference. You need enough motor to get home efficiently when conditions change — and on Simcoe, conditions change fast.
+Lake Simcoe rewards more boat and more motor than Rice Lake or smaller Kawartha lakes. The lake is larger, deeper, and more wind-exposed. Walleye trolling on Simcoe requires longer runs to spots, more time in chop, and more confident handling.
 
-## The Two-Motor Setup: Main Plus Kicker
+For most Lake Simcoe walleye anglers, the right setup is:
 
-Most serious Simcoe walleye boats run a two-motor setup:
+- **Hull:** 17 to 19 ft deep-V aluminum or modified-V fishing boat
+- **Main motor:** Mercury 90 to 150 HP FourStroke or Pro XS (depending on hull weight and use)
+- **Kicker:** Mercury 9.9 ProKicker for trolling speed control
 
-1. **Main motor:** 90–150hp four-stroke for getting on the water and getting home safely
-2. **Kicker motor:** 9.9hp (Mercury ProKicker) for slow trolling at 1.5–3.0 mph
+For specific pricing on this setup, [build a quote](/quote/motor-selection). All-in repowers in this class typically land $20,000 to $32,000 CAD at HBW.
 
-A 115hp motor running at 5–10% throttle for trolling is outside its optimal RPM range. It builds carbon, wastes fuel, and adds wear. A dedicated kicker pays for itself in main motor longevity.
+## What changes the answer for Lake Simcoe
 
-## The Mercury 9.9 ProKicker Command Thrust
+Lake Simcoe-specific factors:
 
-What makes it different from a standard 9.9:
-- **Command Thrust gearcase**: 2.42:1 gear ratio, more thrust at low RPM
-- **EFI**: No carburetor, reliable cold starts, no ethanol issues
-- **Power tilt**: Trim up when not in use, reducing drag on main motor
-- **Four-blade aluminum propeller**: Maximum grip at low speed
+- **Wind exposure.** Simcoe is open water. Wind builds quickly and waves can reach 3 to 5 feet on bad days. Underpowered boats get exposed.
+- **Depth and structure.** Walleye are often in deeper water (40 to 80+ ft) requiring downriggers and bigger trolling rigs. Setup needs to handle this gear.
+- **Travel distance.** Lake Simcoe is roughly 740 km² with multiple fishing zones. Travel from Cook's Bay to Kempenfelt Bay or to the deeper basins is meaningful.
+- **Boat traffic.** Heavy summer recreational traffic. Faster cruise speeds reduce time exposed to wakes.
+- **Tournament fishing.** Lake Simcoe hosts walleye and bass tournaments. Tournament-grade hulls and performance motors are common.
+- **Ice fishing season.** Simcoe is a major ice fishing destination. Boats are stored differently for ice fishing-focused operators.
 
-The 9.9 ProKicker CT weighs approximately 115 lbs. Approximate pricing: around $4,000–$4,200 CAD.
+## Best Mercury for Simcoe walleye by use case
 
-## Main Motor Selection: The Big Lake Factor
+### Recreational walleye trolling (most common)
 
-- A 17ft aluminum with 90hp: technically works, but struggles at full load in chop
-- A 17ft aluminum with 115hp: comfortable reserve power
-- A 19ft deep-V aluminum: wants 115–150hp
+**Best setup:** 17 to 19 ft deep-V aluminum (Lund Pro V Bass, Crestliner Tournament series, Princecraft) with 90 to 150 HP FourStroke + 9.9 ProKicker.
 
-The extra HP isn't for going faster — it's for maintaining control in deteriorating conditions.
+The 115 EXLPT FourStroke is the sweet spot for most Simcoe walleye anglers. Plenty of cruise speed for travel between spots, fuel-efficient at trolling speeds, and well-matched to typical Simcoe hulls.
 
-## Best Boat Brands for Simcoe Walleye
+### Tournament walleye fishing
 
-**Lund** — 1875 Pro-V GL and 1975 Pro-V GL. Deep-V aluminum built for big Canadian walleye lakes.
-**Crestliner** — 1850 Fish Hawk and 2000 Fish Hawk. Solid construction, popular on Simcoe.
-**Alumacraft** — Competitor 185 CS and Trophy 195. Deep-V designs that handle open water.
-**Tracker** — Pro Team 175/195 series. Value-oriented but capable.
+**Best setup:** 18 to 21 ft deep-V or modified-V with 150 to 200 HP Pro XS + 9.9 ProKicker.
 
-## Motor Recommendations by Boat Size
+Pro XS earns its premium on tournament fishing. Faster acceleration to spots, better hole shot when loaded, and the responsiveness tournament anglers want.
 
-| Boat Size | Main Motor | Kicker | Notes |
-|---|---|---|---|
-| 16ft aluminum | Mercury 90hp FourStroke | 9.9 ProKicker CT | Minimum for Simcoe |
-| 17ft aluminum | Mercury 115hp FourStroke | 9.9 ProKicker CT | Sweet spot |
-| 18–19ft deep-V | Mercury 115–150hp FourStroke | 9.9 ProKicker CT | Better rough water |
-| 19–20ft deep-V | Mercury 150hp FourStroke | 9.9 ProKicker CT | Full load, big days |
-| 18–20ft fiberglass | Mercury 150–175hp FourStroke | 15hp ProKicker | More weight needs more power |
+### Multi-species fishing (walleye + smallmouth + lake trout)
 
-## The Safety Argument
+**Best setup:** 18 to 20 ft deep-V with 115 to 150 HP FourStroke or Pro XS + 9.9 ProKicker.
 
-A 90hp motor on a 19ft aluminum at full load in 2-foot chop is running at significant throttle. A 115hp motor has a meaningful buffer. A 150hp motor has reserve power to run confidently when others are crawling.
+Multi-species fishing on Simcoe means the same boat handling walleye trolling, bass fishing structure, and occasional lake trout deeper trolling. The 115 to 150 HP class with kicker covers all three reasonably well.
 
-The motor is the most important safety equipment on your boat after the life jackets.
+### Ice fishing-focused (winter use)
 
-## SmartCraft Advantage on Big Water
+**Best setup:** 16 to 18 ft aluminum (used as the open-water boat May to October, then stored for ice season).
 
-- **Real-time fuel monitoring**: Know your range when you're 10 km out
-- **Engine hours and fault codes**: See problems before they become real issues
-- **Speed and GPS integration**: Precise speed data for trolling presentation
+Ice fishing operators often use a smaller open-water boat for shoulder seasons and rely on snowmobile or ice fishing-specific transport in winter. Mercury motor selection for the open-water portion follows typical fishing setup.
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout).
+## What HBW checks before recommending a Lake Simcoe setup
+
+When customers come to HBW for a Simcoe walleye repower or new boat assessment, we want to know:
+
+- **Boat hull type, length, and condition**
+- **Capacity plate HP rating**
+- **Primary fishing zones on Simcoe** (Cook's Bay, Kempenfelt, deeper basins)
+- **Tournament or recreational use**
+- **Solo or family fishing**
+- **Existing kicker and electronics**
+- **Where you store and launch**
+- **Travel to other lakes** (Rice Lake, Kawarthas, Lake Ontario)
+- **Budget and financing tolerance**
+
+We rig fishing boats for Simcoe regularly at HBW. The local knowledge matters when matching motor to use.
+
+## Common Lake Simcoe fishing setup mistakes
+
+We see these every season:
+
+1. **Underpowering.** A 60 HP on a 19 ft deep-V on Simcoe in afternoon chop is going to disappoint. Bigger water rewards bigger HP.
+2. **Hull too light.** A 16 ft tin boat on Simcoe is exposed in moderate weather. Most serious Simcoe anglers run 17 ft and bigger.
+3. **No kicker.** Walleye trolling without a kicker on Simcoe is a compromise. The 9.9 ProKicker is the standard.
+4. **Wrong electronics for depth fishing.** Simcoe walleye are often deep. Fish finder/sonar capability needs to handle 80+ ft depths reliably.
+5. **Inadequate trolling motor for fine positioning.** Bow-mount electric trolling motors with GPS anchor (i-Pilot, Ultrex) are valuable on Simcoe for working specific structure. Plan for it.
+
+## Lake Simcoe vs Rice Lake setup differences
+
+For customers who fish both lakes:
+
+| Factor | Rice Lake | Lake Simcoe |
+|---|---|---|
+| Typical hull length | 16 to 18 ft | 17 to 19 ft |
+| Typical HP class | 60 to 115 HP | 90 to 150 HP |
+| Hull type | Aluminum console | Deep-V aluminum or modified-V |
+| Wind exposure | Lower | Higher |
+| Walleye depth | 5 to 25 ft | 20 to 80+ ft |
+| Travel distances | Shorter | Longer |
+| Tournament traffic | Lower | Higher |
+| Kicker importance | High (9.9 ProKicker standard) | High (9.9 ProKicker standard) |
+
+A boat that fishes well on Rice Lake may be underpowered on Simcoe. A boat that fishes well on Simcoe may be overkill on Rice Lake.
+
+For specific pricing, [build a quote](/quote/motor-selection).
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
-- [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
-- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
-- [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), Rice Lake-specific setup
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker setup
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), Simcoe HP class step-up
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum setup
+- [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep), pre-season
+
+## Ready for your Lake Simcoe walleye setup?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration including main motor, kicker, rigging, and prop.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific Simcoe fishing setup, [give us a call at (905) 342-2153](tel:9053422153). We rig fishing boats for Simcoe regularly.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**What is the best Mercury outboard for Lake Simcoe walleye fishing?**
+For most Simcoe walleye anglers, a 17 to 19 ft deep-V aluminum boat with 90 to 150 HP FourStroke main + 9.9 ProKicker. The 115 EXLPT FourStroke is the sweet spot for most setups.
+
+**Do I need a bigger boat for Simcoe than for Rice Lake?**
+Usually yes. Simcoe is bigger water with more wind exposure. Most serious Simcoe anglers run 17 ft and bigger; Rice Lake fishes well in 16 to 18 ft.
+
+**What HP do I need for Simcoe walleye fishing?**
+Depends on hull. For 17 to 19 ft deep-V aluminum, 90 to 150 HP. For tournament use, 150 to 200 HP Pro XS. Pair with 9.9 ProKicker.
+
+**Is a kicker necessary for Simcoe walleye trolling?**
+Highly recommended. Main motors do not idle slow enough for proper walleye trolling. The 9.9 ProKicker is the standard. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).
+
+**Should I run FourStroke or Pro XS on Simcoe?**
+FourStroke is the better value for recreational walleye fishing. Pro XS earns its price for tournament-level performance and faster acceleration to spots.
+
+**Is Lake Simcoe rougher water than Lake Ontario?**
+Different rough. Lake Ontario is bigger, has more swell, and longer fetch. Simcoe is shallower with shorter, choppier waves in wind. Both are open water that requires confident hulls and adequate HP.
+
+**Can I fish Lake Simcoe with my Rice Lake setup?**
+Sometimes, with caution. A 16 to 18 ft aluminum console with 90 HP can handle Simcoe in good weather. In wind or chop, you'll wish you had more boat.
+
+**What's the cost of a Simcoe walleye repower?**
+For a 17 to 19 ft setup with 115 to 150 HP main and 9.9 ProKicker, $20,000 to $32,000 CAD all-in at HBW. [Live pricing here.](/quote/motor-selection)
+
+**Should I get a tritoon for Lake Simcoe?**
+For pure cruising and family use, yes some operators. For walleye fishing, deep-V hulls handle Simcoe better than tritoons. Tritoons are great for sheltered Cook's Bay; less ideal for open Simcoe in chop.
+
+**Where do I launch on Lake Simcoe?**
+Multiple public ramps: Lefroy, Beaverton, Barrie, Keswick, Sutton. Each has different wind exposure and fishing access characteristics. Local knowledge matters.
+
+**What electronics do I need for Simcoe walleye fishing?**
+GPS chartplotter, sonar capable of 80+ ft depths, side imaging useful for structure. Garmin, Lowrance, Humminbird, and Raymarine all make units that work. Modern Mercury motors integrate with all four.
+
+**When is the best time to fish Simcoe walleye?**
+Opening day (typically Saturday closest to May 15) is the traditional opener. Fall (September to October) is also strong. Ice fishing season produces bigger fish but is a different sport.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
 
     `,
     faqs: [
       {
-        question: 'What is the best boat size for Lake Simcoe walleye fishing?',
-        answer: 'A 17–19ft deep-V aluminum hull is the sweet spot. Deep-V designs handle chop better. Popular choices include the Lund 1875 Pro-V GL, Crestliner 1850 Fish Hawk, and Alumacraft Competitor 185 CS.'
+        question: 'What is the best Mercury outboard for Lake Simcoe walleye fishing?',
+        answer: 'For most Simcoe walleye anglers, a 17 to 19 ft deep-V aluminum boat with 90 to 150 HP FourStroke main + 9.9 ProKicker. The 115 EXLPT FourStroke is the sweet spot for most setups.'
       },
       {
-        question: 'Do I need a kicker motor for Lake Simcoe?',
-        answer: 'You don\'t strictly need one, but serious walleye anglers on Simcoe run a kicker. The Mercury 9.9 ProKicker Command Thrust delivers precise, consistent trolling speeds and extends main motor life.'
+        question: 'Do I need a bigger boat for Simcoe than for Rice Lake?',
+        answer: 'Usually yes. Simcoe is bigger water with more wind exposure. Most serious Simcoe anglers run 17 ft and bigger; Rice Lake fishes well in 16 to 18 ft.'
       },
       {
-        question: 'What HP motor do I need for Lake Simcoe?',
-        answer: 'At minimum 90hp on a 17ft boat. The better answer is 115hp for comfortable reserve power. On a 19ft or heavier boat, 150hp is the right choice. Simcoe demands more power than sheltered inland lakes.'
+        question: 'What HP do I need for Simcoe walleye fishing?',
+        answer: 'Depends on hull. For 17 to 19 ft deep-V aluminum, 90 to 150 HP. For tournament use, 150 to 200 HP Pro XS. Pair with 9.9 ProKicker.'
       },
       {
-        question: 'Is the Mercury 9.9 ProKicker different from a regular 9.9?',
-        answer: 'Yes. The ProKicker is engineered for trolling applications. The Command Thrust variant adds a high-gear-ratio gearcase and four-blade prop for more low-speed thrust. The EFI version starts reliably in cold conditions.'
+        question: 'Is a kicker necessary for Simcoe walleye trolling?',
+        answer: 'Highly recommended. Main motors do not idle slow enough for proper walleye trolling. The 9.9 ProKicker is the standard. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).'
       },
       {
-        question: 'Can I run my main motor for trolling instead of buying a kicker?',
-        answer: 'Some anglers do. But running a 115hp+ motor at 5–10% throttle for hours builds carbon deposits, wastes fuel, and adds unnecessary wear hours. A dedicated kicker pays for itself within a few seasons.'
-      }
+        question: 'Should I run FourStroke or Pro XS on Simcoe?',
+        answer: 'FourStroke is the better value for recreational walleye fishing. Pro XS earns its price for tournament-level performance and faster acceleration to spots.'
+      },
+      {
+        question: 'Is Lake Simcoe rougher water than Lake Ontario?',
+        answer: 'Different rough. Lake Ontario is bigger, has more swell, and longer fetch. Simcoe is shallower with shorter, choppier waves in wind. Both are open water that requires confident hulls and adequate HP.'
+      },
+      {
+        question: 'Can I fish Lake Simcoe with my Rice Lake setup?',
+        answer: 'Sometimes, with caution. A 16 to 18 ft aluminum console with 90 HP can handle Simcoe in good weather. In wind or chop, you\'ll wish you had more boat.'
+      },
+      {
+        question: 'What\'s the cost of a Simcoe walleye repower?',
+        answer: 'For a 17 to 19 ft setup with 115 to 150 HP main and 9.9 ProKicker, $20,000 to $32,000 CAD all-in at HBW. [Live pricing here.](/quote/motor-selection)'
+      },
+      {
+        question: 'Should I get a tritoon for Lake Simcoe?',
+        answer: 'For pure cruising and family use, yes some operators. For walleye fishing, deep-V hulls handle Simcoe better than tritoons. Tritoons are great for sheltered Cook\'s Bay; less ideal for open Simcoe in chop.'
+      },
+      {
+        question: 'Where do I launch on Lake Simcoe?',
+        answer: 'Multiple public ramps: Lefroy, Beaverton, Barrie, Keswick, Sutton. Each has different wind exposure and fishing access characteristics. Local knowledge matters.'
+      },
+      {
+        question: 'What electronics do I need for Simcoe walleye fishing?',
+        answer: 'GPS chartplotter, sonar capable of 80+ ft depths, side imaging useful for structure. Garmin, Lowrance, Humminbird, and Raymarine all make units that work. Modern Mercury motors integrate with all four.'
+      },
+      {
+        question: 'When is the best time to fish Simcoe walleye?',
+        answer: 'Opening day (typically Saturday closest to May 15) is the traditional opener. Fall (September to October) is also strong. Ice fishing season produces bigger fish but is a different sport.'
+      },
     ]
   },
   {
     slug: 'best-mercury-outboard-lake-ontario-salmon-trout',
-    title: 'Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing',
-    description: 'Motor recommendations for Lake Ontario salmon and trout: 150–300hp setups, kicker motors, downrigger rigs, and port-by-port guidance from Port Hope to the GTA.',
+    title: "Best Mercury Outboard for Lake Ontario Salmon and Trout (2026)",
+    description: "Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads. The right Mercury for Lake Ontario salmon and trout is a 200 to 300 HP V8 FourStroke or Pro XS on a 21 to 26 ft center console or walkaround hull, often with a 15 HP ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
-    dateModified: '2026-04-22',
+    dateModified: '2026-05-04',
     category: 'Fishing & Local',
     readTime: '15 min read',
     keywords: ['Lake Ontario salmon fishing motor', 'best outboard Lake Ontario', 'Mercury outboard salmon trolling', 'Lake Ontario chinook king salmon', 'salmon fishing boat Ontario', 'Mercury 150 200 salmon', 'Lake Ontario fishing charter motor'],
     content: `
-## Lake Ontario Is Open Water — Treat It Like One
+Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads. The right Mercury for Lake Ontario salmon and trout is a 200 to 300 HP V8 FourStroke or Pro XS on a 21 to 26 ft center console or walkaround hull, often with a 15 HP ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-Lake Ontario is the 14th largest lake in the world by surface area. It stretches 311 km east to west and 85 km at its widest point, with a maximum depth of 244 metres (802 feet). On a calm July morning, the north shore looks like a millpond. By early afternoon, a southwest wind can build 1–2 metre rollers in under an hour. Fog banks roll in without warning. The thermocline shifts daily.
+## Quick recommendation
 
-This is not Rice Lake. This is not Lake Simcoe. Lake Ontario is functionally an inland sea, and the motor on your transom is the most important piece of safety equipment after your PFDs.
+Lake Ontario fishing is different than Rice Lake or even Simcoe. The lake is huge (over 19,000 km²), exposed to weather changes, and serious salmon fishing requires capable boats and motors. Most Lake Ontario salmon and trout anglers run 21 to 26 ft deep-V hulls with 200 to 300 HP main motors.
 
-If you're running offshore for kings — and on the Ontario north shore, "offshore" means 5–15 km out — you need enough motor to get home fast when conditions deteriorate, enough electrical capacity to run downriggers and electronics all day, and a kicker motor for trolling.
+For most Lake Ontario salmon and trout setups:
 
-## The Species: What You're Chasing and When
+- **Hull:** 21 to 26 ft deep-V or modified-V (center console, walkaround, or sport fisher)
+- **Main motor:** Mercury 200 to 300 HP V8 FourStroke or Pro XS V8
+- **Kicker:** Mercury 15 HP ProKicker (the bigger kicker handles bigger boats and longer trolling runs)
 
-### Chinook (King) Salmon
-The marquee fish. Lake Ontario kings regularly hit 10–15 kg (20–30+ lbs), with trophy fish exceeding 18 kg. They're the reason the serious rigs exist.
+For specific pricing, [build a quote](/quote/motor-selection). All-in repowers in this class typically land $35,000 to $50,000+ CAD at HBW.
 
-- **Spring (April–May):** Kings stage in the western basin first. On the north shore, early action starts off the GTA — Port Credit, Bronte, Whitby. Fish are at 15–40 metres depth, following baitfish schools.
-- **Summer (June–August):** The thermocline drives kings deeper — 25–50 metres is typical. You're trolling offshore, following temperature breaks on your sonar. This is prime season for the north shore from Cobourg to Brighton and east toward Prince Edward County.
-- **Fall (September–October):** Kings stage at tributary mouths before spawning runs. The Ganaraska River (Port Hope), Cobourg Creek, and the Trent River mouth (Trenton) all draw fish. Trolling shifts to shallower water — 5–15 metres — near river mouths.
+## What changes the answer for Lake Ontario
 
-### Coho Salmon
-Smaller than kings (typically 3–5 kg) but aggressive fighters. Coho often run higher in the water column than chinook. Available spring through fall, with peak action in late summer.
+Lake Ontario-specific factors:
 
-### Brown Trout
-Excellent nearshore fishing in spring and late fall. Browns hold tight to shoreline structure and creek mouths — Port Hope, Cobourg harbour, and Presqu'ile Bay are consistent producers. Lighter tackle, shallower trolling. A 150hp boat with downriggers handles this perfectly.
+- **Open water exposure.** Wave heights can exceed 6 feet on bad days. Hull design and adequate HP matter for safety.
+- **Travel distances.** Salmon and trout fishing zones are often 5 to 15 km offshore. Cruise speed and fuel range matter.
+- **Downrigger and planer board trolling.** Salmon fishing uses elaborate trolling spreads with downriggers, planer boards, and dipsy divers. The boat needs the deck space and the motor needs to handle the drag of full spreads.
+- **Tournament fishing.** Lake Ontario hosts major salmon tournaments. Tournament-grade boats and motors are common.
+- **Multi-species fishing.** Same boats often target salmon, trout, walleye, and bass throughout the season.
+- **Mooring and slip storage.** Many Lake Ontario boats are slip-stored at marinas in Cobourg, Whitby, Newcastle, Port Credit, and other ports.
 
-### Lake Trout
-Deep-water residents, typically 25–45 metres in summer. Consistent action July through August when other species slow down. Slower trolling speeds (1.5–2.0 mph).
+## Best Mercury for Lake Ontario by use case
 
-### Steelhead (Rainbow Trout)
-Primarily a tributary fish in spring and fall, but they're caught offshore in summer mixed with salmon. Hard fighters that make spectacular runs.
+### Recreational salmon and trout trolling
 
-## The North Shore: Your Backyard Fishery
+**Best setup:** 22 to 25 ft deep-V or walkaround hull with 250 to 300 HP V8 FourStroke + 15 HP ProKicker.
 
-If you're reading this on mercuryrepower.ca, you're likely an Ontario boat owner. The north shore of Lake Ontario — from the GTA east through Northumberland County and Prince Edward County — offers world-class salmon and trout fishing within reasonable driving distance of millions of people.
+The Mercury 250 V8 FourStroke or 300 V8 FourStroke is the typical Lake Ontario sweet spot. Smooth, fuel-efficient at trolling and cruise speeds, and well-matched to typical 22 to 25 ft fishing hulls.
 
-### Key Ports and Launch Points
+### Tournament salmon fishing
 
-| Port | What's There | Best For |
-|---|---|---|
-| Port Credit (Mississauga) | Full-service marina, charter fleet | Spring kings, coho, all-season access |
-| Whitby Harbour | Public launch, marina | Spring/summer kings, lake trout |
-| Oshawa Harbour | Public launch | Kings, summer trolling |
-| Cobourg Marina | Public launch, fuel, fish cleaning station | Summer kings, fall staging, browns |
-| Port Hope | Public launch, fish cleaning station | Fall salmon runs (Ganaraska River), spring browns |
-| Presqu'ile Bay (Brighton) | Protected launch, marina | Browns, lake trout, sheltered staging area |
-| Trenton (Trent Port Marina) | Full marina, Bay of Quinte access | Fall kings (Trent River mouth), walleye crossover |
+**Best setup:** 23 to 28 ft deep-V or walkaround with 300 HP Pro XS V8 + 15 HP ProKicker (or some operators run twin engines).
 
-**Port Hope and Cobourg** deserve special mention. The Ganaraska River system in Port Hope is one of Ontario's premier salmon and trout rivers. Thousands of chinook and coho run the river each fall, and the Port Hope fish ladder is a genuine spectacle. The municipal boat launch and fish cleaning station make it a practical base for offshore trips.
+Tournament use rewards the Pro XS V8 for faster acceleration and the ability to cover more water during tournament hours. Some serious tournament anglers run twin 200 to 250 HP setups for redundancy and performance.
 
-### The Quebec Connection
+### Charter fishing operations
 
-During peak salmon season (July through September), the north shore ports — particularly Cobourg, Port Hope, and Brighton — see a significant influx of francophone anglers from Quebec. Many operate guided fishing charters targeting kings and lake trout, running multi-day trips out of local marinas. This is a well-established seasonal pattern. If you're launching from Cobourg Marina in August, expect to hear as much French as English at the fuel dock.
+**Best setup:** 26 to 30+ ft deep-V or walkaround with 300 to 400 HP main motor (often Mercury Verado V8 supercharged or twin SeaPro for commercial duty) + 15 HP ProKicker.
 
-This matters for two reasons: it confirms the quality of the fishery (these operators travel 4–6 hours because the fishing is that good), and it means launch ramps and marina slips fill up fast during peak weeks. Book ahead.
+Charter operations push motors hard. Mercury SeaPro variants are built for commercial-duty cycles. Some charters run Verado V8 supercharged for high HP single-engine setups.
 
-## Why Lake Ontario Demands More Motor
+### Multi-species sport fishing
 
-### The Distance Factor
-Productive salmon water on the north shore is typically 5–15 km offshore in summer. A 10 km run at 30 mph takes 20 minutes. At 20 mph, it takes 30 minutes. When a squall line appears on the western horizon, that 10-minute difference matters.
+**Best setup:** 21 to 24 ft deep-V with 200 to 250 HP V8 FourStroke + 15 HP ProKicker.
 
-### The Load Factor
-A Lake Ontario salmon rig is heavy. Downriggers (two minimum, often four), planer board masts, multiple rod holders, coolers with ice, electronics, tackle — a fully rigged 21ft deep-V with four anglers aboard is carrying serious weight. A motor that handles a bare boat on calm water isn't the same motor once you add 200+ kg of gear and passengers.
+Same boat handles salmon trolling, walleye fishing on Bay of Quinte, and bass fishing on connected waters. Versatile setup.
 
-### The Conditions Factor
-Running back to port in 1-metre chop at 2/3 throttle with a loaded boat is fundamentally different from cruising a sheltered inland lake. You need power in reserve — not running at maximum.
+## Why bigger HP and bigger kicker on Lake Ontario
 
-## Motor Recommendations by Boat Size
+Lake Ontario fishing is different from sheltered freshwater fishing in three meaningful ways that drive motor selection:
 
-### 18–20ft Deep-V Aluminum (Lund 1875 Pro-V, Crestliner 1950, Alumacraft 185)
-**Main motor: Mercury 150 Pro XS or Mercury 150 FourStroke**
+### 1. Bigger boats need more HP
 
-This is the entry point for serious Lake Ontario salmon fishing. The 150 handles the boat well at speed and provides adequate reserve power for rough water returns. The Pro XS is the better choice if you're running 10+ km offshore — the performance calibration and lighter weight matter on long runs.
+22 to 26 ft deep-V hulls weigh significantly more than 16 to 18 ft aluminum console boats. Loaded with crew, gear, downriggers, and full electronics, the all-up weight can exceed 6,000 lbs. Adequate HP is required to plane reliably and handle conditions.
 
-**Kicker: Mercury 9.9 ProKicker Command Thrust**
+### 2. Trolling spreads add drag
 
-The 9.9 CT is the standard kicker for this size boat. The Command Thrust gearcase delivers consistent trolling speeds of 1.5–3.0 mph, and the EFI system starts reliably on cold mornings.
+Salmon trolling with full spreads (multiple downriggers, planer boards, dipsy divers) creates significant drag. The boat needs to maintain consistent speed against the drag. The 9.9 HP kicker that handles Rice Lake walleye trolling is undersized for Lake Ontario salmon trolling spreads. The 15 HP ProKicker is the standard.
 
-### 20–22ft Deep-V Aluminum or Fiberglass (Lund 2075 Pro-V, Crestliner 2250, Starcraft STX 2050)
-**Main motor: Mercury 200 FourStroke or Mercury 200 Pro XS**
+### 3. Long-day operations
 
-The sweet spot for the north shore fishery. A 200hp motor on a 21ft deep-V provides genuine confidence in Lake Ontario conditions. You're carrying more gear, more people, and running farther offshore. The 200 doesn't just get you there faster — it gets you home safely when conditions change.
+Salmon fishing days are often 8 to 12 hours of trolling. Motors run thousands of hours in heavy commercial-style use over a few seasons. Reliability matters; service intervals matter; choosing the right HP class affects motor life.
 
-The Mercury 200 FourStroke is a 3.4L V6. It's a different class of motor from the 150 — more displacement, more torque, and the 70A alternator handles electronics-heavy rigs without strain.
+## Mercury Pro XS V8 vs FourStroke V8 on Lake Ontario
 
-**Kicker: Mercury 9.9 or 15hp ProKicker**
+For Lake Ontario applications, both Mercury V8 motor families are viable:
 
-The 15hp ProKicker is worth considering on heavier 21ft+ boats. More push for maintaining trolling speed in current or wind.
+- **FourStroke V8 (200 to 300 HP):** Smoother running, slightly better fuel economy at cruise. Best for recreational use, cruising and fishing emphasis.
+- **Pro XS V8 (200 to 300 HP):** Faster acceleration, slightly higher top speed, tournament-tuned response. Best for performance and tournament emphasis.
 
-### 22–26ft Fiberglass Sport Fishing (Pursuit, Grady-White, Boston Whaler, Wellcraft)
-**Main motor: Mercury 225–300 FourStroke or Verado**
+The Pro XS price premium over FourStroke at the same HP is typically $1,000 to $1,500 CAD. Earns the difference for tournament use; harder to justify on family fishing setups.
 
-If you're running a dedicated Lake Ontario sport fishing boat — a centre console or walkaround in the 22–26ft range — you're in Verado territory. The Mercury Verado 250 or 300 delivers the smooth, quiet power these hulls are designed for.
+For specific pricing, [build a quote](/quote/motor-selection).
 
-These boats run 15–20 km offshore, carry serious electronics packages, and need to handle 2-metre seas on the way home. A 250–300hp motor isn't overkill — it's appropriate.
+## What HBW checks before recommending a Lake Ontario setup
 
-**Kicker: Mercury 15hp ProKicker or 20hp FourStroke**
+When customers come for a Lake Ontario salmon repower, we want to know:
 
-Heavier boats need more kicker power to maintain trolling speed with downriggers deployed.
+- **Hull make, model, year, length, and type** (center console, walkaround, sport fisher)
+- **Capacity plate HP rating**
+- **Primary fishing pattern** (downrigger, planer boards, lead core)
+- **Tournament or recreational use**
+- **Number of typical anglers**
+- **Travel distance to fishing zones from your launch port**
+- **Mooring or trailer-launch operation**
+- **Existing electronics and downriggers**
+- **Long-term ownership plan**
+- **Budget and financing tolerance**
 
-## The Two-Motor Setup: Non-Negotiable for Salmon
+Lake Ontario setups are bigger investments than smaller-lake setups. The right configuration matters more.
 
-Running a single main motor for both transit and trolling is a compromise you'll regret:
+## Common Lake Ontario fishing setup mistakes
 
-- **Engine wear:** A 200hp motor idling at 800 RPM for 6 hours of trolling operates outside its optimal range. Carbon deposits accumulate, fuel doesn't atomize properly, and you're adding wear hours without productive use.
-- **Fuel waste:** A big motor at trolling speed burns more fuel per km than a dedicated kicker.
-- **Safety redundancy:** If your main motor fails 10 km offshore, a kicker gets you home. Slowly — but it gets you home.
-- **Trolling precision:** A dedicated kicker with Command Thrust gearcase delivers far more consistent trolling speeds than a big motor at minimal throttle.
+We see these every season:
 
-## Downrigger and Electronics Power Budget
-
-Lake Ontario salmon rigs draw serious electrical current:
-
-| Equipment | Approximate Draw |
-|---|---|
-| Electric downrigger (each) | 5–15A while retrieving |
-| Fish finder / chartplotter | 2–5A |
-| Radar (if equipped) | 3–6A |
-| VHF marine radio | 1–5A (transmit) |
-| LED lighting | 1–3A |
-| Bilge pump | 3–5A |
-| Livewell pump | 3–5A |
-
-With two electric downriggers, sonar, and standard systems running simultaneously, you're drawing 20–40+ amps. The Mercury 150 FourStroke delivers 50A. The 200 FourStroke delivers 70A. The Verado 250/300 delivers 70–85A.
-
-**If you're running four downriggers and a full electronics suite, you need the alternator output of a 200hp+ motor.** This isn't about horsepower — it's about electrical capacity.
-
-## Trolling Setup: The Details That Matter
-
-### Trolling Speed
-- Chinook salmon: 2.0–3.0 mph
-- Coho salmon: 2.5–3.5 mph
-- Lake trout: 1.5–2.5 mph
-- Brown trout: 1.5–2.5 mph
-
-### Downrigger Depths (Summer, North Shore)
-- Chinook: 25–50 metres (80–160 feet), following the thermocline
-- Lake trout: 20–40 metres (65–130 feet)
-- Coho: 10–25 metres (30–80 feet), often higher in the column
-
-The thermocline on Lake Ontario's north shore typically sets up at 12–20 metres in early summer and deepens to 15–25 metres by August. Kings hold just below it. Your fish finder is the most important tool for locating the break.
-
-### Downrigger Recommendations
-- **Minimum:** Two manual downriggers (Cannon Uni-Troll or similar)
-- **Preferred:** Two electric downriggers (Cannon Digi-Troll or Optimax)
-- **Serious rig:** Four electrics — two stern, two midship
-
-Electric downriggers are worth the investment for Lake Ontario. Manually cranking a 5 kg ball from 45 metres while fighting a king is miserable.
-
-## The Safety Argument
-
-Lake Ontario claims boats every season. The most common scenarios:
-
-1. **Sudden weather change.** Southwest winds build waves faster than most people expect on open water.
-2. **Mechanical failure offshore.** A single-motor boat with no kicker, 12 km out, when the main motor won't start.
-3. **Fog.** Lake Ontario generates fog banks that reduce visibility to near zero. GPS and radar aren't luxury items here.
-
-**Required safety equipment for Lake Ontario (beyond regulatory minimums):**
-- Marine VHF radio (handheld backup recommended)
-- GPS / chartplotter
-- Anchor with 30+ metres of line (for emergency positioning)
-- EPIRB or PLB (personal locator beacon) for offshore runs
-- Proper PFDs for all aboard — not cushions, actual wearable PFDs
-- Weather radio or app with marine forecasts
-
-The Canadian Coast Guard monitors VHF Channel 16. Cell coverage is unreliable 10+ km offshore.
-
-## Motor Recommendation Summary
-
-| Boat Type | Main Motor | Kicker | Best For |
-|---|---|---|---|
-| 18–20ft aluminum deep-V | Mercury 150 Pro XS | 9.9 ProKicker CT | Entry-level Lake Ontario salmon |
-| 20–22ft aluminum deep-V | Mercury 200 FourStroke | 9.9–15hp ProKicker | Serious north shore fishing |
-| 20–22ft fiberglass deep-V | Mercury 200 Pro XS | 15hp ProKicker | Performance + offshore capability |
-| 22–26ft fiberglass sport | Mercury 250–300 Verado | 15–20hp FourStroke | Full offshore salmon rig |
-| Charter / guide boat | Mercury 250–300 Verado | 15–20hp ProKicker | All-day, all-season reliability |
-
-## SmartCraft and VesselView: Why They Matter Offshore
-
-When you're 12 km offshore with a full load of fish and the wind is picking up, real-time engine data isn't a gadget — it's critical information:
-
-- **Fuel remaining and range calculation:** Know exactly whether you can make port or need to head in now.
-- **Engine temperature and voltage:** Catch cooling or charging problems before they strand you.
-- **Speed over ground:** Precise trolling speed data for dialing in your presentation.
-- **Engine hours and maintenance alerts:** Professional-grade fleet management for charter operators.
-
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+1. **Underpowering.** A 150 HP on a 22 ft Lake Ontario fishing boat is going to disappoint when fully loaded. The math favors more HP.
+2. **Too small a kicker.** A 9.9 ProKicker on a 22+ ft Lake Ontario boat with full trolling spread is undersized. The 15 HP ProKicker is the standard.
+3. **Skipping electronics integration.** Modern Mercury motors integrate with chart plotters, sonar, and downrigger systems. Plan during the repower, not after.
+4. **Wrong prop for trolling.** Lake Ontario trolling props need to handle drag of full spreads. Standard recreational props sometimes underperform.
+5. **Skipping marina storage planning.** Slip storage means different winterization needs than trailer storage. Plan early.
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
-- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) — Lake Simcoe walleye picks
-- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
-- [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
+- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), bigger water but not as big as Lake Ontario
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), the small-water comparison
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker basics (Lake Ontario uses 15 HP variant)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), V8 family selection
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP class guidance
+
+## Ready for your Lake Ontario setup?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific Lake Ontario salmon or trout setup, [give us a call at (905) 342-2153](tel:9053422153). Lake Ontario rigs are bigger investments and the configuration matters more.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**What is the best Mercury outboard for Lake Ontario salmon fishing?**
+For typical recreational salmon trolling, 22 to 25 ft deep-V or walkaround hull with 250 to 300 HP V8 FourStroke + 15 HP ProKicker. For tournament use, 300 HP Pro XS V8 or twin engine setups.
+
+**Do I need a bigger kicker for Lake Ontario than for smaller lakes?**
+Yes. The 9.9 ProKicker that handles Rice Lake walleye is undersized for Lake Ontario salmon trolling spreads. The 15 HP ProKicker is the standard.
+
+**Can I fish Lake Ontario with my smaller boat?**
+With caution and good weather, yes. Boats under 21 ft are exposed in moderate Lake Ontario weather. Most serious salmon anglers run 22 ft and bigger.
+
+**Should I get FourStroke V8 or Pro XS V8 for Lake Ontario?**
+FourStroke for recreational use, Pro XS for tournament use. Both perform well; Pro XS has faster acceleration and slightly higher top speed.
+
+**What hull type is best for Lake Ontario salmon fishing?**
+Deep-V or modified-V hulls handle Lake Ontario chop best. Center consoles, walkarounds, and sport fishers are the typical configurations. Aluminum or fiberglass both work; fiberglass is more common in this size class.
+
+**How much HP do I need for a 24-foot Lake Ontario salmon boat?**
+For typical recreational trolling, 250 to 300 HP V8. For tournament fishing, 300 HP Pro XS V8 or twin engines. Capacity plate sets the legal ceiling.
+
+**Should I run twin engines for Lake Ontario?**
+For tournament fishing or charter operations, sometimes. Twin engines provide redundancy (one fails, you make it home) and combined HP. Adds significant cost (motor, rigging, fuel). For most recreational anglers, single engine is fine.
+
+**Is Mercury Verado the right choice for Lake Ontario?**
+For specific applications (charter, tournament, very high HP single setups), yes. Verado is special-order at HBW. Most Lake Ontario recreational anglers do not need Verado. [Contact us](/contact) for specific Verado quotes.
+
+**What's the cost of a typical Lake Ontario salmon repower?**
+For a 22 to 25 ft setup with 250 to 300 HP V8 FourStroke + 15 HP ProKicker, $35,000 to $50,000+ CAD all-in at HBW. Includes rigging, prop, and install. [Live pricing here.](/quote/motor-selection)
+
+**Where do most Lake Ontario salmon anglers launch?**
+Major ports: Cobourg, Whitby, Newcastle, Port Credit, Toronto. Each has trailer-launch ramps and slip-storage marinas. Local knowledge varies by port.
+
+**When is the best time for Lake Ontario salmon fishing?**
+Spring through fall. Coho and chinook salmon peak in summer. Lake trout peak in spring and fall. Brown trout and rainbow trout are caught throughout the season.
+
+**Should I consider a sport fisher hull for Lake Ontario?**
+For dedicated salmon fishing operations, yes. Sport fishers (with hardtop, full electronics, downriggers) are purpose-built for Lake Ontario. Higher cost but optimized for the use.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
 
     `,
     faqs: [
       {
-        question: 'What size boat do I need for Lake Ontario salmon fishing?',
-        answer: 'Minimum 18ft deep-V hull, but 20-22ft is the practical standard. Lake Ontario generates significant waves quickly, and you need a hull that handles 1-2 metre chop safely. Flat-bottom and pontoon boats are not appropriate for offshore salmon fishing.'
+        question: 'What is the best Mercury outboard for Lake Ontario salmon fishing?',
+        answer: 'For typical recreational salmon trolling, 22 to 25 ft deep-V or walkaround hull with 250 to 300 HP V8 FourStroke + 15 HP ProKicker. For tournament use, 300 HP Pro XS V8 or twin engine setups.'
       },
       {
-        question: 'How far offshore do you fish for salmon on Lake Ontario?',
-        answer: 'On the Ontario north shore, productive summer salmon water is typically 5-15 km offshore, following the thermocline at 25-50 metres depth. Spring and fall fishing can be closer to shore as fish stage near tributary mouths.'
+        question: 'Do I need a bigger kicker for Lake Ontario than for smaller lakes?',
+        answer: 'Yes. The 9.9 ProKicker that handles Rice Lake walleye is undersized for Lake Ontario salmon trolling spreads. The 15 HP ProKicker is the standard.'
       },
       {
-        question: 'Do I need a kicker motor for Lake Ontario?',
-        answer: 'Strongly recommended. A dedicated kicker like the Mercury 9.9 ProKicker Command Thrust provides consistent trolling speeds, reduces main motor wear, and serves as critical safety redundancy if your main motor fails offshore.'
+        question: 'Can I fish Lake Ontario with my smaller boat?',
+        answer: 'With caution and good weather, yes. Boats under 21 ft are exposed in moderate Lake Ontario weather. Most serious salmon anglers run 22 ft and bigger.'
       },
       {
-        question: 'What HP motor do I need for Lake Ontario salmon fishing?',
-        answer: 'Minimum 150hp on an 18-20ft boat. For 20-22ft boats fishing regularly offshore, 200hp is the right choice. Charter and sport fishing boats in the 22-26ft range typically run 250-300hp. The motor needs to handle loaded weight in rough conditions, not just calm water.'
+        question: 'Should I get FourStroke V8 or Pro XS V8 for Lake Ontario?',
+        answer: 'FourStroke for recreational use, Pro XS for tournament use. Both perform well; Pro XS has faster acceleration and slightly higher top speed.'
       },
       {
-        question: 'What is the best time of year for Lake Ontario salmon fishing?',
-        answer: 'Kings are available April through October on the north shore. Peak offshore trolling is July through September. Fall staging near river mouths (Port Hope, Cobourg) peaks in September-October. Brown trout are excellent in spring (April-May) and late fall (November).'
+        question: 'What hull type is best for Lake Ontario salmon fishing?',
+        answer: 'Deep-V or modified-V hulls handle Lake Ontario chop best. Center consoles, walkarounds, and sport fishers are the typical configurations. Aluminum or fiberglass both work; fiberglass is more common in this size class.'
       },
       {
-        question: 'What ports are best for Lake Ontario salmon fishing near Rice Lake?',
-        answer: 'Port Hope and Cobourg are the closest north shore ports to Rice Lake and Harris Boat Works. Both have public launches, fuel, and fish cleaning stations. Brighton (Presqu\\\'ile Bay) and Trenton are also within easy driving distance.'
+        question: 'How much HP do I need for a 24-foot Lake Ontario salmon boat?',
+        answer: 'For typical recreational trolling, 250 to 300 HP V8. For tournament fishing, 300 HP Pro XS V8 or twin engines. Capacity plate sets the legal ceiling.'
       },
       {
-        question: 'How many downriggers do I need for Lake Ontario?',
-        answer: 'Minimum two. Most serious salmon anglers run four — two stern-mounted and two midship. Electric downriggers are strongly recommended for Lake Ontario depths. Manually cranking from 40+ metres while fighting a fish is impractical.'
-      }
+        question: 'Should I run twin engines for Lake Ontario?',
+        answer: 'For tournament fishing or charter operations, sometimes. Twin engines provide redundancy (one fails, you make it home) and combined HP. Adds significant cost (motor, rigging, fuel). For most recreational anglers, single engine is fine.'
+      },
+      {
+        question: 'Is Mercury Verado the right choice for Lake Ontario?',
+        answer: 'For specific applications (charter, tournament, very high HP single setups), yes. Verado is special-order at HBW. Most Lake Ontario recreational anglers do not need Verado. [Contact us](/contact) for specific Verado quotes.'
+      },
+      {
+        question: 'What\'s the cost of a typical Lake Ontario salmon repower?',
+        answer: 'For a 22 to 25 ft setup with 250 to 300 HP V8 FourStroke + 15 HP ProKicker, $35,000 to $50,000+ CAD all-in at HBW. Includes rigging, prop, and install. [Live pricing here.](/quote/motor-selection)'
+      },
+      {
+        question: 'Where do most Lake Ontario salmon anglers launch?',
+        answer: 'Major ports: Cobourg, Whitby, Newcastle, Port Credit, Toronto. Each has trailer-launch ramps and slip-storage marinas. Local knowledge varies by port.'
+      },
+      {
+        question: 'When is the best time for Lake Ontario salmon fishing?',
+        answer: 'Spring through fall. Coho and chinook salmon peak in summer. Lake trout peak in spring and fall. Brown trout and rainbow trout are caught throughout the season.'
+      },
+      {
+        question: 'Should I consider a sport fisher hull for Lake Ontario?',
+        answer: 'For dedicated salmon fishing operations, yes. Sport fishers (with hardtop, full electronics, downriggers) are purpose-built for Lake Ontario. Higher cost but optimized for the use.'
+      },
     ]
   },
   {
