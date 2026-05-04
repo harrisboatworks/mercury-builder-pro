@@ -789,14 +789,30 @@ html {
   transition: filter 0.5s ease-out, transform 0.5s ease-out;
 }
 
-/* Premium Card Hover Effects */
+/* ===== Shared Card Hover (locked spec) =====
+ * Flat at rest, lifts subtly with brand-easing on hover.
+ * Use on any card surface for consistent interaction feel.
+ */
+.card-hover {
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -12px rgba(11, 31, 58, 0.18);
+}
+
+/* Premium Card Hover Effects (legacy — used by hero/marketing cards) */
 .premium-card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .premium-card-hover:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(11, 31, 58, 0.12), 0 10px 10px -5px rgba(11, 31, 58, 0.05);
+  transform: translateY(-6px);
 }
 
 .premium-card-hover:hover .card-image {
