@@ -71,7 +71,28 @@ export function HeroRepower() {
   const [variantIndex, setVariantIndex] = useState(0);
 
   useEffect(() => {
-    setVariantIndex(pickVariationIndex());
+    const idx = pickVariationIndex();
+    setVariantIndex(idx);
+
+    // Fire a single hero_impression event per session, GA4 via window.gtag.
+    // Deduped by sessionStorage so a route-back / re-mount doesn't double-count.
+    try {
+      const variant = HERO_VARIATIONS[idx] ?? HERO_VARIATIONS[0];
+      const dedupeKey = `hero-impression-${variant.id}`;
+      if (sessionStorage.getItem(dedupeKey) !== '1') {
+        sessionStorage.setItem(dedupeKey, '1');
+        const gtag = (window as any).gtag;
+        if (typeof gtag === 'function') {
+          gtag('event', 'hero_impression', {
+            hero_variant_id: variant.id,
+            hero_variant_index: idx,
+            page_path: window.location.pathname,
+          });
+        }
+      }
+    } catch {
+      // Swallow analytics errors - never break the hero on telemetry failure.
+    }
   }, []);
 
   const variation = HERO_VARIATIONS[variantIndex] ?? HERO_VARIATIONS[0];
