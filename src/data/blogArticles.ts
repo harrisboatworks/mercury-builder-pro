@@ -530,8 +530,8 @@ As a Mercury dealer since 1965 and a Mercury Certified Repower Center, Harris Bo
 
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Ontario Cottage Owner\'s Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
-- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner\'s Guide](/blog/evinrude-to-mercury-repower-ontario-guide) — switching from Evinrude to Mercury
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide](/blog/evinrude-to-mercury-repower-ontario-guide) — switching from Evinrude to Mercury
 
     `,
     faqs: [
@@ -854,7 +854,7 @@ Prefer a non-ProKicker 9.9 as a true main-engine kicker on smaller hulls? See th
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert\'s Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
 - [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) — Lake Simcoe walleye picks
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
 - [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
@@ -999,7 +999,7 @@ We're boaters ourselves. We fish these lakes, we know these conditions, and we s
 - [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
 - [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario) — Mercury vs Yamaha for Ontario
 - [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
-- [2027 Mercury Outboard Preview: What\'s New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
+- [2027 Mercury Outboard Preview: What's New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
 
     `,
     faqs: [
@@ -1154,8 +1154,8 @@ For the typical Ontario angler fishing inland lakes with a 16ft aluminum boat:
 
 ## Related guides
 
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
+- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
+- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
 - [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
 - [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts) — family-runabout recommendations
 - [Best Mercury for Ski and Wakeboard Boats](/blog/best-mercury-for-ski-wakeboard-boats) — ski and wakeboard motor picks
@@ -1336,7 +1336,7 @@ For smaller 18–20ft pontoons and heavier 16–18ft aluminum hulls, the [Mercur
 ## Related guides
 
 - [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
+- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
 - [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
 - [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts) — family-runabout recommendations
 
@@ -1657,7 +1657,7 @@ Repower during winter for:
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner\'s Guide](/blog/evinrude-to-mercury-repower-ontario-guide) — switching from Evinrude to Mercury
+- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide](/blog/evinrude-to-mercury-repower-ontario-guide) — switching from Evinrude to Mercury
 
     `,
     faqs: [
@@ -1809,7 +1809,7 @@ Stop by and we'll set you up with exactly what you need for Rice Lake success.
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
 - [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
 - [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
-- [Best Outboard Motors for Ontario\'s Small Lakes and Cottage Country](/blog/best-motor-small-lakes-ontario) — best motor for small Ontario lakes
+- [Best Outboard Motors for Ontario's Small Lakes and Cottage Country](/blog/best-motor-small-lakes-ontario) — best motor for small Ontario lakes
 
     `,
     faqs: [
@@ -1981,8 +1981,8 @@ Mercury SmartCraft gauges work with older motors. If you're upgrading to a motor
 
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner\'s Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
-- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner\'s Guide](/blog/evinrude-to-mercury-repower-ontario-guide) — switching from Evinrude to Mercury
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide](/blog/evinrude-to-mercury-repower-ontario-guide) — switching from Evinrude to Mercury
 - [Winter Repower Planning: Get Ready for Spring](/blog/winter-repower-planning-guide) — why winter is the smart time to plan
 
     `,
@@ -2322,7 +2322,7 @@ If budget is tighter and you fish recreationally — chasing smallmouth on Rice 
 ## Related guides
 
 - [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
+- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
 - [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
 - [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts) — family-runabout recommendations
 
@@ -2498,7 +2498,7 @@ Continuously optimizes fuel delivery across operating conditions for maximum ran
 - [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) — choosing the right propeller
 - [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide) — SmartCraft gauges explained
 - [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide) — Digital Throttle & Shift basics
-- [mercury-boost-software-upgrade-eligibility-2026](/blog/mercury-boost-software-upgrade-eligibility-2026) — Boost software upgrade eligibility
+- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026) — Boost software upgrade eligibility
 
     `,
     faqs: [
@@ -2643,8 +2643,8 @@ Mercury's Joystick Piloting for Outboards is a game-changer for docking:
 ## Related guides
 
 - [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
+- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
+- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
 - [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts) — family-runabout recommendations
 
     `,
@@ -3181,7 +3181,7 @@ Many boats leave the factory with a "one size fits most" prop. A proper selectio
 - [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide) — maximizing fuel efficiency
 - [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide) — SmartCraft gauges explained
 - [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide) — Digital Throttle & Shift basics
-- [mercury-boost-software-upgrade-eligibility-2026](/blog/mercury-boost-software-upgrade-eligibility-2026) — Boost software upgrade eligibility
+- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026) — Boost software upgrade eligibility
 - [Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)](/blog/mercury-boost-upgrade-150hp-pontoon-analysis) — 150 HP Boost upgrade analysis
 
     `,
@@ -3335,8 +3335,8 @@ We support fishing guides throughout the Kawarthas with SeaPro motors. They appr
 ## Related guides
 
 - [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
+- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
+- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
 - [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
 
     `,
@@ -3599,8 +3599,8 @@ This setup covers every fishing situation.
 ## Related guides
 
 - [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
+- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
+- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
 - [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
 
     `,
@@ -3876,7 +3876,7 @@ We can help you plan and install the right SmartCraft setup.
 - [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) — choosing the right propeller
 - [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide) — maximizing fuel efficiency
 - [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide) — Digital Throttle & Shift basics
-- [mercury-boost-software-upgrade-eligibility-2026](/blog/mercury-boost-software-upgrade-eligibility-2026) — Boost software upgrade eligibility
+- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026) — Boost software upgrade eligibility
 
     `,
     faqs: [
@@ -3998,7 +3998,7 @@ For real CAD pricing on what you'd actually be financing, see our canonical [202
 
 - [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026) — current financing rates and terms
 - [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026) — live 2026 promotions and rebates
-- [What\'s the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026) — lowest-cost Mercury models in Canada
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026) — lowest-cost Mercury models in Canada
 - [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers) — what 2026 looks like for Ontario buyers
 
     `,
@@ -4725,7 +4725,7 @@ DTS enables Mercury Joystick Piloting:
 - [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) — choosing the right propeller
 - [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide) — maximizing fuel efficiency
 - [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide) — SmartCraft gauges explained
-- [mercury-boost-software-upgrade-eligibility-2026](/blog/mercury-boost-software-upgrade-eligibility-2026) — Boost software upgrade eligibility
+- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026) — Boost software upgrade eligibility
 
     `,
     faqs: [
@@ -4854,7 +4854,7 @@ This covers all musky fishing scenarios in the Kawarthas.
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert\'s Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
 - [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) — Lake Simcoe walleye picks
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
 - [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
@@ -4988,7 +4988,7 @@ Contact us about electric options
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert\'s Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
 - [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) — Lake Simcoe walleye picks
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
 - [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
@@ -6242,7 +6242,7 @@ If yes to most, repower makes sense.
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner\'s Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
 
     `,
     faqs: [
@@ -6447,7 +6447,7 @@ Before you negotiate, anchor your expectations to real numbers — our [2026 Mer
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner\'s Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
 
     `,
     faqs: [
@@ -6614,8 +6614,8 @@ Family runabouts need motors that balance power, reliability, and ease of use. H
 ## Related guides
 
 - [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
+- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
+- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
 - [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
 
     `,
@@ -6813,8 +6813,8 @@ Watersports demand specific characteristics from your outboard—quick accelerat
 ## Related guides
 
 - [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
+- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
+- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
 - [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
 
     `,
@@ -7230,7 +7230,7 @@ For complete installed-repower pricing in CAD — including the rigging, control
 
 - [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026) — current financing rates and terms
 - [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario) — financing basics for Ontario buyers
-- [What\'s the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026) — lowest-cost Mercury models in Canada
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026) — lowest-cost Mercury models in Canada
 - [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers) — what 2026 looks like for Ontario buyers
 
     `,
@@ -7460,7 +7460,7 @@ Typically when motor is installed and ready for water test. Review payment terms
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner\'s Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
 
     `,
     faqs: [
@@ -7595,7 +7595,7 @@ Stop by the marina in Gores Landing, give us a call at (905) 342-2153, or [brows
 - [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026) — current financing rates and terms
 - [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario) — financing basics for Ontario buyers
 - [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026) — live 2026 promotions and rebates
-- [What\'s the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026) — lowest-cost Mercury models in Canada
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026) — lowest-cost Mercury models in Canada
 
     `,
     faqs: [
@@ -7980,7 +7980,7 @@ The pattern often looks like this:
 Industry data aligns with this: rental and club participants are a major source of future boat buyers. Our job is to help you make that transition when you're ready, with:
 
 - Practical advice on boat size and layout for Rice Lake.
-- Clear explanations of engine options ([Mercury FourStroke, ProKicker](/blog/mercury-prokicker-rice-lake-anglers-guide), etc.).
+- Clear explanations of engine options ([Mercury FourStroke, ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide), etc.).
 - Straight talk about new vs. used and what fits your budget and usage.
 
 ## Getting on Rice Lake in 2026
@@ -8123,7 +8123,7 @@ Avator won't replace combustion outboards on Rice Lake tomorrow, but it's an imp
 
 ### ProKicker: Purpose-Built for Trolling
 
-For serious anglers, Mercury's [ProKicker line](/blog/mercury-prokicker-rice-lake-anglers-guide) offers 9.9–15 HP four-stroke outboards engineered specifically as kicker/trolling motors. Features include:
+For serious anglers, Mercury's [ProKicker line](/blog/mercury-prokicker-rice-lake-fishing-guide) offers 9.9–15 HP four-stroke outboards engineered specifically as kicker/trolling motors. Features include:
 
 - High-thrust propellers and gearing optimized for slow-speed control
 - Extended tillers and brackets for easier integration on larger transoms
@@ -8168,7 +8168,7 @@ We're not interested in selling you whatever happens to be on a crate this month
 
 ## Ready to Talk Outboards?
 
-Whether you're repowering an older boat, spec'ing a new Legend package, [adding a ProKicker for trolling](/blog/mercury-prokicker-rice-lake-anglers-guide), or planning your first serious fishing rig — we're here to help you choose and set up the right Mercury outboard.
+Whether you're repowering an older boat, spec'ing a new Legend package, [adding a ProKicker for trolling](/blog/mercury-prokicker-rice-lake-fishing-guide), or planning your first serious fishing rig — we're here to help you choose and set up the right Mercury outboard.
 
 [Browse Mercury motors and get pricing](/quote/motor-selection) — or call us at (905) 342-2153 to start the conversation.
 
@@ -8179,7 +8179,7 @@ Whether you're repowering an older boat, spec'ing a new Legend package, [adding 
 - [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer) — why Harris Boat Works is Mercury
 - [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario) — Mercury vs Yamaha for Ontario
 - [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
-- [2027 Mercury Outboard Preview: What\'s New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
+- [2027 Mercury Outboard Preview: What's New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
 - [Inside Mercury's 2026 Outboard Lineup: What Actually Matters for Ontario Boaters](/blog/mercury-2026-outboard-lineup-ontario) — 2026 Mercury lineup for Ontario
 
     `,
@@ -8230,7 +8230,7 @@ Whether you're repowering an older boat, spec'ing a new Legend package, [adding 
       },
       {
         question: 'What size Mercury ProKicker should I get for trolling Rice Lake?',
-        answer: 'For most Rice Lake trolling applications on mid-size aluminum and fibreglass boats (17–20ft), the Mercury 9.9 ProKicker is the right choice. Its high-thrust gearing provides excellent speed control at very low RPMs for walleye and muskie trolling at 1.5–3 mph. For larger or heavier boats (21ft+), the Mercury 15 ProKicker provides more thrust to hold position and speed in Rice Lake\'s wind and current conditions. See the ProKicker guide at mercuryrepower.ca/blog/mercury-prokicker-rice-lake-anglers-guide.'
+        answer: 'For most Rice Lake trolling applications on mid-size aluminum and fibreglass boats (17–20ft), the Mercury 9.9 ProKicker is the right choice. Its high-thrust gearing provides excellent speed control at very low RPMs for walleye and muskie trolling at 1.5–3 mph. For larger or heavier boats (21ft+), the Mercury 15 ProKicker provides more thrust to hold position and speed in Rice Lake\'s wind and current conditions. See the ProKicker guide at mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.'
       },
       {
         question: 'What is the difference between Mercury FourStroke and Mercury Pro XS?',
@@ -8359,11 +8359,11 @@ If you're thinking about a new engine for 2026, [talk to us](/contact) about how
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
-- [2026 Mercury Model Preview](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
-- [Mercury vs Yamaha vs Honda: Reliability 2026](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) — FourStroke vs Pro XS vs Verado families
-- [Mercury 2026 Pricing & Promotions](/blog/mercury-pricing-promotions-2026) — live 2026 promotions and rebates
+- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
+- [2027 Mercury Outboard Preview: What's New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
+- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
+- [Understanding Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) — FourStroke vs Pro XS vs Verado families
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026) — live 2026 promotions and rebates
 `,
     faqs: [
       {
@@ -8530,11 +8530,11 @@ Then we'll give you a frank recommendation on gas, electric, or a hybrid of both
 
 ## Related guides
 
-- [Best Mercury Outboards for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Electric Trolling Motor & Kicker Guide](/blog/electric-trolling-motor-kicker-guide) — electric trolling and kicker setups
-- [Best Motor for Small Lakes in Ontario](/blog/best-motor-small-lakes-ontario) — best motor for small Ontario lakes
-- [Portable Mercury Outboard Guide (2–20 HP)](/blog/portable-outboard-mercury-guide-2-20hp) — portable 2–20 HP options
-- [Inside Mercury's 2026 Outboard Lineup](/blog/mercury-2026-outboard-lineup-ontario) — 2026 Mercury lineup for Ontario
+- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
+- [Trolling Motor vs Kicker: Which Auxiliary Setup Is Right for You?](/blog/electric-trolling-motor-kicker-guide) — electric trolling and kicker setups
+- [Best Outboard Motors for Ontario's Small Lakes and Cottage Country](/blog/best-motor-small-lakes-ontario) — best motor for small Ontario lakes
+- [Mercury Portable Outboards (2.5-20HP): Complete Buyer's Guide](/blog/portable-outboard-mercury-guide-2-20hp) — portable 2–20 HP options
+- [Inside Mercury's 2026 Outboard Lineup: What Actually Matters for Ontario Boaters](/blog/mercury-2026-outboard-lineup-ontario) — 2026 Mercury lineup for Ontario
 
     `,
     faqs: [
@@ -8671,11 +8671,11 @@ If you want to tune your setup for this year's conditions, or just nail down a p
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
-- [Mercury Pro Kicker on Rice Lake](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
-- [Musky Boat Motor Guide — Kawarthas](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
-- [Walleye Opener Boat Prep](/blog/walleye-opener-boat-prep) — walleye-opener boat prep
-- [Trailering from Toronto to Rice Lake](/blog/trailer-boat-toronto-to-rice-lake-guide) — trailering from Toronto to Rice Lake
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
+- [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
+- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
+- [Getting Your Boat Ready for Walleye Opener](/blog/walleye-opener-boat-prep) — walleye-opener boat prep
+- [How to Trailer a Boat from Toronto to Rice Lake (Complete 2026 Guide)](/blog/trailer-boat-toronto-to-rice-lake-guide) — trailering from Toronto to Rice Lake
 
     `,
     faqs: [
@@ -8958,7 +8958,7 @@ Set a reminder. When the new motor goes in, update the PCL. It's free, it's fast
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner\'s Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
 
     `,
     faqs: [
@@ -9087,7 +9087,7 @@ For full installed-repower pricing in CAD across every HP class — what most Ev
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner\'s Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
 
     `,
     faqs: [
@@ -9262,9 +9262,9 @@ Mercury runs seasonal warranty and rebate promotions through HBW. Terms rotate t
 ## Related guides
 
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full process from inspection to lake test
-- [Replacing Your Evinrude with a Mercury Outboard](/blog/evinrude-to-mercury-repower-ontario-guide), specific guidance for owners switching brands
-- [Mercury Outboard Financing in Ontario](/blog/mercury-outboard-financing-ontario-2026), payment math, terms, what counts toward the loan
-- [Boat Hull Replacement vs Repower: When to Replace, When to Buy](/blog/boat-hull-replacement-vs-repower-decision), the honest version of the buy-new vs. repower decision
+- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide](/blog/evinrude-to-mercury-repower-ontario-guide), specific guidance for owners switching brands
+- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), payment math, terms, what counts toward the loan
+- [Boat Hull Replacement vs Repower: When to Repower, When to Buy a New Hull](/blog/boat-hull-replacement-vs-repower-decision), the honest version of the buy-new vs. repower decision
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), match a motor to your hull, not your wallet
 
 ## Ready to price it?
@@ -9376,7 +9376,7 @@ If you're in the Kawarthas or Rice Lake region — Mercury makes sense. Not beca
 - [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
 - [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer) — why Harris Boat Works is Mercury
 - [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
-- [2027 Mercury Outboard Preview: What\'s New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
+- [2027 Mercury Outboard Preview: What's New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
 
     `,
     faqs: [
@@ -9700,10 +9700,10 @@ What does not make sense: financing a repower at 7.99% AND keeping a big chunk o
 
 ## Related guides
 
-- [How Much Does a Mercury Repower Cost in Ontario?](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that pairs with this financing guide
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that pairs with this financing guide
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full process from inspection to lake test
-- [Replacing Your Evinrude with a Mercury Outboard](/blog/evinrude-to-mercury-repower-ontario-guide), specific guidance for owners switching brands
-- [Boat Hull Replacement vs Repower](/blog/boat-hull-replacement-vs-repower-decision), the honest version of the buy-new vs. repower decision
+- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide](/blog/evinrude-to-mercury-repower-ontario-guide), specific guidance for owners switching brands
+- [Boat Hull Replacement vs Repower: When to Repower, When to Buy a New Hull](/blog/boat-hull-replacement-vs-repower-decision), the honest version of the buy-new vs. repower decision
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), match a motor to your hull, not your wallet
 
 ## Ready to run real numbers?
@@ -9816,7 +9816,7 @@ The motor is the most important safety equipment on your boat after the life jac
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert\'s Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
 - [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
 - [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
@@ -10044,7 +10044,7 @@ When you're 12 km offshore with a full load of fish and the wind is picking up, 
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert\'s Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
 - [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) — Lake Simcoe walleye picks
 - [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
 - [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
@@ -10591,10 +10591,10 @@ These are the situations where saving $2,000 on a smaller motor will cost you tw
 
 ## Related guides
 
-- [How Much Does a Mercury Repower Cost in Ontario?](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that walks through every HP class
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that walks through every HP class
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), match a motor to your hull, not your wallet
-- [Mercury Outboard Financing in Ontario](/blog/mercury-outboard-financing-ontario-2026), payment math, terms, what counts toward the loan
-- [Mercury Portable Outboards (2.5-20HP) Buyer's Guide](/blog/portable-outboard-mercury-guide-2-20hp), specific guidance for the small tiller class
+- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), payment math, terms, what counts toward the loan
+- [Mercury Portable Outboards (2.5-20HP): Complete Buyer's Guide](/blog/portable-outboard-mercury-guide-2-20hp), specific guidance for the small tiller class
 - [Trolling Motor vs Kicker: Which Auxiliary Setup Is Right for You?](/blog/electric-trolling-motor-kicker-guide), if you are looking at small motors as a kicker
 
 ## Ready to find your motor?
@@ -10731,11 +10731,11 @@ For most Ontario boaters, switching to Mercury makes sense if you are doing a fu
 
 ## Related guides
 
-- [Replacing Your Evinrude with a Mercury Outboard](/blog/evinrude-to-mercury-repower-ontario-guide), specific guidance for owners switching brands (the same logic applies coming from Yamaha or Honda)
-- [How Much Does a Mercury Repower Cost in Ontario?](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that walks through every HP class
-- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), the lineup explained
+- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide](/blog/evinrude-to-mercury-repower-ontario-guide), specific guidance for owners switching brands (the same logic applies coming from Yamaha or Honda)
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that walks through every HP class
+- [Understanding Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), the lineup explained
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), match a motor to your hull
-- [Why Harris Boat Works is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for our shop specifically
+- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for our shop specifically
 
 ## Ready to switch to Mercury?
 
@@ -10875,11 +10875,11 @@ Most $30,000 budgets do better with a repower path. The savings on the hull (use
 
 ## Related guides
 
-- [How Much Does a Mercury Repower Cost in Ontario?](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that walks through every HP class
-- [Mercury Outboard Financing in Ontario](/blog/mercury-outboard-financing-ontario-2026), payment math, terms, and trade-in credit
-- [Boat Hull Replacement vs Repower](/blog/boat-hull-replacement-vs-repower-decision), the honest version of the buy-new vs. repower decision
-- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), motor selection for the local fishery
-- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific motor sizing
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), the price guide that walks through every HP class
+- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), payment math, terms, and trade-in credit
+- [Boat Hull Replacement vs Repower: When to Repower, When to Buy a New Hull](/blog/boat-hull-replacement-vs-repower-decision), the honest version of the buy-new vs. repower decision
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing), motor selection for the local fishery
+- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific motor sizing
 
 ## Ready to find your motor?
 
@@ -11072,7 +11072,7 @@ Read more about [the best Mercury outboards for Rice Lake fishing](https://mercu
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert\'s Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
 - [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) — Lake Simcoe walleye picks
 - [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
 - [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
@@ -11457,8 +11457,8 @@ The lake will be there. The right time to buy is when it makes sense for you, no
 ## Related guides
 
 - [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer\'s Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
+- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
+- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
 - [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
 
 `,
@@ -11674,7 +11674,7 @@ For more on [repower costs in Ontario](/blog/mercury-repower-cost-ontario-2026-c
 - [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
 - [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner\'s Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
 
 `,
     faqs: [
