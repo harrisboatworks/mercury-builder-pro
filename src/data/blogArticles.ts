@@ -1174,7 +1174,7 @@ Best choice: Mercury 115HP FourStroke
 Minimum: 150HP
 Recommended: **200-300HP**
 Maximum: Up to 400HP on some models
-Best choice: Mercury Verado 250HP or higher
+Best choice: Mercury 250-300HP Pro XS
 
 ### The Power-to-Weight Reality
 
