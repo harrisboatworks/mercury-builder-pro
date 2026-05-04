@@ -21,18 +21,19 @@ const fallbackMotorPrices: Record<number, { min: number; max: number; avg: numbe
 };
 
 const riggingCosts: Record<string, { min: number; max: number; avg: number; label: string }> = {
-  keep: { min: 0, max: 500, avg: 250, label: 'Keep Existing Controls' },
-  upgrade: { min: 1500, max: 2500, avg: 2000, label: 'Upgrade Controls' },
-  replace: { min: 3000, max: 4000, avg: 3500, label: 'Full Rigging Replacement' },
+  keep: { min: 0, max: 300, avg: 150, label: 'Keep Existing Controls' },
+  upgrade: { min: 800, max: 1400, avg: 1100, label: 'Upgrade Controls' },
+  replace: { min: 1800, max: 2600, avg: 2200, label: 'Full Controls Replacement' },
 };
 
+// Flat installation + propeller fee
 const installationCosts: Record<number, number> = {
-  40: 800,
+  40: 900,
   60: 900,
-  75: 1000,
-  90: 1100,
-  115: 1200,
-  150: 1500,
+  75: 900,
+  90: 900,
+  115: 900,
+  150: 900,
 };
 
 const presetScenarios = [
