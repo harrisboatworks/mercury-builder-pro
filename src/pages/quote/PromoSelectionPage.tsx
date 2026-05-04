@@ -262,15 +262,15 @@ export default function PromoSelectionPage() {
             </p>
 
             {/* Warranty Badge - Included with Shimmer Effect, no opacity animation */}
-            <div className="relative inline-flex items-center gap-4 bg-green-50 dark:bg-green-950/30 backdrop-blur-sm border border-green-200 dark:border-green-800 rounded-xl px-6 py-4 mb-10 overflow-hidden">
+            <div className="relative inline-flex items-center gap-4 bg-repower-cream backdrop-blur-sm border border-repower-gold/30 rounded-xl px-6 py-4 mb-10 overflow-hidden">
               {/* Shimmer overlay */}
               <div 
-                className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-green-200/30 to-transparent pointer-events-none" 
+                className="absolute inset-0 -translate-x-full animate-shimmer-sweep bg-gradient-to-r from-transparent via-repower-gold/20 to-transparent pointer-events-none" 
               />
               
               {/* Floating Shield Icon */}
               <motion.div 
-                className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center"
+                className="w-12 h-12 rounded-full bg-repower-gold/20 flex items-center justify-center"
                 animate={{ y: [0, -6, 0] }}
                 transition={{ 
                   duration: 3, 
@@ -278,7 +278,7 @@ export default function PromoSelectionPage() {
                   repeat: Infinity 
                 }}
               >
-                <Shield className="w-6 h-6 text-green-400" />
+                <Shield className="w-6 h-6 text-repower-navy-900" />
               </motion.div>
               <div className="text-left">
                 <div className="text-foreground font-bold text-lg">7 Years Factory Warranty</div>
@@ -286,7 +286,7 @@ export default function PromoSelectionPage() {
               </div>
               {/* Pulsing INCLUDED Badge */}
               <motion.div 
-                className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full ml-2"
+                className="bg-repower-mercury-red text-white text-xs font-bold px-3 py-1 rounded-full ml-2"
                 animate={{ scale: [1, 1.05, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               >
@@ -357,7 +357,7 @@ export default function PromoSelectionPage() {
                     <h3 className="text-xl font-semibold text-foreground mb-1">{option.title}</h3>
 
                     {/* Highlight Badge */}
-                    <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-3 bg-green-100 text-green-800">
+                    <span className="inline-block px-3 py-1 rounded-full text-sm font-medium mb-3 bg-repower-cream text-repower-navy-900 border border-repower-gold/30">
                       {option.highlight}
                     </span>
 
@@ -449,7 +449,7 @@ export default function PromoSelectionPage() {
                 <p className="text-muted-foreground text-sm mt-2">Select one of the options above</p>
               )}
               {selectedOption === 'special_financing' && !selectedRate && (
-                <p className="text-amber-600 dark:text-amber-400 text-sm mt-2">Please select a rate and term above</p>
+                <p className="text-repower-gold text-sm mt-2">Please select a rate and term above</p>
               )}
             </div>
           </div>
