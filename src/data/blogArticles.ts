@@ -1247,7 +1247,7 @@ Mercury FourStroke motors are notably quiet — important when you're entertaini
 
 **Best Overall**: Mercury 150HP FourStroke for 22-24ft pontoons
 
-**Best Premium**: Mercury Verado 250HP for 24ft+ tritoons
+**Best Premium**: Mercury 250-300HP Pro XS for 24ft+ tritoons
 
 On Rice Lake, most family pontoons are in the 20–24ft range. A Mercury 115–150HP is the right power band for this water — enough to get the family on plane, handle the open south-end run, and pull a tube without straining the motor. We see too many 20ft pontoons with 60–75HP; they work on flat calm days, but they're miserable in any chop or with a full load.
 
