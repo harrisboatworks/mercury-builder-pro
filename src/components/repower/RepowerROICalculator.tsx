@@ -9,14 +9,15 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
 
-// Fallback motor pricing (used while loading or if query fails)
+// Fallback motor pricing (CAD selling price; used only while live query loads)
+// Sourced from current motor_models table (sale_price → dealer_price → msrp → base_price)
 const fallbackMotorPrices: Record<number, { min: number; max: number; avg: number }> = {
-  40: { min: 4500, max: 6000, avg: 5250 },
-  60: { min: 6000, max: 8500, avg: 7250 },
-  75: { min: 8000, max: 10500, avg: 9250 },
-  90: { min: 9500, max: 12500, avg: 11000 },
-  115: { min: 11500, max: 15000, avg: 13250 },
-  150: { min: 15000, max: 20000, avg: 17500 },
+  40: { min: 9460, max: 10054, avg: 9682 },
+  60: { min: 12161, max: 13189, avg: 12692 },
+  75: { min: 14190, max: 14190, avg: 14190 },
+  90: { min: 14812, max: 15323, avg: 15068 },
+  115: { min: 17320, max: 17716, avg: 17556 },
+  150: { min: 22022, max: 24233, avg: 23085 },
 };
 
 const riggingCosts: Record<string, { min: number; max: number; avg: number; label: string }> = {
