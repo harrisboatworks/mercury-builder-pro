@@ -219,7 +219,7 @@ export default function Promotions() {
                     key={index}
                     className="flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)] min-w-0"
                   >
-                    <div className="bg-white border border-repower-navy-900/10 rounded-lg p-6 h-full transition-shadow hover:shadow-md">
+                    <div className="bg-white border border-repower-navy-900/10 rounded-lg p-6 h-full card-hover">
                       <div className="flex gap-1 mb-4">
                         {Array.from({ length: testimonial.rating }).map((_, i) => (
                           <Star key={i} className="w-4 h-4 fill-repower-gold text-repower-gold" />
@@ -437,7 +437,7 @@ export default function Promotions() {
             {whyBuyReasons.map((reason, index) => (
               <div
                 key={index}
-                className="bg-white border border-repower-navy-900/10 rounded-lg p-6 transition-shadow hover:shadow-md"
+                className="bg-white border border-repower-navy-900/10 rounded-lg p-6 card-hover"
               >
                 {reason.useCsiLogo ? (
                   <div className="h-10 md:h-12 flex items-center mb-4">

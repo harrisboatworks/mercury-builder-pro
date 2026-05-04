@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState, useEffect } from 'react';
 import {
   Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter
@@ -73,7 +74,7 @@ export function DepositInfoDialog({
 
         <div className="space-y-4 py-2">
           <div className="space-y-1.5">
-            <Label htmlFor="deposit-name">Full Name *</Label>
+            <Label htmlFor="deposit-name">Full Name <RequiredMark /></Label>
             <Input
               id="deposit-name"
               placeholder="John Doe"
@@ -85,7 +86,7 @@ export function DepositInfoDialog({
           </div>
 
           <div className="space-y-1.5">
-            <Label htmlFor="deposit-email">Email Address *</Label>
+            <Label htmlFor="deposit-email">Email Address <RequiredMark /></Label>
             <Input
               id="deposit-email"
               type="email"
@@ -97,7 +98,7 @@ export function DepositInfoDialog({
           </div>
 
           <div className="space-y-1.5">
-            <Label htmlFor="deposit-phone">Phone Number *</Label>
+            <Label htmlFor="deposit-phone">Phone Number <RequiredMark /></Label>
             <Input
               id="deposit-phone"
               type="tel"

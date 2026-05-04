@@ -228,7 +228,7 @@ export default function MotorCardPremium({
   return (
     <>
       <div 
-        className="group bg-white shadow-sm rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2 cursor-pointer"
+        className="group bg-white shadow-sm rounded-lg overflow-hidden card-hover cursor-pointer"
         onClick={handleCardClick}
       >
         <div className="relative">

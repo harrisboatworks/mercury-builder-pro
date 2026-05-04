@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFinancing } from '@/contexts/FinancingContext';
@@ -53,7 +54,7 @@ export function ReferencesStep() {
             </h3>
 
             <div className="space-y-2">
-              <Label htmlFor="ref1-fullName">Full Name *</Label>
+              <Label htmlFor="ref1-fullName">Full Name <RequiredMark /></Label>
               <div className="relative">
                 <Input
                   id="ref1-fullName"
@@ -71,7 +72,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref1-relationship">Relationship *</Label>
+              <Label htmlFor="ref1-relationship">Relationship <RequiredMark /></Label>
               <Select
                 value={watch('reference1.relationship')}
                 onValueChange={(value) => setValue('reference1.relationship', value, { shouldValidate: true })}
@@ -91,7 +92,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref1-phone">Phone Number *</Label>
+              <Label htmlFor="ref1-phone">Phone Number <RequiredMark /></Label>
               <div className="relative">
                 <Controller
                   name="reference1.phone"
@@ -120,7 +121,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref1-howLongKnown">How long have you known them? *</Label>
+              <Label htmlFor="ref1-howLongKnown">How long have you known them? <RequiredMark /></Label>
               <Select
                 value={watch('reference1.howLongKnown')}
                 onValueChange={(value) => setValue('reference1.howLongKnown', value as any, { shouldValidate: true })}
@@ -149,7 +150,7 @@ export function ReferencesStep() {
             </h3>
 
             <div className="space-y-2">
-              <Label htmlFor="ref2-fullName">Full Name *</Label>
+              <Label htmlFor="ref2-fullName">Full Name <RequiredMark /></Label>
               <div className="relative">
                 <Input
                   id="ref2-fullName"
@@ -167,7 +168,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref2-relationship">Relationship *</Label>
+              <Label htmlFor="ref2-relationship">Relationship <RequiredMark /></Label>
               <Select
                 value={watch('reference2.relationship')}
                 onValueChange={(value) => setValue('reference2.relationship', value, { shouldValidate: true })}
@@ -187,7 +188,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref2-phone">Phone Number *</Label>
+              <Label htmlFor="ref2-phone">Phone Number <RequiredMark /></Label>
               <div className="relative">
                 <Controller
                   name="reference2.phone"
@@ -219,7 +220,7 @@ export function ReferencesStep() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="ref2-howLongKnown">How long have you known them? *</Label>
+              <Label htmlFor="ref2-howLongKnown">How long have you known them? <RequiredMark /></Label>
               <Select
                 value={watch('reference2.howLongKnown')}
                 onValueChange={(value) => setValue('reference2.howLongKnown', value as any, { shouldValidate: true })}

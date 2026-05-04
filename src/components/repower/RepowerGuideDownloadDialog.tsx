@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import {
@@ -128,7 +129,7 @@ export function RepowerGuideDownloadDialog({ open, onOpenChange }: RepowerGuideD
   const formContent = (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="email">Email *</Label>
+        <Label htmlFor="email">Email <RequiredMark /></Label>
         <Input
           id="email"
           type="email"

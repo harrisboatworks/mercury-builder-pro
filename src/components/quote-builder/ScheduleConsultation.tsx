@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -760,7 +761,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="name" className="font-light">Full Name *</Label>
+              <Label htmlFor="name" className="font-light">Full Name <RequiredMark /></Label>
               <Input
                 id="name"
                 value={contactInfo.name}
@@ -774,7 +775,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email" className="font-light">Email Address *</Label>
+              <Label htmlFor="email" className="font-light">Email Address <RequiredMark /></Label>
               <Input
                 id="email"
                 type="email"
@@ -789,7 +790,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone" className="font-light">Phone Number *</Label>
+              <Label htmlFor="phone" className="font-light">Phone Number <RequiredMark /></Label>
               <Input
                 id="phone"
                 type="tel"
@@ -806,7 +807,7 @@ export const ScheduleConsultation = ({ quoteData, onBack, purchasePath }: Schedu
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="contactMethod" className="font-light">Preferred Contact Method *</Label>
+              <Label htmlFor="contactMethod" className="font-light">Preferred Contact Method <RequiredMark /></Label>
               <Select value={contactInfo.contactMethod} onValueChange={(value) => handleInputChange('contactMethod', value)}>
                 <SelectTrigger className="border-repower-navy-900/10 rounded-sm">
                   <SelectValue placeholder="How would you like us to contact you?" />

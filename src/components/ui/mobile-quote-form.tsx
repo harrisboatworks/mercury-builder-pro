@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import {
@@ -81,7 +82,7 @@ export const MobileQuoteForm = ({ isOpen, onClose, prefilledModel = '' }: Mobile
   const formContent = (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-sm font-medium mb-1">Name *</label>
+        <label className="block text-sm font-medium mb-1">Name <RequiredMark /></label>
         <Input
           required
           value={formData.name}
@@ -92,7 +93,7 @@ export const MobileQuoteForm = ({ isOpen, onClose, prefilledModel = '' }: Mobile
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium mb-1">Email *</label>
+          <label className="block text-sm font-medium mb-1">Email <RequiredMark /></label>
           <Input
             type="email"
             required
@@ -179,7 +180,7 @@ export const MobileQuoteForm = ({ isOpen, onClose, prefilledModel = '' }: Mobile
           </DrawerHeader>
           <form id="quote-form" onSubmit={handleSubmit} className="space-y-4 px-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Name *</label>
+              <label className="block text-sm font-medium mb-1">Name <RequiredMark /></label>
               <Input
                 required
                 value={formData.name}
@@ -189,7 +190,7 @@ export const MobileQuoteForm = ({ isOpen, onClose, prefilledModel = '' }: Mobile
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-1">Email *</label>
+              <label className="block text-sm font-medium mb-1">Email <RequiredMark /></label>
               <Input
                 type="email"
                 required

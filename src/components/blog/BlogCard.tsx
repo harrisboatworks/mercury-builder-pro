@@ -13,7 +13,7 @@ export function BlogCard({ article }: BlogCardProps) {
   return (
     <Link
       to={`/blog/${article.slug}`}
-      className="group block bg-white rounded-lg overflow-hidden border border-repower-navy-900/10 transition-shadow hover:shadow-md"
+      className="group block bg-white rounded-lg overflow-hidden border border-repower-navy-900/10 card-hover"
     >
       <div className="aspect-[16/9] overflow-hidden bg-repower-paper">
         {imgError ? (
