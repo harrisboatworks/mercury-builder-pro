@@ -1,56 +1,70 @@
-# Restyle Filter Motors sheet to cinematic dark theme
+## Goal
 
-The "Filter Motors" drawer (HP grid, Availability, Start Type, Control, Shaft Length, Clear All / Done) currently uses the default light/muted shadcn palette. Restyle it to match the new Repower hero look used elsewhere on the site.
+Two sequential passes:
 
-## Visual target
+1. **Pass A — Single file rewrite.** Replace the body of `public/blog/mercury-outboard-financing-ontario-2026.md` with the uploaded sample, while keeping the existing YAML front-matter and metadata header intact.
+2. **Pass B — Cross-blog cleanup, audit only.** Per the uploaded prompt's hard rules, run the Pass 1 audit across all blog articles and report findings. **No code changes** for the four fix areas until you review and approve the audit.
 
-Pulled from the existing hero/RepowerLayout palette:
+---
 
-- Surface (sheet bg): `#050E1C` (deep navy)
-- Text primary: `#F5F1EA` (cream)
-- Text muted / section labels: `#F5F1EA / 55–70%`
-- Hairlines / dividers: `#F5F1EA / 15%`
-- Active chip: solid gold `#C9A24A`, dark text `#050E1C`
-- Inactive chip: `#F5F1EA / 8%` bg, cream text, subtle hover `#F5F1EA / 14%`
-- Disabled chip: `#F5F1EA / 4%` bg, `#F5F1EA / 30%` text
-- "Popular" tag stays amber/gold but slightly brighter on dark
-- Drag handle: `#F5F1EA / 25%`
-- Done button: gold `#C9A24A` on navy text; Clear All: ghost outline in `#F5F1EA / 25%` border with cream text
-- Reset all link / count badge: gold
+## Pass A — Replace the financing article body
 
-## Files to change
+**File:** `public/blog/mercury-outboard-financing-ontario-2026.md`
 
-1. `src/components/motors/ConfigFilterSheet.tsx` — the sheet shown in the screenshot.
-2. `src/components/ui/mobile-filter-sheet.tsx` — older variant, restyle for parity in case it renders elsewhere.
-3. (Optional, scoped override only) `src/components/ui/drawer.tsx` — only if we need to override the default `bg-background` on the `DrawerContent`. Preferred: pass `className` on the consumer side instead, so we don't affect every drawer in the app.
+The current file has a YAML front-matter block (lines 1-18) plus a small metadata header (Category / Published / Last updated / Read time / Canonical, lines 20-28) before the article body. The uploaded sample is body-only (no front-matter, no metadata header).
 
-## Implementation details
+What I will do:
 
-In `ConfigFilterSheet.tsx`:
+- **Preserve** the existing YAML front-matter (lines 1-18) exactly as-is, including `canonical`, `last_updated`, `keywords`, etc. (Per cleanup prompt rule: don't change SEO infrastructure or slugs.)
+- **Preserve** the metadata header block (Category / Published / Last updated / Read time / Canonical).
+- **Update** `last_updated` and `date_modified` in the front-matter to today's date (2026-05-04) since the body is being rewritten.
+- **Replace** everything from the H1 (`# Mercury Outboard Financing...`) onward with the new body from the uploaded sample (lines 1-143 of the upload).
+- The new body already includes its own H1, intro, Quick recommendation, What changes the answer, table of what's included, Standard vs promo rate, Approval criteria, Common scenarios, Cash vs financing, Related guides, CTAs, FAQ, and Jay Harris byline. No additional structural changes needed.
 
-- `DrawerContent`: add `className="bg-[#050E1C] text-[#F5F1EA] border-t border-[#F5F1EA]/10"`. Override the built-in handle color via a child selector or by adding `[&>div:first-child]:bg-[#F5F1EA]/25`.
-- `DrawerTitle`: `text-[#F5F1EA] font-display tracking-tight`.
-- "Reset all" link: `text-[#C9A24A] hover:text-[#D9B868]`.
-- Section headings (`Horsepower`, `Availability`, ...): `text-[#F5F1EA]/55 uppercase tracking-[0.16em] text-[11px]`.
-- Dividers: replace `border-border` with `border-[#F5F1EA]/10`.
-- HP pill (active): `bg-[#C9A24A] text-[#050E1C]`.
-- HP pill (inactive, has stock): `bg-[#F5F1EA]/8 text-[#F5F1EA] hover:bg-[#F5F1EA]/14`.
-- HP pill (disabled): `bg-[#F5F1EA]/[0.04] text-[#F5F1EA]/30`.
-- "Popular" suffix: `text-[#C9A24A]` (replace `text-amber-600`).
-- Update `FilterPill` with the same active / inactive token set; count text becomes `text-[#050E1C]/70` when active, `text-[#F5F1EA]/55` when inactive.
-- `DrawerFooter`: add top border `border-t border-[#F5F1EA]/10 bg-[#050E1C]`.
-- `Clear All` (outline): `border-[#F5F1EA]/25 text-[#F5F1EA] hover:bg-[#F5F1EA]/8 bg-transparent`.
-- `Done` (primary): `bg-[#C9A24A] text-[#050E1C] hover:bg-[#D9B868]`.
-- Trigger button (the gear icon on the toolbar) is outside the sheet — leave it alone unless the user calls it out.
+I will not touch any other blog file in this pass.
 
-In `mobile-filter-sheet.tsx`: apply the same token set to `DrawerContent`, labels, selects, and Apply/Clear buttons so the two sheets stay visually consistent.
+---
 
-## Out of scope
+## Pass B — Cross-blog cleanup, Pass 1 audit (READ-ONLY)
 
-- Trigger button styling on the motor selection toolbar.
-- Drawer overlay / scrim color (the default works on dark sheets).
-- Other drawers in the app (settings, comparison, etc.) — we keep changes scoped to these two files.
+The uploaded prompt is explicit: **"Pass 1: Audit only. Wait for Jay's approval before writing any code."** I will follow that rule strictly. After the financing rewrite ships, I will produce an audit report covering all four fix areas, then stop and wait for your go-ahead on each.
 
-## Acceptance check
+**Important scope finding from exploration:** The article corpus lives in `src/data/blogArticles.ts` (referenced explicitly in the prompt), not in `public/blog/*.md`. The `public/blog/` directory only contains 11 markdown files; the prompt references ~50 articles whose slugs (e.g., `boat-hull-replacement-vs-repower-decision`, `how-to-choose-right-horsepower-boat`, `mercury-75-vs-90-vs-115-comparison`) do not exist as .md files. The audit will treat `src/data/blogArticles.ts` as the source of truth and flag any cluster slugs that don't exist there so you can confirm scope before Pass 2+.
 
-After implementation, on `/quote/motor-selection` (mobile viewport) opening the filter sheet shows: navy sheet, cream headings, gold active chips matching the hero/CTA on `/`, and a gold "Done" button. The non-active HP chips read clearly against the navy background.
+The audit will report:
+
+- **Fix 1 (Internal link clusters):** For every article in `blogArticles.ts`, list its slug, which of the 5 clusters it belongs to (or "no clear cluster"), whether it already has a "Related guides" section, and which cluster-aligned links are missing. Flag any cluster slugs from the prompt that don't resolve to a real article.
+- **Fix 2 (Trust language):** Every instance of "Mercury dealer since 1965", "since 1947", "for nearly 60 years", or related phrasing across `src/data/blogArticles.ts`, `public/blog/*.md`, `src/data/frenchBlogArticles.ts`, etc. — with file path, line number, current phrasing, and a proposed corrected phrasing per the standard in the prompt.
+- **Fix 3 (Em dashes in titles):** Every article title containing `—` across all `*BlogArticles.ts` data files, with current title and a proposed replacement (colon, period, or restructure — whichever reads cleanest).
+- **Fix 4 (Author byline):** Whether `src/data/blogArticles.ts` (and the Article JSON-LD generator in `src/components/seo/`) already exposes an author field, where the existing article body is rendered (`src/pages/BlogArticle.tsx`), and where the proposed `AuthorByline` component would mount (top meta + bottom-of-body).
+
+Audit deliverable: a single markdown report posted in chat. No files written. After you review, you tell me which fixes to implement and in what order (the prompt suggests Fix 4 → 3 → 2 → 1).
+
+---
+
+## What I will NOT do in this turn
+
+- Will not edit `src/data/blogArticles.ts` or any other blog file beyond `mercury-outboard-financing-ontario-2026.md`.
+- Will not add the `AuthorByline` component, change titles, change trust language, or add internal link clusters until the audit is reviewed and approved.
+- Will not change any slugs, canonical URLs, JSON-LD schemas, FAQ schema, or meta tags.
+- Will not touch French / Korean / Mandarin / Spanish localized blog data files (the prompt is silent on whether the cleanup applies to translations — I'll flag this in the audit and ask).
+
+---
+
+## Files touched
+
+**Pass A (write):**
+- `public/blog/mercury-outboard-financing-ontario-2026.md` — replace body, preserve front-matter, bump `last_updated` and `date_modified` to 2026-05-04.
+
+**Pass B (read only):**
+- `src/data/blogArticles.ts`
+- `public/blog/*.md` (all 11)
+- `src/components/seo/*` (to check Article JSON-LD author field)
+- `src/pages/BlogArticle.tsx` (to locate where AuthorByline would mount)
+- Localized blog data files (flag-only, no analysis until you confirm scope)
+
+---
+
+## Open question to resolve in the audit phase, not now
+
+Whether Fix 1-4 should also apply to `frenchBlogArticles.ts`, `koreanBlogArticles.ts`, `mandarinBlogArticles.ts`, `spanishBlogArticles.ts`. I'll flag this at the top of the audit report and wait for your call.
