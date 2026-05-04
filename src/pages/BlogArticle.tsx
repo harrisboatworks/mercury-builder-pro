@@ -424,30 +424,8 @@ export default function BlogArticle() {
             />
           </div>
 
-          {/* CTA */}
-          <div className="mt-14 p-8 md:p-10 bg-repower-cream border border-repower-navy-900/10 rounded-lg text-center">
-            <div className="h-px w-12 bg-repower-gold mx-auto mb-6" />
-            <h3 className="font-display font-bold text-xl md:text-2xl text-repower-navy-900 mb-3" style={{ letterSpacing: '-0.02em' }}>
-              Need Help Choosing?
-            </h3>
-            <p className="font-sans text-repower-navy-900/70 mb-6">
-              Our team has been a Mercury dealer since 1965. Get personalized recommendations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
-                to="/quote/motor-selection"
-                className="inline-flex items-center justify-center px-5 py-2.5 bg-repower-mercury-red text-white rounded-lg font-medium hover:bg-repower-mercury-red-deep transition-colors"
-              >
-                Browse Motors
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center px-5 py-2.5 border border-repower-navy-900/20 text-repower-navy-900 rounded-lg font-medium hover:bg-repower-navy-900/5 transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </div>
+          {/* Bottom contextual CTA */}
+          <BlogCTA category={article.category} slug={article.slug} variant="banner" />
         </article>
 
         {/* Related Articles */}
