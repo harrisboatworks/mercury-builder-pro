@@ -72,7 +72,7 @@ export const EXPERT_NUDGES = {
     general: [
       "More hp = quicker hole shot; less hp = better fuel use at cruise.",
       "This hp range suits your boat and crew.",
-      "20\" shaft fits most boats — 15\" for small tenders.",
+      "20\" shaft fits most boats. 15\" for small tenders.",
       "Electric start = push-button convenience.",
     ],
     underpowered: (boatLength: number, selectedHP: number): string => {
