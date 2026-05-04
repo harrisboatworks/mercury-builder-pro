@@ -11511,7 +11511,7 @@ Even when the hull passes a structural inspection, older boats carry hidden cost
 
 **Hardware and fittings:** Older boats need running light replacement, updated navigation electronics, possibly a new helm station depending on condition.
 
-**Regulatory compliance:** A repower changes the horsepower on the boat, which has implications for the pleasure craft licence. See our [Ontario repower licensing guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) for specifics.
+**Regulatory compliance:** A repower changes the horsepower on the boat, which has implications for the [pleasure craft licence](/blog/pleasure-craft-licence-update-repower-ontario). See our [Ontario repower licensing guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) for specifics.
 
 None of these costs are automatic, but they're common on older boats, and they should be part of your budgeting. Our shop rate is $140/hr and older boats tend to find surprises once work starts.
 
