@@ -1877,131 +1877,197 @@ For smaller 18–20ft pontoons and heavier 16–18ft aluminum hulls, the [Mercur
   // Week 4: January 26, 2026
   {
     slug: 'mercury-75-vs-90-vs-115-comparison',
-    title: 'Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat',
-    description: 'Compare Mercury 75HP, 90HP, and 115HP outboards. Discover the best horsepower choice for your fishing boat, pontoon, or runabout with real-world advice.',
+    title: 'Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)',
+    description: 'For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives...',
     image: '/lovable-uploads/Comparing_Motor_Families.png',
     author: 'Harris Boat Works',
     datePublished: '2026-01-26',
-    dateModified: '2026-01-26',
+    dateModified: '2026-05-04',
     publishDate: '2026-01-26',
     category: 'Comparison',
     readTime: '9 min read',
     keywords: ['mercury 75 vs 90', 'mercury 90 vs 115', 'best mercury hp', 'mercury 75hp review', 'mercury 115 fourstroke'],
-    content: `
-## The 75-90-115 Decision
+    content: `# Mercury 75 vs 90 vs 115 HP Comparison (2026 Ontario Guide)
 
-These three horsepower ratings cover the most popular segment of outboard motors. Which one is right for you? Let's break it down.
+For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
 
-### Quick Comparison
+## Quick recommendation
 
-| Spec | Mercury 75HP | Mercury 90HP | Mercury 115HP |
-|------|-------------|--------------|---------------|
-| Cylinders | 4 | 4 | 4 |
-| Displacement | 1.7L | 1.7L | 2.1L |
-| Weight | 355 lbs | 355 lbs | 379 lbs |
-| Shaft Options | 20", 25" | 20", 25" | 20", 25" |
-| Tiller Available | Yes | No | No |
+The 90 HP FourStroke is the most-installed mid-range Mercury at HBW. There is a reason: it fits the most common boat (16 to 18 ft aluminum console), the most common use (family fishing, mixed recreational), and the most common hull rating (75 to 115 HP capacity plate). It hits the price-performance sweet spot that the 75 misses on power and the 115 misses on value for lighter use.
 
-### Mercury 75HP FourStroke
+When customers ask "75, 90, or 115?" we usually walk through three things: hull length, typical loading, and use case. The right answer comes out of those three. For most Ontario freshwater customers, the answer is 90. For lighter use on shorter hulls, the 75 is enough. For heavier loading or bigger water, the 115 earns the price difference.
 
-**Best For**: 16-17ft boats, fuel economy priority, tiller applications
+## What changes the answer
 
-**Strengths**:
-- Available as tiller (big plus for anglers)
-- Lower fuel consumption
-- More affordable price point
-- Excellent for inland lake fishing
+Five things move whether 75, 90, or 115 is right for your boat:
 
-**Limitations**:
-- May feel underpowered with full passenger load
-- Struggles in strong headwinds
-- Limited for watersports
+- **Hull length and weight.** A 16 ft aluminum at 90 HP feels different than a 18 ft fiberglass at 90 HP. Heavier hulls need more HP to plane reliably.
+- **Passenger and gear loading.** Two-person fishing is one motor. Family of four with cooler, gear, and kids is another motor entirely.
+- **Where you launch.** Sheltered Rice Lake bays vs. open Lake Ontario chop changes the practical HP minimum. Wind exposure punishes underpowering.
+- **Trolling vs. cruising emphasis.** All three motors troll fine with a 9.9 ProKicker. The HP question is about cruising and run-back performance.
+- **Capacity plate maximum.** Most boats in this size range are rated 75 to 115 HP or 90 to 150 HP. The plate sets the ceiling. We will not over-power.
 
-**Ideal Applications**:
-- 16ft aluminum fishing boats
-- Small pontoons (18-20ft)
-- Utility and tender boats
+## Side-by-side: Mercury 75 vs 90 vs 115 FourStroke
 
-### Mercury 90HP FourStroke
+For typical Ontario use on 16 to 18 ft aluminum console boats:
 
-**Best For**: 17-18ft boats, balanced performance
+| Factor | 75 EXLPT FourStroke | 90 EXLPT FourStroke | 115 EXLPT FourStroke |
+|---|---|---|---|
+| Engine type | Inline 4-cyl, 1.7L | Inline 4-cyl, 2.1L | Inline 4-cyl, 2.1L |
+| Weight (XL shaft) | ~163 kg / 359 lb | ~163 kg / 359 lb | ~163 kg / 359 lb |
+| Top speed (16 ft aluminum) | ~30 to 35 mph | ~35 to 40 mph | ~40 to 45 mph |
+| Top speed (18 ft aluminum) | ~25 to 30 mph | ~30 to 35 mph | ~35 to 40 mph |
+| Hole shot | Adequate solo, soft loaded | Strong solo, adequate loaded | Strong loaded |
+| Fuel economy at cruise | Best of the three | Excellent | Slightly less than 90 |
+| Best fit | 14 to 16 ft light aluminum | 16 to 18 ft aluminum console | 17 to 19 ft aluminum or light fiberglass |
+| Use case | Solo or two-person | Family of three or four | Family of four or five with gear |
+| Tournament use | No | Marginal | Yes (FourStroke) or step to Pro XS |
 
-**Strengths**:
-- Same weight as 75HP, more power
-- Better loaded performance
-- Handles wind better
-- Still excellent fuel economy
+Note: top-speed numbers vary by hull design, prop selection, and loading. These are typical Kawartha-area sea-trial results for representative aluminum console hulls. For your specific boat, sea-trial numbers from HBW will be more accurate.
 
-**Limitations**:
-- No tiller option
-- Incremental cost increase from 75HP
-- Marginal advantage over 75HP in some applications
+For specific pricing on each motor, [build a quote](/quote/motor-selection).
 
-**Ideal Applications**:
-- 17-18ft fishing boats
-- 20ft pontoons
-- Light watersports use
+## Mercury 75 EXLPT FourStroke: when it fits
 
-### Mercury 115HP FourStroke
+The 75 HP FourStroke is the right call when:
 
-**Best For**: 18-20ft boats, versatile use, future-proofing
+- **Hull is 14 to 16 ft and lighter aluminum.** Smaller hulls do not need 90+ HP for typical use.
+- **Use is solo or two-person fishing primarily.** Lighter loading lets the 75 shine.
+- **Sheltered water, calm conditions.** Rice Lake bays, smaller Kawartha lakes, sheltered cottage water.
+- **Budget is tight and the next class up does not justify the difference for your specific situation.**
 
-**Strengths**:
-- Larger 2.1L engine for more torque
-- Handles heavy loads confidently
-- Command Thrust option available
-- Strong resale value
-- Best for rough water
+The 75 saves real money on a budget-tight repower. The downside shows up when the boat is loaded or when wind comes up. If you regularly run with a full crew or in choppy water, the 75 will leave you wishing for more.
 
-**Limitations**:
-- Higher price point
-- Slightly heavier
-- May be overkill for small boats/light use
+## Mercury 90 EXLPT FourStroke: the sweet spot
 
-**Ideal Applications**:
-- 18-20ft fishing boats
-- 22-24ft pontoons
-- Multi-purpose family boats
-- Watersports (tubing)
+The 90 HP FourStroke is the right call when:
 
-### How to Decide
+- **Hull is 16 to 18 ft aluminum console.** This is the most common Kawartha repower hull.
+- **Use is family fishing or mixed recreation.** Two to four people, gear, mixed cruising and fishing.
+- **Capacity plate rating is 90 to 115 HP** (very common range on this boat size).
+- **You want headroom without paying for HP you do not need.**
 
-**Choose 75HP if**:
-- You fish solo or with one partner
-- Calm water/protected lakes
-- Want tiller control
-- Budget is primary concern
-- Boat is 17ft or smaller
+The 90 is the most-installed Mercury in this class for a reason. It performs well across the most common use cases, it qualifies for similar promotional pricing as the 75, and the long-term ownership math (fuel economy, parts, resale) is favorable. The Mercury 90 EXLPT is the workhorse of the Canadian recreational fleet.
 
-**Choose 90HP if**:
-- You boat with family frequently
-- Occasionally deal with wind/waves
-- Want moderate watersports capability
-- Boat is 17-18ft
+For the typical 16 to 18 ft aluminum console at HBW, the all-in repower lands $17,000 to $22,000 CAD. [Live pricing here.](/quote/motor-selection)
 
-**Choose 115HP if**:
-- You fully load your boat regularly
-- Fish larger lakes with rough conditions
-- Want watersports capability
-- Plan to keep boat long-term
-- Boat is 18ft or larger
+## Mercury 115 EXLPT FourStroke: when the step-up earns its price
 
-### Our Take
+The 115 HP FourStroke is the right call when:
 
-When in doubt, go with **115HP**. The minimal additional cost provides noticeably better performance, stronger resale value, and capability you'll appreciate when conditions deteriorate.
+- **Hull is 17 to 19 ft aluminum or light fiberglass.** Bigger hulls justify the bigger motor.
+- **Use is family of four or five with gear, or active fishing with multiple anglers.**
+- **You launch on bigger water (Lake Simcoe, Lake Ontario, Bay of Quinte) or run the Trent-Severn system.**
+- **Capacity plate rating is 115 HP or higher.**
+- **You want the option of running Pro XS later** (115 Pro XS slots into the same gearcase footprint as the 115 FourStroke).
 
-However, if you're running a smaller boat and prioritize fuel economy over absolute performance, the **75HP** is an excellent choice—especially in tiller configuration.
+The 115 step-up over the 90 is meaningful in real-world performance: better hole shot when loaded, better cruise speed, more headroom in chop. The price premium over the 90 is real but not enormous. Most customers who step up do not regret it. Most customers who buy 90 also do not regret it. There is no wrong answer if the boat fits both.
 
-**[Compare Pricing on 75, 90, and 115HP Motors](/quote)**
+## What HBW checks before recommending 75, 90, or 115
+
+When customers come in deciding between these three motors, we want to know:
+
+- **Boat make, model, year, length, and weight class**
+- **Maximum HP rating on the capacity plate**
+- **Typical passenger and gear loading**
+- **Primary use case (fishing, family, mixed)**
+- **Where you launch (sheltered vs. open water)**
+- **Trolling-heavy or run-and-gun preference**
+- **Existing prop and rigging condition**
+- **Long-term ownership plan**
+- **Budget and financing tolerance**
+
+The answer comes out of these. Most customers fall into "90 is the right call." Some fall into "75 is enough for what you do." Some fall into "the 115 will pay back the price difference in how the boat performs." We give the honest answer per boat.
+
+## Common 75/90/115 mistakes
+
+We see these every season:
+
+1. **Buying 75 to save $1,500 and regretting it.** Customers who pick the 75 to cut budget often trade up to a 90 or 115 within 2 to 3 seasons. They paid the 75 price plus the trade-up cost. Should have bought the 90 the first time.
+2. **Buying 115 when 90 was plenty.** A 115 on a 16 ft aluminum used solo for fishing is overkill. The motor outpowers the hull's typical load. The savings on the 90 buy electronics, props, or kicker upgrades that matter more.
+3. **Picking on top speed alone.** All three motors have similar top-speed numbers within 5 mph. The real difference is hole shot and load-handling. Top speed rarely matters in real-world use.
+4. **Ignoring the prop.** The right prop on a 75 sometimes outperforms a wrong prop on a 115. Prop selection during sea-trial is critical. We test props on every repower.
+5. **Skipping the kicker decision.** The 9.9 ProKicker question is separate from the 75/90/115 question. Most fishing customers want a kicker regardless of which main motor.
+
+## Mercury 75/90/115 Pro XS: when to step up the family
+
+All three HP classes have Pro XS variants. The Pro XS step-up over FourStroke at the same HP costs an extra $1,000 to $1,500 CAD and gives you faster acceleration and slightly higher top speed.
+
+Pro XS is the right call when:
+
+- **Tournament-level performance is the priority.**
+- **Bass boat or performance hull where acceleration matters.**
+- **You want the fastest run-out to morning fishing spots.**
+
+For typical recreational use (fishing, family, mixed), FourStroke at the same HP is the better value. Pro XS earns the price difference on tournament hulls, not on family aluminum consoles. See our [Mercury motor families guide](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) for the full FourStroke vs Pro XS picture.
 
 ## Related guides
 
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat) — matching HP to boat size and use
-- [What Size Motor Does My Boat Need? Complete Calculator Guide](/blog/boat-motor-size-calculator-guide) — sizing calculator walkthrough
-- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario) — the 115 vs 150 decision
-- [Mercury 150-200hp V6: Performance Made Practical](/blog/mercury-150-200hp-v6-performance) — V6 150–200 HP performance
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the next step-up question
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), full HP class guide
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits your use
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop selection meaningfully changes performance
 
-    `,
+## Ready to pick your motor?
+
+Build a quote for 75, 90, or 115 HP on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration including rigging and prop.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through the decision for your specific boat before you build, [give us a call at (905) 342-2153](tel:9053422153). We rig boats in this HP class every week and can give you the honest answer for your hull and use case.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Is a Mercury 75 enough for a 16-foot aluminum boat?**
+For solo or two-person use on sheltered water, yes. For family use with three or more passengers and gear, the 90 is a better fit. The 75 will plane the boat solo but feels underpowered when loaded.
+
+**Should I get the 90 or 115 for my 17-foot fishing boat?**
+For typical fishing use with two anglers and gear, the 90 is plenty. For family use with four or five people, or fishing on bigger water (Lake Simcoe, Lake Ontario), step up to the 115. The price difference is small relative to the all-in repower cost.
+
+**Is the Mercury 115 worth the extra money over the 90?**
+For 17 to 19 ft hulls, family use, or bigger-water boating, yes. The 115 gives meaningful headroom and better hole shot when loaded. For 16 to 18 ft aluminum used for two-person fishing, the 90 is plenty and the savings are better spent on a kicker or electronics.
+
+**What is the most popular Mercury for 16 to 18 ft aluminum console boats?**
+The Mercury 90 EXLPT FourStroke. It is the most-installed mid-range Mercury at HBW because it fits the most common boat and use case. Reliable, fuel-efficient, and well within most boat capacity ratings.
+
+**Can I run a Mercury 115 on a boat rated for 90 HP maximum?**
+No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty if we install a motor above the rated maximum. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
+
+**What's the fuel economy difference between 75, 90, and 115?**
+At cruise speed, the 75 is most efficient. The 90 is very close. The 115 is slightly less efficient than the 90 but still very good. The differences are small in real terms (often less than 10% between 75 and 115). Loading and prop selection move fuel economy more than HP class within this range.
+
+**Should I get FourStroke or Pro XS in this HP range?**
+For most recreational use, FourStroke is the better value. Pro XS earns its price on tournament hulls and performance applications. The Pro XS price premium is $1,000 to $1,500 CAD over the FourStroke at the same HP.
+
+**What about Mercury Command Thrust on a 90 or 115?**
+Command Thrust is the gearcase option built for heavy boats (pontoons, work boats, heavy fishing rigs). On 16 to 18 ft aluminum console boats, the standard gearcase is fine. On 18+ ft pontoons, Command Thrust is usually the right call. We assess this per boat.
+
+**Can I keep my existing controls and rigging when going from a 75 to a 90 or 115?**
+Mercury-to-Mercury repowers in this HP range usually keep existing controls if they are post-2010 and in good condition. Wiring harness and rigging are usually compatible across the 75/90/115 range. Older or non-Mercury rigging may need replacement.
+
+**What's the typical prop for a Mercury 90 on a 16 to 18 ft aluminum?**
+Aluminum 3-blade in the 13 to 15 inch pitch range, depending on hull weight and intended use. We test props during sea-trial of every repower. The right prop pitch is the one that lets the motor reach rated WOT RPM with typical loading. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).
+
+**How long does a Mercury 90 last with proper maintenance?**
+Modern FourStrokes properly maintained last 1,500 to 2,000+ engine hours. For a typical recreational boater (50 to 150 hours per season), that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily. See our [Mercury maintenance guide](/blog/mercury-motor-maintenance-seasonal-tips) for the seasonal cycle.
+
+**What's the all-in cost of a Mercury 90 repower in Ontario?**
+For a typical 16 to 18 ft aluminum console with rigging, prop, and install, $17,000 to $22,000 CAD before HST at HBW. The 75 is about $1,000 to $2,000 less, the 115 about $1,500 to $2,500 more. [Live pricing here.](/quote/motor-selection)
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'Is the 90HP worth the upgrade from 75HP?',
@@ -3083,133 +3149,203 @@ If budget is tighter and you fish recreationally — chasing smallmouth on Rice 
   // Week 11: March 16, 2026
   {
     slug: 'mercury-outboard-fuel-efficiency-guide',
-    title: 'Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water',
-    description: 'Learn how to get the best fuel economy from your Mercury outboard. Tips on prop selection, trim, speed, and maintenance that save you money at the fuel dock.',
+    title: 'Mercury Outboard Fuel Efficiency Guide (2026)',
+    description: 'The single biggest fuel-efficiency lever on a Mercury is prop selection. Right prop running at correct WOT RPM gives best economy. Other levers in order: trim, hull cleanliness, weight reduction, and cruise speed selection. HP class matters less than most owners assume; modern FourStrokes are all...',
     image: '/lovable-uploads/Mercury_Maintenance_Schedule.png',
     author: 'Harris Boat Works',
     datePublished: '2026-03-16',
-    dateModified: '2026-03-16',
+    dateModified: '2026-05-04',
     publishDate: '2026-03-16',
     category: 'Tips',
     readTime: '9 min read',
     keywords: ['outboard fuel efficiency', 'mercury mpg', 'boat fuel economy', 'save fuel boating', 'outboard consumption'],
-    content: `
-## Maximizing Fuel Efficiency from Your Mercury
+    content: `# Mercury Outboard Fuel Efficiency Guide (2026)
 
-Fuel costs add up. Here's how to get the most miles per gallon from your Mercury outboard—without sacrificing the fun.
+The single biggest fuel-efficiency lever on a Mercury is prop selection. Right prop running at correct WOT RPM gives best economy. Other levers in order: trim, hull cleanliness, weight reduction, and cruise speed selection. HP class matters less than most owners assume; modern FourStrokes are all efficient at correct cruise. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-### The Basics of Boat Fuel Economy
+## Quick recommendation
 
-Unlike cars, boats push through water. This creates drag that increases exponentially with speed. Double your speed, and fuel consumption can quadruple.
+Most Mercury owners overspend on fuel because of one of three things: wrong prop, bad trim discipline, or running at the wrong cruise speed for their boat and motor. None of those are HP-class problems. They are setup and operating problems.
 
-### Sweet Spot Cruising
+A correctly-rigged Mercury 90 EXLPT FourStroke on a 16 to 18 ft aluminum console can run 4 to 5 mph per US gallon at cruise. A poorly-rigged version of the same motor can run 3 to 3.5 mph per US gallon. Same motor, different fuel burn. The difference is prop, trim, and operation.
 
-Every boat has an efficient cruising speed:
+## What changes fuel efficiency
 
-- **Below plane**: Slow, but uses minimal fuel
-- **Getting on plane**: Maximum fuel use
-- **Cruising speed (70-75% throttle)**: Best efficiency
-- **Wide open**: Maximum consumption
+Five biggest levers:
 
-**Target 3,500-4,500 RPM** for most efficient travel in a properly propped boat.
+- **Prop selection.** A wrong prop can cost 15% or more in fuel economy. Right prop is the one that lets the motor reach mid-band of rated WOT RPM with typical loading.
+- **Trim.** Running flat (no trim up) at cruise is fuel-wasteful. Proper trim cuts drag and improves economy 10 to 20%.
+- **Hull cleanliness.** Bottom growth, weeds dragging, and propeller debris all hurt fuel economy. Inspect during commissioning.
+- **Weight.** Every 100 lbs of unnecessary gear hurts fuel economy slightly. Cumulative effect of full coolers, extra anchors, and old gear adds up.
+- **Cruise speed selection.** Most Mercurys are most efficient at a specific RPM range (often 3,500 to 4,500 RPM at cruise). Running outside that band costs efficiency.
 
-### Propeller Selection Matters
+## Prop selection: the biggest single lever
 
-Wrong prop = wasted fuel:
+A correctly-pitched prop lets the motor reach mid-band of its rated WOT RPM with your typical loading. This is the test that matters.
 
-**Signs Your Prop Is Wrong**:
-- Can't reach WOT RPM
-- Struggle to get on plane
-- Engine overspeeds
-- Excessive vibration
+For example, the Mercury 90 EXLPT has a rated WOT RPM of 5,000 to 5,800 RPM. The right prop lets you reach 5,400 RPM (mid-band) with typical loading. If the prop is wrong:
 
-**Right Prop Results**:
-- Engine reaches rated RPM
-- Easy hole-shot
-- Efficient cruising
-- Better fuel economy
+- **Pitch too high:** Motor cannot reach rated RPM. Lugs the engine, hurts economy, and shortens motor life.
+- **Pitch too low:** Motor over-revs at WOT. Wastes fuel at cruise, increases wear.
 
-We stock props and can dial in your setup.
+We test prop pitch during sea-trial of every Mercury repower at HBW. The right prop is non-negotiable for fuel efficiency.
 
-### Trim for Efficiency
+For aluminum vs stainless:
 
-Proper trim dramatically affects fuel consumption:
+- **Aluminum 3-blade ($450 CAD):** Adequate for HP up to 115. Lower top speed, similar cruise economy to stainless.
+- **Stainless 3 or 4-blade ($800 to $2,000 CAD):** Better for 150 HP and up. Slightly better cruise economy than aluminum.
 
-**Bow Too High**:
-- Boat porpoises
-- Creates air drag
-- Engine works harder
-- Poor visibility
+See our [Mercury propeller selection guide](/blog/mercury-propeller-selection-guide) for the full picture.
 
-**Bow Too Low**:
-- Pushes water
-- Excessive spray
-- Maximum drag
-- Poor efficiency
+## Trim discipline: the second biggest lever
 
-**Sweet Spot**:
-- Slight bow-up attitude
-- Smooth ride
-- Minimal spray
-- Best fuel economy
+Most boaters run too flat at cruise. The boat is on plane but the bow is being pushed through more water than necessary. Symptoms of bad trim:
 
-### Weight Distribution
+- **Spray off the bow** at cruise speed
+- **Boat feels "plowed"** rather than skipping along
+- **Engine RPM feels high** for the speed
+- **Wake is bigger** than it should be
 
-**Reduce Weight**:
-- Remove unnecessary gear
-- Don't carry excess fuel
-- Distribute weight evenly
+Proper trim at cruise:
 
-**Balance Matters**:
-- Keep heavier items low and centered
-- Passengers affect trim significantly
-- Adjust trim as load changes
+- **Bow rises** to reduce wetted hull area
+- **Spray drops back** behind the boat
+- **Engine RPM matches speed efficiently**
+- **Boat feels lighter** and more responsive
 
-### Maintenance Impact
+Most Mercurys with power trim get this right with a few seconds of practice. Trim up gradually until the bow lifts and speed increases without RPM increasing. That is the efficient trim point.
 
-Poor maintenance kills efficiency:
+## Cruise speed selection
 
-**Check Monthly**:
-- Prop condition (dings hurt efficiency)
-- Hull cleanliness (growth creates drag)
-- Fuel filter (restrictions hurt performance)
+Most Mercurys are most efficient at a specific cruise RPM, typically 3,500 to 4,500 RPM. The corresponding speed depends on hull and prop, but is usually somewhere between 25 and 35 mph for typical aluminum console boats.
 
-**Annual Service**:
-- Spark plugs (fouled plugs waste fuel)
-- Oil and filter (worn oil increases friction)
-- Lower unit (proper lube reduces drag)
+Running at WOT (full throttle) is fuel-wasteful. Running at idle (3 to 5 mph) is also fuel-wasteful per mile. The sweet spot is the cruise band.
 
-### Mercury Fuel Efficiency Features
+For most Mercury 90 to 115 HP installs:
 
-**EFI (Electronic Fuel Injection)**:
-All current Mercury motors use EFI, which precisely meters fuel for optimal economy.
+- **WOT (full throttle):** Highest mph, lowest mph per gallon
+- **Cruise (3,500 to 4,500 RPM):** Best mph per gallon
+- **Idle/no-wake speed (1,000 to 1,500 RPM):** Worst mph per gallon
 
-**SmartCraft Gauges**:
-Monitor fuel flow in real-time to understand consumption.
+If you have a long run between two points, cruise speed is the most fuel-efficient choice. If you are working a fishing area at trolling speeds, a kicker is dramatically more efficient than the main motor.
 
-**Advanced Range Optimization (ARO)** (Verado):
-Continuously optimizes fuel delivery across operating conditions for maximum range — works dynamically based on load, throttle position, and conditions.
+## Mercury motor family fuel economy comparison
 
-### Real-World Tips
+For typical 16 to 18 ft aluminum console boats at cruise:
 
-1. **Plan your route** - Direct lines save fuel
-2. **Watch the weather** - Head into wind outbound, return with it
-3. **Avoid constant throttle changes** - Steady speed is efficient
-4. **Don't idle excessively** - EFI motors start instantly
-5. **Keep the hull clean** - Clean bottom = less drag
+| Motor | Cruise mpg | WOT mpg | Best use |
+|---|---|---|---|
+| Mercury 60 EFI | ~5 to 6 | ~3 to 4 | Smaller hulls, two-person fishing |
+| Mercury 90 EXLPT FourStroke | ~4 to 5 | ~2.5 to 3.5 | Sweet spot for most Kawartha boats |
+| Mercury 115 EXLPT FourStroke | ~3.5 to 4.5 | ~2 to 3 | Family use, mixed recreation |
+| Mercury 150 EXLPT FourStroke | ~3 to 4 | ~1.5 to 2.5 | Bigger hulls, water sports |
+| Mercury 200 EXLPT FourStroke | ~2.5 to 3.5 | ~1 to 2 | Performance applications |
 
-**[Get Your Motor Serviced for Peak Efficiency](/quote)**
+Note: mpg figures are typical Kawartha-area sea-trial results in US gallons. Real numbers vary by hull, loading, prop, and operating conditions. The differences within an HP class (e.g., 90 EXLPT vs 90 Pro XS at the same load) are smaller than between HP classes.
 
-**See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide).
+For specific motor pricing, [build a quote](/quote/motor-selection).
+
+## What HBW checks for fuel efficiency
+
+When customers report fuel economy concerns, we check:
+
+- **Prop type, pitch, and condition.** Wrong prop is the most common issue.
+- **WOT RPM at typical loading.** Confirms prop is correct.
+- **Trim function and use.** Some boaters do not know how to use trim properly.
+- **Hull cleanliness.** Bottom growth and debris hurt economy.
+- **Engine condition.** Misfires, fuel system issues, or air leaks reduce economy.
+- **Weight and loading.** Sometimes the boat is just overloaded for typical use.
+- **Cruise speed selection.** Some boaters run WOT all the time and burn fuel for no reason.
+
+We sea-trial during repowers and address any of the above. Sometimes the fix is a different prop. Sometimes it's coaching the customer on trim. Sometimes it's a fuel system service that catches a small issue before it grows.
+
+## Common fuel efficiency mistakes
+
+We see these every season:
+
+1. **Wrong prop.** Single biggest issue. Pitch wrong by one or two inches costs 15%+ in fuel.
+2. **No trim use.** Boat runs flat all day. Bow plows water. Engine works hard for no speed gain.
+3. **Running WOT all the time.** Some boaters always go full throttle. Cruise band is much more efficient.
+4. **Overloaded boat.** Coolers full, full tank, gear from past 5 seasons. Every 100 lbs hurts economy.
+5. **Skipped maintenance.** Spark plugs, fuel filter, water-pump impeller in good condition keeps the motor running efficiently. Skipped service hurts economy.
+
+## What about ethanol fuel?
+
+Modern Mercury FourStrokes (2010+) are designed to handle E10 ethanol-blended pump gas. The Canadian standard 87 octane E10 is what most boaters use and it works fine.
+
+E15 (15% ethanol) is not approved for marine use. Avoid it.
+
+E0 (no ethanol) is preferred where available but rare in Canada. If you can find non-ethanol fuel at certain marinas or specialty stations, it's slightly easier on fuel system components and stores longer between uses. Not a fuel efficiency lever directly.
+
+For all storage longer than a month, treat fuel with stabilizer (Mercury Quickstor or equivalent). Old untreated ethanol fuel is the leading cause of fuel system gum-up we see at HBW.
 
 ## Related guides
 
-- [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) — choosing the right propeller
-- [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide) — SmartCraft gauges explained
-- [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide) — Digital Throttle & Shift basics
-- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026) — Boost software upgrade eligibility
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop is the biggest fuel lever
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), keeping motors efficient
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP class fuel implications
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), motor family efficiency comparison
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), fuel system troubleshooting
 
-    `,
+## Ready to optimize fuel efficiency?
+
+Build a quote with the right prop and rigging on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If your existing Mercury has fuel economy issues you want to diagnose, [give us a call at (905) 342-2153](tel:9053422153). We can walk through prop, trim, and motor condition to find the issue.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**What's the most fuel-efficient Mercury outboard?**
+For typical recreational use, the Mercury 60 EFI to 90 EXLPT FourStroke is the most efficient HP class. Above 90 HP, larger displacement motors burn more fuel at the same cruise speed. Below 60 HP, smaller motors burn less per mile but carry less load.
+
+**How many miles per gallon does a Mercury 90 get?**
+4 to 5 mph per US gallon at cruise on a typical 16 to 18 ft aluminum console boat. WOT runs lower (2.5 to 3.5 mph per gallon). Numbers vary by prop, loading, and trim discipline.
+
+**Is the Mercury Pro XS more or less efficient than FourStroke?**
+At the same HP and same cruise speed, similar. Pro XS gives faster acceleration but is not significantly more or less efficient at typical cruise. Tournament use that runs at WOT more often consumes more fuel; that's an operating difference, not a motor-family difference.
+
+**How does prop pitch affect fuel economy?**
+A wrong-pitch prop can cost 15% or more in fuel economy. Right prop is the one that lets the motor reach mid-band of rated WOT RPM with typical loading. Wrong pitch makes the motor work outside its efficient RPM band.
+
+**Should I get a 4-blade prop for fuel economy?**
+Not necessarily. 4-blade props give better hole shot and cruising stability, similar fuel economy to 3-blade. 3-blade is best for top speed and slightly better fuel economy in some applications. Choose based on use case, not strictly on fuel economy.
+
+**Does trim affect fuel economy?**
+Yes meaningfully. Proper trim at cruise can improve fuel economy 10 to 20% over running flat. Most boaters underuse trim. Practice trimming up gradually until the boat speed increases without RPM increasing.
+
+**Is ethanol fuel okay for Mercury outboards?**
+Yes, E10 (10% ethanol) standard pump gas is approved for modern Mercury FourStrokes. E15 (15% ethanol) is not approved for marine use. E0 (no ethanol) is preferred where available but rare in Canada.
+
+**Should I use premium gas?**
+Most Mercurys are designed for 87 octane regular pump gas. Some higher-output motors recommend 89 or 91 octane. Check your owner's manual. Higher octane is wasted on motors that don't require it.
+
+**Does a kicker save fuel during fishing?**
+Yes substantially. A 9.9 ProKicker at trolling speed (1 to 2 mph) burns far less fuel than a 90 HP main motor at the same speed. Main motors are inefficient at slow speeds; kickers are efficient. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).
+
+**How does hull cleanliness affect fuel economy?**
+Bottom growth, weeds, and debris all hurt fuel economy by adding drag. Inspect and clean hull during commissioning and periodically through the season. Bottom paint is rare on Ontario freshwater boats but inspecting is still worthwhile.
+
+**What's the most fuel-efficient cruise speed?**
+Typically 25 to 35 mph for most aluminum console boats with Mercury 90 to 115 HP. The cruise band corresponds to the motor's most efficient RPM range. Running below or above this band costs efficiency.
+
+**Will fuel stabilizer improve fuel economy?**
+Not directly. Stabilizer prevents fuel system gum-up during storage. A clean fuel system runs efficiently; a gummed-up system runs poorly. Stabilizer is preventive maintenance, not a direct economy boost.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'What\'s normal fuel consumption for a 115HP outboard?',
@@ -3786,114 +3922,198 @@ Adds cost but critical for handling
   // Week 15: April 13, 2026
   {
     slug: 'mercury-propeller-selection-guide',
-    title: 'Mercury Propeller Selection: Complete Guide to Choosing the Right Prop',
-    description: 'Learn how to choose the perfect Mercury propeller for your boat. Pitch, diameter, blade count, and material explained for optimal performance.',
+    title: 'Mercury Propeller Selection Guide (2026 Ontario)',
+    description: 'A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its rated WOT RPM at typical loading, which is the only test that matters. Aluminum 3-blade props (typical $450 CAD) cover up to 115 HP. Stainless 3 or 4-blade props ($800 to $2,000 CAD) take...',
     image: '/lovable-uploads/Mercury_Maintenance_Schedule.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-13',
-    dateModified: '2026-04-13',
+    dateModified: '2026-05-04',
     publishDate: '2026-04-13',
     category: 'Tips',
     readTime: '10 min read',
     keywords: ['mercury propeller selection', 'outboard prop guide', 'boat propeller size', 'mercury prop chart', 'propeller pitch explained'],
-    content: `
-## Propeller Selection: The Overlooked Performance Upgrade
+    content: `# Mercury Propeller Selection Guide (2026 Ontario)
 
-The right propeller transforms your boat's performance. The wrong one costs you speed, fuel, and engine life. Here's how to choose correctly.
+A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its rated WOT RPM at typical loading, which is the only test that matters. Aluminum 3-blade props (typical $450 CAD) cover up to 115 HP. Stainless 3 or 4-blade props ($800 to $2,000 CAD) take over from 150 HP up. Live pricing on every Mercury motor and prop is at [/quote/motor-selection](/quote/motor-selection).
 
-### Propeller Basics
+## Quick recommendation
 
-**Diameter**: Width of the circle the prop makes
-**Pitch**: Theoretical forward travel per revolution
-**Blade Count**: Number of blades (typically 3 or 4)
-**Material**: Aluminum, stainless steel, or composite
+Most Mercury owners buy the motor and skip the prop conversation. That is the most common reason a brand-new Mercury underperforms. Prop selection is not optional. The right prop is the one that lets your specific motor reach its rated WOT RPM band with your typical loading, on your specific hull.
 
-### Understanding Pitch
+We test props on the water during the sea-trial of every repower at HBW. Two boats with identical motors but different props can have 4 mph difference in top speed and 15% difference in cruise fuel burn. The right prop costs the same as the wrong prop. Pick the right one.
 
-**Example: 14 x 19 Prop**
-- 14" diameter
-- 19" pitch
-- Theoretically moves forward 19" per revolution
+## What changes the right prop for your boat
 
-**Pitch Effect**:
-- Higher pitch = more speed, higher engine load
-- Lower pitch = better hole-shot, lower top speed
+Five things move which prop is right for your specific motor and boat:
 
-**Rule of Thumb**: Each inch of pitch changes RPM by ~200
+- **Motor HP and rated WOT RPM band.** Mercury publishes a wide-open throttle (WOT) RPM range for every motor. The right prop lets you reach mid-band at typical loading.
+- **Hull weight and design.** Heavy boats want different prop than light boats. Pontoons want different prop than runabouts. Bass boats want different prop than fishing boats.
+- **Typical loading.** Empty boat numbers are aspirational. Loaded boat numbers are real life. Loading affects prop pitch decisions.
+- **Use case.** Top speed (acceleration vs. top-end), trolling, water sports, and fishing all reward different prop designs.
+- **Material (aluminum vs. stainless).** Aluminum is cheaper and easier to repair. Stainless gives more thrust, better top end, and better damage resistance.
 
-### Finding the Right RPM
+## Aluminum vs stainless: when each makes sense
 
-**Critical**: Your engine should reach its rated Wide Open Throttle (WOT) RPM with normal load.
+The aluminum/stainless decision is partly about HP and partly about use case.
 
-**Mercury FourStroke Range**: 5,000-6,000 RPM (varies by model)
-**Mercury Pro XS Range**: 5,000-5,750 RPM (varies by model)
-**Mercury Verado Range**: 5,800-6,400 RPM (varies by model)
+| Factor | Aluminum 3-blade | Stainless 3 or 4-blade |
+|---|---|---|
+| Typical price (CAD) | ~$450 | $800 to $2,000 |
+| HP range | Up to 115 HP | 150 HP and up |
+| Acceleration | Adequate | Better |
+| Top speed | Lower | Higher |
+| Damage resistance | Lower (bends easily on rocks) | Higher (more durable) |
+| Repair cost | Lower (can be straightened) | Higher (specialized repair) |
+| Fuel economy | Good | Slightly better |
+| Best for | Recreational, family, mid-HP | Performance, tournament, high HP |
 
-**If RPM is too low**: Pitch is too high
-**If RPM is too high**: Pitch is too low
+For aluminum prop owners on lower HP motors, aluminum is the right answer. For 150 HP and above, stainless is usually the right answer. For 115 HP, it depends on use case (tournament fishing wants stainless; family fishing is fine with aluminum).
 
-### Blade Count: 3 vs 4
+For specific pricing, [build a quote](/quote/motor-selection) with prop included.
 
-**3-Blade Props**:
-- Higher top speed
-- Better fuel economy
-- Less drag
-- Standard choice for most boats
+## Pitch: the most important number on the prop
 
-**4-Blade Props**:
-- Better hole-shot
-- Improved bow lift
-- Reduced ventilation
-- Better in rough water
-- Preferred for pontoons and heavy boats
+Pitch is the theoretical distance the prop moves forward in one revolution. Lower pitch (lower number) gives faster acceleration and lower top speed. Higher pitch (higher number) gives slower acceleration and higher top speed.
 
-### Material Selection
+For a typical Mercury 90 EXLPT FourStroke on a 16 to 18 ft aluminum console:
 
-**Aluminum**:
-- Lower cost
-- Adequate for most recreational use
-- Easier to repair
-- May bend on impact (absorbs energy)
+- 13 inch pitch: faster hole shot, lower top speed, runs higher RPM
+- 15 inch pitch: balanced acceleration and top speed, mid-range RPM
+- 17 inch pitch: slower hole shot, higher top speed, runs lower RPM
 
-**Stainless Steel**:
-- Better performance
-- Longer lasting
-- Holds shape on impact
-- Higher cost
-- Transfers impact energy to lower unit
+The right pitch is the one that lets the motor reach mid-band of its rated WOT RPM with your typical loading. If WOT comes up short of rated RPM, you need a lower pitch (or you are over-loaded). If WOT is over rated RPM, you need a higher pitch.
 
-### Mercury Prop Options
+We test pitch during sea-trial of every repower. A wrong-pitch prop is the single most common performance issue on otherwise-correctly-installed Mercury motors.
 
-**Spitfire (Aluminum)**: Good recreational prop
-**Black Max (Aluminum)**: Economy option
-**Vengeance (Stainless)**: All-around performer
-**Tempest Plus (Stainless)**: Best performance
-**Trophy Sport (4-Blade)**: Bass boat favorite
-**Bravo (Stainless)**: High-performance offshore
+## Diameter and blade count
 
-### How We Help
+Diameter is fixed by the gearcase and HP class. The Mercury 90 EXLPT runs different diameter than the 115 EXLPT, which runs different diameter than the 150 EXLPT.
 
-At Harris Boat Works, we:
-- Measure your current prop RPM
-- Analyze your boat's use
-- Recommend the right prop
-- Stock common sizes for immediate improvement
+Blade count varies more by application:
 
-Many boats leave the factory with a "one size fits most" prop. A proper selection can dramatically improve performance.
+- **3-blade:** Standard for most recreational use. Best top speed, good fuel economy.
+- **4-blade:** Better hole shot, better cruising stability, slightly lower top speed. Common on heavy boats, pontoons, and water-sports applications.
 
-**[Get a Prop Recommendation](/quote)**
+For most aluminum console fishing boats, a 3-blade is the right call. For pontoons and water-sports applications, a 4-blade often performs better. For tournament fishing where top speed matters most, 3-blade stainless wins.
 
-**See also:** [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide) and [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide).
+## Mercury Command Thrust vs standard prop selection
+
+If you have Mercury Command Thrust on your motor (typical on pontoons and heavy fishing rigs 115 HP and up), the prop selection is different. Command Thrust uses larger gearcase and larger prop, optimized for heavy loads.
+
+Command Thrust props are typically:
+
+- Larger diameter than standard
+- Lower pitch range
+- 4-blade designs more common
+- Optimized for hole shot and load handling rather than top speed
+
+We rig pontoons with Command Thrust regularly at HBW. The prop that comes with the Command Thrust gearcase is usually close to right out of the box, but sea-trial confirms.
+
+## What HBW checks during prop sea-trial
+
+When we deliver a Mercury repower or new motor, we test prop performance on the water:
+
+- **WOT RPM at typical loading.** Right WOT RPM is the single best indicator of correct prop.
+- **Top speed at WOT.** Compared against expected based on hull and motor.
+- **Hole shot from neutral.** How fast the boat planes from idle.
+- **Plane speed.** Lowest speed the boat stays on plane.
+- **Cruise RPM at target speed.** The RPM the motor runs at typical cruise speed (e.g., 25 to 30 mph).
+- **Trim sensitivity.** How responsive the boat is to trim adjustments at speed.
+- **Customer feel.** Subjective assessment of how the boat handles.
+
+If any of these are off, we change props and re-test. Sometimes the right prop is the second one we try. Sometimes it is the fourth. We have a prop test kit at HBW for this reason.
+
+## Common prop mistakes
+
+We see these every season:
+
+1. **Skipping the prop conversation.** Customer buys a Mercury and assumes the dealer puts on "the right prop." Sometimes they get a generic one that does not match their use case. We ask the question every time at HBW.
+2. **Wrong pitch.** Most common error. WOT RPM ends up below or above rated band. Performance suffers.
+3. **Aluminum on a high-HP motor.** Aluminum props above 115 HP get destroyed quickly. Stainless is the right answer at higher HP.
+4. **Ignoring loading.** Customer picks prop for empty-boat use, then loads up the family and gear and underperforms. Test loaded.
+5. **Cheap eBay props of unknown origin.** Mercury props are made by Mercury for a reason. Off-brand props of unknown origin sometimes fit but rarely match performance.
+
+## How often to replace your prop
+
+Modern Mercury props (aluminum or stainless) last many years if not damaged. Common replacement reasons:
+
+- **Damage from rocks, logs, or sand.** A bent or chipped prop loses performance immediately. Repair if minor; replace if major.
+- **Wear over many hundreds of hours.** Performance degrades slowly over long use.
+- **Use case change.** Bought a new family of five, suddenly running heavier loaded. Prop that fit solo fishing no longer fits the new use.
+- **Major motor service.** Sometimes during a repower or major service we recommend a new prop because the old one was close to end of life.
+
+We inspect props during every winterization and spring commissioning. If a prop needs replacement, we tell customers. We do not push prop replacement that is not warranted.
 
 ## Related guides
 
-- [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide) — maximizing fuel efficiency
-- [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide) — SmartCraft gauges explained
-- [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide) — Digital Throttle & Shift basics
-- [Is Your Mercury Outboard Eligible for the 2026 Boost Software Upgrade?](/blog/mercury-boost-software-upgrade-eligibility-2026) — Boost software upgrade eligibility
-- [Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)](/blog/mercury-boost-upgrade-150hp-pontoon-analysis) — 150 HP Boost upgrade analysis
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific motor and prop recommendations
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific motor and prop recommendations
+- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), how prop affects fuel economy
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP and prop interact
+- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats), Command Thrust prop differences
 
-    `,
+## Ready to pick the right prop?
+
+Build a quote with the right prop included on the [motor selection page](/quote/motor-selection). The system asks for hull info and use case and recommends a prop that fits. Sea-trial confirms.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through prop selection for your specific Mercury before quoting, [give us a call at (905) 342-2153](tel:9053422153). We have rigged thousands of Mercurys with the right prop. The prop conversation matters.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Why does prop selection matter so much?**
+A wrong prop costs you 4 mph top speed, 15% fuel economy, and 1,000 RPM at WOT. The motor cannot perform to spec without the right prop. Two identical motors with different props can perform very differently. Prop is not optional.
+
+**Aluminum or stainless prop for my Mercury?**
+For motors up to 115 HP and recreational use, aluminum is the right answer (~$450 CAD). For 150 HP and up, or for tournament/performance use, stainless is the right answer ($800 to $2,000 CAD). The HP and use case decide.
+
+**What is the right pitch for my Mercury?**
+The pitch that lets your motor reach mid-band of its rated WOT RPM with your typical loading. Mercury publishes WOT RPM ranges for every motor (e.g., 90 EXLPT is 5,000 to 5,800 RPM). We test pitch during sea-trial of every repower.
+
+**Should I get a 3-blade or 4-blade prop?**
+3-blade is standard for most recreational use, top speed, and fuel economy. 4-blade gives better hole shot, cruising stability, and is common on pontoons, water-sports applications, and heavy boats.
+
+**How do I know if my prop is wrong?**
+Symptoms: WOT RPM below or above rated band, slow hole shot, hard to get on plane, lower top speed than expected, poor fuel economy. We diagnose this during sea-trial.
+
+**Do I need a new prop with a Mercury repower?**
+Often yes, especially during brand conversions (Evinrude or Yamaha to Mercury) where the old prop will not fit the Mercury gearcase. Mercury-to-Mercury repowers sometimes keep the existing prop, but we test it during sea-trial and replace if performance is off.
+
+**How much does a Mercury prop cost?**
+Aluminum 3-blade: typically $450 CAD. Stainless 3 or 4-blade: $800 to $2,000 CAD depending on size and design. Specialty performance props can run higher. For specific pricing, [build a quote](/quote/motor-selection).
+
+**Can I damage my prop on a Kawartha lake?**
+Yes. Rocks, logs, sand, and submerged debris can chip or bend a prop. Aluminum props bend more easily but can be straightened. Stainless props are more damage-resistant but more expensive to repair.
+
+**How long does a Mercury prop last?**
+Many years if not damaged. Properly maintained aluminum props last 5 to 10+ years of recreational use. Stainless props last 10 to 20+ years. Damage is the most common reason for early replacement.
+
+**Should I keep a spare prop?**
+For most recreational boaters on Kawartha lakes, no. Tow back to dock and replace at HBW. For boaters running far from home or on bigger water (Lake Ontario, Trent-Severn travel), a spare prop and basic tools are smart insurance.
+
+**Can I use a Yamaha or Honda prop on a Mercury?**
+Generally no. Each motor brand has different gearcase splines and hub designs. Mercury props are made for Mercury motors. Off-brand props of unknown origin sometimes fit but rarely match performance.
+
+**Does prop selection affect my fuel economy?**
+Yes meaningfully. The right prop running at correct WOT RPM gives the best fuel economy. A wrong prop running outside rated band can cost 15% or more in fuel burn. Prop is one of the biggest fuel economy variables.
+
+**What is Mercury Command Thrust prop?**
+Command Thrust is a Mercury gearcase option (115 HP and up) with larger gearcase and larger prop, optimized for heavy boats (pontoons, work boats). Command Thrust props are typically larger diameter, lower pitch, often 4-blade. See our [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats).
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'How do I know if I have the wrong prop?',
@@ -4072,105 +4292,214 @@ We support fishing guides throughout the Kawarthas with SeaPro motors. They appr
   // Week 17: April 27, 2026
   {
     slug: 'portable-outboard-mercury-guide-2-20hp',
-    title: 'Mercury Portable Outboards (2.5-20HP): Complete Buyer\'s Guide',
-    description: 'Choose the right Mercury portable outboard for your tender, dinghy, or small boat. Compare 2.5HP to 20HP options for inflatable and small craft.',
+    title: 'Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)',
+    description: 'Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats. The Mercury 9.9 MH is the most popular small-boat motor in Canada. Drop-in install, no rigging required, easy to transport and...',
     image: '/lovable-uploads/Mercury_Portable_Outboards.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-27',
-    dateModified: '2026-04-27',
+    dateModified: '2026-05-04',
     publishDate: '2026-04-27',
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['portable outboard', 'small boat motor', 'dinghy motor', 'mercury portable', 'tender motor'],
-    content: `
-## Mercury Portable Outboards: Big Performance, Small Package
+    content: `# Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)
 
-Mercury's portable outboard lineup covers everything from yacht tenders to small fishing boats. Here's how to choose.
+Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats. The Mercury 9.9 MH is the most popular small-boat motor in Canada. Drop-in install, no rigging required, easy to transport and store. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-### The Portable Lineup
+## Quick recommendation
 
-| Model | Weight | Best For |
-|-------|--------|----------|
-| 2.5HP | 37 lbs | Tenders, trolling, auxilliary |
-| 3.5HP | 38 lbs | Light-duty tenders |
-| 4HP/5HP/6HP | 57-59 lbs | Dinghies, small fishing |
-| 8HP/9.9HP | 84-88 lbs | Inflatables, small boats |
-| 15HP/20HP | 99-115 lbs | Larger inflatables, utility |
+For small boat owners on Kawartha lakes, Mercury portable outboards are the standard answer. The 9.9 MH and 15 MH are the workhorses of the small-boat segment. Lighter than they look, simple to operate, and reliable.
 
-### Mercury 2.5HP FourStroke
+The "M" in MH stands for manual start (rope pull). The "H" stands for tiller handle. There is no rigging. You bolt the motor to the transom, attach the fuel line, pull the rope, and go fishing. We sell hundreds of these every year at HBW for cottage tin boats, sailboat auxiliaries, and small fishing applications.
 
-**The Lightest Option**
+## What changes the answer for portable Mercury motors
 
-- Weight: 37 lbs (lightest 4-stroke in class)
-- Thrust: Gentle maneuvering
-- Best for: Yacht tenders, sailboat auxiliaries
-- Features: Carry handle, shallow water drive
+Five things move which portable Mercury fits your application:
 
-### Mercury 4-6HP FourStroke
+- **Boat size and weight.** A 12 ft tin boat needs less HP than a 14 ft heavy-duty fishing boat.
+- **Use case.** Solo fishing vs. sailboat auxiliary vs. kicker on a bigger boat all have different needs.
+- **Storage and transport.** Smaller motors (under 15 HP) are easily portable. Larger portable motors (15 to 20 HP) are still tiller-friendly but heavier.
+- **Start type preference.** Manual (rope) start saves money and weight. Electric start adds convenience and battery requirement.
+- **Shaft length.** Most small boats need short shaft (15 inches). Some bigger boats or sailboats need long shaft (20 inches).
 
-**Versatile Small Power**
+## Mercury portable lineup
 
-- Weight: ~58 lbs
-- Thrust: Adequate for 8-10ft boats
-- Best for: Dinghies, small fishing, kicker motors
-- Features: Front-mounted shift, integral fuel tank
+The Mercury portable range, 2.5 to 20 HP:
 
-### Mercury 8-9.9HP FourStroke
+### Mercury 2.5 MH (2.5 HP)
 
-**The Sweet Spot**
+- **Use:** Very small dinghies, ultralight tin boats, trolling on canoes
+- **Type:** 1-cylinder 4-stroke, manual start, tiller
+- **Weight:** ~17 kg / 38 lb
+- **Best for:** Owners who need a tiny motor for very small boats. Ultralight applications.
 
-- Weight: 84-88 lbs
-- Thrust: Real propulsion capability
-- Best for: Larger inflatables, small aluminum
-- Features: Alternator option, larger fuel tank
-- Note: 9.9HP meets lake horsepower limits
+### Mercury 3.5 MH (3.5 HP)
 
-### Mercury 15-20HP FourStroke
+- **Use:** Small dinghies, sailboat auxiliaries, very small fishing boats
+- **Type:** 1-cylinder 4-stroke, manual start, tiller
+- **Weight:** ~18 kg / 40 lb
+- **Best for:** Slightly larger applications than the 2.5. Common sailboat auxiliary.
 
-**Maximum Portable Power**
+### Mercury 5 MH and 6 MH
 
-- Weight: 99-115 lbs
-- Thrust: Can plane a lightweight boat
-- Best for: 12-14ft boats, larger inflatables
-- Features: Electric start available, power trim
-- Note: Pushing limits of "portable"
+- **Use:** Small fishing boats, dinghies, sailboat auxiliaries
+- **Type:** 1-cylinder 4-stroke, manual start, tiller
+- **Weight:** ~25 kg / 55 lb
+- **Best for:** 8 to 11 ft small boats. Lightweight and portable.
 
-### Choosing the Right Size
+### Mercury 9.9 MH (9.9 HP)
 
-**For Yacht Tenders**:
-- Inflatable < 10ft: 2.5-6HP
-- Inflatable 10-12ft: 8-15HP
-- Rigid tender: 9.9-20HP
+- **Use:** 12 to 14 ft tin boats, kicker on bigger boats, small fishing
+- **Type:** 2-cylinder 4-stroke, manual start, tiller
+- **Weight:** ~38 kg / 84 lb
+- **Best for:** The most popular small-boat motor in Canada. Workhorse of cottage fishing.
 
-**For Small Fishing Boats**:
-- 10-12ft aluminum: 6-9.9HP
-- 12-14ft aluminum: 15-20HP
+The 9.9 ProKicker variant is a different motor, purpose-built for fishing kicker applications. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide) for that.
 
-**For Trolling/Auxiliary**:
-- Primary kicker: 9.9HP
-- Light auxiliary: 2.5-6HP
+### Mercury 15 MH and 15 EH
 
-### Portable Features to Consider
+- **Use:** 14 ft tin boats, slightly bigger small fishing applications
+- **Type:** 2-cylinder 4-stroke, manual or electric start, tiller
+- **Weight:** ~45 kg / 99 lb
+- **Best for:** Larger small boats. The 15 HP step-up over 9.9 is meaningful for cruising speed.
 
-**Manual vs Electric Start**:
-Manual is lighter and simpler. Electric adds convenience but weight.
+### Mercury 20 EH (20 HP)
 
-**Tiller Only**:
-All Mercury portables are tiller control for simplicity and weight savings.
+- **Use:** Larger tin boats, smaller aluminum console boats with tiller
+- **Type:** 2-cylinder 4-stroke, electric start, tiller
+- **Weight:** ~56 kg / 124 lb
+- **Best for:** Heavier or longer small boats where 15 HP isn't enough. The cap of the portable range.
 
-**Integral vs External Tank**:
-Smaller motors have built-in tanks. Larger (15HP+) typically use external.
+For specific pricing on each, [build a quote](/quote/motor-selection). Portable motors are typically sold as motor-only (no rigging required since most installs are drop-in).
 
-**[Shop Portable Mercury Outboards](/quote)**
+## Manual vs electric start
+
+Portable motors typically come in manual start (rope pull, designated MH) or electric start (battery and starter, designated EH or EFI variants).
+
+**Manual start advantages:**
+- **Lower cost** (typically $300 to $500 less)
+- **Lower weight** (no battery, no starter)
+- **Simpler** (fewer parts to fail)
+- **No battery to maintain** during off-season
+
+**Electric start advantages:**
+- **Easier starting** (especially for less mechanically-inclined operators)
+- **More convenient** for older operators or hands-on fishing
+- **Required for some applications** (some tiller setups can't be reached for rope pull)
+
+For most small fishing boats, manual start (MH variants) is fine. For older operators or convenience-focused applications, electric start (EH variants) is worth the premium.
+
+## Shaft length
+
+Most small boats need short shaft (15 inches). Some need long shaft (20 inches):
+
+- **Short shaft (15 inches):** Standard for most tin boats and small dinghies
+- **Long shaft (20 inches):** Required for sailboat auxiliaries, deeper transoms, some larger small boats
+
+Wrong shaft length is the most common portable motor mistake. The motor cavitates at speed if the shaft is too short for the transom. The lower unit drags too deep if the shaft is too long.
+
+We measure transom depth at HBW before recommending shaft length. For drop-in installs, the customer can measure transom depth themselves. The standard rule: cavitation plate should be roughly even with the bottom of the hull at the prop location.
+
+## What HBW checks before recommending a portable Mercury
+
+When customers come for a portable motor purchase, we want to know:
+
+- **Boat make, model, length, and weight class**
+- **Transom height** (for shaft length selection)
+- **Use case** (fishing, sailboat aux, kicker, dinghy)
+- **Solo or two-person typical use**
+- **Manual or electric start preference**
+- **Storage and transport plans** (lighter vs. heavier acceptable)
+- **Existing fuel tank** (some portables come with separate fuel tank, some integrate with bigger boat tank)
+
+Most portable customers know what they want. We confirm the right fit and complete the purchase.
+
+## Common portable motor mistakes
+
+We see these every season:
+
+1. **Wrong shaft length.** Short shaft on a deep transom causes cavitation. Long shaft on a shallow transom causes drag.
+2. **Buying too small for boat size.** A 5 HP on a 14 ft tin boat with two anglers is underpowered. Right-size for actual loading.
+3. **Skipping fuel stabilizer.** Portable motors sit unused often. Untreated fuel gums up carburetors.
+4. **Ignoring break-in.** Portable motors get the same break-in period as bigger Mercurys. Skipping break-in shortens motor life.
+5. **Storage mistakes.** Portable motors stored upright on the floor can leak fuel or oil. Use a motor stand or store horizontally per Mercury guidance.
+
+## Storage and transport
+
+Portable motors are designed for easy transport but need proper care:
+
+- **Storage:** Use a motor stand or wall mount for vertical storage. Horizontal storage is okay if oil and fuel positions are correct (check owner's manual).
+- **Transport:** Most portables can be carried by one or two people. Carrying handles and ergonomic design make this easier. Heavier portables (15+ HP) are easier with two people.
+- **Fuel:** Drain or stabilize before storage longer than a month.
+- **Mounting:** Drop-in installs use transom clamps. Tighten before each launch. Loose clamps cause motor loss in deep water.
 
 ## Related guides
 
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat) — matching HP to boat size and use
-- [What Size Motor Does My Boat Need? Complete Calculator Guide](/blog/boat-motor-size-calculator-guide) — sizing calculator walkthrough
-- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison) — mid-range Mercury head-to-head
-- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario) — the 115 vs 150 decision
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), small aluminum applications
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker-specific 9.9 variant
+- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), control type selection
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), portable motor maintenance
+- [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), break-in for any new Mercury
 
-    `,
+## Ready to buy a portable Mercury?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD on portable models 2.5 to 20 HP.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through portable motor selection for your specific boat, [give us a call at (905) 342-2153](tel:9053422153). We sell hundreds of portable Mercurys every year and can match the right motor to your application.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**What's the most popular Mercury portable outboard in Canada?**
+The Mercury 9.9 MH. It's the workhorse of cottage fishing, kicker motors, and small-boat applications. Reliable, lightweight, and easy to transport.
+
+**Do I need rigging for a Mercury portable motor?**
+No, for most applications. Portables are drop-in installs with transom clamps and a separate fuel tank. No control rigging required for tiller variants.
+
+**Can I use a 9.9 as my main motor on a small boat?**
+Yes for 12 to 14 ft tin boats with one or two passengers. The 9.9 is plenty for solo or two-person fishing on sheltered water.
+
+**Manual or electric start for a portable Mercury?**
+Manual start (MH) is lighter, cheaper, and simpler. Electric start (EH) is more convenient and easier on older operators. Both work fine; choose based on preference and budget.
+
+**What shaft length do I need?**
+Most small boats need short shaft (15 inches). Sailboat auxiliaries and deeper transoms need long shaft (20 inches). Measure transom depth before purchase. Cavitation plate should be even with the bottom of the hull at prop location.
+
+**How do I store a portable Mercury motor?**
+Use a motor stand or wall mount for vertical storage. Horizontal storage is okay if oil and fuel positions per owner's manual. Stabilize fuel before storage longer than a month.
+
+**Is the 9.9 MH the same as the 9.9 ProKicker?**
+No. The 9.9 MH is a general-purpose portable motor. The 9.9 ProKicker is purpose-built for fishing kicker applications, with high-thrust gearcase, larger prop, and longer shaft. See our [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide).
+
+**Can I use a portable Mercury on a sailboat?**
+Yes. Sailboat auxiliaries are a common portable application. Long-shaft variants (20 inch) typically required for sailboat transoms.
+
+**How long does a portable Mercury last?**
+Modern portable Mercurys last 1,000+ hours with proper maintenance. For typical recreational use (10 to 50 hours per season), that translates to 20+ years of useful life.
+
+**Can I transport a portable Mercury in my car?**
+Yes for smaller variants (under 15 HP). Most portable Mercurys have carrying handles. Larger portables (15+ HP) are easier with two people. Check owner's manual for transport position (often horizontal with specific orientation).
+
+**Do portable Mercurys need annual maintenance?**
+Yes. Annual fluid changes, fuel system service, and inspection are recommended even on portables. The cost is small relative to motor replacement. We service portables at HBW.
+
+**What's the cost of a Mercury 9.9 MH?**
+For specific 2026 pricing in CAD, [build a quote](/quote/motor-selection). Pricing varies by current promotions and motor configuration.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'What\'s the lightest outboard Mercury makes?',
@@ -8979,125 +9308,199 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
   {
     slug: 'mercury-2026-outboard-lineup-ontario',
-    title: "Inside Mercury's 2026 Outboard Lineup: What Actually Matters for Ontario Boaters",
-    description: "Mercury's 2026 outboard lineup runs from tiny portables to fire-breathing V12s and advanced electric Avator motors. Here's what really matters for Harris Boat Works customers on Rice Lake.",
+    title: 'Mercury 2026 Outboard Lineup for Ontario Boaters',
+    description: 'The Mercury 2026 lineup covers every recreational HP class. FourStroke (2.5 to 300 HP) for cruising, fishing, and family use. Pro XS (115 to 300 HP) for performance fishing. SeaPro (25 to 300 HP) for commercial duty. Verado (250 to 600+ HP) for offshore (special-order at HBW). Avator electric lin...',
     image: '/lovable-uploads/Inside_Mercury_s_2026_Outboard_Lineup_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-02-06',
+    dateModified: '2026-05-04',
     publishDate: '2026-02-06',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury 2026 lineup', 'mercury outboard models', 'mercury fourstroke 2026', 'mercury verado v10', 'avator electric outboard', 'mercury outboard ontario', 'rice lake outboard motor', 'mercury dealer ontario'],
-    content: `If you've glanced at any 2026 outboard "lineup" videos or articles, you've probably seen a blur of model names, horsepower numbers, and buzzwords. It's exciting, but it can also be overwhelming. The truth is, most Ontario boaters don't need 808 horsepower or a 40-foot centre console. You need an engine that starts every time, sips fuel, and matches how you actually use Rice Lake.
+    content: `# Mercury 2026 Outboard Lineup for Ontario Boaters
 
-Mercury's 2026 lineup has something for every kind of boater, from portable four-strokes to the latest V10 Verado models and expanding Avator electric range. Here's a clear, Harris Boat Works-style breakdown of what matters for you.
+The Mercury 2026 lineup covers every recreational HP class. FourStroke (2.5 to 300 HP) for cruising, fishing, and family use. Pro XS (115 to 300 HP) for performance fishing. SeaPro (25 to 300 HP) for commercial duty. Verado (250 to 600+ HP) for offshore (special-order at HBW). Avator electric line for emerging applications. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-## The Big Picture: How Mercury Organizes Its Lineup
+## Quick recommendation
 
-Mercury's engines fall into a few key families:
+For most Ontario freshwater customers, the Mercury 2026 FourStroke 60 to 150 HP range covers the vast majority of use cases. The Pro XS variants in the same HP classes earn their price premium on tournament hulls. SeaPro is the right call for commercial use. Verado is special-order; most Ontario freshwater boaters don't need it.
 
-- **FourStroke outboards:** 2.5–300 HP — the most complete range in Mercury's lineup
-- **Pro XS performance models:** 115–300 HP — for bass and multi-species fishing
-- **SeaPro commercial duty models:** 15–500 HP — for workboats and high-use situations
-- **Verado V8, V10, V12:** premium smooth, quiet, high-tech outboards from 250–600 HP
-- **Avator electric outboards:** 7.5e to 110e — low-voltage, quiet, emission-free electric motors
+Mercury's 2026 lineup builds on years of refinement. The motors are quieter, more fuel-efficient, and better integrated with electronics than ever. Whether you're repowering an aluminum console or a pontoon, there's a Mercury 2026 model that fits.
 
-For Rice Lake and most Ontario inland boating, the sweet spots are:
+## What changes the answer
 
-- 9.9–115 HP FourStroke / Pro XS
-- 150 HP FourStroke or Verado on larger fishing and pontoon rigs
-- Avator electric for small car-toppers, tenders, and restricted waters
+Five things move which 2026 Mercury fits your boat:
 
-The wild offshore stuff is fun to look at, but you don't need a V12 to fish walleye off Gores Landing.
+- **Boat type and length.** Aluminum console, fiberglass runabout, pontoon, bass boat all have different sweet spots.
+- **Use case.** Fishing, family cruising, water sports, tournament, commercial all reward different motor families.
+- **Capacity plate maximum HP.** The plate sets the legal ceiling.
+- **Budget and financing.** Higher HP costs more; some HP classes have promotional pricing.
+- **Long-term ownership plan.** Newer technology investments pay off over longer holds.
 
-## Portable to Mid-Range FourStroke: The Workhorses of Rice Lake
+## Mercury 2026 FourStroke (2.5 to 300 HP)
 
-Mercury's **FourStroke** engines cover 2.5–300 HP. They're the backbone of what we rig and service at Harris Boat Works.
+The FourStroke is Mercury's mainstream recreational line. Quiet, fuel-efficient, reliable. Covers most Ontario use cases.
 
-Key traits:
+### Portable FourStroke (2.5 to 20 HP)
 
-- **Lightweight, easy to handle:** Modern 4-stroke 9.9s and 15s are built to be carried and mounted by one person.
-- **Efficient and quiet:** Compared to older carbureted motors, today's EFI FourStrokes are smoother, quieter, and use noticeably less fuel.
-- **Clean running:** Fully meets current emissions standards, with less smoke and smell than old 2-strokes.
+For small boats, dinghies, kickers, sailboat auxiliaries. Tiller motors, drop-in installs, no rigging required. The Mercury 9.9 MH is the most popular small-boat motor in Canada.
 
-For Rice Lake use cases:
+See our [Portable Mercury Outboard Guide](/blog/portable-outboard-mercury-guide-2-20hp).
 
-- **9.9–15 HP**: Great for small car-toppers, jon boats, and as kicker/trolling motors on bigger rigs.
-- **25–40 HP**: Ideal for 14–16 ft aluminum fishing boats.
-- **60–115 HP**: Common on mid-size fishing boats and pontoons.
+### Mid-range FourStroke (25 to 60 HP)
 
-Mercury has also focused on **battery-free EFI** in smaller engines and improved starting across the range, so you're not fighting a finicky motor at the dock.
+For 14 to 16 ft aluminum console boats, smaller fishing applications, and kicker-supplemented setups. The 60 EFI is a popular sweet-spot motor.
 
-## V10 Verado 350–425 HP: Overkill Here, but Worth Knowing
+For specific pricing, [build a quote](/quote/motor-selection). All-in repowers in this class typically land $11,000 to $15,000 CAD at HBW.
 
-In 2025, Mercury expanded its **V10 Verado** family with an all-new **425 HP** outboard and enhanced **350 HP** model. That's more than most Rice Lake boaters will ever bolt on, but it's still useful to understand what it represents:
+### Workhorse FourStroke (75 to 150 HP)
 
-- **Faster acceleration:** Mercury notes the updated 350 HP is 15% quicker 0–50 mph vs. the previous Mercury 350 HP model. The new 425 HP posts 3 seconds faster 0–30 mph vs. a comparable 450 HP competitor.
-- **Lighter weight:** The new 425 HP is about 254 pounds lighter than comparable high-horsepower competitors, improving performance and efficiency.
-- **Class-leading alternator:** A 150-amp alternator supports the electronics-heavy boats of today.
-- **Quieter operation:** Mercury calls these the quietest in their class, with significantly lower cruise noise than leading competitors.
+The most common Kawartha repower range. Covers 16 to 20 ft aluminum and fiberglass boats, pontoons (with Command Thrust), and family fishing applications. The 90 EXLPT and 115 EXLPT are the workhorses of the Canadian recreational fleet.
 
-You probably won't see a V10 on Rice Lake, but the same technologies (quiet running, strong alternators, smart fuel calibration) trickle down through the FourStroke lineup you *do* use.
+See our [75/90/115 comparison](/blog/mercury-75-vs-90-vs-115-comparison) and [115/150 comparison](/blog/mercury-115-vs-150-hp-outboard-ontario).
 
-## Avator Electric: Mercury's Growing Electric Family
+### High-output FourStroke (175 to 300 HP)
 
-Mercury's **Avator** sub-brand focuses on low-voltage electric outboards. The family now includes five models:
+For larger fiberglass boats, tritoons, center consoles. The 200 to 300 HP V8 FourStrokes (introduced 2018, refined since) are smooth, fuel-efficient, and pair well with most large recreational boats.
 
-- Avator 7.5e (750W, roughly equivalent to a 3.5–4 HP gas outboard)
-- Avator 20e (2,000W, approximately 5 HP gas equivalent)
-- Avator 35e (3,500W, approximately 9.9 HP gas equivalent)
-- Avator 75e (7,500W, approximately 10 HP gas equivalent — uses external 5,400Wh Power Center battery packs, up to 4)
-- Avator 110e (11,000W, approximately 15 HP gas equivalent — largest in the lineup, digital remote controls available)
+For specific pricing, [build a quote](/quote/motor-selection). All-in repowers in this class typically land $35,000 to $40,000 CAD at HBW.
 
-Key features:
+## Mercury 2026 Pro XS (115 to 300 HP)
 
-- **Transverse flux motor technology**: More torque per pound than conventional designs.
-- **Swappable batteries**: Modular packs you can pop in and out, with some models allowing up to four packs in parallel for extended range.
-- **Digital displays and controls**: Simple, colour displays and ergonomic tillers.
-- **SmartCraft integration**: Electric motors still talk to Mercury's broader digital ecosystem.
+The Pro XS is Mercury's performance fishing line. Faster acceleration, slightly higher top speed, and tournament-tuned response over the equivalent FourStroke. Same powerplant family but tuned differently.
 
-Real-world testing, such as Mercury's 13 ft Veer V13 with Avator 7.5e, shows around 60 minutes / 5 miles at full throttle or up to 19 hours / 34 miles at 25% throttle on a 1 kWh pack. For Rice Lake, Avator is ideal for:
+The 115 Pro XS, 150 Pro XS V6, and 200 to 250 Pro XS V8 are the most common HBW customers. Tournament bass anglers and customers who want maximum responsiveness pick Pro XS.
 
-- Small car-toppers or car-topped fishing skiffs on quiet bays.
-- Short-range cottage runabouts where charging is easy.
-- Eco-sensitive or electric-only waters you might visit beyond Rice Lake.
+The Pro XS price premium over FourStroke at the same HP is typically $1,000 to $1,500 CAD. Earns the difference on performance hulls; harder to justify on family aluminum or pontoons.
 
-Want a deeper dive on Avator? Read our full guide: [Mercury Avator & the Future of Electric Boating in Ontario](/blog/mercury-avator-electric-boating-ontario).
+See our [Mercury Motor Families guide](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado).
 
-## The "Big Announcement" to Start 2026
+## Mercury 2026 SeaPro (25 to 300 HP)
 
-Early 2026 saw another Mercury teaser: a "big announcement" around its evolving high-horsepower and digital ecosystem, highlighted in January content. While not every detail is finalized, the themes are clear:
+The SeaPro is Mercury's commercial-duty line. Built for heavy-use cycles: charter fishing, commercial fishing, government and rescue applications, and rental fleets. Heavier-duty internal components and more aggressive maintenance schedules.
 
-- Tightening integration between engines, digital controls, and onboard power management.
-- Continued expansion of electric and hybrid-adjacent systems.
-- Refinements to engines across the lineup rather than just headline-grabbing flagships.
+For typical Ontario recreational use, SeaPro is overkill. For commercial operators or extremely heavy-use private owners, SeaPro earns its premium. We sell some SeaPros at HBW; most are commercial sales.
 
-For a Harris Boat Works customer, the takeaway is simple: Mercury isn't just adding one new motor; it's steadily making **every** step on the horsepower ladder more refined, more connected, and easier to live with.
+## Mercury 2026 Verado (250 to 600+ HP)
 
-## What Matters Specifically for Harris Boat Works Customers
+The Verado is Mercury's premium supercharged offshore line. Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
 
-Looking at 2026 from the Rice Lake shoreline, here's how we'd map Mercury's lineup:
+Verado is special-order at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. Twin V12 600 HP setups are stunning motors. They are not for Rice Lake.
 
-- **Best all-around choices for 14–16 ft fishing boats:** 25–60 HP FourStroke.
-- **Ideal for 16–18 ft fishing boats and smaller pontoons:** 60–115 HP FourStroke or Pro XS depending on how performance-focused you are.
-- **Popular for larger pontoons and multi-purpose boats:** 115–150 HP FourStroke or Verado where extra refinement is worth it.
-- **Serious trolling setups:** A main FourStroke paired with a [ProKicker 9.9–15 HP](/blog/mercury-prokicker-rice-lake-fishing-guide).
-- **Niche electric applications:** Avator on small utility boats, car-toppers, or in restricted waters.
+If you do have a Verado-appropriate boat (offshore center console, big yacht), [contact us](/contact) for a special-order quote.
 
-The absolute top end (V10, V12, 808 HP concepts) might not land on Rice Lake, but the same engineering culture that produced those engines is baked into the 25–150 HP range we rig every day.
+## Mercury 2026 Avator (electric)
 
-If you're thinking about a new engine for 2026, [talk to us](/contact) about how you actually use your boat — trolling, cruising, family, fishing — and we'll map you to the right corner of Mercury's lineup. Or [explore motors and pricing in our quote builder](/quote/motor-selection).
+Mercury's electric outboard line continues to expand in 2026. Models cover small portable applications (7.5e, 20e, 35e) up to larger units (75e, 110e). The lineup is still maturing relative to gas Mercurys but is a viable choice for specific use cases:
 
-**See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer).
+- **Quiet operation** in noise-restricted areas
+- **Zero emissions** for environmentally-conscious operators
+- **Low-maintenance** (no oil, no spark plugs, no fuel stabilizer)
+
+Range and charging time are still meaningful constraints relative to gas. For typical Ontario use cases, gas Mercury is still the dominant choice. We are on-order for Avator at HBW for customers with specific use cases. [Contact us](/contact) for current Avator availability.
+
+## What's new for 2026
+
+Mercury's 2026 model year (effective July 1, 2026) brings refinements rather than radical changes:
+
+- **Continued integration** with Mercury SmartCraft electronics and Joystick Piloting
+- **Refined Avator electric lineup** with expanded HP coverage
+- **Updated Pro XS variants** with software refinements
+- **Continuing Verado V12 expansion** in higher HP classes
+- **Refined warranty programs** including Mercury Repower Financing at 7.99% APR
+
+For specific 2026 motor pricing, [build a quote](/quote/motor-selection).
+
+## What HBW recommends for typical Ontario customers
+
+For most Ontario freshwater customers, the right Mercury 2026 falls into one of these buckets:
+
+- **16 to 18 ft aluminum console fishing boat:** 90 to 115 EXLPT FourStroke + 9.9 ProKicker
+- **18 to 20 ft pontoon (cruising and fishing):** 90 to 115 HP CT FourStroke
+- **20 to 22 ft pontoon (water sports):** 150 HP CT FourStroke
+- **17 to 19 ft fiberglass runabout:** 115 to 150 HP FourStroke
+- **18 to 21 ft bass boat (tournament):** 200 to 250 HP Pro XS V8
+- **Smaller tin boats and dinghies:** 9.9 to 25 HP portable
+
+For other configurations, [build a quote](/quote/motor-selection) or [contact us](/contact) to discuss your specific needs.
+
+## Common 2026 lineup mistakes
+
+We see these every season:
+
+1. **Buying Pro XS when FourStroke would work.** Pro XS earns its price on tournament hulls. On family fishing and recreational use, FourStroke is the better value.
+2. **Skipping Command Thrust on pontoons.** Command Thrust is the gearcase that matters on pontoons. Don't save money by skipping it.
+3. **Buying Verado for freshwater use.** Almost no Ontario freshwater boater needs Verado. The premium is wasted.
+4. **Underbuying HP for current use.** Mercury 2026 motors are efficient. Right-sizing for actual use case beats undersizing for budget.
+5. **Ignoring the Avator question.** Some specific use cases (very small boats, eco-conscious operators) might be better served by Avator. Worth asking the question.
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
-- [2027 Mercury Outboard Preview: What's New and What to Expect](/blog/2026-mercury-model-preview) — preview of the 2026 Mercury models
-- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
-- [Understanding Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) — FourStroke vs Pro XS vs Verado families
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026) — live 2026 promotions and rebates
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), motor family selection
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), workhorse class comparison
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the step-up math
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific guidance
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific guidance
+
+## Ready to pick your 2026 Mercury?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury 2026 pricing in CAD across every HP class.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through 2026 Mercury options for your specific boat, [give us a call at (905) 342-2153](tel:9053422153). We rig 2026 Mercurys every week and can match the right motor to your application.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**What's new in the Mercury 2026 outboard lineup?**
+Mercury 2026 is largely a refinement year rather than a redesign year. Refined Avator electric lineup, software updates on Pro XS variants, continued V12 Verado expansion, and refined Mercury Repower Financing at 7.99% APR.
+
+**When does the Mercury 2026 model year start?**
+July 1, 2026. Mercury model years change every July 1. Pre-July 2026 motors are technically 2025 model year.
+
+**What's the most popular Mercury 2026 motor?**
+The 90 EXLPT FourStroke and 115 EXLPT FourStroke are the most-installed motors at HBW. They fit the most common Ontario boat (16 to 18 ft aluminum console) and the most common use case (family fishing).
+
+**Is Mercury Avator worth it in 2026?**
+For specific use cases (small boats, environmentally-sensitive areas, low-noise applications), yes. For typical Ontario freshwater use, gas Mercury is still the dominant choice due to range and charging considerations.
+
+**Should I wait for 2026 model year or buy 2025?**
+Late-2025 Mercury inventory is often discounted. The 2026 model year refinements are minor. For most customers, late-2025 motors are good value if you find the right one.
+
+**What's the difference between FourStroke and Pro XS for 2026?**
+FourStroke is the mainstream recreational line. Pro XS is performance-tuned (faster acceleration, slightly higher top speed). Same powerplant family, different tuning. Pro XS premium is typically $1,000 to $1,500 CAD over FourStroke at same HP.
+
+**Does Mercury still make 2-stroke outboards in 2026?**
+No. Mercury phased out consumer 2-stroke production years ago. All 2026 Mercury models are FourStroke or electric.
+
+**What HP class is most popular for Mercury 2026 repowers?**
+75 to 150 HP. This range covers the most common Ontario boats (16 to 20 ft aluminum, fiberglass, and pontoon). The 90 EXLPT and 115 EXLPT specifically are the workhorse models.
+
+**Is the Mercury Verado V12 600 available in Ontario?**
+Yes by special order. Verado is built for offshore applications. Ontario freshwater rarely justifies Verado. For specific use cases, [contact HBW](/contact).
+
+**What financing is available on Mercury 2026 motors?**
+Mercury Repower Financing at 7.99% APR for qualified buyers. Sometimes promotional rates are offered seasonally. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for current details.
+
+**Will my older controls and rigging work with a Mercury 2026 motor?**
+Mercury-to-Mercury repowers usually keep existing post-2010 controls and rigging if in good condition. Brand conversions need new everything. We assess during the hull walk-around.
+
+**Where can I see Mercury 2026 motors in person?**
+At HBW. We have current Mercury 2026 inventory and can walk you through the lineup. [Visit us](/contact) or [call (905) 342-2153](tel:9053422153).
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
 `,
     faqs: [
       {
@@ -10310,183 +10713,187 @@ If you're in the Kawarthas or Rice Lake region — Mercury makes sense. Not beca
   },
   {
     slug: 'mercury-115-vs-150-hp-outboard-ontario',
-    title: 'Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?',
-    description: 'Detailed Mercury 115 vs 150 comparison — FourStroke and Pro XS models — with specs, pricing, fuel economy, and boat-by-boat recommendations for Ontario lakes.',
+    title: 'Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)',
+    description: 'The step from 115 to 150 HP is bigger than it looks on paper. The 115 is a 4-cylinder engine; most 150 HP Mercurys are larger displacement 4-cylinder or transverse 4-cylinder builds. The 150 plants meaningfully bigger hole shot, plane time, and load-carrying performance on heavier hulls. The pric...',
     image: '/lovable-uploads/cuddy-115-hero-real.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-19',
-    dateModified: '2026-04-19',
+    dateModified: '2026-05-04',
     category: 'Buying Guide',
     readTime: '14 min read',
     keywords: ['mercury 115 vs 150 hp', 'mercury 115 Pro XS', 'mercury 150 Pro XS', 'mercury 115 FourStroke review', 'mercury 150 FourStroke specs', 'which outboard for Ontario boat', 'mercury outboard comparison', 'Pro XS vs FourStroke'],
-    content: `
-## Why This Decision Matters More Than It Seems
+    content: `# Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)
 
-The 115 vs 150 decision comes up constantly at Harris Boat Works — and increasingly, the conversation includes the **[Pro XS](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)** versions of both engines. The Mercury 150 FourStroke is a meaningfully different engine from the 115, not just a bigger version of the same thing. More displacement, more weight, more power, and more capability.
+The step from 115 to 150 HP is bigger than it looks on paper. The 115 is a 4-cylinder engine; most 150 HP Mercurys are larger displacement 4-cylinder or transverse 4-cylinder builds. The 150 plants meaningfully bigger hole shot, plane time, and load-carrying performance on heavier hulls. The price difference is $4,000 to $6,000 CAD. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
 
-But there's now a second question: **FourStroke or Pro XS?** Both HP classes offer a performance-tuned Pro XS variant, and they've become the more popular choice at our dealership. Here's the complete breakdown.
+## Quick recommendation
 
-## FourStroke Models: The Specs Side by Side
+For 17 to 19 ft hulls used for family fishing or mixed recreation, the 115 EXLPT FourStroke is plenty. For 18 to 22 ft hulls, pontoons, or boats running active water sports, the 150 earns its price difference. For tournament fishing or performance hulls, the 150 Pro XS V6 is usually the right call.
 
-| Spec | Mercury 115 FourStroke | Mercury 150 FourStroke |
+The two HP classes overlap on some boats. A 19 ft aluminum could happily run either. The deciding factors are loading, use case, and where you launch. We rig boats in this HP range every week at HBW and the right answer comes out of three questions: hull length, typical loading, and water type.
+
+## What changes the answer
+
+Five things move whether 115 or 150 fits your boat:
+
+- **Hull length and weight.** The 115 handles up to about 18 ft aluminum and 19 ft light fiberglass comfortably. Beyond that, the 150 is the practical floor.
+- **Hull type.** Pontoons over 20 ft want the 150. Bass boats over 18 ft want the 150. Light aluminum runabouts can stay at 115.
+- **Active water sports.** Tubing, skiing, wakeboarding pull more HP than fishing or cruising. The 150 handles loaded water sports well; the 115 struggles when loaded and pulling.
+- **Where you launch.** Bigger water (Lake Ontario, Bay of Quinte, eastern Trent-Severn) rewards more HP for both safety and performance.
+- **Capacity plate ceiling.** A boat rated 90 to 150 HP can take either. A boat rated up to 115 can only take the 115.
+
+## Side-by-side: Mercury 115 vs 150 FourStroke
+
+For typical Ontario use:
+
+| Factor | 115 EXLPT FourStroke | 150 EXLPT FourStroke |
 |---|---|---|
-| Displacement | 2.1L (inline-4) | 3.0L (inline-4) |
-| Dry weight | ~359 lbs | ~456 lbs |
-| Gear ratios | 2.00:1 (std) / 2.38:1 (CT) | 2.00:1 (std) / 2.38:1 (CT) |
-| Full throttle RPM | 5,000–6,000 | 5,000–6,000 |
-| Alternator output | 50A | 60A |
-| Command Thrust option | Yes | Yes |
-| Standard warranty | 3-year limited | 3-year limited |
+| Engine type | Inline 4-cyl, 2.1L | Inline 4-cyl, 3.0L |
+| Weight (XL shaft) | ~163 kg / 359 lb | ~206 kg / 455 lb |
+| Hole shot (loaded) | Adequate | Strong |
+| Top speed (18 ft aluminum, typical load) | ~38 to 42 mph | ~45 to 50 mph |
+| Top speed (20 ft pontoon, typical load) | ~28 to 32 mph | ~35 to 40 mph |
+| Fuel economy at cruise | Excellent | Very good |
+| Tow rating (typical hull) | Two skiers, light tubing | Two skiers, full tubing, wakeboarding |
+| Best fit | 17 to 19 ft aluminum, light fiberglass, 18 to 20 ft pontoons (cruising) | 18 to 22 ft hulls, pontoons (active water sports), light bass boats |
+| Use case | Family fishing, mixed cruising, light water sports | Active family use, water sports, heavier loading |
+| Price difference | Baseline | +$4,000 to $6,000 CAD |
 
-The weight difference is real: the 150 is about 97 lbs heavier.
+Note: top-speed numbers are typical Kawartha-area sea-trial results for representative hulls. Actual numbers vary by hull design, prop selection, and loading. For your specific boat, sea-trial numbers from HBW will be more accurate.
 
----
+For specific pricing, [build a quote](/quote/motor-selection).
 
-## The Pro XS Story: Why These Are Now Our Bestsellers
+## When 115 HP is the right call
 
-The Mercury Pro XS line started as tournament fishing motors. Over the past few years, they've crossed over into mainstream popularity — and for good reason. At Harris Boat Works, we now sell more Pro XS units than standard FourStroke models in the 115 and 150hp classes.
+The 115 EXLPT FourStroke is enough for:
 
-### What Makes Pro XS Different from FourStroke?
+- **17 to 19 ft aluminum console boats** used for family fishing or mixed recreation
+- **18 to 20 ft pontoons** used primarily for cruising and fishing (no active water sports)
+- **Light fiberglass runabouts up to 19 ft** used for family cruising
+- **Boats rated to 115 HP maximum** (capacity plate sets the ceiling)
+- **Budget-conscious repowers** where the 115 fits the use case
 
-The Pro XS isn't just a FourStroke with a decal. Key differences:
+The 115 is plenty motor for the most common Ontario use cases. The savings against the 150 (about $4,000 to $6,000 CAD) buy a kicker, electronics, or a stainless prop that move performance on the existing motor more than the HP step-up does.
 
-- **Performance calibration**: The ECU is tuned for quicker throttle response and higher top-end RPM. The Pro XS feels noticeably more aggressive off the line.
-- **Lighter weight**: Pro XS models shed weight through design choices optimized for performance. Every pound matters on an aluminum fishing boat.
-- **Advanced Range Optimization (ARO)**: Mercury's fuel management technology adjusts fuel delivery at cruise for extended range — critical for big-water Ontario days.
-- **Sport gearcase**: Lower drag, designed for speed. The standard FourStroke's gearcase prioritizes durability and thrust; the Pro XS trades a small amount of low-end pull for meaningful top-end gains.
-- **Pro XS-specific propellers**: Optimized for the motor's power curve. The Revolution 4 and Fury 4 props paired with Pro XS deliver measurably better hole shot and cruise speed.
+For specific pricing, [build a quote](/quote/motor-selection). Most 115 EXLPT repowers at HBW land $17,000 to $22,000 CAD all-in.
 
-### 115 Pro XS: The Spec Sheet
+## When 150 HP earns its price difference
 
-| Spec | Mercury 115 Pro XS |
-|---|---|
-| Displacement | 2.1L (inline-4) |
-| Dry weight | ~349 lbs |
-| Full throttle RPM | 5,000–6,000 |
-| Alternator output | 50A |
-| Gear ratio | 2.00:1 (sport gearcase) |
-| Standard warranty | 3-year limited |
+The 150 EXLPT FourStroke is the right call when:
 
-The 115 Pro XS is roughly **10 lbs lighter** than the standard 115 FourStroke. That doesn't sound like much until you realize it's 10 lbs off the transom of a 17ft aluminum boat — it changes the balance.
+- **Hull is 18 to 22 ft** (aluminum, fiberglass, or pontoon)
+- **Active water sports are part of the use** (tubing, skiing, wakeboarding regularly)
+- **Loading is heavy** (family of five plus gear, multiple coolers, heavy fishing tackle)
+- **Bigger water is the destination** (Lake Ontario, Bay of Quinte, larger Trent-Severn lakes)
+- **Tournament fishing requires fast morning runs** (consider 150 Pro XS V6 for tournament-level acceleration)
 
-**Why Ontario anglers love the 115 Pro XS:**
-- Faster hole shot on 16–18ft aluminum boats — critical when tournament fishing and repositioning matters
-- Better top-end speed: typically 2–4 mph faster than the standard 115 FourStroke on the same hull
-- The lighter weight improves bow lift on smaller boats, especially when running solo
-- ARO fuel management means longer range on big water days — Lake Simcoe, Rice Lake, Bay of Quinte runs
-- SmartCraft-compatible for full digital gauges and VesselView integration
+The 150 hole shot when loaded is meaningfully better than the 115. The plane time difference matters when you are pulling skiers or running with a full crew. The mid-range cruising performance is significantly better. For specific pricing, [build a quote](/quote/motor-selection). Most 150 EXLPT repowers at HBW land $23,000 to $36,000 CAD all-in.
 
-### 150 Pro XS: The Spec Sheet
+## Mercury 150 Pro XS V6: when to step up the family
 
-| Spec | Mercury 150 Pro XS |
-|---|---|
-| Displacement | 3.0L (inline-4) |
-| Dry weight | ~445 lbs |
-| Full throttle RPM | 5,000–5,750 |
-| Alternator output | 60A |
-| Gear ratio | 1.92:1 (sport gearcase) |
-| Standard warranty | 3-year limited |
+Mercury also makes a 150 Pro XS V6, which is a different engine architecture (V6 instead of inline 4) optimized for performance applications.
 
-The 150 Pro XS is roughly **11 lbs lighter** than the standard 150 FourStroke, and the sport gearcase with its 1.92:1 ratio is noticeably different in character.
+The 150 Pro XS V6 is the right call when:
 
-**Why the 150 Pro XS dominates our sales floor:**
-- It's the sweet spot motor for 18–20ft aluminum fishing boats — the most popular segment in Ontario
-- The 3.0L displacement provides effortless power, and the Pro XS calibration makes it *feel* like more than 150hp
-- Hole shot is dramatically better than the standard 150 FourStroke, especially with the right prop
-- Top speed gains of 3–5 mph over the standard 150 on typical Ontario fishing boats
-- The 1.92:1 sport gear ratio is optimized for speed props — if you're running a Fury 4 or Tempest Plus, the Pro XS extracts more from those propellers
-- 60A alternator handles electronics-heavy fishing rigs (sonar, trolling motor charging, livewells, LED lighting)
+- **Tournament-level bass fishing** where acceleration to morning spots matters
+- **Performance hull** (bass boat, performance fishing boat) that is built for the V6 weight
+- **Top speed and acceleration are priorities** beyond what FourStroke 150 delivers
 
-### Pro XS vs FourStroke: Head-to-Head
+The Pro XS V6 costs more than the FourStroke 150 and is heavier. For typical recreational use, the FourStroke 150 is the better value. For tournament use, the Pro XS V6 earns the premium. See our [Mercury motor families guide](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) for the full picture.
 
-| Feature | FourStroke | Pro XS |
-|---|---|---|
-| Throttle response | Smooth, progressive | Aggressive, faster |
-| Top-end speed | Standard | 2–5 mph faster (hull dependent) |
-| Low-end torque | Strong (especially CT) | Good, but less than CT |
-| Weight | Heavier | Lighter |
-| Fuel economy at cruise | Excellent | Excellent (with ARO) |
-| Best for pontoons | Yes (CT version) | No — FourStroke CT is better |
-| Best for fishing boats | Good | Better |
-| Best for bowriders | Good | Good (if speed matters) |
-| Price premium | Base | ~$500–$1,000 more |
+## What HBW checks before recommending 115 or 150
 
-**The honest take:** If you're putting the motor on a pontoon or a family bowrider where low-speed handling matters more than top-end speed, the standard FourStroke (especially Command Thrust) is the better choice. If you're putting it on a fishing boat — aluminum or fiberglass — the Pro XS is worth the premium every time.
+When customers come in deciding between these two motors, we want to know:
 
----
+- **Boat make, model, year, length, weight, and hull type**
+- **Maximum HP rating on the capacity plate**
+- **Typical passenger and gear loading**
+- **Use case (fishing, cruising, water sports, mixed)**
+- **Where you launch (sheltered vs. open water)**
+- **Whether you do tournament fishing**
+- **Existing prop, rigging, and electronics condition**
+- **Long-term ownership plan**
+- **Budget tolerance and financing**
 
-## Price: Closer Than You Think
+Most customers fall into one of the two clear use cases above. Some customers are right on the edge, where either motor would work. For those, we usually recommend stepping up to the 150 if the hull and budget allow, because the long-term ownership math (resale, headroom, future water sports) favors the 150 once the hull is in the 18 to 19 ft range.
 
-In CAD, the price gap between the 115 and 150 FourStroke is typically $2,500–$3,500. The Pro XS variants add roughly $500–$1,000 over their FourStroke equivalents. For exact pricing, use mercuryrepower.ca. The 115 at $X isn't a bargain if it's underpowered for your boat.
+## Common 115/150 mistakes
 
-**Pro XS value proposition:** The $500–$1,000 premium buys you measurably better performance, lighter weight, and features that tournament anglers pay thousands more for in other brands. It's the best dollar-for-dollar upgrade in Mercury's lineup.
+We see these every season:
 
-## Fuel Economy: Surprisingly Close at Cruise
-
-At cruise RPM (3,500–4,000) the 150 doesn't drink dramatically more than the 115. The 150 reaches cruising speed at lower RPMs, which offsets some of the smaller engine's efficiency advantage.
-
-Both Pro XS models benefit from Advanced Range Optimization, which actively adjusts fuel delivery at cruise. Real-world reports from our customers show the Pro XS achieving comparable or better cruise economy than the standard FourStroke at the same speed — the calibration is that good.
-
-## The Right Motor for Each Boat Type
-
-### 16–18ft Aluminum Fishing Boats
-**Best choice: Mercury 115 Pro XS**
-The lighter weight helps — less weight on the transom means better bow lift and handling. The Pro XS calibration gives you the performance edge that matters on tournament days and long runs. If you're running a Lund 1775 Renegade, Crestliner 1750 Fish Hawk, or similar — this is the motor.
-
-If you don't fish competitively and want the most versatile setup, the 115 FourStroke Command Thrust is still an excellent choice for mixed fishing/family use.
-
-### 18–20ft Aluminum Fishing Boats
-**Best choice: Mercury 150 Pro XS**
-This is the combination we sell most. A 19ft Lund Pro-V, Crestliner 1950 Fish Hawk, or Alumacraft Competitor 185 with a 150 Pro XS is a genuinely fast, capable fishing rig. The sport gearcase and performance calibration shine on these hulls.
-
-### 18–20ft Bowrider (fiberglass)
-**Best choice: Mercury 150 FourStroke**
-A 19ft fiberglass bowrider with passengers works the 115 harder than it should. The 150 will plane properly and maintain speed in headwind. Pro XS isn't necessary here — the standard FourStroke's smoother power delivery suits family boating better.
-
-### 20–22ft Pontoon
-**Best choice: Mercury 150 FourStroke Command Thrust**
-Pontoon boats are heavy and drag-resistant. The 150 handles full loads properly. Command Thrust generates more low-end torque for cleaner hole shots. **Don't buy a Pro XS for a pontoon** — the sport gearcase gives up the low-end thrust that pontoons need.
-
-### Boat rated to 115hp max
-**Must check the transom rating first.** Don't repower with a 150 on a boat not rated for it. The 115 Pro XS is an excellent choice here — you get performance-oriented tuning without exceeding the HP rating.
-
-## The Future-Proofing Argument
-
-You'll own this motor for 10–15 years. The 115 running at 90% load regularly wears faster than the 150 running at 70%. The one-time cost of stepping up is $2,500–$3,500. The value of having the right motor for the boat's life is harder to quantify, but it's real.
-
-The Pro XS premium is even easier to justify long-term. The performance calibration, lighter weight, and ARO fuel management are features you'll appreciate every single outing — not just on day one.
-
-## Command Thrust vs Pro XS: Different Tools for Different Jobs
-
-This is an important distinction that gets confused:
-
-**Command Thrust** = modified gearcase for maximum low-speed thrust. Higher gear ratio, four-blade high-thrust prop. Built for pontoons, heavy boats, shallow water, and trolling. Available on FourStroke models.
-
-**Pro XS** = performance-calibrated motor with sport gearcase for speed. Lower gear ratio, speed-optimized props. Built for fishing boats where hole shot and top end matter. A different product entirely.
-
-**You cannot get a Pro XS with Command Thrust.** They serve opposite purposes. Choose based on your boat type and primary use.
-
-## Recommendation by Boat Type
-
-| Boat Type | Best Mercury Choice | Notes |
-|---|---|---|
-| 14–16ft aluminum, light use | 115 FourStroke standard | Right power, right weight |
-| 16–18ft aluminum, fishing | 115 Pro XS | Performance edge, lighter weight |
-| 17–18ft aluminum, mixed use | 115 FourStroke CT | Command Thrust for versatility |
-| 17–18ft aluminum, serious fishing | 150 Pro XS | Worth the upgrade for performance |
-| 18–20ft aluminum, fishing | 150 Pro XS | Our #1 seller in this segment |
-| 18–20ft fiberglass bowrider | 150 FourStroke standard | Handles load better |
-| 20–22ft pontoon | 150 FourStroke CT | Needs the thrust, not speed |
-| Boat rated to 115hp max | 115 Pro XS | Max performance within rating |
+1. **Buying 115 to save money on a hull that wants 150.** A 22 ft pontoon at 115 HP feels underpowered when loaded. The customer trades up to a 150 within 2 to 3 seasons at full price. Should have bought the 150 the first time.
+2. **Buying 150 when 115 was plenty.** A 17 ft aluminum used for solo fishing at 150 HP is overkill. The motor outpowers the hull's typical use. The savings on the 115 are better spent on a kicker, electronics, or a stainless prop.
+3. **Picking on top speed alone.** The 150 is faster top end, but most recreational use happens at cruise. Hole shot and load handling matter more than top speed for typical Ontario boating.
+4. **Skipping Command Thrust on pontoons.** The 115 and 150 both have Command Thrust gearcase options. On pontoons, Command Thrust is usually the right call regardless of HP. See [Command Thrust guide](/blog/mercury-command-thrust-guide-pontoon-boats).
+5. **Picking the wrong prop.** A wrong prop on a 150 sometimes performs worse than a right prop on a 115. We test props on every repower during sea-trial.
 
 ## Related guides
 
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat) — matching HP to boat size and use
-- [What Size Motor Does My Boat Need? Complete Calculator Guide](/blog/boat-motor-size-calculator-guide) — sizing calculator walkthrough
-- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison) — mid-range Mercury head-to-head
-- [Mercury 150-200hp V6: Performance Made Practical](/blog/mercury-150-200hp-v6-performance) — V6 150–200 HP performance
+- [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), the lower HP class step-up
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific HP guidance
+- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats), why Command Thrust matters on bigger boats
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), choosing the right Mercury family
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), full HP class guide
 
-    `,
+## Ready to pick your motor?
+
+Build a quote for 115 or 150 HP on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration including rigging and prop.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through the decision for your specific boat before you build, [give us a call at (905) 342-2153](tel:9053422153). We rig boats in this HP class every week and can give you the honest answer for your hull and use case.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Is the Mercury 150 worth the extra money over the 115?**
+Depends on hull and use. For 18 to 22 ft hulls, water sports, or heavy loading, yes. For 17 to 19 ft hulls used for family fishing without active water sports, the 115 is plenty and the savings are well-spent on accessories.
+
+**What HP do I need for a 19 to 20-foot pontoon?**
+For cruising and fishing without water sports, 115 HP Command Thrust is plenty. For active water sports (tubing, skiing) or heavy family loading, 150 HP is the better fit. Command Thrust on pontoons makes a meaningful difference regardless of HP class.
+
+**Can I tube and ski with a Mercury 115?**
+Light tubing and one to two skiers, yes. Active water sports with a full boat or wakeboarding requires the 150 or higher to plane and pull cleanly. The 115 is marginal for active water sports.
+
+**Is the 150 Pro XS V6 better than the 150 FourStroke?**
+For tournament use, yes. The Pro XS V6 has faster acceleration and higher top end. For typical recreational use (family, fishing, cruising), the FourStroke 150 is the better value. Pro XS earns the price premium on performance applications.
+
+**What's the fuel economy difference between 115 and 150?**
+At cruise, the 115 is more efficient. The 150 is slightly less efficient but still very good. The differences are typically 10 to 20% at cruise. The 150 is more efficient than the 115 when both are running at full load on a heavier hull, because the 150 is not working as hard.
+
+**Should I get the 115 or the 150 for my 18-foot aluminum boat?**
+For typical family fishing and recreational use, the 115 is plenty. For active water sports with full loading, the 150 is the better fit. The 18 ft aluminum is the boundary where either motor works depending on use case.
+
+**Can I run a Mercury 150 on a boat rated up to 115 HP?**
+No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty if we install a motor above the rated maximum. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
+
+**What's the weight difference between 115 and 150?**
+About 90 to 100 lbs (~40 kg). The 150 (3.0L inline 4) is about 455 lb, the 115 (2.1L inline 4) is about 359 lb. On smaller transoms, the weight difference can affect handling.
+
+**Should I get Command Thrust on a 115 or 150 for a fishing boat?**
+On heavier deep-V aluminum hulls (18+ ft) used for fishing, Command Thrust gives meaningful hole shot and load-carrying improvement. On lighter standard-V hulls under 18 ft, the standard gearcase is fine. We assess per boat.
+
+**How long does a Mercury 150 last with proper maintenance?**
+Modern Mercury 150 FourStrokes properly maintained last 1,500 to 2,000+ engine hours. For a typical recreational boater (50 to 150 hours per season), that translates to 10 to 30 years of useful life. See our [Mercury maintenance guide](/blog/mercury-motor-maintenance-seasonal-tips).
+
+**What's the all-in cost of a Mercury 150 repower in Ontario?**
+For a typical 18 to 20 ft hull with rigging, prop, and install, $23,000 to $36,000 CAD before HST at HBW. The 115 is about $4,000 to $6,000 less. [Live pricing here.](/quote/motor-selection)
+
+**Will my 115 controls and rigging work with a 150?**
+Mercury-to-Mercury repowers from 115 to 150 usually keep existing post-2010 controls and gauges. Heavier-gauge wiring and updated steering may be needed for the 150. We assess during the hull walk-around.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'What is the difference between Mercury Pro XS and FourStroke?',
