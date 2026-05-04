@@ -770,103 +770,217 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   },
   {
     slug: 'boat-repowering-guide-when-to-replace-motor',
-    title: 'Boat Repowering 101: When to Replace Your Outboard Motor',
-    description: 'Is it time to repower your boat? Learn the signs your motor needs replacing, cost considerations, and why repowering often beats buying new.',
+    title: 'Boat Repowering Guide: When to Replace Your Motor (2026)',
+    description: 'The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you\'re a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).',
     image: '/lovable-uploads/Boat_Repowering_101_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2024-03-05',
-    dateModified: '2024-12-15',
+    dateModified: '2026-05-04',
     category: 'Repowering',
     readTime: '9 min read',
     keywords: ['boat repowering', 'when to replace outboard', 'repower cost', 'new boat vs repower', 'outboard motor replacement'],
     content: `
-## Should You Repower Your Boat?
+The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-Repowering — replacing your outboard motor — is one of the best investments you can make in a boat you already love. Here's how to know when it's time and what to expect from the process.
+## Quick recommendation
 
-### Signs You Need to Repower
+There are three honest answers to "when should I repower?":
 
-Reliability Issues:
+1. **Now if the motor is dead or unreliable.** Hard starts, fuel issues, warning lights, and rising repair bills are signs.
+2. **This off-season if the motor is "fine" but old (15+ years).** Plan ahead. Old motors die mid-season at the worst time.
+3. **Not now if the motor is reliable and recent.** Modern Mercury FourStrokes have decades of life with proper maintenance.
 
-Frequent breakdowns or repairs
-Hard starting or rough running
-Overheating problems
-Excessive oil consumption
+The customers who plan repowers in winter or early spring get easier appointment slots and lower stress. The customers waiting for the motor to die mid-season are competing for shop time during the rush. Plan ahead.
 
-Performance Decline:
+## What changes the timing
 
-Noticeable power loss
-Poor fuel economy
-Can't reach rated RPM
-Excessive vibration
+Five things move the right repower timing:
 
-Economic Factors:
+- **Motor age.** A 25-year-old motor is closer to end of life than a 5-year-old motor regardless of hours.
+- **Hours of use.** A motor with 1,500+ hours has limited remaining life. A modern Mercury at 500 hours has years left.
+- **Maintenance history.** Well-maintained motors last longer. Skipped winterization shortens motor life dramatically.
+- **Symptom severity.** Hard starts and minor fuel issues are early warnings. Compression problems and metal in the gearcase oil are end-stage.
+- **Repair cost trajectory.** $200 spring service every year is normal. $500-plus repair bills two years running is a sign.
 
-Repair costs exceeding motor value
-Parts becoming scarce
-Failed components (powerhead, lower unit)
+## The signs your motor is approaching end of life
 
-### The Repower Advantage
+These show up in a predictable order:
 
-**Repower vs. Buy New Boat**: For a fraction of the cost of a new boat, repowering gives you:
+### Early signs (motor has years left, plan for repower)
 
-Modern fuel efficiency (often 30-40% better)
-Improved reliability
-Better performance
-Current technology and features
-Extended boat life
+- **Harder starts in spring** even after proper winterization
+- **Fuel system gum-up** requiring carb cleaning or fuel filter replacement
+- **Idle quality dropping** (rough idle, occasional stalling at low RPM)
+- **Performance dropping slightly** (top speed off by 2 to 3 mph from when new)
+- **Fuel economy declining** (15 to 20% worse than original)
+- **Starting to need more service** to keep running well
 
-Cost Comparison:
+When these signs appear, plan the repower for the next off-season. Do not wait for a mid-season failure.
 
-New 20ft fishing boat: $35,000+
-Repower same boat with new 115HP: $12,000-$15,000
+### Mid-stage signs (1 to 2 seasons of life left)
 
-Repowering keeps the boat you already trust on the water with a modern outboard, at a fraction of the cost of a new package.
+- **Starting problems persist** despite battery replacement and fuel system work
+- **Compression checking lower** than spec
+- **Cooling system needing more attention** (impeller failures, telltale issues)
+- **Spark plug fouling** consistent across plugs
+- **Mid-RPM hesitation** or surging
+- **Repair bills exceeding 25% of motor replacement cost annually**
 
-### What's Involved in Repowering
+At this stage, the math shifts toward "repower this winter." Continued repairs are throwing good money after bad.
 
-**Motor Selection**: Choosing the right HP and model
-**Rigging Assessment**: Evaluating controls, cables, gauges
-**Transom Inspection**: Ensuring structural integrity
-**Installation**: Professional mounting and rigging
-**Lake Testing**: Verifying performance and setup
-**Setup & Tuning**: Propeller selection and trimming
+### End-stage signs (motor is at end of life)
 
-![Boat repowering in progress - old motor being replaced with new Mercury Pro XS](https://mercuryrepower.ca/lovable-uploads/Boat_Repowering_In_Progress.png)
+- **Motor will not start** at all without significant work
+- **Lower unit problems** (oil leaks, metal in gearcase oil, gear damage)
+- **Major internal damage** (failed cylinder, bent rod, blown head gasket)
+- **Cooling system failure** that overheats the powerhead
+- **Electrical system catastrophic failure** (failed CDI box, harness damage)
 
-### Timeline & Cost
+At this stage, repower is the only honest answer.
 
-Typical repower projects take 3-7 days depending on scope:
+## What changes the answer (motor type)
 
-**Basic Repower** (motor only, compatible controls): $8,000 - $12,000
+Different motor types have different end-of-life patterns:
 
-**Full Repower** (motor, controls, rigging): $12,000 - $18,000
+### 2-stroke motors (pre-2005 mostly)
 
-**Premium Repower** (motor, electronics, full upgrade): $15,000 - $25,000
+Older 2-stroke Mercurys (and Evinrudes, Yamahas) are at increasing end-of-life risk in 2026. Reasons:
 
-### Winter Repower Advantage
+- **Fuel system technology** is older and more sensitive to ethanol
+- **Parts availability** is dropping for older 2-strokes
+- **Service expertise** is rarer (fewer techs trained on 2-strokes)
+- **Emissions regulations** make 2-stroke motors less viable in some regions
 
-Schedule your repower during winter for:
+Most 2-stroke owners should plan to repower with a modern FourStroke within the next 3 to 5 years.
 
-Faster turnaround (less demand)
-No missed boating season
-Often better pricing
-Spring-ready boat
+### Pre-2010 FourStrokes
 
-### Trust the Certified Experts
+Earlier FourStrokes (mostly 2002 to 2009) are mid-aged motors in 2026. They were a generational improvement over 2-strokes but lack some refinements of post-2010 motors:
 
-As a Mercury dealer since 1965 and a Mercury Certified Repower Center, Harris Boat Works has the expertise to handle any repower project — from a straightforward motor swap on a 16ft aluminum boat to a full rigging overhaul on a larger package. We see repowers from all over the Kawarthas, and the most common situation is simple: good hull, tired motor, owner who wants their boat back. We can assess your rig honestly and tell you whether a repower makes sense or whether there's a better path.
+- **EFI systems** are first-generation
+- **Electrical systems** are simpler than current
+- **Service intervals** are shorter than newer motors
 
-[Request service](https://hbw.wiki/service) to get started, or call 905-342-2153.
+Most pre-2010 FourStrokes still have life if maintained well. Plan ahead but no urgent repower necessarily.
+
+### Post-2010 FourStrokes
+
+Current-generation FourStrokes (2010 onward) are designed for 1,500 to 2,000+ hour service life. For typical recreational use (50 to 150 hours per season), that means 10 to 30 years of useful life.
+
+If your motor is post-2010 and has been maintained, no repower is needed. Run it.
+
+## What changes the answer (use case)
+
+How you use the motor affects when it needs replacement:
+
+- **Cottage use (30 to 80 hours per season).** Motors last calendar years longer than commuter boats. A 20-year-old cottage motor with 800 hours may have a decade left.
+- **Commuter or daily use (200+ hours per season).** Motors hit their service-life limits faster. A 10-year-old commuter motor may already be at 2,000 hours and need replacement.
+- **Tournament or commercial use.** Heavy duty cycles wear motors faster. SeaPro variants are built for this.
+- **Intermittent storage use.** Motors that sit for years between use sometimes have more issues than continuously used motors. Fuel system gum-up and seal degradation are common.
+
+## What HBW checks before recommending repower
+
+When customers come to HBW asking "should I repower?" we want to know:
+
+- **Boat make, model, year, and hull condition**
+- **Motor make, model, year, HP, and hours**
+- **Maintenance history (winterization records, service history)**
+- **Current symptoms and recent repair history**
+- **Use pattern and intensity**
+- **Long-term ownership plan**
+- **Budget tolerance and financing**
+
+We give the honest answer per motor and use case. Sometimes the answer is "not yet, your motor has years left." Sometimes it's "this winter is the right time." We will not push a repower that isn't warranted.
+
+## The cost of waiting too long
+
+Boaters who wait for the motor to die before repowering pay extra in three ways:
+
+1. **Mid-season repower bookings are expensive and slow.** Spring rush ends in May, fall rush starts in September. June through August is shop chaos. Mid-season repower can mean 3 to 6 weeks waiting for the motor to be ready, in peak boating season.
+2. **Lost season time.** Every week the boat is in the shop is a week of lost summer.
+3. **Pressure decisions.** Customers under pressure to get back on the water sometimes make rushed motor selection decisions they regret.
+
+The customers who plan ahead pay the same motor price but skip all three costs. Plan ahead.
+
+## Repower vs full repair
+
+When a motor has a major problem, the question becomes: repair or repower?
+
+For older motors (15+ years), repair almost never makes sense if the cost is more than 30% of replacement. The repair fixes one problem; the next problem is usually 2 to 3 years away. Cumulative repair costs over a few years exceed replacement cost.
+
+For mid-age motors (8 to 15 years), repair sometimes makes sense if the cost is less than 25% of replacement and the motor has otherwise been well-maintained.
+
+For new motors (under 8 years), repair almost always makes sense unless the damage is catastrophic.
+
+We do this math with customers at HBW. Not every problem is a repower trigger. Some are.
 
 ## Related guides
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
-- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide](/blog/evinrude-to-mercury-repower-ontario-guide) — switching from Evinrude to Mercury
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), keeping motors going longer
+- [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early diagnostic
 
-    `,
+## Ready to talk through whether to repower?
+
+Build a quote on the [motor selection page](/quote/motor-selection) if you've decided. Live Mercury pricing in CAD with full configuration including rigging.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you're not sure whether your motor needs replacement, [give us a call at (905) 342-2153](tel:9053422153). We will walk through your motor's age, condition, and use to give you an honest answer. Sometimes that answer is "your motor has years left, run it."
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**How long does a Mercury outboard last?**
+Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours. For a typical recreational boater (50 to 150 hours per season), that translates to 10 to 30 years of useful life. Skipped maintenance cuts that in half easily.
+
+**What are the signs my motor needs replacement?**
+Harder starts, fuel system problems, declining performance, rising repair bills, or starting to worry about reliability mid-season. These show up in stages. Early signs mean plan ahead; late signs mean repower this off-season.
+
+**How many hours is too many on an outboard?**
+Modern FourStrokes can hit 2,000+ hours with proper maintenance. Older 2-strokes were typically end-of-life at 1,000 to 1,500 hours. Hours alone are not the answer; maintenance history matters more than hours.
+
+**Should I repower a 20-year-old motor that's still running?**
+If it's been well-maintained and still performs reasonably, you can run it longer. But plan the repower budget over the next 2 to 3 seasons. 20+ year old motors have limited remaining life regardless of how they sound today.
+
+**How much does a Mercury repower cost?**
+Depends on HP. A 25 to 60 HP repower lands $11,000 to $15,000 CAD all-in. A 90 to 115 HP repower lands $17,000 to $22,000 CAD. A 150 to 200 HP repower lands $23,000 to $36,000 CAD. See our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for full ranges.
+
+**Is it cheaper to repair or repower an old motor?**
+Depends on motor age and repair cost. Older motors (15+ years) where repair costs more than 30% of replacement: repower is usually cheaper long-term. Mid-age motors with smaller repairs: repair often makes sense. We do this math case by case.
+
+**When is the best time to repower?**
+Off-season (October through April). Mercury inventory is best, shop time is available, and the boat is ready for the next season. Spring rush (March through May) is busy and slots fill up.
+
+**Should I switch brands during a repower?**
+For Evinrude owners (since BRP shut down outboard production in 2020), switching to Mercury usually makes sense. For Yamaha or Honda owners with reliable motors, there's less urgency. See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide).
+
+**Can I repower a hull that's older than the motor?**
+Yes if the hull is structurally solid. Many cottage aluminum hulls 25 to 40 years old are running their second or third Mercury repower. Hull condition matters more than calendar age.
+
+**Do I need a new prop with a Mercury repower?**
+Often yes, especially during brand conversions. Mercury-to-Mercury repowers sometimes keep existing props. We test props during sea-trial of every repower.
+
+**What about my Pleasure Craft Licence (PCL)?**
+The PCL must be updated when motor HP, brand, or model changes. We handle the paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
+
+**How long does a typical repower take?**
+Mercury-to-Mercury repowers: 2 to 4 days shop time. Brand conversions: longer. Spring rush adds wait time before the shop starts. Off-season is faster.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'How do I know if my boat is worth repowering?',
@@ -1943,106 +2057,182 @@ However, if you're running a smaller boat and prioritize fuel economy over absol
   // Week 5: February 2, 2026
   {
     slug: 'ontario-cottage-boat-motor-repower-guide',
-    title: 'Ontario Cottage Owner\'s Guide: Is It Time to Repower Your Boat?',
-    description: 'Should you repower your cottage boat? Learn the signs, costs, and benefits of replacing your outboard motor. Guide for Ontario cottage owners.',
+    title: 'Ontario Cottage Boat Motor Repower Guide (2026)',
+    description: 'For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually wins on the math against buying new. A Mercury repower lands $17,000 to $30,000 CAD all-in for typical cottage setups, against $50,000 to $90,000 CAD for comparable new packages. The hull is the asset; the motor is the wear part. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).',
     image: '/lovable-uploads/Boat_Repowering_101_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-02',
-    dateModified: '2026-02-02',
+    dateModified: '2026-05-04',
     publishDate: '2026-02-02',
     category: 'Repowering',
     readTime: '10 min read',
     keywords: ['repower cottage boat', 'replace outboard motor', 'cottage boat motor', 'boat repower ontario', 'when to replace outboard'],
     content: `
-## Is It Time to Repower Your Cottage Boat?
+For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually wins on the math against buying new. A Mercury repower lands $17,000 to $30,000 CAD all-in for typical cottage setups, against $50,000 to $90,000 CAD for comparable new packages. The hull is the asset; the motor is the wear part. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-That aluminum boat at the cottage has been there forever. The motor starts—usually—but it's not what it used to be. Sound familiar? Here's how to know if it's time to repower.
+## Quick recommendation
 
-### Signs Your Motor Needs Replacing
+Cottage boats live a hard life: short use seasons, long winter storage, sometimes inconsistent maintenance, and gear that gets handed down through generations. Most cottage hulls outlast their motors by decades. The right repower keeps the family boat alive for another generation.
 
-**Reliability Red Flags**:
-- Hard starting or won't start at all
-- Dies unexpectedly during operation
-- Overheating warnings
-- Visible water in oil (milky gear oil)
-- Excessive vibration
+If your cottage boat hull is solid, a Mercury repower gives you 80% of the new-boat experience for half the money. The customers we see in spring at HBW are usually one of three types: the boat ran fine last fall but does not start now, the motor has been getting harder to start every season, or the motor finally died. All three are repower candidates if the hull is good.
 
-**Performance Decline**:
-- Lost 10%+ of top speed
-- Can't reach rated RPM
-- Burns oil noticeably
-- Won't plane like it used to
-- Rough idle or stalling
+The Mercury 60 to 115 HP FourStroke range covers the most common cottage boat repowers. The 9.9 ProKicker is the standard kicker for fishing-cottage boats. Pricing on the [motor selection page](/quote/motor-selection) is the source of truth.
 
-**Economic Signals**:
-- Last repair cost more than 20% of motor's value
-- Parts are hard to find
-- Your mechanic suggests "it's time"
-- Insurance company asking questions
+## What changes the answer for cottage boats
 
-### The Math on Repowering
+Five things move the cottage repower decision:
 
-**Typical Cottage Boat Scenario**:
-- 20-year-old 16ft aluminum boat in good shape
-- Current motor: 40HP two-stroke, unreliable
-- New motor: Mercury 60HP FourStroke
+- **Hull age and condition.** Most cottage aluminum hulls 15 to 30 years old are still solid. Most cottage fiberglass hulls 15 to 25 years old need careful inspection but are often fine.
+- **Storage history.** Indoor heated storage extends hull life. Outdoor uncovered storage (common at cottages) shortens it but most aluminum hulls handle it fine.
+- **Use intensity.** Cottage boats running 30 to 80 hours per season are gentler on motors than commuter boats running 200+ hours.
+- **Family handoff plan.** Boats that will be passed to kids justify a repower. Boats heading to private sale next year usually do not.
+- **Maintenance history.** Boats with consistent winterization records are different repower candidates than boats that have been "running fine" without service.
 
-**Costs**:
-- Repower with new Mercury: $8,000-$10,000
-- New comparable boat and motor: $25,000+
-- Keeping old motor running: $500-1,500/year in repairs
+## Common cottage boat scenarios at HBW
 
-**Benefits of Repowering**:
-- Modern EFI fuel efficiency (30-40% better)
-- Reliable starts, every time
-- Quieter, cleaner operation
-- No more mixing oil
-- Better resale value for boat
-- 3-year factory warranty
+The patterns we see most often:
 
-### Why Cottage Boats Are Perfect Repower Candidates
+### "Grandpa's old fishing boat"
 
-**Aluminum boats last forever** when cared for. If your hull is sound:
-- No corrosion in critical areas
-- Transom is solid
-- Interior is functional
+A 16 to 18 ft aluminum console boat from the 1980s or 1990s, originally rigged with an Evinrude or older Mercury. Hull is solid (aluminum is forgiving), but the motor is dead or dying. Customer wants to keep the boat in the family.
 
-Then repowering makes tremendous financial sense.
+**Typical repower:** Mercury 60 to 90 HP FourStroke + 9.9 ProKicker. Total $20,000 to $27,000 CAD all-in. Adds 15 to 30 years of life to a hull that has already lasted 30 to 40 years.
 
-### The Cottage Repower Process
+### "The cottage runabout"
 
-1. **Assessment**: We evaluate your boat and current motor
-2. **Recommendation**: Right-sized motor for your needs
-3. **Quote**: Complete pricing including installation and rigging
-4. **Scheduling**: [Winter repower](/blog/winter-repower-planning-guide) means ready for spring
-5. **Installation**: Professional mounting and rigging
-6. **Lake Test**: We ensure everything runs properly
-7. **Handoff**: Keys to your refreshed boat
+A 17 to 19 ft fiberglass runabout from the 1990s or 2000s, used for family tubing, swimming, and quick runs to the dock for groceries. Motor is old and underpowered for current family use.
 
-### Best Motors for Cottage Boats
+**Typical repower:** Mercury 115 to 150 HP FourStroke. Total $20,000 to $32,000 CAD all-in. Step-up in HP from original is often the right call if the family use grew over the years.
 
-**Mercury 40HP EFI FourStroke**: Perfect for 14-16ft boats
-**Mercury 60HP EFI Command Thrust**: Best value for 16-18ft boats
-**Mercury 75HP EFI FourStroke**: Handles wind and load for larger boats
+### "The pontoon at the cottage"
 
-### The Winter Advantage
+An 18 to 22 ft pontoon used for sunset cruises, fishing with the kids, and the occasional tube ride. Motor is original from when the pontoon was bought (often 10 to 15 years old).
 
-Repower during winter for:
-- Faster turnaround (less busy)
-- No missed boating time
-- Often better pricing
-- Ready for Victoria Day weekend
+**Typical repower:** Mercury 115 HP Command Thrust FourStroke. Total $20,000 to $25,000 CAD all-in. Command Thrust matters on pontoons.
 
-**[Get a Repower Quote](/quote)**
+### "The cottage tin boat"
+
+A 14 to 16 ft tin boat with a tiller motor, used for solo fishing or quick lake runs. Motor has been getting harder to start and parts are scarce.
+
+**Typical repower:** Mercury 25 to 40 HP tiller. Total $4,000 to $11,000 CAD all-in. Smaller cottage boats are simpler repowers.
+
+For specific pricing on your cottage boat, [build a quote](/quote/motor-selection).
+
+## What HBW checks before recommending a cottage repower
+
+When cottage owners come to HBW for a repower assessment, we want to know:
+
+- **Boat make, model, year, and length**
+- **Current motor age, brand, HP, and condition**
+- **Hull condition** (we walk around it, tap-test floor and transom)
+- **Where the boat is stored** (indoor heated, indoor unheated, outdoor)
+- **How the boat is used** (fishing, family cruising, tubing, mixed)
+- **How often the boat is used per season**
+- **Long-term plan** (kids inheriting it, planning to sell, just for personal use)
+- **Existing electronics, seats, helm, and trailer condition**
+- **Budget tolerance and financing**
+
+Cottage boats often need cosmetic work alongside the repower: new seats, new electronics, trailer service. We package this when it makes sense.
+
+## The cottage repower timing question
+
+Cottage boaters often ask "when should I repower?" The honest answer:
+
+- **Now if the motor is dead.** A non-running motor at the cottage is a problem you need to solve before next season.
+- **This off-season if the motor is unreliable.** Hard starts, fuel system issues, or warning lights are signs the motor is approaching end of life. Plan ahead.
+- **Next year or two if the motor is "fine" but old.** A 20+ year old motor running well still has limited remaining life. Plan the repower budget over the next 2 to 3 seasons.
+- **Not now if the motor is reliable and recent (under 10 years old).** Run it. Modern Mercury FourStrokes have decades of life with proper maintenance.
+
+The customers who plan repowers in winter or early spring get the easier appointment slots and lower stress. The customers who wait until the motor dies in July are competing for shop time during peak season.
+
+## Common cottage repower mistakes
+
+We see these every season:
+
+1. **"Just one more season" thinking.** Customer hopes the old motor lasts one more season. It dies in July, mid-season, with no shop slots available. Plan ahead.
+2. **Skipping the hull walk-around.** Some cottage hulls have hidden issues (soft transom, water-saturated foam) that we want to catch before committing the motor budget.
+3. **Underbuying HP for current use.** Cottage families grow. Boats that fit two adults 15 years ago do not fit a family of five today. Right-size during the repower.
+4. **Skipping the kicker.** If you fish at the cottage, a 9.9 ProKicker is the standard. The savings are not worth the trolling compromise.
+5. **Doing the rigging halfway.** Older cottage rigging (cables, controls, gauges) is often at end of life. Cheapest time to update is during the repower with the dash open.
+
+## What about the trailer?
+
+Cottage boat trailers often outlive the motor and outlast multiple repowers. But they wear out too. Common cottage trailer issues:
+
+- **Bearings.** Trailer bearings need annual service. Many cottage trailers have not had bearings serviced in years.
+- **Tires.** Cottage trailer tires often sit unused for months. UV damage and dry rot are common. Tires older than 6 years need replacement regardless of tread.
+- **Lights.** Wiring corrosion is common on cottage trailers. We test all lights at every service.
+- **Brakes.** Larger cottage boats may have surge brakes that need annual service.
+
+We assess trailers as part of cottage repower projects. A new trailer is $3,000 to $7,000 CAD; trailer service to extend life is much less.
 
 ## Related guides
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner's Guide](/blog/evinrude-to-mercury-repower-ontario-guide) — switching from Evinrude to Mercury
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
+- [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific recommendations
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR Mercury Repower Financing
 
-    `,
+## Ready to talk through a cottage repower?
+
+Build a quote for your cottage boat on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration including rigging.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific cottage boat before quoting, [give us a call at (905) 342-2153](tel:9053422153). We do cottage repowers every season and can give you the honest answer for your hull and family use.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Should I repower my cottage boat or buy new?**
+For most cottage boats with hulls less than 25 years old that have been kept in reasonable condition, repowering wins on the math. Repower lands $17,000 to $30,000 CAD all-in; new comparable packages are $50,000 to $90,000 CAD. The hull is the asset.
+
+**How long does a cottage aluminum boat last?**
+Properly maintained aluminum cottage boats regularly last 30 to 50+ years. Many Kawartha aluminum hulls from the 1980s and 1990s are still on the water in 2026, often on their second or third Mercury repower.
+
+**What HP do I need for my cottage boat?**
+Depends on hull length and use. 14 to 16 ft tin boats: 25 to 40 HP. 16 to 18 ft aluminum console: 60 to 115 HP. 18 to 22 ft pontoon: 90 to 150 HP CT. See our [HP guide](/blog/how-to-choose-right-horsepower-boat) for the full breakdown.
+
+**Should I switch from Evinrude to Mercury during a cottage repower?**
+Most of the time, yes. Evinrude stopped making outboards in 2020 and parts/service support is shrinking. Brand conversion adds $1,500 to $3,000 CAD in rigging but pays back over the life of the new motor. See our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide).
+
+**Can I get financing for a cottage repower?**
+Yes. Mercury Repower Financing offers 7.99% APR for qualified buyers. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for details. We process the application in-shop.
+
+**When is the best time to repower a cottage boat?**
+Off-season (October through April). Mercury inventory is best, our shop is quietest, and you get easier appointment slots. Spring rush starts in March and runs through May.
+
+**Do I need to update my Pleasure Craft Licence after a repower?**
+Yes if motor HP, brand, or model changes. Updates are free and take 10 to 15 minutes online. We handle this for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
+
+**Should I keep my old motor as a backup?**
+Usually no. Old Evinrudes or older Mercurys have limited resale value as backups. Better to trade in or sell to a parts buyer. We give fair-market trade-in value during a repower.
+
+**What if my cottage boat is winterized somewhere else?**
+We service all Mercury motors regardless of where they were winterized. We also handle some non-Mercury service. [Contact us](/contact) for non-Mercury service quotes.
+
+**Can HBW haul my cottage boat from the lake?**
+For Rice Lake and Kawartha-area cottages, yes. Hauling, indoor or outdoor storage, and full marina services are part of HBW. [Contact us](/contact) for hauling quotes.
+
+**How long does a cottage repower take?**
+Typical Mercury-to-Mercury repower is 2 to 4 days of shop time. Brand conversions (Evinrude or Yamaha to Mercury) take longer. Spring shop time is constrained; off-season is faster.
+
+**Will the new Mercury feel different from my old motor?**
+Almost certainly yes, in good ways. Modern FourStrokes are quieter, more fuel-efficient, easier to start, and more reliable than older 2-strokes or pre-2010 FourStrokes. Customers who have only run older motors are usually surprised by how much better current Mercurys feel.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'Is my old aluminum boat worth repowering?',
@@ -9410,101 +9600,169 @@ No. Boost is a factory-backed, manufacturer-approved software calibration. It do
   },
   {
     slug: 'pleasure-craft-licence-update-repower-ontario',
-    title: 'What Happens to Your Pleasure Craft Licence When You Repower Your Boat?',
-    description: 'When you repower, you must update your PCL within 30 days under Transport Canada rules. Learn the new 2026 rules, the $250 fine, and how to update online for free.',
+    title: 'Pleasure Craft Licence Update During Repower (Ontario 2026)',
+    description: 'When you change motors on a Pleasure Craft Licensed (PCL) boat in Canada, you must update the licence with Transport Canada. The PCL stays with the boat (HIN) but motor specifications are recorded on it. Updates are free, take 10 to 15 minutes online, and are required when the new motor changes the registered HP rating. We handle this paperwork for HBW customers as part of every repower.',
     image: '/lovable-uploads/hero-pcl-repower-licence.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-15',
-    dateModified: '2026-04-15',
+    dateModified: '2026-05-04',
     category: 'Canadian Boating Regulations',
     readTime: '9 min read',
     keywords: ['pleasure craft licence update', 'PCL repower Ontario', 'Transport Canada boat licence', 'update boat registration after repower', 'PCL rules 2026'],
     content: `
-## The Rule Most Boaters Miss After a Repower
+When you change motors on a Pleasure Craft Licensed (PCL) boat in Canada, you must update the licence with Transport Canada. The PCL stays with the boat (HIN) but motor specifications are recorded on it. Updates are free, take 10 to 15 minutes online, and are required when the new motor changes the registered HP rating. We handle this paperwork for HBW customers as part of every repower.
 
-Most Ontario boaters know they need a Pleasure Craft Licence. Fewer know that a repower — swapping out your old engine for a new one — triggers a mandatory PCL update.
+## Quick recommendation
 
-Under Transport Canada's Small Vessel Regulations (updated December 31, 2025), any change to your vessel information must be reflected in your licence within **30 days**. That includes engine changes. The consequence of ignoring it: a **$250 fine**.
+Most boaters do not realize their PCL needs updating during a repower. The licence is tied to the hull, but motor specs are on the licence too. When you change motors, the licence is technically out of date. Transport Canada requires the update.
 
-## PCL vs. PCOC — Know the Difference
+Good news: it is free, fast, and we do it for HBW repower customers as part of the project. The form is online at the Transport Canada Pleasure Craft Electronic Licensing System. You need the boat HIN, the existing PCL number, and the new motor specs. We have all of those during the repower.
 
-| | Pleasure Craft Licence (PCL) | Pleasure Craft Operator Card (PCOC) |
-|---|---|---|
-| **What it covers** | The boat | The operator |
-| **What it is** | Unique vessel ID number | Proof of boating safety course |
-| **Who needs it** | Required for any motorized boat 10 hp+ | Required for anyone operating a motorized pleasure craft |
-| **Validity** | Now 5 years; $24 renewal fee | Valid for life |
-| **Affected by 2025 rule changes?** | Yes | No |
+If you bought a Mercury repower at HBW, the PCL update is handled. If you DIY'd a repower or bought used and never updated the licence, you should update it now. Doing it before the next OPP marine patrol stop or insurance claim is the easy way.
 
-When you repower, the PCL is what you need to update. The PCOC stays the same.
+## What is a Pleasure Craft Licence (PCL)?
 
-## What Changed on December 31, 2025?
+A PCL is the federal identification number assigned to a boat in Canada. It is required for any vessel with a motor over 9.9 HP that is used for non-commercial purposes.
 
-### PCLs Are No Longer Lifetime Documents
+The PCL number is the format you see on the bow of a boat (e.g., "ON 12345 AB"). It is tied to the hull's HIN (Hull Identification Number) and stays with the boat across ownership changes.
 
-PCLs that were previously valid for life are now subject to a rolling 5-year renewal schedule. If you have a lifetime PCL, you're on a phased transition schedule:
+The PCL is not the same thing as a Pleasure Craft Operator Card (PCOC), which is the boater's licence (the card you carry to prove you can operate). The PCL is the boat's registration. Both are required for most Ontario boating.
 
-| Original PCL Issue Date | New Expiry Date |
-|---|---|
-| December 31, 1974 or earlier | March 31, 2026 |
-| January 1, 1975 – December 31, 1985 | December 31, 2026 |
-| January 1, 1986 – December 31, 1995 | December 31, 2027 |
-| January 1, 1996 – December 31, 1999 | December 31, 2028 |
-| January 1, 2000 – December 31, 2005 | December 31, 2029 |
-| January 1, 2006 – April 28, 2010 | December 31, 2030 |
+## When the PCL needs updating
 
-![Canada Pleasure Craft Licence New Rules & Expiry Dates infographic showing phase-out timeline](/lovable-uploads/pcl-expiry-dates.png)
+You must update the PCL when:
 
-### The $24 Renewal Fee
+- **Motor HP changes.** A different HP motor changes the registered specs. Required update.
+- **Number of motors changes.** Going from single to dual outboards or vice versa. Required update.
+- **Motor brand or model changes.** Mercury to Mercury same HP often does not require update. Brand changes (Evinrude to Mercury) do.
+- **Owner address changes.** Address on the PCL must be current. Update on move.
+- **Boat is sold.** New owner gets a new PCL. Old PCL is cancelled.
+- **PCL is lost or stolen.** Replacement PCL request.
 
-Renewing, applying for, transferring, or replacing a PCL now costs **$24**. Updating vessel information is still **free**.
+Transport Canada wants the registry current. The data is used by OPP marine patrols, search and rescue, and insurance claims.
 
-### The 30-Day Update Window
+## What changes the PCL update for a repower
 
-Previously, you had 90 days. That window is now **30 days**.
+Most Mercury repowers at HBW require a PCL update because:
 
-## When You Repower: What Needs to Update
+- **HP class change.** Going from 90 to 115 HP, or 115 to 150, requires update.
+- **Brand change.** Evinrude to Mercury, Yamaha to Mercury, Honda to Mercury all require update.
+- **Different motor model same HP.** Going from a 2-stroke 90 HP to a FourStroke 90 HP often requires update because the motor model changes.
 
-A repower changes information recorded on your PCL:
-- **Engine horsepower** (if different HP rating)
-- **Engine type** (e.g., 2-stroke to 4-stroke, gasoline to electric)
-- **Number of engines** (if going from single to twin)
+Mercury-to-Mercury repowers at the same HP and same motor model (e.g., 2010 Mercury 90 EXLPT to 2026 Mercury 90 EXLPT) sometimes can use the existing PCL, but the safe answer is always to update. Updates are free and take 15 minutes.
 
-Your PCL number stays the same — it's tied to your hull, not your engine. Even if HP looks identical, update because the specific engine has changed.
+## How to update the PCL
 
-## How to Update Your PCL After a Repower
+The Transport Canada Pleasure Craft Electronic Licensing System (PCELS) handles updates online. You need:
 
-### What you'll need:
-- Your current PCL number
-- Your vessel information (hull ID, boat make, length)
-- New engine details (HP, engine type — your dealer provides this)
-- Your contact information
+- **Existing PCL number** (the ON XXXXX AB format)
+- **HIN (Hull Identification Number)** for the boat
+- **New motor make, model, year, HP, and serial number**
+- **Owner name and current address**
+- **Email address for confirmation**
 
-### The steps:
-1. Go to Transport Canada's Pleasure Craft Licensing portal
-2. Log in or create an account
-3. Select "Update vessel information"
-4. Enter your PCL number
-5. Update the engine information
-6. Review all other information for accuracy
-7. Submit
+The system processes updates digitally. New PCL number stays the same in most cases (the licence is tied to the hull, not the motor). New PCL certificate is emailed within minutes to days depending on Transport Canada workload.
 
-There is **no fee** to update vessel information. Online updates are typically processed within a few business days.
+For HBW repower customers, we provide the new motor specs (the HBW invoice shows the make, model, year, HP, and serial number). Some customers do the online update themselves; others ask HBW to assist. Either path works.
 
-## Practical Tips
+## What HBW does for repower customers
 
-Update **after** the repower, once the new engine is installed. Your dealer will provide engine serial number, model number, HP rating, and engine type. Get this information before you leave the dealer.
+When you do a Mercury repower at HBW, the PCL update is part of the project:
 
-Set a reminder. When the new motor goes in, update the PCL. It's free, it's fast, and the $250 fine isn't worth the inconvenience.
+1. **We document the new motor.** Make, model, year, HP, and serial number on the HBW invoice.
+2. **We provide the update template.** Either we walk you through the online update at delivery, or we provide written instructions and the data you need.
+3. **We answer questions later.** If Transport Canada asks for clarification or you have questions about the form, we are here. [Call (905) 342-2153](tel:9053422153) or [contact us](/contact).
+
+Most HBW repower customers do the online update themselves with our template. It takes 10 to 15 minutes. The system is straightforward.
+
+## Common PCL update mistakes
+
+We see these every season:
+
+1. **Skipping the update entirely.** Customer assumes the PCL is just for old motor. It needs to track the current motor. Update is required.
+2. **Putting the new PCL number on the wrong boat.** PCL stays with the hull. New owner of an old boat gets the existing PCL number, not a new one.
+3. **Mixing up PCL and PCOC.** PCL is the boat's licence. PCOC is the operator's card. Two different things.
+4. **Wrong HIN format.** HIN is a 12-character alphanumeric on the hull's transom or starboard side. It is not the boat's serial number on the engine.
+5. **Old address on the PCL.** Transport Canada wants current address. Update on move.
+
+## What happens if the PCL is wrong
+
+In a routine OPP marine patrol stop, an out-of-date PCL is usually a warning rather than a fine. If the licence is significantly wrong (different HP, different motor, wrong owner), the OPP can issue a fine and require correction.
+
+In a more serious incident (collision, search and rescue activation, insurance claim), an out-of-date PCL can complicate things. Insurance companies may push back on coverage if the registered motor specs do not match the actual motor on the boat. Search and rescue databases use PCL data for vessel identification.
+
+The cost of keeping the PCL current is zero (the update is free). The cost of getting caught with an out-of-date PCL is variable. The math always favors updating.
 
 ## Related guides
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion and PCL update
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR Mercury Repower Financing
+- [Complete Guide to Boat Repowering in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full repower process
 
-    `,
+## Ready to repower (and let HBW handle the PCL update)?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD, full configuration including rigging. PCL update is part of every HBW repower project.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific repower and PCL questions, [give us a call at (905) 342-2153](tel:9053422153). We do this paperwork as part of the project so you do not have to figure it out alone.
+
+---
+
+_Pricing and process details in this article are HBW's working 2026 estimates, verified May 2026. Transport Canada PCL rules and the Pleasure Craft Electronic Licensing System are the authoritative source. Mercury model years change every July 1, and we refresh process notes annually._
+
+---
+
+## FAQ
+
+**Do I need to update my Pleasure Craft Licence when I change motors?**
+Yes, in most cases. When motor HP, brand, or model changes, the PCL must be updated. Transport Canada requires the registry to reflect current motor specs. Updates are free and take 10 to 15 minutes online.
+
+**Is the PCL the same thing as my boater's licence?**
+No. The Pleasure Craft Licence (PCL) is the boat's registration tied to the hull. The Pleasure Craft Operator Card (PCOC) is the operator's licence proving the boater can operate a motorized vessel. Both are required for most Ontario boating.
+
+**How do I update my PCL?**
+Online at the Transport Canada Pleasure Craft Electronic Licensing System (PCELS). You need the existing PCL number, HIN, new motor specs, and owner contact info. Process takes 10 to 15 minutes. Updates are free.
+
+**How much does a PCL update cost?**
+Free. Transport Canada does not charge for PCL updates or for new licences. The licence itself is free. Annual fees do not exist for PCL.
+
+**How long does a PCL update take?**
+The online application takes 10 to 15 minutes. Transport Canada processing is usually minutes to days depending on workload. Confirmation is emailed.
+
+**Do I need a new PCL number when I change motors?**
+No, in most cases. The PCL is tied to the hull (HIN), not the motor. The same PCL number stays on the boat with updated motor specs.
+
+**What happens if I don't update my PCL?**
+In routine OPP marine patrol stops, usually a warning. In serious incidents (collision, insurance claim, search and rescue), an out-of-date PCL can complicate things. The cost of updating is zero. Just do it.
+
+**Where do I find my HIN?**
+The Hull Identification Number is a 12-character alphanumeric code on the hull's transom or starboard side. On older boats, it may be in less obvious places. Check the boat's original documentation or call HBW for help.
+
+**What if my old PCL was issued by Service Ontario before Transport Canada took over?**
+Older PCLs (pre-2002) are still valid but should be migrated to the federal system. Transport Canada handles the migration as part of any update. Older PCLs are also being phased out over time.
+
+**Does HBW handle the PCL update for me?**
+For HBW repower customers, we provide the new motor specs and walk you through the online update at delivery. Some customers ask HBW to assist with the form; others do it themselves. We are here for questions. [Call (905) 342-2153](tel:9053422153).
+
+**What if I sell the boat shortly after a repower?**
+The new owner takes over the existing PCL with the updated motor specs. Transport Canada handles the ownership transfer through the PCELS system. The new owner gets a new PCL number; the old PCL is cancelled.
+
+**Can I operate a boat while waiting for the new PCL?**
+The existing PCL number stays valid during the update process. You are not unlicensed during the update window. Operating is fine; just do the update soon after the repower.
+
+**What HP threshold requires a PCL?**
+Any pleasure boat with a motor over 9.9 HP requires a PCL in Canada. Below 9.9 HP, no PCL is required (though the operator still needs PCOC for any motorized vessel).
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'Do I need to update my PCL if the new engine is the same horsepower?',
@@ -9546,94 +9804,164 @@ Set a reminder. When the new motor goes in, update the PCL. It's free, it's fast
   },
   {
     slug: 'evinrude-to-mercury-repower-ontario-guide',
-    title: 'Replacing Your Evinrude with a Mercury Outboard: The Ontario Owner\'s Guide',
-    description: 'BRP discontinued Evinrude in 2020 and parts are getting scarce. This guide covers everything Ontario boat owners need to know about switching from Evinrude E-TEC or G2 to Mercury.',
+    title: 'Evinrude to Mercury Repower in Ontario (2026 Guide)',
+    description: 'Switching from Evinrude to Mercury during a repower runs an extra $1,500 to $3,000 CAD in rigging costs because the entire control system has to swap. That sounds like a lot until you remember Evinrude stopped making outboards in 2020, and parts and service support is shrinking every year. The math usually favors the switch. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).',
     image: '/lovable-uploads/hero-replace-evinrude.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-16',
-    dateModified: '2026-04-16',
+    dateModified: '2026-05-04',
     category: 'Repower Guides',
     readTime: '14 min read',
     keywords: ['Evinrude to Mercury repower', 'replace Evinrude Ontario', 'Evinrude discontinued parts', 'E-TEC to Mercury', 'Evinrude G2 replacement'],
     content: `
-## Evinrude Is Done. Here's What That Means for Ontario Owners.
+Switching from Evinrude to Mercury during a repower runs an extra $1,500 to $3,000 CAD in rigging costs because the entire control system has to swap. That sounds like a lot until you remember Evinrude stopped making outboards in 2020, and parts and service support is shrinking every year. The math usually favors the switch. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-In May 2020, BRP announced it was permanently discontinuing Evinrude outboard production. No phased wind-down, no sale to another manufacturer — just a shutdown, effective immediately.
+## Quick recommendation
 
-That was over five years ago. Common maintenance parts like impellers, thermostats, and fuel filters remain available through specialty suppliers. But proprietary electronics for the G2 platform are already getting scarce. Software diagnostic tools for E-TEC systems are harder to find as the dealer network shrinks. The technicians who know these engines well are retiring.
+If you have a running Evinrude on a hull you plan to keep more than two seasons, switching to Mercury during a repower makes sense for most Ontario boaters. The brand-conversion rigging cost is real but it is one-time. The Evinrude parts shortage problem is forever and getting worse.
 
-This isn't a crisis — it's a slow squeeze. For most Ontario Evinrude owners, the right time to consider a repower is before the engine forces the decision.
+We are doing more Evinrude-to-Mercury repowers every year at HBW. The customers who switch are not chasing a brand. They are chasing parts availability, service speed, and resale support. Those are the practical metrics that decide reliability in real life.
 
-## The Honest Part: People Loved Their Evinrudes
+If your Evinrude is still running well and the boat is older or a short-term keeper, sometimes the right answer is "run it until it dies." We will tell you that too. The honest answer depends on hull, motor age, and how long you plan to own the boat.
 
-A lot of Ontario boaters had real loyalty to their Evinrudes. The E-TEC direct-injection system was genuinely innovative. The engines had strong low-end torque, quick planing, and were light relative to comparable horsepower.
+## Why Evinrude owners are switching
 
-What's changed isn't the engine — it's the support ecosystem. When a manufacturer stops production and the dealer network contracts, owners eventually reach a point where maintaining the engine exceeds the cost of replacing it.
+BRP shut down Evinrude outboard production in May 2020. As of 2026, that is six years of no new motors and a parts supply that is contracting every year. The practical realities Evinrude owners are running into:
 
-The 2010–2018 E-TEC models in the 60–150hp range have the best remaining parts availability. The 3.4L G2 models (200hp and up) are already in rougher shape for proprietary components.
+- **Parts availability is dropping.** Some service parts are becoming hard to source. Specialty parts (electronics, specific fuel system components) take weeks instead of days.
+- **Service expertise is shrinking.** Marine technicians who specialize in Evinrude are aging out or retraining. New techs coming into the industry are not learning Evinrude.
+- **Resale value is dropping faster than Mercury or Yamaha.** A 2018 Evinrude on a 2018 hull sells slower in Ontario than the same hull with a Mercury rerig.
+- **Insurance and warranty support is harder.** Some marinas are no longer accepting Evinrude motors for warranty work because BRP's parts pipeline is unreliable.
 
-## Mercury Equivalents for Common Evinrude Models
+None of this means a running Evinrude is suddenly worthless. It means the long-term ownership math is shifting away from Evinrude every year. The customers who saw this coming switched in 2022 to 2024. The customers seeing it now are switching in 2026.
 
-| Evinrude Engine | Mercury Equivalent(s) | Notes |
-|---|---|---|
-| E-TEC 60hp | Mercury 60 FourStroke | Clean 1:1 replacement; lighter than many expect |
-| E-TEC 90hp | Mercury 90 FourStroke | Very common repower; excellent fit on aluminum fishing boats |
-| E-TEC 115hp | Mercury 115 FourStroke | Strong performer; available in Command Thrust |
-| E-TEC 150hp | Mercury 150 FourStroke or 150 Pro XS | Pro XS adds performance; FourStroke is quieter |
-| E-TEC 200hp | Mercury 200 FourStroke or 200 Pro XS | Multiple paths depending on hull and performance goals |
-| G2 250hp | Mercury 250 Pro XS | Pro XS is lighter with strong performance |
-| G2 300hp | Mercury 300 Pro XS | Top-end replacement, excellent on larger hulls |
+## What the Evinrude-to-Mercury conversion actually costs
 
-**Pro XS vs. FourStroke:** The Pro XS runs at higher RPMs and is optimized for acceleration and top speed. The standard FourStroke is quieter, more fuel-efficient at cruise, and better for family boats. Most E-TEC owners who want similar driving feel will find the Pro XS closer to what they're used to.
+A Mercury-to-Mercury repower has rigging costs in the $500 to $1,500 range because most of the existing controls, harness, and gauges work with the new motor.
 
-## What Actually Needs to Change
+An Evinrude-to-Mercury conversion adds $1,500 to $3,000 on top of standard rigging because the entire control system has to swap:
 
-### Mounting: Usually Compatible
+- **Throttle and shift control** swaps from Evinrude to Mercury (mechanical or DTS depending on motor)
+- **Wiring harness** is replaced (Evinrude and Mercury harnesses are not compatible)
+- **Engine gauges or display** swap to Mercury SmartCraft compatibility
+- **Steering** sometimes swaps too if going from cable to hydraulic, or from older Evinrude hydraulic to Mercury-compatible
+- **Battery and starting** wiring is updated to Mercury spec
 
-Evinrude outboards used industry-standard transom mounting dimensions. A typical Evinrude on a standard transom mount will accept a Mercury engine on the same footprint. Verify transom height, engine weight capacity, and any jackplate compatibility.
+Most of this is one-time cost. Once the boat is rigged for Mercury, future Mercury-to-Mercury repowers stay at the lower rigging tier. So the conversion premium pays off if you plan to keep the hull for one more repower cycle (typically 8 to 15 years).
 
-### Controls: Always Change
+For specific pricing on your boat, [build a quote](/quote/motor-selection) or [give us a call at (905) 342-2153](tel:9053422153).
 
-Evinrude controls — throttle, shift cables, and especially the digital control systems on G2 models — are **not compatible with Mercury**. You cannot reuse them.
+## What changes the answer
 
-What needs replacing:
-- Control box (throttle and shift lever)
-- Shift and throttle cables (or DTS harness for digital)
-- Wiring harness from engine to helm
-- Key switch and neutral safety interlock
+Five things move whether the Evinrude-to-Mercury switch makes sense for your specific situation:
 
-### Gauges: Likely Replace
+- **Hull condition and remaining life.** A solid 5-to-15 year old hull justifies the conversion. A hull that is going to be replaced in two seasons does not.
+- **Motor age and condition.** A 25-year-old Evinrude near end of life is a clear switch. A 5-year-old Evinrude G2 with low hours is harder, because the motor itself still has years left in it.
+- **How heavily you use the boat.** A 200-hour-a-season user feels parts shortages much faster than a 30-hour-a-season cottage user.
+- **Where you launch and travel.** Boaters who travel (Trent-Severn, Lake Ontario, road trips to Muskoka or Georgian Bay) want a service network that is still showing up. Mercury wins this.
+- **Resale plan.** If you plan to sell the boat in the next 3 years, switching to Mercury before listing typically pays back the conversion cost in faster sale and higher price.
 
-Evinrude's ICON gauges and iCommand system do not communicate with Mercury's SmartCraft protocol. Your options are Mercury-compatible gauges, VesselView digital display, or a third-party multi-brand gauge system.
+## What HBW checks before recommending the switch
 
-## Common Questions from Evinrude Owners
+When Evinrude owners come into HBW asking about a Mercury repower, we want to know:
 
-### "My E-TEC is only 8 years old. Should I really replace it?"
+- **Year and HP of the existing Evinrude.** ETEC G1, ETEC G2, and older direct-injection 2-strokes all have different remaining-life profiles.
+- **Hours on the motor.** A 500-hour ETEC has very different math than a 2,000-hour ETEC.
+- **Current symptoms.** Cold start issues, fuel system problems, or warning lights are signs the motor is closer to the end.
+- **Hull make, model, year, and condition.** The hull is the long-term asset. A repower investment goes into the hull's value.
+- **How long you plan to keep the boat.** This is the biggest single variable.
+- **Existing rigging condition.** Sometimes the existing throttle controls and gauges are at end of life anyway, which makes the conversion cost less of a premium because we would have to replace them on a Mercury-to-Mercury repower too.
+- **Budget and financing tolerance.** Most Mercury repowers qualify for 7.99% APR financing through Mercury. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026) for details.
 
-If your E-TEC is running well and routine parts are available, there's no reason to replace it just because the brand is discontinued. The calculus changes when you need a part that's unavailable, G2 digital components fail, or maintenance costs escalate.
+We will not push the switch on customers whose existing Evinrude has years of life left and a clear plan to use the boat short-term. We will recommend the switch when the math actually favors it.
 
-### "Will a Mercury FourStroke feel different to drive?"
+## Common Evinrude-to-Mercury switch mistakes
 
-Yes. A four-stroke Mercury has different power delivery. The E-TEC had strong low-end torque and felt punchy at low RPMs. Four-stroke Mercury engines deliver power more progressively and run quieter at cruise. Most owners adapt quickly.
+We see these every season:
 
-### "What about resale value with an Evinrude on it?"
+1. **Waiting too long.** The customers who came in for "just a quick fuel system check" two years running often end up needing a full repower anyway. Once the Evinrude is dead, you are stuck without a motor during the rush.
+2. **DIY rigging the conversion.** Brand conversions are not a DIY project. Wrong wiring, wrong harness routing, or incorrect throttle calibration can damage the new motor. We do brand conversions in-house with Mercury-certified technicians.
+3. **Cheaping out on the prop.** A Mercury motor with the old Evinrude prop loses 4 mph and 15% fuel economy. We test props on the water during sea-trial of every conversion.
+4. **Skipping the hydraulic steering upgrade.** Older Evinrude installs often have cable steering that the new Mercury could leverage hydraulic. While the dash is open during the conversion is the cheapest time to upgrade.
+5. **Trying to keep a too-small Evinrude HP.** Sometimes the original Evinrude was undersized and the customer adapted by not loading the boat. The Mercury conversion is the right time to step up to the HP that actually fits the use case.
 
-Discontinued engines affect resale. A Mercury-repowered boat is generally easier to sell and commands better prices than an equivalent Evinrude-powered hull.
+## What to do with the old Evinrude
 
-## For Engine Repairs, We Only Service Mercury and Mercruiser
+Once it comes off, the old Evinrude has limited resale value (more so for ETEC G2 motors than older 2-strokes). Options:
 
-Harris Boat Works services Mercury and Mercruiser engines. We do not service Evinrude or other brands. If you're ready to move to Mercury, we handle the full repower — and once it's done, we're your service shop going forward.
+- **Trade in.** HBW takes Evinrude trades during a Mercury repower. We will give you fair-market trade-in value applied to the new motor purchase.
+- **Private sale.** Sometimes a small running Evinrude has more value to a small-boat owner who needs a cheap motor than as a trade-in. We can advise on whether private sale makes sense.
+- **Parts donor.** Older Evinrudes have value to mechanics and shops as parts donors. Marginal cash but better than scrap.
 
-For full installed-repower pricing in CAD across every HP class — what most Evinrude owners actually budget against — see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
+The Pleasure Craft Licence (PCL) needs to be updated when the motor changes. We handle the paperwork side of this for HBW customers. See [Pleasure Craft Licence update during repower](/blog/pleasure-craft-licence-update-repower-ontario) for details.
 
 ## Related guides
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
+- [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
+- [Pleasure Craft Licence Update During Repower](/blog/pleasure-craft-licence-update-repower-ontario), Transport Canada paperwork
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), choosing the right Mercury family
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR Mercury Repower Financing details
 
-    `,
+## Ready to talk through the switch?
+
+Build a quote for your Mercury replacement on the [motor selection page](/quote/motor-selection). Live pricing in CAD, full configuration including the brand-conversion rigging premium where it applies.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific Evinrude-to-Mercury switch before quoting, [give us a call at (905) 342-2153](tel:9053422153). We do these conversions every month and we will give you the honest math on whether to switch now, switch later, or run the Evinrude until it gives up.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Why did Evinrude stop making outboards?**
+BRP (Evinrude's parent company) shut down outboard production in May 2020 to focus on other product lines. As of 2026, no new Evinrude outboards have been built for six years. The brand still exists for parts and service support, but new motor production has ended.
+
+**Can I still get parts for my Evinrude?**
+Yes for most common parts, but availability is contracting every year. Common service parts (filters, plugs, anodes, fluids) are still available. Specialty parts (specific electronics, fuel system components for ETEC G1 and G2) are getting harder to source and lead times are getting longer.
+
+**How much does it cost to switch from Evinrude to Mercury?**
+The Mercury motor cost plus an extra $1,500 to $3,000 CAD in brand-conversion rigging on top of the standard repower install. Total all-in costs vary by HP class. For specific pricing on your boat, [build a quote](/quote/motor-selection) or [contact HBW](/contact).
+
+**Do I have to replace all the controls and rigging?**
+Yes. Evinrude and Mercury throttle, shift, and harness systems are not compatible. The control system has to swap during the conversion. Steering can sometimes carry over depending on age and type. We assess this during the hull walk-around.
+
+**Can I keep my old Evinrude prop on the new Mercury?**
+Almost never. Evinrude and Mercury props have different hub designs and pitch matchups. The right prop for your specific Mercury setup is determined during sea-trial. We test props during every repower at HBW.
+
+**Will my Mercury fit on the same transom as my Evinrude?**
+Usually yes, but transom height and bracket mounting may need verification. Most Evinrude-to-Mercury conversions on aluminum and fiberglass hulls are direct fits. Older transoms may need reinforcement or shimming. We assess during the hull walk-around.
+
+**Should I trade in my old Evinrude or sell it privately?**
+Depends on the motor age and condition. Newer running ETEC G2 motors sometimes have more value in private sale. Older 2-strokes are usually best as trade-in or parts donor. We give fair-market trade-in value during a repower at HBW.
+
+**How long does an Evinrude-to-Mercury conversion take?**
+Typical conversions land in 2 to 4 days of shop time, depending on HP class and rigging complexity. Brand conversions take longer than Mercury-to-Mercury repowers because of the additional control system work.
+
+**What about my Pleasure Craft Licence (PCL)?**
+The PCL must be updated when the motor changes. The license is tied to the boat (HIN), but motor specs are recorded on it. We handle the paperwork for HBW customers. See [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario) for the procedure.
+
+**Is Mercury actually more reliable than Evinrude?**
+The mechanical reliability of late-model Evinrude G2 motors is comparable to Mercury FourStroke. The practical reliability difference comes from Mercury's larger dealer network, faster parts availability, and stronger long-term factory support. Reliability in real life is service availability plus mechanical durability. Mercury wins on the service side.
+
+**Should I just keep my Evinrude until it dies?**
+For some boaters, yes. If your Evinrude is running well, the hull is short-term, and you have a clear plan to replace the boat itself in 2 to 3 years, running the Evinrude makes sense. If the hull is solid and you plan to keep it 8+ years, switching now is usually the right call. Honest answer depends on your specific situation. [Call us](tel:9053422153).
+
+**What happens if my Evinrude dies in the middle of summer?**
+Wait time for Mercury motors and rigging slots is longest in May through August. A motor failure in July often means a 2 to 4 week wait for replacement, missing peak boating season. The customers who plan ahead in winter or early spring get the easier appointment slots.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
+`,
     faqs: [
       {
         question: 'Can I keep my Evinrude fuel tank and use it with a Mercury?',
@@ -12324,171 +12652,189 @@ The lake will be there. The right time to buy is when it makes sense for you, no
   },
   {
     slug: 'boat-hull-replacement-vs-repower-decision',
-    title: 'Boat Hull Replacement vs Repower: When to Repower, When to Buy a New Hull',
-    description: 'When should you repower an old hull, and when is it time to buy a new boat? A 50% rule, hull-assessment checklist, and real HBW examples.',
+    title: 'Boat Hull Replacement vs Repower: The Honest Decision (2026)',
+    description: 'For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn\'t structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).',
     image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-29',
-    dateModified: '2026-04-29',
+    dateModified: '2026-05-04',
     publishDate: '2026-04-29',
     category: 'Repower',
     readTime: '12 min read',
     keywords: ['repower vs new boat', 'boat hull replacement', 'when to repower outboard'],
     content: `
-Every season, people bring us boats and ask some version of the same question: is this worth putting a new motor on, or am I throwing good money after bad?
+For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).
 
-It's the right question to ask. The wrong answer costs money either way — buy a new boat when your hull was fine, and you've spent $40,000+ on a hull you didn't need. Repower a hull that has structural problems, and you're bolting a $16,000–$27,000 motor onto a boat that'll need a hull intervention in two seasons anyway.
+## Quick recommendation
 
-We've been doing repower assessments at Harris Boat Works since well before repowers were fashionable. Mercury Platinum dealer, established 1947. We currently have 46 new Mercury motors in stock — from $1,385 for a small tiller to $41,525 for a 250 HP Pro XS. We've done enough of these assessments to know when a repower makes the customer money, and when it doesn't. Here's the framework we actually use.
+The decision is not "new boat vs. old boat." It is "do I have a hull worth keeping?" If the answer is yes, repower wins on the math nearly every time. A Mercury repower on a solid 15-year-old hull lands $20,000 to $35,000 CAD all-in for a typical setup, against $50,000 to $90,000 CAD for a comparable new boat package.
 
----
+We have been doing this math with customers at HBW since 1965. Three patterns repeat:
 
-## Start Here: The Core Question
+- **Customers who want a new boat for the new-boat reasons** (specific hull, latest features, status) should buy a new boat. We sell those too. The repower argument is not for them.
+- **Customers who want a reliable boat that performs like new** are usually better served by a repower. Their hull is fine. Their motor is the limiting factor.
+- **Customers with a soft or compromised hull** should not repower. A new motor on a bad hull is paying premium for an asset that will fail you anyway.
 
-A repower makes sense when the hull is worth more than the cost of the new motor. A new boat makes sense when it doesn't — or when the hull has problems that won't be solved by a new engine.
+The hard part is honestly assessing the hull. Most Kawartha aluminum hulls hold up better than owners assume. Most fiberglass hulls hold up worse than owners assume. We do free hull walk-arounds at HBW. [Schedule one](/contact).
 
-That sounds simple. The complications are:
+## What changes the answer
 
-1. Hull value isn't always obvious — structural problems are often invisible from the outside
-2. The comparison isn't just hull value vs. motor cost; it's total cost of ownership over a realistic time horizon
-3. "New boat" emotion clouds the math. "It's my boat" emotion also clouds the math in the other direction.
+Five things move whether to repower or replace:
 
-We try to take the emotion out of this conversation as much as possible. Here's the objective framework.
+- **Hull age and condition.** A 10-year-old aluminum hull stored properly is closer to "new" than a 5-year-old fiberglass hull stored badly. Storage history matters more than calendar age.
+- **Hull suitability for current use.** A boat that was right for fishing solo and is now hauling a family of five is undersized. No motor fixes that.
+- **What is on the hull besides the motor.** If the seats, electronics, helm, and trailer are all aging out simultaneously, sometimes the math shifts toward replacement.
+- **Sentimental value.** A boat that grandpa built or that hauled three generations is worth more than the spec sheet says. Some hulls deserve to keep going.
+- **Long-term ownership plan.** A 20+ year keeper justifies a different decision than a 3-year flip.
 
----
+## The honest math
 
-## The 50% Rule
+For typical Ontario freshwater repowers on a solid hull:
 
-If the cost of repairing the hull exceeds 50% of the cost of an equivalent new boat, the math usually points toward a new boat rather than repair-plus-repower.
+| Scenario | Cost (CAD before HST) |
+|---|---|
+| 90 to 115 HP repower on existing hull | $17,000 to $22,000 |
+| 150 to 200 HP repower on existing hull | $23,000 to $36,000 |
+| 250 to 300 HP repower on existing hull | $35,000 to $40,000 |
+| New comparable aluminum boat package (90 to 115 HP) | $50,000 to $70,000 |
+| New comparable fiberglass boat package (150 to 200 HP) | $65,000 to $90,000 |
+| New comparable pontoon package (115 to 150 HP) | $55,000 to $75,000 |
 
-This isn't a law of physics — it's a practical heuristic. At 50% of replacement cost, you're already committed to significant money, you still have an old boat, and any additional problems that emerge will compound the cost. At that point, new-boat financing often produces a better total outcome.
+For specific pricing on your boat, [build a quote](/quote/motor-selection) or [contact HBW](/contact).
 
-The 50% rule applies to hull repair costs. The motor is a separate calculation. A boat that needs a new motor but has a sound hull is a repower candidate regardless of age. A boat that needs a new motor AND significant hull work is a different conversation.
+The repower path saves $25,000 to $50,000 CAD against new in most scenarios. That savings is the deciding factor for most customers. It is not the deciding factor when the hull is bad.
 
----
+## When to repower (the clear yes)
 
-## Hull Assessment: What We Check
+Repower is the right call when:
 
-Before we quote any repower, we do a hull assessment. Some of what we look for:
+- **Hull is 5 to 20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left. Most fiberglass hulls in this range need careful inspection but are often fine.
+- **Existing seats, helm, and electronics still work or are fixable.** A motor swap does not require replacing the rest of the boat.
+- **The hull fits your use case.** 16 ft aluminum console for fishing on Rice Lake is the right tool. A new 16 ft aluminum console will not feel different on the water.
+- **You like the boat.** Sentimental and lifestyle attachment matters. The boats people keep for 20+ years are usually boats they love.
+- **You plan to keep the boat 5+ more years.** The longer the keep, the more the repower math wins.
 
-### Transom Condition
+We see all five conditions met regularly at HBW. Those customers walk out with a new Mercury and a hull they already trust.
 
-The transom is where the motor mounts. It's also the most common structural failure point on older fiberglass and plywood-core boats. Water intrusion through old hardware holes, motor mount bolts, or gelcoat cracks allows moisture to penetrate the transom core.
+## When to replace (the clear no on repower)
 
-Signs of transom problems:
-- Soft, spongy feel when you press on the transom with your thumb
-- Visible delamination or separation at the transom cap
-- Motor mounting bolts that have pulled, shifted, or allow visible flex when the motor is stressed
-- Water draining from the transom when the boat is lifted
+Replace the hull when:
 
-A transom repair on a fiberglass boat is a significant job — typically in the range of $2,000–$6,000 depending on extent of damage and shop rates at $140/hr (our published median labor rate). On a boat where that repair cost approaches 20–30% of replacement cost, it factors heavily into the repower decision.
+- **Hull is rotting, soft, or has structural problems.** Soft transom, soft floor, hairline cracks at stress points, or visible repair patches that did not hold are signs the hull is at end of life. A new motor on a bad hull is throwing good money after bad.
+- **Hull is fundamentally undersized for current use.** A 14 ft tin boat that is now expected to haul a family of five at 25 mph cannot do that job. No motor fixes the underlying mismatch.
+- **You hate the boat.** If you do not want to spend more time on the hull, a new motor will not fix that. Buying a boat you actually want is more important than saving money on a repower.
+- **The cost of getting the hull right is more than half the cost of a new boat.** New floor + transom rebuild + seat replacement + helm replacement + new motor = often above the new-boat price for a similar package. The math flips.
+- **You plan to flip the boat in less than 2 years.** The repower premium does not pay back fast enough on a short hold.
 
-### Hull Integrity: Stringers and Floor
+When customers fall into this category, we tell them. We sell new Legend Boats at HBW. We are not married to the repower path.
 
-Stringers are the longitudinal reinforcement members running the length of the hull. On older fiberglass boats with a plywood-core construction, stringer rot is a common problem — again driven by water intrusion through deck hardware, hatches, or worn gelcoat.
+## The middle ground
 
-Signs of stringer problems:
-- Floor that flexes, bounces, or feels soft when you walk on it
-- Delamination blisters on the hull bottom
-- Any history of the boat sitting with standing water inside
+Some hulls fall between clear yes and clear no:
 
-Stringer replacement is major surgery. Labor-intensive, expensive, and in many cases not economically justifiable on a boat that isn't in an upper tier of collectible value.
+- **Older fiberglass with cosmetic issues** but solid structure. Repower works but plan for cosmetic refresh during the same shop visit.
+- **Aluminum hulls with minor floor or transom soft spots.** Sometimes a partial floor or transom rebuild as part of the repower extends the hull's life another 10 to 15 years cost-effectively.
+- **Hulls with outdated electronics and rigging.** The repower is the right time to update the electronics and rigging. Combined cost is usually still well below new-boat pricing.
+- **Boats with a kicker mount that is in the wrong place.** Repower is the right time to relocate the kicker bracket if needed. Easier with the dash open.
 
-### Aluminum Hull Condition
+We assess these during the hull walk-around. The right answer depends on the specific hull and budget tolerance.
 
-Aluminum fishing boats — the dominant hull type on Rice Lake — have different failure modes. Corrosion, electrolytic pitting, cracked welds at high-stress points (especially around the transom and bow), and impact damage from years of rocky shoreline approaches.
+## What HBW checks before recommending one path
 
-On aluminum hulls, a competent welder can repair a lot. But examine the entire hull, not just the obvious spots. Pitting that's through the hull bottom requires plate replacement, which gets expensive fast.
+When customers come in asking "should I repower or replace?" we want to know:
 
-### Age and Service Life
+- **Boat make, model, year, and length**
+- **Hull material (aluminum vs fiberglass)**
+- **Storage history (indoor heated, indoor unheated, outdoor)**
+- **Visible structural condition (we walk around it)**
+- **Floor and transom condition (we tap-test and visually inspect)**
+- **Existing motor age and condition**
+- **Existing rigging, electronics, and seat condition**
+- **Primary use case and how often you use the boat**
+- **Long-term plan (5 years, 10 years, 20 years)**
+- **Budget tolerance and financing options**
 
-A well-maintained 20-year-old hull is often an excellent repower candidate. This surprises people. The hull hasn't worn out — fiberglass and welded aluminum last decades when maintained correctly. What's worn out is the motor. Put a new Mercury on a sound 20-year-old hull and you have a boat that should give you another 15–20 years of solid service.
+We give an honest recommendation. Sometimes the right answer is repower. Sometimes the right answer is replace. Sometimes the right answer is "keep using what you have, your motor still has 200 hours of life and you can decide next year."
 
-The key phrase is "well-maintained." Age alone isn't disqualifying. Age plus deferred maintenance is a different situation.
+## Common decision mistakes
 
----
+We see these every season:
 
-## Hidden Costs of Keeping an Aging Hull
-
-Even when the hull passes a structural inspection, older boats carry hidden costs that buyers sometimes underestimate:
-
-**Wiring:** 20-year-old marine wiring is often brittle, corroded at connection points, and undersized for modern electronics. A full rewire isn't cheap.
-
-**Fuel system:** Older fuel tanks — especially aluminum tanks in fiberglass boats — may have corrosion, sediment, or ethanol compatibility issues that require tank replacement.
-
-**Hardware and fittings:** Older boats need running light replacement, updated navigation electronics, possibly a new helm station depending on condition.
-
-**Regulatory compliance:** A repower changes the horsepower on the boat, which has implications for the [pleasure craft licence](/blog/pleasure-craft-licence-update-repower-ontario). See our [Ontario repower licensing guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) for specifics.
-
-None of these costs are automatic, but they're common on older boats, and they should be part of your budgeting. Our shop rate is $140/hr and older boats tend to find surprises once work starts.
-
----
-
-## Why a 20-Year-Old Sound Hull Is Often Perfect for a Repower
-
-This is the message we give our customers more often than any other:
-
-A hull that's structurally sound, maintained correctly, and shows no transom or stringer issues is functionally identical to a new hull for boating purposes. You're not paying for a new hull when you buy a new boat — you're paying for a hull, a motor, trailer, electronics, and all the accessories. Much of that cost is in things that depreciate quickly or that you already have.
-
-When you repower, you get:
-- New Mercury motor with full manufacturer warranty
-- Current-generation technology (fuel injection, digital throttle and shift on eligible models, improved fuel economy)
-- New motor mount hardware and updated connections
-- A boat that feels and performs like a new rig on the water
-
-What you keep is the hull you know — its handling characteristics, the layout you're used to, and the value of whatever maintenance and upgrades you've already put into it.
-
-The economics in 2026 make this case even more strongly. A new mid-range family boat starts around $39,999 on our lot. A repower with a 2026 Mercury 90 ELPT ($16,830 MSRP) or a 2026 Mercury 115 ELPT ($19,220 MSRP) on a sound hull is a fraction of that — and you're getting the same engine technology that's powering new boats off showroom floors right now.
-
----
-
-## The Repower Checklist: What HBW Evaluates
-
-Before we recommend a repower, we look at:
-
-- [ ] **Transom:** Firm, no flex, no moisture penetration, no pulled hardware
-- [ ] **Stringers / floor:** No soft spots, no delamination, no history of standing water
-- [ ] **Transom width and mounting height:** Compatible with the target motor's specs
-- [ ] **Hull rating (max HP):** The current maximum HP rating must support the repower motor — increasing HP beyond the plate rating is not allowed
-- [ ] **Weight capacity:** The loaded boat must be within rated capacity with the new motor
-- [ ] **Fuel system condition:** Tank, lines, and fittings in serviceable condition
-- [ ] **Electrical system:** Adequate to support the new motor's digital systems
-
-If we find issues at inspection, we tell you. Sometimes that means we recommend a new boat rather than a repower. That's not the answer we profit from most, but it's the honest one.
-
----
-
-## When the Answer Is "New Boat"
-
-We send people toward a new boat when:
-
-- The transom needs replacement and the boat is over 20 years old — the repair plus motor cost approaches new-boat territory
-- Multiple systems are failing simultaneously — wiring, fuel system, hull — and the boat isn't worth the combined repairs
-- The hull's max HP rating is too low for the motor they want and can't be upgraded
-- The boat's layout genuinely doesn't work for how they use it, and a different platform would serve them better
-- The boat has sentimental value driving the repower decision, but the numbers clearly say otherwise. (We try to gently point this out.)
-
-Buying new isn't the wrong answer. It's just not always the necessary one. We have 14 new Legend boats in stock from $6,999 to $79,999 if the numbers point that direction.
-
----
-
-## Get a Repower Assessment
-
-If you're unsure whether your boat is a good repower candidate, we can assess it. We do repower consultations at Harris Boat Works in Gores Landing — bring the boat, and we'll give you a straight answer on hull condition and what a Mercury repower would cost on your specific hull.
-
-For a quick price check before you come in, use our quote configurator at [mercuryrepower.ca](https://mercuryrepower.ca) — real numbers, same pricing the sales team sees. For service scheduling, [hbw.wiki/service](https://hbw.wiki/service) or call 905-342-2153.
-
-For more on [repower costs in Ontario](/blog/mercury-repower-cost-ontario-2026-cad), see our [2026 repower cost guide](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) and our [complete Kawarthas repower guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas).
-
----
+1. **Replacing a hull that was fine.** Customer assumes their 12-year-old aluminum hull is at end of life because the motor died. Hull is still solid. Replacement was unnecessary spending.
+2. **Repowering a hull that is rotting.** Customer puts a new $20,000 motor on a hull with a soft transom. The transom fails 18 months later, putting the new motor at risk. Should have replaced the hull or repaired the transom first.
+3. **Replacing because of cosmetic problems.** Faded gel-coat or worn vinyl seats are not structural problems. Cosmetic refresh is much cheaper than replacement.
+4. **Ignoring the trailer.** A 20-year-old trailer with seized bearings and bald tires is a separate replacement decision from the boat itself. Sometimes the trailer is the limiting asset.
+5. **Buying new for the wrong reasons.** "I want a new boat" is a fine reason. "My motor is dead so I need a new boat" usually is not.
 
 ## Related guides
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
+- [Boat Repowering Guide: When to Replace Your Motor](/blog/boat-repowering-guide-when-to-replace-motor), the timing question
+- [Ontario Cottage Boat Motor Repower Guide](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion specifically
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP sizing for repowers
 
+## Ready to figure out which path is right?
+
+If you think you might be repowering, build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD, full configuration including rigging.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through repower vs. replace before quoting, [give us a call at (905) 342-2153](tel:9053422153) or [come in for a hull walk-around](/contact). We will give you the honest math and the honest answer for your specific boat. Sometimes that answer is "your boat is fine, do not spend the money."
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Should I repower or buy a new boat?**
+Depends on hull condition and use case. For most boaters with a 5-to-20-year-old hull that's been stored properly and is structurally solid, repowering saves $25,000 to $50,000 CAD against new and gives you 80% of the new-boat experience. For hulls with structural issues or fundamental use mismatch, replacement is the better path.
+
+**How long does a typical aluminum boat hull last?**
+Properly maintained aluminum hulls regularly last 30 to 50+ years. Indoor storage and proper winterization are the biggest factors. Most Kawartha aluminum hulls from the 1990s and 2000s are still on the water in 2026 with some on their second or third Mercury repower.
+
+**How long does a typical fiberglass boat hull last?**
+20 to 40 years depending on storage and use. Fiberglass is more sensitive to UV exposure and water intrusion than aluminum. Outdoor uncovered storage shortens fiberglass life meaningfully. Indoor heated storage extends it.
+
+**What are the signs a boat hull is at end of life?**
+Soft floor or transom (visibly springy or audibly hollow when tapped), hairline cracks at stress points, visible repair patches that did not hold, water inside the hull foam, or structural damage from impact or grounding. Cosmetic issues (faded gel-coat, worn vinyl) are not structural end-of-life signs.
+
+**How much does a Mercury repower cost?**
+Depends on HP. A 25 to 60 HP repower lands $11,000 to $15,000 CAD all-in. A 90 to 115 HP repower lands $17,000 to $22,000 CAD. A 150 to 200 HP repower lands $23,000 to $36,000 CAD. See our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for full ranges and [build a quote](/quote/motor-selection) for your specific boat.
+
+**How much does a new comparable boat cost?**
+Depends on size and brand. A new 16 to 18 ft aluminum console with 90 to 115 HP Mercury package lands $50,000 to $70,000 CAD. A new 18 to 22 ft fiberglass package lands $65,000 to $90,000 CAD. A new 20 to 22 ft pontoon package lands $55,000 to $75,000 CAD. New is consistently $25,000 to $50,000 CAD more than a comparable repower.
+
+**Can I repower a boat that is more than 20 years old?**
+Yes, if the hull is structurally solid. Many 25 to 35-year-old aluminum hulls at HBW are running their second Mercury repower. Older hulls warrant a thorough hull walk-around before committing to the motor purchase. Fiberglass hulls in the 25+ year range need extra inspection.
+
+**Will my old electronics and rigging work with a new Mercury?**
+Mercury-to-Mercury repowers usually keep existing throttle controls, gauges, and harness if they are post-2010 and in good condition. Older rigging often needs replacement. Brand conversions (Evinrude, Yamaha, Honda to Mercury) need new control systems. We assess during the hull walk-around.
+
+**Should I repower a boat I plan to sell soon?**
+Usually not. The repower premium pays back over multiple seasons of ownership. If you plan to sell within 12 months, the repower investment is unlikely to recover in resale price. Better to sell the boat as-is and let the next owner decide.
+
+**Does a repower add value to my boat?**
+A new Mercury motor adds meaningful resale value to a solid hull, often $0.60 to $0.80 per dollar spent on the repower. Not full recovery, but a meaningful uplift. The repower also makes the boat sell faster, which has its own value.
+
+**What if my hull is fine but my trailer is shot?**
+Treat the trailer as a separate decision. A new trailer for an existing boat is $3,000 to $7,000 CAD depending on size and capacity. That investment is usually well worth it on a hull you plan to keep.
+
+**Can HBW assess my boat to help with the decision?**
+Yes. We do free hull walk-arounds at HBW. Bring the boat to us or send photos and we can give you a preliminary assessment. The full decision needs eyes on the boat. [Contact us](/contact) to schedule.
+
+**What is the worst-case scenario for a repower?**
+Putting a new motor on a hull with a hidden structural problem (soft transom, cracked stringer, water-saturated foam). The hull fails 1 to 3 years later, putting the new motor at risk. Avoidable with a thorough hull walk-around before the repower. We do this on every project at HBW.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
 `,
     faqs: [
       {

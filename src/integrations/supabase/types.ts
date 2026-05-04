@@ -3935,6 +3935,8 @@ export type Database = {
           cost: number | null
           cust_id: string | null
           customer_name: string | null
+          date_received: string | null
+          days_in_store: number | null
           deal_no: string | null
           deal_unit_id: number | null
           dealid: string | null
@@ -3943,13 +3945,17 @@ export type Database = {
           major_unit_header_id: number | null
           make: string | null
           model: string | null
-          model_year: string | null
+          model_name_full: string | null
+          model_year: number | null
+          new_used: string | null
           raw: Json | null
           sale_price: number | null
+          sales_category: string | null
           salesman_name: string | null
           stock_number: string | null
           synced_at: string | null
           trade_allowance: number | null
+          unit_type: string | null
           vin: string | null
         }
         Relationships: []
