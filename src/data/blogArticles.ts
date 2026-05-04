@@ -371,10 +371,6 @@ For most Ontario boaters, the **Mercury FourStroke** offers the best overall val
     `,
     faqs: [
       {
-        question: 'Is the Verado worth the extra cost?',
-        answer: 'For premium boats and demanding applications, yes. Verado offers superior refinement, quieter operation, and advanced features. However, for most recreational use, FourStroke provides excellent value without the premium price.'
-      },
-      {
         question: 'What\'s the main advantage of Pro XS over FourStroke?',
         answer: 'Pro XS motors are lighter and tuned for higher RPM and faster acceleration. They\'re designed for performance-focused boaters, especially tournament anglers who need to reach fishing spots quickly.'
       },
