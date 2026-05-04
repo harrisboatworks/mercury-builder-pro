@@ -577,7 +577,7 @@ export const TradeInValuation = ({ tradeInInfo, onTradeInChange, onAutoAdvance, 
                       if (overridden) return { label: 'Manual', cls: 'bg-repower-navy-900/[0.06] text-repower-navy-900/75 border-repower-navy-900/20' };
                       if (conf === 'high') return { label: 'High', cls: 'bg-repower-cream text-repower-mercury-red border-repower-navy-900/10' };
                       if (conf === 'medium') return { label: 'Medium', cls: 'bg-repower-cream text-repower-gold border-repower-gold/30' };
-                      if (conf === 'low') return { label: 'Low', cls: 'bg-rose-100 text-rose-700 border-rose-200' };
+                      if (conf === 'low') return { label: 'Low', cls: 'bg-repower-mercury-red/5 text-repower-mercury-red border-repower-mercury-red/20' };
                       return null;
                     };
                     const hpBadge = hp !== null ? badgeFor(hpConfidence, hpOverridden) : null;
