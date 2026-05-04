@@ -12,11 +12,11 @@ import { supabase } from '@/integrations/supabase/client';
 // Fallback motor pricing (CAD selling price; used only while live query loads)
 // Sourced from current motor_models table (sale_price → dealer_price → msrp → base_price)
 const fallbackMotorPrices: Record<number, { min: number; max: number; avg: number }> = {
-  40: { min: 9460, max: 10054, avg: 9682 },
+  40: { min: 9460, max: 10054, avg: 9737 },
   60: { min: 12161, max: 13189, avg: 12692 },
   75: { min: 14190, max: 14190, avg: 14190 },
-  90: { min: 14812, max: 15323, avg: 15068 },
-  115: { min: 17320, max: 17716, avg: 17556 },
+  90: { min: 14812, max: 15323, avg: 15136 },
+  115: { min: 16913, max: 18117, avg: 17539 },
   150: { min: 22022, max: 24233, avg: 23085 },
 };
 
