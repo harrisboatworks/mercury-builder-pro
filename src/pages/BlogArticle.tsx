@@ -338,6 +338,9 @@ export default function BlogArticle() {
             )}
           </div>
 
+          {/* Top contextual CTA */}
+          <BlogCTA category={article.category} slug={article.slug} variant="inline" />
+
           {/* Table of Contents */}
           {tocItems.length > 0 && (
             <TableOfContents items={tocItems} />
