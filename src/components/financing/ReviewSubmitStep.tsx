@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useFinancing } from '@/contexts/FinancingContext';
@@ -481,7 +482,7 @@ export function ReviewSubmitStep() {
             </Alert>
 
             <div className="space-y-2">
-              <Label htmlFor="signature">Full Name (as signature) *</Label>
+              <Label htmlFor="signature">Full Name (as signature) <RequiredMark /></Label>
               <div className="relative">
                 <Input
                   id="signature"

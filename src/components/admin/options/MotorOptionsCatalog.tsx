@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/integrations/supabase/client';
@@ -289,12 +290,12 @@ export default function MotorOptionsCatalog() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2 col-span-2">
-                <Label htmlFor="name">Name *</Label>
+                <Label htmlFor="name">Name <RequiredMark /></Label>
                 <Input id="name" name="name" defaultValue={editingOption?.name} required />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="category">Category *</Label>
+                <Label htmlFor="category">Category <RequiredMark /></Label>
                 <Select value={formCategory} onValueChange={setFormCategory}>
                   <SelectTrigger>
                     <SelectValue />
@@ -313,7 +314,7 @@ export default function MotorOptionsCatalog() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="base_price">Price *</Label>
+                <Label htmlFor="base_price">Price <RequiredMark /></Label>
                 <Input
                   id="base_price"
                   name="base_price"

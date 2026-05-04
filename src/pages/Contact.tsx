@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -176,7 +177,7 @@ export default function Contact() {
                     <div className="space-y-6">
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
-                          <Label htmlFor="name">Full Name *</Label>
+                          <Label htmlFor="name">Full Name <RequiredMark /></Label>
                           <Input
                             id="name"
                             placeholder="Your full name"
@@ -188,7 +189,7 @@ export default function Contact() {
                           )}
                         </div>
                         <div>
-                          <Label htmlFor="email">Email Address *</Label>
+                          <Label htmlFor="email">Email Address <RequiredMark /></Label>
                           <Input
                             id="email"
                             type="email"
@@ -213,7 +214,7 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <Label>What can we help you with? *</Label>
+                        <Label>What can we help you with? <RequiredMark /></Label>
                         <div className="grid md:grid-cols-2 gap-3 mt-3">
                           {inquiryTypes.map((type) => {
                             const Icon = type.icon;
@@ -260,7 +261,7 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <Label htmlFor="message">Your Message *</Label>
+                        <Label htmlFor="message">Your Message <RequiredMark /></Label>
                         <Textarea
                           id="message"
                           placeholder="Please provide details about your inquiry..."

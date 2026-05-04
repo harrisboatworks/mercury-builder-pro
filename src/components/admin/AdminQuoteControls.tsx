@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -299,7 +300,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
         {/* Customer Info */}
         <div className="grid gap-3 sm:grid-cols-2">
           <div>
-            <Label htmlFor="customerName" className="text-sm">Customer Name *</Label>
+            <Label htmlFor="customerName" className="text-sm">Customer Name <RequiredMark /></Label>
             <Input 
               id="customerName"
               value={customerName}
@@ -308,7 +309,7 @@ export function AdminQuoteControls({ onSave, className = '' }: AdminQuoteControl
             />
           </div>
           <div>
-            <Label htmlFor="customerEmail" className="text-sm">Customer Email *</Label>
+            <Label htmlFor="customerEmail" className="text-sm">Customer Email <RequiredMark /></Label>
             <Input 
               id="customerEmail"
               type="email"

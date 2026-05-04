@@ -1,3 +1,4 @@
+import { RequiredMark } from "@/components/ui/required-mark";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle } from "@/components/ui/drawer";
@@ -266,7 +267,7 @@ export function SaveQuoteDialog({
     <div className="grid gap-4 py-4">
       
       <div className="grid gap-2">
-        <Label htmlFor="name">Name *</Label>
+        <Label htmlFor="name">Name <RequiredMark /></Label>
         <Input
           id="name"
           type="text"
@@ -285,7 +286,7 @@ export function SaveQuoteDialog({
       </div>
       
       <div className="grid gap-2">
-        <Label htmlFor="email">Email *</Label>
+        <Label htmlFor="email">Email <RequiredMark /></Label>
         <Input
           id="email"
           type="email"
@@ -304,7 +305,7 @@ export function SaveQuoteDialog({
       </div>
       
       <div className="grid gap-2">
-        <Label htmlFor="phone">Phone *</Label>
+        <Label htmlFor="phone">Phone <RequiredMark /></Label>
         <Input
           id="phone"
           type="tel"
