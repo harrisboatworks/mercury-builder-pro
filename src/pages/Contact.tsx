@@ -17,6 +17,7 @@ import { useAuth } from '@/components/auth/AuthProvider';
 import { COMPANY_INFO } from '@/lib/companyInfo';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { ContactPageSEO } from '@/components/seo/ContactPageSEO';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { 
   Mail, 
   Phone, 
@@ -452,6 +453,7 @@ export default function Contact() {
         </div>
       </div>
     </div>
+    <SiteFooter />
     </>
   );
 }

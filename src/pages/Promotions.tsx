@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
+import { SiteFooter } from '@/components/ui/site-footer';
 import { 
   Bell, ChevronRight, Calendar, Tag, Gift, Sparkles, Mail, MessageSquare,
   Award, Wrench, Waves, MapPin, Star, ChevronLeft, ChevronDown, BadgeCheck, Shield
@@ -575,6 +576,7 @@ export default function Promotions() {
           </p>
         </div>
       </section>
+      <SiteFooter />
     </div>
   );
 }
