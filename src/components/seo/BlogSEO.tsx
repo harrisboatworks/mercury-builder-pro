@@ -110,14 +110,20 @@ export function BlogSEO({ article }: BlogSEOProps) {
       ...(article.faqs && article.faqs.length > 0 ? [{
         "@type": "FAQPage",
         "@id": `${url}#faq`,
-        "mainEntity": article.faqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
+        "mainEntity": article.faqs
+          .map(faq => ({
+            q: sanitizeForSchema(faq.question),
+            a: sanitizeForSchema(faq.answer),
+          }))
+          .filter(({ q, a }) => q && a)
+          .map(({ q, a }) => ({
+            "@type": "Question",
+            "name": q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": a
+            }
+          }))
       }] : [])
     ]
   };
