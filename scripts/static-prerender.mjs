@@ -3279,6 +3279,36 @@ if (motorPageRoutes.length !== expectedMotorCount) {
 }
 
 const writtenSitemap = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
+const markdownPattern = /\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|`[^`]+`|(^|\n)\s*#{1,6}\s+|By Jay Harris/i;
+for (const route of blogArticleRoutes) {
+  const p = join(DIST, route.path.replace(/^\//, ''), 'index.html');
+  if (!existsSync(p)) { verifyErrors.push(`${route.path}: missing blog HTML.`); continue; }
+  const html = readFileSync(p, 'utf8');
+  const readMeta = (name) => {
+    const re = new RegExp(`<meta[^>]+(?:name|property)=["']${name.replace(':', '\\:')}["'][^>]*content=["']([^"']*)["'][^>]*>`, 'i');
+    const m = html.match(re);
+    return m ? m[1] : '';
+  };
+  for (const name of ['description', 'og:description', 'twitter:description']) {
+    const value = readMeta(name);
+    if (!value) verifyErrors.push(`${route.path}: missing ${name}.`);
+    if (value.length > 170) verifyErrors.push(`${route.path}: ${name} is ${value.length} chars.`);
+    if (markdownPattern.test(value)) verifyErrors.push(`${route.path}: ${name} contains markdown.`);
+  }
+  const scripts = [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)].map(m => m[1]);
+  if (scripts.length === 0) verifyErrors.push(`${route.path}: missing JSON-LD.`);
+  for (const script of scripts) {
+    try {
+      const obj = JSON.parse(script);
+      const text = JSON.stringify(obj);
+      if (markdownPattern.test(text)) verifyErrors.push(`${route.path}: JSON-LD contains markdown or author footer.`);
+    } catch (err) {
+      verifyErrors.push(`${route.path}: JSON-LD parse failed.`);
+    }
+  }
+  const noscripts = [...html.matchAll(/<noscript[\s\S]*?<\/noscript>/gi)].map(m => m[0]).join(' ');
+  if (markdownPattern.test(noscripts)) verifyErrors.push(`${route.path}: noscript contains raw markdown or author footer.`);
+}
 const sitemapMotorMatches = writtenSitemap.match(/<loc>[^<]*\/motors\/[^<]+<\/loc>/g) || [];
 if (sitemapMotorMatches.length !== motorPageRoutes.length) {
   verifyErrors.push(`sitemap.xml motor URL count ${sitemapMotorMatches.length} != ${motorPageRoutes.length}.`);
