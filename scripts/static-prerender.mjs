@@ -3589,8 +3589,10 @@ for (const route of blogArticleRoutes) {
     const m = html.match(re);
     return m ? m[1] : '';
   };
+  const decodeEntities = (s) => s.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
   for (const name of ['description', 'og:description', 'twitter:description']) {
-    const value = readMeta(name);
+    const raw = readMeta(name);
+    const value = decodeEntities(raw);
     if (!value) verifyErrors.push(`${route.path}: missing ${name}.`);
     if (value.length > 170) verifyErrors.push(`${route.path}: ${name} is ${value.length} chars.`);
     if (markdownPattern.test(value)) verifyErrors.push(`${route.path}: ${name} contains markdown.`);
