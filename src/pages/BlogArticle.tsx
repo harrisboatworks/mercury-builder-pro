@@ -17,6 +17,7 @@ import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCTA } from '@/components/blog/BlogCTA';
+import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { 
   Accordion, 
   AccordionContent, 
