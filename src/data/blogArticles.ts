@@ -305,6 +305,14 @@ The annual maintenance budget for a typical Mercury repower is small compared to
 We have been servicing Mercury motors at HBW since 1965. The mistakes we see are the same every year. Stick to the seasonal cycle below and your Mercury will outlast the rest of the boat.
 
 ## What changes the maintenance picture
+:::image-placeholder
+slug: annual-mercury-service-cycle
+type: infographic
+aspect: 1:1
+description: Circular diagram showing the four-part seasonal Mercury service cycle
+prompt: Photorealistic editorial circular infographic. Title: "Annual Mercury Service Cycle". Circular flow with 4 quadrants: Spring (April-May) Commissioning, Summer (July) Mid-Season Check, Fall (Oct-Nov) Winterization, Winter Storage. Each quadrant has icon, season label, and 1-line task description. Center: small Mercury cowl icon. Mercury black/red color scheme, cream background. No people. 1080x1080. [STYLE ANCHOR]
+:::
+
 
 Five things move how often and how aggressively you should service:
 
@@ -2092,6 +2100,14 @@ Five things move the right Mercury for your pontoon:
 - **Capacity plate maximum HP.** The plate sets the legal ceiling. Pontoons typically rate 90 to 150 HP or 115 to 200 HP depending on size.
 
 ## Best Mercury for pontoons by use case
+:::image-placeholder
+slug: pontoon-hp-by-length-and-use
+type: infographic
+aspect: 16:9
+description: Matrix showing recommended Mercury HP and gearcase by pontoon length and use case
+prompt: Photorealistic editorial infographic. 2x3 matrix grid: rows = pontoon length (18-20 ft, 20-22 ft, 22-24 ft tritoon). Columns = Cruising, Family + Light Sports, Active Water Sports. Each cell shows recommended Mercury HP class and gearcase. Mercury black accent. Clean white background, no people. 1600x900. [STYLE ANCHOR]
+:::
+
 
 ### 18 to 20 ft pontoon, cruising and fishing only
 
@@ -2851,6 +2867,14 @@ For typical Ontario use on 16 to 18 ft aluminum console boats:
 | Best fit | 14 to 16 ft light aluminum | 16 to 18 ft aluminum console | 17 to 19 ft aluminum or light fiberglass |
 | Use case | Solo or two-person | Family of three or four | Family of four or five with gear |
 | Tournament use | No | Marginal | Yes (FourStroke) or step to Pro XS |
+:::image-placeholder
+slug: mercury-75-90-115-best-fit-matrix
+type: infographic
+aspect: 16:9
+description: Visual matrix showing which Mercury (75/90/115) fits which boat type and use case
+prompt: Photorealistic editorial infographic. 3x3 visual grid: rows = Mercury 75, 90, 115 HP. Columns = Boat Type, Best Use Case, Avoid If. Each cell has a small motor silhouette icon and 2-line description. Mercury black cowls, red accents. Clean white background. No people. 1600x900. [STYLE ANCHOR]
+:::
+
 
 Note: top-speed numbers vary by hull design, prop selection, and loading. These are typical Kawartha-area sea-trial results for representative aluminum console hulls. For your specific boat, sea-trial numbers from HBW will be more accurate.
 
@@ -4500,6 +4524,14 @@ For most Ontario boaters, spring commissioning is a 2 to 4 hour shop service or 
 If you DIY winterized correctly in October or November, spring commissioning is mostly verification. If winterization was skipped or done badly, spring commissioning becomes a rescue mission.
 
 ## What changes the spring commissioning picture
+:::image-placeholder
+slug: spring-commissioning-checklist-card
+type: infographic
+aspect: 4:5
+description: Visual seasonal checklist showing pre-launch tasks in order
+prompt: Photorealistic editorial checklist infographic. Vertical card layout titled "Spring Outboard Commissioning". 7 numbered steps stacked vertically with checkbox icons: 1. Battery & Electrical, 2. Fuel System, 3. Cooling System, 4. Lubrication, 5. Spark Plugs & Ignition, 6. Prop & Lower Unit, 7. Sea-Trial. Each step has a 1-line description and a small icon. Cream background, Mercury black text, gold accent on numbers. No people. 1080x1350. [STYLE ANCHOR]
+:::
+
 
 Five things move how aggressive spring commissioning needs to be:
 
@@ -11777,6 +11809,14 @@ This is the 2026 CAD picture before HST. Your specific number comes from the liv
 | Mid | 90 - 115 HP | $17,000 - $22,000 | 16-19 ft aluminum, small pontoons, fishing boats |
 | Higher | 150 - 200 HP | $23,000 - $36,000 | 18-22 ft pontoons, runabouts, mid-size fishing |
 | High-HP | 250 - 300 HP | $35,000 - $40,000 | Performance bass, large pontoons, center consoles |
+:::image-placeholder
+slug: repower-cost-stack-by-hp-class
+type: infographic
+aspect: 16:9
+description: Stacked bar chart showing what's included in each HP class repower cost: motor, rigging, prop, controls, install labour
+prompt: Photorealistic editorial infographic. Stacked horizontal bar chart showing Mercury repower cost breakdown across 5 HP tiers: 40-60 HP, 75-115 HP, 150 HP, 200-300 HP. Each bar segmented into Motor / Rigging / Prop / Controls / Install Labour with distinct muted colors. Y-axis labels HP class, X-axis CAD before HST. Clean white background, Mercury black accent text, gold for "Install Labour" segment. No people, no logos overlaid. 1600x900. [STYLE ANCHOR]
+:::
+
 
 The ranges above are 2026 working estimates. The actual price for your motor, your hull, and your configuration is on the [motor selection page](/quote/motor-selection). That is the source of truth. Tiller motors 20 HP and under are essentially drop-in installs (no rigging, no controls, no extras), and the motor itself is the whole purchase. For specific tiller motor pricing (a 9.9 MH versus a 15 MH versus a 20 MH), see [live pricing](/quote/motor-selection).
 
@@ -14280,6 +14320,14 @@ Read more about [the best Mercury outboards for Rice Lake fishing](https://mercu
 Most Mercury motors that won't start in spring are battery, fuel, or skipped winterization. Run through the basics in order: battery voltage, fuel system, ignition, and starting circuit. If the motor still won't start after the basics, get it to HBW. The cost of a proper diagnostic is much smaller than the cost of damaging the motor by running it without addressing the underlying issue.
 
 ## Quick recommendation
+:::image-placeholder
+slug: spring-no-start-flowchart
+type: diagram
+aspect: 4:5
+description: Decision tree flowchart for diagnosing spring no-start, in order: Battery, Fuel, Ignition, Compression, Call HBW
+prompt: Photorealistic editorial flowchart diagram. Decision tree for "Mercury won't start in spring" diagnostics. 5 sequential decision diamonds: Battery? > Fuel? > Ignition? > Compression? > Call HBW. Each diamond has yes/no branches in muted colors (green=continue, red=problem). Final "Call HBW" node has phone number callout in gold. Clean white background, Mercury black text. No people. 1080x1350. [STYLE ANCHOR]
+:::
+
 
 Spring "won't start" calls follow a predictable pattern. The most common causes, in order:
 
@@ -14715,6 +14763,14 @@ The lake will be there. The right time to buy is when it makes sense for you, no
 For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
+:::image-placeholder
+slug: hull-vs-repower-decision-tree
+type: diagram
+aspect: 4:5
+description: Decision tree showing Repower vs. Replace path with key questions
+prompt: Photorealistic editorial decision tree diagram. Title: "Repower or Replace? The honest decision". Top question: "Is the hull less than 20 years old AND structurally solid?" Branches Yes/No. Yes branch leads to "Repower (saves $25K-$50K)". No branch leads to follow-up: "Is hull rotting / soft-transom / fundamentally undersized?" Yes leads to "Replace". Diamond shapes for questions, rounded rectangles for outcomes. Mercury red for "Replace" outcome, gold for "Repower" outcome. Clean white background. No people. 1080x1350. [STYLE ANCHOR]
+:::
+
 
 The decision is not "new boat vs. old boat." It is "do I have a hull worth keeping?" If the answer is yes, repower wins on the math nearly every time. A Mercury repower on a solid 15-year-old hull lands $20,000 to $35,000 CAD all-in for a typical setup, against $50,000 to $90,000 CAD for a comparable new boat package.
 
@@ -15350,6 +15406,14 @@ For typical Ontario freshwater repowers in 2026:
 Live quotes include rigging in the all-in number at [/quote/motor-selection](/quote/motor-selection).
 
 ## What's actually in "rigging"
+:::image-placeholder
+slug: mercury-rigging-cost-stack
+type: infographic
+aspect: 16:9
+description: Cost stack visualization showing rigging components
+prompt: Photorealistic editorial infographic. Horizontal stacked bar showing Mercury rigging cost breakdown. 7 segments labeled: Throttle/Shift, Steering, Harness, Gauges, Battery Cables, Fuel Hose, Prop. Each segment a different muted color, with $ ranges below. Title: "What's in your Mercury rigging cost". Clean white background, Mercury black/red accents. No people. 1600x900. [STYLE ANCHOR]
+:::
+
 
 Rigging is the integration work between motor and boat. The components:
 
@@ -15568,6 +15632,14 @@ Five things move how long your repower takes:
 ### Step 1: Hull walk-around (free, 30 to 60 minutes)
 
 Customer brings the boat to HBW or sends detailed photos and we visit the boat at a marina or storage facility. We assess:
+:::image-placeholder
+slug: repower-process-timeline
+type: infographic
+aspect: 16:9
+description: Horizontal timeline showing 10 steps of the Mercury repower process at HBW
+prompt: Photorealistic editorial infographic. Horizontal timeline with 10 numbered steps for Mercury repower process: 1. Hull walk-around, 2. Quote, 3. Booking, 4. Drop-off, 5. Old motor removal, 6. Inspection, 7. Install, 8. Sea-trial, 9. Final adjustments, 10. Pickup. Each step a clean card with number badge in Mercury red, title, and 1-line description. Horizontal flow with subtle arrow connectors. Light cream background, Mercury black text. No people. 1600x900. [STYLE ANCHOR]
+:::
+
 
 - Hull condition (fiberglass cracks, aluminum dents, transom soft spots)
 - Existing motor age, brand, model, and condition
@@ -15845,6 +15917,14 @@ Three standard lengths cover most boats:
 For specific Mercury model availability by shaft length, [build a quote](/quote/motor-selection).
 
 ## How to measure your transom height
+:::image-placeholder
+slug: shaft-length-vs-transom-diagram
+type: diagram
+aspect: 4:5
+description: Side-profile diagram showing the relationship between shaft length and transom height with labeled cavitation plate position
+prompt: Photorealistic editorial technical diagram. Side profile cross-section of a Mercury outboard mounted on a boat transom. Labeled measurements: transom height arrow (top to bottom), shaft length arrow (mounting bracket to cavitation plate), water line. Three variations side-by-side: 15-inch short, 20-inch long, 25-inch extra long. Mercury cowl details accurate. Clean white background, technical illustration style. No people. 1080x1350. [STYLE ANCHOR]
+:::
+
 
 You need a tape measure and 5 minutes:
 
