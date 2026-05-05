@@ -1,7 +1,7 @@
 import { Helmet } from '@/lib/helmet';
 import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
-import { stripMarkdown } from '@/lib/strip-markdown';
+import { getCleanDescription } from '@/lib/strip-markdown';
 
 interface BlogSEOProps {
   article: BlogArticle;
@@ -9,7 +9,7 @@ interface BlogSEOProps {
 
 export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
-  const cleanDescription = stripMarkdown(article.description);
+  const cleanDescription = getCleanDescription(article);
 
   // Calculate word count from content
   const wordCount = article.content.trim().split(/\s+/).length;

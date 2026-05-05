@@ -15,7 +15,7 @@ import { FloatingShareBar } from '@/components/blog/FloatingShareBar';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
-import { stripMarkdown } from '@/lib/strip-markdown';
+import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 import { 
   Accordion, 
@@ -43,7 +43,7 @@ export default function BlogArticle() {
 
   const relatedArticles = getRelatedArticles(article.slug, 3);
   const tocItems = extractHeaders(article.content);
-  const cleanDescription = stripMarkdown(article.description);
+  const cleanDescription = getCleanDescription(article);
 
   // Process inline markdown formatting (bold, italic, links, code)
   const processInlineFormatting = (text: string): React.ReactNode[] => {

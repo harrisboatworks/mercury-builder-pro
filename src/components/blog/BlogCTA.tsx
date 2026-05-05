@@ -39,21 +39,21 @@ function pickCTA(category = '', slug = ''): CTAConfig {
     };
   }
 
-  // Maintenance / winterization / service
+  // Maintenance / winterization / troubleshooting / service
   if (
     s.includes('maintenance') ||
     s.includes('winteriz') ||
     s.includes('service') ||
     s.includes('commission') ||
     s.includes('break-in') ||
+    s.includes('troubleshoot') ||
     cat.includes('maintenance') ||
     cat.includes('service')
   ) {
     return {
       title: 'Request Service',
       description: 'Book Mercury service with the Kawartha region\'s certified Mercury dealer since 1965.',
-      href: 'https://hbw.wiki/service',
-      external: true,
+      href: '/contact',
     };
   }
 
@@ -73,7 +73,7 @@ function pickCTA(category = '', slug = ''): CTAConfig {
     };
   }
 
-  // Default — buying guides
+  // Default - buying guides
   return {
     title: 'Browse Live Mercury Pricing',
     description: 'See real CAD pricing on every Mercury outboard we sell. Updated daily.',
