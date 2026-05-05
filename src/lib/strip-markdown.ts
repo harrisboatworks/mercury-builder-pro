@@ -11,6 +11,9 @@ export function stripMarkdown(input: string): string {
   out = out.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
   out = out.replace(/\n+\s*By Jay Harris[\s\S]*$/i, '');
 
+  // Strip custom directive blocks (e.g. :::image-placeholder ... :::)
+  out = out.replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, ' ');
+
   // Strip fenced code blocks
   out = out.replace(/```[\s\S]*?```/g, ' ');
 
