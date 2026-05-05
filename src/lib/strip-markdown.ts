@@ -152,5 +152,7 @@ export function markdownToNoscriptHtml(input: string | undefined | null): string
 
   // Collapse whitespace
   s = s.replace(/\s+/g, ' ').trim();
+  // Strip trailing markdown HR fragments
+  s = s.replace(/\s*-{3,}\s*$/, '').trim();
   return s;
 }
