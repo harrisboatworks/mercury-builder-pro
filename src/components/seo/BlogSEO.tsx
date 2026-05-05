@@ -95,14 +95,14 @@ export function BlogSEO({ article }: BlogSEOProps) {
       ...(article.howToSteps && article.howToSteps.length > 0 ? [{
         "@type": "HowTo",
         "@id": `${url}#howto`,
-        "name": article.title,
+        "name": sanitizeForSchema(article.title),
         "description": cleanDescription,
         "totalTime": `PT${readTimeMinutes}M`,
         "step": article.howToSteps.map((step, index) => ({
           "@type": "HowToStep",
           "position": index + 1,
-          "name": step.name,
-          "text": step.text,
+          "name": sanitizeForSchema(step.name),
+          "text": sanitizeForSchema(step.text),
           ...(step.image ? { "image": `${SITE_URL}${step.image}` } : {})
         }))
       }] : []),
