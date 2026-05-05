@@ -1,7 +1,7 @@
 import { Helmet } from '@/lib/helmet';
 import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
-import { getCleanDescription } from '@/lib/strip-markdown';
+import { getCleanDescription, sanitizeForSchema } from '@/lib/strip-markdown';
 
 interface BlogSEOProps {
   article: BlogArticle;
