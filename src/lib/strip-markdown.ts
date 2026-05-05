@@ -38,8 +38,13 @@ export function stripMarkdown(input: string): string {
   // Em/en dash -> hyphen
   out = out.replace(/\s*[—–]\s*/g, ' - ');
 
+  // Strip trailing markdown HR fragments (e.g. "... customers. ---")
+  out = out.replace(/[\s\u00A0]*-{3,}[\s\u00A0]*$/g, '');
+
   // Collapse whitespace
   out = out.replace(/\s+/g, ' ').trim();
+  // Belt-and-suspenders: also strip trailing dashes after whitespace collapse
+  out = out.replace(/\s*-{3,}\s*$/, '').trim();
   return out;
 }
 
