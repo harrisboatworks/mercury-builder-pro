@@ -2660,7 +2660,8 @@ function stamp(route) {
 
   // JSON-LD blocks (Helmet-managed → must carry data-rh marker so per-route
   // <Helmet> components own them on hydration instead of appending duplicates)
-  const jsonLdBlocks = route.schemas
+  const sanitizedSchemas = route.schemas.map(sanitizeSchemaValue);
+  const jsonLdBlocks = sanitizedSchemas
     .map(s => `<script data-rh="true" type="application/ld+json">${JSON.stringify(s)}</script>`)
     .join('\n  ');
   html = html.replace(/<\/head>/i, `${jsonLdBlocks}\n  </head>`);
