@@ -284,7 +284,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   {
     slug: 'mercury-motor-maintenance-seasonal-tips',
     title: "Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)",
-    description: "Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service) or call (905) 342-2153.",
+    description: "Mercury motor maintenance in Ontario follows a seasonal cycle: spring commissioning, summer check, fall winterization, and winter storage. Done right at HBW.",
     image: '/lovable-uploads/Mercury_Maintenance_Schedule.png',
     author: 'Harris Boat Works',
     datePublished: '2024-05-20',

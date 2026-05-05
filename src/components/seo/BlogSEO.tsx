@@ -1,7 +1,7 @@
 import { Helmet } from '@/lib/helmet';
 import { BlogArticle } from '@/data/blogArticles';
 import { SITE_URL } from '@/lib/site';
-import { getCleanDescription } from '@/lib/strip-markdown';
+import { getCleanDescription, sanitizeForSchema } from '@/lib/strip-markdown';
 
 interface BlogSEOProps {
   article: BlogArticle;
@@ -95,14 +95,14 @@ export function BlogSEO({ article }: BlogSEOProps) {
       ...(article.howToSteps && article.howToSteps.length > 0 ? [{
         "@type": "HowTo",
         "@id": `${url}#howto`,
-        "name": article.title,
+        "name": sanitizeForSchema(article.title),
         "description": cleanDescription,
         "totalTime": `PT${readTimeMinutes}M`,
         "step": article.howToSteps.map((step, index) => ({
           "@type": "HowToStep",
           "position": index + 1,
-          "name": step.name,
-          "text": step.text,
+          "name": sanitizeForSchema(step.name),
+          "text": sanitizeForSchema(step.text),
           ...(step.image ? { "image": `${SITE_URL}${step.image}` } : {})
         }))
       }] : []),
@@ -110,14 +110,20 @@ export function BlogSEO({ article }: BlogSEOProps) {
       ...(article.faqs && article.faqs.length > 0 ? [{
         "@type": "FAQPage",
         "@id": `${url}#faq`,
-        "mainEntity": article.faqs.map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
+        "mainEntity": article.faqs
+          .map(faq => ({
+            q: sanitizeForSchema(faq.question),
+            a: sanitizeForSchema(faq.answer),
+          }))
+          .filter(({ q, a }) => q && a && !/^by jay harris/i.test(q))
+          .map(({ q, a }) => ({
+            "@type": "Question",
+            "name": q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": a
+            }
+          }))
       }] : [])
     ]
   };

@@ -4,10 +4,24 @@
  */
 export function stripMarkdown(input: string): string {
   if (!input) return '';
-  let out = input;
+  let out = String(input);
+
+  // Remove author footer trailers like "---\nBy Jay Harris..." or "**By Jay Harris**..."
+  out = out.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
+  out = out.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
+  out = out.replace(/\n+\s*By Jay Harris[\s\S]*$/i, '');
+
+  // Strip fenced code blocks
+  out = out.replace(/```[\s\S]*?```/g, ' ');
+
+  // Horizontal rules
+  out = out.replace(/^\s*([-*_])\1{2,}\s*$/gm, ' ');
 
   // Heading markers at line starts
   out = out.replace(/^#{1,6}\s+/gm, '');
+
+  // Blockquote markers
+  out = out.replace(/^\s*>\s?/gm, '');
 
   // Markdown links [label](url) -> label (drop URL entirely)
   out = out.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label: string) => label.trim());
@@ -21,22 +35,31 @@ export function stripMarkdown(input: string): string {
   out = out.replace(/\*(.+?)\*/g, '$1');
   out = out.replace(/`([^`]+)`/g, '$1');
 
+  // Em/en dash -> hyphen
+  out = out.replace(/\s*[—–]\s*/g, ' - ');
+
   // Collapse whitespace
   out = out.replace(/\s+/g, ' ').trim();
   return out;
 }
 
+/**
+ * Sanitize a string for inclusion in JSON-LD schema or any plain-text SEO
+ * field. Same rules as stripMarkdown but always safe to call on schema text.
+ */
+export function sanitizeForSchema(input: string | undefined | null): string {
+  return stripMarkdown(input || '');
+}
+
 function truncateAtSentence(text: string, max = 170): string {
   if (text.length <= max) return text;
   const sub = text.slice(0, max + 1);
-  // find last sentence terminator within range
   const matches = [...sub.matchAll(/[.!?](?:\s|$)/g)];
   if (matches.length > 0) {
     const last = matches[matches.length - 1];
     const end = (last.index ?? 0) + 1;
     return text.slice(0, end).trim();
   }
-  // single long sentence: cut at word boundary
   const cut = text.slice(0, max);
   const wb = cut.lastIndexOf(' ');
   const base = wb > 40 ? cut.slice(0, wb) : cut;
@@ -50,16 +73,17 @@ interface ArticleLike {
 
 /**
  * Returns a clean, plain-text description suitable for excerpt, meta,
- * OG/Twitter, and JSON-LD use. If the existing description is clean
- * (no markdown, <=170 chars), it's returned as-is. Otherwise derives
- * from the first body paragraph.
+ * OG/Twitter, and JSON-LD use. Always <= 170 chars and free of markdown.
  */
 export function getCleanDescription(article: ArticleLike): string {
   const raw = article.description || '';
   const hasMarkdown = /\[[^\]]+\]\([^)]+\)|\*\*|__|`|^#/m.test(raw);
   const stripped = stripMarkdown(raw);
   if (!hasMarkdown && stripped.length <= 170) {
-    return stripped.replace(/\s*[—–]\s*/g, ' - ');
+    return stripped;
+  }
+  if (!hasMarkdown && stripped.length > 170) {
+    return truncateAtSentence(stripped, 170);
   }
   // Derive from the first real paragraph of body content.
   const body = (article.content || '').replace(/^\s*#\s+.+\n+/, '');
@@ -73,6 +97,55 @@ export function getCleanDescription(article: ArticleLike): string {
     return true;
   });
   const source = firstPara ? stripMarkdown(firstPara) : stripped;
-  const truncated = truncateAtSentence(source, 170);
-  return truncated.replace(/\s*[—–]\s*/g, ' - ');
+  return truncateAtSentence(source, 170);
+}
+
+/**
+ * Convert markdown links [label](url) to real <a href="url">label</a> for
+ * noscript HTML fallbacks. Other markdown is stripped to plain text.
+ * Output is HTML-safe (input is escaped before link substitution).
+ */
+export function markdownToNoscriptHtml(input: string | undefined | null): string {
+  if (!input) return '';
+  let s = String(input);
+
+  // Strip author footer
+  s = s.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
+  s = s.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
+  s = s.replace(/\n+\s*By Jay Harris[\s\S]*$/i, '');
+
+  // Strip code fences and headings/HR/blockquotes
+  s = s.replace(/```[\s\S]*?```/g, ' ');
+  s = s.replace(/^\s*([-*_])\1{2,}\s*$/gm, ' ');
+  s = s.replace(/^#{1,6}\s+/gm, '');
+  s = s.replace(/^\s*>\s?/gm, '');
+
+  // Em/en dash -> hyphen
+  s = s.replace(/\s*[—–]\s*/g, ' - ');
+
+  // HTML-escape everything first
+  s = s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+
+  // Re-create links from escaped markdown
+  s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_m, label: string, href: string) => {
+    const safeHref = href.replace(/"/g, '%22');
+    return `<a href="${safeHref}">${label}</a>`;
+  });
+
+  // Images -> alt text only
+  s = s.replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1');
+
+  // Bold/italic/code -> plain
+  s = s.replace(/\*\*(.+?)\*\*/g, '$1');
+  s = s.replace(/__(.+?)__/g, '$1');
+  s = s.replace(/\*(.+?)\*/g, '$1');
+  s = s.replace(/`([^`]+)`/g, '$1');
+
+  // Collapse whitespace
+  s = s.replace(/\s+/g, ' ').trim();
+  return s;
 }

@@ -94,7 +94,7 @@ function loadLocations() {
 function loadBlogArticles() {
   const dumpScript = `
     import { getPublishedArticles } from '../src/data/blogArticles.ts';
-    import { getCleanDescription } from '../src/lib/strip-markdown.ts';
+    import { getCleanDescription, sanitizeForSchema, markdownToNoscriptHtml } from '../src/lib/strip-markdown.ts';
     const items = getPublishedArticles().map(a => ({
       slug: a.slug,
       title: a.title,
@@ -105,8 +105,19 @@ function loadBlogArticles() {
       keywords: a.keywords || [],
       readTime: a.readTime || '5 min read',
       content: a.content || '',
-      faqs: a.faqs || [],
-      howToSteps: a.howToSteps || []
+      faqs: (a.faqs || [])
+        .map(f => ({
+          question: sanitizeForSchema(f.question),
+          answer: sanitizeForSchema(f.answer),
+          questionHtml: markdownToNoscriptHtml(f.question),
+          answerHtml: markdownToNoscriptHtml(f.answer),
+        }))
+        .filter(f => f.question && f.answer && !/^by jay harris/i.test(f.question)),
+      howToSteps: (a.howToSteps || []).map(s => ({
+        name: sanitizeForSchema(s.name),
+        text: sanitizeForSchema(s.text),
+        image: s.image || null,
+      }))
     }));
     process.stdout.write(JSON.stringify(items));
   `;
@@ -1618,7 +1629,7 @@ const blogArticleRoutes = blogArticles.map(article => ({
   extraNoscript: () => {
     const faqHtml = (article.faqs && article.faqs.length > 0)
       ? '<dl>' + article.faqs.map(f =>
-          `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`
+          `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
         ).join('') + '</dl>'
       : '';
     const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
