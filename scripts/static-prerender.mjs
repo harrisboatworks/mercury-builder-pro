@@ -1487,20 +1487,21 @@ function blogArticleSchema(article) {
   const url = `${SITE_URL}/blog/${article.slug}`;
   const wordCount = (article.content || '').trim().split(/\s+/).filter(Boolean).length;
   const readTimeMinutes = parseInt(article.readTime, 10) || 5;
+  const description = sanitizeSchemaText(article.description);
 
   const graph = [
     {
       "@type": "Article",
       "@id": `${url}#article`,
-      "headline": article.title,
-      "description": article.description,
+      "headline": sanitizeSchemaText(article.title),
+      "description": description,
       "image": `${SITE_URL}${article.image}`,
       "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
       "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
       "datePublished": article.datePublished,
       "dateModified": article.dateModified,
       "mainEntityOfPage": url,
-      "keywords": (article.keywords || []).join(", "),
+      "keywords": sanitizeSchemaText((article.keywords || []).join(", ")),
       "wordCount": wordCount,
       "inLanguage": "en-CA",
       "isAccessibleForFree": true,
@@ -1515,7 +1516,7 @@ function blogArticleSchema(article) {
       "@type": "WebPage",
       "@id": `${url}#webpage`,
       "url": url,
-      "name": article.title,
+      "name": sanitizeSchemaText(article.title),
       "inLanguage": "en-CA",
       "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -1532,14 +1533,14 @@ function blogArticleSchema(article) {
     graph.push({
       "@type": "HowTo",
       "@id": `${url}#howto`,
-      "name": article.title,
-      "description": article.description,
+      "name": sanitizeSchemaText(article.title),
+      "description": description,
       "totalTime": `PT${readTimeMinutes}M`,
       "step": article.howToSteps.map((step, i) => ({
         "@type": "HowToStep",
         "position": i + 1,
-        "name": step.name,
-        "text": step.text,
+        "name": sanitizeSchemaText(step.name),
+        "text": sanitizeSchemaText(step.text),
         ...(step.image ? { "image": `${SITE_URL}${step.image}` } : {})
       }))
     });
@@ -1562,15 +1563,15 @@ function blogArticleSchema(article) {
 
 // Extract first ~280 chars of plain text from blog content for noscript intro.
 function firstParagraph(content, fallback) {
-  if (!content) return fallback;
+  if (!content) return sanitizeSchemaText(fallback);
   const stripped = String(content)
     .replace(/```[\s\S]*?```/g, ' ')
-    .replace(/[#*_>`]/g, ' ')
     .replace(/<[^>]*>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
-  if (!stripped) return fallback;
-  return stripped.length > 280 ? stripped.slice(0, 277) + '...' : stripped;
+  const plain = sanitizeSchemaText(stripped || fallback);
+  if (!plain) return '';
+  return plain.length > 280 ? plain.slice(0, 277).replace(/\s+\S*$/, '').trim() + '...' : plain;
 }
 
 // Per-blog-slug semantic <table> fallbacks. Injected into the prerendered
@@ -2604,6 +2605,39 @@ function escapeHtml(s) {
     .replace(/'/g, '&#39;');
 }
 
+function stripSchemaMarkdown(s) {
+  return String(s || '')
+    .replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '')
+    .replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '')
+    .replace(/\n+\s*By Jay Harris[\s\S]*$/i, '')
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/^\s*([-*_])\1{2,}\s*$/gm, ' ')
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/^\s*>\s?/gm, '')
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label) => String(label).trim())
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/__(.+?)__/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\s*[—–]\s*/g, ' - ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function sanitizeSchemaText(s) {
+  return stripSchemaMarkdown(s);
+}
+
+function sanitizeSchemaValue(value) {
+  if (typeof value === 'string') return sanitizeSchemaText(value);
+  if (Array.isArray(value)) return value.map(sanitizeSchemaValue);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, sanitizeSchemaValue(v)]));
+  }
+  return value;
+}
+
 function stamp(route) {
   let html = shell;
 
@@ -2635,7 +2669,8 @@ function stamp(route) {
 
   // JSON-LD blocks (Helmet-managed → must carry data-rh marker so per-route
   // <Helmet> components own them on hydration instead of appending duplicates)
-  const jsonLdBlocks = route.schemas
+  const sanitizedSchemas = route.schemas.map(sanitizeSchemaValue);
+  const jsonLdBlocks = sanitizedSchemas
     .map(s => `<script data-rh="true" type="application/ld+json">${JSON.stringify(s)}</script>`)
     .join('\n  ');
   html = html.replace(/<\/head>/i, `${jsonLdBlocks}\n  </head>`);
@@ -3244,6 +3279,36 @@ if (motorPageRoutes.length !== expectedMotorCount) {
 }
 
 const writtenSitemap = readFileSync(join(DIST, 'sitemap.xml'), 'utf8');
+const markdownPattern = /\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*|`[^`]+`|(^|\n)\s*#{1,6}\s+|By Jay Harris/i;
+for (const route of blogArticleRoutes) {
+  const p = join(DIST, route.path.replace(/^\//, ''), 'index.html');
+  if (!existsSync(p)) { verifyErrors.push(`${route.path}: missing blog HTML.`); continue; }
+  const html = readFileSync(p, 'utf8');
+  const readMeta = (name) => {
+    const re = new RegExp(`<meta[^>]+(?:name|property)=["']${name.replace(':', '\\:')}["'][^>]*content=["']([^"']*)["'][^>]*>`, 'i');
+    const m = html.match(re);
+    return m ? m[1] : '';
+  };
+  for (const name of ['description', 'og:description', 'twitter:description']) {
+    const value = readMeta(name);
+    if (!value) verifyErrors.push(`${route.path}: missing ${name}.`);
+    if (value.length > 170) verifyErrors.push(`${route.path}: ${name} is ${value.length} chars.`);
+    if (markdownPattern.test(value)) verifyErrors.push(`${route.path}: ${name} contains markdown.`);
+  }
+  const scripts = [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)].map(m => m[1]);
+  if (scripts.length === 0) verifyErrors.push(`${route.path}: missing JSON-LD.`);
+  for (const script of scripts) {
+    try {
+      const obj = JSON.parse(script);
+      const text = JSON.stringify(obj);
+      if (markdownPattern.test(text)) verifyErrors.push(`${route.path}: JSON-LD contains markdown or author footer.`);
+    } catch (err) {
+      verifyErrors.push(`${route.path}: JSON-LD parse failed.`);
+    }
+  }
+  const noscripts = [...html.matchAll(/<noscript[\s\S]*?<\/noscript>/gi)].map(m => m[0]).join(' ');
+  if (markdownPattern.test(noscripts)) verifyErrors.push(`${route.path}: noscript contains raw markdown or author footer.`);
+}
 const sitemapMotorMatches = writtenSitemap.match(/<loc>[^<]*\/motors\/[^<]+<\/loc>/g) || [];
 if (sitemapMotorMatches.length !== motorPageRoutes.length) {
   verifyErrors.push(`sitemap.xml motor URL count ${sitemapMotorMatches.length} != ${motorPageRoutes.length}.`);
