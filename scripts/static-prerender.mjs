@@ -94,10 +94,11 @@ function loadLocations() {
 function loadBlogArticles() {
   const dumpScript = `
     import { getPublishedArticles } from '../src/data/blogArticles.ts';
+    import { getCleanDescription } from '../src/lib/strip-markdown.ts';
     const items = getPublishedArticles().map(a => ({
       slug: a.slug,
       title: a.title,
-      description: a.description,
+      description: getCleanDescription(a),
       image: a.image,
       datePublished: a.datePublished,
       dateModified: a.dateModified,
