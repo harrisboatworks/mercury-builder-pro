@@ -1563,15 +1563,15 @@ function blogArticleSchema(article) {
 
 // Extract first ~280 chars of plain text from blog content for noscript intro.
 function firstParagraph(content, fallback) {
-  if (!content) return fallback;
+  if (!content) return sanitizeSchemaText(fallback);
   const stripped = String(content)
     .replace(/```[\s\S]*?```/g, ' ')
-    .replace(/[#*_>`]/g, ' ')
     .replace(/<[^>]*>/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
-  if (!stripped) return fallback;
-  return stripped.length > 280 ? stripped.slice(0, 277) + '...' : stripped;
+  const plain = sanitizeSchemaText(stripped || fallback);
+  if (!plain) return '';
+  return plain.length > 280 ? plain.slice(0, 277).replace(/\s+\S*$/, '').trim() + '...' : plain;
 }
 
 // Per-blog-slug semantic <table> fallbacks. Injected into the prerendered
