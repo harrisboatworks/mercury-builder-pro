@@ -63,7 +63,11 @@ function truncateAtSentence(text: string, max = 170): string {
   if (matches.length > 0) {
     const last = matches[matches.length - 1];
     const end = (last.index ?? 0) + 1;
-    return text.slice(0, end).trim();
+    // If the nearest sentence end is too short (leaves >=40 chars unused),
+    // prefer a word-boundary truncate closer to max for richer descriptions.
+    if (end >= Math.floor(max * 0.75)) {
+      return text.slice(0, end).trim();
+    }
   }
   const cut = text.slice(0, max);
   const wb = cut.lastIndexOf(' ');
