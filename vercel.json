@@ -25,6 +25,29 @@
       "destination": "https://www.mercuryrepower.ca/:path*",
       "statusCode": 301
     },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "mercuryrepower.ca"
+        }
+      ],
+      "destination": "https://www.mercuryrepower.ca/",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "mercuryrepower.ca"
+        }
+      ],
+      "destination": "https://www.mercuryrepower.ca/:path*",
+      "statusCode": 308
+    },
+    { "source": "/motors/fourstroke-60hp-60-elpt-command-thrust-fourstroke", "destination": "/motors/fourstroke-60hp-60-elpt-fourstroke", "statusCode": 301 },
     { "source": "/locations/peterborough", "destination": "/locations/peterborough-mercury-dealer", "statusCode": 301 },
     { "source": "/locations/rice-lake", "destination": "/locations/rice-lake-mercury-repower", "statusCode": 301 },
     { "source": "/locations/kawartha-lakes", "destination": "/locations/kawartha-lakes-mercury-outboards", "statusCode": 301 },
