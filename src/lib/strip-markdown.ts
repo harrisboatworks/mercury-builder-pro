@@ -126,6 +126,9 @@ export function markdownToNoscriptHtml(input: string | undefined | null): string
   s = s.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
   s = s.replace(/\n+\s*By Jay Harris[\s\S]*$/i, '');
 
+  // Strip directive blocks (e.g. :::image-placeholder ... :::)
+  s = s.replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, ' ');
+
   // Strip code fences and headings/HR/blockquotes
   s = s.replace(/```[\s\S]*?```/g, ' ');
   s = s.replace(/^\s*([-*_])\1{2,}\s*$/gm, ' ');
