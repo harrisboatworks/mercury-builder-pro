@@ -65,7 +65,7 @@ function truncateAtSentence(text: string, max = 170): string {
     const end = (last.index ?? 0) + 1;
     // If the nearest sentence end is too short (leaves >=40 chars unused),
     // prefer a word-boundary truncate closer to max for richer descriptions.
-    if (end >= Math.floor(max * 0.75)) {
+    if (end >= Math.floor(max * 0.75) && end <= max) {
       return text.slice(0, end).trim();
     }
   }
