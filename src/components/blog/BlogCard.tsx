@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock } from 'lucide-react';
 import { BlogArticle } from '@/data/blogArticles';
+import { getCleanDescription } from '@/lib/strip-markdown';
 
 interface BlogCardProps {
   article: BlogArticle;
