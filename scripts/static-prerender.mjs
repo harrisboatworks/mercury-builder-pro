@@ -2629,6 +2629,15 @@ function sanitizeSchemaText(s) {
   return stripSchemaMarkdown(s);
 }
 
+function sanitizeSchemaValue(value) {
+  if (typeof value === 'string') return sanitizeSchemaText(value);
+  if (Array.isArray(value)) return value.map(sanitizeSchemaValue);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, sanitizeSchemaValue(v)]));
+  }
+  return value;
+}
+
 function stamp(route) {
   let html = shell;
 
