@@ -2061,7 +2061,320 @@ const locationsIndexRoute = {
     `<ul>${locations.map((l) => `<li><a href="/locations/${l.slug}"><strong>${escapeHtml(l.title)}</strong></a> — ${escapeHtml(l.intro)}</li>`).join('')}</ul>`,
 };
 
+// ============================================================
+// Hub pages (/repower, /motor-selection, /maintenance, /lakes)
+// Source of truth for prerendered <title>, meta description, OG/Twitter,
+// JSON-LD (WebPage + BreadcrumbList + FAQPage), and noscript fallback.
+// Must stay in sync with src/pages/*Hub.tsx.
+// ============================================================
+function hubSchemas({ path, metaTitle, metaDescription, h1, breadcrumbName, faqs, lastReviewedISO }) {
+  const url = `${SITE_URL}${path}`;
+  return [{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${url}#webpage`,
+        "url": url,
+        "name": metaTitle,
+        "headline": h1,
+        "description": metaDescription,
+        "inLanguage": "en-CA",
+        "isPartOf": { "@id": `${SITE_URL}/#website` },
+        "about": { "@id": `${SITE_URL}/#organization` },
+        "mainEntityOfPage": url,
+        "dateModified": lastReviewedISO,
+        "author": {
+          "@type": "Person",
+          "name": "Jay Harris",
+          "jobTitle": "3rd-Generation Owner",
+          "worksFor": { "@id": `${SITE_URL}/#organization` }
+        },
+        "breadcrumb": { "@id": `${url}#breadcrumb` },
+        "primaryImageOfPage": { "@type": "ImageObject", "url": `${SITE_URL}/social-share.jpg` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": SITE_URL },
+          { "@type": "ListItem", "position": 2, "name": breadcrumbName, "item": url }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        "mainEntity": faqs.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+        }))
+      }
+    ]
+  }];
+}
+
+function hubTableHtml(caption, columns, rows) {
+  return (
+    `<table><caption>${escapeHtml(caption)}</caption>` +
+    `<thead><tr>${columns.map(c => `<th scope="col">${escapeHtml(c.label)}</th>`).join('')}</tr></thead>` +
+    `<tbody>${rows.map(r =>
+      `<tr>${columns.map(c => `<td>${escapeHtml(String(r[c.key] ?? ''))}</td>`).join('')}</tr>`
+    ).join('')}</tbody></table>`
+  );
+}
+
+function hubFaqHtml(faqs) {
+  return '<dl>' + faqs.map(f =>
+    `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`
+  ).join('') + '</dl>';
+}
+
+function hubArticleListHtml(groups) {
+  return groups.map(g =>
+    `<section><h3>${escapeHtml(g.heading)}</h3><ul>` +
+    g.cards.map(c => `<li><a href="${c.to}"><strong>${escapeHtml(c.title)}</strong></a>${c.description ? ' - ' + escapeHtml(c.description) : ''}</li>`).join('') +
+    '</ul></section>'
+  ).join('');
+}
+
+const HUB_DEFS = [
+  {
+    path: '/repower',
+    metaTitle: 'Mercury Repower Ontario 2026: Cost, Process, Financing | HBW',
+    metaDescription: 'Mercury repowers in Ontario typically run $11,000 to $40,000 CAD all-in. Get live pricing, the full repower process, and 7.99% financing options at Harris Boat Works.',
+    breadcrumbName: 'Mercury Repower',
+    h1: 'Mercury Repower Guide for Ontario Boaters (2026)',
+    intro: "A Mercury repower means replacing your existing outboard with a new Mercury on your current boat. For most Ontario freshwater customers in 2026, all-in costs land between $11,000 and $40,000 CAD depending on HP class, hull, and rigging. The hull is the asset; the motor is the wear part. A repower on a solid hull gives you 80% of the new-boat experience for half the money. Live pricing on every Mercury we sell is at /quote/motor-selection.",
+    table: {
+      caption: 'Mercury Repower Cost by HP Class',
+      columns: [
+        { key: 'hp', label: 'HP Class' },
+        { key: 'use', label: 'Typical Use' },
+        { key: 'cost', label: 'All-in Cost (CAD before HST)' },
+      ],
+      rows: [
+        { hp: '9.9 to 25 HP', use: 'Small tin boats, kickers', cost: 'Motor only, $2,000 to $5,500' },
+        { hp: '40 to 60 HP', use: '14 to 16 ft aluminum console', cost: '$11,000 to $15,000' },
+        { hp: '75 to 115 HP', use: '16 to 18 ft aluminum console (most common)', cost: '$17,000 to $22,000' },
+        { hp: '150 HP', use: '18 to 20 ft, pontoons, water sports', cost: '$23,000 to $30,000' },
+        { hp: '200 to 300 HP', use: 'Larger fiberglass, tritoons, performance', cost: '$35,000 to $40,000' },
+      ],
+    },
+    articleGroups: [
+      { heading: 'Repower decision', cards: [
+        { title: 'Boat Repowering Guide: When to Replace Your Motor', to: '/blog/boat-repowering-guide-when-to-replace-motor', description: 'Warning signs, age thresholds, and the math.' },
+        { title: 'Boat Hull Replacement vs Repower Decision', to: '/blog/boat-hull-replacement-vs-repower-decision', description: 'When the hull is worth keeping.' },
+        { title: 'Ontario Cottage Boat Motor Repower Guide', to: '/blog/ontario-cottage-boat-motor-repower-guide', description: 'Cottage-use specifics.' },
+      ]},
+      { heading: 'Cost and financing', cards: [
+        { title: 'Mercury Repower Cost Ontario 2026 (CAD)', to: '/blog/mercury-repower-cost-ontario-2026-cad', description: 'Detailed cost breakdown.' },
+        { title: 'Mercury Outboard Financing Ontario 2026', to: '/blog/mercury-outboard-financing-ontario-2026', description: 'Rates, terms, applications.' },
+        { title: 'Cheapest Mercury Outboard Canada 2026', to: '/blog/cheapest-mercury-outboard-canada-2026', description: 'Lowest entry points.' },
+      ]},
+      { heading: 'Process and execution', cards: [
+        { title: 'Complete Guide to Boat Repower in the Kawarthas', to: '/blog/complete-guide-boat-repower-kawarthas', description: 'End-to-end process.' },
+        { title: 'Evinrude to Mercury Repower Ontario Guide', to: '/blog/evinrude-to-mercury-repower-ontario-guide', description: 'Brand-conversion guide.' },
+        { title: 'Pleasure Craft Licence Update During Repower', to: '/blog/pleasure-craft-licence-update-repower-ontario', description: 'Transport Canada paperwork.' },
+      ]},
+    ],
+    faqs: [
+      { question: 'How much does a Mercury repower cost in Ontario?', answer: 'Typical 2026 all-in repowers land $11,000 to $40,000 CAD depending on HP class. Smaller motors (40 to 60 HP) are at the low end; larger motors (200 to 300 HP) at the high end. Most Kawartha repowers are 75 to 115 HP and land $17,000 to $22,000 CAD. See live pricing at /quote/motor-selection.' },
+      { question: 'Should I repower or buy a new boat?', answer: "For most boaters with a hull less than 20 years old that's structurally solid, repower wins on the math. A new comparable boat package costs $25,000 to $50,000 CAD more than a repower. The hull is the asset; the motor is the wear part." },
+      { question: 'How long does a Mercury repower take?', answer: 'Mercury-to-Mercury repowers take 2 to 4 days of shop time. Brand conversions (Evinrude, Yamaha, Honda to Mercury) take longer. Spring rush (March to May) adds wait time before the shop starts.' },
+      { question: 'Can I finance a Mercury repower?', answer: 'Yes. Mercury Repower Financing offers 7.99% APR for qualified buyers. We process applications in-shop. See our financing guide for details.' },
+      { question: 'Should I switch from Evinrude to Mercury?', answer: 'For most Evinrude owners, yes. BRP shut down Evinrude outboard production in 2020 and parts/service support is shrinking. Brand conversion adds $1,500 to $3,000 CAD in rigging but pays back over the life of the new motor.' },
+      { question: 'When is the best time to book a repower?', answer: 'Off-season (October through April). Mercury inventory is best, shop time is available, and the boat is ready for next season. Spring slots fill up by March.' },
+      { question: 'Will my old controls and rigging work with a new Mercury?', answer: 'Mercury-to-Mercury repowers usually keep existing post-2010 controls. Older or non-Mercury rigging needs replacement. Brand conversions need new everything. We assess during the hull walk-around.' },
+      { question: 'Do I need to update my Pleasure Craft Licence after a repower?', answer: 'Yes if motor HP, brand, or model changes. Updates are free and take 10 to 15 minutes online. We handle the paperwork for HBW customers.' },
+    ],
+  },
+  {
+    path: '/motor-selection',
+    metaTitle: 'Choose the Right Mercury Outboard 2026: HP, Family, Prop | HBW',
+    metaDescription: 'Mercury outboard selection by boat type, HP class, and use case. FourStroke vs Pro XS, prop selection, Command Thrust, and live CAD pricing from Harris Boat Works.',
+    breadcrumbName: 'Mercury Motor Selection',
+    h1: 'How to Choose the Right Mercury Outboard for Your Boat (2026)',
+    intro: "The right Mercury for your boat depends on hull length and weight, intended use, passenger and gear loading, and the maximum HP rating on your boat's capacity plate. For most Ontario freshwater boats, the answer falls in the Mercury 60 to 150 HP FourStroke range, paired with a 9.9 ProKicker if you fish. Aim for 70 to 90% of your maximum rated HP for typical recreational use. Live pricing on every Mercury we sell is at /quote/motor-selection.",
+    table: {
+      caption: 'Mercury HP by Boat Type',
+      columns: [
+        { key: 'boat', label: 'Boat Type' },
+        { key: 'len', label: 'Length' },
+        { key: 'rec', label: 'Recommended Mercury' },
+      ],
+      rows: [
+        { boat: 'Aluminum tin boat', len: '12 to 14 ft', rec: '9.9 to 25 HP tiller' },
+        { boat: 'Aluminum console fishing', len: '14 to 16 ft', rec: '40 to 60 HP' },
+        { boat: 'Aluminum console fishing', len: '16 to 18 ft', rec: '75 to 115 HP FourStroke' },
+        { boat: 'Aluminum console fishing', len: '18 to 20 ft', rec: '115 to 150 HP FourStroke or Pro XS' },
+        { boat: 'Pontoon (cruising)', len: '18 to 22 ft', rec: '90 to 115 HP Command Thrust' },
+        { boat: 'Pontoon (water sports)', len: '20 to 22 ft', rec: '150 HP Command Thrust' },
+        { boat: 'Tritoon', len: '22 to 24 ft', rec: '150 to 200 HP Command Thrust' },
+        { boat: 'Bass boat (tournament)', len: '18 to 21 ft', rec: '200 to 250 HP Pro XS' },
+        { boat: 'Center console (freshwater)', len: '22 to 26 ft', rec: '250 to 300 HP V8 FourStroke' },
+      ],
+    },
+    articleGroups: [
+      { heading: 'HP class selection', cards: [
+        { title: 'How to Choose the Right Horsepower for Your Boat', to: '/blog/how-to-choose-right-horsepower-boat' },
+        { title: 'Mercury 75 vs 90 vs 115 Comparison', to: '/blog/mercury-75-vs-90-vs-115-comparison' },
+        { title: 'Mercury 115 vs 150 HP for Ontario Boats', to: '/blog/mercury-115-vs-150-hp-outboard-ontario' },
+      ]},
+      { heading: 'Motor family selection', cards: [
+        { title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado', to: '/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado' },
+        { title: 'Mercury 2026 Outboard Lineup Ontario', to: '/blog/mercury-2026-outboard-lineup-ontario' },
+        { title: 'Portable Mercury Outboard Guide 2.5 to 20 HP', to: '/blog/portable-outboard-mercury-guide-2-20hp' },
+      ]},
+      { heading: 'Boat-type matching', cards: [
+        { title: 'Best Mercury Outboard for Aluminum Fishing Boats', to: '/blog/best-mercury-outboard-aluminum-fishing-boats' },
+        { title: 'Best Mercury Outboard for Pontoon Boats', to: '/blog/best-mercury-outboard-pontoon-boats' },
+        { title: 'Mercury Command Thrust Guide for Pontoons', to: '/blog/mercury-command-thrust-guide-pontoon-boats' },
+      ]},
+      { heading: 'Configuration', cards: [
+        { title: 'Mercury Propeller Selection Guide', to: '/blog/mercury-propeller-selection-guide' },
+        { title: 'Mercury Outboard Fuel Efficiency Guide', to: '/blog/mercury-outboard-fuel-efficiency-guide' },
+        { title: 'Tiller vs Remote Steering Outboard Guide', to: '/blog/tiller-vs-remote-steering-outboard-guide' },
+      ]},
+    ],
+    faqs: [
+      { question: 'What HP do I need for my boat?', answer: "Aim for 70 to 90% of your boat's maximum rated HP for typical recreational use. Specific answer depends on hull length, type, and use case." },
+      { question: 'Should I get FourStroke or Pro XS?', answer: 'For most recreational use (fishing, cruising, family), FourStroke is the better value. Pro XS earns its premium on tournament hulls and performance applications. The Pro XS price difference is typically $1,000 to $1,500 CAD over FourStroke at the same HP.' },
+      { question: 'Do I need Mercury Command Thrust?', answer: 'For pontoons 18 ft and up, yes. For aluminum console fishing boats under 18 ft, the standard gearcase is fine. Command Thrust is a gearcase option, not a separate motor family.' },
+      { question: "What's the most popular Mercury at HBW?", answer: 'The 90 EXLPT FourStroke is the most-installed Mercury we sell. It fits the most common Kawartha boat (16 to 18 ft aluminum console) and the most common use case (family fishing). The 9.9 ProKicker is the most-installed kicker.' },
+      { question: 'Will the wrong prop hurt my Mercury?', answer: 'Yes. A wrong prop can cost 4 mph in top speed and 15% in fuel economy. We test props on the water during sea-trial of every repower.' },
+      { question: 'Is Mercury better than Yamaha or Honda?', answer: 'Mechanically, all three brands make excellent reliable outboards. In Ontario freshwater, Mercury wins on dealer network density, parts availability, and factory-OEM relationships with Canadian boat builders.' },
+      { question: 'Can I run a bigger motor than my capacity plate says?', answer: 'No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty on over-powered hulls. We will not install a motor above the rated HP.' },
+      { question: 'Does HBW sell Verado?', answer: 'By special order. Verado is built for offshore center consoles and twin/triple installations. Most Ontario freshwater boaters do not need Verado.' },
+    ],
+  },
+  {
+    path: '/maintenance',
+    metaTitle: 'Mercury Outboard Maintenance & Service Ontario | HBW',
+    metaDescription: 'Mercury maintenance follows a four-part seasonal cycle. Spring commissioning, summer service, fall winterization, winter storage. Schedule service at Harris Boat Works.',
+    breadcrumbName: 'Mercury Maintenance',
+    h1: 'Mercury Outboard Maintenance & Service Guide for Ontario (2026)',
+    intro: 'Mercury outboard maintenance in Ontario follows a four-part seasonal cycle: spring commissioning (April-May), summer mid-season check (July if running heavy hours), fall winterization (October-November), and winter storage. Skipped winterization is the leading cause of motor failure we see at HBW. Annual maintenance costs less than a single major repair on a neglected motor.',
+    table: {
+      caption: 'Annual Mercury Service Cycle',
+      columns: [
+        { key: 'season', label: 'Season' },
+        { key: 'service', label: 'Service' },
+        { key: 'crit', label: 'Critical?' },
+      ],
+      rows: [
+        { season: 'Spring (April-May)', service: 'Commissioning: battery, fuel, cooling, spark, fluids', crit: 'Yes' },
+        { season: 'Summer (July)', service: 'Mid-season check (heavy use only)', crit: 'Optional' },
+        { season: 'Fall (Oct-Nov)', service: 'Winterization: stabilize fuel, fog engine, drain gearcase', crit: 'Critical' },
+        { season: 'Winter', service: 'Storage: monthly visual check, battery trickle', crit: 'Light' },
+      ],
+    },
+    articleGroups: [
+      { heading: 'Seasonal cycles', cards: [
+        { title: 'Mercury Motor Maintenance: Seasonal Care Tips', to: '/blog/mercury-motor-maintenance-seasonal-tips' },
+        { title: 'Spring Outboard Commissioning Checklist', to: '/blog/spring-outboard-commissioning-checklist' },
+        { title: 'DIY Mercury Outboard Winterization Guide', to: '/blog/diy-mercury-outboard-winterization-guide' },
+        { title: 'How Much Does Boat Winterization Cost?', to: '/blog/boat-winterization-cost-ontario-2026' },
+      ]},
+      { heading: 'Troubleshooting', cards: [
+        { title: "Mercury Outboard Won't Start Troubleshooting", to: '/blog/mercury-outboard-wont-start-troubleshooting' },
+      ]},
+      { heading: 'New motor care', cards: [
+        { title: 'Breaking In a New Mercury Motor', to: '/blog/breaking-in-new-mercury-motor-guide' },
+      ]},
+      { heading: 'Pre-season prep', cards: [
+        { title: 'Walleye Opener Boat Prep Checklist', to: '/blog/walleye-opener-boat-prep' },
+      ]},
+    ],
+    faqs: [
+      { question: 'How often should I service my Mercury?', answer: 'Annually at minimum. Spring commissioning to bring the motor back from winter, fall winterization to put it away. Boaters running 200+ hours per season should add a mid-season check in July.' },
+      { question: "What's the most important Mercury maintenance task?", answer: 'Winterization. Skipping winterization is the single most common cause of motor failure we see at HBW. Done right, it protects against freeze damage, fuel system gum-up, and corrosion through the storage period.' },
+      { question: 'How much does Mercury maintenance cost?', answer: "Varies by motor size, boat type, and what's included. Basic spring commissioning plus fall winterization is the smallest bill. Bundles with impeller replacement, anode replacement, and other wear items run more." },
+      { question: 'Can I service my own Mercury?', answer: 'Some service yes, especially fluid changes, plug inspection, and visual maintenance. Tasks like water-pump impeller replacement, EFI fuel system service, and lower-unit work should be left to a Mercury dealer.' },
+      { question: 'How long does a Mercury last with proper maintenance?', answer: "Modern Mercury FourStrokes properly maintained last 1,500 to 2,000+ engine hours. For a typical recreational boater (50 to 150 hours per season), that's 10 to 30 years." },
+      { question: 'What kind of oil does my Mercury need?', answer: "Modern Mercury FourStrokes use full-synthetic Mercury 25W-50 four-stroke oil. Older motors and 2-strokes use different specifications. Check your owner's manual or contact HBW." },
+      { question: "Why won't my Mercury start in spring?", answer: 'Most spring no-starts are battery (40%), stale fuel (25%), or skipped winterization (20%). Run through the basics first.' },
+      { question: 'When should I book spring service?', answer: 'February or early March for a May 1 launch. Service slots fill up in March and the late-April bookings often push delivery into late May or June.' },
+    ],
+  },
+  {
+    path: '/lakes',
+    metaTitle: 'Mercury Outboards for Ontario Lakes 2026: Rice Lake, Simcoe, Lake Ontario | HBW',
+    metaDescription: 'The right Mercury depends on where you boat. Rice Lake, Lake Simcoe, Lake Ontario all reward different setups. Local expertise from Harris Boat Works since 1965.',
+    breadcrumbName: 'Ontario Lakes Setup',
+    h1: 'Mercury Outboards for Ontario Lakes: Local Setup Guide (2026)',
+    intro: 'Different Ontario lakes reward different Mercury setups. Sheltered Rice Lake fishes best with 60 to 115 HP aluminum console boats and a 9.9 ProKicker for walleye trolling. Lake Simcoe needs 90 to 150 HP deep-V hulls for the bigger water. Lake Ontario salmon trolling wants 200 to 300 HP V8 setups with 15 HP ProKickers.',
+    table: {
+      caption: 'Lake-by-Lake Mercury Setup',
+      columns: [
+        { key: 'lake', label: 'Lake' },
+        { key: 'hull', label: 'Hull Type' },
+        { key: 'main', label: 'Main Motor' },
+        { key: 'kicker', label: 'Kicker' },
+      ],
+      rows: [
+        { lake: 'Rice Lake', hull: '16 to 18 ft aluminum console', main: '60 to 115 HP FourStroke', kicker: '9.9 ProKicker' },
+        { lake: 'Kawarthas (Stoney, Pigeon, Buckhorn)', hull: '16 to 18 ft aluminum console', main: '60 to 115 HP FourStroke', kicker: '9.9 ProKicker' },
+        { lake: 'Lake Simcoe', hull: '17 to 19 ft deep-V aluminum', main: '90 to 150 HP FourStroke', kicker: '9.9 ProKicker' },
+        { lake: 'Lake Ontario', hull: '22 to 26 ft deep-V or walkaround', main: '250 to 300 HP V8 FourStroke', kicker: '15 HP ProKicker' },
+        { lake: 'Bay of Quinte', hull: '18 to 22 ft aluminum or fiberglass', main: '115 to 200 HP FourStroke', kicker: '9.9 ProKicker' },
+      ],
+    },
+    articleGroups: [
+      { heading: 'Rice Lake', cards: [
+        { title: 'Best Mercury Outboard for Rice Lake Fishing', to: '/blog/best-mercury-outboard-rice-lake-fishing' },
+        { title: 'Mercury 9.9 ProKicker Rice Lake Fishing Guide', to: '/blog/mercury-prokicker-rice-lake-fishing-guide' },
+        { title: '2026 Rice Lake Fishing Season Outlook', to: '/blog/2026-rice-lake-fishing-season-outlook' },
+        { title: 'Best Pontoon Boats for Rice Lake Cottage Use', to: '/blog/best-pontoon-boats-rice-lake-cottage-use' },
+        { title: 'Best Boats for Rice Lake Under $30,000', to: '/blog/best-boats-rice-lake-under-30000' },
+      ]},
+      { heading: 'Other Ontario lakes', cards: [
+        { title: 'Best Mercury Outboard for Lake Simcoe Walleye Fishing', to: '/blog/best-mercury-outboard-lake-simcoe-walleye-fishing' },
+        { title: 'Best Mercury Outboard for Lake Ontario Salmon and Trout', to: '/blog/best-mercury-outboard-lake-ontario-salmon-trout' },
+      ]},
+      { heading: 'Cottage and seasonal', cards: [
+        { title: 'Ontario Cottage Boat Motor Repower Guide', to: '/blog/ontario-cottage-boat-motor-repower-guide' },
+        { title: 'Walleye Opener Boat Prep Checklist', to: '/blog/walleye-opener-boat-prep' },
+      ]},
+    ],
+    faqs: [
+      { question: "What's the best Mercury for Rice Lake fishing?", answer: 'For most Rice Lake anglers, a 16 to 18 ft aluminum console with 60 to 115 HP FourStroke main + 9.9 ProKicker. The 90 EXLPT FourStroke is the sweet spot.' },
+      { question: "What's the best Mercury for Lake Simcoe walleye?", answer: 'For Simcoe walleye, a 17 to 19 ft deep-V aluminum boat with 90 to 150 HP FourStroke + 9.9 ProKicker. The 115 EXLPT FourStroke is the sweet spot.' },
+      { question: "What's the best Mercury for Lake Ontario salmon?", answer: 'For Lake Ontario salmon trolling, 22 to 26 ft deep-V or walkaround with 250 to 300 HP V8 FourStroke + 15 HP ProKicker.' },
+      { question: 'Do I need a kicker for Ontario fishing?', answer: 'For walleye trolling on most Ontario lakes, yes. The 9.9 ProKicker is the standard for sheltered lakes; the 15 HP ProKicker is the standard for Lake Ontario salmon spreads.' },
+      { question: 'Where do most Rice Lake anglers launch?', answer: 'Bewdley, Hastings, and Roseneath public ramps. Each has different characteristics. Many cottagers launch from private docks.' },
+      { question: 'Can I fish Lake Simcoe with a Rice Lake setup?', answer: 'Sometimes, with caution. Boats under 17 ft are exposed in moderate Simcoe weather. Most serious Simcoe anglers run bigger.' },
+      { question: 'When does walleye season open in Ontario?', answer: 'For Zone 17 (Kawartha lakes including Rice Lake), typically the second Saturday of May. Confirm current year dates from OMNR.' },
+      { question: 'What about ice fishing season?', answer: 'Lake Simcoe is a major ice fishing destination. Rice Lake and Kawartha lakes have ice fishing seasons too. Boat-side, this is the time for repowers, winterization confirmation, and spring planning.' },
+    ],
+  },
+];
+
+const HUB_LAST_REVIEWED = '2026-05-05';
+
+const HUB_ROUTES = HUB_DEFS.map(def => ({
+  path: def.path,
+  title: def.metaTitle,
+  description: def.metaDescription,
+  h1: def.h1,
+  intro: def.intro,
+  schemas: hubSchemas({
+    path: def.path,
+    metaTitle: def.metaTitle,
+    metaDescription: def.metaDescription,
+    h1: def.h1,
+    breadcrumbName: def.breadcrumbName,
+    faqs: def.faqs,
+    lastReviewedISO: HUB_LAST_REVIEWED,
+  }),
+  extraNoscript: () =>
+    hubTableHtml(def.table.caption, def.table.columns, def.table.rows) +
+    hubArticleListHtml(def.articleGroups) +
+    hubFaqHtml(def.faqs),
+}));
+
 const routes = [
+
   {
     path: '/',
     title: 'Mercury Repower Ontario — Trade-In, Financing & Online Quotes | Harris Boat Works',
