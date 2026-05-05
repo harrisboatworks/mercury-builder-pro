@@ -42,7 +42,7 @@ export function BlogCard({ article }: BlogCardProps) {
           {article.title}
         </h3>
         <p className="mt-2 font-sans text-sm text-repower-navy-900/65 line-clamp-2 leading-relaxed">
-          {article.description}
+          {getCleanDescription(article)}
         </p>
         <div className="mt-4 flex items-center gap-4 text-xs text-repower-navy-900/55">
           <span className="flex items-center gap-1">
