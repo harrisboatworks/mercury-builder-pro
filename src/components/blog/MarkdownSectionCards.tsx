@@ -1,6 +1,92 @@
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Phone } from 'lucide-react';
+import {
+  ImagePlaceholder,
+  type ImagePlaceholderProps,
+  type PlaceholderAspect,
+  type PlaceholderType,
+} from './ImagePlaceholder';
+import { getPlaceholder } from '@/data/imagePlaceholders';
+
+/**
+ * Parse a single :::image-placeholder ... ::: directive body into props.
+ * Lines look like `key: value` (value may contain colons; only first split).
+ */
+function parseDirective(body: string): ImagePlaceholderProps | null {
+  const out: Record<string, string> = {};
+  for (const rawLine of body.split('\n')) {
+    const line = rawLine.trim();
+    if (!line) continue;
+    const idx = line.indexOf(':');
+    if (idx < 0) continue;
+    const key = line.slice(0, idx).trim();
+    const val = line.slice(idx + 1).trim();
+    out[key] = val;
+  }
+  if (!out.slug || !out.type || !out.aspect) return null;
+
+  // Allow registry to fill in description/prompt/image when absent.
+  const reg = getPlaceholder(out.slug);
+  return {
+    slug: out.slug,
+    type: (out.type as PlaceholderType) ?? reg?.type ?? 'photo',
+    aspect: (out.aspect as PlaceholderAspect) ?? reg?.aspect ?? '16:9',
+    description: out.description || reg?.description || out.slug,
+    prompt: out.prompt || reg?.prompt,
+    image: out.image || reg?.image || undefined,
+    caption: out.caption,
+  };
+}
+
+interface RenderChunk {
+  kind: 'md' | 'placeholder';
+  content: string;
+  props?: ImagePlaceholderProps;
+}
+
+function splitDirectives(md: string): RenderChunk[] {
+  const re = /:::image-placeholder\s*\n([\s\S]*?)\n:::/g;
+  const chunks: RenderChunk[] = [];
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(md)) !== null) {
+    if (m.index > last) {
+      chunks.push({ kind: 'md', content: md.slice(last, m.index) });
+    }
+    const props = parseDirective(m[1]);
+    if (props) {
+      chunks.push({ kind: 'placeholder', content: '', props });
+    }
+    last = m.index + m[0].length;
+  }
+  if (last < md.length) chunks.push({ kind: 'md', content: md.slice(last) });
+  return chunks;
+}
+
+function renderMarkdownWithDirectives(
+  md: string,
+  components: Components,
+  keyPrefix: string,
+) {
+  const chunks = splitDirectives(md);
+  return chunks.map((chunk, i) => {
+    if (chunk.kind === 'placeholder' && chunk.props) {
+      return <ImagePlaceholder key={`${keyPrefix}-ph-${i}`} {...chunk.props} />;
+    }
+    if (!chunk.content.trim()) return null;
+    return (
+      <ReactMarkdown
+        key={`${keyPrefix}-md-${i}`}
+        remarkPlugins={[remarkGfm]}
+        components={components}
+      >
+        {chunk.content}
+      </ReactMarkdown>
+    );
+  });
+}
+
 
 /**
  * Renders article markdown, detecting specific H2/H3 heading patterns and
