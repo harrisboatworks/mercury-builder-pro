@@ -17,6 +17,7 @@ import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCTA } from '@/components/blog/BlogCTA';
+import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { 
   Accordion, 
   AccordionContent, 
@@ -348,9 +349,9 @@ export default function BlogArticle() {
 
           {/* Content */}
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 prose-table:w-full prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-repower-navy-900/20 prose-td:border-b prose-td:border-repower-navy-900/10 prose-th:py-2 prose-td:py-2 prose-th:px-3 prose-td:px-3">
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              components={{
+            <MarkdownSectionCards
+              content={article.content.replace(/^\s*#\s+.+\n+/, '')}
+              markdownComponents={{
                 h2: ({ node, children, ...props }) => {
                   const text = String(children);
                   return <h2 id={slugify(text)} {...props}>{children}</h2>;
@@ -378,9 +379,7 @@ export default function BlogArticle() {
                   />
                 ),
               }}
-            >
-              {article.content.replace(/^\s*#\s+.+\n+/, '')}
-            </ReactMarkdown>
+            />
           </div>
 
           {/* Author Byline (bottom) */}
