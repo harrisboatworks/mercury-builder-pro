@@ -43,7 +43,7 @@ export default function BlogArticle() {
 
   const relatedArticles = getRelatedArticles(article.slug, 3);
   const tocItems = extractHeaders(article.content);
-  const cleanDescription = stripMarkdown(article.description);
+  const cleanDescription = getCleanDescription(article);
 
   // Process inline markdown formatting (bold, italic, links, code)
   const processInlineFormatting = (text: string): React.ReactNode[] => {
