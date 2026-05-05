@@ -1105,6 +1105,66 @@ export type Database = {
         }
         Relationships: []
       }
+      hbw_bot_feedback: {
+        Row: {
+          candidate_customers: Json
+          category: string
+          channel_id: string | null
+          command: string | null
+          corrected_query: string | null
+          created_at: string
+          event_type: string
+          id: string
+          intent_type: string | null
+          matched_customer_id: string | null
+          matched_customer_name: string | null
+          message_ts: string | null
+          metadata: Json
+          normalized_query: string | null
+          raw_query: string | null
+          slack_event_id: string | null
+          thread_ts: string | null
+        }
+        Insert: {
+          candidate_customers?: Json
+          category?: string
+          channel_id?: string | null
+          command?: string | null
+          corrected_query?: string | null
+          created_at?: string
+          event_type: string
+          id?: string
+          intent_type?: string | null
+          matched_customer_id?: string | null
+          matched_customer_name?: string | null
+          message_ts?: string | null
+          metadata?: Json
+          normalized_query?: string | null
+          raw_query?: string | null
+          slack_event_id?: string | null
+          thread_ts?: string | null
+        }
+        Update: {
+          candidate_customers?: Json
+          category?: string
+          channel_id?: string | null
+          command?: string | null
+          corrected_query?: string | null
+          created_at?: string
+          event_type?: string
+          id?: string
+          intent_type?: string | null
+          matched_customer_id?: string | null
+          matched_customer_name?: string | null
+          message_ts?: string | null
+          metadata?: Json
+          normalized_query?: string | null
+          raw_query?: string | null
+          slack_event_id?: string | null
+          thread_ts?: string | null
+        }
+        Relationships: []
+      }
       hbw_knowledge: {
         Row: {
           active: boolean | null
@@ -4880,10 +4940,16 @@ export type Database = {
       hbw_bot_admin_status: {
         Args: never
         Returns: {
+          auth_failures_24h: number
+          customer_ambiguous_7d: number
+          customer_corrections_7d: number
+          customer_no_match_7d: number
           dead_jobs: number
           errors_1h: number
           errors_24h: number
           failed_jobs: number
+          fallbacks_24h: number
+          feed_failures_24h: number
           generated_at: string
           last_brief_at: string
           last_brief_channel_id: string
@@ -4894,9 +4960,31 @@ export type Database = {
           last_worker_seen_at: string
           pending_jobs: number
           processing_jobs: number
+          stale_feed_count: number
+          stale_feeds: Json
           stale_pending_jobs: number
           stale_processing_jobs: number
           worker_status: string
+        }[]
+      }
+      hbw_bot_feedback_summary: {
+        Args: { p_days?: number }
+        Returns: {
+          auth_failure_count: number
+          customer_ambiguous_count: number
+          customer_correction_count: number
+          customer_no_match_count: number
+          fallback_count: number
+          feed_failure_count: number
+          queue_dead_jobs: number
+          queue_failed_jobs: number
+          queue_stale_jobs: number
+          recent_corrections: Json
+          stale_feed_count: number
+          stale_feeds: Json
+          top_ambiguous_queries: Json
+          top_no_match_queries: Json
+          window_days: number
         }[]
       }
       hbw_bot_recent_errors: {
@@ -4910,6 +4998,16 @@ export type Database = {
           rpc: string
           severity: string
           status: string
+        }[]
+      }
+      hbw_bot_thread_context: {
+        Args: { p_channel_id: string; p_thread_ts: string }
+        Returns: {
+          command: string
+          created_at: string
+          intent_type: string
+          metadata: Json
+          rpc: string
         }[]
       }
       is_admin: { Args: never; Returns: boolean }
@@ -5140,6 +5238,27 @@ export type Database = {
           p_severity?: string
           p_slack_event_id?: string
           p_status?: string
+        }
+        Returns: string
+      }
+      record_hbw_bot_feedback: {
+        Args: {
+          p_candidate_customers?: Json
+          p_category?: string
+          p_channel_id?: string
+          p_command?: string
+          p_corrected_query?: string
+          p_event_type?: string
+          p_gateway_secret: string
+          p_intent_type?: string
+          p_matched_customer_id?: string
+          p_matched_customer_name?: string
+          p_message_ts?: string
+          p_metadata?: Json
+          p_normalized_query?: string
+          p_raw_query?: string
+          p_slack_event_id?: string
+          p_thread_ts?: string
         }
         Returns: string
       }
