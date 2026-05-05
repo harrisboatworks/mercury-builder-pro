@@ -1629,7 +1629,7 @@ const blogArticleRoutes = blogArticles.map(article => ({
   extraNoscript: () => {
     const faqHtml = (article.faqs && article.faqs.length > 0)
       ? '<dl>' + article.faqs.map(f =>
-          `<dt><strong>${escapeHtml(f.question)}</strong></dt><dd>${escapeHtml(f.answer)}</dd>`
+          `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
         ).join('') + '</dl>'
       : '';
     const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
