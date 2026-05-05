@@ -15,7 +15,7 @@ import { FloatingShareBar } from '@/components/blog/FloatingShareBar';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
-import { stripMarkdown } from '@/lib/strip-markdown';
+import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 import { 
   Accordion, 
