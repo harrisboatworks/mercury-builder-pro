@@ -73,7 +73,7 @@ function pickCTA(category = '', slug = ''): CTAConfig {
     };
   }
 
-  // Default — buying guides
+  // Default - buying guides
   return {
     title: 'Browse Live Mercury Pricing',
     description: 'See real CAD pricing on every Mercury outboard we sell. Updated daily.',
