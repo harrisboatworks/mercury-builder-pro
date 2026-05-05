@@ -1487,20 +1487,21 @@ function blogArticleSchema(article) {
   const url = `${SITE_URL}/blog/${article.slug}`;
   const wordCount = (article.content || '').trim().split(/\s+/).filter(Boolean).length;
   const readTimeMinutes = parseInt(article.readTime, 10) || 5;
+  const description = sanitizeSchemaText(article.description);
 
   const graph = [
     {
       "@type": "Article",
       "@id": `${url}#article`,
-      "headline": article.title,
-      "description": article.description,
+      "headline": sanitizeSchemaText(article.title),
+      "description": description,
       "image": `${SITE_URL}${article.image}`,
       "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
       "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
       "datePublished": article.datePublished,
       "dateModified": article.dateModified,
       "mainEntityOfPage": url,
-      "keywords": (article.keywords || []).join(", "),
+      "keywords": sanitizeSchemaText((article.keywords || []).join(", ")),
       "wordCount": wordCount,
       "inLanguage": "en-CA",
       "isAccessibleForFree": true,
@@ -1515,7 +1516,7 @@ function blogArticleSchema(article) {
       "@type": "WebPage",
       "@id": `${url}#webpage`,
       "url": url,
-      "name": article.title,
+      "name": sanitizeSchemaText(article.title),
       "inLanguage": "en-CA",
       "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -1532,14 +1533,14 @@ function blogArticleSchema(article) {
     graph.push({
       "@type": "HowTo",
       "@id": `${url}#howto`,
-      "name": article.title,
-      "description": article.description,
+      "name": sanitizeSchemaText(article.title),
+      "description": description,
       "totalTime": `PT${readTimeMinutes}M`,
       "step": article.howToSteps.map((step, i) => ({
         "@type": "HowToStep",
         "position": i + 1,
-        "name": step.name,
-        "text": step.text,
+        "name": sanitizeSchemaText(step.name),
+        "text": sanitizeSchemaText(step.text),
         ...(step.image ? { "image": `${SITE_URL}${step.image}` } : {})
       }))
     });
