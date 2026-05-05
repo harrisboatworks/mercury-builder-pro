@@ -43,7 +43,12 @@ function loadLocations() {
 function loadBlogArticles() {
   const dumpScript = `
     import { blogArticles, isArticlePublished } from '../src/data/blogArticles.ts';
-    process.stdout.write(JSON.stringify(blogArticles.filter(isArticlePublished)));
+    import { getCleanDescription } from '../src/lib/strip-markdown.ts';
+    const items = blogArticles.filter(isArticlePublished).map(a => ({
+      ...a,
+      description: getCleanDescription(a),
+    }));
+    process.stdout.write(JSON.stringify(items));
   `;
   const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
   writeFileSync(tmpFile, dumpScript);
