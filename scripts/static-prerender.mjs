@@ -1564,7 +1564,9 @@ function blogArticleSchema(article) {
 // Extract first ~280 chars of plain text from blog content for noscript intro.
 function firstParagraph(content, fallback) {
   if (!content) return sanitizeSchemaText(fallback);
-  const stripped = String(content)
+  // Drop leading H1 heading line so it doesn't duplicate the rendered <h1>.
+  const withoutH1 = String(content).replace(/^\s*#\s+.+(?:\r?\n|$)/, '');
+  const stripped = withoutH1
     .replace(/```[\s\S]*?```/g, ' ')
     .replace(/<[^>]*>/g, ' ')
     .replace(/\s+/g, ' ')
