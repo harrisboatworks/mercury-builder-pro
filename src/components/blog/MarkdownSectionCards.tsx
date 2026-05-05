@@ -331,22 +331,19 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
 
   return (
     <>
-      {preamble.trim() && (
-        <ReactMarkdown remarkPlugins={[remarkGfm]} components={componentsWithInline}>
-          {preamble}
-        </ReactMarkdown>
-      )}
+      {preamble.trim() &&
+        renderMarkdownWithDirectives(preamble, componentsWithInline, 'pre')}
       {sections.map((section, idx) => {
         const headingMd = `## ${section.heading}\n\n${section.body}`;
         if (!section.kind) {
           return (
-            <ReactMarkdown
-              key={idx}
-              remarkPlugins={[remarkGfm]}
-              components={componentsWithInline}
-            >
-              {headingMd}
-            </ReactMarkdown>
+            <div key={idx}>
+              {renderMarkdownWithDirectives(
+                headingMd,
+                componentsWithInline,
+                `s-${idx}`,
+              )}
+            </div>
           );
         }
         const cfg = cardConfig[section.kind];
@@ -363,12 +360,11 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
               {cfg.eyebrow}
             </span>
             <div className={cfg.bodyClass}>
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                components={componentsWithInline}
-              >
-                {headingMd}
-              </ReactMarkdown>
+              {renderMarkdownWithDirectives(
+                headingMd,
+                componentsWithInline,
+                `c-${idx}`,
+              )}
             </div>
             {isPhoneCard && (
               <a
