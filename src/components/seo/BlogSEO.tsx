@@ -115,7 +115,7 @@ export function BlogSEO({ article }: BlogSEOProps) {
             q: sanitizeForSchema(faq.question),
             a: sanitizeForSchema(faq.answer),
           }))
-          .filter(({ q, a }) => q && a)
+          .filter(({ q, a }) => q && a && !/^by jay harris/i.test(q))
           .map(({ q, a }) => ({
             "@type": "Question",
             "name": q,
