@@ -69,7 +69,7 @@ function truncateAtSentence(text: string, max = 170): string {
       return text.slice(0, end).trim();
     }
   }
-  const cut = text.slice(0, max);
+  const cut = text.slice(0, max - 3);
   const wb = cut.lastIndexOf(' ');
   const base = wb > 40 ? cut.slice(0, wb) : cut;
   return base.trim().replace(/[,;:.!?-]+$/, '') + '...';
