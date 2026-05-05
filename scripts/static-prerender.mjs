@@ -2605,6 +2605,30 @@ function escapeHtml(s) {
     .replace(/'/g, '&#39;');
 }
 
+function stripSchemaMarkdown(s) {
+  return String(s || '')
+    .replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '')
+    .replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '')
+    .replace(/\n+\s*By Jay Harris[\s\S]*$/i, '')
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/^\s*([-*_])\1{2,}\s*$/gm, ' ')
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/^\s*>\s?/gm, '')
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label) => String(label).trim())
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/__(.+?)__/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\s*[—–]\s*/g, ' - ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function sanitizeSchemaText(s) {
+  return stripSchemaMarkdown(s);
+}
+
 function stamp(route) {
   let html = shell;
 
