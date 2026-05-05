@@ -9,7 +9,7 @@ interface BlogSEOProps {
 
 export function BlogSEO({ article }: BlogSEOProps) {
   const url = `${SITE_URL}/blog/${article.slug}`;
-  const cleanDescription = stripMarkdown(article.description);
+  const cleanDescription = getCleanDescription(article);
 
   // Calculate word count from content
   const wordCount = article.content.trim().split(/\s+/).length;
