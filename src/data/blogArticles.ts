@@ -15141,7 +15141,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   {
     slug: 'why-mercury-dealers-hide-prices-online',
     title: 'Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn\'t)',
-    description: 'If you\'ve shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer\'s site, you\'re not imagining it. Most marine dealers deliberately don\'t publish prices online. The reasons they give are excuses; the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.',
+    description: 'Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call.',
     image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_Hero.png',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
