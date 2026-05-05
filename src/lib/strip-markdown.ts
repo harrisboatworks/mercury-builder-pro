@@ -38,8 +38,13 @@ export function stripMarkdown(input: string): string {
   // Em/en dash -> hyphen
   out = out.replace(/\s*[—–]\s*/g, ' - ');
 
+  // Strip trailing markdown HR fragments (e.g. "... customers. ---")
+  out = out.replace(/[\s\u00A0]*-{3,}[\s\u00A0]*$/g, '');
+
   // Collapse whitespace
   out = out.replace(/\s+/g, ' ').trim();
+  // Belt-and-suspenders: also strip trailing dashes after whitespace collapse
+  out = out.replace(/\s*-{3,}\s*$/, '').trim();
   return out;
 }
 
@@ -58,7 +63,11 @@ function truncateAtSentence(text: string, max = 170): string {
   if (matches.length > 0) {
     const last = matches[matches.length - 1];
     const end = (last.index ?? 0) + 1;
-    return text.slice(0, end).trim();
+    // If the nearest sentence end is too short (leaves >=40 chars unused),
+    // prefer a word-boundary truncate closer to max for richer descriptions.
+    if (end >= Math.floor(max * 0.75)) {
+      return text.slice(0, end).trim();
+    }
   }
   const cut = text.slice(0, max);
   const wb = cut.lastIndexOf(' ');
@@ -147,5 +156,7 @@ export function markdownToNoscriptHtml(input: string | undefined | null): string
 
   // Collapse whitespace
   s = s.replace(/\s+/g, ' ').trim();
+  // Strip trailing markdown HR fragments
+  s = s.replace(/\s*-{3,}\s*$/, '').trim();
   return s;
 }
