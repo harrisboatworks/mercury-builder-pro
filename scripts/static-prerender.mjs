@@ -112,7 +112,7 @@ function loadBlogArticles() {
           questionHtml: markdownToNoscriptHtml(f.question),
           answerHtml: markdownToNoscriptHtml(f.answer),
         }))
-        .filter(f => f.question && f.answer),
+        .filter(f => f.question && f.answer && !/^by jay harris/i.test(f.question)),
       howToSteps: (a.howToSteps || []).map(s => ({
         name: sanitizeForSchema(s.name),
         text: sanitizeForSchema(s.text),
