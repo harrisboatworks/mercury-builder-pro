@@ -15137,7 +15137,875 @@ Mercury Platinum Dealer · Rice Lake, Ontario
         answer: 'Yes. Mercury Boost is available through certified Mercury dealers in Ontario. Harris Boat Works in Gores Landing, Ontario — on Rice Lake — is a Mercury Platinum dealer that performs Boost installations. We sold approximately 65 new Mercury motors in 2025 and have been servicing Mercury engines since 1947. Call 905-342-2153 to confirm current pricing and availability for your motor. Note that eligibility depends on your specific motor model and year; have your motor\'s serial number ready when you call.'
       }
     ]
-  }
+  },
+  {
+    slug: 'why-mercury-dealers-hide-prices-online',
+    title: 'Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn\'t)',
+    description: 'If you\'ve shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer\'s site, you\'re not imagining it. Most marine dealers deliberately don\'t publish prices online. The reasons they give are excuses; the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.',
+    image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_Hero.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-05',
+    dateModified: '2026-05-05',
+    publishDate: '2026-05-05',
+    category: 'Buying Guide',
+    readTime: '8 min read',
+    keywords: ['mercury outboard pricing', 'mercury dealer transparency', 'boat motor prices ontario', 'mercury price online', 'harris boat works pricing'],
+    content: `# Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)
+
+If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. Most marine dealers deliberately don't publish prices online. The reasons they give are excuses; the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
+
+## Quick recommendation
+
+If you're shopping Mercury outboards and a dealer won't show you pricing without a phone call, that's a sales tactic, not a manufacturer requirement. Mercury Marine doesn't prohibit dealers from publishing prices. The dealer is choosing to keep prices off the website.
+
+For typical Mercury repowers in 2026, all-in costs in CAD before HST land in predictable ranges: $11,000 to $15,000 for 40 to 60 HP, $17,000 to $22,000 for 75 to 115 HP, $23,000 to $36,000 for 150 to 200 HP. Anyone telling you these numbers can't be published is telling you something other than the truth.
+
+We list every Mercury we sell with live CAD pricing at [/quote/motor-selection](/quote/motor-selection). You can build a quote in 3 minutes without talking to anyone.
+
+## The excuses dealers give for hiding prices
+
+Five common ones, ranked from most to least defensible:
+
+### 1. "Manufacturer pricing requirements"
+
+Mercury Marine sets MSRP (manufacturer's suggested retail price). Dealers can sell at, above, or below MSRP. Mercury does not require dealers to hide prices online. This excuse is false on its face.
+
+### 2. "Prices change frequently"
+
+Mercury motor prices change once a year (model year transition July 1) and occasionally with promotional pricing (rate buy-downs, package incentives). They do not change daily. The same dealers who claim prices change too fast to publish are quoting customers verbally with prices they expect to honor for weeks. The math is the same; the only difference is whether the customer can see it.
+
+### 3. "Configuration affects price"
+
+This one has a kernel of truth. A Mercury 90 EXLPT FourStroke has a base motor price, but the all-in cost depends on shaft length, controls, prop, rigging, install labor, and any options. So the answer can't be a single number. The answer can be a configurator. Our [motor selection page](/quote/motor-selection) handles configuration in real time. There's no technical reason a dealer can't do this.
+
+### 4. "We want to talk to you about your needs"
+
+Some dealers want to make sure you buy the right motor for your boat. That's a real concern. But the way to handle it is "here's the price, and here's a 5-minute conversation about whether this fits your boat", not "we'll only tell you the price if you call." We do the conversation either way. The price is online while we're doing it.
+
+### 5. "We want to make sure you don't get a better offer elsewhere"
+
+This is the honest one, and it's the one no dealer says out loud. If you don't know the price, you can't comparison shop. If you have to call to get pricing, you're already partially committed before the conversation. The dealer controls the negotiation.
+
+## The real reasons most dealers hide prices
+
+Three honest reasons:
+
+### 1. Information asymmetry is profitable
+
+If you don't know the market price, you don't know if the quote you got is fair. Dealers who hide prices can extract higher margins from customers who don't comparison shop or who are time-pressed or who simply hate shopping for boats.
+
+### 2. Phone capture beats web shopping
+
+Once you call a dealer, you're in their pipeline. They know your name, number, boat, and budget. They can follow up. A web visitor who saw the price and decided to think about it is a lost lead. So the dealer prefers the phone call even if the customer would have bought online.
+
+### 3. Industry inertia
+
+Most marine dealers run websites built before transparency was the expected norm. The next generation of marine dealers will publish pricing as a matter of course. The current generation is still catching up.
+
+## Why HBW lists prices
+
+We've done it from the start of mercuryrepower.ca because:
+
+- **It's faster for the customer.** Build a quote in 3 minutes vs. a 30-minute phone call. Customers don't owe us 30 minutes to learn what something costs.
+- **It builds trust.** A customer who sees the same price online that we quote them in person never wonders if they got the deal.
+- **It filters the right customers.** Customers who care enough to build a quote are serious. Customers who would have called anyway still call. We get both.
+- **It saves us time.** Three generations of HBW have answered "what does it cost?" enough times. Putting it online means we can spend customer-facing time on the actual conversation that matters.
+- **It respects everyone.** Hiding prices treats customers like targets. Showing prices treats them like people.
+
+## What changes the answer
+
+Specific situations where pricing genuinely needs a conversation:
+
+- **Brand conversions.** Switching from Evinrude or Yamaha to Mercury adds $1,500 to $3,000 in rigging on top of standard repower costs. Our [Evinrude to Mercury guide](/blog/evinrude-to-mercury-repower-ontario-guide) covers the math.
+- **Twin or triple engine setups.** Multi-engine rigging is more complex. We can quote the motors online; the rigging benefits from a phone conversation.
+- **Verado V12 600.** Special-order territory. Less than 1% of our customers. Available by quote only.
+- **Heavy commercial duty (SeaPro applications).** Commercial use cycles are different from recreational. Worth a conversation.
+
+For 95% of recreational customers, the [motor selection page](/quote/motor-selection) is the source of truth and the price you build is the price you pay.
+
+## What HBW provides that price-hiding dealers don't
+
+Beyond just publishing prices:
+
+- **Live pricing updates.** Mercury MY pricing changes effective July 1 are reflected within days. Promotional rate buy-downs are reflected when active.
+- **CAD pricing native.** No "USD plus exchange" surprises.
+- **Full configuration in the quote.** Motor + shaft length + controls + prop + rigging + install labor all included.
+- **Mercury Repower Financing at 7.99% APR** built into the quote flow. See our [financing guide](/blog/mercury-outboard-financing-ontario-2026).
+- **Quote save and share.** Built quotes can be saved, downloaded as PDF, or sent via email/text.
+- **No phone-call gatekeeping.** Build a quote at midnight if you want.
+
+## Common dealer-pricing mistakes
+
+We see these from customers who shopped before coming to HBW:
+
+1. **Accepting "prices change too fast" as an answer.** They don't. Push back politely.
+2. **Negotiating from a price you can't see.** If the starting number is hidden, you can't tell whether the "discount" is real or marketing.
+3. **Not getting the all-in number.** Motor price + rigging + install + tax + delivery is the real cost. Some dealers quote motor-only and surprise you at delivery.
+4. **Comparing across dealers without standardized config.** Same motor, different shaft, different prop, different install scope is not the same quote.
+5. **Skipping written quotes.** Verbal numbers evaporate. Written quotes hold the dealer to the math.
+
+## Related guides
+
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the actual prices
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR financing
+- [Mercury Rigging Costs Explained](/blog/mercury-outboard-rigging-costs-ontario), what's in the rigging line
+- [Cheapest Mercury Outboard Canada 2026](/blog/cheapest-mercury-outboard-canada-2026), the lowest entry points
+- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for HBW
+
+## Ready to see real pricing?
+
+[Build a quote on the motor selection page](/quote/motor-selection). Live CAD pricing. Full configuration. No phone call required. No email gatekeeping.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific repower after seeing the numbers, [give us a call at (905) 342-2153](tel:9053422153). We'll have the same numbers you saw online. That's the point.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth. Mercury model years change every July 1, and we refresh ranges in articles annually._
+`,
+    faqs: [
+      {
+        question: 'Why don\'t most marine dealers list prices online?',
+        answer: 'Three real reasons: information asymmetry is profitable for them, phone calls capture leads more reliably than web visits, and industry inertia. The reasons they say out loud (manufacturer requirements, prices change too fast, configuration is too complex) are mostly excuses.'
+      },
+      {
+        question: 'Does Mercury Marine require dealers to hide prices?',
+        answer: 'No. Mercury sets MSRP and dealers can publish, sell at, above, or below it. Any dealer claiming Mercury prohibits price publication is misinformed or being dishonest.'
+      },
+      {
+        question: 'Do Mercury prices actually change frequently?',
+        answer: 'No. Mercury MSRP changes once a year on July 1 with model year transition. Promotional pricing (rate buy-downs, package incentives) can change quarterly or with promotions. Daily price changes are not a thing.'
+      },
+      {
+        question: 'Is the price I build at HBW the price I pay?',
+        answer: 'Yes for 95% of customers. Brand conversions and unusual configurations may need a conversation. For typical recreational repowers, the configurator is the source of truth and the price you build is the all-in number including rigging, prop, and install before HST.'
+      },
+      {
+        question: 'How does HBW handle promotional pricing online?',
+        answer: 'Active promotional rates and package incentives are reflected in the live quote builder. If a Mercury rate buy-down or package promo is running, you\'ll see it in your quote.'
+      },
+      {
+        question: 'Can I trust online pricing if it\'s published?',
+        answer: 'For HBW, yes. Pricing is verified annually after Mercury\'s July 1 model year change. The configurator pulls live data. We\'re a Mercury Platinum dealer with 60 years of accountability, we don\'t bait-and-switch on published prices.'
+      },
+      {
+        question: 'What about delivery, taxes, and trade-in?',
+        answer: 'Pricing on the configurator is in CAD before HST. HST (13%) is added at quote completion. Trade-in valuation is handled separately at [/trade-in-value](/trade-in-value). Delivery is pickup at HBW in Gores Landing for most customers.'
+      },
+      {
+        question: 'Why do some dealers list prices but only for some motors?',
+        answer: 'Often it\'s a compromise. They list the cheap entry-point motors to attract clicks, but require a phone call for the higher-margin motors where they have more pricing flexibility. Selective transparency.'
+      },
+      {
+        question: 'Should I demand pricing from a dealer who hides it?',
+        answer: 'You can ask. Many will give it over the phone. The cost is your time. Knowing what we know about how the industry works, we\'d say: skip the dealers who insist on phone gatekeeping and shop the dealers who publish.'
+      },
+      {
+        question: 'Is HBW the only Mercury dealer publishing prices?',
+        answer: 'We\'re not the only one, but we\'re one of a small number. The list of Mercury dealers with full live online pricing in Ontario is short. The list with live CAD pricing including all rigging and install is shorter.'
+      },
+      {
+        question: 'What if HBW\'s online price is higher than another dealer\'s verbal quote?',
+        answer: 'Tell us. We\'ll match or explain the difference. Our pricing is in line with the Mercury dealer network. If a verbal quote is meaningfully lower, it usually means the verbal quote is missing rigging, install, or a hidden cost that shows up later.'
+      },
+      {
+        question: 'How do I tell if a dealer\'s quote is fair without published prices?',
+        answer: 'Build a quote at HBW first. Use that as your reference. Then go look at other dealers. The dealers who can\'t beat or match a transparent quote are the ones who depend on you not knowing.'
+      },
+      {
+        question: 'Will published pricing become the industry norm?',
+        answer: 'Eventually, yes. Customer expectations are moving that way and the next generation of marine dealers won\'t have a choice. The current generation is still catching up. We\'re doing it now because that\'s how we\'d want to be treated as customers. ---'
+      },
+    ]
+  },
+  {
+    slug: 'mercury-outboard-rigging-costs-ontario',
+    title: 'Mercury Outboard Rigging Costs Explained (Ontario 2026)',
+    description: 'Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. For a typical Mercury-to-Mercury repower with post-2010 controls in good condition, rigging lands $500 to $1,500 CAD. Brand conversions and full rerigs run higher. Live pricing on every Mercury we sell, with rigging included, is at [/quote/motor-selection](/quote/motor-selection).',
+    image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-05',
+    dateModified: '2026-05-05',
+    publishDate: '2026-05-05',
+    category: 'Repower',
+    readTime: '10 min read',
+    keywords: ['mercury rigging cost', 'outboard rigging ontario', 'boat repower rigging', 'hydraulic steering upgrade', 'mercury install cost'],
+    content: `# Mercury Outboard Rigging Costs Explained (Ontario 2026)
+
+Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. For a typical Mercury-to-Mercury repower with post-2010 controls in good condition, rigging lands $500 to $1,500 CAD. Brand conversions and full rerigs run higher. Live pricing on every Mercury we sell, with rigging included, is at [/quote/motor-selection](/quote/motor-selection).
+
+## Quick recommendation
+
+Most customers who ask "how much does rigging cost?" get sticker shock from a partial answer. The real number depends on what's already on the boat, what brand the existing motor is, and whether the rigging is at end of life.
+
+For typical Ontario freshwater repowers in 2026:
+
+- **Mercury-to-Mercury, modern (post-2010) rigging in good shape:** $500 to $1,500 CAD
+- **Mercury-to-Mercury, older or worn rigging needing replacement:** $1,500 to $3,000 CAD
+- **Brand conversion (Evinrude, Yamaha, Honda to Mercury):** add $1,500 to $3,000 CAD over standard
+- **Cable to hydraulic steering upgrade:** add $1,650 to $3,500 CAD
+- **Full new rerig (everything new):** $2,500 to $5,000 CAD
+
+Live quotes include rigging in the all-in number at [/quote/motor-selection](/quote/motor-selection).
+
+## What's actually in "rigging"
+
+Rigging is the integration work between motor and boat. The components:
+
+### Throttle and shift control
+
+- **Console-mounted lever** (most common on console boats)
+- **Mercury digital throttle and shift (DTS)** on higher-HP motors (typically 150 HP+)
+- **Tiller-integrated control** on tiller motors (no separate component)
+
+For Mercury-to-Mercury repowers with post-2010 controls, often kept. Older controls or non-Mercury controls usually replaced.
+
+### Steering
+
+Three types:
+
+- **Cable steering:** Standard on motors under 90 HP. Direct, simple, inexpensive. Replaced if older than ~10 years or showing wear.
+- **Hydraulic steering:** Standard on 90 HP and up. More comfortable feel, less maintenance. Replaced if leaking or unresponsive.
+- **Power-assist steering:** Premium option on bigger motors. Easier feel at speed.
+
+Cable-to-hydraulic upgrades are common during repowers. Cost: $1,650 to $3,500 CAD depending on motor HP and steering helm complexity.
+
+### Wiring harness
+
+The cables that connect motor to controls, gauges, and battery. Mercury has standardized harness connectors across motor families since around 2010, so Mercury-to-Mercury repowers usually keep the harness if it's in good shape. Brand conversions need a new harness.
+
+### Gauges and displays
+
+Three options:
+
+- **Analog gauges:** Tach, fuel, water temp. Older standard.
+- **Mercury SmartCraft digital displays:** VesselView 4, 7, 9 inch units. Modern standard for Mercury motors.
+- **Third-party multifunction displays (Garmin, Lowrance, Raymarine):** Integrate with SmartCraft via NMEA 2000.
+
+Mercury-to-Mercury repowers often keep existing displays if compatible. Older analog gauges sometimes need replacement to support new motor's data outputs.
+
+### Battery cables and switches
+
+Heavier cable for higher-HP motors. Battery switch (on/off, dual-battery selectors). Replaced as needed during rigging inspection.
+
+### Fuel hose and connections
+
+Fuel line from tank to motor, primer bulb, fuel filter. Typically replaced during a repower because fuel system age affects new motor reliability.
+
+### Propeller
+
+Aluminum 3-blade ($450 CAD typical) for motors up to 115 HP. Stainless 3 or 4-blade ($800 to $2,000 CAD) for 150 HP and up. We test props during sea-trial of every repower. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).
+
+### Trim and tilt system
+
+Most modern Mercurys include power trim/tilt. Hydraulic ram, motor housing, and switch. Replaced if leaking or non-functional.
+
+## What changes the rigging cost
+
+Five things move whether your rigging cost is at the low or high end of the range:
+
+- **Existing rigging condition.** A 5-year-old Mercury rerig with controls and harness in good shape: low end. A 25-year-old boat with cracked cables and corroded connectors: high end.
+- **Existing rigging brand.** Mercury-to-Mercury saves significantly. Brand conversions add $1,500 to $3,000.
+- **Steering type and upgrade decisions.** Keeping cable steering is cheaper. Upgrading to hydraulic adds meaningfully but is often worth doing during the repower while the dash is open.
+- **Display upgrades.** Keeping analog gauges is free. Adding a Mercury SmartCraft VesselView is several hundred to over $1,000 depending on size.
+- **Fuel system condition.** Old fuel hoses and filters get replaced. Some boats need a fuel system rebuild beyond just hose replacement.
+
+## What HBW checks during the rigging assessment
+
+When we walk around a boat for a repower quote, we look at:
+
+- **Throttle and shift control age and brand**
+- **Steering type, age, and condition** (visible leaks, smoothness of operation, helm condition)
+- **Wiring harness condition** (corrosion, cracks, brand compatibility)
+- **Gauge or display age and connectivity**
+- **Battery cable gauge and condition**
+- **Fuel hose age, fuel filter location, fuel tank vent condition**
+- **Existing prop condition** (damage, pitch fit for current use)
+- **Trim/tilt system function**
+- **Transom condition** (this is for the install, not strictly rigging, but assessed at the same time)
+
+The walk-around is free. The findings determine where in the rigging cost range your quote lands. For the actual quote, [build it on the motor selection page](/quote/motor-selection) or [call us](tel:9053422153).
+
+## Common rigging cost mistakes
+
+We see these every season:
+
+1. **Trying to keep rigging that's at end of life.** Customer wants to save $1,500 by reusing 20-year-old controls. The new motor is undermined by old rigging that fails in year 2. Pay once.
+2. **Skipping the prop conversation.** A new $20,000 motor with a wrong prop loses 4 mph and 15% fuel economy. The right prop is part of rigging.
+3. **Underestimating brand conversion cost.** Customer thinks "$1,500 to convert from Yamaha to Mercury" when actual brand conversion is $1,500 to $3,000 over standard rigging. Add it to the budget.
+4. **Forgetting steering upgrade math.** If your current cable steering is at end of life and you're going to upgrade it eventually, the cheapest time is during the repower. While the dash is open.
+5. **DIYing partial rigging.** Confident owners sometimes do their own throttle/shift install and then can't figure out why the motor doesn't run right. Brand-conversion rigging is not a DIY project.
+
+## Mercury-to-Mercury vs brand conversion: the cost difference
+
+| Component | Mercury-to-Mercury (post-2010) | Brand conversion |
+|---|---|---|
+| Throttle and shift control | Often kept | New required |
+| Wiring harness | Often kept | New required |
+| Gauges or displays | Often kept | New or adapted |
+| Steering | Either works | Often replaced |
+| Battery cables | Inspected, replaced as needed | Inspected, replaced as needed |
+| Fuel hose | Replaced | Replaced |
+| Prop | New, sized for new motor | New, sized for new motor |
+| Total rigging premium | Baseline | +$1,500 to $3,000 CAD |
+
+For specific quotes, [build it on the motor selection page](/quote/motor-selection).
+
+## Related guides
+
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full all-in pricing
+- [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion specifically
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop is part of rigging
+- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), steering type decision
+- [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower), the full process
+
+## Ready for an honest rigging quote?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Rigging is included in the all-in number. Live CAD pricing. No phone call required to see the price.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific boat's rigging condition before quoting, [give us a call at (905) 342-2153](tel:9053422153). We do free walk-arounds and can give you a real range based on what we see.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and rigging configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+`,
+    faqs: [
+      {
+        question: 'How much does Mercury rigging cost?',
+        answer: 'For Mercury-to-Mercury repowers with post-2010 controls in good shape, rigging lands $500 to $1,500 CAD. Brand conversions add $1,500 to $3,000. Full rerigs (everything new) run $2,500 to $5,000. Specific quote at [/quote/motor-selection](/quote/motor-selection).'
+      },
+      {
+        question: 'What\'s included in rigging?',
+        answer: 'Throttle and shift controls, steering system, wiring harness, gauges or displays, battery cables, fuel hose and connections, propeller, and trim/tilt system. Plus install labor.'
+      },
+      {
+        question: 'Can I keep my existing rigging during a Mercury repower?',
+        answer: 'Often yes for Mercury-to-Mercury repowers with rigging less than 15 years old. Brand conversions need new everything. We assess during the hull walk-around.'
+      },
+      {
+        question: 'Why do brand conversions cost more in rigging?',
+        answer: 'Mercury controls, harness, and gauges are not compatible with Yamaha, Honda, Evinrude, or other brands. Brand conversion requires new control system, new harness, often new gauges, and sometimes new steering. Adds $1,500 to $3,000 over Mercury-to-Mercury.'
+      },
+      {
+        question: 'Should I upgrade from cable to hydraulic steering during a repower?',
+        answer: 'For motors 90 HP and up, hydraulic is the modern standard and is worth the upgrade if your current cable steering is older than 10 years. Adds $1,650 to $3,500. Cheapest time to do it is during repower while dash is open.'
+      },
+      {
+        question: 'What\'s Mercury SmartCraft and do I need it?',
+        answer: 'SmartCraft is Mercury\'s digital data and display system. VesselView 4/7/9 displays show motor data (RPM, fuel, oil, alerts) digitally. For modern Mercury motors, SmartCraft connectivity is built in. Whether you need a VesselView display depends on whether you want digital gauges or are happy with analog.'
+      },
+      {
+        question: 'How much does a new Mercury propeller cost?',
+        answer: 'Aluminum 3-blade: typically $450 CAD for motors up to 115 HP. Stainless 3 or 4-blade: $800 to $2,000 for 150 HP and up. The right prop is determined during sea-trial.'
+      },
+      {
+        question: 'Can I DIY my Mercury rigging?',
+        answer: 'Some service yes (oil changes, prop swaps, gauge cleaning). Throttle/shift integration, harness routing, brand conversions, and any wiring should be done by a Mercury-certified technician. DIY rigging mistakes can damage the new motor or void warranty.'
+      },
+      {
+        question: 'What if my current fuel hose is fine?',
+        answer: 'We replace fuel hoses on most repowers because old fuel hoses can degrade and contaminate the new motor\'s fuel system. If your fuel hose is genuinely new (under 5 years and in great shape), we\'ll keep it. Most aren\'t.'
+      },
+      {
+        question: 'Do I need new battery cables?',
+        answer: 'Heavier-gauge cables are needed for higher-HP motors. If your existing cables are properly sized and in good condition, often kept. We inspect and replace as needed.'
+      },
+      {
+        question: 'How long does the rigging install take?',
+        answer: 'For Mercury-to-Mercury repowers, rigging is part of the 2 to 4 day shop time. Brand conversions take longer (typically 4 to 6 days) because of the additional rigging work. Spring rush adds wait time before the shop starts.'
+      },
+      {
+        question: 'Can I get rigging without a new motor?',
+        answer: 'Yes for some applications. We do rigging refresh projects (new controls, new harness, new prop) without motor replacement on customers who want to extend the life of their existing rigging. [Contact us](/contact) for quotes.'
+      },
+      {
+        question: 'What rigging components fail most often?',
+        answer: 'In order of frequency: fuel hoses (degrade with age and ethanol), throttle/shift cables (wear from use), corroded battery terminals, leaking trim/tilt rams, cracked harness connectors. We inspect all of these during every service. ---'
+      },
+    ]
+  },
+  {
+    slug: 'what-happens-during-mercury-repower',
+    title: 'What Happens During a Mercury Repower (Step-by-Step Process)',
+    description: 'A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking, drop-off, removal of old motor, transom and rigging inspection, installation of new motor and rigging, sea-trial with prop testing, final adjustments, and pickup with break-in coaching. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).',
+    image: '/lovable-uploads/Boat_Repowering_101_Hero.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-05',
+    dateModified: '2026-05-05',
+    publishDate: '2026-05-05',
+    category: 'Repower',
+    readTime: '12 min read',
+    keywords: ['mercury repower process', 'what happens during repower', 'boat repower steps', 'mercury install process', 'repower timeline ontario'],
+    content: `# What Happens During a Mercury Repower (Step-by-Step Process)
+
+A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking, drop-off, removal of old motor, transom and rigging inspection, installation of new motor and rigging, sea-trial with prop testing, final adjustments, and pickup with break-in coaching. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+
+## Quick recommendation
+
+Most customers don't know what actually happens during a repower. Knowing the process helps three ways:
+
+1. You can plan around realistic timelines (especially during spring rush)
+2. You can ask better questions during the quote
+3. You'll spot when something's off (a dealer skipping the sea-trial, no transom inspection, etc.)
+
+A repower isn't just bolting a new motor to your boat. It's a full integration project. The shop time is short; the prep, inspection, and verification work is what makes the difference between a 20-year motor and a 5-year motor.
+
+## What changes the timeline
+
+Five things move how long your repower takes:
+
+- **Mercury-to-Mercury vs. brand conversion.** Mercury-to-Mercury: 2 to 4 days. Brand conversion (Evinrude, Yamaha, Honda to Mercury): 4 to 6 days because of extra rigging work.
+- **Hull condition.** A solid hull is fast. A hull with transom soft spots needs additional work or won't pass inspection.
+- **Motor availability.** Mercury inventory in your specific HP and shaft length. Common configurations are in stock or quick-order. Less common configurations may have factory wait times.
+- **Time of year.** Off-season (October to April): shop time is fast and slot availability is good. Spring rush (March to May): waits of 2 to 6 weeks before shop starts.
+- **Customer responsiveness.** Quote, deposit, drop-off, and pickup all need customer participation. The faster you respond at each step, the faster the timeline.
+
+## The full process: step-by-step
+
+### Step 1: Hull walk-around (free, 30 to 60 minutes)
+
+Customer brings the boat to HBW or sends detailed photos and we visit the boat at a marina or storage facility. We assess:
+
+- Hull condition (fiberglass cracks, aluminum dents, transom soft spots)
+- Existing motor age, brand, model, and condition
+- Existing rigging condition (controls, harness, steering, gauges)
+- Fuel system condition
+- Trailer condition (separate decision but worth assessing)
+- Customer use case (fishing, family, water sports, mixed)
+
+We give a verbal estimate of the repower scope, identify any issues that need addressing before or during the repower, and direct the customer to the [motor selection page](/quote/motor-selection) for live pricing.
+
+The walk-around is free for HBW customers. No commitment required.
+
+### Step 2: Motor selection and written quote
+
+Customer builds a quote at [/quote/motor-selection](/quote/motor-selection) or works with HBW to configure. The quote includes:
+
+- Specific Mercury model (e.g., 115 EXLPT FourStroke)
+- Shaft length
+- Throttle/shift control specification
+- Prop selection (or note that prop will be selected during sea-trial)
+- Rigging package (Mercury-to-Mercury or brand-conversion)
+- Install labor
+- HST (13% Ontario)
+- Total all-in number in CAD
+
+If the customer wants to talk through the configuration, we do a 15 to 30 minute consultation by phone or in-shop.
+
+### Step 3: Deposit and booking
+
+A deposit (typically 25% of the all-in cost) holds the slot and locks in the motor allocation. Customer signs the work order. Booking confirms the drop-off date and target completion date.
+
+If financing through Mercury Repower Financing at 7.99% APR, we handle the application in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
+
+### Step 4: Boat drop-off
+
+Customer brings the boat to HBW in Gores Landing on Rice Lake. Drop-off is typically the morning of the booked start date.
+
+We do a final pre-work inspection with the customer present. Note any cosmetic issues, document existing electronics, identify any items the customer wants kept (kicker mounts, custom accessories, etc.).
+
+### Step 5: Removal of old motor (typically half a day)
+
+The Mercury-certified technician removes the old motor from the transom. The old motor is set aside for either trade-in evaluation, customer take-home, or scrap.
+
+Removal exposes:
+- The transom (now we can inspect the bare wood/glass for moisture, rot, soft spots)
+- Existing rigging connections (now we can assess condition fully)
+- Fuel system connections (now we can identify hose age and connector wear)
+
+### Step 6: Transom and rigging inspection (1 to 2 hours)
+
+Critical step. With the motor off, we check:
+
+- **Transom condition.** Press-test for soft spots. Drill a small inspection hole if soft spots are suspected. Decide if transom needs reinforcement before new motor.
+- **Through-hull bolts and mounting points.** Replace if corroded or worn.
+- **Existing rigging condition.** Throttle/shift cables, harness, steering linkage all assessed.
+- **Fuel system.** Hoses, primer bulb, filter, vent line, tank fittings.
+- **Electrical system.** Battery cables, switches, ground connections.
+
+If transom is solid: proceed to install. If transom has soft spots: customer is contacted with options (fix transom now and proceed, fix transom and delay install, or scrap repower and assess hull replacement). Most transoms are solid; this is a small percentage of cases.
+
+### Step 7: Install new motor and rigging (typically 1 to 2 days)
+
+Mercury-certified technician installs:
+
+- New Mercury motor mounted to transom (correct height, properly torqued bolts)
+- New (or kept) rigging connected: throttle/shift, steering, harness, fuel
+- Battery cables sized for new motor's amperage
+- New prop installed
+- Mercury SmartCraft display (if specified) installed and configured
+- Trim/tilt system tested for full range of motion
+
+All connections double-checked. Motor is started briefly on muffs (water-cooling adapter) to verify cooling, ignition, and basic operation. No load-running yet.
+
+### Step 8: Sea-trial with prop testing (typically half a day)
+
+Boat is launched (Rice Lake or wherever appropriate). On-water testing:
+
+- **Cooling verification.** Telltale water flow within 10 seconds of start.
+- **WOT RPM check.** Motor reaches mid-band of rated WOT RPM with typical loading. Confirms prop is correct.
+- **Hole shot from idle.** Time-to-plane checked.
+- **Cruise speed at typical RPM.** Performance verified.
+- **Trim sensitivity.** How responsive the boat is to trim adjustments.
+- **All electronics check.** Gauges, GPS, fish finder, radio all working with new motor.
+- **Customer feel test.** If customer is available, they ride along to confirm the boat feels right.
+
+If WOT RPM is off, we change props and re-test. Sometimes the right prop is the second one we try. Sometimes it's the fourth. We have a prop test kit at HBW for this reason.
+
+### Step 9: Final adjustments and documentation
+
+Back at the shop:
+- Tighten any connections that loosened during sea-trial
+- Document final configuration (motor model, prop pitch, settings) in service log
+- Complete Mercury warranty registration with motor serial number and customer details
+- Update Pleasure Craft Licence (PCL) paperwork, see our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario)
+- Print/save final documentation for customer
+
+### Step 10: Pickup and break-in coaching (30 to 60 minutes)
+
+Customer picks up the boat. We walk through:
+
+- The new motor's controls and features
+- Mercury SmartCraft display interpretation (if applicable)
+- The 10-hour break-in protocol, see our [breaking in a new Mercury motor guide](/blog/breaking-in-new-mercury-motor-guide)
+- The 20-hour first oil change (we book this appointment in advance)
+- Mercury warranty terms
+- Annual maintenance schedule and seasonal service expectations
+- Final invoice and any remaining payment
+
+Customer drives away with a new Mercury, full documentation, and a service relationship.
+
+## What HBW does that some shops skip
+
+Three things that matter and that not every dealer includes:
+
+1. **Free hull walk-around before the quote.** No commitment. Lets us catch issues that affect the repower scope.
+2. **Transom inspection during install.** Some shops bolt a new motor to a transom they didn't inspect. We inspect every transom with the motor off.
+3. **Sea-trial with prop testing.** Some shops install the motor, hand it back, and tell the customer "if it doesn't run right, bring it back." We test on the water before delivery.
+
+## What HBW checks before quoting a repower
+
+When customers ask "what does the repower process look like?" we want to know:
+
+- **Boat make, model, year, length, condition**
+- **Existing motor brand, model, year, HP**
+- **Where the boat currently is** (need to bring to HBW or do we walk around it where it is)
+- **Customer timeline** (urgent or off-season)
+- **Long-term plan for the boat**
+
+The full process scales appropriately. Small tin boat with 15 HP repower: 1 to 2 days, simpler. Big aluminum console with 150 HP repower: 3 to 5 days, more complex.
+
+## Common repower process mistakes
+
+We see these from customers who came from other shops:
+
+1. **No transom inspection during the install.** New motor on a soft transom is a 12-month-life problem.
+2. **No sea-trial.** Wrong prop or rigging issue not caught until customer returns.
+3. **No documentation.** Service log entry is critical for warranty support and resale value.
+4. **Skipped break-in coaching.** New owner doesn't know about the 10-hour break-in protocol or the 20-hour oil change.
+5. **No PCL update.** Transport Canada paperwork is mandatory and often forgotten.
+
+## Related guides
+
+- [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), pricing
+- [Mercury Outboard Rigging Costs Explained](/blog/mercury-outboard-rigging-costs-ontario), rigging detail
+- [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), the 10-hour protocol
+- [Pleasure Craft Licence Update During Repower](/blog/pleasure-craft-licence-update-repower-ontario), Transport Canada paperwork
+- [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full picture
+
+## Ready to schedule your repower?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live CAD pricing. Full configuration including rigging and install. No phone call required to see the number.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through the process for your specific boat, [give us a call at (905) 342-2153](tel:9053422153). We do free walk-arounds and can answer process questions before you commit.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+`,
+    faqs: [
+      {
+        question: 'How long does a Mercury repower take?',
+        answer: 'Mercury-to-Mercury repowers: 2 to 4 days of shop time after drop-off. Brand conversions (Evinrude, Yamaha, Honda to Mercury): 4 to 6 days. Spring rush adds wait time before shop starts (sometimes weeks).'
+      },
+      {
+        question: 'Do I need to bring my boat to HBW for the walk-around?',
+        answer: 'For Rice Lake and Kawartha-area customers, we can do walk-arounds at your dock or storage location. For longer-distance customers, photos and a phone call work for initial assessment, then bring the boat to HBW for the actual quote and repower.'
+      },
+      {
+        question: 'Is the walk-around free?',
+        answer: 'Yes for HBW customers. No commitment required. We do these all year.'
+      },
+      {
+        question: 'Can I be present during the repower?',
+        answer: 'You can be at HBW for drop-off and pickup, but the repower itself is shop work. We don\'t typically allow customers in the shop during install for safety and workflow reasons. We send progress updates if you want them.'
+      },
+      {
+        question: 'What happens if my transom has soft spots?',
+        answer: 'We contact you with options: fix transom now and proceed with repower, fix transom and delay repower until done, or step back and reconsider whether the hull is worth keeping. Most transoms are solid; this is a small percentage of cases.'
+      },
+      {
+        question: 'What if my Mercury can\'t reach rated RPM during sea-trial?',
+        answer: 'We change the prop and re-test. Pitch is the most common issue. Sometimes the right prop is the second or third one we try. The right prop is the one that lets the motor reach mid-band of its rated WOT RPM with typical loading. See our [propeller selection guide](/blog/mercury-propeller-selection-guide).'
+      },
+      {
+        question: 'What\'s included in the repower price?',
+        answer: 'The all-in price on [the motor selection page](/quote/motor-selection) includes motor, rigging, prop, install labor, sea-trial, and Mercury warranty registration. PCL update paperwork is also handled. HST (13%) is added at quote completion.'
+      },
+      {
+        question: 'What\'s not included?',
+        answer: 'Hull repairs (transom, fiberglass, structural), trade-in valuation (handled separately), trailer service or replacement, electronics upgrades beyond what came with the boat, and ongoing maintenance after the warranty\'s first service interval.'
+      },
+      {
+        question: 'When can I use my boat after pickup?',
+        answer: 'Right away, with the 10-hour break-in protocol. The first hour at no-wake speed and gradual RPM increase. Vary throttle. Avoid sustained WOT for the first 10 hours. See our [breaking in guide](/blog/breaking-in-new-mercury-motor-guide).'
+      },
+      {
+        question: 'When\'s my first service after the repower?',
+        answer: '20-hour oil and filter change. We book this at delivery so it\'s not forgotten. After that, normal Mercury service intervals (annual at minimum, more frequent for heavy use).'
+      },
+      {
+        question: 'Can I trade in my old motor during the repower?',
+        answer: 'Yes. We give fair-market trade-in value applied to the new motor purchase. Specific value depends on motor age, condition, and demand. Some old motors have significant trade-in value; some are essentially scrap.'
+      },
+      {
+        question: 'Do I need to do anything for warranty?',
+        answer: 'We complete Mercury warranty registration during the install. You should keep service records for warranty claims (we provide service log copies). The warranty starts on delivery date.'
+      },
+      {
+        question: 'What if something\'s wrong after pickup?',
+        answer: 'We stand behind the work. Call us. Common post-pickup issues are minor (loose connection, hose adjustment, prop fine-tune) and resolved quickly. Major issues are rare and covered under warranty. ---'
+      },
+    ]
+  },
+  {
+    slug: 'outboard-shaft-length-guide',
+    title: 'Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)',
+    description: 'Outboard shaft length is the distance from the motor\'s mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20 inch (Long), and 25 inch (Extra Long). Wrong shaft length causes cavitation, performance loss, or motor damage. Match the shaft to your boat\'s transom height. Live pricing on every Mercury we sell, including correct shaft selection, is at [/quote/motor-selection](/quote/motor-selection).',
+    image: '/lovable-uploads/Understanding_Mercury_Model_Numbers_Hero.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-05',
+    dateModified: '2026-05-05',
+    publishDate: '2026-05-05',
+    category: 'Buying Guide',
+    readTime: '10 min read',
+    keywords: ['outboard shaft length', 'mercury shaft length guide', '20 inch shaft outboard', '25 inch shaft outboard', 'transom height measurement'],
+    content: `# Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)
+
+Outboard shaft length is the distance from the motor's mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20 inch (Long), and 25 inch (Extra Long). Wrong shaft length causes cavitation, performance loss, or motor damage. Match the shaft to your boat's transom height. Live pricing on every Mercury we sell, including correct shaft selection, is at [/quote/motor-selection](/quote/motor-selection).
+
+## Quick recommendation
+
+Most Mercury motors come in two or three shaft length options. The right one depends on your boat's transom height. The simple rule:
+
+- **Cavitation plate (the flat plate above the prop) should be roughly even with the bottom of the hull at the prop location**
+- **Too short:** plate is above the hull bottom, prop is too close to the surface, motor cavitates and ventilates
+- **Too long:** plate is below the hull bottom, lower unit drags through water, performance drops
+
+Measure your transom height before ordering. We measure during every walk-around at HBW. Match shaft length to transom height. There's no "splitting the difference", get it right.
+
+## Mercury shaft length options
+
+Three standard lengths cover most boats:
+
+### Short shaft: 15 inch
+
+- **Mounting code:** S
+- **Best for:** Small tin boats with low transoms (typically 12 to 14 ft)
+- **Common Mercury models:** Portable motors (2.5 HP through 9.9 HP standard)
+- **Transom height to match:** ~15 inches
+
+### Long shaft: 20 inch
+
+- **Mounting code:** L
+- **Best for:** Most aluminum console fishing boats, runabouts, smaller pontoons (typically 14 to 19 ft)
+- **Common Mercury models:** 9.9 ProKicker, 15, 20, 25, 40, 60, 90 EXLPT, 115 EXLPT, 150 EXLPT
+- **Transom height to match:** ~20 inches
+- **Most common shaft length** in Ontario freshwater boats
+
+### Extra long shaft: 25 inch
+
+- **Mounting code:** XL
+- **Best for:** Larger pontoons, sailboat auxiliaries, deep-V hulls, some center consoles (typically 18 ft+ or boats with deep transoms)
+- **Common Mercury models:** Available variants of 9.9 ProKicker, 15, 25, 90, 115, 150, 200, 250, 300 HP and Verado
+- **Transom height to match:** ~25 inches
+
+### Ultra long shaft: 30 inch (XXL)
+
+- **Mounting code:** XXL or U
+- **Best for:** Sailboat auxiliaries, very deep-transom commercial applications
+- **Available on:** Some Mercury models, special order
+- **Less common in Ontario freshwater**
+
+For specific Mercury model availability by shaft length, [build a quote](/quote/motor-selection).
+
+## How to measure your transom height
+
+You need a tape measure and 5 minutes:
+
+1. **Find the lowest point of the hull at the transom** (the point where water meets hull when running on plane)
+2. **Measure straight up** from that point to the top of the transom (where the motor will mount)
+3. **That measurement is your transom height**
+
+Standard transom heights and matching shafts:
+
+| Transom height | Shaft length needed | Shaft code |
+|---|---|---|
+| 15 to 16 inches | Short | S (15") |
+| 19 to 21 inches | Long | L (20") |
+| 24 to 26 inches | Extra long | XL (25") |
+| 29 to 31 inches | Ultra long | XXL (30") |
+
+If your transom measurement is between standard sizes, the lower number is usually the right call (slightly long is worse than slightly short on most hulls). Verify with a hull walk-around before committing.
+
+## What changes the answer
+
+Five things move the right shaft length for your boat:
+
+- **Transom height** is the primary variable. Measure it.
+- **Hull design.** Deep-V hulls with sharp transom angles sometimes need 25 inch even with 20-inch transom heights. Pontoon hulls often work with 20 inch on what looks like a tall transom because the water sits lower.
+- **Motor placement on the transom.** Mounting bracket position affects effective shaft length. A motor mounted low needs less shaft than one mounted high.
+- **Setback brackets.** Some boats use setback brackets (extending the motor 5 to 10 inches behind the transom). Setback can change effective shaft length requirements.
+- **Use case.** Pure top-speed applications sometimes run shorter than recommended for less drag (with caveats about cavitation). We don't recommend this for typical recreational use.
+
+## Symptoms of wrong shaft length
+
+How to tell:
+
+### Shaft too short
+
+- **Cavitation under load.** Prop ventilates (sucks air), RPMs spike, boat doesn't accelerate.
+- **Bouncy ride at speed.** Motor lifts in waves, prop comes out of water.
+- **Overheating possible.** Cooling water intake may rise out of water.
+- **Cavitation plate visible above the water at speed.** It should be skimming, not airborne.
+
+### Shaft too long
+
+- **Reduced top speed.** Lower unit drags more water than necessary.
+- **Reduced fuel economy.** Same drag effect.
+- **Cavitation plate well below the water surface at speed.** It should be skimming.
+- **Motor sounds "loaded."** Working harder than it should at cruise.
+
+If you have any of these symptoms, the shaft is probably wrong. We diagnose during sea-trial of every repower at HBW.
+
+## Why HBW gets shaft length right
+
+Three things we do that prevent wrong-shaft mistakes:
+
+- **Measure transom during the walk-around.** Every repower starts with a measurement, not a guess.
+- **Know the hull patterns.** Three generations of HBW have rigged thousands of boats. We know that a typical 16 to 18 ft Lund console runs 20-inch, a Princecraft pontoon runs 20 or 25 depending on model year, and a Crestliner Tournament series may need 25.
+- **Confirm at sea-trial.** If shaft length is borderline, we sea-trial and verify cavitation plate position. Wrong shaft is caught and corrected, not lived with.
+
+## Common shaft length mistakes
+
+We see these every season:
+
+1. **Buying online without measuring.** Customer orders 20 inch shaft based on assumption, hull actually needs 25. Now they have an underwater motor.
+2. **Trusting old motor's shaft length.** "My old Mercury was 20 inch" doesn't always tell you what the new motor should be. The old motor may have been wrong too.
+3. **Splitting the difference.** "I need 22 inches, so I'll get the 20 and live with it." No. Wrong-shaft motors don't perform right. Get it right or change the transom mounting.
+4. **Ignoring setback bracket effects.** Some setbacks raise effective transom; some lower it. Account for it.
+5. **Sailboat auxiliaries with short shaft.** Sailboat transoms are usually deep. Long or extra long is the standard. Short shaft sailboat installs cavitate constantly.
+
+## Mercury shaft length codes (decoded)
+
+Mercury's model numbers tell you shaft length:
+
+- **MH** = Manual start, tiller (no shaft suffix typically, comes in standard short for that motor)
+- **EH** = Electric start, tiller
+- **EL** = Electric start, Long shaft (20")
+- **ELH** = Electric start, Long shaft, tiller
+- **EXL** = Electric start, eXtra Long shaft (25")
+- **ELPT** = Electric start, Long shaft, Power Tilt
+- **EXLPT** = Electric start, eXtra Long shaft, Power Tilt
+- **ELHPT** = Electric start, Long shaft, manual tiller, Power Tilt
+
+Examples:
+- **Mercury 90 EXLPT FourStroke** = 25-inch shaft (eXtra Long), electric start, Power Tilt
+- **Mercury 9.9 MH** = ~15-inch shaft (short), manual start, tiller
+- **Mercury 60 ELHPT** = 20-inch shaft (Long), electric start, manual tiller, Power Tilt
+
+For Mercury technical reference detail, see our [Mercury 2026 outboard lineup guide](/blog/mercury-2026-outboard-lineup-ontario).
+
+## Related guides
+
+- [Mercury 2026 Outboard Lineup Ontario](/blog/mercury-2026-outboard-lineup-ontario), full Mercury model overview
+- [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), control type
+- [Mercury Outboard Rigging Costs Explained](/blog/mercury-outboard-rigging-costs-ontario), rigging detail
+- [Portable Mercury Outboard Guide 2.5 to 20 HP](/blog/portable-outboard-mercury-guide-2-20hp), small motor specifics
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker shaft selection
+
+## Ready to spec the right shaft?
+
+Build a quote on the [motor selection page](/quote/motor-selection). The configurator includes shaft length selection by Mercury model.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to confirm your transom height before ordering, [give us a call at (905) 342-2153](tel:9053422153) or send us a side-profile photo of your boat with a tape measure on the transom. We can confirm the right shaft length in 5 minutes.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and shaft length is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
+`,
+    faqs: [
+      {
+        question: 'What outboard shaft length do I need?',
+        answer: 'Match shaft length to your boat\'s transom height. Standard pairings: 15-inch transom = short shaft (15"). 20-inch transom = long shaft (20"). 25-inch transom = extra long shaft (25"). Measure before ordering.'
+      },
+      {
+        question: 'How do I measure transom height?',
+        answer: 'Tape measure from the lowest point of the hull at the transom (where water meets hull on plane) straight up to the top of the transom (where the motor will mount).'
+      },
+      {
+        question: 'What\'s the most common Mercury shaft length?',
+        answer: '20-inch (Long shaft) is the most common across Ontario freshwater boats. Most aluminum console fishing boats, runabouts, and smaller pontoons use 20-inch. Bigger boats and pontoons go to 25-inch.'
+      },
+      {
+        question: 'What shaft length for a 16 ft aluminum fishing boat?',
+        answer: 'Typically 20-inch (Long). Verify by measuring transom height (should be roughly 19 to 21 inches). Some smaller 16 ft boats with low transoms run 15-inch (Short).'
+      },
+      {
+        question: 'What shaft length for a pontoon?',
+        answer: 'Most pontoons run 20-inch. Some larger pontoons or pontoons with deeper transoms run 25-inch. Verify with measurement.'
+      },
+      {
+        question: 'What shaft length for a sailboat auxiliary?',
+        answer: 'Usually 20-inch (Long) or 25-inch (Extra Long), often with even longer (30-inch / XXL) for deep-transom sailboats. Sailboat transoms are taller than typical powerboat transoms.'
+      },
+      {
+        question: 'What happens if my shaft is too short?',
+        answer: 'Cavitation. The prop ventilates (sucks air), RPMs spike, boat doesn\'t accelerate properly. Cooling water intake may rise out of water at speed, risking overheating. Have to slow down to keep the motor in the water.'
+      },
+      {
+        question: 'What happens if my shaft is too long?',
+        answer: 'Reduced top speed and fuel economy. Lower unit drags more water than necessary. Motor sounds "loaded" at cruise. Less responsive to trim.'
+      },
+      {
+        question: 'Can I run a slightly long shaft instead of slightly short?',
+        answer: 'Slightly long is usually less bad than slightly short. Slightly short causes cavitation; slightly long causes drag. Both are wrong. Get the right shaft.'
+      },
+      {
+        question: 'Does setback bracket affect shaft length?',
+        answer: 'Yes. Setback brackets extend the motor 5 to 10 inches behind the transom. Some increase effective transom height; some don\'t. Confirm with the bracket manufacturer or with HBW.'
+      },
+      {
+        question: 'Can I change shaft length on an existing motor?',
+        answer: 'On most Mercury motors, no. The shaft length is built into the motor. Changing requires a different motor variant. Some motors have field-modifiable shaft extensions, but it\'s not common.'
+      },
+      {
+        question: 'What\'s the cheapest way to get the right shaft?',
+        answer: 'Order the right shaft length the first time. Ordering wrong and exchanging adds shipping, time, and sometimes a restocking fee. We confirm shaft length during the quote process.'
+      },
+      {
+        question: 'What if my old motor was wrong shaft length all along?',
+        answer: 'We see this. Customer says "my old motor was 20-inch" but the boat actually needs 25-inch and the old motor was performing poorly the whole time. Repower is the right time to fix it. ---'
+      },
+    ]
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
