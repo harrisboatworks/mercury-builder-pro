@@ -4603,6 +4603,30 @@ export type Database = {
           total_spend: number
         }[]
       }
+      customer_match_candidates: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          cell_phone: string
+          city: string
+          company_name: string
+          customer_id: number
+          customer_name: string
+          customer_type: string
+          email: string
+          first_service_date: string
+          home_phone: string
+          last_service_date: string
+          lifetime_revenue: number
+          loyalty_customer: boolean
+          match_rank: number
+          match_score: number
+          phone: string
+          province: string
+          total_repair_orders: number
+          total_ros: number
+          total_spend: number
+        }[]
+      }
       customer_memory_lookup: {
         Args: { p_customer_query: string; p_limit?: number }
         Returns: {
@@ -4746,6 +4770,26 @@ export type Database = {
           technician: string
           unit: string
           vin: string
+        }[]
+      }
+      customer_units_summary: {
+        Args: { p_limit?: number; p_query: string }
+        Returns: {
+          cell_phone: string
+          city: string
+          company_name: string
+          customer_id: number
+          customer_name: string
+          deal_units: Json
+          email: string
+          home_phone: string
+          match_rank: number
+          open_ro_count: number
+          open_units: Json
+          phone: string
+          province: string
+          service_units: Json
+          work_phone: string
         }[]
       }
       decrypt_sin: { Args: { sin_encrypted: string }; Returns: string }

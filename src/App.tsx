@@ -101,6 +101,9 @@ const Unsubscribe = lazy(() => import("./pages/Unsubscribe"));
 const Promotions = lazy(() => import("./pages/Promotions"));
 const Repower = lazy(() => import("./pages/Repower"));
 const RepowerHub = lazy(() => import("./pages/RepowerHub"));
+const MotorSelectionHub = lazy(() => import("./pages/MotorSelectionHub"));
+const MaintenanceHub = lazy(() => import("./pages/MaintenanceHub"));
+const LakesHub = lazy(() => import("./pages/LakesHub"));
 const About = lazy(() => import("./pages/About"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
@@ -495,9 +498,12 @@ function AnimatedRoutes() {
         {/* Promotions Page */}
         <Route path="/promotions" element={<Promotions />} />
         
-        {/* Repower Hub (new top-level resource page) */}
+        {/* Hub pages (top-level resource pages) */}
         <Route path="/repower" element={<RepowerHub />} />
         <Route path="/repower-legacy" element={<Repower />} />
+        <Route path="/motor-selection" element={<MotorSelectionHub />} />
+        <Route path="/maintenance" element={<MaintenanceHub />} />
+        <Route path="/lakes" element={<LakesHub />} />
         
         {/* Compare Page */}
         <Route path="/compare" element={<Compare />} />
