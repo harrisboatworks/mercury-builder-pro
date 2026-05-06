@@ -13,7 +13,7 @@ import { BlogShareButtons } from '@/components/blog/BlogShareButtons';
 import { AuthorByline } from '@/components/blog/AuthorByline';
 import { FloatingShareBar } from '@/components/blog/FloatingShareBar';
 import { TableOfContents } from '@/components/blog/TableOfContents';
-import { getArticleBySlug, getRelatedArticles } from '@/data/blogArticles';
+import { getArticleBySlug, getRelatedArticles, parseLocalDate } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCTA } from '@/components/blog/BlogCTA';
