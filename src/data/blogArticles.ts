@@ -48,6 +48,30 @@ export function getScheduledArticlesCount(): number {
   return blogArticles.filter(article => !isArticlePublished(article)).length;
 }
 
+// Fallback/recycled hero images that historically marked draft/stub articles.
+// Any article still using one of these is excluded from the sitemap.
+const STUB_FALLBACK_HEROES = new Set<string>([
+  '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+  '/lovable-uploads/Mercury_Maintenance_Schedule.png',
+  '/lovable-uploads/Comparing_Motor_Families.png',
+  '/lovable-uploads/mercury-service.jpg',
+  '/lovable-uploads/Boat_Repowering_101_Hero.png',
+  '/lovable-uploads/mercury-comparison.jpg',
+]);
+
+// Sitemap eligibility: include scheduled (future-dated) posts so search engines
+// discover them ahead of release, but exclude drafts/stubs.
+export function isArticleSitemapEligible(article: BlogArticle): boolean {
+  const publishDate = article.publishDate || article.datePublished;
+  if (!publishDate) return false;
+  if (article.image && STUB_FALLBACK_HEROES.has(article.image)) return false;
+  return true;
+}
+
+export function getSitemapEligibleArticles(): BlogArticle[] {
+  return blogArticles.filter(isArticleSitemapEligible);
+}
+
 export const blogArticles: BlogArticle[] = [
   // ============================================
   // EXISTING ARTICLES (Already Published)
