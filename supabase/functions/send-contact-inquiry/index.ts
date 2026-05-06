@@ -150,9 +150,9 @@ const handler = async (req: Request): Promise<Response> => {
               <h3 style="color: #007DC5; margin: 0 0 15px 0;">Your Inquiry Details:</h3>
               <p style="margin: 5px 0; color: #64748b;"><strong>Type:</strong> ${inquiryData.inquiry_type}</p>
               <p style="margin: 5px 0; color: #64748b;"><strong>Priority:</strong> ${inquiryData.urgency_level}</p>
-              <p style="margin: 5px 0; color: #64748b;"><strong>Preferred Contact:</strong> ${inquiryData.preferred_contact_method}</p>
+              <p style="margin: 5px 0; color: #64748b;"><strong>Preferred Contact:</strong> ${escHtml(inquiryData.preferred_contact_method)}</p>
               <p style="margin: 15px 0 5px 0; color: #64748b;"><strong>Message:</strong></p>
-              <p style="margin: 0; color: #475569; font-style: italic;">"${inquiryData.message}"</p>
+              <p style="margin: 0; color: #475569; font-style: italic;">"${escHtml(inquiryData.message)}"</p>
             </div>
             
             <div style="background: #007DC5; color: white; border-radius: 8px; padding: 20px; margin: 20px 0;">
