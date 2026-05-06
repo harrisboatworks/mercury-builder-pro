@@ -53,7 +53,7 @@ const getStaticPages = (): SitemapEntry[] => {
 export function generateSitemapXML(): string {
   // Include scheduled posts so Google discovers them ahead of publish date.
   // Page-level visibility gate (parseLocalDate) handles 200/404 at request time.
-  const allArticles = blogArticles;
+  const allArticles = blogArticles.filter(isArticleSitemapEligible);
 
   const blogEntries: SitemapEntry[] = allArticles.map(article => ({
     loc: `/blog/${article.slug}`,
@@ -196,7 +196,7 @@ export async function getMotorSitemapEntries(): Promise<SitemapEntry[]> {
 // Generate full sitemap XML including motors (async version)
 export async function generateFullSitemapXML(): Promise<string> {
   // Include scheduled posts so Google discovers them ahead of publish date.
-  const allArticles = blogArticles;
+  const allArticles = blogArticles.filter(isArticleSitemapEligible);
 
   const blogEntries: SitemapEntry[] = allArticles.map(article => ({
     loc: `/blog/${article.slug}`,
