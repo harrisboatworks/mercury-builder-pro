@@ -198,14 +198,14 @@ serve(async (req) => {
           <h2>💬 New Chat Lead!</h2>
           <p>A customer requested a callback from the AI chat.</p>
           <hr>
-          <p><strong>Name:</strong> ${leadData.name}</p>
-          <p><strong>Phone:</strong> ${leadData.phone}</p>
-          ${leadData.email ? `<p><strong>Email:</strong> ${leadData.email}</p>` : ''}
+          <p><strong>Name:</strong> ${escHtml(leadData.name)}</p>
+          <p><strong>Phone:</strong> ${escHtml(leadData.phone)}</p>
+          ${leadData.email ? `<p><strong>Email:</strong> ${escHtml(leadData.email)}</p>` : ''}
           <p><strong>Lead Score:</strong> ${leadScore}/100</p>
           <hr>
-          <p><strong>Context:</strong> ${leadData.conversationContext || 'Requested callback'}</p>
-          ${leadData.motorContext?.model ? `<p><strong>Motor Interest:</strong> ${leadData.motorContext.model} (${leadData.motorContext.hp}HP)</p>` : ''}
-          ${leadData.currentPage ? `<p><strong>Page:</strong> ${leadData.currentPage}</p>` : ''}
+          <p><strong>Context:</strong> ${escHtml(leadData.conversationContext || 'Requested callback')}</p>
+          ${leadData.motorContext?.model ? `<p><strong>Motor Interest:</strong> ${escHtml(leadData.motorContext.model)} (${escHtml(String(leadData.motorContext.hp ?? ''))}HP)</p>` : ''}
+          ${leadData.currentPage ? `<p><strong>Page:</strong> ${escHtml(leadData.currentPage)}</p>` : ''}
           <hr>
           <p><em>Action: Call within 24 hours</em></p>
         `;
@@ -217,7 +217,7 @@ serve(async (req) => {
           from: 'Harris Boat Works <system@hbwsales.ca>',
           to: ['info@harrisboatworks.ca'],
           reply_to: 'info@harrisboatworks.ca',
-          subject: `💬 New Chat Lead: ${leadData.name}`,
+          subject: `💬 New Chat Lead: ${leadData.name}`.slice(0, 200),
           html: emailHtml
         });
 
