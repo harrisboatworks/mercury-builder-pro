@@ -90,6 +90,31 @@ function loadLocations() {
   }
 }
 
+// Load ALL blog articles (including future-dated/scheduled) for sitemap.
+// Returns a minimal shape: slug, publishDate, datePublished, dateModified, image, title.
+function loadAllBlogArticlesForSitemap() {
+  const dumpScript = `
+    import { blogArticles } from '../src/data/blogArticles.ts';
+    const items = blogArticles.map(a => ({
+      slug: a.slug,
+      title: a.title,
+      image: a.image,
+      publishDate: a.publishDate || null,
+      datePublished: a.datePublished || null,
+      dateModified: a.dateModified || null,
+    }));
+    process.stdout.write(JSON.stringify(items));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-dump-all.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
+    return JSON.parse(out);
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+
 // Load published blog articles (filters out future-dated posts).
 function loadBlogArticles() {
   const dumpScript = `
