@@ -1,4 +1,4 @@
-import { blogArticles, isArticlePublished } from '../data/blogArticles';
+import { blogArticles, isArticlePublished, isArticleSitemapEligible } from '../data/blogArticles';
 import { caseStudies } from '../data/caseStudies';
 import { locations } from '../data/locations';
 
