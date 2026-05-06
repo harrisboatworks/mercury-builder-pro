@@ -200,17 +200,17 @@ const handler = async (req: Request): Promise<Response> => {
           
           <div style="padding: 20px; background: #f8fafc;">
             <h2 style="color: #334155; margin: 0 0 15px 0;">Customer Details</h2>
-            <p><strong>Name:</strong> ${inquiryData.name}</p>
-            <p><strong>Email:</strong> ${inquiryData.email}</p>
-            <p><strong>Phone:</strong> ${inquiryData.phone || 'Not provided'}</p>
-            <p><strong>Preferred Contact:</strong> ${inquiryData.preferred_contact_method}</p>
+            <p><strong>Name:</strong> ${escHtml(inquiryData.name)}</p>
+            <p><strong>Email:</strong> ${escHtml(inquiryData.email)}</p>
+            <p><strong>Phone:</strong> ${escHtml(inquiryData.phone || 'Not provided')}</p>
+            <p><strong>Preferred Contact:</strong> ${escHtml(inquiryData.preferred_contact_method)}</p>
             
             <h2 style="color: #334155; margin: 20px 0 15px 0;">Inquiry Details</h2>
-            <p><strong>Type:</strong> ${inquiryData.inquiry_type}</p>
-            <p><strong>Priority:</strong> ${inquiryData.urgency_level}</p>
+            <p><strong>Type:</strong> ${escHtml(inquiryData.inquiry_type)}</p>
+            <p><strong>Priority:</strong> ${escHtml(inquiryData.urgency_level)}</p>
             <p><strong>Message:</strong></p>
-            <div style="background: white; border-left: 4px solid #007DC5; padding: 15px; margin: 10px 0;">
-              ${inquiryData.message}
+            <div style="background: white; border-left: 4px solid #007DC5; padding: 15px; margin: 10px 0; white-space: pre-wrap;">
+              ${escHtml(inquiryData.message)}
             </div>
             
             <p style="margin-top: 20px; color: #64748b; font-size: 14px;">
