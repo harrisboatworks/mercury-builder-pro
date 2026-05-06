@@ -297,7 +297,7 @@ export default function BlogArticle() {
                 <AuthorByline />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
-                  {new Date(article.datePublished).toLocaleDateString('en-US', {
+                  {parseLocalDate(article.datePublished).toLocaleDateString('en-US', {
                     month: 'long',
                     day: 'numeric',
                     year: 'numeric'
