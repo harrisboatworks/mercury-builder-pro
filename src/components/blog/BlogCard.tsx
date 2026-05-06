@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, Clock } from 'lucide-react';
-import { BlogArticle } from '@/data/blogArticles';
+import { BlogArticle, parseLocalDate } from '@/data/blogArticles';
 import { getCleanDescription } from '@/lib/strip-markdown';
 
 interface BlogCardProps {
@@ -47,7 +47,7 @@ export function BlogCard({ article }: BlogCardProps) {
         <div className="mt-4 flex items-center gap-4 text-xs text-repower-navy-900/55">
           <span className="flex items-center gap-1">
             <Calendar className="h-3.5 w-3.5" />
-            {new Date(article.datePublished).toLocaleDateString('en-US', {
+            {parseLocalDate(article.datePublished).toLocaleDateString('en-US', {
               month: 'short',
               day: 'numeric',
               year: 'numeric'
