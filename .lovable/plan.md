@@ -1,70 +1,84 @@
-## Goal
+# Tier 1 Blog Insertion + EDT Date Fix
 
-Two sequential passes:
+## Findings from current codebase
 
-1. **Pass A — Single file rewrite.** Replace the body of `public/blog/mercury-outboard-financing-ontario-2026.md` with the uploaded sample, while keeping the existing YAML front-matter and metadata header intact.
-2. **Pass B — Cross-blog cleanup, audit only.** Per the uploaded prompt's hard rules, run the Pass 1 audit across all blog articles and report findings. **No code changes** for the four fix areas until you review and approve the audit.
+- `src/data/blogArticles.ts` already has scheduled-publish gating via `publishDate` + `isArticlePublished` (line 25). Future-dated entries are already hidden until their date arrives — no rollout work needed.
+- `BlogArticle` body content is rendered via `MarkdownSectionCards`, which already uses `remark-gfm` (line 81 of that component). **Markdown pipe tables already render.** No table-renderer change needed. The legacy line-by-line `renderContent` in `BlogArticle.tsx` is no longer the path used for body content.
+- The relevant date bug is real: `new Date("2026-05-07")` is parsed as UTC midnight = May 6 8 PM EDT, so `isArticlePublished` flips a day early.
+- Blog article shape uses fields: `slug, title, description, content, image, author, datePublished, dateModified, publishDate, category, readTime, faqs, keywords` (no `internalLinks`, no `heroImageAlt`, no `primaryKeyword/secondaryKeywords`, no `lastModifiedDate`). I will map the user's spec to actual fields.
 
----
+## Field mapping (spec → real schema)
 
-## Pass A — Replace the financing article body
+| Spec field | Real field |
+|---|---|
+| `heroImage` | `image` |
+| `metaDescription` | `description` |
+| `publishedDate` | `datePublished` + `publishDate` |
+| `lastModifiedDate` | `dateModified` |
+| `primaryKeyword` + `secondaryKeywords` | merged into `keywords[]` |
+| `heroImageAlt`, `internalLinks` | not supported by schema — dropped, will be reported |
 
-**File:** `public/blog/mercury-outboard-financing-ontario-2026.md`
+## Plan
 
-The current file has a YAML front-matter block (lines 1-18) plus a small metadata header (Category / Published / Last updated / Read time / Canonical, lines 20-28) before the article body. The uploaded sample is body-only (no front-matter, no metadata header).
+### 1. EDT date helper
 
-What I will do:
+Add to `src/data/blogArticles.ts` (just above `isArticlePublished`):
 
-- **Preserve** the existing YAML front-matter (lines 1-18) exactly as-is, including `canonical`, `last_updated`, `keywords`, etc. (Per cleanup prompt rule: don't change SEO infrastructure or slugs.)
-- **Preserve** the metadata header block (Category / Published / Last updated / Read time / Canonical).
-- **Update** `last_updated` and `date_modified` in the front-matter to today's date (2026-05-04) since the body is being rewritten.
-- **Replace** everything from the H1 (`# Mercury Outboard Financing...`) onward with the new body from the uploaded sample (lines 1-143 of the upload).
-- The new body already includes its own H1, intro, Quick recommendation, What changes the answer, table of what's included, Standard vs promo rate, Approval criteria, Common scenarios, Cash vs financing, Related guides, CTAs, FAQ, and Jay Harris byline. No additional structural changes needed.
+```ts
+export function parseLocalDate(dateString: string): Date {
+  const [y, m, d] = dateString.split('-').map(Number);
+  return new Date(y, m - 1, d);
+}
+```
 
-I will not touch any other blog file in this pass.
+Update `isArticlePublished` to use `parseLocalDate(publishDate)` instead of `new Date(publishDate)`.
 
----
+### 2. BlogCard date display
 
-## Pass B — Cross-blog cleanup, Pass 1 audit (READ-ONLY)
+In `src/components/blog/BlogCard.tsx` (line 50), replace `new Date(article.datePublished)` with `parseLocalDate(article.datePublished)` and import the helper.
 
-The uploaded prompt is explicit: **"Pass 1: Audit only. Wait for Jay's approval before writing any code."** I will follow that rule strictly. After the financing rewrite ships, I will produce an audit report covering all four fix areas, then stop and wait for your go-ahead on each.
+Also update the date display at the top of `src/pages/BlogArticle.tsx` (around line 348) to use `parseLocalDate`.
 
-**Important scope finding from exploration:** The article corpus lives in `src/data/blogArticles.ts` (referenced explicitly in the prompt), not in `public/blog/*.md`. The `public/blog/` directory only contains 11 markdown files; the prompt references ~50 articles whose slugs (e.g., `boat-hull-replacement-vs-repower-decision`, `how-to-choose-right-horsepower-boat`, `mercury-75-vs-90-vs-115-comparison`) do not exist as .md files. The audit will treat `src/data/blogArticles.ts` as the source of truth and flag any cluster slugs that don't exist there so you can confirm scope before Pass 2+.
+### 3. Skip table renderer change
 
-The audit will report:
+Tables already render via `remark-gfm` in `MarkdownSectionCards`. No-op.
 
-- **Fix 1 (Internal link clusters):** For every article in `blogArticles.ts`, list its slug, which of the 5 clusters it belongs to (or "no clear cluster"), whether it already has a "Related guides" section, and which cluster-aligned links are missing. Flag any cluster slugs from the prompt that don't resolve to a real article.
-- **Fix 2 (Trust language):** Every instance of "Mercury dealer since 1965", "since 1947", "for nearly 60 years", or related phrasing across `src/data/blogArticles.ts`, `public/blog/*.md`, `src/data/frenchBlogArticles.ts`, etc. — with file path, line number, current phrasing, and a proposed corrected phrasing per the standard in the prompt.
-- **Fix 3 (Em dashes in titles):** Every article title containing `—` across all `*BlogArticles.ts` data files, with current title and a proposed replacement (colon, period, or restructure — whichever reads cleanest).
-- **Fix 4 (Author byline):** Whether `src/data/blogArticles.ts` (and the Article JSON-LD generator in `src/components/seo/`) already exposes an author field, where the existing article body is rendered (`src/pages/BlogArticle.tsx`), and where the proposed `AuthorByline` component would mount (top meta + bottom-of-body).
+### 4. Insert 4 new article entries
 
-Audit deliverable: a single markdown report posted in chat. No files written. After you review, you tell me which fixes to implement and in what order (the prompt suggests Fix 4 → 3 → 2 → 1).
+Append to `blogArticles` array (after the most recent entry):
 
----
+1. `used-outboard-buying-guide-ontario` — datePublished/publishDate `2026-05-07`, dateModified `2026-05-07`, category `'Buying Guide'`, image `/lovable-uploads/hero-used-outboard-buying-guide.png`
+2. `trent-severn-waterway-boating-guide-2026` — `2026-05-08`, category matched to `2026-rice-lake-fishing-season-outlook`, image `/lovable-uploads/hero-trent-severn-waterway-2026.png`
+3. `outboard-overheating-emergency-guide` — `2026-05-09`, category matched to `mercury-outboard-wont-start-troubleshooting`, image `/lovable-uploads/hero-outboard-overheating.png`
+4. `rice-lake-boating-guide-2026` — `2026-05-10`, category matched to #2, image `/lovable-uploads/hero-rice-lake-boating-guide.png`
 
-## What I will NOT do in this turn
+For each:
+- `description` = frontmatter `meta_description`, kept ≤160 chars (truncate cleanly if needed — the prerender build fails >160).
+- `content` = full markdown body from line ~21 onward, **excluding** the `[CUSTOMER STORY OPPORTUNITY ...]` line (replaced with a `// TODO: Add customer story for <slug>` comment placed adjacent to the entry).
+- `faqs` = the `## Frequently Asked Questions` Q&A pairs.
+- `keywords` = `[primary_keyword, ...secondary_keywords]` from frontmatter.
+- `readTime` computed from word count (≈200 wpm), e.g. `'7 min read'`.
+- `author` = `'Harris Boat Works'`.
+- For Post 4, add a contextual link to `/blog/pleasure-craft-licence-update-repower-ontario` in the Practical Notes section where PCL is mentioned.
 
-- Will not edit `src/data/blogArticles.ts` or any other blog file beyond `mercury-outboard-financing-ontario-2026.md`.
-- Will not add the `AuthorByline` component, change titles, change trust language, or add internal link clusters until the audit is reviewed and approved.
-- Will not change any slugs, canonical URLs, JSON-LD schemas, FAQ schema, or meta tags.
-- Will not touch French / Korean / Mandarin / Spanish localized blog data files (the prompt is silent on whether the cleanup applies to translations — I'll flag this in the audit and ask).
+### 5. Description length guard
 
----
+The build prerender enforces ≤160 chars on description / og:description / twitter:description (we hit this twice already). Each new article's `description` will be checked and trimmed before insertion.
 
-## Files touched
+### 6. Sitemap
 
-**Pass A (write):**
-- `public/blog/mercury-outboard-financing-ontario-2026.md` — replace body, preserve front-matter, bump `last_updated` and `date_modified` to 2026-05-04.
+`public/sitemap.xml` — add 4 `<url>` entries with `<lastmod>` = `publishDate`. (Sitemap is committed static XML in this repo.)
 
-**Pass B (read only):**
-- `src/data/blogArticles.ts`
-- `public/blog/*.md` (all 11)
-- `src/components/seo/*` (to check Article JSON-LD author field)
-- `src/pages/BlogArticle.tsx` (to locate where AuthorByline would mount)
-- Localized blog data files (flag-only, no analysis until you confirm scope)
+### 7. Verification
 
----
+- Build passes (description ≤160 chars on all 4 new posts).
+- 4 new entries present, no `[CUSTOMER STORY OPPORTUNITY]` strings in `blogArticles.ts`.
+- Future-dated posts hidden from `/blog` until their EDT date.
+- Sitemap includes all 4.
 
-## Open question to resolve in the audit phase, not now
+### Report after build
 
-Whether Fix 1-4 should also apply to `frenchBlogArticles.ts`, `koreanBlogArticles.ts`, `mandarinBlogArticles.ts`, `spanishBlogArticles.ts`. I'll flag this at the top of the audit report and wait for your call.
+- Article count before/after (+4)
+- Build status
+- Confirm dates gate correctly in EDT
+- Note dropped fields (`heroImageAlt`, `internalLinks`, `primaryKeyword`/`secondaryKeywords` as separate fields) and how they were folded in
