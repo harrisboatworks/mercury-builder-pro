@@ -765,7 +765,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'How do Mercury motor family prices compare in Canada in 2026?',
-        answer: 'In rough CAD ranges for a complete installed repower: FourStroke in the 90–115HP range runs approximately $16,000–$22,000 installed. Pro XS in the 115–150HP range is approximately $20,000–$30,000 installed. Verado starts at 250HP and runs approximately $42,000–$60,000 installed depending on configuration. SeaPro pricing is similar to FourStroke at comparable horsepower. All prices include engine, rigging, controls, prop, and installation labour. US prices online are in USD and don\'t reflect Canadian import duties or exchange rates — always get a CAD quote from a Canadian dealer.'
+        answer: 'In rough CAD ranges for a complete installed repower before HST: 75 to 115 HP projects typically run $17,000 to $22,000 all-in, 150 HP projects typically run $23,000 to $30,000 all-in, and 200 to 300 HP projects typically run $35,000 to $40,000 all-in. All-in means engine, rigging, controls, prop, and installation labour. Motor-family premiums vary by model, so use the live quote builder at mercuryrepower.ca for current pricing.'
       },
       {
         question: 'What is the best Mercury motor for a pontoon boat on Rice Lake?',
@@ -2127,7 +2127,7 @@ For occasional tubing with kids, 115 CT is plenty. For consistent tubing, skiing
 
 **Best fit:** 150 HP Command Thrust FourStroke. The 150 CT pulls skiers cleanly, handles wakeboarding loads, and runs the bigger pontoon in chop without struggling.
 
-Above 150 HP on traditional two-tube pontoons starts to be diminishing returns because the hull design itself limits top speed. Pricing for 150 HP repowers lands $23,000 to $36,000 CAD at HBW.
+Above 150 HP on traditional two-tube pontoons starts to be diminishing returns because the hull design itself limits top speed. Pricing for 150 HP repowers lands $23,000 to $30,000 CAD before HST at HBW.
 
 ### Tritoons (three-tube pontoons), 22 to 24 ft
 
@@ -2234,7 +2234,7 @@ Yes, with the right HP. Tubing is feasible on 115 HP CT or higher. Skiing requir
 Two-tube pontoons handle cruising, fishing, and lighter family use well. Tritoons are the better choice for active water sports, higher speeds, more passengers, and rougher water. The hull decision is separate from the motor decision.
 
 **What's the cost of a typical pontoon repower in Ontario?**
-For a 90 to 115 HP CT repower on an 18 to 20 ft pontoon, $17,000 to $22,000 CAD at HBW. For a 150 HP CT repower on a 20 to 22 ft pontoon, $23,000 to $36,000 CAD. [Live pricing here.](/quote/motor-selection)
+For a 90 to 115 HP CT repower on an 18 to 20 ft pontoon, $17,000 to $22,000 CAD at HBW. For a 150 HP CT repower on a 20 to 22 ft pontoon, $23,000 to $30,000 CAD before HST. 200 to 300 HP packages land $35,000 to $40,000 CAD before HST. [Live pricing here.](/quote/motor-selection)
 
 **What's the most popular Mercury for pontoons in Ontario?**
 The 115 EXLPT Command Thrust FourStroke. Fits the most common pontoon (20 ft two-tube), the most common use case (family cruising with occasional water sports), and the most common capacity rating (90 to 150 HP). The workhorse pontoon motor.
@@ -2286,7 +2286,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'What\'s the cost of a typical pontoon repower in Ontario?',
-        answer: 'For a 90 to 115 HP CT repower on an 18 to 20 ft pontoon, $17,000 to $22,000 CAD at HBW. For a 150 HP CT repower on a 20 to 22 ft pontoon, $23,000 to $36,000 CAD. [Live pricing here.](/quote/motor-selection)'
+        answer: 'For a 90 to 115 HP CT repower on an 18 to 20 ft pontoon, $17,000 to $22,000 CAD at HBW. For a 150 HP CT repower on a 20 to 22 ft pontoon, $23,000 to $30,000 CAD before HST. 200 to 300 HP packages land $35,000 to $40,000 CAD before HST. [Live pricing here.](/quote/motor-selection)'
       },
       {
         question: 'What\'s the most popular Mercury for pontoons in Ontario?',
@@ -3282,7 +3282,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'How much does it cost to repower a cottage boat in Ontario in 2026?',
-        answer: 'For a typical Ontario cottage boat — a 14–18ft aluminum hull getting a new Mercury FourStroke — expect to pay roughly $8,000 to $10,000 all-in, including the motor, installation hardware, rigging, and labour. A Mercury 40HP EFI FourStroke package comes in at the lower end; a 60HP EFI Command Thrust with full rigging is typically closer to the top. Build a quote at mercuryrepower.ca/quote/motor-selection for a real motor price, then call 905-342-2153 to discuss installation costs.'
+        answer: 'For a typical Ontario cottage boat — a 14–18ft aluminum hull getting a new Mercury FourStroke — 40 to 60 HP repowers typically run $11,000 to $15,000 all-in before HST, including motor, rigging, prop, and installation. A small 9.9 to 25 HP tiller motor is usually motor-only in the $2,000 to $5,500 range before HST because most tillers do not need a full rigging package. Build a quote at mercuryrepower.ca/quote/motor-selection for current motor pricing, then call 905-342-2153 to discuss installation scope.'
       },
       {
         question: 'Do I need to update my Pleasure Craft Licence after a repower?',
@@ -3720,7 +3720,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     faqs: [
       {
         question: 'How much does a typical repower cost?',
-        answer: 'For a common recreational boat (16-18ft with 75-115HP), expect $12,000-$18,000 including motor, rigging, and installation. We provide detailed written quotes before any work begins.'
+        answer: 'For a common recreational boat (16-18ft with 75-115HP), expect $17,000-$22,000 before HST including motor, rigging, prop, and installation. We provide detailed written quotes before any work begins.'
       },
       {
         question: 'Will a repower void my boat warranty?',
@@ -3736,7 +3736,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'How much does a typical boat repower cost in Ontario?',
-        answer: 'A typical boat repower in Ontario costs between $7,500 and $28,000+ depending on horsepower. 2026 ranges from Harris Boat Works in Gores Landing: a 40–60 HP repower runs $7,500–$11,000; a 75–115 HP repower runs $12,000–$18,000; a 150–200 HP repower runs $18,000–$28,000; 200 HP and above starts at $25,000+. These prices include motor, rigging, and installation. New controls and steering are additional if needed. For a written quote, use mercuryrepower.ca/quote/motor-selection or call 905-342-2153.'
+        answer: 'A typical boat repower in Ontario depends on horsepower. 2026 planning ranges from Harris Boat Works in Gores Landing: 9.9 to 25 HP tiller motors are usually motor-only at $2,000 to $5,500 before HST; a 40 to 60 HP repower runs $11,000 to $15,000 all-in; a 75 to 115 HP repower runs $17,000 to $22,000 all-in; a 150 HP repower runs $23,000 to $30,000 all-in; and a 200 to 300 HP repower runs $35,000 to $40,000 all-in. All-in means motor, rigging, prop, and installation. For a written quote, use mercuryrepower.ca/quote/motor-selection or call 905-342-2153.'
       },
       {
         question: 'Can Harris Boat Works repower any brand of boat?',
@@ -3748,7 +3748,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Should I repower or buy a new boat?',
-        answer: 'Repowering makes more financial sense when the hull and interior are in good shape and you just need a new motor. A 75–115 HP repower at $12,000–$18,000 is often a fraction of the cost of a comparable new boat. Repowering makes less sense when the hull has significant damage, the design no longer fits your needs, or the combined cost doesn\'t make economic sense. Harris Boat Works provides an honest assessment — we won\'t recommend a repower on a boat that isn\'t worth the investment.'
+        answer: 'Repowering makes more financial sense when the hull and interior are in good shape and you just need a new motor. A 75–115 HP repower at $17,000–$22,000 all-in before HST is often a fraction of the cost of a comparable new boat. Repowering makes less sense when the hull has significant damage, the design no longer fits your needs, or the combined cost doesn\'t make economic sense. Harris Boat Works provides an honest assessment — we won\'t recommend a repower on a boat that isn\'t worth the investment.'
       },
       {
         question: 'How long does a repower take from start to finish at Harris Boat Works?',
@@ -4077,11 +4077,11 @@ If budget is tighter and you fish recreationally — chasing smallmouth on Rice 
       },
       {
         question: 'Should I buy new or repower my bass boat?',
-        answer: 'If you have a solid bass boat hull with a tired motor, repowering is almost always the better financial decision. A new 20ft fishing boat runs $35,000 or more; a repower with a new Mercury 200HP Pro XS is typically $18,000–$24,000 all-in. You get modern fuel efficiency (often 30–40% better than an older two-stroke), current electronics integration, and a full Mercury warranty without paying for a new hull you don\'t need. Harris Boat Works handles full repower projects and can assess whether your transom and rigging are in shape for a swap.'
+        answer: 'If you have a solid bass boat hull with a tired motor, repowering is almost always the better financial decision. A new 20ft fishing boat runs $35,000 or more; a 200 to 300 HP repower with a new Mercury Pro XS typically falls in the $35,000 to $40,000 all-in range before HST. You get modern fuel efficiency (often 30–40% better than an older two-stroke), current electronics integration, and a full Mercury warranty without paying for a new hull you don\'t need. Harris Boat Works handles full repower projects and can assess whether your transom and rigging are in shape for a swap.'
       },
       {
         question: 'How much does a Mercury Pro XS cost in Canada in 2026?',
-        answer: 'Mercury Pro XS pricing in Canada in 2026: the 150HP is typically $18,000–$21,000 CAD; the 200HP runs approximately $22,000–$26,000; the 250HP is roughly $28,000–$33,000; and the 300HP can exceed $35,000 depending on configuration. These are approximate retail figures — actual price depends on prop selection and rigging components. At Harris Boat Works, you can build a real quote at mercuryrepower.ca/quote/motor-selection with actual current pricing.'
+        answer: 'Mercury Pro XS pricing in Canada varies by horsepower, shaft length, controls, prop selection, and rigging scope. As a planning guide, a 150 HP all-in repower is typically $23,000 to $30,000 before HST, while 200 to 300 HP all-in repowers are typically $35,000 to $40,000 before HST. At Harris Boat Works, you can build a real quote at mercuryrepower.ca/quote/motor-selection with actual current pricing.'
       },
       {
         question: 'What\'s the difference between Mercury Pro XS and Mercury FourStroke for bass fishing?',
@@ -8736,9 +8736,9 @@ Before you negotiate, anchor your expectations to real numbers — our [2026 Mer
     description: 'Find the perfect Mercury outboard for your family runabout. Expert recommendations for 16-22ft boats covering horsepower, features, and family-friendly options.',
     image: '/lovable-uploads/Best_Mercury_Outboard_for_Family_Runabouts_Hero.png',
     author: 'Harris Boat Works',
-    datePublished: '2026-11-16',
-    dateModified: '2026-11-16',
-    publishDate: '2026-11-16',
+    datePublished: '2026-05-06',
+    dateModified: '2026-05-06',
+    publishDate: '2026-05-06',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury family boat motor', 'family runabout outboard', 'mercury for pontoon', 'best mercury for recreation', 'family boat motor size'],
@@ -8840,17 +8840,17 @@ Family runabouts need motors that balance power, reliability, and ease of use. H
 ### Budget Considerations
 
 **Entry Level**: Mercury 90-115hp FourStroke
-- $10,000-15,000 installed
+- $17,000-$22,000 all-in before HST
 - Best value for smaller runabouts
 - Lower fuel and maintenance costs
 
 **Mid-Range**: Mercury 150hp FourStroke
-- $15,000-20,000 installed
+- $23,000-$30,000 all-in before HST
 - Most popular family choice
 - Excellent balance of power and economy
 
 **Premium**: Mercury 175-225hp V6
-- $20,000-30,000 installed
+- See the live quote builder for current installed pricing
 - Maximum performance
 - Best for larger boats or serious watersports
 
@@ -11744,7 +11744,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'How much does it cost to repower an Evinrude to Mercury in Ontario?',
-        answer: '2026 repower ranges from Harris Boat Works: 40–60 HP runs $7,500–$11,000; 75–115 HP runs $12,000–$18,000; 150–200 HP runs $18,000–$28,000; 200 HP+ starts at $25,000. These include motor, rigging, and installation. Because Evinrude controls and gauges are not compatible with Mercury, an Evinrude-to-Mercury repower typically includes new controls and gauges — factor this into the total. For a written quote, call 905-342-2153 or use mercuryrepower.ca/quote/motor-selection.'
+        answer: '2026 repower ranges from Harris Boat Works: 9.9 to 25 HP tiller motors are usually motor-only at $2,000 to $5,500 before HST; 40 to 60 HP runs $11,000 to $15,000 all-in; 75 to 115 HP runs $17,000 to $22,000 all-in; 150 HP runs $23,000 to $30,000 all-in; and 200 to 300 HP runs $35,000 to $40,000 all-in. All-in means motor, rigging, prop, and installation. Because Evinrude controls and gauges are not compatible with Mercury, an Evinrude-to-Mercury repower may require new controls and gauges — factor this into the total. For a written quote, call 905-342-2153 or use mercuryrepower.ca/quote/motor-selection.'
       },
       {
         question: 'Are Evinrude G2 parts still available in Ontario in 2026?',
@@ -11763,7 +11763,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   {
     slug: 'mercury-repower-cost-ontario-2026-cad',
     title: 'How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)',
-    description: 'A Mercury repower in Ontario in 2026 typically runs $8,000 to $22,000 CAD all-in for the most common 25 to 115 HP projects, before HST. Bigger HP scales up from there, with 250 to 300 HP repowers landing $35,000 to $40,000 CAD. Tiller motors 20 HP and under are just the motor price, no rigging or extras needed. The motor itself is the biggest line on any repower. Rigging, prop, and labour add a smaller share, especially on Mercury-to-Mercury repowers where most existing controls and cables can stay. The most accurate number is the one we build for your specific hull. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).',
+    description: 'For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to $22,000; 150 HP $23,000 to $30,000; and 200 to 300 HP $35,000 to $40,000, CAD before HST. Live pricing on the motor selection page is the source of truth.',
     image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-17',
@@ -11773,7 +11773,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['Mercury repower cost Ontario', 'Mercury repower cost Canada 2026', 'Mercury outboard price CAD', 'boat repower cost Ontario', 'Mercury engine price Canada'],
     content: `
 
-A Mercury repower in Ontario in 2026 typically runs $8,000 to $22,000 CAD all-in for the most common 25 to 115 HP projects, before HST. Bigger HP scales up from there, with 250 to 300 HP repowers landing $35,000 to $40,000 CAD. Tiller motors 20 HP and under are just the motor price, no rigging or extras needed. The motor itself is the biggest line on any repower. Rigging, prop, and labour add a smaller share, especially on Mercury-to-Mercury repowers where most existing controls and cables can stay. The most accurate number is the one we build for your specific hull. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to $22,000; 150 HP $23,000 to $30,000; and 200 to 300 HP $35,000 to $40,000, CAD before HST. Live pricing on the motor selection page is the source of truth.
 
 ## Quick recommendation
 
@@ -11781,11 +11781,11 @@ If you want a real repower number for your boat, build a quote on this site. It 
 
 If you want to ballpark before you build, here is the honest 2026 picture in CAD. These are ranges. For your specific motor and configuration, the live site has the actual number.
 
-- **Tiller motors 20 HP and under** (kickers, tenders, small aluminum tillers) are drop-in installs. No rigging, no extras. You pay the motor price and that is it. [See live pricing on the motor selection page.](/quote/motor-selection)
-- **Small remote (25 to 60 HP)** repowers land $8,000 to $15,000 all-in. [Live pricing here.](/quote/motor-selection)
-- **Mid (90 to 115 HP)**, the most common range we do, lands $17,000 to $22,000 all-in. [Live pricing here.](/quote/motor-selection)
-- **Higher (150 to 200 HP)** lands $23,000 to $36,000. [Live pricing here.](/quote/motor-selection)
-- **High-HP (250 to 300 HP)** lands $35,000 to $40,000. [Live pricing here.](/quote/motor-selection)
+- **9.9 to 25 HP tillers** are usually motor-only purchases in the $2,000 to $5,500 range before HST. Most tillers do not need a full rigging package. [See live pricing on the motor selection page.](/quote/motor-selection)
+- **40 to 60 HP** repowers land $11,000 to $15,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
+- **75 to 115 HP**, the most common range we do, lands $17,000 to $22,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
+- **150 HP** repowers land $23,000 to $30,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
+- **200 to 300 HP** repowers land $35,000 to $40,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
 
 Add 13% HST on top of any of those numbers. The live site shows your specific number after a three-minute build.
 
@@ -11806,13 +11806,13 @@ A repower quote moves up or down based on six things:
 
 This is the 2026 CAD picture before HST. Your specific number comes from the live quote builder.
 
-| Project tier | HP range | All-in range (CAD) | Common boats |
+| Project tier | HP range | All-in range (CAD before HST) | Common boats |
 |---|---|---|---|
-| Tiller, drop-in | 2.5 - 20 HP | Motor price only, no rigging | Tenders, dinghies, kickers, small aluminum tillers |
-| Small remote | 25 - 60 HP | $8,000 - $15,000 | 14-16 ft aluminum, small consoles |
-| Mid | 90 - 115 HP | $17,000 - $22,000 | 16-19 ft aluminum, small pontoons, fishing boats |
-| Higher | 150 - 200 HP | $23,000 - $36,000 | 18-22 ft pontoons, runabouts, mid-size fishing |
-| High-HP | 250 - 300 HP | $35,000 - $40,000 | Performance bass, large pontoons, center consoles |
+| Tiller, motor-only | 9.9 - 25 HP | $2,000 - $5,500 | Tenders, dinghies, kickers, small aluminum tillers |
+| Small remote | 40 - 60 HP | $11,000 - $15,000 | 14-16 ft aluminum, small consoles |
+| Mid | 75 - 115 HP | $17,000 - $22,000 | 16-19 ft aluminum, small pontoons, fishing boats |
+| 150 HP | 150 HP | $23,000 - $30,000 | 18-22 ft pontoons, runabouts, mid-size fishing |
+| High-HP | 200 - 300 HP | $35,000 - $40,000 | Performance bass, large pontoons, center consoles |
 :::image-placeholder
 slug: repower-cost-stack-by-hp-class
 type: infographic
@@ -11823,7 +11823,7 @@ image: /lovable-uploads/repower-cost-stack-by-hp-class.png
 :::
 
 
-The ranges above are 2026 working estimates. The actual price for your motor, your hull, and your configuration is on the [motor selection page](/quote/motor-selection). That is the source of truth. Tiller motors 20 HP and under are essentially drop-in installs (no rigging, no controls, no extras), and the motor itself is the whole purchase. For specific tiller motor pricing (a 9.9 MH versus a 15 MH versus a 20 MH), see [live pricing](/quote/motor-selection).
+The ranges above are 2026 working estimates. The actual price for your motor, your hull, and your configuration is on the [motor selection page](/quote/motor-selection). That is the source of truth. 9.9 to 25 HP tiller motors are usually motor-only purchases with no full rigging package, and the motor itself is the whole purchase. For specific tiller motor pricing (a 9.9 MH versus a 15 MH versus a 20 MH), see [live pricing](/quote/motor-selection).
 
 These are HBW's actual working ranges. For your specific motor, hull, and configuration, the live quote builder gives you the real CAD number in three minutes.
 
@@ -11920,7 +11920,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 ## FAQ
 
 **How much does a Mercury repower cost in Ontario in 2026?**
-A typical Mercury repower in Ontario in 2026 runs $8,000 to $22,000 CAD all-in for the common 25 to 115 HP projects, before HST. Tiller motors 20 HP and under are drop-in installs (motor price only, no rigging). Higher HP work (150 to 200 HP) lands $23,000 to $36,000 CAD. The biggest repowers (250 to 300 HP) range from $35,000 to $40,000 CAD. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.
+A typical Mercury repower in Ontario in 2026 depends on HP class. HBW planning ranges before HST are: 9.9 to 25 HP tillers at $2,000 to $5,500 motor-only; 40 to 60 HP at $11,000 to $15,000 all-in; 75 to 115 HP at $17,000 to $22,000 all-in; 150 HP at $23,000 to $30,000 all-in; and 200 to 300 HP at $35,000 to $40,000 all-in. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.
 
 **What is included in a Mercury repower quote?**
 Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial, and a full tune-up before delivery. We list every line item on every quote. Nothing hidden, no "shop fees" surprises at the end.
@@ -11956,7 +11956,7 @@ Mercury Marine includes 3 years of standard factory warranty on new outboards. H
 Build a quote on this site in three minutes, or give us a call at (905) 342-2153. The quote includes motor selection, rigging, install, and total. We do not require an account, an email, or a phone call to see prices.
 `,
     faqs: [
-      { question: 'How much does a Mercury repower cost in Ontario in 2026?', answer: 'A typical Mercury repower in Ontario in 2026 runs $8,000 to $22,000 CAD all-in for the common 25 to 115 HP projects, before HST. Tiller motors 20 HP and under are drop-in installs (motor price only, no rigging). Higher HP work (150 to 200 HP) lands $23,000 to $36,000 CAD. The biggest repowers (250 to 300 HP) range from $35,000 to $40,000 CAD. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.' },
+      { question: 'How much does a Mercury repower cost in Ontario in 2026?', answer: 'A typical Mercury repower in Ontario in 2026 depends on HP class. HBW planning ranges before HST are: 9.9 to 25 HP tillers at $2,000 to $5,500 motor-only; 40 to 60 HP at $11,000 to $15,000 all-in; 75 to 115 HP at $17,000 to $22,000 all-in; 150 HP at $23,000 to $30,000 all-in; and 200 to 300 HP at $35,000 to $40,000 all-in. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.' },
       { question: 'What is included in a Mercury repower quote?', answer: 'Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial, and a full tune-up before delivery. We list every line item on every quote. Nothing hidden, no "shop fees" surprises at the end.' },
       { question: 'How long does a Mercury repower take?', answer: 'A clean install is 1 to 2 days of shop time. From the day you confirm the order to the day you pick up the boat is usually 2 to 4 weeks, depending on motor availability. Repowering in winter (November to March) is the fastest. We have first pick of motors before the spring rush.' },
       { question: 'Do I need new controls and gauges?', answer: 'Sometimes. Mercury-to-Mercury repowers usually keep the existing control box and cables, which keeps rigging at the low end ($500 to $1,000 CAD). Mechanical Mercury controls from 2010 onward usually carry forward. Anything older than that is usually due for replacement. Digital throttle and shift on newer motors requires new controls regardless. Brand conversions (Evinrude, Yamaha, Honda to Mercury) push rigging to $2,000 to $3,000 CAD because the entire control system needs to swap.' },

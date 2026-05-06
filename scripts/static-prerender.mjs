@@ -1582,16 +1582,13 @@ function firstParagraph(content, fallback) {
 const BLOG_TABLE_FALLBACKS = {
   'mercury-repower-cost-ontario-2026-cad':
     '<table><caption>Mercury Repower Cost by Horsepower (CAD, Ontario, 2026)</caption>' +
-    '<thead><tr><th scope="col">HP</th><th scope="col">Motor price (CAD)</th><th scope="col">Installation (CAD)</th><th scope="col">Total typical (CAD)</th></tr></thead>' +
+    '<thead><tr><th scope="col">Project tier</th><th scope="col">HP range</th><th scope="col">All-in range (CAD before HST)</th><th scope="col">Common boats</th></tr></thead>' +
     '<tbody>' +
-    '<tr><th scope="row">9.9 HP</th><td>$3,400</td><td>$650</td><td>$4,050</td></tr>' +
-    '<tr><th scope="row">25 HP</th><td>$5,800</td><td>$900</td><td>$6,700</td></tr>' +
-    '<tr><th scope="row">60 HP</th><td>$10,200</td><td>$1,800</td><td>$12,000</td></tr>' +
-    '<tr><th scope="row">90 HP</th><td>$13,500</td><td>$2,300</td><td>$15,800</td></tr>' +
-    '<tr><th scope="row">115 HP</th><td>$15,500</td><td>$2,600</td><td>$18,100</td></tr>' +
-    '<tr><th scope="row">150 HP</th><td>$18,000</td><td>$3,200</td><td>$21,200</td></tr>' +
-    '<tr><th scope="row">200 HP</th><td>$24,000</td><td>$3,800</td><td>$27,800</td></tr>' +
-    '<tr><th scope="row">250 HP</th><td>$28,500</td><td>$4,200</td><td>$32,700</td></tr>' +
+    '<tr><th scope="row">Tiller, motor-only</th><td>9.9 - 25 HP</td><td>$2,000 - $5,500</td><td>Tenders, dinghies, kickers, small aluminum tillers</td></tr>' +
+    '<tr><th scope="row">Small remote</th><td>40 - 60 HP</td><td>$11,000 - $15,000</td><td>14-16 ft aluminum, small consoles</td></tr>' +
+    '<tr><th scope="row">Mid</th><td>75 - 115 HP</td><td>$17,000 - $22,000</td><td>16-19 ft aluminum, small pontoons, fishing boats</td></tr>' +
+    '<tr><th scope="row">150 HP</th><td>150 HP</td><td>$23,000 - $30,000</td><td>18-22 ft pontoons, runabouts, mid-size fishing</td></tr>' +
+    '<tr><th scope="row">High-HP</th><td>200 - 300 HP</td><td>$35,000 - $40,000</td><td>Performance bass, large pontoons, center consoles</td></tr>' +
     '</tbody></table>',
   'cheapest-mercury-outboard-canada-2026':
     '<table><caption>Cheapest New Mercury Outboards in Canada (CAD, 2026)</caption>' +
@@ -3435,7 +3432,7 @@ const CATALOG_BLOG_TWIN_SLUGS = [
   'evinrude-to-mercury-repower-ontario-guide',
   'complete-guide-boat-repower-kawarthas',
   'best-mercury-outboard-rice-lake-fishing',
-  'mercury-fourstroke-vs-verado-comparison',
+  'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
   'boat-winterization-cost-ontario-2026',
   'mercury-prokicker-rice-lake-fishing-guide',
 ];
