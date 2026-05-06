@@ -21,12 +21,19 @@ export interface BlogArticle {
   howToSteps?: HowToStep[]; // For instructional articles - enables HowTo schema
 }
 
+// Parses "YYYY-MM-DD" as local midnight (America/Toronto for our content),
+// not UTC. Prevents posts from publishing a day early in EDT.
+export function parseLocalDate(dateString: string): Date {
+  const [y, m, d] = dateString.split('-').map(Number);
+  return new Date(y, (m || 1) - 1, d || 1);
+}
+
 // Helper to check if an article is published
 export function isArticlePublished(article: BlogArticle): boolean {
   const publishDate = article.publishDate || article.datePublished;
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const articleDate = new Date(publishDate);
+  const articleDate = parseLocalDate(publishDate);
   articleDate.setHours(0, 0, 0, 0);
   return articleDate <= today;
 }
