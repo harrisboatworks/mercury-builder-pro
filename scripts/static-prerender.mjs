@@ -94,8 +94,8 @@ function loadLocations() {
 // Returns a minimal shape: slug, publishDate, datePublished, dateModified, image, title.
 function loadAllBlogArticlesForSitemap() {
   const dumpScript = `
-    import { blogArticles } from '../src/data/blogArticles.ts';
-    const items = blogArticles.map(a => ({
+    import { getSitemapEligibleArticles } from '../src/data/blogArticles.ts';
+    const items = getSitemapEligibleArticles().map(a => ({
       slug: a.slug,
       title: a.title,
       image: a.image,
