@@ -16103,6 +16103,883 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
       },
     ]
   },
+  // ============================================
+  // TIER 1 BATCH — Scheduled May 7-10, 2026
+  // ============================================
+  // TODO: Add customer story for used-outboard-buying-guide-ontario
+  {
+    slug: "used-outboard-buying-guide-ontario",
+    title: "Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)",
+    description: "A practical Ontario buyer's checklist for used outboards — tell-tale, gearcase oil, compression, what to walk away from. Written by a third-generation.",
+    image: "/lovable-uploads/hero-used-outboard-buying-guide.png",
+    author: 'Harris Boat Works',
+    datePublished: "2026-05-07",
+    dateModified: "2026-05-07",
+    publishDate: "2026-05-07",
+    category: "Buying Guide",
+    readTime: "8 min read",
+    keywords: ["used outboard buying guide Ontario", "how to buy a used outboard", "used Mercury outboard Ontario", "outboard motor inspection checklist", "Kijiji boat motor buying tips"],
+    content: `# Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)
+
+The short version: assume nothing, check everything, and run a compression test before money changes hands. A used outboard can be a great deal or a $4,000 paperweight — and the difference is almost always visible before you buy, if you know what to look at.
+
+We've been a Mercury dealer in Ontario since 1965 and we see used motors come through the shop every week — some bought smart, some bought sight-unseen off Marketplace. This is the inspection we do, in the order we do it. Use it as your checklist.
+
+---
+
+## Why the Used Outboard Market Is Tricky
+
+A used outboard has no odometer. Hours can be wrong, missing, or just guessed at. Most sellers aren't lying — they genuinely don't know.
+
+Ontario buyers do have one big advantage: most motors here are freshwater motors. A single saltwater season leaves a level of corrosion you can't undo. So if you're shopping Rice Lake, the Kawarthas, the Trent-Severn — start there. Freshwater is the floor.
+
+But "freshwater" doesn't mean "trouble-free." Neglected freshwater motors fail in their own ways: corrosion from sitting outside without a cover, fuel system damage from ethanol pump gas, and skipped service. Verify everything.
+
+---
+
+## Before You Drive Out to See It
+
+Five questions to text the seller before you waste a Saturday:
+
+1. **What year and model is it?** Get a photo of the data plate (port side of the engine block, near the cowl). Year, HP, serial number — all on it.
+2. **How many hours?** Most modern Mercurys have an hour meter. Ask for a photo of it.
+3. **Freshwater or salt?** Even one season in salt is a different motor.
+4. **Any work done in the last 2–3 years?** What, when, who.
+5. **Why selling?** Honest sellers have a real answer. "I just want to upgrade" is fine. "It runs great I just don't have time" — fine. "Long story" — keep asking.
+
+If they can't answer year, hours, or use history, you're buying a mystery. Price it accordingly or walk away.
+
+---
+
+## At the Boat: The Inspection Order We'd Use
+
+### 1. Walk around it before they start it
+
+Before they touch the key, look at:
+
+- **The skeg** — the fin at the bottom of the lower unit. Bent, broken, welded, or missing? That motor hit something hard. One impact can warp the gearcase, bend the prop shaft, or throw the lower unit out of alignment.
+- **The prop** — small dings are normal and cheap to fix ($80–$200 at any prop shop). A blade that was bent and "straightened" by hand is a problem; aluminum that's been bent twice is on its way to failing.
+- **The cowl** — cracks, impact damage, paint that doesn't match. If the cowl was replaced, ask why.
+- **The powerhead** — pull the cowl. Look for corrosion, salt residue, water staining (the motor's been submerged), or oil leaks. White powdery corrosion on the block is a flag.
+- **The transom mount** — cracks in the bracket or the boat's transom. This is where deferred maintenance hides.
+
+### 2. The tell-tale stream
+
+The "tell-tale" is the small water stream out the back of the motor near the mid-section. It tells you the water pump impeller is moving water through the engine.
+
+Within 30–60 seconds of starting, the stream should be **steady, continuous, and not scalding hot to the touch**. A weak trickle or no stream means the impeller is shot, the housing is damaged, or something's blocked. A failed water pump runs the engine hot — and a single overheat can warp a powerhead, blow a head gasket, or seize the motor outright.
+
+If the seller refuses to start it on muffs or in the water — that's the answer. Don't buy an untested motor.
+
+### 3. The gearcase oil colour test
+
+This is the single most diagnostic check on the boat. It takes 30 seconds.
+
+Crack the **lower drain plug** (small hex screw on the side of the lower unit). A few drops will come out. Look at the colour:
+
+- **Clear amber or brown** — normal.
+- **Milky/creamy white** — water has gotten past the gearcase seals. This is a $1,200–$2,500 lower unit rebuild, minimum. Don't buy it.
+- **Black with a burnt smell** — long-overdue service, possibly clutch dog wear.
+- **Metal flakes or shavings** — internal gear damage. Walk away.
+
+If the seller won't let you crack the plug, that's the answer.
+
+### 4. Compression test
+
+Bring a compression gauge (about $40 at Princess Auto). Pull all the spark plugs, thread the gauge into each cylinder one at a time, hold the throttle wide open, and crank for 4–6 revolutions.
+
+Two things matter:
+
+- **Numbers in range** — most modern Mercury 4-strokes will read 100–150 PSI per cylinder. Check the service manual for your specific model.
+- **Variation between cylinders** — should be **less than 10%**. A motor reading 145/142/138/144 is healthy. A motor reading 145/140/85/142 has a serious problem in cylinder 3.
+
+Low or uneven compression means worn rings, scored cylinders, or head gasket trouble. None of that gets fixed cheap.
+
+### 5. Spark plugs and fuel system
+
+While the plugs are out, look at them:
+
+- **Tan or light grey** — running clean.
+- **Black, sooty, or oily** — running rich, possible oil burn (2-stroke), or carbon buildup.
+- **White/blistered** — running lean and hot, head gasket trouble.
+
+While you're there, smell the fuel in the line. Stale gas smells like varnish. Water in the filter looks like — well, water in the filter.
+
+---
+
+## The On-Water Test (Don't Skip This)
+
+If at all possible, run the motor on the water before you pay. We've seen motors that fired fine in the driveway and shut down at 3,500 RPM under load. Things to watch:
+
+- **Cold start** — fires within a few seconds, no extended cranking.
+- **Idle** — smooth, no stalling, no surging.
+- **Acceleration** — clean through the RPM range, no hesitation or bog.
+- **WOT (wide-open throttle)** — should reach the manufacturer's rated max RPM for that motor with the right prop. If it's far below or far above the band, something is wrong (prop, fuel, or motor).
+- **Shifting** — clean F-N-R, no grind, no clunk.
+- **Trim and tilt** — full range, holds position.
+
+A seller who refuses an on-water test is telling you something. Listen.
+
+---
+
+## Ontario-Specific Things to Watch For
+
+A few problems specific to motors that have lived in this part of the country:
+
+- **Ethanol damage** — Ontario pump gas has up to 10% ethanol, which degrades fuel lines, dries out carb diaphragms, and absorbs water during storage. We sell ethanol-free 89 marine gas at Gores Landing for exactly this reason. A motor that's been run on ethanol pump gas and stored with fuel in the system over a winter or two will often have soft fuel lines and a gummed-up carb.
+- **Winter freeze damage** — if it wasn't properly winterized in Ontario, the powerhead may have frozen. Cracked block, blown welch plug, hairline crack in a cylinder head — none of that always shows on a casual look. A pressure test will catch it; a cold-running test won't.
+- **Stored outside, no cover** — UV damage on cowls, faded plastic, dried-out rubber — all indicators of how the rest of the motor was treated.
+
+---
+
+## Deal-Breakers — When to Walk
+
+Just walk if you see any of these:
+
+- Milky gearcase oil
+- Compression more than 10% off between cylinders
+- No tell-tale stream after 60 seconds running
+- Heavy corrosion on the powerhead
+- Seller won't start it, won't let you compression-test, won't let you on-water test
+- "Salvage" or "submerged" anywhere in the history
+- Hour meter that's been disconnected or replaced
+
+The cost of walking away is one Saturday. The cost of buying wrong is $2,500 to $8,000 in repairs you didn't budget for.
+
+---
+
+## What HBW Does — Pre-Purchase Inspections
+
+If you've found a motor you're serious about and the numbers don't terrify you, we do third-party pre-purchase inspections at the shop. Compression test, gearcase pressure test, computer diagnostics on anything 2010 or newer with SmartCraft. You bring the motor or the boat in; we tell you what's actually going on.
+
+The smart play with any private-sale outboard over $3,000: make your offer **conditional on passing a dealer inspection.** Most honest sellers will agree. The ones who won't — that's the answer.
+
+Book an inspection at [hbw.wiki/service](https://hbw.wiki/service).
+
+If you're already at the point where the math on used doesn't work — we can tell you that too. New Mercury pricing is on [mercuryrepower.ca](https://mercuryrepower.ca), and the configurator there will give you a real number in about 90 seconds. Sometimes a 10-year-old 90 HP isn't worth $4,500. Sometimes it absolutely is. Knowing which one you're looking at is the whole game.
+
+---
+
+## Frequently Asked Questions
+
+**How many hours is too many on a used Mercury outboard?**
+A well-maintained 4-stroke can run 1,500–3,000+ hours. A motor with 800 hours and full service records is usually a better buy than a motor with 200 hours and no records. Hours alone don't tell the story — care does.
+
+**How much should I budget for service after buying a used motor?**
+Plan on $500–$1,500 for the immediate first-year work: water pump impeller, gearcase oil change, spark plugs, fuel filter, fuel system clean-up. If the seller hasn't done it, you're going to.
+
+**Is a 2-stroke worth buying in 2026?**
+For a backup motor, light kicker duty, or a budget hull — sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: most 2-stroke engine oil is *not* TC-W3 — newer 4-strokes use 25W-40 marine oil, not 2-stroke premix.
+
+**Should I trust the hour meter?**
+Mostly yes on Mercurys made after about 2005, unless the meter was replaced. Mercury's SmartCraft system stores hours in the engine ECU as well, so a dealer with a diagnostic tool can verify true engine hours independent of the dashboard meter. We do that as part of our inspection.
+
+**Do you still service older outboards?**
+We're a full-service Mercury Platinum dealer and we work on everything from current models back through the older Mercury fleet. If parts exist for your motor, we can get them. If they don't, we'll tell you that too — we're not going to lead you on.
+
+---
+
+**Phone:** 905-342-2153
+**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**New Mercury quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+`,
+    faqs: [
+  {
+    "question": "How many hours is too many on a used Mercury outboard?",
+    "answer": "A well-maintained 4-stroke can run 1,500–3,000+ hours. A motor with 800 hours and full service records is usually a better buy than a motor with 200 hours and no records. Hours alone don't tell the story — care does."
+  },
+  {
+    "question": "How much should I budget for service after buying a used motor?",
+    "answer": "Plan on $500–$1,500 for the immediate first-year work: water pump impeller, gearcase oil change, spark plugs, fuel filter, fuel system clean-up. If the seller hasn't done it, you're going to."
+  },
+  {
+    "question": "Is a 2-stroke worth buying in 2026?",
+    "answer": "For a backup motor, light kicker duty, or a budget hull — sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: most 2-stroke engine oil is *not* TC-W3 — newer 4-strokes use 25W-40 marine oil, not 2-stroke premix."
+  },
+  {
+    "question": "Should I trust the hour meter?",
+    "answer": "Mostly yes on Mercurys made after about 2005, unless the meter was replaced. Mercury's SmartCraft system stores hours in the engine ECU as well, so a dealer with a diagnostic tool can verify true engine hours independent of the dashboard meter. We do that as part of our inspection."
+  },
+  {
+    "question": "Do you still service older outboards?",
+    "answer": "We're a full-service Mercury Platinum dealer and we work on everything from current models back through the older Mercury fleet. If parts exist for your motor, we can get them. If they don't, we'll tell you that too — we're not going to lead you on. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **New Mercury quotes:** [mercuryrepower.ca](https://mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON"
+  }
+],
+  },
+  // TODO: Add customer story for trent-severn-waterway-boating-guide-2026
+  {
+    slug: "trent-severn-waterway-boating-guide-2026",
+    title: "Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan",
+    description: "2026 Trent-Severn boating guide — free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat.",
+    image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
+    author: 'Harris Boat Works',
+    datePublished: "2026-05-08",
+    dateModified: "2026-05-08",
+    publishDate: "2026-05-08",
+    category: "Lifestyle",
+    readTime: "9 min read",
+    keywords: ["Trent-Severn Waterway 2026 guide", "Trent-Severn free lockage 2026", "Canada Strong Pass boating", "Trent-Severn locks hours 2026", "Rice Lake Trent-Severn", "boating Trent-Severn for beginners"],
+    content: `# Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan
+
+Big news for 2026: lockage on the Trent-Severn is **free from June 19 to September 7** as part of the Canada Strong Pass. For a 20-foot boat, that's $45 a day in fees you're not paying — about $315 saved on a full week-long transit, more if you stay seasonal.
+
+If you've ever thought about running the Trent-Severn — even a weekend stretch of it — 2026 is the year.
+
+This is the local's version of the guide. Harris Boat Works sits directly on the waterway at Gores Landing, on Rice Lake, between Locks 18 and 19. We've been here since 1947, we've fuelled boats running the system in both directions, and we know which questions first-timers actually ask.
+
+---
+
+## What the Trent-Severn Actually Is
+
+The Trent-Severn Waterway is a **386-kilometre navigable system** that connects Lake Ontario at Trenton to Georgian Bay at Port Severn. It's run by Parks Canada as a National Historic Site. There are 44 locks (including two flight locks and one marine railway), about 60 bridges, and it cuts through nine watersheds — including Rice Lake, the Kawarthas, Lake Simcoe's connection, and the Severn River.
+
+The *New York Times* named it one of the best travel experiences of 2025. That wasn't a fluke. There aren't many places on the planet where you can take a 20-foot fishing boat, lock through a hydraulic lift designed in 1904, anchor for the night beside a 19th-century lock keeper's cottage, and have lunch at a small-town pub the next afternoon.
+
+---
+
+## 🚨 Free Lockage 2026 — What's Actually Free
+
+The **Canada Strong Pass** runs **June 19 – September 7, 2026**. During that window:
+
+- **Lockage is free** for boats, canoes, and kayaks — Canadian residents and international visitors. No permit needed for the day.
+- **Camping and roofed accommodations** at Parks Canada sites are 25% off.
+- **Youth 17 and under** get free admission to all Parks Canada sites.
+
+What's still going to cost you:
+
+- **Mooring** — $1.50/ft overnight at a lockstation
+- **Shore power** — $12/night
+- **Parking, charts, third-party services** — same as any other year
+
+So a 20-foot boat tying up overnight at a lock pays $30. Plus power, if you need it. That's it. For the price of one day of normal lockage, you can sleep on the waterway.
+
+---
+
+## 2026 Navigation Season and Hours
+
+The waterway is open **May 15 – October 12, 2026.** Hours change three times during the season:
+
+**May 15 – June 18 (pre-peak):**
+- Mon–Thu: 10:00 am – 3:30 pm
+- Fri–Sun + Victoria Day (May 18): 9:00 am – 6:30 pm
+
+**June 19 – September 7 (peak — free lockage window):**
+- Mon–Thu: 9:00 am – 5:30 pm
+- Fri–Sun + Canada Day, Civic Holiday, Labour Day: 9:00 am – 6:30 pm
+
+**September 8 – October 12 (post-peak):**
+- Mon–Fri: 10:00 am – 3:30 pm
+- Sat–Sun + Thanksgiving: 9:00 am – 4:30 pm
+
+The rule that catches first-timers: **you have to arrive at the "blue zone" — the boat staging area at the lock — by the last lockage time, not just tie up at a marina nearby.** Lockmasters won't open the gates after closing. Plan your day so you have at least 30 minutes of slack at the end.
+
+---
+
+## A First-Timer's Guide to Locking Through
+
+If you've never locked through, the system looks intimidating. It isn't — it's slow, predictable, and the lockmasters do the actual work.
+
+What you do:
+
+1. **Approach slowly.** Wait in the blue zone (marked area before the lock) until the lockmaster signals you in.
+2. **Have fenders and dock lines ready on both sides.** The lock floor is concrete — your gel coat will not be happy if you bounce off the wall.
+3. **Have a person at the bow and a person at the stern** (or run mid-line solo on a small boat). The lockmaster will hand you a rope hung over the lock wall — you hold it as the water rises or falls. You're not tying off; you're keeping the boat against the wall.
+4. **Engine off, in neutral, while the chamber fills or empties.** It takes 8–15 minutes per lock.
+5. **Monitor VHF Channel 16** — that's where Parks Canada will reach you if anything's unusual. (Murray Canal swing bridges monitor Channel 14 specifically.)
+
+That's the whole job. A good lockmaster will walk a first-timer through it without making a thing of it.
+
+---
+
+## Vessel Constraints — Will Your Boat Fit?
+
+A few hard limits to plan around:
+
+- **Vertical clearance: 22 ft (6.7 m)** — that's the lowest fixed bridge on the system. Anything taller has to come down (radar arches, tall biminis, sailboats with masts un-stepped).
+- **Water depth: 8 ft on Locks 1–19, 6 ft on Locks 20–45.** Most pleasure boats are fine. Deep-draft cruisers — verify.
+- **Big Chute Marine Railway (Lock 44):** carries boats *over* land in a giant carriage. Max 99.2 ft length, 24 ft beam, 99 tons.
+
+Sailboats can transit, but the mast has to come down for the section between Trenton and Lakefield (or wherever your tallest fixed bridge is on your route). Most sailors un-step at Trenton or Frankford.
+
+---
+
+## Fees Outside the Free Window
+
+If you're locking through May 15 – June 18 or September 8 – October 12, here's what you'll pay (all rates per foot of boat length):
+
+| Permit | Rate |
+|--------|------|
+| Single lock and return | $1.50/ft |
+| One day | $2.25/ft |
+| Transit (one-way through the system) | $6.00/ft |
+| Six days | $6.50/ft |
+| Seasonal | $11.25/ft |
+
+For a 20-foot boat, that's $45 for a day, $225 for a season. Honestly, the seasonal pays for itself fast if you're locking through more than five times a year.
+
+---
+
+## A Sample Trip Plan from Rice Lake
+
+Most of our customers don't transit the whole 386 km. They take three or four locks at a time, anchor for the night, eat lunch in a small town, and come back. That's a perfectly good way to do it.
+
+If you're starting from HBW at Gores Landing, here are three trips that work in 2026:
+
+**Weekend run (2 days, 4 locks):** East from Rice Lake to Lock 18 at Hastings. Tie up overnight at Hastings, eat at one of the pubs, return Sunday. Quiet, scenic, and you only run the Otonabee section.
+
+**Long weekend (4 days, ~10 locks):** West from Rice Lake up the Otonabee through Locks 19 (Scott's Mills) and the **Peterborough Lift Lock — Lock 21**, which is the highest hydraulic lift lock in the world (a 65-foot rise in about 90 seconds). Continue to Lakefield and back.
+
+**Full Kawartha tour (7 days, 17 locks):** Rice Lake to Bobcaygeon and back. You'll see the Lift Lock, the flight at Healey Falls, Lakefield, Buckhorn, and the heart of the Kawarthas. Most relaxed pace. Best version if you've never done it.
+
+For a full transit (Trenton to Port Severn), plan **5–7 days minimum** at a relaxed pace. Faster is possible but you'll burn the days locking instead of seeing anything.
+
+---
+
+## Where to Fuel Up
+
+Marinas with fuel dot the waterway, but they're not evenly spaced. Major fuel stops in order from south to north: Trenton, Frankford, Campbellford, **Harris Boat Works (Gores Landing on Rice Lake)**, Hastings, Lakefield, Buckhorn, Bobcaygeon, Fenelon Falls, Orillia, Port Severn.
+
+Two notes about fuel:
+
+- **HBW pumps ethanol-free 89-octane marine gas.** That matters if you're storing fuel between trips — ethanol pump gas absorbs water and degrades over a few weeks. Ethanol-free is shelf-stable for the season.
+- **Plan fuel stops conservatively.** Some smaller marinas close mid-week or end-of-season. Call ahead if you're transiting outside peak summer.
+
+---
+
+## Don't Own a Boat? You Can Still Do This
+
+Two ways to experience the Trent-Severn without owning:
+
+- **Rent a small fishing or pontoon boat for a day from HBW** — we have a 9-boat fleet on Rice Lake (16 ft ProSports, 20 ft Transporters, 23 ft Cruise pontoons). Rice Lake itself is part of the waterway, so technically you're already on the Trent-Severn. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+- **Houseboat the system** — Le Boat (Smith Falls, but their network includes the Trent-Severn), Egan, and a couple of Kawartha-based outfits rent multi-day houseboats designed for this exact trip. Sleep on board, lock through every day, no boating licence required for most of these (the operator briefs you).
+
+---
+
+## Why HBW Is a Useful Home Base
+
+If you're driving up from the GTA, **we're 90 minutes from Toronto**, on the south shore of Rice Lake at Gores Landing. We have:
+
+- **Ethanol-free 89 marine gas** at the dock
+- **Transient slips** (4–6 available, $1.00/ft/night, call ahead)
+- **A 2-lane concrete launch ramp** ($20/day, $200/season) with parking, washrooms, snacks
+- **Service** if your motor decides the trip is over (we're a Mercury Platinum dealer)
+- **Rentals**, if you want to try Rice Lake before committing to a longer trip
+
+We've been on this lake since 1947. Three generations of our family have watched the Trent-Severn from this dock. If you want a starting point that knows the system from the water side instead of the tourism-board side, you've got one.
+
+Call **905-342-2153** before you head out, especially if you need a slip or want to confirm fuel availability. And if your old motor's giving you doubts about a 200-km round trip — that's a different conversation, but it's one we have all the time. [mercuryrepower.ca](https://mercuryrepower.ca) for new Mercury pricing.
+
+---
+
+## Frequently Asked Questions
+
+**Do I need a special licence to lock through the Trent-Severn?**
+No special lockage licence is required. You do need your standard Pleasure Craft Operator Card (PCOC) — that's a one-time test, not annual — and your boat needs a valid Pleasure Craft Licence (PCL). The 2026 PCL changes converted lifetime licences to 5-year renewals at $24, so check yours before you go.
+
+**How long does it take to lock through?**
+A standard lock takes 8–15 minutes from arrival to departure. The Peterborough Lift Lock is faster, the Big Chute Marine Railway is slower (~25 minutes). Plan for 20 minutes per lock when calculating travel days.
+
+**Can I anchor inside a lock chamber overnight?**
+No — but you can tie up at the lockstation walls (above or below the lock) for $1.50/ft. Most lockstations have water and shore power available.
+
+**What's the best part of the system if I only have one day?**
+The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal stretch is the highlight reel. From Rice Lake, that's a solid full day round-trip with one lift-lock cycle, which is the experience.
+
+**Is fuel cash-only at lockstations?**
+Parks Canada doesn't sell fuel at lockstations — only commercial marinas do. Most marinas accept cards. Bring a backup credit card just in case.
+
+---
+
+**Phone:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+**Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
+**Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
+`,
+    faqs: [
+  {
+    "question": "Do I need a special licence to lock through the Trent-Severn?",
+    "answer": "No special lockage licence is required. You do need your standard Pleasure Craft Operator Card (PCOC) — that's a one-time test, not annual — and your boat needs a valid Pleasure Craft Licence (PCL). The 2026 PCL changes converted lifetime licences to 5-year renewals at $24, so check yours before you go."
+  },
+  {
+    "question": "How long does it take to lock through?",
+    "answer": "A standard lock takes 8–15 minutes from arrival to departure. The Peterborough Lift Lock is faster, the Big Chute Marine Railway is slower (~25 minutes). Plan for 20 minutes per lock when calculating travel days."
+  },
+  {
+    "question": "Can I anchor inside a lock chamber overnight?",
+    "answer": "No — but you can tie up at the lockstation walls (above or below the lock) for $1.50/ft. Most lockstations have water and shore power available."
+  },
+  {
+    "question": "What's the best part of the system if I only have one day?",
+    "answer": "The Peterborough Lift Lock (Lock 21) and the surrounding Lakefield-Trent canal stretch is the highlight reel. From Rice Lake, that's a solid full day round-trip with one lift-lock cycle, which is the experience."
+  },
+  {
+    "question": "Is fuel cash-only at lockstations?",
+    "answer": "Parks Canada doesn't sell fuel at lockstations — only commercial marinas do. Most marinas accept cards. Bring a backup credit card just in case. --- **Phone:** 905-342-2153 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) **Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)"
+  }
+],
+  },
+  // TODO: Add customer story for outboard-overheating-emergency-guide
+  {
+    slug: "outboard-overheating-emergency-guide",
+    title: "Your Mercury Is Overheating — What to Do Right Now (and How to Prevent It)",
+    description: "A Mercury Platinum dealer's emergency-and-prevention guide for outboard overheating — what to do in the next 60 seconds, what to check at the dock, and how.",
+    image: "/lovable-uploads/hero-outboard-overheating.png",
+    author: 'Harris Boat Works',
+    datePublished: "2026-05-09",
+    dateModified: "2026-05-09",
+    publishDate: "2026-05-09",
+    category: "Troubleshooting",
+    readTime: "9 min read",
+    keywords: ["outboard overheating what to do", "Mercury outboard overheating", "Mercury impeller replacement", "tell-tale water stream weak", "Rice Lake weed intake clog", "outboard overheat alarm"],
+    content: `# Your Mercury Is Overheating — What to Do Right Now (and How to Prevent It)
+
+If you're reading this on the water with the overheat alarm going off, **skip ahead to the next section**. Get yourself sorted, then come back for the rest.
+
+If you're reading it from your couch on a Wednesday in February — good. The best time to learn about overheating is before it happens. Five minutes here might save you a $2,500 head gasket job, or a $4,500 powerhead.
+
+This is the emergency-then-prevention guide we'd give a customer who walks into the shop at Gores Landing. Mercury-specific, Rice Lake-tested, no fluff.
+
+---
+
+## On the Water Right Now? Do This in This Order.
+
+### 1. Throttle back to idle. Don't shut it off yet.
+
+Going from WOT straight to engine-off can do its own damage to a hot powerhead. Drop to idle first. Buy yourself 30 seconds to think.
+
+### 2. Look at the tell-tale stream
+
+The tell-tale (the little water stream out the back of the motor) is your first diagnostic. Right now:
+
+- **Strong, steady stream** — cooling water is flowing. Overheat may be a sensor fault, a thermostat, or an internal blockage. Continue at idle, head for shore.
+- **Weak, sputtering stream** — impeller is failing or partially blocked. Idle in only.
+- **No stream at all** — water pump has failed or the intake is blocked solid. **Shut down.** Running dry kills an impeller in 30 seconds and a powerhead in a few minutes.
+
+### 3. If the alarm keeps ringing or the stream is weak/gone — kill the engine.
+
+Tilt the motor up out of the water. Look at the intake screens on the lower unit (the slots where water gets pulled in). On Rice Lake and the Kawarthas in summer, the answer is almost always **weeds, plastic, or a chunk of bottom debris** stuck in the grates.
+
+Clear it by hand. A boat hook or a screwdriver helps for stubborn stuff.
+
+### 4. Wait 10–15 minutes before restarting.
+
+Let the powerhead cool. Check the stream when you fire it back up. If it comes back full and the alarm doesn't return at idle, you're probably fine to head home **at low RPM**.
+
+### 5. If the alarm comes back, don't fight it.
+
+Call for a tow, drift to shore, or paddle if you have to. Running an overheated motor "just to get home" is how a $40 impeller becomes a $4,500 lower unit and powerhead repair.
+
+We've fixed both kinds of boats. The towed-in boat is always cheaper.
+
+---
+
+## What's Actually Happening Inside
+
+A Mercury outboard is **raw-water cooled** — there's no closed loop, no antifreeze in the powerhead. Water gets pulled in through the lower unit grates, pushed up by the impeller in the water pump, routed through the cylinder head and exhaust passages, and exits through the tell-tale and the prop hub.
+
+If anything in that chain stops moving water, parts heat up fast. The thermostat opens at about 143°F (62°C). At 200°F+, head gaskets fail. By 250°F, you're warping a cylinder head. Past that, you're seizing the powerhead.
+
+The components at risk:
+
+- **Cylinder head** — warps under heat, $1,500–$3,000 to repair or replace
+- **Head gasket** — blown gasket lets coolant water into the cylinders, $800–$2,000
+- **Water pump impeller** — toast in 30 seconds running dry, $40–$80 part + 1–2 hours labour
+- **Powerhead** — seized, $4,000–$7,000+ depending on motor
+
+---
+
+## The Five Causes (in Order of How Often We See Them)
+
+### 1. Blocked water intake (most common, especially mid-summer)
+
+Weeds, plastic bags, fishing line, sand, mud — anything sucked against the intake grates blocks flow. Rice Lake's weed beds peak in late July and August; that's when our service phone rings.
+
+**Fix:** clear the grates. Two minutes.
+
+### 2. Worn or shredded impeller
+
+The water pump impeller is a rubber paddle wheel. It wears with use, gets brittle from sitting through a winter, and eventually loses fins or cracks across its body. Mercury's recommendation:
+
+> **Replace the impeller every 100 hours OR annually — whichever comes first.**
+
+That second clause catches a lot of people. A boat that ran 25 hours last season and 30 the season before still needs an impeller. Rubber dries, cracks, and gets stuck-pressed against the housing over a 6-month winter.
+
+**Fix:** new impeller, $40 part. We do it as part of any 100-hour service.
+
+### 3. Stuck thermostat
+
+Thermostats fail closed (engine overheats from startup) or stuck open (engine never gets to operating temp, runs sluggish, fouls plugs). The closed-failure version triggers the overheat alarm 3–5 minutes after startup, even with a clean intake and good impeller.
+
+**Fix:** new thermostat. $30–$60 part. Change every 2–3 years as preventive — they're cheap, the labour is minimal.
+
+### 4. Clogged poppet valve (high-RPM-only overheats)
+
+The poppet valve is a pressure-relief valve in the cooling system. When it clogs, the engine runs cool at idle but overheats at WOT or high cruise. **If your tell-tale is fine at idle but the alarm hits at 4,000 RPM — this is the prime suspect.**
+
+**Fix:** clean or replace. We see this on motors that have run hard in silty water without regular flushing.
+
+### 5. Internal scale and mineral buildup
+
+If you've replaced impeller, thermostat, and poppet valve and it still overheats — internal cooling passages are gummed up. Time for a cooling system flush with a marine descaler. This isn't a DIY job on most newer Mercurys; it requires the right product and the right technique to not damage gaskets.
+
+---
+
+## Diagnostic Flow at the Dock
+
+Once the boat's back on the trailer or at the dock, step through this in order:
+
+1. **Tell-tale flow on muffs** — Garden hose to the engine flush port (or earmuffs over the intakes), motor on, watch the stream. Strong = pump is OK. Weak = pull the lower unit and look at the impeller.
+2. **Pull the lower unit and inspect the impeller** — Visual check. Cracked, missing fins, hardened, or melted = replace.
+3. **Test the thermostat in hot water** — Drop it in a pot of water on the stove with a thermometer. Should pop open around 143°F. Doesn't open = replace.
+4. **If it overheats at high RPM only** — Pull the poppet valve, clean or replace.
+5. **Still overheating** — Internal flush time. Bring it in.
+
+---
+
+## Why Rice Lake (and the Kawarthas Generally) Eats Impellers
+
+A few things specific to this part of Ontario:
+
+- **Heavy weed growth** by mid-July. The intake is constantly catching plant matter. Even when it's not blocking flow, it's getting drawn against the impeller and abrading rubber.
+- **Silty bottom.** Rice Lake's mud and silt get sucked through the cooling passages with the water. Over years, they build up internal scale. Regular flushing is the only counter.
+- **6-month off-season.** From November to April, that impeller sits dry, deformed against the pump housing. It comes out of storage already partly compromised.
+
+If you fish or run weed beds heavily, **change the impeller every spring** — full stop. It's $40 in parts and an hour of labour, vs. the kind of bills overheating writes.
+
+---
+
+## Prevention Habits (the Stuff That Actually Matters)
+
+Three habits that prevent 90% of overheating calls:
+
+**1. Check the tell-tale stream every single time you start the motor.** First 30 seconds. Strong stream = you're fine to go. Weak or absent = kill it before you leave the dock. This is the single most important habit.
+
+**2. Flush after every trip.** Especially if you've been in weed beds or near the bottom. Mercurys have a freshwater flush port on the cowl — hook a hose to it for 10 minutes after each outing. It's free and it doubles your cooling system's lifespan.
+
+**3. Replace the impeller annually.** Don't wait for it to fail. The number of customers we see who've "never had a problem with the old one" — and then had a problem with the old one — is high. Spring service is the right time.
+
+A bonus habit if you run remote: **carry a spare impeller and the right tools on board.** It's a 30-minute job at the dock if you have the parts. Not a job at all if you don't.
+
+---
+
+## When to Call HBW
+
+Some overheating problems aren't 5-minute fixes:
+
+- Persistent alarm after impeller AND thermostat are confirmed good
+- Burning-rubber smell (impeller has run dry — possible internal damage)
+- Overheating at high RPM only after multiple component swaps (poppet valve, internal scale)
+- Any indication of head gasket trouble (white smoke, water in oil, milky residue on the dipstick)
+- A single overheat event lasting more than 30 seconds — it's worth a compression check before it becomes a bigger story
+
+We're a Mercury Platinum dealer, factory-trained on the full Mercury cooling-system diagnostic. SmartCraft-equipped motors give us data the dashboard alarm doesn't — actual peak temperatures, where in the cycle the spike happened, and whether anything else flagged at the same time. That data shortens the diagnosis from "guess and replace parts" to "we know exactly what failed."
+
+Book a service slot at **[hbw.wiki/service](https://hbw.wiki/service)**.
+
+If your motor is older or the repair is going to run more than half the cost of a replacement, that's a different conversation — and one we'll have honestly. Mercury repower pricing is on **[mercuryrepower.ca](https://mercuryrepower.ca)** with no games, no "call for quote."
+
+---
+
+## Frequently Asked Questions
+
+**How long can I run an overheating outboard before damage?**
+Less than a minute, in the worst case. A dry-running impeller cooks in 30 seconds. A motor running hot from a stuck thermostat may give you 2–3 minutes before head-gasket-level damage starts. The safe answer is: shut it down at the first alarm. Don't bargain with the temperature gauge.
+
+**My tell-tale stream is steady but my alarm keeps going off — what gives?**
+A stream means water is moving, but it doesn't prove the cooling system is fully circulating internally. Common culprits: a stuck thermostat, a failed temp sensor, or partial internal blockage. Bring it in for a real diagnosis.
+
+**Should I replace the impeller myself?**
+On smaller motors (under 30 HP), yes — it's straightforward, well-documented, and the parts are cheap. On modern V6/V8s with electric trim, alignment-sensitive lower units, and SmartCraft, the labour-to-mistake ratio gets worse. We charge under $200 in labour on most jobs and we've done thousands.
+
+**How often should I flush my motor?**
+After every use is best practice. At minimum, after any trip in weeds, silt, or shallow water. Use the flush port on the cowl with a garden hose, run for 10 minutes at idle (or per Mercury's spec for your model), shut down.
+
+**Does ethanol-free fuel affect overheating?**
+Not directly — overheating is a cooling-side problem, not a fuel-side one. But ethanol pump gas does stress the rest of the motor in ways that compound problems. We sell ethanol-free 89-octane marine gas at the dock for this reason.
+
+**My boat is on the water and I'm panicking. What do I do?**
+Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns — call for a tow, don't try to make it home. **905-342-2153** if you're in our area.
+
+---
+
+**Phone:** 905-342-2153
+**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
+**Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+`,
+    faqs: [
+  {
+    "question": "How long can I run an overheating outboard before damage?",
+    "answer": "Less than a minute, in the worst case. A dry-running impeller cooks in 30 seconds. A motor running hot from a stuck thermostat may give you 2–3 minutes before head-gasket-level damage starts. The safe answer is: shut it down at the first alarm. Don't bargain with the temperature gauge."
+  },
+  {
+    "question": "My tell-tale stream is steady but my alarm keeps going off — what gives?",
+    "answer": "A stream means water is moving, but it doesn't prove the cooling system is fully circulating internally. Common culprits: a stuck thermostat, a failed temp sensor, or partial internal blockage. Bring it in for a real diagnosis."
+  },
+  {
+    "question": "Should I replace the impeller myself?",
+    "answer": "On smaller motors (under 30 HP), yes — it's straightforward, well-documented, and the parts are cheap. On modern V6/V8s with electric trim, alignment-sensitive lower units, and SmartCraft, the labour-to-mistake ratio gets worse. We charge under $200 in labour on most jobs and we've done thousands."
+  },
+  {
+    "question": "How often should I flush my motor?",
+    "answer": "After every use is best practice. At minimum, after any trip in weeds, silt, or shallow water. Use the flush port on the cowl with a garden hose, run for 10 minutes at idle (or per Mercury's spec for your model), shut down."
+  },
+  {
+    "question": "Does ethanol-free fuel affect overheating?",
+    "answer": "Not directly — overheating is a cooling-side problem, not a fuel-side one. But ethanol pump gas does stress the rest of the motor in ways that compound problems. We sell ethanol-free 89-octane marine gas at the dock for this reason."
+  },
+  {
+    "question": "My boat is on the water and I'm panicking. What do I do?",
+    "answer": "Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear intakes, wait 15 minutes, restart and check stream. If alarm returns — call for a tow, don't try to make it home. **905-342-2153** if you're in our area. --- **Phone:** 905-342-2153 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service) **Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca) **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON"
+  }
+],
+  },
+  // TODO: Add customer story for rice-lake-boating-guide-2026
+  {
+    slug: "rice-lake-boating-guide-2026",
+    title: "Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes",
+    description: "A local's guide to Rice Lake — launches, the sunken railway hazard, fishing seasons (FMZ 17), launches compared, and what makes this lake different. By.",
+    image: "/lovable-uploads/hero-rice-lake-boating-guide.png",
+    author: 'Harris Boat Works',
+    datePublished: "2026-05-10",
+    dateModified: "2026-05-10",
+    publishDate: "2026-05-10",
+    category: "Lifestyle",
+    readTime: "11 min read",
+    keywords: ["Rice Lake boating guide", "Rice Lake fishing 2026", "Rice Lake boat launch", "Rice Lake sunken railway", "FMZ 17 fishing regulations", "Rice Lake walleye opener"],
+    content: `# Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes
+
+Rice Lake doesn't make the tourism brochures. It should.
+
+It's a 32-kilometre fishery 90 minutes from downtown Toronto, sitting right in the Trent-Severn system, with more fish per acre than almost any lake in Ontario. It's also genuinely tricky water — shallow, weedy, with one of the most notorious prop hazards in the province sitting four feet below the surface in the middle of the lake.
+
+Harris Boat Works has been on this lake since 1947. We launch boats here, rent them, fuel them, fix them, and pull them out for winter every fall. This guide is what we'd tell you if you walked into the shop on the first warm Saturday in May.
+
+---
+
+## Rice Lake at a Glance
+
+- **Length:** ~32 km east-west (Bewdley to Hastings)
+- **Width:** ~5 km at widest
+- **Max depth:** 27 ft. Most of the lake is 6–10 ft.
+- **Bottom:** Mudflats, weed beds, sand. Highly fertile water — the reason for the fishing reputation.
+- **Region:** Straddles Northumberland and Peterborough counties; south shore is Gores Landing/Bewdley/Harwood, north shore is Hiawatha/Roseneath, west end opens into the Otonabee River.
+- **Trent-Severn:** Rice Lake is part of the navigable Trent-Severn Waterway between Locks 18 (Hastings) and 19 (Scott's Mills/Peterborough).
+- **Fishery zone:** FMZ 17 — same regulations as the Kawarthas.
+
+Distance from Toronto: about **90 minutes** door-to-water from the eastern GTA, **2 hours** from west of the city. Cobourg is 20 minutes south, Peterborough is 30 minutes north.
+
+---
+
+## The Sunken Railway — Yes, It's Real
+
+If you take one fact away from this guide, take this one: there is an abandoned railway line submerged across Rice Lake, and it has wrecked more lower units than every other hazard combined.
+
+The story: the **Cobourg & Peterborough Railway**, built in 1834. The trestle was damaged by ice in 1861 and never rebuilt. When the lake was dammed for the Trent-Severn system, water levels rose about 8 feet, and now the railway remains sit roughly **4 feet below the surface** across the middle of the lake — running roughly between Hiawatha and Harwood.
+
+Local boating groups will tell you the south side of the tracks (between Hiawatha and Harwood) is the worst. People have been losing props out there for over a hundred years.
+
+**Two things to do about this:**
+
+1. **Get a chartplotter or a phone app** with marine charts. Navionics, Garmin, C-MAP, Fishing Hot Spots — any of them mark the railway line clearly.
+2. **Run slowly across the middle of the lake until you've learned the line.** Locals know exactly where the safe crossings are. New boaters take a season to learn it.
+
+The railway is also a serious *fishing* feature — walleye stack along the sunken structure year-round. The same thing that wrecks props attracts fish. Fish it slow, drift it, or anchor up — don't run hard across it.
+
+---
+
+## Other Hazards Worth Knowing
+
+- **Weed beds.** Extensive throughout the lake by mid-summer. Avoid running through them at speed; they'll foul a prop and a trolling motor in a hurry. Great structure for bass, though.
+- **Rock shoals near shorelines and islands.** Particularly the south shore between Gores Landing and Bewdley, and around Sugar Island. Mark the chartplotter, give them room.
+- **Shallow flats at the east and west ends.** The flats around the Otonabee mouth and the Trent inlet (east end) are wadeable depth in spots. Fine in a small boat with a kicker; sketchy in a 21-foot pontoon at speed.
+- **Wind from the west.** Rice Lake's east-west orientation means a west wind builds chop fast across the full 32 km. Check forecast before you commit to a long run east, especially in shoulder seasons.
+
+---
+
+## Boat Launches — Public vs. HBW
+
+There are four boat launches on Rice Lake. Three are public; one is ours.
+
+| Launch | Location | Lanes | Cost | Notes |
+|--------|----------|-------|------|-------|
+| Bewdley | West end, south shore | 1 | Free | Busy — 30–60 min waits on weekends |
+| Roseneath | North shore | 1 | Free | Smaller ramp, less busy |
+| Harwood | East end, south shore | 1 | Free | Busy — same weekend issues as Bewdley |
+| **Harris Boat Works** | Gores Landing, south shore | **2 (concrete)** | **$20/day, $200/season** | 24/7, parking, fuel, washrooms, courtesy docks |
+
+We're the only paid launch on the lake, and we'll be honest about why people use it: the public ramps are single-lane and free, which means waits on a Saturday in July are rough. Two lanes mean we can launch and retrieve simultaneously. The ramp is a deeper, longer concrete pour — usable at low water, when the public ramps start running short. And the parking lot has 50+ trailer spaces with sightlines to the lot.
+
+You also get on-site **ethanol-free 89-octane marine gas**, washrooms with showers, ice, snacks, and courtesy docks — none of which you get at Bewdley or Harwood. Whether that's worth $20 a day depends how much you value your Saturday morning.
+
+If you launch with us regularly, the **$200 season pass** pays for itself by Trip 11. We have customers who buy it on the first warm weekend and never look at the public ramps again.
+
+---
+
+## Fishing Rice Lake — FMZ 17, 2026 Seasons
+
+Rice Lake is in **Fisheries Management Zone 17**, the same zone as most of the Kawarthas. Here's what's in season and when:
+
+| Species | Season | Sport Limit | Conservation Limit | Notes |
+|---------|--------|-------------|--------------------|-------|
+| **Walleye / Sauger** | 2nd Saturday May – Nov 15 | 4 | 1 | **Slot size: 35–50 cm (13.8–19.7") — must release fish in this size range** |
+| **Largemouth & Smallmouth Bass** | 3rd Saturday June – Dec 15 | 6 | 2 | No size limit |
+| **Muskellunge** | 1st Saturday June – Dec 15 | 1 | 0 | Min 112 cm (44") |
+| **Northern Pike** | Open all year | 6 | 2 | No size limit |
+| **Yellow Perch** | Open all year | 50 | 25 | — |
+| **Crappie (Black & White)** | Open all year | 30 | 10 | — |
+| **Sunfish (Bluegill, etc.)** | Open all year | 300 | 15 | Only 30 over 18 cm |
+| **Channel Catfish** | 4th Saturday April – Nov 15 | 12 | 6 | — |
+
+*Always verify with the [official Ontario Fishing Regulations Summary](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17) before fishing — regulations change.*
+
+### Key 2026 opener dates
+
+- **Walleye opener:** Saturday, **May 9, 2026**
+- **Muskie opener:** Saturday, **June 6, 2026**
+- **Bass opener:** Saturday, **June 20, 2026**
+
+**The walleye slot rule trips people up.** Any walleye between 35 and 50 cm has to go back. So your 16-incher on Opening Day? Photo, release. The keepers are either small (under 35 cm) or trophy (over 50 cm). This is a conservation rule that's done a lot of good for the fishery — Rice Lake walleye populations have rebuilt strongly over the last decade — but it catches first-time anglers off guard.
+
+---
+
+## What's Biting When
+
+| Month | Best Bets | Where / How |
+|-------|-----------|-------------|
+| **May** | Walleye, crappie, perch, pike | Walleye opener weekend — jig the railway line; crappie in shallow weed bays; perch off mud flats |
+| **June** | Walleye, muskie, bass (late) | Trolling crankbaits for walleye; muskie opens June 6; bass opens June 20 — topwater early in shallow weeds |
+| **July–August** | Bass, perch, walleye (deep) | Frog baits in weeds for bass; worm harnesses for walleye on deep flats; perch easy off a dock for kids |
+| **September–October** | Walleye, muskie, pike | Walleye stacking on the railway line and deep flats; big muskie pre-turnover |
+| **November** | Walleye, perch (until ice) | Last good week is usually mid-November before ice forms |
+
+### Hot spots locals fish
+
+- **The railway line** — south side between Hiawatha and Harwood. Walleye structure year-round.
+- **The mouth of the Otonabee** (west end) — muskie and bass staging.
+- **Weed edges throughout the lake** — bass and pike all summer.
+- **Deep holes near Bewdley** — summer walleye when fish go deep.
+- **Sugar Island shoals** — smallmouth bass and northern pike.
+
+---
+
+## Amenities Around the Lake
+
+If you're spending a day or a weekend, the south shore (where most of the cottage country is) has the densest concentration of stops:
+
+- **Gores Landing** — Harris Boat Works, Gores Landing Marina, the local park, a couple of cottage rental operations, the historic United Church.
+- **Bewdley** — Lakeview Restaurant (right on the water), the Conservation Area, the public beach, a small grocery.
+- **Harwood** — Sandy Shore Cottages, the public launch, a Tim Hortons just up the highway.
+- **Roseneath (north shore)** — small grocery, LCBO. Useful if you're cottaging on that side and need supplies.
+- **Cobourg (20 minutes south)** — full town. Restaurants, hotels, hospital, marine supply if you need a part we don't stock.
+- **Peterborough (30 minutes north)** — large city. All services, including the gateway to the Lift Lock and the upper Trent-Severn.
+
+---
+
+## You Don't Have to Own a Boat
+
+Rice Lake is a great lake to *try* before you commit to owning. We rent a 9-boat fleet:
+
+- 2× 23-ft Cruise pontoons (best for families and groups)
+- 2× 24-ft Transporter pontoons + 1× 24 backup
+- 2× 20-ft Transporter pontoons (mid-size, manageable for new pontoon drivers)
+- 2× 16-ft ProSport fishing boats (perfect for walleye and bass)
+
+Half-day, full-day, or multi-day rentals. Mercury power on every boat, life jackets included, brief on the lake's hazards before you leave the dock. **[harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)** or call **905-342-2153**.
+
+GTA cottagers without their own boat — this is how most of our renters discover Rice Lake.
+
+---
+
+## A Few Practical Notes
+
+**You need a Pleasure Craft Operator Card (PCOC)** to operate any motorized boat in Ontario. One-time test, lifetime card. Don't have one? It's an online course — about three hours, $50.
+
+**Your [Pleasure Craft Licence](/blog/pleasure-craft-licence-update-repower-ontario) (PCL) changed in 2026.** Lifetime PCLs are being phased out. New PCLs are 5-year renewals at $24 through Service Canada. If your boat doesn't have a current PCL, sort it before launch day.
+
+**Cell service on the lake** is reasonable on the south shore (Bell, Rogers, Telus all work in Gores Landing/Bewdley). The middle of the lake and the north shore can drop. Don't rely on it as your safety system.
+
+**Marine VHF Channel 16** is the emergency channel for Trent-Severn. Lock 18 (Hastings) and Lock 19 (Scott's Mills) both monitor.
+
+**Ice-out** on Rice Lake is typically late March to mid-April. Walleye opener is the second Saturday of May. The lake is in fishable shape by then in most years.
+
+---
+
+## Why HBW Is Useful
+
+We're at **5369 Harris Boat Works Rd, Gores Landing**. You can't miss the sign on the south shore. We have:
+
+- A 2-lane concrete launch ($20/day, $200/season)
+- Ethanol-free 89-octane marine gas
+- 49 seasonal slips and 4–6 transient slips ($1.00/ft/night)
+- Boat rentals (9-boat fleet)
+- Mercury Marine Platinum dealer service (we'll fix it if it breaks)
+- Three generations of family business, since 1947
+
+If you're new to Rice Lake, the first stop on your first morning is worth making. We'll point out the railway, hand you a chartplotter recommendation, fuel you up, and send you out.
+
+If you've been on this lake for 20 years and we've never met — come say hi.
+
+**Phone:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+---
+
+## Frequently Asked Questions
+
+**Where exactly is the sunken railway hazard?**
+It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Marine charts on Navionics, Garmin, C-MAP, and Fishing Hot Spots all mark it clearly. Run slowly across that section until you know the line, or use the channels locals use.
+
+**What's the launch fee at Harris Boat Works?**
+$20 per day or $200 for a seasonal pass (April through November). Seasonal pass pays off after about 11 launches.
+
+**Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?**
+No. PCOC is required to operate a motorized boat in Ontario. The exception is short-term rentals where the rental operator issues a temporary "rental boat safety checklist" — but most full-day rentals (including ours) require a PCOC.
+
+**Is Rice Lake too shallow for a 21-foot pontoon?**
+No, but you have to know where to go. The main channels and the deeper basin areas are fine. Avoid the flats at the east and west ends, mark the railway, and stay aware of the shoals. We brief every renter before they leave the dock.
+
+**When does the walleye fishery turn on in spring?**
+Opening day (second Saturday of May) is usually solid. The week after is often the best week of the year for size. By June, the bigger fish move deeper and you're trolling instead of jigging.
+
+**Do you sell fishing licences at HBW?**
+Yes — Outdoors Card and fishing licences are available at the shop. Bring ID.
+
+---
+
+**Phone:** 905-342-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+**Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
+**Slip / launch info:** [harrisboatworks.ca/boatslips](https://harrisboatworks.ca/boatslips)
+`,
+    faqs: [
+  {
+    "question": "Where exactly is the sunken railway hazard?",
+    "answer": "It runs roughly north-south across the middle of the lake, between Hiawatha (north shore) and Harwood (south shore). Marine charts on Navionics, Garmin, C-MAP, and Fishing Hot Spots all mark it clearly. Run slowly across that section until you know the line, or use the channels locals use."
+  },
+  {
+    "question": "What's the launch fee at Harris Boat Works?",
+    "answer": "$20 per day or $200 for a seasonal pass (April through November). Seasonal pass pays off after about 11 launches."
+  },
+  {
+    "question": "Can I rent a boat on Rice Lake without a Pleasure Craft Operator Card?",
+    "answer": "No. PCOC is required to operate a motorized boat in Ontario. The exception is short-term rentals where the rental operator issues a temporary \"rental boat safety checklist\" — but most full-day rentals (including ours) require a PCOC."
+  },
+  {
+    "question": "Is Rice Lake too shallow for a 21-foot pontoon?",
+    "answer": "No, but you have to know where to go. The main channels and the deeper basin areas are fine. Avoid the flats at the east and west ends, mark the railway, and stay aware of the shoals. We brief every renter before they leave the dock."
+  },
+  {
+    "question": "When does the walleye fishery turn on in spring?",
+    "answer": "Opening day (second Saturday of May) is usually solid. The week after is often the best week of the year for size. By June, the bigger fish move deeper and you're trolling instead of jigging."
+  },
+  {
+    "question": "Do you sell fishing licences at HBW?",
+    "answer": "Yes — Outdoors Card and fishing licences are available at the shop. Bring ID. --- **Phone:** 905-342-2153 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) **Slip / launch info:** [harrisboatworks.ca/boatslips](https://harrisboatworks.ca/boatslips)"
+  }
+],
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
