@@ -49,7 +49,7 @@ export const blogArticles: BlogArticle[] = [
     slug: 'how-to-choose-right-horsepower-boat',
     title: "How to Choose the Right Horsepower for Your Boat (2026 Guide)",
     description: "The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. The shortcut: aim for 70 to 90% of your maximum rating for typical recreational use. Going lower leaves you underpowered, going to 100% maxes out fuel economy. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).",
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-how-to-choose-horsepower.png',
     author: 'Harris Boat Works',
     datePublished: '2024-06-15',
     dateModified: '2026-05-04',
@@ -311,6 +311,7 @@ type: infographic
 aspect: 1:1
 description: Circular diagram showing the four-part seasonal Mercury service cycle
 prompt: Photorealistic editorial circular infographic. Title: "Annual Mercury Service Cycle". Circular flow with 4 quadrants: Spring (April-May) Commissioning, Summer (July) Mid-Season Check, Fall (Oct-Nov) Winterization, Winter Storage. Each quadrant has icon, season label, and 1-line task description. Center: small Mercury cowl icon. Mercury black/red color scheme, cream background. No people. 1080x1080. [STYLE ANCHOR]
+image: /lovable-uploads/annual-mercury-service-cycle.png
 :::
 
 
@@ -563,7 +564,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
     title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)',
     description: 'Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the supercharged premium line, 250 to 600+ HP, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the motor selection page.',
-    image: '/lovable-uploads/Comparing_Motor_Families.png',
+    image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2024-04-10',
     dateModified: '2026-05-04',
@@ -2072,7 +2073,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'best-mercury-outboard-pontoon-boats',
     title: "Best Mercury Outboard for Pontoon Boats (2026 Ontario Guide)",
     description: "For 18 to 22 ft pontoons in Ontario, the Mercury 90 to 150 HP FourStroke with Command Thrust is the right answer. Command Thrust is the gearcase that matters on pontoons. Cruising-only setups can run a 90 CT; family use with water sports wants 115 to 150 CT. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
-    image: '/lovable-uploads/pontoon-115-ct-detail-real.png',
+    image: '/lovable-uploads/hero-best-mercury-pontoon.png',
     author: 'Jay Harris',
     datePublished: '2026-05-04',
     dateModified: '2026-05-04',
@@ -2106,6 +2107,7 @@ type: infographic
 aspect: 16:9
 description: Matrix showing recommended Mercury HP and gearcase by pontoon length and use case
 prompt: Photorealistic editorial infographic. 2x3 matrix grid: rows = pontoon length (18-20 ft, 20-22 ft, 22-24 ft tritoon). Columns = Cruising, Family + Light Sports, Active Water Sports. Each cell shows recommended Mercury HP class and gearcase. Mercury black accent. Clean white background, no people. 1600x900. [STYLE ANCHOR]
+image: /lovable-uploads/pontoon-hp-by-length-and-use.png
 :::
 
 
@@ -2873,6 +2875,7 @@ type: infographic
 aspect: 16:9
 description: Visual matrix showing which Mercury (75/90/115) fits which boat type and use case
 prompt: Photorealistic editorial infographic. 3x3 visual grid: rows = Mercury 75, 90, 115 HP. Columns = Boat Type, Best Use Case, Avoid If. Each cell has a small motor silhouette icon and 2-line description. Mercury black cowls, red accents. Clean white background. No people. 1600x900. [STYLE ANCHOR]
+image: /lovable-uploads/mercury-75-90-115-best-fit-matrix.png
 :::
 
 
@@ -3305,7 +3308,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'best-mercury-outboard-rice-lake-fishing',
     title: "Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)",
     description: "The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
-    image: '/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing.png',
+    image: '/lovable-uploads/hero-best-mercury-rice-lake.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-09',
     dateModified: '2026-05-04',
@@ -3509,7 +3512,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'complete-guide-boat-repower-kawarthas',
     title: "Complete Guide to Repowering Your Boat in the Kawarthas (2026)",
     description: "Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake. Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
-    image: '/lovable-uploads/Repowering_Boat_Kawarthas_Hero.png',
+    image: '/lovable-uploads/hero-complete-guide-repower-kawarthas.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-23',
     dateModified: '2026-05-04',
@@ -4530,6 +4533,7 @@ type: infographic
 aspect: 4:5
 description: Visual seasonal checklist showing pre-launch tasks in order
 prompt: Photorealistic editorial checklist infographic. Vertical card layout titled "Spring Outboard Commissioning". 7 numbered steps stacked vertically with checkbox icons: 1. Battery & Electrical, 2. Fuel System, 3. Cooling System, 4. Lubrication, 5. Spark Plugs & Ignition, 6. Prop & Lower Unit, 7. Sea-Trial. Each step has a 1-line description and a small icon. Cream background, Mercury black text, gold accent on numbers. No people. 1080x1350. [STYLE ANCHOR]
+image: /lovable-uploads/spring-commissioning-checklist-card.png
 :::
 
 
@@ -11760,7 +11764,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'mercury-repower-cost-ontario-2026-cad',
     title: 'How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)',
     description: 'A Mercury repower in Ontario in 2026 typically runs $8,000 to $22,000 CAD all-in for the most common 25 to 115 HP projects, before HST. Bigger HP scales up from there, with 250 to 300 HP repowers landing $35,000 to $40,000 CAD. Tiller motors 20 HP and under are just the motor price, no rigging or extras needed. The motor itself is the biggest line on any repower. Rigging, prop, and labour add a smaller share, especially on Mercury-to-Mercury repowers where most existing controls and cables can stay. The most accurate number is the one we build for your specific hull. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).',
-    image: '/lovable-uploads/hero-repower-cost-ontario.png',
+    image: '/lovable-uploads/hero-mercury-repower-cost-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-17',
     dateModified: '2026-05-04',
@@ -11815,6 +11819,7 @@ type: infographic
 aspect: 16:9
 description: Stacked bar chart showing what's included in each HP class repower cost: motor, rigging, prop, controls, install labour
 prompt: Photorealistic editorial infographic. Stacked horizontal bar chart showing Mercury repower cost breakdown across 5 HP tiers: 40-60 HP, 75-115 HP, 150 HP, 200-300 HP. Each bar segmented into Motor / Rigging / Prop / Controls / Install Labour with distinct muted colors. Y-axis labels HP class, X-axis CAD before HST. Clean white background, Mercury black accent text, gold for "Install Labour" segment. No people, no logos overlaid. 1600x900. [STYLE ANCHOR]
+image: /lovable-uploads/repower-cost-stack-by-hp-class.png
 :::
 
 
@@ -12439,7 +12444,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'mercury-outboard-financing-ontario-2026',
     title: 'Mercury Outboard Financing in Ontario: Your Complete 2026 Guide',
     description: 'Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR. Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).',
-    image: '/lovable-uploads/hero-financing-ontario-2026.png',
+    image: '/lovable-uploads/hero-mercury-financing-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
     dateModified: '2026-05-04',
@@ -12830,7 +12835,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'best-mercury-outboard-lake-ontario-salmon-trout',
     title: "Best Mercury Outboard for Lake Ontario Salmon and Trout (2026)",
     description: "Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads. The right Mercury for Lake Ontario salmon and trout is a 200 to 300 HP V8 FourStroke or Pro XS on a 21 to 26 ft center console or walkaround hull, often with a 15 HP ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-best-mercury-lake-ontario.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-22',
     dateModified: '2026-05-04',
@@ -13559,7 +13564,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'cheapest-mercury-outboard-canada-2026',
     title: 'What\'s the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)',
     description: 'The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class through the lineup. The honest answer most boaters need is not "what\'s the cheapest motor" but "what\'s the cheapest motor that actually fits my boat." Those are usually different motors. Live pricing on every Mercury we sell, including the 2.5 portable, is on the [motor selection page](/quote/motor-selection).',
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-cheapest-mercury-canada.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-23',
     dateModified: '2026-05-04',
@@ -13733,7 +13738,7 @@ A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15
     slug: 'mercury-vs-yamaha-vs-honda-reliability-2026',
     title: 'Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?',
     description: 'All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out. The real difference is dealer service, parts availability, and resale support in YOUR region. In Ontario, Mercury has the deepest dealer network, the strongest Canadian parts supply, and the longest historical track record. We are biased (we sell Mercury, exclusively, since 1965), but the data backs the position. Build your Mercury quote at [/quote/motor-selection](/quote/motor-selection).',
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-mercury-vs-yamaha-honda.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-24',
     dateModified: '2026-05-04',
@@ -14326,6 +14331,7 @@ type: diagram
 aspect: 4:5
 description: Decision tree flowchart for diagnosing spring no-start, in order: Battery, Fuel, Ignition, Compression, Call HBW
 prompt: Photorealistic editorial flowchart diagram. Decision tree for "Mercury won't start in spring" diagnostics. 5 sequential decision diamonds: Battery? > Fuel? > Ignition? > Compression? > Call HBW. Each diamond has yes/no branches in muted colors (green=continue, red=problem). Final "Call HBW" node has phone number callout in gold. Clean white background, Mercury black text. No people. 1080x1350. [STYLE ANCHOR]
+image: /lovable-uploads/spring-no-start-flowchart.png
 :::
 
 
@@ -14751,7 +14757,7 @@ The lake will be there. The right time to buy is when it makes sense for you, no
     slug: 'boat-hull-replacement-vs-repower-decision',
     title: 'Boat Hull Replacement vs Repower: The Honest Decision (2026)',
     description: 'For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn\'t structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).',
-    image: '/lovable-uploads/How_to_Choose_The_Right_Horsepower_For_Your_Boat.png',
+    image: '/lovable-uploads/hero-hull-vs-repower.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-29',
     dateModified: '2026-05-04',
@@ -14769,6 +14775,7 @@ type: diagram
 aspect: 4:5
 description: Decision tree showing Repower vs. Replace path with key questions
 prompt: Photorealistic editorial decision tree diagram. Title: "Repower or Replace? The honest decision". Top question: "Is the hull less than 20 years old AND structurally solid?" Branches Yes/No. Yes branch leads to "Repower (saves $25K-$50K)". No branch leads to follow-up: "Is hull rotting / soft-transom / fundamentally undersized?" Yes leads to "Replace". Diamond shapes for questions, rounded rectangles for outcomes. Mercury red for "Replace" outcome, gold for "Repower" outcome. Clean white background. No people. 1080x1350. [STYLE ANCHOR]
+image: /lovable-uploads/hull-vs-repower-decision-tree.png
 :::
 
 
@@ -15198,7 +15205,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'why-mercury-dealers-hide-prices-online',
     title: 'Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn\'t)',
     description: 'Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call.',
-    image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_Hero.png',
+    image: '/lovable-uploads/hero-why-dealers-hide-prices.png',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
     dateModified: '2026-05-05',
@@ -15379,7 +15386,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
     slug: 'mercury-outboard-rigging-costs-ontario',
     title: 'Mercury Outboard Rigging Costs Explained (Ontario 2026)',
     description: 'Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. For a typical Mercury-to-Mercury repower with post-2010 controls in good condition, rigging lands $500 to $1,500 CAD. Brand conversions and full rerigs run higher. Live pricing on every Mercury we sell, with rigging included, is at [/quote/motor-selection](/quote/motor-selection).',
-    image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
+    image: '/lovable-uploads/hero-mercury-rigging-costs.png',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
     dateModified: '2026-05-05',
@@ -15412,6 +15419,7 @@ type: infographic
 aspect: 16:9
 description: Cost stack visualization showing rigging components
 prompt: Photorealistic editorial infographic. Horizontal stacked bar showing Mercury rigging cost breakdown. 7 segments labeled: Throttle/Shift, Steering, Harness, Gauges, Battery Cables, Fuel Hose, Prop. Each segment a different muted color, with $ ranges below. Title: "What's in your Mercury rigging cost". Clean white background, Mercury black/red accents. No people. 1600x900. [STYLE ANCHOR]
+image: /lovable-uploads/mercury-rigging-cost-stack.png
 :::
 
 
@@ -15595,7 +15603,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
     slug: 'what-happens-during-mercury-repower',
     title: 'What Happens During a Mercury Repower (Step-by-Step Process)',
     description: 'A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking, drop-off, removal of old motor, transom and rigging inspection, installation of new motor and rigging, sea-trial with prop testing, final adjustments, and pickup with break-in coaching. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).',
-    image: '/lovable-uploads/Boat_Repowering_101_Hero.png',
+    image: '/lovable-uploads/hero-what-happens-during-repower.png',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
     dateModified: '2026-05-05',
@@ -15638,6 +15646,7 @@ type: infographic
 aspect: 16:9
 description: Horizontal timeline showing 10 steps of the Mercury repower process at HBW
 prompt: Photorealistic editorial infographic. Horizontal timeline with 10 numbered steps for Mercury repower process: 1. Hull walk-around, 2. Quote, 3. Booking, 4. Drop-off, 5. Old motor removal, 6. Inspection, 7. Install, 8. Sea-trial, 9. Final adjustments, 10. Pickup. Each step a clean card with number badge in Mercury red, title, and 1-line description. Horizontal flow with subtle arrow connectors. Light cream background, Mercury black text. No people. 1600x900. [STYLE ANCHOR]
+image: /lovable-uploads/repower-process-timeline.png
 :::
 
 
@@ -15859,7 +15868,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
     slug: 'outboard-shaft-length-guide',
     title: 'Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)',
     description: 'Outboard shaft length is the distance from the motor\'s mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20 inch (Long), and 25 inch (Extra Long). Wrong shaft length causes cavitation, performance loss, or motor damage. Match the shaft to your boat\'s transom height. Live pricing on every Mercury we sell, including correct shaft selection, is at [/quote/motor-selection](/quote/motor-selection).',
-    image: '/lovable-uploads/Understanding_Mercury_Model_Numbers_Hero.png',
+    image: '/lovable-uploads/hero-shaft-length-guide.png',
     author: 'Jay Harris',
     datePublished: '2026-05-05',
     dateModified: '2026-05-05',
@@ -15923,6 +15932,7 @@ type: diagram
 aspect: 4:5
 description: Side-profile diagram showing the relationship between shaft length and transom height with labeled cavitation plate position
 prompt: Photorealistic editorial technical diagram. Side profile cross-section of a Mercury outboard mounted on a boat transom. Labeled measurements: transom height arrow (top to bottom), shaft length arrow (mounting bracket to cavitation plate), water line. Three variations side-by-side: 15-inch short, 20-inch long, 25-inch extra long. Mercury cowl details accurate. Clean white background, technical illustration style. No people. 1080x1350. [STYLE ANCHOR]
+image: /lovable-uploads/shaft-length-vs-transom-diagram.png
 :::
 
 
