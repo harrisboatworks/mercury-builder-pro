@@ -16980,6 +16980,1480 @@ Yes — Outdoors Card and fishing licences are available at the shop. Bring ID.
   }
 ],
   },
+  // TODO: Add customer story for mercruiser-sterndrive-guide-ontario
+  {
+    slug: 'mercruiser-sterndrive-guide-ontario',
+    title: "The Ontario Boater's Guide to MerCruiser Sterndrives \u2014 Maintenance, Repairs, and Repower",
+    description: "A Mercury Platinum dealer's guide to MerCruiser sterndrives in Ontario \u2014 what wears out, what kills boats, and when repower or outboard conversion makes sense. By Harris Boat Works.",
+    image: '/lovable-uploads/hero-mercruiser-sterndrive-guide.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-14',
+    dateModified: '2026-05-14',
+    publishDate: '2026-05-14',
+    category: 'Service & Maintenance',
+    readTime: '12 min read',
+    keywords: ["MerCruiser sterndrive Ontario", "MerCruiser bellows replacement Ontario", "sterndrive winterization Ontario", "MerCruiser repower cost", "sterndrive to outboard conversion", "MerCruiser Alpha Bravo maintenance"],
+    content: `
+# The Ontario Boater's Guide to MerCruiser Sterndrives — Maintenance, Repairs, and Repower
+
+There are a lot of sterndrive boats in Ontario. Older Sea Rays, Bayliners, Glastrons, Four Winns, Thundercrafts, the occasional Doral or Crownline. Most of them have a MerCruiser engine inside the boat and a Mercury sterndrive hanging off the transom. Most of those engines are between 15 and 25 years old now.
+
+We service MerCruiser sterndrives at Gores Landing — same shop, same Mercury Platinum techs as our outboard work. This is the guide we wish more sterndrive owners read before something expensive happens.
+
+---
+
+## Sterndrive vs. Outboard, in Two Sentences
+
+A **sterndrive** (also called an "I/O" — inboard/outboard) puts the engine *inside* the boat under the engine cover and the drive unit *outside* on the transom. The drive steers and trims like an outboard's lower unit; the engine is a regular gas V8 (or smaller V6/I-4) bolted to the boat.
+
+An **outboard** is a complete propulsion package — engine, drive, gearcase — all hanging off the transom in one unit.
+
+Each has trade-offs. Sterndrives give you a full-width swim platform, lower noise inside the boat, and the look most '90s and 2000s family boats were designed around. Outboards give you simpler maintenance, easier repower, and better resale.
+
+---
+
+## The Two MerCruiser Drives You'll See in Ontario
+
+**Alpha One (Gen 1 and Gen 2)** — the most common MerCruiser drive in this part of the country. Found behind 4.3L V6, 5.0L V8, and 5.7L V8 engines from roughly 1985 through current production. Up to about 300 HP. Most aluminum-prop family boats.
+
+**Bravo (1, 2, and 3)** — heavier-duty, larger gearcase. Bravo 1 for performance applications. Bravo 2 for big pontoon-style hulls. Bravo 3 has dual counter-rotating props for low-speed control on heavy cruisers. Behind bigger V8s and V10s.
+
+If you don't know which drive you have, the data plate on the upper drive housing has the model. Take a photo and bring it in — we can also pull it from your boat's serial.
+
+---
+
+## What Actually Kills MerCruiser Boats
+
+In order of how often we see it walk into the shop:
+
+### 1. Cracked bellows (the boat-sinker)
+
+The bellows are accordion-style rubber sleeves that seal the gimbal housing where the drive meets the transom. There are typically three:
+
+- **U-joint bellows** — protects the universal joint
+- **Shift cable bellows** — seals the shift mechanism
+- **Exhaust bellows** — vents engine exhaust through the drive
+
+When a bellows cracks, water gets *inside the boat through the transom*. Not the bilge — into the engine compartment, around the gimbal bearing, eventually into the bilge. A bad U-joint bellows crack can sink a boat at the dock if the bilge pump can't keep up.
+
+**Replacement interval: every 5–7 years.** This isn't optional. Rubber dries out, cracks at the folds, and fails. Every full bellows job is also when we replace the gimbal bearing, the U-joint, and any worn hardware in the gimbal housing.
+
+**Cost:** $1,200 to $2,000 for a complete bellows job depending on drive type. Bravo drives are more involved than Alphas.
+
+### 2. Gimbal bearing failure
+
+The **gimbal bearing** is the support bearing that lets the drive pivot for steering inside the gimbal housing. Symptoms:
+
+- **Growl or grinding noise** when you turn the steering wheel hard at low speed
+- **Vibration through the deck** when the drive's loaded
+- **Visible play** if you grab the prop and rock the drive side-to-side (with engine off)
+
+Replacement is straightforward when the drive is already off the boat for bellows work — that's why we do them together. As a standalone job, $500–$800 in parts plus labour. Catching it early is cheap; ignoring it eats the U-joint, then the bellows, then the engine coupler, then the engine itself.
+
+### 3. Milky gear lube (water in the drive)
+
+Same warning sign as an outboard, same severity. Gear lube should be amber. Milky white means water has passed the drive's seals — usually the prop shaft seal or the upper drive shaft seal — and the drive needs to come apart for new seals before water destroys the gears.
+
+**Check the gear lube at every oil change.** Most owners don't, then drop the lower at the spring service and find $1,800 of damage.
+
+### 4. Raw water pump and impeller
+
+MerCruiser sterndrives are **raw-water cooled** — same as outboards. Lake water in, through the engine, back out. The impeller lives in the drive (Alpha) or in an engine-mounted pump (Bravo + most newer Alphas). Cheaper to replace, harder to ignore — same overheat consequences as an outboard.
+
+**Replace every 2–3 years**, or when the engine starts running hotter than normal at cruise.
+
+### 5. Engine block freeze damage
+
+This is the catastrophic one. If you don't drain the engine block fully before a hard freeze — through every single brass petcock and drain plug, on both sides of the block, plus the manifolds — and water freezes inside, you crack the block. **That's a $5,000 to $10,000+ engine.**
+
+A sterndrive needs a more thorough winterization than an outboard. Outboards self-drain when tilted down; sterndrives have to be manually purged. One missed plug, one season, one cracked block. We see it every spring.
+
+---
+
+## The Maintenance Schedule You Should Actually Run
+
+A reasonable annual routine for an Ontario sterndrive:
+
+### Every spring (commissioning)
+- Reinstall any drain plugs you pulled in fall
+- **Inspect all bellows** — flex them, look for cracks at the folds, check for dampness inside
+- Check gear lube level and colour through the sight glass
+- Test gimbal bearing (turn drive by hand with engine off, listen and feel)
+- Engine oil and filter
+- Fuel-water separator filter
+- Inspect belts, hoses, clamps
+- Verify raw water flow at first start
+
+### Every 50–100 hours or annually
+- Engine oil and filter (don't go past one season either way)
+- Gear lube change (check for milky/metal flakes)
+- Spark plugs (gas engines)
+- Anodes — replace any below 50% remaining
+
+### Every 2–3 years
+- Raw water pump impeller
+- Thermostat
+- Coolant in closed-cooling systems
+
+### Every 5–7 years
+- Full bellows job (U-joint, shift, exhaust)
+- Gimbal bearing
+- U-joint
+- Drive gimbal housing seals
+
+### Every fall (winterization — the non-negotiable one)
+- Stabilize fuel
+- Drain block, manifolds, risers, drives — every single petcock
+- Pull battery, store on tender
+- Fog cylinders
+- Drain or refill drive with fresh gear lube
+- Cover or shrinkwrap
+
+A skipped fall properly costs $5,000+. A done-right winterization runs $400–$700 at HBW depending on engine size and configuration.
+
+---
+
+## When Do You Repower Instead?
+
+A MerCruiser sterndrive engine doesn't last forever. Most we see hit the wall at 15–25 years and 1,500–2,500 hours, depending on care. The decision points:
+
+**Consider repowering if:**
+- The engine has lost compression on one or more cylinders
+- You've cracked a manifold (common after a missed winterization or salt environment)
+- The drive needs major work AND the engine has 1,500+ hours
+- Estimated repair exceeds 50% of the boat's value
+
+**Three repower paths:**
+
+### 1. Remanufactured MerCruiser crate engine + existing drive
+$8,000–$15,000 installed for a typical 4.3L or 5.0L. The cheapest path. Comes with a 1–2 year warranty. Good if your drive is still healthy.
+
+### 2. New MerCruiser engine + new Bravo drive
+$30,000–$40,000+ installed for a complete new V8 + Bravo combo. Full new warranty. Most expensive path — and harder to justify on an older hull unless it's a special boat.
+
+### 3. Sterndrive-to-outboard conversion
+$20,000–$35,000+ depending on hull and HP. Cuts out the drive and transom assembly, installs a fabricated transom bracket and a modern Mercury outboard. Why people do it:
+
+- **Simpler maintenance** — no bellows, no gimbal bearing, no manifolds
+- **Better fuel economy** on modern 4-stroke outboards
+- **Stronger resale** — outboard boats sell faster in Ontario
+- **5-year warranty** on a new Mercury outboard
+- **More cockpit space** — engine goes from inside to outside
+
+The trade-offs: higher upfront cost than a remanufactured drop-in, swim platform gets reduced (the outboard takes up part of it), and the boat looks different. For some hulls — especially classic '80s and '90s designs — that last point matters; for others it's a clean improvement.
+
+We do both. We'll quote both. We're not a "convert everything to outboards" shop and we're not a "stick with what you've got" shop. The math depends on the boat.
+
+---
+
+## A Quick Inboard vs. Outboard vs. Sterndrive Reality Check
+
+If you're shopping for *another* boat — not just servicing your current one — the propulsion question is worth asking honestly.
+
+| | **Outboard** | **Sterndrive (I/O)** | **Inboard** |
+|---|---|---|---|
+| Engine location | Outside hull | Inside, at transom | Inside, mid-hull |
+| Winterization | Easiest (self-draining) | Moderate — manual drain | Hardest |
+| Shallow water | Excellent | Excellent | Limited (fixed shaft) |
+| Swim platform | Engine in the way | Full width | Full width |
+| Maintenance access | Easy (tilt up) | Moderate (engine cover) | Moderate |
+| Repower cost | Lower (one unit) | Higher (engine + drive) | Highest |
+| Ontario resale | Strongest | Declining | Niche (ski/wake) |
+| Best for | Fishing, versatility, repower-friendliness | Family cruising, watersports | Tow sports, wake boats |
+
+**The honest take for most Ontario boaters:** outboards have won the volume war. Sterndrive market share is shrinking, parts will get harder to source over the next 10–20 years, and the I/O fleet still on Ontario lakes is quietly aging out. That said, we have customers running 25-year-old MerCruisers that work perfectly because they were maintained. The propulsion type matters less than the maintenance.
+
+If you have a great I/O hull and you love the boat — keep it. We'll keep it running. If the cost-to-keep math is going sideways, repower or convert.
+
+---
+
+## Service Your MerCruiser at HBW
+
+We've been a Mercury Platinum dealer in Ontario since 1965. That includes MerCruiser. Same factory training, same parts access, same diagnostics. The difference between us and an outboard-only shop is we know what to do when the answer isn't "remove the cowl and look."
+
+What we handle:
+
+- Annual service and winterization
+- Bellows + gimbal bearing jobs (the every-5-years one)
+- Raw water pump, thermostat, manifolds, risers
+- Engine diagnostics and repairs (gas MerCruiser, all sizes)
+- Drive rebuilds (Alpha and Bravo)
+- Repowers — remanufactured drop-ins, full new engine + drive, or outboard conversions
+- Storage (we shrinkwrap and store 311+ boats every winter — sterndrives included)
+
+Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**.
+
+---
+`,
+    faqs: [
+      {
+        "question": "How often do MerCruiser bellows really need to be changed?",
+        "answer": "Every 5\u20137 years, regardless of how much you used the boat. Rubber dries and cracks with age, not just hours. A boat sitting outside through 6 Ontario winters is harder on bellows than 200 hours of use."
+      },
+      {
+        "question": "How do I know if my drive needs to come off?",
+        "answer": "If you have a milky gear lube reading, a growling gimbal bearing, water in the bilge after running, vibration through the deck, or hard shifting that wasn't there last year \u2014 yes. Or if you're at the 5\u20137 year mark on bellows."
+      },
+      {
+        "question": "What's the difference between an Alpha and a Bravo drive?",
+        "answer": "Alpha is the lighter-duty, smaller-gearcase drive \u2014 best behind 4.3L V6 and 5.0L V8. Bravo is heavier-duty with a bigger gearcase, designed for higher torque, big-block engines, and heavier hulls. Bravos cost more to service, but they're built to handle the load."
+      },
+      {
+        "question": "Can I keep running my old MerCruiser indefinitely if I service it religiously?",
+        "answer": "Within reason, yes. We see well-maintained 25-year-old MerCruisers that run perfectly. The limiting factor is usually parts availability for cosmetic and electrical components, not the engine itself. Mercury still supports a wide range of older engines."
+      },
+      {
+        "question": "Is converting from sterndrive to outboard always worth it?",
+        "answer": "Not always. If your current MerCruiser is healthy and your hull was designed around the sterndrive look, the conversion math may not work. But if you're staring at a major repair bill and the boat's value can support a $25K+ investment, the outboard route gives you a fresh warranty and better resale. We'll quote both \u2014 straight numbers."
+      },
+      {
+        "question": "Do you service MerCruiser diesel?",
+        "answer": "Yes, though gas is more common in Ontario recreational boats. Bring the model and serial; we'll confirm parts and labour scope before you commit."
+      }
+    ],
+  },
+  // TODO: Add customer story for mercury-vesselview-smartcraft-plain-english-guide
+  {
+    slug: 'mercury-vesselview-smartcraft-plain-english-guide',
+    title: "Mercury VesselView, SmartCraft, and the New Mercury Marine App \u2014 A Plain-English Guide",
+    description: "Plain-English explanation of Mercury's VesselView, SmartCraft, the new Mercury Marine App, DTS, and Active Trim \u2014 what they actually do, what they cost, and which ones you'll use.",
+    image: '/lovable-uploads/hero-vesselview-smartcraft.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-15',
+    dateModified: '2026-05-15',
+    publishDate: '2026-05-15',
+    category: 'Tech & Features',
+    readTime: '9 min read',
+    keywords: ["Mercury VesselView SmartCraft guide", "Mercury Marine App", "SmartCraft Connect installation", "Active Trim Mercury", "Digital Throttle and Shift", "VesselView Mobile replacement"],
+    content: `
+# Mercury VesselView, SmartCraft, and the New Mercury Marine App — A Plain-English Guide
+
+Most Mercury owners we talk to know they have "smart" features on their motor and have no idea how to actually use them. The dash gauge says fuel flow. The phone app pairs sometimes. There's a thing called Active Trim that the previous owner mentioned but never explained.
+
+This is the version of that conversation we'd have at the shop. No marketing copy, no jargon — just what each piece is, what it costs, and whether you'll actually use it.
+
+---
+
+## SmartCraft Is the Engine's Computer. Everything Else Plugs Into It.
+
+**SmartCraft** is Mercury's name for the engine-side network that talks to gauges, displays, and apps. If your motor is from **2004 or newer at 40 HP and up** (or 2022+ at 25 HP+ with electric start), it's SmartCraft-capable. That's the foundation.
+
+Everything in this article — VesselView, Active Trim, DTS, the new Mercury Marine App — runs on top of SmartCraft. Think of SmartCraft as the engine's data backbone; the displays and apps are how you read what it's saying.
+
+You don't "install SmartCraft." It's already in your motor if it's modern enough. What you install are the *modules* and *displays* that connect to it.
+
+---
+
+## VesselView Mobile Is Becoming the Mercury Marine App (Summer 2025)
+
+Quick history. **VesselView Mobile** has been Mercury's phone app for several years — a Bluetooth module under the cowl talked to your phone, your phone showed engine data. Around **summer 2025**, Mercury started transitioning everyone to the new **Mercury Marine App**, which replaces VesselView Mobile with more features and a cleaner interface.
+
+What you need to know:
+
+- **If you already have a VesselView Mobile module under your cowl, it still works** with the new Mercury Marine App. No hardware changes.
+- **The new app adds:** GPS range rings, warranty tracking, Mercury Product Protection (MPP) tracking, and a maintenance counter that tells you when service is due.
+- **Cost to transition:** zero — same hardware, new software.
+- **Multi-engine boats** now use the **SmartCraft Connect Mobile multi-engine module (part 8M0173129)**, which mounts under the helm and supports up to 4 engines.
+
+If you bought your boat used and there's no module under the cowl, that's the part to add: a **SmartCraft Connect Mobile** module runs $225–$275 USD plus installation. We'll spec the right one and install it.
+
+---
+
+## What the App Actually Shows You (And Why You'll Care)
+
+Once your phone is paired, here's what's on screen:
+
+- **RPM, speed, fuel flow rate** — the only numbers that matter for tuning your trim and prop
+- **Fuel used, fuel remaining, range** — actual range based on current burn, not a guess
+- **Engine temperature, battery voltage, engine hours** — the data your dealer wants when something's wrong
+- **Trim position** — useful for finding your sweet spot at cruise
+- **Fault codes** — instead of an alarm with no explanation, the app tells you what flagged
+- **Maintenance reminders** — "100-hour service due in 12 hours" instead of you guessing
+- **GPS range rings (new app)** — see how far you can go on remaining fuel before you commit to a long run
+
+The features people actually use: **fuel flow at cruise** (saves real money over a season — set the right trim, watch the GPH drop), **engine hours** (so you know when 100-hour service is genuinely due), and **fault codes** (so when the alarm rings, you know if you're heading home or finishing the day).
+
+---
+
+## DTS — Digital Throttle and Shift — What It Replaces and Why It's Better
+
+**DTS** replaces the old mechanical cables that connected your throttle lever to the engine with electronic "drive-by-wire." A signal goes from the lever to the engine's computer; the engine acts on it.
+
+What that gets you:
+
+- **Zero hesitation.** Move the lever, the engine responds immediately. No cable lag.
+- **Smoother shifting.** The "clunk" goes away. Forward, neutral, reverse all transition cleanly.
+- **Easier docking.** You can make tiny throttle adjustments — half a notch — that mechanical cables can't reproduce.
+- **No cable wear.** Mechanical cables stretch and corrode over years; electronic signals don't.
+
+DTS is **standard** on the V8 250–400 HP Mercurys (including all V8/V10 Verados) and **optional** on V6 175–225 HP FourStrokes. If you're running a smaller engine, you have mechanical throttle and shift, and that's fine. The benefit shows up at higher horsepower and on larger boats where the cable run is longer and the precision matters more.
+
+Worth retrofitting? Almost never on existing boats — DTS retrofit involves changing the lever, the cables, the helm wiring, and possibly the engine's computer. New repower? Worth it on V8s.
+
+---
+
+## Active Trim — Auto-Trim That Actually Works
+
+**Active Trim** is the feature most owners ignore and shouldn't. It automatically adjusts the engine's trim based on speed and load, keeping you in the efficient zone without you thinking about it.
+
+The four modes the engine cycles through:
+
+1. **Idle Speed** — holds whatever trim you have (no auto-adjust at idle/no-wake)
+2. **Acceleration** — tucks the engine in as you punch it, killing the bow-rise on hole shot
+3. **Planing Speed** — adjusts trim based on GPS speed for best efficiency
+4. **Override** — when you take manual control, exceed 50 mph, hit 80% of rated RPM, or decelerate to idle, Active Trim hands you back the helm
+
+You also pick one of **five Active Trim profiles** — higher number means more trim applied at speed. A heavily loaded boat or a choppy day might benefit from a lower profile (less aggressive trim out); a light boat in flat water rewards a higher profile.
+
+The catch: **Active Trim doesn't see shallow water.** It's making decisions about hull attitude based on speed and RPM. If you're entering a shallow spot, take manual trim control before the prop hits the bottom. The system isn't a substitute for awareness.
+
+Active Trim is **compatible with Mercury FourStroke 40–600 HP, SmartCraft-capable two-strokes, and SmartCraft-capable gas/diesel sterndrives** — it's broadly available. If your boat has SmartCraft and a compatible trim system, it can run Active Trim.
+
+---
+
+## What Hardware You Actually Need (2025/2026 Lineup)
+
+Mercury split the SmartCraft Connect family into a handful of part numbers depending on your setup:
+
+| Module | Part # | For | Where it lives |
+|--------|--------|-----|----------------|
+| SmartCraft Connect Mobile (single engine) | 8M0173128 | 1 engine | On the engine |
+| SmartCraft Connect Mobile (multi-engine) | 8M0173129 | Up to 4 engines | Under the helm |
+| SmartCraft Connect + Display | 8M0173704 | 1 engine | Under cowl |
+| SmartCraft Connect + Display | 8M0173694 | 1 engine | Under helm |
+| SmartCraft Connect + Display | 8M0173696 | 2 engines | Under helm |
+| SmartCraft Connect + Display | 8M0173703 | 3+ engines | Under helm |
+
+If all you want is the phone app, the **8M0173128** (single engine) or **8M0173129** (multi-engine) is your part. If you want the data on a chartplotter (Simrad, Garmin, Raymarine), the bigger Connect + Display modules talk to your MFD over NMEA 2000.
+
+Installation isn't terrible on most boats — a couple of hours plus configuration. We do them at the shop and we can also confirm at install whether your existing phone, MFD, and Bluetooth all play nicely.
+
+---
+
+## When to Bother
+
+Honest take, customer-by-customer:
+
+- **You have a 2010+ Mercury and you've never paired it to your phone:** worth the module + an hour of your time. The fuel flow and hour-tracking alone will pay for it over a season.
+- **You're repowering and choosing options:** add the SmartCraft Connect module from day one. Cheaper as part of a rigging job than as a retrofit.
+- **You have a multi-engine boat:** the multi-engine module is genuinely useful — see all engines on one screen, compare RPM trims, catch one engine running hotter than the others before it becomes a problem.
+- **You have a 2003 or older Mercury:** you don't have SmartCraft, and adding it isn't realistic. Skip.
+
+---
+
+## What HBW Can Do
+
+We install SmartCraft Connect modules, configure the Mercury Marine App, set up multi-function display integration with Simrad/Garmin/Raymarine over NMEA 2000, and service every SmartCraft-capable Mercury.
+
+Most installs are 2–3 hours and run **$300–$500 plus parts**. We can do them as part of a service visit, a winter storage drop-off, or as a standalone appointment.
+
+Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**.
+
+---
+`,
+    faqs: [
+      {
+        "question": "Do I need cell service for VesselView Mobile / Mercury Marine App?",
+        "answer": "No \u2014 the app talks to your engine over Bluetooth, not cellular. Cell service helps for things like remote warranty tracking and over-the-air updates, but the live engine data works on the lake without bars."
+      },
+      {
+        "question": "Does my old VesselView Mobile module work with the new Mercury Marine App?",
+        "answer": "Yes. Mercury made the transition specifically so existing users wouldn't have to buy new hardware. Update the app, re-pair, you're done."
+      },
+      {
+        "question": "Can I see SmartCraft data on my chartplotter (Simrad, Garmin, etc.)?",
+        "answer": "Yes \u2014 with the Connect + Display modules, SmartCraft data flows over NMEA 2000 to most modern MFDs. We can confirm compatibility for your specific MFD when we install."
+      },
+      {
+        "question": "Is Active Trim worth the upgrade if my motor doesn't have it?",
+        "answer": "On a single-engine boat under 200 HP, the gains are real but modest. On a V8 or twin setup, it's worth it. Most current Mercury V8/V10/V12 outboards include Active Trim capability standard \u2014 you just need the SmartCraft Connect module to use it through the app."
+      },
+      {
+        "question": "What's the difference between VesselView Mobile and a VesselView display (the dash-mounted screen)?",
+        "answer": "The dash display (VesselView 502, 703, 903) is a hard-wired Mercury MFD. The Mobile version uses your phone or tablet. Both display similar data; the dash version is brighter in sunlight and stays at the helm. Most owners who get the Mobile version skip the dash display."
+      },
+      {
+        "question": "Can I do this myself?",
+        "answer": "The phone app pairing, yes \u2014 straightforward. The module install requires running wires, plugging into the engine harness, and (sometimes) configuring through Mercury's diagnostic tool. It's doable for an experienced DIY-er, but if you mis-wire it you can throw fault codes that take a dealer to clear. Up to you."
+      }
+    ],
+  },
+  // TODO: Add customer story for how-to-read-mercury-outboard-serial-number
+  {
+    slug: 'how-to-read-mercury-outboard-serial-number',
+    title: "How to Read a Mercury Outboard Serial Number \u2014 Year, Specs, and Service History",
+    description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number \u2014 model year, shaft length, features, and service history. From a Mercury Platinum dealer.",
+    image: '/lovable-uploads/hero-mercury-serial-number-decoder.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-17',
+    dateModified: '2026-05-17',
+    publishDate: '2026-05-17',
+    category: 'Buying Guide',
+    readTime: '8 min read',
+    keywords: ["how to read Mercury serial number", "decode Mercury outboard model number", "Mercury outboard year by serial number", "Mercury serial number lookup Ontario", "find Mercury outboard model code"],
+    content: `
+# How to Read a Mercury Outboard Serial Number — Year, Specs, and Service History
+
+Your Mercury's serial number is the only piece of information on the motor that actually matters for parts, service, warranty, and history. Not the year on the cowl. Not the boat's title. Not what the previous owner remembered.
+
+This is how to find it, what it tells you, and what we can look up for you with it.
+
+---
+
+## The Golden Rule
+
+Two identical-looking Mercury 90 HP FourStrokes can use **completely different parts** depending on which serial number range they fall into. Mercury revises components mid-year, mid-production-run, even mid-month. The serial is the only thing that says exactly which version you have.
+
+If you're ordering parts, planning service, checking warranty, or looking up bulletins — start with the serial.
+
+---
+
+## Where to Find It
+
+There are three places, in order of where to look first:
+
+### 1. The transom bracket ID tag (primary)
+On most Mercurys, look at the **port (left) side of the swivel bracket** — the metal piece that mounts the motor to the boat's transom. There's a stamped or laser-etched plate with:
+
+- **Model number** (a code like \`90ELPT\`, \`25EXLHGA\`)
+- **Serial number** (alphanumeric, like \`0T123456\` or \`2B345678\`)
+- **Sometimes the year**
+
+Bring a flashlight. If the boat's mounted, you may need to tilt the motor up and look from underneath. Take a photo so you don't have to keep crouching.
+
+### 2. The engine block freeze plug (backup)
+If the bracket plate is missing or unreadable (rust, paint over, theft) — there's a backup. The serial is also stamped on a **small metal disc on the engine block** itself. You'll need to pull the cowl to see it. Location varies by motor; for most modern Mercurys it's on the powerhead, near the starter.
+
+### 3. Inside the cowling (newer models)
+2018+ Mercurys often have a sticker inside or under the cowling with the serial in a more readable location. Pull the cowl, check the inner walls.
+
+If all three are missing or unreadable — the motor's been parted out, replaced, or had its identity stripped. That's a flag for any used buyer.
+
+---
+
+## Decoding the Model Number
+
+The **model number** isn't the serial — it's the configuration code. It tells you shaft length, starting type, steering, and trim/tilt.
+
+### Shaft length codes:
+
+| Code | Length | Common Use |
+|------|--------|------------|
+| **Short shaft** (E, EH, M, MRC) | 15" | Low-side dinghies, car-toppers |
+| **MSL** | 17.5" | Rare, specialty |
+| **Long shaft** (EL, ELH, L, ML) | 20" | Most aluminum fishing boats, runabouts |
+| **Long-Long** (ELLH, MLL) | 22.5" | Specialty deep-draft |
+| **Extra-long** (CXL, EXLH, XL) | 25" | Pontoons, some larger fishing boats |
+| **Extra-extra-long** (CXXL, XXL) | 30" | Bracket-mounted offshore setups |
+
+### Feature codes:
+
+| Code | Meaning |
+|------|---------|
+| **C** | Counter-rotation (left-hand prop, V6 twin setups) |
+| **CT** | Command Thrust gearcase |
+| **E** | Electric start |
+| **H** | Tiller handle steering |
+| **M** | Manual start (rope pull) |
+| **O** | Oil injection (older 2-strokes) |
+| **PT** | Power trim |
+| **RC** | Remote control steering |
+
+### Putting it together
+
+A model code like **115ELPT** decodes as:
+
+- **115** — 115 horsepower
+- **E** — Electric start
+- **L** — Long shaft (20")
+- **PT** — Power trim
+
+A more loaded code like **115EXLPT-CT**:
+
+- **115** HP
+- **E**lectric start
+- **XL** — Extra-long shaft (25")
+- **PT** — Power trim
+- **CT** — Command Thrust gearcase (heavier-duty for pontoons and big aluminum)
+
+The cowl says "115 FourStroke." The model number says exactly which 115 FourStroke you have, what shaft, and what gearcase. Different parts depending on the answer.
+
+---
+
+## Decoding the Year (When the Year Isn't Printed)
+
+Mercury doesn't always stamp the model year on the engine. Production years run mid-July to mid-July, not Jan–Dec, and Mercury thinks in **serial number ranges**, not calendar years.
+
+To find the year:
+
+- **Check the bracket plate first** — many models include "MFG YEAR" on the plate.
+- **If not there**, use a serial-to-year lookup chart. The most reliable are:
+  - [MarineEngine.com Mercury models](https://www.marineengine.com/mfr/mercury_models.html)
+  - [OBParts.com year guide](https://www.obparts.com/mercury-mariner-outboard-year-guide/)
+  - [Crowley Marine serial range tool](https://www.crowleymarine.com/mercury/oem-parts/outboard/serial-range)
+- **Or call a Mercury dealer** — we can pull the year from Mercury's dealer system in 30 seconds.
+
+**One thing that catches used buyers:** the engine year doesn't have to match the boat year. A 2018 boat might have a 2017 engine. A 2005 hull might have a 2010 repower on it. Always verify the engine's year separately from the boat's year.
+
+---
+
+## What the Serial Number Unlocks
+
+Once you have the serial, here's what we (or any Mercury dealer) can pull up:
+
+### 1. Exact parts catalog
+Mercury's official parts catalog uses the serial to give you the right exploded diagrams. No guessing whether the Generation 1 or Generation 2 water pump is yours.
+
+### 2. Outstanding service bulletins
+Mercury issues service bulletins by serial range — known issues, recommended fixes, sometimes free recall work. A dealer pulls these against your serial to see if anything applies.
+
+### 3. Warranty status
+Standard warranty registration, extended warranty (Mercury Product Protection), and remaining coverage are all keyed to the serial. We can confirm what you have left.
+
+### 4. Engine hours (on SmartCraft motors)
+Modern Mercurys store hour data inside the engine's computer, independent of any dashboard meter. Plug a diagnostic tool into the SmartCraft port; the serial confirms the model; the hours come up. Can't be tampered with — and it doesn't care if the dashboard meter was disconnected.
+
+### 5. Service history
+If the motor was ever serviced at a Mercury dealer (any dealer, anywhere in North America), there's likely a record tied to the serial in Mercury's dealer network. We can request it.
+
+---
+
+## Buying a Used Mercury? Here's Your First Move.
+
+Before you hand over money for a private-sale Mercury, do this:
+
+1. **Get a clear photo of the bracket plate** — model number + serial number both visible.
+2. **Send it to us** at [hbw.wiki/service](https://hbw.wiki/service) — pre-purchase research, free.
+3. **We pull:** model year, original spec, outstanding service bulletins, warranty status, and any service history we can find on it.
+4. **You get a report** — what the motor really is, what it's worth, what's already been done, and what's overdue.
+
+If you're considering a full pre-purchase inspection (compression, gearcase pressure, on-water test), the serial-number research is the first 5 minutes of that. Sometimes the research alone tells you to walk away.
+
+This whole exercise — for a private buyer about to spend $4,000 to $14,000 on a used motor — should be table stakes. We do it every week.
+
+---
+
+## What If the Serial Is Missing?
+
+If the bracket plate is gone and the freeze-plug stamp is unreadable:
+
+- **Check service receipts** — any prior service work would have referenced the serial.
+- **Check the boat's Pleasure Craft Licence** — sometimes the serial was recorded.
+- **Check insurance documents** — same.
+- **Bring it to us** — we can sometimes identify the motor from the casting numbers and other markings, but this is detective work, not a quick lookup.
+- **Worst case** — we can pressure-test, compression-test, and document the actual current condition without the serial. It's a less complete picture, but it's something.
+
+A motor with no serial isn't necessarily stolen, but it's a flag worth taking seriously. Reduce your offer accordingly, or walk.
+
+---
+
+## Quick Reference Card
+
+The five pieces of information on every Mercury and where they live:
+
+| What | Where |
+|------|-------|
+| **Model number** (e.g. 115ELPT) | Bracket plate, port side |
+| **Serial number** (e.g. 0T123456) | Same plate, just below model |
+| **HP rating** | First numbers in model code |
+| **Shaft length** | L = 20", XL = 25", CXL = counter-rotation 25" |
+| **Year** | Sometimes plate, otherwise serial lookup |
+
+Take a photo of the plate the day you buy the boat. Save it on your phone. You'll thank yourself the next time you order a part.
+
+---
+`,
+    faqs: [
+      {
+        "question": "My motor's plate is unreadable. Is the motor worthless?",
+        "answer": "No, but identification gets harder. We can usually decode it from secondary stamps, casting numbers, and physical inspection \u2014 but it's slower and less precise. For a used buyer, that's worth a price discount."
+      },
+      {
+        "question": "Can I look up my serial myself online?",
+        "answer": "Partially. MarineEngine.com, OBParts.com, and Crowley Marine all have free public serial-to-year lookups. They won't show you Mercury's internal service bulletins, warranty, or service history \u2014 that's dealer-only. But for \"what year is my motor?\" the public tools work fine."
+      },
+      {
+        "question": "Do older 2-stroke Mercurys (pre-2000) follow the same format?",
+        "answer": "Mostly yes \u2014 the bracket plate location, the model code structure (E, L, PT, etc.), and the serial format are similar. Older motors are more likely to have lost or corroded plates, so the freeze-plug backup matters more."
+      },
+      {
+        "question": "Why does Mercury use letter codes instead of just printing \"long shaft\"?",
+        "answer": "Mercury's been doing this since the '60s \u2014 the codes go back to before computer-friendly databases existed and just stuck. Once you've decoded a few, they're faster than reading full descriptions."
+      },
+      {
+        "question": "Is the model number the same as the serial number?",
+        "answer": "No. The **model number** is the configuration (115ELPT). The **serial number** is the unique production identifier (0T123456). Both are on the plate; both matter; they answer different questions."
+      }
+    ],
+  },
+  // TODO: Add customer story for mercury-maintenance-intervals-20-100-300-rule
+  {
+    slug: 'mercury-maintenance-intervals-20-100-300-rule',
+    title: "The Mercury 20/100/300 Maintenance Rule \u2014 What Every Ontario Boater Should Know",
+    description: "A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule \u2014 what's done at each milestone, what it costs in Ontario, and which jobs are DIY vs dealer.",
+    image: '/lovable-uploads/hero-mercury-maintenance-20-100-300.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-12',
+    dateModified: '2026-05-12',
+    publishDate: '2026-05-12',
+    category: 'Service & Maintenance',
+    readTime: '11 min read',
+    keywords: ["Mercury maintenance intervals 20 100 300", "Mercury 100 hour service Ontario", "Mercury break-in service", "Mercury 300 hour major service", "Mercury annual service cost Ontario"],
+    content: `
+# The Mercury 20/100/300 Maintenance Rule — What Every Ontario Boater Should Know
+
+Mercury's service schedule has three milestones built into it: **20 hours, 100 hours, and 300 hours**. Each one is a different scope of work for a different stage of the engine's life. Ignoring any of the three is the cheapest way to make a $20,000 motor act like a $5,000 one.
+
+This is the schedule we'd walk through with any new Mercury owner who walks into the shop, in plain English, with Ontario service rates.
+
+---
+
+## Why the Three-Milestone Framework Exists
+
+A new outboard isn't a finished product the day it leaves the factory. The first 10 hours are **break-in**, where rings seat against cylinder walls, gears mesh in for the first time, and metal particles wear off and end up in the oil. The next chunk of life is **routine operation**, where wear and exposure accumulate. Eventually you hit **major-service territory**, where rubber and consumables that have been quietly aging for years all need replacement at once.
+
+The 20/100/300 rule maps service intervals to those phases:
+
+| Milestone | What it is | Trigger |
+|-----------|------------|---------|
+| **20-hour break-in service** | Flush the metal particles, retorque everything | After first 20 hours of use |
+| **100-hour annual service** | Routine preventive maintenance | Every 100 hours OR every year — whichever comes first |
+| **300-hour major service** | Deep service of wear items | Every 300 hours OR every 3 years |
+
+The "whichever comes first" clause matters in Ontario. Most recreational boaters here run **50–100 hours per season**. That means most of you hit the *annual* trigger before the *hourly* trigger. Service is yearly business, not "when the meter says so."
+
+---
+
+## The 10-Hour Break-In Period (Comes Before Everything Else)
+
+If you just bought a new Mercury, the **first 10 hours of operation** have specific limits. These aren't suggestions — improper break-in can void warranty coverage if the engine fails.
+
+- **Hours 0–2:** Vary the throttle. Never exceed 4,500 RPM. No sustained WOT.
+- **Hours 2–10:** Standard operation, but **WOT only in 5-minute bursts**, not sustained.
+- **Track your hours.** Mercury's Marine App (or VesselView Mobile) does this automatically with SmartCraft. If you're old-school, write it down.
+
+After hour 10, run the engine normally for the next 10 hours, then bring it in for the **20-hour service**.
+
+---
+
+## The 20-Hour Break-In Service
+
+What happens at this service:
+
+| Task | Why |
+|------|-----|
+| **Engine oil and filter change** | Pulls out break-in metal particles before they cause wear. FC-W certified marine oil only. |
+| **Lower unit gear lube change** | Same — clears break-in particles from the gearcase. |
+| **Prop nut retorque** | Set to spec (~55 ft-lbs on most), new cotter pin. Vibration during break-in loosens the prop nut. |
+| **Fastener retorque** | Mounting bolts, steering hardware. |
+| **General leak/connection inspection** | Catch anything before warranty issues compound. |
+| **Tell-tale verification** | Confirm cooling system is flowing as designed. |
+
+**Cost in Ontario, mid-range motor (40–115 HP):** $250–$400 CAD.
+**Higher HP (150–300 HP):** $400–$600 CAD.
+
+Skipping this service is false economy. The cost of the service is less than the cost of one cylinder's worth of premature wear.
+
+---
+
+## The 100-Hour / Annual Service — Your Engine's Lifeline
+
+This is the service most boaters will run every year for the life of the engine. Comprehensive list:
+
+| Task | Detail |
+|------|--------|
+| **Engine oil + filter** | FC-W marine oil. Drain plug torque to spec — over-tightening cracks aluminum oil pans. |
+| **Gear lube change** | **Inspect for milky color (water = seal leak) or metal flakes on the magnetic plug.** This 30-second check catches lower-unit problems before they become $2,000 problems. |
+| **Fuel filter (water separator)** | Spin-on filter replaced. More often if you run ethanol pump gas — this is one of the reasons we sell ethanol-free 89 at the dock. |
+| **Spark plugs** | Mercury-spec plugs only — 75–150 HP FourStroke uses NGK IZFR6F-11 with a 1.1mm gap. Torque to 13 ft-lbs on aluminum heads. |
+| **Thermostat test** | Pop it in hot water, check open temp (142°F or 160°F depending on model). Replace if fails. |
+| **Anodes** | Replace any that are 50%+ depleted. |
+| **Grease points** | 2-4-C Marine on pivots; Special Lubricant 101 on prop shaft. |
+| **Computer diagnostic (SmartCraft)** | Scan for stored fault codes. Pull true engine hours from ECU. Check for outstanding service bulletins. |
+
+**Cost in Ontario at HBW:**
+- **Mid-range (40–115 HP):** $400–$700 CAD
+- **Higher HP (150–300 HP):** $700–$1,200 CAD
+
+The number people get wrong: **the gear lube colour check.** Milky lube means water has bypassed a gearcase seal. Caught at 100 hours, it's a seal job — $400. Ignored for another 100 hours, it's a lower unit rebuild — $1,800–$2,500. The checklist exists for reasons.
+
+---
+
+## The 300-Hour / 3-Year Major Service
+
+Includes everything in the 100-hour, plus:
+
+| Task | Why |
+|------|-----|
+| **Water pump impeller kit** | Full kit: impeller, wear plate, housing liner, gaskets. Brittle vanes block cooling flow. **The #1 preventable cause of powerhead damage.** |
+| **Fuel system deep clean** | EFI engines: check fuel pressure (~39 PSI at idle on most Mercury 4-strokes), inspect injectors. Carbureted engines: clean carbs. Replace any hardened fuel hoses. |
+| **Verado timing belt inspection** | Verados have a timing belt; **inspect at 300 hours, mandatory replacement by 600 hours.** A snapped belt means destroyed valves and pistons. This is where Verado owners cannot economize. |
+| **Verado supercharger oil change** | Old-style inline-6 Verados only. Current V8/V10/V12 Verados are naturally aspirated. |
+| **Power steering flush (Verado)** | Flush fluid if dark or burnt. |
+| **Anode set replacement** | Replace all of them as a set. |
+| **Lower unit pressure test** | Pressure / vacuum test confirms seal integrity. |
+
+**Cost in Ontario at HBW:**
+- **Mid-range (40–115 HP):** $800–$1,200 CAD
+- **Higher HP (150–300 HP):** $1,200–$2,000 CAD
+- **Verado:** $1,500–$2,500 CAD (timing belt inspection adds time and parts)
+
+For Verado owners specifically — if you're at 300 hours and the timing belt looks worn, **replace it now**. Don't wait for the 600-hour mandatory replacement. A $400–$700 belt replacement now is cheaper than a $7,000–$15,000 powerhead later.
+
+---
+
+## Engine-Family-Specific Notes
+
+Not every Mercury follows the exact same playbook:
+
+**FourStroke 75–300 HP** — standard 20/100/300 schedule. The 150 FourStroke is a top seller and shares parts with the 115 and 200; service intervals are identical.
+
+**OptiMax (older 2-stroke)** — uses oil injection, burns roughly 1 quart per 50 gallons of fuel. Monitor your DFI oil reservoir. Listen for the air compressor at idle — it's normal. OptiMax service intervals are the same 100/300 framework but include carb-style fuel system checks instead of EFI.
+
+**Verado (135–400 HP)** — highest maintenance demand of any Mercury family. Timing belt at 300/600. Older inline-6 Verados had supercharger oil at 100h (current naturally-aspirated V8/V10/V12 Verados don't). Charge air cooler cleaning every few hundred hours. If you own a Verado, the long maintenance hood is the price of admission for the quietest, smoothest big outboard on the market.
+
+**Pro XS** — high-RPM tuned. Spark plugs need replacement more often than standard FourStroke; we pull and inspect at every 100-hour service even when "schedule" says 200.
+
+**SeaPro (commercial)** — heavier-duty internals, but the maintenance intervals still apply. SeaPro engines clock far more hours per season than recreational Mercurys, so the **hourly trigger** beats the annual one. Plan service around hours, not the calendar.
+
+---
+
+## What You Can DIY vs. What Needs the Shop
+
+Realistic DIY scope on a 4-stroke Mercury:
+
+- **DIY:** Engine oil and filter, spark plug change, fuel filter, anodes, grease points, basic flushing.
+- **Borderline:** Gear lube change (need the right pump and care not to introduce air), thermostat (easy on smaller motors, fiddly on V8/V10s).
+- **Dealer territory:** Water pump impeller (lower unit removal + reinstallation alignment), computer diagnostics + fault code reset, lower unit pressure test, Verado timing belt, anything under warranty.
+
+If you're a wrench-comfortable owner doing your own oil changes — great. Just keep records (photo of the meter, date, work done) so we have continuity if the motor comes in for major service later. **No service records is the same as no service done** when warranty work or resale comes up.
+
+---
+
+## Why the Annual Trigger Wins in Ontario
+
+A typical Ontario recreational boater runs 50–100 hours a season. That means in three seasons you've put **150–300 hours** on the motor. By Mercury's calendar, you owe:
+
+- **Year 1:** 100-hour annual service (after the 20-hour break-in)
+- **Year 2:** 100-hour annual service
+- **Year 3:** 300-hour major service
+
+Three services in three years even if you barely used the boat. Why? **Rubber dries out, oil oxidizes, ethanol fuel breaks down, and seals shrink** — all of which happen with the calendar regardless of whether you ran the motor or not. A boat that sits a winter is harder on consumables than a boat that ran 50 hours.
+
+This is also why we recommend **ethanol-free 89 marine gas** at the dock. Ethanol pump gas absorbs water and degrades over a few weeks; ethanol-free is shelf-stable for the season. Less fuel-system service work, longer engine life, fewer spring-startup headaches.
+
+---
+
+## Book Your Mercury Service at HBW
+
+We're a Mercury Marine Platinum dealer in Ontario since 1965. Factory-trained on the full Mercury lineup — FourStroke, Pro XS, Verado, SeaPro, Avator. SmartCraft diagnostic tools, OEM parts, real records.
+
+**Typical pricing at the shop:**
+
+- 20-hour break-in service: $250–$400 (mid-range motors)
+- 100-hour annual service: $400–$700
+- 300-hour major service: $800–$2,500 depending on HP and family
+- Winterization (separate scope, fall): from $300
+
+Book scheduled service at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153**. Best timing: book your annual in **April for a May launch**, before spring gets crazy. By mid-May we're booked 3–4 weeks out.
+
+---
+`,
+    faqs: [
+      {
+        "question": "My boat sat all summer with only 5 hours on it. Do I still need an annual service?",
+        "answer": "Yes. The annual trigger isn't about hours \u2014 it's about time. Engine oil oxidizes, ethanol fuel degrades, seals dry, and water creeps past gearcase O-rings whether the motor ran or not. The 5-hour-season motor still needs the calendar service."
+      },
+      {
+        "question": "Can I push the 100-hour service to 150 hours if my schedule is tight?",
+        "answer": "A modest stretch is generally tolerable but not recommended. Mercury's intervals have margin built in, but they're calculated for the engine's design life. Pushing intervals adds wear that compounds. The cost of doing it on time is much lower than the cost of doing it late once."
+      },
+      {
+        "question": "Does the warranty really require Mercury OEM parts?",
+        "answer": "For warranty claims, yes \u2014 non-OEM parts in the cooling system, fuel system, or any wear item that's claimed under warranty creates a coverage problem. We use Mercury OEM as a default. If you're past warranty and using non-OEM aftermarket, that's your call, but we still use OEM in the shop."
+      },
+      {
+        "question": "What if my motor's hours aren't the dashboard hours?",
+        "answer": "Mercury SmartCraft motors store true engine hours inside the engine's ECU, independent of the dashboard meter. Plug a diagnostic tool in, the real hours come up. We do this at every service. If the dash and the ECU disagree, the ECU wins."
+      },
+      {
+        "question": "How much does Verado service really cost?",
+        "answer": "A Verado 300 at 300 hours, full timing belt + supercharger inspection (older I6 only) + complete impeller kit + lube and consumables, will run $1,500\u2013$2,500 in Ontario depending on what additional parts come up during inspection. It's the most expensive Mercury service tier \u2014 and the one that protects the most expensive motor."
+      }
+    ],
+  },
+  // TODO: Add customer story for winter-boat-storage-shrinkwrap-vs-indoor-ontario
+  {
+    slug: 'winter-boat-storage-shrinkwrap-vs-indoor-ontario',
+    title: "Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison",
+    description: "A Mercury Platinum dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario \u2014 what each costs, what each protects against, and what happens when you skip winterization.",
+    image: '/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
+    category: 'Service & Maintenance',
+    readTime: '10 min read',
+    keywords: ["shrinkwrap vs indoor boat storage Ontario", "winter boat storage Rice Lake", "boat shrinkwrap cost Ontario 2026", "heated indoor boat storage Ontario", "what happens if you don't winterize"],
+    content: `
+# Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
+
+Every fall we have the same conversation about thirty times. *"Is shrinkwrap enough? Should I pay for indoor? Is heated worth the extra money?"*
+
+The honest answer: **for 90% of Ontario boaters, professionally shrinkwrapped + properly winterized + outside is the right call.** The other 10% have a specific reason — wood boat, classic, very high value, or a need to access the boat through the winter — that justifies indoor.
+
+Here's the math, the protection comparison, and the decision framework. Plus the cost of getting it wrong, which is the part most pricing pages skip.
+
+---
+
+## Why Winterization Is Non-Negotiable in Ontario
+
+Let's get this out of the way first: **storage method doesn't replace winterization.**
+
+Ontario gets to -20°C and colder regularly between January and February. Even *indoor unheated* storage drops below freezing during cold snaps. The only storage tier that lets you skip winterization is **heated indoor**, where the building stays above 5°C all winter — and even then, fuel stabilization is still recommended.
+
+What happens if you skip winterization (regardless of storage method):
+
+| Failure | Cost to Fix |
+|---------|-------------|
+| **Cracked engine block** (water freezes inside cooling passages) | $5,000 – $10,000+ engine replacement |
+| **Cracked lower unit / sterndrive** (water freezes in the gearcase) | $1,500 – $4,500 |
+| **Corroded cylinder walls** (no fogging oil = surface rust over winter) | Loss of compression in spring, rebuild work |
+| **Gummed fuel system** (untreated ethanol breaks down, clogs injectors) | $200 – $800 |
+| **Dead battery** (left uncharged in freezing temps) | $200 – $500 replacement |
+
+Your storage choice affects what *else* protects the boat — UV, snow, wind, pests. It doesn't change the freeze-protection requirement.
+
+---
+
+## Shrinkwrap Storage — Ontario's Default, and Why
+
+Shrinkwrap is **7–12 mil polyethylene film, heat-shrunk tight over a support frame, with venting installed to prevent condensation**. It's designed to handle a season — single use, recyclable in spring.
+
+A professional shrinkwrap job includes:
+
+- Boat cleaned and dried
+- Support poles erected to create a peaked roof (so snow doesn't pool)
+- Film draped, heat-shrunk to fit
+- 2–4 vents installed (without these, you'll have mold by April)
+- Strapping for wind and snow load
+- Access door cut for spring un-wrapping
+
+**Pros:**
+
+- **Excellent water/snow barrier** — better than canvas, way better than tarps
+- **UV protection** — gelcoat doesn't fade
+- **Custom-fit to any shape** — pontoons, fishing boats, cruisers all wrap fine
+- **Cost-effective** — cheapest professional storage tier
+- **Can be done at HBW or at your house** with mobile shrinkwrap service
+- **Recyclable** — programs exist for spring removal
+
+**Cons:**
+
+- **Single-season** — gets removed and recycled in spring, paid every year
+- **Vents required** or you'll have mold (this is why DIY shrinkwrap with no vents is worse than no cover)
+- **Snow load failure** if the support frame is weak or undersized
+- **No temperature regulation** — same temperature as outside
+
+**HBW pricing 2025–2026:** $33/ft for trailer boats up to 21 ft, $35/ft for larger. That's **$693 for a 21-ft fishing boat** or **$770 for a 22-ft pontoon** — including the wrap, the frame, the vents, and the strapping.
+
+**Other Ontario dealers:** outdoor shrinkwrap storage runs $30–$37/ft across the province; some marinas charge $58/ft for outdoor with shrinkwrap (Muskoka pricing).
+
+---
+
+## Indoor Unheated Storage — When It's Worth the Bump
+
+Indoor unheated is the next tier up. Building keeps the boat out of the elements but doesn't heat. Important: **even indoor unheated storage drops below freezing in Ontario January, so you still need full winterization.**
+
+**Pros vs. shrinkwrap:**
+
+- No UV exposure (gelcoat protection on aging hulls is real)
+- No snow load — period
+- No wind damage to cover
+- Better pest control (sealed building)
+- Possible insurance savings
+- You can access the boat through winter for maintenance, electronics work, etc.
+
+**Cons:**
+
+- **Costs more** — typically $40–$60/ft including basic shrinkwrap or cover
+- **Limited availability** — most Ontario indoor capacity books out by September
+- **Drop-off windows** — you can't just show up; storage facilities want appointments
+- **Condensation** without good air circulation in the building
+
+**Ontario pricing for indoor unheated:**
+- $37/ft (Timber Marine — 9-month contract)
+- $40–$60/ft including shrinkwrap (Crate Marine Belleville and others)
+- $55/ft (Muskoka Boat Gallery)
+
+For most aluminum fishing boats, pontoons, and modern fibreglass runabouts, **the protection delta over outdoor shrinkwrap doesn't justify the cost**. For older fibreglass, dark-coloured gelcoat, or a hull where you want to slow oxidation — it's worth considering.
+
+---
+
+## Indoor Heated Storage — The Premium Tier
+
+Heated indoor keeps the building above 5°C (40°F) all winter. The differentiator isn't UV or snow — it's that the boat doesn't experience freezing temperatures at all.
+
+**Pros vs. unheated:**
+
+- **No freeze risk** — you can technically skip winterization, though we still recommend fuel stabilization and a basic service
+- **Protects electronics, vinyl, upholstery** from cold-cycling damage
+- **Best for high-value boats, classic boats, wooden boats**
+- **Can use the boat for off-season maintenance** without warming it up
+
+**Cons:**
+
+- **Most expensive option** — $60–$90/ft, sometimes more
+- **Very limited availability** in Ontario — heated boat storage is a niche service
+- **Energy costs** are real and increasing
+- **Some still require partial winterization** (fuel, oil) regardless
+
+**When it's worth it:**
+
+- Wood boats (period correct, restored, classic)
+- Boats over $100K where the marginal cost is small relative to the asset
+- Boats with sensitive electronics that you'd rather not see thermal-cycle through winter
+- Boats you'll genuinely use in the off-season for repairs, photo work, or polish
+
+**When it's not:**
+
+- Standard aluminum fishing boats
+- Most pontoons under $50K
+- Anything where the storage premium would buy a meaningful upgrade elsewhere
+
+---
+
+## Head-to-Head: What You Actually Get
+
+| | **Outdoor + shrinkwrap** | **Indoor unheated** | **Indoor heated** |
+|---|---|---|---|
+| **Cost (21-ft boat)** | ~$700 (HBW) | ~$840–$1,260 | ~$1,260–$1,890 |
+| **Snow protection** | Good (with frame) | Excellent | Excellent |
+| **UV protection** | Good | Excellent | Excellent |
+| **Wind protection** | Good | Excellent | Excellent |
+| **Freeze protection** | Requires winterization | Requires winterization | Not required (recommended) |
+| **Pest protection** | Good (when sealed) | Excellent | Excellent |
+| **Off-season access** | Difficult | Easy | Easy |
+| **Booking lead time** | September/October | September | August/September |
+
+For a typical 21-ft Ontario fishing boat or pontoon, outdoor shrinkwrap saves $500–$1,200 over indoor — money that's better spent on winterization done right, a quality cover frame, and an early-spring service.
+
+---
+
+## What "Done Right" Looks Like at HBW
+
+Our standard winter storage package includes:
+
+- Full shrinkwrap with support frame, 2–4 vents, and weather strapping
+- Mercury-trained winterization on the engine: fuel stabilization, fogging, gearcase drain and refill
+- Cooling system drain (freeze protection)
+- Steering and throttle cable lubrication
+- Anode inspection
+- Battery removed and brought indoors on a trickle charger through winter
+- Optional: spring commissioning add-on (we pull it off, prep it, water-test, deliver to your slip)
+
+**Pricing:** $33–$35/ft shrinkwrap + winterization fees ($300–$700 depending on engine size). All-in for a 21-ft fishing boat with a 90 HP 4-stroke is roughly $1,000–$1,200. For a 22-ft pontoon with a 115 ELPT CT, $1,200–$1,400.
+
+We do **311+ storage contracts a year**. That's a meaningful chunk of our fall and spring shop time. The system is dialled in — you drop it off, you pick it up, the boat works.
+
+---
+
+## Booking Lead Time Matters
+
+The mistake we see every year: customers calling in early November to book winter storage. By that point we're at capacity and so is every other dealer in Ontario.
+
+**Best practice:**
+- **September:** Booking opens. Best pricing, full slate of dates available.
+- **Early October:** Still good. Most popular drop-off windows starting to fill.
+- **Late October:** Squeeze territory. Fewer date options.
+- **November:** "Sorry, we're full" most years.
+
+If you're new to HBW, calling in late August / early September means you get into our system, you get a confirmed date, and you know the price ahead of time.
+
+---
+
+## Book Winter Storage at HBW
+
+We've stored boats in Gores Landing for three generations. Mercury Marine Platinum dealer service on the engine, professional shrinkwrap on the hull, our property as the storage lot. Drop off in fall, ready to launch in spring.
+
+**Phone:** 905-342-2153
+**Online:** [harrisboatworks.ca/winter-storage](https://harrisboatworks.ca/winter-storage)
+**Drop-off:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+---
+`,
+    faqs: [
+      {
+        "question": "Can I shrinkwrap my own boat?",
+        "answer": "Mechanically, yes \u2014 you can buy shrinkwrap film and a propane heat gun. Practically, most DIY shrinkwrap jobs we see are too loose (chafes the gelcoat in wind), have no vents (mold by spring), or have undersized support frames (collapse under snow). Pay a pro the first time at minimum, even if you watch and learn for next year."
+      },
+      {
+        "question": "Does shrinkwrap need to be removed in spring or can I leave it?",
+        "answer": "Remove it. Polyethylene film degrades in summer UV and the static support frame doesn't belong on a boat in the water. We pull, recycle, and dispose of every wrap every spring."
+      },
+      {
+        "question": "Is a tarp ok if I'm desperate?",
+        "answer": "A tarp is better than no cover. It's not better than shrinkwrap. Tarps flap in wind (chafe the gelcoat), pool water in the middle (snowmelt, then re-freezing), and trap moisture (mold). If budget is the issue, talk to us \u2014 there's almost always an option."
+      },
+      {
+        "question": "What's included in HBW winterization specifically?",
+        "answer": "Fuel stabilization with marine-grade additive, full fogging of the cylinders, gearcase oil drain/refill (with inspection for water/metal), cooling system fully drained, steering and throttle cables lubed, anode condition logged, battery removed and stored on tender. We document everything."
+      },
+      {
+        "question": "Do you store sterndrive boats?",
+        "answer": "Yes \u2014 same shrinkwrap, plus the more thorough engine drain that sterndrives require (block, manifolds, every petcock). MerCruiser winterization is more involved than outboard winterization, and we charge accordingly."
+      },
+      {
+        "question": "What if my boat doesn't fit a standard shrinkwrap?",
+        "answer": "Shrinkwrap is custom-fit by design. We've wrapped pontoons, deck boats, sailboats, jet boats, classic wood \u2014 anything with a hard hull, we can wrap it. Bring photos, we'll quote."
+      },
+      {
+        "question": "Do you offer indoor storage?",
+        "answer": "We don't have indoor storage on-site. Outdoor shrinkwrap + winterization is our standard package and what we recommend for most Ontario boats. If you specifically need indoor (rare cases), we can refer you to dealers who do have it."
+      }
+    ],
+  },
+  // TODO: Add customer story for total-cost-of-owning-a-boat-ontario-2026
+  {
+    slug: 'total-cost-of-owning-a-boat-ontario-2026',
+    title: "What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)",
+    description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026 \u2014 slip, storage, insurance, fuel, service. Numbers from a 78-year-old Rice Lake marina.",
+    image: '/lovable-uploads/hero-total-cost-of-ownership.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-19',
+    dateModified: '2026-05-19',
+    publishDate: '2026-05-19',
+    category: 'Buying Guide',
+    readTime: '11 min read',
+    keywords: ["cost of owning a boat Ontario", "boat ownership cost Canada", "Rice Lake marina slip cost", "boat insurance Ontario cost", "boat winterization cost Ontario"],
+    content: `
+# What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
+
+If you're shopping your first boat or thinking about whether to keep your current one, the *purchase price* is only part of the question. The bigger question is: **what does it cost to keep it on the water every year?**
+
+Most online articles answer that with American numbers, generic ranges, and no specifics. This is the Ontario version, with real numbers — most of them HBW's own. Use it as a planning template.
+
+---
+
+## The Two-Number Summary
+
+For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on $9,000 to $11,000 per year of ownership cost in Ontario**, not counting the loan payment. With a financed boat, it's closer to $13,000–$15,000.
+
+For a 22-foot pontoon at $55,000, scale that up to $11,000–$13,000 a year (cash-bought) or $16,000–$19,000 (financed).
+
+That's the honest answer. Now the breakdown.
+
+---
+
+## 1. Marina Slip / Moorage
+
+If you keep your boat in the water at a marina seasonally instead of trailering it, the slip is one of the biggest line items.
+
+**HBW Rice Lake slip pricing (2026):**
+
+- **Seasonal slip:** $48/ft, minimum $960. So a 20-ft boat = $960; a 24-ft pontoon = $1,152.
+- **Transient (overnight):** $1.00/ft per night, minimum $20. Weekly $5/ft. Monthly $10/ft.
+- **49 slips** at HBW Gores Landing.
+
+**Ontario range:** $40–$60/ft seasonal at rural Kawartha marinas. $100–$150+/ft at urban Lake Ontario marinas. Toronto/Mississauga slip rates are a different category entirely.
+
+If you trailer instead of slipping, **substitute launch fees**: HBW is $20/day or $200/season. Public launches around Rice Lake (Bewdley, Roseneath, Harwood) are free but single-lane and busy on weekends.
+
+**Annual budget:** $960 (seasonal slip) OR $200 (HBW launch season pass) OR $0 (free public launches).
+
+---
+
+## 2. Insurance
+
+Boat insurance is **not legally required** in Ontario, but most marinas (including HBW) require proof of insurance to dock, and lenders require it as a condition of financing. So in practice, it's required.
+
+**Ontario rates:**
+
+- **Annual premium:** typically **1–3% of hull value**, averaging ~1.5%
+- $30,000 boat → $300–$900/year
+- $50,000 boat → $500–$1,500/year
+- $80,000 boat → $800–$2,400/year
+- Most marinas require **$2–3 million liability minimum**
+
+Quotes vary widely based on boat type, claims history, and where you operate. Get three quotes; insurance is one of the few line items where shopping around makes a real difference.
+
+**Annual budget for $40K boat:** $400–$1,000.
+
+---
+
+## 3. Winter Storage and Winterization
+
+In Ontario, you don't get to skip winter storage. The boat has to come out of the water (slip is closed October-ish), get winterized (engine, fuel system, gearcase), and live somewhere through the cold months.
+
+**HBW pricing 2026:**
+
+- **Outdoor + shrinkwrap, up to 21 ft:** $33/ft → $693 for 21-ft boat
+- **Outdoor + shrinkwrap, 22 ft+:** $35/ft → $770 for 22-ft pontoon
+- **Outdoor with trailer, no shrinkwrap, up to 21 ft:** $36/ft (storage only)
+
+**Winterization (separate scope, fall):**
+- **40–60 HP 4-stroke:** $337.84
+- **75–115 HP 4-stroke:** $425.71
+- Larger engines, sterndrives, twin setups: $500–$900+
+
+**Indoor storage** (we don't offer; some Ontario competitors do):
+- Indoor unheated: $40–$60/ft (~$840–$1,260 for 21-ft boat)
+- Indoor heated: $60–$90/ft (~$1,260–$1,890 for 21-ft boat)
+
+**Annual budget for 21-ft outdoor + winterized:** ~$1,000–$1,200 all-in at HBW.
+
+**The "what if I skip it" cost:** A cracked engine block from a missed winterization runs **$5,000–$10,000+**. Skipped winterization is the most expensive way to save $400.
+
+---
+
+## 4. Fuel
+
+The biggest variable on the list, since it depends on how much you actually use the boat.
+
+**Fuel burn (typical Ontario boats):**
+
+- **2-stroke 75 HP** running 25–30 L/hour at typical cruise
+- **Mercury 4-stroke 90–115 HP** running 15–18 L/hour at typical cruise
+- **Mercury 4-stroke 200 HP V6** running 25–35 L/hour at cruise
+
+**Fuel pricing:**
+
+- **Pump gas (with ethanol)** in Ontario: ~$1.50–$1.65/L, varies seasonally
+- **HBW dock — ethanol-free 89 marine:** typically $0.20–$0.40/L premium over pump
+
+**Why ethanol-free is worth the premium for many owners:**
+- Doesn't absorb water during storage (huge for a boat that sits)
+- Easier on fuel system components (longer carb / injector life)
+- More stable shelf life — 6+ months vs. 30 days for ethanol pump gas
+- Slightly better fuel economy in most outboards (~3–5%)
+
+**Annual fuel budget (50–100 hours per season):**
+
+- **90 HP 4-stroke, 75 hours, ethanol-free:** ~$1,800–$2,200
+- **150 HP 4-stroke, 75 hours, ethanol-free:** ~$2,400–$3,200
+- **200 HP V6, 75 hours, ethanol-free:** ~$3,000–$4,200
+
+For most recreational owners, **fuel is $1,500–$3,500 a year**.
+
+---
+
+## 5. Routine Service and Maintenance
+
+Mercury's 20/100/300 schedule applies in Ontario, with the **annual trigger** beating the hourly trigger for most recreational owners (see our [Mercury Maintenance Intervals 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule) for the full breakdown).
+
+**HBW annual service pricing:**
+
+- **20-hour break-in service** (one-time, after first 20 hours): $250–$400 mid-range
+- **100-hour annual service** (every year regardless of hours): $400–$700 mid-range; $700–$1,200 V6
+- **300-hour major service** (every 3 years): $800–$1,200 mid-range; $1,200–$2,500 V6/Verado
+
+**Other annual line items:**
+
+- Bottom paint refresh (if applicable): $300–$600
+- Cover/canvas cleaning: $100–$250
+- Trailer service (bearings, brakes, lights): $150–$400
+- Detailing (varies): $200–$600
+
+**Annual maintenance budget (year-2 onward, mid-range engine):** $500–$1,500. Plan on the higher end.
+
+---
+
+## 6. Pleasure Craft Licence (PCL)
+
+The PCL changes effective Dec 31 2025 ended lifetime licences. New PCLs are **5-year renewals at $24** through Service Canada. Amortized: **$5/year**.
+
+PCOC (operator card) is a one-time test, lifetime card. ~$50 once, never again.
+
+This category used to be near-zero. It's still essentially negligible.
+
+---
+
+## 7. The Sample Budget — 20-Ft Aluminum, $40K, Cash-Bought
+
+| Line item | Annual cost |
+|-----------|-------------|
+| Marina slip (HBW seasonal, 20 ft) | $960 |
+| Insurance (1.5% of $40K) | $600 |
+| Winter storage + shrinkwrap (HBW) | $700 |
+| Winterization (90 HP 4-stroke) | $425 |
+| Annual service (100-hour) | $550 |
+| Fuel (75 hrs, ethanol-free) | $2,000 |
+| Maintenance reserve (props, batteries, wear items) | $400 |
+| Trailer maintenance | $200 |
+| PCL amortized | $5 |
+| **Total cash-bought** | **~$5,840** |
+
+**Add a loan payment** (10-year financing, 8% interest, 20% down on $40K): about **$4,200/year**. Total all-in: **~$10,000/year**.
+
+For a higher-tier boat — say a 22-ft pontoon at $55K — scale up about 25–30%. For a 26-ft cuddy or sterndrive cruiser, scale up further still.
+
+---
+
+## 8. The 10-Year Picture
+
+Here's what most online cost calculators get wrong: ownership costs over time **are not stable**. Some years you replace a battery and a prop; some years you replace a powerhead.
+
+Reasonable 10-year planning numbers for the 20-ft, $40K example:
+
+- **Routine (slip + insurance + storage + maintenance + fuel):** ~$50,000 over 10 years
+- **Major repairs / replacements:** ~$5,000–$15,000 (impeller jobs, battery, props, electronics, possible repower)
+- **Loan interest** (if financed): ~$15,000–$20,000
+- **Resale at 10 years:** boats lose 20–30% in year 1, maybe 50–60% by year 10. Recover ~$15,000–$20,000.
+
+**Net cost over 10 years (cash-bought):** ~$50,000–$60,000.
+**Net cost over 10 years (financed):** ~$70,000–$85,000.
+
+That's why people repower. A $20,000 Mercury repower on a 15-year-old hull resets the engine clock and extends the boat's useful life another 10–15 years — for about half the cost of buying new.
+
+---
+
+## Where HBW's Numbers Save You Money vs. Alternatives
+
+A few places HBW's pricing differs from what you'd find elsewhere:
+
+**Ethanol-free fuel.** The premium pays for itself in reduced fuel-system maintenance work and longer engine life. For a heavily-used boat, ethanol-free saves $200–$500/year in service work alone.
+
+**Transparent quote configurator.** [mercuryrepower.ca](https://mercuryrepower.ca) gives you real Mercury pricing in 90 seconds. No "call for a quote" games, no wasted weekends comparing dealer estimates that come back wildly different. The price you see is the price.
+
+**Bundled storage + service.** Drop off in fall for shrinkwrap + winterization, optionally add spring commissioning. One trip, one invoice, no chasing two different vendors for the engine work and the storage.
+
+**Mercury Platinum dealer rates.** Service work at HBW is OEM parts, factory-trained techs, and Mercury warranty support. The hourly is comparable to other Ontario Mercury dealers; the difference is the work doesn't have to come back.
+
+---
+
+## The Honest Take
+
+Boats are not cheap. They are also worth it for the right reasons.
+
+If you're considering ownership and the math above feels manageable — great. Welcome to the lake.
+
+If the math feels stretched — we have **rentals**. Nine-boat fleet on Rice Lake (16-ft fishing through 24-ft pontoon), half-day or full-day, Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+
+There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
+
+---
+`,
+    faqs: [
+      {
+        "question": "Is boat insurance really required if it's not legally required?",
+        "answer": "Practically yes. HBW requires proof of $2M liability minimum to slip a boat. Most Ontario marinas have similar policies. Lenders require it for any financed boat. You can technically own a boat in Ontario without insurance if you trailer-launch and self-store \u2014 but liability exposure is real and one bad day is bigger than 10 years of premium payments."
+      },
+      {
+        "question": "Why does HBW charge for the launch ramp when others are free?",
+        "answer": "Two-lane concrete vs. single-lane gravel. 24/7 access vs. dawn-to-dusk. Extended deep ramp usable at low water. Parking, washrooms, fuel, ice, snacks. Courtesy docks. Shelter from prevailing winds. Whether $20/day is worth it depends on how much you value your Saturday morning. The $200 season pass pays for itself by trip 11."
+      },
+      {
+        "question": "Can I save money by winterizing my boat myself?",
+        "answer": "On a small motor (under 30 HP) and an old hull where you know the boat well, yes \u2014 DIY is feasible. On a modern 4-stroke V6, the savings ($200\u2013$300) are small relative to the risk (a missed step = $5,000+ in spring). We see DIY winterization mistakes every spring; they're some of our most expensive repair tickets."
+      },
+      {
+        "question": "How does the cost change if I trailer instead of slipping?",
+        "answer": "Replace ~$960 slip with ~$200 launch pass + maybe $50/year extra in trailer maintenance and gas to/from the lake. Saves ~$700/year. Trade-off: every boat day starts and ends with a launch line."
+      },
+      {
+        "question": "What's the single biggest \"hidden\" cost most new owners miss?",
+        "answer": "Spring service. People budget for the boat, the slip, and the fuel \u2014 then get sticker-shocked by a $700 100-hour service the first April. It's not hidden, but it doesn't appear in most online calculators. Plan for it."
+      },
+      {
+        "question": "Is there any way to legitimately own a boat for under $5K/year?",
+        "answer": "Yes \u2014 small aluminum fishing boat (under $15K), trailer-launched, DIY winterized, low fuel use, minimum insurance. You can land in the $3,000\u2013$4,500 range. Anything over 18 ft and over 90 HP starts pushing past $5K quickly."
+      }
+    ],
+  },
+  // TODO: Add customer story for legend-boats-mercury-power-package-guide-ontario
+  {
+    slug: 'legend-boats-mercury-power-package-guide-ontario',
+    title: "Legend Boats + Mercury Power Packages \u2014 Ontario Buyer's Guide (2026)",
+    description: "A practical guide to Legend Boats and Mercury power packages in 2026 \u2014 the lineup, the pairings that work, all-in pricing, and which hull is right for which kind of boater. From an Ontario Legend dealer.",
+    image: '/lovable-uploads/hero-legend-boats-mercury-package.png',
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-21',
+    dateModified: '2026-05-21',
+    publishDate: '2026-05-21',
+    category: 'Buying Guide',
+    readTime: '11 min read',
+    keywords: ["Legend Boats Mercury package Ontario", "Legend XT Series 2026", "Legend pontoon Mercury", "Legend boats Rice Lake dealer", "Legend Halo pontoon"],
+    content: `
+# Legend Boats + Mercury Power Packages — Ontario Buyer's Guide (2026)
+
+If you're shopping a new aluminum fishing boat or a pontoon in Ontario, **Legend Boats** is going to come up. They're Canada's best-selling aluminum boat brand, every model is paired with a Mercury outboard, and they're the boat we sell most often at Harris Boat Works.
+
+This is the boat-by-boat overview — what's in the 2026 lineup, what each hull does well, which Mercury motor pairs with each, and how the all-in pricing works.
+
+---
+
+## Why Legend + Mercury Is the Combination
+
+A few facts that matter:
+
+- **Legend is a Canadian company** headquartered in Whitefish, Ontario, near Sudbury. Boats are designed by Canadians for Canadian boating conditions.
+- **Sells exclusively in Canada.** Legend isn't trying to be a global brand — every model is sized, equipped, and warrantied for Canadian buyers.
+- **Mercury Marine is Legend's exclusive engine partner.** Every Legend ships with a Mercury outboard, eligible for Mercury's standard 3-year warranty (extendable to 8 years).
+- **6-Year WOWranty** on Legend boat components, **Leakproof for Life** hull warranty (transferable up to 10 years), and a **Lifetime Floor Warranty.**
+- **All-In Pricing** in Ontario includes freight, prep, and most essential equipment. The number on the page is close to the number that drives away.
+
+We've been a Mercury Platinum dealer since 1965 and a Legend dealer for years. The combination is genuinely the most popular new-boat package on Rice Lake and through the Kawarthas.
+
+---
+
+## The 2026 V-Hull / Fishing Boat Lineup
+
+Five series in the 2026 V-hull lineup, ranked roughly entry-level to top-tier:
+
+### Pulse — entry-level, 10 ft
+
+The Pulse is built differently from anything else in the lineup — **rotomolded HDPE plastic hull**, virtually unsinkable. Single 10-foot length only, max 15 HP. Starting **$5,999 CAD** with a small Mercury 4-stroke.
+
+**Best for:** First-time boaters, kids' boats, cottage runabouts, anyone who wants a near-indestructible hull that doesn't need spring service.
+
+### R Series — budget aluminum, 12–16 ft
+
+The R Series is **riveted aluminum**, not welded — the entry price comes from the rivets. Two configurations: **R Series Ultralite** (12–14 ft, boat-only options) and **R Series ProSport** (14–16 ft, motor + trailer packages).
+
+Starting at **$5,399 CAD** for the smallest Ultralite hulls; ProSport packages with a Mercury 25 ELPT and trailer run **$15,000–$22,000** all-in.
+
+**Best for:** Budget-conscious anglers, kicker / second-boat buyers, light-duty utility.
+
+### XF Series — 16–18 ft, serious fishing
+
+The XF Series moves up to **welded aluminum** with a deeper-V hull (17° deadrise, the same as Legend's premium hulls). Starting **$36,999 CAD** with a Mercury 50 ELPT; max-rigged with a **Mercury 90 ELPT**, you're around **$48,000–$52,000 CAD**.
+
+**Best for:** Mid-range fishermen who want a real fishing boat without going to premium pricing. Solid all-around platform.
+
+### XT Series — 17–20 ft, premium fishing/family hybrid
+
+The XT Series is **brand-new for 2026** and the most-talked-about Legend lineup we've seen in years. Four lengths: **17 XT, 18 XT, 19 XT, 20 XT.** Starting at **$56,999 CAD** for the 17 with a Mercury 115 EXLPT; the 20 XT with a Mercury 175 lands around **$71,999 CAD.**
+
+What's new on the XT:
+
+- **Convertible "Frunk" bow** — the bow seating converts to fishing space and back
+- **50/50 Extenda-deck Converta-bench** — multi-position seating that becomes casting deck or storage
+- **RIGS** (Railmountz Integrated Gunnel System) — modular accessory mounting
+- **75L livewell**
+- **Helix 7 fish finder standard**
+- **Minn Kota PowerDrive trolling motor included**
+
+**Best for:** The boater who wants premium fishing features with family-day flexibility. We've quoted more XTs in the first six months of 2026 than any other Legend model in the same window.
+
+### Titanium 19 Rugged — top-tier
+
+The Titanium is the heaviest-duty V-hull in the line. **0.125-gauge aluminum** (everything else is 0.100), **RIGS gunnel system, hydraulic steering**, full tournament-style fishing layout. Starting **$86,999 CAD** with a Mercury 115 EXLPT; max HP is 150.
+
+**Best for:** Tournament anglers, guides, anyone running serious water who wants the thickest hull in the lineup. Less common — we move 1–2 a year.
+
+---
+
+## The 2026 Pontoon Lineup
+
+Three series across three positioning bands:
+
+### LE Series — entry-level pontoons, 15–21 ft
+
+Best-value pontoon line. **2-tube standard** with optional 3-tube on the 21. Mercury **25–40 ELPT Command Thrust** standard depending on size. Starting **$39,999 CAD** for the 15 LE C; the 21 LE rigged with a Mercury 90 EXLPT runs around **$48,000–$50,000 CAD**.
+
+**Best for:** First-time pontoon buyers, weekend cottage families, anyone who wants the pontoon experience without premium pricing.
+
+### Q Series — premium comfort pontoons, 21–23 ft
+
+Step-up tier. **2-tube or 3-tube** options. Garmin 52CV GPS standard. Premium furniture and finish. Starting **$56,999 CAD**.
+
+**Best for:** Buyers who want comfort and electronics without the design statement of the Halo.
+
+### Halo — modern-design pontoons, 19–23 ft
+
+The Halo is Legend's most distinctive pontoon — **PolyForm construction**, **360° seating**, **JBL audio**, modern aesthetic that doesn't look like every other pontoon at the marina. **$48,999–$51,999 CAD** depending on size. Mercury 115 EXLPT standard.
+
+**Best for:** Younger families, design-conscious buyers, anyone who wants a pontoon that doesn't blend into the dock.
+
+---
+
+## Mercury Power Pairings That Make Sense
+
+The standard motor on each Legend hull is sized for the typical use case — but the question we get most is *should I upgrade?* Here's the framework:
+
+| Hull | Standard Mercury | Common upgrade | When to upgrade |
+|------|------------------|----------------|-----------------|
+| **Pulse 10** | None (boat-only or small 4-stroke) | Mercury 9.9–15 4-stroke | Always — boat needs power |
+| **R Ultralite 12–14** | None or 9.9 ProKicker | 15–25 ELPT | If using as primary boat, not kicker |
+| **R ProSport 14–16** | Mercury 20–25 ELPT | Mercury 30–40 ELPT | More capacity, more weight on board |
+| **XF 16–18** | Mercury 50–90 ELPT | Mercury 90–115 ELPT | Family days with full crew, watersports |
+| **XT 17–20** | Mercury 90–175 | Pro XS upgrade | Tournament fishing, top speed matters |
+| **Titanium 19** | Mercury 115 EXLPT | Mercury 150 | Max HP rating; for tournament-grade performance |
+| **LE 15–21** | Mercury 25–40 ELPT CT | Mercury 60–115 ELPT CT | More passengers, watersports towing |
+| **Q 21–23** | Mercury 60 ELPT CT | Mercury 150–250 | Watersports, larger passenger loads |
+| **Halo 19–23** | Mercury 115 EXLPT | Verado options on 23 | Premium experience, single-engine boat |
+
+**Command Thrust (CT)** matters on pontoons. It's a larger gearcase that turns a bigger prop more slowly — way more thrust at low speed, much better for moving heavy pontoon hulls. Standard on most LE Series motors and a no-brainer on heavier pontoons.
+
+**Pro XS** matters on the XT 18 and up. Performance-tuned variants of the FourStroke with sport gearcases and higher RPM ceilings. Adds 3–5 mph top end and quicker hole shot. Worth it on a tournament-spec hull.
+
+**Verado** is the premium option on bigger Halo and Q Series pontoons — naturally aspirated V8/V10s, the smoothest and quietest Mercury platform. Significant cost step; for higher-end boats only.
+
+---
+
+## All-In Pricing — What That Actually Includes
+
+Legend's "All-In Pricing" model means the price you see on the website includes:
+
+- The boat
+- The Mercury motor
+- The trailer (most packages — verify per-model)
+- Freight to dealer
+- Pre-delivery inspection and prep
+- Most standard equipment
+
+**Not included** in All-In:
+- HST
+- Optional electronics upgrades (chartplotter upgrades beyond standard)
+- Custom rigging changes
+- Extended warranty (Mercury Product Protection — well worth considering)
+- Accessories (anchors, life jackets beyond minimum, fishing electronics beyond standard)
+
+Plan on **5–8% on top of the listed price** for HST and reasonable optional equipment. Bigger optional packages can push higher.
+
+---
+
+## Why Buy a Legend at HBW Specifically
+
+A few things that aren't on the Legend website:
+
+**Mercury repower path is built-in.** Every Legend ships with a Mercury outboard, and we're a Mercury Platinum dealer. When the original engine eventually needs replacement (10–15 years out, typically), we already have your records, your boat history, and the right rigging knowledge. No starting over with a new dealer.
+
+**On-water service.** We're at Gores Landing on Rice Lake. If your Legend needs warranty work or service, you don't have to trailer it 90 minutes to a dealer in another county. Drop it at our slip, pick it up running.
+
+**Trade-in math.** We take Legend trade-ins (and most other brands). Single-transaction trade saves the Kijiji hassle and gives you tax-on-difference savings on the new boat (you only pay HST on the price difference between trade and new, not the full new price).
+
+**Real conversations.** We're not the biggest Legend dealer in Ontario. We're not trying to be. What we are is a third-generation family business that's been on this lake since 1947 and that has time to actually walk you through which hull is right for the way you'll use the boat.
+
+---
+`,
+    faqs: [
+      {
+        "question": "Where are Legend boats designed?",
+        "answer": "Legend is a Canadian company headquartered in Whitefish, Ontario, near Sudbury. The lineup is designed for Canadian boating conditions \u2014 lakes like Rice Lake, the Kawarthas, Georgian Bay, and Northern Ontario."
+      },
+      {
+        "question": "What's the difference between Legend's R Series and XF Series?",
+        "answer": "The R Series is **riveted aluminum** \u2014 entry-level pricing, lighter-duty construction, smaller hulls (12\u201316 ft). The XF Series is **welded aluminum** with a 17\u00b0 deep-V hull \u2014 premium construction, larger hulls (16\u201318 ft), serious fishing capability. Different categories of boat."
+      },
+      {
+        "question": "Are Legend pontoons 2-tube or 3-tube?",
+        "answer": "Depends on the model. The LE Series is 2-tube standard with optional 3-tube on the 21-ft. The Q Series offers both. The Halo uses Legend's PolyForm pontoon construction. 3-tube hulls handle bigger horsepower, plane faster, and ride better in chop \u2014 if you want watersports, 3-tube is worth the upgrade."
+      },
+      {
+        "question": "What's the Legend WOWranty?",
+        "answer": "6-year warranty on Legend boat components, Leakproof for Life hull warranty (transferable up to 10 years), and Lifetime Floor Warranty. Legend's warranty is one of the strongest in the aluminum boat market."
+      },
+      {
+        "question": "Can I order any Legend through HBW?",
+        "answer": "Yes \u2014 we can order any 2026 Legend hull and option package. Some popular models we keep in inventory or on order; specialty configurations (Titanium, Halo 23) are typically build-to-order with 6\u201310 week lead time depending on the season. Order early in the calendar year if you want a specific build for spring."
+      },
+      {
+        "question": "Does Legend offer financing?",
+        "answer": "Mercury Repower Center financing is available through HBW for the engine portion. Boat financing varies by lender and credit profile \u2014 we have relationships with marine financing providers and can walk you through options when we sit down to spec a boat."
+      }
+    ],
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
