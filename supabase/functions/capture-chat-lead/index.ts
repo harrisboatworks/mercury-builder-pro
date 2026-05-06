@@ -140,10 +140,34 @@ serve(async (req) => {
 
     console.log('[capture-chat-lead] Lead saved successfully:', savedLead.id);
 
+    // HTML escape helper for email bodies
+    const escHtml = (s: unknown): string =>
+      String(s ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+    // Sanitize free-text for SMS bodies (strip URLs, phone numbers, restrict chars)
+    const sanitizeForSms = (val: unknown, max = 200): string => {
+      const s = typeof val === 'string' ? val : '';
+      return s
+        .replace(/https?:\/\/\S+/gi, '')
+        .replace(/\b\d[\d\s().-]{6,}\d\b/g, '')
+        .replace(/[^A-Za-z0-9 ,.\-']/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, max);
+    };
+
     // Send SMS notification to admin
     const ADMIN_PHONE = Deno.env.get('ADMIN_PHONE');
     if (ADMIN_PHONE) {
-      const smsMessage = `💬 CHAT LEAD!\n\nName: ${leadData.name}\nPhone: ${leadData.phone}${leadData.email ? `\nEmail: ${leadData.email}` : ''}\n\nContext: ${leadData.conversationContext || 'Requested callback'}${leadData.motorContext?.model ? `\nMotor: ${leadData.motorContext.model}` : ''}\n\nLead Score: ${leadScore}/100\n\nAction: Call within 24hrs!\n\n- Harris Boat Works AI`;
+      const safeName = sanitizeForSms(leadData.name, 60);
+      const safeContext = sanitizeForSms(leadData.conversationContext || 'Requested callback', 200);
+      const safeMotor = sanitizeForSms(leadData.motorContext?.model, 60);
+      const smsMessage = `💬 CHAT LEAD!\n\nName: ${safeName}\nPhone: ${leadData.phone}${leadData.email ? `\nEmail: ${leadData.email}` : ''}\n\nContext: ${safeContext}${safeMotor ? `\nMotor: ${safeMotor}` : ''}\n\nLead Score: ${leadScore}/100\n\nAction: Call within 24hrs!\n\n- Harris Boat Works AI`;
 
       try {
         const { error: smsError } = await supabase.functions.invoke('send-sms', {
