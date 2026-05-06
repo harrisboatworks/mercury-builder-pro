@@ -225,7 +225,9 @@ const handler = async (req: Request): Promise<Response> => {
     // Send SMS notification for urgent inquiries or if preferred contact method is SMS
     if (inquiryData.urgency_level === 'urgent' || inquiryData.preferred_contact_method === 'sms') {
       try {
-        const smsMessage = `New ${inquiryData.urgency_level === 'urgent' ? 'URGENT ' : ''}inquiry from ${inquiryData.name} (${inquiryData.email}). Type: ${inquiryData.inquiry_type}. Message: ${inquiryData.message.substring(0, 200)}${inquiryData.message.length > 200 ? '...' : ''}`;
+        const safeName = sanitizeForSms(inquiryData.name, 60);
+        const safeMessage = sanitizeForSms(inquiryData.message, 200);
+        const smsMessage = `New ${inquiryData.urgency_level === 'urgent' ? 'URGENT ' : ''}inquiry from ${safeName}. Type: ${inquiryData.inquiry_type}. Message: ${safeMessage}`;
         
         const smsResponse = await fetch(`https://api.twilio.com/2010-04-01/Accounts/${twilioAccountSid}/Messages.json`, {
           method: 'POST',
