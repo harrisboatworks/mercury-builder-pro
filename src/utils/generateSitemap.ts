@@ -51,11 +51,13 @@ const getStaticPages = (): SitemapEntry[] => {
 };
 
 export function generateSitemapXML(): string {
-  const publishedArticles = blogArticles.filter(isArticlePublished);
-  
-  const blogEntries: SitemapEntry[] = publishedArticles.map(article => ({
+  // Include scheduled posts so Google discovers them ahead of publish date.
+  // Page-level visibility gate (parseLocalDate) handles 200/404 at request time.
+  const allArticles = blogArticles;
+
+  const blogEntries: SitemapEntry[] = allArticles.map(article => ({
     loc: `/blog/${article.slug}`,
-    lastmod: article.dateModified || article.datePublished,
+    lastmod: article.publishDate || article.dateModified || article.datePublished,
     changefreq: 'monthly' as const,
     priority: 0.7,
     image: article.image ? {
