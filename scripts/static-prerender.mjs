@@ -90,6 +90,31 @@ function loadLocations() {
   }
 }
 
+// Load ALL blog articles (including future-dated/scheduled) for sitemap.
+// Returns a minimal shape: slug, publishDate, datePublished, dateModified, image, title.
+function loadAllBlogArticlesForSitemap() {
+  const dumpScript = `
+    import { blogArticles } from '../src/data/blogArticles.ts';
+    const items = blogArticles.map(a => ({
+      slug: a.slug,
+      title: a.title,
+      image: a.image,
+      publishDate: a.publishDate || null,
+      datePublished: a.datePublished || null,
+      dateModified: a.dateModified || null,
+    }));
+    process.stdout.write(JSON.stringify(items));
+  `;
+  const tmpFile = join(ROOT, 'scripts', '.blog-dump-all.mts');
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 16 * 1024 * 1024 });
+    return JSON.parse(out);
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+
 // Load published blog articles (filters out future-dated posts).
 function loadBlogArticles() {
   const dumpScript = `
@@ -3082,11 +3107,17 @@ const staticSitemapEntries = [
   { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
 ];
 
-const blogSitemapEntries = blogArticles.map(a => ({
+// Sitemap includes ALL blog articles (scheduled + live) so Google can discover
+// future-dated posts. Page-level visibility gate (parseLocalDate in BlogArticle.tsx)
+// handles 200/404 at request time. Use publishDate as lastmod for scheduled posts.
+const allBlogArticlesForSitemap = loadAllBlogArticlesForSitemap();
+console.log(`[static-prerender] loaded ${allBlogArticlesForSitemap.length} total blog articles for sitemap (vs ${blogArticles.length} prerendered)`);
+
+const blogSitemapEntries = allBlogArticlesForSitemap.map(a => ({
   loc: `/blog/${a.slug}`,
   priority: 0.7,
   changefreq: 'monthly',
-  lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
+  lastmod: (a.publishDate || a.dateModified || a.datePublished || today).split('T')[0],
   imageUrl: a.image ? (a.image.startsWith('/') ? `${SITE_URL}${a.image}` : a.image) : null,
   imageTitle: a.title,
 }));
