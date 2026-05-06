@@ -72,6 +72,27 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const inquiryData = validationResult.data;
+
+    // HTML-escape user-supplied strings before embedding in email bodies
+    const escHtml = (s: unknown): string =>
+      String(s ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+
+    // Sanitize free-text for SMS bodies (strip URLs, phone numbers, restrict chars)
+    const sanitizeForSms = (val: unknown, max = 200): string => {
+      const s = typeof val === 'string' ? val : '';
+      return s
+        .replace(/https?:\/\/\S+/gi, '')
+        .replace(/\b\d[\d\s().-]{6,}\d\b/g, '')
+        .replace(/[^A-Za-z0-9 ,.\-']/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .slice(0, max);
+    };
     
     console.log('Processing contact inquiry:', { 
       name: inquiryData.name, 
