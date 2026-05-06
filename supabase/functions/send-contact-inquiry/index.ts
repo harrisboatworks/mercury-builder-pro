@@ -139,7 +139,7 @@ const handler = async (req: Request): Promise<Response> => {
           
           <div style="padding: 30px; background: #f8fafc;">
             <p style="font-size: 16px; color: #334155; margin: 0 0 20px 0;">
-              Hi ${inquiryData.name},
+              Hi ${escHtml(inquiryData.name)},
             </p>
             
             <p style="font-size: 16px; color: #334155; line-height: 1.6;">
