@@ -3107,11 +3107,17 @@ const staticSitemapEntries = [
   { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
 ];
 
-const blogSitemapEntries = blogArticles.map(a => ({
+// Sitemap includes ALL blog articles (scheduled + live) so Google can discover
+// future-dated posts. Page-level visibility gate (parseLocalDate in BlogArticle.tsx)
+// handles 200/404 at request time. Use publishDate as lastmod for scheduled posts.
+const allBlogArticlesForSitemap = loadAllBlogArticlesForSitemap();
+console.log(`[static-prerender] loaded ${allBlogArticlesForSitemap.length} total blog articles for sitemap (vs ${blogArticles.length} prerendered)`);
+
+const blogSitemapEntries = allBlogArticlesForSitemap.map(a => ({
   loc: `/blog/${a.slug}`,
   priority: 0.7,
   changefreq: 'monthly',
-  lastmod: (a.dateModified || a.datePublished || today).split('T')[0],
+  lastmod: (a.publishDate || a.dateModified || a.datePublished || today).split('T')[0],
   imageUrl: a.image ? (a.image.startsWith('/') ? `${SITE_URL}${a.image}` : a.image) : null,
   imageTitle: a.title,
 }));
