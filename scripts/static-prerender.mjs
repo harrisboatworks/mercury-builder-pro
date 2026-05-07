@@ -1689,13 +1689,16 @@ const blogArticleRoutes = blogArticles.map(article => ({
   intro: firstParagraph(article.content, article.description),
   schemas: [blogArticleSchema(article)],
   extraNoscript: () => {
+    // Full article body — bots that don't execute JS now see the entire
+    // post (~1000–2000 words), not just the noscript intro paragraph.
+    const bodyHtml = renderArticleBodyHtml(article.content);
     const faqHtml = (article.faqs && article.faqs.length > 0)
-      ? '<dl>' + article.faqs.map(f =>
+      ? '<section><h2>Frequently Asked Questions</h2><dl>' + article.faqs.map(f =>
           `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
-        ).join('') + '</dl>'
+        ).join('') + '</dl></section>'
       : '';
     const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
-    return tableHtml + faqHtml;
+    return `<article>${bodyHtml}</article>${tableHtml}${faqHtml}`;
   }
 }));
 
