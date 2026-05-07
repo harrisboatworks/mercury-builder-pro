@@ -5168,130 +5168,159 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   // Week 16: April 20, 2026
   {
     slug: 'mercury-seapro-commercial-outboard-guide',
-    title: 'Mercury SeaPro: The Best Commercial Outboard for Guides and Heavy Use',
-    description: 'Discover why Mercury SeaPro is the choice for commercial operators. Built for high-hour use, extended service intervals, and maximum reliability.',
+    title: 'Mercury SeaPro: The Commercial Outboard Built for Guides, Charters, and High-Hour Use',
+    description: "An HBW guide to Mercury SeaPro outboards — what makes them different from FourStrokes, who actually needs one, and the math on commercial-grade vs recreational reliability.",
     image: '/lovable-uploads/Mercury_SeaPro.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-20',
-    dateModified: '2026-04-20',
+    dateModified: '2026-05-07',
     publishDate: '2026-04-20',
     category: 'Buying Guide',
-    readTime: '9 min read',
-    keywords: ['mercury seapro', 'commercial outboard', 'guide motor', 'heavy duty outboard', 'commercial boat motor'],
+    readTime: '8 min read',
+    keywords: ['mercury seapro', 'commercial outboard', 'guide motor', 'heavy duty outboard', 'commercial boat motor', 'SeaPro vs FourStroke', 'commercial outboard motor', 'guide boat outboard', 'SeaPro 200 hour service', 'charter boat motor'],
     content: `
-## Mercury SeaPro: Built for Work
+If your boat earns money — running a fishing guide service, a rental fleet, charter trips, government work, or any application that puts hundreds or thousands of hours on a motor every year — your motor's downtime IS your downtime. Mercury SeaPro is built to keep that downtime as low as possible.
 
-When your motor is your livelihood, you need equipment built for the job. Mercury SeaPro delivers commercial-grade durability for high-hour applications.
+For everyone else, SeaPro is overkill. The standard FourStroke does the job at lower cost. We sell both. The honest version of "which one for you" comes down to two numbers: how many hours you'll run it per year, and how much one breakdown day costs you.
 
-### What Makes SeaPro Different
+## What Mercury SeaPro Actually Is
 
-**Built for Professionals**:
-- Extended service intervals
-- Heavy-duty components
-- Commercial warranty options
-- Designed for daily operation
+SeaPro is a **commercial-spec variant** of Mercury's FourStroke and Pro XS outboards. Same basic powerheads in many cases, but with components and intervals tuned for sustained heavy use:
 
-**Target Users**:
-- Fishing guides
-- Charter operators
-- Rental fleets
-- Resort operators
-- Commercial fishermen
+- **Reinforced lower units** — heavier-gauge gearcase castings, beefier bearings, larger oil capacity
+- **Enhanced cooling system** — bigger water pump, more cooling passages, designed to run continuously without heat-soaking
+- **Extended service intervals** — 200-hour oil change interval (vs 100 on standard FourStroke)
+- **Stainless steel hardware** throughout — saltwater-rated even on freshwater models
+- **Heavy-duty mounting and bracketry**
+- **Counter-rotation options** for twin installations
+- **Commercial warranty eligibility** (different terms than recreational)
 
-### SeaPro Lineup
+Available range: **15 HP to 500 HP** — a wider lineup than FourStroke at the high end. Common SeaPro horsepowers we see in Ontario: 60, 90, 115, 150, 200, 250, 300.
 
-**SeaPro 15-60HP**: Small commercial craft
-**SeaPro 75-115HP**: Guide boats and work boats
-**SeaPro 150HP**: Multi-purpose commercial
-**SeaPro 200-300HP**: Large commercial vessels
+## When SeaPro Is Actually Worth It
 
-### Key Features
+The real test: **how many hours per year will your boat run?**
 
-**Extended Service Intervals**:
-- 200-hour oil change intervals (vs 100 hours)
-- Less downtime
-- Lower maintenance costs per hour
+| Annual hours | Recommendation |
+|--------------|----------------|
+| **Under 100 hours** (typical recreational) | FourStroke. SeaPro is overkill. |
+| **100-300 hours** (heavy recreational, cottage hard-use) | FourStroke is still fine. SeaPro gives you 200-hour oil intervals — fewer service trips. |
+| **300-600 hours** (light commercial, guide a few days a week) | SeaPro pays off. You'll do 3 oil changes/year on FourStroke vs 1.5 on SeaPro. |
+| **600-1,500 hours** (full-time guide, charter, rental) | SeaPro is the only sensible answer. The reinforced internals are designed for this. |
+| **1,500+ hours** (commercial workboat, high-volume rental) | SeaPro mandatory. FourStroke would be on borrowed time at this rate. |
 
-**Heavy-Duty Components**:
-- Reinforced lower unit
-- Enhanced cooling system
-- Robust ignition components
-- Stainless steel hardware
+The flip-side test: **what does one day of downtime cost you?**
 
-**Commercial-Ready Design**:
-- Counter-rotating options for twins
-- Heavy-duty mounting system
-- Corrosion protection enhanced
-- Simple, reliable controls
+A fishing guide losing a Saturday in walleye season = $400-$800 in cancelled trips plus reputation damage. A rental operator losing a peak-summer boat = $300-$600/day. If you're losing more than $200/day per breakdown, SeaPro's reliability premium pays for itself in one or two saved days per season.
 
-### SeaPro vs FourStroke
+## SeaPro vs FourStroke — Real Differences
 
 | Feature | SeaPro | FourStroke |
 |---------|--------|------------|
-| Service Intervals | 200 hours | 100 hours |
-| Best For | High hours | Recreational |
-| Warranty | Commercial available | Recreational |
-| Price | Slightly higher | Standard |
-| Components | Heavy-duty | Standard |
+| **Oil change interval** | 200 hours | 100 hours |
+| **Lower unit** | Heavy-duty | Standard |
+| **Cooling system** | Enhanced | Standard |
+| **Cylinder coatings** | Plasma-fused (extra durability) on most models | Standard |
+| **Recommended duty** | High-hour, sustained | Recreational |
+| **Warranty** | 3 years standard + commercial-warranty eligibility | 3 years standard |
+| **Price premium** | ~10-15% over FourStroke | — |
+| **Best for** | Guides, charters, rentals, work boats | Recreational |
+| **Hours expected (with care)** | 5,000+ | 3,000–4,000 |
 
-### Commercial Warranty
+The price premium is real but not enormous. A 90 HP SeaPro vs FourStroke is roughly $1,500–$2,500 CAD more depending on options. Over a 5,000-hour service life on a guide boat, that premium amortizes to less than $0.50/hour.
 
-SeaPro qualifies for Mercury's commercial warranty program:
-- Available for high-hour applications
-- Coverage for commercial use
-- Different terms than recreational
-- Ask us about qualification
+## SeaPro for Recreational Boaters?
 
-### Who Should Consider SeaPro
+Sometimes — yes, surprisingly. We have customers who chose SeaPro recreationally because they:
 
-**Good Fit**:
-- Guides running 500+ hours/year
-- Charter boats
-- Rental operations
-- Work boats
-- High-hour recreational (cottage boats run hard)
+- **Fish 200+ hours per season** (serious bass tournament anglers, dedicated walleye trollers)
+- **Run their cottage boat hard** — dawn-to-dusk every weekend all summer
+- **Want the longer service intervals** for less hassle
+- **Plan to keep the motor 15+ years** and want the durability margin
+- **Like the resale story** — a "SeaPro-equipped" boat fetches a small premium on used market
 
-**Overkill For**:
-- Weekend boaters
-- Low-hour recreational use
-- Budget-focused buyers (FourStroke is fine)
+For a 200+ hours/season recreational user, the math gets close. The 200-hour service interval alone means you do annual service on a SeaPro vs twice-a-year on a standard FourStroke at that volume.
 
-### Our Commercial Customers
+## The Specific Models We Recommend
 
-We support fishing guides throughout the Kawarthas with SeaPro motors. They appreciate:
-- Minimal downtime
-- Predictable maintenance
-- Reliability their business depends on
-- Parts always in stock
+Not every Mercury HP is offered in a SeaPro variant. The most common in Ontario:
 
-**[Get a SeaPro Quote](/quote)**
+**SeaPro 60 ELPT** — small commercial work boats, light guide skiffs. ~$13,500 CAD.
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
+**SeaPro 115 ELPT (or EXLPT)** — the workhorse for medium-duty guide boats and rental fleets. We sell more of this than any other SeaPro size. ~$17,500–$19,500 CAD.
 
-## Related guides
+**SeaPro 150 ELPT** — multi-purpose commercial. Some of our charter customers run twin 150 SeaPros on aluminum cabin boats. ~$22,500–$24,500 CAD.
 
-- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
-- [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
+**SeaPro 200/250/300 V8** — the big single-engine commercial setup. Government boats, Coast Guard auxiliary, commercial fishing. ~$32,000–$45,000 CAD depending on HP and options.
 
+These are ballparks — current pricing in the [mercuryrepower.ca configurator](https://mercuryrepower.ca) is more accurate.
+
+## Commercial Warranty Considerations
+
+Mercury offers a **commercial warranty program** for SeaPro motors used in actual commercial applications. The terms differ from recreational:
+
+- Different coverage period (sometimes shorter on parts, longer on certain systems)
+- Specific maintenance requirements
+- Requires registration as commercial use at point of sale
+- Can be combined with **Mercury Product Protection (MPP)** extended warranty
+
+If you're a commercial operator, ask your dealer to walk you through the commercial warranty paperwork specifically — recreational warranty assumes you won't run the motor 1,500 hours/year, so claiming under recreational terms while running commercial volumes can create coverage problems.
+
+We've helped guides and rental operators register motors correctly at point of sale. Get this right at the start; it's a pain to retroactively change.
+
+## The Reliability Story
+
+We've sold SeaPro motors in Ontario since the line was introduced. The performance pattern we see:
+
+**Years 1-3 (under warranty):** Both SeaPro and FourStroke are essentially trouble-free if maintained.
+
+**Years 3-7:** Where they start to diverge. FourStrokes that have run 800+ hours/year start showing wear — water pump failures, cooling system buildup, occasional lower-unit issues. SeaPros at the same hour count look like they did at hour 500.
+
+**Years 7-15+:** A SeaPro with documented service history can hit 5,000+ hours and still run well. A FourStroke that's done 5,000 hours in 7 years is usually past its useful life and due for repower or major rebuild.
+
+For a guide running 800-1,000 hours/year, SeaPro stretches the useful life from ~5 years to ~10. That's a real economic difference.
+
+## What HBW Does for Commercial Customers
+
+We support guides and rental operators throughout the Kawarthas:
+
+- **Commercial-spec quoting** — we'll register the motor correctly for commercial warranty terms
+- **Priority service scheduling** — peak-season breakdowns get worked into the schedule fast (we know your boat is income)
+- **Bulk parts stocking** — for high-volume operators, we'll keep the impellers, plugs, and consumables on the shelf
+- **Multi-engine fleet maintenance plans** — predictable annual budget instead of breakdown surprises
+
+If you run a commercial boat operation in the Kawarthas, Trent-Severn, or anywhere within tow distance, we'd rather have a phone conversation about your specific use case than try to fit you into a recreational quoting flow. Call **905-342-2153** and ask for the commercial quote.
+
+{/* TODO: Add customer story for mercury-seapro-commercial-outboard-guide */}
     `,
     faqs: [
       {
         question: 'Is SeaPro more expensive than FourStroke?',
-        answer: 'Slightly, but the extended service intervals and commercial-grade components provide value for high-hour users. For recreational use under 200 hours/year, FourStroke is usually the better value.'
+        answer: 'Yes — typically 10-15% more on the same horsepower. A 115 SeaPro is roughly $1,800-$2,500 more than a 115 FourStroke. For users running 300+ hours/year, the price premium is recovered in extended service intervals and longer service life within 2-3 years.'
       },
       {
-        question: 'Can I use SeaPro recreationally?',
-        answer: 'Absolutely. Many recreational boaters choose SeaPro for the extended service intervals and durability. It\'s not just for commercial use—it\'s for anyone who wants commercial-grade reliability.'
+        question: 'Can I run a SeaPro recreationally?',
+        answer: 'Absolutely. Many of our recreational customers choose SeaPro for the durability and longer oil change intervals. The motor doesn\'t care if you call yourself commercial or not.'
       },
       {
-        question: 'What\'s the difference in warranty?',
-        answer: 'SeaPro can qualify for Mercury\'s commercial warranty program, which has different terms than recreational warranty. We can explain the specifics for your situation.'
+        question: 'How many hours can a SeaPro really handle?',
+        answer: 'With proper maintenance, 5,000+ hours is common. We have working customers with documented 7,000+ hours on SeaPro 115s still earning their living.'
       },
       {
-        question: 'How many hours can a SeaPro handle?',
-        answer: 'With proper maintenance, SeaPro motors routinely run 3,000-5,000+ hours. We have customers with over 5,000 hours on SeaPro motors still going strong.'
+        question: 'Does SeaPro use special oil or fuel?',
+        answer: 'Same Mercury FC-W certified marine 4-stroke oil. Same gas (87 octane minimum on most). The differences are in the engineering, not the consumables.'
+      },
+      {
+        question: 'Is the warranty really different for commercial use?',
+        answer: 'Yes. The recreational 3-year warranty assumes typical usage patterns. Running a recreational motor commercially can void warranty if Mercury determines it. Commercial registration at point of sale is the right way to handle this — different terms but appropriate coverage for actual use.'
+      },
+      {
+        question: 'Can I add MPP extended warranty to a SeaPro?',
+        answer: 'Yes — Mercury Product Protection extended coverage is available for SeaPro motors. Especially worthwhile for commercial users where unplanned downtime costs are high.'
+      },
+      {
+        question: 'What\'s the difference between SeaPro and Pro XS?',
+        answer: 'Different applications. Pro XS is the performance variant (higher RPM, sport gearcase, lighter). SeaPro is the commercial-duty variant (heavier construction, longer service intervals). Some Mercury motors are available in both Pro XS and SeaPro versions.'
       }
     ]
   },
@@ -5530,141 +5559,143 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   // Week 18: May 4, 2026
   {
     slug: 'electric-trolling-motor-kicker-guide',
-    title: 'Trolling Motor vs Kicker: Which Auxiliary Setup Is Right for You?',
-    description: 'Compare electric trolling motors and gas kicker motors. Learn the pros and cons of each for fishing boats in Ontario waters.',
+    title: 'Trolling Motor vs Kicker Motor — Which Auxiliary Setup Wins on Rice Lake?',
+    description: 'An HBW take on trolling motors vs kicker motors — when each wins on Rice Lake and the Kawarthas, the math on running both, and why most serious anglers do.',
     image: '/lovable-uploads/Best_Mercury_Outboard_Rice_Lake_Fishing.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-04',
-    dateModified: '2026-05-04',
+    dateModified: '2026-05-07',
     publishDate: '2026-05-04',
     category: 'Comparison',
     readTime: '9 min read',
-    keywords: ['trolling motor vs kicker', 'kicker motor fishing', 'trolling motor boat', 'mercury kicker', 'auxiliary outboard'],
+    keywords: ['trolling motor vs kicker', 'kicker motor fishing', 'trolling motor boat', 'mercury kicker', 'auxiliary outboard', 'Mercury 9.9 ProKicker', 'electric trolling motor vs gas', 'bow mount trolling motor', 'auxiliary outboard motor'],
     content: `
-## Trolling Motor vs Kicker: Making the Right Choice
+Short answer: most serious Rice Lake anglers run both. A bow-mount electric for spot-lock and silent precision, a transom kicker for long trolling runs and rough-water reliability. They solve different problems.
 
-Many fishing boats benefit from auxiliary power. Should you go electric or gas? Here's a comprehensive comparison.
+But if you can only afford one — or you want to pick the right *first* one — the answer depends entirely on what you fish for and how you fish. We rig both setups every spring. Here's the honest breakdown of which wins for which boater, with the math we'd do at the shop if you walked in.
 
-### Electric Trolling Motor
+## What Each One Actually Does
 
-**What It Is**: Battery-powered electric motor, typically bow or transom mounted.
+**Electric trolling motor** — battery-powered, prop in the water, mounted at the bow or transom. Rated in **pounds of thrust**, not horsepower. Modern bow-mount units come with GPS spot-lock (the boat holds position automatically against wind and current), wireless foot pedal, and i-Pilot-style navigation. Brands you'll see: Minn Kota, Garmin Force, MotorGuide.
 
-**Power Range**: 30-112 lbs thrust (not HP)
+**Gas kicker motor** — a small Mercury outboard mounted alongside your main motor. Rated in horsepower, runs on the same gas as the main, gives you real propulsion at trolling speeds. The 9.9 HP **Mercury ProKicker** is the king of this category — purpose-built for kicker duty with a low-RPM idle, sailboat-mode programming, and a gear ratio tuned for thrust at low speed.
 
-**Popular Brands**: Minn Kota, MotorGuide
+These aren't competing tools. They're complementary. But they cost real money — so most boaters pick one first.
 
-### Gas Kicker Motor
+## Head-to-Head: When Each One Wins
 
-**What It Is**: Small outboard motor mounted alongside main motor.
+| Factor | Electric Trolling | Gas Kicker |
+|--------|------------------|------------|
+| **Noise** | Silent | Quiet but audible |
+| **Range** | Battery-limited (1-6 hours) | Effectively unlimited |
+| **Stealth in shallow water** | Excellent | Good but not silent |
+| **Top speed** | Slow (~3-5 mph) | Real propulsion (~5-7 mph) |
+| **Spot-lock / GPS hold** | Yes — game-changer | No |
+| **Hands-free** | Yes (foot pedal / wireless) | No |
+| **Wind/wave handling** | Limited above 1-2 ft chop | Excellent |
+| **Maintenance** | Minimal | Standard outboard service |
+| **Upfront cost** | $500–$3,500 (motor only, before batteries) | $4,000–$7,500 installed |
+| **Cost over 10 years** | $1,200–$2,500 (battery replacement every 4-6 yrs) | $400–$800 (oil, impeller, plugs) |
+| **Saves wear on main motor** | Yes — if it does the job | Yes — same |
+| **Emergency backup propulsion** | Limited (battery-dependent) | Full backup |
 
-**Power Range**: 4-15HP typically
+## When Electric Trolling Motor Wins
 
-**Mercury Options**: 4-20HP FourStroke, 9.9HP Pro Kicker
+**You're a bass or panfish angler who fishes shallow water.** Bass don't tolerate noise. A bow-mount electric, properly handled, is silent enough to drift right over fish. Same for crappie in spawning bays, perch in weed flats, or pike in lily pads.
 
-### Head-to-Head Comparison
+**You fish solo and need hands-free precision.** The wireless foot pedal or the spot-lock anchor changes how you fish. You can land a fish, re-bait, and reset position — without touching a steering wheel or moving the kicker tiller. For solo anglers, this is the killer feature.
 
-| Factor | Trolling Motor | Gas Kicker |
-|--------|---------------|------------|
-| Noise | Silent | Quiet but audible |
-| Range | Battery limited | Fuel tank dependent |
-| Maintenance | Minimal | Standard outboard |
-| Cost | $500-$3,000 | $2,500-$6,000 |
-| Weight | 20-60 lbs | 60-100 lbs |
-| Speed Control | Infinite | Good with EFI |
-| Hands-Free | Yes (with pedal) | No |
+**You boat in 4 feet of water or less regularly.** A kicker's gearcase still hangs down 18+ inches. An electric runs in a foot of water without complaint.
 
-![Trolling Motor vs Kicker comparison infographic](/lovable-uploads/Trolling_Motor_vs_Kicker_Comparison.png)
+**You want spot-lock.** This is the feature that matters most. Press a button, the boat holds GPS position against any reasonable wind. No more drifting off the structure you're working. We rigged probably 30 spot-lock units last spring; every customer who got one wishes they'd bought it sooner.
 
-### When to Choose Electric Trolling Motor
+**Honest limitation:** Electric range is real. A 50-lb-thrust unit running at 70% on a single deep-cycle battery gives you maybe 4-5 hours. On Rice Lake's bigger water, you can drain a battery before lunch. Lithium upgrades help (~$1,200 for a quality LiFePO4 setup) but they're not free.
 
-**Best For**:
-- Bass and panfish
-- Shallow water stealth
-- Spot-lock/GPS anchoring
-- Bow mounting
-- Hands-free operation
-- Short trolling runs
+## When Gas Kicker Wins
 
-**Advantages**:
-- Silent operation
-- Precise control
-- Spot-lock technology
-- Works in shallows
-- Simple mounting
+**You troll for walleye.** Walleye trolling on Rice Lake — pulling crawler harnesses, deep-divers, or stickbaits along the railway line and the deep flats — is what kickers were made for. You need 5-6 hours of continuous low-speed running, often in chop, often covering miles. An electric will leave you stranded; a 9.9 ProKicker on a tank of gas does it all day.
 
-**Limitations**:
-- Battery life/range
-- Upfront battery investment
-- Less thrust for big water
-- Not for long-distance trolling
+**You fish big water.** Lake Simcoe, Lake Ontario, the Trent-Severn open stretches, the Kawartha lakes in October wind. Anywhere chop builds. A gas kicker has actual thrust to push through wind; a 50-lb electric does not.
 
-### When to Choose Gas Kicker
+**Your main motor is a V6 or V8.** Bigger Mercury 4-strokes (175 HP and up) don't love being run at 600-800 RPM for hours. It glazes cylinders and burns oil. Trolling on the kicker instead saves hundreds of hours of low-RPM main-motor wear over the life of the boat. We've seen it pay for itself on a single repower-prevention.
 
-**Best For**:
-- Walleye trolling
-- Long trolling runs
-- Fuel efficiency (saves main motor)
-- Emergency backup
-- All-day fishing
+**You want emergency backup propulsion.** Main motor won't start at the far end of the lake? The kicker gets you home. We've had customers thank us for this exact scenario more than once.
 
-**Advantages**:
-- Unlimited range (carry gas)
-- Real thrust for waves
-- Emergency propulsion
-- Precise trolling speeds
-- Saves main motor fuel
+**The Mercury 9.9 ProKicker specifically.** Mercury makes a regular 9.9 FourStroke and a ProKicker version. The ProKicker is **what you want for kicker duty**:
+- Idle drops to ~600 RPM (vs ~750 standard) — slower trolling speeds
+- "Sailboat mode" programming — smoother throttle response at low end
+- Gear ratio optimized for thrust, not top speed
+- Available with electric start and power tilt
+- Pricing: ~$5,500–$7,500 CAD installed depending on options
 
-**Limitations**:
-- Noise (though minimal)
-- Additional mounting
-- Maintenance required
-- Higher initial cost
+For a serious walleye boat, the ProKicker is the right choice. The standard 9.9 will work but won't troll as slowly or smoothly.
 
-### Mercury Pro Kicker 9.9HP
+## The "Both" Setup — Why Most Serious Anglers End Up Here
 
-Purpose-built for kicker applications:
-- Low-speed throttle control
-- Idle speeds down to ~600 RPM
-- 9.9HP (meets HP limits)
-- Sailboat mode option
-- Optimized gear ratio
+Most of our customers who fish 30+ days a year run both. The setup:
 
-### The Best of Both Worlds
+- **Bow-mount electric** with spot-lock for working specific structure (drop-offs, weed edges, the railway line)
+- **Transom-mount kicker** for moving spots, trolling long runs, fighting weather
 
-Many serious anglers run **both**:
-- Bow trolling motor for positioning/spot-lock
-- Transom kicker for long trolling runs
+The electric finds the fish. The kicker covers ground. Together they handle every fishing scenario without burning the main motor's life away.
 
-This setup covers every fishing situation.
+Total investment for a quality combo on a 17-19 ft fishing boat:
+- Bow electric (Minn Kota Terrova 80 or similar with spot-lock): $3,000–$4,500
+- Transom kicker (Mercury 9.9 ProKicker installed): $5,500–$7,500
+- Lithium battery upgrade (optional but recommended): ~$1,200
+- **Total: $9,500–$13,200 CAD**
 
-**[Explore Kicker Motor Options](/quote)**
+That's significant. But on a $40,000 fishing boat, it's not crazy — and the resale uplift on a "fully kitted" fishing rig vs. a stock setup is real.
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
+## The Decision Framework for Rice Lake / Kawartha Boaters
 
-## Related guides
+| Your situation | Start with |
+|---------------|-----------|
+| Bass-only angler, weed beds, shallow bays | Bow electric + spot-lock |
+| Walleye trolling main quarry | Mercury 9.9 ProKicker |
+| You fish 100+ hours/season, all species | Both — eventually |
+| You have a big main motor (175 HP+) | Kicker first — it saves your main motor |
+| You fish big water and chop | Kicker first |
+| Limited budget, casual fishing | Decent bow electric (no spot-lock if budget tight) |
 
-- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
-- [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
+If you're not sure, we'll talk through how you actually fish before quoting either. Wrong-side-of-the-decision happens — but it's not as expensive to fix as it might seem.
 
+## What HBW Does
+
+We rig both setups all the time. Specifically:
+- **Mercury 9.9 ProKicker installations** with proper transom bracket selection, fuel-line plumbing from main tank, and tiller or remote linkage to your console
+- **Bow-mount trolling motor installs** including wiring runs, battery placement, and spot-lock setup
+- **Lithium battery upgrades** for boaters running heavy on the bow electric
+- **Service for both** — annual on the kicker (oil, impeller, plugs) and battery health checks on the electric
+
+Book at [hbw.wiki/service](https://hbw.wiki/service) or quote a new ProKicker at [mercuryrepower.ca](https://mercuryrepower.ca).
+
+{/* TODO: Add customer story for electric-trolling-motor-kicker-guide */}
     `,
     faqs: [
       {
-        question: 'What thrust do I need for my electric trolling motor?',
-        answer: 'General rule: 5 lbs thrust per 200 lbs of boat weight. A 2,000 lb boat needs about 50 lbs thrust minimum. Go bigger if you fish windy conditions.'
+        question: 'How many pounds of thrust do I need for my boat?',
+        answer: 'Rough rule: 5 lbs of thrust per 200 lbs of fully-loaded boat weight. A 2,000-lb fishing boat (loaded with crew, gas, gear) wants 50+ lbs of thrust. Wind matters too — if you fish exposed water, go up a tier (60-70 lbs).'
       },
       {
-        question: 'How much battery for a trolling motor?',
-        answer: 'At minimum, one deep-cycle battery. For all-day use with high thrust, consider two batteries in parallel or a lithium setup. Battery bank size depends on thrust and run time.'
+        question: 'Can I use my main motor at trolling speed instead?',
+        answer: 'Technically yes. Practically no, especially on bigger 4-strokes. Sustained low-RPM running glazes cylinders, builds carbon, and burns oil. The kicker route saves the main motor\'s serviceable life — often more than the kicker costs over a decade.'
       },
       {
-        question: 'Can I run main motor at trolling speed instead?',
-        answer: 'Yes, but it\'s inefficient and can harm the engine. Main motors aren\'t designed for extended low-speed operation. A kicker is much better for your main motor\'s longevity.'
+        question: 'What\'s "sailboat mode" on Mercury kickers?',
+        answer: 'A programming option Mercury added that smooths throttle response at low RPM and lets the engine idle more slowly. Originally designed for sailboats (smoother docking under power) — turns out it\'s exactly what kicker users want for trolling. Available on the 9.9 ProKicker and some other Mercury small-bore models.'
       },
       {
-        question: 'What\'s "sailboat mode" on Mercury outboards?',
-        answer: 'A programming option that adjusts idle and throttle response for trolling/auxiliary use. Available on many Mercury outboards when used as kickers.'
+        question: 'Do I need lithium batteries for a trolling motor?',
+        answer: 'You don\'t need them — a deep-cycle lead-acid battery (or two in parallel) works fine for casual use. But for all-day fishing on a 24V or 36V system, lithium is meaningfully better: lighter, longer runtime, longer service life, and they don\'t sag voltage as they discharge. A LiFePO4 setup pays back over 6-8 years.'
+      },
+      {
+        question: 'Can I use a small Mercury 6 HP as a kicker instead of the 9.9?',
+        answer: 'You can, but for trolling specifically the ProKicker 9.9 is dramatically better — slower idle, better gear ratio, sailboat mode. The 6 HP is fine as a backup motor on a small skiff but not optimal as a primary kicker. The price difference between a 6 HP and a 9.9 ProKicker is small relative to the performance difference.'
+      },
+      {
+        question: 'Do I need a separate gas tank for the kicker?',
+        answer: 'Most modern kicker installs run off the main fuel tank with a tee fitting. Saves space and weight. We\'ll spec the right setup based on your boat\'s existing fuel system during the install.'
       }
     ]
   },
@@ -7195,168 +7226,152 @@ Before you negotiate, anchor your expectations to real numbers — our [2026 Mer
   // Week 46: November 16, 2026
   {
     slug: 'best-mercury-for-family-runabouts',
-    title: 'Best Mercury Outboard for Family Runabouts',
-    description: 'Find the perfect Mercury outboard for your family runabout. Expert recommendations for 16-22ft boats covering horsepower, features, and family-friendly options.',
+    title: "The Best Mercury Outboard for a Family Runabout — HBW's Honest Picks (2026)",
+    description: "A Mercury Platinum dealer's straight answer on the right Mercury for a family runabout — by boat length, by use case, with real Ontario pricing.",
     image: '/lovable-uploads/Best_Mercury_Outboard_for_Family_Runabouts_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-06',
-    dateModified: '2026-05-06',
+    dateModified: '2026-05-07',
     publishDate: '2026-05-06',
     category: 'Buying Guide',
-    readTime: '10 min read',
-    keywords: ['mercury family boat motor', 'family runabout outboard', 'mercury for pontoon', 'best mercury for recreation', 'family boat motor size'],
+    readTime: '9 min read',
+    keywords: ['mercury family boat motor', 'family runabout outboard', 'mercury for pontoon', 'best mercury for recreation', 'family boat motor size', 'best Mercury outboard family runabout', 'Mercury 90 HP family boat', 'Mercury 150 HP runabout', 'family runabout horsepower', 'watersports family boat motor', 'quiet outboard family'],
     content: `
-## Finding the Right Mercury for Your Family Boat
+A "family runabout" covers a lot of ground — anything from a 16-foot bowrider tugging the kids around the bay to a 22-foot deck boat pulling a wakeboarder behind a full crew. The right Mercury depends on three things: the boat's length and weight, what you actually do on it, and how much patience you have for refueling.
 
-Family runabouts need motors that balance power, reliability, and ease of use. Here's how to match the right Mercury to your family's boat.
+We've sold and repowered family runabouts on Rice Lake and the Kawarthas for years. This is the version of "what should I put on my boat?" we'd give if you walked into the shop on a Saturday in April.
 
-### Understanding Your Boat's Needs
+## The Quick Recommendations by Boat Length
 
-**Key Factors**:
-- Boat length and weight
-- Typical passenger count
-- Primary activities (cruising, watersports, fishing)
-- Lake conditions and distances traveled
+| Boat length | Recommended Mercury | Why |
+|-------------|---------------------|-----|
+| **16-17 ft** | **90 HP FourStroke** | Sweet spot for light family use. Quiet, efficient, planes easily. |
+| **17-18 ft** | **115 HP FourStroke** | More headroom for full crew + gear. The HBW most-popular family pick. |
+| **18-19 ft** | **150 HP FourStroke** | Real watersports capability. Plane with 6 on board. |
+| **19-21 ft** | **175-200 HP V6** | Bigger boats want V6 power. Pro XS option for towing. |
+| **21-22 ft** | **200-250 HP V6** | Premium tier. Watersports, big crew, longer runs. |
 
-### Horsepower Recommendations by Boat Size
+If your situation isn't on this list, the table doesn't matter — the right answer comes from the conversation, not the chart. Call us.
 
-#### 16-17 Foot Runabouts
+## Why FourStroke Beats Pro XS for Most Families
 
-**Recommended Range**: 75-115hp
+Mercury makes two flavours at most horsepowers: **FourStroke** (the standard) and **Pro XS** (the performance variant). For 90% of family runabouts, FourStroke is the right call. Here's why:
 
-| Motor | Best For | Key Features |
-|-------|----------|--------------|
-| Mercury 75hp FourStroke | Budget-friendly, light use | Quiet, efficient |
-| Mercury 90hp FourStroke | Most families, good balance | Reliable, proven |
-| Mercury 115hp FourStroke | Heavier boats, more passengers | Strong performance |
+**FourStroke is quieter.** Conversation-quiet at cruise. Pro XS is faster-revving and has a sportier exhaust note — which sounds great for 5 minutes and gets old over a 6-hour day with kids in the boat.
 
-**Our Pick**: Mercury 90hp FourStroke for most 16-17ft family runabouts
+**FourStroke gets better fuel economy.** Roughly 10-15% better at typical family cruise (3,500-4,200 RPM). On a 6-hour day pulling skiers and tubes, that's real money.
 
-#### 18-19 Foot Runabouts
+**FourStroke is smoother at low speed.** The Pro XS sport gearcase is tuned for hole shot and top end; the FourStroke gearcase is tuned for smoother transitions through the rev range. Family use lives in that middle zone.
 
-**Recommended Range**: 115-150hp
+**Pro XS is the right call when:**
+- You water-ski seriously (the hole shot matters for getting the skier up)
+- You want absolute top speed
+- You run a heavier boat with full ballast for wakesurfing
+- The driver actually cares about how the throttle feels
 
-| Motor | Best For | Key Features |
-|-------|----------|--------------|
-| Mercury 115hp FourStroke | Lighter boats, efficiency focus | Great fuel economy |
-| Mercury 115hp Pro XS | Performance preference | Quicker acceleration |
-| Mercury 150hp FourStroke | Heavier loads, watersports | Strong and reliable |
+For everyone else — pulling tubes occasionally, cruising to dinner, hauling the kids to the swim spot — FourStroke is the answer. Quieter, more fuel-efficient, and Mercury's most-proven motor family.
 
-**Our Pick**: Mercury 150hp FourStroke for versatility and future-proofing
+## Don't Under-Power. Don't Over-Power. Here's How to Tell.
 
-#### 20-22 Foot Runabouts
+The most common mistake we see on family runabouts: **the previous owner under-powered the boat to save money on the original purchase, and now it struggles whenever the boat is loaded.**
 
-**Recommended Range**: 150-225hp
+A 17-foot bowrider rated for 115 HP, running with a 75 HP motor, four people, full gas, a cooler, and tow toys, will plane sluggishly, struggle in chop, and drink fuel trying. The motor is constantly at 80-90% throttle just to maintain cruise — which is bad for the motor's life and miserable to drive.
 
-| Motor | Best For | Key Features |
-|-------|----------|--------------|
-| Mercury 150hp FourStroke | Budget-conscious, lighter boats | Efficient, reliable |
-| Mercury 175-200hp V6 | Most versatile choice | Excellent power-to-weight |
-| Mercury 225hp V6 | Maximum performance | Best acceleration |
+**The rule:** look at your boat's max HP rating (on the capacity plate, usually near the helm). For family use with full crew and gear, **don't go more than 25 HP below max.** If your boat is rated 115 HP max, run a 90-115 HP motor. Running an 85 HP "to save fuel" usually backfires.
 
-**Our Pick**: Mercury 200hp V6 FourStroke for optimal performance and efficiency
+**Don't over-power either.** Going to or above max HP on a family runabout adds fuel cost, makes the boat squirrellier in chop, and on some hulls causes "porpoising" (the bow bouncing rhythmically) that's irritating and unsafe. A boat rated 150 HP max doesn't need a 200 HP motor.
 
-### FourStroke vs Pro XS for Families
+## Fuel Math at Family Cruise
 
-**Mercury FourStroke** (Recommended for Most Families):
-- Optimized for fuel efficiency
-- Quieter operation
-- Smooth, predictable power
-- Lower operating costs
-- Ideal for cruising and general recreation
+Real Mercury fuel consumption at typical family cruise speeds (3,500-4,200 RPM):
 
-**Mercury Pro XS** (Consider If):
-- Watersports are primary use
-- You prefer snappy acceleration
-- Performance is priority over economy
-- You want the sportiest option
+| Motor | At cruise | At WOT |
+|-------|-----------|--------|
+| **75 HP FourStroke** | 2.5–3.5 GPH | 6–7 GPH |
+| **90 HP FourStroke** | 3–4 GPH | 8–9 GPH |
+| **115 HP FourStroke** | 4–5 GPH | 10–12 GPH |
+| **150 HP FourStroke** | 5–7 GPH | 14–16 GPH |
+| **175 HP V6 FourStroke** | 6–8 GPH | 16–18 GPH |
+| **200 HP V6 FourStroke** | 7–9 GPH | 18–20 GPH |
+| **250 HP V6 FourStroke** | 8–10 GPH | 22–25 GPH |
 
-### Key Features for Family Use
+Translation: a typical family Saturday on Rice Lake — six hours, mixed cruise + a couple of skiing pulls + an hour of tubing — uses roughly:
+- 90 HP boat: 25-35 gallons
+- 115 HP boat: 35-45 gallons
+- 150 HP boat: 45-60 gallons
+- 200 HP boat: 60-80 gallons
 
-**Essential**:
-- Power steering (on larger motors)
-- Easy-access trim controls
-- Quiet operation for conversation
-- Reliable starting
+At ethanol-free 89 marine gas pricing on the dock, that's $80-$300 per outing depending on motor size. **Pick HP that fits how often you'll boat as much as it fits the boat.** A 200 HP runabout used twice a month is overkill; same boat used 3x a week is right-sized.
 
-**Nice to Have**:
-- SmartCraft gauges
-- VesselView integration
-- Digital throttle (DTS) for smooth control
-- Joystick capability (for twins)
+## What the Family Cruise Actually Needs
 
-### Fuel Efficiency Considerations
+For a family runabout, the features that matter:
 
-**Typical Family Use**:
-- Cruising at 3500-4000 RPM
-- Weekend trips of 3-4 hours
-- Mixed use with some skiing
+**Power steering** — anything over 115 HP, get hydraulic or electric power steering. Manual steering on bigger motors is exhausting after an hour.
 
-**Fuel Consumption Guide** (at cruise):
-| Motor | GPH at Cruise |
-|-------|---------------|
-| 90hp | 3-4 GPH |
-| 115hp | 4-5 GPH |
-| 150hp | 5-7 GPH |
-| 200hp V6 | 7-9 GPH |
+**Power trim** — standard on every Mercury 25 HP and up. Not optional. You'll trim the bow up and down constantly with shifting load and conditions.
 
-### Budget Considerations
+**SmartCraft / Mercury Marine App connectivity** — see [our VesselView/SmartCraft guide](/blog/mercury-vesselview-smartcraft-plain-english-guide). Real-time fuel flow lets you find the most efficient cruise RPM for your boat, which saves real money over a season.
 
-**Entry Level**: Mercury 90-115hp FourStroke
-- $17,000-$22,000 all-in before HST
-- Best value for smaller runabouts
-- Lower fuel and maintenance costs
+**Active Trim** (auto-trim) — available on V8 Verados and some V6s. Worth it if your driver isn't experienced; the engine trims itself for the conditions.
 
-**Mid-Range**: Mercury 150hp FourStroke
-- $23,000-$30,000 all-in before HST
-- Most popular family choice
-- Excellent balance of power and economy
+**Digital Throttle & Shift (DTS)** — on V8 motors, smoother throttle response and better docking precision. Standard on V8 Verados, optional on some V6 FourStrokes. Nice-to-have, not essential.
 
-**Premium**: Mercury 175-225hp V6
-- See the live quote builder for current installed pricing
-- Maximum performance
-- Best for larger boats or serious watersports
+**What you don't need:** Mercury's premium Verado V8/V10s on a family runabout under 22 feet. They're great motors but priced for performance fishing boats and big cruisers — overkill on a 19-foot bowrider that mostly goes to the swim spot.
 
-### Common Mistakes to Avoid
+## Pricing — Real HBW All-In Numbers
 
-**Do Not Under-Power**:
-- Struggling at cruise is no fun
-- Consider future needs (bigger family, more gear)
-- Resale is easier with adequate power
+These are mid-range CAD prices for a Mercury motor + rigging on a typical family runabout. Use the [configurator](https://mercuryrepower.ca) for the exact build:
 
-**Do Not Over-Power**:
-- Higher fuel costs
-- More expensive maintenance
-- Check boat max HP rating
+| Motor | All-in pricing (CAD, before HST) |
+|-------|----------------------------------|
+| 75 HP FourStroke | $14,500–$16,500 |
+| 90 HP FourStroke | $15,500–$18,500 |
+| 115 HP FourStroke | $17,500–$22,500 |
+| 150 HP FourStroke | $23,000–$30,000 |
+| 175 HP V6 FourStroke | $26,000–$32,500 |
+| 200 HP V6 FourStroke | $28,000–$35,000 |
+| 250 HP V6 FourStroke | $33,000–$40,000 |
 
-**[Get a Family Runabout Quote](/quote)**
+"All-in" means motor, rigging, prop, and installation. If you're repowering, factor in trade-in value on your existing motor — for most family runabouts that's $1,500–$5,000 depending on age and condition.
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
+## What HBW Does
 
-## Related guides
+We rig family runabouts every spring. Specifically:
 
-- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
-- [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
+- **Boat-to-motor matching** — bring your boat in (or send photos + the capacity plate spec) and we'll spec the right HP for how you'll actually use it
+- **Repower quotes through the live configurator** — real CAD pricing in 90 seconds at [mercuryrepower.ca](https://mercuryrepower.ca)
+- **Trade-in valuation** on your old motor or boat — we don't lowball, the configurator includes a trade quote
+- **Annual service** at our Gores Landing shop — Mercury Platinum dealer, factory-trained techs, ethanol-free 89 marine gas at the dock
 
+If you're not sure between two HPs, call. Picking right is more important than picking fast.
+
+{/* TODO: Add customer story for best-mercury-for-family-runabouts */}
     `,
     faqs: [
       {
-        question: 'Is 90hp enough for a family runabout?',
-        answer: 'For boats 17ft and under with light loads, 90hp works well. For 18ft+ or heavier use, consider 115hp or more. Better to have a bit more power than constantly run at full throttle.'
+        question: 'Is 90 HP enough for an 18-foot family runabout?',
+        answer: 'Borderline. For light loads and casual cruise — yes. For full crew + watersports — better with 115 HP. We see more family customers regret going 90 HP than regret going 115 HP. The fuel difference at family-use volumes is small; the performance difference is large.'
       },
       {
         question: 'Should I choose FourStroke or Pro XS for family use?',
-        answer: 'FourStroke is ideal for most families—quieter, more fuel-efficient, and optimized for cruising. Choose Pro XS if watersports performance is your priority.'
+        answer: 'FourStroke for 90% of families. Pro XS only if you ski seriously or need max top speed. For typical family runabout use — cruise, swim spots, occasional tubing — FourStroke is quieter, more fuel-efficient, and equally reliable.'
       },
       {
-        question: 'What is the best Mercury for pulling tubes and skiers?',
-        answer: 'For serious watersports, we recommend at least 150hp for 18-19ft boats, or 175-200hp V6 for 20ft+. Pro XS variants offer quicker hole shots for skiers.'
+        question: 'What\'s the best Mercury for towing skiers and wakeboarders?',
+        answer: 'For serious watersports, see our dedicated Best Mercury for Ski & Wakeboard Boats guide. Short answer: 175-200 HP V6 minimum on a 19-foot tow boat; consider Pro XS for the hole shot.'
       },
       {
-        question: 'How much does fuel cost to run a family runabout?',
-        answer: 'At typical cruise, expect 4-8 GPH depending on motor size. A 4-hour outing might use 20-35 gallons. Mercury FourStrokes are among the most fuel-efficient in their class.'
+        question: 'Will my boat be safe with the maximum-rated HP?',
+        answer: 'Generally yes — manufacturers test and certify the max HP rating. Going to max is safe but expensive (fuel, insurance) and not always necessary. Most family use lives well below max.'
+      },
+      {
+        question: 'Is a 4-stroke quieter than a 2-stroke?',
+        answer: 'Significantly. Modern Mercury 4-strokes are conversation-quiet at cruise; old 2-strokes (Mercury or otherwise) are not. Worth knowing if you\'re considering an older boat with a 2-stroke for "value" reasons — the hours you\'ll spend at full conversation volume will eventually wear thin.'
+      },
+      {
+        question: 'How much should fuel cost on a typical family Saturday?',
+        answer: '$80–$300 depending on motor size and how hard you run it. Modern Mercurys (FourStrokes especially) are fuel-efficient by historical standards; a 90-115 HP family boat run sensibly is genuinely cheap to operate compared to even ten years ago.'
       }
     ]
   },
@@ -7364,198 +7379,139 @@ Family runabouts need motors that balance power, reliability, and ease of use. H
   // Week 47: November 23, 2026
   {
     slug: 'best-mercury-for-ski-wakeboard-boats',
-    title: 'Best Mercury for Ski and Wakeboard Boats',
-    description: 'Choose the right Mercury outboard for skiing, wakeboarding, and wakesurfing. Learn horsepower requirements, Pro XS advantages, and setup tips.',
+    title: 'The Best Mercury Outboard for Ski and Wakeboard Boats — Real-World Picks (2026)',
+    description: 'An HBW guide to the best Mercury outboards for ski and wakeboard boats — what hole shot really means, when Pro XS beats FourStroke, and how to spec the right HP for the wake you want.',
     image: '/lovable-uploads/Best_Mercury_for_Ski_and_Wakeboard_Boats_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-11-23',
-    dateModified: '2026-11-23',
+    dateModified: '2026-05-07',
     publishDate: '2026-11-23',
     category: 'Buying Guide',
-    readTime: '12 min read',
-    keywords: ['mercury ski boat motor', 'wakeboard boat outboard', 'mercury for watersports', 'best outboard for skiing', 'wakesurf outboard motor'],
+    readTime: '9 min read',
+    keywords: ['mercury ski boat motor', 'wakeboard boat outboard', 'mercury for watersports', 'best outboard for skiing', 'wakesurf outboard motor', 'best Mercury for ski wakeboard boats', 'Mercury Pro XS tow boat', 'Mercury V8 wakeboard', 'hole shot tow boat'],
     content: `
-## Choosing Mercury Power for Watersports
+For watersports — slalom skiing, wakeboarding, wakesurfing, tubing — the right Mercury isn't the same answer as for a cruising family runabout. Watersports demand hole shot (acceleration from rest), sustained pulling power, and on bigger setups, enough mass behind the wake to throw real water.
 
-Watersports demand specific characteristics from your outboard—quick acceleration, consistent power, and reliability. Here is how to choose the right Mercury.
+Most ski and wakeboard boats from major manufacturers (MasterCraft, Malibu, Nautique, Tigé, Centurion) ship with inboard V-drives or direct drives. But there's a meaningful market of **outboard-powered tow boats** — runabouts, deck boats, even specialty wakeboard outboards — and Mercury makes purpose-built motors for exactly this use.
 
-### Understanding Watersports Power Needs
+This is the version of "what should I put on my tow boat?" we'd give if you walked into the shop with the wakeboard mounted on the bimini.
 
-**Key Requirements**:
-- Strong hole shot (getting skiers up quickly)
-- Consistent speed at pull
-- Enough torque for weighted boats
-- Reliable performance under load
+## The Quick Recommendations
 
-### Power by Watersport Type
+| Use case | Boat length | Recommended Mercury |
+|----------|-------------|---------------------|
+| **Tubing + occasional skiing** | 17-19 ft runabout | 150-175 HP FourStroke |
+| **Slalom water-skiing serious** | 18-20 ft | **175 HP Pro XS** or 200 HP V6 |
+| **Wakeboarding** | 19-21 ft | **200 HP Pro XS** or 225 HP V6 |
+| **Wakesurfing** | 21-23 ft | **250-300 HP V8** + ballast system |
+| **Big-wake everything (multi-sport)** | 22-24 ft | **300-350 HP V10 Verado** |
 
-#### Recreational Skiing
+If you're running an inboard tow boat (MasterCraft etc.), this guide doesn't directly apply — you're locked into the manufacturer's engine choice. But several manufacturers (Malibu's Surf Gate Outboard, Tige's outboard models) now offer outboard tow boats specifically powered by Mercury V8/V10s.
 
-**Requirements**:
-- Moderate acceleration
-- Consistent 28-36 MPH speeds
-- Standard trim capability
+## Why Pro XS Wins for Watersports (vs FourStroke)
 
-**Recommended**: Mercury 150-200hp FourStroke
+The Pro XS is Mercury's performance variant. For most use cases (family cruise, fishing, normal runabout), FourStroke is the better choice. For watersports, the calculation flips. Here's why:
 
-#### Competitive Skiing
+**Hole shot.** Pro XS motors have a sport-tuned gearcase and a higher RPM ceiling — they accelerate from idle to plane noticeably faster than equivalent FourStroke. **For getting a slalom skier up off the dock, this is the difference between an easy pull and a struggle.** A 175 Pro XS will plane a skier in 3-4 seconds; a 175 FourStroke takes 5-7 seconds. Doesn't sound like much; feels enormous.
 
-**Requirements**:
-- Precise speed control
-- Quick response
-- Smooth, consistent pull
+**Mid-range punch.** The Pro XS has more torque in the 3,000-5,000 RPM range — which is exactly where you live when pulling skiers, wakeboarders, and tubers. Sustained power right where you need it.
 
-**Recommended**: Mercury 175-225hp Pro XS with DTS
+**Top-end RPM.** Pro XS revs higher (~6,000 RPM ceiling vs 5,800 on FourStroke). Means the prop selection has more headroom for prop pitch tuning to fit your specific boat and rider.
 
-#### Wakeboarding
+**The trade-off:** Pro XS uses a bit more fuel at any given speed. It's a touch louder. It costs slightly more upfront. For pure cruising you don't need it. For watersports you do.
 
-**Requirements**:
-- Strong hole shot
-- Handle weighted boats
-- Power at 18-24 MPH
+## How HP Maps to Wake Quality (the wakeboard/surf reality)
 
-**Recommended**: Mercury 200-225hp V6 or 250hp Pro XS
+Wakeboarders and surfers care about the **wake shape and size** more than top speed. A bigger wake comes from three things: **boat weight, hull shape, and prop wash from sustained low-speed power.**
 
-#### Wakesurfing (Outboard)
+For outboard tow boats specifically:
 
-**Requirements**:
-- Significant power for ballast
-- Smooth idle-to-surf transition
-- Outboard-specific considerations
+**Skiing (slalom)** — wake should be flat and clean. You don't want a big wake; it kicks the skier. Lower HP runs flatter. **150-200 HP is typically perfect.**
 
-**Recommended**: Mercury 250-300hp Pro XS (twin configuration ideal)
+**Wakeboarding** — wake should be mid-size, firm, and curl over (a "lipped" wake). Needs more boat weight + more sustained power. **200-225 HP minimum on a tow-spec hull.** Add ballast to get the wake bigger.
 
-### Motor Recommendations by Boat Size
+**Wakesurfing** — wake needs to be **massive** (you're surfing the wake without a rope). Requires significant ballast (1,500-3,000 lbs of water in the bilge) plus a hull designed for surf wakes. **250 HP minimum, 300-350 HP preferred.** And honestly: outboard tow boats can wakesurf, but they don't do it as well as inboard surf-specific boats. The wake-shaping technology (Surf Gate, Surf Tab, etc.) is mostly inboard-only territory.
 
-#### 18-19 Foot Ski/Wake Boats
+If wakesurfing is the primary use, consider an inboard tow boat instead. We'll be honest with you about this — we're not going to sell you a 300 HP outboard tow boat if you'd be happier with a Malibu inboard.
 
-| Motor | Application | Notes |
-|-------|-------------|-------|
-| 150hp FourStroke | Light skiing | Budget option |
-| 150hp Pro XS | Recreational skiing | Better acceleration |
-| 175hp V6 | Wakeboarding | Good balance |
-| 200hp V6 | Serious watersports | Recommended |
+## Real Pricing for Mercury Pro XS Tow Outboards
 
-**Our Pick**: Mercury 175-200hp Pro XS
+| Motor | All-in pricing (CAD, before HST) |
+|-------|----------------------------------|
+| 175 HP Pro XS | $26,500–$31,500 |
+| 200 HP V6 Pro XS | $29,500–$34,000 |
+| 225 HP V6 Pro XS | $32,000–$36,500 |
+| 250 HP V8 Pro XS | $36,500–$40,500 |
+| 300 HP V8 Pro XS | $39,500–$44,000 |
 
-#### 20-22 Foot Ski/Wake Boats
+Pricing includes the motor, rigging, prop, and installation. Use the [configurator](https://mercuryrepower.ca) for exact current pricing.
 
-| Motor | Application | Notes |
-|-------|-------------|-------|
-| 200hp V6 | Skiing, light boarding | Adequate power |
-| 225hp Pro XS | Most watersports | Excellent choice |
-| 250hp Pro XS | Heavy boarding, ballast | Premium option |
+For a tow boat repower, you also typically want:
+- **Stainless steel prop** instead of aluminum — better hole shot, more durable. Add $300–$700.
+- **Hydraulic steering** — non-negotiable on V6+ for towing precision. $1,500–$2,500 if not already on the boat.
+- **DTS (Digital Throttle & Shift)** if available — much better feel for skier pulls. Standard on V8 Pro XS, optional on V6.
 
-**Our Pick**: Mercury 225hp Pro XS
+## V6 vs V8 — The Real Decision
 
-#### 23+ Foot Wake/Surf Boats
+For tow boats over 20 feet:
 
-| Motor | Application | Notes |
-|-------|-------------|-------|
-| Twin 150hp | Wakesurfing | Surf wake on either side |
-| Twin 175-200hp | Serious surfing | Better wave shaping |
-| 300hp Pro XS | Single-engine power | Maximum single power |
+**V6 Pro XS (200-225 HP)** — lighter, more efficient, lower upfront cost. Plenty of pull for skiing and entry-level wakeboarding. **The right call for 19-21 ft outboard tow boats with moderate use.**
 
-**Our Pick**: Twin Mercury 175-200hp V6 for wakesurfing
+**V8 Pro XS (250-300 HP)** — heavier (adds 60-80 lbs to transom), uses more fuel, costs more. But the torque difference is real — sustained pulling power for serious wakeboarding and any wakesurfing. **The right call for 21+ ft tow boats and any boat with significant ballast.**
 
-### Pro XS vs FourStroke for Watersports
+The V8 also has DTS standard, which on a tow boat is genuinely worth having — smoother throttle, better skier-handle precision.
 
-**Mercury Pro XS Advantages**:
-- Tuned for acceleration
-- Faster time to plane
-- More responsive throttle
-- Lighter for same HP (some models)
-- Performance propellers standard
+## Verado for Tow Boats — Yes Sometimes
 
-**When to Choose Pro XS**:
-- Primary use is watersports
-- Quick hole shots are important
-- Performance matters more than economy
-- Wakeboarding or competitive skiing
+Mercury Verado (V8/V10 naturally aspirated) is the **premium quiet option**. For tow boats specifically, Verado matters because **a quieter motor at the dock means happier neighbours at the dock** — and the tow community spends a lot of time idling at the dock between runs.
 
-**Mercury FourStroke Advantages**:
-- Better fuel economy
-- Quieter operation
-- Lower purchase price
-- Smoother at cruise
-- Good for mixed use
+A 350 HP V10 Verado vs a 300 HP Pro XS V8: the Verado is meaningfully quieter at idle and cruise, has integrated power steering as standard, and supports single-engine joystick steering (since Mercury added that capability in 2024-2025).
 
-**When to Choose FourStroke**:
-- Watersports are occasional
-- Fuel economy matters
-- Budget is primary concern
-- Quieter operation preferred
+The trade-off: Verados are special-order and significantly more expensive. We don't keep them in stock; we order to spec. For a custom tow boat build, ask us — we can quote.
 
-### Digital Throttle and Shift (DTS)
+## What HBW Does for Tow-Boat Customers
 
-**Benefits for Watersports**:
-- Precise speed control
-- Smoother acceleration
-- Programmable cruise speeds
-- Easy single-hand operation
-- Essential for ski courses
+We rig outboard tow boats every spring. Specifically:
 
-**Available On**:
-- All Verado models
-- V6 FourStroke and Pro XS (optional)
-- Required for joystick systems
+- **Pro XS repowers** with stainless props, hydraulic steering upgrades, and DTS where available
+- **Boat balance assessments** — V8/V10 motors add transom weight; we'll spec the right setback and transom bracket if needed
+- **Prop tuning** — tow boats are extremely prop-pitch sensitive; we'll dial it in for your specific hull and use case
+- **Ballast and wake-shaping retrofits** — if your boat supports them
 
-### Propeller Selection
+Tow boats run hard. We'll talk through your annual hours and use case before quoting — sometimes the right answer is "your existing motor still has life if we service it" instead of "buy a new V8." We'll be honest either way.
 
-**Standard Props**: General purpose
-**High-Performance Props**: Better hole shot
-**Specialty Props**: Specific applications
+Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercuryrepower.ca](https://mercuryrepower.ca).
 
-**Watersports Recommendations**:
-- Mercury Enertia or similar performance prop
-- Match pitch to boat/load
-- Consider quick-adjust hub
-
-### Setup Tips for Watersports
-
-**Trim Position**:
-- Start with motor trimmed down
-- Helps with hole shot
-- Adjust for speed once planed
-
-**Ballast Considerations**:
-- Account for added weight
-- May need more HP than expected
-- Fuel consumption increases with load
-
-**Transom Height**:
-- Verify proper mounting
-- Affects performance significantly
-- Professional installation recommended
-
-**[Get Watersports Motor Quote](/quote)**
-
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
-
-## Related guides
-
-- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide) — bass-boat motor selection
-- [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
-
+{/* TODO: Add customer story for best-mercury-for-ski-wakeboard-boats */}
     `,
     faqs: [
       {
-        question: 'Can I wakesurf behind an outboard motor?',
-        answer: 'Yes, but with precautions. Use outboard-specific surf systems that deflect exhaust and prop wash. Twin outboards create better waves than singles. Always maintain safe distance from the running motor.'
+        question: 'What\'s the minimum HP for pulling a wakeboarder?',
+        answer: 'On a 19-20 ft outboard tow boat with light ballast: 175 HP Pro XS is the floor. Anything less and the boat struggles to maintain wake speed (22-24 mph) under load. For a serious rider doing tricks, 200+ HP is better.'
       },
       {
-        question: 'Is Pro XS worth the extra cost for watersports?',
-        answer: 'For dedicated watersports boats, yes. Pro XS provides noticeably quicker hole shots and better acceleration—exactly what skiing and wakeboarding require. For occasional watersports, FourStroke works fine.'
+        question: 'Why is Pro XS preferred for skiing over FourStroke?',
+        answer: 'Hole shot is the answer. The sport-tuned gearcase and higher RPM ceiling get a skier up faster — typically 2-3 seconds vs 5-6 on equivalent-HP FourStroke. Over hundreds of pulls in a season, that\'s a meaningfully better skier experience.'
       },
       {
-        question: 'How much power do I need to pull an adult skier?',
-        answer: 'Minimum 75hp for light adults behind small boats. For reliable performance, 115hp+ is recommended. For wakeboarding or heavier adults, 150hp+ ensures comfortable pulls every time.'
+        question: 'Can I wakesurf behind an outboard?',
+        answer: 'Yes, with the right setup — but it\'s harder than behind an inboard. You need significant ballast, a hull designed for surf wakes (or modified with surf gates), and 250+ HP. If wakesurfing is your primary use, consider an inboard tow boat. We\'ll be honest about this; we\'d rather you have the right boat than the wrong setup we sold you.'
       },
       {
-        question: 'What propeller is best for watersports?',
-        answer: 'Performance props with appropriate pitch for your boat and load. Mercury Enertia series works well. Have a pro match the prop—wrong pitch hurts both hole shot and top speed.'
+        question: 'Do I need a stainless prop on a tow boat?',
+        answer: 'Strongly recommended. Stainless transmits power better (better hole shot), holds prop pitch through wear, and survives prop strikes that would destroy aluminum. The $300-$700 upcharge pays back in performance and durability.'
+      },
+      {
+        question: 'What about the Mercury 400/450R high-performance motors?',
+        answer: 'The Mercury 400R and 450R are race-spec V8s built for performance bay boats and offshore center consoles, not tow boats. Overkill for typical wakeboard/ski use, and the power delivery is tuned for top end rather than sustained mid-range pull. Stick with Pro XS V6 or V8 for tow applications.'
+      },
+      {
+        question: 'Is a Verado quieter than a Pro XS for tow use?',
+        answer: 'Yes, noticeably. Verados are Mercury\'s premium quiet line. For tow boats specifically — where you\'ll spend a lot of time at the dock and idling — Verado\'s noise advantage matters. But Verados are special-order and more expensive; for most customers, Pro XS is the better cost/benefit.'
+      },
+      {
+        question: 'Can my existing 175 FourStroke be used for skiing?',
+        answer: 'It\'ll work — the question is whether the hole shot is good enough for your skier. A heavy skier or a long line will struggle behind a 175 FourStroke; a light kid on a short line is fine. If you\'re already running 175 FourStroke and finding the hole shot weak, consider a stainless prop upgrade before swapping motors — sometimes that\'s the fix.'
       }
     ]
   },
@@ -7563,206 +7519,183 @@ Watersports demand specific characteristics from your outboard—quick accelerat
   // Week 48: November 30, 2026
   {
     slug: 'mercury-150-200hp-v6-performance',
-    title: 'Mercury 150-200hp V6: Performance Made Practical',
-    description: 'Compare Mercury 150-200hp V6 outboards. Learn about the 3.4L platform, Pro XS variants, and which configuration suits your boat best.',
+    title: 'Mercury 150 vs 175 vs 200 vs 225 vs 250 vs 300 — V6 Performance, Compared (2026)',
+    description: "An HBW dealer's honest comparison of Mercury V6 outboards from 150 to 300 HP — what each delivers, who needs which, and where the inflection points actually are.",
     image: '/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png',
     author: 'Harris Boat Works',
     datePublished: '2026-11-30',
-    dateModified: '2026-11-30',
+    dateModified: '2026-05-07',
     publishDate: '2026-11-30',
     category: 'Buying Guide',
-    readTime: '11 min read',
-    keywords: ['mercury 150 200 v6', 'mercury 3.4 v6', 'mercury v6 vs inline', 'mercury 175 pro xs', 'mercury v6 comparison'],
+    readTime: '10 min read',
+    keywords: ['mercury 150 200 v6', 'mercury 3.4 v6', 'mercury v6 vs inline', 'mercury 175 pro xs', 'mercury v6 comparison', 'Mercury 150 175 200 225 V6 comparison', 'Mercury V6 Pro XS performance', 'Mercury 200 vs 225 vs 250', 'Mercury 175 EXLPT', 'Mercury 250 Pro XS'],
     content: `
-## Mercury 3.4L V6 Platform: The Sweet Spot
+Mercury's V6 lineup is where things get interesting. From the 150 (technically still an inline-4 in current Pro XS, but a V6 historically) up to the 300 Pro XS, this is where you choose between "enough motor" and "exactly the right motor for what I do."
 
-The Mercury 3.4L V6 platform (150-225hp) represents the best balance of power, efficiency, and value for mid-size boats. Here is everything you need to know.
+We sell V6 motors every week. Customers ask the same questions over and over: which one is right for me, what's the real difference, where does the inflection point sit. This is the version of that conversation we'd have at the shop.
 
-### The V6 Advantage
+**One housekeeping note before we dive in:** Mercury's 150 Pro XS is an **inline-4, 3.0L** — same block as the 150 FourStroke, just performance-tuned. The V6 in the Pro XS lineup actually starts at **175 HP**. Old marketing material sometimes calls the 150 a V6; that's wrong, and Mercury's current spec sheets confirm it. We've corrected it across our content but you may still see the error elsewhere.
 
-**Why V6 Matters**:
-- Smoother power delivery
-- Better torque curve
-- Lower vibration than inline-4
-- Proven, reliable platform
-- Excellent power-to-weight ratio
+## The Quick Comparison Table
 
-### The Mercury 3.4L V6 Lineup
+| Motor | Block | Displacement | Approx weight | Top speed (typical 18-20 ft hull) | Best for |
+|-------|-------|--------------|---------------|------------------------------------|----------|
+| **150 Pro XS** | Inline-4 | 3.0L | 456 lbs | 50-55 mph | Smaller bass boats, performance fishing under 19 ft |
+| **175 Pro XS** | V6 | 3.4L | 511 lbs | 55-60 mph | Mid-size bass boats, 19-20 ft fishing/runabout |
+| **200 Pro XS** | V6 | 3.4L | 511 lbs | 58-62 mph | The sweet spot — most popular V6 sale |
+| **225 Pro XS** | V6 | 3.4L | 511 lbs | 60-64 mph | Heavier hulls, watersports, big aluminum |
+| **250 Pro XS** | V6 | 3.4L | 511 lbs | 62-66 mph | Performance fishing, max-rated mid-size hulls |
+| **300 V8 Pro XS** | V8 | 4.6L | 527 lbs | 65-70+ mph | The premium tier — same weight as a 250, more power |
 
-| Model | HP | Weight | Best For |
-|-------|-----|--------|----------|
-| 150 V6 FourStroke | 150 | 498 lbs | Efficiency focus |
-| 175 V6 FourStroke | 175 | 498 lbs | Best balance |
-| 200 V6 FourStroke | 200 | 498 lbs | More performance |
-| 225 V6 FourStroke | 225 | 498 lbs | Maximum power |
-| 175 V6 [Pro XS](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) | 175 | 498 lbs | Sport performance |
-| 200 V6 Pro XS | 200 | 498 lbs | Top seller |
-| 225 V6 Pro XS | 225 | 498 lbs | Ultimate performance |
+**Surprising fact:** the 175, 200, 225, and 250 Pro XS V6 are **the same physical motor**, just programmed differently. Same powerhead, same displacement, same weight. The horsepower difference is calibration. This means:
+- Upgrading from a 175 to a 250 doesn't add weight or change rigging
+- Mercury's "Boost" software upgrade can add HP to existing motors (eligible serial numbers — see [our Boost software upgrade guide](/blog/mercury-boost-software-upgrade-eligibility-2026))
+- Resale values don't dramatically separate based on HP rating within the V6 range
 
-*Weights are approximate and vary by configuration*
+## Where Each One Wins
 
-### V6 vs Inline-4: When to Choose Each
+### 150 Pro XS (Inline-4, 3.0L)
 
-**Mercury Inline-4 (75-115hp)**:
-- Lighter boats (16-18ft)
-- Budget priority
-- Light duty use
-- Maximum efficiency
+Performance-tuned inline-4. Same block as the 150 FourStroke, but with a sport gearcase, higher RPM ceiling, and Pro XS programming. Lighter than a V6 (~50 lbs), more fuel-efficient at cruise, simpler to maintain.
 
-**Mercury V6 (150-225hp)**:
-- Boats 18-24ft
-- Heavier loads
-- Watersports use
-- Performance priority
-- Better resale
+**Wins when:**
+- You're under 19 feet and want max performance without V6 weight
+- Bass boat applications where every pound of transom weight costs you hole shot
+- You'll never need more than 50-55 mph
+- Budget-conscious — meaningfully cheaper than 175 V6
 
-**The Crossover Point**: Around 150hp, the V6 platform makes sense for most applications due to better power delivery and longevity under load.
+**Pricing:** ~$22,500–$26,500 CAD all-in.
 
-### FourStroke vs Pro XS V6
+### 175 Pro XS (V6, 3.4L)
 
-**V6 FourStroke**:
-- Tuned for efficiency
-- Quieter operation
-- Slightly lower price
-- Better fuel economy
-- Ideal for cruising
+The smallest of the V6 family. Real V6 power and torque in a still-manageable package.
 
-**V6 Pro XS**:
-- Tuned for acceleration
-- Performance calibration
-- Enhanced cooling
-- Sport propeller included
-- Ideal for performance
+**Wins when:**
+- You want V6 smoothness on a 19-20 ft hull
+- You expect to upgrade later (the 200/225/250 Pro XS is the same physical motor with different software)
+- Your boat tops out at 19 feet but you want headroom
 
-**Price Difference**: Pro XS typically adds $1,000-1,500
+**Pricing:** ~$26,500–$31,500 CAD all-in.
 
-### Recommended Boat Matches
+### 200 Pro XS (V6, 3.4L) — The Most Popular
 
-#### 175hp V6 (Sweet Spot for Many)
+If you ask us which Mercury we sell most often in the V6 range, it's the **200 Pro XS**. The reason: it's the sweet spot for most 19-21 ft Ontario boats — bass boats, walleye boats, family runabouts that take watersports seriously. Real performance, real fuel efficiency at cruise (~7-9 GPH), reasonable weight on the transom.
 
-**Ideal For**:
-- 18-20ft runabouts
-- Light offshore use
-- Fuel-conscious boaters
-- Mixed-use boats
+**Wins when:**
+- You have a 19-21 ft hull and want a 60+ mph top speed
+- You want a single motor that handles cruise, watersports, and serious fishing equally well
+- The 175 feels like compromise but the 250 feels like overkill
 
-**Real-World Performance**:
-- Efficient at cruise
-- Good hole shot
-- Excellent reliability
-- Lower operating cost than 200+
+**Pricing:** ~$29,500–$34,000 CAD all-in.
 
-#### 200hp V6 (Most Popular)
+### 225 Pro XS (V6, 3.4L)
 
-**Ideal For**:
-- 19-22ft runabouts
-- Watersports boats
-- Pontoons 21-24ft
-- All-around performance
+The bridge between 200 (sweet spot) and 250 (max V6). Same motor as 200, more software calibration. Useful when you have a heavier boat or want headroom for tournaments.
 
-**Real-World Performance**:
-- Strong acceleration
-- Confident power in all conditions
-- Good fuel economy at cruise
-- Excellent resale value
+**Wins when:**
+- Heavier 21 ft hull (deck boat, big aluminum)
+- Watersports with consistent ballast
+- Tournament fishing where every second of hole shot matters
 
-#### 225hp V6 (Maximum Power)
+**Pricing:** ~$32,000–$36,500 CAD all-in.
 
-**Ideal For**:
-- 22-24ft boats
-- Heavy loads
-- Offshore use
-- Performance priority
+### 250 Pro XS (V6, 3.4L)
 
-**Real-World Performance**:
-- Best-in-class acceleration
-- Handles any load
-- Premium price but premium performance
-- Top of naturally-aspirated range
+Top of the V6 calibration. Maximum HP on the same physical V6 platform.
 
-### Understanding the Pro XS Difference
+**Wins when:**
+- 21-22 ft performance bass boat or center console
+- Twin-engine setups on bigger hulls (twin 250 V6s = 500 HP at lower weight than twin V8s)
+- You want max V6 without going to V8
 
-**What Mercury Does Different**:
-- ECU tuning for acceleration
-- Enhanced cooling system
-- Performance propeller
-- Optimized gear ratio
-- Competition heritage
+**Pricing:** ~$34,500–$39,500 CAD all-in.
 
-**Measurable Differences**:
-- Faster time to plane
-- Higher top speed (typically 2-4 MPH)
-- Better hole shot
-- Slightly higher fuel consumption at WOT
+### 300 V8 Pro XS — The Step Up
 
-### Command Thrust Option
+Mercury's V8 platform. Different motor entirely — bigger displacement (4.6L), more torque, slightly heavier. **Same dry weight as a V6 250 (~527 lbs)** because Mercury engineered the V8 to weigh the same as the top-tier V6. This is one of the most important Mercury engineering decisions of the last decade — going from V6 250 to V8 300 doesn't change your transom load.
 
-**What It Is**: Larger gearcase with more blade area
+**Wins when:**
+- You're at the top of the V6 calibration and want the next tier of torque
+- Performance fishing where the V8 hole shot matters
+- 22+ ft hulls
+- DTS is standard (V6 makes it optional)
 
-**Benefits**:
-- Better thrust at low speeds
-- Improved shallow-water performance
-- Better for heavy boats
-- Enhanced stern lift
+**Pricing:** ~$39,500–$44,000 CAD all-in.
 
-**Consider CT If**:
-- Running heavy loads regularly
-- Need shallow-water capability
-- Boat tends to bow-rise
-- Trolling is important
+## The Real Decision Framework
 
-### Technology Features
+We'd lay this out for a customer at the shop:
 
-**Standard on V6 Platform**:
-- Electronic fuel injection
-- 32-bit ECU
-- Adaptive Speed Control available
-- SmartCraft compatible
-- DTS optional (standard on some)
+**1. What's your boat's max HP rating?** Don't exceed it. Don't go more than 25 HP below it for performance applications.
 
-**Available Options**:
-- Digital Throttle and Shift (DTS)
-- Joystick Piloting (twin)
-- VesselView displays
-- Active Trim
+**2. What's your top-speed target?**
+- Under 50 mph: a 150 Pro XS is enough
+- 50-58 mph: 175-200 Pro XS V6
+- 58-62 mph: 200-225 Pro XS V6
+- 62+ mph: 250 Pro XS V6 or 300 V8
 
-### Maintenance Considerations
+**3. Are you going to upgrade later?** If yes, buy the 200 V6 today knowing the same physical motor can be calibrated up to 250. If no, buy what you need.
 
-**Service Intervals**: Every 100 hours or annually
+**4. Twin or single?** Twin V6 250s give you 500 HP at lower weight than twin V8 350s. For the right hull (offshore center console, big bay boat) this matters significantly.
 
-**Typical Costs** (Parts + Labor):
-- 100-hour service: $400-600
-- 300-hour service: $700-1,000
-- Impeller/belt: Every 2 years
+**5. Are you running flatter water (Rice Lake, inland) or rougher (Lake Ontario, Georgian Bay)?** Rougher water benefits from V8 torque; flat water doesn't really need it.
 
-**V6 Reliability**: Excellent track record when maintained
+## Fuel Economy and Hours
 
-**[Configure Your V6 Mercury](/quote)**
+V6 Mercurys are surprisingly efficient at cruise. Real-world numbers for the 200-225 Pro XS in a 20 ft hull:
 
-## Related guides
+| Speed | Fuel burn | Range on 30-gal tank |
+|-------|-----------|----------------------|
+| Idle (trolling) | ~1.5 GPH | 20+ hours |
+| 25 mph cruise | ~7-8 GPH | 90-100 miles |
+| 35 mph cruise | ~9-11 GPH | 70-80 miles |
+| 50 mph WOT | ~18-22 GPH | 30-40 miles |
 
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat) — matching HP to boat size and use
-- [What Size Motor Does My Boat Need? Complete Calculator Guide](/blog/boat-motor-size-calculator-guide) — sizing calculator walkthrough
-- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison) — mid-range Mercury head-to-head
-- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario) — the 115 vs 150 decision
+For most Ontario boating — Rice Lake, Trent-Severn — you'll spend 80% of your time at 25-35 mph cruise. Real fuel cost at ethanol-free 89 marine pricing on a typical 4-hour outing: $40-$70.
 
+For service intervals and major service costs on these motors, see [our Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
+
+## What HBW Does
+
+V6 sales and repowers are our most common high-end work. Specifically:
+
+- **V6 quote builds through the configurator** — real CAD pricing in 90 seconds
+- **Trade-in valuations** on outgoing motors (V6 trades typically run $4,000–$10,000 depending on age and hours)
+- **Rigging upgrades** — hydraulic steering, stainless prop, DTS where available
+- **Boost software upgrade evaluations** — for eligible Pro XS V6 owners wanting to step up HP without buying a new motor
+
+If you're considering a V6 repower, the 90-second configurator quote at [mercuryrepower.ca](https://mercuryrepower.ca) gets you a real number. For more nuanced discussions — twin vs single, V6 vs V8, Pro XS vs FourStroke — call **905-342-2153**.
+
+{/* TODO: Add customer story for mercury-150-200hp-v6-performance */}
     `,
     faqs: [
       {
-        question: 'Is the V6 worth it over the 150hp inline-4?',
-        answer: 'For boats 19ft+, yes. The V6 provides smoother power, better torque, and handles loads more confidently. The inline-4 150hp is lighter and more economical for smaller boats.'
+        question: 'Is the Mercury 150 Pro XS a V6?',
+        answer: 'No — it\'s an inline-4 (3.0L). Same block as the 150 FourStroke. The Pro XS V6 lineup starts at 175 HP. Older marketing copy occasionally calls the 150 a V6, but that\'s incorrect.'
       },
       {
-        question: 'What is the real-world fuel economy of a 200hp V6?',
-        answer: 'At efficient cruise (3500-4000 RPM), expect 4-6 MPG depending on boat and load. At WOT, consumption increases significantly. The V6 is among the most efficient in its class.'
+        question: 'Can I really upgrade my 200 Pro XS to a 250 with software?',
+        answer: 'On eligible serial numbers, yes — Mercury\'s Boost Software Upgrade adds HP to certain Pro XS V6s. See our dedicated guide for which serial ranges qualify and current pricing.'
       },
       {
-        question: 'Should I get Command Thrust (CT)?',
-        answer: 'CT is ideal for heavy boats, shallow water, or if you need maximum low-speed thrust. Standard gearcase is fine for most recreational use and is slightly more efficient at speed.'
+        question: 'Why does Mercury sell different HP ratings if 175-250 are the same physical motor?',
+        answer: 'Different applications need different power delivery. The 175 calibration is tuned for fuel economy and lower RPM; the 250 calibration is tuned for max power. Same hardware, different tuning.'
       },
       {
-        question: 'How does the V6 compare to the Verado?',
-        answer: 'Both the V6 FourStroke/Pro XS and Verado are naturally aspirated. The V6 is simpler and less expensive. Verado uses larger-displacement V8/V10/V12 powerheads with premium features like Advanced Noise-Free Steering and DTS. V6 is best value; Verado is best refinement.'
+        question: 'Is V6 worth the weight over the inline-4 150?',
+        answer: 'On hulls 19 ft+, yes. The V6 has more torque, smoother power delivery, and longer service life. On hulls under 18 ft, the lighter inline-4 may be the better choice — less transom weight, better hole shot.'
+      },
+      {
+        question: 'V6 vs V8 — does the V8 use that much more fuel?',
+        answer: 'Surprisingly little at cruise. V8s are typically 1-2 GPH thirstier at WOT, similar at typical cruise. Where the V8 wins: torque under load (heavy boats, watersports, sustained pull). Where the V6 wins: lighter weight (technically same dry weight on Pro XS V6 vs V8, but the V6 platform is more efficient at light loads).'
+      },
+      {
+        question: 'Should I buy single big V8 or twin smaller V6?',
+        answer: 'Depends on the boat. Twin V6s give redundancy (one motor fails, you still get home), better maneuverability with joystick (where supported), and balanced transom weight. Single V8 gives you simpler maintenance and lower upfront cost. For 22-26 ft boats, twins are increasingly popular; under 22 ft, single is usually right.'
+      },
+      {
+        question: 'What\'s the difference between 250 V6 Pro XS and 250 SeaPro?',
+        answer: 'Different applications. 250 Pro XS is tuned for sport/performance use (recreational, fishing). 250 SeaPro is tuned for commercial use — heavier-duty internals, longer service intervals, designed for high-hour operation. See our Mercury SeaPro guide for the full breakdown.'
       }
     ]
   },
