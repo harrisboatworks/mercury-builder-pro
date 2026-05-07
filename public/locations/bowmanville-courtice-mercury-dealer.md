@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/bowmanville-courtice-mercury-dealer
-last_updated: 2026-05-02
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -19,8 +19,8 @@ pickup_only: true
 currency: CAD
 ---
 
-# Mercury Dealer for Bowmanville & Courtice — Harris Boat Works
-Bowmanville and Courtice are the closest Durham communities to Harris Boat Works — about 50 minutes east on the 401. Mercury Platinum Dealer, family-owned since 1947, live CAD pricing online.
+# Mercury Dealer for Bowmanville & Courtice, Harris Boat Works
+Bowmanville and Courtice are the closest Durham communities to Harris Boat Works, about 50 minutes east on the 401. Mercury Platinum Dealer, family-owned since 1947, live CAD pricing online.
 ## Factbox
 - **Region:** Bowmanville & Courtice
 - **Drive time:** about 50 minutes east of Bowmanville / Courtice via Hwy 401
@@ -43,21 +43,21 @@ Bowmanville and Courtice are the closest Durham communities to Harris Boat Works
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Platinum Dealer (top customer-satisfaction tier)
-- Authorized Mercury dealer since 1965 — Mercury is our only outboard brand
-- Live CAD pricing online — no "call for price"
+- Authorized Mercury dealer since 1965, Mercury is our only outboard brand
+- Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
 - [Best Mercury outboards for pontoons](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats)
 - [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario)
-- [How to repower your boat — step by step](https://www.mercuryrepower.ca/how-to-repower-a-boat)
+- [How to repower your boat, step by step](https://www.mercuryrepower.ca/how-to-repower-a-boat)
 ## Related case studies
 - [Family pontoon: 40HP to 115HP Command Thrust](https://www.mercuryrepower.ca/case-studies/pontoon-family-40-to-115-command-thrust.md)
 - [18-foot aluminum fishing boat: 60HP to 90HP FourStroke](https://www.mercuryrepower.ca/case-studies/aluminum-fishing-60-to-90-fourstroke.md)
 ## FAQs
 ### How far is Harris Boat Works from Bowmanville?
 
-About 50 minutes east on Hwy 401 — the closest GTA-edge community to our shop.
+About 50 minutes east on Hwy 401, the closest GTA-edge community to our shop.
 
 ### Do you do mobile service in Bowmanville or Courtice?
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/rice-lake-mercury-repower
-last_updated: 2026-05-02
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -19,18 +19,18 @@ pickup_only: true
 currency: CAD
 ---
 
-# Mercury Repower on Rice Lake — Harris Boat Works, Gores Landing, Ontario
+# Mercury Repower on Rice Lake, Harris Boat Works, Gores Landing, Ontario
 Harris Boat Works has been Rice Lake’s Mercury repower specialist for three generations. Family-owned in Gores Landing since 1947, Mercury Platinum Dealer since 1965, with every installed repower lake-tested on Rice Lake before you take it home.
 ## Factbox
 - **Region:** Rice Lake
-- **Drive time:** local — south shore of Rice Lake
+- **Drive time:** local, south shore of Rice Lake
 - **Route:** Harris Boat Works Rd, Gores Landing
 - **Pickup policy:** Pickup only at 5369 Harris Boat Works Rd, Gores Landing, ON. We do not deliver or ship outboards.
 - **Service model:** Shop-based only. No mobile service, no on-site installs, no driveway or marina visits.
 - **Currency:** CAD only.
 ## Local boating context
-- On the south shore of Rice Lake — local launches at Gores Landing, Bewdley, Hastings, and Harwood
-- Trent–Severn Waterway access for cottage-to-cottage cruising
+- On the south shore of Rice Lake, local launches at Gores Landing, Bewdley, Hastings, and Harwood
+- Trent, Severn Waterway access for cottage-to-cottage cruising
 - Mixed walleye, bass, and muskie fishery shapes most repower decisions
 ## Common local boats
 - Aluminum fishing boats (14–18 ft)
@@ -45,8 +45,8 @@ Harris Boat Works has been Rice Lake’s Mercury repower specialist for three ge
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Platinum Dealer (top customer-satisfaction tier)
-- Authorized Mercury dealer since 1965 — Mercury is our only outboard brand
-- Live CAD pricing online — no "call for price"
+- Authorized Mercury dealer since 1965, Mercury is our only outboard brand
+- Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
@@ -60,15 +60,15 @@ Harris Boat Works has been Rice Lake’s Mercury repower specialist for three ge
 ## FAQs
 ### Is Harris Boat Works on Rice Lake?
 
-Yes. We are at 5369 Harris Boat Works Rd, Gores Landing, ON, on the south shore of Rice Lake — the closest Mercury Marine Platinum Dealer to the lake, family-owned since 1947 and an authorized Mercury dealer since 1965.
+Yes. We are at 5369 Harris Boat Works Rd, Gores Landing, ON, on the south shore of Rice Lake, the closest Mercury Marine Platinum Dealer to the lake, family-owned since 1947 and an authorized Mercury dealer since 1965.
 
 ### Can I get a Mercury repower quote in CAD before driving here?
 
-Yes. Build a complete itemized Mercury repower quote at /quote/motor-selection — motor, controls, propeller, install, financing, and trade-in credit. The price you see is the price you pay.
+Yes. Build a complete itemized Mercury repower quote at /quote/motor-selection, motor, controls, propeller, install, financing, and trade-in credit. The price you see is the price you pay.
 
 ### Do you ship or deliver outboards?
 
-No. Pickup only at Gores Landing with photo ID. We do not ship motors and we do not deliver — strict industry-wide fraud-prevention policy.
+No. Pickup only at Gores Landing with photo ID. We do not ship motors and we do not deliver, strict industry-wide fraud-prevention policy.
 
 ## Service boundary
 Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in Rice Lake area. Customers from Rice Lake area bring their boat to our Gores Landing shop, or pick up a loose Mercury motor for self-install.

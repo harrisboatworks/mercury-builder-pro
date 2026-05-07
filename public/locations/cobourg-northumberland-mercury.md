@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/cobourg-northumberland-mercury
-last_updated: 2026-05-02
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -19,7 +19,7 @@ pickup_only: true
 currency: CAD
 ---
 
-# Mercury Dealer for Cobourg & Northumberland — Harris Boat Works
+# Mercury Dealer for Cobourg & Northumberland, Harris Boat Works
 Cobourg, Port Hope, and Northumberland buyers use Harris Boat Works as their Mercury dealer for the same reason locals do: a real CAD quote in 3 minutes, Mercury-only expertise since 1965, and a clear pickup process at Gores Landing.
 ## Factbox
 - **Region:** Cobourg & Northumberland
@@ -30,7 +30,7 @@ Cobourg, Port Hope, and Northumberland buyers use Harris Boat Works as their Mer
 - **Currency:** CAD only.
 ## Local boating context
 - About 20–25 minutes inland from the Cobourg waterfront
-- Customers boat on Lake Ontario, Rice Lake, and the Trent–Severn
+- Customers boat on Lake Ontario, Rice Lake, and the Trent, Severn
 - Common repower path: replacing tired 50–90 HP cottage outboards with modern FourStroke
 ## Common local boats
 - Pontoons
@@ -43,8 +43,8 @@ Cobourg, Port Hope, and Northumberland buyers use Harris Boat Works as their Mer
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Platinum Dealer (top customer-satisfaction tier)
-- Authorized Mercury dealer since 1965 — Mercury is our only outboard brand
-- Live CAD pricing online — no "call for price"
+- Authorized Mercury dealer since 1965, Mercury is our only outboard brand
+- Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
@@ -61,7 +61,7 @@ About 20–25 minutes north via County Rd 18 from Hwy 401.
 
 ### Where is pickup?
 
-Pickup is at our shop in Gores Landing on Rice Lake — not at the Cobourg waterfront.
+Pickup is at our shop in Gores Landing on Rice Lake, not at the Cobourg waterfront.
 
 ### Can I get a quote before driving up?
 

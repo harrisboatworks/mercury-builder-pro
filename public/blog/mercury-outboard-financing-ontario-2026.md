@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-05-04
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "Mercury Outboard Financing in Ontario: Your Complete 2026 Guide"
-description: "Yes, you can finance a Mercury repower without buying a new boat. This guide covers Mercury financing, bank loans, credit unions, and marine-specific lenders in Ontario."
+description: "Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash."
 category: "Financing & Value"
 date_published: 2026-04-20
 date_modified: 2026-05-04
@@ -18,6 +18,16 @@ content_type: blog_article
 ---
 
 # Mercury Outboard Financing in Ontario: Your Complete 2026 Guide
+
+> Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash.
+
+**Category:** Financing & Value  
+**Published:** 2026-04-20  
+**Last updated:** 2026-05-04  
+**Read time:** 11 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026
+
+## Article
 
 Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR. Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).
 
@@ -154,9 +164,72 @@ HST in Ontario is 13%. Yes, HST gets added to the project total and gets include
 **How do I get started with Mercury financing?**
 Build a quote on the [motor selection page](/quote/motor-selection). Three minutes. Then click through to the [financing page](/financing) to see your live payment options. When you are ready, the application is online and approval comes back in 24 to 48 hours.
 
----
+## FAQs
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+### Can I finance a Mercury repower in Ontario?
+
+Yes. Mercury Repower Financing through HBW covers the full project: motor, rigging, controls, prop, install labour, and HST. Standard non-promo rate is 7.99% APR. Terms run 24 to 84 months. Build a real quote and see live payment options on the [financing page](/financing).
+
+### What is the Mercury financing rate in 2026?
+
+The standard non-promotional rate is 7.99% APR. Mercury runs seasonal promotional rate offers throughout the year that can be significantly below the standard rate. Current promotion details are on the [promotions page](/promotions).
+
+### What can I finance in a Mercury repower?
+
+The full project. Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial, hydraulic steering conversion (if required), battery and harness refresh, and HST. Everything except your old motor (which becomes trade-in credit instead).
+
+### What term lengths are available?
+
+24, 36, 48, 60, 72, and 84 months are common options. Most repower customers land at 60 or 72 months as the sweet spot between manageable monthly payment and reasonable total interest. The [financing calculator](/financing) shows the math on each term.
+
+### Do I need a down payment?
+
+We do not require a specific down payment percentage. Some customers put 0% down. Some put 30%. The math gets better with more down. Trade-in credit on your old motor counts as down payment for approval and total-financed purposes.
+
+### How does the trade-in credit work?
+
+Your old motor has trade-in value, even if it is dead. Aluminum and parts have aluminum and parts value. Our [trade-in valuation tool](/trade-in-value) gives you an instant credit estimate. The credit reduces the financed total, which reduces your monthly payment.
+
+### What credit score do I need?
+
+Mercury Repower Financing approves a wide range of credit profiles. Excellent credit unlocks the best terms and rates. Fair credit usually still gets approved, sometimes at a higher rate. We do not pull your credit until you have built a serious quote and asked us to start the application.
+
+### How long does financing approval take?
+
+Most approvals come back in 24 to 48 hours after you submit the application. Faster than most car loans.
+
+### Can I pay off my Mercury financing early?
+
+Yes. There is no prepayment penalty on Mercury Repower Financing. If you sell the boat, get a bonus, or just decide to pay it off in full, you can do that without extra fees.
+
+### Should I pay cash or finance my repower?
+
+If you have the cash and your other money is not earning more than 7.99%, paying cash usually wins mathematically. If your savings is earning more than the financing rate, or paying cash would deplete your emergency fund, financing is the right call. We will not push you either way.
+
+### What is HST in Ontario and is it included in the financing?
+
+HST in Ontario is 13%. Yes, HST gets added to the project total and gets included in the financed amount. You do not have to pay tax up front separately.
+
+### How do I get started with Mercury financing?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Three minutes. Then click through to the [financing page](/financing) to see your live payment options. When you are ready, the application is online and approval comes back in 24 to 48 hours.
+
+### By Jay Harris
+
+3rd-Generation Owner, Harris Boat Works Mercury Platinum Dealer · Rice Lake, Ontario [About Jay and Harris Boat Works →](/about)
+
+## Next steps
+
+- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
+- Repower information: https://www.mercuryrepower.ca/repower
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Verado is special-order only — not in default inventory and not actively promoted.
+- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+

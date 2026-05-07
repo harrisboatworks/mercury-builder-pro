@@ -1,164 +1,274 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-05-02
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
-title: "The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide"
-description: "Everything you need to know about the Mercury ProKicker kicker motor for Rice Lake fishing — model comparison, tiller vs remote, installation tips, and why it's the best trolling upgrade for walleye and muskie."
+title: "Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)"
+description: "The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount..."
 category: "Fishing"
 date_published: 2026-02-06
-date_modified: 2026-02-06
+date_modified: 2026-05-04
 keywords: ["mercury prokicker","kicker motor rice lake","trolling motor ontario","prokicker installation","mercury 9.9 prokicker","kicker motor fishing boat","rice lake walleye trolling"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide
+# Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)
 
-> Everything you need to know about the Mercury ProKicker kicker motor for Rice Lake fishing — model comparison, tiller vs remote, installation tips, and why it's the best trolling upgrade for walleye and muskie.
+> The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount...
 
 **Category:** Fishing  
 **Published:** 2026-02-06  
-**Last updated:** 2026-02-06  
+**Last updated:** 2026-05-04  
 **Read time:** 10 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
 
 ## Article
 
-## Why a Kicker Motor Changes Everything on Rice Lake
+The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).
 
-If you fish Rice Lake, you already know — it's shallow, weedy, and the fish are structure-oriented. Maximum depth is about 27 feet, and the best walleye and muskie water sits along weed edges, mudflats, and contour breaks between Gores Landing, Bewdley, and the islands.
+## Quick recommendation
 
-That's precision trolling territory. And precision trolling means you need a dedicated kicker motor.
+If you fish Rice Lake or the Kawarthas seriously, you want a 9.9 ProKicker. The math is consistent: customers who skip the kicker compromise either main-motor performance or trolling control. Customers who buy the ProKicker rarely regret it.
 
-Running your main outboard at trolling speed is hard on the engine, burns more fuel than it should, and gives you sloppy speed control. A purpose-built kicker like the Mercury ProKicker lets you dial in speeds down to a tenth of a mile per hour — the 0.8 to 3 mph window where walleye rigs, crankbaits, and muskie presentations do their best work.
+The ProKicker is not the same as a standard 9.9. It is purpose-built for fishing: larger prop, longer shaft for big transoms, high-thrust gearcase, and integrated tiller or remote-control variants. The price difference over a standard 9.9 is real but small relative to the all-in fishing setup.
 
-If you've been making do without one, a ProKicker is the single upgrade that'll change your fishing the most. Here's everything you need to know.
+For a typical 16 to 18 ft aluminum console fishing boat at HBW, the all-in repower with main motor plus 9.9 ProKicker lands $20,000 to $30,000 CAD. The ProKicker portion of that is $4,000 to $6,000 CAD installed. [Live pricing here.](/quote/motor-selection)
 
-## What Makes the ProKicker Different from a Regular Small Outboard
+## What the 9.9 ProKicker actually is
 
-Not all small motors are created equal. Mercury didn't just shrink a standard outboard — the ProKicker lineup is purpose-engineered for fishing:
+The Mercury 9.9 ProKicker is a kicker motor specifically designed for fishing applications. The differences from a standard 9.9:
 
-- **High-thrust four-blade propeller and matched gear ratio** for precise low-speed control
-- **Deeper gearcase and heavy-duty skeg** to handle big boats and rough water
-- **Fastest power tilt in the industry** — deploy or stow without leaning over the transom
-- **Exceptionally quiet operation** with soft-rubber vibration isolation, critical in Rice Lake's shallow water where fish spook easily
-- **EFI technology** for reliable cold-morning starts during early spring walleye season
-- **Strong alternator output at low RPM** to keep your fish finder, GPS, and electronics charged while trolling
+- **High-thrust gearcase.** Larger gearcase optimized for low-speed thrust rather than top speed.
+- **Longer prop shaft.** Designed to fit big-boat transoms (20 to 25 inch shaft options).
+- **Larger high-thrust prop.** More water moved per revolution at low RPM.
+- **Tiller or remote-control variants.** Tiller for hands-on trolling control; remote-control for steering wheel integration with the main motor.
+- **Heavier transom bracket.** Built for fishing-boat mounting and steady use.
+- **Integrated charging system.** Some variants include alternator output for trolling motor batteries and electronics.
 
-These aren't marketing bullet points — they're the features that separate a real kicker motor from a cheap outboard bolted to a bracket.
+Standard 9.9 motors are general-purpose kicker or main-on-small-boat units. ProKickers are purpose-built fishing tools.
 
-## Choosing the Right ProKicker: 9.9 vs 15 vs 25 HP
+## Why a kicker matters for Rice Lake fishing
 
-Mercury offers three ProKicker models. Here's how to pick the right one for your Rice Lake setup:
+Rice Lake's primary fishery is walleye trolling. The classic technique:
 
-| Feature | 9.9 HP ProKicker | 15 HP ProKicker | 25 HP ProKicker |
-|---------|-----------------|-----------------|-----------------|
-| Engine | Inline 2-cylinder | Inline 2-cylinder | Inline 3-cylinder |
-| Displacement | 333cc | 333cc | 500cc |
-| Dry Weight | ~122 lbs | ~122 lbs | ~146 lbs |
-| Alternator | 12A / 145W | 12A / 145W | 17A / 210W |
-| SmartCraft | No | No | Yes |
-| Trim System | Power tilt | Power tilt | Power trim & tilt |
+- **Slow trolling speeds** (1 to 2 mph)
+- **Specific lure presentation** (worm harness, crawler harness, crankbaits)
+- **Quiet running** (walleye spook in shallow water)
+- **Long trolling passes** (working specific structure or weed edges)
 
-**The 9.9 HP** is the most popular choice and handles most Rice Lake fishing boats in the 16- to 22-foot range. It covers typical walleye trolling speeds of 0.5–2.5 mph with ease.
+Main motors do not handle this well. Mercury 60 to 115 HP main motors at idle run too fast (typically 3 to 4 mph at idle), too loud, and burn fuel inefficiently at slow speeds. Trying to troll walleye with a main motor is fighting the tool.
 
-**The 15 HP** shares the same block as the 9.9 with more power — a good step up if you run a heavier aluminum boat or fish in wind frequently.
+A 9.9 ProKicker handles trolling perfectly:
 
-**The 25 HP** is the choice for larger boats (20ft+) with multiple downriggers, dual electronics, or if you want SmartCraft integration and extra charging capacity. It also gives you the ability to run the kicker as a "get home" motor at reasonable speed.
+- **Idles down to 1 to 2 mph** (true walleye speed)
+- **Quiet running** (does not spook fish in shallow water)
+- **Fuel-efficient at low speeds**
+- **Easy to control with tiller** for fine-tuning trolling speed and direction
 
-## Tiller vs Remote Steering
+This is why the 9.9 ProKicker is the standard Rice Lake fishing setup. Three generations of HBW have rigged this combination. It works.
 
-This comes down to how you fish:
+## Tiller vs remote-control ProKicker
 
-**Tiller steering** gives you instant, hands-on directional control. It's the preferred setup for slow-trolling tight contours along Rice Lake's weed edges and island structures. Many dedicated walleye anglers swear by tiller because you can feel the motor's response and make micro-adjustments without looking away from the water.
+The 9.9 ProKicker comes in two configurations:
 
-**Remote steering** connects the kicker to your main outboard via a tie bar, letting you steer from the helm while watching your electronics. This is the go-to for open-water trolling patterns and for muskie anglers who want to monitor multiple screens at the console.
+### Tiller ProKicker
 
-There's no wrong answer — it depends on your fishing style. If you're not sure, come talk to us and we'll help you figure out what suits your setup.
+- **Direct hands-on control** of speed and steering with tiller arm
+- **Best for solo or two-person fishing** where the angler at the back operates the kicker
+- **More common configuration** for fishing-only boats
+- **Lower cost** than remote-control variant
 
-## Installation: What's Involved
+The tiller ProKicker is the classic Rice Lake setup. Angler operates the kicker tiller while fishing. Trolling speed adjustments are direct and responsive.
 
-### Replacing an Existing Kicker
+### Remote-control ProKicker
 
-If your boat already has a kicker motor, swapping in a new ProKicker is straightforward:
+- **Steering wheel integration** with main motor control
+- **Best for boats where one angler runs the boat** while others fish
+- **Required if you want kicker steering linked to main motor steering**
+- **Higher cost** than tiller variant
+- **Common on bigger fishing boats and family-fishing setups**
 
-1. **Mount the engine** to the transom or existing bracket using the included hardware, following torque specs in the manual
-2. **Connect fuel lines** using the new fuel line kit included with the motor
-3. **Wire the power connections** — positive and negative cables to your cranking battery for electric start and power tilt
-4. **Add fluids** — gear lube comes pre-installed, add engine oil per the owner's manual
+The remote-control variant lets the captain steer from the helm while trolling. Useful when the back of the boat is full of anglers and gear.
 
-A handy boat owner can handle this in an afternoon. The manual walks you through every step.
+For specific pricing, [build a quote](/quote/motor-selection) with the right ProKicker configuration for your boat.
 
-### New Installation (No Previous Kicker)
+## Best boats for the 9.9 ProKicker setup
 
-If your boat has never had a kicker, there's more involved — drilling transom holes, installing a dedicated kicker-mounting bracket (common on fiberglass boats and boats with swim platforms), and routing fuel lines. This is where professional installation pays for itself.
+The ProKicker fits most Rice Lake and Kawartha fishing boats:
 
-**Key tip:** Position the kicker far enough from the primary engine that neither outboard contacts the other during full turns, and avoid mounting directly over your transducer.
+- **16 to 19 ft aluminum console fishing boats** (Lund, Crestliner, Princecraft, Lowe). Most common Kawartha fishing setup.
+- **Pontoon boats used for fishing.** Fish-pontoons benefit from a ProKicker for trolling.
+- **Larger center console fishing boats (20+ ft).** ProKicker as a backup motor and trolling tool.
+- **Walleye-specific or muskie fishing rigs.** Long days on the water with multiple fishing techniques.
 
-Not sure which situation you're in? [Submit a service request](https://hbw.wiki/service) and we'll walk you through it.
+The ProKicker is overkill on small tin boats (12 to 14 ft) where a 9.9 is the main motor. It is also overkill on bass boats focused on running fast and using the trolling motor for fine positioning. For everything in between, the ProKicker fits.
 
-## Don't Skip the Break-In
+## What HBW checks before recommending a ProKicker
 
-Every new Mercury motor requires a proper break-in period — for ProKicker models, that's the first 10 hours of operation. This lets piston rings seat, bearings wear in evenly, and the oil film develop properly.
+When fishing customers come to HBW for a repower or new fishing boat assessment, we want to know:
 
-We've got a [complete break-in guide](/blog/breaking-in-new-mercury-motor-guide) that walks you through the procedure step by step. Follow it and your ProKicker will reward you with years of reliable service.
+- **Boat make, model, year, length, and transom configuration**
+- **Main motor (existing or planned)**
+- **Primary fishery (walleye, bass, muskie, mixed)**
+- **Solo or family use**
+- **Trolling-heavy or run-and-gun style**
+- **Whether you want tiller or remote-control kicker**
+- **Existing electronics (Garmin, Lowrance, Humminbird, etc.) and charging needs**
+- **Budget and financing tolerance**
 
-## Why Harris Boat Works for Your ProKicker
+Most customers fall into "9.9 ProKicker tiller for fishing" or "9.9 ProKicker remote for family-fishing." Different setups need different rigging.
 
-We've been a Mercury Marine dealer since 1965 and a Platinum-certified dealer for over a decade. Our technicians are factory-trained on every Mercury product line, including the full ProKicker range.
+## ProKicker rigging considerations
 
-When you buy a ProKicker through us, you get:
+A ProKicker installation involves more than just bolting a motor to the transom:
 
-- **Expert model selection** — we'll match the right HP and control setup to your boat and fishing style
-- **Professional installation** with proper bracket selection, rigging, and wiring
-- **A lake test on Rice Lake** to verify everything runs perfectly before you take delivery
-- **Break-in guidance** and ongoing [seasonal maintenance](/blog/mercury-motor-maintenance-seasonal-tips) support
-- **79 years of Rice Lake expertise** — nobody knows this lake's unique conditions better
+- **Transom bracket** sized for the ProKicker weight and prop torque
+- **Wiring harness** to integrate with main motor systems if remote-control
+- **Steering linkage** for remote-control variant (mechanical or hydraulic)
+- **Fuel system tap** to share main motor fuel tank or separate kicker tank
+- **Charging integration** if the kicker is wired to charge batteries or run electronics
+- **Throttle cables** for tiller or remote variant
 
-Whether you're chasing walleye along the weed lines near Gores Landing, trolling for muskie from Bewdley to Hastings, or working smallmouth structure around the islands, a properly installed Mercury ProKicker will transform your fishing game.
+We rig kickers as part of most fishing boat repower projects at HBW. Rigging cost is included in the all-in install pricing on the [motor selection page](/quote/motor-selection).
 
-**Ready to add a ProKicker to your boat?** [Build a quote in our online configurator](/quote/motor-selection) — all three ProKicker models are available — or [submit a service request](https://hbw.wiki/service) to discuss installation.
+## Common kicker mistakes
 
-Prefer a non-ProKicker 9.9 as a true main-engine kicker on smaller hulls? See the [Mercury 9.9 ELH FourStroke](/motors/fourstroke-9-9hp-9-9elh-fourstroke) — electric-start, long-shaft, remote-ready, priced in CAD with pickup at our Gores Landing dealership on Rice Lake.
+We see these every season:
+
+1. **Skipping the kicker entirely.** Customer thinks they will use the main motor for trolling. Two seasons in they realize the main motor is too fast and too loud for walleye presentation. Should have bought the ProKicker.
+2. **Buying a standard 9.9 instead of a ProKicker.** The standard 9.9 is a general-purpose motor. ProKicker is built for fishing. The price difference is small; the performance difference for fishing is meaningful.
+3. **Wrong shaft length.** Big-transom fishing boats need long-shaft ProKickers. Standard-shaft kickers will cavitate at low speeds.
+4. **Wrong prop on the kicker.** ProKicker comes with a high-thrust prop optimized for trolling. Generic props give up the gearcase advantage.
+5. **Skipping the charging integration.** Modern fishing boats have heavy electronics loads. Wiring the ProKicker to charge batteries during trolling is a smart addition.
+
+## Related guides
+
+- [Best Mercury Outboard for Rice Lake Fishing](/blog/best-mercury-outboard-rice-lake-fishing), full Rice Lake setup guide
+- [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), aluminum-specific recommendations
+- [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep), pre-season prep
+- [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), how main motor and kicker affect fuel use
+- [2026 Rice Lake Fishing Season Outlook](/blog/2026-rice-lake-fishing-season-outlook), local season guide
+
+## Ready to add a ProKicker to your fishing setup?
+
+Build a quote including the 9.9 ProKicker on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full kicker configuration including rigging, prop, and tiller or remote-control options.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through ProKicker setup for your specific fishing boat before quoting, [give us a call at (905) 342-2153](tel:9053422153). We rig fishing boats every week and can give you the honest answer for your hull and fishing style.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**Do I need a kicker motor for Rice Lake fishing?**
+For serious walleye fishing, yes. Main motors do not idle slow enough for proper walleye trolling speeds (1 to 2 mph). The Mercury 9.9 ProKicker is the standard. For run-and-gun bass fishing, a kicker is optional. For muskie or mixed-use fishing, usually yes.
+
+**What's the difference between a Mercury 9.9 and a 9.9 ProKicker?**
+The ProKicker has a high-thrust gearcase, larger high-thrust prop, longer shaft for big transoms, and integrated tiller mount or remote-control variant. The standard 9.9 is for general-purpose use. The ProKicker is the purpose-built fishing kicker.
+
+**How much does a Mercury 9.9 ProKicker cost?**
+The ProKicker installed lands $4,000 to $6,000 CAD at HBW depending on shaft length, tiller vs remote-control configuration, and rigging requirements. For specific pricing, [build a quote](/quote/motor-selection).
+
+**Tiller or remote-control ProKicker for Rice Lake?**
+Tiller is the classic and most common for fishing-focused boats. Remote-control is better for family-fishing where one person runs the boat while others fish. Choose based on how you fish.
+
+**Can I add a ProKicker to my existing fishing boat without a repower?**
+Yes. ProKicker installs as a standalone project. Cost is the kicker plus rigging (typically $4,000 to $6,000 CAD all-in). Most fishing boats have transom space and rigging compatibility for adding a kicker.
+
+**Will a ProKicker fit my pontoon?**
+Yes for most pontoon configurations. Transom-mount or platform-mount options exist for pontoons. Useful for fishing pontoons on Kawartha lakes.
+
+**Should I run a kicker on a bass boat?**
+For tournament bass fishing focused on running fast and using the bow trolling motor for fine positioning, no. For recreational bass fishing on Kawartha lakes, a kicker is a useful tool.
+
+**Can I troll for walleye with my main motor?**
+You can, but it's a compromise. Main motors do not idle low enough for true walleye trolling speeds (1 to 2 mph). They are also louder, which can spook fish in shallow water. A 9.9 ProKicker is the proper answer.
+
+**Will the ProKicker charge my batteries while trolling?**
+Most ProKicker variants include alternator output that can charge batteries while running. Useful for boats with heavy electronics loads. Specific charging integration varies by ProKicker model and rigging configuration.
+
+**How long does a Mercury 9.9 ProKicker last?**
+Properly maintained, 1,500 to 2,000+ hours of life. ProKickers run at lower RPM and lower loads than main motors, so they often outlast the main motor. Annual winterization and gearcase lube changes are critical.
+
+**Can I use a kicker as my main motor on a small boat?**
+On 12 to 14 ft tin boats, yes. A 9.9 (standard or ProKicker) can be the only motor on a small fishing boat. On 16 ft and bigger, you need a real main motor and the kicker is the auxiliary.
+
+**What's the most popular kicker setup at HBW?**
+A 9.9 ProKicker tiller, long shaft, paired with a 60 to 115 HP main motor on a 16 to 18 ft aluminum console fishing boat. The classic Rice Lake walleye setup.
+
+**Do I need to register the kicker separately?**
+The kicker is part of the boat's overall motor configuration on the Pleasure Craft Licence (PCL). Adding a kicker may require a PCL update. We handle this paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
 
 ## FAQs
 
-### Should I choose tiller or remote steering for my Mercury ProKicker?
+### Do I need a kicker motor for Rice Lake fishing?
 
-Tiller steering is the better choice for slow-trolling tight structure — weed edges, island points, mudflat contour breaks — because you feel the motor's response directly and can make instant micro-corrections. Remote steering is better if you spend most of your time running open-water trolling patterns and want to steer from the console while watching multiple screens. Most dedicated walleye anglers on Rice Lake prefer tiller for the control it gives in close quarters. Muskie anglers who run longer open-water passes often prefer remote.
+For serious walleye fishing, yes. Main motors do not idle slow enough for proper walleye trolling speeds (1 to 2 mph). The Mercury 9.9 ProKicker is the standard. For run-and-gun bass fishing, a kicker is optional. For muskie or mixed-use fishing, usually yes.
 
-### Can I install a Mercury ProKicker myself?
+### What's the difference between a Mercury 9.9 and a 9.9 ProKicker?
 
-If your boat already has a kicker bracket and an existing small motor, swapping in a new ProKicker is something a mechanically competent boat owner can do in a few hours — mounting, connecting the fuel line, wiring battery connections, and adding engine oil. If your boat has never had a kicker motor, professional installation is strongly recommended — it involves selecting and mounting the right bracket, drilling transom holes, routing fuel and electrical lines, and positioning the motor correctly relative to your main engine and transducer.
+The ProKicker has a high-thrust gearcase, larger high-thrust prop, longer shaft for big transoms, and integrated tiller mount or remote-control variant. The standard 9.9 is for general-purpose use. The ProKicker is the purpose-built fishing kicker.
 
-### What break-in does a new Mercury ProKicker need?
+### How much does a Mercury 9.9 ProKicker cost?
 
-A new Mercury ProKicker requires a 10-hour break-in period during which you vary the engine speed and avoid running at full throttle for extended periods. The procedure involves idling for the first few minutes, then varying RPM through the range during the first 2 hours, gradually increasing operating time at higher RPM through hours 2–10, and changing the engine oil and lower unit gear lube after the break-in is complete. Running the motor hard before the rings have seated can cause accelerated wear and reduce the engine's useful life.
+The ProKicker installed lands $4,000 to $6,000 CAD at HBW depending on shaft length, tiller vs remote-control configuration, and rigging requirements. For specific pricing, [build a quote](/quote/motor-selection).
 
-### Will a Mercury ProKicker fit my boat?
+### Tiller or remote-control ProKicker for Rice Lake?
 
-Almost any boat with a transom rated for a small outboard can accommodate a ProKicker. Key factors to check: transom height (standard 20-inch short shaft is most common; long shaft 25-inch is available for higher transoms), available mounting width next to your main engine, and transom thickness and material. For boats with swim platforms or bracket-mounted main engines, a kicker bracket accessory is usually required. The ProKicker's power tilt means it deploys and stows fast, which matters on boats with limited transom clearance.
+Tiller is the classic and most common for fishing-focused boats. Remote-control is better for family-fishing where one person runs the boat while others fish. Choose based on how you fish.
 
-### How much does a Mercury ProKicker cost in Canada?
+### Can I add a ProKicker to my existing fishing boat without a repower?
 
-A Mercury ProKicker 9.9 HP typically runs approximately $4,000–$5,500 CAD for the motor alone (tiller or remote). The 15 HP ProKicker is roughly $5,000–$6,500 CAD, and the 25 HP is approximately $7,000–$9,000 CAD. Professional installation adds $500–$1,500 depending on whether a new bracket and wiring is required. For exact pricing, build a quote at mercuryrepower.ca — all three ProKicker models are available with live pricing, no phone call required.
+Yes. ProKicker installs as a standalone project. Cost is the kicker plus rigging (typically $4,000 to $6,000 CAD all-in). Most fishing boats have transom space and rigging compatibility for adding a kicker.
 
-### Mercury ProKicker vs electric trolling motor — which is better for Rice Lake?
+### Will a ProKicker fit my pontoon?
 
-For serious walleye and muskie trolling on Rice Lake, a Mercury ProKicker outperforms a typical electric trolling motor. The ProKicker handles a full day on the water without battery management concerns — a high-thrust electric trolling motor can drain batteries in 4–6 hours of continuous use. The ProKicker also handles a 20-knot crosswind better than most electric motors, letting you maintain your trolling line in real conditions. Electric trolling motors suit bass fishing with frequent spot changes and calm-water presentations. For covering open-water trolling structure all day in variable conditions, the ProKicker is the more capable tool.
+Yes for most pontoon configurations. Transom-mount or platform-mount options exist for pontoons. Useful for fishing pontoons on Kawartha lakes.
 
-### Can I use a Mercury ProKicker as a backup main motor in an emergency?
+### Should I run a kicker on a bass boat?
 
-Yes, in a limited way. The ProKicker 25 HP can run a moderately sized fishing boat at a get-home speed — slower than normal cruising, but enough to reach the dock safely if your main engine fails. The 9.9 and 15 HP models can also move a loaded boat, but at very slow speeds on larger hulls. The ProKicker is not designed as a primary propulsion motor, but as an emergency backup it's more than adequate for most Rice Lake situations, where you're never more than a few kilometres from shore or a marina.
+For tournament bass fishing focused on running fast and using the bow trolling motor for fine positioning, no. For recreational bass fishing on Kawartha lakes, a kicker is a useful tool.
 
-### How much does professional ProKicker installation cost at Harris Boat Works?
+### Can I troll for walleye with my main motor?
 
-Professional ProKicker installation at Harris Boat Works typically runs $500–$1,500 CAD depending on what's involved. A straight swap replacing an existing kicker on an existing bracket is at the lower end — a few hours of labour for mounting, wiring, and a lake test. A new installation with no existing bracket, requiring new transom hardware, bracket mounting, fuel line routing, and electrical work, is at the higher end. All installations include a lake test on Rice Lake to verify correct operation before delivery. Call 905-342-2153 or submit a service request at hbw.wiki/service to discuss your specific boat.
+You can, but it's a compromise. Main motors do not idle low enough for true walleye trolling speeds (1 to 2 mph). They are also louder, which can spook fish in shallow water. A 9.9 ProKicker is the proper answer.
+
+### Will the ProKicker charge my batteries while trolling?
+
+Most ProKicker variants include alternator output that can charge batteries while running. Useful for boats with heavy electronics loads. Specific charging integration varies by ProKicker model and rigging configuration.
+
+### How long does a Mercury 9.9 ProKicker last?
+
+Properly maintained, 1,500 to 2,000+ hours of life. ProKickers run at lower RPM and lower loads than main motors, so they often outlast the main motor. Annual winterization and gearcase lube changes are critical.
+
+### Can I use a kicker as my main motor on a small boat?
+
+On 12 to 14 ft tin boats, yes. A 9.9 (standard or ProKicker) can be the only motor on a small fishing boat. On 16 ft and bigger, you need a real main motor and the kicker is the auxiliary.
+
+### What's the most popular kicker setup at HBW?
+
+A 9.9 ProKicker tiller, long shaft, paired with a 60 to 115 HP main motor on a 16 to 18 ft aluminum console fishing boat. The classic Rice Lake walleye setup.
+
+### Do I need to register the kicker separately?
+
+The kicker is part of the boat's overall motor configuration on the Pleasure Craft Licence (PCL). Adding a kicker may require a PCL update. We handle this paperwork for HBW customers. See our [PCL update guide](/blog/pleasure-craft-licence-update-repower-ontario).
 
 ## Next steps
 

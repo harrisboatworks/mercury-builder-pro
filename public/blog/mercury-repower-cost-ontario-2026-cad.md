@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md
-last_updated: 2026-05-04
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)"
-description: "Realistic CAD pricing for complete Mercury repowers in Ontario — from $6,000 for small tillers to $60,000+ for high-performance applications. Includes hidden costs other dealers don't mention."
+description: "For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to..."
 category: "Repower Cost & Pricing"
 date_published: 2026-04-17
 date_modified: 2026-05-04
@@ -19,7 +19,17 @@ content_type: blog_article
 
 # How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)
 
-A Mercury repower in Ontario in 2026 typically runs $8,000 to $22,000 CAD all-in for the most common 25 to 115 HP projects, before HST. Bigger HP scales up from there, with 250 to 300 HP repowers landing $35,000 to $40,000 CAD. Tiller motors 20 HP and under are just the motor price, no rigging or extras needed. The motor itself is the biggest line on any repower. Rigging, prop, and labour add a smaller share, especially on Mercury-to-Mercury repowers where most existing controls and cables can stay. The most accurate number is the one we build for your specific hull. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+> For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to...
+
+**Category:** Repower Cost & Pricing  
+**Published:** 2026-04-17  
+**Last updated:** 2026-05-04  
+**Read time:** 12 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad
+
+## Article
+
+For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to $22,000; 150 HP $23,000 to $30,000; and 200 to 300 HP $35,000 to $40,000, CAD before HST. Live pricing on the motor selection page is the source of truth.
 
 ## Quick recommendation
 
@@ -27,11 +37,11 @@ If you want a real repower number for your boat, build a quote on this site. It 
 
 If you want to ballpark before you build, here is the honest 2026 picture in CAD. These are ranges. For your specific motor and configuration, the live site has the actual number.
 
-- **Tiller motors 20 HP and under** (kickers, tenders, small aluminum tillers) are drop-in installs. No rigging, no extras. You pay the motor price and that is it. [See live pricing on the motor selection page.](/quote/motor-selection)
-- **Small remote (25 to 60 HP)** repowers land $8,000 to $15,000 all-in. [Live pricing here.](/quote/motor-selection)
-- **Mid (90 to 115 HP)**, the most common range we do, lands $17,000 to $22,000 all-in. [Live pricing here.](/quote/motor-selection)
-- **Higher (150 to 200 HP)** lands $23,000 to $36,000. [Live pricing here.](/quote/motor-selection)
-- **High-HP (250 to 300 HP)** lands $35,000 to $40,000. [Live pricing here.](/quote/motor-selection)
+- **9.9 to 25 HP tillers** are usually motor-only purchases in the $2,000 to $5,500 range before HST. Most tillers do not need a full rigging package. [See live pricing on the motor selection page.](/quote/motor-selection)
+- **40 to 60 HP** repowers land $11,000 to $15,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
+- **75 to 115 HP**, the most common range we do, lands $17,000 to $22,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
+- **150 HP** repowers land $23,000 to $30,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
+- **200 to 300 HP** repowers land $35,000 to $40,000 all-in before HST. [Live pricing here.](/quote/motor-selection)
 
 Add 13% HST on top of any of those numbers. The live site shows your specific number after a three-minute build.
 
@@ -52,15 +62,23 @@ A repower quote moves up or down based on six things:
 
 This is the 2026 CAD picture before HST. Your specific number comes from the live quote builder.
 
-| Project tier | HP range | All-in range (CAD) | Common boats |
+| Project tier | HP range | All-in range (CAD before HST) | Common boats |
 |---|---|---|---|
-| Tiller, drop-in | 2.5 - 20 HP | Motor price only, no rigging | Tenders, dinghies, kickers, small aluminum tillers |
-| Small remote | 25 - 60 HP | $8,000 - $15,000 | 14-16 ft aluminum, small consoles |
-| Mid | 90 - 115 HP | $17,000 - $22,000 | 16-19 ft aluminum, small pontoons, fishing boats |
-| Higher | 150 - 200 HP | $23,000 - $36,000 | 18-22 ft pontoons, runabouts, mid-size fishing |
-| High-HP | 250 - 300 HP | $35,000 - $40,000 | Performance bass, large pontoons, center consoles |
+| Tiller, motor-only | 9.9 - 25 HP | $2,000 - $5,500 | Tenders, dinghies, kickers, small aluminum tillers |
+| Small remote | 40 - 60 HP | $11,000 - $15,000 | 14-16 ft aluminum, small consoles |
+| Mid | 75 - 115 HP | $17,000 - $22,000 | 16-19 ft aluminum, small pontoons, fishing boats |
+| 150 HP | 150 HP | $23,000 - $30,000 | 18-22 ft pontoons, runabouts, mid-size fishing |
+| High-HP | 200 - 300 HP | $35,000 - $40,000 | Performance bass, large pontoons, center consoles |
+:::image-placeholder
+slug: repower-cost-stack-by-hp-class
+type: infographic
+aspect: 16:9
+description: Stacked bar chart showing what's included in each HP class repower cost: motor, rigging, prop, controls, install labour
+prompt: Photorealistic editorial infographic. Stacked horizontal bar chart showing Mercury repower cost breakdown across 5 HP tiers: 40-60 HP, 75-115 HP, 150 HP, 200-300 HP. Each bar segmented into Motor / Rigging / Prop / Controls / Install Labour with distinct muted colors. Y-axis labels HP class, X-axis CAD before HST. Clean white background, Mercury black accent text, gold for "Install Labour" segment. No people, no logos overlaid. 1600x900. [STYLE ANCHOR]
+image: /lovable-uploads/repower-cost-stack-by-hp-class.png
+:::
 
-The ranges above are 2026 working estimates. The actual price for your motor, your hull, and your configuration is on the [motor selection page](/quote/motor-selection). That is the source of truth. Tiller motors 20 HP and under are essentially drop-in installs (no rigging, no controls, no extras), and the motor itself is the whole purchase. For specific tiller motor pricing (a 9.9 MH versus a 15 MH versus a 20 MH), see [live pricing](/quote/motor-selection).
+The ranges above are 2026 working estimates. The actual price for your motor, your hull, and your configuration is on the [motor selection page](/quote/motor-selection). That is the source of truth. 9.9 to 25 HP tiller motors are usually motor-only purchases with no full rigging package, and the motor itself is the whole purchase. For specific tiller motor pricing (a 9.9 MH versus a 15 MH versus a 20 MH), see [live pricing](/quote/motor-selection).
 
 These are HBW's actual working ranges. For your specific motor, hull, and configuration, the live quote builder gives you the real CAD number in three minutes.
 
@@ -157,7 +175,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 ## FAQ
 
 **How much does a Mercury repower cost in Ontario in 2026?**
-A typical Mercury repower in Ontario in 2026 runs $8,000 to $22,000 CAD all-in for the common 25 to 115 HP projects, before HST. Tiller motors 20 HP and under are drop-in installs (motor price only, no rigging). Higher HP work (150 to 200 HP) lands $23,000 to $36,000 CAD. The biggest repowers (250 to 300 HP) range from $35,000 to $40,000 CAD. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.
+A typical Mercury repower in Ontario in 2026 depends on HP class. HBW planning ranges before HST are: 9.9 to 25 HP tillers at $2,000 to $5,500 motor-only; 40 to 60 HP at $11,000 to $15,000 all-in; 75 to 115 HP at $17,000 to $22,000 all-in; 150 HP at $23,000 to $30,000 all-in; and 200 to 300 HP at $35,000 to $40,000 all-in. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.
 
 **What is included in a Mercury repower quote?**
 Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial, and a full tune-up before delivery. We list every line item on every quote. Nothing hidden, no "shop fees" surprises at the end.
@@ -192,9 +210,72 @@ Mercury Marine includes 3 years of standard factory warranty on new outboards. H
 **How do I get started?**
 Build a quote on this site in three minutes, or give us a call at (905) 342-2153. The quote includes motor selection, rigging, install, and total. We do not require an account, an email, or a phone call to see prices.
 
----
+## FAQs
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+### How much does a Mercury repower cost in Ontario in 2026?
+
+A typical Mercury repower in Ontario in 2026 depends on HP class. HBW planning ranges before HST are: 9.9 to 25 HP tillers at $2,000 to $5,500 motor-only; 40 to 60 HP at $11,000 to $15,000 all-in; 75 to 115 HP at $17,000 to $22,000 all-in; 150 HP at $23,000 to $30,000 all-in; and 200 to 300 HP at $35,000 to $40,000 all-in. The live quote builder at [/quote/motor-selection](/quote/motor-selection) shows your specific configuration in three minutes.
+
+### What is included in a Mercury repower quote?
+
+Motor, rigging (controls, cables, gauges), new prop, install labour, sea-trial, and a full tune-up before delivery. We list every line item on every quote. Nothing hidden, no "shop fees" surprises at the end.
+
+### How long does a Mercury repower take?
+
+A clean install is 1 to 2 days of shop time. From the day you confirm the order to the day you pick up the boat is usually 2 to 4 weeks, depending on motor availability. Repowering in winter (November to March) is the fastest. We have first pick of motors before the spring rush.
+
+### Do I need new controls and gauges?
+
+Sometimes. Mercury-to-Mercury repowers usually keep the existing control box and cables, which keeps rigging at the low end ($500 to $1,000 CAD). Mechanical Mercury controls from 2010 onward usually carry forward. Anything older than that is usually due for replacement. Digital throttle and shift on newer motors requires new controls regardless. Brand conversions (Evinrude, Yamaha, Honda to Mercury) push rigging to $2,000 to $3,000 CAD because the entire control system needs to swap.
+
+### Can I keep my old prop?
+
+Probably not. A new motor with different gear ratios, different RPM range, and a different transom height needs a matched prop. Running an old prop on a new motor costs you 4 mph and 15% fuel economy. Aluminum props on motors up to 115 HP are $450 CAD. Stainless steel on 150 HP and up runs $800 to $2,000 CAD. We pick the prop, lake-test it, and swap it if it does not perform.
+
+### What happens to my old motor?
+
+We give you a trade-in credit even on dead motors. Aluminum and parts have value. Our [trade-in valuation tool](/trade-in-value) gives you an instant estimate.
+
+### Is repowering worth it on a 25-year-old boat?
+
+Depends on the hull. Aluminum hulls last basically forever if the transom is solid. Fiberglass hulls with good transoms can run 30+ years. We check the transom with a moisture meter before quoting. If the hull has structural problems, we will tell you to walk away.
+
+### Do you finance repowers?
+
+Yes. Mercury Repower Financing is available on most jobs. Full details and a payment calculator on our [financing page](/financing).
+
+### Can you handle Evinrude, Yamaha, or Honda repowers to Mercury?
+
+Yes. We do this every year. The biggest variables are the controls and the steering. Going from a 1990s Evinrude to a modern Mercury usually means new everything in the control system, which adds $2,000 to $3,000 CAD in rigging on top of the motor. We have a specific guide on [replacing Evinrudes with Mercury](/blog/evinrude-to-mercury-repower-ontario-guide).
+
+### Why is Mercury more expensive in Canada than the US?
+
+Three reasons: CAD-USD exchange, freight, and Canadian regulatory requirements. Cross-border purchasing is technically possible but the warranty servicing, customs paperwork, and freight usually erase the savings. We sell at the dealer-allowed Canadian MSRP minus our HBW discount. Both numbers are on the website for every motor.
+
+### What is the warranty on a new Mercury motor?
+
+Mercury Marine includes 3 years of standard factory warranty on new outboards. HBW also runs seasonal dealer promotions that may extend warranty coverage. For current promotion terms, see the [promotions page](/promotions).
+
+### How do I get started?
+
+Build a quote on this site in three minutes, or give us a call at (905) 342-2153. The quote includes motor selection, rigging, install, and total. We do not require an account, an email, or a phone call to see prices.
+
+### By Jay Harris
+
+3rd-Generation Owner, Harris Boat Works Mercury Platinum Dealer · Rice Lake, Ontario [About Jay and Harris Boat Works →](/about)
+
+## Next steps
+
+- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
+- Repower information: https://www.mercuryrepower.ca/repower
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Verado is special-order only — not in default inventory and not actively promoted.
+- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+
