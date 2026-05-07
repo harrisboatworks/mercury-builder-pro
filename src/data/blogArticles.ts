@@ -2712,11 +2712,11 @@ See our [Mercury Command Thrust Guide](/blog/mercury-command-thrust-guide-pontoo
 
 We sell Legend Boats pontoons at HBW. We are a Legend dealer alongside being a Mercury Platinum dealer.
 
-Legend pontoons are Canadian-built (in Whitefield, Ontario), well-suited to Canadian water and weather, and Mercury-rigged from the factory. The supply chain integration matters for service and parts.
+Legend pontoons are designed by a Canadian company headquartered in Whitefish, Ontario, well-suited to Canadian water and weather, and Mercury-rigged from the factory. The supply chain integration matters for service and parts.
 
 Other reputable pontoon brands:
 
-- **Princecraft** (also Canadian-built, Mercury-rigged factory option)
+- **Princecraft** (also a Canadian brand, Mercury-rigged factory option)
 - **Manitou** (US-built, premium pontoon brand)
 - **Avalon** (US-built, premium pontoon brand)
 - **Bennington** (US-built, premium pontoon brand)
@@ -2808,7 +2808,7 @@ Two-tube is plenty for cruising, fishing, and lighter family use. Tritoon (three
 For 18 to 20 ft cruising/fishing: 90 HP Command Thrust. For 20 to 22 ft family use with light water sports: 115 to 150 HP CT. For 22+ ft tritoons with active water sports: 150 to 200 HP CT.
 
 **Should I buy a Legend pontoon at HBW?**
-Yes if Legend fits your needs. We're a Legend dealer alongside being a Mercury Platinum dealer. Legend is Canadian-built, factory Mercury-rigged, and well-suited to Canadian use. For specific configurations, [contact HBW](/contact).
+Yes if Legend fits your needs. We're a Legend dealer alongside being a Mercury Platinum dealer. Legend is a Canadian company (headquartered in Whitefish, Ontario), factory Mercury-rigged, and well-suited to Canadian use. For specific configurations, [contact HBW](/contact).
 
 **Can I tube and ski with a Rice Lake pontoon?**
 Yes with the right setup. 115 HP Command Thrust handles tubing. 150 HP CT handles skiing and tubing comfortably. Tritoons handle water sports better than two-tube hulls.
@@ -2857,7 +2857,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Should I buy a Legend pontoon at HBW?',
-        answer: 'Yes if Legend fits your needs. We\'re a Legend dealer alongside being a Mercury Platinum dealer. Legend is Canadian-built, factory Mercury-rigged, and well-suited to Canadian use. For specific configurations, [contact HBW](/contact).'
+        answer: 'Yes if Legend fits your needs. We\'re a Legend dealer alongside being a Mercury Platinum dealer. Legend is a Canadian company (headquartered in Whitefish, Ontario), factory Mercury-rigged, and well-suited to Canadian use. For specific configurations, [contact HBW](/contact).'
       },
       {
         question: 'Can I tube and ski with a Rice Lake pontoon?',
@@ -8535,7 +8535,7 @@ Still, Legend, like almost every boat builder, relies on an international supply
 
 may be sourced from U.S., European, or Asian manufacturers. When tariffs affect these imported components, the incremental cost can trickle through to boat prices even when the hull is Canadian.
 
-The bottom line: the boat itself is protected by being Canadian-built, but no manufacturer is completely insulated from global trade shocks.
+The bottom line: the boat itself benefits from being a Canadian-designed product, but no manufacturer is completely insulated from global trade shocks.
 
 ## Parts and Accessories: Where You May Feel It First
 
@@ -8556,7 +8556,7 @@ Beyond the policy specifics, tariffs have also influenced attitudes. Surveys tra
 
 For Harris Boat Works customers, that often means:
 
-- Greater interest in Canadian-built boats like Legend.
+- Greater interest in Canadian brands like Legend.
 - Continued preference for best-in-class engines like Mercury, despite their U.S. origin, because there isn't a Canadian-made equivalent in most horsepower ranges.
 
 ## The Big Fork in the Road: CUSMA Review in 2026
@@ -8578,7 +8578,7 @@ Amid all the noise about tariffs and trade, here's our straightforward guidance:
 
 1. **Don't panic.** Most recreational marine products you'd buy. Mercury outboards, Legend boats, mainstream accessories, are still flowing across the border under CUSMA with no new surprise tariff charges tacked on at retail.
 2. **Think about timing.** If you're considering a major purchase (new boat package, repower, big electronics upgrade), there's a reasonable argument for acting before the 2026 CUSMA review introduces additional uncertainty. That doesn't mean prices will spike, but it removes one variable.
-3. **Consider origin, but prioritize quality.** Supporting Canadian-built boats like Legend makes sense, and we're proud to sell them. For engines, Mercury's product quality, market support, and local service network matter more than political headlines. There isn't a realistic Canadian substitute for a modern 90–150 HP outboard, and compromising on engine quality rarely pays off.
+3. **Consider origin, but prioritize quality.** Supporting Canadian brands like Legend makes sense, and we're proud to sell them. For engines, Mercury's product quality, market support, and local service network matter more than political headlines. There isn't a realistic Canadian substitute for a modern 90–150 HP outboard, and compromising on engine quality rarely pays off.
 4. **Ask questions.** If you're worried a particular product might be affected by tariffs, or if a price seems out of step with what you expect, talk to us. We see the wholesale side of this and can explain what's driving costs.
 
 Harris Boat Works has been on Rice Lake since 1947. We've seen different trade regimes, different governments, and plenty of economic ups and downs. Through all of it, people keep boating, and the Canada–U.S. marine relationship remains vital on both sides of the border.
@@ -8607,8 +8607,8 @@ We're optimistic that CUSMA will be renewed and that common sense will prevail. 
         answer: 'If CUSMA isn\'t renewed or is significantly changed, it could reintroduce tariffs on boats and engines that currently cross the border duty-free. This would likely raise prices and create supply uncertainty. NMMA and NMMA Canada are actively advocating for a smooth renewal.'
       },
       {
-        question: 'Are Canadian-built boats cheaper because of tariffs?',
-        answer: 'Canadian-built boats like Legend avoid import duties on the hull itself, which is an advantage. However, they still use globally sourced components (electronics, hardware, upholstery) that can be affected by tariffs. No manufacturer is completely insulated from trade shocks.'
+        question: 'Are Canadian-brand boats cheaper because of tariffs?',
+        answer: 'Canadian brands like Legend may have certain supply-chain advantages, but they still use globally sourced components (electronics, hardware, upholstery) that can be affected by tariffs. No manufacturer is completely insulated from trade shocks.'
       },
       {
         question: 'Should I buy a boat now before the CUSMA review?',
@@ -8619,8 +8619,8 @@ We're optimistic that CUSMA will be renewed and that common sense will prevail. 
         answer: 'If the 2026 CUSMA joint review results in a contentious renegotiation or failure to extend, recreational marine products that currently cross the border duty-free could become subject to standard MFN tariff rates, potentially 5–10% or more on U.S.-built products. The more immediate risk is uncertainty: manufacturers and dealers would face unpredictable cost structures, potentially leading to price increases and supply disruptions well before any formal tariff change takes effect. NMMA and NMMA Canada have been strong advocates for a clean renewal.'
       },
       {
-        question: 'Are Canadian-built boats cheaper than U.S.-built boats because of tariffs?',
-        answer: 'Canadian-built boats like Legend are not subject to import duties when sold in Canada, which removes one cost factor. However, that doesn\'t automatically make them cheaper, boat pricing is driven by materials, labour, and features, not just tariff status. A Canadian-built hull still uses imported components that can be affected by tariffs. What Canadian-built does give you is certainty: the hull is not exposed to cross-border tariff risk.'
+        question: 'Are Canadian-brand boats cheaper than U.S.-brand boats because of tariffs?',
+        answer: 'Canadian brands like Legend may have certain cost advantages, but that doesn\'t automatically make them cheaper, boat pricing is driven by materials, labour, and features, not just tariff status. Boats still use imported components that can be affected by tariffs.'
       },
       {
         question: 'Should I buy a boat before the 2026 CUSMA review?',
@@ -8636,7 +8636,7 @@ We're optimistic that CUSMA will be renewed and that common sense will prevail. 
       },
       {
         question: 'Is it better to buy a Canadian-made Legend boat than a U.S.-made boat right now because of tariffs?',
-        answer: 'From a tariff-risk perspective, a Canadian-built Legend hull has a clear advantage: no import duty exposure on the hull itself. Combined with a Mercury engine, which qualifies under CUSMA at current rates, a Legend/Mercury package is about as tariff-insulated as a new boat can be. But don\'t buy a Legend just because of tariff politics if another boat fits your use case better. Product fit matters most.'
+        answer: 'From a tariff-risk perspective, a Canadian-brand Legend has supply-chain advantages. Combined with a Mercury engine, which qualifies under CUSMA at current rates, a Legend/Mercury package is about as tariff-insulated as a new boat can be. But don\'t buy a Legend just because of tariff politics if another boat fits your use case better. Product fit matters most.'
       },
       {
         question: 'What is CUSMA and why does it matter for Canadian boat buyers?',
@@ -8901,7 +8901,7 @@ Mercury has more dealers across Ontario and Canada than any other outboard brand
 
 ### 2. Factory OEM relationships with Canadian boat builders
 
-Most Canadian-built aluminum boats (Lund, Crestliner, Princecraft, Lowe, and similar) come Mercury-rigged from the factory. The reasons go back decades:
+Most major aluminum boat brands (Lund, Crestliner, Princecraft, Lowe, and similar) come Mercury-rigged from the factory. The reasons go back decades:
 
 - Parts supply chains are built around Mercury for the Canadian market
 - Boat manufacturers can offer Mercury packages at attractive prices because of volume
@@ -10622,7 +10622,7 @@ Mercury has more dealers across Ontario than Yamaha. That means:
 
 ### 2. Factory-OEM relationships
 
-Most Canadian-built aluminum boats (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. The supply chain is Mercury-centric. Buying a Mercury-rigged factory boat is the most cost-effective way into a new aluminum boat.
+Most major aluminum boat brands (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. The supply chain is Mercury-centric. Buying a Mercury-rigged factory boat is the most cost-effective way into a new aluminum boat.
 
 ### 3. Complete lineup coverage
 
@@ -13852,7 +13852,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Is Mercury Boost available in Ontario?',
-        answer: 'Yes. Mercury Boost is available through certified Mercury dealers in Ontario. Harris Boat Works in Gores Landing, Ontario, on Rice Lake, is a Mercury Platinum dealer that performs Boost installations. We sold approximately 65 new Mercury motors in 2025 and have been servicing Mercury engines since 1947. Call 905-342-2153 to confirm current pricing and availability for your motor. Note that eligibility depends on your specific motor model and year; have your motor\'s serial number ready when you call.'
+        answer: 'Yes. Mercury Boost is available through certified Mercury dealers in Ontario. Harris Boat Works in Gores Landing, Ontario, on Rice Lake, is a Mercury Platinum dealer that performs Boost installations. We sold approximately 65 new Mercury motors in 2025 and have been a Mercury dealer since 1965. Call 905-342-2153 to confirm current pricing and availability for your motor. Note that eligibility depends on your specific motor model and year; have your motor\'s serial number ready when you call.'
       }
     ]
   },
