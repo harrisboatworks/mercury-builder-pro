@@ -115,12 +115,20 @@ function loadAllBlogArticlesForSitemap() {
   }
 }
 
-// Load published blog articles (filters out future-dated posts).
+// Load ALL renderable blog articles for SSG.
+//
+// IMPORTANT: We pre-render every sitemap-eligible article — INCLUDING posts
+// whose publishDate is in the future ("scheduled"). Returning 404 for
+// scheduled posts hurts SEO (Google de-prioritizes the URL and may not
+// re-crawl when the date arrives). The mental model: scheduled posts are
+// "live but not yet promoted" — they exist at their URL and can be cited
+// by AI engines. The /blog index still uses getPublishedArticles() to hide
+// them from listings until their publish date.
 function loadBlogArticles() {
   const dumpScript = `
-    import { getPublishedArticles } from '../src/data/blogArticles.ts';
+    import { getSitemapEligibleArticles } from '../src/data/blogArticles.ts';
     import { getCleanDescription, sanitizeForSchema, markdownToNoscriptHtml } from '../src/lib/strip-markdown.ts';
-    const items = getPublishedArticles().map(a => ({
+    const items = getSitemapEligibleArticles().map(a => ({
       slug: a.slug,
       title: a.title,
       description: getCleanDescription(a),
@@ -155,6 +163,7 @@ function loadBlogArticles() {
     try { rmSync(tmpFile); } catch {}
   }
 }
+
 
 // Load active motor catalog. Primary source: public motors API (no auth, CORS-open,
 // matches what AI agents see). Fallback: Supabase REST with publishable key.
