@@ -17506,9 +17506,6 @@ Yes. Saturday + Sunday hours during boating season (May-October), plus weekday b
 Yes. Mercury's warranty network extends across Canada. Bring your purchase paperwork; we process the claim through Mercury. If your selling dealer is closed, weak, or out of state, this is a common scenario.
 
 ---
-
-*[CUSTOMER STORY OPPORTUNITY — Jay: a GTA customer who made the drive, OR turned a service trip into a Rice Lake day, would land here perfectly.]*
-
 **Phone:** 905-342-2153
 **Configurator (transparent pricing):** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
@@ -17720,9 +17717,6 @@ Mixed. Some have been in business 50+ years; others opened recently. Longevity i
 Technically yes. In practice, Platinum dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity.
 
 ---
-
-*[CUSTOMER STORY OPPORTUNITY — Jay: a customer who shopped multiple Ontario dealers before choosing HBW, OR a long-time Mercury Platinum customer talking about why they keep coming back, would land beautifully here.]*
-
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
@@ -18844,9 +18838,6 @@ HBW currently holds Mercury Marine **Platinum-tier dealer status**, which itself
 Yes — we're a working family marina. Walking through the slips, watching the rental fleet come and go, fueling up at the dock, seeing the Mercury showroom, having a coffee in Bewdley after — it's a complete day on Rice Lake without a sales requirement.
 
 ---
-
-*[CUSTOMER STORY OPPORTUNITY — Jay: a third-generation customer (whose grandfather bought from your grandfather), OR a long-time customer reflecting on what HBW means to them, would land here as the strongest possible trust signal.]*
-
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Marina + Rentals:** [harrisboatworks.ca](https://harrisboatworks.ca)
