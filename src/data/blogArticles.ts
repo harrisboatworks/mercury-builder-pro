@@ -1322,7 +1322,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Do I need to use Mercury-branded oil during break-in?',
-        answer: 'Mercury recommends their own FourStroke 10W-30 oil, and using it keeps your warranty clean. Any marine-grade 4-stroke oil meeting TC-W3 or API SL/SM standards can be used in a pinch, but avoid automotive oil not rated for marine use. The more important discipline is the 20-hour oil change, whatever oil is in there at 20 hours needs to come out, as it will contain metal particles from the break-in process.'
+        answer: 'Mercury recommends their own FourStroke 10W-30 oil, and using it keeps your warranty clean. Any FC-W rated 4-stroke marine engine oil at the viscosity Mercury specifies for your motor (typically 25W-40 or 10W-30, check your owner\'s manual) can be used in a pinch, but avoid automotive oil not rated for marine use, and do not substitute TC-W3 (that\'s the 2-stroke marine spec). The more important discipline is the 20-hour oil change, whatever oil is in there at 20 hours needs to come out, as it will contain metal particles from the break-in process.'
       },
       {
         question: 'How long does Mercury motor break-in take in terms of calendar time?',
@@ -14935,7 +14935,7 @@ A well-maintained 4-stroke can run 1,500–3,000+ hours. A motor with 800 hours 
 Plan on $500–$1,500 for the immediate first-year work: water pump impeller, gearcase oil change, spark plugs, fuel filter, fuel system clean-up. If the seller hasn't done it, you're going to.
 
 **Is a 2-stroke worth buying in 2026?**
-For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: most 2-stroke engine oil is *not* TC-W3, newer 4-strokes use 25W-40 marine oil, not 2-stroke premix.
+For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: older 2-stroke outboards run on TC-W3 rated marine oil. Modern 4-strokes use FC-W rated 4-stroke marine engine oil (typically 25W-40), not premix.
 
 **Should I trust the hour meter?**
 Mostly yes on Mercurys made after about 2005, unless the meter was replaced. Mercury's SmartCraft system stores hours in the engine ECU as well, so a dealer with a diagnostic tool can verify true engine hours independent of the dashboard meter. We do that as part of our inspection.
@@ -14961,7 +14961,7 @@ We're a full-service Mercury Platinum dealer and we work on everything from curr
   },
   {
     "question": "Is a 2-stroke worth buying in 2026?",
-    "answer": "For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: most 2-stroke engine oil is *not* TC-W3, newer 4-strokes use 25W-40 marine oil, not 2-stroke premix."
+    "answer": "For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: older 2-stroke outboards run on TC-W3 rated marine oil. Modern 4-strokes use FC-W rated 4-stroke marine engine oil (typically 25W-40), not premix."
   },
   {
     "question": "Should I trust the hour meter?",
