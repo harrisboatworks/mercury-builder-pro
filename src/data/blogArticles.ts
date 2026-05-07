@@ -15324,7 +15324,7 @@ No, but you have to know where to go. The main channels and the deeper basin are
 Opening day (second Saturday of May) is usually solid. The week after is often the best week of the year for size. By June, the bigger fish move deeper and you're trolling instead of jigging.
 
 **Do you sell fishing licences at HBW?**
-Yes — Outdoors Card and fishing licences are available at the shop. Bring ID.
+No — we don't sell licences. Pick up your Ontario Outdoors Card and fishing licence online at the [Ontario fishing licence site](https://www.ontario.ca/page/get-fishing-licence) before you head out. Most anglers do this from their phone the night before.
 
 ---
 
