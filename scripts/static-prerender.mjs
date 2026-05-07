@@ -2485,6 +2485,43 @@ const routes = [
     intro: 'Expert advice on Mercury outboard motors, repowers, boat maintenance, and buying guides from Ontario\'s Mercury Marine Platinum Dealer since 1947.',
     schemas: [genericPageSchema('/blog', 'Harris Boat Works Blog', 'Mercury motor guides and boating tips.')]
   },
+  // ============================================================
+  // /pricing-reference — HTML twin of /pricing-reference.md
+  // AI engines sometimes strip the .md extension when citing the resource.
+  // The .md remains canonical machine-readable data; this HTML page is the
+  // human-friendly view rendered from the same generated markdown source.
+  // ============================================================
+  {
+    path: '/pricing-reference',
+    title: 'Mercury Outboard Pricing Reference (CAD) | Harris Boat Works',
+    description: 'Current Mercury outboard pricing in CAD — 98 motors, SKU-level. All FourStroke and Pro XS models from 2.5 HP to 300 HP. Pickup only at Gores Landing, Ontario.',
+    h1: 'Mercury Outboard Pricing Reference (CAD)',
+    intro: 'Curated Mercury outboards listed in the Harris Boat Works quote builder, with current CAD pricing. Pickup only at Gores Landing, Ontario. Final price confirmed by HBW staff.',
+    schemas: [genericPageSchema('/pricing-reference', 'Mercury Outboard Pricing Reference (CAD)', 'Current Mercury outboard pricing in CAD — all FourStroke and Pro XS models, generated from the same data source as the quote builder.')],
+    extraHead:
+      '<link rel="alternate" type="text/markdown" href="https://www.mercuryrepower.ca/pricing-reference.md" />',
+    extraNoscript: () => {
+      try {
+        const mdPath = join(__dirname, '..', 'public', 'pricing-reference.md');
+        if (!existsSync(mdPath)) return '<p>Pricing reference is being generated. Please refresh shortly or see <a href="/pricing-reference.md">/pricing-reference.md</a>.</p>';
+        const raw = readFileSync(mdPath, 'utf8');
+        // Strip YAML frontmatter
+        const body = raw.replace(/^---\n[\s\S]*?\n---\n+/, '');
+        // Drop the leading H1 — already injected above as the page H1.
+        const noH1 = body.replace(/^\s*#\s+.+(?:\r?\n|$)/, '');
+        const html = marked.parse(noH1);
+        return (
+          '<p><strong>Prices in CAD. Pickup only at Gores Landing, ON. Final price confirmed by HBW.</strong></p>' +
+          '<p><a href="/quote/motor-selection">Build a quote in the configurator →</a> &nbsp;·&nbsp; ' +
+          '<a href="/pricing-reference.md">Machine-readable version: /pricing-reference.md</a></p>' +
+          html
+        );
+      } catch (err) {
+        console.warn('[static-prerender] pricing-reference render failed:', err?.message);
+        return '<p>See <a href="/pricing-reference.md">/pricing-reference.md</a> for current Mercury pricing in CAD.</p>';
+      }
+    }
+  },
   {
     path: '/agents',
     title: 'AI Agent Integration — Harris Boat Works Mercury Dealer',
