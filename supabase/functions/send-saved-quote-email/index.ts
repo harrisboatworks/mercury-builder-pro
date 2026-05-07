@@ -3,6 +3,7 @@ import { Resend } from "npm:resend@2.0.0";
 import { corsHeaders } from "../_shared/cors.ts";
 import { createBrandedEmailTemplate, createButtonHtml } from "../_shared/email-template.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -21,6 +22,12 @@ interface SavedQuoteEmailRequest {
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  // Block requests from non-allowed origins (anti brand-abuse / phishing)
+  if (!isAllowedOrigin(req)) {
+    console.log('[send-saved-quote-email] Forbidden origin:', req.headers.get('origin'), req.headers.get('referer'));
+    return forbiddenOriginResponse(corsHeaders);
   }
 
   try {

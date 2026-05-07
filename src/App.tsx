@@ -461,8 +461,8 @@ function AnimatedRoutes() {
             <Route path="/staging/image-sizing" element={<StagingImageSizing />} />
             <Route path="/staging/image-sizing-v2" element={<StagingImageSizingV2 />} />
             <Route path="/staging/image-sizing-final" element={<StagingImageSizingFinal />} />
-            <Route path="/test-email" element={<TestEmail />} />
-            <Route path="/test-financing-emails" element={<TestFinancingEmails />} />
+            <Route path="/test-email" element={<SecureRoute requireAdmin={true}><TestEmail /></SecureRoute>} />
+            <Route path="/test-financing-emails" element={<SecureRoute requireAdmin={true}><TestFinancingEmails /></SecureRoute>} />
           </>
         )}
         {/* Removed obsolete test pricing routes */}
