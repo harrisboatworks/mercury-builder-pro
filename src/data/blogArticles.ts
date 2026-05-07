@@ -5895,7 +5895,7 @@ Every boat has a maximum HP rating. This is your ceiling - never exceed it. But 
 
 ### The Harris Boat Works Method
 
-Bring us your boat info and tell us how you fish. We'll recommend the right motor based on 60 years of experience matching motors to boats on Ontario waters.
+Bring us your boat info and tell us how you fish. We'll recommend the right motor based on decades of experience matching Mercury motors to boats on Ontario waters (Harris Boat Works has been on Rice Lake since 1947 and a Mercury dealer since 1965).
 
 **[Get a Personalized Motor Recommendation](/quote)**
 
