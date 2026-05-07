@@ -9508,7 +9508,7 @@ Then we'll give you a frank recommendation on gas, electric, or a hybrid of both
       },
       {
         question: 'Can I use a Mercury Avator on HP-restricted lakes in Ontario?',
-        answer: 'Yes. HP-restricted lakes are one of the strongest use cases for Avator in Ontario. The Avator 35e (approximately 9.9 HP gas equivalent) and Avator 75e and 110e (approximately 10–15 HP equivalent) suit common HP restrictions. Electric-only restrictions specifically favour Avator. If you access HP-restricted lakes in the Kawarthas or elsewhere in Ontario, Avator is worth a close look. Confirm your specific lake\'s regulations before purchasing, rules vary by municipality and water body.'
+        answer: 'Yes. HP-restricted lakes are one of the strongest use cases for Avator in Ontario. The Avator 35e, 75e, and 110e are sized to suit common HP restrictions (Mercury rates Avator by output power and equivalent thrust rather than direct gas-engine HP comparison, so confirm fit by output rating and your lake\'s rule). Electric-only restrictions specifically favour Avator. If you access HP-restricted lakes in the Kawarthas or elsewhere in Ontario, Avator is worth a close look. Confirm your specific lake\'s regulations before purchasing, rules vary by municipality and water body.'
       },
       {
         question: 'How do I charge a Mercury Avator at a cottage in Ontario?',
