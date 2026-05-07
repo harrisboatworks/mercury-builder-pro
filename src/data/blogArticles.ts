@@ -345,7 +345,6 @@ prompt: Photorealistic editorial circular infographic. Title: "Annual Mercury Se
 image: /lovable-uploads/annual-mercury-service-cycle.png
 :::
 
-
 Five things move how often and how aggressively you should service:
 
 - **Hours of use per year.** A motor running 50 hours a season needs different service than a motor running 200 hours a season. More hours means earlier service intervals.
@@ -2141,7 +2140,6 @@ prompt: Photorealistic editorial infographic. 2x3 matrix grid: rows = pontoon le
 image: /lovable-uploads/pontoon-hp-by-length-and-use.png
 :::
 
-
 ### 18 to 20 ft pontoon, cruising and fishing only
 
 **Best fit:** 90 HP Command Thrust FourStroke. Standard gearcase 90 HP also works but Command Thrust handles the pontoon hull design better. The all-in repower for this class lands $17,000 to $22,000 CAD at HBW. [Live pricing here.](/quote/motor-selection)
@@ -2908,7 +2906,6 @@ description: Visual matrix showing which Mercury (75/90/115) fits which boat typ
 prompt: Photorealistic editorial infographic. 3x3 visual grid: rows = Mercury 75, 90, 115 HP. Columns = Boat Type, Best Use Case, Avoid If. Each cell has a small motor silhouette icon and 2-line description. Mercury black cowls, red accents. Clean white background. No people. 1600x900. [STYLE ANCHOR]
 image: /lovable-uploads/mercury-75-90-115-best-fit-matrix.png
 :::
-
 
 Note: top-speed numbers vary by hull design, prop selection, and loading. These are typical Kawartha-area sea-trial results for representative aluminum console hulls. For your specific boat, sea-trial numbers from HBW will be more accurate.
 
@@ -4392,7 +4389,6 @@ description: Visual seasonal checklist showing pre-launch tasks in order
 prompt: Photorealistic editorial checklist infographic. Vertical card layout titled "Spring Outboard Commissioning". 7 numbered steps stacked vertically with checkbox icons: 1. Battery & Electrical, 2. Fuel System, 3. Cooling System, 4. Lubrication, 5. Spark Plugs & Ignition, 6. Prop & Lower Unit, 7. Sea-Trial. Each step has a 1-line description and a small icon. Cream background, Mercury black text, gold accent on numbers. No people. 1080x1350. [STYLE ANCHOR]
 image: /lovable-uploads/spring-commissioning-checklist-card.png
 :::
-
 
 Five things move how aggressive spring commissioning needs to be:
 
@@ -10218,7 +10214,6 @@ prompt: Photorealistic editorial infographic. Stacked horizontal bar chart showi
 image: /lovable-uploads/repower-cost-stack-by-hp-class.png
 :::
 
-
 The ranges above are 2026 working estimates. The actual price for your motor, your hull, and your configuration is on the [motor selection page](/quote/motor-selection). That is the source of truth. 9.9 to 25 HP tiller motors are usually motor-only purchases with no full rigging package, and the motor itself is the whole purchase. For specific tiller motor pricing (a 9.9 MH versus a 15 MH versus a 20 MH), see [live pricing](/quote/motor-selection).
 
 These are HBW's actual working ranges. For your specific motor, hull, and configuration, the live quote builder gives you the real CAD number in three minutes.
@@ -12730,7 +12725,6 @@ prompt: Photorealistic editorial flowchart diagram. Decision tree for "Mercury w
 image: /lovable-uploads/spring-no-start-flowchart.png
 :::
 
-
 Spring "won't start" calls follow a predictable pattern. The most common causes, in order:
 
 1. **Dead or weak battery** (about 40% of spring no-start calls)
@@ -13173,7 +13167,6 @@ description: Decision tree showing Repower vs. Replace path with key questions
 prompt: Photorealistic editorial decision tree diagram. Title: "Repower or Replace? The honest decision". Top question: "Is the hull less than 20 years old AND structurally solid?" Branches Yes/No. Yes branch leads to "Repower (saves $25K-$50K)". No branch leads to follow-up: "Is hull rotting / soft-transom / fundamentally undersized?" Yes leads to "Replace". Diamond shapes for questions, rounded rectangles for outcomes. Mercury red for "Replace" outcome, gold for "Repower" outcome. Clean white background. No people. 1080x1350. [STYLE ANCHOR]
 image: /lovable-uploads/hull-vs-repower-decision-tree.png
 :::
-
 
 The decision is not "new boat vs. old boat." It is "do I have a hull worth keeping?" If the answer is yes, repower wins on the math nearly every time. A Mercury repower on a solid 15-year-old hull lands $20,000 to $35,000 CAD all-in for a typical setup, against $50,000 to $90,000 CAD for a comparable new boat package.
 
@@ -13818,7 +13811,6 @@ prompt: Photorealistic editorial infographic. Horizontal stacked bar showing Mer
 image: /lovable-uploads/mercury-rigging-cost-stack.png
 :::
 
-
 Rigging is the integration work between motor and boat. The components:
 
 ### Throttle and shift control
@@ -14044,7 +14036,6 @@ description: Horizontal timeline showing 10 steps of the Mercury repower process
 prompt: Photorealistic editorial infographic. Horizontal timeline with 10 numbered steps for Mercury repower process: 1. Hull walk-around, 2. Quote, 3. Booking, 4. Drop-off, 5. Old motor removal, 6. Inspection, 7. Install, 8. Sea-trial, 9. Final adjustments, 10. Pickup. Each step a clean card with number badge in Mercury red, title, and 1-line description. Horizontal flow with subtle arrow connectors. Light cream background, Mercury black text. No people. 1600x900. [STYLE ANCHOR]
 image: /lovable-uploads/repower-process-timeline.png
 :::
-
 
 - Hull condition (fiberglass cracks, aluminum dents, transom soft spots)
 - Existing motor age, brand, model, and condition
@@ -14330,7 +14321,6 @@ description: Side-profile diagram showing the relationship between shaft length 
 prompt: Photorealistic editorial technical diagram. Side profile cross-section of a Mercury outboard mounted on a boat transom. Labeled measurements: transom height arrow (top to bottom), shaft length arrow (mounting bracket to cavitation plate), water line. Three variations side-by-side: 15-inch short, 20-inch long, 25-inch extra long. Mercury cowl details accurate. Clean white background, technical illustration style. No people. 1080x1350. [STYLE ANCHOR]
 image: /lovable-uploads/shaft-length-vs-transom-diagram.png
 :::
-
 
 You need a tape measure and 5 minutes:
 
@@ -17938,8 +17928,6 @@ Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 
 
 ---
 
-*[CUSTOMER STORY OPPORTUNITY — Jay: a GTA repower customer who walked through this whole logistics journey, OR a customer who saved $4K vs. local dealer pricing, would land beautifully here.]*
-
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
@@ -18158,8 +18146,6 @@ Phone us. We'll prioritize active failures over routine work when we can. Mid-su
 Yes — that's a common combo. October drop-off, complete annual service + winterize + shrinkwrap + store, May pickup with spring commissioning included. Single trip in fall, single trip in spring.
 
 ---
-
-*[CUSTOMER STORY OPPORTUNITY — Jay: a GTA customer who tried mobile mechanics first, got bad results, and switched to HBW would land here. Or one who's been bringing the boat for 10+ years.]*
 
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
@@ -18395,8 +18381,6 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 
 ---
 
-*[CUSTOMER STORY OPPORTUNITY — Jay: a GTA family who became repeat renters, OR one who rented and ended up buying a Mercury, would land here perfectly.]*
-
 **Booking:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
@@ -18624,8 +18608,6 @@ Massive. Professional shrinkwrap uses 7-12 mil polyethylene film, custom-fitted 
 Your existing boat insurance typically covers winter storage; some policies require notification. Check with your insurer. We don't insure stored boats — that's owner responsibility. We document storage location, shrinkwrap quality, and winterization completion for any insurance documentation needs.
 
 ---
-
-*[CUSTOMER STORY OPPORTUNITY — Jay: a GTA boat owner who tried local storage with bad results, OR one who's been wintering at HBW for many years, would land here. The "got cheap storage, paid for cracked block" story would also work.]*
 
 **Booking:** [harrisboatworks.ca/winter-storage](https://harrisboatworks.ca/winter-storage)
 **Phone:** 905-342-2153
