@@ -3894,7 +3894,7 @@ The Mercury Pro XS line is purpose-built for performance:
 
 Key Features:
 
-Lightweight construction (up to 60 lbs lighter than comparable FourStroke)
+Lightweight construction (typically 20-40 lbs lighter than the equivalent FourStroke depending on model and configuration; check the Mercury spec sheet for your specific HP and rigging)
 Tuned for higher RPM
 Faster hole-shot
 Competition-grade internals
@@ -4003,7 +4003,7 @@ If budget is tighter and you fish recreationally, chasing smallmouth on Rice Lak
       },
       {
         question: 'What\'s the difference between Mercury Pro XS and Mercury FourStroke for bass fishing?',
-        answer: 'The Pro XS is performance-tuned with lighter construction (up to 60 lbs lighter), higher RPM capability, and faster hole-shot, purpose-built for tournament anglers who need speed. The FourStroke prioritizes fuel economy, quiet operation, and durability at a lower price. For Ontario recreational bass anglers on lakes like Rice Lake or cottage country waters, the FourStroke at 150–175HP is excellent without needing the Pro XS premium. For tournament fishing on Ontario circuits, the Pro XS is the clear choice.'
+        answer: 'The Pro XS is performance-tuned with lighter construction (typically 20-40 lbs lighter than the equivalent FourStroke depending on model), higher RPM capability, and faster hole-shot, purpose-built for tournament anglers who need speed. The FourStroke prioritizes fuel economy, quiet operation, and durability at a lower price. For Ontario recreational bass anglers on lakes like Rice Lake or cottage country waters, the FourStroke at 150–175HP is excellent without needing the Pro XS premium. For tournament fishing on Ontario circuits, the Pro XS is the clear choice.'
       },
       {
         question: 'Can I use a kicker motor on a bass boat?',
@@ -5454,7 +5454,7 @@ The Mercury portable range, 2.5 to 20 HP:
 
 - **Use:** Very small dinghies, ultralight tin boats, trolling on canoes
 - **Type:** 1-cylinder 4-stroke, manual start, tiller
-- **Weight:** ~17 kg / 38 lb
+- **Weight:** ~19 kg / 41 lb
 - **Best for:** Owners who need a tiny motor for very small boats. Ultralight applications.
 
 ### Mercury 3.5 MH (3.5 HP)
@@ -5627,7 +5627,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     faqs: [
       {
         question: 'What\'s the lightest outboard Mercury makes?',
-        answer: 'The Mercury 2.5HP FourStroke at 37 lbs is the lightest. It\'s designed for yacht tenders where every pound matters and owners need to lift it aboard.'
+        answer: 'The Mercury 2.5 MH FourStroke at approximately 41 lbs is the lightest. It\'s designed for yacht tenders where every pound matters and owners need to lift it aboard.'
       },
       {
         question: 'Why is 9.9HP so popular?',
