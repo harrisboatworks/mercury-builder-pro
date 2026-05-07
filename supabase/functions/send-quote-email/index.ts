@@ -3,6 +3,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.53.1";
 import { Resend } from "npm:resend@2.0.0";
 import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 import { checkRateLimit, rateLimitedResponse } from "../_shared/rate-limit.ts";
+import { isAllowedOrigin, forbiddenOriginResponse } from "../_shared/origin-check.ts";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
 
@@ -277,6 +278,12 @@ serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
+  }
+
+  // Block requests from non-allowed origins (anti brand-abuse / phishing)
+  if (!isAllowedOrigin(req)) {
+    console.log('[send-quote-email] Forbidden origin:', req.headers.get('origin'), req.headers.get('referer'));
+    return forbiddenOriginResponse(corsHeaders);
   }
 
   try {
