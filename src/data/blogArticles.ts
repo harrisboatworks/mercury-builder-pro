@@ -14989,13 +14989,13 @@ Weeds, plastic bags, fishing line, sand, mud — anything sucked against the int
 
 ### 2. Worn or shredded impeller
 
-The water pump impeller is a rubber paddle wheel. It wears with use, gets brittle from sitting through a winter, and eventually loses fins or cracks across its body. Mercury's recommendation:
+The water pump impeller is a rubber paddle wheel. It wears with use, gets brittle from sitting through a winter, and eventually loses fins or cracks across its body. Mercury's general guidance is:
 
-> **Replace the impeller every 100 hours OR annually — whichever comes first.**
+> **Inspect the impeller annually or every 100 hours. Replace at the 300-hour service — or sooner if inspection shows wear, hardening, or severe-use conditions.**
 
-That second clause catches a lot of people. A boat that ran 25 hours last season and 30 the season before still needs an impeller. Rubber dries, cracks, and gets stuck-pressed against the housing over a 6-month winter.
+The exact interval is in your owner's manual by serial number. A boat that ran 25 hours last season and 30 the season before still warrants a real spring inspection — rubber dries, cracks, and gets pressed against the housing over a 6-month winter, even at low hours.
 
-**Fix:** new impeller, $40 part. We do it as part of any 100-hour service.
+**Fix:** new impeller, $40 part. We replace it as part of any 300-hour service, or whenever a 100-hour inspection shows wear.
 
 ### 3. Stuck thermostat
 
@@ -15035,7 +15035,7 @@ A few things specific to this part of Ontario:
 - **Silty bottom.** Rice Lake's mud and silt get sucked through the cooling passages with the water. Over years, they build up internal scale. Regular flushing is the only counter.
 - **6-month off-season.** From November to April, that impeller sits dry, deformed against the pump housing. It comes out of storage already partly compromised.
 
-If you fish or run weed beds heavily, **change the impeller every spring** — full stop. It's $40 in parts and an hour of labour, vs. the kind of bills overheating writes.
+If you fish or run weed beds heavily on Rice Lake, **inspect the impeller every spring** — that's the severe-use exception to the 300-hour replacement framing. Replace it any year inspection shows hardening, wear, or fin damage. $40 in parts and an hour of labour, vs. the kind of bills overheating writes.
 
 ---
 
@@ -15047,7 +15047,7 @@ Three habits that prevent 90% of overheating calls:
 
 **2. Flush after every trip.** Especially if you've been in weed beds or near the bottom. Mercurys have a freshwater flush port on the cowl — hook a hose to it for 10 minutes after each outing. It's free and it doubles your cooling system's lifespan.
 
-**3. Replace the impeller annually.** Don't wait for it to fail. The number of customers we see who've "never had a problem with the old one" — and then had a problem with the old one — is high. Spring service is the right time.
+**3. Inspect the impeller every spring.** Replacement happens at the 300-hour service, but the spring inspection is what catches the brittle, wintered-out impeller before it fails on the water. The number of customers we see who've "never had a problem with the old one" — and then had a problem with the old one — is high. Make spring inspection the rule.
 
 A bonus habit if you run remote: **carry a spare impeller and the right tools on board.** It's a 30-minute job at the dock if you have the parts. Not a job at all if you don't.
 
@@ -15166,7 +15166,7 @@ Distance from Toronto: about **90 minutes** door-to-water from the eastern GTA, 
 
 If you take one fact away from this guide, take this one: there is an abandoned railway line submerged across Rice Lake, and it has wrecked more lower units than every other hazard combined.
 
-The story: the **Cobourg & Peterborough Railway**, built in 1834. The trestle was damaged by ice in 1861 and never rebuilt. When the lake was dammed for the Trent-Severn system, water levels rose about 8 feet, and now the railway remains sit roughly **4 feet below the surface** across the middle of the lake — running roughly between Hiawatha and Harwood.
+The story: the **Cobourg & Peterborough Railway**, chartered in 1834 and completed across Rice Lake in the 1850s (the trestle first carried traffic in 1854). The trestle was damaged by ice in 1861 and never rebuilt. When the lake was later dammed as part of the Trent-Severn system, water levels rose about 8 feet, and now the railway remains sit roughly **4 feet below the surface** across the middle of the lake — running roughly between Hiawatha and Harwood.
 
 Local boating groups will tell you the south side of the tracks (between Hiawatha and Harwood) is the worst. People have been losing props out there for over a hundred years.
 
@@ -15213,7 +15213,7 @@ Rice Lake is in **Fisheries Management Zone 17**, the same zone as most of the K
 
 | Species | Season | Sport Limit | Conservation Limit | Notes |
 |---------|--------|-------------|--------------------|-------|
-| **Walleye / Sauger** | 2nd Saturday May – Nov 15 | 4 | 1 | **Slot size: 35–50 cm (13.8–19.7") — must release fish in this size range** |
+| **Walleye / Sauger** | 2nd Saturday May – Nov 15 | 4 | 1 | **Retention slot 35–50 cm (13.8–19.7") — only fish IN this slot can be kept; release fish outside the slot** |
 | **Largemouth & Smallmouth Bass** | 3rd Saturday June – Dec 15 | 6 | 2 | No size limit |
 | **Muskellunge** | 1st Saturday June – Dec 15 | 1 | 0 | Min 112 cm (44") |
 | **Northern Pike** | Open all year | 6 | 2 | No size limit |
@@ -15230,7 +15230,7 @@ Rice Lake is in **Fisheries Management Zone 17**, the same zone as most of the K
 - **Muskie opener:** Saturday, **June 6, 2026**
 - **Bass opener:** Saturday, **June 20, 2026**
 
-**The walleye slot rule trips people up.** Any walleye between 35 and 50 cm has to go back. So your 16-incher on Opening Day? Photo, release. The keepers are either small (under 35 cm) or trophy (over 50 cm). This is a conservation rule that's done a lot of good for the fishery — Rice Lake walleye populations have rebuilt strongly over the last decade — but it catches first-time anglers off guard.
+**The walleye slot rule trips people up.** Per [Ontario FMZ 17 zone-wide regulations](https://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17), retained walleye and sauger **must be between 35 and 50 cm** (13.8–19.7"). Anything smaller than 35 cm or larger than 50 cm has to go back — so your dink under-eye and the trophy over 50 are both releases. This is a conservation rule that's done a lot of good for the fishery — Rice Lake walleye populations have rebuilt strongly over the last decade — but the slot direction trips first-time anglers up. (Note: a few specific lakes in FMZ 17 — Balsam, Mitchell — have their own protected slot of 37-55 cm where retention is reversed. Rice Lake follows the zone-wide rule above.)
 
 ---
 
@@ -16427,9 +16427,11 @@ Most online articles answer that with American numbers, generic ranges, and no s
 
 ## The Two-Number Summary
 
-For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on $9,000 to $11,000 per year of ownership cost in Ontario**, not counting the loan payment. With a financed boat, it's closer to $13,000–$15,000.
+For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on roughly $5,800–$7,500 per year of operating cost in Ontario** (cash-bought, no loan payment). Add a typical 10-year loan and the all-in number rises to about **$10,000/year**.
 
-For a 22-foot pontoon at $55,000, scale that up to $11,000–$13,000 a year (cash-bought) or $16,000–$19,000 (financed).
+For a 22-foot pontoon at $55,000, scale that up to roughly $7,500–$9,500 a year cash-bought, or about $12,000–$14,000 financed.
+
+These are *operating* numbers — slip, storage, winterization, insurance, fuel, routine service, PCL — not depreciation or opportunity cost. The full sample budget is in Section 7 below; if you only read one section, read that one.
 
 That's the honest answer. Now the breakdown.
 
@@ -17506,9 +17508,6 @@ Yes. Saturday + Sunday hours during boating season (May-October), plus weekday b
 Yes. Mercury's warranty network extends across Canada. Bring your purchase paperwork; we process the claim through Mercury. If your selling dealer is closed, weak, or out of state, this is a common scenario.
 
 ---
-
-*[CUSTOMER STORY OPPORTUNITY — Jay: a GTA customer who made the drive, OR turned a service trip into a Rice Lake day, would land here perfectly.]*
-
 **Phone:** 905-342-2153
 **Configurator (transparent pricing):** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
@@ -17720,9 +17719,6 @@ Mixed. Some have been in business 50+ years; others opened recently. Longevity i
 Technically yes. In practice, Platinum dealers do most repowers because the work requires factory-level rigging knowledge. Lower-tier dealers can install but may not have the rigging refinement that affects long-term motor longevity.
 
 ---
-
-*[CUSTOMER STORY OPPORTUNITY — Jay: a customer who shopped multiple Ontario dealers before choosing HBW, OR a long-time Mercury Platinum customer talking about why they keep coming back, would land beautifully here.]*
-
 **Phone:** 905-342-2153
 **Configurator:** [mercuryrepower.ca](https://mercuryrepower.ca)
 **Service:** [hbw.wiki/service](https://hbw.wiki/service)
@@ -18844,9 +18840,6 @@ HBW currently holds Mercury Marine **Platinum-tier dealer status**, which itself
 Yes — we're a working family marina. Walking through the slips, watching the rental fleet come and go, fueling up at the dock, seeing the Mercury showroom, having a coffee in Bewdley after — it's a complete day on Rice Lake without a sales requirement.
 
 ---
-
-*[CUSTOMER STORY OPPORTUNITY — Jay: a third-generation customer (whose grandfather bought from your grandfather), OR a long-time customer reflecting on what HBW means to them, would land here as the strongest possible trust signal.]*
-
 **Phone:** 905-342-2153
 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON K0K 2E0
 **Marina + Rentals:** [harrisboatworks.ca](https://harrisboatworks.ca)
