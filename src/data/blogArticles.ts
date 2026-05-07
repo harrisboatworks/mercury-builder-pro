@@ -9373,11 +9373,13 @@ Key points:
 
 As of 2026, the Mercury Avator family includes five models:
 
-- **Avator 7.5e**: 750W output, roughly equivalent thrust to a 3.5–4 HP gas outboard. Uses an integrated single 1 kWh battery pack.
-- **Avator 20e**: 2,000W output, approximately 5 HP gas equivalent. Uses external 2,300Wh battery packs (up to 3).
-- **Avator 35e**: 3,500W output, approximately 9.9 HP gas equivalent. Uses external 2,300Wh battery packs (up to 4).
-- **Avator 75e**: 7,500W output, approximately 10 HP gas equivalent. Uses the Avator 5400 Power Center with up to four 5,400Wh lithium-ion battery packs. SmartCraft Connect integration with GPS range estimates.
-- **Avator 110e**: 11,000W output, approximately 15 HP gas equivalent. Largest electric outboard in the Avator family. Same 5400 Power Center battery system. Digital remote steering compatible.
+- **Avator 7.5e**: 750W output. Uses an integrated single 1 kWh battery pack.
+- **Avator 20e**: 2,000W output. Uses external 2,300Wh battery packs (up to 3).
+- **Avator 35e**: 3,500W output. Uses external 2,300Wh battery packs (up to 4).
+- **Avator 75e**: 7,500W output. Uses the Avator 5400 Power Center with up to four 5,400Wh lithium-ion battery packs. SmartCraft Connect integration with GPS range estimates.
+- **Avator 110e**: 11,000W output. Largest electric outboard in the Avator family. Same 5400 Power Center battery system. Digital remote steering compatible.
+
+Mercury rates Avator outboards by output power (kW) and equivalent thrust, not by direct gas-engine HP comparison. For sizing against your hull, ask us to match an Avator model to your typical use rather than mapping to a gas HP number.
 
 Each uses a transverse flux electric motor and proprietary battery systems. The 75e and 110e launched in June 2024 and are particularly relevant for Ontario cottage owners on HP-restricted lakes.
 
@@ -9494,7 +9496,7 @@ Then we'll give you a frank recommendation on gas, electric, or a hybrid of both
       },
       {
         question: 'How does the Mercury Avator compare to a trolling motor?',
-        answer: 'The Avator is designed as a primary outboard, not just a trolling motor. It steers like an outboard, provides real thrust for planing or near-planing on small hulls, and includes full outboard-style controls and displays. The Avator 7.5e produces roughly 3.5–4 HP gas equivalent; the 110e produces approximately 15 HP gas equivalent, far more capable than a trolling motor. For anything beyond slow-speed trolling on a small boat, Avator is the more capable choice. For pure slow-speed trolling on a larger fishing boat, a traditional trolling motor remains simpler and cheaper.'
+        answer: 'The Avator is designed as a primary outboard, not just a trolling motor. It steers like an outboard, provides real thrust for planing or near-planing on small hulls, and includes full outboard-style controls and displays. Mercury rates Avator outboards by output power (kW) and equivalent thrust rather than direct gas-engine HP comparison, the 7.5e suits very small craft and the 110e is the largest in the family. For anything beyond slow-speed trolling on a small boat, Avator is the more capable choice. For pure slow-speed trolling on a larger fishing boat, a traditional trolling motor remains simpler and cheaper.'
       },
       {
         question: 'What maintenance does a Mercury Avator electric outboard need?',
