@@ -18189,7 +18189,7 @@ Yes — that's a common combo. October drop-off, complete annual service + winte
     slug: "rice-lake-boat-rentals-from-toronto-gta",
     title: "Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide",
     description: "A Rice Lake boat rental day from the GTA \u2014 drive time, pricing, what's included, what to bring. From Harris Boat Works, the marina that's been on Rice Lake s...",
-    image: '/lovable-uploads/hero-rice-lake-boat-rentals-gta.png',
+    image: '/lovable-uploads/hero-rice-lake-boat-rentals-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-31",
     dateModified: '2026-05-07',
