@@ -11983,7 +11983,7 @@ The right "cheapest" motor depends on six things:
 - **Use case.** Fishing solo at trolling speed has totally different power requirements than cruising with two people, which is different again from pulling a tube.
 - **Where you launch.** A pontoon at a sheltered marina dock can run a smaller motor than the same pontoon at a public ramp on Rice Lake. The wind picks up across Sugar Island around 2 PM most days in July, and an underpowered motor will not punch back through it.
 - **Solo vs. family.** Adding two adults and a cooler turns "marginal" power into "stranded."
-- **Transom HP rating.** Mercury voids the warranty if you over-power a hull. The cheapest motor that fits inside your boat's HP rating is your real ceiling on the low end.
+- **Transom HP rating.** Overpowering a hull creates capacity-plate compliance, insurance, liability, and potential warranty problems. The cheapest motor that fits inside your boat's HP rating is your real ceiling on the low end.
 - **Long-term plan.** Buying the boat for one season and selling it is a different math than buying a boat you plan to own for 15 years. A motor that is "barely enough" gets exhausting fast over multi-season ownership.
 
 ## Mercury lineup at the low end
