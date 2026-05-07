@@ -15661,8 +15661,8 @@ No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licen
   // TODO: Add customer story for mercruiser-sterndrive-guide-ontario
   {
     slug: 'mercruiser-sterndrive-guide-ontario',
-    title: "The Ontario Boater's Guide to MerCruiser Sterndrives \u2014 Maintenance, Repairs, and Repower",
-    description: "A Mercury Platinum dealer's guide to MerCruiser sterndrives in Ontario \u2014 what wears out, what kills boats, and when repower or outboard conversion makes sense. By Harris Boat Works.",
+    title: "The Ontario Boater's Guide to MerCruiser Sterndrives: Maintenance, Repairs, and Repower",
+    description: "A Mercury Platinum dealer's guide to MerCruiser sterndrives in Ontario, what wears out, what kills boats, and when repower or outboard conversion makes sense. By Harris Boat Works.",
     image: '/lovable-uploads/hero-mercruiser-sterndrive-guide.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-14',
@@ -15874,11 +15874,11 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
       },
       {
         "question": "How do I know if my drive needs to come off?",
-        "answer": "If you have a milky gear lube reading, a growling gimbal bearing, water in the bilge after running, vibration through the deck, or hard shifting that wasn't there last year \u2014 yes. Or if you're at the 5\u20137 year mark on bellows."
+        "answer": "If you have a milky gear lube reading, a growling gimbal bearing, water in the bilge after running, vibration through the deck, or hard shifting that wasn't there last year, yes. Or if you're at the 5\u20137 year mark on bellows."
       },
       {
         "question": "What's the difference between an Alpha and a Bravo drive?",
-        "answer": "Alpha is the lighter-duty, smaller-gearcase drive \u2014 best behind 4.3L V6 and 5.0L V8. Bravo is heavier-duty with a bigger gearcase, designed for higher torque, big-block engines, and heavier hulls. Bravos cost more to service, but they're built to handle the load."
+        "answer": "Alpha is the lighter-duty, smaller-gearcase drive, best behind 4.3L V6 and 5.0L V8. Bravo is heavier-duty with a bigger gearcase, designed for higher torque, big-block engines, and heavier hulls. Bravos cost more to service, but they're built to handle the load."
       },
       {
         "question": "Can I keep running my old MerCruiser indefinitely if I service it religiously?",
@@ -15886,7 +15886,7 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
       },
       {
         "question": "Is converting from sterndrive to outboard always worth it?",
-        "answer": "Not always. If your current MerCruiser is healthy and your hull was designed around the sterndrive look, the conversion math may not work. But if you're staring at a major repair bill and the boat's value can support a $25K+ investment, the outboard route gives you a fresh warranty and better resale. We'll quote both \u2014 straight numbers."
+        "answer": "Not always. If your current MerCruiser is healthy and your hull was designed around the sterndrive look, the conversion math may not work. But if you're staring at a major repair bill and the boat's value can support a $25K+ investment, the outboard route gives you a fresh warranty and better resale. We'll quote both, straight numbers."
       },
       {
         "question": "Do you service MerCruiser diesel?",
@@ -15897,8 +15897,8 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
   // TODO: Add customer story for mercury-vesselview-smartcraft-plain-english-guide
   {
     slug: 'mercury-vesselview-smartcraft-plain-english-guide',
-    title: "Mercury VesselView, SmartCraft, and the New Mercury Marine App \u2014 A Plain-English Guide",
-    description: "Plain-English explanation of Mercury's VesselView, SmartCraft, the new Mercury Marine App, DTS, and Active Trim \u2014 what they actually do, what they cost, and which ones you'll use.",
+    title: "Mercury VesselView, SmartCraft, and the New Mercury Marine App: A Plain-English Guide",
+    description: "Plain-English explanation of Mercury's VesselView, SmartCraft, the new Mercury Marine App, DTS, and Active Trim, what they actually do, what they cost, and which ones you'll use.",
     image: '/lovable-uploads/hero-vesselview-smartcraft.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-15',
@@ -16040,7 +16040,7 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
     faqs: [
       {
         "question": "Do I need cell service for VesselView Mobile / Mercury Marine App?",
-        "answer": "No \u2014 the app talks to your engine over Bluetooth, not cellular. Cell service helps for things like remote warranty tracking and over-the-air updates, but the live engine data works on the lake without bars."
+        "answer": "No, the app talks to your engine over Bluetooth, not cellular. Cell service helps for things like remote warranty tracking and over-the-air updates, but the live engine data works on the lake without bars."
       },
       {
         "question": "Does my old VesselView Mobile module work with the new Mercury Marine App?",
@@ -16048,11 +16048,11 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
       },
       {
         "question": "Can I see SmartCraft data on my chartplotter (Simrad, Garmin, etc.)?",
-        "answer": "Yes \u2014 with the Connect + Display modules, SmartCraft data flows over NMEA 2000 to most modern MFDs. We can confirm compatibility for your specific MFD when we install."
+        "answer": "Yes, with the Connect + Display modules, SmartCraft data flows over NMEA 2000 to most modern MFDs. We can confirm compatibility for your specific MFD when we install."
       },
       {
         "question": "Is Active Trim worth the upgrade if my motor doesn't have it?",
-        "answer": "On a single-engine boat under 200 HP, the gains are real but modest. On a V8 or twin setup, it's worth it. Most current Mercury V8/V10/V12 outboards include Active Trim capability standard \u2014 you just need the SmartCraft Connect module to use it through the app."
+        "answer": "On a single-engine boat under 200 HP, the gains are real but modest. On a V8 or twin setup, it's worth it. Most current Mercury V8/V10/V12 outboards include Active Trim capability standard, you just need the SmartCraft Connect module to use it through the app."
       },
       {
         "question": "What's the difference between VesselView Mobile and a VesselView display (the dash-mounted screen)?",
@@ -16060,15 +16060,15 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
       },
       {
         "question": "Can I do this myself?",
-        "answer": "The phone app pairing, yes \u2014 straightforward. The module install requires running wires, plugging into the engine harness, and (sometimes) configuring through Mercury's diagnostic tool. It's doable for an experienced DIY-er, but if you mis-wire it you can throw fault codes that take a dealer to clear. Up to you."
+        "answer": "The phone app pairing, yes, straightforward. The module install requires running wires, plugging into the engine harness, and (sometimes) configuring through Mercury's diagnostic tool. It's doable for an experienced DIY-er, but if you mis-wire it you can throw fault codes that take a dealer to clear. Up to you."
       }
     ],
   },
   // TODO: Add customer story for how-to-read-mercury-outboard-serial-number
   {
     slug: 'how-to-read-mercury-outboard-serial-number',
-    title: "How to Read a Mercury Outboard Serial Number \u2014 Year, Specs, and Service History",
-    description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number \u2014 model year, shaft length, features, and service history. From a Mercury Platinum dealer.",
+    title: "How to Read a Mercury Outboard Serial Number: Year, Specs, and Service History",
+    description: "A practical guide to finding, reading, and decoding your Mercury outboard's serial number, model year, shaft length, features, and service history. From a Mercury Platinum dealer.",
     image: '/lovable-uploads/hero-mercury-serial-number-decoder.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-17',
@@ -16256,19 +16256,19 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
     faqs: [
       {
         "question": "My motor's plate is unreadable. Is the motor worthless?",
-        "answer": "No, but identification gets harder. We can usually decode it from secondary stamps, casting numbers, and physical inspection \u2014 but it's slower and less precise. For a used buyer, that's worth a price discount."
+        "answer": "No, but identification gets harder. We can usually decode it from secondary stamps, casting numbers, and physical inspection, but it's slower and less precise. For a used buyer, that's worth a price discount."
       },
       {
         "question": "Can I look up my serial myself online?",
-        "answer": "Partially. MarineEngine.com, OBParts.com, and Crowley Marine all have free public serial-to-year lookups. They won't show you Mercury's internal service bulletins, warranty, or service history \u2014 that's dealer-only. But for \"what year is my motor?\" the public tools work fine."
+        "answer": "Partially. MarineEngine.com, OBParts.com, and Crowley Marine all have free public serial-to-year lookups. They won't show you Mercury's internal service bulletins, warranty, or service history, that's dealer-only. But for \"what year is my motor?\" the public tools work fine."
       },
       {
         "question": "Do older 2-stroke Mercurys (pre-2000) follow the same format?",
-        "answer": "Mostly yes \u2014 the bracket plate location, the model code structure (E, L, PT, etc.), and the serial format are similar. Older motors are more likely to have lost or corroded plates, so the freeze-plug backup matters more."
+        "answer": "Mostly yes, the bracket plate location, the model code structure (E, L, PT, etc.), and the serial format are similar. Older motors are more likely to have lost or corroded plates, so the freeze-plug backup matters more."
       },
       {
         "question": "Why does Mercury use letter codes instead of just printing \"long shaft\"?",
-        "answer": "Mercury's been doing this since the '60s \u2014 the codes go back to before computer-friendly databases existed and just stuck. Once you've decoded a few, they're faster than reading full descriptions."
+        "answer": "Mercury's been doing this since the '60s, the codes go back to before computer-friendly databases existed and just stuck. Once you've decoded a few, they're faster than reading full descriptions."
       },
       {
         "question": "Is the model number the same as the serial number?",
@@ -16279,8 +16279,8 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
   // TODO: Add customer story for mercury-maintenance-intervals-20-100-300-rule
   {
     slug: 'mercury-maintenance-intervals-20-100-300-rule',
-    title: "The Mercury 20/100/300 Maintenance Rule \u2014 What Every Ontario Boater Should Know",
-    description: "A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule \u2014 what's done at each milestone, what it costs in Ontario, and which jobs are DIY vs dealer.",
+    title: "The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know",
+    description: "A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario, and which jobs are DIY vs dealer.",
     image: '/lovable-uploads/hero-mercury-maintenance-20-100-300.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-12',
@@ -16456,7 +16456,7 @@ Book scheduled service at **[hbw.wiki/service](https://hbw.wiki/service)** or ca
     faqs: [
       {
         "question": "My boat sat all summer with only 5 hours on it. Do I still need an annual service?",
-        "answer": "Yes. The annual trigger isn't about hours \u2014 it's about time. Engine oil oxidizes, ethanol fuel degrades, seals dry, and water creeps past gearcase O-rings whether the motor ran or not. The 5-hour-season motor still needs the calendar service."
+        "answer": "Yes. The annual trigger isn't about hours, it's about time. Engine oil oxidizes, ethanol fuel degrades, seals dry, and water creeps past gearcase O-rings whether the motor ran or not. The 5-hour-season motor still needs the calendar service."
       },
       {
         "question": "Can I push the 100-hour service to 150 hours if my schedule is tight?",
@@ -16464,7 +16464,7 @@ Book scheduled service at **[hbw.wiki/service](https://hbw.wiki/service)** or ca
       },
       {
         "question": "Does the warranty really require Mercury OEM parts?",
-        "answer": "For warranty claims, yes \u2014 non-OEM parts in the cooling system, fuel system, or any wear item that's claimed under warranty creates a coverage problem. We use Mercury OEM as a default. If you're past warranty and using non-OEM aftermarket, that's your call, but we still use OEM in the shop."
+        "answer": "For warranty claims, yes, non-OEM parts in the cooling system, fuel system, or any wear item that's claimed under warranty creates a coverage problem. We use Mercury OEM as a default. If you're past warranty and using non-OEM aftermarket, that's your call, but we still use OEM in the shop."
       },
       {
         "question": "What if my motor's hours aren't the dashboard hours?",
@@ -16472,7 +16472,7 @@ Book scheduled service at **[hbw.wiki/service](https://hbw.wiki/service)** or ca
       },
       {
         "question": "How much does Verado service really cost?",
-        "answer": "A Verado 300 at 300 hours, full timing belt + supercharger inspection (older I6 only) + complete impeller kit + lube and consumables, will run $1,500\u2013$2,500 in Ontario depending on what additional parts come up during inspection. It's the most expensive Mercury service tier \u2014 and the one that protects the most expensive motor."
+        "answer": "A Verado 300 at 300 hours, full timing belt + supercharger inspection (older I6 only) + complete impeller kit + lube and consumables, will run $1,500\u2013$2,500 in Ontario depending on what additional parts come up during inspection. It's the most expensive Mercury service tier, and the one that protects the most expensive motor."
       }
     ],
   },
@@ -16480,7 +16480,7 @@ Book scheduled service at **[hbw.wiki/service](https://hbw.wiki/service)** or ca
   {
     slug: 'winter-boat-storage-shrinkwrap-vs-indoor-ontario',
     title: "Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison",
-    description: "A Mercury Platinum dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario \u2014 what each costs, what each protects against, and what happens when you skip winterization.",
+    description: "A Mercury Platinum dealer's honest comparison of shrinkwrap vs indoor boat storage in Ontario, what each costs, what each protects against, and what happens when you skip winterization.",
     image: '/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-13',
@@ -16683,7 +16683,7 @@ We've stored boats in Gores Landing for three generations. Mercury Marine Platin
     faqs: [
       {
         "question": "Can I shrinkwrap my own boat?",
-        "answer": "Mechanically, yes \u2014 you can buy shrinkwrap film and a propane heat gun. Practically, most DIY shrinkwrap jobs we see are too loose (chafes the gelcoat in wind), have no vents (mold by spring), or have undersized support frames (collapse under snow). Pay a pro the first time at minimum, even if you watch and learn for next year."
+        "answer": "Mechanically, yes, you can buy shrinkwrap film and a propane heat gun. Practically, most DIY shrinkwrap jobs we see are too loose (chafes the gelcoat in wind), have no vents (mold by spring), or have undersized support frames (collapse under snow). Pay a pro the first time at minimum, even if you watch and learn for next year."
       },
       {
         "question": "Does shrinkwrap need to be removed in spring or can I leave it?",
@@ -16691,7 +16691,7 @@ We've stored boats in Gores Landing for three generations. Mercury Marine Platin
       },
       {
         "question": "Is a tarp ok if I'm desperate?",
-        "answer": "A tarp is better than no cover. It's not better than shrinkwrap. Tarps flap in wind (chafe the gelcoat), pool water in the middle (snowmelt, then re-freezing), and trap moisture (mold). If budget is the issue, talk to us \u2014 there's almost always an option."
+        "answer": "A tarp is better than no cover. It's not better than shrinkwrap. Tarps flap in wind (chafe the gelcoat), pool water in the middle (snowmelt, then re-freezing), and trap moisture (mold). If budget is the issue, talk to us, there's almost always an option."
       },
       {
         "question": "What's included in HBW winterization specifically?",
@@ -16699,11 +16699,11 @@ We've stored boats in Gores Landing for three generations. Mercury Marine Platin
       },
       {
         "question": "Do you store sterndrive boats?",
-        "answer": "Yes \u2014 same shrinkwrap, plus the more thorough engine drain that sterndrives require (block, manifolds, every petcock). MerCruiser winterization is more involved than outboard winterization, and we charge accordingly."
+        "answer": "Yes, same shrinkwrap, plus the more thorough engine drain that sterndrives require (block, manifolds, every petcock). MerCruiser winterization is more involved than outboard winterization, and we charge accordingly."
       },
       {
         "question": "What if my boat doesn't fit a standard shrinkwrap?",
-        "answer": "Shrinkwrap is custom-fit by design. We've wrapped pontoons, deck boats, sailboats, jet boats, classic wood \u2014 anything with a hard hull, we can wrap it. Bring photos, we'll quote."
+        "answer": "Shrinkwrap is custom-fit by design. We've wrapped pontoons, deck boats, sailboats, jet boats, classic wood, anything with a hard hull, we can wrap it. Bring photos, we'll quote."
       },
       {
         "question": "Do you offer indoor storage?",
@@ -16715,7 +16715,7 @@ We've stored boats in Gores Landing for three generations. Mercury Marine Platin
   {
     slug: 'total-cost-of-owning-a-boat-ontario-2026',
     title: "What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)",
-    description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026 \u2014 slip, storage, insurance, fuel, service. Numbers from a 78-year-old Rice Lake marina.",
+    description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel, service. Numbers from a 78-year-old Rice Lake marina.",
     image: '/lovable-uploads/hero-total-cost-of-ownership.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-19',
@@ -16940,7 +16940,7 @@ There's no shame in renting. There's a lot of shame in over-extending into a boa
     faqs: [
       {
         "question": "Is boat insurance really required if it's not legally required?",
-        "answer": "Practically yes. HBW requires proof of $2M liability minimum to slip a boat. Most Ontario marinas have similar policies. Lenders require it for any financed boat. You can technically own a boat in Ontario without insurance if you trailer-launch and self-store \u2014 but liability exposure is real and one bad day is bigger than 10 years of premium payments."
+        "answer": "Practically yes. HBW requires proof of $2M liability minimum to slip a boat. Most Ontario marinas have similar policies. Lenders require it for any financed boat. You can technically own a boat in Ontario without insurance if you trailer-launch and self-store, but liability exposure is real and one bad day is bigger than 10 years of premium payments."
       },
       {
         "question": "Why does HBW charge for the launch ramp when others are free?",
@@ -16948,7 +16948,7 @@ There's no shame in renting. There's a lot of shame in over-extending into a boa
       },
       {
         "question": "Can I save money by winterizing my boat myself?",
-        "answer": "On a small motor (under 30 HP) and an old hull where you know the boat well, yes \u2014 DIY is feasible. On a modern 4-stroke V6, the savings ($200\u2013$300) are small relative to the risk (a missed step = $5,000+ in spring). We see DIY winterization mistakes every spring; they're some of our most expensive repair tickets."
+        "answer": "On a small motor (under 30 HP) and an old hull where you know the boat well, yes: DIY is feasible. On a modern 4-stroke V6, the savings ($200\u2013$300) are small relative to the risk (a missed step = $5,000+ in spring). We see DIY winterization mistakes every spring; they're some of our most expensive repair tickets."
       },
       {
         "question": "How does the cost change if I trailer instead of slipping?",
@@ -16956,19 +16956,19 @@ There's no shame in renting. There's a lot of shame in over-extending into a boa
       },
       {
         "question": "What's the single biggest \"hidden\" cost most new owners miss?",
-        "answer": "Spring service. People budget for the boat, the slip, and the fuel \u2014 then get sticker-shocked by a $700 100-hour service the first April. It's not hidden, but it doesn't appear in most online calculators. Plan for it."
+        "answer": "Spring service. People budget for the boat, the slip, and the fuel, then get sticker-shocked by a $700 100-hour service the first April. It's not hidden, but it doesn't appear in most online calculators. Plan for it."
       },
       {
         "question": "Is there any way to legitimately own a boat for under $5K/year?",
-        "answer": "Yes \u2014 small aluminum fishing boat (under $15K), trailer-launched, DIY winterized, low fuel use, minimum insurance. You can land in the $3,000\u2013$4,500 range. Anything over 18 ft and over 90 HP starts pushing past $5K quickly."
+        "answer": "Yes, small aluminum fishing boat (under $15K), trailer-launched, DIY winterized, low fuel use, minimum insurance. You can land in the $3,000\u2013$4,500 range. Anything over 18 ft and over 90 HP starts pushing past $5K quickly."
       }
     ],
   },
   // TODO: Add customer story for legend-boats-mercury-power-package-guide-ontario
   {
     slug: 'legend-boats-mercury-power-package-guide-ontario',
-    title: "Legend Boats + Mercury Power Packages \u2014 Ontario Buyer's Guide (2026)",
-    description: "A practical guide to Legend Boats and Mercury power packages in 2026 \u2014 the lineup, the pairings that work, all-in pricing, and which hull is right for which kind of boater. From an Ontario Legend dealer.",
+    title: "Legend Boats + Mercury Power Packages: Ontario Buyer's Guide (2026)",
+    description: "A practical guide to Legend Boats and Mercury power packages in 2026, the lineup, the pairings that work, all-in pricing, and which hull is right for which kind of boater. From an Ontario Legend dealer.",
     image: '/lovable-uploads/hero-legend-boats-mercury-package.png',
     author: 'Harris Boat Works',
     datePublished: '2026-05-21',
@@ -17138,15 +17138,15 @@ A few things that aren't on the Legend website:
     faqs: [
       {
         "question": "Where are Legend boats designed?",
-        "answer": "Legend is a Canadian company headquartered in Whitefish, Ontario, near Sudbury. The lineup is designed for Canadian boating conditions \u2014 lakes like Rice Lake, the Kawarthas, Georgian Bay, and Northern Ontario."
+        "answer": "Legend is a Canadian company headquartered in Whitefish, Ontario, near Sudbury. The lineup is designed for Canadian boating conditions, lakes like Rice Lake, the Kawarthas, Georgian Bay, and Northern Ontario."
       },
       {
         "question": "What's the difference between Legend's R Series and XF Series?",
-        "answer": "The R Series is **riveted aluminum** \u2014 entry-level pricing, lighter-duty construction, smaller hulls (12\u201316 ft). The XF Series is **welded aluminum** with a 17\u00b0 deep-V hull \u2014 premium construction, larger hulls (16\u201318 ft), serious fishing capability. Different categories of boat."
+        "answer": "The R Series is **riveted aluminum**, entry-level pricing, lighter-duty construction, smaller hulls (12\u201316 ft). The XF Series is **welded aluminum** with a 17\u00b0 deep-V hull, premium construction, larger hulls (16\u201318 ft), serious fishing capability. Different categories of boat."
       },
       {
         "question": "Are Legend pontoons 2-tube or 3-tube?",
-        "answer": "Depends on the model. The LE Series is 2-tube standard with optional 3-tube on the 21-ft. The Q Series offers both. The Halo uses Legend's PolyForm pontoon construction. 3-tube hulls handle bigger horsepower, plane faster, and ride better in chop \u2014 if you want watersports, 3-tube is worth the upgrade."
+        "answer": "Depends on the model. The LE Series is 2-tube standard with optional 3-tube on the 21-ft. The Q Series offers both. The Halo uses Legend's PolyForm pontoon construction. 3-tube hulls handle bigger horsepower, plane faster, and ride better in chop, if you want watersports, 3-tube is worth the upgrade."
       },
       {
         "question": "What's the Legend WOWranty?",
@@ -17154,11 +17154,11 @@ A few things that aren't on the Legend website:
       },
       {
         "question": "Can I order any Legend through HBW?",
-        "answer": "Yes \u2014 we can order any 2026 Legend hull and option package. Some popular models we keep in inventory or on order; specialty configurations (Titanium, Halo 23) are typically build-to-order with 6\u201310 week lead time depending on the season. Order early in the calendar year if you want a specific build for spring."
+        "answer": "Yes, we can order any 2026 Legend hull and option package. Some popular models we keep in inventory or on order; specialty configurations (Titanium, Halo 23) are typically build-to-order with 6\u201310 week lead time depending on the season. Order early in the calendar year if you want a specific build for spring."
       },
       {
         "question": "Does Legend offer financing?",
-        "answer": "Mercury Repower Center financing is available through HBW for the engine portion. Boat financing varies by lender and credit profile \u2014 we have relationships with marine financing providers and can walk you through options when we sit down to spec a boat."
+        "answer": "Mercury Repower Center financing is available through HBW for the engine portion. Boat financing varies by lender and credit profile, we have relationships with marine financing providers and can walk you through options when we sit down to spec a boat."
       }
     ],
   },
@@ -17841,13 +17841,13 @@ Yes. Mercury's warranty network extends across Canada. Bring your purchase paper
 `,
     faqs: [
       { question: "How long does it take to drive from Toronto to Harris Boat Works?", answer: "Roughly 90 minutes from central Toronto in light traffic. From western GTA (Mississauga, Brampton): 75-105 minutes. From north (Markham, Richmond Hill): 75-90 minutes. Take the 401 east, exit at Cobourg, follow County Rd 18 north to Gores Landing." },
-      { question: "Is Mercury motor pricing the same at HBW as my local Toronto dealer?", answer: "Motor MAP pricing is the same. Rigging, install, prop, and trade-in pricing varies dealer to dealer \u2014 sometimes by thousands of dollars. Our configurator shows our all-in pricing transparently; many GTA dealers don't." },
+      { question: "Is Mercury motor pricing the same at HBW as my local Toronto dealer?", answer: "Motor MAP pricing is the same. Rigging, install, prop, and trade-in pricing varies dealer to dealer, sometimes by thousands of dollars. Our configurator shows our all-in pricing transparently; many GTA dealers don't." },
       { question: "Why drive to HBW vs a closer Mercury dealer?", answer: "Three things: Mercury Platinum dealer tier (factory-trained techs, full diagnostic equipment), transparent configurator pricing (no \"call for quote\"), and a service relationship that follows your motor for the next 10-15 years. If those don't matter to you, your local dealer is fine." },
-      { question: "Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?", answer: "Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer \u2014 service history, parts familiarity, and faster warranty claim processing through Platinum dealers." },
+      { question: "Can I get my Mercury serviced at any Mercury dealer if I bought it from HBW?", answer: "Yes. Mercury warranty work is honoured at any authorized Mercury dealer in Canada. But there's value in returning to the original dealer, service history, parts familiarity, and faster warranty claim processing through Platinum dealers." },
       { question: "Do you offer pickup or delivery for GTA buyers?", answer: "We don't ship or deliver Mercury motors. Pickup only at Gores Landing. For repowers, customers trailer the boat to us; service and parts pickup is in person. Some customers use commercial boat transport services for one-way trips." },
       { question: "What's the savings vs. a Toronto dealer for a typical repower?", answer: "Highly variable, but for a 150 HP FourStroke repower with rigging + prop + sea trial, all-in pricing at HBW typically runs $1,500-$3,000 less than a comparable rigged repower at an opaque-pricing GTA dealer. The configurator gives the exact number." },
-      { question: "Can I rent a boat at HBW before committing to buy?", answer: "Yes. We have a 9-boat rental fleet (Mercury-powered) on Rice Lake \u2014 half-day or full-day rentals. Many GTA customers rent before buying. Booking at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)." },
-      { question: "Is HBW open weekends?", answer: "Yes. Saturday + Sunday hours during boating season (May-October), plus weekday business hours. Off-season weekend hours are reduced \u2014 call ahead." },
+      { question: "Can I rent a boat at HBW before committing to buy?", answer: "Yes. We have a 9-boat rental fleet (Mercury-powered) on Rice Lake, half-day or full-day rentals. Many GTA customers rent before buying. Booking at [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals)." },
+      { question: "Is HBW open weekends?", answer: "Yes. Saturday + Sunday hours during boating season (May-October), plus weekday business hours. Off-season weekend hours are reduced, call ahead." },
       { question: "Do you do warranty work for motors purchased at other dealers?", answer: "Yes. Mercury's warranty network extends across Canada. Bring your purchase paperwork; we process the claim through Mercury. If your selling dealer is closed, weak, or out of state, this is a common scenario." },
     ],
   },
@@ -18059,7 +18059,7 @@ Technically yes. In practice, Platinum dealers do most repowers because the work
 `,
     faqs: [
       { question: "What makes a Mercury Platinum dealer different from a regular dealer?", answer: "Platinum status requires factory training on every Mercury family (FourStroke, Pro XS, Verado, SeaPro), full G3 diagnostic equipment, stocked parts inventory, demonstrated annual sales + service volumes, and top-tier Customer Satisfaction Index (CSI) scores. There are a limited number of Platinum dealers in Ontario." },
-      { question: "Is Mercury motor pricing the same at all Ontario dealers?", answer: "Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer \u2014 sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request." },
+      { question: "Is Mercury motor pricing the same at all Ontario dealers?", answer: "Motor MAP pricing is the same. Rigging, install, prop, MPP, and trade-in pricing all vary dealer-to-dealer, sometimes by thousands of dollars. The transparent dealers publish all-in pricing; the opaque ones quote on request." },
       { question: "How do I find out if a dealer is Mercury Platinum?", answer: "Mercury's online dealer locator doesn't display tier. You have to ask. A real Platinum dealer will give a confident \"yes\" and may show certification documentation. If a dealer hedges or doesn't know, they're not Platinum." },
       { question: "Why does dealer tier matter for me as a recreational boater?", answer: "For routine service (oil change, prop replacement), tier matters less. For complex diagnostic work, electronic system issues, warranty-eligible repairs, and repower-level installations, Platinum tier is meaningfully better. The G3 diagnostic software alone catches problems that consumer-tool diagnostic systems can't." },
       { question: "Should I drive farther for a better dealer?", answer: "For one-time large purchases (repowers, MPP-eligible motors, complex installs): yes, the drive time pays off. For routine work on simple motors: no, local-distance is fine. The decision frame is \"how often will I visit this dealer over the next 10 years?\"" },
@@ -18070,7 +18070,7 @@ Technically yes. In practice, Platinum dealers do most repowers because the work
   {
     slug: "mercury-repower-gta-toronto-destination",
     title: "Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)",
-    description: "A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works \u2014 logistics, pricing, timeline, transport. From the dealer that does this every...",
+    description: "A step-by-step look at how a GTA boater repowers a boat at Harris Boat Works, logistics, pricing, timeline, transport. From the dealer that does this every...",
     image: '/lovable-uploads/hero-mercury-repower-gta.png',
     author: 'Jay Harris',
     datePublished: "2026-05-26",
@@ -18281,12 +18281,12 @@ Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 
     faqs: [
       { question: "How much does a Mercury repower cost in the GTA?", answer: "Depends on motor HP and current boat. Typical ranges: 90 HP install $15,500-$18,500; 150 HP install $23,000-$30,000; 200 HP V6 install $28,000-$35,000. The [mercuryrepower.ca configurator](https://mercuryrepower.ca) gives your specific number in 90 seconds." },
       { question: "How long does a repower take at HBW?", answer: "Typical install + sea trial + prop tuning: 7-14 days at the shop. Booking lead time is 2-4 weeks during peak season. Plan total project as 4-6 weeks from configurator-quote to motor-on-water." },
-      { question: "Can I trailer my boat from Toronto to HBW myself?", answer: "Yes \u2014 401 east to Cobourg, north on County Rd 18 to Gores Landing. About 90 minutes from central Toronto. We have trailer parking on-site." },
+      { question: "Can I trailer my boat from Toronto to HBW myself?", answer: "Yes, 401 east to Cobourg, north on County Rd 18 to Gores Landing. About 90 minutes from central Toronto. We have trailer parking on-site." },
       { question: "Do you arrange boat transport from the GTA?", answer: "We don't operate transport, but we work with several Ontario marine transport services. Typical cost $300-$600 each way for an 18-22 ft boat. We can refer." },
       { question: "Will my Mercury be eligible for warranty if I bought it elsewhere and want it serviced at HBW?", answer: "Yes. Mercury's Canadian warranty network honours coverage at any authorized dealer regardless of where the motor was purchased. Bring purchase paperwork; we register the work in Mercury's central system." },
       { question: "Can I pick a Pro XS over a FourStroke for repower?", answer: "Depends on use case. Pro XS for performance applications (skiing, watersports, high-RPM operation, max top speed). FourStroke for cruising, fuel efficiency, family use. See our [V6 performance guide](/blog/mercury-150-200hp-v6-performance) for the specific decision matrix." },
-      { question: "What if my boat needs more than just a motor?", answer: "Common scenario. Repowers often surface adjacent work \u2014 rigging upgrades (hydraulic steering, gauges, controls), transom reinforcement, fuel system replacement, electrical updates. We'll spec it all in the quote and you decide what to include or defer." },
-      { question: "Do you do twin-engine repowers?", answer: "Yes \u2014 twin V6 or V8 setups on bigger boats (offshore, bass boats, deck boats). Same configurator, same workflow, longer install time (typically 14-21 days for twins). Twin Pro XS V6 installations are common in our shop." },
+      { question: "What if my boat needs more than just a motor?", answer: "Common scenario. Repowers often surface adjacent work, rigging upgrades (hydraulic steering, gauges, controls), transom reinforcement, fuel system replacement, electrical updates. We'll spec it all in the quote and you decide what to include or defer." },
+      { question: "Do you do twin-engine repowers?", answer: "Yes, twin V6 or V8 setups on bigger boats (offshore, bass boats, deck boats). Same configurator, same workflow, longer install time (typically 14-21 days for twins). Twin Pro XS V6 installations are common in our shop." },
       { question: "What's the trade-in value on my current motor?", answer: "Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 12-year-old 90 HP with high hours trades for $1,500-$2,500. The configurator estimates based on your motor's specs." },
     ],
   },
@@ -18506,13 +18506,13 @@ Yes, that's a common combo. October drop-off, complete annual service + winteriz
       { question: "Can I bring a non-Mercury (Yamaha, Honda) for service?", answer: "No. We're a Mercury-only dealer. We refer non-Mercury work to brand-appropriate dealers. Same logic: Yamaha customers should use Yamaha-trained shops." },
       { question: "Do you offer pickup/delivery or transport for GTA boats needing service?", answer: "We don't operate transport. We can refer you to commercial boat transport services that work the GTA-Kawartha route ($300-$600 each way for typical 18-22 ft boats)." },
       { question: "What if I need emergency service mid-summer?", answer: "Phone us. We'll prioritize active failures over routine work when we can. Mid-summer peak schedule means a 1-2 week wait is common, but a true on-water emergency (won't start, overheating preventing use) usually moves to the front of the queue." },
-      { question: "Can I drop off a boat for \"annual service plus winter storage\" in one trip?", answer: "Yes \u2014 that's a common combo. October drop-off, complete annual service + winterize + shrinkwrap + store, May pickup with spring commissioning included. Single trip in fall, single trip in spring." },
+      { question: "Can I drop off a boat for \"annual service plus winter storage\" in one trip?", answer: "Yes, that's a common combo. October drop-off, complete annual service + winterize + shrinkwrap + store, May pickup with spring commissioning included. Single trip in fall, single trip in spring." },
     ],
   },
   {
     slug: "rice-lake-boat-rentals-from-toronto-gta",
     title: "Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide",
-    description: "A Rice Lake boat rental day from the GTA \u2014 drive time, pricing, what's included, what to bring. From Harris Boat Works, the marina that's been on Rice Lake s...",
+    description: "A Rice Lake boat rental day from the GTA, drive time, pricing, what's included, what to bring. From Harris Boat Works, the marina that's been on Rice Lake s...",
     image: '/lovable-uploads/hero-rice-lake-boat-rentals-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-05-31",
@@ -18736,11 +18736,11 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 `,
     faqs: [
       { question: "How long does it take to drive from Toronto to Rice Lake?", answer: "Roughly 90 minutes to Gores Landing in light traffic. From central Toronto: 401 east, exit at Cobourg, follow County Rd 18 north. From the western GTA (Mississauga, Brampton, Oakville): plan 75-105 minutes." },
-      { question: "Do I need a boating licence to rent at HBW?", answer: "Yes \u2014 a Pleasure Craft Operator Card (PCOC) is required to operate any motorized boat in Ontario. If you don't have one, the marina can sometimes issue a temporary \"rental boat safety checklist\" \u2014 but most full-day rentals require the PCOC. Easier to get the actual card before you come (3-hour online course, $50, lifetime good)." },
+      { question: "Do I need a boating licence to rent at HBW?", answer: "Yes, a Pleasure Craft Operator Card (PCOC) is required to operate any motorized boat in Ontario. If you don't have one, the marina can sometimes issue a temporary \"rental boat safety checklist\", but most full-day rentals require the PCOC. Easier to get the actual card before you come (3-hour online course, $50, lifetime good)." },
       { question: "What does a half-day rental cost?", answer: "Pricing varies by boat type and season. As of 2026: small fishing boat half-day from $200, mid-size pontoon half-day from $350, large pontoon half-day from $450. Full-day roughly 1.7-2\u00d7 half-day. Check [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) for current pricing." },
       { question: "Can we fish from rental boats?", answer: "Yes. The 16-ft ProSport boats are designed for fishing (fishfinder included). Pontoons can fish but they're set up more for cruising/comfort. **You need an Ontario fishing licence** (one-time online $30 for a season)." },
-      { question: "What if it rains the day of our rental?", answer: "Light rain \u2014 boats still go out, you're fine. Severe weather (lightning, sustained high winds, severe weather warning) \u2014 we'll cancel and refund or rebook. Drizzle is not a refund condition; sustained downpour might be." },
-      { question: "Are kids and pets allowed on rentals?", answer: "Kids absolutely yes \u2014 pontoons are kid-magnets, life jackets provided, the lake is shallow and forgiving. Pets case-by-case; ask when booking. Most pontoons accommodate well-behaved dogs." },
+      { question: "What if it rains the day of our rental?", answer: "Light rain, boats still go out, you're fine. Severe weather (lightning, sustained high winds, severe weather warning), we'll cancel and refund or rebook. Drizzle is not a refund condition; sustained downpour might be." },
+      { question: "Are kids and pets allowed on rentals?", answer: "Kids absolutely yes, pontoons are kid-magnets, life jackets provided, the lake is shallow and forgiving. Pets case-by-case; ask when booking. Most pontoons accommodate well-behaved dogs." },
       { question: "Where do we eat during a rental day?", answer: "On the boat (bring a picnic) or at lakeshore restaurants. Lakeview Restaurant in Bewdley (west end of Rice Lake, 5 min from HBW) is the local pick. Many anchorages near restaurants." },
       { question: "Can we swim from the rental boats?", answer: "Yes. Pontoons typically have swim ladders. The 16-ft fishing boats don't, but you can swim alongside if you anchor in calm water." },
       { question: "Do you offer multi-day rentals?", answer: "Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day rentals for cottagers staying in the area without their own boat." },
@@ -18749,7 +18749,7 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
   {
     slug: "winter-storage-near-toronto-hbw",
     title: "Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)",
-    description: "An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake \u2014 pricing, what's included, the transport math, and why most serious owners...",
+    description: "An honest comparison of GTA boat storage options vs. driving to HBW on Rice Lake, pricing, what's included, the transport math, and why most serious owners...",
     image: '/lovable-uploads/hero-winter-storage-near-toronto.png',
     author: 'Jay Harris',
     datePublished: "2026-06-03",
@@ -18965,21 +18965,21 @@ Your existing boat insurance typically covers winter storage; some policies requ
 - [GTA Repower walkthrough](/blog/mercury-repower-gta-toronto-destination), if storage time becomes repower time
 `,
     faqs: [
-      { question: "How much does winter boat storage cost in the GTA?", answer: "Outdoor shrinkwrap at urban GTA marinas: $700-$1,200 for 21-ft boat (storage only). Indoor unheated: $1,200-$2,000. Indoor heated: $1,800-$3,500. **Note: most GTA pricing doesn't include winterization** \u2014 that's $300-$600 extra. HBW's all-in pricing for outdoor + shrinkwrap + full winterization is $1,000-$1,400 for typical 21-ft boat." },
+      { question: "How much does winter boat storage cost in the GTA?", answer: "Outdoor shrinkwrap at urban GTA marinas: $700-$1,200 for 21-ft boat (storage only). Indoor unheated: $1,200-$2,000. Indoor heated: $1,800-$3,500. **Note: most GTA pricing doesn't include winterization**, that's $300-$600 extra. HBW's all-in pricing for outdoor + shrinkwrap + full winterization is $1,000-$1,400 for typical 21-ft boat." },
       { question: "How do I get my boat from the GTA to HBW for storage?", answer: "Most owners trailer it themselves (90 minutes from central Toronto). Alternative: hire commercial boat transport ($300-$600 each way). Cheapest alternative: rent a summer slip at HBW so the boat is already there in the fall." },
-      { question: "What's the difference between outdoor and indoor storage?", answer: "Outdoor + professional shrinkwrap is the cost-effective standard \u2014 protects from snow, ice, UV, wind. Indoor unheated adds protection from environmental cycling but doesn't eliminate the need for winterization (interior temps drop below freezing). Indoor heated is the premium tier \u2014 boat stays above 5\u00b0C all winter, no winterization needed, but availability is rare and expensive." },
+      { question: "What's the difference between outdoor and indoor storage?", answer: "Outdoor + professional shrinkwrap is the cost-effective standard, protects from snow, ice, UV, wind. Indoor unheated adds protection from environmental cycling but doesn't eliminate the need for winterization (interior temps drop below freezing). Indoor heated is the premium tier, boat stays above 5\u00b0C all winter, no winterization needed, but availability is rare and expensive." },
       { question: "Do I need to do anything if my boat is shrinkwrapped + winterized?", answer: "No active maintenance during winter. The boat is documented as winterized; we periodically inspect storage areas. You're free of any boat-related tasks until April-May when we de-winterize." },
-      { question: "Can I access my boat during winter for any reason?", answer: "Yes \u2014 we can let you in for inspection, maintenance approvals, gear retrieval, etc. Just call ahead. The shrinkwrap has access doors for re-entry." },
-      { question: "What if I want to upgrade or repair the boat during winter?", answer: "Off-season is the ideal time. We have shop bandwidth November-March that we don't have May-August. Most repowers, major service, and upgrades happen during the storage period. If you want this option, the boat is already on-site \u2014 just approve the work." },
-      { question: "When should I book winter storage?", answer: "**Mid-September** is best. Pricing is firm. By **early November** capacity fills up; we may not be able to take new bookings. Don't wait until October \u2014 you'll lose options." },
+      { question: "Can I access my boat during winter for any reason?", answer: "Yes, we can let you in for inspection, maintenance approvals, gear retrieval, etc. Just call ahead. The shrinkwrap has access doors for re-entry." },
+      { question: "What if I want to upgrade or repair the boat during winter?", answer: "Off-season is the ideal time. We have shop bandwidth November-March that we don't have May-August. Most repowers, major service, and upgrades happen during the storage period. If you want this option, the boat is already on-site, just approve the work." },
+      { question: "When should I book winter storage?", answer: "**Mid-September** is best. Pricing is firm. By **early November** capacity fills up; we may not be able to take new bookings. Don't wait until October, you'll lose options." },
       { question: "What's the difference between HBW shrinkwrap and a tarp?", answer: "Massive. Professional shrinkwrap uses 7-12 mil polyethylene film, custom-fitted with a structural frame and vents, heat-shrunk for tightness. A tarp flaps in wind (chafes gelcoat), pools water in the middle (snowmelt + re-freezing), and traps moisture (mold). Tarps are emergency cover; shrinkwrap is real winter storage." },
-      { question: "Is the boat insured during winter storage?", answer: "Your existing boat insurance typically covers winter storage; some policies require notification. Check with your insurer. We don't insure stored boats \u2014 that's owner responsibility. We document storage location, shrinkwrap quality, and winterization completion for any insurance documentation needs." },
+      { question: "Is the boat insured during winter storage?", answer: "Your existing boat insurance typically covers winter storage; some policies require notification. Check with your insurer. We don't insure stored boats, that's owner responsibility. We document storage location, shrinkwrap quality, and winterization completion for any insurance documentation needs." },
     ],
   },
   {
     slug: "harris-boat-works-since-1947-rice-lake-institution",
     title: "Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations",
-    description: "The story of Harris Boat Works on Rice Lake \u2014 three generations since 1947, and what nearly eight decades on the same dock means for the customers who've trusted the family.",
+    description: "The story of Harris Boat Works on Rice Lake, three generations since 1947, and what nearly eight decades on the same dock means for the customers who've trusted the family.",
     image: '/lovable-uploads/hero-harris-boat-works-since-1947.png',
     author: 'Jay Harris',
     datePublished: "2026-06-06",
@@ -19181,16 +19181,16 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
 - [Rice Lake Boating Guide](/blog/rice-lake-boating-guide-2026)
 `,
     faqs: [
-      { question: "How long has Harris Boat Works been in business?", answer: "Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965 \u2014 **60 years** as a Mercury Marine dealer in 2026." },
-      { question: "Is HBW family-owned?", answer: "Yes \u2014 three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business." },
+      { question: "How long has Harris Boat Works been in business?", answer: "Founded in 1947 on Rice Lake, currently in our **78th year**. Third generation in family hands. Mercury dealer since 1965, **60 years** as a Mercury Marine dealer in 2026." },
+      { question: "Is HBW family-owned?", answer: "Yes, three generations of the Harris family. The current ownership is third-generation; the fourth generation is in early-career and may eventually transition into the business." },
       { question: "Is HBW a Mercury Platinum dealer?", answer: "Yes. Platinum is the top tier of Mercury's certification system, requiring factory-trained techs on every Mercury family, full G3 diagnostic capability, stocked parts inventory, demonstrated annual volumes, and top-tier Customer Satisfaction Index scores." },
-      { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0 \u2014 on the south shore of Rice Lake. About 90 minutes east of central Toronto." },
-      { question: "What does HBW sell and service?", answer: "Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Services include sales, repower, annual maintenance, diagnostic, warranty work, winter storage, and rentals. We don't sell Yamaha, Honda, Suzuki, Tohatsu, Evinrude \u2014 Mercury-only." },
+      { question: "Where is HBW located?", answer: "5369 Harris Boat Works Rd, Gores Landing, Ontario K0K 2E0, on the south shore of Rice Lake. About 90 minutes east of central Toronto." },
+      { question: "What does HBW sell and service?", answer: "Mercury Marine outboards (full lineup), Legend Boats, marine accessories. Services include sales, repower, annual maintenance, diagnostic, warranty work, winter storage, and rentals. We don't sell Yamaha, Honda, Suzuki, Tohatsu, Evinrude: Mercury-only." },
       { question: "How big is HBW?", answer: "A family marina with a peak-season team. Verifiable scale: 49 seasonal slip rentals, 9-boat rental fleet, 311+ winter storage contracts annually." },
       { question: "Why has HBW been in business so long?", answer: "Multi-generational family ownership, focused Mercury dealership relationship since 1965, sustained Platinum-tier service quality, transparent pricing, and customer relationships that last decades. The boring answer: doing the work well, year after year." },
-      { question: "Is HBW still growing?", answer: "Yes \u2014 our online repower business via mercuryrepower.ca has grown significantly in recent years. The configurator-based selling model has reached customers across Ontario and beyond. The family marina has expanded its reach without diluting its character." },
+      { question: "Is HBW still growing?", answer: "Yes, our online repower business via mercuryrepower.ca has grown significantly in recent years. The configurator-based selling model has reached customers across Ontario and beyond. The family marina has expanded its reach without diluting its character." },
       { question: "Do you have CSI awards or other certifications?", answer: "HBW currently holds Mercury Marine **Platinum-tier dealer status**, which itself requires sustained top-tier Customer Satisfaction Index (CSI) scores year over year. Active certifications include Mercury Platinum, Mercury Certified Repower Center, and Legend Boats authorized dealer." },
-      { question: "Can I visit HBW even if I don't need to buy anything?", answer: "Yes \u2014 we're a working family marina. Walking through the slips, watching the rental fleet come and go, fueling up at the dock, seeing the Mercury showroom, having a coffee in Bewdley after \u2014 it's a complete day on Rice Lake without a sales requirement." },
+      { question: "Can I visit HBW even if I don't need to buy anything?", answer: "Yes, we're a working family marina. Walking through the slips, watching the rental fleet come and go, fueling up at the dock, seeing the Mercury showroom, having a coffee in Bewdley after, it's a complete day on Rice Lake without a sales requirement." },
     ],
   },
 ];
