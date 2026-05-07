@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "What Size Motor Does My Boat Need? Complete Calculator Guide"
 description: "Use our boat motor sizing guide to find the right HP for your boat. Factors to consider, calculations, and real-world examples for accurate motor selection."
 category: "Buying Guide"
@@ -29,13 +29,17 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Start with the capacity plate's max HP, that's your federal ceiling. Then pick within the upper third of that range for normal loads, or the lower third if you're pushing a kicker, fuel, and gear. Hull weight, transom width, and use case matter more than rules of thumb. Build a real quote at mercuryrepower.ca.
+
 ## How to Size Your Boat Motor
 
 [Choosing the right horsepower](/blog/how-to-choose-right-horsepower-boat) involves more than just checking your capacity plate. Here's how to think through motor sizing.
 
 ### The Starting Point: Capacity Plate
 
-Every boat has a maximum HP rating. This is your ceiling—never exceed it. But maximum isn't always best.
+Every boat has a maximum HP rating. This is your ceiling - never exceed it. But maximum isn't always best.
 
 **Find Your Plate**: Usually on transom or near helm
 **Look For**: Max HP, max persons, max weight
@@ -120,10 +124,10 @@ Bring us your boat info and tell us how you fish. We'll recommend the right moto
 
 ## Related guides
 
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat) — matching HP to boat size and use
-- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison) — mid-range Mercury head-to-head
-- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario) — the 115 vs 150 decision
-- [Mercury 150-200hp V6: Performance Made Practical](/blog/mercury-150-200hp-v6-performance) — V6 150–200 HP performance
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario), the 115 vs 150 decision
+- [Mercury 150-200hp V6: Performance Made Practical](/blog/mercury-150-200hp-v6-performance). V6 150–200 HP performance
 
 ## FAQs
 
@@ -154,7 +158,7 @@ Consider future use within reason. If you're planning to add watersports or more
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

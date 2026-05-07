@@ -6,9 +6,9 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)"
-description: "The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling."
+description: "Last reviewed: 2026-05-07"
 category: "Buying Guide"
 date_published: 2026-02-09
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)
 
-> The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling.
+> Last reviewed: 2026-05-07
 
 **Category:** Buying Guide  
 **Published:** 2026-02-09  
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** For Rice Lake fishing, walleye, musky, panfish, most boats are happy with a Mercury 25-90 FourStroke as main power and a 9.9 ProKicker for trolling. Stay inside the capacity plate. Rice Lake's shallow, weedy structure rewards manoeuvrability over top speed. Build a real kicker-and-main package at mercuryrepower.ca.
 
 The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -197,11 +201,11 @@ A 4-blade aluminum or stainless prop usually works well. We can recommend specif
 
 ### Tiller or remote for walleye fishing on Rice Lake?
 
-Tiller is the preferred setup for walleye fishing on Rice Lake. The Mercury Advanced Tiller system gives you throttle, shift, and trim control directly at the handle — essential for constant trolling speed adjustments. One person can fish and run the boat from the stern without needing a console. Tiller is available on Mercury FourStroke models from 2.5HP through 115HP. Remote makes more sense if you're running with family or non-fishing passengers who prefer to sit up front.
+Tiller is the preferred setup for walleye fishing on Rice Lake. The Mercury Advanced Tiller system gives you throttle, shift, and trim control directly at the handle, essential for constant trolling speed adjustments. One person can fish and run the boat from the stern without needing a console. Tiller is available on Mercury FourStroke models from 2.5HP through 115HP. Remote makes more sense if you're running with family or non-fishing passengers who prefer to sit up front.
 
 ### Do I need a kicker motor for Rice Lake?
 
-For dedicated walleye trolling on Rice Lake, a kicker motor is worth having. The standard setup is a Mercury 60–90HP primary motor paired with a Mercury 9.9HP or 15HP ProKicker for slow, controlled trolling. The kicker lets you troll at the precise 1.5–2.5 mph range that walleye prefer without loading up the main engine. The ProKicker Command Thrust handles Rice Lake's weeds well. For bass fishing or general boating, a kicker is optional — most anglers manage fine with just the main motor.
+For dedicated walleye trolling on Rice Lake, a kicker motor is worth having. The standard setup is a Mercury 60–90HP primary motor paired with a Mercury 9.9HP or 15HP ProKicker for slow, controlled trolling. The kicker lets you troll at the precise 1.5–2.5 mph range that walleye prefer without loading up the main engine. The ProKicker Command Thrust handles Rice Lake's weeds well. For bass fishing or general boating, a kicker is optional, most anglers manage fine with just the main motor.
 
 ### What's the best motor for walleye trolling on Rice Lake?
 
@@ -209,15 +213,15 @@ The best walleye trolling setup for Rice Lake is a Mercury 75HP or 90HP FourStro
 
 ### Do I need a kicker motor on Rice Lake specifically?
 
-A kicker is most useful for walleye trollers who want precise slow-speed control without burning main engine fuel. It's less critical for bass or musky fishing. If walleye are your main target and you troll frequently, a kicker is a genuine upgrade — many dedicated Rice Lake walleye anglers consider it essential once they've run with one. The Mercury 9.9HP ProKicker Command Thrust pairs well with most 60–90HP main motors without adding excessive weight or complexity.
+A kicker is most useful for walleye trollers who want precise slow-speed control without burning main engine fuel. It's less critical for bass or musky fishing. If walleye are your main target and you troll frequently, a kicker is a genuine upgrade, many dedicated Rice Lake walleye anglers consider it essential once they've run with one. The Mercury 9.9HP ProKicker Command Thrust pairs well with most 60–90HP main motors without adding excessive weight or complexity.
 
 ### How much does a complete Rice Lake fishing rig cost in 2026?
 
-A typical Rice Lake fishing rig — 16ft aluminum boat, Mercury 60HP FourStroke Command Thrust tiller, and trailer — runs approximately $35,000–$45,000 CAD new. An 18ft package with a Mercury 90HP is typically $45,000–$58,000 new. Used rigs with a 3–5 year old Mercury FourStroke are available in the $18,000–$28,000 range. Adding a Mercury 9.9HP ProKicker runs approximately $4,500–$5,500 installed. Build a real quote at mercuryrepower.ca/quote/motor-selection or call 905-342-2153 for current inventory and pricing.
+A typical Rice Lake fishing rig, 16ft aluminum boat, Mercury 60HP FourStroke Command Thrust tiller, and trailer, runs approximately $35,000–$45,000 CAD new. An 18ft package with a Mercury 90HP is typically $45,000–$58,000 new. Used rigs with a 3–5 year old Mercury FourStroke are available in the $18,000–$28,000 range. Adding a Mercury 9.9HP ProKicker runs approximately $4,500–$5,500 installed. Build a real quote at mercuryrepower.ca/quote/motor-selection or call 905-342-2153 for current inventory and pricing.
 
 ### What's the best boat size for fishing Rice Lake?
 
-The most versatile boat size for Rice Lake fishing is 16–18 feet. A 16ft aluminum deep-V handles the open south-end water without being too large for shallow bay fishing. An 18ft boat gives more stability, deck space for gear, and better performance in rough conditions. Smaller 14ft boats work well for walleye and panfish in calmer inner bays with a 40HP tiller setup. For musky fishing and rough-water comfort, 19–20ft is preferred. When choosing between 16 and 18 feet, the 18ft is usually the right call — the extra space and stability are used more than expected.
+The most versatile boat size for Rice Lake fishing is 16–18 feet. A 16ft aluminum deep-V handles the open south-end water without being too large for shallow bay fishing. An 18ft boat gives more stability, deck space for gear, and better performance in rough conditions. Smaller 14ft boats work well for walleye and panfish in calmer inner bays with a 40HP tiller setup. For musky fishing and rough-water comfort, 19–20ft is preferred. When choosing between 16 and 18 feet, the 18ft is usually the right call, the extra space and stability are used more than expected.
 
 ## Next steps
 
@@ -230,7 +234,7 @@ The most versatile boat size for Rice Lake fishing is 16–18 feet. A 16ft alumi
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

@@ -6,9 +6,9 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Best Mercury Outboard for Pontoon Boats (2026 Ontario Guide)"
-description: "For 18 to 22 ft pontoons in Ontario, the Mercury 90 to 150 HP FourStroke with Command Thrust is the right answer. Command Thrust is the gearcase that matters on pontoons."
+description: "Last reviewed: 2026-05-07"
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Best Mercury Outboard for Pontoon Boats (2026 Ontario Guide)
 
-> For 18 to 22 ft pontoons in Ontario, the Mercury 90 to 150 HP FourStroke with Command Thrust is the right answer. Command Thrust is the gearcase that matters on pontoons.
+> Last reviewed: 2026-05-07
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Pontoons need torque, not top speed. For most 18-22 ft Ontario pontoons, a Mercury 90-115 Command Thrust is the right answer, bigger prop, lower gear ratio, better hole-shot with people aboard. Stay inside your tube rating. Build an installed pontoon repower quote at mercuryrepower.ca.
 
 For 18 to 22 ft pontoons in Ontario, the Mercury 90 to 150 HP FourStroke with Command Thrust is the right answer. Command Thrust is the gearcase that matters on pontoons. Cruising-only setups can run a 90 CT; family use with water sports wants 115 to 150 CT. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -265,7 +269,7 @@ At cruise speed, a 90 HP CT pontoon runs 4 to 5 mph per US gallon, or roughly 1.
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Financing a New Boat Motor: What Ontario Boaters Need to Know"
 description: "Explore boat motor financing options in Ontario. Learn about payments, terms, and how to get approved for a new Mercury outboard purchase."
 category: "Buying Guide"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-motor-financing-guide-ontario
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** HBW offers Mercury Repower Financing through DealerPlan: 7.99 percent APR (as of May 2026) on motor packages $10,000 and up, 8.99 percent under $10,000. Financing isn't available below $5,000. A $299 DealerPlan fee applies. Apply with your installed quote from mercuryrepower.ca.
 
 ## Financing Your New Mercury Outboard
 
@@ -77,7 +81,7 @@ A new Mercury motor is an investment. Financing makes it manageable and can get 
 
 ### Sample Payments
 
-*Estimates only—actual rates and terms vary*
+*Estimates only - actual rates and terms vary*
 
 **Mercury 115HP (~$13,000)**:
 - 48 months: ~$300/month
@@ -108,14 +112,14 @@ We offer:
 
 **[Get Financing Information](/quote)**
 
-For real CAD pricing on what you'd actually be financing, see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) — it breaks down complete repower totals by HP class so you can size your loan accurately.
+For real CAD pricing on what you'd actually be financing, see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad), it breaks down complete repower totals by HP class so you can size your loan accurately.
 
 ## Related guides
 
-- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026) — current financing rates and terms
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026) — live 2026 promotions and rebates
-- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026) — lowest-cost Mercury models in Canada
-- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers) — what 2026 looks like for Ontario buyers
+- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
+- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
 
 ## FAQs
 
@@ -146,7 +150,7 @@ You'll need to pay off the remaining balance when you sell. The motor serves as 
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

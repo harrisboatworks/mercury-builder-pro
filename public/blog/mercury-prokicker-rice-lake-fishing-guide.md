@@ -6,9 +6,9 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)"
-description: "The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount..."
+description: "Last reviewed: 2026-05-07"
 category: "Fishing"
 date_published: 2026-02-06
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)
 
-> The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount...
+> Last reviewed: 2026-05-07
 
 **Category:** Fishing  
 **Published:** 2026-02-06  
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** The Mercury 9.9 ProKicker is the right kicker for Rice Lake walleye and musky trolling, high gear ratio for slow speeds, electric start, power tilt, and remote-ready. It's a different motor than the standard 9.9 portable. We rig and tiller-link these regularly for Kawartha boats. Build a kicker package at mercuryrepower.ca.
 
 The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -281,7 +285,7 @@ The kicker is part of the boat's overall motor configuration on the Pleasure Cra
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

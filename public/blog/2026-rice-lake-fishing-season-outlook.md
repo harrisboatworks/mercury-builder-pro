@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "2026 Rice Lake Fishing Season Outlook"
 description: "Rice Lake's 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are..."
 category: "Lifestyle"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-rice-lake-fishing-season-outlook
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Rice Lake's 2026 outlook is strong: walleye and crappie populations are healthy, water levels are normal, and weed structure is back after the cleaner winter. Walleye opener is the second Saturday of May. Get the boat serviced before April or expect a wait. Book at mercuryrepower.ca.
 
 Rice Lake's 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are managed; ice-out timing and water temperatures will set the early-season pattern. The classic species mix and structure on Rice Lake have been consistent for decades. We are looking forward to another good season.
 
@@ -284,7 +288,7 @@ Recent years have been strong on Rice Lake. Continued normal weather and water l
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

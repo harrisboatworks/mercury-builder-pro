@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Late Season Boating Safety: Fall Tips for Ontario Waters"
 description: "Stay safe during fall boating in Ontario. Cold water considerations, essential gear, weather awareness, and emergency procedures for shoulder season boating."
 category: "Tips"
@@ -29,14 +29,18 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Late-season Ontario boating means cold water, short days, and shoulder weather. Wear a PFD, file a float plan, carry a charged VHF, and dress for water temperature, not air temperature. Cold-water immersion is the biggest fall risk, see Transport Canada TP 13822 for survival guidance. Book fall service at mercuryrepower.ca.
+
 ## Late Season Boating Safety: Fall Tips for Ontario Waters
 
-Fall on Ontario's waters offers some of the best boating conditions—fewer crowds, stunning colours, and excellent fishing. But cooling water temperatures demand extra safety awareness.
+Fall on Ontario's waters offers some of the best boating conditions - fewer crowds, stunning colours, and excellent fishing. But cooling water temperatures demand extra safety awareness.
 
 ### The Cold Water Reality
 
 **Why Fall Water is Dangerous**:
-Ontario waters cool rapidly in fall. By October, surface temperatures can drop to 10-15°C—cold enough for hypothermia to set in within minutes of immersion.
+Ontario waters cool rapidly in fall. By October, surface temperatures can drop to 10-15°C - cold enough for hypothermia to set in within minutes of immersion. See [Transport Canada's cold-water survival guidance](https://tc.canada.ca/en/marine-transportation/publications/tp-13822-survival-cold-waters-2003) for the full safety procedures.
 
 **Cold Water Shock**:
 - Initial gasp reflex (dangerous if underwater)
@@ -131,12 +135,12 @@ A breakdown in July is an inconvenience. A breakdown in October can be life-thre
 **If Someone Falls In**:
 1. Throw flotation immediately
 2. Approach carefully (don't create another victim)
-3. Get them out quickly—every second counts
+3. Get them out quickly - every second counts
 4. Get them warm immediately
 5. Call for help
 
 **Self-Rescue**:
-- Stay calm—control your breathing
+- Stay calm - control your breathing
 - Don't try to swim immediately (wait for cold shock to pass)
 - Use the HELP position (Heat Escape Lessening Posture)
 - Swim to boat, not shore, if possible
@@ -165,10 +169,10 @@ Proper fall shutdown protects your motor for spring. Schedule winterization befo
 
 ## Related guides
 
-- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) — the full Mercury service schedule
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips) — seasonal maintenance tips
-- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist) — spring commissioning checklist
-- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips) — off-season storage tips
+- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide), the full Mercury service schedule
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
+- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips), off-season storage tips
 
 ## FAQs
 
@@ -182,7 +186,7 @@ Any water below 21°C (70°F) can cause hypothermia. Below 15°C is dangerous wi
 
 ### What's the most important safety gear for fall boating?
 
-A worn PFD—not just carried. In cold water, you have seconds to minutes before losing the ability to swim. A float coat combines warmth and flotation, making it ideal for fall conditions.
+A worn PFD - not just carried. In cold water, you have seconds to minutes before losing the ability to swim. A float coat combines warmth and flotation, making it ideal for fall conditions.
 
 ### Should I always wear a PFD in fall?
 
@@ -199,7 +203,7 @@ Absolutely. Cold water shock can incapacitate you in seconds. You may not have t
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

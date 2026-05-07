@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Pleasure Craft Licence Update During Repower (Ontario 2026)"
 description: "When you change motors on a Pleasure Craft Licensed (PCL) boat in Canada, you must update the licence with Transport Canada. The PCL stays with the boat (HIN) but..."
 category: "Canadian Boating Regulations"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Repowering changes your registered horsepower, so you must update your Pleasure Craft Licence with Transport Canada. The update is free and online, keep the new motor's serial number handy. We'll provide it on your invoice. Repower service and quotes at mercuryrepower.ca.
 
 When you change motors on a Pleasure Craft Licensed (PCL) boat in Canada, you must update the licence with Transport Canada. The PCL stays with the boat (HIN) but motor specifications are recorded on it. Updates are free, take 10 to 15 minutes online, and are required when the new motor changes the registered HP rating. We handle this paperwork for HBW customers as part of every repower.
 
@@ -117,7 +121,7 @@ The cost of keeping the PCL current is zero (the update is free). The cost of ge
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), full HP class pricing
 - [Evinrude to Mercury Repower Ontario Guide](/blog/evinrude-to-mercury-repower-ontario-guide), brand conversion and PCL update
 - [Boat Hull Replacement vs Repower Decision](/blog/boat-hull-replacement-vs-repower-decision), the honest decision tree
-- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR Mercury Repower Financing
+- [Mercury Outboard Financing Ontario 2026](/blog/mercury-outboard-financing-ontario-2026), 7.99% APR (as of May 2026) Mercury Repower Financing
 - [Complete Guide to Boat Repowering in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full repower process
 
 ## Ready to repower (and let HBW handle the PCL update)?
@@ -198,7 +202,7 @@ Your dealer handles the engine installation and warranty registration. The PCL u
 
 ### Does the PCL update affect my boat insurance?
 
-It can. Your insurance policy is based on your vessel specs, including engine type and horsepower. Notify your insurer of the repower separately — the PCL update and insurance notification are different processes.
+It can. Your insurance policy is based on your vessel specs, including engine type and horsepower. Notify your insurer of the repower separately, the PCL update and insurance notification are different processes.
 
 ### What happens if I miss the 30-day PCL update deadline?
 
@@ -206,7 +210,7 @@ Missing the 30-day window makes you liable for a $250 fine under Transport Canad
 
 ### How do I update my PCL if I bought a used boat with a repowered engine?
 
-When you transfer the PCL to your name, you have the opportunity to correct the engine information at the same time. You'll need the current engine's details (serial number, HP, type) — if the seller doesn't have them, a marine dealer or Mercury service shop can look them up from the serial number. The transfer costs $24; updating engine information at the same time is free.
+When you transfer the PCL to your name, you have the opportunity to correct the engine information at the same time. You'll need the current engine's details (serial number, HP, type), if the seller doesn't have them, a marine dealer or Mercury service shop can look them up from the serial number. The transfer costs $24; updating engine information at the same time is free.
 
 ### Does going from single to twin outboards require a PCL update?
 
@@ -214,11 +218,11 @@ Yes. Adding a second engine is a change to your vessel information that must be 
 
 ### Is the PCL update the same as Transport Canada boat registration?
 
-No. A Pleasure Craft Licence (PCL) is required for boats with motors of 10 HP or more on Canadian waters — it's a free-to-update identifier tied to the hull. Vessel Registration under the Canada Shipping Act is a separate, more formal process for commercial vessels, boats used as loan security, or boats operating internationally. Most recreational cottage boats in Ontario are licenced, not registered.
+No. A Pleasure Craft Licence (PCL) is required for boats with motors of 10 HP or more on Canadian waters, it's a free-to-update identifier tied to the hull. Vessel Registration under the Canada Shipping Act is a separate, more formal process for commercial vessels, boats used as loan security, or boats operating internationally. Most recreational cottage boats in Ontario are licenced, not registered.
 
 ### If my lifetime PCL has expired under the new 2026 rules, can I still update engine information for free?
 
-Updating vessel information on an expired PCL is not possible — you need a valid, current PCL first. If your lifetime PCL has lapsed under the phased-out transition schedule, renew it first for $24, then update the engine details (which is free). Both steps can be done in the same session on Transport Canada's online portal.
+Updating vessel information on an expired PCL is not possible, you need a valid, current PCL first. If your lifetime PCL has lapsed under the phased-out transition schedule, renew it first for $24, then update the engine details (which is free). Both steps can be done in the same session on Transport Canada's online portal.
 
 ## Next steps
 
@@ -231,7 +235,7 @@ Updating vessel information on an expired PCL is not possible — you need a val
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

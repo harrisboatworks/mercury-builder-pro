@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Breaking In a New Mercury Motor (2026)"
 description: "The first 10 hours of a new Mercury are the most important hours of its service life. Mercury's break-in protocol calls for graduated load and RPM during this period..."
 category: "New Owner"
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Breaking In a New Mercury Motor (2026)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury's break-in is roughly 10 hours: vary RPM in the first hour, avoid sustained wide-open throttle for the first two, and complete the 20-hour service afterward. Skipping break-in shortens piston ring seating and can affect long-term oil consumption. Full schedule and 20-hour service booking at mercuryrepower.ca.
 
 The first 10 hours of a new Mercury are the most important hours of its service life. Mercury's break-in protocol calls for graduated load and RPM during this period: vary throttle, avoid sustained WOT, and follow the specific RPM guidance for the motor model. The first oil change at 20 hours is also important on FourStrokes. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -216,7 +220,7 @@ Improper break-in can cause glazed cylinder walls, poor ring seating, and increa
 
 ### Can I go fishing during break-in?
 
-Absolutely! Just vary your speed regularly—don't troll at the same RPM for extended periods. Plan routes that let you change speed every few minutes.
+Absolutely! Just vary your speed regularly - don't troll at the same RPM for extended periods. Plan routes that let you change speed every few minutes.
 
 ### Is the break-in procedure different for 2-stroke vs 4-stroke?
 
@@ -224,31 +228,31 @@ Yes. 2-stroke motors have specific fuel/oil mixture requirements during break-in
 
 ### Do I need to use Mercury oil during break-in?
 
-The motor comes from the factory with standard Mercury FourStroke 10W-30 oil — there is no special break-in formulation. For all oil changes, we recommend Mercury 4-Stroke Marine Oil, but any quality marine-rated oil meeting Mercury specifications is acceptable.
+The motor comes from the factory with standard Mercury FourStroke 10W-30 oil, there is no special break-in formulation. For all oil changes, we recommend Mercury 4-Stroke Marine Oil, but any quality marine-rated oil meeting Mercury specifications is acceptable.
 
 ### What happens if I don't break in my Mercury motor properly?
 
-Skipping or rushing the break-in procedure can cause permanent engine damage that shows up gradually. The most common consequences are reduced peak horsepower (piston rings that didn't seat fully never achieve optimal compression), higher oil consumption over the engine's lifetime, accelerated wear on bearings and cylinder walls, and a shorter overall engine life. Mercury's 3-year factory warranty covers manufacturing defects, but damage from improper break-in is not a warranty claim — it's owner responsibility.
+Skipping or rushing the break-in procedure can cause permanent engine damage that shows up gradually. The most common consequences are reduced peak horsepower (piston rings that didn't seat fully never achieve optimal compression), higher oil consumption over the engine's lifetime, accelerated wear on bearings and cylinder walls, and a shorter overall engine life. Mercury's 3-year factory warranty covers manufacturing defects, but damage from improper break-in is not a warranty claim, it's owner responsibility.
 
 ### Can I go fishing during the Mercury motor break-in period?
 
-Yes — fishing is one of the best ways to complete break-in because you naturally vary your speed. Trolling, running to your spot, slowing to work structure, then running again creates the throttle variation the procedure requires. What you want to avoid is any extended period at the same RPM, like trolling at a fixed speed for two consecutive hours with no variation. Mix in some cruising runs and you're doing it right.
+Yes, fishing is one of the best ways to complete break-in because you naturally vary your speed. Trolling, running to your spot, slowing to work structure, then running again creates the throttle variation the procedure requires. What you want to avoid is any extended period at the same RPM, like trolling at a fixed speed for two consecutive hours with no variation. Mix in some cruising runs and you're doing it right.
 
 ### Is the break-in procedure different for a 2-stroke vs 4-stroke Mercury?
 
-The general principle — vary your throttle and avoid sustained full power — applies to both, but the specifics differ. Modern Mercury FourStrokes come from the factory pre-filled with the correct oil; there is no fuel-oil mixing and no special break-in oil required. Older Mercury 2-stroke engines required specific oil ratios during break-in. If you have a used 2-stroke Mercury and are unsure about its break-in history, call 905-342-2153 for model-specific advice.
+The general principle, vary your throttle and avoid sustained full power, applies to both, but the specifics differ. Modern Mercury FourStrokes come from the factory pre-filled with the correct oil; there is no fuel-oil mixing and no special break-in oil required. Older Mercury 2-stroke engines required specific oil ratios during break-in. If you have a used 2-stroke Mercury and are unsure about its break-in history, call 905-342-2153 for model-specific advice.
 
 ### Do I need to use Mercury-branded oil during break-in?
 
-Mercury recommends their own FourStroke 10W-30 oil, and using it keeps your warranty clean. Any marine-grade 4-stroke oil meeting TC-W3 or API SL/SM standards can be used in a pinch, but avoid automotive oil not rated for marine use. The more important discipline is the 20-hour oil change — whatever oil is in there at 20 hours needs to come out, as it will contain metal particles from the break-in process.
+Mercury recommends their own FourStroke 10W-30 oil, and using it keeps your warranty clean. Any marine-grade 4-stroke oil meeting TC-W3 or API SL/SM standards can be used in a pinch, but avoid automotive oil not rated for marine use. The more important discipline is the 20-hour oil change, whatever oil is in there at 20 hours needs to come out, as it will contain metal particles from the break-in process.
 
 ### How long does Mercury motor break-in take in terms of calendar time?
 
-The break-in procedure covers the first 10 engine hours, which could be completed in two or three long days on the water or stretched over several weekends. Most Rice Lake boat owners who launch in May and boat regularly will hit 10 hours within the first two to three weeks. There is no calendar deadline — break-in is hours-based, not time-based. If you store the boat mid-break-in, just pick up where you left off when you return.
+The break-in procedure covers the first 10 engine hours, which could be completed in two or three long days on the water or stretched over several weekends. Most Rice Lake boat owners who launch in May and boat regularly will hit 10 hours within the first two to three weeks. There is no calendar deadline, break-in is hours-based, not time-based. If you store the boat mid-break-in, just pick up where you left off when you return.
 
 ### Can I use my new Mercury motor for towing a tube or skier during break-in?
 
-Avoid full sustained wide-open-throttle pulls during the first 3 hours. After that, brief full-throttle bursts (under 30 seconds in hours 2–3, up to 1–2 minutes in hours 4–10) are acceptable. By hours 4–10, moderate towing use is fine as long as you're not holding wide-open throttle for extended stretches. The key is variation — a couple of tow runs mixed in with cruising and varying speeds won't harm the break-in.
+Avoid full sustained wide-open-throttle pulls during the first 3 hours. After that, brief full-throttle bursts (under 30 seconds in hours 2–3, up to 1–2 minutes in hours 4–10) are acceptable. By hours 4–10, moderate towing use is fine as long as you're not holding wide-open throttle for extended stretches. The key is variation, a couple of tow runs mixed in with cruising and varying speeds won't harm the break-in.
 
 ### Where can I get my Mercury motor's 20-hour oil change done near Gores Landing or Rice Lake?
 
@@ -260,7 +264,7 @@ New Mercury FourStroke outboards come with a 3-year limited factory warranty for
 
 ### Should I use a fuel stabilizer in my new Mercury motor right away?
 
-You don't need to add fuel stabilizer during normal break-in use. Stabilizer is for storage — when the motor will sit unused for 30 days or more. If you're actively completing break-in, you're running fresh fuel through the system regularly, which is ideal. Where stabilizer matters for a new motor is at the end of the first season: add it to the fuel tank before storage, run the motor briefly to circulate it through the fuel system, and then store. This prevents fuel degradation in the carb or injectors over the winter.
+You don't need to add fuel stabilizer during normal break-in use. Stabilizer is for storage, when the motor will sit unused for 30 days or more. If you're actively completing break-in, you're running fresh fuel through the system regularly, which is ideal. Where stabilizer matters for a new motor is at the end of the first season: add it to the fuel tank before storage, run the motor briefly to circulate it through the fuel system, and then store. This prevents fuel degradation in the carb or injectors over the winter.
 
 ## Next steps
 
@@ -273,7 +277,7 @@ You don't need to add fuel stabilizer during normal break-in use. Stabilizer is 
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

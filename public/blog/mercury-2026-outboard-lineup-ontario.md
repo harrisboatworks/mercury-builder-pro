@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Mercury 2026 Outboard Lineup for Ontario Boaters"
 description: "The Mercury 2026 lineup covers every recreational HP class. FourStroke (2.5 to 300 HP) for cruising, fishing, and family use. Pro XS (115 to 300 HP) for performance..."
 category: "Buying Guide"
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Mercury 2026 Outboard Lineup for Ontario Boaters
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury's 2026 lineup for Ontario covers 2.5 to 300 HP across FourStroke, Pro XS, and SeaPro families, plus Avator electric. Verado is special order only. Stocked allocation focuses on the high-volume cottage and fishing horsepowers, 9.9, 25, 60, 90, 115, 150. Live inventory at mercuryrepower.ca.
 
 The Mercury 2026 lineup covers every recreational HP class. FourStroke (2.5 to 300 HP) for cruising, fishing, and family use. Pro XS (115 to 300 HP) for performance fishing. SeaPro (25 to 300 HP) for commercial duty. Verado (250 to 600+ HP) for offshore (special-order at HBW). Avator electric line for emerging applications. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -119,7 +123,7 @@ Mercury's 2026 model year (effective July 1, 2026) brings refinements rather tha
 - **Refined Avator electric lineup** with expanded HP coverage
 - **Updated Pro XS variants** with software refinements
 - **Continuing Verado V12 expansion** in higher HP classes
-- **Refined warranty programs** including Mercury Repower Financing at 7.99% APR
+- **Refined warranty programs** including Mercury Repower Financing at 7.99% APR (as of May 2026)
 
 For specific 2026 motor pricing, [build a quote](/quote/motor-selection).
 
@@ -221,11 +225,11 @@ For most 14–18 ft fishing boats on Rice Lake, a Mercury FourStroke in the 25�
 
 ### Is the Mercury V10 Verado relevant for Ontario inland boating?
 
-The V10 Verado (350–425 HP) is designed for larger offshore and performance boats. Most Rice Lake boaters won't need that much power. However, the technologies developed for the V10 — quieter operation, stronger alternators, smarter fuel calibration — trickle down into the smaller FourStroke engines that are popular on Ontario inland waters.
+The V10 Verado (350–425 HP) is designed for larger offshore and performance boats. Most Rice Lake boaters won't need that much power. However, the technologies developed for the V10, quieter operation, stronger alternators, smarter fuel calibration, trickle down into the smaller FourStroke engines that are popular on Ontario inland waters.
 
 ### Is the Mercury Avator suitable for Rice Lake?
 
-The Avator electric outboard is well-suited for small car-toppers, cottage runabouts, and short-range trips on Rice Lake. It's near-silent, zero-emission, and very low maintenance. It's not yet a replacement for a full-size gas outboard on larger fishing boats, but it's a compelling option for specific use cases — especially quiet bays and eco-sensitive areas.
+The Avator electric outboard is well-suited for small car-toppers, cottage runabouts, and short-range trips on Rice Lake. It's near-silent, zero-emission, and very low maintenance. It's not yet a replacement for a full-size gas outboard on larger fishing boats, but it's a compelling option for specific use cases, especially quiet bays and eco-sensitive areas.
 
 ### How do I choose from Mercury's 2026 lineup?
 
@@ -233,7 +237,7 @@ Start with how you use your boat: what size, what activities (fishing, cruising,
 
 ### Is the Mercury Avator electric outboard suitable for Rice Lake?
 
-The Mercury Avator is suitable for specific Rice Lake use cases — small car-topper boats (12–14 ft), cottage runabouts making short dock-to-bay trips, and electric-restricted or quiet lakes in the region. For full-day fishing on Rice Lake — running to multiple spots, trolling hours of structure, motoring back against wind — a gas FourStroke remains the practical choice. Avator's runtime improves significantly with multiple battery packs and the technology is advancing quickly.
+The Mercury Avator is suitable for specific Rice Lake use cases, small car-topper boats (12–14 ft), cottage runabouts making short dock-to-bay trips, and electric-restricted or quiet lakes in the region. For full-day fishing on Rice Lake, running to multiple spots, trolling hours of structure, motoring back against wind, a gas FourStroke remains the practical choice. Avator's runtime improves significantly with multiple battery packs and the technology is advancing quickly.
 
 ### How do I choose from Mercury's 2026 lineup for my Ontario boat?
 
@@ -241,15 +245,15 @@ Start with your hull's capacity plate maximum HP, then consider how you use your
 
 ### What is the difference between Mercury FourStroke and Mercury Pro XS outboards?
 
-Mercury FourStroke outboards are designed for efficiency, smooth cruise, and versatility — ideal for fishing, family use, and general recreation. Mercury Pro XS models are tuned for performance: faster hole shot, higher top-end RPM, and stronger acceleration, using a 2-stroke direct-injection design. For bass anglers or anyone prioritizing quick planing and hard running, Pro XS is the choice. For most Ontario cottage and fishing use, FourStroke is the better all-around fit.
+Mercury FourStroke outboards are designed for efficiency, smooth cruise, and versatility, ideal for fishing, family use, and general recreation. Mercury Pro XS models are tuned for performance: faster hole shot, higher top-end RPM, and stronger acceleration, using a 2-stroke direct-injection design. For bass anglers or anyone prioritizing quick planing and hard running, Pro XS is the choice. For most Ontario cottage and fishing use, FourStroke is the better all-around fit.
 
 ### What Mercury motors does Harris Boat Works stock for 2026?
 
-Harris Boat Works in Gores Landing, Ontario is a Mercury Platinum dealer. Default in-stock and orderable inventory covers the FourStroke range from 2.5–300 HP, Pro XS performance motors, and Mercury Avator electric outboards. Verado is special order only — not part of default inventory and quoted on request. Use the quote builder at mercuryrepower.ca/quote/motor-selection to see current availability and CAD pricing, or call 905-342-2153 for Verado or special configurations.
+Harris Boat Works in Gores Landing, Ontario is a Mercury Platinum dealer. Default in-stock and orderable inventory covers the FourStroke range from 2.5–300 HP, Pro XS performance motors, and Mercury Avator electric outboards. Verado is special order only, not part of default inventory and quoted on request. Use the quote builder at mercuryrepower.ca/quote/motor-selection to see current availability and CAD pricing, or call 905-342-2153 for Verado or special configurations.
 
 ### How much does a Mercury FourStroke outboard cost in Ontario in 2026?
 
-For accurate 2026 Mercury FourStroke pricing in Ontario, use the Harris Boat Works quote builder at mercuryrepower.ca/quote/motor-selection — it shows real prices with no call-for-quote runaround. Pricing includes the motor and standard controls. Installation, rigging, and additional controls are quoted separately. Harris Boat Works is a Mercury Platinum dealer and provides written quotes. Call 905-342-2153 for pricing on specific configurations.
+For accurate 2026 Mercury FourStroke pricing in Ontario, use the Harris Boat Works quote builder at mercuryrepower.ca/quote/motor-selection, it shows real prices with no call-for-quote runaround. Pricing includes the motor and standard controls. Installation, rigging, and additional controls are quoted separately. Harris Boat Works is a Mercury Platinum dealer and provides written quotes. Call 905-342-2153 for pricing on specific configurations.
 
 ### What is the best Mercury outboard for trolling walleye on Rice Lake?
 
@@ -266,7 +270,7 @@ For walleye trolling on Rice Lake, the most effective setup is a main motor in t
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

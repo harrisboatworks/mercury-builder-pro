@@ -6,9 +6,9 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Mercury Command Thrust Guide for Pontoon Boats (2026)"
-description: "Mercury Command Thrust is the gearcase option that turns a \"good\" pontoon Mercury into a \"great\" one. It is not a separate motor family."
+description: "Last reviewed: 2026-05-07"
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Command Thrust Guide for Pontoon Boats (2026)
 
-> Mercury Command Thrust is the gearcase option that turns a "good" pontoon Mercury into a "great" one. It is not a separate motor family.
+> Last reviewed: 2026-05-07
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Command Thrust uses a larger gearcase and prop than the standard FourStroke at the same horsepower. On a loaded pontoon or a heavy aluminum hull, that means faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See pricing at mercuryrepower.ca.
 
 Mercury Command Thrust is the gearcase option that turns a "good" pontoon Mercury into a "great" one. It is not a separate motor family. It is a gearcase upgrade available on Mercury FourStroke 115 HP and up. The bigger gearcase, larger prop, and torque-tuned gear ratio give pontoons meaningful hole shot and load-handling improvement. The cost premium over standard is worth it on pontoons. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -270,7 +274,7 @@ Properly maintained, the same lifespan as the motor itself (1,500 to 2,000+ hour
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

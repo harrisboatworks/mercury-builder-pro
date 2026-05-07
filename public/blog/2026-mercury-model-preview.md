@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "2027 Mercury Outboard Preview: What's New and What to Expect"
 description: "Preview of 2027 Mercury outboard lineup. Expected updates, new features, and recommendations for buyers considering a 2026 vs 2027 purchase."
 category: "New Products"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/2026-mercury-model-preview
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury's 2027 lineup carries the current FourStroke and Pro XS architecture forward with software refinements, expanded Avator electric options, and continued V12 Verado availability for the offshore tier. Stocked Ontario models stay focused on 2.5-300 HP. Watch the configurator at mercuryrepower.ca for live 2027 pricing as it lands.
 
 ## 2027 Mercury Outboard Preview
 
@@ -92,10 +96,10 @@ We'll provide:
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
-- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer) — why Harris Boat Works is Mercury
-- [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario) — Mercury vs Yamaha for Ontario
-- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
+- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market), why Mercury leads the market
+- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works is Mercury
+- [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario). Mercury vs Yamaha for Ontario
+- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), reliability comparison: Mercury vs Yamaha vs Honda
 
 ## FAQs
 
@@ -126,7 +130,7 @@ Mercury's Avator electric line continues to expand with models from 7.5e to 110e
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)"
 description: "Most Mercury dealers hide prices online to control the sales conversation. HBW publishes every Mercury price live so you can compare without a phone call."
 category: "Buying Guide"
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Why Most Mercury Dealers Hide Their Prices Online (And Why HBW Doesn't)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Most dealers hide prices to force a phone call, it lets them negotiate trade-in down and add fees later. HBW posts real installed prices because customers deserve a number before driving 90 minutes. Configurator with live pricing at mercuryrepower.ca.
 
 If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. Most marine dealers deliberately don't publish prices online. The reasons they give are excuses; the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
 
@@ -109,7 +113,7 @@ Beyond just publishing prices:
 - **Live pricing updates.** Mercury MY pricing changes effective July 1 are reflected within days. Promotional rate buy-downs are reflected when active.
 - **CAD pricing native.** No "USD plus exchange" surprises.
 - **Full configuration in the quote.** Motor + shaft length + controls + prop + rigging + install labor all included.
-- **Mercury Repower Financing at 7.99% APR** built into the quote flow. See our [financing guide](/blog/mercury-outboard-financing-ontario-2026).
+- **Mercury Repower Financing at 7.99% APR (as of May 2026)** built into the quote flow. See our [financing guide](/blog/mercury-outboard-financing-ontario-2026).
 - **Quote save and share.** Built quotes can be saved, downloaded as PDF, or sent via email/text.
 - **No phone-call gatekeeping.** Build a quote at midnight if you want.
 
@@ -208,7 +212,7 @@ Eventually, yes. Customer expectations are moving that way and the next generati
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

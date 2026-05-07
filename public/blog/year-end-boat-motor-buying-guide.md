@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Year-End Boat Motor Buying: Best Time for Deals?"
 description: "Is year-end the best time to buy a boat motor? Analysis of seasonal pricing, promotions, and the best time to purchase a new Mercury outboard."
 category: "Buying Guide"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/year-end-boat-motor-buying-guide
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Year-end deals exist but the math is more nuanced than most assume. Mercury controls promotions and dealers can't manufacture extra discount. The real win at year-end is build-slot priority for spring install. Configure with current promotions baked in at mercuryrepower.ca.
 
 ## Year-End Motor Buying: Is It the Best Time?
 
@@ -87,20 +91,20 @@ A fair deal when you need it beats waiting indefinitely for a perfect deal. That
 
 **[Get Year-End Pricing](/quote)**
 
-Before you negotiate, anchor your expectations to real numbers — our [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) is the canonical CAD price reference for complete repowers at every HP tier.
+Before you negotiate, anchor your expectations to real numbers, our [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) is the canonical CAD price reference for complete repowers at every HP tier.
 
 ## Related guides
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
 ## FAQs
 
 ### Are boat show prices better than dealer prices?
 
-Boat shows sometimes feature special offers. However, local dealers may match or beat show prices. Shop around and compare—we welcome price comparisons.
+Boat shows sometimes feature special offers. However, local dealers may match or beat show prices. Shop around and compare - we welcome price comparisons.
 
 ### Is waiting for spring sales better than year-end?
 
@@ -112,7 +116,7 @@ Price has some flexibility, especially on in-stock units. Bundling installation,
 
 ### When is the best time to buy?
 
-Winter months often offer good value through reduced demand, dealer flexibility, and no missed boating time. Currently, Harris Boat Works includes 7 years of factory-backed warranty with every new Mercury—a significant value.
+Winter months often offer good value through reduced demand, dealer flexibility, and no missed boating time. Currently, Harris Boat Works includes 7 years of factory-backed warranty with every new Mercury - a significant value.
 
 ## Next steps
 
@@ -125,7 +129,7 @@ Winter months often offer good value through reduced demand, dealer flexibility,
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

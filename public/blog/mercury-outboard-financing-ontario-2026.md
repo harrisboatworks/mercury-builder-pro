@@ -6,9 +6,9 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Financing in Ontario: Your Complete 2026 Guide"
-description: "Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash."
+description: "Last reviewed: 2026-05-07"
 category: "Financing & Value"
 date_published: 2026-04-20
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Financing in Ontario: Your Complete 2026 Guide
 
-> Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash.
+> Last reviewed: 2026-05-07
 
 **Category:** Financing & Value  
 **Published:** 2026-04-20  
@@ -29,7 +29,11 @@ content_type: blog_article
 
 ## Article
 
-Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR. Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury Repower Financing through DealerPlan: 7.99 percent APR (as of May 2026) on packages $10,000 and up, 8.99 percent under $10,000. Minimum financed amount is $5,000. A $299 DealerPlan fee is added post-tax. Apply with your installed quote at mercuryrepower.ca.
+
+Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR (as of May 2026). Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).
 
 ## Quick recommendation
 
@@ -229,7 +233,7 @@ Build a quote on the [motor selection page](/quote/motor-selection). Three minut
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

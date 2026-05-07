@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Walleye Opener Boat Prep Checklist (2026)"
 description: "The Ontario walleye opener (typically the second Saturday of May for Zone 17 Kawartha lakes) is the highest-stakes morning of the fishing season."
 category: "Tips"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Get the boat ready two weekends before the second Saturday of May: battery load test, fresh fuel, working lights, registered PFDs, kicker tested, and a Mercury spring service if you didn't winterize cleanly. The opener doesn't wait for a no-start at the launch. Service slots fill fast, book through mercuryrepower.ca.
 
 The Ontario walleye opener (typically the second Saturday of May for Zone 17 Kawartha lakes) is the highest-stakes morning of the fishing season. The boat must run reliably, fish the way it did last fall, and not cost you opening morning to a dead battery or stale gas. This checklist covers what to do in the 2 weeks before opener so you're fishing instead of fixing. We do walleye opener prep at HBW; book early.
 
@@ -241,7 +245,7 @@ Bewdley, Hastings, and Roseneath are the main public ramps on Rice Lake. Each ha
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

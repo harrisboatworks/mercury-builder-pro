@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)"
 description: "For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to..."
 category: "Repower Cost & Pricing"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** A Mercury repower in Ontario typically lands $8,000-$30,000 CAD installed depending on horsepower, rigging needs, and controls. The motor itself is roughly two-thirds of the total. We post real installed prices, no phone-call required to get a number. Build yours at mercuryrepower.ca.
 
 For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to $22,000; 150 HP $23,000 to $30,000; and 200 to 300 HP $35,000 to $40,000, CAD before HST. Live pricing on the motor selection page is the source of truth.
 
@@ -117,7 +121,7 @@ If you want a number for a specific motor, [build a quote](/quote/motor-selectio
 We have rigged enough boats to know that the answer is rarely "buy whatever fits your budget." A bad recommendation costs you money in the wrong prop, the wrong controls, or a motor that overworks itself for the next 15 years. Before we quote, we want to know:
 
 - **Boat make, model, year, and length.** Older hulls have transom limits not all customers know about.
-- **Maximum HP rating on the capacity plate.** We will not over-power a hull. Mercury voids the warranty if we do.
+- **Maximum HP rating on the capacity plate.** We will not over-power a hull. Overpowering creates capacity-plate compliance, insurance, liability, and potential warranty problems.
 - **Hull condition.** Soft transoms cannot hold a heavy motor safely. A walk-around with a moisture meter takes 10 minutes and saves you a lot of money on a mistake.
 - **Existing controls and gauges.** Some are fine. Some need to go in the bin.
 - **What you actually do with the boat.** A guy fishing two mornings a week wants different power than a family pulling tubes on weekends. Same hull, different right answer.
@@ -132,7 +136,7 @@ Repowering makes sense when:
 - Your hull is solid (aluminum lasts decades, fiberglass with a good transom can go just as long)
 - The boat fits your family and use
 - The motor is the only thing wrong with it
-- You do not want to start a new payment book at 7.99% APR (the standard non-promo rate)
+- You do not want to start a new payment book at 7.99% APR (as of May 2026) (the standard non-promo rate)
 
 Buying new makes sense when:
 
@@ -275,7 +279,7 @@ Build a quote on this site in three minutes, or give us a call at (905) 342-2153
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

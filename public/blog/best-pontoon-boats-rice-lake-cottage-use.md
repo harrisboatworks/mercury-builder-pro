@@ -6,9 +6,9 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Best Pontoon Boats for Rice Lake Cottage Use (2026)"
-description: "For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust."
+description: "Last reviewed: 2026-05-07"
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Best Pontoon Boats for Rice Lake Cottage Use (2026)
 
-> For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust.
+> Last reviewed: 2026-05-07
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** For Rice Lake cottage use, look at 20-22 ft pontoons from Legend, Princecraft, or Sylvan with a Mercury 90-115 Command Thrust. Triple-tube only matters above 150 HP; most family use is fine on twin tubes. Stay inside the capacity plate. We package these regularly, quote at mercuryrepower.ca.
 
 For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust. The lake is sheltered enough that you don't need a tritoon for most uses, but the 22 ft length gives the deck space and capacity that cottage use rewards. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -288,7 +292,7 @@ Yes. Service, repower, hauling, indoor and outdoor storage all available at HBW.
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

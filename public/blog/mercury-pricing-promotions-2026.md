@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "2026 Mercury Buying: Pricing, Promotions and Smart Timing"
 description: "Navigate 2026 Mercury outboard pricing. Understand MSRP vs dealer pricing, seasonal promotions, winter buying advantages, and financing options."
 category: "Buying Guide"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-pricing-promotions-2026
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury controls promotions; dealers can't invent discount. Real 2026 deals are Mercury rebates, bonus warranty extensions, and seasonal pricing windows, all baked into our configurator at mercuryrepower.ca. Bonus warranties revert to the 3-year standard once the promo ends, so timing matters.
 
 ## Navigating Mercury Pricing in 2026
 
@@ -118,7 +122,7 @@ Note: Mercury Marine has scaled back manufacturer-level promotional programs in 
 **Harris Boat Works Current Offer**:
 - 7-Year Factory-Backed Warranty included with every new Mercury
 - That's 3 years standard + 4 bonus years of Gold coverage
-- No extra cost — automatically applied
+- No extra cost, automatically applied
 - Significant value vs. purchasing extended warranty separately
 
 **[Financing Options](/blog/mercury-outboard-financing-ontario-2026)**:
@@ -194,14 +198,14 @@ Note: Mercury Marine has scaled back manufacturer-level promotional programs in 
 
 **[Get Current Pricing](/quote)**
 
-For complete installed-repower pricing in CAD — including the rigging, controls, prop, and labour components above — see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
+For complete installed-repower pricing in CAD, including the rigging, controls, prop, and labour components above, see our canonical [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad).
 
 ## Related guides
 
-- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026) — current financing rates and terms
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario) — financing basics for Ontario buyers
-- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026) — lowest-cost Mercury models in Canada
-- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers) — what 2026 looks like for Ontario buyers
+- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario), financing basics for Ontario buyers
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
+- [What the 2026 Boating Market Means for Ontario Boat Buyers](/blog/2026-boating-market-ontario-boat-buyers), what 2026 looks like for Ontario buyers
 
 ## FAQs
 
@@ -211,7 +215,7 @@ Mercury has scaled back manufacturer-level promotions, but Harris Boat Works run
 
 ### Can I negotiate below advertised price?
 
-Often yes, especially for in-stock motors in the off-season. Dealers have more flexibility when inventory is high and demand is low. Always ask—the worst they can say is no.
+Often yes, especially for in-stock motors in the off-season. Dealers have more flexibility when inventory is high and demand is low. Always ask - the worst they can say is no.
 
 ### Is Mercury financing worth it vs my bank?
 
@@ -232,7 +236,7 @@ MSRP is motor only. Rigging (controls, gauges, prop, wiring, installation) adds 
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

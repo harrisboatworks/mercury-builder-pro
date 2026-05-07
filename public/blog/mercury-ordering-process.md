@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Ordering Your Mercury: What to Expect"
 description: "Complete guide to ordering a Mercury outboard. Understand the 6-step process from configuration to water test, timeline expectations, and what to prepare."
 category: "Buying Guide"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-ordering-process
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** A Mercury order at HBW: configurator quote, phone confirmation, deposit, build allocation, delivery to our shop, install, sea trial, pickup. Stocked motors ship in days; special orders (including Verado) take weeks to months. Deposits are fully refundable on stocked, non-refundable on special order. Start at mercuryrepower.ca.
 
 ## The Mercury Ordering Process: A Complete Guide
 
@@ -183,7 +187,7 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 | Installation | 1-3 days |
 | **Total** | **6-16 weeks** |
 
-*Timelines vary by season—summer is busiest*
+*Timelines vary by season - summer is busiest*
 
 ### What to Prepare
 
@@ -218,10 +222,10 @@ Typically when motor is installed and ready for water test. Review payment terms
 
 ## Related guides
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
 ## FAQs
 
@@ -231,7 +235,7 @@ For in-stock motors, typically 2-6 weeks from deposit to water test. Ordered mot
 
 ### What deposit is required?
 
-Typically 25-50% depending on the dealer and whether the motor is in-stock or ordered. Special orders may require larger deposits. Terms vary—ask for them in writing.
+Typically 25-50% depending on the dealer and whether the motor is in-stock or ordered. Special orders may require larger deposits. Terms vary - ask for them in writing.
 
 ### Can I install my own motor?
 
@@ -239,7 +243,7 @@ Yes, but warranty may require dealer installation. DIY installation also means y
 
 ### What if there is a problem during water test?
 
-Issues found during water test are addressed before handover. This is exactly why we test—any problems are warranty covered and fixed before you take delivery.
+Issues found during water test are addressed before handover. This is exactly why we test - any problems are warranty covered and fixed before you take delivery.
 
 ## Next steps
 
@@ -252,7 +256,7 @@ Issues found during water test are addressed before handover. This is exactly wh
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Mercury vs Yamaha Outboards in Ontario (2026)"
 description: "An honest Mercury vs Yamaha comparison from an Ontario Mercury Platinum dealer. Fuel economy, noise, technology, warranty, and which is right for your boat."
 category: "Buying Guide"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury and Yamaha both build excellent outboards. For Ontario freshwater boating, Mercury wins on dealer network density, parts availability, and resale demand, not on mechanical superiority. If you're shopping in the Kawarthas, Trent-Severn, or Lake Ontario region, Mercury's local service depth is the practical differentiator.
 
 For Ontario freshwater boating, Mercury wins on dealer network, parts availability, and factory-OEM relationships with Canadian boat builders. Yamaha is a strong motor mechanically but has a thinner Canadian dealer network and fewer factory-rigged Yamaha boats. The mechanical reliability difference is small; the practical service difference favors Mercury. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -280,7 +284,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

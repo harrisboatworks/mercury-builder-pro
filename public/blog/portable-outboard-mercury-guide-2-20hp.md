@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)"
 description: "Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats."
 category: "Buying Guide"
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular kicker; the 5 is the canoe-and-tender favourite. All current portables are FourStroke. Tiller, electric or manual start, and short or long shaft are the key choices. Configure at mercuryrepower.ca.
 
 Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats. The Mercury 9.9 MH is the most popular small-boat motor in Canada. Drop-in install, no rigging required, easy to transport and store. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -239,7 +243,7 @@ Many lakes have horsepower restrictions of 10HP or less. The Mercury 9.9HP provi
 
 ### Can I really carry these by myself?
 
-Up to about 9.9HP (85 lbs), most adults can manage. 15HP and 20HP push the limits—they're "portable" in that they can mount on small transoms, but carrying is challenging.
+Up to about 9.9HP (85 lbs), most adults can manage. 15HP and 20HP push the limits - they're "portable" in that they can mount on small transoms, but carrying is challenging.
 
 ### Do portable outboards need winterization?
 
@@ -256,7 +260,7 @@ Yes. Follow the same winterization procedures as larger motors: stabilize fuel, 
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

@@ -6,9 +6,9 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "What Happens During a Mercury Repower (Step-by-Step Process)"
-description: "A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking..."
+description: "Last reviewed: 2026-05-07"
 category: "Repower"
 date_published: 2026-05-05
 date_modified: 2026-05-05
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # What Happens During a Mercury Repower (Step-by-Step Process)
 
-> A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking...
+> Last reviewed: 2026-05-07
 
 **Category:** Repower  
 **Published:** 2026-05-05  
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # What Happens During a Mercury Repower (Step-by-Step Process)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** A typical Mercury repower at HBW: configurator quote, phone call, deposit, transport to Gores Landing, motor mount and rigging, sea trial, pickup. Most jobs take 7-14 days at the shop once scheduled. Spring rush adds 2-4 weeks of lead time. Start at mercuryrepower.ca.
 
 A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking, drop-off, removal of old motor, transom and rigging inspection, installation of new motor and rigging, sea-trial with prop testing, final adjustments, and pickup with break-in coaching. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -97,7 +101,7 @@ If the customer wants to talk through the configuration, we do a 15 to 30 minute
 
 A deposit (typically 25% of the all-in cost) holds the slot and locks in the motor allocation. Customer signs the work order. Booking confirms the drop-off date and target completion date.
 
-If financing through Mercury Repower Financing at 7.99% APR, we handle the application in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
+If financing through Mercury Repower Financing at 7.99% APR (as of May 2026), we handle the application in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
 
 ### Step 4: Boat drop-off
 
@@ -291,7 +295,7 @@ We stand behind the work. Call us. Common post-pickup issues are minor (loose co
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

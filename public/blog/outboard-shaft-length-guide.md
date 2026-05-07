@@ -6,9 +6,9 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)"
-description: "Outboard shaft length is the distance from the motor's mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20..."
+description: "Last reviewed: 2026-05-07"
 category: "Buying Guide"
 date_published: 2026-05-05
 date_modified: 2026-05-05
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)
 
-> Outboard shaft length is the distance from the motor's mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20...
+> Last reviewed: 2026-05-07
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Measure transom height from the top to the bottom of the cutout: 15 inches needs a short shaft, 20 inches a long shaft, 25 inches an extra-long. Wrong shaft length means cavitation or a submerged powerhead. We confirm shaft length on every quote, see mercuryrepower.ca.
 
 Outboard shaft length is the distance from the motor's mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20 inch (Long), and 25 inch (Extra Long). Wrong shaft length causes cavitation, performance loss, or motor damage. Match the shaft to your boat's transom height. Live pricing on every Mercury we sell, including correct shaft selection, is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -258,7 +262,7 @@ We see this. Customer says "my old motor was 20-inch" but the boat actually need
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

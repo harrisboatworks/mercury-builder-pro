@@ -6,9 +6,9 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Best Mercury Outboard for Lake Ontario Salmon and Trout (2026)"
-description: "Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads."
+description: "Last reviewed: 2026-05-07"
 category: "Fishing & Local"
 date_published: 2026-04-22
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Best Mercury Outboard for Lake Ontario Salmon and Trout (2026)
 
-> Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads.
+> Last reviewed: 2026-05-07
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-22  
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** For Lake Ontario salmon and trout trolling, look at a 150-250 HP Mercury FourStroke main with a 9.9 ProKicker for the slow speeds downriggers and divers want. Lake Ontario is open, cold, and unforgiving, pick the bigger end of your hull's range. Quote installed at mercuryrepower.ca.
 
 Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads. The right Mercury for Lake Ontario salmon and trout is a 200 to 300 HP V8 FourStroke or Pro XS on a 21 to 26 ft center console or walkaround hull, often with a 15 HP ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -53,6 +57,8 @@ Lake Ontario-specific factors:
 - **Tournament fishing.** Lake Ontario hosts major salmon tournaments. Tournament-grade boats and motors are common.
 - **Multi-species fishing.** Same boats often target salmon, trout, walleye, and bass throughout the season.
 - **Mooring and slip storage.** Many Lake Ontario boats are slip-stored at marinas in Cobourg, Whitby, Newcastle, Port Credit, and other ports.
+
+**A note on cold water.** Lake Ontario water stays cold well into June and gets cold again by late September. [Transport Canada's cold-water survival guidance](https://tc.canada.ca/en/marine-transportation/publications/tp-13822-survival-cold-waters-2003) warns that immersion in water below 15°C is dangerous, even for strong swimmers. Carry a PFD, file a float plan, and dress for the water temperature, not the air temperature.
 
 ## Best Mercury for Lake Ontario by use case
 
@@ -262,7 +268,7 @@ For dedicated salmon fishing operations, yes. Sport fishers (with hardtop, full 
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

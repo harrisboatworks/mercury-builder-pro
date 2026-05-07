@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Tiller vs Remote Steering Outboard: Which to Choose (2026)"
 description: "Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want direct hands-on control."
 category: "Buying Guide"
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Tiller vs Remote Steering Outboard: Which to Choose (2026)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Tiller is right for small fishing boats under 20 HP, jon boats, and tight backwater work. Remote steering is right for almost everything else, especially anything with a windshield, console, or guests. Mercury offers tiller through 25 HP and select 60s. Configure either at mercuryrepower.ca.
 
 Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want direct hands-on control. Remote-control steering (steering wheel from helm) is best for console boats, family use, and any application where the operator is not at the back of the boat. The dividing line is usually around 15 to 20 HP and 14 to 16 ft hull length. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -260,11 +264,11 @@ Not simultaneously. Some boats with kicker motors have remote main motor and til
 
 ### Can I convert my Mercury outboard from tiller to remote steering later?
 
-Yes, you can convert most Mercury outboards from tiller to remote steering if the motor supports both configurations. A remote conversion requires a steering kit, helm controls, and installation labour — typically $500–$1,500+ in parts and labour. It costs less to spec it correctly upfront than to retrofit later. If you're considering a conversion, ask Harris Boat Works to quote it before you decide — it may be easier to order the remote-configured motor directly. Call 905-342-2153.
+Yes, you can convert most Mercury outboards from tiller to remote steering if the motor supports both configurations. A remote conversion requires a steering kit, helm controls, and installation labour, typically $500–$1,500+ in parts and labour. It costs less to spec it correctly upfront than to retrofit later. If you're considering a conversion, ask Harris Boat Works to quote it before you decide, it may be easier to order the remote-configured motor directly. Call 905-342-2153.
 
 ### Is tiller steering harder to learn than remote steering?
 
-Tiller is not harder to learn — it's different. The main adjustment is that tiller steering is reverse-intuitive: pushing the handle right turns the bow left. Most new tiller operators get comfortable within one or two outings. After that, many prefer it for the directness and feedback. The only situation where tiller gets challenging is at high speeds with powerful motors — which is exactly when remote steering makes more sense anyway.
+Tiller is not harder to learn, it's different. The main adjustment is that tiller steering is reverse-intuitive: pushing the handle right turns the bow left. Most new tiller operators get comfortable within one or two outings. After that, many prefer it for the directness and feedback. The only situation where tiller gets challenging is at high speeds with powerful motors, which is exactly when remote steering makes more sense anyway.
 
 ### What's the biggest Mercury motor available in tiller configuration?
 
@@ -272,27 +276,27 @@ Mercury offers tiller versions of motors up to 75HP. Above 75HP, tiller control 
 
 ### Can I have both tiller and remote steering on the same outboard motor?
 
-No, a single outboard motor is configured for one control type — either tiller or remote, not both simultaneously. On some specialized fishing boat setups, dual-control rigging exists (side mount tiller extension plus a remote), but this is not a standard configuration. If your use case requires steering from multiple positions, a second motor (such as a ProKicker trolling motor) or purpose-built dual-control rigging is the practical answer.
+No, a single outboard motor is configured for one control type, either tiller or remote, not both simultaneously. On some specialized fishing boat setups, dual-control rigging exists (side mount tiller extension plus a remote), but this is not a standard configuration. If your use case requires steering from multiple positions, a second motor (such as a ProKicker trolling motor) or purpose-built dual-control rigging is the practical answer.
 
 ### What is the cost difference between tiller and remote steering on a Mercury outboard?
 
-A tiller-configured Mercury outboard is typically less expensive than the remote-steering version of the same HP motor. However, a remote setup requires additional components — steering system, helm controls, throttle/shift box — adding cost. For a complete rigging comparison on a 60HP motor, a tiller setup is often $800–$1,500 less expensive total than a fully rigged remote setup with hydraulic steering. Build a quote at mercuryrepower.ca/quote/motor-selection and call 905-342-2153 for full rigging cost.
+A tiller-configured Mercury outboard is typically less expensive than the remote-steering version of the same HP motor. However, a remote setup requires additional components, steering system, helm controls, throttle/shift box, adding cost. For a complete rigging comparison on a 60HP motor, a tiller setup is often $800–$1,500 less expensive total than a fully rigged remote setup with hydraulic steering. Build a quote at mercuryrepower.ca/quote/motor-selection and call 905-342-2153 for full rigging cost.
 
 ### Is tiller or remote steering better for fishing on Rice Lake?
 
-For fishing on Rice Lake specifically, tiller is the choice of most serious anglers. Rice Lake is shallow and weedy — precise boat positioning matters. Tiller lets you stand at the transom, keep your eyes on the sonar and water ahead, and make immediate course corrections without looking at the helm. Remote steering makes more sense on Rice Lake for family trips, longer runs, or if your boat is 18ft or larger and needs a console for passenger seating.
+For fishing on Rice Lake specifically, tiller is the choice of most serious anglers. Rice Lake is shallow and weedy, precise boat positioning matters. Tiller lets you stand at the transom, keep your eyes on the sonar and water ahead, and make immediate course corrections without looking at the helm. Remote steering makes more sense on Rice Lake for family trips, longer runs, or if your boat is 18ft or larger and needs a console for passenger seating.
 
 ### Does Mercury offer electronic or digital tiller steering?
 
-Mercury does not currently offer fully electronic or steer-by-wire tiller systems — the tiller remains a direct mechanical connection to the motor. However, Mercury's tiller-equipped motors do integrate with the SmartCraft digital ecosystem via Bluetooth: VesselView Mobile shows engine data, maintenance schedules, and trip information on a smartphone. The result is mechanical simplicity at the control point with digital monitoring on your phone.
+Mercury does not currently offer fully electronic or steer-by-wire tiller systems, the tiller remains a direct mechanical connection to the motor. However, Mercury's tiller-equipped motors do integrate with the SmartCraft digital ecosystem via Bluetooth: VesselView Mobile shows engine data, maintenance schedules, and trip information on a smartphone. The result is mechanical simplicity at the control point with digital monitoring on your phone.
 
 ### Is hydraulic steering worth it on a Mercury outboard, and what does it cost?
 
-Hydraulic steering is worth it for motors 115HP and above, where cable steering becomes fatiguing and imprecise. For motors 150HP and above, hydraulic steering is essentially required. The cost adds roughly $800–$1,500 CAD to rigging cost depending on the system and installation. For motors under 115HP, a good-quality cable steering system is adequate. Harris Boat Works specs the right steering for your motor and hull during the rigging process — call 905-342-2153.
+Hydraulic steering is worth it for motors 115HP and above, where cable steering becomes fatiguing and imprecise. For motors 150HP and above, hydraulic steering is essentially required. The cost adds roughly $800–$1,500 CAD to rigging cost depending on the system and installation. For motors under 115HP, a good-quality cable steering system is adequate. Harris Boat Works specs the right steering for your motor and hull during the rigging process, call 905-342-2153.
 
 ### Which Mercury tiller motor is best for a 16-foot aluminum boat on a Kawartha lake?
 
-For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI Command Thrust in tiller is the most popular choice. The Command Thrust version has higher prop thrust than the standard 60HP, which helps get heavier loads on plane quickly — useful when carrying two or three people plus gear. It also handles the variable conditions on Kawartha lakes well: enough power for open-water runs, manageable at slow speed in the weeds, and reliable EFI cold-starts every morning.
+For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI Command Thrust in tiller is the most popular choice. The Command Thrust version has higher prop thrust than the standard 60HP, which helps get heavier loads on plane quickly, useful when carrying two or three people plus gear. It also handles the variable conditions on Kawartha lakes well: enough power for open-water runs, manageable at slow speed in the weeds, and reliable EFI cold-starts every morning.
 
 ## Next steps
 
@@ -305,7 +309,7 @@ For a 16-foot aluminum boat on Rice Lake or the Kawarthas, the Mercury 60HP EFI 
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

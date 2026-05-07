@@ -6,9 +6,9 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Complete Guide to Repowering Your Boat in the Kawarthas (2026)"
-description: "Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own."
+description: "Last reviewed: 2026-05-07"
 category: "Repowering"
 date_published: 2026-02-23
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Complete Guide to Repowering Your Boat in the Kawarthas (2026)
 
-> Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own.
+> Last reviewed: 2026-05-07
 
 **Category:** Repowering  
 **Published:** 2026-02-23  
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Complete Guide to Repowering Your Boat in the Kawarthas (2026)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** A Kawarthas repower at HBW typically takes 7-14 days at the shop once scheduled: configurator quote, phone call, transport to Gores Landing, install and sea trial, pickup. Most projects land $10,000-$25,000 installed depending on horsepower and rigging. Spring rush adds 2-4 weeks of lead time. Start at mercuryrepower.ca.
 
 Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake. Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -46,7 +50,7 @@ Six things move whether a repower is the right call for your specific boat:
 - **Hull condition.** A solid aluminum hull or fiberglass with a good transom can last 30+ more years. A soft transom, rotten floor, or major structural damage means walk away from the repower path.
 - **Boat fit.** Does the boat actually fit your family and your use? If you have outgrown it (more passengers, different water, different use), buy new. If it still fits, repower.
 - **Motor age and condition.** A 2-stroke from 1995 with hard starting, excessive smoke, and frequent repairs is the textbook repower candidate. A 5-year-old FourStroke that ran fine last summer is not (yet).
-- **Budget vs. payment tolerance.** Repowering at 7.99% APR over 60 to 84 months is usually cheaper monthly than financing a new boat. See the [financing guide](/blog/mercury-outboard-financing-ontario-2026) for math.
+- **Budget vs. payment tolerance.** Repowering at 7.99% APR (as of May 2026) over 60 to 84 months is usually cheaper monthly than financing a new boat. See the [financing guide](/blog/mercury-outboard-financing-ontario-2026) for math.
 - **How long you plan to keep the boat.** A 5-year hold favors a lower-investment repower. A 15-year hold justifies a bigger Mercury investment because the new motor will outlast the rest of the boat.
 - **Brand of existing motor.** Mercury-to-Mercury repowers usually keep most existing controls (rigging stays at the low end). Brand conversions (Evinrude, Yamaha, Honda to Mercury) require new everything in the control system.
 
@@ -251,15 +255,15 @@ A typical boat repower in Ontario depends on horsepower. 2026 planning ranges fr
 
 ### Can Harris Boat Works repower any brand of boat?
 
-Yes — Harris Boat Works can repower virtually any brand of boat with a Mercury outboard, provided the transom is structurally sound and rated for the replacement motor. We've repowered aluminum fishing boats, fibreglass runabouts, pontoons, and bowriders from dozens of manufacturers. The main variables are transom height, transom integrity, and control compatibility. We assess all of this at the initial consultation. For engine repairs after the repower, we only service Mercury and Mercruiser.
+Yes. Harris Boat Works can repower virtually any brand of boat with a Mercury outboard, provided the transom is structurally sound and rated for the replacement motor. We've repowered aluminum fishing boats, fibreglass runabouts, pontoons, and bowriders from dozens of manufacturers. The main variables are transom height, transom integrity, and control compatibility. We assess all of this at the initial consultation. For engine repairs after the repower, we only service Mercury and Mercruiser.
 
 ### What happens to my old motor after a repower?
 
-You have options: trade it in (value depends on brand, hours, and condition), sell it, or dispose of it. Some customers keep a working older motor as a backup or for a second boat. Evinrude motors have limited trade value due to the brand's 2020 discontinuation. Mercury motors in good condition hold more resale value. Harris Boat Works discusses options at the consultation — there's no obligation to leave the old motor with us.
+You have options: trade it in (value depends on brand, hours, and condition), sell it, or dispose of it. Some customers keep a working older motor as a backup or for a second boat. Evinrude motors have limited trade value due to the brand's 2020 discontinuation. Mercury motors in good condition hold more resale value. Harris Boat Works discusses options at the consultation, there's no obligation to leave the old motor with us.
 
 ### Should I repower or buy a new boat?
 
-Repowering makes more financial sense when the hull and interior are in good shape and you just need a new motor. A 75–115 HP repower at $17,000–$22,000 all-in before HST is often a fraction of the cost of a comparable new boat. Repowering makes less sense when the hull has significant damage, the design no longer fits your needs, or the combined cost doesn't make economic sense. Harris Boat Works provides an honest assessment — we won't recommend a repower on a boat that isn't worth the investment.
+Repowering makes more financial sense when the hull and interior are in good shape and you just need a new motor. A 75–115 HP repower at $17,000–$22,000 all-in before HST is often a fraction of the cost of a comparable new boat. Repowering makes less sense when the hull has significant damage, the design no longer fits your needs, or the combined cost doesn't make economic sense. Harris Boat Works provides an honest assessment, we won't recommend a repower on a boat that isn't worth the investment.
 
 ### How long does a repower take from start to finish at Harris Boat Works?
 
@@ -267,11 +271,11 @@ From consultation to back on the water, a typical repower at Harris Boat Works t
 
 ### Is it worth repowering a boat with a soft transom?
 
-A soft transom can be repaired before a repower, but it adds meaningful cost — typically $500–$2,500+ depending on severity. If the transom is soft but the rest of the boat is solid, repairing and repowering is often still the better option compared to buying new. If damage is severe or structural rot has spread, the math changes. Harris Boat Works assesses every boat's transom as part of the free consultation and gives a plain recommendation.
+A soft transom can be repaired before a repower, but it adds meaningful cost, typically $500–$2,500+ depending on severity. If the transom is soft but the rest of the boat is solid, repairing and repowering is often still the better option compared to buying new. If damage is severe or structural rot has spread, the math changes. Harris Boat Works assesses every boat's transom as part of the free consultation and gives a plain recommendation.
 
 ### What's the best Mercury motor for repowering a Kawartha Lakes fishing boat?
 
-For most 16–19 ft aluminum fishing boats on Kawartha Lakes and Rice Lake, the Mercury 75–115 HP FourStroke range is the right repower target. The 75 HP suits lighter boats and solo or two-person use. The 90 HP is a balanced middle option. The 115 HP is the most popular choice — its larger 2.1L engine handles a full boat confidently and holds strong resale value. For pontoons on the Kawarthas, 90–115 HP is most common. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can spec the right motor for your hull.
+For most 16–19 ft aluminum fishing boats on Kawartha Lakes and Rice Lake, the Mercury 75–115 HP FourStroke range is the right repower target. The 75 HP suits lighter boats and solo or two-person use. The 90 HP is a balanced middle option. The 115 HP is the most popular choice, its larger 2.1L engine handles a full boat confidently and holds strong resale value. For pontoons on the Kawarthas, 90–115 HP is most common. Harris Boat Works, Mercury dealer since 1965 in Gores Landing on Rice Lake, can spec the right motor for your hull.
 
 ## Next steps
 
@@ -284,7 +288,7 @@ For most 16–19 ft aluminum fishing boats on Kawartha Lakes and Rice Lake, the 
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

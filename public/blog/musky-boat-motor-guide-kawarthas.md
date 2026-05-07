@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide"
 description: "Choose the right Mercury outboard for musky fishing in Ontario's Kawartha Lakes. Power recommendations and setup tips from local musky anglers."
 category: "Buying Guide"
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/musky-boat-motor-guide-kawarthas
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** For musky in the Kawarthas, most anglers run a Mercury 90-150 FourStroke main with a 9.9 ProKicker for slow trolling big baits. Boat-control beats top speed on Stoney, Buckhorn, and Pigeon. Stay inside the capacity plate. We package main-plus-kicker setups regularly, quote at mercuryrepower.ca.
 
 ## Musky Fishing in the Kawarthas: Motor Selection Guide
 
@@ -121,10 +125,10 @@ This covers all musky fishing scenarios in the Kawarthas.
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
-- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) — Lake Simcoe walleye picks
-- [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
-- [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide) — Pro Kicker on Rice Lake
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
+- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing). Lake Simcoe walleye picks
+- [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout). Lake Ontario salmon and trout setups
+- [The Secret Weapon Rice Lake Anglers Swear By: Mercury ProKicker Guide](/blog/mercury-prokicker-rice-lake-fishing-guide). Pro Kicker on Rice Lake
 
 ## FAQs
 
@@ -155,7 +159,7 @@ Less critical than for walleye. Musky areas typically have adequate depth. Stand
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 
