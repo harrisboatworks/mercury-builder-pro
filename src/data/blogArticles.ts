@@ -3112,7 +3112,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'ontario-cottage-boat-motor-repower-guide',
     title: 'Ontario Cottage Boat Motor Repower Guide (2026)',
     description: 'For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually wins on the math against buying new. A Mercury repower lands $17,000 to $30,000 CAD all-in for typical cottage setups, against $50,000 to $90,000 CAD for comparable new packages. The hull is the asset; the motor is the wear part. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).',
-    image: '/lovable-uploads/Boat_Repowering_101_Hero.png',
+    image: '/lovable-uploads/Boat_Repowering_In_Progress.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-02',
     dateModified: '2026-05-04',
