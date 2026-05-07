@@ -67,6 +67,7 @@
     { "source": "/blog/troubleshooting-outboard-overheating", "destination": "/blog/outboard-overheating-emergency-guide", "statusCode": 301 },
     { "source": "/blog/pre-owned-mercury-what-to-check", "destination": "/blog/used-outboard-buying-guide-ontario", "statusCode": 301 },
     { "source": "/blog/mercury-service-schedule-complete-guide", "destination": "/blog/mercury-maintenance-intervals-20-100-300-rule", "statusCode": 301 },
+    { "source": "/blog/understanding-mercury-model-numbers", "destination": "/blog/how-to-read-mercury-outboard-serial-number", "statusCode": 301 },
     { "source": "/api/public-motors-api", "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-motors-api", "statusCode": 308 },
     { "source": "/api/public-quote-api", "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api", "statusCode": 308 },
     { "source": "/api/motors-md", "destination": "https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/motors-md", "statusCode": 308 }
