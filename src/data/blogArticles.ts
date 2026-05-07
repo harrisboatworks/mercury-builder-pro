@@ -15356,7 +15356,7 @@ No — we don't sell licences. Pick up your Ontario Outdoors Card and fishing li
   },
   {
     "question": "Do you sell fishing licences at HBW?",
-    "answer": "Yes — Outdoors Card and fishing licences are available at the shop. Bring ID. --- **Phone:** 905-342-2153 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) **Slip / launch info:** [harrisboatworks.ca/boatslips](https://harrisboatworks.ca/boatslips)"
+    "answer": "No — we don't sell licences. Pick up your Ontario Outdoors Card and fishing licence online at the [Ontario fishing licence site](https://www.ontario.ca/page/get-fishing-licence) before you head out. Most anglers do this from their phone the night before. --- **Phone:** 905-342-2153 **Address:** 5369 Harris Boat Works Rd, Gores Landing, ON **Boat rentals:** [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals) **Slip / launch info:** [harrisboatworks.ca/boatslips](https://harrisboatworks.ca/boatslips)"
   }
 ],
   },
