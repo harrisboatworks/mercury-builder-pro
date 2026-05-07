@@ -37,6 +37,7 @@ const Login = lazy(() => import("./pages/Login"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Settings = lazy(() => import("./pages/Settings"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const PricingReference = lazy(() => import("./pages/PricingReference"));
 
 // Quote builder pages
 const MotorSelectionPage = lazy(() => import("@/pages/quote/MotorSelectionPage"));
@@ -530,6 +531,7 @@ function AnimatedRoutes() {
         
         {/* Blog Routes */}
         <Route path="/blog" element={<Blog />} />
+        <Route path="/pricing-reference" element={<PricingReference />} />
         <Route path="/blog/fr/concessionnaire-mercury-platinum-ontario" element={<FrenchBlogArticle />} />
         <Route path="/blog/fr/:slug" element={<FrenchBlogArticlePage />} />
         <Route path="/blog/zh/mercury-repower-guide-gta" element={<MandarinBlogArticle />} />
