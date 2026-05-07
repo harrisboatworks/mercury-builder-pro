@@ -1,0 +1,13 @@
+ALTER VIEW public.counter_sales SET (security_invoker = true);
+ALTER VIEW public.customer_lifecycle SET (security_invoker = true);
+ALTER VIEW public.customer_summary SET (security_invoker = true);
+ALTER VIEW public.deals SET (security_invoker = true);
+ALTER VIEW public.deals_units SET (security_invoker = true);
+ALTER VIEW public.invoice_lines SET (security_invoker = true);
+ALTER VIEW public.mercury_motor_inventory SET (security_invoker = true);
+ALTER VIEW public.open_service_board SET (security_invoker = true);
+ALTER VIEW public.parts_inventory SET (security_invoker = true);
+ALTER VIEW public.parts_invoices SET (security_invoker = true);
+ALTER VIEW public.service_history SET (security_invoker = true);
+ALTER VIEW public.service_parts SET (security_invoker = true);
+ALTER VIEW public.unit_inventory SET (security_invoker = true);
