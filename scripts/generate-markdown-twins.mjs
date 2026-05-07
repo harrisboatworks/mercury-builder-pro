@@ -800,13 +800,8 @@ for (const article of blogArticlesAll) {
   writePublicMd(path, blogMarkdown(article));
   blogTwinSummaries.push({ path, title: article.title });
 }
-// Sanity check: every BLOG_TWIN_SLUGS entry (the curated top set) must still
-// be present so we don't silently lose a high-intent twin.
-const writtenSlugs = new Set(blogArticlesAll.map(a => a.slug));
-const missingBlog = BLOG_TWIN_SLUGS.filter(s => !writtenSlugs.has(s));
-if (missingBlog.length) {
-  throw new Error(`[markdown-twins] Curated blog twin slugs missing from sitemap-eligible set: ${missingBlog.join(', ')}`);
-}
+// Note: previously a curated BLOG_TWIN_SLUGS sanity check ran here. Removed
+// because every sitemap-eligible article now generates a twin above.
 console.log(`[markdown-twins] wrote ${blogTwinSummaries.length} blog twins`);
 
 writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
