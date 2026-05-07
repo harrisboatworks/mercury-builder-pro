@@ -105,7 +105,7 @@ Six things move the right HP for your boat:
 - **Intended use.** Solo fishing at 5 mph has totally different HP requirements than family cruising at 30 mph, which is different again from pulling a tube. Same boat, different right answer.
 - **Passenger and gear loading.** A two-person boat needs less HP than a six-person boat. Adding 800 lbs of crew and gear changes the math meaningfully.
 - **Where you launch and run.** Sheltered private dock vs. Bewdley public ramp vs. Lake Ontario open water all change the practical HP minimum. Wind exposure punishes underpowering.
-- **Maximum HP rating.** The capacity plate sets the ceiling. Mercury voids the warranty if we over-power a hull. We will not install a motor above the rated HP.
+- **Maximum HP rating.** The capacity plate sets the ceiling — exceeding it creates capacity-plate compliance, insurance, liability, and potential warranty problems. We won't rig a motor that breaks the rating.
 - **Long-term ownership plan.** A boat you plan to keep 15 years justifies a bigger motor than a boat you plan to flip in 3 years.
 
 ## HP class recommendations by boat type
@@ -177,7 +177,7 @@ We will not over-power your boat. We will not under-power it on purpose to fit a
 We see these every season:
 
 1. **Buying too small to save money.** A 9.9 on a 16-foot boat that should have a 25 will leave you fighting wind and tide every day. You will trade up in two seasons at full price. Pay once.
-2. **Buying too big because more is better.** A 250 HP on a 17-foot pontoon that the hull is rated for 150 HP is illegal and unsafe. Mercury voids warranty. The motor outpowers the hull and feels twitchy.
+2. **Buying too big because more is better.** A 250 HP on a 17-foot pontoon that the hull is rated for 150 HP is illegal and unsafe. Mercury can decline warranty coverage in that situation, your insurer can deny claims, and you've broken the federal capacity-plate compliance standard. The motor outpowers the hull and feels twitchy.
 3. **Buying for one specific use case and ignoring others.** "I just need it for fishing" is fine until your kids want to tube. Plan for the full use case.
 4. **Picking HP without checking prop.** A correctly-sized motor with a wrong prop loses 4 mph and 15% fuel economy. The HP you bought never reaches the water.
 5. **Ignoring loading.** Empty boat numbers are aspirational. Loaded boat numbers are real life.
@@ -6613,7 +6613,7 @@ Fall on Ontario's waters offers some of the best boating conditions—fewer crow
 ### The Cold Water Reality
 
 **Why Fall Water is Dangerous**:
-Ontario waters cool rapidly in fall. By October, surface temperatures can drop to 10-15°C—cold enough for hypothermia to set in within minutes of immersion.
+Ontario waters cool rapidly in fall. By October, surface temperatures can drop to 10-15°C—cold enough for hypothermia to set in within minutes of immersion. See [Transport Canada's cold-water survival guidance](https://tc.canada.ca/en/marine-transportation/publications/tp-13822-survival-cold-waters-2003) for the full safety procedures.
 
 **Cold Water Shock**:
 - Initial gasp reflex (dangerous if underwater)
@@ -10253,7 +10253,7 @@ If you want a number for a specific motor, [build a quote](/quote/motor-selectio
 We have rigged enough boats to know that the answer is rarely "buy whatever fits your budget." A bad recommendation costs you money in the wrong prop, the wrong controls, or a motor that overworks itself for the next 15 years. Before we quote, we want to know:
 
 - **Boat make, model, year, and length.** Older hulls have transom limits not all customers know about.
-- **Maximum HP rating on the capacity plate.** We will not over-power a hull. Mercury voids the warranty if we do.
+- **Maximum HP rating on the capacity plate.** We will not over-power a hull. Overpowering creates capacity-plate compliance, insurance, liability, and potential warranty problems.
 - **Hull condition.** Soft transoms cannot hold a heavy motor safely. A walk-around with a moisture meter takes 10 minutes and saves you a lot of money on a mistake.
 - **Existing controls and gauges.** Some are fine. Some need to go in the bin.
 - **What you actually do with the boat.** A guy fishing two mornings a week wants different power than a family pulling tubes on weekends. Same hull, different right answer.
@@ -10772,7 +10772,7 @@ At cruise, the 115 is more efficient. The 150 is slightly less efficient but sti
 For typical family fishing and recreational use, the 115 is plenty. For active water sports with full loading, the 150 is the better fit. The 18 ft aluminum is the boundary where either motor works depending on use case.
 
 **Can I run a Mercury 150 on a boat rated up to 115 HP?**
-No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty if we install a motor above the rated maximum. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
+No. The capacity plate sets the legal and warranty-backed ceiling — exceeding it creates capacity-plate compliance, insurance, liability, and potential warranty problems. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
 
 **What's the weight difference between 115 and 150?**
 About 90 to 100 lbs (~40 kg). The 150 (3.0L inline 4) is about 455 lb, the 115 (2.1L inline 4) is about 359 lb. On smaller transoms, the weight difference can affect handling.
@@ -11258,6 +11258,8 @@ Lake Ontario-specific factors:
 - **Tournament fishing.** Lake Ontario hosts major salmon tournaments. Tournament-grade boats and motors are common.
 - **Multi-species fishing.** Same boats often target salmon, trout, walleye, and bass throughout the season.
 - **Mooring and slip storage.** Many Lake Ontario boats are slip-stored at marinas in Cobourg, Whitby, Newcastle, Port Credit, and other ports.
+
+**A note on cold water.** Lake Ontario water stays cold well into June and gets cold again by late September. [Transport Canada's cold-water survival guidance](https://tc.canada.ca/en/marine-transportation/publications/tp-13822-survival-cold-waters-2003) warns that immersion in water below 15°C is dangerous, even for strong swimmers. Carry a PFD, file a float plan, and dress for the water temperature, not the air temperature.
 
 ## Best Mercury for Lake Ontario by use case
 
@@ -12022,7 +12024,7 @@ A few moves that genuinely save money without compromising the boat:
 
 We have rigged enough small Mercury motors on Rice Lake aluminum boats to know where the bottom honestly is. Before we recommend a low-end motor, we want to know:
 
-- **Boat capacity plate.** Maximum HP rating is the real ceiling. We will not over-power your hull. Mercury voids the warranty if we do.
+- **Boat capacity plate.** Maximum HP rating is the real ceiling. We will not over-power your hull. Overpowering creates capacity-plate compliance, insurance, liability, and potential warranty problems — none of them worth saving a few horsepower.
 - **Transom condition.** A soft transom cannot safely hold any motor. We check with a moisture meter as part of the assessment.
 - **What you actually do on the water.** Solo fishing two mornings a week is a totally different motor than weekend family cruising.
 - **Where you launch.** Sheltered private dock vs. Bewdley public ramp on a windy afternoon makes a real difference in the right HP.
