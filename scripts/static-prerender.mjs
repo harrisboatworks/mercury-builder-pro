@@ -21,9 +21,8 @@ import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
 import { marked } from 'marked';
 
-// Configure marked: GFM, no smartypants (so quotes pass through cleanly),
-// preserve heading IDs via slug-style anchors below.
-marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
+// Configure marked: GFM tables/strike, no auto line-break paragraphs.
+marked.setOptions({ gfm: true, breaks: false });
 
 // Render an article's markdown body to HTML for the <noscript> fallback.
 // Strips the leading H1 (the page already renders one), the author footer,
