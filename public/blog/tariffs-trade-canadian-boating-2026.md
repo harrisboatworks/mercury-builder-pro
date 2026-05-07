@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Tariffs, Trade, and Canadian Boating: What Harris Boat Works Customers Should Know in 2026"
 description: "U.S. - Canada tariffs, retaliatory measures, and the 2026 CUSMA review are creating uncertainty in the boating world. Here's a plain-language breakdown of what it all..."
 category: "Market Insight"
@@ -220,7 +220,7 @@ Trade friction affects parts availability in Ontario marinas primarily through p
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

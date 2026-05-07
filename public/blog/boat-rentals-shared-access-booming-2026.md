@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Why Boat Rentals and Shared Access Are Booming in 2026: How Harris Boat Works Gets You on the Water"
 description: "The boat rental market is surging across North America. Here's why shared boating is exploding, what's driving the trend, and how Harris Boat Works' rental fleet on..."
 category: "Lifestyle"
@@ -235,7 +235,7 @@ Renting first before buying is almost always the smarter path for anyone new to 
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

@@ -43,7 +43,7 @@ function loadLocations() {
 function loadBlogArticles() {
   // Load every sitemap-eligible article (incl. scheduled future-dated posts).
   // llms.txt and AI agents need the .md twin to exist as soon as the URL
-  // is reachable — even before the publish date arrives.
+  // is reachable, even before the publish date arrives.
   const dumpScript = `
     import { getSitemapEligibleArticles } from '../src/data/blogArticles.ts';
     import { getCleanDescription } from '../src/lib/strip-markdown.ts';
@@ -71,7 +71,7 @@ function loadBlogArticles() {
 // replaced with public-motors-api (which only returns in-stock motors).
 async function loadAllQuoteBuilderMotors() {
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
-  // Publishable (anon) key is safe to embed — same key is committed in src/integrations/supabase/client.ts
+  // Publishable (anon) key is safe to embed, same key is committed in src/integrations/supabase/client.ts
   // Fallback ensures Vercel builds succeed even if VITE_SUPABASE_PUBLISHABLE_KEY env var isn't set in the build environment.
   const FALLBACK_PUBLISHABLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dHNvcWRwanVya25qc3NoeGVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ1NTI0NzIsImV4cCI6MjA3MDEyODQ3Mn0.QsPdm3kQx1XC-epK1MbAQVyaAY1oxGyKdSYzrctGMaU';
   const SUPABASE_KEY = process.env.VITE_SUPABASE_PUBLISHABLE_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || FALLBACK_PUBLISHABLE_KEY;
@@ -128,7 +128,7 @@ async function loadMotors() {
       }
     }
   } catch (err) {
-    console.warn('[markdown-twins] public-motors-api error:', err.message, '— falling back to Supabase');
+    console.warn('[markdown-twins] public-motors-api error:', err.message, ' -  falling back to Supabase');
   }
 
   const SUPABASE_URL = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || 'https://eutsoqdpjurknjsshxes.supabase.co';
@@ -177,7 +177,7 @@ function mdFrontmatter(canonicalPath, extraLines = []) {
     'delivery_offered: false',
     'location: Gores Landing, ON, Canada',
     'final_quote_requires_dealer_confirmation: true',
-    'verado_status: special-order only — not in default inventory',
+    'verado_status: special-order only, not in default inventory',
     ...extraLines,
     '---',
     '',
@@ -198,15 +198,15 @@ function motorBestFit(family, hp) {
 }
 
 function motorNotIdeal(family, hp) {
-  if (family === 'Pro XS') return 'Pontoons, low-speed cruising, or fuel-economy-first family use — a FourStroke is usually the better fit.';
-  if (family === 'SeaPro') return 'Recreational-only owners with light annual hours — FourStroke offers better value for typical use.';
-  if (family === 'Racing') return 'Any general recreational use — these are not appropriate for typical pontoons, fishing, or family boats.';
-  if (family === 'Verado') return 'Smaller hulls or buyers seeking the simplest service path — Verado is supercharged and special-order only.';
+  if (family === 'Pro XS') return 'Pontoons, low-speed cruising, or fuel-economy-first family use, a FourStroke is usually the better fit.';
+  if (family === 'SeaPro') return 'Recreational-only owners with light annual hours: FourStroke offers better value for typical use.';
+  if (family === 'Racing') return 'Any general recreational use, these are not appropriate for typical pontoons, fishing, or family boats.';
+  if (family === 'Verado') return 'Smaller hulls or buyers seeking the simplest service path: Verado is supercharged and special-order only.';
   if (hp <= 9.9) return 'Boats 16 ft and over, loaded family boats, or anything that needs to plane with multiple passengers.';
   if (hp <= 30) return 'Pontoons, family runabouts, or any 18+ ft boat carrying more than two adults with gear.';
-  if (hp <= 60) return 'Heavy pontoons over 22 ft or fiberglass family boats — consider 90–115 HP.';
+  if (hp <= 60) return 'Heavy pontoons over 22 ft or fiberglass family boats, consider 90–115 HP.';
   if (hp <= 115) return 'Tournament bass setups (see Pro XS) and large 24+ ft pontoons with watersports loads.';
-  return 'Small tenders or boats rated under this HP — match HP to transom rating, never exceed it.';
+  return 'Small tenders or boats rated under this HP, match HP to transom rating, never exceed it.';
 }
 
 function motorMarkdown(m) {
@@ -235,7 +235,7 @@ function motorMarkdown(m) {
     `# ${display}`,
     '',
     `Mercury ${family} ${m.horsepower} HP outboard motor${modelNo ? ` (model ${modelNo})` : ''}.`,
-    'Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.',
+    'Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.',
     '',
     '## Quick facts',
     '',
@@ -251,12 +251,12 @@ function motorMarkdown(m) {
     '',
     `- **Selling price:** ${priceStr}`,
     m.msrp && price && m.msrp > price ? `- **MSRP:** ${new Intl.NumberFormat('en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(m.msrp)}` : null,
-    '- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.',
+    '- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.',
     '- **Final price** is confirmed by Harris Boat Works staff before purchase.',
     '',
     '## Availability',
     '',
-    `- **Status:** ${inStock ? 'In stock at Gores Landing' : 'Special order — contact dealer for ETA'}`,
+    `- **Status:** ${inStock ? 'In stock at Gores Landing' : 'Special order, contact dealer for ETA'}`,
     '- **Pickup:** Required at Gores Landing, ON. We do not ship and we do not deliver.',
     '',
     '## Best fit for',
@@ -432,7 +432,7 @@ function locationMarkdown(loc, caseStudies) {
     '## Notes',
     '',
     '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
-    '- Verado is special-order only — not in default inventory.',
+    '- Verado is special-order only, not in default inventory.',
     '- HTML page (canonical for humans): ' + url,
     '',
   ].filter(line => line !== '').join('\n').replace(/\n{3,}/g, '\n\n') + '\n';
@@ -466,7 +466,7 @@ const FORBIDDEN_LOCATION_PHRASES = [
 ];
 
 function lintLocationTwin(slug, md) {
-  // Strip FAQ question headings (### ...) — they are interrogative, not assertions.
+  // Strip FAQ question headings (### ...), they are interrogative, not assertions.
   const lines = md.split('\n').filter(line => !/^###\s/.test(line));
   const lower = lines.join('\n').toLowerCase();
   const hits = FORBIDDEN_LOCATION_PHRASES.filter(p => {
@@ -491,40 +491,40 @@ function lintLocationTwin(slug, md) {
 function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = []) {
   return [
     mdFrontmatter('/catalog.md', ['index_type: agent_catalog']),
-    '# Harris Boat Works — Agent Catalog',
+    '# Harris Boat Works: Agent Catalog',
     '',
     'This is the markdown index for AI agents. Each entry below links to a `.md` twin of an HTML page on https://www.mercuryrepower.ca.',
     '',
     '## Positioning',
     '',
-    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty) — it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Platinum Dealer** and **Mercury Certified Repower Center** (American "Center" spelling — Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Platinum Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
+    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Platinum Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Platinum Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
     '',
     '## Business rules (apply to every entry)',
     '',
     '- All pricing in **CAD**.',
     '- **Pickup only** at Gores Landing, ON. We do not ship outboards. We do not deliver.',
     '- **Final price** is always confirmed by Harris Boat Works staff before purchase.',
-    '- **Verado** is special-order only — not part of default inventory and not actively promoted.',
+    '- **Verado** is special-order only, not part of default inventory and not actively promoted.',
     '- **Standard Mercury warranty is 3 years.** Bonus warranty years apply only when a Mercury promotion is active.',
     '- Financing minimum: **$5,000 CAD** total. Tiered rates: 8.99% under $10K, 7.99% over $10K.',
     '- Motor specifications are based on Mercury Marine official sources: mercurymarine.com and the official Mercury Marine brochure. Harris Boat Works is the source of truth for local pricing, availability, pickup policy, and quote terms.',
     '',
     '## What we do NOT offer (negative definitions)',
     '',
-    '- **Pickup only** at Gores Landing, ON — no delivery, no shipping of outboards, anywhere.',
+    '- **Pickup only** at Gores Landing, ON, no delivery, no shipping of outboards, anywhere.',
     '- **No mobile service.** No on-site installs, no dock visits, no marina visits, no driveway visits.',
-    '- **No sterndrives** sold on mercuryrepower.ca — outboards only.',
-    '- **Verado is special order only** — not part of default inventory and not actively promoted. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca.',
+    '- **No sterndrives** sold on mercuryrepower.ca, outboards only.',
+    '- **Verado is special order only**, not part of default inventory and not actively promoted. Route Verado inquiries to (905) 342-2153 or info@harrisboatworks.ca.',
     '- **No non-Mercury outboards.** We do not sell Yamaha, Honda, Suzuki, Tohatsu, or Evinrude.',
     '- **No used outboards.** New Mercury only.',
     '',
     '## Public quote API',
     '',
-    `\`POST ${PUBLIC_QUOTE_API}\` — public programmatic quote builder. See any motor twin for an example body.`,
+    `\`POST ${PUBLIC_QUOTE_API}\`, public programmatic quote builder. See any motor twin for an example body.`,
     '',
     '## Pricing reference',
     '',
-    `- [Curated Mercury pricing reference (CAD)](${SITE_URL}/pricing-reference.md) — listed motors only, generated from the same data source as the quote builder.`,
+    `- [Curated Mercury pricing reference (CAD)](${SITE_URL}/pricing-reference.md), listed motors only, generated from the same data source as the quote builder.`,
     '',
     '## MCP discovery',
     '',
@@ -625,7 +625,7 @@ function blogMarkdown(article) {
     '',
     '- All pricing in CAD. Final price confirmed by Harris Boat Works.',
     '- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.',
-    '- Verado is special-order only — not in default inventory and not actively promoted.',
+    '- Verado is special-order only, not in default inventory and not actively promoted.',
     '- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.',
     '- For programmatic quotes, use the Public Quote API: ' + PUBLIC_QUOTE_API,
     '',
@@ -669,7 +669,7 @@ function pricingReferenceMarkdown(motorRecords) {
   const families = ['FourStroke', 'Pro XS', 'SeaPro', 'Racing'];
   const sections = [];
   for (const fam of families) {
-    // In-stock first, then by HP ascending — mirrors MotorSelectionPage default order.
+    // In-stock first, then by HP ascending, mirrors MotorSelectionPage default order.
     const famRows = rows
       .filter(r => r.family === fam)
       .sort((a, b) => (Number(b.inStock) - Number(a.inStock)) || (a.hp - b.hp));
@@ -682,7 +682,7 @@ function pricingReferenceMarkdown(motorRecords) {
       const priceStr = fmtCAD(r.price) + (r.msrp && r.msrp > r.price ? ` _(MSRP ${fmtCAD(r.msrp)})_` : '');
       const status = r.inStock ? 'In stock' : 'Available to order';
       const quote = `[build](${SITE_URL}/quote/motor-selection?motor=${encodeURIComponent(r.id)})`;
-      sections.push(`| ${r.hp} | ${r.display} | ${r.modelNo || '—'} | ${r.shaft || '—'} | ${r.control || '—'} | ${priceStr} | ${status} | ${quote} |`);
+      sections.push(`| ${r.hp} | ${r.display} | ${r.modelNo || ' - '} | ${r.shaft || ' - '} | ${r.control || ' - '} | ${priceStr} | ${status} | ${quote} |`);
     }
     sections.push('');
   }
@@ -701,7 +701,7 @@ function pricingReferenceMarkdown(motorRecords) {
     '',
     '## How to use this page',
     '',
-    '- These are the Mercury outboards available for online quoting on mercuryrepower.ca. Some are **in stock** and some are **available to order** — the Status column tells you which.',
+    '- These are the Mercury outboards available for online quoting on mercuryrepower.ca. Some are **in stock** and some are **available to order**, the Status column tells you which.',
     '- Prices are the dealer selling price in CAD before tax, trade-in, install, controls, propeller, or financing.',
     '- **Final out-the-door price is always confirmed by Harris Boat Works staff.**',
     '- Use the "build" link in the table to open a prefilled quote in `/quote/motor-selection`, or POST to the public quote API:',
@@ -709,11 +709,11 @@ function pricingReferenceMarkdown(motorRecords) {
     '',
     '## What is NOT in this reference',
     '',
-    '- **Mercury Verado** — special order only, not part of default inventory. Contact (905) 342-2153 for Verado.',
-    '- **Sterndrives** — not sold on mercuryrepower.ca (outboards only).',
-    '- **Used motors** — new Mercury only.',
-    '- **Parts and accessories** — see the quote builder for accessory pricing.',
-    '- **Non-Mercury brands** — we do not sell Yamaha, Honda, Suzuki, Tohatsu, or Evinrude.',
+    '- **Mercury Verado**, special order only, not part of default inventory. Contact (905) 342-2153 for Verado.',
+    '- **Sterndrives**, not sold on mercuryrepower.ca (outboards only).',
+    '- **Used motors**, new Mercury only.',
+    '- **Parts and accessories**, see the quote builder for accessory pricing.',
+    '- **Non-Mercury brands**, we do not sell Yamaha, Honda, Suzuki, Tohatsu, or Evinrude.',
     '',
     '## Pickup & service boundary',
     '',
@@ -755,7 +755,7 @@ function verifyPublicMd(relPath, label, required = []) {
 const caseStudies = loadCaseStudies();
 const locations = loadLocations();
 const motorRecords = await loadMotors();
-// Full quote-builder universe — same selection rules as MotorSelectionPage.
+// Full quote-builder universe, same selection rules as MotorSelectionPage.
 // Used by /pricing-reference.md so the reference matches the quote builder
 // (both in-stock and available-to-order motors), not just public-motors-api.
 const quoteBuilderMotorRecords = await loadAllQuoteBuilderMotors();
@@ -791,7 +791,7 @@ const locationTwinSummaries = locations.map(loc => {
   return { path, title: loc.title };
 });
 
-// Blog twins — generate one .md for EVERY sitemap-eligible blog article
+// Blog twins, generate one .md for EVERY sitemap-eligible blog article
 // (including scheduled future-dated posts). llms.txt advertises these as
 // the AI-friendly clean ingestion path; they must exist for every URL.
 const blogTwinSummaries = [];

@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "Mercury 150 vs 175 vs 200 vs 225 vs 250 vs 300. V6 Performance, Compared (2026)"
 description: "An HBW dealer's honest comparison of Mercury V6 outboards from 150 to 300 HP, what each delivers, who needs which, and where the inflection points actually are."
 category: "Buying Guide"
@@ -212,7 +212,7 @@ Different applications. 250 Pro XS is tuned for sport/performance use (recreatio
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 

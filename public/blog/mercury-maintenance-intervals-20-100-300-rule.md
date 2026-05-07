@@ -6,7 +6,7 @@ pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 title: "The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know"
 description: "A Mercury Platinum dealer's guide to the 20/100/300-hour service schedule, what's done at each milestone, what it costs in Ontario, and which jobs are DIY vs dealer."
 category: "Service & Maintenance"
@@ -225,7 +225,7 @@ A Verado 300 at 300 hours, full timing belt + supercharger inspection (older I6 
 
 - All pricing in CAD. Final price confirmed by Harris Boat Works.
 - Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
-- Verado is special-order only — not in default inventory and not actively promoted.
+- Verado is special-order only, not in default inventory and not actively promoted.
 - Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
 - For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
 
