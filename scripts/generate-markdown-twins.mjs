@@ -41,10 +41,13 @@ function loadLocations() {
 }
 
 function loadBlogArticles() {
+  // Load every sitemap-eligible article (incl. scheduled future-dated posts).
+  // llms.txt and AI agents need the .md twin to exist as soon as the URL
+  // is reachable — even before the publish date arrives.
   const dumpScript = `
-    import { blogArticles, isArticlePublished } from '../src/data/blogArticles.ts';
+    import { getSitemapEligibleArticles } from '../src/data/blogArticles.ts';
     import { getCleanDescription } from '../src/lib/strip-markdown.ts';
-    const items = blogArticles.filter(isArticlePublished).map(a => ({
+    const items = getSitemapEligibleArticles().map(a => ({
       ...a,
       description: getCleanDescription(a),
     }));
@@ -53,7 +56,7 @@ function loadBlogArticles() {
   const tmpFile = join(ROOT, 'scripts', '.blog-dump.mts');
   writeFileSync(tmpFile, dumpScript);
   try {
-    return JSON.parse(execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8' }));
+    return JSON.parse(execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 }));
   } finally {
     try { rmSync(tmpFile); } catch {}
   }
@@ -788,20 +791,23 @@ const locationTwinSummaries = locations.map(loc => {
   return { path, title: loc.title };
 });
 
-// Blog twins — only the curated top-12 high-intent posts.
-const blogBySlug = new Map(blogArticlesAll.map(a => [a.slug, a]));
+// Blog twins — generate one .md for EVERY sitemap-eligible blog article
+// (including scheduled future-dated posts). llms.txt advertises these as
+// the AI-friendly clean ingestion path; they must exist for every URL.
 const blogTwinSummaries = [];
-const missingBlog = [];
-for (const slug of BLOG_TWIN_SLUGS) {
-  const article = blogBySlug.get(slug);
-  if (!article) { missingBlog.push(slug); continue; }
-  const path = `/blog/${slug}.md`;
+for (const article of blogArticlesAll) {
+  const path = `/blog/${article.slug}.md`;
   writePublicMd(path, blogMarkdown(article));
   blogTwinSummaries.push({ path, title: article.title });
 }
+// Sanity check: every BLOG_TWIN_SLUGS entry (the curated top set) must still
+// be present so we don't silently lose a high-intent twin.
+const writtenSlugs = new Set(blogArticlesAll.map(a => a.slug));
+const missingBlog = BLOG_TWIN_SLUGS.filter(s => !writtenSlugs.has(s));
 if (missingBlog.length) {
-  throw new Error(`[markdown-twins] Blog twin slugs not found in published articles: ${missingBlog.join(', ')}`);
+  throw new Error(`[markdown-twins] Curated blog twin slugs missing from sitemap-eligible set: ${missingBlog.join(', ')}`);
 }
+console.log(`[markdown-twins] wrote ${blogTwinSummaries.length} blog twins`);
 
 writePublicMd('/catalog.md', catalogMarkdown(motorTwinSummaries, caseStudyTwinSummaries, locationTwinSummaries, blogTwinSummaries));
 writePublicMd('/pricing-reference.md', pricingReferenceMarkdown(quoteBuilderMotorRecords));

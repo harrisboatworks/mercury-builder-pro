@@ -125,6 +125,7 @@
     { "source": "/about", "destination": "/about/index.html" },
     { "source": "/contact", "destination": "/contact/index.html" },
     { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog/:slug.md", "destination": "/blog/:slug.md" },
     { "source": "/blog/:slug", "destination": "/blog/:slug/index.html" },
     { "source": "/agents", "destination": "/agents/index.html" },
     { "source": "/motors/:slug", "destination": "/motors/:slug/index.html" },

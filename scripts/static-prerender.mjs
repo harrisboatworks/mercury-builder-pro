@@ -19,6 +19,33 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, rmSync } 
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { marked } from 'marked';
+
+// Configure marked: GFM tables/strike, no auto line-break paragraphs.
+marked.setOptions({ gfm: true, breaks: false });
+
+// Render an article's markdown body to HTML for the <noscript> fallback.
+// Strips the leading H1 (the page already renders one), the author footer,
+// and any custom :::directive::: blocks our renderer handles separately.
+function renderArticleBodyHtml(content) {
+  if (!content) return '';
+  let s = String(content);
+  // Drop leading H1 — it duplicates the route H1 we inject in noscript.
+  s = s.replace(/^\s*#\s+.+(?:\r?\n|$)/, '');
+  // Strip author footer signature (handled by AuthorByline component in SPA).
+  s = s.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
+  s = s.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
+  s = s.replace(/\n+\s*By Jay Harris[\s\S]*$/i, '');
+  // Strip custom directive blocks (e.g. :::image-placeholder ... :::).
+  s = s.replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, ' ');
+  try {
+    return marked.parse(s);
+  } catch (err) {
+    console.warn('[static-prerender] marked render failed:', err?.message);
+    return '';
+  }
+}
+
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -115,12 +142,20 @@ function loadAllBlogArticlesForSitemap() {
   }
 }
 
-// Load published blog articles (filters out future-dated posts).
+// Load ALL renderable blog articles for SSG.
+//
+// IMPORTANT: We pre-render every sitemap-eligible article — INCLUDING posts
+// whose publishDate is in the future ("scheduled"). Returning 404 for
+// scheduled posts hurts SEO (Google de-prioritizes the URL and may not
+// re-crawl when the date arrives). The mental model: scheduled posts are
+// "live but not yet promoted" — they exist at their URL and can be cited
+// by AI engines. The /blog index still uses getPublishedArticles() to hide
+// them from listings until their publish date.
 function loadBlogArticles() {
   const dumpScript = `
-    import { getPublishedArticles } from '../src/data/blogArticles.ts';
+    import { getSitemapEligibleArticles } from '../src/data/blogArticles.ts';
     import { getCleanDescription, sanitizeForSchema, markdownToNoscriptHtml } from '../src/lib/strip-markdown.ts';
-    const items = getPublishedArticles().map(a => ({
+    const items = getSitemapEligibleArticles().map(a => ({
       slug: a.slug,
       title: a.title,
       description: getCleanDescription(a),
@@ -155,6 +190,7 @@ function loadBlogArticles() {
     try { rmSync(tmpFile); } catch {}
   }
 }
+
 
 // Load active motor catalog. Primary source: public motors API (no auth, CORS-open,
 // matches what AI agents see). Fallback: Supabase REST with publishable key.
@@ -1652,13 +1688,16 @@ const blogArticleRoutes = blogArticles.map(article => ({
   intro: firstParagraph(article.content, article.description),
   schemas: [blogArticleSchema(article)],
   extraNoscript: () => {
+    // Full article body — bots that don't execute JS now see the entire
+    // post (~1000–2000 words), not just the noscript intro paragraph.
+    const bodyHtml = renderArticleBodyHtml(article.content);
     const faqHtml = (article.faqs && article.faqs.length > 0)
-      ? '<dl>' + article.faqs.map(f =>
+      ? '<section><h2>Frequently Asked Questions</h2><dl>' + article.faqs.map(f =>
           `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
-        ).join('') + '</dl>'
+        ).join('') + '</dl></section>'
       : '';
     const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
-    return tableHtml + faqHtml;
+    return `<article>${bodyHtml}</article>${tableHtml}${faqHtml}`;
   }
 }));
 
