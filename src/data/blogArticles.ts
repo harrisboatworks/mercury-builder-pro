@@ -91,6 +91,8 @@ export const blogArticles: BlogArticle[] = [
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Match the horsepower to your hull's capacity plate first, then pick within that range based on load and use. Bigger isn't better — over-powering creates capacity-plate compliance, insurance, liability, and warranty risk. Most Ontario family runabouts in the 17-20 ft range land between 90 and 150 HP. Build a real installed quote at mercuryrepower.ca.
+
 The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. The shortcut: aim for 70 to 90% of your maximum rating for typical recreational use. Going lower leaves you underpowered, going to 100% maxes out fuel economy. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -328,6 +330,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `# Mercury Motor Maintenance: Seasonal Care Tips for Ontario Boaters (2026)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury outboards in Ontario need three predictable touchpoints a year: spring commissioning, mid-season checks, and fall winterization with fogging and lower-unit oil. Skip winterization and you risk a cracked block from frozen water in the powerhead — a $4,000-plus mistake. Book early; spring rush adds weeks. Service scheduling and pricing live at mercuryrepower.ca.
 
 Mercury motor maintenance in Ontario follows the seasonal cycle: spring commissioning (April-May), summer mid-season check (July), fall winterization (October-November), and a winter storage period. The annual service costs less than a single major repair on a neglected motor. We do all of these at HBW. For a real quote on your specific motor, [request service](https://hbw.wiki/service) or call (905) 342-2153.
 
@@ -609,6 +613,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** FourStroke is the workhorse for fishing, family, and pontoon use. Pro XS is the same powerhead tuned for higher RPM and bass/performance hulls. Verado is the supercharged premium tier — special order only at HBW, not stocked. For most Ontario freshwater boaters, FourStroke or Pro XS is the right call. Configure either at mercuryrepower.ca.
+
 Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the supercharged premium line, 250 to 600+ HP, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the [motor selection page](/quote/motor-selection).
 
 ## Quick recommendation
@@ -826,6 +832,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['boat repowering', 'when to replace outboard', 'repower cost', 'new boat vs repower', 'outboard motor replacement'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Repower when annual repair bills approach 25-30 percent of a new motor's price, when parts for your old powerhead are scarce, or when the hull is sound but the motor is tired. A modern Mercury FourStroke pays back in fuel, reliability, and resale. Build an installed repower quote — motor, rigging, and labour — at mercuryrepower.ca.
 
 The signs your motor needs replacement are usually consistent: harder starts each spring, fuel system problems, declining performance, repair bills creeping up, or you're a worry-cycle into every fishing trip. For most Ontario boaters, the right time to repower is the off-season after the second or third year of those signs, not the morning the motor finally dies. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -1085,6 +1093,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `# Breaking In a New Mercury Motor (2026)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury's break-in is roughly 10 hours: vary RPM in the first hour, avoid sustained wide-open throttle for the first two, and complete the 20-hour service afterward. Skipping break-in shortens piston ring seating and can affect long-term oil consumption. Full schedule and 20-hour service booking at mercuryrepower.ca.
 
 The first 10 hours of a new Mercury are the most important hours of its service life. Mercury's break-in protocol calls for graduated load and RPM during this period: vary throttle, avoid sustained WOT, and follow the specific RPM guidance for the motor model. The first oil change at 20 hours is also important on FourStrokes. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -1350,6 +1360,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['mercury prokicker', 'kicker motor rice lake', 'trolling motor ontario', 'prokicker installation', 'mercury 9.9 prokicker', 'kicker motor fishing boat', 'rice lake walleye trolling'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** The Mercury 9.9 ProKicker is the right kicker for Rice Lake walleye and musky trolling — high gear ratio for slow speeds, electric start, power tilt, and remote-ready. It's a different motor than the standard 9.9 portable. We rig and tiller-link these regularly for Kawartha boats. Build a kicker package at mercuryrepower.ca.
 
 The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -1636,6 +1648,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['mercury dealer ontario', 'harris boat works', 'mercury outboard dealer', 'mercury sales peterborough', 'trusted boat dealer ontario'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** HBW has been the Rice Lake Mercury dealer since 1947 — three generations, transparent installed pricing online, and one of Ontario's deepest service benches. We post real prices, quote installed packages on the spot, and service what we sell. The full inventory and configurator are at mercuryrepower.ca.
 
 Harris Boat Works has been a Mercury dealer since 1965. Three generations of HBW have rigged Mercurys, serviced them, and stood behind them. We are a Mercury Platinum dealer, which gives us factory-direct access to support, training, and inventory. We sell Mercury exclusively because the math works for our customers and our shop. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -1924,6 +1938,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** For most aluminum fishing boats in the 14-18 ft range, a Mercury 25-60 HP FourStroke is the sweet spot. Match the hull's capacity plate, pick tiller or remote based on layout, and choose Command Thrust if you're loading heavy or pushing a wide transom. Installed pricing for every option lives at mercuryrepower.ca.
+
 The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing. Remote-control 40 to 60 HP suits 14 to 16 ft consoles. The 90 to 115 HP class is the sweet spot for 16 to 19 ft fishing boats with two or three anglers and gear. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -2129,6 +2145,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['mercury for pontoon boat', 'best pontoon outboard', 'pontoon motor hp', 'command thrust pontoon', 'mercury 115 pontoon', 'mercury 150 pontoon', 'rice lake pontoon'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Pontoons need torque, not top speed. For most 18-22 ft Ontario pontoons, a Mercury 90-115 Command Thrust is the right answer — bigger prop, lower gear ratio, better hole-shot with people aboard. Stay inside your tube rating. Build an installed pontoon repower quote at mercuryrepower.ca.
 
 For 18 to 22 ft pontoons in Ontario, the Mercury 90 to 150 HP FourStroke with Command Thrust is the right answer. Command Thrust is the gearcase that matters on pontoons. Cruising-only setups can run a 90 CT; family use with water sports wants 115 to 150 CT. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -2372,6 +2390,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['mercury command thrust', 'command thrust pontoon', 'mercury gearcase', 'pontoon repower', 'mercury fourstroke pontoon'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Command Thrust uses a larger gearcase and prop than the standard FourStroke at the same horsepower. On a loaded pontoon or a heavy aluminum hull, that means faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See pricing at mercuryrepower.ca.
 
 Mercury Command Thrust is the gearcase option that turns a "good" pontoon Mercury into a "great" one. It is not a separate motor family. It is a gearcase upgrade available on Mercury FourStroke 115 HP and up. The bigger gearcase, larger prop, and torque-tuned gear ratio give pontoons meaningful hole shot and load-handling improvement. The cost premium over standard is worth it on pontoons. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -2620,6 +2640,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['rice lake pontoon', 'best pontoon rice lake', 'legend pontoon ontario', 'cottage pontoon boat', 'kawartha pontoon'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** For Rice Lake cottage use, look at 20-22 ft pontoons from Legend, Princecraft, or Sylvan with a Mercury 90-115 Command Thrust. Triple-tube only matters above 150 HP; most family use is fine on twin tubes. Stay inside the capacity plate. We package these regularly — quote at mercuryrepower.ca.
 
 For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust. The lake is sheltered enough that you don't need a tritoon for most uses, but the 22 ft length gives the deck space and capacity that cottage use rewards. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -2889,6 +2911,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Same powerhead, different tuning and gearcase. The 90 is the sweet spot for most 17-19 ft aluminum and fibreglass hulls — best balance of price, fuel use, and performance. The 115 makes sense on heavier or wider transoms, especially Command Thrust on pontoons. The 75 is rare in Ontario. Compare installed pricing at mercuryrepower.ca.
+
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -3144,6 +3168,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Most Ontario cottage repowers fall in the 25-115 HP range and run $8,000-$22,000 installed depending on rigging needs. A modern FourStroke buys you quiet running, better fuel use, and a 5-year limited warranty. We do dozens of cottage repowers a season from the Kawarthas to the Trent. Build a quote at mercuryrepower.ca.
+
 For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually wins on the math against buying new. A Mercury repower lands $17,000 to $30,000 CAD all-in for typical cottage setups, against $50,000 to $90,000 CAD for comparable new packages. The hull is the asset; the motor is the wear part. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -3374,6 +3400,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** For Rice Lake fishing — walleye, musky, panfish — most boats are happy with a Mercury 25-90 FourStroke as main power and a 9.9 ProKicker for trolling. Stay inside the capacity plate. Rice Lake's shallow, weedy structure rewards manoeuvrability over top speed. Build a real kicker-and-main package at mercuryrepower.ca.
+
 The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -3579,6 +3607,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `# Complete Guide to Repowering Your Boat in the Kawarthas (2026)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** A Kawarthas repower at HBW typically takes 7-14 days at the shop once scheduled: configurator quote, phone call, transport to Gores Landing, install and sea trial, pickup. Most projects land $10,000-$25,000 installed depending on horsepower and rigging. Spring rush adds 2-4 weeks of lead time. Start at mercuryrepower.ca.
 
 Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake. Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -3841,6 +3871,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** For most Ontario bass boats in the 17-20 ft range, the Mercury Pro XS 150 or 175 is the right call — high-RPM tune, light gearcase, and the hole-shot bass anglers expect. Stay inside the hull's max HP. Build an installed Pro XS package at mercuryrepower.ca.
+
 ## Choosing the Right Mercury for Your Bass Boat
 
 Bass boats demand motors that deliver explosive hole-shot, reliable performance, and the power to run hard all day. Whether you're running Rice Lake looking for smallmouth, heading to a tournament trail, or just want a rig that keeps up — here's how to choose the right Mercury.
@@ -4004,6 +4036,8 @@ If budget is tighter and you fish recreationally — chasing smallmouth on Rice 
     content: `# Mercury Outboard Fuel Efficiency Guide (2026)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Modern Mercury FourStrokes burn 25-40 percent less fuel than two-stroke equivalents at cruise. Real efficiency comes from prop pitch matched to load, clean hull, and cruising at the motor's mid-RPM sweet spot — not from the smallest motor that fits. We dial in props on every install. Quote a complete package at mercuryrepower.ca.
 
 The single biggest fuel-efficiency lever on a Mercury is prop selection. Right prop running at correct WOT RPM gives best economy. Other levers in order: trim, hull cleanliness, weight reduction, and cruise speed selection. HP class matters less than most owners assume; modern FourStrokes are all efficient at correct cruise. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -4246,6 +4280,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Most Ontario center consoles in the 18-23 ft range are happy on a Mercury 150-250 V6 FourStroke. Pick the bigger end of the range if you load heavy or fish offshore on Lake Ontario. Stay inside the capacity plate. Build an installed center-console repower quote at mercuryrepower.ca.
+
 ## Choosing Mercury Power for Center Console Boats
 
 Center consoles range from 18-foot bay boats to 43-foot offshore warriors. Here's how to choose the right Mercury power.
@@ -4407,6 +4443,8 @@ Mercury's Joystick Piloting for Outboards is a game-changer for docking:
     content: `# Spring Outboard Commissioning Checklist (2026 Ontario)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Spring commissioning at HBW covers fuel system flush, fresh plugs, lower-unit oil check, water-pump impeller inspection, anode check, and a full systems test. Book before April or you'll wait. Most jobs are done in a day once the boat's in the shop. Schedule and pricing at mercuryrepower.ca.
 
 Spring commissioning brings your Mercury back to operational state after winter storage. The process covers fuel system, cooling system, lubrication, electrical, and hull inspection. Most Mercury motors that fail in May are motors that skipped a step in commissioning. We do spring service on hundreds of motors at HBW each year. Book early; April and May slots fill up by March.
 
@@ -4697,6 +4735,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Tiller is right for small fishing boats under 20 HP, jon boats, and tight backwater work. Remote steering is right for almost everything else, especially anything with a windshield, console, or guests. Mercury offers tiller through 25 HP and select 60s. Configure either at mercuryrepower.ca.
+
 Tiller motors are best for small boats (under 16 ft), kicker applications, and solo fishing where you want direct hands-on control. Remote-control steering (steering wheel from helm) is best for console boats, family use, and any application where the operator is not at the back of the boat. The dividing line is usually around 15 to 20 HP and 14 to 16 ft hull length. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -4979,6 +5019,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Match prop pitch so the motor hits its WOT RPM range with a normal load. Too much pitch lugs the motor; too little over-revs it. Aluminum is the default; stainless gains 1-3 MPH and durability but costs more. We re-prop on every install if needed. Standard prop allowance is included — see mercuryrepower.ca.
+
 A wrong prop on the right motor loses you 4 mph and 15% fuel economy. The correct prop lets a Mercury hit its rated WOT RPM at typical loading, which is the only test that matters. Aluminum 3-blade props (typical $450 CAD) cover up to 115 HP. Stainless 3 or 4-blade props ($800 to $2,000 CAD) take over from 150 HP up. Live pricing on every Mercury motor and prop is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -5219,6 +5261,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Mercury SeaPro is the commercial-grade FourStroke built for high-hour use — guides, charters, work boats. Beefier internals, longer service intervals, and a 3-year commercial warranty. For private recreational use the standard FourStroke is the right call. SeaPro is special order — contact us through mercuryrepower.ca.
+
 If your boat earns money — running a fishing guide service, a rental fleet, charter trips, government work, or any application that puts hundreds or thousands of hours on a motor every year — your motor's downtime IS your downtime. Mercury SeaPro is built to keep that downtime as low as possible.
 
 For everyone else, SeaPro is overkill. The standard FourStroke does the job at lower cost. We sell both. The honest version of "which one for you" comes down to two numbers: how many hours you'll run it per year, and how much one breakdown day costs you.
@@ -5381,6 +5425,8 @@ If you run a commercial boat operation in the Kawarthas, Trent-Severn, or anywhe
     content: `# Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury portables run 2.5 to 20 HP — light enough to carry, simple enough to maintain. The 9.9 is the most popular kicker; the 5 is the canoe-and-tender favourite. All current portables are FourStroke. Tiller, electric or manual start, and short or long shaft are the key choices. Configure at mercuryrepower.ca.
 
 Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats. The Mercury 9.9 MH is the most popular small-boat motor in Canada. Drop-in install, no rigging required, easy to transport and store. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -5614,6 +5660,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** On Rice Lake, a gas kicker like the Mercury 9.9 ProKicker wins for long trolling days and big-water reach. Electric trolling motors win for stealth and bow-mount precision in shallow weed beds. Most serious anglers run both. We rig either as a complete package — quote at mercuryrepower.ca.
+
 Short answer: most serious Rice Lake anglers run both. A bow-mount electric for spot-lock and silent precision, a transom kicker for long trolling runs and rough-water reliability. They solve different problems.
 
 But if you can only afford one — or you want to pick the right *first* one — the answer depends entirely on what you fish for and how you fish. We rig both setups every spring. Here's the honest breakdown of which wins for which boater, with the math we'd do at the shop if you walked in.
@@ -5760,6 +5808,8 @@ Book at [hbw.wiki/service](https://hbw.wiki/service) or quote a new ProKicker at
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Start with the capacity plate's max HP — that's your federal ceiling. Then pick within the upper third of that range for normal loads, or the lower third if you're pushing a kicker, fuel, and gear. Hull weight, transom width, and use case matter more than rules of thumb. Build a real quote at mercuryrepower.ca.
+
 ## How to Size Your Boat Motor
 
 [Choosing the right horsepower](/blog/how-to-choose-right-horsepower-boat) involves more than just checking your capacity plate. Here's how to think through motor sizing.
@@ -5895,6 +5945,8 @@ Bring us your boat info and tell us how you fish. We'll recommend the right moto
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** HBW offers Mercury Repower Financing through DealerPlan: 7.99 percent APR (as of May 2026) on motor packages $10,000 and up, 8.99 percent under $10,000. Financing isn't available below $5,000. A $299 DealerPlan fee applies. Apply with your installed quote from mercuryrepower.ca.
+
 ## Financing Your New Mercury Outboard
 
 A new Mercury motor is an investment. Financing makes it manageable and can get you on the water sooner. Here's what you need to know.
@@ -6025,6 +6077,8 @@ For real CAD pricing on what you'd actually be financing, see our canonical [202
     keywords: ['trade in boat motor', 'outboard trade in value', 'sell boat motor', 'upgrade outboard', 'boat motor value'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Trade-in value depends on brand, horsepower, age, and condition. Mercury holds value best in Ontario; Yamaha takes a small penalty, Honda and Suzuki larger ones. We anchor against median selling prices and cap the credit at the motor subtotal. Get an instant trade estimate inside the configurator at mercuryrepower.ca.
 
 ## Maximizing Your Motor Trade-In Value
 
@@ -6172,6 +6226,8 @@ Upgrading your outboard? Your current motor has value. Here's how to get the bes
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** For musky in the Kawarthas, most anglers run a Mercury 90-150 FourStroke main with a 9.9 ProKicker for slow trolling big baits. Boat-control beats top speed on Stoney, Buckhorn, and Pigeon. Stay inside the capacity plate. We package main-plus-kicker setups regularly — quote at mercuryrepower.ca.
+
 ## Musky Fishing in the Kawarthas: Motor Selection Guide
 
 Chasing muskies demands a capable boat and the right motor. Here's what Kawartha musky hunters need.
@@ -6305,6 +6361,8 @@ This covers all musky fishing scenarios in the Kawarthas.
     keywords: ['small lake motor', 'cottage lake outboard', 'hp restricted lake', 'electric motor limit lake', 'ontario lake motor'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** On Ontario's small lakes — many under 10 HP electric-only — a Mercury 5 or 9.9 FourStroke portable is usually the right call. Where bigger motors are allowed, 25-60 HP covers most cottage runabouts. Always check the lake's local restrictions. Configure portable and mid-range options at mercuryrepower.ca.
 
 ## Motors for Small Lakes and Cottage Waters
 
@@ -6447,6 +6505,8 @@ Contact us about electric options
     keywords: ['walleye opener', 'ontario walleye season', 'boat prep checklist', 'fishing opener prep', 'walleye opener checklist'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Get the boat ready two weekends before the second Saturday of May: battery load test, fresh fuel, working lights, registered PFDs, kicker tested, and a Mercury spring service if you didn't winterize cleanly. The opener doesn't wait for a no-start at the launch. Service slots fill fast — book through mercuryrepower.ca.
 
 The Ontario walleye opener (typically the second Saturday of May for Zone 17 Kawartha lakes) is the highest-stakes morning of the fishing season. The boat must run reliably, fish the way it did last fall, and not cost you opening morning to a dead battery or stale gas. This checklist covers what to do in the 2 weeks before opener so you're fishing instead of fixing. We do walleye opener prep at HBW; book early.
 
@@ -6668,6 +6728,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Late-season Ontario boating means cold water, short days, and shoulder weather. Wear a PFD, file a float plan, carry a charged VHF, and dress for water temperature, not air temperature. Cold-water immersion is the biggest fall risk — see Transport Canada TP 13822 for survival guidance. Book fall service at mercuryrepower.ca.
+
 ## Late Season Boating Safety: Fall Tips for Ontario Waters
 
 Fall on Ontario's waters offers some of the best boating conditions—fewer crowds, stunning colours, and excellent fishing. But cooling water temperatures demand extra safety awareness.
@@ -6846,6 +6908,8 @@ Proper fall shutdown protects your motor for spring. Schedule winterization befo
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Ontario's hard boating season runs May to October — five months. The boaters who get the most out of it commission early, winterize on time, and keep the motor on a Mercury maintenance schedule. Don't waste opening weekend on a no-start. Schedule spring and fall service at mercuryrepower.ca.
+
 ## Maximizing Ontario's Boating Season
 
 Ontario's boating season is precious—roughly May through October. Here's how to maximize every moment.
@@ -6973,6 +7037,8 @@ Ontario's boating season is precious—roughly May through October. Here's how t
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Winter is the best time to plan a spring repower. Inventory is open, build slots are unbooked, and we can lock in pricing before the spring rush. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
+
 ## Winter Repower Planning
 
 Winter is the perfect time to plan and execute a repower. Your boat sits anyway—why not make it ready for spring with fresh power?
@@ -7096,6 +7162,8 @@ If yes to most, repower makes sense.
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Mercury's 2027 lineup carries the current FourStroke and Pro XS architecture forward with software refinements, expanded Avator electric options, and continued V12 Verado availability for the offshore tier. Stocked Ontario models stay focused on 2.5-300 HP. Watch the configurator at mercuryrepower.ca for live 2027 pricing as it lands.
+
 ## 2027 Mercury Outboard Preview
 
 As we look toward the 2027 model year, here's what to expect from Mercury Marine's lineup.
@@ -7201,6 +7269,8 @@ We'll provide:
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Year-end deals exist but the math is more nuanced than most assume — Mercury controls promotions and dealers can't manufacture extra discount. The real win at year-end is build-slot priority for spring install. Configure with current promotions baked in at mercuryrepower.ca.
+
 ## Year-End Motor Buying: Is It the Best Time?
 
 Conventional wisdom says year-end is deal time. Is that true for boat motors? Here's the reality.
@@ -7304,6 +7374,8 @@ Before you negotiate, anchor your expectations to real numbers — our [2026 Mer
     keywords: ['mercury family boat motor', 'family runabout outboard', 'mercury for pontoon', 'best mercury for recreation', 'family boat motor size', 'best Mercury outboard family runabout', 'Mercury 90 HP family boat', 'Mercury 150 HP runabout', 'family runabout horsepower', 'watersports family boat motor', 'quiet outboard family'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** For most family runabouts in the 17-20 ft range, a Mercury 90-150 FourStroke is the right call. Bigger isn't better — the capacity plate sets your real ceiling, and over-powering creates compliance, insurance, and warranty risk. The configurator at mercuryrepower.ca has installed pricing for every Mercury in that range.
 
 A "family runabout" covers a lot of ground — anything from a 16-foot bowrider tugging the kids around the bay to a 22-foot deck boat pulling a wakeboarder behind a full crew. The right Mercury depends on three things: the boat's length and weight, what you actually do on it, and how much patience you have for refueling.
 
@@ -7460,6 +7532,8 @@ If you're not sure between two HPs, call. Picking right is more important than p
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Outboard ski and wakeboard boats want torque and hole-shot. A Mercury 200-300 V8 FourStroke with the right prop pitch is the right call for most 19-22 ft hulls. Pro XS gains a bit of top end at the expense of mid-range. Stay inside the capacity plate. Quote installed at mercuryrepower.ca.
+
 For watersports — slalom skiing, wakeboarding, wakesurfing, tubing — the right Mercury isn't the same answer as for a cruising family runabout. Watersports demand hole shot (acceleration from rest), sustained pulling power, and on bigger setups, enough mass behind the wake to throw real water.
 
 Most ski and wakeboard boats from major manufacturers (MasterCraft, Malibu, Nautique, Tigé, Centurion) ship with inboard V-drives or direct drives. But there's a meaningful market of **outboard-powered tow boats** — runabouts, deck boats, even specialty wakeboard outboards — and Mercury makes purpose-built motors for exactly this use.
@@ -7601,6 +7675,8 @@ Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercury
     keywords: ['mercury 150 200 v6', 'mercury 3.4 v6', 'mercury v6 vs inline', 'mercury 175 pro xs', 'mercury v6 comparison', 'Mercury 150 175 200 225 V6 comparison', 'Mercury V6 Pro XS performance', 'Mercury 200 vs 225 vs 250', 'Mercury 175 EXLPT', 'Mercury 250 Pro XS'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury's V6 lineup — 150, 175, 200, 225, 250, 300 — shares a common architecture with progressively more displacement and tune. The 200-225 is the sweet spot for most Ontario center consoles and runabouts. The 300 makes sense only with the right hull and prop. Compare installed pricing at mercuryrepower.ca.
 
 Mercury's V6 lineup is where things get interesting. From the 150 (technically still an inline-4 in current Pro XS, but a V6 historically) up to the 300 Pro XS, this is where you choose between "enough motor" and "exactly the right motor for what I do."
 
@@ -7787,6 +7863,8 @@ If you're considering a V6 repower, the 90-second configurator quote at [mercury
     keywords: ['mercury outboard price 2026', 'mercury promotions', 'mercury dealer pricing', 'best time buy outboard', 'mercury financing options'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury controls promotions; dealers can't invent discount. Real 2026 deals are Mercury rebates, bonus warranty extensions, and seasonal pricing windows — all baked into our configurator at mercuryrepower.ca. Bonus warranties revert to the 3-year standard once the promo ends, so timing matters.
 
 ## Navigating Mercury Pricing in 2026
 
@@ -7998,6 +8076,8 @@ For complete installed-repower pricing in CAD — including the rigging, control
     keywords: ['mercury outboard ordering process', 'how to order mercury', 'mercury repower timeline', 'ordering outboard motor', 'mercury installation process'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** A Mercury order at HBW: configurator quote, phone confirmation, deposit, build allocation, delivery to our shop, install, sea trial, pickup. Stocked motors ship in days; special orders (including Verado) take weeks to months. Deposits are fully refundable on stocked, non-refundable on special order. Start at mercuryrepower.ca.
 
 ## The Mercury Ordering Process: A Complete Guide
 
@@ -8233,6 +8313,8 @@ Typically when motor is installed and ready for water test. Review payment terms
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** The 2026 Ontario boat market is steadier than the post-2020 surge — inventory is back, pricing is rational, and trade-in values are normalizing. Used motors are abundant; new Mercury allocation is healthy. Good year to repower or upgrade without bidding-war pressure. Build a quote at mercuryrepower.ca.
+
 ## Where the North American Market Stands
 
 The National Marine Manufacturers Association (NMMA) estimates that total new powerboat retail unit sales in the U.S. dropped about 8–10% in 2025, landing in the range of 215,000–225,000 units. That includes everything from personal watercraft to aluminum fishing boats to offshore cruisers.
@@ -8385,6 +8467,8 @@ Stop by the marina in Gores Landing, give us a call at (905) 342-2153, or [brows
     keywords: ['tariffs boating canada', 'CUSMA boating', 'mercury outboard tariff', 'canada us trade boats', 'boat prices tariffs 2026'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Cross-border trade noise affects boat and motor pricing on a moving timeline. Mercury outboards sold in Canada are priced in CAD and Mercury manages tariff exposure at the manufacturer level. We don't surprise customers with mid-quote price hikes — frozen pricing on every quote at mercuryrepower.ca.
 
 If you've glanced at the news over the past year, you've probably seen stories about new tariffs, trade skirmishes, and the upcoming review of the Canada–United States–Mexico Agreement (CUSMA/USMCA). For most people, it's background noise — right up until it sounds like it might affect the cost of a boat or an outboard.
 
@@ -8579,6 +8663,8 @@ We're optimistic that CUSMA will be renewed and that common sense will prevail. 
     keywords: ['boat rental rice lake', 'boat rental market 2026', 'boat club vs ownership', 'rice lake boat rental', 'harris boat works rentals'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Boat rentals and shared-access models are growing because they lower the entry cost of getting on the water. They're a great way to confirm what hull and horsepower you actually want before buying. When you're ready to own, build a real installed quote at mercuryrepower.ca.
 
 Not everyone wants to own a boat — and in 2026, that's no longer a barrier to enjoying boating. Across North America, boat rentals, boat clubs, and shared access models are growing faster than most other parts of the marine industry. The idea is simple: you shouldn't have to buy a boat to enjoy the water.
 
@@ -8789,6 +8875,8 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
     content: `# Why Mercury Dominates the Outboard Market in 2026
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury dominates Ontario because the dealer network is denser, parts supply is faster, and resale demand is strongest. Yamaha and Honda build excellent motors, but the practical service experience in cottage country favours Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
 
 Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP supercharged Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for 60 years and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -9022,6 +9110,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `# Mercury 2026 Outboard Lineup for Ontario Boaters
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury's 2026 lineup for Ontario covers 2.5 to 300 HP across FourStroke, Pro XS, and SeaPro families, plus Avator electric. Verado is special order only. Stocked allocation focuses on the high-volume cottage and fishing horsepowers — 9.9, 25, 60, 90, 115, 150. Live inventory at mercuryrepower.ca.
 
 The Mercury 2026 lineup covers every recreational HP class. FourStroke (2.5 to 300 HP) for cruising, fishing, and family use. Pro XS (115 to 300 HP) for performance fishing. SeaPro (25 to 300 HP) for commercial duty. Verado (250 to 600+ HP) for offshore (special-order at HBW). Avator electric line for emerging applications. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -9263,6 +9353,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['mercury avator', 'electric outboard motor', 'avator electric boat', 'electric boating ontario', 'mercury electric motor', 'cottage boat electric', 'rice lake electric outboard', 'avator range runtime'],
     content: `*Last reviewed: 2026-05-07*
 
+> **Quick answer:** Mercury Avator brings purpose-built electric outboards to the 7.5-35e HP range — quiet, low-maintenance, ideal for electric-only Ontario lakes. Range and charging logistics are the limiting factors today. We can quote and rig Avator on request through mercuryrepower.ca.
+
 Electric propulsion is creeping into more corners of the marine world every year. It started with trolling motors, then kayaks and small tenders. Now we're seeing serious outboard manufacturers like Mercury build full electric families designed for real-world use — not just for trade show stands.
 
 Mercury's **Avator** line is the company's low-voltage electric outboard brand, and it's expanding fast. While we don't expect Rice Lake to go all-electric overnight, Avator already makes sense for some Ontario boaters, and it gives us a glimpse of where the industry is headed.
@@ -9441,6 +9533,8 @@ Then we'll give you a frank recommendation on gas, electric, or a hybrid of both
     keywords: ['rice lake fishing 2026', 'ontario fishing season', 'rice lake walleye', 'rice lake muskie', 'boating season preview', 'kawartha fishing', 'ontario boating trends', 'rice lake bass fishing'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Rice Lake's 2026 outlook is strong: walleye and crappie populations are healthy, water levels are normal, and weed structure is back after the cleaner winter. Walleye opener is the second Saturday of May. Get the boat serviced before April or expect a wait. Book at mercuryrepower.ca.
 
 Rice Lake's 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are managed; ice-out timing and water temperatures will set the early-season pattern. The classic species mix and structure on Rice Lake have been consistent for decades. We are looking forward to another good season.
 
@@ -9707,6 +9801,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Mercury Boost is a dealer-installed software upgrade that adds horsepower to eligible 150 HP FourStroke and Pro XS motors. Eligibility depends on model year and powerhead — we verify by serial number. The upgrade is a calibration, not a hardware swap. Check eligibility through mercuryrepower.ca.
+
 ## What Is Mercury Boost?
 
 Mercury Boost is a software-based engine calibration upgrade — not a hardware kit, not an aftermarket add-on. It's a manufacturer-backed update that recalibrates how your engine delivers power through the mid-range RPM band.
@@ -9854,6 +9950,8 @@ No. Boost is a factory-backed, manufacturer-approved software calibration. It do
     keywords: ['pleasure craft licence update', 'PCL repower Ontario', 'Transport Canada boat licence', 'update boat registration after repower', 'PCL rules 2026'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Repowering changes your registered horsepower, so you must update your Pleasure Craft Licence with Transport Canada. The update is free and online — keep the new motor's serial number handy. We'll provide it on your invoice. Repower service and quotes at mercuryrepower.ca.
 
 When you change motors on a Pleasure Craft Licensed (PCL) boat in Canada, you must update the licence with Transport Canada. The PCL stays with the boat (HIN) but motor specifications are recorded on it. Updates are free, take 10 to 15 minutes online, and are required when the new motor changes the registered HP rating. We handle this paperwork for HBW customers as part of every repower.
 
@@ -10061,6 +10159,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** With Evinrude out of production, parts and service are tightening fast. A Mercury FourStroke repower restores warranty coverage, parts availability, and resale value. Most Evinrude-to-Mercury jobs need new gauges, harness, and controls — we quote it all installed at mercuryrepower.ca.
+
 Switching from Evinrude to Mercury during a repower runs an extra $1,500 to $3,000 CAD in rigging costs because the entire control system has to swap. That sounds like a lot until you remember Evinrude stopped making outboards in 2020, and parts and service support is shrinking every year. The math usually favors the switch. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -10266,6 +10366,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** A Mercury repower in Ontario typically lands $8,000-$30,000 CAD installed depending on horsepower, rigging needs, and controls. The motor itself is roughly two-thirds of the total. We post real installed prices — no phone-call required to get a number. Build yours at mercuryrepower.ca.
 
 For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to $22,000; 150 HP $23,000 to $30,000; and 200 to 300 HP $35,000 to $40,000, CAD before HST. Live pricing on the motor selection page is the source of truth.
 
@@ -10482,6 +10584,8 @@ Build a quote on this site in three minutes, or give us a call at (905) 342-2153
     keywords: ['mercury vs yamaha outboard', 'mercury vs yamaha Ontario', 'best outboard for Ontario lakes', 'mercury yamaha comparison Canada', 'outboard motor comparison 2026'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury and Yamaha both build excellent outboards. For Ontario freshwater boating, Mercury wins on dealer network density, parts availability, and resale demand — not on mechanical superiority. If you're shopping in the Kawarthas, Trent-Severn, or Lake Ontario region, Mercury's local service depth is the practical differentiator.
 
 For Ontario freshwater boating, Mercury wins on dealer network, parts availability, and factory-OEM relationships with Canadian boat builders. Yamaha is a strong motor mechanically but has a thinner Canadian dealer network and fewer factory-rigged Yamaha boats. The mechanical reliability difference is small; the practical service difference favors Mercury. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -10732,6 +10836,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** The 115 is the right call for most 17-19 ft hulls — lighter, cheaper, fully capable. The 150 makes sense on 19-21 ft hulls or any boat that loads heavy. Both share a similar service footprint. Stay inside the capacity plate. Compare installed pricing at mercuryrepower.ca.
+
 The step from 115 to 150 HP is bigger than it looks on paper. The 115 is a 4-cylinder engine; most 150 HP Mercurys are larger displacement 4-cylinder or transverse 4-cylinder builds. The 150 plants meaningfully bigger hole shot, plane time, and load-carrying performance on heavier hulls. The price difference is $4,000 to $6,000 CAD. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -10952,6 +11058,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Mercury Repower Financing through DealerPlan: 7.99 percent APR (as of May 2026) on packages $10,000 and up, 8.99 percent under $10,000. Minimum financed amount is $5,000. A $299 DealerPlan fee is added post-tax. Apply with your installed quote at mercuryrepower.ca.
+
 Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR (as of May 2026). Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).
 
 ## Quick recommendation
@@ -11116,6 +11224,8 @@ Build a quote on the [motor selection page](/quote/motor-selection). Three minut
     keywords: ['best outboard motor Lake Simcoe', 'Lake Simcoe walleye fishing boat', 'Mercury kicker motor trolling', 'best motor for Lake Simcoe', 'Lake Simcoe fishing setup'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** For Lake Simcoe walleye, most anglers want a 90-150 HP FourStroke main for the run-out plus a Mercury 9.9 ProKicker for slow trolling. Simcoe gets rough — pick a hull rated for it and stay inside the capacity plate. Build a main-and-kicker package at mercuryrepower.ca.
 
 Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed. The right Mercury for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -11345,6 +11455,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['Lake Ontario salmon fishing motor', 'best outboard Lake Ontario', 'Mercury outboard salmon trolling', 'Lake Ontario chinook king salmon', 'salmon fishing boat Ontario', 'Mercury 150 200 salmon', 'Lake Ontario fishing charter motor'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** For Lake Ontario salmon and trout trolling, look at a 150-250 HP Mercury FourStroke main with a 9.9 ProKicker for the slow speeds downriggers and divers want. Lake Ontario is open, cold, and unforgiving — pick the bigger end of your hull's range. Quote installed at mercuryrepower.ca.
 
 Lake Ontario is the biggest water most Ontario boaters will fish. Big swells, long runs to fishing zones, downriggers and planer boards trolling spreads. The right Mercury for Lake Ontario salmon and trout is a 200 to 300 HP V8 FourStroke or Pro XS on a 21 to 26 ft center console or walkaround hull, often with a 15 HP ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -11587,6 +11699,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `# How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Boat winterization in Ontario typically runs $250-$600 depending on motor size, fuel system, and shrinkwrap. Skipping it risks a cracked block — a $4,000-plus repair. Book before October or you'll wait. Pricing and scheduling at mercuryrepower.ca.
 
 Boat winterization cost in Ontario varies by motor size, boat type, and which services you bundle (motor only, motor + hull, motor + storage). A basic motor winterization is the smallest line item. A full package with hull shrink-wrap, indoor storage, and spring commissioning is the largest. We do winterization on Mercury motors at HBW. For a real quote on your specific boat, [contact us](/contact) or visit our [service page](https://hbw.wiki/service).
 
@@ -11834,6 +11948,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `# Can I Winterize My Mercury Outboard Myself? (Complete DIY Guide + When to Call a Dealer)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** DIY winterizing a Mercury is realistic if you're comfortable with fogging oil, lower-unit drain-and-fill, and fuel stabilizer. The mistake that kills motors is leaving water in the powerhead through a freeze. If you're not certain, pay a dealer — it's cheaper than a cracked block. Service booking at mercuryrepower.ca.
 
 Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter: stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor by spring. For motors you would rather not DIY, [request service at HBW](https://hbw.wiki/service).
 
@@ -12085,6 +12201,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Mercury's cheapest current outboard in Canada is the 2.5 HP FourStroke portable — under $1,500 CAD. The cheapest motor that fits inside your boat's HP rating is your real ceiling on the low end. Overpowering creates capacity-plate compliance, insurance, liability, and potential warranty problems. Live pricing at mercuryrepower.ca.
+
 The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class through the lineup. The honest answer most boaters need is not "what's the cheapest motor" but "what's the cheapest motor that actually fits my boat." Those are usually different motors. Live pricing on every Mercury we sell, including the 2.5 portable, is on the [motor selection page](/quote/motor-selection).
 
 ## Quick recommendation
@@ -12260,6 +12378,8 @@ A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15
     content: `
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury, Yamaha, and Honda all build reliable modern outboards. The brand with the densest local service network and parts supply tends to win on practical reliability — for Ontario that's Mercury. Mechanical defect rates between the three are too close to call. Build an installed Mercury quote at mercuryrepower.ca.
 
 All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out. The real difference is dealer service, parts availability, and resale support in YOUR region. In Ontario, Mercury has the deepest dealer network, the strongest Canadian parts supply, and the longest historical track record. We are biased (we sell Mercury, exclusively, since 1965), but the data backs the position. Build your Mercury quote at [/quote/motor-selection](/quote/motor-selection).
 
@@ -12438,6 +12558,8 @@ We have been a Mercury dealer since 1965. The depth of expertise, parts inventor
     content: `
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** For Rice Lake under $30,000, look at 17-19 ft aluminum fishing hulls (Lund, Princecraft, Crestliner) with a Mercury 60-90 FourStroke installed. Pontoons in that budget are typically used. We can quote either as a complete installed package at mercuryrepower.ca.
 
 Under $30,000 CAD on Rice Lake, your three best paths in 2026 are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon (often with a recent repower or due for one), or a clean used hull paired with a Mercury repower. We rig and service all three at HBW. The smart money usually skips brand-new entry-level boats and goes into a quality used hull plus a current Mercury motor instead.
 
@@ -12619,6 +12741,8 @@ A 16-18 ft aluminum console or tiller boat (Lund, Crestliner, Princecraft, Lowe 
     keywords: ['trailer boat toronto rice lake', 'ontario trailer rules', 'boat launch rice lake'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Toronto to Rice Lake is roughly 90 minutes via the 401 and Highway 28. Tire pressure, working trailer lights, and a tested coupler are non-negotiable. Plan your launch — Bewdley, Hastings, and Gores Landing all work. Pickup is in person at HBW; we don't ship boats. Quote at mercuryrepower.ca.
 
 Rice Lake sits about 90 minutes northeast of Toronto — close enough for a long weekend, far enough that a lot of boaters have never made the drive with a trailer hitched on. If you're doing it for the first time, or the first time in a while, the trip is straightforward. But there are enough small things that can go wrong between the 401 and the Gores Landing boat ramp that a little prep goes a long way.
 
@@ -12840,6 +12964,8 @@ Read more about [the best Mercury outboards for Rice Lake fishing](https://mercu
     content: `# Mercury Outboard Won't Start Troubleshooting (2026)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Most Mercury no-start cases trace to fuel (stale gas, clogged filter), spark (fouled plugs, bad battery), or a tripped safety lanyard. Walk the basics first. If you're stuck, don't keep cranking — book a diagnostic. Service slots and pricing at mercuryrepower.ca.
 
 Most Mercury motors that won't start in spring are battery, fuel, or skipped winterization. Run through the basics in order: battery voltage, fuel system, ignition, and starting circuit. If the motor still won't start after the basics, get it to HBW. The cost of a proper diagnostic is much smaller than the cost of damaging the motor by running it without addressing the underlying issue.
 
@@ -13126,6 +13252,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** 2026 is a solid year to buy in Canada — inventory is back, pricing is rational after the post-2020 surge, and Mercury allocation is healthy. Used trades are abundant, so good values exist on both sides. Build a real installed Mercury quote at mercuryrepower.ca.
+
 The question we hear every January through April, and more so this year than most: should I buy now, or wait?
 
 The honest answer is that 2026 is a more complicated buying environment than anything we've seen in the last decade. Not worse, necessarily — but more variable. The inventory crisis of 2021–22 is gone. Prices haven't dropped to 2019 levels either. Tariffs, exchange rate pressure, and shifting financing costs have created a market where the right answer genuinely depends on what you're buying, why you're buying it, and what your alternatives are.
@@ -13287,6 +13415,8 @@ The lake will be there. The right time to buy is when it makes sense for you, no
     keywords: ['repower vs new boat', 'boat hull replacement', 'when to repower outboard'],
     content: `
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** If the hull is sound and the motor is tired, repower. If the hull is structurally compromised — soft transom, rotted stringers, hull cracks — replace the boat. Repowering a bad hull is throwing money at a doomed platform. Honest assessment and installed repower quotes at mercuryrepower.ca.
 
 For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -13532,6 +13662,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** For a 150 HP pontoon, Mercury Boost adds usable mid-range torque without changing the hardware. Worth it if you load heavy or push a wide tube layout. Not worth it if you're already at top speed for your hull. Eligibility check and pricing at mercuryrepower.ca.
+
 For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. The performance gains are minimal in real-world pontoon use (where load and hull design cap top speed regardless of motor tweaks). The interesting part of Boost is what it signals about how Mercury will deliver future upgrades, not whether this specific upgrade pays off today. For your specific motor and use, see [live pricing](/quote/motor-selection) or [contact us](/contact) before committing.
 
 ## Quick recommendation
@@ -13740,6 +13872,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Most dealers hide prices to force a phone call — it lets them negotiate trade-in down and add fees later. HBW posts real installed prices because customers deserve a number before driving 90 minutes. Configurator with live pricing at mercuryrepower.ca.
+
 If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. Most marine dealers deliberately don't publish prices online. The reasons they give are excuses; the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
 
 ## Quick recommendation
@@ -13922,6 +14056,8 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
     content: `# Mercury Outboard Rigging Costs Explained (Ontario 2026)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Rigging costs vary by job: a like-for-like swap can be under $1,500, a full re-rig with new gauges, harness, and controls runs $3,000-$6,000. We quote rigging line by line — no surprises. Build an installed quote with rigging spelled out at mercuryrepower.ca.
 
 Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. For a typical Mercury-to-Mercury repower with post-2010 controls in good condition, rigging lands $500 to $1,500 CAD. Brand conversions and full rerigs run higher. Live pricing on every Mercury we sell, with rigging included, is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -14140,6 +14276,8 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
     content: `# What Happens During a Mercury Repower (Step-by-Step Process)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** A typical Mercury repower at HBW: configurator quote, phone call, deposit, transport to Gores Landing, motor mount and rigging, sea trial, pickup. Most jobs take 7-14 days at the shop once scheduled. Spring rush adds 2-4 weeks of lead time. Start at mercuryrepower.ca.
 
 A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking, drop-off, removal of old motor, transom and rigging inspection, installation of new motor and rigging, sea-trial with prop testing, final adjustments, and pickup with break-in coaching. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -14407,6 +14545,8 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Measure transom height from the top to the bottom of the cutout: 15 inches needs a short shaft, 20 inches a long shaft, 25 inches an extra-long. Wrong shaft length means cavitation or a submerged powerhead. We confirm shaft length on every quote — see mercuryrepower.ca.
+
 Outboard shaft length is the distance from the motor's mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20 inch (Long), and 25 inch (Extra Long). Wrong shaft length causes cavitation, performance loss, or motor damage. Match the shaft to your boat's transom height. Live pricing on every Mercury we sell, including correct shaft selection, is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -14644,6 +14784,8 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Buying used in Ontario: get a compression test on every cylinder, check for water in the lower-unit oil, scan for SmartCraft alarm history, and verify the serial number against Mercury's records. A $200 dealer inspection saves a $5,000 mistake. Inspection booking at mercuryrepower.ca.
+
 The short version: assume nothing, check everything, and run a compression test before money changes hands. A used outboard can be a great deal or a $4,000 paperweight — and the difference is almost always visible before you buy, if you know what to look at.
 
 We've been a Mercury dealer in Ontario since 1965 and we see used motors come through the shop every week — some bought smart, some bought sight-unseen off Marketplace. This is the inspection we do, in the order we do it. Use it as your checklist.
@@ -14847,6 +14989,8 @@ We're a full-service Mercury Platinum dealer and we work on everything from curr
     content: `# Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** The Trent-Severn runs 386 km from Trenton to Port Severn through 44 locks. 2026 lockage hours and free-lockage windows are set by Parks Canada. Plan for slow water, debris after spring, and crowded weekends. Service before you go — book at mercuryrepower.ca.
 
 Big news for 2026: lockage on the Trent-Severn is **free from June 19 to September 7** as part of the [Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass). For a 20-foot boat, that's $45 a day in fees you're not paying — about $315 saved on a full week-long transit, more if you stay seasonal.
 
@@ -15061,6 +15205,8 @@ Parks Canada doesn't sell fuel at lockstations — only commercial marinas do. M
     content: `# Your Mercury Is Overheating — What to Do Right Now (and How to Prevent It)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** If your Mercury alarms hot, idle down immediately, kill the motor at the first safe spot, and check for a clogged or missing tell-tale. Don't keep running — overheating destroys head gaskets and powerheads. Most causes are impeller, intake blockage, or thermostat. Service booking at mercuryrepower.ca.
 
 If you're reading this on the water with the overheat alarm going off, **skip ahead to the next section**. Get yourself sorted, then come back for the rest.
 
@@ -15279,6 +15425,8 @@ Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear
     content: `# Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Rice Lake is shallow, weedy, and unforgiving on props — local knowledge matters. Public launches at Bewdley, Hastings, and Gores Landing. Watch the bars and the Otonabee channel. Best fishing is walleye, crappie, and musky. We service Rice Lake boats year-round from Gores Landing — mercuryrepower.ca.
 
 Rice Lake doesn't make the tourism brochures. It should.
 
@@ -15528,6 +15676,8 @@ No — we don't sell licences. Pick up your Ontario Outdoors Card and fishing li
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** MerCruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project — we quote both paths honestly. Get a real number at mercuryrepower.ca.
+
 There are a lot of sterndrive boats in Ontario. Older Sea Rays, Bayliners, Glastrons, Four Winns, Thundercrafts, the occasional Doral or Crownline. Most of them have a MerCruiser engine inside the boat and a Mercury sterndrive hanging off the transom. Most of those engines are between 15 and 25 years old now.
 
 We service MerCruiser sterndrives at Gores Landing — same shop, same Mercury Platinum techs as our outboard work. This is the guide we wish more sterndrive owners read before something expensive happens.
@@ -15762,6 +15912,8 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** VesselView is Mercury's gauge display; SmartCraft is the data network behind it; the Mercury Marine app pulls both into your phone. Together they show fuel use, engine hours, alarm codes, and service intervals in real time. Compatibility depends on motor year. Quote a current setup at mercuryrepower.ca.
+
 Most Mercury owners we talk to know they have "smart" features on their motor and have no idea how to actually use them. The dash gauge says fuel flow. The phone app pairs sometimes. There's a thing called Active Trim that the previous owner mentioned but never explained.
 
 This is the version of that conversation we'd have at the shop. No marketing copy, no jargon — just what each piece is, what it costs, and whether you'll actually use it.
@@ -15929,6 +16081,8 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
 # How to Read a Mercury Outboard Serial Number — Year, Specs, and Service History
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury serial numbers encode model year, plant, and powerhead family. The first letters identify the family; the digits give the build sequence. We use the serial to verify warranty, eligibility for software upgrades like Boost, and parts compatibility. Send us a serial through mercuryrepower.ca for a quick check.
 
 Your Mercury's serial number is the only piece of information on the motor that actually matters for parts, service, warranty, and history. Not the year on the cowl. Not the boat's title. Not what the previous owner remembered.
 
@@ -16140,6 +16294,8 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Mercury's 20/100/300 rule: 20-hour break-in service, 100-hour annual service, 300-hour deep service. Skip any of them and you erode warranty coverage and long-term reliability. We schedule by interval and remind customers automatically. Service booking at mercuryrepower.ca.
+
 Mercury's service schedule has three milestones built into it: **20 hours, 100 hours, and 300 hours**. Each one is a different scope of work for a different stage of the engine's life. Ignoring any of the three is the cheapest way to make a $20,000 motor act like a $5,000 one.
 
 This is the schedule we'd walk through with any new Mercury owner who walks into the shop, in plain English, with Ontario service rates.
@@ -16337,6 +16493,8 @@ Book scheduled service at **[hbw.wiki/service](https://hbw.wiki/service)** or ca
 # Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Shrinkwrap is cheaper and weatherproof but condenses moisture inside if vented poorly. Indoor storage is dry, climate-stable, and gentler on upholstery and gel coat — but costs more. For long-term value retention, indoor wins. Indoor and shrinkwrap pricing at mercuryrepower.ca.
 
 Every fall we have the same conversation about thirty times. *"Is shrinkwrap enough? Should I pay for indoor? Is heated worth the extra money?"*
 
@@ -16570,6 +16728,8 @@ We've stored boats in Gores Landing for three generations. Mercury Marine Platin
 # What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Total Ontario boat ownership runs roughly 8-12 percent of the boat's value per year — fuel, insurance, storage, winterization, annual service, and depreciation. A $40,000 package realistically costs $3,500-$5,000 a year to own. Build a quote with realistic numbers at mercuryrepower.ca.
 
 If you're shopping your first boat or thinking about whether to keep your current one, the *purchase price* is only part of the question. The bigger question is: **what does it cost to keep it on the water every year?**
 
@@ -16822,6 +16982,8 @@ There's no shame in renting. There's a lot of shame in over-extending into a boa
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Legend Boats are built in Whitefish, Ontario, and pair naturally with Mercury power. Most Legend hulls 17-21 ft are happy on a Mercury 90-150 FourStroke, often Command Thrust on the heavier models. Stay inside the capacity plate. Quote a complete Legend-and-Mercury package at mercuryrepower.ca.
+
 If you're shopping a new aluminum fishing boat or a pontoon in Ontario, **Legend Boats** is going to come up. They're Canada's best-selling aluminum boat brand, every model is paired with a Mercury outboard, and they're the boat we sell most often at Harris Boat Works.
 
 This is the boat-by-boat overview — what's in the 2026 lineup, what each hull does well, which Mercury motor pairs with each, and how the all-in pricing works.
@@ -17018,6 +17180,8 @@ A few things that aren't on the Legend website:
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models, often extended to 5 or 7 with current promotions. Bonus warranties revert to the 3-year standard after the promo ends. Coverage requires registered ownership and service-interval compliance. Current promo terms at mercuryrepower.ca.
+
 The short version: every new Mercury outboard sold in Canada comes with a **3-year limited warranty AND a 3-year corrosion warranty** — both starting the day you buy it, both ending the same day three years later. They're concurrent, not stacked. Anyone telling you you have "six years of coverage" is reading the brochure wrong.
 
 We're a Mercury Platinum dealer in Ontario since 1965. We do warranty work in our shop every week. This is the version of the warranty conversation we have with customers when they're buying a new motor or wondering if it's worth extending.
@@ -17205,6 +17369,8 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
     content: `# Mercury SmartCraft Alarm Codes: What Every Beep, Light, and Fault Code Means (2026 Encyclopedia)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** SmartCraft alarms range from minor (low fuel, service due) to critical (overheat, low oil pressure). The first response to any alarm: idle down and assess. Don't ignore an alarm to finish the day — most critical alarms protect against catastrophic damage. Diagnostic booking at mercuryrepower.ca.
 
 If your Mercury just started beeping and you're trying to figure out what to do — read the **Audible Warning Patterns** section first, then come back. Don't keep running the motor while the alarm is active. Some alarms mean "annoying"; some mean "you have 30 seconds before something catastrophic happens." We'll tell you which is which.
 
@@ -17498,6 +17664,8 @@ Save this URL or screenshot the audible warning table above. It's the single mos
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** Toronto-area boaters drive to HBW because we post real installed prices online, stock 2026 Mercury inventory you can see in person, and have one of Ontario's deepest service benches. The 90-minute drive saves thousands on most repowers. Build a quote first at mercuryrepower.ca.
+
 **We're not in Toronto.** Harris Boat Works is in Gores Landing, on Rice Lake, about 90 minutes east of downtown Toronto. If you're a GTA boater needing a Mercury outboard, the question is: why would you drive 90 minutes when there are Mercury dealers within 15 minutes of your house?
 
 Honest answer: you wouldn't, if the local option was equivalent. The story most GTA boaters don't realize is that **most local Mercury dealers in the GTA aren't actually equivalent.** What you save in drive time you pay back in dealer tier, pricing transparency, repower expertise, and post-sale service quality.
@@ -17698,6 +17866,8 @@ Yes. Mercury's warranty network extends across Canada. Bring your purchase paper
     content: `# Best Mercury Dealer in Ontario: The HBW Difference (2026)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** What makes HBW different in Ontario: transparent installed pricing online, three generations of Mercury experience since 1947, and a configurator that quotes a complete package without a phone call. We'd rather earn the sale on value than on pressure. Try it at mercuryrepower.ca.
 
 If you Google "best Mercury dealer Ontario," you get a list of 30-40 dealers and zero way to compare them. The provincial dealer network is Mercury-authorized, but **Mercury's authorization is just the floor — what separates dealers is everything they do above that floor.**
 
@@ -17912,6 +18082,8 @@ Technically yes. In practice, Platinum dealers do most repowers because the work
     content: `# Mercury Repower GTA: How a Toronto-Area Boater Actually Repowers at HBW (2026)
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** GTA boaters repower at HBW because we quote installed packages online, stock Mercury inventory, and turn most repowers in 7-14 days at the shop. Drop the boat in Gores Landing, pick it up commissioned and sea-trialled. Start the configurator at mercuryrepower.ca.
 
 You've decided to repower. Maybe your old motor is on its last legs; maybe a fuel-system rebuild costs as much as a fresh new Mercury. Either way, you're in the GTA and need to figure out: **how does this actually work logistically when the dealer is 90 minutes away?**
 
@@ -18134,6 +18306,8 @@ Highly variable. A 5-year-old, low-hour Mercury 150 trades for $5,500-$7,500. A 
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** HBW serves boats from across Ontario — GTA, Kawarthas, Northumberland, and beyond — because there aren't many dealers with our service depth and parts inventory. Most customers drop off in Gores Landing, but we'll talk through any service question first. Book at mercuryrepower.ca.
+
 **Up front: Harris Boat Works isn't in the GTA.** We're 90 minutes east of central Toronto, in Gores Landing on Rice Lake. So when you search "boat service near Toronto," we're not the closest option — but we are the option a meaningful number of GTA boaters drive to. This post is about why.
 
 If you Google "boat service Toronto" or "Mercury repair GTA" you get a long list of marinas, mobile mechanics, and inboard boat yards. Some are great. Some are not. Sorting by quality from a search-results page is functionally impossible.
@@ -18350,6 +18524,8 @@ Yes — that's a common combo. October drop-off, complete annual service + winte
     content: `# Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** A Toronto-to-Rice Lake rental day trip works: 90 minutes up the 401 and 28, launch at Bewdley or Gores Landing, fish or cruise, drive home. Rentals book out fast in summer. When you're ready to own, build a real installed Mercury quote at mercuryrepower.ca.
 
 You're in Toronto, you don't own a boat, but you'd like to have one for a day. The closest renting on Lake Ontario is logistically painful (parking, no real fishing water, rough chop). The big-water rentals up north (Muskoka) are a 2.5-hour drive on busy weekends.
 
@@ -18586,6 +18762,8 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 
 *Last reviewed: 2026-05-07*
 
+> **Quick answer:** GTA boaters store at HBW for the same reason they service here — capacity, security, and no GTA-premium pricing. Indoor and shrinkwrap options. Book by September or you'll wait. Storage and winterization pricing at mercuryrepower.ca.
+
 Every September, GTA boaters face the same decision: where do I store the boat for winter? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
 
 Most GTA boat owners haven't considered driving the boat to Rice Lake for winter storage, because the assumption is "rural = cheaper but inconvenient." Half right. **The pricing is roughly equivalent. The convenience is similar. What's different is who works on the boat all winter.**
@@ -18813,6 +18991,8 @@ Your existing boat insurance typically covers winter storage; some policies requ
     content: `# Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations
 
 *Last reviewed: 2026-05-07*
+
+> **Quick answer:** Harris Boat Works has been the Rice Lake Mercury dealer since 1947 — three generations of the same family. We've outlasted every Ontario competitor by selling on transparency, service depth, and treating customers like neighbours. Inventory and configurator at mercuryrepower.ca.
 
 The simple version: Harris Boat Works has been at the same dock on Rice Lake, in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** — most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
