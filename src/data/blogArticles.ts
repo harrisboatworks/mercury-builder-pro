@@ -14706,6 +14706,7 @@ Five questions to text the seller before you waste a Saturday:
 3. **Freshwater or salt?** Even one season in salt is a different motor.
 4. **Any work done in the last 2–3 years?** What, when, who.
 5. **Why selling?** Honest sellers have a real answer. "I just want to upgrade" is fine. "It runs great I just don't have time" — fine. "Long story" — keep asking.
+6. **Any [remaining warranty](/blog/mercury-outboard-warranty-canada-2026)?** Mercury's standard 3-year warranty (and MPP if purchased) can transfer with documentation. Under three years old, ask for the original receipt and dealer registration.
 
 If they can't answer year, hours, or use history, you're buying a mystery. Price it accordingly or walk away.
 
