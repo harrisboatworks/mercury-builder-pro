@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)"
-description: "The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats."
+description: "Last reviewed: 2026-05-07"
 category: "Buying Guide"
 date_published: 2026-04-23
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)
 
-> The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats.
+> Last reviewed: 2026-05-07
 
 **Category:** Buying Guide  
 **Published:** 2026-04-23  
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury's cheapest current outboard in Canada is the 2.5 HP FourStroke portable, under $1,500 CAD. The cheapest motor that fits inside your boat's HP rating is your real ceiling on the low end. Overpowering creates capacity-plate compliance, insurance, liability, and potential warranty problems. Live pricing at mercuryrepower.ca.
 
 The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class through the lineup. The honest answer most boaters need is not "what's the cheapest motor" but "what's the cheapest motor that actually fits my boat." Those are usually different motors. Live pricing on every Mercury we sell, including the 2.5 portable, is on the [motor selection page](/quote/motor-selection).
 
@@ -45,7 +49,7 @@ The right "cheapest" motor depends on six things:
 - **Use case.** Fishing solo at trolling speed has totally different power requirements than cruising with two people, which is different again from pulling a tube.
 - **Where you launch.** A pontoon at a sheltered marina dock can run a smaller motor than the same pontoon at a public ramp on Rice Lake. The wind picks up across Sugar Island around 2 PM most days in July, and an underpowered motor will not punch back through it.
 - **Solo vs. family.** Adding two adults and a cooler turns "marginal" power into "stranded."
-- **Transom HP rating.** Mercury voids the warranty if you over-power a hull. The cheapest motor that fits inside your boat's HP rating is your real ceiling on the low end.
+- **Transom HP rating.** Overpowering a hull creates capacity-plate compliance, insurance, liability, and potential warranty problems. The cheapest motor that fits inside your boat's HP rating is your real ceiling on the low end.
 - **Long-term plan.** Buying the boat for one season and selling it is a different math than buying a boat you plan to own for 15 years. A motor that is "barely enough" gets exhausting fast over multi-season ownership.
 
 ## Mercury lineup at the low end
@@ -76,7 +80,7 @@ A few mistakes we see often that turn the "cheapest motor" into the most expensi
 
 A few moves that genuinely save money without compromising the boat:
 
-- **Buy in winter.** November through March is our quietest shop time. We have first pick of motors before the spring rush. Lead times are shortest. Sometimes Mercury runs winter or pre-spring promotional rates that drop the financing rate well below the standard 7.99% APR. Current promotion details are on the [promotions page](/promotions).
+- **Buy in winter.** November through March is our quietest shop time. We have first pick of motors before the spring rush. Lead times are shortest. Sometimes Mercury runs winter or pre-spring promotional rates that drop the financing rate well below the standard 7.99% APR (as of May 2026). Current promotion details are on the [promotions page](/promotions).
 - **Trade in your old motor.** Even a dead motor has aluminum and parts value. Our [trade-in valuation tool](/trade-in-value) gives you an instant credit estimate. Trade-in credit reduces the financed amount or the cash you owe at the end.
 - **Mercury to Mercury repower.** Most existing controls and cables can stay. Rigging stays at the low end ($500 to $1,000 CAD for a Mercury-to-Mercury swap, versus $2,000 to $3,000 for a brand conversion). [Live pricing here.](/quote/motor-selection)
 - **Aluminum prop on smaller motors.** On motors up to 115 HP, a standard aluminum prop is $450 CAD and works fine for the typical boater. Stainless steel props are required on 150 HP and up but are not cost-effective on smaller motors unless you have a specific performance reason.
@@ -86,7 +90,7 @@ A few moves that genuinely save money without compromising the boat:
 
 We have rigged enough small Mercury motors on Rice Lake aluminum boats to know where the bottom honestly is. Before we recommend a low-end motor, we want to know:
 
-- **Boat capacity plate.** Maximum HP rating is the real ceiling. We will not over-power your hull. Mercury voids the warranty if we do.
+- **Boat capacity plate.** Maximum HP rating is the real ceiling. We will not over-power your hull. Overpowering creates capacity-plate compliance, insurance, liability, and potential warranty problems, none of them worth saving a few horsepower.
 - **Transom condition.** A soft transom cannot safely hold any motor. We check with a moisture meter as part of the assessment.
 - **What you actually do on the water.** Solo fishing two mornings a week is a totally different motor than weekend family cruising.
 - **Where you launch.** Sheltered private dock vs. Bewdley public ramp on a windy afternoon makes a real difference in the right HP.

@@ -31,6 +31,10 @@ content_type: blog_article
 
 # Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** The 115 is the right call for most 17-19 ft hulls, lighter, cheaper, fully capable. The 150 makes sense on 19-21 ft hulls or any boat that loads heavy. Both share a similar service footprint. Stay inside the capacity plate. Compare installed pricing at mercuryrepower.ca.
+
 The step from 115 to 150 HP is bigger than it looks on paper. The 115 is a 4-cylinder engine; most 150 HP Mercurys are larger displacement 4-cylinder or transverse 4-cylinder builds. The 150 plants meaningfully bigger hole shot, plane time, and load-carrying performance on heavier hulls. The price difference is $4,000 to $6,000 CAD. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -177,7 +181,7 @@ At cruise, the 115 is more efficient. The 150 is slightly less efficient but sti
 For typical family fishing and recreational use, the 115 is plenty. For active water sports with full loading, the 150 is the better fit. The 18 ft aluminum is the boundary where either motor works depending on use case.
 
 **Can I run a Mercury 150 on a boat rated up to 115 HP?**
-No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty if we install a motor above the rated maximum. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
+No. The capacity plate sets the legal and warranty-backed ceiling, exceeding it creates capacity-plate compliance, insurance, liability, and potential warranty problems. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
 
 **What's the weight difference between 115 and 150?**
 About 90 to 100 lbs (~40 kg). The 150 (3.0L inline 4) is about 455 lb, the 115 (2.1L inline 4) is about 359 lb. On smaller transoms, the weight difference can affect handling.
@@ -209,7 +213,7 @@ The Pro XS is a performance-tuned variant with aggressive throttle calibration, 
 
 ### How much does a Mercury 115 Pro XS cost in Canada?
 
-The 115 Pro XS runs approximately $500–$1,000 more than the standard 115 FourStroke. Build a current quote at mercuryrepower.ca for exact pricing — it varies by shaft length and controls package.
+The 115 Pro XS runs approximately $500–$1,000 more than the standard 115 FourStroke. Build a current quote at mercuryrepower.ca for exact pricing, it varies by shaft length and controls package.
 
 ### Is the Mercury 150 Pro XS worth the extra money?
 
@@ -221,11 +225,11 @@ No. Pro XS uses a sport gearcase optimized for speed. Command Thrust uses a high
 
 ### How much does the Mercury 150 FourStroke weigh vs the 150 Pro XS?
 
-The Mercury 150 FourStroke weighs approximately 456 lbs dry. The 150 Pro XS weighs approximately 445 lbs — about 11 lbs lighter. Both use the same 3.0L displacement.
+The Mercury 150 FourStroke weighs approximately 456 lbs dry. The 150 Pro XS weighs approximately 445 lbs, about 11 lbs lighter. Both use the same 3.0L displacement.
 
 ### Is the Mercury 150 worth the extra money over the 115?
 
-For most Ontario boats in the 18–22ft range, yes. The price gap is typically $2,500–$3,500, and the 150 handles heavier loads, planes more easily, and runs at lower throttle percentages — less wear over time.
+For most Ontario boats in the 18–22ft range, yes. The price gap is typically $2,500–$3,500, and the 150 handles heavier loads, planes more easily, and runs at lower throttle percentages, less wear over time.
 
 ### What is Command Thrust on Mercury outboards?
 

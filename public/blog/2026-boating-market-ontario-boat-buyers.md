@@ -29,13 +29,17 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** The 2026 Ontario boat market is steadier than the post-2020 surge, inventory is back, pricing is rational, and trade-in values are normalizing. Used motors are abundant; new Mercury allocation is healthy. Good year to repower or upgrade without bidding-war pressure. Build a quote at mercuryrepower.ca.
+
 ## Where the North American Market Stands
 
 The National Marine Manufacturers Association (NMMA) estimates that total new powerboat retail unit sales in the U.S. dropped about 8–10% in 2025, landing in the range of 215,000–225,000 units. That includes everything from personal watercraft to aluminum fishing boats to offshore cruisers.
 
 That decline followed a roughly 9–12% drop in 2024, when unit sales fell back to around 230,000–240,000 after the COVID-era surge. The pandemic boom of 2020–2021 was never sustainable; what we're seeing now is a return toward pre-COVID baseline levels rather than a collapse.
 
-At the same time, overall spending on boating remains very strong. NMMA notes that total U.S. recreational boating expenditures were expected to reach record highs in 2025, potentially 3–5% above 2024's already elevated levels. People are still boating, still spending on marine products and services — they're just being more selective and value-focused on new boat purchases.
+At the same time, overall spending on boating remains very strong. NMMA notes that total U.S. recreational boating expenditures were expected to reach record highs in 2025, potentially 3–5% above 2024's already elevated levels. People are still boating, still spending on marine products and services, they're just being more selective and value-focused on new boat purchases.
 
 Looking ahead, NMMA and industry analysts characterize 2026 as a "stable" year with a potential slight uptick in unit sales rather than further decline. Manufacturers have right-sized production, dealers are working through aged inventory, and the overall tone is one of cautious optimism rather than panic.
 
@@ -49,7 +53,7 @@ The Baird/MRAA/Soundings Trade Only "Pulse Report" polls marine dealers monthly 
 - Only around 18% foresee revenue declines, with the rest expecting flat conditions.
 - Service departments are widely expected to lead revenue, followed by used-boat sales and then new-boat sales.
 
-That matches what we see at Harris Boat Works — people are maintaining and improving the boats they already own (service, repowers, upgrades), and the pre-owned market remains active even as new-boat sales normalize.
+That matches what we see at Harris Boat Works, people are maintaining and improving the boats they already own (service, repowers, upgrades), and the pre-owned market remains active even as new-boat sales normalize.
 
 ### Inventory Tells an Important Story
 
@@ -62,13 +66,13 @@ On the used side, tighter supply but softening prices (down an estimated 5–10%
 
 ## The Segments That Matter for Rice Lake
 
-Across North America, not all boat types are moving in lockstep. The segments most relevant to Rice Lake — fishing boats, pontoons, and smaller trailerable rigs — tell a reassuring story:
+Across North America, not all boat types are moving in lockstep. The segments most relevant to Rice Lake, fishing boats, pontoons, and smaller trailerable rigs, tell a reassuring story:
 
 - **Aluminum fishing / freshwater fishing boats**: One of the most resilient categories. Inventory aging for freshwater fish boats dropped below 15% over 365 days and inventory turns climbed above 2x, indicating healthy movement.
 - **Pontoon boats**: 2024 pontoon sales in the U.S. were in the ~52,000–55,000 unit range, down about 10–13% year over year but still historically strong. Inventory turns in the pontoon segment actually exceeded market average.
 - **Personal watercraft (PWC)**: Still the top volume category at more than 60,000 units, though off high pandemic levels.
 
-These are the types of boats that dominate Rice Lake — aluminum fishing rigs, pontoons, and smaller trailerable packages powered by Mercury outboards. While high-end cruisers and offshore boats have seen more volatility, the core Ontario segments remain fundamentally healthy.
+These are the types of boats that dominate Rice Lake, aluminum fishing rigs, pontoons, and smaller trailerable packages powered by Mercury outboards. While high-end cruisers and offshore boats have seen more volatility, the core Ontario segments remain fundamentally healthy.
 
 ## Canada's Luxury Tax on Boats Is Gone
 
@@ -86,7 +90,7 @@ One of the biggest headwinds in 2023–2025 was the cost of borrowing; higher be
 
 By early 2026, the rate environment is shifting. Major marine finance commentators note that rate cuts are beginning to filter through, and dealers expect that lower monthly payments will help "payment buyers" re-engage in the market.
 
-On a typical $60,000 boat package, even a 1% decrease in interest can shave $30–40 per month off payments over a five-year term — thousands over the life of the loan.
+On a typical $60,000 boat package, even a 1% decrease in interest can shave $30–40 per month off payments over a five-year term, thousands over the life of the loan.
 
 ## The Case for Pre-Owned Boats in 2026
 
@@ -97,7 +101,7 @@ Industry data shows:
 - Used boat pricing has softened 5–10% from the highs of 2021–2022, when some pre-owned boats sold near or above original MSRP.
 - Buyers are more price-sensitive and value-oriented, favouring well-maintained, late-model used boats over new in some cases.
 
-At Harris Boat Works, every used boat that passes through our shop is inspected by our techs before it goes up for sale. That local, service-first approach is your best protection against surprises — especially in a market where private sales can look tempting but carry more risk.
+At Harris Boat Works, every used boat that passes through our shop is inspected by our techs before it goes up for sale. That local, service-first approach is your best protection against surprises, especially in a market where private sales can look tempting but carry more risk.
 
 ## What It All Means for You at Harris Boat Works
 
@@ -111,7 +115,7 @@ Putting all of this together, 2026 is a very favourable moment for Ontario boat 
 For Harris Boat Works customers specifically, this translates into:
 
 - Strong opportunities on Legend aluminum fishing boats and pontoons powered by Mercury outboards.
-- A compelling case for [repowers](/blog/boat-repowering-guide-when-to-replace-motor) — swapping an older two-stroke for a more efficient, cleaner, quieter Mercury FourStroke or Verado.
+- A compelling case for [repowers](/blog/boat-repowering-guide-when-to-replace-motor), swapping an older two-stroke for a more efficient, cleaner, quieter Mercury FourStroke or Verado.
 - Good value in pre-owned packages that have been serviced and vetted locally.
 - An accessible entry point via our rental fleet if you're still deciding whether ownership is right for you.
 
@@ -121,10 +125,10 @@ Stop by the marina in Gores Landing, give us a call at (905) 342-2153, or [brows
 
 ## Related guides
 
-- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026) — current financing rates and terms
-- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario) — financing basics for Ontario buyers
-- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026) — live 2026 promotions and rebates
-- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026) — lowest-cost Mercury models in Canada
+- [Mercury Outboard Financing in Ontario: Your Complete 2026 Guide](/blog/mercury-outboard-financing-ontario-2026), current financing rates and terms
+- [Financing a New Boat Motor: What Ontario Boaters Need to Know](/blog/boat-motor-financing-guide-ontario), financing basics for Ontario buyers
+- [2026 Mercury Buying: Pricing, Promotions and Smart Timing](/blog/mercury-pricing-promotions-2026), live 2026 promotions and rebates
+- [What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)](/blog/cheapest-mercury-outboard-canada-2026), lowest-cost Mercury models in Canada
 
 ## FAQs
 
@@ -152,9 +156,9 @@ Boat pricing in Ontario in 2026 spans a wide range. A basic 14–16 ft aluminum 
 
 Boat financing rates in Canada are easing in 2026 after the high-rate environment of 2023–2025. As the Bank of Canada has reduced its benchmark rate, lenders have passed some relief through to marine loans. On a $60,000 boat package, a 1% rate reduction can reduce monthly payments by $30–40 over a five-year term, saving over $2,000 across the loan. The direction is clearly positive heading into 2026, helping payment-sensitive buyers re-engage with the market after sitting out the high-rate years.
 
-### Should I buy new or used — and is it worth waiting for a deal?
+### Should I buy new or used, and is it worth waiting for a deal?
 
-In 2026, the gap between new and used value is narrower than usual because new inventory is elevated and dealers are motivated to move it. For buyers who want the latest model, full warranty, and specific configuration, new is genuinely accessible — expect 5–10% more room to negotiate than during the 2021–2022 shortage. For buyers flexible on model year, pre-owned offers the better dollar-per-foot value, especially on 2020–2023 boats. Sitting on the fence past spring means losing season days, not saving money — the market has already corrected.
+In 2026, the gap between new and used value is narrower than usual because new inventory is elevated and dealers are motivated to move it. For buyers who want the latest model, full warranty, and specific configuration, new is genuinely accessible, expect 5–10% more room to negotiate than during the 2021–2022 shortage. For buyers flexible on model year, pre-owned offers the better dollar-per-foot value, especially on 2020–2023 boats. Sitting on the fence past spring means losing season days, not saving money, the market has already corrected.
 
 ### What's the difference between the Canadian and US boat market in 2026?
 

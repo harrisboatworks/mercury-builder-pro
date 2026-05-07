@@ -29,6 +29,10 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Rice Lake's 2026 outlook is strong: walleye and crappie populations are healthy, water levels are normal, and weed structure is back after the cleaner winter. Walleye opener is the second Saturday of May. Get the boat serviced before April or expect a wait. Book at mercuryrepower.ca.
+
 Rice Lake's 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are managed; ice-out timing and water temperatures will set the early-season pattern. The classic species mix and structure on Rice Lake have been consistent for decades. We are looking forward to another good season.
 
 ## Quick recommendation

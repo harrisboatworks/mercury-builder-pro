@@ -29,6 +29,10 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965, three generations, current Mercury Marine Platinum Dealer. We post installed pricing online via the configurator, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
+
 Harris Boat Works has been a Mercury dealer since 1965. Three generations of HBW have rigged Mercurys, serviced them, and stood behind them. We are a Mercury Platinum dealer, which gives us factory-direct access to support, training, and inventory. We sell Mercury exclusively because the math works for our customers and our shop. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
@@ -112,7 +116,7 @@ When customers come to HBW for a Mercury repower, they get:
 - **Prop selection during sea-trial** to confirm performance
 - **PCL update** as part of the project
 - **Service log entry** for warranty support and resale value
-- **Mercury Repower Financing** at 7.99% APR (qualified buyers)
+- **Mercury Repower Financing** at 7.99% APR (as of May 2026) (qualified buyers)
 - **Trade-in evaluation** for old motors
 
 We do not push repowers that are not warranted. Sometimes customers come in with a motor that has years of life left. We tell them that and they go fish.

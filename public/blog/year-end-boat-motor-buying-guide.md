@@ -29,6 +29,10 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Year-end deals exist but the math is more nuanced than most assume. Mercury controls promotions and dealers can't manufacture extra discount. The real win at year-end is build-slot priority for spring install. Configure with current promotions baked in at mercuryrepower.ca.
+
 ## Year-End Motor Buying: Is It the Best Time?
 
 Conventional wisdom says year-end is deal time. Is that true for boat motors? Here's the reality.
@@ -87,20 +91,20 @@ A fair deal when you need it beats waiting indefinitely for a perfect deal. That
 
 **[Get Year-End Pricing](/quote)**
 
-Before you negotiate, anchor your expectations to real numbers — our [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) is the canonical CAD price reference for complete repowers at every HP tier.
+Before you negotiate, anchor your expectations to real numbers, our [2026 Mercury repower cost guide for Ontario](https://mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) is the canonical CAD price reference for complete repowers at every HP tier.
 
 ## Related guides
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
 ## FAQs
 
 ### Are boat show prices better than dealer prices?
 
-Boat shows sometimes feature special offers. However, local dealers may match or beat show prices. Shop around and compare—we welcome price comparisons.
+Boat shows sometimes feature special offers. However, local dealers may match or beat show prices. Shop around and compare - we welcome price comparisons.
 
 ### Is waiting for spring sales better than year-end?
 
@@ -112,7 +116,7 @@ Price has some flexibility, especially on in-stock units. Bundling installation,
 
 ### When is the best time to buy?
 
-Winter months often offer good value through reduced demand, dealer flexibility, and no missed boating time. Currently, Harris Boat Works includes 7 years of factory-backed warranty with every new Mercury—a significant value.
+Winter months often offer good value through reduced demand, dealer flexibility, and no missed boating time. Currently, Harris Boat Works includes 7 years of factory-backed warranty with every new Mercury - a significant value.
 
 ## Next steps
 

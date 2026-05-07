@@ -29,6 +29,10 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** A Mercury order at HBW: configurator quote, phone confirmation, deposit, build allocation, delivery to our shop, install, sea trial, pickup. Stocked motors ship in days; special orders (including Verado) take weeks to months. Deposits are fully refundable on stocked, non-refundable on special order. Start at mercuryrepower.ca.
+
 ## The Mercury Ordering Process: A Complete Guide
 
 Whether buying in-stock or ordering, understanding the process ensures a smooth experience. Here is what to expect at each step.
@@ -183,7 +187,7 @@ Whether buying in-stock or ordering, understanding the process ensures a smooth 
 | Installation | 1-3 days |
 | **Total** | **6-16 weeks** |
 
-*Timelines vary by season—summer is busiest*
+*Timelines vary by season - summer is busiest*
 
 ### What to Prepare
 
@@ -218,10 +222,10 @@ Typically when motor is installed and ready for water test. Review payment terms
 
 ## Related guides
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
 ## FAQs
 
@@ -231,7 +235,7 @@ For in-stock motors, typically 2-6 weeks from deposit to water test. Ordered mot
 
 ### What deposit is required?
 
-Typically 25-50% depending on the dealer and whether the motor is in-stock or ordered. Special orders may require larger deposits. Terms vary—ask for them in writing.
+Typically 25-50% depending on the dealer and whether the motor is in-stock or ordered. Special orders may require larger deposits. Terms vary - ask for them in writing.
 
 ### Can I install my own motor?
 
@@ -239,7 +243,7 @@ Yes, but warranty may require dealer installation. DIY installation also means y
 
 ### What if there is a problem during water test?
 
-Issues found during water test are addressed before handover. This is exactly why we test—any problems are warranty covered and fixed before you take delivery.
+Issues found during water test are addressed before handover. This is exactly why we test - any problems are warranty covered and fixed before you take delivery.
 
 ## Next steps
 

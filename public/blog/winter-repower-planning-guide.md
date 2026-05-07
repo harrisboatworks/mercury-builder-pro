@@ -29,9 +29,13 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Winter is the best time to plan a spring repower. Inventory is open, build slots are unbooked, and we can lock in pricing before the spring rush. Start the configurator quote in January or February for an April or May install. Build yours at mercuryrepower.ca.
+
 ## Winter Repower Planning
 
-Winter is the perfect time to plan and execute a repower. Your boat sits anyway—why not make it ready for spring with fresh power?
+Winter is the perfect time to plan and execute a repower. Your boat sits anyway - why not make it ready for spring with fresh power?
 
 ### Why Winter Repower?
 
@@ -110,10 +114,10 @@ If yes to most, repower makes sense.
 
 ## Related guides
 
-- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas) — the full Kawarthas repower playbook
-- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad) — transparent 2026 CAD repower pricing
-- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor) — how to know it's time to replace your motor
-- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide) — cottage-specific repower considerations
+- [Complete Guide to Repowering Your Boat in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full Kawarthas repower playbook
+- [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](/blog/mercury-repower-cost-ontario-2026-cad), transparent 2026 CAD repower pricing
+- [Boat Repowering 101: When to Replace Your Outboard Motor](/blog/boat-repowering-guide-when-to-replace-motor), how to know it's time to replace your motor
+- [Ontario Cottage Owner's Guide: Is It Time to Repower Your Boat?](/blog/ontario-cottage-boat-motor-repower-guide), cottage-specific repower considerations
 
 ## FAQs
 

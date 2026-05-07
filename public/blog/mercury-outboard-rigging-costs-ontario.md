@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "Mercury Outboard Rigging Costs Explained (Ontario 2026)"
-description: "Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop."
+description: "Last reviewed: 2026-05-07"
 category: "Repower"
 date_published: 2026-05-05
 date_modified: 2026-05-05
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Rigging Costs Explained (Ontario 2026)
 
-> Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop.
+> Last reviewed: 2026-05-07
 
 **Category:** Repower  
 **Published:** 2026-05-05  
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Mercury Outboard Rigging Costs Explained (Ontario 2026)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Rigging costs vary by job: a like-for-like swap can be under $1,500, a full re-rig with new gauges, harness, and controls runs $3,000-$6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at mercuryrepower.ca.
 
 Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. For a typical Mercury-to-Mercury repower with post-2010 controls in good condition, rigging lands $500 to $1,500 CAD. Brand conversions and full rerigs run higher. Live pricing on every Mercury we sell, with rigging included, is at [/quote/motor-selection](/quote/motor-selection).
 

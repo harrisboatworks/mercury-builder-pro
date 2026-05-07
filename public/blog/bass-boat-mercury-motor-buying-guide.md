@@ -29,9 +29,13 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** For most Ontario bass boats in the 17-20 ft range, the Mercury Pro XS 150 or 175 is the right call, high-RPM tune, light gearcase, and the hole-shot bass anglers expect. Stay inside the hull's max HP. Build an installed Pro XS package at mercuryrepower.ca.
+
 ## Choosing the Right Mercury for Your Bass Boat
 
-Bass boats demand motors that deliver explosive hole-shot, reliable performance, and the power to run hard all day. Whether you're running Rice Lake looking for smallmouth, heading to a tournament trail, or just want a rig that keeps up — here's how to choose the right Mercury.
+Bass boats demand motors that deliver explosive hole-shot, reliable performance, and the power to run hard all day. Whether you're running Rice Lake looking for smallmouth, heading to a tournament trail, or just want a rig that keeps up, here's how to choose the right Mercury.
 
 We've been a Mercury dealer since 1965. These are our honest recommendations.
 
@@ -104,7 +108,7 @@ Mercury 300HP Pro XS
 
 Jack Plate Compatibility:
 
-All Mercury motors work with standard jack plates. Shaft length affects setup — confirm 20" or 25" based on your transom configuration.
+All Mercury motors work with standard jack plates. Shaft length affects setup, confirm 20" or 25" based on your transom configuration.
 
 Quick Lift:
 
@@ -112,13 +116,13 @@ Power Trim standard. Vital for running shallow water on lakes like Rice Lake, wh
 
 Propeller Selection:
 
-Pro XS boats often run 4-blade stainless props for best hole-shot. Pitch selection varies by boat weight and use — our team can help you choose the right prop for your hull and fishing style.
+Pro XS boats often run 4-blade stainless props for best hole-shot. Pitch selection varies by boat weight and use, our team can help you choose the right prop for your hull and fishing style.
 
 ### Our Recommendation
 
-For most bass anglers, the **Mercury Pro XS** in the appropriate HP provides the best combination of performance and value. It's what tournament pros run for good reason. The [Mercury 150 ELPT Pro XS](/motors/proxs-150hp-150-elpt-proxs) is the single most-popular bass-boat repower we sell in Ontario — lighter than the FourStroke 150, tuned for top-end and hole-shot, priced in CAD with pickup at Gores Landing on Rice Lake.
+For most bass anglers, the **Mercury Pro XS** in the appropriate HP provides the best combination of performance and value. It's what tournament pros run for good reason. The [Mercury 150 ELPT Pro XS](/motors/proxs-150hp-150-elpt-proxs) is the single most-popular bass-boat repower we sell in Ontario, lighter than the FourStroke 150, tuned for top-end and hole-shot, priced in CAD with pickup at Gores Landing on Rice Lake.
 
-If budget is tighter and you fish recreationally — chasing smallmouth on Rice Lake or bass on cottage country waters — the **Mercury FourStroke** at 150HP delivers excellent performance without the Pro XS premium.
+If budget is tighter and you fish recreationally, chasing smallmouth on Rice Lake or bass on cottage country waters, the **Mercury FourStroke** at 150HP delivers excellent performance without the Pro XS premium.
 
 [Build your bass boat motor quote](https://mercuryrepower.ca/quote/motor-selection)
 
@@ -126,10 +130,10 @@ If budget is tighter and you fish recreationally — chasing smallmouth on Rice 
 
 ## Related guides
 
-- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats) — best Mercury for pontoons
-- [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide) — center-console power picks
-- [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts) — family-runabout recommendations
+- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
+- [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide), center-console power picks
+- [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
 
 ## FAQs
 
@@ -159,15 +163,15 @@ Mercury Pro XS pricing in Canada varies by horsepower, shaft length, controls, p
 
 ### What's the difference between Mercury Pro XS and Mercury FourStroke for bass fishing?
 
-The Pro XS is performance-tuned with lighter construction (up to 60 lbs lighter), higher RPM capability, and faster hole-shot — purpose-built for tournament anglers who need speed. The FourStroke prioritizes fuel economy, quiet operation, and durability at a lower price. For Ontario recreational bass anglers on lakes like Rice Lake or cottage country waters, the FourStroke at 150–175HP is excellent without needing the Pro XS premium. For tournament fishing on Ontario circuits, the Pro XS is the clear choice.
+The Pro XS is performance-tuned with lighter construction (up to 60 lbs lighter), higher RPM capability, and faster hole-shot, purpose-built for tournament anglers who need speed. The FourStroke prioritizes fuel economy, quiet operation, and durability at a lower price. For Ontario recreational bass anglers on lakes like Rice Lake or cottage country waters, the FourStroke at 150–175HP is excellent without needing the Pro XS premium. For tournament fishing on Ontario circuits, the Pro XS is the clear choice.
 
 ### Can I use a kicker motor on a bass boat?
 
-Most bass boats don't use a dedicated kicker the way walleye rigs do — bass fishing is generally run-and-gun rather than slow-trolling. A small kicker (Mercury 9.9HP or 15HP) can work on some bass boat transoms for backup or trolling scenarios, but not all bass boat hulls are configured for it. More common is a high-thrust trolling motor for positioning work, which is standard at the tournament level. Ask your dealer if a kicker setup makes sense for your specific hull.
+Most bass boats don't use a dedicated kicker the way walleye rigs do, bass fishing is generally run-and-gun rather than slow-trolling. A small kicker (Mercury 9.9HP or 15HP) can work on some bass boat transoms for backup or trolling scenarios, but not all bass boat hulls are configured for it. More common is a high-thrust trolling motor for positioning work, which is standard at the tournament level. Ask your dealer if a kicker setup makes sense for your specific hull.
 
 ### What warranty does a Mercury outboard come with in Canada?
 
-Mercury outboards sold in Canada come with a standard 3-year limited warranty for recreational use, covering defects in materials and workmanship. Annual service by an authorized Mercury dealer is required to maintain warranty validity. Extended protection plans are available. At Harris Boat Works, as a Mercury Platinum dealer, certified technicians perform warranty service and handle claims directly with Mercury — you don't need to deal with the manufacturer independently.
+Mercury outboards sold in Canada come with a standard 3-year limited warranty for recreational use, covering defects in materials and workmanship. Annual service by an authorized Mercury dealer is required to maintain warranty validity. Extended protection plans are available. At Harris Boat Works, as a Mercury Platinum dealer, certified technicians perform warranty service and handle claims directly with Mercury, you don't need to deal with the manufacturer independently.
 
 ### What's the best Mercury outboard for Ontario bass tournaments?
 

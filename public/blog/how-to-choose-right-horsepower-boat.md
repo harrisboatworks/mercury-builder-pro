@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "How to Choose the Right Horsepower for Your Boat (2026 Guide)"
-description: "The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate."
+description: "Last reviewed: 2026-05-07"
 category: "Buying Guide"
 date_published: 2024-06-15
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # How to Choose the Right Horsepower for Your Boat (2026 Guide)
 
-> The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate.
+> Last reviewed: 2026-05-07
 
 **Category:** Buying Guide  
 **Published:** 2024-06-15  
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # How to Choose the Right Horsepower for Your Boat (2026 Guide)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Match the horsepower to your hull's capacity plate first, then pick within that range based on load and use. Bigger isn't better, over-powering creates capacity-plate compliance, insurance, liability, and warranty risk. Most Ontario family runabouts in the 17-20 ft range land between 90 and 150 HP. Build a real installed quote at mercuryrepower.ca.
 
 The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. The shortcut: aim for 70 to 90% of your maximum rating for typical recreational use. Going lower leaves you underpowered, going to 100% maxes out fuel economy. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -47,7 +51,7 @@ Six things move the right HP for your boat:
 - **Intended use.** Solo fishing at 5 mph has totally different HP requirements than family cruising at 30 mph, which is different again from pulling a tube. Same boat, different right answer.
 - **Passenger and gear loading.** A two-person boat needs less HP than a six-person boat. Adding 800 lbs of crew and gear changes the math meaningfully.
 - **Where you launch and run.** Sheltered private dock vs. Bewdley public ramp vs. Lake Ontario open water all change the practical HP minimum. Wind exposure punishes underpowering.
-- **Maximum HP rating.** The capacity plate sets the ceiling. Mercury voids the warranty if we over-power a hull. We will not install a motor above the rated HP.
+- **Maximum HP rating.** The capacity plate sets the ceiling, exceeding it creates capacity-plate compliance, insurance, liability, and potential warranty problems. We won't rig a motor that breaks the rating.
 - **Long-term ownership plan.** A boat you plan to keep 15 years justifies a bigger motor than a boat you plan to flip in 3 years.
 
 ## HP class recommendations by boat type
@@ -119,7 +123,7 @@ We will not over-power your boat. We will not under-power it on purpose to fit a
 We see these every season:
 
 1. **Buying too small to save money.** A 9.9 on a 16-foot boat that should have a 25 will leave you fighting wind and tide every day. You will trade up in two seasons at full price. Pay once.
-2. **Buying too big because more is better.** A 250 HP on a 17-foot pontoon that the hull is rated for 150 HP is illegal and unsafe. Mercury voids warranty. The motor outpowers the hull and feels twitchy.
+2. **Buying too big because more is better.** A 250 HP on a 17-foot pontoon that the hull is rated for 150 HP is illegal and unsafe. Mercury can decline warranty coverage in that situation, your insurer can deny claims, and you've broken the federal capacity-plate compliance standard. The motor outpowers the hull and feels twitchy.
 3. **Buying for one specific use case and ignoring others.** "I just need it for fishing" is fine until your kids want to tube. Plan for the full use case.
 4. **Picking HP without checking prop.** A correctly-sized motor with a wrong prop loses 4 mph and 15% fuel economy. The HP you bought never reaches the water.
 5. **Ignoring loading.** Empty boat numbers are aspirational. Loaded boat numbers are real life.
@@ -228,11 +232,11 @@ Check the capacity plate, usually located near the helm or transom. It shows max
 
 ### What happens if I choose too little horsepower for my boat?
 
-Too little horsepower causes your boat to struggle reaching planing speed, especially with a full passenger load or against headwind. This burns more fuel, puts more heat through the engine, and in deteriorating conditions on larger lakes creates a safety concern. Underpowered boats also strain the motor at high throttle more often, accelerating wear. If you regularly run at more than 80% throttle just to maintain comfortable speeds, you're underpowered — moving up one HP class is usually the practical fix.
+Too little horsepower causes your boat to struggle reaching planing speed, especially with a full passenger load or against headwind. This burns more fuel, puts more heat through the engine, and in deteriorating conditions on larger lakes creates a safety concern. Underpowered boats also strain the motor at high throttle more often, accelerating wear. If you regularly run at more than 80% throttle just to maintain comfortable speeds, you're underpowered, moving up one HP class is usually the practical fix.
 
 ### Can I exceed my boat's maximum HP rating in Canada?
 
-No. You cannot legally or safely exceed the maximum horsepower rating on your boat's capacity plate. In Canada, this rating is set under Transport Canada regulations, and exceeding it is illegal. The hull is engineered for that load limit — running a larger motor can stress the transom, affect stability, and create dangerous handling at speed. If your boat feels underpowered at its rated maximum, the solution is a different boat, not exceeding the limit.
+No. You cannot legally or safely exceed the maximum horsepower rating on your boat's capacity plate. In Canada, this rating is set under Transport Canada regulations, and exceeding it is illegal. The hull is engineered for that load limit, running a larger motor can stress the transom, affect stability, and create dangerous handling at speed. If your boat feels underpowered at its rated maximum, the solution is a different boat, not exceeding the limit.
 
 ### What is the right HP for a fishing boat on Rice Lake or Kawartha Lakes?
 
@@ -240,19 +244,19 @@ For a 16–18 ft aluminum fishing boat on Rice Lake or the Kawarthas, the most p
 
 ### Should I choose the maximum HP my boat is rated for?
 
-For most boat owners, 70–80% of maximum rated HP is the better target rather than the full maximum. Maximum HP is a safety ceiling, not a performance goal. Running at 70–80% gives strong performance, reduces engine strain, and improves fuel efficiency. The exception is if you have specific performance needs — watersports, full passenger loads in rough conditions, or larger lakes where speed matters. In those cases, stepping toward the maximum is reasonable.
+For most boat owners, 70–80% of maximum rated HP is the better target rather than the full maximum. Maximum HP is a safety ceiling, not a performance goal. Running at 70–80% gives strong performance, reduces engine strain, and improves fuel efficiency. The exception is if you have specific performance needs, watersports, full passenger loads in rough conditions, or larger lakes where speed matters. In those cases, stepping toward the maximum is reasonable.
 
 ### What horsepower do I need for a pontoon boat in Ontario?
 
-For a 20 ft pontoon on Ontario lakes, 60–90 HP is the most practical range. At 60 HP a 20 ft pontoon will plane adequately with a modest load. At 90 HP you'll have noticeably better acceleration with a full passenger load and more reserve for headwinds — which matter on pontoons given their windage profile. For a 22–24 ft pontoon, 90–115 HP is better matched. Pontoons require more power than you might expect because their twin-hull design creates more drag at planing speed than a v-hull.
+For a 20 ft pontoon on Ontario lakes, 60–90 HP is the most practical range. At 60 HP a 20 ft pontoon will plane adequately with a modest load. At 90 HP you'll have noticeably better acceleration with a full passenger load and more reserve for headwinds, which matter on pontoons given their windage profile. For a 22–24 ft pontoon, 90–115 HP is better matched. Pontoons require more power than you might expect because their twin-hull design creates more drag at planing speed than a v-hull.
 
 ### Do I need a kicker motor in addition to my main outboard for fishing?
 
-A kicker motor — typically 9.9 HP — makes sense if you do a lot of trolling. Most main outboards above 60 HP are inefficient at true trolling speeds (1–3 mph), causing fuel washdown and uneven combustion. A dedicated kicker runs at its designed range for trolling and lets your main motor rest. For walleye fishing on Rice Lake and the Kawarthas, where slow trolling along bottom structure is common, a kicker adds real practical value. Mercury's ProKicker 9.9 is purpose-built for this use.
+A kicker motor, typically 9.9 HP, makes sense if you do a lot of trolling. Most main outboards above 60 HP are inefficient at true trolling speeds (1–3 mph), causing fuel washdown and uneven combustion. A dedicated kicker runs at its designed range for trolling and lets your main motor rest. For walleye fishing on Rice Lake and the Kawarthas, where slow trolling along bottom structure is common, a kicker adds real practical value. Mercury's ProKicker 9.9 is purpose-built for this use.
 
 ### How much HP do I need to pull a tube or water skier?
 
-To pull a tube with one or two riders, most 16–18 ft boats need a minimum of 75 HP, with 90–115 HP more comfortable. Water skiing requires a minimum of around 20 mph — 90 HP is a reasonable floor, with 115 HP providing more confidence. Wakeboarding generally requires more power than waterskiing due to heavier loads. If watersports are a primary use, err toward the higher end of your boat's HP range, and confirm your hull's transom rating supports sustained watersport use.
+To pull a tube with one or two riders, most 16–18 ft boats need a minimum of 75 HP, with 90–115 HP more comfortable. Water skiing requires a minimum of around 20 mph, 90 HP is a reasonable floor, with 115 HP providing more confidence. Wakeboarding generally requires more power than waterskiing due to heavier loads. If watersports are a primary use, err toward the higher end of your boat's HP range, and confirm your hull's transom rating supports sustained watersport use.
 
 ## Next steps
 

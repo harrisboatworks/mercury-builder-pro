@@ -29,6 +29,10 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** On Ontario's small lakes, many under 10 HP electric-only, a Mercury 5 or 9.9 FourStroke portable is usually the right call. Where bigger motors are allowed, 25-60 HP covers most cottage runabouts. Always check the lake's local restrictions. Configure portable and mid-range options at mercuryrepower.ca.
+
 ## Motors for Small Lakes and Cottage Waters
 
 Ontario's cottage country is full of small lakes with restrictions or quiet expectations. Here's how to choose the right power.
@@ -123,10 +127,10 @@ Contact us about electric options
 
 ## Related guides
 
-- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) — best Mercury for Rice Lake fishing
-- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing) — Lake Simcoe walleye picks
-- [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout) — Lake Ontario salmon and trout setups
-- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas) — musky-boat motor guide
+- [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing), best Mercury for Rice Lake fishing
+- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing). Lake Simcoe walleye picks
+- [Best Mercury Outboard for Lake Ontario Salmon & Trout Fishing](/blog/best-mercury-outboard-lake-ontario-salmon-trout). Lake Ontario salmon and trout setups
+- [Best Motors for Musky Fishing in the Kawarthas: Local Expert Guide](/blog/musky-boat-motor-guide-kawarthas), musky-boat motor guide
 
 ## FAQs
 

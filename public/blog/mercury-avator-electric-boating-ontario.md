@@ -29,18 +29,22 @@ content_type: blog_article
 
 ## Article
 
-Electric propulsion is creeping into more corners of the marine world every year. It started with trolling motors, then kayaks and small tenders. Now we're seeing serious outboard manufacturers like Mercury build full electric families designed for real-world use — not just for trade show stands.
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury Avator brings purpose-built electric outboards to the 7.5-35e HP range, quiet, low-maintenance, ideal for electric-only Ontario lakes. Range and charging logistics are the limiting factors today. We can quote and rig Avator on request through mercuryrepower.ca.
+
+Electric propulsion is creeping into more corners of the marine world every year. It started with trolling motors, then kayaks and small tenders. Now we're seeing serious outboard manufacturers like Mercury build full electric families designed for real-world use, not just for trade show stands.
 
 Mercury's **Avator** line is the company's low-voltage electric outboard brand, and it's expanding fast. While we don't expect Rice Lake to go all-electric overnight, Avator already makes sense for some Ontario boaters, and it gives us a glimpse of where the industry is headed.
 
 ## What Is Mercury Avator?
 
-Avator is Mercury's electric propulsion family — similar to how Verado is its premium gas outboard brand. Mercury describes it as a new boating experience built around **electrification, intuitive controls, and smart integration**.
+Avator is Mercury's electric propulsion family, similar to how Verado is its premium gas outboard brand. Mercury describes it as a new boating experience built around **electrification, intuitive controls, and smart integration**.
 
 Key points:
 
 - Designed as a **complete system**: motor, battery, charger, controls, and displays designed to work together.
-- Focused on **low-voltage applications** initially — think small boats, tenders, and short-range use.
+- Focused on **low-voltage applications** initially, think small boats, tenders, and short-range use.
 - Backed by Mercury's existing dealer and service infrastructure, not an experimental side project.
 
 ## The Current Avator Lineup
@@ -64,7 +68,7 @@ Mercury and independent testers have published early runtime and range examples.
 
 Higher-power Avator models allow connecting multiple battery packs (up to four 2.3 kWh packs in some configurations), extending run time and range significantly.
 
-For short-range cottage use — running from the dock to a nearby bay and back — that's more than enough for many days on the water. For all-day trolling on Rice Lake, it's not yet a direct replacement for a gas [ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide), but the tech is moving quickly.
+For short-range cottage use, running from the dock to a nearby bay and back, that's more than enough for many days on the water. For all-day trolling on Rice Lake, it's not yet a direct replacement for a gas [ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide), but the tech is moving quickly.
 
 ## Why Avator Might Make Sense for Some Rice Lake Boaters
 
@@ -138,11 +142,11 @@ Then we'll give you a frank recommendation on gas, electric, or a hybrid of both
 
 ## Related guides
 
-- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) — best Mercury for aluminum fishing boats
-- [Trolling Motor vs Kicker: Which Auxiliary Setup Is Right for You?](/blog/electric-trolling-motor-kicker-guide) — electric trolling and kicker setups
-- [Best Outboard Motors for Ontario's Small Lakes and Cottage Country](/blog/best-motor-small-lakes-ontario) — best motor for small Ontario lakes
-- [Mercury Portable Outboards (2.5-20HP): Complete Buyer's Guide](/blog/portable-outboard-mercury-guide-2-20hp) — portable 2–20 HP options
-- [Inside Mercury's 2026 Outboard Lineup: What Actually Matters for Ontario Boaters](/blog/mercury-2026-outboard-lineup-ontario) — 2026 Mercury lineup for Ontario
+- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
+- [Trolling Motor vs Kicker: Which Auxiliary Setup Is Right for You?](/blog/electric-trolling-motor-kicker-guide), electric trolling and kicker setups
+- [Best Outboard Motors for Ontario's Small Lakes and Cottage Country](/blog/best-motor-small-lakes-ontario), best motor for small Ontario lakes
+- [Mercury Portable Outboards (2.5-20HP): Complete Buyer's Guide](/blog/portable-outboard-mercury-guide-2-20hp), portable 2–20 HP options
+- [Inside Mercury's 2026 Outboard Lineup: What Actually Matters for Ontario Boaters](/blog/mercury-2026-outboard-lineup-ontario), 2026 Mercury lineup for Ontario
 
 ## FAQs
 
@@ -152,7 +156,7 @@ On a 13 ft boat with the Avator 7.5e, expect about 60 minutes / 5 miles at full 
 
 ### Is an electric outboard practical for Rice Lake?
 
-For small car-toppers, cottage runabouts, and short-range trips, yes — the Avator is very practical on Rice Lake. For full-day fishing on larger boats, a gas outboard with a trolling motor is still the most versatile option. The gap is closing as Avator models get more powerful and battery capacity increases.
+For small car-toppers, cottage runabouts, and short-range trips, yes, the Avator is very practical on Rice Lake. For full-day fishing on larger boats, a gas outboard with a trolling motor is still the most versatile option. The gap is closing as Avator models get more powerful and battery capacity increases.
 
 ### How does the Avator compare to a trolling motor?
 
@@ -164,11 +168,11 @@ Much less than a gas engine. There are no oil changes, fuel filters, spark plugs
 
 ### Is a Mercury Avator electric outboard practical for Rice Lake in Ontario?
 
-An Avator is practical for specific Rice Lake use cases — a small car-topper or tender making short trips from a cottage dock, or a dedicated quiet runabout. For a 16–18 ft fishing boat running multiple spots across Rice Lake in a full day, a gas FourStroke is still more practical. Rice Lake's shallow, sheltered bays suit Avator well for the right boat type. The best current use case on Rice Lake is a dedicated small runabout or tender alongside a gas-powered main boat.
+An Avator is practical for specific Rice Lake use cases, a small car-topper or tender making short trips from a cottage dock, or a dedicated quiet runabout. For a 16–18 ft fishing boat running multiple spots across Rice Lake in a full day, a gas FourStroke is still more practical. Rice Lake's shallow, sheltered bays suit Avator well for the right boat type. The best current use case on Rice Lake is a dedicated small runabout or tender alongside a gas-powered main boat.
 
 ### How does the Mercury Avator compare to a trolling motor?
 
-The Avator is designed as a primary outboard, not just a trolling motor. It steers like an outboard, provides real thrust for planing or near-planing on small hulls, and includes full outboard-style controls and displays. The Avator 7.5e produces roughly 3.5–4 HP gas equivalent; the 110e produces approximately 15 HP gas equivalent — far more capable than a trolling motor. For anything beyond slow-speed trolling on a small boat, Avator is the more capable choice. For pure slow-speed trolling on a larger fishing boat, a traditional trolling motor remains simpler and cheaper.
+The Avator is designed as a primary outboard, not just a trolling motor. It steers like an outboard, provides real thrust for planing or near-planing on small hulls, and includes full outboard-style controls and displays. The Avator 7.5e produces roughly 3.5–4 HP gas equivalent; the 110e produces approximately 15 HP gas equivalent, far more capable than a trolling motor. For anything beyond slow-speed trolling on a small boat, Avator is the more capable choice. For pure slow-speed trolling on a larger fishing boat, a traditional trolling motor remains simpler and cheaper.
 
 ### What maintenance does a Mercury Avator electric outboard need?
 
@@ -176,15 +180,15 @@ Avator outboards require significantly less maintenance than gas engines. There 
 
 ### How much does a Mercury Avator cost in Ontario?
 
-For current Mercury Avator pricing in Ontario, use the Harris Boat Works quote builder at mercuryrepower.ca/quote/motor-selection or call 905-342-2153. Avator pricing includes the motor; battery packs are sold separately for most models. The total system cost — motor plus battery packs for your intended range — is the relevant comparison to a small gas outboard. Harris Boat Works, Mercury dealer since 1965 in Gores Landing, carries Avator and can quote a complete system for your boat.
+For current Mercury Avator pricing in Ontario, use the Harris Boat Works quote builder at mercuryrepower.ca/quote/motor-selection or call 905-342-2153. Avator pricing includes the motor; battery packs are sold separately for most models. The total system cost, motor plus battery packs for your intended range, is the relevant comparison to a small gas outboard. Harris Boat Works, Mercury dealer since 1965 in Gores Landing, carries Avator and can quote a complete system for your boat.
 
 ### Can I use a Mercury Avator on HP-restricted lakes in Ontario?
 
-Yes — HP-restricted lakes are one of the strongest use cases for Avator in Ontario. The Avator 35e (approximately 9.9 HP gas equivalent) and Avator 75e and 110e (approximately 10–15 HP equivalent) suit common HP restrictions. Electric-only restrictions specifically favour Avator. If you access HP-restricted lakes in the Kawarthas or elsewhere in Ontario, Avator is worth a close look. Confirm your specific lake's regulations before purchasing — rules vary by municipality and water body.
+Yes. HP-restricted lakes are one of the strongest use cases for Avator in Ontario. The Avator 35e (approximately 9.9 HP gas equivalent) and Avator 75e and 110e (approximately 10–15 HP equivalent) suit common HP restrictions. Electric-only restrictions specifically favour Avator. If you access HP-restricted lakes in the Kawarthas or elsewhere in Ontario, Avator is worth a close look. Confirm your specific lake's regulations before purchasing, rules vary by municipality and water body.
 
 ### How do I charge a Mercury Avator at a cottage in Ontario?
 
-Avator battery packs charge from standard shore power. The Avator 7.5e integrated 1 kWh battery charges from a standard 110V outlet in approximately 3–4 hours. Larger 2,300Wh external packs take longer — plan on overnight charging for a full pack from 110V. For multiple packs, having multiple outlets or a 240V charger speeds the process. At a typical Ontario cottage with standard electrical service, overnight charging is the practical approach. Mercury's charge management system handles the charge cycle automatically.
+Avator battery packs charge from standard shore power. The Avator 7.5e integrated 1 kWh battery charges from a standard 110V outlet in approximately 3–4 hours. Larger 2,300Wh external packs take longer, plan on overnight charging for a full pack from 110V. For multiple packs, having multiple outlets or a 240V charger speeds the process. At a typical Ontario cottage with standard electrical service, overnight charging is the practical approach. Mercury's charge management system handles the charge cycle automatically.
 
 ### Where can I buy a Mercury Avator electric outboard near Peterborough or Kawartha Lakes?
 

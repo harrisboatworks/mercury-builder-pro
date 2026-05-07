@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?"
-description: "All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out."
+description: "Last reviewed: 2026-05-07"
 category: "Buying Guide"
 date_published: 2026-04-24
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?
 
-> All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out.
+> Last reviewed: 2026-05-07
 
 **Category:** Buying Guide  
 **Published:** 2026-04-24  
@@ -29,11 +29,15 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury, Yamaha, and Honda all build reliable modern outboards. The brand with the densest local service network and parts supply tends to win on practical reliability, for Ontario that's Mercury. Mechanical defect rates between the three are too close to call. Build an installed Mercury quote at mercuryrepower.ca.
+
 All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out. The real difference is dealer service, parts availability, and resale support in YOUR region. In Ontario, Mercury has the deepest dealer network, the strongest Canadian parts supply, and the longest historical track record. We are biased (we sell Mercury, exclusively, since 1965), but the data backs the position. Build your Mercury quote at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
-If you live in Ontario and you are buying a four-stroke outboard for a Canadian boat, Mercury is the right answer. Not because the metal is better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the local service expertise is deeper. When something goes wrong (and something eventually goes wrong with every motor), the brand that can fix it fastest wins.
+If you live in Ontario and you are buying a four-stroke outboard for a Canadian boat, Mercury is the right answer. Not because the metal is better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the local service expertise is deeper. When something goes wrong (and something eventually goes wrong with every motor), the brand with the densest local service network and parts supply tends to win on practical reliability.
 
 If you live in coastal Florida or the Pacific Northwest, the dealer math may favor Yamaha. The brand with the most dealers in your region is usually the right brand. That is true for cars and it is true for outboards.
 

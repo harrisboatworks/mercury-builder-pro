@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "Boat Hull Replacement vs Repower: The Honest Decision (2026)"
-description: "For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision."
+description: "Last reviewed: 2026-05-07"
 category: "Repower"
 date_published: 2026-04-29
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Hull Replacement vs Repower: The Honest Decision (2026)
 
-> For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision.
+> Last reviewed: 2026-05-07
 
 **Category:** Repower  
 **Published:** 2026-04-29  
@@ -28,6 +28,10 @@ content_type: blog_article
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision
 
 ## Article
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** If the hull is sound and the motor is tired, repower. If the hull is structurally compromised, soft transom, rotted stringers, hull cracks, replace the boat. Repowering a bad hull is throwing money at a doomed platform. Honest assessment and installed repower quotes at mercuryrepower.ca.
 
 For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -218,7 +222,7 @@ Repower your boat when the hull is structurally sound and the main problem is an
 
 ### What is the 50% rule in boat repairs?
 
-The 50% rule is a practical guideline used in marine service: if the cost to repair a boat's hull or structural problems exceeds 50% of the value of an equivalent replacement boat, the economics generally favour buying a new or different boat rather than completing the repair. It's not a hard rule — sentimental value, unique hull characteristics, and specific use cases can change the math — but it's a useful starting point for the repower-vs-replace decision. The rule applies to hull repair costs and is separate from the motor replacement cost calculation.
+The 50% rule is a practical guideline used in marine service: if the cost to repair a boat's hull or structural problems exceeds 50% of the value of an equivalent replacement boat, the economics generally favour buying a new or different boat rather than completing the repair. It's not a hard rule, sentimental value, unique hull characteristics, and specific use cases can change the math, but it's a useful starting point for the repower-vs-replace decision. The rule applies to hull repair costs and is separate from the motor replacement cost calculation.
 
 ### How do I know if my boat's transom is rotting?
 
@@ -226,27 +230,27 @@ Signs of transom rot or moisture damage include: a soft, spongy feeling when you
 
 ### Is a 20-year-old boat worth repowering?
 
-Yes — frequently. A 20-year-old boat with a structurally sound hull, firm transom, no stringer rot, and no major system failures is an excellent repower candidate. Fiberglass and welded aluminum hulls last decades when properly maintained; what wears out is typically the motor, not the hull. A sound 20-year-old hull with a new Mercury FourStroke delivers performance comparable to a new rig at a fraction of the total cost. The caveat: "20 years old" tells you age, not condition. A well-maintained 20-year-old boat can be in better condition than a neglected 10-year-old one. Inspect the hull, not just the calendar.
+Yes, frequently. A 20-year-old boat with a structurally sound hull, firm transom, no stringer rot, and no major system failures is an excellent repower candidate. Fiberglass and welded aluminum hulls last decades when properly maintained; what wears out is typically the motor, not the hull. A sound 20-year-old hull with a new Mercury FourStroke delivers performance comparable to a new rig at a fraction of the total cost. The caveat: "20 years old" tells you age, not condition. A well-maintained 20-year-old boat can be in better condition than a neglected 10-year-old one. Inspect the hull, not just the calendar.
 
 ### What does a repower assessment involve?
 
-A repower assessment typically involves: a visual inspection of the transom (firmness, delamination, hardware condition); inspection of the floor and stringers for soft spots or moisture intrusion; review of the hull's rated maximum HP and weight capacity; evaluation of the transom's width and height against the target motor's mounting requirements; and a review of the fuel system and electrical capacity. At Harris Boat Works, we do repower assessments before quoting any repower job — if the hull has problems that make the repower a poor investment, we tell you before you commit to a motor purchase.
+A repower assessment typically involves: a visual inspection of the transom (firmness, delamination, hardware condition); inspection of the floor and stringers for soft spots or moisture intrusion; review of the hull's rated maximum HP and weight capacity; evaluation of the transom's width and height against the target motor's mounting requirements; and a review of the fuel system and electrical capacity. At Harris Boat Works, we do repower assessments before quoting any repower job, if the hull has problems that make the repower a poor investment, we tell you before you commit to a motor purchase.
 
 ### How much does a repower cost compared to a new boat in Ontario?
 
-Based on real 2026 HBW inventory: a 2026 Mercury 60 ELPT is $13,820 MSRP, a 2026 Mercury 90 ELPT is $16,830 MSRP, and a 2026 Mercury 115 ELPT is $19,220 MSRP — all motor-only prices before rigging, prop, and installation. A new comparable boat-motor-trailer package in the same HP class starts around $24,499 for a 16-foot setup and runs to $47,999 for a 21-foot family boat on our lot. The repower savings are significant when the hull is in good condition. We publish these numbers. Use mercuryrepower.ca to build your configured quote — same price the sales team sees.
+Based on real 2026 HBW inventory: a 2026 Mercury 60 ELPT is $13,820 MSRP, a 2026 Mercury 90 ELPT is $16,830 MSRP, and a 2026 Mercury 115 ELPT is $19,220 MSRP, all motor-only prices before rigging, prop, and installation. A new comparable boat-motor-trailer package in the same HP class starts around $24,499 for a 16-foot setup and runs to $47,999 for a 21-foot family boat on our lot. The repower savings are significant when the hull is in good condition. We publish these numbers. Use mercuryrepower.ca to build your configured quote, same price the sales team sees.
 
 ### What are stringers on a boat, and why do they matter for a repower?
 
-Stringers are the longitudinal structural members running the length of a boat's hull, typically bonded into the hull laminate to provide rigidity. On older fiberglass boats with plywood-core stringers, moisture intrusion causes the plywood to rot — compromising the structural integrity of the entire hull. A boat with soft stringers flexes and bounces underfoot, and in severe cases the hull can delaminate or develop stress cracks. Stringer replacement is a major and expensive repair. Before repowering any older fiberglass boat, stringer condition should be assessed — soft stringers are a red flag for the entire repower decision.
+Stringers are the longitudinal structural members running the length of a boat's hull, typically bonded into the hull laminate to provide rigidity. On older fiberglass boats with plywood-core stringers, moisture intrusion causes the plywood to rot, compromising the structural integrity of the entire hull. A boat with soft stringers flexes and bounces underfoot, and in severe cases the hull can delaminate or develop stress cracks. Stringer replacement is a major and expensive repair. Before repowering any older fiberglass boat, stringer condition should be assessed, soft stringers are a red flag for the entire repower decision.
 
 ### Can I put a bigger motor on my boat than the current one?
 
-Only up to the maximum HP rating shown on the boat's capacity plate. The capacity plate (required by Transport Canada on most recreational boats under 6 metres) specifies the maximum horsepower, maximum persons, and maximum weight the hull was designed to handle. Installing a motor that exceeds the rated maximum HP is illegal in Canada and voids your insurance. You can install a motor equal to or less than the rated maximum. If you want more power than your current max HP rating allows, the answer is a different hull — not a different motor.
+Only up to the maximum HP rating shown on the boat's capacity plate. The capacity plate (required by Transport Canada on most recreational boats under 6 metres) specifies the maximum horsepower, maximum persons, and maximum weight the hull was designed to handle. Installing a motor that exceeds the rated maximum HP is illegal in Canada and voids your insurance. You can install a motor equal to or less than the rated maximum. If you want more power than your current max HP rating allows, the answer is a different hull, not a different motor.
 
 ### Do I need to update my boat registration after a repower?
 
-Yes. When you replace a motor on a registered or licensed pleasure craft in Canada, you're required to update the pleasure craft licence to reflect the new motor information — including horsepower, serial number, and fuel type. The licence update is straightforward but mandatory. Operating with outdated licence information can create issues with boating enforcement and insurance claims. Our [Kawarthas repower guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) covers the administrative steps involved in a repower in Ontario.
+Yes. When you replace a motor on a registered or licensed pleasure craft in Canada, you're required to update the pleasure craft licence to reflect the new motor information, including horsepower, serial number, and fuel type. The licence update is straightforward but mandatory. Operating with outdated licence information can create issues with boating enforcement and insurance claims. Our [Kawarthas repower guide](https://mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) covers the administrative steps involved in a repower in Ontario.
 
 ### What are the hidden costs of keeping an older boat hull?
 
@@ -254,7 +258,7 @@ Beyond the motor, older hulls commonly require: wiring inspection and possible r
 
 ### Does repowering a boat affect its resale value?
 
-A repower with a new Mercury FourStroke typically increases a boat's resale value relative to the same hull with an aging original motor. Buyers in the used market know what an old high-hour motor adds to their maintenance risk — a low-hour new motor on a sound hull is a genuinely attractive proposition. The value increase from a repower typically doesn't equal the full cost of the motor, but it narrows the gap. A boat repowered with a well-regarded brand like Mercury and documented with service records commands a meaningful premium over an identical hull with an original, high-hour motor.
+A repower with a new Mercury FourStroke typically increases a boat's resale value relative to the same hull with an aging original motor. Buyers in the used market know what an old high-hour motor adds to their maintenance risk, a low-hour new motor on a sound hull is a genuinely attractive proposition. The value increase from a repower typically doesn't equal the full cost of the motor, but it narrows the gap. A boat repowered with a well-regarded brand like Mercury and documented with service records commands a meaningful premium over an identical hull with an original, high-hour motor.
 
 ## Next steps
 

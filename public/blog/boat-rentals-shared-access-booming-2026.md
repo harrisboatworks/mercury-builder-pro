@@ -29,7 +29,11 @@ content_type: blog_article
 
 ## Article
 
-Not everyone wants to own a boat — and in 2026, that's no longer a barrier to enjoying boating. Across North America, boat rentals, boat clubs, and shared access models are growing faster than most other parts of the marine industry. The idea is simple: you shouldn't have to buy a boat to enjoy the water.
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Boat rentals and shared-access models are growing because they lower the entry cost of getting on the water. They're a great way to confirm what hull and horsepower you actually want before buying. When you're ready to own, build a real installed quote at mercuryrepower.ca.
+
+Not everyone wants to own a boat, and in 2026, that's no longer a barrier to enjoying boating. Across North America, boat rentals, boat clubs, and shared access models are growing faster than most other parts of the marine industry. The idea is simple: you shouldn't have to buy a boat to enjoy the water.
 
 At Harris Boat Works, we've been renting boats on Rice Lake for decades. Long before anyone called it the "sharing economy," we were putting families, anglers, and cottagers into well-maintained rental boats powered by Mercury outboards. Now the rest of the industry is catching up to what marinas like ours have known for years.
 
@@ -51,7 +55,7 @@ Several big-picture trends are converging to make rentals and shared access more
 
 Consumers are increasingly prioritizing experiences over possessions. Travel, outdoor recreation, and adventure consistently rank higher than "owning more stuff" in surveys of spending priorities, especially for millennials and Gen Z.
 
-Boating fits that pattern perfectly. A day on Rice Lake with family, friends, or a fishing buddy is an experience people are willing to pay for — but many don't feel they need to own a boat year-round to have it. Renting makes it as simple as "book, go, return."
+Boating fits that pattern perfectly. A day on Rice Lake with family, friends, or a fishing buddy is an experience people are willing to pay for, but many don't feel they need to own a boat year-round to have it. Renting makes it as simple as "book, go, return."
 
 ### 2. The Real Cost of Ownership
 
@@ -72,7 +76,7 @@ Rentals flip that equation: you pay only for the days you're actually on the wat
 
 During COVID-19, boating exploded as a safe, outdoor, socially distanced activity. Many newcomers to boating tried it for the first time through rentals, not ownership.
 
-As restrictions lifted, a large cohort of "rental native" boaters remained — people who now see boating the way they see skiing or cottage rentals: something you do periodically, often with rented gear, without feeling compelled to buy.
+As restrictions lifted, a large cohort of "rental native" boaters remained, people who now see boating the way they see skiing or cottage rentals: something you do periodically, often with rented gear, without feeling compelled to buy.
 
 ### 4. Technology and Convenience
 
@@ -110,14 +114,14 @@ Here's what sets our rental program apart.
 
 ### Local Knowledge Since 1947
 
-Rice Lake is a unique fishery — shallow, fertile, averaging less than 20 feet deep with a maximum around 27 feet, and full of weed beds, shoals, and structure. It's renowned for:
+Rice Lake is a unique fishery, shallow, fertile, averaging less than 20 feet deep with a maximum around 27 feet, and full of weed beds, shoals, and structure. It's renowned for:
 
 - Walleye (pickerel)
 - Muskie
 - Smallmouth and largemouth bass
 - Panfish like perch, crappie, and sunfish
 
-We've been operating on this lake since 1947. That means when you rent from us, you're not just getting a boat key — you're getting decades of local knowledge: where walleye tend to stage in spring vs. mid-summer, which weedlines are worth trolling for muskie, which stretches to avoid on a windy day with a smaller boat, and where to find a quiet shoreline for a family picnic.
+We've been operating on this lake since 1947. That means when you rent from us, you're not just getting a boat key, you're getting decades of local knowledge: where walleye tend to stage in spring vs. mid-summer, which weedlines are worth trolling for muskie, which stretches to avoid on a windy day with a smaller boat, and where to find a quiet shoreline for a family picnic.
 
 That level of lake-specific guidance is something an app or distant booking platform simply can't provide.
 
@@ -133,7 +137,7 @@ When you pick up a rental from us, it's not an unknown boat with unknown mainten
 
 ### Real Service From Real People
 
-Booking starts online — [browse our rental fleet, check availability, and reserve your spot](https://www.harrisboatworks.ca/rentals) anytime. When you arrive for pickup:
+Booking starts online, [browse our rental fleet, check availability, and reserve your spot](https://www.harrisboatworks.ca/rentals) anytime. When you arrive for pickup:
 
 - We walk you through the boat's controls.
 - We explain any local navigation considerations.
@@ -160,7 +164,7 @@ We see the rental-to-ownership journey play out at our marina every year.
 The pattern often looks like this:
 
 1. A family or angler rents a few times, gets comfortable on the lake, and realizes boating is becoming a regular part of their life.
-2. They start to notice what they like — 16' vs. 18', console vs. tiller, 40 HP vs. 60 HP, pontoon vs. fishing boat.
+2. They start to notice what they like, 16' vs. 18', console vs. tiller, 40 HP vs. 60 HP, pontoon vs. fishing boat.
 3. They come back to us and start asking questions about Legend boats, Mercury packages, and financing options.
 
 Industry data aligns with this: rental and club participants are a major source of future boat buyers. Our job is to help you make that transition when you're ready, with:
@@ -171,26 +175,26 @@ Industry data aligns with this: rental and club participants are a major source 
 
 ## Getting on Rice Lake in 2026
 
-Whether you want to spend a Saturday exploring Rice Lake with your family, plan a fishing weekend targeting walleye, muskie, or bass, or test the waters before committing to boat ownership — our rental fleet is the easiest way to get started.
+Whether you want to spend a Saturday exploring Rice Lake with your family, plan a fishing weekend targeting walleye, muskie, or bass, or test the waters before committing to boat ownership, our rental fleet is the easiest way to get started.
 
-[Browse our rental fleet, check availability, and book online at harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals) — no phone call needed.
+[Browse our rental fleet, check availability, and book online at harrisboatworks.ca/rentals](https://www.harrisboatworks.ca/rentals), no phone call needed.
 
-Boating doesn't have to start with a purchase. With Harris Boat Works, it can start with a rental — and go wherever you want from there.
+Boating doesn't have to start with a purchase. With Harris Boat Works, it can start with a rental, and go wherever you want from there.
 
 **See also:** [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) and [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer).
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
-- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer) — why Harris Boat Works is Mercury
-- [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario) — Mercury vs Yamaha for Ontario
-- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
+- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market), why Mercury leads the market
+- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works is Mercury
+- [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario). Mercury vs Yamaha for Ontario
+- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), reliability comparison: Mercury vs Yamaha vs Honda
 
 ## FAQs
 
 ### How much does it cost to rent a boat vs. owning one?
 
-Ownership costs include purchase/financing, dockage, storage, insurance, and annual maintenance — easily thousands per year even for modest rigs. Renting means you pay only for the days you're on the water, with no off-season bills, repair surprises, or storage decisions. For families who boat a handful of times per season, renting is often significantly cheaper.
+Ownership costs include purchase/financing, dockage, storage, insurance, and annual maintenance, easily thousands per year even for modest rigs. Renting means you pay only for the days you're on the water, with no off-season bills, repair surprises, or storage decisions. For families who boat a handful of times per season, renting is often significantly cheaper.
 
 ### What's included when I rent a boat from Harris Boat Works?
 
@@ -202,23 +206,23 @@ Absolutely. We see this journey every year. Renters get comfortable on the lake,
 
 ### What fish species can I target on Rice Lake?
 
-Rice Lake is renowned for walleye (pickerel), muskie, smallmouth and largemouth bass, and panfish like perch, crappie, and sunfish. It's a shallow, fertile lake averaging less than 20 feet deep, full of weed beds, shoals, and structure — perfect for a variety of fishing techniques.
+Rice Lake is renowned for walleye (pickerel), muskie, smallmouth and largemouth bass, and panfish like perch, crappie, and sunfish. It's a shallow, fertile lake averaging less than 20 feet deep, full of weed beds, shoals, and structure, perfect for a variety of fishing techniques.
 
 ### Do I need a Pleasure Craft Operator Card (PCOC) to rent a boat?
 
-Yes — in Canada, all operators of motorized pleasure craft are required to carry proof of competency, including a Pleasure Craft Operator Card (PCOC) or equivalent. This applies to rental boats. If you don't have a PCOC, you'll need to obtain one before renting — online boating safety courses through Transport Canada approved providers typically take a few hours. Harris Boat Works verifies operator credentials as part of the rental process.
+Yes, in Canada, all operators of motorized pleasure craft are required to carry proof of competency, including a Pleasure Craft Operator Card (PCOC) or equivalent. This applies to rental boats. If you don't have a PCOC, you'll need to obtain one before renting, online boating safety courses through Transport Canada approved providers typically take a few hours. Harris Boat Works verifies operator credentials as part of the rental process.
 
 ### Does a boat rental include a fishing licence?
 
-No — boat rentals do not include fishing licences. You need a valid Ontario recreational fishing licence, purchased separately. Ontario fishing licences are available online at ontario.ca/fishing, at Canadian Tire stores, and at licensed vendors near Gores Landing. A licence is required for anyone 18 or older to fish in Ontario. Conservation Officers patrol Rice Lake, particularly during peak fishing seasons.
+No, boat rentals do not include fishing licences. You need a valid Ontario recreational fishing licence, purchased separately. Ontario fishing licences are available online at ontario.ca/fishing, at Canadian Tire stores, and at licensed vendors near Gores Landing. A licence is required for anyone 18 or older to fish in Ontario. Conservation Officers patrol Rice Lake, particularly during peak fishing seasons.
 
-### What if I've never driven a boat before — can I still rent from Harris Boat Works?
+### What if I've never driven a boat before, can I still rent from Harris Boat Works?
 
-Yes — Harris Boat Works welcomes first-time boaters. Requirements are a valid PCOC and willingness to take responsibility for the boat and passengers. At pickup, the team walks you through controls, starting and stopping the engine, basic docking procedure, and Rice Lake navigation considerations including shoal markers and speed restriction zones. The goal is to leave the dock feeling confident. If genuinely nervous about a first solo rental, consider shorter time blocks or early morning when lake conditions are typically calmer.
+Yes. Harris Boat Works welcomes first-time boaters. Requirements are a valid PCOC and willingness to take responsibility for the boat and passengers. At pickup, the team walks you through controls, starting and stopping the engine, basic docking procedure, and Rice Lake navigation considerations including shoal markers and speed restriction zones. The goal is to leave the dock feeling confident. If genuinely nervous about a first solo rental, consider shorter time blocks or early morning when lake conditions are typically calmer.
 
 ### Is it better to rent first or buy a boat for Rice Lake?
 
-Renting first before buying is almost always the smarter path for anyone new to Rice Lake or to boating. A few rental days tells you whether 16 or 18 feet feels right, tiller or console, how the open south-end feels in afternoon wind, and how often you'll actually be out there. The modest cost of 2–3 rental days can easily save you from a $10,000+ mistake on size, layout, or motor configuration. Harris Boat Works can give you buying advice after a rental — the goal is to get you into the right boat for how you actually use the water.
+Renting first before buying is almost always the smarter path for anyone new to Rice Lake or to boating. A few rental days tells you whether 16 or 18 feet feels right, tiller or console, how the open south-end feels in afternoon wind, and how often you'll actually be out there. The modest cost of 2–3 rental days can easily save you from a $10,000+ mistake on size, layout, or motor configuration. Harris Boat Works can give you buying advice after a rental, the goal is to get you into the right boat for how you actually use the water.
 
 ## Next steps
 

@@ -29,6 +29,10 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Trade-in value depends on brand, horsepower, age, and condition. Mercury holds value best in Ontario; Yamaha takes a small penalty, Honda and Suzuki larger ones. We anchor against median selling prices and cap the credit at the motor subtotal. Get an instant trade estimate inside the configurator at mercuryrepower.ca.
+
 ## Maximizing Your Motor Trade-In Value
 
 Upgrading your outboard? Your current motor has value. Here's how to get the best trade-in deal.
@@ -90,7 +94,7 @@ Upgrading your outboard? Your current motor has value. Here's how to get the bes
 ### Trade-In vs Private Sale
 
 **Trade-In Advantages**:
-- Convenience—one transaction
+- Convenience - one transaction
 - No buyer hassles
 - Immediate value toward purchase
 - Dealer handles everything
@@ -131,10 +135,10 @@ Upgrading your outboard? Your current motor has value. Here's how to get the bes
 
 ## Related guides
 
-- [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) — choosing the right propeller
-- [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide) — maximizing fuel efficiency
-- [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide) — SmartCraft gauges explained
-- [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide) — Digital Throttle & Shift basics
+- [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide), choosing the right propeller
+- [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide), maximizing fuel efficiency
+- [Mercury SmartCraft Gauges: Complete Guide to Digital Boat Displays](/blog/mercury-smartcraft-gauges-guide). SmartCraft gauges explained
+- [Mercury Digital Throttle & Shift (DTS): What You Need to Know](/blog/mercury-digital-throttle-shift-guide). Digital Throttle & Shift basics
 
 ## FAQs
 
@@ -144,7 +148,7 @@ Older 2-strokes have limited value due to emissions and fuel concerns. Running c
 
 ### Do I need to get the motor serviced before trade-in?
 
-Basic cleaning and maintenance helps. Major service isn't usually worth the investment—you won't recoup the full cost. Clean, running, documented is the target.
+Basic cleaning and maintenance helps. Major service isn't usually worth the investment - you won't recoup the full cost. Clean, running, documented is the target.
 
 ### What if my motor has a known issue?
 
@@ -152,7 +156,7 @@ Disclose it. Dealers will find problems anyway, and hidden issues kill trust and
 
 ### Can I trade in a motor that doesn't run?
 
-Yes, but value is limited. Non-running motors may be worth parts value only. Sometimes there's more value than expected—let us evaluate it.
+Yes, but value is limited. Non-running motors may be worth parts value only. Sometimes there's more value than expected - let us evaluate it.
 
 ## Next steps
 

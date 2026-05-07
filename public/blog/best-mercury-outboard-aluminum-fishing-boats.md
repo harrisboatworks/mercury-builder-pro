@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)"
-description: "The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing."
+description: "Last reviewed: 2026-05-07"
 category: "Buying Guide"
 date_published: 2026-01-12
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)
 
-> The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing.
+> Last reviewed: 2026-05-07
 
 **Category:** Buying Guide  
 **Published:** 2026-01-12  
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** For most aluminum fishing boats in the 14-18 ft range, a Mercury 25-60 HP FourStroke is the sweet spot. Match the hull's capacity plate, pick tiller or remote based on layout, and choose Command Thrust if you're loading heavy or pushing a wide transom. Installed pricing for every option lives at mercuryrepower.ca.
 
 The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing. Remote-control 40 to 60 HP suits 14 to 16 ft consoles. The 90 to 115 HP class is the sweet spot for 16 to 19 ft fishing boats with two or three anglers and gear. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -194,11 +198,11 @@ Most aluminum fishing boats use 20" (short shaft) or 25" (long shaft). Measure f
 
 ### Is a tiller or remote better for fishing an aluminum boat?
 
-For most serious anglers on aluminum fishing boats, tiller is better — specifically the Mercury Advanced Tiller system giving you throttle, shift, and trim control at your fingertips. Tiller keeps you connected to the boat and lets you make instant micro-adjustments. Available on Mercury FourStroke models from 2.5HP through 115HP. Remote (console) steering is better for family boats, mixed-use hulls, or 18–20ft boats with center-console setups. Solo walleye anglers almost universally prefer tiller.
+For most serious anglers on aluminum fishing boats, tiller is better, specifically the Mercury Advanced Tiller system giving you throttle, shift, and trim control at your fingertips. Tiller keeps you connected to the boat and lets you make instant micro-adjustments. Available on Mercury FourStroke models from 2.5HP through 115HP. Remote (console) steering is better for family boats, mixed-use hulls, or 18–20ft boats with center-console setups. Solo walleye anglers almost universally prefer tiller.
 
 ### Should I get Command Thrust on my Mercury outboard?
 
-If you fish anywhere with shallow water, weeds, or soft bottom — yes. The Command Thrust larger gearcase runs shallower than standard lower units, provides more thrust at trolling speeds, and handles prop fouling in weeds better. On Ontario lakes with weedy bays — which describes most lakes around Rice Lake and the Kawarthas — Command Thrust is the practical choice even at a modest price premium. Available on Mercury motors from 9.9HP (the ProKicker) through 115HP. The main exception is deep clear lakes where you never fish in the weeds.
+If you fish anywhere with shallow water, weeds, or soft bottom, yes. The Command Thrust larger gearcase runs shallower than standard lower units, provides more thrust at trolling speeds, and handles prop fouling in weeds better. On Ontario lakes with weedy bays, which describes most lakes around Rice Lake and the Kawarthas. Command Thrust is the practical choice even at a modest price premium. Available on Mercury motors from 9.9HP (the ProKicker) through 115HP. The main exception is deep clear lakes where you never fish in the weeds.
 
 ### What shaft length do I need for an aluminum fishing boat?
 
@@ -210,15 +214,15 @@ For a 14–16ft boat, a Mercury 40HP FourStroke is approximately $8,000–$10,00
 
 ### Is EFI worth it over a carbureted motor on an aluminum fishing boat?
 
-For any new motor purchase in 2026, EFI is the standard — Mercury no longer offers carbureted motors in their current lineup. EFI brings instant cold starts, consistent fuel delivery across the RPM range, better fuel economy, and far fewer maintenance issues. If comparing a new EFI to an older carbureted motor you already own, the EFI's reliability and lower maintenance costs typically justify the upgrade within a few seasons, especially for anglers running motors in the cold shoulder seasons.
+For any new motor purchase in 2026, EFI is the standard. Mercury no longer offers carbureted motors in their current lineup. EFI brings instant cold starts, consistent fuel delivery across the RPM range, better fuel economy, and far fewer maintenance issues. If comparing a new EFI to an older carbureted motor you already own, the EFI's reliability and lower maintenance costs typically justify the upgrade within a few seasons, especially for anglers running motors in the cold shoulder seasons.
 
 ### What should I expect when replacing an older two-stroke with a Mercury FourStroke?
 
-Switching from an older two-stroke to a current Mercury FourStroke EFI is immediately noticeable: the FourStroke runs significantly quieter at trolling speeds, starts instantly without priming, and uses 30–40% less fuel. It runs cleaner with no oil injection to worry about. One adjustment: modern FourStrokes are heavier than comparable two-strokes, which can affect how the boat trims and planes. Proper prop selection after installation — which Harris Boat Works handles as part of any motor sale or repower — corrects this quickly.
+Switching from an older two-stroke to a current Mercury FourStroke EFI is immediately noticeable: the FourStroke runs significantly quieter at trolling speeds, starts instantly without priming, and uses 30–40% less fuel. It runs cleaner with no oil injection to worry about. One adjustment: modern FourStrokes are heavier than comparable two-strokes, which can affect how the boat trims and planes. Proper prop selection after installation, which Harris Boat Works handles as part of any motor sale or repower, corrects this quickly.
 
 ### What's the best Mercury outboard for a Lund 1675 in Ontario?
 
-The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2–3 anglers with gear, and run open water confidently. For primarily calm inland lake fishing, the Mercury 60HP Command Thrust is a strong alternative — slightly less top-end but better for shallow bays and weed fishing. The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.
+The Mercury 75HP EFI FourStroke is the most popular and well-matched motor for a Lund 1675 in Ontario. It gives the 16ft deep-V more than enough power to plane quickly, handle 2–3 anglers with gear, and run open water confidently. For primarily calm inland lake fishing, the Mercury 60HP Command Thrust is a strong alternative, slightly less top-end but better for shallow bays and weed fishing. The 90HP is worth considering for heavy loads or lots of open water running, but is often more than needed for typical use.
 
 ## Next steps
 

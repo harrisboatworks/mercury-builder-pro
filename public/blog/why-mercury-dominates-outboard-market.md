@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "Why Mercury Dominates the Outboard Market in 2026"
-description: "Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+..."
+description: "Last reviewed: 2026-05-07"
 category: "Buying Guide"
 date_published: 2026-02-06
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Why Mercury Dominates the Outboard Market in 2026
 
-> Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+...
+> Last reviewed: 2026-05-07
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  
@@ -30,6 +30,10 @@ content_type: blog_article
 ## Article
 
 # Why Mercury Dominates the Outboard Market in 2026
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury dominates Ontario because the dealer network is denser, parts supply is faster, and resale demand is strongest. Yamaha and Honda build excellent motors, but the practical service experience in cottage country favours Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
 
 Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP supercharged Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for 60 years and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -205,7 +209,7 @@ SmartCraft ties engines, helm displays, and mobile devices into one integrated n
 
 ### Why does Harris Boat Works only sell Mercury?
 
-After decades of selling and servicing outboards, Mercury consistently delivers reliability, innovation, and strong parts/support infrastructure in Ontario. Their full HP range covers every Rice Lake need, and our techs know the engines inside and out — meaning better service and fewer headaches for our customers.
+After decades of selling and servicing outboards, Mercury consistently delivers reliability, innovation, and strong parts/support infrastructure in Ontario. Their full HP range covers every Rice Lake need, and our techs know the engines inside and out, meaning better service and fewer headaches for our customers.
 
 ### Why does Mercury have such a large outboard market share?
 
@@ -213,11 +217,11 @@ Mercury's dominant market share results from compounding advantages: consistent 
 
 ### What makes the Mercury Verado V12 600 HP special?
 
-The Verado V12 600 HP achieves its power through a naturally aspirated 7.6-litre V12 powerhead — no turbocharger or supercharger. It features a two-speed automatic transmission (a first for a production outboard) that optimizes hole-shot performance and cruising efficiency, plus a steerable gearcase with fixed powerhead that reduces transom footprint. The result is a quieter, smoother, more refined high-horsepower outboard than anything previously available in the category.
+The Verado V12 600 HP achieves its power through a naturally aspirated 7.6-litre V12 powerhead, no turbocharger or supercharger. It features a two-speed automatic transmission (a first for a production outboard) that optimizes hole-shot performance and cruising efficiency, plus a steerable gearcase with fixed powerhead that reduces transom footprint. The result is a quieter, smoother, more refined high-horsepower outboard than anything previously available in the category.
 
 ### How does Mercury SmartCraft benefit boat owners on Rice Lake?
 
-SmartCraft gives Rice Lake boat owners real-time engine data — RPM, fuel burn, speed, trim, temperatures, and alerts — on their helm display or smartphone. SmartCraft Connect integrates Mercury engine data into Garmin, Raymarine, Lowrance, and Simrad multi-function displays, so anglers can see sonar, charts, and engine vitals on one screen. Active Trim automatically optimizes trim as conditions change. For anglers running long days on Rice Lake, knowing your fuel burn rate and engine health in real time means better decisions and fewer surprises.
+SmartCraft gives Rice Lake boat owners real-time engine data. RPM, fuel burn, speed, trim, temperatures, and alerts, on their helm display or smartphone. SmartCraft Connect integrates Mercury engine data into Garmin, Raymarine, Lowrance, and Simrad multi-function displays, so anglers can see sonar, charts, and engine vitals on one screen. Active Trim automatically optimizes trim as conditions change. For anglers running long days on Rice Lake, knowing your fuel burn rate and engine health in real time means better decisions and fewer surprises.
 
 ### Why does Harris Boat Works only sell Mercury outboards?
 
@@ -225,15 +229,15 @@ Harris Boat Works focuses on Mercury because it's the best product for the major
 
 ### How does Mercury compare to Yamaha for Rice Lake use?
 
-Both Mercury and Yamaha make excellent outboards. For Rice Lake use specifically, the practical differences come down to support infrastructure. Harris Boat Works has been a Mercury dealer since 1965 — technicians know Mercury in depth, parts are stocked, and warranty work happens locally. Mercury cowlings dominate the docks at Gores Landing, Bewdley, and Hastings, which means local knowledge and service experience are concentrated in Mercury. If you're already in a Yamaha running well, there's no reason to switch. If buying new for a Rice Lake boat, Mercury is the recommendation.
+Both Mercury and Yamaha make excellent outboards. For Rice Lake use specifically, the practical differences come down to support infrastructure. Harris Boat Works has been a Mercury dealer since 1965, technicians know Mercury in depth, parts are stocked, and warranty work happens locally. Mercury cowlings dominate the docks at Gores Landing, Bewdley, and Hastings, which means local knowledge and service experience are concentrated in Mercury. If you're already in a Yamaha running well, there's no reason to switch. If buying new for a Rice Lake boat, Mercury is the recommendation.
 
 ### Is the Mercury Avator electric outboard practical for a Rice Lake cottage?
 
-The Mercury Avator electric line is practical for specific Rice Lake cottage uses — small aluminum tenders, dock-to-dock short trips, or eco-sensitive areas where quiet, emission-free operation is valued. The 7.5e and 20e suit small craft; the 75e/110e extend range. The limitation is battery capacity for full Rice Lake days of trolling and crossing bays. For cottagers wanting an electric option for short trips or dinghy use, Avator is worth discussing — call Harris Boat Works at 905-342-2153.
+The Mercury Avator electric line is practical for specific Rice Lake cottage uses, small aluminum tenders, dock-to-dock short trips, or eco-sensitive areas where quiet, emission-free operation is valued. The 7.5e and 20e suit small craft; the 75e/110e extend range. The limitation is battery capacity for full Rice Lake days of trolling and crossing bays. For cottagers wanting an electric option for short trips or dinghy use, Avator is worth discussing, call Harris Boat Works at 905-342-2153.
 
 ### Why did Evinrude get discontinued and what does it mean for existing owners?
 
-BRP discontinued Evinrude in May 2020, citing COVID-19 economic disruption and the cost of developing next-generation outboard technology across multiple product lines simultaneously. For existing Evinrude owners, finding service and parts is increasingly difficult as the dealer and parts network contracts. Many are repowering with Mercury. For Mercury, Evinrude's exit was significant — buyers and dealers who previously chose Evinrude largely moved to Mercury, contributing to Mercury's market share gains.
+BRP discontinued Evinrude in May 2020, citing COVID-19 economic disruption and the cost of developing next-generation outboard technology across multiple product lines simultaneously. For existing Evinrude owners, finding service and parts is increasingly difficult as the dealer and parts network contracts. Many are repowering with Mercury. For Mercury, Evinrude's exit was significant, buyers and dealers who previously chose Evinrude largely moved to Mercury, contributing to Mercury's market share gains.
 
 ### What size Mercury ProKicker should I get for trolling Rice Lake?
 
@@ -241,7 +245,7 @@ For most Rice Lake trolling applications on mid-size aluminum and fibreglass boa
 
 ### What is the difference between Mercury FourStroke and Mercury Pro XS?
 
-Mercury FourStroke outboards are the standard recreational line — optimized for fuel efficiency, quiet operation, and versatility across family boating, fishing, and cruising. Mercury Pro XS (115–300HP) is engineered for higher performance: sportier throttle response, higher maximum RPM range, and more aggressive power delivery for anglers who want to run hard and get on plane fast. For most Rice Lake recreational boats, the FourStroke line is the right choice. Pro XS is for buyers who specifically want the performance edge and accept a fuel efficiency trade-off.
+Mercury FourStroke outboards are the standard recreational line, optimized for fuel efficiency, quiet operation, and versatility across family boating, fishing, and cruising. Mercury Pro XS (115–300HP) is engineered for higher performance: sportier throttle response, higher maximum RPM range, and more aggressive power delivery for anglers who want to run hard and get on plane fast. For most Rice Lake recreational boats, the FourStroke line is the right choice. Pro XS is for buyers who specifically want the performance edge and accept a fuel efficiency trade-off.
 
 ## Next steps
 

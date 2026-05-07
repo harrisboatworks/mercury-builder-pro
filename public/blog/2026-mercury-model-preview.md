@@ -29,6 +29,10 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury's 2027 lineup carries the current FourStroke and Pro XS architecture forward with software refinements, expanded Avator electric options, and continued V12 Verado availability for the offshore tier. Stocked Ontario models stay focused on 2.5-300 HP. Watch the configurator at mercuryrepower.ca for live 2027 pricing as it lands.
+
 ## 2027 Mercury Outboard Preview
 
 As we look toward the 2027 model year, here's what to expect from Mercury Marine's lineup.
@@ -92,10 +96,10 @@ We'll provide:
 
 ## Related guides
 
-- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market) — why Mercury leads the market
-- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer) — why Harris Boat Works is Mercury
-- [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario) — Mercury vs Yamaha for Ontario
-- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026) — reliability comparison: Mercury vs Yamaha vs Honda
+- [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market), why Mercury leads the market
+- [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), why Harris Boat Works is Mercury
+- [Mercury vs Yamaha Outboards: An Honest Comparison for Ontario Boat Owners](/blog/mercury-vs-yamaha-outboards-ontario). Mercury vs Yamaha for Ontario
+- [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](/blog/mercury-vs-yamaha-vs-honda-reliability-2026), reliability comparison: Mercury vs Yamaha vs Honda
 
 ## FAQs
 

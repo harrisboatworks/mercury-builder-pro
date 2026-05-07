@@ -29,6 +29,10 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Get the boat ready two weekends before the second Saturday of May: battery load test, fresh fuel, working lights, registered PFDs, kicker tested, and a Mercury spring service if you didn't winterize cleanly. The opener doesn't wait for a no-start at the launch. Service slots fill fast, book through mercuryrepower.ca.
+
 The Ontario walleye opener (typically the second Saturday of May for Zone 17 Kawartha lakes) is the highest-stakes morning of the fishing season. The boat must run reliably, fish the way it did last fall, and not cost you opening morning to a dead battery or stale gas. This checklist covers what to do in the 2 weeks before opener so you're fishing instead of fixing. We do walleye opener prep at HBW; book early.
 
 ## Quick recommendation

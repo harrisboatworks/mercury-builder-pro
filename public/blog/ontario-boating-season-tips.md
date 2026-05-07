@@ -29,9 +29,13 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Ontario's hard boating season runs May to October, five months. The boaters who get the most out of it commission early, winterize on time, and keep the motor on a Mercury maintenance schedule. Don't waste opening weekend on a no-start. Schedule spring and fall service at mercuryrepower.ca.
+
 ## Maximizing Ontario's Boating Season
 
-Ontario's boating season is precious—roughly May through October. Here's how to maximize every moment.
+Ontario's boating season is precious - roughly May through October. Here's how to maximize every moment.
 
 ### Early Season (May-June)
 
@@ -112,10 +116,10 @@ Ontario's boating season is precious—roughly May through October. Here's how t
 
 ## Related guides
 
-- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide) — the full Mercury service schedule
-- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips) — seasonal maintenance tips
-- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist) — spring commissioning checklist
-- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips) — off-season storage tips
+- [Mercury Outboard Service Schedule: Complete Maintenance Timeline](/blog/mercury-service-schedule-complete-guide), the full Mercury service schedule
+- [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
+- [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
+- [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips), off-season storage tips
 
 ## FAQs
 
@@ -129,7 +133,7 @@ Absolutely. Fall offers spectacular scenery, excellent fishing, minimal boat tra
 
 ### What temperature is too cold for boating?
 
-There's no magic number—it depends on conditions, boat type, and preparation. Key is having warm clothing, safety gear, and a reliable motor. Be conservative in marginal conditions.
+There's no magic number - it depends on conditions, boat type, and preparation. Key is having warm clothing, safety gear, and a reliable motor. Be conservative in marginal conditions.
 
 ### Should I run my motor during off-season?
 

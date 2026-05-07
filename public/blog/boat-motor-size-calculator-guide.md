@@ -29,13 +29,17 @@ content_type: blog_article
 
 ## Article
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Start with the capacity plate's max HP, that's your federal ceiling. Then pick within the upper third of that range for normal loads, or the lower third if you're pushing a kicker, fuel, and gear. Hull weight, transom width, and use case matter more than rules of thumb. Build a real quote at mercuryrepower.ca.
+
 ## How to Size Your Boat Motor
 
 [Choosing the right horsepower](/blog/how-to-choose-right-horsepower-boat) involves more than just checking your capacity plate. Here's how to think through motor sizing.
 
 ### The Starting Point: Capacity Plate
 
-Every boat has a maximum HP rating. This is your ceiling—never exceed it. But maximum isn't always best.
+Every boat has a maximum HP rating. This is your ceiling - never exceed it. But maximum isn't always best.
 
 **Find Your Plate**: Usually on transom or near helm
 **Look For**: Max HP, max persons, max weight
@@ -120,10 +124,10 @@ Bring us your boat info and tell us how you fish. We'll recommend the right moto
 
 ## Related guides
 
-- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat) — matching HP to boat size and use
-- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison) — mid-range Mercury head-to-head
-- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario) — the 115 vs 150 decision
-- [Mercury 150-200hp V6: Performance Made Practical](/blog/mercury-150-200hp-v6-performance) — V6 150–200 HP performance
+- [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), matching HP to boat size and use
+- [Mercury 75 vs 90 vs 115: Finding the Sweet Spot for Your Boat](/blog/mercury-75-vs-90-vs-115-comparison), mid-range Mercury head-to-head
+- [Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat?](/blog/mercury-115-vs-150-hp-outboard-ontario), the 115 vs 150 decision
+- [Mercury 150-200hp V6: Performance Made Practical](/blog/mercury-150-200hp-v6-performance). V6 150–200 HP performance
 
 ## FAQs
 

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)"
-description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026 - slip, storage, insurance, fuel, service."
+description: "A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel, service."
 category: "Buying Guide"
 date_published: 2026-05-19
 date_modified: 2026-05-19
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
-> A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026 - slip, storage, insurance, fuel, service.
+> A no-marketing, real-numbers breakdown of what it costs to own a boat in Ontario in 2026, slip, storage, insurance, fuel, service.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-19  
@@ -31,17 +31,23 @@ content_type: blog_article
 
 # What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)
 
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800–$7,500 per year in operating costs** cash-bought, slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
+
 If you're shopping your first boat or thinking about whether to keep your current one, the *purchase price* is only part of the question. The bigger question is: **what does it cost to keep it on the water every year?**
 
-Most online articles answer that with American numbers, generic ranges, and no specifics. This is the Ontario version, with real numbers — most of them HBW's own. Use it as a planning template.
+Most online articles answer that with American numbers, generic ranges, and no specifics. This is the Ontario version, with real numbers, most of them HBW's own. Use it as a planning template.
 
 ---
 
 ## The Two-Number Summary
 
-For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on $9,000 to $11,000 per year of ownership cost in Ontario**, not counting the loan payment. With a financed boat, it's closer to $13,000–$15,000.
+For a typical 20-foot aluminum fishing boat valued at around $40,000, **plan on roughly $5,800–$7,500 per year of operating cost in Ontario** (cash-bought, no loan payment). Add a typical 10-year loan and the all-in number rises to about **$10,000/year**.
 
-For a 22-foot pontoon at $55,000, scale that up to $11,000–$13,000 a year (cash-bought) or $16,000–$19,000 (financed).
+For a 22-foot pontoon at $55,000, scale that up to roughly $7,500–$9,500 a year cash-bought, or about $12,000–$14,000 financed.
+
+These are *operating* numbers, slip, storage, winterization, insurance, fuel, routine service, PCL, not depreciation or opportunity cost. The full sample budget is in Section 7 below; if you only read one section, read that one.
 
 That's the honest answer. Now the breakdown.
 
@@ -121,12 +127,12 @@ The biggest variable on the list, since it depends on how much you actually use 
 **Fuel pricing:**
 
 - **Pump gas (with ethanol)** in Ontario: ~$1.50–$1.65/L, varies seasonally
-- **HBW dock — ethanol-free 89 marine:** typically $0.20–$0.40/L premium over pump
+- **HBW dock, ethanol-free 89 marine:** typically $0.20–$0.40/L premium over pump
 
 **Why ethanol-free is worth the premium for many owners:**
 - Doesn't absorb water during storage (huge for a boat that sits)
 - Easier on fuel system components (longer carb / injector life)
-- More stable shelf life — 6+ months vs. 30 days for ethanol pump gas
+- More stable shelf life, 6+ months vs. 30 days for ethanol pump gas
 - Slightly better fuel economy in most outboards (~3–5%)
 
 **Annual fuel budget (50–100 hours per season):**
@@ -162,7 +168,7 @@ Mercury's 20/100/300 schedule applies in Ontario, with the **annual trigger** be
 
 ## 6. Pleasure Craft Licence (PCL)
 
-The PCL changes effective Dec 31 2025 ended lifetime licences. New PCLs are **5-year renewals at $24** through Service Canada. Amortized: **$5/year**.
+[Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective Dec 31 2025 ended lifetime licences. New PCLs are **5-year renewals at $24** through Service Canada. Amortized: **$5/year**.
 
 PCOC (operator card) is a one-time test, lifetime card. ~$50 once, never again.
 
@@ -170,7 +176,7 @@ This category used to be near-zero. It's still essentially negligible.
 
 ---
 
-## 7. The Sample Budget — 20-Ft Aluminum, $40K, Cash-Bought
+## 7. The Sample Budget, 20-Ft Aluminum, $40K, Cash-Bought
 
 | Line item | Annual cost |
 |-----------|-------------|
@@ -187,7 +193,7 @@ This category used to be near-zero. It's still essentially negligible.
 
 **Add a loan payment** (10-year financing, 8% interest, 20% down on $40K): about **$4,200/year**. Total all-in: **~$10,000/year**.
 
-For a higher-tier boat — say a 22-ft pontoon at $55K — scale up about 25–30%. For a 26-ft cuddy or sterndrive cruiser, scale up further still.
+For a higher-tier boat, say a 22-ft pontoon at $55K, scale up about 25–30%. For a 26-ft cuddy or sterndrive cruiser, scale up further still.
 
 ---
 
@@ -205,7 +211,7 @@ Reasonable 10-year planning numbers for the 20-ft, $40K example:
 **Net cost over 10 years (cash-bought):** ~$50,000–$60,000.
 **Net cost over 10 years (financed):** ~$70,000–$85,000.
 
-That's why people repower. A $20,000 Mercury repower on a 15-year-old hull resets the engine clock and extends the boat's useful life another 10–15 years — for about half the cost of buying new.
+That's why people repower. A $20,000 Mercury repower on a 15-year-old hull resets the engine clock and extends the boat's useful life another 10–15 years, for about half the cost of buying new.
 
 ---
 
@@ -227,9 +233,9 @@ A few places HBW's pricing differs from what you'd find elsewhere:
 
 Boats are not cheap. They are also worth it for the right reasons.
 
-If you're considering ownership and the math above feels manageable — great. Welcome to the lake.
+If you're considering ownership and the math above feels manageable, great. Welcome to the lake.
 
-If the math feels stretched — we have **rentals**. Nine-boat fleet on Rice Lake (16-ft fishing through 24-ft pontoon), half-day or full-day, Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
+If the math feels stretched, we have **rentals**. Nine-boat fleet on Rice Lake (16-ft fishing through 24-ft pontoon), half-day or full-day, Mercury power on every boat. **$119K in rentals through 2025**, growing every year. People love it. [harrisboatworks.ca/rentals](https://harrisboatworks.ca/rentals).
 
 There's no shame in renting. There's a lot of shame in over-extending into a boat you can't afford to maintain. Maintenance neglect ages a boat 10x faster than honest use does.
 
@@ -239,7 +245,7 @@ There's no shame in renting. There's a lot of shame in over-extending into a boa
 
 ### Is boat insurance really required if it's not legally required?
 
-Practically yes. HBW requires proof of $2M liability minimum to slip a boat. Most Ontario marinas have similar policies. Lenders require it for any financed boat. You can technically own a boat in Ontario without insurance if you trailer-launch and self-store — but liability exposure is real and one bad day is bigger than 10 years of premium payments.
+Practically yes. HBW requires proof of $2M liability minimum to slip a boat. Most Ontario marinas have similar policies. Lenders require it for any financed boat. You can technically own a boat in Ontario without insurance if you trailer-launch and self-store, but liability exposure is real and one bad day is bigger than 10 years of premium payments.
 
 ### Why does HBW charge for the launch ramp when others are free?
 
@@ -247,7 +253,7 @@ Two-lane concrete vs. single-lane gravel. 24/7 access vs. dawn-to-dusk. Extended
 
 ### Can I save money by winterizing my boat myself?
 
-On a small motor (under 30 HP) and an old hull where you know the boat well, yes — DIY is feasible. On a modern 4-stroke V6, the savings ($200–$300) are small relative to the risk (a missed step = $5,000+ in spring). We see DIY winterization mistakes every spring; they're some of our most expensive repair tickets.
+On a small motor (under 30 HP) and an old hull where you know the boat well, yes: DIY is feasible. On a modern 4-stroke V6, the savings ($200–$300) are small relative to the risk (a missed step = $5,000+ in spring). We see DIY winterization mistakes every spring; they're some of our most expensive repair tickets.
 
 ### How does the cost change if I trailer instead of slipping?
 
@@ -255,11 +261,11 @@ Replace ~$960 slip with ~$200 launch pass + maybe $50/year extra in trailer main
 
 ### What's the single biggest "hidden" cost most new owners miss?
 
-Spring service. People budget for the boat, the slip, and the fuel — then get sticker-shocked by a $700 100-hour service the first April. It's not hidden, but it doesn't appear in most online calculators. Plan for it.
+Spring service. People budget for the boat, the slip, and the fuel, then get sticker-shocked by a $700 100-hour service the first April. It's not hidden, but it doesn't appear in most online calculators. Plan for it.
 
 ### Is there any way to legitimately own a boat for under $5K/year?
 
-Yes — small aluminum fishing boat (under $15K), trailer-launched, DIY winterized, low fuel use, minimum insurance. You can land in the $3,000–$4,500 range. Anything over 18 ft and over 90 HP starts pushing past $5K quickly.
+Yes, small aluminum fishing boat (under $15K), trailer-launched, DIY winterized, low fuel use, minimum insurance. You can land in the $3,000–$4,500 range. Anything over 18 ft and over 90 HP starts pushing past $5K quickly.
 
 ## Next steps
 
