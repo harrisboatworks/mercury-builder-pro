@@ -10772,7 +10772,7 @@ At cruise, the 115 is more efficient. The 150 is slightly less efficient but sti
 For typical family fishing and recreational use, the 115 is plenty. For active water sports with full loading, the 150 is the better fit. The 18 ft aluminum is the boundary where either motor works depending on use case.
 
 **Can I run a Mercury 150 on a boat rated up to 115 HP?**
-No. The capacity plate sets the legal and warranty-backed ceiling. Mercury voids warranty if we install a motor above the rated maximum. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
+No. The capacity plate sets the legal and warranty-backed ceiling — exceeding it creates capacity-plate compliance, insurance, liability, and potential warranty problems. The Coast Guard plate is set by the manufacturer based on hull testing. Going above is illegal and unsafe.
 
 **What's the weight difference between 115 and 150?**
 About 90 to 100 lbs (~40 kg). The 150 (3.0L inline 4) is about 455 lb, the 115 (2.1L inline 4) is about 359 lb. On smaller transoms, the weight difference can affect handling.
