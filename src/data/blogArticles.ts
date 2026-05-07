@@ -16729,7 +16729,7 @@ We've stored boats in Gores Landing for three generations. Mercury Marine Platin
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Total Ontario boat ownership runs roughly 8-12 percent of the boat's value per year — fuel, insurance, storage, winterization, annual service, and depreciation. A $40,000 package realistically costs $3,500-$5,000 a year to own. Build a quote with realistic numbers at mercuryrepower.ca.
+> **Quick answer:** For a typical 20-foot aluminum boat at around $40,000, plan on **$5,800–$7,500 per year in operating costs** cash-bought — slip, storage, winterization, insurance, fuel, routine service, PCL. Add a typical 10-year loan and the all-in number rises to about $10,000/year. Full sample budget is in Section 7 below. Build a current quote at mercuryrepower.ca.
 
 If you're shopping your first boat or thinking about whether to keep your current one, the *purchase price* is only part of the question. The bigger question is: **what does it cost to keep it on the water every year?**
 
