@@ -12265,7 +12265,7 @@ All three brands make reliable four-stroke outboards in 2026. Mechanically, none
 
 ## Quick recommendation
 
-If you live in Ontario and you are buying a four-stroke outboard for a Canadian boat, Mercury is the right answer. Not because the metal is better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the local service expertise is deeper. When something goes wrong (and something eventually goes wrong with every motor), the brand that can fix it fastest wins.
+If you live in Ontario and you are buying a four-stroke outboard for a Canadian boat, Mercury is the right answer. Not because the metal is better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the local service expertise is deeper. When something goes wrong (and something eventually goes wrong with every motor), the brand with the densest local service network and parts supply tends to win on practical reliability.
 
 If you live in coastal Florida or the Pacific Northwest, the dealer math may favor Yamaha. The brand with the most dealers in your region is usually the right brand. That is true for cars and it is true for outboards.
 
