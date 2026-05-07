@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/pickering-mercury-dealer
-last_updated: 2026-05-02
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -19,8 +19,8 @@ pickup_only: true
 currency: CAD
 ---
 
-# Mercury Dealer for Pickering — Harris Boat Works (Gores Landing, ON)
-Pickering boaters use Harris Boat Works for the same reason buyers across Durham do — Mercury-only expertise, live CAD pricing, and an itemized quote you can read before driving to the shop.
+# Mercury Dealer for Pickering, Harris Boat Works (Gores Landing, ON)
+Pickering boaters use Harris Boat Works for the same reason buyers across Durham do, Mercury-only expertise, live CAD pricing, and an itemized quote you can read before driving to the shop.
 ## Factbox
 - **Region:** Pickering
 - **Drive time:** about 80 minutes east of Pickering via Hwy 401
@@ -43,13 +43,13 @@ Pickering boaters use Harris Boat Works for the same reason buyers across Durham
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Platinum Dealer (top customer-satisfaction tier)
-- Authorized Mercury dealer since 1965 — Mercury is our only outboard brand
-- Live CAD pricing online — no "call for price"
+- Authorized Mercury dealer since 1965, Mercury is our only outboard brand
+- Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
 - [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario)
-- [How to repower your boat — step by step](https://www.mercuryrepower.ca/how-to-repower-a-boat)
+- [How to repower your boat, step by step](https://www.mercuryrepower.ca/how-to-repower-a-boat)
 - [Mercury repower cost guide (Ontario, CAD)](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad)
 ## Related case studies
 - [Cedar-strip utility setup: small 9.9HP FourStroke](https://www.mercuryrepower.ca/case-studies/cedar-strip-9-9-fourstroke.md)
@@ -61,7 +61,7 @@ About 80 minutes east on the 401, exiting at Cobourg.
 
 ### Do you do mobile Mercury service in Pickering?
 
-No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing — no mobile service in Pickering. Customers from Pickering bring the boat to our Gores Landing shop.
+No. Harris Boat Works is a shop-based Mercury dealer in Gores Landing, no mobile service in Pickering. Customers from Pickering bring the boat to our Gores Landing shop.
 
 ### Do you sell small kicker and sailboat outboards?
 

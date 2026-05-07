@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/durham-gta-mercury-pickup
-last_updated: 2026-05-02
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -19,8 +19,8 @@ pickup_only: true
 currency: CAD
 ---
 
-# Mercury Outboard Pickup for Durham Region — Harris Boat Works
-Durham Region boaters — Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice — use Harris Boat Works as their Mercury Platinum Dealer. Real CAD pricing online, pickup at Gores Landing, no mobile service or delivery.
+# Mercury Outboard Pickup for Durham Region, Harris Boat Works
+Durham Region boaters, Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice, use Harris Boat Works as their Mercury Platinum Dealer. Real CAD pricing online, pickup at Gores Landing, no mobile service or delivery.
 ## Factbox
 - **Region:** Durham Region
 - **Drive time:** about 50–80 minutes east of Durham communities via Hwy 401
@@ -43,8 +43,8 @@ Durham Region boaters — Whitby, Ajax, Pickering, Oshawa, Bowmanville, Courtice
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Platinum Dealer (top customer-satisfaction tier)
-- Authorized Mercury dealer since 1965 — Mercury is our only outboard brand
-- Live CAD pricing online — no "call for price"
+- Authorized Mercury dealer since 1965, Mercury is our only outboard brand
+- Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
@@ -63,7 +63,7 @@ No. Pickup only at Gores Landing on Rice Lake.
 
 ### Do you do mobile service in Durham?
 
-No. Harris Boat Works is shop-based at Gores Landing — no on-site installs, no driveway service, no marina visits.
+No. Harris Boat Works is shop-based at Gores Landing, no on-site installs, no driveway service, no marina visits.
 
 ### Can Durham customers finalize a Mercury order online?
 

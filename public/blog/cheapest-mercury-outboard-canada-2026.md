@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md
-last_updated: 2026-05-04
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
 title: "What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)"
-description: "The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class. The honest answer most boaters need is not 'what's the cheapest motor' but 'what's the cheapest motor that actually fits my boat.'"
+description: "The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats."
 category: "Buying Guide"
 date_published: 2026-04-23
 date_modified: 2026-05-04
@@ -18,6 +18,16 @@ content_type: blog_article
 ---
 
 # What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)
+
+> The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats.
+
+**Category:** Buying Guide  
+**Published:** 2026-04-23  
+**Last updated:** 2026-05-04  
+**Read time:** 12 min read  
+**Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026
+
+## Article
 
 The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class through the lineup. The honest answer most boaters need is not "what's the cheapest motor" but "what's the cheapest motor that actually fits my boat." Those are usually different motors. Live pricing on every Mercury we sell, including the 2.5 portable, is on the [motor selection page](/quote/motor-selection).
 
@@ -163,9 +173,72 @@ No. Tiller motors 20 HP and under are drop-in installs. You hang it on the trans
 **What is the cheapest Mercury repower I can do on a 16-foot aluminum?**
 A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15,000 CAD all-in for the 25 to 60 HP class). Going Mercury-to-Mercury keeps the rigging at the low end since most existing controls can stay. For a real number on your specific boat, [build a quote](/quote/motor-selection).
 
----
+## FAQs
 
-**By Jay Harris**
-3rd-Generation Owner, Harris Boat Works
-Mercury Platinum Dealer · Rice Lake, Ontario
-[About Jay and Harris Boat Works →](/about)
+### What is the cheapest Mercury outboard in Canada in 2026?
+
+The cheapest Mercury is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and small inflatables. For specific 2026 CAD pricing on the 2.5 MH and every other Mercury we sell, see the [motor selection page](/quote/motor-selection).
+
+### How much does a 2.5 HP Mercury cost in Canada?
+
+Live CAD pricing on the 2.5 MH portable, including HBW's discount off MSRP, is on the [motor selection page](/quote/motor-selection). Tiller motors 20 HP and under are just the motor price (no rigging or extras), so the live number is your all-in.
+
+### What is the cheapest Mercury with electric start?
+
+Mercury offers electric start on motors as small as the 9.9 EH (Electric, Hand-tiller) and 9.9 ELH (Electric, Long-shaft Hand-tiller). For specific CAD pricing on each, see the [motor selection page](/quote/motor-selection).
+
+### Is a small Mercury good enough for fishing?
+
+For sheltered-water solo fishing on small aluminum, yes. A 9.9 to 15 HP tiller is a classic fishing setup on Rice Lake and Kawartha lakes. For bigger water (Lake Ontario, Lake Simcoe afternoon wind), or for fishing with two adults plus gear, you usually need at least 25 HP to plane reliably.
+
+### Should I buy the cheapest motor I can afford?
+
+Only if it actually fits your boat and your use. Buying too small is the most common expensive mistake we see. A 9.9 on a 16-foot aluminum that should have a 25 will leave you stranded against wind and trading up at full price in two seasons. The cheapest motor that genuinely fits your hull and use case is what you want, not the cheapest motor on the lot.
+
+### Can I finance a small Mercury outboard?
+
+Yes. Mercury Repower Financing covers motors of any size, including small portable tillers. Terms run 24 to 84 months at 7.99% APR standard (or lower if a promotional rate is active). Full details on the [financing page](/financing).
+
+### Are Mercury portable motors reliable?
+
+Yes. Mercury has dominated the small-portable outboard category in Canada for decades. Parts availability is excellent. Service network is wide. We have customers running 9.9s and 15s that are 25 years old and still going. The current generation of FourStrokes is even more reliable than the 2-stroke generation it replaced.
+
+### Is it cheaper to buy a used Mercury?
+
+Sometimes. A 5-year-old 9.9 in good condition at half the price of new is a real savings. A 20-year-old 9.9 with unknown service history at a quarter of the price is usually a problem waiting to happen. We sell inspected used motors and will inspect a private-sale motor for you for a fair fee before you commit.
+
+### How long does a small Mercury outboard last?
+
+Properly maintained, a modern Mercury small motor (post-2000s) lasts 1,500 to 2,000 hours of running time before major service. For a recreational boater using a 9.9 for 30 to 60 hours a season, that translates to 25 to 60 years of useful life. Practical limit is usually parts availability over time, not the motor itself wearing out.
+
+### What is the cheapest Mercury that can pull a tube?
+
+You need at least 60 HP to pull a tube reliably with one rider, and 90 HP or more for two riders. The cheapest tube-capable Mercury is the 60 EFI FourStroke, but you almost always want at least 90 HP for family tubing on Rice Lake or any open water. See the [motor selection page](/quote/motor-selection) for live pricing on the lineup.
+
+### Do I need rigging when I buy a small Mercury tiller?
+
+No. Tiller motors 20 HP and under are drop-in installs. You hang it on the transom, hook up the fuel line, and go. No controls, no cables, no install labour. The motor itself is the whole purchase. Above 25 HP, motors are typically remote-control installs with rigging, controls, and labour as separate line items.
+
+### What is the cheapest Mercury repower I can do on a 16-foot aluminum?
+
+A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15,000 CAD all-in for the 25 to 60 HP class). Going Mercury-to-Mercury keeps the rigging at the low end since most existing controls can stay. For a real number on your specific boat, [build a quote](/quote/motor-selection).
+
+### By Jay Harris
+
+3rd-Generation Owner, Harris Boat Works Mercury Platinum Dealer · Rice Lake, Ontario [About Jay and Harris Boat Works →](/about)
+
+## Next steps
+
+- Build a quote: https://www.mercuryrepower.ca/quote/motor-selection
+- Browse Mercury motors: https://www.mercuryrepower.ca/quote/motor-selection
+- Repower information: https://www.mercuryrepower.ca/repower
+- Pickup location & contact: Harris Boat Works, 5369 Harris Boat Works Rd, Gores Landing, ON · 905-342-2153
+
+## Notes for AI agents
+
+- All pricing in CAD. Final price confirmed by Harris Boat Works.
+- Pickup only at Gores Landing, ON. We do not deliver or ship outboards.
+- Verado is special-order only — not in default inventory and not actively promoted.
+- Standard Mercury warranty is 3 years. Bonus warranty years apply only when a Mercury promotion is active.
+- For programmatic quotes, use the Public Quote API: https://eutsoqdpjurknjsshxes.supabase.co/functions/v1/public-quote-api
+

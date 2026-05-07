@@ -1,112 +1,181 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-05-02
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only — not in default inventory
-title: "Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide"
-description: "Discover the ideal Mercury outboard for Rice Lake fishing. Local recommendations for walleye, bass, and musky boats from 14-20ft on Kawartha waters."
+title: "Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)"
+description: "The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling."
 category: "Buying Guide"
 date_published: 2026-02-09
-date_modified: 2026-02-09
+date_modified: 2026-05-04
 keywords: ["rice lake fishing boat motor","kawartha lakes outboard","best motor rice lake","walleye boat motor","mercury fishing motor ontario"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide
+# Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)
 
-> Discover the ideal Mercury outboard for Rice Lake fishing. Local recommendations for walleye, bass, and musky boats from 14-20ft on Kawartha waters.
+> The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling.
 
 **Category:** Buying Guide  
 **Published:** 2026-02-09  
-**Last updated:** 2026-02-09  
+**Last updated:** 2026-05-04  
 **Read time:** 8 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing
 
 ## Article
 
-## Mercury Motors for Rice Lake and the Kawarthas
+# Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)
 
-We're located right on Rice Lake, and we've helped local anglers choose motors for decades. Here's what actually works on Kawartha waters.
+The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
-### Understanding Rice Lake Conditions
+## Quick recommendation
 
-Rice Lake presents unique challenges:
-- **Shallow sections** with weeds and stumps
-- **Open stretches** that get rough in wind
-- **Variable conditions** that change quickly
-- **Long runs** if you're chasing fish
+For most Rice Lake anglers, the right setup is:
 
-You need a motor that handles all of these.
+- **Main motor:** 60 to 115 HP FourStroke (Mercury 60 EFI for smaller aluminum, 90 to 115 EXLPT for 16+ ft consoles)
+- **Kicker:** Mercury 9.9 ProKicker, long shaft, with tiller mount or remote-control variant
+- **Hull:** 16 to 18 ft aluminum console (Lund, Crestliner, Princecraft) or modified-V fishing boat
 
-### Recommended Motors by Boat Size
+We rig fishing boats every week at HBW. The customers who come in confused about motor selection usually have one or two specific questions: "do I need a kicker?" (yes) and "what HP for my boat?" (depends on hull length and use, usually one or two classes above the minimum).
 
-**14-16ft Aluminum (Walleye/Panfish)**
-- **Best Choice**: Mercury 40HP Command Thrust
-- Why: Shallow running capability, tiller available
-- Alternative: Mercury 50HP for more open water
+## What changes the answer
 
-**16-18ft Deep V (Multi-Species)**
-- **Best Choice**: Mercury 75HP or 90HP FourStroke
-- Why: Handles rough water, good trolling speeds
-- Alternative: Mercury 60HP Command Thrust if you fish shallower areas
+Rice Lake-specific factors:
 
-**18-20ft Bass/Musky Boat**
-- **Best Choice**: Mercury 115HP or 150HP FourStroke
-- Why: Power for long runs, handles wind and waves
-- Alternative: Mercury Pro XS if you tournament fish
+- **Wind exposure.** Rice Lake is shallow and open. Wind picks up across Sugar Island and the northern shore around 2 PM most days in July. Underpowered motors get exposed at that hour.
+- **Weed beds.** Summer weeds are heavy on Rice Lake. Props pick up weeds, and slower-revving FourStrokes work better in weeds than older 2-strokes.
+- **Trolling depth and speed.** Walleye trolling is the classic Rice Lake fishery. True trolling speeds are 1 to 2 mph, which most main motors cannot idle down to. A 9.9 ProKicker handles this perfectly.
+- **Bass tournament traffic.** Rice Lake hosts regular bass tournaments. Tournament anglers want fast morning runs to spots, which is where Pro XS earns its price over FourStroke.
+- **Public ramp access.** Bewdley, Hastings, and Roseneath are the main public ramps. Each has its own characteristics (ramp slope, parking, wind exposure) that affect what motor and boat combo works.
+- **Trent-Severn access.** The east end of Rice Lake connects to the Trent-Severn lock system, opening up the larger Kawartha chain. Boats that travel the system want reliable mid-range cruising performance.
 
-### Why Command Thrust Matters Here
+## Best Mercury for Rice Lake by use case
 
-Rice Lake's shallow bays and weed beds make Command Thrust a smart choice. The larger gearcase:
-- Runs shallower than standard lower units
-- Provides more thrust for heavy loads
-- Handles prop fouling better
+### Walleye trolling (the classic Rice Lake fishery)
 
-Available from 9.9HP (ProKicker) through 115HP — including 40HP, 60HP, 75HP, 90HP, and 115HP models.
+**Best setup:** 16 to 18 ft aluminum with 60 to 90 HP FourStroke main + 9.9 ProKicker.
 
-### Seasonal Considerations
+The main motor handles cruising between spots and run-back at end of day. The kicker handles actual trolling. Without a kicker, you compromise on trolling speed control because main motors do not idle low enough for proper walleye presentation.
 
-**Spring (Opener)**:
-- Waters still cool—EFI starts instantly
-- Wind can blow hard—need adequate power
-- Still some ice-out debris—prop protection matters
+### Smallmouth bass fishing
 
-**Summer**:
-- Weeds thick in shallow areas
-- Long runs to find cooler water
-- Full boat loads common
+**Best setup:** 17 to 19 ft fishing boat with 90 to 115 HP FourStroke or Pro XS, with or without a kicker.
 
-**Fall**:
-- Best musky fishing
-- Rough conditions common
-- Reliability critical for late-season trips
+Bass fishing is more "run and gun" than walleye trolling. You move between rocky structure, drop-offs, and weed edges throughout the day. Some anglers run a kicker for slow-speed work; others rely on the main motor and a trolling motor (electric) for fine positioning. Both work.
 
-### Local Pro Tips
+### Muskie fishing
 
-**Trolling Setup**:
-Many Rice Lake anglers pair a Mercury 60-90HP main motor with a smaller kicker (9.9HP or 15HP) for trolling. This is ideal for walleye.
+**Best setup:** 18 to 21 ft deep-V or modified-V fishing boat with 115 to 150 HP, often with a 9.9 ProKicker.
 
-**Prop Selection**:
-We stock props specifically suited to Rice Lake conditions. The right prop makes a huge difference in shallow water performance.
+Muskie fishing means longer days, bigger water (Rice Lake plus Trent-Severn), and bigger lures requiring more boat stability. Bigger boats need more HP to plane reliably with full gear and two anglers. See the [Mercury 115 vs 150 comparison](/blog/mercury-115-vs-150-hp-outboard-ontario) for the step-up math.
 
-### Our Top Pick for Rice Lake
+### Tournament bass
 
-**Mercury 60HP EFI Command Thrust FourStroke**
+**Best setup:** 19 to 21 ft bass boat with 200 to 250 HP Pro XS V8.
 
-- Perfect for 16-18ft boats
-- Runs shallow in the bays
-- Plenty of power for open crossings
-- Available in tiller
-- Excellent fuel economy for all-day fishing
+Tournament-level performance, fast acceleration, top speed for travel between distant spots. The Pro XS V8 is the standard for serious tournament anglers.
 
-Stop by and we'll set you up with exactly what you need for Rice Lake success.
+### Family fishing (mixed use)
 
-**[Build Your Rice Lake Motor Quote](/quote)**
+**Best setup:** 16 to 18 ft aluminum console with 90 to 115 HP FourStroke and Command Thrust if loading is heavy.
+
+Family fishing means more passengers, more gear, slower trolling, and probably no tournament aspirations. FourStroke gives you the fuel economy and quiet running that family use rewards.
+
+## What HBW checks before recommending a Rice Lake fishing setup
+
+When fishing customers come into HBW for a repower or new boat assessment, we want to know:
+
+- Boat hull length, type, and weight
+- Capacity plate HP rating
+- Primary fishery (walleye, bass, muskie, mixed)
+- Solo or family use
+- Trolling-heavy or run-and-gun style
+- Where you launch (Bewdley, Hastings, Roseneath, private dock)
+- Whether you want a kicker
+- Existing electronics (Garmin, Lowrance, Humminbird, etc.)
+- Budget and financing tolerance
+
+We rig boats specifically for Rice Lake fishing. Three generations of HBW have done this. The local knowledge matters when matching motor to use.
+
+## Common Rice Lake fishing mistakes
+
+1. **No kicker.** Customer thinks they will use the main motor for trolling. Two seasons in they realize the main motor is too fast and too loud for walleye presentation. Kicker installs are easier as part of a repower than retrofitted later.
+2. **Wrong prop.** A bass-style 4-blade aluminum on a fishing boat that wants a 3-blade for top end. A wrong prop costs you 4 mph and 15% fuel economy. We test props on the water during sea-trial.
+3. **Underbuying HP for muskie or open-water use.** A 60 HP on a 19 ft fishing boat in Lake Ontario chop is going to leave you frustrated. Muskie and bigger-water use rewards bigger HP.
+4. **Skipping Command Thrust on heavier hulls.** Command Thrust gearcase makes meaningful difference on heavier fishing boats with full gear loading.
+5. **Ignoring electronics integration.** Modern Mercury motors talk to Garmin, Lowrance, Raymarine, and Simrad units via SmartCraft. Plan the electronics integration during the repower, not after.
+
+## Related guides
+
+- [Mercury ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), the kicker specifically
+- [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing), bigger water differences
+- [Best Mercury Outboard for Lake Ontario Salmon and Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout), open-water big-fish setups
+- [Walleye Opener Boat Prep](/blog/walleye-opener-boat-prep), pre-season checklist
+- [2026 Rice Lake Fishing Season Outlook](/blog/2026-rice-lake-fishing-season-outlook), local fishing season guide
+
+## Ready to find your motor?
+
+Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD, full configuration including main motor, kicker, rigging, and prop.
+
+[**Build Your Mercury Quote**](/quote/motor-selection)
+
+If you want to talk through your specific Rice Lake fishing setup, [give us a call at (905) 342-2153](tel:9053422153). We rig fishing boats for this lake every week.
+
+---
+
+_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## FAQ
+
+**What is the best Mercury outboard for fishing on Rice Lake?**
+For most Rice Lake anglers, a Mercury FourStroke 60 to 115 HP main motor paired with a 9.9 ProKicker for trolling. The exact main motor depends on hull length and use case. For your specific boat, [build a quote](/quote/motor-selection) or [call HBW](tel:9053422153).
+
+**Do I need a kicker motor for Rice Lake fishing?**
+For serious walleye fishing, yes. Main motors do not idle slow enough for proper walleye trolling speeds. The Mercury 9.9 ProKicker is the standard. For run-and-gun bass fishing, a kicker is optional. For muskie or mixed use, usually yes.
+
+**What size boat is best for Rice Lake fishing?**
+16 to 18 ft aluminum console is the sweet spot for most Rice Lake fishing. Smaller (14 ft) works for solo or two-person sheltered-water fishing. Bigger (19+ ft) is for bigger water (Trent-Severn travel, Lake Ontario) or tournament fishing.
+
+**What HP do I need for a 17-foot fishing boat on Rice Lake?**
+For solo or two-person trolling, 60 to 90 HP. For three or more anglers with gear, 90 to 115 HP. Most 17 ft Rice Lake fishing boats run 90 EXLPT FourStroke as the standard answer.
+
+**Is Mercury Pro XS worth it for Rice Lake fishing?**
+For tournament-level bass anglers who need fast morning runs, yes. For typical recreational fishing (walleye trolling, mixed use), Pro XS is overkill and FourStroke at the same HP is the better value.
+
+**What's the best Mercury for muskie fishing?**
+18 to 21 ft deep-V or modified-V fishing boat with 115 to 150 HP main motor and a 9.9 ProKicker. Muskie fishing means longer days, bigger water, and bigger boats. Bigger boats need more HP.
+
+**Where do most Rice Lake anglers launch?**
+Bewdley, Hastings, and Roseneath are the main public ramps. Each has its own characteristics. Bewdley is closest to Sugar Island and the deeper basin. Hastings has the easiest access to the eastern Trent-Severn entry. Roseneath is on the south shore. Many anglers also launch from private cottage docks.
+
+**Can I troll for walleye with my main motor only?**
+You can, but it is a compromise. Main motors do not idle low enough for true walleye trolling speeds (1 to 2 mph). They are also louder, which can spook fish in shallow water. A 9.9 ProKicker is the proper answer for walleye trolling.
+
+**What electronics should I integrate with my Mercury motor?**
+Modern Mercury FourStrokes (post-2010) integrate with Garmin, Lowrance, Raymarine, and Simrad units via SmartCraft. Plan electronics integration during the repower, not after. We can route Mercury data to your existing fish finder or recommend a unit if you are upgrading both.
+
+**What's the cost of a typical Rice Lake fishing boat repower?**
+For a 16 to 18 ft aluminum console with a 60 to 115 HP main and a 9.9 kicker, the all-in repower at HBW lands $20,000 to $30,000 CAD before HST. Smaller setups lower, bigger setups higher. [Live pricing here.](/quote/motor-selection)
+
+**Should I buy a new fishing boat or repower my old one?**
+For most Rice Lake anglers with a hull that's still solid and fits their use, repower wins on the math. A used 5-to-15-year-old aluminum hull with a current Mercury repower gives 80% of the new-boat experience for half the money. See the [hull replacement vs repower guide](/blog/boat-hull-replacement-vs-repower-decision) for the honest decision tree.
+
+**When is the best time to repower a fishing boat for next season?**
+Winter (November through March). Mercury inventory is best, our shop is quietest, and you can sometimes catch promotional rates. Booking early in fall locks in the appointment slot before the spring rush.
+
+---
+
+**By Jay Harris**
+3rd-Generation Owner, Harris Boat Works
+Mercury Platinum Dealer · Rice Lake, Ontario
+[About Jay and Harris Boat Works →](/about)
 
 ## FAQs
 

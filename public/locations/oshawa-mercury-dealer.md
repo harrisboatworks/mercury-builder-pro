@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/oshawa-mercury-dealer
-last_updated: 2026-05-02
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -19,8 +19,8 @@ pickup_only: true
 currency: CAD
 ---
 
-# Mercury Dealer for Oshawa — Harris Boat Works (Gores Landing, ON)
-For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401 — Mercury Platinum Dealer, live CAD pricing online, and an itemized quote you can sanity-check before driving up.
+# Mercury Dealer for Oshawa, Harris Boat Works (Gores Landing, ON)
+For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401, Mercury Platinum Dealer, live CAD pricing online, and an itemized quote you can sanity-check before driving up.
 ## Factbox
 - **Region:** Oshawa
 - **Drive time:** about 60 minutes east of Oshawa via Hwy 401
@@ -30,7 +30,7 @@ For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401 — Mer
 - **Currency:** CAD only.
 ## Local boating context
 - Oshawa boaters commonly fish Lake Ontario and Lake Scugog
-- Many own cottages on Rice Lake, Scugog, or in the Kawarthas — pickup en route
+- Many own cottages on Rice Lake, Scugog, or in the Kawarthas, pickup en route
 - Repower of 60–115 HP outboards is the most common service driver
 ## Common local boats
 - Lake Ontario fishing rigs
@@ -43,14 +43,14 @@ For Oshawa boaters, Harris Boat Works is roughly an hour east on the 401 — Mer
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Platinum Dealer (top customer-satisfaction tier)
-- Authorized Mercury dealer since 1965 — Mercury is our only outboard brand
-- Live CAD pricing online — no "call for price"
+- Authorized Mercury dealer since 1965, Mercury is our only outboard brand
+- Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
 - [Mercury Pro XS lineup](https://www.mercuryrepower.ca/mercury-pro-xs)
 - [Compare 115 vs 150 HP for Ontario boats](https://www.mercuryrepower.ca/blog/mercury-115-vs-150-hp-outboard-ontario)
-- [How to repower your boat — step by step](https://www.mercuryrepower.ca/how-to-repower-a-boat)
+- [How to repower your boat, step by step](https://www.mercuryrepower.ca/how-to-repower-a-boat)
 ## Related case studies
 - [Bass boat refresh: older 150 to Mercury 150 Pro XS](https://www.mercuryrepower.ca/case-studies/bass-boat-150-to-150-pro-xs.md)
 - [18-foot aluminum fishing boat: 60HP to 90HP FourStroke](https://www.mercuryrepower.ca/case-studies/aluminum-fishing-60-to-90-fourstroke.md)

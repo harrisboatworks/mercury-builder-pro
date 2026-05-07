@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/locations/peterborough-mercury-dealer
-last_updated: 2026-05-02
+last_updated: 2026-05-07
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -19,8 +19,8 @@ pickup_only: true
 currency: CAD
 ---
 
-# Mercury Dealer Near Peterborough — Harris Boat Works (35 min south)
-Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough — about 35 minutes south on the shore of Rice Lake. Peterborough boaters have been buying Mercury outboards from us for over 60 years.
+# Mercury Dealer Near Peterborough, Harris Boat Works (35 min south)
+Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough, about 35 minutes south on the shore of Rice Lake. Peterborough boaters have been buying Mercury outboards from us for over 60 years.
 ## Factbox
 - **Region:** Peterborough
 - **Drive time:** about 35 minutes south of Peterborough
@@ -31,7 +31,7 @@ Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough 
 ## Local boating context
 - Easy access for Lakefield, Bridgenorth, Buckhorn, and the wider Kawartha Lakes
 - Customers commonly trailer down from Stoney, Chemong, Buckhorn, and Pigeon Lake
-- Trent–Severn Waterway boaters use us for repowers and kicker upgrades
+- Trent, Severn Waterway boaters use us for repowers and kicker upgrades
 ## Common local boats
 - Aluminum fishing boats
 - Pontoons
@@ -44,8 +44,8 @@ Harris Boat Works is the closest Mercury Marine Platinum Dealer to Peterborough 
 ## Why customers choose Harris Boat Works
 - Family-owned in Gores Landing since 1947
 - Mercury Marine Platinum Dealer (top customer-satisfaction tier)
-- Authorized Mercury dealer since 1965 — Mercury is our only outboard brand
-- Live CAD pricing online — no "call for price"
+- Authorized Mercury dealer since 1965, Mercury is our only outboard brand
+- Live CAD pricing online, no "call for price"
 - Every installed repower is lake-tested on Rice Lake before pickup
 ## Recommended links
 - [Build a Mercury quote (CAD, itemized)](https://www.mercuryrepower.ca/quote/motor-selection)
@@ -70,7 +70,7 @@ No. Pickup only at Gores Landing. Bring the boat down for installation, or pick 
 
 ### Do you handle Mercury repowers for older Kawartha boats?
 
-Yes — that is one of our core use cases. We are Mercury-only and have been since 1965.
+Yes, that is one of our core use cases. We are Mercury-only and have been since 1965.
 
 ## Service boundary
 Harris Boat Works does not perform mobile service, on-site installs, or driveway/marina visits in Peterborough. Customers from Peterborough bring their boat to our Gores Landing shop, or pick up a loose Mercury motor for self-install.
