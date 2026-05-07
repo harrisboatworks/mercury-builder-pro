@@ -573,7 +573,7 @@ const BLOG_TWIN_SLUGS = [
   'evinrude-to-mercury-repower-ontario-guide',
   'complete-guide-boat-repower-kawarthas',
   'best-mercury-outboard-rice-lake-fishing',
-  'boat-winterization-cost-ontario-2026',
+  'n',
   'mercury-prokicker-rice-lake-fishing-guide',
 ];
 
