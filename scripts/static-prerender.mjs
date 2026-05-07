@@ -3070,6 +3070,11 @@ function stamp(route) {
     .join('\n  ');
   html = html.replace(/<\/head>/i, `${jsonLdBlocks}\n  </head>`);
 
+  // Per-route extra <head> tags (rel=alternate, etc.)
+  if (route.extraHead) {
+    html = html.replace(/<\/head>/i, `${route.extraHead}\n  </head>`);
+  }
+
   // Open Graph + Twitter social tags (Helmet-managed → data-rh marker so per-route
   // <Helmet> components adopt them on hydration without appending duplicates).
   // Crawlers (Facebook, Slack, iMessage, X) and AI agents (ChatGPT, Perplexity)
