@@ -129,6 +129,8 @@
     { "source": "/blog/:slug.md", "destination": "/blog/:slug.md" },
     { "source": "/blog/:slug", "destination": "/blog/:slug/index.html" },
     { "source": "/agents", "destination": "/agents/index.html" },
+    { "source": "/pricing-reference", "destination": "/pricing-reference/index.html" },
+    { "source": "/pricing-reference.md", "destination": "/pricing-reference.md" },
     { "source": "/motors/:slug", "destination": "/motors/:slug/index.html" },
     { "source": "/quote/motor-selection", "destination": "/quote/motor-selection/index.html" },
     { "source": "/trade-in-value", "destination": "/trade-in-value/index.html" },

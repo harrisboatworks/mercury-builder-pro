@@ -3184,6 +3184,8 @@ const staticSitemapEntries = [
   { loc: '/mercury-outboards-ontario', priority: 0.85, changefreq: 'weekly' },
   { loc: '/mercury-pontoon-outboards', priority: 0.8, changefreq: 'monthly' },
   { loc: '/agents', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/pricing-reference', priority: 0.9, changefreq: 'weekly' },
+  { loc: '/pricing-reference.md', priority: 0.85, changefreq: 'weekly' },
   { loc: '/privacy', priority: 0.3, changefreq: 'yearly' },
   { loc: '/terms', priority: 0.3, changefreq: 'yearly' },
 ];
