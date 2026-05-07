@@ -1649,7 +1649,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** HBW has been the Rice Lake Mercury dealer since 1947 — three generations, transparent installed pricing online, and one of Ontario's deepest service benches. We post real prices, quote installed packages on the spot, and service what we sell. The full inventory and configurator are at mercuryrepower.ca.
+> **Quick answer:** HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965 — three generations, current Mercury Marine Platinum Dealer. We post installed pricing online via the configurator, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
 
 Harris Boat Works has been a Mercury dealer since 1965. Three generations of HBW have rigged Mercurys, serviced them, and stood behind them. We are a Mercury Platinum dealer, which gives us factory-direct access to support, training, and inventory. We sell Mercury exclusively because the math works for our customers and our shop. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -18992,7 +18992,7 @@ Your existing boat insurance typically covers winter storage; some policies requ
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Harris Boat Works has been the Rice Lake Mercury dealer since 1947 — three generations of the same family. We've outlasted every Ontario competitor by selling on transparency, service depth, and treating customers like neighbours. Inventory and configurator at mercuryrepower.ca.
+> **Quick answer:** Harris Boat Works has been on the same Rice Lake dock since 1947 — three generations of the same family. We've been a Mercury dealer since 1965 and a Mercury Marine Platinum Dealer for most of the modern era. The trust signal isn't the founding year alone — it's that customers across the Kawarthas, GTA, and beyond keep coming back generation after generation.
 
 The simple version: Harris Boat Works has been at the same dock on Rice Lake, in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** — most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
