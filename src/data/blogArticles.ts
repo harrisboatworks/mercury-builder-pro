@@ -601,7 +601,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   {
     slug: 'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
     title: 'Mercury Motor Families: FourStroke vs Pro XS vs Verado (2026 Guide)',
-    description: 'Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the supercharged premium line, 250 to 600+ HP, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the motor selection page.',
+    description: 'Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the premium V8/V10/V12 line, 250 to 600+ HP, naturally aspirated, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the motor selection page.',
     image: '/lovable-uploads/hero-mercury-motor-families.png',
     author: 'Harris Boat Works',
     datePublished: '2024-04-10',
@@ -613,9 +613,9 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** FourStroke is the workhorse for fishing, family, and pontoon use. Pro XS is the same powerhead tuned for higher RPM and bass/performance hulls. Verado is the supercharged premium tier, special order only at HBW, not stocked. For most Ontario freshwater boaters, FourStroke or Pro XS is the right call. Configure either at mercuryrepower.ca.
+> **Quick answer:** FourStroke is the workhorse for fishing, family, and pontoon use. Pro XS is the same powerhead tuned for higher RPM and bass/performance hulls. Verado is the premium V8/V10/V12 tier (naturally aspirated on current models), special order only at HBW, not stocked. For most Ontario freshwater boaters, FourStroke or Pro XS is the right call. Configure either at mercuryrepower.ca.
 
-Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the supercharged premium line, 250 to 600+ HP, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the [motor selection page](/quote/motor-selection).
+Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the premium V8/V10/V12 line, 250 to 600+ HP, naturally aspirated, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the [motor selection page](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -625,7 +625,7 @@ Pro XS is the right answer when you want performance: tournament fishing, fast m
 
 SeaPro is for commercial use: charter operators, fishing guides, rental fleets, anyone running a motor 500+ hours a season under heavy load. It is more durable than the recreational lines and built for daily-use abuse.
 
-Verado is special-order only at HBW. It is a premium supercharged line built for high-HP applications (twin and triple installations on offshore center consoles, large yachts). Almost no Ontario freshwater boater needs it. If you genuinely do, [contact us](/contact) and we will price it as a special order.
+Verado is special-order only at HBW. It is a premium V8/V10/V12 line (naturally aspirated on current models) built for high-HP applications (twin and triple installations on offshore center consoles, large yachts). Almost no Ontario freshwater boater needs it. If you genuinely do, [contact us](/contact) and we will price it as a special order.
 
 Avator is Mercury's electric line. The technology is still maturing. We have not seen a strong use case for it yet on Rice Lake.
 
@@ -646,7 +646,7 @@ Five things move the right Mercury family for your boat:
 | FourStroke | 2.5 - 300 HP | Cruising, family use, fishing, pontoons | Fuel economy, smooth running, reliability | In stock and on-order |
 | Pro XS | 115 - 300 HP | Tournament fishing, bass boats, performance pontoons | Fast acceleration, top speed, hole shot | In stock and on-order |
 | SeaPro | 25 - 300 HP | Commercial use, charter, guides, fleet | Durability under heavy load | On-order |
-| Verado | 250 - 600+ HP | Offshore center consoles, twin/triple installs, yachts | Supercharged smooth power, quiet operation | Special-order only |
+| Verado | 250 - 600+ HP | Offshore center consoles, twin/triple installs, yachts | Naturally-aspirated V8/V10/V12 smooth power, quiet operation | Special-order only |
 | Avator | Electric | Eco-conscious low-HP applications | Zero emissions, quiet | On-order, evolving lineup |
 
 For your specific motor and HBW pricing in CAD, see the [motor selection page](/quote/motor-selection).
@@ -683,7 +683,7 @@ Trade-off: costs more than recreational FourStroke. Overkill for typical recreat
 
 ## Verado: why it is special-order only at HBW
 
-Verado is Mercury's supercharged premium line, available from 250 HP up to 600+ HP. It is engineered for high-HP applications, twin and triple installations, and offshore use where smoothness, quiet operation, and instant power are worth a premium.
+Verado is Mercury's premium V8/V10/V12 line, available from 250 HP up to 600+ HP. Current Verados are naturally aspirated (older inline-6 Verados were supercharged). It is engineered for high-HP applications, twin and triple installations, and offshore use where smoothness, quiet operation, and instant power are worth a premium.
 
 We do not stock Verado at HBW. The reason is straightforward: almost no Ontario freshwater boater has a use case that fits Verado. Our customers are running aluminum fishing boats, pontoons, runabouts, bass boats, and small center consoles. Pro XS or FourStroke covers all of those at a better cost-per-capability for our market.
 
@@ -769,7 +769,7 @@ For tournament-grade bass boats, Pro XS. The acceleration, top speed, and hole s
 Yes. The motor itself is the choice, and the rigging adjusts to fit the new motor. Most existing controls, prop, and harness can stay if you are going Mercury-to-Mercury. The cost varies by motor selection. Build a quote on the [motor selection page](/quote/motor-selection) to see exact CAD pricing for the family swap.
 
 **How do I know if I have a FourStroke or Pro XS?**
-Look at the cowl. Mercury FourStrokes have a "FourStroke" badge, a "Verado" badge for the supercharged line, a "Pro XS" badge for the performance line, or a "SeaPro" badge for commercial. The model number on the lower cowl plate also identifies the family. If you are not sure, send us a photo of the motor and we will identify it.
+Look at the cowl. Mercury FourStrokes have a "FourStroke" badge, a "Verado" badge for the premium V8/V10/V12 line, a "Pro XS" badge for the performance line, or a "SeaPro" badge for commercial. The model number on the lower cowl plate also identifies the family. If you are not sure, send us a photo of the motor and we will identify it.
 
 **What is Mercury Command Thrust?**
 Command Thrust is a Mercury gearcase option (not a separate family) available on FourStroke motors 115 HP and up. It uses a larger gearcase, larger prop, and torque-tuned gear ratios designed for heavy boats (pontoons, work boats, heavy fishing rigs). The result is better hole shot and load-carrying than the standard gearcase, with similar fuel economy. We recommend Command Thrust on most pontoon repowers.
@@ -8863,7 +8863,7 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
   {
     slug: 'why-mercury-dominates-outboard-market',
     title: "Why Mercury Dominates the Outboard Market in 2026",
-    description: "Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP supercharged Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for 60 years and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
+    description: "Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP naturally-aspirated Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for the 60 years we've been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).",
     image: '/lovable-uploads/Why_Mercury_Dominates_The_Outboard_Market_Blog_Post_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
@@ -8878,7 +8878,7 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
 
 > **Quick answer:** Mercury dominates Ontario because the dealer network is denser, parts supply is faster, and resale demand is strongest. Yamaha and Honda build excellent motors, but the practical service experience in cottage country favours Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
 
-Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP supercharged Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for 60 years and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP naturally-aspirated Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for the 60 years we've been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -8928,7 +8928,7 @@ Mercury has been the early leader on several modern outboard innovations:
 
 - Modern four-stroke transition (early 2000s, with Yamaha as the other early mover)
 - Pro XS performance line as the standard tournament motor
-- Verado supercharged technology
+- Verado V8/V10/V12 naturally-aspirated technology
 - SmartCraft engine management and connectivity
 - Joystick Piloting for Outboards (twin/triple installations)
 - Avator electric outboards
@@ -9015,7 +9015,7 @@ The Mercury 9.9 ProKicker is the most-installed Mercury kicker motor in Canada. 
 Yes. The Avator line covers the electric category from small portables (7.5e, 20e, 35e) up to larger units (75e, 110e). The lineup is still maturing. We are on-order for Avator at HBW for customers with specific use cases.
 
 **What is Mercury Verado and why is it special-order at HBW?**
-Verado is Mercury's supercharged premium line, 250 to 600+ HP, built for offshore center consoles, twin/triple installations, and yachts. We do not stock Verado at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. If you do, [contact us](/contact) for a special-order quote.
+Verado is Mercury's premium V8/V10/V12 line (naturally aspirated on current models), 250 to 600+ HP, built for offshore center consoles, twin/triple installations, and yachts. We do not stock Verado at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. If you do, [contact us](/contact) for a special-order quote.
 
 **Should I switch from Yamaha or Honda to Mercury?**
 If you are doing a full repower anyway and the rigging investment is unavoidable, switching to Mercury during the repower makes sense for Ontario boaters. The dealer network and parts supply argument favors Mercury once the rigging cost is committed either way. If your existing motor is running fine and you are not repowering, no reason to switch.
@@ -9177,7 +9177,7 @@ For typical Ontario recreational use, SeaPro is overkill. For commercial operato
 
 ## Mercury 2026 Verado (250 to 600+ HP)
 
-The Verado is Mercury's premium supercharged offshore line. Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
+The Verado is Mercury's premium V8/V10/V12 offshore line (naturally aspirated on current models). Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
 
 Verado is special-order at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. Twin V12 600 HP setups are stunning motors. They are not for Rice Lake.
 
@@ -11501,9 +11501,9 @@ Tournament use rewards the Pro XS V8 for faster acceleration and the ability to 
 
 ### Charter fishing operations
 
-**Best setup:** 26 to 30+ ft deep-V or walkaround with 300 to 400 HP main motor (often Mercury Verado V8 supercharged or twin SeaPro for commercial duty) + 15 HP ProKicker.
+**Best setup:** 26 to 30+ ft deep-V or walkaround with 300 to 400 HP main motor (often Mercury Verado V8 or twin SeaPro for commercial duty) + 15 HP ProKicker.
 
-Charter operations push motors hard. Mercury SeaPro variants are built for commercial-duty cycles. Some charters run Verado V8 supercharged for high HP single-engine setups.
+Charter operations push motors hard. Mercury SeaPro variants are built for commercial-duty cycles. Some charters run Verado V8 for high HP single-engine setups.
 
 ### Multi-species sport fishing
 
