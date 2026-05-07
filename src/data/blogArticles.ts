@@ -14702,7 +14702,7 @@ We're a full-service Mercury Platinum dealer and we work on everything from curr
     keywords: ["Trent-Severn Waterway 2026 guide", "Trent-Severn free lockage 2026", "Canada Strong Pass boating", "Trent-Severn locks hours 2026", "Rice Lake Trent-Severn", "boating Trent-Severn for beginners"],
     content: `# Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan
 
-Big news for 2026: lockage on the Trent-Severn is **free from June 19 to September 7** as part of the Canada Strong Pass. For a 20-foot boat, that's $45 a day in fees you're not paying — about $315 saved on a full week-long transit, more if you stay seasonal.
+Big news for 2026: lockage on the Trent-Severn is **free from June 19 to September 7** as part of the [Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass). For a 20-foot boat, that's $45 a day in fees you're not paying — about $315 saved on a full week-long transit, more if you stay seasonal.
 
 If you've ever thought about running the Trent-Severn — even a weekend stretch of it — 2026 is the year.
 
@@ -14712,7 +14712,7 @@ This is the local's version of the guide. Harris Boat Works sits directly on the
 
 ## What the Trent-Severn Actually Is
 
-The Trent-Severn Waterway is a **386-kilometre navigable system** that connects Lake Ontario at Trenton to Georgian Bay at Port Severn. It's run by Parks Canada as a National Historic Site. There are 44 locks (including two flight locks and one marine railway), about 60 bridges, and it cuts through nine watersheds — including Rice Lake, the Kawarthas, Lake Simcoe's connection, and the Severn River.
+The Trent-Severn Waterway is a **386-kilometre navigable system** that connects Lake Ontario at Trenton to Georgian Bay at Port Severn. It's run by [Parks Canada](https://parks.canada.ca/lhn-nhs/on/trentsevern) as a National Historic Site. There are 44 locks (including two flight locks and one marine railway), about 60 bridges, and it cuts through nine watersheds — including Rice Lake, the Kawarthas, Lake Simcoe's connection, and the Severn River.
 
 The *New York Times* named it one of the best travel experiences of 2025. That wasn't a fluke. There aren't many places on the planet where you can take a 20-foot fishing boat, lock through a hydraulic lift designed in 1904, anchor for the night beside a 19th-century lock keeper's cottage, and have lunch at a small-town pub the next afternoon.
 
@@ -14726,7 +14726,7 @@ The **Canada Strong Pass** runs **June 19 – September 7, 2026**. During that w
 - **Camping and roofed accommodations** at Parks Canada sites are 25% off.
 - **Youth 17 and under** get free admission to all Parks Canada sites.
 
-What's still going to cost you:
+What's still going to cost you (per the [Parks Canada Trent-Severn fee schedule](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/tarifs-fees)):
 
 - **Mooring** — $1.50/ft overnight at a lockstation
 - **Shore power** — $12/night
@@ -14738,7 +14738,7 @@ So a 20-foot boat tying up overnight at a lock pays $30. Plus power, if you need
 
 ## 2026 Navigation Season and Hours
 
-The waterway is open **May 15 – October 12, 2026.** Hours change three times during the season:
+The waterway is open **May 15 – October 12, 2026.** Hours change three times during the season (per the [Parks Canada hours of operation page](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/heures-hours)):
 
 **May 15 – June 18 (pre-peak):**
 - Mon–Thu: 10:00 am – 3:30 pm
@@ -16542,7 +16542,7 @@ Mercury's 20/100/300 schedule applies in Ontario, with the **annual trigger** be
 
 ## 6. Pleasure Craft Licence (PCL)
 
-The PCL changes effective Dec 31 2025 ended lifetime licences. New PCLs are **5-year renewals at $24** through Service Canada. Amortized: **$5/year**.
+[Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective Dec 31 2025 ended lifetime licences. New PCLs are **5-year renewals at $24** through Service Canada. Amortized: **$5/year**.
 
 PCOC (operator card) is a one-time test, lifetime card. ~$50 once, never again.
 
@@ -17385,7 +17385,7 @@ For most GTA buyers, that's worth it. For some it isn't, and that's fine — but
 
 You've been to a marine dealer in the city. The model is usually: showroom in a strip plaza or industrial area, parts counter, service bay. Get in, get out.
 
-Gores Landing is different. Harris Boat Works is **78 years on Rice Lake** in the same location, third-generation family, with our marina's launch ramp, 49-slip moorage, rental fleet, and shop all on the same property. When you visit:
+Gores Landing is different. Harris Boat Works has been **at the same Rice Lake dock since 1947** — third-generation family, with our marina's launch ramp, 49-slip moorage, rental fleet, and shop all on the same property. When you visit:
 
 - **You see the boats we service** sitting in the slips at our dock
 - **You see the rental fleet** — same Mercurys we sell
@@ -17626,7 +17626,7 @@ What we're good at:
 - **Mercury repowers** (volume + transparency + sea-trial expertise)
 - **Older Mercury support** (1990s onward, parts availability dependent)
 - **Complex diagnostic work** (G3, factory-trained, multiple specialists on staff)
-- **Service relationship continuity** (third-generation, 78 years on Rice Lake)
+- **Service relationship continuity** (third-generation, on Rice Lake since 1947)
 - **Pricing transparency** (configurator-based)
 - **GTA / wider Ontario service** (we're 90 minutes from Toronto, full service relationships extend across the province)
 
@@ -18646,7 +18646,7 @@ Your existing boat insurance typically covers winter storage; some policies requ
 
 *Last reviewed: 2026-05-07*
 
-The simple version: Harris Boat Works has been at the same dock on Rice Lake, in Gores Landing, Ontario, since **1947**. Same family, three generations, 78 years and counting. We've sold Mercury motors since **1965** — most of those years as a Platinum Dealer. The marina sits on land we've worked for almost eight decades.
+The simple version: Harris Boat Works has been at the same dock on Rice Lake, in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965** — most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
 We don't lead with this often. The day-to-day work — selling Mercurys, doing repowers, storing boats, running the rental fleet — feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
 
@@ -18654,11 +18654,11 @@ This is the version of the HBW story we'd tell if you walked in and asked. It's 
 
 ---
 
-## How a Marina Survives 78 Years
+## How a Marina Survives Almost Eight Decades on the Same Dock
 
 Marinas don't usually last that long. Ontario marina history has more closed locations than open ones — flooded out, divorced out, bankrupted, sold to condos, lost to insurance fights, lost when the original family decided to retire and no one wanted the work.
 
-What gets a marina to 78 years on the same dock:
+What keeps a marina at the same dock since 1947:
 
 **1. Generational hand-off that actually works.** Founder runs it. Sons or daughters come up working the docks at 12 years old. Take over at 35. Their kids do the same. Each generation makes choices that protect the business through their watch. The hand-offs that go badly often go badly because the receiving generation didn't actually want the work.
 
@@ -18704,7 +18704,7 @@ The current generation running HBW is the third in family hands. Each generation
 
 Specific things a multi-generational family marina knows:
 
-- **Where the underwater hazards are.** The sunken railway across Rice Lake — we know exactly where it sits, which boats run aground there in which conditions, which hulls handle the channel. We've seen 78 years of grounding stories.
+- **Where the underwater hazards are.** The sunken railway across Rice Lake — we know exactly where it sits, which boats run aground there in which conditions, which hulls handle the channel. We've seen generations of grounding stories.
 - **Which mistakes new boaters make.** First-time pontoon owners typically over-trim or under-trim depending on conditions. We see it every season. We can teach the corrections in 30 seconds.
 - **What the lake does in different weather.** Ice-out timing varies. Wind builds chop differently in spring vs. fall. Spring weed growth peaks at certain weeks. We know when to launch, when to wait, when to call ahead.
 - **What customers want.** Not just what they say they want, but what they'll actually use. A family thinking they need a 22-ft pontoon often discovers a 20-ft fits their use better. Selling the right boat over the wrong, more-expensive boat is what builds 60-year customer relationships.
@@ -18721,11 +18721,11 @@ Specific reasons our advice diverges from urban-dealer advice:
 
 - **Freshwater boating.** Rice Lake has no salt, but it has weeds, algae blooms in late summer, weed-mat issues. Different motor wear pattern.
 - **Shallow-water boating.** Rice Lake's average depth is 6-10 feet; the channel is shallower. Prop selection matters.
-- **The sunken railway hazard.** Specific to this lake. Specific to our local knowledge. Most marina operators in southern Ontario don't deal with it; we've worked around it for nearly 80 years.
+- **The sunken railway hazard.** Specific to this lake. Specific to our local knowledge. Most marina operators in southern Ontario don't deal with it; we've worked around it since 1947.
 - **The seasonal launch math.** Specific to this lake — when ice goes out, when bass season opens, when walleye opens, when winter storage starts.
 - **The Trent-Severn context.** Rice Lake is part of the Trent-Severn navigation system. Our customers often boat the wider system. Our advice reflects that.
 
-For a customer in Toronto who'll boat Lake Ontario, much of this is irrelevant. For a customer in the Kawarthas, the GTA, or anywhere from Cobourg to Peterborough, **a marina that's known this water for 78 years has perspective that newer entrants can't match.**
+For a customer in Toronto who'll boat Lake Ontario, much of this is irrelevant. For a customer in the Kawarthas, the GTA, or anywhere from Cobourg to Peterborough, **a marina that's known this water since 1947 has perspective that newer entrants can't match.**
 
 ---
 
@@ -18737,7 +18737,7 @@ Customers say "I trust HBW" in different ways:
 - **"I trust the price."** Our pricing is published in the configurator. Customers can verify the math. There are no shell-game add-ons at delivery.
 - **"I trust the post-sale service."** When something fails after the sale, we handle it. Mercury warranty work, MPP claims, out-of-warranty diagnoses — they all happen at the same shop where you bought the motor.
 - **"I trust the recommendation."** When we say "actually, you don't need the upgrade," we mean it. We've sold smaller motors than customers were planning to buy because the smaller motor was right.
-- **"I trust the heritage."** When a marina has been at the same dock for 78 years, customers feel the implied "we'll be here for the next 10 years too." That confidence has real economic value.
+- **"I trust the heritage."** When a marina has been at the same dock since 1947, customers feel the implied "we'll be here for the next 10 years too." That confidence has real economic value.
 
 The 1947 date isn't a marketing claim. It's a calibration on every other claim we make.
 
