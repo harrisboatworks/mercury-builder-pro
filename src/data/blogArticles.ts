@@ -13566,7 +13566,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     slug: 'mercury-boost-upgrade-150hp-pontoon-analysis',
     title: 'Mercury Boost Upgrade: Is It Worth It for a 150 HP Pontoon Owner? (Real-World Analysis)',
     description: 'For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money. The performance gains are minimal in real-world pontoon use (where load and hull design cap top speed regardless of motor tweaks). The interesting part of Boost is what it signals about how Mercury will deliver future upgrades, not whether this specific upgrade pays off today. For your specific motor and use, see live pricing or contact us before committing.',
-    image: '/lovable-uploads/2026_Mercury_Buying_Pricing_Promotions_2.png',
+    image: '/lovable-uploads/Ordering_Your_Mercury_What_to_Expect_2.png',
     author: 'Harris Boat Works',
     datePublished: '2026-04-30',
     dateModified: '2026-05-04',
