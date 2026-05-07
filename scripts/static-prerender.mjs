@@ -19,6 +19,34 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync, rmSync } 
 import { join, resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { marked } from 'marked';
+
+// Configure marked: GFM, no smartypants (so quotes pass through cleanly),
+// preserve heading IDs via slug-style anchors below.
+marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
+
+// Render an article's markdown body to HTML for the <noscript> fallback.
+// Strips the leading H1 (the page already renders one), the author footer,
+// and any custom :::directive::: blocks our renderer handles separately.
+function renderArticleBodyHtml(content) {
+  if (!content) return '';
+  let s = String(content);
+  // Drop leading H1 — it duplicates the route H1 we inject in noscript.
+  s = s.replace(/^\s*#\s+.+(?:\r?\n|$)/, '');
+  // Strip author footer signature (handled by AuthorByline component in SPA).
+  s = s.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
+  s = s.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
+  s = s.replace(/\n+\s*By Jay Harris[\s\S]*$/i, '');
+  // Strip custom directive blocks (e.g. :::image-placeholder ... :::).
+  s = s.replace(/^:::[a-zA-Z0-9_-]+[\s\S]*?^:::\s*$/gm, ' ');
+  try {
+    return marked.parse(s);
+  } catch (err) {
+    console.warn('[static-prerender] marked render failed:', err?.message);
+    return '';
+  }
+}
+
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
