@@ -18633,7 +18633,7 @@ Your existing boat insurance typically covers winter storage; some policies requ
   {
     slug: "harris-boat-works-since-1947-rice-lake-institution",
     title: "Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations",
-    description: "The story of Harris Boat Works on Rice Lake \u2014 three generations, 78 years, and what nearly eight decades on the same dock means for the customers who've trus...",
+    description: "The story of Harris Boat Works on Rice Lake \u2014 three generations since 1947, and what nearly eight decades on the same dock means for the customers who've trusted the family.",
     image: '/lovable-uploads/hero-harris-boat-works-since-1947.png',
     author: 'Jay Harris',
     datePublished: "2026-06-06",
