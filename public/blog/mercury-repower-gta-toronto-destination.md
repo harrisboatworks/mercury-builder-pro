@@ -108,7 +108,7 @@ Old motor comes off, new Mercury goes on. The work involves:
 
 ### Stage 5: Pickup, on-water verification, drive home (4-8 hours)
 
-We call when ready. You drive back, we walk you through the new motor at the dock, controls, gauges, break-in instructions, service schedule, MPP paperwork.
+We call when ready. You drive back. We walk you through the new motor at the dock: controls, gauges, break-in instructions, service schedule, MPP paperwork.
 
 **Important: the 10-hour break-in period.** Your new Mercury isn't full-RPM-ready for the first 10 hours. We brief you on:
 - First 2 hours: vary throttle, no extended WOT, no sustained high RPM
@@ -131,7 +131,7 @@ Real all-in pricing for typical GTA repowers (CAD before HST):
 | **22 ft bowrider → Mercury 200 HP V6 FourStroke** | $28,000–$35,000 | Same + DTS digital throttle |
 | **22 ft bass boat → Mercury 200 HP V6 Pro XS** | $30,000–$36,000 | Same + stainless prop + Pro XS hole-shot tuning |
 
-These ranges include trade-in credit math, if your existing motor is worth $4,000-$8,000 in trade, that's already factored. The configurator shows your specific boat number.
+These ranges include trade-in credit math. If your existing motor is worth $4,000-$8,000 in trade, that's already factored. The configurator shows your specific boat number.
 
 **Compared to buying a new equivalent boat:**
 - New 19 ft runabout package (boat + 150 HP + trailer): $50,000-$80,000+
