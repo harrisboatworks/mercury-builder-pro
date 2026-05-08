@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-90hp-90-elpt-command-thrust-fourstroke
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: 41acbe10-27ef-4502-a968-21c1723705c7
 slug: fourstroke-90hp-90-elpt-command-thrust-fourstroke
 family: FourStroke
@@ -19,7 +19,7 @@ price_cad: 15274
 # 90 ELPT Command Thrust FourStroke
 
 Mercury FourStroke 90 HP outboard motor (model 1F904532D).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
 
 ## Quick facts
 
@@ -32,7 +32,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 - **Selling price:** $15,274
 - **MSRP:** $17,355
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability

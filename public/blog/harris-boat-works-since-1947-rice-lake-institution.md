@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false

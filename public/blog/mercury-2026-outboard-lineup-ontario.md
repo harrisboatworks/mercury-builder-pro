@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -99,7 +99,7 @@ For typical Ontario recreational use, SeaPro is overkill. For commercial operato
 
 ## Mercury 2026 Verado (250 to 600+ HP)
 
-The Verado is Mercury's premium supercharged offshore line. Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
+The Verado is Mercury's premium V8/V10/V12 offshore line (naturally aspirated on current models). Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
 
 Verado is special-order at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. Twin V12 600 HP setups are stunning motors. They are not for Rice Lake.
 

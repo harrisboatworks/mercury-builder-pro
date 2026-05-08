@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,7 @@ content_type: blog_article
 
 > **Quick answer:** Mercury dominates Ontario because the dealer network is denser, parts supply is faster, and resale demand is strongest. Yamaha and Honda build excellent motors, but the practical service experience in cottage country favours Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
 
-Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP supercharged Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for 60 years and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP naturally-aspirated Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for the 60 years we've been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -58,7 +58,7 @@ Mercury has more dealers across Ontario and Canada than any other outboard brand
 
 ### 2. Factory OEM relationships with Canadian boat builders
 
-Most Canadian-built aluminum boats (Lund, Crestliner, Princecraft, Lowe, and similar) come Mercury-rigged from the factory. The reasons go back decades:
+Most major aluminum boat brands (Lund, Crestliner, Princecraft, Lowe, and similar) come Mercury-rigged from the factory. The reasons go back decades:
 
 - Parts supply chains are built around Mercury for the Canadian market
 - Boat manufacturers can offer Mercury packages at attractive prices because of volume
@@ -85,7 +85,7 @@ Mercury has been the early leader on several modern outboard innovations:
 
 - Modern four-stroke transition (early 2000s, with Yamaha as the other early mover)
 - Pro XS performance line as the standard tournament motor
-- Verado supercharged technology
+- Verado V8/V10/V12 naturally-aspirated technology
 - SmartCraft engine management and connectivity
 - Joystick Piloting for Outboards (twin/triple installations)
 - Avator electric outboards
@@ -172,7 +172,7 @@ The Mercury 9.9 ProKicker is the most-installed Mercury kicker motor in Canada. 
 Yes. The Avator line covers the electric category from small portables (7.5e, 20e, 35e) up to larger units (75e, 110e). The lineup is still maturing. We are on-order for Avator at HBW for customers with specific use cases.
 
 **What is Mercury Verado and why is it special-order at HBW?**
-Verado is Mercury's supercharged premium line, 250 to 600+ HP, built for offshore center consoles, twin/triple installations, and yachts. We do not stock Verado at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. If you do, [contact us](/contact) for a special-order quote.
+Verado is Mercury's premium V8/V10/V12 line (naturally aspirated on current models), 250 to 600+ HP, built for offshore center consoles, twin/triple installations, and yachts. We do not stock Verado at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. If you do, [contact us](/contact) for a special-order quote.
 
 **Should I switch from Yamaha or Honda to Mercury?**
 If you are doing a full repower anyway and the rigging investment is unavoidable, switching to Mercury during the repower makes sense for Ontario boaters. The dealer network and parts supply argument favors Mercury once the rigging cost is committed either way. If your existing motor is running fine and you are not repowering, no reason to switch.

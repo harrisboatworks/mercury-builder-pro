@@ -1,25 +1,25 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
-title: "Late Season Boating Safety: Fall Tips for Ontario Waters"
-description: "Stay safe during fall boating in Ontario. Cold water considerations, essential gear, weather awareness, and emergency procedures for shoulder season boating."
+title: "Cold-Water Boating Safety in Ontario: What to Know"
+description: "Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall, and any cold-water conditions."
 category: "Tips"
 date_published: 2026-05-05
 date_modified: 2026-05-05
-keywords: ["fall boating safety","cold water safety","ontario fall boating","late season boating","hypothermia prevention","shoulder season boating"]
+keywords: ["cold water boating safety","ontario boating safety","hypothermia prevention","spring boating safety","fall boating safety","pfd cold water"]
 author: Harris Boat Works
 content_type: blog_article
 ---
 
-# Late Season Boating Safety: Fall Tips for Ontario Waters
+# Cold-Water Boating Safety in Ontario: What to Know
 
-> Stay safe during fall boating in Ontario. Cold water considerations, essential gear, weather awareness, and emergency procedures for shoulder season boating.
+> Cold-water boating safety for Ontario waters. Risks, essential gear, weather awareness, and emergency procedures for spring, fall, and any cold-water conditions.
 
 **Category:** Tips  
 **Published:** 2026-05-05  
@@ -31,16 +31,16 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Late-season Ontario boating means cold water, short days, and shoulder weather. Wear a PFD, file a float plan, carry a charged VHF, and dress for water temperature, not air temperature. Cold-water immersion is the biggest fall risk, see Transport Canada TP 13822 for survival guidance. Book fall service at mercuryrepower.ca.
+> **Quick answer:** Cold-water Ontario boating, spring or fall, means dressing for water temperature, not air temperature. Wear a PFD, file a float plan, carry a charged VHF. Cold-water immersion is the biggest risk in any shoulder season. Lake Ontario water temps stay below 15 deg C through May. See Transport Canada TP 13822 for survival guidance. Book service at mercuryrepower.ca.
 
-## Late Season Boating Safety: Fall Tips for Ontario Waters
+## Cold-Water Boating Safety in Ontario
 
-Fall on Ontario's waters offers some of the best boating conditions - fewer crowds, stunning colours, and excellent fishing. But cooling water temperatures demand extra safety awareness.
+Ontario's shoulder seasons, both spring and fall, offer some of the best boating conditions: fewer crowds, calm water, and excellent fishing. But cold water demands extra safety awareness any time the lake is below 15 deg C, and that includes most of May on Lake Ontario, not just October.
 
 ### The Cold Water Reality
 
-**Why Fall Water is Dangerous**:
-Ontario waters cool rapidly in fall. By October, surface temperatures can drop to 10-15°C - cold enough for hypothermia to set in within minutes of immersion. See [Transport Canada's cold-water survival guidance](https://tc.canada.ca/en/marine-transportation/publications/tp-13822-survival-cold-waters-2003) for the full safety procedures.
+**Why Cold Water is Dangerous**:
+Ontario waters are cold for more of the year than people realize. Lake Ontario surface temps often sit below 15 deg C through May. Inland lakes warm faster but cool fast in late September. Below 15 deg C, hypothermia can set in within 30 to 40 minutes of immersion. See [Transport Canada's cold-water survival guidance](https://tc.canada.ca/en/marine-transportation/publications/tp-13822-survival-cold-waters-2003) for the full safety procedures.
 
 **Cold Water Shock**:
 - Initial gasp reflex (dangerous if underwater)

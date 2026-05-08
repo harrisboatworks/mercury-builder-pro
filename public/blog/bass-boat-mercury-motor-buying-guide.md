@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bass-boat-mercury-motor-buying-guide.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -54,7 +54,7 @@ The Mercury Pro XS line is purpose-built for performance:
 
 Key Features:
 
-Lightweight construction (up to 60 lbs lighter than comparable FourStroke)
+Lightweight construction (typically 20-40 lbs lighter than the equivalent FourStroke depending on model and configuration; check the Mercury spec sheet for your specific HP and rigging)
 Tuned for higher RPM
 Faster hole-shot
 Competition-grade internals
@@ -163,7 +163,7 @@ Mercury Pro XS pricing in Canada varies by horsepower, shaft length, controls, p
 
 ### What's the difference between Mercury Pro XS and Mercury FourStroke for bass fishing?
 
-The Pro XS is performance-tuned with lighter construction (up to 60 lbs lighter), higher RPM capability, and faster hole-shot, purpose-built for tournament anglers who need speed. The FourStroke prioritizes fuel economy, quiet operation, and durability at a lower price. For Ontario recreational bass anglers on lakes like Rice Lake or cottage country waters, the FourStroke at 150–175HP is excellent without needing the Pro XS premium. For tournament fishing on Ontario circuits, the Pro XS is the clear choice.
+The Pro XS is performance-tuned with lighter construction (typically 20-40 lbs lighter than the equivalent FourStroke depending on model), higher RPM capability, and faster hole-shot, purpose-built for tournament anglers who need speed. The FourStroke prioritizes fuel economy, quiet operation, and durability at a lower price. For Ontario recreational bass anglers on lakes like Rice Lake or cottage country waters, the FourStroke at 150–175HP is excellent without needing the Pro XS premium. For tournament fishing on Ontario circuits, the Pro XS is the clear choice.
 
 ### Can I use a kicker motor on a bass boat?
 

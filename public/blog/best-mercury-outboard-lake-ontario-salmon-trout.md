@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-ontario-salmon-trout.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -76,9 +76,9 @@ Tournament use rewards the Pro XS V8 for faster acceleration and the ability to 
 
 ### Charter fishing operations
 
-**Best setup:** 26 to 30+ ft deep-V or walkaround with 300 to 400 HP main motor (often Mercury Verado V8 supercharged or twin SeaPro for commercial duty) + 15 HP ProKicker.
+**Best setup:** 26 to 30+ ft deep-V or walkaround with 300 to 400 HP main motor (often Mercury Verado V8 or twin SeaPro for commercial duty) + 15 HP ProKicker.
 
-Charter operations push motors hard. Mercury SeaPro variants are built for commercial-duty cycles. Some charters run Verado V8 supercharged for high HP single-engine setups.
+Charter operations push motors hard. Mercury SeaPro variants are built for commercial-duty cycles. Some charters run Verado V8 for high HP single-engine setups.
 
 ### Multi-species sport fishing
 

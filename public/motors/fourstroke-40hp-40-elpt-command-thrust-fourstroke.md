@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-40hp-40-elpt-command-thrust-fourstroke
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: 9917d204-6d85-4124-ad1a-df01f259a843
 slug: fourstroke-40hp-40-elpt-command-thrust-fourstroke
 family: FourStroke
@@ -19,7 +19,7 @@ price_cad: 9900
 # 40 ELPT Command Thrust FourStroke
 
 Mercury FourStroke 40 HP outboard motor (model 1F41453GZ).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
 
 ## Quick facts
 
@@ -32,7 +32,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 - **Selling price:** $9,900
 - **MSRP:** $11,250
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability
@@ -46,7 +46,7 @@ Mid-size aluminum fishing boats 14–18 ft and small pontoons.
 
 ## Not ideal for
 
-Heavy pontoons over 22 ft or fiberglass family boats — consider 90–115 HP.
+Heavy pontoons over 22 ft or fiberglass family boats, consider 90–115 HP.
 
 ## Build a quote
 

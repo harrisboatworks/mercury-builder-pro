@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -68,7 +68,7 @@ Mercury has more dealers across Ontario than Yamaha. That means:
 
 ### 2. Factory-OEM relationships
 
-Most Canadian-built aluminum boats (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. The supply chain is Mercury-centric. Buying a Mercury-rigged factory boat is the most cost-effective way into a new aluminum boat.
+Most major aluminum boat brands (Lund, Crestliner, Princecraft, Lowe) come Mercury-rigged from the factory. The supply chain is Mercury-centric. Buying a Mercury-rigged factory boat is the most cost-effective way into a new aluminum boat.
 
 ### 3. Complete lineup coverage
 
