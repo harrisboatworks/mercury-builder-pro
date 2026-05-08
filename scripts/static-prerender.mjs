@@ -1552,8 +1552,27 @@ function blogArticleSchema(article) {
   const readTimeMinutes = parseInt(article.readTime, 10) || 5;
   const description = sanitizeSchemaText(article.description);
 
-  const graph = [
-    {
+  const mentionsRiceLake = /rice lake/i.test(article.content || '') || /rice lake/i.test(article.title || '');
+  const riceLakePlaceId = `${SITE_URL}/#rice-lake-ontario`;
+  const riceLakePlace = {
+    "@type": "Place",
+    "@id": riceLakePlaceId,
+    "name": "Rice Lake, Ontario",
+    "alternateName": ["Rice Lake (Ontario)", "Rice Lake, Kawartha Lakes"],
+    "description": "Freshwater lake in the Kawartha Lakes region, southern Ontario, Canada. Located approximately 90 minutes east of Toronto. Distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota.",
+    "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
+    "containedInPlace": [
+      { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+      { "@type": "AdministrativeArea", "name": "Ontario" },
+      { "@type": "Country", "name": "Canada" }
+    ],
+    "sameAs": [
+      "https://en.wikipedia.org/wiki/Rice_Lake_(Ontario)",
+      "https://www.wikidata.org/wiki/Q1543290"
+    ]
+  };
+
+  const articleNode = {
       "@type": "Article",
       "@id": `${url}#article`,
       "headline": sanitizeSchemaText(article.title),
@@ -1573,8 +1592,14 @@ function blogArticleSchema(article) {
         { "@type": "Thing", "name": "Mercury Marine Outboard Motors" },
         { "@type": "Thing", "name": "Boat Motors" }
       ],
-      "mentions": [{ "@type": "Organization", "name": "Mercury Marine" }]
-    },
+      "mentions": [
+        { "@type": "Organization", "name": "Mercury Marine" },
+        ...(mentionsRiceLake ? [{ "@id": riceLakePlaceId }] : [])
+      ],
+      ...(mentionsRiceLake ? { "contentLocation": { "@id": riceLakePlaceId } } : {})
+  };
+
+  const graph = [articleNode, ...(mentionsRiceLake ? [riceLakePlace] : []),
     {
       "@type": "WebPage",
       "@id": `${url}#webpage`,
@@ -3032,7 +3057,7 @@ function stripSchemaMarkdown(s) {
     .replace(/__(.+?)__/g, '$1')
     .replace(/\*(.+?)\*/g, '$1')
     .replace(/`([^`]+)`/g, '$1')
-    .replace(/\s*[ - –]\s*/g, ' - ')
+    .replace(/\s*[–—]\s*/g, ' - ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -3579,7 +3604,7 @@ function catalogMarkdown(motorTwins, caseStudyTwins, locationTwins, blogTwins = 
     '',
     '## Positioning',
     '',
-    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake. The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Platinum Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Platinum Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
+    'Harris Boat Works is **Ontario\'s Mercury Repower Centre** on Rice Lake, Ontario (Kawartha Lakes region, ~90 minutes east of Toronto — distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota). The Canadian "Centre" spelling is our own descriptive positioning (geographic + specialty), it reflects what we do, lake-tested on Rice Lake. It is **not** itself a Mercury-issued certification, but it pairs with two real Mercury credentials we hold: **Mercury Marine Platinum Dealer** and **Mercury Certified Repower Center** (American "Center" spelling: Mercury\'s official program). Verified facts to pair with the positioning phrase: Mercury Marine Platinum Dealer · Mercury Certified Repower Center · Mercury-only dealer since 1965 · Family-owned since 1947 · Transparent CAD pricing · Pickup at Gores Landing · Every install lake-tested on Rice Lake.',
     '',
     '## Business rules (apply to every entry)',
     '',
