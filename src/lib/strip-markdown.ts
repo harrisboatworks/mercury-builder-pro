@@ -6,6 +6,13 @@ export function stripMarkdown(input: string): string {
   if (!input) return '';
   let out = String(input);
 
+  // Unescape JS-style escape sequences that leak through when descriptions
+  // were authored as JS string literals (\" -> ", \' -> ', \\ -> \, \n -> space).
+  out = out.replace(/\\n/g, ' ');
+  out = out.replace(/\\"/g, '"');
+  out = out.replace(/\\'/g, "'");
+  out = out.replace(/\\\\/g, '\\');
+
   // Remove author footer trailers like "---\nBy Jay Harris..." or "**By Jay Harris**..."
   out = out.replace(/\n?-{3,}\s*\n+\s*\*?\*?By Jay Harris[\s\S]*$/i, '');
   out = out.replace(/\n+\s*\*\*By Jay Harris\*\*[\s\S]*$/i, '');
