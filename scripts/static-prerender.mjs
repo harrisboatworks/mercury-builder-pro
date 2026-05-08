@@ -2485,7 +2485,22 @@ const routes = [
     description: 'Expert advice on Mercury outboard motors, boat maintenance, and buying guides. Mercury dealer since 1965, helping Ontario boaters make informed decisions.',
     h1: 'Mercury Motor Guides & Boating Tips',
     intro: 'Expert advice on Mercury outboard motors, repowers, boat maintenance, and buying guides from Ontario\'s Mercury Marine Platinum Dealer since 1947.',
-    schemas: [genericPageSchema('/blog', 'Harris Boat Works Blog', 'Mercury motor guides and boating tips.')]
+    schemas: [genericPageSchema('/blog', 'Harris Boat Works Blog', 'Mercury motor guides and boating tips.')],
+    extraNoscript: () => {
+      // Bot/no-JS fallback: list every published blog post (newest first) so
+      // crawlers (Googlebot, ChatGPT browse, Claude, Perplexity) can discover
+      // the full catalog from /blog without executing JS.
+      const published = blogArticles
+        .filter(a => a.isPublished)
+        .slice()
+        .sort((a, b) => String(b.publishDate || '').localeCompare(String(a.publishDate || '')));
+      const items = published.map(a => {
+        const title = escapeHtml(a.title || a.slug);
+        const desc = a.description ? `<p>${escapeHtml(a.description)}</p>` : '';
+        return `<li><a href="/blog/${a.slug}">${title}</a>${desc}</li>`;
+      }).join('');
+      return `<section><h2>All blog posts (${published.length})</h2><ul>${items}</ul></section>`;
+    }
   },
   // ============================================================
   // /pricing-reference: HTML twin of /pricing-reference.md
