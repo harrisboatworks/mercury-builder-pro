@@ -89,7 +89,6 @@ interface ArticleLike {
  */
 export function getCleanDescription(article: ArticleLike): string {
   const raw = article.description || '';
-  const hasMarkdown = /\[[^\]]+\]\([^)]+\)|\*\*|__|`|^#/m.test(raw);
   const stripped = stripMarkdown(raw);
   // Prefer the article's own description (after stripping markdown) whenever it
   // exists. Falling back to body content was hitting italics-only lines like
