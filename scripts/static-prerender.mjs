@@ -153,7 +153,7 @@ function loadAllBlogArticlesForSitemap() {
 // them from listings until their publish date.
 function loadBlogArticles() {
   const dumpScript = `
-    import { getSitemapEligibleArticles } from '../src/data/blogArticles.ts';
+    import { getSitemapEligibleArticles, isArticlePublished } from '../src/data/blogArticles.ts';
     import { getCleanDescription, sanitizeForSchema, markdownToNoscriptHtml } from '../src/lib/strip-markdown.ts';
     const items = getSitemapEligibleArticles().map(a => ({
       slug: a.slug,
@@ -162,6 +162,8 @@ function loadBlogArticles() {
       image: a.image,
       datePublished: a.datePublished,
       dateModified: a.dateModified,
+      publishDate: a.publishDate || a.datePublished || null,
+      isPublished: isArticlePublished(a),
       keywords: a.keywords || [],
       readTime: a.readTime || '5 min read',
       content: a.content || '',
