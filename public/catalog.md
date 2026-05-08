@@ -102,6 +102,8 @@ Harris Boat Works is **Ontario's Mercury Repower Centre** on Rice Lake. The Cana
 
 Selected high-intent buyer guides. Full blog index (HTML) at https://www.mercuryrepower.ca/blog.
 
+- [Ontario Mercury Outboard Price Guide (2026) — Real CAD prices by HP tier](https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md)
+- [Mercury Controls & Rigging Guide (2026) — Compatibility matrix by HP class](https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md)
 - [How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide)](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md)
 - [Mercury vs Yamaha Outboards in Ontario (2026)](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md)
 - [Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?](https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-vs-honda-reliability-2026.md)
