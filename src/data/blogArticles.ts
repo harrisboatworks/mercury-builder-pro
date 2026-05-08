@@ -19972,8 +19972,7 @@ If you're newer to the conversation, here's the short version.
 **Sterndrive (Inboard/Outboard or "I/O"):**
 The engine sits inside the hull, in an engine bay below the cockpit or under a centre hatch. The outdrive unit hangs off the transom and handles steering, trim, and propulsion. MerCruiser is the dominant brand; Volvo Penta is the other major player. Sterndrives were the dominant setup on bowriders and runabouts from the 1970s through the 2000s.
 
-**Outboard:**
-The entire engine, powerhead, midsection, and lower unit, mounts on the transom and is fully external. Everything is accessible without opening a hatch or pulling a floor panel. Tilt it up, the prop clears the water entirely. Modern outboards are 4-stroke, direct-injected, and available from 2.5hp all the way to 600hp.
+**Outboard:** The entire engine (powerhead, midsection, and lower unit) mounts on the transom and is fully external. Everything is accessible without opening a hatch or pulling a floor panel. Tilt it up, the prop clears the water entirely. Modern outboards are 4-stroke, direct-injected, and available from 2.5hp all the way to 600hp.
 
 If you want deeper background on how sterndrives work and their service requirements, our [MerCruiser sterndrive guide for Ontario owners](https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario) covers the full picture.
 
@@ -20330,7 +20329,7 @@ A 30-minute inspection won't catch everything, but it will catch the things that
   {
     slug: 'docking-boat-in-wind-rice-lake',
     title: "Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)",
-    description: "A technique-first guide to docking single-outboard boats, pontoons, bowriders, and fishing boats, in windy conditions on Rice Lake, without a bow thruster...",
+    description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, without a bow thruster or a meltdown.",
     image: '/lovable-uploads/hero-docking-in-wind-rice-lake.png',
     author: 'Jay Harris',
     datePublished: '2026-06-27',
