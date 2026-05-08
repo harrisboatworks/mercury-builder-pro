@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Ontario Cottage Boat Motor Repower Guide (2026)"
-description: "Last reviewed: 2026-05-07"
+description: "For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually wins on the math against buying new."
 category: "Repowering"
 date_published: 2026-02-02
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Ontario Cottage Boat Motor Repower Guide (2026)
 
-> Last reviewed: 2026-05-07
+> For Ontario cottage owners, repowering an existing aluminum or fiberglass boat with a new Mercury usually wins on the math against buying new.
 
 **Category:** Repowering  
 **Published:** 2026-02-02  

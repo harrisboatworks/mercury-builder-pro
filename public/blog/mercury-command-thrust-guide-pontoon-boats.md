@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Command Thrust Guide for Pontoon Boats (2026)"
-description: "Last reviewed: 2026-05-07"
+description: "Mercury Command Thrust is the gearcase option that turns a \"good\" pontoon Mercury into a \"great\" one. It is not a separate motor family."
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Command Thrust Guide for Pontoon Boats (2026)
 
-> Last reviewed: 2026-05-07
+> Mercury Command Thrust is the gearcase option that turns a "good" pontoon Mercury into a "great" one. It is not a separate motor family.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Evinrude to Mercury Repower in Ontario (2026 Guide)"
-description: "Last reviewed: 2026-05-07"
+description: "Switching from Evinrude to Mercury during a repower runs an extra $1,500 to $3,000 CAD in rigging costs because the entire control system has to swap."
 category: "Repower Guides"
 date_published: 2026-04-16
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Evinrude to Mercury Repower in Ontario (2026 Guide)
 
-> Last reviewed: 2026-05-07
+> Switching from Evinrude to Mercury during a repower runs an extra $1,500 to $3,000 CAD in rigging costs because the entire control system has to swap.
 
 **Category:** Repower Guides  
 **Published:** 2026-04-16  

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Rigging Costs Explained (Ontario 2026)"
-description: "Last reviewed: 2026-05-07"
+description: "Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop."
 category: "Repower"
 date_published: 2026-05-05
 date_modified: 2026-05-05
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Rigging Costs Explained (Ontario 2026)
 
-> Last reviewed: 2026-05-07
+> Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop.
 
 **Category:** Repower  
 **Published:** 2026-05-05  

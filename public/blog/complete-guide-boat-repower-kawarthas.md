@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Complete Guide to Repowering Your Boat in the Kawarthas (2026)"
-description: "Last reviewed: 2026-05-07"
+description: "Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own."
 category: "Repowering"
 date_published: 2026-02-23
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Complete Guide to Repowering Your Boat in the Kawarthas (2026)
 
-> Last reviewed: 2026-05-07
+> Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own.
 
 **Category:** Repowering  
 **Published:** 2026-02-23  

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Boat Hull Replacement vs Repower: The Honest Decision (2026)"
-description: "Last reviewed: 2026-05-07"
+description: "For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision."
 category: "Repower"
 date_published: 2026-04-29
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Boat Hull Replacement vs Repower: The Honest Decision (2026)
 
-> Last reviewed: 2026-05-07
+> For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision.
 
 **Category:** Repower  
 **Published:** 2026-04-29  

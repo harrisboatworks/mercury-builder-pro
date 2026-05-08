@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Best Pontoon Boats for Rice Lake Cottage Use (2026)"
-description: "Last reviewed: 2026-05-07"
+description: "For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust."
 category: "Buying Guide"
 date_published: 2026-05-04
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Best Pontoon Boats for Rice Lake Cottage Use (2026)
 
-> Last reviewed: 2026-05-07
+> For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust.
 
 **Category:** Buying Guide  
 **Published:** 2026-05-04  

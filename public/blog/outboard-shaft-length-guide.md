@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)"
-description: "Last reviewed: 2026-05-07"
+description: "Outboard shaft length is the distance from the motor's mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20..."
 category: "Buying Guide"
 date_published: 2026-05-05
 date_modified: 2026-05-05
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Outboard Shaft Length Guide: 15, 20, 25 Inch (2026)
 
-> Last reviewed: 2026-05-07
+> Outboard shaft length is the distance from the motor's mounting bracket to the cavitation plate above the prop. Standard Mercury shaft lengths are 15 inch (Short), 20...
 
 **Category:** Buying Guide  
 **Published:** 2026-05-05  
