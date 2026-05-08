@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -244,7 +244,7 @@ The general principle, vary your throttle and avoid sustained full power, applie
 
 ### Do I need to use Mercury-branded oil during break-in?
 
-Mercury recommends their own FourStroke 10W-30 oil, and using it keeps your warranty clean. Any marine-grade 4-stroke oil meeting TC-W3 or API SL/SM standards can be used in a pinch, but avoid automotive oil not rated for marine use. The more important discipline is the 20-hour oil change, whatever oil is in there at 20 hours needs to come out, as it will contain metal particles from the break-in process.
+Mercury recommends their own FourStroke 10W-30 oil, and using it keeps your warranty clean. Any FC-W rated 4-stroke marine engine oil at the viscosity Mercury specifies for your motor (typically 25W-40 or 10W-30, check your owner's manual) can be used in a pinch, but avoid automotive oil not rated for marine use, and do not substitute TC-W3 (that's the 2-stroke marine spec). The more important discipline is the 20-hour oil change, whatever oil is in there at 20 hours needs to come out, as it will contain metal particles from the break-in process.
 
 ### How long does Mercury motor break-in take in terms of calendar time?
 

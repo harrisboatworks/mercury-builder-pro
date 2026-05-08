@@ -19225,11 +19225,11 @@ This isn't a scare piece. It's what our service techs actually deal with, writte
 
 Before we get into the full list, this one deserves its own section because it causes more problems than everything else combined.
 
-Pontoons are heavy. A 22-foot pontoon fully loaded, cooler, canopy, six adults, gear, can easily top 3,000 lbs. Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
+Pontoons are heavy. A 22-foot pontoon fully loaded with a cooler, canopy, six adults, and gear can easily top 3,000 lbs. Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
 
 The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 60HP motor on it because the dealer said it would "work." Technically, yes. It will move the boat. But it won't plane properly under load, it'll lug when you push it, and that engine will work twice as hard as it should for its entire life.
 
-On Rice Lake, you want to get places. You want to pull a tube. You want to get home before the storm hits. A properly sized motor, 90HP to 115HP for most 20–24 ft boats, more for tritoons, does that without working itself to death.
+On Rice Lake, you want to get places. You want to pull a tube. You want to get home before the storm hits. A properly sized motor (90HP to 115HP for most 20–24 ft boats, more for tritoons) does that without working itself to death.
 
 The general rule: **match the motor to the max HP rating on the hull plate, not the minimum**. Most pontoon owners buy to the minimum and call it good enough. It isn't.
 
@@ -19289,7 +19289,7 @@ What we see most: corroded wiring harnesses at the helm, green and brittle conne
 - Navigation lights that work sometimes and don't work other times
 - Accessories that stop functioning mid-season
 
-Wiring work is time-consuming to fix right. Keeping up with it, cleaning and protecting connections with dielectric grease, replacing any corroded terminal ends before they fail, is far cheaper than rewiring a console.
+Wiring work is time-consuming to fix right. Keeping up with it (cleaning and protecting connections with dielectric grease, replacing any corroded terminal ends before they fail) is far cheaper than rewiring a console.
 
 ---
 
@@ -19322,7 +19322,7 @@ See our guide to [pontoon boats and cottage use on Rice Lake](https://www.mercur
 
 A propeller that's pitched too high for the boat's load and motor will prevent the engine from reaching its optimal RPM range. The motor strains, performance suffers, fuel consumption goes up, and you're doing wear you don't need.
 
-It's a surprisingly common problem. Pontoons change over time, you add a bimini, upgrade the stereo, load more people, and the prop that worked well three years ago may not be the right choice anymore.
+It's a surprisingly common problem. Pontoons change over time. You add a bimini, upgrade the stereo, load more people. The prop that worked well three years ago may not be the right choice anymore.
 
 **Signs your prop pitch is off:**
 - Motor won't reach its rated WOT RPM under normal load
@@ -19711,7 +19711,7 @@ They're related but different, and both matter.
 
 **Trim tabs** are small hydraulic fins mounted on the transom, one on each side. They push water down and lift the stern, which changes how the hull sits on the water. Where engine trim adjusts the whole boat's attitude via thrust, trim tabs let you correct **side-to-side lean** (port or starboard) and fine-tune fore-and-aft balance independently of the engine.
 
-On a well-balanced boat with the right load, you may not need tabs at all. But if you're regularly running uneven loads, one heavy passenger on the port side, gear stacked to starboard, trim tabs let you level the hull without fighting the steering the whole time.
+On a well-balanced boat with the right load, you may not need tabs at all. But if you're regularly running uneven loads (one heavy passenger on the port side, gear stacked to starboard), trim tabs let you level the hull without fighting the steering the whole time.
 
 They work together. Engine trim and trim tabs are two dials on the same system, and the combination gives you full control of hull attitude in any condition.
 
@@ -19972,8 +19972,7 @@ If you're newer to the conversation, here's the short version.
 **Sterndrive (Inboard/Outboard or "I/O"):**
 The engine sits inside the hull, in an engine bay below the cockpit or under a centre hatch. The outdrive unit hangs off the transom and handles steering, trim, and propulsion. MerCruiser is the dominant brand; Volvo Penta is the other major player. Sterndrives were the dominant setup on bowriders and runabouts from the 1970s through the 2000s.
 
-**Outboard:**
-The entire engine, powerhead, midsection, and lower unit, mounts on the transom and is fully external. Everything is accessible without opening a hatch or pulling a floor panel. Tilt it up, the prop clears the water entirely. Modern outboards are 4-stroke, direct-injected, and available from 2.5hp all the way to 600hp.
+**Outboard:** The entire engine (powerhead, midsection, and lower unit) mounts on the transom and is fully external. Everything is accessible without opening a hatch or pulling a floor panel. Tilt it up, the prop clears the water entirely. Modern outboards are 4-stroke, direct-injected, and available from 2.5hp all the way to 600hp.
 
 If you want deeper background on how sterndrives work and their service requirements, our [MerCruiser sterndrive guide for Ontario owners](https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario) covers the full picture.
 
@@ -20045,10 +20044,10 @@ The honest answer: not every time. Here's how we think through it.
 Outdrive service costs are significant, and parts availability for older MerCruiser Alpha One and Bravo series units has gotten tighter. If you're looking at a major outdrive overhaul, the economics of conversion get a lot more interesting. Read more about [what's involved in a full repower](https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower) before you decide.
 
 **When the engine is also tired.**
-If both the engine and the outdrive need attention, the rebuild-or-replace math usually favours replace. A full sterndrive mechanical refresh, rebuilt engine, new outdrive, updated exhaust components, often costs more than a properly scoped outboard conversion. Our [Mercury repower cost guide for Ontario (2026)](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) breaks down what you're actually comparing.
+If both the engine and the outdrive need attention, the rebuild-or-replace math usually favours replace. A full sterndrive mechanical refresh (rebuilt engine, new outdrive, updated exhaust components) often costs more than a properly scoped outboard conversion. Our [Mercury repower cost guide for Ontario (2026)](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) breaks down what you're actually comparing.
 
 **When the transom is structurally sound.**
-This is the critical check. Outboard brackets mount to the transom. If the transom is soft, delamination, rot, moisture intrusion, that's a separate project that needs to be addressed first. A reputable repower shop will inspect and tell you the truth here. We do.
+This is the critical check. Outboard brackets mount to the transom. If the transom is soft (delamination, rot, moisture intrusion), that's a separate project that needs to be addressed first. A reputable repower shop will inspect and tell you the truth here. We do.
 
 **When the boat is worth it.**
 A repower should make economic sense for the hull you have. Don't spend $35,000–$45,000 on a fresh outboard package for a hull with $12,000 in market value. If you're uncertain where you land, our [boat hull vs. repower decision guide](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision) is a good starting point.
@@ -20207,7 +20206,7 @@ Get down and look at the keel and the lower chines. These take the first damage 
 
 ### Stress cracks around hardware
 
-Anywhere hardware is through-bolted, cleats, rod holders, ski tow points, look for spiderweb gelcoat cracks. Small surface cracks from normal use are common. Cracks that penetrate the laminate indicate load stress and potential water intrusion.
+Anywhere hardware is through-bolted (cleats, rod holders, ski tow points), look for spiderweb gelcoat cracks. Small surface cracks from normal use are common. Cracks that penetrate the laminate indicate load stress and potential water intrusion.
 
 ### Osmosis blisters
 
@@ -20330,7 +20329,7 @@ A 30-minute inspection won't catch everything, but it will catch the things that
   {
     slug: 'docking-boat-in-wind-rice-lake',
     title: "Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)",
-    description: "A technique-first guide to docking single-outboard boats, pontoons, bowriders, and fishing boats, in windy conditions on Rice Lake, without a bow thruster...",
+    description: "A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, without a bow thruster or a meltdown.",
     image: '/lovable-uploads/hero-docking-in-wind-rice-lake.png',
     author: 'Jay Harris',
     datePublished: '2026-06-27',
@@ -20347,7 +20346,7 @@ A 30-minute inspection won't catch everything, but it will catch the things that
 
 **URL slug:** docking-boat-in-wind-rice-lake
 
-**Meta description:** A technique-first guide to docking single-outboard boats, pontoons, bowriders, and fishing boats, in windy conditions on Rice Lake, without a bow thruster or a meltdown.
+**Meta description:** A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, without a bow thruster or a meltdown.
 
 ---
 
@@ -20415,7 +20414,7 @@ Regardless of scenario: at 4–5 feet out, a short burst of reverse kills forwar
 
 The standard "slow and steady" advice can work against you on a pontoon.
 
-Pontoons need **more throttle into the wind** than people expect. All that windage, furniture, bimini, full-length deck, kills momentum fast. If you're going too slowly, you lose steerage before you get where you need to be and the bow starts washing sideways.
+Pontoons need **more throttle into the wind** than people expect. All that windage (furniture, bimini, full-length deck) kills momentum fast. If you're going too slowly, you lose steerage before you get where you need to be and the bow starts washing sideways.
 
 The fix: carry a bit more speed, maintain steerage until you're closer, then cut to neutral and use a short reverse burst just before the dock. The same wind drag that fought you at speed now helps you stop.
 
@@ -20707,7 +20706,7 @@ Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed
 There's a lot of wishful thinking around pontoon watersports. Here's what the real numbers look like:
 
 **Tube pulling (4–6 people on deck, pulling one tube):**
-Minimum 150 HP on a 22-foot two-tube pontoon. On a tritoon, minimum 200 HP. Below these numbers, you'll get the tube up, eventually, but it won't be consistent, and you'll be pushing the motor.
+Minimum 150 HP on a 22-foot two-tube pontoon. On a tritoon, minimum 200 HP. Below these numbers, you'll get the tube up eventually, but it won't be consistent, and you'll be pushing the motor.
 
 **Wakeboarding or wake surfing:**
 You need a tritoon, and you need 250+ HP. The third tube adds stability and wake shape; the extra horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding. A tritoon at 200 HP starts to get there. At 250–300 HP, you have a genuinely capable platform.
@@ -20722,7 +20721,7 @@ The common assumption is that more HP means worse fuel economy. In practice, the
 
 A **200 HP Mercury loafing at 4,000 RPM** uses less fuel than a **115 HP screaming at 5,800 RPM** trying to move the same load. Undersized motors run hard to keep up. They run hot, they run stressed, and they burn fuel inefficiently at the top of their range all day long.
 
-A properly sized motor cruises in its efficiency band, around 3,500–4,500 RPM, where it's making good power without working at capacity. You use less fuel per nautical mile, and the motor lasts longer.
+A properly sized motor cruises in its efficiency band (around 3,500–4,500 RPM), where it's making good power without working at capacity. You use less fuel per nautical mile, and the motor lasts longer.
 
 Sizing right isn't just about performance. It saves you money at the pump and at the service dock.
 

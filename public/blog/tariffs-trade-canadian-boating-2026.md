@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tariffs-trade-canadian-boating-2026.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -98,7 +98,7 @@ Still, Legend, like almost every boat builder, relies on an international supply
 
 may be sourced from U.S., European, or Asian manufacturers. When tariffs affect these imported components, the incremental cost can trickle through to boat prices even when the hull is Canadian.
 
-The bottom line: the boat itself is protected by being Canadian-built, but no manufacturer is completely insulated from global trade shocks.
+The bottom line: the boat itself benefits from being a Canadian-designed product, but no manufacturer is completely insulated from global trade shocks.
 
 ## Parts and Accessories: Where You May Feel It First
 
@@ -119,7 +119,7 @@ Beyond the policy specifics, tariffs have also influenced attitudes. Surveys tra
 
 For Harris Boat Works customers, that often means:
 
-- Greater interest in Canadian-built boats like Legend.
+- Greater interest in Canadian brands like Legend.
 - Continued preference for best-in-class engines like Mercury, despite their U.S. origin, because there isn't a Canadian-made equivalent in most horsepower ranges.
 
 ## The Big Fork in the Road: CUSMA Review in 2026
@@ -141,7 +141,7 @@ Amid all the noise about tariffs and trade, here's our straightforward guidance:
 
 1. **Don't panic.** Most recreational marine products you'd buy. Mercury outboards, Legend boats, mainstream accessories, are still flowing across the border under CUSMA with no new surprise tariff charges tacked on at retail.
 2. **Think about timing.** If you're considering a major purchase (new boat package, repower, big electronics upgrade), there's a reasonable argument for acting before the 2026 CUSMA review introduces additional uncertainty. That doesn't mean prices will spike, but it removes one variable.
-3. **Consider origin, but prioritize quality.** Supporting Canadian-built boats like Legend makes sense, and we're proud to sell them. For engines, Mercury's product quality, market support, and local service network matter more than political headlines. There isn't a realistic Canadian substitute for a modern 90–150 HP outboard, and compromising on engine quality rarely pays off.
+3. **Consider origin, but prioritize quality.** Supporting Canadian brands like Legend makes sense, and we're proud to sell them. For engines, Mercury's product quality, market support, and local service network matter more than political headlines. There isn't a realistic Canadian substitute for a modern 90–150 HP outboard, and compromising on engine quality rarely pays off.
 4. **Ask questions.** If you're worried a particular product might be affected by tariffs, or if a price seems out of step with what you expect, talk to us. We see the wholesale side of this and can explain what's driving costs.
 
 Harris Boat Works has been on Rice Lake since 1947. We've seen different trade regimes, different governments, and plenty of economic ups and downs. Through all of it, people keep boating, and the Canada–U.S. marine relationship remains vital on both sides of the border.
@@ -169,9 +169,9 @@ Mercury outboards that qualify under CUSMA continue to enter Canada without adde
 
 If CUSMA isn't renewed or is significantly changed, it could reintroduce tariffs on boats and engines that currently cross the border duty-free. This would likely raise prices and create supply uncertainty. NMMA and NMMA Canada are actively advocating for a smooth renewal.
 
-### Are Canadian-built boats cheaper because of tariffs?
+### Are Canadian-brand boats cheaper because of tariffs?
 
-Canadian-built boats like Legend avoid import duties on the hull itself, which is an advantage. However, they still use globally sourced components (electronics, hardware, upholstery) that can be affected by tariffs. No manufacturer is completely insulated from trade shocks.
+Canadian brands like Legend may have certain supply-chain advantages, but they still use globally sourced components (electronics, hardware, upholstery) that can be affected by tariffs. No manufacturer is completely insulated from trade shocks.
 
 ### Should I buy a boat now before the CUSMA review?
 
@@ -181,9 +181,9 @@ There's a reasonable argument for acting before the July 2026 CUSMA review if yo
 
 If the 2026 CUSMA joint review results in a contentious renegotiation or failure to extend, recreational marine products that currently cross the border duty-free could become subject to standard MFN tariff rates, potentially 5–10% or more on U.S.-built products. The more immediate risk is uncertainty: manufacturers and dealers would face unpredictable cost structures, potentially leading to price increases and supply disruptions well before any formal tariff change takes effect. NMMA and NMMA Canada have been strong advocates for a clean renewal.
 
-### Are Canadian-built boats cheaper than U.S.-built boats because of tariffs?
+### Are Canadian-brand boats cheaper than U.S.-brand boats because of tariffs?
 
-Canadian-built boats like Legend are not subject to import duties when sold in Canada, which removes one cost factor. However, that doesn't automatically make them cheaper, boat pricing is driven by materials, labour, and features, not just tariff status. A Canadian-built hull still uses imported components that can be affected by tariffs. What Canadian-built does give you is certainty: the hull is not exposed to cross-border tariff risk.
+Canadian brands like Legend may have certain cost advantages, but that doesn't automatically make them cheaper, boat pricing is driven by materials, labour, and features, not just tariff status. Boats still use imported components that can be affected by tariffs.
 
 ### Should I buy a boat before the 2026 CUSMA review?
 
@@ -199,7 +199,7 @@ Parts availability for Mercury motors in Canada has remained stable through the 
 
 ### Is it better to buy a Canadian-made Legend boat than a U.S.-made boat right now because of tariffs?
 
-From a tariff-risk perspective, a Canadian-built Legend hull has a clear advantage: no import duty exposure on the hull itself. Combined with a Mercury engine, which qualifies under CUSMA at current rates, a Legend/Mercury package is about as tariff-insulated as a new boat can be. But don't buy a Legend just because of tariff politics if another boat fits your use case better. Product fit matters most.
+From a tariff-risk perspective, a Canadian-brand Legend has supply-chain advantages. Combined with a Mercury engine, which qualifies under CUSMA at current rates, a Legend/Mercury package is about as tariff-insulated as a new boat can be. But don't buy a Legend just because of tariff politics if another boat fits your use case better. Product fit matters most.
 
 ### What is CUSMA and why does it matter for Canadian boat buyers?
 

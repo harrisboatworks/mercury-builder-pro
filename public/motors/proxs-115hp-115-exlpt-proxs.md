@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/proxs-115hp-115-exlpt-proxs
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: d9239f6d-639a-42b0-8436-1645329ecfa4
 slug: proxs-115hp-115-exlpt-proxs
 family: ProXS
@@ -19,7 +19,7 @@ price_cad: 17666
 # 115 EXLPT ProXS
 
 Mercury ProXS 115 HP outboard motor (model 1117F231D).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
 
 ## Quick facts
 
@@ -32,7 +32,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 - **Selling price:** $17,666
 - **MSRP:** $20,075
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability

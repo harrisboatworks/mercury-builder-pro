@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/motors/fourstroke-115hp-115elpt-fourstroke
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 motor_id: eee34e36-54e0-4563-b276-aa5c4f751798
 slug: fourstroke-115hp-115elpt-fourstroke
 family: FourStroke
@@ -19,7 +19,7 @@ price_cad: 16913
 # 115ELPT FourStroke
 
 Mercury FourStroke 115 HP outboard motor (model 1115F132D).
-Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Dealer since 1965.
+Sold by Harris Boat Works on Rice Lake, Ontario: Mercury Marine Platinum Dealer since 1965.
 
 ## Quick facts
 
@@ -32,7 +32,7 @@ Sold by Harris Boat Works on Rice Lake, Ontario — Mercury Marine Platinum Deal
 
 - **Selling price:** $16,913
 - **MSRP:** $19,220
-- **Currency:** Canadian Dollars (CAD) only — we do not quote in USD.
+- **Currency:** Canadian Dollars (CAD) only, we do not quote in USD.
 - **Final price** is confirmed by Harris Boat Works staff before purchase.
 
 ## Availability

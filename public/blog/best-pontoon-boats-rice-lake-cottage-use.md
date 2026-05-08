@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -102,11 +102,11 @@ See our [Mercury Command Thrust Guide](/blog/mercury-command-thrust-guide-pontoo
 
 We sell Legend Boats pontoons at HBW. We are a Legend dealer alongside being a Mercury Platinum dealer.
 
-Legend pontoons are Canadian-built (in Whitefield, Ontario), well-suited to Canadian water and weather, and Mercury-rigged from the factory. The supply chain integration matters for service and parts.
+Legend pontoons are designed by a Canadian company headquartered in Whitefish, Ontario, well-suited to Canadian water and weather, and Mercury-rigged from the factory. The supply chain integration matters for service and parts.
 
 Other reputable pontoon brands:
 
-- **Princecraft** (also Canadian-built, Mercury-rigged factory option)
+- **Princecraft** (also a Canadian brand, Mercury-rigged factory option)
 - **Manitou** (US-built, premium pontoon brand)
 - **Avalon** (US-built, premium pontoon brand)
 - **Bennington** (US-built, premium pontoon brand)
@@ -198,7 +198,7 @@ Two-tube is plenty for cruising, fishing, and lighter family use. Tritoon (three
 For 18 to 20 ft cruising/fishing: 90 HP Command Thrust. For 20 to 22 ft family use with light water sports: 115 to 150 HP CT. For 22+ ft tritoons with active water sports: 150 to 200 HP CT.
 
 **Should I buy a Legend pontoon at HBW?**
-Yes if Legend fits your needs. We're a Legend dealer alongside being a Mercury Platinum dealer. Legend is Canadian-built, factory Mercury-rigged, and well-suited to Canadian use. For specific configurations, [contact HBW](/contact).
+Yes if Legend fits your needs. We're a Legend dealer alongside being a Mercury Platinum dealer. Legend is a Canadian company (headquartered in Whitefish, Ontario), factory Mercury-rigged, and well-suited to Canadian use. For specific configurations, [contact HBW](/contact).
 
 **Can I tube and ski with a Rice Lake pontoon?**
 Yes with the right setup. 115 HP Command Thrust handles tubing. 150 HP CT handles skiing and tubing comfortably. Tritoons handle water sports better than two-tube hulls.
@@ -247,7 +247,7 @@ For 18 to 20 ft cruising/fishing: 90 HP Command Thrust. For 20 to 22 ft family u
 
 ### Should I buy a Legend pontoon at HBW?
 
-Yes if Legend fits your needs. We're a Legend dealer alongside being a Mercury Platinum dealer. Legend is Canadian-built, factory Mercury-rigged, and well-suited to Canadian use. For specific configurations, [contact HBW](/contact).
+Yes if Legend fits your needs. We're a Legend dealer alongside being a Mercury Platinum dealer. Legend is a Canadian company (headquartered in Whitefish, Ontario), factory Mercury-rigged, and well-suited to Canadian use. For specific configurations, [contact HBW](/contact).
 
 ### Can I tube and ski with a Rice Lake pontoon?
 

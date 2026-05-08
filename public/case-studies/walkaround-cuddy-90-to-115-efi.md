@@ -1,12 +1,12 @@
 ---
 canonical: https://www.mercuryrepower.ca/case-studies/walkaround-cuddy-90-to-115-efi
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
 location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
-verado_status: special-order only — not in default inventory
+verado_status: special-order only, not in default inventory
 case_study_id: CS05
 slug: walkaround-cuddy-90-to-115-efi
 boat_type: "Walkaround cuddy"

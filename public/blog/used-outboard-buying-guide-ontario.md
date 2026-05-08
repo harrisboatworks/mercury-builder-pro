@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -184,7 +184,7 @@ A well-maintained 4-stroke can run 1,500–3,000+ hours. A motor with 800 hours 
 Plan on $500–$1,500 for the immediate first-year work: water pump impeller, gearcase oil change, spark plugs, fuel filter, fuel system clean-up. If the seller hasn't done it, you're going to.
 
 **Is a 2-stroke worth buying in 2026?**
-For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: most 2-stroke engine oil is *not* TC-W3, newer 4-strokes use 25W-40 marine oil, not 2-stroke premix.
+For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: older 2-stroke outboards run on TC-W3 rated marine oil. Modern 4-strokes use FC-W rated 4-stroke marine engine oil (typically 25W-40), not premix.
 
 **Should I trust the hour meter?**
 Mostly yes on Mercurys made after about 2005, unless the meter was replaced. Mercury's SmartCraft system stores hours in the engine ECU as well, so a dealer with a diagnostic tool can verify true engine hours independent of the dashboard meter. We do that as part of our inspection.
@@ -211,7 +211,7 @@ Plan on $500–$1,500 for the immediate first-year work: water pump impeller, ge
 
 ### Is a 2-stroke worth buying in 2026?
 
-For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: most 2-stroke engine oil is *not* TC-W3, newer 4-strokes use 25W-40 marine oil, not 2-stroke premix.
+For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: older 2-stroke outboards run on TC-W3 rated marine oil. Modern 4-strokes use FC-W rated 4-stroke marine engine oil (typically 25W-40), not premix.
 
 ### Should I trust the hour meter?
 

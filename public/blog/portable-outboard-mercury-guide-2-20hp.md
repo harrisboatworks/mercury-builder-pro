@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp.md
-last_updated: 2026-05-07
+last_updated: 2026-05-08
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -61,7 +61,7 @@ The Mercury portable range, 2.5 to 20 HP:
 
 - **Use:** Very small dinghies, ultralight tin boats, trolling on canoes
 - **Type:** 1-cylinder 4-stroke, manual start, tiller
-- **Weight:** ~17 kg / 38 lb
+- **Weight:** ~19 kg / 41 lb
 - **Best for:** Owners who need a tiny motor for very small boats. Ultralight applications.
 
 ### Mercury 3.5 MH (3.5 HP)
@@ -235,7 +235,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 ### What's the lightest outboard Mercury makes?
 
-The Mercury 2.5HP FourStroke at 37 lbs is the lightest. It's designed for yacht tenders where every pound matters and owners need to lift it aboard.
+The Mercury 2.5 MH FourStroke at approximately 41 lbs is the lightest. It's designed for yacht tenders where every pound matters and owners need to lift it aboard.
 
 ### Why is 9.9HP so popular?
 
