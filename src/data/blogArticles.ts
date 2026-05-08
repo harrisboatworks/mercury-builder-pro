@@ -19195,6 +19195,2046 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
       { question: "Can I visit HBW even if I don't need to buy anything?", answer: "Yes, we're a working family marina. Walking through the slips, watching the rental fleet come and go, fueling up at the dock, seeing the Mercury showroom, having a coffee in Bewdley after, it's a complete day on Rice Lake without a sales requirement." },
     ],
   },
+  {
+    slug: 'common-pontoon-boat-problems-rice-lake',
+    title: "Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)",
+    description: "The most common pontoon boat problems we see at Harris Boat Works, from underpowered motors to tube leaks and wiring corrosion, and how to prevent them...",
+    image: '/lovable-uploads/hero-pontoon-problems-rice-lake.png',
+    author: 'Jay Harris',
+    datePublished: '2026-06-08',
+    dateModified: '2026-06-08',
+    publishDate: '2026-06-08',
+    category: "Boating Lifestyle",
+    readTime: '~9 min read',
+    keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"],
+    content: `# Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Most pontoon problems we see are preventable. The biggest one: undersized motors that lug under load. Other recurring issues include tube leaks, deck rot, wiring corrosion, ethanol fuel damage, and shallow-shoreline bottom strikes. Match the motor to your hull's max HP rating, inspect tubes and deck annually, run ethanol-free fuel, and most pontoons stay reliable for decades.
+
+There's a reason videos about pontoon boat problems rack up millions of views. People buy pontoons expecting the easiest, most relaxed boating experience possible, and they're not wrong to expect that. Done right, a pontoon is the perfect Rice Lake boat.
+
+But we see what happens when things go wrong. Every season, boats roll into the shop at Harris Boat Works with the same handful of issues. Most of them were preventable. Some of them were baked in from the day the boat was bought.
+
+This isn't a scare piece. It's what our service techs actually deal with, written plainly so you know what to watch for, and how to avoid an expensive headache on the water.
+
+---
+
+## Why HP Sizing Is the #1 Mistake Pontoon Buyers Make
+
+Before we get into the full list, this one deserves its own section because it causes more problems than everything else combined.
+
+Pontoons are heavy. A 22-foot pontoon fully loaded, cooler, canopy, six adults, gear, can easily top 3,000 lbs. Add water drag from two or three aluminum tubes, and you've got a boat that needs serious power to perform well.
+
+The mistake we see constantly: someone buys a 22- or 24-foot pontoon and puts a 60HP motor on it because the dealer said it would "work." Technically, yes. It will move the boat. But it won't plane properly under load, it'll lug when you push it, and that engine will work twice as hard as it should for its entire life.
+
+On Rice Lake, you want to get places. You want to pull a tube. You want to get home before the storm hits. A properly sized motor, 90HP to 115HP for most 20–24 ft boats, more for tritoons, does that without working itself to death.
+
+The general rule: **match the motor to the max HP rating on the hull plate, not the minimum**. Most pontoon owners buy to the minimum and call it good enough. It isn't.
+
+If you're shopping repowers or new setups, the [Mercury Command Thrust guide for pontoons](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats) is worth reading. CT motors are specifically designed for the high-drag, low-RPM torque demands of pontoon hulls. And if you want a side-by-side comparison of motor options, see our breakdown of [the best Mercury outboards for pontoon boats](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats).
+
+---
+
+## The 8 Pontoon Problems We See at the Shop
+
+### 1. Underpowered Motor
+
+Already covered above, but it's worth reinforcing: **being underpowered isn't just a performance problem, it's a maintenance problem**. An engine that's constantly working near its limits runs hotter, wears faster, and costs more to maintain. You'll be in the shop more often, and the repairs won't be cheap.
+
+If you're on the fence about stepping up to a bigger motor, the math usually favours the repower.
+
+---
+
+### 2. Pontoon (Tube) Leaks and Welding Cracks
+
+The tubes are the boat. If they're taking on water, your boat rides lower, handles worse, and is quietly failing from the inside.
+
+Welding cracks typically develop at stress points, around baffles, at the nose of the tube, and where the crossmembers attach. These aren't always obvious. You might not notice anything until the boat is noticeably down on one end.
+
+**What to watch for:**
+- Uneven trim when the boat is sitting level at the dock
+- Visible weeping or staining on the exterior of a tube
+- Unexplained sluggishness, especially after rough water
+
+Annual inspection matters here. If you're noticing symptoms, don't wait. Tube repairs are manageable when caught early. Full tube replacement is a much bigger job.
+
+---
+
+### 3. Deck Rot and Soft Spots
+
+Pontoon decks are built over a wood subfloor. That subfloor sits under carpet or vinyl, materials that trap moisture instead of letting it drain. Once water gets underneath, whether through a seam, a screw hole, or a fitting that wasn't sealed properly, rot follows.
+
+You'll feel it before you see it: a soft spot underfoot, usually near the bow, the stern, or around cleats and fittings. Left alone, it gets worse fast.
+
+**Prevention is straightforward:**
+- Inspect carpet seams and vinyl edges annually for lifting or gaps
+- Reseal around any deck fittings when you see signs of wear
+- Don't leave pooled water sitting on the deck after rain
+
+If you're buying a used pontoon, press down on the deck with your foot in a few spots before you commit. A solid deck is firm. A compromised one will give slightly. That flex tells you everything.
+
+---
+
+### 4. Wiring Corrosion at the Helm and Bow
+
+Aluminum pontoons are excellent platforms for corrosion. The combination of moisture, aluminum, dissimilar metals, and electrical current in a marine environment creates ideal conditions for corrosion to take hold, especially at the helm console and anywhere in the bow.
+
+What we see most: corroded wiring harnesses at the helm, green and brittle connections at the battery, and failing bow light wiring that's been wet for years inside the deck.
+
+**Symptoms:**
+- Gauges reading incorrectly or not at all
+- Intermittent starting issues (especially when the motor is otherwise fine)
+- Navigation lights that work sometimes and don't work other times
+- Accessories that stop functioning mid-season
+
+Wiring work is time-consuming to fix right. Keeping up with it, cleaning and protecting connections with dielectric grease, replacing any corroded terminal ends before they fail, is far cheaper than rewiring a console.
+
+---
+
+### 5. Bimini and Furniture Wear
+
+This is less critical than the others, but it affects the experience and the resale value. Pontoon bimini tops take a beating from UV, rain, and repeated folding. The stitching goes first, then the fabric. Snap hardware corrodes, frames develop stress cracks, and what was a solid canopy becomes a liability.
+
+Pontoon furniture, typically marine-grade vinyl, fades and cracks if it's not protected. On a boat that spends summer days in full sun on Rice Lake, that process is accelerated.
+
+**The fix is simple:** cover the boat when it's not in use. A quality boat cover is one of the best investments a pontoon owner can make. UV protectant on the vinyl seats extends their life considerably.
+
+---
+
+### 6. Tube Damage from Grounding and Rocks
+
+Rice Lake is beautiful. It's also shallow in a lot of places, and the shoreline around Bewdley, Harwood, and the eastern end of the lake has rock and gravel that will find the underside of your tubes if you're not paying attention.
+
+Pontoon tubes sit low. At slow speed, at the launch, or cutting a corner too close, it's easy to drag a tube across the bottom. The damage ranges from cosmetic scuffing to actual gouges and dents, and sometimes hidden cracks that don't show up until the tube starts taking on water.
+
+**On Rice Lake specifically:**
+- Give unfamiliar shorelines more room than you think you need
+- Back off the throttle early when approaching docks, not just at the last moment
+- If you know you've hit bottom hard, have the tubes inspected before assuming you're fine
+
+See our guide to [pontoon boats and cottage use on Rice Lake](https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use) for more on navigating the lake responsibly.
+
+---
+
+### 7. Wrong Propeller. Pitch Too High
+
+A propeller that's pitched too high for the boat's load and motor will prevent the engine from reaching its optimal RPM range. The motor strains, performance suffers, fuel consumption goes up, and you're doing wear you don't need.
+
+It's a surprisingly common problem. Pontoons change over time, you add a bimini, upgrade the stereo, load more people, and the prop that worked well three years ago may not be the right choice anymore.
+
+**Signs your prop pitch is off:**
+- Motor won't reach its rated WOT RPM under normal load
+- Sluggish hole shot even with a properly sized motor
+- Excessive fuel burn with no explanation
+
+Prop selection isn't complicated, but it's worth doing right. Our [Mercury propeller selection guide](https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide) walks through what to look for. A prop swap is usually one of the cheapest performance fixes available.
+
+---
+
+### 8. Hard-to-Start Outboards from Sitting and Fuel Issues
+
+Ethanol-blended fuel is the enemy of any outboard that sits for more than a few weeks. Ethanol absorbs moisture, phase-separates from the gasoline, and leaves behind gum and varnish in carburettors and fuel injectors. The result: a motor that's hard to start in spring, rough at idle, or won't start at all.
+
+We sell ethanol-free fuel at Harris Boat Works for exactly this reason. It costs a little more per litre. It costs nothing compared to a carb rebuild or injector cleaning.
+
+**If your motor has been sitting:**
+- Don't assume it'll start fine just because it ran fine last fall
+- Use fresh fuel, ideally ethanol-free, at the start of every season
+- Run fuel stabilizer through the system before any storage period longer than 30 days
+- If it won't start cleanly after sitting, get it looked at before you're stranded mid-lake
+
+---
+
+## The Short Version
+
+Here's what our techs would tell you if you asked them after a long week in the shop:
+
+- **Buy enough motor.** Match the hull rating, not the minimum.
+- **Look at the tubes.** Check for leaks and damage every season.
+- **Feel the deck.** Soft spots catch up with you.
+- **Protect the wiring.** Corrosion is slow and then expensive.
+- **Cover the boat.** Sun and rain destroy furniture and canvas.
+- **Know Rice Lake's bottom.** Shallow areas are shallower than you think.
+- **Check the prop.** Wrong pitch costs you power and costs the engine.
+- **Use good fuel.** Ethanol-free isn't optional if you want a reliable start.
+
+None of these require a mechanical background. They just require paying attention.
+
+---
+
+## Ready for a Tune-Up or a Repower?
+
+If your pontoon is showing any of these signs, or if you're running an undersized motor and you're done settling for mediocre performance, we can help.
+
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+
+**Get a repower quote:** [mercuryrepower.ca](https://www.mercuryrepower.ca)
+
+Harris Boat Works has been on Rice Lake since 1947. We're a Mercury Marine Platinum dealer, and we know what boats in this region actually need, not what looks good on a spec sheet.
+
+Call us at 905-342-2153 or request service online. We'll give you a straight answer.
+`,
+  },
+  {
+    slug: 'bad-used-boats-to-avoid-ontario',
+    title: "Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)",
+    description: "An Ontario Mercury dealer's honest rundown of the used boats and motors you should walk away from, and what's actually worth buying on Kijiji, Facebook...",
+    image: '/lovable-uploads/hero-bad-used-boats-ontario.png',
+    author: 'Jay Harris',
+    datePublished: '2026-06-11',
+    dateModified: '2026-06-11',
+    publishDate: '2026-06-11',
+    category: "Buying Guide",
+    readTime: '~12 min read',
+    keywords: ["used boats","buying guide","ontario","red flags","marine inspection"],
+    content: `# Bad Used Boats to Avoid in Ontario (A Mercury Dealer's Honest List)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Some used boats are worth buying; many will drain your bank account. The worst offenders we see in Ontario: hulls with structural rot, sterndrives facing imminent rebuild, brand-orphaned motors with no parts pipeline, and wet-floor pontoons hiding deck damage. Inspect transom flex, lower-unit oil colour, and fuel system condition before any private-sale used purchase. The cheap boat is rarely the cheap boat.
+
+## The Used Boat Market Is Full of Money Pits
+
+Every spring, thousands of Ontario buyers hit Kijiji, Facebook Marketplace, and AutoTrader looking for a deal on a used boat. Some find one. A lot don't.
+
+The boats that look like deals, priced just low enough to feel exciting, described with just enough vagueness to keep you curious, are often the ones that will cost you the most. Not at purchase. After. When the season has started, the family is waiting, and the motor won't run.
+
+We've been servicing and selling boats on Rice Lake since 1947. We've seen what comes through the door after a bad used-boat purchase. This list is what we'd tell a friend.
+
+---
+
+## Why This Is Hard to Hear
+
+Here's the real problem with buying a used boat in Ontario: most buyers don't know what they don't know. The seller isn't always lying, sometimes they genuinely believe the boat is fine. "Ran great last summer" is a true statement that tells you almost nothing about what's happening inside a carburetor that hasn't been properly serviced in a decade.
+
+The financial hit isn't just the purchase price. It's the haul-out, the mechanic's time, the parts that are discontinued, the season you lose while it sits in a shop. A $3,000 "deal" on a used boat can easily become a $7,000 lesson.
+
+You need a way to spot the traps before you hand over the cash.
+
+---
+
+## The Boats and Motors We'd Walk Away From
+
+### Pre-2005 Carbureted 2-Stroke Outboards
+
+These motors had a good run. That run is over.
+
+Carbureted 2-strokes from this era are increasingly difficult to source parts for. Oil mixing is an extra step that a lot of owners either get wrong or skip altogether. Many provinces, and Ontario marinas, are tightening up on emissions, and resale value on these motors is dropping steadily as the market moves toward 4-stroke and direct-injection tech.
+
+If the used boat you're looking at has an older carbureted 2-stroke hanging off the back, price the motor separately from the hull. Odds are, the motor needs to be factored out of the deal entirely, or you're budgeting for a repower sooner than you think. We've written more about this in our [used outboard buying guide for Ontario](https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario).
+
+---
+
+### Mid-90s to Mid-2000s Sterndrive Boats With Original, Unserviced Outdrives
+
+Sterndrives from this era. MerCruiser and otherwise, are solid engineering. When they're maintained. The problem is that most of them weren't.
+
+Bellows deteriorate. Gimbal bearings fail. When water gets into places it shouldn't, the damage is internal and invisible until it isn't. If the boat you're looking at has an original sterndrive that hasn't been touched since the Clinton administration, treat it as a project, not a boat. Rebuilding or replacing an outdrive is not a casual expense.
+
+Ask specifically: when were the bellows last replaced? If the seller doesn't know, assume they haven't been. If you're seriously considering a hull in this category, our [hull vs. repower decision guide](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision) can help you think through whether it's worth it.
+
+---
+
+### Boats With Evinrude E-TEC G1 Motors
+
+This one is delicate, so we'll be direct without being unfair. Evinrude made technically impressive motors. The E-TEC direct-injection 2-stroke was genuinely good engineering.
+
+Then BRP exited the outboard market in 2020.
+
+That decision left a large installed base of motors without a manufacturer-supported parts pipeline. Aftermarket support exists, but it's shrinking. Dealers who specialize in Evinrude service are fewer every year. If something specific fails on an older G1 E-TEC, you may be hunting for parts from multiple suppliers with no guarantee of availability or timeline.
+
+It doesn't mean every E-TEC is a write-off. It means the risk profile is different than it was five years ago, and that needs to be priced into any offer you make. We cover this in detail in our [Evinrude to Mercury repower guide for Ontario](https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide).
+
+---
+
+### Older Force, Chrysler, or Off-Brand Outboards
+
+Short version: parts are either gone or nearly impossible to source. Service technicians who know these motors well are retiring. If the motor fails in a meaningful way, you're likely replacing it, which means the motor has zero value, and you're overpaying for a hull.
+
+If you're seeing these on a listing and the seller is pricing the motor as a selling point, that's a problem.
+
+---
+
+### Boats With Stringer Rot, Soft Floors, or Transom Mush
+
+Walk the floor of any used fiberglass boat you're seriously considering. Literally walk it, bounce on it a little, push with your heel near the edges and at the transom. Soft spots are a structural problem, not a cosmetic one.
+
+Stringers are the internal framework that hold a hull together. When they rot, usually from water intrusion through old, cracked gelcoat or improperly sealed fittings, the fix is a gut job. Transom mush (a soft, spongy transom, usually from water penetrating the wood core) can mean the motor mounting surface is compromised. This is not a DIY repair unless you know exactly what you're getting into.
+
+Repair costs for serious stringer or transom work often exceed the value of the boat.
+
+---
+
+### Boats With Fresh Paint on the Lower Unit
+
+A freshly painted lower unit on an older motor is not a sign of good maintenance. It's a red flag.
+
+Fresh paint on a lower unit is one of the oldest tricks for hiding corrosion, impact damage, or prop strikes that have never been properly assessed. A well-maintained motor has a lower unit that looks its age, with honest wear and the original finish, not a fresh coat of black slapped on before listing.
+
+If you see it, ask why it was painted. If the answer is vague, factor in the cost of a full lower unit inspection before you commit.
+
+---
+
+### Boats Stored Outside, Uncovered, for Years
+
+Ontario winters are not kind to boats. UV breaks down upholstery, gelcoat, and plastic components. Freeze-thaw cycles work water into every crack and seam. Rodents find their way into wiring, fuel lines, and upholstery.
+
+A boat that's been sitting outside uncovered for several seasons needs a full inspection before you can know what you have. Budget for that inspection, and budget for what it might find. Don't let the low price on the listing make you skip this step.
+
+---
+
+### Boats With No Maintenance Records
+
+"Well maintained" is one of the most common phrases in used boat listings. It's also one of the hardest to verify when the seller can't produce a single piece of paper.
+
+Maintenance records don't need to be perfect or complete. But a boat owner who actually maintained their motor has receipts somewhere, from a dealer, a shop, or at minimum, their own notes. No records means you're taking the seller's word for the condition of the engine internals, the lower unit oil, the impeller, the fuel system, and everything else.
+
+No records isn't an automatic deal-killer, but it changes the math. Price in the cost of a pre-purchase inspection and a full service before you use it.
+
+---
+
+### Saltwater Boats Brought to Ontario Without Inspection
+
+Ontario is freshwater. A lot of used boats come up from the US or from coastal provinces, and not all of them come with an honest description of their history. Saltwater corrosion is not always visible. It works into aluminum, electrical connections, fittings, and hardware in ways that surface inspection won't catch.
+
+If a boat has any saltwater history and hasn't been professionally inspected since arriving in Ontario, factor that in. A marine surveyor is worth the cost here.
+
+---
+
+### Boats Where the Seller Won't, or Can't. Run the Motor
+
+There is one non-negotiable when buying a used boat with a motor: the motor has to run. In a tank, in the water, it doesn't matter. If it runs, great, now you can evaluate it. If it doesn't run, you're buying a guess.
+
+"The battery's dead" and "I drained the fuel last fall" are common explanations. Bring a battery. Bring fuel. If the seller won't accommodate a running demonstration, walk away.
+
+---
+
+### Anything Listed as "Mechanic Special," "Needs TLC," or "Ran When Parked"
+
+These are not descriptions. They're disclosures. The seller is telling you, in plain language, that the boat does not currently work. The question is whether the problem is fixable at a cost that makes sense relative to the price.
+
+Sometimes it is. But you need to know what's wrong before you decide, not after. Get it inspected before you buy, or negotiate a price that assumes the worst-case repair scenario.
+
+---
+
+## Quick Red Flag Checklist
+
+Use this on the first call with any seller:
+
+- **Can you run the motor for me before I drive out?** (Yes/no answer, anything other than yes is a flag)
+- **Do you have any maintenance records or service receipts?**
+- **Has the outdrive or lower unit ever been serviced?** (For sterndrives: when were the bellows last done?)
+- **Has it ever been stored outside and uncovered?**
+- **Does the floor feel solid everywhere, especially near the transom?**
+- **Is there any history of impact, grounding, or prop strikes?**
+- **Is there any saltwater or out-of-province history?**
+- **Why are you selling it?**
+- **What was done to it last fall before storage?**
+- **Has it ever been described to a mechanic as a problem that couldn't be figured out?**
+
+If you get vague, defensive, or contradictory answers on more than two of these, move on. There are other boats.
+
+---
+
+## What's Actually Safe to Buy Used
+
+This list isn't meant to scare you out of the used market entirely. There are genuinely good used boats in Ontario. Here's what tends to hold up:
+
+**Mercury 4-stroke outboards from 2010 onward.** Mercury's modern 4-stroke lineup. FourStroke, Pro XS 4-stroke, Verado, is well-supported, with a dealer network across Ontario and parts availability that's not going anywhere. An honest, documented service history on one of these motors is worth real money.
+
+**Well-maintained aluminum fishing boats.** An aluminum hull is forgiving and durable. It doesn't rot. Dents are cosmetic. A mid-weight aluminum V-hull or tiller fishing rig with documented service, or at least a motor you can actually start and run, is one of the safer used-boat categories in this market.
+
+**Boats sold through a reputable dealer.** Used boats that have been through a dealer's service bay come with at least some visibility into their condition. That's not a guarantee, but it's a different risk profile than a private sale from someone who "just doesn't use it anymore."
+
+**Boats where you can verify the story.** One owner, local use, freshwater only, receipts from a recognizable marine shop, a motor that starts and runs cleanly. These exist. They're worth waiting for.
+
+For a deeper look at what to evaluate when buying used, our [used outboard buying guide for Ontario](https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario) covers the pre-purchase inspection process in detail. And if you're weighing a used boat that needs a motor against starting fresh with a repower, the [boat motor trade-in guide](https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide) can help you figure out which direction makes more financial sense.
+
+---
+
+## Bought One of These and Stuck With It?
+
+It happens. The listing looked clean, the price felt right, and now you've got a problem motor or a hull that needs more than you bargained for.
+
+We do Mercury repowers, full replacements that give an older hull a reliable, warranty-backed motor and a fresh start. If you're at the point where you're wondering whether it's worth fixing or replacing, that's exactly the conversation we have every day.
+
+**Get a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).** Real prices, no runaround.
+
+Or call us at 905-342-2153. We're at Rice Lake, Gores Landing, and we've been having this exact conversation since 1947.
+
+---
+
+*Harris Boat Works. Mercury Platinum Dealer. Gores Landing, ON*
+`,
+  },
+  {
+    slug: 'how-to-trim-boat-mercury-outboard',
+    title: "How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)",
+    description: "Learn how to trim your Mercury outboard the right way, from holeshot to cruise, with practical tips for Rice Lake conditions, Active Trim explained, and the...",
+    image: '/lovable-uploads/hero-how-to-trim-mercury.png',
+    author: 'Jay Harris',
+    datePublished: '2026-06-14',
+    dateModified: '2026-06-14',
+    publishDate: '2026-06-14',
+    category: "Mercury Outboards",
+    readTime: '~12 min read',
+    keywords: ["boat trim","mercury outboard","active trim","rice lake","fuel economy"],
+    content: `# How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Trim controls the angle of your outboard relative to the transom. Trim down for hole-shot, trim up for cruise efficiency. Wrong trim costs you fuel, comfort, and speed. Mercury's Active Trim feature on supported motors automates the optimal angle. For most Rice Lake conditions, trim out gradually as you reach plane, then back off if the bow porpoises or the prop ventilates.
+
+There's a reason videos about boat trim rack up a million views on YouTube. Trim is one of those things that nobody really explains, you get handed the keys to a boat and told the trim button is the one that looks like an arrow. That's usually the end of the lesson.
+
+After that, most people spend a season or two pressing buttons and hoping for the best. Maybe the bow's sitting too high and they can feel the prop ventilating before they even know what ventilation means. Maybe they're hammering through chop on a Rice Lake afternoon and wondering why their back hurts and their fuel gauge is dropping faster than it should.
+
+This post is the explanation you didn't get at the dealer. Practical, Mercury-specific, and written for the conditions you're actually dealing with on this lake.
+
+---
+
+## What Trim Actually Is
+
+Trim controls the angle of your outboard relative to the transom, the back wall of your boat.
+
+When you press **trim in** (sometimes labelled "down"), the engine tilts toward the boat. The prop pushes thrust slightly upward, which drives the bow down. When you press **trim out** (or "up"), the engine tilts away from the boat. Thrust angle shifts downward, lifting the bow.
+
+That angle change, just a few degrees of tilt, has a massive effect on how your boat runs. It changes where the hull sits in the water, how much drag you're fighting, how quickly you get on plane, and how stable the ride feels.
+
+Think of it like a skateboard ramp versus flat pavement. If you nose-dive into a wave at the wrong angle, you feel every bit of it. If you're running level with the water, you glide.
+
+---
+
+## Why Trim Matters More Than You Think
+
+People assume trim is just about top speed. It's not. It touches nearly everything:
+
+**Fuel economy.** A boat running at the wrong trim angle is fighting the water. That translates directly to litres per hour. If you want to read more about what else eats into your fuel numbers, the [Mercury Outboard Fuel Efficiency Guide](https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide) breaks down the full picture.
+
+**Ride comfort.** Over-trimmed on a choppy afternoon means every wave hits the hull flat and hard. Properly trimmed, the bow rides over the chop instead of punching through it.
+
+**Planing time.** Correct trim at the start gets your hull up faster. Wrong trim and you're in that sluggish transition zone longer, burning more fuel, making more noise, and going slower.
+
+**Top speed.** Even a well-chosen prop can underperform if trim is off. (Speaking of props, if you're not sure yours is the right fit, the [Mercury Propeller Selection Guide](https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide) is worth a read before you start chasing speed.)
+
+**Hull wear.** Running under-trimmed at speed is hard on the bottom of your boat. You're pushing the bow into the water instead of letting it ride. Over time, that shows up in wear, stress, and vibration you don't want.
+
+---
+
+## The Three Trim States
+
+### Trimmed In (Negative Trim)
+
+Engine tilted toward the boat. Bow pushes down. More of the hull is in the water. This creates drag at speed, but it's exactly what you want in certain situations.
+
+### Neutral Trim
+
+Engine roughly perpendicular to the waterline. Hull running balanced. This is the sweet spot for most cruising conditions, but "neutral" looks different on every boat and every load.
+
+### Trimmed Out (Positive Trim)
+
+Engine tilted away from the boat. Bow rises. Less hull in the water, more speed potential, but overdo it and you lose grip on the water entirely.
+
+> **[Diagram suggestion: Three-panel overhead/profile view showing each trim state with hull waterline contact area illustrated.]**
+
+---
+
+## When to Trim In
+
+**Getting on plane (the holeshot).** This is the big one. When you're coming off idle and pushing to plane, you want the engine trimmed fully in. The downward thrust pushes the bow through the water instead of skyward. You get on plane faster and cleaner.
+
+**Choppy conditions.** Rice Lake afternoons can build a short, steep chop, especially when the wind's been running a few hours. Trim in keeps the bow lower and punching through the waves with control instead of catching air and slamming down.
+
+**Heavy load forward.** Extra weight in the bow means the bow is already sitting heavy. Trimming out in this situation only makes the handling worse.
+
+**Slow-speed running.** When you're in no-wake zones or navigating the shallows near Gores Landing, trim in keeps the prop deeper and the hull stable.
+
+---
+
+## When to Trim Out
+
+**Cruising on flat water.** A calm morning on Rice Lake is when you find the trim sweet spot. Start neutral, ease the engine out in small increments. Watch your speedometer, you'll see the boat lift onto its best running angle and the speed climb without you touching the throttle.
+
+**Top-speed runs.** Trimming out reduces hull drag and lets the boat run on a smaller wetted surface. Just don't overdo it (more on that below).
+
+**Light loads.** Fewer passengers, empty cooler, nobody on the ski platform, lighter load means the bow wants to ride higher naturally. Some outward trim brings the hull into balance.
+
+**Towing a tube.** When you've got kids on a tube and you're running in a circle, trim out slightly helps the boat stay responsive and nimble. Not the same as running wide-open, read your conditions and your load.
+
+---
+
+## Common Trim Mistakes
+
+**Over-trimming on the holeshot.** This is the one that gets people. You hit the throttle with the engine trimmed out, the bow launches skyward, and then you hear a high-pitched whine from the motor. That's prop ventilation: the prop is pulling air instead of water. The engine revs sky-high and the boat goes nowhere fast. It's hard on the motor, embarrassing, and easy to fix: trim fully in before you punch it.
+
+**Under-trimming at speed.** Running with too much trim in at cruise buries the bow, increases drag, and has you burning fuel to go slower than you should. If you're at cruise speed and the bow is sitting heavy, ease the trim out until the boat lifts and the speed ticks up.
+
+**Setting it once and forgetting it.** Trim isn't a one-and-done adjustment. Load changes, conditions change, speed changes, what worked leaving the dock may not be right once you're running. Get used to touching the trim button throughout a run.
+
+---
+
+## Reading the Boat
+
+You don't need a gauge to know if you're trimmed right. Your boat is already telling you.
+
+**Watch the bow.** If it's rising and you're not going faster, you've gone too far out. If it's low and you feel like you're plowing, you're too far in.
+
+**Watch the speedometer.** Ease the trim in either direction in small steps. Speed climbing? You're finding the right angle. Speed dropping or holding flat while the engine revs climb? Back off.
+
+**Listen for ventilation.** That high-pitched, load-free whine from the engine is the prop sucking air. Drop trim in immediately.
+
+**Feel the bow rise.** At cruise speed, as you ease the engine out, you'll feel the boat lift and lighten. There's a specific moment where it feels right, level, fast, and smooth. That's your target.
+
+---
+
+## Mercury Active Trim
+
+Mercury's Active Trim system automates trim adjustment based on engine RPM. The system is programmed to a trim curve: as you accelerate, it trims out in sync with boat speed. As you back off, it trims in.
+
+For boaters who rent out their boats, have inexperienced guests aboard, or simply want one less thing to think about, Active Trim is a genuine quality-of-life upgrade. It handles the holeshot automatically and keeps the boat running efficiently without constant manual input.
+
+That said, it's not magic. If you're fishing specific depths, towing with unusual loads, or running in conditions that call for a specific trim angle, you can still override it manually. Active Trim is a smart default, not a replacement for understanding trim.
+
+Active Trim is available on many current Mercury FourStroke and Verado models. It integrates with VesselView displays, if you're curious how those systems work together, the [Mercury VesselView / SmartCraft Plain English Guide](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide) covers the full ecosystem. For boats running Mercury's latest software stack, the [Mercury BOOST Software Upgrade Eligibility Guide](https://www.mercuryrepower.ca/blog/mercury-boost-software-upgrade-eligibility-2026) explains what your motor might already be capable of.
+
+Whether Active Trim is available on your current motor, or worth adding in a repower, is worth a quick conversation if you're planning an upgrade.
+
+---
+
+## Trim Tabs vs. Engine Trim
+
+They're related but different, and both matter.
+
+**Engine trim** adjusts the angle of the outboard itself. It changes thrust direction and bow angle, and it's what we've been talking about in this guide.
+
+**Trim tabs** are small hydraulic fins mounted on the transom, one on each side. They push water down and lift the stern, which changes how the hull sits on the water. Where engine trim adjusts the whole boat's attitude via thrust, trim tabs let you correct **side-to-side lean** (port or starboard) and fine-tune fore-and-aft balance independently of the engine.
+
+On a well-balanced boat with the right load, you may not need tabs at all. But if you're regularly running uneven loads, one heavy passenger on the port side, gear stacked to starboard, trim tabs let you level the hull without fighting the steering the whole time.
+
+They work together. Engine trim and trim tabs are two dials on the same system, and the combination gives you full control of hull attitude in any condition.
+
+---
+
+## Rice Lake Conditions: What This Looks Like in Practice
+
+**Calm morning glass.** Most mornings in July, Rice Lake looks like a mirror before 9am. This is your chance to experiment. Come up to cruise speed, then work the trim button in small increments and feel where the boat wants to be. You'll know it.
+
+**Afternoon chop.** By mid-afternoon on a summer day, the south end of Rice Lake can be genuinely rough, short, steep waves that hit hard if you're not set up right. Trim in, slow down slightly if needed, and let the bow do its job. Pounding through chop at full trim-out is how you get a sore back and a cracked passenger.
+
+**Towing a tube.** Lower speed, more weight, aggressive direction changes. Trim in slightly from neutral. You want the bow controlled, not floating.
+
+**Cruising to the islands.** Light load, flat water, comfortable speed. Find your trim sweet spot and leave it there. This is where the fuel savings show up, a properly trimmed boat at cruise is running as efficiently as your setup allows.
+
+---
+
+## The Short Version
+
+- Trim fully in for every holeshot. No exceptions.
+- Trim out gradually at cruise until speed peaks and the bow lifts.
+- Watch, feel, and listen, the boat tells you when trim is right.
+- Active Trim handles this automatically if you want it to.
+- Trim tabs and engine trim work together for full hull control.
+
+Trim is one of those skills that feels obvious once it clicks. Ten minutes on the water with this framework in your head and you'll start adjusting without thinking about it.
+
+---
+
+Questions about Active Trim or whether your boat is rigged for it? Build a quote on [mercuryrepower.ca](https://www.mercuryrepower.ca) or request service at [hbw.wiki/service](https://hbw.wiki/service).
+`,
+  },
+  {
+    slug: 'boat-trailering-mistakes-ontario',
+    title: "10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)",
+    description: "Ten trailering mistakes Ontario boaters make every season, from wrong tongue weight and blown trailer tires to forgetting the drain plug, plus Ontario...",
+    image: '/lovable-uploads/hero-trailering-mistakes-ontario.png',
+    author: 'Jay Harris',
+    datePublished: '2026-06-17',
+    dateModified: '2026-06-17',
+    publishDate: '2026-06-17',
+    category: "Boating Lifestyle",
+    readTime: '~9 min read',
+    keywords: ["trailering","boat trailer","ontario","tow safety","launch ramp"],
+    content: `# 10 Boat Trailering Mistakes That Wreck Your Weekend (Ontario Edition)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Most boat-trailer damage happens to the boat owner, not in transit. The worst Ontario trailering mistakes we see: improper tongue weight, loose strap-downs, missing safety chains, bald or under-inflated trailer tires, skipped wheel-bearing lubrication, ramp-launching with the plug out, and not knowing your tow vehicle's weight rating. Most cost time. The expensive ones cost time and money.
+
+There's a lot happening at a public boat ramp on a Saturday morning. Someone's arguing with their winch. Someone else is blocking the lane to dig through the cab for a strap they "definitely packed." And somewhere in the background, a guy is already knee-deep in the water realizing he forgot the drain plug.
+
+We've been on Rice Lake since 1947. We've seen most of these, sometimes twice before 9 a.m. This post covers the ten trailering mistakes that reliably ruin Ontario weekends, with enough detail to actually fix them.
+
+If you're headed to the Kawarthas, the Trent-Severn, or Rice Lake this season, read this before you hook up.
+
+---
+
+## The 10 Mistakes
+
+### 1. Wrong Tongue Weight
+
+Tongue weight, the downward force the trailer puts on the hitch ball, should sit at **10–15% of your total loaded trailer weight**. Outside that window, things go wrong in both directions.
+
+Too light: the trailer rear lifts and you get sway at highway speed. Once a loaded boat trailer starts swaying, most tow vehicles have a hard time correcting it.
+
+Too heavy: the front wheels of the tow vehicle lift, wrecking your steering and loading the trailer axle unevenly over the long haul north.
+
+Keep heavier gear forward in the boat. A simple bathroom scale and some math will tell you where you stand.
+
+---
+
+### 2. Underrating Your Tow Vehicle
+
+Your truck's tow rating assumes a mostly empty vehicle. By the time you add passengers, fuel, ice, gear, and the full boat-plus-trailer load, you're well past the number on the sticker.
+
+The real calculation: trailer weight (dry) + boat weight (dry) + outboard + full fuel tank + gear. Compare that against your truck's GCVWR, not just the tow rating.
+
+This matters more when you're climbing Highway 7 toward Peterborough or heading up to Haliburton. Ontario highways have a way of reminding you what's behind you.
+
+---
+
+### 3. Skipping the Wheel Bearing Check
+
+Trailer wheel bearings get abused in a way that vehicle bearings don't: they heat up on the highway, then plunge into cold water at the ramp. That thermal cycling drives water past seals.
+
+Bearing Buddy-style protectors help, but they need to be checked at the start of each season, pull the cap, look at the grease quality, check for rust-coloured contamination. A wheel bearing failure on the 401 doesn't give much warning. One moment fine, next moment watching a trailer wheel pass you in the mirror.
+
+Twenty minutes at the start of the season. It's worth it.
+
+---
+
+### 4. Old, Dry-Rotted Trailer Tires
+
+The most common roadside breakdown for Ontario boaters. Trailer tires often look fine, low tread wear, because they don't log enough highway kilometers to wear down. They age out instead.
+
+UV exposure and ozone oxidize the rubber compound even when the tire's sitting in a driveway all winter. **Replace trailer tires every 5–6 years** regardless of tread, and check sidewalls for cracking every spring.
+
+If your tires are from 2018 and you're heading from the GTA to Rice Lake on the 115, you're rolling the dice. New trailer tires are cheap. A highway blowout is not.
+
+---
+
+### 5. Loose Tie-Downs or No Bow Safety Chain
+
+The winch strap holds your boat to the trailer. The bow safety chain is the backup if the strap or hook fails. Without it, a failed winch strap on the highway means your boat slides into traffic.
+
+Check both every time: strap tight, hook fully engaged, chain secured, not just looped through the bracket. Add stern tie-downs if your trailer has rails. Lateral movement causes hull stress and strips gelcoat over the course of a season.
+
+Two minutes at the ramp. Every time.
+
+---
+
+### 6. Not Securing the Motor
+
+An outboard hanging freely on a transom isn't built to absorb highway vibration. Without a transom saver, the motor's weight swings on the tilt/trim system and steering cable over every bump on every Ontario back road north of the city.
+
+Over one season, that wears steering arms, transom brackets, and trim ram seals. On a Mercury FourStroke in the 60–200 hp range, those repairs add up fast.
+
+Transom savers cost next to nothing. They attach between the trailer roller and the motor cavitation plate and distribute the load off the lower unit. Use one every time the motor goes on the road.
+
+---
+
+### 7. Failed or Unplugged Trailer Lights
+
+Ontario police ticket trailer lighting violations, and they're not shy about it. Working brake lights, turn signals, and tail lights are required, not optional.
+
+Common problems: corrosion at the 7-pin connector, a water-damaged socket, or a plug left on the hitch ball since last fall. Test before every trip: plug in, turn on hazards, hit the brakes, walk around. A wiring harness replacement takes an afternoon. A roadside stop on Highway 28 costs more, in time, money, and whatever was left of a good mood.
+
+---
+
+### 8. Backing In Too Fast or Too Far at the Ramp
+
+Speed at the ramp is confidence cosplay. Everyone's seen the result: a truck with the transmission submerged past the bell housing, or trailer brakes that stopped working properly because the drums flooded.
+
+Trailer wheel bearings and surge brakes aren't meant to be dunked, especially hot from a highway drive. Back in slowly until the bunks are just below surface and the boat floats. That's it. The hubs and brakes should stay above the waterline.
+
+And if there's a lineup behind you, ignore it. Go slow.
+
+---
+
+### 9. Forgetting the Drain Plug
+
+The classic. Never not funny, until it's yours.
+
+The fix is a habit: **the drain plug goes in before the boat comes off the trailer**. Not at the ramp. Not while floating. Before. Some people put it in their cup holder the night before. Others have a rule that it goes in when the boat comes out of storage.
+
+Whatever your system, have one. Because forgetting the plug has ended more Ontario weekends than anything else on this list.
+
+(Said with genuine affection. We've heard this story many times.)
+
+---
+
+### 10. Trailering with the Boat Cover On at Highway Speed
+
+A canvas boat cover at 100 km/h is experiencing forces it wasn't designed for. It's not a question of whether it'll fail, it's how fast. Covers billow, snap at attachment points, tear, and sometimes leave the boat entirely, becoming a hazard for whoever's behind you.
+
+The stress also damages snap hardware and canvas attachment points, so even a cover that makes it to the lake may have failed snaps and delaminated corners by the time you arrive.
+
+Use a proper trailering cover with tie-down straps, or remove the cover and store it inside the boat. Arriving with an intact cover beats the alternative every time.
+
+---
+
+## Pre-Trip Checklist
+
+Save or print this. Four minutes at the driveway beats an hour on the shoulder of the 115.
+
+- **Drain plug**, installed, hand-tight, confirmed
+- **Trailer lights**, plugged in, tested (brake lights, signals, tails)
+- **Wheel bearings**. Bearing Buddy caps full, no discolouration
+- **Trailer tires**, inflated to spec, sidewalls clean, age under 6 years
+- **Bow winch strap**, tight, hook fully engaged
+- **Bow safety chain**, attached and secured
+- **Stern tie-downs**, both sides secured, no lateral play
+- **Transom saver**, motor supported, not hanging free
+- **Boat cover**, removed or trailering-specific cover secured
+- **Hitch and safety chains**, pin locked, chains crossed and connected
+
+---
+
+## What Ontario Law Says About Your Trailer
+
+A quick reference. Regulations change, verify current requirements with the [MTO Driver's Handbook](https://www.ontario.ca/document/official-mto-drivers-handbook/towing) or ServiceOntario before relying on this summary.
+
+**Trailer plate requirements:** All trailers on Ontario public roads must be registered and plated separately from the tow vehicle. Ontario treats trailers as separate vehicles. Registration is a one-time fee (around $72 for original plate and permit). See [ontario.ca/page/register-trailer](https://www.ontario.ca/page/register-trailer) for the full document list.
+
+**Lights and reflectors:** All trailers require working brake lights, tail lights, turn signals, and rear reflectors. Larger trailers may require side marker lights. Equipment violations are actively ticketed.
+
+**Brakes:** Ontario's Highway Traffic Act requires brakes on trailers with a **gross weight of 1,360 kg (approximately 3,000 lbs) or more**, including a breakaway system. Most loaded boat trailers with mid-size or larger boats hit this threshold. If you're unsure, weigh it loaded. Verify the current threshold with MTO, regs do change.
+
+**Speed limits:** Ontario doesn't set a separate lower limit for towing, the posted limit applies. On most 400-series highways, that's **100 km/h** (some stretches are now 110 km/h for passenger vehicles). Towing at the posted limit requires proper setup: rated hitch, correct tongue weight, functioning trailer brakes if required, and tires you'd actually trust.
+
+---
+
+## More from the Blog
+
+If you're doing spring prep and want the full mechanical rundown, [the spring outboard commissioning checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers fogging, lower unit oil, impeller checks, and battery prep.
+
+For walleye opener timing and what to have ready before May, [the walleye opener boat prep guide](https://www.mercuryrepower.ca/blog/walleye-opener-boat-prep) is worth a read.
+
+Making the drive from the GTA for the first time? [The Toronto to Rice Lake trailering guide](https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide) covers the route, ramp access, and what to expect when you get there.
+
+---
+
+## Trailer Issues Fried Your Motor?
+
+It happens. Submerged connectors, corrosion, water intrusion, trailer problems become motor problems faster than most people expect.
+
+We do Mercury repowers and full electrical service at Harris Boat Works. If your outboard came back from the season worse than it went in, [book service at hbw.wiki/service](https://hbw.wiki/service) and we'll take a look.
+
+---
+
+*Harris Boat Works, est. 1947. Gores Landing, ON. Mercury Marine Platinum Dealer.*
+*905-342-2153 | mercuryrepower.ca*
+`,
+  },
+  {
+    slug: 'outboard-vs-sterndrive-2026-ontario-repower',
+    title: "Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard",
+    description: "Ontario sterndrive owners weighing a repower get an honest dealer's take on outboard vs. sterndrive in 2026, covering cost reality, market trends, and when...",
+    image: '/lovable-uploads/hero-outboard-vs-sterndrive.png',
+    author: 'Jay Harris',
+    datePublished: '2026-06-20',
+    dateModified: '2026-06-20',
+    publishDate: '2026-06-20',
+    category: "Mercury Outboards",
+    readTime: '~12 min read',
+    keywords: ["outboard vs sterndrive","repower","mercruiser","ontario","mercury"],
+    content: `# Outboard vs Sterndrive in 2026: Why Almost Every Ontario Repower Goes Outboard
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** In 2026, almost every Ontario sterndrive repower goes outboard. The market has moved: outboards are over 80% of new recreational marine engines, sterndrive parts pipelines are tightening, and modern 4-stroke outboards have closed the noise and ride-comfort gap. We sell and service both. The honest answer for bowriders, deck boats, runabouts, and pontoons: an outboard repower wins on reliability, fuel economy, and resale.
+
+We sell both. We service both. We have no axe to grind.
+
+That's exactly why we can tell you what most dealers won't: in 2026, if you're repowering a sterndrive boat in Ontario, the answer is almost always an outboard. Not because sterndrives are bad. Because the market has moved, the parts supply has tightened, the technology gap has closed, and the math now favours outboards for the overwhelming majority of boat owners.
+
+Here's the full picture, the good, the honest, and the stuff that will actually help you make a decision.
+
+---
+
+## The Big Picture: Outboards Have Won the Market
+
+This isn't opinion. It's sales data.
+
+In 2010, outboards represented roughly 50% of the recreational marine engine market. By 2026, that number is above 80%. Mercury, Yamaha, Honda, and Suzuki have poured engineering investment into modern 4-stroke outboard development, lighter, quieter, more powerful, and dramatically more fuel-efficient than anything available a decade ago.
+
+Meanwhile, sterndrive R&D has slowed. MerCruiser still makes quality products, and the existing install base is enormous, but the trajectory is clear. The marine industry has voted with its production lines.
+
+An engine platform with a growing user base means better parts availability, more trained technicians, and stronger resale demand for years to come.
+
+---
+
+## Quick Refresher: What's the Difference?
+
+If you're newer to the conversation, here's the short version.
+
+**Sterndrive (Inboard/Outboard or "I/O"):**
+The engine sits inside the hull, in an engine bay below the cockpit or under a centre hatch. The outdrive unit hangs off the transom and handles steering, trim, and propulsion. MerCruiser is the dominant brand; Volvo Penta is the other major player. Sterndrives were the dominant setup on bowriders and runabouts from the 1970s through the 2000s.
+
+**Outboard:**
+The entire engine, powerhead, midsection, and lower unit, mounts on the transom and is fully external. Everything is accessible without opening a hatch or pulling a floor panel. Tilt it up, the prop clears the water entirely. Modern outboards are 4-stroke, direct-injected, and available from 2.5hp all the way to 600hp.
+
+If you want deeper background on how sterndrives work and their service requirements, our [MerCruiser sterndrive guide for Ontario owners](https://www.mercuryrepower.ca/blog/mercruiser-sterndrive-guide-ontario) covers the full picture.
+
+---
+
+## The Case for Keeping a Sterndrive
+
+We're not here to trash a platform that served generations of boaters well. There are still real reasons some owners prefer a sterndrive setup.
+
+**Interior cockpit space.** With the engine hidden below decks, you get a cleaner transom, more seating room and an unobstructed swim platform. On a dedicated watersports boat where the back of the boat is constantly in use, this matters.
+
+**Lower centre of gravity.** An inboard engine sitting low in the hull contributes to handling stability during aggressive skiing and wakeboarding manoeuvres. High-end wake boats and ski boats still use this to advantage.
+
+**Quieter ride at cruise.** A well-maintained inboard sterndrive is genuinely quieter inside the cockpit at highway cruise speeds than most outboards. If you're doing long runs in a cabin cruiser, that can matter.
+
+**Traditional aesthetic.** Some owners, and some boats, just look right without an engine hanging off the back. For a certain vintage of hull, a sterndrive is the period-correct setup.
+
+These are legitimate advantages. If you're in that category, keep your sterndrive and maintain it properly, we'll help you do that (more on that below). For bowriders, deck boats, pontoons, and multi-purpose runabouts, the case for outboards is stronger.
+
+---
+
+## The Case for Going Outboard
+
+This is the longer list. Here's why the repower market has moved.
+
+### Reliability and Service Intervals
+
+Modern 4-stroke outboards are genuinely durable. Mercury's V6 and V8 FourStroke engines run on extended service intervals, and their track records over a decade-plus of Ontario freshwater use are excellent. Fewer wear parts. No coolant system. No bellows. No gimbal bearing to fail.
+
+### No Engine Box, No Hidden Problems
+
+Service access on an outboard is a different experience entirely. There's no engine compartment to crawl into, no bilge to check for oil or water, no flame arrestor to inspect. The entire powerhead is visible and accessible. That means faster diagnostics and lower labour hours when something needs attention.
+
+### No Flooded Engine Bay Risk
+
+Sterndrives have a specific failure mode that outboards simply don't: water intrusion through a cracked or degraded bellows. When a bellows fails mid-season, water enters the hull. The consequences range from a flooded bilge to a ruined engine. Outboards don't have bellows. The risk category doesn't exist.
+
+### Better Fuel Economy in Most Applications
+
+This surprises people. A modern Mercury V6 or V8 FourStroke running at cruise RPMs is measurably more efficient than most carbureted or early EFI sterndrives. The efficiency gap between old technology and new is real.
+
+### Higher Trim Range and Shallow-Water Ability
+
+This one matters specifically on Rice Lake and across the Kawarthas. Ontario waters are not the Gulf of Mexico. Shallows, rock shoals, and weedy bays are part of every season. An outboard trims up in seconds. You can pick your way through water that would put an outdrive at risk. This is a practical, season-long advantage for Ontario boaters.
+
+### Tilts Fully Out of the Water
+
+Ontario freshwater storage is a real consideration. When you're not running the boat, a tilted outboard hangs clear of the water, cleaner lower unit, less growth, no barnacles. For boaters who leave their boats in the water across the season, this matters.
+
+### Modern Mercury Digital Controls and Joystick Options
+
+Mercury's current generation of digital throttle and shift, VesselView displays, and joystick docking controls are outboard-native. Newer boaters expect these features; experienced boaters appreciate them when docking in a crosswind. The technology ecosystem has been built around outboards.
+
+### Resale Value
+
+This is the number that ends most debates. A late-model outboard repower dramatically increases the resale value of a sound hull. An old, tired sterndrive on an otherwise good boat is a liability to most buyers, they're calculating the cost of repair or conversion before they even make an offer. A clean outboard installation changes the conversation entirely.
+
+### Cleaner Repower Process
+
+A sterndrive-to-outboard conversion involves removing an outdrive, motor mounts, and associated systems and replacing them with a bracket and outboard package. It's real work, but it's not an engine bay rebuild. There's no cylinder head work, no manifold replacement, no exhaust riser risk assessment. The installation is purpose-built and clean.
+
+---
+
+## When Does a Sterndrive-to-Outboard Conversion Actually Make Sense?
+
+The honest answer: not every time. Here's how we think through it.
+
+**When the outdrive is at end of life.**
+Outdrive service costs are significant, and parts availability for older MerCruiser Alpha One and Bravo series units has gotten tighter. If you're looking at a major outdrive overhaul, the economics of conversion get a lot more interesting. Read more about [what's involved in a full repower](https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower) before you decide.
+
+**When the engine is also tired.**
+If both the engine and the outdrive need attention, the rebuild-or-replace math usually favours replace. A full sterndrive mechanical refresh, rebuilt engine, new outdrive, updated exhaust components, often costs more than a properly scoped outboard conversion. Our [Mercury repower cost guide for Ontario (2026)](https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad) breaks down what you're actually comparing.
+
+**When the transom is structurally sound.**
+This is the critical check. Outboard brackets mount to the transom. If the transom is soft, delamination, rot, moisture intrusion, that's a separate project that needs to be addressed first. A reputable repower shop will inspect and tell you the truth here. We do.
+
+**When the boat is worth it.**
+A repower should make economic sense for the hull you have. Don't spend $35,000–$45,000 on a fresh outboard package for a hull with $12,000 in market value. If you're uncertain where you land, our [boat hull vs. repower decision guide](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision) is a good starting point.
+
+**When you plan to keep the boat.**
+Repowers are long-term plays. If you're keeping the boat for another 10–15 years, the investment makes sense. If you're planning to sell in two seasons, the calculus is different.
+
+---
+
+## The Cost Reality: What a Conversion Actually Involves
+
+We're going to be straight with you here, because this is where a lot of owners get surprised.
+
+A sterndrive-to-outboard conversion is not just bolting on a motor. The project scope typically includes:
+
+- **Outboard bracket**, purpose-built transoms for outboards require the right mounting platform. Some hulls need a custom bracket; others have aftermarket bracket solutions that work well.
+- **Motor removal and outdrive removal**, the old powerplant, mounts, and outdrive unit come out.
+- **Rigging**, new Mercury Digital Throttle & Shift (DTS) controls, wiring harness, gauges, and VesselView integration.
+- **Fuel system updates**, fuel fill, vent, and primer system may need modification depending on hull design.
+- **Transom work**, if the transom is soft or requires reinforcement for the new mounting configuration, that's added scope.
+- **Exhaust and coolant system decommissioning**, the old inboard exhaust system is removed.
+- **Sea trial and commissioning**, you should expect a proper break-in run with documentation.
+
+Budget range varies meaningfully based on engine size, hull complexity, transom condition, and the rigging choices you make. We don't publish a flat price because it wouldn't be honest, the number changes case by case.
+
+The right question isn't "how much does a conversion cost?" It's "does the total cost make sense for this hull, and what does the break-even look like over the years I plan to keep it?"
+
+For Kawarthas and GTA boaters, our [complete Kawarthas repower guide](https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas) and [repower information for Toronto-area boaters](https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination) walk through the logistics in detail.
+
+---
+
+> ### MerCruiser Sterndrives We Still Service
+>
+> If you have a sterndrive and you want to keep it, we support that decision.
+>
+> Harris Boat Works continues to maintain and service MerCruiser sterndrives for owners who want to run them well for years to come. Our service team is Mercury-trained and the platform is one we know inside out.
+>
+> One note on scope: **for engine repairs, we only service Mercury and Mercruiser.** If you have a Volvo Penta or other brand, we'll point you to the right specialist.
+>
+> Sterndrive owners who want a reliable shop with genuine expertise: [request service here](https://hbw.wiki/service).
+
+---
+
+## Why HBW Recommends Outboard Repowers in 2026
+
+When we recommend outboards, it's not because we stopped believing in sterndrives. It's because we've watched the market, the parts ecosystem, and the technology trajectory for 78 years, and the direction is clear.
+
+A few specific reasons we're confident in this recommendation for most Ontario owners:
+
+**Long-term Mercury parts support.** Mercury has committed its engineering investment to 4-stroke outboard development. Parts will be available, technicians will be trained, and the platform will be supported for the working life of any motor we install today.
+
+**We're a Mercury Platinum Dealer.** That designation isn't marketing language, it reflects volume, training, and service capacity. We have the tooling, the certification, and the technicians to install and support Mercury outboards properly.
+
+**78 years of marina experience.** Since 1947, this business has been built on giving people advice that holds up over time. Customers who bought from us in the 1980s are still here. That only happens when the advice is sound.
+
+We're not the biggest dealer in Ontario. But we're on the water, we know Rice Lake, and we tell people the truth, including when the truth is that their hull isn't worth a repower, or that keeping their existing engine makes more sense.
+
+---
+
+## The Bottom Line
+
+Outboards have won the market because they deserve to. The technology is excellent, the service access is better, the Ontario freshwater use case fits them well, and the long-term ownership economics are stronger for most boaters.
+
+If you have a tired sterndrive, a sound hull, and a boat you want to keep running for another decade, a Mercury outboard conversion is worth a serious look.
+
+If you want to keep your MerCruiser running, we can help with that too.
+
+Either way, you deserve a straight answer, not a sales pitch.
+
+---
+
+**Thinking about converting your sterndrive to an outboard? Build a real quote in 2 minutes.**
+
+[Start your quote at mercuryrepower.ca →](https://www.mercuryrepower.ca)
+
+Questions? Call us at 905-342-2153 or [request service at hbw.wiki/service](https://hbw.wiki/service).
+
+*Harris Boat Works. Gores Landing, ON. Est. 1947. Mercury Marine Platinum Dealer.*
+`,
+  },
+  {
+    slug: 'used-boat-walkaround-inspection-ontario',
+    title: "The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide",
+    description: "A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat, what to check, in what order, and when to walk away.",
+    image: '/lovable-uploads/hero-used-boat-walkaround.png',
+    author: 'Jay Harris',
+    datePublished: '2026-06-24',
+    dateModified: '2026-06-24',
+    publishDate: '2026-06-24',
+    category: "Buying Guide",
+    readTime: '~12 min read',
+    keywords: ["used boat inspection","buying guide","ontario","transom check","pre-purchase"],
+    content: `# The 30-Minute Used Boat Walkaround: An Ontario Buyer's Inspection Guide
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** A 30-minute walkaround inspection catches most of the issues that turn cheap used boats into expensive lessons. Check transom flex with foot pressure, lower-unit oil colour with a flashlight, deck softness with a stomp test, fuel-system age and ethanol exposure, electrical for corrosion, and outboard compression numbers if you can. Most private-sale used boats hide one or two of these. Walking away costs nothing.
+
+**URL slug:** used-boat-walkaround-inspection-ontario
+
+**Meta description:** A practical, time-blocked inspection checklist for Ontario buyers showing up to look at a used boat, what to check, in what order, and when to walk away.
+
+---
+
+Kijiji. Facebook Marketplace. The listing looks clean. The price feels right. The seller says it "runs great." Now you're driving two hours to go look at it.
+
+Most buyers show up without a plan. They like the look of it, take a quick ride, and pull the trigger, only to find out a month later the transom is rotting and the floor stringers are soft. At that point, the money they "saved" is long gone.
+
+This is the inspection process we'd run ourselves. Work through it in order. Let the boat make the decision.
+
+For broader context on which hulls and brands to steer clear of, see our [bad used boats to avoid in Ontario](https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario) post. If you're zeroing in on the outboard specifically, the [used outboard buying guide for Ontario](https://www.mercuryrepower.ca/blog/used-outboard-buying-guide-ontario) covers motor-specific checks in full detail.
+
+---
+
+## Before You Go: 5 Minutes from Your Couch
+
+Don't waste a long drive. A quick call filters the listings that aren't worth showing up for.
+
+**Ask the seller:**
+
+- **What's the HIN?** (12 digits, stamped on the transom, look it up before you leave)
+- **Do you have maintenance records?** On any boat over 5 years old, this matters. No records on an older boat means you're assuming the worst.
+- **Can you send a cold-start video?** Cold start, not a warm idle. A seller who won't do this has a reason.
+- **When was it last in the water?** A boat that's been sitting for two seasons needs extra scrutiny.
+- **Is the ownership clean?** Ontario OHVS registration should be current and match the HIN. Gaps or hesitation here are red flags.
+
+If a seller won't answer these questions before you show up, that tells you something.
+
+---
+
+## Minutes 0–5: First Impression
+
+Before you touch anything, take 60 seconds to just look.
+
+Does it look stored well, or does it look like someone cleaned it up for the listing? Mildew smell under the cover, missing rub rail sections, faded gelcoat that's never been maintained, a bilge with standing water, none of these are automatic deal-breakers alone, but they build a picture.
+
+**If it's on a trailer:** Look at the trailer first. Check tire sidewalls for dry rot (hairline cracking in the rubber). Find the DOT date code, four digits on the sidewall, last two are the year. Tires more than six years old are a liability on a boat trailer regardless of tread depth. Check that safety chains are present and the winch strap isn't fraying.
+
+---
+
+## Minutes 5–15: Hull Inspection
+
+This is the most important ten minutes. Structural problems are expensive, often more expensive than the boat itself.
+
+### Tap test
+
+Bring your knuckles or a screwdriver handle and tap the hull systematically. Solid fiberglass sounds sharp and hard. Delamination sounds dull and hollow. Work the bottom, the sides, and especially the transom in a grid. Don't just tap two spots and move on.
+
+### Transom check
+
+Grab both sides of the motor mount and push and pull. **There should be zero flex.** Any movement means the transom core is rotted. A transom replacement is a four-to-five-figure job, often more than the boat is worth. Walk away.
+
+### Chines and keel
+
+Get down and look at the keel and the lower chines. These take the first damage in a grounding. Look for impact gouges, radiating cracks, or patches. A repaired ding isn't necessarily a problem, boats get grounded. Structural cracks extending beyond a repair are.
+
+### Stress cracks around hardware
+
+Anywhere hardware is through-bolted, cleats, rod holders, ski tow points, look for spiderweb gelcoat cracks. Small surface cracks from normal use are common. Cracks that penetrate the laminate indicate load stress and potential water intrusion.
+
+### Osmosis blisters
+
+Look at the hull near the waterline. Clusters of small bubbles or pocks in the gelcoat? Poke one, if it weeps brownish liquid with a sour smell, that's osmosis. Minor blistering can be addressed; extensive osmosis into the laminate is a significant repair job.
+
+---
+
+## Minutes 15–20: Topside and Interior
+
+### Walk every inch of the floor
+
+Start at the transom and walk slowly toward the bow, pressing firmly with each step. You're feeling for softness, flex, or sponginess. A solid floor doesn't move. Soft spots mean the plywood sub-floor is saturated and rotting, which often means the stringers below are compromised too. Stringer rot is a full boat restoration, not a repair.
+
+Don't stand in one place. Walk the full floor. Soft spots cluster near the bilge drain, live well, and anywhere water tends to pool.
+
+### Under the cushions and at the helm
+
+Lift every cushion, open every hatch, smell every locker. Standing water, mildew, and a fuel smell from the bilge are all worth noting. Look at the wiring behind the helm, it should be organized and properly connected, not taped-over splices. A full electrical rewire is a multi-day job. Shoddy wiring is also a fire hazard.
+
+Turn on the battery switch and test everything: fuel gauge, tach, trim, bilge pump, nav lights, horn. Every broken item is either a negotiating point or a cost you're absorbing.
+
+---
+
+## Minutes 20–28: Outboard or Sterndrive
+
+### Visual inspection
+
+Ask to have the cowl removed. A seller who won't take it off has something to hide. Look at the powerhead: oil leaks, corrosion, cracked hoses, carbon around the exhaust ports. Fresh paint on the powerhead is a yellow flag, it can be hiding corrosion or repair work.
+
+### Prop
+
+Inspect for bent blades, nicks, and signs of a spun hub. A spun hub means the rubber insert between the prop and shaft has failed. The prop looks fine but won't transmit power correctly, look for polishing on the hub bore or a displaced rubber bushing.
+
+### Gear oil, this one matters
+
+Ask the seller to drain a sample of lower unit gear oil onto white paper towels. Fresh gear oil is translucent golden or greenish. **Milky, grey, or chocolate-brown oil means water intrusion, a failed seal or cracked housing.** If left unaddressed, it destroys the gears. Milky gear oil is a deal-breaker.
+
+### Trim, tilt, and tell-tale
+
+Cycle the trim through its full range. It should move smoothly. Look for hydraulic leaks on the trim rams. If you can run the motor, watch the tell-tale water stream, it should be consistent with good pressure. Weak flow or no flow means a cooling issue that can damage the motor quickly.
+
+### Compression test
+
+If the motor is over 5 years old, request a compression test, or bring your own tester (auto parts stores carry them). All cylinders should read within 10% of each other. Low or uneven compression means rings, valves, or something worse. A seller who won't allow a compression test is hiding something.
+
+---
+
+## Minutes 28–30: Trailer
+
+You checked the tires at the start. Now go a bit deeper.
+
+If the trailer moved at all to get here, feel the wheel hubs immediately after it stops. Warm is fine. Hot, too hot to hold your hand on, means failing bearings. Check the frame for rust that's eaten through the steel (surface rust is normal). Look at the bunk boards to make sure the boat isn't sitting on rotted wood grinding into the hull.
+
+Plug in the lights and test brake lights, turns, and running lights. Trailer wiring is usually a simple fix, but add it to the list.
+
+---
+
+## Bring This With You
+
+Everything fits in a backpack:
+
+- **Phone with flashlight** or a dedicated LED pocket light
+- **Bright LED inspection light**, for bilge areas, under consoles, inside lockers
+- **Screwdriver set**, for tapping the hull and checking hardware
+- **Magnet**, run it along the hull; fiberglass won't attract it, but bondo or hidden steel repairs will
+- **White paper towels**, for checking gear oil colour and testing bilge water
+- **Gloves**, bilges are not clean
+- **Marine compression tester**, rent or buy at any auto parts store; bring it on any motor over 5 years old
+- **Notepad**, write down every issue. You'll forget half of them on the drive home, and the list tells you what the negotiation should look like
+
+---
+
+## Walk Away Immediately If...
+
+Some findings are negotiating points. These are not.
+
+> **Leave the listing if:**
+>
+> 1. **The transom flexes** when you push and pull on the motor mount
+> 2. **The gear oil is milky or grey**, water in the lower unit, likely needs a rebuild
+> 3. **The floor is soft anywhere**, saturated stringers, major structural repair
+> 4. **The seller won't run the motor**, excuses mean reasons
+> 5. **No maintenance records on a 10+ year old boat**, you're assuming the worst because you have no evidence of the best
+> 6. **Fresh paint on the lower unit or powerhead**, ask what's underneath
+> 7. **Compression is low or inconsistent**, or the seller refuses the test
+> 8. **Ownership documentation is unclear or missing**, unclear title becomes your problem the moment you sign
+
+---
+
+## What Costs More Than the Boat to Fix
+
+**Soft transom.** Pulling the motor, removing hardware, cutting out the core, laminating new marine plywood or composite, and glassing it back in. On most production boats, this is a major repair, thousands in labour alone.
+
+**Cracked block or blown head gasket.** A motor that's overheated has potentially warped heads, scored cylinders, or a cracked block. In many cases, a repower is more cost-effective than rebuilding an old motor with unknown history. More on that in our [boat motor trade-in guide](https://www.mercuryrepower.ca/blog/boat-motor-trade-in-guide).
+
+**Stringer rot.** The floor comes out, the stringers get rebuilt, everything goes back together. This is a full restoration project.
+
+**Hub failure.** Replaceable, but repeated impact damage may mean other lower unit or driveshaft issues underneath.
+
+**Full electrical rewire.** A day or more of marine electrician time, and it always runs longer than the estimate.
+
+The good news: if the hull is solid and the motor is the weak link, that's a solvable problem. A sound boat with a tired outboard is a much better starting point than the reverse. For more on that trade-off, see our [hull vs. repower decision guide](https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision).
+
+---
+
+## The Bottom Line
+
+Work through the walkaround in order. Take notes. Don't let the drive, the asking price, or the seller's enthusiasm override what your hands and eyes are telling you.
+
+A 30-minute inspection won't catch everything, but it will catch the things that matter most. The deals that go sideways are almost always the ones where someone moved too fast to look carefully.
+
+**Found a boat with a tired motor but a sound hull? That's exactly what we repower.** Build your quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), real prices, no runaround. Need a hand evaluating what you're looking at? Reach out through [hbw.wiki/service](https://hbw.wiki/service).
+
+---
+
+*Harris Boat Works, est. 1947. Mercury Marine Platinum Dealer. Gores Landing, Ontario.*
+*905-342-2153 | [harrisboatworks.ca](https://www.harrisboatworks.ca)*
+`,
+  },
+  {
+    slug: 'docking-boat-in-wind-rice-lake',
+    title: "Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)",
+    description: "A technique-first guide to docking single-outboard boats, pontoons, bowriders, and fishing boats, in windy conditions on Rice Lake, without a bow thruster...",
+    image: '/lovable-uploads/hero-docking-in-wind-rice-lake.png',
+    author: 'Jay Harris',
+    datePublished: '2026-06-27',
+    dateModified: '2026-06-27',
+    publishDate: '2026-06-27',
+    category: "Boating Lifestyle",
+    readTime: '~9 min read',
+    keywords: ["docking","wind","rice lake","boat handling","single outboard"],
+    content: `# Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Docking a single-outboard boat in wind on Rice Lake is technique, not muscle. Approach into the wind at slow controlled speed, use short bursts of forward and reverse to steer, never fight the wind with throttle, and let momentum carry you the last few feet. Tie the bow first if wind is pushing you off the dock; tie the stern first if wind is pushing you onto it. Practise in calm conditions before you need it.
+
+**URL slug:** docking-boat-in-wind-rice-lake
+
+**Meta description:** A technique-first guide to docking single-outboard boats, pontoons, bowriders, and fishing boats, in windy conditions on Rice Lake, without a bow thruster or a meltdown.
+
+---
+
+You know the feeling. You're coming back into Bewdley on a Tuesday afternoon, the southwest wind has built to 15 knots the way it always does by 3 o'clock on Rice Lake, and there are three people watching from the dock. One of them is drinking a beer.
+
+Your heart rate goes up. You add a little throttle. Then a little more. The bow blows sideways, you jab reverse, and now you're doing a slow-motion pivot in full view of your audience.
+
+Every boater has been here. The good news: it's almost never as hard as it feels, and a few technique adjustments take most of the drama out permanently.
+
+---
+
+## Why Wind Feels Worse Than It Is
+
+Boats are big, light, high-surface objects. Wind has an outsized effect on them.
+
+More specifically: **your bow is lighter and higher than your stern.** On most single-outboard boats, the engine weight keeps the stern somewhat planted. The bow is a big empty fiberglass scoop up in the air, wind grabs it like a sail and pushes it downwind, fast.
+
+On a pontoon, this effect is amplified. [Pontoon boats have enormous lateral surface area](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats), the tubes, decking, furniture, all of it acts like a billboard in crosswind. A 24-foot pontoon can drift sideways at a surprising rate in a modest 10-knot breeze. The boat doesn't feel like it's moving until suddenly it is.
+
+Understanding this physics is step one. The wind isn't attacking you, it's just doing what wind does. Your job is to use it, not fight it.
+
+---
+
+## Read the Conditions Before You Commit
+
+Before you point the bow at the dock, spend 60 seconds doing recon.
+
+Watch boats already docked, if they're leaning hard to one side, that tells you exactly what the wind is doing. Check nearby flags. Note whether the wind is pushing you onto the dock or away from it. Each scenario needs a different approach.
+
+The southwest wind that funnels in off Harwood toward Gores Landing every afternoon is predictable enough to plan around before you even leave in the morning. The [Rice Lake boating guide](https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026) covers typical wind patterns by area of the lake.
+
+---
+
+## The Golden Rule: Approach Into the Wind Whenever Possible
+
+If you take one thing from this post, make it this: **approach into the wind.**
+
+Driving into the wind slows you down and gives you more time to assess and correct. More importantly, if your approach is wrong, you can simply pull back, let the wind push you clear, and circle for another attempt. Clean getaway.
+
+Approach downwind and the wind is adding speed while you're trying to bleed it off. Less time, less margin, harder abort. Sometimes you have no choice, but into the wind is always the preferred direction when you have options.
+
+---
+
+## Slip-Style Docking in a Crosswind
+
+Come in at an angle, 20–30 degrees off the slip centerline, from the upwind side. This puts the wind at your back quarter rather than broadside.
+
+**Use the wind to do the last 2–3 feet.** As you get close, reduce throttle and let the wind nudge the bow across into alignment. You're not fighting the breeze, you're using it as an invisible hand to guide you in. This sounds counterintuitive until you try it once.
+
+**Never add throttle to fight wind at close range.** Seeing the boat go sideways and adding power is how you arrive at the dock too fast. Slow down, use neutral, and let the physics help. Short bursts in gear are better than sustained throttle when you need to hold position.
+
+---
+
+## Side-Tie Docking in a Crosswind
+
+**Wind onto the dock (onshore):** Approach at 30–45 degrees, aim upstream of where you want to land, cut throttle earlier than feels right, and drift in. Get a bow line to the dock first, then use it as a pivot to walk the stern alongside. Easier than it looks once you trust it.
+
+**Wind off the dock (offshore):** Trickier. Approach steeper, closer to 45 degrees, maintain a little more speed than feels comfortable, and get a spring line on the dock mid-ship as fast as possible. A spring line running forward to a cleat gives you control that throttle cannot replicate. The [late season safety guide](https://www.mercuryrepower.ca/blog/late-season-boating-safety) covers line handling in rougher conditions.
+
+Regardless of scenario: at 4–5 feet out, a short burst of reverse kills forward momentum and straightens the boat. Then get a line on before you drift.
+
+---
+
+## Pontoon-Specific Advice
+
+The standard "slow and steady" advice can work against you on a pontoon.
+
+Pontoons need **more throttle into the wind** than people expect. All that windage, furniture, bimini, full-length deck, kills momentum fast. If you're going too slowly, you lose steerage before you get where you need to be and the bow starts washing sideways.
+
+The fix: carry a bit more speed, maintain steerage until you're closer, then cut to neutral and use a short reverse burst just before the dock. The same wind drag that fought you at speed now helps you stop.
+
+A [Mercury Command Thrust gearcase](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats) helps significantly here. The larger prop diameter gives better thrust at low RPM, so you can hold steerage without revving as high. If you're babysitting throttle inputs on every docking, this is worth a look.
+
+---
+
+## The 3 Things to Do Before You Dock
+
+Do these before you're close enough to the dock that timing matters.
+
+**1. Fenders out, both sides.** You don't always know which side you'll land on. Both sides, every time, stop second-guessing it at 20 feet out.
+
+**2. Lines pre-tied with loops.** Dock lines should be cleated on the boat end with a loop ready on the dock end. Your crew should be able to drop them over a piling one-handed. If someone is untying a knot while you're trying to dock in 15 knots, that's a problem.
+
+**3. Crew briefed.** One person drives. Everyone else has a defined job. Who has the bow line? Who has the stern? Who has the spring? Brief it before you're within sight of the dock. Improvised crew coordination at close range in wind is where people get hurt and boats get dinged.
+
+---
+
+## The Wind Speed Cheat Sheet
+
+> **5 knots:** Barely a factor. Slight bow drift. Good day to practice.
+>
+> **10 knots:** Noticeable. Pontoons need active steerage. Technique matters but all skill levels can manage it.
+>
+> **15 knots:** This separates confident from stressed. Approach angle is critical. Abort threshold comes up sooner.
+>
+> **20+ knots:** Think carefully. If you have a protected slip, this may be a "leave it and walk" day. If you're coming in, use the most sheltered approach available and slow down before you think you need to. If you're genuinely uncertain, stay out until it lays down.
+
+---
+
+## When to Abort
+
+**If your approach is off by more than 4 feet at 8 feet out, abort.**
+
+The geometry isn't fixing itself. Throttling through a bad approach is how damage happens. Back out, circle wide, and come in again, 90 seconds. Nobody watching cares nearly as much as you think they do.
+
+The most experienced boaters on Rice Lake abort regularly. It's a tool, not a failure.
+
+---
+
+## Common Mistakes
+
+**Panic gas.** When the boat goes sideways, instinct says add power. Usually the right move is less, not more.
+
+**Fending off with hands.** A moving boat against a fixed dock generates forces that fingers can't absorb. Fenders exist for this reason. Use them.
+
+**Fighting wind in reverse.** Reverse steering is already counterintuitive. Add a strong crosswind and it gets much worse. Exit and re-approach from a better angle.
+
+**No spring line.** One mid-ship line running forward to a dock cleat gives you more control than everything else combined. Practice using it.
+
+**Fenders on the wrong side.** Or no fenders at all. Both sides, always.
+
+**Solo docking in heavy wind without practice.** Build the skill in calm conditions first. Heavy wind is not the time to learn how your boat behaves single-handed.
+
+---
+
+## Practice Plan
+
+You won't get good at windy docking by reading about it. You'll get good by doing it when the stakes are low.
+
+Pick a calm morning on Rice Lake, before the afternoon southwest wind builds. Find an empty section of dock or a quiet anchorage and run deliberate approaches.
+
+Start in 5 knots. Practice approach angles, aborting on purpose, and using lines. Then 10 knots, notice how your decision timing shifts. Then 15. By the time you've practiced in 15 knots with nothing at stake, docking at Harwood with people watching feels like exactly what it is: just parking the boat.
+
+Thirty minutes of intentional practice on a Tuesday morning is worth more than thirty dockings where you just hoped for the best.
+
+---
+
+## When Upgraded Controls Help
+
+Technique is the foundation. But some equipment makes a real difference.
+
+**Digital throttle and shift (DTS):** Removes cable lag from throttle input. What you feel in your hand is what the engine does, immediately. The precision at slow speed is meaningfully better than a cable system, and slow-speed precision is exactly what matters near a dock. The [VesselView / SmartCraft guide](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide) covers real-time engine data that DTS systems surface.
+
+**Mercury Command Thrust gearcase:** Purpose-built for pontoons. Better low-RPM thrust, easier to hold position in wind. If every docking feels like a workout, this addresses the actual cause.
+
+**Mercury Joystick Piloting (twin-engine setups):** Point the joystick where you want the boat to go. Worth every dollar if your setup qualifies.
+
+Most Rice Lake boaters are running a single outboard on a pontoon, bowrider, or fishing boat. For that setup, technique plus a Command Thrust gearcase covers 95% of docking situations.
+
+---
+
+Thinking about a digital throttle upgrade or a Command Thrust gearcase? Build a quote at [mercuryrepower.ca](https://www.mercuryrepower.ca), or request service at [hbw.wiki/service](https://hbw.wiki/service).
+
+No pressure. But if you want to stop having that heart-rate moment every time you come back into Bewdley or Gores Landing with a southwest breeze on your beam, it's worth knowing your options.
+
+---
+
+*Harris Boat Works. Est. 1947. Gores Landing, ON. Mercury Platinum Dealer*
+`,
+  },
+  {
+    slug: 'pontoon-hp-sizing-decision-tree-ontario',
+    title: "Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use",
+    description: "Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes.",
+    image: '/lovable-uploads/hero-pontoon-hp-sizing.png',
+    author: 'Jay Harris',
+    datePublished: '2026-06-30',
+    dateModified: '2026-06-30',
+    publishDate: '2026-06-30',
+    category: "Mercury Outboards",
+    readTime: '~12 min read',
+    keywords: ["pontoon hp","horsepower sizing","mercury","command thrust","tritoon"],
+    content: `# Pontoon HP Sizing: The Decision Tree Every Ontario Buyer Should Use
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Pontoon HP sizing depends on tube count, hull length, load, and use case. As a starting framework: 25-40 HP for 16-18 ft small toons, 60-90 HP for 20-22 ft cruisers, 115-150 HP for 22-24 ft loaded family pontoons, 200+ HP for tritoons and watersports. Mercury Command Thrust gearcases add low-RPM torque ideal for pontoons. When in doubt, match closer to the hull's max HP rating, not the minimum.
+
+**URL slug:** pontoon-hp-sizing-decision-tree-ontario
+
+**Meta description:** Use this practical HP decision tree to find the right Mercury outboard for your pontoon, by length, passenger load, and intended use on Ontario lakes.
+
+---
+
+There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake afternoon chop, or get 10 people up to plane before dark, the motor gives up.
+
+This post is the answer to the question every pontoon buyer eventually asks: *What HP do I actually need?* Not the minimum the boat can run. Not what the previous owner had. The HP that makes your boat do what you bought it to do.
+
+---
+
+## The #1 Pontoon Sizing Mistake
+
+Matching the old motor.
+
+You buy a used 22-footer. It has a 90 HP four-stroke on it. You think: *previous owner seemed happy, 90 HP must be right.* So you keep it, or, if the motor's shot, you repower with the same size.
+
+Here's the problem: the previous owner probably undersized it too. Dealers push the minimum-rated motor because it's the cheapest option that gets a boat out the door. Buyers accept it because the number sounds reasonable. And the cycle of underpowered pontoons keeps going.
+
+The capacity plate on your pontoon tells you the **maximum** HP the transom is rated for, not the recommended HP. There's a significant gap between what a boat *can* run and what it *should* run. Most buyers never learn that until they're embarrassed trying to get on plane with a full load.
+
+If you're buying used and the motor is at the low end of that manufacturer's HP range, budget for a repower. It's not optional if you want the boat to actually perform. You can read more about the [common issues that come with underpowered used pontoons on Rice Lake](https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake). HP is behind a lot of them.
+
+---
+
+## Why Pontoons Need More HP Than You Think
+
+Pontoon buyers coming from fishing boats or runabouts always underestimate how much power a pontoon needs. Here's why:
+
+**Weight.** A typical pontoon sits between 1,800 and 3,500 lbs dry before you add people, gear, and fuel. A 22-footer with 10 passengers and a full cooler can easily clear 5,000 lbs. You're pushing a lot of mass.
+
+**Drag.** Pontoon tubes create significant drag compared to a V-hull. You're not cutting through the water, you're pushing it out of the way with cylindrical aluminum logs. It takes real power to overcome that resistance and get the boat planing.
+
+**Passenger load.** A 22-foot pontoon can legally carry 10–12 people. That's 1,500–2,000 lbs of live load added to an already heavy boat. The horsepower you calculated for 4 people doesn't apply when you have 10.
+
+**Windage.** Pontoons have enormous freeboard and surface area. A side wind on Rice Lake or the Kawarthas can push your boat around hard. You need power in reserve to hold a line and handle unexpected conditions, not just to get on plane on a flat morning.
+
+The bottom line: a pontoon needs more HP than an equivalent-length runabout. Full stop.
+
+---
+
+## The 4 Variables That Determine What HP You Need
+
+Before you look at the decision tree below, know the four things that actually drive the answer:
+
+### 1. Boat Length and Tube Count
+
+Length matters for weight and drag. Tube count matters just as much, a tritoon (three-tube) is heavier and has more drag than a standard two-tube pontoon of the same length. A 24-foot tritoon needs dramatically more power than a 24-foot two-tube.
+
+### 2. Typical Passenger Load
+
+Are you usually out with your partner and a couple of friends, or are you the family boat with 10 people every weekend? A boat running half-capacity can get away with less HP. A boat that regularly carries 8–12 people needs to be sized for that load, not the optimistic "2–4 passengers" scenario.
+
+### 3. Intended Use
+
+**Cruising** (getting from A to B at comfortable speed): lowest power requirement.
+**Fishing** (slow trolling, repositioning, occasional runs): moderate.
+**Tube pulling** (4–6 people on deck, pulling a tube behind): high.
+**Watersports** (wakeboarding, wakesurfing, higher speeds): highest.
+
+Each step up the list needs meaningfully more HP. Be honest about what you actually do on the water, and plan for what you'll *want* to do in two or three years.
+
+### 4. Body of Water
+
+Calm, protected bays have different demands than open lake conditions. Rice Lake builds real chop on a windy afternoon, 2-foot rollers with short frequency. A pontoon running into that chop needs enough power to maintain speed and control, not just enough to move in flat water. If you're regularly on open water, size up.
+
+---
+
+## The Decision Tree: HP by Boat Length and Use Case
+
+This is where most buyers should start. Find your boat, your load, and your use, and you'll have a real answer.
+
+---
+
+### 16–18 ft, 2 tubes, 4–6 passengers. Calm water cruise
+
+**Mercury 25–40 HP**
+
+These smaller pontoons are weekend cruisers, cottage dock boats, and fishing platforms. They're not performance machines, and they don't need to be. A Mercury 25 or 30 four-stroke handles calm water cruise duty comfortably. Step up to a 40 if you're regularly at capacity or want better performance in any wind.
+
+Don't try to save money with a 15 HP on a boat this size. It'll move, but it won't plane properly with a full load. It's not safe in any chop.
+
+---
+
+### 18–20 ft, 2 tubes, 4–6 passengers. Mixed cruise and fishing
+
+**Mercury 40–60 HP**
+
+This is a versatile size, family weekender, fishing, casual cruising. A 60 HP four-stroke is the right choice here if you're ever running full capacity or dealing with any wind. A 40 HP works for lighter loads and calm conditions but starts to feel underpowered when the boat is full and the water isn't glassy.
+
+For anything in this category, the [Mercury 60 FourStroke is the right call](https://www.mercuryrepower.ca/blog/best-mercury-outboard-pontoon-boats), good efficiency, reliable hole shot, and plenty of reserve power.
+
+---
+
+### 20–22 ft, 2 tubes, 6–8 passengers. Family cruise + tube pulling
+
+**Mercury 90–115 HP (Command Thrust recommended)**
+
+This is the most common pontoon size on Ontario lakes, and it's where the underpowering problem is worst. Dealers push 60 HP on 20-footers. It's not enough.
+
+If you're running 6–8 people and occasionally pulling a tube, you want a **Mercury 90 or 115 HP four-stroke, in Command Thrust configuration.** The Command Thrust gearcase runs a larger-diameter prop, which gives you a dramatically better hole shot on a heavy pontoon. Getting 8 people on plane is a completely different experience with Command Thrust vs. a standard 115.
+
+See the full breakdown in the [Mercury Command Thrust guide for pontoon boats](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats), if your boat is over 20 feet and you're running a four-stroke under 150 HP, Command Thrust is not optional.
+
+---
+
+### 22–24 ft, 2 tubes, 8–10 passengers. All-around family boat
+
+**Mercury 115–150 HP**
+
+This is a serious family pontoon, and it needs serious power. A 115 HP gets you there, but a 150 HP is the smarter choice. You'll use the reserve every time you push off the dock with 10 people, into a headwind, heading back across an open bay.
+
+At this size and load, a 90 HP motor is underpowered. You'll feel it on every run.
+
+---
+
+### 22–24 ft, 3 tubes (tritoon), 8–12 passengers. Watersports-capable
+
+**Mercury 200–250 HP**
+
+Welcome to actual pontoon performance. A tritoon with a 200 or 250 HP Mercury gets on plane fast, handles real chop, and has the power to pull a tube reliably with people still on the deck. This is the setup families with teenage kids or active watersports use should be building to.
+
+Anything less than 200 HP on a loaded tritoon is a constant compromise. You can do it, but you'll feel like you're always short of power.
+
+---
+
+### 24–26 ft tritoon, 10–12 passengers. Watersports and cruise speed
+
+**Mercury 250–300 HP**
+
+Bigger boat, bigger load, bigger water. A 250 or 300 HP Mercury handles this category well. You're getting real performance numbers, capable hole shot, strong cruise speed, and enough reserve for watersports even with a full boat.
+
+---
+
+### 26+ ft luxury tritoon. Performance-focused
+
+**Mercury 300–400+ HP**
+
+At this size, you're in Verado or high-output V8 territory. A 400R or twin-motor setup gives you the performance these boats are capable of. If you're spending this much on a pontoon, don't pair it with a motor that makes it feel slow.
+
+---
+
+> **Quick Rule of Thumb:**
+>
+> Minimum useful HP per foot of pontoon:
+> - **5 HP/ft**, cruise only (calm water, light load)
+> - **7 HP/ft**, tube pulling (4–6 people on board, pulling a tube)
+> - **10+ HP/ft**, watersports (wakeboarding, wakesurfing, real performance)
+>
+> Example: 22-foot pontoon × 7 HP/ft = 154 HP minimum for reliable tube pulling. A 115 HP doesn't make that cut.
+
+---
+
+## The Minimum vs. Ideal Gap
+
+Every pontoon has a manufacturer-rated HP range, something like "60–115 HP." Most buyers assume the bottom of that range is sufficient. It isn't.
+
+The minimum HP keeps the boat legal and functional. The ideal HP is what makes the boat enjoyable. That gap is typically **30–50% more horsepower** than the bare minimum.
+
+A boat rated for 60–115 HP performs completely differently at 60 than it does at 115. At 60, you're nursing the motor to get on plane. At 115, the boat does what pontoons are supposed to do.
+
+Don't buy the minimum. Buy for the experience you want, not the number that gets the boat off the lot.
+
+---
+
+## When Command Thrust Matters
+
+The short version: **Command Thrust** is Mercury's designation for a larger gearcase with a bigger-diameter prop. On a heavy pontoon, this changes everything about hole shot, the ability to get from 0 to on-plane with a full load.
+
+Standard gearcase motors on heavy pontoons can feel sluggish getting up to speed, especially with 8+ people. The same HP in a Command Thrust configuration planes faster, transitions more smoothly, and puts less stress on the motor.
+
+**Recommendation:** Any pontoon over 20 feet running a Mercury four-stroke in the 75–150 HP range should be in Command Thrust. Full details in the [Mercury Command Thrust guide](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats).
+
+---
+
+## Watersports Capability: The Real Thresholds
+
+There's a lot of wishful thinking around pontoon watersports. Here's what the real numbers look like:
+
+**Tube pulling (4–6 people on deck, pulling one tube):**
+Minimum 150 HP on a 22-foot two-tube pontoon. On a tritoon, minimum 200 HP. Below these numbers, you'll get the tube up, eventually, but it won't be consistent, and you'll be pushing the motor.
+
+**Wakeboarding or wake surfing:**
+You need a tritoon, and you need 250+ HP. The third tube adds stability and wake shape; the extra horsepower gives you the pull. A two-tube pontoon at any HP is marginal for wakeboarding. A tritoon at 200 HP starts to get there. At 250–300 HP, you have a genuinely capable platform.
+
+If watersports are a real priority, not a "maybe someday", start with the right boat and the right motor. Trying to get there with a two-tube 150 HP on a 22-footer is a frustration exercise.
+
+---
+
+## Fuel Economy Reality
+
+The common assumption is that more HP means worse fuel economy. In practice, the opposite is often true when you're running a properly sized motor.
+
+A **200 HP Mercury loafing at 4,000 RPM** uses less fuel than a **115 HP screaming at 5,800 RPM** trying to move the same load. Undersized motors run hard to keep up. They run hot, they run stressed, and they burn fuel inefficiently at the top of their range all day long.
+
+A properly sized motor cruises in its efficiency band, around 3,500–4,500 RPM, where it's making good power without working at capacity. You use less fuel per nautical mile, and the motor lasts longer.
+
+Sizing right isn't just about performance. It saves you money at the pump and at the service dock.
+
+---
+
+## Common Pontoon HP Mistakes
+
+These scenarios come up constantly. If you recognize your situation here, take it seriously.
+
+**1. 60 HP on a 22-foot tritoon.**
+A tritoon at this length weighs more, has more drag, and is rated for 10+ passengers. 60 HP will idle it around the bay. It will not get it on plane with real people on board. This is one of the worst mismatches in Ontario pontoon ownership.
+
+**2. 90 HP on a 24-foot two-tube loaded with family.**
+The boat will technically move. Getting 10 people on plane will take forever, the motor will be at full throttle, and the first headwind will make you wish you'd bought more motor. Not a question of if you'll want to repower, when.
+
+**3. Matching the old motor on a used boat.**
+The previous owner's choices don't have to be yours. If you're repowering, use the boat's HP range, your actual load, and your actual use, not whatever was on it when you bought it.
+
+**4. Buying a tritoon and stopping at 115 HP.**
+A tritoon is a bigger, heavier boat. It's designed for higher loads and higher performance. 115 HP undersells it badly. If you're in a tritoon, the minimum that makes sense for mixed family use is 175–200 HP.
+
+**5. Ignoring the watersports question at purchase.**
+The most expensive mistake. You buy a 22-foot two-tube with 115 HP for "cruising and maybe pulling a tube." Two summers later, the kids want to wakeboard. Now you're repowering, or worse, you're trying to wakesurf behind a two-tube that isn't set up for it. If watersports are anywhere in your future, spec for it now.
+
+---
+
+## The Repower Trap on Used Pontoons
+
+Used pontoon shoppers: the motor on the listing is almost never the right motor. It's whatever the first buyer accepted, which was usually the cheapest option the dealer offered.
+
+When you're evaluating a used pontoon, check the transom rating and compare the installed HP to the decision tree above. If it's at the bottom of the range, or below where it should be for your use, factor a repower into your purchase budget.
+
+A repower at purchase isn't a setback. It's the smartest way to own a used pontoon: buy the boat at used-boat pricing, put on a new motor sized correctly for how you actually boat, and end up ahead of buying a new package at the dealer.
+
+More on making a used pontoon work on Ontario lakes: [best pontoon boats for Rice Lake cottage use](https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use).
+
+And when you're picking the right motor for your repowered boat, the [Mercury propeller selection guide](https://www.mercuryrepower.ca/blog/mercury-propeller-selection-guide) takes you through the prop side of the equation, because even the right HP doesn't perform right with the wrong prop.
+
+---
+
+## The Right Answer Exists. Get It Before You Buy.
+
+HP sizing isn't complicated once you have the right framework. The mistake is letting a dealer size your boat for you, or inheriting someone else's compromise when you buy used.
+
+Use the decision tree above. Be honest about your load and your intended use. And don't confuse the minimum the boat can run with the HP that actually makes it worth owning.
+
+**Not sure if your pontoon is undersized? Build a real Mercury repower quote in 2 minutes.** → [mercuryrepower.ca](https://www.mercuryrepower.ca)
+
+You'll see real Mercury models, real configurations, and real pricing, no "call for quote" games, no guessing. If you want to talk it through, call 905-342-2153.
+
+---
+
+*Harris Boat Works. Mercury Marine Platinum Dealer. Gores Landing, ON, est. 1947*
+`,
+  },
+  {
+    slug: 'mercury-boat-battery-guide-ontario',
+    title: "The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)",
+    description: "Everything Ontario boaters need to know about marine battery types, switches, wiring, winter storage, and spring startup, so you're not stranded on May 24...",
+    image: '/lovable-uploads/hero-mercury-battery-guide.png',
+    author: 'Jay Harris',
+    datePublished: '2026-07-03',
+    dateModified: '2026-07-03',
+    publishDate: '2026-07-03',
+    category: "Service",
+    readTime: '~12 min read',
+    keywords: ["marine battery","mercury","winter storage","battery switch","agm"],
+    content: `# The Complete Mercury Boat Battery Guide for Ontario (Switches, Maintenance, Winter Storage)
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Battery-related no-starts are HBW's #1 spring service call. Most Mercury 4-strokes 75 HP and up need at least 800 MCA at startup. Use a starting battery for cranking, a deep cycle for accessories, and dual-purpose only as a compromise. Disconnect or use a battery switch for winter storage, top up monthly with a maintenance charger, and replace at 5-7 years even if it still cranks.
+
+It's the first warm weekend of May. The dock is clear. Your family is in the truck. You climb into the boat, turn the key, and get a slow, grinding click.
+
+Dead battery. Again.
+
+Battery-related no-starts are one of the most common spring service calls our techs handle here at Harris Boat Works. The story is always the same: started fine in October, sat all winter, won't turn over in April. The battery is 6 years old, the terminals are white with corrosion, and the owner had no idea the bilge pump was pulling 15 milliamps all winter.
+
+This guide is the preventive medicine version of that service call. Battery types, switch setups, parasitic drain, winter storage, spring wake-up, everything you need so May long weekend starts the way it's supposed to.
+
+---
+
+## Why Batteries Are Our #1 Spring Service Call
+
+Ontario's boating season runs roughly May to October, which means your battery sits idle for 5 to 6 months. A healthy, fully charged battery can hold its charge in storage. A tired one cannot. And most boaters don't think about their battery at all between haul-out and launch.
+
+Even disconnected, a lead-acid battery slowly self-discharges. Connected to a modern boat with a GPS, stereo, alarm, or automatic bilge pump drawing current continuously, that battery can be dead in 4 to 8 weeks. By the time you're ready to launch, you've got nothing.
+
+The boats that never have this problem aren't running special equipment. They're following a protocol. This guide is that protocol.
+
+---
+
+## The 3 Battery Types, and Which One Your Mercury Needs
+
+### Starting (Cranking) Batteries
+
+Starting batteries deliver a massive burst of current for 1 to 3 seconds to crank an outboard, many thin plates, maximum surface area, designed for short bursts. They degrade quickly if repeatedly drawn down to a low state of charge.
+
+**Key spec:** Marine Cranking Amps (MCA), measured at 32°F. For most Mercury 4-stroke outboards 75 HP and up, a general industry guideline is at least **800 MCA** as a starting point. Always check your engine's owner's manual for the exact requirement for your model.
+
+If you have an outboard and nothing else drawing power, a quality starting battery is all you need.
+
+### Deep Cycle Batteries
+
+Built for sustained, low-current output over a long period. Thicker plates, designed to be drawn down and recharged repeatedly. If you're running a trolling motor, live well, or fish finder all day, you need a dedicated deep cycle battery for those loads, not a starting battery.
+
+### Dual-Purpose Batteries
+
+A reasonable compromise for smaller boats with a single battery and light accessory loads. They don't outperform a dedicated starting or deep cycle battery in their respective jobs, but they beat using the wrong tool entirely.
+
+---
+
+## Battery Group Sizes, 24, 27, and 31
+
+Group size describes physical dimensions, not power output. It tells you what fits in your battery box.
+
+- **Group 24:** Smaller, lighter. Common on smaller outboard boats and runabouts.
+- **Group 27:** Most common on medium fishing boats and pontoons. Good balance of capacity and fit.
+- **Group 31:** Large and high-capacity. Used on bigger boats or dual-battery setups where space isn't a constraint.
+
+Measure your battery compartment before ordering. A group 31 won't fit in a space designed for a group 24.
+
+---
+
+## AGM vs. Flooded Lead-Acid vs. Lithium
+
+### Flooded Lead-Acid (FLA)
+
+Less expensive upfront, widely available, and functional if maintained. Downsides: requires periodic electrolyte level checks (distilled water only), must stay upright, and is sensitive to deep discharge. Fine if budget is the driver and you're willing to do basic maintenance.
+
+### AGM (Absorbent Glass Mat)
+
+The sweet spot for most Ontario boat owners. Sealed and maintenance-free, no water to check, no fumes, no acid spill risk. Better vibration tolerance, slower self-discharge in storage, more tolerant of partial discharge. Costs more upfront, lasts longer in real-world use. If you're buying a replacement today, AGM is almost always the right call.
+
+### Lithium (LiFePO4)
+
+Genuinely excellent, lighter, longer lifespan, very low self-discharge, can be discharged deeper without damage. The catch: 3 to 5 times the cost of an equivalent AGM, and requires a lithium-compatible charger. A standard marine charger can damage a lithium battery. Verify full system compatibility before committing.
+
+For most recreational boats in Ontario, AGM is the right answer. Lithium makes sense for boaters who are out constantly, running heavy accessory loads, or optimizing for weight.
+
+---
+
+## The Battery Switch. What Every Boater Needs to Know
+
+### Why You Need One
+
+A battery switch isolates your battery from the boat's electrical system. In the OFF position, nothing draws power, parasitic drain stops. It's the most effective storage strategy available, and one of the simplest.
+
+### Single vs. Dual Battery Setup
+
+A **single battery setup** with a simple On/Off isolator switch is fine for small boats with minimal accessories. Turn it off, parasitic drain stops.
+
+A **dual battery setup** runs a dedicated starting battery and a deep cycle battery for accessories, managed through a selector switch.
+
+### Off / 1 / 2 / Both. What Each Position Does
+
+- **OFF:** All circuits isolated. Use this for storage and any time the boat is unattended.
+- **1:** Powers the boat from Battery 1 only. Battery 2 is isolated.
+- **2:** Powers the boat from Battery 2 only. Battery 1 is isolated.
+- **BOTH:** Both batteries in parallel. Both charge when the engine runs.
+
+### The "Both" Position Trap
+
+This is how boats come in dead every spring: the switch was left on **BOTH** all winter. With the switch on Both, any parasitic draw pulls from both banks simultaneously. You've doubled your drain exposure. **Never leave the switch on Both for storage.** Turn it to OFF.
+
+One more note: never switch directly from 1 to 2 while the engine is running. Switch to Both first, then to the other bank. Going directly from 1 to 2 with the alternator running can spike voltage and damage electronics.
+
+### Adding an ACR or VSR
+
+An Automatic Charging Relay (ACR) or Voltage Sensitive Relay (VSR) monitors both battery banks and automatically connects them for charging when the engine runs, then isolates them when it shuts off. Both batteries charge on every engine run. Neither can drain the other in storage. No operator input required. If you're doing a dual battery upgrade, an ACR is worth the investment.
+
+---
+
+## Wiring Basics. Where DIY Goes Wrong
+
+This is where our techs find the most deferred maintenance:
+
+- **Cable sizing:** Undersized cables create voltage drop, your motor sees less voltage than the battery is producing, causing hard starting even with a healthy battery. Match cable gauge to run length and load. When in doubt, go heavier.
+- **Terminals:** Loose or corroded connections add resistance. Inspect and tighten every spring.
+- **Fuse the positive run:** Every positive cable should be fused close to the battery. An unfused positive cable is a fire risk.
+- **Ground bus bar:** Individual ground wires back to the battery negative terminal creates a mess. A proper ground bus bar keeps things clean and serviceable.
+
+If you're not confident in your boat's wiring, have a tech look at it. Bad marine wiring doesn't just cause reliability problems, it causes fires.
+
+---
+
+## Parasitic Drain. Why Your Battery Dies in Storage
+
+Parasitic drain is any current draw that continues when the boat is "off." On a modern boat, that includes:
+
+- Automatic bilge pump float switch
+- GPS/chartplotter in standby
+- Stereo memory and clock circuits
+- VHF radio standby circuit
+- Alarm systems
+
+A modern boat can draw 10 to 30 milliamps continuously. At 20 mA, a 100 Ah battery is fully dead in around 200 days, right inside Ontario's winter storage window.
+
+**Solutions, in order of effectiveness:**
+
+1. **Turn the master switch OFF.** Breaks the circuit, stops all parasitic drain. Note: if your boat has an auto bilge pump, verify whether your switch keeps the bilge circuit live, know what you're turning off.
+2. **Disconnect the negative terminal.** Fallback if the switch doesn't fully isolate.
+3. **Remove the battery and store it indoors.** Best option for boats without power access in storage.
+
+---
+
+## The Full Winter Storage Protocol
+
+**Before storage:**
+- Bring the battery to a full charge before putting it away, never store it at 50%.
+- Turn the master switch to OFF.
+- If you won't have access to check on it, remove the battery and bring it inside.
+
+**Storing in place with power access:**
+- Connect a **battery maintainer** (smart charger or float charger), not a regular trickle charger. A trickle charger runs a constant low current that will overcharge a battery over 5 months. A smart maintainer monitors voltage and charges only when needed.
+- Check voltage monthly. Below 12.4V, recharge immediately. Below 12.2V after a full recharge means the battery is failing.
+
+**Storing removed:**
+- Store on a wood shelf or mat. The advice against concrete is largely a myth for modern sealed batteries, concrete doesn't actually discharge them, but keeping terminals off a damp floor is still sensible.
+- Keep the location cool but above freezing. A discharged battery can freeze and crack.
+- Top up the charge if voltage drops below 12.4V.
+
+**Lithium exception:** Lithium batteries are typically stored at a partial state of charge, not full. Check the manufacturer's spec, overcharging in storage degrades the cells.
+
+For the full winterization picture, see our [DIY Mercury Outboard Winterization Guide](https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide) and our post on [winter boat storage options in Ontario](https://www.mercuryrepower.ca/blog/winter-boat-storage-shrinkwrap-vs-indoor-ontario).
+
+---
+
+## Spring Wake-Up Routine
+
+1. **Check resting voltage.** After an hour off charge: 12.6V+ = healthy. 12.4–12.5V = okay. Below 12.4V = recharge and retest. Below 12.2V after a full charge = replace it.
+2. **Load test.** Voltage alone isn't the whole picture, a battery can read 12.6V and still fail under cranking load. Our shop load tests, and most auto parts stores will test for free.
+3. **Inspect terminals.** White or green crust is corrosion. Clean with a paste of baking soda and water, rinse, dry, and apply dielectric grease before reconnecting. This prevents recurrence.
+4. **Check water levels (flooded batteries only).** Top up with distilled water, never tap water.
+5. **Confirm switch position.** Make sure it's in the correct operating position, not OFF.
+6. **Reconnect and crank.** A healthy battery on a healthy engine starts in 2 to 3 seconds.
+
+For the full spring startup sequence, see our [Spring Outboard Commissioning Checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist). If the motor still won't start after confirming the battery is good, see our [Mercury Outboard Won't Start troubleshooting guide](https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting).
+
+---
+
+## When to Replace
+
+Most marine batteries last 4 to 7 years. Replace it when:
+
+- Resting voltage is below 12.2V after a full charge
+- It fails a load test
+- You see swelling, cracking, or electrolyte leakage
+- It's more than 7 years old and spring no-starts are getting more frequent
+
+Pushing a tired battery through one more season is exactly how you end up stranded, calling for a tow. A new AGM group 27 costs a fraction of a service call.
+
+---
+
+## Quick Reference Card
+
+| Battery Type | Best Use | Maintenance | Replace When |
+|---|---|---|---|
+| Starting (cranking) | Outboard cranking only | Inspect terminals spring/fall | Fails load test, or resting V < 12.2V |
+| Deep cycle | Trolling motor, accessories | Inspect spring/fall | Can't hold charge through a day of use |
+| Dual purpose | Single battery, mixed light use | Inspect spring/fall | Fails load test, or resting V < 12.2V |
+| Flooded lead-acid | Budget, maintained | Monthly water level check | 3–5 years, or failure |
+| AGM | Most recreational boats | Spring inspection only | 5–7 years, or failure |
+| Lithium | High-use, weight-sensitive | Per manufacturer spec | Per manufacturer spec |
+
+**Voltage reference:** 12.7V = full · 12.4V = 75% · 12.2V = 50% · Below 11.9V = discharged, possibly damaged
+
+---
+
+## What HBW Techs See Most Often
+
+Five problems account for the majority of battery-related spring service calls:
+
+1. **Corroded terminals.** Often severe enough that a perfectly capable battery was acting dead. A 10-minute cleaning job would have prevented the service call.
+2. **Battery dead from sitting.** Master switch left on, 20 mA of parasitic drain, five months of Ontario winter. The battery hit 10V in February and never came back.
+3. **Wrong battery for the application.** Starting battery running a trolling motor and fish finder all day. Works for a season or two, then fails early. Not a defective battery, a misapplied one.
+4. **Switch left on Both all winter.** Both banks drained, one or both batteries failed. Same cause every time.
+5. **Undersized cables causing voltage drop.** Boat cranks sluggishly, owner buys a new battery, problem persists. The battery was fine, an undersized cable was starving the starter. Correct cable sizing solves it.
+
+If your boat fits any of these descriptions, a pre-season service appointment is the right move. Getting the electrical system right once means not dealing with it again for years.
+
+For more on how on-board monitoring tools can help you track your boat's electrical health in real time, see our [Mercury VesselView and SmartCraft Plain-English Guide](https://www.mercuryrepower.ca/blog/mercury-vesselview-smartcraft-plain-english-guide).
+
+---
+
+## Battery, Switch, or Charging System Question? We Diagnose and Fix All of It.
+
+Battery problems are fixable. They're also preventable, if you know what to check and when.
+
+[Book a service appointment at hbw.wiki/service](https://hbw.wiki/service) and our techs will load test your battery, inspect your terminals, check your alternator output, and give you a straight answer on what it actually needs, before the season starts.
+
+Looking for a replacement battery, smart charger, terminal hardware, or switch components? Check [marinecatalogue.ca](https://www.marinecatalogue.ca/), real prices, no phone tag.
+
+Harris Boat Works. Gores Landing, ON. Est. 1947.  
+[hbw.wiki/service](https://hbw.wiki/service) · 905-342-2153
+`,
+  },
+  {
+    slug: 'ethanol-octane-mercury-outboard-fuel-guide-ontario',
+    title: "Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide",
+    description: "Ontario Mercury outboard owners: here's what octane to use, why ethanol is a real problem for boats, and how to protect your fuel system all season.",
+    image: '/lovable-uploads/hero-mercury-fuel-octane-ethanol.png',
+    author: 'Jay Harris',
+    datePublished: '2026-07-06',
+    dateModified: '2026-07-06',
+    publishDate: '2026-07-06',
+    category: "Service",
+    readTime: '~12 min read',
+    keywords: ["ethanol","octane","marine fuel","mercury outboard","ontario"],
+    content: `# Ethanol, Octane, and Your Mercury Outboard: The Ontario Gas Station Guide
+
+*Last reviewed: 2026-05-07*
+
+> **Quick answer:** Mercury's current 4-stroke outboards run on 87 octane regular gasoline. Premium isn't required and doesn't help. The bigger fuel issue is ethanol: E10 pump gas absorbs water, phase-separates in storage, and gums fuel systems. Use ethanol-free 89 marine gas where available (HBW sells it at the dock), or run fuel stabilizer in every tank if you cannot avoid E10. Older supercharged inline-6 Verados require 91 octane premium.
+
+You're standing at the pump. The motor ran fine last fall. It's been sitting all winter and you want to fill it up and get on the water.
+
+Regular, mid-grade, or premium? What's this E10 label mean?
+
+Nobody at the gas station is going to help you figure this out. So here it is in plain English.
+
+---
+
+## The Ethanol Problem in Plain English
+
+Most Ontario pump gas, including the 87-octane "Regular" you've been putting in for years, is E10. That means 10% ethanol, 90% gasoline.
+
+Ethanol absorbs moisture from the air. In a car, that's not a big deal: you burn through a full tank in a few days. The water never has a chance to settle.
+
+In a boat, you might fill up on the May long weekend and the tank sits for three weeks before you're back on Rice Lake. Or longer. Across a full season, that moisture accumulation adds up. Ethanol pulls water from humid air right through the fuel cap, through the vented lines, and into your tank.
+
+Here's what happens next: the water and ethanol eventually separate from the gasoline, a process called **phase separation**. That water-ethanol mixture sinks to the bottom of the tank, where the fuel pickup sits. So the first thing your motor draws when you try to start it is water, not fuel.
+
+The result: hard starting, rough running, corrosion inside the tank and fuel lines, gummed-up carburetors, and service bills you didn't budget for. It's one of the most common reasons boats come into the shop needing fuel system work after storage.
+
+---
+
+## Why Boats Are Way More Vulnerable Than Cars
+
+Your car doesn't sit. Even if you take a two-week vacation, the tank cycles through in days once you're back. Ethanol's water-absorption issue is largely self-correcting in a car.
+
+Boats are different. A fuel system that sits for two to six months with E10 in it is a fuel system in slow-motion damage mode:
+
+- **Fuel lines and primer bulbs** made from rubber compounds that were designed for straight gasoline can swell, crack, and get soft from ethanol exposure. A primer bulb that won't pump firm is often an early sign.
+- **Carburetors on older and smaller motors** are especially vulnerable. The varnish that E10 leaves behind when it degrades can clog jets and needles to the point where the carb needs to come apart and be cleaned before the engine will run properly.
+- **Gaskets and O-rings** inside carbs and fuel pumps can deteriorate, leading to air leaks, lean running conditions, and stumbling at wide-open throttle.
+- **Steel fuel tanks** can corrode from the inside when water sits at the bottom. Aluminum tanks are more resistant but not immune.
+
+Our techs see this every spring and fall: motor ran fine when it was put away, now it won't start or bogs the moment you push the throttle past half. The [Mercury Outboard Won't Start troubleshooting guide](https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting) covers many of these symptoms, a significant portion trace back to the fuel system.
+
+---
+
+## What Octane Your Mercury Actually Needs
+
+Octane measures detonation resistance, how well fuel resists igniting before the spark plug fires. Higher octane doesn't mean more energy, cleaner running, or more power. What it does is prevent knock in engines designed for higher compression. Put it in an engine that doesn't need it and you've spent extra money for nothing.
+
+Here's the general picture for Mercury outboards:
+
+### Most 4-Stroke Mercury Outboards (Under 250 HP)
+The vast majority of modern Mercury 4-stroke outboards are engineered for **87 octane (R+M)/2 minimum**, the standard pump Regular. Running 91 doesn't help them. Running 87 is the right call.
+
+### Verado and High-Output Pro XS V8 Models
+Mercury's Verado line and certain high-output Pro XS V8 engines are higher-compression motors that require a minimum of **89 or 91 octane**, check the engine sticker or your owner's manual for the specific requirement on your motor. Don't guess. The sticker is there for a reason.
+
+### The Rules in Short
+- Lower octane than required = detonation/knock = engine damage over time
+- Higher octane than required = wasted money, no benefit
+- When in doubt: read the sticker on your motor, not the marketing copy on the pump
+
+The [Mercury Outboard Fuel Efficiency Guide](https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide) covers prop selection and RPM tuning in detail, the performance side of the equation this post doesn't.
+
+---
+
+## The Ethanol-Free Advantage
+
+Ethanol-free gasoline, pure gasoline with no alcohol blended in, doesn't have the water-absorption problem. That changes the equation significantly for boats.
+
+Here's what ethanol-free does for you:
+
+**Storage life.** E10 fuel starts degrading in as little as 30 days, especially in heat. Ethanol-free gasoline holds up for six months or more without a stabilizer. For seasonal boaters, that window matters.
+
+**No phase separation.** Without ethanol, there's nothing to attract and absorb moisture. The water-separation risk disappears.
+
+**Carbureted motors run better on it.** Older motors and small kickers designed before ethanol blends were common run more reliably on ethanol-free. Many outboard manufacturers specifically recommend it.
+
+**Slightly better fuel economy.** Ethanol contains less energy per gallon than gasoline. At a 10% blend the effect is modest, but it's real.
+
+**Longer fuel system life.** Without ethanol attacking rubber compounds over time, lines, primer bulbs, and carb internals last longer.
+
+### HBW Sells Ethanol-Free Fuel On-Site
+
+You don't have to find a specialty station or drive out of your way. **Harris Boat Works carries ethanol-free fuel at the dock.** Fill up on-site, right before you launch or while you're tied up, no trailer required.
+
+Call **905-342-2153** for fuel hours before you come in.
+
+---
+
+## What About Premium Pump Gas (91/93)?
+
+This is where a lot of people make an incorrect assumption: **premium pump gas in Ontario is typically still E10 unless the pump label specifically says otherwise.**
+
+"Premium" and "ethanol-free" are not the same thing. Premium refers to octane rating only. If you're buying premium at a regular gas station, read the pump label. If it doesn't explicitly say "ethanol-free," "no ethanol," or "non-ethanol blend," assume it contains ethanol.
+
+Don't pay premium prices thinking you're protecting your fuel system. Read the label.
+
+---
+
+## Fuel Additives and Stabilizers: When You Actually Need Them
+
+Stabilizers work by slowing the oxidation and degradation of fuel. Here's when to use them and how:
+
+**Any storage over 30 days, use a stabilizer.** This applies even with ethanol-free fuel, though the urgency is lower. With E10, 30 days is the real threshold before fuel quality starts dropping.
+
+**Proven products:** Sta-Bil 360 Marine, Mercury Quickare, and Mercury Quickleen are all well-regarded in the field. Sta-Bil 360 Marine is specifically formulated for marine applications and handles the ethanol/water issue directly. The others are good for general fuel system maintenance and carb cleaning.
+
+**How to add stabilizer correctly:** Add it to the tank, top off with fuel so it mixes in, then run the motor for 10–15 minutes. That circulates the treated fuel all the way through the system, carb, fuel lines, the works. Shut down and store. If you skip the run step, the carb bowls still have untreated fuel sitting in them.
+
+**Don't overdose.** Follow label directions. More is not better.
+
+The [DIY Mercury Outboard Winterization Guide](https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide) walks through the full storage prep sequence.
+
+---
+
+## Mid-Season Fuel Hygiene Tips
+
+Fuel care isn't just a spring-and-fall task. A few habits during the season pay off:
+
+**Top off the tank before leaving the dock.** Less air space means less condensation surface area.
+
+**Use a fuel-water separating filter, and change it every season.** Last line of defense before water reaches your motor. Milky filter bowl = moisture problem.
+
+**Check your fuel lines every spring.** Ethanol-damaged lines feel soft or tacky. A line that looks fine on the outside can be breaking down from the inside.
+
+**If the boat sat with E10 through winter, don't just top up with fresh fuel.** Diluting old, phase-separated fuel doesn't fix the problem. Drain it, inspect the separator, and start fresh.
+
+The [Spring Outboard Commissioning Checklist](https://www.mercuryrepower.ca/blog/spring-outboard-commissioning-checklist) covers this step by step.
+
+---
+
+## Where to Fuel Up on Rice Lake
+
+For Rice Lake boaters, **Harris Boat Works has on-water fuel access**, pull up to the dock, fill up, get back out. Ethanol-free available on-site. No need to trailer to a gas station.
+
+For fuel hours, call **905-342-2153** before heading in.
+
+---
+
+## Common Fuel-Related Symptoms HBW Techs See Every Season
+
+If your motor shows any of these, a fuel system issue is likely somewhere in the chain:
+
+- **Hard starting after storage**, especially if it ran fine when put away
+- **Engine bogs at wide-open throttle**, motor pulls fine off idle but falls flat at full throttle
+- **Primer bulb won't pump firm**, stays soft even after pumping; often a bulb or line issue from ethanol degradation
+- **Varnish in the carb bowl**, yellow or orange residue; degraded fuel left behind
+- **Water in the fuel-water separator**, phase-separated or condensation moisture made it through
+- **Fuel gauge reading inconsistently**, can indicate a sender issue or internal tank corrosion affecting the float
+
+Some are straightforward fixes. Some need a full carb clean or fuel system inspection. Catching them early is cheaper than a mid-season breakdown on the water.
+
+---
+
+## The Yearly Fuel Calendar
+
+A simple seasonal checklist that covers the full year:
+
+### Spring (May)
+- Inspect the fuel-water separator, replace the filter element if it's been more than one season
+- If you stored with E10 and didn't stabilize, drain the tank and start fresh with ethanol-free
+- If you stored properly with stabilizer and ethanol-free, top off with fresh ethanol-free
+- Run the motor briefly at the dock before launching; confirm fuel flow and no hesitation
+
+### Summer (June–August)
+- Top off the tank at the end of each trip or before multi-day sits
+- Inspect the primer bulb and fuel lines periodically, ethanol damage shows up gradually
+- Check the fuel-water separator bowl for water if you're running E10
+
+### Fall (September–October)
+- Add stabilizer to the tank, top off, run the motor 10–15 minutes to circulate treated fuel through the system
+- If storing indoors, a full tank reduces condensation; if storing outdoors, check manufacturer guidance
+- Note the condition of lines and primer bulb, order replacements now if anything looks suspect, not in May when everyone else is calling at the same time
+
+### Winter (November–April)
+- No fuel system action needed, the storage prep does its job
+- If you didn't stabilize properly, note it now so you can address it in spring before everyone else calls at the same time
+
+---
+
+## Quick Decision Card
+
+| Situation | Fuel to Use |
+|---|---|
+| Most Mercury 4-stroke outboards (under 250 HP) | Ethanol-free 87 octane |
+| Verado / high-output Pro XS V8 | Ethanol-free 91 octane (check engine sticker) |
+| Storing more than 30 days (any fuel) | Add marine fuel stabilizer |
+| Unsure of your motor's octane requirement | Check the engine sticker or owner's manual, it's there |
+| Buying "premium" at a regular pump | Read the label, premium ≠ ethanol-free in Ontario |
+
+---
+
+## Need Ethanol-Free Fuel or a Fuel System Service?
+
+We have ethanol-free at the dock and we diagnose fuel system issues every day.
+
+**For service requests** (fuel system inspection, carb cleaning, fuel line replacement, seasonal commissioning): [hbw.wiki/service](https://hbw.wiki/service)
+
+**For fuel and fuel hours:** Call **905-342-2153**
+
+Harris Boat Works. Gores Landing, ON, est. 1947
+`,
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
