@@ -564,6 +564,8 @@ function writePublicMd(relPath, content) {
 // Top 12 high-intent blog posts to mirror as markdown twins.
 // Order = display order in catalog.md "Guides" section.
 const BLOG_TWIN_SLUGS = [
+  'ontario-mercury-outboard-price-guide',
+  'mercury-controls-rigging-guide-ontario',
   'mercury-repower-cost-ontario-2026-cad',
   'mercury-vs-yamaha-outboards-ontario',
   'mercury-vs-yamaha-vs-honda-reliability-2026',
@@ -573,7 +575,7 @@ const BLOG_TWIN_SLUGS = [
   'evinrude-to-mercury-repower-ontario-guide',
   'complete-guide-boat-repower-kawarthas',
   'best-mercury-outboard-rice-lake-fishing',
-  'n',
+  'mercury-motor-families-fourstroke-vs-pro-xs-vs-verado',
   'mercury-prokicker-rice-lake-fishing-guide',
 ];
 
