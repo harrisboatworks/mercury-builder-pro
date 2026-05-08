@@ -37,7 +37,7 @@ content_type: blog_article
 
 The simple version: Harris Boat Works has been at the same dock on Rice Lake, in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965**, most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
-We don't lead with this often. The day-to-day work, selling Mercurys, doing repowers, storing boats, running the rental fleet, feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
+We don't lead with this often. The day-to-day work (selling Mercurys, doing repowers, storing boats, running the rental fleet) feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
 
 This is the version of the HBW story we'd tell if you walked in and asked. It's not a sales pitch. It's an explanation.
 

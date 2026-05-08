@@ -18160,7 +18160,7 @@ Old motor comes off, new Mercury goes on. The work involves:
 
 ### Stage 5: Pickup, on-water verification, drive home (4-8 hours)
 
-We call when ready. You drive back, we walk you through the new motor at the dock, controls, gauges, break-in instructions, service schedule, MPP paperwork.
+We call when ready. You drive back. We walk you through the new motor at the dock: controls, gauges, break-in instructions, service schedule, MPP paperwork.
 
 **Important: the 10-hour break-in period.** Your new Mercury isn't full-RPM-ready for the first 10 hours. We brief you on:
 - First 2 hours: vary throttle, no extended WOT, no sustained high RPM
@@ -18183,7 +18183,7 @@ Real all-in pricing for typical GTA repowers (CAD before HST):
 | **22 ft bowrider → Mercury 200 HP V6 FourStroke** | $28,000–$35,000 | Same + DTS digital throttle |
 | **22 ft bass boat → Mercury 200 HP V6 Pro XS** | $30,000–$36,000 | Same + stainless prop + Pro XS hole-shot tuning |
 
-These ranges include trade-in credit math, if your existing motor is worth $4,000-$8,000 in trade, that's already factored. The configurator shows your specific boat number.
+These ranges include trade-in credit math. If your existing motor is worth $4,000-$8,000 in trade, that's already factored. The configurator shows your specific boat number.
 
 **Compared to buying a new equivalent boat:**
 - New 19 ft runabout package (boat + 150 HP + trailer): $50,000-$80,000+
@@ -18607,7 +18607,7 @@ What's NOT included:
 → **23-ft or 24-ft Cruise pontoon.** Larger fleet, more seating, better for entertaining, full-day rental is the move.
 
 **You're 1-4 anglers wanting to actually fish (walleye, bass, perch).**
-→ **16-ft ProSport fishing boat.** Right tool for the job, manageable size, fishfinder included, gets you to the structure on the lake. Half-day or full-day.
+→ **16-ft ProSport fishing boat.** Right tool for the job: manageable size, fishfinder included, and it gets you to the structure on the lake. Half-day or full-day.
 
 **You're a couple on a date / scouting visit / first-time-on-water.**
 → Smaller is usually better. **20-ft pontoon** is forgiving, easy to handle, comfortable for two.
@@ -18631,7 +18631,7 @@ What's NOT included:
 - Includes time to explore Bewdley + Roseneath shores by water
 - Best for: groups who arrive early and want maximum on-water time
 
-For a GTA family driving up at 8 AM and leaving at 4-5 PM: **half-day morning** is the most-popular pattern, gets you on the water by 10 AM, off by 2 PM, lunch stop at Lakeview Restaurant in Bewdley, drive home before rush hour.
+For a GTA family driving up at 8 AM and leaving at 4-5 PM: **half-day morning** is the most-popular pattern. Gets you on the water by 10 AM, off by 2 PM, lunch stop at Lakeview Restaurant in Bewdley, drive home before rush hour.
 
 ---
 
@@ -18998,7 +18998,7 @@ Your existing boat insurance typically covers winter storage; some policies requ
 
 The simple version: Harris Boat Works has been at the same dock on Rice Lake, in Gores Landing, Ontario, **since 1947**. Same family, three generations, on the same dock decade after decade. We've sold Mercury motors **since 1965**, most of those years as a Platinum Dealer. The marina sits on land we've worked for nearly eight decades.
 
-We don't lead with this often. The day-to-day work, selling Mercurys, doing repowers, storing boats, running the rental fleet, feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
+We don't lead with this often. The day-to-day work (selling Mercurys, doing repowers, storing boats, running the rental fleet) feels too much like just doing the job to merit a lot of "look at us" content. But occasionally a customer asks why they should trust HBW with a $25,000 repower, a season's storage, or a recurring service relationship. **The answer is partly the technical work. The other part is that we've been here long enough to know where the bodies are buried.**
 
 This is the version of the HBW story we'd tell if you walked in and asked. It's not a sales pitch. It's an explanation.
 

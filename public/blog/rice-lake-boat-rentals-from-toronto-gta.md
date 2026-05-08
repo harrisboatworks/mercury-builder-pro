@@ -113,7 +113,7 @@ What's NOT included:
 → **23-ft or 24-ft Cruise pontoon.** Larger fleet, more seating, better for entertaining, full-day rental is the move.
 
 **You're 1-4 anglers wanting to actually fish (walleye, bass, perch).**
-→ **16-ft ProSport fishing boat.** Right tool for the job, manageable size, fishfinder included, gets you to the structure on the lake. Half-day or full-day.
+→ **16-ft ProSport fishing boat.** Right tool for the job: manageable size, fishfinder included, and it gets you to the structure on the lake. Half-day or full-day.
 
 **You're a couple on a date / scouting visit / first-time-on-water.**
 → Smaller is usually better. **20-ft pontoon** is forgiving, easy to handle, comfortable for two.
@@ -137,7 +137,7 @@ What's NOT included:
 - Includes time to explore Bewdley + Roseneath shores by water
 - Best for: groups who arrive early and want maximum on-water time
 
-For a GTA family driving up at 8 AM and leaving at 4-5 PM: **half-day morning** is the most-popular pattern, gets you on the water by 10 AM, off by 2 PM, lunch stop at Lakeview Restaurant in Bewdley, drive home before rush hour.
+For a GTA family driving up at 8 AM and leaving at 4-5 PM: **half-day morning** is the most-popular pattern. Gets you on the water by 10 AM, off by 2 PM, lunch stop at Lakeview Restaurant in Bewdley, drive home before rush hour.
 
 ---
 
