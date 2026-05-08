@@ -3032,7 +3032,7 @@ function stripSchemaMarkdown(s) {
     .replace(/__(.+?)__/g, '$1')
     .replace(/\*(.+?)\*/g, '$1')
     .replace(/`([^`]+)`/g, '$1')
-    .replace(/\s*[ - –]\s*/g, ' - ')
+    .replace(/\s*[–—]\s*/g, ' - ')
     .replace(/\s+/g, ' ')
     .trim();
 }
