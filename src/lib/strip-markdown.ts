@@ -89,13 +89,12 @@ interface ArticleLike {
  */
 export function getCleanDescription(article: ArticleLike): string {
   const raw = article.description || '';
-  const hasMarkdown = /\[[^\]]+\]\([^)]+\)|\*\*|__|`|^#/m.test(raw);
   const stripped = stripMarkdown(raw);
-  if (!hasMarkdown && stripped.length <= 170) {
-    return stripped;
-  }
-  if (!hasMarkdown && stripped.length > 170) {
-    return truncateAtSentence(stripped, 170);
+  // Prefer the article's own description (after stripping markdown) whenever it
+  // exists. Falling back to body content was hitting italics-only lines like
+  // "*Last reviewed: ...*" on cards.
+  if (stripped.length >= 40) {
+    return stripped.length <= 170 ? stripped : truncateAtSentence(stripped, 170);
   }
   // Derive from the first real paragraph of body content.
   const body = (article.content || '').replace(/^\s*#\s+.+\n+/, '');
@@ -106,6 +105,10 @@ export function getCleanDescription(article: ArticleLike): string {
     if (/^[#>!|`]/.test(t)) return false;
     if (/^[-*+]\s/.test(t)) return false;
     if (/^\d+\.\s/.test(t)) return false;
+    // Skip italic-only lines (e.g. "*Last reviewed: 2026-05-07*")
+    if (/^\*[^*]+\*\s*$/.test(t)) return false;
+    if (/^_[^_]+_\s*$/.test(t)) return false;
+    if (/last reviewed/i.test(t) && t.length < 80) return false;
     return true;
   });
   const source = firstPara ? stripMarkdown(firstPara) : stripped;
