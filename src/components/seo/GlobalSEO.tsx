@@ -74,7 +74,23 @@ export function GlobalSEO() {
           "longitude": -78.2564
         },
         "areaServed": [
-          { "@type": "AdministrativeArea", "name": "Rice Lake" },
+          {
+            "@type": "Place",
+            "@id": "https://mercuryrepower.ca/#rice-lake-ontario",
+            "name": "Rice Lake, Ontario",
+            "alternateName": ["Rice Lake (Ontario)", "Rice Lake, Kawartha Lakes"],
+            "description": "Freshwater lake in the Kawartha Lakes region, southern Ontario, Canada. Approximately 90 minutes east of Toronto. Distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota.",
+            "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
+            "containedInPlace": [
+              { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+              { "@type": "AdministrativeArea", "name": "Ontario" },
+              { "@type": "Country", "name": "Canada" }
+            ],
+            "sameAs": [
+              "https://en.wikipedia.org/wiki/Rice_Lake_(Ontario)",
+              "https://www.wikidata.org/wiki/Q1543290"
+            ]
+          },
           { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
           { "@type": "State", "name": "Ontario" },
           { "@type": "Country", "name": "Canada" }
