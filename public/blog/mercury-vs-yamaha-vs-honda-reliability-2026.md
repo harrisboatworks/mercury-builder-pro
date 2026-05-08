@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?"
-description: "Last reviewed: 2026-05-07"
+description: "All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out."
 category: "Buying Guide"
 date_published: 2026-04-24
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury vs Yamaha vs Honda: Which Outboard Is Most Reliable in 2026?
 
-> Last reviewed: 2026-05-07
+> All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out.
 
 **Category:** Buying Guide  
 **Published:** 2026-04-24  

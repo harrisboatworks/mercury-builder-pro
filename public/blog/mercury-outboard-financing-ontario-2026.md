@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury Outboard Financing in Ontario: Your Complete 2026 Guide"
-description: "Last reviewed: 2026-05-07"
+description: "Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash."
 category: "Financing & Value"
 date_published: 2026-04-20
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury Outboard Financing in Ontario: Your Complete 2026 Guide
 
-> Last reviewed: 2026-05-07
+> Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash.
 
 **Category:** Financing & Value  
 **Published:** 2026-04-20  

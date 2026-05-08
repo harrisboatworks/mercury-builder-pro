@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Why Mercury Dominates the Outboard Market in 2026"
-description: "Last reviewed: 2026-05-07"
+description: "Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+..."
 category: "Buying Guide"
 date_published: 2026-02-06
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Why Mercury Dominates the Outboard Market in 2026
 
-> Last reviewed: 2026-05-07
+> Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+...
 
 **Category:** Buying Guide  
 **Published:** 2026-02-06  

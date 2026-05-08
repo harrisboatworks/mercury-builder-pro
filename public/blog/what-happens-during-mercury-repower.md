@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "What Happens During a Mercury Repower (Step-by-Step Process)"
-description: "Last reviewed: 2026-05-07"
+description: "A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking..."
 category: "Repower"
 date_published: 2026-05-05
 date_modified: 2026-05-05
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # What Happens During a Mercury Repower (Step-by-Step Process)
 
-> Last reviewed: 2026-05-07
+> A Mercury repower at HBW takes 2 to 4 days of shop time after we have your boat. The process: hull walk-around, motor selection and quote, deposit and booking...
 
 **Category:** Repower  
 **Published:** 2026-05-05  

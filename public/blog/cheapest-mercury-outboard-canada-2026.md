@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)"
-description: "Last reviewed: 2026-05-07"
+description: "The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats."
 category: "Buying Guide"
 date_published: 2026-04-23
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # What's the Cheapest Mercury Outboard in Canada in 2026? (Full Price Guide by HP)
 
-> Last reviewed: 2026-05-07
+> The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats.
 
 **Category:** Buying Guide  
 **Published:** 2026-04-23  

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)"
-description: "Last reviewed: 2026-05-07"
+description: "The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing."
 category: "Buying Guide"
 date_published: 2026-01-12
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)
 
-> Last reviewed: 2026-05-07
+> The right Mercury for an aluminum fishing boat depends on hull length and use. Tiller motors 9.9 to 25 HP fit small boats (12 to 14 ft) for solo fishing.
 
 **Category:** Buying Guide  
 **Published:** 2026-01-12  

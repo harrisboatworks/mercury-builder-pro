@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Best Mercury Outboard for Lake Simcoe Walleye Fishing (2026)"
-description: "Last reviewed: 2026-05-07"
+description: "Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed."
 category: "Fishing & Local"
 date_published: 2026-04-21
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Best Mercury Outboard for Lake Simcoe Walleye Fishing (2026)
 
-> Last reviewed: 2026-05-07
+> Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed.
 
 **Category:** Fishing & Local  
 **Published:** 2026-04-21  

@@ -8,7 +8,7 @@ location: Gores Landing, ON, Canada
 final_quote_requires_dealer_confirmation: true
 verado_status: special-order only, not in default inventory
 title: "Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)"
-description: "Last reviewed: 2026-05-07"
+description: "The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount..."
 category: "Fishing"
 date_published: 2026-02-06
 date_modified: 2026-05-04
@@ -19,7 +19,7 @@ content_type: blog_article
 
 # Mercury 9.9 ProKicker Rice Lake Fishing Guide (2026)
 
-> Last reviewed: 2026-05-07
+> The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount...
 
 **Category:** Fishing  
 **Published:** 2026-02-06  
