@@ -1552,8 +1552,27 @@ function blogArticleSchema(article) {
   const readTimeMinutes = parseInt(article.readTime, 10) || 5;
   const description = sanitizeSchemaText(article.description);
 
-  const graph = [
-    {
+  const mentionsRiceLake = /rice lake/i.test(article.content || '') || /rice lake/i.test(article.title || '');
+  const riceLakePlaceId = `${SITE_URL}/#rice-lake-ontario`;
+  const riceLakePlace = {
+    "@type": "Place",
+    "@id": riceLakePlaceId,
+    "name": "Rice Lake, Ontario",
+    "alternateName": ["Rice Lake (Ontario)", "Rice Lake, Kawartha Lakes"],
+    "description": "Freshwater lake in the Kawartha Lakes region, southern Ontario, Canada. Located approximately 90 minutes east of Toronto. Distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota.",
+    "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
+    "containedInPlace": [
+      { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+      { "@type": "AdministrativeArea", "name": "Ontario" },
+      { "@type": "Country", "name": "Canada" }
+    ],
+    "sameAs": [
+      "https://en.wikipedia.org/wiki/Rice_Lake_(Ontario)",
+      "https://www.wikidata.org/wiki/Q1543290"
+    ]
+  };
+
+  const articleNode = {
       "@type": "Article",
       "@id": `${url}#article`,
       "headline": sanitizeSchemaText(article.title),
@@ -1573,8 +1592,14 @@ function blogArticleSchema(article) {
         { "@type": "Thing", "name": "Mercury Marine Outboard Motors" },
         { "@type": "Thing", "name": "Boat Motors" }
       ],
-      "mentions": [{ "@type": "Organization", "name": "Mercury Marine" }]
-    },
+      "mentions": [
+        { "@type": "Organization", "name": "Mercury Marine" },
+        ...(mentionsRiceLake ? [{ "@id": riceLakePlaceId }] : [])
+      ],
+      ...(mentionsRiceLake ? { "contentLocation": { "@id": riceLakePlaceId } } : {})
+  };
+
+  const graph = [articleNode, ...(mentionsRiceLake ? [riceLakePlace] : []),
     {
       "@type": "WebPage",
       "@id": `${url}#webpage`,
