@@ -362,7 +362,7 @@ image: /lovable-uploads/annual-mercury-service-cycle.png
 Five things move how often and how aggressively you should service:
 
 - **Hours of use per year.** A motor running 50 hours a season needs different service than a motor running 200 hours a season. More hours means earlier service intervals.
-- **Operating environment.** Sheltered Rice Lake fishing is gentle on a motor. Lake Ontario salmon fishing in 4-foot chop is hard. Saltwater is harder still (most Mercury motors in Canada do not see saltwater regularly).
+- **Operating environment.** Sheltered Rice Lake, Ontario fishing is gentle on a motor. Lake Ontario salmon fishing in 4-foot chop is hard. Saltwater is harder still (most Mercury motors in Canada do not see saltwater regularly).
 - **Storage conditions.** Indoor heated storage is gentlest. Outdoor uncovered with snow load is hardest. Affects what you do at winterization and spring commissioning.
 - **Motor age.** Newer motors under warranty get a different service cadence than older motors. Modern FourStrokes (post-2010) are more service-tolerant than 2-strokes from the 1990s.
 - **Fuel quality.** Ethanol-blended pump gas is the standard fuel in Ontario and is fine for modern motors as long as you do not let it sit untreated. Old gas in old motors is the leading cause of fuel system problems we see at HBW.
@@ -1367,7 +1367,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** The Mercury 9.9 ProKicker is the right kicker for Rice Lake walleye and musky trolling, high gear ratio for slow speeds, electric start, power tilt, and remote-ready. It's a different motor than the standard 9.9 portable. We rig and tiller-link these regularly for Kawartha boats. Build a kicker package at mercuryrepower.ca.
+> **Quick answer:** The Mercury 9.9 ProKicker is the right kicker for Rice Lake, Ontario walleye and musky trolling, high gear ratio for slow speeds, electric start, power tilt, and remote-ready. It's a different motor than the standard 9.9 portable. We rig and tiller-link these regularly for Kawartha boats. Build a kicker package at mercuryrepower.ca.
 
 The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -1655,7 +1655,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** HBW has been on Rice Lake since 1947 and a Mercury dealer since 1965, three generations, current Mercury Marine Platinum Dealer. We post installed pricing online via the configurator, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
+> **Quick answer:** HBW has been on Rice Lake in the Kawarthas (Ontario) since 1947 and a Mercury dealer since 1965, three generations, current Mercury Marine Platinum Dealer. We post installed pricing online via the configurator, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
 
 Harris Boat Works has been a Mercury dealer since 1965. Three generations of HBW have rigged Mercurys, serviced them, and stood behind them. We are a Mercury Platinum dealer, which gives us factory-direct access to support, training, and inventory. We sell Mercury exclusively because the math works for our customers and our shop. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -2518,7 +2518,7 @@ Command Thrust is the recreational pontoon and heavy-boat gearcase. Most HBW cus
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the HP step-up math
 - [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop selection for Command Thrust
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits your use
-- [Best Pontoon Boats for Rice Lake Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoon selection for Kawartha use
+- [Best Pontoon Boats for Rice Lake, Ontario Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoon selection for Kawartha use
 
 ## Ready to repower with Command Thrust?
 
@@ -2647,7 +2647,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** For Rice Lake cottage use, look at 20-22 ft pontoons from Legend, Princecraft, or Sylvan with a Mercury 90-115 Command Thrust. Triple-tube only matters above 150 HP; most family use is fine on twin tubes. Stay inside the capacity plate. We package these regularly, quote at mercuryrepower.ca.
+> **Quick answer:** For Rice Lake, Ontario cottage use, look at 20-22 ft pontoons from Legend, Princecraft, or Sylvan with a Mercury 90-115 Command Thrust. Triple-tube only matters above 150 HP; most family use is fine on twin tubes. Stay inside the capacity plate. We package these regularly, quote at mercuryrepower.ca.
 
 For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust. The lake is sheltered enough that you don't need a tritoon for most uses, but the 22 ft length gives the deck space and capacity that cottage use rewards. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -3402,7 +3402,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     category: 'Buying Guide',
     readTime: '8 min read',
     keywords: ['rice lake fishing boat motor', 'kawartha lakes outboard', 'best motor rice lake', 'walleye boat motor', 'mercury fishing motor ontario'],
-    content: `# Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)
+    content: `# Best Mercury Outboard for Rice Lake, Ontario Fishing (Local Expert's Guide)
 
 *Last reviewed: 2026-05-07*
 
@@ -3616,7 +3616,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 > **Quick answer:** A Kawarthas repower at HBW typically takes 7-14 days at the shop once scheduled: configurator quote, phone call, transport to Gores Landing, install and sea trial, pickup. Most projects land $10,000-$25,000 installed depending on horsepower and rigging. Spring rush adds 2-4 weeks of lead time. Start at mercuryrepower.ca.
 
-Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake. Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake in the Kawarthas (Ontario). Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -3881,7 +3881,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 ## Choosing the Right Mercury for Your Bass Boat
 
-Bass boats demand motors that deliver explosive hole-shot, reliable performance, and the power to run hard all day. Whether you're running Rice Lake looking for smallmouth, heading to a tournament trail, or just want a rig that keeps up, here's how to choose the right Mercury.
+Bass boats demand motors that deliver explosive hole-shot, reliable performance, and the power to run hard all day. Whether you're running Rice Lake, Ontario looking for smallmouth, heading to a tournament trail, or just want a rig that keeps up, here's how to choose the right Mercury.
 
 We've been a Mercury dealer since 1965. These are our honest recommendations.
 
@@ -4888,7 +4888,7 @@ We see these every season:
 ## Related guides
 
 - [Portable Mercury Outboard Guide: 2.5 to 20 HP](/blog/portable-outboard-mercury-guide-2-20hp), small motor selection
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), tiller kicker specifically
+- [Mercury 9.9 ProKicker Rice Lake, Ontario Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), tiller kicker specifically
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP and tiller/remote interact
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), small aluminum applications
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific (always remote)
@@ -5566,7 +5566,7 @@ Portable motors are designed for easy transport but need proper care:
 ## Related guides
 
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), small aluminum applications
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker-specific 9.9 variant
+- [Mercury 9.9 ProKicker Rice Lake, Ontario Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker-specific 9.9 variant
 - [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), control type selection
 - [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), portable motor maintenance
 - [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), break-in for any new Mercury
@@ -5666,7 +5666,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** On Rice Lake, a gas kicker like the Mercury 9.9 ProKicker wins for long trolling days and big-water reach. Electric trolling motors win for stealth and bow-mount precision in shallow weed beds. Most serious anglers run both. We rig either as a complete package, quote at mercuryrepower.ca.
+> **Quick answer:** On Rice Lake in the Kawarthas (Ontario), a gas kicker like the Mercury 9.9 ProKicker wins for long trolling days and big-water reach. Electric trolling motors win for stealth and bow-mount precision in shallow weed beds. Most serious anglers run both. We rig either as a complete package, quote at mercuryrepower.ca.
 
 Short answer: most serious Rice Lake anglers run both. A bow-mount electric for spot-lock and silent precision, a transom kicker for long trolling runs and rough-water reliability. They solve different problems.
 
@@ -5901,7 +5901,7 @@ Every boat has a maximum HP rating. This is your ceiling - never exceed it. But 
 
 ### The Harris Boat Works Method
 
-Bring us your boat info and tell us how you fish. We'll recommend the right motor based on decades of experience matching Mercury motors to boats on Ontario waters (Harris Boat Works has been on Rice Lake since 1947 and a Mercury dealer since 1965).
+Bring us your boat info and tell us how you fish. We'll recommend the right motor based on decades of experience matching Mercury motors to boats on Ontario waters (Harris Boat Works has been on Rice Lake in the Kawarthas (Ontario) since 1947 and a Mercury dealer since 1965).
 
 **[Get a Personalized Motor Recommendation](/quote)**
 
@@ -6322,7 +6322,7 @@ This covers all musky fishing scenarios in the Kawarthas.
 
 **[Build Your Musky Motor Setup](/quote)**
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake, Ontario Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -6460,7 +6460,7 @@ Contact us about electric options
 
 **[Explore Small Lake Motor Options](/quote)**
 
-**See also:** [Best Mercury Outboard for Rice Lake Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
+**See also:** [Best Mercury Outboard for Rice Lake, Ontario Fishing: Local Expert's Guide](/blog/best-mercury-outboard-rice-lake-fishing) and [Best Mercury Outboard for Lake Simcoe Walleye Fishing](/blog/best-mercury-outboard-lake-simcoe-walleye-fishing).
 
 ## Related guides
 
@@ -8352,7 +8352,7 @@ For buyers, "too much" new inventory is actually a benefit. It means more select
 
 On the used side, tighter supply but softening prices (down an estimated 5–10% from pandemic peaks) creates opportunities if you're watching closely and ready to move on clean trade-ins.
 
-## The Segments That Matter for Rice Lake
+## The Segments That Matter for Rice Lake, Ontario
 
 Across North America, not all boat types are moving in lockstep. The segments most relevant to Rice Lake, fishing boats, pontoons, and smaller trailerable rigs, tell a reassuring story:
 
@@ -8587,7 +8587,7 @@ Amid all the noise about tariffs and trade, here's our straightforward guidance:
 3. **Consider origin, but prioritize quality.** Supporting Canadian brands like Legend makes sense, and we're proud to sell them. For engines, Mercury's product quality, market support, and local service network matter more than political headlines. There isn't a realistic Canadian substitute for a modern 90–150 HP outboard, and compromising on engine quality rarely pays off.
 4. **Ask questions.** If you're worried a particular product might be affected by tariffs, or if a price seems out of step with what you expect, talk to us. We see the wholesale side of this and can explain what's driving costs.
 
-Harris Boat Works has been on Rice Lake since 1947. We've seen different trade regimes, different governments, and plenty of economic ups and downs. Through all of it, people keep boating, and the Canada–U.S. marine relationship remains vital on both sides of the border.
+Harris Boat Works has been on Rice Lake in the Kawarthas (Ontario) since 1947. We've seen different trade regimes, different governments, and plenty of economic ups and downs. Through all of it, people keep boating, and the Canada–U.S. marine relationship remains vital on both sides of the border.
 
 We're optimistic that CUSMA will be renewed and that common sense will prevail. In the meantime, our job remains the same: help you get into the right boat and engine package at a fair price, keep it running, and get you out on Rice Lake.
 
@@ -8674,7 +8674,7 @@ We're optimistic that CUSMA will be renewed and that common sense will prevail. 
 
 Not everyone wants to own a boat, and in 2026, that's no longer a barrier to enjoying boating. Across North America, boat rentals, boat clubs, and shared access models are growing faster than most other parts of the marine industry. The idea is simple: you shouldn't have to buy a boat to enjoy the water.
 
-At Harris Boat Works, we've been renting boats on Rice Lake for decades. Long before anyone called it the "sharing economy," we were putting families, anglers, and cottagers into well-maintained rental boats powered by Mercury outboards. Now the rest of the industry is catching up to what marinas like ours have known for years.
+At Harris Boat Works, we've been renting boats on Rice Lake in the Kawarthas (Ontario) for decades. Long before anyone called it the "sharing economy," we were putting families, anglers, and cottagers into well-maintained rental boats powered by Mercury outboards. Now the rest of the industry is catching up to what marinas like ours have known for years.
 
 ## The Size of the Rental Boom
 
@@ -9185,7 +9185,7 @@ For typical Ontario recreational use, SeaPro is overkill. For commercial operato
 
 The Verado is Mercury's premium V8/V10/V12 offshore line (naturally aspirated on current models). Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
 
-Verado is special-order at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. Twin V12 600 HP setups are stunning motors. They are not for Rice Lake.
+Verado is special-order at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. Twin V12 600 HP setups are stunning motors. They are not for Rice Lake, Ontario.
 
 If you do have a Verado-appropriate boat (offshore center console, big yacht), [contact us](/contact) for a special-order quote.
 
@@ -9363,7 +9363,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 Electric propulsion is creeping into more corners of the marine world every year. It started with trolling motors, then kayaks and small tenders. Now we're seeing serious outboard manufacturers like Mercury build full electric families designed for real-world use, not just for trade show stands.
 
-Mercury's **Avator** line is the company's low-voltage electric outboard brand, and it's expanding fast. While we don't expect Rice Lake to go all-electric overnight, Avator already makes sense for some Ontario boaters, and it gives us a glimpse of where the industry is headed.
+Mercury's **Avator** line is the company's low-voltage electric outboard brand, and it's expanding fast. While we don't expect Rice Lake, Ontario to go all-electric overnight, Avator already makes sense for some Ontario boaters, and it gives us a glimpse of where the industry is headed.
 
 ## What Is Mercury Avator?
 
@@ -9542,7 +9542,7 @@ Then we'll give you a frank recommendation on gas, electric, or a hybrid of both
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Rice Lake's 2026 outlook is strong: walleye and crappie populations are healthy, water levels are normal, and weed structure is back after the cleaner winter. Walleye opener is the second Saturday of May. Get the boat serviced before April or expect a wait. Book at mercuryrepower.ca.
+> **Quick answer:** Rice Lake, Ontario's 2026 outlook is strong: walleye and crappie populations are healthy, water levels are normal, and weed structure is back after the cleaner winter. Walleye opener is the second Saturday of May. Get the boat serviced before April or expect a wait. Book at mercuryrepower.ca.
 
 Rice Lake's 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are managed; ice-out timing and water temperatures will set the early-season pattern. The classic species mix and structure on Rice Lake have been consistent for decades. We are looking forward to another good season.
 
@@ -10393,7 +10393,7 @@ If you want to ballpark before you build, here is the honest 2026 picture in CAD
 
 Add 13% HST on top of any of those numbers. The live site shows your specific number after a three-minute build.
 
-We have rigged enough boats on Rice Lake to know that the customers who get burned are the ones who treat the motor as the whole price. The boat is not done when the motor bolts to the transom. It is done when the steering, controls, gauges, prop, and battery are all matched and the boat has been on Rice Lake under power.
+We have rigged enough boats on Rice Lake in the Kawarthas (Ontario) to know that the customers who get burned are the ones who treat the motor as the whole price. The boat is not done when the motor bolts to the transom. It is done when the steering, controls, gauges, prop, and battery are all matched and the boat has been on Rice Lake under power.
 
 ## What changes the answer
 
@@ -11074,7 +11074,7 @@ Mercury outboard financing in Ontario lets you spread the cost of a new motor or
 
 If a repower is the right call for your boat, financing is almost always the right call for the repower itself. Most of our customers do not pay cash. They put a reasonable down payment on the boat, finance the rest at 7.99% over 60 to 84 months, and apply trade-in credit on their old motor. Their monthly number is usually less than what they were already spending on fuel and repairs for the old 2-stroke.
 
-We have set up financing on enough Rice Lake repowers to know that the customers who get burned are the ones who do not run the math before they sign anything. Five minutes on the [financing calculator](/financing) tells you what monthly payment fits your reality. Five minutes after that is a real quote with the actual financed total. Live numbers, no phone calls.
+We have set up financing on enough Rice Lake, Ontario repowers to know that the customers who get burned are the ones who do not run the math before they sign anything. Five minutes on the [financing calculator](/financing) tells you what monthly payment fits your reality. Five minutes after that is a real quote with the actual financed total. Live numbers, no phone calls.
 
 ## What changes the answer
 
@@ -11235,7 +11235,7 @@ Build a quote on the [motor selection page](/quote/motor-selection). Three minut
 
 > **Quick answer:** For Lake Simcoe walleye, most anglers want a 90-150 HP FourStroke main for the run-out plus a Mercury 9.9 ProKicker for slow trolling. Simcoe gets rough, pick a hull rated for it and stay inside the capacity plate. Build a main-and-kicker package at mercuryrepower.ca.
 
-Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed. The right Mercury for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Lake Simcoe is bigger water than Rice Lake, Ontario. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed. The right Mercury for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -12215,7 +12215,7 @@ The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller m
 
 ## Quick recommendation
 
-Do not buy the wrong motor for your boat just because it is cheap. We have watched too many Rice Lake customers buy the smallest motor they could afford, spend three seasons unable to get on plane against the afternoon wind, then trade it in for what they should have bought the first time. That is paying twice for the same boat-equipping job.
+Do not buy the wrong motor for your boat just because it is cheap. We have watched too many Rice Lake, Ontario customers buy the smallest motor they could afford, spend three seasons unable to get on plane against the afternoon wind, then trade it in for what they should have bought the first time. That is paying twice for the same boat-equipping job.
 
 If you are looking at the cheapest end of the lineup, the right starting question is: what is my boat actually going to do? A tender for a sailboat, a kicker for a pontoon, or a fishing solo on a 14-foot aluminum at 5 mph have completely different right answers. The cheapest Mercury that solves your actual problem is usually one or two HP classes up from the absolute lowest motor on the lot.
 
@@ -12567,7 +12567,7 @@ We have been a Mercury dealer since 1965. The depth of expertise, parts inventor
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** For Rice Lake under $30,000, look at 17-19 ft aluminum fishing hulls (Lund, Princecraft, Crestliner) with a Mercury 60-90 FourStroke installed. Pontoons in that budget are typically used. We can quote either as a complete installed package at mercuryrepower.ca.
+> **Quick answer:** For Rice Lake, Ontario under $30,000, look at 17-19 ft aluminum fishing hulls (Lund, Princecraft, Crestliner) with a Mercury 60-90 FourStroke installed. Pontoons in that budget are typically used. We can quote either as a complete installed package at mercuryrepower.ca.
 
 Under $30,000 CAD on Rice Lake, your three best paths in 2026 are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon (often with a recent repower or due for one), or a clean used hull paired with a Mercury repower. We rig and service all three at HBW. The smart money usually skips brand-new entry-level boats and goes into a quality used hull plus a current Mercury motor instead.
 
@@ -12750,7 +12750,7 @@ A 16-18 ft aluminum console or tiller boat (Lund, Crestliner, Princecraft, Lowe 
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Toronto to Rice Lake is roughly 90 minutes via the 401 and Highway 28. Tire pressure, working trailer lights, and a tested coupler are non-negotiable. Plan your launch. Bewdley, Hastings, and Gores Landing all work. Pickup is in person at HBW; we don't ship boats. Quote at mercuryrepower.ca.
+> **Quick answer:** Toronto to Rice Lake, Ontario is roughly 90 minutes via the 401 and Highway 28. Tire pressure, working trailer lights, and a tested coupler are non-negotiable. Plan your launch. Bewdley, Hastings, and Gores Landing all work. Pickup is in person at HBW; we don't ship boats. Quote at mercuryrepower.ca.
 
 Rice Lake sits about 90 minutes northeast of Toronto, close enough for a long weekend, far enough that a lot of boaters have never made the drive with a trailer hitched on. If you're doing it for the first time, or the first time in a while, the trip is straightforward. But there are enough small things that can go wrong between the 401 and the Gores Landing boat ramp that a little prep goes a long way.
 
@@ -13481,7 +13481,7 @@ Repower is the right call when:
 
 - **Hull is 5 to 20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left. Most fiberglass hulls in this range need careful inspection but are often fine.
 - **Existing seats, helm, and electronics still work or are fixable.** A motor swap does not require replacing the rest of the boat.
-- **The hull fits your use case.** 16 ft aluminum console for fishing on Rice Lake is the right tool. A new 16 ft aluminum console will not feel different on the water.
+- **The hull fits your use case.** 16 ft aluminum console for fishing on Rice Lake in the Kawarthas (Ontario) is the right tool. A new 16 ft aluminum console will not feel different on the water.
 - **You like the boat.** Sentimental and lifestyle attachment matters. The boats people keep for 20+ years are usually boats they love.
 - **You plan to keep the boat 5+ more years.** The longer the keep, the more the repower math wins.
 
@@ -14703,7 +14703,7 @@ For Mercury technical reference detail, see our [Mercury 2026 outboard lineup gu
 - [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), control type
 - [Mercury Outboard Rigging Costs Explained](/blog/mercury-outboard-rigging-costs-ontario), rigging detail
 - [Portable Mercury Outboard Guide 2.5 to 20 HP](/blog/portable-outboard-mercury-guide-2-20hp), small motor specifics
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker shaft selection
+- [Mercury 9.9 ProKicker Rice Lake, Ontario Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker shaft selection
 
 ## Ready to spec the right shaft?
 
@@ -15430,7 +15430,7 @@ Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear
     category: "Lifestyle",
     readTime: "11 min read",
     keywords: ["Rice Lake boating guide", "Rice Lake fishing 2026", "Rice Lake boat launch", "Rice Lake sunken railway", "FMZ 17 fishing regulations", "Rice Lake walleye opener"],
-    content: `# Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes
+    content: `# Rice Lake, Ontario Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes
 
 *Last reviewed: 2026-05-07*
 
@@ -16761,7 +16761,7 @@ That's the honest answer. Now the breakdown.
 
 If you keep your boat in the water at a marina seasonally instead of trailering it, the slip is one of the biggest line items.
 
-**HBW Rice Lake slip pricing (2026):**
+**HBW Rice Lake, Ontario slip pricing (2026):**
 
 - **Seasonal slip:** $48/ft, minimum $960. So a 20-ft boat = $960; a 24-ft pontoon = $1,152.
 - **Transient (overnight):** $1.00/ft per night, minimum $20. Weekly $5/ft. Monthly $10/ft.
@@ -17885,7 +17885,7 @@ Three things actually matter when evaluating an Ontario Mercury dealer:
 2. **Diagnostic and rigging expertise**
 3. **Pricing transparency and post-sale service relationship**
 
-Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake. We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
+Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
 
 ---
 
@@ -18529,7 +18529,7 @@ Yes, that's a common combo. October drop-off, complete annual service + winteriz
     category: "Boating Lifestyle",
     readTime: '12 min read',
     keywords: ["Rice Lake boat rentals", "boat rentals near Toronto", "Kawarthas pontoon rentals", "family boat rental Ontario", "day trip boat rental GTA", "pontoon rental Toronto"],
-    content: `# Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide
+    content: `# Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
 
 *Last reviewed: 2026-05-07*
 
@@ -18774,7 +18774,7 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 
 Every September, GTA boaters face the same decision: where do I store the boat for winter? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
 
-Most GTA boat owners haven't considered driving the boat to Rice Lake for winter storage, because the assumption is "rural = cheaper but inconvenient." Half right. **The pricing is roughly equivalent. The convenience is similar. What's different is who works on the boat all winter.**
+Most GTA boat owners haven't considered driving the boat to Rice Lake, Ontario for winter storage, because the assumption is "rural = cheaper but inconvenient." Half right. **The pricing is roughly equivalent. The convenience is similar. What's different is who works on the boat all winter.**
 
 We've stored 311+ boats per year for the last several seasons. Many of them come from the GTA. This is the version of the storage decision we'd walk through if you called and asked.
 
@@ -18996,7 +18996,7 @@ Your existing boat insurance typically covers winter storage; some policies requ
     category: "About HBW",
     readTime: '12 min read',
     keywords: ["Harris Boat Works since 1947", "third generation marina Ontario", "historic Rice Lake marina", "trusted boat dealer Ontario", "family marina since 1947", "Mercury dealer history Canada"],
-    content: `# Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations
+    content: `# Harris Boat Works Since 1947: The Rice Lake, Ontario Institution Built on Three Generations
 
 *Last reviewed: 2026-05-07*
 
@@ -19213,7 +19213,7 @@ Yes, we're a working family marina. Walking through the slips, watching the rent
     category: "Boating Lifestyle",
     readTime: '~9 min read',
     keywords: ["pontoon problems","rice lake","pontoon maintenance","mercury outboard","pontoon hp"],
-    content: `# Common Pontoon Boat Problems on Rice Lake (And How to Avoid Them)
+    content: `# Common Pontoon Boat Problems on Rice Lake in the Kawarthas (Ontario) (And How to Avoid Them)
 
 *Last reviewed: 2026-05-07*
 
@@ -19407,7 +19407,7 @@ Every spring, thousands of Ontario buyers hit Kijiji, Facebook Marketplace, and 
 
 The boats that look like deals, priced just low enough to feel exciting, described with just enough vagueness to keep you curious, are often the ones that will cost you the most. Not at purchase. After. When the season has started, the family is waiting, and the motor won't run.
 
-We've been servicing and selling boats on Rice Lake since 1947. We've seen what comes through the door after a bad used-boat purchase. This list is what we'd tell a friend.
+We've been servicing and selling boats on Rice Lake in the Kawarthas (Ontario) since 1947. We've seen what comes through the door after a bad used-boat purchase. This list is what we'd tell a friend.
 
 ---
 
@@ -19587,7 +19587,7 @@ Or call us at 905-342-2153. We're at Rice Lake, Gores Landing, and we've been ha
     category: "Mercury Outboards",
     readTime: '~12 min read',
     keywords: ["boat trim","mercury outboard","active trim","rice lake","fuel economy"],
-    content: `# How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)
+    content: `# How to Trim Your Boat With a Mercury Outboard (Rice Lake, Ontario Boater's Guide)
 
 *Last reviewed: 2026-05-07*
 
@@ -19770,7 +19770,7 @@ Questions about Active Trim or whether your boat is rigged for it? Build a quote
 
 There's a lot happening at a public boat ramp on a Saturday morning. Someone's arguing with their winch. Someone else is blocking the lane to dig through the cab for a strap they "definitely packed." And somewhere in the background, a guy is already knee-deep in the water realizing he forgot the drain plug.
 
-We've been on Rice Lake since 1947. We've seen most of these, sometimes twice before 9 a.m. This post covers the ten trailering mistakes that reliably ruin Ontario weekends, with enough detail to actually fix them.
+We've been on Rice Lake in the Kawarthas (Ontario) since 1947. We've seen most of these, sometimes twice before 9 a.m. This post covers the ten trailering mistakes that reliably ruin Ontario weekends, with enough detail to actually fix them.
 
 If you're headed to the Kawarthas, the Trent-Severn, or Rice Lake this season, read this before you hook up.
 
@@ -20344,7 +20344,7 @@ A 30-minute inspection won't catch everything, but it will catch the things that
     category: "Boating Lifestyle",
     readTime: '~9 min read',
     keywords: ["docking","wind","rice lake","boat handling","single outboard"],
-    content: `# Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)
+    content: `# Docking a Boat in Wind on Rice Lake in the Kawarthas (Ontario) (No Bow Thruster, No Drama)
 
 *Last reviewed: 2026-05-07*
 
@@ -20537,7 +20537,7 @@ No pressure. But if you want to stop having that heart-rate moment every time yo
 
 ---
 
-There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake afternoon chop, or get 10 people up to plane before dark, the motor gives up.
+There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake, Ontario afternoon chop, or get 10 people up to plane before dark, the motor gives up.
 
 This post is the answer to the question every pontoon buyer eventually asks: *What HP do I actually need?* Not the minimum the boat can run. Not what the previous owner had. The HP that makes your boat do what you bought it to do.
 
@@ -21058,7 +21058,7 @@ Most Ontario pump gas, including the 87-octane "Regular" you've been putting in 
 
 Ethanol absorbs moisture from the air. In a car, that's not a big deal: you burn through a full tank in a few days. The water never has a chance to settle.
 
-In a boat, you might fill up on the May long weekend and the tank sits for three weeks before you're back on Rice Lake. Or longer. Across a full season, that moisture accumulation adds up. Ethanol pulls water from humid air right through the fuel cap, through the vented lines, and into your tank.
+In a boat, you might fill up on the May long weekend and the tank sits for three weeks before you're back on Rice Lake in the Kawarthas (Ontario). Or longer. Across a full season, that moisture accumulation adds up. Ethanol pulls water from humid air right through the fuel cap, through the vented lines, and into your tank.
 
 Here's what happens next: the water and ethanol eventually separate from the gasoline, a process called **phase separation**. That water-ethanol mixture sinks to the bottom of the tank, where the fuel pickup sits. So the first thing your motor draws when you try to start it is water, not fuel.
 
@@ -21328,7 +21328,7 @@ The portable class covers everything from a 2.5 HP pull-start for a dinghy or ca
 - **Command Thrust (CT).** Bigger gearcase, more low-end torque. Designed for pontoons and heavy hulls. Adds $400–$1,000 over the standard gearcase. Worth it for any 9.9 HP motor going on a pontoon.
 - **EFI vs. carb.** Most modern Mercurys are EFI now. The 2.5–6 HP class still has carb models for simplicity and lighter weight.
 
-**Real-world pairings on Rice Lake:** A 9.9 MLH on a 14 ft Lund tin boat for fishing is around $2,999 CAD plus install. A 9.9 ELPT Command Thrust ProKicker on a 20 ft pontoon as a trolling motor is around $4,900 plus install. Same HP, very different motor, and a $2,000 difference in price for legitimate reasons.
+**Real-world pairings on Rice Lake in the Kawarthas (Ontario):** A 9.9 MLH on a 14 ft Lund tin boat for fishing is around $2,999 CAD plus install. A 9.9 ELPT Command Thrust ProKicker on a 20 ft pontoon as a trolling motor is around $4,900 plus install. Same HP, very different motor, and a $2,000 difference in price for legitimate reasons.
 
 [Browse all portable Mercury models in the quote builder.](https://www.mercuryrepower.ca/quote/motor-selection)
 
@@ -21580,7 +21580,7 @@ Three ways to use this guide:
 
 If you've gotten a Mercury repower quote that just lists "rigging: $2,500" with no breakdown, this guide is for you. Rigging is the part of the quote dealers love to leave vague. We don't operate that way. The components you choose for controls, steering, gauges, wiring, and prop are real engineering decisions, with real cost tradeoffs, and they affect how the boat actually feels at the helm.
 
-This is the canonical reference for Mercury repower rigging in Ontario. It covers the three core decisions (controls, steering, gauges), plus the wiring and prop work that come with them, for Mercury motors from 40 HP up through the 225 HP V6. We pulled the configurations from the actual repowers we do at Harris Boat Works on Rice Lake, with real CAD prices and the reasoning behind each pairing.
+This is the canonical reference for Mercury repower rigging in Ontario. It covers the three core decisions (controls, steering, gauges), plus the wiring and prop work that come with them, for Mercury motors from 40 HP up through the 225 HP V6. We pulled the configurations from the actual repowers we do at Harris Boat Works on Rice Lake in the Kawarthas (Ontario), with real CAD prices and the reasoning behind each pairing.
 
 If you're shopping a portable (under 25 HP) or a Verado V8/V10/V12, the rules are different. We focus here on the 40-225 HP repower zone where the bulk of Ontario decisions get made.
 
