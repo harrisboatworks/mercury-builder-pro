@@ -21294,7 +21294,7 @@ So "9.9 ELHPT Command Thrust ProKicker EFI FourStroke" decodes as: **9.9** HP, *
 
 Translation: a kicker motor for serious anglers. The price is around $5,000 CAD because of all those features stacked together. A plain 9.9 MH (manual start, tiller, no power trim) at the bottom of the line is $2,999 CAD. Same horsepower. Different motor entirely.
 
-Full breakdown of model codes: [Mercury serial number and model code decoder](https://www.mercuryrepower.ca/blog/mercury-serial-number-decoder).
+Full breakdown of model codes: [Mercury serial number and model code decoder](https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number).
 
 ---
 
@@ -21349,7 +21349,7 @@ This is the bread and butter of Ontario Mercury sales. Mid-range Mercurys power 
 
 **Things to know about this tier.**
 
-**Pro XS vs. FourStroke at 115 HP.** Both are 4-stroke engines on the same platform. Pro XS is tuned for performance: quicker hole shot, higher top end, sport-oriented prop selection. FourStroke is tuned for smoothness and fuel economy. For a pontoon or family bowrider, FourStroke. For a bass boat or someone who wants snappier acceleration on a 19 ft runabout, Pro XS. Same price within $50, so the choice is about character, not money. Full breakdown: [Pro XS vs. FourStroke buyer's guide](https://www.mercuryrepower.ca/blog/mercury-pro-xs-vs-fourstroke-which-is-right-for-your-boat).
+**Pro XS vs. FourStroke at 115 HP.** Both are 4-stroke engines on the same platform. Pro XS is tuned for performance: quicker hole shot, higher top end, sport-oriented prop selection. FourStroke is tuned for smoothness and fuel economy. For a pontoon or family bowrider, FourStroke. For a bass boat or someone who wants snappier acceleration on a 19 ft runabout, Pro XS. Same price within $50, so the choice is about character, not money. Full breakdown: [Pro XS vs. FourStroke buyer's guide](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado).
 
 **Command Thrust matters for pontoons.** If you're putting a 60–115 HP motor on a 20–24 ft pontoon, the Command Thrust gearcase is the right call almost every time. It's a bigger gearcase with more torque, designed exactly for the high-drag, low-RPM demands of pontoon hulls. The price premium ($300–$500 over standard) pays for itself in performance and engine longevity. We wrote a deep-dive: [Mercury Command Thrust guide for pontoons](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats).
 
@@ -21430,7 +21430,7 @@ Mercury Canada runs promotions through the season: typically spring repower seas
 2. **Bonus warranty:** an extra 2–3 years on top of Mercury's standard 3-year warranty (so 5- or 6-year total coverage on eligible motors during the promo window).
 3. **Financing incentives:** low-rate financing through Mercury's finance partner.
 
-**Important:** Bonus warranty is **promotional**, not standard. Mercury's standard warranty in Canada is **3 years, concurrent (not stacked)**. When you see "up to 7 years!" advertised, that's a promo combining the 3-year standard with bonus years that change every season. If a dealer advertises 7-year warranty without saying "during current Mercury promotion," ask which promo they're referencing. Check our [Mercury warranty guide](https://www.mercuryrepower.ca/blog/mercury-warranty-guide) for the full breakdown.
+**Important:** Bonus warranty is **promotional**, not standard. Mercury's standard warranty in Canada is **3 years, concurrent (not stacked)**. When you see "up to 7 years!" advertised, that's a promo combining the 3-year standard with bonus years that change every season. If a dealer advertises 7-year warranty without saying "during current Mercury promotion," ask which promo they're referencing. Check our [Mercury warranty guide](https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026) for the full breakdown.
 
 The current active promos (as of this article's last reviewed date) are reflected in the dealer prices on our [pricing reference page](https://www.mercuryrepower.ca/pricing-reference). When promos roll over, we update the page.
 
@@ -21473,7 +21473,7 @@ No. The dealer price is the motor on a pallet at the shop. Installation, rigging
 Sometimes the headline price is lower, but the math usually doesn't work out. Cross-border duty, brokerage, shipping, currency conversion, and Mercury Canada warranty restrictions on grey-market motors typically erase any savings. Mercury's Canadian warranty applies only to motors purchased through Canadian dealers. We strongly recommend buying domestic.
 
 **How long is the Mercury warranty?**
-Mercury's standard warranty in Canada is **3 years, concurrent** (not 3-years-plus-3-years stacked). Mercury runs promotions periodically that add 2–3 bonus years for a total of 5- or 6-year coverage during the promo window. When you see longer warranty terms advertised, those are promotional, not standard. Full breakdown: [Mercury warranty guide for Ontario buyers](https://www.mercuryrepower.ca/blog/mercury-warranty-guide).
+Mercury's standard warranty in Canada is **3 years, concurrent** (not 3-years-plus-3-years stacked). Mercury runs promotions periodically that add 2–3 bonus years for a total of 5- or 6-year coverage during the promo window. When you see longer warranty terms advertised, those are promotional, not standard. Full breakdown: [Mercury warranty guide for Ontario buyers](https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026).
 
 **Can I order any Mercury motor, or only what's in stock?**
 Both. Our [pricing reference](https://www.mercuryrepower.ca/pricing-reference) shows status for every motor: "In stock" means we have it physically at the shop, "Available to order" means we can order it from Mercury Canada with a typical 1–4 week lead time. Both are real, fully warrantied options. The quote builder lets you build either one.
@@ -21498,12 +21498,12 @@ Three ways to use this guide:
 ## Related Guides
 
 - [Why Mercury dealers hide prices online (and why we don't)](https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online)
-- [Mercury Pro XS vs. FourStroke: which is right for your boat?](https://www.mercuryrepower.ca/blog/mercury-pro-xs-vs-fourstroke-which-is-right-for-your-boat)
+- [Mercury Pro XS vs. FourStroke: which is right for your boat?](https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
 - [Mercury Command Thrust guide for pontoon boats](https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats)
 - [Pontoon HP sizing decision tree (Ontario)](https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario)
 - [Mercury repower GTA: how Toronto buyers do this](https://www.mercuryrepower.ca/blog/mercury-repower-gta-toronto-destination)
-- [Mercury warranty guide for Ontario buyers](https://www.mercuryrepower.ca/blog/mercury-warranty-guide)
-- [Mercury serial number and model code decoder](https://www.mercuryrepower.ca/blog/mercury-serial-number-decoder)
+- [Mercury warranty guide for Ontario buyers](https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026)
+- [Mercury serial number and model code decoder](https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number)
 - [Best Mercury dealer in Ontario: the HBW difference](https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference)
 
 ---
@@ -21550,7 +21550,7 @@ Three ways to use this guide:
       },
       {
         question: 'How long is the Mercury warranty?',
-        answer: 'Mercury\'s standard warranty in Canada is **3 years, concurrent** (not 3-years-plus-3-years stacked). Mercury runs promotions periodically that add 2–3 bonus years for a total of 5- or 6-year coverage during the promo window. When you see longer warranty terms advertised, those are promotional, not standard. Full breakdown: [Mercury warranty guide for Ontario buyers](https://www.mercuryrepower.ca/blog/mercury-warranty-guide).',
+        answer: 'Mercury\'s standard warranty in Canada is **3 years, concurrent** (not 3-years-plus-3-years stacked). Mercury runs promotions periodically that add 2–3 bonus years for a total of 5- or 6-year coverage during the promo window. When you see longer warranty terms advertised, those are promotional, not standard. Full breakdown: [Mercury warranty guide for Ontario buyers](https://www.mercuryrepower.ca/blog/mercury-outboard-warranty-canada-2026).',
       },
       {
         question: 'Can I order any Mercury motor, or only what\'s in stock?',
