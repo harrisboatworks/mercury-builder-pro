@@ -75,9 +75,12 @@ export function BlogSEO({ article }: BlogSEOProps) {
           { "@type": "Thing", "name": "Boat Motors" }
         ],
         "mentions": [
-          { "@type": "Organization", "name": "Mercury Marine" }
-        ]
+          { "@type": "Organization", "name": "Mercury Marine" },
+          ...(mentionsRiceLake ? [{ "@id": riceLakePlaceId }] : [])
+        ],
+        ...(mentionsRiceLake ? { "contentLocation": { "@id": riceLakePlaceId } } : {})
       },
+      ...(mentionsRiceLake ? [riceLakePlace] : []),
       {
         "@type": "WebPage",
         "@id": `${url}#webpage`,
