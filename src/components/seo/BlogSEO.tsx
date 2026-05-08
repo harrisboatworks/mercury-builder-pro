@@ -13,6 +13,27 @@ export function BlogSEO({ article }: BlogSEOProps) {
 
   // Calculate word count from content
   const wordCount = article.content.trim().split(/\s+/).length;
+
+  // Detect Rice Lake mentions for geographic disambiguation (Ontario vs MN/WI)
+  const mentionsRiceLake = /rice lake/i.test(article.content) || /rice lake/i.test(article.title);
+  const riceLakePlaceId = `${SITE_URL}/#rice-lake-ontario`;
+  const riceLakePlace = {
+    "@type": "Place",
+    "@id": riceLakePlaceId,
+    "name": "Rice Lake, Ontario",
+    "alternateName": ["Rice Lake (Ontario)", "Rice Lake, Kawartha Lakes"],
+    "description": "Freshwater lake in the Kawartha Lakes region, southern Ontario, Canada. Located approximately 90 minutes east of Toronto. Distinct from Rice Lake, Wisconsin and Rice Lake, Minnesota.",
+    "geo": { "@type": "GeoCoordinates", "latitude": 44.1614, "longitude": -78.0369 },
+    "containedInPlace": [
+      { "@type": "AdministrativeArea", "name": "Kawartha Lakes" },
+      { "@type": "AdministrativeArea", "name": "Ontario" },
+      { "@type": "Country", "name": "Canada" }
+    ],
+    "sameAs": [
+      "https://en.wikipedia.org/wiki/Rice_Lake_(Ontario)",
+      "https://www.wikidata.org/wiki/Q1543290"
+    ]
+  };
   
   // Parse read time to minutes for timeRequired (e.g., "8 min read" -> 8)
   const readTimeMinutes = parseInt(article.readTime) || 5;
@@ -54,9 +75,12 @@ export function BlogSEO({ article }: BlogSEOProps) {
           { "@type": "Thing", "name": "Boat Motors" }
         ],
         "mentions": [
-          { "@type": "Organization", "name": "Mercury Marine" }
-        ]
+          { "@type": "Organization", "name": "Mercury Marine" },
+          ...(mentionsRiceLake ? [{ "@id": riceLakePlaceId }] : [])
+        ],
+        ...(mentionsRiceLake ? { "contentLocation": { "@id": riceLakePlaceId } } : {})
       },
+      ...(mentionsRiceLake ? [riceLakePlace] : []),
       {
         "@type": "WebPage",
         "@id": `${url}#webpage`,
