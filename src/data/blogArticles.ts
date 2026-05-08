@@ -40,7 +40,13 @@ export function isArticlePublished(article: BlogArticle): boolean {
 
 // Get all published articles (filters out future-dated articles)
 export function getPublishedArticles(): BlogArticle[] {
-  return blogArticles.filter(isArticlePublished);
+  return blogArticles
+    .filter(isArticlePublished)
+    .sort((a, b) => {
+      const da = new Date(a.publishDate || a.datePublished || 0).getTime();
+      const db = new Date(b.publishDate || b.datePublished || 0).getTime();
+      return db - da;
+    });
 }
 
 // Get scheduled (unpublished) articles count
@@ -21517,9 +21523,9 @@ Three ways to use this guide:
 `,
     image: '/lovable-uploads/hero-ontario-mercury-price-guide.png',
     author: 'Jay Harris',
-    datePublished: '2026-07-10',
-    dateModified: '2026-07-10',
-    publishDate: '2026-07-10',
+    datePublished: '2026-05-08',
+    dateModified: '2026-05-08',
+    publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~14 min read',
     keywords: ['mercury outboard prices', 'ontario', 'cad pricing', 'repower', 'buying guide'],
@@ -21988,9 +21994,9 @@ Harris Boat Works has been on Rice Lake since 1947, a Mercury dealer since 1965,
 `,
     image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
     author: 'Jay Harris',
-    datePublished: '2026-07-13',
-    dateModified: '2026-07-13',
-    publishDate: '2026-07-13',
+    datePublished: '2026-05-08',
+    dateModified: '2026-05-08',
+    publishDate: '2026-05-08',
     category: 'Mercury Outboards',
     readTime: '~16 min read',
     keywords: ['mercury rigging', 'boat controls', 'hydraulic steering', 'vesselview', 'ontario repower'],
@@ -22050,5 +22056,10 @@ export function getArticleBySlug(slug: string): BlogArticle | undefined {
 export function getRelatedArticles(currentSlug: string, limit: number = 3): BlogArticle[] {
   return blogArticles
     .filter(article => article.slug !== currentSlug && isArticlePublished(article))
+    .sort((a, b) => {
+      const da = new Date(a.publishDate || a.datePublished || 0).getTime();
+      const db = new Date(b.publishDate || b.datePublished || 0).getTime();
+      return db - da;
+    })
     .slice(0, limit);
 }
