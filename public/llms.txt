@@ -70,6 +70,8 @@ Each motor page includes pricing in CAD, availability, specifications, and a lin
 
 Expert guides for Ontario boaters (selected — full list at /blog):
 
+- Ontario Mercury Outboard Price Guide (2026) — Real CAD prices by HP tier — /blog/ontario-mercury-outboard-price-guide
+- Mercury Controls & Rigging Guide (2026) — Compatibility matrix by HP class — /blog/mercury-controls-rigging-guide-ontario
 - How Much Does a Mercury Repower Cost in Ontario? (2026 CAD Price Guide) — /blog/mercury-repower-cost-ontario-2026-cad
 - What's the Cheapest Mercury Outboard in Canada in 2026? — /blog/cheapest-mercury-outboard-canada-2026
 - Mercury 115 vs 150 HP: Which Outboard Is Right for Your Ontario Boat? — /blog/mercury-115-vs-150-hp-outboard-ontario
