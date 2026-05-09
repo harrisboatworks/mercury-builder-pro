@@ -9485,18 +9485,6 @@ Then we'll give you a frank recommendation on gas, electric, or a hybrid of both
         answer: 'On a 13 ft boat with the Avator 7.5e, expect about 60 minutes / 5 miles at full throttle or up to 19 hours / 34 miles at 25% throttle on a single 1 kWh battery. Higher-power models with multiple battery packs extend range significantly. Real-world range depends on boat weight, wind, current, and throttle use.'
       },
       {
-        question: 'Is an electric outboard practical for Rice Lake?',
-        answer: 'For small car-toppers, cottage runabouts, and short-range trips, yes, the Avator is very practical on Rice Lake. For full-day fishing on larger boats, a gas outboard with a trolling motor is still the most versatile option. The gap is closing as Avator models get more powerful and battery capacity increases.'
-      },
-      {
-        question: 'How does the Avator compare to a trolling motor?',
-        answer: 'Unlike a traditional trolling motor, the Avator is a complete propulsion system designed to be a boat\'s primary power source. It has more thrust, a proper tiller or remote setup, digital displays, and integrates with Mercury\'s SmartCraft ecosystem. A trolling motor is an auxiliary tool; an Avator replaces the main outboard on small boats.'
-      },
-      {
-        question: 'What maintenance does an Avator electric outboard need?',
-        answer: 'Much less than a gas engine. There are no oil changes, fuel filters, spark plugs, or fuel system winterization. Maintenance is primarily rinsing after use, checking electrical connections, and proper battery storage. Mercury backs Avator with their dealer service network for any issues.'
-      },
-      {
         question: 'Is a Mercury Avator electric outboard practical for Rice Lake in Ontario?',
         answer: 'An Avator is practical for specific Rice Lake use cases, a small car-topper or tender making short trips from a cottage dock, or a dedicated quiet runabout. For a 16–18 ft fishing boat running multiple spots across Rice Lake in a full day, a gas FourStroke is still more practical. Rice Lake\'s shallow, sheltered bays suit Avator well for the right boat type. The best current use case on Rice Lake is a dedicated small runabout or tender alongside a gas-powered main boat.'
       },
