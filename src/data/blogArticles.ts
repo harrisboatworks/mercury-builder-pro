@@ -14991,7 +14991,7 @@ We're a full-service Mercury Platinum dealer and we work on everything from curr
     image: "/lovable-uploads/hero-trent-severn-waterway-2026.png",
     author: 'Harris Boat Works',
     datePublished: "2026-05-08",
-    dateModified: "2026-05-08",
+    dateModified: "2026-05-09",
     publishDate: "2026-05-08",
     category: "Lifestyle",
     readTime: "9 min read",
@@ -15035,6 +15035,18 @@ What's still going to cost you (per the [Parks Canada Trent-Severn fee schedule]
 - **Parking, charts, third-party services**, same as any other year
 
 So a 20-foot boat tying up overnight at a lock pays $30. Plus power, if you need it. That's it. For the price of one day of normal lockage, you can sleep on the waterway.
+
+---
+
+## What Else Changed for 2026
+
+A few operational shifts from Parks Canada that catch first-timers every year. Read these before you push off.
+
+**In-person purchases only, the entire 2026 season.** Parks Canada has eliminated online permit sales for 2026. Lockage permits, seasonal permits, mooring permits, all of it has to be bought in person at a lockstation. No website, no phone order, no pre-registration. This applies in both directions: the paid shoulder windows (May 15 to June 18, and Sept 8 to Oct 12) and the free Canada Strong Pass window (June 19 to Sept 7). For the free window, you still stop at the first lockstation you reach to pick up your sticker, there's just nothing to pay. The rule that catches first-timers: show up expecting to pay online and you'll be turned around at the blue line. Bring a card (most stations accept tap), and arrive 15 minutes earlier than you'd planned. Source: [Parks Canada, Canada Strong Pass at the Trent-Severn](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass).
+
+**25% off Parks Canada camping along the corridor.** Same window (June 19 to Sept 7), Parks Canada-managed campgrounds along the Trent-Severn are 25% off. If you're doing a multi-day transit and would rather sleep on land than tie to a lock wall, this is real money. Worth pricing out before you commit to a route.
+
+**Paid shoulder seasons, in-person only, system closed outside them.** Lockage is paid (rates below) from **May 15 to June 18** and again from **Sept 8 to Oct 12**, in person at the lockstation. The waterway is closed to lockage outside those dates. If you're planning an early-May shakedown or a mid-October last-run, the gates simply aren't open.
 
 ---
 
