@@ -14969,7 +14969,7 @@ We're a full-service Mercury Platinum dealer and we work on everything from curr
   },
   {
     "question": "Is a 2-stroke worth buying in 2026?",
-    "answer": "For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: older 2-stroke outboards run on TC-W3 rated marine oil. Modern 4-strokes use FC-W rated 4-stroke marine engine oil (typically 25W-40), not premix."
+    "answer": "For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Oil tip: marine 2-stroke outboards use TC-W3-rated oil (TCW-3 is the marine-specific spec). Mercury 4-stroke outboards use Mercury Marine FC-W 25W-40 four-stroke oil. Don't substitute automotive 2-stroke oil for TC-W3, the additive packages are different."
   },
   {
     "question": "Should I trust the hour meter?",
