@@ -4336,6 +4336,8 @@ Center consoles range from 18-foot bay boats to 43-foot offshore warriors. Here'
 
 Note: For premium twin or triple Verado-powered builds, Verado is special-order only at Harris Boat Works, contact us by phone or email to spec it.
 
+> **Note on the quote tool:** Our online quote builder at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) covers Mercury motors from 2.5 HP to 300 HP. For multi-engine setups (twin/triple/quad) and Verado V8/V10/V12 configurations above 300 HP, contact us directly at (905) 342-2153 or info@harrisboatworks.ca for a custom quote.
+
 ### Single vs Twin: The Debate
 
 **Single Engine Advantages**:
