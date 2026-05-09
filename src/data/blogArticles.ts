@@ -14943,7 +14943,7 @@ A well-maintained 4-stroke can run 1,500–3,000+ hours. A motor with 800 hours 
 Plan on $500–$1,500 for the immediate first-year work: water pump impeller, gearcase oil change, spark plugs, fuel filter, fuel system clean-up. If the seller hasn't done it, you're going to.
 
 **Is a 2-stroke worth buying in 2026?**
-For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Tip: older 2-stroke outboards run on TC-W3 rated marine oil. Modern 4-strokes use FC-W rated 4-stroke marine engine oil (typically 25W-40), not premix.
+For a backup motor, light kicker duty, or a budget hull, sometimes yes, especially under 25 HP. As a primary motor on a serious fishing boat, the fuel savings and reliability of a modern 4-stroke usually win the math. Oil tip: marine 2-stroke outboards use **TC-W3-rated oil** (TCW-3 is the marine-specific spec). Mercury 4-stroke outboards use **Mercury Marine FC-W 25W-40** four-stroke oil. Don't substitute automotive 2-stroke oil for TC-W3 — the additive packages are different.
 
 **Should I trust the hour meter?**
 Mostly yes on Mercurys made after about 2005, unless the meter was replaced. Mercury's SmartCraft system stores hours in the engine ECU as well, so a dealer with a diagnostic tool can verify true engine hours independent of the dashboard meter. We do that as part of our inspection.
