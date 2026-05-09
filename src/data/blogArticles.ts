@@ -15582,7 +15582,7 @@ GTA cottagers without their own boat, this is how most of our renters discover R
 
 **You need a Pleasure Craft Operator Card (PCOC)** to operate any motorized boat in Ontario. One-time test, lifetime card. Don't have one? It's an online course, about three hours, $50.
 
-**Your [Pleasure Craft Licence](/blog/pleasure-craft-licence-update-repower-ontario) (PCL) changed in 2026.** Lifetime PCLs are being phased out. New PCLs are 5-year renewals at $24 through Service Canada. If your boat doesn't have a current PCL, sort it before launch day.
+**Your [Pleasure Craft Licence](/blog/pleasure-craft-licence-update-repower-ontario) (PCL) changed in 2026.** Effective December 31, 2025, lifetime PCLs are being phased out and gradually replaced with 5-year licences. New and renewed PCLs are valid 5 years at $24 CAD, issued and renewed online through Transport Canada's PCL portal. If your boat doesn't have a current PCL, sort it before launch day.
 
 **Cell service on the lake** is reasonable on the south shore (Bell, Rogers, Telus all work in Gores Landing/Bewdley). The middle of the lake and the north shore can drop. Don't rely on it as your safety system.
 
