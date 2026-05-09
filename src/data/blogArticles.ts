@@ -5271,6 +5271,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 > **Quick answer:** Mercury SeaPro is the commercial-grade FourStroke built for high-hour use, guides, charters, work boats. Beefier internals, longer service intervals, and a 3-year commercial warranty. For private recreational use the standard FourStroke is the right call. SeaPro is special order, contact us through mercuryrepower.ca.
 
+For broader pricing context, see our [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). Commercial buyers comparing engine families should also read [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) for SeaPro warranty specifics.
+
 If your boat earns money, running a fishing guide service, a rental fleet, charter trips, government work, or any application that puts hundreds or thousands of hours on a motor every year, your motor's downtime IS your downtime. Mercury SeaPro is built to keep that downtime as low as possible.
 
 For everyone else, SeaPro is overkill. The standard FourStroke does the job at lower cost. We sell both. The honest version of "which one for you" comes down to two numbers: how many hours you'll run it per year, and how much one breakdown day costs you.
@@ -5669,6 +5671,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** On Rice Lake in the Kawarthas (Ontario), a gas kicker like the Mercury 9.9 ProKicker wins for long trolling days and big-water reach. Electric trolling motors win for stealth and bow-mount precision in shallow weed beds. Most serious anglers run both. We rig either as a complete package, quote at mercuryrepower.ca.
+
+If you're sizing the main outboard alongside the kicker, see [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), [Best Motor for Small Lakes in Ontario](/blog/best-motor-small-lakes-ontario), and the [Mercury ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide). For the rigging side (controls, wiring, gauges), the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what a dual-engine setup actually needs.
 
 Short answer: most serious Rice Lake, Ontario (in the Kawarthas) anglers run both. A bow-mount electric for spot-lock and silent precision, a transom kicker for long trolling runs and rough-water reliability. They solve different problems.
 
@@ -7541,6 +7545,8 @@ If you're not sure between two HPs, call. Picking right is more important than p
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Outboard ski and wakeboard boats want torque and hole-shot. A Mercury 200-300 V8 FourStroke with the right prop pitch is the right call for most 19-22 ft hulls. Pro XS gains a bit of top end at the expense of mid-range. Stay inside the capacity plate. Quote installed at mercuryrepower.ca.
+
+For pricing, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). To compare engine families, read [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). Rigging and warranty details are covered in the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026).
 
 For watersports, slalom skiing, wakeboarding, wakesurfing, tubing, the right Mercury isn't the same answer as for a cruising family runabout. Watersports demand hole shot (acceleration from rest), sustained pulling power, and on bigger setups, enough mass behind the wake to throw real water.
 
@@ -14990,6 +14996,8 @@ We're a full-service Mercury Platinum dealer and we work on everything from curr
 
 > **Quick answer:** The Trent-Severn runs 386 km from Trenton to Port Severn through 44 locks. 2026 lockage hours and free-lockage windows are set by Parks Canada. Plan for slow water, debris after spring, and crowded weekends. Service before you go, book at mercuryrepower.ca.
 
+Repowering before the season? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas). For rigging questions on the new motor, the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) is the companion read.
+
 Big news for 2026: lockage on the Trent-Severn is **free from June 19 to September 7** as part of the [Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass). For a 20-foot boat, that's $45 a day in fees you're not paying, about $315 saved on a full week-long transit, more if you stay seasonal.
 
 If you've ever thought about running the Trent-Severn, even a weekend stretch of it, 2026 is the year.
@@ -15205,6 +15213,8 @@ Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** If your Mercury alarms hot, idle down immediately, kill the motor at the first safe spot, and check for a clogged or missing tell-tale. Don't keep running, overheating destroys head gaskets and powerheads. Most causes are impeller, intake blockage, or thermostat. Service booking at mercuryrepower.ca.
+
+For preventive maintenance, see [Mercury Maintenance Intervals (20/100/300-Hour Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule). If overheating points to an aging powerhead, [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad) and the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) cover replacement options, and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains coverage on a new build.
 
 If you're reading this on the water with the overheat alarm going off, **skip ahead to the next section**. Get yourself sorted, then come back for the rest.
 
@@ -15676,6 +15686,8 @@ No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licen
 
 > **Quick answer:** MerCruiser sterndrives are still serviceable and parts are available, but the market has shifted toward outboards for Ontario freshwater use. Repowering a sterndrive boat to outboard is a significant project, we quote both paths honestly. Get a real number at mercuryrepower.ca.
 
+Considering converting to outboard power? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what a sterndrive-to-outboard conversion needs at the helm.
+
 There are a lot of sterndrive boats in Ontario. Older Sea Rays, Bayliners, Glastrons, Four Winns, Thundercrafts, the occasional Doral or Crownline. Most of them have a MerCruiser engine inside the boat and a Mercury sterndrive hanging off the transom. Most of those engines are between 15 and 25 years old now.
 
 We service MerCruiser sterndrives at Gores Landing, same shop, same Mercury Platinum techs as our outboard work. This is the guide we wish more sterndrive owners read before something expensive happens.
@@ -15912,6 +15924,8 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
 
 > **Quick answer:** VesselView is Mercury's gauge display; SmartCraft is the data network behind it; the Mercury Marine app pulls both into your phone. Together they show fuel use, engine hours, alarm codes, and service intervals in real time. Compatibility depends on motor year. Quote a current setup at mercuryrepower.ca.
 
+For pricing on the engines that ship with SmartCraft, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers DTS and gauge wiring in detail, and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) explains which engines include DTS standard.
+
 Most Mercury owners we talk to know they have "smart" features on their motor and have no idea how to actually use them. The dash gauge says fuel flow. The phone app pairs sometimes. There's a thing called Active Trim that the previous owner mentioned but never explained.
 
 This is the version of that conversation we'd have at the shop. No marketing copy, no jargon, just what each piece is, what it costs, and whether you'll actually use it.
@@ -16081,6 +16095,8 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Mercury serial numbers encode model year, plant, and powerhead family. The first letters identify the family; the digits give the build sequence. We use the serial to verify warranty, eligibility for software upgrades like Boost, and parts compatibility. Send us a serial through mercuryrepower.ca for a quick check.
+
+Once you've decoded the serial, you'll likely want to look up [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026), check pricing in the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), or compare engine families in [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). Repower customers should also read [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad).
 
 Your Mercury's serial number is the only piece of information on the motor that actually matters for parts, service, warranty, and history. Not the year on the cowl. Not the boat's title. Not what the previous owner remembered.
 
@@ -16294,6 +16310,8 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
 
 > **Quick answer:** Mercury's 20/100/300 rule: 20-hour break-in service, 100-hour annual service, 300-hour deep service. Skip any of them and you erode warranty coverage and long-term reliability. We schedule by interval and remind customers automatically. Service booking at mercuryrepower.ca.
 
+When maintenance economics tip toward replacement, see [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad) and the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide). [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains what scheduled service is required to keep coverage, and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) compares service intervals across families.
+
 Mercury's service schedule has three milestones built into it: **20 hours, 100 hours, and 300 hours**. Each one is a different scope of work for a different stage of the engine's life. Ignoring any of the three is the cheapest way to make a $20,000 motor act like a $5,000 one.
 
 This is the schedule we'd walk through with any new Mercury owner who walks into the shop, in plain English, with Ontario service rates.
@@ -16493,6 +16511,8 @@ Book scheduled service at **[hbw.wiki/service](https://hbw.wiki/service)** or ca
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Shrinkwrap is cheaper and weatherproof but condenses moisture inside if vented poorly. Indoor storage is dry, climate-stable, and gentler on upholstery and gel coat, but costs more. For long-term value retention, indoor wins. Indoor and shrinkwrap pricing at mercuryrepower.ca.
+
+Planning a spring repower instead of another season on the old motor? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario). For maintenance on the existing motor, [Mercury Maintenance Intervals (20/100/300-Hour Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule) covers what should be done before winter.
 
 Every fall we have the same conversation about thirty times. *"Is shrinkwrap enough? Should I pay for indoor? Is heated worth the extra money?"*
 
@@ -16981,6 +17001,8 @@ There's no shame in renting. There's a lot of shame in over-extending into a boa
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Legend Boats are built in Whitefish, Ontario, and pair naturally with Mercury power. Most Legend hulls 17-21 ft are happy on a Mercury 90-150 FourStroke, often Command Thrust on the heavier models. Stay inside the capacity plate. Quote a complete Legend-and-Mercury package at mercuryrepower.ca.
+
+For pricing on the engines included in Legend power packages, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what's included in a typical rigging package, and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains the factory coverage.
 
 If you're shopping a new aluminum fishing boat or a pontoon in Ontario, **Legend Boats** is going to come up. They're Canada's best-selling aluminum boat brand, every model is paired with a Mercury outboard, and they're the boat we sell most often at Harris Boat Works.
 
