@@ -3225,13 +3225,13 @@ A 17 to 19 ft fiberglass runabout from the 1990s or 2000s, used for family tubin
 
 ### "The pontoon at the cottage"
 
-An 18 to 22 ft pontoon used for sunset cruises, fishing with the kids, and the occasional tube ride. Motor is original from when the pontoon was bought (often 10 to 15 years old).
+An 18 to 22 ft pontoon used for sunset cruises, fishing with the kids, and the occasional tube ride. Motor is original from when the pontoon was bought (often 10 to 15 years old). For a Rice Lake-specific take on cottage pontoon use, see [Best Pontoon Boats for Rice Lake Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use).
 
 **Typical repower:** Mercury 115 HP Command Thrust FourStroke. Total $20,000 to $25,000 CAD all-in. Command Thrust matters on pontoons.
 
 ### "The cottage tin boat"
 
-A 14 to 16 ft tin boat with a tiller motor, used for solo fishing or quick lake runs. Motor has been getting harder to start and parts are scarce.
+A 14 to 16 ft tin boat with a tiller motor, used for solo fishing or quick lake runs. Motor has been getting harder to start and parts are scarce. For the 40 vs 60 HP step-up math common in cottage tender repowers, see [Mercury 40 vs 60 HP Outboard Ontario](/blog/mercury-40-vs-60-hp-outboard-ontario).
 
 **Typical repower:** Mercury 25 to 40 HP tiller. Total $4,000 to $11,000 CAD all-in. Smaller cottage boats are simpler repowers.
 
