@@ -8870,7 +8870,7 @@ For Harris Boat Works customers, that often means:
 
 ## The Big Fork in the Road: CUSMA Review in 2026
 
-Under CUSMA, the three member countries are required to conduct a formal joint review six years after the agreement's entry into force. That review, scheduled for July 2026, will determine whether the agreement is extended, amended, or allowed to move toward expiry in 2036.
+Under CUSMA, the three member countries are required to conduct a formal joint review six years after the agreement's entry into force. That review, scheduled for July 2026, will determine whether the agreement is extended, amended, or allowed to move toward expiry in 2036. (USTR, USMCA review process, joint review July 1, 2026)
 
 ### Key Points for Boating
 
