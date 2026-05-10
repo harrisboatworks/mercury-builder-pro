@@ -415,6 +415,11 @@ export default function BlogArticle() {
             <RepowerCostEstimator />
           )}
 
+          {/* Interactive tool: Boost Eligibility Checker (slug-conditional) */}
+          {article.slug === 'mercury-boost-upgrade-150hp-pontoon-analysis' && (
+            <BoostEligibilityChecker />
+          )}
+
           {/* Author Byline (bottom) */}
           <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
             <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Platinum Dealer · Rice Lake, Ontario" />
