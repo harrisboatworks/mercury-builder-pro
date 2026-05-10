@@ -23425,7 +23425,6 @@ If you're newer to boat ownership and unsure what winterization actually involve
 `,
   },
   {
-  {
     slug: "rice-lake-boat-launch-guide",
     title: "Where to Launch a Boat on Rice Lake: A Practical Guide for Anglers, Cottagers, and Day Visitors",
     description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp, and who it's for.",
