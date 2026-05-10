@@ -385,20 +385,57 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
     },
   };
 
+  // Render a synthetic short-answer (Quick Answer) card from a blockquote body.
+  const renderQuickAnswerCard = (body: string, key: string) => {
+    const cfg = cardConfig['short-answer'];
+    return (
+      <aside
+        key={key}
+        role={cfg.role}
+        aria-label={cfg.aria}
+        className={cfg.wrapper}
+        style={cfg.style}
+      >
+        <span className={`${eyebrowBase} ${cfg.eyebrowClass}`} aria-hidden="true">
+          {cfg.eyebrow}
+        </span>
+        <div className={cfg.bodyClass}>
+          {renderMarkdownWithDirectives(body, componentsWithInline, `${key}-md`)}
+        </div>
+      </aside>
+    );
+  };
+
+  // Render unstyled markdown while extracting any top-level
+  // `> **Quick answer:**` blockquotes into Quick Answer cards in document order.
+  const renderWithQuickAnswerExtraction = (md: string, keyPrefix: string) => {
+    const chunks = extractQuickAnswerChunks(md);
+    return chunks.map((c, i) => {
+      if (c.kind === 'quick-answer') {
+        return renderQuickAnswerCard(c.content, `${keyPrefix}-qa-${i}`);
+      }
+      if (!c.content.trim()) return null;
+      return (
+        <div key={`${keyPrefix}-md-${i}`}>
+          {renderMarkdownWithDirectives(
+            c.content,
+            componentsWithInline,
+            `${keyPrefix}-md-${i}`,
+          )}
+        </div>
+      );
+    });
+  };
+
   return (
     <>
-      {preamble.trim() &&
-        renderMarkdownWithDirectives(preamble, componentsWithInline, 'pre')}
+      {preamble.trim() && renderWithQuickAnswerExtraction(preamble, 'pre')}
       {sections.map((section, idx) => {
         const headingMd = `## ${section.heading}\n\n${section.body}`;
         if (!section.kind) {
           return (
             <div key={idx}>
-              {renderMarkdownWithDirectives(
-                headingMd,
-                componentsWithInline,
-                `s-${idx}`,
-              )}
+              {renderWithQuickAnswerExtraction(headingMd, `s-${idx}`)}
             </div>
           );
         }
