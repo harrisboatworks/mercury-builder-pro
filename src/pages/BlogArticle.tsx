@@ -18,6 +18,7 @@ import { slugify, extractHeaders } from '@/utils/slugify';
 import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
+import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
 import { ShaftLengthPicker } from '@/components/tools/ShaftLengthPicker';
 import { TradeInValueEstimator } from '@/components/tools/TradeInValueEstimator';
 import { RepowerCostEstimator } from '@/components/tools/RepowerCostEstimator';
