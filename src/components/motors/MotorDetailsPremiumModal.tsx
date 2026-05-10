@@ -111,6 +111,12 @@ export default function MotorDetailsPremiumModal({
   const motorSpecs = motor ? findMotorSpecs(hpValue, title) : undefined;
   const decoded = decodeModelName(motor?.model || title, hpValue);
 
+  // Related blog post slugs for the Resources tab "Related Guides" grid
+  const relatedSlugs = useMemo(
+    () => (motor ? getMotorRelatedBlogSlugs(motor) : []),
+    [motor],
+  );
+
   // Generate fallback description if missing or suspicious
   const displayDescription = useMemo(() => {
     if (!motor?.description || isDescriptionSuspicious(motor.description, { 
