@@ -3864,7 +3864,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   // Week 10: March 9, 2026
   {
     slug: 'bass-boat-mercury-motor-buying-guide',
-    title: 'Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide',
+    title: 'Choosing the Right Mercury for Your Bass Boat (Ontario 2026)',
     description: 'Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament and recreational bass fishing.',
     image: '/lovable-uploads/bass-boat-150-proxs-hero-real.png',
     author: 'Harris Boat Works',
@@ -3874,154 +3874,245 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['bass boat motor', 'mercury pro xs bass', 'best bass boat outboard', 'tournament bass motor', 'mercury 200 bass boat'],
-    content: `
-*Last reviewed: 2026-05-07*
+    content: `# Choosing the Right Mercury for Your Bass Boat (Ontario 2026)
 
-> **Quick answer:** For most Ontario bass boats in the 17-20 ft range, the Mercury Pro XS 150 or 175 is the right call, high-RPM tune, light gearcase, and the hole-shot bass anglers expect. Stay inside the hull's max HP. Build an installed Pro XS package at mercuryrepower.ca.
+*Last reviewed: 2026-05-10*
 
-## Choosing the Right Mercury for Your Bass Boat
+> **Quick answer:** For an 18-20 ft Ontario bass boat, a Mercury 200 Pro XS is the sweet spot if you fish tournaments or want the hole-shot. A 150 FourStroke is the value play if you fish casually and want lower fuel burn. Add a Mercury 9.9 ProKicker for trolling. Build a quote at mercuryrepower.ca.
 
-Bass boats demand motors that deliver explosive hole-shot, reliable performance, and the power to run hard all day. Whether you're running Rice Lake, Ontario looking for smallmouth, heading to a tournament trail, or just want a rig that keeps up, here's how to choose the right Mercury.
+Bass boats live or die on hole-shot, top-end, and the ability to run shallow when the bite moves. Ontario bass anglers fish a lot of skinny water in May, then chase smallies into deeper offshore structure by July. The motor pick has to handle both, and it has to handle the trolling-motor-and-kicker setup that defines tournament fishing on Rice Lake, Lake Scugog, and the Kawarthas.
 
-We've been a Mercury dealer since 1965. These are our honest recommendations.
+We rig a lot of bass boats at HBW. The shop sees more Pro XS 150-200 HP motors come through in spring than any other category. This guide is the conversation we have at the dock when a customer is choosing between a Pro XS and a FourStroke, or sizing up between 150 and 200 HP.
 
-### The Bass Boat Motor Segment
+---
 
-Most modern bass boats run between **150HP and 400HP**:
+## The Bass Boat Motor Segment in Ontario
 
-**150-200HP**: 18-19ft boats, recreational
-**200-250HP**: 20-21ft boats, semi-competitive
-**250-300HP**: 21-22ft boats, tournament
-**300-400HP**: 22ft+ boats, elite tournament
+Bass boats in Ontario fall into three rough buckets:
 
-### Mercury Pro XS: The Tournament Choice
+| Boat size | Typical HP | Common hulls | Use case |
+|---|---|---|---|
+| 16-18 ft aluminum bass | 75-115 HP | Lund 1875 Pro V Bass, Crestliner XS series | Cottage tournament + recreational |
+| 18-20 ft fiberglass bass | 150-200 HP | Ranger, Skeeter, Bass Cat, Triton | Tournament-focused fiberglass |
+| 20-21 ft fiberglass bass | 200-250 HP | Ranger 621, Skeeter ZX-Series, Bass Cat Eyra | Pro-tournament, large-water |
 
-The Mercury Pro XS line is purpose-built for performance:
+The 18-20 ft fiberglass class is the most common Ontario bass repower at HBW. The 21 ft+ class is rarer but growing as Lake Ontario / Bay of Quinte tournaments draw more anglers offshore. The aluminum class is the entry point: smaller boat, smaller motor, often paired with a kicker for trolling.
 
-Key Features:
+Whichever bucket you're in, three choices anchor the motor decision: **family** (Pro XS or FourStroke), **HP class**, and **prop**.
 
-Lightweight construction (typically 20-40 lbs lighter than the equivalent FourStroke depending on model and configuration; check the Mercury spec sheet for your specific HP and rigging)
-Tuned for higher RPM
-Faster hole-shot
-Competition-grade internals
-Available 115-300HP
+---
 
-Why Pro XS for Bass:
+## Mercury Pro XS: The Tournament Choice
 
-Get to your spots faster
-Save weight for better handling
-Tournament-proven reliability
-Maximum acceleration
+Pro XS is Mercury's performance line, built specifically for the tournament boat market. What you actually get versus a FourStroke of the same HP:
 
-### Mercury FourStroke: The Value Play
+- **Faster hole-shot.** Pro XS is typically 20-40 lbs lighter than the equivalent FourStroke, which translates to noticeably quicker time-to-plane on a heavily-loaded bass boat.
+- **More aggressive prop matching.** Pro XS gearcases (Torque Master on V6) are designed to hold a lower prop and run at a steeper bow angle without ventilating.
+- **Higher WOT RPM ceiling.** Pro XS engines spin a bit harder at the top end, which matters when you're chasing hole-shot speed and prop-out efficiency.
+- **Mercury Boost eligibility on select 150 HP V8 Pro XS models.** Software upgrade adds 10 HP without changing the hardware.
 
-Don't overlook FourStroke for recreational bass fishing:
+What it costs you: a few hundred dollars more than the comparable FourStroke at MSRP, and slightly higher fuel burn if you live at WOT.
 
-Benefits:
+**When to pick Pro XS:**
+- You fish tournaments and care about hole-shot.
+- You run with a partner and gear (often 800-1,000 lbs combined load).
+- You're on a fiberglass bass hull rated for 200+ HP.
+- You want the resale premium that Pro XS holds in the bass-boat used market.
 
-Lower price point
-Excellent fuel economy
-Proven reliability
-Quieter operation
+---
 
-Best For:
+## Mercury FourStroke: The Value Play
 
-Non-tournament anglers
-Budget-conscious buyers
-Those prioritizing fuel efficiency over outright performance
+FourStroke is Mercury's standard recreational line. It's reliable, fuel-efficient, and matches everything Pro XS does except the last 10-15% of performance ceiling.
 
-### Recommended Setups by Boat Size
+**When to pick FourStroke:**
+- You fish recreationally, not tournaments.
+- You want the lowest fuel burn for long days on the water.
+- You're on a 16-18 ft aluminum bass hull where the marginal Pro XS performance gain is wasted.
+- You're not chasing the bass-tournament resale premium.
+- You want quieter trolling-speed running.
 
-18-19ft Bass Boat:
+The 150 FourStroke is the most common HBW pick for cottage bass anglers who fish a few weekends a month and want a motor that disappears into the background. The 200 Pro XS is the most common HBW pick for serious tournament boats. Both are right answers to different questions.
 
-Mercury 150-175HP Pro XS
-Good: FourStroke 150HP
+---
 
-20ft Bass Boat:
+## Recommended Setups by Boat Size
 
-Mercury 200-225HP Pro XS
-Alternative: FourStroke 200HP
+These are real recommendations from boats we've rigged at HBW. Conditions matter (hull, load, prop, water depth) so think of these as ballpark, not guarantees.
 
-21ft Bass Boat:
+### 18 ft fiberglass bass (Ranger 178, Skeeter ZX180)
+- **Motor:** Mercury 150 Pro XS (4-cyl) for tournament use, or 150 FourStroke for recreational.
+- **Prop:** Tempest Plus 23P or Fury 4 for the Pro XS. Enertia 21P for the FourStroke.
+- **Kicker:** Mercury 9.9 ProKicker MLH for trolling. See our [Mercury 9.9 ProKicker Rice Lake guide](/blog/mercury-prokicker-rice-lake-fishing-guide).
+- **Top end:** 60-65 mph with two anglers and gear (Pro XS 150). 55-60 mph (FourStroke 150).
 
-Mercury 225-250HP Pro XS
+### 20 ft fiberglass bass (Ranger 620, Skeeter ZX200)
+- **Motor:** Mercury 200 Pro XS V6 (3.4L) is the sweet spot. The boat is rated for it, the prop selection is huge, and tournament resale is strong.
+- **Prop:** Fury 4 24P or Bravo 1 FS 24P, depending on hull and rake.
+- **Kicker:** Mercury 9.9 ProKicker MLH or 15 ProKicker if the deck has a heavy bracket.
+- **Top end:** 68-72 mph two-up.
 
-22ft+ Tournament Boat:
+### 21 ft fiberglass bass (Ranger 621, Bass Cat Eyra, Skeeter ZX-Series)
+- **Motor:** Mercury 250 Pro XS V8 (4.6L). Rare in Ontario but growing for big-water tournament use (Lake Ontario, St. Lawrence, Bay of Quinte).
+- **Prop:** Bravo 1 LT or Fury 4 in the 25-26P range.
+- **Kicker:** 9.9 or 15 ProKicker.
+- **Top end:** 72-78 mph two-up.
 
-Mercury 300HP Pro XS
+### 16-18 ft aluminum bass (Lund 1875 Pro V, Crestliner XS Series)
+- **Motor:** Mercury 90-115 FourStroke. Pro XS is usually overkill on aluminum.
+- **Prop:** Spitfire 17P or Black Max 17P for typical aluminum bass setups.
+- **Kicker:** 9.9 ProKicker MLH or MH (manual start, lighter).
+- **Top end:** 40-48 mph (varies widely with hull weight and load).
 
-### Critical Bass Boat Features
+---
 
-Jack Plate Compatibility:
+## Critical Bass Boat Features to Spec Right
 
-All Mercury motors work with standard jack plates. Shaft length affects setup, confirm 20" or 25" based on your transom configuration.
+The motor is the headline. These are the supporting decisions that make or break the rig.
 
-Quick Lift:
+### Power-Pole / Talon trim relationship
+Modern bass boats run shallow-water anchors that affect transom load. A Pro XS with the lighter weight tolerates a Power-Pole better than a FourStroke. If you have power-poles or plan to add them, ask us to verify the transom rating.
 
-Power Trim standard. Vital for running shallow water on lakes like Rice Lake, Ontario (in the Kawarthas), where shoals and weed edges demand constant adjustment.
+### Stainless prop, not aluminum
+Aluminum props on a tournament bass boat are a false economy. A stainless Tempest or Fury is faster, more durable, and holds prop pitch under load. Budget $500-$900 for a quality stainless prop on the new motor; the FourStroke comes with an aluminum prop in the box that's fine for break-in but not for the season.
 
-Propeller Selection:
+### Hydraulic steering on V6 / V8 motors
+Cable steering is fine on 150 HP and below. Above 150, hydraulic steering makes the boat quieter, easier to hold a course at WOT, and reduces angler fatigue on a long day. SeaStar Pro hydraulic is the default we install at HBW. Details in our [Mercury controls and rigging guide](/blog/mercury-controls-rigging-guide-ontario).
 
-Pro XS boats often run 4-blade stainless props for best hole-shot. Pitch selection varies by boat weight and use, our team can help you choose the right prop for your hull and fishing style.
+### SmartCraft Connect Mobile
+Mercury 4-stroke Pro XS and FourStroke motors from 2004+, 40 HP and up are SmartCraft-compatible. Adding the SmartCraft Connect Mobile module ($400 range, sold separately) gives you live RPM, fuel rate, and engine hours on your phone. Useful for tournament trip-tracking. Details in our [SmartCraft Connect guide](/blog/mercury-smartcraft-connect-guide-ontario).
 
-### Our Recommendation
+### Trim setup matters more than HP
+A correctly-propped 150 Pro XS will outrun an over-propped 200 Pro XS through the first 100 yards. The first hour at HBW after pickup is sea trial and prop verification. Don't skip it.
 
-For most bass anglers, the **Mercury Pro XS** in the appropriate HP provides the best combination of performance and value. It's what tournament pros run for good reason. The [Mercury 150 ELPT Pro XS](/motors/proxs-150hp-150-elpt-proxs) is the single most-popular bass-boat repower we sell in Ontario, lighter than the FourStroke 150, tuned for top-end and hole-shot, priced in CAD with pickup at Gores Landing on Rice Lake.
+---
 
-If budget is tighter and you fish recreationally, chasing smallmouth on Rice Lake or bass on cottage country waters, the **Mercury FourStroke** at 150HP delivers excellent performance without the Pro XS premium.
+## Pro XS vs FourStroke: Which Is the Right Call?
 
-[Build your bass boat motor quote](https://mercuryrepower.ca/quote/motor-selection)
+The honest answer most customers don't get from other dealers: **for 80% of Ontario bass anglers, the FourStroke is fine.** If you're not racing the boat next to you off the launch ramp, the FourStroke gets you to the spot and back at lower fuel cost and longer powerhead life.
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
+For the 20% who fish tournaments or genuinely use the hole-shot edge, Pro XS is worth the premium. The math:
 
-## Related guides
+| Metric | 150 Pro XS | 150 FourStroke |
+|---|---|---|
+| Weight | ~410 lbs | ~430-440 lbs |
+| Hole-shot | Faster (1-2 sec quicker to plane loaded) | Adequate |
+| Top end | 1-3 mph higher | Lower |
+| Fuel at cruise | Slightly higher | Slightly lower |
+| Powerhead life expectancy | Same (within Mercury 4-stroke family) | Same |
+| Tournament resale | Strong | Moderate |
+| Mercury Boost eligibility | On select 150 V8 models | No |
+| MSRP delta | ~$300-$500 more than FourStroke | Baseline |
 
-- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Mercury Outboards for Center Console Boats: 2026 Guide](/blog/center-console-mercury-motor-guide), center-console power picks
-- [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
+If you fish tournaments: Pro XS. If you don't: FourStroke. There's no wrong answer.
 
-    `,
+---
+
+## Why Rice Lake and the Kawarthas Reward Right-Sized Bass Power
+
+Rice Lake and the Kawarthas are bass-rich water. Smallmouth in May and June, largemouth in July through fall. The lake structure (shallow, weedy, scattered hard-bottom humps) rewards a boat that can run shallow in the morning and offshore in the afternoon.
+
+What we see in the shop:
+- **Underpropped bass boats are everywhere.** A 200 Pro XS with a wrong prop pitch hits the rev limiter and burns fuel. We re-prop more bass boats than we repower in May.
+- **Aluminum kickers fail in heavy weeds.** A 9.9 ProKicker with a stainless guard handles the south-shore Rice Lake weed beds; a stock aluminum prop chops weeds and overheats.
+- **Verado is overkill on bass.** We see customers ask about Verado for bass boats. Verado is a saltwater / offshore tower motor. For Ontario bass, Pro XS is the right family.
+- **Cool-water starts matter in early May.** The Pro XS and FourStroke both handle 4-5°C water without complaint. The motor that fails to start cold is usually a kicker that wasn't winterized properly. Our [DIY winterization guide](/blog/diy-mercury-outboard-winterization-guide) walks the procedure.
+
+For FMZ 17 bass season dates (third Saturday in June for largemouth in most of southern Ontario), see our [2026 Rice Lake fishing season outlook](/blog/2026-rice-lake-fishing-season-outlook).
+
+---
+
+## What HBW Brings Specifically
+
+We've been on Rice Lake since 1947 and a Mercury dealer since 1965. The bass-boat repower is one of our highest-volume categories every spring.
+
+- We rig Pro XS and FourStroke motors weekly. The prop selection, hydraulic steering, and kicker bracket details are routine.
+- We stock common bass props (Fury 4, Tempest, Bravo, Spitfire) and verify WOT RPM in sea trial before delivery.
+- We don't oversell Pro XS. If a 150 FourStroke is the right answer for your use case, that's what we quote.
+- Pickup only at Gores Landing. We don't ship outboards. The trade-off is your motor was rigged by a tech who's done a thousand of these.
+
+---
+
+## Frequently Asked Questions
+
+**Is Pro XS really faster than FourStroke?**
+Yes, but not as much as the marketing suggests. On the same hull with the same prop and load, expect 1-3 mph higher top end and 1-2 seconds faster time-to-plane. For tournament bass, that matters. For weekend cottage bass, you won't notice.
+
+**What shaft length for a bass boat?**
+Most Ontario bass boats use a 20-inch (long) shaft. Some 21 ft fiberglass tournament boats use a 25-inch (extra-long) for jackplate setups. Verify the transom measurement before quoting. Our [outboard shaft length guide](/blog/outboard-shaft-length-guide) walks through measurement.
+
+**Is 200 HP enough for a 21 ft bass boat?**
+Marginal. Most 21 ft fiberglass tournament boats are spec'd for 250 HP and run optimally at that. A 200 will plane and run, but you'll be on the rev limiter at WOT and prop choice gets restrictive. If the boat is rated for 250, run 250.
+
+**Should I buy new or repower my bass boat?**
+Repower is usually the right answer if the hull is structurally sound and under 15 years old. New bass boats are $40,000-$70,000 in 2026 CAD; a Mercury 200 Pro XS repower at HBW is around $25,000-$30,000 all-in. See our [Mercury repower cost guide](/blog/mercury-repower-cost-ontario-2026-cad) for the full math.
+
+**Can I use a kicker motor on a bass boat?**
+Yes, and most Ontario tournament anglers do. The Mercury 9.9 ProKicker is the standard pick. It handles trolling speeds, keeps batteries topped up, and gives you a get-home option if the main motor faults. See our [9.9 ProKicker Rice Lake guide](/blog/mercury-prokicker-rice-lake-fishing-guide) for details.
+
+**Should I buy a stainless or aluminum prop?**
+Stainless on any tournament boat. Aluminum is fine for the 150 FourStroke break-in, but tournament-grade props are stainless: Mercury Fury 4, Tempest Plus, Bravo 1 FS, or Bravo 1 LT depending on the hull and use case. Budget $500-$900.
+
+**How much does a Mercury Pro XS cost in Canada in 2026?**
+Planning-level CAD ranges as of May 2026: 150 Pro XS around $17,000-$18,000 dealer, 200 Pro XS V6 around $24,000-$26,000, 250 Pro XS V8 around $30,000-$33,000. Final pricing depends on configuration and live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection).
+
+**What warranty does a Mercury outboard come with in Canada?**
+Mercury outboards in Canada carry a 3-year limited warranty plus 3-year corrosion coverage running concurrently (not stacked). Extended coverage available through Mercury Product Protection. Details in our [Mercury warranty guide](/blog/mercury-outboard-warranty-canada-2026).
+
+---
+
+## Ready to Spec Your Bass Boat Repower?
+
+Build a current quote in 3 minutes at our online configurator. Pick the motor family, HP, shaft length, and prop. We confirm fitment and the all-in price before you commit.
+
+Or call the shop. The bass boat conversation is usually 10 minutes if you can tell us the hull make / length / year, current motor, and what tournaments you fish.
+
+**Phone:** 905-342-2153
+**Configurator:** [mercuryrepower.ca/quote/motor-selection](https://mercuryrepower.ca/quote/motor-selection)
+**Live pricing:** [mercuryrepower.ca/pricing-reference](https://mercuryrepower.ca/pricing-reference)
+**Service booking:** [hbw.wiki/service](https://hbw.wiki/service)
+
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON, K0K 2E0
+
+**Related guides:**
+- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide)
+- [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide)
+- [Mercury Controls and Rigging Guide](/blog/mercury-controls-rigging-guide-ontario)
+- [Mercury Repower Cost in Ontario (2026 CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario)`,
     faqs: [
       {
         question: 'Is Pro XS really faster than FourStroke?',
-        answer: 'Yes, noticeably so. Pro XS motors are lighter and tuned for higher RPM. You\'ll see 3-5 MPH improvement and significantly faster hole-shot compared to FourStroke of equal HP.'
+        answer: 'Yes, but not as much as the marketing suggests. On the same hull with the same prop and load, expect 1-3 mph higher top end and 1-2 seconds faster time-to-plane. For tournament bass, that matters. For weekend cottage bass, you won\'t notice.'
       },
       {
         question: 'What shaft length for a bass boat?',
-        answer: 'Most bass boats use 20" shaft with a jack plate. Some deeper hulls or higher transom mounts need 25". Check your boat specs or bring it by for measurement.'
+        answer: 'Most Ontario bass boats use a 20-inch (long) shaft. Some 21 ft fiberglass tournament boats use a 25-inch (extra-long) for jackplate setups. Verify the transom measurement before quoting.'
       },
       {
-        question: 'Is 200HP enough for a 21ft bass boat?',
-        answer: 'For recreational use, yes. For tournament fishing where every minute counts, 225-250HP is preferred on 21ft boats. Match power to your competitive needs.'
-      },
-      {
-        question: 'Should I buy new or repower?',
-        answer: 'If your hull is solid and you like your boat, repower. A new Pro XS transforms an older hull. If your boat is outdated or damaged, new might make more sense.'
+        question: 'Is 200 HP enough for a 21 ft bass boat?',
+        answer: 'Marginal. Most 21 ft fiberglass tournament boats are spec\'d for 250 HP and run optimally at that. A 200 will plane and run, but you\'ll be on the rev limiter at WOT and prop choice gets restrictive. If the boat is rated for 250, run 250.'
       },
       {
         question: 'Should I buy new or repower my bass boat?',
-        answer: 'If you have a solid bass boat hull with a tired motor, repowering is almost always the better financial decision. A new 20ft fishing boat runs $35,000 or more; a 200 to 300 HP repower with a new Mercury Pro XS typically falls in the $35,000 to $40,000 all-in range before HST. You get modern fuel efficiency (often 30–40% better than an older two-stroke), current electronics integration, and a full Mercury warranty without paying for a new hull you don\'t need. Harris Boat Works handles full repower projects and can assess whether your transom and rigging are in shape for a swap.'
-      },
-      {
-        question: 'How much does a Mercury Pro XS cost in Canada in 2026?',
-        answer: 'Mercury Pro XS pricing in Canada varies by horsepower, shaft length, controls, prop selection, and rigging scope. As a planning guide, a 150 HP all-in repower is typically $23,000 to $30,000 before HST, while 200 to 300 HP all-in repowers are typically $35,000 to $40,000 before HST. At Harris Boat Works, you can build a real quote at mercuryrepower.ca/quote/motor-selection with actual current pricing.'
-      },
-      {
-        question: 'What\'s the difference between Mercury Pro XS and Mercury FourStroke for bass fishing?',
-        answer: 'The Pro XS is performance-tuned with lighter construction (typically 20-40 lbs lighter than the equivalent FourStroke depending on model), higher RPM capability, and faster hole-shot, purpose-built for tournament anglers who need speed. The FourStroke prioritizes fuel economy, quiet operation, and durability at a lower price. For Ontario recreational bass anglers on lakes like Rice Lake or cottage country waters, the FourStroke at 150–175HP is excellent without needing the Pro XS premium. For tournament fishing on Ontario circuits, the Pro XS is the clear choice.'
+        answer: 'Repower is usually the right answer if the hull is structurally sound and under 15 years old. New bass boats are $40,000-$70,000 in 2026 CAD; a Mercury 200 Pro XS repower at HBW is around $25,000-$30,000 all-in.'
       },
       {
         question: 'Can I use a kicker motor on a bass boat?',
-        answer: 'Most bass boats don\'t use a dedicated kicker the way walleye rigs do, bass fishing is generally run-and-gun rather than slow-trolling. A small kicker (Mercury 9.9HP or 15HP) can work on some bass boat transoms for backup or trolling scenarios, but not all bass boat hulls are configured for it. More common is a high-thrust trolling motor for positioning work, which is standard at the tournament level. Ask your dealer if a kicker setup makes sense for your specific hull.'
+        answer: 'Yes, and most Ontario tournament anglers do. The Mercury 9.9 ProKicker is the standard pick. It handles trolling speeds, keeps batteries topped up, and gives you a get-home option if the main motor faults.'
+      },
+      {
+        question: 'Should I buy a stainless or aluminum prop?',
+        answer: 'Stainless on any tournament boat. Aluminum is fine for the 150 FourStroke break-in, but tournament-grade props are stainless: Mercury Fury 4, Tempest Plus, Bravo 1 FS, or Bravo 1 LT depending on the hull and use case. Budget $500-$900.'
+      },
+      {
+        question: 'How much does a Mercury Pro XS cost in Canada in 2026?',
+        answer: 'Planning-level CAD ranges as of May 2026: 150 Pro XS around $17,000-$18,000 dealer, 200 Pro XS V6 around $24,000-$26,000, 250 Pro XS V8 around $30,000-$33,000. Final pricing depends on configuration and live quote.'
       },
       {
         question: 'What warranty does a Mercury outboard come with in Canada?',
-        answer: 'Mercury outboards sold in Canada come with a standard 3-year limited warranty for recreational use, covering defects in materials and workmanship. Annual service by an authorized Mercury dealer is required to maintain warranty validity. Extended protection plans are available. At Harris Boat Works, as a Mercury Platinum dealer, certified technicians perform warranty service and handle claims directly with Mercury, you don\'t need to deal with the manufacturer independently.'
-      },
-      {
-        question: 'What\'s the best Mercury outboard for Ontario bass tournaments?',
-        answer: 'For Ontario bass tournament fishing, the Mercury Pro XS 200HP or 225HP is the most common choice at the semi-competitive to competitive level. It delivers hole-shot speed for running to distant points quickly and has the reliability record needed when a bad day can\'t also mean motor trouble. At the elite level on 21ft+ boats, the Pro XS 250HP or 300HP is common. For budget-focused entrants on local Ontario circuits, the FourStroke 150HP is a solid option.'
+        answer: 'Mercury outboards in Canada carry a 3-year limited warranty plus 3-year corrosion coverage running concurrently (not stacked). Extended coverage available through Mercury Product Protection.'
       }
     ]
   },
@@ -4275,7 +4366,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   // Week 12: March 23, 2026
   {
     slug: 'center-console-mercury-motor-guide',
-    title: 'Best Mercury Outboards for Center Console Boats: 2026 Guide',
+    title: 'Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)',
     description: 'Find the ideal Mercury motors for your center console. From single 115HP to quad 450HP setups, we cover every option for offshore and inshore boats.',
     image: '/lovable-uploads/Best_Mercury_Outboards_Center_Console_Hero.png',
     author: 'Harris Boat Works',
@@ -4285,154 +4376,240 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     category: 'Buying Guide',
     readTime: '11 min read',
     keywords: ['center console outboard', 'twin mercury outboard', 'mercury 300 verado', 'offshore motor', 'center console motor choice'],
-    content: `
-*Last reviewed: 2026-05-07*
+    content: `# Mercury Power for Center Console Boats: Ontario Trailerable Setups (2026)
 
-> **Quick answer:** Most Ontario center consoles in the 18-23 ft range are happy on a Mercury 150-250 V6 FourStroke. Pick the bigger end of the range if you load heavy or fish offshore on Lake Ontario. Stay inside the capacity plate. Build an installed center-console repower quote at mercuryrepower.ca.
+*Last reviewed: 2026-05-10*
 
-## Choosing Mercury Power for Center Console Boats
+> **Quick answer:** Most Ontario center console buyers run trailerable 18-25 ft hulls on Lake Ontario, the Bay of Quinte, and Georgian Bay. The right Mercury is usually a 200-300 HP V6 Pro XS for fishing-focused setups, or a 250-400 HP Verado V8 for premium twin or single applications. Big offshore center consoles (28+ ft) exist but are uncommon outside the Great Lakes. Build a quote at mercuryrepower.ca.
 
-Center consoles range from 18-foot bay boats to 43-foot offshore warriors. Here's how to choose the right Mercury power.
+A center console is the most versatile fishing platform in Ontario. Open deck, 360-degree access, console-mounted electronics, and the ability to chase salmon on Lake Ontario in the morning and run the Trent-Severn locks in the afternoon. The motor decision on a center console is more involved than on most other hull types because the Ontario use case spans Great Lakes salmon trolling, Bay of Quinte walleye, and trailerable river running.
 
-### Power Configuration Options
+We've rigged center consoles for Lake Ontario salmon, Bay of Quinte fishing, and the occasional Georgian Bay setup. This guide is the conversation we have with center-console buyers when they're choosing between a Pro XS V6, a Verado V8, single versus twin, and how Joystick Piloting fits into the picture.
 
-**Single Engine**:
-- Best for: 18-24ft boats
-- Advantages: Lower cost, simpler maintenance
-- Limitations: No backup, limited top speed
+---
 
-**Twin Engines**:
-- Best for: 24-30ft boats
-- Advantages: Redundancy, better handling, more power
-- Considerations: Double the cost and maintenance
+## The Ontario Center Console Reality
 
-**Triple Engines**:
-- Best for: 30-36ft boats
-- Advantages: Maximum power, can limp home on two
-- Considerations: Significant investment
+The audit some center-console articles get wrong is treating the Ontario buyer like a Florida buyer. That's not the customer base. **Most Ontario center console buyers are trailerable.** The boats that actually move through HBW are:
 
-**Quad Engines**:
-- Best for: 36ft+ boats
-- Advantages: Ultimate power, exceptional redundancy
-- Considerations: Major investment and space requirements
+| Length | Typical HP | Common hulls | Use case |
+|---|---|---|---|
+| 17-19 ft | 90-150 HP | Boston Whaler 170 Montauk, Lund Adventure | Bay / lake / inshore |
+| 20-22 ft | 150-250 HP | Boston Whaler 220 Dauntless, Cobia 220 CC, Bayliner Trophy | Lake Ontario salmon, Bay of Quinte |
+| 23-25 ft | 200-350 HP single or twin | Sportsman 232, Cobia 240 CC, Pursuit C238 | Great Lakes, Georgian Bay |
+| 26-28 ft | 250-400 HP twin | Sportsman 282, Pursuit C260 | Premium Great Lakes |
+| 28+ ft | 300-450 HP twin or triple | Cobia 280, Pursuit S268, Boston Whaler 280 Outrage | Rare in Ontario, mostly USA imports |
 
-### Recommended Power by Boat Size
+**Don't skip past the 20-25 ft class.** That's where 80% of Ontario center-console activity lives. A 22 ft Boston Whaler Dauntless with a Mercury 250 Pro XS V6 is the most common HBW center-console repower configuration. Big offshore 28+ ft hulls with triple Verado 400s are striking on YouTube but they aren't the typical Ontario buyer.
 
-**18-21ft Bay Boats**:
-- Single Mercury 115-150HP FourStroke
-- Alternative: Single 175-200HP for performance
+---
 
-**22-25ft Coastal**:
-- Single Mercury 250-300HP Pro XS
-- Or Twin Mercury 115-150HP FourStroke
+## Power Configuration Options
 
-**26-30ft Offshore**:
-- Twin Mercury 200-300HP Pro XS
+Three motor configurations cover almost all Ontario center consoles.
 
-**31-36ft Offshore**:
-- Twin Mercury 300HP Pro XS
-- Or Triple Mercury 250-300HP
+### Single V6 (200-300 HP)
+The default for 20-25 ft trailerable center consoles. Mercury 200 Pro XS V6 (3.4L) or 250 Pro XS V6 V8 (4.6L) covers most setups.
 
-**37ft+**:
-- Triple or Quad Mercury 300-450HP
+**When it's right:**
+- 20-25 ft hull, single-engine bracket or transom mount
+- Trailerable rig (single fueling, single registration, simpler maintenance)
+- Lake Ontario salmon or Bay of Quinte fishing (single is sufficient power)
 
-Note: For premium twin or triple Verado-powered builds, Verado is special-order only at Harris Boat Works, contact us by phone or email to spec it.
+### Twin V6 or V8 (200 HP each, 250 HP each, etc.)
+For 23-28 ft center consoles where redundancy matters. Twin Mercury 250 V6 or twin Mercury 300 V8 are common.
 
-> **Note on the quote tool:** Our online quote builder at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) covers Mercury motors from 2.5 HP to 300 HP. For multi-engine setups (twin/triple/quad) and Verado V8/V10/V12 configurations above 300 HP, contact us directly at (905) 342-2153 or info@harrisboatworks.ca for a custom quote.
+**When it's right:**
+- 25+ ft hull with twin transom
+- Offshore work where motor failure means a long tow
+- Customers who run heavier loads (gear, anglers, ice, full bait)
+- Joystick Piloting requirement (twin minimum)
 
-### Single vs Twin: The Debate
+### Triple V8 (300+ HP each)
+Rare in Ontario. Reserved for 28+ ft center consoles, almost always Lake Ontario / Great Lakes offshore commercial or premium recreational.
 
-**Single Engine Advantages**:
-- Lower initial cost
-- Less maintenance
-- Better fuel economy
-- Simpler rigging
+**When it's right:**
+- 28+ ft hull spec'd for triple transom
+- Big-water offshore (Lake Ontario salmon tournament, Georgian Bay long runs)
+- Premium use case where the cost is justified by speed and redundancy
 
-**Twin Engine Advantages**:
-- Redundancy (critical offshore)
-- Better slow-speed handling
-- More total power available
-- Joystick maneuvering option
+---
 
-**Our Recommendation**: For boats under 24ft primarily used inshore, single engine works well. For any offshore work or boats 24ft+, twins provide important redundancy.
+## Recommended Power by Boat Size
 
-### Joystick Piloting
+Real recommendations from Ontario center consoles we've rigged. Conditions matter (hull, load, prop, water) so think of these as starting points, not guarantees.
 
-Mercury's Joystick Piloting for Outboards is a game-changer for docking:
+### 18-19 ft trailerable (Boston Whaler 170 Montauk, Lund Adventure 1875)
+- **Motor:** Mercury 90-115 FourStroke or 115 Pro XS for sportier handling.
+- **Top end:** 35-42 mph two-up.
+- **Use case:** Bay of Quinte walleye, river running, occasional Lake Ontario sheltered work.
 
-- Requires twin engines or more
-- Intuitive directional control
-- Automatic skyhook (holds position)
-- Available on Verado 250HP+
+### 20-22 ft trailerable (Boston Whaler 220 Dauntless, Cobia 220 CC)
+- **Motor:** Mercury 200 Pro XS V6 (3.4L) is the sweet spot. 150 Pro XS works on the lighter 20 ft hulls.
+- **Top end:** 45-55 mph two-up with the 200 V6.
+- **Use case:** Lake Ontario salmon, Bay of Quinte, full-day fishing trips.
 
-### Installation Considerations
+### 23-25 ft single (Sportsman 232, Cobia 240 CC)
+- **Motor:** Mercury 250 Pro XS V8 (4.6L) for fishing. Mercury 300 Verado V8 if quietness and ride matter more than hole-shot.
+- **Top end:** 50-60 mph two-up.
+- **Use case:** Lake Ontario tournament salmon, big-water Bay of Quinte.
 
-**Weight Distribution**: Multiple motors require proper transom engineering
+### 25-28 ft twin (Pursuit C238, Sportsman 282)
+- **Motor:** Twin Mercury 250 Pro XS V8 (4.6L) for performance. Twin Mercury 300 Verado V8 for premium ride.
+- **Top end:** 55-65 mph two-up.
+- **Use case:** Offshore Lake Ontario / Georgian Bay, premium fishing or family use.
 
-**Rigging Space**: Ensure adequate space for controls, fuel lines, batteries
+### 28+ ft twin/triple (rare in Ontario)
+- **Motor:** Triple Mercury 350 Verado V10 or triple 400 Verado V10. The 425 V10 added in May 2025 fits this class.
+- **Top end:** 60-70 mph two-up.
+- **Use case:** Top-tier Great Lakes, USA-import boats, rare in Ontario.
 
-**Access**: Service access becomes more critical with multiples
+---
 
-**[Get a Quote on Center Console Power](/quote)**
+## Single vs Twin: The Real Decision Framework
 
-**See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
+The "single or twin" question gets framed as an offshore-redundancy question, which is right but oversimplified. Three things actually drive the call:
 
-## Related guides
+**1. Boat size and rating.** A 22 ft Boston Whaler Dauntless is a single. A 28 ft Sportsman 282 is a twin. Most boats are spec'd for one configuration; honor the manufacturer's bracket rating.
 
-- [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats), best Mercury for aluminum fishing boats
-- [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats), best Mercury for pontoons
-- [Best Mercury Motor for Bass Boats: 2026 Buyer's Guide](/blog/bass-boat-mercury-motor-buying-guide), bass-boat motor selection
-- [Best Mercury Outboard for Family Runabouts](/blog/best-mercury-for-family-runabouts), family-runabout recommendations
+**2. Distance from shore in worst case.** If the longest trip you'll make is 8 km offshore in Lake Ontario in mild summer conditions, a single is fine. If you run 30 km offshore in October chasing salmon, twin makes sense for the get-home redundancy.
 
-    `,
+**3. Joystick Piloting requirement.** If you want Mercury Joystick Piloting (low-speed multi-axis docking control), you need twin or more engines on the same NMEA 2000 network. Single-engine boats can't run Joystick.
+
+The cost delta is real. A twin Mercury 250 Pro XS V8 setup is roughly 1.7x the cost of a single 300 V8 of equivalent total HP. For most Ontario trailerable buyers, single is the right answer. For buyers who run offshore in shoulder seasons or want Joystick docking, twin earns its keep.
+
+---
+
+## Joystick Piloting on Outboards
+
+Mercury Joystick Piloting is genuinely useful on a center console. It controls thrust direction across both motors plus the bow thruster (where fitted), letting you walk the boat sideways into a slip without touching the wheel. For new center-console owners or for docking in tight Bay of Quinte / Trent-Severn marina slips, it's a real quality-of-life upgrade.
+
+**Requirements:**
+- Twin or more Mercury outboards on the same NMEA 2000 network
+- Mercury Joystick controls and electronic shift / throttle (no cable mechanical)
+- Compatible Mercury motors from 2014 onward (most current Pro XS V6/V8 and Verado V8/V10)
+
+**Cost:** Joystick adds roughly $4,000-$7,000 CAD to the rigging on a twin setup, depending on motor generation and existing controls. Verify with a quote.
+
+**Reality check:** Joystick is excellent at docking. It's not a replacement for learning how to drive a twin. Customers who buy Joystick and rely on it exclusively often struggle when the system glitches. Treat it as a tool, not a crutch.
+
+---
+
+## Critical Rigging Details for Center Consoles
+
+The motor is the headline. These are the supporting rigging details that make or break the rig.
+
+### Transom bracket vs through-transom mount
+Older center consoles ran through-transom mounts. Modern ones use transom brackets (Armstrong, SeaLand, OEM-supplied) that move the motor 12-30 inches behind the transom. Brackets improve handling and noise, but they change the prop selection and steering geometry. Verify bracket rating before quoting.
+
+### Stainless propeller (always)
+Aluminum props on a 200+ HP center console are a false economy. Mercury Bravo 1 FS, Bravo 1 XS, or Fury 4 in the right pitch is the default install for V6/V8 power. Budget $700-$1,300 for the prop on a fresh repower.
+
+### Hydraulic steering
+Required on V6 and V8 motors. SeaStar Pro hydraulic is HBW's default. Power steering (electro-hydraulic) is worth considering on twins; reduces angler fatigue on long offshore days. Details in our [Mercury controls and rigging guide](/blog/mercury-controls-rigging-guide-ontario).
+
+### Multi-engine NMEA 2000 backbone
+For twins, plan a proper NMEA 2000 backbone for chartplotter-engine integration (Garmin, Humminbird) and for Joystick if you're running it. Cheaping out on the wiring backbone is the most common mistake we see on used-boat-purchase repowers.
+
+### SmartCraft Connect Mobile
+The under-helm 8M0173129 module supports 1-4 engines and gives you live data from all of them on your phone. Useful for trip-tracking and fault diagnostics. Details in our [SmartCraft Connect guide](/blog/mercury-smartcraft-connect-guide-ontario).
+
+### Cool-water starts
+Center consoles tend to be stored covered, not shrink-wrapped. Spring start-up issues are common. Annual service before launch is worth the $400-$600 vs the $4,000+ cost of a cooked impeller. See our [spring commissioning checklist](/blog/spring-outboard-commissioning-checklist).
+
+---
+
+## Why Ontario Center Console Buyers Choose HBW
+
+We've been on Rice Lake since 1947 and a Mercury dealer since 1965. Center-console repowers are a steady part of our shop volume because we cover the trailerable Ontario buyer well.
+
+- We rig Pro XS V6, Pro XS V8, and Verado center-console setups regularly.
+- We stock common center-console props (Bravo 1 FS, Fury 4, Tempest) and verify WOT RPM in sea trial before delivery.
+- We don't oversell Verado for fishing-focused trailerable rigs. Pro XS is the right pick for most Ontario center consoles; we save Verado for premium or twin-engine setups where the ride and noise differences matter.
+- Pickup only at Gores Landing. The trade-off is your motor was rigged by a tech who's done a lot of Lake Ontario / Bay of Quinte center consoles.
+
+---
+
+## Frequently Asked Questions
+
+**Can I run twin different-sized motors on a center console?**
+No. Mercury's twin-engine architecture requires matched motors (same family, same HP, same year if possible). Different-sized motors create unbalanced thrust at all RPM ranges and confuse the SmartCraft network. Don't try this.
+
+**What's the advantage of outboards over inboards for center consoles?**
+Outboards lift out of the water when not in use (less corrosion, easier service, no salt-bath sterndrive), they free up cockpit space (no engine box), and they're lighter, which improves trailerability. The downside is upper-deck weight and noise on cheap setups; modern Verado V8 has eliminated most of the noise gap.
+
+**How does Mercury Joystick Piloting work on outboards?**
+Mercury Joystick uses electronic shift / throttle on both motors plus the bow thruster (where fitted) to vector thrust in any direction. Move the joystick stick left, both motors rotate to push the boat sideways. Requires twin or more matched Mercury outboards on a NMEA 2000 backbone.
+
+**Is triple power overkill for a 28-foot center console?**
+Sometimes. Triple makes sense if the hull is rated for it (28-32 ft offshore center consoles often are), if you run far from shore in shoulder seasons, or if you want top speeds in the 60+ mph range loaded. For typical Ontario use on a 28-ft boat, twin 300 HP V8 is usually enough. Check the manufacturer's power options.
+
+**What Mercury motors are available for center consoles in Ontario in 2026?**
+Mercury's 2026 lineup for center consoles spans 90-115 HP FourStroke (small consoles), 150-250 HP Pro XS V6 / V8 (mid-size trailerable), and 250-600 HP Verado V8/V10/V12 (premium and offshore). The 425 hp V10 Verado added in May 2025 is the newest premium option. Most Ontario center consoles run in the 200-300 HP range.
+
+**How much does a twin Mercury outboard setup cost in Ontario?**
+Planning-level CAD ranges as of May 2026: twin 250 Pro XS V8 is roughly $58,000-$65,000 dealer for the motors, plus $8,000-$15,000 in rigging (controls, hydraulic steering, NMEA backbone, props), totalling roughly $70,000-$80,000 installed before HST. Add Joystick: another $4,000-$7,000. Final pricing depends on configuration and live quote.
+
+**Can I add Mercury Joystick Piloting to an existing twin-engine center console?**
+Sometimes. Requires Mercury 2014+ electronic-shift twins on a NMEA 2000 backbone. Older mechanical-shift Mercurys are not Joystick-compatible. We can verify eligibility from your serial numbers; email info@harrisboatworks.ca with the motor IDs.
+
+**What's the best single Mercury outboard for an 18-22 ft Ontario center console?**
+For an 18-19 ft hull: Mercury 115 Pro XS or 115 FourStroke. For a 20-22 ft hull: Mercury 200 Pro XS V6 (3.4L) is the sweet spot. The 200 Pro XS is fast enough for tournament salmon, light enough to keep the rig trailerable, and Mercury Boost-eligible on select 150 V8 variants if you want to bump up later.
+
+---
+
+## Ready to Spec Your Center Console Repower?
+
+Build a current quote in 3 minutes at our online configurator. Single or twin, Pro XS or Verado, Joystick or no Joystick. We confirm fitment and the all-in price before you commit.
+
+Or call the shop. The center-console conversation is usually 15 minutes if you can tell us the hull make / length / year, current motor (or motors), and the typical use case.
+
+**Phone:** 905-342-2153
+**Configurator:** [mercuryrepower.ca/quote/motor-selection](https://mercuryrepower.ca/quote/motor-selection)
+**Live pricing:** [mercuryrepower.ca/pricing-reference](https://mercuryrepower.ca/pricing-reference)
+**Service booking:** [hbw.wiki/service](https://hbw.wiki/service)
+
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON, K0K 2E0
+
+**Related guides:**
+- [Best Mercury Outboard for Lake Ontario Salmon and Trout](/blog/best-mercury-outboard-lake-ontario-salmon-trout)
+- [Mercury 150-200 HP V6 Performance](/blog/mercury-150-200hp-v6-performance)
+- [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Mercury Controls and Rigging Guide](/blog/mercury-controls-rigging-guide-ontario)
+- [Mercury Repower Cost in Ontario (2026 CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury SmartCraft Connect Guide](/blog/mercury-smartcraft-connect-guide-ontario)`,
     faqs: [
       {
-        question: 'Can I run twin different-sized motors?',
-        answer: 'Not recommended. Twin, triple, and quad setups should use identical motors for proper operation. The engines work together and must match.'
-      },
-      {
-        question: 'What\'s the advantage of outboards over inboard for center consoles?',
-        answer: 'Outboards offer easier maintenance, more cockpit space, easy repowering, and modern outboards match inboard performance. Most new center consoles are outboard-powered.'
-      },
-      {
-        question: 'How does joystick work on outboards?',
-        answer: 'Mercury\'s Joystick Piloting uses independent motor control to pivot, slide, and position the boat. It requires twin or more Verado motors with the Joystick system installed.'
-      },
-      {
-        question: 'Is triple power overkill for a 32ft boat?',
-        answer: 'Depends on use. For offshore fishing and performance, triples provide excellent power and redundancy. For casual coastal use, twins often suffice. Consider how you\'ll use the boat.'
-      },
-      {
         question: 'Can I run twin different-sized motors on a center console?',
-        answer: 'Running mismatched horsepower engines is technically possible but not recommended, and Mercury does not support it for Digital Throttle and Shift setups. Mismatched motors create uneven thrust that makes straight-line running and docking more difficult. In twin-engine DTS or Joystick Piloting systems, matched engines are required for the electronics to coordinate properly. If budget is a concern, buy matched motors at the same horsepower, even if it means stepping down to a lower class where you can afford two.'
+        answer: 'No. Mercury\'s twin-engine architecture requires matched motors (same family, same HP, same year if possible). Different-sized motors create unbalanced thrust at all RPM ranges and confuse the SmartCraft network. Don\'t try this.'
       },
       {
         question: 'What\'s the advantage of outboards over inboards for center consoles?',
-        answer: 'Outboards dominate modern center consoles because they free up cockpit and stern space, are easier to service without accessing a bilge, tilt up for shallow-water use and trailering, and can be replaced or swapped without extended haul-out in the event of failure. On modern center consoles, outboard weight on the transom is engineered in from the start, so there\'s no structural compromise versus an inboard.'
+        answer: 'Outboards lift out of the water when not in use (less corrosion, easier service, no salt-bath sterndrive), they free up cockpit space (no engine box), and they\'re lighter, which improves trailerability. The downside is upper-deck weight and noise on cheap setups; modern Verado V8 has eliminated most of the noise gap.'
       },
       {
         question: 'How does Mercury Joystick Piloting work on outboards?',
-        answer: 'Mercury Joystick Piloting coordinates two or more DTS-equipped Verado engines through a command module at the helm. Pushing the joystick in any direction causes the system to calculate individual throttle and steering adjustments for each engine to move the boat in exactly that direction, including pure sideways movement. Skyhook uses GPS to hold the boat\'s position against current and wind. It requires twin or more Verado 250 HP engines with Digital Throttle and Shift, and is not a retrofit for cable-steer systems.'
+        answer: 'Mercury Joystick uses electronic shift / throttle on both motors plus the bow thruster (where fitted) to vector thrust in any direction. Move the joystick stick left, both motors rotate to push the boat sideways. Requires twin or more matched Mercury outboards on a NMEA 2000 backbone.'
       },
       {
-        question: 'Is triple power overkill for a 32-foot center console?',
-        answer: 'For a 32-foot center console in Ontario lake use, triple power is almost certainly overkill. A well-matched twin-engine setup, typically twin 300–350 HP Verados, will get a 31–34 ft center console to hull speed and beyond with redundancy. Triple configurations make sense for offshore fishing where top speed and sea-keeping matter and losing one of two engines is a serious safety concern. For Ontario lakes and Georgian Bay use, twins are the practical choice.'
+        question: 'Is triple power overkill for a 28-foot center console?',
+        answer: 'Sometimes. Triple makes sense if the hull is rated for it (28-32 ft offshore center consoles often are), if you run far from shore in shoulder seasons, or if you want top speeds in the 60+ mph range loaded. For typical Ontario use on a 28-ft boat, twin 300 HP V8 is usually enough.'
       },
       {
         question: 'What Mercury motors are available for center consoles in Ontario in 2026?',
-        answer: 'Harris Boat Works, as a Mercury Platinum dealer in Gores Landing, Ontario, can order and rig the full 2026 Mercury lineup for center consoles. Popular options include the Mercury 115–150 HP FourStroke (single or twin on 18–24 ft hulls), Mercury 200–300 HP Verado (twin on 24–30 ft hulls), and Mercury Pro XS 250–300 HP for performance buyers. All engines include full Mercury factory warranty. Build a quote at mercuryrepower.ca or call 905-342-2153.'
+        answer: 'Mercury\'s 2026 lineup for center consoles spans 90-115 HP FourStroke (small consoles), 150-250 HP Pro XS V6 / V8 (mid-size trailerable), and 250-600 HP Verado V8/V10/V12 (premium and offshore). The 425 hp V10 Verado added in May 2025 is the newest premium option. Most Ontario center consoles run in the 200-300 HP range.'
       },
       {
         question: 'How much does a twin Mercury outboard setup cost in Ontario?',
-        answer: 'Twin Mercury outboard costs vary significantly by horsepower class. Pricing is engine-plus-rigging, controls, steering, wiring, gauges, and installation add to the motor cost. For accurate 2026 pricing with full rigging on your specific hull, use the quote builder at mercuryrepower.ca/quote/motor-selection or call Harris Boat Works at 905-342-2153. Written quotes are provided with no call-for-pricing games.'
+        answer: 'Planning-level CAD ranges as of May 2026: twin 250 Pro XS V8 is roughly $58,000-$65,000 dealer for the motors, plus $8,000-$15,000 in rigging (controls, hydraulic steering, NMEA backbone, props), totalling roughly $70,000-$80,000 installed before HST. Add Joystick: another $4,000-$7,000.'
       },
       {
         question: 'Can I add Mercury Joystick Piloting to an existing twin-engine center console?',
-        answer: 'Mercury Joystick Piloting can be added to an existing twin-engine boat if both engines are compatible Verado models with Digital Throttle and Shift (DTS). It cannot be retrofitted to cable-steer systems. If upgrading from older Verados or non-DTS engines, the repower would need to include DTS-equipped replacement engines plus the Joystick Piloting module. Harris Boat Works can assess your current setup and quote a Joystick-capable repower, call 905-342-2153 or use the quote configurator at mercuryrepower.ca.'
+        answer: 'Sometimes. Requires Mercury 2014+ electronic-shift twins on a NMEA 2000 backbone. Older mechanical-shift Mercurys are not Joystick-compatible. We can verify eligibility from your serial numbers; email info@harrisboatworks.ca with the motor IDs.'
       },
       {
-        question: 'What\'s the best single Mercury outboard for an 18–22 ft Ontario center console?',
-        answer: 'For an 18–22 ft center console used on Ontario lakes, the Mercury 150 HP FourStroke is the most popular choice. It provides strong planing performance, handles a full passenger load without struggling, and the FourStroke\'s fuel efficiency makes it practical for full-day use. The Mercury 115 HP FourStroke works well on lighter 18–19 ft hulls used primarily for fishing. The Mercury 200 HP FourStroke is the upper end of single-engine sense, beyond that, twins become more appropriate. Harris Boat Works has been a Mercury dealer since 1965 and can match the right motor to your hull.'
+        question: 'What\'s the best single Mercury outboard for an 18-22 ft Ontario center console?',
+        answer: 'For an 18-19 ft hull: Mercury 115 Pro XS or 115 FourStroke. For a 20-22 ft hull: Mercury 200 Pro XS V6 (3.4L) is the sweet spot. The 200 Pro XS is fast enough for tournament salmon, light enough to keep the rig trailerable, and Mercury Boost-eligible on select 150 V8 variants if you want to bump up later.'
       }
     ]
   },
