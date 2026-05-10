@@ -8790,7 +8790,7 @@ The current climate is the result of a sequence of policy moves since early 2025
 - **Early 2025**: The Trump administration announced new tariffs on a variety of imports, including a 25% duty on certain Canadian products that did not qualify under CUSMA's rules of origin.
 - **Spring 2025**: Canada responded with retaliatory counter-tariffs on selected U.S. goods, echoing earlier disputes over steel and aluminum from the late 2010s.
 - **Summer 2025**: Some U.S. tariffs on non-CUSMA-compliant Canadian goods were raised to as high as 35%, increasing pressure on Canadian exporters.
-- **September 2025**: Canada announced it would remove most of its retaliatory tariffs on U.S. imports, while maintaining measures on steel, aluminum, and certain autos.
+- **September 2025**: Canada announced it would remove most of its retaliatory tariffs on U.S. imports, while maintaining measures on steel, aluminum, and certain autos. (Department of Finance Canada; effective Sept 1, 2025)
 - **Late 2025**: The U.S. Trade Representative (USTR) began consultations and hearings in advance of the 2026 CUSMA joint review. NMMA testified on recreational boating priorities, emphasizing the need to preserve duty-free treatment for marine products.
 
 Throughout this period, one crucial protection has remained in place: goods that qualify under CUSMA, including most recreational boats and marine engines that meet content and origin rules, continue to cross the border duty-free.
