@@ -98,11 +98,15 @@ export const blogArticles: BlogArticle[] = [
     keywords: ['boat motor horsepower', 'how to choose outboard motor', 'mercury motor sizing', 'boat hp guide', 'outboard motor selection'],
     content: `# How to Choose the Right Horsepower for Your Boat (2026 Guide)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Match the horsepower to your hull's capacity plate first, then pick within that range based on load and use. Bigger isn't better, over-powering creates capacity-plate compliance, insurance, liability, and warranty risk. Most Ontario family runabouts in the 17-20 ft range land between 90 and 150 HP. Build a real installed quote at mercuryrepower.ca.
 
-The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. The shortcut: aim for 70 to 90% of your maximum rating for typical recreational use. Going lower leaves you underpowered, going to 100% maxes out fuel economy. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).
+The right horsepower for your boat depends on hull weight, intended use, passenger and gear loading, and the maximum HP rating on the boat's capacity plate. A common dealer rule of thumb is that most boats run best loaded with around 70 to 80% of their maximum rated horsepower, leaving headroom for varying loads, prop pitch, and conditions. That's a starting point for the conversation, not a rule. Hull design, intended use, and load patterns matter more than the percentage on paper. Live pricing on every Mercury HP class is at [/quote/motor-selection](/quote/motor-selection).
+
+## About the capacity plate
+
+The capacity plate is a federal compliance label. Transport Canada sets the standards under the Small Vessel Regulations; the boat manufacturer or importer is responsible for applying the maximum horsepower rating to the plate in accordance with those standards. Either way, the number on the plate is the legal ceiling for that hull, exceeding it creates compliance, insurance, liability, and warranty problems.
 
 ## Quick recommendation
 
@@ -237,7 +241,7 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 ## FAQ
 
 **How do I choose the right horsepower for my boat?**
-Look at three things: hull weight and length, intended use (fishing vs cruising vs tubing), and the maximum HP on the capacity plate. Aim for 70 to 90% of the rated maximum for typical recreational use. Going below that often leaves you underpowered. We will help match a motor to your specific boat at [HBW](/quote/motor-selection).
+Look at three things: hull weight and length, intended use (fishing vs cruising vs tubing), and the maximum HP on the capacity plate. A common dealer rule of thumb is around 70 to 80% of the rated maximum for typical recreational use, but that's a starting point, not a rule. Hull design, load patterns, and prop selection matter more than the percentage on paper. We will help match a motor to your specific boat at [HBW](/quote/motor-selection).
 
 **What HP do I need for a 16-foot aluminum fishing boat?**
 For solo or two-person trolling, 25 to 40 HP. For three or more passengers who want to plane and run reasonably, 40 to 60 HP. Most 16 ft aluminum fishing boats land in the 40 to 60 HP range for typical Kawartha use.
@@ -285,7 +289,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Can I exceed my boat\'s maximum HP rating?',
-        answer: 'No. The maximum HP rating is set by Transport Canada for safety reasons. Exceeding it can void insurance, create handling problems, and put you and passengers at risk.'
+        answer: 'No. The capacity plate is a federal compliance label: Transport Canada sets the standards under the Small Vessel Regulations, and the boat manufacturer or importer applies the maximum horsepower rating in accordance with those standards. Either way, the number on the plate is the legal ceiling. Exceeding it can void insurance, create handling problems, and put you and passengers at risk.'
       },
       {
         question: 'Does higher horsepower always mean faster speed?',
@@ -301,7 +305,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Can I exceed my boat\'s maximum HP rating in Canada?',
-        answer: 'No. You cannot legally or safely exceed the maximum horsepower rating on your boat\'s capacity plate. In Canada, this rating is set under Transport Canada regulations, and exceeding it is illegal. The hull is engineered for that load limit, running a larger motor can stress the transom, affect stability, and create dangerous handling at speed. If your boat feels underpowered at its rated maximum, the solution is a different boat, not exceeding the limit.'
+        answer: 'No. You cannot legally or safely exceed the maximum horsepower rating on your boat\'s capacity plate. In Canada, the capacity plate is a federal compliance label: Transport Canada sets the standards under the Small Vessel Regulations, and the boat manufacturer or importer applies the maximum horsepower rating to the plate in accordance with those standards. Exceeding the plate rating is illegal. The hull is engineered for that load limit, running a larger motor can stress the transom, affect stability, and create dangerous handling at speed. If your boat feels underpowered at its rated maximum, the solution is a different boat, not exceeding the limit.'
       },
       {
         question: 'What is the right HP for a fishing boat on Rice Lake or Kawartha Lakes?',
@@ -8612,13 +8616,15 @@ Typically when motor is installed and ready for water test. Review payment terms
     readTime: '10 min read',
     keywords: ['2026 boating market', 'ontario boat buying', 'boat market forecast', 'luxury tax boats canada', 'boat dealer inventory', 'used boat market'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
+
+*Last verified: May 10, 2026. Trade policy and market data move quickly. Confirm current figures with the linked sources before quoting them externally.*
 
 > **Quick answer:** The 2026 Ontario boat market is steadier than the post-2020 surge, inventory is back, pricing is rational, and trade-in values are normalizing. Used motors are abundant; new Mercury allocation is healthy. Good year to repower or upgrade without bidding-war pressure. Build a quote at mercuryrepower.ca.
 
 ## Where the North American Market Stands
 
-The National Marine Manufacturers Association (NMMA) estimates that total new powerboat retail unit sales in the U.S. dropped about 8–10% in 2025, landing in the range of 215,000–225,000 units. That includes everything from personal watercraft to aluminum fishing boats to offshore cruisers.
+The National Marine Manufacturers Association (NMMA) estimates that total new powerboat retail unit sales in the U.S. dropped about 8.8% in 2025, landing in the range of 215,000–225,000 units (National Marine Manufacturers Association, 2025 retail data). That includes everything from personal watercraft to aluminum fishing boats to offshore cruisers.
 
 That decline followed a roughly 9–12% drop in 2024, when unit sales fell back to around 230,000–240,000 after the COVID-era surge. The pandemic boom of 2020–2021 was never sustainable; what we're seeing now is a return toward pre-COVID baseline levels rather than a collapse.
 
@@ -8665,13 +8671,13 @@ Canada's 2022 federal budget introduced a luxury tax on certain items, including
 
 The marine industry argued the tax was counterproductive, driving sales out of Canada and hurting Canadian builders and dealers without generating meaningful revenue. After heavy advocacy from NMMA Canada and industry groups, the federal government moved to wind down the luxury tax on subject vessels.
 
-For subject vessels (boats over $250,000), the CRA has confirmed luxury tax is no longer payable as of November 5, 2025. Vehicle and aircraft luxury tax may continue to apply in other contexts. For buyers looking at high-end pontoons, larger Legend packages, or other boats near the threshold, this removes a psychological barrier on the marine side.
+For subject vessels (boats over $250,000), the CRA has confirmed luxury tax is no longer payable as of November 5, 2025 (Canada Revenue Agency, Luxury Tax Notice LTN5; effective Nov 5, 2025). Vehicle and aircraft luxury tax may continue to apply in other contexts. For buyers looking at high-end pontoons, larger Legend packages, or other boats near the threshold, this removes a psychological barrier on the marine side.
 
 ## Interest Rates Are Finally Easing
 
 One of the biggest headwinds in 2023–2025 was the cost of borrowing; higher benchmark rates translated into higher [monthly payments](/blog/mercury-outboard-financing-ontario-2026) on boat loans, pushing some buyers out of the market.
 
-By early 2026, the rate environment is shifting. Major marine finance commentators note that rate cuts are beginning to filter through, and dealers expect that lower monthly payments will help "payment buyers" re-engage in the market.
+By early 2026, the Bank of Canada's policy rate sits near 2.25% after a series of cuts through 2025 (Bank of Canada policy rate decisions, 2025-2026), and rate cuts are beginning to filter through to marine lenders. Dealers expect that lower monthly payments will help "payment buyers" re-engage in the market.
 
 On a typical $60,000 boat package, even a 1% decrease in interest can shave $30–40 per month off payments over a five-year term, thousands over the life of the loan.
 
@@ -17669,7 +17675,7 @@ A few things that aren't on the Legend website:
     content: `
 # Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models, often extended to 5 or 7 with current promotions. Bonus warranties revert to the 3-year standard after the promo ends. Coverage requires registered ownership and service-interval compliance. Current promo terms at mercuryrepower.ca.
 
@@ -17726,15 +17732,17 @@ The phrase "improper installation" matters. **A Mercury installed by your buddy 
 
 ## Mercury Product Protection (MPP). The Extended Warranty
 
-If you want coverage beyond the standard three years, Mercury sells **Mercury Product Protection (MPP)**, the official factory extended warranty.
+If you want coverage beyond the standard three years, Mercury offers **Mercury Product Protection (MPP)**, an optional extended-coverage program (typically marketed in Gold, Silver, and Platinum tiers depending on availability). MPP is not part of the factory standard warranty.
 
-Key facts:
+Coverage tiers, durations, and pricing depend on the specific motor, region, current promotions, and how soon after purchase the extension is added. As a general guide:
 
-- **Up to 8 years total coverage** (3 standard + 5 MPP) on most current 4-stroke models
+- Eligible Mercury outboards can be extended to roughly 5 to 8 years of total coverage (3 standard plus MPP) depending on tier and product
 - **Must be purchased while the original warranty is still active.** Not "within 1 year of purchase", that's an old rule that's been retired. The current rule: any time before your standard 3-year coverage ends.
 - **Transferable** with the motor if you sell it (private sale or dealer trade-in)
 - **Same dealer network**, any authorized Mercury dealer in Canada honours MPP claims
 - Covers the same scope as the original limited warranty, including parts and labour
+
+We can confirm what's available for your specific motor and current promotions when you quote with us.
 
 **What MPP costs (rough):** Pricing varies by motor HP and term length. As a rough range:
 - A 90 HP 4-stroke with a 5-year MPP: roughly $1,200–$1,800 CAD
@@ -17782,7 +17790,7 @@ The owner's manual has the full list. The ones we see most often in our shop:
 
 ## Canadian-Specific Things to Know
 
-**Warranty registration in Canada.** Your dealer registers the warranty at point of sale. You should receive a confirmation email from Mercury Marine within a few days. **If you don't, ask your dealer for a copy of the registration document.** This is the single best evidence of coverage.
+**Warranty registration in Canada.** Most Mercury dealers (HBW included) handle warranty registration at the time of sale or shortly after, so the customer doesn't typically need to do it themselves. You should receive a confirmation from Mercury Marine, ask your dealer for a copy of the registration document if you don't. If you bought the motor used or privately, contact Mercury or an authorized dealer to confirm registration status and any documentation required.
 
 **The dealer network.** Every authorized Mercury dealer in Canada honours warranty work, regardless of where the motor was purchased. So if you buy in Ontario and move to BC, your warranty doesn't lapse, but the closest dealer is now four provinces away, and warranty work needs to be done at an authorized dealer.
 
