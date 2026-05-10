@@ -5410,6 +5410,17 @@ Command Thrust is a Mercury gearcase option (115 HP and up) with larger gearcase
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 `,
+    howToSteps: [
+      { name: 'Find your motor\'s rated WOT RPM', text: 'Mercury publishes a wide-open throttle (WOT) RPM range for every motor (e.g., 90 EXLPT is 5,000 to 5,800 RPM). The right prop lets you reach mid-band at typical loading. This number is the target.' },
+      { name: 'Identify your hull and use case', text: 'Hull weight, design (pontoon vs runabout vs bass), typical loading, and use case (top speed vs trolling vs water sports) all change the right prop. Heavy boats and pontoons want different props than light boats.' },
+      { name: 'Choose aluminum vs stainless', text: 'For motors up to 115 HP and recreational use, aluminum (~$450 CAD) is the right answer. For 150 HP and up, or for tournament/performance use, stainless ($800 to $2,000 CAD) gives more thrust, better top end, and better damage resistance.' },
+      { name: 'Select pitch', text: 'Pitch is the theoretical distance the prop moves forward in one revolution. Lower pitch gives faster acceleration and lower top speed; higher pitch gives slower acceleration and higher top speed. Pick the pitch that lets the motor reach mid-band of its rated WOT RPM with your typical loading.' },
+      { name: 'Decide on blade count', text: '3-blade is standard for most recreational use, top speed, and fuel economy. 4-blade gives better hole shot and cruising stability and is common on pontoons, water-sports applications, and heavy boats.' },
+      { name: 'Account for Command Thrust gearcase', text: 'If your motor has Mercury Command Thrust (115 HP and up, common on pontoons), prop selection is different. Command Thrust props are typically larger diameter, lower pitch, often 4-blade, optimized for hole shot and load handling rather than top speed.' },
+      { name: 'Sea-trial and verify WOT RPM', text: 'Test prop performance on the water with typical loading. If WOT RPM is below rated band, you need a lower pitch (or you are over-loaded). If WOT is over rated RPM, you need a higher pitch. Re-prop and re-test until WOT lands in the rated band.' },
+    ],
+    howToTotalTime: 'PT45M',
+    howToTools: ['Tachometer or SmartCraft gauge', 'Mercury prop chart', 'Prop wrench'],
     faqs: [
       {
         question: 'How do I know if I have the wrong prop?',
