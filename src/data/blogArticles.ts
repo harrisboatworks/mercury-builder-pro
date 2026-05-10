@@ -3616,6 +3616,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake in the Kawarthas (Ontario). Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
+
 ## Quick recommendation
 
 If your hull is solid and the boat fits your family, repower it. Three out of four boats that come into HBW for assessment turn out to be better repower candidates than buy-new candidates. The math is simple: a quality used hull plus a current Mercury costs significantly less than a new boat with comparable capabilities, and you skip the depreciation hit that hammers new-boat owners in their first 5 years.
@@ -10378,6 +10380,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to $22,000; 150 HP $23,000 to $30,000; and 200 to 300 HP $35,000 to $40,000, CAD before HST. Live pricing on the motor selection page is the source of truth.
 
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
+
 ## Quick recommendation
 
 If you want a real repower number for your boat, build a quote on this site. It takes three minutes. You see the motor cost, the rigging, the install, and the total before you ever talk to us. No phone tag. No "call for price" games.
@@ -11071,6 +11075,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 > **Quick answer:** Mercury Repower Financing through DealerPlan: 7.99 percent APR (as of May 2026) on packages $10,000 and up, 8.99 percent under $10,000. Minimum financed amount is $5,000. A $299 DealerPlan fee is added post-tax. Apply with your installed quote at mercuryrepower.ca.
 
 Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR (as of May 2026). Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).
+
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
 ## Quick recommendation
 
@@ -12210,6 +12216,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 > **Quick answer:** Mercury's cheapest current outboard in Canada is the 2.5 HP FourStroke portable, under $1,500 CAD. The cheapest motor that fits inside your boat's HP rating is your real ceiling on the low end. Overpowering creates capacity-plate compliance, insurance, liability, and potential warranty problems. Live pricing at mercuryrepower.ca.
 
 The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class through the lineup. The honest answer most boaters need is not "what's the cheapest motor" but "what's the cheapest motor that actually fits my boat." Those are usually different motors. Live pricing on every Mercury we sell, including the 2.5 portable, is on the [motor selection page](/quote/motor-selection).
+
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
 ## Quick recommendation
 
@@ -14069,6 +14077,8 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 > **Quick answer:** Rigging costs vary by job: a like-for-like swap can be under $1,500, a full re-rig with new gauges, harness, and controls runs $3,000-$6,000. We quote rigging line by line, no surprises. Build an installed quote with rigging spelled out at mercuryrepower.ca.
 
 Mercury rigging is everything between the motor and the boat: throttle and shift controls, steering, wiring harness, gauges, fuel hose, battery cables, and prop. For a typical Mercury-to-Mercury repower with post-2010 controls in good condition, rigging lands $500 to $1,500 CAD. Brand conversions and full rerigs run higher. Live pricing on every Mercury we sell, with rigging included, is at [/quote/motor-selection](/quote/motor-selection).
+
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
 ## Quick recommendation
 
@@ -21321,6 +21331,8 @@ If you've been shopping Mercury outboards in Ontario and you're tired of "call f
 This is the canonical price reference for Ontario Mercury buyers. We update it as Mercury Canada updates pricing (which happens periodically through the season), and we pull from the same live database that powers our quote builder. The numbers below are real numbers, in CAD, for motors a Mercury Platinum dealer (Harris Boat Works, Gores Landing, ON) will actually sell you in 2026.
 
 ---
+
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
 ## How Mercury Outboard Pricing Actually Works in Canada
 
