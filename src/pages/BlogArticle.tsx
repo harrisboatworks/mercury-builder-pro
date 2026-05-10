@@ -21,6 +21,7 @@ import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { ShaftLengthPicker } from '@/components/tools/ShaftLengthPicker';
 import { TradeInValueEstimator } from '@/components/tools/TradeInValueEstimator';
 import { RepowerCostEstimator } from '@/components/tools/RepowerCostEstimator';
+import { BoostEligibilityChecker } from '@/components/tools/BoostEligibilityChecker';
 import { 
   Accordion, 
   AccordionContent, 
@@ -412,6 +413,11 @@ export default function BlogArticle() {
           {/* Interactive tool: Repower Cost Estimator (slug-conditional) */}
           {article.slug === 'mercury-repower-cost-ontario-2026-cad' && (
             <RepowerCostEstimator />
+          )}
+
+          {/* Interactive tool: Boost Eligibility Checker (slug-conditional) */}
+          {article.slug === 'mercury-boost-upgrade-150hp-pontoon-analysis' && (
+            <BoostEligibilityChecker />
           )}
 
           {/* Author Byline (bottom) */}
