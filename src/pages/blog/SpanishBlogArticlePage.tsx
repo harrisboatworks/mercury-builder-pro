@@ -8,6 +8,7 @@ import { SiteFooter } from '@/components/ui/site-footer';
 import { getSpanishArticleBySlug } from '@/data/spanishBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
+import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import {
   Accordion,
   AccordionContent,
@@ -322,6 +323,8 @@ export default function SpanishBlogArticlePage() {
             />
           </div>
         )}
+
+        <LanguageSwitcher currentLang="es" />
 
         {/* Meta */}
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">

@@ -123,6 +123,10 @@ export function GlobalSEO() {
       <link rel="alternate" hrefLang="en-CA" href={SITE_URL} />
       <link rel="alternate" hrefLang="fr-CA" href={`${SITE_URL}/fr`} />
       <link rel="alternate" hrefLang="zh-Hans" href={`${SITE_URL}/zh`} />
+      <link rel="alternate" hrefLang="ko" href={`${SITE_URL}/blog/ko`} />
+      <link rel="alternate" hrefLang="es" href={`${SITE_URL}/blog/es`} />
+      <link rel="alternate" hrefLang="hi" href={`${SITE_URL}/blog/hi`} />
+      <link rel="alternate" hrefLang="pa" href={`${SITE_URL}/blog/pa`} />
       <link rel="alternate" hrefLang="x-default" href={SITE_URL} />
     </Helmet>
   );

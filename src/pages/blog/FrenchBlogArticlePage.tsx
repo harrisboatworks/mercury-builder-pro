@@ -9,6 +9,7 @@ import { getFrenchArticleBySlug, getPublishedFrenchArticles } from '@/data/frenc
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
+import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import {
   Accordion,
   AccordionContent,
@@ -342,6 +343,8 @@ export default function FrenchBlogArticlePage() {
             />
           </div>
         )}
+
+        <LanguageSwitcher currentLang="fr" />
 
         {/* Meta */}
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">

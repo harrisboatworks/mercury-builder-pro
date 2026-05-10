@@ -19,6 +19,7 @@ import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { DealerConfidenceStrip } from '@/components/blog/DealerConfidenceStrip';
+import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import { ShaftLengthPicker } from '@/components/tools/ShaftLengthPicker';
 import { TradeInValueEstimator } from '@/components/tools/TradeInValueEstimator';
 import { RepowerCostEstimator } from '@/components/tools/RepowerCostEstimator';
@@ -346,6 +347,9 @@ export default function BlogArticle() {
               />
             )}
           </div>
+
+          {/* Language switcher */}
+          <LanguageSwitcher currentLang="en" />
 
           {/* Dealer credentials strip */}
           <DealerConfidenceStrip />
