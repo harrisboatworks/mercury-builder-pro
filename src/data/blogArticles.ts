@@ -623,6 +623,9 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the premium V8/V10/V12 line, 250 to 600+ HP, naturally aspirated, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the [motor selection page](/quote/motor-selection).
 
+![Comparison chart of Mercury outboard motor families: FourStroke (2.5-150 HP, recreational, best value and fuel economy), Pro XS (115-400 HP, tournament and performance, fast hole shot), Verado (175-600 HP, premium and multi-engine, quietest and smoothest), SeaPro (15-300 HP, commercial and high-hour use, heavy-duty durability).](/lovable-uploads/diagram-mercury-motor-families.png)
+*All four Mercury outboard families at a glance. The rest of this article goes deeper on each, but if you're skim-reading, the chart above tells you who each family is for.*
+
 ## Quick recommendation
 
 For most Ontario boaters reading this article, the right Mercury family is FourStroke. It is what we sell most of, what most factory boats come rigged with, and what fits the typical Rice Lake / Kawartha use case (cruising, family fishing, pontoons, mid-size runabouts).
@@ -9965,6 +9968,9 @@ No. Boost is a factory-backed, manufacturer-approved software calibration. It do
 
 When you change motors on a Pleasure Craft Licensed (PCL) boat in Canada, you must update the licence with Transport Canada. The PCL stays with the boat (HIN) but motor specifications are recorded on it. Updates are free, take 10 to 15 minutes online, and are required when the new motor changes the registered HP rating. We handle this paperwork for HBW customers as part of every repower.
 
+![Pleasure Craft Licence rules before and after December 31, 2025: lifetime PCL with no fee or expiry on the old system replaced with 5-year renewals at $24 CAD, a 30-day update window for changes (motor swap, sale, etc.), and a $250 fine for non-compliance under the new Transport Canada rules.](/lovable-uploads/diagram-pcl-2026-changes.png)
+*Transport Canada's December 31, 2025 PCL rule change at a glance. Lifetime licences are gone. Apply or renew at tc.canada.ca.*
+
 ## Quick recommendation
 
 Most boaters do not realize their PCL needs updating during a repower. The licence is tied to the hull, but motor specs are on the licence too. When you change motors, the licence is technically out of date. Transport Canada requires the update.
@@ -10407,6 +10413,9 @@ A repower quote moves up or down based on six things:
 - **Prop selection.** A wrong prop on a perfect motor will cost you 4 mph and 15% fuel economy. We test on the water before you take the boat home. Aluminum props on motors up to 115 HP are $450 CAD. Stainless steel props on 150 HP and up run $800 to $2,000 CAD depending on motor size.
 - **Gauges and wiring.** Old analog gauges do not talk to modern Mercury motors. SmartCraft displays add a line, sized to whatever screen you want. Battery and harness refresh runs $275 to $975 CAD.
 - **Boat condition.** A clean transom and good wiring takes a day to install ($1,400 in labour). A rotten transom, mouse-eaten wiring harness, or a fuel system full of 8-year-old gas pushes labour to $2,500 to $3,500.
+
+![Six-step Mercury repower timeline at Harris Boat Works: Quote (build online or call, three minutes), Booking (deposit confirms install slot), Drop-off (pickup-only at Gores Landing), Rigging (Mercury-certified install in our shop), Sea Trial (WOT verified before delivery), Pickup (hand-off, paperwork, on the water).](/lovable-uploads/diagram-repower-process-timeline.png)
+*A typical Mercury repower at HBW runs 1-3 days off-season and 1-3 weeks at spring peak. The process is the same regardless of motor size: quote, deposit, drop-off, rigging, sea trial, pickup.*
 
 ## All-in repower ranges by HP class
 
@@ -15529,6 +15538,9 @@ If you launch with us regularly, the **$200 season pass** pays for itself by Tri
 
 ## Fishing Rice Lake. FMZ 17, 2026 Seasons
 
+![Ontario walleye slot rule diagram for FMZ Zone 17 (Rice Lake and most Kawartha Lakes): retain only walleye between 35 and 50 cm, release any walleye under 35 cm or over 50 cm.](/lovable-uploads/diagram-walleye-slot-rule.png)
+*The FMZ 17 walleye slot rule applies to Rice Lake. Retain 35-50 cm only. Release fish outside that window. Confirm current regulations at ontario.ca before retaining any fish.*
+
 Rice Lake is in **Fisheries Management Zone 17**, the same zone as most of the Kawarthas. Here's what's in season and when:
 
 | Species | Season | Sport Limit | Conservation Limit | Notes |
@@ -19635,6 +19647,9 @@ After that, most people spend a season or two pressing buttons and hoping for th
 
 This post is the explanation you didn't get at the dealer. Practical, Mercury-specific, and written for the conditions you're actually dealing with on this lake.
 
+![Side-profile diagram comparing three outboard trim angles on a boat: negative trim with the motor tucked in shows the bow plowing water and the boat fighting through chop slowly, neutral trim shows the boat planing efficiently in a balanced cruise, and positive trim with the motor tucked out shows the bow lifted high with the propeller ventilating above the waterline causing RPM spikes and lost thrust.](/lovable-uploads/diagram-trim-angles.png)
+*The three trim states every boater should recognize. Most of this article is about staying in the middle one — neutral, planing efficiently, with the prop fully wetted.*
+
 ---
 
 ## What Trim Actually Is
@@ -20576,6 +20591,9 @@ No pressure. But if you want to stop having that heart-rate moment every time yo
 There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake, Ontario afternoon chop, or get 10 people up to plane before dark, the motor gives up.
 
 This post is the answer to the question every pontoon buyer eventually asks: *What HP do I actually need?* Not the minimum the boat can run. Not what the previous owner had. The HP that makes your boat do what you bought it to do.
+
+![Decision tree showing Mercury HP recommendations by pontoon size: under 18 ft pontoons take a Mercury 60 HP standard or 60 CT, 18-20 ft family pontoons take a 60 CT minimum or 90 standard, 20-22 ft pontoons need a 90 CT minimum, and 22+ ft tritoons towing tubes or skiers need a 115 CT or 150 HP.](/lovable-uploads/diagram-pontoon-hp-decision-tree.png)
+*The HBW pontoon HP sizing decision tree. Walk down the branch that matches your pontoon length and load profile. When in doubt between two adjacent recommendations, size up — pontoons reward headroom.*
 
 ---
 
