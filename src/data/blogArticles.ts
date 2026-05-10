@@ -12023,7 +12023,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['boat winterization cost ontario', 'mercury outboard winterization price', 'harris boat works winter storage'],
     content: `# How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Boat winterization in Ontario typically runs $250-$600 depending on motor size, fuel system, and shrinkwrap. Skipping it risks a cracked block, a $4,000-plus repair. Book before October or you'll wait. Pricing and scheduling at mercuryrepower.ca.
 
