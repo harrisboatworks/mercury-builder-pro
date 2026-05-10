@@ -59,6 +59,8 @@ export function getMotorRelatedBlogSlugs(motor: MotorLike): string[] {
     const out: string[] = [];
 
     // PRIORITY 1 — use-case
+    // 9.9 portable (non-ProKicker) — surface the dedicated EFI review
+    if (hp === 9.9 && !isProKicker) out.push('mercury-9-9-efi-review-ontario');
     if (isTiller) out.push('tiller-vs-remote-steering-outboard-guide');
     if (isCT) out.push('mercury-command-thrust-guide-pontoon-boats');
     if (family === 'Pro XS' && hp >= 150 && hp <= 200) out.push('mercury-boost-upgrade-150hp-pontoon-analysis');
