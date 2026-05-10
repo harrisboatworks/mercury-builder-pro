@@ -11595,6 +11595,8 @@ Build a quote on the [motor selection page](/quote/motor-selection). Three minut
 
 Lake Simcoe is bigger water than Rice Lake, Ontario. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed. The right Mercury for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
+Regulation note: Lake Simcoe is in Fisheries Management Zone 18. Always confirm the current season, size limits, catch limits, and any waterbody exceptions on the Ontario fishing regulations page before you plan a trip. [Check current FMZ 18 rules on ontario.ca](http://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-18).
+
 ## Quick recommendation
 
 Lake Simcoe rewards more boat and more motor than Rice Lake or smaller Kawartha lakes. The lake is larger, deeper, and more wind-exposed. Walleye trolling on Simcoe requires longer runs to spots, more time in chop, and more confident handling.
