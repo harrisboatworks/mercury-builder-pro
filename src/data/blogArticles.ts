@@ -7635,8 +7635,6 @@ We rig outboard tow boats every spring. Specifically:
 Tow boats run hard. We'll talk through your annual hours and use case before quoting, sometimes the right answer is "your existing motor still has life if we service it" instead of "buy a new V8." We'll be honest either way.
 
 Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercuryrepower.ca](https://mercuryrepower.ca).
-
-{/* TODO: Add customer story for best-mercury-for-ski-wakeboard-boats */}
     `,
     faqs: [
       {
