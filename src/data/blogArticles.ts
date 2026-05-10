@@ -9185,9 +9185,9 @@ The SeaPro is Mercury's commercial-duty line. Built for heavy-use cycles: charte
 
 For typical Ontario recreational use, SeaPro is overkill. For commercial operators or extremely heavy-use private owners, SeaPro earns its premium. We sell some SeaPros at HBW; most are commercial sales.
 
-## Mercury 2026 Verado (250 to 600+ HP)
+## Mercury 2026 Verado (250 to 600 HP)
 
-The Verado is Mercury's premium V8/V10/V12 offshore line (naturally aspirated on current models). Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
+The Verado is Mercury's premium V8/V10/V12 offshore line (naturally aspirated on current models). The V10 lineup now includes 350, 400, and 425 hp models; Mercury added the 425 hp V10 in May 2025 and enhanced the 350 hp V10 in the same release. Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
 
 Verado is special-order at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. Twin V12 600 HP setups are stunning motors. They are not for Rice Lake, Ontario.
 
