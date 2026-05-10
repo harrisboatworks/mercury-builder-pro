@@ -3,7 +3,7 @@ import { Helmet } from '@/lib/helmet';
 import { RepowerHeader } from '@/components/repower/RepowerHeader';
 import { SiteFooter } from '@/components/ui/site-footer';
 import { SITE_URL } from '@/lib/site';
-import heroImage from '@/assets/hero-trent-severn-waterway-2026.png';
+const heroImage = '/lovable-uploads/hero-rice-lake-boating-guide.png';
 
 export default function AboutJayHarris() {
   const url = `${SITE_URL}/about/jay-harris`;
