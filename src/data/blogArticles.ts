@@ -8886,7 +8886,7 @@ Boating doesn't have to start with a purchase. With Harris Boat Works, it can st
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Mercury dominates Ontario because the dealer network is denser, parts supply is faster, and resale demand is strongest. Yamaha and Honda build excellent motors, but the practical service experience in cottage country favours Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
+> **Quick answer:** Mercury leads in many Ontario segments because the dealer network is denser, parts supply is faster, and resale demand is strong. Yamaha and Honda build excellent motors; the practical service experience in cottage country tends to favour Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
 
 Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP naturally-aspirated Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for the 60 years we've been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
