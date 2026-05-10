@@ -14998,6 +14998,15 @@ If you want to confirm your transom height before ordering, [give us a call at (
 
 _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and shaft length is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
 `,
+    howToSteps: [
+      { name: 'Find the lowest point of the hull at the transom', text: 'Locate the point where water meets hull when running on plane, at the centre of the transom where the motor will mount. This is the bottom reference for the measurement.' },
+      { name: 'Run the tape vertically to the top of the transom', text: 'Hold a tape measure straight up from that bottom point to the top of the transom (where the motor will mount). Keep the tape vertical, not angled. That measurement is your transom height.' },
+      { name: 'Match transom height to shaft length zone', text: '15 to 16 inches needs a Short shaft (S, 15"). 19 to 21 inches needs a Long shaft (L, 20"). 24 to 26 inches needs an Extra Long shaft (XL, 25"). 29 to 31 inches needs an Ultra Long shaft (XXL, 30"). If you are between sizes, the lower number is usually the right call.' },
+      { name: 'Account for hull design and setback', text: 'Deep-V hulls with sharp transom angles sometimes need 25 inch even with 20-inch transom heights. Pontoon hulls often work with 20 inch on what looks like a tall transom. Setback brackets (extending the motor 5 to 10 inches behind the transom) change effective shaft length requirements.' },
+      { name: 'Verify by checking the cavitation plate', text: 'Once installed, the cavitation plate (the flat plate above the prop) should sit roughly even with the bottom of the hull at the prop location. Too high means the prop ventilates; too low means the lower unit drags. We confirm at sea-trial of every repower.' },
+    ],
+    howToTotalTime: 'PT5M',
+    howToTools: ['Tape measure', 'Side-profile photo of the transom (optional)'],
     faqs: [
       {
         question: 'What outboard shaft length do I need?',
