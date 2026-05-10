@@ -1372,7 +1372,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     readTime: '10 min read',
     keywords: ['mercury prokicker', 'kicker motor rice lake', 'trolling motor ontario', 'prokicker installation', 'mercury 9.9 prokicker', 'kicker motor fishing boat', 'rice lake walleye trolling'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** The Mercury 9.9 ProKicker is the right kicker for Rice Lake, Ontario walleye and musky trolling, high gear ratio for slow speeds, electric start, power tilt, and remote-ready. It's a different motor than the standard 9.9 portable. We rig and tiller-link these regularly for Kawartha boats. Build a kicker package at mercuryrepower.ca.
 
