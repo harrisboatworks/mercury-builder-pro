@@ -64,6 +64,19 @@ export function SiteFooter({ className = '' }: SiteFooterProps) {
                 </li>
               ))}
             </ul>
+
+            <h3 className={`${sectionTitleClass} mt-8`}>
+              Tools
+            </h3>
+            <ul className="space-y-2">
+              {toolsLinks.map((link) => (
+                <li key={link.href}>
+                  <Link to={link.href} className={footerLinkClass}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact Info */}
