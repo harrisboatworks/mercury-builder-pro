@@ -463,7 +463,33 @@ function detectH2Card(headingText: string): CardKind {
     t === 'try the tool'
   )
     return 'try-calculator';
+  if (t === 'dealer note' || t === 'hbw dealer note') return 'dealer-note';
+  if (isLocalContextHeading(t)) return 'local-context';
+  if (CHOOSE_HEADING_RE.test(headingText)) return 'choose-card';
   return null;
+}
+
+const CHOOSE_HEADING_RE = /^\s*Choose\s+.+\s+if\s*$/i;
+
+const LOCAL_CONTEXT_HEADINGS = new Set([
+  'rice lake note',
+  'kawarthas note',
+  'kawarthas fit',
+  'ontario context',
+  'ontario boating context',
+  'trent severn note',
+  'trent severn consideration',
+  'gta buyer note',
+  'local context',
+]);
+
+function isLocalContextHeading(normalized: string): boolean {
+  return LOCAL_CONTEXT_HEADINGS.has(normalized);
+}
+
+function extractChooseLabel(heading: string): string {
+  const m = /^\s*Choose\s+(.+?)\s+if\s*$/i.exec(heading);
+  return m ? m[1].trim() : heading;
 }
 
 function detectInlineCard(headingText: string): InlineCardKind {
