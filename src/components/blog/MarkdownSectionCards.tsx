@@ -388,6 +388,9 @@ type CardKind =
   | 'who-this-is-for'
   | 'when-to-call'
   | 'try-calculator'
+  | 'dealer-note'
+  | 'local-context'
+  | 'choose-card'
   | null;
 
 type InlineCardKind = 'recommended-choice' | null;
