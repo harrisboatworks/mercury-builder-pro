@@ -12393,9 +12393,9 @@ A typical 16-foot aluminum repower lands in the small remote tier ($8,000 to $15
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Mercury, Yamaha, and Honda all build reliable modern outboards. The brand with the densest local service network and parts supply tends to win on practical reliability, for Ontario that's Mercury. Mechanical defect rates between the three are too close to call. Build an installed Mercury quote at mercuryrepower.ca.
+> **Quick answer:** Mercury, Yamaha, and Honda all build reliable modern outboards. Reliability data on outboards is hard to get cleanly; what follows is HBW's perspective from servicing all three brands, treat it as informed opinion, not a peer-reviewed study. From our Ontario service bench, the brand with the densest local network and parts supply tends to win on practical reliability, and locally that often skews Mercury. Build an installed Mercury quote at mercuryrepower.ca.
 
-All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out. The real difference is dealer service, parts availability, and resale support in YOUR region. In Ontario, Mercury has the deepest dealer network, the strongest Canadian parts supply, and the longest historical track record. We are biased (we sell Mercury, exclusively, since 1965), but the data backs the position. Build your Mercury quote at [/quote/motor-selection](/quote/motor-selection).
+Reliability data on outboards is hard to get cleanly. What follows is HBW's perspective from servicing all three brands; treat it as informed opinion, not a peer-reviewed study. All three brands make reliable four-stroke outboards in 2026. Mechanically, none has a clear reliability deficiency that should rule it out. The real difference is dealer service, parts availability, and resale support in YOUR region. In Ontario, Mercury has the deepest dealer network we work with, strong Canadian parts supply, and the longest historical track record on our bench. We are biased (we sell Mercury, exclusively, since 1965). Build your Mercury quote at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
