@@ -2497,6 +2497,14 @@ const routes = [
     schemas: [aboutPageSchema()]
   },
   {
+    path: '/about/jay-harris',
+    title: 'Jay Harris — Owner, Harris Boat Works (3rd Generation)',
+    description: 'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.',
+    h1: 'Jay Harris',
+    intro: 'Jay Harris is the 3rd-generation owner of Harris Boat Works, a Mercury Marine Platinum Dealer on Rice Lake in Gores Landing, Ontario. Family-owned since 1947, Mercury dealer since 1965.',
+    schemas: [genericPageSchema('/about/jay-harris', 'Jay Harris — Owner, Harris Boat Works', 'Owner of Harris Boat Works, 3rd-generation family marina, Mercury Marine Platinum Dealer.')]
+  },
+  {
     path: '/contact',
     title: 'Contact Harris Boat Works | Mercury Dealer Rice Lake Ontario',
     description: 'Contact Harris Boat Works in Gores Landing on Rice Lake. Phone (905) 342-2153. Mercury repower quotes, service, and parts. Pickup only, no shipping.',
