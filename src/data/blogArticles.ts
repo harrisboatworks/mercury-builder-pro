@@ -1003,6 +1003,10 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **How long does a Mercury outboard last?**
@@ -1517,6 +1521,10 @@ A few patterns we see on Rice Lake ProKicker installs at HBW. The 9.9 ELHPT is t
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **Do I need a kicker motor for Rice Lake fishing?**
@@ -2053,6 +2061,10 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **What is the best Mercury outboard for a 16-foot aluminum fishing boat?**
@@ -3313,6 +3325,10 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **Should I repower my cottage boat or buy new?**
@@ -3788,6 +3804,10 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Trade-In Value Estimator](/tools#trade-in-value) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **What is a boat repower?**
@@ -4082,6 +4102,10 @@ Mercury outboards in Canada carry a 3-year limited warranty plus 3-year corrosio
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Boost Eligibility Checker](/tools#boost-eligibility) — no signup, no email gate, takes 30 seconds.
 ## Ready to Spec Your Bass Boat Repower?
 
 Build a current quote in 3 minutes at our online configurator. Pick the motor family, HP, shaft length, and prop. We confirm fitment and the all-in price before you commit.
@@ -5809,6 +5833,10 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **What's the most popular Mercury portable outboard in Canada?**
@@ -8050,6 +8078,10 @@ For most Ontario boating. Rice Lake, Trent-Severn, you'll spend 80% of your time
 
 For service intervals and major service costs on these motors, see [our Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
+
+## Try the calculator
+
+Want a real number? Run [the Boost Eligibility Checker](/tools#boost-eligibility) — no signup, no email gate, takes 30 seconds.
 ## What HBW Does
 
 V6 sales and repowers are our most common high-end work. Specifically:
@@ -10127,6 +10159,10 @@ No. Boost is a factory-backed, manufacturer-approved software calibration. It do
 
 **See also:** [Mercury Propeller Selection: Complete Guide to Choosing the Right Prop](/blog/mercury-propeller-selection-guide) and [Mercury Outboard Fuel Efficiency: How to Maximize MPG on the Water](/blog/mercury-outboard-fuel-efficiency-guide).
 
+
+## Try the calculator
+
+Want a real number? Run [the Boost Eligibility Checker](/tools#boost-eligibility) — no signup, no email gate, takes 30 seconds.
 ## Related guides
 
 - [Why Mercury Dominates the Outboard Market: Why Harris Boat Works Chose Them](/blog/why-mercury-dominates-outboard-market), why Mercury leads the market
@@ -10520,6 +10556,10 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Trade-In Value Estimator](/tools#trade-in-value) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **Why did Evinrude stop making outboards?**
@@ -11422,6 +11462,10 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Trade-In Value Estimator](/tools#trade-in-value) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **Can I finance a Mercury repower in Ontario?**
@@ -13845,6 +13889,10 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **Should I repower or buy a new boat?**
@@ -14273,6 +14321,10 @@ We see these from customers who shopped before coming to HBW:
 - [Cheapest Mercury Outboard Canada 2026](/blog/cheapest-mercury-outboard-canada-2026), the lowest entry points
 - [Why Harris Boat Works Is the Mercury Dealer Ontario Boaters Trust](/blog/why-harris-boat-works-mercury-dealer), the case for HBW
 
+
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## Ready to see real pricing?
 
 [Build a quote on the motor selection page](/quote/motor-selection). Live CAD pricing. Full configuration. No phone call required. No email gatekeeping.
@@ -14495,6 +14547,10 @@ For specific quotes, [build it on the motor selection page](/quote/motor-selecti
 - [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), steering type decision
 - [What Happens During a Mercury Repower](/blog/what-happens-during-mercury-repower), the full process
 
+
+## Try the calculator
+
+Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
 ## Ready for an honest rigging quote?
 
 Build a quote on the [motor selection page](/quote/motor-selection). Rigging is included in the all-in number. Live CAD pricing. No phone call required to see the price.
@@ -14763,6 +14819,10 @@ We see these from customers who came from other shops:
 - [Pleasure Craft Licence Update During Repower](/blog/pleasure-craft-licence-update-repower-ontario), Transport Canada paperwork
 - [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas), the full picture
 
+
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## Ready to schedule your repower?
 
 Build a quote on the [motor selection page](/quote/motor-selection). Live CAD pricing. Full configuration including rigging and install. No phone call required to see the number.
@@ -16602,6 +16662,10 @@ A motor with no serial isn't necessarily stolen, but it's a flag worth taking se
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## Quick Reference Card
 
 The five pieces of information on every Mercury and where they live:
@@ -20481,6 +20545,10 @@ We're not the biggest dealer in Ontario. But we're on the water, we know Rice La
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
 ## The Bottom Line
 
 Outboards have won the market because they deserve to. The technology is excellent, the service access is better, the Ontario freshwater use case fits them well, and the long-term ownership economics are stronger for most boaters.
@@ -21874,6 +21942,10 @@ Three ways to use this guide:
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## Related Guides
 
 - [Why Mercury dealers hide prices online (and why we don't)](https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online)
@@ -22345,6 +22417,10 @@ Harris Boat Works has been on Rice Lake since 1947, a Mercury dealer since 1965,
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## Related Guides
 
 - [Ontario Mercury Outboard Price Guide (2026)](https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide)
@@ -22678,6 +22754,10 @@ Both motors will run 1,500-2,500+ hours with normal Ontario seasonal use (50-150
 
 ---
 
+
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## Ready to Spec Your 40 or 60 Repower?
 
 Build a current quote in about three minutes at our online configurator. You pick the model, shaft, and Command Thrust option. We confirm fitment and the all-in price before you commit.
