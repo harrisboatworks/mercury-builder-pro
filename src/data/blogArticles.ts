@@ -14681,6 +14681,9 @@ We see these every season:
 
 ## Mercury shaft length codes (decoded)
 
+![Diagram decoding a Mercury outboard model code 60 ELHPT: 60 = horsepower, E = electric start, L = long shaft, H = hand tiller, P = power trim, T = tilt. Common combinations include ELPT, ELHPT, EXLPT, MLH, and CT (Command Thrust).](/lovable-uploads/diagram-mercury-model-code-decoder.png)
+*Quick reference for reading any Mercury outboard model code. The letters are stackable: a 60 ELHPT is electric-start, long-shaft, hand-tiller, with power trim and tilt.*
+
 Mercury's model numbers tell you shaft length:
 
 - **MH** = Manual start, tiller (no shaft suffix typically, comes in standard short for that motor)
