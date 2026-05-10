@@ -15701,6 +15701,16 @@ Service work at HBW is booked online. We diagnose the issue, give you a written 
 
 If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 `,
+    howToSteps: [
+      { name: 'Throttle back to idle', text: 'Going from WOT straight to engine-off can do its own damage to a hot powerhead. Drop to idle first. Buy yourself 30 seconds to think before deciding the next step.' },
+      { name: 'Look at the tell-tale stream', text: 'A strong, steady stream means cooling water is flowing; the issue may be a sensor, thermostat, or internal blockage, so continue at idle toward shore. A weak, sputtering stream means the impeller is failing or partially blocked; idle in only. No stream means shut down.' },
+      { name: 'Kill the engine if alarm persists or stream is weak/gone', text: 'Tilt the motor up out of the water. Inspect the intake screens on the lower unit for weeds, plastic, or bottom debris stuck in the grates. On Rice Lake and the Kawarthas in summer, the answer is almost always weeds.' },
+      { name: 'Clear the intake by hand', text: 'Pull weeds, bags, fishing line, or sand off the intake grates by hand. A boat hook or a screwdriver helps for stubborn debris. Two minutes of clearing usually restores flow.' },
+      { name: 'Wait 10 to 15 minutes before restarting', text: 'Let the powerhead cool. Check the tell-tale stream when you fire it back up. If it comes back full and the alarm does not return at idle, you are probably fine to head home at low RPM.' },
+      { name: 'If alarm comes back, do not fight it', text: 'Call for a tow, drift to shore, or paddle if you have to. Running an overheated motor "just to get home" is how a $40 impeller becomes a $4,500 lower unit and powerhead repair.' },
+    ],
+    howToTotalTime: 'PT15M',
+    howToTools: ['Boat hook or screwdriver (intake clearing)', 'Garden hose and earmuffs (dock diagnostic)', 'Spare impeller kit (optional onboard)'],
     faqs: [
   {
     "question": "How long can I run an overheating outboard before damage?",
