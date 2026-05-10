@@ -5,7 +5,7 @@ import { SITE_URL } from '@/lib/site';
 import { ArrowLeft, Calendar, Clock, Phone, MapPin } from 'lucide-react';
 import { LuxuryHeader } from '@/components/ui/luxury-header';
 import { SiteFooter } from '@/components/ui/site-footer';
-import { getHindiArticleBySlug } from '@/data/hindiBlogArticles';
+import { getPunjabiArticleBySlug } from '@/data/punjabiBlogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
@@ -227,16 +227,16 @@ function renderMarkdownContent(content: string) {
   return elements;
 }
 
-export default function HindiBlogArticlePage() {
+export default function PunjabiBlogArticlePage() {
   const { slug } = useParams<{ slug: string }>();
-  const article = slug ? getHindiArticleBySlug(slug) : undefined;
+  const article = slug ? getPunjabiArticleBySlug(slug) : undefined;
   const [heroImgError, setHeroImgError] = useState(false);
 
   if (!article) {
     return <Navigate to="/blog" replace />;
   }
 
-  const url = `${SITE_URL}/blog/hi/${article.slug}`;
+  const url = `${SITE_URL}/blog/pa/${article.slug}`;
   const tocItems = extractHeaders(article.content);
 
   const structuredData = {
@@ -252,14 +252,14 @@ export default function HindiBlogArticlePage() {
         "datePublished": article.datePublished,
         "dateModified": article.dateModified,
         "mainEntityOfPage": url,
-        "inLanguage": "hi",
+        "inLanguage": "pa",
         "isAccessibleForFree": true
       },
       {
         "@type": "WebPage",
         "@id": `${url}#webpage`,
         "url": url,
-        "inLanguage": "hi",
+        "inLanguage": "pa",
         "breadcrumb": {
           "@type": "BreadcrumbList",
           "itemListElement": [
@@ -285,17 +285,17 @@ export default function HindiBlogArticlePage() {
   };
 
   return (
-    <div className="min-h-screen bg-background" lang="hi">
+    <div className="min-h-screen bg-background" lang="pa">
       <Helmet>
         <title>{article.title} | Harris Boat Works</title>
         <meta name="description" content={article.description} />
         <link rel="canonical" href={url} />
-        <link rel="alternate" hrefLang="hi" href={url} />
+        <link rel="alternate" hrefLang="pa" href={url} />
         <link rel="alternate" hrefLang="en-CA" href={`${SITE_URL}/blog`} />
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.description} />
         <meta property="og:url" content={url} />
-        <meta property="og:locale" content="hi_IN" />
+        <meta property="og:locale" content="pa_IN" />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={article.datePublished} />
         <meta property="article:author" content="Harris Boat Works" />
@@ -307,7 +307,7 @@ export default function HindiBlogArticlePage() {
         <nav className="mb-8">
           <Link to="/blog" className="text-primary hover:underline text-sm flex items-center gap-1">
             <ArrowLeft className="w-4 h-4" />
-            ← ब्लॉग पर वापस जाएँ
+            ← ਬਲੌਗ ਤੇ ਵਾਪਸ ਜਾਓ
           </Link>
         </nav>
 
@@ -322,12 +322,12 @@ export default function HindiBlogArticlePage() {
           </div>
         )}
 
-        <LanguageSwitcher currentLang="hi" />
+        <LanguageSwitcher currentLang="pa" />
 
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
           <span className="flex items-center gap-1">
             <Calendar className="w-4 h-4" />
-            {new Date(article.datePublished).toLocaleDateString('hi-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
+            {new Date(article.datePublished).toLocaleDateString('pa-IN', { year: 'numeric', month: 'long', day: 'numeric' })}
           </span>
           <span className="flex items-center gap-1">
             <Clock className="w-4 h-4" />
@@ -354,7 +354,7 @@ export default function HindiBlogArticlePage() {
 
         {article.faqs && article.faqs.length > 0 && (
           <section className="mt-12 mb-12">
-            <h2 className="text-2xl font-light text-foreground mb-6">अक्सर पूछे जाने वाले प्रश्न</h2>
+            <h2 className="text-2xl font-light text-foreground mb-6">ਅਕਸਰ ਪੁੱਛੇ ਜਾਣ ਵਾਲੇ ਸਵਾਲ</h2>
             <Accordion type="single" collapsible className="w-full">
               {article.faqs.map((faq, index) => (
                 <AccordionItem key={index} value={`faq-${index}`}>
@@ -371,14 +371,14 @@ export default function HindiBlogArticlePage() {
         )}
 
         <section className="text-center bg-primary/5 rounded-2xl p-8 mb-12">
-          <h2 className="text-xl font-light text-foreground mb-3">अभी अपना कोटेशन प्राप्त करें</h2>
-          <p className="text-muted-foreground text-sm mb-6">5 मिनट में ऑनलाइन कोटेशन पाएँ</p>
+          <h2 className="text-xl font-light text-foreground mb-3">ਹੁਣੇ ਆਪਣਾ ਕੋਟ ਪ੍ਰਾਪਤ ਕਰੋ</h2>
+          <p className="text-muted-foreground text-sm mb-6">5 ਮਿੰਟ ਵਿੱਚ ਔਨਲਾਈਨ ਕੋਟ ਪ੍ਰਾਪਤ ਕਰੋ</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/quote/motor-selection"
               className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
             >
-              ऑनलाइन कोटेशन प्राप्त करें
+              ਔਨਲਾਈਨ ਕੋਟ ਪ੍ਰਾਪਤ ਕਰੋ
             </Link>
             <a
               href="tel:905-342-2153"
