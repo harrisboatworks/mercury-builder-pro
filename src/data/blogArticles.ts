@@ -2517,6 +2517,9 @@ Command Thrust is the recreational pontoon and heavy-boat gearcase. Most HBW cus
 - [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop selection for Command Thrust
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits your use
 - [Best Pontoon Boats for Rice Lake, Ontario Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoon selection for Kawartha use
+- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), HP sizing for tube hulls
+- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), problems CT solves
+- [Mercury Boost 150 HP Upgrade for Pontoons](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 10 HP software bump analysis
 
 ## Ready to repower with Command Thrust?
 
@@ -2785,6 +2788,9 @@ We recommend lift storage where the cottage configuration allows. The hull life 
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), HP step-up math
 - [Best Boats for Rice Lake Under $30,000](/blog/best-boats-rice-lake-under-30000), used boat options
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), repower pricing
+- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), HP sizing for pontoon hulls
+- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), what to watch out for
+- [Mercury Boost 150 HP Upgrade for Pontoons](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), software-based HP bump analysis
 
 ## Ready for a Rice Lake pontoon?
 
@@ -2918,6 +2924,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 > **Quick answer:** Same powerhead, different tuning and gearcase. The 90 is the sweet spot for most 17-19 ft aluminum and fibreglass hulls, best balance of price, fuel use, and performance. The 115 makes sense on heavier or wider transoms, especially Command Thrust on pontoons. The 75 is rare in Ontario. Compare installed pricing at mercuryrepower.ca.
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
+
+Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
 
 ## Quick recommendation
 
@@ -11033,6 +11041,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 The step from 115 to 150 HP is bigger than it looks on paper. The 115 is a 4-cylinder engine; most 150 HP Mercurys are larger displacement 4-cylinder or transverse 4-cylinder builds. The 150 plants meaningfully bigger hole shot, plane time, and load-carrying performance on heavier hulls. The price difference is $4,000 to $6,000 CAD. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
 
+Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
+
 ## Quick recommendation
 
 For 17 to 19 ft hulls used for family fishing or mixed recreation, the 115 EXLPT FourStroke is plenty. For 18 to 22 ft hulls, pontoons, or boats running active water sports, the 150 earns its price difference. For tournament fishing or performance hulls, the 150 Pro XS V6 is usually the right call.
@@ -13952,6 +13962,9 @@ That is a more interesting reason to think about Boost than the current $200 in 
 - [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), the upgrade that usually pays back better than Boost
 - [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), if you are still in motor selection mode
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the 115 to 150 step-up math
+- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), pick the right HP for your tube
+- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats), CT gearcase fit
+- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), what an underpowered pontoon actually does
 
 ## Ready to talk through your pontoon setup?
 
@@ -14074,9 +14087,9 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Most dealers hide prices to force a phone call, it lets them negotiate trade-in down and add fees later. HBW posts real installed prices because customers deserve a number before driving 90 minutes. Configurator with live pricing at mercuryrepower.ca.
+> **Quick answer:** In our experience, many dealers hide prices to force a phone call, which lets them control the negotiation and add fees later. HBW posts real installed prices because customers deserve a number before driving 90 minutes. Configurator with live pricing at mercuryrepower.ca.
 
-If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. Most marine dealers deliberately don't publish prices online. The reasons they give are excuses; the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
+If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. From what we hear from customers, plenty of marine dealers we know about don't publish prices online. The reasons they give are usually excuses; in our view, the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
 
 ## Quick recommendation
 
@@ -14110,9 +14123,9 @@ Some dealers want to make sure you buy the right motor for your boat. That's a r
 
 This is the honest one, and it's the one no dealer says out loud. If you don't know the price, you can't comparison shop. If you have to call to get pricing, you're already partially committed before the conversation. The dealer controls the negotiation.
 
-## The real reasons most dealers hide prices
+## The real reasons many dealers hide prices
 
-Three honest reasons:
+In our experience, three honest reasons:
 
 ### 1. Information asymmetry is profitable
 
@@ -14120,11 +14133,11 @@ If you don't know the market price, you don't know if the quote you got is fair.
 
 ### 2. Phone capture beats web shopping
 
-Once you call a dealer, you're in their pipeline. They know your name, number, boat, and budget. They can follow up. A web visitor who saw the price and decided to think about it is a lost lead. So the dealer prefers the phone call even if the customer would have bought online.
+Once you call a dealer, you're in their pipeline. They know your name, number, boat, and budget. They can follow up. A web visitor who saw the price and decided to think about it is a lost lead. So the dealer often prefers the phone call even if the customer would have bought online.
 
 ### 3. Industry inertia
 
-Most marine dealers run websites built before transparency was the expected norm. The next generation of marine dealers will publish pricing as a matter of course. The current generation is still catching up.
+A lot of marine dealers run websites built before transparency was the expected norm. The next generation of marine dealers will likely publish pricing as a matter of course. The current generation is still catching up.
 
 ## Why HBW lists prices
 
