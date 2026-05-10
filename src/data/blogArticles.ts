@@ -11802,7 +11802,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     readTime: '15 min read',
     keywords: ['Lake Ontario salmon fishing motor', 'best outboard Lake Ontario', 'Mercury outboard salmon trolling', 'Lake Ontario chinook king salmon', 'salmon fishing boat Ontario', 'Mercury 150 200 salmon', 'Lake Ontario fishing charter motor'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** For Lake Ontario salmon and trout trolling, look at a 150-250 HP Mercury FourStroke main with a 9.9 ProKicker for the slow speeds downriggers and divers want. Lake Ontario is open, cold, and unforgiving, pick the bigger end of your hull's range. Quote installed at mercuryrepower.ca.
 
@@ -11832,6 +11832,16 @@ Lake Ontario-specific factors:
 - **Mooring and slip storage.** Many Lake Ontario boats are slip-stored at marinas in Cobourg, Whitby, Newcastle, Port Credit, and other ports.
 
 **A note on cold water.** Lake Ontario water stays cold well into June and gets cold again by late September. [Transport Canada's cold-water survival guidance](https://tc.canada.ca/en/marine-transportation/publications/tp-13822-survival-cold-waters-2003) warns that immersion in water below 15°C is dangerous, even for strong swimmers. Carry a PFD, file a float plan, and dress for the water temperature, not the air temperature.
+
+### Why Lake Ontario rigs almost always run two motors
+
+The big lake doesn't reward single-motor setups for serious salmon and trout fishing. Two reasons.
+
+First, trolling speed. Most salmon and trout trolling runs at 1.5 to 3 knots. A 200 HP main motor at idle is still pushing the boat too fast for the strike zone. A 9.9 or 15 HP kicker drops you into the speed window where the lures actually work. Trying to do this with a main motor alone burns through the fuel-system tolerance and creates carbon issues over time.
+
+Second, redundancy. Lake Ontario isn't Rice Lake. If a main motor quits 12 km off Port Hope in October, you don't get to call a tow. The kicker gets you home. We've sold customers a kicker as a "want" and watched them treat it as a "needed it twice this season already."
+
+The typical setup we rig: a Pro XS or Verado main (200-300 HP depending on hull), with a 9.9 ProKicker on a remote-operated bracket so the captain can run it from the helm without leaving the seat. The Command Thrust gearcase on the kicker matters here, it holds the boat at trolling speed in a chop better than a standard gearcase. Anyone running Lake Ontario seriously eventually arrives at this answer.
 
 ## Best Mercury for Lake Ontario by use case
 
@@ -22593,7 +22603,7 @@ Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no si
     ],
     content: `# Mercury 40 vs 60 HP: Which Outboard Is Right for Your Boat? (2026 Ontario Guide)
 
-*Last reviewed: 2026-05-09*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** For a 15-16 ft aluminum boat with two adults and a kicker, pick the Mercury 40 ELPT FourStroke. Step up to the 60 ELPT for 17-18 ft aluminum, three or four people aboard, or a small pontoon. Choose 60 Command Thrust for 18-20 ft pontoons, where the bigger gear ratio gets you on plane loaded. Build a current quote at mercuryrepower.ca.
 
@@ -22618,6 +22628,16 @@ A 60 HP motor on the same hull turns the same trip into a 28-32 mph cruise with 
 The difference shows up most when the boat is loaded and you're trying to get on plane. That's the moment a 40 starts feeling small.
 
 ---
+
+### Where the 40-vs-60 question actually lives
+
+The honest answer to "should I get a 40 or a 60?" usually comes down to one question: how heavy is the boat going to be on a typical day on the water?
+
+A 15 ft tin boat running two anglers and basic gear is happy with a 40. The same hull running four people, a cooler, two batteries, and the trolling motor up front is asking for the 60. The horsepower difference is small on the spec sheet. The difference in how the boat actually feels on Rice Lake at 4 p.m. with a headwind and full load is significant.
+
+The 60 also gives you headroom for adding gear later. People rarely lighten their boats over time. They add. A 60 today is the same boat with three more people in five years. A 40 today might feel right at the dock and tight in August.
+
+Capacity plate is still the ceiling. On smaller hulls (14 ft and under) you're typically capped at 25 to 30 HP regardless of preference. The 40-vs-60 conversation only opens up once your hull is rated for it.
 
 ## Specs Side-By-Side
 
