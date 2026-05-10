@@ -15412,10 +15412,14 @@ Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear
 
 ---
 
+## Need help with this?
+
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
+
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 `,
     faqs: [
   {
