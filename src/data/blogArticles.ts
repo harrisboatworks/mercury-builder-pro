@@ -8892,13 +8892,13 @@ Mercury Marine is the largest outboard manufacturer in the world, with one of th
 
 ## Quick recommendation
 
-If you are buying an outboard in Ontario in 2026, the practical answer is Mercury. Not because the metal is significantly better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the manufacturer-OEM relationships with Canadian boat builders are deeper.
+If you are buying an outboard in Ontario in 2026, the practical answer for most boats is Mercury. Not because the metal is significantly better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the manufacturer-OEM relationships with Canadian boat builders are deeper.
 
-Reliability and service availability are the same conversation in Canada. A theoretically more reliable motor that takes 6 weeks to get parts for is less reliable in practice than a slightly less perfect motor that gets fixed in 4 days. Mercury wins on the practical version.
+Reliability and service availability are the same conversation in Canada. A theoretically more reliable motor that takes 6 weeks to get parts for is less reliable in practice than a slightly less perfect motor that gets fixed in 4 days. Mercury is the most-supported outboard at HBW for that reason.
 
-We are biased. We sell Mercury exclusively at HBW. We have been a Mercury dealer since 1965. But the bias is downstream of the market reality, not upstream of it. Mercury has been the dominant outboard brand in Canada for decades, and the customers we serve are the customers buying Mercury.
+We are biased. We sell Mercury exclusively at HBW. We have been a Mercury dealer since 1965. The bias is downstream of the market reality, not upstream of it. Mercury has led many Canadian outboard segments for decades, and the customers we serve are the customers buying Mercury.
 
-## Why Mercury wins in Canada (the practical reasons)
+## Why Mercury leads in many Canadian segments (the practical reasons)
 
 ### 1. Dealer network density
 
