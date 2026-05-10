@@ -5178,7 +5178,9 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 For boats under 14 ft and small fishing applications, tiller. For console boats over 16 ft and family use, remote. The crossover zone (14 to 16 ft, 25 to 40 HP) depends on use case.
 
 **What's the biggest tiller Mercury available?**
-Mercury makes tiller variants up to about 60 HP. Above 60 HP, remote-control is the standard configuration. Tiller above 60 HP is physically demanding and rare.
+Mercury tiller options run from small portable motors through select higher-horsepower FourStroke and SeaPro models with the Mercury Advanced Tiller system. The practical split is not "tiller stops at 60 HP." The practical split is whether the boat, use case, and driver actually make sense for a tiller.
+
+For most family boats, pontoons, runabouts, and multi-passenger fishing boats, remote steering is still the better setup. For serious tiller anglers, work boats, and certain guide-style rigs, Advanced Tiller can make sense well above the portable-motor range.
 
 **Can I add a console to my tiller boat?**
 Yes, but it's a major project. Adding a console means new console structure, new dash, new rigging cables, new helm controls. Often more cost-effective to buy a console-equipped boat instead.
@@ -5228,7 +5230,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'What\'s the biggest motor available in tiller?',
-        answer: 'Mercury offers tiller handles on FourStroke outboards from 2.5HP up to 115HP via the Mercury Advanced Tiller system. The Advanced Tiller (available on 40–115HP models) features an ergonomic adjustable handle with integrated throttle and shift.'
+        answer: 'Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used.'
       },
       {
         question: 'Can I have both tiller and remote?',
@@ -5706,13 +5708,19 @@ If you run a commercial boat operation in the Kawarthas, Trent-Severn, or anywhe
     keywords: ['portable outboard', 'small boat motor', 'dinghy motor', 'mercury portable', 'tender motor'],
     content: `# Portable Mercury Outboard Guide: 2.5 to 20 HP (2026)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular kicker; the 5 is the canoe-and-tender favourite. All current portables are FourStroke. Tiller, electric or manual start, and short or long shaft are the key choices. Configure at mercuryrepower.ca.
 
 Mercury's portable outboard lineup (2.5 HP through 25 HP) updates by model year. Verify exact horsepower, weight, and feature availability at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) or call us; the specs below reflect the spring 2026 lineup.
 
 Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats. The Mercury 9.9 MH is the most popular small-boat motor in Canada. Drop-in install, no rigging required, easy to transport and store. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+
+### Where portables fit in Mercury's full tiller range
+
+Mercury tiller options run from small portable motors through select higher-horsepower FourStroke and SeaPro models with the Mercury Advanced Tiller system. The practical split is not "tiller stops at 60 HP." The practical split is whether the boat, use case, and driver actually make sense for a tiller.
+
+For most family boats, pontoons, runabouts, and multi-passenger fishing boats, remote steering is still the better setup. For serious tiller anglers, work boats, and certain guide-style rigs, Advanced Tiller can make sense well above the portable-motor range.
 
 ## Quick recommendation
 
