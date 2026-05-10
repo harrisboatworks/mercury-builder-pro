@@ -409,6 +409,11 @@ export default function BlogArticle() {
             <TradeInValueEstimator />
           )}
 
+          {/* Interactive tool: Repower Cost Estimator (slug-conditional) */}
+          {article.slug === 'mercury-repower-cost-ontario-2026-cad' && (
+            <RepowerCostEstimator />
+          )}
+
           {/* Author Byline (bottom) */}
           <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
             <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Platinum Dealer · Rice Lake, Ontario" />
