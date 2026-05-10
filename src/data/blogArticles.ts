@@ -11033,6 +11033,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 The step from 115 to 150 HP is bigger than it looks on paper. The 115 is a 4-cylinder engine; most 150 HP Mercurys are larger displacement 4-cylinder or transverse 4-cylinder builds. The 150 plants meaningfully bigger hole shot, plane time, and load-carrying performance on heavier hulls. The price difference is $4,000 to $6,000 CAD. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
 
+Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
+
 ## Quick recommendation
 
 For 17 to 19 ft hulls used for family fishing or mixed recreation, the 115 EXLPT FourStroke is plenty. For 18 to 22 ft hulls, pontoons, or boats running active water sports, the 150 earns its price difference. For tournament fishing or performance hulls, the 150 Pro XS V6 is usually the right call.
