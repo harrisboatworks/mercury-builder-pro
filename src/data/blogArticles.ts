@@ -13824,18 +13824,16 @@ The lake will be there. The right time to buy is when it makes sense for you, no
 For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
-:::image-placeholder
-slug: hull-vs-repower-decision-tree
-type: diagram
-aspect: 4:5
-description: Decision tree showing Repower vs. Replace path with key questions
-prompt: Photorealistic editorial decision tree diagram. Title: "Repower or Replace? The honest decision". Top question: "Is the hull less than 20 years old AND structurally solid?" Branches Yes/No. Yes branch leads to "Repower (saves $25K-$50K)". No branch leads to follow-up: "Is hull rotting / soft-transom / fundamentally undersized?" Yes leads to "Replace". Diamond shapes for questions, rounded rectangles for outcomes. Mercury red for "Replace" outcome, gold for "Repower" outcome. Clean white background. No people. 1080x1350. [STYLE ANCHOR]
-image: /lovable-uploads/hull-vs-repower-decision-tree.png
-:::
+## Repower or replace? The quick decision tree
 
-![Decision tree comparing repower versus hull replacement: starts with whether the boat is over 20 years old with structural damage, branches into repower-keep-the-boat, repair-and-keep, or buy-used-or-new outcomes.](/lovable-uploads/diagram-hull-vs-repower.png)
+Start here:
 
-*The decision tree that frames every "do I repower or replace" conversation we have at HBW. Most customers fall into the REPOWER outcome, which is why mercuryrepower.ca exists.*
+1. **Is the hull structurally solid?** If the transom, stringers, floor, and hull are sound, repower stays on the table. If the structure is soft or rotten, replacing the boat may be the smarter move.
+2. **Is the boat still the right boat for how you use it?** If the layout, size, seating, storage, and ride still work, a repower can protect a boat you already know. If your family or lake use has outgrown the hull, a new boat may solve more than the motor problem.
+3. **Is the repower less than the cost of changing boats?** Compare the installed motor, rigging, controls, prop, and setup against the real cost of moving into another boat. Do not compare motor-only price against boat-only price.
+4. **Will the boat be worth keeping for another 5-10 years?** If yes, repower can make sense. If you are already mentally done with the boat, do not spend good money trying to fall back in love with it.
+
+HBW rule of thumb: a good hull with a tired motor is a repower candidate. A tired hull with a tired motor is a replacement candidate.
 
 The decision is not "new boat vs. old boat." It is "do I have a hull worth keeping?" If the answer is yes, repower wins on the math nearly every time. A Mercury repower on a solid 15-year-old hull lands $20,000 to $35,000 CAD all-in for a typical setup, against $50,000 to $90,000 CAD for a comparable new boat package.
 
