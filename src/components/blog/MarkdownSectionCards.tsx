@@ -634,6 +634,30 @@ const cardConfig: Record<
     role: 'complementary',
     aria: 'Interactive calculator',
   },
+  'dealer-note': {
+    wrapper:
+      'my-8 rounded-md p-5 md:p-6 border-l-[4px] shadow-sm bg-repower-gold/10 border-repower-navy-900',
+    eyebrow: 'HBW Dealer Note',
+    eyebrowClass: 'text-repower-navy-900',
+    role: 'complementary',
+    aria: 'Dealer note from Harris Boat Works',
+  },
+  'local-context': {
+    wrapper: 'my-8 rounded-md p-5 md:p-6 shadow-sm bg-repower-gold/15',
+    eyebrow: 'Local Context',
+    eyebrowClass: 'text-repower-navy-900',
+    role: 'note',
+    aria: 'Local context note',
+  },
+  'choose-card': {
+    // choose-card sections render via a custom grid path, not this config.
+    // Stub kept so Record<CardKind> stays exhaustive.
+    wrapper: '',
+    eyebrow: '',
+    eyebrowClass: '',
+    role: 'note',
+    aria: '',
+  },
 };
 
 interface Props {
