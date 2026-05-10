@@ -347,6 +347,9 @@ export default function BlogArticle() {
             )}
           </div>
 
+          {/* Dealer credentials strip */}
+          <DealerConfidenceStrip />
+
           {/* Top contextual CTA */}
           <BlogCTA category={article.category} slug={article.slug} variant="inline" />
 
