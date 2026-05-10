@@ -325,6 +325,8 @@ export default function MandarinBlogArticlePage() {
           </div>
         )}
 
+        <LanguageSwitcher currentLang="zh" />
+
         {/* Meta */}
         <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
           <span className="flex items-center gap-1">
