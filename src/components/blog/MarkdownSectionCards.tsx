@@ -740,56 +740,142 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
     });
   };
 
+  // Render a single section as its configured aside card.
+  const renderConfiguredCard = (section: Section, idx: number) => {
+    const headingMd = `## ${section.heading}\n\n${section.body}`;
+    const cfg = cardConfig[section.kind as Exclude<CardKind, null>];
+    const isPhoneCard = section.kind === 'when-to-call';
+    const isDealerNote = section.kind === 'dealer-note';
+    const isLocalContext = section.kind === 'local-context';
+    // For dealer-note and local-context, the eyebrow (and icon+heading)
+    // replaces the H2, so render only the body markdown.
+    const bodyMd =
+      isDealerNote || isLocalContext ? section.body : headingMd;
+    return (
+      <aside
+        key={idx}
+        role={cfg.role}
+        aria-label={cfg.aria}
+        className={cfg.wrapper}
+        style={cfg.style}
+      >
+        <span
+          className={`${eyebrowBase} ${cfg.eyebrowClass} inline-flex items-center gap-1.5`}
+          aria-hidden="true"
+        >
+          {section.kind === 'try-calculator' && (
+            <Calculator className="h-3.5 w-3.5" />
+          )}
+          {isLocalContext && <MapPin className="h-3.5 w-3.5" />}
+          {cfg.eyebrow}
+        </span>
+        {isLocalContext && (
+          <h3 className="not-prose mt-1 mb-3 font-display text-lg md:text-xl font-semibold text-repower-navy-900">
+            {section.heading}
+          </h3>
+        )}
+        <div className={cfg.bodyClass}>
+          {renderMarkdownWithDirectives(
+            bodyMd,
+            componentsWithInline,
+            `c-${idx}`,
+          )}
+        </div>
+        {isPhoneCard && (
+          <a
+            href="tel:9053422153"
+            className="mt-3 inline-flex items-center gap-2 rounded-md bg-[hsl(45_85%_55%)] px-4 py-2 font-semibold !text-[hsl(220_25%_10%)] no-underline shadow-sm hover:bg-[hsl(45_85%_50%)]"
+          >
+            <Phone className="h-4 w-4" aria-hidden="true" />
+            Call 905-342-2153
+          </a>
+        )}
+      </aside>
+    );
+  };
+
+  // Render a run of consecutive choose-card sections as a decision-card grid.
+  const renderChooseGrid = (group: Section[], startIdx: number) => {
+    return (
+      <div
+        key={`choose-${startIdx}`}
+        className="not-prose grid grid-cols-1 md:grid-cols-3 gap-4 my-8"
+      >
+        {group.map((sec, i) => {
+          const label = extractChooseLabel(sec.heading);
+          return (
+            <div
+              key={`${startIdx}-${i}`}
+              className="flex flex-col h-full rounded-md p-5 shadow-sm bg-repower-gold/10 border-l-[4px] border-repower-navy-900"
+            >
+              <span
+                className={`${eyebrowBase} text-repower-navy-900/70`}
+                aria-hidden="true"
+              >
+                Choose this if
+              </span>
+              <h3 className="mt-1 mb-3 font-display text-lg font-bold text-repower-navy-900">
+                {label}
+              </h3>
+              <div className="prose prose-sm max-w-none text-repower-navy-900/90 [&_ul]:my-0 [&_p]:my-0 [&_p+ul]:mt-2">
+                {renderMarkdownWithDirectives(
+                  sec.body,
+                  componentsWithInline,
+                  `cg-${startIdx}-${i}`,
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
+  const nodes: React.ReactNode[] = [];
+  let i = 0;
+  while (i < sections.length) {
+    const section = sections[i];
+
+    // Group consecutive choose-card sections (only when 2+ in a row).
+    if (section.kind === 'choose-card') {
+      let j = i + 1;
+      while (j < sections.length && sections[j].kind === 'choose-card') j++;
+      const group = sections.slice(i, j);
+      if (group.length >= 2) {
+        nodes.push(renderChooseGrid(group, i));
+        i = j;
+        continue;
+      }
+      // Lone choose-card: fall through to default H2 rendering.
+      const headingMd = `## ${section.heading}\n\n${section.body}`;
+      nodes.push(
+        <div key={i}>
+          {renderWithQuickAnswerExtraction(headingMd, `s-${i}`)}
+        </div>,
+      );
+      i++;
+      continue;
+    }
+
+    if (!section.kind) {
+      const headingMd = `## ${section.heading}\n\n${section.body}`;
+      nodes.push(
+        <div key={i}>
+          {renderWithQuickAnswerExtraction(headingMd, `s-${i}`)}
+        </div>,
+      );
+      i++;
+      continue;
+    }
+
+    nodes.push(renderConfiguredCard(section, i));
+    i++;
+  }
+
   return (
     <>
       {preamble.trim() && renderWithQuickAnswerExtraction(preamble, 'pre')}
-      {sections.map((section, idx) => {
-        const headingMd = `## ${section.heading}\n\n${section.body}`;
-        if (!section.kind) {
-          return (
-            <div key={idx}>
-              {renderWithQuickAnswerExtraction(headingMd, `s-${idx}`)}
-            </div>
-          );
-        }
-        const cfg = cardConfig[section.kind];
-        const isPhoneCard = section.kind === 'when-to-call';
-        return (
-          <aside
-            key={idx}
-            role={cfg.role}
-            aria-label={cfg.aria}
-            className={cfg.wrapper}
-            style={cfg.style}
-          >
-            <span
-              className={`${eyebrowBase} ${cfg.eyebrowClass} inline-flex items-center gap-1.5`}
-              aria-hidden="true"
-            >
-              {section.kind === 'try-calculator' && (
-                <Calculator className="h-3.5 w-3.5" />
-              )}
-              {cfg.eyebrow}
-            </span>
-            <div className={cfg.bodyClass}>
-              {renderMarkdownWithDirectives(
-                headingMd,
-                componentsWithInline,
-                `c-${idx}`,
-              )}
-            </div>
-            {isPhoneCard && (
-              <a
-                href="tel:9053422153"
-                className="mt-3 inline-flex items-center gap-2 rounded-md bg-[hsl(45_85%_55%)] px-4 py-2 font-semibold !text-[hsl(220_25%_10%)] no-underline shadow-sm hover:bg-[hsl(45_85%_50%)]"
-              >
-                <Phone className="h-4 w-4" aria-hidden="true" />
-                Call 905-342-2153
-              </a>
-            )}
-          </aside>
-        );
-      })}
+      {nodes}
     </>
   );
 }
