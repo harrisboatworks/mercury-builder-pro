@@ -87,6 +87,54 @@ function renderMarkdownWithDirectives(
   });
 }
 
+/**
+ * Split markdown into ordered chunks, extracting top-level
+ * `> **Quick answer:** ...` blockquote blocks as synthetic short-answer cards.
+ * Respects fenced code blocks. Marker on the first line is stripped.
+ */
+type QAChunk =
+  | { kind: 'md'; content: string }
+  | { kind: 'quick-answer'; content: string };
+
+const QUICK_ANSWER_RE = /^>\s*\*\*\s*Quick\s*answer\s*:?\s*\*\*\s*/i;
+
+function extractQuickAnswerChunks(md: string): QAChunk[] {
+  const lines = md.split('\n');
+  const out: QAChunk[] = [];
+  let buf: string[] = [];
+  let inFence = false;
+  const flush = () => {
+    if (buf.length) {
+      out.push({ kind: 'md', content: buf.join('\n') });
+      buf = [];
+    }
+  };
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+    if (/^```/.test(line)) {
+      inFence = !inFence;
+      buf.push(line);
+      i++;
+      continue;
+    }
+    if (!inFence && QUICK_ANSWER_RE.test(line)) {
+      const bq: string[] = [];
+      while (i < lines.length && /^>/.test(lines[i])) {
+        bq.push(lines[i].replace(/^>\s?/, ''));
+        i++;
+      }
+      bq[0] = bq[0].replace(/^\*\*\s*Quick\s*answer\s*:?\s*\*\*\s*/i, '');
+      flush();
+      out.push({ kind: 'quick-answer', content: bq.join('\n').trim() });
+      continue;
+    }
+    buf.push(line);
+    i++;
+  }
+  flush();
+  return out;
+}
 
 /**
  * Renders article markdown, detecting specific H2/H3 heading patterns and
