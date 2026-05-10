@@ -32,6 +32,7 @@ const getStaticPages = (): SitemapEntry[] => {
     { loc: '/contact', lastmod: today, changefreq: 'monthly', priority: 0.6 },
     { loc: '/about', lastmod: today, changefreq: 'monthly', priority: 0.8 },
     { loc: '/about/jay-harris', lastmod: '2026-05-10', changefreq: 'yearly', priority: 0.7 },
+    { loc: '/tools', lastmod: '2026-05-10', changefreq: 'monthly', priority: 0.8 },
     { loc: '/blog', lastmod: today, changefreq: 'weekly', priority: 0.8 },
     // Pilot SEO landing pages: Batch 1
     { loc: '/mercury-repower-faq', lastmod: today, changefreq: 'monthly', priority: 0.8 },

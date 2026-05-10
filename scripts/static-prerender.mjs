@@ -2520,6 +2520,14 @@ const routes = [
     schemas: [genericPageSchema('/about/jay-harris', 'Jay Harris — Owner, Harris Boat Works', 'Owner of Harris Boat Works, 3rd-generation family marina, Mercury Marine Platinum Dealer.')]
   },
   {
+    path: '/tools',
+    title: 'Free Mercury Repower Tools | Harris Boat Works',
+    description: 'Trade-in value estimator, repower cost calculator, Boost eligibility checker, shaft length picker. Real CAD numbers from a Mercury Platinum dealer in Gores Landing, ON.',
+    h1: 'Free Mercury Repower Tools',
+    intro: 'Four quick calculators to help you scope a repower before you call. No signup, no email gate, real CAD numbers from Harris Boat Works, a Mercury Marine Platinum Dealer in Gores Landing, Ontario.',
+    schemas: [genericPageSchema('/tools', 'Free Mercury Repower Tools', 'Trade-in value estimator, repower cost calculator, Boost eligibility checker, and shaft length picker from Harris Boat Works.')]
+  },
+  {
     path: '/contact',
     title: 'Contact Harris Boat Works | Mercury Dealer Rice Lake Ontario',
     description: 'Contact Harris Boat Works in Gores Landing on Rice Lake. Phone (905) 342-2153. Mercury repower quotes, service, and parts. Pickup only, no shipping.',
@@ -3241,6 +3249,7 @@ const staticSitemapEntries = [
   { loc: '/finance-calculator', priority: 0.7, changefreq: 'monthly' },
   { loc: '/contact', priority: 0.6, changefreq: 'monthly' },
   { loc: '/about', priority: 0.8, changefreq: 'monthly' },
+  { loc: '/tools', priority: 0.8, changefreq: 'monthly' },
   { loc: '/blog', priority: 0.8, changefreq: 'weekly' },
   { loc: '/mercury-repower-faq', priority: 0.8, changefreq: 'monthly' },
   { loc: '/how-to-repower-a-boat', priority: 0.8, changefreq: 'monthly' },

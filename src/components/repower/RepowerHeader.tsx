@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { to: '/promotions', label: 'Promotions' },
   { to: '/repower', label: 'Repower' },
   { to: '/trade-in-value', label: 'Trade-In Value' },
+  { to: '/tools', label: 'Tools' },
   { to: '/finance-calculator', label: 'Financing' },
   { to: '/about', label: 'About' },
   { to: '/blog', label: 'Blog' },
