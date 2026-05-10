@@ -17673,7 +17673,7 @@ A few things that aren't on the Legend website:
     content: `
 # Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Mercury's standard Canadian warranty is 3 years on most FourStroke models, often extended to 5 or 7 with current promotions. Bonus warranties revert to the 3-year standard after the promo ends. Coverage requires registered ownership and service-interval compliance. Current promo terms at mercuryrepower.ca.
 
@@ -17730,15 +17730,17 @@ The phrase "improper installation" matters. **A Mercury installed by your buddy 
 
 ## Mercury Product Protection (MPP). The Extended Warranty
 
-If you want coverage beyond the standard three years, Mercury sells **Mercury Product Protection (MPP)**, the official factory extended warranty.
+If you want coverage beyond the standard three years, Mercury offers **Mercury Product Protection (MPP)**, an optional extended-coverage program (typically marketed in Gold, Silver, and Platinum tiers depending on availability). MPP is not part of the factory standard warranty.
 
-Key facts:
+Coverage tiers, durations, and pricing depend on the specific motor, region, current promotions, and how soon after purchase the extension is added. As a general guide:
 
-- **Up to 8 years total coverage** (3 standard + 5 MPP) on most current 4-stroke models
+- Eligible Mercury outboards can be extended to roughly 5 to 8 years of total coverage (3 standard plus MPP) depending on tier and product
 - **Must be purchased while the original warranty is still active.** Not "within 1 year of purchase", that's an old rule that's been retired. The current rule: any time before your standard 3-year coverage ends.
 - **Transferable** with the motor if you sell it (private sale or dealer trade-in)
 - **Same dealer network**, any authorized Mercury dealer in Canada honours MPP claims
 - Covers the same scope as the original limited warranty, including parts and labour
+
+We can confirm what's available for your specific motor and current promotions when you quote with us.
 
 **What MPP costs (rough):** Pricing varies by motor HP and term length. As a rough range:
 - A 90 HP 4-stroke with a 5-year MPP: roughly $1,200–$1,800 CAD
@@ -17786,7 +17788,7 @@ The owner's manual has the full list. The ones we see most often in our shop:
 
 ## Canadian-Specific Things to Know
 
-**Warranty registration in Canada.** Your dealer registers the warranty at point of sale. You should receive a confirmation email from Mercury Marine within a few days. **If you don't, ask your dealer for a copy of the registration document.** This is the single best evidence of coverage.
+**Warranty registration in Canada.** Most Mercury dealers (HBW included) handle warranty registration at the time of sale or shortly after, so the customer doesn't typically need to do it themselves. You should receive a confirmation from Mercury Marine, ask your dealer for a copy of the registration document if you don't. If you bought the motor used or privately, contact Mercury or an authorized dealer to confirm registration status and any documentation required.
 
 **The dealer network.** Every authorized Mercury dealer in Canada honours warranty work, regardless of where the motor was purchased. So if you buy in Ontario and move to BC, your warranty doesn't lapse, but the closest dealer is now four provinces away, and warranty work needs to be done at an authorized dealer.
 
