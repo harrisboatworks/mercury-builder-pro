@@ -1,6 +1,6 @@
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Phone } from 'lucide-react';
+import { Phone, Calculator } from 'lucide-react';
 import {
   ImagePlaceholder,
   type ImagePlaceholderProps,
@@ -387,6 +387,7 @@ type CardKind =
   | 'sources'
   | 'who-this-is-for'
   | 'when-to-call'
+  | 'try-calculator'
   | null;
 
 type InlineCardKind = 'recommended-choice' | null;
@@ -453,6 +454,12 @@ function detectH2Card(headingText: string): CardKind {
     t.startsWith('when to bring it to hbw')
   )
     return 'when-to-call';
+  if (
+    t === 'try the calculator' ||
+    t === 'run the numbers' ||
+    t === 'try the tool'
+  )
+    return 'try-calculator';
   return null;
 }
 
@@ -584,6 +591,19 @@ const cardConfig: Record<
     eyebrowClass: 'text-[hsl(45_85%_60%)]',
     role: 'complementary',
     aria: 'When to call HBW',
+  },
+  'try-calculator': {
+    wrapper:
+      'my-8 rounded-xl p-5 md:p-6 shadow-sm border-2 [&_a]:inline-flex [&_a]:items-center [&_a]:gap-2 [&_a]:rounded-md [&_a]:bg-[hsl(220_55%_22%)] [&_a]:px-4 [&_a]:py-2 [&_a]:font-semibold [&_a]:!text-white [&_a]:no-underline [&_a]:shadow-sm hover:[&_a]:bg-[hsl(220_55%_18%)]',
+    style: {
+      background:
+        'linear-gradient(135deg, hsl(220 40% 97%) 0%, hsl(45 70% 95%) 100%)',
+      borderColor: 'hsl(45 75% 55%)',
+    },
+    eyebrow: 'Try the Calculator',
+    eyebrowClass: 'text-[hsl(220_55%_22%)]',
+    role: 'complementary',
+    aria: 'Interactive calculator',
   },
 };
 
