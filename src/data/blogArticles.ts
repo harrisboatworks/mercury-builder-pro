@@ -5648,6 +5648,8 @@ If you run a commercial boat operation in the Kawarthas, Trent-Severn, or anywhe
 
 > **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular kicker; the 5 is the canoe-and-tender favourite. All current portables are FourStroke. Tiller, electric or manual start, and short or long shaft are the key choices. Configure at mercuryrepower.ca.
 
+Mercury's portable outboard lineup (2.5 HP through 25 HP) updates by model year. Verify exact horsepower, weight, and feature availability at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) or call us; the specs below reflect the spring 2026 lineup.
+
 Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats. The Mercury 9.9 MH is the most popular small-boat motor in Canada. Drop-in install, no rigging required, easy to transport and store. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
