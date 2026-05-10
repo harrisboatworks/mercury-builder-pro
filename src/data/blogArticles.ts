@@ -7966,14 +7966,14 @@ Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercury
     description: "An HBW dealer's honest comparison of Mercury V6 outboards from 150 to 300 HP, what each delivers, who needs which, and where the inflection points actually are.",
     image: '/lovable-uploads/Mercury_150-200hp_V6_Performance_Made_Practical_Hero.png',
     author: 'Harris Boat Works',
-    datePublished: '2026-11-30',
-    dateModified: '2026-05-07',
-    publishDate: '2026-11-30',
+    datePublished: '2026-05-13',
+    dateModified: '2026-05-13',
+    publishDate: '2026-05-13',
     category: 'Buying Guide',
     readTime: '10 min read',
     keywords: ['mercury 150 200 v6', 'mercury 3.4 v6', 'mercury v6 vs inline', 'mercury 175 pro xs', 'mercury v6 comparison', 'Mercury 150 175 200 225 V6 comparison', 'Mercury V6 Pro XS performance', 'Mercury 200 vs 225 vs 250', 'Mercury 175 EXLPT', 'Mercury 250 Pro XS'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Mercury's V6 lineup, 150, 175, 200, 225, 250, 300, shares a common architecture with progressively more displacement and tune. The 200-225 is the sweet spot for most Ontario center consoles and runabouts. The 300 makes sense only with the right hull and prop. Compare installed pricing at mercuryrepower.ca.
 
