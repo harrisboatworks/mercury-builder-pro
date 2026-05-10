@@ -15259,6 +15259,10 @@ This is the emergency-then-prevention guide we'd give a customer who walks into 
 
 ## On the Water Right Now? Do This in This Order.
 
+![Outboard overheating emergency troubleshooting flowchart: starts with the alarm sounding, branches by whether the telltale stream is flowing, by RPM behaviour, and by whether the motor has been over-revving.](/lovable-uploads/diagram-overheating-troubleshooting.png)
+
+*If you only remember one thing from this article: when in doubt, shut it down. The diagram above is the conversation we have over the phone with customers who call from the lake.*
+
 ### 1. Throttle back to idle. Don't shut it off yet.
 
 Going from WOT straight to engine-off can do its own damage to a hot powerhead. Drop to idle first. Buy yourself 30 seconds to think.
