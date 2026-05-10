@@ -112,7 +112,10 @@ export function generateSitemapXML(): string {
     } : undefined
   }));
   
-  const allEntries = [...getStaticPages(), ...blogEntries];
+  const today = new Date().toISOString().split('T')[0];
+  const multilingualEntries = buildMultilingualBlogEntries(today);
+
+  const allEntries = [...getStaticPages(), ...blogEntries, ...multilingualEntries];
   
   const urlEntries = allEntries.map(entry => {
     let xml = `  <url>
