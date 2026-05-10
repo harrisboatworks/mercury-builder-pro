@@ -397,10 +397,16 @@ export default function BlogArticle() {
             />
           </div>
 
+          {/* Interactive tool: Shaft Length Picker (slug-conditional) */}
+          {article.slug === 'outboard-shaft-length-guide' && (
+            <ShaftLengthPicker />
+          )}
+
           {/* Author Byline (bottom) */}
           <div className="mt-10 pt-6 border-t border-repower-navy-900/10">
             <AuthorByline title="3rd-Generation Owner, Harris Boat Works · Mercury Platinum Dealer · Rice Lake, Ontario" />
           </div>
+
 
           {/* FAQ Section */}
           {article.faqs && article.faqs.length > 0 && (
