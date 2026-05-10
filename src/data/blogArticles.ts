@@ -11972,6 +11972,10 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter: stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor by spring. For motors you would rather not DIY, [request service at HBW](https://hbw.wiki/service).
 
+![8-step winterization checklist for Mercury outboards: drain fuel and add stabilizer, run for 10 minutes, fog cylinders, drain and refill gear case oil, dry cooling passages, disconnect and tend battery, apply corrosion protection, store vertical with cover and rodent baits.](/lovable-uploads/diagram-winterization-checklist.png)
+
+*The 8-step winterization sequence we run on every customer motor at HBW. Skip any of these and you're shopping for a powerhead in May.*
+
 ## Quick recommendation
 
 DIY winterization works for confident owners on smaller motors (under 60 HP) with garage-accessible storage. The procedure is the same on bigger motors but the parts and access get harder. We would not recommend DIY on a 250 HP V8 unless you have done it before.
