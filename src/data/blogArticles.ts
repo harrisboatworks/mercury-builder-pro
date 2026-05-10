@@ -2919,6 +2919,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 For most 16 to 18 ft aluminum console boats on Kawartha and Ontario freshwater, the Mercury 90 HP FourStroke is the practical sweet spot. The 75 HP saves about $1,000 to $2,000 CAD up front but leaves boats underpowered when loaded. The 115 HP costs $1,500 to $2,500 CAD more than the 90 but gives meaningful headroom for family use and rougher water. Live pricing on each is at [/quote/motor-selection](/quote/motor-selection).
 
+Real-world performance varies with hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
+
 ## Quick recommendation
 
 The 90 HP FourStroke is the most-installed mid-range Mercury at HBW. There is a reason: it fits the most common boat (16 to 18 ft aluminum console), the most common use (family fishing, mixed recreational), and the most common hull rating (75 to 115 HP capacity plate). It hits the price-performance sweet spot that the 75 misses on power and the 115 misses on value for lighter use.
