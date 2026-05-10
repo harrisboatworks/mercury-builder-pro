@@ -1618,20 +1618,35 @@ function blogArticleSchema(article) {
   ];
 
   if (article.howToSteps && article.howToSteps.length > 0) {
-    graph.push({
+    const howToNode = {
       "@type": "HowTo",
       "@id": `${url}#howto`,
       "name": sanitizeSchemaText(article.title),
       "description": description,
-      "totalTime": `PT${readTimeMinutes}M`,
+      "image": `${SITE_URL}${article.image}`,
+      "totalTime": article.howToTotalTime || `PT${readTimeMinutes}M`,
       "step": article.howToSteps.map((step, i) => ({
         "@type": "HowToStep",
         "position": i + 1,
         "name": sanitizeSchemaText(step.name),
         "text": sanitizeSchemaText(step.text),
+        "url": `${url}#step-${i + 1}`,
         ...(step.image ? { "image": `${SITE_URL}${step.image}` } : {})
       }))
-    });
+    };
+    if (Array.isArray(article.howToSupplies) && article.howToSupplies.length > 0) {
+      howToNode.supply = article.howToSupplies.map(name => ({
+        "@type": "HowToSupply",
+        "name": sanitizeSchemaText(name)
+      }));
+    }
+    if (Array.isArray(article.howToTools) && article.howToTools.length > 0) {
+      howToNode.tool = article.howToTools.map(name => ({
+        "@type": "HowToTool",
+        "name": sanitizeSchemaText(name)
+      }));
+    }
+    graph.push(howToNode);
   }
 
   if (article.faqs && article.faqs.length > 0) {
