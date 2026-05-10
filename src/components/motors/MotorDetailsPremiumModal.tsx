@@ -1,4 +1,9 @@
-import React, { useEffect, useState, useRef, useMemo } from "react";
+import React, { useEffect, useState, useRef, useMemo, lazy, Suspense } from "react";
+
+// Lazy-loaded — keeps the 22k-line blogArticles import OUT of the motor bundle
+const RelatedPostsGrid = lazy(() =>
+  import('../blog/RelatedPostsGrid').then(m => ({ default: m.RelatedPostsGrid }))
+);
 import { getDisplayPrices } from '@/lib/pricing';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { useNavigate } from "react-router-dom";
