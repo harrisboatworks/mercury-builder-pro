@@ -6335,11 +6335,7 @@ For real CAD pricing on what you'd actually be financing, see our canonical [202
       },
       {
         question: 'Are there seasonal promotions for financing?',
-        answer: 'Promotional offers vary by season, and Mercury warranty extensions are not always active.
-
-The standard Mercury warranty is 3 years. When Mercury runs a bonus warranty promotion, qualifying motors may receive additional factory-backed coverage, but the offer dates, eligible models, and paperwork rules matter.
-
-If warranty length is part of your buying decision, ask us to confirm the current Mercury promotion before you sign. We will tell you what is active, what is expired, and what actually applies to the motor you are quoting.'
+        answer: 'Promotional offers vary by season, and Mercury warranty extensions are not always active. The standard Mercury warranty is 3 years. When Mercury runs a bonus warranty promotion, qualifying motors may receive additional factory-backed coverage, but the offer dates, eligible models, and paperwork rules matter. If warranty length is part of your buying decision, ask us to confirm the current Mercury promotion before you sign. We will tell you what is active, what is expired, and what actually applies to the motor you are quoting.'
       },
       {
         question: 'What happens if I want to sell my boat before the loan is paid?',
