@@ -13449,6 +13449,10 @@ prompt: Photorealistic editorial decision tree diagram. Title: "Repower or Repla
 image: /lovable-uploads/hull-vs-repower-decision-tree.png
 :::
 
+![Decision tree comparing repower versus hull replacement: starts with whether the boat is over 20 years old with structural damage, branches into repower-keep-the-boat, repair-and-keep, or buy-used-or-new outcomes.](/lovable-uploads/diagram-hull-vs-repower.png)
+
+*The decision tree that frames every "do I repower or replace" conversation we have at HBW. Most customers fall into the REPOWER outcome, which is why mercuryrepower.ca exists.*
+
 The decision is not "new boat vs. old boat." It is "do I have a hull worth keeping?" If the answer is yes, repower wins on the math nearly every time. A Mercury repower on a solid 15-year-old hull lands $20,000 to $35,000 CAD all-in for a typical setup, against $50,000 to $90,000 CAD for a comparable new boat package.
 
 We have been doing this math with customers at HBW since 1965. Three patterns repeat:
