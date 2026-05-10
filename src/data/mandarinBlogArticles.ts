@@ -768,6 +768,219 @@ Rice Lake 与 Kawarthas 内容通常要查 FMZ 17。FMZ 17 属于 Southern Bait 
       { question: '10HP 以下就什么都不用管吗？', answer: '不是。10HP 是 PCL 的重要门槛之一，但 PCOC、钓鱼证、安全设备、湖区规则仍要看你的使用情况。' },
     ],
   },
+  {
+    slug: 'chinese-anglers-rice-lake-kawarthas-outboard',
+    title: '多伦多华人钓友：Rice Lake 与 Kawarthas 钓鱼船马力怎么选',
+    description: '给多伦多华人钓友的 Rice Lake 与 Kawarthas 船外机选购指南：铝船、bass boat、kicker、tiller、40-60HP、90-115HP 怎么选。',
+    image: riceLakeHero,
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-10',
+    dateModified: '2026-05-10',
+    publishDate: '2026-05-10',
+    category: '钓鱼指南',
+    readTime: '7 分钟',
+    keywords: ['Rice Lake 华人钓鱼船外机', 'Kawarthas 钓鱼船', 'Toronto Chinese anglers', 'Mercury fishing outboard 中文'],
+    content: `
+## 快速答案
+
+Rice Lake 和 Kawarthas 钓鱼船选马力，不能只看最高速度。对钓友来说，低速操控、起步、载重、稳定性、trolling 配置和保养便利性，往往比多跑几公里时速更重要。
+
+如果是 14-16 呎铝船，常见会看 20-60HP 区间；如果是更大的铝船、bass boat 或多用途钓鱼船，可能会进入 75-115HP 或更高。最终仍要以船身 capacity plate 和实际使用方式为准。
+
+## 华人钓友常见的真实使用情境
+
+很多 GTA 华人钓友不是天天住在湖边，而是周末从 Toronto、Markham、Richmond Hill、Scarborough 或 North York 开车出发。这代表船的使用时间很珍贵：到湖边后，你不想花半天处理启动问题、马力不足、prop 不合或控制不顺。
+
+### HBW dealer note
+
+钓鱼船最怕「看起来够用，实际上不够用」。两个人、半箱油、没风的测试结果，不能代表三个钓友、满载装备、逆风回航的情况。
+
+## 钓鱼船马力初步参考
+
+| 船型 / 用途 | 常见 Mercury 区间 | 适合情境 |
+|---|---|---|
+| 小型铝船、近岸钓鱼 | 9.9-20HP | 轻载、短距离、简单维护。 |
+| 14-16 呎铝船 | 25-60HP | Rice Lake / Kawarthas 常见钓鱼使用。 |
+| 16-18 呎铝船、多用途钓鱼 | 60-115HP | 更好的载重与起步能力。 |
+| bass boat / tournament style | Pro XS 系列常见 | 重视 hole shot、加速与操控。 |
+| trolling / backup | 9.9 ProKicker 或小马力 | 长时间低速控制与辅助动力。 |
+
+## Rice Lake 使用情境
+
+Rice Lake 有很多钓鱼和家庭 boating 使用混在一起的情况。夏天周末交通、风向、浅水、杂草区、码头进出，都会让「低速控制」和「可靠启动」变得重要。
+
+如果你的船主要用在 Rice Lake，不一定要追求最高马力，但要避免明显 underpower。尤其是铝船或 pontoon 满载后，低马力会让船难以有效 plane，耗油也不一定更省。
+
+## Kawarthas 使用情境
+
+Kawarthas 的湖与 Trent-Severn 水道让船主常常不是只在一个点钓鱼。你可能会跑一段水路、过 lock、停靠不同码头，也可能从钓鱼变成家庭巡航。这时 motor 的稳定性、低速操控和中段加速就很重要。
+
+FMZ 17 的官方规则包含鱼种 season、limits 与 bait management zone 注意事项，钓鱼前应查官方页面，而不是只看旧论坛或朋友转传（[Ontario FMZ 17](http://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-17)）。
+
+## FourStroke 还是 Pro XS？
+
+| 如果你重视 | 优先看 |
+|---|---|
+| 安静、省油、日常可靠 | Mercury FourStroke |
+| 起步、加速、钓鱼性能 | Mercury Pro XS |
+| 载重、pontoon 或需要更大推力 | Command Thrust 配置 |
+| 高级操控、安静和大船体验 | Verado |
+
+## 钓友最容易忽略的 3 件事
+
+1. **Prop 比你想像更重要。** 同一台马达，prop 不同，起步和最高速度都会不同。
+2. **Shaft length 不能猜。** 错轴长会影响性能、操控和安全。
+3. **旧 rigging 不一定适合新马达。** 控制线、gauge、油路、电路都要检查。
+
+## 你的下一步
+
+先确认你的船长、最大 HP rating、常载人数、常去湖区，再用 MercuryRepower.ca 看不同马力区间的加币价格。不要只比较 motor-only price，要看完整 rigging 和安装后的实际效果。
+
+**CTA：** 想知道你的钓鱼船适合 40HP、60HP 还是 90HP？先用 MercuryRepower.ca 创建报价，再请 HBW 帮你确认配置。
+`,
+    faqs: [
+      { question: 'Rice Lake 钓鱼船需要很大马力吗？', answer: '不一定。很多钓鱼船重点不是最大马力，而是合适马力、正确 prop、稳定启动和低速控制。' },
+      { question: '华人钓友常买 kicker 吗？', answer: '如果常 trolling、想要辅助动力或长时间低速控制，小马力 kicker 很有意义。' },
+      { question: '我可以照朋友的船配一样马力吗？', answer: '只能当参考。船长、船重、hull、载重、用途不同，结果会不同。' },
+    ],
+  },
+  {
+    slug: 'chinese-anglers-lake-simcoe-mercury-outboard',
+    title: 'Lake Simcoe 华人钓友船外机指南',
+    description: '给 Lake Simcoe 华人钓友的 Mercury 船外机中文指南：钓鱼船马力、kicker、trolling、安省规则、GTA 出发买船外机重点。',
+    image: riceLakeHero,
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-10',
+    dateModified: '2026-05-10',
+    publishDate: '2026-05-10',
+    category: '钓鱼指南',
+    readTime: '7 分钟',
+    keywords: ['Lake Simcoe 华人钓鱼 Mercury', 'Lake Simcoe Chinese anglers', 'Mercury kicker 中文', '安省华人钓友'],
+    content: `
+## 快速答案
+
+Lake Simcoe 对 GTA 华人钓友很有吸引力，因为距离多伦多不算远，又有丰富钓鱼文化。但 Lake Simcoe 的船外机选择不能只看「能不能跑」。你要考虑开放水面、风浪、低速 trolling、季节变化、载重，以及你是否需要 kicker 或更可靠的主机。
+
+钓鱼规则方面，钓友应直接查安省官方 fishing regulations 和相关 FMZ / waterbody exception，不要靠旧文章或群组截屏做最后判断。安省政府提供繁体中文钓鱼规则摘要页，适合华人钓友作为入口（[Ontario Fishing Regulations Summary Traditional Chinese](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)）。
+
+## Lake Simcoe 买 motor 的思考方式
+
+很多 Lake Simcoe 钓友的船不是纯休闲船。它可能是周末钓鱼工具，也可能是家庭船，也可能春秋钓鱼、夏天载家人。这种混合用途最容易买错马力。
+
+### HBW dealer note
+
+如果你常去 Lake Simcoe，不要只问「这台能跑多快」。更重要的是：风起来时能不能安心回航？低速控制够不够细？载满装备时起步会不会拖？
+
+## 常见 Lake Simcoe 钓友配置
+
+| 使用方式 | 建议思考 |
+|---|---|
+| 近岸钓鱼、小铝船 | 9.9-25HP 可能够，但要看船长与载重。 |
+| 14-16 呎铝船 | 25-60HP 是常见研究区间。 |
+| 16-18 呎钓鱼船 | 60-115HP 常见，视 hull 和最大 rating。 |
+| 需要 trolling | 考虑 kicker 或电动 trolling motor 搭配。 |
+| 重视性能 | 看 Pro XS 或合适的 FourStroke 高马力。 |
+
+## Kicker 对钓友有什么价值
+
+Kicker 不是每个人都需要，但对钓友很有用。它可以让你长时间低速控制，也可以在主机出状况时多一个回航选项。对常常花一整天在湖上的人来说，这是安心感。
+
+小马力 Mercury 或 ProKicker 要看 shaft length、steering、fuel setup 和 mounting 空间。不要只看 horsepower。
+
+## 安省规则不要靠记忆
+
+安省不同 FMZ 有不同 season、limits、waterbody exceptions 和 bait rules。Lake Simcoe 属于 FMZ 16，官方 FMZ 16 规则也提到该区属于 Southern Bait Management Zone，活或死的 baitfish / leeches 通常不能被运入或运出 BMZ，已死亡且保存的 baitfish 和 leeches 例外（[Ontario FMZ 16](http://www.ontario.ca/document/ontario-fishing-regulations-summary/fisheries-management-zone-16)）。
+
+钓鱼前请以官方最新规则为准。中文社群信息很好用，但最后判断要看官方页面。
+
+## Lake Simcoe 与 Rice Lake 的差别
+
+| 重点 | Lake Simcoe | Rice Lake / Kawarthas |
+|---|---|---|
+| 水面感觉 | 更开阔，风浪要更重视 | 湖区与水道使用更多元 |
+| 钓鱼文化 | 华人钓友熟悉度高 | HBW 本地经验更深 |
+| 船外机重点 | 可靠回航、低速控制、载重 | 多用途、local service、repower fit |
+
+## 你的下一步
+
+如果你是 GTA 华人钓友，正在为 Lake Simcoe 或其他安省湖区选 Mercury，先列出你的船型、船长、常载人数、主要钓法、是否 trolling，再看 MercuryRepower.ca 的报价。HBW 可以帮你确认 motor family、马力、shaft length 和 rigging 是否合理。
+
+**CTA：** 用 MercuryRepower.ca 先看 Mercury 船外机真实加币报价，再让 HBW 帮你判断是否适合你的钓鱼船。
+`,
+    faqs: [
+      { question: 'Lake Simcoe 钓鱼一定要 kicker 吗？', answer: '不一定。但如果你常 trolling、长时间在湖上，或想要更安心的备用动力，kicker 值得研究。' },
+      { question: 'Pro XS 适合 Lake Simcoe 钓友吗？', answer: '如果你重视 hole shot、加速和钓鱼性能，Pro XS 值得看。如果你更重视安静和一般巡航，FourStroke 可能更自然。' },
+      { question: '我可以用中文规则摘要吗？', answer: '可以作为入口，但钓鱼前仍建议查最新官方规则和对应 FMZ 页面。' },
+    ],
+  },
+  {
+    slug: 'chinese-family-pontoon-mercury-outboard',
+    title: '华人家庭买 pontoon：Mercury 船外机怎么配才不后悔',
+    description: '给 GTA 华人家庭的 pontoon 船外机中文指南：马力、Command Thrust、载重、家庭安全、Rice Lake/Kawarthas 使用情境与 Mercury 报价。',
+    image: newImmigrantHero,
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-10',
+    dateModified: '2026-05-10',
+    publishDate: '2026-05-10',
+    category: '家庭买船指南',
+    readTime: '6 分钟',
+    keywords: ['pontoon Mercury 中文', '华人家庭 pontoon', '安省 pontoon 船外机', 'Mercury Command Thrust 中文'],
+    content: `
+## 快速答案
+
+Pontoon 买 Mercury 船外机，最容易犯的错是只看空船、少人、平水面的表现。真正使用时，pontoon 常常载家人、朋友、食物、cooler、狗、浮具和满油。马力太小会让船起步慢、转向重、逆风吃力，也可能让油耗不如想像。
+
+对很多安省家庭 pontoon，正确的问题不是「最低可以配几匹」，而是「我们平常怎么用这艘船，什么马力才不会后悔」。
+
+## 华人家庭 pontoon 的典型情境
+
+很多 GTA 华人家庭买 pontoon，不只是为了自己开船。它是家庭聚会、父母来加拿大探亲、孩子暑假、朋友周末、钓鱼和日落巡航的工具。这类使用最怕船外机不够力，因为每次出船都不是一两个人。
+
+### HBW dealer note
+
+Pontoon 的马力要用「夏天周末满载」来想，不要用「展示时空船」来想。你买的不是 showroom 表现，是全家上船后的真实体验。
+
+## Pontoon 马力初步参考
+
+| Pontoon 使用方式 | 常见思考方向 |
+|---|---|
+| 慢速巡航、少人使用 | 可看较低马力，但仍要确认船厂 rating。 |
+| 家庭巡航、常载 4-8 人 | 90-115HP 常被研究。 |
+| 载重大、想更好起步 | 看 Command Thrust 或更高马力。 |
+| 水上玩具、拖 tube | 不要 underpower，起步和中段推力很重要。 |
+| 高级舒适体验 | Verado 或更高级配置值得比较。 |
+
+## Command Thrust 是什么
+
+Command Thrust 不是另一个品牌，也不是一个完全独立 motor family。你可以把它理解为 Mercury 某些马力/型号上的「更有推力的齿轮箱配置」。它通常适合较重、载重较高、需要更好低速推力的船，例如 pontoon。
+
+对 pontoon 来说，Command Thrust 的价值通常不是最高速度，而是低速控制、起步、满载推力和更适合大直径 prop 的能力。
+
+## FourStroke、Pro XS、Verado 怎么看
+
+| 系列 | Pontoon 上的角色 |
+|---|---|
+| FourStroke | 最通用，安静、省心，适合多数家庭。 |
+| Pro XS | 如果想要更强起步和更运动化反应，可研究。 |
+| Verado | 更安静、更精致，适合高级 pontoon。 |
+| Command Thrust | 对重载 pontoon 很有价值，尤其是推力需求高时。 |
+
+## 不要只比较 motor-only price
+
+Pontoon repower 可能牵涉 rigging、controls、prop、gauge、steering、battery、mounting 与旧系统兼容性。你应该比较的是「装好、调好、能安心用」的整体价值，不是单独 motor 价格。
+
+## 你的下一步
+
+先确认 pontoon 长度、最大 HP rating、常载人数、是否拖 tube、是否常在 Rice Lake / Kawarthas 使用，再用 MercuryRepower.ca 看不同 Mercury 配置的加币价格。
+
+**CTA：** 不确定 pontoon 应该配 90HP、115HP 还是更高？先创建 Mercury 报价，HBW 可以帮你确认真实使用情境。
+`,
+    faqs: [
+      { question: 'Pontoon 配低马力会比较省油吗？', answer: '不一定。马力太小导致长时间高负荷运转，实际油耗和体验可能都不好。' },
+      { question: 'Command Thrust 一定需要吗？', answer: '不是每艘 pontoon 都需要，但重载、家庭使用、想要更好推力时很值得比较。' },
+      { question: '家庭 pontoon 要不要买最大马力？', answer: '不一定。最好的选择是符合船身 rating、使用情境和预算的平衡点。' },
+    ],
+  },
 ];
 
 export function getMandarinArticleBySlug(slug: string): BlogArticle | undefined {
