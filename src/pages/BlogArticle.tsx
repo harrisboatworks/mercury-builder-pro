@@ -19,6 +19,7 @@ import { getCleanDescription } from '@/lib/strip-markdown';
 import { BlogCTA } from '@/components/blog/BlogCTA';
 import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { ShaftLengthPicker } from '@/components/tools/ShaftLengthPicker';
+import { TradeInValueEstimator } from '@/components/tools/TradeInValueEstimator';
 import { 
   Accordion, 
   AccordionContent, 
