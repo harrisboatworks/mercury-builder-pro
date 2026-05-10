@@ -9123,7 +9123,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 > **Quick answer:** Mercury's 2026 lineup for Ontario covers 2.5 to 300 HP across FourStroke, Pro XS, and SeaPro families, plus Avator electric. Verado is special order only. Stocked allocation focuses on the high-volume cottage and fishing horsepowers, 9.9, 25, 60, 90, 115, 150. Live inventory at mercuryrepower.ca.
 
-The Mercury 2026 lineup covers every recreational HP class. FourStroke (2.5 to 300 HP) for cruising, fishing, and family use. Pro XS (115 to 300 HP) for performance fishing. SeaPro (25 to 300 HP) for commercial duty. Verado (250 to 600+ HP) for offshore (special-order at HBW). Avator electric line for emerging applications. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+The Mercury 2026 lineup covers every recreational HP class. FourStroke (2.5 to 300 HP) for cruising, fishing, and family use. Pro XS (115 to 300 HP) for performance fishing. SeaPro (25 to 300 HP) for commercial duty. Verado V10/V12 ranges from 250 hp through 425 hp (V10) and up to 600 hp (V12); Mercury added the 425 hp V10 in May 2025 and enhanced the 350 hp V10 in the same release. Verado is special-order at HBW. Avator electric line for emerging applications. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
