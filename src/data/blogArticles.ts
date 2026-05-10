@@ -10623,7 +10623,7 @@ Five things move whether Mercury or Yamaha is right for your specific situation:
 
 ## Mercury advantages in Ontario
 
-The reasons Mercury dominates the Ontario freshwater market:
+The reasons Mercury leads in many Ontario freshwater segments:
 
 ### 1. Dealer network density
 
