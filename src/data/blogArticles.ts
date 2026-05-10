@@ -1223,19 +1223,14 @@ We document break-in compliance during HBW deliveries and follow up on first-yea
 - [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop testing during break-in sea-trial
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early-life issue diagnostics
 
-## Ready to take delivery of a new Mercury?
+## Need help with this?
 
-Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration. Break-in protocol is part of every HBW delivery.
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
 
-[**Build Your Mercury Quote**](/quote/motor-selection)
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
-If you want to talk through break-in for a specific Mercury before purchase, [give us a call at (905) 342-2153](tel:9053422153). We deliver new Mercurys every week and walk every customer through the break-in protocol.
-
----
-
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
-
----
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 ## FAQ
 
@@ -4611,19 +4606,14 @@ For HBW commissioning, [book service](https://hbw.wiki/service). Slots fill up b
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up diagnostics
 - [Walleye Opener Boat Prep Checklist](/blog/walleye-opener-boat-prep), pre-fishing-season prep
 
-## Ready to book spring service?
+## Need help with this?
 
-Spring service slots fill up in March and April. Booking early gets you the easier appointment slots and your boat is ready when you want it.
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
 
-[**Request Service**](https://hbw.wiki/service)
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
-If you want to talk through what your specific motor needs for spring, [give us a call at (905) 342-2153](tel:9053422153). We can pull up your service history (if we have serviced the motor before) and give you a real recommendation.
-
----
-
-_Service pricing varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
-
----
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 ## FAQ
 
@@ -12097,17 +12087,14 @@ The first one is the most common. Most often, DIYers drain the gear lube, get di
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up issues and what to check
 - [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), if you are repowering this year
 
-## Ready to book service?
+## Need help with this?
 
-If you decide DIY is not the right call for your motor this year, [request service at HBW](https://hbw.wiki/service) or call (905) 342-2153. We start scheduling winterization in late September and the calendar fills through October. Booking early gets you the easier appointment slots.
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
 
-[**Request Service**](https://hbw.wiki/service)
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
----
-
-_Service pricing varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
-
----
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 ## FAQ
 
@@ -13150,15 +13137,14 @@ For HBW service, [request service](https://hbw.wiki/service) or [call (905) 342-
 - [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), fuel system maintenance
 - [Boat Repowering Guide: When to Replace Your Motor](/blog/boat-repowering-guide-when-to-replace-motor), if no-start diagnosis points to repower
 
-## Need a diagnostic?
+## Need help with this?
 
-[**Request Service**](https://hbw.wiki/service) or [give us a call at (905) 342-2153](tel:9053422153). We will walk through the symptoms and either troubleshoot over the phone or get you a service slot.
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
 
----
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
-_Service pricing varies by motor size, boat type, and what's included. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
-
----
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 ## FAQ
 
