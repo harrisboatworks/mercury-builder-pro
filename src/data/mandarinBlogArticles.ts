@@ -1127,6 +1127,199 @@ Command Thrust 不是跟 FourStroke、Pro XS、Verado 平行的完整 motor fami
       { question: 'Command Thrust 是另一个系列吗？', answer: '不是。它是特定配置/齿轮箱方向，常见价值在重载和 pontoon 使用。' },
     ],
   },
+  {
+    slug: 'mercury-9-9-20hp-chinese-kicker-tiller-guide',
+    title: '9.9 到 20 匹 Mercury：钓鱼小船、kicker、tiller 中文指南',
+    description: 'Mercury 9.9HP、15HP、20HP 船外机中文指南：小铝船、kicker、tiller、钓鱼、trolling、安省华人钓友怎么选。',
+    image: riceLakeHero,
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-10',
+    dateModified: '2026-05-10',
+    publishDate: '2026-05-10',
+    category: '小马力指南',
+    readTime: '6 分钟',
+    keywords: ['Mercury 9.9 20HP 中文', 'Mercury kicker 中文', 'tiller 船外机中文', '小铝船 Mercury'],
+    content: `
+## 快速答案
+
+9.9 到 20HP Mercury 适合小铝船、轻载钓鱼、kicker、trolling 或某些 horsepower-limited 湖区。对华人钓友来说，这个马力区间常常不是追求速度，而是追求可靠、好启动、低速控制、容易保养和符合规则。
+
+但不要因为马力小就随便买。shaft length、手柄或遥控、电启或手拉、是否当 kicker、船尾高度和实际载重，都会影响选择。
+
+## 9.9HP 为什么常被问
+
+9.9HP 在安省很常见，因为它常出现在小船、钓鱼、辅助机和某些限制情境。很多华人钓友会问：「9.9 够不够？」答案是：看船。
+
+小铝船、两人钓鱼、短距离使用，9.9 可能很合理。可是如果船重、人多、装备多、风大，9.9 就可能很吃力。
+
+### HBW dealer note
+
+9.9HP 最容易被高估，也最容易被低估。船很小时它很好用；船稍微重一点、载重多一点，就会明显感觉不够。
+
+## 9.9、15、20HP 怎么想
+
+| 马力 | 适合情境 | 注意 |
+|---|---|---|
+| 9.9HP | 小船、kicker、低速钓鱼 | 载重增加后可能吃力。 |
+| 15HP | 想比 9.9 多一点余裕 | 仍要看船身 rating。 |
+| 20HP | 小铝船更实用的上限选择之一 | 重量、操控、PCL 门槛要确认。 |
+
+## Kicker 用途
+
+Kicker 通常不是主力跑远的 motor，而是辅助、trolling 或备用。钓友喜欢 kicker，是因为它能长时间低速运转，也能让你在主机出问题时多一个选择。
+
+如果你要把 9.9 当 kicker，要确认 mounting bracket、steering link、fuel setup、shaft length 和控制方式。
+
+## Tiller 还是 remote
+
+| 控制方式 | 适合谁 |
+|---|---|
+| Tiller | 小船、简单、直接控制、钓鱼常用。 |
+| Remote | 有 steering wheel、console 或较大船。 |
+| Advanced tiller | 某些较高马力和专业钓鱼用途也可能适合。 |
+
+## PCL 与 10HP 门槛
+
+Transport Canada 说，休闲船如果有一个或多个引擎，总马力至少 10HP，并主要在加拿大水域使用，通常需要 Pleasure Craft Licence（[Transport Canada PCL](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl)）。所以 9.9HP、10HP、15HP、20HP 之间，不只是性能问题，也可能牵涉文档。
+
+## 你的下一步
+
+如果你在 9.9、15、20HP 之间犹豫，先确认船长、船重、capacity plate、transom 高度和使用方式。再用 MercuryRepower.ca 看价格，或让 HBW 帮你确认小马力 Mercury 是否适合。
+
+**CTA：** 想买 Mercury 9.9 到 20HP？先用 MercuryRepower.ca 看报价，再确认 shaft length 和控制方式。
+`,
+    faqs: [
+      { question: '9.9HP 适合两个人钓鱼吗？', answer: '可能适合，但要看船长、船重、水况和装备。' },
+      { question: 'Kicker 要不要电启？', answer: '如果常用、想省力，电启值得考虑。但也要看电池和安装配置。' },
+      { question: '20HP 会不会太大？', answer: '看船身 rating 和用途。不能只看想要更快。' },
+    ],
+  },
+  {
+    slug: 'mercury-40-60hp-chinese-fishing-boat-guide',
+    title: '40 到 60 匹 Mercury：铝船与华人钓友最常问的马力区间',
+    description: 'Mercury 40HP、50HP、60HP 船外机中文指南：安省铝船、钓鱼船、tiller/remote、Command Thrust、华人钓友怎么选。',
+    image: mercury115vs150Hero,
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-10',
+    dateModified: '2026-05-10',
+    publishDate: '2026-05-10',
+    category: '中马力指南',
+    readTime: '6 分钟',
+    keywords: ['Mercury 40 60HP 中文', '铝船 Mercury 60HP', '华人钓友船外机', '安省 fishing boat Mercury'],
+    content: `
+## 快速答案
+
+40 到 60HP 是安省铝船和钓鱼船非常常见的研究区间。它比小马力更有载重和起步能力，又比大马力更容易控制预算。对华人钓友来说，这个区间常常是「真正开始好用」的范围。
+
+但 40、50、60HP 的差异不是只看价格。你要看船身最大 rating、常载人数、是否 console、是否 tiller、是否需要 Command Thrust，以及你常跑的湖区。
+
+## 这个马力区间适合谁
+
+| 使用情境 | 是否适合 40-60HP |
+|---|---|
+| 14-16 呎铝船 | 常常适合，视船身 rating。 |
+| 两到三人钓鱼 | 很常见。 |
+| Rice Lake / Kawarthas 多用途 | 值得研究。 |
+| 小 pontoon | 可能适合，但常要看载重。 |
+| 想拖 tube 或满载家庭 | 可能需要更高马力。 |
+
+### HBW dealer note
+
+很多 40-60HP 的错误不是买太大，而是买到刚好「能用但不爽」。如果你常载两三个钓友和一堆装备，60HP 的余裕可能比 40HP 更有价值。
+
+## 40、50、60HP 怎么比较
+
+| 马力 | 优点 | 可能限制 |
+|---|---|---|
+| 40HP | 预算较低，适合较轻船 | 载重后可能不够有力。 |
+| 50HP | 折衷选择 | 有时候跟 60HP 价差值得比较。 |
+| 60HP | 余裕更好，钓鱼船常见 | 要确认船身 rating 和重量。 |
+
+## Tiller 还是 remote
+
+钓鱼船不一定都要方向盘。很多钓友喜欢 tiller，因为空间更开放、控制直接、船内配置简单。Remote 则适合有 console、较家庭化或想要更像一般 boat driving 体验的人。
+
+Mercury 的 tiller 选项不只限于非常小的马力，某些配置能满足更专业的钓鱼用途。实际可选型号要以 Mercury 和 dealer 当下数据为准。
+
+## Command Thrust 值得吗
+
+如果你的船比较重、常载装备，或需要更好的低速推力，Command Thrust 值得研究。它对 pontoon 以外的某些重载铝船也可能有价值。
+
+## 你的下一步
+
+先拍 capacity plate，再记下船长、船型、目前 motor、prop、常载人数和主要湖区。不要只问 40 还是 60，应该问：「这艘船在我真实使用情境下，哪个配置最平衡？」
+
+**CTA：** 用 MercuryRepower.ca 比较 40HP、50HP、60HP 的加币报价，再请 HBW 帮你确认是否适合你的铝船。
+`,
+    faqs: [
+      { question: '40HP 和 60HP 差很多吗？', answer: '在空船时可能觉得还好，满载后差异会更明显。' },
+      { question: '60HP 会不会太耗油？', answer: '不一定。马力不足导致长时间高负荷运转，也可能不省油。' },
+      { question: '这个区间适合华人钓友吗？', answer: '很适合很多安省铝船钓友，但要看船身 rating 和实际用途。' },
+    ],
+  },
+  {
+    slug: 'why-chinese-boaters-choose-harris-boat-works',
+    title: '为什么 GTA 华人船主愿意到 Rice Lake 找 Harris Boat Works',
+    description: '大多伦多华人船主为什么愿意到 Rice Lake 找 Harris Boat Works？透明 Mercury 报价、1947 年创立、Mercury Platinum Dealer、本地 repower 经验与不玩价格游戏。',
+    image: newImmigrantHero,
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-10',
+    dateModified: '2026-05-10',
+    publishDate: '2026-05-10',
+    category: 'HBW 中文介绍',
+    readTime: '5 分钟',
+    keywords: ['Harris Boat Works 中文', 'GTA 华人船主', 'Mercury Dealer Ontario 中文', 'Rice Lake marina 中文', 'MercuryRepower.ca 中文'],
+    content: `
+## 快速答案
+
+GTA 华人船主愿意到 Rice Lake 找 Harris Boat Works，不是因为这里离 Toronto 最近，而是因为买 Mercury 船外机和 repower 需要信任、透明价格和真正懂船的人。HBW 1947 年成立，是 Rice Lake 的第三代家族 marina，也是 Mercury Marine Platinum Dealer。
+
+对很多华人客户来说，最重要的是不用玩「call for quote」游戏。你可以先在 MercuryRepower.ca 看真实加币报价，再决定要不要深入确认。
+
+## 华人买家最在意什么
+
+很多华人客户不是怕花钱，而是怕花错钱。大家愿意研究、比较、问朋友、看论坛，也愿意为可靠和专业付钱。但没有人喜欢价格不清楚、说法模糊、或每次问都得到不同答案。
+
+### HBW dealer note
+
+我们不需要把每个人都说服成客户。比较好的方式是把信息讲清楚，让合适的人自己判断。买船外机应该是清楚的决定，不应该像猜谜。
+
+## HBW 对华人船主的价值
+
+| HBW 优势 | 对华人客户的实际好处 |
+|---|---|
+| Since 1947 | 不是临时网店，是长期在本地经营的 marina。 |
+| Mercury Platinum Dealer | 对 Mercury 产品、保固和服务更熟。 |
+| Rice Lake 本地经验 | 懂安省湖区和真实使用情境。 |
+| MercuryRepower.ca | 先看透明加币报价，不用一开始就被推销。 |
+| 家族经营 | 比大型店更有人味，更重视长期信任。 |
+
+## 为什么不是只找最近的 dealer
+
+最近不一定最适合。船外机不是买完就结束，你之后还有保养、winterization、prop、diagnostics、rigging 和问题处理。对很多船主来说，一个愿意讲清楚、做长期服务的 dealer，比开车少 30 分钟更重要。
+
+## 为什么中文内容重要
+
+很多华人船主英文没问题，但在买大件设备时，能用中文先理解内核概念会更安心。特别是 PCOC、PCL、FMZ、repower、Command Thrust、shaft length 这些词，如果只看英文，容易漏掉重点。
+
+安省政府也提供繁体中文的钓鱼规则摘要，代表中文钓鱼与 boating 信息在安省是真实需求，不是小众想像（[Ontario Fishing Regulations Summary Traditional Chinese](http://www.ontario.ca/page/ontario-fishing-regulations-summary-traditional-chinese)）。
+
+## HBW 不适合谁
+
+如果你只想找最低标价、完全不在乎安装和后续服务，HBW 可能不是你唯一会看的地方。如果你想要把配置弄对、价格讲清楚、未来有人可以帮你处理保养和问题，那 HBW 更适合。
+
+## 你的下一步
+
+如果你是 GTA 华人船主，先从 MercuryRepower.ca 创建报价。你不需要马上承诺，也不需要一开始就打电话。先看选项、看加币价格、再决定是否让 HBW 帮你确认。
+
+**CTA：** 想用中文先理解，用英文型号下单确认？从 MercuryRepower.ca 创建 Mercury 船外机报价开始。
+`,
+    faqs: [
+      { question: 'HBW 有中文销售吗？', answer: '目前主要营运语言是英文，但这个中文内容枢纽可以帮华人客户先理解重点。报价与规格仍会以正式英文型号和文档确认。' },
+      { question: '从 Toronto 开到 Rice Lake 值得吗？', answer: '如果只是看一眼价格，也许不用。但如果你要 repower、安装、服务和长期支持，值得找懂 Mercury 和本地使用情境的 dealer。' },
+      { question: 'MercuryRepower.ca 的报价是真实价格吗？', answer: '它的目的就是让客户先看到透明加币价格。最后仍需 dealer 确认规格、安装和兼容性。' },
+    ],
+  },
 ];
 
 export function getMandarinArticleBySlug(slug: string): BlogArticle | undefined {
