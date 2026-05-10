@@ -515,6 +515,7 @@ function AnimatedRoutes() {
         
         {/* About Page */}
         <Route path="/about" element={<About />} />
+        <Route path="/about/jay-harris" element={<AboutJayHarris />} />
         
         {/* FAQ Page */}
         <Route path="/faq" element={<FAQ />} />
