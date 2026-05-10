@@ -981,6 +981,152 @@ Pontoon repower 可能牵涉 rigging、controls、prop、gauge、steering、batt
       { question: '家庭 pontoon 要不要买最大马力？', answer: '不一定。最好的选择是符合船身 rating、使用情境和预算的平衡点。' },
     ],
   },
+  {
+    slug: 'chinese-boat-repower-vs-new-boat-ontario',
+    title: 'Repower 还是换船？给安省华人船主的现实判断',
+    description: '旧船要换 Mercury 船外机还是直接换船？给安省华人船主的现实判断：船体、预算、使用情境、保值与 HBW repower 建议。',
+    image: repowerVsNewHero,
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-10',
+    dateModified: '2026-05-10',
+    publishDate: '2026-05-10',
+    category: '决策指南',
+    readTime: '7 分钟',
+    keywords: ['repower 还是换船 中文', 'Mercury repower 中文', '安省船主', '旧船换马达', 'Harris Boat Works repower'],
+    content: `
+## 快速答案
+
+如果你的船体结构健康、尺寸和格局仍适合你的家庭或钓鱼方式，而问题主要是旧船外机不可靠、太吵、太耗油或维修不划算，repower 通常值得认真比较。如果船体已经软、烂、漏水、格局不适合，或你其实已经想换更大的船，那换船可能更合理。
+
+Repower 的内核不是「省钱」而已，而是保留一艘你熟悉、喜欢、适合你湖区的船，同时换上可靠的新 Mercury 动力。
+
+## 华人船主常见的犹豫
+
+很多华人船主很理性，会把每一笔花费算清楚。这很正常。但 repower 的判断不能只看「新马达多少钱」和「二手船多少钱」。你要比较的是完整成本、风险、时间、熟悉度和未来几年的使用品质。
+
+### HBW dealer note
+
+一艘好 hull 加上一台累了的旧 motor，是 repower 候选。一艘累了的 hull 加上一台累了的 motor，通常是换船候选。
+
+## Repower 适合你的情况
+
+| 情况 | 为什么适合 repower |
+|---|---|
+| 船体结构健康 | 新 motor 能延长整艘船的可用年限。 |
+| 船的大小和格局仍适合 | 不需要为了换 motor 连整艘船都换掉。 |
+| 旧 motor 维修越来越频繁 | 新 Mercury 可能让季节更安心。 |
+| 你熟悉这艘船 | docking、载重、钓鱼位置都已经习惯。 |
+| 二手船市场不透明 | 换一艘二手船可能只是换来另一组未知问题。 |
+
+## 换船比较适合的情况
+
+| 情况 | 为什么可能该换船 |
+|---|---|
+| transom、floor、stringers 有结构问题 | 新 motor 挂在坏船体上不值得。 |
+| 家庭已经长大，船太小 | Repower 解决不了空间问题。 |
+| 你想从钓鱼船改成 pontoon | 用途变了，船也该变。 |
+| 船体价值太低 | 完整 repower 成本可能不合理。 |
+| 你其实已经不喜欢这艘船 | 不要花钱试图重新爱上它。 |
+
+## Repower 决策树
+
+1. **船体健康吗？** 如果 transom、floor、hull 都健康，继续看下一步。
+2. **这艘船还适合你的用途吗？** 如果家庭、钓鱼、湖区使用仍合适，repower 有意义。
+3. **完整 repower 成本合理吗？** 要包含 motor、rigging、controls、prop 和安装，不只 motor-only price。
+4. **你想再用 5-10 年吗？** 如果答案是 yes，repower 更值得研究。
+
+## 为什么 MercuryRepower.ca 对华人买家有用
+
+很多 dealer 不把价格说清楚，让客户必须打电话、等回复、再猜最后总价。MercuryRepower.ca 的价值是让你先看到真实加币报价，把研究主导权拿回来。
+
+这不代表网站能取代最后的 dealer 确认。它的作用是让你先知道大概选项和价格，再让 HBW 确认规格是否真的适合你的船。
+
+## 你的下一步
+
+拍下你的船、旧 motor、capacity plate、transom、controls 和任何现有 gauge。先用 MercuryRepower.ca 创建报价，再让 HBW 判断哪些旧系统可以保留，哪些应该一起更新。
+
+**CTA：** 如果你的旧船还值得留，先用 MercuryRepower.ca 看 Mercury repower 报价。
+`,
+    faqs: [
+      { question: 'Repower 一定比换船便宜吗？', answer: '不一定。但如果 hull 好、用途合适，repower 可能比换另一艘未知状况的二手船更理性。' },
+      { question: '旧 controls 可以沿用吗？', answer: '要看型号、年份、兼容性和状况。不要假设一定能用。' },
+      { question: '我可以先拿报价再决定吗？', answer: '可以。这正是 MercuryRepower.ca 的用途。' },
+    ],
+  },
+  {
+    slug: 'mercury-fourstroke-pro-xs-verado-chinese-comparison',
+    title: 'Mercury FourStroke、Pro XS、Verado 差在哪？中文完整比较',
+    description: 'Mercury FourStroke、Pro XS、Verado 差在哪？给安省华人船主的中文比较：家庭巡航、钓鱼、pontoon、性能与高级船外机怎么选。',
+    image: mercury115vs150Hero,
+    author: 'Harris Boat Works',
+    datePublished: '2026-05-10',
+    dateModified: '2026-05-10',
+    publishDate: '2026-05-10',
+    category: 'Mercury 型号比较',
+    readTime: '7 分钟',
+    keywords: ['Mercury FourStroke Pro XS Verado 中文', 'Mercury 船外机比较', 'Pro XS 中文', 'Verado 中文'],
+    content: `
+## 快速答案
+
+Mercury FourStroke 是最通用的选择，适合多数家庭、钓鱼和日常 boating。Pro XS 更偏性能，适合重视 hole shot、加速和钓鱼反应的船主。Verado 则偏高级、安静、精致操控，适合较大或更 premium 的船。
+
+不要把 Pro XS 当成「旧式二行程」来理解。现在 Mercury Pro XS 系列包含现代 FourStroke 技术与性能调校，选它的理由是性能感和用途，不是因为它是旧观念里的 two-stroke。
+
+## 一张表先看懂
+
+| 系列 | 最适合 | 你会喜欢它，如果你想要 |
+|---|---|---|
+| FourStroke | 家庭、钓鱼、一般用途 | 安静、可靠、省心、用途广。 |
+| Pro XS | 钓鱼、性能船、重视反应 | 更强 hole shot、更运动化加速。 |
+| Verado | 高级船、大船、舒适巡航 | 更安静、更精致、更 premium 的操作感。 |
+| Command Thrust | Pontoon、重载船 | 更好低速推力与大 prop 能力。 |
+
+### HBW dealer note
+
+同样是 Mercury，买错系列不一定会「不能用」，但可能会让你每次出船都觉得差一点。FourStroke、Pro XS、Verado 的差异不是面子问题，是用途问题。
+
+## FourStroke：大多数人的安全选择
+
+FourStroke 适合想要一台安静、可靠、用途广的 Mercury。家庭巡航、钓鱼、cottage boat、pontoon、铝船都可能适合 FourStroke。
+
+如果你不追求最强加速，也不需要最高级的操控感，FourStroke 往往是最自然的起点。
+
+## Pro XS：钓鱼与性能导向
+
+Pro XS 适合重视性能反应的人。钓鱼船、bass boat、想要更快起步和更运动化感觉的船主，常会研究 Pro XS。
+
+如果你常满载起步、需要更好的 hole shot，或喜欢更有反应的操控，Pro XS 值得比较。
+
+## Verado：高级、安静、精致
+
+Verado 是 Mercury 更 premium 的选择，重点是精致感、安静、操控和大船体验。不是每艘船都需要 Verado，但对高级 pontoon、较大 fiberglass boat 或重视舒适的客户，它可能很有吸引力。
+
+## Command Thrust：不要误会它
+
+Command Thrust 不是跟 FourStroke、Pro XS、Verado 平行的完整 motor family。它更像是某些 Mercury 配置中的推力/齿轮箱选项。对 pontoon、重载船或需要大 prop 的船，它可能非常重要。
+
+## 怎么选
+
+| 你的情况 | 优先研究 |
+|---|---|
+| 第一台 Mercury，不想复杂 | FourStroke |
+| 铝船钓鱼、想要好起步 | Pro XS 或合适 FourStroke |
+| Pontoon 满载家庭使用 | FourStroke + Command Thrust |
+| 高级 pontoon 或大船 | Verado |
+| 预算敏感但想可靠 | FourStroke |
+
+## 你的下一步
+
+不要只问朋友「哪台最好」。先问自己：我这艘船主要做什么？常载多少人？在哪个湖？想要安静、省心、性能，还是高级感？
+
+**CTA：** 到 MercuryRepower.ca 比较 FourStroke、Pro XS、Verado 的加币报价，再让 HBW 帮你确认哪个系列最适合你的船。
+`,
+    faqs: [
+      { question: 'Pro XS 比 FourStroke 好吗？', answer: '不是「好或不好」，而是用途不同。Pro XS 偏性能，FourStroke 更通用。' },
+      { question: 'Verado 值得多花钱吗？', answer: '如果你重视安静、精致操控和 premium 体验，值得比较。如果只是小铝船日常钓鱼，可能不是第一选择。' },
+      { question: 'Command Thrust 是另一个系列吗？', answer: '不是。它是特定配置/齿轮箱方向，常见价值在重载和 pontoon 使用。' },
+    ],
+  },
 ];
 
 export function getMandarinArticleBySlug(slug: string): BlogArticle | undefined {
