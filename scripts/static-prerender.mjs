@@ -1796,6 +1796,60 @@ const blogArticleRoutes = blogArticles.map(article => ({
 }));
 
 // ============================================================
+// Translated blog article routes (fr/ko/zh/es)
+// Mirror the English blogArticleRoutes shape so SSG injects the
+// full article body + a localized dealer-credentials strip into the
+// noscript fallback for crawlers + LLM ingestion.
+// ============================================================
+
+function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale, inLanguage) {
+  return articles.map(article => ({
+    path: `/blog/${langCode}/${article.slug}`,
+    title: `${article.title} | Harris Boat Works Blog`,
+    description: article.description,
+    ogImage: article.image ? (article.image.startsWith('http') ? article.image : `${SITE_URL}${article.image}`) : undefined,
+    ogType: 'article',
+    ogLocale,
+    h1: article.title,
+    intro: firstParagraph(article.content, article.description),
+    htmlLang: inLanguage,
+    schemas: [{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": article.title,
+      "description": article.description,
+      "inLanguage": inLanguage,
+      "datePublished": article.datePublished,
+      "dateModified": article.dateModified || article.datePublished,
+      "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+      "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+      "mainEntityOfPage": `${SITE_URL}/blog/${langCode}/${article.slug}`
+    }],
+    extraNoscript: () => {
+      const bodyHtml = renderArticleBodyHtml(article.content);
+      const faqHtml = (article.faqs && article.faqs.length > 0)
+        ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>
+            `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
+          ).join('') + '</dl></section>'
+        : '';
+      return `${dealerStripHtml}<article>${bodyHtml}</article>${faqHtml}`;
+    }
+  }));
+}
+
+const frDealerStripHtml = '<div class="dealer-confidence-strip"><span>Concessionnaire Mercury Platinum</span><span>·</span><span>Depuis 1947</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Constructeur de devis disponible</a></div>';
+const koDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury 플래티넘 딜러</span><span>·</span><span>1947년부터</span><span>·</span><span>온타리오주 Gores Landing</span><span>·</span><a href="/quote/motor-selection">견적 도구 사용 가능</a></div>';
+const zhDealerStripHtml = '<div class="dealer-confidence-strip"><span>水星白金经销商</span><span>·</span><span>自1947年</span><span>·</span><span>安大略省 Gores Landing</span><span>·</span><a href="/quote/motor-selection">在线报价工具</a></div>';
+const esDealerStripHtml = '<div class="dealer-confidence-strip"><span>Distribuidor Mercury Platinum</span><span>·</span><span>Desde 1947</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Cotizador disponible</a></div>';
+
+const frenchBlogArticleRoutes = buildTranslatedBlogRoutes(frenchBlogArticles, 'fr', frDealerStripHtml, 'fr_CA', 'fr');
+const koreanBlogArticleRoutes = buildTranslatedBlogRoutes(koreanBlogArticles, 'ko', koDealerStripHtml, 'ko_KR', 'ko');
+const mandarinBlogArticleRoutes = buildTranslatedBlogRoutes(mandarinBlogArticles, 'zh', zhDealerStripHtml, 'zh_CN', 'zh-Hans');
+const spanishBlogArticleRoutes = buildTranslatedBlogRoutes(spanishBlogArticles, 'es', esDealerStripHtml, 'es_ES', 'es');
+console.log(`[static-prerender] translated blog routes → fr:${frenchBlogArticleRoutes.length} ko:${koreanBlogArticleRoutes.length} zh:${mandarinBlogArticleRoutes.length} es:${spanishBlogArticleRoutes.length}`);
+
+
+// ============================================================
 // Per-motor /motors/{slug} routes: Product + Offer JSON-LD
 // ============================================================
 
