@@ -21,6 +21,7 @@ import { MarkdownSectionCards } from '@/components/blog/MarkdownSectionCards';
 import { ShaftLengthPicker } from '@/components/tools/ShaftLengthPicker';
 import { TradeInValueEstimator } from '@/components/tools/TradeInValueEstimator';
 import { RepowerCostEstimator } from '@/components/tools/RepowerCostEstimator';
+import { BoostEligibilityChecker } from '@/components/tools/BoostEligibilityChecker';
 import { 
   Accordion, 
   AccordionContent, 
