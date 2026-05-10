@@ -593,7 +593,9 @@ interface Props {
 }
 
 export function MarkdownSectionCards({ content, markdownComponents }: Props) {
-  const { preamble, sections } = splitIntoH2Sections(content);
+  const { preamble, sections } = splitIntoH2Sections(
+    preprocessSpecialBlocks(content),
+  );
 
   // Inline H3/H4 "Recommended Choice" wrapping is handled via component overrides
   // (we wrap just the heading + immediate paragraph siblings is non-trivial in
