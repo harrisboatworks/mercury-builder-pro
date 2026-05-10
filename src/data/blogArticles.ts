@@ -8767,7 +8767,7 @@ Stop by the marina in Gores Landing, give us a call at (905) 342-2153, or [brows
     image: '/lovable-uploads/Tariffs_and_Trade_Blog_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-02-06',
+    dateModified: '2026-05-10',
     publishDate: '2026-02-06',
     category: 'Market Insight',
     readTime: '12 min read',
