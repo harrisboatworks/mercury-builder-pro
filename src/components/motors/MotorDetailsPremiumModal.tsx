@@ -845,7 +845,22 @@ export default function MotorDetailsPremiumModal({
                   {/* RESOURCES TAB */}
                   <TabsContent value="resources" className="space-y-5 mt-0">
                     <div className="p-6 pt-8 pb-12 space-y-8">
-                      {/* Videos Section - First for engagement */}
+                      {/* Related Guides — first for buyer education. Lazy-loaded so blogArticles never enters the motor bundle */}
+                      {relatedSlugs.length > 0 && (
+                        <div className="border-b border-gray-100 pb-6 mb-6">
+                          <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-1">
+                            Related Guides
+                          </h3>
+                          <p className="text-sm text-[#050E1C]/70 mb-4">
+                            Hand-picked HBW articles for boaters considering this motor class.
+                          </p>
+                          <Suspense fallback={null}>
+                            <RelatedPostsGrid slugs={relatedSlugs} hideHeader />
+                          </Suspense>
+                        </div>
+                      )}
+
+                      {/* Videos Section */}
                       {motor?.id && (
                         <div>
                           <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-4">
@@ -865,21 +880,6 @@ export default function MotorDetailsPremiumModal({
                             Downloads & Documentation
                           </h3>
                           <MotorDocumentsSection motorId={motor.id} />
-                        </div>
-                      )}
-
-                      {/* Related Guides — lazy-loaded so blogArticles never enters the motor bundle */}
-                      {relatedSlugs.length > 0 && (
-                        <div className="border-t border-gray-100 pt-6">
-                          <h3 className="font-display text-lg font-semibold tracking-[-0.015em] text-[#050E1C] mb-1">
-                            Related Guides
-                          </h3>
-                          <p className="text-sm text-[#050E1C]/70 mb-4">
-                            Hand-picked HBW articles for boaters considering this motor class.
-                          </p>
-                          <Suspense fallback={null}>
-                            <RelatedPostsGrid slugs={relatedSlugs} hideHeader />
-                          </Suspense>
                         </div>
                       )}
 
