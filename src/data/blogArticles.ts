@@ -1682,7 +1682,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     readTime: '8 min read',
     keywords: ['mercury dealer ontario', 'harris boat works', 'mercury outboard dealer', 'mercury sales peterborough', 'trusted boat dealer ontario'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** HBW has been on Rice Lake in the Kawarthas (Ontario) since 1947 and a Mercury dealer since 1965, three generations, current Mercury Marine Platinum Dealer. We post installed pricing online via the configurator, quote complete packages on the spot, and stand behind every motor we rig. Most marine dealers still say "call for pricing." We don't.
 
@@ -2436,7 +2436,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     readTime: '11 min read',
     keywords: ['mercury command thrust', 'command thrust pontoon', 'mercury gearcase', 'pontoon repower', 'mercury fourstroke pontoon'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Command Thrust uses a larger gearcase and prop than the standard FourStroke at the same horsepower. On a loaded pontoon or a heavy aluminum hull, that means faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See pricing at mercuryrepower.ca.
 
@@ -5004,7 +5004,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['tiller vs remote outboard', 'tiller steering boat', 'outboard remote steering', 'boat steering options', 'mercury tiller motor'],
     content: `# Tiller vs Remote Steering Outboard: Which to Choose (2026)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Tiller is right for small fishing boats under 20 HP, jon boats, and tight backwater work. Remote steering is right for almost everything else, especially anything with a windshield, console, or guests. Mercury tiller options run from small portables through select higher-HP FourStroke and SeaPro models with the Advanced Tiller system, so the practical split is less about a HP cap and more about whether the boat and use case fit a tiller. Configure either at mercuryrepower.ca.
 
@@ -5541,7 +5541,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     readTime: '8 min read',
     keywords: ['mercury seapro', 'commercial outboard', 'guide motor', 'heavy duty outboard', 'commercial boat motor', 'SeaPro vs FourStroke', 'commercial outboard motor', 'guide boat outboard', 'SeaPro 200 hour service', 'charter boat motor'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Mercury SeaPro is the commercial-grade Mercury outboard line built for high-hour use: guides, charters, rental fleets, work boats, and operators where downtime costs real money. SeaPro can make sense when the boat earns its keep. For typical private recreational use, a standard FourStroke is usually the better value. SeaPro is special order at HBW, so contact us before quoting.
 
@@ -6231,7 +6231,7 @@ Bring us your boat info and tell us how you fish. We'll recommend the right moto
     readTime: '7 min read',
     keywords: ['boat motor financing', 'outboard financing ontario', 'mercury financing', 'boat loan', 'marine financing'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** HBW offers Mercury Repower Financing through DealerPlan: 7.99 percent APR (as of May 2026) on motor packages $10,000 and up, 8.99 percent under $10,000. Financing isn't available below $5,000. A $299 DealerPlan fee applies. Apply with your installed quote from mercuryrepower.ca.
 
@@ -9420,7 +9420,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['mercury 2026 lineup', 'mercury outboard models', 'mercury fourstroke 2026', 'mercury verado v10', 'avator electric outboard', 'mercury outboard ontario', 'rice lake outboard motor', 'mercury dealer ontario'],
     content: `# Mercury 2026 Outboard Lineup for Ontario Boaters
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Mercury's 2026 lineup for Ontario covers 2.5 to 300 HP across FourStroke, Pro XS, and SeaPro families, plus Avator electric. Verado is special order only. Stocked allocation focuses on the high-volume cottage and fishing horsepowers, 9.9, 25, 60, 90, 115, 150. Live inventory at mercuryrepower.ca.
 
@@ -11581,7 +11581,7 @@ Build a quote on the [motor selection page](/quote/motor-selection). Three minut
     readTime: '12 min read',
     keywords: ['best outboard motor Lake Simcoe', 'Lake Simcoe walleye fishing boat', 'Mercury kicker motor trolling', 'best motor for Lake Simcoe', 'Lake Simcoe fishing setup'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** For Lake Simcoe walleye, most anglers want a 90-150 HP FourStroke main for the run-out plus a Mercury 9.9 ProKicker for slow trolling. Simcoe gets rough, pick a hull rated for it and stay inside the capacity plate. Build a main-and-kicker package at mercuryrepower.ca.
 
@@ -13817,7 +13817,7 @@ The lake will be there. The right time to buy is when it makes sense for you, no
     readTime: '12 min read',
     keywords: ['repower vs new boat', 'boat hull replacement', 'when to repower outboard'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** If the hull is sound and the motor is tired, repower. If the hull is structurally compromised, soft transom, rotted stringers, hull cracks, replace the boat. Repowering a bad hull is throwing money at a doomed platform. Honest assessment and installed repower quotes at mercuryrepower.ca.
 
@@ -19029,7 +19029,7 @@ Yes, that's a common combo. October drop-off, complete annual service + winteriz
     keywords: ["Rice Lake boat rentals", "boat rentals near Toronto", "Kawarthas pontoon rentals", "family boat rental Ontario", "day trip boat rental GTA", "pontoon rental Toronto"],
     content: `# Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** A Toronto-to-Rice Lake rental day trip works: 90 minutes up the 401 and 28, launch at Bewdley or Gores Landing, fish or cruise, drive home. Rentals book out fast in summer. When you're ready to own, build a real installed Mercury quote at mercuryrepower.ca.
 
@@ -19266,7 +19266,7 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
     keywords: ["winter boat storage near Toronto", "boat storage Toronto", "winter boat storage Ontario", "shrinkwrap GTA", "boat winterization Mississauga", "off-season boat storage Kawarthas"],
     content: `# Winter Boat Storage Near Toronto: Why Store Your Boat at HBW (2026)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** GTA boaters store at HBW for the same reason they service here: capacity, straight pricing, and a proper Mercury winterization before the boat sits. HBW storage is outdoor shrinkwrap storage, not on-site indoor storage. Book by September or you may be waiting.
 
