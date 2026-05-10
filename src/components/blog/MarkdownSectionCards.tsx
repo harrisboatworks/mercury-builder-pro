@@ -1,6 +1,6 @@
 import ReactMarkdown, { Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Phone, Calculator } from 'lucide-react';
+import { Phone, Calculator, MapPin } from 'lucide-react';
 import {
   ImagePlaceholder,
   type ImagePlaceholderProps,
