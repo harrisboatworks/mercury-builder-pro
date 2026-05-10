@@ -8773,9 +8773,11 @@ Stop by the marina in Gores Landing, give us a call at (905) 342-2153, or [brows
     readTime: '12 min read',
     keywords: ['tariffs boating canada', 'CUSMA boating', 'mercury outboard tariff', 'canada us trade boats', 'boat prices tariffs 2026'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Cross-border trade noise affects boat and motor pricing on a moving timeline. Mercury outboards sold in Canada are priced in CAD and Mercury manages tariff exposure at the manufacturer level. We don't surprise customers with mid-quote price hikes, frozen pricing on every quote at mercuryrepower.ca.
+
+> *Last verified: May 10, 2026. Trade policy moves fast. Confirm current figures with the linked sources before quoting them externally.*
 
 If you've glanced at the news over the past year, you've probably seen stories about new tariffs, trade skirmishes, and the upcoming review of the Canada–United States–Mexico Agreement (CUSMA/USMCA). For most people, it's background noise, right up until it sounds like it might affect the cost of a boat or an outboard.
 
