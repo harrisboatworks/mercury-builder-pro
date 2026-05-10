@@ -151,9 +151,9 @@ export function ShaftLengthPicker() {
                     asChild
                     className="bg-repower-red hover:bg-repower-red/90 text-white"
                   >
-                    <a href="tel:7058571633">
+                    <a href="tel:9053422153">
                       <Phone className="h-4 w-4 mr-2" aria-hidden="true" />
-                      Call HBW: 705-857-1633
+                      Call HBW: 905-342-2153
                     </a>
                   </Button>
                 )}
