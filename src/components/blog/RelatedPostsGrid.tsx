@@ -3,6 +3,7 @@ import { blogArticles } from '@/data/blogArticles';
 
 interface Props {
   slugs: string[];
+  hideHeader?: boolean;
 }
 
 function truncate(s: string, n = 90): string {
@@ -15,8 +16,11 @@ function truncate(s: string, n = 90): string {
  * Card grid replacing the in-content "**Related guides:**" bullet list.
  * Detection + slug extraction lives in MarkdownSectionCards.tsx; this
  * component just renders cards for slugs that resolve to a known article.
+ *
+ * Pass `hideHeader` to skip the built-in h2 (useful when the parent provides
+ * its own heading, e.g. the motor modal Resources tab).
  */
-export function RelatedPostsGrid({ slugs }: Props) {
+export function RelatedPostsGrid({ slugs, hideHeader = false }: Props) {
   const articles = slugs
     .map((slug) => {
       const a = blogArticles.find((x) => x.slug === slug);
@@ -35,11 +39,13 @@ export function RelatedPostsGrid({ slugs }: Props) {
   return (
     <nav
       aria-label="Related guides"
-      className="not-prose my-10 border-t border-repower-navy-900/10 pt-6"
+      className={hideHeader ? 'not-prose' : 'not-prose my-10 border-t border-repower-navy-900/10 pt-6'}
     >
-      <h2 className="mb-5 font-display text-xl font-bold text-repower-navy-900 md:text-2xl">
-        Related guides
-      </h2>
+      {!hideHeader && (
+        <h2 className="mb-5 font-display text-xl font-bold text-repower-navy-900 md:text-2xl">
+          Related guides
+        </h2>
+      )}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
         {articles.map((a) => (
           <Link
