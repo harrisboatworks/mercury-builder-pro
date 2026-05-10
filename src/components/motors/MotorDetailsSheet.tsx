@@ -36,8 +36,6 @@ import MotorVideosSection from './MotorVideosSection';
 import { FinanceCalculatorDrawer } from './FinanceCalculatorDrawer';
 import { StockStatusIndicator } from './StockStatusIndicator';
 import { TrustSignals } from './TrustSignals';
-import { RelatedPostsGrid } from '@/components/blog/RelatedPostsGrid';
-import { getMotorRelatedBlogSlugs } from '@/lib/motor-related-blog-posts';
 
 export default function MotorDetailsSheet({
   open,
