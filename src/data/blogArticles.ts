@@ -23617,7 +23617,7 @@ If you don't have a boat but want to fish Rice Lake or take the family out, [boa
     slug: "mercury-9-9-efi-review-ontario",
     title: "Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About",
     description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying.",
-    image: "/lovable-uploads/Mercury_Portable_Outboards.png",
+    image: "/lovable-uploads/mercury-9-9-efi-tiller.jpg",
     author: "Harris Boat Works",
     datePublished: "2026-05-10",
     dateModified: "2026-05-10",
