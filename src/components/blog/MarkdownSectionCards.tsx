@@ -120,23 +120,31 @@ function detectH2Card(headingText: string): CardKind {
     t === 'short answer' ||
     t === 'direct answer' ||
     t === 'tldr' ||
-    t === 'tl dr'
+    t === 'tl dr' ||
+    t === 'bottom line' ||
+    t === 'quick verdict' ||
+    t === 'quick take' ||
+    t === 'quick fix'
   )
     return 'short-answer';
   if (
     t.startsWith('what hbw checks before') ||
     t === 'what hbw does' ||
+    t === 'what we do at hbw' ||
     t === 'what we actually see' ||
     t === 'what we see at hbw' ||
     t === 'hbw local note' ||
-    t === 'hbw shop note'
+    t === 'hbw shop note' ||
+    t === 'shop note' ||
+    t === 'from the shop'
   )
     return 'hbw-note';
   if (
     t === 'common mistakes' ||
     t === 'mistakes to avoid' ||
     t === 'what goes wrong' ||
-    t === 'common pitfalls'
+    t === 'common pitfalls' ||
+    t.startsWith('watch out for')
   )
     return 'common-mistakes';
   if (
