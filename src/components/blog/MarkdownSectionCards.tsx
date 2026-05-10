@@ -8,6 +8,205 @@ import {
   type PlaceholderType,
 } from './ImagePlaceholder';
 import { getPlaceholder } from '@/data/imagePlaceholders';
+import {
+  MotorPricingCards,
+  type MotorPricingRow,
+} from './MotorPricingCards';
+import { RelatedPostsGrid } from './RelatedPostsGrid';
+
+// ---------------------------------------------------------------------------
+// Special-block preprocessing
+// ---------------------------------------------------------------------------
+// We rewrite two markdown patterns into pseudo-directive blocks BEFORE the
+// normal splitter runs:
+//   1. Pricing tables  → `:::motor-pricing\n<JSON rows>\n:::`
+//   2. Trailing "Related guides" bullet list → `:::related-posts\n<slugs>\n:::`
+// The splitter below then dispatches them to dedicated React components.
+
+const STRIP_BOLD = (s: string) => s.replace(/\*\*/g, '').trim();
+
+function parseTableLines(lines: string[]):
+  | { headers: string[]; rows: string[][] }
+  | null {
+  if (lines.length < 3) return null;
+  const headerLine = lines[0];
+  const sepLine = lines[1];
+  if (!/^\s*\|.*\|\s*$/.test(headerLine)) return null;
+  if (!/^\s*\|?\s*:?-{2,}/.test(sepLine.replace(/\|/g, ''))) {
+    // looser check: separator row has dashes between pipes
+    if (!/^[\s|:\-]+$/.test(sepLine) || !sepLine.includes('-')) return null;
+  }
+  const splitRow = (l: string) =>
+    l
+      .replace(/^\s*\|/, '')
+      .replace(/\|\s*$/, '')
+      .split('|')
+      .map((c) => c.trim());
+  const headers = splitRow(headerLine);
+  const rows: string[][] = [];
+  for (let i = 2; i < lines.length; i++) {
+    const cells = splitRow(lines[i]);
+    if (cells.length !== headers.length) return null;
+    rows.push(cells);
+  }
+  return { headers, rows };
+}
+
+function detectPricingTable(headers: string[]): {
+  modelIdx: number;
+  dealerIdx: number;
+  msrpIdx: number;
+  useCaseIdx: number;
+} | null {
+  const lower = headers.map((h) => h.toLowerCase());
+  const findIdx = (...needles: string[]) =>
+    lower.findIndex((h) => needles.some((n) => h.includes(n)));
+
+  const dealerIdx = lower.findIndex(
+    (h) => h.includes('dealer price') || h.includes('selling price'),
+  );
+  const msrpIdx = lower.findIndex((h) => /\bmsrp\b/.test(h));
+  if (dealerIdx < 0 || msrpIdx < 0) return null;
+
+  // Model column: prefer "model"/"motor", fallback to first non-numeric/non-price column.
+  let modelIdx = findIdx('model', 'motor');
+  if (modelIdx < 0) {
+    modelIdx = lower.findIndex(
+      (h, i) =>
+        i !== dealerIdx &&
+        i !== msrpIdx &&
+        !/^hp\b|^horsepower|sku|code/.test(h),
+    );
+  }
+  if (modelIdx < 0) return null;
+
+  const useCaseIdx = findIdx('best for', 'use case', 'use-case', 'best fit');
+  return { modelIdx, dealerIdx, msrpIdx, useCaseIdx };
+}
+
+/** Find every gfm pipe-table block in the markdown (fence-aware). */
+function findTableBlocks(md: string): Array<{
+  start: number;
+  end: number;
+  lines: string[];
+}> {
+  const lines = md.split('\n');
+  const blocks: Array<{ start: number; end: number; lines: string[] }> = [];
+  let inFence = false;
+  let i = 0;
+  // Track absolute char offsets per line.
+  const offsets: number[] = [0];
+  for (let k = 0; k < lines.length - 1; k++) {
+    offsets.push(offsets[k] + lines[k].length + 1);
+  }
+  while (i < lines.length) {
+    if (/^```/.test(lines[i])) {
+      inFence = !inFence;
+      i++;
+      continue;
+    }
+    if (
+      !inFence &&
+      /^\s*\|.*\|\s*$/.test(lines[i]) &&
+      i + 1 < lines.length &&
+      /^[\s|:\-]+$/.test(lines[i + 1]) &&
+      lines[i + 1].includes('-')
+    ) {
+      const start = i;
+      let j = i + 2;
+      while (j < lines.length && /^\s*\|.*\|\s*$/.test(lines[j])) j++;
+      const tableLines = lines.slice(start, j);
+      const startOff = offsets[start];
+      const endOff =
+        j < lines.length
+          ? offsets[j] - 1 // strip trailing \n
+          : md.length;
+      blocks.push({ start: startOff, end: endOff, lines: tableLines });
+      i = j;
+      continue;
+    }
+    i++;
+  }
+  return blocks;
+}
+
+function rewritePricingTables(md: string): string {
+  const blocks = findTableBlocks(md);
+  if (!blocks.length) return md;
+  // Replace from end → start so offsets stay valid.
+  let out = md;
+  for (let b = blocks.length - 1; b >= 0; b--) {
+    const block = blocks[b];
+    const parsed = parseTableLines(block.lines);
+    if (!parsed) continue;
+    const cols = detectPricingTable(parsed.headers);
+    if (!cols) continue;
+    const rows: MotorPricingRow[] = parsed.rows
+      .map((r) => ({
+        model: STRIP_BOLD(r[cols.modelIdx] || ''),
+        dealerPrice: STRIP_BOLD(r[cols.dealerIdx] || '') || undefined,
+        msrp: STRIP_BOLD(r[cols.msrpIdx] || '') || undefined,
+        useCase:
+          cols.useCaseIdx >= 0
+            ? STRIP_BOLD(r[cols.useCaseIdx] || '') || undefined
+            : undefined,
+      }))
+      .filter((r) => r.model);
+    if (!rows.length) continue;
+    const directive = `:::motor-pricing\n${JSON.stringify(rows)}\n:::`;
+    out = out.slice(0, block.start) + directive + out.slice(block.end);
+  }
+  return out;
+}
+
+const RELATED_HEADER_RE =
+  /^\s*\*\*\s*Related(?:\s+(?:guides|posts|articles))?\s*:?\s*\*\*\s*$/i;
+
+function rewriteRelatedGuides(md: string): string {
+  const lines = md.split('\n');
+  let inFence = false;
+  let lastHeader = -1;
+  let lastEnd = -1;
+  let lastSlugs: string[] = [];
+  for (let i = 0; i < lines.length; i++) {
+    if (/^```/.test(lines[i])) {
+      inFence = !inFence;
+      continue;
+    }
+    if (inFence) continue;
+    if (!RELATED_HEADER_RE.test(lines[i])) continue;
+    // Walk forward over optional blank lines and bullet list.
+    let j = i + 1;
+    while (j < lines.length && lines[j].trim() === '') j++;
+    const slugs: string[] = [];
+    while (j < lines.length) {
+      const m = /^\s*[-*]\s*\[[^\]]+\]\(\/blog\/([a-z0-9][a-z0-9-]*)\/?\)/i.exec(
+        lines[j],
+      );
+      if (!m) break;
+      slugs.push(m[1]);
+      j++;
+    }
+    if (slugs.length >= 2) {
+      lastHeader = i;
+      lastEnd = j; // exclusive
+      lastSlugs = slugs;
+    }
+  }
+  if (lastHeader < 0) return md;
+  const before = lines.slice(0, lastHeader).join('\n');
+  const after = lines.slice(lastEnd).join('\n');
+  const directive = `:::related-posts\n${lastSlugs.join('\n')}\n:::`;
+  return (
+    (before ? before + '\n' : '') +
+    directive +
+    (after ? '\n' + after : '')
+  );
+}
+
+function preprocessSpecialBlocks(md: string): string {
+  return rewriteRelatedGuides(rewritePricingTables(md));
+}
 
 /**
  * Parse a single :::image-placeholder ... ::: directive body into props.
@@ -40,23 +239,46 @@ function parseDirective(body: string): ImagePlaceholderProps | null {
 }
 
 interface RenderChunk {
-  kind: 'md' | 'placeholder';
+  kind: 'md' | 'placeholder' | 'motor-pricing' | 'related-posts';
   content: string;
   props?: ImagePlaceholderProps;
+  pricingRows?: MotorPricingRow[];
+  relatedSlugs?: string[];
 }
 
+const ANY_DIRECTIVE_RE =
+  /:::(image-placeholder|motor-pricing|related-posts)\s*\n([\s\S]*?)\n:::/g;
+
 function splitDirectives(md: string): RenderChunk[] {
-  const re = /:::image-placeholder\s*\n([\s\S]*?)\n:::/g;
   const chunks: RenderChunk[] = [];
   let last = 0;
   let m: RegExpExecArray | null;
-  while ((m = re.exec(md)) !== null) {
+  ANY_DIRECTIVE_RE.lastIndex = 0;
+  while ((m = ANY_DIRECTIVE_RE.exec(md)) !== null) {
     if (m.index > last) {
       chunks.push({ kind: 'md', content: md.slice(last, m.index) });
     }
-    const props = parseDirective(m[1]);
-    if (props) {
-      chunks.push({ kind: 'placeholder', content: '', props });
+    const name = m[1];
+    const body = m[2];
+    if (name === 'image-placeholder') {
+      const props = parseDirective(body);
+      if (props) chunks.push({ kind: 'placeholder', content: '', props });
+    } else if (name === 'motor-pricing') {
+      try {
+        const rows = JSON.parse(body) as MotorPricingRow[];
+        if (Array.isArray(rows) && rows.length) {
+          chunks.push({ kind: 'motor-pricing', content: '', pricingRows: rows });
+        }
+      } catch {
+        /* ignore malformed */
+      }
+    } else if (name === 'related-posts') {
+      const slugs = body
+        .split('\n')
+        .map((s) => s.trim())
+        .filter(Boolean);
+      if (slugs.length)
+        chunks.push({ kind: 'related-posts', content: '', relatedSlugs: slugs });
     }
     last = m.index + m[0].length;
   }
@@ -73,6 +295,22 @@ function renderMarkdownWithDirectives(
   return chunks.map((chunk, i) => {
     if (chunk.kind === 'placeholder' && chunk.props) {
       return <ImagePlaceholder key={`${keyPrefix}-ph-${i}`} {...chunk.props} />;
+    }
+    if (chunk.kind === 'motor-pricing' && chunk.pricingRows) {
+      return (
+        <MotorPricingCards
+          key={`${keyPrefix}-mp-${i}`}
+          rows={chunk.pricingRows}
+        />
+      );
+    }
+    if (chunk.kind === 'related-posts' && chunk.relatedSlugs) {
+      return (
+        <RelatedPostsGrid
+          key={`${keyPrefix}-rp-${i}`}
+          slugs={chunk.relatedSlugs}
+        />
+      );
     }
     if (!chunk.content.trim()) return null;
     return (
@@ -355,7 +593,9 @@ interface Props {
 }
 
 export function MarkdownSectionCards({ content, markdownComponents }: Props) {
-  const { preamble, sections } = splitIntoH2Sections(content);
+  const { preamble, sections } = splitIntoH2Sections(
+    preprocessSpecialBlocks(content),
+  );
 
   // Inline H3/H4 "Recommended Choice" wrapping is handled via component overrides
   // (we wrap just the heading + immediate paragraph siblings is non-trivial in
