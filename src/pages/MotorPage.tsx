@@ -114,6 +114,31 @@ export default function MotorPage() {
   const [motorImageUrl, setMotorImageUrl] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
+  const [relatedSlugs, setRelatedSlugs] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!motor) { setRelatedSlugs([]); return; }
+    let cancelled = false;
+    import('@/lib/motor-related-blog-posts')
+      .then(({ getMotorRelatedBlogSlugs }) => {
+        if (cancelled) return;
+        try {
+          setRelatedSlugs(getMotorRelatedBlogSlugs({
+            hp: motor.horsepower ?? 0,
+            model: motor.model ?? undefined,
+            model_display: motor.model_display ?? undefined,
+            model_number: motor.model_number ?? undefined,
+          }));
+        } catch (err) {
+          console.error('[Related Guides] compute failed:', err);
+          setRelatedSlugs([]);
+        }
+      })
+      .catch((err) => {
+        console.error('[Related Guides] dynamic import failed:', err);
+      });
+    return () => { cancelled = true; };
+  }, [motor]);
 
   useEffect(() => {
     if (!slug) {
