@@ -109,15 +109,6 @@ export default function MotorDetailsPremiumModal({
   const motorSpecs = motor ? findMotorSpecs(hpValue, title) : undefined;
   const decoded = decodeModelName(motor?.model || title, hpValue);
 
-  // Related blog post slugs for the Resources tab "Related Guides" grid
-  const relatedSlugs = useMemo(() => {
-    try {
-      return motor ? getMotorRelatedBlogSlugs(motor) : [];
-    } catch (err) {
-      console.error('[Related Guides] failed to compute slugs:', err);
-      return [];
-    }
-  }, [motor]);
 
   // Generate fallback description if missing or suspicious
   const displayDescription = useMemo(() => {
