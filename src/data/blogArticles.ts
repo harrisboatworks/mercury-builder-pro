@@ -5230,7 +5230,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'What\'s the biggest motor available in tiller?',
-        answer: 'Mercury offers tiller handles on FourStroke outboards from 2.5HP up to 115HP via the Mercury Advanced Tiller system. The Advanced Tiller (available on 40–115HP models) features an ergonomic adjustable handle with integrated throttle and shift.'
+        answer: 'Mercury offers tiller steering from small portable motors through select 40-115 HP FourStroke and SeaPro models with the Advanced Tiller system. Above that range, remote steering is the normal setup. The right choice depends less on the maximum HP and more on the hull, driver position, workload, and how the boat is used.'
       },
       {
         question: 'Can I have both tiller and remote?',
