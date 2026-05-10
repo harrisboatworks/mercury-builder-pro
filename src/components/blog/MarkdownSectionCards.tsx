@@ -87,6 +87,54 @@ function renderMarkdownWithDirectives(
   });
 }
 
+/**
+ * Split markdown into ordered chunks, extracting top-level
+ * `> **Quick answer:** ...` blockquote blocks as synthetic short-answer cards.
+ * Respects fenced code blocks. Marker on the first line is stripped.
+ */
+type QAChunk =
+  | { kind: 'md'; content: string }
+  | { kind: 'quick-answer'; content: string };
+
+const QUICK_ANSWER_RE = /^>\s*\*\*\s*Quick\s*answer\s*:?\s*\*\*\s*/i;
+
+function extractQuickAnswerChunks(md: string): QAChunk[] {
+  const lines = md.split('\n');
+  const out: QAChunk[] = [];
+  let buf: string[] = [];
+  let inFence = false;
+  const flush = () => {
+    if (buf.length) {
+      out.push({ kind: 'md', content: buf.join('\n') });
+      buf = [];
+    }
+  };
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+    if (/^```/.test(line)) {
+      inFence = !inFence;
+      buf.push(line);
+      i++;
+      continue;
+    }
+    if (!inFence && QUICK_ANSWER_RE.test(line)) {
+      const bq: string[] = [];
+      while (i < lines.length && /^>/.test(lines[i])) {
+        bq.push(lines[i].replace(/^>\s?/, ''));
+        i++;
+      }
+      bq[0] = bq[0].replace(/^\*\*\s*Quick\s*answer\s*:?\s*\*\*\s*/i, '');
+      flush();
+      out.push({ kind: 'quick-answer', content: bq.join('\n').trim() });
+      continue;
+    }
+    buf.push(line);
+    i++;
+  }
+  flush();
+  return out;
+}
 
 /**
  * Renders article markdown, detecting specific H2/H3 heading patterns and
@@ -120,23 +168,31 @@ function detectH2Card(headingText: string): CardKind {
     t === 'short answer' ||
     t === 'direct answer' ||
     t === 'tldr' ||
-    t === 'tl dr'
+    t === 'tl dr' ||
+    t === 'bottom line' ||
+    t === 'quick verdict' ||
+    t === 'quick take' ||
+    t === 'quick fix'
   )
     return 'short-answer';
   if (
     t.startsWith('what hbw checks before') ||
     t === 'what hbw does' ||
+    t === 'what we do at hbw' ||
     t === 'what we actually see' ||
     t === 'what we see at hbw' ||
     t === 'hbw local note' ||
-    t === 'hbw shop note'
+    t === 'hbw shop note' ||
+    t === 'shop note' ||
+    t === 'from the shop'
   )
     return 'hbw-note';
   if (
     t === 'common mistakes' ||
     t === 'mistakes to avoid' ||
     t === 'what goes wrong' ||
-    t === 'common pitfalls'
+    t === 'common pitfalls' ||
+    t.startsWith('watch out for')
   )
     return 'common-mistakes';
   if (
@@ -329,20 +385,57 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
     },
   };
 
+  // Render a synthetic short-answer (Quick Answer) card from a blockquote body.
+  const renderQuickAnswerCard = (body: string, key: string) => {
+    const cfg = cardConfig['short-answer'];
+    return (
+      <aside
+        key={key}
+        role={cfg.role}
+        aria-label={cfg.aria}
+        className={cfg.wrapper}
+        style={cfg.style}
+      >
+        <span className={`${eyebrowBase} ${cfg.eyebrowClass}`} aria-hidden="true">
+          {cfg.eyebrow}
+        </span>
+        <div className={cfg.bodyClass}>
+          {renderMarkdownWithDirectives(body, componentsWithInline, `${key}-md`)}
+        </div>
+      </aside>
+    );
+  };
+
+  // Render unstyled markdown while extracting any top-level
+  // `> **Quick answer:**` blockquotes into Quick Answer cards in document order.
+  const renderWithQuickAnswerExtraction = (md: string, keyPrefix: string) => {
+    const chunks = extractQuickAnswerChunks(md);
+    return chunks.map((c, i) => {
+      if (c.kind === 'quick-answer') {
+        return renderQuickAnswerCard(c.content, `${keyPrefix}-qa-${i}`);
+      }
+      if (!c.content.trim()) return null;
+      return (
+        <div key={`${keyPrefix}-md-${i}`}>
+          {renderMarkdownWithDirectives(
+            c.content,
+            componentsWithInline,
+            `${keyPrefix}-md-${i}`,
+          )}
+        </div>
+      );
+    });
+  };
+
   return (
     <>
-      {preamble.trim() &&
-        renderMarkdownWithDirectives(preamble, componentsWithInline, 'pre')}
+      {preamble.trim() && renderWithQuickAnswerExtraction(preamble, 'pre')}
       {sections.map((section, idx) => {
         const headingMd = `## ${section.heading}\n\n${section.body}`;
         if (!section.kind) {
           return (
             <div key={idx}>
-              {renderMarkdownWithDirectives(
-                headingMd,
-                componentsWithInline,
-                `s-${idx}`,
-              )}
+              {renderWithQuickAnswerExtraction(headingMd, `s-${idx}`)}
             </div>
           );
         }
