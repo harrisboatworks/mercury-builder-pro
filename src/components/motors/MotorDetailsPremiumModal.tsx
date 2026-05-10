@@ -267,6 +267,26 @@ export default function MotorDetailsPremiumModal({
   const [promoReminderOpen, setPromoReminderOpen] = useState(false);
   const [inlineChatOpen, setInlineChatOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
+  const [relatedSlugs, setRelatedSlugs] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!motor) { setRelatedSlugs([]); return; }
+    let cancelled = false;
+    import('@/lib/motor-related-blog-posts')
+      .then(({ getMotorRelatedBlogSlugs }) => {
+        if (cancelled) return;
+        try {
+          setRelatedSlugs(getMotorRelatedBlogSlugs(motor as any));
+        } catch (err) {
+          console.error('[Related Guides] compute failed:', err);
+          setRelatedSlugs([]);
+        }
+      })
+      .catch((err) => {
+        console.error('[Related Guides] dynamic import failed:', err);
+      });
+    return () => { cancelled = true; };
+  }, [motor]);
   // openChat comes from props (openChatProp) since this component is portaled outside the context tree
 
   const handleCalculatePayment = () => {
