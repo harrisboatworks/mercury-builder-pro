@@ -24,6 +24,9 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
 User-agent: Anthropic-AI
 Allow: /
 
@@ -51,8 +54,11 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
-# IndexNow key (for Bing & IndexNow-compatible engines)
-# Key file: https://www.mercuryrepower.ca/03999430e4bae3d7d7be108f62646dbf.txt
+User-agent: CCBot
+Allow: /
+
+# IndexNow key location
+# Key file: https://www.mercuryrepower.ca/indexnow-key.txt
 
 # General allowance for all other crawlers
 User-agent: *
