@@ -5387,8 +5387,6 @@ We support guides and rental operators throughout the Kawarthas:
 - **Multi-engine fleet maintenance plans**, predictable annual budget instead of breakdown surprises
 
 If you run a commercial boat operation in the Kawarthas, Trent-Severn, or anywhere within tow distance, we'd rather have a phone conversation about your specific use case than try to fit you into a recreational quoting flow. Call **905-342-2153** and ask for the commercial quote.
-
-{/* TODO: Add customer story for mercury-seapro-commercial-outboard-guide */}
     `,
     faqs: [
       {
