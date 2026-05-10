@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/legend-boats-mercury-power-package-guide-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -34,6 +34,8 @@ content_type: blog_article
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Legend Boats are built in Whitefish, Ontario, and pair naturally with Mercury power. Most Legend hulls 17-21 ft are happy on a Mercury 90-150 FourStroke, often Command Thrust on the heavier models. Stay inside the capacity plate. Quote a complete Legend-and-Mercury package at mercuryrepower.ca.
+
+For pricing on the engines included in Legend power packages, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats). The [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what's included in a typical rigging package, and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains the factory coverage.
 
 If you're shopping a new aluminum fishing boat or a pontoon in Ontario, **Legend Boats** is going to come up. They're Canada's best-selling aluminum boat brand, every model is paired with a Mercury outboard, and they're the boat we sell most often at Harris Boat Works.
 

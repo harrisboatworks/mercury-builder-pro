@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-seapro-commercial-outboard-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -32,6 +32,8 @@ content_type: blog_article
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Mercury SeaPro is the commercial-grade FourStroke built for high-hour use, guides, charters, work boats. Beefier internals, longer service intervals, and a 3-year commercial warranty. For private recreational use the standard FourStroke is the right call. SeaPro is special order, contact us through mercuryrepower.ca.
+
+For broader pricing context, see our [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). Commercial buyers comparing engine families should also read [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) for SeaPro warranty specifics.
 
 If your boat earns money, running a fishing guide service, a rental fleet, charter trips, government work, or any application that puts hundreds or thousands of hours on a motor every year, your motor's downtime IS your downtime. Mercury SeaPro is built to keep that downtime as low as possible.
 
@@ -144,8 +146,6 @@ We support guides and rental operators throughout the Kawarthas:
 - **Multi-engine fleet maintenance plans**, predictable annual budget instead of breakdown surprises
 
 If you run a commercial boat operation in the Kawarthas, Trent-Severn, or anywhere within tow distance, we'd rather have a phone conversation about your specific use case than try to fit you into a recreational quoting flow. Call **905-342-2153** and ask for the commercial quote.
-
-{/* TODO: Add customer story for mercury-seapro-commercial-outboard-guide */}
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-controls-rigging-guide-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -37,7 +37,7 @@ content_type: blog_article
 
 If you've gotten a Mercury repower quote that just lists "rigging: $2,500" with no breakdown, this guide is for you. Rigging is the part of the quote dealers love to leave vague. We don't operate that way. The components you choose for controls, steering, gauges, wiring, and prop are real engineering decisions, with real cost tradeoffs, and they affect how the boat actually feels at the helm.
 
-This is the canonical reference for Mercury repower rigging in Ontario. It covers the three core decisions (controls, steering, gauges), plus the wiring and prop work that come with them, for Mercury motors from 40 HP up through the 225 HP V6. We pulled the configurations from the actual repowers we do at Harris Boat Works on Rice Lake, with real CAD prices and the reasoning behind each pairing.
+This is the canonical reference for Mercury repower rigging in Ontario. It covers the three core decisions (controls, steering, gauges), plus the wiring and prop work that come with them, for Mercury motors from 40 HP up through the 225 HP V6. We pulled the configurations from the actual repowers we do at Harris Boat Works on Rice Lake in the Kawarthas (Ontario), with real CAD prices and the reasoning behind each pairing.
 
 If you're shopping a portable (under 25 HP) or a Verado V8/V10/V12, the rules are different. We focus here on the 40-225 HP repower zone where the bulk of Ontario decisions get made.
 
@@ -66,7 +66,7 @@ The matrix below is what we'd actually quote for each HP class. It's not exhaust
 | **40-60 HP** | Side-mount mechanical or binnacle | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | 12-13" dia, 11-15" pitch | $1,500-$2,500 |
 | **75-90 HP** | Binnacle mechanical (Gen II) | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | 13-14" dia, 13-19" pitch | $2,000-$3,000 |
 | **115 HP** | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery, ACR if dual | 14" dia, 15-21" pitch | $2,500-$4,000 |
-| **150 HP V6** | Binnacle Gen II mechanical OR DTS | Hydraulic, optional power-assist | VesselView 4/7, SmartCraft mandatory | Dual battery + ACR | 14-15" dia, 17-23" pitch | $3,500-$5,500 |
+| **150 HP V6** | Binnacle Gen II mechanical OR DTS | Hydraulic, optional power-assist | VesselView 4/7, SmartCraft typically standard | Dual battery + ACR | 14-15" dia, 17-23" pitch | $3,500-$5,500 |
 | **175-200 HP V6** | Binnacle DTS or Pro XS DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | 14-16" dia, 19-25" pitch | $4,500-$6,500 |
 | **225 HP V6** | Binnacle DTS standard | Power-assist hydraulic | VesselView 9 standard | Dual battery + ACR, switch panel | 14-16" dia, 21-25" pitch | $5,000-$7,500 |
 
@@ -258,7 +258,7 @@ The general guidance per HP class:
 | 60-90 | 13-14" | 13-19" | Aluminum standard, stainless for performance |
 | 115 | 14" | 15-21" | Stainless recommended for any sport use |
 | 150 | 14-15" | 17-23" | Stainless standard |
-| 175-225 | 14-16" | 19-25" | Stainless mandatory (aluminum can't handle the load) |
+| 175-225 | 14-16" | 19-25" | Stainless strongly recommended (aluminum often can't handle the load) |
 
 These ranges are starting points. Your hull weight, intended use (skiing vs. fishing vs. cruising), and the prop's blade design all push the right pitch up or down. Aluminum props are cheaper (CAD $200-$500) but flex at higher loads. Stainless (CAD $500-$1,200) holds shape, lasts longer, and recovers better after a strike.
 
@@ -272,7 +272,7 @@ The matrix above is the framework. Here's what the framework looks like applied 
 
 ### Example 1: 18 ft Aluminum V-Hull Fishing Boat, Mercury 60 ELPT FourStroke
 
-**Use case:** Walleye and bass on Rice Lake, occasional family tubing.
+**Use case:** Walleye and bass on Rice Lake, Ontario (in the Kawarthas), occasional family tubing.
 **Rigging spec:**
 - Binnacle Gen II mechanical control: $850
 - Cable steering kit (existing, refurbished): $300

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/docking-boat-in-wind-rice-lake.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-# Docking a Boat in Wind on Rice Lake (No Bow Thruster, No Drama)
+# Docking a Boat in Wind on Rice Lake in the Kawarthas (Ontario) (No Bow Thruster, No Drama)
 
 *Last reviewed: 2026-05-07*
 
@@ -37,7 +37,7 @@ content_type: blog_article
 
 **URL slug:** docking-boat-in-wind-rice-lake
 
-**Meta description:** A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, without a bow thruster or a meltdown.
+**Meta description:** A technique-first guide to docking single-outboard boats (pontoons, bowriders, and fishing boats) in windy conditions on Rice Lake, Ontario (in the Kawarthas), without a bow thruster or a meltdown.
 
 ---
 

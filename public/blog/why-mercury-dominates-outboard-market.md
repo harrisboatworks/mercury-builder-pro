@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dominates-outboard-market.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -33,19 +33,19 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Mercury dominates Ontario because the dealer network is denser, parts supply is faster, and resale demand is strongest. Yamaha and Honda build excellent motors, but the practical service experience in cottage country favours Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
+> **Quick answer:** Mercury leads in many Ontario segments because the dealer network is denser, parts supply is faster, and resale demand is strong. Yamaha and Honda build excellent motors; the practical service experience in cottage country tends to favour Mercury. We've sold them since 1947. Build an installed quote at mercuryrepower.ca.
 
-Mercury Marine is the largest outboard manufacturer in the world, with the deepest dealer network in Canada and the widest model range from 2.5 HP portables to 600+ HP naturally-aspirated Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury keeps winning the market. We sell only Mercury at HBW because we have run that math for the 60 years we've been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Mercury Marine is the largest outboard manufacturer in the world, with one of the deepest dealer networks in Canada and a model range that runs from 2.5 HP portables to 600+ HP naturally-aspirated Verado V12s. The combination of dealer support, parts supply, and manufacturer-OEM relationships with major Canadian boat builders is why Mercury is the brand HBW recommends most often. We sell only Mercury at HBW because we have run that math for the 60 years we have been a Mercury dealer (since 1965) and the answer keeps coming up the same. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
-If you are buying an outboard in Ontario in 2026, the practical answer is Mercury. Not because the metal is significantly better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the manufacturer-OEM relationships with Canadian boat builders are deeper.
+If you are buying an outboard in Ontario in 2026, the practical answer for most boats is Mercury. Not because the metal is significantly better than Yamaha or Honda. Because the dealer network is denser, the parts supply is faster, and the manufacturer-OEM relationships with Canadian boat builders are deeper.
 
-Reliability and service availability are the same conversation in Canada. A theoretically more reliable motor that takes 6 weeks to get parts for is less reliable in practice than a slightly less perfect motor that gets fixed in 4 days. Mercury wins on the practical version.
+Reliability and service availability are the same conversation in Canada. A theoretically more reliable motor that takes 6 weeks to get parts for is less reliable in practice than a slightly less perfect motor that gets fixed in 4 days. Mercury is the most-supported outboard at HBW for that reason.
 
-We are biased. We sell Mercury exclusively at HBW. We have been a Mercury dealer since 1965. But the bias is downstream of the market reality, not upstream of it. Mercury has been the dominant outboard brand in Canada for decades, and the customers we serve are the customers buying Mercury.
+We are biased. We sell Mercury exclusively at HBW. We have been a Mercury dealer since 1965. The bias is downstream of the market reality, not upstream of it. Mercury has led many Canadian outboard segments for decades, and the customers we serve are the customers buying Mercury.
 
-## Why Mercury wins in Canada (the practical reasons)
+## Why Mercury leads in many Canadian segments (the practical reasons)
 
 ### 1. Dealer network density
 
@@ -180,7 +180,7 @@ If you are doing a full repower anyway and the rigging investment is unavoidable
 **How long has Mercury been making outboards?**
 Mercury Marine was founded in 1939 by Carl Kiekhaefer in Cedarburg, Wisconsin. The brand has evolved from small post-war outboards through the modern FourStroke, Pro XS, Verado, and Avator lineup. As of 2026, Mercury is part of Brunswick Corporation and remains the largest outboard manufacturer globally.
 
-**Is Mercury reliable for cottage use on Rice Lake?**
+**Is Mercury reliable for cottage use on Rice Lake, Ontario (in the Kawarthas)?**
 Yes, demonstrably. Mercury has been the dominant outboard brand on Rice Lake and Kawartha lakes for decades. Most cottage boats come from the factory or from previous owners with Mercury motors. The local service network is built around Mercury. For typical cottage use (50 to 150 hours a season), a properly maintained Mercury lasts 10 to 30 years.
 
 **What is the difference between Mercury and other outboard brands?**

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-maintenance-intervals-20-100-300-rule.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,6 +35,8 @@ content_type: blog_article
 
 > **Quick answer:** Mercury's 20/100/300 rule: 20-hour break-in service, 100-hour annual service, 300-hour deep service. Skip any of them and you erode warranty coverage and long-term reliability. We schedule by interval and remind customers automatically. Service booking at mercuryrepower.ca.
 
+When maintenance economics tip toward replacement, see [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad) and the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide). [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains what scheduled service is required to keep coverage, and [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado) compares service intervals across families.
+
 Mercury's service schedule has three milestones built into it: **20 hours, 100 hours, and 300 hours**. Each one is a different scope of work for a different stage of the engine's life. Ignoring any of the three is the cheapest way to make a $20,000 motor act like a $5,000 one.
 
 This is the schedule we'd walk through with any new Mercury owner who walks into the shop, in plain English, with Ontario service rates.
@@ -42,6 +44,10 @@ This is the schedule we'd walk through with any new Mercury owner who walks into
 ---
 
 ## Why the Three-Milestone Framework Exists
+
+![Horizontal timeline showing Mercury outboard service intervals: 20-hour break-in, 100-hour annual service, 300-hour major service.](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
+
+*Mercury's official 20/100/300 service intervals visualized. The 100-hour annual is the one most owners need to lock into the calendar.*
 
 A new outboard isn't a finished product the day it leaves the factory. The first 10 hours are **break-in**, where rings seat against cylinder walls, gears mesh in for the first time, and metal particles wear off and end up in the oil. The next chunk of life is **routine operation**, where wear and exposure accumulate. Eventually you hit **major-service territory**, where rubber and consumables that have been quietly aging for years all need replacement at once.
 

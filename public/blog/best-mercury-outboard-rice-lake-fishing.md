@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-rice-lake-fishing.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,13 +29,15 @@ content_type: blog_article
 
 ## Article
 
-# Best Mercury Outboard for Rice Lake Fishing (Local Expert's Guide)
+# Best Mercury Outboard for Rice Lake, Ontario Fishing (Local Expert's Guide)
 
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** For Rice Lake fishing, walleye, musky, panfish, most boats are happy with a Mercury 25-90 FourStroke as main power and a 9.9 ProKicker for trolling. Stay inside the capacity plate. Rice Lake's shallow, weedy structure rewards manoeuvrability over top speed. Build a real kicker-and-main package at mercuryrepower.ca.
 
-The classic Rice Lake fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+> **Confirm regulations directly.** This post references FMZ 17 fishing rules for Rice Lake. Seasons and exceptions can change. Verify current rules at [ontario.ca/page/recreational-fishing-regulations](https://www.ontario.ca/page/recreational-fishing-regulations) before retaining any fish.
+
+The classic Rice Lake, Ontario (in the Kawarthas) fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 

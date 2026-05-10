@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-winterization-cost-ontario-2026.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -157,19 +157,14 @@ Customers who book the full winterize-plus-spring-commission package walk in May
 - [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), if you are repowering this year and need first-year service guidance
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up issues and what to check
 
-## Ready to book winterization?
+## Need help with this?
 
-Book your fall winterization at HBW through our [service page](https://hbw.wiki/service) or by calling (905) 342-2153. We start scheduling in late September and the calendar fills through October. Booking early gets you the easier appointment slots and (usually) the better pricing.
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
 
-[**Request Service**](https://hbw.wiki/service)
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
-If you want to talk through whether DIY or professional winterization is the right call for your specific motor, [give us a call](tel:9053422153). We will give you an honest answer, including the answer where DIY is fine for your situation.
-
----
-
-_Pricing for winterization services varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) or [request service](https://hbw.wiki/service) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
-
----
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 ## FAQ
 

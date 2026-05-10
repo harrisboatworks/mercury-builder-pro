@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boat-rentals-from-toronto-gta.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-# Rice Lake Boat Rentals from Toronto and the GTA: A Day Trip Guide
+# Rice Lake, Ontario Boat Rentals from Toronto and the GTA: A Day Trip Guide
 
 *Last reviewed: 2026-05-07*
 
@@ -37,7 +37,7 @@ content_type: blog_article
 
 You're in Toronto, you don't own a boat, but you'd like to have one for a day. The closest renting on Lake Ontario is logistically painful (parking, no real fishing water, rough chop). The big-water rentals up north (Muskoka) are a 2.5-hour drive on busy weekends.
 
-**Rice Lake is the answer most GTA boaters don't know about.** 90 minutes from downtown Toronto, gentle calm freshwater, fish, family-friendly, and on a Saturday morning you can be on the water before the people stuck in traffic on the way to Muskoka have made it past Barrie.
+**Rice Lake, Ontario (in the Kawarthas) is the answer most GTA boaters don't know about.** 90 minutes from downtown Toronto, gentle calm freshwater, fish, family-friendly, and on a Saturday morning you can be on the water before the people stuck in traffic on the way to Muskoka have made it past Barrie.
 
 Harris Boat Works has rented boats on Rice Lake since long before Airbnb made "shared access" a thing. We've been on this lake since 1947, and the rental fleet grew naturally from generations of GTA visitors asking the same question: *can we just borrow one of these for the day?*
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-pontoon-boats-rice-lake-cottage-use.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,9 +31,9 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** For Rice Lake cottage use, look at 20-22 ft pontoons from Legend, Princecraft, or Sylvan with a Mercury 90-115 Command Thrust. Triple-tube only matters above 150 HP; most family use is fine on twin tubes. Stay inside the capacity plate. We package these regularly, quote at mercuryrepower.ca.
+> **Quick answer:** For Rice Lake, Ontario cottage use, look at 20-22 ft pontoons from Legend, Princecraft, or Sylvan with a Mercury 90-115 Command Thrust. Triple-tube only matters above 150 HP; most family use is fine on twin tubes. Stay inside the capacity plate. We package these regularly, quote at mercuryrepower.ca.
 
-For Rice Lake cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust. The lake is sheltered enough that you don't need a tritoon for most uses, but the 22 ft length gives the deck space and capacity that cottage use rewards. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+For Rice Lake, Ontario (in the Kawarthas) cottage use, the right pontoon is an 18 to 22 ft Legend or comparable pontoon with Mercury 90 to 150 HP Command Thrust. The lake is sheltered enough that you don't need a tritoon for most uses, but the 22 ft length gives the deck space and capacity that cottage use rewards. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -171,6 +171,9 @@ We recommend lift storage where the cottage configuration allows. The hull life 
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), HP step-up math
 - [Best Boats for Rice Lake Under $30,000](/blog/best-boats-rice-lake-under-30000), used boat options
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), repower pricing
+- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), HP sizing for pontoon hulls
+- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), what to watch out for
+- [Mercury Boost 150 HP Upgrade for Pontoons](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), software-based HP bump analysis
 
 ## Ready for a Rice Lake pontoon?
 

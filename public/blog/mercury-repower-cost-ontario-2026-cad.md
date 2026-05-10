@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-repower-cost-ontario-2026-cad.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,6 +35,8 @@ content_type: blog_article
 
 For 2026 in Ontario, HBW planning ranges are: 9.9 to 25 HP tillers $2,000 to $5,500 motor-only; 40 to 60 HP $11,000 to $15,000 all-in; 75 to 115 HP $17,000 to $22,000; 150 HP $23,000 to $30,000; and 200 to 300 HP $35,000 to $40,000, CAD before HST. Live pricing on the motor selection page is the source of truth.
 
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
+
 ## Quick recommendation
 
 If you want a real repower number for your boat, build a quote on this site. It takes three minutes. You see the motor cost, the rigging, the install, and the total before you ever talk to us. No phone tag. No "call for price" games.
@@ -49,7 +51,7 @@ If you want to ballpark before you build, here is the honest 2026 picture in CAD
 
 Add 13% HST on top of any of those numbers. The live site shows your specific number after a three-minute build.
 
-We have rigged enough boats on Rice Lake to know that the customers who get burned are the ones who treat the motor as the whole price. The boat is not done when the motor bolts to the transom. It is done when the steering, controls, gauges, prop, and battery are all matched and the boat has been on Rice Lake under power.
+We have rigged enough boats on Rice Lake in the Kawarthas (Ontario) to know that the customers who get burned are the ones who treat the motor as the whole price. The boat is not done when the motor bolts to the transom. It is done when the steering, controls, gauges, prop, and battery are all matched and the boat has been on Rice Lake, Ontario (in the Kawarthas) under power.
 
 ## What changes the answer
 
@@ -61,6 +63,9 @@ A repower quote moves up or down based on six things:
 - **Prop selection.** A wrong prop on a perfect motor will cost you 4 mph and 15% fuel economy. We test on the water before you take the boat home. Aluminum props on motors up to 115 HP are $450 CAD. Stainless steel props on 150 HP and up run $800 to $2,000 CAD depending on motor size.
 - **Gauges and wiring.** Old analog gauges do not talk to modern Mercury motors. SmartCraft displays add a line, sized to whatever screen you want. Battery and harness refresh runs $275 to $975 CAD.
 - **Boat condition.** A clean transom and good wiring takes a day to install ($1,400 in labour). A rotten transom, mouse-eaten wiring harness, or a fuel system full of 8-year-old gas pushes labour to $2,500 to $3,500.
+
+![Six-step Mercury repower timeline at Harris Boat Works: Quote (build online or call, three minutes), Booking (deposit confirms install slot), Drop-off (pickup-only at Gores Landing), Rigging (Mercury-certified install in our shop), Sea Trial (WOT verified before delivery), Pickup (hand-off, paperwork, on the water).](/lovable-uploads/diagram-repower-process-timeline.png)
+*A typical Mercury repower at HBW runs 1-3 days off-season and 1-3 weeks at spring peak. The process is the same regardless of motor size: quote, deposit, drop-off, rigging, sea trial, pickup.*
 
 ## All-in repower ranges by HP class
 

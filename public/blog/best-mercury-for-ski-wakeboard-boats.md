@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-ski-wakeboard-boats.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -32,6 +32,8 @@ content_type: blog_article
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Outboard ski and wakeboard boats want torque and hole-shot. A Mercury 200-300 V8 FourStroke with the right prop pitch is the right call for most 19-22 ft hulls. Pro XS gains a bit of top end at the expense of mid-range. Stay inside the capacity plate. Quote installed at mercuryrepower.ca.
+
+For pricing, see the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). To compare engine families, read [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). Rigging and warranty details are covered in the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026).
 
 For watersports, slalom skiing, wakeboarding, wakesurfing, tubing, the right Mercury isn't the same answer as for a cruising family runabout. Watersports demand hole shot (acceleration from rest), sustained pulling power, and on bigger setups, enough mass behind the wake to throw real water.
 
@@ -124,8 +126,6 @@ We rig outboard tow boats every spring. Specifically:
 Tow boats run hard. We'll talk through your annual hours and use case before quoting, sometimes the right answer is "your existing motor still has life if we service it" instead of "buy a new V8." We'll be honest either way.
 
 Call **905-342-2153** for a tow-boat consultation, or quote a Pro XS at [mercuryrepower.ca](https://mercuryrepower.ca).
-
-{/* TODO: Add customer story for best-mercury-for-ski-wakeboard-boats */}
 
 ## FAQs
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/rice-lake-boating-guide-2026.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,13 +29,13 @@ content_type: blog_article
 
 ## Article
 
-# Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes
+# Rice Lake, Ontario Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes
 
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Rice Lake is shallow, weedy, and unforgiving on props, local knowledge matters. Public launches at Bewdley, Hastings, and Gores Landing. Watch the bars and the Otonabee channel. Best fishing is walleye, crappie, and musky. We service Rice Lake boats year-round from Gores Landing, mercuryrepower.ca.
 
-Rice Lake doesn't make the tourism brochures. It should.
+Rice Lake, Ontario (in the Kawarthas) doesn't make the tourism brochures. It should.
 
 It's a 32-kilometre fishery 90 minutes from downtown Toronto, sitting right in the Trent-Severn system, with more fish per acre than almost any lake in Ontario. It's also genuinely tricky water, shallow, weedy, with one of the most notorious prop hazards in the province sitting four feet below the surface in the middle of the lake.
 
@@ -103,6 +103,9 @@ If you launch with us regularly, the **$200 season pass** pays for itself by Tri
 ---
 
 ## Fishing Rice Lake. FMZ 17, 2026 Seasons
+
+![Ontario walleye slot rule diagram for FMZ Zone 17 (Rice Lake and most Kawartha Lakes): retain only walleye between 35 and 50 cm, release any walleye under 35 cm or over 50 cm.](/lovable-uploads/diagram-walleye-slot-rule.png)
+*The FMZ 17 walleye slot rule applies to Rice Lake. Retain 35-50 cm only. Release fish outside that window. Confirm current regulations at ontario.ca before retaining any fish.*
 
 Rice Lake is in **Fisheries Management Zone 17**, the same zone as most of the Kawarthas. Here's what's in season and when:
 
@@ -181,7 +184,7 @@ GTA cottagers without their own boat, this is how most of our renters discover R
 
 **You need a Pleasure Craft Operator Card (PCOC)** to operate any motorized boat in Ontario. One-time test, lifetime card. Don't have one? It's an online course, about three hours, $50.
 
-**Your [Pleasure Craft Licence](/blog/pleasure-craft-licence-update-repower-ontario) (PCL) changed in 2026.** Lifetime PCLs are being phased out. New PCLs are 5-year renewals at $24 through Service Canada. If your boat doesn't have a current PCL, sort it before launch day.
+**Your [Pleasure Craft Licence](/blog/pleasure-craft-licence-update-repower-ontario) (PCL) changed in 2026.** Effective December 31, 2025, lifetime PCLs are being phased out and gradually replaced with 5-year licences. New and renewed PCLs are valid 5 years at $24 CAD, issued and renewed online through Transport Canada's PCL portal. If your boat doesn't have a current PCL, sort it before launch day.
 
 **Cell service on the lake** is reasonable on the south shore (Bell, Rogers, Telus all work in Gores Landing/Bewdley). The middle of the lake and the north shore can drop. Don't rely on it as your safety system.
 

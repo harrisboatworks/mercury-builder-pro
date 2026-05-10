@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/bad-used-boats-to-avoid-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -41,7 +41,7 @@ Every spring, thousands of Ontario buyers hit Kijiji, Facebook Marketplace, and 
 
 The boats that look like deals, priced just low enough to feel exciting, described with just enough vagueness to keep you curious, are often the ones that will cost you the most. Not at purchase. After. When the season has started, the family is waiting, and the motor won't run.
 
-We've been servicing and selling boats on Rice Lake since 1947. We've seen what comes through the door after a bad used-boat purchase. This list is what we'd tell a friend.
+We've been servicing and selling boats on Rice Lake in the Kawarthas (Ontario) since 1947. We've seen what comes through the door after a bad used-boat purchase. This list is what we'd tell a friend.
 
 ---
 
@@ -202,7 +202,7 @@ We do Mercury repowers, full replacements that give an older hull a reliable, wa
 
 **Get a repower quote at [mercuryrepower.ca](https://www.mercuryrepower.ca).** Real prices, no runaround.
 
-Or call us at 905-342-2153. We're at Rice Lake, Gores Landing, and we've been having this exact conversation since 1947.
+Or call us at 905-342-2153. We're at Rice Lake, Ontario (in the Kawarthas), Gores Landing, and we've been having this exact conversation since 1947.
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-trim-boat-mercury-outboard.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-# How to Trim Your Boat With a Mercury Outboard (Rice Lake Boater's Guide)
+# How to Trim Your Boat With a Mercury Outboard (Rice Lake, Ontario Boater's Guide)
 
 *Last reviewed: 2026-05-07*
 
@@ -37,9 +37,12 @@ content_type: blog_article
 
 There's a reason videos about boat trim rack up a million views on YouTube. Trim is one of those things that nobody really explains, you get handed the keys to a boat and told the trim button is the one that looks like an arrow. That's usually the end of the lesson.
 
-After that, most people spend a season or two pressing buttons and hoping for the best. Maybe the bow's sitting too high and they can feel the prop ventilating before they even know what ventilation means. Maybe they're hammering through chop on a Rice Lake afternoon and wondering why their back hurts and their fuel gauge is dropping faster than it should.
+After that, most people spend a season or two pressing buttons and hoping for the best. Maybe the bow's sitting too high and they can feel the prop ventilating before they even know what ventilation means. Maybe they're hammering through chop on a Rice Lake, Ontario (in the Kawarthas) afternoon and wondering why their back hurts and their fuel gauge is dropping faster than it should.
 
 This post is the explanation you didn't get at the dealer. Practical, Mercury-specific, and written for the conditions you're actually dealing with on this lake.
+
+![Side-profile diagram comparing three outboard trim angles on a boat: negative trim with the motor tucked in shows the bow plowing water and the boat fighting through chop slowly, neutral trim shows the boat planing efficiently in a balanced cruise, and positive trim with the motor tucked out shows the bow lifted high with the propeller ventilating above the waterline causing RPM spikes and lost thrust.](/lovable-uploads/diagram-trim-angles.png)
+*The three trim states every boater should recognize. Most of this article is about staying in the middle one — neutral, planing efficiently, with the prop fully wetted.*
 
 ---
 

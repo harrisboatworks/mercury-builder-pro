@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-fuel-efficiency-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -42,6 +42,8 @@ The single biggest fuel-efficiency lever on a Mercury is prop selection. Right p
 Most Mercury owners overspend on fuel because of one of three things: wrong prop, bad trim discipline, or running at the wrong cruise speed for their boat and motor. None of those are HP-class problems. They are setup and operating problems.
 
 A correctly-rigged Mercury 90 EXLPT FourStroke on a 16 to 18 ft aluminum console can run 4 to 5 mph per US gallon at cruise. A poorly-rigged version of the same motor can run 3 to 3.5 mph per US gallon. Same motor, different fuel burn. The difference is prop, trim, and operation.
+
+Real fuel use depends on hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
 
 ## What changes fuel efficiency
 

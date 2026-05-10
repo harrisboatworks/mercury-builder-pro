@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/evinrude-to-mercury-repower-ontario-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -32,6 +32,8 @@ content_type: blog_article
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** With Evinrude out of production, parts and service are tightening fast. A Mercury FourStroke repower restores warranty coverage, parts availability, and resale value. Most Evinrude-to-Mercury jobs need new gauges, harness, and controls, we quote it all installed at mercuryrepower.ca.
+
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
 Switching from Evinrude to Mercury during a repower runs an extra $1,500 to $3,000 CAD in rigging costs because the entire control system has to swap. That sounds like a lot until you remember Evinrude stopped making outboards in 2020, and parts and service support is shrinking every year. The math usually favors the switch. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 

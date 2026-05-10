@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/portable-outboard-mercury-guide-2-20hp.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -34,6 +34,8 @@ content_type: blog_article
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular kicker; the 5 is the canoe-and-tender favourite. All current portables are FourStroke. Tiller, electric or manual start, and short or long shaft are the key choices. Configure at mercuryrepower.ca.
+
+Mercury's portable outboard lineup (2.5 HP through 25 HP) updates by model year. Verify exact horsepower, weight, and feature availability at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) or call us; the specs below reflect the spring 2026 lineup.
 
 Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats. The Mercury 9.9 MH is the most popular small-boat motor in Canada. Drop-in install, no rigging required, easy to transport and store. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -167,7 +169,7 @@ Portable motors are designed for easy transport but need proper care:
 ## Related guides
 
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), small aluminum applications
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker-specific 9.9 variant
+- [Mercury 9.9 ProKicker Rice Lake, Ontario Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker-specific 9.9 variant
 - [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), control type selection
 - [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), portable motor maintenance
 - [Breaking In a New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), break-in for any new Mercury

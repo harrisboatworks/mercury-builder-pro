@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-avator-electric-boating-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,7 @@ content_type: blog_article
 
 Electric propulsion is creeping into more corners of the marine world every year. It started with trolling motors, then kayaks and small tenders. Now we're seeing serious outboard manufacturers like Mercury build full electric families designed for real-world use, not just for trade show stands.
 
-Mercury's **Avator** line is the company's low-voltage electric outboard brand, and it's expanding fast. While we don't expect Rice Lake to go all-electric overnight, Avator already makes sense for some Ontario boaters, and it gives us a glimpse of where the industry is headed.
+Mercury's **Avator** line is the company's low-voltage electric outboard brand, and it's expanding fast. While we don't expect Rice Lake, Ontario to go all-electric overnight, Avator already makes sense for some Ontario boaters, and it gives us a glimpse of where the industry is headed.
 
 ## What Is Mercury Avator?
 
@@ -70,7 +70,7 @@ Mercury and independent testers have published early runtime and range examples.
 
 Higher-power Avator models allow connecting multiple battery packs (up to four 2.3 kWh packs in some configurations), extending run time and range significantly.
 
-For short-range cottage use, running from the dock to a nearby bay and back, that's more than enough for many days on the water. For all-day trolling on Rice Lake, it's not yet a direct replacement for a gas [ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide), but the tech is moving quickly.
+For short-range cottage use, running from the dock to a nearby bay and back, that's more than enough for many days on the water. For all-day trolling on Rice Lake, Ontario (in the Kawarthas), it's not yet a direct replacement for a gas [ProKicker](/blog/mercury-prokicker-rice-lake-fishing-guide), but the tech is moving quickly.
 
 ## Why Avator Might Make Sense for Some Rice Lake Boaters
 
@@ -140,6 +140,14 @@ If you're curious about whether an Avator fits your situation, [talk to us](/con
 
 Then we'll give you a frank recommendation on gas, electric, or a hybrid of both. You can also [explore motor options and pricing in our quote builder](/quote/motor-selection).
 
+## Interested in Avator?
+
+Mercury Avator is a special-order item with availability and pricing that updates frequently. We don't list pricing live for Avator the way we do for FourStroke and Pro XS. For a current quote, contact us with your boat type and use case.
+
+**Phone:** 905-342-2153
+**Email:** [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca)
+**Build a quote on the configurator:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) (Avator availability checked manually after submission)
+
 **See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
@@ -155,18 +163,6 @@ Then we'll give you a frank recommendation on gas, electric, or a hybrid of both
 ### How far can a Mercury Avator go on a single charge?
 
 On a 13 ft boat with the Avator 7.5e, expect about 60 minutes / 5 miles at full throttle or up to 19 hours / 34 miles at 25% throttle on a single 1 kWh battery. Higher-power models with multiple battery packs extend range significantly. Real-world range depends on boat weight, wind, current, and throttle use.
-
-### Is an electric outboard practical for Rice Lake?
-
-For small car-toppers, cottage runabouts, and short-range trips, yes, the Avator is very practical on Rice Lake. For full-day fishing on larger boats, a gas outboard with a trolling motor is still the most versatile option. The gap is closing as Avator models get more powerful and battery capacity increases.
-
-### How does the Avator compare to a trolling motor?
-
-Unlike a traditional trolling motor, the Avator is a complete propulsion system designed to be a boat's primary power source. It has more thrust, a proper tiller or remote setup, digital displays, and integrates with Mercury's SmartCraft ecosystem. A trolling motor is an auxiliary tool; an Avator replaces the main outboard on small boats.
-
-### What maintenance does an Avator electric outboard need?
-
-Much less than a gas engine. There are no oil changes, fuel filters, spark plugs, or fuel system winterization. Maintenance is primarily rinsing after use, checking electrical connections, and proper battery storage. Mercury backs Avator with their dealer service network for any issues.
 
 ### Is a Mercury Avator electric outboard practical for Rice Lake in Ontario?
 

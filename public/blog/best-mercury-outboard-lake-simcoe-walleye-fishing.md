@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-outboard-lake-simcoe-walleye-fishing.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -33,7 +33,7 @@ content_type: blog_article
 
 > **Quick answer:** For Lake Simcoe walleye, most anglers want a 90-150 HP FourStroke main for the run-out plus a Mercury 9.9 ProKicker for slow trolling. Simcoe gets rough, pick a hull rated for it and stay inside the capacity plate. Build a main-and-kicker package at mercuryrepower.ca.
 
-Lake Simcoe is bigger water than Rice Lake. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed. The right Mercury for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Lake Simcoe is bigger water than Rice Lake, Ontario. Wind exposure is meaningful, fish are deeper, and travel between fishing spots requires real cruise speed. The right Mercury for Simcoe walleye is a 90 to 150 HP main motor on a 17 to 19 ft aluminum or modified-V hull, paired with a 9.9 ProKicker for trolling. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 

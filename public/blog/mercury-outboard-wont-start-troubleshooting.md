@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-wont-start-troubleshooting.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -207,15 +207,14 @@ For HBW service, [request service](https://hbw.wiki/service) or [call (905) 342-
 - [Mercury Outboard Fuel Efficiency Guide](/blog/mercury-outboard-fuel-efficiency-guide), fuel system maintenance
 - [Boat Repowering Guide: When to Replace Your Motor](/blog/boat-repowering-guide-when-to-replace-motor), if no-start diagnosis points to repower
 
-## Need a diagnostic?
+## Need help with this?
 
-[**Request Service**](https://hbw.wiki/service) or [give us a call at (905) 342-2153](tel:9053422153). We will walk through the symptoms and either troubleshoot over the phone or get you a service slot.
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
 
----
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
-_Service pricing varies by motor size, boat type, and what's included. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
-
----
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 ## FAQ
 

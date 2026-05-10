@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ethanol-octane-mercury-outboard-fuel-guide-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -49,7 +49,7 @@ Most Ontario pump gas, including the 87-octane "Regular" you've been putting in 
 
 Ethanol absorbs moisture from the air. In a car, that's not a big deal: you burn through a full tank in a few days. The water never has a chance to settle.
 
-In a boat, you might fill up on the May long weekend and the tank sits for three weeks before you're back on Rice Lake. Or longer. Across a full season, that moisture accumulation adds up. Ethanol pulls water from humid air right through the fuel cap, through the vented lines, and into your tank.
+In a boat, you might fill up on the May long weekend and the tank sits for three weeks before you're back on Rice Lake in the Kawarthas (Ontario). Or longer. Across a full season, that moisture accumulation adds up. Ethanol pulls water from humid air right through the fuel cap, through the vented lines, and into your tank.
 
 Here's what happens next: the water and ethanol eventually separate from the gasoline, a process called **phase separation**. That water-ethanol mixture sinks to the bottom of the tank, where the fuel pickup sits. So the first thing your motor draws when you try to start it is water, not fuel.
 
@@ -159,7 +159,7 @@ The [Spring Outboard Commissioning Checklist](https://www.mercuryrepower.ca/blog
 
 ---
 
-## Where to Fuel Up on Rice Lake
+## Where to Fuel Up on Rice Lake, Ontario (in the Kawarthas)
 
 For Rice Lake boaters, **Harris Boat Works has on-water fuel access**, pull up to the dock, fill up, get back out. Ethanol-free available on-site. No need to trailer to a gas station.
 

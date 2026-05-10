@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-overheating-emergency-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,15 +35,21 @@ content_type: blog_article
 
 > **Quick answer:** If your Mercury alarms hot, idle down immediately, kill the motor at the first safe spot, and check for a clogged or missing tell-tale. Don't keep running, overheating destroys head gaskets and powerheads. Most causes are impeller, intake blockage, or thermostat. Service booking at mercuryrepower.ca.
 
+For preventive maintenance, see [Mercury Maintenance Intervals (20/100/300-Hour Rule)](/blog/mercury-maintenance-intervals-20-100-300-rule). If overheating points to an aging powerhead, [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad) and the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) cover replacement options, and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) explains coverage on a new build.
+
 If you're reading this on the water with the overheat alarm going off, **skip ahead to the next section**. Get yourself sorted, then come back for the rest.
 
 If you're reading it from your couch on a Wednesday in February, good. The best time to learn about overheating is before it happens. Five minutes here might save you a $2,500 head gasket job, or a $4,500 powerhead.
 
-This is the emergency-then-prevention guide we'd give a customer who walks into the shop at Gores Landing. Mercury-specific, Rice Lake-tested, no fluff.
+This is the emergency-then-prevention guide we'd give a customer who walks into the shop at Gores Landing. Mercury-specific, Rice Lake, Ontario (in the Kawarthas)-tested, no fluff.
 
 ---
 
 ## On the Water Right Now? Do This in This Order.
+
+![Outboard overheating emergency troubleshooting flowchart: starts with the alarm sounding, branches by whether the telltale stream is flowing, by RPM behaviour, and by whether the motor has been over-revving.](/lovable-uploads/diagram-overheating-troubleshooting.png)
+
+*If you only remember one thing from this article: when in doubt, shut it down. The diagram above is the conversation we have over the phone with customers who call from the lake.*
 
 ### 1. Throttle back to idle. Don't shut it off yet.
 
@@ -204,10 +210,14 @@ Throttle to idle, check tell-tale, kill engine if it's weak/gone, tilt up, clear
 
 ---
 
+## Need help with this?
+
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
+
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
 **Phone:** 905-342-2153
-**Service requests:** [hbw.wiki/service](https://hbw.wiki/service)
-**Mercury repower quotes:** [mercuryrepower.ca](https://mercuryrepower.ca)
-**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON
+
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 ## FAQs
 

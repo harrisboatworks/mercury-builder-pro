@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -11,7 +11,7 @@ title: "Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan
 description: "2026 Trent-Severn boating guide, free lockage dates, hours, locking-through tips, and a trip plan from a marina that sits on the waterway. By Harris Boat."
 category: "Lifestyle"
 date_published: 2026-05-08
-date_modified: 2026-05-08
+date_modified: 2026-05-09
 keywords: ["Trent-Severn Waterway 2026 guide","Trent-Severn free lockage 2026","Canada Strong Pass boating","Trent-Severn locks hours 2026","Rice Lake Trent-Severn","boating Trent-Severn for beginners"]
 author: Harris Boat Works
 content_type: blog_article
@@ -23,7 +23,7 @@ content_type: blog_article
 
 **Category:** Lifestyle  
 **Published:** 2026-05-08  
-**Last updated:** 2026-05-08  
+**Last updated:** 2026-05-09  
 **Read time:** 9 min read  
 **Canonical (HTML for humans):** https://www.mercuryrepower.ca/blog/trent-severn-waterway-boating-guide-2026
 
@@ -35,11 +35,13 @@ content_type: blog_article
 
 > **Quick answer:** The Trent-Severn runs 386 km from Trenton to Port Severn through 44 locks. 2026 lockage hours and free-lockage windows are set by Parks Canada. Plan for slow water, debris after spring, and crowded weekends. Service before you go, book at mercuryrepower.ca.
 
+Repowering before the season? See [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), and the [Complete Guide to Boat Repower in the Kawarthas](/blog/complete-guide-boat-repower-kawarthas). For rigging questions on the new motor, the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) is the companion read.
+
 Big news for 2026: lockage on the Trent-Severn is **free from June 19 to September 7** as part of the [Canada Strong Pass](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass). For a 20-foot boat, that's $45 a day in fees you're not paying, about $315 saved on a full week-long transit, more if you stay seasonal.
 
 If you've ever thought about running the Trent-Severn, even a weekend stretch of it, 2026 is the year.
 
-This is the local's version of the guide. Harris Boat Works sits directly on the waterway at Gores Landing, on Rice Lake, between Locks 18 and 19. We've been here since 1947, we've fuelled boats running the system in both directions, and we know which questions first-timers actually ask.
+This is the local's version of the guide. Harris Boat Works sits directly on the waterway at Gores Landing, on Rice Lake, Ontario (in the Kawarthas), between Locks 18 and 19. We've been here since 1947, we've fuelled boats running the system in both directions, and we know which questions first-timers actually ask.
 
 ---
 
@@ -66,6 +68,18 @@ What's still going to cost you (per the [Parks Canada Trent-Severn fee schedule]
 - **Parking, charts, third-party services**, same as any other year
 
 So a 20-foot boat tying up overnight at a lock pays $30. Plus power, if you need it. That's it. For the price of one day of normal lockage, you can sleep on the waterway.
+
+---
+
+## What Else Changed for 2026
+
+A few operational shifts from Parks Canada that catch first-timers every year. Read these before you push off.
+
+**Lockage permits in person only, 2026 season.** Parks Canada has eliminated online lockage permit sales for the 2026 season. Lockage permits, including the free Canada Strong Pass sticker during the June 19 to Sept 7 window, must be picked up in person at a lockstation. **Seasonal mooring passes and reservations can still be purchased online** at parks.canada.ca; only lockage moved to in-person-only. The rule that catches first-timers: show up at the lock expecting to buy lockage online and you'll be turned around at the blue line. Bring a card (most stations accept tap), and arrive 15 minutes earlier than you'd planned. Source: [Parks Canada, Canada Strong Pass at the Trent-Severn](https://parks.canada.ca/lhn-nhs/on/trentsevern/visit/laissez-passer-canada-pass).
+
+**25% off Parks Canada camping along the corridor.** Same window (June 19 to Sept 7), Parks Canada-managed campgrounds along the Trent-Severn are 25% off. If you're doing a multi-day transit and would rather sleep on land than tie to a lock wall, this is real money. Worth pricing out before you commit to a route.
+
+**Paid shoulder seasons, in-person only, system closed outside them.** Lockage is paid (rates below) from **May 15 to June 18** and again from **Sept 8 to Oct 12**, in person at the lockstation. The waterway is closed to lockage outside those dates. If you're planning an early-May shakedown or a mid-October last-run, the gates simply aren't open.
 
 ---
 

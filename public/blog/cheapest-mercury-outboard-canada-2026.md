@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/cheapest-mercury-outboard-canada-2026.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,9 +35,11 @@ content_type: blog_article
 
 The cheapest Mercury outboard in Canada is the 2.5 MH, a small portable tiller motor built for tenders, dinghies, and very small aluminum boats. From there, prices step up by HP class through the lineup. The honest answer most boaters need is not "what's the cheapest motor" but "what's the cheapest motor that actually fits my boat." Those are usually different motors. Live pricing on every Mercury we sell, including the 2.5 portable, is on the [motor selection page](/quote/motor-selection).
 
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
+
 ## Quick recommendation
 
-Do not buy the wrong motor for your boat just because it is cheap. We have watched too many Rice Lake customers buy the smallest motor they could afford, spend three seasons unable to get on plane against the afternoon wind, then trade it in for what they should have bought the first time. That is paying twice for the same boat-equipping job.
+Do not buy the wrong motor for your boat just because it is cheap. We have watched too many Rice Lake, Ontario customers buy the smallest motor they could afford, spend three seasons unable to get on plane against the afternoon wind, then trade it in for what they should have bought the first time. That is paying twice for the same boat-equipping job.
 
 If you are looking at the cheapest end of the lineup, the right starting question is: what is my boat actually going to do? A tender for a sailboat, a kicker for a pontoon, or a fishing solo on a 14-foot aluminum at 5 mph have completely different right answers. The cheapest Mercury that solves your actual problem is usually one or two HP classes up from the absolute lowest motor on the lot.
 
@@ -47,7 +49,7 @@ The right "cheapest" motor depends on six things:
 
 - **Boat size and weight.** A 12-foot inflatable can be powered by a 2.5 portable. A 16-foot aluminum needs at least 25 HP if you want to plane. Hull weight is the single biggest driver of "minimum useful HP."
 - **Use case.** Fishing solo at trolling speed has totally different power requirements than cruising with two people, which is different again from pulling a tube.
-- **Where you launch.** A pontoon at a sheltered marina dock can run a smaller motor than the same pontoon at a public ramp on Rice Lake. The wind picks up across Sugar Island around 2 PM most days in July, and an underpowered motor will not punch back through it.
+- **Where you launch.** A pontoon at a sheltered marina dock can run a smaller motor than the same pontoon at a public ramp on Rice Lake, Ontario (in the Kawarthas). The wind picks up across Sugar Island around 2 PM most days in July, and an underpowered motor will not punch back through it.
 - **Solo vs. family.** Adding two adults and a cooler turns "marginal" power into "stranded."
 - **Transom HP rating.** Overpowering a hull creates capacity-plate compliance, insurance, liability, and potential warranty problems. The cheapest motor that fits inside your boat's HP rating is your real ceiling on the low end.
 - **Long-term plan.** Buying the boat for one season and selling it is a different math than buying a boat you plan to own for 15 years. A motor that is "barely enough" gets exhausting fast over multi-season ownership.

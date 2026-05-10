@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-boats-rice-lake-under-30000.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,9 +31,11 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** For Rice Lake under $30,000, look at 17-19 ft aluminum fishing hulls (Lund, Princecraft, Crestliner) with a Mercury 60-90 FourStroke installed. Pontoons in that budget are typically used. We can quote either as a complete installed package at mercuryrepower.ca.
+> **Quick answer:** For Rice Lake, Ontario under $30,000, look at 17-19 ft aluminum fishing hulls (Lund, Princecraft, Crestliner) with a Mercury 60-90 FourStroke installed. Pontoons in that budget are typically used. We can quote either as a complete installed package at mercuryrepower.ca.
 
-Under $30,000 CAD on Rice Lake, your three best paths in 2026 are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon (often with a recent repower or due for one), or a clean used hull paired with a Mercury repower. We rig and service all three at HBW. The smart money usually skips brand-new entry-level boats and goes into a quality used hull plus a current Mercury motor instead.
+> **Planning-level CAD ranges as of May 2026.** Boat prices, dealer inventory, and motor packages move with model year, supply, and the local used market. Numbers below reflect what was available at HBW and across Ontario in spring 2026; verify current pricing at the dealer before committing.
+
+Under $30,000 CAD on Rice Lake, Ontario (in the Kawarthas), your three best paths in 2026 are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon (often with a recent repower or due for one), or a clean used hull paired with a Mercury repower. We rig and service all three at HBW. The smart money usually skips brand-new entry-level boats and goes into a quality used hull plus a current Mercury motor instead.
 
 ## Quick recommendation
 

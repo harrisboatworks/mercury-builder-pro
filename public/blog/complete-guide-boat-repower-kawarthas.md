@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/complete-guide-boat-repower-kawarthas.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,9 @@ content_type: blog_article
 
 > **Quick answer:** A Kawarthas repower at HBW typically takes 7-14 days at the shop once scheduled: configurator quote, phone call, transport to Gores Landing, install and sea trial, pickup. Most projects land $10,000-$25,000 installed depending on horsepower and rigging. Spring rush adds 2-4 weeks of lead time. Start at mercuryrepower.ca.
 
-Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake. Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Repowering your boat in the Kawarthas means replacing your existing outboard motor with a new Mercury, while keeping the hull you already own. The process takes 2 to 4 weeks from order to delivery, includes motor selection, rigging, controls, prop, install, and a sea-trial on Rice Lake in the Kawarthas (Ontario). Total all-in cost depends on HP class and ranges from small kicker installs to repowers north of $40,000 CAD for high-HP boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
 ## Quick recommendation
 
@@ -92,7 +94,7 @@ A clean install is 1 to 2 days of shop time. We:
 
 For boats with hydraulic steering conversion or major rigging changes, install can run longer.
 
-### Step 5: Sea-trial on Rice Lake
+### Step 5: Sea-trial on Rice Lake, Ontario (in the Kawarthas)
 
 Every repower gets a real water test before you take the boat home. We run it through the throttle range, check WOT RPM, measure speed, and confirm prop selection. If the prop is wrong (and sometimes it is), we swap it before you leave. The sea-trial is part of the price; it is not an upcharge.
 

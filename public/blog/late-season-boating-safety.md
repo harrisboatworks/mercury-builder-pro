@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/late-season-boating-safety.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -173,6 +173,15 @@ Proper fall shutdown protects your motor for spring. Schedule winterization befo
 - [Mercury Motor Maintenance: Seasonal Care Tips](/blog/mercury-motor-maintenance-seasonal-tips), seasonal maintenance tips
 - [Spring Outboard Commissioning: Complete Checklist for Ontario Boaters](/blog/spring-outboard-commissioning-checklist), spring commissioning checklist
 - [Outboard Motor Storage: Best Practices for Off-Season Care](/blog/outboard-motor-storage-tips), off-season storage tips
+
+## Need help with this?
+
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
+
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
+
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 ## FAQs
 
