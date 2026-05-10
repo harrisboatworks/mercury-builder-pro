@@ -13455,6 +13455,17 @@ Sometimes. If diagnostic shows major internal damage (compression failure, gearc
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 `,
+    howToSteps: [
+      { name: 'Check the battery', text: 'Voltage at rest should be 12.4V or higher; voltage under crank load should stay above 10.5V. Clean and tighten terminals. Marine batteries last 4 to 6 years; a 7-year-old battery is at end of life regardless of how it tests. A weak battery causes false positives on every other test, so replace it before continuing.' },
+      { name: 'Check the fuel system', text: 'Gas over 6 months old is suspect. Check for water at the bottom of the tank. Replace the fuel filter if at service interval. Inspect fuel lines for cracks or brittleness. The primer bulb should pump up firm; if it stays soft, there is an air leak.' },
+      { name: 'Check the kill switch lanyard', text: 'Confirm the lanyard kill switch is in place. A pulled or missing lanyard prevents the motor from starting. Also confirm the shifter is fully in neutral, since the neutral safety switch blocks cranking otherwise.' },
+      { name: 'Check ignition and spark', text: 'Pull plugs and inspect: black/wet means flooded or fuel issue, tan/dry means okay, glazed/white means lean or overheated. Replace plugs at service interval. With plug grounded against the engine block and cranking, you should see strong blue spark. Weak orange or no spark indicates an ignition issue.' },
+      { name: 'Check the starting circuit', text: 'If basics are good but the motor will not crank, listen for a click when you turn the key. No click means a solenoid issue. Grinding or labored cranking indicates a worn starter. Check for corroded or loose connections at the starter, solenoid, and ignition switch.' },
+      { name: 'Test for compression issues', text: 'If everything else is good but the motor still will not run, compression may be the issue. Low or inconsistent compression across cylinders points to worn rings, damaged cylinder, or head gasket failure. Compression testing requires a gauge and removing spark plugs.' },
+      { name: 'Stop and call for diagnostic', text: 'Cranking longer than 10 seconds at a time overheats the starter and water pump. If the motor will not start after 3 attempts at the basics, stop. Book a Mercury-certified diagnostic at HBW rather than risk further damage with a wrong DIY repair.' },
+    ],
+    howToTotalTime: 'PT30M',
+    howToTools: ['Multimeter', 'Spark plug socket', 'Spare spark plugs', 'Battery load tester', 'Compression gauge (optional)'],
     faqs: [
       {
         question: 'Why won\'t my Mercury outboard start after sitting all winter?',
