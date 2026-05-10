@@ -13956,6 +13956,9 @@ That is a more interesting reason to think about Boost than the current $200 in 
 - [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), the upgrade that usually pays back better than Boost
 - [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), if you are still in motor selection mode
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the 115 to 150 step-up math
+- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), pick the right HP for your tube
+- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats), CT gearcase fit
+- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), what an underpowered pontoon actually does
 
 ## Ready to talk through your pontoon setup?
 
