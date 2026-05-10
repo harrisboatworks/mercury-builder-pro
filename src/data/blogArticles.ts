@@ -11151,7 +11151,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['mercury 115 vs 150 hp', 'mercury 115 Pro XS', 'mercury 150 Pro XS', 'mercury 115 FourStroke review', 'mercury 150 FourStroke specs', 'which outboard for Ontario boat', 'mercury outboard comparison', 'Pro XS vs FourStroke'],
     content: `# Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** The 115 is the right call for most 17-19 ft hulls, lighter, cheaper, fully capable. The 150 makes sense on 19-21 ft hulls or any boat that loads heavy. Both share a similar service footprint. Stay inside the capacity plate. Compare installed pricing at mercuryrepower.ca.
 
@@ -11174,6 +11174,13 @@ Five things move whether 115 or 150 fits your boat:
 - **Active water sports.** Tubing, skiing, wakeboarding pull more HP than fishing or cruising. The 150 handles loaded water sports well; the 115 struggles when loaded and pulling.
 - **Where you launch.** Bigger water (Lake Ontario, Bay of Quinte, eastern Trent-Severn) rewards more HP for both safety and performance.
 - **Capacity plate ceiling.** A boat rated 90 to 150 HP can take either. A boat rated up to 115 can only take the 115.
+### How the conversation actually goes
+
+Two boats walk in with the same length. One needs 115 HP. The other needs 150. The difference is rarely the boat. It's the load.
+
+The pontoon that's running four adults plus gear on Rice Lake on a regular weekend is a different motor decision than the pontoon that runs two adults to the dock and back twice a week. Same boat. Same hull rating. Different real-world load. The 115 has the easier life and lasts longer. The 150 has the headroom for tubing, wakeboarding, or running into a headwind without lugging.
+
+We ask the load question first. Hull rating is the ceiling. Use case is what makes sense inside that ceiling.
 
 ## Side-by-side: Mercury 115 vs 150 FourStroke
 
