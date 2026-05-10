@@ -2788,6 +2788,9 @@ We recommend lift storage where the cottage configuration allows. The hull life 
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), HP step-up math
 - [Best Boats for Rice Lake Under $30,000](/blog/best-boats-rice-lake-under-30000), used boat options
 - [Mercury Repower Cost Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad), repower pricing
+- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), HP sizing for pontoon hulls
+- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), what to watch out for
+- [Mercury Boost 150 HP Upgrade for Pontoons](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), software-based HP bump analysis
 
 ## Ready for a Rice Lake pontoon?
 
