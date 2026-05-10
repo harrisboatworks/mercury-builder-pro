@@ -372,27 +372,32 @@ export default function MotorPage() {
           <RelatedMotorsAndCTA motor={motor} display={display} />
 
           {(() => {
-            const slugs = getMotorRelatedBlogSlugs({
-              hp: motor.horsepower ?? 0,
-              model: motor.model_display || motor.model || '',
-              model_display: motor.model_display || '',
-              model_number: motor.model_number || '',
-            });
-            if (!slugs.length) return null;
-            return (
-              <section
-                aria-labelledby="motor-guides-heading"
-                className="mt-12 border-t border-border pt-10"
-              >
-                <h2 id="motor-guides-heading" className="text-2xl font-bold text-foreground mb-2">
-                  Related Mercury repower guides
-                </h2>
-                <p className="text-base text-muted-foreground mb-6">
-                  Hand-picked HBW articles for boaters considering this motor class.
-                </p>
-                <RelatedPostsGrid slugs={slugs} hideHeader />
-              </section>
-            );
+            try {
+              const slugs = getMotorRelatedBlogSlugs({
+                hp: motor.horsepower ?? 0,
+                model: motor.model_display || motor.model || '',
+                model_display: motor.model_display || '',
+                model_number: motor.model_number || '',
+              });
+              if (!slugs.length) return null;
+              return (
+                <section
+                  aria-labelledby="motor-guides-heading"
+                  className="mt-12 border-t border-border pt-10"
+                >
+                  <h2 id="motor-guides-heading" className="text-2xl font-bold text-foreground mb-2">
+                    Related Mercury repower guides
+                  </h2>
+                  <p className="text-base text-muted-foreground mb-6">
+                    Hand-picked HBW articles for boaters considering this motor class.
+                  </p>
+                  <RelatedPostsGrid slugs={slugs} hideHeader />
+                </section>
+              );
+            } catch (err) {
+              console.error('[Related Guides] failed to render:', err);
+              return null;
+            }
           })()}
         </div>
 

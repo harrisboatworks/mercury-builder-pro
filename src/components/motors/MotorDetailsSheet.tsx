@@ -892,24 +892,29 @@ export default function MotorDetailsSheet({
 
               {/* Related Guides */}
               {(() => {
-                const slugs = getMotorRelatedBlogSlugs({
-                  hp: typeof hp === 'string' ? parseInt(hp) : hp || 0,
-                  model: title,
-                  model_display: motor?.model_display || title,
-                  model_number: motor?.model_number || '',
-                });
-                if (!slugs.length) return null;
-                return (
-                  <div className="border-t border-gray-100 pt-6 space-y-4">
-                    <h3 className="text-lg font-semibold text-slate-900">
-                      Related Guides
-                    </h3>
-                    <p className="text-sm text-slate-600">
-                      Hand-picked HBW articles for boaters considering this motor class.
-                    </p>
-                    <RelatedPostsGrid slugs={slugs} hideHeader />
-                  </div>
-                );
+                try {
+                  const slugs = getMotorRelatedBlogSlugs({
+                    hp: typeof hp === 'string' ? parseInt(hp) : hp || 0,
+                    model: title,
+                    model_display: motor?.model_display || title,
+                    model_number: motor?.model_number || '',
+                  });
+                  if (!slugs.length) return null;
+                  return (
+                    <div className="border-t border-gray-100 pt-6 space-y-4">
+                      <h3 className="text-lg font-semibold text-slate-900">
+                        Related Guides
+                      </h3>
+                      <p className="text-sm text-slate-600">
+                        Hand-picked HBW articles for boaters considering this motor class.
+                      </p>
+                      <RelatedPostsGrid slugs={slugs} hideHeader />
+                    </div>
+                  );
+                } catch (err) {
+                  console.error('[Related Guides] failed to render:', err);
+                  return null;
+                }
               })()}
 
               {/* Videos Section */}
