@@ -692,7 +692,7 @@ Trade-off: costs more than recreational FourStroke. Overkill for typical recreat
 
 ## Verado: why it is special-order only at HBW
 
-Verado is Mercury's premium V8/V10/V12 line, available from 250 HP up to 600+ HP. Current Verados are naturally aspirated (older inline-6 Verados were supercharged). It is engineered for high-HP applications, twin and triple installations, and offshore use where smoothness, quiet operation, and instant power are worth a premium.
+Verado is Mercury's premium V8/V10/V12 line, available from 175 to 600 HP. Current Verados are naturally aspirated (older inline-6 Verados were supercharged). The V10 lineup expanded in 2025 with a new 425 hp V10 alongside the enhanced 350 hp and existing 400 hp models. It is engineered for high-HP applications, twin and triple installations, and offshore use where smoothness, quiet operation, and instant power are worth a premium.
 
 We do not stock Verado at HBW. The reason is straightforward: almost no Ontario freshwater boater has a use case that fits Verado. Our customers are running aluminum fishing boats, pontoons, runabouts, bass boats, and small center consoles. Pro XS or FourStroke covers all of those at a better cost-per-capability for our market.
 
