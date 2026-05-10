@@ -287,7 +287,9 @@ export async function generateFullSitemapXML(): Promise<string> {
     })),
   ];
 
-  const allEntries = [...getStaticPages(), ...blogEntries, ...motorEntries, ...caseStudyEntries, ...locationEntries];
+  const multilingualEntries = buildMultilingualBlogEntries(today);
+
+  const allEntries = [...getStaticPages(), ...blogEntries, ...multilingualEntries, ...motorEntries, ...caseStudyEntries, ...locationEntries];
   
   const urlEntries = allEntries.map(entry => {
     let xml = `  <url>
