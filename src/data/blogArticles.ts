@@ -1298,6 +1298,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
         text: 'Schedule your first oil change at 20 hours. This is critical as the oil captures metal particles from the break-in process that need to be removed before they cause wear.',
       },
     ],
+    howToTotalTime: 'PT10H',
+    howToTools: ['Mercury 4-stroke engine oil (10W-30)', 'Oil filter', 'Tachometer or SmartCraft gauge'],
     faqs: [
       {
         question: 'What happens if I don\'t break in my motor properly?',
