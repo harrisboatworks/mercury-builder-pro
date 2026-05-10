@@ -18145,6 +18145,10 @@ You've decided to repower. Maybe your old motor is on its last legs; maybe a fue
 
 This is the version of that walkthrough we'd give a Toronto, Mississauga, Markham, or Hamilton boater calling about a repower. **We are not located in the GTA. We're in Gores Landing, Ontario, on Rice Lake, about 90 minutes east of central Toronto.** GTA boaters drive to us regularly because we're a Mercury Platinum dealer with transparent install pricing. The logistics are well-worn; here's how it goes.
 
+![Map of southern Ontario showing Harris Boat Works in Gores Landing on Rice Lake with a 90-minute drive radius covering Toronto's east end, the Kawarthas, Cobourg, Bowmanville, Peterborough, and Belleville.](/lovable-uploads/diagram-hbw-service-area-map.png)
+
+*Where our customers come from. The 90-minute drive radius covers most of the GTA east end, the Kawarthas, Northumberland, Durham, and Bay of Quinte.*
+
 ---
 
 ## The Repower Decision (Skip If You're Already Sure)
