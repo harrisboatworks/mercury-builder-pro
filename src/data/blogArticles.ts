@@ -12385,6 +12385,19 @@ DIY makes sense if you have done it before, the motor is under 60 HP, and you ha
 3rd-Generation Owner, Harris Boat Works
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)`,
+    howToSteps: [
+      { name: 'Stabilize the fuel', text: 'Add fuel stabilizer to the gas tank at the rate the bottle says (usually 1 oz per 2.5 gallons / 10L). Run the motor for at least 10 minutes to circulate stabilized fuel through the lines, carbs, or fuel injectors. The stabilizer prevents fuel breakdown and gum formation over winter.' },
+      { name: 'Run for 10 minutes with stabilized fuel', text: 'Either complete this during your last run of the season, or run the motor on muffs for 10 minutes with a small amount of stabilized fuel. This puts treated fuel into every part of the system before fogging.' },
+      { name: 'Fog the engine', text: 'While the motor is still running warm, disconnect the fuel line (or shut off the fuel valve). Spray fogging oil into each cylinder through the spark plug holes, or into the air intake while the motor draws it in. The motor will sputter and stall as it consumes the fogging oil. The film coats cylinder walls, valves, and bearings against rust.' },
+      { name: 'Drain the gearcase', text: 'Position the motor vertical with the vent screw at the top and drain screw at the bottom. Remove the drain screw first, then the vent screw. Catch all the lube and inspect it; clean lube is honey-amber. Milky or grey lube means water in the gearcase from a failed seal: stop and bring the motor in.' },
+      { name: 'Refill with fresh gear lube', text: 'Use only Mercury High-Performance Gear Lube. Pump fresh lube into the bottom drain hole until lube comes out the top vent hole. Quickly install and tighten the vent screw, then the drain screw, both with new gaskets. Skipping this step destroys the gears in 30 minutes of operation in spring.' },
+      { name: 'Clear the cooling system', text: 'Run the motor on muffs (or in water) for one or two minutes to confirm cooling water flow. Disconnect the water source while the motor is still running for 10 to 15 seconds. Tilt the motor up to drain residual water from cooling passages. Confirm no water is dripping from anywhere it should not be.' },
+      { name: 'Apply corrosion protection and final touches', text: 'Replace spark plugs if over a year old or showing wear; use anti-seize on the threads. Lubricate steering, throttle, and shift cable pivot points with marine grease. Check anodes and replace if more than 30% depleted.' },
+      { name: 'Disconnect battery and store the motor', text: 'Disconnect and remove the battery. Store it on a wood block in an insulated indoor space (basement, garage) and trickle charge once a month. Cover the motor or store the boat covered (shrink-wrap, tarp, or indoor) with the motor vertical to prevent water pooling.' },
+    ],
+    howToTotalTime: 'PT2H',
+    howToTools: ['Marine fogging oil', 'Fuel stabilizer', 'Gear lube', 'Corrosion guard', 'Wrench set'],
+    howToSupplies: ['Mercury Quickstor or equivalent fuel stabilizer', 'Mercury Storage Seal or Premium Fogging Oil', 'Mercury High-Performance Gear Lube', 'New gear lube drain plug gaskets', 'Anti-seize compound', 'Marine grease', 'Bucket and rags'],
     faqs: [
       {
         question: 'Can I winterize my Mercury FourStroke outboard myself?',
