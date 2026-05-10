@@ -106,6 +106,7 @@ const MotorSelectionHub = lazy(() => import("./pages/MotorSelectionHub"));
 const MaintenanceHub = lazy(() => import("./pages/MaintenanceHub"));
 const LakesHub = lazy(() => import("./pages/LakesHub"));
 const About = lazy(() => import("./pages/About"));
+const AboutJayHarris = lazy(() => import("./pages/AboutJayHarris"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const AdminBlog = lazy(() => import("./pages/AdminBlog"));
@@ -514,6 +515,7 @@ function AnimatedRoutes() {
         
         {/* About Page */}
         <Route path="/about" element={<About />} />
+        <Route path="/about/jay-harris" element={<AboutJayHarris />} />
         
         {/* FAQ Page */}
         <Route path="/faq" element={<FAQ />} />

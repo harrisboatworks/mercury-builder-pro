@@ -11972,6 +11972,10 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter: stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor by spring. For motors you would rather not DIY, [request service at HBW](https://hbw.wiki/service).
 
+![8-step winterization checklist for Mercury outboards: drain fuel and add stabilizer, run for 10 minutes, fog cylinders, drain and refill gear case oil, dry cooling passages, disconnect and tend battery, apply corrosion protection, store vertical with cover and rodent baits.](/lovable-uploads/diagram-winterization-checklist.png)
+
+*The 8-step winterization sequence we run on every customer motor at HBW. Skip any of these and you're shopping for a powerhead in May.*
+
 ## Quick recommendation
 
 DIY winterization works for confident owners on smaller motors (under 60 HP) with garage-accessible storage. The procedure is the same on bigger motors but the parts and access get harder. We would not recommend DIY on a 250 HP V8 unless you have done it before.
@@ -13448,6 +13452,10 @@ description: Decision tree showing Repower vs. Replace path with key questions
 prompt: Photorealistic editorial decision tree diagram. Title: "Repower or Replace? The honest decision". Top question: "Is the hull less than 20 years old AND structurally solid?" Branches Yes/No. Yes branch leads to "Repower (saves $25K-$50K)". No branch leads to follow-up: "Is hull rotting / soft-transom / fundamentally undersized?" Yes leads to "Replace". Diamond shapes for questions, rounded rectangles for outcomes. Mercury red for "Replace" outcome, gold for "Repower" outcome. Clean white background. No people. 1080x1350. [STYLE ANCHOR]
 image: /lovable-uploads/hull-vs-repower-decision-tree.png
 :::
+
+![Decision tree comparing repower versus hull replacement: starts with whether the boat is over 20 years old with structural damage, branches into repower-keep-the-boat, repair-and-keep, or buy-used-or-new outcomes.](/lovable-uploads/diagram-hull-vs-repower.png)
+
+*The decision tree that frames every "do I repower or replace" conversation we have at HBW. Most customers fall into the REPOWER outcome, which is why mercuryrepower.ca exists.*
 
 The decision is not "new boat vs. old boat." It is "do I have a hull worth keeping?" If the answer is yes, repower wins on the math nearly every time. A Mercury repower on a solid 15-year-old hull lands $20,000 to $35,000 CAD all-in for a typical setup, against $50,000 to $90,000 CAD for a comparable new boat package.
 
@@ -15259,6 +15267,10 @@ This is the emergency-then-prevention guide we'd give a customer who walks into 
 
 ## On the Water Right Now? Do This in This Order.
 
+![Outboard overheating emergency troubleshooting flowchart: starts with the alarm sounding, branches by whether the telltale stream is flowing, by RPM behaviour, and by whether the motor has been over-revving.](/lovable-uploads/diagram-overheating-troubleshooting.png)
+
+*If you only remember one thing from this article: when in doubt, shut it down. The diagram above is the conversation we have over the phone with customers who call from the lake.*
+
 ### 1. Throttle back to idle. Don't shut it off yet.
 
 Going from WOT straight to engine-off can do its own damage to a hot powerhead. Drop to idle first. Buy yourself 30 seconds to think.
@@ -16142,6 +16154,10 @@ This is how to find it, what it tells you, and what we can look up for you with 
 
 ## The Golden Rule
 
+![Diagram decoding the Mercury outboard serial number 1F60413GZ: country of origin (1 USA), family and HP (F60 FourStroke 60 HP), configuration code (413 remote electric power-trim), shaft variant (G), year code (Z 2023).](/lovable-uploads/diagram-mercury-serial-number-decoder.png)
+
+*Mercury serial numbers decode like vehicle VINs: country of origin, family + HP, configuration, shaft, and year code. Use yours for parts ordering, warranty, and recall lookups.*
+
 Two identical-looking Mercury 90 HP FourStrokes can use **completely different parts** depending on which serial number range they fall into. Mercury revises components mid-year, mid-production-run, even mid-month. The serial is the only thing that says exactly which version you have.
 
 If you're ordering parts, planning service, checking warranty, or looking up bulletins, start with the serial.
@@ -16355,6 +16371,10 @@ This is the schedule we'd walk through with any new Mercury owner who walks into
 ---
 
 ## Why the Three-Milestone Framework Exists
+
+![Horizontal timeline showing Mercury outboard service intervals: 20-hour break-in, 100-hour annual service, 300-hour major service.](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
+
+*Mercury's official 20/100/300 service intervals visualized. The 100-hour annual is the one most owners need to lock into the calendar.*
 
 A new outboard isn't a finished product the day it leaves the factory. The first 10 hours are **break-in**, where rings seat against cylinder walls, gears mesh in for the first time, and metal particles wear off and end up in the oil. The next chunk of life is **routine operation**, where wear and exposure accumulate. Eventually you hit **major-service territory**, where rubber and consumables that have been quietly aging for years all need replacement at once.
 
@@ -18144,6 +18164,10 @@ Technically yes. In practice, Platinum dealers do most repowers because the work
 You've decided to repower. Maybe your old motor is on its last legs; maybe a fuel-system rebuild costs as much as a fresh new Mercury. Either way, you're in the GTA and need to figure out: **how does this actually work logistically when the dealer is 90 minutes away?**
 
 This is the version of that walkthrough we'd give a Toronto, Mississauga, Markham, or Hamilton boater calling about a repower. **We are not located in the GTA. We're in Gores Landing, Ontario, on Rice Lake, about 90 minutes east of central Toronto.** GTA boaters drive to us regularly because we're a Mercury Platinum dealer with transparent install pricing. The logistics are well-worn; here's how it goes.
+
+![Map of southern Ontario showing Harris Boat Works in Gores Landing on Rice Lake with a 90-minute drive radius covering Toronto's east end, the Kawarthas, Cobourg, Bowmanville, Peterborough, and Belleville.](/lovable-uploads/diagram-hbw-service-area-map.png)
+
+*Where our customers come from. The 90-minute drive radius covers most of the GTA east end, the Kawarthas, Northumberland, Durham, and Bay of Quinte.*
 
 ---
 
@@ -22379,6 +22403,476 @@ Or call the shop. The 40-60 HP class is a 10-minute conversation if you can tell
 - [Mercury Controls and Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario)
 - [Mercury Repower Cost in Ontario (2026 CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
 - [Pontoon HP Sizing Decision Tree](/blog/pontoon-hp-sizing-decision-tree-ontario)`,
+  },
+  {
+    slug: 'outboard-trade-in-value-ontario-hbw',
+    title: "What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)",
+    description: "What's your outboard worth on trade? How HBW evaluates outboard trades, what helps and hurts value, 2026 ranges by HP class, and how trade credit saves you HST on a repower.",
+    image: '/lovable-uploads/hero-mercury-40-vs-60-hp-comparison.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-09',
+    dateModified: '2026-05-09',
+    publishDate: '2026-05-09',
+    category: 'Buying Guide',
+    readTime: '~10 min read',
+    keywords: ["outboard trade-in value Ontario", "what is my Mercury outboard worth", "boat motor trade in value Canada", "trade in old outboard for repower", "outboard trade vs private sale"],
+    faqs: [
+      { question: "Will you take any outboard on trade, or only Mercury?", answer: "Any working outboard. We trade Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, and the older OMC models. Mercury and Yamaha get the strongest trade values because resale demand is highest. We've also taken older 2-strokes that won't run as parts credit, which is usually a few hundred dollars but at least gets the dead weight out of your shed." },
+      { question: "What about a non-running motor?", answer: "We still take it. The trade value drops to scrap-or-parts level (typically 10-25% of working value) but we'll come pick it up if you're trading toward a Mercury repower at HBW. Don't pay to dispose of an outboard, ever. Bring it to us." },
+      { question: "Can I get a trade quote before I commit to the repower?", answer: "Yes. Build a quote at mercuryrepower.ca with the trade-in step, or email photos to info@harrisboatworks.ca. We give a preliminary trade range with the repower quote, no commitment required. Final number is confirmed in person." },
+      { question: "Do I save HST on the trade-in amount?", answer: "Yes, in Ontario. The trade-in credit reduces the taxable amount on your new motor invoice, so you save 13% HST on the trade portion. On a $4,000 trade that's about $520 in actual cash savings versus selling privately. See the worked example above." },
+      { question: "What if my motor has higher hours than the ranges show?", answer: "We still trade it. The deduction widens past 1,000 hours but we don't apply a brick-wall cutoff. A 1,400-hour Yamaha F90 in good condition with documented service is still a worthwhile trade. A 1,400-hour neglected 2-stroke is usually parts-credit only." },
+      { question: "How long does the trade-in evaluation take?", answer: "About 20 minutes when you drop the motor off. We run it on a test stand, check compression, scan for fault codes (if SmartCraft-equipped), inspect the lower unit, and verify the hour reading. The number we email or quote in advance is preliminary; the in-person confirmation is final." },
+      { question: "What about boat trade-ins (whole boat + motor package)?", answer: "Different process. The boat side gets evaluated separately by our boat sales team. Motor portion follows the rules in this post. For pontoons and aluminum fishing boats up to 22 ft, we typically can take the whole package on trade. For larger fiberglass / sterndrive packages, we usually credit the motor and recommend a private listing for the hull." },
+      { question: "Does my old motor have to be running?", answer: "Preferred but not required. A motor that runs and starts cold gets full trade. A motor that runs but has a known issue gets a deduction equal to the repair estimate. A non-runner gets parts-credit pricing. Bring it either way; the alternative (paying to dispose of it) is worse." },
+    ],
+    content: `# What Is My Outboard Worth? How Trade-In Values Work at Harris Boat Works (2026)
+
+*Last reviewed: 2026-05-09*
+
+> **Quick answer:** A working Mercury or Yamaha 4-stroke under 1,000 hours typically trades for 30-50% of comparable used retail. Older 2-strokes and Evinrude / OMC motors trade for less or zero. The biggest factor is brand and condition, not just HP. Trade credit on a repower also saves you 13% Ontario HST on that portion of the invoice. Build a quote with trade at mercuryrepower.ca/quote/motor-selection.
+
+The first question in any repower conversation is "what about my old motor?" It's the right question. The trade-in conversation also unlocks **HST savings** on the repower invoice, which most customers don't realize until we walk them through it.
+
+This post is the answer we usually give over the phone, written down. We show you what we look at, what helps and hurts, the 2026 ranges by HP class, and how to get a real number before driving anywhere.
+
+---
+
+## How HBW Evaluates an Outboard Trade
+
+There's no magic blue book for outboards. Mercury, Yamaha, and the others publish dealer cost sheets but not a residual-value table. What we do, and what every honest dealer does, is look at five things.
+
+### 1. Brand
+Mercury and Yamaha hold value. Honda holds value but moves slower on resale. Suzuki and Tohatsu have followings but smaller. **Evinrude / OMC has effectively zero trade-in value** since BRP shut down outboard production in 2020. Parts are increasingly hard to source and many models are no longer supported by certified service. We won't punish you for it but we can't credit much against a working motor that nobody wants on resale.
+
+### 2. Hours
+On a Mercury or Yamaha 4-stroke, the curve looks like this (working motor, no major issues):
+- Under 200 hours → top of the range
+- 200-500 hours → solid mid-range
+- 500-1,000 hours → still trades, lower mid-range
+- 1,000-2,000 hours → low-end trade, sometimes parts-only
+- 2,000+ hours → usually parts-only or scrap
+
+Hours alone don't tell the story (a well-maintained 1,500-hour Yamaha can outrun a neglected 600-hour anything), but it's the first number we ask.
+
+### 3. Age and EFI generation
+Mercury 4-strokes built 2014 and later are SmartCraft-compatible and use the modern 14-pin connector. Anything older predates the connector standard, which means a buyer typically needs to swap controls and cabling to use the motor on a different boat. That hurts trade value because we factor in the next owner's install cost.
+
+### 4. Visible condition
+- Cowl condition (cracks, faded paint, missing decals)
+- Lower unit (corrosion, prop damage, skeg damage, oil weep)
+- Powerhead (corrosion on the block, oil leaks, broken zip ties from prior service)
+- Anode condition (consumed but present is fine; stripped-off shows neglect)
+
+We aren't grading museum pieces. A motor that looks like it's been used and serviced is fine. A motor that looks like it's been ignored for 5 winters is a different story.
+
+### 5. Service history
+A binder of service records adds 10-15% to most trades. It also makes it possible for us to **resell the motor with confidence**, which is the actual reason any dealer pays more for a documented trade.
+
+---
+
+## What Helps Value (Above Average)
+
+These add real money to the trade.
+
+- **Mercury or Yamaha** rather than Honda / Suzuki / Evinrude
+- **4-stroke** rather than 2-stroke (post-2010 the market shift is brutal)
+- **Under 500 hours** with documented hour reading (SmartCraft / Yamaha YDIS)
+- **Original Mercury / Yamaha rigging** still attached (controls, harness, gauges), which keeps it "drop-in" for the next owner
+- **Recent annual service** (current season is best, prior season is fine)
+- **Garaged or shrink-wrapped winters** rather than tarp-and-weep
+- **Stainless prop** rather than aluminum (about $300-$400 of value retained)
+- **Working power trim** with no leaks
+- **Smart digital instruments** (VesselView, SmartCraft Connect) bundled in
+
+---
+
+## What Hurts Value (Below Average)
+
+These are the deductions we have to make.
+
+- **Evinrude / OMC** anything (very limited resale market in 2026)
+- **2-stroke 50+ HP** (more market for vintage tillers under 25 HP than for big 2-strokes)
+- **Salt water history** (corrosion is rarely undone, even after freshwater flushing)
+- **Flood damage** (underwater submersion is usually game over for the powerhead)
+- **Over 1,000 hours** without documented service
+- **Cracked cowl, missing decals, evidence of prior collision damage**
+- **Aftermarket controls or rigging** that the next owner has to undo
+- **Oil weep at the lower unit seal** (usually a $400-$700 fix on someone's dime)
+- **Stale fuel that ran through the system** (varnish in the rails, expensive to clean)
+
+We don't penalize you twice. If the lower unit weeps and the cowl is cracked, you get one deduction for "general age," not two stacked hits.
+
+---
+
+## Trade-In vs Private Sale vs Scrap: Which Path?
+
+Three paths, three different numbers, three different headaches.
+
+| Path | Typical net | What you do | Risk |
+|---|---|---|---|
+| **Trade to HBW** | 30-50% of comparable used retail | Tell us about the motor, drop it off when you pick up the new one | None. Done in one transaction. |
+| **Private sale (Kijiji / Facebook)** | 60-80% of used retail | Photos, listing, tire-kickers, cash test, transfer paperwork | Scams, no-shows, weeks of effort, occasional disputes |
+| **Scrap / parts-out** | 5-15% of retail | Drop at metal yard or part out on Marketplace | Time, mess, you become a small business |
+
+The math case for trade is simple: trade = certain. Private = higher gross, lower net once you account for time, hassle, and the **HST you're not saving**.
+
+---
+
+## The HST Savings Most Customers Miss
+
+In Ontario, when you trade a motor against a repower at HBW, the **trade-in credit reduces the taxable amount of the new motor**. That's a 13% HST saving on whatever the trade is worth.
+
+Worked example. Say you're repowering an 18-foot aluminum with a Mercury 90 ELPT FourStroke ($14,812 dealer price), and we credit you $4,000 for your old Mercury 75 in good condition.
+
+| Line | Trade scenario | Private-sale scenario |
+|---|---|---|
+| New motor price | $14,812 | $14,812 |
+| Trade credit | -$4,000 | $0 |
+| Subtotal | $10,812 | $14,812 |
+| HST 13% | $1,406 | $1,926 |
+| Total to HBW | $12,218 | $16,738 |
+| Cash from selling old motor privately | n/a | $5,000 (assume) |
+| **Net cost to you** | **$12,218** | **$11,738** |
+
+In this example the private sale wins by about $480, but only if you actually sell privately for $5,000 and it doesn't take three weekends and a cash dispute. Drop the private sale to $4,500 and trade wins. Drop it to $4,000 and trade wins by a lot. Most customers find the private sale grind isn't worth the modest delta once they price their own time.
+
+The point: **trade is competitive on net cost with private sale**, not just easier. Talk to us before you list.
+
+---
+
+## 2026 Trade-In Ranges (Ontario, CAD)
+
+Real ranges we're paying for working, freshwater, documented Mercury or Yamaha 4-strokes in 2026. These are starting points; final number depends on the five factors above.
+
+| HP class | Age 0-5 yrs, low hrs | Age 5-10 yrs, mid hrs | Age 10-15 yrs, higher hrs |
+|---|---|---|---|
+| **9.9-15 HP kicker** | $1,800-$3,000 | $1,200-$2,000 | $600-$1,200 |
+| **25-30 HP** | $2,500-$4,000 | $1,500-$2,800 | $800-$1,600 |
+| **40-50 HP** | $3,500-$5,500 | $2,200-$3,800 | $1,200-$2,200 |
+| **60-75 HP** | $5,000-$7,500 | $3,200-$5,200 | $1,800-$3,200 |
+| **90-115 HP** | $7,000-$10,500 | $4,500-$7,500 | $2,500-$4,500 |
+| **150-200 HP** | $9,500-$14,500 | $6,500-$10,500 | $4,000-$7,000 |
+| **225-300 HP V6** | $13,000-$19,000 | $9,000-$14,500 | $5,500-$10,000 |
+
+Numbers are CAD, before HST, for working motors with no major issues. Add 10-15% for documented service binders. Subtract 20-40% for non-Mercury / non-Yamaha. Subtract 50%+ for Evinrude / OMC. **Final numbers are confirmed in person** after we see and run the motor.
+
+---
+
+## How to Get a Real Number Before You Visit
+
+Two paths.
+
+### 1. Build a quote with trade at mercuryrepower.ca
+
+The [quote builder](/quote/motor-selection) has a trade-in assessment step. You enter the make, model, year, hours, and condition. It generates a preliminary trade range and an all-in repower number. Three minutes, no phone call, no commitment.
+
+### 2. Email us photos
+
+Send 6-8 photos to [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca):
+- Cowl front and both sides
+- Powerhead with cowl off
+- Lower unit (both sides)
+- Prop close-up
+- Hour-meter reading
+- Any service receipts you have
+
+We reply within one business day with a preliminary trade range and a repower quote that includes it. **No phone tag, no "call for pricing".**
+
+---
+
+## Why HBW Is Honest About This
+
+We've been on Rice Lake since 1947 and a Mercury dealer since 1965. Most of our repower customers have been with us for 10+ years. **The number we give you on trade is a number we can defend with our service writers and resale operations.** We can't gold-plate it because we have to actually move the motor afterward, and we can't lowball it because you'd notice and walk.
+
+We also publish all our [Mercury pricing live](https://mercuryrepower.ca/pricing-reference) so you can see the new-motor side of the transaction without a phone call. Most Ontario dealers don't.
+
+The whole point of [why dealers hide prices online](/blog/why-mercury-dealers-hide-prices-online), and why some are still cagey about trade-in numbers, is that information asymmetry favors them. We've decided to compete the other way.
+
+---
+
+## Frequently Asked Questions
+
+**Will you take any outboard on trade, or only Mercury?**
+Any working outboard. We trade Mercury, Yamaha, Honda, Suzuki, Tohatsu, Evinrude, and the older OMC models. Mercury and Yamaha get the strongest trade values because resale demand is highest. We've also taken older 2-strokes that won't run as parts credit, which is usually a few hundred dollars but at least gets the dead weight out of your shed.
+
+**What about a non-running motor?**
+We still take it. The trade value drops to scrap-or-parts level (typically 10-25% of working value) but we'll come pick it up if you're trading toward a Mercury repower at HBW. Don't pay to dispose of an outboard, ever. Bring it to us.
+
+**Can I get a trade quote before I commit to the repower?**
+Yes. Build a quote at mercuryrepower.ca with the trade-in step, or email photos to info@harrisboatworks.ca. We give a preliminary trade range with the repower quote, no commitment required. Final number is confirmed in person.
+
+**Do I save HST on the trade-in amount?**
+Yes, in Ontario. The trade-in credit reduces the taxable amount on your new motor invoice, so you save 13% HST on the trade portion. On a $4,000 trade that's about $520 in actual cash savings versus selling privately. See the worked example above.
+
+**What if my motor has higher hours than the ranges show?**
+We still trade it. The deduction widens past 1,000 hours but we don't apply a brick-wall cutoff. A 1,400-hour Yamaha F90 in good condition with documented service is still a worthwhile trade. A 1,400-hour neglected 2-stroke is usually parts-credit only.
+
+**How long does the trade-in evaluation take?**
+About 20 minutes when you drop the motor off. We run it on a test stand, check compression, scan for fault codes (if SmartCraft-equipped), inspect the lower unit, and verify the hour reading. The number we email or quote in advance is preliminary; the in-person confirmation is final.
+
+**What about boat trade-ins (whole boat + motor package)?**
+Different process. The boat side gets evaluated separately by our boat sales team. Motor portion follows the rules in this post. For pontoons and aluminum fishing boats up to 22 ft, we typically can take the whole package on trade. For larger fiberglass / sterndrive packages, we usually credit the motor and recommend a private listing for the hull.
+
+**Does my old motor have to be running?**
+Preferred but not required. A motor that runs and starts cold gets full trade. A motor that runs but has a known issue gets a deduction equal to the repair estimate. A non-runner gets parts-credit pricing. Bring it either way; the alternative (paying to dispose of it) is worse.
+
+---
+
+## Ready to Find Out What Yours Is Worth?
+
+Build a quote in three minutes at our online configurator. The trade-in step gives you a preliminary number and an all-in repower price in CAD before HST.
+
+Or call the shop. We'll talk through your motor in 5 minutes and tell you whether it's worth bringing in.
+
+**Phone:** 905-342-2153
+**Email:** [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca)
+**Configurator:** [mercuryrepower.ca/quote/motor-selection](https://mercuryrepower.ca/quote/motor-selection)
+**Live Mercury pricing:** [mercuryrepower.ca/pricing-reference](https://mercuryrepower.ca/pricing-reference)
+
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON, K0K 2E0
+
+**Related guides:**
+- [Ontario Mercury Outboard Price Guide (2026)](/blog/ontario-mercury-outboard-price-guide)
+- [Mercury Repower Cost in Ontario (2026 CAD)](/blog/mercury-repower-cost-ontario-2026-cad)
+- [Mercury Controls and Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario)
+- [Used Outboard Buying Guide (Ontario)](/blog/used-outboard-buying-guide-ontario)
+- [Why Most Mercury Dealers Hide Their Prices Online](/blog/why-mercury-dealers-hide-prices-online)
+- [Pleasure Craft Licence Update After a Repower](/blog/pleasure-craft-licence-update-repower-ontario)`,
+  },
+  {
+    slug: 'mercury-smartcraft-connect-guide-ontario',
+    title: "Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)",
+    description: "Mercury SmartCraft Connect compatibility (2004+ and 40 HP+), what the Mercury app shows, install options at HBW, and whether it's worth adding to your motor.",
+    image: '/lovable-uploads/hero-mercury-controls-rigging-guide.png',
+    author: 'Jay Harris',
+    datePublished: '2026-05-09',
+    dateModified: '2026-05-09',
+    publishDate: '2026-05-09',
+    category: 'Mercury Outboards',
+    readTime: '~11 min read',
+    keywords: ["Mercury SmartCraft Connect", "Mercury Marine app setup", "SmartCraft Connect compatibility", "VesselView Mobile vs SmartCraft Connect", "SmartCraft Connect Mobile install"],
+    faqs: [
+      { question: "Does my new Mercury come with SmartCraft Connect Mobile?", answer: "No. New Mercury motors are SmartCraft-network-equipped (on most 40 HP and larger models from 2004 onward, and on 25-30 HP from 2022 onward), but the SmartCraft Connect module that talks to your phone is sold separately. It's part number 8M0173128 (single-engine) or 8M0173129 (1-4 engines). Plan to buy and install it if you want app data." },
+      { question: "My Mercury is 9.9 HP. Can I add SmartCraft Connect?", answer: "No. Mercury outboards under 25 HP are not SmartCraft-equipped. There's no internal data network for the module to plug into. Sub-25 HP motors are mechanical and analog by design." },
+      { question: "My Mercury is a 30 HP from 2018. Is it compatible?", answer: "No. The 25 HP and 30 HP class only became SmartCraft-compatible on model year 2022 and newer. A 2018 30 HP doesn't have the network onboard. Confirm with your serial number at HBW if unsure." },
+      { question: "Does the Mercury Marine app cost anything?", answer: "The app itself is free on iOS and Android. The module (8M0173128 or 8M0173129) is the paid component. There's no subscription fee." },
+      { question: "Can I install the module myself?", answer: "Yes, if you're comfortable working under the cowl and identifying the SmartCraft service connector. Most owners can do it in 30 minutes with basic hand tools. If you're not sure, we'll install it at HBW for a fixed fee." },
+      { question: "Will SmartCraft Connect work with my Garmin chartplotter?", answer: "The module talks to your phone, not directly to a chartplotter. For chartplotter integration, you need a separate NMEA 2000 gateway that takes Mercury SmartCraft data and converts it to NMEA 2000. Most modern Mercury 4-strokes have this connection available; ask us before you buy a gateway." },
+      { question: "What's the difference between SmartCraft Connect and VesselView Mobile?", answer: "Same idea, different generations. VesselView Mobile is the older Mercury phone-app product. SmartCraft Connect Mobile is the current product line. New installs in 2026 should use SmartCraft Connect. If you have an old VesselView Mobile install that still works, you don't need to upgrade unless you want the newer features." },
+      { question: "How do I check if my motor is Boost-eligible?", answer: "The Mercury Marine app shows Boost eligibility once SmartCraft Connect is paired with your motor. As of 2026, Boost is available on select Mercury 150 HP FourStroke models with more rolling out. We can also check eligibility at HBW from our diagnostic tools, just give us your serial number." },
+    ],
+    content: `# Mercury SmartCraft Connect: What It Does, Who Needs It, and How HBW Sets It Up (2026)
+
+*Last reviewed: 2026-05-09*
+
+> **Quick answer:** SmartCraft Connect Mobile is a small under-cowl module that streams engine data to the Mercury Marine app on your phone. It is **not** in the box with a new motor. It works on Mercury 4-strokes from model year 2004 forward, 40 HP and up (25/30 HP only on 2022+). Sub-25 HP motors are not compatible. Module part 8M0173128 (single) or 8M0173129 (multi). Install at HBW.
+
+If you've read the spec sheet on a new Mercury and seen "SmartCraft compatible," you might think the phone-app feature ships with the motor. It doesn't. SmartCraft Connect Mobile is a separately purchased module that adds wireless connectivity to a Mercury that already has the SmartCraft data network on board. This post is what we wish every customer knew before they ask "where's the app?"
+
+We sell SmartCraft Connect modules at HBW. We install them. We've seen which motors are compatible and which ones aren't. Here's the honest version.
+
+---
+
+## What SmartCraft Connect Mobile Actually Is
+
+It's a **small module** that plugs into the SmartCraft network already built into compatible Mercury motors. The module pairs with your phone over Bluetooth and Wi-Fi and streams real-time engine data into the **Mercury Marine app** (free, iOS and Android).
+
+What you see on the phone:
+- Engine RPM
+- Fuel rate (gallons per hour) and total fuel used per session
+- Engine temperature and coolant pressure
+- Battery voltage
+- Engine hours (lifetime and trip)
+- Fault codes when they occur, with plain-English explanations
+- Boost upgrade eligibility (for compatible models)
+- Maintenance reminders
+
+What it is **not**:
+- A chartplotter replacement (it doesn't do navigation)
+- A SmartCraft Gauge (the in-dash digital tachometer, separate product)
+- VesselView Mobile (older, similar product, being superseded)
+- A Boost upgrade itself (it lets you check eligibility, not buy it)
+
+The module is roughly the size of a deck of cards and lives under the cowl on a single-engine boat, or under the helm on a multi-engine boat. **You will not see it from the helm.** You will see its output in the app on your phone.
+
+---
+
+## Compatibility: Who Can Add SmartCraft Connect Mobile
+
+This is the section that gets misunderstood most often. The Mercury spec is precise.
+
+| Motor class | Compatible? |
+|---|---|
+| **Mercury FourStroke 40 HP+** (model year 2004 onward) | **Yes**, most common installation |
+| **Mercury Pro XS 115 HP+** (model year 2004 onward) | Yes |
+| **Mercury Verado** (any year currently in service) | Yes |
+| **Mercury SeaPro 40 HP+** (model year 2004 onward) | Yes |
+| **Mercury 25 HP and 30 HP** | Only on **model year 2022 and newer** |
+| **Mercury Avator electric** | Yes (different module integration, ask) |
+| **Mercury 9.9-20 HP small portables** | **No**, not SmartCraft-equipped |
+| **Pre-2004 Mercury 4-strokes** | No |
+| **Mercury 2-strokes** | No |
+| **Mercury Optimax (older 2-stroke)** | No (uses different protocol) |
+
+**The most common mistake:** assuming a new portable kicker (like a 9.9 MH) supports the app. It doesn't. There's no SmartCraft network on those motors to plug into.
+
+If you're not sure about your motor, the cleanest check is your **serial number**. Email it to [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca) and we'll confirm in one reply.
+
+---
+
+## Module Part Numbers
+
+There are two variants. Pick the one that matches your boat:
+
+| Part number | Description | Best for |
+|---|---|---|
+| **8M0173128** | Under-cowl single-engine module | One Mercury outboard |
+| **8M0173129** | Under-helm 1-to-4 engine module | Multi-engine setups (twins, triples, quads) |
+
+Either way, the module is **purchased separately** from the motor. New Mercury buyers often expect the connectivity to be built in. It's not. Plan to add the module if you want phone-app data.
+
+Pricing is set by Mercury Canada and updates annually. Build a current quote with module included at [mercuryrepower.ca/quote/motor-selection](https://mercuryrepower.ca/quote/motor-selection) or call us.
+
+---
+
+## How It Compares to VesselView Mobile and SmartCraft Gauges
+
+Three Mercury connectivity products, often confused.
+
+### SmartCraft Connect Mobile (this product)
+Module + Mercury Marine app on your phone. Phone is the display. Newest, currently active product line.
+
+### VesselView Mobile (older sibling)
+Earlier-generation Mercury phone-app product, similar in function. Mercury is gradually transitioning to SmartCraft Connect Mobile, but VesselView Mobile still works on older installs. **Don't buy a new VesselView Mobile in 2026** if you have the option of SmartCraft Connect.
+
+### SmartCraft Gauges / VesselView dash displays
+Hardwired in-dash digital gauges that show the same data plus more. These are **separate hardware** (not the module) and serve customers who want a permanent dashboard display rather than relying on a phone. Pair well with SmartCraft Connect for a belt-and-suspenders setup.
+
+If you want one sentence: **SmartCraft Connect = phone display. VesselView dash = built-in display. They aren't either-or.**
+
+---
+
+## How It Integrates with Garmin, Humminbird, and Other Chartplotters
+
+Most modern chartplotters from Garmin and Humminbird can read Mercury engine data over the **NMEA 2000** network (the standard marine data protocol). SmartCraft Connect Mobile is an addition to that, not a replacement.
+
+Two integration paths:
+
+**Path A: via NMEA 2000.** If you have a NMEA 2000 backbone on your boat with a Mercury SmartCraft-to-NMEA gateway, your chartplotter already shows engine data on the navigation screen. SmartCraft Connect Mobile adds the phone-app layer on top, useful for guests, for tracking trips, and for fault diagnostics off the boat.
+
+**Path B: SmartCraft Connect alone.** No chartplotter, no NMEA 2000. The phone is the display. Cleanest setup for small fishing boats, kicker-rigged hulls, and budget-conscious customers who don't want to invest in a Garmin until later.
+
+For most Ontario freshwater boaters with a Mercury 60-115 HP and a basic Lowrance or Humminbird, **Path A is overkill** and SmartCraft Connect Mobile alone is the right answer.
+
+---
+
+## Install: DIY vs HBW
+
+The module installs in roughly 30 minutes on a single-engine boat. It plugs into the SmartCraft network harness, gets a 12V power tap, and lives under the cowl. **Mercury markets it as a customer-installable item.**
+
+In practice:
+
+**DIY-friendly if:** you've done basic electrical work on your boat, you're comfortable removing the cowl, and you know which connector on your motor's harness is the SmartCraft service port.
+
+**Bring it to HBW if:** you've never opened the cowl, you want the module integrated cleanly with no loose wiring, you want app pairing tested and confirmed before you leave, or you want it on the warranty / service log for the rest of the motor's life.
+
+Our install fee is set up-front (call for current rate) and includes the module, the install, app pairing, and a brief on-boat walkthrough. We've done dozens of these. **The most common DIY mistake** is missing the SmartCraft service connector and instead splicing into the analog tach signal, which doesn't work and creates a confusing failure mode.
+
+---
+
+## What the Mercury Marine App Looks Like in Practice
+
+Once paired, the app has three main views:
+
+1. **Live engine view:** RPM, speed, fuel rate, battery, temp, hours. Updates every second.
+2. **Trip log:** start/stop a trip, see distance, fuel used, average speed. Useful for season-end fuel cost reckoning.
+3. **Health and faults:** current fault codes (if any), maintenance schedule, hour-based reminders.
+
+The app also stores trip history and surfaces **proactive maintenance alerts**. For example, when the motor crosses 100 hours since the last logged service, it nudges you to book annual service. Customers who use the app actually keep up with maintenance better than customers who don't, which means fewer mid-season breakdowns and longer motor life.
+
+---
+
+## Boost Upgrade Eligibility (for compatible Mercury models)
+
+Mercury Boost is a paid software upgrade that bumps horsepower on certain models without changing the physical hardware. SmartCraft Connect lets you **check eligibility** for Boost from the app, see the price, and (on supported models) purchase and apply the upgrade through the dealer network.
+
+**Currently Boost-eligible** (as of 2026): select Mercury 150 HP FourStroke models, with potential expansion to other classes. Eligibility is motor-by-motor, depends on serial number and current calibration. The app gives you a definitive answer in seconds. We've also written a [Mercury Boost upgrade analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis) for pontoon owners.
+
+You don't need SmartCraft Connect Mobile to buy Boost. You can also walk into HBW and we'll check eligibility from our diagnostic tools. The app just makes it self-serve.
+
+---
+
+## Why Rice Lake and the Kawarthas Find SmartCraft Connect Useful
+
+This is local but real: a lot of our customers have **multiple boats and one phone**. A summer aluminum on Rice Lake, a kicker-rigged Lund at the cottage on Stoney, maybe a pontoon on Pigeon. The same phone, the same Mercury app, can pair with whichever motor you're on at the moment.
+
+For boaters who **lock through the Trent-Severn**, the trip-log feature is a small joy. You finish a Rice-to-Peterborough run, the app shows you exactly how much fuel and how many hours, and you have a record. For [Trent-Severn 2026 trip planning](/blog/trent-severn-waterway-boating-guide-2026), this kind of accurate data is genuinely useful.
+
+For Rice Lake ProKicker setups, the engine-hour tracking on the kicker is the killer feature. Trolling hours otherwise vanish into "I think we've done about 50 hours this season." The app says **47.3**.
+
+---
+
+## What HBW Brings Specifically
+
+We've been on Rice Lake since 1947 and a Mercury dealer since 1965. SmartCraft Connect Mobile is one of the easier Mercury add-ons we sell, and we install it at every repower where the customer wants it.
+
+- We stock both module variants (8M0173128 and 8M0173129).
+- We install during repower so the customer drives away with the app already paired and tested.
+- We confirm compatibility against your motor's serial number before you commit, so nobody gets sold a module that won't work on a sub-25 HP kicker.
+- We answer Mercury app setup questions for the life of the motor, not just at sale.
+
+If you're repowering, building a quote at [mercuryrepower.ca](https://mercuryrepower.ca) lets you add the module to the line item and we install it as part of rigging.
+
+---
+
+## Frequently Asked Questions
+
+**Does my new Mercury come with SmartCraft Connect Mobile?**
+No. New Mercury motors are SmartCraft-network-equipped (on most 40 HP and larger models from 2004 onward, and on 25-30 HP from 2022 onward), but the SmartCraft Connect **module** that talks to your phone is sold separately. It's part number 8M0173128 (single-engine) or 8M0173129 (1-4 engines). Plan to buy and install it if you want app data.
+
+**My Mercury is 9.9 HP. Can I add SmartCraft Connect?**
+No. Mercury outboards under 25 HP are not SmartCraft-equipped. There's no internal data network for the module to plug into. Sub-25 HP motors are mechanical and analog by design.
+
+**My Mercury is a 30 HP from 2018. Is it compatible?**
+No. The 25 HP and 30 HP class only became SmartCraft-compatible on **model year 2022 and newer**. A 2018 30 HP doesn't have the network onboard. Confirm with your serial number at HBW if unsure.
+
+**Does the Mercury Marine app cost anything?**
+The app itself is free on iOS and Android. The module (8M0173128 or 8M0173129) is the paid component. There's no subscription fee.
+
+**Can I install the module myself?**
+Yes, if you're comfortable working under the cowl and identifying the SmartCraft service connector. Most owners can do it in 30 minutes with basic hand tools. If you're not sure, we'll install it at HBW for a fixed fee.
+
+**Will SmartCraft Connect work with my Garmin chartplotter?**
+The module talks to your phone, not directly to a chartplotter. For chartplotter integration, you need a separate **NMEA 2000 gateway** that takes Mercury SmartCraft data and converts it to NMEA 2000. Most modern Mercury 4-strokes have this connection available; ask us before you buy a gateway.
+
+**What's the difference between SmartCraft Connect and VesselView Mobile?**
+Same idea, different generations. VesselView Mobile is the older Mercury phone-app product. SmartCraft Connect Mobile is the current product line. New installs in 2026 should use SmartCraft Connect. If you have an old VesselView Mobile install that still works, you don't need to upgrade unless you want the newer features.
+
+**How do I check if my motor is Boost-eligible?**
+The Mercury Marine app shows Boost eligibility once SmartCraft Connect is paired with your motor. As of 2026, Boost is available on select Mercury 150 HP FourStroke models with more rolling out. We can also check eligibility at HBW from our diagnostic tools, just give us your serial number. See our [Mercury Boost upgrade analysis](/blog/mercury-boost-upgrade-150hp-pontoon-analysis) for details on whether the upgrade makes sense for your boat.
+
+---
+
+## Ready to Add SmartCraft Connect to Your Motor?
+
+Two paths.
+
+1. **Repower customers:** add the module to your quote at [mercuryrepower.ca/quote/motor-selection](https://mercuryrepower.ca/quote/motor-selection) and we install it during rigging. Most customers add it at the same time as the new motor.
+2. **Existing motor owners:** call us with your serial number and we'll confirm compatibility, quote the module, and book an install slot. About 30 minutes in the shop.
+
+**Phone:** 905-342-2153
+**Email:** [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca)
+**Configurator:** [mercuryrepower.ca/quote/motor-selection](https://mercuryrepower.ca/quote/motor-selection)
+
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON, K0K 2E0
+
+**Related guides:**
+- [Mercury Outboard Motor Families (FourStroke vs Pro XS vs Verado)](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado)
+- [Mercury Boost Upgrade Analysis (150 HP Pontoon)](/blog/mercury-boost-upgrade-150hp-pontoon-analysis)
+- [Mercury Maintenance Intervals: The 20/100/300 Rule](/blog/mercury-maintenance-intervals-20-100-300-rule)
+- [Mercury Controls and Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario)
+- [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)`,
   },
 ];
 

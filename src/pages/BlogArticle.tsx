@@ -294,7 +294,7 @@ export default function BlogArticle() {
             </p>
             <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-repower-navy-900/10">
               <div className="flex items-center gap-4 text-sm text-repower-navy-900/60 flex-wrap">
-                <AuthorByline />
+                <AuthorByline name={article.author} />
                 <span className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
                   {parseLocalDate(article.datePublished).toLocaleDateString('en-US', {
@@ -319,6 +319,9 @@ export default function BlogArticle() {
               />
             </div>
           </header>
+
+          {/* Author byline card (above body content) */}
+          <AuthorByline name={article.author} variant="card" className="mb-8" />
 
           {/* Featured Image */}
           <div className="aspect-[16/9] overflow-hidden rounded-lg bg-repower-paper border border-repower-navy-900/10 mb-10">
