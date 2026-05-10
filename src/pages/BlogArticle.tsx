@@ -348,6 +348,9 @@ export default function BlogArticle() {
             )}
           </div>
 
+          {/* Language switcher */}
+          <LanguageSwitcher currentLang="en" />
+
           {/* Dealer credentials strip */}
           <DealerConfidenceStrip />
 
