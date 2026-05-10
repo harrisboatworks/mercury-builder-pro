@@ -1511,6 +1511,12 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+## What We See at HBW
+
+A few patterns we see on Rice Lake ProKicker installs at HBW. The 9.9 ELHPT is the most common spec, electric start with hand tiller and power tilt. Stainless prop with weed guard outlasts aluminum on the south-shore weed beds by a factor of 2-3x. Customers who skip annual service on the kicker (because "it's just for trolling") end up replacing the impeller mid-season; the kicker runs more hours than the main on a typical fishing day. The factory mounting bracket from Mercury fits most aluminum fishing transoms, but custom brackets are common on bass-boat applications. Annual service on the kicker is the same cost as on the main; budget for both.
+
+---
+
 ## FAQ
 
 **Do I need a kicker motor for Rice Lake fishing?**
