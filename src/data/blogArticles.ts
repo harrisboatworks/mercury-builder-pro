@@ -5774,8 +5774,6 @@ We rig both setups all the time. Specifically:
 - **Service for both**, annual on the kicker (oil, impeller, plugs) and battery health checks on the electric
 
 Book at [hbw.wiki/service](https://hbw.wiki/service) or quote a new ProKicker at [mercuryrepower.ca](https://mercuryrepower.ca).
-
-{/* TODO: Add customer story for electric-trolling-motor-kicker-guide */}
     `,
     faqs: [
       {
