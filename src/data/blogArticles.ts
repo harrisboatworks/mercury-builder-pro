@@ -1511,6 +1511,12 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+## What We See at HBW
+
+A few patterns we see on Rice Lake ProKicker installs at HBW. The 9.9 ELHPT is the most common spec, electric start with hand tiller and power tilt. Stainless prop with weed guard outlasts aluminum on the south-shore weed beds by a factor of 2-3x. Customers who skip annual service on the kicker (because "it's just for trolling") end up replacing the impeller mid-season; the kicker runs more hours than the main on a typical fishing day. The factory mounting bracket from Mercury fits most aluminum fishing transoms, but custom brackets are common on bass-boat applications. Annual service on the kicker is the same cost as on the main; budget for both.
+
+---
+
 ## FAQ
 
 **Do I need a kicker motor for Rice Lake fishing?**
@@ -3225,13 +3231,13 @@ A 17 to 19 ft fiberglass runabout from the 1990s or 2000s, used for family tubin
 
 ### "The pontoon at the cottage"
 
-An 18 to 22 ft pontoon used for sunset cruises, fishing with the kids, and the occasional tube ride. Motor is original from when the pontoon was bought (often 10 to 15 years old).
+An 18 to 22 ft pontoon used for sunset cruises, fishing with the kids, and the occasional tube ride. Motor is original from when the pontoon was bought (often 10 to 15 years old). For a Rice Lake-specific take on cottage pontoon use, see [Best Pontoon Boats for Rice Lake Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use).
 
 **Typical repower:** Mercury 115 HP Command Thrust FourStroke. Total $20,000 to $25,000 CAD all-in. Command Thrust matters on pontoons.
 
 ### "The cottage tin boat"
 
-A 14 to 16 ft tin boat with a tiller motor, used for solo fishing or quick lake runs. Motor has been getting harder to start and parts are scarce.
+A 14 to 16 ft tin boat with a tiller motor, used for solo fishing or quick lake runs. Motor has been getting harder to start and parts are scarce. For the 40 vs 60 HP step-up math common in cottage tender repowers, see [Mercury 40 vs 60 HP Outboard Ontario](/blog/mercury-40-vs-60-hp-outboard-ontario).
 
 **Typical repower:** Mercury 25 to 40 HP tiller. Total $4,000 to $11,000 CAD all-in. Smaller cottage boats are simpler repowers.
 
@@ -3418,6 +3424,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** For Rice Lake fishing, walleye, musky, panfish, most boats are happy with a Mercury 25-90 FourStroke as main power and a 9.9 ProKicker for trolling. Stay inside the capacity plate. Rice Lake's shallow, weedy structure rewards manoeuvrability over top speed. Build a real kicker-and-main package at mercuryrepower.ca.
+
+> **Confirm regulations directly.** This post references FMZ 17 fishing rules for Rice Lake. Seasons and exceptions can change. Verify current rules at [ontario.ca/page/recreational-fishing-regulations](https://www.ontario.ca/page/recreational-fishing-regulations) before retaining any fish.
 
 The classic Rice Lake, Ontario (in the Kawarthas) fishing setup is a 16 to 18 ft aluminum console boat with a Mercury 60 to 115 HP main motor and a 9.9 ProKicker for trolling. The lake is shallow, weedy in summer, and known for walleye, smallmouth bass, and muskie. Wind builds across Sugar Island in the afternoon. The right Mercury fits the lake, the boat, and the way you fish here. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -5647,6 +5655,8 @@ If you run a commercial boat operation in the Kawarthas, Trent-Severn, or anywhe
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Mercury portables run 2.5 to 20 HP, light enough to carry, simple enough to maintain. The 9.9 is the most popular kicker; the 5 is the canoe-and-tender favourite. All current portables are FourStroke. Tiller, electric or manual start, and short or long shaft are the key choices. Configure at mercuryrepower.ca.
+
+Mercury's portable outboard lineup (2.5 HP through 25 HP) updates by model year. Verify exact horsepower, weight, and feature availability at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) or call us; the specs below reflect the spring 2026 lineup.
 
 Mercury portable outboards (2.5 to 20 HP) are tiller motors built for small boats: 8 to 14 ft tin boats, dinghies, sailboats as auxiliary, kicker motors on bigger boats. The Mercury 9.9 MH is the most popular small-boat motor in Canada. Drop-in install, no rigging required, easy to transport and store. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -9696,6 +9706,14 @@ If you're curious about whether an Avator fits your situation, [talk to us](/con
 - Your expectations for speed and range
 
 Then we'll give you a frank recommendation on gas, electric, or a hybrid of both. You can also [explore motor options and pricing in our quote builder](/quote/motor-selection).
+
+## Interested in Avator?
+
+Mercury Avator is a special-order item with availability and pricing that updates frequently. We don't list pricing live for Avator the way we do for FourStroke and Pro XS. For a current quote, contact us with your boat type and use case.
+
+**Phone:** 905-342-2153
+**Email:** [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca)
+**Build a quote on the configurator:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) (Avator availability checked manually after submission)
 
 **See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
@@ -15222,6 +15240,13 @@ Book an inspection at [hbw.wiki/service](https://hbw.wiki/service).
 If you're already at the point where the math on used doesn't work, we can tell you that too. New Mercury pricing is on [mercuryrepower.ca](https://mercuryrepower.ca), and the configurator there will give you a real number in about 90 seconds. Sometimes a 10-year-old 90 HP isn't worth $4,500. Sometimes it absolutely is. Knowing which one you're looking at is the whole game.
 
 ---
+
+## Considering a Used Outboard? Get a Pre-Purchase Inspection.
+
+Before you commit to a used Mercury, Yamaha, or Honda, an HBW pre-purchase inspection catches the issues that don't show up on a test run. We check compression, cooling system function, fault codes, lower unit health, and visible corrosion. Booked online; typically completed within 3-5 business days of drop-off.
+
+**Book inspection:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
 ## Frequently Asked Questions
 
