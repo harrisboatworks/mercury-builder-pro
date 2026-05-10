@@ -9697,6 +9697,14 @@ If you're curious about whether an Avator fits your situation, [talk to us](/con
 
 Then we'll give you a frank recommendation on gas, electric, or a hybrid of both. You can also [explore motor options and pricing in our quote builder](/quote/motor-selection).
 
+## Interested in Avator?
+
+Mercury Avator is a special-order item with availability and pricing that updates frequently. We don't list pricing live for Avator the way we do for FourStroke and Pro XS. For a current quote, contact us with your boat type and use case.
+
+**Phone:** 905-342-2153
+**Email:** [info@harrisboatworks.ca](mailto:info@harrisboatworks.ca)
+**Build a quote on the configurator:** [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) (Avator availability checked manually after submission)
+
 **See also:** [Best Mercury Outboard for Aluminum Fishing Boats (2026 Guide)](/blog/best-mercury-outboard-aluminum-fishing-boats) and [Best Mercury Outboard for Pontoon Boats: 2026 Buyer's Guide](/blog/best-mercury-outboard-pontoon-boats).
 
 ## Related guides
