@@ -1752,7 +1752,7 @@ HBW is more than a sales counter. We are a full-service marina:
 - **Mercury sales and service** (the core business)
 - **Legend Boats sales** (we are also a Legend dealer)
 - **Boat hauling** for Rice Lake and Kawartha customers
-- **Indoor and outdoor storage** through winter
+- **Outdoor winter storage and shrinkwrap** with proper winterization
 - **Winterization and spring commissioning** services
 - **Used boat sales and trade-ins**
 - **Pleasure Craft Licence (PCL) administration** for repower customers
@@ -1883,7 +1883,7 @@ Some non-Mercury service we handle. Our parts inventory and tooling are Mercury-
 Yes. Mercury Repower Financing at 7.99% APR for qualified buyers. We process applications in-shop. See our [Mercury financing guide](/blog/mercury-outboard-financing-ontario-2026).
 
 **Does HBW offer storage?**
-Yes. Indoor and outdoor storage available through winter. Pricing varies by boat size and storage tier. [Contact us](/contact) for specifics.
+Yes. HBW offers outdoor winter storage with shrinkwrap and proper winterization. We do not offer on-site indoor storage. If indoor storage is the right fit for your boat, we can talk through options and point you in the right direction.
 
 **Does HBW pick up boats?**
 For Rice Lake and local Kawartha customers, yes. Hauling and full marina services are available. [Contact us](/contact) for hauling quotes.
@@ -1935,7 +1935,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Does HBW offer storage?',
-        answer: 'Yes. Indoor and outdoor storage available through winter. Pricing varies by boat size and storage tier. [Contact us](/contact) for specifics.'
+        answer: 'Yes. HBW offers outdoor winter storage with shrinkwrap and proper winterization. We do not offer on-site indoor storage. If indoor storage is the right fit for your boat, we can talk through options and point you in the right direction.'
       },
       {
         question: 'Does HBW pick up boats?',
@@ -2440,7 +2440,9 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 
 > **Quick answer:** Command Thrust uses a larger gearcase and prop than the standard FourStroke at the same horsepower. On a loaded pontoon or a heavy aluminum hull, that means faster planing, better mid-range torque, and less working the throttle. The premium is small relative to the gain. See pricing at mercuryrepower.ca.
 
-Mercury Command Thrust is the gearcase option that turns a "good" pontoon Mercury into a "great" one. It is not a separate motor family. It is a gearcase upgrade available on Mercury FourStroke 115 HP and up. The bigger gearcase, larger prop, and torque-tuned gear ratio give pontoons meaningful hole shot and load-handling improvement. The cost premium over standard is worth it on pontoons. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Mercury Command Thrust is the gearcase option that turns a "good" pontoon Mercury into a "great" one. It is not a separate motor family. It is a gearcase option available on select Mercury models, including common pontoon-friendly sizes below and above 115 HP.
+
+The bigger gearcase, larger prop, and torque-tuned ratio give pontoons meaningful hole shot and load-handling improvement. The cost premium over standard is usually worth it on pontoons, especially when the boat is loaded with people, fuel, coolers, and cottage gear. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -2450,7 +2452,7 @@ The Command Thrust math works on pontoons because pontoons are heavy, blunt-fron
 
 ## What Command Thrust actually is
 
-Command Thrust is a Mercury gearcase variant available on most Mercury FourStrokes 115 HP and up (also 150 Pro XS V6 and Verado where applicable). The differences from the standard gearcase:
+Command Thrust is a Mercury gearcase variant available on select Mercury FourStroke, ProKicker, Pro XS, and related high-thrust applications. For HBW customers, the common decision points are usually 60 CT, 90 CT, 115 CT, and larger pontoon or heavy-hull setups. The differences from the standard gearcase:
 
 - **Larger gearcase nose.** More volume displaced under load, less cavitation in heavy boats.
 - **Larger prop diameter.** The bigger gearcase fits a bigger prop, which moves more water per revolution.
@@ -2593,7 +2595,7 @@ Typically $500 to $1,500 CAD over the standard gearcase at the same HP, dependin
 No. Command Thrust gearcases require Command Thrust props. The larger diameter, different geometry, and different hub design are not compatible with standard props.
 
 **Is Command Thrust available on all Mercury motors?**
-On FourStroke 115 HP and up. Some Mercury Pro XS and Verado motors also have Command Thrust variants. Below 115 HP, the standard gearcase is the only option.
+No. Command Thrust is not available on every Mercury motor, but it is available on select high-thrust models below and above 115 HP. For pontoon customers, the important options are usually 60 CT, 90 CT, 115 CT, and larger CT-style setups. The right answer depends on the exact motor family, shaft length, gearcase, and hull.
 
 **Does Command Thrust hurt top speed?**
 Slightly, yes. The torque-tuned ratio trades some top end for hole shot and pulling power. Top speed differences are typically 2 to 5 mph compared to standard gearcase. On pontoons, this is the right trade. On bass boats, it usually is not.
@@ -2605,7 +2607,7 @@ On heavy boats running at lower planing speeds (typical pontoon use), yes. The l
 For aluminum console fishing boats under 18 ft, standard gearcase is fine. For 18+ ft deep-V aluminum or heavy fishing rigs with full gear, Command Thrust gives meaningful improvement. We assess per boat.
 
 **Can I retrofit Command Thrust to my existing Mercury motor?**
-Yes. The gearcase can be swapped on most Mercury FourStrokes 115 HP and up. The cost includes the new gearcase, new prop, and labor. Sometimes worth doing as a separate project; usually most cost-effective during a planned repower.
+Sometimes. A Command Thrust conversion depends on the exact motor, gearcase, shaft length, controls, prop, and whether the swap makes financial sense. In most cases, it is cleaner and more cost-effective to choose the right gearcase during a planned repower. The cost includes the new gearcase, new prop, and labor. Sometimes worth doing as a separate project; usually most cost-effective during a planned repower.
 
 **Will Command Thrust work with my existing rigging?**
 Yes in most cases. The motor mounting, throttle, shift, and steering systems are the same. The gearcase is below the powerhead and does not affect rigging compatibility.
@@ -2643,7 +2645,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Is Command Thrust available on all Mercury motors?',
-        answer: 'On FourStroke 115 HP and up. Some Mercury Pro XS and Verado motors also have Command Thrust variants. Below 115 HP, the standard gearcase is the only option.'
+        answer: 'No. Command Thrust is not available on every Mercury motor, but it is available on select high-thrust models below and above 115 HP. For pontoon customers, the important options are usually 60 CT, 90 CT, 115 CT, and larger CT-style setups. The right answer depends on the exact motor family, shaft length, gearcase, and hull.'
       },
       {
         question: 'Does Command Thrust hurt top speed?',
@@ -2659,7 +2661,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'Can I retrofit Command Thrust to my existing Mercury motor?',
-        answer: 'Yes. The gearcase can be swapped on most Mercury FourStrokes 115 HP and up. The cost includes the new gearcase, new prop, and labor. Sometimes worth doing as a separate project; usually most cost-effective during a planned repower.'
+        answer: 'Sometimes. A Command Thrust conversion depends on the exact motor, gearcase, shaft length, controls, prop, and whether the swap makes financial sense. In most cases, it is cleaner and more cost-effective to choose the right gearcase during a planned repower. The cost includes the new gearcase, new prop, and labor. Sometimes worth doing as a separate project; usually most cost-effective during a planned repower.'
       },
       {
         question: 'Will Command Thrust work with my existing rigging?',
@@ -5541,7 +5543,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     content: `
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Mercury SeaPro is the commercial-grade FourStroke built for high-hour use, guides, charters, work boats. Beefier internals, longer service intervals, and a 3-year commercial warranty. For private recreational use the standard FourStroke is the right call. SeaPro is special order, contact us through mercuryrepower.ca.
+> **Quick answer:** Mercury SeaPro is the commercial-grade Mercury outboard line built for high-hour use: guides, charters, rental fleets, work boats, and operators where downtime costs real money. SeaPro can make sense when the boat earns its keep. For typical private recreational use, a standard FourStroke is usually the better value. SeaPro is special order at HBW, so contact us before quoting.
 
 For broader pricing context, see our [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide) and [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad). Commercial buyers comparing engine families should also read [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), and [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026) for SeaPro warranty specifics.
 
@@ -5555,7 +5557,7 @@ SeaPro is a **commercial-spec variant** of Mercury's FourStroke and Pro XS outbo
 
 - **Reinforced lower units**, heavier-gauge gearcase castings, beefier bearings, larger oil capacity
 - **Enhanced cooling system**, bigger water pump, more cooling passages, designed to run continuously without heat-soaking
-- **Extended service intervals**, 200-hour oil change interval (vs 100 on standard FourStroke)
+- **Commercial-duty design and service planning**, with maintenance intervals that should be confirmed against the exact SeaPro model, application, and Mercury service documentation
 - **Stainless steel hardware** throughout, saltwater-rated even on freshwater models
 - **Heavy-duty mounting and bracketry**
 - **Counter-rotation options** for twin installations
@@ -5570,8 +5572,8 @@ The real test: **how many hours per year will your boat run?**
 | Annual hours | Recommendation |
 |--------------|----------------|
 | **Under 100 hours** (typical recreational) | FourStroke. SeaPro is overkill. |
-| **100-300 hours** (heavy recreational, cottage hard-use) | FourStroke is still fine. SeaPro gives you 200-hour oil intervals, fewer service trips. |
-| **300-600 hours** (light commercial, guide a few days a week) | SeaPro pays off. You'll do 3 oil changes/year on FourStroke vs 1.5 on SeaPro. |
+| **100-300 hours** (heavy recreational, cottage hard-use) | FourStroke is still fine for most owners. SeaPro may be worth discussing if downtime, load, or resale story matters. |
+| **300-600 hours** (light commercial, guide a few days a week) | SeaPro starts to make sense because commercial-duty design and proper commercial registration matter more at this usage level. |
 | **600-1,500 hours** (full-time guide, charter, rental) | SeaPro is the only sensible answer. The reinforced internals are designed for this. |
 | **1,500+ hours** (commercial workboat, high-volume rental) | SeaPro mandatory. FourStroke would be on borrowed time at this rate. |
 
@@ -5583,12 +5585,12 @@ A fishing guide losing a Saturday in walleye season = $400-$800 in cancelled tri
 
 | Feature | SeaPro | FourStroke |
 |---------|--------|------------|
-| **Oil change interval** | 200 hours | 100 hours |
+| **Maintenance planning** | Confirm by exact SeaPro model and commercial use case | Standard recreational maintenance schedule |
 | **Lower unit** | Heavy-duty | Standard |
 | **Cooling system** | Enhanced | Standard |
 | **Cylinder coatings** | Plasma-fused (extra durability) on most models | Standard |
 | **Recommended duty** | High-hour, sustained | Recreational |
-| **Warranty** | 3 years standard + commercial-warranty eligibility | 3 years standard |
+| **Warranty** | Commercial warranty terms differ from recreational coverage; confirm by model and use at time of sale | Standard recreational warranty terms |
 | **Price premium** | ~10-15% over FourStroke | - |
 | **Best for** | Guides, charters, rentals, work boats | Recreational |
 | **Hours expected (with care)** | 5,000+ | 3,000–4,000 |
@@ -5623,7 +5625,7 @@ These are ballparks, current pricing in the [mercuryrepower.ca configurator](htt
 
 ## Commercial Warranty Considerations
 
-Mercury offers a **commercial warranty program** for SeaPro motors used in actual commercial applications. The terms differ from recreational:
+Mercury offers a **commercial warranty program** for SeaPro motors used in actual commercial applications. The terms differ from recreational coverage, and they need to be handled correctly at the point of sale. Do not assume recreational warranty language applies to a motor being used commercially.
 
 - Different coverage period (sometimes shorter on parts, longer on certain systems)
 - Specific maintenance requirements
@@ -6333,7 +6335,11 @@ For real CAD pricing on what you'd actually be financing, see our canonical [202
       },
       {
         question: 'Are there seasonal promotions for financing?',
-        answer: 'Promotional offers vary by season. Harris Boat Works currently includes a 7-year factory-backed warranty (3 years standard + 4 bonus years of Gold coverage) with every new Mercury purchase. Ask about current financing and warranty offers.'
+        answer: 'Promotional offers vary by season, and Mercury warranty extensions are not always active.
+
+The standard Mercury warranty is 3 years. When Mercury runs a bonus warranty promotion, qualifying motors may receive additional factory-backed coverage, but the offer dates, eligible models, and paperwork rules matter.
+
+If warranty length is part of your buying decision, ask us to confirm the current Mercury promotion before you sign. We will tell you what is active, what is expired, and what actually applies to the motor you are quoting.'
       },
       {
         question: 'What happens if I want to sell my boat before the loan is paid?',
@@ -9631,7 +9637,11 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'What is the difference between Mercury FourStroke and Mercury Pro XS outboards?',
-        answer: 'Mercury FourStroke outboards are designed for efficiency, smooth cruise, and versatility, ideal for fishing, family use, and general recreation. Mercury Pro XS models are tuned for performance: faster hole shot, higher top-end RPM, and stronger acceleration, using a 2-stroke direct-injection design. For bass anglers or anyone prioritizing quick planing and hard running, Pro XS is the choice. For most Ontario cottage and fishing use, FourStroke is the better all-around fit.'
+        answer: 'Mercury FourStroke outboards are designed for efficiency, smooth cruise, and versatility, which makes them the right fit for most Ontario fishing, cottage, and family use.
+
+Mercury Pro XS models are performance-tuned four-stroke outboards. They are built for faster hole shot, stronger acceleration, higher-rpm performance, and more responsive handling on performance fishing hulls.
+
+For bass anglers or anyone prioritizing quick planing and hard running, Pro XS is worth considering. For most Ontario cottage and fishing use, FourStroke is still the better all-around value.'
       },
       {
         question: 'What Mercury motors does Harris Boat Works stock for 2026?',
@@ -19088,9 +19098,9 @@ Each rental includes:
 - **Restroom + ice / snacks** at the marina before you leave
 
 What you bring:
-- **Valid Pleasure Craft Operator Card (PCOC)**, required to operate any motorized boat in Ontario. If you don't have one, the rental marina can issue a temporary "rental boat safety checklist" certification, but most rentals require PCOC. Easier to get the actual card (3-hour online course, $50, lifetime good).
+- **Valid Pleasure Craft Operator Card (PCOC)**, required to operate a motorized boat in Canada unless a rental-specific safety checklist applies. If you do not have one, ask before booking so there are no surprises at the dock. A full PCOC is valid for life once earned; course/test pricing varies by approved provider.
 - **Sunscreen, hats, water, snacks**
-- **Fishing gear and licence if fishing**. Ontario fishing licence for adults (one-time online $30 for ~$30 for a season)
+- **Fishing gear and licence if fishing.** Ontario fishing licence fees depend on residency, licence type, and duration. As a planning reference, Ontario lists a 1-day resident sport fishing licence at $12.21 + HST and a 1-year resident sport fishing licence at $26.57 + HST. Check ontario.ca before your trip because licence rules and fees can change.
 - **Cooler and refreshments** for the day
 
 What's NOT included:
@@ -19266,7 +19276,7 @@ Yes. Multi-day discounts available; ask when booking. Typical scenario: 2-3 day 
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** GTA boaters store at HBW for the same reason they service here, capacity, security, and no GTA-premium pricing. Indoor and shrinkwrap options. Book by September or you'll wait. Storage and winterization pricing at mercuryrepower.ca.
+> **Quick answer:** GTA boaters store at HBW for the same reason they service here: capacity, straight pricing, and a proper Mercury winterization before the boat sits. HBW storage is outdoor shrinkwrap storage, not on-site indoor storage. Book by September or you may be waiting.
 
 Every September, GTA boaters face the same decision: where do I store the boat for winter? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
 
@@ -19304,7 +19314,7 @@ GTA boaters often discover that "boat storage" at a local marina is just *parkin
 - **Steering/throttle cable lubrication**
 - **Cooling system inspection** (impeller condition check)
 - **Documentation** (everything recorded for next service)
-- **Storage** (outdoor with cover OR indoor, depending on tier)
+- **Outdoor storage** with shrinkwrap or proper cover, depending on the boat and package
 
 At HBW, all of this is part of the bundle. **At many GTA storage marinas, only "storage" is included**, winterization is $300-$600 extra, often by a different tech, sometimes inadequately done.
 
@@ -19390,7 +19400,7 @@ Walking through the actual timeline for a GTA boater wintering with us:
 
 **Early November**. Boat shrinkwrapped with proper frame, 2-4 vents installed, strapping for snow load.
 
-**November-March**. Boat sits in our outdoor storage area or any indoor option you've selected. Battery is on a trickle charger inside. Periodic visual inspections by our staff (we walk the storage area weekly).
+**November-March.** The boat sits in our outdoor storage area, properly winterized and protected for Ontario weather. Batteries are removed or maintained according to the storage package, and our staff keeps eyes on the yard through the winter.
 
 **Optional during winter (December-February):** Any service work approved (repower, repairs, upgrades) gets done.
 
