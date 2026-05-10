@@ -1372,7 +1372,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     readTime: '10 min read',
     keywords: ['mercury prokicker', 'kicker motor rice lake', 'trolling motor ontario', 'prokicker installation', 'mercury 9.9 prokicker', 'kicker motor fishing boat', 'rice lake walleye trolling'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** The Mercury 9.9 ProKicker is the right kicker for Rice Lake, Ontario walleye and musky trolling, high gear ratio for slow speeds, electric start, power tilt, and remote-ready. It's a different motor than the standard 9.9 portable. We rig and tiller-link these regularly for Kawartha boats. Build a kicker package at mercuryrepower.ca.
 
@@ -1398,6 +1398,14 @@ The Mercury 9.9 ProKicker is a kicker motor specifically designed for fishing ap
 - **Integrated charging system.** Some variants include alternator output for trolling motor batteries and electronics.
 
 Standard 9.9 motors are general-purpose kicker or main-on-small-boat units. ProKickers are purpose-built fishing tools.
+
+### How the 9.9 conversation usually goes
+
+Two ways. Either someone wants a kicker for trolling on a fishing rig, and a regular 9.9 FourStroke is the right answer. Or they want to power a 14 to 15 ft tin boat as the main motor, and they need a Command Thrust gearcase, which most aren't aware exists.
+
+The Command Thrust changes the calculation. It lets a 9.9 push a heavier hull at hull speed where a regular 9.9 would just rev. Same horsepower, different gearcase, different boat capability.
+
+Before recommending a 9.9 for a small aluminum, we ask what the boat is rated for, what's already mounted on the transom, and what the customer actually does on the water. Trolling with a main motor is one answer. Pushing a loaded fishing boat is another.
 
 ## Why a kicker matters for Rice Lake fishing
 
@@ -3924,6 +3932,14 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 Bass boats live or die on hole-shot, top-end, and the ability to run shallow when the bite moves. Ontario bass anglers fish a lot of skinny water in May, then chase smallies into deeper offshore structure by July. The motor pick has to handle both, and it has to handle the trolling-motor-and-kicker setup that defines tournament fishing on Rice Lake, Lake Scugog, and the Kawarthas.
 
 We rig a lot of bass boats at HBW. The shop sees more Pro XS 150-200 HP motors come through in spring than any other category. This guide is the conversation we have at the dock when a customer is choosing between a Pro XS and a FourStroke, or sizing up between 150 and 200 HP.
+
+### A pattern we see at the shop
+
+A common conversation goes like this. Customer comes in with a 20+ year old 150 HP two-stroke on a 17 ft glass bass boat. They want more speed.
+
+Once we look at the hull rating, the prop, and the rigging, the better answer is usually a 150 Pro XS with the right prop pitch. Not because the old motor was wrong. Because the rigging was tired and the prop hadn't matched the motor in 10 years. The boat ends up faster on less horsepower because the setup is finally right.
+
+Horsepower gets the headlines. The prop, the gearcase, and the rigging do most of the work.
 
 ---
 
@@ -12007,7 +12023,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['boat winterization cost ontario', 'mercury outboard winterization price', 'harris boat works winter storage'],
     content: `# How Much Does Boat Winterization Cost in Ontario? (2026 Price Guide)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Boat winterization in Ontario typically runs $250-$600 depending on motor size, fuel system, and shrinkwrap. Skipping it risks a cracked block, a $4,000-plus repair. Book before October or you'll wait. Pricing and scheduling at mercuryrepower.ca.
 
@@ -12096,6 +12112,14 @@ Bring it to us when:
 The most common DIY mistake we see in spring: customer drained the gearcase and forgot to refill it. The motor runs in spring without lower-unit lube, the gears destroy themselves in 30 minutes of operation, and the customer is buying a new lower unit ($1,500 to $4,500 CAD depending on motor). Cheap mistake. Expensive lesson.
 
 The second most common: missing the cooling system drain. Water freezes in the powerhead. Block cracks. Motor scrap. We see this every spring on at least a few customers who tried DIY and missed the step.
+
+### The most expensive winter call we get
+
+Same call every May. "My boat won't start."
+
+Eight times out of ten, it's one of three things: water in the lower unit oil, ethanol-fouled fuel, or a battery that quietly died in February. All three are $30 problems in October. They become $300+ problems by May, sometimes much more if the lower unit corroded or the powerhead got bumped by an internal freeze.
+
+That's the math behind paying a marina to winterize rather than "I'll get to it next weekend." It's not that DIY winterization is wrong. It's that "I'll get to it" winterization usually doesn't get to it. Pick a date in October, do the work, or hand it to us. Don't let November be the moment you decide.
 
 ## Storage options ranked by cost
 
