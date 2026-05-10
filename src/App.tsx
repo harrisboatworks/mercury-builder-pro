@@ -150,6 +150,8 @@ const MandarinBlogArticle = lazy(() => import("./pages/blog/MandarinBlogArticle"
 const MandarinBlogArticlePage = lazy(() => import("./pages/blog/MandarinBlogArticlePage"));
 const KoreanBlogArticlePage = lazy(() => import("./pages/blog/KoreanBlogArticlePage"));
 const SpanishBlogArticlePage = lazy(() => import("./pages/blog/SpanishBlogArticlePage"));
+const HindiBlogArticlePage = lazy(() => import("./pages/blog/HindiBlogArticlePage"));
+const PunjabiBlogArticlePage = lazy(() => import("./pages/blog/PunjabiBlogArticlePage"));
 
 // Test/Dev pages (low priority)
 // IMPORTANT: Keep dev-only tooling (e.g., Transformers/ONNX background removal) out of production bundles.
@@ -544,6 +546,8 @@ function AnimatedRoutes() {
         <Route path="/blog/zh/:slug" element={<MandarinBlogArticlePage />} />
         <Route path="/blog/ko/:slug" element={<KoreanBlogArticlePage />} />
         <Route path="/blog/es/:slug" element={<SpanishBlogArticlePage />} />
+        <Route path="/blog/hi/:slug" element={<HindiBlogArticlePage />} />
+        <Route path="/blog/pa/:slug" element={<PunjabiBlogArticlePage />} />
         <Route path="/blog/:slug" element={<BlogArticle />} />
         <Route path="/blog/unsubscribe" element={<BlogUnsubscribe />} />
         <Route path="/rss.xml" element={<RssFeed />} />

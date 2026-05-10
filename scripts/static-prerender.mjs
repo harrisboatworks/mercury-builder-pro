@@ -274,6 +274,54 @@ console.log(`[static-prerender] loaded ${faqItems.length} FAQ items`);
 const blogArticles = loadBlogArticles();
 console.log(`[static-prerender] loaded ${blogArticles.length} published blog articles`);
 
+// Load translated blog article arrays. These files just export a plain
+// `BlogArticle[]`, so we dump a minimal shape per article. Empty arrays are fine.
+function loadTranslatedBlogArticles(modulePath, exportName) {
+  const dumpScript = `
+    import { ${exportName} } from '${modulePath}';
+    import { getCleanDescription, sanitizeForSchema, markdownToNoscriptHtml } from '../src/lib/strip-markdown.ts';
+    const items = (${exportName} || []).map(a => ({
+      slug: a.slug,
+      title: a.title,
+      description: getCleanDescription(a),
+      image: a.image,
+      datePublished: a.datePublished,
+      dateModified: a.dateModified,
+      publishDate: a.publishDate || a.datePublished || null,
+      keywords: a.keywords || [],
+      readTime: a.readTime || '5 min read',
+      content: a.content || '',
+      faqs: (a.faqs || [])
+        .map(f => ({
+          question: sanitizeForSchema(f.question),
+          answer: sanitizeForSchema(f.answer),
+          questionHtml: markdownToNoscriptHtml(f.question),
+          answerHtml: markdownToNoscriptHtml(f.answer),
+        }))
+        .filter(f => f.question && f.answer),
+    }));
+    process.stdout.write(JSON.stringify(items));
+  `;
+  const tmpFile = join(ROOT, 'scripts', `.blog-dump-${exportName}.mts`);
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    return JSON.parse(out);
+  } catch (err) {
+    console.warn(`[static-prerender] failed to load ${exportName}: ${err.message}`);
+    return [];
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+
+const frenchBlogArticles = loadTranslatedBlogArticles('../src/data/frenchBlogArticles.ts', 'frenchBlogArticles');
+const koreanBlogArticles = loadTranslatedBlogArticles('../src/data/koreanBlogArticles.ts', 'koreanBlogArticles');
+const mandarinBlogArticles = loadTranslatedBlogArticles('../src/data/mandarinBlogArticles.ts', 'mandarinBlogArticles');
+const spanishBlogArticles = loadTranslatedBlogArticles('../src/data/spanishBlogArticles.ts', 'spanishBlogArticles');
+console.log(`[static-prerender] loaded translated blog articles — fr:${frenchBlogArticles.length} ko:${koreanBlogArticles.length} zh:${mandarinBlogArticles.length} es:${spanishBlogArticles.length}`);
+
+
 const caseStudies = loadCaseStudies();
 console.log(`[static-prerender] loaded ${caseStudies.length} case studies`);
 
@@ -1748,6 +1796,60 @@ const blogArticleRoutes = blogArticles.map(article => ({
 }));
 
 // ============================================================
+// Translated blog article routes (fr/ko/zh/es)
+// Mirror the English blogArticleRoutes shape so SSG injects the
+// full article body + a localized dealer-credentials strip into the
+// noscript fallback for crawlers + LLM ingestion.
+// ============================================================
+
+function buildTranslatedBlogRoutes(articles, langCode, dealerStripHtml, ogLocale, inLanguage) {
+  return articles.map(article => ({
+    path: `/blog/${langCode}/${article.slug}`,
+    title: `${article.title} | Harris Boat Works Blog`,
+    description: article.description,
+    ogImage: article.image ? (article.image.startsWith('http') ? article.image : `${SITE_URL}${article.image}`) : undefined,
+    ogType: 'article',
+    ogLocale,
+    h1: article.title,
+    intro: firstParagraph(article.content, article.description),
+    htmlLang: inLanguage,
+    schemas: [{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": article.title,
+      "description": article.description,
+      "inLanguage": inLanguage,
+      "datePublished": article.datePublished,
+      "dateModified": article.dateModified || article.datePublished,
+      "author": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+      "publisher": { "@type": "Organization", "name": "Harris Boat Works", "@id": `${SITE_URL}/#organization` },
+      "mainEntityOfPage": `${SITE_URL}/blog/${langCode}/${article.slug}`
+    }],
+    extraNoscript: () => {
+      const bodyHtml = renderArticleBodyHtml(article.content);
+      const faqHtml = (article.faqs && article.faqs.length > 0)
+        ? '<section><h2>FAQ</h2><dl>' + article.faqs.map(f =>
+            `<dt><strong>${f.questionHtml || escapeHtml(f.question)}</strong></dt><dd>${f.answerHtml || escapeHtml(f.answer)}</dd>`
+          ).join('') + '</dl></section>'
+        : '';
+      return `${dealerStripHtml}<article>${bodyHtml}</article>${faqHtml}`;
+    }
+  }));
+}
+
+const frDealerStripHtml = '<div class="dealer-confidence-strip"><span>Concessionnaire Mercury Platinum</span><span>·</span><span>Depuis 1947</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Constructeur de devis disponible</a></div>';
+const koDealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury 플래티넘 딜러</span><span>·</span><span>1947년부터</span><span>·</span><span>온타리오주 Gores Landing</span><span>·</span><a href="/quote/motor-selection">견적 도구 사용 가능</a></div>';
+const zhDealerStripHtml = '<div class="dealer-confidence-strip"><span>水星白金经销商</span><span>·</span><span>自1947年</span><span>·</span><span>安大略省 Gores Landing</span><span>·</span><a href="/quote/motor-selection">在线报价工具</a></div>';
+const esDealerStripHtml = '<div class="dealer-confidence-strip"><span>Distribuidor Mercury Platinum</span><span>·</span><span>Desde 1947</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Cotizador disponible</a></div>';
+
+const frenchBlogArticleRoutes = buildTranslatedBlogRoutes(frenchBlogArticles, 'fr', frDealerStripHtml, 'fr_CA', 'fr');
+const koreanBlogArticleRoutes = buildTranslatedBlogRoutes(koreanBlogArticles, 'ko', koDealerStripHtml, 'ko_KR', 'ko');
+const mandarinBlogArticleRoutes = buildTranslatedBlogRoutes(mandarinBlogArticles, 'zh', zhDealerStripHtml, 'zh_CN', 'zh-Hans');
+const spanishBlogArticleRoutes = buildTranslatedBlogRoutes(spanishBlogArticles, 'es', esDealerStripHtml, 'es_ES', 'es');
+console.log(`[static-prerender] translated blog routes → fr:${frenchBlogArticleRoutes.length} ko:${koreanBlogArticleRoutes.length} zh:${mandarinBlogArticleRoutes.length} es:${spanishBlogArticleRoutes.length}`);
+
+
+// ============================================================
 // Per-motor /motors/{slug} routes: Product + Offer JSON-LD
 // ============================================================
 
@@ -3041,6 +3143,10 @@ const routes = [
     }],
   },
   ...blogArticleRoutes,
+  ...frenchBlogArticleRoutes,
+  ...koreanBlogArticleRoutes,
+  ...mandarinBlogArticleRoutes,
+  ...spanishBlogArticleRoutes,
   ...motorPageRoutes,
   caseStudiesIndexRoute,
   ...caseStudyDetailRoutes,
