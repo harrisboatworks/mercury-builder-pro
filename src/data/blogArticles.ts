@@ -9534,6 +9534,8 @@ Then we'll give you a frank recommendation on gas, electric, or a hybrid of both
 
 > **Quick answer:** Rice Lake, Ontario's 2026 outlook is strong: walleye and crappie populations are healthy, water levels are normal, and weed structure is back after the cleaner winter. Walleye opener is the second Saturday of May. Get the boat serviced before April or expect a wait. Book at mercuryrepower.ca.
 
+> **Always confirm regulations directly.** Fishing rules in Ontario can change between seasons and by waterbody exception. Before retaining any fish, verify current FMZ 17 rules at [ontario.ca/page/recreational-fishing-regulations](https://www.ontario.ca/page/recreational-fishing-regulations). The numbers in this post reflect the spring 2026 season opener.
+
 Rice Lake, Ontario (in the Kawarthas)'s 2026 fishing season looks strong across the typical species: walleye, smallmouth bass, muskie, and panfish. Water levels through the Trent-Severn are managed; ice-out timing and water temperatures will set the early-season pattern. The classic species mix and structure on Rice Lake have been consistent for decades. We are looking forward to another good season.
 
 ## Quick recommendation
