@@ -88,6 +88,26 @@ export default function MotorDetailsSheet({
   const [generatedSpecUrl, setGeneratedSpecUrl] = useState<string | null>(null);
   const [warrantyPricing, setWarrantyPricing] = useState<any>(null);
   const [showFullPricing, setShowFullPricing] = useState(false);
+  const [relatedSlugs, setRelatedSlugs] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!motor) { setRelatedSlugs([]); return; }
+    let cancelled = false;
+    import('@/lib/motor-related-blog-posts')
+      .then(({ getMotorRelatedBlogSlugs }) => {
+        if (cancelled) return;
+        try {
+          setRelatedSlugs(getMotorRelatedBlogSlugs(motor as any));
+        } catch (err) {
+          console.error('[Related Guides] compute failed:', err);
+          setRelatedSlugs([]);
+        }
+      })
+      .catch((err) => {
+        console.error('[Related Guides] dynamic import failed:', err);
+      });
+    return () => { cancelled = true; };
+  }, [motor]);
   const isMobile = useIsMobile();
   const { promo: activePromo } = useActiveFinancingPromo();
   const { promotions: activePromotions } = useActivePromotions();
