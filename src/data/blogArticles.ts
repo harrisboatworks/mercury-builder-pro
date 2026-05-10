@@ -4857,6 +4857,20 @@ Yes. We service all Mercury motors regardless of where they were winterized. Som
 Mercury Platinum Dealer · Rice Lake, Ontario
 [About Jay and Harris Boat Works →](/about)
 `,
+    howToSteps: [
+      { name: 'Visual inspection', text: 'Walk around the boat checking hull for damage, mouse intrusion, cover damage, and loose hardware. Inspect motor cowl for cracks or chewed wiring. Check transom for soft spots and mounting bolts. Look at trailer bearings, tires, lights, and ball coupler.' },
+      { name: 'Battery and electrical', text: 'Reinstall the battery if removed for winter. Load test it; below 10.5V under load means replace. Clean and tighten battery terminals. Test bilge pump, lights, gauges, and electronics with the key on but engine off.' },
+      { name: 'Fuel system', text: 'Check the fuel tank for water or contamination. Replace the fuel filter if at service interval. Inspect fuel lines for cracks or brittleness. Add fresh fuel; gas over 6 months old should be drained or used up.' },
+      { name: 'Cooling system', text: 'Check cooling system for visible damage or blockage. Inspect the water-pump impeller if at the 200-hour or 3-year service interval. Replace anti-corrosion anodes if 30% or more depleted.' },
+      { name: 'Lubrication', text: 'Top off engine oil to the full mark on the dipstick. Check gearcase lube level and top off if needed. Lubricate steering and shift cables. Grease swivel pivots and zerk fittings on the motor and rigging.' },
+      { name: 'Spark plugs and ignition', text: 'Inspect spark plugs and replace if at the 200-hour or 2-year service interval. Check spark plug wires for damage or cracks. Test the ignition system by starting the motor on muffs.' },
+      { name: 'Propeller and lower unit', text: 'Inspect the prop for nicks, bends, or damage and repair or replace as needed. Check the lower unit for visible damage or fluid leaks. Verify shift smoothness through forward, neutral, and reverse.' },
+      { name: 'Test run on muffs (or in water)', text: 'Connect muffs to the lower unit cooling intake or launch the boat. Start the motor; it should fire within 3 to 5 cranks. Confirm telltale stream within 10 seconds. Run for 5 to 10 minutes and check for unusual sounds, smoke, or vibration. Test trim/tilt, shift, and throttle response.' },
+      { name: 'Trailer and accessories', text: 'Inspect trailer bearings and repack if older than 2 years. Check trailer tires for cracks, age, and pressure; tires older than 6 years should be replaced regardless of tread. Test lights including brakes and signals. Verify safety chains and breakaway brake systems.' },
+      { name: 'Documentation', text: 'Update the service log with date, hours, and work performed. Verify Pleasure Craft Licence (PCL) is current. Confirm insurance is renewed for the season. Verify Pleasure Craft Operator Card (PCOC) is in the boat or with you.' },
+    ],
+    howToTotalTime: 'PT90M',
+    howToTools: ['Marine grease', 'Battery load tester', 'Spark plug socket', 'Gear lube pump', 'Fresh fuel filter', 'Earmuffs (flush attachment)'],
     faqs: [
       {
         question: 'How long should I flush the motor before first start?',
