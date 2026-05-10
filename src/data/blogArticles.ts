@@ -16356,6 +16356,10 @@ This is the schedule we'd walk through with any new Mercury owner who walks into
 
 ## Why the Three-Milestone Framework Exists
 
+![Horizontal timeline showing Mercury outboard service intervals: 20-hour break-in, 100-hour annual service, 300-hour major service.](/lovable-uploads/diagram-mercury-maintenance-timeline.png)
+
+*Mercury's official 20/100/300 service intervals visualized. The 100-hour annual is the one most owners need to lock into the calendar.*
+
 A new outboard isn't a finished product the day it leaves the factory. The first 10 hours are **break-in**, where rings seat against cylinder walls, gears mesh in for the first time, and metal particles wear off and end up in the oil. The next chunk of life is **routine operation**, where wear and exposure accumulate. Eventually you hit **major-service territory**, where rubber and consumables that have been quietly aging for years all need replacement at once.
 
 The 20/100/300 rule maps service intervals to those phases:
