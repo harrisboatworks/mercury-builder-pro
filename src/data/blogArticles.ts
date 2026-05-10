@@ -8767,15 +8767,17 @@ Stop by the marina in Gores Landing, give us a call at (905) 342-2153, or [brows
     image: '/lovable-uploads/Tariffs_and_Trade_Blog_Hero_Image.png',
     author: 'Harris Boat Works',
     datePublished: '2026-02-06',
-    dateModified: '2026-02-06',
+    dateModified: '2026-05-10',
     publishDate: '2026-02-06',
     category: 'Market Insight',
     readTime: '12 min read',
     keywords: ['tariffs boating canada', 'CUSMA boating', 'mercury outboard tariff', 'canada us trade boats', 'boat prices tariffs 2026'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Cross-border trade noise affects boat and motor pricing on a moving timeline. Mercury outboards sold in Canada are priced in CAD and Mercury manages tariff exposure at the manufacturer level. We don't surprise customers with mid-quote price hikes, frozen pricing on every quote at mercuryrepower.ca.
+
+> *Last verified: May 10, 2026. Trade policy moves fast. Confirm current figures with the linked sources before quoting them externally.*
 
 If you've glanced at the news over the past year, you've probably seen stories about new tariffs, trade skirmishes, and the upcoming review of the Canada–United States–Mexico Agreement (CUSMA/USMCA). For most people, it's background noise, right up until it sounds like it might affect the cost of a boat or an outboard.
 
@@ -8788,7 +8790,7 @@ The current climate is the result of a sequence of policy moves since early 2025
 - **Early 2025**: The Trump administration announced new tariffs on a variety of imports, including a 25% duty on certain Canadian products that did not qualify under CUSMA's rules of origin.
 - **Spring 2025**: Canada responded with retaliatory counter-tariffs on selected U.S. goods, echoing earlier disputes over steel and aluminum from the late 2010s.
 - **Summer 2025**: Some U.S. tariffs on non-CUSMA-compliant Canadian goods were raised to as high as 35%, increasing pressure on Canadian exporters.
-- **September 2025**: Canada announced it would remove most of its retaliatory tariffs on U.S. imports, while maintaining measures on steel, aluminum, and certain autos.
+- **September 2025**: Canada announced it would remove most of its retaliatory tariffs on U.S. imports, while maintaining measures on steel, aluminum, and certain autos. (Department of Finance Canada; effective Sept 1, 2025)
 - **Late 2025**: The U.S. Trade Representative (USTR) began consultations and hearings in advance of the 2026 CUSMA joint review. NMMA testified on recreational boating priorities, emphasizing the need to preserve duty-free treatment for marine products.
 
 Throughout this period, one crucial protection has remained in place: goods that qualify under CUSMA, including most recreational boats and marine engines that meet content and origin rules, continue to cross the border duty-free.
@@ -8868,7 +8870,7 @@ For Harris Boat Works customers, that often means:
 
 ## The Big Fork in the Road: CUSMA Review in 2026
 
-Under CUSMA, the three member countries are required to conduct a formal joint review six years after the agreement's entry into force. That review, scheduled for July 2026, will determine whether the agreement is extended, amended, or allowed to move toward expiry in 2036.
+Under CUSMA, the three member countries are required to conduct a formal joint review six years after the agreement's entry into force. That review, scheduled for July 2026, will determine whether the agreement is extended, amended, or allowed to move toward expiry in 2036. (USTR, USMCA review process, joint review July 1, 2026)
 
 ### Key Points for Boating
 
