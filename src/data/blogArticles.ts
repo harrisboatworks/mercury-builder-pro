@@ -9633,11 +9633,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
       },
       {
         question: 'What is the difference between Mercury FourStroke and Mercury Pro XS outboards?',
-        answer: 'Mercury FourStroke outboards are designed for efficiency, smooth cruise, and versatility, which makes them the right fit for most Ontario fishing, cottage, and family use.
-
-Mercury Pro XS models are performance-tuned four-stroke outboards. They are built for faster hole shot, stronger acceleration, higher-rpm performance, and more responsive handling on performance fishing hulls.
-
-For bass anglers or anyone prioritizing quick planing and hard running, Pro XS is worth considering. For most Ontario cottage and fishing use, FourStroke is still the better all-around value.'
+        answer: 'Mercury FourStroke outboards are designed for efficiency, smooth cruise, and versatility, which makes them the right fit for most Ontario fishing, cottage, and family use. Mercury Pro XS models are performance-tuned four-stroke outboards. They are built for faster hole shot, stronger acceleration, higher-rpm performance, and more responsive handling on performance fishing hulls. For bass anglers or anyone prioritizing quick planing and hard running, Pro XS is worth considering. For most Ontario cottage and fishing use, FourStroke is still the better all-around value.'
       },
       {
         question: 'What Mercury motors does Harris Boat Works stock for 2026?',
