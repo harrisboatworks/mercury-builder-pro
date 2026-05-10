@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-command-thrust-guide-pontoon-boats.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -152,7 +152,10 @@ Command Thrust is the recreational pontoon and heavy-boat gearcase. Most HBW cus
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the HP step-up math
 - [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop selection for Command Thrust
 - [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado), which family fits your use
-- [Best Pontoon Boats for Rice Lake Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoon selection for Kawartha use
+- [Best Pontoon Boats for Rice Lake, Ontario Cottage Use](/blog/best-pontoon-boats-rice-lake-cottage-use), pontoon selection for Kawartha use
+- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), HP sizing for tube hulls
+- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), problems CT solves
+- [Mercury Boost 150 HP Upgrade for Pontoons](/blog/mercury-boost-upgrade-150hp-pontoon-analysis), 10 HP software bump analysis
 
 ## Ready to repower with Command Thrust?
 

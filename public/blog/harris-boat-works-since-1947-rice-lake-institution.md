@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/harris-boat-works-since-1947-rice-lake-institution.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -29,7 +29,7 @@ content_type: blog_article
 
 ## Article
 
-# Harris Boat Works Since 1947: The Rice Lake Institution Built on Three Generations
+# Harris Boat Works Since 1947: The Rice Lake, Ontario Institution Built on Three Generations
 
 *Last reviewed: 2026-05-07*
 

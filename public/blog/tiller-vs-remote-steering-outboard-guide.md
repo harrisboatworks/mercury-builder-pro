@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tiller-vs-remote-steering-outboard-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -180,7 +180,7 @@ We see these every season:
 ## Related guides
 
 - [Portable Mercury Outboard Guide: 2.5 to 20 HP](/blog/portable-outboard-mercury-guide-2-20hp), small motor selection
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), tiller kicker specifically
+- [Mercury 9.9 ProKicker Rice Lake, Ontario Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), tiller kicker specifically
 - [How to Choose the Right Horsepower for Your Boat](/blog/how-to-choose-right-horsepower-boat), HP and tiller/remote interact
 - [Best Mercury Outboard for Aluminum Fishing Boats](/blog/best-mercury-outboard-aluminum-fishing-boats), small aluminum applications
 - [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), pontoon-specific (always remote)
@@ -214,7 +214,7 @@ Yes, but it's a major project. Adding a console means new console structure, new
 Yes, typically by $1,500 to $3,500 CAD on small to mid-HP motors. Tiller saves the cost of rigging cables, helm controls, and console hardware.
 
 **Can I troll with a tiller motor?**
-Yes, easily. Tiller is actually preferred for trolling because direct speed and direction control is responsive. The 9.9 ProKicker tiller is the classic Rice Lake walleye setup.
+Yes, easily. Tiller is actually preferred for trolling because direct speed and direction control is responsive. The 9.9 ProKicker tiller is the classic Rice Lake, Ontario (in the Kawarthas) walleye setup.
 
 **What about a tiller kicker on a remote-control main motor boat?**
 Common configuration. The main motor uses remote-control from the helm; the kicker is a separate tiller motor for trolling. Works well for fishing applications.

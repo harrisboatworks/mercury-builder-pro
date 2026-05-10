@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-service-near-toronto-hbw-reach.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,7 @@ content_type: blog_article
 
 > **Quick answer:** HBW serves boats from across Ontario. GTA, Kawarthas, Northumberland, and beyond, because there aren't many dealers with our service depth and parts inventory. Most customers drop off in Gores Landing, but we'll talk through any service question first. Book at mercuryrepower.ca.
 
-**Up front: Harris Boat Works isn't in the GTA.** We're 90 minutes east of central Toronto, in Gores Landing on Rice Lake. So when you search "boat service near Toronto," we're not the closest option, but we are the option a meaningful number of GTA boaters drive to. This post is about why.
+**Up front: Harris Boat Works isn't in the GTA.** We're 90 minutes east of central Toronto, in Gores Landing on Rice Lake, Ontario (in the Kawarthas). So when you search "boat service near Toronto," we're not the closest option, but we are the option a meaningful number of GTA boaters drive to. This post is about why.
 
 If you Google "boat service Toronto" or "Mercury repair GTA" you get a long list of marinas, mobile mechanics, and inboard boat yards. Some are great. Some are not. Sorting by quality from a search-results page is functionally impossible.
 

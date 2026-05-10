@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-trailering-mistakes-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -37,7 +37,7 @@ content_type: blog_article
 
 There's a lot happening at a public boat ramp on a Saturday morning. Someone's arguing with their winch. Someone else is blocking the lane to dig through the cab for a strap they "definitely packed." And somewhere in the background, a guy is already knee-deep in the water realizing he forgot the drain plug.
 
-We've been on Rice Lake since 1947. We've seen most of these, sometimes twice before 9 a.m. This post covers the ten trailering mistakes that reliably ruin Ontario weekends, with enough detail to actually fix them.
+We've been on Rice Lake in the Kawarthas (Ontario) since 1947. We've seen most of these, sometimes twice before 9 a.m. This post covers the ten trailering mistakes that reliably ruin Ontario weekends, with enough detail to actually fix them.
 
 If you're headed to the Kawarthas, the Trent-Severn, or Rice Lake this season, read this before you hook up.
 

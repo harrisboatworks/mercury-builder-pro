@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pleasure-craft-licence-update-repower-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,9 +31,18 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Repowering changes your registered horsepower, so you must update your Pleasure Craft Licence with Transport Canada. The update is free and online, keep the new motor's serial number handy. We'll provide it on your invoice. Repower service and quotes at mercuryrepower.ca.
+> **Quick answer:** Effective December 31, 2025, Transport Canada ended lifetime Pleasure Craft Licences — new and renewed PCLs are now 5-year licences at $24 CAD. Repowering changes your registered horsepower, so you must update your PCL with Transport Canada. The update is free and online; keep the new motor's serial number handy. We'll provide it on your invoice. Repower service and quotes at mercuryrepower.ca.
+
+> **What changed in 2026 (the canonical facts):**
+> - Effective **December 31, 2025**, Transport Canada ended lifetime Pleasure Craft Licences.
+> - New and renewed PCLs are now **5-year licences** at **$24 CAD**.
+> - Existing lifetime PCLs are gradually being replaced with 5-year licences.
+> - Apply, renew, transfer, and update vessel info online through Transport Canada's PCL portal.
 
 When you change motors on a Pleasure Craft Licensed (PCL) boat in Canada, you must update the licence with Transport Canada. The PCL stays with the boat (HIN) but motor specifications are recorded on it. Updates are free, take 10 to 15 minutes online, and are required when the new motor changes the registered HP rating. We handle this paperwork for HBW customers as part of every repower.
+
+![Pleasure Craft Licence rules before and after December 31, 2025: lifetime PCL with no fee or expiry on the old system replaced with 5-year renewals at $24 CAD, a 30-day update window for changes (motor swap, sale, etc.), and a $250 fine for non-compliance under the new Transport Canada rules.](/lovable-uploads/diagram-pcl-2026-changes.png)
+*Transport Canada's December 31, 2025 PCL rule change at a glance. Lifetime licences are gone. Apply or renew at tc.canada.ca.*
 
 ## Quick recommendation
 

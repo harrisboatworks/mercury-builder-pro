@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-rentals-shared-access-booming-2026.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,7 @@ content_type: blog_article
 
 Not everyone wants to own a boat, and in 2026, that's no longer a barrier to enjoying boating. Across North America, boat rentals, boat clubs, and shared access models are growing faster than most other parts of the marine industry. The idea is simple: you shouldn't have to buy a boat to enjoy the water.
 
-At Harris Boat Works, we've been renting boats on Rice Lake for decades. Long before anyone called it the "sharing economy," we were putting families, anglers, and cottagers into well-maintained rental boats powered by Mercury outboards. Now the rest of the industry is catching up to what marinas like ours have known for years.
+At Harris Boat Works, we've been renting boats on Rice Lake in the Kawarthas (Ontario) for decades. Long before anyone called it the "sharing economy," we were putting families, anglers, and cottagers into well-maintained rental boats powered by Mercury outboards. Now the rest of the industry is catching up to what marinas like ours have known for years.
 
 ## The Size of the Rental Boom
 
@@ -55,7 +55,7 @@ Several big-picture trends are converging to make rentals and shared access more
 
 Consumers are increasingly prioritizing experiences over possessions. Travel, outdoor recreation, and adventure consistently rank higher than "owning more stuff" in surveys of spending priorities, especially for millennials and Gen Z.
 
-Boating fits that pattern perfectly. A day on Rice Lake with family, friends, or a fishing buddy is an experience people are willing to pay for, but many don't feel they need to own a boat year-round to have it. Renting makes it as simple as "book, go, return."
+Boating fits that pattern perfectly. A day on Rice Lake, Ontario (in the Kawarthas) with family, friends, or a fishing buddy is an experience people are willing to pay for, but many don't feel they need to own a boat year-round to have it. Renting makes it as simple as "book, go, return."
 
 ### 2. The Real Cost of Ownership
 

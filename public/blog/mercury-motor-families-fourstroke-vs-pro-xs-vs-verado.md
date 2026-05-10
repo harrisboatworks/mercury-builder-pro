@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,10 @@ content_type: blog_article
 
 > **Quick answer:** FourStroke is the workhorse for fishing, family, and pontoon use. Pro XS is the same powerhead tuned for higher RPM and bass/performance hulls. Verado is the premium V8/V10/V12 tier (naturally aspirated on current models), special order only at HBW, not stocked. For most Ontario freshwater boaters, FourStroke or Pro XS is the right call. Configure either at mercuryrepower.ca.
 
-Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the premium V8/V10/V12 line, 250 to 600+ HP, naturally aspirated, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the [motor selection page](/quote/motor-selection).
+Mercury makes five outboard motor families: FourStroke (the standard recreational line, 2.5 to 300 HP), Pro XS (the performance line, 115 to 300 HP), Verado (the premium V8/V10/V12 line, 175 to 600 HP, naturally aspirated, special-order only), SeaPro (the commercial-duty line, 25 to 300 HP), and Avator (the electric line). For Ontario boaters, FourStroke and Pro XS cover almost every use case. Live pricing on every Mercury family is on the [motor selection page](/quote/motor-selection).
+
+![Comparison chart of Mercury outboard motor families: FourStroke (2.5-150 HP, recreational, best value and fuel economy), Pro XS (115-400 HP, tournament and performance, fast hole shot), Verado (175-600 HP, premium and multi-engine, quietest and smoothest), SeaPro (15-300 HP, commercial and high-hour use, heavy-duty durability).](/lovable-uploads/diagram-mercury-motor-families.png)
+*All four Mercury outboard families at a glance. The rest of this article goes deeper on each, but if you're skim-reading, the chart above tells you who each family is for.*
 
 ## Quick recommendation
 
@@ -66,7 +69,7 @@ Five things move the right Mercury family for your boat:
 | FourStroke | 2.5 - 300 HP | Cruising, family use, fishing, pontoons | Fuel economy, smooth running, reliability | In stock and on-order |
 | Pro XS | 115 - 300 HP | Tournament fishing, bass boats, performance pontoons | Fast acceleration, top speed, hole shot | In stock and on-order |
 | SeaPro | 25 - 300 HP | Commercial use, charter, guides, fleet | Durability under heavy load | On-order |
-| Verado | 250 - 600+ HP | Offshore center consoles, twin/triple installs, yachts | Naturally-aspirated V8/V10/V12 smooth power, quiet operation | Special-order only |
+| Verado | 175 - 600 HP | Offshore center consoles, twin/triple installs, yachts | Naturally-aspirated V8/V10/V12 smooth power, quiet operation | Special-order only |
 | Avator | Electric | Eco-conscious low-HP applications | Zero emissions, quiet | On-order, evolving lineup |
 
 For your specific motor and HBW pricing in CAD, see the [motor selection page](/quote/motor-selection).
@@ -103,7 +106,7 @@ Trade-off: costs more than recreational FourStroke. Overkill for typical recreat
 
 ## Verado: why it is special-order only at HBW
 
-Verado is Mercury's premium V8/V10/V12 line, available from 250 HP up to 600+ HP. Current Verados are naturally aspirated (older inline-6 Verados were supercharged). It is engineered for high-HP applications, twin and triple installations, and offshore use where smoothness, quiet operation, and instant power are worth a premium.
+Verado is Mercury's premium V8/V10/V12 line, available from 175 to 600 HP. Current Verados are naturally aspirated (older inline-6 Verados were supercharged). The V10 lineup expanded in 2025 with a new 425 hp V10 alongside the enhanced 350 hp and existing 400 hp models. It is engineered for high-HP applications, twin and triple installations, and offshore use where smoothness, quiet operation, and instant power are worth a premium.
 
 We do not stock Verado at HBW. The reason is straightforward: almost no Ontario freshwater boater has a use case that fits Verado. Our customers are running aluminum fishing boats, pontoons, runabouts, bass boats, and small center consoles. Pro XS or FourStroke covers all of those at a better cost-per-capability for our market.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-vs-yamaha-outboards-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,15 +31,15 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Mercury and Yamaha both build excellent outboards. For Ontario freshwater boating, Mercury wins on dealer network density, parts availability, and resale demand, not on mechanical superiority. If you're shopping in the Kawarthas, Trent-Severn, or Lake Ontario region, Mercury's local service depth is the practical differentiator.
+> **Quick answer:** Both Mercury and Yamaha are excellent outboards. From HBW's local Ontario service perspective, Mercury is often easier for us to support, dealer network density, parts availability, and resale demand all skew our way in this region. The right choice for your boat depends on hull, dealer access, budget, and use case.
 
-For Ontario freshwater boating, Mercury wins on dealer network, parts availability, and factory-OEM relationships with Canadian boat builders. Yamaha is a strong motor mechanically but has a thinner Canadian dealer network and fewer factory-rigged Yamaha boats. The mechanical reliability difference is small; the practical service difference favors Mercury. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+Both Mercury and Yamaha are excellent outboards. The right choice for your boat depends on hull, dealer access, budget, and use case. From HBW's local Ontario service perspective, Mercury is often easier for us to support, dealer network density, parts availability, and factory-OEM relationships with Canadian boat builders all favor Mercury here. Yamaha is a strong motor mechanically but has a thinner Canadian dealer network and fewer factory-rigged Yamaha boats. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
 Mercury and Yamaha are both excellent outboards mechanically. The decision between them in Ontario comes down to where you boat, how easy it is to get service, and what came with your boat from the factory.
 
-For most Ontario freshwater customers (Rice Lake, Kawarthas, Lake Simcoe, Lake Ontario), Mercury wins on the practical metrics: dealer network density, parts supply speed, factory-OEM relationships with Canadian aluminum builders, and resale demand. We are not arguing Mercury is mechanically superior. We are arguing the practical reliability picture (mechanical durability + service availability + parts speed) favors Mercury for the typical Ontario freshwater customer.
+For most Ontario freshwater customers (Rice Lake, Kawarthas, Lake Simcoe, Lake Ontario), Mercury is often easier for us to support: dealer network density, parts supply speed, factory-OEM relationships with Canadian aluminum builders, and resale demand all skew this way locally. We are not arguing Mercury is mechanically superior. We are sharing what the practical service picture looks like for the typical Ontario freshwater customer.
 
 We have been a Mercury dealer since 1965. The bias is real but downstream of the market reality. Mercury is the brand we sell because Mercury is the brand most Ontario freshwater customers want.
 
@@ -55,7 +55,7 @@ Five things move whether Mercury or Yamaha is right for your specific situation:
 
 ## Mercury advantages in Ontario
 
-The reasons Mercury dominates the Ontario freshwater market:
+The reasons Mercury leads in many Ontario freshwater segments:
 
 ### 1. Dealer network density
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/ontario-mercury-outboard-price-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -40,6 +40,8 @@ If you've been shopping Mercury outboards in Ontario and you're tired of "call f
 This is the canonical price reference for Ontario Mercury buyers. We update it as Mercury Canada updates pricing (which happens periodically through the season), and we pull from the same live database that powers our quote builder. The numbers below are real numbers, in CAD, for motors a Mercury Platinum dealer (Harris Boat Works, Gores Landing, ON) will actually sell you in 2026.
 
 ---
+
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
 ## How Mercury Outboard Pricing Actually Works in Canada
 
@@ -113,7 +115,7 @@ The portable class covers everything from a 2.5 HP pull-start for a dinghy or ca
 - **Command Thrust (CT).** Bigger gearcase, more low-end torque. Designed for pontoons and heavy hulls. Adds $400–$1,000 over the standard gearcase. Worth it for any 9.9 HP motor going on a pontoon.
 - **EFI vs. carb.** Most modern Mercurys are EFI now. The 2.5–6 HP class still has carb models for simplicity and lighter weight.
 
-**Real-world pairings on Rice Lake:** A 9.9 MLH on a 14 ft Lund tin boat for fishing is around $2,999 CAD plus install. A 9.9 ELPT Command Thrust ProKicker on a 20 ft pontoon as a trolling motor is around $4,900 plus install. Same HP, very different motor, and a $2,000 difference in price for legitimate reasons.
+**Real-world pairings on Rice Lake in the Kawarthas (Ontario):** A 9.9 MLH on a 14 ft Lund tin boat for fishing is around $2,999 CAD plus install. A 9.9 ELPT Command Thrust ProKicker on a 20 ft pontoon as a trolling motor is around $4,900 plus install. Same HP, very different motor, and a $2,000 difference in price for legitimate reasons.
 
 [Browse all portable Mercury models in the quote builder.](https://www.mercuryrepower.ca/quote/motor-selection)
 
@@ -121,7 +123,7 @@ The portable class covers everything from a 2.5 HP pull-start for a dinghy or ca
 
 ## Mid-Range Mercury Outboards: 30–115 HP (CAD Pricing)
 
-This is the bread and butter of Ontario Mercury sales. Mid-range Mercurys power most of the pontoons, fishing boats, and small bowriders on Rice Lake, Pigeon Lake, Stoney, Buckhorn, and across the Kawarthas. If you're repowering a 16–20 ft hull, this is your tier.
+This is the bread and butter of Ontario Mercury sales. Mid-range Mercurys power most of the pontoons, fishing boats, and small bowriders on Rice Lake, Ontario (in the Kawarthas), Pigeon Lake, Stoney, Buckhorn, and across the Kawarthas. If you're repowering a 16–20 ft hull, this is your tier.
 
 | HP | Common Model | Dealer Price (CAD) | MSRP (CAD) | Best for |
 |---:|---|---:|---:|---|

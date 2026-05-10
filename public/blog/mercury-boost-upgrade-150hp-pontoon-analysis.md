@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-boost-upgrade-150hp-pontoon-analysis.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -42,6 +42,8 @@ For most 150 HP pontoon owners, the Mercury Boost upgrade is not worth the money
 Skip Boost on a typical 150 HP pontoon. Here is why: a pontoon's top speed is governed by hull drag, weight, and pontoon-tube design, not by motor output. Adding a few horsepower through a software-only Boost upgrade gives you small gains that customers usually cannot feel.
 
 Boost makes more sense on lighter performance boats where the hull responds to small power changes (bass boats, performance fishing boats, some runabouts). For a 22-foot tritoon hauling four adults, a cooler, and a tube, Boost is a hundred or two hundred dollars in horsepower bragging rights without much practical change.
+
+Boost gains depend on hull, load, prop, and current setup. The hull-load-prop interaction matters more than the headline HP number, so any "X mph faster" or "worth $Y" framing should be treated as a ballpark for one specific rig, not a guarantee for yours.
 
 The bigger story is what Boost tells us about Mercury's roadmap. Software-defined performance upgrades are how the next decade of motor improvements will arrive. Buying a 150 HP today and adding software upgrades later is going to be more common, more granular, and probably more interesting than today's first Boost iteration.
 
@@ -121,6 +123,9 @@ That is a more interesting reason to think about Boost than the current $200 in 
 - [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), the upgrade that usually pays back better than Boost
 - [Mercury 75 vs 90 vs 115 Comparison](/blog/mercury-75-vs-90-vs-115-comparison), if you are still in motor selection mode
 - [Mercury 115 vs 150 HP for Ontario Boats](/blog/mercury-115-vs-150-hp-outboard-ontario), the 115 to 150 step-up math
+- [Pontoon HP Sizing Decision Tree (Ontario)](/blog/pontoon-hp-sizing-decision-tree-ontario), pick the right HP for your tube
+- [Mercury Command Thrust Guide for Pontoons](/blog/mercury-command-thrust-guide-pontoon-boats), CT gearcase fit
+- [Common Pontoon Boat Problems on Rice Lake](/blog/common-pontoon-boat-problems-rice-lake), what an underpowered pontoon actually does
 
 ## Ready to talk through your pontoon setup?
 

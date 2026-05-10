@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/winter-storage-near-toronto-hbw.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -37,7 +37,7 @@ content_type: blog_article
 
 Every September, GTA boaters face the same decision: where do I store the boat for winter? The local options range from $30/ft for outdoor shrinkwrap at a Toronto-area marina to $90/ft for premium heated indoor in Muskoka. The math is genuinely confusing.
 
-Most GTA boat owners haven't considered driving the boat to Rice Lake for winter storage, because the assumption is "rural = cheaper but inconvenient." Half right. **The pricing is roughly equivalent. The convenience is similar. What's different is who works on the boat all winter.**
+Most GTA boat owners haven't considered driving the boat to Rice Lake, Ontario for winter storage, because the assumption is "rural = cheaper but inconvenient." Half right. **The pricing is roughly equivalent. The convenience is similar. What's different is who works on the boat all winter.**
 
 We've stored 311+ boats per year for the last several seasons. Many of them come from the GTA. This is the version of the storage decision we'd walk through if you called and asked.
 
@@ -90,7 +90,7 @@ GTA boaters often skip HBW storage because of transport assumptions. Let me lay 
 - **Total: 5-7 hours of driving per year**
 
 **Option B. Hire commercial boat transport:**
-- Typical cost GTA-to-Rice Lake: $300-$600 each way
+- Typical cost GTA-to-Rice Lake, Ontario (in the Kawarthas): $300-$600 each way
 - Round trip: $600-$1,200/year
 - No personal driving involved
 

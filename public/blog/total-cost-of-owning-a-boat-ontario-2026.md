@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/total-cost-of-owning-a-boat-ontario-2026.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -57,7 +57,7 @@ That's the honest answer. Now the breakdown.
 
 If you keep your boat in the water at a marina seasonally instead of trailering it, the slip is one of the biggest line items.
 
-**HBW Rice Lake slip pricing (2026):**
+**HBW Rice Lake, Ontario slip pricing (2026):**
 
 - **Seasonal slip:** $48/ft, minimum $960. So a 20-ft boat = $960; a 24-ft pontoon = $1,152.
 - **Transient (overnight):** $1.00/ft per night, minimum $20. Weekly $5/ft. Monthly $10/ft.
@@ -65,7 +65,7 @@ If you keep your boat in the water at a marina seasonally instead of trailering 
 
 **Ontario range:** $40–$60/ft seasonal at rural Kawartha marinas. $100–$150+/ft at urban Lake Ontario marinas. Toronto/Mississauga slip rates are a different category entirely.
 
-If you trailer instead of slipping, **substitute launch fees**: HBW is $20/day or $200/season. Public launches around Rice Lake (Bewdley, Roseneath, Harwood) are free but single-lane and busy on weekends.
+If you trailer instead of slipping, **substitute launch fees**: HBW is $20/day or $200/season. Public launches around Rice Lake, Ontario (in the Kawarthas) (Bewdley, Roseneath, Harwood) are free but single-lane and busy on weekends.
 
 **Annual budget:** $960 (seasonal slip) OR $200 (HBW launch season pass) OR $0 (free public launches).
 
@@ -168,7 +168,7 @@ Mercury's 20/100/300 schedule applies in Ontario, with the **annual trigger** be
 
 ## 6. Pleasure Craft Licence (PCL)
 
-[Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective Dec 31 2025 ended lifetime licences. New PCLs are **5-year renewals at $24** through Service Canada. Amortized: **$5/year**.
+[Transport Canada's PCL changes](https://tc.canada.ca/en/marine-transportation/vessel-licensing-registration/licensing-pleasure-craft/apply-manage-pleasure-craft-licence-pcl/apply-manage-pleasure-craft-licence-pcl) effective December 31, 2025 ended lifetime licences. New and renewed PCLs are **5-year licences at $24 CAD**, issued and renewed online through Transport Canada's PCL portal (existing lifetime PCLs are gradually being replaced). Amortized: **$5/year**.
 
 PCOC (operator card) is a one-time test, lifetime card. ~$50 once, never again.
 

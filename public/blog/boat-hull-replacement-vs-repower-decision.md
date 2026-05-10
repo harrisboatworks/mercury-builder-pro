@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-hull-replacement-vs-repower-decision.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -45,6 +45,10 @@ prompt: Photorealistic editorial decision tree diagram. Title: "Repower or Repla
 image: /lovable-uploads/hull-vs-repower-decision-tree.png
 :::
 
+![Decision tree comparing repower versus hull replacement: starts with whether the boat is over 20 years old with structural damage, branches into repower-keep-the-boat, repair-and-keep, or buy-used-or-new outcomes.](/lovable-uploads/diagram-hull-vs-repower.png)
+
+*The decision tree that frames every "do I repower or replace" conversation we have at HBW. Most customers fall into the REPOWER outcome, which is why mercuryrepower.ca exists.*
+
 The decision is not "new boat vs. old boat." It is "do I have a hull worth keeping?" If the answer is yes, repower wins on the math nearly every time. A Mercury repower on a solid 15-year-old hull lands $20,000 to $35,000 CAD all-in for a typical setup, against $50,000 to $90,000 CAD for a comparable new boat package.
 
 We have been doing this math with customers at HBW since 1965. Three patterns repeat:
@@ -88,7 +92,7 @@ Repower is the right call when:
 
 - **Hull is 5 to 20 years old, dry-stored, and structurally solid.** Most Ontario aluminum hulls in this range have decades of life left. Most fiberglass hulls in this range need careful inspection but are often fine.
 - **Existing seats, helm, and electronics still work or are fixable.** A motor swap does not require replacing the rest of the boat.
-- **The hull fits your use case.** 16 ft aluminum console for fishing on Rice Lake is the right tool. A new 16 ft aluminum console will not feel different on the water.
+- **The hull fits your use case.** 16 ft aluminum console for fishing on Rice Lake in the Kawarthas (Ontario) is the right tool. A new 16 ft aluminum console will not feel different on the water.
 - **You like the boat.** Sentimental and lifestyle attachment matters. The boats people keep for 20+ years are usually boats they love.
 - **You plan to keep the boat 5+ more years.** The longer the keep, the more the repower math wins.
 

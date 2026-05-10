@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-dealer-toronto-why-drive-to-hbw.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,7 @@ content_type: blog_article
 
 > **Quick answer:** Toronto-area boaters drive to HBW because we post real installed prices online, stock 2026 Mercury inventory you can see in person, and have one of Ontario's deepest service benches. The 90-minute drive saves thousands on most repowers. Build a quote first at mercuryrepower.ca.
 
-**We're not in Toronto.** Harris Boat Works is in Gores Landing, on Rice Lake, about 90 minutes east of downtown Toronto. If you're a GTA boater needing a Mercury outboard, the question is: why would you drive 90 minutes when there are Mercury dealers within 15 minutes of your house?
+**We're not in Toronto.** Harris Boat Works is in Gores Landing, on Rice Lake, Ontario (in the Kawarthas), about 90 minutes east of downtown Toronto. If you're a GTA boater needing a Mercury outboard, the question is: why would you drive 90 minutes when there are Mercury dealers within 15 minutes of your house?
 
 Honest answer: you wouldn't, if the local option was equivalent. The story most GTA boaters don't realize is that **most local Mercury dealers in the GTA aren't actually equivalent.** What you save in drive time you pay back in dealer tier, pricing transparency, repower expertise, and post-sale service quality.
 

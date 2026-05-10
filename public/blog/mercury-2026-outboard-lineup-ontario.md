@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-2026-outboard-lineup-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,7 +35,7 @@ content_type: blog_article
 
 > **Quick answer:** Mercury's 2026 lineup for Ontario covers 2.5 to 300 HP across FourStroke, Pro XS, and SeaPro families, plus Avator electric. Verado is special order only. Stocked allocation focuses on the high-volume cottage and fishing horsepowers, 9.9, 25, 60, 90, 115, 150. Live inventory at mercuryrepower.ca.
 
-The Mercury 2026 lineup covers every recreational HP class. FourStroke (2.5 to 300 HP) for cruising, fishing, and family use. Pro XS (115 to 300 HP) for performance fishing. SeaPro (25 to 300 HP) for commercial duty. Verado (250 to 600+ HP) for offshore (special-order at HBW). Avator electric line for emerging applications. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
+The Mercury 2026 lineup covers every recreational HP class. FourStroke (2.5 to 300 HP) for cruising, fishing, and family use. Pro XS (115 to 300 HP) for performance fishing. SeaPro (25 to 300 HP) for commercial duty. Verado V10/V12 ranges from 250 hp through 425 hp (V10) and up to 600 hp (V12); Mercury added the 425 hp V10 in May 2025 and enhanced the 350 hp V10 in the same release. Verado is special-order at HBW. Avator electric line for emerging applications. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -97,11 +97,11 @@ The SeaPro is Mercury's commercial-duty line. Built for heavy-use cycles: charte
 
 For typical Ontario recreational use, SeaPro is overkill. For commercial operators or extremely heavy-use private owners, SeaPro earns its premium. We sell some SeaPros at HBW; most are commercial sales.
 
-## Mercury 2026 Verado (250 to 600+ HP)
+## Mercury 2026 Verado (250 to 600 HP)
 
-The Verado is Mercury's premium V8/V10/V12 offshore line (naturally aspirated on current models). Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
+The Verado is Mercury's premium V8/V10/V12 offshore line (naturally aspirated on current models). The V10 lineup now includes 350, 400, and 425 hp models; Mercury added the 425 hp V10 in May 2025 and enhanced the 350 hp V10 in the same release. Built for big offshore center consoles, twin and triple installations, and luxury cruisers. Smooth, powerful, refined.
 
-Verado is special-order at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. Twin V12 600 HP setups are stunning motors. They are not for Rice Lake.
+Verado is special-order at HBW because almost no Ontario freshwater boater has a Verado-appropriate use case. Twin V12 600 HP setups are stunning motors. They are not for Rice Lake, Ontario.
 
 If you do have a Verado-appropriate boat (offshore center console, big yacht), [contact us](/contact) for a special-order quote.
 

@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -36,6 +36,10 @@ content_type: blog_article
 > **Quick answer:** DIY winterizing a Mercury is realistic if you're comfortable with fogging oil, lower-unit drain-and-fill, and fuel stabilizer. The mistake that kills motors is leaving water in the powerhead through a freeze. If you're not certain, pay a dealer, it's cheaper than a cracked block. Service booking at mercuryrepower.ca.
 
 Yes, you can winterize your own Mercury outboard if you have basic mechanical confidence, the right supplies, and an hour of focused work. The five steps that matter: stabilize the fuel, fog the engine, drain the gearcase, refill with fresh lube, and clear the cooling system. Skip any one of those and you risk a destroyed motor by spring. For motors you would rather not DIY, [request service at HBW](https://hbw.wiki/service).
+
+![8-step winterization checklist for Mercury outboards: drain fuel and add stabilizer, run for 10 minutes, fog cylinders, drain and refill gear case oil, dry cooling passages, disconnect and tend battery, apply corrosion protection, store vertical with cover and rodent baits.](/lovable-uploads/diagram-winterization-checklist.png)
+
+*The 8-step winterization sequence we run on every customer motor at HBW. Skip any of these and you're shopping for a powerhead in May.*
 
 ## Quick recommendation
 
@@ -170,17 +174,14 @@ The first one is the most common. Most often, DIYers drain the gear lube, get di
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), spring start-up issues and what to check
 - [Breaking In Your New Mercury Motor](/blog/breaking-in-new-mercury-motor-guide), if you are repowering this year
 
-## Ready to book service?
+## Need help with this?
 
-If you decide DIY is not the right call for your motor this year, [request service at HBW](https://hbw.wiki/service) or call (905) 342-2153. We start scheduling winterization in late September and the calendar fills through October. Booking early gets you the easier appointment slots.
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
 
-[**Request Service**](https://hbw.wiki/service)
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
----
-
-_Service pricing varies by motor size, boat type, and storage tier. The actual price for your boat is the one we give you when we look at it. [Contact us](/contact) for a real quote. Mercury model years and service rates change July 1 each year, and we refresh ranges in articles annually._
-
----
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 ## FAQ
 

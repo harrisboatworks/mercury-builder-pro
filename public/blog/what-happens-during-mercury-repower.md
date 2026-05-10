@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/what-happens-during-mercury-repower.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -105,7 +105,7 @@ If financing through Mercury Repower Financing at 7.99% APR (as of May 2026), we
 
 ### Step 4: Boat drop-off
 
-Customer brings the boat to HBW in Gores Landing on Rice Lake. Drop-off is typically the morning of the booked start date.
+Customer brings the boat to HBW in Gores Landing on Rice Lake, Ontario (in the Kawarthas). Drop-off is typically the morning of the booked start date.
 
 We do a final pre-work inspection with the customer present. Note any cosmetic issues, document existing electronics, identify any items the customer wants kept (kicker mounts, custom accessories, etc.).
 
@@ -208,7 +208,7 @@ We see these from customers who came from other shops:
 2. **No sea-trial.** Wrong prop or rigging issue not caught until customer returns.
 3. **No documentation.** Service log entry is critical for warranty support and resale value.
 4. **Skipped break-in coaching.** New owner doesn't know about the 10-hour break-in protocol or the 20-hour oil change.
-5. **No PCL update.** Transport Canada paperwork is mandatory and often forgotten.
+5. **No PCL update.** If your boat carries a Pleasure Craft Licence and the new motor changes the registered specs (HP, model, etc.), the licence record needs updating within 30 days. Not every repower triggers an update, confirm with HBW or check the Transport Canada PCL guidance. Typical install timelines range from 1-3 days off-season to 1-3 weeks at spring peak; your specific lead time is confirmed at booking.
 
 ## Related guides
 

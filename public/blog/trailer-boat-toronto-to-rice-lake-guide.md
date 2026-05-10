@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/trailer-boat-toronto-to-rice-lake-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,9 +31,11 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Toronto to Rice Lake is roughly 90 minutes via the 401 and Highway 28. Tire pressure, working trailer lights, and a tested coupler are non-negotiable. Plan your launch. Bewdley, Hastings, and Gores Landing all work. Pickup is in person at HBW; we don't ship boats. Quote at mercuryrepower.ca.
+> **Quick answer:** Toronto to Rice Lake, Ontario is roughly 90 minutes via the 401 and Highway 28. Tire pressure, working trailer lights, and a tested coupler are non-negotiable. Plan your launch. Bewdley, Hastings, and Gores Landing all work. Pickup is in person at HBW; we don't ship boats. Quote at mercuryrepower.ca.
 
-Rice Lake sits about 90 minutes northeast of Toronto, close enough for a long weekend, far enough that a lot of boaters have never made the drive with a trailer hitched on. If you're doing it for the first time, or the first time in a while, the trip is straightforward. But there are enough small things that can go wrong between the 401 and the Gores Landing boat ramp that a little prep goes a long way.
+> Towing rules in Ontario are set by the Ministry of Transportation Ontario (MTO) and change occasionally. The numbers below reflect MTO regulations as of May 2026. Verify current weight, width, and licensing rules at ontario.ca/page/towing-trailer before any long-distance haul.
+
+Rice Lake, Ontario (in the Kawarthas) sits about 90 minutes northeast of Toronto, close enough for a long weekend, far enough that a lot of boaters have never made the drive with a trailer hitched on. If you're doing it for the first time, or the first time in a while, the trip is straightforward. But there are enough small things that can go wrong between the 401 and the Gores Landing boat ramp that a little prep goes a long way.
 
 This guide covers everything: the drive, the trailer checklist, Ontario's licensing rules for towing, the best boat launches around Rice Lake, and the mistakes we see every spring at the marina. We've been at this since 1947 at Harris Boat Works, three generations of watching boats arrive from the GTA, some of them in better shape than others. In our Aug–Nov 2025 window alone, we logged 1,746 work orders and 584 winterizations. We see what happens to boats that travel unprepared, and it's preventable.
 

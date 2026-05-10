@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-outboard-financing-ontario-2026.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,11 +35,13 @@ content_type: blog_article
 
 Mercury outboard financing in Ontario lets you spread the cost of a new motor or full repower over 24 to 84 months instead of paying cash. The standard non-promotional rate is 7.99% APR (as of May 2026). Mercury runs seasonal promotional rate offers throughout the year. You can finance the motor, the rigging, install labour, prop, and HST in one package. Build a real quote and run live payment numbers on the [financing page](/financing).
 
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
+
 ## Quick recommendation
 
 If a repower is the right call for your boat, financing is almost always the right call for the repower itself. Most of our customers do not pay cash. They put a reasonable down payment on the boat, finance the rest at 7.99% over 60 to 84 months, and apply trade-in credit on their old motor. Their monthly number is usually less than what they were already spending on fuel and repairs for the old 2-stroke.
 
-We have set up financing on enough Rice Lake repowers to know that the customers who get burned are the ones who do not run the math before they sign anything. Five minutes on the [financing calculator](/financing) tells you what monthly payment fits your reality. Five minutes after that is a real quote with the actual financed total. Live numbers, no phone calls.
+We have set up financing on enough Rice Lake, Ontario repowers to know that the customers who get burned are the ones who do not run the math before they sign anything. Five minutes on the [financing calculator](/financing) tells you what monthly payment fits your reality. Five minutes after that is a real quote with the actual financed total. Live numbers, no phone calls.
 
 ## What changes the answer
 
@@ -94,7 +96,7 @@ Three patterns we see most often. Your situation is somewhere in here.
 
 **Scenario 1: The "I just want to get on the water" customer.** Old 2-stroke died last fall. Customer needs the boat running by Victoria Day weekend. Goes with a 90 to 115 HP FourStroke repower (mid tier, [live pricing here](/quote/motor-selection)), 10 to 20% down, 60-month term, standard rate. Monthly payment lands somewhere around what they were spending on premium fuel and oil mix for the old 2-stroke. They are on the water in three weeks.
 
-**Scenario 2: The "I am thinking about it for next season" customer.** Comes in November or December. Plans the repower for winter (cheapest shop time, first pick of motors). Watches for a Mercury promotional rate. Often catches a winter or early spring promo. Sometimes finances for 84 months to keep the monthly low and pay it off as their old boat loan would have ended anyway. Boat is ready to launch the day the ice comes off Rice Lake.
+**Scenario 2: The "I am thinking about it for next season" customer.** Comes in November or December. Plans the repower for winter (cheapest shop time, first pick of motors). Watches for a Mercury promotional rate. Often catches a winter or early spring promo. Sometimes finances for 84 months to keep the monthly low and pay it off as their old boat loan would have ended anyway. Boat is ready to launch the day the ice comes off Rice Lake, Ontario (in the Kawarthas).
 
 **Scenario 3: The "I am stretching the budget" customer.** Wants to upgrade to bigger HP than they currently run. Needs every dollar of trade-in credit and a longer term to make the monthly fit. We run multiple quote configurations on the [motor selection page](/quote/motor-selection) and the [financing calculator](/financing) to show what changes when they pick a 90 vs a 115 vs a 150. Honest math wins this one. Sometimes the right answer is to wait a season and save more down payment.
 

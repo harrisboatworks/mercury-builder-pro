@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/mercury-prokicker-rice-lake-fishing-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,9 +31,9 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** The Mercury 9.9 ProKicker is the right kicker for Rice Lake walleye and musky trolling, high gear ratio for slow speeds, electric start, power tilt, and remote-ready. It's a different motor than the standard 9.9 portable. We rig and tiller-link these regularly for Kawartha boats. Build a kicker package at mercuryrepower.ca.
+> **Quick answer:** The Mercury 9.9 ProKicker is the right kicker for Rice Lake, Ontario walleye and musky trolling, high gear ratio for slow speeds, electric start, power tilt, and remote-ready. It's a different motor than the standard 9.9 portable. We rig and tiller-link these regularly for Kawartha boats. Build a kicker package at mercuryrepower.ca.
 
-The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).
+The Mercury 9.9 ProKicker is the standard kicker motor for serious Rice Lake, Ontario (in the Kawarthas) walleye fishing. Long shaft, high-thrust gearcase, larger prop, integrated tiller mount or remote-control variant. It does what main motors cannot: idle down to true walleye trolling speed (1 to 2 mph) without spooking fish. We install ProKickers on most fishing boat repowers at HBW. Live pricing on every Mercury we sell, including ProKicker, is at [/quote/motor-selection](/quote/motor-selection).
 
 ## Quick recommendation
 
@@ -169,6 +169,12 @@ If you want to talk through ProKicker setup for your specific fishing boat befor
 ---
 
 _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection), which is the source of truth and updates as Mercury pricing and HBW promotions change. Mercury model years change every July 1, and we refresh ranges in articles annually._
+
+---
+
+## What We See at HBW
+
+A few patterns we see on Rice Lake ProKicker installs at HBW. The 9.9 ELHPT is the most common spec, electric start with hand tiller and power tilt. Stainless prop with weed guard outlasts aluminum on the south-shore weed beds by a factor of 2-3x. Customers who skip annual service on the kicker (because "it's just for trolling") end up replacing the impeller mid-season; the kicker runs more hours than the main on a typical fishing day. The factory mounting bracket from Mercury fits most aluminum fishing transoms, but custom brackets are common on bass-boat applications. Annual service on the kicker is the same cost as on the main; budget for both.
 
 ---
 

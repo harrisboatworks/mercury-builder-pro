@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-dealer-ontario-hbw-difference.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -43,7 +43,7 @@ Three things actually matter when evaluating an Ontario Mercury dealer:
 2. **Diagnostic and rigging expertise**
 3. **Pricing transparency and post-sale service relationship**
 
-Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake. We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
+Harris Boat Works has been a Mercury dealer since 1965, third-generation family business since 1947, on Rice Lake in the Kawarthas (Ontario). We're a Mercury Marine Platinum dealer. Most of what's below applies to dealing with us specifically; the framework also helps you evaluate any Ontario dealer.
 
 ---
 
@@ -130,7 +130,7 @@ What we're good at:
 - **Mercury repowers** (volume + transparency + sea-trial expertise)
 - **Older Mercury support** (1990s onward, parts availability dependent)
 - **Complex diagnostic work** (G3, factory-trained, multiple specialists on staff)
-- **Service relationship continuity** (third-generation, on Rice Lake since 1947)
+- **Service relationship continuity** (third-generation, on Rice Lake, Ontario (in the Kawarthas) since 1947)
 - **Pricing transparency** (configurator-based)
 - **GTA / wider Ontario service** (we're 90 minutes from Toronto, full service relationships extend across the province)
 

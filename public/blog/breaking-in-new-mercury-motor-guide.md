@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/breaking-in-new-mercury-motor-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -153,19 +153,14 @@ We document break-in compliance during HBW deliveries and follow up on first-yea
 - [Mercury Propeller Selection Guide](/blog/mercury-propeller-selection-guide), prop testing during break-in sea-trial
 - [Mercury Outboard Won't Start Troubleshooting](/blog/mercury-outboard-wont-start-troubleshooting), early-life issue diagnostics
 
-## Ready to take delivery of a new Mercury?
+## Need help with this?
 
-Build a quote on the [motor selection page](/quote/motor-selection). Live Mercury pricing in CAD with full configuration. Break-in protocol is part of every HBW delivery.
+Service work at HBW is booked online. We diagnose the issue, give you a written estimate, and get the boat back on the water.
 
-[**Build Your Mercury Quote**](/quote/motor-selection)
+**Book service:** [hbw.wiki/service](https://hbw.wiki/service)
+**Phone:** 905-342-2153
 
-If you want to talk through break-in for a specific Mercury before purchase, [give us a call at (905) 342-2153](tel:9053422153). We deliver new Mercurys every week and walk every customer through the break-in protocol.
-
----
-
-_Pricing ranges in this article are HBW's working 2026 estimates, verified May 2026. The actual price for your specific motor and configuration is on the [motor selection page](/quote/motor-selection). Mercury model years change every July 1, and we refresh ranges in articles annually._
-
----
+If you're considering a new motor instead of repairing this one, build a Mercury repower quote at [mercuryrepower.ca](/quote/motor-selection).
 
 ## FAQ
 

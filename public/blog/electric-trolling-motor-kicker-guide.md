@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/electric-trolling-motor-kicker-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -31,9 +31,11 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** On Rice Lake, a gas kicker like the Mercury 9.9 ProKicker wins for long trolling days and big-water reach. Electric trolling motors win for stealth and bow-mount precision in shallow weed beds. Most serious anglers run both. We rig either as a complete package, quote at mercuryrepower.ca.
+> **Quick answer:** On Rice Lake in the Kawarthas (Ontario), a gas kicker like the Mercury 9.9 ProKicker wins for long trolling days and big-water reach. Electric trolling motors win for stealth and bow-mount precision in shallow weed beds. Most serious anglers run both. We rig either as a complete package, quote at mercuryrepower.ca.
 
-Short answer: most serious Rice Lake anglers run both. A bow-mount electric for spot-lock and silent precision, a transom kicker for long trolling runs and rough-water reliability. They solve different problems.
+If you're sizing the main outboard alongside the kicker, see [Best Mercury Outboard for Pontoon Boats](/blog/best-mercury-outboard-pontoon-boats), [Best Motor for Small Lakes in Ontario](/blog/best-motor-small-lakes-ontario), and the [Mercury ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide). For the rigging side (controls, wiring, gauges), the [Mercury Controls & Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario) covers what a dual-engine setup actually needs.
+
+Short answer: most serious Rice Lake, Ontario (in the Kawarthas) anglers run both. A bow-mount electric for spot-lock and silent precision, a transom kicker for long trolling runs and rough-water reliability. They solve different problems.
 
 But if you can only afford one, or you want to pick the right *first* one, the answer depends entirely on what you fish for and how you fish. We rig both setups every spring. Here's the honest breakdown of which wins for which boater, with the math we'd do at the shop if you walked in.
 
@@ -132,8 +134,6 @@ We rig both setups all the time. Specifically:
 - **Service for both**, annual on the kicker (oil, impeller, plugs) and battery health checks on the electric
 
 Book at [hbw.wiki/service](https://hbw.wiki/service) or quote a new ProKicker at [mercuryrepower.ca](https://mercuryrepower.ca).
-
-{/* TODO: Add customer story for electric-trolling-motor-kicker-guide */}
 
 ## FAQs
 

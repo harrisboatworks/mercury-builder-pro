@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -33,9 +33,9 @@ content_type: blog_article
 
 *Last reviewed: 2026-05-07*
 
-> **Quick answer:** Most dealers hide prices to force a phone call, it lets them negotiate trade-in down and add fees later. HBW posts real installed prices because customers deserve a number before driving 90 minutes. Configurator with live pricing at mercuryrepower.ca.
+> **Quick answer:** In our experience, many dealers hide prices to force a phone call, which lets them control the negotiation and add fees later. HBW posts real installed prices because customers deserve a number before driving 90 minutes. Configurator with live pricing at mercuryrepower.ca.
 
-If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. Most marine dealers deliberately don't publish prices online. The reasons they give are excuses; the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
+If you've shopped for a Mercury outboard online and hit "Call for Pricing" or "Request a Quote" on every dealer's site, you're not imagining it. From what we hear from customers, plenty of marine dealers we know about don't publish prices online. The reasons they give are usually excuses; in our view, the real reasons are about information asymmetry. We list every Mercury price live at [/quote/motor-selection](/quote/motor-selection) because the math works better when both sides see the same numbers.
 
 ## Quick recommendation
 
@@ -69,9 +69,9 @@ Some dealers want to make sure you buy the right motor for your boat. That's a r
 
 This is the honest one, and it's the one no dealer says out loud. If you don't know the price, you can't comparison shop. If you have to call to get pricing, you're already partially committed before the conversation. The dealer controls the negotiation.
 
-## The real reasons most dealers hide prices
+## The real reasons many dealers hide prices
 
-Three honest reasons:
+In our experience, three honest reasons:
 
 ### 1. Information asymmetry is profitable
 
@@ -79,11 +79,11 @@ If you don't know the market price, you don't know if the quote you got is fair.
 
 ### 2. Phone capture beats web shopping
 
-Once you call a dealer, you're in their pipeline. They know your name, number, boat, and budget. They can follow up. A web visitor who saw the price and decided to think about it is a lost lead. So the dealer prefers the phone call even if the customer would have bought online.
+Once you call a dealer, you're in their pipeline. They know your name, number, boat, and budget. They can follow up. A web visitor who saw the price and decided to think about it is a lost lead. So the dealer often prefers the phone call even if the customer would have bought online.
 
 ### 3. Industry inertia
 
-Most marine dealers run websites built before transparency was the expected norm. The next generation of marine dealers will publish pricing as a matter of course. The current generation is still catching up.
+A lot of marine dealers run websites built before transparency was the expected norm. The next generation of marine dealers will likely publish pricing as a matter of course. The current generation is still catching up.
 
 ## Why HBW lists prices
 

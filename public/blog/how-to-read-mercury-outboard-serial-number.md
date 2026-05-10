@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/how-to-read-mercury-outboard-serial-number.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -35,6 +35,8 @@ content_type: blog_article
 
 > **Quick answer:** Mercury serial numbers encode model year, plant, and powerhead family. The first letters identify the family; the digits give the build sequence. We use the serial to verify warranty, eligibility for software upgrades like Boost, and parts compatibility. Send us a serial through mercuryrepower.ca for a quick check.
 
+Once you've decoded the serial, you'll likely want to look up [Mercury Outboard Warranty (Canada 2026)](/blog/mercury-outboard-warranty-canada-2026), check pricing in the [Ontario Mercury Outboard Price Guide](/blog/ontario-mercury-outboard-price-guide), or compare engine families in [Mercury Motor Families: FourStroke vs Pro XS vs Verado](/blog/mercury-motor-families-fourstroke-vs-pro-xs-vs-verado). Repower customers should also read [Mercury Repower Cost: Ontario 2026 (CAD)](/blog/mercury-repower-cost-ontario-2026-cad).
+
 Your Mercury's serial number is the only piece of information on the motor that actually matters for parts, service, warranty, and history. Not the year on the cowl. Not the boat's title. Not what the previous owner remembered.
 
 This is how to find it, what it tells you, and what we can look up for you with it.
@@ -42,6 +44,12 @@ This is how to find it, what it tells you, and what we can look up for you with 
 ---
 
 ## The Golden Rule
+
+![Diagram decoding the Mercury outboard model number 1F60413GZ: country of origin (1 USA), family and HP (F60 FourStroke 60 HP), configuration code (413 remote electric power-trim), shaft variant (G), year code (Z 2023). Note: this is the model number, not the serial number.](/lovable-uploads/diagram-mercury-model-number-decoder.png)
+
+*The model number encodes product spec. Your motor also has a separate serial number (like 0M123456) on a smaller plate, which is the unique identifier used for parts ordering, warranty, and recall lookups.*
+
+**Quick clarification:** Mercury motors carry two numbers. The **model number** (decoded above) tells you what kind of motor it is. The **serial number** (a shorter alphanumeric like 0M123456 on its own plate) is the unique ID for your specific unit. Both matter, but it's the serial that drives parts lookups, warranty registration, and recall checks.
 
 Two identical-looking Mercury 90 HP FourStrokes can use **completely different parts** depending on which serial number range they fall into. Mercury revises components mid-year, mid-production-run, even mid-month. The serial is the only thing that says exactly which version you have.
 

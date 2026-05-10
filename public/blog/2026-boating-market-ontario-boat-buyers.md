@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/2026-boating-market-ontario-boat-buyers.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -64,9 +64,9 @@ For buyers, "too much" new inventory is actually a benefit. It means more select
 
 On the used side, tighter supply but softening prices (down an estimated 5–10% from pandemic peaks) creates opportunities if you're watching closely and ready to move on clean trade-ins.
 
-## The Segments That Matter for Rice Lake
+## The Segments That Matter for Rice Lake, Ontario
 
-Across North America, not all boat types are moving in lockstep. The segments most relevant to Rice Lake, fishing boats, pontoons, and smaller trailerable rigs, tell a reassuring story:
+Across North America, not all boat types are moving in lockstep. The segments most relevant to Rice Lake, Ontario (in the Kawarthas), fishing boats, pontoons, and smaller trailerable rigs, tell a reassuring story:
 
 - **Aluminum fishing / freshwater fishing boats**: One of the most resilient categories. Inventory aging for freshwater fish boats dropped below 15% over 365 days and inventory turns climbed above 2x, indicating healthy movement.
 - **Pontoon boats**: 2024 pontoon sales in the U.S. were in the ~52,000–55,000 unit range, down about 10–13% year over year but still historically strong. Inventory turns in the pontoon segment actually exceeded market average.
@@ -80,9 +80,9 @@ At the higher end of the market, there's a major policy change that benefits Can
 
 Canada's 2022 federal budget introduced a luxury tax on certain items, including boats priced above $250,000. The tax was calculated as the lesser of 10% of the full value or 20% of the value above $250,000, which could add tens of thousands of dollars to the cost of larger yachts and premium packages.
 
-The marine industry argued the tax was counterproductive, driving sales out of Canada and hurting Canadian builders and dealers without generating meaningful revenue. After heavy advocacy from NMMA Canada and industry groups, the federal government announced in late 2025 that the luxury tax on boats would be repealed.
+The marine industry argued the tax was counterproductive, driving sales out of Canada and hurting Canadian builders and dealers without generating meaningful revenue. After heavy advocacy from NMMA Canada and industry groups, the federal government moved to wind down the luxury tax on subject vessels.
 
-Budget 2025 confirmed that the luxury tax on pleasure craft would be removed. For buyers looking at high-end pontoons, larger Legend packages, or other boats near the threshold, this is a direct saving and removes a psychological barrier.
+For subject vessels (boats over $250,000), the CRA has confirmed luxury tax is no longer payable as of November 5, 2025. Vehicle and aircraft luxury tax may continue to apply in other contexts. For buyers looking at high-end pontoons, larger Legend packages, or other boats near the threshold, this removes a psychological barrier on the marine side.
 
 ## Interest Rates Are Finally Easing
 

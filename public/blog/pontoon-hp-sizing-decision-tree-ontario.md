@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/pontoon-hp-sizing-decision-tree-ontario.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -41,9 +41,12 @@ content_type: blog_article
 
 ---
 
-There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake afternoon chop, or get 10 people up to plane before dark, the motor gives up.
+There are thousands of pontoons on Ontario lakes right now that are criminally underpowered. The owners don't know it. The boats float fine, they idle around the bay, and they technically work. But the moment someone wants to pull a tube, fight Rice Lake, Ontario afternoon chop, or get 10 people up to plane before dark, the motor gives up.
 
 This post is the answer to the question every pontoon buyer eventually asks: *What HP do I actually need?* Not the minimum the boat can run. Not what the previous owner had. The HP that makes your boat do what you bought it to do.
+
+![Decision tree showing Mercury HP recommendations by pontoon size: under 18 ft pontoons take a Mercury 60 HP standard or 60 CT, 18-20 ft family pontoons take a 60 CT minimum or 90 standard, 20-22 ft pontoons need a 90 CT minimum, and 22+ ft tritoons towing tubes or skiers need a 115 CT or 150 HP.](/lovable-uploads/diagram-pontoon-hp-decision-tree.png)
+*The HBW pontoon HP sizing decision tree. Walk down the branch that matches your pontoon length and load profile. When in doubt between two adjacent recommendations, size up — pontoons reward headroom.*
 
 ---
 
@@ -57,7 +60,7 @@ Here's the problem: the previous owner probably undersized it too. Dealers push 
 
 The capacity plate on your pontoon tells you the **maximum** HP the transom is rated for, not the recommended HP. There's a significant gap between what a boat *can* run and what it *should* run. Most buyers never learn that until they're embarrassed trying to get on plane with a full load.
 
-If you're buying used and the motor is at the low end of that manufacturer's HP range, budget for a repower. It's not optional if you want the boat to actually perform. You can read more about the [common issues that come with underpowered used pontoons on Rice Lake](https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake). HP is behind a lot of them.
+If you're buying used and the motor is at the low end of that manufacturer's HP range, budget for a repower. It's not optional if you want the boat to actually perform. You can read more about the [common issues that come with underpowered used pontoons on Rice Lake, Ontario (in the Kawarthas)](https://www.mercuryrepower.ca/blog/common-pontoon-boat-problems-rice-lake). HP is behind a lot of them.
 
 ---
 

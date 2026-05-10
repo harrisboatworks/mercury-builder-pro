@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/best-mercury-for-family-runabouts.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -141,8 +141,6 @@ We rig family runabouts every spring. Specifically:
 - **Annual service** at our Gores Landing shop. Mercury Platinum dealer, factory-trained techs, ethanol-free 89 marine gas at the dock
 
 If you're not sure between two HPs, call. Picking right is more important than picking fast.
-
-{/* TODO: Add customer story for best-mercury-for-family-runabouts */}
 
 ## FAQs
 

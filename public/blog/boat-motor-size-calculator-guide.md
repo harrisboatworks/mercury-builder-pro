@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/boat-motor-size-calculator-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -118,7 +118,7 @@ Every boat has a maximum HP rating. This is your ceiling - never exceed it. But 
 
 ### The Harris Boat Works Method
 
-Bring us your boat info and tell us how you fish. We'll recommend the right motor based on decades of experience matching Mercury motors to boats on Ontario waters (Harris Boat Works has been on Rice Lake since 1947 and a Mercury dealer since 1965).
+Bring us your boat info and tell us how you fish. We'll recommend the right motor based on decades of experience matching Mercury motors to boats on Ontario waters (Harris Boat Works has been on Rice Lake in the Kawarthas (Ontario) since 1947 and a Mercury dealer since 1965).
 
 **[Get a Personalized Motor Recommendation](/quote)**
 

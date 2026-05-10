@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/outboard-shaft-length-guide.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -94,6 +94,9 @@ image: /lovable-uploads/shaft-length-vs-transom-diagram.png
 
 You need a tape measure and 5 minutes:
 
+![Diagram showing how to measure outboard shaft length: 15-inch short shaft, 20-inch long shaft, 25-inch extra long shaft on a boat transom in side profile.](/lovable-uploads/diagram-shaft-length-measurement.png)
+*Standard outboard shaft lengths measured from the top of the transom (motor mount) down to the bottom of the hull at the waterline. Mismatched length causes prop ventilation or excess drag.*
+
 1. **Find the lowest point of the hull at the transom** (the point where water meets hull when running on plane)
 2. **Measure straight up** from that point to the top of the transom (where the motor will mount)
 3. **That measurement is your transom height**
@@ -159,6 +162,9 @@ We see these every season:
 
 ## Mercury shaft length codes (decoded)
 
+![Diagram decoding a Mercury outboard model code 60 ELHPT: 60 = horsepower, E = electric start, L = long shaft, H = hand tiller, P = power trim, T = tilt. Common combinations include ELPT, ELHPT, EXLPT, MLH, and CT (Command Thrust).](/lovable-uploads/diagram-mercury-model-code-decoder.png)
+*Quick reference for reading any Mercury outboard model code. The letters are stackable: a 60 ELHPT is electric-start, long-shaft, hand-tiller, with power trim and tilt.*
+
 Mercury's model numbers tell you shaft length:
 
 - **MH** = Manual start, tiller (no shaft suffix typically, comes in standard short for that motor)
@@ -183,7 +189,7 @@ For Mercury technical reference detail, see our [Mercury 2026 outboard lineup gu
 - [Tiller vs Remote Steering Outboard Guide](/blog/tiller-vs-remote-steering-outboard-guide), control type
 - [Mercury Outboard Rigging Costs Explained](/blog/mercury-outboard-rigging-costs-ontario), rigging detail
 - [Portable Mercury Outboard Guide 2.5 to 20 HP](/blog/portable-outboard-mercury-guide-2-20hp), small motor specifics
-- [Mercury 9.9 ProKicker Rice Lake Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker shaft selection
+- [Mercury 9.9 ProKicker Rice Lake, Ontario Fishing Guide](/blog/mercury-prokicker-rice-lake-fishing-guide), kicker shaft selection
 
 ## Ready to spec the right shaft?
 

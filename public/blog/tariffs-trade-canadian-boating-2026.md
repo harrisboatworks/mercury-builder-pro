@@ -1,6 +1,6 @@
 ---
 canonical: https://www.mercuryrepower.ca/blog/tariffs-trade-canadian-boating-2026.md
-last_updated: 2026-05-08
+last_updated: 2026-05-10
 currency: CAD
 pickup_only: true
 delivery_offered: false
@@ -144,9 +144,9 @@ Amid all the noise about tariffs and trade, here's our straightforward guidance:
 3. **Consider origin, but prioritize quality.** Supporting Canadian brands like Legend makes sense, and we're proud to sell them. For engines, Mercury's product quality, market support, and local service network matter more than political headlines. There isn't a realistic Canadian substitute for a modern 90–150 HP outboard, and compromising on engine quality rarely pays off.
 4. **Ask questions.** If you're worried a particular product might be affected by tariffs, or if a price seems out of step with what you expect, talk to us. We see the wholesale side of this and can explain what's driving costs.
 
-Harris Boat Works has been on Rice Lake since 1947. We've seen different trade regimes, different governments, and plenty of economic ups and downs. Through all of it, people keep boating, and the Canada–U.S. marine relationship remains vital on both sides of the border.
+Harris Boat Works has been on Rice Lake in the Kawarthas (Ontario) since 1947. We've seen different trade regimes, different governments, and plenty of economic ups and downs. Through all of it, people keep boating, and the Canada–U.S. marine relationship remains vital on both sides of the border.
 
-We're optimistic that CUSMA will be renewed and that common sense will prevail. In the meantime, our job remains the same: help you get into the right boat and engine package at a fair price, keep it running, and get you out on Rice Lake.
+We're optimistic that CUSMA will be renewed and that common sense will prevail. In the meantime, our job remains the same: help you get into the right boat and engine package at a fair price, keep it running, and get you out on Rice Lake, Ontario (in the Kawarthas).
 
 [Browse Mercury motors and get pricing](/quote/motor-selection), or give us a call at (905) 342-2153.
 
