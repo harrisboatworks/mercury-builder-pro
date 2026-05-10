@@ -3864,7 +3864,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
   // Week 10: March 9, 2026
   {
     slug: 'bass-boat-mercury-motor-buying-guide',
-    title: 'Best Mercury Motor for Bass Boats: 2026 Buyer\'s Guide',
+    title: 'Choosing the Right Mercury for Your Bass Boat (Ontario 2026)',
     description: 'Find the perfect Mercury outboard for your bass boat. Compare Pro XS and FourStroke options for tournament and recreational bass fishing.',
     image: '/lovable-uploads/bass-boat-150-proxs-hero-real.png',
     author: 'Harris Boat Works',
