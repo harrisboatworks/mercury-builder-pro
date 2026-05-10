@@ -350,7 +350,18 @@ export default function BlogArticle() {
           {/* Content */}
           <div className="prose prose-gray max-w-none prose-headings:scroll-mt-24 prose-table:w-full prose-th:text-left prose-th:font-semibold prose-th:border-b prose-th:border-repower-navy-900/20 prose-td:border-b prose-td:border-repower-navy-900/10 prose-th:py-2 prose-td:py-2 prose-th:px-3 prose-td:px-3">
             <MarkdownSectionCards
-              content={article.content.replace(/^\s*#\s+.+\n+/, '')}
+              content={(() => {
+                let c = article.content.replace(/^\s*#\s+.+\n+/, '');
+                // Suppress inline `## Frequently Asked Questions` (or FAQ/FAQs)
+                // section when faqs[] is populated — accordion below replaces it.
+                if (article.faqs && article.faqs.length > 0) {
+                  c = c.replace(
+                    /\n##\s+(?:Frequently Asked Questions|FAQs?|FAQ)\b[^\n]*\n[\s\S]*?(?=\n##\s|\n*$)/i,
+                    '\n',
+                  );
+                }
+                return c;
+              })()}
               markdownComponents={{
                 h2: ({ node, children, ...props }) => {
                   const text = String(children);
