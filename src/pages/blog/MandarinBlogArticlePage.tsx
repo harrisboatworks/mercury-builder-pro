@@ -9,6 +9,7 @@ import { getMandarinArticleBySlug } from '@/data/mandarinBlogArticles';
 import { BlogArticle as BlogArticleType } from '@/data/blogArticles';
 import { slugify, extractHeaders } from '@/utils/slugify';
 import { TableOfContents } from '@/components/blog/TableOfContents';
+import { LanguageSwitcher } from '@/components/blog/LanguageSwitcher';
 import {
   Accordion,
   AccordionContent,
