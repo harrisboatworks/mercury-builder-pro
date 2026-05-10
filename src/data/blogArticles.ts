@@ -14788,7 +14788,6 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
   // ============================================
   // TIER 1 BATCH. Scheduled May 7-10, 2026
   // ============================================
-  // TODO: Add customer story for used-outboard-buying-guide-ontario
   {
     slug: "used-outboard-buying-guide-ontario",
     title: "Used Outboard Buying Guide for Ontario Boaters (What to Check Before You Pay)",
@@ -14994,7 +14993,6 @@ We're a full-service Mercury Platinum dealer and we work on everything from curr
   }
 ],
   },
-  // TODO: Add customer story for trent-severn-waterway-boating-guide-2026
   {
     slug: "trent-severn-waterway-boating-guide-2026",
     title: "Trent-Severn Waterway 2026: Free Lockage, Hours, and a Local's Trip Plan",
@@ -15224,7 +15222,6 @@ Parks Canada doesn't sell fuel at lockstations, only commercial marinas do. Most
   }
 ],
   },
-  // TODO: Add customer story for outboard-overheating-emergency-guide
   {
     slug: "outboard-overheating-emergency-guide",
     title: "Your Mercury Is Overheating. What to Do Right Now (and How to Prevent It)",
@@ -15454,7 +15451,6 @@ If you're considering a new motor instead of repairing this one, build a Mercury
   }
 ],
   },
-  // TODO: Add customer story for rice-lake-boating-guide-2026
   {
     slug: "rice-lake-boating-guide-2026",
     title: "Rice Lake Boating Guide 2026: Launches, Hazards, Fish, and a Local's Notes",
@@ -15706,7 +15702,6 @@ No, we don't sell licences. Pick up your Ontario Outdoors Card and fishing licen
   }
 ],
   },
-  // TODO: Add customer story for mercruiser-sterndrive-guide-ontario
   {
     slug: 'mercruiser-sterndrive-guide-ontario',
     title: "The Ontario Boater's Guide to MerCruiser Sterndrives: Maintenance, Repairs, and Repower",
@@ -15944,7 +15939,6 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
       }
     ],
   },
-  // TODO: Add customer story for mercury-vesselview-smartcraft-plain-english-guide
   {
     slug: 'mercury-vesselview-smartcraft-plain-english-guide',
     title: "Mercury VesselView, SmartCraft, and the New Mercury Marine App: A Plain-English Guide",
@@ -16116,7 +16110,6 @@ Book at **[hbw.wiki/service](https://hbw.wiki/service)** or call **905-342-2153*
       }
     ],
   },
-  // TODO: Add customer story for how-to-read-mercury-outboard-serial-number
   {
     slug: 'how-to-read-mercury-outboard-serial-number',
     title: "How to Read a Mercury Outboard Serial Number: Year, Specs, and Service History",
@@ -16336,7 +16329,6 @@ Take a photo of the plate the day you buy the boat. Save it on your phone. You'l
       }
     ],
   },
-  // TODO: Add customer story for mercury-maintenance-intervals-20-100-300-rule
   {
     slug: 'mercury-maintenance-intervals-20-100-300-rule',
     title: "The Mercury 20/100/300 Maintenance Rule: What Every Ontario Boater Should Know",
@@ -16542,7 +16534,6 @@ Book scheduled service at **[hbw.wiki/service](https://hbw.wiki/service)** or ca
       }
     ],
   },
-  // TODO: Add customer story for winter-boat-storage-shrinkwrap-vs-indoor-ontario
   {
     slug: 'winter-boat-storage-shrinkwrap-vs-indoor-ontario',
     title: "Shrinkwrap vs. Indoor Boat Storage in Ontario: The Honest Comparison",
@@ -16779,7 +16770,6 @@ We've stored boats in Gores Landing for three generations. Mercury Marine Platin
       }
     ],
   },
-  // TODO: Add customer story for total-cost-of-owning-a-boat-ontario-2026
   {
     slug: 'total-cost-of-owning-a-boat-ontario-2026',
     title: "What Does It Actually Cost to Own a Boat in Ontario? (2026 HBW Guide)",
@@ -17032,7 +17022,6 @@ There's no shame in renting. There's a lot of shame in over-extending into a boa
       }
     ],
   },
-  // TODO: Add customer story for legend-boats-mercury-power-package-guide-ontario
   {
     slug: 'legend-boats-mercury-power-package-guide-ontario',
     title: "Legend Boats + Mercury Power Packages: Ontario Buyer's Guide (2026)",
@@ -17232,7 +17221,6 @@ A few things that aren't on the Legend website:
       }
     ],
   },
-  // TODO: Add customer story for mercury-outboard-warranty-canada-2026
   {
     slug: 'mercury-outboard-warranty-canada-2026',
     title: "Mercury Outboard Warranty in Canada (2026): What's Covered, What's Not, and What's Worth Buying",
@@ -17423,7 +17411,6 @@ New Mercury quotes (with MPP options): [mercuryrepower.ca](https://mercuryrepowe
       }
     ],
   },
-  // TODO: Add customer story for mercury-smartcraft-alarm-codes-encyclopedia
   {
     slug: 'mercury-smartcraft-alarm-codes-encyclopedia',
     title: "Mercury SmartCraft Alarm Codes: What Every Beep, Light, and Fault Code Means (2026 Encyclopedia)",
