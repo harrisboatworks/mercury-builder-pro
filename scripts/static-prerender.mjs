@@ -274,6 +274,54 @@ console.log(`[static-prerender] loaded ${faqItems.length} FAQ items`);
 const blogArticles = loadBlogArticles();
 console.log(`[static-prerender] loaded ${blogArticles.length} published blog articles`);
 
+// Load translated blog article arrays. These files just export a plain
+// `BlogArticle[]`, so we dump a minimal shape per article. Empty arrays are fine.
+function loadTranslatedBlogArticles(modulePath, exportName) {
+  const dumpScript = `
+    import { ${exportName} } from '${modulePath}';
+    import { getCleanDescription, sanitizeForSchema, markdownToNoscriptHtml } from '../src/lib/strip-markdown.ts';
+    const items = (${exportName} || []).map(a => ({
+      slug: a.slug,
+      title: a.title,
+      description: getCleanDescription(a),
+      image: a.image,
+      datePublished: a.datePublished,
+      dateModified: a.dateModified,
+      publishDate: a.publishDate || a.datePublished || null,
+      keywords: a.keywords || [],
+      readTime: a.readTime || '5 min read',
+      content: a.content || '',
+      faqs: (a.faqs || [])
+        .map(f => ({
+          question: sanitizeForSchema(f.question),
+          answer: sanitizeForSchema(f.answer),
+          questionHtml: markdownToNoscriptHtml(f.question),
+          answerHtml: markdownToNoscriptHtml(f.answer),
+        }))
+        .filter(f => f.question && f.answer),
+    }));
+    process.stdout.write(JSON.stringify(items));
+  `;
+  const tmpFile = join(ROOT, 'scripts', `.blog-dump-${exportName}.mts`);
+  writeFileSync(tmpFile, dumpScript);
+  try {
+    const out = execSync(`npx tsx ${shellPath(tmpFile)}`, { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
+    return JSON.parse(out);
+  } catch (err) {
+    console.warn(`[static-prerender] failed to load ${exportName}: ${err.message}`);
+    return [];
+  } finally {
+    try { rmSync(tmpFile); } catch {}
+  }
+}
+
+const frenchBlogArticles = loadTranslatedBlogArticles('../src/data/frenchBlogArticles.ts', 'frenchBlogArticles');
+const koreanBlogArticles = loadTranslatedBlogArticles('../src/data/koreanBlogArticles.ts', 'koreanBlogArticles');
+const mandarinBlogArticles = loadTranslatedBlogArticles('../src/data/mandarinBlogArticles.ts', 'mandarinBlogArticles');
+const spanishBlogArticles = loadTranslatedBlogArticles('../src/data/spanishBlogArticles.ts', 'spanishBlogArticles');
+console.log(`[static-prerender] loaded translated blog articles — fr:${frenchBlogArticles.length} ko:${koreanBlogArticles.length} zh:${mandarinBlogArticles.length} es:${spanishBlogArticles.length}`);
+
+
 const caseStudies = loadCaseStudies();
 console.log(`[static-prerender] loaded ${caseStudies.length} case studies`);
 
