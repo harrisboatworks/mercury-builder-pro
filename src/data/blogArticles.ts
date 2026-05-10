@@ -4053,6 +4053,8 @@ Most Mercury owners overspend on fuel because of one of three things: wrong prop
 
 A correctly-rigged Mercury 90 EXLPT FourStroke on a 16 to 18 ft aluminum console can run 4 to 5 mph per US gallon at cruise. A poorly-rigged version of the same motor can run 3 to 3.5 mph per US gallon. Same motor, different fuel burn. The difference is prop, trim, and operation.
 
+Real fuel use depends on hull, load, prop, mounting height, water conditions, and rigging. Numbers below are typical ranges from boats we've rigged at HBW; treat them as ballpark, not guarantees.
+
 ## What changes fuel efficiency
 
 Five biggest levers:
@@ -8368,9 +8370,9 @@ At the higher end of the market, there's a major policy change that benefits Can
 
 Canada's 2022 federal budget introduced a luxury tax on certain items, including boats priced above $250,000. The tax was calculated as the lesser of 10% of the full value or 20% of the value above $250,000, which could add tens of thousands of dollars to the cost of larger yachts and premium packages.
 
-The marine industry argued the tax was counterproductive, driving sales out of Canada and hurting Canadian builders and dealers without generating meaningful revenue. After heavy advocacy from NMMA Canada and industry groups, the federal government announced in late 2025 that the luxury tax on boats would be repealed.
+The marine industry argued the tax was counterproductive, driving sales out of Canada and hurting Canadian builders and dealers without generating meaningful revenue. After heavy advocacy from NMMA Canada and industry groups, the federal government moved to wind down the luxury tax on subject vessels.
 
-Budget 2025 confirmed that the luxury tax on pleasure craft would be removed. For buyers looking at high-end pontoons, larger Legend packages, or other boats near the threshold, this is a direct saving and removes a psychological barrier.
+For subject vessels (boats over $250,000), the CRA has confirmed luxury tax is no longer payable as of November 5, 2025. Vehicle and aircraft luxury tax may continue to apply in other contexts. For buyers looking at high-end pontoons, larger Legend packages, or other boats near the threshold, this removes a psychological barrier on the marine side.
 
 ## Interest Rates Are Finally Easing
 
@@ -10165,6 +10167,8 @@ Mercury Platinum Dealer · Rice Lake, Ontario
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** With Evinrude out of production, parts and service are tightening fast. A Mercury FourStroke repower restores warranty coverage, parts availability, and resale value. Most Evinrude-to-Mercury jobs need new gauges, harness, and controls, we quote it all installed at mercuryrepower.ca.
+
+> **Planning-level CAD ranges as of May 2026.** Final motor price, financing terms, promotions, install lead times, and rigging cost depend on motor configuration, lender approval, Mercury Canada availability, and the live quote. Build a current quote at [mercuryrepower.ca](/quote/motor-selection) to see today's exact numbers.
 
 Switching from Evinrude to Mercury during a repower runs an extra $1,500 to $3,000 CAD in rigging costs because the entire control system has to swap. That sounds like a lot until you remember Evinrude stopped making outboards in 2020, and parts and service support is shrinking every year. The math usually favors the switch. Live pricing on every Mercury we sell is at [/quote/motor-selection](/quote/motor-selection).
 
@@ -12571,6 +12575,8 @@ We have been a Mercury dealer since 1965. The depth of expertise, parts inventor
 
 > **Quick answer:** For Rice Lake, Ontario under $30,000, look at 17-19 ft aluminum fishing hulls (Lund, Princecraft, Crestliner) with a Mercury 60-90 FourStroke installed. Pontoons in that budget are typically used. We can quote either as a complete installed package at mercuryrepower.ca.
 
+> **Planning-level CAD ranges as of May 2026.** Boat prices, dealer inventory, and motor packages move with model year, supply, and the local used market. Numbers below reflect what was available at HBW and across Ontario in spring 2026; verify current pricing at the dealer before committing.
+
 Under $30,000 CAD on Rice Lake, Ontario (in the Kawarthas), your three best paths in 2026 are a new small aluminum fishing boat with a Mercury under 60 HP, a used family pontoon (often with a recent repower or due for one), or a clean used hull paired with a Mercury repower. We rig and service all three at HBW. The smart money usually skips brand-new entry-level boats and goes into a quality used hull plus a current Mercury motor instead.
 
 ## Quick recommendation
@@ -12753,6 +12759,8 @@ A 16-18 ft aluminum console or tiller boat (Lund, Crestliner, Princecraft, Lowe 
 *Last reviewed: 2026-05-07*
 
 > **Quick answer:** Toronto to Rice Lake, Ontario is roughly 90 minutes via the 401 and Highway 28. Tire pressure, working trailer lights, and a tested coupler are non-negotiable. Plan your launch. Bewdley, Hastings, and Gores Landing all work. Pickup is in person at HBW; we don't ship boats. Quote at mercuryrepower.ca.
+
+> Towing rules in Ontario are set by the Ministry of Transportation Ontario (MTO) and change occasionally. The numbers below reflect MTO regulations as of May 2026. Verify current weight, width, and licensing rules at ontario.ca/page/towing-trailer before any long-distance haul.
 
 Rice Lake, Ontario (in the Kawarthas) sits about 90 minutes northeast of Toronto, close enough for a long weekend, far enough that a lot of boaters have never made the drive with a trailer hitched on. If you're doing it for the first time, or the first time in a while, the trip is straightforward. But there are enough small things that can go wrong between the 401 and the Gores Landing boat ramp that a little prep goes a long way.
 
@@ -13685,6 +13693,8 @@ Skip Boost on a typical 150 HP pontoon. Here is why: a pontoon's top speed is go
 
 Boost makes more sense on lighter performance boats where the hull responds to small power changes (bass boats, performance fishing boats, some runabouts). For a 22-foot tritoon hauling four adults, a cooler, and a tube, Boost is a hundred or two hundred dollars in horsepower bragging rights without much practical change.
 
+Boost gains depend on hull, load, prop, and current setup. The hull-load-prop interaction matters more than the headline HP number, so any "X mph faster" or "worth $Y" framing should be treated as a ballpark for one specific rig, not a guarantee for yours.
+
 The bigger story is what Boost tells us about Mercury's roadmap. Software-defined performance upgrades are how the next decade of motor improvements will arrive. Buying a 150 HP today and adding software upgrades later is going to be more common, more granular, and probably more interesting than today's first Boost iteration.
 
 ## What Boost actually is
@@ -14467,7 +14477,7 @@ We see these from customers who came from other shops:
 2. **No sea-trial.** Wrong prop or rigging issue not caught until customer returns.
 3. **No documentation.** Service log entry is critical for warranty support and resale value.
 4. **Skipped break-in coaching.** New owner doesn't know about the 10-hour break-in protocol or the 20-hour oil change.
-5. **No PCL update.** Transport Canada paperwork is mandatory and often forgotten.
+5. **No PCL update.** If your boat carries a Pleasure Craft Licence and the new motor changes the registered specs (HP, model, etc.), the licence record needs updating within 30 days. Not every repower triggers an update, confirm with HBW or check the Transport Canada PCL guidance. Typical install timelines range from 1-3 days off-season to 1-3 weeks at spring peak; your specific lead time is confirmed at booking.
 
 ## Related guides
 
@@ -21670,7 +21680,7 @@ The matrix below is what we'd actually quote for each HP class. It's not exhaust
 | **40-60 HP** | Side-mount mechanical or binnacle | Cable mechanical | Analog (tach + fuel) | Single battery, basic harness | 12-13" dia, 11-15" pitch | $1,500-$2,500 |
 | **75-90 HP** | Binnacle mechanical (Gen II) | Cable or hydraulic | Analog or SmartCraft Connect | Single battery, isolator if accessories | 13-14" dia, 13-19" pitch | $2,000-$3,000 |
 | **115 HP** | Binnacle Gen II mechanical | Hydraulic (SeaStar Pro) | SmartCraft Connect or VesselView 4 | Single or dual battery, ACR if dual | 14" dia, 15-21" pitch | $2,500-$4,000 |
-| **150 HP V6** | Binnacle Gen II mechanical OR DTS | Hydraulic, optional power-assist | VesselView 4/7, SmartCraft mandatory | Dual battery + ACR | 14-15" dia, 17-23" pitch | $3,500-$5,500 |
+| **150 HP V6** | Binnacle Gen II mechanical OR DTS | Hydraulic, optional power-assist | VesselView 4/7, SmartCraft typically standard | Dual battery + ACR | 14-15" dia, 17-23" pitch | $3,500-$5,500 |
 | **175-200 HP V6** | Binnacle DTS or Pro XS DTS | Power-assist hydraulic | VesselView 7 or 9 | Dual battery + ACR, switch panel | 14-16" dia, 19-25" pitch | $4,500-$6,500 |
 | **225 HP V6** | Binnacle DTS standard | Power-assist hydraulic | VesselView 9 standard | Dual battery + ACR, switch panel | 14-16" dia, 21-25" pitch | $5,000-$7,500 |
 
@@ -21862,7 +21872,7 @@ The general guidance per HP class:
 | 60-90 | 13-14" | 13-19" | Aluminum standard, stainless for performance |
 | 115 | 14" | 15-21" | Stainless recommended for any sport use |
 | 150 | 14-15" | 17-23" | Stainless standard |
-| 175-225 | 14-16" | 19-25" | Stainless mandatory (aluminum can't handle the load) |
+| 175-225 | 14-16" | 19-25" | Stainless strongly recommended (aluminum often can't handle the load) |
 
 These ranges are starting points. Your hull weight, intended use (skiing vs. fishing vs. cruising), and the prop's blade design all push the right pitch up or down. Aluminum props are cheaper (CAD $200-$500) but flex at higher loads. Stainless (CAD $500-$1,200) holds shape, lasts longer, and recovers better after a strike.
 
@@ -22214,7 +22224,7 @@ Numbers below are real-world cruise data from boats we've rigged. Conditions mat
 
 ### A note on 14 ft hulls
 
-![Diagram of a boat capacity plate showing the three federal limits a buyer needs to check: maximum persons (5 or 750 lbs), maximum horsepower (60), and maximum total weight (1,250 lbs including motor, fuel, and gear). Transport Canada compliant.](/lovable-uploads/diagram-capacity-plate-decoder.png)
+![Diagram of a typical boat capacity plate showing the three federal limits a buyer needs to check: maximum persons, maximum horsepower, and maximum total weight.](/lovable-uploads/diagram-capacity-plate-decoder.png)
 *Every recreational boat sold in Canada carries a capacity plate on the inner transom. The three limits are independent: don't exceed any of them. The horsepower limit is the federal/manufacturer maximum and is not negotiable.*
 
 A 14 ft aluminum boat is too short for a 40 HP. Most 14 footers are rated for 25-30 HP max on the capacity plate. If you've got a 14 ft hull, you're shopping the 25-30 HP class, not the 40-60. We're happy to quote that separately, but it's not the post you're reading.
