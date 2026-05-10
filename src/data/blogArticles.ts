@@ -2179,7 +2179,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     readTime: '12 min read',
     keywords: ['mercury for pontoon boat', 'best pontoon outboard', 'pontoon motor hp', 'command thrust pontoon', 'mercury 115 pontoon', 'mercury 150 pontoon', 'rice lake pontoon'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Pontoons need torque, not top speed. For most 18-22 ft Ontario pontoons, a Mercury 90-115 Command Thrust is the right answer, bigger prop, lower gear ratio, better hole-shot with people aboard. Stay inside your tube rating. Build an installed pontoon repower quote at mercuryrepower.ca.
 
@@ -2200,6 +2200,14 @@ Five things move the right Mercury for your pontoon:
 - **Passenger and gear loading.** A 22 ft pontoon with a family of eight needs more HP than the same pontoon with two adults.
 - **Where you boat.** Sheltered Kawartha bays vs. open Lake Ontario vs. Trent-Severn travel changes the practical HP minimum.
 - **Capacity plate maximum HP.** The plate sets the legal ceiling. Pontoons typically rate 90 to 150 HP or 115 to 200 HP depending on size.
+
+### What pontoon owners usually miss
+
+Horsepower decides whether the pontoon will plane. The gearcase decides whether it'll feel right doing it.
+
+A 60 HP FourStroke and a 60 HP Command Thrust look almost identical on the spec sheet. Same horsepower. Same family. The Command Thrust gearcase swings a bigger prop, which on a pontoon translates to better hole-shot, better load-carrying, and a boat that feels like it has more motor than the number suggests. On an aluminum fishing boat the difference is smaller. On a pontoon it's the whole game.
+
+The same applies up the range. A 115 ELPT Command Thrust on a heavy tri-toon pulls cleaner than a standard 115 on the same boat. We default to Command Thrust on most pontoon repowers for that reason. Customers sometimes push back on the small price difference until they see the boat run with the right gearcase. Then they get it.
 
 ## Best Mercury for pontoons by use case
 :::image-placeholder
