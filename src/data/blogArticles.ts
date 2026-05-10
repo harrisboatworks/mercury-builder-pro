@@ -10677,7 +10677,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['Mercury repower cost Ontario', 'Mercury repower cost Canada 2026', 'Mercury outboard price CAD', 'boat repower cost Ontario', 'Mercury engine price Canada'],
     content: `
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** A Mercury repower in Ontario typically lands $8,000-$30,000 CAD installed depending on horsepower, rigging needs, and controls. The motor itself is roughly two-thirds of the total. We post real installed prices, no phone-call required to get a number. Build yours at mercuryrepower.ca.
 
@@ -10758,6 +10758,14 @@ Here is what each line on a repower bill covers and what makes it move.
 | **Add HST (13% Ontario)** | On the total | Standard for Ontario |
 
 Every motor on this site shows live pricing. The quote builder adds the rigging, install, and prop based on your configuration so you see your actual all-in number, not a range.
+
+### What surprises customers in repower quotes
+
+The motor price is the easy number. Everything around it is where quotes diverge.
+
+The customer comparing two repower quotes will see one at $14,000 and one at $17,000 and assume the cheaper shop is the better deal. Then they ask what's included. The cheaper quote is motor only, no controls, no install, customer brings their own prop. The higher quote is fully rigged, installed, propped, and ready to run.
+
+The cheaper quote isn't dishonest. It just answers a different question. We give you the installed-price number on the first quote because that's the only number that matters when you're trying to budget. The motor cost alone is interesting trivia. The number that hits your bank account is the install-ready total.
 
 ## Why we do not quote specific motor prices in articles
 
