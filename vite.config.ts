@@ -19,7 +19,8 @@ function sitemapPlugin(): Plugin {
         // after vite build (it includes motor, case-study, and location URLs that
         // require async data fetching). Writing it here would race and ship a
         // stale sitemap missing those URLs. RSS stays here — blog-only, no async.
-        const { generateRssXML } = await import('./src/utils/generateSitemap');
+        const modPath = './src/utils/generateSitemap.ts';
+        const { generateRssXML } = await import(/* @vite-ignore */ modPath);
         const rss = generateRssXML();
         writeFileSync('public/rss.xml', rss);
         const itemCount = (rss.match(/<item>/g) || []).length;
