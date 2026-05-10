@@ -14616,6 +14616,9 @@ image: /lovable-uploads/shaft-length-vs-transom-diagram.png
 
 You need a tape measure and 5 minutes:
 
+![Diagram showing how to measure outboard shaft length: 15-inch short shaft, 20-inch long shaft, 25-inch extra long shaft on a boat transom in side profile.](/lovable-uploads/diagram-shaft-length-measurement.png)
+*Standard outboard shaft lengths measured from the top of the transom (motor mount) down to the bottom of the hull at the waterline. Mismatched length causes prop ventilation or excess drag.*
+
 1. **Find the lowest point of the hull at the transom** (the point where water meets hull when running on plane)
 2. **Measure straight up** from that point to the top of the transom (where the motor will mount)
 3. **That measurement is your transom height**
@@ -14680,6 +14683,9 @@ We see these every season:
 5. **Sailboat auxiliaries with short shaft.** Sailboat transoms are usually deep. Long or extra long is the standard. Short shaft sailboat installs cavitate constantly.
 
 ## Mercury shaft length codes (decoded)
+
+![Diagram decoding a Mercury outboard model code 60 ELHPT: 60 = horsepower, E = electric start, L = long shaft, H = hand tiller, P = power trim, T = tilt. Common combinations include ELPT, ELHPT, EXLPT, MLH, and CT (Command Thrust).](/lovable-uploads/diagram-mercury-model-code-decoder.png)
+*Quick reference for reading any Mercury outboard model code. The letters are stackable: a 60 ELHPT is electric-start, long-shaft, hand-tiller, with power trim and tilt.*
 
 Mercury's model numbers tell you shaft length:
 
@@ -22182,6 +22188,10 @@ Two things to pull out of that table.
 Numbers below are real-world cruise data from boats we've rigged. Conditions matter (wind, load, hull cleanliness) so think of these as ballpark, not guarantees.
 
 ### A note on 14 ft hulls
+
+![Diagram of a boat capacity plate showing the three federal limits a buyer needs to check: maximum persons (5 or 750 lbs), maximum horsepower (60), and maximum total weight (1,250 lbs including motor, fuel, and gear). Transport Canada compliant.](/lovable-uploads/diagram-capacity-plate-decoder.png)
+*Every recreational boat sold in Canada carries a capacity plate on the inner transom. The three limits are independent: don't exceed any of them. The horsepower limit is the federal/manufacturer maximum and is not negotiable.*
+
 A 14 ft aluminum boat is too short for a 40 HP. Most 14 footers are rated for 25-30 HP max on the capacity plate. If you've got a 14 ft hull, you're shopping the 25-30 HP class, not the 40-60. We're happy to quote that separately, but it's not the post you're reading.
 
 ### 15-16 ft aluminum (Lund SSV-16, Princecraft 162, Crestliner FishHawk 1650)
