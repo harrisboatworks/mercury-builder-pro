@@ -2179,7 +2179,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     readTime: '12 min read',
     keywords: ['mercury for pontoon boat', 'best pontoon outboard', 'pontoon motor hp', 'command thrust pontoon', 'mercury 115 pontoon', 'mercury 150 pontoon', 'rice lake pontoon'],
     content: `
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** Pontoons need torque, not top speed. For most 18-22 ft Ontario pontoons, a Mercury 90-115 Command Thrust is the right answer, bigger prop, lower gear ratio, better hole-shot with people aboard. Stay inside your tube rating. Build an installed pontoon repower quote at mercuryrepower.ca.
 
@@ -2200,6 +2200,14 @@ Five things move the right Mercury for your pontoon:
 - **Passenger and gear loading.** A 22 ft pontoon with a family of eight needs more HP than the same pontoon with two adults.
 - **Where you boat.** Sheltered Kawartha bays vs. open Lake Ontario vs. Trent-Severn travel changes the practical HP minimum.
 - **Capacity plate maximum HP.** The plate sets the legal ceiling. Pontoons typically rate 90 to 150 HP or 115 to 200 HP depending on size.
+
+### What pontoon owners usually miss
+
+Horsepower decides whether the pontoon will plane. The gearcase decides whether it'll feel right doing it.
+
+A 60 HP FourStroke and a 60 HP Command Thrust look almost identical on the spec sheet. Same horsepower. Same family. The Command Thrust gearcase swings a bigger prop, which on a pontoon translates to better hole-shot, better load-carrying, and a boat that feels like it has more motor than the number suggests. On an aluminum fishing boat the difference is smaller. On a pontoon it's the whole game.
+
+The same applies up the range. A 115 ELPT Command Thrust on a heavy tri-toon pulls cleaner than a standard 115 on the same boat. We default to Command Thrust on most pontoon repowers for that reason. Customers sometimes push back on the small price difference until they see the boat run with the right gearcase. Then they get it.
 
 ## Best Mercury for pontoons by use case
 :::image-placeholder
@@ -10677,7 +10685,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['Mercury repower cost Ontario', 'Mercury repower cost Canada 2026', 'Mercury outboard price CAD', 'boat repower cost Ontario', 'Mercury engine price Canada'],
     content: `
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** A Mercury repower in Ontario typically lands $8,000-$30,000 CAD installed depending on horsepower, rigging needs, and controls. The motor itself is roughly two-thirds of the total. We post real installed prices, no phone-call required to get a number. Build yours at mercuryrepower.ca.
 
@@ -10758,6 +10766,14 @@ Here is what each line on a repower bill covers and what makes it move.
 | **Add HST (13% Ontario)** | On the total | Standard for Ontario |
 
 Every motor on this site shows live pricing. The quote builder adds the rigging, install, and prop based on your configuration so you see your actual all-in number, not a range.
+
+### What surprises customers in repower quotes
+
+The motor price is the easy number. Everything around it is where quotes diverge.
+
+The customer comparing two repower quotes will see one at $14,000 and one at $17,000 and assume the cheaper shop is the better deal. Then they ask what's included. The cheaper quote is motor only, no controls, no install, customer brings their own prop. The higher quote is fully rigged, installed, propped, and ready to run.
+
+The cheaper quote isn't dishonest. It just answers a different question. We give you the installed-price number on the first quote because that's the only number that matters when you're trying to budget. The motor cost alone is interesting trivia. The number that hits your bank account is the install-ready total.
 
 ## Why we do not quote specific motor prices in articles
 
@@ -11151,7 +11167,7 @@ Mercury Platinum Dealer · Rice Lake, Ontario
     keywords: ['mercury 115 vs 150 hp', 'mercury 115 Pro XS', 'mercury 150 Pro XS', 'mercury 115 FourStroke review', 'mercury 150 FourStroke specs', 'which outboard for Ontario boat', 'mercury outboard comparison', 'Pro XS vs FourStroke'],
     content: `# Mercury 115 vs 150 HP Outboard Comparison (2026 Ontario Guide)
 
-*Last reviewed: 2026-05-07*
+*Last reviewed: 2026-05-10*
 
 > **Quick answer:** The 115 is the right call for most 17-19 ft hulls, lighter, cheaper, fully capable. The 150 makes sense on 19-21 ft hulls or any boat that loads heavy. Both share a similar service footprint. Stay inside the capacity plate. Compare installed pricing at mercuryrepower.ca.
 
@@ -11174,6 +11190,13 @@ Five things move whether 115 or 150 fits your boat:
 - **Active water sports.** Tubing, skiing, wakeboarding pull more HP than fishing or cruising. The 150 handles loaded water sports well; the 115 struggles when loaded and pulling.
 - **Where you launch.** Bigger water (Lake Ontario, Bay of Quinte, eastern Trent-Severn) rewards more HP for both safety and performance.
 - **Capacity plate ceiling.** A boat rated 90 to 150 HP can take either. A boat rated up to 115 can only take the 115.
+### How the conversation actually goes
+
+Two boats walk in with the same length. One needs 115 HP. The other needs 150. The difference is rarely the boat. It's the load.
+
+The pontoon that's running four adults plus gear on Rice Lake on a regular weekend is a different motor decision than the pontoon that runs two adults to the dock and back twice a week. Same boat. Same hull rating. Different real-world load. The 115 has the easier life and lasts longer. The 150 has the headroom for tubing, wakeboarding, or running into a headwind without lugging.
+
+We ask the load question first. Hull rating is the ceiling. Use case is what makes sense inside that ceiling.
 
 ## Side-by-side: Mercury 115 vs 150 FourStroke
 
