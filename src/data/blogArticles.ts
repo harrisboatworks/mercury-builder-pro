@@ -23273,6 +23273,538 @@ Two paths.
 - [Mercury Controls and Rigging Guide (Ontario)](/blog/mercury-controls-rigging-guide-ontario)
 - [Mercury SmartCraft Alarm Codes Encyclopedia](/blog/mercury-smartcraft-alarm-codes-encyclopedia)`,
   },
+  {
+    slug: "outdoor-boat-storage-shrinkwrap-rice-lake",
+    title: "Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters",
+    description: "Outdoor winter boat storage and shrinkwrap at Harris Boat Works in Gores Landing on Rice Lake. What's included, what's not, and how to prepare your boat for an Ontario winter.",
+    image: "/lovable-uploads/hero-winter-storage-shrinkwrap-vs-indoor.png",
+    author: "Harris Boat Works",
+    datePublished: "2026-05-10",
+    dateModified: "2026-05-10",
+    publishDate: "2026-05-10",
+    category: "Service & Maintenance",
+    readTime: "9 min read",
+    keywords: ["outdoor boat storage rice lake", "boat shrinkwrap kawarthas", "gores landing winter storage", "harris boat works winter storage", "boat winterization rice lake", "kawartha shrinkwrap"],
+    faqs: [
+      { question: "Do you offer indoor storage?", answer: "No. Outdoor only on a fenced, monitored lot with shrinkwrap. If you need indoor, we'll point you to other shops without making a big deal of it." },
+      { question: "What's the size limit?", answer: "30 feet. We're not taking anything bigger right now." },
+      { question: "Do I still need winterization if my boat is shrinkwrapped?", answer: "Yes. Shrinkwrap and winterization are two different jobs. The boat under the wrap still has water in it that needs to be dealt with." },
+      { question: "When should I book winter storage?", answer: "August or September is ideal. October works. The last week before freeze-up is when everyone calls at once and we start saying no." },
+      { question: "Can I leave my battery in over winter?", answer: "If it's healthy, yes. If it's three years old and you've been jump-starting it, take it home and trickle-charge it. A dead battery in March is a $200 problem you can avoid for free." },
+      { question: "What happens if my shrinkwrap rips over the winter?", answer: "We patch it. We check the lot after big storms. If a wrap fails badly, we'll let you know." },
+      { question: "Is the lot really monitored?", answer: "Fenced, with cameras. We're on-site daily through the off-season for service work." },
+    ],
+    content: `# Outdoor Boat Storage and Shrinkwrap on Rice Lake: A Straight Answer for Kawartha Boaters
+
+*Last reviewed: 2026-05-10*
+
+> **Quick answer:** Harris Boat Works offers outdoor winter boat storage and shrinkwrap in Gores Landing for Rice Lake and Kawartha boaters, up to 30 feet. We don't run indoor storage. If you want a straight answer on what your boat needs before winter and what we actually handle, this is the page.
+
+## Who this is for
+
+You're the right fit for HBW outdoor storage if:
+
+- Your boat is 30 feet or under
+- You boat on Rice Lake, the Kawarthas, or the Trent-Severn
+- You want one stop for storage, shrinkwrap, and winterization instead of three different shops
+- You're okay with outdoor storage on a fenced, monitored lot (not heated indoor)
+
+If you need indoor heated storage, we'll point you somewhere else honestly. If your boat is over 30 feet, we can't take it. We'd rather tell you that up front than waste your fall.
+
+## What HBW outdoor storage actually includes
+
+Three things come standard with winter storage. Most marinas charge for them. We don't.
+
+**Free spring check ($99 value).** Your boat gets looked over before you tow it home. Battery, fuel system, lower unit oil, hoses, basic systems. The kind of inspection that catches the $30 winter problem before it becomes the $300 spring problem. Most marinas charge $99 for this as a standalone service. It's included.
+
+**Free summer trailer storage ($150 value).** Once your boat is out of storage and back in the water, your trailer doesn't need to live on your driveway all summer. Drop it here, pick it up in the fall when the boat comes back. That's $150 you'd otherwise pay somewhere or lose to driveway space.
+
+**Free shrinkwrap recycling ($35 value).** When we pull the wrap off in spring, it gets recycled instead of landfilled. Small environmental thing. Saves you the disposal fee a lot of marinas charge to handle it.
+
+That's $284 in included services on top of the storage itself. The math actually matters when you're comparing quotes.
+
+## What HBW also handles (priced separately)
+
+Beyond core storage and shrinkwrap, the shop offers:
+
+- **Winterization tiered by engine type.** Different work, different price. 2-stroke, 4-stroke, Optimax/E-TEC, sterndrive (4 & 6 cyl, V6 & V8, Bravo), and inboard. We don't quote a flat number because they're not the same job.
+- **Winterize with oil and filter change.** Bundled service if you want the full pre-storage prep done by us.
+- **Bio-wash hull cleaning ($10/ft).** Chemical hull clean before wrap. Worth it if the boat picked up zebra mussels, scum line, or stained gel coat over the season.
+- **Pontoon enclosures removal and install ($5/ft).** If you've got a full enclosure that needs to come off before wrap and back on in spring.
+- **Shrinkwrap only.** For boats already winterized by someone else (or DIY) who just need the wrap. $20/ft done indoors, $25/ft done outdoors.
+
+Current rates are on the [storage page](https://www.harrisboatworks.ca/winter-storage). They change every fall, so the live page is the source of truth. This guide is for the questions, not the quote.
+
+## Shrinkwrap is not winterization. They're two different jobs.
+
+This is the single most expensive misunderstanding in marine storage.
+
+**Shrinkwrap** is a tight plastic cover. It keeps snow, ice, and squirrels out of the boat. It does not protect the engine.
+
+**Winterization** is what protects the engine: fogging the cylinders, draining or stabilizing fuel, replacing lower-unit oil, removing water that'll freeze and crack a block. Without it, a hard freeze can split a powerhead or crack a sterndrive housing. Shrinkwrap won't save you from that. It just keeps the snow off while it happens.
+
+If you do one and skip the other, you're wasting money. Either one alone is half a job.
+
+We do both. We'll also do shrinkwrap-only if your boat is already winterized (some customers handle the engine themselves and just want the wrap). Up to you. Just know which one you're paying for.
+
+## Before you drop the boat off: checklist
+
+Pull this list, run through it the night before:
+
+- **Fuel.** Top off and add stabilizer if we're not winterizing. If we are, we'll handle it.
+- **Battery.** Can stay in if it's healthy. Disconnect or remove if you want extra peace of mind.
+- **Drain plug.** Pull it. Tape it to the dash where you'll find it.
+- **Valuables.** Fish finders, electronics, rods, ditty boxes, registration, paperwork. Take it home.
+- **Canvas and seats.** Clean and dry. Wet vinyl in a wrapped boat grows mould all winter.
+- **Bilge.** Pump it dry before the boat goes on the trailer.
+- **Trailer.** Straps tight, lights working, jack functional. We have to move it on the lot.
+- **Tow vehicle.** Full tank if you're driving from a distance. The closest fuel after Gores Landing isn't always close.
+
+If something's broken or making a noise you didn't trust last fall, tell us when you drop it off. Spring is the wrong time to discover problems.
+
+## Outdoor vs indoor: honest trade-offs
+
+We don't offer indoor storage, but we'll tell you the truth about it instead of pretending outdoor is always best.
+
+**Indoor wins on:** dust-free finish, no UV, no thermal cycling, easier on canvas and gel coat over many years.
+
+**Outdoor with proper shrinkwrap wins on:** price (typically half or less of indoor), availability (indoor lots fill up early and have waitlists), and convenience for trailerable boats.
+
+**For most Rice Lake and Kawartha boats** (aluminum fishing boats, pontoons under 25 feet, runabouts), outdoor with shrinkwrap is the practical answer. For a high-end fibreglass cruiser with custom paint, indoor might be worth the premium. Choose based on your boat, not on what makes the marina more money.
+
+## Drop-off and spring pickup: what to expect
+
+**Fall drop-off.** Book a slot through the [service request form](https://hbw.wiki/service). Show up, sign in, leave the keys, go home. We handle the rest. Don't time it for the last weekend in October. That week is a zoo and we'd rather have your boat earlier when there's room to do the work properly.
+
+**Over the winter.** The boat sits on a fenced, monitored lot. We check it after major weather events. If a wrap rips or something looks off, we'll text you.
+
+**Spring pickup.** We run the spring check before you tow it home. You'll know if anything came up over the winter. Usual stuff: a corroded battery terminal, a mouse that found a way in, a soft hose. Better to find that here than at the ramp.
+
+## What HBW checks before storage
+
+Storage is the first sign of how a boat got treated all season. Before we wrap it, we look at:
+
+- Hull condition (cracks, soft spots near the transom)
+- Fuel system (water in the bowl, ethanol damage)
+- Lower unit oil (milky means water intrusion, find that now, not in May)
+- Battery health
+- Bilge and stringers
+
+If we see something that's going to be expensive in the spring, we tell you in the fall. You decide whether to fix it now or budget for spring. That's the difference between storage at a marina and storage at a parking lot.
+
+## Questions we hear at the counter
+
+**Do you offer indoor storage?**
+No. Outdoor only on a fenced, monitored lot with shrinkwrap. If you need indoor, we'll point you to other shops without making a big deal of it.
+
+**What's the size limit?**
+30 feet. We're not taking anything bigger right now.
+
+**Do I still need winterization if my boat is shrinkwrapped?**
+Yes. Shrinkwrap and winterization are two different jobs. See the section above. The boat under the wrap still has water in it that needs to be dealt with.
+
+**When should I book?**
+August or September is ideal. October works. The last week before freeze-up is when everyone calls at once and we start saying no.
+
+**Can I leave my battery in?**
+If it's healthy, yes. If it's three years old and you've been jump-starting it, take it home and trickle-charge it. A dead battery in March is a $200 problem you can avoid for free.
+
+**What happens if my shrinkwrap rips over the winter?**
+We patch it. We check the lot after big storms. If a wrap fails badly, we'll let you know.
+
+**Is the lot really monitored?**
+Fenced, with cameras. We're on-site daily through the off-season for service work.
+
+## Where to go next
+
+If you're ready to book: [Request winter storage service](https://hbw.wiki/service).
+
+If you want a phone call first: (905) 342-2153, or text (647) 952-2153.
+
+If you're newer to boat ownership and unsure what winterization actually involves, the [Mercury winterization guide](https://www.mercuryrepower.ca/blog/diy-mercury-outboard-winterization) covers it engine-side. Most customers read it and then book us anyway. Worth knowing what's happening either way.
+`,
+  },
+  {
+    slug: "rice-lake-boat-launch-guide",
+    title: "Where to Launch a Boat on Rice Lake: A Practical Guide for Anglers, Cottagers, and Day Visitors",
+    description: "A no-nonsense guide to launching on Rice Lake from Gores Landing. Pre-launch checklist, parking, after-hours payment, what to know about the ramp, and who it's for.",
+    image: "/lovable-uploads/hero-rice-lake-boating-guide.png",
+    author: "Harris Boat Works",
+    datePublished: "2026-05-10",
+    dateModified: "2026-05-10",
+    publishDate: "2026-05-10",
+    category: "Local Guides",
+    readTime: "8 min read",
+    keywords: ["rice lake boat launch", "gores landing boat ramp", "boat launch peterborough", "boat launch cobourg", "kawartha boat launch", "24 hour boat ramp ontario"],
+    faqs: [
+      { question: "Is the HBW ramp open 24 hours?", answer: "Yes. The ramp and parking lot are open 24 hours, with after-hours self-pay at the drop box. Shop hours for staff assistance, parts, and washrooms are Monday to Saturday, May through October." },
+      { question: "How much is the launch fee?", answer: "Posted on the sign at the ramp and updated annually. Cash or e-transfer for after-hours; card during shop hours." },
+      { question: "Do I need to book a launch slot?", answer: "No. First come, first served. Even on busy weekends the lot has held up." },
+      { question: "Can I launch a boat over 30 feet?", answer: "The ramp itself can handle up to 30 feet comfortably. Beyond that, contact us first; we will tell you honestly if it is workable." },
+      { question: "Is there a dock at the ramp?", answer: "Yes, a courtesy dock for tying off while you park the trailer. Be quick; others are waiting." },
+      { question: "Can I launch a kayak or canoe at the HBW ramp?", answer: "Yes, no fee for unpowered craft. Use the side of the ramp or the shallow shoreline rather than the main lane." },
+      { question: "Is there a fish-cleaning station at the ramp?", answer: "Not at the ramp itself. Most anglers clean at home or at their cottage. The shop does not offer cleaning." },
+    ],
+    content: `# Where to Launch a Boat on Rice Lake: A Practical Guide for Anglers, Cottagers, and Day Visitors
+
+*Last reviewed: 2026-05-10*
+
+> **Quick answer:** The Harris Boat Works ramp in Gores Landing is a 24-hour public-access launch on the north shore of Rice Lake, with paved approach, deepwater entry, daytime staff on-site, and after-hours self-pay. Suitable for boats up to 30 feet. Free parking for cars and trailers. Backup options at Bewdley, Hastings, and Peterborough are covered below.
+
+## Who this is for
+
+Use this guide if you are:
+
+- An angler hauling a boat from the GTA, Durham, or Northumberland for a Rice Lake fishing day
+- A cottager who keeps a trailerable boat at home and launches when you visit
+- A first-time visitor unsure which ramp to point your truck at
+- A boater coming off the Trent-Severn looking for a north-shore exit point
+
+If you keep your boat in the water for the season at a private dock or marina slip, you do not need this guide. This is for trailer-launch days.
+
+## Pre-launch checklist
+
+Run this list in your driveway, not at the top of the ramp. Nobody behind you wants to watch you discover you forgot the drain plug.
+
+- **Drain plug.** In the boat, hand-tight. Tape a spare to the dash if you are forgetful.
+- **Battery.** Switched on, terminals clean. Trolling motor battery too if you have one.
+- **Fuel.** Topped up. The closest gas after Gores Landing is back in Bewdley or Cobourg.
+- **Straps and tie-downs.** Loosen the transom straps before backing in. Leave the bow strap on until the boat is floating.
+- **Bilge plug-in and pump test.** Confirm the bilge pump runs before you leave the ramp.
+- **Engine.** Lower unit clear, prop intact, fuel line connected, primer bulb firm.
+- **Safety kit.** PFDs (one per person, properly sized), bailer, flashlight, sound device, throw line. Transport Canada checks happen on Rice Lake.
+- **Licence and registration.** Pleasure Craft Operator Card and boat licence number visible on the bow.
+- **Fishing licence.** If you are fishing, have it on your phone or printed.
+- **Phone, sunscreen, water.** The lake is bigger than it looks from shore.
+
+If anything on this list is a problem, fix it at home. The ramp is not the place to troubleshoot.
+
+## What is on-site at the HBW ramp
+
+The Harris Boat Works ramp in Gores Landing is open 24 hours and includes:
+
+- Paved approach with a clear deepwater entry, suitable for most trailerable boats
+- Wide turnaround for backing in without surprises
+- Free trailer parking on a graded lot, no permit needed
+- Daytime washroom access during shop hours (Monday to Saturday, May through October)
+- After-hours self-pay drop box for the launch fee, posted rates on the sign
+- Daytime staff who can help if a strap snags or a battery is dead, no charge for a quick assist
+
+The shop sells fuel-stabilizer, spare props, tie-downs, PFDs, and the kind of small items boaters realize they forgot. If you are launching for an early bite, get there before sunrise; the drop box and lot are accessible all night.
+
+## Parking
+
+The lot is large enough to handle a busy summer Saturday on Rice Lake. We have not had to turn anyone away in years. Cars and trailers park in the same lot; pull in past the boat staging area so the ramp stays clear.
+
+If the lot looks full at 7 a.m. on a tournament weekend, there is overflow parking on the grass strip beyond the main lot. Staff will direct you when shop is open.
+
+## Ramp note: depth and conditions
+
+Rice Lake water levels vary across the season. The HBW ramp stays usable across normal level swings because the deepwater entry is dredged and maintained. In a low-water year (rare), expect the bottom of the ramp to be a touch shallower; trim your motor up before launching and lower it once you are clear of the trailer.
+
+In ice-out (early to mid April most years) and freeze-up (late November), confirm conditions before driving out. Call the shop or check our seasonal status page.
+
+## Who else launches here
+
+The HBW ramp is busy and friendly. On a typical summer day you will share it with:
+
+- Walleye and bass anglers running 14 to 19 foot aluminum boats
+- Cottagers in pontoons launching for the day before the season opens or after they pull the boat in fall
+- Bass tournament boats on tournament weekends (you will know; check the shop calendar)
+- Trent-Severn through-cruisers stopping for fuel, parts, or coffee
+- Day visitors from Toronto, Durham, Peterborough, and Cobourg
+
+The lot has an unspoken etiquette: stage your boat (straps off, plug in, gear loaded) in the parking lot, not at the ramp. Back down only when you are ready to drop. Pull out of the water and clear the ramp before you tie down. Most regulars do this naturally; if you are new, copy the person ahead of you.
+
+## Busy times to know about
+
+Peak launch demand happens in three windows:
+
+- **Walleye opener weekend** (mid-May): the busiest weekend of the year. Arrive at first light or after 10 a.m. to skip the rush.
+- **Bass tournament Saturdays** (June through August): if a tournament is running, the lot fills before sunrise. Check the shop calendar before driving out.
+- **Late-October haul-out window**: the last two weeks before freeze-up. Lots of boats coming out, less competition for the ramp itself but more for shop time. Book winter storage early if that is your plan; see our [outdoor storage and shrinkwrap guide](/blog/outdoor-boat-storage-shrinkwrap-rice-lake).
+
+Everything outside those windows is calm. A weekday morning in July, you will likely have the ramp to yourself.
+
+## Public ramp comparison: Rice Lake and nearby
+
+If the HBW ramp is not convenient for your route, here is the honest comparison.
+
+| Ramp | Location | Notes |
+|---|---|---|
+| **Harris Boat Works (Gores Landing)** | North shore, Rice Lake | 24-hour, paved, deepwater, free parking, staff on-site daytime |
+| **Bewdley public ramp** | South shore, Rice Lake | Free, paved, smaller lot, fills early on weekends |
+| **Hastings lock** | East end, Rice Lake / Trent | Lock-side launch, useful if you are running east toward Trent-Severn |
+| **Lakefield (Otonabee)** | North of Peterborough | Not Rice Lake itself; the entry to the upper Kawarthas |
+| **Peterborough Lift Lock** | Peterborough | Trent-Severn entry, busy on lock-up weekends |
+| **Cobourg Marina** | Lake Ontario, not Rice Lake | Different watershed; included only because GTA boaters sometimes confuse the two |
+
+For most Rice Lake fishing and cottage trips, HBW or Bewdley are the practical choices. HBW is the safer bet for after-hours, deeper water, and a working lot.
+
+## What HBW checks if something goes wrong on the water
+
+Launching is the easy part. If the day goes sideways (battery fails, prop dings a rock, fuel issue, kicker will not start), the shop is right there. During business hours we can:
+
+- Swap a dead battery
+- Replace a damaged prop on the spot if it is a common Mercury size
+- Diagnose a fuel-system or starting problem in the parking lot before you pack it in
+- Pull the boat out, look it over, and give you an honest answer on whether it is a 20-minute fix or a tow-home
+
+We do not charge to look. If it is a fast fix, parts and time only. If it is a real problem, we will tell you and we will not pad the bill.
+
+## FAQ
+
+**Is the HBW ramp open 24 hours?**
+Yes. The ramp and parking lot are open 24 hours, with after-hours self-pay at the drop box. Shop hours for staff assistance, parts, and washrooms are Monday to Saturday, May through October.
+
+**How much is the launch fee?**
+Posted on the sign at the ramp and updated annually. Cash or e-transfer for after-hours; card during shop hours.
+
+**Do I need to book a launch slot?**
+No. First come, first served. Even on busy weekends the lot has held up.
+
+**Can I launch a boat over 30 feet?**
+The ramp itself can handle up to 30 feet comfortably. Beyond that, contact us first; we will tell you honestly if it is workable.
+
+**Is there a dock at the ramp?**
+Yes, a courtesy dock for tying off while you park the trailer. Be quick; others are waiting.
+
+**Can I launch a kayak or canoe here?**
+Yes, no fee for unpowered craft. Use the side of the ramp or the shallow shoreline rather than the main lane.
+
+**Is there a fish-cleaning station?**
+Not at the ramp itself. Most anglers clean at home or at their cottage. The shop does not offer cleaning.
+
+## Where to go next
+
+If you are launching for a fishing day, the [best Mercury setups for Rice Lake fishing](/blog/best-mercury-outboard-rice-lake-fishing-guide) and the [ProKicker guide](/blog/mercury-prokicker-rice-lake-fishing-guide) are worth a read.
+
+If you are launching for a Trent-Severn run, the [Trent-Severn 2026 trip planning guide](/blog/trent-severn-waterway-boating-guide-2026) covers locks, fuel, and overnights.
+
+If your boat needs work or a new motor before the season, the configurator at [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection) gets you a real installed price in a few minutes.
+
+**Phone:** (905) 342-2153
+**Text:** (647) 952-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON, K0K 2E0
+`,
+  },
+  {
+    slug: "mercury-9-9-efi-review-ontario",
+    title: "Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About",
+    description: "The Mercury 9.9 MH EFI brings battery-free fuel injection to a simple portable outboard. Here's what Ontario boaters should know before buying.",
+    image: "/lovable-uploads/Mercury_Portable_Outboards.png",
+    author: "Harris Boat Works",
+    datePublished: "2026-05-10",
+    dateModified: "2026-05-10",
+    publishDate: "2026-05-10",
+    category: "Mercury Buying Guides",
+    readTime: "10 min read",
+    keywords: ["mercury 9.9 efi review", "mercury 9.9 mh efi", "mercury 9.9 fuel injected outboard", "mercury 9.9 efi ontario", "mercury 9.9 outboard price ontario", "mercury 9.9 efi vs prokicker"],
+    faqs: [
+      { question: "How much is the Mercury 9.9 MH EFI at HBW?", answer: "$2,999 CAD + HST as of May 2026, including the 12 L tank, fuel hose, and prep. HST adds 13% in Ontario. No setup or freight fees on top." },
+      { question: "Does the Mercury 9.9 MH EFI need a battery?", answer: "No. The manual-start 9.9 MH EFI uses a battery-free EFI system. The pull start generates the power needed for ignition and injection." },
+      { question: "What boat size is the 9.9 MH EFI right for?", answer: "Best on 12 to 14 foot aluminum boats, small tenders, RIBs, and as a kicker on larger boats. Not suitable as the only motor on a 16 foot boat with three adults." },
+      { question: "Is the 9.9 MH EFI the same as the 9.9 ProKicker?", answer: "Same powerhead, different gearcase, alternator, gear ratio, and prop. The ProKicker is purpose-built for trolling. The MH EFI is a general-purpose small outboard." },
+      { question: "How much does the Mercury 9.9 MH EFI weigh?", answer: "About 84 lb dry, varies slightly by published source. One-person-portable for short distances, easier with a cart or a second person for repeat handling." },
+      { question: "Is the warranty the same as the bigger Mercury motors?", answer: "Yes. Mercury's standard FourStroke warranty applies. Promotional bonus-warranty periods come and go; check the Mercury Outboard Warranty page for current terms." },
+      { question: "Can I add SmartCraft Connect to a 9.9 MH EFI?", answer: "No. Mercury motors under 25 hp are not SmartCraft-equipped. There is no internal data network on this motor." },
+      { question: "Do I need a long shaft for my boat?", answer: "Measure your transom from the top of the transom to the bottom of the hull. 15 inches or less, short shaft (MH). 16 to 20 inches, long shaft (MLH). 21 to 25 inches, extra-long (XL). Wrong shaft length causes ventilation and poor performance." },
+    ],
+    content: `# Mercury 9.9 EFI Review: The Small Outboard Everyone Keeps Asking About
+
+*Last reviewed: 2026-05-10*
+
+The Mercury 9.9 MH EFI is one of those motors that sounds boring until you understand why people keep asking about it.
+
+The Mercury 9.9 MH EFI is getting attention because it brings modern fuel injection to a small, simple, manual-start outboard without turning the boat into a wiring project.
+
+As of May 2026, Harris Boat Works is offering the Mercury 9.9 MH EFI for $2,999 CAD + HST with no extra charges or setup fees. That includes the 12 L fuel tank and hose, plus free prep.
+
+Yes, we know how that sounds. Every dealer says the price is sharp. The difference is we will show you the math.
+
+> **Pricing scope:** This $2,999 + HST special applies to the Mercury 9.9 MH EFI specifically (manual start, tiller, 15 inch short shaft). Other 9.9 variants (EH electric handle, ProKicker, Big Foot, Command Thrust) are priced separately. If you're shopping a different version, get a quote so we're comparing the right configuration.
+
+[Build your Mercury 9.9 quote](/quote/motor-selection)
+
+## Quick answer
+
+The Mercury 9.9 MH EFI is a portable 9.9 hp FourStroke outboard with manual start, tiller steering, a 15 inch short shaft, electronic fuel injection, and a dry weight listed around 84 lb by dealer specifications. The big news is the EFI system: Mercury says the manual-start models use battery-free EFI, meaning the pull start charges the electrical system needed for ignition rather than requiring a cranking battery.
+
+That makes it interesting for small aluminum boats, tenders, cottagers, fishing boats, and low-horsepower lakes where people want simple portable power without going back to carburetor headaches.
+
+This is a very smart little motor for the right boat. A 9.9 is still a 9.9, and hull shape, load, prop, shaft length, transom height, battery weight, and how much "just one more thing" you bolted into the boat all matter.
+
+## Why EFI matters in a small outboard
+
+For decades, small portable outboards meant carburetors. Carburetors are simple, cheap, and field-serviceable. They are also fussy. They gum up if the boat sits, they hate stale fuel, they stumble at altitude or in cold weather, and they need a choke that you have to remember how to use.
+
+EFI changes the experience of owning a small motor. Cold starts are consistent. Warm restarts are immediate. Idle is steady. You stop fiddling with the choke. Fuel economy improves a measurable amount because the computer is metering fuel to load instead of relying on a brass needle and a guess.
+
+For someone who pulls a kicker out of the garage four times a year, EFI is the difference between "fires up second pull" and "spend twenty minutes coaxing it." That is the whole pitch. People who used the same 9.9 carb motor for fifteen years know exactly the headache this fixes.
+
+## What "MH" means: manual start, tiller, short shaft
+
+Mercury model codes are not as opaque as they look. On a 9.9 MH EFI:
+
+- **M** = Manual start. Pull cord, no electric starter, no key.
+- **H** = Tiller handle. You steer with the engine, not a wheel.
+- **EFI** = Electronic fuel injection.
+- Implied: 15 inch short shaft (the default unless the suffix says L for 20 inch long or XL for 25 inch).
+
+If you need electric start, that becomes 9.9 EH (electric, tiller). If you need long shaft for a deeper transom, that becomes 9.9 MLH or 9.9 ELH. Each variant is a different SKU and a different price. We are talking about the basic MH in this article.
+
+## Battery-free EFI: the sneaky-good feature
+
+The clever bit on this motor is that it does not need a cranking battery to run EFI. On bigger fuel-injected outboards, the computer wakes up off battery power. Pull start a 75 hp EFI motor by hand and you are out of luck.
+
+On the 9.9 MH EFI, Mercury built an alternator and capacitor system into the pull-start that generates and stores enough power to fire the injectors and ignition. You pull the cord, the system charges, the motor starts. No 12V battery anywhere in the boat.
+
+For a tin boat with a tiller and no electronics, that means one less thing to maintain, charge, replace every three seasons, and store over winter. For a tender or a lifeboat on a sailboat, it means EFI without a dedicated battery just for the kicker.
+
+It is a small detail that meaningfully changes which boats this motor fits.
+
+| Item | Mercury 9.9 MH EFI |
+|---|---|
+| Horsepower | 9.9 hp |
+| Start | Manual pull start |
+| Steering | Tiller handle |
+| Shaft | 15 inch short shaft |
+| Fuel system | Electronic fuel injection |
+| Cylinders | 2-cylinder FourStroke |
+| Displacement | 12.8 cu in / 208 cc |
+| Dry weight | About 84 lb (varies by dealer source) |
+| Fuel tank | External 12 L / 3.2 gal tank |
+| Common use | Small aluminum boats, tenders, cottage boats, back-lake boats |
+
+## Best fits: small aluminum, cottage, back-lake
+
+The 9.9 MH EFI is at home on:
+
+- **12 to 14 foot aluminum tin boats** for cottage chores, fishing, and getting around small lakes
+- **Cedar strip and small wooden boats** restored or in light use
+- **Inflatables and tenders** (RIBs in the 9 to 11 foot range) where weight matters and electric start is overkill
+- **Low-horsepower-restricted lakes** where the regulations cap you at 10 hp
+- **Backup motor on a larger boat** where the main is a 90 to 200 hp and the kicker is for trolling or get-home insurance
+
+This is a single-purpose motor doing its job well. It is not trying to be the only motor on a 19 foot bass boat. It is trying to push a 13 foot Lund and a cooler off the dock with no drama, and it does that.
+
+## Where this motor is the wrong call
+
+Honest section. The 9.9 MH EFI is the wrong answer if:
+
+- **You need electric start.** Pull-starting a 9.9 is fine for a healthy adult; if mobility, age, or strength is a factor, spec the EH (electric handle) instead.
+- **Your transom is taller than 15 inches.** Short-shaft on a long transom causes ventilation, cavitation, prop slip, and frustration. Measure your transom and pick the right shaft length, or call us and we will help.
+- **You need to power a heavier boat.** A loaded 16 foot boat with three adults and gear is not a 9.9 hp job. It is a 15 to 25 hp job. Underpowering creates the same expensive trade-up cycle we warn about elsewhere.
+- **You want SmartCraft Connect or Mercury app data.** Sub-25 hp Mercury motors are not SmartCraft-equipped. No app, no live data, no Boost eligibility. See the [SmartCraft Connect guide](/blog/mercury-smartcraft-connect-guide-ontario) for which motors do support it.
+- **You are using it for serious trolling work.** A standard 9.9 is geared for general use. For dedicated trolling at low rpm with high thrust, the ProKicker variant exists for a reason. See below.
+
+## Standard 9.9 EFI vs ProKicker-style use
+
+A standard 9.9 MH EFI and a 9.9 ProKicker share the same powerhead but they are tuned and built differently.
+
+**Standard 9.9 MH EFI** is a general-purpose small outboard. Stock prop, stock gear ratio, designed to push a small boat at reasonable speed.
+
+**Mercury 9.9 ProKicker** is purpose-built as a trolling motor. It has a bigger gearcase, a heavier-duty alternator, a higher-thrust gear ratio, a different prop, and electric start as standard. It costs significantly more. For an angler running a kicker on a 17 to 19 foot fishing boat, the ProKicker is the right tool. For someone pushing a 13 foot tin boat around a small lake, it is overkill.
+
+If trolling is the main use, talk to us before buying. The ProKicker price gap is real, but so is the difference in trolling performance. See the [ProKicker on Rice Lake guide](/blog/mercury-prokicker-rice-lake-fishing-guide) for the full breakdown.
+
+## The price is a big part of the story
+
+$2,999 + HST is sharp for a current-year, fuel-injected, name-brand 9.9 with the tank included. A few things to know:
+
+- This is not a closeout, leftover, or grey-market motor. It is a current Mercury model with full warranty.
+- The price includes prep (uncrating, oil fill, run-up, prop install) which some dealers list as a separate $150 to $250 fee.
+- The 12 L tank and hose are included. Bare-motor pricing elsewhere often does not include the tank.
+- HST is 13% on top in Ontario. Final out-the-door is roughly $3,389.
+- Trade in your old kicker if you have one; we take running and non-running motors as part-trade. Get a number through the [trade-in valuation tool](/tools#trade-in).
+
+We would rather sell ten of these at a sharp price and have ten happy customers than four at a higher price. That is the math.
+
+## What real boaters are asking about
+
+Four real questions we hear at the counter.
+
+**"Is EFI worth it if my boat sits all winter?"**
+Yes, more than for someone who runs the boat weekly. EFI handles winter-sat fuel better than a carb. You will still want fresh fuel and stabilizer, but you are far less likely to be cleaning a carb bowl in May.
+
+**"Will it plane my 14 foot aluminum boat with two people?"**
+With light load, yes. With three adults and gear, you will be on the edge. A 9.9 is meant to push, not plane heavy. If planing is the goal with a typical load, look at a 15 or 20 hp.
+
+**"Is this the same motor as the ProKicker?"**
+Same powerhead, different gearcase, different alternator, different gear ratio, different prop, different price. Not the same motor in use.
+
+**"Is it actually portable?"**
+About 84 lb dry. One person can lift it for a short distance, but most people will use a motor cart or a second pair of hands to move it from truck to boat regularly. Not as portable as a 5 hp; more portable than a 25 hp.
+
+## Maintenance: simpler, not maintenance-free
+
+EFI does not eliminate maintenance. It changes which maintenance you do.
+
+You will not be cleaning a carburetor. You will not be adjusting a choke linkage. You will not be replacing a fuel-bowl gasket every other season. That is a real win.
+
+You will still:
+
+- Change the lower-unit oil annually, or every 100 hours
+- Change the engine oil and filter annually, or every 100 hours
+- Replace the water-pump impeller every 3 years
+- Stabilize fuel in the tank for storage longer than 30 days
+- Run the motor on muffs after saltwater use (rare on Rice Lake) or after silty-water use
+
+The 20/100/300 maintenance intervals are covered in the [Mercury maintenance guide](/blog/mercury-maintenance-intervals-20-100-300-rule). The 9.9 MH EFI follows the same general pattern.
+
+## What we would actually recommend
+
+If you are shopping a small motor and one of these is true, the 9.9 MH EFI is probably the right answer:
+
+- 12 to 14 foot aluminum boat for cottage and fishing use
+- A tender or RIB where weight and simplicity matter
+- A backup motor on a larger boat where the main does the heavy lifting
+- A horsepower-restricted lake (10 hp cap)
+- You hated your old carb motor and want EFI without going to electric start
+
+If electric start is non-negotiable, spec the 9.9 EH instead. If you are trolling seriously, look at the ProKicker. If your transom is over 15 inches, spec a long shaft. If you are powering a heavier boat than this motor is meant for, go up to a 15 or 20 hp.
+
+We will tell you straight if a different motor is the right call. The whole point of being a Platinum dealer since 1965 is that we have sold the wrong motor to enough people over the decades to know when to talk a customer out of one.
+
+## FAQ
+
+**How much is the Mercury 9.9 MH EFI at HBW?**
+$2,999 CAD + HST as of May 2026, including the 12 L tank, fuel hose, and prep. HST adds 13% in Ontario. No setup or freight fees on top.
+
+**Does the Mercury 9.9 MH EFI need a battery?**
+No. The manual-start 9.9 MH EFI uses a battery-free EFI system. The pull start generates the power needed for ignition and injection.
+
+**What boat size is the 9.9 MH EFI right for?**
+Best on 12 to 14 foot aluminum boats, small tenders, RIBs, and as a kicker on larger boats. Not suitable as the only motor on a 16 foot boat with three adults.
+
+**Is the 9.9 MH EFI the same as the 9.9 ProKicker?**
+Same powerhead, different gearcase, alternator, gear ratio, and prop. The ProKicker is purpose-built for trolling. The MH EFI is a general-purpose small outboard.
+
+**How much does the Mercury 9.9 MH EFI weigh?**
+About 84 lb dry, varies slightly by published source. One-person-portable for short distances, easier with a cart or a second person for repeat handling.
+
+**Is the warranty the same as the bigger Mercury motors?**
+Yes. Mercury's standard FourStroke warranty applies. Promotional bonus-warranty periods come and go; check the [Mercury Outboard Warranty page](/blog/mercury-outboard-warranty-canada-2026) for current terms.
+
+**Can I add SmartCraft Connect to a 9.9 MH EFI?**
+No. Mercury motors under 25 hp are not SmartCraft-equipped. There is no internal data network on this motor.
+
+**Do I need a long shaft?**
+Measure your transom from the top of the transom to the bottom of the hull. 15 inches or less, short shaft (MH). 16 to 20 inches, long shaft (MLH). 21 to 25 inches, extra-long (XL). Wrong shaft length causes ventilation and poor performance.
+
+## Where to go next
+
+If you are ready to buy, the configurator gets you a real installed price in a few minutes: [mercuryrepower.ca/quote/motor-selection](/quote/motor-selection).
+
+If you are weighing this against a different small motor, the [portable Mercury guide (2 to 20 hp)](/blog/portable-outboard-mercury-guide-2-20hp) is the broader comparison.
+
+If you have an old kicker to trade, the [trade-in valuation tool](/tools#trade-in) gives you a number in seconds.
+
+**Phone:** (905) 342-2153
+**Text:** (647) 952-2153
+**Address:** 5369 Harris Boat Works Rd, Gores Landing, ON, K0K 2E0
+`,
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {
