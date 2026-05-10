@@ -1739,7 +1739,11 @@ const blogArticleRoutes = blogArticles.map(article => ({
         ).join('') + '</dl></section>'
       : '';
     const tableHtml = BLOG_TABLE_FALLBACKS[article.slug] || '';
-    return `<article>${bodyHtml}</article>${tableHtml}${faqHtml}`;
+    // Dealer credentials strip — identical on every blog post. Sits between
+    // the hero image (rendered client-side / referenced via og:image) and the
+    // article body so crawlers + LLMs see HBW credentials inline with content.
+    const dealerStripHtml = '<div class="dealer-confidence-strip"><span>Mercury Platinum Dealer</span><span>·</span><span>Since 1947</span><span>·</span><span>Gores Landing, ON</span><span>·</span><a href="/quote/motor-selection">Quote builder available</a></div>';
+    return `${dealerStripHtml}<article>${bodyHtml}</article>${tableHtml}${faqHtml}`;
   }
 }));
 
