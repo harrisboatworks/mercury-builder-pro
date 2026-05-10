@@ -132,6 +132,9 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+## Try the calculator
+
+Want a real number? Run [the Trade-In Value Estimator](/tools#trade-in-value) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **Can I finance a Mercury repower in Ontario?**

@@ -133,6 +133,9 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+## Try the calculator
+
+Want a real number? Run [the Repower Cost Estimator](/tools#repower-cost) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **What is the best Mercury outboard for a 16-foot aluminum fishing boat?**

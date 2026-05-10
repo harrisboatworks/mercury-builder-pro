@@ -288,6 +288,9 @@ Three ways to use this guide:
 
 ---
 
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## Related Guides
 
 - [Why Mercury dealers hide prices online (and why we don't)](https://www.mercuryrepower.ca/blog/why-mercury-dealers-hide-prices-online)

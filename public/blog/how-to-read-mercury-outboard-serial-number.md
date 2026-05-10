@@ -196,6 +196,9 @@ A motor with no serial isn't necessarily stolen, but it's a flag worth taking se
 
 ---
 
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## Quick Reference Card
 
 The five pieces of information on every Mercury and where they live:

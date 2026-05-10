@@ -158,6 +158,9 @@ For most Ontario boating. Rice Lake, Trent-Severn, you'll spend 80% of your time
 
 For service intervals and major service costs on these motors, see [our Mercury Maintenance 20/100/300 guide](/blog/mercury-maintenance-intervals-20-100-300-rule).
 
+## Try the calculator
+
+Want a real number? Run [the Boost Eligibility Checker](/tools#boost-eligibility) — no signup, no email gate, takes 30 seconds.
 ## What HBW Does
 
 V6 sales and repowers are our most common high-end work. Specifically:

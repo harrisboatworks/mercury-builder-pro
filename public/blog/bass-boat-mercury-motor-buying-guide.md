@@ -216,6 +216,9 @@ Mercury outboards in Canada carry a 3-year limited warranty plus 3-year corrosio
 
 ---
 
+## Try the calculator
+
+Want a real number? Run [the Boost Eligibility Checker](/tools#boost-eligibility) — no signup, no email gate, takes 30 seconds.
 ## Ready to Spec Your Bass Boat Repower?
 
 Build a current quote in 3 minutes at our online configurator. Pick the motor family, HP, shaft length, and prop. We confirm fitment and the all-in price before you commit.

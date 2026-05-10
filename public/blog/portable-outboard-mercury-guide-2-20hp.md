@@ -188,6 +188,9 @@ _Pricing ranges in this article are HBW's working 2026 estimates, verified May 2
 
 ---
 
+## Try the calculator
+
+Want a real number? Run [the Shaft Length Picker](/tools#shaft-length) — no signup, no email gate, takes 30 seconds.
 ## FAQ
 
 **What's the most popular Mercury portable outboard in Canada?**
