@@ -709,7 +709,13 @@ export function MarkdownSectionCards({ content, markdownComponents }: Props) {
             className={cfg.wrapper}
             style={cfg.style}
           >
-            <span className={`${eyebrowBase} ${cfg.eyebrowClass}`} aria-hidden="true">
+            <span
+              className={`${eyebrowBase} ${cfg.eyebrowClass} inline-flex items-center gap-1.5`}
+              aria-hidden="true"
+            >
+              {section.kind === 'try-calculator' && (
+                <Calculator className="h-3.5 w-3.5" />
+              )}
               {cfg.eyebrow}
             </span>
             <div className={cfg.bodyClass}>
