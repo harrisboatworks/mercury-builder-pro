@@ -13831,7 +13831,6 @@ The lake will be there. The right time to buy is when it makes sense for you, no
 
 For most Ontario boaters with a hull less than 20 years old that has been kept dry and isn't structurally compromised, repowering is the better financial decision. A new Mercury on a known-good hull gives you 80% of the new-boat experience for half the money. The exception is a hull that is rotting, soft, or fundamentally undersized for your use. Live pricing on every Mercury repower configuration is at [/quote/motor-selection](/quote/motor-selection).
 
-## Quick recommendation
 ## Repower or replace? The quick decision tree
 
 Start here:
